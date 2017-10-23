@@ -72,9 +72,9 @@ module.exports = {
     // See https://github.com/facebook/react/issues/8026
     alias: {
       react: path.resolve(__dirname, 'node_modules', 'react'),
-      'react-intl': path.resolve(__dirname, 'node_modules/react-intl'),
-      moment: path.resolve(__dirname, 'node_modules/moment'),
-      'react-dom': path.resolve(__dirname, 'node_modules/react-dom'),
+      'react-intl': path.resolve(__dirname, 'node_modules', 'react-intl'),
+      moment: path.resolve(__dirname, 'node_modules', 'moment'),
+      'react-dom': path.resolve(__dirname, 'node_modules', 'react-dom'),
     },
   },
   output: {
