@@ -1,0 +1,30 @@
+language: node_js
+sudo: required
+jdk: oraclejdk8
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+      - oracle-java8-set-default
+before_script:
+  - export TZ=America/Chicago
+script:
+  - npm test
+  - npm run danger
+branches:
+  only:
+    - master
+cache:
+  directories:
+    - node_modules
+before_deploy:
+  - lerna run --scope terra-framework-site compile:prod
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  local_dir: packages/terra-framework-site/build
+  on:
+    branch: master
