@@ -1,0 +1,24 @@
+/* stylelint-disable selector-class-pattern */
+:local {
+  .utility {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+
+    & > *:not(:last-child) {
+      padding-right: 5px;
+    }
+  }
+
+  .is-compact {
+    color: #fff;
+  }
+
+  .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: normal;
+    word-wrap: normal;
+  }
+}

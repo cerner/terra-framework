@@ -1,0 +1,62 @@
+{
+  "name": "terra-navigation",
+  "main": "lib/Navigation.js",
+  "version": "0.0.0",
+  "description": "This component renders navigation with react router.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cerner/terra-framework.git"
+  },
+  "keywords": [
+    "Cerner",
+    "Terra",
+    "Framework",
+    "terra-navigation",
+    "Navigation",
+    "UI"
+  ],
+  "author": "Cerner Corporation",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cerner/terra-framework/issues"
+  },
+  "homepage": "https://github.com/cerner/terra-framework#readme",
+  "devDependencies": {
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
+    "terra-app-delegate": "^1.6.0"
+  },
+  "peerDependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
+    "terra-app-delegate": "^1.6.0",
+    "terra-base": "^2.5.0",
+    "terra-button": "^1.10.0",
+    "terra-menu": "^1.2.0",
+    "terra-icon": "^1.11.0",
+    "terra-layout": "^0.x"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "prop-types": "^15.5.8",
+    "terra-base": "^2.5.0",
+    "terra-button": "^1.10.0",
+    "terra-menu": "^1.2.0",
+    "terra-icon": "^1.11.0",
+    "terra-layout": "^0.x"
+  },
+  "scripts": {
+    "compile": "npm run compile:clean && npm run compile:build",
+    "compile:clean": "$(cd ..; npm bin)/rimraf lib",
+    "compile:build": "$(cd ..; npm bin)/babel src --out-dir lib --copy-files",
+    "lint": "npm run lint:js && npm run lint:scss",
+    "lint:js": "$(cd ..; npm bin)/eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
+    "lint:scss": "$(cd ..; npm bin)/stylelint src/**/*.scss",
+    "props-table": "$(cd ..; npm bin)/props-table ./src/Navigation.jsx --out-dir ./docs/props-table",
+    "test": "npm run test:jest && npm run test:nightwatch",
+    "test:jest": "$(cd ..; npm bin)/jest --config ../../jestconfig.json",
+    "test:nightwatch": "$(cd ..; npm bin)/nightwatch -c ../../nightwatch.conf.js"
+  }
+}
