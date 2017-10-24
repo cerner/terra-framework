@@ -27,7 +27,9 @@ const parseDependencyPackage = (dependencyJsonPath, specifiedVersion) => {
 const determineDependencyInformation = (dependency, specifiedVersion, packagePath) => {
   // Determine the package level and global level paths. Useful for bootstrapped dependencies.
   const packageLevelPath = path.resolve(packagePath, 'node_modules', dependency, 'package.json');
-  const globalLevelPath = packageLevelPath.replace(`${packagePath}/`, '');
+
+  let globalLevelPath = packageLevelPath.split(`${packagePath}/`);
+  globalLevelPath = globalLevelPath.length > 1 ? path.join(globalLevelPath[0], globalLevelPath[1]) : globalLevelPath[0];
 
   // The dependency markdown if an error occurs
   let dependencyRow = `| ${dependency} | ${specifiedVersion} | | |`;
