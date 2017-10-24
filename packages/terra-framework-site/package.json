@@ -26,8 +26,6 @@
     "test:jest": "jest node tests/jest/* --config ../../jestconfig.json"
   },
   "dependencies": {
-    "lodash": "^4.17.4",
-    "moment": "^2.17.1",
     "postcss": "^6.0.9",
     "prop-types": "^15.5.8",
     "react-intl": "^2.3.0",
