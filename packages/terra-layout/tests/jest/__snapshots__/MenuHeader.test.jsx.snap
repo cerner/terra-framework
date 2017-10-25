@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuHeader should render when not pinned 1`] = `
+<div
+  className="header"
+  data-menu-header={true}
+>
+  <div
+    className="header-content-body"
+  >
+    <h3
+      className="header-text"
+    >
+      TEST TEXT
+    </h3>
+  </div>
+  <div
+    className="header-content-end"
+  >
+    <Button
+      className="header-button"
+      data-menu-header-pin={true}
+      icon={
+        <IconPin
+          className="icon unlock"
+        />
+      }
+      isBlock={false}
+      isCompact={false}
+      isDisabled={false}
+      isReversed={false}
+      onClick={[Function]}
+      type="button"
+      variant="link"
+    />
+  </div>
+</div>
+`;
+
+exports[`MenuHeader should render with provided props 1`] = `
+<div
+  className="header"
+  data-menu-header={true}
+>
+  <div
+    className="header-content-body"
+  >
+    <h3
+      className="header-text"
+    >
+      TEST TEXT
+    </h3>
+  </div>
+  <div
+    className="header-content-end"
+  >
+    <Button
+      className="header-button"
+      data-menu-header-unpin={true}
+      icon={
+        <IconPin
+          className="icon"
+        />
+      }
+      isBlock={false}
+      isCompact={false}
+      isDisabled={false}
+      isReversed={false}
+      onClick={[Function]}
+      type="button"
+      variant="link"
+    />
+  </div>
+</div>
+`;
+
+exports[`MenuHeader should render without optional props 1`] = `
+<div
+  className="header"
+  data-menu-header={true}
+>
+  <div
+    className="header-content-body"
+  >
+    <h3
+      className="header-text"
+    />
+  </div>
+  <div
+    className="header-content-end"
+  />
+</div>
+`;

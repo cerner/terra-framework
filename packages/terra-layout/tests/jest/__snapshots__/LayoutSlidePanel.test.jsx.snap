@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LayoutSlidePanel should render when small 1`] = `
+<div
+  className="layout-slide-panel is-open is-overlay"
+>
+  <div
+    aria-hidden={null}
+    className="panel is-small is-animated"
+  >
+    <HoverTarget
+      hoverIsEnabled={false}
+      isEnabled={false}
+      isOpen={true}
+      onClick={[Function]}
+      onHoverOff={[Function]}
+      onHoverOn={[Function]}
+      text="Test Text"
+    >
+      <div>
+        Panel Content
+      </div>
+    </HoverTarget>
+  </div>
+  <div
+    className="content"
+  >
+    <Overlay
+      backgroundStyle="dark"
+      isOpen={true}
+      isRelativeToContainer={true}
+      isScrollable={false}
+      onRequestClose={[Function]}
+    />
+    <div>
+      Child
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LayoutSlidePanel should render when tiny 1`] = `
+<div
+  className="layout-slide-panel is-open is-overlay"
+>
+  <div
+    aria-hidden={null}
+    className="panel is-tiny is-animated"
+  >
+    <HoverTarget
+      hoverIsEnabled={false}
+      isEnabled={false}
+      isOpen={true}
+      onClick={[Function]}
+      onHoverOff={[Function]}
+      onHoverOn={[Function]}
+      text="Test Text"
+    >
+      <div>
+        Panel Content
+      </div>
+    </HoverTarget>
+  </div>
+  <div
+    className="content"
+  >
+    <Overlay
+      backgroundStyle="dark"
+      isOpen={true}
+      isRelativeToContainer={true}
+      isScrollable={false}
+      onRequestClose={[Function]}
+    />
+    <div>
+      Child
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LayoutSlidePanel should render with provided props 1`] = `
+<div
+  className="layout-slide-panel is-open is-overlay hover-toggle-enabled"
+>
+  <div
+    aria-hidden={null}
+    className="panel is-animated"
+  >
+    <HoverTarget
+      hoverIsEnabled={true}
+      isEnabled={false}
+      isOpen={true}
+      onClick={[Function]}
+      onHoverOff={[Function]}
+      onHoverOn={[Function]}
+      text="Test Text"
+    >
+      <div>
+        Panel Content
+      </div>
+    </HoverTarget>
+  </div>
+  <div
+    className="content"
+  >
+    <Overlay
+      backgroundStyle="clear"
+      isOpen={true}
+      isRelativeToContainer={true}
+      isScrollable={false}
+      onRequestClose={[Function]}
+    />
+    <div>
+      Child
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LayoutSlidePanel should render without optional props 1`] = `
+<div
+  className="layout-slide-panel is-overlay"
+>
+  <div
+    className="content"
+  >
+    <Overlay
+      backgroundStyle="clear"
+      isOpen={false}
+      isRelativeToContainer={true}
+      isScrollable={false}
+    />
+  </div>
+</div>
+`;

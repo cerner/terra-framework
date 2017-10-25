@@ -5,11 +5,11 @@ import App from './App';
 import Home from './Home';
 
 // Examples
-// import AlertExamples from './examples/alert/Index';
+import LayoutExamples from './examples/layout/Index';
 
 // Test Routes
 /* eslint-disable import/first */
-// import AlertTestRoutes from 'terra-alert/tests/nightwatch/AlertTestRoutes';
+import LayoutTestRoutes from 'terra-layout/tests/nightwatch/LayoutTestRoutes';
 import TestLinks from './TestLinks';
 
 ReactDOM.render((
@@ -17,9 +17,9 @@ ReactDOM.render((
     <Redirect from="/" to="/site" />
     <Route path="/site" component={App}>
       <IndexRoute component={Home} />
-      {/* <Route path="alert" component={AlertExamples} /> */}
+      <Route path="/layout" component={LayoutExamples} />
     </Route>
     <Route path="/tests" component={TestLinks} />
-    {/* {AlertTestRoutes} */}
+    {LayoutTestRoutes}
   </Router>
 ), document.getElementById('root'));
