@@ -45,7 +45,8 @@
     "terra-button": "^1.10.0",
     "terra-menu": "^1.2.0",
     "terra-icon": "^1.11.0",
-    "terra-layout": "^0.x"
+    "terra-layout": "^0.x",
+    "terra-navigation": "^0.x"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
