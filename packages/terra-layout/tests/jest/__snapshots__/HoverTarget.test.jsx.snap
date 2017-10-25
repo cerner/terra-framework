@@ -3,7 +3,6 @@
 exports[`HoverTarget should render with provided hover props 1`] = `
 <div
   className="hover-target"
-  data-hover-target={true}
   isEnabled={false}
 >
   <div
@@ -15,7 +14,6 @@ exports[`HoverTarget should render with provided hover props 1`] = `
   </div>
   <button
     className="hover-section"
-    data-hover-target-hover-section={true}
     onClick={[Function]}
   >
     <div
@@ -45,7 +43,6 @@ exports[`HoverTarget should render with provided hover props 1`] = `
 exports[`HoverTarget should render with provided open props 1`] = `
 <div
   className="hover-target is-hover-tab-hidden"
-  data-hover-target={true}
   isEnabled={false}
 >
   <div
@@ -57,7 +54,6 @@ exports[`HoverTarget should render with provided open props 1`] = `
   </div>
   <button
     className="hover-section"
-    data-hover-target-hover-section={true}
     onClick={[Function]}
   >
     <div
@@ -87,7 +83,6 @@ exports[`HoverTarget should render with provided open props 1`] = `
 exports[`HoverTarget should render without optional props 1`] = `
 <div
   className="hover-target is-hover-disabled"
-  data-hover-target={true}
   isEnabled={false}
 >
   <div
@@ -95,7 +90,6 @@ exports[`HoverTarget should render without optional props 1`] = `
   />
   <button
     className="hover-section"
-    data-hover-target-hover-section={true}
     onClick={[Function]}
   >
     <div

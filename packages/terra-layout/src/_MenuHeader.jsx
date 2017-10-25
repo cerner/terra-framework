@@ -20,7 +20,7 @@ const propTypes = {
    */
   togglePin: PropTypes.func,
   /**
-   * The Boolean flag indicating whether or not the menu is currently pinned.
+   * Indicates the current pin state.
    */
   isPinned: PropTypes.bool,
 };
@@ -31,17 +31,17 @@ const defaultProps = {
 
 const MenuHeader = ({ text, togglePin, isPinned, ...customProps }) => {
   const headerClassNames = cx([
-    'header',
+    'menu-header',
     customProps.className,
   ]);
 
   let pinButton;
   if (togglePin && !isPinned) {
-    pinButton = <Button onClick={togglePin} icon={<IconPin className={cx(['icon', 'unlock'])} />} variant="link" className={cx('header-button')} data-menu-header-pin />;
+    pinButton = <Button onClick={togglePin} icon={<IconPin className={cx(['pin-icon', 'unlocked'])} />} variant="link" className={cx('header-button')} data-menu-header-pin-button />;
   }
   let unpinButton;
   if (togglePin && isPinned) {
-    unpinButton = <Button onClick={togglePin} icon={<IconPin className={cx('icon')} />} variant="link" className={cx('header-button')} data-menu-header-unpin />;
+    unpinButton = <Button onClick={togglePin} icon={<IconPin className={cx('pin-icon')} />} variant="link" className={cx('header-button')} data-menu-header-unpin-button />;
   }
 
   const toolbarEnd = (
@@ -52,7 +52,7 @@ const MenuHeader = ({ text, togglePin, isPinned, ...customProps }) => {
   );
 
   return (
-    <div {...customProps} className={headerClassNames} data-menu-header>
+    <div {...customProps} className={headerClassNames}>
       <div className={cx('header-content-body')}>
         <h3 className={cx('header-text')}>{text}</h3>
       </div>

@@ -9,33 +9,33 @@ module.exports = resizeTo(['tiny', 'small', 'large'], {
     browser.expect.element('#test-header').to.be.present;
     browser.expect.element('#test-content').to.be.present;
     browser.expect.element('#test-menu').to.be.present;
-    browser.expect.element('[data-hover-target-hover-section]').to.be.present;
+    browser.expect.element('[class*=hover-section]').to.be.present;
 
     browser.expect.element('#test-menu').to.not.be.visible;
 
     const width = screenWidth(browser);
 
     if (width < browser.globals.breakpoints.large[0]) {
-      browser.expect.element('[data-hover-target-hover-section]').to.not.be.visible;
+      browser.expect.element('[class*=hover-section]').to.not.be.visible;
 
       browser.click('.test-header-toggle', () => {
         browser.expect.element('#test-menu').to.be.visible;
       });
     } else {
-      browser.expect.element('[data-hover-target-hover-section]').to.be.visible;
+      browser.expect.element('[class*=hover-section]').to.be.visible;
 
-      browser.click('[data-hover-target-hover-section]', () => {
+      browser.click('[class*=hover-section]', () => {
         browser.waitForElementVisible('#test-menu', 200);
         browser.expect.element('#test-menu').to.be.visible;
 
-        browser.expect.element('[data-menu-header-pin]').to.be.visible;
-        browser.click('[data-menu-header-pin]', () => {
-          browser.waitForElementVisible('[data-menu-header-unpin]', 200);
-          browser.expect.element('[data-menu-header-unpin]').to.be.visible;
+        browser.expect.element('[data-menu-header-pin-button]').to.be.visible;
+        browser.click('[data-menu-header-pin-button]', () => {
+          browser.waitForElementVisible('[data-menu-header-unpin-button]', 200);
+          browser.expect.element('[data-menu-header-unpin-button]').to.be.visible;
 
-          browser.click('[data-menu-header-unpin]', () => {
-            browser.waitForElementVisible('[data-menu-header-pin]', 200);
-            browser.expect.element('[data-menu-header-pin]').to.be.visible;
+          browser.click('[data-menu-header-unpin-button]', () => {
+            browser.waitForElementVisible('[data-menu-header-pin-button]', 200);
+            browser.expect.element('[data-menu-header-pin-button]').to.be.visible;
           });
         });
       });
@@ -48,7 +48,7 @@ module.exports = resizeTo(['tiny', 'small', 'large'], {
     browser.expect.element('#test-header').to.be.present;
     browser.expect.element('#test-content').to.be.present;
     browser.expect.element('#test-menu').to.not.be.present;
-    browser.expect.element('[data-hover-target-hover-section]').to.not.be.present;
+    browser.expect.element('[class*=hover-section]').to.not.be.present;
   },
 
   'Displays a layout with long menu control text': (browser) => {
@@ -61,12 +61,12 @@ module.exports = resizeTo(['tiny', 'small', 'large'], {
     const width = screenWidth(browser);
 
     if (width >= browser.globals.breakpoints.large[0]) {
-      browser.expect.element('[data-hover-target-hover-section]').to.be.visible;
-      browser.expect.element('[data-hover-target-hover-section]').text.to.equal('Menu Text That Is Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Long');
+      browser.expect.element('[class*=hover-section]').to.be.visible;
+      browser.expect.element('[class*=hover-section]').text.to.equal('Menu Text That Is Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Long');
 
-      browser.click('[data-hover-target-hover-section]', () => {
-        browser.waitForElementVisible('[data-menu-header]', 200);
-        browser.expect.element('[data-menu-header]').text.to.equal('Menu Text That Is Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Long');
+      browser.click('[class*=hover-section]', () => {
+        browser.waitForElementVisible('[class*=menu-header]', 200);
+        browser.expect.element('[class*=menu-header]').text.to.equal('Menu Text That Is Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Long');
       });
     }
   },

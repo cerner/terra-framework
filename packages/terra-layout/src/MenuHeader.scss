@@ -1,7 +1,7 @@
 /* stylelint-disable selector-class-pattern */
 
 :local {
-  .header {
+  .menu-header {
     align-items: center;
     background: var(--layout-menu-header-background-color, #e8e9ea);
     border-bottom: var(--layout-menu-header-border-bottom, 1px solid #edeeee);
@@ -35,13 +35,13 @@
     position: relative;
   }
 
-  .icon {
+  .pin-icon {
     height: 14px;
     margin-top: 3px;
     width: 14px;
   }
 
-  .unlock {
+  .unlocked {
     transform: rotate(90deg);
     transform-origin: left top 50%;
   }

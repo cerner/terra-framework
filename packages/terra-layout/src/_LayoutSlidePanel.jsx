@@ -11,18 +11,18 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Whether or not the panel transitions should be animated.
+   * Enables animations for panel state transitions.
    */
   isAnimated: PropTypes.bool,
   /**
-   * Whether or not the panel should be displayed.
+   * Enables panel visibility.
    */
   isOpen: PropTypes.bool,
   /**
-   * Whether or not panel toggling is enabled.
+   * Enables toggling for the panel.
    */
   isToggleEnabled: PropTypes.bool,
-    /**
+  /**
    * The element to display in the main content area.
    */
   children: PropTypes.element,

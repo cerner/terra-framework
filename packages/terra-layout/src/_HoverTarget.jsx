@@ -14,11 +14,11 @@ const propTypes = {
    */
   children: PropTypes.node,
   /**
-   * Flag to enable the hover functionality.
+   * Enables the hover functionality.
    */
   hoverIsEnabled: PropTypes.bool,
   /**
-   * Flag to menu .
+   * Disables the hover bar.
    */
   isOpen: PropTypes.bool,
   /**
@@ -159,11 +159,11 @@ class HoverTarget extends React.Component {
     ]);
 
     return (
-      <div {...customProps} className={hoverClasses} ref={this.setHoverNode} data-hover-target>
+      <div {...customProps} className={hoverClasses} ref={this.setHoverNode}>
         <div className={cx('content-section')}>
           {children}
         </div>
-        <button className={cx('hover-section')} onClick={this.handleOnClick} data-hover-target-hover-section>
+        <button className={cx('hover-section')} onClick={this.handleOnClick}>
           <div className={cx('hover-section-icon')}>
             <IconChevronRight className={cx('hover-icon')} />
           </div>
