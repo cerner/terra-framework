@@ -36,6 +36,7 @@
     "terra-i18n": "^1.10.1",
     "terra-i18n-plugin": "^1.7.0",
     "terra-icon": "^1.12.1",
+    "terra-layout": "^0.x",
     "terra-list": "^1.12.1",
     "terra-markdown": "^1.9.1",
     "terra-props-table": "^1.10.1",

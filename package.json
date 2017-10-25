@@ -62,7 +62,7 @@
     "postpublish": "npm run dependency-markdown && git add --all && git commit -m 'Updated DEPENDENCIES.md files'",
     "start": "cd packages/terra-framework-site && npm run start",
     "start:express": "node scripts/express/app.js",
-    "test": "jest"
+    "test": "jest && nightwatch"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

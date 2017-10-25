@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HoverTarget should render with provided hover props 1`] = `
+<div
+  className="hover-target"
+  isEnabled={false}
+>
+  <div
+    className="content-section"
+  >
+    <div>
+      Child
+    </div>
+  </div>
+  <button
+    className="hover-section"
+    onClick={[Function]}
+  >
+    <div
+      className="hover-section-icon"
+    >
+      <IconChevronRight
+        className="hover-icon"
+        data-name="Layer 1"
+        isBidi={true}
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div
+      className="hover-section-text"
+    >
+      <h3
+        className="hover-text"
+      >
+        MENU TEXT
+      </h3>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`HoverTarget should render with provided open props 1`] = `
+<div
+  className="hover-target is-hover-tab-hidden"
+  isEnabled={false}
+>
+  <div
+    className="content-section"
+  >
+    <div>
+      Child
+    </div>
+  </div>
+  <button
+    className="hover-section"
+    onClick={[Function]}
+  >
+    <div
+      className="hover-section-icon"
+    >
+      <IconChevronRight
+        className="hover-icon"
+        data-name="Layer 1"
+        isBidi={true}
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div
+      className="hover-section-text"
+    >
+      <h3
+        className="hover-text"
+      >
+        MENU TEXT
+      </h3>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`HoverTarget should render without optional props 1`] = `
+<div
+  className="hover-target is-hover-disabled"
+  isEnabled={false}
+>
+  <div
+    className="content-section"
+  />
+  <button
+    className="hover-section"
+    onClick={[Function]}
+  >
+    <div
+      className="hover-section-icon"
+    >
+      <IconChevronRight
+        className="hover-icon"
+        data-name="Layer 1"
+        isBidi={true}
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div
+      className="hover-section-text"
+    >
+      <h3
+        className="hover-text"
+      />
+    </div>
+  </button>
+</div>
+`;
