@@ -6,6 +6,7 @@ import Home from './Home';
 
 // Examples
 import LayoutExamples from './examples/layout/Index';
+import NavigationExamples from './examples/navigation/Index';
 
 // Test Routes
 /* eslint-disable import/first */
@@ -18,6 +19,7 @@ ReactDOM.render((
     <Route path="/site" component={App}>
       <IndexRoute component={Home} />
       <Route path="/layout" component={LayoutExamples} />
+      <Route path="/navigation" component={NavigationExamples} />
     </Route>
     <Route path="/tests" component={TestLinks} />
     {LayoutTestRoutes}
