@@ -19,7 +19,7 @@ const propTypes = {
   routeConfig: navigationConfigPropType,
 };
 
-class Navigation extends React.Component {
+class NavigationLayout extends React.Component {
   static getBreakpointSize() {
     const width = window.innerWidth;
     const { small, medium, large, huge } = breakpoints;
@@ -42,7 +42,7 @@ class Navigation extends React.Component {
     this.updateSize = this.updateSize.bind(this);
 
     this.state = {
-      size: Navigation.getBreakpointSize(),
+      size: NavigationLayout.getBreakpointSize(),
     };
   }
 
@@ -55,7 +55,7 @@ class Navigation extends React.Component {
   }
 
   updateSize() {
-    const newSize = Navigation.getBreakpointSize();
+    const newSize = NavigationLayout.getBreakpointSize();
 
     if (this.state.size !== newSize) {
       this.setState({
@@ -97,6 +97,6 @@ class Navigation extends React.Component {
   }
 }
 
-Navigation.propTypes = propTypes;
+NavigationLayout.propTypes = propTypes;
 
-export default withRouter(Navigation);
+export default withRouter(NavigationLayout);

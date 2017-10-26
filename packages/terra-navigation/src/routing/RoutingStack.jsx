@@ -25,7 +25,7 @@ class RoutingStack extends React.Component {
     super(props);
 
     this.updateStackLocation = this.updateStackLocation.bind(this);
-    this.createMenuRoutes = this.createMenuRoutes.bind(this);
+    this.createRoutes = this.createRoutes.bind(this);
 
     this.state = {
       stackLocation: undefined,
@@ -44,7 +44,7 @@ class RoutingStack extends React.Component {
     });
   }
 
-  createMenuRoutes(routeConfig) {
+  createRoutes(routeConfig) {
     const { navEnabled, routingManager, app, location, size } = this.props;
 
     return flattenRouteConfig(routeConfig, size).map((routeData) => {
@@ -86,7 +86,7 @@ class RoutingStack extends React.Component {
 
     return (
       <Switch location={this.state.stackLocation || location}>
-        {this.createMenuRoutes(routeConfig, size)}
+        {this.createRoutes(routeConfig, size)}
         {children}
       </Switch>
     );

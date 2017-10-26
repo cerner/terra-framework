@@ -40,9 +40,7 @@ const propTypes = {
   utility: PropTypes.element,
 };
 
-const appendPropsToElement = (app, size, element) => {
-  return React.cloneElement(element, { app, size });
-};
+const appendPropsToElement = (app, size, element) => React.cloneElement(element, { app, size });
 
 const Toolbar = ({
   app,

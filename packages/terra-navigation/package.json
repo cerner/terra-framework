@@ -1,6 +1,6 @@
 {
   "name": "terra-navigation",
-  "main": "lib/Navigation.js",
+  "main": "lib/NavigationLayout.js",
   "version": "0.0.0",
   "description": "This component renders navigation with react router.",
   "repository": {
