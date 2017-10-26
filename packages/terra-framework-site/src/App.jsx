@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, Link, Redirect } from 'react-router-dom';
 import Base from 'terra-base';
 import SlidePanel from 'terra-slide-panel';
 import Image from 'terra-image';
@@ -130,7 +130,7 @@ class App extends React.Component {
 
     const navHeader = (
       <div className={styles['site-nav-header']}>
-        <Link onClick={this.handleResetScroll} to="/">Home</Link>
+        <Link onClick={this.handleResetScroll} to="/site">Home</Link>
       </div>
     );
 
@@ -176,6 +176,7 @@ class App extends React.Component {
                   menuText="Menu"
                 >
                   <div style={{ height: '100%' }}>
+                    <Redirect from="/" to="/site" />
                     <Route path="/site" component={Home} />
                   </div>
                 </NavigationLayout>
