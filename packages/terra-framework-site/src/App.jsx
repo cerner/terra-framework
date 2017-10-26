@@ -11,6 +11,7 @@ import IconMenu from 'terra-icon/lib/icon/IconMenu';
 import ThemeProvider from 'terra-theme-provider';
 import Menu from 'terra-menu';
 import styles from './site.scss';
+import Home from './Home';
 
 import NavigationLayout from 'terra-navigation';
 import Toolbar from 'terra-navigation/lib/toolbar/Toolbar';
@@ -174,7 +175,9 @@ class App extends React.Component {
                   menu={panelContent}
                   menuText="Menu"
                 >
-                  {this.props.children}
+                  <div style={{ height: '100%' }}>
+                    <Route path="/site" component={Home} />
+                  </div>
                 </NavigationLayout>
               </Base>
             </ThemeProvider>

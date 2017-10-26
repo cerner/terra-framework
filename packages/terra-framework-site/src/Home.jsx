@@ -3,7 +3,9 @@ import Markdown from 'terra-markdown';
 import ReadMe from '../README.md';
 
 const Home = () => (
-  <Markdown src={ReadMe} />
+  <div style={{ height: '100%', padding: '15px' }}>
+    <Markdown src={ReadMe} />
+  </div>
 );
 
 export default Home;
