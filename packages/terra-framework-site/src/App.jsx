@@ -143,21 +143,10 @@ class App extends React.Component {
       </ContentContainer>
     );
 
-    // Moved Base to wrap the main content, as i18nProvider inserts an unstyled div that ruins layout if placed higher.
-    // Might consider enablling styling for Base, or evaluate if multipe Bases are viable.
-    const mainContent = (
-      <ThemeProvider id="site-content-section" themeName={themes[this.state.theme]} isGlobalTheme>
-        <Base className={styles['site-content']} locale={this.state.locale}>
-          {this.props.children}
-        </Base>
-      </ThemeProvider>
-    );
-
-    const menuItems = [themeSwitcher, localeContent, <Menu.Divider />, bidiContent];
     const utility = (
       <Utility
         title={'Utilities'}
-        menuItems={menuItems}
+        menuItems={[themeSwitcher, localeContent, <Menu.Divider />, bidiContent]}
       />
     );
 
@@ -178,13 +167,17 @@ class App extends React.Component {
       <Router>
         <Route
           render={() => (
-            <NavigationLayout
-              header={applicationHeader}
-              menu={panelContent}
-              menuText="Menu"
-            >
-              {mainContent}
-            </NavigationLayout>
+            <ThemeProvider id="site-content-section" themeName={themes[this.state.theme]} isGlobalTheme>
+              <Base style={{ height: '100%' }} locale={this.state.locale}>
+                <NavigationLayout
+                  header={applicationHeader}
+                  menu={panelContent}
+                  menuText="Menu"
+                >
+                  {this.props.children}
+                </NavigationLayout>
+              </Base>
+            </ThemeProvider>
           )}
         />
       </Router>
