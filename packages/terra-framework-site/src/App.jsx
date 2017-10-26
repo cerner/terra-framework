@@ -9,12 +9,13 @@ import ContentContainer from 'terra-content-container';
 import List from 'terra-list';
 import IconMenu from 'terra-icon/lib/icon/IconMenu';
 import ThemeProvider from 'terra-theme-provider';
-import CollapsibleMenuView from 'terra-collapsible-menu-view';
+import Menu from 'terra-menu';
 import styles from './site.scss';
 
 import NavigationLayout from 'terra-navigation';
 import Toolbar from 'terra-navigation/lib/toolbar/Toolbar';
 import Logo from 'terra-navigation/lib/toolbar/Logo';
+import Utility from 'terra-navigation/lib/toolbar/Utility';
 
 const propTypes = {
   children: PropTypes.node,
@@ -72,34 +73,30 @@ class App extends React.Component {
   }
 
   render() {
-    const toggleContent = (
-      <CollapsibleMenuView.Item icon={<IconMenu />} text="Toggle Sidebar" isIconOnly key="toggle-content" onClick={this.handleToggleClick} />
-    );
-
     const bidiContent = (
-      <CollapsibleMenuView.ItemGroup key="site-bidi" isSelectable dir="ltr" size="medium" onChange={this.handleBidiChange}>
-        <CollapsibleMenuView.Item id="ltr" text="ltr" key="ltr" isSelected={this.state.dir === 'ltr'} />
-        <CollapsibleMenuView.Item id="rtl" text="rtl" key="rtl" isSelected={this.state.dir === 'rtl'} />
-      </CollapsibleMenuView.ItemGroup>
+      <Menu.ItemGroup key="site-bidi" isSelectable dir="ltr" size="medium" onChange={this.handleBidiChange}>
+        <Menu.Item id="ltr" text="ltr" key="ltr" isSelected={this.state.dir === 'ltr'} />
+        <Menu.Item id="rtl" text="rtl" key="rtl" isSelected={this.state.dir === 'rtl'} />
+      </Menu.ItemGroup>
     );
 
     const localeContent = (
-      <CollapsibleMenuView.Item
+      <Menu.Item
         text={`Locale: ${this.state.locale}`}
         key="locale"
         menuWidth="160"
         shouldCloseOnClick={false}
         subMenuItems={[
-          <CollapsibleMenuView.ItemGroup isSelectable key="local-options" onChange={this.handleLocaleChange} >
-            <CollapsibleMenuView.Item id="en" text="en" key="en" isSelected={this.state.locale === 'en'} />
-            <CollapsibleMenuView.Item id="en-GB" text="en-GB" key="en-GB" isSelected={this.state.locale === 'en-GB'} />
-            <CollapsibleMenuView.Item id="en-US" text="en-US" key="en-US" isSelected={this.state.locale === 'en-US'} />
-            <CollapsibleMenuView.Item id="de" text="de" key="de" isSelected={this.state.locale === 'de'} />
-            <CollapsibleMenuView.Item id="es" text="es" key="es" isSelected={this.state.locale === 'es'} />
-            <CollapsibleMenuView.Item id="fr" text="fr" key="fr" isSelected={this.state.locale === 'fr'} />
-            <CollapsibleMenuView.Item id="pt" text="pt" key="pt" isSelected={this.state.locale === 'pt'} />
-            <CollapsibleMenuView.Item id="fi-FI" text="fi-FI" key="fi-FI" isSelected={this.state.locale === 'fi-FI'} />
-          </CollapsibleMenuView.ItemGroup>,
+          <Menu.ItemGroup isSelectable key="local-options" onChange={this.handleLocaleChange} >
+            <Menu.Item id="en" text="en" key="en" isSelected={this.state.locale === 'en'} />
+            <Menu.Item id="en-GB" text="en-GB" key="en-GB" isSelected={this.state.locale === 'en-GB'} />
+            <Menu.Item id="en-US" text="en-US" key="en-US" isSelected={this.state.locale === 'en-US'} />
+            <Menu.Item id="de" text="de" key="de" isSelected={this.state.locale === 'de'} />
+            <Menu.Item id="es" text="es" key="es" isSelected={this.state.locale === 'es'} />
+            <Menu.Item id="fr" text="fr" key="fr" isSelected={this.state.locale === 'fr'} />
+            <Menu.Item id="pt" text="pt" key="pt" isSelected={this.state.locale === 'pt'} />
+            <Menu.Item id="fi-FI" text="fi-FI" key="fi-FI" isSelected={this.state.locale === 'fi-FI'} />
+          </Menu.ItemGroup>,
         ]}
       />
     );
@@ -112,17 +109,17 @@ class App extends React.Component {
 
     if (supportsCSSVars()) {
       themeSwitcher = (
-        <CollapsibleMenuView.Item
+        <Menu.Item
           text={`Theme: ${this.state.theme}`}
           key="theme"
           menuWidth="160"
           shouldCloseOnClick={false}
           subMenuItems={[
-            <CollapsibleMenuView.ItemGroup isSelectable key="theme-options" onChange={this.handleThemeChange} >
-              <CollapsibleMenuView.Item id="Default Theme" text="Default Theme" key="default" isSelected={this.state.theme === 'Default Theme'} />
-              <CollapsibleMenuView.Item id="Consumer Theme" text="Consumer Theme" key="consumer" isSelected={this.state.theme === 'Consumer Theme'} />
-              <CollapsibleMenuView.Item id="Mock Theme" text="Mock Theme" key="mock" isSelected={this.state.theme === 'Mock Theme'} />
-            </CollapsibleMenuView.ItemGroup>,
+            <Menu.ItemGroup isSelectable key="theme-options" onChange={this.handleThemeChange} >
+              <Menu.Item id="Default Theme" text="Default Theme" key="default" isSelected={this.state.theme === 'Default Theme'} />
+              <Menu.Item id="Consumer Theme" text="Consumer Theme" key="consumer" isSelected={this.state.theme === 'Consumer Theme'} />
+              <Menu.Item id="Mock Theme" text="Mock Theme" key="mock" isSelected={this.state.theme === 'Mock Theme'} />
+            </Menu.ItemGroup>,
           ]}
         />
       );
@@ -156,13 +153,12 @@ class App extends React.Component {
       </ThemeProvider>
     );
 
-    const utilities = (
-      <CollapsibleMenuView>
-        {themeSwitcher}
-        {localeContent}
-        <CollapsibleMenuView.Divider />
-        {bidiContent}
-      </CollapsibleMenuView>
+    const menuItems = [themeSwitcher, localeContent, <Menu.Divider />, bidiContent];
+    const utility = (
+      <Utility
+        title={'Utilities'}
+        menuItems={menuItems}
+      />
     );
 
     const applicationHeader = (
@@ -174,7 +170,7 @@ class App extends React.Component {
             accessory={<Image variant="rounded" src="https://github.com/cerner/terra-core/raw/master/terra.png" height="26px" width="26px" isFluid />}
           />
         )}
-        utility={utilities}
+        utility={utility}
       />
     );
 
