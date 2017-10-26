@@ -1,15 +1,20 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Base from 'terra-base';
 import SlidePanel from 'terra-slide-panel';
+import Image from 'terra-image';
 import ContentContainer from 'terra-content-container';
 import List from 'terra-list';
 import IconMenu from 'terra-icon/lib/icon/IconMenu';
 import ThemeProvider from 'terra-theme-provider';
 import CollapsibleMenuView from 'terra-collapsible-menu-view';
 import styles from './site.scss';
+
+import NavigationLayout from 'terra-navigation';
+import Toolbar from 'terra-navigation/lib/toolbar/Toolbar';
+import Logo from 'terra-navigation/lib/toolbar/Logo';
 
 const propTypes = {
   children: PropTypes.node,
@@ -151,9 +156,8 @@ class App extends React.Component {
       </ThemeProvider>
     );
 
-    const applicationHeader = (
-      <CollapsibleMenuView className={styles['site-header']}>
-        {toggleContent}
+    const utilities = (
+      <CollapsibleMenuView>
         {themeSwitcher}
         {localeContent}
         <CollapsibleMenuView.Divider />
@@ -161,18 +165,33 @@ class App extends React.Component {
       </CollapsibleMenuView>
     );
 
+    const applicationHeader = (
+      <Toolbar
+        logo={(
+          <Logo
+            title="Terra"
+            subtitle="Framework"
+            accessory={<Image variant="rounded" src="https://github.com/cerner/terra-core/raw/master/terra.png" height="26px" width="26px" isFluid />}
+          />
+        )}
+        utility={utilities}
+      />
+    );
+
     return (
-      <ContentContainer className={styles.app} header={applicationHeader} fill>
-        <SlidePanel
-          mainContent={mainContent}
-          panelContent={panelContent}
-          panelBehavior="squish"
-          panelPosition="start"
-          panelSize="small"
-          isOpen={this.state.isOpen}
-          fill
+      <Router>
+        <Route
+          render={() => (
+            <NavigationLayout
+              header={applicationHeader}
+              menu={panelContent}
+              menuText="Menu"
+            >
+              {mainContent}
+            </NavigationLayout>
+          )}
         />
-      </ContentContainer>
+      </Router>
     );
   }
 }

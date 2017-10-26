@@ -24,19 +24,21 @@
   "devDependencies": {
     "react-redux": "^5.0.4",
     "redux": "^3.6.0",
-    "terra-app-delegate": "^1.6.0"
+    "terra-app-delegate": "^1.6.0",
+    "react-router-dom": "^4.0.0",
+    "terra-layout": "^0.x"
   },
   "peerDependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.4",
+    "react-router-dom": "^4.0.0",
     "redux": "^3.6.0",
     "terra-app-delegate": "^1.6.0",
     "terra-base": "^2.5.0",
     "terra-button": "^1.10.0",
     "terra-menu": "^1.2.0",
-    "terra-icon": "^1.11.0",
-    "terra-layout": "^0.x"
+    "terra-icon": "^1.11.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -45,8 +47,7 @@
     "terra-button": "^1.10.0",
     "terra-menu": "^1.2.0",
     "terra-icon": "^1.11.0",
-    "terra-layout": "^0.x",
-    "terra-navigation": "^0.x"
+    "terra-layout": "*"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

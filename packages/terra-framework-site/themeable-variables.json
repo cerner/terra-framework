@@ -61,6 +61,22 @@
     "--terra-button-padding-bottom-compact": "0",
     "--terra-button-padding-top-compact": "0"
   },
+  "HookshotContent": {
+    "--terra-hookshot-content-z-index": "7001"
+  },
+  "Image": {
+    "--terra-image-rounded-border-radius": "0.3rem",
+    "--terra-image-circle-border-radius": "50%",
+    "--terra-image-thumbnail-background-color": "#fff",
+    "--terra-image-thumbnail-border-color": "#ddd",
+    "--terra-image-thumbnail-border-radius": "0.25em",
+    "--terra-image-thumbnail-border-style": "solid",
+    "--terra-image-thumbnail-border-width": "1px",
+    "--terra-image-thumbnail-padding-bottom": "0.25rem",
+    "--terra-image-thumbnail-padding-left": "0.25rem",
+    "--terra-image-thumbnail-padding-right": "0.25rem",
+    "--terra-image-thumbnail-padding-top": "0.25rem"
+  },
   "List": {
     "--terra-list-divider-border": "1px solid #dedfe0",
     "--terra-list-chevron-color": "#bcbfc0",
@@ -108,9 +124,6 @@
     "--terra-menu-item-chevron-icon-color": "#9b9fa1",
     "--terra-menu-item-chevron-icon-font-size": "10px"
   },
-  "Popup": {
-    "--terra-popup-element-z-index": "7001"
-  },
   "PopupArrow": {
     "--terra-popup-arrow-size": "11px",
     "--terra-popup-arrow-z-index": "7002",
@@ -134,8 +147,7 @@
     "--terra-popup-content-close-hover-color": "#999",
     "--terra-popup-content-inner-background-color": "#fff",
     "--terra-popup-content-inner-border": "1px solid #b2b5b6",
-    "--terra-popup-content-inner-box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.35), 0 4px 3px -3px rgba(0, 0, 0, 0.5)",
-    "--terra-popup-content-margin": "10px"
+    "--terra-popup-content-inner-box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.35), 0 4px 3px -3px rgba(0, 0, 0, 0.5)"
   },
   "PopupOverlay": {
     "--terra-popup-overlay-background-color": "#fff",

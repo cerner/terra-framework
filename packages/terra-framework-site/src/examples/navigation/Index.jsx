@@ -7,7 +7,7 @@ import { version } from 'terra-navigation/package.json';
 
 // Component Source
 /* eslint-disable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
-import NavigationSrc from '!raw-loader!terra-navigation/src/Navigation.jsx';
+import NavigationLayoutSrc from '!raw-loader!terra-navigation/src/NavigationLayout.jsx';
 import ToolbarSrc from '!raw-loader!terra-navigation/src/toolbar/Toolbar.jsx';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 
@@ -18,7 +18,7 @@ const NavigationExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
-    <PropsTable id="props-navigation" src={NavigationSrc} />
+    <PropsTable id="props-navigation" src={NavigationLayoutSrc} />
     <PropsTable id="props-toolbar" src={ToolbarSrc} />
     <h2 id="toolbar-standard">Toolbar Standard</h2>
     <ToolbarStandard />

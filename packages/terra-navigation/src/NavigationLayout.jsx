@@ -5,16 +5,15 @@ import {
 } from 'react-router-dom';
 
 import AppDelegate from 'terra-app-delegate';
-import breakpoints from 'terra-responsive-element/lib/breakpoints.scss';
 import { navigationConfigPropType } from './routing/RoutingConfigUtils';
 import Layout from 'terra-layout';
 
 const propTypes = {
   app: AppDelegate.propType,
-  applicationToolbar: PropTypes.element,
-  contentRoutingVessel: PropTypes.element,
+  header: PropTypes.element,
+  children: PropTypes.element,
   location: PropTypes.object,
-  menuRoutingVessel: PropTypes.element,
+  menu: PropTypes.element,
   menuText: PropTypes.string,
   routeConfig: navigationConfigPropType,
 };
@@ -22,7 +21,6 @@ const propTypes = {
 class NavigationLayout extends React.Component {
   static getBreakpointSize() {
     const width = window.innerWidth;
-    const { small, medium, large, huge } = breakpoints;
 
     if (width >= 1440) {
       return 'huge';
@@ -82,16 +80,16 @@ class NavigationLayout extends React.Component {
   }
 
   render() {
-    const { applicationToolbar, contentRoutingVessel, menuRoutingVessel, menuText, ...customProps } = this.props;
+    const { header, children, menu, menuText, ...customProps } = this.props;
 
     return (
       <Layout
         {...customProps}
-        header={this.decorateElement(applicationToolbar)}
-        menu={this.decorateElement(menuRoutingVessel)}
+        header={this.decorateElement(header)}
+        menu={this.decorateElement(menu)}
         menuText={menuText}
       >
-        {this.decorateElement(contentRoutingVessel)}
+        {this.decorateElement(children)}
       </Layout>
     );
   }
