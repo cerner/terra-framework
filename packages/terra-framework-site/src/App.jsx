@@ -71,6 +71,7 @@ class App extends React.Component {
         onDirChange={this.handleBidiChange}
         theme={this.state.theme}
         onThemeChange={this.handleThemeChange}
+        routeConfig={this.props.config}
       />
     );
 

@@ -7,9 +7,11 @@ import Menu from 'terra-menu';
 import Toolbar from 'terra-navigation/lib/toolbar/Toolbar';
 import Logo from 'terra-navigation/lib/toolbar/Logo';
 import Utility from 'terra-navigation/lib/toolbar/Utility';
+import NavTabs from 'terra-navigation/lib/toolbar/NavTabs';
 
 const propTypes = {
   layoutConfig: PropTypes.object,
+  routeConfig: PropTypes.object,
 
   locale: PropTypes.string,
   onLocaleChange: PropTypes.func,
@@ -84,6 +86,11 @@ class ApplicationHeader extends React.Component {
       />
     );
 
+    let navTabs;
+    if (this.props.routeConfig.navigation) {
+      navTabs = <NavTabs links={this.props.routeConfig.navigation.links} />;
+    }
+
     return (
       <Toolbar
         layoutConfig={this.props.layoutConfig}
@@ -95,6 +102,7 @@ class ApplicationHeader extends React.Component {
           />
         )}
         utility={utility}
+        content={navTabs}
       />
     );
   }

@@ -18,7 +18,7 @@ const propTypes = {
   /**
    * The AppDelegate instance provided by the containing component. If present, its properties will propagate to the children components.
    * */
-  links: PropTypes.string,
+  links: PropTypes.object,
 };
 
 const NavTabs = ({
