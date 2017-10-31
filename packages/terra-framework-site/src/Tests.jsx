@@ -18,6 +18,11 @@ const Tests = () => (
               <Route path="/tests/layout/default" component={LayoutDefault} />
               <Route path="/tests/layout/no-menu" component={LayoutNoMenu} />
               <Route path="/tests/layout/long-text" component={LayoutLongText} />
+              <Route
+                render={() => (
+                  <div>Select test...</div>
+                )}
+              />
             </Switch>
           </div>
         )}
