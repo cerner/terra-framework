@@ -2,6 +2,9 @@ import React from 'react';
 import Home from './Home';
 import Components from './Components';
 import ComponentsMenu from './ComponentsMenu';
+import Tests from './Tests';
+import TestsMenu from './TestsMenu';
+
 // import Button from 'terra-button';
 // import IconClipboard from 'terra-icon/lib/icon/IconClipboard';
 // import IconComment from 'terra-icon/lib/icon/IconComment';
@@ -53,14 +56,14 @@ const config = {
         },
       },
     },
-    // '/tests': {
-    //   path: '/tests',
-    //   component: {
-    //     default: {
-    //       componentClass: Tests,
-    //     },
-    //   },
-    // },
+    '/tests': {
+      path: '/tests',
+      component: {
+        default: {
+          componentClass: Tests,
+        },
+      },
+    },
   },
   menuRoutes: {
     '/components': {
@@ -68,6 +71,14 @@ const config = {
       component: {
         default: {
           componentClass: ComponentsMenu,
+        },
+      },
+    },
+    '/tests': {
+      path: '/tests',
+      component: {
+        default: {
+          componentClass: TestsMenu,
         },
       },
     },

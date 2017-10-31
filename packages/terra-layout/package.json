@@ -26,6 +26,9 @@
     "react-dom": "^15.4.2",
     "terra-base": "^2.5.0"
   },
+  "devDependencies": {
+    "react-router-dom": "^4.0.0"
+  },
   "dependencies": {
     "classnames": "^2.2.5",
     "lodash.debounce": "^4.0.8",
