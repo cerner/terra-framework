@@ -25,7 +25,6 @@ const NavigationExamples = () => (
     <LayoutMenuDisabled />
     <h2 id="layout-long-text">Layout w/ Long Menu Text</h2>
     <LayoutLongText />
-
   </div>
 );
 

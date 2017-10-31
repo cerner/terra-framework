@@ -42,7 +42,6 @@ const propTypes = {
 const defaultProps = {
   children: [],
   hoverIsEnabled: false,
-  isEnabled: false,
 };
 
 class HoverTarget extends React.Component {

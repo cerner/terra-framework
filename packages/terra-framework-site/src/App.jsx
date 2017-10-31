@@ -1,25 +1,19 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { HashRouter as Router, Route, Link, Redirect } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import Base from 'terra-base';
-import SlidePanel from 'terra-slide-panel';
-import Image from 'terra-image';
-import ContentContainer from 'terra-content-container';
-import List from 'terra-list';
-import IconMenu from 'terra-icon/lib/icon/IconMenu';
 import ThemeProvider from 'terra-theme-provider';
-import Menu from 'terra-menu';
-import styles from './site.scss';
-import Home from './Home';
-
 import NavigationLayout from 'terra-navigation';
-import Toolbar from 'terra-navigation/lib/toolbar/Toolbar';
-import Logo from 'terra-navigation/lib/toolbar/Logo';
-import Utility from 'terra-navigation/lib/toolbar/Utility';
+import ContentWrapper from 'terra-navigation/lib/wrappers/ContentWrapper';
+import MenuWrapper from 'terra-navigation/lib/wrappers/MenuWrapper';
+
+import ApplicationHeader from './ApplicationHeader';
+import styles from './site.scss';
 
 const propTypes = {
   children: PropTypes.node,
+  config: PropTypes.object,
 };
 
 const locale = document.getElementsByTagName('html')[0].getAttribute('lang');
@@ -42,7 +36,6 @@ class App extends React.Component {
     this.handleBidiChange = this.handleBidiChange.bind(this);
     this.handleThemeChange = this.handleThemeChange.bind(this);
     this.handleLocaleChange = this.handleLocaleChange.bind(this);
-    this.handleToggleClick = this.handleToggleClick.bind(this);
     this.handleResetScroll = this.handleResetScroll.bind(this);
   }
 
@@ -59,10 +52,6 @@ class App extends React.Component {
     this.setState({ theme: e.currentTarget.id });
   }
 
-  handleToggleClick() {
-    this.setState({ isOpen: !this.state.isOpen });
-  }
-
   handleResetScroll() {
     const element = document.getElementById('site-content-section');
     if (element && element.parentNode) {
@@ -74,93 +63,14 @@ class App extends React.Component {
   }
 
   render() {
-    const bidiContent = (
-      <Menu.ItemGroup key="site-bidi" isSelectable dir="ltr" size="medium" onChange={this.handleBidiChange}>
-        <Menu.Item id="ltr" text="ltr" key="ltr" isSelected={this.state.dir === 'ltr'} />
-        <Menu.Item id="rtl" text="rtl" key="rtl" isSelected={this.state.dir === 'rtl'} />
-      </Menu.ItemGroup>
-    );
-
-    const localeContent = (
-      <Menu.Item
-        text={`Locale: ${this.state.locale}`}
-        key="locale"
-        menuWidth="160"
-        shouldCloseOnClick={false}
-        subMenuItems={[
-          <Menu.ItemGroup isSelectable key="local-options" onChange={this.handleLocaleChange} >
-            <Menu.Item id="en" text="en" key="en" isSelected={this.state.locale === 'en'} />
-            <Menu.Item id="en-GB" text="en-GB" key="en-GB" isSelected={this.state.locale === 'en-GB'} />
-            <Menu.Item id="en-US" text="en-US" key="en-US" isSelected={this.state.locale === 'en-US'} />
-            <Menu.Item id="de" text="de" key="de" isSelected={this.state.locale === 'de'} />
-            <Menu.Item id="es" text="es" key="es" isSelected={this.state.locale === 'es'} />
-            <Menu.Item id="fr" text="fr" key="fr" isSelected={this.state.locale === 'fr'} />
-            <Menu.Item id="pt" text="pt" key="pt" isSelected={this.state.locale === 'pt'} />
-            <Menu.Item id="fi-FI" text="fi-FI" key="fi-FI" isSelected={this.state.locale === 'fi-FI'} />
-          </Menu.ItemGroup>,
-        ]}
-      />
-    );
-
-    let themeSwitcher;
-
-    function supportsCSSVars() {
-      return window.CSS && window.CSS.supports && window.CSS.supports('(--fake-var: 0)');
-    }
-
-    if (supportsCSSVars()) {
-      themeSwitcher = (
-        <Menu.Item
-          text={`Theme: ${this.state.theme}`}
-          key="theme"
-          menuWidth="160"
-          shouldCloseOnClick={false}
-          subMenuItems={[
-            <Menu.ItemGroup isSelectable key="theme-options" onChange={this.handleThemeChange} >
-              <Menu.Item id="Default Theme" text="Default Theme" key="default" isSelected={this.state.theme === 'Default Theme'} />
-              <Menu.Item id="Consumer Theme" text="Consumer Theme" key="consumer" isSelected={this.state.theme === 'Consumer Theme'} />
-              <Menu.Item id="Mock Theme" text="Mock Theme" key="mock" isSelected={this.state.theme === 'Mock Theme'} />
-            </Menu.ItemGroup>,
-          ]}
-        />
-      );
-    } else {
-      themeSwitcher = <div />;
-    }
-
-    const navHeader = (
-      <div className={styles['site-nav-header']}>
-        <Link onClick={this.handleResetScroll} to="/site">Home</Link>
-      </div>
-    );
-
-    const panelContent = (
-      <ContentContainer header={navHeader} className={styles['site-panel']} fill>
-        <List className={styles['site-nav']}>
-          <List.Item content={<Link onClick={this.handleResetScroll} to="/layout">Layout</Link>} />
-          <List.Item content={<Link onClick={this.handleResetScroll} to="/navigation">Navigation</Link>} />
-          <List.Item content={<Link onClick={this.handleResetScroll} to="/tests">Tests</Link>} />
-        </List>
-      </ContentContainer>
-    );
-
-    const utility = (
-      <Utility
-        title={'Utilities'}
-        menuItems={[themeSwitcher, localeContent, <Menu.Divider />, bidiContent]}
-      />
-    );
-
     const applicationHeader = (
-      <Toolbar
-        logo={(
-          <Logo
-            title="Terra"
-            subtitle="Framework"
-            accessory={<Image variant="rounded" src="https://github.com/cerner/terra-core/raw/master/terra.png" height="26px" width="26px" isFluid />}
-          />
-        )}
-        utility={utility}
+      <ApplicationHeader
+        locale={this.state.locale}
+        onLocaleChange={this.handleLocaleChange}
+        dir={this.state.dir}
+        onDirChange={this.handleBidiChange}
+        theme={this.state.theme}
+        onThemeChange={this.handleThemeChange}
       />
     );
 
@@ -172,13 +82,11 @@ class App extends React.Component {
               <Base style={{ height: '100%' }} locale={this.state.locale}>
                 <NavigationLayout
                   header={applicationHeader}
-                  menu={panelContent}
+                  menu={<MenuWrapper />}
                   menuText="Menu"
+                  routeConfig={this.props.config}
                 >
-                  <div style={{ height: '100%' }}>
-                    <Redirect from="/" to="/site" />
-                    <Route path="/site" component={Home} />
-                  </div>
+                  <ContentWrapper />
                 </NavigationLayout>
               </Base>
             </ThemeProvider>

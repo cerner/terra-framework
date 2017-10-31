@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 
 import AppDelegate from 'terra-app-delegate';
-import { navigationConfigPropType } from './routing/RoutingConfigUtils';
+import { navigationConfigPropType, configHasMatchingRoute } from './routing/RoutingConfigUtils';
 import Layout from 'terra-layout';
 
 const propTypes = {
@@ -80,13 +80,17 @@ class NavigationLayout extends React.Component {
   }
 
   render() {
-    const { header, children, menu, menuText, ...customProps } = this.props;
+    const { header, children, menu, menuText, routeConfig, location } = this.props;
+
+    let menuComponent;
+    if (configHasMatchingRoute(location.pathname, routeConfig.menuRoutes, this.state.size)) {
+      menuComponent = this.decorateElement(menu);
+    }
 
     return (
       <Layout
-        {...customProps}
         header={this.decorateElement(header)}
-        menu={this.decorateElement(menu)}
+        menu={menuComponent}
         menuText={menuText}
       >
         {this.decorateElement(children)}

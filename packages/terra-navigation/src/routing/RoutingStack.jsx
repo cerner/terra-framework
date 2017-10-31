@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import AppDelegate from 'terra-app-delegate';
 
-import RoutingManagerDelegate from './RoutingManagerDelegate';
+import RoutingManagerDelegate from './RoutingDelegate';
 import { flattenRouteConfig } from './RoutingConfigUtils';
 
 const propTypes = {

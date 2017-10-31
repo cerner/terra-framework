@@ -31,6 +31,9 @@ const utility = (
 
 const toolbar = () => (
   <Toolbar
+    layoutConfig={{
+      size: 'tiny',
+    }}
     logo={logo}
     utility={utility}
   />

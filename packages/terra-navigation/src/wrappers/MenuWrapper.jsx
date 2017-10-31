@@ -10,7 +10,7 @@ const propTypes = {
   size: PropTypes.string,
 };
 
-class ContentWrapper extends React.Component {
+class MenuWrapper extends React.Component {
   render() {
     const { app, routingManager, size } = this.props;
 
@@ -19,12 +19,12 @@ class ContentWrapper extends React.Component {
         app={app}
         size={size}
         routingManager={routingManager}
-        routes={routingManager.routeConfig.contentRoutes}
+        routes={routingManager.routeConfig.menuRoutes}
       />
     );
   }
 }
 
-ContentWrapper.propTypes = propTypes;
+MenuWrapper.propTypes = propTypes;
 
-export default ContentWrapper;
+export default MenuWrapper;

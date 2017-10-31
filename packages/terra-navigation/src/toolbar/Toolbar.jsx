@@ -26,14 +26,7 @@ const propTypes = {
    * Logo element to be placed at the start of the toolbar.
    * */
   logo: PropTypes.element,
-  /**
-   * Funcation callback to be executed when the toggle button is clicked.
-   * */
-  onToggleClick: PropTypes.func,
-  /**
-   * Current breakpoint size that the coming from the layout.
-   * */
-  size: PropTypes.string,
+  layoutConfig: PropTypes.object,
   /**
    * Utility element to be placed at the end of the toolbar.
    * */
@@ -45,13 +38,12 @@ const appendPropsToElement = (app, size, element) => React.cloneElement(element,
 const Toolbar = ({
   app,
   content,
-  onToggleClick,
+  layoutConfig,
   logo,
-  size,
   utility,
   ...customProps
 }) => {
-  const isCompact = size === 'tiny' || size === 'small';
+  const isCompact = layoutConfig.size === 'tiny' || layoutConfig.size === 'small';
 
   const toolbarClassNames = cx([
     'toolbar',
@@ -61,27 +53,27 @@ const Toolbar = ({
 
   let logoElement;
   if (logo) {
-    const clonedElement = appendPropsToElement(app, size, logo);
+    const clonedElement = appendPropsToElement(app, layoutConfig.size, logo);
     logoElement = <div className={cx('start')}>{clonedElement}</div>;
   }
 
   let contentElement;
   if (content) {
-    const clonedElement = appendPropsToElement(app, size, content);
+    const clonedElement = appendPropsToElement(app, layoutConfig.size, content);
     contentElement = <div className={cx('content')}>{clonedElement}</div>;
   }
 
   let utilityElement;
   if (utility) {
-    const clonedElement = appendPropsToElement(app, size, utility);
+    const clonedElement = appendPropsToElement(app, layoutConfig.size, utility);
     utilityElement = <div className={cx('end')}>{clonedElement}</div>;
   }
 
   let toolbarToggle;
-  if (onToggleClick && (size === 'tiny' || size === 'small')) {
+  if (layoutConfig.toggleMenu && isCompact) {
     toolbarToggle = (
       <div className={cx('toolbar-toggle')}>
-        <Button className={cx('toggle-button')} variant="link" icon={<IconMenu />} onClick={onToggleClick} />
+        <Button className={cx('toggle-button')} variant="link" icon={<IconMenu />} onClick={layoutConfig.toggleMenu} />
       </div>
     );
   }

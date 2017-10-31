@@ -50,7 +50,7 @@ export { navigationConfigPropType, routeConfigPropType, routePropType, component
  */
 const flattenRouteConfig = (routeConfig, size, parentPaths) => {
   if (!routeConfig) {
-    return undefined;
+    return [];
   }
 
   const routes = Object.keys(routeConfig).map((routeKey) => {

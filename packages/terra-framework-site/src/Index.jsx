@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import { Router, Route, hashHistory, IndexRoute, Redirect } from 'react-router';
 import App from './App';
-// import Home from './Home';
+import navConfig from './navConfig';
 
 // Examples
 // import LayoutExamples from './examples/layout/Index';
@@ -14,5 +14,5 @@ import App from './App';
 // import TestLinks from './TestLinks';
 
 ReactDOM.render((
-  <App />
+  <App config={navConfig} />
 ), document.getElementById('root'));
