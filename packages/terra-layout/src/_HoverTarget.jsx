@@ -55,18 +55,14 @@ class HoverTarget extends React.Component {
     this.handleOnClick = this.handleOnClick.bind(this);
     this.updateSize = this.updateSize.bind(this);
 
-    this.updateSize = debounce(() => {
-      // Due to the nature of the rotated text and therefore inverted coordinates, we need to update
-      // the width of the text element to match the available height of the container.
-      this.textElement.style.width = `${this.textContainerElement.offsetHeight}px`;
-    }, 250);
+    this.debouncedUpdateSize = debounce(this.updateSize, 250);
 
     this.listenersAdded = false;
     this.isMouseEnterActive = false;
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this.updateSize);
+    window.addEventListener('resize', this.debouncedUpdateSize);
 
     this.updateSize();
 
@@ -84,7 +80,7 @@ class HoverTarget extends React.Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.updateSize);
+    window.removeEventListener('resize', this.debouncedUpdateSize);
 
     if (this.hoverNode) {
       this.listenersAdded = this.removeListenersFromNode(this.hoverNode);
@@ -93,6 +89,12 @@ class HoverTarget extends React.Component {
 
   setHoverNode(node) {
     this.hoverNode = node;
+  }
+
+  updateSize() {
+    // Due to the nature of the rotated text and therefore inverted coordinates, we need to update
+    // the width of the text element to match the available height of the container.
+    this.textElement.style.width = `${this.textContainerElement.offsetHeight}px`;
   }
 
   updateListenersOnNode(node) {

@@ -3,7 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const LabelValueViewTests = () => (
+const LayoutTests = () => (
   <div>
     <ul>
       <li><Link to="/tests/layout-tests/default">Layout - Default </Link></li>
@@ -13,4 +13,4 @@ const LabelValueViewTests = () => (
   </div>
 );
 
-export default LabelValueViewTests;
+export default LayoutTests;
