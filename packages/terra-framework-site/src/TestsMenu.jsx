@@ -9,7 +9,7 @@ const propTypes = {
 
 const TestsMenu = () => (
   <div style={{ height: '100%', position: 'relative' }}>
-    <Link to="/tests/layout-tests">Layout</Link>
+    <Link to="/tests/layout">Layout</Link>
     <br />
   </div>
 );

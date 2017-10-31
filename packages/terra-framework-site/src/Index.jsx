@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import navConfig from './navConfig';
+import appConfig from './appConfig';
 
 ReactDOM.render((
-  <App config={navConfig} />
+  <App config={appConfig} />
 ), document.getElementById('root'));
