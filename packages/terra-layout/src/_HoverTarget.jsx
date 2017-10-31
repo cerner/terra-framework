@@ -52,7 +52,6 @@ class HoverTarget extends React.Component {
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.handleOnClick = this.handleOnClick.bind(this);
-    this.updateSize = this.updateSize.bind(this);
 
     this.updateSize = debounce(() => {
       // Due to the nature of the rotated text and therefore inverted coordinates, we need to update

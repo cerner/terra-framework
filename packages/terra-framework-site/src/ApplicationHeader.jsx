@@ -25,6 +25,8 @@ const propTypes = {
 
 class ApplicationHeader extends React.Component {
   render() {
+    const isCompactHeader = (this.props.layoutConfig.size === 'tiny' || this.props.layoutConfig.size === 'small');
+
     const bidiContent = (
       <Menu.ItemGroup key="site-bidi" isSelectable dir="ltr" size="medium" onChange={this.props.onDirChange}>
         <Menu.Item id="ltr" text="ltr" key="ltr" isSelected={this.props.dir === 'ltr'} />
@@ -87,7 +89,7 @@ class ApplicationHeader extends React.Component {
     );
 
     let navTabs;
-    if (this.props.routeConfig.navigation) {
+    if (this.props.routeConfig.navigation && !isCompactHeader) {
       navTabs = <NavTabs links={this.props.routeConfig.navigation.links} />;
     }
 
