@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import debounce from 'lodash.debounce';
 import IconChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 import 'terra-base/lib/baseStyles';
 
@@ -53,6 +54,12 @@ class HoverTarget extends React.Component {
     this.handleOnClick = this.handleOnClick.bind(this);
     this.updateSize = this.updateSize.bind(this);
 
+    this.updateSize = debounce(() => {
+      // Due to the nature of the rotated text and therefore inverted coordinates, we need to update
+      // the width of the text element to match the available height of the container.
+      this.textElement.style.width = `${this.textContainerElement.offsetHeight}px`;
+    }, 250);
+
     this.listenersAdded = false;
     this.isMouseEnterActive = false;
   }
@@ -68,6 +75,8 @@ class HoverTarget extends React.Component {
   }
 
   componentDidUpdate() {
+    this.updateSize();
+
     if (this.hoverNode) {
       this.listenersAdded = this.updateListenersOnNode(this.hoverNode);
     }
@@ -92,12 +101,6 @@ class HoverTarget extends React.Component {
       return this.removeListenersFromNode(node);
     }
     return false;
-  }
-
-  updateSize() {
-    // Due to the nature of the rotated text and therefore inverted coordinates, we need to update
-    // the width of the text element to match the available height of the container.
-    this.textElement.style.width = `${this.textContainerElement.offsetHeight}px`;
   }
 
   addListenersToNode(node) {
