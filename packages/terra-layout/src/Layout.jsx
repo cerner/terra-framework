@@ -107,28 +107,30 @@ class Layout extends React.Component {
   }
 
   renderHeader() {
-    const { header, menu } = this.props;
+    const { header } = this.props;
     const { size, menuIsOpen, isCompactLayout, menuIsPresent } = this.state;
 
     if (!header) {
       return null;
     }
 
-    const shouldDisplayMenuToggle = isCompactLayout && menuIsPresent;
+    const shouldAllowMenuToggle = isCompactLayout && menuIsPresent;
 
     return React.cloneElement(header, {
       layoutConfig: {
         size,
         isCompactLayout,
-        toggleMenu: shouldDisplayMenuToggle && this.toggleMenu,
+        toggleMenu: shouldAllowMenuToggle && this.toggleMenu,
         menuIsOpen,
       },
     });
   }
 
   renderMenu() {
-    const { menu, menuText } = this.props;
+    const { menu, header, menuText } = this.props;
     const { size, menuIsOpen, menuIsPinned, isCompactLayout, isHoverMenu, menuIsPresent } = this.state;
+
+    const shouldAllowMenuToggle = isCompactLayout && menuIsPresent;
 
     let menuHeader;
     if (!isCompactLayout && isHoverMenu) {
@@ -147,7 +149,7 @@ class Layout extends React.Component {
         layoutConfig: {
           size,
           isCompactLayout,
-          toggleMenu: this.toggleMenu,
+          toggleMenu: shouldAllowMenuToggle && this.toggleMenu,
           menuIsOpen,
         },
       });
@@ -164,8 +166,10 @@ class Layout extends React.Component {
   }
 
   renderContent() {
-    const { children } = this.props;
+    const { header, children } = this.props;
     const { size, menuIsOpen, isCompactLayout, menuIsPresent } = this.state;
+
+    const shouldAllowMenuToggle = isCompactLayout && menuIsPresent && !header;
 
     if (!children) {
       return null;
@@ -181,7 +185,7 @@ class Layout extends React.Component {
             layoutConfig: {
               size,
               isCompactLayout,
-              toggleMenu: menuIsPresent && this.toggleMenu,
+              toggleMenu: shouldAllowMenuToggle && this.toggleMenu,
               menuIsOpen,
             },
           })
