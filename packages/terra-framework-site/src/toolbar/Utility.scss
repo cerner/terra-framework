@@ -2,16 +2,13 @@
 :local {
   .utility {
     align-items: center;
+    color: #fff;
     display: flex;
     flex: 0 0 auto;
 
     & > *:not(:last-child) {
       padding-right: 5px;
     }
-  }
-
-  .is-compact {
-    color: #fff;
   }
 
   .title {

@@ -90,12 +90,9 @@ const Toolbar = ({
   }
 
   return (
-    <div>
-      {!isCompact && <div className={cx('toolbar-splash')} />}
-      <div {...customProps} className={toolbarClassNames}>
-        {toolbarToggle}
-        {toolbarBody}
-      </div>
+    <div {...customProps} className={toolbarClassNames}>
+      {toolbarToggle}
+      {toolbarBody}
     </div>
   );
 };
