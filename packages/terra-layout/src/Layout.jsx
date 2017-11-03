@@ -122,7 +122,7 @@ class Layout extends React.Component {
 
   renderMenu() {
     const { menu, menuText } = this.props;
-    const { size, menuIsOpen, menuIsPinned, isOverlayMenu, isHoverMenu, menuIsPresent } = this.state;
+    const { size, menuIsOpen, menuIsPinned, isOverlayMenu, isHoverMenu, isFixedMenu, menuIsPresent } = this.state;
     const shouldAllowMenuToggle = isOverlayMenu && menuIsPresent;
 
     if (!menuIsPresent) {
@@ -130,11 +130,11 @@ class Layout extends React.Component {
     }
 
     let menuHeader;
-    if (isHoverMenu) {
+    if (isHoverMenu || isFixedMenu) {
       menuHeader = (
         <MenuHeader
           text={menuText}
-          togglePin={this.togglePin}
+          togglePin={isHoverMenu && this.togglePin}
           isPinned={menuIsPinned}
         />
       );
