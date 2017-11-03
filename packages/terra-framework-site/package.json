@@ -26,11 +26,14 @@
     "test:jest": "jest node tests/jest/* --config ../../jestconfig.json"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "postcss": "^6.0.9",
     "prop-types": "^15.5.8",
     "react-intl": "^2.3.0",
     "react-router-dom": "^4.0.0",
+    "terra-app-delegate": "^1.7.1",
     "terra-base": "^2.6.1",
+    "terra-button": "^1.12.0",
     "terra-collapsible-menu-view": "^1.1.1",
     "terra-content-container": "^1.11.1",
     "terra-i18n": "^1.10.1",
@@ -40,6 +43,7 @@
     "terra-layout": "^0.x",
     "terra-list": "^1.12.1",
     "terra-markdown": "^1.9.1",
+    "terra-menu": "^1.6.0",
     "terra-navigation": "^0.x",
     "terra-props-table": "^1.10.1",
     "terra-slide-panel": "^1.11.1",

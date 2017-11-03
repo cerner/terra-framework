@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import Image from 'terra-image';
 import Menu from 'terra-menu';
 
-import Toolbar from 'terra-navigation/lib/toolbar/Toolbar';
-import Logo from 'terra-navigation/lib/toolbar/Logo';
-import Utility from 'terra-navigation/lib/toolbar/Utility';
-import NavTabs from 'terra-navigation/lib/toolbar/NavTabs';
+import Toolbar from './toolbar/Toolbar';
+import Logo from './toolbar/Logo';
+import Utility from './toolbar/Utility';
+import NavTabs from './toolbar/NavTabs';
 
 const propTypes = {
   layoutConfig: PropTypes.object,
