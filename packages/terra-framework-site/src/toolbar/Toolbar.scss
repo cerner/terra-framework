@@ -11,11 +11,12 @@
 
   .toolbar-toggle {
     align-items: center;
+    border-right: 1px solid #fff;
     display: flex;
     flex: 0 0 auto;
     justify-content: flex-start;
     position: relative;
-    padding-left: 5px;
+    padding: 0 3px;
   }
 
   .toolbar-body {

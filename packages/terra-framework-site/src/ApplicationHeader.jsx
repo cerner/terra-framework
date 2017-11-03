@@ -8,6 +8,7 @@ import Toolbar from './toolbar/Toolbar';
 import Logo from './toolbar/Logo';
 import Utility from './toolbar/Utility';
 import NavTabs from './toolbar/NavTabs';
+import IconSettings from 'terra-icon/lib/icon/IconSettings';
 
 const propTypes = {
   layoutConfig: PropTypes.object,
@@ -83,6 +84,7 @@ class ApplicationHeader extends React.Component {
 
     const utility = (
       <Utility
+        accessory={<IconSettings />}
         title={'Utilities'}
         menuItems={[themeSwitcher, localeContent, <Menu.Divider key="DIVIDER-1" />, bidiContent]}
       />
