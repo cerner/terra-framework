@@ -75,6 +75,10 @@
   }
 }
 
+body {
+  overflow: hidden;
+}
+
 #root {
   height: 100%;
   overflow: auto;
