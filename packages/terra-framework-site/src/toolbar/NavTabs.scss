@@ -22,7 +22,6 @@
 
   .nav-links {
     border-right: 1px solid #dedfe0;
-    box-shadow: inset -1px 0 0 0 #fff;
     color: #fff;
     display: block;
     flex: 0 0 auto;
@@ -38,12 +37,10 @@
 
     &:first-child {
       border-left: 1px solid #fff;
-      box-shadow: inset 1px 0 0 0 #dedfe0;
     }
 
     &:hover {
       background-color: #015085;
-      box-shadow: inset -1px 0 0 0 #e6e6e6;
     }
 
     &[aria-current='true'] {

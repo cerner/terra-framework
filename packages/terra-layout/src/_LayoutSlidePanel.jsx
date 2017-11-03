@@ -87,7 +87,7 @@ const LayoutSlidePanel = ({
     'panel',
     { 'is-tiny': isTiny },
     { 'is-small': isSmall },
-    { 'is-animated': isAnimated },
+    { 'is-animated': isAnimated && isOverlay && !!panelContent },
   ]);
 
   const panel = (

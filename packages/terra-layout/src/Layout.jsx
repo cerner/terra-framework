@@ -123,8 +123,11 @@ class Layout extends React.Component {
   renderMenu() {
     const { menu, menuText } = this.props;
     const { size, menuIsOpen, menuIsPinned, isOverlayMenu, isHoverMenu, menuIsPresent } = this.state;
-
     const shouldAllowMenuToggle = isOverlayMenu && menuIsPresent;
+
+    if (!menuIsPresent) {
+      return null;
+    }
 
     let menuHeader;
     if (isHoverMenu) {
@@ -152,6 +155,7 @@ class Layout extends React.Component {
       <ContentContainer
         fill
         header={menuHeader}
+        style={{ outline: 'none' }}
       >
         {menuContent}
       </ContentContainer>
@@ -172,6 +176,7 @@ class Layout extends React.Component {
       <ContentContainer
         fill
         header={isOverlayMenu && this.renderHeader()}
+        style={{ outline: 'none' }}
       >
         {(
           React.cloneElement(children, {
