@@ -86,6 +86,7 @@ class App extends React.Component {
                   menu={<MenuWrapper />}
                   menuText="Menu"
                   routeConfig={this.props.config}
+                  enableHoverMenu
                 >
                   <ContentWrapper />
                 </NavigationLayout>

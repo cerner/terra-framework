@@ -2,7 +2,6 @@ import React from 'react';
 // import AppDelegate from 'terra-app-delegate';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 
-import LayoutTests from 'terra-layout/tests/nightwatch/LayoutTests';
 import LayoutDefault from 'terra-layout/tests/nightwatch/LayoutDefault';
 import LayoutNoMenu from 'terra-layout/tests/nightwatch/LayoutNoMenu';
 import LayoutLongText from 'terra-layout/tests/nightwatch/LayoutLongText';

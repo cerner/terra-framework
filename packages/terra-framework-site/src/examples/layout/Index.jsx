@@ -13,6 +13,7 @@ import LayoutSrc from '!raw-loader!terra-layout/src/Layout.jsx';
 import LayoutStandard from './LayoutStandard';
 import LayoutMenuDisabled from './LayoutMenuDisabled';
 import LayoutLongText from './LayoutLongText';
+import LayoutNoHeader from './LayoutNoHeader';
 
 const NavigationExamples = () => (
   <div>
@@ -25,6 +26,8 @@ const NavigationExamples = () => (
     <LayoutMenuDisabled />
     <h2 id="layout-long-text">Layout w/ Long Menu Text</h2>
     <LayoutLongText />
+    <h2 id="layout-no-header">Layout w/ No Header</h2>
+    <LayoutNoHeader />
   </div>
 );
 
