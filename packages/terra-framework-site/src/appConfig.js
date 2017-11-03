@@ -3,6 +3,7 @@ import Components from './Components';
 import ComponentsMenu from './ComponentsMenu';
 import Tests from './Tests';
 import TestsMenu from './TestsMenu';
+import RootMenu from './RootMenu';
 
 import testConfig from './testConfig';
 
@@ -50,22 +51,35 @@ const config = {
     },
   },
   menuRoutes: {
-    '/components': {
-      path: '/components',
+    '/': {
+      path: '/',
       component: {
-        default: {
-          componentClass: ComponentsMenu,
+        tiny: {
+          componentClass: RootMenu,
+        },
+        small: {
+          componentClass: RootMenu,
         },
       },
-    },
-    '/tests': {
-      path: '/tests',
-      component: {
-        default: {
-          componentClass: TestsMenu,
+      children: {
+        '/components': {
+          path: '/components',
+          component: {
+            default: {
+              componentClass: ComponentsMenu,
+            },
+          },
+        },
+        '/tests': {
+          path: '/tests',
+          component: {
+            default: {
+              componentClass: TestsMenu,
+            },
+          },
+          children: testConfig,
         },
       },
-      children: testConfig,
     },
   },
 };

@@ -57,7 +57,6 @@ const flattenRouteConfig = (routeConfig, size, parentPaths) => {
     const config = routeConfig[routeKey];
 
     let componentConfig;
-
     if (typeof (config.component) === 'object') {
       const configForSize = config.component[size];
 

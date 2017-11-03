@@ -16,12 +16,12 @@ const propTypes = {
 
 class BaseWrapper extends React.Component {
   render() {
-    const { app, routingManager, routes, size } = this.props;
+    const { app, routingManager, routes } = this.props;
 
     return (
       <div style={{ height: '100%' }}>
         <RoutingStack
-          size={size}
+          size={routingManager.size}
           navEnabled
           app={app}
           routeConfig={routes}

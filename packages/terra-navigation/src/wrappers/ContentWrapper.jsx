@@ -12,12 +12,11 @@ const propTypes = {
 
 class ContentWrapper extends React.Component {
   render() {
-    const { app, routingManager, size } = this.props;
+    const { app, routingManager } = this.props;
 
     return (
       <BaseWrapper
         app={app}
-        size={size}
         routingManager={routingManager}
         routes={routingManager.routeConfig.contentRoutes}
       />

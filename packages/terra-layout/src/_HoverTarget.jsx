@@ -92,7 +92,9 @@ class HoverTarget extends React.Component {
   updateSize() {
     // Due to the nature of the rotated text and therefore inverted coordinates, we need to update
     // the width of the text element to match the available height of the container.
-    this.textElement.style.width = `${this.textContainerElement.offsetHeight}px`;
+    if (this.textElement) {
+      this.textElement.style.width = `${this.textContainerElement.offsetHeight}px`;
+    }
   }
 
   updateListenersOnNode(node) {
