@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import ContentContainer from 'terra-content-container';
 
 import LayoutSlidePanel from './_LayoutSlidePanel';
-import MenuHeader from './_MenuHeader';
 import {
   getBreakpointSize,
   getCustomProps,
@@ -22,17 +21,10 @@ const propTypes = {
    * String used to decorate menu controls.
    */
   menuText: PropTypes.string,
-
-  menuType: PropTypes.oneOf(['hover', 'fixed']),
-
   /**
    * Element to be placed within the main content section of the layout.
    */
   children: PropTypes.element,
-};
-
-const defaultProps = {
-  menuType: 'hover',
 };
 
 class Layout extends React.Component {
@@ -121,45 +113,23 @@ class Layout extends React.Component {
   }
 
   renderMenu() {
-    const { menu, menuText } = this.props;
-    const { size, menuIsOpen, menuIsPinned, isOverlayMenu, isHoverMenu, isFixedMenu, menuIsPresent } = this.state;
+    const { menu } = this.props;
+    const { size, menuIsOpen, menuIsPinned, isOverlayMenu, isHoverMenu, menuIsPresent } = this.state;
     const shouldAllowMenuToggle = isOverlayMenu && menuIsPresent;
 
     if (!menuIsPresent) {
       return null;
     }
 
-    let menuHeader;
-    if (isHoverMenu || isFixedMenu) {
-      menuHeader = (
-        <MenuHeader
-          text={menuText}
-          togglePin={isHoverMenu && this.togglePin}
-          isPinned={menuIsPinned}
-        />
-      );
-    }
-
-    let menuContent;
-    if (menuIsPresent) {
-      menuContent = React.cloneElement(menu, {
-        layoutConfig: {
-          size,
-          toggleMenu: shouldAllowMenuToggle && this.toggleMenu,
-          menuIsOpen,
-        },
-      });
-    }
-
-    return (
-      <ContentContainer
-        fill
-        header={menuHeader}
-        style={{ outline: 'none' }}
-      >
-        {menuContent}
-      </ContentContainer>
-    );
+    return React.cloneElement(menu, {
+      layoutConfig: {
+        size,
+        toggleMenu: shouldAllowMenuToggle && this.toggleMenu,
+        menuIsOpen,
+        togglePin: isHoverMenu ? this.togglePin : undefined,
+        menuIsPinned,
+      },
+    });
   }
 
   renderContent() {
@@ -219,6 +189,5 @@ class Layout extends React.Component {
 }
 
 Layout.propTypes = propTypes;
-Layout.defaultProps = defaultProps;
 
 export default Layout;
