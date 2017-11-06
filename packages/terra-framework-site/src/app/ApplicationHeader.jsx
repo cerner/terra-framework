@@ -3,12 +3,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Image from 'terra-image';
 import Menu from 'terra-menu';
-
-import Toolbar from './toolbar/Toolbar';
-import Logo from './toolbar/Logo';
-import Utility from './toolbar/Utility';
-import NavTabs from './toolbar/NavTabs';
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
+
+import Toolbar from './common/toolbar/Toolbar';
+import Logo from './common/toolbar/Logo';
+import Utility from './common/toolbar/Utility';
+import NavTabs from './common/toolbar/NavTabs';
 
 const propTypes = {
   layoutConfig: PropTypes.object,

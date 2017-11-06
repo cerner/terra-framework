@@ -2,8 +2,8 @@ import React from 'react';
 // import AppDelegate from 'terra-app-delegate';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 
-import LayoutExamples from './examples/layout/Index';
-import NavigationExamples from './examples/navigation/Index';
+import LayoutExamples from '../../examples/layout/Index';
+import NavigationExamples from '../../examples/navigation/Index';
 
 const propTypes = {
 //   app: AppDelegate.propType,

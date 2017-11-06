@@ -1,4 +1,4 @@
-import LayoutTests from 'terra-layout/tests/nightwatch/LayoutTests';
+import LayoutTests from './LayoutTests';
 
 const menuConfig = {
   '/tests/layout': {

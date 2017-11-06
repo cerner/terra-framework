@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import appConfig from './appConfig';
+import App from './app/App';
+import appConfig from './app/appConfig';
 
 ReactDOM.render((
   <App config={appConfig} />

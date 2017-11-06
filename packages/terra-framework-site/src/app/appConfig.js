@@ -1,11 +1,11 @@
-import Home from './Home';
-import Components from './Components';
-import ComponentsMenu from './ComponentsMenu';
-import Tests from './Tests';
-import TestsMenu from './TestsMenu';
-import RootMenu from './RootMenu';
+import Home from './home/Home';
+import Components from './components/Components';
+import ComponentsMenu from './components/ComponentsMenu';
+import Tests from './tests/Tests';
+import TestsMenu from './tests/TestsMenu';
+import ApplicationMenu from './ApplicationMenu';
 
-import testConfig from './testConfig';
+import testConfig from './tests/testConfig';
 
 const config = {
   navigation: {
@@ -13,15 +13,12 @@ const config = {
     links: [{
       path: '/home',
       text: 'Home',
-    //   component: ChartMenuIcon,
     }, {
       path: '/components',
       text: 'Components',
-    //   component: AlertsMenuIcon,
     }, {
       path: '/tests',
       text: 'Tests',
-    //   component: AlertsMenuIcon,
     }],
   },
   contentRoutes: {
@@ -55,10 +52,10 @@ const config = {
       path: '/',
       component: {
         tiny: {
-          componentClass: RootMenu,
+          componentClass: ApplicationMenu,
         },
         small: {
-          componentClass: RootMenu,
+          componentClass: ApplicationMenu,
         },
       },
       children: {
