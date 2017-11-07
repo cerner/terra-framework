@@ -37,22 +37,23 @@ module.exports = resizeTo(['small', 'large', 'huge'], {
   'Displays a layout with no menu': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/layout/no-menu`);
 
-    browser.expect.element('#test-header').to.be.present;
-    browser.expect.element('#test-content').to.be.present;
-    browser.expect.element('#test-menu').to.not.be.present;
+    browser.expect.element('#layout-tests-root #test-header').to.be.present;
+    browser.expect.element('#layout-tests-root #test-content').to.be.present;
+    browser.expect.element('#layout-tests-root #test-menu').to.not.be.present;
     browser.expect.element('#layout-tests-root [class*=_hover-section_]').to.not.be.visible;
   },
 
   'Displays a layout with long menu control text': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/layout/long-text`);
 
-    browser.expect.element('#test-header').to.be.present;
-    browser.expect.element('#test-content').to.be.present;
-    browser.expect.element('#test-menu').to.be.present;
+    browser.expect.element('#layout-tests-root #test-header').to.be.present;
+    browser.expect.element('#layout-tests-root #test-content').to.be.present;
+    browser.expect.element('#layout-tests-root #test-menu').to.be.present;
 
     const width = screenWidth(browser);
 
     if (width < browser.globals.breakpoints.huge[0] && width >= browser.globals.breakpoints.large[0]) {
+      browser.expect.element('#layout-tests-root #test-menu').to.not.be.visible;
       browser.expect.element('#layout-tests-root [class*=_hover-section_]').to.be.present;
       browser.expect.element('#layout-tests-root [class*=_hover-section_]').text.to.equal('Menu Text That Is Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Long');
     }
