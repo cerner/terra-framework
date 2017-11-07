@@ -24,10 +24,13 @@ module.exports = resizeTo(['small', 'large', 'huge'], {
       browser.waitForElementVisible('#layout-tests-root [class*=_hover-section_]', 1000);
       browser.expect.element('#layout-tests-root [class*=_hover-section_]').to.be.visible;
 
-      // browser.click('#layout-tests-root [class*=_hover-section_]', () => {
-      //   browser.waitForElementVisible('#test-menu', 1000);
-      //   browser.expect.element('#test-menu').to.be.visible;
-      // });
+      browser.click('#layout-tests-root [class*=_hover-section_]', () => {
+        browser.waitForElementVisible('#test-menu', 1000);
+        browser.expect.element('#test-menu').to.be.visible;
+
+        // Resetting pointer position
+        browser.click('#layout-tests-root #test-header');
+      });
     } else {
       browser.expect.element('#layout-tests-root #test-menu').to.be.visible;
       browser.expect.element('#layout-tests-root #test-content .test-content-toggle').to.not.be.present;
