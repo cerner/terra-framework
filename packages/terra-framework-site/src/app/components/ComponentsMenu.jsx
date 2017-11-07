@@ -2,10 +2,10 @@ import React from 'react';
 // import AppDelegate from 'terra-app-delegate';
 import { withRouter } from 'react-router-dom';
 import MenuList from '../common/menu/MenuList';
+import RoutingDelegate from '../common/navigation/routing/RoutingDelegate';
 
 const propTypes = {
-//   app: AppDelegate.propType,
-//   routingManager: RoutingManagerDelegate.propType,
+  routingManager: RoutingDelegate.propType,
 };
 
 const ComponentsMenu = props => (

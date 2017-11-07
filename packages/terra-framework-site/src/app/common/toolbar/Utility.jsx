@@ -43,10 +43,6 @@ const propTypes = {
   title: PropTypes.string,
 };
 
-const defaultProps = {
-  menuBreakpoint: 'tiny',
-};
-
 class Utility extends React.Component {
 
   constructor(props) {
@@ -102,8 +98,8 @@ class Utility extends React.Component {
         </Button>
       </div>
     );
-  };  
-};
+  }
+}
 
 Utility.propTypes = propTypes;
 Utility.Item = Menu.Item;

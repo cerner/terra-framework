@@ -7,14 +7,13 @@ import IconLeft from 'terra-icon/lib/icon/IconLeft';
 import IconHouse from 'terra-icon/lib/icon/IconHouse';
 import Button from 'terra-button';
 
+import RoutingDelegate from '../navigation/routing/RoutingDelegate';
+
 // import RoutingManagerDelegate from '../RoutingManagerDelegate';
 import './MenuToolbar.scss';
 
 const propTypes = {
-  /**
-   * The AppDelegate instance provided by the containing component. If present, its properties will propagate to the children components.
-   * */
-//   routingManager: RoutingManagerDelegate.propType,
+  routingManager: RoutingDelegate.propType,
   backButtonOverride: PropTypes.node,
   text: PropTypes.string,
 };

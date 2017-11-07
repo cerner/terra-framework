@@ -9,10 +9,9 @@ import ContentWrapper from './common/navigation/wrappers/ContentWrapper';
 import MenuWrapper from './common/navigation/wrappers/MenuWrapper';
 
 import ApplicationHeader from './ApplicationHeader';
-import styles from './site.scss';
+import './App.scss';
 
 const propTypes = {
-  children: PropTypes.node,
   config: PropTypes.object,
 };
 
@@ -79,7 +78,7 @@ class App extends React.Component {
       <Router>
         <Route
           render={() => (
-            <ThemeProvider id="site-content-section" themeName={themes[this.state.theme]} isGlobalTheme>
+            <ThemeProvider id="framework-site" themeName={themes[this.state.theme]} isGlobalTheme>
               <Base style={{ height: '100%' }} locale={this.state.locale}>
                 <NavigationLayout
                   header={applicationHeader}

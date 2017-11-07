@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const menu = ({ layoutConfig }) => (
   <div style={{ height: 'calc(100% - 10px)', width: 'calc(100% - 10px)', border: '4px dashed lightgrey', margin: '5px', position: 'relative' }}>
@@ -10,5 +11,13 @@ const menu = ({ layoutConfig }) => (
     </div>
   </div>
 );
+
+menu.propTypes = {
+  layoutConfig: PropTypes.shape({
+    toggleMenu: PropTypes.func,
+    togglePin: PropTypes.func,
+    menuIsPinned: PropTypes.bool,
+  }),
+};
 
 export default menu;

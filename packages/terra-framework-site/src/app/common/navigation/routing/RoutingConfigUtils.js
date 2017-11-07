@@ -24,6 +24,8 @@ const componentConfigPropType = PropTypes.objectOf((propValue, key, componentNam
   if (!valueIsValid) {
     return new Error(`Invalid prop '${propFullName}' supplied to '${componentName}'. Validation failed.`);
   }
+
+  return true;
 });
 
 const routePropType = PropTypes.shape({

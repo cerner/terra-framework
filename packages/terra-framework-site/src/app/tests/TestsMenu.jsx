@@ -1,11 +1,10 @@
 import React from 'react';
-// import AppDelegate from 'terra-app-delegate';
 import { withRouter } from 'react-router-dom';
 import MenuList from '../common/menu/MenuList';
+import RoutingDelegate from '../common/navigation/routing/RoutingDelegate';
 
 const propTypes = {
-//   app: AppDelegate.propType,
-//   routingManager: RoutingManagerDelegate.propType,
+  routingManager: RoutingDelegate.propType,
 };
 
 const TestsMenu = props => (
@@ -13,7 +12,7 @@ const TestsMenu = props => (
     headerText="Tests"
     routingManager={props.routingManager}
     links={[
-      { id: '/tests/layout', path: '/tests/layout', text: 'Layout Tests' },
+      { id: '/tests/layout', path: '/tests/layout', text: 'Layout' },
     ]}
   />
 );

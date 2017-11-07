@@ -4,13 +4,13 @@ import { withRouter } from 'react-router-dom';
 import ContentContainer from 'terra-content-container';
 import Image from 'terra-image';
 import MenuList from './common/menu/MenuList';
+import RoutingDelegate from './common/navigation/routing/RoutingDelegate';
 
 const propTypes = {
-//   app: AppDelegate.propType,
-//   routingManager: RoutingManagerDelegate.propType,
+  routingManager: RoutingDelegate.propType,
 };
 
-const ApplicationMenu = ({ layoutConfig, routingManager }) => (
+const ApplicationMenu = ({ routingManager }) => (
   <ContentContainer
     fill
     header={(
