@@ -13,7 +13,7 @@ module.exports = resizeTo(['small', 'large', 'huge'], {
     const width = screenWidth(browser);
 
     if (width < browser.globals.breakpoints.medium[0]) {
-      browser.expect.element('#layout-tests-root [class*=hover-section]').to.not.be.visible;
+      browser.expect.element('#layout-tests-root [class*=_hover-section_]').to.not.be.visible;
 
       browser.click('#layout-tests-root .test-header-toggle', () => {
         browser.expect.element('#layout-tests-root #test-menu').to.be.visible;
@@ -21,9 +21,10 @@ module.exports = resizeTo(['small', 'large', 'huge'], {
       });
     } else if (width < browser.globals.breakpoints.huge[0]) {
       browser.expect.element('#layout-tests-root #test-menu').to.not.be.visible;
-      browser.expect.element('#layout-tests-root [class*=hover-section]').to.be.visible;
+      browser.waitForElementVisible('#layout-tests-root [class*=_hover-section_]', 1000);
+      browser.expect.element('#layout-tests-root [class*=_hover-section_]').to.be.visible;
 
-      browser.click('#layout-tests-root [class*=hover-section]', () => {
+      browser.click('#layout-tests-root [class*=_hover-section_]', () => {
         browser.waitForElementVisible('#test-menu', 1000);
         browser.expect.element('#test-menu').to.be.visible;
       });
@@ -39,7 +40,7 @@ module.exports = resizeTo(['small', 'large', 'huge'], {
     browser.expect.element('#test-header').to.be.present;
     browser.expect.element('#test-content').to.be.present;
     browser.expect.element('#test-menu').to.not.be.present;
-    browser.expect.element('#layout-tests-root [class*=hover-section]').to.not.be.visible;
+    browser.expect.element('#layout-tests-root [class*=_hover-section_]').to.not.be.visible;
   },
 
   'Displays a layout with long menu control text': (browser) => {
@@ -52,9 +53,9 @@ module.exports = resizeTo(['small', 'large', 'huge'], {
     const width = screenWidth(browser);
 
     if (width < browser.globals.breakpoints.huge[0] && width >= browser.globals.breakpoints.large[0]) {
-      browser.waitForElementVisible('#layout-tests-root [class*=hover-section]', 1000);
-      browser.expect.element('#layout-tests-root [class*=hover-section]').to.be.visible;
-      browser.expect.element('#layout-tests-root [class*=hover-section]').text.to.equal('Menu Text That Is Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Long');
+      browser.waitForElementVisible('#layout-tests-root [class*=_hover-section_]', 1000);
+      browser.expect.element('#layout-tests-root [class*=_hover-section_]').to.be.visible;
+      browser.expect.element('#layout-tests-root [class*=_hover-section_]').text.to.equal('Menu Text That Is Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Long');
     }
   },
 
@@ -68,7 +69,7 @@ module.exports = resizeTo(['small', 'large', 'huge'], {
     const width = screenWidth(browser);
 
     if (width < browser.globals.breakpoints.medium[0]) {
-      browser.expect.element('#layout-tests-root [class*=hover-section]').to.not.be.visible;
+      browser.expect.element('#layout-tests-root [class*=_hover-section_]').to.not.be.visible;
 
       browser.click('#layout-tests-root .test-content-toggle', () => {
         browser.expect.element('#layout-tests-root #test-menu').to.be.visible;
@@ -76,9 +77,9 @@ module.exports = resizeTo(['small', 'large', 'huge'], {
       });
     } else if (width < browser.globals.breakpoints.huge[0]) {
       browser.expect.element('#layout-tests-root #test-menu').to.not.be.visible;
-      browser.expect.element('#layout-tests-root [class*=hover-section]').to.be.visible;
+      browser.expect.element('#layout-tests-root [class*=_hover-section_]').to.be.visible;
 
-      browser.click('#layout-tests-root [class*=hover-section]', () => {
+      browser.click('#layout-tests-root [class*=_hover-section_]', () => {
         browser.waitForElementVisible('#test-menu', 1000);
         browser.expect.element('#test-menu').to.be.visible;
       });
