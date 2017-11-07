@@ -57,7 +57,7 @@ module.exports = resizeTo(['small', 'large', 'huge'], {
     const width = screenWidth(browser);
 
     if (width < browser.globals.breakpoints.huge[0] && width >= browser.globals.breakpoints.large[0]) {
-      console.log(`width: ${width}`);
+      browser.waitForElementVisible('#layout-tests-root [class*=hover-section]', 300);
       browser.expect.element('#layout-tests-root [class*=hover-section]').to.be.visible;
       browser.expect.element('#layout-tests-root [class*=hover-section]').text.to.equal('Menu Text That Is Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Long');
     }
