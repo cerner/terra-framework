@@ -16,6 +16,7 @@ const LayoutTests = props => (
       { id: '/tests/layout/default', path: '/tests/layout/default', text: 'Default' },
       { id: '/tests/layout/no-menu', path: '/tests/layout/no-menu', text: 'No Menu' },
       { id: '/tests/layout/long-text', path: '/tests/layout/long-text', text: 'Long Menu Text' },
+      { id: '/tests/layout/no-header', path: '/tests/layout/no-header', text: 'No Header' },
     ]}
   />
 );

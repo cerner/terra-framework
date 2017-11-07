@@ -10,7 +10,6 @@ import { navigationConfigPropType, configHasMatchingRoute } from './routing/Rout
 
 const propTypes = {
   app: AppDelegate.propType,
-  enableHoverMenu: PropTypes.bool,
   header: PropTypes.element,
   children: PropTypes.element,
   location: PropTypes.object,
@@ -81,7 +80,7 @@ class NavigationLayout extends React.Component {
   }
 
   render() {
-    const { header, children, menu, menuText, routeConfig, location, enableHoverMenu } = this.props;
+    const { header, children, menu, menuText, routeConfig, location } = this.props;
 
     let menuComponent;
     if (configHasMatchingRoute(location.pathname, routeConfig.menuRoutes, this.state.size)) {
@@ -93,7 +92,6 @@ class NavigationLayout extends React.Component {
         header={this.decorateElement(header)}
         menu={menuComponent}
         menuText={menuText}
-        enableHoverMenu={enableHoverMenu}
       >
         {this.decorateElement(children)}
       </Layout>
