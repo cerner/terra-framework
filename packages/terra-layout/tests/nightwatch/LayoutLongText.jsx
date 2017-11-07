@@ -6,6 +6,7 @@ import TestContent from './TestContent';
 
 const LayoutLongText = () => (
   <Layout
+    key="layout-long-text"
     header={<TestHeader />}
     menu={<TestMenu />}
     menuText="Menu Text That Is Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Long"

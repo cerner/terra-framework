@@ -5,6 +5,7 @@ import TestContent from './TestContent';
 
 const LayoutNoHeader = () => (
   <Layout
+    key="layout-no-header"
     menu={<TestMenu />}
     menuText="Menu Text"
   >
