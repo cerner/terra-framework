@@ -53,8 +53,7 @@ module.exports = resizeTo(['small', 'large', 'huge'], {
     const width = screenWidth(browser);
 
     if (width < browser.globals.breakpoints.huge[0] && width >= browser.globals.breakpoints.large[0]) {
-      browser.waitForElementVisible('#layout-tests-root [class*=_hover-section_]', 1000);
-      browser.expect.element('#layout-tests-root [class*=_hover-section_]').to.be.visible;
+      browser.expect.element('#layout-tests-root [class*=_hover-section_]').to.be.present;
       browser.expect.element('#layout-tests-root [class*=_hover-section_]').text.to.equal('Menu Text That Is Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Long');
     }
   },
