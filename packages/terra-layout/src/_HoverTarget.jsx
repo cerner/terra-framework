@@ -43,7 +43,6 @@ const propTypes = {
 const defaultProps = {
   children: [],
   hoverIsEnabled: false,
-  isEnabled: false,
 };
 
 class HoverTarget extends React.Component {
@@ -53,7 +52,6 @@ class HoverTarget extends React.Component {
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.handleOnClick = this.handleOnClick.bind(this);
-    this.updateSize = this.updateSize.bind(this);
 
     this.debouncedUpdateSize = debounce(this.updateSize, 250);
 
@@ -94,7 +92,9 @@ class HoverTarget extends React.Component {
   updateSize() {
     // Due to the nature of the rotated text and therefore inverted coordinates, we need to update
     // the width of the text element to match the available height of the container.
-    this.textElement.style.width = `${this.textContainerElement.offsetHeight}px`;
+    if (this.textElement) {
+      this.textElement.style.width = `${this.textContainerElement.offsetHeight}px`;
+    }
   }
 
   updateListenersOnNode(node) {

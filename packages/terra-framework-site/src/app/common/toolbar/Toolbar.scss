@@ -1,0 +1,63 @@
+/* stylelint-disable selector-class-pattern */
+:local {
+  .toolbar {
+    background-color: #2481ca;
+    display: flex;
+    justify-content: space-between;
+    height: 35px;
+    position: relative;
+    width: 100%;
+  }
+
+  .toolbar-toggle {
+    align-items: center;
+    border-right: 1px solid #fff;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: flex-start;
+    position: relative;
+    padding: 0 3px;
+  }
+
+  .toolbar-body {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: space-between;
+    max-height: 100%;
+    min-width: 0;
+    position: relative;
+    width: 100%;
+  }
+
+  .toggle-button {
+    color: #fff;
+  }
+
+  .start {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: flex-start;
+    max-width: 50%;
+    min-width: 260px;
+    position: relative;
+  }
+
+  .content {
+    align-items: center;
+    display: flex;
+    flex: 1 1 auto;
+    min-width: 0;
+    position: relative;
+  }
+
+  .end {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: flex-end;
+    max-width: 50%;
+    position: relative;
+    padding-right: 10px;
+  }
+}

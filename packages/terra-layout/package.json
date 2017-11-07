@@ -10,21 +10,24 @@
   "keywords": [
     "Cerner",
     "Terra",
-    "Clinical",
-    "terra-clinical-layout",
+    "Framework",
+    "terra-layout",
     "Layout",
     "UI"
   ],
   "author": "Cerner Corporation",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/cerner/terra-clinical/issues"
+    "url": "https://github.com/cerner/terra-framework/issues"
   },
-  "homepage": "https://github.com/cerner/terra-clinical#readme",
+  "homepage": "https://github.com/cerner/terra-framework#readme",
   "peerDependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "terra-base": "^2.5.0"
+  },
+  "devDependencies": {
+    "react-router-dom": "^4.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",

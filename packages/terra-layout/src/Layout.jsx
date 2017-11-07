@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import ContentContainer from 'terra-content-container';
 
 import LayoutSlidePanel from './_LayoutSlidePanel';
-import MenuHeader from './_MenuHeader';
 import {
   getBreakpointSize,
   getCustomProps,
@@ -19,7 +18,7 @@ const propTypes = {
    */
   menu: PropTypes.element,
   /**
-   * String used to decorate menu controls.
+   * String used to decorate menu hover control.
    */
   menuText: PropTypes.string,
   /**
@@ -28,28 +27,37 @@ const propTypes = {
   children: PropTypes.element,
 };
 
-const COMPACT_SIZES = ['tiny', 'small'];
-const isSizeCompact = size => (
-  COMPACT_SIZES.indexOf(size) >= 0
-);
-
 class Layout extends React.Component {
+  static stateForProps(props, currentState) {
+    const isFixedMenu = currentState.size === 'large' || currentState.size === 'huge';
+    const isHoverMenu = currentState.size === 'medium';
+    const isToggleMenu = currentState.size === 'tiny' || currentState.size === 'small';
+
+    const menuIsPresent = !!props.menu;
+
+    return Object.assign({}, currentState || {}, {
+      isHoverMenu,
+      isFixedMenu,
+      isToggleMenu,
+      menuIsPresent,
+      menuIsOpen: menuIsPresent && (currentState.menuIsOpen || isFixedMenu),
+      menuIsPinned: menuIsPresent && currentState.menuIsPinned && isHoverMenu,
+    });
+  }
+
   constructor(props) {
     super(props);
 
     this.toggleMenu = this.toggleMenu.bind(this);
     this.togglePin = this.togglePin.bind(this);
     this.updateSize = this.updateSize.bind(this);
-    this.isCompactLayout = this.isCompactLayout.bind(this);
     this.renderHeader = this.renderHeader.bind(this);
     this.renderMenu = this.renderMenu.bind(this);
     this.renderContent = this.renderContent.bind(this);
 
-    this.state = {
-      menuIsOpen: false,
-      menuIsPinned: false,
+    this.state = Layout.stateForProps(props, {
       size: getBreakpointSize(),
-    };
+    });
   }
 
   componentDidMount() {
@@ -57,10 +65,7 @@ class Layout extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({
-      menuIsOpen: !!nextProps.menu && this.state.menuIsOpen,
-      menuIsPinned: !!nextProps.menu && this.state.menuIsPinned,
-    });
+    this.setState(Layout.stateForProps(nextProps, this.state));
   }
 
   componentWillUnmount() {
@@ -71,23 +76,16 @@ class Layout extends React.Component {
     const newSize = getBreakpointSize();
 
     if (this.state.size !== newSize) {
-      const newMenuIsPinned = !!this.props.menu && !isSizeCompact(newSize) && this.state.menuIsPinned;
-      const newMenuIsOpen = !!this.props.menu && this.state.menuIsOpen && newMenuIsPinned;
-
-      this.setState({
+      this.setState(Layout.stateForProps(this.props, {
         size: newSize,
-        menuIsOpen: newMenuIsOpen,
-        menuIsPinned: newMenuIsPinned,
-      });
+      }));
     }
   }
 
   toggleMenu() {
-    if (!this.state.menuIsPinned) {
-      this.setState({
-        menuIsOpen: !this.state.menuIsOpen,
-      });
-    }
+    this.setState({
+      menuIsOpen: !this.state.menuIsOpen,
+    });
   }
 
   togglePin() {
@@ -96,90 +94,65 @@ class Layout extends React.Component {
     });
   }
 
-  isCompactLayout() {
-    return isSizeCompact(this.state.size);
-  }
-
   renderHeader() {
-    const { header, menu } = this.props;
-    const { size, menuIsOpen } = this.state;
+    const { header } = this.props;
+    const { size, menuIsOpen, isToggleMenu, menuIsPresent } = this.state;
 
     if (!header) {
       return null;
     }
 
-    const isCompactLayout = this.isCompactLayout();
-    const shouldDisplayMenuToggle = isCompactLayout && !!menu;
+    const shouldAllowMenuToggle = isToggleMenu && menuIsPresent;
 
     return React.cloneElement(header, {
       layoutConfig: {
         size,
-        isCompactLayout,
-        toggleMenu: shouldDisplayMenuToggle && this.toggleMenu,
+        toggleMenu: shouldAllowMenuToggle ? this.toggleMenu : undefined,
         menuIsOpen,
       },
     });
   }
 
   renderMenu() {
-    const { menu, menuText } = this.props;
-    const { size, menuIsOpen, menuIsPinned } = this.state;
-    const isCompactLayout = this.isCompactLayout();
+    const { menu } = this.props;
+    const { size, menuIsOpen, menuIsPinned, isToggleMenu, isHoverMenu, menuIsPresent } = this.state;
+    const shouldAllowMenuToggle = isToggleMenu && menuIsPresent;
 
-    let menuHeader;
-    if (!isCompactLayout) {
-      menuHeader = (
-        <MenuHeader
-          text={menuText}
-          togglePin={!isCompactLayout && this.togglePin}
-          isPinned={!isCompactLayout && menuIsPinned}
-        />
-      );
+    if (!menuIsPresent) {
+      return null;
     }
 
-    let menuContent;
-    if (menu) {
-      menuContent = React.cloneElement(menu, {
-        layoutConfig: {
-          size,
-          isCompactLayout,
-          toggleMenu: this.toggleMenu,
-          menuIsOpen,
-        },
-      });
-    }
-
-    return (
-      <ContentContainer
-        fill
-        header={menuHeader}
-      >
-        {menuContent}
-      </ContentContainer>
-    );
+    return React.cloneElement(menu, {
+      layoutConfig: {
+        size,
+        toggleMenu: shouldAllowMenuToggle ? this.toggleMenu : undefined,
+        menuIsOpen,
+        togglePin: isHoverMenu ? this.togglePin : undefined,
+        menuIsPinned,
+      },
+    });
   }
 
   renderContent() {
     const { children } = this.props;
-    const { size, menuIsOpen } = this.state;
+    const { size, menuIsOpen, isToggleMenu, menuIsPresent } = this.state;
+    const shouldAllowMenuToggle = isToggleMenu && menuIsPresent;
 
     if (!children) {
       return null;
     }
 
-    const isCompactLayout = this.isCompactLayout();
-
     return (
       <ContentContainer
         fill
-        header={isCompactLayout && this.renderHeader()}
+        header={isToggleMenu && this.renderHeader()}
+        style={{ outline: 'none' }}
       >
         {(
           React.cloneElement(children, {
             layoutConfig: {
               size,
-              isCompactLayout,
-              toggleMenu: this.toggleMenu,
+              toggleMenu: shouldAllowMenuToggle ? this.toggleMenu : undefined,
               menuIsOpen,
             },
           })
@@ -189,23 +162,23 @@ class Layout extends React.Component {
   }
 
   render() {
-    const { menu, menuText } = this.props;
-    const { menuIsOpen, menuIsPinned, size } = this.state;
+    const { menuText } = this.props;
+    const { menuIsOpen, menuIsPinned, size, isHoverMenu, isFixedMenu, isToggleMenu, menuIsPresent } = this.state;
 
     return (
       <ContentContainer
         fill
-        header={!this.isCompactLayout() && this.renderHeader()}
+        header={!isToggleMenu && this.renderHeader()}
         {...getCustomProps(this.props, propTypes)}
       >
         <LayoutSlidePanel
           panelContent={this.renderMenu()}
-          panelBehavior={menuIsPinned ? 'squish' : 'overlay'}
+          panelBehavior={menuIsPinned || isFixedMenu ? 'squish' : 'overlay'}
           size={size}
           onToggle={this.toggleMenu}
           toggleText={menuText}
           isOpen={menuIsOpen}
-          isToggleEnabled={!!menu}
+          isToggleEnabled={menuIsPresent && isHoverMenu}
           isAnimated
         >
           {this.renderContent()}
