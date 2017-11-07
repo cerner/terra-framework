@@ -17,6 +17,12 @@ module.exports = resizeTo(['small', 'large', 'huge'], {
 
       browser.click('#layout-tests-root .test-header-toggle', () => {
         browser.expect.element('#layout-tests-root #test-menu').to.be.visible;
+        browser.waitForElementVisible('#layout-tests-root #test-menu .test-menu-toggle');
+
+        browser.click('#layout-tests-root #test-menu .test-menu-toggle', () => {
+          browser.waitForElementNotVisible('#test-menu', 300);
+          browser.expect.element('#test-menu').to.not.be.visible;
+        });
       });
     } else if (width < browser.globals.breakpoints.huge[0]) {
       browser.expect.element('#layout-tests-root #test-menu').to.not.be.visible;
@@ -50,14 +56,9 @@ module.exports = resizeTo(['small', 'large', 'huge'], {
 
     const width = screenWidth(browser);
 
-    if (width < browser.globals.breakpoints.huge[0] && width > browser.globals.breakpoints.large[0]) {
+    if (width < browser.globals.breakpoints.huge[0] && width >= browser.globals.breakpoints.large[0]) {
       browser.expect.element('#layout-tests-root [class*=hover-section]').to.be.visible;
       browser.expect.element('#layout-tests-root [class*=hover-section]').text.to.equal('Menu Text That Is Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Long');
-
-      browser.click('#layout-tests-root [class*=hover-section]', () => {
-        browser.waitForElementVisible('#layout-tests-root [class*=menu-header]', 200);
-        browser.expect.element('#layout-tests-root [class*=menu-header]').text.to.equal('Menu Text That Is Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Long');
-      });
     }
   },
 
@@ -75,6 +76,12 @@ module.exports = resizeTo(['small', 'large', 'huge'], {
 
       browser.click('#layout-tests-root .test-content-toggle', () => {
         browser.expect.element('#layout-tests-root #test-menu').to.be.visible;
+        browser.waitForElementVisible('#layout-tests-root #test-menu .test-menu-toggle');
+
+        browser.click('#layout-tests-root #test-menu .test-menu-toggle', () => {
+          browser.waitForElementNotVisible('#test-menu', 300);
+          browser.expect.element('#test-menu').to.not.be.visible;
+        });
       });
     } else if (width < browser.globals.breakpoints.huge[0]) {
       browser.expect.element('#layout-tests-root #test-menu').to.not.be.visible;
