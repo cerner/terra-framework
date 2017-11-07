@@ -1,6 +1,6 @@
 # Terra Layout
 
-The Layout component provides a responsive starting point for the position of high-level application components.
+The Layout component provides a responsive starting point for the positioning of application components.
 
 The Layout is responsive at the following breakpoints (as defined by the [terra-responsive-element](https://github.com/cerner/terra-core/blob/master/packages/terra-responsive-element/src/breakpoints.scss)):
 * Large Desktop [`large`, `huge`] - The menu is pinned open and not dismissable. The content region is resized to account for the menu, and the menu is presented under the header content.
