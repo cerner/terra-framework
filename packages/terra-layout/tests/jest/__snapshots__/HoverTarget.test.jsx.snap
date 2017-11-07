@@ -3,7 +3,6 @@
 exports[`HoverTarget should render with provided hover props 1`] = `
 <div
   className="hover-target"
-  isEnabled={false}
 >
   <div
     className="content-section"
@@ -43,7 +42,6 @@ exports[`HoverTarget should render with provided hover props 1`] = `
 exports[`HoverTarget should render with provided open props 1`] = `
 <div
   className="hover-target is-hover-tab-hidden"
-  isEnabled={false}
 >
   <div
     className="content-section"
@@ -83,7 +81,6 @@ exports[`HoverTarget should render with provided open props 1`] = `
 exports[`HoverTarget should render without optional props 1`] = `
 <div
   className="hover-target is-hover-disabled"
-  isEnabled={false}
 >
   <div
     className="content-section"

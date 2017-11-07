@@ -10,7 +10,6 @@ exports[`LayoutSlidePanel should render when small 1`] = `
   >
     <HoverTarget
       hoverIsEnabled={false}
-      isEnabled={false}
       isOpen={true}
       onClick={[Function]}
       onHoverOff={[Function]}
@@ -49,7 +48,6 @@ exports[`LayoutSlidePanel should render when tiny 1`] = `
   >
     <HoverTarget
       hoverIsEnabled={false}
-      isEnabled={false}
       isOpen={true}
       onClick={[Function]}
       onHoverOff={[Function]}
@@ -88,7 +86,6 @@ exports[`LayoutSlidePanel should render with provided props 1`] = `
   >
     <HoverTarget
       hoverIsEnabled={true}
-      isEnabled={false}
       isOpen={true}
       onClick={[Function]}
       onHoverOff={[Function]}
@@ -121,6 +118,17 @@ exports[`LayoutSlidePanel should render without optional props 1`] = `
 <div
   className="layout-slide-panel is-overlay"
 >
+  <div
+    aria-hidden="true"
+    className="panel"
+  >
+    <HoverTarget
+      hoverIsEnabled={true}
+      isOpen={true}
+      onHoverOff={[Function]}
+      onHoverOn={[Function]}
+    />
+  </div>
   <div
     className="content"
   >
