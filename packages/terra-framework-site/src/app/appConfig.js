@@ -2,10 +2,52 @@ import Home from './home/Home';
 import Components from './components/Components';
 import ComponentsMenu from './components/ComponentsMenu';
 import Tests from './tests/Tests';
-import TestsMenu from './tests/TestsMenu';
+import TestsMenu, { injectConfig as testsMenuWithConfig } from './tests/TestsMenu';
 import ApplicationMenu from './ApplicationMenu';
 
-import testConfig from './tests/testConfig';
+import componentConfig from '../componentConfig';
+import ComponentTests, { injectConfig as componentTestsWithConfig } from './tests/ComponentTests';
+import ComponentTestsMenu, { injectConfig as componentTestsMenuWithConfig } from './tests/ComponentTestsMenu';
+
+const componentTests = {};
+Object.keys(componentConfig).map((componentKey) => {
+  const testRoot = componentConfig[componentKey].testRoot;
+  if (testRoot) {
+    return {
+      path: testRoot,
+      component: {
+        default: {
+          componentClass: componentTestsWithConfig(componentConfig[componentKey])(ComponentTests),
+        },
+      },
+    };
+  }
+  return undefined;
+})
+.filter(test => !!test)
+.forEach((test) => {
+  componentTests[test.path] = test;
+});
+
+const componentTestMenus = {};
+Object.keys(componentConfig).map((componentKey) => {
+  const testRoot = componentConfig[componentKey].testRoot;
+  if (testRoot) {
+    return {
+      path: testRoot,
+      component: {
+        default: {
+          componentClass: componentTestsMenuWithConfig(componentConfig[componentKey])(ComponentTestsMenu),
+        },
+      },
+    };
+  }
+  return undefined;
+})
+.filter(test => !!test)
+.forEach((test) => {
+  componentTestMenus[test.path] = test;
+});
 
 const config = {
   navigation: {
@@ -45,6 +87,7 @@ const config = {
           componentClass: Tests,
         },
       },
+      children: componentTests,
     },
   },
   menuRoutes: {
@@ -71,10 +114,10 @@ const config = {
           path: '/tests',
           component: {
             default: {
-              componentClass: TestsMenu,
+              componentClass: testsMenuWithConfig(componentConfig)(TestsMenu),
             },
           },
-          children: testConfig,
+          children: componentTestMenus,
         },
       },
     },

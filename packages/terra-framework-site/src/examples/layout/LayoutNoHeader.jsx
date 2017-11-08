@@ -8,7 +8,6 @@ const layout = () => (
   <Layout
     menu={<MenuExample />}
     menuText="Menu"
-    menuType="fixed"
     style={{ height: '400px', width: '100%' }}
   >
     <ContentExample />

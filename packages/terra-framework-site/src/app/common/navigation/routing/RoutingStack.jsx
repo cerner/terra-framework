@@ -84,9 +84,11 @@ class RoutingStack extends React.Component {
   render() {
     const { routeConfig, location, children, size } = this.props;
 
+    const routes = this.createRoutes(routeConfig, size);
+
     return (
       <Switch location={this.state.stackLocation || location}>
-        {this.createRoutes(routeConfig, size)}
+        {routes}
         {children}
       </Switch>
     );

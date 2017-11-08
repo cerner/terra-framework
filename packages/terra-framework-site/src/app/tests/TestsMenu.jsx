@@ -7,16 +7,33 @@ const propTypes = {
   routingManager: RoutingDelegate.propType,
 };
 
-const TestsMenu = props => (
+const TestsMenu = ({ routingManager, config }) => (
   <MenuList
     headerText="Tests"
-    routingManager={props.routingManager}
-    links={[
-      { id: '/tests/layout', path: '/tests/layout', text: 'Layout' },
-    ]}
+    routingManager={routingManager}
+    links={Object.keys(config).map((componentKey) => {
+      const testRoot = config[componentKey].testRoot;
+      if (testRoot) {
+        return {
+          id: testRoot,
+          path: testRoot,
+          text: config[componentKey].name,
+        };
+      }
+      return undefined;
+    }).filter(link => (!!link))}
   />
 );
 
 TestsMenu.propTypes = propTypes;
 
+const injectConfig = config => (
+  ComponentClass => (
+      props => (
+        <ComponentClass {...props} config={config} />
+      )
+  )
+);
+
 export default withRouter(TestsMenu);
+export { injectConfig };
