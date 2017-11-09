@@ -1,5 +1,4 @@
 import React from 'react';
-// import AppDelegate from 'terra-app-delegate';
 import { withRouter } from 'react-router-dom';
 import ContentContainer from 'terra-content-container';
 import Image from 'terra-image';

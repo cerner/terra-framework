@@ -9,7 +9,6 @@ import Button from 'terra-button';
 
 import RoutingDelegate from '../navigation/routing/RoutingDelegate';
 
-// import RoutingManagerDelegate from '../RoutingManagerDelegate';
 import './MenuToolbar.scss';
 
 const propTypes = {

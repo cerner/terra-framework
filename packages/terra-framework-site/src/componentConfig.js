@@ -6,8 +6,8 @@ import LayoutNoHeader from 'terra-layout/tests/nightwatch/LayoutNoHeader';
 import LayoutExample from './examples/layout/Index';
 
 const itemConfigPropType = PropTypes.shape({
-  path: PropTypes.number,
-  component: PropTypes.element,
+  path: PropTypes.string,
+  component: PropTypes.func,
   description: PropTypes.string,
 });
 

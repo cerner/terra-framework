@@ -26,7 +26,6 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: window.innerWidth >= 768,
       dir: 'ltr',
       locale,
       theme: 'Default Theme',
@@ -34,7 +33,6 @@ class App extends React.Component {
     this.handleBidiChange = this.handleBidiChange.bind(this);
     this.handleThemeChange = this.handleThemeChange.bind(this);
     this.handleLocaleChange = this.handleLocaleChange.bind(this);
-    this.handleResetScroll = this.handleResetScroll.bind(this);
   }
 
   handleBidiChange(e) {
@@ -48,16 +46,6 @@ class App extends React.Component {
 
   handleThemeChange(e) {
     this.setState({ theme: e.currentTarget.id });
-  }
-
-  handleResetScroll() {
-    const element = document.getElementById('site-content-section');
-    if (element && element.parentNode) {
-      element.parentNode.scrollTop = 0;
-    }
-    if (window.innerWidth < 768) {
-      this.setState({ isOpen: false });
-    }
   }
 
   render() {
