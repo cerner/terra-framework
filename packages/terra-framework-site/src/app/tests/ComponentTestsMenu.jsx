@@ -22,13 +22,4 @@ const ComponentTestsMenu = ({ routingManager, config }) => (
 
 ComponentTestsMenu.propTypes = propTypes;
 
-const injectConfig = config => (
-  ComponentClass => (
-      props => (
-        <ComponentClass {...props} config={config} />
-      )
-  )
-);
-
 export default ComponentTestsMenu;
-export { injectConfig };

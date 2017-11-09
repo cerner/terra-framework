@@ -1,13 +1,22 @@
+import React from 'react';
 import Home from './home/Home';
-import Components from './components/Components';
-import ComponentsMenu from './components/ComponentsMenu';
-import Tests from './tests/Tests';
-import TestsMenu, { injectConfig as testsMenuWithConfig } from './tests/TestsMenu';
 import ApplicationMenu from './ApplicationMenu';
+import Tests from './tests/Tests';
+import TestsMenu from './tests/TestsMenu';
 
 import componentConfig from '../componentConfig';
-import ComponentTests, { injectConfig as componentTestsWithConfig } from './tests/ComponentTests';
-import ComponentTestsMenu, { injectConfig as componentTestsMenuWithConfig } from './tests/ComponentTestsMenu';
+import Components from './components/Components';
+import ComponentsMenu from './components/ComponentsMenu';
+import ComponentTests from './tests/ComponentTests';
+import ComponentTestsMenu from './tests/ComponentTestsMenu';
+
+const injectConfig = config => (
+  ComponentClass => (
+    props => (
+      <ComponentClass {...props} config={config} />
+    )
+  )
+);
 
 const componentTests = {};
 Object.keys(componentConfig).map((componentKey) => {
@@ -17,7 +26,7 @@ Object.keys(componentConfig).map((componentKey) => {
       path: testRoot,
       component: {
         default: {
-          componentClass: componentTestsWithConfig(componentConfig[componentKey])(ComponentTests),
+          componentClass: injectConfig(componentConfig[componentKey])(ComponentTests),
         },
       },
     };
@@ -37,7 +46,7 @@ Object.keys(componentConfig).map((componentKey) => {
       path: testRoot,
       component: {
         default: {
-          componentClass: componentTestsMenuWithConfig(componentConfig[componentKey])(ComponentTestsMenu),
+          componentClass: injectConfig(componentConfig[componentKey])(ComponentTestsMenu),
         },
       },
     };
@@ -76,7 +85,7 @@ const config = {
       path: '/components',
       component: {
         default: {
-          componentClass: Components,
+          componentClass: injectConfig(componentConfig)(Components),
         },
       },
     },
@@ -106,7 +115,7 @@ const config = {
           path: '/components',
           component: {
             default: {
-              componentClass: ComponentsMenu,
+              componentClass: injectConfig(componentConfig)(ComponentsMenu),
             },
           },
         },
@@ -114,7 +123,7 @@ const config = {
           path: '/tests',
           component: {
             default: {
-              componentClass: testsMenuWithConfig(componentConfig)(TestsMenu),
+              componentClass: injectConfig(componentConfig)(TestsMenu),
             },
           },
           children: componentTestMenus,

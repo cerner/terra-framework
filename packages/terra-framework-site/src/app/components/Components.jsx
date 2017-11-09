@@ -1,15 +1,21 @@
 import React from 'react';
-import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
-import LayoutExamples from '../../examples/layout/Index';
-
-const Components = () => (
+const Components = ({ config }) => (
   <div style={{ height: '100%', position: 'relative', padding: '15px' }}>
     <Switch>
-      <Route path="/components/layout" component={LayoutExamples} />
-      <Redirect to="/components/layout" />
+      {Object.keys(config).map((componentKey) => {
+        const example = config[componentKey].example;
+        if (example) {
+          return (
+            <Route key={example.path} path={example.path} component={example.component} />
+          );
+        }
+        return undefined;
+      })}
+      <Redirect to={Object.keys(config).map(componentKey => (config[componentKey].example)).filter(example => !!example)[0].path} />
     </Switch>
   </div>
 );
 
-export default withRouter(Components);
+export default Components;

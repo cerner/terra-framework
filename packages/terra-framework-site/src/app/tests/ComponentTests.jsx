@@ -19,13 +19,4 @@ const ComponentTests = ({ config }) => (
   </div>
 );
 
-const injectConfig = config => (
-  ComponentClass => (
-      props => (
-        <ComponentClass {...props} config={config} />
-      )
-  )
-);
-
 export default ComponentTests;
-export { injectConfig };

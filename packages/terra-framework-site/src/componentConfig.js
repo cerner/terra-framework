@@ -7,12 +7,11 @@ import LayoutExample from './examples/layout/Index';
 const componentConfig = {
   layout: {
     name: 'Layout',
-    exampleRoot: '/components/layout',
-    examples: [{
-      path: '',
+    example: {
+      path: '/components/layout',
       component: LayoutExample,
       description: 'Layout',
-    }],
+    },
     testRoot: '/tests/layout',
     tests: [{
       path: '/default',
