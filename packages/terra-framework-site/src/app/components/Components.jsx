@@ -1,5 +1,10 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import { siteConfigPropType } from '../../componentConfig';
+
+const propTypes = {
+  config: siteConfigPropType,
+};
 
 const Components = ({ config }) => (
   <div style={{ height: '100%', position: 'relative', padding: '15px' }}>
@@ -13,9 +18,17 @@ const Components = ({ config }) => (
         }
         return undefined;
       })}
-      <Redirect to={Object.keys(config).map(componentKey => (config[componentKey].example)).filter(example => !!example)[0].path} />
+      {(() => {
+        const firstExample = Object.keys(config).map(componentKey => (config[componentKey].example)).filter(example => !!example)[0];
+        if (firstExample) {
+          return <Redirect to={firstExample.path} />;
+        }
+        return null;
+      })()}
     </Switch>
   </div>
 );
+
+Components.propTypes = propTypes;
 
 export default Components;

@@ -1,8 +1,22 @@
+import PropTypes from 'prop-types';
 import LayoutDefault from 'terra-layout/tests/nightwatch/LayoutDefault';
 import LayoutNoMenu from 'terra-layout/tests/nightwatch/LayoutNoMenu';
 import LayoutLongText from 'terra-layout/tests/nightwatch/LayoutLongText';
 import LayoutNoHeader from 'terra-layout/tests/nightwatch/LayoutNoHeader';
 import LayoutExample from './examples/layout/Index';
+
+const itemConfigPropType = PropTypes.shape({
+  path: PropTypes.number,
+  component: PropTypes.element,
+  description: PropTypes.string,
+});
+
+const siteConfigPropType = PropTypes.objectOf(PropTypes.shape({
+  name: PropTypes.string,
+  example: itemConfigPropType,
+  testRoot: PropTypes.string,
+  tests: PropTypes.arrayOf(itemConfigPropType),
+}));
 
 const componentConfig = {
   layout: {
@@ -34,3 +48,4 @@ const componentConfig = {
 };
 
 export default componentConfig;
+export { siteConfigPropType, itemConfigPropType };

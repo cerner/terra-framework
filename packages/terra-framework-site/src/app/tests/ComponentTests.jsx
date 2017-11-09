@@ -3,6 +3,11 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Placeholder from '../common/Placeholder';
+import { itemConfigPropType } from '../../componentConfig';
+
+const propTypes = {
+  config: itemConfigPropType,
+};
 
 const ComponentTests = ({ config }) => (
   <div id="test-root" style={{ height: '100%', position: 'relative', padding: '15px' }}>
@@ -18,5 +23,7 @@ const ComponentTests = ({ config }) => (
     </Switch>
   </div>
 );
+
+ComponentTests.propTypes = propTypes;
 
 export default ComponentTests;

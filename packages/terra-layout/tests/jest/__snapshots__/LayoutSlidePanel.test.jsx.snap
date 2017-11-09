@@ -21,7 +21,7 @@ exports[`LayoutSlidePanel should render when small 1`] = `
       </div>
     </HoverTarget>
   </div>
-  <div
+  <OverlayContainer
     className="content"
   >
     <Overlay
@@ -34,7 +34,7 @@ exports[`LayoutSlidePanel should render when small 1`] = `
     <div>
       Child
     </div>
-  </div>
+  </OverlayContainer>
 </div>
 `;
 
@@ -59,7 +59,7 @@ exports[`LayoutSlidePanel should render when tiny 1`] = `
       </div>
     </HoverTarget>
   </div>
-  <div
+  <OverlayContainer
     className="content"
   >
     <Overlay
@@ -72,7 +72,7 @@ exports[`LayoutSlidePanel should render when tiny 1`] = `
     <div>
       Child
     </div>
-  </div>
+  </OverlayContainer>
 </div>
 `;
 
@@ -97,7 +97,7 @@ exports[`LayoutSlidePanel should render with provided props 1`] = `
       </div>
     </HoverTarget>
   </div>
-  <div
+  <OverlayContainer
     className="content"
   >
     <Overlay
@@ -110,7 +110,7 @@ exports[`LayoutSlidePanel should render with provided props 1`] = `
     <div>
       Child
     </div>
-  </div>
+  </OverlayContainer>
 </div>
 `;
 
@@ -129,7 +129,7 @@ exports[`LayoutSlidePanel should render without optional props 1`] = `
       onHoverOn={[Function]}
     />
   </div>
-  <div
+  <OverlayContainer
     className="content"
   >
     <Overlay
@@ -138,6 +138,6 @@ exports[`LayoutSlidePanel should render without optional props 1`] = `
       isRelativeToContainer={true}
       isScrollable={false}
     />
-  </div>
+  </OverlayContainer>
 </div>
 `;

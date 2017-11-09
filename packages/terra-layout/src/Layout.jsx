@@ -6,7 +6,7 @@ import LayoutSlidePanel from './_LayoutSlidePanel';
 import {
   getBreakpointSize,
   getCustomProps,
-} from './utilities';
+} from './LayoutUtils';
 
 const propTypes = {
   /**
@@ -138,25 +138,21 @@ class Layout extends React.Component {
     const { size, menuIsOpen, isToggleMenu, menuIsPresent } = this.state;
     const shouldAllowMenuToggle = isToggleMenu && menuIsPresent;
 
-    if (!children) {
-      return null;
-    }
-
     return (
       <ContentContainer
         fill
         header={isToggleMenu && this.renderHeader()}
         style={{ outline: 'none' }}
       >
-        {(
+        {children ?
           React.cloneElement(children, {
             layoutConfig: {
               size,
               toggleMenu: shouldAllowMenuToggle ? this.toggleMenu : undefined,
               menuIsOpen,
             },
-          })
-        )}
+          }) : null
+        }
       </ContentContainer>
     );
   }

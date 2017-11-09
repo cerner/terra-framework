@@ -294,6 +294,7 @@ exports[`Layout Menu Enabled should render a Layout when huge 1`] = `
       </div>
     }
     size="huge"
+    toggleText="Menu Text"
   >
     <ContentContainer
       fill={true}
@@ -359,6 +360,7 @@ exports[`Layout Menu Enabled should render a Layout when large 1`] = `
       </div>
     }
     size="large"
+    toggleText="Menu Text"
   >
     <ContentContainer
       fill={true}
@@ -424,6 +426,7 @@ exports[`Layout Menu Enabled should render a Layout when medium 1`] = `
       </div>
     }
     size="medium"
+    toggleText="Menu Text"
   >
     <ContentContainer
       fill={true}
@@ -477,6 +480,7 @@ exports[`Layout Menu Enabled should render a Layout when small 1`] = `
       </div>
     }
     size="small"
+    toggleText="Menu Text"
   >
     <ContentContainer
       fill={true}
@@ -542,6 +546,7 @@ exports[`Layout Menu Enabled should render a Layout when tiny 1`] = `
       </div>
     }
     size="tiny"
+    toggleText="Menu Text"
   >
     <ContentContainer
       fill={true}
@@ -594,7 +599,17 @@ exports[`Layout should render a Layout with custom props 1`] = `
     panelBehavior="overlay"
     panelContent={null}
     size="tiny"
-  />
+  >
+    <ContentContainer
+      fill={true}
+      header={null}
+      style={
+        Object {
+          "outline": "none",
+        }
+      }
+    />
+  </LayoutSlidePanel>
 </ContentContainer>
 `;
 
@@ -611,6 +626,16 @@ exports[`Layout should render a Layout without optional props 1`] = `
     panelBehavior="overlay"
     panelContent={null}
     size="tiny"
-  />
+  >
+    <ContentContainer
+      fill={true}
+      header={null}
+      style={
+        Object {
+          "outline": "none",
+        }
+      }
+    />
+  </LayoutSlidePanel>
 </ContentContainer>
 `;

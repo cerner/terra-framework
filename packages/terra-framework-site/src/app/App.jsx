@@ -19,7 +19,6 @@ const locale = document.getElementsByTagName('html')[0].getAttribute('lang');
 
 const themes = {
   'Default Theme': '',
-  'Consumer Theme': 'cerner-consumer-theme',
   'Mock Theme': 'cerner-mock-theme',
 };
 

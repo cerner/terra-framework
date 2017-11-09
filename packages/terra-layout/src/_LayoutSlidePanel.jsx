@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Overlay from 'terra-overlay';
+import OverlayContainer from 'terra-overlay/lib/OverlayContainer';
+
 import 'terra-base/lib/baseStyles';
 
 import HoverTarget from './_HoverTarget';
@@ -111,10 +113,10 @@ const LayoutSlidePanel = ({
       className={slidePanelClassNames}
     >
       {panel}
-      <div className={cx('content')}>
+      <OverlayContainer className={cx('content')}>
         <Overlay isRelativeToContainer onRequestClose={onToggle} isOpen={isOverlayOpen} backgroundStyle={overlayBackground} />
         {children}
-      </div>
+      </OverlayContainer>
     </div>
   );
 };

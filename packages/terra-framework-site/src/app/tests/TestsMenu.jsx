@@ -2,9 +2,11 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import MenuList from '../common/menu/MenuList';
 import RoutingDelegate from '../common/navigation/routing/RoutingDelegate';
+import { siteConfigPropType } from '../../componentConfig';
 
 const propTypes = {
   routingManager: RoutingDelegate.propType,
+  config: siteConfigPropType,
 };
 
 const TestsMenu = ({ routingManager, config }) => (
