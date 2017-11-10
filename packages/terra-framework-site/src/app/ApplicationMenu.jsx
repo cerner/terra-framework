@@ -1,7 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import ContentContainer from 'terra-content-container';
-import Image from 'terra-image';
 import MenuList from './common/menu/MenuList';
 import RoutingDelegate from './common/navigation/routing/RoutingDelegate';
 

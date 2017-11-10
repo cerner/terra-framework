@@ -1,5 +1,12 @@
 @import '~terra-mixins';
 
+// Wrapper to fix IE10/11 min-height flexbox layouts
+.terraClinical-FlexWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+
 .terraClinical-MenuToolbar {
   color: #1C1F21;
   font-size: 1rem;
