@@ -20,6 +20,7 @@
     overflow: hidden;
     position: relative;
     width: var(--layout-menu-hover-target-width, 2.143rem);
+
     &:active {
       background: var(--layout-menu-hover-target-background-color, #c6c7c9);
     }
@@ -28,8 +29,8 @@
   .hover-section-wrapper {
     align-items: stretch;
     display: flex;
-    height: 100%;
     flex-direction: column;
+    height: 100%;
     overflow: hidden;
   }
 

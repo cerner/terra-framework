@@ -16,24 +16,28 @@ exports[`HoverTarget should render with provided hover props 1`] = `
     onClick={[Function]}
   >
     <div
-      className="hover-section-icon"
+      className="hover-section-wrapper"
     >
-      <IconChevronRight
-        className="hover-icon"
-        data-name="Layer 1"
-        isBidi={true}
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg"
-      />
-    </div>
-    <div
-      className="hover-section-text"
-    >
-      <h3
-        className="hover-text"
+      <div
+        className="hover-section-icon"
       >
-        MENU TEXT
-      </h3>
+        <IconChevronRight
+          className="hover-icon"
+          data-name="Layer 1"
+          isBidi={true}
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+      </div>
+      <div
+        className="hover-section-text"
+      >
+        <h3
+          className="hover-text"
+        >
+          MENU TEXT
+        </h3>
+      </div>
     </div>
   </button>
 </div>
@@ -55,24 +59,28 @@ exports[`HoverTarget should render with provided open props 1`] = `
     onClick={[Function]}
   >
     <div
-      className="hover-section-icon"
+      className="hover-section-wrapper"
     >
-      <IconChevronRight
-        className="hover-icon"
-        data-name="Layer 1"
-        isBidi={true}
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg"
-      />
-    </div>
-    <div
-      className="hover-section-text"
-    >
-      <h3
-        className="hover-text"
+      <div
+        className="hover-section-icon"
       >
-        MENU TEXT
-      </h3>
+        <IconChevronRight
+          className="hover-icon"
+          data-name="Layer 1"
+          isBidi={true}
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+      </div>
+      <div
+        className="hover-section-text"
+      >
+        <h3
+          className="hover-text"
+        >
+          MENU TEXT
+        </h3>
+      </div>
     </div>
   </button>
 </div>
@@ -90,22 +98,26 @@ exports[`HoverTarget should render without optional props 1`] = `
     onClick={[Function]}
   >
     <div
-      className="hover-section-icon"
+      className="hover-section-wrapper"
     >
-      <IconChevronRight
-        className="hover-icon"
-        data-name="Layer 1"
-        isBidi={true}
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg"
-      />
-    </div>
-    <div
-      className="hover-section-text"
-    >
-      <h3
-        className="hover-text"
-      />
+      <div
+        className="hover-section-icon"
+      >
+        <IconChevronRight
+          className="hover-icon"
+          data-name="Layer 1"
+          isBidi={true}
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+      </div>
+      <div
+        className="hover-section-text"
+      >
+        <h3
+          className="hover-text"
+        />
+      </div>
     </div>
   </button>
 </div>
