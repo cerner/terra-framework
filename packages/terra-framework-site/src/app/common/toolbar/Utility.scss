@@ -9,6 +9,10 @@
     & > *:not(:last-child) {
       padding-right: 0.3571rem;
     }
+
+    &:hover {
+      color: #fff;
+    }
   }
 
   .title {
