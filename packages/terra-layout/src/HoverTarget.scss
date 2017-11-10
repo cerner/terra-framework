@@ -85,7 +85,8 @@
     }
 
     > .hover-section {
-      display: none;
+      overflow: hidden;
+      width: 0;
     }
   }
 }
