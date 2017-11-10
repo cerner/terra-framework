@@ -4,11 +4,14 @@ import { siteConfigPropType } from '../../componentConfig';
 
 const propTypes = {
   config: siteConfigPropType,
+  location: React.PropTypes.shape({
+    pathname: React.PropTypes.string.isRequired,
+  }),
 };
 
 class Components extends React.Component {
-  componentDidUpdate() {
-    if (this.element) {
+  componentDidUpdate(prevProps) {
+    if (this.element && prevProps.location.pathname !== this.props.location.pathname) {
       this.element.scrollTop = 0;
     }
   }
@@ -17,7 +20,7 @@ class Components extends React.Component {
     const { config } = this.props;
 
     return (
-      <div id="tyler-look-here-stupid" ref={(element) => { this.element = element; }}style={{ height: '100%', position: 'relative', padding: '15px', overflow: 'auto' }}>
+      <div ref={(element) => { this.element = element; }} style={{ height: '100%', position: 'relative', padding: '15px', overflow: 'auto' }}>
         <Switch>
           {Object.keys(config).map((componentKey) => {
             const example = config[componentKey].example;

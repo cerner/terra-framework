@@ -13,19 +13,24 @@
   }
 
   .hover-section {
-    align-items: stretch;
     background: var(--layout-menu-hover-target-background-color, #e8e9ea);
     border: 0;
     border-right: var(--layout-menu-hover-target-border-right, 0.07143rem solid #bcbfc0);
-    display: flex;
-    flex-direction: column;
     float: right;
     overflow: hidden;
+    position: relative;
     width: var(--layout-menu-hover-target-width, 2.143rem);
-
     &:active {
       background: var(--layout-menu-hover-target-background-color, #c6c7c9);
     }
+  }
+
+  .hover-section-wrapper {
+    align-items: stretch;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    overflow: hidden;
   }
 
   .hover-section-icon {
