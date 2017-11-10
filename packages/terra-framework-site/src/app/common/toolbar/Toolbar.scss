@@ -4,19 +4,19 @@
     background-color: #2481ca;
     display: flex;
     justify-content: space-between;
-    height: 35px;
+    height: 2.5rem;
     position: relative;
     width: 100%;
   }
 
   .toolbar-toggle {
     align-items: center;
-    border-right: 1px solid #fff;
+    border-right: 0.07143rem solid #fff;
     display: flex;
     flex: 0 0 auto;
     justify-content: flex-start;
     position: relative;
-    padding: 0 3px;
+    padding: 0 0.2143rem;
   }
 
   .toolbar-body {
@@ -33,13 +33,17 @@
     color: #fff;
   }
 
+  .toggle-button:hover {
+    color: #fff;
+  }
+
   .start {
     align-items: center;
     display: flex;
     flex: 0 0 auto;
     justify-content: flex-start;
     max-width: 50%;
-    min-width: 260px;
+    min-width: 18.571rem;
     position: relative;
   }
 
@@ -58,6 +62,6 @@
     justify-content: flex-end;
     max-width: 50%;
     position: relative;
-    padding-right: 10px;
+    padding-right: 0.7143rem;
   }
 }
