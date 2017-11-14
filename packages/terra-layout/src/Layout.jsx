@@ -6,7 +6,7 @@ import LayoutSlidePanel from './_LayoutSlidePanel';
 import {
   getBreakpointSize,
   getCustomProps,
-} from './utilities';
+} from './LayoutUtils';
 
 const propTypes = {
   /**
@@ -18,7 +18,7 @@ const propTypes = {
    */
   menu: PropTypes.element,
   /**
-   * String used to decorate menu controls.
+   * String used to decorate menu hover control.
    */
   menuText: PropTypes.string,
   /**
@@ -29,15 +29,16 @@ const propTypes = {
 
 class Layout extends React.Component {
   static stateForProps(props, currentState) {
-    const isHoverMenu = currentState.size === 'medium';
     const isFixedMenu = currentState.size === 'large' || currentState.size === 'huge';
-    const isOverlayMenu = currentState.size === 'tiny' || currentState.size === 'small';
+    const isHoverMenu = currentState.size === 'medium';
+    const isToggleMenu = currentState.size === 'tiny' || currentState.size === 'small';
+
     const menuIsPresent = !!props.menu;
 
     return Object.assign({}, currentState || {}, {
       isHoverMenu,
       isFixedMenu,
-      isOverlayMenu,
+      isToggleMenu,
       menuIsPresent,
       menuIsOpen: menuIsPresent && (currentState.menuIsOpen || isFixedMenu),
       menuIsPinned: menuIsPresent && currentState.menuIsPinned && isHoverMenu,
@@ -95,18 +96,18 @@ class Layout extends React.Component {
 
   renderHeader() {
     const { header } = this.props;
-    const { size, menuIsOpen, isOverlayMenu, menuIsPresent } = this.state;
+    const { size, menuIsOpen, isToggleMenu, menuIsPresent } = this.state;
 
     if (!header) {
       return null;
     }
 
-    const shouldAllowMenuToggle = isOverlayMenu && menuIsPresent;
+    const shouldAllowMenuToggle = isToggleMenu && menuIsPresent;
 
     return React.cloneElement(header, {
       layoutConfig: {
         size,
-        toggleMenu: shouldAllowMenuToggle && this.toggleMenu,
+        toggleMenu: shouldAllowMenuToggle ? this.toggleMenu : undefined,
         menuIsOpen,
       },
     });
@@ -114,8 +115,8 @@ class Layout extends React.Component {
 
   renderMenu() {
     const { menu } = this.props;
-    const { size, menuIsOpen, menuIsPinned, isOverlayMenu, isHoverMenu, menuIsPresent } = this.state;
-    const shouldAllowMenuToggle = isOverlayMenu && menuIsPresent;
+    const { size, menuIsOpen, menuIsPinned, isToggleMenu, isHoverMenu, menuIsPresent } = this.state;
+    const shouldAllowMenuToggle = isToggleMenu && menuIsPresent;
 
     if (!menuIsPresent) {
       return null;
@@ -124,7 +125,7 @@ class Layout extends React.Component {
     return React.cloneElement(menu, {
       layoutConfig: {
         size,
-        toggleMenu: shouldAllowMenuToggle && this.toggleMenu,
+        toggleMenu: shouldAllowMenuToggle ? this.toggleMenu : undefined,
         menuIsOpen,
         togglePin: isHoverMenu ? this.togglePin : undefined,
         menuIsPinned,
@@ -133,42 +134,37 @@ class Layout extends React.Component {
   }
 
   renderContent() {
-    const { header, children } = this.props;
-    const { size, menuIsOpen, isOverlayMenu, menuIsPresent } = this.state;
-
-    const shouldAllowMenuToggle = isOverlayMenu && menuIsPresent && !header;
-
-    if (!children) {
-      return null;
-    }
+    const { children } = this.props;
+    const { size, menuIsOpen, isToggleMenu, menuIsPresent } = this.state;
+    const shouldAllowMenuToggle = isToggleMenu && menuIsPresent;
 
     return (
       <ContentContainer
         fill
-        header={isOverlayMenu && this.renderHeader()}
+        header={isToggleMenu && this.renderHeader()}
         style={{ outline: 'none' }}
       >
-        {(
+        {children ?
           React.cloneElement(children, {
             layoutConfig: {
               size,
-              toggleMenu: shouldAllowMenuToggle && this.toggleMenu,
+              toggleMenu: shouldAllowMenuToggle ? this.toggleMenu : undefined,
               menuIsOpen,
             },
-          })
-        )}
+          }) : null
+        }
       </ContentContainer>
     );
   }
 
   render() {
     const { menuText } = this.props;
-    const { menuIsOpen, menuIsPinned, size, isHoverMenu, isFixedMenu, isOverlayMenu, menuIsPresent } = this.state;
+    const { menuIsOpen, menuIsPinned, size, isHoverMenu, isFixedMenu, isToggleMenu, menuIsPresent } = this.state;
 
     return (
       <ContentContainer
         fill
-        header={!isOverlayMenu && this.renderHeader()}
+        header={!isToggleMenu && this.renderHeader()}
         {...getCustomProps(this.props, propTypes)}
       >
         <LayoutSlidePanel

@@ -1,7 +1,5 @@
-/* stylelint-disable selector-class-pattern */
-
 :local {
-  $hover-target-width: var(--layout-slide-hover-target-width, 30px);
+  $hover-target-width: var(--layout-slide-hover-target-width, 2.143rem);
 
   .layout-slide-panel {
     height: 100%;
@@ -33,7 +31,7 @@
     background-color: var(--layout-slide-panel-background-color, #fff);
     position: absolute;
     transform: translate3d(-100%, 0, 0);
-    width: var(--layout-slide-panel-desktop-panel-width, 260px);
+    width: var(--layout-slide-panel-desktop-panel-width, 18.571rem);
     z-index: 5000;
   }
 
@@ -69,28 +67,28 @@
   /* stylelint-enable */
 
   .panel.is-tiny {
-    width: var(--layout-slide-panel-phone-panel-width, calc(100% - 50px));
+    width: var(--layout-slide-panel-phone-panel-width, calc(100% - 3.571rem));
   }
 
   .panel.is-small {
-    width: var(--layout-slide-panel-tablet-panel-width, 320px);
+    width: var(--layout-slide-panel-tablet-panel-width, 22.857rem);
   }
 
   // Overlay
   .is-open.is-overlay > .panel {
-    box-shadow: 1px 0 5px var(--layout-slide-panel-panel-shadow-color, #bcbfc0);
+    box-shadow: 0.07143rem 0 0.3571rem var(--layout-slide-panel-panel-shadow-color, #bcbfc0);
   }
 
   // Squish
   .is-open.is-squish {
     > .content {
-      width: calc(100% - #{var(--layout-slide-panel-desktop-panel-width, 260px)} - 1px);
+      width: calc(100% - #{var(--layout-slide-panel-desktop-panel-width, 18.571rem)} - 0.07143rem);
     }
 
     > .panel {
-      border-right: 1px solid var(--layout-slide-panel-panel-border-color, #d3d4d5);
+      border-right: 0.07143rem solid var(--layout-slide-panel-panel-border-color, #d3d4d5);
       transition: none;
-      width: calc(1px + #{var(--layout-slide-panel-desktop-panel-width, 260px)});
+      width: calc(0.07143rem + #{var(--layout-slide-panel-desktop-panel-width, 18.571rem)});
     }
   }
 }

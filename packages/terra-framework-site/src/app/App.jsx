@@ -4,15 +4,14 @@ import PropTypes from 'prop-types';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import Base from 'terra-base';
 import ThemeProvider from 'terra-theme-provider';
-import NavigationLayout from 'terra-navigation';
-import ContentWrapper from 'terra-navigation/lib/wrappers/ContentWrapper';
-import MenuWrapper from 'terra-navigation/lib/wrappers/MenuWrapper';
+import NavigationLayout from './common/navigation/NavigationLayout';
+import ContentWrapper from './common/navigation/wrappers/ContentWrapper';
+import MenuWrapper from './common/navigation/wrappers/MenuWrapper';
 
 import ApplicationHeader from './ApplicationHeader';
-import styles from './site.scss';
+import './App.scss';
 
 const propTypes = {
-  children: PropTypes.node,
   config: PropTypes.object,
 };
 
@@ -20,7 +19,6 @@ const locale = document.getElementsByTagName('html')[0].getAttribute('lang');
 
 const themes = {
   'Default Theme': '',
-  'Consumer Theme': 'cerner-consumer-theme',
   'Mock Theme': 'cerner-mock-theme',
 };
 
@@ -28,7 +26,6 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: window.innerWidth >= 768,
       dir: 'ltr',
       locale,
       theme: 'Default Theme',
@@ -36,7 +33,6 @@ class App extends React.Component {
     this.handleBidiChange = this.handleBidiChange.bind(this);
     this.handleThemeChange = this.handleThemeChange.bind(this);
     this.handleLocaleChange = this.handleLocaleChange.bind(this);
-    this.handleResetScroll = this.handleResetScroll.bind(this);
   }
 
   handleBidiChange(e) {
@@ -50,16 +46,6 @@ class App extends React.Component {
 
   handleThemeChange(e) {
     this.setState({ theme: e.currentTarget.id });
-  }
-
-  handleResetScroll() {
-    const element = document.getElementById('site-content-section');
-    if (element && element.parentNode) {
-      element.parentNode.scrollTop = 0;
-    }
-    if (window.innerWidth < 768) {
-      this.setState({ isOpen: false });
-    }
   }
 
   render() {
@@ -79,7 +65,7 @@ class App extends React.Component {
       <Router>
         <Route
           render={() => (
-            <ThemeProvider id="site-content-section" themeName={themes[this.state.theme]} isGlobalTheme>
+            <ThemeProvider id="framework-site" themeName={themes[this.state.theme]} isGlobalTheme>
               <Base style={{ height: '100%' }} locale={this.state.locale}>
                 <NavigationLayout
                   header={applicationHeader}

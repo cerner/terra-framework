@@ -1,9 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import ContentContainer from 'terra-content-container';
 import MenuToolbar from './MenuToolbar';
+import RoutingDelegate from '../navigation/routing/RoutingDelegate';
 
 import './MenuList.scss';
+
+const propTypes = {
+  routingManager: RoutingDelegate.propType,
+  links: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    path: PropTypes.string,
+    text: PropTypes.string,
+  })),
+  headerText: PropTypes.string,
+};
 
 const MenuList = ({ routingManager, links, headerText }) => (
   <div style={{ height: '100%', width: '100%', position: 'absolute' }}>
@@ -36,5 +48,7 @@ const MenuList = ({ routingManager, links, headerText }) => (
     </ContentContainer>
   </div>
 );
+
+MenuList.propTypes = propTypes;
 
 export default MenuList;

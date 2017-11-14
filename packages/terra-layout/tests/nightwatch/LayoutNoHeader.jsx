@@ -1,13 +1,11 @@
 import React from 'react';
 import Layout from '../../src/Layout';
-import TestHeader from './TestHeader';
 import TestMenu from './TestMenu';
 import TestContent from './TestContent';
 
-const LayoutDefault = () => (
+const LayoutNoHeader = () => (
   <Layout
-    key="layout-default"
-    header={<TestHeader />}
+    key="layout-no-header"
     menu={<TestMenu />}
     menuText="Menu Text"
   >
@@ -15,4 +13,4 @@ const LayoutDefault = () => (
   </Layout>
 );
 
-export default LayoutDefault;
+export default LayoutNoHeader;

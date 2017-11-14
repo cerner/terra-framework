@@ -1,0 +1,11 @@
+// Styles specific to development only
+body {
+  overflow: hidden;
+}
+
+#root, #framework-site {
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  width: 100%;
+}

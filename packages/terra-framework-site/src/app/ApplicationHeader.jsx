@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Image from 'terra-image';
@@ -39,8 +38,6 @@ class ApplicationHeader extends React.Component {
       <Menu.Item
         text={`Locale: ${this.props.locale}`}
         key="locale"
-        menuWidth="160"
-        shouldCloseOnClick={false}
         subMenuItems={[
           <Menu.ItemGroup isSelectable key="local-options" onChange={this.props.onLocaleChange} >
             <Menu.Item id="en" text="en" key="en" isSelected={this.props.locale === 'en'} />
@@ -67,8 +64,6 @@ class ApplicationHeader extends React.Component {
         <Menu.Item
           text={`Theme: ${this.props.theme}`}
           key="theme"
-          menuWidth="160"
-          shouldCloseOnClick={false}
           subMenuItems={[
             <Menu.ItemGroup isSelectable key="theme-options" onChange={this.props.onThemeChange} >
               <Menu.Item id="Default Theme" text="Default Theme" key="default" isSelected={this.props.theme === 'Default Theme'} />

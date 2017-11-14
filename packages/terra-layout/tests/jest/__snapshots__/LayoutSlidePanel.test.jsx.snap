@@ -10,7 +10,6 @@ exports[`LayoutSlidePanel should render when small 1`] = `
   >
     <HoverTarget
       hoverIsEnabled={false}
-      isEnabled={false}
       isOpen={true}
       onClick={[Function]}
       onHoverOff={[Function]}
@@ -22,7 +21,7 @@ exports[`LayoutSlidePanel should render when small 1`] = `
       </div>
     </HoverTarget>
   </div>
-  <div
+  <OverlayContainer
     className="content"
   >
     <Overlay
@@ -35,7 +34,7 @@ exports[`LayoutSlidePanel should render when small 1`] = `
     <div>
       Child
     </div>
-  </div>
+  </OverlayContainer>
 </div>
 `;
 
@@ -49,7 +48,6 @@ exports[`LayoutSlidePanel should render when tiny 1`] = `
   >
     <HoverTarget
       hoverIsEnabled={false}
-      isEnabled={false}
       isOpen={true}
       onClick={[Function]}
       onHoverOff={[Function]}
@@ -61,7 +59,7 @@ exports[`LayoutSlidePanel should render when tiny 1`] = `
       </div>
     </HoverTarget>
   </div>
-  <div
+  <OverlayContainer
     className="content"
   >
     <Overlay
@@ -74,7 +72,7 @@ exports[`LayoutSlidePanel should render when tiny 1`] = `
     <div>
       Child
     </div>
-  </div>
+  </OverlayContainer>
 </div>
 `;
 
@@ -88,7 +86,6 @@ exports[`LayoutSlidePanel should render with provided props 1`] = `
   >
     <HoverTarget
       hoverIsEnabled={true}
-      isEnabled={false}
       isOpen={true}
       onClick={[Function]}
       onHoverOff={[Function]}
@@ -100,7 +97,7 @@ exports[`LayoutSlidePanel should render with provided props 1`] = `
       </div>
     </HoverTarget>
   </div>
-  <div
+  <OverlayContainer
     className="content"
   >
     <Overlay
@@ -113,7 +110,7 @@ exports[`LayoutSlidePanel should render with provided props 1`] = `
     <div>
       Child
     </div>
-  </div>
+  </OverlayContainer>
 </div>
 `;
 
@@ -122,6 +119,17 @@ exports[`LayoutSlidePanel should render without optional props 1`] = `
   className="layout-slide-panel is-overlay"
 >
   <div
+    aria-hidden="true"
+    className="panel"
+  >
+    <HoverTarget
+      hoverIsEnabled={true}
+      isOpen={true}
+      onHoverOff={[Function]}
+      onHoverOn={[Function]}
+    />
+  </div>
+  <OverlayContainer
     className="content"
   >
     <Overlay
@@ -130,6 +138,6 @@ exports[`LayoutSlidePanel should render without optional props 1`] = `
       isRelativeToContainer={true}
       isScrollable={false}
     />
-  </div>
+  </OverlayContainer>
 </div>
 `;

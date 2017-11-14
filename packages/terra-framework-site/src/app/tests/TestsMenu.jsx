@@ -1,20 +1,29 @@
 import React from 'react';
-// import AppDelegate from 'terra-app-delegate';
 import { withRouter } from 'react-router-dom';
 import MenuList from '../common/menu/MenuList';
+import RoutingDelegate from '../common/navigation/routing/RoutingDelegate';
+import { siteConfigPropType } from '../../componentConfig';
 
 const propTypes = {
-//   app: AppDelegate.propType,
-//   routingManager: RoutingManagerDelegate.propType,
+  routingManager: RoutingDelegate.propType,
+  config: siteConfigPropType,
 };
 
-const TestsMenu = props => (
+const TestsMenu = ({ routingManager, config }) => (
   <MenuList
     headerText="Tests"
-    routingManager={props.routingManager}
-    links={[
-      { id: '/tests/layout', path: '/tests/layout', text: 'Layout Tests' },
-    ]}
+    routingManager={routingManager}
+    links={Object.keys(config).map((componentKey) => {
+      const testRoot = config[componentKey].testRoot;
+      if (testRoot) {
+        return {
+          id: testRoot,
+          path: testRoot,
+          text: config[componentKey].name,
+        };
+      }
+      return undefined;
+    }).filter(link => (!!link))}
   />
 );
 

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import { getCustomProps } from '../../src/utilities';
+import { getCustomProps } from '../../src/LayoutUtils';
 
-describe('utilities', () => {
+describe('LayoutUtils', () => {
   describe('getCustomProps', () => {
     it('filters out custom props', () => {
       const propTypes = {

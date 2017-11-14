@@ -1,9 +1,9 @@
 import React from 'react';
 
 import Layout from '../../src/Layout';
-import { getBreakpointSize, getCustomProps } from '../../src/utilities';
+import { getBreakpointSize, getCustomProps } from '../../src/LayoutUtils';
 
-jest.mock('../../src/utilities');
+jest.mock('../../src/LayoutUtils');
 
 describe('Layout', () => {
   it('should render a Layout without optional props', () => {
@@ -75,6 +75,7 @@ describe('Layout', () => {
       <Layout
         header={<div>Test Header</div>}
         menu={<div>Test Menu</div>}
+        menuText="Menu Text"
       >
         <div>Test Content</div>
       </Layout>

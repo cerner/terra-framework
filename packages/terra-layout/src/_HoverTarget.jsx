@@ -169,11 +169,13 @@ class HoverTarget extends React.Component {
           {children}
         </div>
         <button className={cx('hover-section')} onClick={this.handleOnClick}>
-          <div className={cx('hover-section-icon')}>
-            <IconChevronRight className={cx('hover-icon')} />
-          </div>
-          <div ref={(element) => { this.textContainerElement = element; }} className={cx('hover-section-text')}>
-            <h3 ref={(element) => { this.textElement = element; }} className={cx('hover-text')}>{text}</h3>
+          <div className={cx('hover-section-wrapper')}>
+            <div className={cx('hover-section-icon')}>
+              <IconChevronRight className={cx('hover-icon')} />
+            </div>
+            <div ref={(element) => { this.textContainerElement = element; }} className={cx('hover-section-text')}>
+              <h3 ref={(element) => { this.textElement = element; }} className={cx('hover-text')}>{text}</h3>
+            </div>
           </div>
         </button>
       </div>

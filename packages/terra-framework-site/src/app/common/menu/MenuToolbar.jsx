@@ -7,14 +7,12 @@ import IconLeft from 'terra-icon/lib/icon/IconLeft';
 import IconHouse from 'terra-icon/lib/icon/IconHouse';
 import Button from 'terra-button';
 
-// import RoutingManagerDelegate from '../RoutingManagerDelegate';
+import RoutingDelegate from '../navigation/routing/RoutingDelegate';
+
 import './MenuToolbar.scss';
 
 const propTypes = {
-  /**
-   * The AppDelegate instance provided by the containing component. If present, its properties will propagate to the children components.
-   * */
-//   routingManager: RoutingManagerDelegate.propType,
+  routingManager: RoutingDelegate.propType,
   backButtonOverride: PropTypes.node,
   text: PropTypes.string,
 };
@@ -48,12 +46,14 @@ const MenuToolbar = ({ routingManager, text, ...customProps }) => {
   );
 
   return (
-    <div {...customProps} className={toolbarClassNames}>
-      {toolbarStart}
-      <div className="terraClinical-MenuToolbar-body">
-        <h3 style={{ margin: '0' }}>{text}</h3>
+    <div {...customProps} className="terraClinical-FlexWrapper">
+      <div className={toolbarClassNames}>
+        {toolbarStart}
+        <div className="terraClinical-MenuToolbar-body">
+          <h3 style={{ margin: '0' }}>{text}</h3>
+        </div>
+        {toolbarEnd}
       </div>
-      {toolbarEnd}
     </div>
   );
 };

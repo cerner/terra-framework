@@ -21,22 +21,22 @@
   }
 
   .nav-links {
-    border-right: 1px solid #dedfe0;
+    border-right: 0.07143rem solid #dedfe0;
     color: #fff;
     display: block;
     flex: 0 0 auto;
-    font-size: 13px;
+    font-size: 0.9286rem;
     height: 100%;
     line-height: 2.7;
-    min-width: 80px;
-    max-width: 240px;
-    padding: 0 21px;
+    min-width: 5.714rem;
+    max-width: 17.143rem;
+    padding: 0 1.5rem;
     position: relative;
     text-align: center;
     text-decoration: none;
 
     &:first-child {
-      border-left: 1px solid #fff;
+      border-left: 0.07143rem solid #fff;
     }
 
     &:hover {
@@ -46,7 +46,7 @@
     &[aria-current='true'] {
       background-color: #fff;
       border-left: none;
-      bottom:-1px;
+      bottom:-0.07143rem;
       color: #1c1f21;
       font-weight: 600;
     }
