@@ -5,14 +5,13 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 import Base from 'terra-base';
 import ThemeProvider from 'terra-theme-provider';
 import NavigationLayout from 'terra-navigation';
-import ContentWrapper from 'terra-navigation/lib/wrappers/ContentWrapper';
-import MenuWrapper from 'terra-navigation/lib/wrappers/MenuWrapper';
 
 import ApplicationHeader from './ApplicationHeader';
 import './App.scss';
 
 const propTypes = {
-  config: PropTypes.object,
+  routes: PropTypes.object,
+  navigation: PropTypes.object,
 };
 
 const locale = document.getElementsByTagName('html')[0].getAttribute('lang');
@@ -57,7 +56,8 @@ class App extends React.Component {
         onDirChange={this.handleBidiChange}
         theme={this.state.theme}
         onThemeChange={this.handleThemeChange}
-        routeConfig={this.props.config}
+        routes={this.props.routes}
+        navigation={this.props.navigation}
       />
     );
 
@@ -69,13 +69,10 @@ class App extends React.Component {
               <Base style={{ height: '100%' }} locale={this.state.locale}>
                 <NavigationLayout
                   header={applicationHeader}
-                  menu={<MenuWrapper />}
                   menuText="Menu"
-                  routeConfig={this.props.config}
-                  enableHoverMenu
-                >
-                  <ContentWrapper />
-                </NavigationLayout>
+                  indexRoute={this.props.navigation.index}
+                  routeConfig={this.props.routes}
+                />
               </Base>
             </ThemeProvider>
           )}

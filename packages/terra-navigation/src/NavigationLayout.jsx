@@ -6,6 +6,7 @@ import {
 
 import AppDelegate from 'terra-app-delegate';
 import Layout from 'terra-layout';
+import BaseWrapper from './wrappers/_BaseWrapper';
 import { navigationConfigPropType, configHasMatchingRoute } from './routing/RoutingConfigUtils';
 
 const propTypes = {
@@ -16,6 +17,7 @@ const propTypes = {
   menu: PropTypes.element,
   menuText: PropTypes.string,
   routeConfig: navigationConfigPropType,
+  indexRoute: PropTypes.string,
 };
 
 class NavigationLayout extends React.Component {
@@ -62,38 +64,50 @@ class NavigationLayout extends React.Component {
     }
   }
 
-  decorateElement(element) {
+  decorateElement(element, routes) {
     if (!element) {
       return null;
     }
-    const { app, routeConfig } = this.props;
+
+    const { app, location } = this.props;
     const { size } = this.state;
 
     return React.cloneElement(element, {
       app,
+      routes,
       routingManager: {
         size,
         location,
-        routeConfig,
       },
     });
   }
 
   render() {
-    const { header, children, menu, menuText, routeConfig, location } = this.props;
+    const { header, children, menu, menuText, routeConfig, location, indexRoute } = this.props;
+    const { size } = this.state;
 
-    let menuComponent;
-    if (configHasMatchingRoute(location.pathname, routeConfig.menuRoutes, this.state.size)) {
-      menuComponent = this.decorateElement(menu);
+    const headerWrapper = header || (
+      <BaseWrapper />
+    );
+
+    const contentWrapper = children || (
+      <BaseWrapper redirect={indexRoute} />
+    );
+
+    let menuWrapper;
+    if (configHasMatchingRoute(location.pathname, routeConfig.menu, size)) {
+      menuWrapper = menu || (
+        <BaseWrapper />
+      );
     }
 
     return (
       <Layout
-        header={this.decorateElement(header)}
-        menu={menuComponent}
+        header={this.decorateElement(headerWrapper, routeConfig.header)}
+        menu={this.decorateElement(menuWrapper, routeConfig.menu)}
         menuText={menuText}
       >
-        {this.decorateElement(children)}
+        {this.decorateElement(contentWrapper, routeConfig.content)}
       </Layout>
     );
   }

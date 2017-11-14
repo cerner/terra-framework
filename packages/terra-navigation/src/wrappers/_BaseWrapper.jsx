@@ -9,21 +9,21 @@ import RoutingStack from '../routing/RoutingStack';
 
 const propTypes = {
   app: AppDelegate.propType,
-  routingManager: PropTypes.object,
   routes: PropTypes.any,
+  routingManager: PropTypes.object,
 };
 
-const BaseWrapper = ({ app, routingManager, routes }) => (
+const BaseWrapper = ({ app, routingManager, routes, redirect }) => (
   <div style={{ height: '100%' }}>
     <RoutingStack
-      size={routingManager.size}
       navEnabled
+      size={routingManager.size}
       app={app}
       routeConfig={routes}
       location={routingManager.location}
       routingManager={routingManager}
     >
-      <Redirect to={routingManager.routeConfig.navigation.index} />
+      {redirect && <Redirect to={redirect} />}
     </RoutingStack>
   </div>
 );

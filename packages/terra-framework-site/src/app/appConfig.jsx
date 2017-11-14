@@ -18,61 +18,32 @@ const injectConfig = config => (
   )
 );
 
-const componentTests = {};
-Object.keys(componentConfig).map((componentKey) => {
-  const testRoot = componentConfig[componentKey].testRoot;
-  if (testRoot) {
-    return {
-      path: testRoot,
-      component: {
-        default: {
-          componentClass: injectConfig(componentConfig[componentKey])(ComponentTests),
+const buildConfigForComponent = (config, ComponentClass) => {
+  const generatedConfig = {};
+  Object.keys(componentConfig).map((componentKey) => {
+    const testRoot = componentConfig[componentKey].testRoot;
+    if (testRoot) {
+      return {
+        path: testRoot,
+        component: {
+          default: {
+            componentClass: injectConfig(componentConfig[componentKey])(ComponentClass),
+          },
         },
-      },
-    };
-  }
-  return undefined;
-})
-.filter(test => !!test)
-.forEach((test) => {
-  componentTests[test.path] = test;
-});
+      };
+    }
+    return undefined;
+  })
+  .filter(test => !!test)
+  .forEach((test) => {
+    generatedConfig[test.path] = test;
+  });
 
-const componentTestMenus = {};
-Object.keys(componentConfig).map((componentKey) => {
-  const testRoot = componentConfig[componentKey].testRoot;
-  if (testRoot) {
-    return {
-      path: testRoot,
-      component: {
-        default: {
-          componentClass: injectConfig(componentConfig[componentKey])(ComponentTestsMenu),
-        },
-      },
-    };
-  }
-  return undefined;
-})
-.filter(test => !!test)
-.forEach((test) => {
-  componentTestMenus[test.path] = test;
-});
+  return generatedConfig;
+};
 
-const config = {
-  navigation: {
-    index: '/home',
-    links: [{
-      path: '/home',
-      text: 'Home',
-    }, {
-      path: '/components',
-      text: 'Components',
-    }, {
-      path: '/tests',
-      text: 'Tests',
-    }],
-  },
-  contentRoutes: {
+const routes = {
+  content: {
     '/home': {
       path: '/home',
       component: {
@@ -96,10 +67,10 @@ const config = {
           componentClass: Tests,
         },
       },
-      children: componentTests,
+      children: buildConfigForComponent(componentConfig, ComponentTests),
     },
   },
-  menuRoutes: {
+  menu: {
     '/': {
       path: '/',
       component: {
@@ -126,11 +97,25 @@ const config = {
               componentClass: injectConfig(componentConfig)(TestsMenu),
             },
           },
-          children: componentTestMenus,
+          children: buildConfigForComponent(componentConfig, ComponentTestsMenu),
         },
       },
     },
   },
 };
 
-export default config;
+const navigation = {
+  index: '/home',
+  links: [{
+    path: '/home',
+    text: 'Home',
+  }, {
+    path: '/components',
+    text: 'Components',
+  }, {
+    path: '/tests',
+    text: 'Tests',
+  }],
+};
+
+export { routes, navigation };
