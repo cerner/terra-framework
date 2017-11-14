@@ -7,7 +7,7 @@ import IconLeft from 'terra-icon/lib/icon/IconLeft';
 import IconHouse from 'terra-icon/lib/icon/IconHouse';
 import Button from 'terra-button';
 
-import RoutingDelegate from '../navigation/routing/RoutingDelegate';
+import RoutingDelegate from 'terra-navigation/lib/routing/RoutingDelegate';
 
 import './MenuToolbar.scss';
 

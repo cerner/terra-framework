@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import Base from 'terra-base';
 import ThemeProvider from 'terra-theme-provider';
-import NavigationLayout from './common/navigation/NavigationLayout';
-import ContentWrapper from './common/navigation/wrappers/ContentWrapper';
-import MenuWrapper from './common/navigation/wrappers/MenuWrapper';
+import NavigationLayout from 'terra-navigation';
+import ContentWrapper from 'terra-navigation/lib/wrappers/ContentWrapper';
+import MenuWrapper from 'terra-navigation/lib/wrappers/MenuWrapper';
 
 import ApplicationHeader from './ApplicationHeader';
 import './App.scss';

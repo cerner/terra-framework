@@ -24,6 +24,8 @@ const componentConfigPropType = PropTypes.objectOf((propValue, key, componentNam
   if (!valueIsValid) {
     return new Error(`Invalid prop '${propFullName}' supplied to '${componentName}'. Validation failed.`);
   }
+
+  return true;
 });
 
 const routePropType = PropTypes.shape({
@@ -129,6 +131,5 @@ const configHasMatchingRoute = (pathname, routeConfig, size) => {
 
   return false;
 };
-
 
 export { flattenRouteConfig, configHasMatchingRoute };

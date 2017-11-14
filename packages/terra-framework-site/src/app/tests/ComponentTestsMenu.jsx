@@ -2,7 +2,7 @@
 
 import React from 'react';
 import MenuList from '../common/menu/MenuList';
-import RoutingDelegate from '../common/navigation/routing/RoutingDelegate';
+import RoutingDelegate from 'terra-navigation/lib/routing/RoutingDelegate';
 import { itemConfigPropType } from '../../componentConfig';
 
 const propTypes = {
