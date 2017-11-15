@@ -1,0 +1,54 @@
+/* stylelint-disable selector-class-pattern */
+:local {
+  .nav-tabs {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+  }
+
+  .content {
+    flex: 0 0 auto;
+  }
+
+  .container {
+    display: flex;
+    flex: 1 1 auto;
+    height: 100%;
+    position: relative;
+  }
+
+  .nav-links {
+    border-right: 0.07143rem solid #dedfe0;
+    color: #fff;
+    display: block;
+    flex: 0 0 auto;
+    font-size: 0.9286rem;
+    height: 100%;
+    line-height: 2.7;
+    min-width: 5.714rem;
+    max-width: 17.143rem;
+    padding: 0 1.5rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+
+    &:first-child {
+      border-left: 0.07143rem solid #fff;
+    }
+
+    &:hover {
+      background-color: #015085;
+    }
+
+    &[aria-current='true'] {
+      background-color: #fff;
+      border-left: none;
+      bottom:-0.07143rem;
+      color: #1c1f21;
+      font-weight: 600;
+    }
+  }
+}

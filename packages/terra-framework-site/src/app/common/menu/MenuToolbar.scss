@@ -1,0 +1,59 @@
+@import '~terra-mixins';
+
+// Wrapper to fix IE10/11 min-height flexbox layouts
+.terraClinical-FlexWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.terraClinical-MenuToolbar {
+  color: #1C1F21;
+  font-size: 1rem;
+  background: #FFF;
+  box-shadow: inset 0 -0.286rem 0.5rem 0 rgba(0,0,0,0.06);
+  border-bottom: 0.071rem solid #EDEEEE;
+  border-top: 0.071rem solid #BCBFC0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 100%;
+  min-height: 3.429rem;
+  position: relative;
+  width: 100%;
+}
+
+.terraClinical-MenuToolbar.is-terminal {
+  color: #9B9FA1;
+  background: #F4F4F4;
+  border-bottom: 0.071rem solid #EDEEEE;
+}
+
+.terraClinical-MenuToolbar-start {
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: flex-start;
+  max-height: 100%;
+  min-width: 0;
+  position: relative;
+}
+
+.terraClinical-MenuToolbar-end {
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: flex-end;
+  max-height: 100%;
+  min-width: 0;
+  position: relative;
+}
+
+.terraClinical-MenuToolbar-body {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: flex-start;
+  max-height: 100%;
+  min-width: 0;
+  position: relative;
+  padding-left: 0.7143rem;
+}
