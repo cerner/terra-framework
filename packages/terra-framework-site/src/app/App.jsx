@@ -56,7 +56,6 @@ class App extends React.Component {
         onDirChange={this.handleBidiChange}
         theme={this.state.theme}
         onThemeChange={this.handleThemeChange}
-        routes={this.props.routes}
         navigation={this.props.navigation}
       />
     );
@@ -66,7 +65,7 @@ class App extends React.Component {
         <Route
           render={() => (
             <ThemeProvider id="framework-site" themeName={themes[this.state.theme]} isGlobalTheme>
-              <Base style={{ height: '100%' }} locale={this.state.locale}>
+              <Base className="base" locale={this.state.locale}>
                 <NavigationLayout
                   header={applicationHeader}
                   menuText="Menu"

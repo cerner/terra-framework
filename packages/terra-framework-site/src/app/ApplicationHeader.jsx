@@ -80,7 +80,7 @@ class ApplicationHeader extends React.Component {
     const utility = (
       <Utility
         accessory={<IconSettings />}
-        title={'Utilities'}
+        title={'Config'}
         menuItems={[themeSwitcher, localeContent, <Menu.Divider key="DIVIDER-1" />, bidiContent]}
       />
     );

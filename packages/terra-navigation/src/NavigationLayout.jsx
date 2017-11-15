@@ -6,7 +6,7 @@ import {
 
 import AppDelegate from 'terra-app-delegate';
 import Layout from 'terra-layout';
-import BaseWrapper from './wrappers/_BaseWrapper';
+import NavigationLayoutContent from './NavigationLayoutContent';
 import { navigationConfigPropType, configHasMatchingRoute } from './routing/RoutingConfigUtils';
 
 const propTypes = {
@@ -87,17 +87,17 @@ class NavigationLayout extends React.Component {
     const { size } = this.state;
 
     const headerWrapper = header || (
-      <BaseWrapper />
+      <NavigationLayoutContent />
     );
 
     const contentWrapper = children || (
-      <BaseWrapper redirect={indexRoute} />
+      <NavigationLayoutContent redirect={indexRoute} />
     );
 
     let menuWrapper;
     if (configHasMatchingRoute(location.pathname, routeConfig.menu, size)) {
       menuWrapper = menu || (
-        <BaseWrapper />
+        <NavigationLayoutContent />
       );
     }
 

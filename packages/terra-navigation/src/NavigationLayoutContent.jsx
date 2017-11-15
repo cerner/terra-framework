@@ -3,18 +3,24 @@ import PropTypes from 'prop-types';
 import {
   Redirect,
 } from 'react-router-dom';
+import classNames from 'classnames/bind';
 
 import AppDelegate from 'terra-app-delegate';
-import RoutingStack from '../routing/RoutingStack';
+import RoutingStack from './routing/RoutingStack';
+
+import styles from './NavigationLayoutContent.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   app: AppDelegate.propType,
   routes: PropTypes.any,
+  redirect: PropTypes.string,
   routingManager: PropTypes.object,
 };
 
-const BaseWrapper = ({ app, routingManager, routes, redirect }) => (
-  <div style={{ height: '100%' }}>
+const NavigationLayoutContent = ({ app, routingManager, routes, redirect }) => (
+  <div className={cx('content')}>
     <RoutingStack
       navEnabled
       size={routingManager.size}
@@ -28,6 +34,6 @@ const BaseWrapper = ({ app, routingManager, routes, redirect }) => (
   </div>
 );
 
-BaseWrapper.propTypes = propTypes;
+NavigationLayoutContent.propTypes = propTypes;
 
-export default BaseWrapper;
+export default NavigationLayoutContent;

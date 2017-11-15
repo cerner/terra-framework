@@ -1,14 +1,15 @@
 import React from 'react';
-import Home from './home/Home';
-import ApplicationMenu from './ApplicationMenu';
-import Tests from './tests/Tests';
-import TestsMenu from './tests/TestsMenu';
+import Home from './app/home/Home';
+import ApplicationMenu from './app/ApplicationMenu';
+import Tests from './app/tests/Tests';
+import TestsMenu from './app/tests/TestsMenu';
 
-import componentConfig from '../componentConfig';
-import Components from './components/Components';
-import ComponentsMenu from './components/ComponentsMenu';
-import ComponentTests from './tests/ComponentTests';
-import ComponentTestsMenu from './tests/ComponentTestsMenu';
+import componentConfig from './componentConfig';
+
+import Components from './app/components/Components';
+import ComponentsMenu from './app/components/ComponentsMenu';
+import ComponentTests from './app/tests/ComponentTests';
+import ComponentTestsMenu from './app/tests/ComponentTestsMenu';
 
 const injectConfig = config => (
   ComponentClass => (
@@ -40,6 +41,20 @@ const buildConfigForComponent = (config, ComponentClass) => {
   });
 
   return generatedConfig;
+};
+
+const navigation = {
+  index: '/home',
+  links: [{
+    path: '/home',
+    text: 'Home',
+  }, {
+    path: '/components',
+    text: 'Components',
+  }, {
+    path: '/tests',
+    text: 'Tests',
+  }],
 };
 
 const routes = {
@@ -76,9 +91,15 @@ const routes = {
       component: {
         tiny: {
           componentClass: ApplicationMenu,
+          props: {
+            navigation,
+          },
         },
         small: {
           componentClass: ApplicationMenu,
+          props: {
+            navigation,
+          },
         },
       },
       children: {
@@ -102,20 +123,6 @@ const routes = {
       },
     },
   },
-};
-
-const navigation = {
-  index: '/home',
-  links: [{
-    path: '/home',
-    text: 'Home',
-  }, {
-    path: '/components',
-    text: 'Components',
-  }, {
-    path: '/tests',
-    text: 'Tests',
-  }],
 };
 
 export { routes, navigation };
