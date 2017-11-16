@@ -15,8 +15,6 @@
 
 - [Supported Browsers](#supported-browsers)
 - [Packages](#packages)
-- [Internationalization](#internationalizationi18n)
-  - [Packages Required I18n](#packages-required-i18n)
 - [Contributing](#contributing)
 - [LICENSE](#license)
 
@@ -45,7 +43,7 @@ Components in beta stage may include breaking changes, new features, and bug fix
 
 | Terra Package      | Version | Status |
 |--------------------|---------|--------|
-<!-- | [terra-toggle-button](https://github.com/cerner/terra-core/tree/master/packages/terra-toggle-button) | [![NPM version](http://img.shields.io/npm/v/terra-toggle-button.svg)](https://www.npmjs.org/package/terra-toggle-button) | :white_check_mark: | -->
+| [terra-layout](https://github.com/cerner/terra-framework/tree/master/packages/terra-layout) | [![NPM version](http://img.shields.io/npm/v/terra-layout.svg)](https://www.npmjs.org/package/terra-layout) | :white_check_mark: |
 
 ## Supported Browsers
 
@@ -60,6 +58,15 @@ Components in beta stage may include breaking changes, new features, and bug fix
 ## Contributing
 
 Please read through our [contributing guidelines](CONTRIBUTING.md). Included are directions for issue reporting and pull requests.
+
+## Local Development
+
+1. Install docker https://www.docker.com/ to run browser tests.
+2. Install dependencies and run tests.
+```sh
+npm install
+npm run test
+```
 
 ## LICENSE
 

@@ -1,15 +1,5 @@
 language: node_js
 sudo: required
-jdk: oraclejdk8
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
-      - oracle-java8-set-default
-before_script:
-  - export TZ=America/Chicago
 script:
   - npm test
   - npm run danger
@@ -19,6 +9,9 @@ branches:
 cache:
   directories:
     - node_modules
+before_install:
+  - docker pull selenium/standalone-chrome
+  - docker run -v /dev/shm:/dev/shm -e TZ=America/Chicago -d -p 4444:4444 selenium/standalone-chrome
 before_deploy:
   - lerna run --scope terra-framework-site compile:prod
 deploy:
