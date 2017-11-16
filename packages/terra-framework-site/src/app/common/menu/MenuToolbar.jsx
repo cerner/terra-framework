@@ -7,31 +7,31 @@ import IconLeft from 'terra-icon/lib/icon/IconLeft';
 import IconHouse from 'terra-icon/lib/icon/IconHouse';
 import Button from 'terra-button';
 
-import RoutingDelegate from 'terra-navigation/lib/routing/RoutingDelegate';
+import RoutingStackDelegate from 'terra-navigation/lib/routing/RoutingStackDelegate';
 
 import './MenuToolbar.scss';
 
 const propTypes = {
-  routingManager: RoutingDelegate.propType,
+  routingStackDelegate: RoutingStackDelegate.propType,
   backButtonOverride: PropTypes.node,
   text: PropTypes.string,
 };
 
-const MenuToolbar = ({ routingManager, text, ...customProps }) => {
+const MenuToolbar = ({ routingStackDelegate, text, ...customProps }) => {
   const toolbarClassNames = classNames([
     'terraClinical-MenuToolbar',
-    { 'is-terminal': !routingManager.goBack },
+    { 'is-terminal': !routingStackDelegate.goBack },
     customProps.className,
   ]);
 
   let backButton;
-  if (routingManager.goBack) {
-    backButton = <Button onClick={routingManager.goBack} icon={<IconLeft />} variant="link" style={{ color: 'black' }} />;
+  if (routingStackDelegate.goBack) {
+    backButton = <Button onClick={routingStackDelegate.goBack} icon={<IconLeft />} variant="link" style={{ color: 'black' }} />;
   }
 
   let rootButton;
-  if (routingManager.goToRoot) {
-    rootButton = <Button onClick={routingManager.goToRoot} icon={<IconHouse />} variant="link" style={{ color: 'black' }} />;
+  if (routingStackDelegate.goToRoot) {
+    rootButton = <Button onClick={routingStackDelegate.goToRoot} icon={<IconHouse />} variant="link" style={{ color: 'black' }} />;
   }
 
   const toolbarStart = (

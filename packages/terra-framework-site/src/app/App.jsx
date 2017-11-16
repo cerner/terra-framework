@@ -10,7 +10,7 @@ import ApplicationHeader from './ApplicationHeader';
 import './App.scss';
 
 const propTypes = {
-  routes: PropTypes.object,
+  routeConfig: PropTypes.object,
   navigation: PropTypes.object,
 };
 
@@ -70,7 +70,7 @@ class App extends React.Component {
                   header={applicationHeader}
                   menuText="Menu"
                   indexRoute={this.props.navigation.index}
-                  routeConfig={this.props.routes}
+                  config={this.props.routeConfig}
                 />
               </Base>
             </ThemeProvider>

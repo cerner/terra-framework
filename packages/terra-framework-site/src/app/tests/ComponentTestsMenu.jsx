@@ -1,19 +1,18 @@
-/* eslint-disable import/no-extraneous-dependencies */
-
 import React from 'react';
+import RoutingStackDelegate from 'terra-navigation/lib/routing/RoutingStackDelegate';
+
 import MenuList from '../common/menu/MenuList';
-import RoutingDelegate from 'terra-navigation/lib/routing/RoutingDelegate';
 import { itemConfigPropType } from '../../componentConfig';
 
 const propTypes = {
-  routingManager: RoutingDelegate.propType,
+  routingStackDelegate: RoutingStackDelegate.propType,
   config: itemConfigPropType,
 };
 
-const ComponentTestsMenu = ({ routingManager, config }) => (
+const ComponentTestsMenu = ({ routingStackDelegate, config }) => (
   <MenuList
     headerText={`${config.name} Tests`}
-    routingManager={routingManager}
+    routingStackDelegate={routingStackDelegate}
     links={config.tests.map(test => ({
       id: config.testRoot + test.path,
       path: config.testRoot + test.path,

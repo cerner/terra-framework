@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import ContentContainer from 'terra-content-container';
-import RoutingDelegate from 'terra-navigation/lib/routing/RoutingDelegate';
+import RoutingStackDelegate from 'terra-navigation/lib/routing/RoutingStackDelegate';
 import MenuToolbar from './MenuToolbar';
 
 import './MenuList.scss';
 
 const propTypes = {
-  routingManager: RoutingDelegate.propType,
+  routingStackDelegate: RoutingStackDelegate.propType,
   links: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
     path: PropTypes.string,
@@ -17,10 +17,10 @@ const propTypes = {
   headerText: PropTypes.string,
 };
 
-const MenuList = ({ routingManager, links, headerText }) => (
+const MenuList = ({ routingStackDelegate, links, headerText }) => (
   <div style={{ height: '100%', width: '100%', position: 'absolute' }}>
     <ContentContainer
-      header={<MenuToolbar text={headerText} routingManager={routingManager} />}
+      header={<MenuToolbar text={headerText} routingStackDelegate={routingStackDelegate} />}
       fill
     >
       <div className="cm-container">
@@ -33,7 +33,7 @@ const MenuList = ({ routingManager, links, headerText }) => (
               <NavLink
                 key={link.id}
                 className="cm-link"
-                location={routingManager.browserLocation}
+                location={routingStackDelegate.location}
                 to={link.path}
                 activeStyle={{
                   fontWeight: 'bold',

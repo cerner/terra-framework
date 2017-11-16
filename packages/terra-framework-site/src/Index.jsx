@@ -4,5 +4,5 @@ import App from './app/App';
 import { routes, navigation } from './appConfig';
 
 ReactDOM.render((
-  <App routes={routes} navigation={navigation} />
+  <App routeConfig={routes} navigation={navigation} />
 ), document.getElementById('root'));

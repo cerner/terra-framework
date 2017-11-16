@@ -1,24 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import RoutingDelegate from 'terra-navigation/lib/routing/RoutingDelegate';
+import RoutingStackDelegate from 'terra-navigation/lib/routing/RoutingStackDelegate';
 
 import MenuList from './common/menu/MenuList';
 
 const propTypes = {
   navigation: PropTypes.object,
-  routingManager: RoutingDelegate.propType,
+  routingStackDelegate: RoutingStackDelegate.propType,
 };
 
-const ApplicationMenu = ({ routingManager }) => (
+const ApplicationMenu = ({ navigation, routingStackDelegate }) => (
   <MenuList
     headerText="Terra Framework"
-    routingManager={routingManager}
-    links={[
-      { id: '/home', path: '/home', text: 'Home' },
-      { id: '/components', path: '/components', text: 'Components' },
-      { id: '/tests', path: '/tests', text: 'Tests' },
-    ]}
+    routingStackDelegate={routingStackDelegate}
+    links={navigation.links.map(item => ({
+      id: item.path,
+      path: item.path,
+      text: item.text,
+    }))}
   />
 );
 

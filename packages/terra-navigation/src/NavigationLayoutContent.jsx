@@ -14,20 +14,20 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   app: AppDelegate.propType,
-  routes: PropTypes.any,
+  routeConfig: PropTypes.any,
+  navigationLayoutSize: PropTypes.string,
+
   redirect: PropTypes.string,
-  routingManager: PropTypes.object,
+  stackNavigationIsEnabled: PropTypes.bool,
 };
 
-const NavigationLayoutContent = ({ app, routingManager, routes, redirect }) => (
+const NavigationLayoutContent = ({ app, routeConfig, navigationLayoutSize, redirect, stackNavigationIsEnabled }) => (
   <div className={cx('content')}>
     <RoutingStack
-      navEnabled
-      size={routingManager.size}
+      navEnabled={stackNavigationIsEnabled}
+      size={navigationLayoutSize}
       app={app}
-      routeConfig={routes}
-      location={routingManager.location}
-      routingManager={routingManager}
+      routeConfig={routeConfig}
     >
       {redirect && <Redirect to={redirect} />}
     </RoutingStack>

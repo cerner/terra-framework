@@ -6,43 +6,49 @@ import {
 
 import AppDelegate from 'terra-app-delegate';
 import Layout from 'terra-layout';
+import breakpoints from 'terra-responsive-element/lib/breakpoints.scss';
+
 import NavigationLayoutContent from './NavigationLayoutContent';
-import { navigationConfigPropType, configHasMatchingRoute } from './routing/RoutingConfigUtils';
+import { navigationLayoutConfigPropType } from './configurationPropTypes';
+import { configHasMatchingRoute } from './routing/routingUtils';
+
+const getBreakpointSize = (queryWidth) => {
+  const width = queryWidth || window.innerWidth;
+  const { small, medium, large, huge } = breakpoints;
+
+  if (width >= huge) {
+    return 'huge';
+  } else if (width >= large) {
+    return 'large';
+  } else if (width >= medium) {
+    return 'medium';
+  } else if (width >= small) {
+    return 'small';
+  }
+  return 'tiny';
+};
 
 const propTypes = {
-  app: AppDelegate.propType,
   header: PropTypes.element,
-  children: PropTypes.element,
-  location: PropTypes.object,
   menu: PropTypes.element,
+  children: PropTypes.element,
   menuText: PropTypes.string,
-  routeConfig: navigationConfigPropType,
-  indexRoute: PropTypes.string,
+
+  app: AppDelegate.propType,
+  config: navigationLayoutConfigPropType,
+  indexPath: PropTypes.string,
+
+  location: PropTypes.object,
 };
 
 class NavigationLayout extends React.Component {
-  static getBreakpointSize() {
-    const width = window.innerWidth;
-
-    if (width >= 1440) {
-      return 'huge';
-    } else if (width >= 1216) {
-      return 'large';
-    } else if (width >= 992) {
-      return 'medium';
-    } else if (width >= 768) {
-      return 'small';
-    }
-    return 'tiny';
-  }
-
   constructor(props) {
     super(props);
 
     this.updateSize = this.updateSize.bind(this);
 
     this.state = {
-      size: NavigationLayout.getBreakpointSize(),
+      size: getBreakpointSize(),
     };
   }
 
@@ -55,7 +61,7 @@ class NavigationLayout extends React.Component {
   }
 
   updateSize() {
-    const newSize = NavigationLayout.getBreakpointSize();
+    const newSize = getBreakpointSize();
 
     if (this.state.size !== newSize) {
       this.setState({
@@ -64,50 +70,47 @@ class NavigationLayout extends React.Component {
     }
   }
 
-  decorateElement(element, routes) {
+  decorateElement(element, routeConfig) {
     if (!element) {
       return null;
     }
 
-    const { app, location } = this.props;
+    const { app } = this.props;
     const { size } = this.state;
 
     return React.cloneElement(element, {
       app,
-      routes,
-      routingManager: {
-        size,
-        location,
-      },
+      routeConfig,
+      navigationLayoutSize: size,
     });
   }
 
   render() {
-    const { header, children, menu, menuText, routeConfig, location, indexRoute } = this.props;
+    const { header, children, menu, menuText, config, location, indexPath } = this.props;
     const { size } = this.state;
 
-    const headerWrapper = header || (
+    const headerComponent = header || (
       <NavigationLayoutContent />
     );
 
-    const contentWrapper = children || (
-      <NavigationLayoutContent redirect={indexRoute} />
+    const contentComponent = children || (
+      <NavigationLayoutContent redirect={indexPath} />
     );
 
-    let menuWrapper;
-    if (configHasMatchingRoute(location.pathname, routeConfig.menu, size)) {
-      menuWrapper = menu || (
-        <NavigationLayoutContent />
+    let menuComponent;
+    if (configHasMatchingRoute(location.pathname, config.menu, size)) {
+      menuComponent = menu || (
+        <NavigationLayoutContent stackNavigationIsEnabled />
       );
     }
 
     return (
       <Layout
-        header={this.decorateElement(headerWrapper, routeConfig.header)}
-        menu={this.decorateElement(menuWrapper, routeConfig.menu)}
+        header={this.decorateElement(headerComponent, config.header)}
+        menu={this.decorateElement(menuComponent, config.menu)}
         menuText={menuText}
       >
-        {this.decorateElement(contentWrapper, routeConfig.content)}
+        {this.decorateElement(contentComponent, config.content)}
       </Layout>
     );
   }

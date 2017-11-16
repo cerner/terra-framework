@@ -1,18 +1,18 @@
 import React from 'react';
+import RoutingStackDelegate from 'terra-navigation/lib/routing/RoutingStackDelegate';
 
 import MenuList from '../common/menu/MenuList';
-import RoutingDelegate from 'terra-navigation/lib/routing/RoutingDelegate';
 import { siteConfigPropType } from '../../componentConfig';
 
 const propTypes = {
-  routingManager: RoutingDelegate.propType,
+  routingStackDelegate: RoutingStackDelegate.propType,
   config: siteConfigPropType,
 };
 
-const ComponentsMenu = ({ routingManager, config }) => (
+const ComponentsMenu = ({ routingStackDelegate, config }) => (
   <MenuList
     headerText="Components"
-    routingManager={routingManager}
+    routingStackDelegate={routingStackDelegate}
     links={Object.keys(config).map((componentKey) => {
       const example = config[componentKey].example;
       if (example) {
