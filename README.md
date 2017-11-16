@@ -61,6 +61,15 @@ Components in beta stage may include breaking changes, new features, and bug fix
 
 Please read through our [contributing guidelines](CONTRIBUTING.md). Included are directions for issue reporting and pull requests.
 
+## Local Development
+
+1. Install docker https://www.docker.com/ to run browser tests.
+2. Install dependencies and run tests.
+```sh
+npm install
+npm run test
+```
+
 ## LICENSE
 
 Copyright 2017 Cerner Innovation, Inc.
