@@ -1,8 +1,8 @@
 {
-  "name": "terra-navigation",
+  "name": "terra-navigation-layout",
   "main": "lib/NavigationLayout.js",
   "version": "0.0.0",
-  "description": "This component renders navigation with react router.",
+  "description": "The Terra Navigation Layout package includes a variety of components and utilities to provide configuration-based, react-router-driven navigation to Terra applications.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git"
@@ -11,8 +11,8 @@
     "Cerner",
     "Terra",
     "Framework",
-    "terra-navigation",
-    "Navigation",
+    "terra-navigation-layout",
+    "NavigationLayout",
     "UI"
   ],
   "author": "Cerner Corporation",
@@ -56,7 +56,7 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "$(cd ..; npm bin)/eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "$(cd ..; npm bin)/stylelint src/**/*.scss",
-    "props-table": "$(cd ..; npm bin)/props-table ./src/Navigation.jsx --out-dir ./docs/props-table",
+    "props-table": "$(cd ..; npm bin)/props-table ./src/NavigationLayout.jsx --out-dir ./docs/props-table",
     "test": "npm run test:jest && npm run test:nightwatch",
     "test:jest": "$(cd ..; npm bin)/jest --config ../../jestconfig.json",
     "test:nightwatch": "$(cd ..; npm bin)/nightwatch -c ../../nightwatch.conf.js"

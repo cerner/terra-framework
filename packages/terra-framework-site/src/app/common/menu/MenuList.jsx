@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import ContentContainer from 'terra-content-container';
-import RoutingStackDelegate from 'terra-navigation/lib/routing/RoutingStackDelegate';
+import RoutingStackDelegate from 'terra-navigation-layout/lib/routing/RoutingStackDelegate';
 import MenuToolbar from './MenuToolbar';
 
 import './MenuList.scss';

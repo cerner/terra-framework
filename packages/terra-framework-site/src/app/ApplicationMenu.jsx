@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import RoutingStackDelegate from 'terra-navigation/lib/routing/RoutingStackDelegate';
+import RoutingStackDelegate from 'terra-navigation-layout/lib/routing/RoutingStackDelegate';
 
 import MenuList from './common/menu/MenuList';
 

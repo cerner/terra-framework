@@ -1,10 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import Base from 'terra-base';
 import ThemeProvider from 'terra-theme-provider';
-import NavigationLayout from 'terra-navigation';
+import NavigationLayout from 'terra-navigation-layout';
 
 import ApplicationHeader from './ApplicationHeader';
 import './App.scss';
@@ -62,20 +62,16 @@ class App extends React.Component {
 
     return (
       <Router>
-        <Route
-          render={() => (
-            <ThemeProvider id="framework-site" themeName={themes[this.state.theme]} isGlobalTheme>
-              <Base className="base" locale={this.state.locale}>
-                <NavigationLayout
-                  header={applicationHeader}
-                  menuText="Menu"
-                  indexPath={this.props.navigation.index}
-                  config={this.props.routeConfig}
-                />
-              </Base>
-            </ThemeProvider>
-          )}
-        />
+        <ThemeProvider id="framework-site" themeName={themes[this.state.theme]} isGlobalTheme>
+          <Base className="base" locale={this.state.locale}>
+            <NavigationLayout
+              header={applicationHeader}
+              menuText="Menu"
+              indexPath={this.props.navigation.index}
+              config={this.props.routeConfig}
+            />
+          </Base>
+        </ThemeProvider>
       </Router>
     );
   }

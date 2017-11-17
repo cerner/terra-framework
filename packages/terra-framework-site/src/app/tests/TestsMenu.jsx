@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import RoutingStackDelegate from 'terra-navigation/lib/routing/RoutingStackDelegate';
+import RoutingStackDelegate from 'terra-navigation-layout/lib/routing/RoutingStackDelegate';
 
 import MenuList from '../common/menu/MenuList';
 import { siteConfigPropType } from '../../componentConfig';
