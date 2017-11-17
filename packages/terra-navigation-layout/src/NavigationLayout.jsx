@@ -55,16 +55,28 @@ const propTypes = {
   /**
    * The configuration Object that will be used to generate the specified regions of the NavigationLayout.
    */
-  config: navigationLayoutConfigPropType,
+  config: navigationLayoutConfigPropType.isRequired,
   /**
    * The index path of the consuming application's routing structure. If provided, the NavigationLayout will
    * ensure Redirects are present where necessary.
    */
   indexPath: PropTypes.string,
   /**
-   * The current location as provided by the `withRouter()` HOC.
+   * The location as provided by the `withRouter()` HOC.
    */
   location: PropTypes.object,
+  /**
+   * The match as provided by the `withRouter()` HOC.
+   */
+  match: PropTypes.object,
+  /**
+   * The history as provided by the `withRouter()` HOC.
+   */
+  history: PropTypes.object,
+  /**
+   * The staticContext as provided by the `withRouter()` HOC.
+   */
+  staticContext: PropTypes.object,
 };
 
 /**
@@ -115,7 +127,20 @@ class NavigationLayout extends React.Component {
   }
 
   render() {
-    const { header, children, menu, menuText, config, location, indexPath } = this.props;
+    const {
+      header,
+      children,
+      menu,
+      app,
+      menuText,
+      config,
+      indexPath,
+      location,
+      match,
+      history,
+      staticContext,
+      ...customProps
+    } = this.props; // eslint-disable-line no-unused-vars
     const { size } = this.state;
 
     const headerComponent = header || <NavigationLayoutContent />;
@@ -131,6 +156,7 @@ class NavigationLayout extends React.Component {
 
     return (
       <Layout
+        {...customProps}
         header={this.decorateElement(headerComponent, config.header)}
         menu={this.decorateElement(menuComponent, config.menu)}
         menuText={menuText}

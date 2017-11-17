@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import { siteConfigPropType } from '../../componentConfig';
 
 const propTypes = {
   config: siteConfigPropType,
-  location: React.PropTypes.shape({
-    pathname: React.PropTypes.string.isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
   }),
 };
 

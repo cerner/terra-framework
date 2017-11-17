@@ -38,6 +38,10 @@ const propTypes = {
    * to insert custom Redirects or fallback Routes.
    */
   children: PropTypes.node,
+  /**
+   * Any additional props that should be propagated to the generated Route components.
+   */
+  propsForContent: PropTypes.object,
 };
 
 class RoutingStack extends React.Component {
@@ -66,7 +70,7 @@ class RoutingStack extends React.Component {
   }
 
   createRoutes(routeConfig) {
-    const { navEnabled, app, location, size } = this.props;
+    const { navEnabled, app, location, size, propsForContent } = this.props;
 
     return flattenRouteConfig(routeConfig, size).map((routeData) => {
       const routingStackDelegate = RoutingStackDelegate.create({
@@ -92,6 +96,7 @@ class RoutingStack extends React.Component {
           render={routeProps => (
             <ComponentClass
               {...routeProps}
+              {...propsForContent}
               {...routeData.componentProps}
               routingStackDelegate={routingStackDelegate}
               app={app}

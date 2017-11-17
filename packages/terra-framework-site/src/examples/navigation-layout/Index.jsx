@@ -10,11 +10,16 @@ import { version } from 'terra-navigation-layout/package.json';
 import NavigationLayoutSrc from '!raw-loader!terra-navigation-layout/src/NavigationLayout.jsx';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 
+// Example Files
+import NavigationLayoutStandard from './NavigationLayoutStandard';
+
 const NavigationLayoutExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
     <PropsTable id="props-navigation" src={NavigationLayoutSrc} />
+    <h2 id="navigation-layout-standard">Navigation Layout</h2>
+    <NavigationLayoutStandard />
   </div>
 );
 

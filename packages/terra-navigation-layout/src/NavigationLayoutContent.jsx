@@ -36,13 +36,14 @@ const propTypes = {
   stackNavigationIsEnabled: PropTypes.bool,
 };
 
-const NavigationLayoutContent = ({ app, routeConfig, navigationLayoutSize, redirect, stackNavigationIsEnabled }) => (
+const NavigationLayoutContent = ({ app, routeConfig, navigationLayoutSize, redirect, stackNavigationIsEnabled, ...customProps }) => (
   <div className={cx('content')}>
     <RoutingStack
       navEnabled={stackNavigationIsEnabled}
       size={navigationLayoutSize}
       app={app}
       routeConfig={routeConfig}
+      propsForContent={customProps}
     >
       {redirect && <Redirect to={redirect} />}
     </RoutingStack>

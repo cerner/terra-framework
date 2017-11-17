@@ -57,7 +57,7 @@ const navigation = {
   }],
 };
 
-const routes = {
+const routes = Object.freeze({
   content: {
     '/home': {
       path: '/home',
@@ -123,6 +123,6 @@ const routes = {
       },
     },
   },
-};
+});
 
 export { routes, navigation };
