@@ -79,6 +79,8 @@ const componentConfigPropType = PropTypes.objectOf((propValue, key, componentNam
  */
 const routePropType = PropTypes.shape({
   path: PropTypes.string.isRequired,
+  strict: PropTypes.bool,
+  exact: PropTypes.bool,
   component: componentConfigPropType.isRequired,
 });
 routePropType.children = PropTypes.objectOf(PropTypes.objectOf(routePropType)); // Recursive PropTypes are funky
@@ -102,4 +104,4 @@ const navigationLayoutConfigPropType = PropTypes.shape({
   content: routeConfigPropType,
 });
 
-export { navigationLayoutConfigPropType, routeConfigPropType, routePropType, componentConfigPropType };
+export { navigationLayoutConfigPropType, routeConfigPropType, routePropType, componentConfigPropType, supportedComponentBreakpoints };

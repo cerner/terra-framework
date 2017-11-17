@@ -29,18 +29,47 @@ const getBreakpointSize = (queryWidth) => {
 };
 
 const propTypes = {
+  /**
+   * The component to render within the NavigationLayout's `header` region. If provided, this component
+   * must appropriately handle the NavigationLayout-supplied props: `app`, `routeConfig`, and `navigationLayoutSize`.
+   */
   header: PropTypes.element,
+  /**
+   * The component to render within the NavigationLayout's `menu` region. If provided, this component
+   * must appropriately handle the NavigationLayout-supplied props: `app`, `routeConfig`, and `navigationLayoutSize`.
+   */
   menu: PropTypes.element,
+  /**
+   * The component to render within the NavigationLayout's `content` region. If provided, this component
+   * must appropriately handle the NavigationLayout-supplied props: `app`, `routeConfig`, and `navigationLayoutSize`.
+   */
   children: PropTypes.element,
+  /**
+   * The String to display in the NavigationLayout's hover-target menu disclosure.
+   */
   menuText: PropTypes.string,
-
+  /**
+   * The AppDelegate instance that will be propagated to the components presented within the NavigationLayout.
+   */
   app: AppDelegate.propType,
+  /**
+   * The configuration Object that will be used to generate the specified regions of the NavigationLayout.
+   */
   config: navigationLayoutConfigPropType,
+  /**
+   * The index path of the consuming application's routing structure. If provided, the NavigationLayout will
+   * ensure Redirects are present where necessary.
+   */
   indexPath: PropTypes.string,
-
+  /**
+   * The current location as provided by the `withRouter()` HOC.
+   */
   location: PropTypes.object,
 };
 
+/**
+ * The NavigationLayout utilizes the Terra Layout and a configuration object to generate a routing-based application layout.
+ */
 class NavigationLayout extends React.Component {
   constructor(props) {
     super(props);
@@ -89,19 +118,15 @@ class NavigationLayout extends React.Component {
     const { header, children, menu, menuText, config, location, indexPath } = this.props;
     const { size } = this.state;
 
-    const headerComponent = header || (
-      <NavigationLayoutContent />
-    );
+    const headerComponent = header || <NavigationLayoutContent />;
 
-    const contentComponent = children || (
-      <NavigationLayoutContent redirect={indexPath} />
-    );
+    const contentComponent = children || <NavigationLayoutContent redirect={indexPath} />;
 
     let menuComponent;
+    // The configuration is examined for evidence of a valid menu component for the current size and location.
+    // If one is not found, we do not provide one to the Layout to ensure that the Layout renders appropriately.
     if (configHasMatchingRoute(location.pathname, config.menu, size)) {
-      menuComponent = menu || (
-        <NavigationLayoutContent stackNavigationIsEnabled />
-      );
+      menuComponent = menu || <NavigationLayoutContent stackNavigationIsEnabled />;
     }
 
     return (

@@ -9,13 +9,34 @@ import AppDelegate from 'terra-app-delegate';
 
 import RoutingStackDelegate from './RoutingStackDelegate';
 import { flattenRouteConfig } from './routingUtils';
+import { supportedComponentBreakpoints, routeConfigPropType } from '../configurationPropTypes';
 
 const propTypes = {
+  /**
+   * The AppDelegate instance that will be provided to the components rendered by the RoutingStack.
+   */
   app: AppDelegate.propType,
-  size: PropTypes.string,
-  routeConfig: PropTypes.object,
+  /**
+   * The current responsive size.
+   */
+  size: PropTypes.oneOf(supportedComponentBreakpoints),
+  /**
+   * The routing configuration from which Routes will be generated.
+   */
+  routeConfig: routeConfigPropType,
+  /**
+   * Flag to enable navigation within the RoutingStack. If true, functions will be exposed to the Routes that
+   * will allow for traversal up to parent paths.
+   */
   navEnabled: PropTypes.bool,
+  /**
+   * The current react-router location. Provided by the `withRouter()` HOC.
+   */
   location: PropTypes.object,
+  /**
+   * Any additional Routes that will be inserted after the configuration-generated Routes. Generally used
+   * to insert custom Redirects or fallback Routes.
+   */
   children: PropTypes.node,
 };
 
@@ -33,7 +54,8 @@ class RoutingStack extends React.Component {
 
   componentWillReceiveProps() {
     this.setState({
-      stackLocation: undefined, // We reset the stack location whenever new props are received to reset its position.
+      // The stackLocation must be reset upon rerendering to be in sync with any navigation that may have occurred.
+      stackLocation: undefined,
     });
   }
 
@@ -66,7 +88,7 @@ class RoutingStack extends React.Component {
           exact={routeData.exact}
           strict={routeData.strict}
           path={routeData.path}
-          key={routeData.key}
+          key={routeData.path}
           render={routeProps => (
             <ComponentClass
               {...routeProps}

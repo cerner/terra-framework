@@ -4,6 +4,8 @@ import { matchPath } from 'react-router-dom';
  * Given a route configuration and size, returns an Array of ordered routing data objects
  * representing the routes available at that size.
  * @param {Object} routeConfig The route configuration to flatten. The expected shape matches that of the routeConfigPropType.
+ * @param {String} size The breakpoint size used during configuration parsing.
+ * @param {Array[String]} parentPaths The array of String paths that are ancestors to the given routeConfig.
  */
 const flattenRouteConfig = (routeConfig, size, parentPaths) => {
   if (!routeConfig) {
@@ -21,6 +23,8 @@ const flattenRouteConfig = (routeConfig, size, parentPaths) => {
         componentConfig = configForSize;
       }
 
+      // If no component is defined for the current size, check for a default component
+      // and use it, if one is provided.
       if (configForSize === undefined && config.component.default) {
         componentConfig = config.component.default;
       }
@@ -37,6 +41,9 @@ const flattenRouteConfig = (routeConfig, size, parentPaths) => {
         updatedParentPaths.push(config.path);
       }
 
+      // Iterate over the child route configurations. We initialize the routeData array with the child routes because
+      // we need the child routes to preceed the ancestor routes in the final array; this will ensure that ancestor routes do
+      // not take precedent over child routes if both match.
       routeData = flattenRouteConfig(config.children, size, updatedParentPaths);
     }
 
@@ -51,7 +58,6 @@ const flattenRouteConfig = (routeConfig, size, parentPaths) => {
         parentPaths,
         exact: config.exact,
         strict: config.strict,
-        key: config.key || config.path,
         componentClass: componentConfig.componentClass,
         componentProps: componentConfig.props,
       });
@@ -64,6 +70,13 @@ const flattenRouteConfig = (routeConfig, size, parentPaths) => {
   return [].concat(...(routes.filter(n => n)));
 };
 
+/**
+ * Determines whether or not the given routeConfig has a valid Component specified to display
+ * at the given pathname and size.
+ * @param {String} pathname The path to be searched for in the routeConfig.
+ * @param {Object} routeConfig The configuration object to search within.
+ * @param {String} size The breakpoint size used for configuration parsing.
+ */
 const configHasMatchingRoute = (pathname, routeConfig, size) => {
   if (!routeConfig || !pathname) {
     return false;

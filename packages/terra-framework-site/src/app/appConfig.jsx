@@ -58,7 +58,7 @@ Object.keys(componentConfig).map((componentKey) => {
   componentTestMenus[test.path] = test;
 });
 
-const config = {
+const config = Object.freeze({
   navigation: {
     index: '/home',
     links: [{
@@ -131,6 +131,6 @@ const config = {
       },
     },
   },
-};
+});
 
 export default config;

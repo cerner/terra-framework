@@ -4,6 +4,9 @@ const supportedAttributes = [
   'location', 'stackLocation', 'parentPaths', 'goBack', 'goToRoot',
 ];
 
+/**
+ * Creates a new RoutingStackDelegate Object instance based on the supportedAttributes.
+ */
 const create = (data) => {
   const delegate = {};
   supportedAttributes.forEach((attribute) => {
@@ -15,6 +18,9 @@ const create = (data) => {
   return Object.freeze(delegate);
 };
 
+/**
+ * Clones an existing RoutingStackDelegate Object instance and overrides any given attributes.
+ */
 const clone = (delegate, data) => {
   const ancestorDelegate = delegate || {};
 
@@ -26,6 +32,10 @@ const clone = (delegate, data) => {
   return create(mergedData);
 };
 
+/**
+ * Performs a shallow equality on the supportedAttributes to determine the equality of two
+ * RoutingStackDelegate Object instances.
+ */
 const isEqual = (delegateA, delegateB) => {
   if (!delegateA || !delegateB) {
     return false;
