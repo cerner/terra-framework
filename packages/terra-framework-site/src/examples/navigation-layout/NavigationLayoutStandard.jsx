@@ -1,6 +1,10 @@
 import React from 'react';
 import { MemoryRouter, withRouter } from 'react-router-dom';
 import NavigationLayout from 'terra-navigation-layout';
+import Markdown from 'terra-markdown';
+import ToggleButton from 'terra-toggle-button';
+
+import ConfigReadMe from './NavigationLayoutStandardConfig.md';
 
 import HeaderExample from './HeaderExample';
 import MenuExample from './MenuExample';
@@ -10,6 +14,7 @@ import Page3Content from './Page3Content';
 import Page1Menu from './Page1Menu';
 import Page2Menu from './Page2Menu';
 
+// If changing config, ensure NavigationLayoutStandardConfig.md is updated to match
 const config = {
   header: {
     '/': {
@@ -82,7 +87,7 @@ const config = {
 
 const NavigationLayoutStandard = withRouter(({ location }) => (
   <div>
-    <h3>Example Features</h3>
+    <h3>Features</h3>
     <ul>
       <li>Contains 3 different primary routes: /page1, /page2, and /page3</li>
       <ul>
@@ -96,6 +101,10 @@ const NavigationLayoutStandard = withRouter(({ location }) => (
       <li>Page menus expose navigation to parent menus</li>
       <li>Page content and menus expose Layout-provided functionality</li>
     </ul>
+    <h3>Configuration</h3>
+    <ToggleButton isAnimated closedButtonText="View">
+      <Markdown id="navigation-layout-standard-config" src={ConfigReadMe} />
+    </ToggleButton>
     <h3>{`Broswer Location: ${location.pathname}`}</h3>
     <NavigationLayout
       config={config}

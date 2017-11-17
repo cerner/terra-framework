@@ -18,7 +18,7 @@ const NavigationLayoutExamples = () => (
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
     <PropsTable id="props-navigation" src={NavigationLayoutSrc} />
-    <h2 id="navigation-layout-standard">Navigation Layout</h2>
+    <h2 id="navigation-layout-standard">Example Navigation Layout</h2>
     <NavigationLayoutStandard />
   </div>
 );
