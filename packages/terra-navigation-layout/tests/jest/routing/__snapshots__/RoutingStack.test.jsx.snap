@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RoutingStack should render a default RoutingStack 1`] = `
+<Route
+  render={[Function]}
+/>
+`;

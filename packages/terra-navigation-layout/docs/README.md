@@ -16,7 +16,7 @@ The `NavigationLayout` wraps the `Layout` component provided by `terra-layout` a
 
 #### RoutingStack
 
-The `RoutingStack` uses the NavigationLayout configuration to render a routing `Switch` with child `Routes` based on the configuration. If the configuration has child routes specified, the `RoutingStack` will render the child routes in the `Switch` first to ensure that partial location matches do not take precedent over full matches.
+The `RoutingStack` renders a routing `Switch` with child `Routes` based on the `NavigationLayout` configuration API. If the configuration has child routes specified, the `RoutingStack` will render the child routes in the `Switch` first to ensure that partial location matches do not take precedent over full matches.
 
 For example, if the routing configuration for the `RoutingStack` looks like:
 ```js

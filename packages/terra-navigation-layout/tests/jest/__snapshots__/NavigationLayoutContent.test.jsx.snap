@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationLayoutContent should render a default NavigationLayoutContent 1`] = `
+<div
+  className="content"
+>
+  <withRouter(RoutingStack)
+    ancestorProps={Object {}}
+  />
+</div>
+`;
