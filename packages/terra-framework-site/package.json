@@ -1,6 +1,6 @@
 {
   "name": "terra-framework-site",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Documentation Site for Functional Verification",
   "repository": {
     "type": "git",
@@ -40,7 +40,7 @@
     "terra-i18n-plugin": "^1.7.0",
     "terra-icon": "^1.12.1",
     "terra-image": "1.11.1",
-    "terra-layout": "^0.x",
+    "terra-layout": "^1.0.0",
     "terra-list": "^1.12.1",
     "terra-markdown": "^1.9.1",
     "terra-menu": "^1.6.0",
