@@ -69,7 +69,7 @@ class App extends React.Component {
                 <NavigationLayout
                   header={applicationHeader}
                   menuText="Menu"
-                  indexRoute={this.props.navigation.index}
+                  indexPath={this.props.navigation.index}
                   config={this.props.routeConfig}
                 />
               </Base>

@@ -21,7 +21,7 @@ const propTypes = {
   /**
    * The routing configuration from which Routes will be generated.
    */
-  routeConfig: PropTypes.routeConfigPropType,
+  routeConfig: routeConfigPropType,
   /**
    * The current responsive size.
    */
