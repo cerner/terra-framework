@@ -41,7 +41,7 @@ const propTypes = {
   /**
    * Any additional props that should be propagated to the generated Route components.
    */
-  propsForContent: PropTypes.object,
+  ancestorProps: PropTypes.object,
 };
 
 class RoutingStack extends React.Component {
@@ -70,7 +70,7 @@ class RoutingStack extends React.Component {
   }
 
   createRoutes(routeConfig) {
-    const { navEnabled, app, location, size, propsForContent } = this.props;
+    const { navEnabled, app, location, size, ancestorProps } = this.props;
 
     return flattenRouteConfig(routeConfig, size).map((routeData) => {
       const routingStackDelegate = RoutingStackDelegate.create({
@@ -96,7 +96,7 @@ class RoutingStack extends React.Component {
           render={routeProps => (
             <ComponentClass
               {...routeProps}
-              {...propsForContent}
+              {...ancestorProps}
               {...routeData.componentProps}
               routingStackDelegate={routingStackDelegate}
               app={app}

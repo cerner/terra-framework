@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
+import RoutingStackDelegate from 'terra-navigation-layout/lib/routing/RoutingStackDelegate';
 
 const Page1Menu = ({ layoutConfig, routingStackDelegate }) => (
   <div style={{ height: 'calc(100% - 10px)', width: 'calc(100% - 10px)', border: '4px dashed lightgrey', margin: '5px', position: 'relative' }}>
@@ -24,6 +25,7 @@ Page1Menu.propTypes = {
     togglePin: PropTypes.func,
     menuIsPinned: PropTypes.bool,
   }),
+  routingStackDelegate: RoutingStackDelegate.propType,
 };
 
 export default withRouter(Page1Menu);

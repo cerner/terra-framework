@@ -43,7 +43,7 @@ const NavigationLayoutContent = ({ app, routeConfig, navigationLayoutSize, redir
       size={navigationLayoutSize}
       app={app}
       routeConfig={routeConfig}
-      propsForContent={customProps}
+      ancestorProps={customProps}
     >
       {redirect && <Redirect to={redirect} />}
     </RoutingStack>
