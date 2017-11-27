@@ -70,7 +70,7 @@ const config = {
   },
 };
 
-describe('RoutingStackDelegate', () => {
+describe('routingUtils', () => {
   describe('flattenRouteConfig', () => {
     it('should properly process the given config for header', () => {
       const result = flattenRouteConfig(config.header, 'tiny');
@@ -102,8 +102,8 @@ describe('RoutingStackDelegate', () => {
 
   describe('configHasMatchingRoute', () => {
     it('should properly determine if config has matching route', () => {
-      expect(configHasMatchingRoute('page3', config.menu, 'tiny')).toBe(true);
-      expect(configHasMatchingRoute('page4', config.menu, 'tiny')).toBe(false);
+      expect(configHasMatchingRoute('/page3', config.menu, 'tiny')).toBe(true);
+      expect(configHasMatchingRoute('/page3', config.menu, 'medium')).toBe(false);
     });
   });
 });

@@ -147,11 +147,11 @@ class NavigationLayout extends React.Component {
 
     const contentComponent = children || <NavigationLayoutContent redirect={indexPath} />;
 
-    let menuComponent;
+    let menuComponent = menu;
     // The configuration is examined for evidence of a valid menu component for the current size and location.
     // If one is not found, we do not provide one to the Layout to ensure that the Layout renders appropriately.
-    if (configHasMatchingRoute(location.pathname, config.menu, size)) {
-      menuComponent = menu || <NavigationLayoutContent stackNavigationIsEnabled />;
+    if (!menuComponent && configHasMatchingRoute(location.pathname, config.menu, size)) {
+      menuComponent = <NavigationLayoutContent stackNavigationIsEnabled />;
     }
 
     return (
