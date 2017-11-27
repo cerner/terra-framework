@@ -54,24 +54,6 @@ const componentConfig = {
       component: NavigationLayoutExample,
       description: 'Navigation Layout',
     },
-    testRoot: '/tests/layout',
-    tests: [{
-      path: '/default',
-      component: LayoutDefault,
-      description: 'Default',
-    }, {
-      path: '/no-menu',
-      component: LayoutNoMenu,
-      description: 'No Menu',
-    }, {
-      path: '/long-text',
-      component: LayoutLongText,
-      description: 'Long Text',
-    }, {
-      path: '/no-header',
-      component: LayoutNoHeader,
-      description: 'No Header',
-    }],
   },
 };
 

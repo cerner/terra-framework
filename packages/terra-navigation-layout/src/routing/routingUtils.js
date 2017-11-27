@@ -21,11 +21,9 @@ const flattenRouteConfig = (routeConfig, size, parentPaths) => {
 
       if (configForSize) {
         componentConfig = configForSize;
-      }
-
-      // If no component is defined for the current size, check for a default component
-      // and use it, if one is provided.
-      if (configForSize === undefined && config.component.default) {
+      } else if (config.component.default) {
+        // If no component is defined for the current size, check for a default component
+        // and use it, if one is provided.
         componentConfig = config.component.default;
       }
     }
@@ -47,7 +45,7 @@ const flattenRouteConfig = (routeConfig, size, parentPaths) => {
       routeData = flattenRouteConfig(config.children, size, updatedParentPaths);
     }
 
-    // If a component does not exist for the route, and if the route has no child routes, then we can ignore it.
+    // If a component does not exist for the route, and if the route has no defined child routes, then we can ignore it.
     if (!componentConfig && !routeData.length) {
       return undefined;
     }
@@ -89,9 +87,7 @@ const configHasMatchingRoute = (pathname, routeConfig, size) => {
   }
 
   for (let i = 0, length = processedRoutes.length; i < length; i += 1) {
-    const match = matchPath(pathname, { path: processedRoutes[i].path, exact: processedRoutes[i].exact, strict: processedRoutes[i].strict });
-
-    if (match) {
+    if (matchPath(pathname, { path: processedRoutes[i].path, exact: processedRoutes[i].exact, strict: processedRoutes[i].strict })) {
       return true;
     }
   }

@@ -10,7 +10,7 @@ const supportedAttributes = [
 const create = (data) => {
   const delegate = {};
   supportedAttributes.forEach((attribute) => {
-    if (data[attribute]) {
+    if (data && data[attribute]) {
       delegate[attribute] = data[attribute];
     }
   });
