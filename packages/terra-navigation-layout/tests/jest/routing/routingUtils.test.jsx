@@ -1,33 +1,192 @@
 import { flattenRouteConfig, configHasMatchingRoute } from '../../../src/routing/routingUtils';
 
-const config = {
-  header: {
-    '/': {
-      path: '/',
-      component: {
-        default: {
-          componentClass: 'HeaderExample',
+describe('routingUtils', () => {
+  describe('flattenRouteConfig', () => {
+    it('should return an empty array if no config is given', () => {
+      expect(flattenRouteConfig()).toEqual([]);
+    });
+
+    it('should gracefully flatten configuration if no component configuration and no children are provided', () => {
+      const testConfig = {
+        '/page1': {
+          path: '/page1',
         },
-      },
-    },
-  },
-  menu: {
-    '/': {
-      path: '/',
-      component: {
-        tiny: {
-          componentClass: 'MenuExample',
+      };
+
+      const result = flattenRouteConfig(testConfig);
+      expect(result).toEqual([]);
+    });
+
+    it('should properly flatten configuration if component configuration is not provided', () => {
+      const testConfig = {
+        '/page1': {
+          path: '/page1',
+          children: {
+            '/page1/item1': {
+              path: '/page1/item1',
+              component: {
+                default: {
+                  componentClass: 'Page1Item1ComponentClass',
+                  props: {
+                    testProp: 'test value',
+                  },
+                },
+              },
+            },
+            '/page1/item2': {
+              path: '/page1/item2',
+              component: {
+                default: {
+                  componentClass: 'Page1Item2ComponentClass',
+                },
+              },
+            },
+          },
         },
-        small: {
-          componentClass: 'MenuExample',
+      };
+
+      const result = flattenRouteConfig(testConfig);
+      expect(result.length).toBe(2);
+      expect(result[0].componentClass).toBe('Page1Item1ComponentClass');
+      expect(result[0].componentProps).toEqual({
+        testProp: 'test value',
+      });
+      expect(result[1].componentClass).toBe('Page1Item2ComponentClass');
+    });
+
+    it('should return all relevant configuration data for a given route', () => {
+      const testConfig = {
+        '/page1': {
+          path: '/page1',
+          exact: true,
+          strict: true,
+          component: {
+            default: {
+              componentClass: 'Page1ComponentClass',
+              props: {
+                testProp: 'test value',
+              },
+            },
+          },
         },
-      },
-      children: {
+      };
+
+      const result = flattenRouteConfig(testConfig);
+      expect(result.length).toBe(1);
+      expect(result[0].componentClass).toBe('Page1ComponentClass');
+      expect(result[0].componentProps).toEqual({
+        testProp: 'test value',
+      });
+      expect(result[0].exact).toBe(true);
+      expect(result[0].strict).toBe(true);
+      expect(result[0].path).toBe('/page1');
+    });
+
+    it('should utilize the given size for config processing', () => {
+      const testConfig = {
         '/page1': {
           path: '/page1',
           component: {
             default: {
-              componentClass: 'Page1Menu',
+              componentClass: 'Page1ComponentClass',
+              props: {
+                testProp: 'test value',
+              },
+            },
+            tiny: {
+              componentClass: 'Page1TinyComponentClass',
+            },
+            huge: {
+              componentClass: 'Page1HugeComponentClass',
+            },
+          },
+        },
+        '/page2': {
+          path: '/page2',
+          component: {
+            huge: {
+              componentClass: 'Page2HugeComponentClass',
+            },
+          },
+        },
+        '/page3': {
+          path: '/page3',
+          component: {
+            default: {
+              componentClass: 'Page3DefaultComponentClass',
+            },
+          },
+        },
+      };
+
+      const result = flattenRouteConfig(testConfig, 'tiny');
+      expect(result.length).toBe(2);
+      expect(result[0].componentClass).toBe('Page1TinyComponentClass');
+      expect(result[0].path).toBe('/page1');
+      expect(result[1].componentClass).toBe('Page3DefaultComponentClass');
+      expect(result[1].path).toBe('/page3');
+    });
+
+    it('should recursively flatten child route configurations', () => {
+      const testConfig = {
+        '/a': {
+          path: '/a',
+          component: {
+            default: {
+              componentClass: 'AComponentClass',
+            },
+          },
+          children: {
+            '/a/b/': {
+              path: '/a/b',
+              component: {
+                default: {
+                  componentClass: 'BComponentClass',
+                },
+              },
+              children: {
+                '/a/b/c': {
+                  path: '/a/b/c',
+                  component: {
+                    default: {
+                      componentClass: 'CComponentClass',
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      };
+
+      const result = flattenRouteConfig(testConfig);
+      expect(result.length).toBe(3);
+      expect(result[0].path).toBe('/a/b/c');
+      expect(result[1].path).toBe('/a/b');
+      expect(result[2].path).toBe('/a');
+    });
+  });
+
+  describe('configHasMatchingRoute', () => {
+    it('should abort if no route config is given', () => {
+      expect(configHasMatchingRoute('/path', undefined)).toBe(false);
+    });
+
+    it('should abort if no path is given', () => {
+      expect(configHasMatchingRoute(undefined, {})).toBe(false);
+    });
+
+    it('should abort if route config is empty', () => {
+      expect(configHasMatchingRoute('/path', {})).toBe(false);
+    });
+
+    it('should properly determine if config has matching route', () => {
+      const testConfig = {
+        '/page1': {
+          path: '/page1',
+          component: {
+            default: {
+              componentClass: 'Page1DefaultComponent',
             },
           },
         },
@@ -35,75 +194,80 @@ const config = {
           path: '/page2',
           component: {
             default: {
-              componentClass: 'Page2Menu',
+              componentClass: 'Page2DefaultComponent',
+            },
+            small: {
+              componentClass: 'Page2SmallComponent',
+            },
+            large: {
+              componentClass: 'Page2LargeComponent',
             },
           },
         },
-      },
-    },
-  },
-  content: {
-    '/page1': {
-      path: '/page1',
-      component: {
-        default: {
-          componentClass: 'Page1Content',
+        '/page3': {
+          path: '/page3',
+          component: {
+            medium: {
+              componentClass: 'Page3MediumComponent',
+            },
+          },
         },
-      },
-    },
-    '/page2': {
-      path: '/page2',
-      component: {
-        default: {
-          componentClass: 'Page2Content',
+        '/page4': {
+          path: '/page4',
+          component: {
+            default: {
+              componentClass: 'Page4DefaultComponent',
+            },
+          },
+          children: {
+            '/page4/item1': {
+              path: '/page4/item1',
+              component: {
+                default: {
+                  componentClass: 'Page4Item1MediumComponent',
+                },
+              },
+            },
+          },
         },
-      },
-    },
-    '/page3': {
-      path: '/page3',
-      component: {
-        default: {
-          componentClass: 'Page3Content',
-        },
-      },
-    },
-  },
-};
+      };
 
-describe('routingUtils', () => {
-  describe('flattenRouteConfig', () => {
-    it('should properly process the given config for header', () => {
-      const result = flattenRouteConfig(config.header, 'tiny');
-      expect(result.length).toBe(1);
-      expect(result[0].componentClass).toBe('HeaderExample');
-    });
+      expect(configHasMatchingRoute('/page5', testConfig)).toBe(false);
 
-    it('should properly process the given config for menu', () => {
-      const result = flattenRouteConfig(config.menu, 'tiny');
-      expect(result.length).toBe(3);
-      expect(result[0].componentClass).toBe('Page1Menu');
-      expect(result[1].componentClass).toBe('Page2Menu');
-      expect(result[2].componentClass).toBe('MenuExample');
+      expect(configHasMatchingRoute('/page1', testConfig)).toBe(true);
+      expect(configHasMatchingRoute('/page1', testConfig, 'tiny')).toBe(true);
+      expect(configHasMatchingRoute('/page1', testConfig, 'small')).toBe(true);
+      expect(configHasMatchingRoute('/page1', testConfig, 'medium')).toBe(true);
+      expect(configHasMatchingRoute('/page1', testConfig, 'large')).toBe(true);
+      expect(configHasMatchingRoute('/page1', testConfig, 'huge')).toBe(true);
 
-      const result2 = flattenRouteConfig(config.menu, 'large');
-      expect(result2.length).toBe(2);
-      expect(result2[0].componentClass).toBe('Page1Menu');
-      expect(result2[1].componentClass).toBe('Page2Menu');
-    });
+      expect(configHasMatchingRoute('/page2', testConfig)).toBe(true);
+      expect(configHasMatchingRoute('/page2', testConfig, 'tiny')).toBe(true);
+      expect(configHasMatchingRoute('/page2', testConfig, 'small')).toBe(true);
+      expect(configHasMatchingRoute('/page2', testConfig, 'medium')).toBe(true);
+      expect(configHasMatchingRoute('/page2', testConfig, 'large')).toBe(true);
+      expect(configHasMatchingRoute('/page2', testConfig, 'huge')).toBe(true);
 
-    it('should properly process the given config for content', () => {
-      const result = flattenRouteConfig(config.content, 'tiny');
-      expect(result.length).toBe(3);
-      expect(result[0].componentClass).toBe('Page1Content');
-      expect(result[1].componentClass).toBe('Page2Content');
-      expect(result[2].componentClass).toBe('Page3Content');
-    });
-  });
+      expect(configHasMatchingRoute('/page3', testConfig)).toBe(false);
+      expect(configHasMatchingRoute('/page3', testConfig, 'tiny')).toBe(false);
+      expect(configHasMatchingRoute('/page3', testConfig, 'small')).toBe(false);
+      expect(configHasMatchingRoute('/page3', testConfig, 'medium')).toBe(true);
+      expect(configHasMatchingRoute('/page3', testConfig, 'large')).toBe(false);
+      expect(configHasMatchingRoute('/page3', testConfig, 'huge')).toBe(false);
 
-  describe('configHasMatchingRoute', () => {
-    it('should properly determine if config has matching route', () => {
-      expect(configHasMatchingRoute('/page3', config.menu, 'tiny')).toBe(true);
-      expect(configHasMatchingRoute('/page3', config.menu, 'medium')).toBe(false);
+      expect(configHasMatchingRoute('/page4', testConfig)).toBe(true);
+      expect(configHasMatchingRoute('/page4', testConfig, 'tiny')).toBe(true);
+      expect(configHasMatchingRoute('/page4', testConfig, 'small')).toBe(true);
+      expect(configHasMatchingRoute('/page4', testConfig, 'medium')).toBe(true);
+      expect(configHasMatchingRoute('/page4', testConfig, 'large')).toBe(true);
+      expect(configHasMatchingRoute('/page4', testConfig, 'huge')).toBe(true);
+
+      expect(configHasMatchingRoute('/page4/item1', testConfig)).toBe(true);
+      expect(configHasMatchingRoute('/page4/item1', testConfig, 'tiny')).toBe(true);
+      expect(configHasMatchingRoute('/page4/item1', testConfig, 'small')).toBe(true);
+      expect(configHasMatchingRoute('/page4/item1', testConfig, 'medium')).toBe(true);
+      expect(configHasMatchingRoute('/page4/item1', testConfig, 'large')).toBe(true);
+      expect(configHasMatchingRoute('/page4/item1', testConfig, 'huge')).toBe(true);
     });
   });
 });
