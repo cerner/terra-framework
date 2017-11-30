@@ -82,8 +82,8 @@ const routes = Object.freeze({
           componentClass: Tests,
         },
       },
-      children: buildConfigForComponent(componentConfig, ComponentTests),
     },
+    ...buildConfigForComponent(componentConfig, ComponentTests),
   },
   menu: {
     '/': {
@@ -102,26 +102,24 @@ const routes = Object.freeze({
           },
         },
       },
-      children: {
-        '/components': {
-          path: '/components',
-          component: {
-            default: {
-              componentClass: injectConfig(componentConfig)(ComponentsMenu),
-            },
-          },
-        },
-        '/tests': {
-          path: '/tests',
-          component: {
-            default: {
-              componentClass: injectConfig(componentConfig)(TestsMenu),
-            },
-          },
-          children: buildConfigForComponent(componentConfig, ComponentTestsMenu),
+    },
+    '/components': {
+      path: '/components',
+      component: {
+        default: {
+          componentClass: injectConfig(componentConfig)(ComponentsMenu),
         },
       },
     },
+    '/tests': {
+      path: '/tests',
+      component: {
+        default: {
+          componentClass: injectConfig(componentConfig)(TestsMenu),
+        },
+      },
+    },
+    ...buildConfigForComponent(componentConfig, ComponentTestsMenu),
   },
 });
 

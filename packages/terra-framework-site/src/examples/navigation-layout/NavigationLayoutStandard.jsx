@@ -37,22 +37,20 @@ const config = {
           componentClass: MenuExample,
         },
       },
-      children: {
-        '/page1': {
-          path: '/page1',
-          component: {
-            default: {
-              componentClass: Page1Menu,
-            },
-          },
+    },
+    '/page1': {
+      path: '/page1',
+      component: {
+        default: {
+          componentClass: Page1Menu,
         },
-        '/page2': {
-          path: '/page2',
-          component: {
-            default: {
-              componentClass: Page2Menu,
-            },
-          },
+      },
+    },
+    '/page2': {
+      path: '/page2',
+      component: {
+        default: {
+          componentClass: Page2Menu,
         },
       },
     },
@@ -105,11 +103,11 @@ const NavigationLayoutStandard = withRouter(({ location }) => (
     <ToggleButton isAnimated closedButtonText="View">
       <Markdown id="navigation-layout-standard-config" src={ConfigReadMe} />
     </ToggleButton>
-    <h3>{`Browser Location: ${location.pathname}`}</h3>
+    <h3>{`Broswer Location: ${location.pathname}`}</h3>
     <NavigationLayout
       config={config}
       menuText="Menu"
-      style={{ height: '600px', width: '100%' }}
+      style={{ height: '400px', width: '100%' }}
     />
   </div>
 ));

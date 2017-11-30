@@ -56,34 +56,31 @@ const componentConfigPropType = PropTypes.objectOf((propValue, key, componentNam
 
 /**
  * PropType definition for routes definitions in the NavigationLayout's configuration object.
- * It is an Object that contains a path, a component to render for that path, and child routes. The child route
- * proptypes are the same as the parent.
+ * It is an Object that contains a path, a component to render for that path, and the route attributes (strict/exact).
+ * The path must start with a forward slash.
  *
  * Example:
  *   {
  *     path: '/a',
+ *     strict: false,
+ *     exact: true,
  *     component: {...}, // [componentConfigPropType]
- *     children: {
- *       '/a/b': {
- *         path: '/a/b',
- *         component: {...},
- *         children: {
- *           '/a/b/c': {
- *             path: '/a/b/c',
- *             component: {...},
- *           },
- *         },
- *       },
- *     },
  *   }
  */
 const routePropType = PropTypes.shape({
-  path: PropTypes.string.isRequired,
+  path: (props, propName, componentName) => {
+    if (!/\/.*/.test(props[propName])) {
+      return new Error(
+        `Invalid prop \`${propName}\` supplied to` +
+        ` \`${componentName}\`. Validation failed. ${propName} must start with a forward slash (/).`,
+      );
+    }
+    return true;
+  },
   strict: PropTypes.bool,
   exact: PropTypes.bool,
   component: componentConfigPropType.isRequired,
 });
-routePropType.children = PropTypes.objectOf(PropTypes.objectOf(routePropType)); // Recursive PropTypes are funky
 
 const routeConfigPropType = PropTypes.objectOf(routePropType);
 

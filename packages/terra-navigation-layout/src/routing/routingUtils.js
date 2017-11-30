@@ -7,12 +7,12 @@ import { matchPath } from 'react-router-dom';
  * @param {String} size The breakpoint size used during configuration parsing.
  * @param {Array[String]} parentPaths The array of String paths that are ancestors to the given routeConfig.
  */
-const flattenRouteConfig = (routeConfig, size, parentPaths) => {
+const flattenRouteConfig = (routeConfig, size) => {
   if (!routeConfig) {
     return [];
   }
 
-  const routes = Object.keys(routeConfig).map((routeKey) => {
+  return Object.keys(routeConfig).reduce((availableRoutes, routeKey) => {
     const config = routeConfig[routeKey];
 
     let componentConfig;
@@ -28,32 +28,9 @@ const flattenRouteConfig = (routeConfig, size, parentPaths) => {
       }
     }
 
-    let routeData = [];
-    if (config.children) {
-      let updatedParentPaths = [];
-      if (parentPaths) {
-        updatedParentPaths = updatedParentPaths.concat(parentPaths);
-      }
-
-      if (componentConfig) {
-        updatedParentPaths.push(config.path);
-      }
-
-      // Iterate over the child route configurations. We initialize the routeData array with the child routes because
-      // we need the child routes to preceed the ancestor routes in the final array; this will ensure that ancestor routes do
-      // not take precedent over child routes if both match.
-      routeData = flattenRouteConfig(config.children, size, updatedParentPaths);
-    }
-
-    // If a component does not exist for the route, and if the route has no defined child routes, then we can ignore it.
-    if (!componentConfig && !routeData.length) {
-      return undefined;
-    }
-
     if (componentConfig && componentConfig.componentClass) {
-      routeData.push({
+      availableRoutes.push({
         path: config.path,
-        parentPaths,
         exact: config.exact,
         strict: config.strict,
         componentClass: componentConfig.componentClass,
@@ -61,11 +38,40 @@ const flattenRouteConfig = (routeConfig, size, parentPaths) => {
       });
     }
 
-    return routeData;
-  });
+    return availableRoutes;
+  }, [])
+  .sort((routeA, routeB) => {
+    if (routeA.path < routeB.path) {
+      return 1;
+    } else if (routeA.path > routeB.path) {
+      return -1;
+    }
 
-  // Flatten nested arrays and remove undefined entries
-  return [].concat(...(routes.filter(n => n)));
+    return 0;
+  })
+  .map((route, index, array) => {
+    // The root path '/' cannot have any parent routes, so further processing is unnecessary.
+    if (route.path === '/') {
+      return route;
+    }
+
+    const pathSegments = route.path.split('/');
+    if (pathSegments.length < 2) {
+      return route;
+    }
+
+    const testPath = `/${pathSegments[1]}`;
+    const parentRoutes = array.filter(testRoute => (
+      // If the testRoute is the index route (/), it is accepted as parent route right away.
+      // If the testPath matches the start of the testRoute, and the number of path segments of the testRoute is less than that of the
+      // route in question, the testRoute is determined to be a parent route.
+      testRoute.path === '/' || (testRoute.path.indexOf(testPath) === 0 && testRoute.path.split('/').length < route.path.split('/').length)
+    ));
+
+    return Object.assign({}, route, {
+      parentPaths: parentRoutes.map(parentRoute => parentRoute.path).reverse(),
+    });
+  });
 };
 
 /**
