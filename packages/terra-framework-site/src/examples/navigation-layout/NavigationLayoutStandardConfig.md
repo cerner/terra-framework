@@ -29,22 +29,20 @@ const config = {
           componentClass: MenuExample,
         },
       },
-      children: {
-        '/page1': {
-          path: '/page1',
-          component: {
-            default: {
-              componentClass: Page1Menu,
-            },
-          },
+    },
+    '/page1': {
+      path: '/page1',
+      component: {
+        default: {
+          componentClass: Page1Menu,
         },
-        '/page2': {
-          path: '/page2',
-          component: {
-            default: {
-              componentClass: Page2Menu,
-            },
-          },
+      },
+    },
+    '/page2': {
+      path: '/page2',
+      component: {
+        default: {
+          componentClass: Page2Menu,
         },
       },
     },

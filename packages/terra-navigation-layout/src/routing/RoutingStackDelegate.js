@@ -37,12 +37,12 @@ const clone = (delegate, data) => {
  * RoutingStackDelegate Object instances.
  */
 const isEqual = (delegateA, delegateB) => {
-  if (!delegateA || !delegateB) {
-    return false;
-  }
-
   if (delegateA === delegateB) {
     return true;
+  }
+
+  if (!delegateA || !delegateB) {
+    return false;
   }
 
   return !supportedAttributes.some(attribute => (

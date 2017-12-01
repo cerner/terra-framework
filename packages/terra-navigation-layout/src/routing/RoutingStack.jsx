@@ -4,12 +4,12 @@ import {
   Switch,
   Route,
   withRouter,
+  matchPath,
 } from 'react-router-dom';
 import AppDelegate from 'terra-app-delegate';
 
 import RoutingStackDelegate from './RoutingStackDelegate';
-import { flattenRouteConfig } from './routingUtils';
-import { supportedComponentBreakpoints, routeConfigPropType } from '../configurationPropTypes';
+import { processedRoutesPropType } from '../configurationPropTypes';
 
 const propTypes = {
   /**
@@ -17,13 +17,9 @@ const propTypes = {
    */
   app: AppDelegate.propType,
   /**
-   * The current responsive size.
-   */
-  size: PropTypes.oneOf(supportedComponentBreakpoints),
-  /**
    * The routing configuration from which Routes will be generated.
    */
-  routeConfig: routeConfigPropType,
+  routes: processedRoutesPropType,
   /**
    * Flag to enable navigation within the RoutingStack. If true, functions will be exposed to the Routes that
    * will allow for traversal up to parent paths.
@@ -69,19 +65,29 @@ class RoutingStack extends React.Component {
     });
   }
 
-  createRoutes(routeConfig) {
-    const { navEnabled, app, location, size, ancestorProps } = this.props;
+  createRoutes(routes) {
+    const { navEnabled, app, location, ancestorProps } = this.props;
 
-    return flattenRouteConfig(routeConfig, size).map((routeData) => {
+    if (!routes || !routes.length) {
+      return undefined;
+    }
+
+    return routes.map((routeData) => {
       const routingStackDelegate = RoutingStackDelegate.create({
         location,
         stackLocation: this.state.stackLocation,
         parentPaths: routeData.parentPaths,
         goBack: navEnabled && routeData.parentPaths && routeData.parentPaths.length ? () => {
-          this.updateStackLocation(routeData.parentPaths[routeData.parentPaths.length - 1]);
+          const backRoute = routeData.parentPaths[routeData.parentPaths.length - 1];
+          const matchToCurrentLocation = matchPath(location.pathname, { path: backRoute.path });
+
+          this.updateStackLocation(matchToCurrentLocation.url);
         } : undefined,
         goToRoot: navEnabled && routeData.parentPaths && routeData.parentPaths.length > 1 ? () => {
-          this.updateStackLocation(routeData.parentPaths[0]);
+          const rootRoute = routeData.parentPaths[0];
+          const matchToCurrentLocation = matchPath(location.pathname, { path: rootRoute.path });
+
+          this.updateStackLocation(matchToCurrentLocation.url);
         } : undefined,
       });
 
@@ -93,9 +99,8 @@ class RoutingStack extends React.Component {
           strict={routeData.strict}
           path={routeData.path}
           key={routeData.path}
-          render={routeProps => (
+          render={() => (
             <ComponentClass
-              {...routeProps}
               {...ancestorProps}
               {...routeData.componentProps}
               routingStackDelegate={routingStackDelegate}
@@ -108,13 +113,11 @@ class RoutingStack extends React.Component {
   }
 
   render() {
-    const { routeConfig, location, children, size } = this.props;
-
-    const routes = this.createRoutes(routeConfig, size);
+    const { routes, location, children } = this.props;
 
     return (
       <Switch location={this.state.stackLocation || location}>
-        {routes}
+        {this.createRoutes(routes)}
         {children}
       </Switch>
     );

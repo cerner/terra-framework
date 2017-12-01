@@ -3,11 +3,11 @@ import { matchPath } from 'react-router-dom';
 /**
  * Given a route configuration and size, returns an Array of ordered routing data objects
  * representing the routes available at that size.
- * @param {Object} routeConfig The route configuration to flatten. The expected shape matches that of the routeConfigPropType.
+ * @param {Object} routeConfig The route configuration to reduce. The expected shape matches that of the routeConfigPropType.
  * @param {String} size The breakpoint size used during configuration parsing.
  * @param {Array[String]} parentPaths The array of String paths that are ancestors to the given routeConfig.
  */
-const flattenRouteConfig = (routeConfig, size) => {
+const reduceRouteConfig = (routeConfig, size) => {
   if (!routeConfig) {
     return [];
   }
@@ -62,38 +62,34 @@ const flattenRouteConfig = (routeConfig, size) => {
 
     const testPath = `/${pathSegments[1]}`;
     const parentRoutes = array.filter(testRoute => (
-      // If the testRoute is the index route (/), it is accepted as parent route right away.
-      // If the testPath matches the start of the testRoute, and the number of path segments of the testRoute is less than that of the
-      // route in question, the testRoute is determined to be a parent route.
+      /*
+       * If the testRoute is the index route (/), it is accepted as parent route right away.
+       * If the testPath matches the start of the testRoute, and the number of path segments of the testRoute is less than that of the
+       * route in question, the testRoute is determined to be a parent route.
+       */
       testRoute.path === '/' || (testRoute.path.indexOf(testPath) === 0 && testRoute.path.split('/').length < route.path.split('/').length)
     ));
 
     return Object.assign({}, route, {
-      parentPaths: parentRoutes.map(parentRoute => parentRoute.path).reverse(),
+      parentPaths: parentRoutes.reverse(),
     });
   });
 };
 
 /**
- * Determines whether or not the given routeConfig has a valid Component specified to display
- * at the given pathname and size.
+ * Determines whether the given pathname matches against any of the given routes configurations.
  * @param {String} pathname The path to be searched for in the routeConfig.
- * @param {Object} routeConfig The configuration object to search within.
+ * @param {Array} routes The route data to match against.
  * @param {String} size The breakpoint size used for configuration parsing.
  */
-const configHasMatchingRoute = (pathname, routeConfig, size) => {
-  if (!routeConfig || !pathname) {
+const validateMatchExists = (pathname, routes) => {
+  if (!routes || !pathname) {
     return false;
   }
 
-  const processedRoutes = flattenRouteConfig(routeConfig, size);
-
-  if (!processedRoutes) {
-    return false;
-  }
-
-  for (let i = 0, length = processedRoutes.length; i < length; i += 1) {
-    if (matchPath(pathname, { path: processedRoutes[i].path, exact: processedRoutes[i].exact, strict: processedRoutes[i].strict })) {
+  for (let i = 0, length = routes.length; i < length; i += 1) {
+    const testRoute = routes[i];
+    if (matchPath(pathname, { path: testRoute.path, exact: testRoute.exact, strict: testRoute.strict })) {
       return true;
     }
   }
@@ -101,4 +97,4 @@ const configHasMatchingRoute = (pathname, routeConfig, size) => {
   return false;
 };
 
-export { flattenRouteConfig, configHasMatchingRoute };
+export { reduceRouteConfig, validateMatchExists };

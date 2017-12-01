@@ -9,8 +9,8 @@ import Layout from 'terra-layout';
 import breakpoints from 'terra-responsive-element/lib/breakpoints.scss';
 
 import NavigationLayoutContent from './NavigationLayoutContent';
-import { navigationLayoutConfigPropType } from './configurationPropTypes';
-import { configHasMatchingRoute } from './routing/routingUtils';
+import { navigationLayoutConfigPropType, supportedComponentBreakpoints } from './configurationPropTypes';
+import { reduceRouteConfig, validateMatchExists } from './routing/routingUtils';
 
 const getBreakpointSize = (queryWidth) => {
   const width = queryWidth || window.innerWidth;
@@ -54,6 +54,8 @@ const propTypes = {
   app: AppDelegate.propType,
   /**
    * The configuration Object that will be used to generate the specified regions of the NavigationLayout.
+   * Note: The config prop is treated as an immutable object to prevent unnecessary processing and improve performance.
+   * If the configuration is changed after the first render, a new configuration object instance must be provided.
    */
   config: navigationLayoutConfigPropType.isRequired,
   /**
@@ -83,6 +85,21 @@ const propTypes = {
  * The NavigationLayout utilizes the Terra Layout and a configuration object to generate a routing-based application layout.
  */
 class NavigationLayout extends React.Component {
+  static processRouteConfig(config) {
+    const processedRoutes = {};
+
+    supportedComponentBreakpoints.forEach((size) => {
+      const processedRoutesForSize = {};
+      processedRoutesForSize.header = reduceRouteConfig(config.header, size);
+      processedRoutesForSize.menu = reduceRouteConfig(config.menu, size);
+      processedRoutesForSize.content = reduceRouteConfig(config.content, size);
+
+      processedRoutes[size] = processedRoutesForSize;
+    });
+
+    return processedRoutes;
+  }
+
   constructor(props) {
     super(props);
 
@@ -90,11 +107,20 @@ class NavigationLayout extends React.Component {
 
     this.state = {
       size: getBreakpointSize(),
+      processedRoutes: NavigationLayout.processRouteConfig(props.config),
     };
   }
 
   componentDidMount() {
     window.addEventListener('resize', this.updateSize);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.config !== this.props.config) {
+      this.setState({
+        processedRoutes: NavigationLayout.processRouteConfig(nextProps.config),
+      });
+    }
   }
 
   componentWillUnmount() {
@@ -111,7 +137,7 @@ class NavigationLayout extends React.Component {
     }
   }
 
-  decorateElement(element, routeConfig) {
+  decorateElement(element, routes) {
     if (!element) {
       return null;
     }
@@ -121,7 +147,7 @@ class NavigationLayout extends React.Component {
 
     return React.cloneElement(element, {
       app,
-      routeConfig,
+      routes,
       navigationLayoutSize: size,
     });
   }
@@ -141,27 +167,31 @@ class NavigationLayout extends React.Component {
       staticContext,
       ...customProps
     } = this.props; // eslint-disable-line no-unused-vars
-    const { size } = this.state;
+
+    const {
+      size,
+      processedRoutes,
+    } = this.state;
 
     const headerComponent = header || <NavigationLayoutContent />;
 
     const contentComponent = children || <NavigationLayoutContent redirect={indexPath} />;
 
     let menuComponent = menu;
-    // The configuration is examined for evidence of a valid menu component for the current size and location.
-    // If one is not found, we do not provide one to the Layout to ensure that the Layout renders appropriately.
-    if (!menuComponent && configHasMatchingRoute(location.pathname, config.menu, size)) {
+    // The routes for the menu are examined for evidence of a valid component for the current location.
+    // If one is not found, we do not provide one to the Layout to ensure that the Layout renders appropriately (without a menu present).
+    if (!menuComponent && validateMatchExists(location.pathname, processedRoutes[size].menu)) {
       menuComponent = <NavigationLayoutContent stackNavigationIsEnabled />;
     }
 
     return (
       <Layout
         {...customProps}
-        header={this.decorateElement(headerComponent, config.header)}
-        menu={this.decorateElement(menuComponent, config.menu)}
+        header={this.decorateElement(headerComponent, processedRoutes[size].header)}
+        menu={this.decorateElement(menuComponent, processedRoutes[size].menu)}
         menuText={menuText}
       >
-        {this.decorateElement(contentComponent, config.content)}
+        {this.decorateElement(contentComponent, processedRoutes[size].content)}
       </Layout>
     );
   }

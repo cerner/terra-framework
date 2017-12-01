@@ -101,4 +101,39 @@ const navigationLayoutConfigPropType = PropTypes.shape({
   content: routeConfigPropType,
 });
 
-export { navigationLayoutConfigPropType, routeConfigPropType, routePropType, componentConfigPropType, supportedComponentBreakpoints };
+
+/**
+ * PropType definition for the processed configuration array created by the NavigationLayout and utilized
+ * by the NavigationLayoutContent and RoutingStack. It is an Array containing Objects with data neccessary for the
+ * creation of routes.
+ *
+ * Example:
+ *   [{
+ *     path: '/a/b/c',
+ *     exact: false,
+ *     strict: false,
+ *     componentClass: CComponentClass,
+ *     componentProps: {
+ *       propName: 'prop value',
+ *     },
+ *   }, {
+ *     path: '/a/b',
+ *     exact: true,
+ *     strict: true,
+ *     componentClass: BComponentClass,
+ *   }, {
+ *     path: '/a',
+ *     exact: false,
+ *     strict: false,
+ *     componentClass: AComponentClass,
+ *   }]
+ */
+const processedRoutesPropType = PropTypes.arrayOf(PropTypes.shape({
+  path: PropTypes.string,
+  exact: PropTypes.bool,
+  strict: PropTypes.bool,
+  componentClass: PropTypes.func,
+  componentProps: PropTypes.object,
+}));
+
+export { navigationLayoutConfigPropType, routeConfigPropType, routePropType, componentConfigPropType, processedRoutesPropType, supportedComponentBreakpoints };

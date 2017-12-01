@@ -107,6 +107,10 @@ describe('RoutingStackDelegate', () => {
       expect(RoutingStackDelegate.isEqual(undefined, testDelegate)).toBe(false);
     });
 
+    it('should return true if both params are falsy', () => {
+      expect(RoutingStackDelegate.isEqual(undefined, undefined)).toBe(true);
+    });
+
     it('should return true if the same instance is given', () => {
       const testDelegate = RoutingStackDelegate.create();
       expect(RoutingStackDelegate.isEqual(testDelegate, testDelegate)).toBe(true);
