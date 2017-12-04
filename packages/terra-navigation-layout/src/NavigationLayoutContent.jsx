@@ -25,14 +25,14 @@ const propTypes = {
   /**
    * The String path to redirect to should the routes specified by the routeConfig all fail to match.
    */
-  redirect: PropTypes.string,
+  redirectPath: PropTypes.string,
   /**
    * Flag to enable navigation within the RoutingStack.
    */
   stackNavigationIsEnabled: PropTypes.bool,
 };
 
-const NavigationLayoutContent = ({ app, routes, redirect, stackNavigationIsEnabled, ...customProps }) => (
+const NavigationLayoutContent = ({ app, routes, redirectPath, stackNavigationIsEnabled, ...customProps }) => (
   <div className={cx('content')}>
     <RoutingStack
       navEnabled={stackNavigationIsEnabled}
@@ -40,7 +40,7 @@ const NavigationLayoutContent = ({ app, routes, redirect, stackNavigationIsEnabl
       routes={routes}
       ancestorProps={customProps}
     >
-      {redirect && <Redirect to={redirect} />}
+      {redirectPath && <Redirect to={redirectPath} />}
     </RoutingStack>
   </div>
 );

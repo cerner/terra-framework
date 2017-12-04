@@ -30,24 +30,24 @@ const supportedComponentBreakpoints = ['tiny', 'small', 'medium', 'large', 'huge
  *   }
  */
 const componentConfigPropType = PropTypes.objectOf((propValue, key, componentName, location, propFullName) => {
-  const keyIsValid = key === 'default' || supportedComponentBreakpoints.indexOf(key) >= 0;
+  const validKey = key === 'default' || supportedComponentBreakpoints.indexOf(key) >= 0;
 
-  if (!keyIsValid) {
+  if (!validKey) {
     return new Error(`Invalid prop '${propFullName}' supplied to '${componentName}'. Validation failed.`);
   }
 
   const value = propValue[key];
 
-  let valueIsValid = true;
+  let validValue = true;
   if (value !== null) {
     if (typeof (value) !== 'object') {
-      valueIsValid = false;
+      validValue = false;
     } else if (!value.componentClass || (typeof (value.props) !== 'object' && value.props !== null && value.props !== undefined)) {
-      valueIsValid = false;
+      validValue = false;
     }
   }
 
-  if (!valueIsValid) {
+  if (!validValue) {
     return new Error(`Invalid prop '${propFullName}' supplied to '${componentName}'. Validation failed.`);
   }
 

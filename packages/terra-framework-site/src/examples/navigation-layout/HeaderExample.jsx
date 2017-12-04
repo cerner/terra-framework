@@ -6,9 +6,7 @@ const propTypes = {
   layoutConfig: PropTypes.object,
 };
 
-const HeaderExample = ({
-  layoutConfig,
-}) => (
+const HeaderExample = ({ layoutConfig }) => (
   <div style={{ height: '60px', width: 'calc(100% - 10px)', border: '4px dashed lightgrey', margin: '5px', position: 'relative', display: 'flex' }}>
     <div style={{ position: 'absolute', top: '15px', left: '50%', color: 'grey', transform: 'translateX(-50%)' }}>
       <h2 style={{ display: 'inline', margin: 0 }}>Header</h2>

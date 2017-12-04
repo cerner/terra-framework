@@ -66,19 +66,19 @@ const propTypes = {
   /**
    * The location as provided by the `withRouter()` HOC.
    */
-  location: PropTypes.object,
+  location: PropTypes.object.isRequired,
   /**
    * The match as provided by the `withRouter()` HOC.
    */
-  match: PropTypes.object,
+  match: PropTypes.object.isRequired,
   /**
    * The history as provided by the `withRouter()` HOC.
    */
-  history: PropTypes.object,
+  history: PropTypes.object.isRequired,
   /**
    * The staticContext as provided by the `withRouter()` HOC.
    */
-  staticContext: PropTypes.object,
+  staticContext: PropTypes.object.isRequired,
 };
 
 /**
@@ -175,7 +175,7 @@ class NavigationLayout extends React.Component {
 
     const headerComponent = header || <NavigationLayoutContent />;
 
-    const contentComponent = children || <NavigationLayoutContent redirect={indexPath} />;
+    const contentComponent = children || <NavigationLayoutContent redirectPath={indexPath} />;
 
     let menuComponent = menu;
     // The routes for the menu are examined for evidence of a valid component for the current location.
