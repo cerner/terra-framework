@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RoutingStack should render a RoutingStack with provided routes and nav disabled 1`] = `
+<Switch
+  location={
+    Object {
+      "pathname": "/a/b/c",
+    }
+  }
+>
+  <Route
+    path="/a/b/c"
+    render={[Function]}
+  />
+  <Route
+    path="/a/b"
+    render={[Function]}
+  />
+  <Route
+    path="/a"
+    render={[Function]}
+  />
+  <div>
+    I AM A CHILD
+  </div>
+</Switch>
+`;
+
+exports[`RoutingStack should render a default RoutingStack 1`] = `<Switch />`;

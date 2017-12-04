@@ -1,4 +1,4 @@
-import RoutingStackDelegate from '../../../src/routing/RoutingStackDelegate';
+import RoutingStackDelegate from '../../src/RoutingStackDelegate';
 
 describe('RoutingStackDelegate', () => {
   describe('create', () => {

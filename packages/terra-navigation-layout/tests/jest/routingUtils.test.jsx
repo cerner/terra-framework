@@ -1,4 +1,4 @@
-import { reduceRouteConfig, validateMatchExists } from '../../../src/routing/routingUtils';
+import { reduceRouteConfig, validateMatchExists } from '../../src/routingUtils';
 
 describe('routingUtils', () => {
   describe('reduceRouteConfig', () => {

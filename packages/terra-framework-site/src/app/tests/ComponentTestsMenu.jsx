@@ -1,5 +1,5 @@
 import React from 'react';
-import RoutingStackDelegate from 'terra-navigation-layout/lib/routing/RoutingStackDelegate';
+import RoutingStackDelegate from 'terra-navigation-layout/lib/RoutingStackDelegate';
 
 import MenuList from '../common/menu/MenuList';
 import { itemConfigPropType } from '../../componentConfig';

@@ -6,7 +6,7 @@ import {
 import classNames from 'classnames/bind';
 
 import AppDelegate from 'terra-app-delegate';
-import RoutingStack from './routing/RoutingStack';
+import RoutingStack from './RoutingStack';
 import { processedRoutesPropType } from './configurationPropTypes';
 
 import styles from './NavigationLayoutContent.scss';
@@ -21,7 +21,7 @@ const propTypes = {
   /**
    * The routing configuration from which Routes will be generated.
    */
-  routes: processedRoutesPropType,
+  navigationLayoutRoutes: processedRoutesPropType,
   /**
    * The String path to redirect to should the routes specified by the routeConfig all fail to match.
    */
@@ -32,12 +32,12 @@ const propTypes = {
   stackNavigationIsEnabled: PropTypes.bool,
 };
 
-const NavigationLayoutContent = ({ app, routes, redirectPath, stackNavigationIsEnabled, ...customProps }) => (
+const NavigationLayoutContent = ({ app, navigationLayoutRoutes, redirectPath, stackNavigationIsEnabled, ...customProps }) => (
   <div className={cx('content')}>
     <RoutingStack
       navEnabled={stackNavigationIsEnabled}
       app={app}
-      routes={routes}
+      routes={navigationLayoutRoutes}
       ancestorProps={customProps}
     >
       {redirectPath && <Redirect to={redirectPath} />}

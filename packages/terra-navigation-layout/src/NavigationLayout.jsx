@@ -10,7 +10,7 @@ import breakpoints from 'terra-responsive-element/lib/breakpoints.scss';
 
 import NavigationLayoutContent from './NavigationLayoutContent';
 import { navigationLayoutConfigPropType, supportedComponentBreakpoints } from './configurationPropTypes';
-import { reduceRouteConfig, validateMatchExists } from './routing/routingUtils';
+import { reduceRouteConfig, validateMatchExists } from './routingUtils';
 
 const getBreakpointSize = (queryWidth) => {
   const width = queryWidth || window.innerWidth;
@@ -148,7 +148,7 @@ class NavigationLayout extends React.Component {
 
     return React.cloneElement(element, {
       app,
-      routes,
+      navigationLayoutRoutes: routes,
       navigationLayoutSize: size,
     });
   }

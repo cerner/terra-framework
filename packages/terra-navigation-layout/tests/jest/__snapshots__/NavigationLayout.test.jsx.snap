@@ -1,7 +1,218 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`NavigationLayout should render a NavigationLayout with defaulted components and forward relevant config 1`] = `
+<Layout
+  header={
+    <NavigationLayoutContent
+      app={AppDelegateInstance {}}
+      navigationLayoutRoutes={
+        Array [
+          Object {
+            "componentClass": [Function],
+            "componentProps": Object {
+              "type": "header",
+            },
+            "parentPaths": Array [],
+            "path": "/",
+          },
+        ]
+      }
+      navigationLayoutSize="tiny"
+    />
+  }
+  menu={
+    <NavigationLayoutContent
+      app={AppDelegateInstance {}}
+      navigationLayoutRoutes={
+        Array [
+          Object {
+            "componentClass": [Function],
+            "componentProps": Object {
+              "type": "menu",
+            },
+            "parentPaths": Array [],
+            "path": "/",
+          },
+        ]
+      }
+      navigationLayoutSize="tiny"
+      stackNavigationIsEnabled={true}
+    />
+  }
+>
+  <NavigationLayoutContent
+    app={AppDelegateInstance {}}
+    navigationLayoutRoutes={
+      Array [
+        Object {
+          "componentClass": [Function],
+          "componentProps": Object {
+            "type": "content",
+          },
+          "parentPaths": Array [],
+          "path": "/",
+        },
+      ]
+    }
+    navigationLayoutSize="tiny"
+    redirectPath="/"
+  />
+</Layout>
+`;
+
+exports[`NavigationLayout should render a NavigationLayout with provided components 1`] = `
+<Layout
+  header={
+    <Header
+      navigationLayoutRoutes={Array []}
+      navigationLayoutSize="tiny"
+    />
+  }
+  menu={
+    <Menu
+      navigationLayoutRoutes={Array []}
+      navigationLayoutSize="tiny"
+    />
+  }
+>
+  <Content
+    navigationLayoutRoutes={Array []}
+    navigationLayoutSize="tiny"
+  />
+</Layout>
+`;
+
+exports[`NavigationLayout should render a NavigationLayout with provided components and forward relevant config 1`] = `
+<Layout
+  header={
+    <Header
+      app={AppDelegateInstance {}}
+      navigationLayoutRoutes={
+        Array [
+          Object {
+            "componentClass": [Function],
+            "componentProps": Object {
+              "type": "header",
+            },
+            "parentPaths": Array [],
+            "path": "/",
+          },
+        ]
+      }
+      navigationLayoutSize="tiny"
+    />
+  }
+  menu={
+    <Menu
+      app={AppDelegateInstance {}}
+      navigationLayoutRoutes={
+        Array [
+          Object {
+            "componentClass": [Function],
+            "componentProps": Object {
+              "type": "menu",
+            },
+            "parentPaths": Array [],
+            "path": "/",
+          },
+        ]
+      }
+      navigationLayoutSize="tiny"
+    />
+  }
+>
+  <Content
+    app={AppDelegateInstance {}}
+    navigationLayoutRoutes={
+      Array [
+        Object {
+          "componentClass": [Function],
+          "componentProps": Object {
+            "type": "content",
+          },
+          "parentPaths": Array [],
+          "path": "/",
+        },
+      ]
+    }
+    navigationLayoutSize="tiny"
+  />
+</Layout>
+`;
+
+exports[`NavigationLayout should render a NavigationLayout with provided menu text 1`] = `
+<Layout
+  header={
+    <NavigationLayoutContent
+      navigationLayoutRoutes={Array []}
+      navigationLayoutSize="tiny"
+    />
+  }
+  menu={null}
+  menuText="TEST MENU TEXT"
+>
+  <NavigationLayoutContent
+    navigationLayoutRoutes={Array []}
+    navigationLayoutSize="tiny"
+  />
+</Layout>
+`;
+
+exports[`NavigationLayout should render a NavigationLayout without menu if location does not match config entry 1`] = `
+<Layout
+  header={
+    <NavigationLayoutContent
+      app={AppDelegateInstance {}}
+      navigationLayoutRoutes={
+        Array [
+          Object {
+            "componentClass": [Function],
+            "componentProps": Object {
+              "type": "header",
+            },
+            "parentPaths": Array [],
+            "path": "/",
+          },
+        ]
+      }
+      navigationLayoutSize="tiny"
+    />
+  }
+  menu={null}
+>
+  <NavigationLayoutContent
+    app={AppDelegateInstance {}}
+    navigationLayoutRoutes={
+      Array [
+        Object {
+          "componentClass": [Function],
+          "componentProps": Object {
+            "type": "content",
+          },
+          "parentPaths": Array [],
+          "path": "/",
+        },
+      ]
+    }
+    navigationLayoutSize="tiny"
+    redirectPath="/"
+  />
+</Layout>
+`;
+
 exports[`NavigationLayout should render a default NavigationLayout 1`] = `
-<Route
-  render={[Function]}
-/>
+<Layout
+  header={
+    <NavigationLayoutContent
+      navigationLayoutRoutes={Array []}
+      navigationLayoutSize="tiny"
+    />
+  }
+  menu={null}
+>
+  <NavigationLayoutContent
+    navigationLayoutRoutes={Array []}
+    navigationLayoutSize="tiny"
+  />
+</Layout>
 `;

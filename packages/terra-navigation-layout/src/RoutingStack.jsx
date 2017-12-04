@@ -9,7 +9,7 @@ import {
 import AppDelegate from 'terra-app-delegate';
 
 import RoutingStackDelegate from './RoutingStackDelegate';
-import { processedRoutesPropType } from '../configurationPropTypes';
+import { processedRoutesPropType } from './configurationPropTypes';
 
 const propTypes = {
   /**
