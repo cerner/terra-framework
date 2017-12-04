@@ -33,7 +33,7 @@ const reduceRouteConfig = (routeConfig, size) => {
         path: config.path,
         componentClass: componentConfig.componentClass,
         componentProps: componentConfig.props,
-        parentRoutes: [],
+        parentPaths: [],
       });
     }
 
@@ -54,24 +54,29 @@ const reduceRouteConfig = (routeConfig, size) => {
       return route;
     }
 
+    // The path being tested is split into segments. Those segments are then rejoined to produce the set of
+    // potential parent paths. Those potential paths are then filtered against the set of actual paths that
+    // were generated so that only matching parent paths are returned.
+
     const pathSegments = route.path.split('/');
-    if (pathSegments.length < 2) {
-      return route;
+
+    const potentialParentPaths = [];
+    // The number of necessary iterations is 2 less than the number of total segments.
+    for (let i = 0, length = pathSegments.length; i < length - 2; i += 1) {
+      pathSegments.pop();
+      potentialParentPaths.push(pathSegments.join('/'));
     }
 
-    const testPath = `/${pathSegments[1]}`;
-    const parentPaths = array.filter(testRoute => (
-      /*
-       * If the testRoute is the index route (/), it is accepted as parent route right away.
-       * If the testPath matches the start of the testRoute, and the number of path segments of the testRoute is less than that of the
-       * route in question, the testRoute is determined to be a parent route.
-       */
-      testRoute.path === '/' || (testRoute.path.indexOf(testPath) === 0 && testRoute.path.split('/').length < route.path.split('/').length)
+    // The root path is added manually as it cannot be produced by the above joins.
+    potentialParentPaths.push('/');
+
+    const matchedParentPaths = array.filter(testRoute => (
+      potentialParentPaths.indexOf(testRoute.path) !== -1
     ))
     .map(parentRoute => parentRoute.path);
 
     return Object.assign({}, route, {
-      parentPaths: parentPaths.reverse(),
+      parentPaths: matchedParentPaths.reverse(),
     });
   });
 };

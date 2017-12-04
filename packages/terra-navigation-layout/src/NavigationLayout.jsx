@@ -76,9 +76,10 @@ const propTypes = {
    */
   history: PropTypes.object.isRequired,
   /**
-   * The staticContext as provided by the `withRouter()` HOC.
+   * The staticContext as provided by the `withRouter()` HOC. This will only be provided when
+   * within a StaticRouter.
    */
-  staticContext: PropTypes.object.isRequired,
+  staticContext: PropTypes.object,
 };
 
 /**
