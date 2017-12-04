@@ -56,14 +56,12 @@ const componentConfigPropType = PropTypes.objectOf((propValue, key, componentNam
 
 /**
  * PropType definition for routes definitions in the NavigationLayout's configuration object.
- * It is an Object that contains a path, a component to render for that path, and the route attributes (strict/exact).
+ * It is an Object that contains a path and a component to render for that path.
  * The path must start with a forward slash.
  *
  * Example:
  *   {
  *     path: '/a',
- *     strict: false,
- *     exact: true,
  *     component: {...}, // [componentConfigPropType]
  *   }
  */
@@ -77,8 +75,6 @@ const routePropType = PropTypes.shape({
     }
     return true;
   },
-  strict: PropTypes.bool,
-  exact: PropTypes.bool,
   component: componentConfigPropType.isRequired,
 });
 
@@ -110,28 +106,20 @@ const navigationLayoutConfigPropType = PropTypes.shape({
  * Example:
  *   [{
  *     path: '/a/b/c',
- *     exact: false,
- *     strict: false,
  *     componentClass: CComponentClass,
  *     componentProps: {
  *       propName: 'prop value',
  *     },
  *   }, {
  *     path: '/a/b',
- *     exact: true,
- *     strict: true,
  *     componentClass: BComponentClass,
  *   }, {
  *     path: '/a',
- *     exact: false,
- *     strict: false,
  *     componentClass: AComponentClass,
  *   }]
  */
 const processedRoutesPropType = PropTypes.arrayOf(PropTypes.shape({
   path: PropTypes.string,
-  exact: PropTypes.bool,
-  strict: PropTypes.bool,
   componentClass: PropTypes.func,
   componentProps: PropTypes.object,
 }));

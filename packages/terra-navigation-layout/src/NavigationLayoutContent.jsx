@@ -7,7 +7,7 @@ import classNames from 'classnames/bind';
 
 import AppDelegate from 'terra-app-delegate';
 import RoutingStack from './routing/RoutingStack';
-import { supportedComponentBreakpoints, processedRoutesPropType } from './configurationPropTypes';
+import { processedRoutesPropType } from './configurationPropTypes';
 
 import styles from './NavigationLayoutContent.scss';
 
@@ -23,10 +23,6 @@ const propTypes = {
    */
   routes: processedRoutesPropType,
   /**
-   * The current responsive size.
-   */
-  navigationLayoutSize: PropTypes.oneOf(supportedComponentBreakpoints),
-  /**
    * The String path to redirect to should the routes specified by the routeConfig all fail to match.
    */
   redirect: PropTypes.string,
@@ -36,11 +32,10 @@ const propTypes = {
   stackNavigationIsEnabled: PropTypes.bool,
 };
 
-const NavigationLayoutContent = ({ app, routes, navigationLayoutSize, redirect, stackNavigationIsEnabled, ...customProps }) => (
+const NavigationLayoutContent = ({ app, routes, redirect, stackNavigationIsEnabled, ...customProps }) => (
   <div className={cx('content')}>
     <RoutingStack
       navEnabled={stackNavigationIsEnabled}
-      size={navigationLayoutSize}
       app={app}
       routes={routes}
       ancestorProps={customProps}

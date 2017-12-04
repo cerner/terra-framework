@@ -31,10 +31,9 @@ const reduceRouteConfig = (routeConfig, size) => {
     if (componentConfig && componentConfig.componentClass) {
       availableRoutes.push({
         path: config.path,
-        exact: config.exact,
-        strict: config.strict,
         componentClass: componentConfig.componentClass,
         componentProps: componentConfig.props,
+        parentRoutes: [],
       });
     }
 
@@ -61,17 +60,18 @@ const reduceRouteConfig = (routeConfig, size) => {
     }
 
     const testPath = `/${pathSegments[1]}`;
-    const parentRoutes = array.filter(testRoute => (
+    const parentPaths = array.filter(testRoute => (
       /*
        * If the testRoute is the index route (/), it is accepted as parent route right away.
        * If the testPath matches the start of the testRoute, and the number of path segments of the testRoute is less than that of the
        * route in question, the testRoute is determined to be a parent route.
        */
       testRoute.path === '/' || (testRoute.path.indexOf(testPath) === 0 && testRoute.path.split('/').length < route.path.split('/').length)
-    ));
+    ))
+    .map(parentRoute => parentRoute.path);
 
     return Object.assign({}, route, {
-      parentPaths: parentRoutes.reverse(),
+      parentPaths: parentPaths.reverse(),
     });
   });
 };
@@ -89,7 +89,7 @@ const validateMatchExists = (pathname, routes) => {
 
   for (let i = 0, length = routes.length; i < length; i += 1) {
     const testRoute = routes[i];
-    if (matchPath(pathname, { path: testRoute.path, exact: testRoute.exact, strict: testRoute.strict })) {
+    if (matchPath(pathname, { path: testRoute.path })) {
       return true;
     }
   }

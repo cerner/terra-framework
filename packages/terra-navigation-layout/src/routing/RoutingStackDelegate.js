@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 const supportedAttributes = [
-  'location', 'stackLocation', 'parentPaths', 'goBack', 'goToRoot',
+  'location', 'parentPaths', 'showParent', 'showRoot',
 ];
 
 /**
@@ -16,20 +16,6 @@ const create = (data) => {
   });
 
   return Object.freeze(delegate);
-};
-
-/**
- * Clones an existing RoutingStackDelegate Object instance and overrides any given attributes.
- */
-const clone = (delegate, data) => {
-  const ancestorDelegate = delegate || {};
-
-  const mergedData = {};
-  supportedAttributes.forEach((attribute) => {
-    mergedData[attribute] = data[attribute] || ancestorDelegate[attribute];
-  });
-
-  return create(mergedData);
 };
 
 /**
@@ -55,15 +41,11 @@ const RoutingStackDelegate = {
     location: PropTypes.shape({
       pathname: PropTypes.string,
     }),
-    stackLocation: PropTypes.shape({
-      pathname: PropTypes.string,
-    }),
     parentPaths: PropTypes.arrayOf(PropTypes.string),
-    goBack: PropTypes.func,
-    goToRoot: PropTypes.func,
+    showParent: PropTypes.func,
+    showRoot: PropTypes.func,
   }),
   create,
-  clone,
   isEqual,
 };
 

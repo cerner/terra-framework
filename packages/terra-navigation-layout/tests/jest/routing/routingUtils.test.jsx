@@ -73,8 +73,6 @@ describe('routingUtils', () => {
       const testConfig = {
         '/page1': {
           path: '/page1',
-          exact: true,
-          strict: true,
           component: {
             default: {
               componentClass: 'Page1ComponentClass',
@@ -92,8 +90,6 @@ describe('routingUtils', () => {
       expect(result[0].componentProps).toEqual({
         testProp: 'test value',
       });
-      expect(result[0].exact).toBe(true);
-      expect(result[0].strict).toBe(true);
       expect(result[0].path).toBe('/page1');
     });
 
@@ -259,52 +255,15 @@ describe('routingUtils', () => {
       expect(validateMatchExists('/path', [])).toBe(false);
     });
 
-    it('should properly determine if path matches exact/strict route', () => {
-      const testRoutes = [{
-        path: '/a',
-        exact: true,
-        strict: true,
-        componentClass: 'TestClass',
-        componentProps: {
-          propName: 'huh',
-        },
-      }];
-
-      expect(validateMatchExists('/a', testRoutes)).toBe(true);
-      expect(validateMatchExists('/a/', testRoutes)).toBe(false);
-      expect(validateMatchExists('/b', testRoutes)).toBe(false);
-    });
-
-    it('should properly determine if path matches exact/unstrict route', () => {
-      const testRoutes = [{
-        path: '/a',
-        exact: true,
-        strict: false,
-        componentClass: 'TestClass',
-        componentProps: {
-          propName: 'huh',
-        },
-      }];
-
-      expect(validateMatchExists('/a', testRoutes)).toBe(true);
-      expect(validateMatchExists('/a/', testRoutes)).toBe(true);
-    });
-
     it('should properly determine if path matches among multiple route', () => {
       const testRoutes = [{
         path: '/a',
-        exact: false,
-        strict: false,
         componentClass: 'AClass',
       }, {
         path: '/b',
-        exact: false,
-        strict: false,
         componentClass: 'BClass',
       }, {
         path: '/c',
-        exact: false,
-        strict: false,
         componentClass: 'BClass',
       }];
 

@@ -73,37 +73,44 @@ class RoutingStack extends React.Component {
     }
 
     return routes.map((routeData) => {
-      const routingStackDelegate = RoutingStackDelegate.create({
-        location,
-        stackLocation: this.state.stackLocation,
-        parentPaths: routeData.parentPaths,
-        goBack: navEnabled && routeData.parentPaths && routeData.parentPaths.length ? () => {
-          const backRoute = routeData.parentPaths[routeData.parentPaths.length - 1];
-          const matchToCurrentLocation = matchPath(location.pathname, { path: backRoute.path });
+      const delegateData = {
+        location: this.state.stackLocation,
+      };
 
-          this.updateStackLocation(matchToCurrentLocation.url);
-        } : undefined,
-        goToRoot: navEnabled && routeData.parentPaths && routeData.parentPaths.length > 1 ? () => {
-          const rootRoute = routeData.parentPaths[0];
-          const matchToCurrentLocation = matchPath(location.pathname, { path: rootRoute.path });
+      if (routeData.parentPaths && routeData.parentPaths.length) {
+        delegateData.parentPaths = routeData.parentPaths.reduce((matchingPaths, path) => {
+          const match = matchPath(location.pathname, { path });
+          if (match) {
+            matchingPaths.push(match.url);
+          }
 
-          this.updateStackLocation(matchToCurrentLocation.url);
-        } : undefined,
-      });
+          return matchingPaths;
+        }, []);
+
+        if (navEnabled && delegateData.parentPaths.length) {
+          delegateData.showParent = () => {
+            this.updateStackLocation(delegateData.parentPaths[delegateData.parentPaths.length - 1]);
+          };
+
+          if (delegateData.parentPaths.length > 1) {
+            delegateData.showRoot = () => {
+              this.updateStackLocation(delegateData.parentPaths[0]);
+            };
+          }
+        }
+      }
 
       const ComponentClass = routeData.componentClass;
 
       return (
         <Route
-          exact={routeData.exact}
-          strict={routeData.strict}
           path={routeData.path}
           key={routeData.path}
           render={() => (
             <ComponentClass
               {...ancestorProps}
               {...routeData.componentProps}
-              routingStackDelegate={routingStackDelegate}
+              routingStackDelegate={RoutingStackDelegate.create(delegateData)}
               app={app}
             />
           )}
