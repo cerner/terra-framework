@@ -106,7 +106,7 @@ const NavigationLayoutStandard = withRouter(({ location }) => (
     <h3>{`Broswer Location: ${location.pathname}`}</h3>
     <NavigationLayout
       config={config}
-      menuText="Menu"
+      menuText="Example Menu"
       style={{ height: '400px', width: '100%' }}
     />
   </div>

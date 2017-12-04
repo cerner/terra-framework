@@ -4,7 +4,7 @@ The Terra Navigation Layout package includes a variety of components and utiliti
 
 ### Components
 
-This package includes a number of React components that can be used together or individually in existing applications or in custom implementations. `react-router` is heavily used; please refer to their documentation for more information regarding their standard routing components: https://reacttraining.com/react-router/
+This package includes a couple of React components that can be used together or individually in existing applications or in custom implementations. `react-router` is heavily used; please refer to their documentation for more information regarding their standard routing components: https://reacttraining.com/react-router/
 
 #### NavigationLayout
 
