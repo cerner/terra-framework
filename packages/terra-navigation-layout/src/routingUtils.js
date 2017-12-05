@@ -3,6 +3,13 @@ import { matchPath } from 'react-router-dom';
 /**
  * Given a route configuration and size, returns an Array of ordered routing data objects
  * representing the routes available at that size.
+ *
+ * To summarize the what is happening here:
+ * 1. Responsive route configuration comes in, along with the current size.
+ * 2. Responsive route configuration is transformed into an array of route objects for that size.
+ * 3. Array of route objects is reverse-sorted by path to ensure nested paths preceed their parents paths.
+ * 4. Sorted array is iterated on one more time in order to build out the parent paths for each route object.
+ *
  * @param {Object} routeConfig The route configuration to reduce. The expected shape matches that of the routeConfigPropType.
  * @param {String} size The breakpoint size used during configuration parsing.
  * @param {Array[String]} parentPaths The array of String paths that are ancestors to the given routeConfig.
