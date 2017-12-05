@@ -1,22 +1,14 @@
 # Terra Navigation Layout
 
-The Terra Navigation Layout package includes a variety of components and utilities to provide configuration-based, `react-router`-driven navigation to Terra applications.
-
-### Components
-
-This package includes a couple of React components that can be used together or individually in existing applications or in custom implementations. `react-router` is heavily used; please refer to their documentation for more information regarding their standard routing components: https://reacttraining.com/react-router/
-
-#### NavigationLayout
-
-The `NavigationLayout` wraps the `Layout` component provided by `terra-layout` and injects routing-based components within its various component regions. If navigation is not desired, the `Layout` component can and should be used directly. However, the NavigationLayout does support very basic navigation workflows with minimal configuration required.
+The `NavigationLayout` is a configuration-based, `react-router`-driven layout. It wraps the `Layout` component provided by `terra-layout` and injects routing-based components into its various component regions. If navigation is not desired, the `Layout` component can and should be used directly. However, the NavigationLayout does support very basic navigation workflows with minimal configuration required.
 
 The `NavigationLayout` is able to successfully render with just the config object defining its structure. However, custom components can be provided directly to the NavigationLayout for the `header`, `menu`, and `content` props. Those custom components will be provided with any relevant configuration data to allow them to render things as they see fit.
 
-##### Prerequisites
+#### Prerequisites
 * The `NavigationLayout` must have a `Router` (or other high-level router like `BrowserRouter`, `HashRouter`, or `MemoryRouter`) as a component ancestor.
 * A configuration prop must be supplied to the `NavigationLayout` that defines the desired routing setup. The `NavigationLayout` treats this prop as immutable for caching and performance reasons. If a configuration object is changing due to a state change in a higher component, a new object instance must be provided for those changes to take effect.
 
-##### Configuration API
+#### Configuration API
 
 The configuration object is structured like the below example. A couple key takeaways:
 * The `header`, `menu`, and `content` regions have a separate configurations but share the same configuration APIs. These can be omitted if routing is unnecessary for an individual section.
@@ -92,17 +84,19 @@ The configuration object is structured like the below example. A couple key take
 }
 ```
 
-#### RoutingStack
+#### RoutingStackDelegate
 
-The `RoutingStack` renders a routing `Switch` with child `Routes` based on the `NavigationLayout`'s configuration. It is used internally by the `NavigationLayout` but can be used outside of it.
+All components rendered within the `NavigationLayout` receive a `routingStackDelegate` prop. This prop contains the following attributes:
+* `location` - The location used to render the component. This can be used to build NavLinks or other components that might desire the current location.
+* `parentPaths` - An array of String paths that were determined to preceed the current path in the configuration. For example, if the routes `/pages`, `/pages/:id`, and `/pages/:id/summary` were defined by the config, the component rendered for the path `/pages/123/summary` would receive a parentPaths value of [`/pages`, `/pages/123`]. This set of paths could be used to build breadcrumbs or simple navigation functionality.
 
-The `RoutingStack` also includes optional navigation managment within the component. For example, given the example configuration above, the RoutingStack would determine the `/page1/subpage1` route to have two parent routes: `/page1` and `/`. If the `navEnabled` prop is provided to the `RoutingStack`, the component defined for the `page1/subpage1` route will be provided with a `RoutingStackDelegate` instance as a prop. This prop will include:
-* The current location of the RoutingStack (as `location`)
-* The parent paths as determined by the current page location (as `parentPaths`)
-* A function that will change the `RoutingStack`'s internal location to that of the next parent route (as `showParent`)
-* A function that will change the `RoutingStack`'s internal location to that of the root (or last) parent route (as `showRoot`)
+Components within the `menu` region get a few extra features, however. To help enable nested menu scenarios, the `routingStackDelegate` will also include the following:
+* `showParent` - A function that will cause the NavigationLayout to display the immediate parent path (if one is present).
+* `showRoot` - A function that will cause the NavigationLayout to display the first (or root) parent path (if one is present, and the number of parent paths is more than 1).
 
-It is important to note that calling `showParent`/`showRoot` does not affect the actual page location, just that of the `RoutingStack` instance. This allows components to step back through nested route content without loosing context of other content on the page. This is typically used for menus or other components that are supplementing the main page content. In fact, the NavigationLayout only enabled navigation within the RoutingStack used to display the Layout's `menu` components.
+It is important to note that `showParent`/`showRoot` change the location used by the menu components, but they do not change the location of the overall page. For example, if the page location is `/pages/99/summary`, and the menu component calls `showParent`, the menu component for `/pages/99` will be rendered, but the content component for `/pages/99/summary` will still be rendered, and the browser URL will still be `[base-url]/pages/99/summary`.
+
+After calling these navigation functions, the `location` provided in the `routingStackDelegate` match the parent path specified. If the true page location is still necessary, the `withRouter` HOC provided by `react-router` can be utilized as needed. And if this functionality is not desired at all for a given application, these props can be safely ignored.
 
 ## Getting Started
 
