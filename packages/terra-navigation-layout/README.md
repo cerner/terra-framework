@@ -1,17 +1,19 @@
-# Terra Layout
+# Terra Navigation Layout
 
-The Layout component provides a responsive starting point for the positioning of application components.
+The Terra Navigation Layout package includes a variety of components and utilities to provide configuration-based, `react-router`-driven navigation to Terra applications.
 
-[![NPM version](http://img.shields.io/npm/v/terra-layout.svg)](https://www.npmjs.org/package/terra-layout)
+[![NPM version](http://img.shields.io/npm/v/terra-navigation-layout.svg)](https://www.npmjs.org/package/terra-navigation-layout)
 [![Build Status](https://travis-ci.org/cerner/terra-framework.svg?branch=master)](https://travis-ci.org/cerner/terra-framework)
 
+This component renders secondary navigation items with react router.
+
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-layout/docs)
+- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-navigation-layout/docs)
 - [LICENSE](#license)
 
 ## Getting Started
 
-- Install from [npmjs](https://www.npmjs.com): `npm install terra-layout`
+- Install from [npmjs](https://www.npmjs.com): `npm install terra-navigation`
 
 ## LICENSE
 

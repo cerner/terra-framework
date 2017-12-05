@@ -1,18 +1,17 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import Base from 'terra-base';
 import ThemeProvider from 'terra-theme-provider';
-import NavigationLayout from './common/navigation/NavigationLayout';
-import ContentWrapper from './common/navigation/wrappers/ContentWrapper';
-import MenuWrapper from './common/navigation/wrappers/MenuWrapper';
+import NavigationLayout from 'terra-navigation-layout';
 
 import ApplicationHeader from './ApplicationHeader';
 import './App.scss';
 
 const propTypes = {
-  config: PropTypes.object,
+  routeConfig: PropTypes.object,
+  navigation: PropTypes.object,
 };
 
 const locale = document.getElementsByTagName('html')[0].getAttribute('lang');
@@ -57,29 +56,22 @@ class App extends React.Component {
         onDirChange={this.handleBidiChange}
         theme={this.state.theme}
         onThemeChange={this.handleThemeChange}
-        routeConfig={this.props.config}
+        navigation={this.props.navigation}
       />
     );
 
     return (
       <Router>
-        <Route
-          render={() => (
-            <ThemeProvider id="framework-site" themeName={themes[this.state.theme]} isGlobalTheme>
-              <Base style={{ height: '100%' }} locale={this.state.locale}>
-                <NavigationLayout
-                  header={applicationHeader}
-                  menu={<MenuWrapper />}
-                  menuText="Menu"
-                  routeConfig={this.props.config}
-                  enableHoverMenu
-                >
-                  <ContentWrapper />
-                </NavigationLayout>
-              </Base>
-            </ThemeProvider>
-          )}
-        />
+        <ThemeProvider id="framework-site" themeName={themes[this.state.theme]} isGlobalTheme>
+          <Base className="base" locale={this.state.locale}>
+            <NavigationLayout
+              header={applicationHeader}
+              menuText="Menu"
+              indexPath={this.props.navigation.index}
+              config={this.props.routeConfig}
+            />
+          </Base>
+        </ThemeProvider>
       </Router>
     );
   }

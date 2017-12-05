@@ -1,0 +1,64 @@
+{
+  "name": "terra-navigation-layout",
+  "main": "lib/NavigationLayout.js",
+  "version": "0.0.0",
+  "description": "The Terra Navigation Layout package includes a variety of components and utilities to provide configuration-based, react-router-driven navigation to Terra applications.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cerner/terra-framework.git"
+  },
+  "keywords": [
+    "Cerner",
+    "Terra",
+    "Framework",
+    "terra-navigation-layout",
+    "NavigationLayout",
+    "UI"
+  ],
+  "author": "Cerner Corporation",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cerner/terra-framework/issues"
+  },
+  "homepage": "https://github.com/cerner/terra-framework#readme",
+  "devDependencies": {
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
+    "terra-app-delegate": "^1.6.0",
+    "react-router-dom": "^4.0.0"
+  },
+  "peerDependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.4",
+    "react-router-dom": "^4.0.0",
+    "redux": "^3.6.0",
+    "terra-app-delegate": "^1.6.0",
+    "terra-base": "^2.5.0",
+    "terra-button": "^1.10.0",
+    "terra-menu": "^1.2.0",
+    "terra-icon": "^1.11.0"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "prop-types": "^15.5.8",
+    "terra-base": "^2.5.0",
+    "terra-button": "^1.10.0",
+    "terra-menu": "^1.2.0",
+    "terra-icon": "^1.11.0",
+    "terra-layout": "^1.0.0",
+    "terra-responsive-element": "^1.11.1"
+  },
+  "scripts": {
+    "compile": "npm run compile:clean && npm run compile:build",
+    "compile:clean": "rimraf lib",
+    "compile:build": "babel src --out-dir lib --copy-files",
+    "lint": "npm run lint:js && npm run lint:scss",
+    "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
+    "lint:scss": "stylelint src/**/*.scss",
+    "props-table": "props-table ./src/NavigationLayout.jsx --out-dir ./docs/props-table",
+    "test": "npm run test:jest && npm run test:nightwatch",
+    "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
+    "test:nightwatch": "nightwatch -c ../../nightwatch.conf.js"
+  }
+}

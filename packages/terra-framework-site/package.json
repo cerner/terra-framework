@@ -44,9 +44,11 @@
     "terra-list": "^1.12.1",
     "terra-markdown": "^1.9.1",
     "terra-menu": "^1.6.0",
+    "terra-navigation-layout": "^0.x",
     "terra-props-table": "^1.10.1",
     "terra-slide-panel": "^1.11.1",
-    "terra-theme-provider": "^1.6.1"
+    "terra-theme-provider": "^1.6.1",
+    "terra-toggle-button": "^1.15.0"
   },
   "peerDependencies": {
     "react": "^15.4.2",

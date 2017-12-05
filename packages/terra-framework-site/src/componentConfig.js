@@ -3,7 +3,11 @@ import LayoutDefault from 'terra-layout/tests/nightwatch/LayoutDefault';
 import LayoutNoMenu from 'terra-layout/tests/nightwatch/LayoutNoMenu';
 import LayoutLongText from 'terra-layout/tests/nightwatch/LayoutLongText';
 import LayoutNoHeader from 'terra-layout/tests/nightwatch/LayoutNoHeader';
+import NavigationLayoutBasic from 'terra-navigation-layout/tests/nightwatch/NavigationLayoutBasic';
+import NavigationLayoutComplex from 'terra-navigation-layout/tests/nightwatch/NavigationLayoutComplex';
+
 import LayoutExample from './examples/layout/Index';
+import NavigationLayoutExample from './examples/navigation-layout/Index';
 
 const itemConfigPropType = PropTypes.shape({
   path: PropTypes.string,
@@ -43,6 +47,24 @@ const componentConfig = {
       path: '/no-header',
       component: LayoutNoHeader,
       description: 'No Header',
+    }],
+  },
+  navigationLayout: {
+    name: 'Navigation Layout',
+    example: {
+      path: '/components/navigation-layout',
+      component: NavigationLayoutExample,
+      description: 'Navigation Layout',
+    },
+    testRoot: '/tests/navigation-layout',
+    tests: [{
+      path: '/basic',
+      component: NavigationLayoutBasic,
+      description: 'Basic',
+    }, {
+      path: '/complex',
+      component: NavigationLayoutComplex,
+      description: 'Complex',
     }],
   },
 };

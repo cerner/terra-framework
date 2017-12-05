@@ -11,7 +11,7 @@ import NavTabs from './common/toolbar/NavTabs';
 
 const propTypes = {
   layoutConfig: PropTypes.object,
-  routeConfig: PropTypes.object,
+  navigation: PropTypes.object,
 
   locale: PropTypes.string,
   onLocaleChange: PropTypes.func,
@@ -80,14 +80,14 @@ class ApplicationHeader extends React.Component {
     const utility = (
       <Utility
         accessory={<IconSettings />}
-        title={'Utilities'}
+        title={'Config'}
         menuItems={[themeSwitcher, localeContent, <Menu.Divider key="DIVIDER-1" />, bidiContent]}
       />
     );
 
     let navTabs;
-    if (this.props.routeConfig.navigation && !isCompactHeader) {
-      navTabs = <NavTabs links={this.props.routeConfig.navigation.links} />;
+    if (this.props.navigation && !isCompactHeader) {
+      navTabs = <NavTabs links={this.props.navigation.links} />;
     }
 
     return (
