@@ -1,32 +1,18 @@
-.cm-container {
-  height: 100%;
 
-  display: flex;
-  align-content: stretch;
-
-  .cm-backRegion {
-    flex: 0 1 auto;
+.cm-link {
+  color: #1c1f21;
+  display: block;
+  font-size: 1.071rem;
+  line-height: 3.214rem;
+  text-decoration: none;
+  padding: 0 0.7143rem;
+  &:hover {
+    background: linear-gradient(-90deg, #FFFFFF, #F1F1F2);
   }
 
-  .cm-contentRegion {
-    flex: 1 1 auto;
-  }
-
-  .cm-link {
-    color: #1c1f21;
-    display: block;
-    font-size: 1.071rem;
-    line-height: 3.214rem;
-    text-decoration: none;
-    padding: 0 0.7143rem;
-    &:hover {
-      background: linear-gradient(-90deg, #FFFFFF, #F1F1F2);
-    }
-
-    &[aria-current='true'] {
-      background-image: linear-gradient(-270deg, #FFFFFF, #e8e9ea);
-      box-shadow: inset 0.5rem 0 0 0 #007CC3;
-      padding: 0 1.214rem;
-    }
+  &[aria-current='true'] {
+    background-image: linear-gradient(-270deg, #FFFFFF, #e8e9ea);
+    box-shadow: inset 0.5rem 0 0 0 #007CC3;
+    padding: 0 1.214rem;
   }
 }

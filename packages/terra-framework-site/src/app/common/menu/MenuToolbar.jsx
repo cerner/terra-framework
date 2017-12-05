@@ -12,12 +12,13 @@ import RoutingStackDelegate from 'terra-navigation-layout/lib/RoutingStackDelega
 import './MenuToolbar.scss';
 
 const propTypes = {
+  app: PropTypes.object,
   routingStackDelegate: RoutingStackDelegate.propType,
   backButtonOverride: PropTypes.node,
   text: PropTypes.string,
 };
 
-const MenuToolbar = ({ routingStackDelegate, text, ...customProps }) => {
+const MenuToolbar = ({ app, routingStackDelegate, text, ...customProps }) => {
   const toolbarClassNames = classNames([
     'terraClinical-MenuToolbar',
     { 'is-terminal': !routingStackDelegate.showParent },

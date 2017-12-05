@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApplicationMenuLayout should render with provided props 1`] = `
+<div
+  className="menu fill"
+>
+  <div
+    className="fit header"
+  >
+    <div
+      id="test-header"
+    >
+      Header
+    </div>
+  </div>
+  <div
+    className="fill body"
+  >
+    <div
+      className="fit widget"
+    >
+      <div
+        id="test-extensions"
+      >
+        Extensions
+      </div>
+    </div>
+    <div
+      className="fill content"
+    >
+      <div
+        className="normalizer"
+      >
+        <div
+          id="test-content"
+        >
+          Content
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="fit footer"
+  >
+    <div
+      id="test-footer"
+    >
+      Footer
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ApplicationMenuLayout should render without optional props 1`] = `
+<div
+  className="menu fill"
+>
+  <div
+    className="fill body"
+  />
+</div>
+`;

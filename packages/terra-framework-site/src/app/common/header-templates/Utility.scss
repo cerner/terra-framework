@@ -5,14 +5,14 @@
     color: #fff;
     display: flex;
     flex: 0 0 auto;
+  }
+  
+  .utility > *:not(:last-child) {
+    padding-right: 0.3571rem;
+  }
 
-    & > *:not(:last-child) {
-      padding-right: 0.3571rem;
-    }
-
-    &:hover {
-      color: #fff;
-    }
+  .utility:hover {
+    color: #fff;
   }
 
   .title {
