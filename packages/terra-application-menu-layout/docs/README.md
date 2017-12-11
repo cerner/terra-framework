@@ -1,6 +1,6 @@
 # Terra Application Menu Layout
 
-This component renders an application menu layout. To be used with a terra-layout or terra-navigation-layout.
+This component renders an application menu layout. To be used with terra-layout or terra-navigation-layout.
 
 ## Getting Started
 

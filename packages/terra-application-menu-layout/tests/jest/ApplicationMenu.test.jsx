@@ -11,14 +11,14 @@ describe('ApplicationMenuLayout', () => {
   });
 
   it('should render with provided props', () => {
-    const result = shallow((
+    const result = shallow(
       <ApplicationMenuLayout
         header={<div id="test-header">Header</div>}
         extensions={<div id="test-extensions">Extensions</div>}
         content={<div id="test-content">Content</div>}
         footer={<div id="test-footer">Footer</div>}
       />
-    ));
+    );
 
     expect(result).toMatchSnapshot();
   });
