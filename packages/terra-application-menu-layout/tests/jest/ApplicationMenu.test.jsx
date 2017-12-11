@@ -4,9 +4,7 @@ import ApplicationMenuLayout from '../../src/ApplicationMenuLayout';
 
 describe('ApplicationMenuLayout', () => {
   it('should render without optional props', () => {
-    const result = shallow((
-      <ApplicationMenuLayout />
-    ));
+    const result = shallow(<ApplicationMenuLayout />);
     expect(result).toMatchSnapshot();
   });
 
