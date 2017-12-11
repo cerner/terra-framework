@@ -15,7 +15,7 @@ describe('ApplicationMenuLayout', () => {
         extensions={<div id="test-extensions">Extensions</div>}
         content={<div id="test-content">Content</div>}
         footer={<div id="test-footer">Footer</div>}
-      />
+      />,
     );
 
     expect(result).toMatchSnapshot();
