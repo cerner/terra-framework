@@ -38,20 +38,14 @@ class ApplicationHeader extends React.Component {
       </Utility.ItemGroup>
     );
 
+    const locales = ['en', 'en-GB', 'en-US', 'de', 'es', 'fr', 'pt', 'fi-FI'];
     const localeContent = (
       <Utility.Item
         text={`Locale: ${this.props.locale}`}
         key="locale"
         subMenuItems={[
           <Utility.ItemGroup isSelectable key="local-options" onChange={this.props.onLocaleChange} >
-            <Utility.Item id="en" text="en" key="en" isSelected={this.props.locale === 'en'} />
-            <Utility.Item id="en-GB" text="en-GB" key="en-GB" isSelected={this.props.locale === 'en-GB'} />
-            <Utility.Item id="en-US" text="en-US" key="en-US" isSelected={this.props.locale === 'en-US'} />
-            <Utility.Item id="de" text="de" key="de" isSelected={this.props.locale === 'de'} />
-            <Utility.Item id="es" text="es" key="es" isSelected={this.props.locale === 'es'} />
-            <Utility.Item id="fr" text="fr" key="fr" isSelected={this.props.locale === 'fr'} />
-            <Utility.Item id="pt" text="pt" key="pt" isSelected={this.props.locale === 'pt'} />
-            <Utility.Item id="fi-FI" text="fi-FI" key="fi-FI" isSelected={this.props.locale === 'fi-FI'} />
+            {locales.map(locale => <Utility.Item id={locale} text={locale} key={locale} isSelected={this.props.locale === locale} />)}
           </Utility.ItemGroup>,
         ]}
       />
