@@ -18,7 +18,7 @@ const propTypes = {
    * */
   content: PropTypes.element,
   /**
-   * Extensions element to be placed beforethe end of the header.
+   * Extensions element to be placed before the end of the header.
    * */
   extensions: PropTypes.element,
   /**
