@@ -52,7 +52,7 @@ const defaultProps = {
 const appendSizeToElement = (app, size, element) => React.cloneElement(element, { app, size });
 const appendConfigToElement = (app, layoutConfig, element) => React.cloneElement(element, { app, layoutConfig });
 
-const ApplicationHeader = ({
+const ApplicationHeaderLayout = ({
   app,
   extensions,
   layoutConfig,
@@ -120,7 +120,7 @@ const ApplicationHeader = ({
   );
 };
 
-ApplicationHeader.propTypes = propTypes;
-ApplicationHeader.defaultProps = defaultProps;
+ApplicationHeaderLayout.propTypes = propTypes;
+ApplicationHeaderLayout.defaultProps = defaultProps;
 
-export default ApplicationHeader;
+export default ApplicationHeaderLayout;
