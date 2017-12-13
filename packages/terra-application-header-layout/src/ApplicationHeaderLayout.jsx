@@ -22,14 +22,6 @@ const propTypes = {
    * */
   logo: PropTypes.element,
   /**
-   * Layout configuration to handle size and toggle functionality.
-   * */
-  layoutConfig: PropTypes.shape({
-    size: PropTypes.string,
-    toggleMenu: PropTypes.func,
-    menuIsOpen: PropTypes.bool,
-  }),
-  /**
    * Navigation element to be placed within the fill area of the header.
    * */
   navigation: PropTypes.element,
@@ -43,19 +35,9 @@ const propTypes = {
   utilities: PropTypes.element,
 };
 
-const defaultProps = {
-  layoutConfig: {
-    menuIsOpen: false,
-  },
-};
-
-const appendSizeToElement = (app, size, element) => React.cloneElement(element, { app, size });
-const appendConfigToElement = (app, layoutConfig, element) => React.cloneElement(element, { app, layoutConfig });
-
 const ApplicationHeaderLayout = ({
   app,
   extensions,
-  layoutConfig,
   logo,
   navigation,
   toggle,
@@ -70,43 +52,45 @@ const ApplicationHeaderLayout = ({
 
   let logoElement;
   if (logo) {
-    const clonedElement = appendSizeToElement(app, layoutConfig.size, logo);
-    logoElement = <div className={cx(['fit', 'start', 'logo'])}>{clonedElement}</div>;
+    logoElement = <div className={cx(['fit', 'start', 'logo'])}>{logo}</div>;
   }
 
   let navigationElement;
   if (navigation) {
-    const clonedElement = appendSizeToElement(app, layoutConfig.size, navigation);
-    navigationElement = <div className={cx('fill', 'navigation')}>{clonedElement}</div>;
+    navigationElement = <div className={cx('fill')}>{navigation}</div>;
   }
 
   let extensionsElement;
   if (extensions) {
-    const clonedElement = appendSizeToElement(app, layoutConfig.size, extensions);
-    extensionsElement = <div className={cx(['fit', 'end', 'extensions'])}>{clonedElement}</div>;
+    extensionsElement = <div className={cx(['fit', 'end', 'extensions'])}>{extensions}</div>;
   }
 
   let utilitiesElement;
   if (utilities) {
-    const clonedElement = appendSizeToElement(app, layoutConfig.size, utilities);
-    utilitiesElement = <div className={cx(['fit', 'end', 'utilities'])}>{clonedElement}</div>;
+    utilitiesElement = <div className={cx(['fit', 'end', 'utilities'])}>{utilities}</div>;
   }
 
   let headerToggle;
   if (toggle) {
-    const clonedElement = appendConfigToElement(app, layoutConfig, toggle);
-    headerToggle = <div className={cx(['fit', 'header-toggle'])}>{clonedElement}</div>;
+    headerToggle = <div className={cx('fit')}>{toggle}</div>;
+  }
+
+  let headerInner;
+  if (navigationElement || extensionsElement) {
+    headerInner = (
+      <div className={cx(['fill', 'header-inner'])}>
+        {navigationElement}
+        {extensionsElement}
+      </div>
+    );
   }
 
   let headerBody;
-  if (logoElement || navigationElement || utilitiesElement || extensionsElement) {
+  if (headerInner || logoElement || utilitiesElement) {
     headerBody = (
       <div className={cx(['fill', 'header-body'])}>
         {logoElement}
-        <div className={cx(['fill', 'header-inner'])}>
-          {navigationElement}
-          {extensionsElement}
-        </div>
+        {headerInner}
         {utilitiesElement}
       </div>
     );
@@ -121,6 +105,5 @@ const ApplicationHeaderLayout = ({
 };
 
 ApplicationHeaderLayout.propTypes = propTypes;
-ApplicationHeaderLayout.defaultProps = defaultProps;
 
 export default ApplicationHeaderLayout;

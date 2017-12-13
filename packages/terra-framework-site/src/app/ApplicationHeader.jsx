@@ -80,28 +80,29 @@ class ApplicationHeader extends React.Component {
         accessory={<IconSettings />}
         title={'Config'}
         menuItems={[themeSwitcher, localeContent, <Utility.Divider key="DIVIDER-1" />, bidiContent]}
+        size={this.props.layoutConfig.size}
       />
     );
 
     let navTabs;
     if (this.props.navigation && !isCompactHeader) {
-      navTabs = <NavTabs links={this.props.navigation.links} />;
+      navTabs = <NavTabs links={this.props.navigation.links} size={this.props.layoutConfig.size} />;
     }
 
     return (
       <Header
         className={cx(['header'])}
-        layoutConfig={this.props.layoutConfig}
         logo={(
           <Logo
             title="Terra"
             subtitle="Framework"
             accessory={<Image variant="rounded" src="https://github.com/cerner/terra-core/raw/master/terra.png" height="26px" width="26px" isFluid />}
+            size={this.props.layoutConfig.size}
           />
         )}
         utilities={utility}
         navigation={navTabs}
-        toggle={<Toggle />}
+        toggle={<Toggle layoutConfig={this.props.layoutConfig} />}
       />
     );
   }

@@ -29,26 +29,7 @@ const propTypes = {
    * Header element to be placed at the start of the header.
    * */
   header: PropTypes.element,
-  /**
-   * Layout configuration to handle size and toggle functionality.
-   * */
-  layoutConfig: PropTypes.shape({
-    size: PropTypes.string,
-    toggleMenu: PropTypes.func,
-    menuIsOpen: PropTypes.bool,
-    togglePin: PropTypes.func,
-    menuIsPinned: PropTypes.bool,
-  }),
 };
-
-const defaultProps = {
-  layoutConfig: {
-    menuIsOpen: false,
-    menuIsPinned: false,
-  },
-};
-
-const appendPropsToElement = (app, size, element) => React.cloneElement(element, { app, size });
 
 const ApplicationMenuLayout = ({
   app,
@@ -56,7 +37,6 @@ const ApplicationMenuLayout = ({
   extensions,
   footer,
   header,
-  layoutConfig,
   ...customProps
 }) => {
   const menuClassNames = cx([
@@ -67,26 +47,22 @@ const ApplicationMenuLayout = ({
 
   let headerElement;
   if (header) {
-    const clonedElement = appendPropsToElement(app, layoutConfig.size, header);
-    headerElement = <div className={cx(['fit', 'header'])}>{clonedElement}</div>;
+    headerElement = <div className={cx(['fit', 'header'])}>{header}</div>;
   }
 
   let contentElement;
   if (content) {
-    const clonedElement = appendPropsToElement(app, layoutConfig.size, content);
-    contentElement = <div className={cx(['fill', 'content'])}><div className={cx('normalizer')}>{clonedElement}</div></div>;
+    contentElement = <div className={cx(['fill', 'content'])}><div className={cx('normalizer')}>{content}</div></div>;
   }
 
   let extensionsElement;
   if (extensions) {
-    const clonedElement = appendPropsToElement(app, layoutConfig.size, extensions);
-    extensionsElement = <div className={cx(['fit', 'widget'])}>{clonedElement}</div>;
+    extensionsElement = <div className={cx(['fit', 'widget'])}>{extensions}</div>;
   }
 
   let footerElement;
   if (footer) {
-    const clonedElement = appendPropsToElement(app, layoutConfig.size, footer);
-    footerElement = <div className={cx(['fit', 'footer'])}>{clonedElement}</div>;
+    footerElement = <div className={cx(['fit', 'footer'])}>{footer}</div>;
   }
 
   return (
@@ -102,6 +78,5 @@ const ApplicationMenuLayout = ({
 };
 
 ApplicationMenuLayout.propTypes = propTypes;
-ApplicationMenuLayout.defaultProps = defaultProps;
 
 export default ApplicationMenuLayout;

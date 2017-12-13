@@ -1,16 +1,10 @@
 import React from 'react';
-// import AppDelegate from 'terra-app-delegate';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 
 import LayoutExamples from './examples/layout/Index';
 import NavigationExamples from './examples/navigation-layout/Index';
 import ApplicationHeaderLayoutExamples from './examples/application-header-layout/Index';
 import ApplicationMenuLayoutExamples from './examples/application-menu-layout/Index';
-
-const propTypes = {
-//   app: AppDelegate.propType,
-//   routingManager: RoutingManagerDelegate.propType,
-};
 
 const Components = () => (
   <div style={{ height: '100%', position: 'relative', padding: '15px' }}>
@@ -23,6 +17,5 @@ const Components = () => (
     </Switch>
   </div>
 );
-Components.propTypes = propTypes;
 
 export default withRouter(Components);

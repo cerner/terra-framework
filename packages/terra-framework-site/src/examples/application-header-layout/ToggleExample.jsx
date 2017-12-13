@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import PlaceHolder from '../../app/common/Placeholder';
 
 const propTypes = {
-  layoutConfig: PropTypes.object,
+  size: PropTypes.string,
 };
 
-const ExtensionsExample = ({ layoutConfig }) => {
+const ExtensionsExample = ({ size }) => {
   let text = 'Toggle';
   let width = '150px';
-  if (layoutConfig.size === 'tiny') {
+  if (size === 'tiny') {
     text = 'T';
     width = '50px';
-  } else if (layoutConfig.size === 'small') {
+  } else if (size === 'small') {
     text = 'Tog';
     width = '100px';
   }

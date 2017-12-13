@@ -8,54 +8,40 @@ import ToggleExample from './ToggleExample';
 import UtilitiesExample from './UtilitiesExample';
 
 const HeaderWireframe = () => {
-  const defaultHeader = (
-    <ApplicationHeaderLayout
-      layoutConfig={{ size: 'tiny', toggleMenu: () => {} }}
-      logo={<LogoExample />}
-      utilities={<UtilitiesExample />}
-      extensions={<ExtensionsExample />}
-      navigation={<NavigationExample />}
-      toggle={<ToggleExample />}
-    />
-  );
-
   const tinyHeader = (
     <ApplicationHeaderLayout
-      layoutConfig={{ size: 'tiny', toggleMenu: () => {} }}
-      logo={<LogoExample />}
-      utilities={<UtilitiesExample />}
-      extensions={<ExtensionsExample />}
-      navigation={<NavigationExample />}
-      toggle={<ToggleExample />}
+      logo={<LogoExample size="tiny" />}
+      utilities={<UtilitiesExample size="tiny" />}
+      extensions={<ExtensionsExample size="tiny" />}
+      navigation={<NavigationExample size="tiny" />}
+      toggle={<ToggleExample size="tiny" />}
     />
   );
 
   const smallHeader = (
     <ApplicationHeaderLayout
-      layoutConfig={{ size: 'small', toggleMenu: () => {} }}
-      logo={<LogoExample />}
-      utilities={<UtilitiesExample />}
-      extensions={<ExtensionsExample />}
-      navigation={<NavigationExample />}
-      toggle={<ToggleExample />}
+      logo={<LogoExample size="small" />}
+      utilities={<UtilitiesExample size="small" />}
+      extensions={<ExtensionsExample size="small" />}
+      navigation={<NavigationExample size="small" />}
+      toggle={<ToggleExample size="small" />}
     />
   );
 
   const mediumHeader = (
     <ApplicationHeaderLayout
-      layoutConfig={{ size: 'medium', toggleMenu: () => {} }}
-      logo={<LogoExample />}
-      utilities={<UtilitiesExample />}
-      extensions={<ExtensionsExample />}
-      navigation={<NavigationExample />}
-      toggle={<ToggleExample />}
+      logo={<LogoExample size="medium" />}
+      utilities={<UtilitiesExample size="medium" />}
+      extensions={<ExtensionsExample size="medium" />}
+      navigation={<NavigationExample size="medium" />}
+      toggle={<ToggleExample size="medium" />}
     />
   );
 
   return (
     <div style={{ height: '60px', position: 'relative', width: '100%' }}>
       <ResponsiveElement
-        defaultElement={defaultHeader}
+        defaultElement={tinyHeader}
         tiny={tinyHeader}
         small={smallHeader}
         medium={mediumHeader}
