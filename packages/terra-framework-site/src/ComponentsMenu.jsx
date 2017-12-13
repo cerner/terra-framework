@@ -1,5 +1,4 @@
 import React from 'react';
-// import AppDelegate from 'terra-app-delegate';
 import { Link, withRouter } from 'react-router-dom';
 
 const ComponentsMenu = () => (
