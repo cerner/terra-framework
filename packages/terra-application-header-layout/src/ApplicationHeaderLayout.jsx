@@ -2,17 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-import AppDelegate from 'terra-app-delegate';
 
 import styles from './ApplicationHeaderLayout.scss';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  /**
-   * The AppDelegate instance provided by the containing component. If present, its properties will propagate to the children components.
-   * */
-  app: AppDelegate.propType,
   /**
    * Extensions element to be placed before the end of the header.
    * */
@@ -36,7 +31,6 @@ const propTypes = {
 };
 
 const ApplicationHeaderLayout = ({
-  app,
   extensions,
   logo,
   navigation,

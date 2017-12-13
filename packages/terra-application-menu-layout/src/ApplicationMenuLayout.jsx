@@ -2,17 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-import AppDelegate from 'terra-app-delegate';
 
 import styles from './ApplicationMenuLayout.scss';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  /**
-   * The AppDelegate instance provided by the containing component. If present, its properties will propagate to the children components.
-   * */
-  app: AppDelegate.propType,
   /**
    * Content element to be placed within the fill area of the header.
    * */
@@ -32,7 +27,6 @@ const propTypes = {
 };
 
 const ApplicationMenuLayout = ({
-  app,
   content,
   extensions,
   footer,
