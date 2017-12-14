@@ -1,0 +1,10 @@
+{
+  "name": "Terra Framework",
+  "packages": [{
+    "name": "Layout",
+    "url": "0.0.0.0:0666/#/raw/components/layout"
+  }, {
+    "name": "Navigation Layout",
+    "url": "0.0.0.0:0666/raw/components/navigation-layout"
+  }]
+}
