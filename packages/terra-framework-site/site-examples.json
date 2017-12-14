@@ -2,9 +2,9 @@
   "name": "Terra Framework",
   "packages": [{
     "name": "Layout",
-    "url": "0.0.0.0:0666/#/raw/components/layout"
+    "url": "0.0.0.0:1666/#/raw/components/layout"
   }, {
     "name": "Navigation Layout",
-    "url": "0.0.0.0:0666/raw/components/navigation-layout"
+    "url": "0.0.0.0:1666/raw/components/navigation-layout"
   }]
 }

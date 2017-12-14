@@ -93,7 +93,7 @@ module.exports = {
   devtool: 'cheap-source-map',
   devServer: {
     host: '0.0.0.0',
-    port: '0666',
+    port: '1666',
     disableHostCheck: true,
     stats: {
       assets: true,
