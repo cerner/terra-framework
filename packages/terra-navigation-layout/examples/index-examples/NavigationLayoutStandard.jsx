@@ -1,8 +1,8 @@
 import React from 'react';
 import { MemoryRouter, withRouter } from 'react-router-dom';
-import NavigationLayout from 'terra-navigation-layout';
 import Markdown from 'terra-markdown';
 import ToggleButton from 'terra-toggle-button';
+import NavigationLayout from '../../lib/NavigationLayout';
 
 import ConfigReadMe from './NavigationLayoutStandardConfig.md';
 
