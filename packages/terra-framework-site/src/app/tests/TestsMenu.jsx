@@ -19,7 +19,7 @@ const TestsMenu = ({ routingStackDelegate, config }) => (
       if (testRoot) {
         return {
           id: testRoot,
-          path: testRoot,
+          path: `/site${testRoot}`,
           text: config[componentKey].name,
         };
       }

@@ -15,7 +15,7 @@ const ComponentTestsMenu = ({ routingStackDelegate, config }) => (
     routingStackDelegate={routingStackDelegate}
     links={config.tests.map(test => ({
       id: config.testRoot + test.path,
-      path: config.testRoot + test.path,
+      path: `/site${config.testRoot}${test.path}`,
       text: test.description,
     }))}
   />
