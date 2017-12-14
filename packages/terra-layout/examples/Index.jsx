@@ -2,6 +2,7 @@
 import React from 'react';
 import PropsTable from 'terra-props-table';
 import Markdown from 'terra-markdown';
+import IndexExample from '../../terra-framework-site/lib/IndexExampleTemplate';
 
 import ReadMe from '../docs/README.md';
 import { version } from '../package.json';
@@ -19,25 +20,36 @@ import LayoutLongTextSrc from '!raw-loader!./index-examples/LayoutLongText.jsx';
 import LayoutNoHeader from './index-examples/LayoutNoHeader';
 import LayoutNoHeaderSrc from '!raw-loader!./index-examples/LayoutNoHeader.jsx';
 
-const codeIndicator = '```';
-
 const NavigationExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
-    <h2>Layout - Standard</h2>
-    <LayoutStandard id="standard-example" />
-    <Markdown id="standard-code" src={`${codeIndicator}jsx\n${LayoutStandardSrc}${codeIndicator}`} />
-    <h2>Layout - No Menu</h2>
-    <LayoutMenuDisabled id="no-menu-example" />
-    <Markdown id="no-menu-code" src={`${codeIndicator}jsx\n${LayoutMenuDisabledSrc}${codeIndicator}`} />
-    <h2>Layout - No Header</h2>
-    <LayoutNoHeader id="no-header-example" />
-    <Markdown id="no-header-code" src={`${codeIndicator}jsx\n${LayoutNoHeaderSrc}${codeIndicator}`} />
-    <h2>Layout - Long Text</h2>
-    <LayoutLongText id="long-text-example" />
-    <Markdown id="long-text-code" src={`${codeIndicator}jsx\n${LayoutLongTextSrc}${codeIndicator}`} />
-    <PropsTable id="props-layout" src={LayoutSrc} />
+
+    <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
+    <IndexExample
+      title="Layout - Standard"
+      example={<LayoutStandard />}
+      exampleSrc={LayoutStandardSrc}
+    />
+    <IndexExample
+      title="Layout - No Menu"
+      example={<LayoutMenuDisabled />}
+      exampleSrc={LayoutMenuDisabledSrc}
+    />
+
+    <IndexExample
+      title="Layout - No Header"
+      example={<LayoutNoHeader />}
+      exampleSrc={LayoutNoHeaderSrc}
+    />
+
+    <IndexExample
+      title="Layout -  Long Text"
+      example={<LayoutLongText />}
+      exampleSrc={LayoutLongTextSrc}
+    />
+
+    <PropsTable id="props-table" src={LayoutSrc} />
   </div>
 );
 

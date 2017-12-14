@@ -38,9 +38,7 @@
     "terra-content-container": "^1.9.0",
     "terra-icon": "^1.10.0",
     "terra-overlay": "^1.9.0",
-    "terra-responsive-element": "^1.9.0",
-    "terra-toggle": "^1.13.0",
-    "terra-toggle-button": "^1.16.0"
+    "terra-responsive-element": "^1.9.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

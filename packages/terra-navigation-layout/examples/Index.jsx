@@ -1,25 +1,32 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions  */
 import React from 'react';
 import PropsTable from 'terra-props-table';
 import Markdown from 'terra-markdown';
+import IndexExample from '../../terra-framework-site/lib/IndexExampleTemplate';
+
 import ReadMe from '../docs/README.md';
 import { version } from '../package.json';
 
 // Component Source
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import NavigationLayoutSrc from '!raw-loader!../src/NavigationLayout.jsx';
-/* eslint-enable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 
 // Example Files
 import NavigationLayoutStandard from './index-examples/NavigationLayoutStandard';
+import NavigationLayoutStandardSrc from '!raw-loader!./index-examples/NavigationLayoutStandard.jsx';
 
 const NavigationLayoutExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
-    <PropsTable id="props-navigation" src={NavigationLayoutSrc} />
-    <h2 id="navigation-layout-standard">Example Navigation Layout</h2>
-    <NavigationLayoutStandard />
+
+    <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
+    <IndexExample
+      title="Example Navigation Layout"
+      example={<NavigationLayoutStandard />}
+      exampleSrc={NavigationLayoutStandardSrc}
+    />
+
+    <PropsTable id="props-table" src={NavigationLayoutSrc} />
   </div>
 );
 
