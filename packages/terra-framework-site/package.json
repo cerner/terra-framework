@@ -48,7 +48,8 @@
     "terra-props-table": "^1.10.1",
     "terra-slide-panel": "^1.11.1",
     "terra-theme-provider": "^1.6.1",
-    "terra-toggle-button": "^1.15.0"
+    "terra-toggle-button": "^1.15.0",
+    "xfc": "^1.2.1"
   },
   "peerDependencies": {
     "react": "^15.4.2",
