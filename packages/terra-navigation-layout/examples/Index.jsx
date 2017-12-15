@@ -2,7 +2,7 @@
 import React from 'react';
 import PropsTable from 'terra-props-table';
 import Markdown from 'terra-markdown';
-import IndexExample from '../../terra-framework-site/lib/IndexExampleTemplate';
+import IndexExample from './IndexExampleTemplate';
 
 import ReadMe from '../docs/README.md';
 import { version } from '../package.json';
@@ -16,7 +16,10 @@ import NavigationLayoutStandardSrc from '!raw-loader!./index-examples/Navigation
 
 const NavigationLayoutExamples = () => (
   <div>
-    <div id="version">Version: {version}</div>
+    <div id="version">
+      Version: {version}
+      <a style={{ float: 'right' }} href={'https://github.com/cerner/terra-framework/blob/master/packages/terra-layout/CHANGELOG.md'}>ChangeLog</a>
+    </div>
     <Markdown id="readme" src={ReadMe} />
 
     <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>

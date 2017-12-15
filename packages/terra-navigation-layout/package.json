@@ -46,6 +46,7 @@
     "terra-markdown": "^1.9.1",
     "terra-menu": "^1.2.0",
     "terra-responsive-element": "^1.11.1",
+    "terra-slide-panel": "^1.11.1",
     "terra-toggle-button": "^1.15.0"
   },
   "scripts": {
