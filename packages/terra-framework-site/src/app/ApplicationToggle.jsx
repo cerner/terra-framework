@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import IconMenu from 'terra-icon/lib/icon/IconMenu';
 import Button from 'terra-button';
 import classNames from 'classnames/bind';
-import styles from './ApplicationHeader.scss';
+import styles from './ApplicationToggle.scss';
 
 const cx = classNames.bind(styles);
 
