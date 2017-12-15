@@ -5,7 +5,7 @@ import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import Header from 'terra-application-header-layout';
 import classNames from 'classnames/bind';
 import NavTabs from './common/nav-tabs/NavTabs';
-import Utility from './common/header-templates/Utility';
+import HeaderUtility from './common/header-templates/Utility';
 import Logo from './common/header-templates/Logo';
 import Toggle from './ApplicationToggle';
 
@@ -32,21 +32,21 @@ class ApplicationHeader extends React.Component {
     const isCompactHeader = (this.props.layoutConfig.size === 'tiny' || this.props.layoutConfig.size === 'small');
 
     const bidiContent = (
-      <Utility.ItemGroup key="site-bidi" isSelectable dir="ltr" size="medium" onChange={this.props.onDirChange}>
-        <Utility.Item id="ltr" text="ltr" key="ltr" isSelected={this.props.dir === 'ltr'} />
-        <Utility.Item id="rtl" text="rtl" key="rtl" isSelected={this.props.dir === 'rtl'} />
-      </Utility.ItemGroup>
+      <HeaderUtility.ItemGroup key="site-bidi" isSelectable dir="ltr" size="medium" onChange={this.props.onDirChange}>
+        <HeaderUtility.Item id="ltr" text="ltr" key="ltr" isSelected={this.props.dir === 'ltr'} />
+        <HeaderUtility.Item id="rtl" text="rtl" key="rtl" isSelected={this.props.dir === 'rtl'} />
+      </HeaderUtility.ItemGroup>
     );
 
     const locales = ['en', 'en-GB', 'en-US', 'de', 'es', 'fr', 'pt', 'fi-FI'];
     const localeContent = (
-      <Utility.Item
+      <HeaderUtility.Item
         text={`Locale: ${this.props.locale}`}
         key="locale"
         subMenuItems={[
-          <Utility.ItemGroup isSelectable key="local-options" onChange={this.props.onLocaleChange} >
-            {locales.map(locale => <Utility.Item id={locale} text={locale} key={locale} isSelected={this.props.locale === locale} />)}
-          </Utility.ItemGroup>,
+          <HeaderUtility.ItemGroup isSelectable key="local-options" onChange={this.props.onLocaleChange} >
+            {locales.map(locale => <HeaderUtility.Item id={locale} text={locale} key={locale} isSelected={this.props.locale === locale} />)}
+          </HeaderUtility.ItemGroup>,
         ]}
       />
     );
@@ -59,15 +59,15 @@ class ApplicationHeader extends React.Component {
 
     if (supportsCSSVars()) {
       themeSwitcher = (
-        <Utility.Item
+        <HeaderUtility.Item
           text={`Theme: ${this.props.theme}`}
           key="theme"
           subMenuItems={[
-            <Utility.ItemGroup isSelectable key="theme-options" onChange={this.props.onThemeChange} >
-              <Utility.Item id="Default Theme" text="Default Theme" key="default" isSelected={this.props.theme === 'Default Theme'} />
-              <Utility.Item id="Consumer Theme" text="Consumer Theme" key="consumer" isSelected={this.props.theme === 'Consumer Theme'} />
-              <Utility.Item id="Mock Theme" text="Mock Theme" key="mock" isSelected={this.props.theme === 'Mock Theme'} />
-            </Utility.ItemGroup>,
+            <HeaderUtility.ItemGroup isSelectable key="theme-options" onChange={this.props.onThemeChange} >
+              <HeaderUtility.Item id="Default Theme" text="Default Theme" key="default" isSelected={this.props.theme === 'Default Theme'} />
+              <HeaderUtility.Item id="Consumer Theme" text="Consumer Theme" key="consumer" isSelected={this.props.theme === 'Consumer Theme'} />
+              <HeaderUtility.Item id="Mock Theme" text="Mock Theme" key="mock" isSelected={this.props.theme === 'Mock Theme'} />
+            </HeaderUtility.ItemGroup>,
           ]}
         />
       );
@@ -76,10 +76,10 @@ class ApplicationHeader extends React.Component {
     }
 
     const utility = (
-      <Utility
+      <HeaderUtility
         accessory={<IconSettings />}
         title={'Config'}
-        menuItems={[themeSwitcher, localeContent, <Utility.Divider key="DIVIDER-1" />, bidiContent]}
+        menuItems={[themeSwitcher, localeContent, <HeaderUtility.Divider key="DIVIDER-1" />, bidiContent]}
         size={this.props.layoutConfig.size}
       />
     );
