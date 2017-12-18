@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router } from 'react-router-dom';
+import { Provider } from 'xfc';
+
 import App from './app/App';
 import { routes, navigation } from './appConfig';
-import { Provider } from 'xfc';
 
 Provider.init({
   acls: ['*'],

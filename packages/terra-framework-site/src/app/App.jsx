@@ -13,6 +13,9 @@ import './App.scss';
 const propTypes = {
   routeConfig: PropTypes.object,
   navigation: PropTypes.object,
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+  }),
 };
 
 const locale = document.getElementsByTagName('html')[0].getAttribute('lang');
