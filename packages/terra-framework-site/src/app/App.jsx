@@ -1,7 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { HashRouter as Router } from 'react-router-dom';
+import { withRouter, matchPath } from 'react-router-dom';
+
 import Base from 'terra-base';
 import ThemeProvider from 'terra-theme-provider';
 import NavigationLayout from 'terra-navigation-layout';
@@ -12,6 +13,9 @@ import './App.scss';
 const propTypes = {
   routeConfig: PropTypes.object,
   navigation: PropTypes.object,
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+  }),
 };
 
 const locale = document.getElementsByTagName('html')[0].getAttribute('lang');
@@ -48,35 +52,36 @@ class App extends React.Component {
   }
 
   render() {
-    const applicationHeader = (
-      <ApplicationHeader
-        locale={this.state.locale}
-        onLocaleChange={this.handleLocaleChange}
-        dir={this.state.dir}
-        onDirChange={this.handleBidiChange}
-        theme={this.state.theme}
-        onThemeChange={this.handleThemeChange}
-        navigation={this.props.navigation}
-      />
-    );
+    let applicationHeader;
+    if (matchPath(this.props.location.pathname, '/site')) {
+      applicationHeader = (
+        <ApplicationHeader
+          locale={this.state.locale}
+          onLocaleChange={this.handleLocaleChange}
+          dir={this.state.dir}
+          onDirChange={this.handleBidiChange}
+          theme={this.state.theme}
+          onThemeChange={this.handleThemeChange}
+          navigation={this.props.navigation}
+        />
+      );
+    }
 
     return (
-      <Router>
-        <ThemeProvider id="framework-site" themeName={themes[this.state.theme]} isGlobalTheme>
-          <Base className="base" locale={this.state.locale}>
-            <NavigationLayout
-              header={applicationHeader}
-              menuText="Menu"
-              indexPath={this.props.navigation.index}
-              config={this.props.routeConfig}
-            />
-          </Base>
-        </ThemeProvider>
-      </Router>
+      <ThemeProvider id="framework-site" themeName={themes[this.state.theme]} isGlobalTheme>
+        <Base className="base" locale={this.state.locale}>
+          <NavigationLayout
+            header={applicationHeader}
+            menuText="Menu"
+            indexPath={this.props.navigation.index}
+            config={this.props.routeConfig}
+          />
+        </Base>
+      </ThemeProvider>
     );
   }
 }
 
 App.propTypes = propTypes;
 
-export default App;
+export default withRouter(App);

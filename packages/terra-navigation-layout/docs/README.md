@@ -97,34 +97,3 @@ Components within the `menu` region get a few extra features, however. To help e
 It is important to note that `showParent`/`showRoot` change the location used by the menu components, but they do not change the location of the overall page. For example, if the page location is `/pages/99/summary`, and the menu component calls `showParent`, the menu component for `/pages/99` will be rendered, but the content component for `/pages/99/summary` will still be rendered, and the browser URL will still be `[base-url]/pages/99/summary`.
 
 After calling these navigation functions, the `location` provided in the `routingStackDelegate` match the parent path specified. If the true page location is still necessary, the `withRouter` HOC provided by `react-router` can be utilized as needed. And if this functionality is not desired at all for a given application, these props can be safely ignored.
-
-## Getting Started
-
-- Install with [npmjs](https://www.npmjs.com):
-  - `npm install terra-navigation-layout`
-  - `yarn add terra-navigation-layout`
-
-## Usage
-
-```jsx
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import NavigationLayout from 'terra-navigation-layout';
-
-const config = {
-  // Configuration should feature routing definitions for header, menu, and
-  // content regions.
-};
-
-const ExampleApp = () => (
-  <BrowserRouter>
-    <Base>
-      <NavigationLayout
-        menuText="Menu"
-        indexRoute="/"
-        config={config}
-      />
-    </Base>
-  </BrowserRouter>
-);
-```

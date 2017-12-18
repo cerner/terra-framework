@@ -18,7 +18,7 @@ const ComponentsMenu = ({ routingStackDelegate, config }) => (
       if (example) {
         return {
           id: example.path,
-          path: example.path,
+          path: `/site${example.path}`,
           text: example.description,
         };
       }

@@ -153,5 +153,9 @@
     "--terra-popup-overlay-background-color": "#fff",
     "--terra-popup-overlay-opacity": "0.01",
     "--terra-popup-overlay-z-index": "7000"
+  },
+  "SlidePanel": {
+    "--terra-slide-panel-panel-width-small": "320px",
+    "--terra-slide-panel-panel-width-large": "60%"
   }
 }

@@ -21,14 +21,14 @@ const injectConfig = config => (
 
 const buildConfigForComponent = (config, ComponentClass) => {
   const generatedConfig = {};
-  Object.keys(componentConfig).map((componentKey) => {
-    const testRoot = componentConfig[componentKey].testRoot;
+  Object.keys(config).map((componentKey) => {
+    const testRoot = config[componentKey].testRoot;
     if (testRoot) {
       return {
-        path: testRoot,
+        path: `/site${testRoot}`,
         component: {
           default: {
-            componentClass: injectConfig(componentConfig[componentKey])(ComponentClass),
+            componentClass: injectConfig(config[componentKey])(ComponentClass),
           },
         },
       };
@@ -43,40 +43,71 @@ const buildConfigForComponent = (config, ComponentClass) => {
   return generatedConfig;
 };
 
+const buildRawConfigForComponent = (config) => {
+  const generatedConfig = {};
+  Object.keys(config).map((componentKey) => {
+    const example = config[componentKey].example;
+    if (example) {
+      return {
+        path: `/raw${example.path}`,
+        component: {
+          default: {
+            componentClass: () => {
+              const ComponentClass = example.component;
+              return (
+                <div style={{ height: '100%', position: 'relative', padding: '15px', overflow: 'auto' }}>
+                  <ComponentClass />
+                </div>
+              );
+            },
+          },
+        },
+      };
+    }
+    return undefined;
+  })
+  .filter(example => !!example)
+  .forEach((example) => {
+    generatedConfig[example.path] = example;
+  });
+
+  return generatedConfig;
+};
+
 const navigation = {
-  index: '/home',
+  index: '/site/home',
   links: [{
-    path: '/home',
+    path: '/site/home',
     text: 'Home',
   }, {
-    path: '/components',
+    path: '/site/components',
     text: 'Components',
   }, {
-    path: '/tests',
+    path: '/site/tests',
     text: 'Tests',
   }],
 };
 
 const routes = Object.freeze({
   content: {
-    '/home': {
-      path: '/home',
+    '/site/home': {
+      path: '/site/home',
       component: {
         default: {
           componentClass: Home,
         },
       },
     },
-    '/components': {
-      path: '/components',
+    '/site/components': {
+      path: '/site/components',
       component: {
         default: {
           componentClass: injectConfig(componentConfig)(Components),
         },
       },
     },
-    '/tests': {
-      path: '/tests',
+    '/site/tests': {
+      path: '/site/tests',
       component: {
         default: {
           componentClass: Tests,
@@ -84,10 +115,11 @@ const routes = Object.freeze({
       },
     },
     ...buildConfigForComponent(componentConfig, ComponentTests),
+    ...buildRawConfigForComponent(componentConfig),
   },
   menu: {
-    '/': {
-      path: '/',
+    '/site': {
+      path: '/site',
       component: {
         tiny: {
           componentClass: ApplicationMenu,
@@ -103,16 +135,16 @@ const routes = Object.freeze({
         },
       },
     },
-    '/components': {
-      path: '/components',
+    '/site/components': {
+      path: '/site/components',
       component: {
         default: {
           componentClass: injectConfig(componentConfig)(ComponentsMenu),
         },
       },
     },
-    '/tests': {
-      path: '/tests',
+    '/site/tests': {
+      path: '/site/tests',
       component: {
         default: {
           componentClass: injectConfig(componentConfig)(TestsMenu),

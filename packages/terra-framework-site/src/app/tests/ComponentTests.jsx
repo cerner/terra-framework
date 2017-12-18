@@ -13,10 +13,10 @@ const ComponentTests = ({ config }) => (
   <div id="test-root" style={{ height: '100%', position: 'relative', padding: '15px' }}>
     <Switch>
       {config.tests.map(test => (
-        <Route key={test.path} path={config.testRoot + test.path} component={test.component} />
+        <Route key={test.path} path={`/site${config.testRoot}${test.path}`} component={test.component} />
         ))}
       <Route
-        path={config.testRoot} render={() => (
+        path={`/site${config.testRoot}`} render={() => (
           <Placeholder text={`${config.name} Tests`} />
         )}
       />

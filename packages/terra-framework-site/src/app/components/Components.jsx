@@ -15,7 +15,7 @@ const generateRoutes = config => (
     const example = config[componentKey].example;
     if (example) {
       return (
-        <Route key={example.path} path={example.path} component={example.component} />
+        <Route key={example.path} path={`/site${example.path}`} component={example.component} />
       );
     }
     return undefined;
@@ -25,7 +25,7 @@ const generateRoutes = config => (
 const generateRedirect = (config) => {
   const firstExample = Object.keys(config).map(componentKey => (config[componentKey].example)).filter(example => !!example)[0];
   if (firstExample) {
-    return <Redirect to={firstExample.path} />;
+    return <Redirect to={`/site${firstExample.path}`} />;
   }
   return null;
 };

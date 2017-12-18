@@ -1,0 +1,12 @@
+{
+  "terra-framework": {
+    "name": "Terra Framework",
+    "packages": [{
+      "name": "Layout",
+      "url": "http://engineering.cerner.com/terra-framework/#/raw/components/layout"
+    }, {
+      "name": "Navigation Layout",
+      "url": "http://engineering.cerner.com/terra-framework/#/raw/components/navigation-layout"
+    }]
+  }
+}

@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
-import LayoutDefault from 'terra-layout/tests/nightwatch/LayoutDefault';
-import LayoutNoMenu from 'terra-layout/tests/nightwatch/LayoutNoMenu';
-import LayoutLongText from 'terra-layout/tests/nightwatch/LayoutLongText';
-import LayoutNoHeader from 'terra-layout/tests/nightwatch/LayoutNoHeader';
-import NavigationLayoutBasic from 'terra-navigation-layout/tests/nightwatch/NavigationLayoutBasic';
-import NavigationLayoutComplex from 'terra-navigation-layout/tests/nightwatch/NavigationLayoutComplex';
+import LayoutDefault from 'terra-layout/examples/test-examples/LayoutDefault';
+import LayoutNoMenu from 'terra-layout/examples/test-examples/LayoutNoMenu';
+import LayoutLongText from 'terra-layout/examples/test-examples/LayoutLongText';
+import LayoutNoHeader from 'terra-layout/examples/test-examples/LayoutNoHeader';
+import NavigationLayoutBasic from 'terra-navigation-layout/examples/test-examples/NavigationLayoutBasic';
+import NavigationLayoutComplex from 'terra-navigation-layout/examples/test-examples/NavigationLayoutComplex';
 
-import LayoutExample from './examples/layout/Index';
-import NavigationLayoutExample from './examples/navigation-layout/Index';
+import LayoutExample from 'terra-layout/examples/Index';
+import NavigationLayoutExample from 'terra-navigation-layout/examples/Index';
 
 const itemConfigPropType = PropTypes.shape({
   path: PropTypes.string,
