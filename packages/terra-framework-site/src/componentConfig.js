@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import LayoutDefault from 'terra-layout/examples/test-examples/LayoutDefault';
 import LayoutNoMenu from 'terra-layout/examples/test-examples/LayoutNoMenu';
 import LayoutLongText from 'terra-layout/examples/test-examples/LayoutLongText';
@@ -8,19 +7,6 @@ import NavigationLayoutComplex from 'terra-navigation-layout/examples/test-examp
 
 import LayoutExample from 'terra-layout/examples/Index';
 import NavigationLayoutExample from 'terra-navigation-layout/examples/Index';
-
-const itemConfigPropType = PropTypes.shape({
-  path: PropTypes.string,
-  component: PropTypes.func,
-  description: PropTypes.string,
-});
-
-const siteConfigPropType = PropTypes.objectOf(PropTypes.shape({
-  name: PropTypes.string,
-  example: itemConfigPropType,
-  testRoot: PropTypes.string,
-  tests: PropTypes.arrayOf(itemConfigPropType),
-}));
 
 const componentConfig = {
   layout: {
@@ -70,4 +56,3 @@ const componentConfig = {
 };
 
 export default componentConfig;
-export { siteConfigPropType, itemConfigPropType };

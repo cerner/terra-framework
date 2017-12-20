@@ -6,13 +6,14 @@ import RoutingStackDelegate from 'terra-navigation-layout/lib/RoutingStackDelega
 import MenuList from './common/menu/MenuList';
 
 const propTypes = {
+  menuHeader: PropTypes.string,
   navigation: PropTypes.object,
   routingStackDelegate: RoutingStackDelegate.propType,
 };
 
-const ApplicationMenu = ({ navigation, routingStackDelegate }) => (
+const ApplicationMenu = ({ menuHeader, navigation, routingStackDelegate }) => (
   <MenuList
-    headerText="Terra Framework"
+    headerText={menuHeader}
     routingStackDelegate={routingStackDelegate}
     links={navigation.links.map(item => ({
       id: item.path,

@@ -23,16 +23,16 @@ const MenuList = ({ routingStackDelegate, links, headerText }) => (
       header={<MenuToolbar text={headerText} routingStackDelegate={routingStackDelegate} />}
       fill
     >
-      <div className="cm-container">
-        <div className="cm-backRegion">
+      <div className="menu-container">
+        <div className="menu-back-region">
           {}
         </div>
-        <div className="cm-contentRegion">
+        <div className="menu-content-region">
           <div>
             {links.map(link => (
               <NavLink
                 key={link.id}
-                className="cm-link"
+                className="menu-link"
                 location={routingStackDelegate.location}
                 to={link.path}
                 activeStyle={{

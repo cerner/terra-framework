@@ -3,7 +3,9 @@ body {
   overflow: hidden;
 }
 
-#root, #framework-site {
+// stylelint-disable-next-line selector-max-id
+#root,
+#site {
   height: 100%;
   overflow: auto;
   position: relative;

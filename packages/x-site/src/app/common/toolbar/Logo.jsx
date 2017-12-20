@@ -49,7 +49,12 @@ const Logo = ({
   return (
     <div {...customProps} className={logoClassNames}>
       {!!accessory && <div className={cx('accessory')}>{accessory}</div>}
-      {!!title && size !== 'tiny' && <div className={cx('title')}><strong>{title}</strong>{subtitle}</div>}
+      {(!!title || !!subtitle) && size !== 'tiny' &&
+        <div className={cx('title')}>
+          <strong>{title}</strong>
+          <span className={cx('subtitle')}>{subtitle}</span>
+        </div>
+      }
     </div>
   );
 };

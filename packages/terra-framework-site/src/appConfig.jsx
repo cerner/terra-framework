@@ -1,15 +1,16 @@
 import React from 'react';
-import Home from './app/home/Home';
-import ApplicationMenu from './app/ApplicationMenu';
-import Tests from './app/tests/Tests';
-import TestsMenu from './app/tests/TestsMenu';
 
+import ApplicationMenu from 'x-site/lib/app/ApplicationMenu';
+import Tests from 'x-site/lib/app/tests/Tests';
+import TestsMenu from 'x-site/lib/app/tests/TestsMenu';
+
+import Components from 'x-site/lib/app/components/Components';
+import ComponentsMenu from 'x-site/lib/app/components/ComponentsMenu';
+import ComponentTests from 'x-site/lib/app/tests/ComponentTests';
+import ComponentTestsMenu from 'x-site/lib/app/tests/ComponentTestsMenu';
+
+import Home from './Home';
 import componentConfig from './componentConfig';
-
-import Components from './app/components/Components';
-import ComponentsMenu from './app/components/ComponentsMenu';
-import ComponentTests from './app/tests/ComponentTests';
-import ComponentTestsMenu from './app/tests/ComponentTestsMenu';
 
 const injectConfig = config => (
   ComponentClass => (

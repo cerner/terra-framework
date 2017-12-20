@@ -19,7 +19,7 @@ const propTypes = {
 
 const MenuToolbar = ({ routingStackDelegate, text, ...customProps }) => {
   const toolbarClassNames = classNames([
-    'terraClinical-MenuToolbar',
+    'menu-toolbar',
     { 'is-terminal': !routingStackDelegate.showParent },
     customProps.className,
   ]);
@@ -35,21 +35,21 @@ const MenuToolbar = ({ routingStackDelegate, text, ...customProps }) => {
   }
 
   const toolbarStart = (
-    <div className="terraClinical-MenuToolbar-start">
+    <div className="menu-toolbar-start">
       {backButton}
       {rootButton}
     </div>
   );
 
   const toolbarEnd = (
-    <div className="terraClinical-MenuToolbar-end" />
+    <div className="menu-toolbar-end" />
   );
 
   return (
-    <div {...customProps} className="terraClinical-FlexWrapper">
+    <div {...customProps} className="menu-toolbar-flex-wrapper">
       <div className={toolbarClassNames}>
         {toolbarStart}
-        <div className="terraClinical-MenuToolbar-body">
+        <div className="menu-toolbar-body">
           <h3 style={{ margin: '0' }}>{text}</h3>
         </div>
         {toolbarEnd}

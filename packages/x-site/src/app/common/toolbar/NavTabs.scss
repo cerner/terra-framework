@@ -28,8 +28,8 @@
     font-size: 0.9286rem;
     height: 100%;
     line-height: 2.7;
-    min-width: 5.714rem;
     max-width: 17.143rem;
+    min-width: 5.714rem;
     padding: 0 1.5rem;
     position: relative;
     text-align: center;
@@ -46,7 +46,7 @@
     &[aria-current='true'] {
       background-color: #fff;
       border-left: none;
-      bottom:-0.07143rem;
+      bottom: -0.07143rem;
       color: #1c1f21;
       font-weight: 600;
     }

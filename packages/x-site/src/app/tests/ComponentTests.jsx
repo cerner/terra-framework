@@ -3,7 +3,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Placeholder from '../common/Placeholder';
-import { itemConfigPropType } from '../../componentConfig';
+import { itemConfigPropType } from '../configPropTypes';
 
 const propTypes = {
   config: itemConfigPropType,

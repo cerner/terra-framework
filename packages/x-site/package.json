@@ -1,32 +1,36 @@
 {
-  "name": "terra-framework-site",
-  "version": "1.0.1",
-  "description": "Documentation Site for Functional Verification",
+  "name": "x-site",
+  "version": "0.0.0",
+  "description": "Dynamic Site Building for deploying single-page sites.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cerner/terra-framework.git"
+    "url": "git+https://github.com/cerner/terra-x.git"
   },
   "author": "Cerner Corporation",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/cerner/terra-framework/issues"
+    "url": "https://github.com/cerner/terra-x/issues"
   },
-  "homepage": "https://github.com/cerner/terra-framework#readme",
+  "homepage": "https://github.com/cerner/terra-x#readme",
   "scripts": {
-    "start": "webpack-dev-server --progress",
     "compile": "npm run compile:clean && npm run compile:build",
     "compile:clean": "rimraf lib",
     "compile:build": "babel src --out-dir lib --copy-files",
-    "compile:heroku": "webpack --config webpack.prod.config --progress",
-    "compile:prod": "webpack --config webpack.prod.config -p",
     "deploy": "npm run compile:prod && gh-pages -d build",
     "lint": "npm run lint:js",
-    "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore"
+    "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
+    "test": "npm run test:jest",
+    "test:jest": "jest node tests/jest/* --config ../../jestconfig.json"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "postcss": "^6.0.9",
     "prop-types": "^15.5.8",
+
+    "glob": "^7.1.1",
+    "lodash.kebabcase": "^4.1.1",
+    "lodash.startcase": "^4.4.0",
+    "terra-navigation-layout": "^1.0.0",
     "react-intl": "^2.3.0",
     "react-router-dom": "^4.0.0",
     "terra-app-delegate": "^1.7.1",
@@ -38,16 +42,13 @@
     "terra-i18n-plugin": "^1.7.0",
     "terra-icon": "^1.12.1",
     "terra-image": "1.11.1",
-    "terra-layout": "^1.0.1",
     "terra-list": "^1.12.1",
     "terra-markdown": "^1.9.1",
     "terra-menu": "^1.6.0",
-    "terra-navigation-layout": "^1.0.0",
     "terra-props-table": "^1.10.1",
     "terra-slide-panel": "^1.11.1",
     "terra-theme-provider": "^1.6.1",
     "terra-toggle-button": "^1.15.0",
-    "x-site": "^x.0",
     "xfc": "^1.2.1"
   },
   "peerDependencies": {

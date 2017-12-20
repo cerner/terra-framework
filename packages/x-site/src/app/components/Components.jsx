@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
-import { siteConfigPropType } from '../../componentConfig';
+import { siteConfigPropType } from '../configPropTypes';
 
 const propTypes = {
   config: siteConfigPropType,
