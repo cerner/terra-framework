@@ -1,0 +1,415 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApplicationHeaderLayout should render with provided extensions 1`] = `
+<div
+  className="header fill"
+>
+  <div
+    className="fill header-body"
+  >
+    <div
+      className="fill header-inner"
+    >
+      <div
+        className="fit end extensions"
+      >
+        <div
+          id="test-extensions"
+        >
+          Extensions
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ApplicationHeaderLayout should render with provided extensions and navigation 1`] = `
+<div
+  className="header fill"
+>
+  <div
+    className="fill header-body"
+  >
+    <div
+      className="fill header-inner"
+    >
+      <div
+        className="fill"
+      >
+        <div
+          id="test-navigation"
+        >
+          Navigation
+        </div>
+      </div>
+      <div
+        className="fit end extensions"
+      >
+        <div
+          id="test-extensions"
+        >
+          Extensions
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ApplicationHeaderLayout should render with provided extensions, navigation, and logo 1`] = `
+<div
+  className="header fill"
+>
+  <div
+    className="fill header-body"
+  >
+    <div
+      className="fit start logo"
+    >
+      <div
+        id="test-logo"
+      >
+        Logo
+      </div>
+    </div>
+    <div
+      className="fill header-inner"
+    >
+      <div
+        className="fill"
+      >
+        <div
+          id="test-navigation"
+        >
+          Navigation
+        </div>
+      </div>
+      <div
+        className="fit end extensions"
+      >
+        <div
+          id="test-extensions"
+        >
+          Extensions
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ApplicationHeaderLayout should render with provided extensions, navigation, logo, and toggle 1`] = `
+<div
+  className="header fill"
+>
+  <div
+    className="fit"
+  >
+    <div
+      id="test-toggle"
+    >
+      Toggle
+    </div>
+  </div>
+  <div
+    className="fill header-body"
+  >
+    <div
+      className="fit start logo"
+    >
+      <div
+        id="test-logo"
+      >
+        Logo
+      </div>
+    </div>
+    <div
+      className="fill header-inner"
+    >
+      <div
+        className="fill"
+      >
+        <div
+          id="test-navigation"
+        >
+          Navigation
+        </div>
+      </div>
+      <div
+        className="fit end extensions"
+      >
+        <div
+          id="test-extensions"
+        >
+          Extensions
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ApplicationHeaderLayout should render with provided extensions, navigation, logo, toggle, and utilities 1`] = `
+<div
+  className="header fill"
+>
+  <div
+    className="fit"
+  >
+    <div
+      id="test-toggle"
+    >
+      Toggle
+    </div>
+  </div>
+  <div
+    className="fill header-body"
+  >
+    <div
+      className="fit start logo"
+    >
+      <div
+        id="test-logo"
+      >
+        Logo
+      </div>
+    </div>
+    <div
+      className="fill header-inner"
+    >
+      <div
+        className="fill"
+      >
+        <div
+          id="test-navigation"
+        >
+          Navigation
+        </div>
+      </div>
+      <div
+        className="fit end extensions"
+      >
+        <div
+          id="test-extensions"
+        >
+          Extensions
+        </div>
+      </div>
+    </div>
+    <div
+      className="fit end utilities"
+    >
+      <div
+        id="test-utilities"
+      >
+        Utilities
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ApplicationHeaderLayout should render with provided logo 1`] = `
+<div
+  className="header fill"
+>
+  <div
+    className="fill header-body"
+  >
+    <div
+      className="fit start logo"
+    >
+      <div
+        id="test-logo"
+      >
+        Logo
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ApplicationHeaderLayout should render with provided logo, toggle, and utilities 1`] = `
+<div
+  className="header fill"
+>
+  <div
+    className="fit"
+  >
+    <div
+      id="test-toggle"
+    >
+      Toggle
+    </div>
+  </div>
+  <div
+    className="fill header-body"
+  >
+    <div
+      className="fit start logo"
+    >
+      <div
+        id="test-logo"
+      >
+        Logo
+      </div>
+    </div>
+    <div
+      className="fit end utilities"
+    >
+      <div
+        id="test-utilities"
+      >
+        Utilities
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ApplicationHeaderLayout should render with provided navigation 1`] = `
+<div
+  className="header fill"
+>
+  <div
+    className="fill header-body"
+  >
+    <div
+      className="fill header-inner"
+    >
+      <div
+        className="fill"
+      >
+        <div
+          id="test-navigation"
+        >
+          Navigation
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ApplicationHeaderLayout should render with provided navigation, logo, toggle, and utilities 1`] = `
+<div
+  className="header fill"
+>
+  <div
+    className="fit"
+  >
+    <div
+      id="test-toggle"
+    >
+      Toggle
+    </div>
+  </div>
+  <div
+    className="fill header-body"
+  >
+    <div
+      className="fit start logo"
+    >
+      <div
+        id="test-logo"
+      >
+        Logo
+      </div>
+    </div>
+    <div
+      className="fill header-inner"
+    >
+      <div
+        className="fill"
+      >
+        <div
+          id="test-navigation"
+        >
+          Navigation
+        </div>
+      </div>
+    </div>
+    <div
+      className="fit end utilities"
+    >
+      <div
+        id="test-utilities"
+      >
+        Utilities
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ApplicationHeaderLayout should render with provided toggle 1`] = `
+<div
+  className="header fill"
+>
+  <div
+    className="fit"
+  >
+    <div
+      id="test-toggle"
+    >
+      Toggle
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ApplicationHeaderLayout should render with provided toggle and utilities 1`] = `
+<div
+  className="header fill"
+>
+  <div
+    className="fit"
+  >
+    <div
+      id="test-toggle"
+    >
+      Toggle
+    </div>
+  </div>
+  <div
+    className="fill header-body"
+  >
+    <div
+      className="fit end utilities"
+    >
+      <div
+        id="test-utilities"
+      >
+        Utilities
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ApplicationHeaderLayout should render with provided utilities 1`] = `
+<div
+  className="header fill"
+>
+  <div
+    className="fill header-body"
+  >
+    <div
+      className="fit end utilities"
+    >
+      <div
+        id="test-utilities"
+      >
+        Utilities
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ApplicationHeaderLayout should render without optional props 1`] = `
+<div
+  className="header fill"
+/>
+`;

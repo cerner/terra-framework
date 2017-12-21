@@ -5,8 +5,12 @@ import LayoutLongText from 'terra-layout/tests/nightwatch/LayoutLongText';
 import LayoutNoHeader from 'terra-layout/tests/nightwatch/LayoutNoHeader';
 import NavigationLayoutBasic from 'terra-navigation-layout/tests/nightwatch/NavigationLayoutBasic';
 import NavigationLayoutComplex from 'terra-navigation-layout/tests/nightwatch/NavigationLayoutComplex';
+import ApplicationHeaderDefault from 'terra-application-header-layout/tests/nightwatch/ApplicationHeaderDefault';
+import ApplicationMenuDefault from 'terra-application-menu-layout/tests/nightwatch/ApplicationMenuDefault';
 
 import LayoutExample from './examples/layout/Index';
+import HeaderExample from './examples/application-header-layout/Index';
+import MenuExample from './examples/application-menu-layout/Index';
 import NavigationLayoutExample from './examples/navigation-layout/Index';
 
 const itemConfigPropType = PropTypes.shape({
@@ -65,6 +69,34 @@ const componentConfig = {
       path: '/complex',
       component: NavigationLayoutComplex,
       description: 'Complex',
+    }],
+  },
+  applicationHeader: {
+    name: 'Application Header Layout',
+    example: {
+      path: '/components/application-header-layout',
+      component: HeaderExample,
+      description: 'Application Header Layout',
+    },
+    testRoot: '/tests/application-header-layout',
+    tests: [{
+      path: '/default',
+      component: ApplicationHeaderDefault,
+      description: 'Default',
+    }],
+  },
+  applicationMenu: {
+    name: 'Application Menu Layout',
+    example: {
+      path: '/components/application-menu-layout',
+      component: MenuExample,
+      description: 'Application Menu Layout',
+    },
+    testRoot: '/tests/application-menu-layout',
+    tests: [{
+      path: '/default',
+      component: ApplicationMenuDefault,
+      description: 'Default',
     }],
   },
 };

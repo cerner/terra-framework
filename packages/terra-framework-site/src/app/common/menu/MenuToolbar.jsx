@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 
 import IconLeft from 'terra-icon/lib/icon/IconLeft';
@@ -8,18 +8,20 @@ import IconHouse from 'terra-icon/lib/icon/IconHouse';
 import Button from 'terra-button';
 
 import RoutingStackDelegate from 'terra-navigation-layout/lib/RoutingStackDelegate';
+import styles from './MenuToolbar.scss';
 
-import './MenuToolbar.scss';
+const cx = classNames.bind(styles);
 
 const propTypes = {
+  app: PropTypes.object,
   routingStackDelegate: RoutingStackDelegate.propType,
   backButtonOverride: PropTypes.node,
   text: PropTypes.string,
 };
 
-const MenuToolbar = ({ routingStackDelegate, text, ...customProps }) => {
-  const toolbarClassNames = classNames([
-    'terraClinical-MenuToolbar',
+const MenuToolbar = ({ app, routingStackDelegate, text, ...customProps }) => {
+  const toolbarClassNames = cx([
+    'menu-toolbar',
     { 'is-terminal': !routingStackDelegate.showParent },
     customProps.className,
   ]);
@@ -35,21 +37,21 @@ const MenuToolbar = ({ routingStackDelegate, text, ...customProps }) => {
   }
 
   const toolbarStart = (
-    <div className="terraClinical-MenuToolbar-start">
+    <div className={cx(['terraClinical-MenuToolbar-start'])}>
       {backButton}
       {rootButton}
     </div>
   );
 
   const toolbarEnd = (
-    <div className="terraClinical-MenuToolbar-end" />
+    <div className={cx(['end'])} />
   );
 
   return (
-    <div {...customProps} className="terraClinical-FlexWrapper">
+    <div {...customProps} className={cx(['flex-wrapper'])}>
       <div className={toolbarClassNames}>
         {toolbarStart}
-        <div className="terraClinical-MenuToolbar-body">
+        <div className={cx(['body'])}>
           <h3 style={{ margin: '0' }}>{text}</h3>
         </div>
         {toolbarEnd}
