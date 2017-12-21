@@ -4,17 +4,16 @@ const fs = require('fs');
 const kebabCase = require('lodash.kebabcase');
 const startCase = require('lodash.startcase');
 
-const repositoryName = JSON.parse(fs.readFileSync(path.resolve(__dirname, '..', '..', 'package.json'))).name;
-const packagePath = path.join(__dirname, '..', '..', 'packages');
+const repositoryName = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), '..', '..', 'package.json'))).name;
+const packagePath = path.resolve(process.cwd(), '..', '..', 'packages');
+const searchPath = path.join(packagePath, '*', 'lib', 'examples', '*.example?(.jsx|.js)');
 
-glob(path.join(packagePath, '*', 'lib', 'examples', '*.example?(.jsx|.js)'), (er, files) => {
+glob(searchPath, (er, files) => {
   const parsedFiles = {};
   parsedFiles[repositoryName] = {
     name: startCase(repositoryName),
     packages: [],
   };
-
-  console.log(files);
 
   files.forEach((filePath) => {
     const parsedPath = path.parse(filePath);
@@ -32,42 +31,40 @@ glob(path.join(packagePath, '*', 'lib', 'examples', '*.example?(.jsx|.js)'), (er
   });
 
   // Write JSON file for terra-ui consumption
-  if (!fs.existsSync(path.join(__dirname, '..', '..', 'terra-ui-config'))) {
-    fs.mkdir(path.join(__dirname, '..', '..', 'terra-ui-config'), () => {
-      fs.writeFileSync(path.join(__dirname, '..', '..', 'terra-ui-config', 'configuration.json'), JSON.stringify(parsedFiles, null, '  '));
-    });
-  } else {
-    fs.writeFileSync(path.join(__dirname, '..', '..', 'terra-ui-config', 'configuration.json'), JSON.stringify(parsedFiles, null, '  '));
-  }
+  fs.writeFileSync(path.join(process.cwd(), 'terra-ui-config.json'), JSON.stringify(parsedFiles, null, '  '));
 
   console.log(parsedFiles);
 
   // Generate configuration file for site consumption
   fs.readFile(path.join(__dirname, 'index.template'), 'utf8', (err, data) => {
-    let newFileContent = data.replace('<imports>', parsedFiles[repositoryName].packages.map((package) => {
-      return `import ${package.name} from '${package.packageName}/lib/examples/${package.name}.example';`;
+    let newFileContent = data.replace('<imports>', parsedFiles[repositoryName].packages.map((pkg) => {
+      const importName = `${startCase(pkg.packageName)}${pkg.name}`.replace(/\s/g, '');
+
+      return `import ${importName} from '${pkg.packageName}/lib/examples/${pkg.name}.example';`;
     }).join('\n'));
 
-    let configString = `${parsedFiles[repositoryName].packages.map((package) => (
-      `'${package.packageName}': {
-        name: '${package.name}',
+    const configString = `${parsedFiles[repositoryName].packages.map((pkg) => {
+      const importName = `${startCase(pkg.packageName)}${pkg.name}`.replace(/\s/g, '');
+
+      return `'${pkg.packageName}': {
+        name: '${pkg.name}',
         example: {
-          path: '/examples/${kebabCase(package.name)}',
-          component: ${package.name},
-          description: '${package.name}',
+          path: '/examples/${kebabCase(pkg.name)}',
+          component: ${importName},
+          description: '${pkg.name}',
         },
-      },`
-    )).join(`\n`)}`;
+      },`;
+    }).join('\n')}`;
 
     console.log(configString);
 
     newFileContent = newFileContent.replace('<config>',
       `const config = {
         ${configString}
-      };`
+      };`,
     );
 
     // const newFile = data.concat('\n', `const output = ${JSON.stringify(parsedFiles, null, '  ')};`);
-    fs.writeFileSync(path.join(__dirname, '..', '..', 'generatedIndex.js'), newFileContent);
+    fs.writeFileSync(path.join(process.cwd(), 'generatedIndex.js'), newFileContent);
   });
 });

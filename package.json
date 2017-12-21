@@ -41,7 +41,7 @@
     "clean:all": "lerna clean && node scripts/clean-modules/index.js",
     "clean:install": "npm run clean:all && npm install",
     "clean:obsolete-snapshots": "npm test -- -u",
-    "compile": "lerna run compile",
+    "compile": "lerna run compile && cd packages/terra-framework-site && npm run generate-index",
     "compile:heroku": "cd packages/terra-framework-site && npm run compile:heroku",
     "danger": "danger",
     "deploy": "lerna run --scope terra-framework-site deploy",

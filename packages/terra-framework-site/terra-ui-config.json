@@ -1,0 +1,19 @@
+{
+  "terra-framework": {
+    "name": "Terra Framework",
+    "packages": [
+      {
+        "name": "Index",
+        "packageName": "terra-layout",
+        "path": "/Users/tb021781/terra/terra-framework/packages/terra-layout/lib/examples/Index.example.js",
+        "url": "http://engineering.cerner.com/terra-framework/raw/examples/terra-layout/index"
+      },
+      {
+        "name": "Index",
+        "packageName": "terra-navigation-layout",
+        "path": "/Users/tb021781/terra/terra-framework/packages/terra-navigation-layout/lib/examples/Index.example.js",
+        "url": "http://engineering.cerner.com/terra-framework/raw/examples/terra-navigation-layout/index"
+      }
+    ]
+  }
+}

@@ -26,7 +26,6 @@
     "classnames": "^2.2.5",
     "postcss": "^6.0.9",
     "prop-types": "^15.5.8",
-
     "glob": "^7.1.1",
     "lodash.kebabcase": "^4.1.1",
     "lodash.startcase": "^4.4.0",

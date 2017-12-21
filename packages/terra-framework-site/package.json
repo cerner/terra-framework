@@ -21,7 +21,8 @@
     "compile:prod": "webpack --config webpack.prod.config -p",
     "deploy": "npm run compile:prod && gh-pages -d build",
     "lint": "npm run lint:js",
-    "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore"
+    "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
+    "generate-index": "node node_modules/x-site/scripts/generate-site-index.js && ((eslint --fix ./generatedIndex.js) || true)"
   },
   "dependencies": {
     "classnames": "^2.2.5",
