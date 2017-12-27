@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-import ContentContainer from 'terra-content-container';
+import ApplicationMenuLayout from 'terra-application-menu-layout';
 import RoutingStackDelegate from 'terra-navigation-layout/lib/RoutingStackDelegate';
 import MenuToolbar from './MenuToolbar';
+import MenuLinkWrapper from './MenuLinkWrapper';
 
 import './MenuList.scss';
 
@@ -18,35 +19,26 @@ const propTypes = {
 };
 
 const MenuList = ({ routingStackDelegate, links, headerText }) => (
-  <div style={{ height: '100%', width: '100%', position: 'absolute' }}>
-    <ContentContainer
-      header={<MenuToolbar text={headerText} routingStackDelegate={routingStackDelegate} />}
-      fill
-    >
-      <div className="menu-container">
-        <div className="menu-back-region">
-          {}
-        </div>
-        <div className="menu-content-region">
-          <div>
-            {links.map(link => (
-              <NavLink
-                key={link.id}
-                className="menu-link"
-                location={routingStackDelegate.location}
-                to={link.path}
-                activeStyle={{
-                  fontWeight: 'bold',
-                }}
-              >
-                {link.text}
-              </NavLink>
-            ))}
-          </div>
-        </div>
-      </div>
-    </ContentContainer>
-  </div>
+  <ApplicationMenuLayout
+    header={<MenuToolbar text={headerText} routingStackDelegate={routingStackDelegate} />}
+    content={
+      <MenuLinkWrapper>
+        {links.map(link => (
+          <NavLink
+            key={link.id}
+            className="menu-link"
+            location={routingStackDelegate.location}
+            to={link.path}
+            activeStyle={{
+              fontWeight: 'bold',
+            }}
+          >
+            {link.text}
+          </NavLink>
+        ))}
+      </MenuLinkWrapper>
+    }
+  />
 );
 
 MenuList.propTypes = propTypes;

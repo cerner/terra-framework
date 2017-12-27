@@ -1,58 +1,59 @@
-@import '~terra-mixins';
+/* stylelint-disable selector-class-pattern */
+:local {
+  // Wrapper to fix IE10/11 min-height flexbox layouts
+  .menu-toolbar-flex-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
 
-// Wrapper to fix IE10/11 min-height flexbox layouts
-.menu-toolbar-flex-wrapper {
-  display: flex;
-  flex-direction: column;
-}
+  .menu-toolbar {
+    align-items: center;
+    background: #fff;
+    border-bottom: 0.071rem solid #edeeee;
+    border-top: 0.071rem solid #bcbfc0;
+    box-shadow: inset 0 -0.286rem 0.5rem 0 rgba(0, 0, 0, 0.06);
+    color: #1c1f21;
 
-.menu-toolbar {
-  align-items: center;
-  background: #fff;
-  border-bottom: 0.071rem solid #edeeee;
-  border-top: 0.071rem solid #bcbfc0;
-  box-shadow: inset 0 -0.286rem 0.5rem 0 rgba(0, 0, 0, 0.06);
-  color: #1c1f21;
+    display: flex;
+    font-size: 1rem;
+    justify-content: space-between;
+    max-height: 100%;
+    min-height: 3.429rem;
+    position: relative;
+    width: 100%;
+  }
 
-  display: flex;
-  font-size: 1rem;
-  justify-content: space-between;
-  max-height: 100%;
-  min-height: 3.429rem;
-  position: relative;
-  width: 100%;
-}
+  .menu-toolbar.is-terminal {
+    background: #f4f4f4;
+    border-bottom: 0.071rem solid #edeeee;
+    color: #9b9fa1;
+  }
 
-.menu-toolbar.is-terminal {
-  background: #f4f4f4;
-  border-bottom: 0.071rem solid #edeeee;
-  color: #9b9fa1;
-}
+  .menu-toolbar-start {
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: flex-start;
+    max-height: 100%;
+    min-width: 0;
+    position: relative;
+  }
 
-.menu-toolbar-start {
-  display: flex;
-  flex: 0 0 auto;
-  justify-content: flex-start;
-  max-height: 100%;
-  min-width: 0;
-  position: relative;
-}
+  .menu-toolbar-end {
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: flex-end;
+    max-height: 100%;
+    min-width: 0;
+    position: relative;
+  }
 
-.menu-toolbar-end {
-  display: flex;
-  flex: 0 0 auto;
-  justify-content: flex-end;
-  max-height: 100%;
-  min-width: 0;
-  position: relative;
-}
-
-.menu-toolbar-body {
-  display: flex;
-  flex: 1 1 auto;
-  justify-content: flex-start;
-  max-height: 100%;
-  min-width: 0;
-  padding-left: 0.7143rem;
-  position: relative;
+  .menu-toolbar-body {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: flex-start;
+    max-height: 100%;
+    min-width: 0;
+    padding-left: 0.7143rem;
+    position: relative;
+  }
 }

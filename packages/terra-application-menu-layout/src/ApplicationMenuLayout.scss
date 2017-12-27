@@ -1,0 +1,48 @@
+/* stylelint-disable selector-max-compound-selectors */
+/* stylelint-disable max-nesting-depth */
+:local {
+  .fit {
+    flex: 0 0 auto;
+  }
+
+  .fill {
+    flex: 1 1 auto;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  .fit,
+  .fill {
+    display: flex;
+    position: relative;
+    width: 100%;
+  }
+
+  .menu {
+    > .header,
+    > .footer {
+      max-height: 40%;
+    }
+
+    > .body {
+      > .widgets {
+        max-height: 100%;
+      }
+
+      > .content {
+        overflow: hidden;
+
+        > .normalizer {
+          height: 100%;
+          overflow: auto;
+          -webkit-overflow-scrolling: touch;
+          -ms-overflow-style: -ms-autohiding-scrollbar; // Ensures scrollbars do not affect width in IE10
+          position: absolute;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+/* stylelint-enable */

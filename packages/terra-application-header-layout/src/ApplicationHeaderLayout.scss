@@ -1,0 +1,39 @@
+/* stylelint-disable selector-class-pattern */
+:local {
+  .fit {
+    flex: 0 0 auto;
+  }
+
+  .fill {
+    flex: 1 1 auto;
+    justify-content: space-between;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .fit,
+  .fill { 
+    align-items: center;
+    display: flex;
+    height: 100%;
+    position: relative;
+  }
+
+  .start {
+    justify-content: flex-start;
+  }
+
+  .end,
+  .header-inner {
+    justify-content: flex-end;
+  }
+
+  .logo,
+  .utilities {
+    max-width: 40%;
+  }
+
+  .extensions {
+    max-width: 100%;
+  }
+}

@@ -1,32 +1,19 @@
-.menu-container {
-  align-content: stretch;
-  display: flex;
-  height: 100%;
 
-  .menu-back-region {
-    flex: 0 1 auto;
+.menu-link {
+  color: #1c1f21;
+  display: block;
+  font-size: 1.071rem;
+  line-height: 3.214rem;
+  padding: 0 0.7143rem;
+  text-decoration: none;
+
+  &:hover {
+    background: linear-gradient(-90deg, #fff, #f1f1f2);
   }
 
-  .menu-content-region {
-    flex: 1 1 auto;
-  }
-
-  .menu-link {
-    color: #1c1f21;
-    display: block;
-    font-size: 1.071rem;
-    line-height: 3.214rem;
-    padding: 0 0.7143rem;
-    text-decoration: none;
-
-    &:hover {
-      background: linear-gradient(-90deg, #fff, #f1f1f2);
-    }
-
-    &[aria-current='true'] {
-      background-image: linear-gradient(-270deg, #fff, #e8e9ea);
-      box-shadow: inset 0.5rem 0 0 0 #007cc3;
-      padding: 0 1.214rem;
-    }
+  &[aria-current='true'] {
+    background-image: linear-gradient(-270deg, #fff, #e8e9ea);
+    box-shadow: inset 0.5rem 0 0 0 #007cc3;
+    padding: 0 1.214rem;
   }
 }
