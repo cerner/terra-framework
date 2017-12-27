@@ -32,6 +32,10 @@ const propTypes = {
   title: PropTypes.string,
 };
 
+const defaultProps = {
+  size: 'tiny',
+};
+
 const Logo = ({
     accessory,
     app,
@@ -42,7 +46,6 @@ const Logo = ({
   }) => {
   const logoClassNames = cx([
     'logo',
-    { 'is-compact': size === 'tiny' || size === 'small' },
     customProps.className,
   ]);
 
@@ -60,5 +63,6 @@ const Logo = ({
 };
 
 Logo.propTypes = propTypes;
+Logo.defaultProps = defaultProps;
 
 export default Logo;

@@ -4,32 +4,13 @@ import LayoutLongText from 'terra-layout/examples/test-examples/LayoutLongText';
 import LayoutNoHeader from 'terra-layout/examples/test-examples/LayoutNoHeader';
 import NavigationLayoutBasic from 'terra-navigation-layout/examples/test-examples/NavigationLayoutBasic';
 import NavigationLayoutComplex from 'terra-navigation-layout/examples/test-examples/NavigationLayoutComplex';
+import ApplicationHeaderDefault from 'terra-application-header-layout/examples/test-examples/ApplicationHeaderDefault';
+import ApplicationMenuDefault from 'terra-application-menu-layout/examples/test-examples/ApplicationMenuDefault';
 
 import LayoutExample from 'terra-layout/examples/Index.example';
 import NavigationLayoutExample from 'terra-navigation-layout/examples/Index.example';
-
-
-// Update to be 'terra-application-header-layout/examples/test-examples/...';
-import ApplicationHeaderDefault from 'terra-application-header-layout/tests/nightwatch/ApplicationHeaderDefault';
-import ApplicationMenuDefault from 'terra-application-menu-layout/tests/nightwatch/ApplicationMenuDefault';
-
-// Update to be 'terra-application-header-layout/examples/Index';
-import HeaderExample from './examples/application-header-layout/Index';
-import MenuExample from './examples/application-menu-layout/Index';
-
-
-// const itemConfigPropType = PropTypes.shape({
-//   path: PropTypes.string,
-//   component: PropTypes.func,
-//   description: PropTypes.string,
-// });
-//
-// const siteConfigPropType = PropTypes.objectOf(PropTypes.shape({
-//   name: PropTypes.string,
-//   example: itemConfigPropType,
-//   testRoot: PropTypes.string,
-//   tests: PropTypes.arrayOf(itemConfigPropType),
-// }));
+import HeaderExample from 'terra-application-header-layout/examples/Index.example';
+import MenuExample from 'terra-application-menu-layout/examples/Index.example';
 
 const componentConfig = {
   layout: {

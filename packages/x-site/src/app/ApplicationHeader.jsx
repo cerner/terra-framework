@@ -1,12 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Menu from 'terra-menu';
+import classNames from 'classnames/bind';
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
+import Header from 'terra-application-header-layout';
 
-import Toolbar from './common/toolbar/Toolbar';
-import Logo from './common/toolbar/Logo';
-import Utility from './common/toolbar/Utility';
-import NavTabs from './common/toolbar/NavTabs';
+import HeaderUtility from './common/header-templates/Utility';
+import Logo from './common/header-templates/Logo';
+import NavTabs from './common/nav-tabs/NavTabs';
+import Toggle from './ApplicationToggle';
+
+import styles from './ApplicationHeader.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   layoutConfig: PropTypes.object,
@@ -44,15 +49,15 @@ class ApplicationHeader extends React.Component {
 
     if (this.props.themes && this.props.themes.length > 1 && supportsCSSVars()) {
       menuItems.push(
-        <Menu.Item
+        <HeaderUtility.Item
           text={`Theme: ${this.props.theme}`}
           key="theme-utility"
           subMenuItems={[
-            <Menu.ItemGroup isSelectable key="theme-options" onChange={this.props.onThemeChange} >
+            <HeaderUtility.ItemGroup isSelectable key="theme-options" onChange={this.props.onThemeChange} >
               {this.props.themes.map(themeName => (
-                <Menu.Item id={themeName} text={themeName} key={themeName} isSelected={this.props.theme === themeName} />
+                <HeaderUtility.Item id={themeName} text={themeName} key={themeName} isSelected={this.props.theme === themeName} />
               ))}
-            </Menu.ItemGroup>,
+            </HeaderUtility.ItemGroup>,
           ]}
         />,
       );
@@ -60,15 +65,15 @@ class ApplicationHeader extends React.Component {
 
     if (this.props.locales && this.props.locales.length > 1) {
       menuItems.push(
-        <Menu.Item
+        <HeaderUtility.Item
           text={`Locale: ${this.props.locale}`}
           key="locale-utility"
           subMenuItems={[
-            <Menu.ItemGroup isSelectable key="local-options" onChange={this.props.onLocaleChange} >
+            <HeaderUtility.ItemGroup isSelectable key="local-options" onChange={this.props.onLocaleChange} >
               {this.props.locales.map(localeName => (
-                <Menu.Item id={localeName} text={localeName} key={localeName} isSelected={this.props.locale === localeName} />
+                <HeaderUtility.Item id={localeName} text={localeName} key={localeName} isSelected={this.props.locale === localeName} />
               ))}
-            </Menu.ItemGroup>,
+            </HeaderUtility.ItemGroup>,
           ]}
         />,
       );
@@ -76,18 +81,18 @@ class ApplicationHeader extends React.Component {
 
     if (!this.props.hideBidiUtility) {
       menuItems.push(
-        <Menu.Divider key="utility-divider" />,
-        <Menu.ItemGroup key="bidi-utility" isSelectable dir="ltr" size="medium" onChange={this.props.onDirChange}>
-          <Menu.Item id="ltr" text="ltr" key="ltr" isSelected={this.props.dir === 'ltr'} />
-          <Menu.Item id="rtl" text="rtl" key="rtl" isSelected={this.props.dir === 'rtl'} />
-        </Menu.ItemGroup>,
+        <HeaderUtility.Divider key="utility-divider" />,
+        <HeaderUtility.ItemGroup key="bidi-utility" isSelectable dir="ltr" size="medium" onChange={this.props.onDirChange}>
+          <HeaderUtility.Item id="ltr" text="ltr" key="ltr" isSelected={this.props.dir === 'ltr'} />
+          <HeaderUtility.Item id="rtl" text="rtl" key="rtl" isSelected={this.props.dir === 'rtl'} />
+        </HeaderUtility.ItemGroup>,
       );
     }
 
     let utility;
     if (menuItems.length > 0) {
       utility = (
-        <Utility
+        <HeaderUtility
           accessory={<IconSettings />}
           title="Config"
           menuItems={menuItems}
@@ -101,17 +106,19 @@ class ApplicationHeader extends React.Component {
     }
 
     return (
-      <Toolbar
-        layoutConfig={this.props.layoutConfig}
+      <Header
+        className={cx(['header'])}
         logo={(
           <Logo
             title={this.props.title}
             subtitle={this.props.subtitle}
             accessory={this.props.logo}
+            size={this.props.layoutConfig.size}
           />
         )}
-        utility={utility}
-        content={navTabs}
+        utilities={utility}
+        navigation={navTabs}
+        toggle={<Toggle layoutConfig={this.props.layoutConfig} />}
       />
     );
   }

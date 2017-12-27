@@ -6,8 +6,8 @@ import 'terra-base/lib/baseStyles';
 import AppDelegate from 'terra-app-delegate';
 import IconMenu from 'terra-icon/lib/icon/IconMenu';
 import Button from 'terra-button';
-import Utility from './Utility';
-import Logo from './Logo';
+import Utility from '../header-templates/Utility';
+import Logo from '../header-templates/Logo';
 
 import styles from './Toolbar.scss';
 

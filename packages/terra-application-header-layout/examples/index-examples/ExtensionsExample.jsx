@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PlaceHolder from '../../app/common/Placeholder';
+import PlaceHolder from './Placeholder';
 
 const propTypes = {
   size: PropTypes.string,

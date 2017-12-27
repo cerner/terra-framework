@@ -30,6 +30,8 @@
     "lodash.kebabcase": "^4.1.1",
     "lodash.startcase": "^4.4.0",
     "terra-navigation-layout": "^1.0.0",
+    "terra-application-menu-layout": "^x.0",
+    "terra-application-header-layout": "^x.0",
     "react-intl": "^2.3.0",
     "react-router-dom": "^4.0.0",
     "terra-app-delegate": "^1.7.1",

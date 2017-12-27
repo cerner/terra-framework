@@ -1,6 +1,6 @@
 import React from 'react';
-import ApplicationMenuLayout from 'terra-application-menu-layout';
-import PlaceHolder from '../../app/common/Placeholder';
+import ApplicationMenuLayout from '../../lib/ApplicationMenuLayout';
+import PlaceHolder from './Placeholder';
 
 const Menu = () => (
   <div style={{ height: '450px', width: '300px' }}>

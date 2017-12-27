@@ -1,23 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PlaceHolder from '../../app/common/Placeholder';
+import PlaceHolder from './Placeholder';
 
 const propTypes = {
   size: PropTypes.string,
 };
 
 const ExtensionsExample = ({ size }) => {
-  let text = 'Utilities';
-  let width = '150px';
+  let text = 'Navigation';
   if (size === 'tiny') {
-    text = 'U';
-    width = '50px';
+    text = 'N';
   } else if (size === 'small') {
-    text = 'Util';
-    width = '100px';
+    text = 'Nav';
   }
   return (
-    <PlaceHolder text={text} width={width} />
+    <PlaceHolder text={text} />
   );
 };
 

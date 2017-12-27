@@ -48,7 +48,6 @@ const defaultProps = {
 };
 
 class Utility extends React.Component {
-
   constructor(props) {
     super(props);
 
@@ -114,6 +113,7 @@ class Utility extends React.Component {
 
 Utility.propTypes = propTypes;
 Utility.defaultProps = defaultProps;
+
 Utility.Item = Menu.Item;
 Utility.ItemGroup = Menu.ItemGroup;
 Utility.Divider = Menu.Divider;
