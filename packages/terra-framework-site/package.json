@@ -14,7 +14,7 @@
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "scripts": {
     "start": "webpack-dev-server --progress",
-    "compile": "npm run compile:clean && npm run compile:build",
+    "compile": "npm run compile:clean && npm run generate-config && npm run compile:build",
     "compile:clean": "rimraf lib",
     "compile:build": "babel src --out-dir lib --copy-files",
     "compile:heroku": "webpack --config webpack.prod.config --progress",
@@ -22,7 +22,7 @@
     "deploy": "npm run compile:prod && gh-pages -d build",
     "lint": "npm run lint:js",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
-    "generate-index": "node node_modules/x-site/scripts/generate-site-index.js && ((eslint --fix ./generatedIndex.js) || true)"
+    "generate-config": "node node_modules/x-site/scripts/generate-site-config.js"
   },
   "dependencies": {
     "classnames": "^2.2.5",

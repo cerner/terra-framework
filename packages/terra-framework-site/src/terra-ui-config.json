@@ -1,0 +1,47 @@
+{
+  "terra-framework": {
+    "name": "Terra Framework",
+    "packages": [
+      {
+        "name": "Application Header Layout",
+        "examples": [
+          {
+            "name": "Index",
+            "url": "http:/engineering.cerner.com/terra-framework/raw/examples/terra-application-header-layout/index"
+          }
+        ]
+      },
+      {
+        "name": "Application Menu Layout",
+        "examples": [
+          {
+            "name": "Index",
+            "url": "http:/engineering.cerner.com/terra-framework/raw/examples/terra-application-menu-layout/index"
+          }
+        ]
+      },
+      {
+        "name": "Layout",
+        "examples": [
+          {
+            "name": "Index",
+            "url": "http:/engineering.cerner.com/terra-framework/raw/examples/terra-layout/index"
+          },
+          {
+            "name": "Layout",
+            "url": "http:/engineering.cerner.com/terra-framework/raw/examples/terra-layout/layout"
+          }
+        ]
+      },
+      {
+        "name": "Navigation Layout",
+        "examples": [
+          {
+            "name": "Index",
+            "url": "http:/engineering.cerner.com/terra-framework/raw/examples/terra-navigation-layout/index"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../../src/Layout';
-import TestMenu from './TestMenu';
-import TestContent from './TestContent';
+import TestMenu from './test-content//TestMenu';
+import TestContent from './test-content//TestContent';
 
 const LayoutNoHeader = () => (
   <Layout

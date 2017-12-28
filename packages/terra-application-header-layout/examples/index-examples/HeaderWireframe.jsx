@@ -1,6 +1,6 @@
 import React from 'react';
 import ApplicationHeaderLayout from '../../lib/ApplicationHeaderLayout';
-import ResponsiveElement from '../../../terra-framework-site/node_modules/terra-responsive-element';
+import ResponsiveElement from '../../../terra-framework-site/node_modules/terra-responsive-element/lib/ResponsiveElement';
 import ExtensionsExample from './ExtensionsExample';
 import LogoExample from './LogoExample';
 import NavigationExample from './NavigationExample';

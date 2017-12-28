@@ -1,8 +1,8 @@
 import React from 'react';
 import Layout from '../../src/Layout';
-import TestHeader from './TestHeader';
-import TestMenu from './TestMenu';
-import TestContent from './TestContent';
+import TestHeader from './test-content//TestHeader';
+import TestMenu from './test-content//TestMenu';
+import TestContent from './test-content//TestContent';
 
 const LayoutLongText = () => (
   <Layout

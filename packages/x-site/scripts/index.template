@@ -1,5 +1,7 @@
-<imports>
-
+// Component Examples
+<example_imports>
+// Component Test Examples
+<test_imports>
 <config>
 
-export default config;
+export default componentConfig;
