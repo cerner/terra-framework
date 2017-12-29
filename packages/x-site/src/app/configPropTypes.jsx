@@ -6,11 +6,13 @@ const itemConfigPropType = PropTypes.shape({
   description: PropTypes.string,
 });
 
-const siteConfigPropType = PropTypes.objectOf(PropTypes.shape({
-  name: PropTypes.string,
-  example: itemConfigPropType,
-  testRoot: PropTypes.string,
-  tests: PropTypes.arrayOf(itemConfigPropType),
-}));
+const siteConfigPropType = PropTypes.objectOf(
+  PropTypes.shape({
+    name: PropTypes.string,
+    example: itemConfigPropType,
+    testRoot: PropTypes.string,
+    tests: PropTypes.arrayOf(itemConfigPropType),
+  }),
+);
 
 export { siteConfigPropType, itemConfigPropType };

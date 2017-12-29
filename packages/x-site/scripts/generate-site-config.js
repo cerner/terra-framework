@@ -4,6 +4,8 @@ const fs = require('fs');
 const kebabCase = require('lodash.kebabcase');
 const startCase = require('lodash.startcase');
 
+// allow theme to specifiy the search pattern???
+
 const repositoryName = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), '..', '..', 'package.json'))).name;
 const packagesPath = path.resolve(process.cwd(), '..', '..', 'packages');
 const testSearchPath = path.join('test-examples', '*?(.jsx|.js)');
@@ -92,9 +94,9 @@ glob(searchPath, { nodir: true }, (er, foundFiles) => {
   packageConfig.forEach((pkg) => {
     const configInfo = {
       name: `'${pkg.name}'`,
-      exampleRoot: `'/components/${kebabCase(pkg.name)}'`,
+      examplesRoot: `'/components/${kebabCase(pkg.name)}'`,
       examples: pkg.examples,
-      testRoot: `'/tests/${kebabCase(pkg.name)}'`,
+      testsRoot: `'/tests/${kebabCase(pkg.name)}'`,
       tests: pkg.tests,
     };
     componentConfig[`'${pkg.packageName}'`] = configInfo;

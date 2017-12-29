@@ -18,7 +18,7 @@ import NavigationLayoutComplex from '../../terra-navigation-layout/examples/test
 const componentConfig = {
   'terra-application-header-layout': {
     name: 'Application Header Layout',
-    exampleRoot: '/components/application-header-layout',
+    examplesRoot: '/components/application-header-layout',
     examples: [
       {
         path: '/index',
@@ -26,7 +26,7 @@ const componentConfig = {
         description: 'Index',
       },
     ],
-    testRoot: '/tests/application-header-layout',
+    testsRoot: '/tests/application-header-layout',
     tests: [
       {
         path: '/application-header-default',
@@ -37,7 +37,7 @@ const componentConfig = {
   },
   'terra-application-menu-layout': {
     name: 'Application Menu Layout',
-    exampleRoot: '/components/application-menu-layout',
+    examplesRoot: '/components/application-menu-layout',
     examples: [
       {
         path: '/index',
@@ -45,7 +45,7 @@ const componentConfig = {
         description: 'Index',
       },
     ],
-    testRoot: '/tests/application-menu-layout',
+    testsRoot: '/tests/application-menu-layout',
     tests: [
       {
         path: '/application-menu-default',
@@ -56,7 +56,7 @@ const componentConfig = {
   },
   'terra-layout': {
     name: 'Layout',
-    exampleRoot: '/components/layout',
+    examplesRoot: '/components/layout',
     examples: [
       {
         path: '/index',
@@ -69,7 +69,7 @@ const componentConfig = {
         description: 'Layout',
       },
     ],
-    testRoot: '/tests/layout',
+    testsRoot: '/tests/layout',
     tests: [
       {
         path: '/layout-default',
@@ -95,7 +95,7 @@ const componentConfig = {
   },
   'terra-navigation-layout': {
     name: 'Navigation Layout',
-    exampleRoot: '/components/navigation-layout',
+    examplesRoot: '/components/navigation-layout',
     examples: [
       {
         path: '/index',
@@ -103,7 +103,7 @@ const componentConfig = {
         description: 'Index',
       },
     ],
-    testRoot: '/tests/navigation-layout',
+    testsRoot: '/tests/navigation-layout',
     tests: [
       {
         path: '/navigation-layout-basic',
