@@ -1,15 +1,25 @@
 const path = require('path');
+const commander = require('commander');
 const glob = require('glob');
 const fs = require('fs');
 const kebabCase = require('lodash.kebabcase');
 const startCase = require('lodash.startcase');
+const packageJson = require('../package.json');
 
-// allow theme to specifiy the search pattern???
+commander
+  .version(packageJson.version)
+  .option('--raw-url [type]', 'The base URL to append to the UI config routes')
+  .option('--no-pages', 'Disable the gerneation of page example configuration')
+  .option('--no-tests', 'Disable the generation of test example configuration')
+  .parse(process.argv);
 
 const repositoryName = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), '..', '..', 'package.json'))).name;
 const packagesPath = path.resolve(process.cwd(), '..', '..', 'packages');
-const testSearchPath = path.join('test-examples', '*?(.jsx|.js)');
-const searchPath = path.join(packagesPath, '*', 'lib', 'examples', `{*.site-page?(.jsx|.js),${testSearchPath}}`);
+
+// allow theme to specifiy the search pattern???
+const testsSearchPath = commander.tests ? path.join('test-examples', '*?(.jsx|.js)') : null;
+const pagesSearchPage = commander.pages ? '*.site-page?(.jsx|.js)' : null;
+const searchPath = path.join(packagesPath, '*', 'lib', 'examples', `{${pagesSearchPage},${testsSearchPath}}`);
 
 glob(searchPath, { nodir: true }, (er, foundFiles) => {
   const packageConfig = [];
@@ -40,10 +50,12 @@ glob(searchPath, { nodir: true }, (er, foundFiles) => {
     if (isExampleFile) {
       importName = `${startCase(packageName)}${fileName}`.replace(/\s/g, '');
       const importPath = path.join('..', '..', `${packageName}`, 'examples', `${fileName}.site-page`);
+      // const importPath = path.join(`${packageName}`, 'lib', 'examples', `${fileName}.site-page`);
       exampleImports += `import ${importName} from '${importPath}';\n`;
     } else {
       importName = `${startCase(fileName)}`.replace(/\s/g, '');
       const importPath = path.join('..', '..', `${packageName}`, 'examples', 'test-examples', `${fileName}`);
+      // const importPath = path.join(`${packageName}`, 'lib', 'examples', 'test-examples', `${fileName}`);
       testImports += `import ${importName} from '${importPath}';\n`;
     }
 
@@ -55,7 +67,7 @@ glob(searchPath, { nodir: true }, (er, foundFiles) => {
 
     const UIConfig = {
       name: fileName,
-      url: `${path.join(process.argv.length > 2 ? `${process.argv[2]}` : 'http://engineering.cerner.com', `${repositoryName}`, 'raw', 'examples', `${kebabCase(packageName)}`, `${kebabCase(fileName)}`)}`,
+      url: `${path.join(commander.rawUrl ? `${commander.rawUrl}` : 'http://engineering.cerner.com', `${repositoryName}`, 'raw', 'examples', `${kebabCase(packageName)}`, `${kebabCase(fileName)}`)}`,
     };
 
     if (packageName === currPkgConfig.packageName) {
@@ -82,7 +94,8 @@ glob(searchPath, { nodir: true }, (er, foundFiles) => {
   };
 
   packageConfig.forEach((pkg) => {
-    UIconfig[repositoryName].packages.push({ name: pkg.name, examples: pkg.UIpages });
+    const UIexamples = pkg.UIpages.length > 0 ? { examples: pkg.UIpages } : {};
+    UIconfig[repositoryName].packages.push({ name: pkg.name, ...UIexamples });
   });
 
   // Write JSON file for terra-ui consumption
@@ -92,15 +105,18 @@ glob(searchPath, { nodir: true }, (er, foundFiles) => {
   // update imports to be non-mac specific paths....?
   const componentConfig = {};
   packageConfig.forEach((pkg) => {
+    const pages = commander.pages && pkg.pages.length > 0 ? { pages: pkg.pages } : {};
+    const tests = commander.tests && pkg.tests.length > 0 ? { tests: pkg.tests } : {};
+
     const configInfo = {
       name: `'${pkg.name}'`,
-      pagesRoot: `'/components/${kebabCase(pkg.name)}'`,
-      pages: pkg.pages,
-      testsRoot: `'/tests/${kebabCase(pkg.name)}'`,
-      tests: pkg.tests,
+      path: `'/${kebabCase(pkg.name)}'`,
+      ...pages,
+      ...tests,
     };
     componentConfig[`'${pkg.packageName}'`] = configInfo;
   });
+
 
   // // Generate configuration file for site consumption
   fs.readFile(path.join(__dirname, 'index.template'), 'utf8', (err, data) => {

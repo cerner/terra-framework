@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "commander": "^2.9.0",
     "postcss": "^6.0.9",
     "prop-types": "^15.5.8",
     "glob": "^7.1.1",

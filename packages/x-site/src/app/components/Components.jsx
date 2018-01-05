@@ -1,5 +1,4 @@
 import React from 'react';
-import path from 'path';
 import PropTypes from 'prop-types';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import { siteConfigPropType } from '../configPropTypes';
@@ -11,16 +10,16 @@ const propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }),
-  siteRoot: PropTypes.string,
+  pathRoot: PropTypes.string,
   exampleType: PropTypes.string,
 };
 
-const generateTestComponentPlaceholders = (config, siteRoot) => {
+const generateTestComponentPlaceholders = (config, pathRoot) => {
   const testPlaceholders = Object.keys(config).map(componentKey => (
     <Route
       exact
-      key={`${siteRoot}${config[componentKey].testsRoot}`}
-      path={`${siteRoot}${config[componentKey].testsRoot}`}
+      key={`${pathRoot}${config[componentKey].path}`}
+      path={`${pathRoot}${config[componentKey].path}`}
       render={() => (
         <Placeholder
           text={`${config[componentKey].name} Tests`}
@@ -29,11 +28,10 @@ const generateTestComponentPlaceholders = (config, siteRoot) => {
     />
   ));
 
-  const testsRootPath = path.join(siteRoot, 'tests');
   testPlaceholders.push(<Route
     exact
-    key={`${testsRootPath}`}
-    path={`${testsRootPath}`}
+    key={`${pathRoot}`}
+    path={`${pathRoot}`}
     render={() => (
       <Placeholder text="Tests" />
     )}
@@ -42,8 +40,8 @@ const generateTestComponentPlaceholders = (config, siteRoot) => {
   return testPlaceholders;
 };
 
-const generateComponentRoutes = (config, exampleType, siteRoot) => (
-  SiteUtils.aggregateExamples(config, exampleType, siteRoot).map(
+const generateComponentRoutes = (config, exampleType, pathRoot) => (
+  SiteUtils.aggregateExamples(config, exampleType, pathRoot).map(
     component => (
       <Route
         exact
@@ -63,22 +61,25 @@ const generateRedirect = (pathRoot, location) => {
 };
 
 class Components extends React.Component {
-  static findPathRoot(config, exampleType, siteRoot) {
-    const firstComponent = SiteUtils.aggregateExamples(config, exampleType, siteRoot)[0];
-    let pathRoot = siteRoot;
+  static findPathRoot(config, exampleType, pathRoot) {
+    const examples = SiteUtils.aggregateExamples(config, exampleType, pathRoot);
+    let path = pathRoot;
 
-    if (firstComponent && exampleType === 'tests') {
-      pathRoot = firstComponent.pathRoot;
-    } else {
-      pathRoot = firstComponent.fullPath;
+    if (examples.length > 0) {
+      const firstComponent = examples[0];
+      if (firstComponent && exampleType === 'tests') {
+        path = firstComponent.path;
+      } else {
+        path = firstComponent.fullPath;
+      }
     }
 
-    return pathRoot;
+    return path;
   }
 
   constructor(props) {
     super(props);
-    this.firstComponentPath = `${Components.findPathRoot(props.config, props.exampleType, props.siteRoot)}`;
+    this.firstComponentPath = `${Components.findPathRoot(props.config, props.exampleType, props.pathRoot)}`;
   }
 
   componentDidUpdate(prevProps) {
@@ -88,15 +89,16 @@ class Components extends React.Component {
   }
 
   render() {
-    const { config, exampleType, location, siteRoot } = this.props;
+    const { config, exampleType, location, pathRoot } = this.props;
+
     return (
       <div
         ref={(element) => { this.element = element; }}
         style={{ height: '100%', position: 'relative', padding: '15px', overflow: 'auto' }}
       >
         <Switch>
-          {generateComponentRoutes(config, exampleType, siteRoot)}
-          {exampleType === 'tests' ? generateTestComponentPlaceholders(config, siteRoot) : null}
+          {generateComponentRoutes(config, exampleType, pathRoot)}
+          {exampleType === 'tests' ? generateTestComponentPlaceholders(config, pathRoot) : null}
           {generateRedirect(this.firstComponentPath, location)}
         </Switch>
       </div>

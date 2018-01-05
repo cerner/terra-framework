@@ -18,7 +18,7 @@ import NavigationLayoutComplex from '../../terra-navigation-layout/examples/test
 const componentConfig = {
   'terra-application-header-layout': {
     name: 'Application Header Layout',
-    pagesRoot: '/components/application-header-layout',
+    path: '/application-header-layout',
     pages: [
       {
         path: '/index',
@@ -26,7 +26,6 @@ const componentConfig = {
         description: 'Index',
       },
     ],
-    testsRoot: '/tests/application-header-layout',
     tests: [
       {
         path: '/application-header-default',
@@ -37,7 +36,7 @@ const componentConfig = {
   },
   'terra-application-menu-layout': {
     name: 'Application Menu Layout',
-    pagesRoot: '/components/application-menu-layout',
+    path: '/application-menu-layout',
     pages: [
       {
         path: '/index',
@@ -45,7 +44,6 @@ const componentConfig = {
         description: 'Index',
       },
     ],
-    testsRoot: '/tests/application-menu-layout',
     tests: [
       {
         path: '/application-menu-default',
@@ -56,7 +54,7 @@ const componentConfig = {
   },
   'terra-layout': {
     name: 'Layout',
-    pagesRoot: '/components/layout',
+    path: '/layout',
     pages: [
       {
         path: '/index',
@@ -69,7 +67,6 @@ const componentConfig = {
         description: 'Layout',
       },
     ],
-    testsRoot: '/tests/layout',
     tests: [
       {
         path: '/layout-default',
@@ -95,7 +92,7 @@ const componentConfig = {
   },
   'terra-navigation-layout': {
     name: 'Navigation Layout',
-    pagesRoot: '/components/navigation-layout',
+    path: '/navigation-layout',
     pages: [
       {
         path: '/index',
@@ -103,7 +100,6 @@ const componentConfig = {
         description: 'Index',
       },
     ],
-    testsRoot: '/tests/navigation-layout',
     tests: [
       {
         path: '/navigation-layout-basic',

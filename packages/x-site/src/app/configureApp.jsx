@@ -22,19 +22,19 @@ const buildComponent = (ComponentClass, configuredProps) => (
   }
 );
 
-const buildSubNavigationConfig = (config, ComponentClass, exampleType, siteRoot) => {
+const buildSubNavigationConfig = (config, ComponentClass, exampleType, rootPath) => {
   const generatedConfig = {};
   const subNavConfig = Object.keys(config).map((componentKey) => {
-    const pathRoot = config[componentKey][`${exampleType}Root`];
+    const path = config[componentKey].path;
     const examples = config[componentKey][`${exampleType}`];
 
-    if (pathRoot && examples) {
+    if (path && examples) {
       if (exampleType === 'pages' && examples.length === 1) {
         return undefined;
       }
       return {
-        path: `${siteRoot}${pathRoot}`,
-        component: buildComponent(ComponentClass, { config: config[componentKey], siteRoot, exampleType, isSubMenu: true }),
+        path: `${rootPath}${path}`,
+        component: buildComponent(ComponentClass, { config: config[componentKey], pathRoot: `${rootPath}${path}`, exampleType, isSubMenu: true }),
       };
     }
     return undefined;
@@ -63,12 +63,15 @@ const buildRawConfigForPageComponents = (config, pathRoot) => {
   return generatedConfig;
 };
 
-const routeConfiguration = (navigation, componentConfig, siteRoot = '/site') => {
+const routeConfiguration = (siteConfig, componentConfig) => {
+  const navigation = siteConfig.navigation;
+  const configuredLinks = [];
+
   let content = {};
   let menu = {};
 
-  menu[`${siteRoot}`] = {
-    path: `${siteRoot}`,
+  menu[siteConfig.rootPath] = {
+    path: siteConfig.rootPath,
     component: {
       tiny: {
         componentClass: ApplicationMenu,
@@ -86,36 +89,49 @@ const routeConfiguration = (navigation, componentConfig, siteRoot = '/site') => 
   };
 
   navigation.links.forEach((link) => {
-    let exampleType = null;
+    // build navigation link configuration
+    configuredLinks.push({
+      path: link.path,
+      text: link.text,
+    });
 
-    if (link.path.includes('components')) {
-      exampleType = 'pages';
+    const exampleType = link.exampleType;
+    const componentProps = { config: componentConfig, pathRoot: link.path, exampleType };
 
-      content = Object.assign(content, buildRawConfigForPageComponents(componentConfig, '/raw'));
-      menu = Object.assign(menu, buildSubNavigationConfig(componentConfig, ComponentsMenu, exampleType, siteRoot));
-    } else if (link.path.includes('tests')) {
-      exampleType = 'tests';
-
-      menu = Object.assign(menu, buildSubNavigationConfig(componentConfig, ComponentsMenu, exampleType, siteRoot));
+    // build content configuration
+    let contentComponent = Components;
+    if (link.component) {
+      contentComponent = link.component;
     }
-
-    const componentProps = { config: componentConfig, siteRoot, exampleType };
 
     content[link.path] = {
       path: link.path,
-      component: buildComponent(Components, componentProps),
+      component: buildComponent(contentComponent, componentProps),
     };
 
+    if (exampleType === 'pages') {
+      content = Object.assign(content, buildRawConfigForPageComponents(componentConfig, '/raw'));
+    }
 
-    if (!link.path.includes('home')) {
+    // build content configuration
+    let menuComponent = ComponentsMenu;
+    if (link.menuComponent) {
+      menuComponent = link.menuComponent;
+    }
+
+    if (!link.isStatic) {
       menu[link.path] = {
         path: link.path,
-        component: buildComponent(ComponentsMenu, componentProps),
+        component: buildComponent(menuComponent, componentProps),
       };
+      menu = Object.assign(menu, buildSubNavigationConfig(componentConfig, ComponentsMenu, exampleType, link.path));
     }
   });
 
-  return { content, menu };
+  const navigationConfig = { index: navigation.index, links: configuredLinks };
+  const routeConfig = { content, menu };
+
+  return { routeConfig, navigation: navigationConfig };
 };
 
 

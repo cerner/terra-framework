@@ -9,9 +9,8 @@ const itemConfigPropType = PropTypes.shape({
 const componentConfigPropType = PropTypes.shape(
   {
     name: PropTypes.string,
-    pagesRoot: PropTypes.string,
+    path: PropTypes.string,
     pages: PropTypes.arrayOf(itemConfigPropType),
-    testsRoot: PropTypes.string,
     tests: PropTypes.arrayOf(itemConfigPropType),
   },
 );
@@ -19,9 +18,8 @@ const componentConfigPropType = PropTypes.shape(
 const siteConfigPropType = PropTypes.objectOf(
   PropTypes.shape({
     name: PropTypes.string,
-    pagesRoot: PropTypes.string,
+    path: PropTypes.string,
     pages: PropTypes.arrayOf(itemConfigPropType),
-    testsRoot: PropTypes.string,
     tests: PropTypes.arrayOf(itemConfigPropType),
   }),
 );

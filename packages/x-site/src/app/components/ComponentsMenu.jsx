@@ -20,7 +20,7 @@ const subMenuText = {
 const propTypes = {
   routingStackDelegate: RoutingStackDelegate.propType,
   config: PropTypes.oneOfType([siteConfigPropType, componentConfigPropType]),
-  siteRoot: PropTypes.string,
+  pathRoot: PropTypes.string,
   exampleType: PropTypes.string,
   isSubMenu: PropTypes.bool,
 };
@@ -29,13 +29,15 @@ const defaultProps = {
   isSubMenu: false,
 };
 
-const ComponentsMenu = ({ routingStackDelegate, config, exampleType, siteRoot, isSubMenu }) => {
+const ComponentsMenu = ({ routingStackDelegate, config, exampleType, pathRoot, isSubMenu }) => {
   let headerText = menuText[`${exampleType}`];
-  let links = SiteUtils.generateMenuLinks(config, exampleType, siteRoot);
+  let links = null;
 
   if (isSubMenu) {
     headerText = `${config.name} ${subMenuText[exampleType]}`;
-    links = SiteUtils.generateSubMenuLinks(config, exampleType, siteRoot);
+    links = SiteUtils.generateSubMenuLinks(config, exampleType, pathRoot);
+  } else {
+    links = SiteUtils.generateMenuLinks(config, exampleType, pathRoot);
   }
 
   return (
