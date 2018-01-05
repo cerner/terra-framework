@@ -1,9 +1,9 @@
 // Component Examples
-import TerraApplicationHeaderLayoutIndex from '../../terra-application-header-layout/examples/Index.example';
-import TerraApplicationMenuLayoutIndex from '../../terra-application-menu-layout/examples/Index.example';
-import TerraLayoutIndex from '../../terra-layout/examples/Index.example';
-import TerraLayoutLayout from '../../terra-layout/examples/Layout.example';
-import TerraNavigationLayoutIndex from '../../terra-navigation-layout/examples/Index.example';
+import TerraApplicationHeaderLayoutIndex from '../../terra-application-header-layout/examples/Index.site-page';
+import TerraApplicationMenuLayoutIndex from '../../terra-application-menu-layout/examples/Index.site-page';
+import TerraLayoutIndex from '../../terra-layout/examples/Index.site-page';
+import TerraLayoutLayout from '../../terra-layout/examples/Layout.site-page';
+import TerraNavigationLayoutIndex from '../../terra-navigation-layout/examples/Index.site-page';
 
 // Component Test Examples
 import ApplicationHeaderDefault from '../../terra-application-header-layout/examples/test-examples/ApplicationHeaderDefault';
@@ -18,8 +18,8 @@ import NavigationLayoutComplex from '../../terra-navigation-layout/examples/test
 const componentConfig = {
   'terra-application-header-layout': {
     name: 'Application Header Layout',
-    examplesRoot: '/components/application-header-layout',
-    examples: [
+    pagesRoot: '/components/application-header-layout',
+    pages: [
       {
         path: '/index',
         component: TerraApplicationHeaderLayoutIndex,
@@ -37,8 +37,8 @@ const componentConfig = {
   },
   'terra-application-menu-layout': {
     name: 'Application Menu Layout',
-    examplesRoot: '/components/application-menu-layout',
-    examples: [
+    pagesRoot: '/components/application-menu-layout',
+    pages: [
       {
         path: '/index',
         component: TerraApplicationMenuLayoutIndex,
@@ -56,8 +56,8 @@ const componentConfig = {
   },
   'terra-layout': {
     name: 'Layout',
-    examplesRoot: '/components/layout',
-    examples: [
+    pagesRoot: '/components/layout',
+    pages: [
       {
         path: '/index',
         component: TerraLayoutIndex,
@@ -95,8 +95,8 @@ const componentConfig = {
   },
   'terra-navigation-layout': {
     name: 'Navigation Layout',
-    examplesRoot: '/components/navigation-layout',
-    examples: [
+    pagesRoot: '/components/navigation-layout',
+    pages: [
       {
         path: '/index',
         component: TerraNavigationLayoutIndex,

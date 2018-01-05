@@ -6,13 +6,24 @@ const itemConfigPropType = PropTypes.shape({
   description: PropTypes.string,
 });
 
+const componentConfigPropType = PropTypes.shape(
+  {
+    name: PropTypes.string,
+    pagesRoot: PropTypes.string,
+    pages: PropTypes.arrayOf(itemConfigPropType),
+    testsRoot: PropTypes.string,
+    tests: PropTypes.arrayOf(itemConfigPropType),
+  },
+);
+
 const siteConfigPropType = PropTypes.objectOf(
   PropTypes.shape({
     name: PropTypes.string,
-    example: itemConfigPropType,
-    testRoot: PropTypes.string,
+    pagesRoot: PropTypes.string,
+    pages: PropTypes.arrayOf(itemConfigPropType),
+    testsRoot: PropTypes.string,
     tests: PropTypes.arrayOf(itemConfigPropType),
   }),
 );
 
-export { siteConfigPropType, itemConfigPropType };
+export { siteConfigPropType, componentConfigPropType, itemConfigPropType };

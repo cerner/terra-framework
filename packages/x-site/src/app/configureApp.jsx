@@ -1,71 +1,63 @@
 import React from 'react';
-import aggregateExamples from './components/ComponentsUtils';
+import SiteUtils from './components/SiteUtils';
 
 import ApplicationMenu from './ApplicationMenu';
 
 import Components from './components/Components';
 import ComponentsMenu from './components/ComponentsMenu';
 
-import Tests from './tests/Tests';
-import TestsMenu from './tests/TestsMenu';
-import ComponentTests from './tests/ComponentTests';
-import ComponentTestsMenu from './tests/ComponentTestsMenu';
-
-const injectConfig = (config, siteRoot) => (
+const injectConfig = configuredProps => (
   ComponentClass => (
     props => (
-      <ComponentClass {...props} config={config} siteRoot={siteRoot} />
+      <ComponentClass {...props} {...configuredProps} />
     )
   )
 );
 
-const buildComponent = (ComponentClass, component, siteRoot) => {
-  let build = injectConfig(component, siteRoot)(ComponentClass);
-
-  if (!component) {
-    build = () => (
-      <div style={{ height: '100%', position: 'relative', padding: '15px', overflow: 'auto' }}>
-        <ComponentClass />
-      </div>
-    );
+const buildComponent = (ComponentClass, configuredProps) => (
+  {
+    default: {
+      componentClass: injectConfig(configuredProps)(ComponentClass),
+    },
   }
+);
 
-  return { default: { componentClass: build } };
-};
-
-const buildTestComponentsConfig = (config, ComponentClass, siteRoot) => {
+const buildSubNavigationConfig = (config, ComponentClass, exampleType, siteRoot) => {
   const generatedConfig = {};
-  Object.keys(config).map((componentKey) => {
-    const testsRoot = config[componentKey].testsRoot;
-    const tests = config[componentKey].tests;
-    if (testsRoot && tests) {
+  const subNavConfig = Object.keys(config).map((componentKey) => {
+    const pathRoot = config[componentKey][`${exampleType}Root`];
+    const examples = config[componentKey][`${exampleType}`];
+
+    if (pathRoot && examples) {
+      if (exampleType === 'pages' && examples.length === 1) {
+        return undefined;
+      }
       return {
-        path: `${siteRoot}${testsRoot}`,
-        component: buildComponent(ComponentClass, config[componentKey], siteRoot),
+        path: `${siteRoot}${pathRoot}`,
+        component: buildComponent(ComponentClass, { config: config[componentKey], siteRoot, exampleType, isSubMenu: true }),
       };
     }
     return undefined;
   })
-  .filter(test => !!test)
-  .forEach((test) => {
+  .filter(test => !!test);
+
+  subNavConfig.forEach((test) => {
     generatedConfig[test.path] = test;
   });
-
   return generatedConfig;
 };
 
-const buildRawConfigForExampleComponents = (config) => {
+const buildRawConfigForPageComponents = (config, pathRoot) => {
   const generatedConfig = {};
-  const examples = aggregateExamples(config).map(example => (
+  const rawPageConfig = SiteUtils.aggregateExamples(config, pathRoot, 'pages').map(page => (
     {
-      path: `/raw${example.fullPath}`,
-      component: buildComponent(example.component),
+      path: `${page.fullPath}`,
+      component: buildComponent(page.component),
     }
-  ),
-  );
+  ));
 
-  examples.forEach((example) => {
-    generatedConfig[example.path] = example;
+  rawPageConfig.forEach((page) => {
+    generatedConfig[page.path] = page;
   });
 
   return generatedConfig;
@@ -94,31 +86,31 @@ const routeConfiguration = (navigation, componentConfig, siteRoot = '/site') => 
   };
 
   navigation.links.forEach((link) => {
-    let contentComponentClass = null;
-    let menuComponentClass = null;
+    let exampleType = null;
 
     if (link.path.includes('components')) {
-      contentComponentClass = injectConfig(componentConfig, siteRoot)(Components);
-      content = Object.assign(content, buildRawConfigForExampleComponents(componentConfig));
+      exampleType = 'pages';
 
-      menuComponentClass = injectConfig(componentConfig, siteRoot)(ComponentsMenu);
+      content = Object.assign(content, buildRawConfigForPageComponents(componentConfig, '/raw'));
+      menu = Object.assign(menu, buildSubNavigationConfig(componentConfig, ComponentsMenu, exampleType, siteRoot));
     } else if (link.path.includes('tests')) {
-      contentComponentClass = Tests;
-      content = Object.assign(content, buildTestComponentsConfig(componentConfig, ComponentTests, siteRoot));
+      exampleType = 'tests';
 
-      menuComponentClass = injectConfig(componentConfig, siteRoot)(TestsMenu);
-      menu = Object.assign(menu, buildTestComponentsConfig(componentConfig, ComponentTestsMenu, siteRoot));
+      menu = Object.assign(menu, buildSubNavigationConfig(componentConfig, ComponentsMenu, exampleType, siteRoot));
     }
+
+    const componentProps = { config: componentConfig, siteRoot, exampleType };
 
     content[link.path] = {
       path: link.path,
-      component: { default: { componentClass: contentComponentClass } },
+      component: buildComponent(Components, componentProps),
     };
+
 
     if (!link.path.includes('home')) {
       menu[link.path] = {
         path: link.path,
-        component: { default: { componentClass: menuComponentClass } },
+        component: buildComponent(ComponentsMenu, componentProps),
       };
     }
   });

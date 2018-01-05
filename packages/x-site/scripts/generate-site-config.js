@@ -9,7 +9,7 @@ const startCase = require('lodash.startcase');
 const repositoryName = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), '..', '..', 'package.json'))).name;
 const packagesPath = path.resolve(process.cwd(), '..', '..', 'packages');
 const testSearchPath = path.join('test-examples', '*?(.jsx|.js)');
-const searchPath = path.join(packagesPath, '*', 'lib', 'examples', `{*.example?(.jsx|.js),${testSearchPath}}`);
+const searchPath = path.join(packagesPath, '*', 'lib', 'examples', `{*.site-page?(.jsx|.js),${testSearchPath}}`);
 
 glob(searchPath, { nodir: true }, (er, foundFiles) => {
   const packageConfig = [];
@@ -19,27 +19,27 @@ glob(searchPath, { nodir: true }, (er, foundFiles) => {
   let currPkgConfig = {
     name: undefined,
     packageName: undefined,
-    examples: [],
+    pages: [],
     tests: [],
-    IUexamples: [],
+    IUpages: [],
   };
 
   foundFiles.forEach((filePath) => {
     const parsedPath = path.parse(filePath);
     const directory = parsedPath.dir.split(path.sep);
 
-    const isExampleFile = parsedPath.name.includes('.example');
+    const isExampleFile = parsedPath.name.includes('.site-page');
     // filepath results in -anything-/packages/package-name/examples/(*.example||test-examples/*)
     const pkgPosition = isExampleFile ? 3 : 4;
 
-    const fileName = parsedPath.name.replace('.example', '');
+    const fileName = parsedPath.name.replace('.site-page', '');
     const packageName = directory[directory.length - pkgPosition];
     const componentName = startCase(packageName.replace('terra-', ''));
 
     let importName;
     if (isExampleFile) {
       importName = `${startCase(packageName)}${fileName}`.replace(/\s/g, '');
-      const importPath = path.join('..', '..', `${packageName}`, 'examples', `${fileName}.example`);
+      const importPath = path.join('..', '..', `${packageName}`, 'examples', `${fileName}.site-page`);
       exampleImports += `import ${importName} from '${importPath}';\n`;
     } else {
       importName = `${startCase(fileName)}`.replace(/\s/g, '');
@@ -60,16 +60,16 @@ glob(searchPath, { nodir: true }, (er, foundFiles) => {
 
     if (packageName === currPkgConfig.packageName) {
       if (isExampleFile) {
-        currPkgConfig.examples.push(fileConfig);
-        currPkgConfig.UIexamples.push(UIConfig);
+        currPkgConfig.pages.push(fileConfig);
+        currPkgConfig.UIpages.push(UIConfig);
       } else {
         currPkgConfig.tests.push(fileConfig);
       }
     } else {
       if (isExampleFile) {
-        currPkgConfig = { name: componentName, packageName, examples: [fileConfig], tests: [], UIexamples: [UIConfig] };
+        currPkgConfig = { name: componentName, packageName, pages: [fileConfig], tests: [], UIpages: [UIConfig] };
       } else {
-        currPkgConfig = { name: componentName, packageName, examples: [], tests: [fileConfig], UIexamples: [] };
+        currPkgConfig = { name: componentName, packageName, pages: [], tests: [fileConfig], UIpages: [] };
       }
       packageConfig.push(currPkgConfig);
     }
@@ -82,7 +82,7 @@ glob(searchPath, { nodir: true }, (er, foundFiles) => {
   };
 
   packageConfig.forEach((pkg) => {
-    UIconfig[repositoryName].packages.push({ name: pkg.name, examples: pkg.UIexamples });
+    UIconfig[repositoryName].packages.push({ name: pkg.name, examples: pkg.UIpages });
   });
 
   // Write JSON file for terra-ui consumption
@@ -94,8 +94,8 @@ glob(searchPath, { nodir: true }, (er, foundFiles) => {
   packageConfig.forEach((pkg) => {
     const configInfo = {
       name: `'${pkg.name}'`,
-      examplesRoot: `'/components/${kebabCase(pkg.name)}'`,
-      examples: pkg.examples,
+      pagesRoot: `'/components/${kebabCase(pkg.name)}'`,
+      pages: pkg.pages,
       testsRoot: `'/tests/${kebabCase(pkg.name)}'`,
       tests: pkg.tests,
     };
