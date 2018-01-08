@@ -9,6 +9,8 @@
 | react-intl | ^2.3.0 | ^0.14.9 \|\| ^15.0.0 \|\| ^16.0.0 | Internationalize React apps. This library provides React components and an API to format dates, numbers, and strings, including pluralization and handling translations. |
 | react-router-dom | ^4.0.0 | >=15 | DOM bindings for React Router |
 | terra-app-delegate | ^1.7.1 | -- | An object that provides a set of functions used to facilitate communcation between Containers and their consuming Containers/Applications |
+| terra-application-header-layout | ^1.0.0 | ^15.4.2 | This component renders an application header layout. To be used with a layout. |
+| terra-application-menu-layout | ^1.0.0 | ^15.4.2 | This component renders an application menu layout. To be used with a terra-layout or terra-navigation-layout. |
 | terra-base | ^2.6.1 | ^15.4.2 | The base component sets minimal global styles for an application. |
 | terra-button | ^1.12.0 | ^15.4.2 | The terra-button component provides users a way to trigger actions in the UI. |
 | terra-collapsible-menu-view | ^1.1.1 | ^15.4.2 | The collapsible menu view is a mechanism that can be used in toolbar scenarios where actionable items will be displayed face-up and flex based on the space available. Any items that can not fit in the available space will be rolled into an ellipsis menu. |
@@ -17,13 +19,16 @@
 | terra-i18n-plugin | ^1.7.0 | ^15.4.2 | The terra-i18n-plugin component is a webpack config plugin that examines all dependencies for translation files and then aggregates all translations for a single language into one file. Each language file is placed into an aggregated-translations directory that is then loaded by terra-i18n. |
 | terra-icon | ^1.12.1 | ^15.4.2 | terra-icon |
 | terra-image | 1.11.1 | ^15.4.2 | terra-image |
-| terra-layout | ^1.0.0 | ^15.4.2 | Provides a responsive starting point for the positioning of application components. |
+| terra-layout | ^1.0.1 | ^15.4.2 | Provides a responsive starting point for the positioning of application components. |
 | terra-list | ^1.12.1 | ^15.4.2 | terra-list |
 | terra-markdown | ^1.9.1 | ^15.4.2 | terra-markdown |
-| terra-menu | ^1.6.0 | ^15.5.4 | The menu is a popup component that displays a list of items, item groups, and dividers. Menu Items can be actionable, have toggle-style selection, or have nested submenu items. Menu Item groups are a single-select grouping of menu items. The Menu will determine the height of the popup based on the number of items in the main menu. |
+| terra-menu | ^1.8.0 | ^15.5.4 | The menu is a popup component that displays a list of items, item groups, and dividers. Menu Items can be actionable, have toggle-style selection, or have nested submenu items. Menu Item groups are a single-select grouping of menu items. The Menu will determine the height of the popup based on the number of items in the main menu. |
+| terra-navigation-layout | ^1.0.0 | ^15.4.2 | The Terra Navigation Layout package includes a variety of components and utilities to provide configuration-based, react-router-driven navigation to Terra applications. |
 | terra-props-table | ^1.10.1 | ^15.4.2 | terra-props-table |
+| terra-responsive-element | ^1.13.0 | ^15.4.2 | The terra-responsive-element conditionally renders components based on viewport size |
 | terra-slide-panel | ^1.11.1 | ^15.4.2 | terra-slide-panel |
 | terra-theme-provider | ^1.6.1 | ^15.4.2 | The theme provider component provides a theme to Terra UI components rendered within it via CSS custom properties a.k.a CSS variables. |
+| terra-toggle-button | ^1.15.0 | ^15.4.2 | Toggle button component that transitions content in and out with the click on a button. |
 
 ## devDependencies
 | Dependency | Version | React Version | Description |
@@ -40,6 +45,7 @@
 | html-webpack-plugin | ^2.30.0 | -- | Simplifies creation of HTML files to serve your webpack bundles |
 | json-loader | ^0.5.7 | -- | json loader module for webpack |
 | node-sass | ^4.5.2 | -- | Wrapper around libsass |
+| postcss-assets-webpack-plugin | ^1.1.0 | -- | Webpack plugin to apply postcss on webpack's emit event |
 | postcss-custom-properties | ^6.0.1 | -- | PostCSS plugin to polyfill W3C CSS Custom Properties for cascading variables |
 | postcss-loader | ^2.0.6 | -- | PostCSS loader for webpack |
 | postcss-rtl | ^1.1.2 | -- | PostCSS plugin for RTL-optimizations |
