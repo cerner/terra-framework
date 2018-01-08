@@ -5,7 +5,7 @@ import RoutingStackDelegate from
 import SiteUtils from './SiteUtils';
 
 import MenuList from '../common/menu/MenuList';
-import { componentConfigPropType, siteConfigPropType } from '../configPropTypes';
+import { componentConfigPropType, siteConfigPropType } from '../config/proptypes.config';
 
 const menuText = {
   pages: 'Components',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
-import NavigationLayout from '../../src/NavigationLayout';
+import NavigationLayout from '../../lib/NavigationLayout';
 
 const config = {
   header: {

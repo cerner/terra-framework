@@ -1,5 +1,5 @@
 import React from 'react';
-import ApplicationMenuLayout from '../../src/ApplicationMenuLayout';
+import ApplicationMenuLayout from '../../lib/ApplicationMenuLayout';
 
 const ApplicationMenuDefault = () => (
   <ApplicationMenuLayout

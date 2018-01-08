@@ -31,7 +31,7 @@ glob(searchPath, { nodir: true }, (er, foundFiles) => {
     packageName: undefined,
     pages: [],
     tests: [],
-    IUpages: [],
+    UIpages: [],
   };
 
   foundFiles.forEach((filePath) => {
@@ -101,8 +101,6 @@ glob(searchPath, { nodir: true }, (er, foundFiles) => {
   // Write JSON file for terra-ui consumption
   fs.writeFileSync(path.join(process.cwd(), 'src', 'terra-ui-config.json'), JSON.stringify(UIconfig, null, 2));
 
-
-  // update imports to be non-mac specific paths....?
   const componentConfig = {};
   packageConfig.forEach((pkg) => {
     const pages = commander.pages && pkg.pages.length > 0 ? { pages: pkg.pages } : {};
@@ -117,6 +115,13 @@ glob(searchPath, { nodir: true }, (er, foundFiles) => {
     componentConfig[`'${pkg.packageName}'`] = configInfo;
   });
 
+  if (exampleImports) {
+    exampleImports = `// Component Examples\n${exampleImports}`;
+  }
+
+  if (testImports) {
+    testImports = `// Component Test Examples\n${testImports}`;
+  }
 
   // // Generate configuration file for site consumption
   fs.readFile(path.join(__dirname, 'index.template'), 'utf8', (err, data) => {

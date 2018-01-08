@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
-import { siteConfigPropType } from '../configPropTypes';
+import { siteConfigPropType } from '../config/proptypes.config';
 import SiteUtils from './SiteUtils';
 import Placeholder from '../common/Placeholder';
 

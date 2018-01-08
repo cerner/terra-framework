@@ -14,6 +14,7 @@ const i18nSupportedLocales = require('terra-i18n/lib/i18nSupportedLocales');
 module.exports = {
   entry: {
     'babel-polyfill': 'babel-polyfill',
+    'terra-site': path.resolve(path.join(process.cwd(), 'src', 'Index')),
   },
   module: {
     rules: [{
@@ -57,7 +58,7 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('[name]-[hash].css'),
     new HtmlWebpackPlugin({
-      template: path.join(process.cwd(), 'src', 'index.html'),
+      template: path.join(__dirname, 'src', 'app', 'index.html'),
       chunks: ['babel-polyfill', 'terra-framework'],
     }),
     new I18nAggregatorPlugin({

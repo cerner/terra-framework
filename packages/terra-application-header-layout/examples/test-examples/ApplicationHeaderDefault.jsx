@@ -1,5 +1,5 @@
 import React from 'react';
-import ApplicationHeaderLayout from '../../src/ApplicationHeaderLayout';
+import ApplicationHeaderLayout from '../../lib/ApplicationHeaderLayout';
 
 const ApplicationHeaderDefault = () => (
   <ApplicationHeaderLayout

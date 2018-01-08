@@ -89,14 +89,16 @@ const routeConfiguration = (siteConfig, componentConfig) => {
   };
 
   navigation.links.forEach((link) => {
-    // build navigation link configuration
-    configuredLinks.push({
-      path: link.path,
-      text: link.text,
-    });
-
     const exampleType = link.exampleType;
     const componentProps = { config: componentConfig, pathRoot: link.path, exampleType };
+
+    // build navigation link configuration
+    if (exampleType !== 'tests') {
+      configuredLinks.push({
+        path: link.path,
+        text: link.text,
+      });
+    }
 
     // build content configuration
     let contentComponent = Components;

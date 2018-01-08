@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../../src/Layout';
+import Layout from '../../lib/Layout';
 import TestMenu from './test-content//TestMenu';
 import TestContent from './test-content//TestContent';
 

@@ -1,25 +1,13 @@
+import siteConfig from 'x-site/src/app/config/site.config';
 import Home from './Home';
 
-const config = {
-  rootPath: '/site',
-  navigation: {
-    index: '/site/home',
-    links: [{
-      path: '/site/home',
-      text: 'Home',
-      component: Home,
-      isStatic: true,
-    }, {
-      path: '/site/components',
-      text: 'Components',
-      exampleType: 'pages',
-    }, {
-      path: '/site/tests',
-      text: 'Tests',
-      exampleType: 'tests',
-      isStatic: true,
-    }],
-  },
-};
+const homeLink = [{
+  path: '/site/home',
+  text: 'Home',
+  component: Home,
+  isStatic: true,
+}];
 
-export default config;
+siteConfig.navigation.links = homeLink.concat(siteConfig.navigation.links);
+
+export default siteConfig;

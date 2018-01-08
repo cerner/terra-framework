@@ -4,7 +4,14 @@ import { HashRouter as Router } from 'react-router-dom';
 import { Provider } from 'xfc';
 
 import App from 'x-site/src/app/App';
-import { routes, navigation } from './appConfig';
+import routeConfiguration from 'x-site/src/app/configureApp';
+
+import componentConfig from './generatedComponentConfig';
+import siteConfig from './siteConfig';
+
+const { routeConfig, navigation } = routeConfiguration(siteConfig, componentConfig);
+
+const routes = Object.freeze(routeConfig);
 
 Provider.init({
   acls: ['*'],
