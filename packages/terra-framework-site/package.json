@@ -1,6 +1,6 @@
 {
   "name": "terra-framework-site",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Documentation Site for Functional Verification",
   "repository": {
     "type": "git",
@@ -31,9 +31,9 @@
     "prop-types": "^15.5.8",
     "react-intl": "^2.3.0",
     "react-router-dom": "^4.0.0",
-    "terra-application-header-layout": "^0.x",
-    "terra-application-menu-layout": "^0.x",
     "terra-app-delegate": "^1.7.1",
+    "terra-application-header-layout": "^1.0.0",
+    "terra-application-menu-layout": "^1.0.0",
     "terra-base": "^2.6.1",
     "terra-button": "^1.12.0",
     "terra-collapsible-menu-view": "^1.1.1",
