@@ -2,7 +2,7 @@
 import React from 'react';
 import PropsTable from 'terra-props-table';
 import Markdown from 'terra-markdown';
-import IndexExample from './IndexExampleTemplate';
+import IndexTemplate from 'terra-site/lib/IndexPageTemplate';
 
 import ReadMe from '../docs/README.md';
 import { version } from '../package.json';
@@ -23,7 +23,7 @@ const NavigationLayoutExamples = () => (
     <Markdown id="readme" src={ReadMe} />
 
     <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
-    <IndexExample
+    <IndexTemplate
       title="Example Navigation Layout"
       example={<NavigationLayoutStandard />}
       exampleSrc={NavigationLayoutStandardSrc}

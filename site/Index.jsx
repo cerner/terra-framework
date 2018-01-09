@@ -1,10 +1,11 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router } from 'react-router-dom';
 import { Provider } from 'xfc';
 
-import App from 'x-site/src/app/App';
-import routeConfiguration from 'x-site/src/app/configureApp';
+import App from 'terra-site/src/app/App';
+import routeConfiguration from 'terra-site/src/app/configureApp';
 
 import componentConfig from './generatedComponentConfig';
 import siteConfig from './siteConfig';

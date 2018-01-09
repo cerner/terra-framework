@@ -100,6 +100,7 @@ const NavigationLayoutComplex = () => (
     <NavigationLayout
       config={config}
       menuText="Menu"
+      id="test-root"
     />
   </MemoryRouter>
 );

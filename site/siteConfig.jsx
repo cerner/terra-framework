@@ -1,4 +1,4 @@
-import siteConfig from 'x-site/src/app/config/site.config';
+import siteConfig from 'terra-site/src/config/site.config';
 import Home from './Home';
 
 const homeLink = [{
@@ -8,6 +8,7 @@ const homeLink = [{
   isStatic: true,
 }];
 
+siteConfig.navigation.index = homeLink[0].path;
 siteConfig.navigation.links = homeLink.concat(siteConfig.navigation.links);
 
 export default siteConfig;

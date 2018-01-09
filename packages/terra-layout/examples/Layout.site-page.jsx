@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import React from 'react';
 import PropsTable from 'terra-props-table';
-import IndexExample from './IndexExampleTemplate';
+import IndexTemplate from 'terra-site/lib/IndexPageTemplate';
 
 import { version } from '../package.json';
 
@@ -23,24 +23,24 @@ const NavigationExamples = () => (
     <div id="version">Version: {version}</div>
 
     <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
-    <IndexExample
+    <IndexTemplate
       title="Layout - Standard"
       example={<LayoutStandard />}
       exampleSrc={LayoutStandardSrc}
     />
-    <IndexExample
+    <IndexTemplate
       title="Layout - No Menu"
       example={<LayoutMenuDisabled />}
       exampleSrc={LayoutMenuDisabledSrc}
     />
 
-    <IndexExample
+    <IndexTemplate
       title="Layout - No Header"
       example={<LayoutNoHeader />}
       exampleSrc={LayoutNoHeaderSrc}
     />
 
-    <IndexExample
+    <IndexTemplate
       title="Layout -  Long Text"
       example={<LayoutLongText />}
       exampleSrc={LayoutLongTextSrc}

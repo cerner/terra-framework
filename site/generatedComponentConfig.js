@@ -1,19 +1,19 @@
 // Component Examples
-import TerraApplicationHeaderLayoutIndex from '../../terra-application-header-layout/examples/Index.site-page';
-import TerraApplicationMenuLayoutIndex from '../../terra-application-menu-layout/examples/Index.site-page';
-import TerraLayoutIndex from '../../terra-layout/examples/Index.site-page';
-import TerraLayoutLayout from '../../terra-layout/examples/Layout.site-page';
-import TerraNavigationLayoutIndex from '../../terra-navigation-layout/examples/Index.site-page';
+import TerraApplicationHeaderLayoutIndex from '../packages/terra-application-header-layout/examples/Index.site-page';
+import TerraApplicationMenuLayoutIndex from '../packages/terra-application-menu-layout/examples/Index.site-page';
+import TerraLayoutIndex from '../packages/terra-layout/examples/Index.site-page';
+import TerraLayoutLayout from '../packages/terra-layout/examples/Layout.site-page';
+import TerraNavigationLayoutIndex from '../packages/terra-navigation-layout/examples/Index.site-page';
 
 // Component Test Examples
-import ApplicationHeaderDefault from '../../terra-application-header-layout/examples/test-examples/ApplicationHeaderDefault';
-import ApplicationMenuDefault from '../../terra-application-menu-layout/examples/test-examples/ApplicationMenuDefault';
-import LayoutDefault from '../../terra-layout/examples/test-examples/LayoutDefault';
-import LayoutLongText from '../../terra-layout/examples/test-examples/LayoutLongText';
-import LayoutNoHeader from '../../terra-layout/examples/test-examples/LayoutNoHeader';
-import LayoutNoMenu from '../../terra-layout/examples/test-examples/LayoutNoMenu';
-import NavigationLayoutBasic from '../../terra-navigation-layout/examples/test-examples/NavigationLayoutBasic';
-import NavigationLayoutComplex from '../../terra-navigation-layout/examples/test-examples/NavigationLayoutComplex';
+import ApplicationHeaderDefault from '../packages/terra-application-header-layout/examples/test-examples/ApplicationHeaderDefault';
+import ApplicationMenuDefault from '../packages/terra-application-menu-layout/examples/test-examples/ApplicationMenuDefault';
+import LayoutDefault from '../packages/terra-layout/examples/test-examples/LayoutDefault';
+import LayoutLongText from '../packages/terra-layout/examples/test-examples/LayoutLongText';
+import LayoutNoHeader from '../packages/terra-layout/examples/test-examples/LayoutNoHeader';
+import LayoutNoMenu from '../packages/terra-layout/examples/test-examples/LayoutNoMenu';
+import NavigationLayoutBasic from '../packages/terra-navigation-layout/examples/test-examples/NavigationLayoutBasic';
+import NavigationLayoutComplex from '../packages/terra-navigation-layout/examples/test-examples/NavigationLayoutComplex';
 
 const componentConfig = {
   'terra-application-header-layout': {

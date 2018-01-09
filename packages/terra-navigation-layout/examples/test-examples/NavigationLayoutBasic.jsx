@@ -50,6 +50,7 @@ const NavigationLayoutBasic = () => (
     <NavigationLayout
       config={config}
       menuText="Menu"
+      id="test-root"
     />
   </MemoryRouter>
 );
