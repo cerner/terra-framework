@@ -50,7 +50,7 @@ class Layout extends React.Component {
 
     this.toggleMenu = this.toggleMenu.bind(this);
     this.togglePin = this.togglePin.bind(this);
-    this.updateSize = this.updateSize.bind(this);
+    this.updateSize = this.debounce(this.updateSize.bind(this), 100);
     this.renderHeader = this.renderHeader.bind(this);
     this.renderMenu = this.renderMenu.bind(this);
     this.renderContent = this.renderContent.bind(this);
@@ -70,6 +70,17 @@ class Layout extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateSize);
+  }
+
+  debounce(fn, delay) {
+    let timer = null;
+    return (...args) => {
+      const context = this;
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        fn.apply(context, args);
+      }, delay);
+    };
   }
 
   updateSize() {
