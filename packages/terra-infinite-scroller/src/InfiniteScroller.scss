@@ -1,0 +1,31 @@
+:local {
+  .infinite-scroller {
+    display: block;
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar; // Ensures scrollbars do not affect width in IE10
+    position: relative;
+    width: 100%;
+  }
+
+  .full-loading {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .loading {
+    display: block;
+    height: 80px;
+    position: relative;
+    width: 100%;
+  }
+
+  .spacer {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+}

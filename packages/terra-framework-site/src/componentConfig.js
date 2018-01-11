@@ -10,6 +10,7 @@ import ApplicationMenuDefault from 'terra-application-menu-layout/tests/nightwat
 
 import LayoutExample from './examples/layout/Index';
 import HeaderExample from './examples/application-header-layout/Index';
+import InfiniteScrollerExample from './examples/infinite-scroller/Index';
 import MenuExample from './examples/application-menu-layout/Index';
 import NavigationLayoutExample from './examples/navigation-layout/Index';
 
@@ -98,6 +99,14 @@ const componentConfig = {
       component: ApplicationMenuDefault,
       description: 'Default',
     }],
+  },
+  infiniteScroller: {
+    name: 'Infinite Scroller',
+    example: {
+      path: '/components/infinite-scroller',
+      component: InfiniteScrollerExample,
+      description: 'Infinite Scroller',
+    },
   },
 };
 
