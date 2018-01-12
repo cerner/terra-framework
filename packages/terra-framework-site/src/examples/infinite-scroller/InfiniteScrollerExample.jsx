@@ -13,8 +13,13 @@ class scrollerExample extends React.Component {
     super(props);
 
     this.addMoreData = this.debounce(this.addMoreData.bind(this), 1000);
+    this.handleOnChange = this.handleOnChange.bind(this);
 
-    this.state = { stillLoading: true, numberOfPages: 0 };
+    this.state = { stillLoading: true, numberOfPages: 0, selectedIndexes: [] };
+  }
+
+  handleOnChange(event, index) {
+    this.setState({ selectedIndexes: [index] });
   }
 
   addMoreData() {
@@ -53,16 +58,20 @@ class scrollerExample extends React.Component {
     const items = [];
     for (let i = 0; i < 15 * this.state.numberOfPages; i += 1) {
       items.push(
-        <ItemView
+        <InfiniteScroller.Item
           key={`${i}`}
-          displays={displays}
-          layout="twoColumns"
-          isTruncated
-          textEmphasis="start"
-          startAccessory={accessoryStart}
-          endAccessory={accessoryEnd}
-          comment={comment}
-          style={{ backgroundColor: 'white', marginTop: '10px', marginBottom: '10px' }}
+          content={
+            <ItemView
+              displays={displays}
+              layout="twoColumns"
+              isTruncated
+              textEmphasis="start"
+              startAccessory={accessoryStart}
+              endAccessory={accessoryEnd}
+              comment={comment}
+              style={{ marginTop: '10px', marginBottom: '10px' }}
+            />
+          }
         />,
       );
     }
@@ -86,6 +95,7 @@ class scrollerExample extends React.Component {
           onRequestItems={this.addMoreData}
           initialLoadingIndicator={fullLoading}
           progressiveLoadingIndicator={progressLoading}
+          listProps={{ isSelectable: true, isDivided: true, selectedIndexes: this.state.selectedIndexes, onChange: this.handleOnChange }}
         >
           {items}
         </InfiniteScroller>
