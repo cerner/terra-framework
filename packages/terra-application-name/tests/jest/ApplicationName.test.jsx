@@ -13,7 +13,7 @@ describe('ApplicationName', () => {
   // Prop Tests
   it('should use the default value when no value is given', () => {
     const wrapper = shallow(defaultRender);
-    expect(wrapper.find('.application-name').text()).toEqual('defualt');
+    expect(wrapper.find('.application-name').text()).toEqual('default');
   });
 
   // Structure Tests

@@ -1,17 +1,17 @@
-# Terra Framework Application Name
+# Terra Application Name
 
 {insert description}
 
 ## Getting Started
 
 - Install with [npmjs](https://www.npmjs.com):
-  - `npm install terra-framework-application-name`
+  - `npm install terra-application-name`
 
 ## Usage
 
 ```jsx
 import React from 'react';
-import ApplicationName from 'terra-framework-application-name';
+import ApplicationName from 'terra-application-name';
 
 <ApplicationName {props...} />
 ```

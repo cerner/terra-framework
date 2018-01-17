@@ -1,5 +1,5 @@
 {
-  "name": "terra-framework-application-name",
+  "name": "terra-application-name",
   "main": "lib/ApplicationName.js",
   "version": "0.0.0",
   "description": "{insert description}",
@@ -11,7 +11,7 @@
     "Cerner",
     "Terra",
     "Framework",
-    "terra-framework-application-name",
+    "terra-application-name",
     "ApplicationName",
     "UI"
   ],

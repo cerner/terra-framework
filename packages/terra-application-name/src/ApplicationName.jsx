@@ -24,7 +24,7 @@ const ApplicationName = ({ name, ...customProps }) => {
     attributes.className,
   ]);
 
-  return (<div {...attributes} className={ApplicationNameClassNames} />)
+  return (<div {...attributes} className={ApplicationNameClassNames}>{name}</div>);
 };
 
 ApplicationName.propTypes = propTypes;

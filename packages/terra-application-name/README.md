@@ -1,18 +1,18 @@
-# Terra Framework Application Name
+# Terra Application Name
 
 
-[![NPM version](http://img.shields.io/npm/v/terra-framework-application-name.svg)](https://www.npmjs.org/package/terra-framework-application-name)
+[![NPM version](http://img.shields.io/npm/v/terra-application-name.svg)](https://www.npmjs.org/package/terra-application-name)
 [![Build Status](https://travis-ci.org/cerner/terra-framework.svg?branch=master)](https://travis-ci.org/cerner/terra-framework)
 
 {insert description}
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-framework-application-name/docs)
+- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-name/docs)
 - [LICENSE](#license)
 
 ## Getting Started
 
-- Install from [npmjs](https://www.npmjs.com): `npm install terra-framework-application-name`
+- Install from [npmjs](https://www.npmjs.com): `npm install terra-application-name`
 
 ## LICENSE
 
