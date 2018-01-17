@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Added generator code for embedded-component.
 
 1.1.0 - (January 8, 2018)
 ------------------
