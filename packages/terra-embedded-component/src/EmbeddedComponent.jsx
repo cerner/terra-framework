@@ -103,8 +103,9 @@ class EmbeddedComponent extends React.Component {
 
   render() {
     const { module: Component, cssReady } = this.state;
+    const { entry, manifest, placeholder, basePath, ...customProps } = this.props;
     if (cssReady && Component) {
-      return <Component />;
+      return <Component {...customProps} />;
     }
 
     return this.props.placeholder;
