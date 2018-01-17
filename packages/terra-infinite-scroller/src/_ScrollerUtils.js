@@ -145,18 +145,18 @@ const getVisibleScrollGroups = (scrollGroups, childrenArray, topIndex, bottomInd
   return visibleChildren;
 };
 
-const getForcedChildren = (lastCount, childrenArray, wrapperFunction) => {
-  const forcedChildren = [];
+const getNewScrollGroups = (lastCount, childrenArray, wrapperFunction) => {
+  const newChildren = [];
   for (let i = lastCount; i < childrenArray.length; i += 1) {
-    forcedChildren.push(wrapperFunction(childrenArray[i], i, true));
+    newChildren.push(wrapperFunction(childrenArray[i], i, true));
   }
-  return forcedChildren;
+  return newChildren;
 };
 
 const ScrollUtils = {
   getHiddenItems,
   getContentData,
-  getForcedChildren,
+  getNewScrollGroups,
   getVisibleScrollGroups,
   shouldTriggerItemRequest,
 };
