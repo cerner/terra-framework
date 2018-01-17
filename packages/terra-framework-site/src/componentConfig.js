@@ -7,11 +7,14 @@ import NavigationLayoutBasic from 'terra-navigation-layout/tests/nightwatch/Navi
 import NavigationLayoutComplex from 'terra-navigation-layout/tests/nightwatch/NavigationLayoutComplex';
 import ApplicationHeaderDefault from 'terra-application-header-layout/tests/nightwatch/ApplicationHeaderDefault';
 import ApplicationMenuDefault from 'terra-application-menu-layout/tests/nightwatch/ApplicationMenuDefault';
+import EmbeddedComponentTests from 'terra-embedded-component/tests/nightwatch/DefaultEmbeddedComponent';
 
 import LayoutExample from './examples/layout/Index';
 import HeaderExample from './examples/application-header-layout/Index';
 import MenuExample from './examples/application-menu-layout/Index';
 import NavigationLayoutExample from './examples/navigation-layout/Index';
+
+import EmbeddedComponentExample from './examples/embedded-component/Index';
 
 const itemConfigPropType = PropTypes.shape({
   path: PropTypes.string,
@@ -96,6 +99,20 @@ const componentConfig = {
     tests: [{
       path: '/default',
       component: ApplicationMenuDefault,
+      description: 'Default',
+    }],
+  },
+  embeddedComponent: {
+    name: 'Embedded Component',
+    example: {
+      path: '/components/embedded-component',
+      component: EmbeddedComponentExample,
+      description: 'Application Menu Layout',
+    },
+    testRoot: '/tests/embedded-component',
+    tests: [{
+      path: '/default',
+      component: EmbeddedComponentTests,
       description: 'Default',
     }],
   },

@@ -4,9 +4,7 @@
   "commands": {
     "publish": {
       "ignore": [
-        "DEPENDENCIES.md",
-        "terra-embedded-component"
-      ]
+        "DEPENDENCIES.md"      ]
     }
   },
   "packages": ["packages/*"]

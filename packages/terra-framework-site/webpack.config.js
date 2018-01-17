@@ -113,4 +113,8 @@ module.exports = {
   resolveLoader: {
     modules: [path.resolve(path.join(__dirname, 'node_modules'))],
   },
+  // See: https://github.com/webpack-contrib/css-loader/issues/447
+  node: {
+    fs: 'empty',
+  },
 };
