@@ -24,7 +24,7 @@ const EmbeddedComponent = ({ name, ...customProps }) => {
     attributes.className,
   ]);
 
-  return (<div {...attributes} className={EmbeddedComponentClassNames} />)
+  return (<div {...attributes} className={EmbeddedComponentClassNames} />);
 };
 
 EmbeddedComponent.propTypes = propTypes;
