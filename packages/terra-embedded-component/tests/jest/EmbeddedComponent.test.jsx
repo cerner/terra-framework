@@ -13,7 +13,7 @@ describe('EmbeddedComponent', () => {
   // Prop Tests
   it('should use the default value when no value is given', () => {
     const wrapper = shallow(defaultRender);
-    expect(wrapper.find('.embedded-component').text()).toEqual('defualt');
+    expect(wrapper.find('.embedded-component').text()).toEqual('default');
   });
 
   // Structure Tests

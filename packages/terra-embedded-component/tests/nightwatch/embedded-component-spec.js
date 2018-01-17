@@ -3,9 +3,11 @@
 const resizeTo = require('terra-toolkit/lib/nightwatch/responsive-helpers').resizeTo;
 
 module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], {
+  /*
+  TODO: Uncomment once tests are created.
   'Displays a default embedded-component': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/embedded-component-tests/default`)
       .expect.element('.embedded-component').to.be.present;
-  },
+  }, */
 });
