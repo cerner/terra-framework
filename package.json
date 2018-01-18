@@ -109,7 +109,6 @@
     "stylelint-order": "^0.7.0",
     "stylelint-scss": "^2.0.0",
     "stylelint-suitcss": "^1.0.0",
-    "terra-markdown": "^1.9.1",
     "terra-props-table": "^1.0.0",
     "terra-site": "git://github.com/cerner/terra-site.git#dynamic-site",
     "terra-toolkit": "^2.2.0",

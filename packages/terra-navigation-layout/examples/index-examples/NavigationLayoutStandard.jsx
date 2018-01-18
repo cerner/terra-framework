@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions  */
 import React from 'react';
 import { MemoryRouter, withRouter } from 'react-router-dom';
 import Markdown from 'terra-markdown';

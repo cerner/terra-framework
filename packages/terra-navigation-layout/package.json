@@ -43,11 +43,8 @@
     "terra-button": "^1.10.0",
     "terra-icon": "^1.11.0",
     "terra-layout": "^1.0.1",
-    "terra-markdown": "^1.9.1",
     "terra-menu": "^1.2.0",
-    "terra-responsive-element": "^1.11.1",
-    "terra-slide-panel": "^1.11.1",
-    "terra-toggle-button": "^1.15.0"
+    "terra-responsive-element": "^1.11.1"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

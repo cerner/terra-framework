@@ -35,8 +35,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-base": "^2.5.0",
-    "terra-slide-panel": "^1.11.1"
+    "terra-base": "^2.5.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
