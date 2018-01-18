@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import { NavLink } from 'react-router-dom';
-import styles from './Tabs.scss';
+import styles from './ApplicationTabs.scss';
 
 const cx = classNames.bind(styles);
 
@@ -28,11 +28,10 @@ const TabPane = ({
   path,
   ...customProps
 }) => {
-  const attributes = Object.assign({}, customProps);
   const tabClassNames = cx([
     'tab',
     { 'is-hidden': isHidden },
-    attributes.className,
+    customProps.className,
   ]);
 
   return (
