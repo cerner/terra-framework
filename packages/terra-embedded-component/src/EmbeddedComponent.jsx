@@ -9,33 +9,31 @@ window.define = window.SystemJS.amdDefine;
 window.require = window.requirejs = SystemJS.amdRequire;
 
 const propTypes = {
- /*
- * The basePath to load the manifest and manifest asset dependencies from.
- */
+
+ /**
+  * The basePath to load the manifest and manifest asset dependencies from.
+  * */
   basePath: PropTypes.string.isRequired,
 
-  /*
-  * A placeholder to display while the component is laoding.
-  */
+  /**
+   * A placeholder to display while the component is laoding.
+   * */
   placeholder: PropTypes.element,
 
-  /*
-  * The entry file in the manifest to use to load the embeddable module.
-  */
+  /**
+   * The entry file in the manifest to use to load the embeddable module.
+   * */
   entry: PropTypes.string,
 
-  /*
-  * A manifest object defining the asset dependencies. If provided will be used instead
-  * of fetching a manifest from the basePath.
-  */
+  /**
+   * A manifest object defining the asset dependencies. If provided will be used instead
+   * of fetching a manifest from the basePath.
+   * */
   manifest: PropTypes.object,
 };
 
 const defaultProps = {
   entry: 'index.js',
-  placeholder: null,
-  manifest: null,
-  basePath: null,
 };
 
 
