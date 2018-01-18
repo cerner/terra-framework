@@ -17,7 +17,6 @@
 | Dependency | Version | React Version | Description |
 |-|-|-|-|
 | react-router-dom | ^4.0.0 | >=15 | DOM bindings for React Router |
-| terra-props-table | ^1.10.1 | ^15.4.2 | terra-props-table |
 
 ## peerDependencies
 | Dependency | Version | React Version | Description |

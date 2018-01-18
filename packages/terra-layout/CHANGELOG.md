@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Debounce to resize of layout
 
 ###Changed
 * Updating tests to point to new terra-framework-site location.

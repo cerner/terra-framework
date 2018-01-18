@@ -26,7 +26,7 @@
 | lerna | ^2.1.2 | -- | Tool for managing JavaScript projects with multiple packages |
 | link-parent-bin | ^0.1.3 | -- | [![Build Status](https://travis-ci.org/nicojs/node-link-parent-bin.svg?branch=master)](https://travis-ci.org/nicojs/node-link-parent-bin) |
 | load-json-file | ^2.0.0 | -- | Read and parse a JSON file |
-| nightwatch | ^0.9.12 | -- | A node.js bindings implementation for selenium 2.0/webdriver |
+| nightwatch | ^0.9.12 | -- | Easy to use Node.js based End-to-End testing solution for browser based apps and websites, using the W3C WebDriver API. |
 | react | ^15.5.4 | -- | React is a JavaScript library for building user interfaces. |
 | react-dom | ^15.5.4 | ^15.6.2 | React package for working with the DOM. |
 | react-router | ^3.0.5 | ^0.14.0 \|\| ^15.0.0 \|\| ^16.0.0-rc | A complete routing library for React |
@@ -36,6 +36,7 @@
 | stylelint | ~8.0.0 | -- | A mighty, modern CSS linter. |
 | stylelint-config-sass-guidelines | ^3.0.0 | -- | Sharable stylelint config based on https://sass-guidelin.es/ |
 | stylelint-suitcss | ^1.0.0 | -- | A collection of stylelint plugins for SUIT CSS |
+| terra-props-table | ^1.0.0 | ^15.4.2 | terra-props-table |
 | terra-toolkit | ^2.2.0 | ^15.4.2 | Utilities to help when developing terra modules. |
 | webpack | ^3.6.0 | -- | Packs CommonJs/AMD modules for the browser. Allows to split your codebase into multiple bundles, which can be loaded on demand. Support loaders to preprocess files, i.e. json, jsx, es7, css, less, ... and your custom stuff. |
 | webpack-dev-server | 2.7.1 | -- | Serves a webpack app. Updates the browser on changes. |
