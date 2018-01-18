@@ -109,7 +109,7 @@
     "stylelint-suitcss": "^1.0.0",
     "terra-markdown": "^1.9.1",
     "terra-props-table": "^1.0.0",
-    "terra-site": "file:../terra-site",
+    "terra-site": "git://github.com/cerner/terra-site.git#dynamic-site",
     "terra-toolkit": "^2.2.0",
     "webpack": "^3.6.0",
     "webpack-dev-server": "2.7.1",

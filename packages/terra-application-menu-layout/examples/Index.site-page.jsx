@@ -12,7 +12,7 @@ import MenuLayoutSrc from '!raw-loader!../src/ApplicationMenuLayout.jsx';
 
 // Example File
 import MenuWireframe from './index-examples/MenuWireframe';
-import MenuWireframeSrc from '!raw-loader!./index-examples/MenuWireframe.jsx';
+import MenuWireframeSrc from '!raw-loader!../examples/index-examples/MenuWireframe.jsx';
 
 const NavigationExamples = () => (
   <div>

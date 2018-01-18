@@ -12,7 +12,7 @@ import NavigationLayoutSrc from '!raw-loader!../src/NavigationLayout.jsx';
 
 // Example Files
 import NavigationLayoutStandard from './index-examples/NavigationLayoutStandard';
-import NavigationLayoutStandardSrc from '!raw-loader!./index-examples/NavigationLayoutStandard.jsx';
+import NavigationLayoutStandardSrc from '!raw-loader!../examples/index-examples/NavigationLayoutStandard.jsx';
 
 const NavigationLayoutExamples = () => (
   <div>

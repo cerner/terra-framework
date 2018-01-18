@@ -1,4 +1,5 @@
 lib
+examples-lib
 node_modules
 coverage
 build

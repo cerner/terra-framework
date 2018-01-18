@@ -26,6 +26,6 @@ const themes = {
 
 ReactDOM.render((
   <Router>
-    <App routeConfig={routes} navigation={navigation} themes={themes} appSubtitle="Framework" />
+    <App routeConfig={routes} navigation={navigation} rootPath={siteConfig.rootPath} themes={themes} appTitle="Title" appSubtitle="Framework" appLogoSrc={siteConfig.appLogoSrc} />
   </Router>
 ), document.getElementById('root'));

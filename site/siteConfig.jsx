@@ -1,4 +1,4 @@
-import siteConfig from 'terra-site/src/config/site.config';
+import siteConfig from 'terra-site/lib/config/site.config';
 import Home from './Home';
 
 const homeLink = [{
@@ -8,6 +8,7 @@ const homeLink = [{
   isStatic: true,
 }];
 
+siteConfig.appLogoSrc = 'https://github.com/cerner/terra-core/raw/master/terra.png';
 siteConfig.navigation.index = homeLink[0].path;
 siteConfig.navigation.links = homeLink.concat(siteConfig.navigation.links);
 
