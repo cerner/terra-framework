@@ -107,7 +107,7 @@ const componentConfig = {
     example: {
       path: '/components/embedded-component',
       component: EmbeddedComponentExample,
-      description: 'Application Menu Layout',
+      description: 'Embedded Component',
     },
     testRoot: '/tests/embedded-component',
     tests: [{
