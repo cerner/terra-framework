@@ -48,7 +48,6 @@ class EmbeddedComponent extends React.Component {
 
   componentDidMount() {
     this.fetchManifest().then((manifest) => {
-      console.log('loaded manifest', manifest);
       this.loadCSS(manifest);
       this.loadModule(this.getAbsolutePath(manifest[this.props.entry]));
     });

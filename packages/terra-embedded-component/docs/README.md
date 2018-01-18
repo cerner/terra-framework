@@ -18,7 +18,7 @@ import EmbeddedComponent from 'terra-embedded-component';
 <EmbeddedComponent basePath="http://mycomponent.com/path" {props...} />
 ```
 
-## Building External Components
+## Building Embeddable Components
 
 EmbeddedComponent looks for a `manifest.json` at the `basePath` to identify the component dependencies.
 The JavaScript modules are exepcted to be in [AMD](https://en.wikipedia.org/wiki/Asynchronous_module_definition) format.
