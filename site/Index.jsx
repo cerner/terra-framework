@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 import { HashRouter as Router } from 'react-router-dom';
 import { Provider } from 'xfc';
 
-import App from 'terra-site/src/app/App';
-import routeConfiguration from 'terra-site/src/app/configureApp';
+import App from 'terra-site/lib/app/App';
+import routeConfiguration from 'terra-site/lib/app/configureApp';
 
 import componentConfig from './generatedComponentConfig';
 import siteConfig from './siteConfig';

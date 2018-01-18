@@ -3,12 +3,14 @@
 // Component Examples
 import TerraApplicationHeaderLayoutIndex from '../packages/terra-application-header-layout/examples-lib/Index.site-page';
 import TerraApplicationMenuLayoutIndex from '../packages/terra-application-menu-layout/examples-lib/Index.site-page';
+import TerraEmbeddedComponentIndex from '../packages/terra-embedded-component/examples-lib/Index.site-page';
 import TerraLayoutIndex from '../packages/terra-layout/examples-lib/Index.site-page';
 import TerraNavigationLayoutIndex from '../packages/terra-navigation-layout/examples-lib/Index.site-page';
 
 // Component Test Examples
 import ApplicationHeaderDefault from '../packages/terra-application-header-layout/examples-lib/test-examples/ApplicationHeaderDefault';
 import ApplicationMenuDefault from '../packages/terra-application-menu-layout/examples-lib/test-examples/ApplicationMenuDefault';
+import DefaultEmbeddedComponent from '../packages/terra-embedded-component/examples-lib/test-examples/DefaultEmbeddedComponent';
 import LayoutDefault from '../packages/terra-layout/examples-lib/test-examples/LayoutDefault';
 import LayoutLongText from '../packages/terra-layout/examples-lib/test-examples/LayoutLongText';
 import LayoutNoHeader from '../packages/terra-layout/examples-lib/test-examples/LayoutNoHeader';
@@ -50,6 +52,24 @@ const componentConfig = {
         name: 'Application Menu Default',
         path: '/application-menu-default',
         component: ApplicationMenuDefault,
+      },
+    ],
+  },
+  'terra-embedded-component': {
+    name: 'Embedded Component',
+    path: '/embedded-component',
+    pages: [
+      {
+        name: 'Index',
+        path: '/index',
+        component: TerraEmbeddedComponentIndex,
+      },
+    ],
+    tests: [
+      {
+        name: 'Default Embedded Component',
+        path: '/default-embedded-component',
+        component: DefaultEmbeddedComponent,
       },
     ],
   },

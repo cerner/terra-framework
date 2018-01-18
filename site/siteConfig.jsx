@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import siteConfig from 'terra-site/lib/config/site.config';
 import Home from './Home';
 
