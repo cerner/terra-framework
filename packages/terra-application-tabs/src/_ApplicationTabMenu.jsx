@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import List from 'terra-list';
 import Popup from 'terra-popup';
 import { Switch, Route } from 'react-router-dom';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
@@ -13,14 +14,11 @@ const propTypes = {
   /**
    * Ref callback for menu toggle.
    */
-  refCallback: PropTypes.func,
+  children: PropTypes.node,
   /**
    * Ref callback for menu toggle.
    */
-  tabConfig: PropTypes.arrayOf({
-    path: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-  }),
+  refCallback: PropTypes.func,
 };
 
 const contextTypes = {
@@ -83,12 +81,12 @@ class ApplicationTabMenu extends React.Component {
   }
 
   createRoutes() {
-    const routes = this.props.tabConfig.map(routeData => (
+    const routes = this.props.children.map(child => (
       <Route
-        to={routeData.path}
-        key={routeData.path}
+        to={child.props.path}
+        key={child.props.path}
         render={() => (
-          <span>{routeData.label}</span>
+          <span>{child.props.label}</span>
         )}
       />
     ));
@@ -105,6 +103,16 @@ class ApplicationTabMenu extends React.Component {
     );
 
     return routes;
+  }
+
+  createHiddenTabs() {
+    return (
+      <List className={cx(['list'])} role="menu">
+        {React.Children.map(this.children, child => (
+          <List.Item content={child} key={child.props.path} />
+        ));}
+      </List>
+    );
   }
 
   render() {
@@ -124,6 +132,8 @@ class ApplicationTabMenu extends React.Component {
         </Switch>
         <IconCaretDown />
         <Popup
+          contentHeight="auto"
+          contentWidth="240"
           onRequestClose={this.handleOnRequestClose}
           targetRef={this.getTargetRef}
           isOpen={this.state.isOpen}
