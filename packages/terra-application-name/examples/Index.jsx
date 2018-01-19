@@ -2,8 +2,8 @@
 import React from 'react';
 import PropsTable from 'terra-props-table';
 import Markdown from 'terra-markdown';
-import ReadMe from 'terra-application-name/docs/README.md';
-import { version } from 'terra-application-name/package.json';
+import ReadMe from '../docs/README.md';
+import { version } from '../package.json';
 
 // Component Source
 // eslint-disable-next-line import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions
