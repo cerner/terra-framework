@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import List from 'terra-list';
 import Popup from 'terra-popup';
-import { Switch, Route, withRouter } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import styles from './ApplicationTabs.scss';
 import ApplicationTabUtils from './ApplicationTabUtils';
@@ -149,4 +149,4 @@ class ApplicationTabMenu extends React.Component {
 ApplicationTabMenu.contextTypes = contextTypes;
 ApplicationTabMenu.propTypes = propTypes;
 
-export default withRouter(ApplicationTabMenu);
+export default ApplicationTabMenu;
