@@ -27,7 +27,6 @@ class ApplicationTabs extends React.Component {
     this.setContainer = this.setContainer.bind(this);
     this.setMenuRef = this.setMenuRef.bind(this);
     this.handleResize = this.handleResize.bind(this);
-    this.handleSelectionAnimation = this.handleSelectionAnimation.bind(this);
     this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
     this.handleFocusLeft = this.handleFocusLeft.bind(this);
     this.handleFocusRight = this.handleFocusRight.bind(this);
@@ -47,12 +46,6 @@ class ApplicationTabs extends React.Component {
       this.handleResize(entries[0].contentRect.width);
     });
     this.resizeObserver.observe(this.container);
-
-    this.handleSelectionAnimation();
-  }
-
-  componentDidUpdate() {
-    this.handleSelectionAnimation();
   }
 
   componentWillUnmount() {
@@ -161,11 +154,11 @@ class ApplicationTabs extends React.Component {
     const visibleChildren = [];
     const hiddenChildren = [];
 
-    React.Children.forEach(this.props.tabConfig, (tab, index) => {
+    this.props.tabConfig.forEach((tab, index) => {
       if (index < this.state.hiddenStartIndex || this.state.hiddenStartIndex < 0) {
-        visibleChildren.push(<ApplicationTab path={tab.path} label={tab.label} />);
+        visibleChildren.push(<ApplicationTab path={tab.path} label={tab.label} key={tab.path} />);
       } else {
-        hiddenChildren.push(<ApplicationTab path={tab.path} label={tab.label} isHidden />);
+        hiddenChildren.push(<ApplicationTab path={tab.path} label={tab.label} key={tab.path} isHidden />);
       }
     });
 
@@ -178,7 +171,7 @@ class ApplicationTabs extends React.Component {
     return (
       /* eslint-disable jsx-a11y/no-static-element-interactions */
       <div
-        className={cx(['collapsible-tabs-container', { 'is-calculating': this.state.isCalculating }])}
+        className={cx(['tabs-container', { 'is-calculating': this.state.isCalculating }])}
         ref={this.setContainer}
         tabIndex="0"
         onKeyDown={this.handleOnKeyDown}

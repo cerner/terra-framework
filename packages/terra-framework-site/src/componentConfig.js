@@ -12,6 +12,7 @@ import LayoutExample from './examples/layout/Index';
 import HeaderExample from './examples/application-header-layout/Index';
 import MenuExample from './examples/application-menu-layout/Index';
 import NavigationLayoutExample from './examples/navigation-layout/Index';
+import ApplicationTabsExample from './examples/application-tabs/Index';
 
 const itemConfigPropType = PropTypes.shape({
   path: PropTypes.string,
@@ -98,6 +99,14 @@ const componentConfig = {
       component: ApplicationMenuDefault,
       description: 'Default',
     }],
+  },
+  applicationTabs: {
+    name: 'Application Tabs',
+    example: {
+      path: '/components/application-tabs',
+      component: ApplicationTabsExample,
+      description: 'Application Tabs',
+    },
   },
 };
 

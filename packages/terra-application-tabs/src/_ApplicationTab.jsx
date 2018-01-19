@@ -22,7 +22,7 @@ const propTypes = {
   path: PropTypes.string.isRequired,
 };
 
-const TabPane = ({
+const ApplicationTab = ({
   isHidden,
   label,
   path,
@@ -41,6 +41,6 @@ const TabPane = ({
   );
 };
 
-TabPane.propTypes = propTypes;
+ApplicationTab.propTypes = propTypes;
 
-export default TabPane;
+export default ApplicationTab;

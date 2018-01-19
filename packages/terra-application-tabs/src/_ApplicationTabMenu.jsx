@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import List from 'terra-list';
 import Popup from 'terra-popup';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import styles from './ApplicationTabs.scss';
 import ApplicationTabUtils from './ApplicationTabUtils';
@@ -83,7 +83,7 @@ class ApplicationTabMenu extends React.Component {
   createRoutes() {
     const routes = this.props.children.map(child => (
       <Route
-        to={child.props.path}
+        path={child.props.path}
         key={child.props.path}
         render={() => (
           <span>{child.props.label}</span>
@@ -92,7 +92,7 @@ class ApplicationTabMenu extends React.Component {
     ));
 
     const { intl } = this.context;
-    const menuToggleText = intl.formatMessage({ id: 'Terra.tabs.more' });
+    const menuToggleText = intl.formatMessage({ id: 'Terra.application.tabs.more' });
     routes.push(
       <Route
         key={'application-tab-more'}
@@ -108,9 +108,9 @@ class ApplicationTabMenu extends React.Component {
   createHiddenTabs() {
     return (
       <List className={cx(['list'])} role="menu">
-        {React.Children.map(this.children, child => (
+        {React.Children.map(this.props.children, child => (
           <List.Item content={child} key={child.props.path} />
-        ));}
+        ))}
       </List>
     );
   }
@@ -127,7 +127,7 @@ class ApplicationTabMenu extends React.Component {
         className={cx(['tab-menu'])}
         data-terra-tabs-menu
       >
-        <Switch location={this.state.stackLocation || location}>
+        <Switch>
           {this.createRoutes()}
         </Switch>
         <IconCaretDown />
@@ -149,4 +149,4 @@ class ApplicationTabMenu extends React.Component {
 ApplicationTabMenu.contextTypes = contextTypes;
 ApplicationTabMenu.propTypes = propTypes;
 
-export default ApplicationTabMenu;
+export default withRouter(ApplicationTabMenu);
