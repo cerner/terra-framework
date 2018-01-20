@@ -47,6 +47,7 @@ Components in beta stage may include breaking changes, new features, and bug fix
 | [terra-application-menu-layout](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-menu-layout) | [![NPM version](http://img.shields.io/npm/v/terra-application-menu-layout.svg)](https://www.npmjs.org/package/terra-application-menu-layout) | :white_check_mark: |
 | [terra-layout](https://github.com/cerner/terra-framework/tree/master/packages/terra-layout) | [![NPM version](http://img.shields.io/npm/v/terra-layout.svg)](https://www.npmjs.org/package/terra-layout) | :white_check_mark: |
 | [terra-navigation-layout](https://github.com/cerner/terra-framework/tree/master/packages/terra-navigation-layout) | [![NPM version](http://img.shields.io/npm/v/terra-navigation-layout.svg)](https://www.npmjs.org/package/terra-navigation-layout) | :white_check_mark: |
+| [terra-theme-provider](https://github.com/cerner/terra-core/tree/master/packages/terra-theme-provider) | [![NPM version](http://img.shields.io/npm/v/terra-theme-provider.svg)](https://www.npmjs.org/package/terra-theme-provider) | :white_check_mark: |
 
 ## Supported Browsers
 
