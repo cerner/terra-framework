@@ -7,11 +7,17 @@ import NavigationLayoutBasic from 'terra-navigation-layout/tests/nightwatch/Navi
 import NavigationLayoutComplex from 'terra-navigation-layout/tests/nightwatch/NavigationLayoutComplex';
 import ApplicationHeaderDefault from 'terra-application-header-layout/tests/nightwatch/ApplicationHeaderDefault';
 import ApplicationMenuDefault from 'terra-application-menu-layout/tests/nightwatch/ApplicationMenuDefault';
+import DefaultThemeProvider from 'terra-theme-provider/tests/nightwatch/DefaultThemeProvider';
+import GlobalThemeProvider from 'terra-theme-provider/tests/nightwatch/GlobalThemeProvider';
+import SwitchThemes from 'terra-theme-provider/tests/nightwatch/SwitchThemes';
+import GlobalSwitchThemes from 'terra-theme-provider/tests/nightwatch/GlobalSwitchThemes';
+import ThemeProviderNoTheme from 'terra-theme-provider/tests/nightwatch/ThemeProviderNoTheme';
 
 import LayoutExample from './examples/layout/Index';
 import HeaderExample from './examples/application-header-layout/Index';
 import MenuExample from './examples/application-menu-layout/Index';
 import NavigationLayoutExample from './examples/navigation-layout/Index';
+import ThemeProviderExample from './examples/theme-provider/Index';
 
 const itemConfigPropType = PropTypes.shape({
   path: PropTypes.string,
@@ -97,6 +103,36 @@ const componentConfig = {
       path: '/default',
       component: ApplicationMenuDefault,
       description: 'Default',
+    }],
+  },
+  themeProvider: {
+    name: 'Theme Provider',
+    example: {
+      path: '/components/theme-provider',
+      component: ThemeProviderExample,
+      description: 'ThemeProvider',
+    },
+    testRoot: '/tests/theme-provider',
+    tests: [{
+      path: '/default',
+      component: DefaultThemeProvider,
+      description: 'Default',
+    }, {
+      path: '/global-theme',
+      component: GlobalThemeProvider,
+      description: 'Global',
+    }, {
+      path: '/theme-switching',
+      component: SwitchThemes,
+      description: 'Theme Switching',
+    }, {
+      path: '/global-theme-switching',
+      component: GlobalSwitchThemes,
+      description: 'Global Theme Switching',
+    }, {
+      path: '/theme-provider-no-theme',
+      component: ThemeProviderNoTheme,
+      description: 'No Theme',
     }],
   },
 };
