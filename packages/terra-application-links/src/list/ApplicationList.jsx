@@ -9,12 +9,11 @@ import styles from './ApplicationList.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  links: PropTypes.arrayOf({
+  links: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
     path: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
-  }),
-  refCallback: PropTypes.func,
+  })),
 };
 
 const defaultProps = {
@@ -23,7 +22,6 @@ const defaultProps = {
 
 const ApplicationList = ({
   links,
-  refCallback,
   ...customProps
 }) => {
   const listItems = links.map(link => (
@@ -38,7 +36,7 @@ const ApplicationList = ({
   ));
 
   return (
-    <List {...customProps} className={cx(['list'])} ref={refCallback}>
+    <List {...customProps} className={cx(['list'])}>
       {listItems}
     </List>
   );

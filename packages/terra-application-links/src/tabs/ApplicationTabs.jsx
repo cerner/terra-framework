@@ -11,11 +11,11 @@ import styles from './ApplicationTabs.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  links: PropTypes.arrayOf({
+  links: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
     path: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
-  }),
+  })),
 };
 
 const defaultProps = {
