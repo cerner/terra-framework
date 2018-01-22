@@ -81,13 +81,26 @@ class ApplicationTabMenu extends React.Component {
     };
   }
 
-  createRoutes() {
+  createRoutes(popup) {
+    const props = {
+      role: 'button',
+      tabIndex: '0',
+      ref: this.setTargetRef,
+      onClick: this.handleOnClick,
+      onKeyDown: this.handleOnKeyDown,
+      'data-terra-tabs-menu': true,
+    };
+
     const routes = this.props.children.map(child => (
       <Route
         path={child.props.path}
         key={child.props.path}
         render={() => (
-          <span>{child.props.text}</span>
+          <div {...props} className={cx(['tab-menu', 'is-selected'])}>
+            <span>{child.props.text}</span>
+            <IconCaretDown />
+            {popup}
+          </div>
         )}
       />
     ));
@@ -98,7 +111,11 @@ class ApplicationTabMenu extends React.Component {
       <Route
         key={'application-tab-more'}
         render={() => (
-          <span>{menuToggleText}</span>
+          <div {...props} className={cx(['tab-menu'])}>
+            <span>{menuToggleText}</span>
+            <IconCaretDown />
+            {popup}
+          </div>
         )}
       />,
     );
@@ -121,33 +138,22 @@ class ApplicationTabMenu extends React.Component {
   }
 
   render() {
-    return (
-      /* eslint-disable jsx-a11y/no-static-element-interactions */
-      <div
-        role="button"
-        tabIndex="0"
-        ref={this.setTargetRef}
-        onClick={this.handleOnClick}
-        onKeyDown={this.handleOnKeyDown}
-        className={cx(['tab-menu'])}
-        data-terra-tabs-menu
+    const popup = (
+      <Popup
+        contentAttachment="bottom right"
+        contentHeight="auto"
+        contentWidth="240"
+        onRequestClose={this.handleOnRequestClose}
+        targetRef={this.getTargetRef}
+        isOpen={this.state.isOpen}
       >
-        <Switch>
-          {this.createRoutes()}
-        </Switch>
-        <IconCaretDown data-applicaiton-tabs-chevron />
-        <Popup
-          contentAttachment="bottom right"
-          contentHeight="auto"
-          contentWidth="240"
-          onRequestClose={this.handleOnRequestClose}
-          targetRef={this.getTargetRef}
-          isOpen={this.state.isOpen}
-        >
-          {this.createHiddenTabs()}
-        </Popup>
-      </div>
-      /* eslint-enable jsx-ally/no-static-element-interactions */
+        {this.createHiddenTabs()}
+      </Popup>
+    );
+    return (
+      <Switch>
+        {this.createRoutes(popup)}
+      </Switch>
     );
   }
 }

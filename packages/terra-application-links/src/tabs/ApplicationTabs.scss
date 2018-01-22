@@ -1,5 +1,6 @@
 :local {
-  .tab[aria-current='true'] {
+  .tab[aria-current='true'],
+  .tab-menu.is-selected {
     background-color: #fff;
     border-left: none;
     bottom:-0.07143rem;
