@@ -1,6 +1,6 @@
 # Terra Application Name
 
-{insert description}
+Houses the title of the application, along with a logo. There are two versions - a header version and menu version. These should be used with the corresponding header and menu layouts.
 
 ## Getting Started
 
@@ -11,18 +11,17 @@
 
 ```jsx
 import React from 'react';
-import ApplicationName from 'terra-application-name';
+import HeaderName from 'terra-application-name/lib/ApplicationHeaderName';
+/* Or */
+import MenuName fron 'terra-application-name/lib/ApplicationMenuName';
 
-<ApplicationName {props...} />
+<HeaderName accessory={} title="Name of Application" subtitle="Subtitle" />
+<MenuName accessory={} title="Name of Application" subtitle="Subtitle" />
 ```
 
 ## Component Features
 
-<!-- Uncomment supported features.
  * [Cross-Browser Support](https://github.com/cerner/terra-core/wiki/Component-Features#cross-browser-support)
  * [Responsive Support](https://github.com/cerner/terra-core/wiki/Component-Features#responsive-support)
  * [Mobile Support](https://github.com/cerner/terra-core/wiki/Component-Features#mobile-support)
- * [Internationalization Support](https://github.com/cerner/terra-core/wiki/Component-Features#internationalization-i18n-support)
- * [Localization Support](https://github.com/cerner/terra-core/wiki/Component-Features#localization-support)
  * [LTR/RTL Support](https://github.com/cerner/terra-core/wiki/Component-Features#ltr--rtl-support)
- -->

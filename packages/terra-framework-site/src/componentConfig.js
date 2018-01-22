@@ -12,11 +12,14 @@ import GlobalThemeProvider from 'terra-theme-provider/tests/nightwatch/GlobalThe
 import SwitchThemes from 'terra-theme-provider/tests/nightwatch/SwitchThemes';
 import GlobalSwitchThemes from 'terra-theme-provider/tests/nightwatch/GlobalSwitchThemes';
 import ThemeProviderNoTheme from 'terra-theme-provider/tests/nightwatch/ThemeProviderNoTheme';
+import DefaultApplicationHeaderName from 'terra-application-name/tests/nightwatch/ApplicationHeaderNameDefault';
+import DefaultApplicationMenuName from 'terra-application-name/tests/nightwatch/ApplicationMenuNameDefault';
 
 import LayoutExample from './examples/layout/Index';
 import HeaderExample from './examples/application-header-layout/Index';
 import MenuExample from './examples/application-menu-layout/Index';
 import NavigationLayoutExample from './examples/navigation-layout/Index';
+import ApplicationHeaderExample from './examples/application-name/Index';
 import ThemeProviderExample from './examples/theme-provider/Index';
 
 const itemConfigPropType = PropTypes.shape({
@@ -104,6 +107,26 @@ const componentConfig = {
       component: ApplicationMenuDefault,
       description: 'Default',
     }],
+  },
+  applicationName: {
+    name: 'Application Name',
+    example: {
+      path: '/components/application-name',
+      component: ApplicationHeaderExample,
+      description: 'Application Name',
+    },
+    testRoot: '/tests/application-name',
+    tests: [
+      {
+        path: '/header-default',
+        component: DefaultApplicationHeaderName,
+        description: 'Default Header Name',
+      },
+      {
+        path: '/menu-default',
+        component: DefaultApplicationMenuName,
+        description: 'Default Menu Name',
+      }],
   },
   themeProvider: {
     name: 'Theme Provider',

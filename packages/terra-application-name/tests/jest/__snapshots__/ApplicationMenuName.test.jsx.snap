@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApplicationmenuName should render a default component 1`] = `
+<div
+  className="application-menu-name"
+/>
+`;
+
+exports[`ApplicationmenuName should render with provided accessory 1`] = `
+<div
+  className="application-menu-name"
+>
+  <div
+    className="accessory"
+  >
+    <img
+      alt="this is the accessory"
+    />
+  </div>
+</div>
+`;
+
+exports[`ApplicationmenuName should render with provided accessory, size, subtitle, and title 1`] = `
+<div
+  className="application-menu-name"
+>
+  <div
+    className="accessory"
+  >
+    <img
+      alt="this is the accessory"
+    />
+  </div>
+</div>
+`;
+
+exports[`ApplicationmenuName should render with provided size 1`] = `
+<div
+  className="application-menu-name"
+/>
+`;
+
+exports[`ApplicationmenuName should render with provided subtitle 1`] = `
+<div
+  className="application-menu-name"
+/>
+`;
+
+exports[`ApplicationmenuName should render with provided title 1`] = `
+<div
+  className="application-menu-name"
+/>
+`;

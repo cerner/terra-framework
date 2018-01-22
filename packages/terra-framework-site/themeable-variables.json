@@ -1,4 +1,28 @@
 {
+  "ApplicationHeaderName": {
+    "--terra-application-header-align-items": "center",
+    "--terra-application-header-name-color": "#fff",
+    "--terra-application-header-flex": "0 0 auto",
+    "--terra-application-header-name-accessory-padding-left": "0.3571rem",
+    "--terra-application-header-name-title-padding-left": "0.3571rem",
+    "--terra-application-header-name-title-padding-right": "4rem",
+    "--terra-application-header-name-text-overflow": "ellipsis",
+    "--terra-application-header-name-white-space": "nowrap",
+    "--terra-application-header-name-word-break": "normal",
+    "--terra-application-header-name-word-wrap": "normal"
+  },
+  "ApplicationMenuName": {
+    "--terra-application-menu-align-items": "center",
+    "--terra-application-menu-name-color": "#fff",
+    "--terra-application-menu-flex": "0 0 auto",
+    "--terra-application-menu-name-accessory-padding-left": "0.3571rem",
+    "--terra-application-menu-name-title-padding-left": "0.3571rem",
+    "--terra-application-menu-name-title-padding-right": "4rem",
+    "--terra-application-menu-name-text-overflow": "ellipsis",
+    "--terra-application-menu-name-white-space": "nowrap",
+    "--terra-application-menu-name-word-break": "normal",
+    "--terra-application-menu-name-word-wrap": "normal"
+  },
   "Base": {
     "--terra-base-font-family": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
     "--terra-base-font-size": "87.5%",

@@ -1,6 +1,6 @@
 {
   "name": "terra-application-name",
-  "main": "lib/ApplicationName.js",
+  "main": "lib/ApplicationHeaderName.js",
   "version": "0.0.0",
   "description": "{insert description}",
   "repository": {
@@ -32,6 +32,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
+    "terra-app-delegate": "^1.7.1",
     "terra-base": "^2.0.0"
   },
   "scripts": {
@@ -41,7 +42,7 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
-    "props-table": "props-table ./src/ApplicationName.jsx --out-dir ./docs/props-table",
+    "props-table": "props-table ./src/ApplicationHeaderName.jsx --out-dir ./docs/props-table",
     "test": "npm run test:jest && npm run test:nightwatch",
     "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
     "test:nightwatch": "nightwatch -c ../../nightwatch.conf.js"
