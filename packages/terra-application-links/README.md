@@ -1,18 +1,18 @@
-# Terra Application Tabs
+# Terra Application Links
 
 
-[![NPM version](http://img.shields.io/npm/v/terra-applicaiton-tabs.svg)](https://www.npmjs.org/package/terra-application-tabs)
+[![NPM version](http://img.shields.io/npm/v/terra-applicaiton-links.svg)](https://www.npmjs.org/package/terra-application-links)
 [![Build Status](https://travis-ci.org/cerner/terra-framework.svg?branch=master)](https://travis-ci.org/cerner/terra-framework)
 
 {insert description}
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-tabs/docs)
+- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-links/docs)
 - [LICENSE](#license)
 
 ## Getting Started
 
-- Install from [npmjs](https://www.npmjs.com): `npm install terra-embedded-component`
+- Install from [npmjs](https://www.npmjs.com): `npm install terra-application-links`
 
 ## LICENSE
 

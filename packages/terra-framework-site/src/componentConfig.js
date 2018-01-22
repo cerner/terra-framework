@@ -12,7 +12,7 @@ import LayoutExample from './examples/layout/Index';
 import HeaderExample from './examples/application-header-layout/Index';
 import MenuExample from './examples/application-menu-layout/Index';
 import NavigationLayoutExample from './examples/navigation-layout/Index';
-import ApplicationTabsExample from './examples/application-tabs/Index';
+import ApplicationLinksExample from './examples/application-links/Index';
 
 const itemConfigPropType = PropTypes.shape({
   path: PropTypes.string,
@@ -100,12 +100,12 @@ const componentConfig = {
       description: 'Default',
     }],
   },
-  applicationTabs: {
-    name: 'Application Tabs',
+  applicationLinks: {
+    name: 'Application Links',
     example: {
-      path: '/components/application-tabs',
-      component: ApplicationTabsExample,
-      description: 'Application Tabs',
+      path: '/components/application-links',
+      component: ApplicationLinksExample,
+      description: 'Application Links',
     },
   },
 };

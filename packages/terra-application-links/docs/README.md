@@ -1,19 +1,20 @@
-# Terra Application Tabs
+# Terra Application Links
 
 {insert description}
 
 ## Getting Started
 
 - Install with [npmjs](https://www.npmjs.com):
-  - `npm install terra-application-tabs`
+  - `npm install terra-application-links`
 
 ## Usage
 
 ```jsx
 import React from 'react';
-import ApplicationTabs from 'terra-application-tabs';
+import { ApplicationTabs, ApplicationList } from 'terra-application-links';
 
-<ApplicationTabs {props...} />
+<ApplicationTabs links={links} />
+<ApplicationList links={links} />
 ```
 
 ## Component Features

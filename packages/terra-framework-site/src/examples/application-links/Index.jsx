@@ -2,12 +2,13 @@
 import React from 'react';
 import PropsTable from 'terra-props-table';
 import Markdown from 'terra-markdown';
-import ReadMe from 'terra-application-tabs/docs/README.md';
-import { version } from 'terra-application-tabs/package.json';
+import ReadMe from 'terra-application-links/docs/README.md';
+import { version } from 'terra-application-links/package.json';
 
 // Component Source
 /* eslint-disable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
-import MenuSrc from '!raw-loader!terra-application-tabs/src/ApplicationTabs.jsx';
+import ListSrc from '!raw-loader!terra-application-links/src/list/ApplicationList.jsx';
+import TabsSrc from '!raw-loader!terra-application-links/src/tabs/ApplicationTabs.jsx';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 
 // Example Files
@@ -17,7 +18,8 @@ const NavigationExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
-    <PropsTable id="props-menu" src={MenuSrc} componentName="Application Tabs" />
+    <PropsTable id="props-list" src={ListSrc} componentName="Application List" />
+    <PropsTable id="props-tabs" src={TabsSrc} componentName="Application Tabs" />
     <h2 id="application-tabs-example">Menu Wireframe</h2>
     <ApplicationTabsExample />
   </div>

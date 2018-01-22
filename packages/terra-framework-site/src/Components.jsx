@@ -5,7 +5,7 @@ import LayoutExamples from './examples/layout/Index';
 import NavigationExamples from './examples/navigation-layout/Index';
 import ApplicationHeaderLayoutExamples from './examples/application-header-layout/Index';
 import ApplicationMenuLayoutExamples from './examples/application-menu-layout/Index';
-import ApplicationTabsExamples from './examples/application-tabs/Index';
+import ApplicationLinksExamples from './examples/application-links/Index';
 
 const Components = () => (
   <div style={{ height: '100%', position: 'relative', padding: '15px' }}>
@@ -14,7 +14,7 @@ const Components = () => (
       <Route path="/components/navigation-layout" component={NavigationExamples} />
       <Route path="/components/application-header-layout" component={ApplicationHeaderLayoutExamples} />
       <Route path="/components/application-menu-layout" component={ApplicationMenuLayoutExamples} />
-      <Route path="/components/application-tabs" component={ApplicationTabsExamples} />
+      <Route path="/components/application-links" component={ApplicationLinksExamples} />
       <Redirect to="/components/layout" />
     </Switch>
   </div>

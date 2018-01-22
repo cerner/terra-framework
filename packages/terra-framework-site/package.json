@@ -34,7 +34,7 @@
     "terra-app-delegate": "^1.7.1",
     "terra-application-header-layout": "^1.0.0",
     "terra-application-menu-layout": "^1.0.0",
-    "terra-application-tabs": "^0.x",
+    "terra-application-links": "^0.x",
     "terra-base": "^2.6.1",
     "terra-button": "^1.12.0",
     "terra-collapsible-menu-view": "^1.1.1",

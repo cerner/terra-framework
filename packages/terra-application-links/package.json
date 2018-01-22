@@ -1,6 +1,6 @@
 {
-  "name": "terra-application-tabs",
-  "main": "lib/ApplicationTabs.js",
+  "name": "terra-application-links",
+  "main": "lib/ApplicationLinks.js",
   "version": "0.0.0",
   "description": "{insert description}",
   "repository": {
@@ -11,8 +11,8 @@
     "Cerner",
     "Terra",
     "Framework",
-    "terra-application-tabs",
-    "ApplicationTabs",
+    "terra-application-links",
+    "ApplicationLinks",
     "UI"
   ],
   "author": "Cerner Corporation",
@@ -51,7 +51,7 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
-    "props-table": "props-table ./src/ApplicationTabs.jsx --out-dir ./docs/props-table",
+    "props-table": "props-table ./src/list/ApplicationList.jsx ./src/tabs/ApplicationTabs.jsx --out-dir ./docs/props-table",
     "test": "npm run test:jest && npm run test:nightwatch",
     "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
     "test:nightwatch": "nightwatch -c ../../nightwatch.conf.js"

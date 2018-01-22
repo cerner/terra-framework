@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Image from 'terra-image';
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import Header from 'terra-application-header-layout';
+import { ApplicationTabs } from 'terra-application-links';
 import classNames from 'classnames/bind';
-import NavTabs from './common/nav-tabs/NavTabs';
 import HeaderUtility from './common/header-templates/Utility';
 import Logo from './common/header-templates/Logo';
 import Toggle from './ApplicationToggle';
@@ -86,7 +86,7 @@ class ApplicationHeader extends React.Component {
 
     let navTabs;
     if (this.props.navigation && !isCompactHeader) {
-      navTabs = <NavTabs links={this.props.navigation.links} size={this.props.layoutConfig.size} />;
+      navTabs = <ApplicationTabs links={this.props.navigation.links} />;
     }
 
     return (

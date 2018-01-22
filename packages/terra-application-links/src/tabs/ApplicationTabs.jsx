@@ -11,14 +11,15 @@ import styles from './ApplicationTabs.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  tabConfig: PropTypes.arrayOf({
+  links: PropTypes.arrayOf({
+    id: PropTypes.string,
     path: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
   }),
 };
 
 const defaultProps = {
-  tabConfig: [],
+  links: [],
 };
 
 class ApplicationTabs extends React.Component {
@@ -70,7 +71,7 @@ class ApplicationTabs extends React.Component {
     const availableWidth = width - menuToggleWidth;
 
     // Calculate hide index
-    const childrenCount = this.props.tabConfig.length;
+    const childrenCount = this.props.links.length;
     let newHideIndex = childrenCount;
     let calcMinWidth = 0;
     let isMenuHidden = true;
@@ -94,7 +95,7 @@ class ApplicationTabs extends React.Component {
 
   handleOnKeyDown(event) {
     // If there are less than 2 children we don't need to worry about keyboard navigation
-    if (this.props.tabConfig.length < 2) {
+    if (this.props.links.length < 2) {
       return;
     }
 
@@ -154,11 +155,11 @@ class ApplicationTabs extends React.Component {
     const visibleChildren = [];
     const hiddenChildren = [];
 
-    this.props.tabConfig.forEach((tab, index) => {
+    this.props.links.forEach((link, index) => {
       if (index < this.state.hiddenStartIndex || this.state.hiddenStartIndex < 0) {
-        visibleChildren.push(<ApplicationTab path={tab.path} label={tab.label} key={tab.path} />);
+        visibleChildren.push(<ApplicationTab id={link.id} path={link.path} text={link.text} key={link.path} />);
       } else {
-        hiddenChildren.push(<ApplicationTab path={tab.path} label={tab.label} key={tab.path} isHidden />);
+        hiddenChildren.push(<ApplicationTab id={link.id} path={link.path} text={link.text} key={link.path} isHidden />);
       }
     });
 

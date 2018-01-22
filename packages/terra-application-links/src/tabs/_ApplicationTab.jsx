@@ -15,17 +15,17 @@ const propTypes = {
   /**
    * Indicates if the pane should be disabled.
    */
-  label: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
   /**
    * Indicates if the pane should be disabled.
    */
-  path: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 };
 
 const ApplicationTab = ({
   isHidden,
-  label,
   path,
+  text,
   ...customProps
 }) => {
   const tabClassNames = cx([
@@ -35,8 +35,8 @@ const ApplicationTab = ({
   ]);
 
   return (
-    <NavLink className={tabClassNames} to={path} key={path} activeClassName={cx(['selected'])}>
-      {label}
+    <NavLink {...customProps} className={tabClassNames} to={path} key={path} activeClassName={cx(['selected'])}>
+      {text}
     </NavLink>
   );
 };

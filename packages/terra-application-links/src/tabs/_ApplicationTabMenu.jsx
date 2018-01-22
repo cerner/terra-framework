@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import List from 'terra-list';
 import Popup from 'terra-popup';
 import { Switch, Route } from 'react-router-dom';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import styles from './ApplicationTabs.scss';
+import ApplicationTabMenuContent from './_ApplicationTabMenuContent';
 import ApplicationTabUtils from './ApplicationTabUtils';
 
 const cx = classNames.bind(styles);
@@ -33,6 +33,7 @@ const contextTypes = {
 class ApplicationTabMenu extends React.Component {
   constructor(props, context) {
     super(props, context);
+    this.handleChildClick = this.handleChildClick.bind(this);
     this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.handleOnClick = this.handleOnClick.bind(this);
     this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
@@ -86,7 +87,7 @@ class ApplicationTabMenu extends React.Component {
         path={child.props.path}
         key={child.props.path}
         render={() => (
-          <span>{child.props.label}</span>
+          <span>{child.props.text}</span>
         )}
       />
     ));
@@ -105,13 +106,17 @@ class ApplicationTabMenu extends React.Component {
     return routes;
   }
 
+  handleChildClick() {
+    if (this.state.isOpen) {
+      this.setState({ isOpen: false });
+    }
+  }
+
   createHiddenTabs() {
     return (
-      <List className={cx(['list'])} role="menu">
-        {React.Children.map(this.props.children, child => (
-          <List.Item content={child} key={child.props.path} />
-        ))}
-      </List>
+      <ApplicationTabMenuContent>
+        {React.Children.map(this.props.children, child => React.cloneElement(child, { onClick: this.handleChildClick }))}
+      </ApplicationTabMenuContent>
     );
   }
 
@@ -130,8 +135,9 @@ class ApplicationTabMenu extends React.Component {
         <Switch>
           {this.createRoutes()}
         </Switch>
-        <IconCaretDown />
+        <IconCaretDown data-applicaiton-tabs-chevron />
         <Popup
+          contentAttachment="bottom right"
           contentHeight="auto"
           contentWidth="240"
           onRequestClose={this.handleOnRequestClose}
