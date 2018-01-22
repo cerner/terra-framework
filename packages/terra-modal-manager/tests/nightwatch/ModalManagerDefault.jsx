@@ -11,7 +11,7 @@ const store = createStore(
   )),
 );
 
-const ModalManagerDemo = () => (
+const ModalManagerDefault = () => (
   <Provider store={store}>
     <ModalManager>
       <DemoContainer identifier="root-component" />
@@ -19,4 +19,4 @@ const ModalManagerDemo = () => (
   </Provider>
 );
 
-export default ModalManagerDemo;
+export default ModalManagerDefault;
