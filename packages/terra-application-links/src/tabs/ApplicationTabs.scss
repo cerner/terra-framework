@@ -64,6 +64,11 @@
   .tab.is-hidden {
     color: #1c1f21;
     display: block;
+    text-align: left;
+    text-overflow: unset;
+    white-space: normal;
+    word-break: break-word;
+    word-wrap: break-word;
   }
 
   .tab.is-hidden[aria-current='true'] {

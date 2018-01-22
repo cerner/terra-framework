@@ -1,9 +1,9 @@
 import React from 'react';
-import { ApplicationTabs } from 'terra-application-links';
+import { ApplicationList } from 'terra-application-links';
 
-const ApplicationTabsExample = () => (
-  <div style={{ backgroundColor: '#2481ca', width: '100%' }}>
-    <ApplicationTabs
+const ApplicationListExample = () => (
+  <div style={{ border: '1px solid lightGray', width: '100%' }}>
+    <ApplicationList
       links={[
         { path: '/components/application-links/durp', text: 'durp' },
         { path: '/components/application-links/sandwich', text: 'sandwich' },
@@ -22,4 +22,4 @@ const ApplicationTabsExample = () => (
   </div>
 );
 
-export default ApplicationTabsExample;
+export default ApplicationListExample;

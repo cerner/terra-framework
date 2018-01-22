@@ -12,6 +12,7 @@ import TabsSrc from '!raw-loader!terra-application-links/src/tabs/ApplicationTab
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 
 // Example Files
+import ApplicationListExample from './ApplicationListExample';
 import ApplicationTabsExample from './ApplicationTabsExample';
 
 const NavigationExamples = () => (
@@ -20,7 +21,9 @@ const NavigationExamples = () => (
     <Markdown id="readme" src={ReadMe} />
     <PropsTable id="props-list" src={ListSrc} componentName="Application List" />
     <PropsTable id="props-tabs" src={TabsSrc} componentName="Application Tabs" />
-    <h2 id="application-tabs-example">Menu Wireframe</h2>
+    <h2 id="application-list-example">List Example</h2>
+    <ApplicationListExample />
+    <h2 id="application-tabs-example">Tabs Example</h2>
     <ApplicationTabsExample />
   </div>
 );
