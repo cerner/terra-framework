@@ -9,6 +9,9 @@ import styles from './ApplicationList.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * Navigational links that will generate list items that will update the path. These paths are matched with react-router to selection.
+   */
   links: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
     path: PropTypes.string.isRequired,
