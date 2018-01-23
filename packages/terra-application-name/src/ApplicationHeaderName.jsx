@@ -9,6 +9,14 @@ import styles from './ApplicationHeaderName.scss';
 
 const cx = classNames.bind(styles);
 
+const SizeTypes = {
+  TINY: 'tiny',
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+  HUGE: 'huge',
+};
+
 const propTypes = {
   /**
    * The accessory element to be displayed next to the title.
@@ -19,9 +27,16 @@ const propTypes = {
    * */
   app: AppDelegate.propType,
   /**
-   * The breakpoint size that the window is currenty at.
+   * The breakpoint size that the window is currently at. Takes one of: `tiny`, `small`, `medium`, `large`, `huge`.
+   *
    * */
-  size: PropTypes.string,
+  size: PropTypes.oneOf([
+    SizeTypes.TINY,
+    SizeTypes.SMALL,
+    SizeTypes.MEDIUM,
+    SizeTypes.LARGE,
+    SizeTypes.HUGE,
+  ]),
   /**
    * The subtitle to be appended to the title.
    * */
@@ -33,7 +48,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  size: 'tiny',
+  size: SizeTypes.TINY,
 };
 
 const ApplicationHeaderName = ({
@@ -52,7 +67,7 @@ const ApplicationHeaderName = ({
   return (
     <div {...customProps} className={ApplicationHeaderNameClassNames}>
       {!!accessory && <div className={cx('accessory')}>{accessory}</div>}
-      {!!title && size !== 'tiny' && <div className={cx('title')}><strong>{title}</strong>{subtitle}</div>}
+      {!!title && size !== SizeTypes.TINY && <div className={cx('title')}><strong>{title}</strong>{subtitle}</div>}
     </div>
   );
 };

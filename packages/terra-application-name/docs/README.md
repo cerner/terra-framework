@@ -13,10 +13,10 @@ Houses the title of the application, along with a logo. There are two versions -
 import React from 'react';
 import HeaderName from 'terra-application-name/lib/ApplicationHeaderName';
 /* Or */
-import MenuName fron 'terra-application-name/lib/ApplicationMenuName';
+import MenuName from 'terra-application-name/lib/ApplicationMenuName';
 
-<HeaderName accessory={} title="Name of Application" subtitle="Subtitle" />
-<MenuName accessory={} title="Name of Application" subtitle="Subtitle" />
+<HeaderName title="Name of Application" subtitle="Subtitle" />
+<MenuName title="Name of Application" subtitle="Subtitle" />
 ```
 
 ## Component Features
