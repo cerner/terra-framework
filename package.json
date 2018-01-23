@@ -66,7 +66,7 @@
     "postinstall:project": "link-parent-bin && npm run compile && npm run bootstrap",
     "publish": "npm whoami && check-installed-dependencies && npm run compile && npm test && npm run props-table && lerna publish",
     "postpublish": "npm run dependency-markdown && git add --all && git commit -m 'Updated DEPENDENCIES.md files'",
-    "start": "webpack-dev-server --config node_modules/terra-site/lib/config/webpack.config --progress",
+    "start": "node node_modules/terra-site/scripts/start-terra-site/start",
     "start:express": "node scripts/express/app.js",
     "test": "jest && nightwatch"
   },
