@@ -4,6 +4,10 @@ Changelog
 Unreleased
 ----------
 
+1.19.0 - (January 23, 2018)
+------------------
+* First release in new repository
+
 1.18.0 - (January 18, 2018)
 ------------------
 ### Changed
