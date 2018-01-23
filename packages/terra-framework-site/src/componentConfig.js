@@ -7,12 +7,21 @@ import NavigationLayoutBasic from 'terra-navigation-layout/tests/nightwatch/Navi
 import NavigationLayoutComplex from 'terra-navigation-layout/tests/nightwatch/NavigationLayoutComplex';
 import ApplicationHeaderDefault from 'terra-application-header-layout/tests/nightwatch/ApplicationHeaderDefault';
 import ApplicationMenuDefault from 'terra-application-menu-layout/tests/nightwatch/ApplicationMenuDefault';
+import DefaultThemeProvider from 'terra-theme-provider/tests/nightwatch/DefaultThemeProvider';
+import GlobalThemeProvider from 'terra-theme-provider/tests/nightwatch/GlobalThemeProvider';
+import SwitchThemes from 'terra-theme-provider/tests/nightwatch/SwitchThemes';
+import GlobalSwitchThemes from 'terra-theme-provider/tests/nightwatch/GlobalSwitchThemes';
+import ThemeProviderNoTheme from 'terra-theme-provider/tests/nightwatch/ThemeProviderNoTheme';
+import ModalManagerDefault from 'terra-modal-manager/tests/nightwatch/ModalManagerDefault';
 
+import AppDelegateExample from './examples/app-delegate/Index';
+import ApplicationLinksExample from './examples/application-links/Index';
 import LayoutExample from './examples/layout/Index';
 import HeaderExample from './examples/application-header-layout/Index';
 import MenuExample from './examples/application-menu-layout/Index';
+import ModalManagerExample from './examples/modal-manager/Index';
 import NavigationLayoutExample from './examples/navigation-layout/Index';
-import ApplicationLinksExample from './examples/application-links/Index';
+import ThemeProviderExample from './examples/theme-provider/Index';
 
 const itemConfigPropType = PropTypes.shape({
   path: PropTypes.string,
@@ -28,6 +37,22 @@ const siteConfigPropType = PropTypes.objectOf(PropTypes.shape({
 }));
 
 const componentConfig = {
+  appDelegate: {
+    name: 'App Delegate',
+    example: {
+      path: '/components/app-delegate',
+      component: AppDelegateExample,
+      description: 'App Delegate',
+    },
+  },
+  applicationLinks: {
+    name: 'Application Links',
+    example: {
+      path: '/components/application-links',
+      component: ApplicationLinksExample,
+      description: 'Application Links',
+    },
+  },
   layout: {
     name: 'Layout',
     example: {
@@ -52,6 +77,20 @@ const componentConfig = {
       path: '/no-header',
       component: LayoutNoHeader,
       description: 'No Header',
+    }],
+  },
+  modalManager: {
+    name: 'Modal Manager',
+    example: {
+      path: '/components/modal-manager',
+      component: ModalManagerExample,
+      description: 'Modal Manager',
+    },
+    testRoot: '/tests/modal-manager',
+    tests: [{
+      path: '/default',
+      component: ModalManagerDefault,
+      description: 'Default',
     }],
   },
   navigationLayout: {
@@ -100,13 +139,35 @@ const componentConfig = {
       description: 'Default',
     }],
   },
-  applicationLinks: {
-    name: 'Application Links',
+  themeProvider: {
+    name: 'Theme Provider',
     example: {
-      path: '/components/application-links',
-      component: ApplicationLinksExample,
-      description: 'Application Links',
+      path: '/components/theme-provider',
+      component: ThemeProviderExample,
+      description: 'ThemeProvider',
     },
+    testRoot: '/tests/theme-provider',
+    tests: [{
+      path: '/default',
+      component: DefaultThemeProvider,
+      description: 'Default',
+    }, {
+      path: '/global-theme',
+      component: GlobalThemeProvider,
+      description: 'Global',
+    }, {
+      path: '/theme-switching',
+      component: SwitchThemes,
+      description: 'Theme Switching',
+    }, {
+      path: '/global-theme-switching',
+      component: GlobalSwitchThemes,
+      description: 'Global Theme Switching',
+    }, {
+      path: '/theme-provider-no-theme',
+      component: ThemeProviderNoTheme,
+      description: 'No Theme',
+    }],
   },
 };
 
