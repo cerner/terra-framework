@@ -14,10 +14,13 @@ import GlobalSwitchThemes from 'terra-theme-provider/tests/nightwatch/GlobalSwit
 import ThemeProviderNoTheme from 'terra-theme-provider/tests/nightwatch/ThemeProviderNoTheme';
 import DefaultApplicationHeaderName from 'terra-application-name/tests/nightwatch/ApplicationHeaderNameDefault';
 import DefaultApplicationMenuName from 'terra-application-name/tests/nightwatch/ApplicationMenuNameDefault';
+import ModalManagerDefault from 'terra-modal-manager/tests/nightwatch/ModalManagerDefault';
 
+import AppDelegateExample from './examples/app-delegate/Index';
 import LayoutExample from './examples/layout/Index';
 import HeaderExample from './examples/application-header-layout/Index';
 import MenuExample from './examples/application-menu-layout/Index';
+import ModalManagerExample from './examples/modal-manager/Index';
 import NavigationLayoutExample from './examples/navigation-layout/Index';
 import ApplicationHeaderExample from './examples/application-name/Index';
 import ThemeProviderExample from './examples/theme-provider/Index';
@@ -36,6 +39,14 @@ const siteConfigPropType = PropTypes.objectOf(PropTypes.shape({
 }));
 
 const componentConfig = {
+  appDelegate: {
+    name: 'App Delegate',
+    example: {
+      path: '/components/app-delegate',
+      component: AppDelegateExample,
+      description: 'App Delegate',
+    },
+  },
   layout: {
     name: 'Layout',
     example: {
@@ -60,6 +71,20 @@ const componentConfig = {
       path: '/no-header',
       component: LayoutNoHeader,
       description: 'No Header',
+    }],
+  },
+  modalManager: {
+    name: 'Modal Manager',
+    example: {
+      path: '/components/modal-manager',
+      component: ModalManagerExample,
+      description: 'Modal Manager',
+    },
+    testRoot: '/tests/modal-manager',
+    tests: [{
+      path: '/default',
+      component: ModalManagerDefault,
+      description: 'Default',
     }],
   },
   navigationLayout: {
