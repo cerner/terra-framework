@@ -45,6 +45,20 @@ const componentConfig = {
       description: 'App Delegate',
     },
   },
+  applicationHeader: {
+    name: 'Application Header Layout',
+    example: {
+      path: '/components/application-header-layout',
+      component: HeaderExample,
+      description: 'Application Header Layout',
+    },
+    testRoot: '/tests/application-header-layout',
+    tests: [{
+      path: '/default',
+      component: ApplicationHeaderDefault,
+      description: 'Default',
+    }],
+  },
   applicationLinks: {
     name: 'Application Links',
     example: {
@@ -52,6 +66,20 @@ const componentConfig = {
       component: ApplicationLinksExample,
       description: 'Application Links',
     },
+  },
+  applicationMenu: {
+    name: 'Application Menu Layout',
+    example: {
+      path: '/components/application-menu-layout',
+      component: MenuExample,
+      description: 'Application Menu Layout',
+    },
+    testRoot: '/tests/application-menu-layout',
+    tests: [{
+      path: '/default',
+      component: ApplicationMenuDefault,
+      description: 'Default',
+    }],
   },
   layout: {
     name: 'Layout',
@@ -109,34 +137,6 @@ const componentConfig = {
       path: '/complex',
       component: NavigationLayoutComplex,
       description: 'Complex',
-    }],
-  },
-  applicationHeader: {
-    name: 'Application Header Layout',
-    example: {
-      path: '/components/application-header-layout',
-      component: HeaderExample,
-      description: 'Application Header Layout',
-    },
-    testRoot: '/tests/application-header-layout',
-    tests: [{
-      path: '/default',
-      component: ApplicationHeaderDefault,
-      description: 'Default',
-    }],
-  },
-  applicationMenu: {
-    name: 'Application Menu Layout',
-    example: {
-      path: '/components/application-menu-layout',
-      component: MenuExample,
-      description: 'Application Menu Layout',
-    },
-    testRoot: '/tests/application-menu-layout',
-    tests: [{
-      path: '/default',
-      component: ApplicationMenuDefault,
-      description: 'Default',
     }],
   },
   themeProvider: {
