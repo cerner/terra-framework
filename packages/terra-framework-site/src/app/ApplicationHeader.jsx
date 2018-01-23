@@ -96,7 +96,7 @@ class ApplicationHeader extends React.Component {
           <Logo
             title="Terra"
             subtitle="Framework"
-            accessory={<Image variant="rounded" src="https://github.com/cerner/terra-core/raw/master/terra.png" height="26px" width="26px" isFluid />}
+            accessory={<Image variant="rounded" src="https://github.com/cerner/terra-framework/raw/master/terra.png" height="26px" width="26px" isFluid />}
             size={this.props.layoutConfig.size}
           />
         )}

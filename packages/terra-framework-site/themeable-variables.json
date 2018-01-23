@@ -124,6 +124,11 @@
     "--terra-menu-item-chevron-icon-color": "#9b9fa1",
     "--terra-menu-item-chevron-icon-font-size": "10px"
   },
+  "MockThemeComponent": {
+    "--terra-mock-background-color": "#000",
+    "--terra-mock-color": "#fff",
+    "--terra-mock-display": "inline"
+  },
   "PopupArrow": {
     "--terra-popup-arrow-size": "11px",
     "--terra-popup-arrow-z-index": "7002",

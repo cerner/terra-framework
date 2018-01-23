@@ -4,7 +4,9 @@
   "commands": {
     "publish": {
       "ignore": [
-        "DEPENDENCIES.md"      ]
+        "DEPENDENCIES.md",
+        "terra-application-name"
+      ]
     }
   },
   "packages": ["packages/*"]
