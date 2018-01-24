@@ -5,8 +5,10 @@ import Placeholder from '../../app/common/Placeholder';
 import ApplicationMenuName from 'terra-application-name/lib/ApplicationMenuName';
 
 const color = { color: 'grey' };
+const size = { height: '450px', width: '300px' };
 const ApplicationMenuNameStandard = () => (
   <Menu
+    style={size}
     header={(
       <ApplicationMenuName
         style={color}
@@ -17,7 +19,7 @@ const ApplicationMenuNameStandard = () => (
       />
     )}
     extensions={<Placeholder text="Extensions" height="50px" />}
-    content={<Placeholder text="Content" height="50px" />}
+    content={<Placeholder text="Content" />}
     footer={<Placeholder text="Footer" height="50px" />}
   />
 );
