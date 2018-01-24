@@ -1,8 +1,8 @@
 {
   "ApplicationHeaderName": {
-    "--terra-application-header-align-items": "center",
+    "--terra-application-header-name-align-items": "center",
     "--terra-application-header-name-color": "#fff",
-    "--terra-application-header-flex": "0 0 auto",
+    "--terra-application-header-name-flex": "0 0 auto",
     "--terra-application-header-name-accessory-padding-left": "0.3571rem",
     "--terra-application-header-name-title-padding-left": "0.3571rem",
     "--terra-application-header-name-title-padding-right": "4rem",
@@ -12,9 +12,9 @@
     "--terra-application-header-name-word-wrap": "normal"
   },
   "ApplicationMenuName": {
-    "--terra-application-menu-align-items": "center",
+    "--terra-application-menu-name-align-items": "center",
     "--terra-application-menu-name-color": "#fff",
-    "--terra-application-menu-flex": "0 0 auto",
+    "--terra-application-menu-name-flex": "0 0 auto",
     "--terra-application-menu-name-accessory-padding-left": "0.3571rem",
     "--terra-application-menu-name-title-padding-left": "0.3571rem",
     "--terra-application-menu-name-title-padding-right": "4rem",

@@ -1,10 +1,10 @@
 /* stylelint-disable selector-class-pattern */
 :local {
   .application-menu-name {
-    align-items: var(--terra-application-menu-align-items, center);
+    align-items: var(--terra-application-menu-name-align-items, center);
     color: var(--terra-application-menu-name-color, #fff);
     display: flex;
-    flex: var(--terra-application-menu-flex, 0 0 auto);
+    flex: var(--terra-application-menu-name-flex, 0 0 auto);
   }
 
   .accessory {
