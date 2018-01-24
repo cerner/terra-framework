@@ -5,6 +5,7 @@
     "publish": {
       "ignore": [
         "DEPENDENCIES.md",
+        "terra-application-name",
         "terra-embedded-component"
       ]
     }
