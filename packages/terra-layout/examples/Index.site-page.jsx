@@ -12,15 +12,15 @@ import LayoutSrc from '!raw-loader!../src/Layout.jsx';
 
 // Example Files
 import LayoutStandard from './index-examples/LayoutStandard';
-import LayoutStandardSrc from '!raw-loader!../examples/index-examples/LayoutStandard.jsx';
+import LayoutStandardSrc from '!raw-loader!./index-examples/LayoutStandard.jsx';
 import LayoutMenuDisabled from './index-examples/LayoutMenuDisabled';
-import LayoutMenuDisabledSrc from '!raw-loader!../examples/index-examples/LayoutMenuDisabled.jsx';
+import LayoutMenuDisabledSrc from '!raw-loader!./index-examples/LayoutMenuDisabled.jsx';
 import LayoutLongText from './index-examples/LayoutLongText';
-import LayoutLongTextSrc from '!raw-loader!../examples/index-examples/LayoutLongText.jsx';
+import LayoutLongTextSrc from '!raw-loader!./index-examples/LayoutLongText.jsx';
 import LayoutNoHeader from './index-examples/LayoutNoHeader';
-import LayoutNoHeaderSrc from '!raw-loader!../examples/index-examples/LayoutNoHeader.jsx';
+import LayoutNoHeaderSrc from '!raw-loader!./index-examples/LayoutNoHeader.jsx';
 
-const NavigationExamples = () => (
+const LayoutExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
@@ -53,4 +53,4 @@ const NavigationExamples = () => (
   </div>
 );
 
-export default NavigationExamples;
+export default LayoutExamples;

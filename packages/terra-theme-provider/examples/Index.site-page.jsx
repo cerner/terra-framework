@@ -8,26 +8,25 @@ import ReadMe from '../docs/README.md';
 import { version } from '../package.json';
 
 // Component Source
-import MenuLayoutSrc from '!raw-loader!../src/ApplicationMenuLayout.jsx';
+import ThemeProviderSrc from '!raw-loader!../src/ThemeProvider';
 
-// Example File
-import MenuWireframe from './index-examples/MenuWireframe';
-import MenuWireframeSrc from '!raw-loader!./index-examples/MenuWireframe.jsx';
+// Example Files
+import DefaultThemeProvider from './index-examples/DefaultThemeProvider';
+import DefaultThemeProviderSrc from '!raw-loader!./index-examples/DefaultThemeProvider.jsx';
 
-const NavigationExamples = () => (
+const ThemeProviderExample = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
-
     <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
     <IndexTemplate
-      title="Menu - Wireframe"
-      example={<MenuWireframe />}
-      exampleSrc={MenuWireframeSrc}
+      title="Example Theme Provider"
+      example={<DefaultThemeProvider />}
+      exampleSrc={DefaultThemeProviderSrc}
     />
 
-    <PropsTable id="props-table" src={MenuLayoutSrc} />
+    <PropsTable id="props-table" src={ThemeProviderSrc} />
   </div>
 );
 
-export default NavigationExamples;
+export default ThemeProviderExample;

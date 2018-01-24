@@ -3,20 +3,20 @@ const resizeTo = require('terra-toolkit/lib/nightwatch/responsive-helpers').resi
 
 module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], {
   'Displays a default theme-provider': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/theme-provider/default`);
+    browser.url(`${browser.launchUrl}/#/tests/theme-provider/default-theme-provider`);
     browser.assert.elementPresent('#themeProvider');
     browser.assert.elementPresent('#themedComponent');
   },
 
   'Displays a themed component': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/theme-provider/default`)
+    browser.url(`${browser.launchUrl}/#/tests/theme-provider/default-theme-provider`)
     .assert.cssProperty('#themedComponent', 'background-color', 'rgba(255, 0, 0, 1)')
     .assert.cssProperty('#themedComponent', 'color', 'rgba(0, 0, 255, 1)')
     .assert.cssProperty('#themedComponent', 'display', 'inline-block');
   },
 
   'Displays a globally themed component': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/theme-provider/global-theme`)
+    browser.url(`${browser.launchUrl}/#/tests/theme-provider/global-theme-provider`)
     .assert.cssProperty('html', 'font-size', '20px')
     .assert.cssProperty('body', 'background-color', 'rgba(255, 0, 0, 1)')
     .assert.cssProperty('body', 'color', 'rgba(0, 255, 0, 1)')
@@ -26,7 +26,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
   },
 
   'Displays an updated themed component': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/theme-provider/theme-switching`)
+    browser.url(`${browser.launchUrl}/#/tests/theme-provider/switch-themes`)
     .assert.cssProperty('#themedComponent', 'background-color', 'rgba(0, 0, 0, 1)')
     .assert.cssProperty('#themedComponent', 'color', 'rgba(255, 255, 255, 1)')
     .assert.cssProperty('#themedComponent', 'display', 'inline')

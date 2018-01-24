@@ -12,9 +12,9 @@ import HeaderLayoutSrc from '!raw-loader!../src/ApplicationHeaderLayout.jsx';
 
 // Example File
 import HeaderWireframe from './index-examples/HeaderWireframe';
-import HeaderWireframeSrc from '!raw-loader!../examples/index-examples/HeaderWireframe.jsx';
+import HeaderWireframeSrc from '!raw-loader!./index-examples/HeaderWireframe.jsx';
 
-const NavigationExamples = () => (
+const HeaderLayoutExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
@@ -30,4 +30,4 @@ const NavigationExamples = () => (
   </div>
 );
 
-export default NavigationExamples;
+export default HeaderLayoutExamples;

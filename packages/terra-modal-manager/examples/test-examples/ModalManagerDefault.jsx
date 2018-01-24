@@ -3,7 +3,7 @@ import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
 import ModalManager, { reducers as modalManagerReducers } from '../../lib/index';
-import DemoContainer from './DemoContainer';
+import DemoContainer from './test-content/DemoContainer';
 
 const store = createStore(
   combineReducers(Object.assign({},

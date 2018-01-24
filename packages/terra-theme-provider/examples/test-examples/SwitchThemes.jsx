@@ -1,6 +1,6 @@
 import React from 'react';
 import ThemeProvider from '../../lib/ThemeProvider';
-import MockThemeComponent from './MockThemeComponent';
+import MockThemeComponent from './test-content/MockThemeComponent';
 
 
 class SwitchThemes extends React.Component {
@@ -26,7 +26,7 @@ class SwitchThemes extends React.Component {
             <option value={ThemeProvider.Opts.Themes.MOCK}>Mock Theme</option>
           </select>
         </form>
-        <ThemeProvider id="themeProvider" themeName={this.state.themeName} isGlobalTheme>
+        <ThemeProvider id="themeProvider" themeName={this.state.themeName}>
           <MockThemeComponent id="themedComponent">
             Theme Provider Test
           </MockThemeComponent>
