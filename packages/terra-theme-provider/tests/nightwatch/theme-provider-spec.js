@@ -37,7 +37,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
   },
 
   'Displays an updated globally themed component': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/theme-provider/global-theme-switching`)
+    browser.url(`${browser.launchUrl}/#/tests/theme-provider/global-switch-themes`)
     .assert.cssProperty('html', 'font-size', '14px')
     .assert.cssProperty('body', 'background-color', 'rgba(255, 255, 255, 1)')
     .assert.cssProperty('body', 'color', 'rgba(28, 31, 33, 1)')
