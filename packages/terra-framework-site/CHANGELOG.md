@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* application-name examples and tests
 
 1.2.0 - (January 23, 2018)
 ------------------
