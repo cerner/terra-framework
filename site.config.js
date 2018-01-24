@@ -3,25 +3,23 @@ const fs = require('fs');
 const homeReadMe = fs.readFileSync('./README.md', 'utf-8');
 
 module.exports = {
-  /** The comopnent configuration. When provided, the generate-component-configureApp
-    * script will not run.
-    */
-  componentConfig: './site/generatedComponentConfig.js',
+  /* The component configuration path. */
+  componentConfigPath: './site/generatedComponentConfig.js',
 
-  /* If enabled, the xfc Provider will be used. */
-  // hasIframes: false,
+  /* The logo to display as the placeholder. */
   placeholderSrc: 'https://github.com/cerner/terra-core/raw/master/terra.png',
 
+  /* The markdown content to display on the home page. */
   readMeContent: homeReadMe,
 
   appConfig: {
-    /* The loge the site header should display. */
-    logoSrc: 'https://github.com/cerner/terra-core/raw/master/terra.png', // maps to appLogoSrc
+    /* The logo for the site header. */
+    logoSrc: 'https://github.com/cerner/terra-core/raw/master/terra.png',
 
-    /* The title the site header should display. */
-    title: 'Terra', // maps to appTitle
+    /* The title for the site header. */
+    title: 'Terra',
 
-    /* The subtitle the site header should display. */
-    subtitle: 'Framework', // maps to appSubtitle
+    /* The subtitle for the site header. */
+    subtitle: 'Framework',
   },
 };
