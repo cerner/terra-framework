@@ -43,7 +43,7 @@
     "clean:obsolete-snapshots": "npm test -- -u",
     "compile": "npm run compile:src",
     "compile:src": "lerna run compile",
-    "compile:heroku": "npm run compile:prod",
+    "compile:heroku": "npm run start",
     "compile:prod": "webpack --config node_modules/terra-site/src/config/webpack.prod.config -p",
     "danger": "danger",
     "deploy": "npm run compile:prod && gh-pages -d build",

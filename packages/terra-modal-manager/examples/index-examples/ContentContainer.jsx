@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AppDelegate from 'terra-app-delegate';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import Heading from 'terra-heading';
 
 class ContentContainer extends React.Component {
