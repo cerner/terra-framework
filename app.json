@@ -13,8 +13,7 @@
       "description": "development environment",
       "value": "development"
     },
-  },
-  "NPM_CONFIG_PRODUCTION": {
+    "NPM_CONFIG_PRODUCTION": {
       "description": "development environment",
       "value": "false"
     },
