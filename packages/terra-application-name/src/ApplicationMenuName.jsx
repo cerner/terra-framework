@@ -59,13 +59,13 @@ const ApplicationMenuName = ({
     title,
     ...customProps
   }) => {
-  const ApplicationHeaderNameClassNames = cx([
+  const ApplicationMenuNameClassNames = cx([
     'application-menu-name',
     customProps.className,
   ]);
 
   return (
-    <div {...customProps} className={ApplicationHeaderNameClassNames}>
+    <div {...customProps} className={ApplicationMenuNameClassNames}>
       {!!accessory && <div className={cx('accessory')}>{accessory}</div>}
       {!!title && size !== SizeTypes.TINY && <div className={cx('title')}><strong>{title}</strong>{subtitle}</div>}
     </div>
