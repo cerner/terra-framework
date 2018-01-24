@@ -1,8 +1,8 @@
 import React from 'react';
 import Menu from 'terra-application-menu-layout';
 import Image from 'terra-image';
-import Placeholder from '../../app/common/Placeholder';
 import ApplicationMenuName from 'terra-application-name/lib/ApplicationMenuName';
+import Placeholder from '../../app/common/Placeholder';
 
 const color = { color: 'grey' };
 const size = { height: '450px', width: '300px' };
