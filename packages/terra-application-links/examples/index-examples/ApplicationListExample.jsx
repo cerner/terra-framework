@@ -1,5 +1,5 @@
 import React from 'react';
-import { ApplicationList } from 'terra-application-links';
+import { ApplicationList } from '../../lib/ApplicationLinks';
 import ApplicationLinkConfig from './ApplicationLinkConfig';
 
 const ApplicationListExample = () => (

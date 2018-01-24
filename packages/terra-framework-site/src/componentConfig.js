@@ -14,8 +14,11 @@ import GlobalSwitchThemes from 'terra-theme-provider/tests/nightwatch/GlobalSwit
 import ThemeProviderNoTheme from 'terra-theme-provider/tests/nightwatch/ThemeProviderNoTheme';
 import ModalManagerDefault from 'terra-modal-manager/tests/nightwatch/ModalManagerDefault';
 
+import ApplicationLinksExample from 'terra-application-links/examples/Index';
+import ApplicationLinksDefaultList from 'terra-application-links/examples/test-examples/list/ApplicationListDefault';
+import ApplicationLinksDefaultTabs from 'terra-application-links/examples/test-examples/tabs/ApplicationTabsDefault';
+
 import AppDelegateExample from './examples/app-delegate/Index';
-import ApplicationLinksExample from './examples/application-links/Index';
 import LayoutExample from './examples/layout/Index';
 import HeaderExample from './examples/application-header-layout/Index';
 import MenuExample from './examples/application-menu-layout/Index';
@@ -66,6 +69,16 @@ const componentConfig = {
       component: ApplicationLinksExample,
       description: 'Application Links',
     },
+    testRoot: '/tests/application-links',
+    tests: [{
+      path: '/default-list',
+      component: ApplicationLinksDefaultList,
+      description: 'Default List',
+    }, {
+      path: '/default-tabs',
+      component: ApplicationLinksDefaultTabs,
+      description: 'Default Tabs',
+    }],
   },
   applicationMenu: {
     name: 'Application Menu Layout',

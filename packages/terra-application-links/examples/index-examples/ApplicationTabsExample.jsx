@@ -1,5 +1,5 @@
 import React from 'react';
-import { ApplicationTabs } from 'terra-application-links';
+import { ApplicationTabs } from '../../lib/ApplicationLinks';
 import ApplicationLinkConfig from './ApplicationLinkConfig';
 
 const ApplicationTabsExample = () => (
