@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+1.1.0 - (January 23, 2018)
+------------------
 ### Added
 * Debounce to resize of layout
 
