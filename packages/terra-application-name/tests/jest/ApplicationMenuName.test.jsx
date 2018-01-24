@@ -1,7 +1,7 @@
 import React from 'react';
 import ApplicationMenuName from '../../src/ApplicationMenuName';
 
-describe('ApplicationmenuName', () => {
+describe('ApplicationMenuName', () => {
   it('should render a default component', () => {
     const wrapper = shallow(<ApplicationMenuName />);
     expect(wrapper).toMatchSnapshot();

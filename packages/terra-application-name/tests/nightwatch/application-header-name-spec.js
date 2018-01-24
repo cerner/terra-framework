@@ -2,10 +2,15 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 const resizeTo = require('terra-toolkit/lib/nightwatch/responsive-helpers').resizeTo;
 
-module.exports = resizeTo(['tiny', 'large'], {
-  'Displays a default application-name for a header': (browser) => {
-    browser
-      .url(`${browser.launchUrl}/#/tests/application-name/header-default`)
-      .expect.element('#default').to.be.present;
+module.exports = resizeTo(['large'], {
+  'Displays an application-name for a header with visible title and subtitle': (browser) => {
+    browser.url(`${browser.launchUrl}/#/tests/application-name/header-visible-text`);
+    browser.expect.element('#default').to.be.present;
+    browser.expect.element('#default').text.to.equal('TitleSubtitle');
+  },
+
+  'Displays an application-name for a header with no visible title and subtitle': (browser) => {
+    browser.url(`${browser.launchUrl}/#/tests/application-name/header-no-text`);
+    browser.expect.element('#default').text.to.equal('');
   },
 });

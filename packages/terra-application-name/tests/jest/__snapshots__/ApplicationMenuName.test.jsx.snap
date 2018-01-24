@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ApplicationmenuName should render a default component 1`] = `
+exports[`ApplicationMenuName should render a default component 1`] = `
 <div
   className="application-menu-name"
 />
 `;
 
-exports[`ApplicationmenuName should render with provided accessory 1`] = `
+exports[`ApplicationMenuName should render with provided accessory 1`] = `
 <div
   className="application-menu-name"
 >
@@ -20,7 +20,7 @@ exports[`ApplicationmenuName should render with provided accessory 1`] = `
 </div>
 `;
 
-exports[`ApplicationmenuName should render with provided accessory, size, subtitle, and title 1`] = `
+exports[`ApplicationMenuName should render with provided accessory, size, subtitle, and title 1`] = `
 <div
   className="application-menu-name"
 >
@@ -34,19 +34,19 @@ exports[`ApplicationmenuName should render with provided accessory, size, subtit
 </div>
 `;
 
-exports[`ApplicationmenuName should render with provided size 1`] = `
+exports[`ApplicationMenuName should render with provided size 1`] = `
 <div
   className="application-menu-name"
 />
 `;
 
-exports[`ApplicationmenuName should render with provided subtitle 1`] = `
+exports[`ApplicationMenuName should render with provided subtitle 1`] = `
 <div
   className="application-menu-name"
 />
 `;
 
-exports[`ApplicationmenuName should render with provided title 1`] = `
+exports[`ApplicationMenuName should render with provided title 1`] = `
 <div
   className="application-menu-name"
 />
