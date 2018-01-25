@@ -3,10 +3,10 @@
 const resizeTo = require('terra-toolkit/lib/nightwatch/responsive-helpers').resizeTo;
 
 module.exports = resizeTo(['large'], {
-  'Displays an application-name for a header with visible title and subtitle': (browser) => {
+  'Displays an application-name for a header with visible title': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/application-name/header-visible-text`);
     browser.expect.element('#default').to.be.present;
-    browser.expect.element('#default').text.to.equal('TitleSubtitle');
+    browser.expect.element('#default').text.to.equal('Title');
   },
 
   'Displays an application-name for a header with no visible title and subtitle': (browser) => {

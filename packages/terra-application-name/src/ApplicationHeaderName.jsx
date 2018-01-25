@@ -38,10 +38,6 @@ const propTypes = {
     SizeTypes.HUGE,
   ]),
   /**
-   * The subtitle to be appended to the title.
-   * */
-  subtitle: PropTypes.string,
-  /**
    * The title branding of the application name.
    * */
   title: PropTypes.string,
@@ -55,7 +51,6 @@ const ApplicationHeaderName = ({
     accessory,
     app,
     size,
-    subtitle,
     title,
     ...customProps
   }) => {
@@ -67,7 +62,7 @@ const ApplicationHeaderName = ({
   return (
     <div {...customProps} className={ApplicationHeaderNameClassNames}>
       {!!accessory && <div className={cx('accessory')}>{accessory}</div>}
-      {!!title && size !== SizeTypes.TINY && <div className={cx('title')}><strong>{title}</strong>{subtitle}</div>}
+      {!!title && size !== SizeTypes.TINY && <div className={cx('title')}><strong>{title}</strong></div>}
     </div>
   );
 };

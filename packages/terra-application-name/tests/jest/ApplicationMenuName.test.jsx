@@ -17,18 +17,13 @@ describe('ApplicationMenuName', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render with provided subtitle', () => {
-    const wrapper = shallow(<ApplicationMenuName subtitle="subtitle" />);
-    expect(wrapper).toMatchSnapshot();
-  });
-
   it('should render with provided title', () => {
     const wrapper = shallow(<ApplicationMenuName subtitle="subtitle" />);
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render with provided accessory, size, subtitle, and title', () => {
-    const wrapper = shallow(<ApplicationMenuName accessory={<img alt="this is the accessory" />} size="tiny" subtitle="subtitle" title="title" />);
+  it('should render with provided accessory, size, and title', () => {
+    const wrapper = shallow(<ApplicationMenuName accessory={<img alt="this is the accessory" />} size="tiny" title="title" />);
     expect(wrapper).toMatchSnapshot();
   });
 

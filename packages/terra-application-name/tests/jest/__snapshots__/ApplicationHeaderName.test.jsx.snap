@@ -20,7 +20,7 @@ exports[`ApplicationHeaderName should render with provided accessory 1`] = `
 </div>
 `;
 
-exports[`ApplicationHeaderName should render with provided accessory, size, subtitle, and title 1`] = `
+exports[`ApplicationHeaderName should render with provided accessory, size, and title 1`] = `
 <div
   className="application-header-name"
 >
@@ -40,14 +40,9 @@ exports[`ApplicationHeaderName should render with provided size 1`] = `
 />
 `;
 
-exports[`ApplicationHeaderName should render with provided subtitle 1`] = `
-<div
-  className="application-header-name"
-/>
-`;
-
 exports[`ApplicationHeaderName should render with provided title 1`] = `
 <div
   className="application-header-name"
+  subtitle="subtitle"
 />
 `;

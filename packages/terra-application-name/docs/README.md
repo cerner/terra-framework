@@ -15,8 +15,8 @@ import HeaderName from 'terra-application-name/lib/ApplicationHeaderName';
 /* Or */
 import MenuName from 'terra-application-name/lib/ApplicationMenuName';
 
-<HeaderName title="Name of Application" subtitle="Subtitle" />
-<MenuName title="Name of Application" subtitle="Subtitle" />
+<HeaderName title="Name of Application" />
+<MenuName title="Name of Application" />
 ```
 
 ## Component Features
