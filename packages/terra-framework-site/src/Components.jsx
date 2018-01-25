@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 
+import ApplicationLinksExamples from 'terra-application-links/examples/Index';
 import LayoutExamples from './examples/layout/Index';
 import NavigationExamples from './examples/navigation-layout/Index';
 import ApplicationHeaderLayoutExamples from './examples/application-header-layout/Index';
 import ApplicationMenuLayoutExamples from './examples/application-menu-layout/Index';
-import ApplicationLinksExamples from './examples/application-links/Index';
 
 const Components = () => (
   <div style={{ height: '100%', position: 'relative', padding: '15px' }}>

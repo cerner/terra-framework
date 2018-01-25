@@ -35,7 +35,7 @@ const ApplicationTab = ({
   ]);
 
   return (
-    <NavLink {...customProps} className={tabClassNames} to={path} key={path} activeClassName={cx(['selected'])}>
+    <NavLink {...customProps} role="tab" className={tabClassNames} to={path} key={path} activeClassName={cx(['selected'])}>
       {text}
     </NavLink>
   );

@@ -30,7 +30,7 @@ const ApplicationList = ({
   const listItems = links.map(link => (
     <List.Item
       content={
-        <NavLink className={cx(['list-item'])} id={link.id} to={link.path} key={link.path} activeClassName={cx(['selected'])}>
+        <NavLink aria-label={link.text} className={cx(['list-item'])} id={link.id} to={link.path} key={link.path} activeClassName={cx(['selected'])}>
           {link.text}
         </NavLink>
       }

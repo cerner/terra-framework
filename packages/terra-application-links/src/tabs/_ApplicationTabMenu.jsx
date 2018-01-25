@@ -7,6 +7,7 @@ import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import styles from './ApplicationTabs.scss';
 import ApplicationTabMenuContent from './_ApplicationTabMenuContent';
 import ApplicationTabUtils from './ApplicationTabUtils';
+import MenuButton from './_MenuButton';
 
 const cx = classNames.bind(styles);
 
@@ -83,9 +84,8 @@ class ApplicationTabMenu extends React.Component {
 
   createRoutes(popup) {
     const props = {
-      role: 'button',
+      role: 'tab',
       tabIndex: '0',
-      ref: this.setTargetRef,
       onClick: this.handleOnClick,
       onKeyDown: this.handleOnKeyDown,
       'data-terra-tabs-menu': true,
@@ -96,11 +96,7 @@ class ApplicationTabMenu extends React.Component {
         path={child.props.path}
         key={child.props.path}
         render={() => (
-          <div {...props} className={cx(['tab-menu', 'is-selected'])}>
-            <span>{child.props.text}</span>
-            <IconCaretDown />
-            {popup}
-          </div>
+          <MenuButton {...props} text={child.props.text} popup={popup} refCallback={this.setTargetRef} />
         )}
       />
     ));
@@ -111,7 +107,7 @@ class ApplicationTabMenu extends React.Component {
       <Route
         key={'application-tab-more'}
         render={() => (
-          <div {...props} className={cx(['tab-menu'])}>
+          <div {...props} className={cx(['tab-menu'])} ref={this.setTargetRef}>
             <span>{menuToggleText}</span>
             <IconCaretDown />
             {popup}
@@ -140,12 +136,12 @@ class ApplicationTabMenu extends React.Component {
   render() {
     const popup = (
       <Popup
-        contentAttachment="bottom right"
         contentHeight="auto"
         contentWidth="240"
         onRequestClose={this.handleOnRequestClose}
         targetRef={this.getTargetRef}
         isOpen={this.state.isOpen}
+        isArrowDisplayed
       >
         {this.createHiddenTabs()}
       </Popup>

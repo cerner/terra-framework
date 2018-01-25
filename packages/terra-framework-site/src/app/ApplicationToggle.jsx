@@ -17,7 +17,7 @@ const ApplicationToggle = ({
   if (!layoutConfig.toggleMenu || (layoutConfig.size !== 'tiny' && layoutConfig.size !== 'small')) {
     return null;
   }
-  return <Button className={cx('toggle-button')} variant="link" icon={<IconMenu />} onClick={layoutConfig.toggleMenu} />;
+  return <Button aria-label="toggle navigation" className={cx('toggle-button')} variant="link" icon={<IconMenu />} onClick={layoutConfig.toggleMenu} />;
 };
 
 ApplicationToggle.propTypes = propTypes;

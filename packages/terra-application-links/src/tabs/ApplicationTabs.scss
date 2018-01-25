@@ -1,12 +1,4 @@
 :local {
-  .tab[aria-current='true'],
-  .tab-menu.is-selected {
-    background-color: #fff;
-    bottom: -0.07143rem;
-    color: #1c1f21;
-    font-weight: 600;
-  }
-
   .tabs-container {
     display: flex;
     flex: 1 1 auto;
@@ -33,16 +25,6 @@
   }
 
   .tab,
-  .tab-menu {
-    color: #fff;
-    cursor: pointer;
-    font-size: var(--terra-tabs-font-size, 1rem);
-    line-height: var(--terra-tabs-line-height, 1.4);
-    padding: var(--terra-tabs-padding, 0.643rem 1.071rem);
-    text-decoration: none;
-  }
-
-  .tab,
   .tab-menu span {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -59,21 +41,6 @@
     .label:nth-child(2) {
       margin-left: var(--terra-tabs-label-margin-next-to-icon, 0.357rem);
     }
-  }
-
-  .tab.is-hidden {
-    color: #1c1f21;
-    display: block;
-    text-align: left;
-    text-overflow: unset;
-    white-space: normal;
-    word-break: break-word;
-    word-wrap: break-word;
-  }
-
-  .tab.is-hidden[aria-current='true'] {
-    background-color: #2481ca;
-    color: #fff;
   }
 
   .tab-menu {
@@ -93,6 +60,69 @@
       flex: 0 0 auto;
       font-size: 0.571rem;
       margin-left: var(--terra-tabs-menu-arrow-left-margin, 0.5rem);
+    }
+  }
+
+  .tab,
+  .tab-menu {
+    background-image: var(--terra-application-tabs-background-image, linear-gradient(to bottom, #007ee0, #007ee0));
+    background-position: var(--terra-application-tabs-background-position, top-left);
+    background-repeat: no-repeat;
+    background-size: var(--terra-application-tabs-background-size, 0 3px);
+    border-color: var(--terra-application-tabs-border-color, #dedfe0);
+    border-style: solid;
+    border-width: var(--terra-application-tabs-border-width, 0 1px 0 0);
+    color: var(--terra-application-tabs-color, #fff);
+    cursor: pointer;
+    font-size: var(--terra-tabs-font-size, 1rem);
+    line-height: var(--terra-tabs-line-height, 1.4);
+    padding: var(--terra-tabs-padding, 0.643rem 1.071rem);
+    text-decoration: none;
+    transition-duration: var(--terra-application-tabs-transition-duration, 1.0s);
+    transition-property: background-size;
+    transition-timing-function: var(--terra-application-tabs-transition-timing, ease);
+
+    &:hover {
+      background-color: var(--terra-application-tabs-hover-background-color, rgba(0, 0, 0, 0.25));
+    }
+
+    &[aria-current='true'] {
+      background-color: var(--terra-application-tabs-active-background-color, #fff);
+      background-size: var(--terra-application-tabs-active-background-size, 100% 3px);
+      color: var(--terra-application-tabs-active-color, #000);
+      font-weight: 600;
+
+      &:hover {
+        background-image: var(--terra-application-tabs-hover-background-image, linear-gradient(to bottom, #c8cacb, #c8cacb));
+        background-size: var(--terra-application-tabs-hover-background-size, 100% 3px);
+        color: var(--terra-application-tabs-hover-color, #000);
+      }
+    }
+
+    &:first-child {
+      border-width: var(--terra-application-tabs-border-width,  0 1px 0 1px);
+    }
+  }
+
+  .tab.is-hidden {
+    color: #1c1f21;
+    display: block;
+    text-align: left;
+    text-overflow: unset;
+    transition-duration: 0;
+    white-space: normal;
+    word-break: break-word;
+    word-wrap: break-word;
+    
+    &:hover {
+      background: linear-gradient(-90deg, #fff, #f1f1f2);
+    }
+
+    &[aria-current='true'] {
+      background-image: linear-gradient(-270deg, #fff, #e8e9ea);
+      background-size: 100%;
+      box-shadow: inset 0.5rem 0 0 0 #007cc3;
+      padding-left: 1.214rem;
     }
   }
 }

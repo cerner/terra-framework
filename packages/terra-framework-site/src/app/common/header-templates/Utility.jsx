@@ -102,7 +102,7 @@ class Utility extends React.Component {
         >
           {menuItems}
         </Menu>
-        <Button {...customProps} className={utilityClassNames} onClick={this.handleOnClick} variant="link">
+        <Button {...customProps} aria-label="utilities" className={utilityClassNames} onClick={this.handleOnClick} variant="link">
           {!!accessory && <div className={cx('accessory')}>{accessory}</div>}
           {!!title && size !== 'tiny' && <div className={cx('title')}>{title}</div>}
           {<IconExpandMore data-utility-more-icon />}
