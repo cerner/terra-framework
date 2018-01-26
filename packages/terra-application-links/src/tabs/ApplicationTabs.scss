@@ -50,6 +50,7 @@
   .tab {
     flex: 0 1 auto;
     min-width: var(--terra-application-tab-min-width, 8.357rem);
+    max-width: var(--terra-application-tab-max-width, 16.714rem);
     text-align: center;
 
     .label:nth-child(2) {
