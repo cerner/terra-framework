@@ -9,15 +9,15 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Indicates if the pane should be disabled.
+   * Indicates if the tab is be to desplayed in the hidden menu items menu.
    */
   isHidden: PropTypes.bool,
   /**
-   * Indicates if the pane should be disabled.
+   * The path to push to the route.
    */
   path: PropTypes.string.isRequired,
   /**
-   * Indicates if the pane should be disabled.
+   * The display text for the tab.
    */
   text: PropTypes.string.isRequired,
 };

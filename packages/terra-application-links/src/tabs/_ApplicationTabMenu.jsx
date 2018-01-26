@@ -8,15 +8,15 @@ import MenuButton from './_MenuButton';
 
 const propTypes = {
   /**
-   * Ref callback for menu toggle.
+   * Child tabs to be placed in the tab menu.
    */
   children: PropTypes.node,
   /**
-   * Ref callback for menu toggle.
+   * Should the menu he hidden, set to true if there are no hidden items.
    */
   isMenuHidden: PropTypes.bool,
   /**
-   * Ref callback for menu toggle.
+   * Ref callback for menu button.
    */
   refCallback: PropTypes.func,
 };

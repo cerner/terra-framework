@@ -8,23 +8,23 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Ref callback for menu toggle.
+   * Whether or not the menu button should be hidden.
    */
   isMenuHidden: PropTypes.bool,
   /**
-   * Ref callback for menu toggle.
+   * Whether or not the menu button should be animated with selection.
    */
   isSelected: PropTypes.bool,
   /**
-   * Ref callback for menu toggle.
+   * The popup to attach to the menu button.
    */
   popup: PropTypes.node,
   /**
-   * Ref callback for menu toggle.
+   * The display text for the button.
    */
   text: PropTypes.string,
   /**
-   * Ref callback for menu toggle.
+   * Ref callback for menu button.
    */
   refCallback: PropTypes.func,
 };

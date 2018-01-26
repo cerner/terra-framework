@@ -8,19 +8,19 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Ref callback for menu toggle.
+   * The child tabs to be placed in the menu.
    */
   children: PropTypes.node,
   /**
-   * Ref callback for menu toggle.
+   * Prop from popup, determines if the menu height is bound by the screen.
    */
   isHeightBounded: PropTypes.bool,
   /**
-   * Ref callback for menu toggle.
+   * Prop from popup, determines if the menu width is bound by the screen.
    */
   isWidthBounded: PropTypes.bool,
   /**
-   * Ref callback for menu toggle.
+   * Ref callback used by the popup for do positioning.
    */
   refCallback: PropTypes.func,
 };
