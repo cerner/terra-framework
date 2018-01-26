@@ -1,15 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
 import Popup from 'terra-popup';
 import { Switch, Route } from 'react-router-dom';
-import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
-import styles from './ApplicationTabs.scss';
 import ApplicationTabMenuContent from './_ApplicationTabMenuContent';
 import ApplicationTabUtils from './ApplicationTabUtils';
 import MenuButton from './_MenuButton';
-
-const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -19,7 +14,7 @@ const propTypes = {
   /**
    * Ref callback for menu toggle.
    */
-  isHidden: PropTypes.bool,
+  isMenuHidden: PropTypes.bool,
   /**
    * Ref callback for menu toggle.
    */
@@ -95,16 +90,12 @@ class ApplicationTabMenu extends React.Component {
       'data-terra-tabs-menu': true,
     };
 
-    if (this.props.isHidden) {
-      props.style = { display: 'none' };
-    }
-
     const routes = this.props.children.map(child => (
       <Route
         path={child.props.path}
         key={child.props.path}
         render={() => (
-          <MenuButton {...props} text={child.props.text} popup={popup} refCallback={this.setTargetRef} />
+          <MenuButton {...props} text={child.props.text} popup={popup} refCallback={this.setTargetRef} isSelected isMenuHidden={this.props.isMenuHidden} />
         )}
       />
     ));
@@ -115,11 +106,7 @@ class ApplicationTabMenu extends React.Component {
       <Route
         key={'application-tab-more'}
         render={() => (
-          <div {...props} className={cx(['tab-menu'])} ref={this.setTargetRef}>
-            <span>{menuToggleText}</span>
-            <IconCaretDown />
-            {popup}
-          </div>
+          <MenuButton {...props} text={menuToggleText} popup={popup} refCallback={this.setTargetRef} isMenuHidden={this.props.isMenuHidden} />
         )}
       />,
     );

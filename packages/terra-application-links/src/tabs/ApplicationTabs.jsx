@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
+import { withRouter } from 'react-router-dom';
 import 'terra-base/lib/baseStyles';
 import ApplicationTab from './_ApplicationTab';
 import ApplicationTabMenu from './_ApplicationTabMenu';
@@ -19,6 +20,23 @@ const propTypes = {
     path: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
   })),
+    /**
+   * The location as provided by the `withRouter()` HOC.
+   */
+  location: PropTypes.object.isRequired,
+  /**
+   * The match as provided by the `withRouter()` HOC.
+   */
+  match: PropTypes.object.isRequired,
+  /**
+   * The history as provided by the `withRouter()` HOC.
+   */
+  history: PropTypes.object.isRequired,
+  /**
+   * The staticContext as provided by the `withRouter()` HOC. This will only be provided when
+   * within a StaticRouter.
+   */
+  staticContext: PropTypes.object,
 };
 
 const defaultProps = {
@@ -28,28 +46,34 @@ const defaultProps = {
 class ApplicationTabs extends React.Component {
   constructor(props) {
     super(props);
-    this.setContainer = this.setContainer.bind(this);
-    this.setMenuRef = this.setMenuRef.bind(this);
+    this.setContainerNode = this.setContainerNode.bind(this);
+    this.setMenuNode = this.setMenuNode.bind(this);
     this.handleResize = this.handleResize.bind(this);
-    this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
-    this.handleFocusLeft = this.handleFocusLeft.bind(this);
-    this.handleFocusRight = this.handleFocusRight.bind(this);
-    this.state = {
-      hiddenStartIndex: -1,
-      menuHidden: false,
-      isCalculating: true,
-    };
+    this.resetCalculations();
   }
 
   componentDidMount() {
-    this.resizeObserver = new ResizeObserver((entries) => {
+    this.resizeObserver = new ResizeObserver(() => {
       // Resetting the state so that all elements will be rendered face-up for width calculations
-      if (this.state.hiddenStartIndex !== -1 || this.state.menuHidden || !this.state.isCalculating) {
-        this.setState({ hiddenStartIndex: -1, menuHidden: false, isCalculating: true });
+      if (this.hiddenStartIndex !== -1 || this.menuHidden || !this.isCalculating) {
+        this.resetCalculations();
+        this.forceUpdate();
       }
-      this.handleResize(entries[0].contentRect.width);
     });
     this.resizeObserver.observe(this.container);
+    this.handleResize(this.container.clientWidth);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.location !== newProps.location) {
+      this.resetCalculations();
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.isCalculating) {
+      this.handleResize(this.container.clientWidth);
+    }
   }
 
   componentWillUnmount() {
@@ -57,18 +81,24 @@ class ApplicationTabs extends React.Component {
     this.container = null;
   }
 
-  setContainer(node) {
-    // if (node === null) { return; } // Ref callbacks happen on mount and unmount, element will be null on unmount
+  setContainerNode(node) {
+    if (node === null) { return; } // Ref callbacks happen on mount and unmount, element will be null on unmount
     this.container = node;
   }
 
-  setMenuRef(node) {
+  setMenuNode(node) {
     if (node === null) { return; }
-    this.menuRef = node;
+    this.menuNode = node;
+  }
+
+  resetCalculations() {
+    this.hiddenStartIndex = -1;
+    this.menuHidden = false;
+    this.isCalculating = true;
   }
 
   handleResize(width) {
-    const menuToggleWidth = this.menuRef.getBoundingClientRect().width + 2 + this.leftSpacerRef.clientWidth + this.rightSpacerRef.clientWidth;
+    const menuToggleWidth = this.menuNode.getBoundingClientRect().width + 2;
     const availableWidth = width - menuToggleWidth;
 
     // Calculate hide index
@@ -77,7 +107,7 @@ class ApplicationTabs extends React.Component {
     let calcMinWidth = 0;
     let isMenuHidden = true;
     for (let i = 0; i < childrenCount; i += 1) {
-      const tab = this.container.children[1].children[i];
+      const tab = this.container.children[i];
       calcMinWidth += tab.clientWidth;
       if (calcMinWidth > availableWidth && !(i === childrenCount - 1 && calcMinWidth <= width)) {
         newHideIndex = i;
@@ -86,72 +116,21 @@ class ApplicationTabs extends React.Component {
       }
     }
 
-    if (this.state.hiddenStartIndex !== newHideIndex) {
-      this.setState({ hiddenStartIndex: newHideIndex, menuHidden: isMenuHidden, isCalculating: false });
-    }
-  }
-
-  handleOnKeyDown(event) {
-    // If there are less than 2 children we don't need to worry about keyboard navigation
-    if (this.props.links.length < 2) {
-      return;
-    }
-
-    const isRTL = document.getElementsByTagName('html')[0].getAttribute('dir') === 'rtl';
-    const visibleChildren = this.container.children;
-
-    if (event.nativeEvent.keyCode === TabUtils.KEYCODES.LEFT_ARROW) {
-      if (isRTL) {
-        this.handleFocusRight(visibleChildren);
-      } else {
-        this.handleFocusLeft();
-      }
-    } else if (event.nativeEvent.keyCode === TabUtils.KEYCODES.RIGHT_ARROW) {
-      if (isRTL) {
-        this.handleFocusLeft();
-      } else {
-        this.handleFocusRight(visibleChildren);
-      }
-    }
-  }
-
-  handleFocusRight(event, visibleChildren) {
-    const currentItem = this.container.querySelector('[aria-current="true"]');
-    const startIndex = currentItem.data['tab-index'];
-    if (startIndex >= this.state.hiddenStartIndex) {
-      return;
-    }
-
-    for (let i = startIndex + 1; i < visibleChildren.length; i += 1) {
-      if (visibleChildren[i] === this.menuRef) {
-        this.menuRef.focus();
-        break;
-      } else {
-        this.container.children[i].click();
-        break;
-      }
-    }
-  }
-
-  handleFocusLeft() {
-    const currentItem = this.container.querySelector('[aria-current="true"]');
-    let startIndex = currentItem.data['tab-index'];
-    if (startIndex >= this.state.hiddenStartIndex || document.activeElement === this.menuRef) {
-      startIndex = this.state.hiddenStartIndex - 1;
-    }
-
-    for (let i = startIndex; i >= 0; i -= 1) {
-      if (document.activeElement === this.menuRef) {
-        this.container.focus();
-      }
-      this.container.children[i].click();
-      break;
+    if (this.hiddenStartIndex !== newHideIndex) {
+      this.hiddenStartIndex = newHideIndex;
+      this.menuHidden = isMenuHidden;
+      this.isCalculating = false;
+      this.forceUpdate();
     }
   }
 
   render() {
     const {
       links,
+      location,
+      match,
+      history,
+      staticContext,
       ...customProps
     } = this.props;
 
@@ -159,10 +138,10 @@ class ApplicationTabs extends React.Component {
     const hiddenChildren = [];
 
     links.forEach((link, index) => {
-      if (this.state.hiddenStartIndex < 0) {
+      if (this.hiddenStartIndex < 0) {
         visibleChildren.push(<ApplicationTab id={link.id} path={link.path} text={link.text} key={link.path} />);
         hiddenChildren.push(<ApplicationTab id={link.id} path={link.path} text={link.text} key={link.path} isHidden />);
-      } else if (index < this.state.hiddenStartIndex || this.state.hiddenStartIndex < 0) {
+      } else if (index < this.hiddenStartIndex || this.hiddenStartIndex < 0) {
         visibleChildren.push(<ApplicationTab id={link.id} path={link.path} text={link.text} key={link.path} />);
       } else {
         hiddenChildren.push(<ApplicationTab id={link.id} path={link.path} text={link.text} key={link.path} isHidden />);
@@ -171,20 +150,18 @@ class ApplicationTabs extends React.Component {
 
     return (
       /* eslint-disable jsx-a11y/no-static-element-interactions */
-      <div {...customProps} className={cx(['application-tabs'])} ref={this.setContainer}>
-        <div className={cx(['tab-spacer'])} ref={(node) => { this.leftSpacerRef = node; }} />
+      <div {...customProps} className={cx(['application-tabs'])}>
         <div
-          className={cx(['tabs-container', { 'is-calculating': this.state.isCalculating }])}
+          className={cx(['tabs-container', { 'is-calculating': this.isCalculating }])}
           tabIndex="0"
-          onKeyDown={this.handleOnKeyDown}
           role="tablist"
+          ref={this.setContainerNode}
         >
           {visibleChildren}
-          <ApplicationTabMenu refCallback={this.setMenuRef} isHidden={this.state.menuHidden}>
+          <ApplicationTabMenu refCallback={this.setMenuNode} isMenuHidden={this.menuHidden} >
             {hiddenChildren}
           </ApplicationTabMenu>
         </div>
-        <div className={cx(['tab-spacer'])} ref={(node) => { this.rightSpacerRef = node; }} />
       </div>
       /* eslint-enable jsx-ally/no-static-element-interactions */
     );
@@ -195,4 +172,4 @@ ApplicationTabs.propTypes = propTypes;
 ApplicationTabs.defaultProps = defaultProps;
 ApplicationTabs.Utils = TabUtils;
 
-export default ApplicationTabs;
+export default withRouter(ApplicationTabs);
