@@ -12,18 +12,13 @@ describe('ApplicationHeaderName', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render with provided size', () => {
-    const wrapper = shallow(<ApplicationHeaderName size="tiny" />);
-    expect(wrapper).toMatchSnapshot();
-  });
-
   it('should render with provided title', () => {
     const wrapper = shallow(<ApplicationHeaderName subtitle="subtitle" />);
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render with provided accessory, size, and title', () => {
-    const wrapper = shallow(<ApplicationHeaderName accessory={<img alt="this is the accessory" />} size="tiny" title="title" />);
+  it('should render with provided accessory and title', () => {
+    const wrapper = shallow(<ApplicationHeaderName accessory={<img alt="this is the accessory" />} title="title" />);
     expect(wrapper).toMatchSnapshot();
   });
 

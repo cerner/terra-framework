@@ -11,14 +11,14 @@ import UtilitiesExample from '../application-header-layout/UtilitiesExample';
 
 const ApplicationHeaderNameStandard = () => {
   const color = { color: 'grey' };
+  const Name = (<ApplicationHeaderName
+    style={color}
+    title="App-Name"
+    accessory={<Image variant="rounded" src="https://github.com/cerner/terra-core/raw/master/terra.png" height="26px" width="26px" isFluid />}
+  />);
   const tinyHeader = (
     <ApplicationHeaderLayout
-      logo={<ApplicationHeaderName
-        styles={color}
-        title="App-Name"
-        accessory={<Image variant="rounded" src="https://github.com/cerner/terra-core/raw/master/terra.png" height="26px" width="26px" isFluid />}
-        size="tiny"
-      />}
+      logo={Name}
       utilities={<UtilitiesExample size="tiny" />}
       extensions={<ExtensionsExample size="tiny" />}
       navigation={<NavigationExample size="tiny" />}
@@ -28,12 +28,7 @@ const ApplicationHeaderNameStandard = () => {
 
   const smallHeader = (
     <ApplicationHeaderLayout
-      logo={<ApplicationHeaderName
-        style={color}
-        title="App-Name"
-        accessory={<Image variant="rounded" src="https://github.com/cerner/terra-core/raw/master/terra.png" height="26px" width="26px" isFluid />}
-        size="small"
-      />}
+      logo={Name}
       utilities={<UtilitiesExample size="small" />}
       extensions={<ExtensionsExample size="small" />}
       navigation={<NavigationExample size="small" />}
@@ -43,12 +38,7 @@ const ApplicationHeaderNameStandard = () => {
 
   const mediumHeader = (
     <ApplicationHeaderLayout
-      logo={<ApplicationHeaderName
-        style={color}
-        title="App-Name"
-        accessory={<Image variant="rounded" src="https://github.com/cerner/terra-core/raw/master/terra.png" height="26px" width="26px" isFluid />}
-        size="medium"
-      />}
+      logo={Name}
       utilities={<UtilitiesExample size="medium" />}
       extensions={<ExtensionsExample size="medium" />}
       navigation={<NavigationExample size="medium" />}

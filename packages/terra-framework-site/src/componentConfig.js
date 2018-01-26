@@ -12,10 +12,8 @@ import GlobalThemeProvider from 'terra-theme-provider/tests/nightwatch/GlobalThe
 import SwitchThemes from 'terra-theme-provider/tests/nightwatch/SwitchThemes';
 import GlobalSwitchThemes from 'terra-theme-provider/tests/nightwatch/GlobalSwitchThemes';
 import ThemeProviderNoTheme from 'terra-theme-provider/tests/nightwatch/ThemeProviderNoTheme';
-import ApplicationHeaderNameWithText from 'terra-application-name/tests/nightwatch/ApplicationHeaderNameWithText';
-import ApplicationHeaderNameNoText from 'terra-application-name/tests/nightwatch/ApplicationHeaderNameNoText';
-import ApplicationMenuNameWithText from 'terra-application-name/tests/nightwatch/ApplicationMenuNameWithText';
-import ApplicationMenuNameNoText from 'terra-application-name/tests/nightwatch/ApplicationMenuNameNoText';
+import ApplicationHeaderNameDefault from 'terra-application-name/tests/nightwatch/ApplicationHeaderNameDefault';
+import ApplicationMenuNameDefault from 'terra-application-name/tests/nightwatch/ApplicationMenuNameDefault';
 import ModalManagerDefault from 'terra-modal-manager/tests/nightwatch/ModalManagerDefault';
 
 import AppDelegateExample from './examples/app-delegate/Index';
@@ -145,24 +143,14 @@ const componentConfig = {
     testRoot: '/tests/application-name',
     tests: [
       {
-        path: '/header-visible-text',
-        component: ApplicationHeaderNameWithText,
-        description: 'Header: Visible Text',
+        path: '/header-default',
+        component: ApplicationHeaderNameDefault,
+        description: 'Default Header Name',
       },
       {
-        path: '/header-no-text',
-        component: ApplicationHeaderNameNoText,
-        description: 'Header: No Text (tiny breakpoint)',
-      },
-      {
-        path: '/menu-visible-text',
-        component: ApplicationMenuNameWithText,
-        description: 'Menu: Visible Text',
-      },
-      {
-        path: '/menu-no-text',
-        component: ApplicationMenuNameNoText,
-        description: 'Menu: No Text (tiny breakpoint)',
+        path: '/menu-default',
+        component: ApplicationMenuNameDefault,
+        description: 'Default Menu Name',
       }],
   },
   themeProvider: {

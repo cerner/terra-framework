@@ -22,8 +22,8 @@ describe('ApplicationMenuName', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render with provided accessory, size, and title', () => {
-    const wrapper = shallow(<ApplicationMenuName accessory={<img alt="this is the accessory" />} size="tiny" title="title" />);
+  it('should render with provided accessory and title', () => {
+    const wrapper = shallow(<ApplicationMenuName accessory={<img alt="this is the accessory" />} title="title" />);
     expect(wrapper).toMatchSnapshot();
   });
 

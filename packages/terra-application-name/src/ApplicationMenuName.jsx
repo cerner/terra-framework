@@ -9,17 +9,9 @@ import styles from './ApplicationMenuName.scss';
 
 const cx = classNames.bind(styles);
 
-const SizeTypes = {
-  TINY: 'tiny',
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-  HUGE: 'huge',
-};
-
 const propTypes = {
   /**
-   * The accessory element to be displayeds next to the title.
+   * The accessory element to be displayed next to the title.
    * */
   accessory: PropTypes.element,
   /**
@@ -27,30 +19,14 @@ const propTypes = {
    * */
   app: AppDelegate.propType,
   /**
-   * The breakpoint size that the window is currently at. Takes one of: `tiny`, `small`, `medium`, `large`, `huge`.
-   *
-   * */
-  size: PropTypes.oneOf([
-    SizeTypes.TINY,
-    SizeTypes.SMALL,
-    SizeTypes.MEDIUM,
-    SizeTypes.LARGE,
-    SizeTypes.HUGE,
-  ]),
-  /**
    * The title branding of the application name.
    * */
   title: PropTypes.string,
 };
 
-const defaultProps = {
-  size: SizeTypes.TINY,
-};
-
 const ApplicationMenuName = ({
     accessory,
     app,
-    size,
     title,
     ...customProps
   }) => {
@@ -62,12 +38,11 @@ const ApplicationMenuName = ({
   return (
     <div {...customProps} className={ApplicationMenuNameClassNames}>
       {!!accessory && <div className={cx('accessory')}>{accessory}</div>}
-      {!!title && size !== SizeTypes.TINY && <div className={cx('title')}><strong>{title}</strong></div>}
+      {!!title && <div className={cx('title')}><strong>{title}</strong></div>}
     </div>
   );
 };
 
 ApplicationMenuName.propTypes = propTypes;
-ApplicationMenuName.defaultProps = defaultProps;
 
 export default ApplicationMenuName;

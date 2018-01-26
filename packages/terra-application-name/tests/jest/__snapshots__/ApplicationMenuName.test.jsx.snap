@@ -20,7 +20,7 @@ exports[`ApplicationMenuName should render with provided accessory 1`] = `
 </div>
 `;
 
-exports[`ApplicationMenuName should render with provided accessory, size, and title 1`] = `
+exports[`ApplicationMenuName should render with provided accessory and title 1`] = `
 <div
   className="application-menu-name"
 >
@@ -31,12 +31,20 @@ exports[`ApplicationMenuName should render with provided accessory, size, and ti
       alt="this is the accessory"
     />
   </div>
+  <div
+    className="title"
+  >
+    <strong>
+      title
+    </strong>
+  </div>
 </div>
 `;
 
 exports[`ApplicationMenuName should render with provided size 1`] = `
 <div
   className="application-menu-name"
+  size="tiny"
 />
 `;
 

@@ -14,7 +14,6 @@ const ApplicationMenuNameStandard = () => (
         style={color}
         title="App-Name"
         accessory={<Image variant="rounded" src="https://github.com/cerner/terra-core/raw/master/terra.png" height="26px" width="26px" isFluid />}
-        size={'small'}
       />
     )}
     extensions={<Placeholder text="Extensions" height="50px" />}
