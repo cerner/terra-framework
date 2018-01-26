@@ -1,4 +1,18 @@
 :local {
+  .application-tabs {
+    display: flex;
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+  }
+
+  .tab-spacer {
+    flex: 0 0 auto;
+    width: var(--terra-tabs-label-margin-next-to-icon, 2rem);
+  }
+
   .tabs-container {
     display: flex;
     flex: 1 1 auto;
@@ -68,7 +82,7 @@
     background-image: var(--terra-application-tabs-background-image, linear-gradient(to bottom, #007ee0, #007ee0));
     background-position: var(--terra-application-tabs-background-position, top-left);
     background-repeat: no-repeat;
-    background-size: var(--terra-application-tabs-background-size, 0 3px);
+    background-size: var(--terra-application-tabs-background-size, 0 4px);
     border-color: var(--terra-application-tabs-border-color, #dedfe0);
     border-style: solid;
     border-width: var(--terra-application-tabs-border-width, 0 1px 0 0);
@@ -78,7 +92,7 @@
     line-height: var(--terra-tabs-line-height, 1.4);
     padding: var(--terra-tabs-padding, 0.643rem 1.071rem);
     text-decoration: none;
-    transition-duration: var(--terra-application-tabs-transition-duration, 1.0s);
+    transition-duration: var(--terra-application-tabs-transition-duration, 0.35s);
     transition-property: background-size;
     transition-timing-function: var(--terra-application-tabs-transition-timing, ease);
 
@@ -88,13 +102,13 @@
 
     &[aria-current='true'] {
       background-color: var(--terra-application-tabs-active-background-color, #fff);
-      background-size: var(--terra-application-tabs-active-background-size, 100% 3px);
+      background-size: var(--terra-application-tabs-active-background-size, 100% 4px);
       color: var(--terra-application-tabs-active-color, #000);
       font-weight: 600;
 
       &:hover {
         background-image: var(--terra-application-tabs-hover-background-image, linear-gradient(to bottom, #c8cacb, #c8cacb));
-        background-size: var(--terra-application-tabs-hover-background-size, 100% 3px);
+        background-size: var(--terra-application-tabs-hover-background-size, 100% 4px);
         color: var(--terra-application-tabs-hover-color, #000);
       }
     }

@@ -58,7 +58,7 @@ class ApplicationTabs extends React.Component {
   }
 
   setContainer(node) {
-    if (node === null) { return; } // Ref callbacks happen on mount and unmount, element will be null on unmount
+    // if (node === null) { return; } // Ref callbacks happen on mount and unmount, element will be null on unmount
     this.container = node;
   }
 
@@ -68,9 +68,7 @@ class ApplicationTabs extends React.Component {
   }
 
   handleResize(width) {
-    const menuMarginLeft = parseInt(window.getComputedStyle(this.menuRef, null).getPropertyValue('margin-left'), 10);
-    const menuMarginRight = parseInt(window.getComputedStyle(this.menuRef, null).getPropertyValue('margin-right'), 10);
-    const menuToggleWidth = this.menuRef.getBoundingClientRect().width + menuMarginLeft + menuMarginRight;
+    const menuToggleWidth = this.menuRef.getBoundingClientRect().width + 2 + this.leftSpacerRef.clientWidth + this.rightSpacerRef.clientWidth;
     const availableWidth = width - menuToggleWidth;
 
     // Calculate hide index
@@ -79,11 +77,9 @@ class ApplicationTabs extends React.Component {
     let calcMinWidth = 0;
     let isMenuHidden = true;
     for (let i = 0; i < childrenCount; i += 1) {
-      const tab = this.container.children[i];
-      const tabMarginLeft = parseInt(window.getComputedStyle(this.menuRef, null).getPropertyValue('margin-left'), 10);
-      const tabMarginRight = parseInt(window.getComputedStyle(this.menuRef, null).getPropertyValue('margin-right'), 10);
+      const tab = this.container.children[1].children[i];
       const minWidth = parseInt(window.getComputedStyle(tab, null).getPropertyValue('min-width'), 10);
-      calcMinWidth += (minWidth + tabMarginLeft + tabMarginRight);
+      calcMinWidth += minWidth;
       if (calcMinWidth > availableWidth && !(i === childrenCount - 1 && calcMinWidth <= width)) {
         newHideIndex = i;
         isMenuHidden = false;
@@ -155,34 +151,41 @@ class ApplicationTabs extends React.Component {
   }
 
   render() {
+    const {
+      links,
+      ...customProps
+    } = this.props;
+
     const visibleChildren = [];
     const hiddenChildren = [];
 
-    this.props.links.forEach((link, index) => {
-      if (index < this.state.hiddenStartIndex || this.state.hiddenStartIndex < 0) {
+    links.forEach((link, index) => {
+      if (this.state.hiddenStartIndex < 0) {
+        visibleChildren.push(<ApplicationTab id={link.id} path={link.path} text={link.text} key={link.path} />);
+        hiddenChildren.push(<ApplicationTab id={link.id} path={link.path} text={link.text} key={link.path} isHidden />);
+      } else if (index < this.state.hiddenStartIndex || this.state.hiddenStartIndex < 0) {
         visibleChildren.push(<ApplicationTab id={link.id} path={link.path} text={link.text} key={link.path} />);
       } else {
         hiddenChildren.push(<ApplicationTab id={link.id} path={link.path} text={link.text} key={link.path} isHidden />);
       }
     });
 
-    const menu = this.state.menuHidden ? null : (
-      <ApplicationTabMenu refCallback={this.setMenuRef}>
-        {hiddenChildren}
-      </ApplicationTabMenu>
-    );
-
     return (
       /* eslint-disable jsx-a11y/no-static-element-interactions */
-      <div
-        className={cx(['tabs-container', { 'is-calculating': this.state.isCalculating }])}
-        ref={this.setContainer}
-        tabIndex="0"
-        onKeyDown={this.handleOnKeyDown}
-        role="tablist"
-      >
-        {visibleChildren}
-        {menu}
+      <div {...customProps} className={cx(['application-tabs'])} ref={this.setContainer}>
+        <div className={cx(['tab-spacer'])} ref={(node) => { this.leftSpacerRef = node; }} />
+        <div
+          className={cx(['tabs-container', { 'is-calculating': this.state.isCalculating }])}
+          tabIndex="0"
+          onKeyDown={this.handleOnKeyDown}
+          role="tablist"
+        >
+          {visibleChildren}
+          <ApplicationTabMenu refCallback={this.setMenuRef} isHidden={this.state.menuHidden}>
+            {hiddenChildren}
+          </ApplicationTabMenu>
+        </div>
+        <div className={cx(['tab-spacer'])} ref={(node) => { this.rightSpacerRef = node; }} />
       </div>
       /* eslint-enable jsx-ally/no-static-element-interactions */
     );

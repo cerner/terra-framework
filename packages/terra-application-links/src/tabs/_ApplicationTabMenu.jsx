@@ -19,6 +19,10 @@ const propTypes = {
   /**
    * Ref callback for menu toggle.
    */
+  isHidden: PropTypes.bool,
+  /**
+   * Ref callback for menu toggle.
+   */
   refCallback: PropTypes.func,
 };
 
@@ -90,6 +94,10 @@ class ApplicationTabMenu extends React.Component {
       onKeyDown: this.handleOnKeyDown,
       'data-terra-tabs-menu': true,
     };
+
+    if (this.props.isHidden) {
+      props.style = { display: 'none' };
+    }
 
     const routes = this.props.children.map(child => (
       <Route

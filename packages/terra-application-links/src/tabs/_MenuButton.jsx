@@ -21,18 +21,23 @@ const propTypes = {
   refCallback: PropTypes.func,
 };
 
-class ApplicationTabMenu extends React.Component {
+class MenuButton extends React.Component {
   constructor(props, context) {
     super(props, context);
+
+    this.update = this.update.bind(this);
+
     this.hasMounted = false;
   }
 
   componentDidMount() {
+    window.requestAnimationFrame(this.update);
+  }
+
+  update() {
     if (this.contentNode) {
-      window.requestAnimationFrame(() => {
-        this.contentNode.setAttribute('aria-current', 'true');
-        this.hasMounted = true;
-      });
+      this.contentNode.setAttribute('aria-current', 'true');
+      this.hasMounted = true;
     }
   }
 
@@ -58,6 +63,6 @@ class ApplicationTabMenu extends React.Component {
   }
 }
 
-ApplicationTabMenu.propTypes = propTypes;
+MenuButton.propTypes = propTypes;
 
-export default ApplicationTabMenu;
+export default MenuButton;

@@ -8,7 +8,7 @@ export default () => (
     initialEntries={testLinkConfig.map(link => link.path)}
     initialIndex={0}
   >
-    <div className="test-wrapper" style={{ border: '1px solid lightGray', width: '100%', backgroundColor: 'gray' }}>
+    <div style={{ border: '1px solid lightGray', width: '100%', backgroundColor: 'gray' }}>
       <ApplicationTabs links={testLinkConfig} />
     </div>
   </MemoryRouter>
