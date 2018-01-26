@@ -20,6 +20,6 @@ module.exports = {
     title: 'Terra Framework',
     
     /* TEMP fix to allow for bidirecitonality in site. Current v2.0.0-RC.0 release does not map correctly. */
-    bidirectional: false;    
+    bidirectional: false,   
   },
 };
