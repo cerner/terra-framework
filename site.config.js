@@ -17,9 +17,9 @@ module.exports = {
     logoSrc: 'https://github.com/cerner/terra-core/raw/master/terra.png',
 
     /* The title for the site header. */
-    title: 'Terra Framework',
-    
-    /* TEMP fix to allow for bidirecitonality in site. Current v2.0.0-RC.0 release does not map correctly. */
-    bidirectional: false,   
+    title: 'Terra',
+
+    /* The subtitle for the site header. */
+    subtitle: 'Framework',
   },
 };
