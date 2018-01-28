@@ -87,7 +87,7 @@ class ApplicationTabMenu extends React.Component {
       tabIndex: '0',
       onClick: this.handleOnClick,
       onKeyDown: this.handleOnKeyDown,
-      'data-terra-tabs-menu': true,
+      'data-application-tabs-more': true,
     };
 
     const routes = this.props.children.map(child => (

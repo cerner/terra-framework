@@ -10,11 +10,6 @@
     padding-right: var(--terra-application-tabs-spacer-width, 2rem);;
   }
 
-  .tab-spacer {
-    flex: 0 0 auto;
-    width: var(--terra-application-tabs-spacer-width, 2rem);
-  }
-
   .tabs-container {
     display: flex;
     flex: 1 1 auto;
@@ -119,7 +114,7 @@
     }
 
     &:first-child {
-      border-width: var(--terra-application-tabs-border-width,  0 1px 0 1px);
+      border-width: var(--terra-application-tabs-border-width-first,  0 1px 0 1px);
     }
   }
 

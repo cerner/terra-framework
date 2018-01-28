@@ -41,7 +41,7 @@ const ApplicationTabMenuContent = ({
   }
 
   return (
-    <List {...customProps} style={listStyle} className={cx(['list'])} role="menu" ref={refCallback}>
+    <List data-application-tab-menu-content {...customProps} style={listStyle} className={cx(['list'])} role="menu" ref={refCallback}>
       {React.Children.map(children, child => (
         <List.Item content={child} key={child.props.path} />
       ))}

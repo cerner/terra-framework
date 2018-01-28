@@ -9,7 +9,7 @@ export default () => (
     initialIndex={0}
   >
     <div style={{ border: '1px solid lightGray', width: '100%', backgroundColor: 'gray' }}>
-      <ApplicationTabs links={testLinkConfig} />
+      <ApplicationTabs id="test-tabs" links={testLinkConfig} />
     </div>
   </MemoryRouter>
 );

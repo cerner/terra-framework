@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render ApplicationTabs with links 1`] = `
-<ApplicationTabs
+<withRouter(ApplicationTabs)
   links={
     Array [
       Object {
@@ -33,8 +33,4 @@ exports[`should render ApplicationTabs with links 1`] = `
 />
 `;
 
-exports[`should render default component 1`] = `
-<ApplicationTabs
-  links={Array []}
-/>
-`;
+exports[`should render default component 1`] = `<withRouter(ApplicationTabs) />`;
