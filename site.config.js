@@ -18,8 +18,5 @@ module.exports = {
 
     /* The title for the site header. */
     title: 'Terra Framework',
-
-    /* tempary fix to allow for bidirecitonality in site. Current v2.0.0-RC.0 release has wrong default value. */
-    bidirectional: true,
   },
 };

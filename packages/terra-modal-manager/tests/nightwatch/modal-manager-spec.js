@@ -4,54 +4,54 @@ const resizeTo = require('terra-toolkit/lib/nightwatch/responsive-helpers').resi
 
 module.exports = resizeTo(['tiny', 'huge'], {
   'Renders the ModalManager': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/modal-manager/modal-manager-default`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/modal-manager/modal-manager-default`);
     browser.expect.element('[class*="container"]').to.be.present;
   },
 
   'Opens the modal when disclose is selected': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/modal-manager/modal-manager-default`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/modal-manager/modal-manager-default`);
 
     browser.click('#root-component .disclose');
     browser.expect.element('[class*="slide-group"] #DemoContainer-1').to.be.present;
   },
 
   'Opens the modal when disclose tiny is selected': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/modal-manager/modal-manager-default`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/modal-manager/modal-manager-default`);
 
     browser.click('#root-component .disclose-tiny');
     browser.expect.element('[class*="slide-group"] #DemoContainer-1').to.be.present;
   },
 
   'Opens the modal when disclose small is selected': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/modal-manager/modal-manager-default`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/modal-manager/modal-manager-default`);
 
     browser.click('#root-component .disclose-small');
     browser.expect.element('[class*="slide-group"] #DemoContainer-1').to.be.present;
   },
 
   'Opens the modal when disclose medium is selected': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/modal-manager/modal-manager-default`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/modal-manager/modal-manager-default`);
 
     browser.click('#root-component .disclose-medium');
     browser.expect.element('[class*="slide-group"] #DemoContainer-1').to.be.present;
   },
 
   'Opens the modal when disclose large is selected': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/modal-manager/modal-manager-default`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/modal-manager/modal-manager-default`);
 
     browser.click('#root-component .disclose-large');
     browser.expect.element('[class*="slide-group"] #DemoContainer-1').to.be.present;
   },
 
   'Opens the modal when disclose huge is selected': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/modal-manager/modal-manager-default`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/modal-manager/modal-manager-default`);
 
     browser.click('#root-component .disclose-huge');
     browser.expect.element('[class*="slide-group"] #DemoContainer-1').to.be.present;
   },
 
   'Opens the modal when disclose fullscreen is selected': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/modal-manager/modal-manager-default`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/modal-manager/modal-manager-default`);
 
     browser.click('#root-component .disclose-fullscreen');
     browser.expect.element('[class*="slide-group"] #DemoContainer-1').to.be.present;
@@ -60,7 +60,7 @@ module.exports = resizeTo(['tiny', 'huge'], {
   },
 
   'Ensures goBack is not provided to a single modal component': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/modal-manager/modal-manager-default`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/modal-manager/modal-manager-default`);
 
     browser.click('#root-component .disclose');
     browser.expect.element('[class*="slide-group"] #DemoContainer-1').to.be.present;
@@ -68,7 +68,7 @@ module.exports = resizeTo(['tiny', 'huge'], {
   },
 
   'Closes the modal when dismiss is selected within modal with one modal component': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/modal-manager/modal-manager-default`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/modal-manager/modal-manager-default`);
 
     browser.click('#root-component .disclose');
     browser.expect.element('[class*="slide-group"] #DemoContainer-1').to.be.present;
@@ -78,7 +78,7 @@ module.exports = resizeTo(['tiny', 'huge'], {
   },
 
   'Closes the modal when closeDisclosure is selected within modal': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/modal-manager/modal-manager-default`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/modal-manager/modal-manager-default`);
 
     browser.click('#root-component .disclose');
     browser.expect.element('[class*="slide-group"] #DemoContainer-1').to.be.present;
@@ -88,7 +88,7 @@ module.exports = resizeTo(['tiny', 'huge'], {
   },
 
   'Maximizes/minimizes the modal when selected within modal': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/modal-manager/modal-manager-default`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/modal-manager/modal-manager-default`);
 
     browser.click('#root-component .disclose');
     browser.expect.element('[class*="slide-group"] #DemoContainer-1').to.be.present;
@@ -106,7 +106,7 @@ module.exports = resizeTo(['tiny', 'huge'], {
   },
 
   'Discloses within the modal when modal is already presented': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/modal-manager/modal-manager-default`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/modal-manager/modal-manager-default`);
 
     browser.click('#root-component .disclose');
     browser.expect.element('[class*="modal"] [class*="slide-group"] #DemoContainer-1').to.be.present;
@@ -129,7 +129,7 @@ module.exports = resizeTo(['tiny', 'huge'], {
   },
 
   'Releases/Requests focus when selected within modal': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/modal-manager/modal-manager-default`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/modal-manager/modal-manager-default`);
 
     browser.click('#root-component .disclose');
 
