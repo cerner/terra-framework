@@ -9,7 +9,7 @@
     text-decoration: none;
     
     &:hover {
-      background: var(--terra-application-list-background, linear-gradient(-90deg, #fff, #f1f1f2));
+      background: var(--terra-application-list-background-hover, linear-gradient(-90deg, #fff, #f1f1f2));
     }
 
     &[aria-current='true'] {

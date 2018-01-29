@@ -8,6 +8,6 @@ export default () => (
     initialEntries={testLinkConfig.map(link => link.path)}
     initialIndex={0}
   >
-    <ApplicationList links={testLinkConfig} />
+    <ApplicationList id="test-list" links={testLinkConfig} />
   </MemoryRouter>
 );

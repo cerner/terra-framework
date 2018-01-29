@@ -34,8 +34,13 @@ const ApplicationTab = ({
     customProps.className,
   ]);
 
+  const tabRole = {};
+  if (!isHidden) {
+    tabRole.role = 'tab';
+  }
+
   return (
-    <NavLink {...customProps} role="tab" className={tabClassNames} to={path} key={path} activeClassName={cx(['selected'])}>
+    <NavLink {...customProps} {...tabRole} className={tabClassNames} to={path} key={path} activeClassName={cx(['selected'])}>
       {text}
     </NavLink>
   );

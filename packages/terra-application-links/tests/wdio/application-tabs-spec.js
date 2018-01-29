@@ -4,11 +4,13 @@ const viewports = Terra.viewports('tiny', 'medium');
 
 describe('ApplicationTabs', () => {
   describe('Displays a default application tabs', () => {
-    browser.url('/#/tests/application-links/default-tabs');
-    browser.waitForVisible('#test-tabs [data-application-tabs-more]');
-    browser.moveToObject('#test-tabs [data-application-tabs-more]');
+    beforeEach(() => {
+      browser.url('/#/tests/application-links/default-tabs');
+      browser.waitForVisible('#test-tabs [data-application-tabs-more]');
+      browser.moveToObject('#test-tabs [data-application-tabs-more]');
+    });
 
-    Terra.should.matchScreenshot({ viewports, selector: '#test-tabs' });
+    Terra.should.matchScreenshot({ viewports });
     Terra.should.beAccessible({ viewports, context: '#test-tabs' });
     Terra.should.themeEachCustomProperty({
       '--terra-application-tabs-spacer-width': '2rem',
@@ -36,13 +38,16 @@ describe('ApplicationTabs', () => {
     });
   });
 
-  describe('Displays a hover application tabs', () => {
-    browser.url('/#/tests/application-links/default-tabs');
-    browser.waitForVisible('#test-tabs [data-application-tabs-more]');
-    browser.click('#test-tabs [data-application-tabs-more]');
-    browser.waitForVisible('[data-application-tab-menu-content]');
+  describe('Displays a hidden application tabs', () => {
+    beforeEach(() => {
+      browser.url('/#/tests/application-links/default-tabs');
+      browser.waitForVisible('#test-tabs [data-application-tabs-more]');
+      browser.click('#test-tabs [data-application-tabs-more]');
+      browser.waitForVisible('[data-application-tab-menu-content]');
+      browser.moveToObject('[data-application-tab-menu-content] > *:first-child');
+    });
 
-    Terra.should.matchScreenshot({ viewports, selector: '[data-application-tab-menu-content]' });
+    Terra.should.matchScreenshot({ viewports });
     Terra.should.beAccessible({ viewports, context: '[data-application-tab-menu-content]' });
     Terra.should.themeEachCustomProperty({
       '--terra-application-tabs-hidden-color': '#1c1f21',
@@ -51,5 +56,17 @@ describe('ApplicationTabs', () => {
       '--terra-application-tabs-hidden-selected-box-shadow': 'inset 0.5rem 0 0 0 #007cc3',
       '--terra-application-tabs-hidden-selected-left-padding': '1.214rem',
     });
+  });
+
+  describe('Displays a hidden application tabs selection', () => {
+    beforeEach(() => {
+      browser.url('/#/tests/application-links/default-tabs');
+      browser.waitForVisible('#test-tabs [data-application-tabs-more]');
+      browser.click('#test-tabs [data-application-tabs-more]');
+      browser.waitForVisible('[data-application-tab-menu-content]');
+      browser.click('[data-application-tab-menu-content] > *:first-child');
+    });
+
+    Terra.should.matchScreenshot({ viewports });
   });
 });
