@@ -8,6 +8,8 @@ import { loadStylesheet } from './assets';
 window.define = window.SystemJS.amdDefine;
 window.require = window.requirejs = SystemJS.amdRequire;
 
+const DefaultTimeout = () => <p>Component mounting is timed out.</p>;
+
 const propTypes = {
 
  /**
@@ -19,6 +21,17 @@ const propTypes = {
    * A placeholder to display while the component is laoding.
    * */
   placeholder: PropTypes.element,
+
+  /**
+   * A component to display while the loading of css or module is timed out.
+   * */
+  timeoutComponent: PropTypes.element,
+
+  /**
+   * The number of milliseconds to wait before timing out.
+   * @type {[type]}
+   */
+  timeoutInterval: PropTypes.number,
 
   /**
    * The entry file in the manifest to use to load the embeddable module.
@@ -34,6 +47,8 @@ const propTypes = {
 
 const defaultProps = {
   entry: 'index.js',
+  timeoutInterval: 3000,
+  timeoutComponent: <DefaultTimeout />,
 };
 
 
@@ -41,7 +56,11 @@ class EmbeddedComponent extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { module: null, cssReady: false };
+    this.state = {
+      module: null,
+      cssReady: false,
+      timeout: false,
+    };
   }
 
   componentDidMount() {
@@ -49,6 +68,13 @@ class EmbeddedComponent extends React.Component {
       this.loadCSS(manifest);
       this.loadModule(this.getAbsolutePath(manifest[this.props.entry]));
     });
+
+    // Sets a timer for timing out.
+    setTimeout(() => {
+      if (!this.state.module || !this.state.cssReady) {
+        this.setState({ timeout: true });
+      }
+    }, this.props.timeoutInterval);
   }
 
   /**
@@ -99,8 +125,13 @@ class EmbeddedComponent extends React.Component {
   }
 
   render() {
-    const { module: Component, cssReady } = this.state;
+    const { module: Component, cssReady, timeout } = this.state;
     const { entry, manifest, placeholder, basePath, ...customProps } = this.props;
+
+    if (timeout) {
+      return this.props.timeoutComponent;
+    }
+
     if (cssReady && Component) {
       return <Component {...customProps} />;
     }
