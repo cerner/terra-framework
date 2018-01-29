@@ -9,13 +9,13 @@ describe('ApplicationList', () => {
     Terra.should.matchScreenshot({ viewports });
     Terra.should.beAccessible({ viewports, context: '#test-list' });
     Terra.should.themeEachCustomProperty({
-      '--terra-application-list-color': '#1c1f21',
-      '--terra-application-list-font-size': '1.071rem',
-      '--terra-application-list-line-height': '3.214rem',
-      '--terra-application-list-padding': '0 0.7143rem',
-      '--terra-application-list-selected-background-image': 'linear-gradient(-270deg, #fff, #e8e9ea)',
-      '--terra-application-list-selected-box-shadow': 'inset 0.5rem 0 0 0 #007cc3',
-      '--terra-application-list-selected-padding': '0 1.214rem',
+      '--terra-application-list-color': 'blue',
+      '--terra-application-list-font-size': '2rem',
+      '--terra-application-list-line-height': '4rem',
+      '--terra-application-list-padding': '0 2rem',
+      '--terra-application-list-selected-background-image': 'linear-gradient(-270deg, orange, red)',
+      '--terra-application-list-selected-box-shadow': 'inset 1rem 0 0 0 purple',
+      '--terra-application-list-selected-padding': '0 2rem',
     });
   });
 
@@ -28,7 +28,7 @@ describe('ApplicationList', () => {
 
     Terra.should.matchScreenshot({ viewports });
     Terra.should.themeEachCustomProperty({
-      '--terra-application-list-background-hover': 'linear-gradient(-90deg, #fff, #f1f1f2)',
+      '--terra-application-list-background-hover': 'linear-gradient(-90deg, red, orange)',
     });
   });
 
