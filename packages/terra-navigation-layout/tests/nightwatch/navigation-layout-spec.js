@@ -4,7 +4,7 @@ const { resizeTo, screenWidth } = require('terra-toolkit/lib/nightwatch/responsi
 
 module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge'], {
   'Displays a basic NavigationLayout': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/navigation-layout/basic`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/navigation-layout/navigation-layout-basic`);
 
     browser.expect.element('#test-root .test-header').to.be.present;
     browser.expect.element('#test-root .test-content').to.be.present;
@@ -12,7 +12,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge'], {
   },
 
   'Displays a complex NavigationLayout': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/navigation-layout/complex`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/navigation-layout/navigation-layout-complex`);
 
     const width = screenWidth(browser);
 
