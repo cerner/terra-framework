@@ -29,13 +29,13 @@
     "terra-base": "^2.5.0"
   },
   "devDependencies": {
-    "terra-props-table": "^1.10.1",
-    "terra-responsive-element": "^1.14.0"
+    "terra-props-table": "^1.10.1"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-base": "^2.5.0"
+    "terra-base": "^2.5.0",
+    "terra-responsive-element": "^1.14.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
