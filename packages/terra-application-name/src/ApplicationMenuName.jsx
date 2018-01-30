@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 
-import AppDelegate from 'terra-app-delegate';
-
 import styles from './ApplicationMenuName.scss';
 
 const cx = classNames.bind(styles);
@@ -15,10 +13,6 @@ const propTypes = {
    * */
   accessory: PropTypes.element,
   /**
-   * The AppDelegate instance provided by the containing component. If present, its properties will propagate to the children components.
-   * */
-  app: AppDelegate.propType,
-  /**
    * The title branding of the application name.
    * */
   title: PropTypes.string,
@@ -26,7 +20,6 @@ const propTypes = {
 
 const ApplicationMenuName = ({
     accessory,
-    app,
     title,
     ...customProps
   }) => {
