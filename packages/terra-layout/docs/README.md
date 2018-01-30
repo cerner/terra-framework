@@ -14,3 +14,30 @@ To facilitate communication between the Layout and its content, the Layout provi
 * `menuIsOpen` - A boolean flag indicating whether or not the menu is currently displayed.
 * `togglePin` - A function that will toggle the current menu's pinned state. This function is provied only to the `menu` component and only when the breakpoint size is `medium`.
 * `menuIsPinned` - A boolean flag indicating whether or not the menu is currently pinned. This flag is provied only to the `menu` component and only when the breakpoint size is `medium`.
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-layout`
+  - `yarn add terra-layout`
+
+## Usage
+
+```jsx
+import React from 'react';
+import Layout from 'terra-layout';
+import { HeaderExample, MenuExample, ContentExample } from './your/examples';
+
+<Layout
+  header={<HeaderExample />}
+  menu={<MenuExample />}
+  menuText="Menu"
+>
+  <ContentExample />
+</Layout>
+```
+
+## Component Features
+* [Cross-Browser Support](https://github.com/cerner/terra-core/wiki/Component-Features#cross-browser-support)
+* [Responsive Support](https://github.com/cerner/terra-core/wiki/Component-Features#responsive-support)
+* [Mobile Support](https://github.com/cerner/terra-core/wiki/Component-Features#mobile-support)
