@@ -61,6 +61,9 @@
     "--terra-button-padding-bottom-compact": "0",
     "--terra-button-padding-top-compact": "0"
   },
+  "Grid": {
+    "--terra-grid-gutter-width": "1rem"
+  },
   "HookshotContent": {
     "--terra-hookshot-content-z-index": "7001"
   },
