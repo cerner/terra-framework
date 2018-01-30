@@ -6,7 +6,11 @@ I need to plump up this documentation a bit, but here's the gist:
 * Components are provided to the Aggregator.
 * By default, the components will be rendered in the order given. An optional `render` prop can be provided that will override the default render logic. The render prop will be provided with an Object containing:
     * items (`Array`) - The components provided to the Aggregator, now containing an `aggregatorDelegate` prop with access to the Aggregator's APIs.
-* Components can request focus from the Aggregator.
+* The `aggregatorDelegate` prop contains the following entries:
+    * hasFocus - A boolean indicating whether or not the item currently has focus.
+    * requestFocus - A function will attempt to give focus to the calling item.
+    * releaseFocus - A function that will release focus from the calling item. Only provided if the item has focus.
+    * itemState - An Object containing state that was given to the Aggregator during the focus request.
 * When a component requests focus, the component should provide an Object containing state pertaining to the focus request. It will be managed by the Aggregator and given to the component as a prop on the next render cycle. What goes inside this Object is up to the component. However, this Object will be destroyed when the component loses focus, so the data included should be scoped to things tied directly to a focus state.
 * If a component requests focus, any component that previously held focus will lose focus as well as the focus state it provided.
 * Once a component receives focus, the component will be provided with the 'disclose' function that the Aggregator was given. This function is only provided to focused components so components can't stomp on one another.
