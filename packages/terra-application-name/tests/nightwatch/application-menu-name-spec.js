@@ -4,7 +4,7 @@ const resizeTo = require('terra-toolkit/lib/nightwatch/responsive-helpers').resi
 
 module.exports = resizeTo(['large'], {
   'Displays a default application-name for a menu': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/application-name/menu-default`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/application-name/menu-default`);
     browser.expect.element('#default').to.be.present;
     browser.expect.element('#default').text.to.equal('Title');
   },

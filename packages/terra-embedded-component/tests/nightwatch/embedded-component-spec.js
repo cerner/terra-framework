@@ -7,7 +7,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
   TODO: Uncomment once tests are created.
   'Displays a default embedded-component': (browser) => {
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/embedded-component-tests/default`)
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/raw/tests/embedded-component-tests/default`)
       .expect.element('.embedded-component').to.be.present;
   }, */
 });
