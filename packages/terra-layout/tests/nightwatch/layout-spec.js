@@ -4,7 +4,7 @@ const { resizeTo, screenWidth } = require('terra-toolkit/lib/nightwatch/responsi
 
 module.exports = resizeTo(['small', 'large', 'huge'], {
   'Displays a default layout': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/layout/default`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/layout/layout-default`);
 
     browser.expect.element('#test-root #test-header').to.be.present;
     browser.expect.element('#test-root #test-content').to.be.present;
@@ -38,7 +38,7 @@ module.exports = resizeTo(['small', 'large', 'huge'], {
   },
 
   'Displays a layout with no menu': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/layout/no-menu`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/layout/layout-no-menu`);
 
     browser.expect.element('#test-root #test-header').to.be.present;
     browser.expect.element('#test-root #test-content').to.be.present;
@@ -47,7 +47,7 @@ module.exports = resizeTo(['small', 'large', 'huge'], {
   },
 
   'Displays a layout with long menu control text': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/layout/long-text`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/layout/layout-long-text`);
 
     browser.expect.element('#test-root #test-header').to.be.present;
     browser.expect.element('#test-root #test-content').to.be.present;
@@ -67,7 +67,7 @@ module.exports = resizeTo(['small', 'large', 'huge'], {
   },
 
   'Displays a layout without a header': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/layout/no-header`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/layout/layout-no-header`);
 
     browser.expect.element('#test-root #test-header').to.not.be.present;
     browser.expect.element('#test-root #test-content').to.be.present;

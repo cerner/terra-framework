@@ -38,6 +38,7 @@
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-base": "^2.10.0",
+    "terra-heading": "^1.17.0",
     "terra-modal": "^1.18.0",
     "terra-responsive-element": "^1.15.0",
     "terra-slide-group": "^1.15.0"
