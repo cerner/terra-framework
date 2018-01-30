@@ -89,6 +89,7 @@ class DisclosureManager extends React.Component {
           key: data.content.key,
           name: data.content.name,
           props: data.content.props,
+          component: data.content.component,
         },
       },
     });
@@ -99,9 +100,10 @@ class DisclosureManager extends React.Component {
 
     newState.disclosureComponentKeys.push(data.content.key);
     newState.disclosureComponentData[data.content.key] = {
+      key: data.content.key,
       name: data.content.name,
       props: data.content.props,
-      key: data.content.key,
+      component: data.content.component,
     };
 
     this.setState(newState);
