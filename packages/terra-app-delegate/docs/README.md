@@ -38,6 +38,10 @@ const newAppDelegateInstance = AppDelegate.create({
   },
   requestFocus: (data) => {
     // The calling component is requesting to gain focus.
+  },
+  registerDismissCheck: (checkFunction) => {
+    // The calling component is registering a function to be called
+    // before the component is dismissed.
   }
 });
 
@@ -63,11 +67,11 @@ the suggested use of each function is as follows:
 |`minimize`|Optional|Used to minimize the calling component. Should only be present if the disclosure method is minimizable and not currently minimized.|
 |`releaseFocus`|Optional| The calling component, typically a popup or date picker component that can display over the container, is ready to release focus so that other components can gain focus.|
 |`requestFocus`|Optional| The calling component, typically a popup or date picker component that can display over the container, is requesting to gain focus.|
-
+|`registerDismissCheck`|Optional|Used to register a function to be called before the component is dismissed. The function can be used as an indication that the component will be dismissed, or it can actually block the dismissal if it returns a rejected Promise.|
 
 ### Disclose Argument API
 
-While the other functions have generic Object-based argument APIs, the `disclose` function has an extensible argument API designed to support Redux-based workflows.
+The disclosure function has an extensible Object-based API to support a variety of disclosure types.
 
 Disclose API:
 
@@ -78,15 +82,12 @@ Disclose API:
 
 Disclose Content API:
 
-|Key|Type|Description|
-|---|---|---|
-|key|String|An identifying String that will be used as the React `key` for the disclosed component. Should be as specific as possible.|
-|name|String|The String value that will be used to retrieve the Component class from the AppDelegate component registry.|
-|props|Object|An Object containing the props for the disclosed component. These should be serializable.|
-
-The above structure allows us to disclose components dynamically without having to actually pass complex refs/functions through the API. This allows the parameters to be serializable and stored in Redux stores easily.
-
-The AppDelegate exposes two functions (`registerComponentForDisclosure` and `getComponentForDisclosure`) that allows components to be registered for and retrieved by an arbitrary key. Those functions should be used by components to build the disclosable components from the `disclose` arguments.
+|Key|Type|Required|Description|
+|---|---|---|---|
+|`key`|String|Yes|An identifying String that will be used as the React `key` for the disclosed component. Should be as specific as possible.|
+|`component`|React Element|No|A React component instance that will be disclosed. If provided, the name/props values will be ignored.|
+|`name` (deprecated)|String|No|The String value that will be used to retrieve the Component class from the AppDelegate component registry.|
+|`props` (deprecated)|Object|No|An Object containing the props for the disclosed component. These should be serializable.|
 
 An example implementation would look like this:
 
@@ -106,21 +107,13 @@ ExampleDisclosureComponent.propTypes = {
 
 export default ExampleDisclosureComponent;
 
-// Register the ExampleDisclosureComponent with the AppDelegate. We'll also export the disclosureName so that
-// consuming components have access to it. By doing that, we ensure that consumers will import this file,
-// thus ensuring that the component is registered for use.
-
-const disclosureName = 'ExampleDisclosureComponent';
-AppDelegate.registerComponentForDisclosure(disclosureName, ExampleDisclosureComponent);
-export { disclosureName };
-
 ```
 
 ```jsx
 // ExampleRootComponent.jsx
 
 import AppDelegate from 'terra-app-delegate';
-import ExampleDisclosureComponent, { disclosureName as exampleDisclosureName } from './ExampleDisclosureComponent';
+import ExampleDisclosureComponent from './ExampleDisclosureComponent';
 
 class ExampleRootComponent extends React.Component {
   discloseComponent() {
@@ -128,11 +121,7 @@ class ExampleRootComponent extends React.Component {
       preferredType: 'modal',
       content: {
         key: `COMPONENT-${CONCEPT_IDENTIFIER_HERE}`,
-        name: exampleDisclosureName,
-        props: {
-          prop1: 'value',
-          prop2: 'another value'
-        },
+        component: <ExampleDisclosureComponent prop1="value" prop2="another value" />
       },
     })
   }
@@ -145,3 +134,7 @@ ExampleRootComponent.propTypes = {
 }
 
 ```
+
+### Deprecated APIs
+
+The Disclose API for specifying which component to present was previously structured to support Redux-based disclosure managers. However, the disclosure managers were transitioned away from Redux to allow consumers to have greater control over the disclosure lifecycle. Therefore, the `name` and `props` keys in the disclose API are now deprecated, and the `component` key should be used to provide a component instance to present instead. This also means that the `registerComponentForDisclosure`/`getComponentForDisclosure` are deprecated as well, as there is no need for component retreival when an instance is given through the API. Those APIs will continue to function, but the usage of the `component` key is recommended.
