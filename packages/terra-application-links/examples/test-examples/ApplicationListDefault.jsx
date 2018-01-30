@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import ApplicationList from '../../../lib/list/ApplicationList';
-import testLinkConfig from '../testLinkConfig';
+import ApplicationList from '../../lib/list/ApplicationList';
+import testLinkConfig from './config/testLinkConfig';
 
 export default () => (
   <MemoryRouter

@@ -1,6 +1,6 @@
 # Terra Application Links
 
-{insert description}
+This packages contains a list and tab form of ApplicationLinks, to be used in horizontal and vertical display styles. Selection is managed by react-router.
 
 ## Getting Started
 
