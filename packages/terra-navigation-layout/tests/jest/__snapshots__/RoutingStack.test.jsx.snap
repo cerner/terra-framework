@@ -9,14 +9,17 @@ exports[`RoutingStack should render a RoutingStack with provided routes and nav 
   }
 >
   <Route
+    key="/a/b/c"
     path="/a/b/c"
     render={[Function]}
   />
   <Route
+    key="/a/b"
     path="/a/b"
     render={[Function]}
   />
   <Route
+    key="/a"
     path="/a"
     render={[Function]}
   />
