@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+###Changed
+* Updating tests to point to new terra-framework-site location.
 
 1.1.0 - (January 23, 2018)
 ------------------

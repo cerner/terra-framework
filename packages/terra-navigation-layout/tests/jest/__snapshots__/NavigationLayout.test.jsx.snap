@@ -64,12 +64,14 @@ exports[`NavigationLayout should render a NavigationLayout with provided compone
 <Layout
   header={
     <Header
+      app={undefined}
       navigationLayoutRoutes={Array []}
       navigationLayoutSize="tiny"
     />
   }
   menu={
     <Menu
+      app={undefined}
       navigationLayoutRoutes={Array []}
       navigationLayoutSize="tiny"
     />
@@ -144,6 +146,7 @@ exports[`NavigationLayout should render a NavigationLayout with provided menu te
 <Layout
   header={
     <NavigationLayoutContent
+      app={undefined}
       navigationLayoutRoutes={Array []}
       navigationLayoutSize="tiny"
     />
@@ -204,6 +207,7 @@ exports[`NavigationLayout should render a default NavigationLayout 1`] = `
 <Layout
   header={
     <NavigationLayoutContent
+      app={undefined}
       navigationLayoutRoutes={Array []}
       navigationLayoutSize="tiny"
     />
