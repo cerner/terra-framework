@@ -98,7 +98,7 @@ class ApplicationTabs extends React.Component {
   }
 
   handleResize(width) {
-    const menuToggleWidth = this.menuNode.getBoundingClientRect().width + 2;
+    const menuToggleWidth = this.menuNode.getBoundingClientRect().width + 2; // 2 additional px account for browser rounding issues.
     const availableWidth = width - menuToggleWidth;
 
     // Calculate hide index
