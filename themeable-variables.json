@@ -11,8 +11,8 @@
   },
   "ApplicationTabs": {
     "--terra-application-tabs-spacer-width": "2rem",
-    "--terra-application-tab-min-width": "8.357rem",
     "--terra-application-tab-max-width": "16.714rem",
+    "--terra-application-tab-min-width": "8.357rem",
     "--terra-application-tabs-margin-next-to-icon": "0.357rem",
     "--terra-application-tab-menu-min-width": "7.143rem",
     "--terra-application-tabs-menu-arrow-left-margin": "0.5rem",

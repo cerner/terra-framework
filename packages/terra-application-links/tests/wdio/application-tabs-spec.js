@@ -5,7 +5,7 @@ const viewports = Terra.viewports('tiny', 'medium');
 describe('ApplicationTabs', () => {
   describe('Displays a default application tabs', () => {
     beforeEach(() => {
-      browser.url('/#/tests/application-links/default-tabs');
+      browser.url('/#/raw/tests/application-links/application-tabs-default');
       browser.waitForVisible('#test-tabs [data-application-tabs-more]');
       browser.moveToObject('#test-tabs [data-application-tabs-more]');
     });
@@ -40,7 +40,7 @@ describe('ApplicationTabs', () => {
 
   describe('Displays a hidden application tabs', () => {
     beforeEach(() => {
-      browser.url('/#/tests/application-links/default-tabs');
+      browser.url('/#/raw/tests/application-links/application-tabs-default');
       browser.waitForVisible('#test-tabs [data-application-tabs-more]');
       browser.click('#test-tabs [data-application-tabs-more]');
       browser.waitForVisible('[data-application-tab-menu-content]');
@@ -60,7 +60,7 @@ describe('ApplicationTabs', () => {
 
   describe('Displays a hidden application tabs selection', () => {
     beforeEach(() => {
-      browser.url('/#/tests/application-links/default-tabs');
+      browser.url('/#/raw/tests/application-links/application-tabs-default');
       browser.waitForVisible('#test-tabs [data-application-tabs-more]');
       browser.click('#test-tabs [data-application-tabs-more]');
       browser.waitForVisible('[data-application-tab-menu-content]');

@@ -4,7 +4,7 @@ const viewports = Terra.viewports('tiny', 'medium');
 
 describe('ApplicationList', () => {
   describe('Displays a default application list', () => {
-    beforeEach(() => browser.url('/#/tests/application-links/default-list'));
+    beforeEach(() => browser.url('/#/raw/tests/application-links/application-list-default'));
 
     Terra.should.matchScreenshot({ viewports });
     Terra.should.beAccessible({ viewports, context: '#test-list' });
@@ -21,7 +21,7 @@ describe('ApplicationList', () => {
 
   describe('Displays an application list hover', () => {
     beforeEach(() => {
-      browser.url('/#/tests/application-links/default-list');
+      browser.url('/#/raw/tests/application-links/application-list-default');
       browser.waitForVisible('#test-list');
       browser.moveToObject('#test-list >*:nth-child(2)');
     });
@@ -34,7 +34,7 @@ describe('ApplicationList', () => {
 
   describe('Displays an application list selection', () => {
     beforeEach(() => {
-      browser.url('/#/tests/application-links/default-list');
+      browser.url('/#/raw/tests/application-links/application-list-default');
       browser.waitForVisible('#test-list');
       browser.click('#test-list >*:nth-child(2)');
     });
