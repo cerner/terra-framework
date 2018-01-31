@@ -53,6 +53,8 @@ class DisclosureContent extends React.Component {
             title={`Disclosure Content - ${name}`}
             onClose={app.closeDisclosure}
             onBack={app.goBack}
+            onMaximize={app.maximize}
+            onMinimize={app.minimize}
           />
         )}
       >

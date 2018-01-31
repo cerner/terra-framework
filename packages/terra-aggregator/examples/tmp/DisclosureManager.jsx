@@ -67,6 +67,8 @@ class DisclosureManager extends React.Component {
     this.closeDisclosure = this.closeDisclosure.bind(this);
     this.requestDisclosureFocus = this.requestDisclosureFocus.bind(this);
     this.releaseDisclosureFocus = this.releaseDisclosureFocus.bind(this);
+    this.maximizeDisclosure = this.maximizeDisclosure.bind(this);
+    this.minimizeDisclosure = this.minimizeDisclosure.bind(this);
 
     // These cached functions are stored outside of state to prevent unnecessary rerenders.
     this.disclosureLocks = {};
@@ -75,6 +77,7 @@ class DisclosureManager extends React.Component {
     this.state = {
       disclosureIsOpen: false,
       disclosureIsFocused: true,
+      disclosureIsMaximized: false,
       disclosureSize: 'small',
       disclosureComponentKeys: [],
       disclosureComponentData: {},
@@ -122,6 +125,8 @@ class DisclosureManager extends React.Component {
   closeDisclosure() {
     this.setState({
       disclosureIsOpen: false,
+      disclosureIsFocused: false,
+      disclosureIsMaximized: false,
       disclosureSize: availableDisclosureSizes.SMALL,
       disclosureComponentKeys: [],
       disclosureComponentData: {},
@@ -137,6 +142,18 @@ class DisclosureManager extends React.Component {
   releaseDisclosureFocus() {
     this.setState({
       disclosureIsFocused: false,
+    });
+  }
+
+  maximizeDisclosure() {
+    this.setState({
+      disclosureIsMaximized: true,
+    });
+  }
+
+  minimizeDisclosure() {
+    this.setState({
+      disclosureIsMaximized: false,
     });
   }
 
@@ -233,13 +250,13 @@ class DisclosureManager extends React.Component {
 
   renderDisclosureComponents() {
     const { app, supportedDisclosureTypes } = this.props;
-    const { disclosureComponentKeys, disclosureComponentData } = this.state;
+    const { disclosureComponentKeys, disclosureComponentData, disclosureIsMaximized, disclosureSize } = this.state;
 
     return disclosureComponentKeys.map((componentKey, index) => {
       const componentData = disclosureComponentData[componentKey];
+      const isFullscreen = disclosureSize === 'fullscreen';
 
       const popContent = this.generatePopFunction(componentData.key);
-
       const appDelegate = AppDelegate.create({
         disclose: (data) => {
           if (supportedDisclosureTypes.indexOf(data.preferredType) >= 0 || !app) {
@@ -256,9 +273,11 @@ class DisclosureManager extends React.Component {
         },
         dismiss: index > 0 ? popContent : this.safelyCloseDisclosure,
         closeDisclosure: this.safelyCloseDisclosure,
-        goBack: index > 0 ? popContent : null,
+        goBack: index > 0 ? popContent : undefined,
         requestFocus: () => Promise.resolve().then(this.requestDisclosureFocus),
         releaseFocus: () => Promise.resolve().then(this.releaseDisclosureFocus),
+        maximize: (!isFullscreen && !disclosureIsMaximized) ? () => (Promise.resolve().then(this.maximizeDisclosure)) : undefined,
+        minimize: (!isFullscreen && disclosureIsMaximized) ? () => (Promise.resolve().then(this.minimizeDisclosure)) : undefined,
         registerLock: (lockPromise) => {
           this.disclosureLocks[componentData.key] = lockPromise;
 
@@ -290,7 +309,7 @@ class DisclosureManager extends React.Component {
 
   render() {
     const { render } = this.props;
-    const { disclosureIsOpen, disclosureIsFocused, disclosureSize, disclosureComponentKeys } = this.state;
+    const { disclosureIsOpen, disclosureIsFocused, disclosureIsMaximized, disclosureSize, disclosureComponentKeys } = this.state;
 
     if (!render) {
       return null;
@@ -305,6 +324,7 @@ class DisclosureManager extends React.Component {
       disclosure: {
         isOpen: disclosureIsOpen,
         isFocused: disclosureIsFocused,
+        isMaximized: disclosureIsMaximized,
         size: disclosureSize,
         components: this.renderDisclosureComponents(),
       },

@@ -51,7 +51,7 @@ class NewModalManager extends React.Component {
   }
 
   renderModal(manager) {
-    const isFullscreen = this.state.forceFullscreen || manager.disclosure.size === availableDisclosureSizes.FULLSCREEN;
+    const isFullscreen = this.state.forceFullscreen || manager.disclosure.isMaximized || manager.disclosure.size === availableDisclosureSizes.FULLSCREEN;
     const modalClasses = !isFullscreen ? cx([styles[manager.disclosure.size]]) : undefined;
 
     return (
