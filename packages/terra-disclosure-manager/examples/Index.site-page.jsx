@@ -9,9 +9,6 @@ import { version } from '../package.json';
 // Component Source
 import DisclosureManagerSrc from '!raw-loader!../src/DisclosureManager.jsx';
 
-// Example File
-import DisclosureManagerExample from './index-examples/DisclosureManagerExample';
-
 const ApplicationNameExamples = () => (
   <div>
     <div id="version">Version: {version}</div>

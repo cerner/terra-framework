@@ -232,7 +232,7 @@ class DisclosureManager extends React.Component {
                   this.onDismissResolvers[data.content.key] = resolve;
                 }),
                 /**
-                 * The forceClose value is a function that the disclosing component can use to manually close the disclosure.
+                 * The dismissDisclosure value is a function that the disclosing component can use to manually close the disclosure.
                  * Any and all dismiss checks are still performed.
                  */
                 dismissDisclosure: this.safelyCloseDisclosure,
