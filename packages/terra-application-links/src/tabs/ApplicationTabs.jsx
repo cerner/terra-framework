@@ -108,7 +108,7 @@ class ApplicationTabs extends React.Component {
     let isMenuHidden = true;
     for (let i = 0; i < childrenCount; i += 1) {
       const tab = this.container.children[i];
-      calcMinWidth += tab.clientWidth;
+      calcMinWidth += tab.getBoundingClientRect().width;
       if (calcMinWidth > availableWidth && !(i === childrenCount - 1 && calcMinWidth <= width)) {
         newHideIndex = i;
         isMenuHidden = false;
