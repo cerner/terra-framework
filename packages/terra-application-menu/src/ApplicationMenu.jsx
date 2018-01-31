@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import AppDelegate from 'terra-app-delegate';
-import RoutingStackDelegate from 'terra-navigation-layout/lib/routing/RoutingStackDelegate';
 import ApplicationMenuLayout from 'terra-application-menu-layout';
-import { ApplicationMeniuUtility } from 'terra-application-utility';
+import { ApplicationMenuUtility } from 'terra-application-utility';
 import { ApplicationMenuName } from 'terra-application-name';
+import RoutingStackDelegate from 'terra-navigation-layout/lib/routing/RoutingStackDelegate';
 
 import 'terra-base/lib/baseStyles';
 
@@ -25,13 +25,20 @@ const propTypes = {
   /**
    * The AppDelegate instance that will be propagated to the components presented within the NavigationLayout.
    */
-  layoutConfig: {
+  layoutConfig: PropTypes.shape({
     size: PropTypes.string,
     toggleMenu: PropTypes.bool,
     menuIsOpen: PropTypes.bool,
     togglePin: PropTypes.bool,
     menuIsPinned: PropTypes.bool,
-  },
+  }).isRequired,
+  /**
+   * Enables animations for panel state transitions.
+   */
+  nameConfig: PropTypes.shape({
+    accessory: PropTypes.string,
+    title: PropTypes.element,
+  }),
   /**
    * Enables animations for panel state transitions.
    */
@@ -44,13 +51,11 @@ const propTypes = {
     userPhoto: PropTypes.element,
     userDetails: PropTypes.string,
     onUtilityChange: PropTypes.func,
-  }),
+  }).isRequired,
 };
 
 const defaultProps = {
-  applicationLinks: [],
-  layoutConfig: {},
-  utilityConfig: {},
+  nameConfig: {},
 };
 
 class ApplicationMenu extends React.Component {
@@ -59,39 +64,52 @@ class ApplicationMenu extends React.Component {
     this.onDiscloseUtilty = this.onDiscloseUtilty.bind(this);
   }
 
-  onDiscloseUtilty(content) {
-    return false;
+  onDiscloseUtilty(utility) {
+    if (this.props.app && utility) {
+      this.props.app.disclose({
+        preferredType: 'modal',
+        size: 'small',
+        content: {
+          component: utility,
+          key: 'application-utility-menu',
+        },
+      });
+    }
   }
 
   render() {
     const {
       app,
-      applicationLinks,
       content,
       layoutConfig,
+      nameConfig,
       routingStackDelegate,
       utilityConfig,
       ...customProps
     } = this.props;
 
-    const slidePanelClassNames = cx([
+    const menuClassNames = cx([
       'application-menu',
       customProps.className,
     ]);
 
-    const header = (
+    let header;
+    if (nameConfig.accessory || nameConfig.title) {
+      header = <ApplicationMenuName accessory={nameConfig.accessory} title={nameConfig.title} />;
+    }
 
-    );
+    const footer = <ApplicationMenuUtility {...utilityConfig} onDiscloseUtilityMenu={this.onDiscloseUtilty} />;
 
-    const footer = (
-      <ApplicationUtility />
-    );
+    let clonedContent;
+    if (content) {
+      clonedContent = React.cloneElement(content, { layoutConfig });
+    }
 
     return (
-      <div {...customProps} className={slidePanelClassNames}>
+      <div {...customProps} className={menuClassNames}>
         <ApplicationMenuLayout
           header={header}
-          content={content}
+          content={clonedContent}
           footer={footer}
         />
       </div>

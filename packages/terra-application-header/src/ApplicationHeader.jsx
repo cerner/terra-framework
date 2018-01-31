@@ -9,6 +9,7 @@ import { ApplicationHeaderName } from 'terra-application-name';
 import { ApplicationTabs } from 'terra-application-links';
 import IconMenu from 'terra-icon/lib/icon/IconMenu';
 import Button from 'terra-button';
+import Popup from 'terra-popup';
 
 import 'terra-base/lib/baseStyles';
 
@@ -20,7 +21,7 @@ const propTypes = {
   /**
    * The AppDelegate instance that will be propagated to the components presented within the NavigationLayout.
    */
-  app: AppDelegate.propType,
+  app: AppDelegate.propType.isRequired,
   /**
    * Enables animations for panel state transitions.
    */
@@ -33,19 +34,19 @@ const propTypes = {
    * Enables animations for panel state transitions.
    */
   nameConfig: PropTypes.shape({
-    accesory: PropTypes.string,
+    accessory: PropTypes.string,
     title: PropTypes.element,
   }),
   /**
    * The AppDelegate instance that will be propagated to the components presented within the NavigationLayout.
    */
-  layoutConfig: {
+  layoutConfig: PropTypes.shape({
     size: PropTypes.string,
     toggleMenu: PropTypes.bool,
     menuIsOpen: PropTypes.bool,
     togglePin: PropTypes.bool,
     menuIsPinned: PropTypes.bool,
-  },
+  }).isRequired,
   /**
    * Enables animations for panel state transitions.
    */
@@ -58,7 +59,7 @@ const propTypes = {
     userPhoto: PropTypes.element,
     userDetails: PropTypes.string,
     onUtilityChange: PropTypes.func,
-  }),
+  }).isRequired,
 };
 
 const defaultProps = {
@@ -71,19 +72,32 @@ class ApplicationMenu extends React.Component {
   constructor(props) {
     super(props);
     this.onDiscloseUtilty = this.onDiscloseUtilty.bind(this);
+    this.handleRequestClose = this.handleRequestClose.bind(this);
+    this.getTargetRef = this.getTargetRef.bind(this);
+    this.setContentNode = this.setContentNode.bind(this);
+    this.state = { isUtilityOpen: false };
   }
 
   onDiscloseUtilty(utility) {
-    if (this.props.app && utility) {
-      this.props.app.disclose({
-        preferredType: 'modal',
-        size: 'small',
-        content: {
-          component: utility,
-          key: 'application-utility-menu',
-        },
-      });
+    if (this.props.app && utility && !this.state.isUtilityOpen) {
+      this.popupContent = utility;
+      this.setState({ isUtilityOpen: true });
     }
+  }
+
+  setContentNode(node) {
+    this.contentNode = node;
+  }
+
+  getTargetRef() {
+    if (this.contentNode) {
+      this.contentNode.querySelector('[data-application-header-utility]');
+    }
+  }
+
+  handleRequestClose() {
+    this.popupContent = null;
+    this.setState({ isUtilityOpen: false });
   }
 
   render() {
@@ -97,35 +111,58 @@ class ApplicationMenu extends React.Component {
       ...customProps
     } = this.props;
 
-    const slidePanelClassNames = cx([
-      'application-menu',
+    const headerClassNames = cx([
+      'application-header',
       customProps.className,
     ]);
 
-    const toggle = (
-      <Button className={cx('toggle-button')} variant="link" icon={<IconMenu />} onClick={layoutConfig.toggleMenu} />
-    );
+    let toggle;
+    if (layoutConfig.toggleMenu) {
+      toggle = (
+        <div className={cx('toolbar-toggle')}>
+          <Button className={cx('toggle-button')} variant="link" icon={<IconMenu />} onClick={layoutConfig.toggleMenu} />
+        </div>
+      );
+    }
 
-    const appName = (
-      <ApplicationHeaderName accessory={nameConfig.name} title={nameConfig.title} />
-    );
+    let appName;
+    if (nameConfig.accessory || nameConfig.title) {
+      appName = <ApplicationHeaderName accessory={nameConfig.accessory} title={nameConfig.title} />;
+    }
 
-    const utilities = (
-      <ApplicationHeaderUtility {...utilityConfig} onDiscloseUtilityMenu={this.onDiscloseUtilty} />
-    );
+    let navigation;
+    if (applicationLinks.length) {
+      navigation = <ApplicationTabs links={applicationLinks} />;
+    }
 
-    const navigation = (
-      <ApplicationTabs links={applicationLinks} />
-    );
+    const utilities = <ApplicationHeaderUtility {...utilityConfig} onDiscloseUtilityMenu={this.onDiscloseUtilty} data-application-header-utility />;
+
+    let popup;
+    if (this.popupContent) {
+      popup = (
+        <Popup
+          contentAttachment="top center"
+          contentHeight="auto"
+          contentWidth="240"
+          isArrowDisplayed
+          isOpen={this.state.isUtilityOpen}
+          onRequestClose={this.handleRequestClose}
+          targetRef={this.getTargetRef}
+        >
+          {this.popupContent}
+        </Popup>
+      );
+    }
 
     return (
-      <div {...customProps} className={slidePanelClassNames} onclicka={this.handleonclciak}>
+      <div {...customProps} className={headerClassNames} ref={this.setContentNode}>
         <ApplicationHeaderLayout
           toggle={toggle}
           logo={appName}
           navigation={navigation}
           utilities={utilities}
         />
+        {popup}
       </div>
     );
   }
