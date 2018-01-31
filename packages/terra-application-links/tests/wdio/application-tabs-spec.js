@@ -10,9 +10,9 @@ describe('ApplicationTabs', () => {
       browser.moveToObject('#test-tabs [data-application-tabs-more]');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.should.matchScreenshot({ viewports, options: { selector: '#test-tabs' } });
     Terra.should.beAccessible({ viewports, context: '#test-tabs' });
-    Terra.should.themeEachCustomProperty({
+    Terra.should.themeEachCustomProperty('#test-tabs' , {
       '--terra-application-tabs-spacer-width': '5rem',
       '--terra-application-tab-min-width': '3rem',
       '--terra-application-tab-max-width': '9rem',
@@ -38,18 +38,19 @@ describe('ApplicationTabs', () => {
     });
   });
 
-  describe('Displays a hidden application tabs', () => {
+  describe('Displays hidden application tabs', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/application-links/application-tabs-default');
       browser.waitForVisible('#test-tabs [data-application-tabs-more]');
       browser.click('#test-tabs [data-application-tabs-more]');
       browser.waitForVisible('[data-application-tab-menu-content]');
+      browser.pause(150);
       browser.moveToObject('[data-application-tab-menu-content] > *:first-child');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.should.matchScreenshot({ viewports, options: { selector: '[data-application-tab-menu-content]' } });
     Terra.should.beAccessible({ viewports, context: '[data-application-tab-menu-content]' });
-    Terra.should.themeEachCustomProperty({
+    Terra.should.themeEachCustomProperty('[data-application-tab-menu-content]', {
       '--terra-application-tabs-hidden-color': 'blue',
       '--terra-application-tabs-hidden-hover-background': 'linear-gradient(-90deg, orange, red)',
       '--terra-application-tabs-hidden-selected-background-image': 'linear-gradient(-270deg, red, orange)',
@@ -65,8 +66,9 @@ describe('ApplicationTabs', () => {
       browser.click('#test-tabs [data-application-tabs-more]');
       browser.waitForVisible('[data-application-tab-menu-content]');
       browser.click('[data-application-tab-menu-content] > *:first-child');
+      browser.pause(50);
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.should.matchScreenshot({ viewports, options: { selector: '#test-tabs' } });
   });
 });

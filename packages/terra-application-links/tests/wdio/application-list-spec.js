@@ -6,9 +6,9 @@ describe('ApplicationList', () => {
   describe('Displays a default application list', () => {
     beforeEach(() => browser.url('/#/raw/tests/application-links/application-list-default'));
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.should.matchScreenshot({ viewports, options: { selector: '#test-list' } });
     Terra.should.beAccessible({ viewports, context: '#test-list' });
-    Terra.should.themeEachCustomProperty({
+    Terra.should.themeEachCustomProperty('#test-list', {
       '--terra-application-list-color': 'blue',
       '--terra-application-list-font-size': '2rem',
       '--terra-application-list-line-height': '4rem',
@@ -26,8 +26,8 @@ describe('ApplicationList', () => {
       browser.moveToObject('#test-list >*:nth-child(2)');
     });
 
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.themeEachCustomProperty({
+    Terra.should.matchScreenshot({ viewports, options: { selector: '#test-list' } });
+    Terra.should.themeEachCustomProperty('#test-list', {
       '--terra-application-list-background-hover': 'linear-gradient(-90deg, red, orange)',
     });
   });
@@ -39,6 +39,6 @@ describe('ApplicationList', () => {
       browser.click('#test-list >*:nth-child(2)');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.should.matchScreenshot({ viewports, options: { selector: '#test-list' } });
   });
 });
