@@ -8,6 +8,7 @@ Unreleased
 ------------------
 ### Added
 * Debounce to resize of layout
+* Use display none on the hover section when hidden.
 
 ###Changed
 * Updating tests to point to new terra-framework-site location.
