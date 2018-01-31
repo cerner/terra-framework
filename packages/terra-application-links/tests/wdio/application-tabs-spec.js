@@ -12,7 +12,7 @@ describe('ApplicationTabs', () => {
 
     Terra.should.matchScreenshot({ viewports, options: { selector: '#test-tabs' } });
     Terra.should.beAccessible({ viewports, context: '#test-tabs' });
-    Terra.should.themeEachCustomProperty('#test-tabs' , {
+    Terra.should.themeEachCustomProperty('#test-tabs', {
       '--terra-application-tabs-spacer-width': '5rem',
       '--terra-application-tab-min-width': '3rem',
       '--terra-application-tab-max-width': '9rem',
