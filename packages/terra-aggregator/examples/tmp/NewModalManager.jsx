@@ -6,9 +6,9 @@ import AppDelegate from 'terra-app-delegate';
 import SlideGroup from 'terra-slide-group';
 import breakpoints from 'terra-responsive-element/lib/breakpoints.scss';
 
-import DisclosureManager, { availableDisclosureSizes } from './DisclosureManager';
-
 import 'terra-base/lib/baseStyles';
+
+import DisclosureManager, { availableDisclosureSizes } from './DisclosureManager';
 import styles from './NewModalManager.scss';
 
 const cx = classNames.bind(styles);

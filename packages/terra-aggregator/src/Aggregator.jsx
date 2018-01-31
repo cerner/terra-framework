@@ -133,9 +133,9 @@ class Aggregator extends React.Component {
                 return { afterDismiss, dismissDisclosure, ...other };
               });
           };
-
-          return focusRequestPayload;
         }
+
+        return focusRequestPayload;
       });
   }
 
