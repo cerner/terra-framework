@@ -4,8 +4,11 @@ import classNames from 'classnames/bind';
 import Modal from 'terra-modal';
 import AppDelegate from 'terra-app-delegate';
 import SlideGroup from 'terra-slide-group';
-import DisclosureManager from './DisclosureManager';
+import breakpoints from 'terra-responsive-element/lib/breakpoints.scss';
 
+import DisclosureManager, { availableDisclosureSizes } from './DisclosureManager';
+
+import 'terra-base/lib/baseStyles';
 import styles from './NewModalManager.scss';
 
 const cx = classNames.bind(styles);
@@ -16,8 +19,40 @@ const propTypes = {
 };
 
 class NewModalManager extends React.Component {
-  static renderModal(manager) {
-    const modalClasses = cx([styles[manager.disclosure.size]]);
+  constructor(props) {
+    super(props);
+
+    this.updateFullscreenState = this.updateFullscreenState.bind(this);
+    this.renderModal = this.renderModal.bind(this);
+
+    this.state = {
+      forceFullscreen: false,
+    };
+  }
+
+  componentDidMount() {
+    this.updateFullscreenState();
+    window.addEventListener('resize', this.updateFullscreenState);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateFullscreenState);
+  }
+
+  updateFullscreenState() {
+    const isFullscreen = window.innerWidth < breakpoints.small;
+    const previousFullscreenState = this.state.forceFullscreen;
+
+    if (previousFullscreenState !== isFullscreen) {
+      this.setState({
+        forceFullscreen: isFullscreen,
+      });
+    }
+  }
+
+  renderModal(manager) {
+    const isFullscreen = this.state.forceFullscreen || manager.disclosure.size === availableDisclosureSizes.FULLSCREEN;
+    const modalClasses = !isFullscreen ? cx([styles[manager.disclosure.size]]) : undefined;
 
     return (
       <div style={{ height: '100%' }}>
@@ -25,7 +60,7 @@ class NewModalManager extends React.Component {
         <Modal
           isFocused={manager.disclosure.isFocused}
           isOpen={manager.disclosure.isOpen}
-          isFullscreen={false}
+          isFullscreen={isFullscreen}
           classNameModal={modalClasses}
           onRequestClose={() => {
             manager.closeDisclosure();
@@ -45,7 +80,7 @@ class NewModalManager extends React.Component {
       <DisclosureManager
         app={this.props.app}
         supportedDisclosureTypes={['modal']}
-        render={NewModalManager.renderModal}
+        render={this.renderModal}
       >
         {this.props.children}
       </DisclosureManager>

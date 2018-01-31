@@ -14,10 +14,10 @@ const propTypes = {
 
 const items = Object.freeze([{
   key: 'SECTION_0',
-  component: <AggregatorItem key="0" name="Section 0" disclosureType="panel" />,
+  component: <AggregatorItem name="Section 0" disclosureType="panel" />,
 }, {
   key: 'SECTION_1',
-  component: <AggregatorItem key="1" name="Section 1" disclosureType="panel" />,
+  component: <AggregatorItem name="Section 1" disclosureType="panel" />,
 }]);
 
 const ModalManagerBypass = ({ app }) => {

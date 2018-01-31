@@ -11,6 +11,8 @@ const availableDisclosureSizes = {
   FULLSCREEN: 'fullscreen',
 };
 
+export { availableDisclosureSizes };
+
 const propTypes = {
   /**
    * An AppDelegate instance that will be integrated with the DisclosureManager instance. The DisclosureManager will defer to it if unsupported

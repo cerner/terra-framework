@@ -53,6 +53,15 @@ class AggregatorItem extends React.Component {
   handleSelection(event, index) {
     const { aggregatorDelegate, name } = this.props;
 
+    const disclosureSizeForIndex = {
+      0: 'tiny',
+      1: 'small',
+      2: 'medium',
+      3: 'large',
+      4: 'huge',
+      5: 'fullscreen',
+    };
+
     if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState.index === index) {
       aggregatorDelegate.releaseFocus()
         .catch(() => {
@@ -68,7 +77,7 @@ class AggregatorItem extends React.Component {
       if (disclose) {
         disclose({
           preferredType: this.props.disclosureType,
-          size: 'small',
+          size: disclosureSizeForIndex[index],
           content: {
             key: 'DisclosedContent-Demo',
             name: disclosureContentDisclosureKey,
@@ -140,6 +149,21 @@ class AggregatorItem extends React.Component {
           <SelectableList.Item
             content={
               <div style={{ padding: '.7rem' }}>Row 2</div>
+            }
+          />
+          <SelectableList.Item
+            content={
+              <div style={{ padding: '.7rem' }}>Row 3</div>
+            }
+          />
+          <SelectableList.Item
+            content={
+              <div style={{ padding: '.7rem' }}>Row 4</div>
+            }
+          />
+          <SelectableList.Item
+            content={
+              <div style={{ padding: '.7rem' }}>Row 5</div>
             }
           />
         </SelectableList>

@@ -10,16 +10,16 @@ const propTypes = {
 
 const items = Object.freeze([{
   key: 'SECTION_0',
-  component: <AggregatorItem key="0" name="Section 0" />,
+  component: <AggregatorItem name="Section 0" />,
 }, {
   key: 'SECTION_1',
-  component: <AggregatorItem key="1" name="Section 1" />,
+  component: <AggregatorItem name="Section 1" />,
 }, {
   key: 'SECTION_2',
-  component: <AggregatorItem key="2" name="Section 2" />,
+  component: <AggregatorItem name="Section 2" />,
 }, {
   key: 'SECTION_3',
-  component: <AggregatorItem key="3" name="Section 3" />,
+  component: <AggregatorItem name="Section 3" />,
 }]);
 
 class StandaloneAggregatorExample extends React.Component {

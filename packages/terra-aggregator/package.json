@@ -29,6 +29,7 @@
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-app-delegate": "^1.10.0",
+    "terra-base": "^2.10.0",
     "terra-button": "^1.14.0",
     "terra-list": "^1.19.0",
     "terra-content-container": "^1.15.0",
@@ -36,6 +37,7 @@
     "terra-clinical-action-header": "^1.6.0",
     "terra-form": "^1.16.0",
     "terra-modal": "^1.18.0",
+    "terra-responsive-element": "^1.15.0",
     "terra-slide-group": "^1.15.0",
     "terra-slide-panel": "^1.15.0",
     "terra-grid": "^3.19.0"

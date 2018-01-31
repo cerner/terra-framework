@@ -3,20 +3,31 @@ import PropTypes from 'prop-types';
 import SlidePanel from 'terra-slide-panel';
 import AppDelegate from 'terra-app-delegate';
 import SlideGroup from 'terra-slide-group';
-import DisclosureManager from './DisclosureManager';
+import DisclosureManager, { availableDisclosureSizes } from './DisclosureManager';
 
 const propTypes = {
   app: AppDelegate.propType,
   children: PropTypes.node,
 };
 
+const disclosureSizeToPanelSize = {
+  [availableDisclosureSizes.TINY]: 'small',
+  [availableDisclosureSizes.SMALL]: 'small',
+  [availableDisclosureSizes.MEDIUM]: 'large',
+  [availableDisclosureSizes.LARGE]: 'large',
+  [availableDisclosureSizes.HUGE]: 'large',
+  [availableDisclosureSizes.FULLSCREEN]: 'fullscreen',
+};
+
 class SlidePanelManager extends React.Component {
   static renderSlidePanel(manager) {
+    const panelSize = disclosureSizeToPanelSize[manager.disclosure.size];
+
     return (
       <SlidePanel
         fill
         panelBehavior="squish"
-        panelSize={manager.disclosure.size}
+        panelSize={panelSize}
         isOpen={manager.disclosure.isOpen}
         panelContent={(
           <SlideGroup items={manager.disclosure.components} isAnimated />
