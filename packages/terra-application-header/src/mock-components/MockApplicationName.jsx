@@ -7,14 +7,14 @@ const propTypes = {
   title: PropTypes.string,
 };
 
-const ApplicationHeaderName = ({
+const MockApplicationName = ({
   accessory,
   title,
   ...customProps
 }) => (
-  <div {...customProps} style={{ backgroundColor: 'blue', width: '100px', height: '40px' }} />
+  <div {...customProps} style={{ backgroundColor: 'blue', width: '100px', height: '100%' }} />
 );
 
-ApplicationHeaderName.propTypes = propTypes;
+MockApplicationName.propTypes = propTypes;
 
-export default ApplicationHeaderName;
+export default MockApplicationName;

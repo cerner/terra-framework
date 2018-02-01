@@ -25,7 +25,7 @@ const propTypes = {
   /**
    * The AppDelegate instance that will be propagated to the components presented within the NavigationLayout.
    */
-  app: AppDelegate.propType.isRequired,
+  app: AppDelegate.propType,
   /**
    * Navigational links that will generate list items that will update the path. These paths are matched with react-router to selection.
 +  */
@@ -38,15 +38,15 @@ const propTypes = {
    * Configutation values for the ApplicationName component.
    */
   nameConfig: PropTypes.shape({
-    accessory: PropTypes.string,
-    title: PropTypes.element,
+    accessory: PropTypes.element,
+    title: PropTypes.string,
   }),
   /**
    * Layout config provided from the Layout component.
    */
   layoutConfig: PropTypes.shape({
     size: PropTypes.string,
-    toggleMenu: PropTypes.bool,
+    toggleMenu: PropTypes.func,
     menuIsOpen: PropTypes.bool,
     togglePin: PropTypes.bool,
     menuIsPinned: PropTypes.bool,
@@ -70,7 +70,7 @@ const defaultProps = {
   applicationLinks: [],
 };
 
-class ApplicationMenu extends React.Component {
+class ApplicationHeader extends React.Component {
   constructor(props) {
     super(props);
     this.onDiscloseUtilty = this.onDiscloseUtilty.bind(this);
@@ -171,7 +171,7 @@ class ApplicationMenu extends React.Component {
   }
 }
 
-ApplicationMenu.propTypes = propTypes;
-ApplicationMenu.defaultProps = defaultProps;
+ApplicationHeader.propTypes = propTypes;
+ApplicationHeader.defaultProps = defaultProps;
 
-export default ApplicationMenu;
+export default ApplicationHeader;

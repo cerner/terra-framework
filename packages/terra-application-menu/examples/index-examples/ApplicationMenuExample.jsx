@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import ModalManager, { reducers as modalManagerReducers } from 'terra-modal-manager';
 // eslint-enable import/no-extraneous-dependencies
 import ApplicationMenu from '../../lib/ApplicationMenu';
+import ApplicationContentExample from './ApplicationContentExample';
 
 const store = createStore(
   combineReducers(Object.assign({},
@@ -14,11 +15,11 @@ const store = createStore(
 );
 
 const ApplicationMenuExample = () => (
-  <Provider store={store}>
-    <ModalManager>
-      <div style={{ width: '300px', height: '500px', position: 'relative' }}>
+  <div style={{ width: '300px', height: '500px', position: 'relative' }}>
+    <Provider store={store}>
+      <ModalManager>
         <ApplicationMenu
-          content={<div style={{ backgroundColor: 'red', width: '100%', height: '1500px', position: 'relative' }} />}
+          content={<ApplicationContentExample />}
           layoutConfig={{
             size: 'medium',
             toggleMenu: () => {},
@@ -33,9 +34,9 @@ const ApplicationMenuExample = () => (
             onUtilityChange: (event, key) => { this.stuff(key); },
           }}
         />
-      </div>
-    </ModalManager>
-  </Provider>
+      </ModalManager>
+    </Provider>
+  </div>
 );
 
 export default ApplicationMenuExample;

@@ -11,10 +11,6 @@ const propTypes = {
   onDiscloseUtilityMenu: PropTypes.func,
 };
 
-const defaultProps = {
-  nameConfig: {},
-};
-
 class ApplicationMenu extends React.Component {
   constructor(props) {
     super(props);
@@ -50,6 +46,5 @@ class ApplicationMenu extends React.Component {
 }
 
 ApplicationMenu.propTypes = propTypes;
-ApplicationMenu.defaultProps = defaultProps;
 
 export default ApplicationMenu;
