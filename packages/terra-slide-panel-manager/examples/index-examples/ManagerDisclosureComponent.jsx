@@ -1,10 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
 import TextField from 'terra-form/lib/TextField';
 import AppDelegate from 'terra-app-delegate';
 import ActionHeader from 'terra-clinical-action-header';
+
+import styles from './example-styles.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   app: AppDelegate.propType,
@@ -63,7 +68,7 @@ class ManagerDisclosureComponent extends React.Component {
           />
         )}
       >
-        <div style={{ padding: '.7rem' }}>
+        <div className={cx('content-wrapper')}>
           <h3>{name}</h3>
           <p>The disclosed component can disclose content within the same panel.</p>
           <p>It can also render a header (like above) that implements the various DisclosureManager control functions.</p>

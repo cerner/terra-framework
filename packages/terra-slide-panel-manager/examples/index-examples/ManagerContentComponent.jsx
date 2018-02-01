@@ -1,11 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
 import AppDelegate from 'terra-app-delegate';
 import ActionHeader from 'terra-clinical-action-header';
 
 import ManagerDisclosureComponent from './ManagerDisclosureComponent';
+
+import styles from './example-styles.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   app: AppDelegate.propType,
@@ -40,8 +45,6 @@ class ManagerContentComponent extends React.Component {
   }
 
   render() {
-    const { app } = this.props;
-
     return (
       <ContentContainer
         header={(
@@ -50,7 +53,7 @@ class ManagerContentComponent extends React.Component {
           />
         )}
       >
-        <div style={{ padding: '.7rem' }}>
+        <div className={cx('content-wrapper')}>
           {this.renderButton('tiny')}
           {this.renderButton('small')}
           {this.renderButton('medium')}
