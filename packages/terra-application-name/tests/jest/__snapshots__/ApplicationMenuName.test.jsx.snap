@@ -34,9 +34,7 @@ exports[`ApplicationMenuName should render with provided accessory and title 1`]
   <div
     className="title"
   >
-    <strong>
-      title
-    </strong>
+    title
   </div>
 </div>
 `;
