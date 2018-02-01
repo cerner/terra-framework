@@ -3,11 +3,14 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import AppDelegate from 'terra-app-delegate';
 import ApplicationMenuLayout from 'terra-application-menu-layout';
-import { ApplicationMenuUtility } from 'terra-application-utility';
-import { ApplicationMenuName } from 'terra-application-name';
-import RoutingStackDelegate from 'terra-navigation-layout/lib/routing/RoutingStackDelegate';
+// import { ApplicationMenuUtility } from 'terra-application-utility';
+// import { ApplicationMenuName } from 'terra-application-name';
+import RoutingStackDelegate from 'terra-navigation-layout/lib/RoutingStackDelegate';
 
 import 'terra-base/lib/baseStyles';
+
+import ApplicationMenuUtility from './mock-components/MockApplicationUtility';
+import ApplicationMenuName from './mock-components/MockApplicationName';
 
 import styles from './ApplicationMenu.scss';
 
@@ -27,7 +30,7 @@ const propTypes = {
    */
   layoutConfig: PropTypes.shape({
     size: PropTypes.string,
-    toggleMenu: PropTypes.bool,
+    toggleMenu: PropTypes.func,
     menuIsOpen: PropTypes.bool,
     togglePin: PropTypes.bool,
     menuIsPinned: PropTypes.bool,
@@ -36,13 +39,13 @@ const propTypes = {
    * Configutation values for the ApplicationName component.
    */
   nameConfig: PropTypes.shape({
-    accessory: PropTypes.string,
-    title: PropTypes.element,
+    accessory: PropTypes.element,
+    title: PropTypes.string,
   }),
   /**
    * Delegate prop that is provided by the NavigationLayout.
    */
-  routingStackDelegate: RoutingStackDelegate.propType.isRequired,
+  routingStackDelegate: RoutingStackDelegate.propType,
   /**
    * Configration to be passed to the ApplicationUtility component.
    */

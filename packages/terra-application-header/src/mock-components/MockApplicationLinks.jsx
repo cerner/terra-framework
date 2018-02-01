@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
-import { withRouter } from 'react-router-dom';
 import 'terra-base/lib/baseStyles';
 
 const propTypes = {
@@ -37,11 +35,13 @@ class ApplicationTabs extends React.Component {
     } = this.props;
 
     return (
-      <div {...customProps} style={{ backgroundColor: 'red', width: '100%' }} ref={this.setContainerNode} />
+      <div style={{ paddingLeft: '20px', paddingRight: '20px', width: '100%', height: '40px' }}>
+        <div {...customProps} style={{ backgroundColor: 'red', width: '100%', height: '100%' }} ref={this.setContainerNode} />
+      </div>
     );
   }
 }
 
 ApplicationTabs.propTypes = propTypes;
 
-export default withRouter(ApplicationTabs);
+export default ApplicationTabs;

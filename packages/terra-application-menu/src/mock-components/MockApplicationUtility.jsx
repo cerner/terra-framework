@@ -8,6 +8,7 @@ const propTypes = {
   userPhoto: PropTypes.element,
   userDetails: PropTypes.string,
   onUtilityChange: PropTypes.func,
+  onDiscloseUtilityMenu: PropTypes.func,
 };
 
 const defaultProps = {
@@ -22,14 +23,14 @@ class ApplicationMenu extends React.Component {
   }
 
   onButtonClick() {
-    if (this.onUtilityChange) {
+    if (this.props.onDiscloseUtilityMenu) {
       const content = this.createContent();
-      this.onUtilityChange(content);
+      this.props.onDiscloseUtilityMenu(content);
     }
   }
 
   createContent() {
-    return <div style={{ backgroundColor: 'pink', width: '100%', height: '400px' }}>{this.userDetails}</div>;
+    return <div style={{ backgroundColor: 'purple', width: '100%', height: '400px' }}>{this.userDetails}</div>;
   }
 
   render() {
@@ -38,11 +39,12 @@ class ApplicationMenu extends React.Component {
       userPhoto,
       userDetails,
       onUtilityChange,
+      onDiscloseUtilityMenu,
       ...customProps
     } = this.props;
 
     return (
-      <Button {...customProps} text={userName} onClick={this.onButtonClick} />
+      <Button {...customProps} text={userName} onClick={this.onButtonClick} isBlock />
     );
   }
 }

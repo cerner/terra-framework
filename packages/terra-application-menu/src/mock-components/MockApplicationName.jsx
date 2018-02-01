@@ -12,7 +12,7 @@ const ApplicationHeaderName = ({
   title,
   ...customProps
 }) => (
-  <div {...customProps} style={{ backgroundColor: 'blue', width: '100px' }} />
+  <div {...customProps} style={{ backgroundColor: 'blue', width: '100%', height: '40px' }} />
 );
 
 ApplicationHeaderName.propTypes = propTypes;

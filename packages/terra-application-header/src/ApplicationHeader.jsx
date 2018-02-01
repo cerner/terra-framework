@@ -2,16 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import AppDelegate from 'terra-app-delegate';
-import RoutingStackDelegate from 'terra-navigation-layout/lib/routing/RoutingStackDelegate';
+import RoutingStackDelegate from 'terra-navigation-layout/lib/RoutingStackDelegate';
 import ApplicationHeaderLayout from 'terra-application-header-layout';
-import { ApplicationHeaderUtility } from 'terra-application-utility';
-import { ApplicationHeaderName } from 'terra-application-name';
-import { ApplicationTabs } from 'terra-application-links';
+// import { ApplicationHeaderUtility } from 'terra-application-utility';
+// import { ApplicationHeaderName } from 'terra-application-name';
+// import { ApplicationTabs } from 'terra-application-links';
 import IconMenu from 'terra-icon/lib/icon/IconMenu';
 import Button from 'terra-button';
 import Popup from 'terra-popup';
 
 import 'terra-base/lib/baseStyles';
+
+import ApplicationHeaderUtility from './mock-components/MockApplicationUtility';
+import ApplicationHeaderName from './mock-components/MockApplicationName';
+import ApplicationTabs from './mock-components/MockApplicationLinks';
 
 import styles from './ApplicationHeader.scss';
 
@@ -50,7 +54,7 @@ const propTypes = {
   /**
    * Delegate prop that is padded by the NavigationLayout.
    */
-  routingStackDelegate: RoutingStackDelegate.propType.isRequired,
+  routingStackDelegate: RoutingStackDelegate.propType,
   /**
    * Configration to be provided to the ApplicationUtility component.
    */
@@ -77,7 +81,7 @@ class ApplicationMenu extends React.Component {
   }
 
   onDiscloseUtilty(utility) {
-    if (this.props.app && utility && !this.state.isUtilityOpen) {
+    if (utility && !this.state.isUtilityOpen) {
       this.popupContent = utility;
       this.setState({ isUtilityOpen: true });
     }
@@ -89,8 +93,9 @@ class ApplicationMenu extends React.Component {
 
   getTargetRef() {
     if (this.contentNode) {
-      this.contentNode.querySelector('[data-application-header-utility]');
+      return this.contentNode.querySelector('[data-application-header-utility]');
     }
+    return undefined;
   }
 
   handleRequestClose() {

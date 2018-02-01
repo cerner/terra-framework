@@ -1,20 +1,20 @@
-# Terra Application Menu Layout
+# Terra Application Header
 
-This component renders an application menu layout. To be used with terra-layout or terra-navigation-layout.
+The ApplicationHeader is a HOC that combines config and menu subcomponents, which are then placed within the header layout.
 
 ## Getting Started
 
 - Install with [npmjs](https://www.npmjs.com):
-  - `npm install terra-application-menu-layout`
-  - `yarn add terra-application-menu-layout`
+  - `npm install terra-application-header`
+  - `yarn add terra-application-header`
 
 ## Usage
 
 ```jsx
 import React from 'react';
-import ApplicationMenuLayout from 'terra-application-menu-layout';
+import ApplicationHeader from 'terra-application-header';
 
-<ApplicationMenuLayout
+<ApplicationHeader
   content={content}
   extensions={extensions}
   footer={footer}

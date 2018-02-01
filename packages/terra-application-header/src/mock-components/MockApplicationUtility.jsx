@@ -8,6 +8,7 @@ const propTypes = {
   userPhoto: PropTypes.element,
   userDetails: PropTypes.string,
   onUtilityChange: PropTypes.func,
+  onDiscloseUtilityMenu: PropTypes.func,
 };
 
 const defaultProps = {
@@ -22,9 +23,9 @@ class ApplicationMenu extends React.Component {
   }
 
   onButtonClick() {
-    if (this.onUtilityChange) {
+    if (this.props.onDiscloseUtilityMenu) {
       const content = this.createContent();
-      this.onUtilityChange(content);
+      this.props.onDiscloseUtilityMenu(content);
     }
   }
 
@@ -37,6 +38,7 @@ class ApplicationMenu extends React.Component {
       userName,
       userPhoto,
       userDetails,
+      onDiscloseUtilityMenu,
       onUtilityChange,
       ...customProps
     } = this.props;
