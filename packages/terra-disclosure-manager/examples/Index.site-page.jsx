@@ -9,7 +9,7 @@ import { version } from '../package.json';
 // Component Source
 import DisclosureManagerSrc from '!raw-loader!../src/DisclosureManager.jsx';
 
-const ApplicationNameExamples = () => (
+const DisclosureManagerExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
@@ -20,4 +20,4 @@ const ApplicationNameExamples = () => (
   </div>
 );
 
-export default ApplicationNameExamples;
+export default DisclosureManagerExamples;
