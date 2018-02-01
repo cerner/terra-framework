@@ -1,9 +1,8 @@
-/* stylelint-disable selector-class-pattern */
 :local {
   .application-header {
-    background-color: blue;
-    background-image: durp;
-    border: 1px solid blue;
+    background-color: rgb(36, 129, 202);;
+    // background-image: durp;
+    border:  0.07143rem solid rgba(255, 255, 255, 0.17);
     position: relative;
     width: 100%;
   }
@@ -12,10 +11,6 @@
     align-items: center;
     border-right: 0.07143rem solid rgba(255, 255, 255, 0.17);
     box-shadow: inset -0.07143rem 0 0 0 rgba(0, 0, 0, 0.17);
-    // display: flex;
-    // flex: 0 0 auto;
-    // justify-content: flex-start;
-    position: relative;
     width: 3.0714em;
 
     & > * {
@@ -23,10 +18,7 @@
     }
   }
 
-  .toggle-button {
-    color: #fff;
-  }
-
+  .toggle-button,
   .toggle-button:hover {
     color: #fff;
   }

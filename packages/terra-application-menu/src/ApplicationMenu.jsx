@@ -19,11 +19,11 @@ const propTypes = {
    */
   app: AppDelegate.propType,
   /**
-   * The AppDelegate instance that will be propagated to the components presented within the NavigationLayout.
+   * The element to be placed within the fill flex styled content area.
    */
   content: PropTypes.element,
   /**
-   * The AppDelegate instance that will be propagated to the components presented within the NavigationLayout.
+   * Layout config provided from the Layout component.
    */
   layoutConfig: PropTypes.shape({
     size: PropTypes.string,
@@ -33,18 +33,18 @@ const propTypes = {
     menuIsPinned: PropTypes.bool,
   }).isRequired,
   /**
-   * Enables animations for panel state transitions.
+   * Configutation values for the ApplicationName component.
    */
   nameConfig: PropTypes.shape({
     accessory: PropTypes.string,
     title: PropTypes.element,
   }),
   /**
-   * Enables animations for panel state transitions.
+   * Delegate prop that is provided by the NavigationLayout.
    */
-  routingStackDelegate: RoutingStackDelegate.propType,
+  routingStackDelegate: RoutingStackDelegate.propType.isRequired,
   /**
-   * Enables animations for panel state transitions.
+   * Configration to be passed to the ApplicationUtility component.
    */
   utilityConfig: PropTypes.shape({
     userName: PropTypes.string,

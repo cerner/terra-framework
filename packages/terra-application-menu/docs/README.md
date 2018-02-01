@@ -1,24 +1,40 @@
-# Terra Application Menu Layout
+# Terra Application Menu
 
-This component renders an application menu layout. To be used with terra-layout or terra-navigation-layout.
+The ApplicationMenu is a HOC that combines config and menu subcomponents, which are then placed within the menu layout.
 
 ## Getting Started
 
 - Install with [npmjs](https://www.npmjs.com):
-  - `npm install terra-application-menu-layout`
-  - `yarn add terra-application-menu-layout`
+  - `npm install terra-application-menu`
+  - `yarn add terra-application-menu`
 
 ## Usage
 
 ```jsx
 import React from 'react';
-import ApplicationMenuLayout from 'terra-application-menu-layout';
+import ApplicationMenu from 'terra-application-menu';
 
-<ApplicationMenuLayout
-  content={content}
-  extensions={extensions}
-  footer={footer}
-  header={header}
+<ApplicationMenu
+  app={app}
+  content={<ApplicationList links={links} />}
+  layoutConfig={{
+    size: PropTypes.string,
+    toggleMenu: PropTypes.bool,
+    menuIsOpen: PropTypes.bool,
+    togglePin: PropTypes.bool,
+    menuIsPinned: PropTypes.bool,
+  }}
+  nameConfig={{
+    accessory={<ApplicationIcon />},
+    title: "Application Name",
+  }}
+  routingStackDelegate={routingDelegate}
+  utilityConfig={{
+    userName: "Some User",
+    userPhoto={<Image src="/image/path" />}
+    userDetails="Details about user"
+    onUtilityChange={(event, key) => { do.stuff(key); }}
+  }}
 />
 ```
 

@@ -1,19 +1,18 @@
-# Terra App Delegate
+# Terra Application Menu
 
 
-[![NPM version](http://img.shields.io/npm/v/terra-app-delegate.svg)](https://www.npmjs.org/package/terra-app-delegate)
-[![Build Status](https://travis-ci.org/cerner/terra-core.svg?branch=master)](https://travis-ci.org/cerner/terra-core)
+[![NPM version](http://img.shields.io/npm/v/terra-application-menu.svg)](https://www.npmjs.org/package/terra-application-menu)
+[![Build Status](https://travis-ci.org/cerner/terra-framework.svg?branch=master)](https://travis-ci.org/cerner/terra-framework)
 
-The AppDelegate is an object that provides a set of functions used to facilitate communcation between Containers and
-their consuming Containers/Applications.
+The ApplicationMenu is a HOC that combines config and menu subcomponents, which are then placed within the menu layout.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-core/tree/master/packages/terra-app-delegate/docs)
+- [Documentation](https://github.com/cerner/terra-core/tree/master/packages/terra-application-menu/docs)
 - [LICENSE](#license)
 
 ## Getting Started
 
-- Install from [npmjs](https://www.npmjs.com): `npm install terra-app-delegate`
+- Install from [npmjs](https://www.npmjs.com): `npm install terra-application-menu`
 
 ## LICENSE
 

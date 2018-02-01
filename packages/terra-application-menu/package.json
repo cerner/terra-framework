@@ -1,8 +1,8 @@
 {
-  "name": "terra-application-links",
-  "main": "lib/ApplicationLinks.js",
+  "name": "terra-application-menu",
+  "main": "lib/ApplicationMenu.js",
   "version": "0.0.0",
-  "description": "{insert description}",
+  "description": "ApplicationMenu is a HOC that combines config and menu subcomponents, which are then placed within the menu layout.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git"
@@ -11,8 +11,8 @@
     "Cerner",
     "Terra",
     "Framework",
-    "terra-application-links",
-    "ApplicationLinks",
+    "terra-application-menu",
+    "ApplicationMenu",
     "UI"
   ],
   "author": "Cerner Corporation",
@@ -33,6 +33,7 @@
     "terra-application-name": "^0.x",
     "terra-application-utility": "^0.x",
     "terra-base": "^2.0.0",
+    "terra-navigation-layout": "^1.0.0",
     "terra-popup": "^1.19.0"
   },
   "dependencies": {
@@ -42,6 +43,7 @@
     "terra-application-name": "^0.x",
     "terra-application-utility": "^0.x",
     "terra-base": "^2.0.0",
+    "terra-navigation-layout": "^1.0.0",
     "terra-popup": "^1.19.0"
   },
   "scripts": {
@@ -51,7 +53,7 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
-    "props-table": "props-table ./src/list/ApplicationList.jsx ./src/tabs/ApplicationTabs.jsx --out-dir ./docs/props-table",
+    "props-table": "props-table ./src/list/ApplicationMenu.jsx --out-dir ./docs/props-table",
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
     "test:wdio": "wdio ../../wdio.conf.js"

@@ -33,6 +33,7 @@
     "terra-application-utility": "^0.x",
     "terra-base": "^2.0.0",
     "terra-icon": "^1.16.0",
+    "terra-navigation-layout": "^1.0.0",
     "terra-popup": "^1.18.0"
   },
   "dependencies": {
@@ -44,6 +45,7 @@
     "terra-application-utility": "^0.x",
     "terra-base": "^2.0.0",
     "terra-icon": "^1.16.0",
+    "terra-navigation-layout": "^1.0.0",
     "terra-popup": "^1.18.0"
   },
   "scripts": {

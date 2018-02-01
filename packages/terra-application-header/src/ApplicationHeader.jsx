@@ -23,22 +23,22 @@ const propTypes = {
    */
   app: AppDelegate.propType.isRequired,
   /**
-   * Enables animations for panel state transitions.
-   */
+   * Navigational links that will generate list items that will update the path. These paths are matched with react-router to selection.
++  */
   applicationLinks: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
     path: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
   })),
   /**
-   * Enables animations for panel state transitions.
+   * Configutation values for the ApplicationName component.
    */
   nameConfig: PropTypes.shape({
     accessory: PropTypes.string,
     title: PropTypes.element,
   }),
   /**
-   * The AppDelegate instance that will be propagated to the components presented within the NavigationLayout.
+   * Layout config provided from the Layout component.
    */
   layoutConfig: PropTypes.shape({
     size: PropTypes.string,
@@ -48,11 +48,11 @@ const propTypes = {
     menuIsPinned: PropTypes.bool,
   }).isRequired,
   /**
-   * Enables animations for panel state transitions.
+   * Delegate prop that is padded by the NavigationLayout.
    */
-  routingStackDelegate: RoutingStackDelegate.propType,
+  routingStackDelegate: RoutingStackDelegate.propType.isRequired,
   /**
-   * Enables animations for panel state transitions.
+   * Configration to be provided to the ApplicationUtility component.
    */
   utilityConfig: PropTypes.shape({
     userName: PropTypes.string,
@@ -64,8 +64,6 @@ const propTypes = {
 
 const defaultProps = {
   applicationLinks: [],
-  layoutConfig: {},
-  utilityConfig: {},
 };
 
 class ApplicationMenu extends React.Component {
