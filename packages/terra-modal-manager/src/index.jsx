@@ -1,5 +1,3 @@
-import { connect } from 'react-redux';
-
 import ModalManager from './ModalManager';
 
 import modalManagerReducers from './reducers';
@@ -30,9 +28,10 @@ const mapDispatchToProps = dispatch => ({
 
 export { mapDispatchToProps };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ModalManager);
-
 const reducers = {
   modalManager: modalManagerReducers,
 };
 export { reducers };
+
+export default ModalManager;
+
