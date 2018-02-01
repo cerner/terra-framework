@@ -141,6 +141,8 @@ The AppDelegate instances provided to the disclosure components are a little mor
 |`requestFocus()`|Allows a component to release focus from itself and return it to the disclosure. This can be integrated with the Popup and similar focus-stealing controls.|
 |`registerDismissCheck(func)`|Allows a component to register a function with the DisclosureManager that will be called before the component is dismissed for any reason.|
 
+Each of these functions returns a Promise that can be used for chaining, if necessary.
+
 ##### A Note on `registerDismissCheck`
 
 The function given to registerDismissCheck should return a resolved or rejected Promise. If the Promise is resolved, the component is guaranteed to be dismissed. If cleanup logic needs to execute before the component is dismissed, it is a good idea to execute before returning the resolved Promise. If a rejected Promise is returned, the component will not be dismissed. Components can render a prompt or confirmation window to give users control over the dismissal, if desired.
