@@ -34,10 +34,14 @@
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-base": "^2.0.0",
+    "terra-button": "^1.14.0",
+    "terra-content-container": "^1.15.0",
+    "terra-clinical-action-header": "^1.6.0",
     "terra-app-delegate": "^1.10.0",
     "terra-disclosure-manager": "^0.x",
     "terra-slide-panel": "^1.15.0",
-    "terra-slide-group": "^1.15.0"
+    "terra-slide-group": "^1.15.0",
+    "terra-form": "^1.16.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

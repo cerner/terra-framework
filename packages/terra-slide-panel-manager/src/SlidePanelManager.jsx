@@ -63,7 +63,7 @@ class SlidePanelManager extends React.Component {
         panelContent={(
           <SlideGroup items={manager.disclosure.components} isAnimated />
         )}
-        mainContent={manager.content.components}
+        mainContent={manager.children.components}
       />
     );
   }

@@ -18,10 +18,12 @@ const SlidePanelManagerExamples = () => (
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
     <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
-    <IndexTemplate
-      title="SlidePanelManager"
-      example={<SlidePanelManagerExample />}
-    />
+    <h3>Squish Example</h3>
+    <SlidePanelManagerExample behavior="squish" />
+    <br />
+    <h3>Overlay Example</h3>
+    <SlidePanelManagerExample behavior="overlay" />
+    <br />
     <PropsTable id="props-table" src={SlidePanelManagerSrc} />
   </div>
 );

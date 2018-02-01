@@ -9,6 +9,7 @@ import TerraEmbeddedComponentIndex from './packages/terra-embedded-component/exa
 import TerraLayoutIndex from './packages/terra-layout/examples/Index.site-page';
 import TerraModalManagerIndex from './packages/terra-modal-manager/examples/Index.site-page';
 import TerraNavigationLayoutIndex from './packages/terra-navigation-layout/examples/Index.site-page';
+import TerraSlidePanelManagerIndex from './packages/terra-slide-panel-manager/examples/Index.site-page';
 import TerraThemeProviderIndex from './packages/terra-theme-provider/examples/Index.site-page';
 
 // Component Test Examples
@@ -196,6 +197,17 @@ const componentConfig = {
         name: 'Navigation Layout Complex',
         path: '/navigation-layout-complex',
         component: NavigationLayoutComplex,
+      },
+    ],
+  },
+  'terra-slide-panel-manager': {
+    name: 'Slide Panel Manager',
+    path: '/slide-panel-manager',
+    pages: [
+      {
+        name: 'Index',
+        path: '/index',
+        component: TerraSlidePanelManagerIndex,
       },
     ],
   },
