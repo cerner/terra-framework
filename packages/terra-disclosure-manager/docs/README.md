@@ -18,6 +18,7 @@ The DisclosureManager utilizes the AppDelegate API to manage disclosure requests
 The DisclosureManager does not implement a traditional render function. A `render` prop should be provided to the DisclosureManager in order to render the various components managed by the DisclosureManager. The `render` function should accept an Object parameter containing the DisclosureManager's state.
 
 `render` Argument API:
+
 |Key|Value|
 |---|---|
 |`children`|An Object containing data relative to the children components provided to the DisclosureManager.|
@@ -26,11 +27,13 @@ The DisclosureManager does not implement a traditional render function. A `rende
 |`closeDisclosure`|A function that closes the disclosure and removes all components from the disclosure stack.|
 
 `children` Object API:
+
 |Key|Value|
 |---|---|
 |`components`|An Array of React components to render as face-up content. These components were updated with an AppDelegate prop with DisclosureManager integration.|
 
 `disclosure` Object API:
+
 |Key|Value|
 |---|---|
 |`components`|An Array of React components to render in a disclosure mechanism. These components were updated with an AppDelegate prop with DisclosureManager integration.|
