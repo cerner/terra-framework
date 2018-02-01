@@ -5,7 +5,7 @@ The SlidePanelManager is a DisclosureManager implementation that presents disclo
 ## Getting Started
 
 - Install with [npmjs](https://www.npmjs.com):
-  - `npm install terra-disclosure-manager`
+  - `npm install terra-slide-panel-manager`
 
 ## Usage
 
