@@ -2,12 +2,11 @@ import React from 'react';
 import ApplicationHeaderLayout from 'terra-application-header-layout';
 import Image from 'terra-image';
 import ResponsiveElement from 'terra-responsive-element';
-import ApplicationHeaderName from 'terra-application-name/lib/ApplicationHeaderName';
-
-import ExtensionsExample from '../application-header-layout/ExtensionsExample';
-import NavigationExample from '../application-header-layout/NavigationExample';
-import ToggleExample from '../application-header-layout/ToggleExample';
-import UtilitiesExample from '../application-header-layout/UtilitiesExample';
+import NavigationExample from 'terra-application-header-layout/examples/index-examples/NavigationExample';
+import ToggleExample from 'terra-application-header-layout/examples/index-examples/ToggleExample';
+import UtilitiesExample from 'terra-application-header-layout/examples/index-examples/UtilitiesExample';
+import ExtensionsExample from 'terra-application-header-layout/examples/index-examples/ExtensionsExample';
+import ApplicationHeaderName from '../../lib/ApplicationHeaderName';
 
 const ApplicationHeaderNameStandard = () => {
   const color = { color: 'grey' };

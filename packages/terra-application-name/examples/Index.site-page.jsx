@@ -4,17 +4,19 @@ import PropsTable from 'terra-props-table';
 import Markdown from 'terra-markdown';
 import IndexTemplate from 'terra-site/src/IndexPageTemplate';
 
-import ReadMe from 'terra-application-name/docs/README.md';
-import { version } from 'terra-application-name/package.json';
+import ReadMe from '../docs/README.md';
+import { version } from '../package.json';
 
 // Component Source
-import ApplicationNameSrc from '!raw-loader!../src/ApplicationName.jsx';
+/* eslint-disable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
+import ApplicationHeaderNameSrc from '!raw-loader!../src/ApplicationHeaderName.jsx';
+import ApplicationHeaderNameStandardSrc from '!raw-loader!./index-examples/ApplicationHeaderNameStandard.jsx';
+import ApplicationMenuNameStandardSrc from '!raw-loader!./index-examples/ApplicationMenuNameStandard.jsx';
+/* eslint-enable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 
 // Example Files
 import ApplicationHeaderNameStandard from './index-examples/ApplicationHeaderNameStandard';
-import ApplicationHeaderNameStandardSrc from '!raw-loader!./index-examples/ApplicationHeaderNameStandard.jsx';
 import ApplicationMenuNameStandard from './index-examples/ApplicationMenuNameStandard';
-import ApplicationMenuNameStandardSrc from '!raw-loader!./index-examples/ApplicationMenuNameStandard.jsx';
 
 const ApplicationNameExamples = () => (
   <div>
@@ -34,7 +36,7 @@ const ApplicationNameExamples = () => (
       exampleSrc={ApplicationMenuNameStandardSrc}
     />
 
-    <PropsTable id="props" src={ApplicationNameSrc} />
+    <PropsTable id="props" src={ApplicationHeaderNameSrc} />
   </div>
 );
 

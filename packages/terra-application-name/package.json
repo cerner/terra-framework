@@ -33,7 +33,11 @@
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-app-delegate": "^1.7.1",
-    "terra-base": "^2.0.0"
+    "terra-application-header-layout": "^1.1.0",
+    "terra-application-menu-layout": "^1.1.0",
+    "terra-base": "^2.0.0",
+    "terra-image": "^1.15.0",
+    "terra-responsive-element": "^1.15.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
@@ -43,8 +47,9 @@
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
     "props-table": "props-table ./src/ApplicationHeaderName.jsx ./src/ApplicationMenuName.jsx --out-dir ./docs/props-table",
-    "test": "npm run test:jest && npm run test:nightwatch",
+    "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
-    "test:nightwatch": "nightwatch -c ../../nightwatch.conf.js"
+    "test:nightwatch": "nightwatch -c ../../nightwatch.conf.js",
+    "test:wdio": "wdio ../../wdio.conf.js"
   }
 }

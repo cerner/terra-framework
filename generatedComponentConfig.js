@@ -14,7 +14,8 @@ import TerraThemeProviderIndex from './packages/terra-theme-provider/examples/In
 // Component Test Examples
 import ApplicationHeaderDefault from './packages/terra-application-header-layout/examples/test-examples/ApplicationHeaderDefault';
 import ApplicationMenuDefault from './packages/terra-application-menu-layout/examples/test-examples/ApplicationMenuDefault';
-import DefaultApplicationName from './packages/terra-application-name/examples/test-examples/DefaultApplicationName';
+import ApplicationHeaderNameDefault from './packages/terra-application-name/examples/test-examples/ApplicationHeaderNameDefault';
+import ApplicationMenuNameDefault from './packages/terra-application-name/examples/test-examples/ApplicationMenuNameDefault';
 import DefaultApplicationUtility from './packages/terra-application-utility/examples/test-examples/DefaultApplicationUtility';
 import DefaultEmbeddedComponent from './packages/terra-embedded-component/examples/test-examples/DefaultEmbeddedComponent';
 import LayoutDefault from './packages/terra-layout/examples/test-examples/LayoutDefault';
@@ -90,9 +91,14 @@ const componentConfig = {
     ],
     tests: [
       {
-        name: 'Default Application Name',
-        path: '/default-application-name',
-        component: DefaultApplicationName,
+        name: 'Application Header Name Default',
+        path: '/application-header-name-default',
+        component: ApplicationHeaderNameDefault,
+      },
+      {
+        name: 'Application Menu Name Default',
+        path: '/application-menu-name-default',
+        component: ApplicationMenuNameDefault,
       },
     ],
   },
