@@ -1,6 +1,6 @@
 /* global browser, Terra */
 
-const viewports = Terra.viewports('tiny', 'medium');
+const viewports = Terra.viewports('small', 'large');
 
 describe('ApplicationTabs', () => {
   describe('Displays a default application tabs', () => {
@@ -14,10 +14,8 @@ describe('ApplicationTabs', () => {
     Terra.should.beAccessible({ viewports, context: '#test-tabs' });
     Terra.should.themeEachCustomProperty('#test-tabs', {
       '--terra-application-tabs-spacer-width': '5rem',
-      '--terra-application-tab-min-width': '3rem',
-      '--terra-application-tab-max-width': '9rem',
+      '--terra-application-tab-width': '9rem',
       '--terra-application-tabs-margin-next-to-icon': '1rem',
-      '--terra-application-tab-menu-min-width': '5rem',
       '--terra-application-tabs-menu-arrow-left-margin': '2rem',
       '--terra-application-tabs-background-image': 'linear-gradient(to bottom, red, orange)',
       '--terra-application-tabs-background-position': 'top',

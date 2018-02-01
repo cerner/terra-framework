@@ -26,14 +26,6 @@
 
   .tabs-container.is-calculating {
     visibility: hidden;
-
-    /*
-     * During calculations tabs should display with auto size and not grow or shrink in order to get
-     * content width for trunction logic
-     */
-    .tab {
-      flex: 0 0 auto;
-    }
   }
 
   .tab,
@@ -46,9 +38,6 @@
   }
 
   .tab {
-    flex: 0 1 auto;
-    max-width: var(--terra-application-tab-max-width, 16.714rem);
-    min-width: var(--terra-application-tab-min-width, 8.357rem);
     text-align: center;
 
     .label:nth-child(2) {
@@ -59,15 +48,11 @@
   .tab-menu {
     align-items: baseline;
     display: flex;
-    flex: 1 0 auto;
     justify-content: center;
-    max-width: 100%;
-    min-width: var(--terra-application-tab-menu-min-width, 7.143rem);
 
     span {
       flex: 0 1 auto;
       min-width: 0;
-      white-space: normal;
     }
 
     svg {
@@ -88,13 +73,16 @@
     border-width: var(--terra-application-tabs-border-width, 0 1px 0 0);
     color: var(--terra-application-tabs-color, #fff);
     cursor: pointer;
+    flex: 0 0 auto;
     font-size: var(--terra-application-tabs-font-size, 1rem);
     line-height: var(--terra-application-tabs-line-height, 1.4);
+    max-width: 100%;
     padding: var(--terra-application-tabs-padding, 0.643rem 1.071rem);
     text-decoration: none;
     transition-duration: var(--terra-application-tabs-transition-duration, 0.35s);
     transition-property: background-size;
     transition-timing-function: var(--terra-application-tabs-transition-timing, ease);
+    width: var(--terra-application-tab-width, 16.714rem);
 
     &:hover {
       background-color: var(--terra-application-tabs-hover-background-color, rgba(0, 0, 0, 0.25));

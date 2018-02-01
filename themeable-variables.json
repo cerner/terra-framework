@@ -11,10 +11,7 @@
   },
   "ApplicationTabs": {
     "--terra-application-tabs-spacer-width": "2rem",
-    "--terra-application-tab-max-width": "16.714rem",
-    "--terra-application-tab-min-width": "8.357rem",
     "--terra-application-tabs-margin-next-to-icon": "0.357rem",
-    "--terra-application-tab-menu-min-width": "7.143rem",
     "--terra-application-tabs-menu-arrow-left-margin": "0.5rem",
     "--terra-application-tabs-background-image": "linear-gradient(to bottom, #007ee0, #007ee0)",
     "--terra-application-tabs-background-position": "top-left",
@@ -27,6 +24,7 @@
     "--terra-application-tabs-padding": "0.643rem 1.071rem",
     "--terra-application-tabs-transition-duration": "0.35s",
     "--terra-application-tabs-transition-timing": "ease",
+    "--terra-application-tab-width": "16.714rem",
     "--terra-application-tabs-hover-background-color": "rgba(0, 0, 0, 0.25)",
     "--terra-application-tabs-active-background-color": "#fff",
     "--terra-application-tabs-active-background-size": "100% 4px",

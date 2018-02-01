@@ -47,7 +47,6 @@ class ApplicationTabs extends React.Component {
   constructor(props) {
     super(props);
     this.setContainerNode = this.setContainerNode.bind(this);
-    this.setMenuNode = this.setMenuNode.bind(this);
     this.handleResize = this.handleResize.bind(this);
     this.resetCalculations();
   }
@@ -86,11 +85,6 @@ class ApplicationTabs extends React.Component {
     this.container = node;
   }
 
-  setMenuNode(node) {
-    if (node === null) { return; }
-    this.menuNode = node;
-  }
-
   resetCalculations() {
     this.hiddenStartIndex = -1;
     this.menuHidden = false;
@@ -98,17 +92,16 @@ class ApplicationTabs extends React.Component {
   }
 
   handleResize(width) {
-    const menuToggleWidth = this.menuNode.getBoundingClientRect().width + 2; // 2 additional px account for browser rounding issues.
-    const availableWidth = width - menuToggleWidth;
-
     // Calculate hide index
     const childrenCount = this.props.links.length;
+    const tabWidth = childrenCount > 1 ? this.container.children[0].getBoundingClientRect().width : 0;
+    const availableWidth = width - tabWidth;
+
     let newHideIndex = childrenCount;
     let calcMinWidth = 0;
     let isMenuHidden = true;
     for (let i = 0; i < childrenCount; i += 1) {
-      const tab = this.container.children[i];
-      calcMinWidth += tab.getBoundingClientRect().width;
+      calcMinWidth += tabWidth;
       if (calcMinWidth > availableWidth && !(i === childrenCount - 1 && calcMinWidth <= width)) {
         newHideIndex = i;
         isMenuHidden = false;
@@ -158,7 +151,7 @@ class ApplicationTabs extends React.Component {
           ref={this.setContainerNode}
         >
           {visibleChildren}
-          <ApplicationTabMenu refCallback={this.setMenuNode} isMenuHidden={this.menuHidden} >
+          <ApplicationTabMenu isMenuHidden={this.menuHidden} >
             {hiddenChildren}
           </ApplicationTabMenu>
         </div>
