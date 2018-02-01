@@ -1,0 +1,22 @@
+:local {
+  .user-data {
+    display: table;
+    overflow: auto;
+
+    /* stylelint-disable selector-max-compound-selectors */
+    .user-photo img {
+      height: 75%;
+      width: 75%;
+    }
+
+    .text + .icon {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .user-name {
+      overflow: auto;
+      width: 40%;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+:local {
+  .header-utility {
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    /* stylelint-disable selector-max-compound-selectors */
+    .user-photo + img {
+      height: 75%;
+      width: 75%;
+    }
+    // .user-name {
+
+    // }
+  }
+}

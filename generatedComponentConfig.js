@@ -15,7 +15,8 @@ import TerraThemeProviderIndex from './packages/terra-theme-provider/examples/In
 import ApplicationHeaderDefault from './packages/terra-application-header-layout/examples/test-examples/ApplicationHeaderDefault';
 import ApplicationMenuDefault from './packages/terra-application-menu-layout/examples/test-examples/ApplicationMenuDefault';
 import DefaultApplicationName from './packages/terra-application-name/examples/test-examples/DefaultApplicationName';
-import DefaultApplicationUtility from './packages/terra-application-utility/examples/test-examples/DefaultApplicationUtility';
+import DefaultApplicationHeaderUtility from './packages/terra-application-utility/examples/test-examples/DefaultApplicationHeaderUtility';
+import DefaultUserData from './packages/terra-application-utility/examples/test-examples/DefaultUserData';
 import DefaultEmbeddedComponent from './packages/terra-embedded-component/examples/test-examples/DefaultEmbeddedComponent';
 import LayoutDefault from './packages/terra-layout/examples/test-examples/LayoutDefault';
 import LayoutLongText from './packages/terra-layout/examples/test-examples/LayoutLongText';
@@ -101,9 +102,14 @@ const componentConfig = {
     path: '/application-utility',
     tests: [
       {
-        name: 'Default Application Utility',
-        path: '/default-application-utility',
-        component: DefaultApplicationUtility,
+        name: 'Default Application Header Utility',
+        path: '/default-application-header-utility',
+        component: DefaultApplicationHeaderUtility,
+      },
+      {
+        name: 'Default User Data',
+        path: '/default-user-data',
+        component: DefaultUserData,
       },
     ],
   },

@@ -2,13 +2,17 @@
 import React from 'react';
 import PropsTable from 'terra-props-table';
 import Markdown from 'terra-markdown';
-// import IndexTemplate from 'terra-site/src/IndexPageTemplate';
+import IndexTemplate from 'terra-site/src/IndexPageTemplate';
 
 import ReadMe from '../docs/README.md';
 import { version } from '../package.json';
 
 // Component Source
-import ApplicationUtilitySrc from '!raw-loader!../src/ApplicationUtility.jsx';
+import ApplicationHeaderUtilitySrc from '!raw-loader!../src/ApplicationHeaderUtility.jsx';
+
+// Example File
+import DefaultApplicationUtility from './index-examples/ApplicationHeaderUtilityStandard';
+import DefaultApplicationUtilitySrc from '!raw-loader!../src/ApplicationHeaderUtility.jsx';
 
 const ApplicationUtilityExamples = () => (
   <div>
@@ -16,8 +20,12 @@ const ApplicationUtilityExamples = () => (
     <Markdown id="readme" src={ReadMe} />
 
     <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
-
-    <PropsTable id="props-table" src={ApplicationUtilitySrc} />
+    <IndexTemplate
+      title="Application Header Utility"
+      example={<DefaultApplicationUtility />}
+      exampleSrc={DefaultApplicationUtilitySrc}
+    />
+    <PropsTable id="props-table" src={ApplicationHeaderUtilitySrc} />
   </div>
 );
 
