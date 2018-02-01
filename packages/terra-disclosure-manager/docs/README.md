@@ -13,13 +13,66 @@ The DisclosureManager is a stateful component used to manage disclosure presenta
 
 The DisclosureManager utilizes the AppDelegate API to manage disclosure requests. The components provided as children to the DisclosureManager, and the components disclosed within it, must support an AppDelegate prop (as `app`). This AppDelegate instance will provide component-specific implementations of the various control mechanisms for the manager.
 
+### Rendering
+
+The DisclosureManager does not implement a traditional render function. A `render` prop should be provided to the DisclosureManager in order to render the various components managed by the DisclosureManager. The `render` function should accept an Object parameter containing the DisclosureManager's state.
+
+`render` Argument API:
+|Key|Value|
+|---|---|
+|`children`|An Object containing data relative to the children components provided to the DisclosureManager.|
+|`disclosure`|An Object containing data relative to the compoents in the disclosure stack.|
+|`dismissPresentedComponent`|A function that pops the currently disclosed component off the disclosure stack.|
+|`closeDisclosure`|A function that closes the disclosure and removes all components from the disclosure stack.|
+
+`children` Object API:
+|Key|Value|
+|---|---|
+|`components`|An Array of React components to render as face-up content. These components were updated with an AppDelegate prop with DisclosureManager integration.|
+
+`disclosure` Object API:
+|Key|Value|
+|---|---|
+|`components`|An Array of React components to render in a disclosure mechanism. These components were updated with an AppDelegate prop with DisclosureManager integration.|
+|`isOpen`|A boolean indicating the current display state of the DisclosureManager.|
+|`isFocused`|A boolean indicating the current focus state of the DisclosureManager.|
+|`isMaximized`|A boolean indicating the current maximize state of the DisclosureManager.|
+|`size`|The String size of the disclosure.|
+
+Example (using the Modal and SlideGroup):
+```javascript
+<DisclosureManager
+  supportedDisclosureTypes={['modal']}
+  render={(manager) => (
+    <div>
+      {manager.content.components}
+      <Modal
+        isFocused={manager.disclosure.isFocused}
+        isOpen={manager.disclosure.isOpen}
+        onRequestClose={() => {
+          manager.closeDisclosure();
+        }}
+        closeOnEsc
+        closeOnOutsideClick
+      >
+        <SlideGroup items={manager.disclosure.components} isAnimated />
+      </Modal>
+    </div>
+  )}
+>
+  <Child1 />
+  <Child2 />
+</DisclosureManager>
+
+```
+
 ### Interacting with the Disclosure Manager
 
 #### Children
 
 The AppDelegate provided to the child components contains a `disclose` function. This `disclose` function validates the disclosure type with which it is provided against the set of supported disclosure types given to the DisclosureManager as a prop. If the provided type is not supported, and if the DisclosureManager was given an AppDelegate prop to fall back to, the DisclosureManager will call the disclose function provided by its AppDelegate prop.
 
-If the type is supported, or if no AppDelegate was provided to the DisclosureManager, the DisclosureManager will check the current disclosure content's state to ensure it can be replaced. If the disclosure is denied, then a rejected Promise is returned. If the disclosure is allowed, then a resolved Promise is returned. This Promise will be resolved with an Object containing functions and Promises that can be used to manipulate the disclosure, if necessary. Included are `dismissDisclosure`, a function that will dismiss the disclosed content, as well as `afterDismiss`, a deferred Promise that will be resolved when the disclosed content is dismissed by any means. Alternatively, if the additional logic isn't needed, the returned Promise can be completely ignored.
+If the type is supported, the DisclosureManager will check the currently disclosured content's state to ensure it can be replaced. If the disclosure is denied, then `disclose` returns a rejected Promise. If the disclosure is allowed, then a resolved Promise is returned. This Promise will be resolved with an Object containing functions and Promises that can be used to manipulate the disclosure, if necessary. Included are `dismissDisclosure`, a function that will dismiss the disclosed content, as well as `afterDismiss`, a deferred Promise that will be resolved when the disclosed content is dismissed by any means. Alternatively, if the additional logic isn't needed, the returned Promise can be completely ignored.
 
 Example:
 ```javascript
@@ -50,13 +103,17 @@ app.disclose({
 })
 ```
 
+|Function|Description|
+|---|---|
+|`disclose(Object)`|Allows a component to disclose a component. This will open the disclosure if nothing was previously disclosed, or it will replace everything in the current disclosure stack. If disclosure was successful, it returns a Promise resolved with an Object containing the `dismissDisclosure` function and the `afterDismiss` deferred Promise. If disclosure was denied, it returns a rejected Promise.|
+
 #### Disclosure Content
 
 The AppDelegate instances provided to the disclosure components are a little more complicated. In addition to a `disclose` function (with all the bells and whistles described in the above section), a number of other functions are exposed to manage various segments of the disclosure state. The included functions are:
 
 |Function|Description|
 |---|---|
-|`disclose(Object)`|See above description.|
+|`disclose(Object)`|Allows a component to disclose another component on top of itself.|
 |`dismiss()`|Allows a component to remove itself from the disclosure stack. If the component is the only element in the disclosure stack, the disclosure is closed.|
 |`closeDisclosure()`|Allows a component to close the entire disclosure stack. This is generally integrated into face-up disclosure controls as a Close button or similar.|
 |`goBack()`|Allows a component to remove itself from the disclosure stack. Functionally similar to `dismiss`, however `onBack` is only provided to components in the stack that have a previous sibling. This is generally integrated into face-up disclosure controls as a Back button or similar.|
@@ -68,7 +125,7 @@ The AppDelegate instances provided to the disclosure components are a little mor
 
 ##### A Note on `registerDismissCheck`
 
-The function given to registerDismissCheck should return a resolved or rejected Promise. If the Promise is resolved, the component is guaranteed to be dismissed. If logic needs to execute before the component is dismissed, it is a good idea to execute before returning the resolved Promise. If a rejected Promise is returned, the component will not be dismissed. Components can render a prompt or confirmation window to give users control over the dismissal, if desired.
+The function given to registerDismissCheck should return a resolved or rejected Promise. If the Promise is resolved, the component is guaranteed to be dismissed. If cleanup logic needs to execute before the component is dismissed, it is a good idea to execute before returning the resolved Promise. If a rejected Promise is returned, the component will not be dismissed. Components can render a prompt or confirmation window to give users control over the dismissal, if desired.
 
 Example:
 ```javascript
@@ -106,10 +163,6 @@ unsavedChangesCheck() {
   });
 }
 ```
-
-### Rendering
-
-
 
 ### Example
 

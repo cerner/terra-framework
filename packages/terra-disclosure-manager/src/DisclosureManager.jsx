@@ -318,7 +318,7 @@ class DisclosureManager extends React.Component {
     return render({
       dismissPresentedComponent: (disclosureComponentKeys.length > 1) ? this.generatePopFunction(disclosureComponentKeys[disclosureComponentKeys.length - 1]) : this.safelyCloseDisclosure,
       closeDisclosure: this.safelyCloseDisclosure,
-      content: {
+      children: {
         components: this.renderContentComponents(),
       },
       disclosure: {
