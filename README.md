@@ -35,10 +35,9 @@ Prior to components reaching v1.0.0, a component is considered to be in a beta s
 Components in beta stage may include breaking changes, new features, and bug fixes all within v0.x.x releases.
 
 ### Status
-:white_check_mark: Stable
-:large_orange_diamond: Beta
-:construction: In Progress
-:x: Deprecated
+![Stable](https://img.shields.io/badge/status-Stable-brightgreen.svg)
+![Stable](https://img.shields.io/badge/status-Beta-orange.svg)
+![Stable](https://img.shields.io/badge/status-Deprecated-lightgrey.svg)
 
 
 | Terra Package      | Version | Status |
