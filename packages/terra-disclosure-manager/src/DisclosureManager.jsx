@@ -54,6 +54,7 @@ class DisclosureManager extends React.Component {
     super(props);
 
     this.resolveDismissPromise = this.resolveDismissPromise.bind(this);
+    this.resolveDismissChecksInSequence = this.resolveDismissChecksInSequence.bind(this);
 
     this.safelyCloseDisclosure = this.safelyCloseDisclosure.bind(this);
     this.generatePopFunction = this.generatePopFunction.bind(this);
@@ -165,10 +166,12 @@ class DisclosureManager extends React.Component {
     this.onDismissResolvers[key] = undefined;
   }
 
-  safelyCloseDisclosure() {
-    const disclosureKeys = Object.assign([], this.state.disclosureComponentKeys);
-
-    const iterateOverDismissChecks = keys => new Promise((resolve, reject) => {
+  /**
+   * This function resolves the dismiss checks in sequence. The Promise will either resolve if all checks resolve or
+   * reject on the check rejection. This ensures that checks do not occur for components after the first rejection.
+   */
+  resolveDismissChecksInSequence(keys) {
+    return new Promise((resolve, reject) => {
       if (!keys.length) {
         resolve();
         return;
@@ -178,14 +181,23 @@ class DisclosureManager extends React.Component {
 
       this.generatePopFunction(key)()
         .then(() => {
-          iterateOverDismissChecks(keys).then(resolve).catch(reject);
+          this.resolveDismissChecksInSequence(keys).then(resolve).catch(reject);
         })
         .catch(() => {
           reject();
         });
     });
+  }
 
-    return iterateOverDismissChecks(disclosureKeys).then(() => {
+  safelyCloseDisclosure() {
+    const disclosureKeys = Object.assign([], this.state.disclosureComponentKeys);
+
+    /**
+     * Before closing the disclosure, the dismiss checks for components in the stack are
+     * executed in stack order. Components will be dismissed in order up until a rejection occurs, at which point
+     * the blocking component will be presented.
+     */
+    return this.resolveDismissChecksInSequence(disclosureKeys).then(() => {
       this.dismissChecks = {};
       this.closeDisclosure();
     });
