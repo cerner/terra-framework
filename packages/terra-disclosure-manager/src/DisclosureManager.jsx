@@ -71,7 +71,7 @@ class DisclosureManager extends React.Component {
     this.minimizeDisclosure = this.minimizeDisclosure.bind(this);
 
     // These cached functions are stored outside of state to prevent unnecessary rerenders.
-    this.disclosureLocks = {};
+    this.dismissChecks = {};
     this.onDismissResolvers = {};
 
     this.state = {
@@ -168,7 +168,7 @@ class DisclosureManager extends React.Component {
   safelyCloseDisclosure() {
     const disclosureKeys = Object.assign([], this.state.disclosureComponentKeys);
 
-    const iterateOverLocks = keys => new Promise((resolve, reject) => {
+    const iterateOverDismissChecks = keys => new Promise((resolve, reject) => {
       if (!keys.length) {
         resolve();
         return;
@@ -178,15 +178,15 @@ class DisclosureManager extends React.Component {
 
       this.generatePopFunction(key)()
         .then(() => {
-          iterateOverLocks(keys).then(resolve).catch(reject);
+          iterateOverDismissChecks(keys).then(resolve).catch(reject);
         })
         .catch(() => {
           reject();
         });
     });
 
-    return iterateOverLocks(disclosureKeys).then(() => {
-      this.disclosureLocks = {};
+    return iterateOverDismissChecks(disclosureKeys).then(() => {
+      this.dismissChecks = {};
       this.closeDisclosure();
     });
   }
@@ -195,14 +195,14 @@ class DisclosureManager extends React.Component {
     return () => {
       let promiseRoot = Promise.resolve();
 
-      const lockForDisclosure = this.disclosureLocks[key];
-      if (lockForDisclosure) {
-        promiseRoot = lockForDisclosure();
+      const dismissCheck = this.dismissChecks[key];
+      if (dismissCheck) {
+        promiseRoot = dismissCheck();
       }
 
       return promiseRoot
         .then(() => {
-          this.disclosureLocks[key] = undefined;
+          this.dismissChecks[key] = undefined;
           this.resolveDismissPromise(key);
         })
         .then(() => {
@@ -278,13 +278,13 @@ class DisclosureManager extends React.Component {
         releaseFocus: () => Promise.resolve().then(this.releaseDisclosureFocus),
         maximize: (!isFullscreen && !disclosureIsMaximized) ? () => (Promise.resolve().then(this.maximizeDisclosure)) : undefined,
         minimize: (!isFullscreen && disclosureIsMaximized) ? () => (Promise.resolve().then(this.minimizeDisclosure)) : undefined,
-        registerLock: (lockPromise) => {
-          this.disclosureLocks[componentData.key] = lockPromise;
+        registerDismissCheck: (checkFunc) => {
+          this.dismissChecks[componentData.key] = checkFunc;
 
-          if (app && app.registerLock) {
-            // The combination of all managed promise locks is registered to the parent app delegate to ensure
+          if (app && app.registerDismissCheck) {
+            // The combination of all managed dismiss checks is registered to the parent app delegate to ensure
             // that all are accounted for by the parent.
-            return app.registerLock(Promise.all(Object.values(this.disclosureLocks)));
+            return app.registerDismissCheck(() => Promise.all(Object.values(this.dismissChecks)));
           }
 
           return Promise.resolve();

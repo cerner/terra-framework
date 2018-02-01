@@ -110,13 +110,28 @@ app.disclose({
 |---|---|
 |`disclose(Object)`|Allows a component to disclose a component. This will open the disclosure if nothing was previously disclosed, or it will replace everything in the current disclosure stack. If disclosure was successful, it returns a Promise resolved with an Object containing the `dismissDisclosure` function and the `afterDismiss` deferred Promise. If disclosure was denied, it returns a rejected Promise.|
 
+`disclose` Argument API:
+
+|Key|Value|
+|---|---|
+|`preferredType`|The String describing the preferred disclosure type. This will be used to match the disclosure request to an appropriate DisclosureManager.|
+|`size`|The String size desired for the disclosure. One of `tiny`, `small`, `medium`, `large`, `huge`, or `fullscreen`. The functional implementation of this size is determined by the rendering component.|
+|`content`| An Object containing items describing the component to be disclosed.|
+
+`content` Object API:
+
+|Key|Value|
+|---|---|
+|key|A String key uniquely identifying the component to the DisclosureManager. This key will be automatically added to the component when rendered.|
+|component|A React element that will be disclosed.|
+
 #### Disclosure Content
 
 The AppDelegate instances provided to the disclosure components are a little more complicated. In addition to a `disclose` function (with all the bells and whistles described in the above section), a number of other functions are exposed to manage various segments of the disclosure state. The included functions are:
 
 |Function|Description|
 |---|---|
-|`disclose(Object)`|Allows a component to disclose another component on top of itself.|
+|`disclose(Object)`|Allows a component to disclose another component on top of itself. See above for argument API.|
 |`dismiss()`|Allows a component to remove itself from the disclosure stack. If the component is the only element in the disclosure stack, the disclosure is closed.|
 |`closeDisclosure()`|Allows a component to close the entire disclosure stack. This is generally integrated into face-up disclosure controls as a Close button or similar.|
 |`goBack()`|Allows a component to remove itself from the disclosure stack. Functionally similar to `dismiss`, however `onBack` is only provided to components in the stack that have a previous sibling. This is generally integrated into face-up disclosure controls as a Back button or similar.|
