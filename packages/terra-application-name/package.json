@@ -1,8 +1,8 @@
 {
   "name": "terra-application-name",
-  "main": "lib/ApplicationHeaderName.js",
+  "main": "lib/ApplicationName.js",
   "version": "0.0.0",
-  "description": "{insert description}",
+  "description": "Houses the title of the application, along with a logo. There are two versions - a header version and menu version. These should be used with the corresponding header and menu layouts.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git"
@@ -49,7 +49,6 @@
     "props-table": "props-table ./src/ApplicationHeaderName.jsx ./src/ApplicationMenuName.jsx --out-dir ./docs/props-table",
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
-    "test:nightwatch": "nightwatch -c ../../nightwatch.conf.js",
     "test:wdio": "wdio ../../wdio.conf.js"
   }
 }
