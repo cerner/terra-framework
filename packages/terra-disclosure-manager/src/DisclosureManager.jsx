@@ -287,8 +287,8 @@ class DisclosureManager extends React.Component {
         dismiss: index > 0 ? popContent : this.safelyCloseDisclosure,
         closeDisclosure: this.safelyCloseDisclosure,
         goBack: index > 0 ? popContent : undefined,
-        requestFocus: !disclosureIsFocused ? () => Promise.resolve().then(this.requestDisclosureFocus) : undefined,
-        releaseFocus: disclosureIsFocused ? () => Promise.resolve().then(this.releaseDisclosureFocus) : undefined,
+        requestFocus: disclosureIsFocused ? () => Promise.resolve().then(this.releaseDisclosureFocus) : undefined,
+        releaseFocus: !disclosureIsFocused ? () => Promise.resolve().then(this.requestDisclosureFocus) : undefined,
         maximize: (!isFullscreen && !disclosureIsMaximized) ? () => (Promise.resolve().then(this.maximizeDisclosure)) : undefined,
         minimize: (!isFullscreen && disclosureIsMaximized) ? () => (Promise.resolve().then(this.minimizeDisclosure)) : undefined,
         registerDismissCheck: (checkFunc) => {

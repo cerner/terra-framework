@@ -81,8 +81,8 @@ describe('DisclosureManager', () => {
       expect(disclosureContentApp.goBack).toBeUndefined();
       expect(disclosureContentApp.maximize).toBeDefined();
       expect(disclosureContentApp.minimize).toBeUndefined();
-      expect(disclosureContentApp.requestFocus).toBeUndefined();
-      expect(disclosureContentApp.releaseFocus).toBeDefined();
+      expect(disclosureContentApp.requestFocus).toBeDefined();
+      expect(disclosureContentApp.releaseFocus).toBeUndefined();
       expect(disclosureContentApp.registerDismissCheck).toBeDefined(); // TODO: Flip this with AppDelegate release
     })
   );
@@ -192,8 +192,8 @@ describe('DisclosureManager', () => {
       expect(disclosureContentApp.goBack).toBeUndefined();
       expect(disclosureContentApp.maximize).toBeUndefined();
       expect(disclosureContentApp.minimize).toBeDefined();
-      expect(disclosureContentApp.requestFocus).toBeUndefined();
-      expect(disclosureContentApp.releaseFocus).toBeDefined();
+      expect(disclosureContentApp.requestFocus).toBeDefined();
+      expect(disclosureContentApp.releaseFocus).toBeUndefined();
       expect(disclosureContentApp.registerDismissCheck).toBeDefined(); // TODO: Flip this with AppDelegate release
     })
     .then(() => new Promise((resolve, reject) => {
@@ -220,8 +220,8 @@ describe('DisclosureManager', () => {
       expect(disclosureContentApp.goBack).toBeUndefined();
       expect(disclosureContentApp.maximize).toBeDefined();
       expect(disclosureContentApp.minimize).toBeUndefined();
-      expect(disclosureContentApp.requestFocus).toBeUndefined();
-      expect(disclosureContentApp.releaseFocus).toBeDefined();
+      expect(disclosureContentApp.requestFocus).toBeDefined();
+      expect(disclosureContentApp.releaseFocus).toBeUndefined();
       expect(disclosureContentApp.registerDismissCheck).toBeDefined(); // TODO: Flip this with AppDelegate release
     });
   });
@@ -267,8 +267,8 @@ describe('DisclosureManager', () => {
       expect(disclosureContentApp.goBack).toBeUndefined();
       expect(disclosureContentApp.maximize).toBeUndefined();
       expect(disclosureContentApp.minimize).toBeUndefined();
-      expect(disclosureContentApp.requestFocus).toBeUndefined();
-      expect(disclosureContentApp.releaseFocus).toBeDefined();
+      expect(disclosureContentApp.requestFocus).toBeDefined();
+      expect(disclosureContentApp.releaseFocus).toBeUndefined();
       expect(disclosureContentApp.registerDismissCheck).toBeDefined(); // TODO: Flip this with AppDelegate release
     });
   });
@@ -288,7 +288,7 @@ describe('DisclosureManager', () => {
     .then(() => new Promise((resolve, reject) => {
       const disclosureContentApp = wrapper.find('#disclosure-component').getElements()[0].props.app;
 
-      disclosureContentApp.releaseFocus().then(resolve).catch(reject);
+      disclosureContentApp.requestFocus().then(resolve).catch(reject);
     }))
     .then(() => {
       wrapper.update();
@@ -309,14 +309,14 @@ describe('DisclosureManager', () => {
       expect(disclosureContentApp.goBack).toBeUndefined();
       expect(disclosureContentApp.maximize).toBeDefined();
       expect(disclosureContentApp.minimize).toBeUndefined();
-      expect(disclosureContentApp.requestFocus).toBeDefined();
-      expect(disclosureContentApp.releaseFocus).toBeUndefined();
+      expect(disclosureContentApp.requestFocus).toBeUndefined();
+      expect(disclosureContentApp.releaseFocus).toBeDefined();
       expect(disclosureContentApp.registerDismissCheck).toBeDefined(); // TODO: Flip this with AppDelegate release
     })
     .then(() => new Promise((resolve, reject) => {
       const disclosureContentApp = wrapper.find('#disclosure-component').getElements()[0].props.app;
 
-      disclosureContentApp.requestFocus().then(resolve).catch(reject);
+      disclosureContentApp.releaseFocus().then(resolve).catch(reject);
     }))
     .then(() => {
       wrapper.update();
@@ -337,8 +337,8 @@ describe('DisclosureManager', () => {
       expect(disclosureContentApp.goBack).toBeUndefined();
       expect(disclosureContentApp.maximize).toBeDefined();
       expect(disclosureContentApp.minimize).toBeUndefined();
-      expect(disclosureContentApp.requestFocus).toBeUndefined();
-      expect(disclosureContentApp.releaseFocus).toBeDefined();
+      expect(disclosureContentApp.requestFocus).toBeDefined();
+      expect(disclosureContentApp.releaseFocus).toBeUndefined();
       expect(disclosureContentApp.registerDismissCheck).toBeDefined(); // TODO: Flip this with AppDelegate release
     });
   });
@@ -444,8 +444,8 @@ describe('DisclosureManager', () => {
       expect(disclosureContentApp.goBack).toBeDefined();
       expect(disclosureContentApp.maximize).toBeDefined();
       expect(disclosureContentApp.minimize).toBeUndefined();
-      expect(disclosureContentApp.requestFocus).toBeUndefined();
-      expect(disclosureContentApp.releaseFocus).toBeDefined();
+      expect(disclosureContentApp.requestFocus).toBeDefined();
+      expect(disclosureContentApp.releaseFocus).toBeUndefined();
       expect(disclosureContentApp.registerDismissCheck).toBeDefined(); // TODO: Flip this with AppDelegate release
     })
     .then(() => new Promise((resolve, reject) => {
