@@ -84,7 +84,7 @@ Disclose Content API:
 
 |Key|Type|Required|Description|
 |---|---|---|---|
-|`key`|String|Yes|An identifying String that will be used as the React `key` for the disclosed component. Should be as specific as possible.|
+|`key`|String|Yes|An identifying String that will be used as the React `key` for the disclosed component. This must be unique relative to the other disclosure components, so make this as specific as possible.|
 |`component`|React Element|No|A React component instance that will be disclosed. If provided, the name/props values will be ignored.|
 |`name` (deprecated)|String|No|The String value that will be used to retrieve the Component class from the AppDelegate component registry.|
 |`props` (deprecated)|Object|No|An Object containing the props for the disclosed component. These should be serializable.|
