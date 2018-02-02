@@ -88,9 +88,7 @@
     background-position: var(--terra-application-tabs-background-position, top-left);
     background-repeat: no-repeat;
     background-size: var(--terra-application-tabs-background-size, 0 4px);
-    border-color: var(--terra-application-tabs-border-color, #dedfe0);
-    border-style: solid;
-    border-width: var(--terra-application-tabs-border-width, 0 1px 0 0);
+    border-right: var(--terra-application-tabs-border-right, 1px solid #dedfe0);
     color: var(--terra-application-tabs-color, #fff);
     cursor: pointer;
     flex: 0 0 auto;
@@ -129,6 +127,7 @@
     }
 
     &:first-child {
+      border-left: var(--terra-application-tabs-border-left, 1px solid #dedfe0);
       border-width: var(--terra-application-tabs-border-width-first, 0 1px 0 1px);
     }
   }
