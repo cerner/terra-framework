@@ -48,7 +48,15 @@
     "--terra-base-color": "#1c1f21",
     "--terra-base-body-height": "100%",
     "--terra-base-line-height": "1.42857",
-    "--terra-base-body-margin": "0"
+    "--terra-base-body-margin": "0",
+    "--terra-link-color": "#0065a3",
+    "--terra-link-visted-color": "#0065a3",
+    "--terra-link-hover-color": "#004c76",
+    "--terra-link-focus-background-color": "transparent",
+    "--terra-link-focus-border-radius": "0.2142rem",
+    "--terra-link-focus-box-shadow": "0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35)",
+    "--terra-link-focus-color": "#004c76",
+    "--terra-link-active-color": "#004c76"
   },
   "Button": {
     "--terra-button-border-radius": "0.25em",
