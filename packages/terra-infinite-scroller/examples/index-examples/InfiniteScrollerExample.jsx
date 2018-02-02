@@ -1,12 +1,12 @@
 import React from 'react';
-import InfiniteScroller from 'terra-infinite-scroller';
 import IconPerson from 'terra-icon/lib/icon/IconPerson';
 import IconAlert from 'terra-icon/lib/icon/IconAlert';
 import IconInformation from 'terra-icon/lib/icon/IconInformation';
 import LoadingOverlay from 'terra-overlay/lib/LoadingOverlay';
 import OverlayContainer from 'terra-overlay/lib/OverlayContainer';
-
 import ItemView from 'terra-clinical-item-view';
+
+import InfiniteScroller from '../../src/InfiniteScroller';
 
 class scrollerExample extends React.Component {
   constructor(props) {
