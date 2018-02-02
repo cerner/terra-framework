@@ -48,7 +48,7 @@ Example (using the Modal and SlideGroup):
   supportedDisclosureTypes={['modal']}
   render={(manager) => (
     <div>
-      {manager.content.components}
+      {manager.children.components} // These are the Child1 and Child2 components provided as children to the DisclosureManager.
       <Modal
         isFocused={manager.disclosure.isFocused}
         isOpen={manager.disclosure.isOpen}
