@@ -1,22 +1,12 @@
 import React from 'react';
-import { createStore, combineReducers } from 'redux';
-import { Provider } from 'react-redux';
 
-import ModalManager, { reducers as modalManagerReducers } from '../../lib/index';
+import ModalManager from '../../lib/index';
 import DemoContainer from './test-content/DemoContainer';
 
-const store = createStore(
-  combineReducers(Object.assign({},
-    modalManagerReducers,
-  )),
-);
-
 const ModalManagerDefault = () => (
-  <Provider store={store}>
-    <ModalManager>
-      <DemoContainer identifier="root-component" />
-    </ModalManager>
-  </Provider>
+  <ModalManager>
+    <DemoContainer identifier="root-component" />
+  </ModalManager>
 );
 
 export default ModalManagerDefault;

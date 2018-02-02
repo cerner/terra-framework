@@ -12,14 +12,14 @@ const propTypes = {
   behavior: PropTypes.string,
 };
 
-const SlidePanelManagerExample = ({ behavior }) => (
+const ModalManagerExample = () => (
   <div className={cx('example-wrapper')}>
-    <ModalManager panelBehavior={behavior}>
+    <ModalManager>
       <ManagerContentComponent disclosureType="panel" />
     </ModalManager>
   </div>
 );
 
-SlidePanelManagerExample.propTypes = propTypes;
+ModalManagerExample.propTypes = propTypes;
 
-export default SlidePanelManagerExample;
+export default ModalManagerExample;
