@@ -82,7 +82,11 @@
     }
   }
 
-  .tab,
+  a.tab:hover {
+    color: var(--terra-application-tabs-hover-color, #fff);
+  }
+
+  a.tab,
   .tab-menu {
     background-image: var(--terra-application-tabs-background-image, linear-gradient(to bottom, #007ee0, #007ee0));
     background-position: var(--terra-application-tabs-background-position, top-left);
@@ -120,7 +124,6 @@
       &:hover {
         background-image: var(--terra-application-tabs-hover-background-image, linear-gradient(to bottom, #c8cacb, #c8cacb));
         background-size: var(--terra-application-tabs-hover-background-size, 100% 4px);
-        color: var(--terra-application-tabs-hover-color, #000);
       }
     }
 
