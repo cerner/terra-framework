@@ -1,3 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DisclosureManager should render a default component 1`] = `<div />`;
+exports[`DisclosureManager should render using the provided render function 1`] = `
+<div
+  id="wrapper"
+>
+  <div
+    app={
+      AppDelegateInstance {
+        "disclose": [Function],
+      }
+    }
+    id="child1"
+    key=".0"
+  />
+  <div
+    app={
+      AppDelegateInstance {
+        "disclose": [Function],
+      }
+    }
+    id="child2"
+    key=".1"
+  />
+</div>
+`;

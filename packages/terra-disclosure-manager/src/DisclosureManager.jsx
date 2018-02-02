@@ -88,6 +88,7 @@ class DisclosureManager extends React.Component {
   openDisclosure(data) {
     this.setState({
       disclosureIsOpen: true,
+      disclosureIsFocused: true,
       disclosureSize: data.size || availableDisclosureSizes.SMALL,
       disclosureComponentKeys: [data.content.key],
       disclosureComponentData: {

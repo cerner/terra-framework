@@ -43,8 +43,7 @@
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
     "props-table": "props-table ./src/DisclosureManager.jsx --out-dir ./docs/props-table",
-    "test": "npm run test:jest && npm run test:nightwatch",
-    "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
-    "test:nightwatch": "nightwatch -c ../../nightwatch.conf.js"
+    "test": "npm run test:jest",
+    "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json"
   }
 }
