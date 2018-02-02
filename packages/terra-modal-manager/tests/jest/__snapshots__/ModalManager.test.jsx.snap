@@ -1,5 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ModalManger should disclose content in Modal 1`] = `
+<ModalManager>
+  <DisclosureManager
+    render={[Function]}
+    supportedDisclosureTypes={
+      Array [
+        "modal",
+      ]
+    }
+  >
+    <div
+      className="container"
+    >
+      <TestContainer
+        app={
+          AppDelegateInstance {
+            "disclose": [Function],
+          }
+        }
+        key=".0"
+      >
+        <div>
+          Hello World
+        </div>
+      </TestContainer>
+      <Modal
+        ariaLabel="Modal"
+        classNameModal="large"
+        classNameOverlay={null}
+        closeOnEsc={true}
+        closeOnOutsideClick={false}
+        isFocused={true}
+        isFullscreen={false}
+        isOpen={true}
+        isScrollable={false}
+        onRequestClose={[Function]}
+        role="document"
+      >
+        <Portal
+          isOpened={true}
+          onClose={[Function]}
+          onOpen={[Function]}
+          onUpdate={[Function]}
+        />
+      </Modal>
+    </div>
+  </DisclosureManager>
+</ModalManager>
+`;
+
 exports[`ModalManger should render the ModalManager with defaults 1`] = `
 <DisclosureManager
   render={[Function]}
