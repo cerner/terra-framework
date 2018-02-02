@@ -82,10 +82,6 @@
     }
   }
 
-  .tab:hover {
-    color: var(--terra-application-tabs-hover-color, #fff) !important;
-  }
-
   .tab,
   .tab-menu {
     background-image: var(--terra-application-tabs-background-image, linear-gradient(to bottom, #007ee0, #007ee0));
@@ -110,6 +106,10 @@
     transition-property: background-size;
     transition-timing-function: var(--terra-application-tabs-transition-timing, ease);
     width: var(--terra-application-tab-width, 16.714rem);
+
+    &:focus {
+      color: var(--terra-application-tabs-hover-color, #fff);
+    }
 
     &:hover {
       background-color: var(--terra-application-tabs-hover-background-color, rgba(0, 0, 0, 0.25));
