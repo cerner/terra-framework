@@ -106,6 +106,7 @@
     width: var(--terra-application-tab-width, 16.714rem);
 
     &:focus {
+      border-radius: 0;
       color: var(--terra-application-tabs-focus-color, #fff);
     }
 
@@ -148,6 +149,13 @@
     word-break: break-word;
     word-wrap: break-word;
     
+    &:focus,
+    &:hover,
+    &:visited {
+      border-radius: 0;
+      color: var(--terra-application-tabs-hidden-color, #1c1f21);
+    }
+
     &:hover {
       background: var(--terra-application-tabs-hidden-hover-background, linear-gradient(-90deg, #fff, #f1f1f2));
     }
