@@ -78,10 +78,10 @@ describe('DisclosureManager', () => {
       expect(disclosureContentApp.disclose).toBeDefined();
       expect(disclosureContentApp.dismiss).toBeDefined();
       expect(disclosureContentApp.closeDisclosure).toBeDefined();
-      expect(disclosureContentApp.goBack).toBe(undefined);
+      expect(disclosureContentApp.goBack).toBeUndefined();
       expect(disclosureContentApp.maximize).toBeDefined();
-      expect(disclosureContentApp.minimize).toBe(undefined);
-      expect(disclosureContentApp.requestFocus).toBeDefined();
+      expect(disclosureContentApp.minimize).toBeUndefined();
+      expect(disclosureContentApp.requestFocus).toBeUndefined();
       expect(disclosureContentApp.releaseFocus).toBeDefined();
       expect(disclosureContentApp.registerDismissCheck).toBeDefined(); // TODO: Flip this with AppDelegate release
     })
@@ -189,10 +189,10 @@ describe('DisclosureManager', () => {
       expect(disclosureContentApp.disclose).toBeDefined();
       expect(disclosureContentApp.dismiss).toBeDefined();
       expect(disclosureContentApp.closeDisclosure).toBeDefined();
-      expect(disclosureContentApp.goBack).toBe(undefined);
-      expect(disclosureContentApp.maximize).toBe(undefined);
+      expect(disclosureContentApp.goBack).toBeUndefined();
+      expect(disclosureContentApp.maximize).toBeUndefined();
       expect(disclosureContentApp.minimize).toBeDefined();
-      expect(disclosureContentApp.requestFocus).toBeDefined();
+      expect(disclosureContentApp.requestFocus).toBeUndefined();
       expect(disclosureContentApp.releaseFocus).toBeDefined();
       expect(disclosureContentApp.registerDismissCheck).toBeDefined(); // TODO: Flip this with AppDelegate release
     })
@@ -217,10 +217,10 @@ describe('DisclosureManager', () => {
       expect(disclosureContentApp.disclose).toBeDefined();
       expect(disclosureContentApp.dismiss).toBeDefined();
       expect(disclosureContentApp.closeDisclosure).toBeDefined();
-      expect(disclosureContentApp.goBack).toBe(undefined);
+      expect(disclosureContentApp.goBack).toBeUndefined();
       expect(disclosureContentApp.maximize).toBeDefined();
-      expect(disclosureContentApp.minimize).toBe(undefined);
-      expect(disclosureContentApp.requestFocus).toBeDefined();
+      expect(disclosureContentApp.minimize).toBeUndefined();
+      expect(disclosureContentApp.requestFocus).toBeUndefined();
       expect(disclosureContentApp.releaseFocus).toBeDefined();
       expect(disclosureContentApp.registerDismissCheck).toBeDefined(); // TODO: Flip this with AppDelegate release
     });
@@ -264,10 +264,10 @@ describe('DisclosureManager', () => {
       expect(disclosureContentApp.disclose).toBeDefined();
       expect(disclosureContentApp.dismiss).toBeDefined();
       expect(disclosureContentApp.closeDisclosure).toBeDefined();
-      expect(disclosureContentApp.goBack).toBe(undefined);
-      expect(disclosureContentApp.maximize).toBe(undefined);
-      expect(disclosureContentApp.minimize).toBe(undefined);
-      expect(disclosureContentApp.requestFocus).toBeDefined();
+      expect(disclosureContentApp.goBack).toBeUndefined();
+      expect(disclosureContentApp.maximize).toBeUndefined();
+      expect(disclosureContentApp.minimize).toBeUndefined();
+      expect(disclosureContentApp.requestFocus).toBeUndefined();
       expect(disclosureContentApp.releaseFocus).toBeDefined();
       expect(disclosureContentApp.registerDismissCheck).toBeDefined(); // TODO: Flip this with AppDelegate release
     });
@@ -306,11 +306,11 @@ describe('DisclosureManager', () => {
       expect(disclosureContentApp.disclose).toBeDefined();
       expect(disclosureContentApp.dismiss).toBeDefined();
       expect(disclosureContentApp.closeDisclosure).toBeDefined();
-      expect(disclosureContentApp.goBack).toBe(undefined);
+      expect(disclosureContentApp.goBack).toBeUndefined();
       expect(disclosureContentApp.maximize).toBeDefined();
-      expect(disclosureContentApp.minimize).toBe(undefined);
+      expect(disclosureContentApp.minimize).toBeUndefined();
       expect(disclosureContentApp.requestFocus).toBeDefined();
-      expect(disclosureContentApp.releaseFocus).toBeDefined();
+      expect(disclosureContentApp.releaseFocus).toBeUndefined();
       expect(disclosureContentApp.registerDismissCheck).toBeDefined(); // TODO: Flip this with AppDelegate release
     })
     .then(() => new Promise((resolve, reject) => {
@@ -334,10 +334,10 @@ describe('DisclosureManager', () => {
       expect(disclosureContentApp.disclose).toBeDefined();
       expect(disclosureContentApp.dismiss).toBeDefined();
       expect(disclosureContentApp.closeDisclosure).toBeDefined();
-      expect(disclosureContentApp.goBack).toBe(undefined);
+      expect(disclosureContentApp.goBack).toBeUndefined();
       expect(disclosureContentApp.maximize).toBeDefined();
-      expect(disclosureContentApp.minimize).toBe(undefined);
-      expect(disclosureContentApp.requestFocus).toBeDefined();
+      expect(disclosureContentApp.minimize).toBeUndefined();
+      expect(disclosureContentApp.requestFocus).toBeUndefined();
       expect(disclosureContentApp.releaseFocus).toBeDefined();
       expect(disclosureContentApp.registerDismissCheck).toBeDefined(); // TODO: Flip this with AppDelegate release
     });
@@ -443,8 +443,8 @@ describe('DisclosureManager', () => {
       expect(disclosureContentApp.closeDisclosure).toBeDefined();
       expect(disclosureContentApp.goBack).toBeDefined();
       expect(disclosureContentApp.maximize).toBeDefined();
-      expect(disclosureContentApp.minimize).toBe(undefined);
-      expect(disclosureContentApp.requestFocus).toBeDefined();
+      expect(disclosureContentApp.minimize).toBeUndefined();
+      expect(disclosureContentApp.requestFocus).toBeUndefined();
       expect(disclosureContentApp.releaseFocus).toBeDefined();
       expect(disclosureContentApp.registerDismissCheck).toBeDefined(); // TODO: Flip this with AppDelegate release
     })
@@ -461,7 +461,7 @@ describe('DisclosureManager', () => {
       expect(wrapper.state().disclosureIsMaximized).toBeFalsy();
       expect(wrapper.state().disclosureSize).toBe('large');
       expect(wrapper.state().disclosureComponentKeys).toEqual(['DISCLOSE_KEY']);
-      expect(wrapper.state().disclosureComponentData.NESTED).toBe(undefined);
+      expect(wrapper.state().disclosureComponentData.NESTED).toBeUndefined();
     });
   });
 
