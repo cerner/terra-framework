@@ -29,8 +29,8 @@ const ApplicationTab = ({
   ...customProps
 }) => {
   const tabClassNames = cx([
-    'tab',
-    { 'is-hidden': isHidden },
+    { tab: !isHidden },
+    { 'hidden-tab': isHidden },
     customProps.className,
   ]);
 
@@ -41,7 +41,9 @@ const ApplicationTab = ({
 
   return (
     <NavLink {...customProps} {...tabRole} className={tabClassNames} to={path} key={path} activeClassName={cx(['selected'])}>
-      {text}
+      <span className={cx(['tab-inner'])}>
+        {text}
+      </span>
     </NavLink>
   );
 };

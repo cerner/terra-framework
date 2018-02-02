@@ -21,7 +21,7 @@
     "--terra-application-tabs-color": "#fff",
     "--terra-application-tabs-font-size": "1rem",
     "--terra-application-tabs-line-height": "1.4",
-    "--terra-application-tabs-padding": "0.643rem 1.071rem",
+    "--terra-application-tabs-padding-horizontal": "1.071rem",
     "--terra-application-tabs-transition-duration": "0.35s",
     "--terra-application-tabs-transition-timing": "ease",
     "--terra-application-tab-width": "16.714rem",
@@ -34,10 +34,10 @@
     "--terra-application-tabs-hover-color": "#000",
     "--terra-application-tabs-border-width-first": "0 1px 0 1px",
     "--terra-application-tabs-hidden-color": "#1c1f21",
+    "--terra-application-tabs-hidden-selected-padding": "1.214rem 1.071rem",
     "--terra-application-tabs-hidden-hover-background": "linear-gradient(-90deg, #fff, #f1f1f2)",
     "--terra-application-tabs-hidden-selected-background-image": "linear-gradient(-270deg, #fff, #e8e9ea)",
-    "--terra-application-tabs-hidden-selected-box-shadow": "inset 0.5rem 0 0 0 #007cc3",
-    "--terra-application-tabs-hidden-selected-left-padding": "1.214rem"
+    "--terra-application-tabs-hidden-selected-box-shadow": "inset 0.5rem 0 0 0 #007cc3"
   },
   "Base": {
     "--terra-base-font-family": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",

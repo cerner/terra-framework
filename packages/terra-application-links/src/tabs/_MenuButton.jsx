@@ -76,8 +76,10 @@ class MenuButton extends React.Component {
         className={cx(['tab-menu', { 'menu-hidden': isMenuHidden }])}
         ref={(node) => { this.contentNode = node; this.props.refCallback(node); }}
       >
-        <span>{text}</span>
-        <IconCaretDown />
+        <div className={cx(['inner'])}>
+          <span>{text}</span>
+          <IconCaretDown />
+        </div>
         {popup}
       </div>
     );

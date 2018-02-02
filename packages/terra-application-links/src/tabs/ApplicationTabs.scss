@@ -3,6 +3,7 @@
     display: flex;
     flex: 1 1 auto;
     flex-wrap: nowrap;
+    height: 100%;
     justify-content: center;
     padding-left: var(--terra-application-tabs-spacer-width, 2rem);
     padding-right: var(--terra-application-tabs-spacer-width, 2rem);
@@ -14,6 +15,7 @@
     display: flex;
     flex: 1 1 auto;
     flex-wrap: nowrap;
+    height: 100%;
     justify-content: center;
     overflow: hidden;
     position: relative;
@@ -28,13 +30,24 @@
     visibility: hidden;
   }
 
+  .tab span {
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: calc(100% - 2 * var(--terra-application-tabs-padding-horizontal, 1.071rem));
+  }
+
   .tab,
-  .tab-menu span {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    word-break: normal;
-    word-wrap: normal;
+  .tab-menu {
+    span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-break: normal;
+      word-wrap: normal;
+    }
   }
 
   .tab {
@@ -46,9 +59,15 @@
   }
 
   .tab-menu {
-    align-items: baseline;
+    align-items: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+
+    .inner {
+      display: inline-flex;
+      max-width: 100%;
+    }
 
     span {
       flex: 0 1 auto;
@@ -56,6 +75,7 @@
     }
 
     svg {
+      align-self: center;
       flex: 0 0 auto;
       font-size: 0.571rem;
       margin-left: var(--terra-application-tabs-menu-arrow-left-margin, 0.5rem);
@@ -75,9 +95,12 @@
     cursor: pointer;
     flex: 0 0 auto;
     font-size: var(--terra-application-tabs-font-size, 1rem);
+    height: 100%;
     line-height: var(--terra-application-tabs-line-height, 1.4);
     max-width: 100%;
-    padding: var(--terra-application-tabs-padding, 0.643rem 1.071rem);
+    padding-left: var(--terra-application-tabs-padding-horizontal, 1.071rem);
+    padding-right: var(--terra-application-tabs-padding-horizontal, 1.071rem);
+    position: relative;
     text-decoration: none;
     transition-duration: var(--terra-application-tabs-transition-duration, 0.35s);
     transition-property: background-size;
@@ -110,10 +133,12 @@
     display: none;
   }
 
-  .tab.is-hidden {
+  .hidden-tab {
     color: var(--terra-application-tabs-hidden-color, #1c1f21);
     display: block;
+    padding: var(--terra-application-tabs-hidden-selected-padding, 1.214rem 1.071rem);
     text-align: left;
+    text-decoration: none;
     text-overflow: unset;
     transition-duration: 0;
     white-space: normal;
@@ -128,7 +153,6 @@
       background-image: var(--terra-application-tabs-hidden-selected-background-image, linear-gradient(-270deg, #fff, #e8e9ea));
       background-size: 100%;
       box-shadow: var(--terra-application-tabs-hidden-selected-box-shadow, inset 0.5rem 0 0 0 #007cc3);
-      padding-left: var(--terra-application-tabs-hidden-selected-left-padding, 1.214rem);
     }
   }
 }
