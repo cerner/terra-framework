@@ -65,6 +65,7 @@
     justify-content: center;
 
     .inner {
+      align-items: center;
       display: inline-flex;
       max-width: 100%;
     }
@@ -75,7 +76,6 @@
     }
 
     svg {
-      align-self: center;
       flex: 0 0 auto;
       font-size: 0.571rem;
       margin-left: var(--terra-application-tabs-menu-arrow-left-margin, 0.5rem);
