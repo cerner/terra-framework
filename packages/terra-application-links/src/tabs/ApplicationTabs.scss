@@ -82,11 +82,11 @@
     }
   }
 
-  a.tab:hover {
-    color: var(--terra-application-tabs-hover-color, #fff);
+  .tab:hover {
+    color: var(--terra-application-tabs-hover-color, #fff) !important;
   }
 
-  a.tab,
+  .tab,
   .tab-menu {
     background-image: var(--terra-application-tabs-background-image, linear-gradient(to bottom, #007ee0, #007ee0));
     background-position: var(--terra-application-tabs-background-position, top-left);
