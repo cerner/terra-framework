@@ -1,10 +1,10 @@
 import React from 'react';
 import 'terra-base/lib/baseStyles';
-// eslint-disable import/no-extraneous-dependencies
+/* eslint-disable import/no-extraneous-dependencies */
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import ModalManager, { reducers as modalManagerReducers } from 'terra-modal-manager';
-// eslint-enable import/no-extraneous-dependencies
+/* eslint-enable import/no-extraneous-dependencies */
 import ApplicationMenu from '../../lib/ApplicationMenu';
 import ApplicationContentExample from './ApplicationContentExample';
 
