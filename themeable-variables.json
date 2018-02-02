@@ -3,10 +3,9 @@
     "--terra-application-list-color": "#1c1f21",
     "--terra-application-list-font-size": "1.071rem",
     "--terra-application-list-line-height": "3.214rem",
-    "--terra-application-list-padding": "0 0.7143rem",
+    "--terra-application-list-padding-right": "0.7143rem",
     "--terra-application-list-background-hover": "linear-gradient(-90deg, #fff, #f1f1f2)",
-    "--terra-application-list-selected-background-image": "linear-gradient(-270deg, #fff, #e8e9ea)",
-    "--terra-application-list-selected-padding": "0 1.214rem"
+    "--terra-application-list-selected-background-image": "linear-gradient(-270deg, #fff, #e8e9ea)"
   },
   "ApplicationTabs": {
     "--terra-application-tabs-spacer-width": "2rem",
