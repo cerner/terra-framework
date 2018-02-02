@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ContentContainer from 'terra-content-container';
+import LodashDebounce from 'lodash.debounce';
 
 import LayoutSlidePanel from './_LayoutSlidePanel';
 import {
@@ -50,7 +51,7 @@ class Layout extends React.Component {
 
     this.toggleMenu = this.toggleMenu.bind(this);
     this.togglePin = this.togglePin.bind(this);
-    this.updateSize = this.updateSize.bind(this);
+    this.updateSize = LodashDebounce(this.updateSize.bind(this), 100);
     this.renderHeader = this.renderHeader.bind(this);
     this.renderMenu = this.renderMenu.bind(this);
     this.renderContent = this.renderContent.bind(this);

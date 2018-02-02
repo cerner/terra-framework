@@ -35,18 +35,20 @@ Prior to components reaching v1.0.0, a component is considered to be in a beta s
 Components in beta stage may include breaking changes, new features, and bug fixes all within v0.x.x releases.
 
 ### Status
-:white_check_mark: Stable
-:large_orange_diamond: Beta
-:construction: In Progress
-:x: Deprecated
+![Stable](https://img.shields.io/badge/status-Stable-brightgreen.svg)
+![Stable](https://img.shields.io/badge/status-Beta-orange.svg)
+![Stable](https://img.shields.io/badge/status-Deprecated-lightgrey.svg)
 
 
 | Terra Package      | Version | Status |
 |--------------------|---------|--------|
-| [terra-application-header-layout](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-header-layout) | [![NPM version](http://img.shields.io/npm/v/terra-application-header-layout.svg)](https://www.npmjs.org/package/terra-application-header-layout) | :white_check_mark: |
-| [terra-application-menu-layout](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-menu-layout) | [![NPM version](http://img.shields.io/npm/v/terra-application-menu-layout.svg)](https://www.npmjs.org/package/terra-application-menu-layout) | :white_check_mark: |
-| [terra-layout](https://github.com/cerner/terra-framework/tree/master/packages/terra-layout) | [![NPM version](http://img.shields.io/npm/v/terra-layout.svg)](https://www.npmjs.org/package/terra-layout) | :white_check_mark: |
-| [terra-navigation-layout](https://github.com/cerner/terra-framework/tree/master/packages/terra-navigation-layout) | [![NPM version](http://img.shields.io/npm/v/terra-navigation-layout.svg)](https://www.npmjs.org/package/terra-navigation-layout) | :white_check_mark: |
+| [terra-app-delegate](https://github.com/cerner/terra-framework/tree/master/packages/terra-app-delegate) | [![NPM version](http://img.shields.io/npm/v/terra-app-delegate.svg)](https://www.npmjs.org/package/terra-app-delegate) | ![Stable](https://img.shields.io/badge/status-Stable-brightgreen.svg)|
+| [terra-application-header-layout](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-header-layout) | [![NPM version](http://img.shields.io/npm/v/terra-application-header-layout.svg)](https://www.npmjs.org/package/terra-application-header-layout) | ![Stable](https://img.shields.io/badge/status-Stable-brightgreen.svg) |
+| [terra-application-menu-layout](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-menu-layout) | [![NPM version](http://img.shields.io/npm/v/terra-application-menu-layout.svg)](https://www.npmjs.org/package/terra-application-menu-layout) | ![Stable](https://img.shields.io/badge/status-Stable-brightgreen.svg) |
+| [terra-layout](https://github.com/cerner/terra-framework/tree/master/packages/terra-layout) | [![NPM version](http://img.shields.io/npm/v/terra-layout.svg)](https://www.npmjs.org/package/terra-layout) | ![Stable](https://img.shields.io/badge/status-Stable-brightgreen.svg) |
+| [terra-modal-manager](https://github.com/cerner/terra-framework/tree/master/packages/terra-modal-manager) | [![NPM version](http://img.shields.io/npm/v/terra-modal-manager.svg)](https://www.npmjs.org/package/terra-modal-manager) | ![Stable](https://img.shields.io/badge/status-Stable-brightgreen.svg) |
+| [terra-navigation-layout](https://github.com/cerner/terra-framework/tree/master/packages/terra-navigation-layout) | [![NPM version](http://img.shields.io/npm/v/terra-navigation-layout.svg)](https://www.npmjs.org/package/terra-navigation-layout) | ![Stable](https://img.shields.io/badge/status-Stable-brightgreen.svg) |
+| [terra-theme-provider](https://github.com/cerner/terra-framework/tree/master/packages/terra-theme-provider) | [![NPM version](http://img.shields.io/npm/v/terra-theme-provider.svg)](https://www.npmjs.org/package/terra-theme-provider) | ![Stable](https://img.shields.io/badge/status-Stable-brightgreen.svg) |
 
 ## Supported Browsers
 

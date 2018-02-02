@@ -4,7 +4,10 @@
   "commands": {
     "publish": {
       "ignore": [
-        "DEPENDENCIES.md"
+        "DEPENDENCIES.md",
+        "terra-application-name",
+        "terra-application-utility",
+        "terra-embedded-component"
       ]
     }
   },
