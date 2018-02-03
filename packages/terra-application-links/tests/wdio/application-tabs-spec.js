@@ -34,7 +34,7 @@ describe('ApplicationTabs', () => {
   //     '--terra-application-tabs-hover-background-size': '100% 9px',
   //     '--terra-application-tabs-hover-color': 'gray',
   //   });
-  // });
+  });
 
   describe('Displays hidden application tabs', () => {
     beforeEach(() => {
