@@ -46,7 +46,7 @@ describe('ApplicationTabs', () => {
       browser.moveToObject('[data-application-tab-menu-content] > *:first-child');
     });
 
-    Terra.should.matchScreenshot('[data-application-tab-menu-content]', { selector: '[data-application-tab-menu-content]', viewports });
+    Terra.should.matchScreenshot({ viewports });
     // Terra.should.matchScreenshot({ viewports, options: { selector: '[data-application-tab-menu-content]' } });
     Terra.should.beAccessible({ viewports, context: '[data-application-tab-menu-content]' });
     // Terra.should.themeEachCustomProperty('[data-application-tab-menu-content]', {
@@ -68,7 +68,7 @@ describe('ApplicationTabs', () => {
       browser.pause(50);
     });
 
-    Terra.should.matchScreenshot('#test-tabs', { selector: '#test-tabs', viewports });
+    Terra.should.matchScreenshot({ viewports });
     // Terra.should.matchScreenshot({ viewports, options: { selector: '#test-tabs' } });
   });
 });
