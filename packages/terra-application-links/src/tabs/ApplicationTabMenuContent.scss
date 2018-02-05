@@ -4,4 +4,12 @@
     color: var(--terra-application-tabs-menu-content-background-colo, #1c1f21);
     font-weight: var(--terra-application-tabs-menu-content-font-weight, 600);
   }
+
+  .bounded-height {
+    height: 100%;
+  }
+
+  .bounded-width {
+    width: 100%;
+  }
 }

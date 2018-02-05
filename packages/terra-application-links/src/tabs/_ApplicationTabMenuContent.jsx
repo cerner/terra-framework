@@ -31,23 +31,19 @@ const ApplicationTabMenuContent = ({
   isWidthBounded,
   refCallback,
   ...customProps
-}) => {
-  const listStyle = {};
-  if (isHeightBounded) {
-    listStyle.height = '100%';
-  }
-  if (isWidthBounded) {
-    listStyle.width = '100%';
-  }
-
-  return (
-    <List data-application-tab-menu-content {...customProps} style={listStyle} className={cx(['list'])} role="menu" ref={refCallback}>
-      {React.Children.map(children, child => (
-        <List.Item content={child} key={child.props.path} role="menuitem" />
-      ))}
-    </List>
-  );
-};
+}) => (
+  <List
+    {...customProps}
+    data-application-tab-menu-content
+    className={cx(['list', { 'height-bounded': isHeightBounded }, { 'width-bounded': isWidthBounded }])}
+    role="menu"
+    ref={refCallback}
+  >
+    {React.Children.map(children, child => (
+      <List.Item content={child} key={child.props.path} role="menuitem" />
+    ))}
+  </List>
+);
 
 ApplicationTabMenuContent.propTypes = propTypes;
 
