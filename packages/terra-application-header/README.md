@@ -2,7 +2,7 @@
 
 
 [![NPM version](http://img.shields.io/npm/v/terra-application-header.svg)](https://www.npmjs.org/package/terra-application-header)
-[![Build Status](https://travis-ci.org/cerner/terra-framwork.svg?branch=master)](https://travis-ci.org/cerner/terra-work)
+[![Build Status](https://travis-ci.org/cerner/terra-framework.svg?branch=master)](https://travis-ci.org/cerner/terra-work)
 
 The ApplicationHeader is a HOC that combines config and menu subcomponents, which are then placed within the header layout.
 
