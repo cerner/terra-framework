@@ -35,7 +35,7 @@ const propTypes = {
     text: PropTypes.string.isRequired,
   })),
   /**
-   * Configutation values for the ApplicationName component.
+   * Configuration values for the ApplicationName component.
    */
   nameConfig: PropTypes.shape({
     accessory: PropTypes.element,
@@ -56,7 +56,7 @@ const propTypes = {
    */
   routingStackDelegate: RoutingStackDelegate.propType,
   /**
-   * Configration to be provided to the ApplicationUtility component.
+   * Configuration to be provided to the ApplicationUtility component.
    */
   utilityConfig: PropTypes.shape({
     userName: PropTypes.string,
