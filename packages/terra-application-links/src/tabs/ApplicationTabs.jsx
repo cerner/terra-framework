@@ -134,7 +134,7 @@ class ApplicationTabs extends React.Component {
       if (this.hiddenStartIndex < 0) {
         visibleChildren.push(<ApplicationTab id={link.id} path={link.path} text={link.text} key={link.path} />);
         hiddenChildren.push(<ApplicationTab id={link.id} path={link.path} text={link.text} key={link.path} isHidden />);
-      } else if (index < this.hiddenStartIndex || this.hiddenStartIndex < 0) {
+      } else if (index < this.hiddenStartIndex) {
         visibleChildren.push(<ApplicationTab id={link.id} path={link.path} text={link.text} key={link.path} />);
       } else {
         hiddenChildren.push(<ApplicationTab id={link.id} path={link.path} text={link.text} key={link.path} isHidden />);
