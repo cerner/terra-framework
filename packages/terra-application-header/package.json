@@ -1,8 +1,8 @@
 {
-  "name": "terra-application-links",
-  "main": "lib/ApplicationLinks.js",
+  "name": "terra-application-header",
+  "main": "lib/ApplicationHeader.js",
   "version": "0.0.0",
-  "description": "{insert description}",
+  "description": "The ApplicationHeader is a HOC that combines config and menu subcomponents, which are then placed within the header layout.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git"
@@ -11,8 +11,8 @@
     "Cerner",
     "Terra",
     "Framework",
-    "terra-application-links",
-    "ApplicationLinks",
+    "terra-application-header",
+    "ApplicationHeader",
     "UI"
   ],
   "author": "Cerner Corporation",
@@ -58,7 +58,7 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
-    "props-table": "props-table ./src/list/ApplicationList.jsx ./src/tabs/ApplicationTabs.jsx --out-dir ./docs/props-table",
+    "props-table": "props-table ./src/list/ApplicationHeader.jsx --out-dir ./docs/props-table",
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
     "test:wdio": "wdio ../../wdio.conf.js"
