@@ -4,9 +4,9 @@ import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
 import { withRouter } from 'react-router-dom';
 import 'terra-base/lib/baseStyles';
-import ApplicationTab from './_ApplicationTab';
-import ApplicationTabMenu from './_ApplicationTabMenu';
-import TabUtils from './ApplicationTabUtils';
+import Tab from './_Tab';
+import TabMenu from './_TabMenu';
+import TabUtils from './_TabUtils';
 import styles from './ApplicationTabs.scss';
 
 const cx = classNames.bind(styles);
@@ -132,12 +132,12 @@ class ApplicationTabs extends React.Component {
 
     links.forEach((link, index) => {
       if (this.hiddenStartIndex < 0) {
-        visibleChildren.push(<ApplicationTab id={link.id} path={link.path} text={link.text} key={link.path} />);
-        hiddenChildren.push(<ApplicationTab id={link.id} path={link.path} text={link.text} key={link.path} isHidden />);
+        visibleChildren.push(<Tab id={link.id} path={link.path} text={link.text} key={link.path} />);
+        hiddenChildren.push(<Tab id={link.id} path={link.path} text={link.text} key={link.path} isCollapsed />);
       } else if (index < this.hiddenStartIndex) {
-        visibleChildren.push(<ApplicationTab id={link.id} path={link.path} text={link.text} key={link.path} />);
+        visibleChildren.push(<Tab id={link.id} path={link.path} text={link.text} key={link.path} />);
       } else {
-        hiddenChildren.push(<ApplicationTab id={link.id} path={link.path} text={link.text} key={link.path} isHidden />);
+        hiddenChildren.push(<Tab id={link.id} path={link.path} text={link.text} key={link.path} isCollapsed />);
       }
     });
 
@@ -151,9 +151,9 @@ class ApplicationTabs extends React.Component {
           ref={this.setContainerNode}
         >
           {visibleChildren}
-          <ApplicationTabMenu isMenuHidden={this.menuHidden} >
+          <TabMenu isMenuHidden={this.menuHidden} >
             {hiddenChildren}
-          </ApplicationTabMenu>
+          </TabMenu>
         </div>
       </div>
       /* eslint-enable jsx-ally/no-static-element-interactions */

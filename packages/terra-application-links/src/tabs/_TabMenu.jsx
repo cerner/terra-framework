@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Popup from 'terra-popup';
 import { Switch, Route } from 'react-router-dom';
-import ApplicationTabMenuContent from './_ApplicationTabMenuContent';
-import ApplicationTabUtils from './ApplicationTabUtils';
-import MenuButton from './_MenuButton';
+import TabMenuList from './_TabMenuList';
+import TabMenuDisplay from './_TabMenuDisplay';
+import TabUtils from './_TabUtils';
 
 const propTypes = {
   /**
@@ -12,9 +12,9 @@ const propTypes = {
    */
   children: PropTypes.node,
   /**
-   * Should the menu he hidden, set to true if there are no hidden items.
+   * Should the menu be hidden, set to true if there are no hidden items.
    */
-  isMenuHidden: PropTypes.bool,
+  isHidden: PropTypes.bool,
   /**
    * Ref callback for menu button.
    */
@@ -30,7 +30,7 @@ const contextTypes = {
   },
 };
 
-class ApplicationTabMenu extends React.Component {
+class TabMenu extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.handleChildClick = this.handleChildClick.bind(this);
@@ -66,7 +66,7 @@ class ApplicationTabMenu extends React.Component {
   }
 
   handleOnKeyDown(event) {
-    if (event.nativeEvent.keyCode === ApplicationTabUtils.KEYCODES.ENTER) {
+    if (event.nativeEvent.keyCode === TabUtils.KEYCODES.ENTER || event.nativeEvent.keyCode === TabUtils.KEYCODES.SPACE) {
       this.setState({ isOpen: true });
     }
   }
@@ -95,7 +95,14 @@ class ApplicationTabMenu extends React.Component {
         path={child.props.path}
         key={child.props.path}
         render={() => (
-          <MenuButton {...props} text={child.props.text} popup={popup} refCallback={this.setTargetRef} isSelected isMenuHidden={this.props.isMenuHidden} />
+          <TabMenuDisplay
+            {...props}
+            text={child.props.text}
+            popup={popup}
+            refCallback={this.setTargetRef}
+            isSelected
+            isHidden={this.props.isHidden}
+          />
         )}
       />
     ));
@@ -104,9 +111,15 @@ class ApplicationTabMenu extends React.Component {
     const menuToggleText = intl.formatMessage({ id: 'Terra.application.tabs.more' });
     routes.push(
       <Route
-        key={'application-tab-more'}
+        key={'menu-display-more'}
         render={() => (
-          <MenuButton {...props} text={menuToggleText} popup={popup} refCallback={this.setTargetRef} isMenuHidden={this.props.isMenuHidden} />
+          <TabMenuDisplay
+            {...props}
+            text={menuToggleText}
+            popup={popup}
+            refCallback={this.setTargetRef}
+            isHidden={this.props.isHidden}
+          />
         )}
       />,
     );
@@ -122,9 +135,9 @@ class ApplicationTabMenu extends React.Component {
 
   createHiddenTabs() {
     return (
-      <ApplicationTabMenuContent>
+      <TabMenuList>
         {React.Children.map(this.props.children, child => React.cloneElement(child, { onClick: this.handleChildClick }))}
-      </ApplicationTabMenuContent>
+      </TabMenuList>
     );
   }
 
@@ -149,7 +162,7 @@ class ApplicationTabMenu extends React.Component {
   }
 }
 
-ApplicationTabMenu.contextTypes = contextTypes;
-ApplicationTabMenu.propTypes = propTypes;
+TabMenu.contextTypes = contextTypes;
+TabMenu.propTypes = propTypes;
 
-export default ApplicationTabMenu;
+export default TabMenu;

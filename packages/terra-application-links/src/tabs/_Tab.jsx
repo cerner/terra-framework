@@ -9,9 +9,9 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Indicates if the tab is be to desplayed in the hidden menu items menu.
+   * Indicates if the tab is be to desplayed in the tab menu.
    */
-  isHidden: PropTypes.bool,
+  isCollapsed: PropTypes.bool,
   /**
    * The path to push to the route.
    */
@@ -23,19 +23,19 @@ const propTypes = {
 };
 
 const ApplicationTab = ({
-  isHidden,
+  isCollapsed,
   path,
   text,
   ...customProps
 }) => {
   const tabClassNames = cx([
-    { tab: !isHidden },
-    { 'hidden-tab': isHidden },
+    { tab: !isCollapsed },
+    { 'collapsed-tab': isCollapsed },
     customProps.className,
   ]);
 
   const tabRole = {};
-  if (!isHidden) {
+  if (!isCollapsed) {
     tabRole.role = 'tab';
   }
 

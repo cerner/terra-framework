@@ -8,33 +8,33 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Whether or not the menu button should be hidden.
+   * Whether or not the menu item should be hidden.
    */
-  isMenuHidden: PropTypes.bool,
+  isHidden: PropTypes.bool,
   /**
-   * Whether or not the menu button should be animated with selection.
+   * Whether or not the menu item should be animated with selection.
    */
   isSelected: PropTypes.bool,
   /**
-   * The popup to attach to the menu button.
+   * The terra-popup to attach to the menu item.
    */
   popup: PropTypes.node,
   /**
-   * The display text for the button.
+   * The display text for the item.
    */
   text: PropTypes.string,
   /**
-   * Ref callback for menu button.
+   * Ref callback for menu item.
    */
   refCallback: PropTypes.func,
 };
 
 const defaultProps = {
   isSelected: false,
-  isMenuHidden: false,
+  isHidden: false,
 };
 
-class MenuButton extends React.Component {
+class TabMenuDisplay extends React.Component {
   constructor(props, context) {
     super(props, context);
 
@@ -56,7 +56,7 @@ class MenuButton extends React.Component {
 
   render() {
     const {
-      isMenuHidden,
+      isHidden,
       isSelected,
       popup,
       refCallback,
@@ -73,7 +73,7 @@ class MenuButton extends React.Component {
       <div
         {...customProps}
         {...attributes}
-        className={cx(['tab-menu', { 'menu-hidden': isMenuHidden }])}
+        className={cx(['tab-menu-display', { 'is-hidden': isHidden }])}
         ref={(node) => { this.contentNode = node; this.props.refCallback(node); }}
       >
         <div className={cx(['inner'])}>
@@ -86,7 +86,7 @@ class MenuButton extends React.Component {
   }
 }
 
-MenuButton.propTypes = propTypes;
-MenuButton.defaultProps = defaultProps;
+TabMenuDisplay.propTypes = propTypes;
+TabMenuDisplay.defaultProps = defaultProps;
 
-export default MenuButton;
+export default TabMenuDisplay;

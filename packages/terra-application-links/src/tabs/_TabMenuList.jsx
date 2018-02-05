@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import List from 'terra-list';
-import styles from './ApplicationTabMenuContent.scss';
+import styles from './ApplicationTabs.scss';
 
 const cx = classNames.bind(styles);
 
@@ -35,7 +35,7 @@ const ApplicationTabMenuContent = ({
   <List
     {...customProps}
     data-application-tab-menu-content
-    className={cx(['list', { 'height-bounded': isHeightBounded }, { 'width-bounded': isWidthBounded }])}
+    className={cx(['tab-menu-list', { 'height-bounded': isHeightBounded }, { 'width-bounded': isWidthBounded }])}
     role="menu"
     ref={refCallback}
   >

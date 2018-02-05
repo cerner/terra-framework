@@ -10,13 +10,17 @@
     text-decoration: none;
     
     &:focus,
+    &.is-focused,
     &:hover,
-    &:visited {
+    &.is-hovered,
+    &:visited,
+    &.is-visited {
       border-radius: 0;
       color: var(--terra-application-list-color, #1c1f21);
     }
 
-    &:hover {
+    &:hover,
+    &.is-hovered {
       background: var(--terra-application-list-background-hover, linear-gradient(-90deg, #fff, #f1f1f2));
     }
 

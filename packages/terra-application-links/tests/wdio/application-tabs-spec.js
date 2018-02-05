@@ -36,7 +36,7 @@ describe('ApplicationTabs', () => {
     });
   });
 
-  describe('Displays hidden application tabs', () => {
+  describe('Displays collapsed application tabs', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/application-links/application-tabs-default');
       browser.waitForVisible('#test-tabs [data-application-tabs-more]');
@@ -49,11 +49,11 @@ describe('ApplicationTabs', () => {
     Terra.should.matchScreenshot({ viewports, options: { selector: '[data-application-tab-menu-content]' } });
     Terra.should.beAccessible({ viewports, context: '[data-application-tab-menu-content]' });
     Terra.should.themeEachCustomProperty('[data-application-tab-menu-content]', {
-      '--terra-application-tabs-hidden-color': 'blue',
-      '--terra-application-tabs-hidden-hover-background': 'linear-gradient(-90deg, orange, red)',
-      '--terra-application-tabs-hidden-selected-background-image': 'linear-gradient(-270deg, red, orange)',
-      '--terra-application-tabs-hidden-selected-box-shadow': 'inset 1rem 0 0 0 purple',
-      '--terra-application-tabs-hidden-selected-left-padding': '3rem',
+      '--terra-application-tabs-collapsed-color': 'blue',
+      '--terra-application-tabs-collapsed-hover-background': 'linear-gradient(-90deg, orange, red)',
+      '--terra-application-tabs-collapsed-selected-background-image': 'linear-gradient(-270deg, red, orange)',
+      '--terra-application-tabs-collapsed-selected-box-shadow': 'inset 1rem 0 0 0 purple',
+      '--terra-application-tabs-collapsed-selected-left-padding': '3rem',
     });
   });
 
