@@ -30,8 +30,8 @@ const ApplicationMenuName = ({
 
   return (
     <div {...customProps} className={ApplicationMenuNameClassNames}>
-      {!!accessory && <div className={cx('accessory')}>{accessory}</div>}
-      {!!title && <div className={cx('title')}>{title}</div>}
+      {accessory && <div className={cx('accessory')}>{accessory}</div>}
+      {title && <div className={cx('title')}>{title}</div>}
     </div>
   );
 };

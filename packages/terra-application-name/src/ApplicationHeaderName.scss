@@ -13,7 +13,7 @@
 
   .title {
     font-weight: var(--terra-application-header-name-title-font-weight, normal);
-    overflow: hidden;
+    overflow: var(--terra-application-header-name-title-overflow, hidden);
     padding-left: var(--terra-application-header-name-title-padding-left, 0.3571rem);
     padding-right: var(--terra-application-header-name-title-padding-right, 4rem);
     text-overflow: var(--terra-application-header-name-text-overflow, ellipsis);
