@@ -19,7 +19,7 @@ module.exports = resizeTo(['small', 'large', 'huge'], {
         browser.expect.element('#test-root #test-menu').to.be.visible;
         browser.waitForElementVisible('#test-root #test-menu .test-menu-toggle');
       });
-    } else if (width < browser.globals.breakpoints.large[0]) {
+    } else if (width < browser.globals.breakpoints.huge[0]) {
       browser.expect.element('#test-root #test-menu').to.not.be.visible;
       browser.waitForElementVisible('#test-root [class*=_hover-section_]', 1000);
       browser.expect.element('#test-root [class*=_hover-section_]').to.be.visible;
@@ -57,7 +57,7 @@ module.exports = resizeTo(['small', 'large', 'huge'], {
 
     if (width < browser.globals.breakpoints.medium[0]) {
       browser.expect.element('#test-root #test-menu').to.not.be.visible;
-    } else if (width < browser.globals.breakpoints.large[0]) {
+    } else if (width < browser.globals.breakpoints.huge[0]) {
       browser.expect.element('#test-root #test-menu').to.not.be.visible;
       browser.expect.element('#test-root [class*=_hover-section_]').to.be.present;
       browser.expect.element('#test-root [class*=_hover-section_]').text.to.equal('Menu Text That Is Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Really Long');
@@ -82,7 +82,7 @@ module.exports = resizeTo(['small', 'large', 'huge'], {
         browser.expect.element('#test-root #test-menu').to.be.visible;
         browser.waitForElementVisible('#test-root #test-menu .test-menu-toggle');
       });
-    } else if (width < browser.globals.breakpoints.large[0]) {
+    } else if (width < browser.globals.breakpoints.huge[0]) {
       browser.expect.element('#test-root #test-menu').to.not.be.visible;
       browser.expect.element('#test-root [class*=_hover-section_]').to.be.visible;
 
