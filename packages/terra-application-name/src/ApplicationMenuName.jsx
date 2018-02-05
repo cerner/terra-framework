@@ -15,7 +15,7 @@ const propTypes = {
   /**
    * The title branding of the application name.
    * */
-  title: PropTypes.string,
+  title: PropTypes.node,
 };
 
 const ApplicationMenuName = ({

@@ -2,7 +2,7 @@
 :local {
   .application-header-name {
     align-items: var(--terra-application-header-name-align-items, center);
-    color: var(--terra-application-header-name-color, #fff);
+    color: var(--terra-application-header-name-color, hsl(0, 0%, 0%));
     display: flex;
     flex: var(--terra-application-header-name-flex, 0 0 auto);
   }

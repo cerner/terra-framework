@@ -13,7 +13,7 @@ describe('ApplicationHeaderName', () => {
   });
 
   it('should render with provided title', () => {
-    const wrapper = shallow(<ApplicationHeaderName subtitle="subtitle" />);
+    const wrapper = shallow(<ApplicationHeaderName title="title" />);
     expect(wrapper).toMatchSnapshot();
   });
 

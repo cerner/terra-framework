@@ -42,6 +42,11 @@ exports[`ApplicationHeaderName should render with provided accessory and title 1
 exports[`ApplicationHeaderName should render with provided title 1`] = `
 <div
   className="application-header-name"
-  subtitle="subtitle"
-/>
+>
+  <div
+    className="title"
+  >
+    title
+  </div>
+</div>
 `;

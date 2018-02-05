@@ -4,14 +4,12 @@ import Image from 'terra-image';
 import Placeholder from 'terra-application-header-layout/examples/index-examples/Placeholder';
 import ApplicationMenuName from '../../lib/ApplicationMenuName';
 
-const color = { color: 'grey' };
 const size = { height: '450px', width: '300px' };
 const ApplicationMenuNameStandard = () => (
   <Menu
     style={size}
     header={(
       <ApplicationMenuName
-        style={color}
         title="App-Name"
         accessory={<Image variant="rounded" src="https://github.com/cerner/terra-core/raw/master/terra.png" height="26px" width="26px" isFluid />}
       />

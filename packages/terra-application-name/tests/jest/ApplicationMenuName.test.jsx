@@ -18,7 +18,7 @@ describe('ApplicationMenuName', () => {
   });
 
   it('should render with provided title', () => {
-    const wrapper = shallow(<ApplicationMenuName subtitle="subtitle" />);
+    const wrapper = shallow(<ApplicationMenuName title="title" />);
     expect(wrapper).toMatchSnapshot();
   });
 

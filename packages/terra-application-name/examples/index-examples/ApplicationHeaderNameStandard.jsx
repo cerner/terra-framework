@@ -9,9 +9,7 @@ import ExtensionsExample from 'terra-application-header-layout/examples/index-ex
 import ApplicationHeaderName from '../../lib/ApplicationHeaderName';
 
 const ApplicationHeaderNameStandard = () => {
-  const color = { color: 'grey' };
   const Name = (<ApplicationHeaderName
-    style={color}
     title="App-Name"
     accessory={<Image variant="rounded" src="https://github.com/cerner/terra-core/raw/master/terra.png" height="26px" width="26px" isFluid />}
   />);

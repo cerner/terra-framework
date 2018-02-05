@@ -49,6 +49,11 @@ exports[`ApplicationMenuName should render with provided size 1`] = `
 exports[`ApplicationMenuName should render with provided title 1`] = `
 <div
   className="application-menu-name"
-  subtitle="subtitle"
-/>
+>
+  <div
+    className="title"
+  >
+    title
+  </div>
+</div>
 `;

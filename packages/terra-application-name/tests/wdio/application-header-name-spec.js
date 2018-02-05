@@ -6,7 +6,7 @@ describe('ApplicationHeaderName', () => {
   describe('Displays a default application header name', () => {
     beforeEach(() => browser.url('/#/raw/tests/application-name/application-header-name-default'));
 
-    Terra.should.matchScreenshot({ viewports, options: { selector: '#default' } });
+    Terra.should.matchScreenshot(viewports, { selector: '#default' });
     Terra.should.beAccessible({ viewports, context: '#default' });
     Terra.should.themeEachCustomProperty('#default', {
       '--terra-application-header-name-align-items': 'left',
