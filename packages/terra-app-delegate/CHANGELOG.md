@@ -4,6 +4,12 @@ Changelog
 Unreleased
 ----------
 
+### Added
+* Added registerDismissLock
+
+### Changed
+* Updated README to reflect new API
+
 1.10.0 - (January 23, 2018)
 ------------------
 * First release in new repository
