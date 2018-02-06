@@ -8,23 +8,23 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Whether or not the menu item should be hidden.
+   * Whether or not the menu display should be hidden.
    */
   isHidden: PropTypes.bool,
   /**
-   * Whether or not the menu item should be animated with selection.
+   * Whether or not the menu display should be animated with selection.
    */
   isSelected: PropTypes.bool,
   /**
-   * The terra-popup to attach to the menu item.
+   * The terra-popup to attach to the menu display.
    */
   popup: PropTypes.node,
   /**
-   * The display text for the item.
+   * The display text for the display.
    */
   text: PropTypes.string,
   /**
-   * Ref callback for menu item.
+   * Ref callback for menu display.
    */
   refCallback: PropTypes.func,
 };
