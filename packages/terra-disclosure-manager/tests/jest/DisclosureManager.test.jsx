@@ -35,7 +35,7 @@ describe('DisclosureManager', () => {
     expect(wrapper.state().disclosureIsOpen).toBeFalsy();
     expect(wrapper.state().disclosureIsFocused).toBeTruthy();
     expect(wrapper.state().disclosureIsMaximized).toBeFalsy();
-    expect(wrapper.state().disclosureSize).toBe('small');
+    expect(wrapper.state().disclosureSize).toBeUndefined();
     expect(wrapper.state().disclosureComponentKeys).toEqual([]);
     expect(wrapper.state().disclosureComponentData).toEqual({});
   };
@@ -83,7 +83,7 @@ describe('DisclosureManager', () => {
       expect(disclosureContentApp.minimize).toBeUndefined();
       expect(disclosureContentApp.requestFocus).toBeDefined();
       expect(disclosureContentApp.releaseFocus).toBeUndefined();
-      expect(disclosureContentApp.registerDismissCheck).toBeDefined(); // TODO: Flip this with AppDelegate release
+      expect(disclosureContentApp.registerDismissCheck).toBeDefined();
     })
   );
 
@@ -194,7 +194,7 @@ describe('DisclosureManager', () => {
       expect(disclosureContentApp.minimize).toBeDefined();
       expect(disclosureContentApp.requestFocus).toBeDefined();
       expect(disclosureContentApp.releaseFocus).toBeUndefined();
-      expect(disclosureContentApp.registerDismissCheck).toBeDefined(); // TODO: Flip this with AppDelegate release
+      expect(disclosureContentApp.registerDismissCheck).toBeDefined();
     })
     .then(() => new Promise((resolve, reject) => {
       const disclosureContentApp = wrapper.find('#disclosure-component').getElements()[0].props.app;
@@ -222,7 +222,7 @@ describe('DisclosureManager', () => {
       expect(disclosureContentApp.minimize).toBeUndefined();
       expect(disclosureContentApp.requestFocus).toBeDefined();
       expect(disclosureContentApp.releaseFocus).toBeUndefined();
-      expect(disclosureContentApp.registerDismissCheck).toBeDefined(); // TODO: Flip this with AppDelegate release
+      expect(disclosureContentApp.registerDismissCheck).toBeDefined();
     });
   });
 
@@ -269,7 +269,7 @@ describe('DisclosureManager', () => {
       expect(disclosureContentApp.minimize).toBeUndefined();
       expect(disclosureContentApp.requestFocus).toBeDefined();
       expect(disclosureContentApp.releaseFocus).toBeUndefined();
-      expect(disclosureContentApp.registerDismissCheck).toBeDefined(); // TODO: Flip this with AppDelegate release
+      expect(disclosureContentApp.registerDismissCheck).toBeDefined();
     });
   });
 
@@ -311,7 +311,7 @@ describe('DisclosureManager', () => {
       expect(disclosureContentApp.minimize).toBeUndefined();
       expect(disclosureContentApp.requestFocus).toBeUndefined();
       expect(disclosureContentApp.releaseFocus).toBeDefined();
-      expect(disclosureContentApp.registerDismissCheck).toBeDefined(); // TODO: Flip this with AppDelegate release
+      expect(disclosureContentApp.registerDismissCheck).toBeDefined();
     })
     .then(() => new Promise((resolve, reject) => {
       const disclosureContentApp = wrapper.find('#disclosure-component').getElements()[0].props.app;
@@ -339,7 +339,7 @@ describe('DisclosureManager', () => {
       expect(disclosureContentApp.minimize).toBeUndefined();
       expect(disclosureContentApp.requestFocus).toBeDefined();
       expect(disclosureContentApp.releaseFocus).toBeUndefined();
-      expect(disclosureContentApp.registerDismissCheck).toBeDefined(); // TODO: Flip this with AppDelegate release
+      expect(disclosureContentApp.registerDismissCheck).toBeDefined();
     });
   });
 
@@ -366,7 +366,7 @@ describe('DisclosureManager', () => {
       expect(wrapper.state().disclosureIsOpen).toBeFalsy();
       expect(wrapper.state().disclosureIsFocused).toBeFalsy();
       expect(wrapper.state().disclosureIsMaximized).toBeFalsy();
-      expect(wrapper.state().disclosureSize).toBe('small');
+      expect(wrapper.state().disclosureSize).toBeUndefined();
       expect(wrapper.state().disclosureComponentKeys).toEqual([]);
       expect(wrapper.state().disclosureComponentData).toEqual({});
     });
@@ -395,7 +395,7 @@ describe('DisclosureManager', () => {
       expect(wrapper.state().disclosureIsOpen).toBeFalsy();
       expect(wrapper.state().disclosureIsFocused).toBeFalsy();
       expect(wrapper.state().disclosureIsMaximized).toBeFalsy();
-      expect(wrapper.state().disclosureSize).toBe('small');
+      expect(wrapper.state().disclosureSize).toBeUndefined();
       expect(wrapper.state().disclosureComponentKeys).toEqual([]);
       expect(wrapper.state().disclosureComponentData).toEqual({});
     });
@@ -446,7 +446,7 @@ describe('DisclosureManager', () => {
       expect(disclosureContentApp.minimize).toBeUndefined();
       expect(disclosureContentApp.requestFocus).toBeDefined();
       expect(disclosureContentApp.releaseFocus).toBeUndefined();
-      expect(disclosureContentApp.registerDismissCheck).toBeDefined(); // TODO: Flip this with AppDelegate release
+      expect(disclosureContentApp.registerDismissCheck).toBeDefined();
     })
     .then(() => new Promise((resolve, reject) => {
       const disclosureContentApp = wrapper.find('#nested-disclosure-component').getElements()[0].props.app;
@@ -501,7 +501,7 @@ describe('DisclosureManager', () => {
       expect(firstRenderPayload.disclosure.isOpen).toBeFalsy();
       expect(firstRenderPayload.disclosure.isFocused).toBeTruthy();
       expect(firstRenderPayload.disclosure.isMaximized).toBeFalsy();
-      expect(firstRenderPayload.disclosure.size).toEqual('small');
+      expect(firstRenderPayload.disclosure.size).toBeUndefined();
       expect(firstRenderPayload.disclosure.components.length).toEqual(0);
 
       const secondRenderPayload = mockRender.mock.calls[1][0];

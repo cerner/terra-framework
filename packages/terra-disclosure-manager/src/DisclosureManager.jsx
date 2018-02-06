@@ -56,6 +56,7 @@ class DisclosureManager extends React.Component {
     this.resolveDismissPromise = this.resolveDismissPromise.bind(this);
     this.resolveDismissChecksInSequence = this.resolveDismissChecksInSequence.bind(this);
 
+    this.disclosureTypeIsSupported = this.disclosureTypeIsSupported.bind(this);
     this.safelyCloseDisclosure = this.safelyCloseDisclosure.bind(this);
     this.generatePopFunction = this.generatePopFunction.bind(this);
 
@@ -79,10 +80,16 @@ class DisclosureManager extends React.Component {
       disclosureIsOpen: false,
       disclosureIsFocused: true,
       disclosureIsMaximized: false,
-      disclosureSize: 'small',
+      disclosureSize: undefined,
       disclosureComponentKeys: [],
       disclosureComponentData: {},
     };
+  }
+
+  disclosureTypeIsSupported(type) {
+    const { app, supportedDisclosureTypes } = this.props;
+
+    return supportedDisclosureTypes.indexOf(type) >= 0 || !app;
   }
 
   openDisclosure(data) {
@@ -129,7 +136,7 @@ class DisclosureManager extends React.Component {
       disclosureIsOpen: false,
       disclosureIsFocused: false,
       disclosureIsMaximized: false,
-      disclosureSize: availableDisclosureSizes.SMALL,
+      disclosureSize: undefined,
       disclosureComponentKeys: [],
       disclosureComponentData: {},
     });
@@ -225,89 +232,132 @@ class DisclosureManager extends React.Component {
   }
 
   renderContentComponents() {
-    const { children, app, supportedDisclosureTypes } = this.props;
+    const { children, app } = this.props;
 
-    const childApp = AppDelegate.clone(app, {
-      disclose: (data) => {
-        if (supportedDisclosureTypes.indexOf(data.preferredType) >= 0 || !app) {
-          return this.safelyCloseDisclosure()
-            .then(() => {
-              this.openDisclosure(data);
+    const appDelegate = {};
+
+    /**
+     * The disclose function provided will open the disclosure with the provided content.
+     */
+    appDelegate.disclose = (data) => {
+      if (this.disclosureTypeIsSupported(data.preferredType)) {
+        return this.safelyCloseDisclosure()
+          .then(() => {
+            this.openDisclosure(data);
+            /**
+             * The disclose Promise chain is resolved with a set of APIs that the disclosing content can use to
+             * manipulate the disclosure, if necessary.
+             */
+            return {
               /**
-               * The disclose Promise chain is resolved with a set of APIs that the disclosing content can use to
-               * manipulate the disclosure, if necessary.
+               * The afterDismiss value is a deferred Promise that will be resolved when the disclosed component is dismissed.
                */
-              return {
-                /**
-                 * The afterDismiss value is a deferred Promise that will be resolved when the disclosed component is dismissed.
-                 */
-                afterDismiss: new Promise((resolve) => {
-                  this.onDismissResolvers[data.content.key] = resolve;
-                }),
-                /**
-                 * The dismissDisclosure value is a function that the disclosing component can use to manually close the disclosure.
-                 * Any and all dismiss checks are still performed.
-                 */
-                dismissDisclosure: this.safelyCloseDisclosure,
-              };
-            });
-        }
-        return app.disclose(data);
-      },
-    });
+              afterDismiss: new Promise((resolve) => {
+                this.onDismissResolvers[data.content.key] = resolve;
+              }),
+              /**
+               * The dismissDisclosure value is a function that the disclosing component can use to manually close the disclosure.
+               * Any and all dismiss checks are still performed.
+               */
+              dismissDisclosure: this.safelyCloseDisclosure,
+            };
+          });
+      }
+      return app.disclose(data);
+    };
 
     return React.Children.map(children, child => React.cloneElement(child, {
-      app: childApp,
+      app: AppDelegate.create(appDelegate),
     }));
   }
 
   renderDisclosureComponents() {
-    const { app, supportedDisclosureTypes } = this.props;
+    const { app } = this.props;
     const { disclosureComponentKeys, disclosureComponentData, disclosureIsMaximized, disclosureIsFocused, disclosureSize } = this.state;
 
     return disclosureComponentKeys.map((componentKey, index) => {
       const componentData = disclosureComponentData[componentKey];
-      const isFullscreen = disclosureSize === 'fullscreen';
-
+      const isFullscreen = disclosureSize === availableDisclosureSizes.FULLSCREEN;
       const popContent = this.generatePopFunction(componentData.key);
-      const appDelegate = AppDelegate.create({
-        disclose: (data) => {
-          if (supportedDisclosureTypes.indexOf(data.preferredType) >= 0 || !app) {
-            this.pushDisclosure(data);
 
-            return Promise.resolve({
-              afterDismiss: new Promise((resolve) => {
-                this.onDismissResolvers[data.content.key] = resolve;
-              }),
-              dismissDisclosure: this.generatePopFunction(data.content.key),
+      const appDelegate = {};
+
+      /**
+       * The disclose function provided will push content onto the disclosure stack.
+       */
+      appDelegate.disclose = (data) => {
+        if (this.disclosureTypeIsSupported(data.preferredType)) {
+          return Promise.resolve()
+            .then(() => {
+              this.pushDisclosure(data);
+
+              return {
+                afterDismiss: new Promise((resolve) => {
+                  this.onDismissResolvers[data.content.key] = resolve;
+                }),
+                dismissDisclosure: this.generatePopFunction(data.content.key),
+              };
             });
-          }
-          return app.disclose(data);
-        },
-        dismiss: index > 0 ? popContent : this.safelyCloseDisclosure,
-        closeDisclosure: this.safelyCloseDisclosure,
-        goBack: index > 0 ? popContent : undefined,
-        requestFocus: disclosureIsFocused ? () => Promise.resolve().then(this.releaseDisclosureFocus) : undefined,
-        releaseFocus: !disclosureIsFocused ? () => Promise.resolve().then(this.requestDisclosureFocus) : undefined,
-        maximize: (!isFullscreen && !disclosureIsMaximized) ? () => (Promise.resolve().then(this.maximizeDisclosure)) : undefined,
-        minimize: (!isFullscreen && disclosureIsMaximized) ? () => (Promise.resolve().then(this.minimizeDisclosure)) : undefined,
-        registerDismissCheck: (checkFunc) => {
-          this.dismissChecks[componentData.key] = checkFunc;
+        }
+        return app.disclose(data);
+      };
 
-          if (app && app.registerDismissCheck) {
-            // The combination of all managed dismiss checks is registered to the parent app delegate to ensure
-            // that all are accounted for by the parent.
-            return app.registerDismissCheck(() => Promise.all(Object.values(this.dismissChecks)));
-          }
+      /**
+       * Allows a component to remove itself from the disclosure stack. If the component is the only element in the disclosure stack,
+       * the disclosure is closed.
+       */
+      appDelegate.dismiss = index > 0 ? popContent : this.safelyCloseDisclosure;
 
-          return Promise.resolve();
-        },
-      });
+      /**
+       * Allows a component to close the entire disclosure stack.
+       */
+      appDelegate.closeDisclosure = this.safelyCloseDisclosure;
+
+      /**
+       * Allows a component to remove itself from the disclosure stack. Functionally similar to `dismiss`, however `onBack` is
+       * only provided to components in the stack that have a previous sibling.
+       */
+      appDelegate.goBack = index > 0 ? popContent : undefined;
+
+      /**
+       * Allows a component to request focus from the disclosure in the event that the disclosure mechanism in use utilizes a focus trap.
+       */
+      appDelegate.requestFocus = disclosureIsFocused ? () => Promise.resolve().then(this.releaseDisclosureFocus) : undefined;
+
+      /**
+       * Allows a component to release focus from itself and return it to the disclosure.
+       */
+      appDelegate.releaseFocus = !disclosureIsFocused ? () => Promise.resolve().then(this.requestDisclosureFocus) : undefined;
+
+      /**
+       * Allows a component to maximize its presentation size. This is only provided if the component is not already maximized.
+       */
+      appDelegate.maximize = (!isFullscreen && !disclosureIsMaximized) ? () => (Promise.resolve().then(this.maximizeDisclosure)) : undefined;
+
+      /**
+       * Allows a component to minimize its presentation size. This is only provided if the component is currently maximized.
+       */
+      appDelegate.minimize = (!isFullscreen && disclosureIsMaximized) ? () => (Promise.resolve().then(this.minimizeDisclosure)) : undefined;
+
+      /**
+       * Allows a component to register a function with the DisclosureManager that will be called before the component is dismissed for any reason.
+       */
+      appDelegate.registerDismissCheck = (checkFunc) => {
+        this.dismissChecks[componentData.key] = checkFunc;
+
+        if (app && app.registerDismissCheck) {
+          // The combination of all managed dismiss checks is registered to the parent app delegate to ensure
+          // that all are accounted for by the parent.
+          return app.registerDismissCheck(() => Promise.all(Object.values(this.dismissChecks)));
+        }
+
+        return Promise.resolve();
+      };
 
       if (componentData.component) {
         return React.cloneElement(componentData.component, {
           key: componentData.key,
-          app: appDelegate,
+          app: AppDelegate.create(appDelegate),
         });
       }
 

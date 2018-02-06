@@ -30,13 +30,13 @@ The DisclosureManager does not implement a traditional render function. A `rende
 
 |Key|Value|
 |---|---|
-|`components`|An Array of React components to render as face-up content. These components were updated with an AppDelegate prop with DisclosureManager integration.|
+|`components`|An Array of React components to render as content. These components are provided with an AppDelegate prop (as `app`) with DisclosureManager integration for disclosing content.|
 
 `disclosure` Object API:
 
 |Key|Value|
 |---|---|
-|`components`|An Array of React components to render in a disclosure mechanism. These components were updated with an AppDelegate prop with DisclosureManager integration.|
+|`components`|An Array of React components to render in a disclosure mechanism. These components are provided with an AppDelegate prop (as `app`) with DisclosureManager integration for disclosure management.|
 |`isOpen`|A boolean indicating the current display state of the DisclosureManager.|
 |`isFocused`|A boolean indicating the current focus state of the DisclosureManager.|
 |`isMaximized`|A boolean indicating the current maximize state of the DisclosureManager.|
@@ -114,29 +114,29 @@ app.disclose({
 
 |Key|Value|
 |---|---|
-|`preferredType`|The String describing the preferred disclosure type. This will be used to match the disclosure request to an appropriate DisclosureManager.|
+|`preferredType`|The String describing the preferred disclosure type. This will be used to match the disclosure request to an appropriate DisclosureManager. Depending on the structuring of managers in a given component, the `preferredType` value may not be honored. If the provided `preferredType` is not supported by any present disclosure managers, the root disclosure manager will perform the disclosure using its own disclosure type, regardless of the `preferredType` value.
 |`size`|The String size desired for the disclosure. One of `tiny`, `small`, `medium`, `large`, `huge`, or `fullscreen`. The functional implementation of this size is determined by the rendering component.|
-|`content`| An Object containing items describing the component to be disclosed.|
+|`content`|An Object containing a key and a component describing the component to be disclosed. See the `content` API below.|
 
 `content` Object API:
 
 |Key|Value|
 |---|---|
-|key|A String key uniquely identifying the component to the DisclosureManager. This key will be automatically added to the component when rendered.|
+|key|A String key uniquely identifying the component to the DisclosureManager. This key will be added to the component (as a `key` prop) when rendered.|
 |component|A React element that will be disclosed.|
 
 #### Disclosure Content
 
-The AppDelegate instances provided to the disclosure components are a little more complicated. In addition to a `disclose` function (with all the bells and whistles described in the above section), a number of other functions are exposed to manage various segments of the disclosure state. The included functions are:
+In addition to a `disclose` function, a number of other functions are exposed to manage various segments of the disclosure state. The included functions are:
 
 |Function|Description|
 |---|---|
-|`disclose(Object)`|Allows a component to disclose another component on top of itself. See above for argument API.|
+|`disclose(Object)`|Allows a component to disclose another component. See above for argument API. The DisclosureManager implementation will determine how the next object will be disclosed.|
 |`dismiss()`|Allows a component to remove itself from the disclosure stack. If the component is the only element in the disclosure stack, the disclosure is closed.|
 |`closeDisclosure()`|Allows a component to close the entire disclosure stack. This is generally integrated into face-up disclosure controls as a Close button or similar.|
 |`goBack()`|Allows a component to remove itself from the disclosure stack. Functionally similar to `dismiss`, however `onBack` is only provided to components in the stack that have a previous sibling. This is generally integrated into face-up disclosure controls as a Back button or similar.|
-|`maximize()`|Allows a component to maximize its presentation size. This is only provided if the component is not already `maximize`-d|
-|`minimize()`|Allows a component to minimize its presentation size. This is only provided if the component is currently `maximize`-d|
+|`maximize()`|Allows a component to maximize its presentation size. This is only provided if the component is not already maximized|
+|`minimize()`|Allows a component to minimize its presentation size. This is only provided if the component is currently maximized.|
 |`requestFocus()`|Allows a component to request focus from the disclosure in the event that the disclosure mechanism in use utilizes a focus trap. This can be integrated with the Popup and similar focus-stealing controls.|
 |`requestFocus()`|Allows a component to release focus from itself and return it to the disclosure. This can be integrated with the Popup and similar focus-stealing controls.|
 |`registerDismissCheck(func)`|Allows a component to register a function with the DisclosureManager that will be called before the component is dismissed for any reason.|
