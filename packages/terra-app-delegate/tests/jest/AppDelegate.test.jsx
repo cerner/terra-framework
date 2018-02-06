@@ -8,9 +8,10 @@ const maximize = () => {};
 const minimize = () => {};
 const requestFocus = () => {};
 const releaseFocus = () => {};
+const registerDismissCheck = () => {};
 const notSupported = () => {};
 const appDelegateInstance = AppDelegate.create({
-  disclose, dismiss, closeDisclosure, goBack, maximize, minimize, requestFocus, releaseFocus,
+  disclose, dismiss, closeDisclosure, goBack, maximize, minimize, requestFocus, releaseFocus, registerDismissCheck,
 });
 
 describe('propType', () => {
@@ -22,7 +23,7 @@ describe('propType', () => {
 describe('create', () => {
   it('should expose a create function that creates an AppDelegate instance', () => {
     const appDelegateLocalInstance = AppDelegate.create({
-      disclose, dismiss, closeDisclosure, goBack, maximize, minimize, requestFocus, releaseFocus, notSupported,
+      disclose, dismiss, closeDisclosure, goBack, maximize, minimize, requestFocus, releaseFocus, registerDismissCheck, notSupported,
     });
 
     expect(appDelegateLocalInstance.disclose).toBe(disclose);
@@ -33,6 +34,7 @@ describe('create', () => {
     expect(appDelegateLocalInstance.minimize).toBe(minimize);
     expect(appDelegateLocalInstance.requestFocus).toBe(requestFocus);
     expect(appDelegateLocalInstance.releaseFocus).toBe(releaseFocus);
+    expect(appDelegateLocalInstance.registerDismissCheck).toBe(registerDismissCheck);
     expect(appDelegateLocalInstance.thisIsATestWhatAmIDoing).toBe(undefined);
   });
 });
@@ -47,6 +49,7 @@ describe('clone', () => {
     const cloneMinimize = () => {};
     const cloneRequestFocus = () => {};
     const cloneReleaseFocus = () => {};
+    const cloneRegisterDismissCheck = () => {};
 
     const clonedDelegate = AppDelegate.clone(appDelegateInstance, {
       disclose: cloneDisclose,
@@ -57,6 +60,7 @@ describe('clone', () => {
       minimize: cloneMinimize,
       requestFocus: cloneRequestFocus,
       releaseFocus: cloneReleaseFocus,
+      registerDismissCheck: cloneRegisterDismissCheck,
     });
 
     expect(clonedDelegate.disclose).toBe(cloneDisclose);
@@ -67,6 +71,7 @@ describe('clone', () => {
     expect(clonedDelegate.minimize).toBe(cloneMinimize);
     expect(clonedDelegate.requestFocus).toBe(cloneRequestFocus);
     expect(clonedDelegate.releaseFocus).toBe(cloneReleaseFocus);
+    expect(clonedDelegate.registerDismissCheck).toBe(cloneRegisterDismissCheck);
   });
 
   it('should keep functions from original instance if not provided', () => {
@@ -85,13 +90,14 @@ describe('clone', () => {
     expect(clonedDelegate.minimize).toBe(minimize);
     expect(clonedDelegate.requestFocus).toBe(requestFocus);
     expect(clonedDelegate.releaseFocus).toBe(releaseFocus);
+    expect(clonedDelegate.registerDismissCheck).toBe(registerDismissCheck);
   });
 });
 
 describe('isEqual', () => {
   it('should return true when all attributes are equal', () => {
     const appDelegateLocalInstance = AppDelegate.create({
-      disclose, dismiss, closeDisclosure, goBack, maximize, minimize, requestFocus, releaseFocus,
+      disclose, dismiss, closeDisclosure, goBack, maximize, minimize, requestFocus, releaseFocus, registerDismissCheck,
     });
 
     expect(AppDelegate.isEqual(appDelegateInstance, appDelegateLocalInstance)).toBe(true);
@@ -103,7 +109,7 @@ describe('isEqual', () => {
 
   it('should return false when disclose does not match', () => {
     const appDelegateLocalInstance = AppDelegate.create({
-      disclose: () => {}, dismiss, closeDisclosure, goBack, maximize, minimize, requestFocus, releaseFocus,
+      disclose: () => {}, dismiss, closeDisclosure, goBack, maximize, minimize, requestFocus, releaseFocus, registerDismissCheck,
     });
 
     expect(AppDelegate.isEqual(appDelegateInstance, appDelegateLocalInstance)).toBe(false);
@@ -111,7 +117,7 @@ describe('isEqual', () => {
 
   it('should return false when dismiss does not match', () => {
     const appDelegateLocalInstance = AppDelegate.create({
-      disclose, dismiss: () => {}, closeDisclosure, goBack, maximize, minimize, requestFocus, releaseFocus,
+      disclose, dismiss: () => {}, closeDisclosure, goBack, maximize, minimize, requestFocus, releaseFocus, registerDismissCheck,
     });
 
     expect(AppDelegate.isEqual(appDelegateInstance, appDelegateLocalInstance)).toBe(false);
@@ -119,7 +125,7 @@ describe('isEqual', () => {
 
   it('should return false when closeDisclosure does not match', () => {
     const appDelegateLocalInstance = AppDelegate.create({
-      disclose, dismiss, closeDisclosure: () => {}, goBack, maximize, minimize, requestFocus, releaseFocus,
+      disclose, dismiss, closeDisclosure: () => {}, goBack, maximize, minimize, requestFocus, releaseFocus, registerDismissCheck,
     });
 
     expect(AppDelegate.isEqual(appDelegateInstance, appDelegateLocalInstance)).toBe(false);
@@ -127,7 +133,7 @@ describe('isEqual', () => {
 
   it('should return false when goBack does not match', () => {
     const appDelegateLocalInstance = AppDelegate.create({
-      disclose, dismiss, closeDisclosure, goBack: () => {}, maximize, minimize, requestFocus, releaseFocus,
+      disclose, dismiss, closeDisclosure, goBack: () => {}, maximize, minimize, requestFocus, releaseFocus, registerDismissCheck,
     });
 
     expect(AppDelegate.isEqual(appDelegateInstance, appDelegateLocalInstance)).toBe(false);
@@ -135,7 +141,7 @@ describe('isEqual', () => {
 
   it('should return false when maximize does not match', () => {
     const appDelegateLocalInstance = AppDelegate.create({
-      disclose, dismiss, closeDisclosure, goBack, maximize: () => {}, minimize, requestFocus, releaseFocus,
+      disclose, dismiss, closeDisclosure, goBack, maximize: () => {}, minimize, requestFocus, releaseFocus, registerDismissCheck,
     });
 
     expect(AppDelegate.isEqual(appDelegateInstance, appDelegateLocalInstance)).toBe(false);
@@ -143,7 +149,7 @@ describe('isEqual', () => {
 
   it('should return false when minimize does not match', () => {
     const appDelegateLocalInstance = AppDelegate.create({
-      disclose, dismiss, closeDisclosure, goBack, maximize, minimize: () => {}, requestFocus, releaseFocus,
+      disclose, dismiss, closeDisclosure, goBack, maximize, minimize: () => {}, requestFocus, releaseFocus, registerDismissCheck,
     });
 
     expect(AppDelegate.isEqual(appDelegateInstance, appDelegateLocalInstance)).toBe(false);
@@ -151,7 +157,7 @@ describe('isEqual', () => {
 
   it('should return false when requestFocus does not match', () => {
     const appDelegateLocalInstance = AppDelegate.create({
-      disclose, dismiss, closeDisclosure, goBack, maximize, minimize, requestFocus: () => {}, releaseFocus,
+      disclose, dismiss, closeDisclosure, goBack, maximize, minimize, requestFocus: () => {}, releaseFocus, registerDismissCheck,
     });
 
     expect(AppDelegate.isEqual(appDelegateInstance, appDelegateLocalInstance)).toBe(false);
@@ -159,7 +165,15 @@ describe('isEqual', () => {
 
   it('should return false when releaseFocus does not match', () => {
     const appDelegateLocalInstance = AppDelegate.create({
-      disclose, dismiss, closeDisclosure, goBack, maximize, minimize, requestFocus, releaseFocus: () => {},
+      disclose, dismiss, closeDisclosure, goBack, maximize, minimize, requestFocus, releaseFocus: () => {}, registerDismissCheck,
+    });
+
+    expect(AppDelegate.isEqual(appDelegateInstance, appDelegateLocalInstance)).toBe(false);
+  });
+
+  it('should return false when registerDismissCheck does not match', () => {
+    const appDelegateLocalInstance = AppDelegate.create({
+      disclose, dismiss, closeDisclosure, goBack, maximize, minimize, requestFocus, releaseFocus, registerDismissCheck: () => {},
     });
 
     expect(AppDelegate.isEqual(appDelegateInstance, appDelegateLocalInstance)).toBe(false);
