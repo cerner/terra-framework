@@ -282,7 +282,7 @@ class DisclosureManager extends React.Component {
     };
 
     return React.Children.map(children, child => React.cloneElement(child, {
-      app: AppDelegate.create(appDelegate),
+      app: AppDelegate.clone(app, appDelegate),
     }));
   }
 
