@@ -10,7 +10,7 @@ const propTypes = {
   /**
    * Child tabs to be placed in the tab menu.
    */
-  children: PropTypes.node,
+  children: PropTypes.array,
   /**
    * Should the menu be hidden, set to true if there are no hidden items.
    */
@@ -30,19 +30,39 @@ const contextTypes = {
   },
 };
 
+const createRouteDisplay = (props, key, path, text, isSelected) => (
+  <Route
+    path={path}
+    key={key}
+    render={() => (
+      <TabMenuDisplay
+        {...props}
+        text={text}
+        isSelected={isSelected}
+      />
+    )}
+  />
+);
+
 class TabMenu extends React.Component {
   constructor(props, context) {
     super(props, context);
-    this.handleChildClick = this.handleChildClick.bind(this);
     this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.handleOnClick = this.handleOnClick.bind(this);
     this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
     this.getTargetRef = this.getTargetRef.bind(this);
     this.setTargetRef = this.setTargetRef.bind(this);
-    this.wrapOnClick = this.wrapOnClick.bind(this);
     this.state = {
       isOpen: false,
     };
+    this.shouldResetFocus = false;
+  }
+
+  componentDidUpdate() {
+    if (this.shouldResetFocus && this.targetRef) {
+      this.targetRef.focus();
+      this.shouldResetFocus = this.targetRef !== document.activeElement;
+    }
   }
 
   getTargetRef() {
@@ -58,27 +78,30 @@ class TabMenu extends React.Component {
   }
 
   handleOnRequestClose() {
-    this.setState({ isOpen: false });
+    if (this.state.isOpen) {
+      this.shouldResetFocus = true;
+      this.setState({ isOpen: false });
+    }
   }
 
   handleOnClick() {
-    this.setState({ isOpen: true });
-  }
-
-  handleOnKeyDown(event) {
-    if (event.nativeEvent.keyCode === TabUtils.KEYCODES.ENTER) {
+    if (!this.state.isOpen) {
       this.setState({ isOpen: true });
     }
   }
 
-  wrapOnClick(child) {
-    return (event) => {
-      if (child.props.onClick) {
-        child.props.onClick(event);
-      }
+  handleOnKeyDown(event) {
+    if (event.nativeEvent.keyCode === TabUtils.KEYCODES.ENTER && !this.state.isOpen) {
+      this.setState({ isOpen: true });
+    }
+  }
 
-      this.setState({ isOpen: false });
-    };
+  createHiddenTabs() {
+    return (
+      <TabMenuList>
+        {React.Children.map(this.props.children, child => React.cloneElement(child, { onClick: this.handleOnRequestClose }))}
+      </TabMenuList>
+    );
   }
 
   createRoutes(popup) {
@@ -87,73 +110,40 @@ class TabMenu extends React.Component {
       tabIndex: '0',
       onClick: this.handleOnClick,
       onKeyDown: this.handleOnKeyDown,
+      popup,
+      refCallback: this.setTargetRef,
+      isHidden: this.props.isHidden,
       'data-application-tabs-more': true,
     };
 
     const routes = this.props.children.map(child => (
-      <Route
-        path={child.props.path}
-        key={child.props.path}
-        render={() => (
-          <TabMenuDisplay
-            {...props}
-            text={child.props.text}
-            popup={popup}
-            refCallback={this.setTargetRef}
-            isSelected
-            isHidden={this.props.isHidden}
-          />
-        )}
-      />
+      createRouteDisplay(props, child.props.path, child.props.path, child.props.text, true)
     ));
 
     const { intl } = this.context;
-    const menuToggleText = intl.formatMessage({ id: 'Terra.application.tabs.more' });
-    routes.push(
-      <Route
-        key={'menu-display-more'}
-        render={() => (
-          <TabMenuDisplay
-            {...props}
-            text={menuToggleText}
-            popup={popup}
-            refCallback={this.setTargetRef}
-            isHidden={this.props.isHidden}
-          />
-        )}
-      />,
-    );
+    const moreText = intl.formatMessage({ id: 'Terra.application.tabs.more' });
+    routes.push(createRouteDisplay(props, 'menu-display-more', undefined, moreText, false));
 
     return routes;
   }
 
-  handleChildClick() {
-    if (this.state.isOpen) {
-      this.setState({ isOpen: false });
-    }
-  }
-
-  createHiddenTabs() {
-    return (
-      <TabMenuList>
-        {React.Children.map(this.props.children, child => React.cloneElement(child, { onClick: this.handleChildClick }))}
-      </TabMenuList>
-    );
-  }
-
   render() {
-    const popup = (
-      <Popup
-        contentHeight="auto"
-        contentWidth="240"
-        onRequestClose={this.handleOnRequestClose}
-        targetRef={this.getTargetRef}
-        isOpen={this.state.isOpen}
-        isArrowDisplayed
-      >
-        {this.createHiddenTabs()}
-      </Popup>
-    );
+    let popup;
+    if (this.state.isOpen) {
+      popup = (
+        <Popup
+          contentHeight="auto"
+          contentWidth="240"
+          onRequestClose={this.handleOnRequestClose}
+          targetRef={this.getTargetRef}
+          isOpen={this.state.isOpen}
+          isArrowDisplayed
+        >
+          {this.createHiddenTabs()}
+        </Popup>
+      );
+    }
+
     return (
       <Switch>
         {this.createRoutes(popup)}
