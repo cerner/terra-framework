@@ -295,12 +295,12 @@ class DisclosureManager extends React.Component {
       const isFullscreen = disclosureSize === availableDisclosureSizes.FULLSCREEN;
       const popContent = this.generatePopFunction(componentData.key);
 
-      const appDelegate = {};
+      const disclosureApp = {};
 
       /**
        * The disclose function provided will push content onto the disclosure stack.
        */
-      appDelegate.disclose = (data) => {
+      disclosureApp.disclose = (data) => {
         if (this.disclosureTypeIsSupported(data.preferredType)) {
           return Promise.resolve()
             .then(() => {
@@ -321,43 +321,43 @@ class DisclosureManager extends React.Component {
        * Allows a component to remove itself from the disclosure stack. If the component is the only element in the disclosure stack,
        * the disclosure is closed.
        */
-      appDelegate.dismiss = index > 0 ? popContent : this.safelyCloseDisclosure;
+      disclosureApp.dismiss = index > 0 ? popContent : this.safelyCloseDisclosure;
 
       /**
        * Allows a component to close the entire disclosure stack.
        */
-      appDelegate.closeDisclosure = this.safelyCloseDisclosure;
+      disclosureApp.closeDisclosure = this.safelyCloseDisclosure;
 
       /**
        * Allows a component to remove itself from the disclosure stack. Functionally similar to `dismiss`, however `onBack` is
        * only provided to components in the stack that have a previous sibling.
        */
-      appDelegate.goBack = index > 0 ? popContent : undefined;
+      disclosureApp.goBack = index > 0 ? popContent : undefined;
 
       /**
        * Allows a component to request focus from the disclosure in the event that the disclosure mechanism in use utilizes a focus trap.
        */
-      appDelegate.requestFocus = disclosureIsFocused ? () => Promise.resolve().then(this.releaseDisclosureFocus) : undefined;
+      disclosureApp.requestFocus = disclosureIsFocused ? () => Promise.resolve().then(this.releaseDisclosureFocus) : undefined;
 
       /**
        * Allows a component to release focus from itself and return it to the disclosure.
        */
-      appDelegate.releaseFocus = !disclosureIsFocused ? () => Promise.resolve().then(this.requestDisclosureFocus) : undefined;
+      disclosureApp.releaseFocus = !disclosureIsFocused ? () => Promise.resolve().then(this.requestDisclosureFocus) : undefined;
 
       /**
        * Allows a component to maximize its presentation size. This is only provided if the component is not already maximized.
        */
-      appDelegate.maximize = (!isFullscreen && !disclosureIsMaximized) ? () => (Promise.resolve().then(this.maximizeDisclosure)) : undefined;
+      disclosureApp.maximize = (!isFullscreen && !disclosureIsMaximized) ? () => (Promise.resolve().then(this.maximizeDisclosure)) : undefined;
 
       /**
        * Allows a component to minimize its presentation size. This is only provided if the component is currently maximized.
        */
-      appDelegate.minimize = (!isFullscreen && disclosureIsMaximized) ? () => (Promise.resolve().then(this.minimizeDisclosure)) : undefined;
+      disclosureApp.minimize = (!isFullscreen && disclosureIsMaximized) ? () => (Promise.resolve().then(this.minimizeDisclosure)) : undefined;
 
       /**
        * Allows a component to register a function with the DisclosureManager that will be called before the component is dismissed for any reason.
        */
-      appDelegate.registerDismissCheck = (checkFunc) => {
+      disclosureApp.registerDismissCheck = (checkFunc) => {
         this.dismissChecks[componentData.key] = checkFunc;
 
         if (app && app.registerDismissCheck) {
@@ -372,7 +372,7 @@ class DisclosureManager extends React.Component {
       if (componentData.component) {
         return React.cloneElement(componentData.component, {
           key: componentData.key,
-          app: AppDelegate.create(appDelegate),
+          app: AppDelegate.create(disclosureApp),
         });
       }
 
@@ -381,7 +381,7 @@ class DisclosureManager extends React.Component {
         return undefined;
       }
 
-      return <ComponentClass key={componentData.key} {...componentData.props} app={appDelegate} />;
+      return <ComponentClass key={componentData.key} {...componentData.props} app={AppDelegate.create(disclosureApp)} />;
     });
   }
 
