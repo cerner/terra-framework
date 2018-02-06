@@ -4,9 +4,11 @@ import ModalManager from '../../lib/index';
 import DemoContainer from './test-content/DemoContainer';
 
 const ModalManagerDefault = () => (
-  <ModalManager>
-    <DemoContainer identifier="root-component" />
-  </ModalManager>
+  <div role="main">
+    <ModalManager>
+      <DemoContainer identifier="root-component" />
+    </ModalManager>
+  </div>
 );
 
 export default ModalManagerDefault;
