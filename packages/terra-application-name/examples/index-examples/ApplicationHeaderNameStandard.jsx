@@ -47,7 +47,6 @@ const ApplicationHeaderNameStandard = () => {
     <div style={{ height: '60px', position: 'relative', width: '100%' }}>
       <ResponsiveElement
         defaultElement={tinyHeader}
-        tiny={tinyHeader}
         small={smallHeader}
         medium={mediumHeader}
         style={{ height: '100%' }}

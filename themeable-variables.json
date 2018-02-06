@@ -1,7 +1,7 @@
 {
   "ApplicationHeaderName": {
     "--terra-application-header-name-align-items": "center",
-    "--terra-application-header-name-color": "black",
+    "--terra-application-header-name-color": "#000",
     "--terra-application-header-name-flex": "0 0 auto",
     "--terra-application-header-name-accessory-padding-left": "0.3571rem",
     "--terra-application-header-name-title-font-weight": "normal",
@@ -15,7 +15,7 @@
   },
   "ApplicationMenuName": {
     "--terra-application-menu-name-align-items": "center",
-    "--terra-application-menu-name-color": "black",
+    "--terra-application-menu-name-color": "#000",
     "--terra-application-menu-name-flex": "0 0 auto",
     "--terra-application-menu-name-accessory-padding-left": "0.3571rem",
     "--terra-application-header-name-title-font-weight": "normal",

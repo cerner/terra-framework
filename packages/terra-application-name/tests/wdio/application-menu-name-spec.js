@@ -6,7 +6,7 @@ describe('ApplicationMenuName', () => {
   describe('Displays a default application menu name', () => {
     beforeEach(() => browser.url('/#/raw/tests/application-name/application-menu-name-default'));
 
-    Terra.should.matchScreenshot(viewports, { selector: '#default' });
+    Terra.should.matchScreenshot({ viewports, selector: '#default' });
     Terra.should.beAccessible({ viewports, context: '#default' });
     Terra.should.themeEachCustomProperty('#default', {
       '--terra-application-menu-name-align-items': 'left',
