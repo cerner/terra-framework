@@ -22,7 +22,9 @@
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "devDependencies": {
-    "terra-props-table": "^1.10.1"
+    "terra-props-table": "^1.10.1",
+    "terra-base": "^2.0.0",
+    "terra-app-delegate": "^1.10.0"
   },
   "peerDependencies": {
     "react": "^15.4.2",
