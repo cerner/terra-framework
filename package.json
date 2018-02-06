@@ -41,7 +41,7 @@
     "clean:all": "lerna clean && node scripts/clean-modules/index.js",
     "clean:install": "npm run clean:all && npm install",
     "clean:obsolete-snapshots": "npm test -- -u",
-    "compile": "npm run compile:src && npm run generate-config",
+    "compile": "npm run compile:src",
     "compile:src": "lerna run compile",
     "compile:heroku": "webpack --config node_modules/terra-site/src/config/webpack.prod.config -p",
     "compile:prod": "webpack --config node_modules/terra-site/src/config/webpack.prod.config -p",
@@ -66,6 +66,7 @@
     "publish": "npm whoami && check-installed-dependencies && npm run compile && npm test && npm run props-table && lerna publish",
     "postpublish": "npm run dependency-markdown && git add --all && git commit -m 'Updated DEPENDENCIES.md files'",
     "start": "webpack-dev-server --config node_modules/terra-site/src/config/webpack.config --progress",
+    "start:build": "npm run generate-config && npm run start",
     "start:express": "node scripts/express/app.js",
     "test": "jest && nightwatch && wdio",
     "wdio": "wdio"
