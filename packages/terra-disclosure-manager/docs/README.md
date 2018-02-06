@@ -22,7 +22,7 @@ The DisclosureManager does not implement a traditional render function. A `rende
 |Key|Value|
 |---|---|
 |`children`|An Object containing data relative to the children components provided to the DisclosureManager.|
-|`disclosure`|An Object containing data relative to the compoents in the disclosure stack.|
+|`disclosure`|An Object containing data relative to the components in the disclosure stack.|
 |`dismissPresentedComponent`|A function that pops the currently disclosed component off the disclosure stack.|
 |`closeDisclosure`|A function that closes the disclosure and removes all components from the disclosure stack.|
 
@@ -75,7 +75,7 @@ Example (using the Modal and SlideGroup):
 
 The AppDelegate provided to the child components contains a `disclose` function. This `disclose` function validates the disclosure type with which it is provided against the set of supported disclosure types given to the DisclosureManager as a prop. If the provided type is not supported, and if the DisclosureManager was given an AppDelegate prop to fall back to, the DisclosureManager will call the disclose function provided by its AppDelegate prop.
 
-If the type is supported, the DisclosureManager will check the currently disclosured content's state to ensure it can be replaced. If the disclosure is denied, then `disclose` returns a rejected Promise. If the disclosure is allowed, then a resolved Promise is returned. This Promise will be resolved with an Object containing functions and Promises that can be used to manipulate the disclosure, if necessary. Included are `dismissDisclosure`, a function that will dismiss the disclosed content, as well as `afterDismiss`, a deferred Promise that will be resolved when the disclosed content is dismissed by any means. Alternatively, if the additional logic isn't needed, the returned Promise can be completely ignored.
+If the type is supported, the DisclosureManager will check the currently disclosed component's state to ensure it can be replaced. If the disclosure is denied, then `disclose` returns a rejected Promise. If the disclosure is allowed, then a resolved Promise is returned. This Promise will be resolved with an Object containing functions and Promises that can be used to manipulate the disclosure, if necessary. Included are `dismissDisclosure`, a function that will dismiss the disclosed content, and `afterDismiss`, a deferred Promise that will be resolved when the disclosed content is dismissed by any means. Alternatively, if the additional logic isn't needed, the returned Promise can be completely ignored.
 
 Example:
 ```javascript
@@ -106,10 +106,6 @@ app.disclose({
 })
 ```
 
-|Function|Description|
-|---|---|
-|`disclose(Object)`|Allows a component to disclose a component. This will open the disclosure if nothing was previously disclosed, or it will replace everything in the current disclosure stack. If disclosure was successful, it returns a Promise resolved with an Object containing the `dismissDisclosure` function and the `afterDismiss` deferred Promise. If disclosure was denied, it returns a rejected Promise.|
-
 `disclose` Argument API:
 
 |Key|Value|
@@ -131,21 +127,21 @@ In addition to a `disclose` function, a number of other functions are exposed to
 
 |Function|Description|
 |---|---|
-|`disclose(Object)`|Allows a component to disclose another component. See above for argument API. The DisclosureManager implementation will determine how the next object will be disclosed.|
-|`dismiss()`|Allows a component to remove itself from the disclosure stack. If the component is the only element in the disclosure stack, the disclosure is closed.|
-|`closeDisclosure()`|Allows a component to close the entire disclosure stack. This is generally integrated into face-up disclosure controls as a Close button or similar.|
-|`goBack()`|Allows a component to remove itself from the disclosure stack. Functionally similar to `dismiss`, however `onBack` is only provided to components in the stack that have a previous sibling. This is generally integrated into face-up disclosure controls as a Back button or similar.|
-|`maximize()`|Allows a component to maximize its presentation size. This is only provided if the component is not already maximized|
-|`minimize()`|Allows a component to minimize its presentation size. This is only provided if the component is currently maximized.|
-|`requestFocus()`|Allows a component to request focus from the disclosure in the event that the disclosure mechanism in use utilizes a focus trap. This can be integrated with the Popup and similar focus-stealing controls.|
-|`requestFocus()`|Allows a component to release focus from itself and return it to the disclosure. This can be integrated with the Popup and similar focus-stealing controls.|
-|`registerDismissCheck(func)`|Allows a component to register a function with the DisclosureManager that will be called before the component is dismissed for any reason.|
+|`disclose`|Allows a component to disclose another component. See above for argument API. The DisclosureManager implementation will determine how the next object will be disclosed.|
+|`dismiss`|Allows a component to remove itself from the disclosure stack. If the component is the only element in the disclosure stack, the disclosure is closed.|
+|`closeDisclosure`|Allows a component to close the entire disclosure stack. This is generally integrated into face-up disclosure controls as a Close button or similar.|
+|`goBack`|Allows a component to remove itself from the disclosure stack. Functionally similar to `dismiss`, however `onBack` is only provided to components in the stack that have a previous sibling. This is generally integrated into face-up disclosure controls as a Back button or similar.|
+|`maximize`|Allows a component to maximize its presentation size. This is only provided if the component is not already maximized.|
+|`minimize`|Allows a component to minimize its presentation size. This is only provided if the component is currently maximized.|
+|`requestFocus`|Allows a component to request focus from the disclosure in the event that the disclosure mechanism in use utilizes a focus trap. This can be integrated with the Popup and similar focus-stealing controls.|
+|`requestFocus`|Allows a component to release focus from itself and return it to the disclosure. This can be integrated with the Popup and similar focus-stealing controls.|
+|`registerDismissCheck`|Allows a component to register a function with the DisclosureManager that will be called before the component is dismissed for any reason.|
 
 Each of these functions returns a Promise that can be used for chaining, if necessary.
 
 ##### A Note on `registerDismissCheck`
 
-The function given to registerDismissCheck should return a resolved or rejected Promise. If the Promise is resolved, the component is guaranteed to be dismissed. If cleanup logic needs to execute before the component is dismissed, it is a good idea to execute before returning the resolved Promise. If a rejected Promise is returned, the component will not be dismissed. Components can render a prompt or confirmation window to give users control over the dismissal, if desired.
+The function given to registerDismissCheck must return a resolved or rejected Promise. If the Promise is resolved, the component is guaranteed to be dismissed. If cleanup logic needs to execute before the component is dismissed, it is a good idea to execute before returning the resolved Promise. If a rejected Promise is returned, the component will not be dismissed. Components can render a prompt or confirmation window to give users control over the dismissal, if desired.
 
 Example:
 ```javascript
@@ -190,12 +186,18 @@ unsavedChangesCheck() {
 // MyDisclosureManagerImpl.jsx
 import React from 'react';
 import DisclosureManager from 'terra-disclosure-manager';
+import CustomDisclosure from './my/custom/disclosure';
 
 <DisclosureManager
-  app={parentApp}
-  supportedDisclosureTypes={['type1', 'type2']}
+  supportedDisclosureTypes={['my-type-1', 'my-type-2']}
   render={(manager) => {
-    // Render manager state here.
+    return (
+      <CustomDisclosure
+        content={manager.children.content}
+        disclosureContent={manager.disclosure.content}
+        isOpen={manager.disclosure.isOpen}
+      />
+    )
   }}
 >
   <Component1 />

@@ -86,6 +86,10 @@ class DisclosureManager extends React.Component {
     };
   }
 
+  /**
+   * Determines if the provided disclosure type is supported by the DisclosureManager.
+   * @return `true` if the type is supported or if there is no fallback `app` present. `false` is returned otherwise.
+   */
   disclosureTypeIsSupported(type) {
     const { app, supportedDisclosureTypes } = this.props;
 
@@ -166,6 +170,10 @@ class DisclosureManager extends React.Component {
     });
   }
 
+  /**
+   * Looks up the deferred afterDismiss promise for the provided disclosure key and
+   * resolves it.
+   */
   resolveDismissPromise(key) {
     const resolve = this.onDismissResolvers[key];
     if (resolve) {
@@ -175,8 +183,8 @@ class DisclosureManager extends React.Component {
   }
 
   /**
-   * This function resolves the dismiss checks in sequence. The Promise will either resolve if all checks resolve or
-   * reject on the check rejection. This ensures that checks do not occur for components after the first rejection.
+   * Resolves the dismiss checks for the current disclosure components in sequence. The Promise will either resolve if all checks resolve or
+   * reject on the first detected rejection. This ensures that checks do not occur for components after the first rejection.
    */
   resolveDismissChecksInSequence(keys) {
     return new Promise((resolve, reject) => {
@@ -197,6 +205,10 @@ class DisclosureManager extends React.Component {
     });
   }
 
+  /**
+   * Closes the disclosure after calling all checks and resolving all deferred promises.
+   * @return A Promise, resolved if the close was performed or rejected if it was not.
+   */
   safelyCloseDisclosure() {
     const disclosureKeys = Object.assign([], this.state.disclosureComponentKeys);
 
@@ -211,6 +223,9 @@ class DisclosureManager extends React.Component {
     });
   }
 
+  /**
+   * Creates an instance of a pop function for the component represented by the given key.
+   */
   generatePopFunction(key) {
     return () => {
       let promiseRoot = Promise.resolve();
