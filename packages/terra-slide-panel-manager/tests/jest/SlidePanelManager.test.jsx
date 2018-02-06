@@ -1,18 +1,46 @@
 import React from 'react';
 import SlidePanelManager from '../../src/SlidePanelManager';
 
-describe('SlidePanelManager', () => {
-  const defaultRender = (<SlidePanelManager
-    render={() => <div />}
-  />);
+const TestContainer = () => (
+  <div>Hello World</div>
+);
 
-  // Snapshot Tests
-  it('should render a default component', () => {
-    const wrapper = shallow(defaultRender);
-    expect(wrapper).toMatchSnapshot();
+describe('SlidePanelManager', () => {
+  it('should render the SlidePanelManager with defaults', () => {
+    const slidePanelManager = (
+      <SlidePanelManager>
+        <TestContainer />
+      </SlidePanelManager>
+    );
+
+    const result = shallow(slidePanelManager);
+    expect(result).toMatchSnapshot();
   });
 
-  // Prop Tests
+  it('should disclose content in SlidePanel', () => {
+    const slidePanelManager = (
+      <SlidePanelManager>
+        <TestContainer />
+      </SlidePanelManager>
+    );
 
-  // Structure Tests
+    const wrapper = mount(slidePanelManager);
+
+    return new Promise((resolve, reject) => {
+      const childApp = wrapper.find(TestContainer).getElements()[0].props.app;
+      childApp.disclose({
+        preferredType: 'modal',
+        size: 'large',
+        content: {
+          key: 'DISCLOSE_KEY',
+          component: <TestContainer />,
+        },
+      }).then(resolve).catch(reject);
+    })
+    .then(() => {
+      wrapper.update();
+
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
 });
