@@ -32,12 +32,7 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "terra-app-delegate": "^1.10.0",
-    "terra-application-menu-layout": "^1.1.0",
-    "terra-application-name": "^0.x",
-    "terra-application-utility": "^0.x",
-    "terra-base": "^2.0.0",
-    "terra-navigation-layout": "^1.0.0",
-    "terra-popup": "^1.19.0"
+    "terra-base": "^2.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",

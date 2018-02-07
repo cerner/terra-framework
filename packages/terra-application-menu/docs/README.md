@@ -15,20 +15,11 @@ import React from 'react';
 import ApplicationMenu from 'terra-application-menu';
 
 <ApplicationMenu
-  app={app}
   content={<ApplicationList links={links} />}
-  layoutConfig={{
-    size: PropTypes.string,
-    toggleMenu: PropTypes.bool,
-    menuIsOpen: PropTypes.bool,
-    togglePin: PropTypes.bool,
-    menuIsPinned: PropTypes.bool,
-  }}
   nameConfig={{
     accessory={<ApplicationIcon />},
     title: "Application Name",
   }}
-  routingStackDelegate={routingDelegate}
   utilityConfig={{
     userName: "Some User",
     userPhoto={<Image src="/image/path" />}

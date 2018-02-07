@@ -1,8 +1,7 @@
 # Terra Application Menu
 
-
 [![NPM version](http://img.shields.io/npm/v/terra-application-menu.svg)](https://www.npmjs.org/package/terra-application-menu)
-[![Build Status](https://travis-ci.org/cerner/terra-framework.svg?branch=master)](https://travis-ci.org/cerner/terra-framework)
+[![Build Status](https://travis-ci.org/cerner/terra.svg?branch=master)](https://travis-ci.org/cerner/terra-framework)
 
 The ApplicationMenu is a HOC that combines config and menu subcomponents, which are then placed within the menu layout.
 

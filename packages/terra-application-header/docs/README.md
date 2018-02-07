@@ -15,10 +15,15 @@ import React from 'react';
 import ApplicationHeader from 'terra-application-header';
 
 <ApplicationHeader
-  content={content}
-  extensions={extensions}
-  footer={footer}
-  header={header}
+  applicationLinks={[{ path: '/testPath', text: 'Test' }]}
+  nameConfig={{
+    title: 'Application Name',
+  }}
+  utilityConfig={{
+    userName: 'Some User',
+    userDetails: 'Details about user',
+    onUtilityChange: (event, key) => { this.stuff(key); },
+  }}
 />
 ```
 
