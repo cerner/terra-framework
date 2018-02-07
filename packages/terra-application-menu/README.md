@@ -7,7 +7,7 @@
 The ApplicationMenu is a HOC that combines config and menu subcomponents, which are then placed within the menu layout.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-core/tree/master/packages/terra-application-menu/docs)
+- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-menu/docs)
 - [LICENSE](#license)
 
 ## Getting Started
