@@ -13,7 +13,18 @@ describe('ModalManger', () => {
       </ModalManager>
     );
 
-    const result = shallow(modalManager);
+    const result = mount(modalManager);
+    expect(result).toMatchSnapshot();
+  });
+
+  it('should render the ModalManager with custom props', () => {
+    const modalManager = (
+      <ModalManager id="my-modal-manager" className="test">
+        <TestContainer />
+      </ModalManager>
+    );
+
+    const result = mount(modalManager);
     expect(result).toMatchSnapshot();
   });
 

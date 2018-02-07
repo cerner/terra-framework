@@ -42,11 +42,7 @@
     "terra-modal": "^1.18.0",
     "terra-responsive-element": "^1.15.0",
     "terra-slide-group": "^1.15.0",
-    "terra-disclosure-manager": "^0.x",
-    "terra-button": "^1.14.0",
-    "terra-content-container": "^1.16.0",
-    "terra-clinical-action-header": "^1.6.0",
-    "terra-form": "^1.17.0"
+    "terra-disclosure-manager": "^0.x"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

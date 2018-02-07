@@ -50,15 +50,92 @@ exports[`ModalManger should disclose content in Modal 1`] = `
 </ModalManager>
 `;
 
-exports[`ModalManger should render the ModalManager with defaults 1`] = `
-<DisclosureManager
-  render={[Function]}
-  supportedDisclosureTypes={
-    Array [
-      "modal",
-    ]
-  }
+exports[`ModalManger should render the ModalManager with custom props 1`] = `
+<ModalManager
+  className="test"
+  id="my-modal-manager"
 >
-  <TestContainer />
-</DisclosureManager>
+  <DisclosureManager
+    render={[Function]}
+    supportedDisclosureTypes={
+      Array [
+        "modal",
+      ]
+    }
+  >
+    <div
+      className="container test"
+      id="my-modal-manager"
+    >
+      <TestContainer
+        app={
+          AppDelegateInstance {
+            "disclose": [Function],
+          }
+        }
+        key=".0"
+      >
+        <div>
+          Hello World
+        </div>
+      </TestContainer>
+      <Modal
+        ariaLabel="Modal"
+        classNameModal="undefined"
+        classNameOverlay={null}
+        closeOnEsc={true}
+        closeOnOutsideClick={false}
+        isFocused={true}
+        isFullscreen={false}
+        isOpen={false}
+        isScrollable={false}
+        onRequestClose={[Function]}
+        role="document"
+      />
+    </div>
+  </DisclosureManager>
+</ModalManager>
+`;
+
+exports[`ModalManger should render the ModalManager with defaults 1`] = `
+<ModalManager>
+  <DisclosureManager
+    render={[Function]}
+    supportedDisclosureTypes={
+      Array [
+        "modal",
+      ]
+    }
+  >
+    <div
+      className="container"
+    >
+      <TestContainer
+        app={
+          AppDelegateInstance {
+            "disclose": [Function],
+          }
+        }
+        key=".0"
+      >
+        <div>
+          Hello World
+        </div>
+      </TestContainer>
+      <Modal
+        ariaLabel="Modal"
+        classNameModal="undefined"
+        classNameOverlay={null}
+        closeOnEsc={true}
+        closeOnOutsideClick={false}
+        isFocused={true}
+        isFullscreen={false}
+        isOpen={false}
+        isScrollable={false}
+        onRequestClose={[Function]}
+        role="document"
+      />
+    </div>
+  </DisclosureManager>
+</ModalManager>
 `;

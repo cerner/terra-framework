@@ -53,11 +53,18 @@ class ModalManager extends React.Component {
   }
 
   renderModal(manager) {
+    const { app, children, ...customProps } = this.props;
+
+    const containerClassNames = cx([
+      'container',
+      customProps.className,
+    ]);
+
     const isFullscreen = this.state.forceFullscreen || manager.disclosure.isMaximized || manager.disclosure.size === availableDisclosureSizes.FULLSCREEN;
     const modalClasses = !isFullscreen ? cx([styles[manager.disclosure.size]]) : undefined;
 
     return (
-      <div className={cx('container')}>
+      <div {...customProps} className={containerClassNames}>
         {manager.children.components}
         <Modal
           isFocused={manager.disclosure.isFocused}

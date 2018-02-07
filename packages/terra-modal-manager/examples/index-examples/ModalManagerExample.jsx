@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import ContentComponent from 'terra-disclosure-manager/examples/index-examples/ContentComponent';
+
 import ModalManager from '../../src/index';
-import ManagerContentComponent from './ManagerContentComponent';
 
 import styles from './example-styles.scss';
 
@@ -15,7 +16,7 @@ const propTypes = {
 const ModalManagerExample = () => (
   <div className={cx('example-wrapper')}>
     <ModalManager>
-      <ManagerContentComponent disclosureType="panel" />
+      <ContentComponent disclosureType="modal" />
     </ModalManager>
   </div>
 );
