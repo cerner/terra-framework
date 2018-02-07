@@ -26,7 +26,7 @@ class ApplicationMenu extends React.Component {
   }
 
   createContent() {
-    return <div style={{ backgroundColor: 'purple', width: '100%', height: '400px' }}>{this.userDetails}</div>;
+    return <div style={{ backgroundColor: 'pink', width: '100%', height: '100%' }}>{this.userDetails}</div>;
   }
 
   render() {
