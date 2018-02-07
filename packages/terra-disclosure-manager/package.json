@@ -34,7 +34,11 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.5.8",
+    "terra-button": "^1.14.0",
+    "terra-content-container": "^1.16.0",
+    "terra-clinical-action-header": "^1.6.0",
+    "terra-form": "^1.17.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
