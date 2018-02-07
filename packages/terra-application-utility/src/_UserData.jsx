@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-import
+import IconChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 
 import styles from './_UserData.scss';
 
@@ -48,7 +48,7 @@ const UserData = ({
   ]);
 
   const iconClassNames = cx([
-    'icon'
+    'icon',
   ]);
 
   const userNameClassNames = cx([
@@ -65,7 +65,7 @@ const UserData = ({
         <div className={userNameClassNames}>{userName}</div>
         <div classNames={userDetailClassNames}>{userDetail}</div>
       </div>
-      <div className={iconClass!Names}> {<IconChevronRight data-utility-more-icon />} </div>
+      <div className={iconClassNames}> {<IconChevronRight data-utility-more-icon />} </div>
     </div>
   );
 };

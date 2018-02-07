@@ -7,81 +7,25 @@ import IconClose from 'terra-icon/lib/icon/IconClose';
 import Arrange from 'terra-arrange';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-import MenuUtils from './_Utils';
-import styles from './_HeaderUtilMenuPage.scss';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Title the should be displayed in header.
+   * Object containing data for this specific page
    */
-  title: PropTypes.string,
+  pageData: PropTypes.shape({
+    Title: PropTypes.string,
+    Content: PropTypes.element,
+    children: PropTypes.arrayOf(PropTypes.object),
+  }).isRequired,
   /**
-   * Callback function for when back button is clicked.
+   * Function to trigger when an item is selected
    */
-  onRequestBack: PropTypes.func,
-  /**
-   * Callback function for when close button is clicked.
-   */
-  onRequestClose: PropTypes.func,
-  /**
-   * Callback function that takes the content to be displayed next and is called when an item with nested content is clicked.
-   */
-  onRequestNext: PropTypes.func.isRequired,
-  /**
-   * Menu Items/Menu Groups/Menu Dividers to be displayed.
-   */
-  children: PropTypes.node.isRequired,
-  /**
-   * Index within the Menu Stack.
-   */
-  index: PropTypes.number.isRequired,
-  /**
-   * Bounding container for the menu, will use window if no value provided.
-   */
-  boundingRef: PropTypes.func,
-  /**
-   * Indicates if the menu content should set default focus on itself.
-   */
-  isFocused: PropTypes.bool,
-  /**
-   * Indicates if menu's height has been constrained by bounding container.
-   */
-  isHeightBounded: PropTypes.bool,
-  /**
-   * Indicates if menu's width has been constrained by bounding container.
-   */
-  isWidthBounded: PropTypes.bool,
-  /**
-   * Fixed height for content.
-   */
-  fixedHeight: PropTypes.number,
-  /**
-   * Fixed width for content.
-   */
-  fixedWidth: PropTypes.number,
-  /**
-   * Width for content.
-   */
-  contentWidth: PropTypes.number,
-  /**
-   * Indicates if the content should be hidden.
-   */
-  isHidden: PropTypes.bool,
-  /**
-   * Ref callback function to be applied to content container.
-   */
-  refCallback: PropTypes.func,
+  onchange: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
-  children: [],
-  isFocused: false,
-  title: '',
-  isWidthBounded: false,
-  isHeightBounded: false,
-  isHidden: false,
 };
 
 const childContextTypes = {
@@ -116,43 +60,6 @@ class MenuContent extends React.Component {
     } else {
       this.needsFocus = false;
     }
-  }
-
-  componentDidUpdate() {
-    this.validateFocus(this.contentNode);
-  }
-
-  onKeyDownBackButton(event) {
-    if (event.nativeEvent.keyCode === MenuUtils.KEYCODES.ENTER || event.nativeEvent.keyCode === MenuUtils.KEYCODES.SPACE) {
-      event.preventDefault();
-      this.props.onRequestBack();
-    }
-  }
-
-  validateFocus(node) {
-    if (this.needsFocus && node) {
-      node.focus();
-      this.needsFocus = document.activeElement !== node;
-    }
-  }
-
-  handleContainerRef(node) {
-    if (this.props.refCallback) {
-      this.props.refCallback(node);
-    }
-    this.contentNode = node;
-    this.validateFocus(node);
-  }
-
-  isSelectable() {
-    let isSelectable = false;
-    React.Children.forEach(this.props.children, (child) => {
-      if (child.props.children || child.props.isSelectable) {
-        isSelectable = true;
-      }
-    });
-
-    return isSelectable;
   }
 
   wrapOnClick(item) {

@@ -1,17 +1,21 @@
 :local {
   .header-utility {
+    align-items: center;
+    display: flex;
     height: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 100%;
     /* stylelint-disable selector-max-compound-selectors */
-    .user-photo + img {
-      height: 75%;
-      width: 75%;
+    .user-photo ~ .icon {
+      flex-grow: 1;
     }
-    // .user-name {
 
-    // }
+    .user-name {
+      flex-grow: 2;
+    }
+
+
   }
 }

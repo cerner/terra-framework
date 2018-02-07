@@ -4,8 +4,8 @@ import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 
 import Button from 'terra-button';
-import IconChevronRight from 'terra-icon/lib/icon/IconChevronRight';
-import HeaderUtilMenu from './_HeaderUtilMenu';
+import IconChevronDown from 'terra-icon/lib/icon/IconChevronDown';
+import UtilityMenu from './_UtilityMenu';
 import UserData from './_UserData';
 
 import styles from './ApplicationHeaderUtility.scss';
@@ -14,79 +14,77 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   *
+   */
+  isHeightBounded: PropTypes.func,
+  /**
    * The function to trigger when a menu item is selected.
    */
-  onChange: PropTypes.func,
+  onChange: PropTypes.func.isRequired,
     /**
    * The function that discloses the menu.
    */
-  onDiscloseUtilityMenu: PropTypes.func,
+  onDiscloseUtilityMenu: PropTypes.func.isRequired,
+  /**
+   *
+   */
+  rootPageKey: PropTypes.string,
   /**
    * More information about the user.
    */
-  userDetail: PropTypes.string,
+  userDetail: PropTypes.string.isRequired,
   /**
    * The name to be displayed next to the user photo.
    */
-  userName: PropTypes.string,
+  userName: PropTypes.string.isRequired,
   /**
    * The image associated with the user.
    */
-  userPhoto: PropTypes.element,
+  userPhoto: PropTypes.element.isRequired,
 };
 
-const defaultProps = {
-  menuItems: [],
-  userDetail: undefined,
-  userPhoto: undefined,
-  userName: undefined,
+const ApplicationHeaderUtility = ({
+  onChange,
+  onDiscloseUtilityMenu,
+  userDetail,
+  userName,
+  userPhoto,
+  ...customProps
+}) => {
+  const utilityClassNames = cx([
+    'header-utility',
+    customProps.className,
+  ]);
+
+  const userPhotoClassNames = cx([
+    'user-photo',
+  ]);
+
+  const userNameClassNames = cx([
+    'user-name',
+  ]);
+
+  const iconClassNames = cx([
+    'icon',
+  ]);
+  const menuConfig = {
+    key: { },
+    key: { },
+    key: { },
+    key: { },
+  };
+
+  const userData = (<UserData userDetail={this.props.userDetail} userName={this.props.userName} userPhoto={this.props.userPhoto} />);
+  const menu = (<UtilityMenu onChange={this.props.onChange} userData={userData} />);
+  return (
+    <Button {...customProps} className={utilityClassNames} onClick={this.props.onDiscloseUtilityMenu(menu)} variant="link">
+      <span className={userPhotoClassNames}>{userPhoto} </span>
+      <span className={userNameClassNames}>{userName} </span>
+      {<IconChevronDown className={iconClassNames} />}
+    </Button>
+  );
 };
-
-class ApplicationHeaderUtility extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.handleOnChange = this.handleOnChange.bind(this);
-  }
-
-  render() {
-    const {
-      onDiscloseUtilityMenu,
-      onChange,
-      userPhoto,
-      userName,
-      ...customProps
-    } = this.props;
-
-    const utilityClassNames = cx([
-      'header-utility',
-      customProps.className,
-    ]);
-
-    const userPhotoClassNames = cx([
-      'user-photo',
-      customProps.className,
-    ]);
-
-    const userNameClassNames = cx([
-      'user-name',
-      customProps.className,
-    ]);
-
-    const userData = (<UserData userDetail={this.props.userDetail} userName={this.props.userName} userPhoto={this.props.userPhoto} />);
-    const menu = (<HeaderUtilMenu onChange={this.props.onChange} userData={userData} />);
-
-    return (
-      <Button {...customProps} className={utilityClassNames} onClick={this.props.onDiscloseUtilityMenu(menu)} variant="link">
-        <span className={userPhotoClassNames}>{userPhoto} </span>
-        <span className={userNameClassNames}>{userName} </span>
-        {<IconChevronRight />}
-      </Button>
-    );
-  }
-}
 
 ApplicationHeaderUtility.propTypes = propTypes;
-ApplicationHeaderUtility.defaultProps = defaultProps;
 
 export default ApplicationHeaderUtility;

@@ -11,8 +11,8 @@ import { version } from '../package.json';
 import ApplicationHeaderUtilitySrc from '!raw-loader!../src/ApplicationHeaderUtility.jsx';
 
 // Example File
-import DefaultApplicationUtility from './index-examples/ApplicationHeaderUtilityStandard';
-import DefaultApplicationUtilitySrc from '!raw-loader!../src/ApplicationHeaderUtility.jsx';
+import MockApplicationHeader from './index-examples/MockApplicationHeader';
+import MockApplicationHeaderSrc from '!raw-loader!./index-examples/MockApplicationHeader.jsx';
 
 const ApplicationUtilityExamples = () => (
   <div>
@@ -22,8 +22,8 @@ const ApplicationUtilityExamples = () => (
     <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
     <IndexTemplate
       title="Application Header Utility"
-      example={<DefaultApplicationUtility />}
-      exampleSrc={DefaultApplicationUtilitySrc}
+      example={<MockApplicationHeader />}
+      exampleSrc={MockApplicationHeaderSrc}
     />
     <PropsTable id="props-table" src={ApplicationHeaderUtilitySrc} />
   </div>

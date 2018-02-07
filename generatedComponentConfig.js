@@ -5,6 +5,7 @@ import TerraAppDelegateIndex from './packages/terra-app-delegate/examples/Index.
 import TerraApplicationHeaderLayoutIndex from './packages/terra-application-header-layout/examples/Index.site-page';
 import TerraApplicationMenuLayoutIndex from './packages/terra-application-menu-layout/examples/Index.site-page';
 import TerraApplicationNameIndex from './packages/terra-application-name/examples/Index.site-page';
+import TerraApplicationUtilityIndex from './packages/terra-application-utility/examples/Index.site-page';
 import TerraEmbeddedComponentIndex from './packages/terra-embedded-component/examples/Index.site-page';
 import TerraLayoutIndex from './packages/terra-layout/examples/Index.site-page';
 import TerraModalManagerIndex from './packages/terra-modal-manager/examples/Index.site-page';
@@ -100,6 +101,13 @@ const componentConfig = {
   'terra-application-utility': {
     name: 'Application Utility',
     path: '/application-utility',
+    pages: [
+      {
+        name: 'Index',
+        path: '/index',
+        component: TerraApplicationUtilityIndex,
+      },
+    ],
     tests: [
       {
         name: 'Default Application Header Utility',
