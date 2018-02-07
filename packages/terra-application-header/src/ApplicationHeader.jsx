@@ -77,13 +77,12 @@ class ApplicationHeader extends React.Component {
     this.handleRequestClose = this.handleRequestClose.bind(this);
     this.getTargetRef = this.getTargetRef.bind(this);
     this.setContentNode = this.setContentNode.bind(this);
-    this.state = { isUtilityOpen: false };
+    this.state = { utilityComponent: null };
   }
 
   onDiscloseUtilty(utility) {
-    if (utility && !this.state.isUtilityOpen) {
-      this.popupContent = utility;
-      this.setState({ isUtilityOpen: true });
+    if (utility) {
+      this.setState({ utilityComponent: utility });
     }
   }
 
@@ -99,8 +98,7 @@ class ApplicationHeader extends React.Component {
   }
 
   handleRequestClose() {
-    this.popupContent = null;
-    this.setState({ isUtilityOpen: false });
+    this.setState({ utilityComponent: null });
   }
 
   render() {
@@ -141,18 +139,18 @@ class ApplicationHeader extends React.Component {
     const utilities = <ApplicationHeaderUtility {...utilityConfig} onDiscloseUtilityMenu={this.onDiscloseUtilty} data-application-header-utility />;
 
     let popup;
-    if (this.popupContent) {
+    if (this.state.utilityComponent) {
       popup = (
         <Popup
           contentAttachment="top center"
           contentHeight="auto"
           contentWidth="240"
           isArrowDisplayed
-          isOpen={this.state.isUtilityOpen}
+          isOpen
           onRequestClose={this.handleRequestClose}
           targetRef={this.getTargetRef}
         >
-          {this.popupContent}
+          {this.state.utilityComponent}
         </Popup>
       );
     }
