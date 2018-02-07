@@ -1,12 +1,11 @@
 import React from 'react';
-
+import TestExample from 'terra-disclosure-manager/examples/test-content/TestExample';
 import SlidePanelManager from '../../lib/SlidePanelManager';
-import DemoContainer from './test-content/DemoContainer';
 
 const SlidePanelManagerDefault = () => (
   <div role="main" style={{ height: '900px' }}>
     <SlidePanelManager>
-      <DemoContainer identifier="root-component" />
+      <TestExample identifier="root-component" disclosureType="panel" />
     </SlidePanelManager>
   </div>
 );

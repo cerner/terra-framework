@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import ContentComponent from 'terra-disclosure-manager/examples/index-examples/ContentComponent';
 import SlidePanelManager from '../../src/SlidePanelManager';
-import ManagerContentComponent from './ManagerContentComponent';
 
 import styles from './example-styles.scss';
 
@@ -15,7 +15,7 @@ const propTypes = {
 const SlidePanelManagerExample = ({ behavior }) => (
   <div className={cx('example-wrapper')}>
     <SlidePanelManager panelBehavior={behavior}>
-      <ManagerContentComponent disclosureType="panel" />
+      <ContentComponent disclosureType="panel" />
     </SlidePanelManager>
   </div>
 );
