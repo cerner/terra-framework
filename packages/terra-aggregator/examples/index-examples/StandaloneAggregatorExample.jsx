@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Aggregator from '../src/Aggregator';
+import Aggregator from '../../src/Aggregator';
 
 import AggregatorItem from './components/AggregatorItem';
 

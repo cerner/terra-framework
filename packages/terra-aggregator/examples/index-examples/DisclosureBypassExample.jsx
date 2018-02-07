@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AppDelegate from 'terra-app-delegate';
 
-import NewModalManager from './tmp/NewModalManager';
-import SlidePanelManager from './tmp/SlidePanelManager';
+import ModalManager from 'terra-modal-manager';
+import SlidePanelManager from 'terra-slide-panel-manager';
 
 import AggregatorContainer from './components/AggregatorContainer';
 import AggregatorItem from './components/AggregatorItem';
@@ -51,9 +51,9 @@ const ModalBypassExample = () => (
       Calling that function does not require Aggregator focus and will bypass the Aggregator entirely. This can be
       useful for simple Modal workflows that should not impact Aggregator state.
     </p>
-    <NewModalManager>
+    <ModalManager>
       <ModalManagerBypass />
-    </NewModalManager>
+    </ModalManager>
   </div>
 );
 

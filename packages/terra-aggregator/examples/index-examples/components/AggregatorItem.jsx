@@ -6,8 +6,7 @@ import ContentContainer from 'terra-content-container';
 import Header from 'terra-clinical-header';
 import AppDelegate from 'terra-app-delegate';
 import ActionHeader from 'terra-clinical-action-header';
-
-import { disclosureKey as disclosureContentDisclosureKey } from './DisclosureContent';
+import DisclosureComponent from 'terra-disclosure-manager/examples/index-examples/DisclosureComponent';
 
 const ReadonlyModal = ({ app }) => (
   <ContentContainer
@@ -28,8 +27,6 @@ const ReadonlyModal = ({ app }) => (
 ReadonlyModal.propTypes = {
   app: AppDelegate.propType,
 };
-
-AppDelegate.registerComponentForDisclosure('ReadonlyModal', ReadonlyModal);
 
 const propTypes = {
   aggregatorDelegate: PropTypes.object,
@@ -79,13 +76,8 @@ class AggregatorItem extends React.Component {
           preferredType: this.props.disclosureType,
           size: disclosureSizeForIndex[index],
           content: {
-            key: 'DisclosedContent-Demo',
-            name: disclosureContentDisclosureKey,
-            props: {
-              key: name + index,
-              id: name,
-              name: `Disclosure from ${name} - Row ${index}`,
-            },
+            key: `Nested ${name}`,
+            component: <DisclosureComponent name={`Nested ${name}`} disclosureType={this.props.disclosureType} />,
           },
         });
       }
@@ -105,7 +97,7 @@ class AggregatorItem extends React.Component {
       size: 'small',
       content: {
         key,
-        name: 'ReadonlyModal',
+        component: <ReadonlyModal />,
       },
     });
   }

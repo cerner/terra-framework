@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Grid from 'terra-grid';
 
-import Aggregator from '../src/Aggregator';
+import Aggregator from '../../src/Aggregator';
 import AggregatorItem from './components/AggregatorItem';
 
 const propTypes = {

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import NewModalManager from './tmp/NewModalManager';
-import SlidePanelManager from './tmp/SlidePanelManager';
+import ModalManager from 'terra-modal-manager';
+import SlidePanelManager from 'terra-slide-panel-manager';
 
 import AggregatorContainer from './components/AggregatorContainer';
 import AggregatorItem from './components/AggregatorItem';
@@ -25,13 +25,13 @@ const items = Object.freeze([{
 const CombinedDisclosureExample = () => (
   <div>
     <h3>Aggregator with disclosure</h3>
-    <NewModalManager>
+    <ModalManager>
       <SlidePanelManager>
         <AggregatorContainer
           items={items}
         />
       </SlidePanelManager>
-    </NewModalManager>
+    </ModalManager>
   </div>
 );
 

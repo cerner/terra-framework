@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AppDelegate from 'terra-app-delegate';
-import NewModalManager from './tmp/NewModalManager';
+import ModalManager from 'terra-modal-manager';
 
 import ModalAggregator from './components/ModalAggregator';
 
@@ -43,9 +43,9 @@ class SimpleAggregatorExample extends React.Component {
     const body = (
       <div>
         <h3>Aggregator inside modal disclosure</h3>
-        <NewModalManager>
+        <ModalManager>
           <ModalButton />
-        </NewModalManager>
+        </ModalManager>
       </div>
     );
 
