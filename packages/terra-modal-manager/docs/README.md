@@ -13,7 +13,7 @@ The ModalManager is a DisclosureManager implementation that presents disclosed c
 
 The ModalManager utilizes the AppDelegate API to manage disclosure requests. The components provided as children to the ModalManager, and the components disclosed within it, must support an AppDelegate prop (as `app`). This AppDelegate instance will provide component-specific implementations of the various control mechanisms for the manager.
 
-The ModalManager responds to the `"modal"` disclosure type. Components that wish to disclose content using the ModalManager should provide a preferred type of `"modal"`. Please see the [DisclosureManager documentation](/#/site/components/disclosure-manager/index) for a full description of the ModalManager's capabilities.
+The ModalManager responds to the `"modal"` disclosure type. Components that wish to disclose content using the ModalManager should provide a preferred type of `"modal"`. This value is exported from the package as `disclosureType`. Please see the [DisclosureManager documentation](http://engineering.cerner.com/terra-framework/#/site/components/disclosure-manager/index) for a full description of the ModalManager's capabilities.
 
 ### Deprecations
 
@@ -24,14 +24,46 @@ If your component currently implements a ModalManager, you can safely remove the
 ### Example
 
 ```jsx
-// .jsx
 import React from 'react';
-import ModalManager from 'terra-modal-manager';
+import Button from 'terra-button';
+import ModalManager, { disclosureType } from 'terra-modal-manager';
 
-<ModalManager>
-  <Component1 />
-  <Component2 />
-</ModalManager>
+const MyModalComponent = ({ app }) => (
+  <div>
+    <p>I am in the modal!</p>
+    <Button
+      text="Dismiss"
+      onClick={() => {
+        app.dismiss();
+      }}
+    />
+  </div>
+);
+
+const MyContentComponent = ({ app }) => (
+  <div>
+    <p>I am in the body!</p>
+    <Button
+      text="Open Modal"
+      onClick={() => {
+        app.disclose({
+          preferredType: disclosureType,
+          size: 'large',
+          content: {
+            key: 'my-modal-component-instance',
+            component: <MyModalComponent />
+          }
+        });
+      }}
+    />
+  </div>
+);
+
+const MyModalManagerComponent = () => (
+  <ModalManager>
+    <MyContentComponent />
+  </ModalManager>
+);
 ```
 
 ## Component Features

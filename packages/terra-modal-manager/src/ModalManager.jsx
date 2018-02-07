@@ -10,6 +10,9 @@ import DisclosureManager, { availableDisclosureSizes } from 'terra-disclosure-ma
 import 'terra-base/lib/baseStyles';
 import styles from './ModalManager.scss';
 
+const disclosureType = 'modal';
+export { disclosureType };
+
 const cx = classNames.bind(styles);
 
 const propTypes = {
@@ -80,7 +83,7 @@ class ModalManager extends React.Component {
     return (
       <DisclosureManager
         app={app}
-        supportedDisclosureTypes={['modal']}
+        supportedDisclosureTypes={[disclosureType]}
         render={this.renderModal}
       >
         {children}
