@@ -5,7 +5,7 @@ import {
 } from '../disclosure-component-registry/DisclosureComponentRegistry';
 
 const supportedAttributes = [
-  'disclose', 'dismiss', 'closeDisclosure', 'goBack', 'maximize', 'minimize', 'requestFocus', 'releaseFocus', 'registerLock',
+  'disclose', 'dismiss', 'closeDisclosure', 'goBack', 'maximize', 'minimize', 'requestFocus', 'releaseFocus', 'registerDismissCheck',
 ];
 
 class AppDelegateInstance {

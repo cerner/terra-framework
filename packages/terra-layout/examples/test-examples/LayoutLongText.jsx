@@ -6,6 +6,7 @@ import TestContent from './test-content/TestContent';
 
 const LayoutLongText = () => (
   <Layout
+    style={{ height: '768px', width: '100%', position: 'relative' }}
     key="layout-long-text"
     header={<TestHeader />}
     menu={<TestMenu />}
