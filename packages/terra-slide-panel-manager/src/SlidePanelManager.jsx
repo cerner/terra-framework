@@ -5,6 +5,9 @@ import DisclosureManager, { availableDisclosureSizes } from 'terra-disclosure-ma
 import SlideGroup from 'terra-slide-group';
 import SlidePanel from 'terra-slide-panel';
 
+const disclosureType = 'panel';
+export { disclosureType };
+
 const propTypes = {
   /**
    * An AppDelegate instance that will be used in fallback scenarios by the SlidePanelManager. If not provided, the SlidePanelManager
@@ -23,7 +26,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  panelBehavior: 'squish',
+  panelBehavior: 'overlay',
 };
 
 /**
@@ -46,7 +49,7 @@ class SlidePanelManager extends React.Component {
   }
 
   renderSlidePanel(manager) {
-    const { panelBehavior } = this.props;
+    const { app, children, panelBehavior, ...customProps } = this.props;
 
     let isFullscreen;
     if (manager.disclosure.size === availableDisclosureSizes.FULLSCREEN || manager.disclosure.isMaximized) {
@@ -55,9 +58,10 @@ class SlidePanelManager extends React.Component {
 
     return (
       <SlidePanel
+        {...customProps}
         fill
-        isFullscreen={isFullscreen}
         panelBehavior={panelBehavior}
+        isFullscreen={isFullscreen}
         panelSize={disclosureSizeToPanelSize[manager.disclosure.size]}
         isOpen={manager.disclosure.isOpen}
         panelContent={(
@@ -74,7 +78,7 @@ class SlidePanelManager extends React.Component {
     return (
       <DisclosureManager
         app={app}
-        supportedDisclosureTypes={['panel']}
+        supportedDisclosureTypes={[disclosureType]}
         render={this.renderSlidePanel}
       >
         {children}

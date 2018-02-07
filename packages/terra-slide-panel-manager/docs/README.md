@@ -13,22 +13,51 @@ The SlidePanelManager is a DisclosureManager implementation that presents disclo
 
 The SlidePanelManager utilizes the AppDelegate API to manage disclosure requests. The components provided as children to the SlidePanelManager, and the components disclosed within it, must support an AppDelegate prop (as `app`). This AppDelegate instance will provide component-specific implementations of the various control mechanisms for the manager.
 
-The SlidePanelManager responds to the `"panel"` disclosure type. Components that wish to disclose content using the SlidePanelManager should provide a preferred type of `"panel"`. Please see the [DisclosureManager documentation](../../terra-disclosure-manager/docs/README.md) for a full description of the SlidePanelManager's capabilities.
+The SlidePanelManager responds to the `"panel"` disclosure type. Components that wish to disclose content using the SlidePanelManager should provide a preferred type of `"panel"`. This value is exported from the package as `disclosureType`. Please see the [DisclosureManager documentation](../../terra-disclosure-manager/docs/README.md) for a full description of the SlidePanelManager's capabilities.
 
 ### Example
 
 ```jsx
-// .jsx
 import React from 'react';
-import SlidePanelManager from 'terra-slide-panel-manager';
+import Button from 'terra-button';
+import SlidePanelManager, { disclosureType } from 'terra-slide-panel-manager';
 
-<SlidePanelManager
-  panelBehavior="overlay"
+const MyPanelComponent = ({ app }) => (
+  <div>
+    <p>I am in the panel!</p>
+    <Button
+      text="Dismiss"
+      onClick={() => {
+        app.dismiss();
+      }}
+    />
+  </div>
+);
 
->
-  <Component1 />
-  <Component2 />
-</SlidePanelManager>
+const MyContentComponent = ({ app }) => (
+  <div>
+    <p>I am in the body!</p>
+    <Button
+      text="Open Panel"
+      onClick={() => {
+        app.disclose({
+          preferredType: disclosureType,
+          size: 'large',
+          content: {
+            key: 'my-panel-component-instance',
+            component: <MyPanelComponent />
+          }
+        });
+      }}
+    />
+  </div>
+);
+
+const MySlidePanelManager = () => (
+  <SlidePanelManager>
+    <MyContentComponent />
+  </SlidePanelManager>
+);
 ```
 
 ## Component Features

@@ -2,7 +2,6 @@
 import React from 'react';
 import PropsTable from 'terra-props-table';
 import Markdown from 'terra-markdown';
-import IndexTemplate from 'terra-site/src/IndexPageTemplate';
 
 import ReadMe from '../docs/README.md';
 import { version } from '../package.json';
@@ -18,11 +17,11 @@ const SlidePanelManagerExamples = () => (
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
     <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
-    <h3>Squish Example</h3>
-    <SlidePanelManagerExample behavior="squish" />
-    <br />
     <h3>Overlay Example</h3>
     <SlidePanelManagerExample behavior="overlay" />
+    <br />
+    <h3>Squish Example</h3>
+    <SlidePanelManagerExample behavior="squish" />
     <br />
     <PropsTable id="props-table" src={SlidePanelManagerSrc} />
   </div>

@@ -2,7 +2,7 @@
 
 exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
 <SlidePanelManager
-  panelBehavior="squish"
+  panelBehavior="overlay"
 >
   <DisclosureManager
     render={[Function]}
@@ -26,7 +26,7 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
           />,
         ]
       }
-      panelBehavior="squish"
+      panelBehavior="overlay"
       panelContent={
         <SlideGroup
           isAnimated={true}
@@ -53,7 +53,7 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
     >
       <div
         className="slide-panel is-open fill"
-        data-slide-panel-panel-behavior="squish"
+        data-slide-panel-panel-behavior="overlay"
         data-slide-panel-panel-position="end"
         data-slide-panel-panel-size="large"
       >
@@ -180,15 +180,226 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
 </SlidePanelManager>
 `;
 
-exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`] = `
-<DisclosureManager
-  render={[Function]}
-  supportedDisclosureTypes={
-    Array [
-      "panel",
-    ]
-  }
+exports[`SlidePanelManager should render the SlidePanelManager with custom props 1`] = `
+<SlidePanelManager
+  className="test"
+  id="my-slide-panel-manager"
+  panelBehavior="overlay"
 >
-  <TestContainer />
-</DisclosureManager>
+  <DisclosureManager
+    render={[Function]}
+    supportedDisclosureTypes={
+      Array [
+        "panel",
+      ]
+    }
+  >
+    <SlidePanel
+      className="test"
+      fill={true}
+      id="my-slide-panel-manager"
+      isOpen={false}
+      mainContent={
+        Array [
+          <TestContainer
+            app={
+              AppDelegateInstance {
+                "disclose": [Function],
+              }
+            }
+          />,
+        ]
+      }
+      panelBehavior="overlay"
+      panelContent={
+        <SlideGroup
+          isAnimated={true}
+          items={Array []}
+        />
+      }
+      panelPosition="end"
+      panelSize="small"
+    >
+      <div
+        className="slide-panel fill test"
+        data-slide-panel-panel-behavior="overlay"
+        data-slide-panel-panel-position="end"
+        data-slide-panel-panel-size="small"
+        id="my-slide-panel-manager"
+      >
+        <div
+          aria-hidden="true"
+          className="panel"
+        >
+          <SlideGroup
+            isAnimated={true}
+            items={Array []}
+          />
+        </div>
+        <div
+          className="main"
+        >
+          <TestContainer
+            app={
+              AppDelegateInstance {
+                "disclose": [Function],
+              }
+            }
+            key=".0"
+          >
+            <div>
+              Hello World
+            </div>
+          </TestContainer>
+        </div>
+      </div>
+    </SlidePanel>
+  </DisclosureManager>
+</SlidePanelManager>
+`;
+
+exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`] = `
+<SlidePanelManager
+  panelBehavior="overlay"
+>
+  <DisclosureManager
+    render={[Function]}
+    supportedDisclosureTypes={
+      Array [
+        "panel",
+      ]
+    }
+  >
+    <SlidePanel
+      fill={true}
+      isOpen={false}
+      mainContent={
+        Array [
+          <TestContainer
+            app={
+              AppDelegateInstance {
+                "disclose": [Function],
+              }
+            }
+          />,
+        ]
+      }
+      panelBehavior="overlay"
+      panelContent={
+        <SlideGroup
+          isAnimated={true}
+          items={Array []}
+        />
+      }
+      panelPosition="end"
+      panelSize="small"
+    >
+      <div
+        className="slide-panel fill"
+        data-slide-panel-panel-behavior="overlay"
+        data-slide-panel-panel-position="end"
+        data-slide-panel-panel-size="small"
+      >
+        <div
+          aria-hidden="true"
+          className="panel"
+        >
+          <SlideGroup
+            isAnimated={true}
+            items={Array []}
+          />
+        </div>
+        <div
+          className="main"
+        >
+          <TestContainer
+            app={
+              AppDelegateInstance {
+                "disclose": [Function],
+              }
+            }
+            key=".0"
+          >
+            <div>
+              Hello World
+            </div>
+          </TestContainer>
+        </div>
+      </div>
+    </SlidePanel>
+  </DisclosureManager>
+</SlidePanelManager>
+`;
+
+exports[`SlidePanelManager should render the SlidePanelManager with squish override 1`] = `
+<SlidePanelManager
+  panelBehavior="squish"
+>
+  <DisclosureManager
+    render={[Function]}
+    supportedDisclosureTypes={
+      Array [
+        "panel",
+      ]
+    }
+  >
+    <SlidePanel
+      fill={true}
+      isOpen={false}
+      mainContent={
+        Array [
+          <TestContainer
+            app={
+              AppDelegateInstance {
+                "disclose": [Function],
+              }
+            }
+          />,
+        ]
+      }
+      panelBehavior="squish"
+      panelContent={
+        <SlideGroup
+          isAnimated={true}
+          items={Array []}
+        />
+      }
+      panelPosition="end"
+      panelSize="small"
+    >
+      <div
+        className="slide-panel fill"
+        data-slide-panel-panel-behavior="squish"
+        data-slide-panel-panel-position="end"
+        data-slide-panel-panel-size="small"
+      >
+        <div
+          aria-hidden="true"
+          className="panel"
+        >
+          <SlideGroup
+            isAnimated={true}
+            items={Array []}
+          />
+        </div>
+        <div
+          className="main"
+        >
+          <TestContainer
+            app={
+              AppDelegateInstance {
+                "disclose": [Function],
+              }
+            }
+            key=".0"
+          >
+            <div>
+              Hello World
+            </div>
+          </TestContainer>
+        </div>
+      </div>
+    </SlidePanel>
+  </DisclosureManager>
+</SlidePanelManager>
 `;

@@ -13,7 +13,29 @@ describe('SlidePanelManager', () => {
       </SlidePanelManager>
     );
 
-    const result = shallow(slidePanelManager);
+    const result = mount(slidePanelManager);
+    expect(result).toMatchSnapshot();
+  });
+
+  it('should render the SlidePanelManager with squish override', () => {
+    const slidePanelManager = (
+      <SlidePanelManager panelBehavior="squish">
+        <TestContainer />
+      </SlidePanelManager>
+    );
+
+    const result = mount(slidePanelManager);
+    expect(result).toMatchSnapshot();
+  });
+
+  it('should render the SlidePanelManager with custom props', () => {
+    const slidePanelManager = (
+      <SlidePanelManager id="my-slide-panel-manager" className="test">
+        <TestContainer />
+      </SlidePanelManager>
+    );
+
+    const result = mount(slidePanelManager);
     expect(result).toMatchSnapshot();
   });
 

@@ -4,7 +4,7 @@ import SlidePanelManager from '../../lib/SlidePanelManager';
 import DemoContainer from './test-content/DemoContainer';
 
 const SlidePanelManagerDefault = () => (
-  <div style={{ height: '900px' }}>
+  <div role="main" style={{ height: '900px' }}>
     <SlidePanelManager>
       <DemoContainer identifier="root-component" />
     </SlidePanelManager>

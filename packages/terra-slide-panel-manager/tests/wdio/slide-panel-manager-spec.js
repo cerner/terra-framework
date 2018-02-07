@@ -1,9 +1,9 @@
-/* global browser, Terra, before, expect */
+/* global browser, Terra, beforeEach, expect */
 const viewports = Terra.viewports('tiny', 'large');
 
 describe('SlidePanelManager', () => {
   describe('Disclose Tiny', () => {
-    before(() => browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default')
+    beforeEach(() => browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default')
         .click('#root-component .disclose-tiny'));
 
     Terra.should.matchScreenshot({ viewports });
@@ -11,7 +11,7 @@ describe('SlidePanelManager', () => {
   });
 
   describe('Disclose Small', () => {
-    before(() => browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default')
+    beforeEach(() => browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default')
         .click('#root-component .disclose-small'));
 
     Terra.should.matchScreenshot({ viewports });
@@ -19,7 +19,7 @@ describe('SlidePanelManager', () => {
   });
 
   describe('Disclose Medium', () => {
-    before(() => browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default')
+    beforeEach(() => browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default')
         .click('#root-component .disclose-medium'));
 
     Terra.should.matchScreenshot({ viewports });
@@ -27,7 +27,7 @@ describe('SlidePanelManager', () => {
   });
 
   describe('Disclose Large', () => {
-    before(() => browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default')
+    beforeEach(() => browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default')
         .click('#root-component .disclose-large'));
 
     Terra.should.matchScreenshot({ viewports });
@@ -35,7 +35,7 @@ describe('SlidePanelManager', () => {
   });
 
   describe('Disclose Huge', () => {
-    before(() => browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default')
+    beforeEach(() => browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default')
         .click('#root-component .disclose-huge'));
 
     Terra.should.matchScreenshot({ viewports });
@@ -43,7 +43,7 @@ describe('SlidePanelManager', () => {
   });
 
   describe('Disclose Fullscreen', () => {
-    before(() => browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default')
+    beforeEach(() => browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default')
         .click('#root-component .disclose-fullscreen'));
 
     Terra.should.matchScreenshot({ viewports });
@@ -51,13 +51,13 @@ describe('SlidePanelManager', () => {
   });
 
   describe('Nested Disclose', () => {
-    before(() => {
+    beforeEach(() => {
       browser.setViewportSize(Terra.viewports('large')[0]);
       browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
 
       browser.click('#root-component .disclose-large');
 
-      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .disclose-tiny', 500);
+      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .disclose-tiny', 1000);
       browser.click('[class*="slide-group"] #DemoContainer-1 .disclose-tiny');
     });
 
@@ -66,13 +66,13 @@ describe('SlidePanelManager', () => {
   });
 
   describe('Disclosure - Dismiss', () => {
-    before(() => {
+    beforeEach(() => {
       browser.setViewportSize(Terra.viewports('large')[0]);
       browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
 
       browser.click('#root-component .disclose-large');
 
-      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .dismiss', 500);
+      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .dismiss', 1000);
       browser.click('[class*="slide-group"] #DemoContainer-1 .dismiss');
     });
 
@@ -81,13 +81,13 @@ describe('SlidePanelManager', () => {
   });
 
   describe('Disclosure - Close Disclosure', () => {
-    before(() => {
+    beforeEach(() => {
       browser.setViewportSize(Terra.viewports('large')[0]);
       browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
 
       browser.click('#root-component .disclose-large');
 
-      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .close-disclosure', 500);
+      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .close-disclosure', 1000);
       browser.click('[class*="slide-group"] #DemoContainer-1 .close-disclosure');
     });
 
@@ -96,13 +96,13 @@ describe('SlidePanelManager', () => {
   });
 
   describe('Disclosure - Maximize', () => {
-    before(() => {
+    beforeEach(() => {
       browser.setViewportSize(Terra.viewports('large')[0]);
       browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
 
       browser.click('#root-component .disclose-large');
 
-      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 500);
+      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
       browser.click('[class*="slide-group"] #DemoContainer-1 .maximize');
     });
 
@@ -111,7 +111,7 @@ describe('SlidePanelManager', () => {
   });
 
   describe('Disclosure - Minimize', () => {
-    before(() => {
+    beforeEach(() => {
       browser.setViewportSize(Terra.viewports('large')[0]);
       browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
 
@@ -131,7 +131,7 @@ describe('SlidePanelManager', () => {
   });
 
   describe('Disclosure - RequestFocus', () => {
-    before(() => {
+    beforeEach(() => {
       browser.setViewportSize(Terra.viewports('large')[0]);
       browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
 
@@ -146,7 +146,7 @@ describe('SlidePanelManager', () => {
   });
 
   describe('Disclosure - ReleaseFocus', () => {
-    before(() => {
+    beforeEach(() => {
       browser.setViewportSize(Terra.viewports('large')[0]);
       browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
 
