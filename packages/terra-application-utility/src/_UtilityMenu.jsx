@@ -11,6 +11,10 @@ import MenuPage from './_UtilityMenuPage';
 
 const propTypes = {
   /**
+   *
+   */
+  isHeightbounded: PropTypes.func,
+  /**
    * Key based object containing menu page data
    */
   menuConfig: PropTypes.object,
@@ -34,14 +38,15 @@ const defaultProps = {
 class Menu extends React.Component {
   constructor(props) {
     super(props);
+    const map = new Map();
     this.handleOnClick = this.handleOnClick.bind(this);
     this.getChildren = this.getChildren.bind(this);
+    this.getTitle = this.getTitle.bind(this);
     this.hasChildren = this.hasChildren.bind(this);
-    this.state = { currentKey: this.props.rootMenuKey };
-    // TODO: Remove internal generation.
+    // TODO: Remove internal generation and have consumers pass in config with additional items.
     this.props.menuConfig = Utils.generateConfig();
     this.props.rootMenuKey = Utils.ROOTKEY;
-    // this.state = { stack: [this], config: this.generateConfig() };
+    this.state = { currentKey: this.props.rootMenuKey, map: this.createMap(map) };
   }
 
   // componentWillReceiveProps(nextProps) {
@@ -51,37 +56,37 @@ class Menu extends React.Component {
   // }
 
   /**
-   * Return all children objects one level below the key
+   * Return all children objects one level below the key.
    * @param {*} key
    */
-  getChildren() {
-    this.props.menuConfig.children.forEach((object) => {
-      if (object.key === this.state.currentKey) {
-        return object.children;
-      }
-      return null;
-    });
+  getChildren(key) {
+    return this.state.map.get(key)[1];
   }
 
   /**
-   * Returns true if the key has children
+   * Return the title of the specified key.
    * @param {*} key
    */
-  hasChildren(config, key) {
+  getTitle(key) {
+    return this.state.map.get(key)[0];
+  }
+
+  /**
+   * Recursively create a map from the menu config with entries for each key.
+   * A key's value is a 2D array containing the title and children.
+   * Example: {"key" => [["Page Title"], [{key: "child-one", title: "First Item"}, {key: "child-two", title: "Second Item"}]}
+   */
+  createMap(config, map) {
+    map.set(config.key, [[config.title], config.children]);
     if ('children' in config) {
       config.children.forEach((object) => {
-        if (key === object.key) {
-          return true;
-        }
-        this.hasChildren(config, key);
-        return false;
+        this.createMap(object, map);
       });
     }
-    return false;
   }
 
   handleOnClick(event, key) {
-    if (!this.hasChildren()) {
+    if (!this.getChildren()) {
       this.props.onChange(event);
     } else {
       this.setState({ currentKey: key });
@@ -99,15 +104,24 @@ class Menu extends React.Component {
 
   render() {
     const {
-      children,
       onChange,
       userData,
       ...customProps
     } = this.props;
 
+    const currentKey = this.state.currentKey;
+
     return (
       <div {...customProps} >
-        <MenuPage>{}</MenuPage>
+        <div>{this.getTitle(currentKey)}</div>
+        <MenuPage
+          title={this.getTitle(currentKey)}
+          key={this.state.currentKey}
+          onChange={this.props.onChange}
+          onClick={this.handleOnClick}
+        >
+          {this.getChildren(currentKey)}
+        </MenuPage>
       </div>
     );
   }
