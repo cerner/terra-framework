@@ -24,6 +24,7 @@
     "react-redux": "^5.0.4",
     "redux": "^3.6.0",
     "terra-app-delegate": "^1.10.0",
+    "terra-base": "^2.11.0",
     "terra-props-table": "^1.11.0"
   },
   "peerDependencies": {
@@ -37,11 +38,11 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-base": "^2.11.0",
     "terra-heading": "^1.17.0",
     "terra-modal": "^1.18.0",
     "terra-responsive-element": "^1.15.0",
-    "terra-slide-group": "^1.15.0"
+    "terra-slide-group": "^1.15.0",
+    "terra-disclosure-manager": "^0.x"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
@@ -51,8 +52,9 @@
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
     "props-table": "props-table ./src/ModalManager.jsx --out-dir ./docs/props-table",
-    "test": "npm run test:jest && npm run test:nightwatch",
+    "test": "npm run test:jest && npm run test:nightwatch && npm run test:wdio",
     "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
-    "test:nightwatch": "nightwatch -c ../../nightwatch.conf.js"
+    "test:nightwatch": "nightwatch -c ../../nightwatch.conf.js",
+    "test:wdio": "wdio ../../wdio.conf.js"
   }
 }

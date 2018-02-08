@@ -1,124 +1,72 @@
 # Terra Modal Manager
 
-The ModalManager is a Redux-backed Container component that dynamically presents components in a Terra Modal.
+The ModalManager is a DisclosureManager implementation that presents disclosed content using a Modal.
 
 ## Getting Started
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-modal-manager`
-  - `yarn add terra-modal-manager`
-
-## Prerequisites
-
-Since ModalManager manages its state using Redux, its reducer must be included when the Redux store is initially created. To make
-this easier, the ModalManager exports a `reducers` object that can be used with `combineReducers` or otherwise used to
-construct the root reducer function of an application.
 
 ## Usage
 
-It works like this:
-* One or many components are provided to the ModalManager as children.
-* The ModalManager clones those children and adds an AppDelegate prop to each.
-* The added AppDelegate's `disclose` function, when called with a `preferredType` of `'modal'`, will dispatch the ModalManager's `OPEN` action.
-* The ModalManager will use the data from the `OPEN` action to open the modal and present the specified component within it.
-* The modally-presented component will also recieve an AppDelegate prop configured to further manipulate the modal state.
+### Implementation Requirements
 
-Components presented in the Modal still have the ability to disclose additional modal content; the ModalManager will maintain both components
-in a stack and give the top-most component the APIs necessary to navigate back (through its AppDelegate).
+The ModalManager utilizes the AppDelegate API to manage disclosure requests. The components provided as children to the ModalManager, and the components disclosed within it, must support an AppDelegate prop (as `app`). This AppDelegate instance will provide component-specific implementations of the various control mechanisms for the manager.
 
-The disclose APIs for the ModalManager children follow the standard AppDelegate disclose API, with the only addition being a 'size' property that
-will determine the size of the modal.
+The ModalManager responds to the `"modal"` disclosure type. Components that wish to disclose content using the ModalManager should provide a preferred type of `"modal"`. This value is exported from the package as `disclosureType`. Please see the [DisclosureManager documentation](http://engineering.cerner.com/terra-framework/#/site/components/disclosure-manager/index) for a full description of the ModalManager's capabilities.
 
-```jsx
-app.disclose({
-  preferredType: 'modal',
-  size: 'small',
-  content: {...},
-})
-```
+### Deprecations
 
-|Key|Type|Description|
-|---|---|---|
-|preferredType|String|A String describing the component's desired disclosure method. Should be 'modal' if ModalManager usage is desired.|
-|content|Object|An Object containing data describing the component that is to be disclosed. See AppDelegate documentation for more.|
-|size|String|The desired modal size. One of: `tiny`, `small`, `medium`, `large`, `huge`, `fullscreen`*.|
+The ModalManager prior to version 1.20.0 utilized Redux to store its disclosure state. With the transition to a DiscosureManager-based implementation, Redux will no longer be used. As such, the provided actions and reducers are now deprecated. They are still included with the package for posterity, but they will be removed in a future major release.
 
->\* When the ModalManager is presented with a `size` of `fullscreen`, animated transitions will be disabled and `maximize`/`minimize` functions will not be provided to the modally presented components.
+If your component currently implements a ModalManager, you can safely remove the ModalManager reducer from your reducer tree.
 
-A more thorough example would look something like this:
+### Example
 
 ```jsx
-// DemoApplication.jsx
-
 import React from 'react';
-import { createStore, combineReducers } from 'redux';
-import { Provider } from 'react-redux';
+import Button from 'terra-button';
+import ModalManager, { disclosureType } from 'terra-modal-manager';
 
-import ModalManager, { reducers as modalManagerReducers } from 'terra-modal-manager';
-
-const store = createStore(combineReducers(modalManagerReducers));
-
-class DemoApplication extends React.Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <ModalManager>
-          <DemoContainer />
-        </ModalManager>
-      </Provider>
-    );
-  }
-}
-
-export default DemoApplication;
-```
-
-```jsx
-// DemoContainer.jsx
-
-import React, { PropTypes } from 'react';
-import ModalContent, { disclosureName } from './ModalContent';
-
-const DemoContainer = ({ app }) => (
+const MyModalComponent = ({ app }) => (
   <div>
-    <button
+    <p>I am in the modal!</p>
+    <Button
+      text="Dismiss"
       onClick={() => {
-        this.props.app.disclose({
-          preferredType: 'modal',
-          size: 'small',
-          content: {
-            key: 'DEMO_CONTAINER_MODAL_CONTENT',
-            name: disclosureName,
-            props: {
-              contentText: 'Modal content'
-            },
-          },
-        })
+        app.dismiss();
       }}
-    >
-      Launch Modal
-    </button>
+    />
   </div>
-)
+);
 
-export default DemoContainer;
-```
-
-```jsx
-// ModalContent.jsx
-
-import AppDelegate from 'terra-app-delegate';
-
-const ModalContent = ({ app, contentText }) => (
+const MyContentComponent = ({ app }) => (
   <div>
-    <div>{contentText}</div>
-    <button onClick={app.closeDisclosure}>Close Modal</button>
+    <p>I am in the body!</p>
+    <Button
+      text="Open Modal"
+      onClick={() => {
+        app.disclose({
+          preferredType: disclosureType,
+          size: 'large',
+          content: {
+            key: 'my-modal-component-instance',
+            component: <MyModalComponent />
+          }
+        });
+      }}
+    />
   </div>
-)
+);
 
-export default ModalContent;
-
-const disclosureName = 'ModalContent';
-AppDelegate.registerComponentForDisclosure(disclosureName, ModalContent);
-export { disclosureName };
+const MyModalManagerComponent = () => (
+  <ModalManager>
+    <MyContentComponent />
+  </ModalManager>
+);
 ```
+
+## Component Features
+* [Cross-Browser Support](https://github.com/cerner/terra-core/wiki/Component-Features#cross-browser-support)
+* [Responsive Support](https://github.com/cerner/terra-core/wiki/Component-Features#responsive-support)
+* [Mobile Support](https://github.com/cerner/terra-core/wiki/Component-Features#mobile-support)
