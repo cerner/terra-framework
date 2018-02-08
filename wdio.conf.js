@@ -30,6 +30,9 @@ const config = {
 
   webpackPort,
   webpackConfig,
+  terra: {
+    selector: '[role="main"]',
+  },
 
   beforeHook() {
     // Being Terra tests are executed on an SPA, a full refresh is required
