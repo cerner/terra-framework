@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AppDelegate from 'terra-app-delegate';
 
-let nestedComponentIndex = 0;
-
-class DemoContainer extends React.Component {
+class TestExample extends React.Component {
   constructor(props) {
     super(props);
 
@@ -19,16 +17,16 @@ class DemoContainer extends React.Component {
   }
 
   disclose(size) {
+    const { disclosureType, nestedIndex } = this.props;
+
+    const newIndex = nestedIndex + 1;
     return () => {
       this.props.app.disclose({
-        preferredType: 'modal',
+        preferredType: disclosureType,
         size,
         content: {
-          key: `DemoContainer-${nestedComponentIndex += 1}`,
-          name: 'DemoContainer',
-          props: {
-            identifier: `DemoContainer-${nestedComponentIndex}`,
-          },
+          key: `DemoContainer-${newIndex}`,
+          component: <TestExample identifier={`DemoContainer-${newIndex}`} nestedIndex={newIndex} />,
         },
       });
     };
@@ -93,11 +91,15 @@ class DemoContainer extends React.Component {
   }
 }
 
-DemoContainer.propTypes = {
+TestExample.propTypes = {
   app: AppDelegate.propType,
   identifier: PropTypes.string,
+  disclosureType: PropTypes.string,
+  nestedIndex: PropTypes.number,
 };
 
-AppDelegate.registerComponentForDisclosure('DemoContainer', DemoContainer);
+TestExample.defaultProps = {
+  nestedIndex: 0,
+};
 
-export default DemoContainer;
+export default TestExample;

@@ -7,20 +7,17 @@ import ReadMe from '../docs/README.md';
 import { version } from '../package.json';
 
 // Component Source
-import ModalManagerSrc from '!raw-loader!../src/ModalManager.jsx';
+import DisclosureManagerSrc from '!raw-loader!../src/DisclosureManager.jsx';
 
-// Examples
-import ModalManagerExample from './index-examples/ModalManagerExample';
-
-const ModalManagerExamples = () => (
+const DisclosureManagerExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
+
     <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
-    <ModalManagerExample />
-    <br />
-    <PropsTable id="props-table" src={ModalManagerSrc} />
+
+    <PropsTable id="props-table" src={DisclosureManagerSrc} />
   </div>
 );
 
-export default ModalManagerExamples;
+export default DisclosureManagerExamples;
