@@ -67,12 +67,6 @@ const ApplicationHeaderUtility = ({
   const iconClassNames = cx([
     'icon',
   ]);
-  const menuConfig = {
-    key: { },
-    key: { },
-    key: { },
-    key: { },
-  };
 
   const userData = (<UserData userDetail={this.props.userDetail} userName={this.props.userName} userPhoto={this.props.userPhoto} />);
   const menu = (<UtilityMenu onChange={this.props.onChange} userData={userData} />);

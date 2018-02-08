@@ -8,6 +8,9 @@ import 'terra-base/lib/baseStyles';
 // import MenuDivider from './MenuDivider';
 import Utils from './_Utils';
 import MenuPage from './_UtilityMenuPage';
+import styles from './_UtilityMenu.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -33,51 +36,62 @@ const propTypes = {
 };
 
 const defaultProps = {
+  isHeightbounded: undefined,
+  rootMenuKey: null,
+  userData: null,
 };
 
 class Menu extends React.Component {
   constructor(props) {
     super(props);
     const map = new Map();
-    this.handleOnClick = this.handleOnClick.bind(this);
+    this.handleOnChange = this.handleOnChange.bind(this);
     this.getChildren = this.getChildren.bind(this);
     this.getTitle = this.getTitle.bind(this);
-    this.hasChildren = this.hasChildren.bind(this);
+    this.createMap = this.createMap.bind(this);
+    this.handleRequestBack = this.handleRequestBack.bind(this);
+    this.pop = this.pop.bind(this);
+    this.push = this.push.bind(this);
     // TODO: Remove internal generation and have consumers pass in config with additional items.
-    this.props.menuConfig = Utils.generateConfig();
+    this.props.menuConfig = Utils.generateConfig(this.props.userData);
     this.props.rootMenuKey = Utils.ROOTKEY;
-    this.state = { currentKey: this.props.rootMenuKey, map: this.createMap(map) };
+
+    this.state = {
+      currentKey: this.props.rootMenuKey,
+      previousKeyStack: [],
+      map: this.createMap(this.props.menuConfig, map),
+    };
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props.children.length !== nextProps.children.length) {
-  //     this.setState({ stack: [this] });
-  //   }
-  // }
-
   /**
-   * Return all children objects one level below the key.
+   * Return children of the specified object
    * @param {*} key
    */
   getChildren(key) {
-    return this.state.map.get(key)[1];
+    return this.state.map.get(key).children;
   }
 
   /**
-   * Return the title of the specified key.
+   * Return the title of the specified object
    * @param {*} key
    */
   getTitle(key) {
-    return this.state.map.get(key)[0];
+    return this.state.map.get(key).title;
   }
 
   /**
    * Recursively create a map from the menu config with entries for each key.
-   * A key's value is a 2D array containing the title and children.
-   * Example: {"key" => [["Page Title"], [{key: "child-one", title: "First Item"}, {key: "child-two", title: "Second Item"}]}
+   * A key's value is an object containing the title, content, and children.
+   * Example: {"key" => {title: "Page Title", children: [{key: "child-one", title: "First Item"}, {key: "child-two", title: "Second Item"}]}
    */
   createMap(config, map) {
-    map.set(config.key, [[config.title], config.children]);
+    map.set(
+      config.key,
+      { title: config.title,
+        content: config.content,
+        children: config.children,
+      },
+    );
     if ('children' in config) {
       config.children.forEach((object) => {
         this.createMap(object, map);
@@ -85,22 +99,39 @@ class Menu extends React.Component {
     }
   }
 
-  handleOnClick(event, key) {
+  handleOnChange(key) {
     if (!this.getChildren()) {
-      this.props.onChange(event);
+      this.props.onChange(event, key);
     } else {
-      this.setState({ currentKey: key });
+      this.setState({
+        previousKey: this.push(this.state.currentKey),
+        currentKey: key,
+      });
     }
   }
-  // setPageDimensions(node) {
-  //   if (node) {
-  //     this.pageHeight = node.clientHeight;
-  //     this.pageWidth = node.clientWidth;
-  //   } else {
-  //     this.pageHeight = undefined;
-  //     this.pageWidth = undefined;
-  //   }
-  // }
+
+  handleRequestBack() {
+    this.setState({ currentKey: this.pop() });
+  }
+
+  pop() {
+    if (this.state.stack.length > 1) {
+      const newStack = this.state.previousKeyStack.slice();
+      newStack.pop();
+      this.setState({ previousKeyStack: newStack });
+    }
+  }
+
+  push(item) {
+    const newStack = this.state.previousKeyStack.slice();
+    newStack.push(item);
+    this.setState({ previousKeyStack: newStack });
+  }
+
+  constMenuClassNames = cx([
+    'menu',
+    customProps.classNames,
+  ])
 
   render() {
     const {
@@ -110,18 +141,15 @@ class Menu extends React.Component {
     } = this.props;
 
     const currentKey = this.state.currentKey;
-
+// if previous key exists, display back button
+// if on base page, display logout button
     return (
-      <div {...customProps} >
-        <div>{this.getTitle(currentKey)}</div>
+      <div {...customProps} classNames={constMenuClassNames} >
+        {/* <div>{this.getTitle(currentKey)}{}</div> */}
         <MenuPage
-          title={this.getTitle(currentKey)}
-          key={this.state.currentKey}
-          onChange={this.props.onChange}
-          onClick={this.handleOnClick}
-        >
-          {this.getChildren(currentKey)}
-        </MenuPage>
+          pageData={this.state.map.get(currentKey)}
+          onChange={this.handleOnChange}
+        />
       </div>
     );
   }
@@ -129,11 +157,5 @@ class Menu extends React.Component {
 
 Menu.propTypes = propTypes;
 Menu.defaultProps = defaultProps;
-// Menu.Item = MenuItem;
-// Menu.ItemGroup = MenuItemGroup;
-// Menu.Divider = MenuDivider;
-// Menu.Opts = {
-//   widths: Popup.Opts.widths,
-// };
 
 export default Menu;
