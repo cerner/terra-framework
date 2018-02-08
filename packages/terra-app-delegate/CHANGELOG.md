@@ -9,6 +9,7 @@ Unreleased
 
 ### Changed
 * Updated README to reflect new API
+* Updated AppDelegate PropType to use custom validator
 
 1.10.0 - (January 23, 2018)
 ------------------
