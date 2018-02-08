@@ -15,7 +15,7 @@ const propTypes = {
   /**
    * Navigational links that will generate list items that will update the path. These paths are matched with react-router to selection.
    */
-  navigationItems: PropTypes.arrayOf(PropTypes.shape({
+  menuItems: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
     key: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
@@ -23,62 +23,47 @@ const propTypes = {
   /**
    * Navigational links that will generate list items that will update the path. These paths are matched with react-router to selection.
    */
-  onChange: PropTypes.func,
+  onChange: PropTypes.func.isRequired,
   /**
-    * Delegate prop that is added by the NavigationLayout.
-  */
-  routingStackDelegate: RoutingStackDelegate.propType,
+   * Delegate prop that is added by the NavigationLayout.
+   */
+  routingStackDelegate: RoutingStackDelegate.propType.isRequired,
+  /**
+   * Delegate prop that is added by the NavigationLayout.
+   */
+  selectedKey: PropTypes.string,
 };
 
 const defaultProps = {
-  navigationItems: [],
+  menuItems: [],
 };
 
-class NavigationSideMenu extends React.Component {
-  constructor(props) {
-    super(props);
+const NavigationSideMenu = ({
+  menuItems,
+  onChange,
+  routingStackDelegate,
+  selectedKey,
+  ...customProps
+}) => {
+  const listItems = menuItems.map(item => (
+    <List.Item
+      content={<div className={cx(['list-item', { 'is-selected': item.key === selectedKey }])}>{item.text}</div>}
+      key={item.key}
+      onClick={(event) => { this.props.onChange(event, item.key); }}
+    />
+  ));
 
-    this.handleOnChange = this.handleOnChange.bind(this);
-  }
+  // showRoot: PropTypes.func,
+  const actionHeader = <ActionHeader className={cx(['header'])} onBack={routingStackDelegate.showParent} />;
 
-  handleOnChange(event, key) {
-    if (this.props.onChange) {
-      this.props.onChange(event, key);
-    }
-  }
-
-  render() {
-    const {
-      navigationItems,
-      onChange,
-      routingStackDelegate,
-      ...customProps
-    } = this.props; // eslint-disable-line no-unused-vars
-
-    const listItems = navigationItems.map(link => (
-      <List.Item
-        content={
-          <div className={cx(['list-item'])}>
-            {link.text}
-          </div>
-        }
-        key={link.path}
-        onClick={(event) => { this.handleOnChange(event, link.key); }}
-      />
-    ));
-
-    // showRoot: PropTypes.func,
-    const actionHeader = <ActionHeader className={cx(['header'])} onBack={routingStackDelegate.showParent} />;
-
-    return (
-      <ContentContainer {...customProps} className={cx(['side-menu'])} header={actionHeader} fill>
-        <List className={cx(['list'])}>
-          {listItems}
-        </List>
-      </ContentContainer>
-    );
-  }
-}
+  return (
+    <ContentContainer {...customProps} header={actionHeader} fill>
+      <List>
+        {listItems}
+      </List>
+    </ContentContainer>
+  );
+};
 
 NavigationSideMenu.propTypes = propTypes;
 NavigationSideMenu.defaultProps = defaultProps;

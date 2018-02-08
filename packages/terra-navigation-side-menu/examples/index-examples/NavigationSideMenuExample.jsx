@@ -5,6 +5,7 @@ const NavigationSideMenuExample = () => (
   <div style={{ height: '450px', width: '300px' }}>
     <NavigationSideMenu
       menuItems={[]}
+      onChange={() => {}}
     />
   </div>
 );
