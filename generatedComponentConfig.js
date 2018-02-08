@@ -10,6 +10,7 @@ import TerraEmbeddedComponentIndex from './packages/terra-embedded-component/exa
 import TerraLayoutIndex from './packages/terra-layout/examples/Index.site-page';
 import TerraModalManagerIndex from './packages/terra-modal-manager/examples/Index.site-page';
 import TerraNavigationLayoutIndex from './packages/terra-navigation-layout/examples/Index.site-page';
+import TerraNavigationSideMenuIndex from './packages/terra-navigation-side-menu/examples/Index.site-page';
 import TerraThemeProviderIndex from './packages/terra-theme-provider/examples/Index.site-page';
 
 // Component Test Examples
@@ -25,6 +26,7 @@ import LayoutNoMenu from './packages/terra-layout/examples/test-examples/LayoutN
 import ModalManagerDefault from './packages/terra-modal-manager/examples/test-examples/ModalManagerDefault';
 import NavigationLayoutBasic from './packages/terra-navigation-layout/examples/test-examples/NavigationLayoutBasic';
 import NavigationLayoutComplex from './packages/terra-navigation-layout/examples/test-examples/NavigationLayoutComplex';
+import NavigationSideMenuDefault from './packages/terra-navigation-side-menu/examples/test-examples/NavigationSideMenuDefault';
 import DefaultThemeProvider from './packages/terra-theme-provider/examples/test-examples/DefaultThemeProvider';
 import GlobalSwitchThemes from './packages/terra-theme-provider/examples/test-examples/GlobalSwitchThemes';
 import GlobalThemeProvider from './packages/terra-theme-provider/examples/test-examples/GlobalThemeProvider';
@@ -208,6 +210,24 @@ const componentConfig = {
         name: 'Navigation Layout Complex',
         path: '/navigation-layout-complex',
         component: NavigationLayoutComplex,
+      },
+    ],
+  },
+  'terra-navigation-side-menu': {
+    name: 'Navigation Side Menu',
+    path: '/navigation-side-menu',
+    pages: [
+      {
+        name: 'Index',
+        path: '/index',
+        component: TerraNavigationSideMenuIndex,
+      },
+    ],
+    tests: [
+      {
+        name: 'Navigation Side Menu Default',
+        path: '/navigation-side-menu-default',
+        component: NavigationSideMenuDefault,
       },
     ],
   },

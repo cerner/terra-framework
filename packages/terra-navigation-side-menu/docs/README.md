@@ -15,7 +15,15 @@ import React from 'react';
 import NavigationSideMenu from 'terra-navigation-side-menu';
 
 <NavigationSideMenu
-  config={content}
+  menuItems={[
+    { key: 'submenu1', text: 'Sub Menu 1' },
+    { key: 'submenu2', text: 'Sub Menu 2' },
+    { key: 'submenu3', text: 'Sub Menu 3' },
+    { key: 'submenu4', text: 'Sub Menu 4' },
+  ]}
+  onChange={this.handleOnChange}
+  selectedKey={this.state.selectedKey}
+  title="Menu"
 />
 ```
 

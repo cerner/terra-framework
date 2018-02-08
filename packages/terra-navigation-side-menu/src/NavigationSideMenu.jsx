@@ -11,6 +11,10 @@ import styles from './NavigationSideMenu.scss';
 
 const cx = classNames.bind(styles);
 
+const KEYCODES = {
+  ENTER: 13,
+};
+
 const propTypes = {
   /**
    * Navigational links that will generate list items that will update the path. These paths are matched with react-router to selection.
@@ -27,11 +31,15 @@ const propTypes = {
   /**
    * Delegate prop that is added by the NavigationLayout.
    */
-  routingStackDelegate: RoutingStackDelegate.propType.isRequired,
+  routingStackDelegate: RoutingStackDelegate.propType,
   /**
    * Delegate prop that is added by the NavigationLayout.
    */
   selectedKey: PropTypes.string,
+  /**
+   * Delegate prop that is added by the NavigationLayout.
+   */
+  title: PropTypes.string,
 };
 
 const defaultProps = {
@@ -43,18 +51,32 @@ const NavigationSideMenu = ({
   onChange,
   routingStackDelegate,
   selectedKey,
+  title,
   ...customProps
 }) => {
-  const listItems = menuItems.map(item => (
-    <List.Item
-      content={<div className={cx(['list-item', { 'is-selected': item.key === selectedKey }])}>{item.text}</div>}
-      key={item.key}
-      onClick={(event) => { this.props.onChange(event, item.key); }}
-    />
-  ));
+  const listItems = menuItems.map((item) => {
+    const content = (
+      <div id={item.id} className={cx(['list-item', { 'is-selected': item.key === selectedKey }])}>
+        {item.text}
+      </div>
+    );
+    return (
+      <List.Item
+        tabIndex="0"
+        content={content}
+        key={item.key}
+        onClick={(event) => { onChange(event, item.key); }}
+        onKeyDown={(event) => { if (event.nativeEvent.keyCode === KEYCODES.ENTER) { onChange(event, item.key); } }}
+      />
+    );
+  });
 
   // showRoot: PropTypes.func,
-  const actionHeader = <ActionHeader className={cx(['header'])} onBack={routingStackDelegate.showParent} />;
+  let onBack;
+  if (routingStackDelegate) {
+    onBack = routingStackDelegate.showParent;
+  }
+  const actionHeader = <ActionHeader className={cx(['header'])} onBack={onBack} title={title} />;
 
   return (
     <ContentContainer {...customProps} header={actionHeader} fill>

@@ -20,10 +20,11 @@ const NavigationSideMenuExamples = () => (
     <Markdown id="readme" src={ReadMe} />
     <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
     <IndexTemplate
-      title="Menu - Wireframe"
+      title="Navigation Side Menu Example"
       example={<NavigationSideMenuExample />}
       exampleSrc={NavigationSideMenuExampleSrc}
     />
+    <br />
     <PropsTable id="props-table" src={NavigationSideMenuSrc} />
   </div>
 );

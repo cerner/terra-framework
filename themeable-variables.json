@@ -137,6 +137,14 @@
     "--terra-mock-color": "#fff",
     "--terra-mock-display": "inline"
   },
+  "NavigationSideMenu": {
+    "--terra-navigation-side-menu-item-color": "#1c1f21",
+    "--terra-navigation-side-menu-item-size": "1.071rem",
+    "--terra-navigation-side-menu-item-line-height": "3.214rem",
+    "--terra-navigation-side-menu-item-padding-right": "0.7143rem",
+    "--terra-navigation-side-menu-item-background-hover": "linear-gradient(-90deg, #fff, #f1f1f2)",
+    "--terra-navigation-side-menu-item-selected-background-image": "linear-gradient(-270deg, #fff, #e8e9ea)"
+  },
   "PopupArrow": {
     "--terra-popup-arrow-size": "11px",
     "--terra-popup-arrow-z-index": "7002",

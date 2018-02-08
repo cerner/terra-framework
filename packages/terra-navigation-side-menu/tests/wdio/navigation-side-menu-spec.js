@@ -1,0 +1,23 @@
+/* global browser, Terra, before */
+
+describe('Large size squished slide panel', () => {
+  before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/navigation-side-menu/navigation-side-menu-default');
+    browser.waitForVisible('#test-menu');
+    browser.moveToObject('#test-menu #test-item-3');
+  });
+
+  Terra.should.matchScreenshot('#test-menu', { selector: '#test-menu' });
+  Terra.should.beAccessible({ context: '#test-menu' });
+  Terra.should.themeEachCustomProperty('#test-menu', {
+    '--terra-navigation-side-menu-item-color': 'green',
+    '--terra-navigation-side-menu-item-size': '0.5rem',
+    '--terra-navigation-side-menu-item-line-height': '6rem',
+    '--terra-navigation-side-menu-item-padding-left': '2rem',
+    '--terra-navigation-side-menu-item-padding-right': '4rem',
+    '--terra-navigation-side-menu-item-background-hover': 'linear-gradient(-90deg, pink, blue)',
+    '--terra-navigation-side-menu-item-selected-background-image': 'linear-gradient(-270deg, pink, blue)',
+    '--terra-navigation-side-menu-item-selected-border-left': '1rem dotted orange',
+  });
+});
