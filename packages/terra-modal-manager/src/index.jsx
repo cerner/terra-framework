@@ -1,6 +1,4 @@
-import { connect } from 'react-redux';
-
-import ModalManager from './ModalManager';
+import ModalManager, { disclosureType } from './ModalManager';
 
 import modalManagerReducers from './reducers';
 import { open, close, push, pop, maximize, minimize, gainFocus, loseFocus } from './actions';
@@ -30,9 +28,11 @@ const mapDispatchToProps = dispatch => ({
 
 export { mapDispatchToProps };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ModalManager);
-
 const reducers = {
   modalManager: modalManagerReducers,
 };
 export { reducers };
+
+export default ModalManager;
+export { disclosureType };
+
