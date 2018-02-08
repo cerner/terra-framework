@@ -19,6 +19,7 @@ Once an item receives focus, the item will be provided with the 'disclose' funct
 The components rendered by the Aggregator are provided with an `aggregatorDelegate` prop for interacting with Aggregator state.
 
 `aggregatorDelegate` API:
+
 |Key|Description|
 |---|---|
 |hasFocus|A Boolean indicating whether or not the item currently has focus.|
@@ -31,6 +32,7 @@ The components rendered by the Aggregator are provided with an `aggregatorDelega
 By default, the components will be rendered by the Aggregator in the order given. An optional `render` prop can be provided that will override the default render logic.
 
 `render` Argument Object API:
+
 |Key|Description|
 |---|---|
 |`items`|An Array of components that were provided to the Aggregator as `items`, now containing an `aggregatorDelegate` prop. The order of this array matches that of the `items` prop value of the Aggregator.|
