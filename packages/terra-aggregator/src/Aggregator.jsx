@@ -78,65 +78,61 @@ class Aggregator extends React.Component {
     const { disclose } = this.props;
     const { focusedItemId } = this.state;
 
-    return Promise.resolve()
-      .then(() =>
-        /**
-         * Focus is released on the currently focused item to ensure a clean start for the next component receiving focus.
-         * The releaseFocus's Promise is returned and inserted into the Promise chain to prevent disclosures from occurring
-         * if the focus release fails.
-         */
-        this.releaseFocus(focusedItemId)
-          .then(() => {
-            this.setFocusState(itemId, Object.freeze(itemState || {}));
-          }),
-      )
-      .then(() => {
-        const focusRequestPayload = {};
+    return new Promise((resolve, reject) => {
+      this.releaseFocus(focusedItemId)
+        .then(() => {
+          this.setFocusState(itemId, Object.freeze(itemState || {}));
 
-        /**
-         * If the Aggregator is provided with disclosure functionality, the focus request is resolved with a custom
-         * disclose implementation.
-         */
-        if (disclose) {
-          focusRequestPayload.disclose = (data) => {
-            /**
-             * If the itemId no longer matches the focusedItemId, then the disclose is being called after
-             * the item has lost focus. This can happen if an Aggregator item caches the disclosue function they're given
-             * and calls it later.
-             */
-            if (this.state.focusedItemId !== itemId) {
-              return Promise.reject();
-            }
+          const focusRequestPayload = {};
 
-            return disclose(data)
-              .then(({ afterDismiss, dismissDisclosure, ...other }) => {
-                /**
-                 * The disclosure's dismissDisclosure instance is cached so it can be called later. If an Aggregator item is
-                 * currently presenting a disclosure and releases focus, we will call this function to force
-                 * the disclosure to close.
-                 */
-                this.forceDismissInstance = dismissDisclosure;
+          /**
+           * If the Aggregator is provided with disclosure functionality, the focus request is resolved with a custom
+           * disclose implementation.
+           */
+          if (disclose) {
+            focusRequestPayload.disclose = (data) => {
+              /**
+               * If the itemId no longer matches the focusedItemId, then the disclose is being called after
+               * the item has lost focus. This can happen if an Aggregator item caches the disclosue function they're given
+               * and calls it later.
+               */
+              if (this.state.focusedItemId !== itemId) {
+                return Promise.reject();
+              }
 
-                /**
-                 * A handler is added to the deferred afterDismiss promise chain to remove the cached dismissDisclosure instance (the disclosure is
-                 * closing, so it is no longer relevant). The handler also resets the focus state if focus is currently held by a component.
-                 */
-                afterDismiss.then(() => {
-                  this.forceDismissInstance = undefined;
+              return disclose(data)
+                .then(({ afterDismiss, dismissDisclosure, ...other }) => {
+                  /**
+                   * The disclosure's dismissDisclosure instance is cached so it can be called later. If an Aggregator item is
+                   * currently presenting a disclosure and releases focus, we will call this function to force
+                   * the disclosure to close.
+                   */
+                  this.forceDismissInstance = dismissDisclosure;
 
-                  if (this.state.focusedItemId) {
-                    this.resetFocusState();
-                  }
+                  /**
+                   * A handler is added to the deferred afterDismiss promise chain to remove the cached dismissDisclosure instance (the disclosure is
+                   * closing, so it is no longer relevant). The handler also resets the focus state if focus is currently held by a component.
+                   */
+                  afterDismiss.then(() => {
+                    this.forceDismissInstance = undefined;
+
+                    if (this.state.focusedItemId) {
+                      this.resetFocusState();
+                    }
+                  });
+
+                  // We return the same API so as not to disrupt the chain.
+                  return { afterDismiss, dismissDisclosure, ...other };
                 });
+            };
+          }
 
-                // We return the same API so as not to disrupt the chain.
-                return { afterDismiss, dismissDisclosure, ...other };
-              });
-          };
-        }
-
-        return focusRequestPayload;
-      });
+          resolve(focusRequestPayload);
+        })
+        .catch(() => {
+          reject();
+        });
+    });
   }
 
   releaseFocus(itemId, force) {
@@ -153,27 +149,30 @@ class Aggregator extends React.Component {
       return Promise.reject();
     }
 
-    return Promise.resolve()
-      .then(() => {
-        /**
-         * If forceDismissInstance is present, a disclosure must have been opened by the currently focused
-         * Aggregator item. Therefore, we will call the forceDismissInstance in order to keep things in sync. The promise
-         * returned by forceDismissInstance will be inserted into the Promise chain. If the promise is rejected,
-         * the Aggregator's focus state will not be reset.
-         *
-         * The focus is only reset if the disclosure was dismissed successfully.
-         */
-        if (this.forceDismissInstance) {
-          return this.forceDismissInstance().then(() => {
+    return new Promise((resolve, reject) => {
+      /**
+       * If forceDismissInstance is present, a disclosure must have been opened by the currently focused
+       * Aggregator item. Therefore, we will call the forceDismissInstance in order to keep things in sync. The promise
+       * returned by forceDismissInstance will be inserted into the Promise chain. If the promise is rejected,
+       * the Aggregator's focus state will not be reset.
+       *
+       * The focus is only reset if the disclosure was dismissed successfully.
+       */
+      if (this.forceDismissInstance) {
+        this.forceDismissInstance()
+          .then(() => {
             this.resetFocusState();
+            resolve();
+          })
+          .catch(() => {
+            reject();
           });
-        }
-
+      } else {
         // If a previous disclosure is not detected, we can immediately resolve and reset the focus.
-        return Promise.resolve().then(() => {
-          this.resetFocusState();
-        });
-      });
+        this.resetFocusState();
+        resolve();
+      }
+    });
   }
 
   renderItems() {
