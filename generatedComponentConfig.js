@@ -14,6 +14,8 @@ import TerraNavigationLayoutIndex from './packages/terra-navigation-layout/examp
 import TerraThemeProviderIndex from './packages/terra-theme-provider/examples/Index.site-page';
 
 // Component Test Examples
+import AggregatorStandalone from './packages/terra-aggregator/examples/test-examples/AggregatorStandalone';
+import AggregatorWithDisclosure from './packages/terra-aggregator/examples/test-examples/AggregatorWithDisclosure';
 import ApplicationHeaderDefault from './packages/terra-application-header-layout/examples/test-examples/ApplicationHeaderDefault';
 import ApplicationMenuDefault from './packages/terra-application-menu-layout/examples/test-examples/ApplicationMenuDefault';
 import DefaultApplicationName from './packages/terra-application-name/examples/test-examples/DefaultApplicationName';
@@ -41,6 +43,18 @@ const componentConfig = {
         name: 'Index',
         path: '/index',
         component: TerraAggregatorIndex,
+      },
+    ],
+    tests: [
+      {
+        name: 'Aggregator Standalone',
+        path: '/aggregator-standalone',
+        component: AggregatorStandalone,
+      },
+      {
+        name: 'Aggregator With Disclosure',
+        path: '/aggregator-with-disclosure',
+        component: AggregatorWithDisclosure,
       },
     ],
   },
