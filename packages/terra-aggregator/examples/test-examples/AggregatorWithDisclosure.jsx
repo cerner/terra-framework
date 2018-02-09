@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SlidePanelManager from 'terra-slide-panel-manager';
 import Aggregator from '../../src/Aggregator';
 import AggregatorItem from './components/AggregatorItem';
@@ -23,6 +24,10 @@ const AggregatorWrapper = ({ app }) => (
     items={items}
   />
 );
+
+AggregatorWrapper.propTypes = {
+  app: PropTypes.shape({}),
+};
 
 const AggregatorWithDisclosure = () => (
   <div id="test-aggregator" role="main" style={{ height: '500px' }}>
