@@ -8,19 +8,18 @@ const supportedAttributes = [
   'disclose', 'dismiss', 'closeDisclosure', 'goBack', 'maximize', 'minimize', 'requestFocus', 'releaseFocus', 'registerDismissCheck',
 ];
 
-const appDelegateFactory = (data) => {
-  const newInstance = {};
-  supportedAttributes.forEach((attribute) => {
-    if (data[attribute]) {
-      newInstance[attribute] = data[attribute];
-    }
-  });
-
-  return Object.freeze(newInstance);
-};
+class AppDelegateInstance {
+  constructor(data) {
+    supportedAttributes.forEach((attribute) => {
+      if (data[attribute]) {
+        this[attribute] = data[attribute];
+      }
+    });
+  }
+}
 
 const create = data => (
-  appDelegateFactory(data)
+  Object.freeze(new AppDelegateInstance(data))
 );
 
 const clone = (delegate, data) => {
@@ -50,16 +49,8 @@ const isEqual = (delegateA, delegateB) => {
 
 const AppDelegate = {
   propType: PropTypes.objectOf((propValue, key, componentName, location, propFullName) => {
-    if (typeof propValue !== 'object') {
-      return new Error(`Invalid '${propFullName}' prop supplied to ${componentName}. An Object was expected. Validation failed.`);
-    }
-
-    const keys = Object.keys(propValue);
-
-    for (let i = 0, length = keys.length; i < length; i += 1) {
-      if (supportedAttributes.indexOf(keys[i]) < 0) {
-        return new Error(`Invalid key '${keys[i]}' supplied to ${componentName}'s '${propFullName}' prop. Validation failed.`);
-      }
+    if (supportedAttributes.indexOf(key) < 0) {
+      return new Error(`Invalid key '${key}' supplied to ${componentName}'s '${propFullName}' prop. Validation failed.`);
     }
 
     return true;
