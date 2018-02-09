@@ -57,69 +57,117 @@ const defaultProps = {
   panelBehavior: 'overlay',
 };
 
-const LayoutSlidePanel = ({
-  isAnimated,
-  isOpen,
-  isToggleEnabled,
-  children,
-  panelBehavior,
-  panelContent,
-  size,
-  onToggle,
-  toggleText,
-  ...customProps
-  }) => {
-  const isTiny = size === 'tiny';
-  const isSmall = size === 'small';
-  const compactSize = isTiny || isSmall;
-  const isOverlay = compactSize ? true : panelBehavior === 'overlay';
-  const isOverlayOpen = isOpen && isOverlay;
-  const overlayBackground = compactSize ? 'dark' : 'clear';
+class LayoutSlidePanel extends React.Component {
+  constructor(props) {
+    super(props);
+    this.setPanelNode = this.setPanelNode.bind(this);
+    this.handleTransitionEnd = this.handleTransitionEnd.bind(this);
 
-  const slidePanelClassNames = cx([
-    'layout-slide-panel',
-    { 'is-open': isOpen },
-    { 'is-overlay': isOverlay },
-    { 'is-squish': !isOverlay },
-    { 'hover-toggle-enabled': !compactSize && isToggleEnabled },
-    customProps.className,
-  ]);
+    this.isHidden = !props.isOpen;
+  }
 
-  const panelClasses = cx([
-    'panel',
-    { 'is-tiny': isTiny },
-    { 'is-small': isSmall },
-    { 'is-animated': isAnimated && isOverlay && !!panelContent },
-  ]);
+  componentDidMount() {
+    if (this.panelNode) {
+      this.panelNode.addEventListener('transitionend', this.handleTransitionEnd);
+    }
+  }
 
-  const panel = (
-    <div className={panelClasses} aria-hidden={!isOpen ? 'true' : null}>
-      <HoverTarget
-        text={toggleText}
-        isOpen={isOpen || !isToggleEnabled}
-        hoverIsEnabled={!compactSize && isOverlay}
-        onHoverOff={() => { if (isOpen) { onToggle(); } }}
-        onHoverOn={() => { if (!isOpen) { onToggle(); } }}
-        onClick={onToggle}
+  componentDidUpdate() {
+    this.lastIsOpen = this.props.isOpen;
+  }
+
+  componentWillUnmount() {
+    if (this.panelNode) {
+      this.panelNode.removeEventListener('transitionend', this.handleTransitionEnd);
+    }
+  }
+
+  setPanelNode(node) {
+    this.panelNode = node;
+  }
+
+  handleTransitionEnd() {
+    if (!this.props.isOpen) {
+      this.panelNode.setAttribute('aria-hidden', true);
+      this.isHidden = true;
+    }
+  }
+
+  render() {
+    const {
+      isAnimated,
+      isOpen,
+      isToggleEnabled,
+      children,
+      panelBehavior,
+      panelContent,
+      size,
+      onToggle,
+      toggleText,
+      ...customProps
+    } = this.props;
+
+    // React 16.3 will be deprecating componentWillRecieveProps, and removed in 17, so code execution prior to render isn't possible.
+    // As a result of this change, we are executing the code in the render block.
+    if (this.props.isOpen && !this.lastIsOpen && this.panelNode) {
+      this.panelNode.setAttribute('aria-hidden', 'false');
+      this.isHidden = false;
+    }
+
+    const isTiny = size === 'tiny';
+    const isSmall = size === 'small';
+    const compactSize = isTiny || isSmall;
+    const isOverlay = compactSize ? true : panelBehavior === 'overlay';
+    const isOverlayOpen = isOpen && isOverlay;
+    const overlayBackground = compactSize ? 'dark' : 'clear';
+
+    const slidePanelClassNames = cx([
+      'layout-slide-panel',
+      { 'is-open': isOpen },
+      { 'is-overlay': isOverlay },
+      { 'is-squish': !isOverlay },
+      { 'hover-toggle-enabled': !compactSize && isToggleEnabled },
+      customProps.className,
+    ]);
+
+    const panelClasses = cx([
+      'panel',
+      { 'is-tiny': isTiny },
+      { 'is-small': isSmall },
+      { 'is-animated': isAnimated && isOverlay && !!panelContent },
+    ]);
+
+    const panel = (
+      <div className={panelClasses} aria-hidden={!isOpen ? 'true' : null}>
+        <HoverTarget
+          text={toggleText}
+          isOpen={isOpen || !isToggleEnabled}
+          hoverIsEnabled={!compactSize && isOverlay}
+          onHoverOff={() => { if (isOpen) { onToggle(); } }}
+          onHoverOn={() => { if (!isOpen) { onToggle(); } }}
+          onClick={onToggle}
+        >
+          {panelContent}
+        </HoverTarget>
+      </div>
+    );
+
+    return (
+      <div
+        {...customProps}
+        aria-hidden={this.isHidden ? 'true' : 'false'}
+        className={slidePanelClassNames}
+        ref={this.setPanelNode}
       >
-        {panelContent}
-      </HoverTarget>
-    </div>
-  );
-
-  return (
-    <div
-      {...customProps}
-      className={slidePanelClassNames}
-    >
-      {panel}
-      <OverlayContainer className={cx('content')}>
-        <Overlay isRelativeToContainer onRequestClose={onToggle} isOpen={isOverlayOpen} backgroundStyle={overlayBackground} />
-        {children}
-      </OverlayContainer>
-    </div>
-  );
-};
+        {panel}
+        <OverlayContainer className={cx('content')}>
+          <Overlay isRelativeToContainer onRequestClose={onToggle} isOpen={isOverlayOpen} backgroundStyle={overlayBackground} />
+          {children}
+        </OverlayContainer>
+      </div>
+    );
+  }
+}
 
 LayoutSlidePanel.propTypes = propTypes;
 LayoutSlidePanel.defaultProps = defaultProps;
