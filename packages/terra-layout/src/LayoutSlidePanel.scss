@@ -91,8 +91,4 @@
       width: calc(0.07143rem + #{var(--layout-slide-panel-desktop-panel-width, 18.571rem)});
     }
   }
-
-  .panel[aria-hidden='true'] {
-    visibility: hidden;
-  }
 }

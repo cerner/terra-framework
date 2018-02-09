@@ -61,6 +61,7 @@ class LayoutSlidePanel extends React.Component {
   constructor(props) {
     super(props);
     this.setPanelNode = this.setPanelNode.bind(this);
+    this.setContentNode = this.setContentNode.bind(this);
     this.handleTransitionEnd = this.handleTransitionEnd.bind(this);
 
     this.isHidden = !props.isOpen;
@@ -86,9 +87,13 @@ class LayoutSlidePanel extends React.Component {
     this.panelNode = node;
   }
 
+  setContentNode(node) {
+    this.contentNode = node;
+  }
+
   handleTransitionEnd() {
-    if (!this.props.isOpen) {
-      this.panelNode.setAttribute('aria-hidden', true);
+    if (!this.props.isOpen && this.contentNode) {
+      this.contentNode.setAttribute('aria-hidden', true);
       this.isHidden = true;
     }
   }
@@ -109,8 +114,8 @@ class LayoutSlidePanel extends React.Component {
 
     // React 16.3 will be deprecating componentWillRecieveProps, and removed in 17, so code execution prior to render isn't possible.
     // As a result of this change, we are executing the code in the render block.
-    if (this.props.isOpen && !this.lastIsOpen && this.panelNode) {
-      this.panelNode.setAttribute('aria-hidden', 'false');
+    if (this.props.isOpen && !this.lastIsOpen && this.contentNode) {
+      this.contentNode.setAttribute('aria-hidden', 'false');
       this.isHidden = false;
     }
 
@@ -138,8 +143,10 @@ class LayoutSlidePanel extends React.Component {
     ]);
 
     const panel = (
-      <div className={panelClasses} aria-hidden={!isOpen ? 'true' : null}>
+      <div className={panelClasses} aria-hidden={!isOpen ? 'true' : null} ref={this.setPanelNode}>
         <HoverTarget
+          isContentHidden={this.isHidden}
+          contentRefCallback={this.setContentNode}
           text={toggleText}
           isOpen={isOpen || !isToggleEnabled}
           hoverIsEnabled={!compactSize && isOverlay}
@@ -155,9 +162,7 @@ class LayoutSlidePanel extends React.Component {
     return (
       <div
         {...customProps}
-        aria-hidden={this.isHidden ? 'true' : 'false'}
         className={slidePanelClassNames}
-        ref={this.setPanelNode}
       >
         {panel}
         <OverlayContainer className={cx('content')}>
