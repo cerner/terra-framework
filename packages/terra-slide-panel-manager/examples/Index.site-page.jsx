@@ -7,20 +7,24 @@ import ReadMe from '../docs/README.md';
 import { version } from '../package.json';
 
 // Component Source
-import ModalManagerSrc from '!raw-loader!../src/ModalManager.jsx';
+import SlidePanelManagerSrc from '!raw-loader!../src/SlidePanelManager.jsx';
 
 // Examples
-import ModalManagerExample from './index-examples/ModalManagerExample';
+import SlidePanelManagerExample from './index-examples/SlidePanelManagerExample';
 
-const ModalManagerExamples = () => (
+const SlidePanelManagerExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
     <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
-    <ModalManagerExample />
+    <h3>Overlay Example</h3>
+    <SlidePanelManagerExample behavior="overlay" />
     <br />
-    <PropsTable id="props-table" src={ModalManagerSrc} />
+    <h3>Squish Example</h3>
+    <SlidePanelManagerExample behavior="squish" />
+    <br />
+    <PropsTable id="props-table" src={SlidePanelManagerSrc} />
   </div>
 );
 
-export default ModalManagerExamples;
+export default SlidePanelManagerExamples;
