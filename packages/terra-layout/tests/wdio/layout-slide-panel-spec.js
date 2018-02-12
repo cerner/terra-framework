@@ -27,6 +27,7 @@ describe('Toggle the slide panel double click', () => {
     browser.url('/#/raw/tests/layout/layout-slide-panel-example');
     browser.click('#test-toggle-1');
     browser.waitForExist('[class*=_content-section_][aria-hidden="false"]');
+    browser.pause(150);
     browser.click('#test-toggle-2');
     browser.waitForExist('[class*=_content-section_][aria-hidden="true"]');
   });

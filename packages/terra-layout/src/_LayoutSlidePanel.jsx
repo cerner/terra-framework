@@ -63,6 +63,7 @@ class LayoutSlidePanel extends React.Component {
     this.setPanelNode = this.setPanelNode.bind(this);
     this.setContentNode = this.setContentNode.bind(this);
     this.handleTransitionEnd = this.handleTransitionEnd.bind(this);
+    this.preparePanelForTransition = this.preparePanelForTransition.bind(this);
 
     this.isHidden = !props.isOpen;
   }
@@ -98,6 +99,16 @@ class LayoutSlidePanel extends React.Component {
     }
   }
 
+  preparePanelForTransition() {
+    // React 16.3 will be deprecating componentWillRecieveProps and componentWillUpdate, and removed in 17, so code execution prior to render becomes difficult.
+    // As a result of this change, we are executing the code in the render block.
+    if (this.props.isOpen && !this.lastIsOpen && this.panelNode) {
+      // If the panel is opening remove the hidden attribute so the animation performs correctly.
+      this.contentNode.setAttribute('aria-hidden', 'false');
+      this.isHidden = false;
+    }
+  }
+
   render() {
     const {
       isAnimated,
@@ -112,12 +123,7 @@ class LayoutSlidePanel extends React.Component {
       ...customProps
     } = this.props;
 
-    // React 16.3 will be deprecating componentWillRecieveProps, and removed in 17, so code execution prior to render isn't possible.
-    // As a result of this change, we are executing the code in the render block.
-    if (this.props.isOpen && !this.lastIsOpen && this.contentNode) {
-      this.contentNode.setAttribute('aria-hidden', 'false');
-      this.isHidden = false;
-    }
+    this.preparePanelForTransition();
 
     const isTiny = size === 'tiny';
     const isSmall = size === 'small';
