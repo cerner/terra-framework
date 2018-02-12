@@ -24,7 +24,7 @@ const KEYCODES = {
   RIGHT_ARROW: 39,
 };
 
-const generateConfig = (userData) => ({
+const generateConfig = userData => ({
   key: 'menu',
   title: 'Menu',
   children: [
@@ -75,38 +75,38 @@ const generateConfig = (userData) => ({
 });
 
 const ROOTKEY = 'menu';
-/**
- * Recursively traverses a config file and genereates menu pages and it's associated menu items.
- * @param {*} config
- */
-generateMenuPage(config) {
-  const itemArray = [];
-  if ('children' in config) {
-    config.children.forEach((object) => {
-      const menuItem = (
-        <MenuItem
-          key={object.key}
-          content={object.content || object.title}
-        />
-      )
-      itemArray.push(menuItem);
-      this.generateMenuPage(object);
-    });
-  } else {
-    return;
-  }
-  // console.log('menu page');
-  const menuPage = (
-    <MenuPage
-      title={config.title}
-      key={config.key}
-      onRequestBack={this.pop}
-      onRequestClose={this.push}
-      index={}
-    >
-      {itemArray}
-    </MenuPage>);
-}
+// /**
+//  * Recursively traverses a config file and genereates menu pages and it's associated menu items.
+//  * @param {*} config
+//  */
+// generateMenuPage(config) {
+//   const itemArray = [];
+//   if ('children' in config) {
+//     config.children.forEach((object) => {
+//       const menuItem = (
+//         <MenuItem
+//           key={object.key}
+//           content={object.content || object.title}
+//         />
+//       )
+//       itemArray.push(menuItem);
+//       this.generateMenuPage(object);
+//     });
+//   } else {
+//     return;
+//   }
+//   // console.log('menu page');
+//   const menuPage = (
+//     <MenuPage
+//       title={config.title}
+//       key={config.key}
+//       onRequestBack={this.pop}
+//       onRequestClose={this.push}
+//       index={}
+//     >
+//       {itemArray}
+//     </MenuPage>);
+// }
 
 const Utils = {
   isFullScreen,

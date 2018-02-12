@@ -3,17 +3,13 @@ import React from 'react';
 import ApplicationHeaderLayout from 'terra-application-header-layout';
 import Popup from 'terra-popup';
 import Image from 'terra-image';
+import 'terra-base/lib/baseStyles';
 import LogoExample from 'terra-application-header-layout/examples/index-examples/LogoExample';
 import NavigationExample from 'terra-application-header-layout/examples/index-examples/NavigationExample';
 import ToggleExample from 'terra-application-header-layout/examples/index-examples/ToggleExample';
 import ApplicationHeaderUtility from '../../lib/ApplicationHeaderUtility';
 
-import 'terra-base/lib/baseStyles';
-
 // import styles from '.ApplicationHeaderUtilityStandard.scss';
-const propTypes = {
-    app: AppDelegate.propType
-};
 
 class MockApplicationHeader extends React.Component {
   static handleOnChange(event, key) {
@@ -25,12 +21,12 @@ class MockApplicationHeader extends React.Component {
     this.onDiscloseUtility = this.onDiscloseUtility.bind(this);
     this.handleRequestClose = this.handleRequestClose.bind(this);
     this.setContentNode = this.setContentNode.bind(this);
-    this.state = { isUtilityOpen: false };
+    this.state = { utilityComponent: false };
   }
 
   onDiscloseUtility(utility) {
-    if (utility && !this.state.isUtilityOpen) {
-      this.setState({ isUtilityOpen: true });
+    if (utility) {
+      this.setState({ utilityComponent: utility });
     }
   }
 
@@ -38,6 +34,7 @@ class MockApplicationHeader extends React.Component {
     if (this.contentNode) {
       return this.contentNode.querySelector('[data-application-header-utility]');
     }
+    return null;
   }
 
   setContentNode(node) {
@@ -46,40 +43,42 @@ class MockApplicationHeader extends React.Component {
 
   handleRequestClose() {
     this.popupContent = null;
-    this.setState({ isUtilityOpen: false });
+    this.setState({ utilityComponent: null });
   }
 
   render() {
     let popup;
-    if (this.popupContent) {
+    if (this.state.utilityComponent) {
       popup = (
         <Popup
           contentHeight="auto"
           contentWidth="240"
           isArrowDisplayed
-          isOpen={this.state.isUtilityOpen}
+          isOpen
           onRequestClose={this.handleRequestClose}
           targetRef={this.getTargetRef}
         >
-          {this.popupContent}
+          {this.state.utilityComponent}
         </Popup>
       );
     }
 
     const image = <Image variant="rounded" src="https://github.com/cerner/terra-core/raw/master/terra.png" height="26px" width="26px" isFluid />;
-
+    const utilities = (
+      <ApplicationHeaderUtility
+        onChange={MockApplicationHeader.handleOnChange}
+        onDisclose={this.onDiscloseUtility}
+        userDetail={'Admin'}
+        userName={'User Name'}
+        userPhoto={image}
+        data-application-header-utility
+      />
+    );
     return (
       <div ref={this.setContentNode}>
         <ApplicationHeaderLayout
           logo={<LogoExample size="small" />}
-          utilities={
-            <ApplicationHeaderUtility
-              onChange={MockApplicationHeader.handleOnChange}
-              onDiscloseUtilityMenu={this.onDiscloseUtility}
-              userDetail={'Admin'}
-              userName={'User Name'}
-              userPhoto={image}
-            />}
+          utilities={utilities}
           navigation={<NavigationExample size="small" />}
           toggle={<ToggleExample size="small" />}
         />
@@ -88,7 +87,5 @@ class MockApplicationHeader extends React.Component {
     );
   }
 }
-
-MockApplicationHeader.propTypes = this.propTypes;
 
 export default MockApplicationHeader;

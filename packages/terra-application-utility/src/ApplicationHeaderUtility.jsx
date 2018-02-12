@@ -24,11 +24,7 @@ const propTypes = {
     /**
    * The function that discloses the menu.
    */
-  onDiscloseUtilityMenu: PropTypes.func.isRequired,
-  /**
-   *
-   */
-  rootPageKey: PropTypes.string,
+  onDisclose: PropTypes.func.isRequired,
   /**
    * More information about the user.
    */
@@ -43,41 +39,61 @@ const propTypes = {
   userPhoto: PropTypes.element.isRequired,
 };
 
-const ApplicationHeaderUtility = ({
-  onChange,
-  onDiscloseUtilityMenu,
-  userDetail,
-  userName,
-  userPhoto,
-  ...customProps
-}) => {
-  const utilityClassNames = cx([
-    'header-utility',
-    customProps.className,
-  ]);
+class ApplicationHeaderUtility extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleOnClick = this.handleOnClick.bind(this);
+    this.createContent = this.createContent.bind(this);
+  }
 
-  const userPhotoClassNames = cx([
-    'user-photo',
-  ]);
+  handleOnClick() {
+    if (this.props.onDisclose) {
+      const content = this.createContent();
+      this.props.onDisclose(content);
+    }
+  }
 
-  const userNameClassNames = cx([
-    'user-name',
-  ]);
+  createContent() {
+    const userData = (<UserData userDetail={this.props.userDetail} userName={this.props.userName} userPhoto={this.props.userPhoto} />);
+    return <UtilityMenu onChange={this.props.onChange} userData={userData} />;
+  }
 
-  const iconClassNames = cx([
-    'icon',
-  ]);
+  render() {
+    const {
+      onChange,
+      onDisclose,
+      userDetail,
+      userName,
+      userPhoto,
+      ...customProps
+    } = this.props;
 
-  const userData = (<UserData userDetail={this.props.userDetail} userName={this.props.userName} userPhoto={this.props.userPhoto} />);
-  const menu = (<UtilityMenu onChange={this.props.onChange} userData={userData} />);
-  return (
-    <Button {...customProps} className={utilityClassNames} onClick={this.props.onDiscloseUtilityMenu(menu)} variant="link">
-      <span className={userPhotoClassNames}>{userPhoto} </span>
-      <span className={userNameClassNames}>{userName} </span>
-      {<IconChevronDown className={iconClassNames} />}
-    </Button>
-  );
-};
+    const utilityClassNames = cx([
+      'header-utility',
+      customProps.className,
+    ]);
+
+    const userPhotoClassNames = cx([
+      'user-photo',
+    ]);
+
+    const userNameClassNames = cx([
+      'user-name',
+    ]);
+
+    const iconClassNames = cx([
+      'icon',
+    ]);
+
+    return (
+      <Button {...customProps} className={utilityClassNames} onClick={this.handleOnClick} variant="link">
+        <span className={userPhotoClassNames}>{userPhoto} </span>
+        <span className={userNameClassNames}>{userName} </span>
+        {<IconChevronDown className={iconClassNames} />}
+      </Button>
+    );
+  }
+}
 
 ApplicationHeaderUtility.propTypes = propTypes;
 

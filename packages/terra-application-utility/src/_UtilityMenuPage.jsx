@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+// import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-import styles from './_UtilityMenuPage.scss';
+import Arrange from 'terra-arrange';
+// import styles from './_UtilityMenuPage.scss';
 
-const cx = classNames.bind(styles);
+// const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -21,23 +22,31 @@ const propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
-const UtilityMenuPage = ({
-  pageData,
-  onChange,
-}) => {
-  const pageClassNames = cx([
-    'page',
-  ]);
+class UtilityMenuPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleOnClick = this.handleOnClick.bind(this);
+  }
 
-  return (
-    <ul className={pageClassNames} >
-      {pageData.children.map(child => (
-        <li onClick={onChange(child.key)} >{child.title || child.content}</li>
-      ))}
-    </ul>
-  );
-};
+  // handleOnClick(key) {
+  //   this.props.onChange(key);
+  // }
 
+  render() {
+    const {
+      pageData,
+      onChange,
+    } = this.props;
+
+    return (
+      <ul>
+        {pageData.children.map(child => (
+          <li><Arrange onClick={(event) => { onChange(event, child.key); }}>{child.title || child.content}</Arrange></li>
+        ))}
+      </ul>
+    );
+  }
+}
 
 UtilityMenuPage.propTypes = propTypes;
 

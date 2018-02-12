@@ -1,5 +1,5 @@
 import React from 'react';
-import ApplicationUtility from '../../src/ApplicationUtility';
+import ApplicationUtility from '../../src/ApplicationHeaderUtility';
 
 describe('ApplicationUtility', () => {
   const defaultRender = <ApplicationUtility />;

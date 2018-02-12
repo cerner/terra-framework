@@ -17,10 +17,10 @@ const propTypes = {
    *
    */
   isHeightbounded: PropTypes.func,
-  /**
-   * Key based object containing menu page data
-   */
-  menuConfig: PropTypes.object,
+  // /**
+  //  * Key based object containing menu page data
+  //  */
+  // menuConfig: PropTypes.object,
   /**
    * Callback function indicating a close condition was met, should be combined with isOpen for state management.
    */
@@ -41,7 +41,7 @@ const defaultProps = {
   userData: null,
 };
 
-class Menu extends React.Component {
+class UtilityMenu extends React.Component {
   constructor(props) {
     super(props);
     const map = new Map();
@@ -53,13 +53,13 @@ class Menu extends React.Component {
     this.pop = this.pop.bind(this);
     this.push = this.push.bind(this);
     // TODO: Remove internal generation and have consumers pass in config with additional items.
-    this.props.menuConfig = Utils.generateConfig(this.props.userData);
-    this.props.rootMenuKey = Utils.ROOTKEY;
-
+    // this.props.menuConfig = Utils.generateConfig(this.props.userData);
+    // this.props.rootMenuKey = Utils.ROOTKEY;
+    this.createMap(Utils.generateConfig(this.props.userData), map);
     this.state = {
-      currentKey: this.props.rootMenuKey,
+      currentKey: Utils.ROOTKEY,
       previousKeyStack: [],
-      map: this.createMap(this.props.menuConfig, map),
+      map,
     };
   }
 
@@ -99,8 +99,8 @@ class Menu extends React.Component {
     }
   }
 
-  handleOnChange(key) {
-    if (!this.getChildren()) {
+  handleOnChange(event, key) {
+    if (!this.getChildren(key)) {
       this.props.onChange(event, key);
     } else {
       this.setState({
@@ -128,11 +128,6 @@ class Menu extends React.Component {
     this.setState({ previousKeyStack: newStack });
   }
 
-  constMenuClassNames = cx([
-    'menu',
-    customProps.classNames,
-  ])
-
   render() {
     const {
       onChange,
@@ -140,11 +135,16 @@ class Menu extends React.Component {
       ...customProps
     } = this.props;
 
+    const MenuClassNames = cx([
+      'menu',
+      customProps.classNames,
+    ]);
+
     const currentKey = this.state.currentKey;
 // if previous key exists, display back button
 // if on base page, display logout button
     return (
-      <div {...customProps} classNames={constMenuClassNames} >
+      <div {...customProps} classNames={MenuClassNames} >
         {/* <div>{this.getTitle(currentKey)}{}</div> */}
         <MenuPage
           pageData={this.state.map.get(currentKey)}
@@ -155,7 +155,7 @@ class Menu extends React.Component {
   }
 }
 
-Menu.propTypes = propTypes;
-Menu.defaultProps = defaultProps;
+UtilityMenu.propTypes = propTypes;
+UtilityMenu.defaultProps = defaultProps;
 
-export default Menu;
+export default UtilityMenu;
