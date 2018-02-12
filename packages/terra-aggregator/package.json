@@ -1,8 +1,8 @@
 {
-  "name": "terra-application-name",
-  "main": "lib/ApplicationName.js",
+  "name": "terra-aggregator",
+  "main": "lib/Aggregator.js",
   "version": "0.0.0",
-  "description": "Houses the title of the application, along with a logo. There are two versions - a header version and menu version. These should be used with the corresponding header and menu layouts.",
+  "description": "The Aggregator provides focus-based mechanisms for managing actions across disparate components.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git"
@@ -11,8 +11,8 @@
     "Cerner",
     "Terra",
     "Framework",
-    "terra-application-name",
-    "ApplicationName",
+    "terra-aggregator",
+    "Aggregator",
     "UI"
   ],
   "author": "Cerner Corporation",
@@ -22,22 +22,29 @@
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "devDependencies": {
-    "terra-props-table": "^1.10.1"
+    "terra-base": "^2.10.0",
+    "terra-app-delegate": "^1.10.0"
   },
   "peerDependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "terra-base": "^2.0.0"
+    "terra-base": "^2.10.0",
+    "terra-app-delegate": "^1.10.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-app-delegate": "^1.7.1",
-    "terra-application-header-layout": "^1.1.0",
-    "terra-application-menu-layout": "^1.1.0",
-    "terra-base": "^2.0.0",
-    "terra-image": "^1.15.0",
-    "terra-responsive-element": "^1.15.0"
+    "terra-disclosure-manager": "^0.x",
+    "terra-modal-manager": "^1.19.0",
+    "terra-slide-panel-manager": "^0.x",
+    "terra-button": "^1.14.0",
+    "terra-list": "^1.19.0",
+    "terra-content-container": "^1.15.0",
+    "terra-clinical-header": "^1.7.0",
+    "terra-clinical-action-header": "^1.6.0",
+    "terra-form": "^1.16.0",
+    "terra-responsive-element": "^1.15.0",
+    "terra-grid": "^3.19.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
@@ -46,7 +53,7 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
-    "props-table": "props-table ./src/ApplicationHeaderName.jsx ./src/ApplicationMenuName.jsx --out-dir ./docs/props-table",
+    "props-table": "props-table ./src/Aggregator.jsx --out-dir ./docs/props-table",
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
     "test:wdio": "wdio ../../wdio.conf.js"

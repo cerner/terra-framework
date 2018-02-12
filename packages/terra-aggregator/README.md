@@ -1,18 +1,17 @@
-# Terra Application Name
+# Terra Aggregator
 
+The Aggregator provides focus-based mechanisms for managing actions across disparate components.
 
-[![NPM version](http://img.shields.io/npm/v/terra-application-name.svg)](https://www.npmjs.org/package/terra-application-name)
+[![NPM version](http://img.shields.io/npm/v/terra-aggregator.svg)](https://www.npmjs.org/package/terra-aggregator)
 [![Build Status](https://travis-ci.org/cerner/terra-framework.svg?branch=master)](https://travis-ci.org/cerner/terra-framework)
 
-Houses the title of the application, along with a logo. There are two versions - a header version and menu version. These should be used with the corresponding header and menu layouts.
-
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-name/docs)
+- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-aggregator/docs)
 - [LICENSE](#license)
 
 ## Getting Started
 
-- Install from [npmjs](https://www.npmjs.com): `npm install terra-application-name`
+- Install from [npmjs](https://www.npmjs.com): `npm install terra-aggregator`
 
 ## LICENSE
 
