@@ -1,22 +1,13 @@
 import React from 'react';
-import { createStore, combineReducers } from 'redux';
-import { Provider } from 'react-redux';
-
-import ModalManager, { reducers as modalManagerReducers } from '../../lib/index';
-import DemoContainer from './test-content/DemoContainer';
-
-const store = createStore(
-  combineReducers(Object.assign({},
-    modalManagerReducers,
-  )),
-);
+import TestExample from 'terra-disclosure-manager/examples/test-content/TestExample';
+import ModalManager from '../../lib/index';
 
 const ModalManagerDefault = () => (
-  <Provider store={store}>
+  <div role="main">
     <ModalManager>
-      <DemoContainer identifier="root-component" />
+      <TestExample identifier="root-component" disclosureType="modal" />
     </ModalManager>
-  </Provider>
+  </div>
 );
 
 export default ModalManagerDefault;
