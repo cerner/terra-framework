@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Aggregator should render an Aggregator items with a custom render function 1`] = `
+<div
+  id="custom"
+>
+  <div
+    id="render"
+  >
+    <div
+      id="wrappers"
+    >
+      <AggregatorItem
+        aggregatorDelegate={
+          Object {
+            "hasFocus": false,
+            "itemState": undefined,
+            "releaseFocus": undefined,
+            "requestFocus": [Function],
+          }
+        }
+        key="1"
+      />
+      <AggregatorItem
+        aggregatorDelegate={
+          Object {
+            "hasFocus": false,
+            "itemState": undefined,
+            "releaseFocus": undefined,
+            "requestFocus": [Function],
+          }
+        }
+        key="2"
+      />
+      <AggregatorItem
+        aggregatorDelegate={
+          Object {
+            "hasFocus": false,
+            "itemState": undefined,
+            "releaseFocus": undefined,
+            "requestFocus": [Function],
+          }
+        }
+        key="3"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Aggregator should render an Aggregator with items 1`] = `
+<div>
+  <AggregatorItem
+    aggregatorDelegate={
+      Object {
+        "hasFocus": false,
+        "itemState": undefined,
+        "releaseFocus": undefined,
+        "requestFocus": [Function],
+      }
+    }
+    key="1"
+  />
+  <AggregatorItem
+    aggregatorDelegate={
+      Object {
+        "hasFocus": false,
+        "itemState": undefined,
+        "releaseFocus": undefined,
+        "requestFocus": [Function],
+      }
+    }
+    key="2"
+  />
+  <AggregatorItem
+    aggregatorDelegate={
+      Object {
+        "hasFocus": false,
+        "itemState": undefined,
+        "releaseFocus": undefined,
+        "requestFocus": [Function],
+      }
+    }
+    key="3"
+  />
+</div>
+`;
+
+exports[`Aggregator should render an Aggregator without optional props 1`] = `<div />`;

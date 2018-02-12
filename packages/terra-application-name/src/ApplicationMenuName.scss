@@ -1,0 +1,24 @@
+/* stylelint-disable selector-class-pattern */
+:local {
+  .application-menu-name {
+    align-items: var(--terra-application-menu-name-align-items, center);
+    color: var(--terra-application-menu-name-color, #000);
+    display: flex;
+    flex: var(--terra-application-menu-name-flex, 0 0 auto);
+  }
+
+  .accessory {
+    padding-left: var(--terra-application-menu-name-accessory-padding-left, 0.3571rem);
+  }
+
+  .title {
+    font-weight: var(--terra-application-header-name-title-font-weight, normal);
+    overflow: var(--terra-application-menu-name-title-overflow, hidden);
+    padding-left: var(--terra-application-menu-name-title-padding-left, 0.3571rem);
+    padding-right: var(--terra-application-menu-name-title-padding-right, 4rem);
+    text-overflow: var(--terra-application-menu-name-text-overflow, ellipsis);
+    white-space: var(--terra-application-menu-name-white-space, nowrap);
+    word-break: var(--terra-application-menu-name-word-break, normal);
+    word-wrap: var(--terra-application-menu-name-word-wrap, normal);
+  }
+}
