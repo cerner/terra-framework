@@ -16,7 +16,7 @@ const propTypes = {
   /**
    *
    */
-  isHeightbounded: PropTypes.func,
+  isHeightBounded: PropTypes.func,
   // /**
   //  * Key based object containing menu page data
   //  */
@@ -36,7 +36,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  isHeightbounded: undefined,
+  isHeightBounded: undefined,
   rootMenuKey: null,
   userData: null,
 };
@@ -99,7 +99,7 @@ class UtilityMenu extends React.Component {
     }
   }
 
-  handleOnChange(event, key) {
+  handleOnChange(key) {
     if (!this.getChildren(key)) {
       this.props.onChange(event, key);
     } else {

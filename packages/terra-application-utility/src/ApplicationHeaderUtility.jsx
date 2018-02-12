@@ -47,6 +47,7 @@ class ApplicationHeaderUtility extends React.Component {
   }
 
   handleOnClick() {
+    debugger;
     if (this.props.onDisclose) {
       const content = this.createContent();
       this.props.onDisclose(content);

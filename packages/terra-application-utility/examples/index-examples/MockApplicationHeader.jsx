@@ -25,16 +25,18 @@ class MockApplicationHeader extends React.Component {
   }
 
   onDiscloseUtility(utility) {
+    debugger;
     if (utility) {
       this.setState({ utilityComponent: utility });
     }
   }
 
   getTargetRef() {
-    if (this.contentNode) {
-      return this.contentNode.querySelector('[data-application-header-utility]');
-    }
-    return null;
+    // if (this.contentNode) {
+    //   console.log(this.contentNode.querySelector('[data-application-header-utility]'));
+    //   return this.contentNode.querySelector('[data-application-header-utility]');
+    // }
+    return document.getElementById('utility-id');
   }
 
   setContentNode(node) {
@@ -49,10 +51,11 @@ class MockApplicationHeader extends React.Component {
   render() {
     let popup;
     if (this.state.utilityComponent) {
+      debugger;
       popup = (
         <Popup
           contentHeight="auto"
-          contentWidth="240"
+          contentWidth="auto"
           isArrowDisplayed
           isOpen
           onRequestClose={this.handleRequestClose}
@@ -72,6 +75,7 @@ class MockApplicationHeader extends React.Component {
         userName={'User Name'}
         userPhoto={image}
         data-application-header-utility
+        id={'utility-id'}
       />
     );
     return (
