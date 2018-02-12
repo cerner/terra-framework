@@ -4,6 +4,7 @@
 import TerraAggregatorIndex from './packages/terra-aggregator/examples/Index.site-page';
 import TerraAppDelegateIndex from './packages/terra-app-delegate/examples/Index.site-page';
 import TerraApplicationHeaderLayoutIndex from './packages/terra-application-header-layout/examples/Index.site-page';
+import TerraApplicationLinksIndex from './packages/terra-application-links/examples/Index.site-page';
 import TerraApplicationMenuLayoutIndex from './packages/terra-application-menu-layout/examples/Index.site-page';
 import TerraApplicationNameIndex from './packages/terra-application-name/examples/Index.site-page';
 import TerraDisclosureManagerIndex from './packages/terra-disclosure-manager/examples/Index.site-page';
@@ -18,6 +19,8 @@ import TerraThemeProviderIndex from './packages/terra-theme-provider/examples/In
 import AggregatorStandalone from './packages/terra-aggregator/examples/test-examples/AggregatorStandalone';
 import AggregatorWithDisclosure from './packages/terra-aggregator/examples/test-examples/AggregatorWithDisclosure';
 import ApplicationHeaderDefault from './packages/terra-application-header-layout/examples/test-examples/ApplicationHeaderDefault';
+import ApplicationListDefault from './packages/terra-application-links/examples/test-examples/ApplicationListDefault';
+import ApplicationTabsDefault from './packages/terra-application-links/examples/test-examples/ApplicationTabsDefault';
 import ApplicationMenuDefault from './packages/terra-application-menu-layout/examples/test-examples/ApplicationMenuDefault';
 import DefaultApplicationName from './packages/terra-application-name/examples/test-examples/DefaultApplicationName';
 import DefaultApplicationUtility from './packages/terra-application-utility/examples/test-examples/DefaultApplicationUtility';
@@ -86,6 +89,29 @@ const componentConfig = {
         name: 'Application Header Default',
         path: '/application-header-default',
         component: ApplicationHeaderDefault,
+      },
+    ],
+  },
+  'terra-application-links': {
+    name: 'Application Links',
+    path: '/application-links',
+    pages: [
+      {
+        name: 'Index',
+        path: '/index',
+        component: TerraApplicationLinksIndex,
+      },
+    ],
+    tests: [
+      {
+        name: 'Application List Default',
+        path: '/application-list-default',
+        component: ApplicationListDefault,
+      },
+      {
+        name: 'Application Tabs Default',
+        path: '/application-tabs-default',
+        component: ApplicationTabsDefault,
       },
     ],
   },
