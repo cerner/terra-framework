@@ -70,7 +70,7 @@ class NavigationSideMenu extends React.Component {
     this.onBackClick = this.onBackClick.bind(this);
     this.onItemClick = this.onItemClick.bind(this);
 
-    this.state = { processedItems: processMenuItems(props.menuItems), selectedKey: props.initialSelectedKey };
+    this.state = { processedItems: processMenuItems(props.menuItems), selectedKey: props.initialSelectedKey, selectedChildKey: null };
     this.previousStack = [];
   }
 
@@ -80,13 +80,9 @@ class NavigationSideMenu extends React.Component {
     });
   }
 
-  onBackClick(event) {
-    if (this.props.initialSelectedKey === this.state.selectedKey) {
-      if (this.props.routingStackDelegate) {
-        this.props.routingStackDelegate.showParent(event);
-      }
-    } else {
-
+  onBackClick() {
+    if (this.previousStack.length) {
+      this.setState({ selectedKey: this.previousStack.pop(), selectedChildKey: this.state.selectedKey });
     }
   }
 
@@ -94,9 +90,10 @@ class NavigationSideMenu extends React.Component {
     const clickedItem = this.state.processedItems[key];
     if (clickedItem.children && clickedItem.children.length) {
       this.previousStack.push(this.state.selectedKey);
-      this.setState({ selectedKey: key });
+      this.setState({ selectedKey: key, selectedChildKey: key });
     } else {
       this.props.onChange(event, key);
+      this.setState({ selectedChildKey: key });
     }
   }
 
@@ -115,17 +112,17 @@ class NavigationSideMenu extends React.Component {
       const listItems = currentItem.children.map((key) => {
         const item = this.state.processedItems[key];
         const content = (
-          <div id={item.id} className={cx(['list-item', { 'is-selected': item.key === this.state.selectedKey }])}>
-            {item.text}
+          <div id={item.id} className={cx(['list-item', { 'is-selected': key === this.state.selectedChildKey }])}>
+            {item.title}
           </div>
         );
         return (
           <List.Item
             tabIndex="0"
             content={content}
-            key={item.key}
-            onClick={(event) => { this.onItemClick(event, item.key); }}
-            onKeyDown={(event) => { if (event.nativeEvent.keyCode === KEYCODES.ENTER) { this.onItemClick(event, item.key); } }}
+            key={key}
+            onClick={(event) => { this.onItemClick(event, key); }}
+            onKeyDown={(event) => { if (event.nativeEvent.keyCode === KEYCODES.ENTER) { this.onItemClick(event, key); } }}
           />
         );
       });
