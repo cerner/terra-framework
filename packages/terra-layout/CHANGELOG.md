@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+1.2.0 - (February 13, 2018)
+------------------
 ###Fixed
 * Nightwatch tests raw route now sets the size of the layout.
 
