@@ -116,7 +116,7 @@ class NavigationSideMenu extends React.Component {
 
   buildListContent() {
     const currentItem = this.state.processedItems[this.state.selectedKey];
-    if (currentItem.children && currentItem.children.length) {
+    if (currentItem && currentItem.children && currentItem.children.length) {
       return <List>{currentItem.children.map(key => this.buildListItem(key))}</List>;
     }
     return null;
@@ -137,7 +137,7 @@ class NavigationSideMenu extends React.Component {
       onBack = this.onBackClick;
     }
     const currentItem = this.state.processedItems[this.state.selectedKey];
-    const actionHeader = <ActionHeader className={cx(['header'])} onBack={onBack} title={currentItem.title} />;
+    const actionHeader = <ActionHeader className={cx(['header'])} onBack={onBack} title={currentItem ? currentItem.title : null} />;
 
     return (
       <ContentContainer {...customProps} header={actionHeader} fill>

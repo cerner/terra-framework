@@ -12,14 +12,10 @@ exports[`Layout should render a NavigationSideMenu with default props 1`] = `
       onMinimize={null}
       onNext={null}
       onPrevious={null}
-      title=""
+      title={null}
     />
   }
->
-  <List
-    isDivided={false}
-  />
-</ContentContainer>
+/>
 `;
 
 exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
@@ -44,7 +40,7 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
     <ListItem
       content={
         <div
-          className="list-item is-selected"
+          className="list-item"
           id={undefined}
         >
           Test Menu 1
