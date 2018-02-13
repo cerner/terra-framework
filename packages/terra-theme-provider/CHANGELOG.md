@@ -4,10 +4,6 @@ ChangeLog
 Unreleased
 -----------------
 
-1.12.0 - (February 13, 2018)
-------------------
-* Minor version bump
-
 1.11.0 - (January 23, 2018)
 ------------------
 * First release in new repository
