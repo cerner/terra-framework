@@ -1,0 +1,10 @@
+:local {
+  .menu-page {
+    padding: 0;
+    /* stylelint-disable selector-max-compound-selectors*/
+    .list-item {
+      list-style-type: none;
+    }
+    /* stylelint-enable selector-max-compound-selectors */
+  }
+}

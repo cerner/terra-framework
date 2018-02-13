@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-
-// import MenuItem from './MenuItem';
-// import MenuItemGroup from './MenuItemGroup';
-// import MenuDivider from './MenuDivider';
+import Button from 'terra-button';
+import IconLeft from 'terra-icon/lib/icon/IconLeft';
+import MenuDivider from 'terra-menu/lib//MenuDivider';
 import Utils from './_Utils';
 import MenuPage from './_UtilityMenuPage';
 import styles from './_UtilityMenu.scss';
@@ -45,10 +44,11 @@ class UtilityMenu extends React.Component {
   constructor(props) {
     super(props);
     const map = new Map();
-    this.handleOnChange = this.handleOnChange.bind(this);
+    this.createMap = this.createMap.bind(this);
     this.getChildren = this.getChildren.bind(this);
     this.getTitle = this.getTitle.bind(this);
-    this.createMap = this.createMap.bind(this);
+    this.handleLogOut = this.handleLogOut.bind(this);
+    this.handleOnChange = this.handleOnChange.bind(this);
     this.handleRequestBack = this.handleRequestBack.bind(this);
     this.pop = this.pop.bind(this);
     this.push = this.push.bind(this);
@@ -81,14 +81,15 @@ class UtilityMenu extends React.Component {
 
   /**
    * Recursively create a map from the menu config with entries for each key.
-   * A key's value is an object containing the title, content, and children.
-   * Example: {"key" => {title: "Page Title", children: [{key: "child-one", title: "First Item"}, {key: "child-two", title: "Second Item"}]}
+   * A key's value is an object containing the title, content, isSelected, and children.
+   * Example: {"key" => {title: "Page Title", isSelected: false, children: [{key: "child-one", title: "First Item", isSelected: false}, {key: "child-two", title: "Second Item" isSelected: false}]}
    */
   createMap(config, map) {
     map.set(
       config.key,
       { title: config.title,
         content: config.content,
+        // isSelected: config.isSelected,
         children: config.children,
       },
     );
@@ -99,7 +100,12 @@ class UtilityMenu extends React.Component {
     }
   }
 
+  handleLogOut() {
+    this.props.onChange(event, 'logout');
+  }
+
   handleOnChange(key) {
+    // this.state.map.set(key).isSelected = true;
     if (!this.getChildren(key)) {
       this.props.onChange(event, key);
     } else {
@@ -111,20 +117,20 @@ class UtilityMenu extends React.Component {
   }
 
   handleRequestBack() {
+    // this.state.map.set(key).isSelected = false;
     this.setState({ currentKey: this.pop() });
   }
 
   pop() {
-    if (this.state.stack.length > 1) {
-      const newStack = this.state.previousKeyStack.slice();
-      newStack.pop();
-      this.setState({ previousKeyStack: newStack });
-    }
+    const newStack = this.state.previousKeyStack.slice();
+    const lastKey = newStack.pop();
+    this.setState({ previousKeyStack: newStack });
+    return lastKey;
   }
 
-  push(item) {
+  push(key) {
     const newStack = this.state.previousKeyStack.slice();
-    newStack.push(item);
+    newStack.push(key);
     this.setState({ previousKeyStack: newStack });
   }
 
@@ -139,17 +145,23 @@ class UtilityMenu extends React.Component {
       'menu',
       customProps.classNames,
     ]);
+    const DividerClassNames = cx(['divider']);
 
+    // Display Logout button on the first page
+    // Display Back button in nested pages
     const currentKey = this.state.currentKey;
-// if previous key exists, display back button
-// if on base page, display logout button
     return (
       <div {...customProps} classNames={MenuClassNames} >
-        {/* <div>{this.getTitle(currentKey)}{}</div> */}
+        <div>
+          {currentKey !== Utils.ROOTKEY && <Button onClick={this.handleRequestBack}> <IconLeft /> </Button>}
+          {this.getTitle(currentKey) }</div>
+        <MenuDivider classNames={DividerClassNames} />
         <MenuPage
           pageData={this.state.map.get(currentKey)}
           onChange={this.handleOnChange}
         />
+        <MenuDivider classNames={DividerClassNames} />
+        {currentKey === Utils.ROOTKEY && <Button onClick={this.handleLogOut}>{Utils.LOGOUT}</Button>}
       </div>
     );
   }

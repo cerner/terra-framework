@@ -25,7 +25,6 @@ class MockApplicationHeader extends React.Component {
   }
 
   onDiscloseUtility(utility) {
-    debugger;
     if (utility) {
       this.setState({ utilityComponent: utility });
     }
@@ -51,11 +50,10 @@ class MockApplicationHeader extends React.Component {
   render() {
     let popup;
     if (this.state.utilityComponent) {
-      debugger;
       popup = (
         <Popup
           contentHeight="auto"
-          contentWidth="auto"
+          contentWidth="240"
           isArrowDisplayed
           isOpen
           onRequestClose={this.handleRequestClose}

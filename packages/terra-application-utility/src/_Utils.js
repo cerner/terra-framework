@@ -27,47 +27,57 @@ const KEYCODES = {
 const generateConfig = userData => ({
   key: 'menu',
   title: 'Menu',
+  // isSelected: true,
   children: [
     {
       key: 'user-information',
       title: 'User Information',
       content: userData,
+      // isSelected: false,
       children: [
         {
-          key: 'UserInformationChangePhoto',
-          title: 'User Information',
+          key: 'change-photo',
+          title: 'Change Photo',
+          // isSelected: false,
         },
       ],
     },
     {
       key: 'settings',
       title: 'Settings',
+      // isSelected: false,
       children: [
         {
           key: 'appearance',
           title: 'Appearance',
+          // isSelected: false,
         },
         {
           key: 'security',
           title: 'Security',
+          // isSelected: false,
         },
       ],
     },
     {
       key: 'help',
       title: 'Help',
+      // isSelected: false,
       children: [
         {
           key: 'getting-started',
           title: 'Getting Started',
+          // isSelected: false,
         },
         {
           key: 'about',
-          title: 'Getting Started',
+          title: 'About',
+          // isSelected: false,
         },
         {
           key: 'terms-of-use',
           title: 'Terms of Use',
+          // isSelected: false,
         },
       ],
     },
@@ -75,6 +85,7 @@ const generateConfig = userData => ({
 });
 
 const ROOTKEY = 'menu';
+const LOGOUT = 'Log Out';
 // /**
 //  * Recursively traverses a config file and genereates menu pages and it's associated menu items.
 //  * @param {*} config
@@ -113,6 +124,7 @@ const Utils = {
   KEYCODES,
   generateConfig,
   ROOTKEY,
+  LOGOUT,
 };
 
 export default Utils;

@@ -10,15 +10,7 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   *
-   */
-  hasChevron: PropTypes.bool,
-  /**
-   *
-   */
-  hasCheckbox: PropTypes.bool,
-  /**
-   * Object containing data for this specific page
+   * Object containing data pertaining to this specific page
    */
   pageData: PropTypes.shape({
     Title: PropTypes.string,
@@ -36,41 +28,36 @@ const UtilityMenuPage = ({
   onChange,
   ...customProps
 }) => {
-  const menuPageClasses = cx([
-    'menu-page',
-    customProps.className,
-  ]);
-  debugger;
-  if (pageData.children) {
+  const menuPageClasses = cx('menu-page');
+  const listItemClasses = cx('list-item');
+  const listItemArr = pageData.children.map((child) => {
+    let fill = null;
+    let fitEnd = null;
+    if (child.content) {
+      fill = child.content;
+    } else {
+      fill = child.title;
+    }
+
+    if (child.children) {
+      fitEnd = <IconChevronRight />;
+    } else {
+      fitEnd = null;
+    }
+
     return (
-      <ul{...customProps} className={menuPageClasses}>
-        {pageData.children.map(child => (
-          <li key={child.key}>
-            <Arrange
-              onClick={() => { onChange(child.key); }}
-              fitStart={<span />}
-              fill={<div> child.title </div> || <div> child.content </div>}
-              fitEnd={<IconChevronRight />}
-            >
-              {/* {<div onClick={() => { onChange(child.key); }}>{child.Title || child.Content}</div>} */}
-            </Arrange>
-          </li>
-        ))}
-      </ul>
-    );
-  }
-  debugger;
+      <li key={child.key} className={listItemClasses}>
+        <Arrange
+          onClick={() => { onChange(child.key); }}
+          fill={<div>{fill}</div>}
+          fitEnd={fitEnd}
+        />
+      </li>);
+  });
+
   return (
     <ul{...customProps} className={menuPageClasses}>
-      {pageData.children.map(child => (
-        <li key={child.key}>
-          <Arrange
-            onClick={() => { onChange(child.key); }}
-            fitStart={<span />}
-            fill={<div> child.title </div> || <div> child.content </div>}
-          />
-        </li>
-      ))}
+      {listItemArr}
     </ul>
   );
 };
