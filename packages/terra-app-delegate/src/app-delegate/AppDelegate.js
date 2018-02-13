@@ -48,7 +48,13 @@ const isEqual = (delegateA, delegateB) => {
 };
 
 const AppDelegate = {
-  propType: PropTypes.instanceOf(AppDelegateInstance),
+  propType: PropTypes.objectOf((propValue, key, componentName, location, propFullName) => {
+    if (supportedAttributes.indexOf(key) < 0) {
+      return new Error(`Invalid key '${key}' supplied to ${componentName}'s '${propFullName}' prop. Validation failed.`);
+    }
+
+    return true;
+  }),
   create,
   clone,
   isEqual,
