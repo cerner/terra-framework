@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApplicationHeaderName should render a default component 1`] = `
+<div
+  className="application-header-name"
+/>
+`;
+
+exports[`ApplicationHeaderName should render with provided accessory 1`] = `
+<div
+  className="application-header-name"
+>
+  <div
+    className="accessory"
+  >
+    <img
+      alt="this is the accessory"
+    />
+  </div>
+</div>
+`;
+
+exports[`ApplicationHeaderName should render with provided accessory and title 1`] = `
+<div
+  className="application-header-name"
+>
+  <div
+    className="accessory"
+  >
+    <img
+      alt="this is the accessory"
+    />
+  </div>
+  <div
+    className="title"
+  >
+    title
+  </div>
+</div>
+`;
+
+exports[`ApplicationHeaderName should render with provided title 1`] = `
+<div
+  className="application-header-name"
+>
+  <div
+    className="title"
+  >
+    title
+  </div>
+</div>
+`;

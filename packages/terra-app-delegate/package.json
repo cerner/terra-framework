@@ -31,6 +31,6 @@
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "test": "npm run test:jest && npm run test:nightwatch",
     "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
-    "test:nightwatch": "echo \"No Nightwath tests written.\" && exit 0"
+    "test:nightwatch": "echo \"No Nightwatch tests written.\" && exit 0"
   }
 }
