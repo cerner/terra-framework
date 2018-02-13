@@ -1,5 +1,4 @@
 import React from 'react';
-import Base from 'terra-base';
 import NavigationSideMenu from '../../lib/NavigationSideMenu';
 
 class NavigationSideMenuExample extends React.Component {
