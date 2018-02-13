@@ -17,28 +17,28 @@ const KEYCODES = {
 
 const propTypes = {
   /**
-   * Navigational links that will generate list items that will update the path. These paths are matched with react-router to selection.
+   * An array of configuration for each menu item.
    */
   menuItems: PropTypes.arrayOf(PropTypes.shape({
     /**
-     * Navigational links that will generate list items that will update the path. These paths are matched with react-router to selection.
+     * Keys of menu items
      */
-    children: PropTypes.array,
+    children: PropTypes.arrayOf(PropTypes.string),
     /**
-     * Navigational links that will generate list items that will update the path. These paths are matched with react-router to selection.
+     * ID to be applied to the menu item div.
      */
     id: PropTypes.string,
     /**
-     * Navigational links that will generate list items that will update the path. These paths are matched with react-router to selection.
+     * Unique identifier that will be returned in the onChange callback when an endpoint is reached.
      */
     key: PropTypes.string.isRequired,
     /**
-     * Navigational links that will generate list items that will update the path. These paths are matched with react-router to selection.
+     * Title for the menu row and header title when selected.
      */
     title: PropTypes.string.isRequired,
   })),
   /**
-   * Navigational links that will generate list items that will update the path. These paths are matched with react-router to selection.
+   * Callback function when a menu endpoint is reached.
    */
   onChange: PropTypes.func.isRequired,
   /**
@@ -46,7 +46,7 @@ const propTypes = {
    */
   routingStackDelegate: RoutingStackDelegate.propType,
   /**
-   * Delegate prop that is added by the NavigationLayout.
+   * Key of the top level menu.
    */
   initialSelectedKey: PropTypes.string.isRequired,
 };
@@ -97,6 +97,31 @@ class NavigationSideMenu extends React.Component {
     }
   }
 
+  buildListItem(key) {
+    const item = this.state.processedItems[key];
+    return (
+      <List.Item
+        tabIndex="0"
+        content={
+          <div id={item.id} className={cx(['list-item', { 'is-selected': key === this.state.selectedChildKey }])}>
+            {item.title}
+          </div>
+        }
+        key={key}
+        onClick={(event) => { this.onItemClick(event, key); }}
+        onKeyDown={(event) => { if (event.nativeEvent.keyCode === KEYCODES.ENTER) { this.onItemClick(event, key); } }}
+      />
+    );
+  }
+
+  buildListContent() {
+    const currentItem = this.state.processedItems[this.state.selectedKey];
+    if (currentItem.children && currentItem.children.length) {
+      return <List>{currentItem.children.map(key => this.buildListItem(key))}</List>;
+    }
+    return null;
+  }
+
   render() {
     const {
       menuItems,
@@ -105,45 +130,18 @@ class NavigationSideMenu extends React.Component {
       initialSelectedKey,
       ...customProps
     } = this.props;
-
-    let listContent;
-    const currentItem = this.state.processedItems[this.state.selectedKey];
-    if (currentItem.children && currentItem.children.length) {
-      const listItems = currentItem.children.map((key) => {
-        const item = this.state.processedItems[key];
-        const content = (
-          <div id={item.id} className={cx(['list-item', { 'is-selected': key === this.state.selectedChildKey }])}>
-            {item.title}
-          </div>
-        );
-        return (
-          <List.Item
-            tabIndex="0"
-            content={content}
-            key={key}
-            onClick={(event) => { this.onItemClick(event, key); }}
-            onKeyDown={(event) => { if (event.nativeEvent.keyCode === KEYCODES.ENTER) { this.onItemClick(event, key); } }}
-          />
-        );
-      });
-      listContent = (
-        <List>
-          {listItems}
-        </List>
-      );
-    }
-
     let onBack;
     if (this.props.initialSelectedKey === this.state.selectedKey && routingStackDelegate) {
       onBack = routingStackDelegate.showParent;
     } else {
       onBack = this.onBackClick;
     }
+    const currentItem = this.state.processedItems[this.state.selectedKey];
     const actionHeader = <ActionHeader className={cx(['header'])} onBack={onBack} title={currentItem.title} />;
 
     return (
       <ContentContainer {...customProps} header={actionHeader} fill>
-        {listContent}
+        {this.buildListContent()}
       </ContentContainer>
     );
   }
