@@ -104,7 +104,7 @@ const NavigationLayoutStandard = withRouter(({ location }) => (
     <ToggleButton isAnimated closedButtonText="View">
       <Markdown id="navigation-layout-standard-config" src={ConfigReadMe} />
     </ToggleButton>
-    <h3>{`Broswer Location: ${location.pathname}`}</h3>
+    <h3>{`Browser Location: ${location.pathname}`}</h3>
     <NavigationLayout
       config={config}
       menuText="Example Menu"
