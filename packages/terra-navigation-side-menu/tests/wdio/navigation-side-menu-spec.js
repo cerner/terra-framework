@@ -13,9 +13,7 @@ describe('Default navigation side menu display', () => {
   Terra.should.themeEachCustomProperty('#test-menu', {
     '--terra-navigation-side-menu-item-color': 'green',
     '--terra-navigation-side-menu-item-size': '0.5rem',
-    '--terra-navigation-side-menu-item-line-height': '6rem',
-    '--terra-navigation-side-menu-item-padding-left': '2rem',
-    '--terra-navigation-side-menu-item-padding-right': '4rem',
+    '--terra-navigation-side-menu-item-padding': '2rem',
     '--terra-navigation-side-menu-item-background-hover': 'linear-gradient(-90deg, pink, blue)',
   });
 });
