@@ -1,4 +1,32 @@
 {
+  "ApplicationHeaderName": {
+    "--terra-application-header-name-align-items": "center",
+    "--terra-application-header-name-color": "#000",
+    "--terra-application-header-name-flex": "0 0 auto",
+    "--terra-application-header-name-accessory-padding-left": "0.3571rem",
+    "--terra-application-header-name-title-font-weight": "normal",
+    "--terra-application-header-name-title-overflow": "hidden",
+    "--terra-application-header-name-title-padding-left": "0.3571rem",
+    "--terra-application-header-name-title-padding-right": "4rem",
+    "--terra-application-header-name-text-overflow": "ellipsis",
+    "--terra-application-header-name-white-space": "nowrap",
+    "--terra-application-header-name-word-break": "normal",
+    "--terra-application-header-name-word-wrap": "normal"
+  },
+  "ApplicationMenuName": {
+    "--terra-application-menu-name-align-items": "center",
+    "--terra-application-menu-name-color": "#000",
+    "--terra-application-menu-name-flex": "0 0 auto",
+    "--terra-application-menu-name-accessory-padding-left": "0.3571rem",
+    "--terra-application-header-name-title-font-weight": "normal",
+    "--terra-application-menu-name-title-overflow": "hidden",
+    "--terra-application-menu-name-title-padding-left": "0.3571rem",
+    "--terra-application-menu-name-title-padding-right": "4rem",
+    "--terra-application-menu-name-text-overflow": "ellipsis",
+    "--terra-application-menu-name-white-space": "nowrap",
+    "--terra-application-menu-name-word-break": "normal",
+    "--terra-application-menu-name-word-wrap": "normal"
+  },
   "ApplicationList": {
     "--terra-application-list-color": "#1c1f21",
     "--terra-application-list-font-size": "1.071rem",
@@ -101,6 +129,9 @@
     "--terra-button-font-size-huge": "1.7rem",
     "--terra-button-padding-bottom-compact": "0",
     "--terra-button-padding-top-compact": "0"
+  },
+  "Grid": {
+    "--terra-grid-gutter-width": "1rem"
   },
   "HookshotContent": {
     "--terra-hookshot-content-z-index": "7001"

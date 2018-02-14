@@ -4,7 +4,7 @@
 [![NPM version](http://img.shields.io/npm/v/terra-application-name.svg)](https://www.npmjs.org/package/terra-application-name)
 [![Build Status](https://travis-ci.org/cerner/terra-framework.svg?branch=master)](https://travis-ci.org/cerner/terra-framework)
 
-{insert description}
+Houses the title of the application, along with a logo. There are two versions - a header version and menu version. These should be used with the corresponding header and menu layouts.
 
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-name/docs)

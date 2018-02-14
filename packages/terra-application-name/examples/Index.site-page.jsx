@@ -1,23 +1,42 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import PropsTable from 'terra-props-table';
 import Markdown from 'terra-markdown';
-// import IndexTemplate from 'terra-site/src/IndexPageTemplate';
+import IndexTemplate from 'terra-site/src/IndexPageTemplate';
 
 import ReadMe from '../docs/README.md';
 import { version } from '../package.json';
 
 // Component Source
-import ApplicationNameSrc from '!raw-loader!../src/ApplicationName.jsx';
+/* eslint-disable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
+import ApplicationHeaderNameSrc from '!raw-loader!../src/ApplicationHeaderName.jsx';
+import ApplicationHeaderNameStandardSrc from '!raw-loader!./index-examples/ApplicationHeaderNameStandard.jsx';
+import ApplicationMenuNameStandardSrc from '!raw-loader!./index-examples/ApplicationMenuNameStandard.jsx';
+/* eslint-enable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
+
+// Example Files
+import ApplicationHeaderNameStandard from './index-examples/ApplicationHeaderNameStandard';
+import ApplicationMenuNameStandard from './index-examples/ApplicationMenuNameStandard';
 
 const ApplicationNameExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
-
     <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
 
-    <PropsTable id="props-table" src={ApplicationNameSrc} />
+    <IndexTemplate
+      title="Application Header Name"
+      example={<ApplicationHeaderNameStandard />}
+      exampleSrc={ApplicationHeaderNameStandardSrc}
+    />
+
+    <IndexTemplate
+      title="Application Menu Name"
+      example={<ApplicationMenuNameStandard />}
+      exampleSrc={ApplicationMenuNameStandardSrc}
+    />
+
+    <PropsTable id="props" src={ApplicationHeaderNameSrc} />
   </div>
 );
 
