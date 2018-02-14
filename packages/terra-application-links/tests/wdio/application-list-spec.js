@@ -13,7 +13,7 @@ describe('ApplicationList', () => {
       '--terra-application-list-font-size': '2rem',
       '--terra-application-list-padding': '0 2rem',
       '--terra-application-list-selected-background-image': 'linear-gradient(-270deg, orange, red)',
-      '--terra-application-list-selected-box-shadow': 'inset 1rem 0 0 0 purple',
+      '--terra-application-list-selected-border-left': '10px dotted purple',
       '--terra-application-list-selected-padding': '2rem 1rem',
     });
   });
