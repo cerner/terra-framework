@@ -16,14 +16,17 @@ import NavigationSideMenu from 'terra-navigation-side-menu';
 
 <NavigationSideMenu
   menuItems={[
-    { key: 'submenu1', text: 'Sub Menu 1' },
-    { key: 'submenu2', text: 'Sub Menu 2' },
-    { key: 'submenu3', text: 'Sub Menu 3' },
-    { key: 'submenu4', text: 'Sub Menu 4' },
+    { key: 'menu', title: 'Menu', children: ['submenu1', 'submenu2', 'submenu3', 'submenu4'] },
+    { key: 'submenu1', title: 'Sub Menu 1', children: ['subsubmenu1', 'subsubmenu2', 'subsubmenu3'] },
+    { key: 'submenu2', title: 'Sub Menu 2' },
+    { key: 'submenu3', title: 'Sub Menu 3' },
+    { key: 'submenu4', title: 'Sub Menu 4' },
+    { key: 'subsubmenu1', title: 'Sub-Sub Menu 1' },
+    { key: 'subsubmenu2', title: 'Sub-Sub Menu 2' },
+    { key: 'subsubmenu3', title: 'Sub-Sub Menu 3' },
   ]}
-  onChange={this.handleOnChange}
-  selectedKey={this.state.selectedKey}
-  title="Menu"
+  onChange={() => {}}
+  initialSelectedKey="menu"
 />
 ```
 
