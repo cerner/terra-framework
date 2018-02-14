@@ -5,8 +5,8 @@ import 'terra-base/lib/baseStyles';
 
 import Button from 'terra-button';
 import IconChevronDown from 'terra-icon/lib/icon/IconChevronDown';
-import UtilityMenu from './_UtilityMenu';
-import UserData from './_UserData';
+import UtilityMenu from './_HeaderUtilityMenu';
+import UserData from './UserData';
 
 import styles from './ApplicationHeaderUtility.scss';
 

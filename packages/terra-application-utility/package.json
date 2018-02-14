@@ -39,7 +39,8 @@
     "terra-icon": "^1.18.0",
     "terra-image": "^1.16.0",
     "terra-menu": "^2.0.0",
-    "terra-popup": "^1.20.0"
+    "terra-popup": "^1.20.0",
+    "terra-profile-image": "^2.0.1"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

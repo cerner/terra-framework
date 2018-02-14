@@ -7,7 +7,8 @@ import 'terra-base/lib/baseStyles';
 import LogoExample from 'terra-application-header-layout/examples/index-examples/LogoExample';
 import NavigationExample from 'terra-application-header-layout/examples/index-examples/NavigationExample';
 import ToggleExample from 'terra-application-header-layout/examples/index-examples/ToggleExample';
-import ApplicationHeaderUtility from '../../lib/ApplicationHeaderUtility';
+import avatar from './fallBackAvatar.svg';
+import ApplicationHeaderUtility from '../../src/ApplicationHeaderUtility';
 
 // import styles from '.ApplicationHeaderUtilityStandard.scss';
 
@@ -64,20 +65,20 @@ class MockApplicationHeader extends React.Component {
       );
     }
 
-    const image = <Image variant="rounded" src="https://github.com/cerner/terra-core/raw/master/terra.png" height="26px" width="26px" isFluid />;
+    const image = <Image src={avatar} />;
     const utilities = (
       <ApplicationHeaderUtility
         onChange={MockApplicationHeader.handleOnChange}
         onDisclose={this.onDiscloseUtility}
-        userDetail={'Admin'}
-        userName={'User Name'}
+        userDetail={'Software Engineer'}
+        userName={'FirstName LastName'}
         userPhoto={image}
         data-application-header-utility
         id={'utility-id'}
       />
     );
     return (
-      <div ref={this.setContentNode}>
+      <div ref={this.setContentNode} style={{ height: '60px', position: 'relative', width: '100%' }}>
         <ApplicationHeaderLayout
           logo={<LogoExample size="small" />}
           utilities={utilities}

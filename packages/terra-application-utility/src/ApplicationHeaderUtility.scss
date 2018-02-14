@@ -2,20 +2,24 @@
   .header-utility {
     align-items: center;
     display: flex;
-    height: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 100%;
-    /* stylelint-disable selector-max-compound-selectors */
-    .user-photo ~ .icon {
-      flex-grow: 1;
+    justify-content: space-between;
+    padding-left: var(--terra-application-header-utility-padding-left, 0.5714rem);
+    padding-right: var(--terra-application-header-utility-padding-right, 0.5714rem);
+    max-width: 100%;
+
+    .icon {
+      min-width: var(--terra-application-header-utility-photo-min-width, 1.857rem);
+    }
+    .user-photo {
+      margin-right: var(--terra-application-header-utility-photo-margin-right, 0.2143rem);
+      min-width: var(--terra-application-header-utility-photo-min-width, 1.857rem);
     }
 
     .user-name {
-      flex-grow: 2;
+      margin-right: var(--terra-application-header-utility-user-name-margin-right, 0.2143rem);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
-
-
   }
 }

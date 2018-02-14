@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
+import IconChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 
-import styles from './_UserData.scss';
+import styles from './UserData.scss';
 
 const cx = classNames.bind(styles);
 
@@ -34,32 +35,24 @@ const UserData = ({
   userName,
   userPhoto,
 }) => {
-  const UserDataClassNames = cx([
-    'user-data',
-  ]);
-
-  const userPhotoClassNames = cx([
-    'user-photo',
-  ]);
-
-  const textClassNames = cx([
-    'text',
-  ]);
-
-  const userNameClassNames = cx([
-    'user-name',
-  ]);
-  const userDetailClassNames = cx([
-    'user-detail',
-  ]);
+  const containerClassNames = cx('container');
+  const userDataClassNames = cx('user-data');
+  const photoClassNames = cx('photo');
+  const nameClassNames = cx('name');
+  const detailClassNames = cx('detail');
+  const chevronClassNames = cx('chevron');
+  const photoAttrs = React.cloneElement(userPhoto, { className: photoClassNames });
 
   return (
-    <div className={UserDataClassNames}>
-      <div className={userPhotoClassNames}>{userPhoto}</div>
-      <div className={textClassNames}>
-        <div className={userNameClassNames}>{userName}</div>
-        <div classNames={userDetailClassNames}>{userDetail}</div>
+    <div className={containerClassNames} >
+      <div className={userDataClassNames} >
+        {photoAttrs}
+        <div>
+          <div className={nameClassNames}>{userName}</div>
+          <div className={detailClassNames}>{userDetail}</div>
+        </div>
       </div>
+      {<IconChevronRight className={chevronClassNames} />}
     </div>
   );
 };

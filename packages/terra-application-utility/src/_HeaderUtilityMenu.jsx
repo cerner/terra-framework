@@ -4,10 +4,10 @@ import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import Button from 'terra-button';
 import IconLeft from 'terra-icon/lib/icon/IconLeft';
-import MenuDivider from 'terra-menu/lib//MenuDivider';
+import MenuDivider from './_UtilityMenuDivider';
 import Utils from './_Utils';
-import MenuPage from './_UtilityMenuPage';
-import styles from './_UtilityMenu.scss';
+import MenuPage from './_HeaderUtilityMenuPage';
+import styles from './_HeaderUtilityMenu.scss';
 
 const cx = classNames.bind(styles);
 
@@ -40,7 +40,7 @@ const defaultProps = {
   userData: null,
 };
 
-class UtilityMenu extends React.Component {
+class HeaderUtilityMenu extends React.Component {
   constructor(props) {
     super(props);
     const map = new Map();
@@ -142,32 +142,39 @@ class UtilityMenu extends React.Component {
     } = this.props;
 
     const MenuClassNames = cx([
-      'menu',
+      'utility-menu',
       customProps.classNames,
     ]);
-    const DividerClassNames = cx(['divider']);
+
+    const HeaderClassNames = cx([
+      'header',
+    ]);
+
+    const BackButtonClassNames = cx('back-button');
+    const LogOutButtonClassNames = cx('log-out-button');
+    const HeaderTextClassNames = cx('header-text');
 
     // Display Logout button on the first page
     // Display Back button in nested pages
     const currentKey = this.state.currentKey;
     return (
-      <div {...customProps} classNames={MenuClassNames} >
-        <div>
-          {currentKey !== Utils.ROOTKEY && <Button onClick={this.handleRequestBack}> <IconLeft /> </Button>}
-          {this.getTitle(currentKey) }</div>
-        <MenuDivider classNames={DividerClassNames} />
+      <div {...customProps} className={MenuClassNames} >
+        <div className={HeaderClassNames}>
+          {currentKey !== Utils.ROOTKEY && <Button className={BackButtonClassNames} onClick={this.handleRequestBack}> <IconLeft /> </Button>}
+          <span className={HeaderTextClassNames}>{this.getTitle(currentKey) }</span>
+        </div>
+        <MenuDivider />
         <MenuPage
           pageData={this.state.map.get(currentKey)}
           onChange={this.handleOnChange}
         />
-        <MenuDivider classNames={DividerClassNames} />
-        {currentKey === Utils.ROOTKEY && <Button onClick={this.handleLogOut}>{Utils.LOGOUT}</Button>}
+        {currentKey === Utils.ROOTKEY ? [<MenuDivider />, <Button className={LogOutButtonClassNames} onClick={this.handleLogOut}>{Utils.LOGOUT}</Button>] : null}
       </div>
     );
   }
 }
 
-UtilityMenu.propTypes = propTypes;
-UtilityMenu.defaultProps = defaultProps;
+HeaderUtilityMenu.propTypes = propTypes;
+HeaderUtilityMenu.defaultProps = defaultProps;
 
-export default UtilityMenu;
+export default HeaderUtilityMenu;
