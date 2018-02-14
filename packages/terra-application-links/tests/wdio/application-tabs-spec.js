@@ -53,7 +53,7 @@ describe('ApplicationTabs', () => {
       '--terra-application-tabs-collapsed-hover-background': 'linear-gradient(-90deg, orange, red)',
       '--terra-application-tabs-collapsed-selected-background-image': 'linear-gradient(-270deg, red, orange)',
       '--terra-application-tabs-collapsed-selected-box-shadow': 'inset 1rem 0 0 0 purple',
-      '--terra-application-tabs-collapsed-selected-left-padding': '3rem',
+      '--terra-application-tabs-collapsed-padding': '1rem',
     });
   });
 
