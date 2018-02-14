@@ -38,7 +38,8 @@
     "terra-button": "^2.0.1",
     "terra-content-container": "^2.0.1",
     "terra-clinical-action-header": "^1.6.0",
-    "terra-base": "^3.0.0"
+    "terra-base": "^3.0.0",
+    "terra-form": "^2.0.1"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

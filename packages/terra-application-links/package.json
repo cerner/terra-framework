@@ -26,19 +26,19 @@
     "terra-props-table": "^1.10.1"
   },
   "peerDependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-router-dom": "^4.0.0",
-    "terra-base": "^2.0.0"
+    "terra-base": "^3.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "resize-observer-polyfill": "^1.4.1",
-    "terra-base": "^2.0.0",
-    "terra-icon": "^1.16.0",
-    "terra-list": "^1.19.0",
-    "terra-popup": "^1.18.0"
+    "terra-base": "^3.0.0",
+    "terra-icon": "^2.0.1",
+    "terra-list": "^2.0.1",
+    "terra-popup": "^2.0.1"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
@@ -50,6 +50,6 @@
     "props-table": "props-table ./src/list/ApplicationList.jsx ./src/tabs/ApplicationTabs.jsx --out-dir ./docs/props-table",
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
-    "test:wdio": "wdio ../../wdio.conf.js"
+    "test:wdio": "wdio ../../wdio.conf.js --spec tests/wdio/application-tabs-spec.js"
   }
 }
