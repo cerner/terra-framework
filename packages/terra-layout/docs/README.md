@@ -31,7 +31,6 @@ import { HeaderExample, MenuExample, ContentExample } from './your/examples';
 <Layout
   header={<HeaderExample />}
   menu={<MenuExample />}
-  menuText="Menu"
 >
   <ContentExample />
 </Layout>

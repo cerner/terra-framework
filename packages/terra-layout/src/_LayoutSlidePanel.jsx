@@ -6,7 +6,6 @@ import OverlayContainer from 'terra-overlay/lib/OverlayContainer';
 
 import 'terra-base/lib/baseStyles';
 
-import HoverTarget from './_HoverTarget';
 import styles from './LayoutSlidePanel.scss';
 
 const cx = classNames.bind(styles);
@@ -61,7 +60,6 @@ class LayoutSlidePanel extends React.Component {
   constructor(props) {
     super(props);
     this.setPanelNode = this.setPanelNode.bind(this);
-    this.setContentNode = this.setContentNode.bind(this);
     this.handleTransitionEnd = this.handleTransitionEnd.bind(this);
     this.preparePanelForTransition = this.preparePanelForTransition.bind(this);
 
@@ -88,13 +86,9 @@ class LayoutSlidePanel extends React.Component {
     this.panelNode = node;
   }
 
-  setContentNode(node) {
-    this.contentNode = node;
-  }
-
   handleTransitionEnd() {
-    if (!this.props.isOpen && this.contentNode) {
-      this.contentNode.setAttribute('aria-hidden', true);
+    if (!this.props.isOpen && this.panelNode) {
+      this.panelNode.setAttribute('aria-hidden', true);
       this.isHidden = true;
     }
   }
@@ -104,7 +98,7 @@ class LayoutSlidePanel extends React.Component {
     // As a result of this change, we are executing the code in the render block.
     if (this.props.isOpen && !this.lastIsOpen && this.panelNode) {
       // If the panel is opening remove the hidden attribute so the animation performs correctly.
-      this.contentNode.setAttribute('aria-hidden', 'false');
+      this.panelNode.setAttribute('aria-hidden', false);
       this.isHidden = false;
     }
   }
@@ -137,7 +131,6 @@ class LayoutSlidePanel extends React.Component {
       { 'is-open': isOpen },
       { 'is-overlay': isOverlay },
       { 'is-squish': !isOverlay },
-      { 'hover-toggle-enabled': !compactSize && isToggleEnabled },
       customProps.className,
     ]);
 
@@ -148,29 +141,14 @@ class LayoutSlidePanel extends React.Component {
       { 'is-animated': isAnimated && isOverlay && !!panelContent },
     ]);
 
-    const panel = (
-      <div className={panelClasses} aria-hidden={!isOpen ? 'true' : null} ref={this.setPanelNode}>
-        <HoverTarget
-          isContentHidden={this.isHidden}
-          contentRefCallback={this.setContentNode}
-          text={toggleText}
-          isOpen={isOpen || !isToggleEnabled}
-          hoverIsEnabled={!compactSize && isOverlay}
-          onHoverOff={() => { if (isOpen) { onToggle(); } }}
-          onHoverOn={() => { if (!isOpen) { onToggle(); } }}
-          onClick={onToggle}
-        >
-          {panelContent}
-        </HoverTarget>
-      </div>
-    );
-
     return (
       <div
         {...customProps}
         className={slidePanelClassNames}
       >
-        {panel}
+        <div className={panelClasses} aria-hidden={this.isHidden ? 'true' : 'false'} ref={this.setPanelNode}>
+          {panelContent}
+        </div>
         <OverlayContainer className={cx('content')}>
           <Overlay isRelativeToContainer onRequestClose={onToggle} isOpen={isOverlayOpen} backgroundStyle={overlayBackground} />
           {children}
