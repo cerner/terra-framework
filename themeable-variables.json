@@ -1,10 +1,10 @@
 {
   "ApplicationHeaderName": {
     "--terra-application-header-name-align-items": "center",
-    "--terra-application-header-name-color": "#000",
+    "--terra-application-header-name-color": "#fff",
     "--terra-application-header-name-flex": "0 0 auto",
     "--terra-application-header-name-accessory-padding-left": "0.3571rem",
-    "--terra-application-header-name-title-font-weight": "normal",
+    "--terra-application-header-name-title-font-weight": "bold",
     "--terra-application-header-name-title-overflow": "hidden",
     "--terra-application-header-name-title-padding-left": "0.3571rem",
     "--terra-application-header-name-title-padding-right": "4rem",
@@ -12,6 +12,18 @@
     "--terra-application-header-name-white-space": "nowrap",
     "--terra-application-header-name-word-break": "normal",
     "--terra-application-header-name-word-wrap": "normal"
+  },
+  "ApplicationList": {
+    "--terra-application-list-color": "#1c1f21",
+    "--terra-application-list-font-size": "1.071rem",
+    "--terra-application-list-padding-bottom": "0.8225rem",
+    "--terra-application-list-padding-left": "1.2143rem",
+    "--terra-application-list-padding-right": "0.7143rem",
+    "--terra-application-list-padding-top": "0.8225rem",
+    "--terra-application-list-background-hover": "linear-gradient(-90deg, #fff, #f1f1f2)",
+    "--terra-application-list-selected-background-image": "linear-gradient(-270deg, #fff, #e8e9ea)",
+    "--terra-application-list-selected-border-left": "0.5rem solid #007cc3",
+    "--terra-application-list-selected-padding-left": "0.7143rem"
   },
   "ApplicationMenuName": {
     "--terra-application-menu-name-align-items": "center",
@@ -27,17 +39,8 @@
     "--terra-application-menu-name-word-break": "normal",
     "--terra-application-menu-name-word-wrap": "normal"
   },
-  "ApplicationList": {
-    "--terra-application-list-color": "#1c1f21",
-    "--terra-application-list-font-size": "1.071rem",
-    "--terra-application-list-line-height": "3.214rem",
-    "--terra-application-list-padding-right": "0.7143rem",
-    "--terra-application-list-background-hover": "linear-gradient(-90deg, #fff, #f1f1f2)",
-    "--terra-application-list-selected-background-image": "linear-gradient(-270deg, #fff, #e8e9ea)"
-  },
   "ApplicationTabs": {
     "--terra-application-tabs-spacer-width": "2rem",
-    "--terra-application-tabs-margin-next-to-icon": "0.357rem",
     "--terra-application-tabs-menu-arrow-left-margin": "0.5rem",
     "--terra-application-tabs-background-image": "linear-gradient(to bottom, #007ee0, #007ee0)",
     "--terra-application-tabs-background-position": "top-left",
@@ -46,10 +49,10 @@
     "--terra-application-tabs-color": "#fff",
     "--terra-application-tabs-font-size": "1rem",
     "--terra-application-tabs-line-height": "1.4",
-    "--terra-application-tabs-padding-horizontal": "1.071rem",
+    "--terra-application-tabs-padding-horizontal": "1.0715rem",
     "--terra-application-tabs-transition-duration": "0.35s",
     "--terra-application-tabs-transition-timing": "ease",
-    "--terra-application-tab-width": "16.714rem",
+    "--terra-application-tab-width": "16.7145rem",
     "--terra-application-tabs-focus-color": "#fff",
     "--terra-application-tabs-hover-background-color": "rgba(0, 0, 0, 0.25)",
     "--terra-application-tabs-hover-color": "#fff",
@@ -61,7 +64,10 @@
     "--terra-application-tabs-border-left": "1px solid #dedfe0",
     "--terra-application-tabs-border-width-first": "0 1px 0 1px",
     "--terra-application-tabs-collapsed-color": "#1c1f21",
-    "--terra-application-tabs-collapsed-selected-padding": "1.214rem 1.071rem",
+    "--terra-application-tabs-collapsed-padding-bottom": "0.8225rem",
+    "--terra-application-tabs-collapsed-padding-left": "1.071rem",
+    "--terra-application-tabs-collapsed-padding-right": "1.071rem",
+    "--terra-application-tabs-collapsed-padding-top": "0.8225rem",
     "--terra-application-tabs-collapsed-hover-background": "linear-gradient(-90deg, transparent, #f1f1f2)",
     "--terra-application-tabs-collapsed-selected-background-image": "linear-gradient(-270deg, transparent, #e8e9ea)",
     "--terra-application-tabs-collapsed-selected-box-shadow": "inset 0.5rem 0 0 0 #007cc3",
@@ -78,15 +84,7 @@
     "--terra-base-color": "#1c1f21",
     "--terra-base-body-height": "100%",
     "--terra-base-line-height": "1.42857",
-    "--terra-base-body-margin": "0",
-    "--terra-link-color": "#0065a3",
-    "--terra-link-visted-color": "#0065a3",
-    "--terra-link-hover-color": "#004c76",
-    "--terra-link-focus-background-color": "transparent",
-    "--terra-link-focus-border-radius": "0.2142rem",
-    "--terra-link-focus-box-shadow": "0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35)",
-    "--terra-link-focus-color": "#004c76",
-    "--terra-link-active-color": "#004c76"
+    "--terra-base-body-margin": "0"
   },
   "Button": {
     "--terra-button-border-radius": "0.25em",
