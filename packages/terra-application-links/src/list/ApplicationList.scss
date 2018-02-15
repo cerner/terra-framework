@@ -4,10 +4,10 @@
     color: var(--terra-application-list-color, #1c1f21);
     display: block;
     font-size: var(--terra-application-list-font-size, 1.071rem);
-    padding-top: var(--terra-application-list-padding-top, 0.8225rem);
-    padding-right: var(--terra-application-list-padding-right, 0.7143rem);
     padding-bottom: var(--terra-application-list-padding-bottom, 0.8225rem);
     padding-left: var(--terra-application-list-padding-left, 1.2143rem);
+    padding-right: var(--terra-application-list-padding-right, 0.7143rem);
+    padding-top: var(--terra-application-list-padding-top, 0.8225rem);
     text-decoration: none;
     
     &:focus,

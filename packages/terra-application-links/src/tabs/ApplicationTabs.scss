@@ -134,10 +134,10 @@
   .collapsed-tab {
     color: var(--terra-application-tabs-collapsed-color, #1c1f21);
     display: block;
-    padding-top: var(--terra-application-tabs-collapsed-padding-top, 0.8225rem);
-    padding-right: var(--terra-application-tabs-collapsed-padding-right, 1.071rem);
-    padding-bottom: var(--terra-application-tabs-collapsed-padding-bottom, 0.8225rem);
     padding-left: var(--terra-application-tabs-collapsed-padding-left, 1.071rem);
+    padding-bottom: var(--terra-application-tabs-collapsed-padding-bottom, 0.8225rem);
+    padding-right: var(--terra-application-tabs-collapsed-padding-right, 1.071rem);
+    padding-top: var(--terra-application-tabs-collapsed-padding-top, 0.8225rem);
     text-align: left;
     text-decoration: none;
     text-overflow: unset;
