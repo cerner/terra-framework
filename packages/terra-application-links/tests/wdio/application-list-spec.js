@@ -10,11 +10,14 @@ describe('ApplicationList', () => {
     Terra.should.beAccessible({ viewports, context: '#test-list' });
     Terra.should.themeEachCustomProperty('#test-list', {
       '--terra-application-list-color': 'blue',
-      '--terra-application-list-font-size': '2rem',
-      '--terra-application-list-padding': '0 2rem',
+      '--terra-application-list-font-size': '1rem',
+      '--terra-application-list-padding-top': '0',
+      '--terra-application-list-padding-right': '0',
+      '--terra-application-list-padding-bottom': '0',
+      '--terra-application-list-padding-left': '0',
       '--terra-application-list-selected-background-image': 'linear-gradient(-270deg, orange, red)',
       '--terra-application-list-selected-border-left': '10px dotted purple',
-      '--terra-application-list-selected-padding': '2rem 1rem',
+      '--terra-application-list-selected-padding-left': '0',
     });
   });
 
