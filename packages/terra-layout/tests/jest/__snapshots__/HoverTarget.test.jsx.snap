@@ -5,6 +5,7 @@ exports[`HoverTarget should render with provided hover props 1`] = `
   className="hover-target"
 >
   <div
+    aria-hidden="false"
     className="content-section"
   >
     <div>
@@ -48,6 +49,7 @@ exports[`HoverTarget should render with provided open props 1`] = `
   className="hover-target is-hover-tab-hidden"
 >
   <div
+    aria-hidden="false"
     className="content-section"
   >
     <div>
@@ -91,6 +93,7 @@ exports[`HoverTarget should render without optional props 1`] = `
   className="hover-target is-hover-disabled"
 >
   <div
+    aria-hidden="false"
     className="content-section"
   />
   <button

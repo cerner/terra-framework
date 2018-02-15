@@ -14,10 +14,18 @@ const propTypes = {
    * The component to display in the panel content area.
    */
   children: PropTypes.node,
+   /**
+   * The ref callback for the content section.
+   */
+  contentRefCallback: PropTypes.func,
   /**
    * Enables the hover functionality.
    */
   hoverIsEnabled: PropTypes.bool,
+  /**
+   * Disables the hover content section.
+   */
+  isContentHidden: PropTypes.bool,
   /**
    * Disables the hover bar.
    */
@@ -43,6 +51,7 @@ const propTypes = {
 const defaultProps = {
   children: [],
   hoverIsEnabled: false,
+  isContentHidden: false,
 };
 
 class HoverTarget extends React.Component {
@@ -147,7 +156,9 @@ class HoverTarget extends React.Component {
   render() {
     const {
       children,
+      contentRefCallback,
       hoverIsEnabled,
+      isContentHidden,
       isOpen,
       onClick,
       onHoverOff,
@@ -165,7 +176,7 @@ class HoverTarget extends React.Component {
 
     return (
       <div {...customProps} className={hoverClasses} ref={this.setHoverNode}>
-        <div className={cx('content-section')}>
+        <div className={cx('content-section')} aria-hidden={isContentHidden ? 'true' : 'false'} ref={contentRefCallback}>
           {children}
         </div>
         <button className={cx('hover-section')} onClick={this.handleOnClick}>
