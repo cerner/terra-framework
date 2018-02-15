@@ -151,7 +151,7 @@ class ApplicationTabs extends React.Component {
           ref={this.setContainerNode}
         >
           {visibleChildren}
-          <TabMenu isMenuHidden={this.menuHidden} >
+          <TabMenu isHidden={this.menuHidden}>
             {hiddenChildren}
           </TabMenu>
         </div>
