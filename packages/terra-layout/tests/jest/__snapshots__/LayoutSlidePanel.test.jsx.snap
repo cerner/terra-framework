@@ -9,7 +9,9 @@ exports[`LayoutSlidePanel should render when small 1`] = `
     className="panel is-small is-animated"
   >
     <HoverTarget
+      contentRefCallback={[Function]}
       hoverIsEnabled={false}
+      isContentHidden={false}
       isOpen={true}
       onClick={[Function]}
       onHoverOff={[Function]}
@@ -47,7 +49,9 @@ exports[`LayoutSlidePanel should render when tiny 1`] = `
     className="panel is-tiny is-animated"
   >
     <HoverTarget
+      contentRefCallback={[Function]}
       hoverIsEnabled={false}
+      isContentHidden={false}
       isOpen={true}
       onClick={[Function]}
       onHoverOff={[Function]}
@@ -85,7 +89,9 @@ exports[`LayoutSlidePanel should render with provided props 1`] = `
     className="panel is-animated"
   >
     <HoverTarget
+      contentRefCallback={[Function]}
       hoverIsEnabled={true}
+      isContentHidden={false}
       isOpen={true}
       onClick={[Function]}
       onHoverOff={[Function]}
@@ -123,7 +129,9 @@ exports[`LayoutSlidePanel should render without optional props 1`] = `
     className="panel"
   >
     <HoverTarget
+      contentRefCallback={[Function]}
       hoverIsEnabled={true}
+      isContentHidden={true}
       isOpen={true}
       onHoverOff={[Function]}
       onHoverOn={[Function]}
