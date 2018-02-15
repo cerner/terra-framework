@@ -4,6 +4,8 @@ Changelog
 Unreleased
 ----------
 
+1.20.0 - (February 15, 2018)
+------------------
 ### Changed
 * Use DisclosureManager for state management and presentation.
 
