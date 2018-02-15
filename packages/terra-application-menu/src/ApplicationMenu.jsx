@@ -4,13 +4,12 @@ import classNames from 'classnames/bind';
 import AppDelegate from 'terra-app-delegate';
 import ApplicationMenuLayout from 'terra-application-menu-layout';
 // import { ApplicationMenuUtility } from 'terra-application-utility';
-// import { ApplicationMenuName } from 'terra-application-name';
+import { ApplicationMenuName } from 'terra-application-name';
 import RoutingStackDelegate from 'terra-navigation-layout/lib/RoutingStackDelegate';
 
 import 'terra-base/lib/baseStyles';
 
 import ApplicationMenuUtility from './mock-components/MockApplicationUtility';
-import ApplicationMenuName from './mock-components/MockApplicationName';
 
 import styles from './ApplicationMenu.scss';
 

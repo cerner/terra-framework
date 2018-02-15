@@ -36,6 +36,7 @@
     "prop-types": "^15.5.8",
     "terra-application-header-layout": "^1.1.0",
     "terra-application-name": "^0.x",
+    "terra-application-links": "^0.x",
     "terra-application-utility": "^0.x",
     "terra-base": "^2.0.0",
     "terra-button": "^1.14.0",

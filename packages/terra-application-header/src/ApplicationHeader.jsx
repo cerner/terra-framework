@@ -5,8 +5,8 @@ import AppDelegate from 'terra-app-delegate';
 import RoutingStackDelegate from 'terra-navigation-layout/lib/RoutingStackDelegate';
 import ApplicationHeaderLayout from 'terra-application-header-layout';
 // import { ApplicationHeaderUtility } from 'terra-application-utility';
-// import { ApplicationHeaderName } from 'terra-application-name';
-// import { ApplicationTabs } from 'terra-application-links';
+import { ApplicationHeaderName } from 'terra-application-name';
+import { ApplicationTabs } from 'terra-application-links';
 import IconMenu from 'terra-icon/lib/icon/IconMenu';
 import Button from 'terra-button';
 import Popup from 'terra-popup';
@@ -14,8 +14,6 @@ import Popup from 'terra-popup';
 import 'terra-base/lib/baseStyles';
 
 import ApplicationHeaderUtility from './mock-components/MockApplicationUtility';
-import ApplicationHeaderName from './mock-components/MockApplicationName';
-import ApplicationTabs from './mock-components/MockApplicationLinks';
 
 import styles from './ApplicationHeader.scss';
 
