@@ -15,7 +15,7 @@ const store = createStore(
 );
 
 const ApplicationMenuExample = () => (
-  <div style={{ width: '300px', height: '500px', position: 'relative' }}>
+  <div style={{ width: '300px', height: '500px', position: 'relative', backgroundColor: 'aliceblue' }}>
     <Provider store={store}>
       <ModalManager>
         <ApplicationMenu

@@ -24,6 +24,7 @@
   "devDependencies": {
     "react-redux": "^5.0.4",
     "redux": "^3.6.0",
+    "terra-application-links": "^0.x",
     "terra-app-delegate": "^1.10.0",
     "terra-props-table": "^1.10.1",
     "terra-modal-manager": "^1.19.0"
