@@ -6,8 +6,7 @@
       "ignore": [
         "DEPENDENCIES.md",
         "terra-application-utility",
-        "terra-embedded-component",
-        "terra-aggregator"
+        "terra-embedded-component"
       ]
     }
   },

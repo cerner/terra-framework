@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+1.2.0 - (February 15, 2018)
+------------------
 ###Changed
 * Updating tests to point to new terra-framework-site location.
 
