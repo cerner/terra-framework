@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+###Changed
+* Remove the hover functionality from the layout panel at the medium breakpoint.
 
 1.2.0 - (February 15, 2018)
 ------------------
