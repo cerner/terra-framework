@@ -2,7 +2,7 @@
 :local {
   .application-header-name {
     align-items: var(--terra-application-header-name-align-items, center);
-    color: var(--terra-application-header-name-color, #000);
+    color: var(--terra-application-header-name-color, #fff);
     display: flex;
     flex: var(--terra-application-header-name-flex, 0 0 auto);
   }
@@ -12,7 +12,7 @@
   }
 
   .title {
-    font-weight: var(--terra-application-header-name-title-font-weight, normal);
+    font-weight: var(--terra-application-header-name-title-font-weight, bold);
     overflow: var(--terra-application-header-name-title-overflow, hidden);
     padding-left: var(--terra-application-header-name-title-padding-left, 0.3571rem);
     padding-right: var(--terra-application-header-name-title-padding-right, 4rem);

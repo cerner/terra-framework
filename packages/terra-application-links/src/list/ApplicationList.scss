@@ -4,7 +4,10 @@
     color: var(--terra-application-list-color, #1c1f21);
     display: block;
     font-size: var(--terra-application-list-font-size, 1.071rem);
-    padding: var(--terra-application-list-padding, 0.8225rem 0.7143rem 0.8225rem 1.2143rem);
+    padding-bottom: var(--terra-application-list-padding-bottom, 0.8225rem);
+    padding-left: var(--terra-application-list-padding-left, 1.2143rem);
+    padding-right: var(--terra-application-list-padding-right, 0.7143rem);
+    padding-top: var(--terra-application-list-padding-top, 0.8225rem);
     text-decoration: none;
     
     &:focus,
@@ -25,7 +28,7 @@
     &[aria-current='true'] {
       background-image: var(--terra-application-list-selected-background-image, linear-gradient(-270deg, #fff, #e8e9ea));
       border-left: var(--terra-application-list-selected-border-left, 0.5rem solid #007cc3);
-      padding: var(--terra-application-list-selected-padding, 0.8225rem 0.7143rem);
+      padding-left: var(--terra-application-list-selected-padding-left, 0.7143rem);
     }
   }
 }

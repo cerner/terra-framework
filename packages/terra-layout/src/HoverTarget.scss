@@ -12,6 +12,10 @@
     width: calc(100% - var(--layout-menu-hover-target-width, 2.143rem));
   }
 
+  .content-section[aria-hidden='true'] {
+    visibility: hidden;
+  }
+
   .hover-section {
     background: var(--layout-menu-hover-target-background-color, #e8e9ea);
     border: 0;
