@@ -5,6 +5,7 @@ Unreleased
 ----------
 ###Fixed
 * Nightwatch tests raw route now sets the size of the layout.
+* Content is no longer visible when the slide panel is hidden.
 
 1.1.0 - (January 23, 2018)
 ------------------
