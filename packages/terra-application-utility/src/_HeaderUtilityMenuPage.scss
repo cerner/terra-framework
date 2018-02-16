@@ -1,12 +1,13 @@
 :local {
   .menu-page {
     margin: 0;
+    overflow: scroll;
     padding: 0;
     /* stylelint-disable selector-max-compound-selectors*/
     .list-item {
-      list-style-type: none;
       cursor: pointer;
       font-size: var(--terra-application-header-menu-page-list-item-font-size, 1rem);
+      list-style-type: none;
       padding-bottom: var(--terra-application-header-menu-page-list-item-padding-bottom, 0.2143rem);
       padding-left: var(--terra-application-header-menu-page-list-item-padding-left, 0.8571rem);
       padding-top: var(--terra-application-header-menu-page-list-item-padding-top, 0.2143rem);

@@ -7,12 +7,17 @@ import Button from 'terra-button';
 import IconChevronDown from 'terra-icon/lib/icon/IconChevronDown';
 import UtilityMenu from './_HeaderUtilityMenu';
 import UserData from './UserData';
+import Utils from './_Utils';
 
 import styles from './ApplicationHeaderUtility.scss';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * The config file containing additional items to be rendered within the menu.
+   */
+  additionalItemsConfig: PropTypes.array,
   /**
    *
    */
@@ -40,6 +45,68 @@ const propTypes = {
 };
 
 class ApplicationHeaderUtility extends React.Component {
+  static generateMenuConfig() {
+    return {
+      key: Utils.KEYS.MENU,
+      title: Utils.TITLES.MENU,
+      // isSelected: true,
+      children: [
+        {
+          key: Utils.KEYS.USER_INFORMATION,
+          title: Utils.TITLES.USER_INFORMATION,
+          content: <UserData />,
+          // isSelected: false,
+          children: [
+            {
+              key: Utils.KEYS.CHANGE_PHOTO,
+              title: Utils.TITLES.CHANGE_PHOTO,
+              // isSelected: false,
+            },
+          ],
+        },
+        {
+          key: Utils.KEYS.SETTINGS,
+          title: Utils.TITLES.SETTINGS,
+          // isSelected: false,
+          children: [
+            {
+              key: Utils.KEYS.APPEARANCE,
+              title: Utils.TITLES.APPEARANCE,
+              // isSelected: false,
+            },
+            {
+              key: Utils.KEYS.SECURITY,
+              title: Utils.TITLES.SECURITY,
+              // isSelected: false,
+            },
+          ],
+        },
+        {
+          key: Utils.KEYS.HELP,
+          title: Utils.TITLES.HELP,
+          // isSelected: false,
+          children: [
+            {
+              key: Utils.KEYS.GETTING_STARTED,
+              title: Utils.TITLES.GETTING_STARTED,
+              // isSelected: false,
+            },
+            {
+              key: Utils.KEYS.ABOUT,
+              title: Utils.TITLES.ABOUT,
+              // isSelected: false,
+            },
+            {
+              key: Utils.KEYS.TERMS_OF_USE,
+              title: Utils.TITLES.TERMS_OF_USE,
+              // isSelected: false,
+            },
+          ],
+        },
+      ],
+    };
+  }
+
   constructor(props) {
     super(props);
     this.handleOnClick = this.handleOnClick.bind(this);
@@ -55,11 +122,12 @@ class ApplicationHeaderUtility extends React.Component {
 
   createContent() {
     const userData = (<UserData userDetail={this.props.userDetail} userName={this.props.userName} userPhoto={this.props.userPhoto} />);
-    return <UtilityMenu onChange={this.props.onChange} userData={userData} />;
+    return <UtilityMenu additionalItemsConfig={this.props.additionalItemsConfig} menuConfig={ApplicationHeaderUtility.generateMenuConfig()} onChange={this.props.onChange} userData={userData} />;
   }
 
   render() {
     const {
+      additionalItemsConfig,
       onChange,
       onDisclose,
       userDetail,
@@ -96,5 +164,7 @@ class ApplicationHeaderUtility extends React.Component {
 }
 
 ApplicationHeaderUtility.propTypes = propTypes;
+ApplicationHeaderUtility.keys = Utils.KEYS;
+ApplicationHeaderUtility.titles = Utils.titles;
 
 export default ApplicationHeaderUtility;

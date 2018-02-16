@@ -10,19 +10,83 @@ import ToggleExample from 'terra-application-header-layout/examples/index-exampl
 import avatar from './fallBackAvatar.svg';
 import ApplicationHeaderUtility from '../../src/ApplicationHeaderUtility';
 
-// import styles from '.ApplicationHeaderUtilityStandard.scss';
-
 class MockApplicationHeader extends React.Component {
-  static handleOnChange(event, key) {
-    console.log(`Event: ${event} Key: ${key}`);
+  static generateAdditionalItemsConfig() {
+    return [
+      {
+        parent: 'menu',
+        key: 'additional-item-1',
+        title: 'Additional Item 1',
+        // isSelected: true,
+        children: [
+          {
+            key: 'additional-item-1.1',
+            title: 'Additional Item 1.1',
+          },
+        ],
+      },
+      {
+        parent: 'menu',
+        key: 'additional-item-2',
+        title: 'Additional Item 2',
+        children: [
+          {
+            key: 'additional-item-2.1',
+            title: 'Additional Item 2.1',
+          },
+          {
+            key: 'additional-item-2.2',
+            title: 'Additional Item 2.2',
+          },
+          {
+            key: 'additional-item-2.3',
+            title: 'Additional Item 2.3',
+          },
+        ],
+      },
+      {
+        parent: 'menu',
+        key: 'additional-item-3',
+        title: 'Additional Item 3',
+      },
+      {
+        parent: 'menu',
+        key: 'additional-item-4',
+        title: 'Additional Item 4',
+      },
+      {
+        parent: 'menu',
+        key: 'additional-item-5',
+        title: 'Additional Item 5',
+      },
+      {
+        parent: 'menu',
+        key: 'additional-item-6',
+        title: 'Additional Item 6',
+      },
+      {
+        parent: 'menu',
+        key: 'additional-item-7',
+        title: 'Additional Item 7',
+      },
+      {
+        parent: 'menu',
+        key: 'additional-item-8',
+        title: 'Additional Item 8',
+      },
+    ];
   }
-
   constructor(props) {
     super(props);
     this.onDiscloseUtility = this.onDiscloseUtility.bind(this);
+    this.getTargetRef = this.getTargetRef.bind(this);
+    this.handleOnChange = this.handleOnChange.bind(this);
     this.handleRequestClose = this.handleRequestClose.bind(this);
     this.setContentNode = this.setContentNode.bind(this);
-    this.state = { utilityComponent: false };
+    this.state = {
+      utilityComponent: false,
+      selectedKey: null,
+    };
   }
 
   onDiscloseUtility(utility) {
@@ -32,15 +96,18 @@ class MockApplicationHeader extends React.Component {
   }
 
   getTargetRef() {
-    // if (this.contentNode) {
-    //   console.log(this.contentNode.querySelector('[data-application-header-utility]'));
-    //   return this.contentNode.querySelector('[data-application-header-utility]');
-    // }
-    return document.getElementById('utility-id');
+    if (this.contentNode) {
+      return this.contentNode.querySelector('[data-application-header-utility]');
+    }
+    return null;
   }
 
   setContentNode(node) {
     this.contentNode = node;
+  }
+
+  handleOnChange(event, key) {
+    this.setState({ selectedKey: key });
   }
 
   handleRequestClose() {
@@ -53,7 +120,7 @@ class MockApplicationHeader extends React.Component {
     if (this.state.utilityComponent) {
       popup = (
         <Popup
-          contentHeight="auto"
+          contentHeight="320"
           contentWidth="240"
           isArrowDisplayed
           isOpen
@@ -68,24 +135,29 @@ class MockApplicationHeader extends React.Component {
     const image = <Image src={avatar} />;
     const utilities = (
       <ApplicationHeaderUtility
-        onChange={MockApplicationHeader.handleOnChange}
+        additionalItemsConfig={MockApplicationHeader.generateAdditionalItemsConfig()}
+        onChange={this.handleOnChange}
         onDisclose={this.onDiscloseUtility}
-        userDetail={'Software Engineer'}
-        userName={'FirstName LastName'}
+        userDetail={'User Detail'}
+        userName={"User's Name"}
         userPhoto={image}
         data-application-header-utility
-        id={'utility-id'}
       />
     );
     return (
-      <div ref={this.setContentNode} style={{ height: '60px', position: 'relative', width: '100%' }}>
-        <ApplicationHeaderLayout
-          logo={<LogoExample size="small" />}
-          utilities={utilities}
-          navigation={<NavigationExample size="small" />}
-          toggle={<ToggleExample size="small" />}
-        />
-        {popup}
+      <div>
+        <div ref={this.setContentNode} style={{ height: '60px', position: 'relative', width: '100%' }}>
+          <ApplicationHeaderLayout
+            logo={<LogoExample size="small" />}
+            utilities={utilities}
+            navigation={<NavigationExample size="small" />}
+            toggle={<ToggleExample size="small" />}
+          />
+          {popup}
+        </div>
+        <br />
+        <div>{`Trigger event for: ${this.state.selectedKey}`}</div>
+        <br />
       </div>
     );
   }

@@ -13,21 +13,21 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   *
+   * The array specifying additional menu items
    */
-  isHeightBounded: PropTypes.func,
-  // /**
-  //  * Key based object containing menu page data
-  //  */
-  // menuConfig: PropTypes.object,
+  additionalItemsConfig: PropTypes.array,
+  /**
+   * Indicates if the height is bound to a value.
+   */
+  isHeightBounded: PropTypes.bool,
+  /**
+   * The data object used to generate menu pages
+   */
+  menuConfig: PropTypes.object.isRequired,
   /**
    * Callback function indicating a close condition was met, should be combined with isOpen for state management.
    */
   onChange: PropTypes.func.isRequired,
-  /**
-   * The base key of the pages object
-   */
-  rootMenuKey: PropTypes.func,
   /**
    * The object containing information of the user.
    */
@@ -35,12 +35,46 @@ const propTypes = {
 };
 
 const defaultProps = {
+  additionalItemsConfig: null,
   isHeightBounded: undefined,
-  rootMenuKey: null,
   userData: null,
 };
 
 class HeaderUtilityMenu extends React.Component {
+  /**
+   * Recursively add each additional item to the map.
+   * @param {*} additionalItemsConfig
+   * @param {*} map
+   */
+  static addAdditionalItems(additionalItemsConfig, map) {
+    additionalItemsConfig.forEach((item) => {
+      if (item.parent) {
+        const parent = map.get(item.parent);
+        parent.children.push(item);
+      }
+      HeaderUtilityMenu.insertIntoMap(item, map);
+      if (item.children) {
+        this.addAdditionalItems(item.children, map);
+      }
+    });
+  }
+
+  /**
+   * Insert the specified item into the map.
+   * @param {*} item
+   * @param {*} map
+   */
+  static insertIntoMap(item, map) {
+    map.set(
+      item.key,
+      { title: item.title,
+        content: item.content,
+        // isSelected: config.isSelected,
+        children: item.children,
+      },
+    );
+  }
+
   constructor(props) {
     super(props);
     const map = new Map();
@@ -53,11 +87,11 @@ class HeaderUtilityMenu extends React.Component {
     this.pop = this.pop.bind(this);
     this.push = this.push.bind(this);
     // TODO: Remove internal generation and have consumers pass in config with additional items.
-    // this.props.menuConfig = Utils.generateConfig(this.props.userData);
-    // this.props.rootMenuKey = Utils.ROOTKEY;
-    this.createMap(Utils.generateConfig(this.props.userData), map);
+    // this.props.rootMenuKey = Utils.ROOT_KEY;
+    this.createMap(this.props.menuConfig, map);
+    HeaderUtilityMenu.addAdditionalItems(this.props.additionalItemsConfig, map);
     this.state = {
-      currentKey: Utils.ROOTKEY,
+      currentKey: Utils.KEYS.MENU,
       previousKeyStack: [],
       map,
     };
@@ -85,14 +119,13 @@ class HeaderUtilityMenu extends React.Component {
    * Example: {"key" => {title: "Page Title", isSelected: false, children: [{key: "child-one", title: "First Item", isSelected: false}, {key: "child-two", title: "Second Item" isSelected: false}]}
    */
   createMap(config, map) {
-    map.set(
-      config.key,
-      { title: config.title,
-        content: config.content,
-        // isSelected: config.isSelected,
-        children: config.children,
-      },
-    );
+    // eslint-disable-no-param-reassign
+    if (config.key === 'user-information') {
+      config.content = this.props.userData;
+    }
+    // eslint-enable-no-param-reassign
+    HeaderUtilityMenu.insertIntoMap(config, map);
+
     if ('children' in config) {
       config.children.forEach((object) => {
         this.createMap(object, map);
@@ -101,7 +134,7 @@ class HeaderUtilityMenu extends React.Component {
   }
 
   handleLogOut() {
-    this.props.onChange(event, 'logout');
+    this.props.onChange(event, Utils.KEYS.LOG_OUT);
   }
 
   handleOnChange(key) {
@@ -136,6 +169,9 @@ class HeaderUtilityMenu extends React.Component {
 
   render() {
     const {
+      additionalItemsConfig,
+      menuConfig,
+      isHeightBounded,
       onChange,
       userData,
       ...customProps
@@ -143,24 +179,24 @@ class HeaderUtilityMenu extends React.Component {
 
     const MenuClassNames = cx([
       'utility-menu',
+      { 'is-height-bounded': isHeightBounded },
       customProps.classNames,
     ]);
-
-    const HeaderClassNames = cx([
-      'header',
-    ]);
-
+    const HeaderClassNames = cx('header');
     const BackButtonClassNames = cx('back-button');
+    const IconLeftClassNames = cx('icon-left');
     const LogOutButtonClassNames = cx('log-out-button');
     const HeaderTextClassNames = cx('header-text');
+    const FooterClassNames = cx('footer');
 
-    // Display Logout button on the first page
-    // Display Back button in nested pages
     const currentKey = this.state.currentKey;
+    const backButton = <Button className={BackButtonClassNames} onClick={this.handleRequestBack}><IconLeft className={IconLeftClassNames} /></Button>;
+    const footer = <div className={FooterClassNames}><MenuDivider /><Button className={LogOutButtonClassNames} onClick={this.handleLogOut}>{Utils.TITLES.LOG_OUT}</Button></div>;
+
     return (
       <div {...customProps} className={MenuClassNames} >
         <div className={HeaderClassNames}>
-          {currentKey !== Utils.ROOTKEY && <Button className={BackButtonClassNames} onClick={this.handleRequestBack}> <IconLeft /> </Button>}
+          {currentKey !== Utils.KEYS.MENU && backButton}
           <span className={HeaderTextClassNames}>{this.getTitle(currentKey) }</span>
         </div>
         <MenuDivider />
@@ -168,7 +204,7 @@ class HeaderUtilityMenu extends React.Component {
           pageData={this.state.map.get(currentKey)}
           onChange={this.handleOnChange}
         />
-        {currentKey === Utils.ROOTKEY ? [<MenuDivider />, <Button className={LogOutButtonClassNames} onClick={this.handleLogOut}>{Utils.LOGOUT}</Button>] : null}
+        {currentKey === Utils.KEYS.MENU && footer }
       </div>
     );
   }

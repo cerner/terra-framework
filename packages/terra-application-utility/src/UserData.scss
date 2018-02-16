@@ -15,11 +15,6 @@
         width: var(--terra-application-utility-user-data-photo-width, 3.571rem);
       }
 
-      // .text + .icon {
-      //   display: table-cell;
-      //   vertical-align: middle;
-      // }
-
       .name {
         font-size: var(--terra-application-utility-user-data-name-font-size, 1.143rem);
         overflow-wrap: break-word;
@@ -29,15 +24,15 @@
       }
 
       .detail {
-        font-size: var(--terra-application-utility-user-data-detail-font-size, 1rem);
+        font-size: var(--terra-application-utility-user-data-detail-font-size, 0.8571rem);
       }
     }
 
     .chevron {
-      height: 0.8571rem;
-      min-height: 0.8571rem;
-      min-width: 0.8571rem;
-      width: 0.8571rem;
+      height: var(--terra-application-utility-menu-page-chevron-height, 0.8571rem);
+      min-height: var(--terra-application-utility-menu-page-height, 0.8571rem);
+      min-width: var(--terra-application-utility-menu-page-chevron-width, 0.8571rem);
+      width: var(--terra-application-utility-menu-page-chevron-width, 0.8571rem);
     }
   }
 }

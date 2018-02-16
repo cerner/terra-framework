@@ -5,6 +5,7 @@ import 'terra-base/lib/baseStyles';
 import Arrange from 'terra-arrange';
 import IconChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 import MenuDivider from './_UtilityMenuDivider';
+import Utils from './_Utils';
 import styles from './_HeaderUtilityMenuPage.scss';
 
 const cx = classNames.bind(styles);
@@ -24,57 +25,61 @@ const propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
-const HeaderUtilityMenuPage = ({
-  pageData,
-  onChange,
-  ...customProps
-}) => {
-  const menuPageClassNames = cx('menu-page');
-  const listItemClassNames = cx('list-item');
-  const chevronClassNames = cx('chevron');
-  // const listItemArr = pageData.children.map(child =>
-  //   (
-  //     <li key={child.key} className={listItemClassNames}>
-  //       <Arrange
-  //         onClick={() => { onChange(child.key); }}
-  //         // fitStart={}
-  //         fill={<div>{child.content ? child.content : child.title}</div>}
-  //         fitEnd={child.children && !child.content ? <IconChevronRight className={chevronClassNames} /> : null}
-  //         align={'center'}
-  //       />
-  //     </li>
-  //   ),
-  // );
-  // eslint-disable jsx-a11y/no-static-element-interactions
-  const listItemArr = pageData.children.map((child) => {
-    if (child.content) {
-      return (
-        <div key={child.key}>
-          <li onClick={() => { onChange(child.key); }} role="button" className={listItemClassNames}>
-            {child.content}
-          </li>
-          { child.key === 'user-information' && <MenuDivider key={`${child.key}-divider`} />}
-        </div>
-      );
+class HeaderUtilityMenuPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+  }
+
+  handleKeyDown(key, event) {
+    if (event.nativeEvent.keyCode === Utils.KEY_CODES.ENTER || event.nativeEvent.keyCode === Utils.KEY_CODES.SPACE) {
+      this.props.onChange(key);
     }
+  }
+
+  render() {
+    const {
+      pageData,
+      onChange,
+      ...customProps
+    } = this.props;
+
+    const menuPageClassNames = cx('menu-page');
+    const listItemClassNames = cx('list-item');
+    const chevronClassNames = cx('chevron');
+
+    // onKeyDown={this.onKeyDown(child.key)}
+
+    const listItemArr = pageData.children.map((child) => {
+      if (child.content) {
+        return (
+          <div key={child.key}>
+            <li tabIndex="0" onClick={() => { onChange(child.key); }} onKeyDown={e => this.handleKeyDown(child.key, e)} role="button" className={listItemClassNames}>
+              {child.content}
+            </li>
+            { child.key === 'user-information' && <MenuDivider key={`${child.key}-divider`} />}
+          </div>
+        );
+      }
+      return (
+        <li tabIndex="0" onClick={() => { onChange(child.key); }} onKeyDown={e => this.handleKeyDown(child.key, e)} role="button" key={child.key} className={listItemClassNames}>
+          <Arrange
+            // fitStart={}
+            fill={<div>{child.title}</div>}
+            fitEnd={child.children && !child.content ? <IconChevronRight className={chevronClassNames} /> : null}
+            align={'center'}
+          />
+        </li>
+      );
+    });
+  // eslint-enable jsx-a11y/no-static-element-interactions
     return (
-      <li onClick={() => { onChange(child.key); }} role="button" key={child.key} className={listItemClassNames}>
-        <Arrange
-          // fitStart={}
-          fill={<div>{child.title}</div>}
-          fitEnd={child.children && !child.content ? <IconChevronRight className={chevronClassNames} /> : null}
-          align={'center'}
-        />
-      </li>
+      <ul{...customProps} className={menuPageClassNames}>
+        {listItemArr}
+      </ul>
     );
-  });
-// eslint-enable jsx-a11y/no-static-element-interactions
-  return (
-    <ul{...customProps} className={menuPageClassNames}>
-      {listItemArr}
-    </ul>
-  );
-};
+  }
+}
 
 HeaderUtilityMenuPage.propTypes = propTypes;
 

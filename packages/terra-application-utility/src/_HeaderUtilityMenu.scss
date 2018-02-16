@@ -1,10 +1,11 @@
 :local {
   .utility-menu {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-between;
-    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+
     font-family: inherit;
+    height: 100%; //set this based on isHeightBounded
+    list-style-type: none;
     overflow: hidden;
 
     .header {
@@ -14,6 +15,7 @@
       font-weight: var(--terra-application-header-utility-menu-header-font-weight, bold);
       height: var(--terra-application-header-utility-menu-header-height, 2rem);
 
+      /* stylelint-disable selector-max-compound-selectors*/
       .header-text {
         display: inline-block;
         margin-left: var(--terra-application-header-utility-menu-header-text-margin-left, 0.4286rem);
@@ -23,13 +25,31 @@
         background-color: var(--terra-application-header-utility-menu-header-back-button-background-color, transparent);
         border-width: var(--terra-application-header-utility-menu-header-back-button-border-width, 0);
         width: var(--terra-application-header-utility-menu-header-back-button-width, 1.714rem);
+
+        /* stylelint-disable max-nesting-depth */
+        .icon-left {
+          height: var(--terra-application-utility-menu-page-chevron-height, 0.7143rem);
+          min-height: var(--terra-application-utility-menu-page-height, 0.7143rem);
+          min-width: var(--terra-application-utility-menu-page-chevron-width, 0.7143rem);
+          width: var(--terra-application-utility-menu-page-chevron-width, 0.7143rem);
+        }
+        /* stylelint-enable max-nesting-depth */
       }
     }
 
-    .log-out-button {
-      float: right;
-      margin-bottom: var(--terra-application-header-utility-menu-log-out-button, 0.4286rem);
-    }
+    .footer {
+      margin-top: auto;
 
+      .log-out-button {
+        float: right;
+        margin-bottom: var(--terra-application-header-utility-menu-log-out-button-margin-bottom, 0.4286rem);
+        margin-top: var(--terra-application-header-utility-menu-log-out-button-margin-top, 0.4286rem);
+      }
+      /* stylelint-enable selector-max-compound-selectors*/
+    }
+  }
+
+  .is-height-bounded {
+    height: 100%;
   }
 }
