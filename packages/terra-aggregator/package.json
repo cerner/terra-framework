@@ -1,7 +1,7 @@
 {
   "name": "terra-aggregator",
   "main": "lib/Aggregator.js",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "The Aggregator provides focus-based mechanisms for managing actions across disparate components.",
   "repository": {
     "type": "git",
@@ -22,29 +22,29 @@
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "devDependencies": {
-    "terra-base": "^2.10.0",
-    "terra-app-delegate": "^1.10.0"
+    "terra-app-delegate": "^1.11.0",
+    "terra-base": "^2.10.0"
   },
   "peerDependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "terra-base": "^2.10.0",
-    "terra-app-delegate": "^1.10.0"
+    "terra-app-delegate": "^1.10.0",
+    "terra-base": "^2.10.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-disclosure-manager": "^0.x",
-    "terra-modal-manager": "^1.19.0",
-    "terra-slide-panel-manager": "^0.x",
     "terra-button": "^1.14.0",
-    "terra-list": "^1.19.0",
-    "terra-content-container": "^1.15.0",
-    "terra-clinical-header": "^1.7.0",
     "terra-clinical-action-header": "^1.6.0",
+    "terra-clinical-header": "^1.7.0",
+    "terra-content-container": "^1.15.0",
+    "terra-disclosure-manager": "^1.0.0",
     "terra-form": "^1.16.0",
+    "terra-grid": "^3.19.0",
+    "terra-list": "^1.19.0",
+    "terra-modal-manager": "^1.20.0",
     "terra-responsive-element": "^1.15.0",
-    "terra-grid": "^3.19.0"
+    "terra-slide-panel-manager": "^1.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

@@ -4,6 +4,8 @@ Changelog
 Unreleased
 ----------
 
+1.11.0 - (February 15, 2018)
+------------------
 ### Added
 * Added registerDismissLock
 

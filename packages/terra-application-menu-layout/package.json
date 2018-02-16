@@ -1,7 +1,7 @@
 {
   "name": "terra-application-menu-layout",
   "main": "lib/ApplicationMenuLayout.js",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "This component renders an application menu layout. To be used with a terra-layout or terra-navigation-layout.",
   "repository": {
     "type": "git",

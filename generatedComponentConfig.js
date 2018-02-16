@@ -32,6 +32,7 @@ import LayoutDefault from './packages/terra-layout/examples/test-examples/Layout
 import LayoutLongText from './packages/terra-layout/examples/test-examples/LayoutLongText';
 import LayoutNoHeader from './packages/terra-layout/examples/test-examples/LayoutNoHeader';
 import LayoutNoMenu from './packages/terra-layout/examples/test-examples/LayoutNoMenu';
+import LayoutSlidePanelExample from './packages/terra-layout/examples/test-examples/LayoutSlidePanelExample';
 import ModalManagerDefault from './packages/terra-modal-manager/examples/test-examples/ModalManagerDefault';
 import NavigationLayoutBasic from './packages/terra-navigation-layout/examples/test-examples/NavigationLayoutBasic';
 import NavigationLayoutComplex from './packages/terra-navigation-layout/examples/test-examples/NavigationLayoutComplex';
@@ -241,6 +242,11 @@ const componentConfig = {
         name: 'Layout No Menu',
         path: '/layout-no-menu',
         component: LayoutNoMenu,
+      },
+      {
+        name: 'Layout Slide Panel Example',
+        path: '/layout-slide-panel-example',
+        component: LayoutSlidePanelExample,
       },
     ],
   },
