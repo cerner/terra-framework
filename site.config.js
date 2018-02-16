@@ -1,10 +1,9 @@
-const fs = require('fs');
+import homeReadMe from './README.md';
+import componentConfig from './generatedComponentConfig';
 
-const homeReadMe = fs.readFileSync('./README.md', 'utf-8');
-
-module.exports = {
+const siteConfig = {
   /* The component configuration path. */
-  componentConfigPath: './generatedComponentConfig.js',
+  componentConfig,
 
   /* The logo to display as the placeholder. */
   placeholderSrc: 'https://github.com/cerner/terra-core/raw/master/terra.png',
@@ -20,3 +19,5 @@ module.exports = {
     title: 'Terra Framework',
   },
 };
+
+export default siteConfig;
