@@ -50,6 +50,6 @@
     "props-table": "props-table ./src/list/ApplicationList.jsx ./src/tabs/ApplicationTabs.jsx --out-dir ./docs/props-table",
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
-    "test:wdio": "wdio ../../wdio.conf.js --spec tests/wdio/application-tabs-spec.js"
+    "test:wdio": "wdio ../../wdio.conf.js"
   }
 }

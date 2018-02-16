@@ -3,7 +3,7 @@ import TestExample from 'terra-disclosure-manager/examples/test-content/TestExam
 import SlidePanelManager from '../../lib/SlidePanelManager';
 
 const SlidePanelManagerDefault = () => (
-  <div role="main" style={{ height: '900px' }}>
+  <div role="main" style={{ height: '100%' }}>
     <SlidePanelManager>
       <TestExample identifier="root-component" disclosureType="panel" />
     </SlidePanelManager>
