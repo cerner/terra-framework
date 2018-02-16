@@ -66,6 +66,7 @@
     "publish": "npm whoami && check-installed-dependencies && npm run compile && npm test && npm run props-table && lerna publish",
     "postpublish": "npm run dependency-markdown && git add --all && git commit -m 'Updated DEPENDENCIES.md files'",
     "start": "webpack-dev-server --config node_modules/terra-site/src/config/webpack.config --progress",
+    "start:build": "npm run generate-config && npm run start",
     "start:express": "node scripts/express/app.js",
     "test": "jest && nightwatch && wdio",
     "wdio": "wdio"
@@ -110,8 +111,7 @@
     "stylelint-order": "^0.7.0",
     "stylelint-scss": "^2.0.0",
     "stylelint-suitcss": "^1.0.0",
-    "terra-props-table": "^1.0.0",
-    "terra-site": "2.0.0-RC.3",
+    "terra-site": "2.0.0-RC.5",
     "terra-toolkit": "^2.7.0",
     "wdio-mocha-framework": "^0.5.11",
     "wdio-visual-regression-service": "^0.8.0",
