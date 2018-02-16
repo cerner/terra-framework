@@ -36,8 +36,8 @@
     "terra-application-header-layout": "^1.2.0",
     "terra-application-menu-layout": "^1.2.0",
     "terra-base": "^3.0.0",
-    "terra-image": "^1.15.0",
-    "terra-responsive-element": "^1.15.0"
+    "terra-image": "^2.0.1",
+    "terra-responsive-element": "^2.0.1"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
