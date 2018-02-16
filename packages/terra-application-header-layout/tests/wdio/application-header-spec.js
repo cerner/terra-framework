@@ -1,12 +1,15 @@
 /* global browser, Terra, beforeEach, expect */
 
+const viewports = Terra.viewports('tiny', 'medium');
+
 describe('Application Header', () => {
-  const viewports = Terra.viewports('small', 'huge');
+  describe('Displays a default application header', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/application-header-layout/application-header-default');
+      browser.waitForVisible('#test-header');
+    });
 
-  it('Displays a default application header', () => {
-    browser.url('#/raw/tests/application-header-layout/application-header-default');
-    const screenshots = browser.checkViewport({ viewports });
-
-    expect(screenshots).to.matchReference();
+    Terra.should.matchScreenshot({ viewports });
+    Terra.should.beAccessible({ viewports, context: '#test-header' });
   });
 });
