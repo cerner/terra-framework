@@ -7,75 +7,11 @@ import 'terra-base/lib/baseStyles';
 import LogoExample from 'terra-application-header-layout/examples/index-examples/LogoExample';
 import NavigationExample from 'terra-application-header-layout/examples/index-examples/NavigationExample';
 import ToggleExample from 'terra-application-header-layout/examples/index-examples/ToggleExample';
-import avatar from './fallBackAvatar.svg';
-import ApplicationHeaderUtility from '../../src/ApplicationHeaderUtility';
+import Avatar from './FallBackAvatar.svg';
+import { ApplicationHeaderUtility } from '../../src/ApplicationUtility';
+import AdditionalItemsConfig from './AdditionalItemsConfig';
 
 class MockApplicationHeader extends React.Component {
-  static generateAdditionalItemsConfig() {
-    return [
-      {
-        parent: 'menu',
-        key: 'additional-item-1',
-        title: 'Additional Item 1',
-        // isSelected: true,
-        children: [
-          {
-            key: 'additional-item-1.1',
-            title: 'Additional Item 1.1',
-          },
-        ],
-      },
-      {
-        parent: 'menu',
-        key: 'additional-item-2',
-        title: 'Additional Item 2',
-        children: [
-          {
-            key: 'additional-item-2.1',
-            title: 'Additional Item 2.1',
-          },
-          {
-            key: 'additional-item-2.2',
-            title: 'Additional Item 2.2',
-          },
-          {
-            key: 'additional-item-2.3',
-            title: 'Additional Item 2.3',
-          },
-        ],
-      },
-      {
-        parent: 'menu',
-        key: 'additional-item-3',
-        title: 'Additional Item 3',
-      },
-      {
-        parent: 'menu',
-        key: 'additional-item-4',
-        title: 'Additional Item 4',
-      },
-      {
-        parent: 'menu',
-        key: 'additional-item-5',
-        title: 'Additional Item 5',
-      },
-      {
-        parent: 'menu',
-        key: 'additional-item-6',
-        title: 'Additional Item 6',
-      },
-      {
-        parent: 'menu',
-        key: 'additional-item-7',
-        title: 'Additional Item 7',
-      },
-      {
-        parent: 'menu',
-        key: 'additional-item-8',
-        title: 'Additional Item 8',
-      },
-    ];
-  }
   constructor(props) {
     super(props);
     this.onDiscloseUtility = this.onDiscloseUtility.bind(this);
@@ -132,10 +68,10 @@ class MockApplicationHeader extends React.Component {
       );
     }
 
-    const image = <Image src={avatar} />;
+    const image = <Image src={Avatar} />;
     const utilities = (
       <ApplicationHeaderUtility
-        additionalItemsConfig={MockApplicationHeader.generateAdditionalItemsConfig()}
+        additionalItemsConfig={AdditionalItemsConfig}
         onChange={this.handleOnChange}
         onDisclose={this.onDiscloseUtility}
         userDetail={'User Detail'}

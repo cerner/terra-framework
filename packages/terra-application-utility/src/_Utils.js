@@ -52,11 +52,72 @@ const TITLES = {
   LOG_OUT: 'Log Out',
 };
 
+const generateMenuConfig = userData => ({
+  key: KEYS.MENU,
+  title: TITLES.MENU,
+  isSelected: true,
+  children: [
+    {
+      key: KEYS.USER_INFORMATION,
+      title: TITLES.USER_INFORMATION,
+      content: userData,
+      isSelected: false,
+      children: [
+        {
+          key: KEYS.CHANGE_PHOTO,
+          title: TITLES.CHANGE_PHOTO,
+          isSelected: false,
+        },
+      ],
+    },
+    {
+      key: KEYS.SETTINGS,
+      title: TITLES.SETTINGS,
+      isSelected: false,
+      children: [
+        {
+          key: KEYS.APPEARANCE,
+          title: TITLES.APPEARANCE,
+          isSelected: false,
+        },
+        {
+          key: KEYS.SECURITY,
+          title: TITLES.SECURITY,
+          isSelected: false,
+        },
+      ],
+    },
+    {
+      key: KEYS.HELP,
+      title: TITLES.HELP,
+      isSelected: false,
+      children: [
+        {
+          key: KEYS.GETTING_STARTED,
+          title: TITLES.GETTING_STARTED,
+          isSelected: false,
+        },
+        {
+          key: KEYS.ABOUT,
+          title: TITLES.ABOUT,
+          isSelected: false,
+        },
+        {
+          key: KEYS.TERMS_OF_USE,
+          title: TITLES.TERMS_OF_USE,
+          isSelected: false,
+        },
+      ],
+    },
+  ],
+});
+
 const Utils = {
   isFullScreen,
   KEY_CODES,
   KEYS,
   TITLES,
+  generateMenuConfig,
 };
 
 export default Utils;

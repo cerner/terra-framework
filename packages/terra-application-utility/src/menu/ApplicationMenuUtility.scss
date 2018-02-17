@@ -1,0 +1,39 @@
+:local {
+  .header-utility {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-left: var(--terra-application-menu-utility-padding-left, 0.5714rem);
+    padding-right: var(--terra-application-menu-utility-padding-right, 0.5714rem);
+    width: 100%;
+    /* stylelint-disable selector-max-compound-selectors*/
+    .user-container {
+      align-items: center;
+      display: flex;
+      justify-content: flex-start;
+
+      .user-photo {
+        margin-right: var(--terra-application-menu-utility-photo-margin-right, 0.2143rem);
+        min-width: var(--terra-application-menu-utility-photo-min-width, 1.857rem);
+      }
+
+      .user-name {
+        margin-right: var(--terra-application-menu-utility-user-name-margin-right, 0.2143rem);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    // .icon-container {
+    //   align-items: center;
+    //   display: flex;
+    //   justify-content: flex-end;
+
+    .icon {
+      min-width: var(--terra-application-menu-utility-icon-min-width, 1.857rem);
+    }
+    // }
+    /* stylelint-enable selector-max-compound-selectors*/
+  }
+}

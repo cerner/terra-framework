@@ -4,8 +4,8 @@ import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import Arrange from 'terra-arrange';
 import IconChevronRight from 'terra-icon/lib/icon/IconChevronRight';
-import MenuDivider from './_UtilityMenuDivider';
-import Utils from './_Utils';
+import MenuDivider from '../_UtilityMenuDivider';
+import Utils from '../_Utils';
 import styles from './_HeaderUtilityMenuPage.scss';
 
 const cx = classNames.bind(styles);
@@ -47,9 +47,7 @@ class HeaderUtilityMenuPage extends React.Component {
     const menuPageClassNames = cx('menu-page');
     const listItemClassNames = cx('list-item');
     const chevronClassNames = cx('chevron');
-
-    // onKeyDown={this.onKeyDown(child.key)}
-
+    /* eslint-disable jsx-a11y/no-static-element-interactions */
     const listItemArr = pageData.children.map((child) => {
       if (child.content) {
         return (
@@ -72,7 +70,7 @@ class HeaderUtilityMenuPage extends React.Component {
         </li>
       );
     });
-  // eslint-enable jsx-a11y/no-static-element-interactions
+    /* eslint-enable jsx-a11y/no-static-element-interactions */
     return (
       <ul{...customProps} className={menuPageClassNames}>
         {listItemArr}

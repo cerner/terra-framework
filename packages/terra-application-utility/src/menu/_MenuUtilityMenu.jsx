@@ -2,16 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
+import AppDelegate from 'terra-app-delegate';
 import Button from 'terra-button';
 import IconLeft from 'terra-icon/lib/icon/IconLeft';
-import MenuDivider from './_UtilityMenuDivider';
-import Utils from './_Utils';
-import MenuPage from './_HeaderUtilityMenuPage';
-import styles from './_HeaderUtilityMenu.scss';
+import MenuDivider from '../_UtilityMenuDivider';
+import Utils from '../_Utils';
+import MenuPage from './_MenuUtilityMenuPage';
+import styles from './_MenuUtilityMenu.scss';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * The AppDelegate instance that will be propagated to the components presented within the NavigationLayout.
+   */
+  app: AppDelegate.propType,
   /**
    * The array specifying additional menu items
    */
@@ -69,7 +74,7 @@ class HeaderUtilityMenu extends React.Component {
       item.key,
       { title: item.title,
         content: item.content,
-        // isSelected: config.isSelected,
+        isSelected: item.isSelected,
         children: item.children,
       },
     );
@@ -81,13 +86,12 @@ class HeaderUtilityMenu extends React.Component {
     this.createMap = this.createMap.bind(this);
     this.getChildren = this.getChildren.bind(this);
     this.getTitle = this.getTitle.bind(this);
+    this.handleClose = this.handleClose.bind(this);
     this.handleLogOut = this.handleLogOut.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleRequestBack = this.handleRequestBack.bind(this);
     this.pop = this.pop.bind(this);
     this.push = this.push.bind(this);
-    // TODO: Remove internal generation and have consumers pass in config with additional items.
-    // this.props.rootMenuKey = Utils.ROOT_KEY;
     this.createMap(this.props.menuConfig, map);
     HeaderUtilityMenu.addAdditionalItems(this.props.additionalItemsConfig, map);
     this.state = {
@@ -119,11 +123,10 @@ class HeaderUtilityMenu extends React.Component {
    * Example: {"key" => {title: "Page Title", isSelected: false, children: [{key: "child-one", title: "First Item", isSelected: false}, {key: "child-two", title: "Second Item" isSelected: false}]}
    */
   createMap(config, map) {
-    // eslint-disable-no-param-reassign
-    if (config.key === 'user-information') {
+    if (config.key === Utils.KEYS.USER_INFORMATION) {
+      // eslint-disable-next-line no-param-reassign
       config.content = this.props.userData;
     }
-    // eslint-enable-no-param-reassign
     HeaderUtilityMenu.insertIntoMap(config, map);
 
     if ('children' in config) {
@@ -133,6 +136,10 @@ class HeaderUtilityMenu extends React.Component {
     }
   }
 
+  handleClose() {
+    this.props.app.closeDisclosure();
+  }
+
   handleLogOut() {
     this.props.onChange(event, Utils.KEYS.LOG_OUT);
   }
@@ -140,6 +147,10 @@ class HeaderUtilityMenu extends React.Component {
   handleOnChange(key) {
     // this.state.map.set(key).isSelected = true;
     if (!this.getChildren(key)) {
+      // debugger;
+      const value = this.state.map.get(key);
+      value.isSelected = !value.isSelected;
+      this.state.map.set(key, value);
       this.props.onChange(event, key);
     } else {
       this.setState({
@@ -151,6 +162,7 @@ class HeaderUtilityMenu extends React.Component {
 
   handleRequestBack() {
     // this.state.map.set(key).isSelected = false;
+    // this.props.app.closeDisclosure();
     this.setState({ currentKey: this.pop() });
   }
 
@@ -198,6 +210,7 @@ class HeaderUtilityMenu extends React.Component {
         <div className={HeaderClassNames}>
           {currentKey !== Utils.KEYS.MENU && backButton}
           <span className={HeaderTextClassNames}>{this.getTitle(currentKey) }</span>
+          <Button onClick={this.handleClose} >Close </Button>
         </div>
         <MenuDivider />
         <MenuPage

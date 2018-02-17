@@ -2,16 +2,19 @@
   .header-utility {
     align-items: center;
     display: flex;
+    height: 100%;
     justify-content: space-between;
+    max-width: 100%;
     padding-left: var(--terra-application-header-utility-padding-left, 0.5714rem);
     padding-right: var(--terra-application-header-utility-padding-right, 0.5714rem);
-    max-width: 100%;
 
     .icon {
-      min-width: var(--terra-application-header-utility-photo-min-width, 1.857rem);
+      min-width: var(--terra-application-header-utility-icon-min-width, 1.857rem);
     }
+
     .user-photo {
       margin-right: var(--terra-application-header-utility-photo-margin-right, 0.2143rem);
+
       min-width: var(--terra-application-header-utility-photo-min-width, 1.857rem);
     }
 

@@ -1,0 +1,32 @@
+:local {
+  .menu-page {
+    margin: 0;
+    overflow: scroll;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    padding: 0;
+    /* stylelint-disable selector-max-compound-selectors*/
+    .list-item {
+      cursor: pointer;
+      font-size: var(--terra-application-menu-menu-page-list-item-font-size, 1rem);
+      list-style-type: none;
+      max-width: 100%;
+      padding-bottom: var(--terra-application-menu-menu-page-list-item-padding-bottom, 0.2143rem);
+      padding-left: var(--terra-application-menu-menu-page-list-item-padding-left, 0.8571rem);
+      padding-top: var(--terra-application-menu-menu-page-list-item-padding-top, 0.2143rem);
+
+      &:hover,
+      &:focus {
+        background-color: var(--terra-application-menu-menu-page-list-item-hover-focus-color, #ebf6fd);
+      }
+
+      .chevron {
+        flex-shrink: 0;
+        height: var(--terra-application-utility-menu-page-chevron-height, 0.8571rem);
+        // min-height: var(--terra-application-utility-menu-page-height, 0.8571rem);
+        // min-width: var(--terra-application-utility-menu-page-chevron-width, 0.8571rem);
+        width: var(--terra-application-utility-menu-page-chevron-width, 0.8571rem);
+      }
+    }
+    /* stylelint-enable selector-max-compound-selectors */
+  }
+}

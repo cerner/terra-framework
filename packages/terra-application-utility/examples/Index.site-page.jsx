@@ -8,11 +8,13 @@ import ReadMe from '../docs/README.md';
 import { version } from '../package.json';
 
 // Component Source
-import ApplicationHeaderUtilitySrc from '!raw-loader!../src/ApplicationHeaderUtility.jsx';
+import ApplicationHeaderUtilitySrc from '!raw-loader!../src/header/ApplicationHeaderUtility.jsx';
 
 // Example File
 import MockApplicationHeader from './index-examples/MockApplicationHeader';
+import MockModalManager from './index-examples/MockModalManager';
 import MockApplicationHeaderSrc from '!raw-loader!./index-examples/MockApplicationHeader.jsx';
+import MockApplicationMenuSrc from '!raw-loader!./index-examples/MockApplicationMenu.jsx';
 
 const ApplicationUtilityExamples = () => (
   <div>
@@ -24,6 +26,11 @@ const ApplicationUtilityExamples = () => (
       title="Application Header Utility"
       example={<MockApplicationHeader />}
       exampleSrc={MockApplicationHeaderSrc}
+    />
+    <IndexTemplate
+      title="Application Menu Utility"
+      example={<MockModalManager />}
+      exampleSrc={MockApplicationMenuSrc}
     />
     <PropsTable id="props-table" src={ApplicationHeaderUtilitySrc} />
   </div>
