@@ -11,7 +11,7 @@ import ApplicationHeaderName from '../../lib/ApplicationHeaderName';
 const ApplicationHeaderNameStandard = () => {
   const Name = (<ApplicationHeaderName
     style={{ backgroundColor: 'green' }}
-    title="App-Name"
+    title="App-NameApp-NameApp-NameApp-NameApp-NameApp-NameApp-NameApp-Name"
     accessory={<Image variant="rounded" src="https://github.com/cerner/terra-core/raw/master/terra.png" height="26px" width="26px" isFluid />}
   />);
   const tinyHeader = (
