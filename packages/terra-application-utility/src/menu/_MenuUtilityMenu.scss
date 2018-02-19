@@ -7,6 +7,7 @@
     height: 100%; //set this based on isHeightBounded
     list-style-type: none;
     overflow: hidden;
+    width: 100%;
 
     .header {
       align-items: center;
@@ -14,6 +15,7 @@
       font-size: var(--terra-application-menu-utility-menu-header-font-size, 1rem);
       font-weight: var(--terra-application-menu-utility-menu-header-font-weight, bold);
       height: var(--terra-application-menu-utility-menu-header-height, 2rem);
+      justify-content: space-between;
 
       /* stylelint-disable selector-max-compound-selectors*/
       .header-text {
@@ -22,12 +24,30 @@
       }
 
       .back-button {
+        align-items: center;
         background-color: var(--terra-application-menu-utility-menu-header-back-button-background-color, transparent);
         border-width: var(--terra-application-menu-utility-menu-header-back-button-border-width, 0);
+        display: flex;
         width: var(--terra-application-menu-utility-menu-header-back-button-width, 1.714rem);
 
         /* stylelint-disable max-nesting-depth */
         .icon-left {
+          height: var(--terra-application-utility-menu-page-chevron-height, 0.7143rem);
+          min-height: var(--terra-application-utility-menu-page-height, 0.7143rem);
+          min-width: var(--terra-application-utility-menu-page-chevron-width, 0.7143rem);
+          width: var(--terra-application-utility-menu-page-chevron-width, 0.7143rem);
+        }
+      }
+
+      .close-button {
+        background-color: var(--terra-application-menu-utility-menu-header-close-button-background-color, transparent);
+        border-width: var(--terra-application-menu-utility-menu-header-close-button-border-width, 0);
+        float: right;
+        margin: 0;
+        padding: 0;
+        width: var(--terra-application-header-utility-menu-header-close-button-width, 1.714rem);
+
+        .icon-close {
           height: var(--terra-application-utility-menu-page-chevron-height, 0.7143rem);
           min-height: var(--terra-application-utility-menu-page-height, 0.7143rem);
           min-width: var(--terra-application-utility-menu-page-chevron-width, 0.7143rem);

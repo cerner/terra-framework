@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import AppDelegate from 'terra-app-delegate';
 import Button from 'terra-button';
+import IconClose from 'terra-icon/lib/icon/IconClose';
 import IconLeft from 'terra-icon/lib/icon/IconLeft';
 import MenuDivider from '../_UtilityMenuDivider';
 import Utils from '../_Utils';
@@ -195,28 +196,40 @@ class HeaderUtilityMenu extends React.Component {
       customProps.classNames,
     ]);
     const HeaderClassNames = cx('header');
+    const ClosebuttonClassNames = cx('close-button');
     const BackButtonClassNames = cx('back-button');
     const IconLeftClassNames = cx('icon-left');
     const LogOutButtonClassNames = cx('log-out-button');
+    const IconCloseClassNames = cx('icon-close');
     const HeaderTextClassNames = cx('header-text');
     const FooterClassNames = cx('footer');
 
     const currentKey = this.state.currentKey;
     const backButton = <Button className={BackButtonClassNames} onClick={this.handleRequestBack}><IconLeft className={IconLeftClassNames} /></Button>;
-    const footer = <div className={FooterClassNames}><MenuDivider /><Button className={LogOutButtonClassNames} onClick={this.handleLogOut}>{Utils.TITLES.LOG_OUT}</Button></div>;
+    const closeButton = <Button onClick={this.handleClose} className={ClosebuttonClassNames}><IconClose className={IconCloseClassNames} /></Button>;
+    const header = (
+      <div className={HeaderClassNames}>
+        {currentKey !== Utils.KEYS.MENU && backButton}
+        <span className={HeaderTextClassNames}>{this.getTitle(currentKey)}</span>
+        {closeButton}
+      </div>
+      );
+    const footer = (
+      <div className={FooterClassNames}>
+        <Button className={LogOutButtonClassNames} onClick={this.handleLogOut}>
+          {Utils.TITLES.LOG_OUT}
+        </Button>
+      </div>);
 
     return (
       <div {...customProps} className={MenuClassNames} >
-        <div className={HeaderClassNames}>
-          {currentKey !== Utils.KEYS.MENU && backButton}
-          <span className={HeaderTextClassNames}>{this.getTitle(currentKey) }</span>
-          <Button onClick={this.handleClose} >Close </Button>
-        </div>
+        {header}
         <MenuDivider />
         <MenuPage
           pageData={this.state.map.get(currentKey)}
           onChange={this.handleOnChange}
         />
+        <MenuDivider />
         {currentKey === Utils.KEYS.MENU && footer }
       </div>
     );

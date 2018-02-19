@@ -26,7 +26,6 @@ class MockApplicationMenu extends React.Component {
   }
 
   onDiscloseUtilty(utility) {
-    debugger;
     if (this.props.app && utility) {
       this.props.app.disclose({
         preferredType: 'modal',

@@ -192,19 +192,29 @@ class HeaderUtilityMenu extends React.Component {
 
     const currentKey = this.state.currentKey;
     const backButton = <Button className={BackButtonClassNames} onClick={this.handleRequestBack}><IconLeft className={IconLeftClassNames} /></Button>;
-    const footer = <div className={FooterClassNames}><MenuDivider /><Button className={LogOutButtonClassNames} onClick={this.handleLogOut}>{Utils.TITLES.LOG_OUT}</Button></div>;
+    const header = (
+      <div className={HeaderClassNames}>
+        {currentKey !== Utils.KEYS.MENU && backButton}
+        <span className={HeaderTextClassNames}>{this.getTitle(currentKey) }</span>
+      </div>
+    );
+    const footer = (
+      <div className={FooterClassNames}>
+        <Button className={LogOutButtonClassNames} onClick={this.handleLogOut}>
+          {Utils.TITLES.LOG_OUT}
+        </Button>
+      </div>
+    );
 
     return (
       <div {...customProps} className={MenuClassNames} >
-        <div className={HeaderClassNames}>
-          {currentKey !== Utils.KEYS.MENU && backButton}
-          <span className={HeaderTextClassNames}>{this.getTitle(currentKey) }</span>
-        </div>
+        {header}
         <MenuDivider />
         <MenuPage
           pageData={this.state.map.get(currentKey)}
           onChange={this.handleOnChange}
         />
+        <MenuDivider />
         {currentKey === Utils.KEYS.MENU && footer }
       </div>
     );

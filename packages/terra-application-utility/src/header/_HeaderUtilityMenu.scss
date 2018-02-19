@@ -7,6 +7,7 @@
     height: 100%; //set this based on isHeightBounded
     list-style-type: none;
     overflow: hidden;
+    width: 100%;
 
     .header {
       align-items: center;
@@ -22,8 +23,10 @@
       }
 
       .back-button {
+        align-items: center;
         background-color: var(--terra-application-header-utility-menu-header-back-button-background-color, transparent);
         border-width: var(--terra-application-header-utility-menu-header-back-button-border-width, 0);
+        display: flex;
         width: var(--terra-application-header-utility-menu-header-back-button-width, 1.714rem);
 
         /* stylelint-disable max-nesting-depth */
