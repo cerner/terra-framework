@@ -5,6 +5,7 @@ exports[`Layout should render a NavigationSideMenu with default props 1`] = `
   fill={true}
   header={
     <ActionHeader
+      keepCloseButton={false}
       onBack={[Function]}
       onClose={null}
       onMaximize={null}
@@ -22,6 +23,7 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
   fill={true}
   header={
     <ActionHeader
+      keepCloseButton={false}
       onBack={[Function]}
       onClose={null}
       onMaximize={null}
