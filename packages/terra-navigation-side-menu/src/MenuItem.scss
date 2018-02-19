@@ -22,26 +22,26 @@
       border-left: var(--terra-navigation-side-menu-item-selected-border-left 0.5rem solid #007cc3);
       padding-left: var(--terra-navigation-side-menu-item-selected-padding-left, 0.7143rem);
     }
+  }
 
-    .title,
-    .chevron {
-      align-items: center;
-      display: flex;
-      position: relative;
-    }
+  .title,
+  .chevron {
+    align-items: center;
+    display: flex;
+    position: relative;
+  }
 
-    .title {
-      flex: 1 1 auto;
-      width: 100%;
-    }
+  .title {
+    flex: 1 1 auto;
+    width: 100%;
+  }
 
-    .chevron {
-      flex: 0 0 auto;
-      padding-left: 10px;
+  .chevron {
+    flex: 0 0 auto;
+    padding-left: 10px;
 
-      > svg {
-        color: var(--terra-navigation-side-menu-item-chevron-color, #787879);
-      }
+    > svg {
+      color: var(--terra-navigation-side-menu-item-chevron-color, #787879);
     }
   }
 }
