@@ -21,13 +21,13 @@ const propTypes = {
   /**
    * Extensions element to be placed before the end of the header.
    * */
-  title: PropTypes.string,
+  text: PropTypes.string,
 };
 
 const MenuItem = ({
   hasChevron,
   isSelected,
-  title,
+  text,
   ...customProps
 }) => {
   const itemClassNames = cx([
@@ -44,7 +44,7 @@ const MenuItem = ({
           className={itemClassNames}
         >
           <div className={cx('title')}>
-            {title}
+            {text}
           </div>
           {hasChevron && <span className={cx('chevron')}><ChevronRight height="0.8em" width="0.8em" /></span>}
         </div>

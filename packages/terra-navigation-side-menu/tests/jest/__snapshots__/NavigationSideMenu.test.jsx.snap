@@ -5,7 +5,6 @@ exports[`Layout should render a NavigationSideMenu with default props 1`] = `
   fill={true}
   header={
     <ActionHeader
-      className="header"
       onBack={[Function]}
       onClose={null}
       onMaximize={null}
@@ -23,79 +22,46 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
   fill={true}
   header={
     <ActionHeader
-      className="header"
       onBack={[Function]}
       onClose={null}
       onMaximize={null}
       onMinimize={null}
       onNext={null}
       onPrevious={null}
-      title="Test Menu"
+      title=""
     />
   }
 >
   <List
     isDivided={false}
   >
-    <ListItem
-      content={
-        <div
-          className="list-item"
-          id={undefined}
-        >
-          Test Menu 1
-        </div>
-      }
+    <MenuItem
       isSelected={false}
       key="test1"
       onClick={[Function]}
       onKeyDown={[Function]}
-      tabIndex="0"
+      text="Test Menu 1"
     />
-    <ListItem
-      content={
-        <div
-          className="list-item"
-          id={undefined}
-        >
-          Test Menu 2
-        </div>
-      }
+    <MenuItem
       isSelected={false}
       key="test2"
       onClick={[Function]}
       onKeyDown={[Function]}
-      tabIndex="0"
+      text="Test Menu 2"
     />
-    <ListItem
-      content={
-        <div
-          className="list-item"
-          id={undefined}
-        >
-          Test Menu 3
-        </div>
-      }
+    <MenuItem
       isSelected={false}
       key="test3"
       onClick={[Function]}
       onKeyDown={[Function]}
-      tabIndex="0"
+      text="Test Menu 3"
     />
-    <ListItem
-      content={
-        <div
-          className="list-item"
-          id={undefined}
-        >
-          Test Menu 4
-        </div>
-      }
+    <MenuItem
       isSelected={false}
       key="test4"
       onClick={[Function]}
       onKeyDown={[Function]}
-      tabIndex="0"
+      text="Test Menu 4"
     />
   </List>
 </ContentContainer>

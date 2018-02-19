@@ -21,6 +21,10 @@ const propTypes = {
      */
     children: PropTypes.arrayOf(PropTypes.string),
     /**
+     * Used to match visual style of a menuItem with children, but when the onChange maps to the sub route of another menu.
+     */
+    hasSubMenu: PropTypes.bool,
+    /**
      * ID to be applied to the menu item div.
      */
     id: PropTypes.string,
@@ -29,16 +33,16 @@ const propTypes = {
      */
     key: PropTypes.string.isRequired,
     /**
-     * Title for the menu row and header title when selected.
+     * Text for the menu row and header title when selected.
      */
-    title: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
   })),
   /**
    * Callback function when a menu endpoint is reached.
    */
   onChange: PropTypes.func.isRequired,
   /**
-   * Delegate prop that is added by the NavigationLayout.
+   * Delegate prop that is added by the terra-navigation-layout.
    */
   routingStackDelegate: RoutingStackDelegate.propType.isRequired,
   /**
@@ -54,7 +58,7 @@ const defaultProps = {
 const processMenuItems = (items) => {
   const processedItems = {};
   items.forEach((item) => {
-    processedItems[item.key] = { id: item.id, title: item.title, children: item.children };
+    processedItems[item.key] = { id: item.id, text: item.text, children: item.children };
   });
   return processedItems;
 };
@@ -99,9 +103,9 @@ class NavigationSideMenu extends React.Component {
     return (
       <MenuItem
         id={item.id}
-        hasChevron={item.children && item.children.length > 0}
+        hasChevron={item.hasSubMenu || (item.children && item.children.length > 0)}
         isSelected={key === this.state.selectedChildKey}
-        title={item.title}
+        text={item.text}
         key={key}
         onClick={(event) => { this.onItemClick(event, key); }}
         onKeyDown={(event) => { if (event.nativeEvent.keyCode === KEYCODES.ENTER) { this.onItemClick(event, key); } }}

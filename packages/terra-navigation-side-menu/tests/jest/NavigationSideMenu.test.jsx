@@ -18,11 +18,11 @@ describe('Layout', () => {
     const result = shallow((
       <NavigationSideMenu
         menuItems={[
-          { key: 'menu', title: 'Test Menu', children: ['test1', 'test2', 'test3', 'test4'] },
-          { key: 'test1', title: 'Test Menu 1' },
-          { key: 'test2', title: 'Test Menu 2' },
-          { key: 'test3', title: 'Test Menu 3' },
-          { key: 'test4', title: 'Test Menu 4' },
+          { key: 'menu', text: 'Test Menu', children: ['test1', 'test2', 'test3', 'test4'] },
+          { key: 'test1', text: 'Test Menu 1' },
+          { key: 'test2', text: 'Test Menu 2' },
+          { key: 'test3', text: 'Test Menu 3' },
+          { key: 'test4', text: 'Test Menu 4' },
         ]}
         onChange={() => {}}
         routingStackDelegate={{ showParent: () => {} }}
