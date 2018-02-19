@@ -13,6 +13,7 @@ exports[`should render ApplicationList with links 1`] = `
         "text": "test 2",
       },
       Object {
+        "hasSubMenu": true,
         "path": "/test3",
         "text": "test 3",
       },
