@@ -6,10 +6,12 @@
     display: flex;
     flex: var(--terra-application-menu-name-flex, 0 0 auto);
     max-width: 100%;
+    position: relative;
   }
 
   .accessory {
     flex: 0 0 auto;
+    max-width: 100%;
     padding-left: var(--terra-application-menu-name-accessory-padding-left, 0.3571rem);
   }
 
