@@ -1,15 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import List from 'terra-list';
 import ActionHeader from 'terra-clinical-action-header';
 import ContentContainer from 'terra-content-container';
 import RoutingStackDelegate from 'terra-navigation-layout/lib/RoutingStackDelegate';
-
-import styles from './NavigationSideMenu.scss';
-
-const cx = classNames.bind(styles);
+import MenuItem from './_MenuItem';
 
 const KEYCODES = {
   ENTER: 13,
@@ -44,7 +40,7 @@ const propTypes = {
   /**
    * Delegate prop that is added by the NavigationLayout.
    */
-  routingStackDelegate: RoutingStackDelegate.propType,
+  routingStackDelegate: RoutingStackDelegate.propType.isRequired,
   /**
    * Key of the top level menu.
    */
@@ -99,14 +95,13 @@ class NavigationSideMenu extends React.Component {
 
   buildListItem(key) {
     const item = this.state.processedItems[key];
+
     return (
-      <List.Item
-        tabIndex="0"
-        content={
-          <div id={item.id} className={cx(['list-item', { 'is-selected': key === this.state.selectedChildKey }])}>
-            {item.title}
-          </div>
-        }
+      <MenuItem
+        id={item.id}
+        hasChevron={item.children && item.children.length > 0}
+        isSelected={key === this.state.selectedChildKey}
+        title={item.title}
         key={key}
         onClick={(event) => { this.onItemClick(event, key); }}
         onKeyDown={(event) => { if (event.nativeEvent.keyCode === KEYCODES.ENTER) { this.onItemClick(event, key); } }}
@@ -137,7 +132,7 @@ class NavigationSideMenu extends React.Component {
       onBack = this.onBackClick;
     }
     const currentItem = this.state.processedItems[this.state.selectedKey];
-    const actionHeader = <ActionHeader className={cx(['header'])} onBack={onBack} title={currentItem ? currentItem.title : null} />;
+    const actionHeader = <ActionHeader onBack={onBack} title={currentItem ? currentItem.title : null} />;
 
     return (
       <ContentContainer {...customProps} header={actionHeader} fill>
