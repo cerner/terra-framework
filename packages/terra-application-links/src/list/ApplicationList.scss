@@ -1,15 +1,17 @@
 
 :local {
   .list-item {
+    align-items: stretch;
     color: var(--terra-application-list-color, #1c1f21);
-    display: block;
+    display: flex;
     font-size: var(--terra-application-list-font-size, 1.071rem);
     padding-bottom: var(--terra-application-list-padding-bottom, 0.8225rem);
     padding-left: var(--terra-application-list-padding-left, 1.2143rem);
     padding-right: var(--terra-application-list-padding-right, 0.7143rem);
     padding-top: var(--terra-application-list-padding-top, 0.8225rem);
     text-decoration: none;
-    
+    width: 100%;
+
     &:focus,
     &.is-focused,
     &:hover,
@@ -29,6 +31,27 @@
       background-image: var(--terra-application-list-selected-background-image, linear-gradient(-270deg, #fff, #e8e9ea));
       border-left: var(--terra-application-list-selected-border-left, 0.5rem solid #007cc3);
       padding-left: var(--terra-application-list-selected-padding-left, 0.7143rem);
+    }
+
+    .title,
+    .chevron {
+      align-items: center;
+      display: flex;
+      position: relative;
+    }
+
+    .title {
+      flex: 1 1 auto;
+      width: 100%;
+    }
+
+    .chevron {
+      flex: 0 0 auto;
+      padding-left: 10px;
+
+      > svg {
+        color: var(--terra-application-list-chevron-color, #787879);
+      }
     }
   }
 }
