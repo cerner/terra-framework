@@ -16,10 +16,6 @@ const propTypes = {
    */
   isHidden: PropTypes.bool,
   /**
-   * The location as provided by the `withRouter()` HOC.
-   */
-  location: PropTypes.object.isRequired,
-  /**
    * Ref callback for menu button.
    */
   refCallback: PropTypes.func,
@@ -149,7 +145,7 @@ class TabMenu extends React.Component {
     }
 
     return (
-      <Switch location={this.props.location}>
+      <Switch>
         {this.createRoutes(popup)}
       </Switch>
     );
