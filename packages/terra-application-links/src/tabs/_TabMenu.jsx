@@ -112,7 +112,6 @@ class TabMenu extends React.Component {
     const props = {
       role: 'tab',
       tabIndex: '0',
-      location: this.props.location,
       onClick: this.handleOnClick,
       onKeyDown: this.handleOnKeyDown,
       popup,

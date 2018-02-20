@@ -136,7 +136,6 @@ class ApplicationTabs extends React.Component {
         path: link.path,
         text: link.text,
         key: link.path,
-        location,
       };
       if (this.hiddenStartIndex < 0) {
         visibleChildren.push(<Tab {...tabProps} />);
