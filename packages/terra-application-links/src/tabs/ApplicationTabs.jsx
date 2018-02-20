@@ -20,7 +20,7 @@ const propTypes = {
     path: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
   })),
-    /**
+  /**
    * The location as provided by the `withRouter()` HOC.
    */
   location: PropTypes.object.isRequired,
@@ -131,13 +131,20 @@ class ApplicationTabs extends React.Component {
     const hiddenChildren = [];
 
     links.forEach((link, index) => {
+      const tabProps = {
+        id: link.id,
+        path: link.path,
+        text: link.text,
+        key: link.path,
+        location,
+      };
       if (this.hiddenStartIndex < 0) {
-        visibleChildren.push(<Tab id={link.id} path={link.path} text={link.text} key={link.path} />);
-        hiddenChildren.push(<Tab id={link.id} path={link.path} text={link.text} key={link.path} isCollapsed />);
+        visibleChildren.push(<Tab {...tabProps} />);
+        hiddenChildren.push(<Tab {...tabProps} isCollapsed />);
       } else if (index < this.hiddenStartIndex) {
-        visibleChildren.push(<Tab id={link.id} path={link.path} text={link.text} key={link.path} />);
+        visibleChildren.push(<Tab {...tabProps} />);
       } else {
-        hiddenChildren.push(<Tab id={link.id} path={link.path} text={link.text} key={link.path} isCollapsed />);
+        hiddenChildren.push(<Tab {...tabProps} isCollapsed />);
       }
     });
 
@@ -151,7 +158,7 @@ class ApplicationTabs extends React.Component {
           ref={this.setContainerNode}
         >
           {visibleChildren}
-          <TabMenu isHidden={this.menuHidden}>
+          <TabMenu isHidden={this.menuHidden} location={location}>
             {hiddenChildren}
           </TabMenu>
         </div>
