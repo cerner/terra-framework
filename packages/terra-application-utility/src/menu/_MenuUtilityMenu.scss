@@ -32,10 +32,10 @@
 
         /* stylelint-disable max-nesting-depth */
         .icon-left {
-          height: var(--terra-application-utility-menu-page-chevron-height, 0.7143rem);
-          min-height: var(--terra-application-utility-menu-page-height, 0.7143rem);
-          min-width: var(--terra-application-utility-menu-page-chevron-width, 0.7143rem);
-          width: var(--terra-application-utility-menu-page-chevron-width, 0.7143rem);
+          height: var(--terra-application-menu-utility-menu-page-chevron-height, 0.7143rem);
+          min-height: var(--terra-application-menu-utility-menu-page-height, 0.7143rem);
+          min-width: var(--terra-application-menu-utility-menu-page-chevron-width, 0.7143rem);
+          width: var(--terra-application-menu-utility-menu-page-chevron-width, 0.7143rem);
         }
       }
 
@@ -45,13 +45,13 @@
         float: right;
         margin: 0;
         padding: 0;
-        width: var(--terra-application-header-utility-menu-header-close-button-width, 1.714rem);
+        width: var(--terra-application-menu-utility-menu-header-close-button-width, 1.714rem);
 
         .icon-close {
-          height: var(--terra-application-utility-menu-page-chevron-height, 0.7143rem);
-          min-height: var(--terra-application-utility-menu-page-height, 0.7143rem);
-          min-width: var(--terra-application-utility-menu-page-chevron-width, 0.7143rem);
-          width: var(--terra-application-utility-menu-page-chevron-width, 0.7143rem);
+          height: var(--terra-application-menu-utility-menu-page-chevron-height, 0.7143rem);
+          min-height: var(--terra-application-menu-utility-menu-page-height, 0.7143rem);
+          min-width: var(--terra-application-menu-utility-menu-page-chevron-width, 0.7143rem);
+          width: var(--terra-application-menu-utility-menu-page-chevron-width, 0.7143rem);
         }
         /* stylelint-enable max-nesting-depth */
       }

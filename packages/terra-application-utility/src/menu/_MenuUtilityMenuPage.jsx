@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
+import AppDelegate from 'terra-app-delegate';
 import Arrange from 'terra-arrange';
 import IconChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 import MenuDivider from '../_UtilityMenuDivider';
@@ -12,7 +13,11 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Object containing data pertaining to this specific page
+   * The propogated AppDelegate instance.
+   */
+  app: AppDelegate.propType,
+  /**
+   * The Object containing data pertaining to this specific page.
    */
   pageData: PropTypes.shape({
     Title: PropTypes.string,
@@ -20,25 +25,26 @@ const propTypes = {
     children: PropTypes.arrayOf(PropTypes.object),
   }).isRequired,
   /**
-   * Function to trigger when an item is selected
+   * Function to trigger when an item is selected.
    */
   onChange: PropTypes.func.isRequired,
 };
 
-class HeaderUtilityMenuPage extends React.Component {
+class MenuUtilityMenuPage extends React.Component {
   constructor(props) {
     super(props);
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
-  handleKeyDown(key, event) {
+  handleKeyDown(event, key) {
     if (event.nativeEvent.keyCode === Utils.KEY_CODES.ENTER || event.nativeEvent.keyCode === Utils.KEY_CODES.SPACE) {
-      this.props.onChange(key);
+      this.props.onChange(event, key);
     }
   }
 
   render() {
     const {
+      app,
       pageData,
       onChange,
       ...customProps
@@ -52,7 +58,7 @@ class HeaderUtilityMenuPage extends React.Component {
       if (child.content) {
         return (
           <div key={child.key}>
-            <li tabIndex="0" onClick={() => { onChange(child.key); }} onKeyDown={e => this.handleKeyDown(child.key, e)} role="button" className={listItemClassNames}>
+            <li tabIndex="0" onClick={event => onChange(event, child.key)} onKeyDown={event => this.handleKeyDown(event, child.key)} role="button" className={listItemClassNames}>
               {child.content}
             </li>
             { child.key === 'user-information' && <MenuDivider key={`${child.key}-divider`} />}
@@ -60,9 +66,8 @@ class HeaderUtilityMenuPage extends React.Component {
         );
       }
       return (
-        <li tabIndex="0" onClick={() => { onChange(child.key); }} onKeyDown={e => this.handleKeyDown(child.key, e)} role="button" key={child.key} className={listItemClassNames}>
+        <li tabIndex="0" onClick={event => onChange(event, child.key)} onKeyDown={event => this.handleKeyDown(event, child.key)} role="button" key={child.key} className={listItemClassNames}>
           <Arrange
-            // fitStart={}
             fill={<div>{child.title}</div>}
             fitEnd={child.children && !child.content ? <IconChevronRight className={chevronClassNames} /> : null}
             align={'center'}
@@ -79,6 +84,6 @@ class HeaderUtilityMenuPage extends React.Component {
   }
 }
 
-HeaderUtilityMenuPage.propTypes = propTypes;
+MenuUtilityMenuPage.propTypes = propTypes;
 
-export default HeaderUtilityMenuPage;
+export default MenuUtilityMenuPage;

@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Object containing data pertaining to this specific page
+   * the Object containing data pertaining to this specific page.
    */
   pageData: PropTypes.shape({
     Title: PropTypes.string,
@@ -20,7 +20,7 @@ const propTypes = {
     children: PropTypes.arrayOf(PropTypes.object),
   }).isRequired,
   /**
-   * Function to trigger when an item is selected
+   * Function to trigger when an item is selected.
    */
   onChange: PropTypes.func.isRequired,
 };
@@ -29,11 +29,12 @@ class HeaderUtilityMenuPage extends React.Component {
   constructor(props) {
     super(props);
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.state = {};
   }
 
-  handleKeyDown(key, event) {
-    if (event.nativeEvent.keyCode === Utils.KEY_CODES.ENTER || event.nativeEvent.keyCode === Utils.KEY_CODES.SPACE) {
-      this.props.onChange(key);
+  handleKeyDown(event, key) {
+    if (event.nativeEvent.keyCode === Utils.KEY_CODES.ENTER || event.nativeEvent.keyCode === Utils.KEY_CODES.SPACE || event.nativeEvent.keyCode === Utils.KEY_CODES.RIGHT_ARROW) {
+      this.props.onChange(event, key);
     }
   }
 
@@ -52,7 +53,7 @@ class HeaderUtilityMenuPage extends React.Component {
       if (child.content) {
         return (
           <div key={child.key}>
-            <li tabIndex="0" onClick={() => { onChange(child.key); }} onKeyDown={e => this.handleKeyDown(child.key, e)} role="button" className={listItemClassNames}>
+            <li tabIndex="0" onClick={event => onChange(event, child.key)} onKeyDown={event => this.handleKeyDown(event, child.key)} role="button" className={listItemClassNames}>
               {child.content}
             </li>
             { child.key === 'user-information' && <MenuDivider key={`${child.key}-divider`} />}
@@ -60,9 +61,8 @@ class HeaderUtilityMenuPage extends React.Component {
         );
       }
       return (
-        <li tabIndex="0" onClick={() => { onChange(child.key); }} onKeyDown={e => this.handleKeyDown(child.key, e)} role="button" key={child.key} className={listItemClassNames}>
+        <li tabIndex="0" onClick={event => onChange(event, child.key)} onKeyDown={event => this.handleKeyDown(event, child.key)} role="button" key={child.key} className={listItemClassNames}>
           <Arrange
-            // fitStart={}
             fill={<div>{child.title}</div>}
             fitEnd={child.children && !child.content ? <IconChevronRight className={chevronClassNames} /> : null}
             align={'center'}

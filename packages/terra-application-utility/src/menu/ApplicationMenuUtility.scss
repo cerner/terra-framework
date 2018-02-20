@@ -1,10 +1,11 @@
 :local {
   .header-utility {
     align-items: center;
+    color: var(--terra-application-menu-utility-color, #000);
     display: flex;
     justify-content: space-between;
-    padding-left: var(--terra-application-menu-utility-padding-left, 0.5714rem);
-    padding-right: var(--terra-application-menu-utility-padding-right, 0.5714rem);
+    padding-bottom: var(--terra-application-menu-utility-padding-bottom, 0.5714rem);
+    padding-top: var(--terra-application-menu-utility-padding-top, 0.5714rem);
     width: 100%;
     /* stylelint-disable selector-max-compound-selectors*/
     .user-container {
@@ -13,8 +14,9 @@
       justify-content: flex-start;
 
       .user-photo {
+        height: var(--terra-application-menu-utility-photo-height, 1.857rem);
         margin-right: var(--terra-application-menu-utility-photo-margin-right, 0.2143rem);
-        min-width: var(--terra-application-menu-utility-photo-min-width, 1.857rem);
+        width: var(--terra-application-menu-utility-photo-width, 1.857rem);
       }
 
       .user-name {

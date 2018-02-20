@@ -15,7 +15,7 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The AppDelegate instance that will be propagated to the components presented within the NavigationLayout.
+   * The AppDelegate instance propogated to each child.
    */
   app: AppDelegate.propType,
   /**
@@ -31,7 +31,7 @@ const propTypes = {
    */
   menuConfig: PropTypes.object.isRequired,
   /**
-   * Callback function indicating a close condition was met, should be combined with isOpen for state management.
+   * The function to trigger when a menu item is selected.
    */
   onChange: PropTypes.func.isRequired,
   /**
@@ -41,24 +41,28 @@ const propTypes = {
 };
 
 const defaultProps = {
-  additionalItemsConfig: null,
+  additionalItemsConfig: [],
   isHeightBounded: undefined,
   userData: null,
 };
 
-class HeaderUtilityMenu extends React.Component {
+class MenuUtilityMenu extends React.Component {
   /**
    * Recursively add each additional item to the map.
    * @param {*} additionalItemsConfig
    * @param {*} map
    */
   static addAdditionalItems(additionalItemsConfig, map) {
+    if (!additionalItemsConfig) {
+      return;
+    }
+
     additionalItemsConfig.forEach((item) => {
       if (item.parent) {
         const parent = map.get(item.parent);
         parent.children.push(item);
       }
-      HeaderUtilityMenu.insertIntoMap(item, map);
+      MenuUtilityMenu.insertIntoMap(item, map);
       if (item.children) {
         this.addAdditionalItems(item.children, map);
       }
@@ -94,7 +98,7 @@ class HeaderUtilityMenu extends React.Component {
     this.pop = this.pop.bind(this);
     this.push = this.push.bind(this);
     this.createMap(this.props.menuConfig, map);
-    HeaderUtilityMenu.addAdditionalItems(this.props.additionalItemsConfig, map);
+    MenuUtilityMenu.addAdditionalItems(this.props.additionalItemsConfig, map);
     this.state = {
       currentKey: Utils.KEYS.MENU,
       previousKeyStack: [],
@@ -102,18 +106,10 @@ class HeaderUtilityMenu extends React.Component {
     };
   }
 
-  /**
-   * Return children of the specified object
-   * @param {*} key
-   */
   getChildren(key) {
     return this.state.map.get(key).children;
   }
 
-  /**
-   * Return the title of the specified object
-   * @param {*} key
-   */
   getTitle(key) {
     return this.state.map.get(key).title;
   }
@@ -124,12 +120,7 @@ class HeaderUtilityMenu extends React.Component {
    * Example: {"key" => {title: "Page Title", isSelected: false, children: [{key: "child-one", title: "First Item", isSelected: false}, {key: "child-two", title: "Second Item" isSelected: false}]}
    */
   createMap(config, map) {
-    if (config.key === Utils.KEYS.USER_INFORMATION) {
-      // eslint-disable-next-line no-param-reassign
-      config.content = this.props.userData;
-    }
-    HeaderUtilityMenu.insertIntoMap(config, map);
-
+    MenuUtilityMenu.insertIntoMap(config, map);
     if ('children' in config) {
       config.children.forEach((object) => {
         this.createMap(object, map);
@@ -145,10 +136,8 @@ class HeaderUtilityMenu extends React.Component {
     this.props.onChange(event, Utils.KEYS.LOG_OUT);
   }
 
-  handleOnChange(key) {
-    // this.state.map.set(key).isSelected = true;
+  handleOnChange(event, key) {
     if (!this.getChildren(key)) {
-      // debugger;
       const value = this.state.map.get(key);
       value.isSelected = !value.isSelected;
       this.state.map.set(key, value);
@@ -162,8 +151,6 @@ class HeaderUtilityMenu extends React.Component {
   }
 
   handleRequestBack() {
-    // this.state.map.set(key).isSelected = false;
-    // this.props.app.closeDisclosure();
     this.setState({ currentKey: this.pop() });
   }
 
@@ -183,6 +170,7 @@ class HeaderUtilityMenu extends React.Component {
   render() {
     const {
       additionalItemsConfig,
+      app,
       menuConfig,
       isHeightBounded,
       onChange,
@@ -216,6 +204,7 @@ class HeaderUtilityMenu extends React.Component {
       );
     const footer = (
       <div className={FooterClassNames}>
+        <MenuDivider />
         <Button className={LogOutButtonClassNames} onClick={this.handleLogOut}>
           {Utils.TITLES.LOG_OUT}
         </Button>
@@ -229,14 +218,13 @@ class HeaderUtilityMenu extends React.Component {
           pageData={this.state.map.get(currentKey)}
           onChange={this.handleOnChange}
         />
-        <MenuDivider />
         {currentKey === Utils.KEYS.MENU && footer }
       </div>
     );
   }
 }
 
-HeaderUtilityMenu.propTypes = propTypes;
-HeaderUtilityMenu.defaultProps = defaultProps;
+MenuUtilityMenu.propTypes = propTypes;
+MenuUtilityMenu.defaultProps = defaultProps;
 
-export default HeaderUtilityMenu;
+export default MenuUtilityMenu;

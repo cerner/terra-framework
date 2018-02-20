@@ -13,6 +13,7 @@
       padding-bottom: var(--terra-application-header-menu-page-list-item-padding-bottom, 0.2143rem);
       padding-left: var(--terra-application-header-menu-page-list-item-padding-left, 0.8571rem);
       padding-top: var(--terra-application-header-menu-page-list-item-padding-top, 0.2143rem);
+      text-overflow: ellipsis;
 
       &:hover,
       &:focus {

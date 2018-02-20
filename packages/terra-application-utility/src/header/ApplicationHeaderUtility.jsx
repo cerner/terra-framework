@@ -2,13 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-
 import Button from 'terra-button';
 import IconChevronDown from 'terra-icon/lib/icon/IconChevronDown';
 import UtilityMenu from './_HeaderUtilityMenu';
-import UserData from '../UserData';
 import Utils from '../_Utils';
-
 import styles from './ApplicationHeaderUtility.scss';
 
 const cx = classNames.bind(styles);
@@ -19,6 +16,10 @@ const propTypes = {
    */
   additionalItemsConfig: PropTypes.array,
   /**
+   * The config file containing the static menu items to be rendered within the menu.
+   */
+  menuConfig: PropTypes.object.isRequired,
+  /**
    * The function to trigger when a menu item is selected.
    */
   onChange: PropTypes.func.isRequired,
@@ -26,10 +27,6 @@ const propTypes = {
    * The function that discloses the menu.
    */
   onDisclose: PropTypes.func.isRequired,
-  /**
-   * More information about the user.
-   */
-  userDetail: PropTypes.string.isRequired,
   /**
    * The name to be displayed next to the user photo.
    */
@@ -55,41 +52,35 @@ class ApplicationHeaderUtility extends React.Component {
   }
 
   createContent() {
-    const userData = (<UserData userDetail={this.props.userDetail} userName={this.props.userName} userPhoto={this.props.userPhoto} />);
-    return <UtilityMenu additionalItemsConfig={this.props.additionalItemsConfig} menuConfig={Utils.generateMenuConfig(UserData)} onChange={this.props.onChange} userData={userData} />;
+    return (
+      <UtilityMenu
+        additionalItemsConfig={this.props.additionalItemsConfig}
+        menuConfig={this.props.menuConfig}
+        onChange={this.props.onChange}
+      />
+    );
   }
 
   render() {
     const {
       additionalItemsConfig,
+      menuConfig,
       onChange,
       onDisclose,
-      userDetail,
       userName,
       userPhoto,
       ...customProps
     } = this.props;
 
-    const utilityClassNames = cx([
-      'header-utility',
-      customProps.className,
-    ]);
-
-    const userPhotoClassNames = cx([
-      'user-photo',
-    ]);
-
-    const userNameClassNames = cx([
-      'user-name',
-    ]);
-
-    const iconClassNames = cx([
-      'icon',
-    ]);
+    const utilityClassNames = cx(['header-utility', customProps.className]);
+    const userPhotoClassNames = cx('user-photo');
+    const userNameClassNames = cx('user-name');
+    const iconClassNames = cx('icon');
+    const photo = React.cloneElement(userPhoto, { className: userPhotoClassNames });
 
     return (
       <Button {...customProps} className={utilityClassNames} onClick={this.handleOnClick} variant="link">
-        <span className={userPhotoClassNames}>{userPhoto} </span>
+        {photo}
         <span className={userNameClassNames}>{userName} </span>
         {<IconChevronDown className={iconClassNames} />}
       </Button>
@@ -99,6 +90,6 @@ class ApplicationHeaderUtility extends React.Component {
 
 ApplicationHeaderUtility.propTypes = propTypes;
 ApplicationHeaderUtility.keys = Utils.KEYS;
-ApplicationHeaderUtility.titles = Utils.titles;
+ApplicationHeaderUtility.titles = Utils.TITLES;
 
 export default ApplicationHeaderUtility;

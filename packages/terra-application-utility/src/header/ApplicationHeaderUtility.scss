@@ -1,6 +1,7 @@
 :local {
   .header-utility {
     align-items: center;
+    color: #fff;
     display: flex;
     height: 100%;
     justify-content: space-between;
@@ -14,8 +15,7 @@
 
     .user-photo {
       margin-right: var(--terra-application-header-utility-photo-margin-right, 0.2143rem);
-
-      min-width: var(--terra-application-header-utility-photo-min-width, 1.857rem);
+      width: var(--terra-application-header-utility-photo-width, 1.857rem);
     }
 
     .user-name {

@@ -46,10 +46,10 @@ const UserData = ({
   return (
     <div className={containerClassNames} >
       <div className={userDataClassNames} >
-        {photoAttrs}
+        {userPhoto && photoAttrs}
         <div>
-          <div className={nameClassNames}>{userName}</div>
-          <div className={detailClassNames}>{userDetail}</div>
+          {userName && <div className={nameClassNames}>{userName}</div>}
+          {userDetail && <div className={detailClassNames}>{userDetail}</div>}
         </div>
       </div>
       {<IconChevronRight className={chevronClassNames} />}

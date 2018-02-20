@@ -6,7 +6,8 @@ import Image from 'terra-image';
 import 'terra-base/lib/baseStyles';
 import Placeholder from 'terra-application-header-layout/examples/index-examples/Placeholder';
 import Avatar from './FallBackAvatar.svg';
-import { ApplicationMenuUtility } from '../../src/ApplicationUtility';
+import { ApplicationMenuUtility, UserData } from '../../src/ApplicationUtility';
+import UtilitiesUtils from '../../src/_Utils';
 import AdditionalItemsConfig from './AdditionalItemsConfig';
 
 const propTypes = {
@@ -18,7 +19,6 @@ class MockApplicationMenu extends React.Component {
     super(props);
     this.onDiscloseUtilty = this.onDiscloseUtilty.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
-    // this.handleRequestClose = this.handleRequestClose.bind(this);
     this.state = {
       utilityComponent: false,
       selectedKey: null,
@@ -43,19 +43,18 @@ class MockApplicationMenu extends React.Component {
   }
 
   render() {
-    // const {
-    //   app,
-    // } = this.props;
-
     const image = <Image src={Avatar} />;
+    const userDetail = 'User Detail';
+    const userName = 'User Name';
+    const userData = <UserData userDetail={userDetail} userName={userName} userPhoto={image} />;
     const utilities = (
       <ApplicationMenuUtility
         app={this.app}
         additionalItemsConfig={AdditionalItemsConfig}
+        menuConfig={UtilitiesUtils.generateMenuConfig(userData)}
         onChange={this.handleOnChange}
         onDisclose={this.onDiscloseUtilty}
-        userDetail={'User Detail'}
-        userName={"User's Name"}
+        userName={userName}
         userPhoto={image}
       />
     );

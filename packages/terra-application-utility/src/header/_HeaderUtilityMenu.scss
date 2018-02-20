@@ -31,10 +31,10 @@
 
         /* stylelint-disable max-nesting-depth */
         .icon-left {
-          height: var(--terra-application-utility-menu-page-chevron-height, 0.7143rem);
-          min-height: var(--terra-application-utility-menu-page-height, 0.7143rem);
-          min-width: var(--terra-application-utility-menu-page-chevron-width, 0.7143rem);
-          width: var(--terra-application-utility-menu-page-chevron-width, 0.7143rem);
+          height: var(--terra-application-header-utility-menu-page-chevron-height, 0.7143rem);
+          min-height: var(--terra-application-header-utility-menu-page-height, 0.7143rem);
+          min-width: var(--terra-application-header-utility-menu-page-chevron-width, 0.7143rem);
+          width: var(--terra-application-header-utility-menu-page-chevron-width, 0.7143rem);
         }
         /* stylelint-enable max-nesting-depth */
       }
