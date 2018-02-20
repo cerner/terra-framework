@@ -10,7 +10,7 @@ const ApplicationMenuNameStandard = () => (
     style={size}
     header={(
       <ApplicationMenuName
-        title="App-NameApp-NameApp-NameApp-NameApp-NameApp-Name"
+        title="App-Name"
         accessory={<Image variant="rounded" src="https://github.com/cerner/terra-core/raw/master/terra.png" height="26px" width="26px" isFluid />}
       />
     )}
