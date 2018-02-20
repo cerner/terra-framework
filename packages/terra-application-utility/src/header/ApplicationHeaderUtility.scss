@@ -1,7 +1,9 @@
 :local {
   .header-utility {
     align-items: center;
-    color: #fff;
+    // background-color: var(--terra-application-header-utility-background-color, transparent);
+    // border-width: var(--terra-application-header-utility-border-width, 0);
+    color: var(--terra-application-header-utility-color, #fff);
     display: flex;
     height: 100%;
     justify-content: space-between;

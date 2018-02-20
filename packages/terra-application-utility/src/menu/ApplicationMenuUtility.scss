@@ -1,6 +1,8 @@
 :local {
   .header-utility {
     align-items: center;
+    // background-color: var(--terra-application-menu-utility-background-color, transparent);
+    // border-width: var(--terra-application-menu-utility-border-width, 0);
     color: var(--terra-application-menu-utility-color, #000);
     display: flex;
     justify-content: space-between;

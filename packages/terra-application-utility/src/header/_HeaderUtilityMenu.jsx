@@ -21,7 +21,7 @@ const propTypes = {
    */
   isHeightBounded: PropTypes.bool,
   /**
-   * The data object used to generate menu pages
+   * The data object containing the static menu items.
    */
   menuConfig: PropTypes.object.isRequired,
   /**

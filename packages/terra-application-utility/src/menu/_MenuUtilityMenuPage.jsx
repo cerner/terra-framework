@@ -57,12 +57,12 @@ class MenuUtilityMenuPage extends React.Component {
     const listItemArr = pageData.children.map((child) => {
       if (child.content) {
         return (
-          <div key={child.key}>
-            <li tabIndex="0" onClick={event => onChange(event, child.key)} onKeyDown={event => this.handleKeyDown(event, child.key)} role="button" className={listItemClassNames}>
+          <li key={child.key}>
+            <div tabIndex="0" onClick={event => onChange(event, child.key)} onKeyDown={event => this.handleKeyDown(event, child.key)} role="button" className={listItemClassNames}>
               {child.content}
-            </li>
-            { child.key === 'user-information' && <MenuDivider key={`${child.key}-divider`} />}
-          </div>
+            </div>
+            { child.key === Utils.KEYS.USER_INFORMATION && <MenuDivider key={`${child.key}-divider`} />}
+          </li>
         );
       }
       return (

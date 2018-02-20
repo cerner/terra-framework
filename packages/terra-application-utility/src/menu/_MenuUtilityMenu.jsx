@@ -27,23 +27,18 @@ const propTypes = {
    */
   isHeightBounded: PropTypes.bool,
   /**
-   * The data object used to generate menu pages
+   * The data object containing the static menu items.
    */
   menuConfig: PropTypes.object.isRequired,
   /**
    * The function to trigger when a menu item is selected.
    */
   onChange: PropTypes.func.isRequired,
-  /**
-   * The object containing information of the user.
-   */
-  userData: PropTypes.element,
 };
 
 const defaultProps = {
   additionalItemsConfig: [],
   isHeightBounded: undefined,
-  userData: null,
 };
 
 class MenuUtilityMenu extends React.Component {
@@ -174,7 +169,6 @@ class MenuUtilityMenu extends React.Component {
       menuConfig,
       isHeightBounded,
       onChange,
-      userData,
       ...customProps
     } = this.props;
 

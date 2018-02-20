@@ -37,6 +37,10 @@ const propTypes = {
   userPhoto: PropTypes.element.isRequired,
 };
 
+const defaultProps = {
+  additionalItemsConfig: [],
+};
+
 class ApplicationHeaderUtility extends React.Component {
   constructor(props) {
     super(props);
@@ -77,7 +81,7 @@ class ApplicationHeaderUtility extends React.Component {
     const userNameClassNames = cx('user-name');
     const iconClassNames = cx('icon');
     const photo = React.cloneElement(userPhoto, { className: userPhotoClassNames });
-
+    // TODO: hange button variant to de-emphasis on react 16 uplift.
     return (
       <Button {...customProps} className={utilityClassNames} onClick={this.handleOnClick} variant="link">
         {photo}
@@ -89,6 +93,7 @@ class ApplicationHeaderUtility extends React.Component {
 }
 
 ApplicationHeaderUtility.propTypes = propTypes;
+ApplicationHeaderUtility.propTypes = defaultProps;
 ApplicationHeaderUtility.keys = Utils.KEYS;
 ApplicationHeaderUtility.titles = Utils.TITLES;
 
