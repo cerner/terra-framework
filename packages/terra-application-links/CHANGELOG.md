@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 -----------------
+### Changed
+* Code formatting and documentation spacing.
 
 1.2.0 - (February 15, 2018)
 ------------------
