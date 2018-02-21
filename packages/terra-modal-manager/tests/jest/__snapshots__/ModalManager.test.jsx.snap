@@ -40,10 +40,142 @@ exports[`ModalManger should disclose content in Modal 1`] = `
       >
         <Portal
           isOpened={true}
-          onClose={[Function]}
-          onOpen={[Function]}
-          onUpdate={[Function]}
-        />
+        >
+          <ModalContent
+            ariaLabel="Modal"
+            classNameModal="large"
+            classNameOverlay={null}
+            closeOnOutsideClick={false}
+            isFocused={true}
+            isFullscreen={false}
+            isScrollable={false}
+            onRequestClose={[Function]}
+            role="document"
+          >
+            <FocusTrap
+              _createFocusTrap={[Function]}
+              active={true}
+              focusTrapOptions={Object {}}
+              paused={false}
+              tag="div"
+            >
+              <div>
+                <ModalOverlay
+                  className={null}
+                  onClick={null}
+                >
+                  <div
+                    className="overlay"
+                    onClick={null}
+                  />
+                </ModalOverlay>
+                <div
+                  aria-label="Modal"
+                  className="modal fixed-size large"
+                  role="document"
+                  tabIndex="0"
+                >
+                  <SlideGroup
+                    isAnimated={true}
+                    items={
+                      Array [
+                        <TestContainer
+                          app={
+                            AppDelegateInstance {
+                              "closeDisclosure": [Function],
+                              "disclose": [Function],
+                              "dismiss": [Function],
+                              "maximize": [Function],
+                              "registerDismissCheck": [Function],
+                              "requestFocus": [Function],
+                            }
+                          }
+                        />,
+                      ]
+                    }
+                  >
+                    <div
+                      className="slide-group"
+                    >
+                      <TransitionGroup
+                        childFactory={[Function]}
+                        component="div"
+                        key="DISCLOSE_KEY"
+                      >
+                        <div>
+                          <CSSTransition
+                            classNames={
+                              Object {
+                                "enter": "enter",
+                                "enterActive": "enter-active",
+                                "exit": "exit",
+                                "exitActive": "exit-active",
+                              }
+                            }
+                            enter={true}
+                            exit={true}
+                            in={true}
+                            key=".$DISCLOSE_KEY"
+                            onEntered={[Function]}
+                            onExit={[Function]}
+                            onExited={[Function]}
+                            timeout={300}
+                          >
+                            <Transition
+                              appear={false}
+                              enter={true}
+                              exit={true}
+                              in={true}
+                              mountOnEnter={false}
+                              onEnter={[Function]}
+                              onEntered={[Function]}
+                              onEntering={[Function]}
+                              onExit={[Function]}
+                              onExited={[Function]}
+                              onExiting={[Function]}
+                              timeout={300}
+                              unmountOnExit={false}
+                            >
+                              <Slide
+                                isHidden={false}
+                              >
+                                <div
+                                  aria-hidden={null}
+                                  className="slide"
+                                >
+                                  <div
+                                    className="slide-shadow"
+                                  />
+                                  <TestContainer
+                                    app={
+                                      AppDelegateInstance {
+                                        "closeDisclosure": [Function],
+                                        "disclose": [Function],
+                                        "dismiss": [Function],
+                                        "maximize": [Function],
+                                        "registerDismissCheck": [Function],
+                                        "requestFocus": [Function],
+                                      }
+                                    }
+                                    key="DISCLOSE_KEY"
+                                  >
+                                    <div>
+                                      Hello World
+                                    </div>
+                                  </TestContainer>
+                                </div>
+                              </Slide>
+                            </Transition>
+                          </CSSTransition>
+                        </div>
+                      </TransitionGroup>
+                    </div>
+                  </SlideGroup>
+                </div>
+              </div>
+            </FocusTrap>
+          </ModalContent>
+        </Portal>
       </Modal>
     </div>
   </DisclosureManager>
