@@ -11,13 +11,9 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The config file containing additional items to be rendered within the menu.
+   * The array containing the static menu items to be rendered within the menu.
    */
-  additionalItemsConfig: PropTypes.arrayOf(PropTypes.object),
-  /**
-   * The config file containing the static menu items to be rendered within the menu.
-   */
-  menuConfig: PropTypes.object.isRequired,
+  menuItems: PropTypes.arrayOf((Utils.itemShape)),
   /**
    * The function to trigger when a menu item is selected.
    */
@@ -27,17 +23,21 @@ const propTypes = {
    */
   onDisclose: PropTypes.func.isRequired,
   /**
+   * The function that closes the menu.
+   */
+  requestClose: PropTypes.func.isRequired,
+  /**
    * The name to be displayed next to the user photo.
    */
   userName: PropTypes.string.isRequired,
   /**
    * The image associated with the user.
    */
-  userPhoto: PropTypes.element.isRequired,
+  userPhoto: PropTypes.element,
 };
 
 const defaultProps = {
-  additionalItemsConfig: [],
+  // userPhoto: null,
 };
 
 class ApplicationHeaderUtility extends React.Component {
@@ -57,19 +57,20 @@ class ApplicationHeaderUtility extends React.Component {
   createContent() {
     return (
       <UtilityMenu
-        additionalItemsConfig={this.props.additionalItemsConfig}
-        menuConfig={this.props.menuConfig}
+        initialSelectedKey={Utils.KEYS.MENU}
+        menuItems={this.props.menuItems}
         onChange={this.props.onChange}
+        requestClose={this.props.requestClose}
       />
     );
   }
 
   render() {
     const {
-      additionalItemsConfig,
-      menuConfig,
+      menuItems,
       onChange,
       onDisclose,
+      requestClose,
       userName,
       userPhoto,
       ...customProps
@@ -80,7 +81,6 @@ class ApplicationHeaderUtility extends React.Component {
     const userNameClassNames = cx('user-name');
     const iconClassNames = cx('icon');
     const photo = React.cloneElement(userPhoto, { className: userPhotoClassNames });
-    // TODO: hange button variant to de-emphasis on react 16 uplift.
     return (
       <button {...customProps} className={utilityClassNames} onClick={this.handleOnClick}>
         {photo}

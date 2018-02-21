@@ -38,11 +38,12 @@ const propTypes = {
   /**
    * The image associated with the user.
    */
-  userPhoto: PropTypes.element.isRequired,
+  userPhoto: PropTypes.element,
 };
 
 const defaultProps = {
   additionalItemsConfig: [],
+  userPhoto: null,
 };
 
 class ApplicationMenuUtility extends React.Component {
@@ -88,7 +89,6 @@ class ApplicationMenuUtility extends React.Component {
     const userNameClassNames = cx('user-name');
     const iconClassNames = cx('icon');
     const photo = React.cloneElement(userPhoto, { className: userPhotoClassNames });
-    // TODO: Change button variant to de-emphasis on react 16 uplift.
     return (
       <button {...customProps} className={utilityClassNames} onClick={this.handleOnClick}>
         <span className={userContainerClassNames}>

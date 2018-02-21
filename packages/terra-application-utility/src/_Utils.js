@@ -1,19 +1,4 @@
-const isFullScreen = (isHeightBounded, isWidthBounded, boundingFrame, popupWidth) => {
-  const width = popupWidth;
-  let maxWidth;
-
-  if (boundingFrame && !isWidthBounded) {
-    maxWidth = boundingFrame.clientWidth;
-  } else {
-    maxWidth = window.innerWidth;
-  }
-
-  if (maxWidth <= 0) {
-    return false;
-  }
-
-  return isHeightBounded && (width >= maxWidth || isWidthBounded);
-};
+import PropTypes from 'prop-types';
 
 const KEY_CODES = {
   ENTER: 13,
@@ -22,6 +7,7 @@ const KEY_CODES = {
   DOWN_ARROW: 40,
   LEFT_ARROW: 37,
   RIGHT_ARROW: 39,
+  BACK_SPACE: 8,
 };
 
 const KEYS = {
@@ -38,6 +24,11 @@ const KEYS = {
   LOG_OUT: 'log-out',
 };
 
+const LOCATIONS = {
+  BODY: 'body',
+  FOOTER: 'footer',
+};
+
 const TITLES = {
   MENU: 'Menu',
   USER_INFORMATION: 'User Information',
@@ -52,72 +43,185 @@ const TITLES = {
   LOG_OUT: 'Log Out',
 };
 
-const generateMenuConfig = userData => ({
-  key: KEYS.MENU,
-  title: TITLES.MENU,
-  isSelected: true,
-  children: [
+const defaultConfig = userData =>
+  [
+    {
+      key: KEYS.MENU,
+      title: TITLES.MENU,
+      contentLocation: LOCATIONS.BODY,
+      isSelected: false,
+      isSelectable: false,
+      childKeys: [
+        KEYS.USER_INFORMATION,
+        KEYS.SETTINGS,
+        KEYS.HELP,
+        KEYS.LOG_OUT,
+        'additional-item-1',
+        'additional-item-2',
+      ],
+    },
     {
       key: KEYS.USER_INFORMATION,
       title: TITLES.USER_INFORMATION,
       content: userData,
+      contentLocation: LOCATIONS.BODY,
       isSelected: false,
-      children: [
-        {
-          key: KEYS.CHANGE_PHOTO,
-          title: TITLES.CHANGE_PHOTO,
-          isSelected: false,
-        },
+      isSelectable: false,
+      childKeys: [
+        KEYS.CHANGE_PHOTO,
       ],
     },
     {
       key: KEYS.SETTINGS,
       title: TITLES.SETTINGS,
+      contentLocation: LOCATIONS.BODY,
       isSelected: false,
-      children: [
-        {
-          key: KEYS.APPEARANCE,
-          title: TITLES.APPEARANCE,
-          isSelected: false,
-        },
-        {
-          key: KEYS.SECURITY,
-          title: TITLES.SECURITY,
-          isSelected: false,
-        },
+      isSelectable: false,
+      childKeys: [
+        KEYS.APPEARANCE,
+        KEYS.SECURITY,
       ],
+    },
+    {
+      key: KEYS.LOG_OUT,
+      title: TITLES.LOG_OUT,
+      contentLocation: LOCATIONS.FOOTER,
+      isSelected: false,
+      isSelectable: false,
+      childKeys: [],
     },
     {
       key: KEYS.HELP,
       title: TITLES.HELP,
+      contentLocation: LOCATIONS.BODY,
       isSelected: false,
-      children: [
-        {
-          key: KEYS.GETTING_STARTED,
-          title: TITLES.GETTING_STARTED,
-          isSelected: false,
-        },
-        {
-          key: KEYS.ABOUT,
-          title: TITLES.ABOUT,
-          isSelected: false,
-        },
-        {
-          key: KEYS.TERMS_OF_USE,
-          title: TITLES.TERMS_OF_USE,
-          isSelected: false,
-        },
+      isSelectable: false,
+      childKeys: [
+        KEYS.GETTING_STARTED,
+        KEYS.ABOUT,
+        KEYS.TERMS_OF_USE,
       ],
     },
-  ],
+    {
+      key: KEYS.CHANGE_PHOTO,
+      title: TITLES.CHANGE_PHOTO,
+      contentLocation: LOCATIONS.BODY,
+      isSelected: false,
+      isSelectable: false,
+      childKeys: [],
+    },
+    {
+      key: KEYS.APPEARANCE,
+      title: TITLES.APPEARANCE,
+      contentLocation: LOCATIONS.BODY,
+      isSelected: false,
+      isSelectable: false,
+      childKeys: [],
+    },
+    {
+      key: KEYS.SECURITY,
+      title: TITLES.SECURITY,
+      contentLocation: LOCATIONS.BODY,
+      isSelected: false,
+      isSelectable: false,
+      childKeys: [],
+    },
+    {
+      key: KEYS.GETTING_STARTED,
+      title: TITLES.GETTING_STARTED,
+      contentLocation: LOCATIONS.BODY,
+      isSelected: false,
+      isSelectable: false,
+      childKeys: [],
+    },
+    {
+      key: KEYS.ABOUT,
+      title: TITLES.ABOUT,
+      contentLocation: LOCATIONS.BODY,
+      isSelected: false,
+      isSelectable: false,
+      childKeys: [],
+    },
+    {
+      key: KEYS.TERMS_OF_USE,
+      title: TITLES.TERMS_OF_USE,
+      contentLocation: LOCATIONS.BODY,
+      isSelected: false,
+      isSelectable: false,
+      childKeys: [],
+    },
+    {
+      key: 'additional-item-1',
+      title: 'Additional Item 1',
+      contentLocation: LOCATIONS.BODY,
+      isSelected: false,
+      isSelectable: false,
+      childKeys: ['additional-item-1.1', 'additional-item-1.2'],
+    },
+    {
+      key: 'additional-item-1.1',
+      title: 'Additional Item 1.1',
+      contentLocation: LOCATIONS.BODY,
+      isSelected: false,
+      isSelectable: true,
+      childKeys: [],
+    },
+    {
+      key: 'additional-item-1.2',
+      title: 'Additional Item 1.2',
+      contentLocation: LOCATIONS.BODY,
+      isSelected: false,
+      isSelectable: true,
+      childKeys: [],
+    },
+    {
+      key: 'additional-item-2',
+      title: 'Additional Item 2',
+      contentLocation: LOCATIONS.FOOTER,
+      isSelected: false,
+      isSelectable: true,
+      childKeys: [],
+    },
+  ];
+
+const itemShape = PropTypes.shape({
+  /**
+   * The unique key associated with this item.
+   */
+  key: PropTypes.string.isRequired,
+  /**
+   * The component associated with this item.
+   */
+  content: PropTypes.object,
+  /**
+   *  The location to place the item. One of Utils.LOCATIONS.BODY, Utils.LOCATIONS.FOOTER.
+   */
+  contentLocation: PropTypes.oneOf([LOCATIONS.BODY, LOCATIONS.FOOTER]),
+  /**
+   * Boolean indicating if the item is selected.
+   */
+  isSelected: PropTypes.bool,
+  /**
+   * Boolean indicating if the item is toggable.
+   */
+  isSelectable: PropTypes.bool,
+  /**
+   * The text associated with this item.
+   */
+  title: PropTypes.string,
+  /**
+   * Array containing the keys of each child of this item.
+   */
+  childKeys: PropTypes.arrayOf(PropTypes.string),
 });
 
 const Utils = {
-  isFullScreen,
   KEY_CODES,
   KEYS,
+  LOCATIONS,
   TITLES,
-  generateMenuConfig,
+  defaultConfig,
+  itemShape,
 };
 
 export default Utils;

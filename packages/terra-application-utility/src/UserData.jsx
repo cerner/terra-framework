@@ -41,7 +41,10 @@ const UserData = ({
   const nameClassNames = cx('name');
   const detailClassNames = cx('detail');
   const chevronClassNames = cx('chevron');
-  const photoAttrs = React.cloneElement(userPhoto, { className: photoClassNames });
+  let photoAttrs;
+  if (userPhoto) {
+    photoAttrs = React.cloneElement(userPhoto, { className: photoClassNames });
+  }
 
   return (
     <div className={containerClassNames} >

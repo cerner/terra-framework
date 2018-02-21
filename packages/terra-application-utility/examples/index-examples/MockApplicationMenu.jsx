@@ -51,7 +51,7 @@ class MockApplicationMenu extends React.Component {
       <ApplicationMenuUtility
         app={this.app}
         additionalItemsConfig={AdditionalItemsConfig}
-        menuConfig={UtilitiesUtils.generateMenuConfig(userData)}
+        menuConfig={UtilitiesUtils.defaultConfig(userData)}
         onChange={this.handleOnChange}
         onDisclose={this.onDiscloseUtilty}
         userName={userName}

@@ -38,6 +38,7 @@
     "terra-arrange": "^1.19.0",
     "terra-base": "^2.0.0",
     "terra-button": "^1.14.0",
+    "terra-content-container": "^2.0.1",
     "terra-icon": "^1.18.0",
     "terra-image": "^1.16.0",
     "terra-menu": "^2.0.0",
