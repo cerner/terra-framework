@@ -1,7 +1,7 @@
 {
   "name": "terra-disclosure-manager",
   "main": "lib/DisclosureManager.js",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A stateful component used to manage disclosure presentation.",
   "repository": {
     "type": "git",
@@ -22,14 +22,14 @@
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "devDependencies": {
-    "terra-app-delegate": "^1.11.0",
+    "terra-app-delegate": "^2.0.0",
     "terra-base": "3.0.0",
     "terra-props-table": "^2.0.0"
   },
   "peerDependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "terra-app-delegate": "^1.10.0",
+    "terra-app-delegate": "^2.0.0",
     "terra-base": "^3.0.0"
   },
   "dependencies": {
