@@ -11,15 +11,15 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Header element to be placed at the start of the header.
+   * Whether or not the menu item should display a disclosure idicator.
    * */
   hasChevron: PropTypes.bool,
   /**
-   * Header element to be placed at the start of the header.
+   * Whether or not the menu item is selection.
    * */
   isSelected: PropTypes.bool,
   /**
-   * Extensions element to be placed before the end of the header.
+   * Text display for the menu item.
    * */
   text: PropTypes.string,
 };
