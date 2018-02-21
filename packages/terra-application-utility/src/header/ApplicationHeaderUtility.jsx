@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-import Button from 'terra-button';
 import IconChevronDown from 'terra-icon/lib/icon/IconChevronDown';
 import UtilityMenu from './_HeaderUtilityMenu';
 import Utils from '../_Utils';
@@ -14,7 +13,7 @@ const propTypes = {
   /**
    * The config file containing additional items to be rendered within the menu.
    */
-  additionalItemsConfig: PropTypes.array,
+  additionalItemsConfig: PropTypes.arrayOf(PropTypes.object),
   /**
    * The config file containing the static menu items to be rendered within the menu.
    */
@@ -83,11 +82,11 @@ class ApplicationHeaderUtility extends React.Component {
     const photo = React.cloneElement(userPhoto, { className: userPhotoClassNames });
     // TODO: hange button variant to de-emphasis on react 16 uplift.
     return (
-      <Button {...customProps} className={utilityClassNames} onClick={this.handleOnClick} variant="link">
+      <button {...customProps} className={utilityClassNames} onClick={this.handleOnClick}>
         {photo}
         <span className={userNameClassNames}>{userName} </span>
         {<IconChevronDown className={iconClassNames} />}
-      </Button>
+      </button>
     );
   }
 }

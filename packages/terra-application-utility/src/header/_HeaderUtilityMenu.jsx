@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-import Button from 'terra-button';
 import IconLeft from 'terra-icon/lib/icon/IconLeft';
 import MenuDivider from '../_UtilityMenuDivider';
 import Utils from '../_Utils';
@@ -60,6 +59,8 @@ class HeaderUtilityMenu extends React.Component {
 
   /**
    * Insert the specified item into the map.
+   * A key's value is an object containing the title, content, isSelected, and children.
+   * Example: {"key" => {title: "Page Title", isSelected: false, children: [{key: "child-one", title: "First Item", isSelected: false}, {key: "child-two", title: "Second Item" isSelected: false}]}
    * @param {*} item
    * @param {*} map
    */
@@ -104,8 +105,6 @@ class HeaderUtilityMenu extends React.Component {
 
   /**
    * Recursively create a map from the menu config with entries for each key.
-   * A key's value is an object containing the title, content, isSelected, and children.
-   * Example: {"key" => {title: "Page Title", isSelected: false, children: [{key: "child-one", title: "First Item", isSelected: false}, {key: "child-two", title: "Second Item" isSelected: false}]}
    */
   createMap(config, map) {
     HeaderUtilityMenu.insertIntoMap(config, map);
@@ -173,7 +172,7 @@ class HeaderUtilityMenu extends React.Component {
     const FooterClassNames = cx('footer');
 
     const currentKey = this.state.currentKey;
-    const backButton = <Button className={BackButtonClassNames} onClick={this.handleRequestBack}><IconLeft className={IconLeftClassNames} /></Button>;
+    const backButton = <button className={BackButtonClassNames} onClick={this.handleRequestBack}><IconLeft className={IconLeftClassNames} /></button>;
     const header = (
       <div className={HeaderClassNames}>
         {currentKey !== Utils.KEYS.MENU && backButton}
@@ -183,9 +182,9 @@ class HeaderUtilityMenu extends React.Component {
     const footer = (
       <div className={FooterClassNames}>
         <MenuDivider />
-        <Button className={LogOutButtonClassNames} onClick={this.handleLogOut}>
+        <button className={LogOutButtonClassNames} onClick={this.handleLogOut}>
           {Utils.TITLES.LOG_OUT}
-        </Button>
+        </button>
       </div>
     );
 

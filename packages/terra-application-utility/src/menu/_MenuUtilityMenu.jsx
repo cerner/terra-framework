@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import AppDelegate from 'terra-app-delegate';
-import Button from 'terra-button';
 import IconClose from 'terra-icon/lib/icon/IconClose';
 import IconLeft from 'terra-icon/lib/icon/IconLeft';
 import MenuDivider from '../_UtilityMenuDivider';
@@ -66,6 +65,8 @@ class MenuUtilityMenu extends React.Component {
 
   /**
    * Insert the specified item into the map.
+   * A key's value is an object containing the title, content, isSelected, and children.
+   * Example: {"key" => {title: "Page Title", isSelected: false, children: [{key: "child-one", title: "First Item", isSelected: false}, {key: "child-two", title: "Second Item" isSelected: false}]}
    * @param {*} item
    * @param {*} map
    */
@@ -111,8 +112,6 @@ class MenuUtilityMenu extends React.Component {
 
   /**
    * Recursively create a map from the menu config with entries for each key.
-   * A key's value is an object containing the title, content, isSelected, and children.
-   * Example: {"key" => {title: "Page Title", isSelected: false, children: [{key: "child-one", title: "First Item", isSelected: false}, {key: "child-two", title: "Second Item" isSelected: false}]}
    */
   createMap(config, map) {
     MenuUtilityMenu.insertIntoMap(config, map);
@@ -178,6 +177,7 @@ class MenuUtilityMenu extends React.Component {
       customProps.classNames,
     ]);
     const HeaderClassNames = cx('header');
+    const HeaderLeftContainer = cx('left-container');
     const ClosebuttonClassNames = cx('close-button');
     const BackButtonClassNames = cx('back-button');
     const IconLeftClassNames = cx('icon-left');
@@ -187,21 +187,23 @@ class MenuUtilityMenu extends React.Component {
     const FooterClassNames = cx('footer');
 
     const currentKey = this.state.currentKey;
-    const backButton = <Button className={BackButtonClassNames} onClick={this.handleRequestBack}><IconLeft className={IconLeftClassNames} /></Button>;
-    const closeButton = <Button onClick={this.handleClose} className={ClosebuttonClassNames}><IconClose className={IconCloseClassNames} /></Button>;
+    const backButton = <button className={BackButtonClassNames} onClick={this.handleRequestBack}><IconLeft className={IconLeftClassNames} /></button>;
+    const closeButton = <button onClick={this.handleClose} className={ClosebuttonClassNames}><IconClose className={IconCloseClassNames} /></button>;
     const header = (
       <div className={HeaderClassNames}>
-        {currentKey !== Utils.KEYS.MENU && backButton}
-        <span className={HeaderTextClassNames}>{this.getTitle(currentKey)}</span>
+        <div className={HeaderLeftContainer}>
+          {currentKey !== Utils.KEYS.MENU && backButton}
+          <span className={HeaderTextClassNames}>{this.getTitle(currentKey)}</span>
+        </div>
         {closeButton}
       </div>
       );
     const footer = (
       <div className={FooterClassNames}>
         <MenuDivider />
-        <Button className={LogOutButtonClassNames} onClick={this.handleLogOut}>
+        <button className={LogOutButtonClassNames} onClick={this.handleLogOut}>
           {Utils.TITLES.LOG_OUT}
-        </Button>
+        </button>
       </div>);
 
     return (

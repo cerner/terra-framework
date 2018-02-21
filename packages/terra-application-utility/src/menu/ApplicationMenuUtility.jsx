@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import AppDelegate from 'terra-app-delegate';
-import Button from 'terra-button';
 import IconChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 import UtilityMenu from './_MenuUtilityMenu';
 import Utils from '../_Utils';
@@ -15,7 +14,7 @@ const propTypes = {
   /**
    * The config file containing additional items to be rendered within the menu.
    */
-  additionalItemsConfig: PropTypes.array,
+  additionalItemsConfig: PropTypes.arrayOf(PropTypes.object),
   /**
    * The config file containing the static menu items to be rendered within the menu.
    */
@@ -91,13 +90,13 @@ class ApplicationMenuUtility extends React.Component {
     const photo = React.cloneElement(userPhoto, { className: userPhotoClassNames });
     // TODO: Change button variant to de-emphasis on react 16 uplift.
     return (
-      <Button {...customProps} className={utilityClassNames} onClick={this.handleOnClick} variant="link">
+      <button {...customProps} className={utilityClassNames} onClick={this.handleOnClick}>
         <span className={userContainerClassNames}>
           {photo}
           <span className={userNameClassNames}>{userName} </span>
         </span>
         {<IconChevronRight className={iconClassNames} />}
-      </Button>
+      </button>
     );
   }
 }

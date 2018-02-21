@@ -23,7 +23,10 @@
     "--terra-application-header-utility-photo-width": "1.857rem",
     "--terra-application-header-utility-background-color": "transparent",
     "--terra-application-header-utility-border-width": "0",
-    "--terra-application-header-utility-color": "#fff"
+    "--terra-application-header-utility-color": "#fff",
+    "--terra-application-header-utility-border-radius": "0.4286rem",
+    "--terra-application-menu-utility-user-name-font-size": "normal",
+    "--terra-application-header-utility-user-name-font-size": "normal"
   },
   "ApplicationList": {
     "--terra-application-list-color": "#1c1f21",
@@ -61,7 +64,9 @@
     "--terra-application-menu-utility-user-name-margin-right": "0.2143rem",
     "--terra-application-menu-utility-icon-min-width": "1.857rem",
     "--terra-application-menu-utility-background-color": "transparent",
-    "--terra-application-menu-utility-border-width": "0"
+    "--terra-application-menu-utility-border-width": "0",
+    "--terra-application-menu-utility-border-radius": "0.4286rem",
+    "--terra-application-menu-utility-user-name-font-size": "normal"
   },
   "ApplicationTabs": {
     "--terra-application-tabs-spacer-width": "2rem",
@@ -291,7 +296,12 @@
     "--terra-application-header-utility-menu-log-out-button-margin-top": "0.4286rem",
     "--terra-application-header-utility-menu-page-chevron-height": "0.7143rem",
     "--terra-application-header-utility-menu-page-height": "0.7143rem",
-    "--terra-application-header-utility-menu-page-chevron-width": "0.7143rem"
+    "--terra-application-header-utility-menu-page-chevron-width": "0.7143rem",
+    "--terra-application-header-utility-menu-log-out-button-background-color": "transparent",
+    "--terra-application-header-utility-menu-log-out-button-border-radius": "0.4286rem",
+    "--terra-application-header-utility-menu-log-out-button-height": "2rem",
+    "--terra-application-header-utility-menu-log-out-button-width": "5.357rem",
+    "--terra-application-header-utility-menu-log-out-font-size": "1rem"
   },
   "_HeaderUtilityMenuPage": {
     "--terra-application-header-menu-page-list-item-font-size": "1rem",
@@ -318,7 +328,12 @@
     "--terra-application-menu-utility-menu-header-close-button-border-width": "0",
     "--terra-application-menu-utility-menu-header-close-button-width": "1.714rem",
     "--terra-application-menu-utility-menu-log-out-button-margin-bottom": "0.4286rem",
-    "--terra-application-menu-utility-menu-log-out-button-margin-top": "0.4286rem"
+    "--terra-application-menu-utility-menu-log-out-button-margin-top": "0.4286rem",
+    "--terra-application-menu-utility-menu-log-out-button-background-color": "transparent",
+    "--terra-application-menu-utility-menu-log-out-button-border-radius": "0.4286rem",
+    "--terra-application-menu-utility-menu-log-out-font-size": "1rem",
+    "--terra-application-menu-utility-menu-log-out-button-height": "2rem",
+    "--terra-application-menu-utility-menu-log-out-button-width": "5.357rem"
   },
   "_MenuUtilityMenuPage": {
     "--terra-application-menu-menu-page-list-item-font-size": "1rem",

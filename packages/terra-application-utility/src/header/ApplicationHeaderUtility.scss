@@ -1,10 +1,13 @@
 :local {
   .header-utility {
     align-items: center;
-    // background-color: var(--terra-application-header-utility-background-color, transparent);
-    // border-width: var(--terra-application-header-utility-border-width, 0);
+    background-color: var(--terra-application-header-utility-background-color, transparent);
+    border-radius: var(--terra-application-header-utility-border-radius, 0.4286rem);
+    border-width: var(--terra-application-header-utility-border-width, 0);
     color: var(--terra-application-header-utility-color, #fff);
+    cursor: pointer;
     display: flex;
+    font-family: inherit;
     height: 100%;
     justify-content: space-between;
     max-width: 100%;
@@ -21,6 +24,8 @@
     }
 
     .user-name {
+      font-size: var(--terra-application-header-utility-user-name-font-size, 1rem);
+      font-weight: var(--terra-application-header-utility-user-name-font-size, normal);
       margin-right: var(--terra-application-header-utility-user-name-margin-right, 0.2143rem);
       overflow: hidden;
       text-overflow: ellipsis;

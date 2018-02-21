@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     font-family: inherit;
-    height: 100%; //set this based on isHeightBounded
+    height: 100%;
     list-style-type: none;
     overflow: hidden;
     width: 100%;
@@ -11,6 +11,7 @@
     .header {
       align-items: center;
       display: flex;
+      flex-shrink: 0;
       font-size: var(--terra-application-header-utility-menu-header-font-size, 1rem);
       font-weight: var(--terra-application-header-utility-menu-header-font-weight, bold);
       height: var(--terra-application-header-utility-menu-header-height, 2rem);
@@ -25,14 +26,14 @@
         align-items: center;
         background-color: var(--terra-application-header-utility-menu-header-back-button-background-color, transparent);
         border-width: var(--terra-application-header-utility-menu-header-back-button-border-width, 0);
+        cursor: pointer;
         display: flex;
         width: var(--terra-application-header-utility-menu-header-back-button-width, 1.714rem);
 
         /* stylelint-disable max-nesting-depth */
         .icon-left {
+          flex-shrink: 0;
           height: var(--terra-application-header-utility-menu-page-chevron-height, 0.7143rem);
-          min-height: var(--terra-application-header-utility-menu-page-height, 0.7143rem);
-          min-width: var(--terra-application-header-utility-menu-page-chevron-width, 0.7143rem);
           width: var(--terra-application-header-utility-menu-page-chevron-width, 0.7143rem);
         }
         /* stylelint-enable max-nesting-depth */
@@ -40,12 +41,20 @@
     }
 
     .footer {
+      flex-shrink: 0;
       margin-top: auto;
 
       .log-out-button {
+        background-color: var(--terra-application-header-utility-menu-log-out-button-background-color, transparent);
+        border-radius: var(--terra-application-header-utility-menu-log-out-button-border-radius, 0.4286rem);
+        cursor: pointer;
         float: right;
+        font-size: var(--terra-application-header-utility-menu-log-out-font-size, 1rem);
+        height: var(--terra-application-header-utility-menu-log-out-button-height, 2rem);
         margin-bottom: var(--terra-application-header-utility-menu-log-out-button-margin-bottom, 0.4286rem);
+        margin-right: var(--terra-application-header-utility-menu-log-out-button-margin-bottom, 0.4286rem);
         margin-top: var(--terra-application-header-utility-menu-log-out-button-margin-top, 0.4286rem);
+        width: var(--terra-application-header-utility-menu-log-out-button-width, 5.357rem);
       }
       /* stylelint-enable selector-max-compound-selectors*/
     }

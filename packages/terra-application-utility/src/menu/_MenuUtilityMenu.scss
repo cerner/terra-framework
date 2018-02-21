@@ -11,45 +11,53 @@
     .header {
       align-items: center;
       display: flex;
+      flex-shrink: 0;
       font-size: var(--terra-application-menu-utility-menu-header-font-size, 1rem);
       font-weight: var(--terra-application-menu-utility-menu-header-font-weight, bold);
       height: var(--terra-application-menu-utility-menu-header-height, 2rem);
       justify-content: space-between;
 
       /* stylelint-disable selector-max-compound-selectors*/
-      .header-text {
-        display: inline-block;
-        margin-left: var(--terra-application-menu-utility-menu-header-text-margin-left, 0.4286rem);
-      }
-
-      .back-button {
+      /* stylelint-disable max-nesting-depth*/
+      .left-container {
         align-items: center;
-        background-color: var(--terra-application-menu-utility-menu-header-back-button-background-color, transparent);
-        border-width: var(--terra-application-menu-utility-menu-header-back-button-border-width, 0);
         display: flex;
-        width: var(--terra-application-menu-utility-menu-header-back-button-width, 1.714rem);
+        justify-content: flex-start;
 
-        /* stylelint-disable max-nesting-depth */
-        .icon-left {
-          height: var(--terra-application-menu-utility-menu-page-chevron-height, 0.7143rem);
-          min-height: var(--terra-application-menu-utility-menu-page-height, 0.7143rem);
-          min-width: var(--terra-application-menu-utility-menu-page-chevron-width, 0.7143rem);
-          width: var(--terra-application-menu-utility-menu-page-chevron-width, 0.7143rem);
+        .header-text {
+          display: inline-block;
+          margin-left: var(--terra-application-menu-utility-menu-header-text-margin-left, 0.4286rem);
+        }
+
+        .back-button {
+          align-items: center;
+          background-color: var(--terra-application-menu-utility-menu-header-back-button-background-color, transparent);
+          border-width: var(--terra-application-menu-utility-menu-header-back-button-border-width, 0);
+          cursor: pointer;
+          display: flex;
+          width: var(--terra-application-menu-utility-menu-header-back-button-width, 1.714rem);
+
+          .icon-left {
+            flex-shrink: 0;
+            height: var(--terra-application-menu-utility-menu-page-chevron-height, 0.7143rem);
+            width: var(--terra-application-menu-utility-menu-page-chevron-width, 0.7143rem);
+          }
         }
       }
+
 
       .close-button {
         background-color: var(--terra-application-menu-utility-menu-header-close-button-background-color, transparent);
         border-width: var(--terra-application-menu-utility-menu-header-close-button-border-width, 0);
+        cursor: pointer;
         float: right;
         margin: 0;
         padding: 0;
         width: var(--terra-application-menu-utility-menu-header-close-button-width, 1.714rem);
 
         .icon-close {
+          flex-shrink: 0;
           height: var(--terra-application-menu-utility-menu-page-chevron-height, 0.7143rem);
-          min-height: var(--terra-application-menu-utility-menu-page-height, 0.7143rem);
-          min-width: var(--terra-application-menu-utility-menu-page-chevron-width, 0.7143rem);
           width: var(--terra-application-menu-utility-menu-page-chevron-width, 0.7143rem);
         }
         /* stylelint-enable max-nesting-depth */
@@ -57,12 +65,20 @@
     }
 
     .footer {
+      flex-shrink: 0;
       margin-top: auto;
 
       .log-out-button {
+        background-color: var(--terra-application-menu-utility-menu-log-out-button-background-color, transparent);
+        border-radius: var(--terra-application-menu-utility-menu-log-out-button-border-radius, 0.4286rem);
+        cursor: pointer;
         float: right;
+        font-size: var(--terra-application-menu-utility-menu-log-out-font-size, 1rem);
+        height: var(--terra-application-menu-utility-menu-log-out-button-height, 2rem);
         margin-bottom: var(--terra-application-menu-utility-menu-log-out-button-margin-bottom, 0.4286rem);
+        margin-right: var(--terra-application-menu-utility-menu-log-out-button-margin-bottom, 0.4286rem);
         margin-top: var(--terra-application-menu-utility-menu-log-out-button-margin-top, 0.4286rem);
+        width: var(--terra-application-menu-utility-menu-log-out-button-width, 5.357rem);
       }
       /* stylelint-enable selector-max-compound-selectors*/
     }
