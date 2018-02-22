@@ -1,7 +1,7 @@
 {
   "name": "terra-navigation-layout",
   "main": "lib/NavigationLayout.js",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "The Terra Navigation Layout package includes a variety of components and utilities to provide configuration-based, react-router-driven navigation to Terra applications.",
   "repository": {
     "type": "git",
@@ -22,31 +22,31 @@
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "devDependencies": {
-    "react": "^15.4.2",
-    "react-router-dom": "^4.0.0",
-    "terra-app-delegate": "^1.11.0",
+    "react": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "terra-app-delegate": "^2.0.0",
     "terra-props-table": "^1.10.1"
   },
   "peerDependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-router-dom": "^4.0.0",
-    "terra-app-delegate": "^1.6.0",
-    "terra-base": "^2.5.0",
-    "terra-button": "^1.10.0",
-    "terra-icon": "^1.11.0",
-    "terra-menu": "^1.2.0"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "terra-app-delegate": "^2.0.0",
+    "terra-base": "^3.0.0",
+    "terra-button": "^2.0.1",
+    "terra-icon": "^2.0.1",
+    "terra-menu": "^2.0.1"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-base": "^2.5.0",
-    "terra-button": "^1.10.0",
-    "terra-icon": "^1.11.0",
-    "terra-layout": "^1.2.0",
-    "terra-menu": "^1.2.0",
-    "terra-responsive-element": "^1.11.1",
-    "terra-toggle-button": "^1.15.0"
+    "terra-base": "^3.0.0",
+    "terra-button": "^2.0.1",
+    "terra-icon": "^2.0.1",
+    "terra-layout": "^2.0.0",
+    "terra-menu": "^2.0.1",
+    "terra-responsive-element": "^2.0.1",
+    "terra-toggle-button": "^2.0.1"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
