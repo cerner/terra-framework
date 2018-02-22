@@ -7,7 +7,7 @@ describe('Toggle the slide panel and hidden styles', () => {
     browser.waitForExist('[class*=_panel_][aria-hidden="true"]');
   });
 
-  Terra.should.matchScreenshot();
+  Terra.should.matchScreenshot({ selector: '#site' });
 });
 
 describe('Toggle the slide panel click', () => {
@@ -18,7 +18,7 @@ describe('Toggle the slide panel click', () => {
     browser.waitForExist('[class*=_panel_][aria-hidden="false"]');
   });
 
-  Terra.should.matchScreenshot();
+  Terra.should.matchScreenshot({ selector: '#site' });
 });
 
 describe('Toggle the slide panel double click', () => {
@@ -32,5 +32,5 @@ describe('Toggle the slide panel double click', () => {
     browser.waitForExist('[class*=_panel_][aria-hidden="true"]');
   });
 
-  Terra.should.matchScreenshot();
+  Terra.should.matchScreenshot({ selector: '#site' });
 });

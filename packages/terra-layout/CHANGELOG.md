@@ -6,6 +6,11 @@ Unreleased
 ###Changed
 * Remove the hover functionality from the layout panel at the medium breakpoint.
 
+2.0.0 - (February 21, 2018)
+------------------
+### Changed
+* Updated to use React 16
+
 1.2.0 - (February 15, 2018)
 ------------------
 ###Fixed
