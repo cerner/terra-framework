@@ -136,7 +136,7 @@ class NavigationSideMenu extends React.Component {
       onBack = this.onBackClick;
     }
     const currentItem = this.state.processedItems[this.state.selectedKey];
-    const actionHeader = <ActionHeader onBack={onBack} title={currentItem ? currentItem.title : null} />;
+    const actionHeader = <ActionHeader onBack={onBack} title={currentItem ? currentItem.text : null} />;
 
     return (
       <ContentContainer {...customProps} header={actionHeader} fill>
