@@ -16,26 +16,28 @@ class LayoutSlidePanelExample extends React.Component {
 
   render() {
     return (
-      <LayoutSlidePanel
-        panelContent={
-          <div style={{ height: '100%', width: '100%', position: 'relative', backgroundColor: 'red' }}>
-            <button id="test-toggle-2" onClick={this.toggleMenu}>toggle</button>
+      <div style={{ height: '768px', width: '100%', position: 'relative' }}>
+        <LayoutSlidePanel
+          panelContent={
+            <div style={{ height: '100%', width: '100%', position: 'relative', backgroundColor: 'red' }}>
+              <button id="test-toggle-2" onClick={this.toggleMenu}>toggle</button>
+            </div>
+          }
+          panelBehavior="overlay"
+          size="medium"
+          isOpen={this.state.isOpen}
+          isToggleEnabled
+          isAnimated
+          onToggle={() => {}}
+          toggleText="toggle text"
+        >
+          <div style={{ height: '100%', width: '100%', position: 'relative', backgroundColor: 'blue' }}>
+            <button id="test-toggle-1" onClick={this.toggleMenu}>
+              toggle
+            </button>
           </div>
-        }
-        panelBehavior="overlay"
-        size="medium"
-        isOpen={this.state.isOpen}
-        isToggleEnabled
-        isAnimated
-        onToggle={() => {}}
-        toggleText="toggle text"
-      >
-        <div style={{ height: '100%', width: '100%', position: 'relative', backgroundColor: 'blue' }}>
-          <button id="test-toggle-1" onClick={this.toggleMenu}>
-            toggle
-          </button>
-        </div>
-      </LayoutSlidePanel>
+        </LayoutSlidePanel>
+      </div>
     );
   }
 }
