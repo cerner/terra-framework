@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 -----------------
+### Fixed
+* ApplicationList hover/selected gradient transparent styling.
+
 ### Changed
 * Code formatting and documentation spacing.
 
