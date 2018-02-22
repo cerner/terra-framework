@@ -104,8 +104,6 @@ class NavigationSideMenu extends React.Component {
           metaData: this.state.items[parentKey].metaData,
         },
       );
-    } else {
-      this.props.routingStackBack();
     }
   }
 
@@ -165,7 +163,15 @@ class NavigationSideMenu extends React.Component {
       ...customProps
     } = this.props;
     const currentItem = this.state.items[selectedMenuKey];
-    const actionHeader = <ActionHeader onBack={this.handleBackClick} title={currentItem ? currentItem.text : null} />;
+
+    let onBack;
+    const parentKey = this.state.parents[this.props.selectedMenuKey];
+    if (parentKey) {
+      onBack = this.handleBackClick;
+    } else {
+      onBack = routingStackBack;
+    }
+    const actionHeader = <ActionHeader onBack={onBack} title={currentItem ? currentItem.text : null} />;
 
     return (
       <ContentContainer {...customProps} header={actionHeader} fill>
