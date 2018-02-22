@@ -42,6 +42,7 @@ const propTypes = {
   })),
   /**
    * Callback function when a menu endpoint is reached.
+   * returns (event, { selectedMenuKey: String, selectedChildKey: String, metaData: Object})
    */
   onChange: PropTypes.func.isRequired,
   /**
