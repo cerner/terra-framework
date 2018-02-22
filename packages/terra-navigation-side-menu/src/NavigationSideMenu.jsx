@@ -68,7 +68,7 @@ const processMenuItems = (menuItems) => {
   const items = {};
   const parents = {};
   menuItems.forEach((item) => {
-    items[item.key] = { id: item.id, text: item.text, childKeys: item.childKeys, metaData: item.metaData };
+    items[item.key] = { id: item.id, text: item.text, childKeys: item.childKeys, metaData: item.metaData, hasSubMenu: item.hasSubMenu };
     if (item.childKeys) {
       item.childKeys.forEach((key) => {
         parents[key] = item.key;
