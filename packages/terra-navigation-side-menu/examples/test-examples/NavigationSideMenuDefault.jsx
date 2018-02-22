@@ -60,7 +60,7 @@ class NavigationSideMenuDefault extends React.Component {
 
     return (
       <Base>
-        <div style={{ height: '450px', width: '300px', position: 'relative', border: '1px solid lightgrey' }}>
+        <div style={{ height: '768px', width: '300px', position: 'relative' }}>
           {content}
         </div>
       </Base>
