@@ -24,11 +24,11 @@
 
     &:hover,
     &.is-hovered {
-      background: var(--terra-application-list-background-hover, linear-gradient(-90deg, #fff, #f1f1f2));
+      background: var(--terra-application-list-background-hover, linear-gradient(-90deg, transparent, #f1f1f2));
     }
 
     &[aria-current='true'] {
-      background-image: var(--terra-application-list-selected-background-image, linear-gradient(-270deg, #fff, #e8e9ea));
+      background-image: var(--terra-application-list-selected-background-image, linear-gradient(-270deg, transparent, #e8e9ea));
       border-left: var(--terra-application-list-selected-border-left, 0.5rem solid #007cc3);
       padding-left: var(--terra-application-list-selected-padding-left, 0.7143rem);
     }
