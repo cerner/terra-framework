@@ -18,6 +18,7 @@ describe('ApplicationList', () => {
       '--terra-application-list-selected-background-image': 'linear-gradient(-270deg, orange, red)',
       '--terra-application-list-selected-border-left': '10px dotted purple',
       '--terra-application-list-selected-padding-left': '0',
+      '--terra-application-list-chevron-color': 'pink',
     });
   });
 
