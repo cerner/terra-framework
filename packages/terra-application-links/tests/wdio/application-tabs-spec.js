@@ -46,8 +46,8 @@ describe('ApplicationTabs', () => {
       browser.moveToObject('[data-application-tab-menu-content] > *:first-child');
     });
 
-    Terra.should.matchScreenshot({ viewports, options: { selector: '[data-application-tab-menu-content]' } });
-    Terra.should.beAccessible({ viewports, context: '[data-application-tab-menu-content]' });
+    Terra.should.matchScreenshot({ viewports, selector: '#site' });
+    Terra.should.beAccessible({ viewports, context: '#site' });
     Terra.should.themeEachCustomProperty('[data-application-tab-menu-content]', {
       '--terra-application-tabs-collapsed-color': 'blue',
       '--terra-application-tabs-collapsed-hover-background': 'linear-gradient(-90deg, orange, red)',
@@ -64,9 +64,9 @@ describe('ApplicationTabs', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/application-links/application-tabs-default');
       browser.waitForVisible('#test-tabs [data-application-tabs-more]');
-      browser.click('#test-tabs [data-application-tabs-more]');
+      browser.click('#test-tabs [data-application-tabs-more] span');
       browser.waitForVisible('[data-application-tab-menu-content]');
-      browser.click('[data-application-tab-menu-content] > *:first-child');
+      browser.click('[data-application-tab-menu-content] > *:first-child a');
       browser.pause(50);
     });
 

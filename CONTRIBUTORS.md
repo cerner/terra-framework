@@ -5,6 +5,7 @@ Cerner Corporation
 - Emily Rohrbough [@emilyrohrbough]
 - Dave Kasper [@dkasper-was-taken]
 - Mike Hemesath [@mhemesath]
+- Jake LaCombe [@jakelacombe]
 - Sairam Rakshith Bhyravabhotla [@rakshith91]
 
 [@tbiethman]: https://github.com/tbiethman
@@ -12,4 +13,5 @@ Cerner Corporation
 [@emilyrohrbough]: https://github.com/emilyrohrbough
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@mhemesath]: https://github.com/mhemesath
+[@jakelacombe]: https://github.com/JakeLaCombe
 [@rakshith91]: https://github.com/rakshith91
