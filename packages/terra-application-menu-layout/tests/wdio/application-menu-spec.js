@@ -9,7 +9,7 @@ describe('Application Menu', () => {
       browser.waitForVisible('#test-menu');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.should.matchScreenshot({ viewports, selector: '#test-menu' });
     Terra.should.beAccessible({ viewports, context: '#test-menu' });
   });
 });
