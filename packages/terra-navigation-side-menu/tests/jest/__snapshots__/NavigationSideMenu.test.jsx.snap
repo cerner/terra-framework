@@ -30,7 +30,7 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
       onMinimize={null}
       onNext={null}
       onPrevious={null}
-      title=""
+      title="Test Menu"
     />
   }
 >

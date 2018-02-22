@@ -35,8 +35,7 @@
     "terra-clinical-action-header": "^1.6.0",
     "terra-content-container": "^1.16.0",
     "terra-icon": "^2.0.1",
-    "terra-list": "^1.20.0",
-    "terra-navigation-layout": "^1.0.0"
+    "terra-list": "^1.20.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
