@@ -6,7 +6,6 @@ import TestContent from './test-content/TestContent';
 
 const LayoutDefault = () => (
   <Layout
-    style={{ height: '768px' }}
     key="layout-default"
     header={<TestHeader />}
     menu={<TestMenu />}
