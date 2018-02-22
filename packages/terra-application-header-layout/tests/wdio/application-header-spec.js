@@ -9,7 +9,7 @@ describe('Application Header', () => {
       browser.waitForVisible('#test-header');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.should.matchScreenshot({ viewports, selector: '#test-header' });
     Terra.should.beAccessible({ viewports, context: '#test-header' });
   });
 });
