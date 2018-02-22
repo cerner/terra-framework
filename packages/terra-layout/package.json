@@ -1,7 +1,7 @@
 {
   "name": "terra-layout",
   "main": "lib/Layout.js",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Provides a responsive starting point for the positioning of application components.",
   "repository": {
     "type": "git",
@@ -22,24 +22,24 @@
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "peerDependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "terra-base": "^2.5.0"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "terra-base": "^3.0.0"
   },
   "devDependencies": {
-    "react-router-dom": "^4.0.0",
+    "react-router-dom": "^4.2.2",
     "terra-props-table": "^1.10.1"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "lodash.debounce": "^4.0.8",
     "prop-types": "^15.5.8",
-    "terra-base": "^2.5.0",
-    "terra-button": "^1.9.0",
-    "terra-content-container": "^1.9.0",
-    "terra-icon": "^1.10.0",
-    "terra-overlay": "^1.9.0",
-    "terra-responsive-element": "^1.9.0"
+    "terra-base": "^3.0.0",
+    "terra-button": "^2.0.1",
+    "terra-content-container": "^2.0.1",
+    "terra-icon": "^2.0.1",
+    "terra-overlay": "^2.0.1",
+    "terra-responsive-element": "^2.0.1"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
