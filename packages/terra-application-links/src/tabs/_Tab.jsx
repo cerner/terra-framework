@@ -35,7 +35,7 @@ const ApplicationTab = ({
 }) => (
   <Route
     render={({ location, history }) => {
-      const isActive = !!matchPath(path, { path: location.pathname });
+      const isActive = !!matchPath(location.pathname, { path });
       const tabClassNames = cx([
         { tab: !isCollapsed },
         { 'collapsed-tab': isCollapsed },
