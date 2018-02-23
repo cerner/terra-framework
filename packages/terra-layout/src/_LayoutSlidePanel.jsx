@@ -88,7 +88,7 @@ class LayoutSlidePanel extends React.Component {
 
   handleTransitionEnd() {
     if (!this.props.isOpen && this.panelNode) {
-      this.panelNode.setAttribute('aria-hidden', true);
+      this.panelNode.setAttribute('aria-hidden', 'true');
       this.isHidden = true;
     }
   }
@@ -98,7 +98,7 @@ class LayoutSlidePanel extends React.Component {
     // As a result of this change, we are executing the code in the render block.
     if (this.props.isOpen && !this.lastIsOpen && this.panelNode) {
       // If the panel is opening remove the hidden attribute so the animation performs correctly.
-      this.panelNode.setAttribute('aria-hidden', false);
+      this.panelNode.setAttribute('aria-hidden', 'false');
       this.isHidden = false;
     }
   }
