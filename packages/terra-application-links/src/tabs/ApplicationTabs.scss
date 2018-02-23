@@ -163,11 +163,11 @@
 
     &:hover,
     &.is-hovered {
-      background: var(--terra-application-tabs-collapsed-hover-background, linear-gradient(-90deg, transparent, #f1f1f2));
+      background: var(--terra-application-tabs-collapsed-hover-background, linear-gradient(-90deg, #fff, #f1f1f2));
     }
 
     &[aria-current='true'] {
-      background-image: var(--terra-application-tabs-collapsed-selected-background-image, linear-gradient(-270deg, transparent, #e8e9ea));
+      background-image: var(--terra-application-tabs-collapsed-selected-background-image, linear-gradient(-270deg, #fff, #e8e9ea));
       background-size: 100%;
       box-shadow: var(--terra-application-tabs-collapsed-selected-box-shadow, inset 0.5rem 0 0 0 #007cc3);
     }
