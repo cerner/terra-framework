@@ -12,13 +12,9 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The config file containing additional items to be rendered within the menu.
-   */
-  additionalItemsConfig: PropTypes.arrayOf(PropTypes.object),
-  /**
    * The config file containing the static menu items to be rendered within the menu.
    */
-  menuConfig: PropTypes.object.isRequired,
+  menuItems: PropTypes.arrayOf((Utils.itemShape)),
   /**
    * The AppDelegate instance propogated to each child.
    */
@@ -32,6 +28,10 @@ const propTypes = {
    */
   onDisclose: PropTypes.func.isRequired,
   /**
+   * The function that closes the menu.
+   */
+  onRequestClose: PropTypes.func.isRequired,
+  /**
    * The name to be displayed next to the user photo.
    */
   userName: PropTypes.string.isRequired,
@@ -42,7 +42,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  additionalItemsConfig: [],
+  userName: '',
   userPhoto: null,
 };
 
@@ -64,20 +64,21 @@ class ApplicationMenuUtility extends React.Component {
     return (
       <UtilityMenu
         app={this.props.app}
-        additionalItemsConfig={this.props.additionalItemsConfig}
-        menuConfig={this.props.menuConfig}
+        initialSelectedKey={Utils.KEYS.MENU}
+        menuItems={this.props.menuItems}
         onChange={this.props.onChange}
+        onRequestClose={this.props.onRequestClose}
       />
     );
   }
 
   render() {
     const {
-      additionalItemsConfig,
       app,
-      menuConfig,
+      menuItems,
       onChange,
       onDisclose,
+      onRequestClose,
       userName,
       userPhoto,
       ...customProps

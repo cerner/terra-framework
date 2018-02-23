@@ -29,7 +29,7 @@ const propTypes = {
   /**
    * The name to be displayed next to the user photo.
    */
-  userName: PropTypes.string.isRequired,
+  userName: PropTypes.string,
   /**
    * The image associated with the user.
    */
@@ -37,7 +37,8 @@ const propTypes = {
 };
 
 const defaultProps = {
-  // userPhoto: null,
+  userName: '',
+  userPhoto: null,
 };
 
 class ApplicationHeaderUtility extends React.Component {

@@ -8,7 +8,6 @@ import Placeholder from 'terra-application-header-layout/examples/index-examples
 import Avatar from './FallBackAvatar.svg';
 import { ApplicationMenuUtility, UserData } from '../../src/ApplicationUtility';
 import UtilitiesUtils from '../../src/_Utils';
-import AdditionalItemsConfig from './AdditionalItemsConfig';
 
 const propTypes = {
   app: AppDelegate.propType,
@@ -19,6 +18,7 @@ class MockApplicationMenu extends React.Component {
     super(props);
     this.onDiscloseUtilty = this.onDiscloseUtilty.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
+    this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.state = {
       utilityComponent: false,
       selectedKey: null,
@@ -42,6 +42,11 @@ class MockApplicationMenu extends React.Component {
     this.setState({ selectedKey: key });
   }
 
+  handleOnRequestClose() {
+    debugger;
+    this.props.app.dismiss();
+  }
+
   render() {
     const image = <Image src={Avatar} />;
     const userDetail = 'User Detail';
@@ -50,10 +55,10 @@ class MockApplicationMenu extends React.Component {
     const utilities = (
       <ApplicationMenuUtility
         app={this.app}
-        additionalItemsConfig={AdditionalItemsConfig}
-        menuConfig={UtilitiesUtils.defaultConfig(userData)}
+        menuItems={UtilitiesUtils.defaultConfig(userData)}
         onChange={this.handleOnChange}
         onDisclose={this.onDiscloseUtilty}
+        onRequestClose={this.handleOnRequestClose}
         userName={userName}
         userPhoto={image}
       />

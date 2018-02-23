@@ -6,7 +6,7 @@ import Arrange from 'terra-arrange';
 import IconCheckmark from 'terra-icon/lib/icon/IconCheckmark';
 import IconChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 import Utils from '../_Utils';
-import styles from './_HeaderUtilityMenuItem.scss';
+import styles from './_MenuUtilityMenuItem.scss';
 
 const cx = classNames.bind(styles);
 
@@ -50,7 +50,7 @@ const defaultProps = {
   content: null,
 };
 
-class HeaderUtilityMenuItem extends React.Component {
+class MenuUtilityMenuItem extends React.Component {
   constructor(props) {
     super(props);
     this.handleKeyDown = this.handleKeyDown.bind(this);
@@ -131,7 +131,7 @@ class HeaderUtilityMenuItem extends React.Component {
   }
 }
 
-HeaderUtilityMenuItem.propTypes = propTypes;
-HeaderUtilityMenuItem.defaultProps = defaultProps;
+MenuUtilityMenuItem.propTypes = propTypes;
+MenuUtilityMenuItem.defaultProps = defaultProps;
 
-export default HeaderUtilityMenuItem;
+export default MenuUtilityMenuItem;

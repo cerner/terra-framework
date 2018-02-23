@@ -36,14 +36,19 @@
     .chevron {
       flex-shrink: 0;
       height: var(--terra-application-utility-menu-item-chevron-height, 0.8571rem);
+      visibility: hidden;
       width: var(--terra-application-utility-menu-item-chevron-width, 0.8571rem);
+    }
+
+    .chevron.has-chevron {
+      visibility: visible;
     }
     // }
     /* stylelint-enable selector-max-compound-selectors */
   }
 
   .body-custom-item {
-    padding-left: 1.429rem;
+    padding-left: 1.357rem;
   }
 
 

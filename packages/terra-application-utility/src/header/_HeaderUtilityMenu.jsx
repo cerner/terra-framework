@@ -13,13 +13,13 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Indicates if the height is bound to a value.
-   */
-  isHeightBounded: PropTypes.bool,
-  /**
    * Key of the top level menu.
    */
   initialSelectedKey: PropTypes.string.isRequired,
+  /**
+   * Indicates if the height is bound to a value.
+   */
+  isHeightBounded: PropTypes.bool,
   /**
    * The data object containing the static menu items.
    */
@@ -28,7 +28,7 @@ const propTypes = {
    * The function to trigger when a menu item is selected.
    */
   onChange: PropTypes.func.isRequired,
-    /**
+  /**
    * The function that closes the menu.
    */
   onRequestClose: PropTypes.func.isRequired,
@@ -136,6 +136,13 @@ class HeaderUtilityMenu extends React.Component {
     return null;
   }
 
+  /**
+   * 1. Has children. Navigate to the next page
+   * 2. Toggles. Trigger without closing the menu.
+   * 3. Endpoint. Close menu and trigger.
+   * @param {*} event
+   * @param {*} key
+   */
   handleOnChange(event, key) {
     const childKeys = this.getItem(key).childKeys;
     const item = this.getItem(key);

@@ -1,0 +1,66 @@
+:local {
+  .body-item {
+    // margin: 0;
+    // overflow: auto;
+    // -ms-overflow-style: -ms-autohiding-scrollbar;
+    // padding: 0;
+    /* stylelint-disable selector-max-compound-selectors*/
+    // .list-item {
+
+    cursor: pointer;
+    font-size: var(--terra-application-menu-utility-menu-item-list-item-font-size, 1rem);
+    list-style-type: none;
+    max-width: 100%;
+    padding-bottom: var(--terra-application-menu-utility-menu-item-list-item-padding-bottom, 0.2143rem);
+    padding-left: var(--terra-application-menu-utility-menu-item-list-item-padding-left, 0.2143rem);
+    padding-top: var(--terra-application-menu-utility-menu-item-list-item-padding-top, 0.2143rem);
+    text-overflow: ellipsis;
+
+    &:hover,
+    &:focus {
+      background-color: var(--terra-application-menu-utility-menu-item-list-item-hover-focus-color, #ebf6fd);
+    }
+
+    .checkmark {
+      flex-shrink: 0;
+      height: var(--terra-application-menu-utility-menu-item-checkmark-height, 0.8571rem);
+      margin-right: var(--terra-application-menu-utility-menu-item-checkmark-margin-right, 0.2143rem);
+      visibility: hidden;
+      width: var(--terra-application-utility-menu-item-checkmark-width, 0.8571rem);
+    }
+
+    .selected.checkmark {
+      visibility: visible;
+    }
+
+    .chevron {
+      flex-shrink: 0;
+      height: var(--terra-application-menu-utility-menu-item-chevron-height, 0.8571rem);
+      visibility: hidden;
+      width: var(--terra-application-menu-utility-menu-item-chevron-width, 0.8571rem);
+    }
+
+    .chevron.has-chevron {
+      visibility: visible;
+    }
+    // }
+    /* stylelint-enable selector-max-compound-selectors */
+  }
+
+  .body-custom-item {
+    padding-left: 1.357rem;
+  }
+
+
+  .footer-item {
+    background-color: var(--terra-application-menu-utility-menu-footer-item-background-color, transparent);
+    border-radius: var(--terra-application-menu-utility-menu-footer-item-border-radius, 0.2143rem);
+    cursor: pointer;
+    float: right;
+    font-size: var(--terra-application-menu-utility-menu-footer-item-font-size, 1rem);
+    height: var(--terra-application-menu-utility-menu-footer-item-height, 2rem);
+    margin-bottom: var(--terra-application-menu-utility-menu-footer-item-margin-bottom, 0.2857rem);
+    margin-left: auto; // Pushes flex item to the right
+    margin-right: var(--terra-application-menu-utility-utility-menu-footer-item-margin-bottom, 0.4286rem);
+  }
+}
