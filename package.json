@@ -113,7 +113,7 @@
     "stylelint-order": "^0.7.0",
     "stylelint-scss": "^2.0.0",
     "stylelint-suitcss": "^1.0.0",
-    "terra-site": "2.0.0-RC.5",
+    "terra-site": "git://github.com/cerner/terra-site.git#react-16",
     "terra-toolkit": "2.7.0",
     "wdio-mocha-framework": "^0.5.11",
     "wdio-visual-regression-service": "^0.8.0",
