@@ -105,7 +105,7 @@ class NavigationSideMenu extends React.Component {
     this.setState({ items, parents });
   }
 
-  handleBackClick() {
+  handleBackClick(event) {
     const parentKey = this.state.parents[this.props.selectedMenuKey];
     if (parentKey) {
       this.props.onChange(
