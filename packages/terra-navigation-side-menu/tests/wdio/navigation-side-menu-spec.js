@@ -5,7 +5,6 @@ describe('Default navigation side menu display', () => {
   beforeEach(() => {
     browser.url('/#/raw/tests/navigation-side-menu/navigation-side-menu-default');
     browser.waitForVisible('#test-menu');
-    browser.moveToObject('#test-menu #test-item-1');
   });
 
   Terra.should.matchScreenshot('#test-menu', { selector: '#test-menu' });
@@ -17,6 +16,19 @@ describe('Default navigation side menu display', () => {
     '--terra-navigation-side-menu-item-padding-right': '0',
     '--terra-navigation-side-menu-item-padding-bottom': '0',
     '--terra-navigation-side-menu-item-padding-left': '0',
+  });
+});
+
+describe('Hover navigation side menu display', () => {
+  before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/navigation-side-menu/navigation-side-menu-default');
+    browser.waitForVisible('#test-menu');
+    browser.moveToObject('#test-menu #test-item-1');
+  });
+
+  Terra.should.matchScreenshot('#test-menu', { selector: '#test-menu' });
+  Terra.should.themeEachCustomProperty('#test-menu', {
     '--terra-navigation-side-menu-item-background-hover': 'linear-gradient(-90deg, pink, blue)',
   });
 });
@@ -38,4 +50,14 @@ describe('Selected navigation side menu display', () => {
     '--terra-navigation-side-menu-item-selected-border-left': '1rem dotted orange',
     '--terra-navigation-side-menu-item-selected-padding-left': '0',
   });
+});
+
+describe('isRootMenu navigation side menu display', () => {
+  before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/navigation-side-menu/navigation-side-menu-root');
+    browser.waitForVisible('#test-menu');
+  });
+
+  Terra.should.matchScreenshot('#test-menu', { selector: '#test-menu' });
 });

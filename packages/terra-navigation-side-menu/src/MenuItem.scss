@@ -20,6 +20,7 @@
     &.is-selected {
       background-image: var(--terra-navigation-side-menu-item-selected-background-image, linear-gradient(-270deg, #fff, #e8e9ea));
       border-left: var(--terra-navigation-side-menu-item-selected-border-left, 0.5rem solid #007cc3);
+      font-weight: var(--terra-navigation-side-menu-item-selected-font-weight, 600);
       padding-left: var(--terra-navigation-side-menu-item-selected-padding-left, 0.7143rem);
     }
   }

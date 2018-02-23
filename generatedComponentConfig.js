@@ -36,6 +36,7 @@ import ModalManagerDefault from './packages/terra-modal-manager/examples/test-ex
 import NavigationLayoutBasic from './packages/terra-navigation-layout/examples/test-examples/NavigationLayoutBasic';
 import NavigationLayoutComplex from './packages/terra-navigation-layout/examples/test-examples/NavigationLayoutComplex';
 import NavigationSideMenuDefault from './packages/terra-navigation-side-menu/examples/test-examples/NavigationSideMenuDefault';
+import NavigationSideMenuRoot from './packages/terra-navigation-side-menu/examples/test-examples/NavigationSideMenuRoot';
 import SlidePanelManagerDefault from './packages/terra-slide-panel-manager/examples/test-examples/SlidePanelManagerDefault';
 import DefaultThemeProvider from './packages/terra-theme-provider/examples/test-examples/DefaultThemeProvider';
 import GlobalSwitchThemes from './packages/terra-theme-provider/examples/test-examples/GlobalSwitchThemes';
@@ -294,6 +295,11 @@ const componentConfig = {
         name: 'Navigation Side Menu Default',
         path: '/navigation-side-menu-default',
         component: NavigationSideMenuDefault,
+      },
+      {
+        name: 'Navigation Side Menu Root',
+        path: '/navigation-side-menu-root',
+        component: NavigationSideMenuRoot,
       },
     ],
   },
