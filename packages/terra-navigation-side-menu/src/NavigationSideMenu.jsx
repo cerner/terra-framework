@@ -24,6 +24,10 @@ const propTypes = {
      */
     hasSubMenu: PropTypes.bool,
     /**
+     * Whether or not the menu is the primary navigation links in small form factor.
+     */
+    isRootMenu: PropTypes.bool,
+    /**
      * ID to be applied to the menu item div.
      */
     id: PropTypes.string,
@@ -68,7 +72,14 @@ const processMenuItems = (menuItems) => {
   const items = {};
   const parents = {};
   menuItems.forEach((item) => {
-    items[item.key] = { id: item.id, text: item.text, childKeys: item.childKeys, metaData: item.metaData, hasSubMenu: item.hasSubMenu };
+    items[item.key] = {
+      id: item.id,
+      text: item.text,
+      childKeys: item.childKeys,
+      metaData: item.metaData,
+      hasSubMenu: item.hasSubMenu,
+      isRootMenu: item.isRootMenu,
+    };
     if (item.childKeys) {
       item.childKeys.forEach((key) => {
         parents[key] = item.key;
@@ -172,7 +183,11 @@ class NavigationSideMenu extends React.Component {
     } else {
       onBack = routingStackBack;
     }
-    const actionHeader = <ActionHeader onBack={onBack} title={currentItem ? currentItem.text : null} />;
+
+    let actionHeader;
+    if (onBack || !currentItem.isRootMenu) {
+      actionHeader = <ActionHeader onBack={onBack} title={currentItem ? currentItem.text : null} />;
+    }
 
     return (
       <ContentContainer {...customProps} header={actionHeader} fill>
