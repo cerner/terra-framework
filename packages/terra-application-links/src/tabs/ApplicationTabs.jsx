@@ -16,11 +16,7 @@ const propTypes = {
   /**
    * Navigational links that will generate tabs that will update the path. These paths are matched with react-router to selection.
    */
-  links: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
-    path: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-  })),
+  links: TabUtils.ApplicationLinksPropType,
   /**
    * The location as provided by the `withRouter()` HOC.
    */
