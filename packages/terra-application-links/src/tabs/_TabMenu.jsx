@@ -92,7 +92,6 @@ class TabMenu extends React.Component {
 
   handleOnKeyDown(event) {
     if ((event.nativeEvent.keyCode === TabUtils.KEYCODES.ENTER || event.nativeEvent.keyCode === TabUtils.KEYCODES.SPACE) && !this.state.isOpen) {
-      console.log('durp-2');
       this.setState({ isOpen: true });
     }
   }
