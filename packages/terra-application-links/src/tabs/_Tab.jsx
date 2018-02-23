@@ -9,10 +9,6 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Indicates if the tab is be to desplayed in the tab menu.
-   */
-  isCollapsed: PropTypes.bool,
-  /**
    * The path to push to the route.
    */
   path: PropTypes.string.isRequired,
@@ -27,7 +23,6 @@ const propTypes = {
 };
 
 const ApplicationTab = ({
-  isCollapsed,
   onTabClick,
   path,
   text,
@@ -37,15 +32,11 @@ const ApplicationTab = ({
     render={({ location, history }) => {
       const isActive = !!matchPath(location.pathname, { path });
       const tabClassNames = cx([
-        { tab: !isCollapsed },
-        { 'collapsed-tab': isCollapsed },
+        'tab',
         { 'is-disabled': isActive },
         customProps.className,
       ]);
-      const tabAttr = { 'aria-current': isActive };
-      if (!isCollapsed) {
-        tabAttr.role = 'tab';
-      }
+      const tabAttr = { 'aria-current': isActive, role: 'tab' };
 
       return (
         <button
