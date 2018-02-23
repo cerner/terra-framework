@@ -20,7 +20,7 @@ const propTypes = {
      */
     childKeys: PropTypes.arrayOf(PropTypes.string),
     /**
-     * Used to match visual style of a menuItem with children, but when the onChange maps to the sub route of another menu.
+     * Used to match visual style of a menuItem with children on an item without children.
      */
     hasSubMenu: PropTypes.bool,
     /**
