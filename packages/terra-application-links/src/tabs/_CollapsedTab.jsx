@@ -22,7 +22,7 @@ const propTypes = {
    */
   text: PropTypes.string.isRequired,
   /**
-   * The display text for the tab.
+   * The click callback of the tab..
    */
   onTabClick: PropTypes.func,
 };
