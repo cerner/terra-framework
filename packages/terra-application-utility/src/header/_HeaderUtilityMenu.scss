@@ -1,60 +1,64 @@
 :local {
   .utility-menu {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
     font-family: inherit;
-    height: 100%;
-    list-style-type: none;
-    overflow: hidden;
-    width: 100%;
+    // height: 100%;
+    // list-style-type: none;
+    // overflow: hidden;
+    // width: 100%;
 
     .header {
-      align-items: center;
       display: flex;
+      flex-direction: column;
       flex-shrink: 0;
       font-size: var(--terra-application-header-utility-menu-header-font-size, 1rem);
       font-weight: var(--terra-application-header-utility-menu-header-font-weight, bold);
       height: var(--terra-application-header-utility-menu-header-height, 2rem);
 
       /* stylelint-disable selector-max-compound-selectors*/
-      .header-text {
-        display: inline-block;
-        margin-left: var(--terra-application-header-utility-menu-header-text-margin-left, 0.4286rem);
-      }
-
-      .back-button {
-        align-items: center;
-        background-color: var(--terra-application-header-utility-menu-header-back-button-background-color, transparent);
-        border-width: var(--terra-application-header-utility-menu-header-back-button-border-width, 0);
-        cursor: pointer;
+      /* stylelint-disable max-nesting-depth */
+      .left-container {
         display: flex;
-        width: var(--terra-application-header-utility-menu-header-back-button-width, 1.714rem);
+        justify-content: flex-start;
 
-        /* stylelint-disable max-nesting-depth */
-        .icon-left {
-          flex-shrink: 0;
-          height: var(--terra-application-header-utility-menu-page-chevron-height, 0.7143rem);
-          width: var(--terra-application-header-utility-menu-page-chevron-width, 0.7143rem);
+        .header-text {
+          display: inline-block;
+          margin-left: var(--terra-application-header-utility-menu-header-text-margin-left, 0.4286rem);
         }
-        /* stylelint-enable max-nesting-depth */
+
+        .back-button {
+          align-items: center;
+          background-color: var(--terra-application-header-utility-menu-header-back-button-background-color, transparent);
+          border-width: var(--terra-application-header-utility-menu-header-back-button-border-width, 0);
+          cursor: pointer;
+          display: flex;
+          width: var(--terra-application-header-utility-menu-header-back-button-width, 1.714rem);
+
+          .icon-left {
+            flex-shrink: 0;
+            height: var(--terra-application-header-utility-menu-page-chevron-height, 0.7143rem);
+            width: var(--terra-application-header-utility-menu-page-chevron-width, 0.7143rem);
+          }
+          /* stylelint-enable max-nesting-depth */
+        }
       }
     }
 
-    .footer {
-      flex-shrink: 0;
-      margin-top: auto;
+    .body {
+      list-style-type: none;
+      margin: 0;
+      overflow: hidden;
+      padding: 0;
+    }
 
-      .log-out-button {
-        background-color: var(--terra-application-header-utility-menu-log-out-button-background-color, transparent);
-        border-radius: var(--terra-application-header-utility-menu-log-out-button-border-radius, 0.4286rem);
-        cursor: pointer;
-        float: right;
-        font-size: var(--terra-application-header-utility-menu-log-out-font-size, 1rem);
-        height: var(--terra-application-header-utility-menu-log-out-button-height, 2rem);
-        margin-bottom: var(--terra-application-header-utility-menu-log-out-button-margin-bottom, 0.4286rem);
-        margin-right: var(--terra-application-header-utility-menu-log-out-button-margin-bottom, 0.4286rem);
-        margin-top: var(--terra-application-header-utility-menu-log-out-button-margin-top, 0.4286rem);
-        width: var(--terra-application-header-utility-menu-log-out-button-width, 5.357rem);
+    .footer {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+
+      .footer-divider {
+        margin-bottom: 0.2143rem;
       }
       /* stylelint-enable selector-max-compound-selectors*/
     }

@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import classNames from 'classnames/bind';
+import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import Arrange from 'terra-arrange';
 import IconCheckmark from 'terra-icon/lib/icon/IconCheckmark';
 import IconChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 import Utils from '../_Utils';
-// import styles from './_HeaderUtilityMenuItem.scss';
+import styles from './_HeaderUtilityMenuItem.scss';
 
-// const cx = classNames.bind(styles);
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -65,6 +65,7 @@ class HeaderUtilityMenuItem extends React.Component {
 
   handleSelection(event, key) {
     event.preventDefault();
+    // debugger;
     if (this.props.isSelectable) {
       const newIsSelected = !this.state.isSelected;
       this.setState({ isSelected: newIsSelected });
@@ -78,15 +79,17 @@ class HeaderUtilityMenuItem extends React.Component {
       title,
       content,
       contentLocation,
+      isSelected,
+      isSelectable,
       hasChevron,
       onChange,
       ...customProps
     } = this.props;
 
-    // const itemClassNames = cx([
-    //   { selected: this.state.isSelected },
-    // ]);
-
+    const bodyItemClassNames = cx(['body-item']);
+    const footerItemclassName = cx('footer-item');
+    const checkmarkClassName = cx(['checkmark', { selected: this.state.isSelected }]);
+    const chevronClassName = cx('chevron');
 
     let item = null;
     // TODO: Refactor this
@@ -94,31 +97,30 @@ class HeaderUtilityMenuItem extends React.Component {
     if (contentLocation === Utils.LOCATIONS.FOOTER) {
       if (content) {
         item = (
-          <button {...customProps} onClick={event => this.handleSelection(event, itemKey)} onKeyDown={event => this.handleKeyDown(event, itemKey)}>
+          <button {...customProps} onClick={event => this.handleSelection(event, itemKey)} onKeyDown={event => this.handleKeyDown(event, itemKey)} className={footerItemclassName}>
             {content}
           </button>
         );
       } else {
         item = (
-          <button {...customProps} onClick={event => this.handleSelection(event, itemKey)} onKeyDown={event => this.handleKeyDown(event, itemKey)}>
+          <button {...customProps} onClick={event => this.handleSelection(event, itemKey)} onKeyDown={event => this.handleKeyDown(event, itemKey)} className={footerItemclassName}>
             {title}
           </button>
         );
       }
-    } else {
-      if (content) {
-        item = (
-          <li {...customProps} key={itemKey} onClick={event => this.handleSelection(event, itemKey)} onKeyDown={event => this.handleKeyDown(event, itemKey)} role="button">
-            {content}
-          </li>
-        );
-      }
+    } else if (content) {
       item = (
-        <li {...customProps} key={itemKey} onClick={event => this.handleSelection(event, itemKey)} onKeyDown={event => this.handleKeyDown(event, itemKey)} role="button">
+        <li {...customProps} tabIndex="0" key={itemKey} onClick={event => this.handleSelection(event, itemKey)} onKeyDown={event => this.handleKeyDown(event, itemKey)} role="button" className={`${bodyItemClassNames} ${cx('body-custom-item')}`}>
+          {content}
+        </li>
+      );
+    } else {
+      item = (
+        <li {...customProps} tabIndex="0" key={itemKey} onClick={event => this.handleSelection(event, itemKey)} onKeyDown={event => this.handleKeyDown(event, itemKey)} role="button" className={bodyItemClassNames}>
           <Arrange
-            fitStart={<IconCheckmark />} // TODO: Add class to hide/show this based on selected state.
+            fitStart={<IconCheckmark className={checkmarkClassName} />} // TODO: Add class to hide/show this based on selected state.
             fill={<div>{title}</div>}
-            fitEnd={hasChevron ? <IconChevronRight /> : null}
+            fitEnd={hasChevron ? <IconChevronRight className={chevronClassName} /> : null}
             align={'center'}
           />
         </li>

@@ -25,7 +25,7 @@ const propTypes = {
   /**
    * The function that closes the menu.
    */
-  requestClose: PropTypes.func.isRequired,
+  onRequestClose: PropTypes.func.isRequired,
   /**
    * The name to be displayed next to the user photo.
    */
@@ -60,7 +60,7 @@ class ApplicationHeaderUtility extends React.Component {
         initialSelectedKey={Utils.KEYS.MENU}
         menuItems={this.props.menuItems}
         onChange={this.props.onChange}
-        requestClose={this.props.requestClose}
+        onRequestClose={this.props.onRequestClose}
       />
     );
   }
@@ -70,7 +70,7 @@ class ApplicationHeaderUtility extends React.Component {
       menuItems,
       onChange,
       onDisclose,
-      requestClose,
+      onRequestClose,
       userName,
       userPhoto,
       ...customProps

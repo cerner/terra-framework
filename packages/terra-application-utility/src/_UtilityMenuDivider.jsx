@@ -5,8 +5,13 @@ import styles from './_UtilityMenuDivider.scss';
 
 const cx = classNames.bind(styles);
 
-const MenuDivider = () => (
-  <div className={cx('divider')} role="separator" />
-);
+const MenuDivider = ({ ...customProps }) => {
+  const dividerClassNames = cx([
+    'divider',
+    customProps.className,
+  ]);
+
+  return <div {...customProps} className={dividerClassNames} role="separator" />;
+};
 
 export default MenuDivider;

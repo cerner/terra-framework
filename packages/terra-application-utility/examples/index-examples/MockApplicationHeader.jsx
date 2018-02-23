@@ -79,7 +79,7 @@ class MockApplicationHeader extends React.Component {
         menuItems={UtilitiesUtils.defaultConfig(userData)}
         onChange={this.handleOnChange}
         onDisclose={this.onDiscloseUtility}
-        requestClose={this.handleRequestClose}
+        onRequestClose={this.handleRequestClose}
         userName={userName}
         userPhoto={image}
         data-application-header-utility

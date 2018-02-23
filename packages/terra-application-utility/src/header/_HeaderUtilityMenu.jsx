@@ -31,7 +31,7 @@ const propTypes = {
     /**
    * The function that closes the menu.
    */
-  requestClose: PropTypes.func.isRequired,
+  onRequestClose: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
@@ -66,11 +66,11 @@ class HeaderUtilityMenu extends React.Component {
   constructor(props) {
     super(props);
     this.getItem = this.getItem.bind(this);
-    this.handleLogOut = this.handleLogOut.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleRequestBack = this.handleRequestBack.bind(this);
     this.pop = this.pop.bind(this);
     this.push = this.push.bind(this);
+    this.toggleIsSelected = this.toggleIsSelected.bind(this);
     this.state = {
       map: processMenuItems(props.menuItems),
       currentKey: props.initialSelectedKey,
@@ -98,6 +98,8 @@ class HeaderUtilityMenu extends React.Component {
         title={item.title}
         content={item.content}
         contentLocation={item.contentLocation}
+        isSelected={item.isSelected}
+        isSelectable={item.isSelectable}
         hasChevron={chevron}
         onChange={this.handleOnChange}
       />
@@ -107,7 +109,7 @@ class HeaderUtilityMenu extends React.Component {
   buildListContent(currentItem) {
     if (currentItem && currentItem.childKeys && currentItem.childKeys.length) {
       return (
-        <ul>
+        <ul className={cx('body')}>
           {currentItem.childKeys.map((key) => {
             let item = null;
             if (this.getItem(key).contentLocation === Utils.LOCATIONS.BODY) {
@@ -134,10 +136,6 @@ class HeaderUtilityMenu extends React.Component {
     return null;
   }
 
-  handleLogOut() {
-    this.props.onChange(event, Utils.KEYS.LOG_OUT);
-  }
-
   handleOnChange(event, key) {
     const childKeys = this.getItem(key).childKeys;
     const item = this.getItem(key);
@@ -152,7 +150,7 @@ class HeaderUtilityMenu extends React.Component {
       if (item.isSelectable && item.isSelected) {
         this.props.onChange(event, key);
       } else {
-        this.props.requestClose();
+        this.props.onRequestClose();
         this.props.onChange(event, key);
       }
     }
@@ -187,30 +185,33 @@ class HeaderUtilityMenu extends React.Component {
       initialSelectedKey,
       isHeightBounded,
       onChange,
-      requestClose,
+      onRequestClose,
       ...customProps
     } = this.props;
 
-    // const MenuClassNames = cx([
-    //   'utility-menu',
-    //   { 'is-height-bounded': isHeightBounded },
-    //   customProps.classNames,
-    // ]);
-    const HeaderClassNames = cx('header');
-    const BackButtonClassNames = cx('back-button');
-    const IconLeftClassNames = cx('icon-left');
-    const LogOutButtonClassNames = cx('log-out-button');
-    const HeaderTextClassNames = cx('header-text');
-    const FooterClassNames = cx('footer');
+    const MenuClassNames = cx([
+      'utility-menu',
+      // { 'is-height-bounded': isHeightBounded },
+      customProps.classNames,
+    ]);
+    const headerClassNames = cx('header');
+    const leftContainerClassNames = cx('left-container');
+    const backButtonClassNames = cx('back-button');
+    const iconLeftClassNames = cx('icon-left');
+    const headerTextClassNames = cx('header-text');
+    const footerClassNames = cx('footer');
+    const footerDividerClassNames = cx('footer-divider');
 
     const currentKey = this.state.currentKey;
     const currentItem = this.getItem(currentKey);
-    const backButton = <button className={BackButtonClassNames} onClick={this.handleRequestBack}><IconLeft className={IconLeftClassNames} /></button>;
+    const backButton = <button className={backButtonClassNames} onClick={this.handleRequestBack}><IconLeft className={iconLeftClassNames} /></button>;
 
     const header = (
-      <div className={HeaderClassNames}>
-        {currentKey !== this.props.initialSelectedKey && backButton}
-        <span className={HeaderTextClassNames}>{currentItem.title }</span>
+      <div className={headerClassNames}>
+        <span className={leftContainerClassNames}>
+          {currentKey !== this.props.initialSelectedKey && backButton}
+          <span className={headerTextClassNames}>{currentItem.title }</span>
+        </span>
         <MenuDivider />
       </div>
     );
@@ -218,15 +219,15 @@ class HeaderUtilityMenu extends React.Component {
     let footer = null;
     if (currentKey === this.props.initialSelectedKey) {
       footer = (
-        <div className={FooterClassNames}>
-          <MenuDivider />
+        <div className={footerClassNames}>
+          <MenuDivider className={footerDividerClassNames} />
           {this.buildFooterContent(currentItem)}
         </div>
       );
     }
 
     return (
-      <ContentContainer {...customProps} header={header} footer={footer} fill>
+      <ContentContainer {...customProps} header={header} footer={footer} fill className={MenuClassNames}>
         {this.buildListContent(currentItem)}
       </ContentContainer>
     );
