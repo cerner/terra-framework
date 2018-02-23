@@ -19,7 +19,6 @@ import TerraThemeProviderIndex from './packages/terra-theme-provider/examples/In
 import AggregatorStandalone from './packages/terra-aggregator/examples/test-examples/AggregatorStandalone';
 import AggregatorWithDisclosure from './packages/terra-aggregator/examples/test-examples/AggregatorWithDisclosure';
 import ApplicationHeaderDefault from './packages/terra-application-header-layout/examples/test-examples/ApplicationHeaderDefault';
-import ApplicationListDefault from './packages/terra-application-links/examples/test-examples/ApplicationListDefault';
 import ApplicationTabsDefault from './packages/terra-application-links/examples/test-examples/ApplicationTabsDefault';
 import ApplicationMenuDefault from './packages/terra-application-menu-layout/examples/test-examples/ApplicationMenuDefault';
 import ApplicationHeaderNameDefault from './packages/terra-application-name/examples/test-examples/ApplicationHeaderNameDefault';
@@ -105,11 +104,6 @@ const componentConfig = {
       },
     ],
     tests: [
-      {
-        name: 'Application List Default',
-        path: '/application-list-default',
-        component: ApplicationListDefault,
-      },
       {
         name: 'Application Tabs Default',
         path: '/application-tabs-default',

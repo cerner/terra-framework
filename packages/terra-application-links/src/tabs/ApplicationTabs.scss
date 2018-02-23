@@ -39,7 +39,6 @@
   }
 
   .tab-menu-display {
-    flex-direction: column;
     justify-content: center;
 
     .inner {
@@ -63,10 +62,12 @@
   .tab,
   .tab-menu-display {
     align-items: center;
+    background-color: transparent;
     background-image: var(--terra-application-tabs-background-image, linear-gradient(to bottom, #007ee0, #007ee0));
     background-position: var(--terra-application-tabs-background-position, top-left);
     background-repeat: no-repeat;
     background-size: var(--terra-application-tabs-background-size, 0 4px);
+    border: 0;
     border-right: var(--terra-application-tabs-border-right, 1px solid #dedfe0);
     color: var(--terra-application-tabs-color, #fff);
     cursor: pointer;
@@ -132,8 +133,11 @@
   }
 
   .collapsed-tab {
+    background-color: transparent;
+    border: 0;
     color: var(--terra-application-tabs-collapsed-color, #1c1f21);
     display: block;
+    font-size: var(--terra-application-tabs-font-size, 1rem);
     padding-bottom: var(--terra-application-tabs-collapsed-padding-bottom, 0.8225rem);
     padding-left: var(--terra-application-tabs-collapsed-padding-left, 1.071rem);
     padding-right: var(--terra-application-tabs-collapsed-padding-right, 1.071rem);
@@ -143,6 +147,7 @@
     text-overflow: unset;
     transition-duration: 0;
     white-space: normal;
+    width: 100%;
     word-break: break-word;
     word-wrap: break-word;
     

@@ -70,7 +70,7 @@ class TabMenuDisplay extends React.Component {
     }
 
     return (
-      <a
+      <button
         {...customProps}
         {...attributes}
         className={cx(['tab-menu-display', { 'is-hidden': isHidden }])}
@@ -81,7 +81,7 @@ class TabMenuDisplay extends React.Component {
           <IconCaretDown />
         </div>
         {popup}
-      </a>
+      </button>
     );
   }
 }

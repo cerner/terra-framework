@@ -1,10 +1,16 @@
+import PropTypes from 'prop-types';
 import ApplicationTabs from './tabs/ApplicationTabs';
-import ApplicationList from './list/ApplicationList';
+
+const ApplicationLinksPropType = PropTypes.arrayOf(PropTypes.shape({
+  id: PropTypes.string,
+  path: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+}));
 
 const ApplicationLinks = {
   ApplicationTabs,
-  ApplicationList,
+  ApplicationLinksPropType,
 };
 
 export default ApplicationLinks;
-export { ApplicationTabs, ApplicationList };
+export { ApplicationTabs, ApplicationLinksPropType };

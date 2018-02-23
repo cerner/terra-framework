@@ -11,14 +11,11 @@ import ApplicationLinkConfig from './index-examples/ApplicationLinkConfig';
 
 // Component Source
 /* eslint-disable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
-import ListSrc from '!raw-loader!../src/list/ApplicationList.jsx';
 import TabsSrc from '!raw-loader!../src/tabs/ApplicationTabs.jsx';
-import ListExampleSrc from '!raw-loader!./index-examples/ApplicationListExample.jsx';
 import TabExampleSrc from '!raw-loader!./index-examples/ApplicationTabsExample.jsx';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 
 // Example Files
-import ApplicationListExample from './index-examples/ApplicationListExample';
 import ApplicationTabsExample from './index-examples/ApplicationTabsExample';
 
 import messages from '../translations/en-US.json';
@@ -35,18 +32,11 @@ const LinkExamples = () => (
         <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
 
         <IndexTemplate
-          title="List Example"
-          example={<ApplicationListExample />}
-          exampleSrc={ListExampleSrc}
-        />
-
-        <IndexTemplate
           title="Tabs Example"
           example={<div style={{ height: '280px' }}><ApplicationTabsExample /></div>}
           exampleSrc={TabExampleSrc}
         />
 
-        <PropsTable id="props-list" src={ListSrc} componentName="Application List" />
         <PropsTable id="props-tabs" src={TabsSrc} componentName="Application Tabs" />
       </div>
     </MemoryRouter>

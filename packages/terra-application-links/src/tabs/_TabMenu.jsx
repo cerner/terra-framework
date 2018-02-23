@@ -99,7 +99,7 @@ class TabMenu extends React.Component {
   createHiddenTabs() {
     return (
       <TabMenuList>
-        {React.Children.map(this.props.children, child => React.cloneElement(child, { onClick: this.handleOnRequestClose }))}
+        {React.Children.map(this.props.children, child => React.cloneElement(child, { onTabClick: this.handleOnRequestClose }))}
       </TabMenuList>
     );
   }
@@ -107,7 +107,6 @@ class TabMenu extends React.Component {
   createRoutes(popup) {
     const props = {
       role: 'tab',
-      tabIndex: '0',
       onClick: this.handleOnClick,
       onKeyDown: this.handleOnKeyDown,
       popup,
