@@ -1,12 +1,13 @@
 /* global browser, Terra, before, expect */
 const viewports = Terra.viewports('tiny', 'large');
+const selector = '#root';
 
 describe('ModalManager', () => {
   describe('Disclose Tiny', () => {
     before(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
         .click('#root-component .disclose-tiny'));
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.should.matchScreenshot({ selector, viewports });
     Terra.should.beAccessible({ viewports });
   });
 
@@ -14,7 +15,7 @@ describe('ModalManager', () => {
     before(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
         .click('#root-component .disclose-small'));
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.should.matchScreenshot({ selector, viewports });
     Terra.should.beAccessible({ viewports });
   });
 
@@ -22,7 +23,7 @@ describe('ModalManager', () => {
     before(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
         .click('#root-component .disclose-medium'));
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.should.matchScreenshot({ selector, viewports });
     Terra.should.beAccessible({ viewports });
   });
 
@@ -30,7 +31,7 @@ describe('ModalManager', () => {
     before(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
         .click('#root-component .disclose-large'));
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.should.matchScreenshot({ selector, viewports });
     Terra.should.beAccessible({ viewports });
   });
 
@@ -38,7 +39,7 @@ describe('ModalManager', () => {
     before(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
         .click('#root-component .disclose-huge'));
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.should.matchScreenshot({ selector, viewports });
     Terra.should.beAccessible({ viewports });
   });
 
@@ -46,7 +47,7 @@ describe('ModalManager', () => {
     before(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
         .click('#root-component .disclose-fullscreen'));
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.should.matchScreenshot({ selector, viewports });
     Terra.should.beAccessible({ viewports });
   });
 
@@ -61,7 +62,7 @@ describe('ModalManager', () => {
       browser.click('[class*="slide-group"] #DemoContainer-1 .disclose-tiny');
     });
 
-    Terra.should.matchScreenshot();
+    Terra.should.matchScreenshot({ selector });
     Terra.should.beAccessible();
   });
 
@@ -76,7 +77,7 @@ describe('ModalManager', () => {
       browser.click('[class*="slide-group"] #DemoContainer-1 .dismiss');
     });
 
-    Terra.should.matchScreenshot();
+    Terra.should.matchScreenshot({ selector });
     Terra.should.beAccessible();
   });
 
@@ -91,7 +92,7 @@ describe('ModalManager', () => {
       browser.click('[class*="slide-group"] #DemoContainer-1 .close-disclosure');
     });
 
-    Terra.should.matchScreenshot();
+    Terra.should.matchScreenshot({ selector });
     Terra.should.beAccessible();
   });
 
@@ -106,7 +107,7 @@ describe('ModalManager', () => {
       browser.click('[class*="slide-group"] #DemoContainer-1 .maximize');
     });
 
-    Terra.should.matchScreenshot();
+    Terra.should.matchScreenshot({ selector });
     Terra.should.beAccessible();
   });
 
@@ -126,7 +127,7 @@ describe('ModalManager', () => {
       browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
     });
 
-    Terra.should.matchScreenshot();
+    Terra.should.matchScreenshot({ selector });
     Terra.should.beAccessible();
   });
 
@@ -141,7 +142,7 @@ describe('ModalManager', () => {
       browser.click('[class*="slide-group"] #DemoContainer-1 .requestFocus');
     });
 
-    Terra.should.matchScreenshot();
+    Terra.should.matchScreenshot({ selector });
     Terra.should.beAccessible();
   });
 
@@ -161,7 +162,7 @@ describe('ModalManager', () => {
       browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .requestFocus', 1000);
     });
 
-    Terra.should.matchScreenshot();
+    Terra.should.matchScreenshot({ selector });
     Terra.should.beAccessible();
   });
 });
