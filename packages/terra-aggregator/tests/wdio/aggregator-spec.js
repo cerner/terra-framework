@@ -1,8 +1,10 @@
-/* global browser, Terra, beforeEach, expect */
+/* global browser, Terra, before, beforeEach, expect */
+
 describe('Aggregator', () => {
+  before(() => browser.setViewportSize(Terra.viewports('large')[0]));
+
   describe('Standalone', () => {
     beforeEach(() => {
-      browser.setViewportSize(Terra.viewports('large')[0]);
       browser.url('/#/raw/tests/aggregator/aggregator-standalone');
 
       browser.click('#test-aggregator #section1');
@@ -16,19 +18,17 @@ describe('Aggregator', () => {
 
   describe('With Disclosure - Open', () => {
     beforeEach(() => {
-      browser.setViewportSize(Terra.viewports('large')[0]);
       browser.url('/#/raw/tests/aggregator/aggregator-with-disclosure');
 
       browser.click('#test-aggregator #section1');
     });
 
-    Terra.should.matchScreenshot();
+    Terra.should.matchScreenshot({ selector: '#test-aggregator' });
     Terra.should.beAccessible();
   });
 
   describe('With Disclosure - Close from focus release', () => {
     beforeEach(() => {
-      browser.setViewportSize(Terra.viewports('large')[0]);
       browser.url('/#/raw/tests/aggregator/aggregator-with-disclosure');
 
       browser.click('#test-aggregator #section1');
@@ -38,13 +38,12 @@ describe('Aggregator', () => {
       browser.click('#test-aggregator #section1');
     });
 
-    Terra.should.matchScreenshot();
+    Terra.should.matchScreenshot({ selector: '#test-aggregator' });
     Terra.should.beAccessible();
   });
 
   describe('With Disclosure - Close from explicit close', () => {
     beforeEach(() => {
-      browser.setViewportSize(Terra.viewports('large')[0]);
       browser.url('/#/raw/tests/aggregator/aggregator-with-disclosure');
 
       browser.click('#test-aggregator #section1');
@@ -54,7 +53,7 @@ describe('Aggregator', () => {
       browser.click('[class*="slide-group"] .close-disclosure');
     });
 
-    Terra.should.matchScreenshot();
+    Terra.should.matchScreenshot({ selector: '#test-aggregator' });
     Terra.should.beAccessible();
   });
 });
