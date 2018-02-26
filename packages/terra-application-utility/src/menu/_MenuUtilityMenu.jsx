@@ -29,7 +29,7 @@ const propTypes = {
   /**
    * The data object containing the static menu items.
    */
-  menuItems: PropTypes.arrayOf((Utils.itemShape)),
+  menuItems: PropTypes.arrayOf((Utils.itemShape)).isRequired,
   /**
    * The function to trigger when a menu item is selected.
    */
@@ -74,6 +74,7 @@ class MenuUtilityMenu extends React.Component {
     this.getItem = this.getItem.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleRequestBack = this.handleRequestBack.bind(this);
+    this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.pop = this.pop.bind(this);
     this.push = this.push.bind(this);
     this.toggleIsSelected = this.toggleIsSelected.bind(this);
@@ -141,9 +142,10 @@ class MenuUtilityMenu extends React.Component {
     }
     return null;
   }
-  // handleClose() {
-  //   this.props.app.closeDisclosure();
-  // }
+  handleOnRequestClose() {
+    this.props.app.closeDisclosure();
+    this.props.onRequestClose();
+  }
 
   /**
    * 1. Has children. Navigate to the next page
@@ -163,10 +165,10 @@ class MenuUtilityMenu extends React.Component {
       });
     } else {
       this.toggleIsSelected(key);
-      if (item.isSelectable && item.isSelected) {
+      if (item.isSelectable) {
         this.props.onChange(event, key);
       } else {
-        this.props.onRequestClose();
+        this.handleOnRequestClose();
         this.props.onChange(event, key);
       }
     }
@@ -225,7 +227,7 @@ class MenuUtilityMenu extends React.Component {
     const currentKey = this.state.currentKey;
     const currentItem = this.getItem(currentKey);
     const backButton = <button className={backButtonClassNames} onClick={this.handleRequestBack}><IconLeft className={iconLeftClassNames} /></button>;
-    const closeButton = <button onClick={this.props.onRequestClose} className={closebuttonClassNames}><IconClose className={iconCloseClassNames} /></button>;
+    const closeButton = <button onClick={this.handleOnRequestClose} className={closebuttonClassNames}><IconClose className={iconCloseClassNames} /></button>;
 
     const header = (
       <div className={headerClassNames}>

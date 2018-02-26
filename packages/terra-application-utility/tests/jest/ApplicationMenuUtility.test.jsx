@@ -1,5 +1,5 @@
 import React from 'react';
-import { ApplicationHeaderUtility } from '../../src/ApplicationUtility';
+import { ApplicationMenuUtility } from '../../src/ApplicationUtility';
 import mockConfig from '../../examples/index-examples/mockConfig';
 
 describe('ApplicationUtility', () => {
@@ -9,11 +9,11 @@ describe('ApplicationUtility', () => {
   const image = <Image />;
   const name = 'name';
 
-  it('should render a utility with menu items', () => {
+  it('should render a utility with menu itmes', () => {
     const wrapper = shallow(
-      <ApplicationHeaderUtility
+      <ApplicationMenuUtility
         menuItems={mockConfig()}
-        onChange={mockOnChange}
+        mnChange={mockOnChange}
         onDisclose={mockOnDisclose}
         onRequestClose={mockOnRequestClose}
         userName={name}

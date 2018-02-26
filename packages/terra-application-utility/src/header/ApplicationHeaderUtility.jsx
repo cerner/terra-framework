@@ -13,7 +13,7 @@ const propTypes = {
   /**
    * The array containing the static menu items to be rendered within the menu.
    */
-  menuItems: PropTypes.arrayOf((Utils.itemShape)),
+  menuItems: PropTypes.arrayOf((Utils.itemShape)).isRequired,
   /**
    * The function to trigger when a menu item is selected.
    */
@@ -38,7 +38,7 @@ const propTypes = {
 
 const defaultProps = {
   userName: '',
-  userPhoto: null,
+  userPhoto: undefined,
 };
 
 class ApplicationHeaderUtility extends React.Component {
@@ -93,8 +93,8 @@ class ApplicationHeaderUtility extends React.Component {
 }
 
 ApplicationHeaderUtility.propTypes = propTypes;
-ApplicationHeaderUtility.propTypes = defaultProps;
 ApplicationHeaderUtility.keys = Utils.KEYS;
 ApplicationHeaderUtility.titles = Utils.TITLES;
+ApplicationHeaderUtility.defaultProps = defaultProps;
 
 export default ApplicationHeaderUtility;

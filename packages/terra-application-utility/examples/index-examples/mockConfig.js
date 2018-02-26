@@ -15,6 +15,7 @@ const mockConfig = userData =>
         Utils.KEYS.LOG_OUT,
         'additional-item-1',
         'additional-item-2',
+        'additional-item-3',
       ],
     },
     {
@@ -138,6 +139,15 @@ const mockConfig = userData =>
       isSelected: false,
       isSelectable: true,
       childKeys: [],
+    },
+    {
+      key: 'additional-item-3',
+      title: 'Additional Item 3',
+      contentLocation: Utils.LOCATIONS.BODY,
+      isSelected: true,
+      isSelectable: true,
+      childKeys: [],
+      id: 'test-additional-item-3',
     },
   ];
 

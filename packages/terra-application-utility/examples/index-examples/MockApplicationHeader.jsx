@@ -10,7 +10,6 @@ import ToggleExample from 'terra-application-header-layout/examples/index-exampl
 import Avatar from './FallBackAvatar.svg';
 import { ApplicationHeaderUtility, UserData } from '../../src/ApplicationUtility';
 import UtilitiesUtils from '../../src/_Utils';
-// import AdditionalItemsConfig from './AdditionalItemsConfig';
 
 class MockApplicationHeader extends React.Component {
   constructor(props) {
@@ -57,7 +56,7 @@ class MockApplicationHeader extends React.Component {
     if (this.state.utilityComponent) {
       popup = (
         <Popup
-          contentHeight="320"
+          contentHeight="auto"
           contentWidth="240"
           isArrowDisplayed
           isOpen
@@ -75,7 +74,7 @@ class MockApplicationHeader extends React.Component {
     const userData = <UserData userDetail={userDetail} userName={userName} userPhoto={image} />;
     const utilities = (
       <ApplicationHeaderUtility
-        style={{ backgroundColor: 'green' }}
+        style={{ backgroundColor: '#2481ca' }}
         menuItems={UtilitiesUtils.defaultConfig(userData)}
         onChange={this.handleOnChange}
         onDisclose={this.onDiscloseUtility}

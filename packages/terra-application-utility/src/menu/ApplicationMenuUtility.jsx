@@ -14,7 +14,7 @@ const propTypes = {
   /**
    * The config file containing the static menu items to be rendered within the menu.
    */
-  menuItems: PropTypes.arrayOf((Utils.itemShape)),
+  menuItems: PropTypes.arrayOf((Utils.itemShape)).isRequired,
   /**
    * The AppDelegate instance propogated to each child.
    */
@@ -43,7 +43,7 @@ const propTypes = {
 
 const defaultProps = {
   userName: '',
-  userPhoto: null,
+  userPhoto: undefined,
 };
 
 class ApplicationMenuUtility extends React.Component {
@@ -103,8 +103,8 @@ class ApplicationMenuUtility extends React.Component {
 }
 
 ApplicationMenuUtility.propTypes = propTypes;
-ApplicationMenuUtility.defaultProps = defaultProps;
 ApplicationMenuUtility.keys = Utils.KEYS;
 ApplicationMenuUtility.titles = Utils.TITLES;
+ApplicationMenuUtility.defaultProps = defaultProps;
 
 export default ApplicationMenuUtility;

@@ -2,7 +2,7 @@
   .header-utility {
     align-items: center;
     background-color: var(--terra-application-header-utility-background-color, transparent);
-    border-radius: var(--terra-application-header-utility-border-radius, 0.4286rem);
+    border-radius: var(--terra-application-header-utility-border-radius);
     border-width: var(--terra-application-header-utility-border-width, 0);
     color: var(--terra-application-header-utility-color, #fff);
     cursor: pointer;
@@ -13,6 +13,17 @@
     max-width: 100%;
     padding-left: var(--terra-application-header-utility-padding-left, 0.5714rem);
     padding-right: var(--terra-application-header-utility-padding-right, 0.5714rem);
+
+    &:hover {
+      background-color: var(--terra-application-header-utility-hover-background-color, #a9a9a9);
+    }
+
+    &:focus {
+      border-radius: var(--terra-application-header-utility-focus-border-radius);
+      box-shadow: var(--terra-application-header-utility-focus-box-shadow);
+      outline-color: var(--terra-application-header-utility-focus-outline-color, #c6dafd);
+      outline-width: var(--terra-application-header-utility-focus-outline-width, 2px);
+    }
 
     .icon {
       min-width: var(--terra-application-header-utility-icon-min-width, 1.857rem);

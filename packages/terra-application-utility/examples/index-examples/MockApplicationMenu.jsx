@@ -43,8 +43,7 @@ class MockApplicationMenu extends React.Component {
   }
 
   handleOnRequestClose() {
-    debugger;
-    this.props.app.dismiss();
+    this.props.app.closeDisclosure();
   }
 
   render() {

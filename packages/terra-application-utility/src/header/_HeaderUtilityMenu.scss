@@ -1,12 +1,7 @@
 :local {
   .utility-menu {
-    // display: flex;
-    // flex-direction: column;
     font-family: inherit;
-    // height: 100%;
-    // list-style-type: none;
-    // overflow: hidden;
-    // width: 100%;
+    width: 100%;
 
     .header {
       display: flex;
@@ -37,8 +32,8 @@
 
           .icon-left {
             flex-shrink: 0;
-            height: var(--terra-application-header-utility-menu-page-chevron-height, 0.7143rem);
-            width: var(--terra-application-header-utility-menu-page-chevron-width, 0.7143rem);
+            height: var(--terra-application-header-utility-menu-chevron-height, 0.7143rem);
+            width: var(--terra-application-header-utility-menu-chevron-width, 0.7143rem);
           }
           /* stylelint-enable max-nesting-depth */
         }
@@ -58,7 +53,7 @@
       flex-shrink: 0;
 
       .footer-divider {
-        margin-bottom: 0.2143rem;
+        margin-bottom: var(--terra-application-header-utility-menu-footer-divider-margin-bottom, 0.2143rem);
       }
       /* stylelint-enable selector-max-compound-selectors*/
     }

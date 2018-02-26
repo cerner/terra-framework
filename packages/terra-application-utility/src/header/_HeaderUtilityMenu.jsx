@@ -43,7 +43,9 @@ const processMenuItems = (items) => {
   items.forEach((item) => {
     map.set(
       item.key,
-      { title: item.title,
+      { id: item.id,
+        itemKey: item.key,
+        title: item.title,
         content: item.content,
         contentLocation: item.contentLocation,
         isSelected: item.isSelected,
@@ -95,6 +97,7 @@ class HeaderUtilityMenu extends React.Component {
       <MenuItem
         key={key}
         itemKey={key}
+        id={item.id}
         title={item.title}
         content={item.content}
         contentLocation={item.contentLocation}
@@ -154,7 +157,7 @@ class HeaderUtilityMenu extends React.Component {
       });
     } else {
       this.toggleIsSelected(key);
-      if (item.isSelectable && item.isSelected) {
+      if (item.isSelectable) {
         this.props.onChange(event, key);
       } else {
         this.props.onRequestClose();
@@ -198,7 +201,6 @@ class HeaderUtilityMenu extends React.Component {
 
     const MenuClassNames = cx([
       'utility-menu',
-      // { 'is-height-bounded': isHeightBounded },
       customProps.classNames,
     ]);
     const headerClassNames = cx('header');
@@ -232,9 +234,8 @@ class HeaderUtilityMenu extends React.Component {
         </div>
       );
     }
-
     return (
-      <ContentContainer {...customProps} header={header} footer={footer} fill className={MenuClassNames}>
+      <ContentContainer {...customProps} header={header} footer={footer} fill={isHeightBounded} className={MenuClassNames}>
         {this.buildListContent(currentItem)}
       </ContentContainer>
     );

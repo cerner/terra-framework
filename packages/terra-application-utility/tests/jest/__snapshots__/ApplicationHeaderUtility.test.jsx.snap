@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApplicationUtility should render a utility with menu items 1`] = `
+<button
+  className="header-utility"
+  onClick={[Function]}
+>
+  <Image
+    className="user-photo"
+  />
+  <span
+    className="user-name"
+  >
+    name
+     
+  </span>
+  <IconChevronDown
+    className="icon"
+    data-name="Layer 1"
+    isBidi={true}
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</button>
+`;
