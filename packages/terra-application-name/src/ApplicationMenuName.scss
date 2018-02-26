@@ -2,7 +2,7 @@
 :local {
   .application-menu-name {
     align-items: var(--terra-application-menu-name-align-items, center);
-    border-bottom: var(--terra-application-menu-name-border-bottom, 1px solid darkgray);
+    border-bottom: var(--terra-application-menu-name-border-bottom, 1px solid #a9a9a9);
     color: var(--terra-application-menu-name-color, #000);
     display: flex;
     flex: var(--terra-application-menu-name-flex, 0 0 auto);
