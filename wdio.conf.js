@@ -31,7 +31,7 @@ const config = {
   webpackPort,
   webpackConfig,
   terra: {
-    selector: '[role="main"]',
+    selector: '[data-terra-site-content] *:first-child',
   },
 
   beforeHook() {
