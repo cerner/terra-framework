@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout should render a NavigationSideMenu with default props 1`] = `
+<ContentContainer
+  fill={true}
+  header={
+    <ActionHeader
+      keepCloseButton={false}
+      onBack={[Function]}
+      onClose={null}
+      onMaximize={null}
+      onMinimize={null}
+      onNext={null}
+      onPrevious={null}
+      title={null}
+    />
+  }
+/>
+`;
+
+exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
+<ContentContainer
+  fill={true}
+  header={
+    <ActionHeader
+      keepCloseButton={false}
+      onBack={[Function]}
+      onClose={null}
+      onMaximize={null}
+      onMinimize={null}
+      onNext={null}
+      onPrevious={null}
+      title="Test Menu"
+    />
+  }
+>
+  <List
+    isDivided={false}
+  >
+    <MenuItem
+      isSelected={false}
+      key="test1"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      text="Test Menu 1"
+    />
+    <MenuItem
+      isSelected={false}
+      key="test2"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      text="Test Menu 2"
+    />
+    <MenuItem
+      isSelected={false}
+      key="test3"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      text="Test Menu 3"
+    />
+    <MenuItem
+      isSelected={false}
+      key="test4"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      text="Test Menu 4"
+    />
+  </List>
+</ContentContainer>
+`;
