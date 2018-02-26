@@ -33,10 +33,9 @@ const ApplicationTab = ({
       const isActive = !!matchPath(location.pathname, { path });
       const tabClassNames = cx([
         'tab',
-        { 'is-disabled': isActive },
         customProps.className,
       ]);
-      const tabAttr = { 'aria-current': isActive, role: 'tab' };
+      const tabAttr = { 'aria-current': `${isActive}`, role: 'tab' };
 
       return (
         <button

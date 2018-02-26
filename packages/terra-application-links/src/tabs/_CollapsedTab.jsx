@@ -22,7 +22,7 @@ const propTypes = {
    */
   text: PropTypes.string.isRequired,
   /**
-   * The click callback of the tab..
+   * The click callback of the tab.
    */
   onTabClick: PropTypes.func,
 };
@@ -38,10 +38,9 @@ const CollapsedTab = ({
       const isActive = !!matchPath(location.pathname, { path });
       const tabClassNames = cx([
         'collapsed-tab',
-        { 'is-disabled': isActive },
         customProps.className,
       ]);
-      const tabAttr = { 'aria-current': isActive };
+      const tabAttr = { 'aria-current': `${isActive}` };
 
       const handleOnClick = (event) => {
         if (!isActive) {
