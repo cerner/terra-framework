@@ -18,4 +18,10 @@ describe('ApplicationMenuName', () => {
       '--terra-application-menu-name-title-padding-right': '3rem',
     });
   });
+
+  describe('Displays a truncated application menu name', () => {
+    beforeEach(() => browser.url('/#/raw/tests/application-name/application-menu-name-truncated'));
+
+    Terra.should.matchScreenshot({ viewports, selector: '#truncated' });
+  });
 });

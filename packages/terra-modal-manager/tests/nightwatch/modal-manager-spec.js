@@ -113,7 +113,7 @@ module.exports = resizeTo(['tiny', 'huge'], {
 
     browser.click('#DemoContainer-1 .disclose');
     // Waiting here to ensure new component is presented and back button is clickable
-    browser.waitForElementPresent('[class*="slide-group"] > div > div[class*="slide"]:not([class*="enter-active"]):nth-child(2)', 2000);
+    browser.waitForElementPresent('[class*="slide-group"] > div[class*="slide"]:not([class*="enter-active"]):nth-child(2)', 2000);
 
     browser.expect.element('[class*="modal"] [class*="slide-group"] #DemoContainer-1').to.be.present;
     browser.expect.element('[class*="modal"] [class*="slide-group"] #DemoContainer-2').to.be.present;
@@ -122,7 +122,7 @@ module.exports = resizeTo(['tiny', 'huge'], {
 
   'Goes back within the modal when already disclosed:': (browser) => {
     browser.click('#DemoContainer-2 button.go-back');
-    browser.waitForElementNotPresent('[class*="slide-group"] > div > div[class*="slide"]:nth-child(2)', 1000);
+    browser.waitForElementNotPresent('[class*="slide-group"] > div[class*="slide"]:nth-child(2)', 1000);
 
     browser.expect.element('[class*="modal"] [class*="slide-group"] #DemoContainer-1').to.be.present;
     browser.expect.element('[class*="modal"] [class*="slide-group"] #DemoContainer-2').to.not.be.present;
