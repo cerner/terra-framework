@@ -41,6 +41,7 @@ const reduceRouteConfig = (routeConfig, size) => {
         componentClass: componentConfig.componentClass,
         componentProps: componentConfig.props,
         parentPaths: [],
+        refuseRoutingStackNavigation: componentConfig.refuseRoutingStackNavigation,
       });
     }
 
@@ -78,7 +79,7 @@ const reduceRouteConfig = (routeConfig, size) => {
     potentialParentPaths.push('/');
 
     const matchedParentPaths = array.filter(testRoute => (
-      potentialParentPaths.indexOf(testRoute.path) !== -1
+      potentialParentPaths.indexOf(testRoute.path) !== -1 && !testRoute.refuseRoutingStackNavigation
     ))
     .map(parentRoute => parentRoute.path);
 

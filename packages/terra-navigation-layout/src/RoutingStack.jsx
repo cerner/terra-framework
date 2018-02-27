@@ -30,6 +30,10 @@ const propTypes = {
    */
   location: PropTypes.object,
   /**
+   * The current react-router history. Provided by the `withRouter()` HOC.
+   */
+  history: PropTypes.object,
+  /**
    * Any additional Routes that will be inserted after the configuration-generated Routes. Generally used
    * to insert custom Redirects or fallback Routes.
    */
@@ -66,7 +70,7 @@ class RoutingStack extends React.Component {
   }
 
   createRoutes(routes) {
-    const { navEnabled, app, location, ancestorProps } = this.props;
+    const { navEnabled, app, location, history, ancestorProps } = this.props;
 
     if (!routes || !routes.length) {
       return undefined;
@@ -74,7 +78,15 @@ class RoutingStack extends React.Component {
 
     return routes.map((routeData) => {
       const delegateData = {
-        location: this.state.stackLocation,
+        location,
+      };
+
+      delegateData.show = ({ path }) => {
+        if (matchPath(location.pathname, { path })) {
+          this.updateStackLocation(path);
+        } else {
+          history.push(path);
+        }
       };
 
       if (routeData.parentPaths && routeData.parentPaths.length) {
@@ -107,11 +119,16 @@ class RoutingStack extends React.Component {
           path={routeData.path}
           key={routeData.path}
           render={() => (
-            <ComponentClass
-              {...ancestorProps}
-              {...routeData.componentProps}
-              routingStackDelegate={RoutingStackDelegate.create(delegateData)}
-              app={app}
+            <Route
+              location={this.props.location}
+              render={() => (
+                <ComponentClass
+                  {...ancestorProps}
+                  {...routeData.componentProps}
+                  routingStackDelegate={RoutingStackDelegate.create(delegateData)}
+                  app={app}
+                />
+              )}
             />
           )}
         />

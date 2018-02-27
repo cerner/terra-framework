@@ -98,6 +98,10 @@ It is important to note that `showParent`/`showRoot` change the location used by
 
 After calling these navigation functions, the `location` provided in the `routingStackDelegate` match the parent path specified. If the true page location is still necessary, the `withRouter` HOC provided by `react-router` can be utilized as needed. And if this functionality is not desired at all for a given application, these props can be safely ignored.
 
+##### refuseRoutingStackNavigation
+
+The configuration API supports an additional key for each component specification called `refuseRoutingStackNavigation` that will prevent the associated component from appearing in parentPaths and will disallow navigation to it through the `showParent`/`showRoot`. A component with `refuseRoutingStackNavigation` set to `true` will only be presented if the current location matches its route. This is an advanced option that can be used to better control menu-based workflows.
+
 ## Getting Started
 
 - Install with [npmjs](https://www.npmjs.com):
