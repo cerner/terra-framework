@@ -23,7 +23,9 @@ import ApplicationHeaderDefault from './packages/terra-application-header-layout
 import ApplicationTabsDefault from './packages/terra-application-links/examples/test-examples/ApplicationTabsDefault';
 import ApplicationMenuDefault from './packages/terra-application-menu-layout/examples/test-examples/ApplicationMenuDefault';
 import ApplicationHeaderNameDefault from './packages/terra-application-name/examples/test-examples/ApplicationHeaderNameDefault';
+import ApplicationHeaderNameTruncated from './packages/terra-application-name/examples/test-examples/ApplicationHeaderNameTruncated';
 import ApplicationMenuNameDefault from './packages/terra-application-name/examples/test-examples/ApplicationMenuNameDefault';
+import ApplicationMenuNameTruncated from './packages/terra-application-name/examples/test-examples/ApplicationMenuNameTruncated';
 import DefaultApplicationUtility from './packages/terra-application-utility/examples/test-examples/DefaultApplicationUtility';
 import DefaultEmbeddedComponent from './packages/terra-embedded-component/examples/test-examples/DefaultEmbeddedComponent';
 import LayoutDefault from './packages/terra-layout/examples/test-examples/LayoutDefault';
@@ -149,9 +151,19 @@ const componentConfig = {
         component: ApplicationHeaderNameDefault,
       },
       {
+        name: 'Application Header Name Truncated',
+        path: '/application-header-name-truncated',
+        component: ApplicationHeaderNameTruncated,
+      },
+      {
         name: 'Application Menu Name Default',
         path: '/application-menu-name-default',
         component: ApplicationMenuNameDefault,
+      },
+      {
+        name: 'Application Menu Name Truncated',
+        path: '/application-menu-name-truncated',
+        component: ApplicationMenuNameTruncated,
       },
     ],
   },

@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Css rule to hide overflow in the case of large content.
 
 2.0.0 - (February 21, 2018)
 ------------------

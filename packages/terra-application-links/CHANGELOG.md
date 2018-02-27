@@ -7,6 +7,8 @@ Unreleased
 * ApplicationList hover/selected gradient transparent styling.
 
 ### Changed
+* Code formatting and documentation spacing.
+* Updated screenshots tests to match new themeable variables in terra-core.
 * Remove application list and update tabs to use buttons.
 
 1.2.0 - (February 15, 2018)
