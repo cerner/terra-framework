@@ -34,8 +34,9 @@ const UserData = ({
   userDetail,
   userName,
   userPhoto,
+  ...customProps
 }) => {
-  const containerClassNames = cx('container');
+  const containerClassNames = cx(['container', customProps.className]);
   const userDataClassNames = cx('user-data');
   const photoClassNames = cx('photo');
   const nameClassNames = cx('name');
@@ -47,7 +48,7 @@ const UserData = ({
   }
 
   return (
-    <div className={containerClassNames} >
+    <div {...customProps} className={containerClassNames} >
       <div className={userDataClassNames} >
         {userPhoto && photoAttrs}
         <div>
