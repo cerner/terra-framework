@@ -64,20 +64,21 @@ describe('ApplicationHeaderUtility', () => {
       '--terra-application-header-utility-menu-chevron-height': '2rem',
       '--terra-application-header-utility-menu-chevron-width': '2rem',
       '--terra-application-header-utility-menu-footer-divider-margin-bottom': '1rem',
-      '--terra-application-header-menu-body-item-font-size': '2rem',
-      '--terra-application-header-menu-body-item-margin-bottom': '1rem',
-      '--terra-application-header-menu-body-item-padding-left': '1rem',
-      '--terra-application-header-menu-body-item-margin-top': '1rem',
-      '--terra-application-utility-menu-body-item-checkmark-height': '1rem',
-      '--terra-application-header-menu-body-item-checkmark-margin-right': '1rem',
-      '--terra-application-utility-menu-body-item-checkmark-width': '1rem',
-      '--terra-application-utility-menu-body-item-chevron-height': '1rem',
-      '--terra-application-utility-menu-body-item-chevron-width': '1rem',
+      '--terra-application-header-utility-menu-body-item-font-size': '2rem',
+      '--terra-application-header-utility-menu-body-item-margin-bottom': '1rem',
+      '--terra-application-header-utility-menu-body-item-padding-left': '1rem',
+      '--terra-application-header-utility-menu-body-item-margin-top': '1rem',
+      '--terra-application-header-utility-menu-body-item-checkmark-height': '1rem',
+      '--terra-application-header-utility-menu-body-item-checkmark-margin-right': '1rem',
+      '--terra-application-header-utility-menu-body-item-checkmark-width': '1rem',
+      '--terra-application-header-utility-menu-body-item-chevron-height': '1rem',
+      '--terra-application-header-utility-menu-body-item-chevron-width': '1rem',
       '--terra-application-header-utility-menu-footer-item-background-color': 'blue',
       '--terra-application-header-utility-menu-footer-item-border-radius': '1rem',
       '--terra-application-header-utility-menu-footer-item-font-size': '2rem',
       '--terra-application-header-utility-menu-footer-item-height': '1rem',
       '--terra-application-header-utility-menu-footer-item-margin-bottom': '1rem',
+      '--terra-application-header-utility-menu-footer-item-margin-left': '1rem',
       '--terra-application-header-utility-menu-footer-item-margin-right': '1rem',
     });
   });
@@ -87,13 +88,14 @@ describe('ApplicationHeaderUtility', () => {
       browser.moveToObject('#default');
       browser.click('#default');
       browser.waitForVisible('[data-application-header-utility-menu]');
+      browser.waitForVisible('#test-additional-item-3');
       browser.moveToObject('#test-additional-item-3');
     });
 
-    Terra.should.matchScreenshot({ selector: '[data-application-header-utility-menu]' }); // , selector: '#test-additional-item-3'
-    Terra.should.beAccessible({ context: '[data-application-header-utility-menu]' }); // , context: '#test-additional-item-3'
+    Terra.should.matchScreenshot({ selector: '[data-application-header-utility-menu]' });
+    Terra.should.beAccessible({ context: '#test-additional-item-3' });
     Terra.should.themeEachCustomProperty('#test-additional-item-3', {
-      '--terra-application-header-menu-item-list-item-hover-focus-color': 'blue',
+      '--terra-application-header-utility-menu-body-item-hover-focus-color': 'blue',
     });
   });
 
@@ -108,7 +110,7 @@ describe('ApplicationHeaderUtility', () => {
     Terra.should.matchScreenshot({ selector: '[data-application-header-utility-menu]' });
     Terra.should.beAccessible({ context: '[data-application-header-utility-menu]' });
     Terra.should.themeEachCustomProperty('[data-application-header-utility-menu]', {
-      '--terra-application-header-menu-item-list-item-hover-focus-color': 'blue',
+      '--terra-application-header-utility-menu-body-item-hover-focus-color': 'blue',
     });
   });
 });

@@ -97,26 +97,56 @@ class MenuUtilityMenuItem extends React.Component {
     if (contentLocation === Utils.LOCATIONS.FOOTER) {
       if (content) {
         item = (
-          <button {...customProps} onClick={event => this.handleSelection(event, itemKey)} onKeyDown={event => this.handleKeyDown(event, itemKey)} className={footerItemclassName}>
+          <button
+            {...customProps}
+            onClick={event => this.handleSelection(event, itemKey)}
+            onKeyDown={event => this.handleKeyDown(event, itemKey)}
+            className={footerItemclassName}
+            aria-label={title}
+          >
             {content}
           </button>
         );
       } else {
         item = (
-          <button {...customProps} onClick={event => this.handleSelection(event, itemKey)} onKeyDown={event => this.handleKeyDown(event, itemKey)} className={footerItemclassName}>
+          <button
+            {...customProps}
+            onClick={event => this.handleSelection(event, itemKey)}
+            onKeyDown={event => this.handleKeyDown(event, itemKey)}
+            className={footerItemclassName}
+            aria-label={title}
+          >
             {title}
           </button>
         );
       }
     } else if (content) {
       item = (
-        <li {...customProps} tabIndex="0" key={itemKey} onClick={event => this.handleSelection(event, itemKey)} onKeyDown={event => this.handleKeyDown(event, itemKey)} role="button" className={`${bodyItemClassNames} ${cx('body-custom-item')}`}>
+        <li
+          {...customProps}
+          tabIndex="0"
+          key={itemKey}
+          onClick={event => this.handleSelection(event, itemKey)}
+          onKeyDown={event => this.handleKeyDown(event, itemKey)}
+          role="button"
+          className={`${bodyItemClassNames} ${cx('body-custom-item')}`}
+          aria-label={title}
+        >
           {content}
         </li>
       );
     } else {
       item = (
-        <li {...customProps} tabIndex="0" key={itemKey} onClick={event => this.handleSelection(event, itemKey)} onKeyDown={event => this.handleKeyDown(event, itemKey)} role="button" className={bodyItemClassNames}>
+        <li
+          {...customProps}
+          tabIndex="0"
+          key={itemKey}
+          onClick={event => this.handleSelection(event, itemKey)}
+          onKeyDown={event => this.handleKeyDown(event, itemKey)}
+          role="button"
+          className={bodyItemClassNames}
+          aria-label={title}
+        >
           <Arrange
             fitStart={<IconCheckmark className={checkmarkClassName} />}
             fill={<div>{title}</div>}

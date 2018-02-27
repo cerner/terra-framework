@@ -26,6 +26,7 @@ import ApplicationMenuDefault from './packages/terra-application-menu-layout/exa
 import ApplicationHeaderNameDefault from './packages/terra-application-name/examples/test-examples/ApplicationHeaderNameDefault';
 import ApplicationMenuNameDefault from './packages/terra-application-name/examples/test-examples/ApplicationMenuNameDefault';
 import DefaultApplicationHeaderUtility from './packages/terra-application-utility/examples/test-examples/DefaultApplicationHeaderUtility';
+import DefaultApplicationMenuUtility from './packages/terra-application-utility/examples/test-examples/DefaultApplicationMenuUtility';
 import DefaultUserData from './packages/terra-application-utility/examples/test-examples/DefaultUserData';
 import DefaultEmbeddedComponent from './packages/terra-embedded-component/examples/test-examples/DefaultEmbeddedComponent';
 import LayoutDefault from './packages/terra-layout/examples/test-examples/LayoutDefault';
@@ -175,6 +176,11 @@ const componentConfig = {
         name: 'Default Application Header Utility',
         path: '/default-application-header-utility',
         component: DefaultApplicationHeaderUtility,
+      },
+      {
+        name: 'Default Application Menu Utility',
+        path: '/default-application-menu-utility',
+        component: DefaultApplicationMenuUtility,
       },
       {
         name: 'Default User Data',

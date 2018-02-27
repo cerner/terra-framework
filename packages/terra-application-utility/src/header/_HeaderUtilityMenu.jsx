@@ -213,7 +213,11 @@ class HeaderUtilityMenu extends React.Component {
 
     const currentKey = this.state.currentKey;
     const currentItem = this.getItem(currentKey);
-    const backButton = <button className={backButtonClassNames} onClick={this.handleRequestBack}><IconLeft className={iconLeftClassNames} /></button>;
+    const backButton = (
+      <button className={backButtonClassNames} onClick={this.handleRequestBack} aria-label={'Back button'}>
+        <IconLeft className={iconLeftClassNames} />
+      </button>
+    );
 
     const header = (
       <div className={headerClassNames}>

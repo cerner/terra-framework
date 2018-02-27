@@ -1,25 +1,25 @@
 :local {
   .body-item {
     cursor: pointer;
-    font-size: var(--terra-application-header-menu-body-item-font-size, 1rem);
+    font-size: var(--terra-application-header-utility-menu-body-item-font-size, 1rem);
     list-style-type: none;
-    margin-bottom: var(--terra-application-header-menu-body-item-margin-bottom, 0.2143rem);
-    margin-top: var(--terra-application-header-menu-body-item-margin-top, 0.2143rem);
+    margin-bottom: var(--terra-application-header-utility-menu-body-item-margin-bottom, 0.2143rem);
+    margin-top: var(--terra-application-header-utility-menu-body-item-margin-top, 0.2143rem);
     max-width: 100%;
-    padding-left: var(--terra-application-header-menu-body-item-padding-left, 0.2143rem);
+    padding-left: var(--terra-application-header-utility-menu-body-item-padding-left, 0.2143rem);
     text-overflow: ellipsis;
 
     &:hover,
     &:focus {
-      background-color: var(--terra-application-header-menu-body-item-hover-focus-color, #ebf6fd);
+      background-color: var(--terra-application-header-utility-menu-body-item-hover-focus-color, #ebf6fd);
     }
 
     .checkmark {
       flex-shrink: 0;
-      height: var(--terra-application-utility-menu-body-item-checkmark-height, 0.8571rem);
-      margin-right: var(--terra-application-header-menu-body-item-checkmark-margin-right, 0.2143rem);
+      height: var(--terra-application-header-utility-menu-body-item-checkmark-height, 0.8571rem);
+      margin-right: var(--terra-application-header-utility-menu-body-item-checkmark-margin-right, 0.2143rem);
       visibility: hidden;
-      width: var(--terra-application-utility-menu-body-item-checkmark-width, 0.8571rem);
+      width: var(--terra-application-header-utility-menu-body-item-checkmark-width, 0.8571rem);
     }
 
     .selected.checkmark {
@@ -27,9 +27,9 @@
     }
 
     .chevron {
-      height: var(--terra-application-utility-menu-body-item-chevron-height, 0.8571rem);
+      height: var(--terra-application-header-utility-menu-body-item-chevron-height, 0.8571rem);
       visibility: hidden;
-      width: var(--terra-application-utility-menu-body-item-chevron-width, 0.8571rem);
+      width: var(--terra-application-header-utility-menu-body-item-chevron-width, 0.8571rem);
     }
 
     .chevron.has-chevron {
@@ -46,11 +46,10 @@
     background-color: var(--terra-application-header-utility-menu-footer-item-background-color, transparent);
     border-radius: var(--terra-application-header-utility-menu-footer-item-border-radius, 0.2143rem);
     cursor: pointer;
-    float: right;
     font-size: var(--terra-application-header-utility-menu-footer-item-font-size, 1rem);
     height: var(--terra-application-header-utility-menu-footer-item-height, 2rem);
     margin-bottom: var(--terra-application-header-utility-menu-footer-item-margin-bottom, 0.2857rem);
-    margin-left: auto; // Pushes flex item to the right
+    margin-left: var(--terra-application-header-utility-menu-footer-item-margin-left, 0.2857rem);
     margin-right: var(--terra-application-header-utility-menu-footer-item-margin-right, 0.4286rem);
   }
 }

@@ -49,7 +49,8 @@ const processMenuItems = (items) => {
   items.forEach((item) => {
     map.set(
       item.key,
-      { title: item.title,
+      { id: item.id,
+        title: item.title,
         content: item.content,
         contentLocation: item.contentLocation,
         isSelected: item.isSelected,
@@ -102,6 +103,7 @@ class MenuUtilityMenu extends React.Component {
       <MenuItem
         key={key}
         itemKey={key}
+        id={item.id}
         title={item.title}
         content={item.content}
         contentLocation={item.contentLocation}
@@ -200,6 +202,7 @@ class MenuUtilityMenu extends React.Component {
   render() {
     const {
       app,
+      initialSelectedKey,
       menuItems,
       isHeightBounded,
       onChange,
@@ -218,7 +221,6 @@ class MenuUtilityMenu extends React.Component {
     const closebuttonClassNames = cx('close-button');
     const backButtonClassNames = cx('back-button');
     const iconLeftClassNames = cx('icon-left');
-    // const LogOutButtonClassNames = cx('log-out-button');
     const iconCloseClassNames = cx('icon-close');
     const headerTextClassNames = cx('header-text');
     const footerClassNames = cx('footer');
@@ -226,8 +228,16 @@ class MenuUtilityMenu extends React.Component {
 
     const currentKey = this.state.currentKey;
     const currentItem = this.getItem(currentKey);
-    const backButton = <button className={backButtonClassNames} onClick={this.handleRequestBack}><IconLeft className={iconLeftClassNames} /></button>;
-    const closeButton = <button onClick={this.handleOnRequestClose} className={closebuttonClassNames}><IconClose className={iconCloseClassNames} /></button>;
+    const backButton = (
+      <button className={backButtonClassNames} onClick={this.handleRequestBack} aria-label={'Back Button'}>
+        <IconLeft className={iconLeftClassNames} />
+      </button>
+    );
+    const closeButton = (
+      <button onClick={this.handleOnRequestClose} className={closebuttonClassNames} aria-label={'Close Button'}>
+        <IconClose className={iconCloseClassNames} />
+      </button>
+    );
 
     const header = (
       <div className={headerClassNames}>

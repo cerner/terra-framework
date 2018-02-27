@@ -68,7 +68,7 @@ class ApplicationMenuUtility extends React.Component {
         menuItems={this.props.menuItems}
         onChange={this.props.onChange}
         onRequestClose={this.props.onRequestClose}
-        data-application-header-utility-menu
+        data-application-menu-utility-menu
       />
     );
   }

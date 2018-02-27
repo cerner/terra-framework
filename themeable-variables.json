@@ -308,6 +308,7 @@
     "--terra-application-header-utility-menu-footer-item-font-size": "1rem",
     "--terra-application-header-utility-menu-footer-item-height": "2rem",
     "--terra-application-header-utility-menu-footer-item-margin-bottom": "0.2857rem",
+    "--terra-application-header-utility-menu-footer-item-margin-left": "0.2857rem",
     "--terra-application-header-utility-menu-footer-item-margin-right": "0.4286rem"
   },
   "_MenuUtilityMenu": {
@@ -343,6 +344,7 @@
     "--terra-application-menu-utility-menu-footer-item-font-size": "1rem",
     "--terra-application-menu-utility-menu-footer-item-height": "2rem",
     "--terra-application-menu-utility-menu-footer-item-margin-bottom": "0.2857rem",
+    "--terra-application-menu-utility-menu-footer-item-margin-left": "0.2857rem",
     "--terra-application-menu-utility-utility-menu-footer-item-margin-bottom": "0.4286rem"
   },
   "_UtilityMenuDivider": {

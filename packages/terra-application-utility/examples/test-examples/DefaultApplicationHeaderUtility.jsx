@@ -5,7 +5,7 @@ import MockConfig from '../index-examples/mockConfig';
 import Avatar from '../index-examples/FallBackAvatar.svg';
 import { ApplicationHeaderUtility, UserData } from '../../src/ApplicationUtility';
 
-class ApplicationHeaderUtilityDefault extends React.Component {
+class DefaultApplicationHeaderUtility extends React.Component {
   constructor(props) {
     super(props);
     this.onDiscloseUtility = this.onDiscloseUtility.bind(this);
@@ -85,4 +85,4 @@ class ApplicationHeaderUtilityDefault extends React.Component {
   }
 }
 
-export default ApplicationHeaderUtilityDefault;
+export default DefaultApplicationHeaderUtility;
