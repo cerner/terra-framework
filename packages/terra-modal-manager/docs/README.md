@@ -21,12 +21,16 @@ The ModalManager prior to version 1.20.0 utilized Redux to store its disclosure 
 
 If your component currently implements a ModalManager, you can safely remove the ModalManager reducer from your reducer tree.
 
+### withModalManager
+
+The main export from the `terra-modal-manager` package also exports a higher-order component generator called `withModalManager`. The component provided to the generator will be wrapped by a ModalManager and provided with an `app` prop.
+
 ### Example
 
 ```jsx
 import React from 'react';
 import Button from 'terra-button';
-import ModalManager, { disclosureType } from 'terra-modal-manager';
+import ModalManager, { disclosureType, withModalManager } from 'terra-modal-manager';
 
 const MyModalComponent = ({ app }) => (
   <div>
@@ -59,11 +63,15 @@ const MyContentComponent = ({ app }) => (
   </div>
 );
 
-const MyModalManagerComponent = () => (
+let MyModalManagerComponent = () => (
   <ModalManager>
     <MyContentComponent />
   </ModalManager>
 );
+
+// Alternatively, `withModalManager` can be used to wrap a ModalManager around MyContentComponent automatically.
+MyModalManagerComponent = withModalManager(MyContentComponent);
+
 ```
 
 ## Component Features
