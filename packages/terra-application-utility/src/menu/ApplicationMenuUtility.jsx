@@ -68,6 +68,7 @@ class ApplicationMenuUtility extends React.Component {
         menuItems={this.props.menuItems}
         onChange={this.props.onChange}
         onRequestClose={this.props.onRequestClose}
+        data-application-header-utility-menu
       />
     );
   }
@@ -91,7 +92,7 @@ class ApplicationMenuUtility extends React.Component {
     const iconClassNames = cx('icon');
     const photo = React.cloneElement(userPhoto, { className: userPhotoClassNames });
     return (
-      <button {...customProps} className={utilityClassNames} onClick={this.handleOnClick}>
+      <button {...customProps} className={utilityClassNames} onClick={this.handleOnClick} role={'main'} aria-label={'Utility button'}>
         <span className={userContainerClassNames}>
           {photo}
           <span className={userNameClassNames}>{userName} </span>

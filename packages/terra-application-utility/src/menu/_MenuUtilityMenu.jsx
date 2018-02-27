@@ -255,7 +255,7 @@ class MenuUtilityMenu extends React.Component {
     }
 
     return (
-      <ContentContainer {...customProps} header={header} footer={footer} fill className={MenuClassNames}>
+      <ContentContainer {...customProps} header={header} footer={footer} fill className={MenuClassNames} role={'navigation'} aria-label={'Utility menu'}>
         {this.buildListContent(currentItem)}
       </ContentContainer>
     );

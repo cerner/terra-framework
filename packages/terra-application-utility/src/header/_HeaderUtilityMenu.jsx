@@ -235,7 +235,7 @@ class HeaderUtilityMenu extends React.Component {
       );
     }
     return (
-      <ContentContainer {...customProps} header={header} footer={footer} fill={isHeightBounded} className={MenuClassNames}>
+      <ContentContainer {...customProps} header={header} footer={footer} fill={isHeightBounded} className={MenuClassNames} role={'navigation'} aria-label={'Utility menu'}>
         {this.buildListContent(currentItem)}
       </ContentContainer>
     );
