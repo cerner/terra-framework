@@ -3,7 +3,7 @@ import React from 'react';
 import PropsTable from 'terra-props-table';
 import Markdown from 'terra-markdown';
 import { MemoryRouter } from 'react-router-dom';
-import IndexTemplate from 'terra-site/src/IndexPageTemplate';
+import IndexTemplate from 'terra-dev-site/src/IndexPageTemplate';
 import Base from 'terra-base';
 import ReadMe from '../docs/README.md';
 import { version } from '../package.json';
