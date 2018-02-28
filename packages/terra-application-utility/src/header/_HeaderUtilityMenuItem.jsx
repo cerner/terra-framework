@@ -139,7 +139,8 @@ class HeaderUtilityMenuItem extends React.Component {
       item = (
         <li
           {...customProps}
-          tabIndex="0" key={itemKey}
+          tabIndex="0"
+          key={itemKey}
           onClick={event => this.handleSelection(event, itemKey)}
           onKeyDown={event => this.handleKeyDown(event, itemKey)}
           role="button"

@@ -243,7 +243,7 @@ class HeaderUtilityMenu extends React.Component {
         fill={isHeightBounded}
         className={MenuClassNames}
         role={'navigation'}
-        aria-label={'Utility menu'}
+        aria-label={'Utility Menu'}
       >
         {this.buildListContent(currentItem)}
       </ContentContainer>

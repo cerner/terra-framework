@@ -11,9 +11,9 @@ Houses the utilities menu. The menu items are generated from a config file. Ther
 
 ```jsx
 import React from 'react';
-import ApplicationUtility from 'terra-application-utility';
+import { ApplicationHeaderUtility, UserData } from 'terra-application-utility';
 
-<ApplicationUtility {props...} />
+<ApplicationHeaderUtility {props...} />
 ```
 
 ## Component Features
