@@ -15,8 +15,6 @@ import LayoutStandard from './index-examples/LayoutStandard';
 import LayoutStandardSrc from '!raw-loader!./index-examples/LayoutStandard.jsx';
 import LayoutMenuDisabled from './index-examples/LayoutMenuDisabled';
 import LayoutMenuDisabledSrc from '!raw-loader!./index-examples/LayoutMenuDisabled.jsx';
-import LayoutLongText from './index-examples/LayoutLongText';
-import LayoutLongTextSrc from '!raw-loader!./index-examples/LayoutLongText.jsx';
 import LayoutNoHeader from './index-examples/LayoutNoHeader';
 import LayoutNoHeaderSrc from '!raw-loader!./index-examples/LayoutNoHeader.jsx';
 
@@ -36,17 +34,10 @@ const LayoutExamples = () => (
       example={<LayoutMenuDisabled />}
       exampleSrc={LayoutMenuDisabledSrc}
     />
-
     <IndexTemplate
       title="Layout - No Header"
       example={<LayoutNoHeader />}
       exampleSrc={LayoutNoHeaderSrc}
-    />
-
-    <IndexTemplate
-      title="Layout -  Long Text"
-      example={<LayoutLongText />}
-      exampleSrc={LayoutLongTextSrc}
     />
 
     <PropsTable id="props-table" src={LayoutSrc} />

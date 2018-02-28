@@ -1,6 +1,4 @@
 :local {
-  $hover-target-width: var(--layout-slide-hover-target-width, 2.143rem);
-
   .layout-slide-panel {
     height: 100%;
     overflow: hidden;
@@ -40,32 +38,6 @@
     transform: translate3d(0, 0, 0);
   }
 
-  .hover-toggle-enabled.is-overlay {
-    > .content {
-      width: calc(100% - #{$hover-target-width});// allow for hover bar
-    }
-
-    > .panel {
-      transform: translateX(-100%) translateX($hover-target-width);
-    }
-
-    &.is-open > .panel {
-      transform: translate3d(0, 0, 0);
-    }
-  }
-
-  // Due to conflicts with the RTL plugin and the use of the variable, we need to explicitly
-  // specify the rtl-based transform value.
-  /* stylelint-disable selector-max-compound-selectors */
-  [dir=rtl] {
-    .hover-toggle-enabled.is-overlay {
-      > .panel {
-        transform: translateX(100%) translateX(calc(-1 * #{$hover-target-width}));
-      }
-    }
-  }
-  /* stylelint-enable */
-
   .panel.is-tiny {
     width: var(--layout-slide-panel-phone-panel-width, calc(100% - 3.571rem));
   }
@@ -90,5 +62,9 @@
       transition: none;
       width: calc(0.07143rem + #{var(--layout-slide-panel-desktop-panel-width, 18.571rem)});
     }
+  }
+
+  .panel[aria-hidden='true'] {
+    visibility: hidden;
   }
 }
