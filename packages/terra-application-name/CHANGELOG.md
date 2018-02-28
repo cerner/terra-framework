@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 -----------------
+### Fixed
+* Truncation and padding of the name with new css rules.
 
 2.0.0 - (February 21, 2018)
 ------------------
