@@ -10,10 +10,6 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Indicates if the tab is be to desplayed in the tab menu.
-   */
-  isCollapsed: PropTypes.bool,
-  /**
    * The path to push to the route.
    */
   path: PropTypes.string.isRequired,
