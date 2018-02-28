@@ -13,7 +13,7 @@ class DefaultEmbeddedComponent extends React.Component {
   componentDidCatch(error) {
     this.setState({ error });
   }
-  
+
   render() {
     if (this.state.error) {
       return <div> An Error Occured While Loading </div>;
