@@ -1,6 +1,6 @@
 import React from 'react';
 import { ApplicationHeaderUtility } from '../../src/ApplicationUtility';
-import mockConfig from '../../examples/index-examples/mockConfig';
+import MockConfig from '../../examples/index-examples/MockConfig';
 
 describe('ApplicationUtility', () => {
   const mockOnChange = jest.fn();
@@ -12,7 +12,7 @@ describe('ApplicationUtility', () => {
   it('should render a utility with menu items', () => {
     const wrapper = shallow(
       <ApplicationHeaderUtility
-        menuItems={mockConfig()}
+        menuItems={MockConfig()}
         onChange={mockOnChange}
         onDisclose={mockOnDisclose}
         onRequestClose={mockOnRequestClose}

@@ -32,16 +32,16 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-app-delegate": "^1.11.0",
-    "terra-application-header-layout": "^1.1.0",
-    "terra-application-menu-layout": "^1.2.0",
-    "terra-arrange": "^1.19.0",
+    "terra-app-delegate": "^2.0.0",
+    "terra-application-header-layout": "^2.0.0",
+    "terra-application-menu-layout": "^2.0.0",
+    "terra-arrange": "^2.1.0",
     "terra-base": "^3.0.0",
-    "terra-content-container": "^2.0.1",
-    "terra-icon": "^1.18.0",
-    "terra-image": "^1.16.0",
-    "terra-modal-manager": "^1.20.0",
-    "terra-popup": "^1.20.0"
+    "terra-content-container": "^2.1.0",
+    "terra-icon": "^2.1.0",
+    "terra-image": "^2.1.0",
+    "terra-modal-manager": "^2.0.0",
+    "terra-popup": "^2.1.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

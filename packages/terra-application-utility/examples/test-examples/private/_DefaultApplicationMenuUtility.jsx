@@ -4,7 +4,7 @@ import Image from 'terra-image';
 import 'terra-base/lib/baseStyles';
 import Avatar from '../../index-examples/FallBackAvatar.svg';
 import { ApplicationMenuUtility, UserData } from '../../../src/ApplicationUtility';
-import mockConfig from '../../index-examples/mockConfig';
+import MockConfig from '../../index-examples/MockConfig';
 
 const propTypes = {
   app: AppDelegate.propType,
@@ -54,7 +54,7 @@ class DefaultApplicationMenuUtility extends React.Component {
         <ApplicationMenuUtility
           id={'default'}
           app={this.app}
-          menuItems={mockConfig(userData)}
+          menuItems={MockConfig(userData)}
           onChange={this.handleOnChange}
           onDisclose={this.onDiscloseUtilty}
           onRequestClose={this.handleOnRequestClose}

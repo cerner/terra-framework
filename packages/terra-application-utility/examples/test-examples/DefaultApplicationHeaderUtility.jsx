@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'terra-image';
 import Popup from 'terra-popup';
-import MockConfig from '../index-examples/mockConfig';
+import MockConfig from '../index-examples/MockConfig';
 import Avatar from '../index-examples/FallBackAvatar.svg';
 import { ApplicationHeaderUtility, UserData } from '../../src/ApplicationUtility';
 

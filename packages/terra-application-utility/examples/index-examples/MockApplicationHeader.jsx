@@ -9,7 +9,7 @@ import NavigationExample from 'terra-application-header-layout/examples/index-ex
 import ToggleExample from 'terra-application-header-layout/examples/index-examples/ToggleExample';
 import Avatar from './FallBackAvatar.svg';
 import { ApplicationHeaderUtility, UserData } from '../../src/ApplicationUtility';
-import UtilitiesUtils from '../../src/_Utils';
+import MockConfig from './MockConfig';
 
 class MockApplicationHeader extends React.Component {
   constructor(props) {
@@ -75,7 +75,7 @@ class MockApplicationHeader extends React.Component {
     const utilities = (
       <ApplicationHeaderUtility
         style={{ backgroundColor: '#2481ca' }}
-        menuItems={UtilitiesUtils.defaultConfig(userData)}
+        menuItems={MockConfig(userData)}
         onChange={this.handleOnChange}
         onDisclose={this.onDiscloseUtility}
         onRequestClose={this.handleRequestClose}

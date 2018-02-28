@@ -1,6 +1,6 @@
 import Utils from '../../src/_Utils';
 
-const mockConfig = userData =>
+const MockConfig = userData =>
   [
     {
       key: Utils.KEYS.MENU,
@@ -151,4 +151,5 @@ const mockConfig = userData =>
     },
   ];
 
-export default mockConfig;
+export default MockConfig;
+
