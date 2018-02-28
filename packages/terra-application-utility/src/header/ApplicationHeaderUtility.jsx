@@ -11,7 +11,7 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The array containing the static menu items to be rendered within the menu.
+   * The array containing the menu items to be rendered within the menu.
    */
   menuItems: PropTypes.arrayOf((Utils.itemShape)).isRequired,
   /**
@@ -94,8 +94,6 @@ class ApplicationHeaderUtility extends React.Component {
 }
 
 ApplicationHeaderUtility.propTypes = propTypes;
-ApplicationHeaderUtility.keys = Utils.KEYS;
-ApplicationHeaderUtility.titles = Utils.TITLES;
 ApplicationHeaderUtility.defaultProps = defaultProps;
 
 export default ApplicationHeaderUtility;

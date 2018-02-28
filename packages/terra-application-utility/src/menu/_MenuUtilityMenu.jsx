@@ -27,7 +27,7 @@ const propTypes = {
    */
   initialSelectedKey: PropTypes.string.isRequired,
   /**
-   * The data object containing the static menu items.
+   * The config file containing the menu items to be rendered.
    */
   menuItems: PropTypes.arrayOf((Utils.itemShape)).isRequired,
   /**
@@ -210,14 +210,11 @@ class MenuUtilityMenu extends React.Component {
       ...customProps
     } = this.props;
 
-    const MenuClassNames = cx([
-      'utility-menu',
-      { 'is-height-bounded': isHeightBounded },
-      customProps.classNames,
-    ]);
+    const MenuClassNames = cx(['utility-menu', customProps.classNames]);
     const headerClassNames = cx('header');
     const headerLeftContainer = cx('left-container');
     const headerRightContainer = cx('right-container');
+    const headerInnerContainer = cx('inner-container');
     const closebuttonClassNames = cx('close-button');
     const backButtonClassNames = cx('back-button');
     const iconLeftClassNames = cx('icon-left');
@@ -242,7 +239,7 @@ class MenuUtilityMenu extends React.Component {
     const header = (
       <div className={headerClassNames}>
         <span className={headerLeftContainer}>
-          <span className={cx('inner-container')}>
+          <span className={headerInnerContainer}>
             {currentKey !== this.props.initialSelectedKey && backButton}
             <span className={headerTextClassNames}>{currentItem.title}</span>
           </span>
@@ -265,7 +262,15 @@ class MenuUtilityMenu extends React.Component {
     }
 
     return (
-      <ContentContainer {...customProps} header={header} footer={footer} fill className={MenuClassNames} role={'navigation'} aria-label={'Utility menu'}>
+      <ContentContainer
+        {...customProps}
+        header={header}
+        footer={footer}
+        fill
+        className={MenuClassNames}
+        role={'navigation'}
+        aria-label={'Utility menu'}
+      >
         {this.buildListContent(currentItem)}
       </ContentContainer>
     );

@@ -40,7 +40,7 @@ const propTypes = {
    */
   hasChevron: PropTypes.bool.isRequired,
   /**
-   * Function to trigger this item is selected.
+   * Function to trigger when this item is selected.
    */
   onChange: PropTypes.func.isRequired,
 };

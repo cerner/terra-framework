@@ -14,7 +14,6 @@
       /* stylelint-disable selector-max-compound-selectors*/
       /* stylelint-disable max-nesting-depth*/
       .left-container {
-        // align-items: center;
         display: flex;
         justify-content: space-between;
 
@@ -53,7 +52,6 @@
           background-color: var(--terra-application-menu-utility-menu-header-close-button-background-color, transparent);
           border-width: var(--terra-application-menu-utility-menu-header-close-button-border-width, 0);
           cursor: pointer;
-          // float: right;
           margin: 0;
           padding: 0;
           width: var(--terra-application-menu-utility-menu-header-close-button-width, 1.714rem);

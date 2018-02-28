@@ -1,6 +1,6 @@
 # Terra Application Utility
 
-{insert description}
+Houses the utilities menu. The menu items are generated from a config file. There are two versions - a header version and menu version. These should be used with the corresponding header and menu layouts.
 
 ## Getting Started
 
