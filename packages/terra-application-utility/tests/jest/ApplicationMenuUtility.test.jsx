@@ -9,11 +9,11 @@ describe('ApplicationUtility', () => {
   const image = <Image />;
   const name = 'name';
 
-  it('should render a utility with menu itmes', () => {
+  it('should render a utility with menu items', () => {
     const wrapper = shallow(
       <ApplicationMenuUtility
         menuItems={mockConfig()}
-        mnChange={mockOnChange}
+        onChange={mockOnChange}
         onDisclose={mockOnDisclose}
         onRequestClose={mockOnRequestClose}
         userName={name}

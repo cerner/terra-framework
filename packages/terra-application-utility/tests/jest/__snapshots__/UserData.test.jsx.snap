@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserData should render a default component 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="user-data"
+  >
+    <div />
+  </div>
+  <IconChevronRight
+    className="chevron"
+    data-name="Layer 1"
+    isBidi={true}
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</div>
+`;
+
+exports[`UserData should with provided name 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="user-data"
+  >
+    <div>
+      <div
+        className="name"
+      >
+        name
+      </div>
+    </div>
+  </div>
+  <IconChevronRight
+    className="chevron"
+    data-name="Layer 1"
+    isBidi={true}
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</div>
+`;
+
+exports[`UserData should with provided name, detail, and photo 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="user-data"
+  >
+    <Image
+      alt=" "
+      className="photo"
+      isFluid={false}
+      src="test"
+      variant="default"
+    />
+    <div>
+      <div
+        className="name"
+      >
+        name
+      </div>
+      <div
+        className="detail"
+      >
+        detail
+      </div>
+    </div>
+  </div>
+  <IconChevronRight
+    className="chevron"
+    data-name="Layer 1"
+    isBidi={true}
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</div>
+`;
+
+exports[`UserData should with provided photo 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="user-data"
+  >
+    <Image
+      alt=" "
+      className="photo"
+      isFluid={false}
+      src="test"
+      variant="default"
+    />
+    <div />
+  </div>
+  <IconChevronRight
+    className="chevron"
+    data-name="Layer 1"
+    isBidi={true}
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</div>
+`;
+
+exports[`UserData should with provided user detail 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="user-data"
+  >
+    <div>
+      <div
+        className="detail"
+      >
+        detail
+      </div>
+    </div>
+  </div>
+  <IconChevronRight
+    className="chevron"
+    data-name="Layer 1"
+    isBidi={true}
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</div>
+`;

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderUtilityMenu should render a header utility menu 1`] = `
+<ContentContainer
+  aria-label="Utility menu"
+  className="utility-menu"
+  fill={false}
+  footer={
+    <div
+      className="footer"
+    >
+      <MenuDivider
+        className="footer-divider"
+      />
+    </div>
+  }
+  header={
+    <div
+      className="header"
+    >
+      <span
+        className="left-container"
+      >
+        <span
+          className="header-text"
+        >
+          title
+        </span>
+      </span>
+      <MenuDivider />
+    </div>
+  }
+  onDisclose={[Function]}
+  role="navigation"
+/>
+`;

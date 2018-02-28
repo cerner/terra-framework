@@ -1,10 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ApplicationUtility should render a utility with menu itmes 1`] = `
+exports[`ApplicationUtility should render a utility with menu items 1`] = `
 <button
+  aria-label="Utility button"
   className="header-utility"
-  mnChange={[Function]}
   onClick={[Function]}
+  role="main"
 >
   <span
     className="user-container"

@@ -2,8 +2,10 @@
 
 exports[`ApplicationUtility should render a utility with menu items 1`] = `
 <button
+  aria-label="Utility button"
   className="header-utility"
   onClick={[Function]}
+  role="main"
 >
   <Image
     className="user-photo"

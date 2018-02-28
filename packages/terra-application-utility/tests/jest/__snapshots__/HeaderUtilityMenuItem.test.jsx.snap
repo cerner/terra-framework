@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderUtilityMenuItem should render a header utility menu item 1`] = `
+<button
+  className="footer-item"
+  isSelctable={true}
+  onClick={[Function]}
+  onKeyDown={[Function]}
+>
+  <UserData
+    userDetail={null}
+    userName={null}
+  />
+</button>
+`;

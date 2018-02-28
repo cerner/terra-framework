@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuUtilityMenu should render a menu utility menu 1`] = `
+<ContentContainer
+  aria-label="Utility menu"
+  className="utility-menu"
+  fill={true}
+  footer={
+    <div
+      className="footer"
+    >
+      <MenuDivider
+        className="footer-divider"
+      />
+    </div>
+  }
+  header={
+    <div
+      className="header"
+    >
+      <span
+        className="left-container"
+      >
+        <span
+          className="inner-container"
+        >
+          <span
+            className="header-text"
+          >
+            title
+          </span>
+        </span>
+        <span
+          className="right-container"
+        >
+          <button
+            aria-label="Close Button"
+            className="close-button"
+            onClick={[Function]}
+          >
+            <IconClose
+              className="icon-close"
+              data-name="Layer 1"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            />
+          </button>
+        </span>
+      </span>
+      <MenuDivider />
+    </div>
+  }
+  onDisclose={[Function]}
+  role="navigation"
+/>
+`;
