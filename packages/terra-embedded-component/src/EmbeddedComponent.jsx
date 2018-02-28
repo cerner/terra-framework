@@ -7,7 +7,6 @@ import { loadStylesheet } from './assets';
 
 // Expose AMD required globals on the window
 window.define = window.SystemJS.amdDefine;
-window.require = window.requirejs = SystemJS.amdRequire;
 
 const propTypes = {
 
