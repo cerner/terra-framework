@@ -91,6 +91,7 @@ All components rendered within the `NavigationLayout` receive a `routingStackDel
 * `parentPaths` - An array of String paths that were determined to preceed the current path in the configuration. For example, if the routes `/pages`, `/pages/:id`, and `/pages/:id/summary` were defined by the config, the component rendered for the path `/pages/123/summary` would receive a parentPaths value of [`/pages`, `/pages/123`]. This set of paths could be used to build breadcrumbs or simple navigation functionality.
 
 Components within the `menu` region get a few extra features, however. To help enable nested menu scenarios, the `routingStackDelegate` will also include the following:
+* `show` - A function that will cause the NavigationLayout to display the menu for the given path. If the given path does not match the current history location, the new location is pushed onto the history stack. If the given path already matches the current history location, only the RoutingStack's internal location is updated; this insures that the history is not being manipulated unnecessarily when navigating down the stack of menu components.
 * `showParent` - A function that will cause the NavigationLayout to display the immediate parent path (if one is present).
 * `showRoot` - A function that will cause the NavigationLayout to display the first (or root) parent path (if one is present, and the number of parent paths is more than 1).
 

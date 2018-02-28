@@ -4,6 +4,10 @@ Changelog
 Unreleased
 ----------
 
+### Added
+* Added 'show' function to RoutingStackDelegate.
+* Added 'rejectRoutingStackNavigation' key to component configuration.
+
 2.0.0 - (February 21, 2018)
 ------------------
 ### Changed
