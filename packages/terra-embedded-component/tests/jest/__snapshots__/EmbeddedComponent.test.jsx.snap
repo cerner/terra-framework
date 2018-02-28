@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EmbeddedComponent should render a default component 1`] = `
-<div
-  className="embedded-component"
->
-  default
+exports[`EmbeddedComponent should use blank message when no placeholder is given 1`] = `""`;
+
+exports[`EmbeddedComponent should use the placeholder message when placeholder is given 1`] = `
+<div>
+  placeholder
 </div>
 `;

@@ -2,15 +2,18 @@
 import React from 'react';
 import PropsTable from 'terra-props-table';
 import Markdown from 'terra-markdown';
-// import IndexTemplate from 'terra-dev-site/lib/IndexPageTemplate';
+import IndexTemplate from 'terra-dev-site/src/IndexPageTemplate';
 
 import ReadMe from '../docs/README.md';
 import { version } from '../package.json';
 
 // Component Source
-import EmbeddedComponentSrc from '!raw-loader!../src/EmbeddedComponent.jsx';
+// eslint-disable-next-line import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions
+import EmbeddedComponentSrc from '!raw-loader!../src/EmbeddedComponent';
 
-// Example File
+// Example Files
+import DefaultEmbeddedComponent from './index-examples/DefaultEmbeddedComponent';
+import DefaultEmbeddedComponentSrc from '!raw-loader!./index-examples/DefaultEmbeddedComponent.jsx';
 
 const EmbeddedComponentExamples = () => (
   <div>
@@ -18,8 +21,13 @@ const EmbeddedComponentExamples = () => (
     <Markdown id="readme" src={ReadMe} />
 
     <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
+    <IndexTemplate
+      title="EmbeddedComponent - Default"
+      example={<DefaultEmbeddedComponent />}
+      exampleSrc={DefaultEmbeddedComponentSrc}
+    />
 
-    <PropsTable id="props-table" src={EmbeddedComponentSrc} />
+    <PropsTable id="props" src={EmbeddedComponentSrc} />
   </div>
 );
 
