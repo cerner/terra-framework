@@ -1,13 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import List from 'terra-list';
 import ActionHeader from 'terra-clinical-action-header';
 import ContentContainer from 'terra-content-container';
 import MenuItem from './_MenuItem';
 
+import styles from './NavigationSideMenu.scss';
+
+const cx = classNames.bind(styles);
+
 const KEYCODES = {
   ENTER: 13,
+  SPACE: 32,
+  TAB: 9,
 };
 
 const propTypes = {
@@ -144,6 +151,12 @@ class NavigationSideMenu extends React.Component {
 
   buildListItem(key) {
     const item = this.state.items[key];
+    const onKeyDown = (event) => {
+      if (event.nativeEvent.keyCode === KEYCODES.SPACE || event.nativeEvent.keyCode === KEYCODES.ENTER) {
+        event.preventDefault();
+        this.handleItemClick(event, key);
+      }
+    };
 
     return (
       <MenuItem
@@ -153,14 +166,14 @@ class NavigationSideMenu extends React.Component {
         text={item.text}
         key={key}
         onClick={(event) => { this.handleItemClick(event, key); }}
-        onKeyDown={(event) => { if (event.nativeEvent.keyCode === KEYCODES.ENTER) { this.handleItemClick(event, key); } }}
+        onKeyDown={onKeyDown}
       />
     );
   }
 
   buildListContent(currentItem) {
     if (currentItem && currentItem.childKeys && currentItem.childKeys.length) {
-      return <List>{currentItem.childKeys.map(key => this.buildListItem(key))}</List>;
+      return <List className={cx(['menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</List>;
     }
     return null;
   }
