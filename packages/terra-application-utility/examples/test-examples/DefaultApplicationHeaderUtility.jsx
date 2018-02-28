@@ -68,7 +68,7 @@ class DefaultApplicationHeaderUtility extends React.Component {
     const userData = <UserData userDetail={userDetail} userName={userName} userPhoto={image} />;
 
     return (
-      <div ref={this.setContentNode} style={{ height: '60px', position: 'relative', width: '100%' }}>
+      <div ref={this.setContentNode} style={{ height: '60px', position: 'relative', width: '150px' }}>
         <ApplicationHeaderUtility
           id="default"
           menuItems={MockConfig(userData)}
