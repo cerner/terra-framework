@@ -9,6 +9,8 @@ const withModalManager = (Component) => {
     </ModalManager>
   );
 
+  ModalManagerHOC.WrappedComponent = Component;
+
   ModalManagerHOC.propTypes = {
     app: AppDelegate.propType,
   };
