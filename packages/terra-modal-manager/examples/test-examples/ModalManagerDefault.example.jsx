@@ -1,5 +1,5 @@
 import React from 'react';
-import TestExample from 'terra-disclosure-manager/examples/test-content/TestExample.example';
+import TestExample from 'terra-disclosure-manager/examples/test-content/TestExample';
 import ModalManager from '../../lib/index';
 
 const ModalManagerDefault = () => (
