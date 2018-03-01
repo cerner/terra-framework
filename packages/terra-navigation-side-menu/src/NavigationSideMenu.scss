@@ -1,5 +1,6 @@
 :local {
   .menu-list {
+    box-shadow: var(--terra-navigation-side-menu-list-box-shadow, 0 7px 9px rgba(0, 0, 0, 0.2));
     padding-bottom: var(--terra-navigation-side-menu-list-padding-bottom, 0.125rem);
     padding-top: var(--terra-navigation-side-menu-list-padding-top, 0.125rem);
   }

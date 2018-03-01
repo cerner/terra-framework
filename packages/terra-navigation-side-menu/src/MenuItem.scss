@@ -1,6 +1,7 @@
 :local {
   .menu-item {
     align-items: stretch;
+    background-color: var(--terra-navigation-side-menu-item-background-color, #fff);
     color: var(--terra-navigation-side-menu-item-color, #1c1f21);
     display: flex;
     font-size: var(--terra-navigation-side-menu-item-size, 1.071rem);
