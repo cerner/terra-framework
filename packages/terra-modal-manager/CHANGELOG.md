@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* withModalManager higher-order component generator
+
 ### Changed
 * Updated snapshots tests to match new structure of slide group.
 
