@@ -1,5 +1,5 @@
 import ModalManager, { disclosureType } from './ModalManager';
-
+import withModalManager from './withModalManager';
 import modalManagerReducers from './reducers';
 import { open, close, push, pop, maximize, minimize, gainFocus, loseFocus } from './actions';
 
@@ -36,3 +36,4 @@ export { reducers };
 export default ModalManager;
 export { disclosureType };
 
+export { withModalManager };
