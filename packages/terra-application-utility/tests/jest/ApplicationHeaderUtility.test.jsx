@@ -9,7 +9,7 @@ describe('ApplicationHeaderUtility', () => {
   const image = <Image />;
   const name = 'name';
 
-  it('should render a header utility with default props', () => {
+  it('should render with default props', () => {
     const wrapper = shallow(
       <ApplicationHeaderUtility
         menuItems={[]}
@@ -21,7 +21,7 @@ describe('ApplicationHeaderUtility', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render a header utility with a username', () => {
+  it('should render with a username', () => {
     const wrapper = shallow(
       <ApplicationHeaderUtility
         menuItems={[]}
@@ -34,7 +34,7 @@ describe('ApplicationHeaderUtility', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render a header utility with a user photo', () => {
+  it('should render with a user photo', () => {
     const wrapper = shallow(
       <ApplicationHeaderUtility
         menuItems={[]}
@@ -47,13 +47,26 @@ describe('ApplicationHeaderUtility', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render a header utility with menu items', () => {
+  it('should render with menu items', () => {
     const wrapper = shallow(
       <ApplicationHeaderUtility
         menuItems={MockConfig()}
         onChange={mockOnChange}
         onDisclose={mockOnDisclose}
         onRequestClose={mockOnRequestClose}
+      />,
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('it should pass in a custom prop', () => {
+    const wrapper = shallow(
+      <ApplicationHeaderUtility
+        menuItems={[]}
+        onChange={mockOnChange}
+        onDisclose={mockOnDisclose}
+        onRequestClose={mockOnRequestClose}
+        id="test"
       />,
     );
     expect(wrapper).toMatchSnapshot();

@@ -8,7 +8,7 @@ describe('MenuUtilityMenuItem', () => {
   const content = (<UserData />);
   const contentLocation = 'footer';
 
-  it('should render a menu utility menu item with default props', () => {
+  it('should render with default props', () => {
     const wrapper = shallow(
       <MenuUtilityMenuItem
         itemKey="key"
@@ -18,7 +18,7 @@ describe('MenuUtilityMenuItem', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render a menu utility menu item with a title', () => {
+  it('should render with a title', () => {
     const wrapper = shallow(
       <MenuUtilityMenuItem
         itemKey="key"
@@ -29,7 +29,7 @@ describe('MenuUtilityMenuItem', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render a menu utility menu item with content', () => {
+  it('should render with content', () => {
     const wrapper = shallow(
       <MenuUtilityMenuItem
         itemKey="key"
@@ -40,7 +40,7 @@ describe('MenuUtilityMenuItem', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render a menu utility menu item with a content location', () => {
+  it('should render with a content location', () => {
     const wrapper = shallow(
       <MenuUtilityMenuItem
         itemKey="key"
@@ -51,7 +51,7 @@ describe('MenuUtilityMenuItem', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render a menu utility menu item with isSelected set', () => {
+  it('should render with isSelected set', () => {
     const wrapper = shallow(
       <MenuUtilityMenuItem
         itemKey="key"
@@ -62,7 +62,7 @@ describe('MenuUtilityMenuItem', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render a menu utility menu item with isSelectable set', () => {
+  it('should render with isSelectable set', () => {
     const wrapper = shallow(
       <MenuUtilityMenuItem
         itemKey="key"
@@ -73,12 +73,23 @@ describe('MenuUtilityMenuItem', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render a menu utility menu item with hasChevron set', () => {
+  it('should render with hasChevron set', () => {
     const wrapper = shallow(
       <MenuUtilityMenuItem
         itemKey="key"
         onChange={mockOnChange}
         isSelectable
+      />,
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should pass in a custom prop', () => {
+    const wrapper = shallow(
+      <MenuUtilityMenuItem
+        itemKey="key"
+        onChange={mockOnChange}
+        id="test"
       />,
     );
     expect(wrapper).toMatchSnapshot();

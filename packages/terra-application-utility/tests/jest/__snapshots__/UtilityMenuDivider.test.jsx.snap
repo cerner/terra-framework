@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Divider it should pass in a custom prop 1`] = `
+<div
+  className="divider"
+  id="testDivider"
+  role="separator"
+/>
+`;
+
+exports[`Divider should render a default utility menu divider 1`] = `
+<div
+  className="divider"
+  role="separator"
+/>
+`;

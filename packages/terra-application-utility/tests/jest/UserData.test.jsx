@@ -27,4 +27,9 @@ describe('UserData', () => {
     const wrapper = shallow(<UserData userName="name" userDetail="detail" userPhoto={<Image src={'test'} />} />);
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should pass in a custom prop', () => {
+    const wrapper = shallow(<UserData id="test" />);
+    expect(wrapper).toMatchSnapshot();
+  });
 });

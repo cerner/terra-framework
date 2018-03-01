@@ -1,6 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HeaderUtilityMenuItem should render a header utility menu item with a content location 1`] = `
+exports[`HeaderUtilityMenuItem should pass in a custom prop 1`] = `
+<li
+  aria-label=""
+  className="body-item"
+  id="test"
+  key="key"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="button"
+  tabIndex="0"
+>
+  <Arrange
+    align="center"
+    fill={
+      <div>
+        
+      </div>
+    }
+    fitEnd={
+      <IconChevronRight
+        className="chevron"
+        data-name="Layer 1"
+        isBidi={true}
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    }
+    fitStart={
+      <IconCheckmark
+        className="checkmark"
+        data-name="Layer 1"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    }
+  />
+</li>
+`;
+
+exports[`HeaderUtilityMenuItem should render with a content location 1`] = `
 <button
   aria-label=""
   className="footer-item"
@@ -9,7 +48,7 @@ exports[`HeaderUtilityMenuItem should render a header utility menu item with a c
 />
 `;
 
-exports[`HeaderUtilityMenuItem should render a header utility menu item with a title 1`] = `
+exports[`HeaderUtilityMenuItem should render with a title 1`] = `
 <li
   aria-label="title"
   className="body-item"
@@ -47,7 +86,7 @@ exports[`HeaderUtilityMenuItem should render a header utility menu item with a t
 </li>
 `;
 
-exports[`HeaderUtilityMenuItem should render a header utility menu item with content 1`] = `
+exports[`HeaderUtilityMenuItem should render with content 1`] = `
 <li
   aria-label=""
   className="body-item body-custom-item"
@@ -64,7 +103,7 @@ exports[`HeaderUtilityMenuItem should render a header utility menu item with con
 </li>
 `;
 
-exports[`HeaderUtilityMenuItem should render a header utility menu item with default props 1`] = `
+exports[`HeaderUtilityMenuItem should render with default props 1`] = `
 <li
   aria-label=""
   className="body-item"
@@ -102,7 +141,7 @@ exports[`HeaderUtilityMenuItem should render a header utility menu item with def
 </li>
 `;
 
-exports[`HeaderUtilityMenuItem should render a header utility menu item with hasChevron set 1`] = `
+exports[`HeaderUtilityMenuItem should render with hasChevron 1`] = `
 <li
   aria-label=""
   className="body-item"
@@ -140,7 +179,7 @@ exports[`HeaderUtilityMenuItem should render a header utility menu item with has
 </li>
 `;
 
-exports[`HeaderUtilityMenuItem should render a header utility menu item with isSelectable set 1`] = `
+exports[`HeaderUtilityMenuItem should render with isSelectable 1`] = `
 <li
   aria-label=""
   className="body-item"
@@ -178,7 +217,7 @@ exports[`HeaderUtilityMenuItem should render a header utility menu item with isS
 </li>
 `;
 
-exports[`HeaderUtilityMenuItem should render a header utility menu item with isSelected set 1`] = `
+exports[`HeaderUtilityMenuItem should render with isSelected 1`] = `
 <li
   aria-label=""
   className="body-item"

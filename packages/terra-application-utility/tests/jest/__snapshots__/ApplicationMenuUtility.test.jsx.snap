@@ -1,6 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ApplicationMenuUtility should render a menu utility with a user photo 1`] = `
+exports[`ApplicationMenuUtility it should pass in a custom prop 1`] = `
+<button
+  aria-label="Utility button"
+  className="header-utility"
+  id="test"
+  onClick={[Function]}
+  onRequestClose={[Function]}
+  role="main"
+>
+  <span
+    className="user-container"
+  >
+    <span
+      className="user-name"
+    >
+       
+    </span>
+  </span>
+  <IconChevronRight
+    className="icon"
+    data-name="Layer 1"
+    isBidi={true}
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</button>
+`;
+
+exports[`ApplicationMenuUtility should render with a user photo 1`] = `
 <button
   aria-label="Utility button"
   className="header-utility"
@@ -30,7 +58,7 @@ exports[`ApplicationMenuUtility should render a menu utility with a user photo 1
 </button>
 `;
 
-exports[`ApplicationMenuUtility should render a menu utility with a username 1`] = `
+exports[`ApplicationMenuUtility should render with a username 1`] = `
 <button
   aria-label="Utility button"
   className="header-utility"
@@ -58,7 +86,7 @@ exports[`ApplicationMenuUtility should render a menu utility with a username 1`]
 </button>
 `;
 
-exports[`ApplicationMenuUtility should render a menu utility with default props 1`] = `
+exports[`ApplicationMenuUtility should render with default props 1`] = `
 <button
   aria-label="Utility button"
   className="header-utility"
@@ -85,7 +113,7 @@ exports[`ApplicationMenuUtility should render a menu utility with default props 
 </button>
 `;
 
-exports[`ApplicationMenuUtility should render a menu utility with menu items 1`] = `
+exports[`ApplicationMenuUtility should render with menu items 1`] = `
 <button
   aria-label="Utility button"
   className="header-utility"
