@@ -140,9 +140,10 @@ class HeaderUtilityMenu extends React.Component {
   }
 
   /**
-   * 1. Has children. Navigate to the next page
-   * 2. Toggles. Trigger without closing the menu.
-   * 3. Endpoint. Close menu and trigger.
+   * Function to trigger when an item is selected.
+   * 1. Has children: navigate to the next page
+   * 2. Toggles: trigger onChange without closing the menu.
+   * 3. Endpoint: close menu and trigger onChange.
    * @param {*} event
    * @param {*} key
    */
@@ -157,12 +158,10 @@ class HeaderUtilityMenu extends React.Component {
       });
     } else {
       this.toggleIsSelected(key);
-      if (item.isSelectable) {
-        this.props.onChange(event, key);
-      } else {
+      if (item.isSelectable !== true) {
         this.props.onRequestClose();
-        this.props.onChange(event, key);
       }
+      this.props.onChange(event, key);
     }
   }
 
@@ -219,7 +218,7 @@ class HeaderUtilityMenu extends React.Component {
     const header = (
       <div className={headerClassNames}>
         <span className={leftContainerClassNames}>
-          {currentKey !== this.props.initialSelectedKey && backButton}
+          {currentKey !== Utils.KEYS.MENU && backButton}
           <span className={headerTextClassNames}>{currentItem.title }</span>
         </span>
         <MenuDivider />
@@ -227,7 +226,7 @@ class HeaderUtilityMenu extends React.Component {
     );
 
     let footer = null;
-    if (currentKey === this.props.initialSelectedKey) {
+    if (currentKey === Utils.KEYS.MENU) {
       footer = (
         <div className={footerClassNames}>
           <MenuDivider className={footerDividerClassNames} />

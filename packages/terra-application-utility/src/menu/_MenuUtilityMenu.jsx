@@ -75,7 +75,6 @@ class MenuUtilityMenu extends React.Component {
     this.getItem = this.getItem.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleRequestBack = this.handleRequestBack.bind(this);
-    this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.pop = this.pop.bind(this);
     this.push = this.push.bind(this);
     this.toggleIsSelected = this.toggleIsSelected.bind(this);
@@ -144,15 +143,12 @@ class MenuUtilityMenu extends React.Component {
     }
     return null;
   }
-  handleOnRequestClose() {
-    this.props.app.closeDisclosure();
-    this.props.onRequestClose();
-  }
 
   /**
-   * 1. Has children. Navigate to the next page
-   * 2. Toggles. Trigger without closing the menu.
-   * 3. Endpoint. Close menu and trigger.
+   * Function to trigger when an item is selected.
+   * 1. Has children: navigate to the next page
+   * 2. Toggles: trigger onChange without closing the menu.
+   * 3. Endpoint: close menu and trigger onChange.
    * @param {*} event
    * @param {*} key
    */
@@ -167,12 +163,10 @@ class MenuUtilityMenu extends React.Component {
       });
     } else {
       this.toggleIsSelected(key);
-      if (item.isSelectable) {
-        this.props.onChange(event, key);
-      } else {
-        this.handleOnRequestClose();
-        this.props.onChange(event, key);
+      if (item.isSelectable !== true) {
+        this.props.onRequestClose();
       }
+      this.props.onChange(event, key);
     }
   }
 
@@ -231,7 +225,7 @@ class MenuUtilityMenu extends React.Component {
       </button>
     );
     const closeButton = (
-      <button onClick={this.handleOnRequestClose} className={closebuttonClassNames} aria-label={'Close Button'}>
+      <button onClick={onRequestClose} className={closebuttonClassNames} aria-label={'Close Button'}>
         <IconClose className={iconCloseClassNames} />
       </button>
     );
@@ -240,7 +234,7 @@ class MenuUtilityMenu extends React.Component {
       <div className={headerClassNames}>
         <span className={headerLeftContainer}>
           <span className={headerInnerContainer}>
-            {currentKey !== this.props.initialSelectedKey && backButton}
+            {currentKey !== Utils.KEYS.MENU && backButton}
             <span className={headerTextClassNames}>{currentItem.title}</span>
           </span>
           <span className={headerRightContainer} >
@@ -252,7 +246,7 @@ class MenuUtilityMenu extends React.Component {
       );
 
     let footer = null;
-    if (currentKey === this.props.initialSelectedKey) {
+    if (currentKey === Utils.KEYS.MENU) {
       footer = (
         <div className={footerClassNames}>
           <MenuDivider className={footerDividerClassNames} />

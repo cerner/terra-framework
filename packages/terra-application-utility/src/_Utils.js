@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types';
 
+/**
+ * TODO: This utils file will be moved up to a higher order ApplicationUtils file.
+*/
 const KEY_CODES = {
   ENTER: 13,
   SPACE: 32,

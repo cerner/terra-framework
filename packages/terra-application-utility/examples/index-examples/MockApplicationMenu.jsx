@@ -8,6 +8,7 @@ import Placeholder from 'terra-application-header-layout/examples/index-examples
 import Avatar from './FallBackAvatar.svg';
 import { ApplicationMenuUtility, UserData } from '../../src/ApplicationUtility';
 import MockConfig from './MockConfig';
+import UtilityMenuWrapper from './_UtilityMenuWrapper';
 
 const propTypes = {
   app: AppDelegate.propType,
@@ -31,7 +32,7 @@ class MockApplicationMenu extends React.Component {
         preferredType: 'modal',
         size: 'small',
         content: {
-          component: utility,
+          component: <UtilityMenuWrapper>{utility}</UtilityMenuWrapper>,
           key: 'application-menu-utility',
         },
       });
