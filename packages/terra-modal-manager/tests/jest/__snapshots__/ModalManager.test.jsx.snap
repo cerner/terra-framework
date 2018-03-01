@@ -94,82 +94,84 @@ exports[`ModalManger should disclose content in Modal 1`] = `
                       ]
                     }
                   >
-                    <div
+                    <TransitionGroup
+                      childFactory={[Function]}
                       className="slide-group"
+                      component="div"
+                      key="DISCLOSE_KEY"
                     >
-                      <TransitionGroup
-                        childFactory={[Function]}
-                        component="div"
-                        key="DISCLOSE_KEY"
+                      <div
+                        className="slide-group"
                       >
-                        <div>
-                          <CSSTransition
-                            classNames={
-                              Object {
-                                "enter": "enter",
-                                "enterActive": "enter-active",
-                                "exit": "exit",
-                                "exitActive": "exit-active",
-                              }
+                        <CSSTransition
+                          classNames={
+                            Object {
+                              "enter": "enter",
+                              "enterActive": "enter-active",
+                              "exit": "exit",
+                              "exitActive": "exit-active",
                             }
+                          }
+                          enter={true}
+                          exit={true}
+                          id="shmmoop"
+                          in={true}
+                          key=".$DISCLOSE_KEY"
+                          onEntered={[Function]}
+                          onExit={[Function]}
+                          onExited={[Function]}
+                          timeout={300}
+                        >
+                          <Transition
+                            appear={false}
                             enter={true}
                             exit={true}
+                            id="shmmoop"
                             in={true}
-                            key=".$DISCLOSE_KEY"
+                            mountOnEnter={false}
+                            onEnter={[Function]}
                             onEntered={[Function]}
+                            onEntering={[Function]}
                             onExit={[Function]}
                             onExited={[Function]}
+                            onExiting={[Function]}
                             timeout={300}
+                            unmountOnExit={false}
                           >
-                            <Transition
-                              appear={false}
-                              enter={true}
-                              exit={true}
-                              in={true}
-                              mountOnEnter={false}
-                              onEnter={[Function]}
-                              onEntered={[Function]}
-                              onEntering={[Function]}
-                              onExit={[Function]}
-                              onExited={[Function]}
-                              onExiting={[Function]}
-                              timeout={300}
-                              unmountOnExit={false}
+                            <Slide
+                              id="shmmoop"
+                              isHidden={false}
                             >
-                              <Slide
-                                isHidden={false}
+                              <div
+                                aria-hidden={null}
+                                className="slide"
                               >
                                 <div
-                                  aria-hidden={null}
-                                  className="slide"
-                                >
-                                  <div
-                                    className="slide-shadow"
-                                  />
-                                  <TestContainer
-                                    app={
-                                      AppDelegateInstance {
-                                        "closeDisclosure": [Function],
-                                        "disclose": [Function],
-                                        "dismiss": [Function],
-                                        "maximize": [Function],
-                                        "registerDismissCheck": [Function],
-                                        "requestFocus": [Function],
-                                      }
+                                  className="slide-shadow"
+                                />
+                                <TestContainer
+                                  app={
+                                    AppDelegateInstance {
+                                      "closeDisclosure": [Function],
+                                      "disclose": [Function],
+                                      "dismiss": [Function],
+                                      "maximize": [Function],
+                                      "registerDismissCheck": [Function],
+                                      "requestFocus": [Function],
                                     }
-                                    key="DISCLOSE_KEY"
-                                  >
-                                    <div>
-                                      Hello World
-                                    </div>
-                                  </TestContainer>
-                                </div>
-                              </Slide>
-                            </Transition>
-                          </CSSTransition>
-                        </div>
-                      </TransitionGroup>
-                    </div>
+                                  }
+                                  key="DISCLOSE_KEY"
+                                >
+                                  <div>
+                                    Hello World
+                                  </div>
+                                </TestContainer>
+                              </div>
+                            </Slide>
+                          </Transition>
+                        </CSSTransition>
+                      </div>
+                    </TransitionGroup>
                   </SlideGroup>
                 </div>
               </div>

@@ -3,6 +3,11 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* withModalManager higher-order component generator
+
+### Changed
+* Updated snapshots tests to match new structure of slide group.
 
 2.0.0 - (February 21, 2018)
 ------------------
