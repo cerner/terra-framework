@@ -26,7 +26,7 @@ const propTypes = {
   /**
    * The location of this menu item.
    */
-  contentLocation: PropTypes.oneOf([Utils.LOCATIONS.BODY, Utils.LOCATIONS.FOOTER]).isRequired,
+  contentLocation: PropTypes.oneOf([Utils.LOCATIONS.BODY, Utils.LOCATIONS.FOOTER]),
   /**
    * Whether this item is selected.
    */
@@ -38,7 +38,7 @@ const propTypes = {
   /**
    * Whether or not the menu item should display a disclosure indicator.
    */
-  hasChevron: PropTypes.bool.isRequired,
+  hasChevron: PropTypes.bool,
   /**
    * Function to trigger when this item is selected.
    */

@@ -5,6 +5,7 @@ import 'terra-base/lib/baseStyles';
 import Avatar from '../../index-examples/FallBackAvatar.svg';
 import { ApplicationMenuUtility, UserData } from '../../../src/ApplicationUtility';
 import MockConfig from '../../index-examples/MockConfig';
+import UtilityMenuWrapper from './_DefaultUtilityMenuWrapper';
 
 const propTypes = {
   app: AppDelegate.propType,
@@ -15,7 +16,6 @@ class DefaultApplicationMenuUtility extends React.Component {
     super(props);
     this.onDiscloseUtilty = this.onDiscloseUtilty.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
-    this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.state = {
       utilityComponent: false,
       selectedKey: null,
@@ -28,7 +28,7 @@ class DefaultApplicationMenuUtility extends React.Component {
         preferredType: 'modal',
         size: 'small',
         content: {
-          component: utility,
+          component: <UtilityMenuWrapper>{utility}</UtilityMenuWrapper>,
           key: 'application-menu-utility',
         },
       });
@@ -37,10 +37,6 @@ class DefaultApplicationMenuUtility extends React.Component {
 
   handleOnChange(event, key) {
     this.setState({ selectedKey: key });
-  }
-
-  handleOnRequestClose() {
-    this.props.app.closeDisclosure();
   }
 
   render() {
@@ -57,7 +53,6 @@ class DefaultApplicationMenuUtility extends React.Component {
           menuItems={MockConfig(userData)}
           onChange={this.handleOnChange}
           onDisclose={this.onDiscloseUtilty}
-          onRequestClose={this.handleOnRequestClose}
           userName={userName}
           userPhoto={image}
         />

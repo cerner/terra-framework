@@ -28,13 +28,9 @@ const propTypes = {
    */
   onDisclose: PropTypes.func.isRequired,
   /**
-   * The function that closes the menu.
-   */
-  onRequestClose: PropTypes.func.isRequired,
-  /**
    * The name to be displayed next to the user photo.
    */
-  userName: PropTypes.string.isRequired,
+  userName: PropTypes.string,
   /**
    * The image associated with the user.
    */
@@ -42,6 +38,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  menuItems: [],
   userName: '',
   userPhoto: undefined,
 };
@@ -67,7 +64,6 @@ class ApplicationMenuUtility extends React.Component {
         initialSelectedKey={Utils.KEYS.MENU}
         menuItems={this.props.menuItems}
         onChange={this.props.onChange}
-        onRequestClose={this.props.onRequestClose}
         data-application-menu-utility-menu
       />
     );
@@ -79,7 +75,6 @@ class ApplicationMenuUtility extends React.Component {
       menuItems,
       onChange,
       onDisclose,
-      onRequestClose,
       userName,
       userPhoto,
       ...customProps
@@ -90,7 +85,10 @@ class ApplicationMenuUtility extends React.Component {
     const userPhotoClassNames = cx('user-photo');
     const userNameClassNames = cx('user-name');
     const iconClassNames = cx('icon');
-    const photo = React.cloneElement(userPhoto, { className: userPhotoClassNames });
+    let photo = null;
+    if (userPhoto) {
+      photo = React.cloneElement(userPhoto, { className: userPhotoClassNames });
+    }
     return (
       <button {...customProps} className={utilityClassNames} onClick={this.handleOnClick} role={'main'} aria-label={'Utility button'}>
         <span className={userContainerClassNames}>

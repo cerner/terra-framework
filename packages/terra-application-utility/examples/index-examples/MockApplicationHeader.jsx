@@ -27,7 +27,7 @@ class MockApplicationHeader extends React.Component {
 
   onDiscloseUtility(utility) {
     if (utility) {
-      this.setState({ utilityComponent: utility });
+      this.setState({ utilityComponent: React.cloneElement(utility, { onRequestClose: this.handleRequestClose }) });
     }
   }
 
@@ -78,7 +78,6 @@ class MockApplicationHeader extends React.Component {
         menuItems={MockConfig(userData)}
         onChange={this.handleOnChange}
         onDisclose={this.onDiscloseUtility}
-        onRequestClose={this.handleRequestClose}
         userName={userName}
         userPhoto={image}
         data-application-header-utility

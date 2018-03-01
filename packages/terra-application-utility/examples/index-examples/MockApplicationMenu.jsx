@@ -19,7 +19,6 @@ class MockApplicationMenu extends React.Component {
     super(props);
     this.onDiscloseUtilty = this.onDiscloseUtilty.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
-    this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.state = {
       utilityComponent: false,
       selectedKey: null,
@@ -43,10 +42,6 @@ class MockApplicationMenu extends React.Component {
     this.setState({ selectedKey: key });
   }
 
-  handleOnRequestClose() {
-    this.props.app.closeDisclosure();
-  }
-
   render() {
     const image = <Image src={Avatar} />;
     const userDetail = 'User Detail';
@@ -58,7 +53,6 @@ class MockApplicationMenu extends React.Component {
         menuItems={MockConfig(userData)}
         onChange={this.handleOnChange}
         onDisclose={this.onDiscloseUtilty}
-        onRequestClose={this.handleOnRequestClose}
         userName={userName}
         userPhoto={image}
       />

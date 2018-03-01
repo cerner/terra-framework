@@ -1,19 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MenuUtilityMenu should render a menu utility menu 1`] = `
+exports[`MenuUtilityMenu should render a menu utility menu with default props 1`] = `
 <ContentContainer
   aria-label="Utility menu"
   className="utility-menu"
-  fill={true}
-  footer={
-    <div
-      className="footer"
-    >
-      <MenuDivider
-        className="footer-divider"
-      />
-    </div>
-  }
+  fill={false}
+  footer={null}
   header={
     <div
       className="header"
@@ -24,6 +16,139 @@ exports[`MenuUtilityMenu should render a menu utility menu 1`] = `
         <span
           className="inner-container"
         >
+          <button
+            aria-label="Back Button"
+            className="back-button"
+            onClick={[Function]}
+          >
+            <IconLeft
+              className="icon-left"
+              data-name="Layer 1"
+              isBidi={true}
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            />
+          </button>
+          <span
+            className="header-text"
+          >
+            title
+          </span>
+        </span>
+        <span
+          className="right-container"
+        >
+          <button
+            aria-label="Close Button"
+            className="close-button"
+            onClick={undefined}
+          >
+            <IconClose
+              className="icon-close"
+              data-name="Layer 1"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            />
+          </button>
+        </span>
+      </span>
+      <MenuDivider />
+    </div>
+  }
+  onDisclose={[Function]}
+  role="navigation"
+/>
+`;
+
+exports[`MenuUtilityMenu should render a menu utility menu with default props 2`] = `
+<ContentContainer
+  aria-label="Utility menu"
+  className="utility-menu"
+  fill={false}
+  footer={null}
+  header={
+    <div
+      className="header"
+    >
+      <span
+        className="left-container"
+      >
+        <span
+          className="inner-container"
+        >
+          <button
+            aria-label="Back Button"
+            className="back-button"
+            onClick={[Function]}
+          >
+            <IconLeft
+              className="icon-left"
+              data-name="Layer 1"
+              isBidi={true}
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            />
+          </button>
+          <span
+            className="header-text"
+          >
+            title
+          </span>
+        </span>
+        <span
+          className="right-container"
+        >
+          <button
+            aria-label="Close Button"
+            className="close-button"
+            onClick={undefined}
+          >
+            <IconClose
+              className="icon-close"
+              data-name="Layer 1"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            />
+          </button>
+        </span>
+      </span>
+      <MenuDivider />
+    </div>
+  }
+  onDisclose={[Function]}
+  role="navigation"
+/>
+`;
+
+exports[`MenuUtilityMenu should render a menu utility menu with onRequestClose set 1`] = `
+<ContentContainer
+  aria-label="Utility menu"
+  className="utility-menu"
+  fill={false}
+  footer={null}
+  header={
+    <div
+      className="header"
+    >
+      <span
+        className="left-container"
+      >
+        <span
+          className="inner-container"
+        >
+          <button
+            aria-label="Back Button"
+            className="back-button"
+            onClick={[Function]}
+          >
+            <IconLeft
+              className="icon-left"
+              data-name="Layer 1"
+              isBidi={true}
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            />
+          </button>
           <span
             className="header-text"
           >

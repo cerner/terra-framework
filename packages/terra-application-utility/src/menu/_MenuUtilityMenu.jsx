@@ -37,7 +37,7 @@ const propTypes = {
   /**
    * The function that closes the menu.
    */
-  onRequestClose: PropTypes.func.isRequired,
+  onRequestClose: PropTypes.func,
 };
 
 const defaultProps = {
@@ -260,7 +260,7 @@ class MenuUtilityMenu extends React.Component {
         {...customProps}
         header={header}
         footer={footer}
-        fill
+        fill={isHeightBounded}
         className={MenuClassNames}
         role={'navigation'}
         aria-label={'Utility menu'}

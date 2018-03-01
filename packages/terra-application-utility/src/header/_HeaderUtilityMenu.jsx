@@ -23,7 +23,7 @@ const propTypes = {
   /**
    * The config file containing the menu items to be rendered.
    */
-  menuItems: PropTypes.arrayOf((Utils.itemShape)),
+  menuItems: PropTypes.arrayOf((Utils.itemShape)).isRequired,
   /**
    * The function to trigger when a menu item is selected.
    */
@@ -31,7 +31,7 @@ const propTypes = {
   /**
    * The function that closes the menu.
    */
-  onRequestClose: PropTypes.func.isRequired,
+  onRequestClose: PropTypes.func,
 };
 
 const defaultProps = {

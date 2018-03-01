@@ -7,11 +7,35 @@ describe('HeaderUtilityMenu', () => {
   const mockOnRequestClose = jest.fn();
   const config = [{ key: 'key', title: 'title', contentLocation: 'footer', isSelected: false, childKeys: [] }];
 
-  it('should render a header utility menu', () => {
+  it('should render a header utility menu with default props', () => {
     const wrapper = shallow(
       <HeaderUtilityMenu
         initialSelectedKey="key"
-        isHeightBounded={false}
+        menuItems={config}
+        onChange={mockOnChange}
+        onDisclose={mockOnDisclose}
+      />,
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render a header utility menu with isHeightBounded set', () => {
+    const wrapper = shallow(
+      <HeaderUtilityMenu
+        initialSelectedKey="key"
+        isHeightBounded
+        menuItems={config}
+        onChange={mockOnChange}
+        onDisclose={mockOnDisclose}
+      />,
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render a header utility menu with onRequestClose set', () => {
+    const wrapper = shallow(
+      <HeaderUtilityMenu
+        initialSelectedKey="key"
         menuItems={config}
         onChange={mockOnChange}
         onDisclose={mockOnDisclose}

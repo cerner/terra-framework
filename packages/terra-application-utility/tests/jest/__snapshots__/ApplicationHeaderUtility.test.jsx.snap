@@ -1,10 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ApplicationUtility should render a utility with menu items 1`] = `
+exports[`ApplicationHeaderUtility should render a header utility with a user photo 1`] = `
 <button
   aria-label="Utility button"
   className="header-utility"
   onClick={[Function]}
+  onRequestClose={[Function]}
   role="main"
 >
   <Image
@@ -13,7 +14,76 @@ exports[`ApplicationUtility should render a utility with menu items 1`] = `
   <span
     className="user-name"
   >
+     
+  </span>
+  <IconChevronDown
+    className="icon"
+    data-name="Layer 1"
+    isBidi={true}
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</button>
+`;
+
+exports[`ApplicationHeaderUtility should render a header utility with a username 1`] = `
+<button
+  aria-label="Utility button"
+  className="header-utility"
+  onClick={[Function]}
+  onRequestClose={[Function]}
+  role="main"
+>
+  <span
+    className="user-name"
+  >
     name
+     
+  </span>
+  <IconChevronDown
+    className="icon"
+    data-name="Layer 1"
+    isBidi={true}
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</button>
+`;
+
+exports[`ApplicationHeaderUtility should render a header utility with default props 1`] = `
+<button
+  aria-label="Utility button"
+  className="header-utility"
+  onClick={[Function]}
+  onRequestClose={[Function]}
+  role="main"
+>
+  <span
+    className="user-name"
+  >
+     
+  </span>
+  <IconChevronDown
+    className="icon"
+    data-name="Layer 1"
+    isBidi={true}
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</button>
+`;
+
+exports[`ApplicationHeaderUtility should render a header utility with menu items 1`] = `
+<button
+  aria-label="Utility button"
+  className="header-utility"
+  onClick={[Function]}
+  onRequestClose={[Function]}
+  role="main"
+>
+  <span
+    className="user-name"
+  >
      
   </span>
   <IconChevronDown
