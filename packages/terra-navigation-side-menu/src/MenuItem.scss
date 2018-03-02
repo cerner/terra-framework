@@ -21,7 +21,7 @@
 
     &:hover::before,
     &.is-hovered::before {
-      background-color:var(--terra-navigation-side-menu-item-hover-background-color,  #f4f4f4);
+      background-color:var(--terra-navigation-side-menu-item-hover-background-color,  #f5fafe);
       content: '';
       height: 100%;
       left: 0;
