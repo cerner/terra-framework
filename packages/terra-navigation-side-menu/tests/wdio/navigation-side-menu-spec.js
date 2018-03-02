@@ -29,7 +29,7 @@ describe('Hover navigation side menu display', () => {
 
   Terra.should.matchScreenshot('#test-menu', { selector: '#test-menu' });
   Terra.should.themeEachCustomProperty('#test-menu', {
-    '--terra-navigation-side-menu-item-background-hover': 'linear-gradient(-90deg, pink, blue)',
+    '--terra-navigation-side-menu-item-background-color': 'pink',
   });
 });
 

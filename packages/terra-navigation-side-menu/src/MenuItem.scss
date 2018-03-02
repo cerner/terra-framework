@@ -1,9 +1,14 @@
 :local {
   .menu-item {
     align-items: stretch;
+    border-bottom: var(--terra-navigation-side-menu-item-border-bottom, none);
+    border-left: var(--terra-navigation-side-menu-item-border-left, none);
+    border-right: var(--terra-navigation-side-menu-item-border-right, none);
+    border-top: var(--terra-navigation-side-menu-item-border-top, none);
     color: var(--terra-navigation-side-menu-item-color, #1c1f21);
     display: flex;
     font-size: var(--terra-navigation-side-menu-item-size, 1.071rem);
+    line-height: var(--terra-navigation-side-menu-item-line-height, 1.42857);
     outline: none;
     padding-bottom: var(--terra-navigation-side-menu-item-padding-bottom, 0.8225rem);
     padding-left: var(--terra-navigation-side-menu-item-padding-left, 1.2143rem);
@@ -16,7 +21,7 @@
 
     &:hover::before,
     &.is-hovered::before {
-      background: var(--terra-navigation-side-menu-item-background-hover, linear-gradient(-90deg, #fff, #f1f1f2));
+      background-color:var(--terra-navigation-side-menu-item-hover-background-color,  #f4f4f4);
       content: '';
       height: 100%;
       left: 0;
@@ -32,7 +37,7 @@
       padding-left: var(--terra-navigation-side-menu-item-selected-padding-left, 0.7143rem);
       
       &::before {
-        background-image: var(--terra-navigation-side-menu-item-selected-background-image, linear-gradient(-270deg, #fff, #e8e9ea));
+        background-color:var(--terra-navigation-side-menu-item-selected-background-color,  #f4f4f4);
         content: '';
         height: 100%;
         left: 0;

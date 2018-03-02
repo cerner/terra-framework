@@ -1,5 +1,6 @@
 :local {
   .menu-list {
+    background-color: var(--terra-navigation-side-menu-list-background-color, transparent);
     padding-bottom: var(--terra-navigation-side-menu-list-padding-bottom, 0.125rem);
     padding-top: var(--terra-navigation-side-menu-list-padding-top, 0.125rem);
   }
