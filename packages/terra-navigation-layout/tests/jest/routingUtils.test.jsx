@@ -348,6 +348,65 @@ describe('routingUtils', () => {
       expect(smallResult[2].path).toBe('/a');
       expect(smallResult[2].parentPaths).toEqual([]);
     });
+
+    it('should remove components from parentPaths when routing stack navigation is rejected', () => {
+      const testConfig = {
+        '/a/b/': {
+          path: '/a/b',
+          component: {
+            tiny: {
+              componentClass: 'BComponentClass',
+            },
+          },
+        },
+        '/a/b/c/d/e': {
+          path: '/a/b/c/d/e',
+          component: {
+            small: {
+              componentClass: 'EComponentClass',
+            },
+          },
+        },
+        '/a': {
+          path: '/a',
+          component: {
+            default: {
+              componentClass: 'AComponentClass',
+              refuseRoutingStackNavigation: true,
+            },
+            small: {
+              componentClass: 'AComponentClass',
+            },
+          },
+        },
+        '/a/b/c': {
+          path: '/a/b/c',
+          component: {
+            default: {
+              componentClass: 'CComponentClass',
+            },
+          },
+        },
+      };
+
+      const tinyResult = reduceRouteConfig(testConfig, 'tiny');
+      expect(tinyResult.length).toBe(3);
+      expect(tinyResult[0].path).toBe('/a/b/c');
+      expect(tinyResult[0].parentPaths).toEqual(['/a/b']);
+      expect(tinyResult[1].path).toBe('/a/b');
+      expect(tinyResult[1].parentPaths).toEqual([]);
+      expect(tinyResult[2].path).toBe('/a');
+      expect(tinyResult[2].parentPaths).toEqual([]);
+
+      const smallResult = reduceRouteConfig(testConfig, 'small');
+      expect(smallResult.length).toBe(3);
+      expect(smallResult[0].path).toBe('/a/b/c/d/e');
+      expect(smallResult[0].parentPaths).toEqual(['/a', '/a/b/c']);
+      expect(smallResult[1].path).toBe('/a/b/c');
+      expect(smallResult[1].parentPaths).toEqual(['/a']);
+      expect(smallResult[2].path).toBe('/a');
+      expect(smallResult[2].parentPaths).toEqual([]);
+    });
   });
 
   describe('validateMatchExists', () => {
