@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UtilityMenu it should pass in a custom prop 1`] = `
+<UtilityMenu
+  id="test"
+  menuItems={
+    Array [
+      Object {
+        "childKeys": Array [],
+        "contentLocation": "footer",
+        "isSelected": false,
+        "key": "key",
+        "title": "title",
+      },
+    ]
+  }
+  onChange={[Function]}
+  onDisclose={[Function]}
+  selectedKey="key"
+  variant="header"
+/>
+`;
+
+exports[`UtilityMenu should render with default props 1`] = `
+<UtilityMenu
+  menuItems={
+    Array [
+      Object {
+        "childKeys": Array [],
+        "contentLocation": "footer",
+        "isSelected": false,
+        "key": "key",
+        "title": "title",
+      },
+    ]
+  }
+  onChange={[Function]}
+  onDisclose={[Function]}
+  selectedKey="key"
+  variant="header"
+/>
+`;
+
+exports[`UtilityMenu should render with isHeightBounded 1`] = `
+<UtilityMenu
+  isHeightBounded={true}
+  menuItems={
+    Array [
+      Object {
+        "childKeys": Array [],
+        "contentLocation": "footer",
+        "isSelected": false,
+        "key": "key",
+        "title": "title",
+      },
+    ]
+  }
+  onChange={[Function]}
+  onDisclose={[Function]}
+  selectedKey="key"
+  variant="header"
+/>
+`;
+
+exports[`UtilityMenu should render with onRequestClose set 1`] = `
+<UtilityMenu
+  menuItems={
+    Array [
+      Object {
+        "childKeys": Array [],
+        "contentLocation": "footer",
+        "isSelected": false,
+        "key": "key",
+        "title": "title",
+      },
+    ]
+  }
+  onChange={[Function]}
+  onDisclose={[Function]}
+  onRequestClose={[Function]}
+  selectedKey="key"
+  variant="header"
+/>
+`;

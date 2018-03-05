@@ -6,8 +6,8 @@ describe('ApplicationMenuUtility', () => {
   const mockOnChange = jest.fn();
   const mockOnDisclose = jest.fn();
   const mockOnRequestClose = jest.fn();
-  const image = <Image />;
-  const name = 'name';
+  const accessory = <Image />;
+  const title = 'name';
 
   it('should render with default props', () => {
     const wrapper = shallow(
@@ -21,27 +21,27 @@ describe('ApplicationMenuUtility', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render with a username', () => {
+  it('should render with a title', () => {
     const wrapper = shallow(
       <ApplicationMenuUtility
         menuItems={[]}
         onChange={mockOnChange}
         onDisclose={mockOnDisclose}
         onRequestClose={mockOnRequestClose}
-        userName={name}
+        title={title}
       />,
     );
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render with a user photo', () => {
+  it('should render with an accessory', () => {
     const wrapper = shallow(
       <ApplicationMenuUtility
         menuItems={[]}
         onChange={mockOnChange}
         onDisclose={mockOnDisclose}
         onRequestClose={mockOnRequestClose}
-        userPhoto={image}
+        accessory={accessory}
       />,
     );
     expect(wrapper).toMatchSnapshot();

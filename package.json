@@ -121,5 +121,8 @@
     "webpack": "^3.6.0",
     "webpack-dev-server": "2.7.1",
     "xfc": "^1.2.1"
+  },
+  "dependencies": {
+    "npm": "^5.7.1"
   }
 }

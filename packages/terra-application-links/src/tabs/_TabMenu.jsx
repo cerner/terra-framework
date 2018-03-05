@@ -123,7 +123,6 @@ class TabMenu extends React.Component {
     const { intl } = this.context;
     const moreText = intl.formatMessage({ id: 'Terra.application.tabs.more' });
     routes.push(createRouteDisplay(props, 'menu-display-more', undefined, moreText, false));
-
     return routes;
   }
 

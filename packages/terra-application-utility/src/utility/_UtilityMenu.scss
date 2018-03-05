@@ -1,0 +1,129 @@
+:local {
+  .header-utility-menu {
+    font-family: inherit;
+    width: 100%;
+    /* stylelint-disable selector-max-compound-selectors*/
+    .header {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      font-size: var(--terra-application-header-utility-menu-header-font-size, 1rem);
+      font-weight: var(--terra-application-header-utility-menu-header-font-weight, normal);
+      height: var(--terra-application-header-utility-menu-header-height, 2rem);
+
+      /* stylelint-disable max-nesting-depth */
+      .content-container {
+        display: flex;
+        justify-content: space-between;
+
+        .left-content-container {
+          align-items: center;
+          display: flex;
+          justify-content: flex-start;
+
+          .initial-page-header-text {
+            display: inline-block;
+            margin-left: var(--terra-application-header-utility-menu-initial-page-header-text-margin-left, 0.7143rem);
+          }
+
+          .noninitial-page-header-text {
+            margin-left: var(--terra-application-header-utility-menu-noninitial-page-header-text-margin-left, 0);
+          }
+
+          .icon-left {
+            flex-shrink: 0;
+            width: var(--terra-application-header-utility-menu-chevron-width, 0.7143rem);
+          }
+        }
+      }
+    }
+
+    .right-content-container {
+      display: flex;
+      justify-content: flex-end;
+
+      .icon-close {
+        flex-shrink: 0;
+        width: var(--terra-application-header-utility-menu-page-chevron-width, 1rem);
+      }
+      //   /* stylelint-enable max-nesting-depth */
+    }
+
+    .body {
+      list-style-type: none;
+      margin: 0;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .footer {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      /* stylelint-enable selector-max-compound-selectors*/
+    }
+  }
+
+  .menu-utility-menu {
+    font-family: inherit;
+    width: 100%;
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      font-size: var(--terra-application-menu-utility-menu-header-font-size, 1rem);
+      font-weight: var(--terra-application-menu-utility-menu-header-font-weight, normal);
+      height: var(--terra-application-menu-utility-menu-header-height, 2rem);
+
+      /* stylelint-disable selector-max-compound-selectors*/
+      .content-container {
+        display: flex;
+        justify-content: space-between;
+
+        .left-content-container {
+          align-items: center;
+          display: flex;
+          justify-content: flex-start;
+
+          .initial-page-header-text {
+            margin-left: var(--terra-application-menu-utility-menu-initial-page-header-text-margin-left, 0.7143rem);
+          }
+
+          .noninitial-page-header-text {
+            margin-left: var(--terra-application-header-utility-menu-noninitial-page-header-text-margin-left, 0);
+          }
+
+          .icon-left {
+            flex-shrink: 0;
+            width: var(--terra-application-menu-utility-menu-chevron-width, 0.7143rem);
+          }
+        }
+      }
+
+      .right-content-container {
+        display: flex;
+        justify-content: flex-end;
+
+        .icon-close {
+          flex-shrink: 0;
+          width: var(--terra-application-menu-utility-menu-page-chevron-width, 1rem);
+        }
+      }
+    }
+
+    .body {
+      list-style-type: none;
+      margin: 0;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .footer {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      /* stylelint-enable selector-max-compound-selectors*/
+    }
+  }
+}

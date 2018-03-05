@@ -1,21 +1,48 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import ModalManager from 'terra-modal-manager';
-import ApplicationMenuUtility from './private/_DefaultApplicationMenuUtility';
+import Image from 'terra-image';
+import MockConfig from '../index-examples/MockConfig';
+import FallbackAvatar from '../index-examples/FallBackAvatar.svg';
+import { ApplicationMenuUtility, UtilityUtils } from '../../src/ApplicationUtility';
 
+class DefaultApplicationMenuUtility extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onDiscloseUtility = this.onDiscloseUtility.bind(this);
+    this.handleOnChange = this.handleOnChange.bind(this);
+    this.state = {
+      utilityComponent: false,
+      selectedKey: null,
+    };
+  }
 
-const propTypes = {
-  behavior: PropTypes.string,
-};
+  onDiscloseUtility(utility) {
+    if (utility) {
+      this.setState({ utilityComponent: !this.state.utilityComponent });
+    }
+  }
 
-const MockModalManager = () => (
-  <div >
-    <ModalManager>
-      <ApplicationMenuUtility />
-    </ModalManager>
-  </div>
-);
+  handleOnChange(event, key) {
+    this.setState({ selectedKey: key });
+  }
 
-MockModalManager.propTypes = propTypes;
+  render() {
+    const accessory = <Image src={FallbackAvatar} />;
+    const title = 'User Name';
 
-export default MockModalManager;
+    return (
+      <div style={{ height: '60px', width: '300px', position: 'relative' }}>
+        <ApplicationMenuUtility
+          id="default"
+          menuItems={MockConfig(accessory)}
+          onChange={this.handleOnChange}
+          onDisclose={this.onDiscloseUtility}
+          title={title}
+          accessory={accessory}
+          variant={UtilityUtils.VARIANTS.MENU}
+        />
+      </div>
+    );
+  }
+}
+
+export default DefaultApplicationMenuUtility;

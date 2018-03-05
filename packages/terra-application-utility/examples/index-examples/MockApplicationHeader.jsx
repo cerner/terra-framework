@@ -8,7 +8,7 @@ import LogoExample from 'terra-application-header-layout/examples/index-examples
 import NavigationExample from 'terra-application-header-layout/examples/index-examples/NavigationExample';
 import ToggleExample from 'terra-application-header-layout/examples/index-examples/ToggleExample';
 import Avatar from './FallBackAvatar.svg';
-import { ApplicationHeaderUtility, UserData } from '../../src/ApplicationUtility';
+import { ApplicationHeaderUtility } from '../../src/ApplicationUtility';
 import MockConfig from './MockConfig';
 
 class MockApplicationHeader extends React.Component {
@@ -69,17 +69,15 @@ class MockApplicationHeader extends React.Component {
     }
 
     const image = <Image src={Avatar} />;
-    const userDetail = 'User Detail';
     const userName = 'User Name';
-    const userData = <UserData userDetail={userDetail} userName={userName} userPhoto={image} />;
     const utilities = (
       <ApplicationHeaderUtility
         style={{ backgroundColor: '#2481ca' }}
-        menuItems={MockConfig(userData)}
+        menuItems={MockConfig(image)}
         onChange={this.handleOnChange}
         onDisclose={this.onDiscloseUtility}
-        userName={userName}
-        userPhoto={image}
+        title={userName}
+        accessory={image}
         data-application-header-utility
       />
     );

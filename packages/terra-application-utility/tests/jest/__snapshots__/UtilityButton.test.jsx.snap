@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UtilityButton it should pass in a custom prop 1`] = `
+<button
+  aria-label="Utility Button"
+  className="header-utility-button"
+  id="test"
+  onClick={[Function]}
+  onRequestClose={[Function]}
+>
+  <IconChevronDown
+    className="icon"
+    data-name="Layer 1"
+    isBidi={true}
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</button>
+`;
+
+exports[`UtilityButton should render with a title 1`] = `
+<button
+  aria-label="Utility Button"
+  className="header-utility-button"
+  onClick={[Function]}
+  onRequestClose={[Function]}
+>
+  <span
+    className="title"
+  >
+    name
+  </span>
+  <IconChevronDown
+    className="icon"
+    data-name="Layer 1"
+    isBidi={true}
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</button>
+`;
+
+exports[`UtilityButton should render with an accessory 1`] = `
+<button
+  aria-label="Utility Button"
+  className="header-utility-button"
+  onClick={[Function]}
+  onRequestClose={[Function]}
+>
+  <Image
+    className="accessory"
+  />
+  <IconChevronDown
+    className="icon"
+    data-name="Layer 1"
+    isBidi={true}
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</button>
+`;
+
+exports[`UtilityButton should render with default props 1`] = `
+<button
+  aria-label="Utility Button"
+  className="header-utility-button"
+  onClick={[Function]}
+  onRequestClose={[Function]}
+>
+  <IconChevronDown
+    className="icon"
+    data-name="Layer 1"
+    isBidi={true}
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</button>
+`;
+
+exports[`UtilityButton should render with menu items 1`] = `
+<button
+  aria-label="Utility Button"
+  className="header-utility-button"
+  onClick={[Function]}
+  onRequestClose={[Function]}
+>
+  <IconChevronDown
+    className="icon"
+    data-name="Layer 1"
+    isBidi={true}
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</button>
+`;

@@ -1,5 +1,5 @@
 import React from 'react';
-import Divider from '../../src/_UtilityMenuDivider';
+import Divider from '../../src/utility/_UtilityMenuDivider';
 
 describe('Divider', () => {
   const defaultRender = <Divider />;

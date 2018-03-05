@@ -8,7 +8,7 @@ import ReadMe from '../docs/README.md';
 import { version } from '../package.json';
 
 // Component Source
-import ApplicationHeaderUtilitySrc from '!raw-loader!../src/header/ApplicationHeaderUtility.jsx';
+import ApplicationHeaderUtilitySrc from '!raw-loader!../src/ApplicationHeaderUtility.jsx';
 
 // Example File
 import MockApplicationHeader from './index-examples/MockApplicationHeader';
