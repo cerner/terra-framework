@@ -4,6 +4,20 @@ Changelog
 Unreleased
 ----------
 
+2.0.0 - (February 21, 2018)
+------------------
+### Changed
+* Updated to use React 16
+
+1.11.0 - (February 15, 2018)
+------------------
+### Added
+* Added registerDismissLock
+
+### Changed
+* Updated README to reflect new API
+* Updated AppDelegate PropType to use custom validator
+
 1.10.0 - (January 23, 2018)
 ------------------
 * First release in new repository

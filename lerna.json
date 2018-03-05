@@ -5,9 +5,7 @@
     "publish": {
       "ignore": [
         "DEPENDENCIES.md",
-        "terra-application-name",
-        "terra-application-utility",
-        "terra-embedded-component"
+        "terra-application-utility"
       ]
     }
   },

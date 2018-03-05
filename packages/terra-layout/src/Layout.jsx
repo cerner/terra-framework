@@ -30,19 +30,17 @@ const propTypes = {
 
 class Layout extends React.Component {
   static stateForProps(props, currentState) {
-    const isFixedMenu = currentState.size === 'large' || currentState.size === 'huge';
-    const isHoverMenu = currentState.size === 'medium';
     const isToggleMenu = currentState.size === 'tiny' || currentState.size === 'small';
+    const isFixedMenu = !isToggleMenu;
 
     const menuIsPresent = !!props.menu;
 
     return Object.assign({}, currentState || {}, {
-      isHoverMenu,
       isFixedMenu,
       isToggleMenu,
       menuIsPresent,
       menuIsOpen: menuIsPresent && (currentState.menuIsOpen || isFixedMenu),
-      menuIsPinned: menuIsPresent && currentState.menuIsPinned && isHoverMenu,
+      menuIsPinned: menuIsPresent && currentState.menuIsPinned,
     });
   }
 
@@ -116,7 +114,7 @@ class Layout extends React.Component {
 
   renderMenu() {
     const { menu } = this.props;
-    const { size, menuIsOpen, menuIsPinned, isToggleMenu, isHoverMenu, menuIsPresent } = this.state;
+    const { size, menuIsOpen, menuIsPinned, isToggleMenu, menuIsPresent } = this.state;
     const shouldAllowMenuToggle = isToggleMenu && menuIsPresent;
 
     if (!menuIsPresent) {
@@ -128,7 +126,6 @@ class Layout extends React.Component {
         size,
         toggleMenu: shouldAllowMenuToggle ? this.toggleMenu : undefined,
         menuIsOpen,
-        togglePin: isHoverMenu ? this.togglePin : undefined,
         menuIsPinned,
       },
     });
@@ -160,7 +157,7 @@ class Layout extends React.Component {
 
   render() {
     const { menuText } = this.props;
-    const { menuIsOpen, menuIsPinned, size, isHoverMenu, isFixedMenu, isToggleMenu, menuIsPresent } = this.state;
+    const { menuIsOpen, menuIsPinned, size, isFixedMenu, isToggleMenu } = this.state;
 
     return (
       <ContentContainer
@@ -175,7 +172,6 @@ class Layout extends React.Component {
           onToggle={this.toggleMenu}
           toggleText={menuText}
           isOpen={menuIsOpen}
-          isToggleEnabled={menuIsPresent && isHoverMenu}
           isAnimated
         >
           {this.renderContent()}

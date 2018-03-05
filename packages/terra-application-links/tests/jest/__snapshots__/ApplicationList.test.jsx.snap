@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ApplicationList with links 1`] = `
+<ApplicationList
+  links={
+    Array [
+      Object {
+        "path": "/test1",
+        "text": "test 1",
+      },
+      Object {
+        "path": "/test2",
+        "text": "test 2",
+      },
+      Object {
+        "path": "/test3",
+        "text": "test 3",
+      },
+      Object {
+        "path": "/test4",
+        "text": "test 4",
+      },
+      Object {
+        "path": "/test5",
+        "text": "test 5",
+      },
+      Object {
+        "path": "/test6",
+        "text": "test 6",
+      },
+    ]
+  }
+/>
+`;
+
+exports[`should render default component 1`] = `
+<ApplicationList
+  links={Array []}
+/>
+`;

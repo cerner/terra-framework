@@ -3,6 +3,24 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* withModalManager higher-order component generator
+
+### Changed
+* Updated snapshots tests to match new structure of slide group.
+
+2.0.0 - (February 21, 2018)
+------------------
+### Changed
+* Updated to use React 16
+
+1.20.0 - (February 15, 2018)
+------------------
+### Changed
+* Use DisclosureManager for state management and presentation.
+
+### Deprecated
+* Deprecate Redux APIs
 
 1.19.0 - (January 23, 2018)
 ------------------

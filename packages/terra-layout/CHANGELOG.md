@@ -3,6 +3,19 @@ Changelog
 
 Unreleased
 ----------
+###Changed
+* Remove the hover functionality from the layout panel at the medium breakpoint.
+
+2.0.0 - (February 21, 2018)
+------------------
+### Changed
+* Updated to use React 16
+
+1.2.0 - (February 15, 2018)
+------------------
+###Fixed
+* Nightwatch tests raw route now sets the size of the layout.
+* Content is no longer visible when the slide panel is hidden.
 
 1.1.0 - (January 23, 2018)
 ------------------
