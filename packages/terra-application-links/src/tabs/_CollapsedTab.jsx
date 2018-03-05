@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import { Route, matchPath } from 'react-router-dom';
+import TabUtils from './_TabUtils';
 import styles from './ApplicationTabs.scss';
 
 const cx = classNames.bind(styles);
@@ -22,7 +23,7 @@ const propTypes = {
   onTabClick: PropTypes.func,
 };
 
-const ApplicationTab = ({
+const CollapsedTab = ({
   onTabClick,
   path,
   text,
@@ -32,34 +33,52 @@ const ApplicationTab = ({
     render={({ location, history }) => {
       const isActive = !!matchPath(location.pathname, { path });
       const tabClassNames = cx([
-        'tab',
+        'collapsed-tab',
         customProps.className,
       ]);
-      const tabAttr = { 'aria-current': `${isActive}`, role: 'tab' };
+      const tabAttr = { 'aria-current': `${isActive}` };
+
+      const handleOnClick = (event) => {
+        if (!isActive) {
+          history.push(path);
+        }
+        if (onTabClick) {
+          onTabClick(event);
+        }
+      };
+
+      const handleOnKeyDown = (event) => {
+        if (event.nativeEvent.keyCode === TabUtils.KEYCODES.ENTER || event.nativeEvent.keyCode === TabUtils.KEYCODES.SPACE) {
+          event.preventDefault();
+          if (!isActive) {
+            history.push(path);
+          }
+          if (onTabClick) {
+            onTabClick(event);
+          }
+        }
+      };
 
       return (
-        <button
+        /* eslint-disable jsx-a11y/no-static-element-interactions */
+        <div
           {...customProps}
           {...tabAttr}
+          tabIndex="0"
           className={tabClassNames}
-          onClick={(event) => {
-            if (!isActive) {
-              history.push(path);
-            }
-            if (onTabClick) {
-              onTabClick(event);
-            }
-          }}
+          onClick={handleOnClick}
+          onKeyDown={handleOnKeyDown}
         >
           <span className={cx(['tab-inner'])}>
             {text}
           </span>
-        </button>
+        </div>
+        /* eslint-enable jsx-ally/no-static-element-interactions */
       );
     }}
   />
 );
 
-ApplicationTab.propTypes = propTypes;
+CollapsedTab.propTypes = propTypes;
 
-export default ApplicationTab;
+export default CollapsedTab;

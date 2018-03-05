@@ -66,7 +66,7 @@ describe('ApplicationTabs', () => {
       browser.waitForVisible('#test-tabs [data-application-tabs-more]');
       browser.click('#test-tabs [data-application-tabs-more] span');
       browser.waitForVisible('[data-application-tab-menu-content]');
-      browser.click('[data-application-tab-menu-content] > *:first-child a');
+      browser.click('[data-application-tab-menu-content] > *:first-child div');
       browser.pause(50);
     });
 
