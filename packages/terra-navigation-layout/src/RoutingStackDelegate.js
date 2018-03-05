@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 const supportedAttributes = [
-  'location', 'parentPaths', 'showParent', 'showRoot',
+  'location', 'parentPaths', 'showParent', 'showRoot', 'show',
 ];
 
 /**
@@ -44,6 +44,7 @@ const RoutingStackDelegate = {
     parentPaths: PropTypes.arrayOf(PropTypes.string),
     showParent: PropTypes.func,
     showRoot: PropTypes.func,
+    show: PropTypes.func,
   }),
   create,
   isEqual,
