@@ -5,6 +5,7 @@ import ResizeObserver from 'resize-observer-polyfill';
 import { withRouter } from 'react-router-dom';
 import 'terra-base/lib/baseStyles';
 import Tab from './_Tab';
+import CollapsedTab from './_CollapsedTab';
 import TabMenu from './_TabMenu';
 import TabUtils from './_TabUtils';
 import styles from './ApplicationTabs.scss';
@@ -16,8 +17,17 @@ const propTypes = {
    * Navigational links that will generate tabs that will update the path. These paths are matched with react-router to selection.
    */
   links: PropTypes.arrayOf(PropTypes.shape({
+    /**
+     * The id to append to the link.
+     */
     id: PropTypes.string,
+    /**
+     * The path to push to the route.
+     */
     path: PropTypes.string.isRequired,
+    /**
+     * The display text for the link.
+     */
     text: PropTypes.string.isRequired,
   })),
   /**
@@ -139,20 +149,18 @@ class ApplicationTabs extends React.Component {
       };
       if (this.hiddenStartIndex < 0) {
         visibleChildren.push(<Tab {...tabProps} />);
-        hiddenChildren.push(<Tab {...tabProps} isCollapsed />);
+        hiddenChildren.push(<CollapsedTab {...tabProps} />);
       } else if (index < this.hiddenStartIndex) {
         visibleChildren.push(<Tab {...tabProps} />);
       } else {
-        hiddenChildren.push(<Tab {...tabProps} isCollapsed />);
+        hiddenChildren.push(<CollapsedTab {...tabProps} />);
       }
     });
 
     return (
-      /* eslint-disable jsx-a11y/no-static-element-interactions */
       <div {...customProps} className={cx(['application-tabs'])}>
         <div
           className={cx(['tabs-container', { 'is-calculating': this.isCalculating }])}
-          tabIndex="0"
           role="tablist"
           ref={this.setContainerNode}
         >
@@ -162,7 +170,6 @@ class ApplicationTabs extends React.Component {
           </TabMenu>
         </div>
       </div>
-      /* eslint-enable jsx-ally/no-static-element-interactions */
     );
   }
 }

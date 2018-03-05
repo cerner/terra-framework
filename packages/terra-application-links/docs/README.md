@@ -11,10 +11,9 @@ This packages contains a list and tab form of ApplicationLinks, to be used in ho
 
 ```jsx
 import React from 'react';
-import { ApplicationTabs, ApplicationList } from 'terra-application-links';
+import { ApplicationTabs } from 'terra-application-links';
 
 <ApplicationTabs links={links} />
-<ApplicationList links={links} />
 ```
 
 ## Component Features
