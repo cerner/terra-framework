@@ -49,7 +49,7 @@
     "danger": "danger",
     "deploy": "npm run compile:prod && gh-pages -d build",
     "dependency-markdown": "node scripts/dependency-markdown-generator/DependencyMarkdownGenerator.js",
-    "generate-config": "generate-config -s 'packages/terra-*/examples/test-examples/*+(.jsx|.js)'",
+    "generate-config": "generate-config",
     "heroku-prebuild": "npm install rimraf && npm install -g lerna@2.1.2 && lerna init",
     "heroku-postbuild": "npm install --only=dev && npm run compile:heroku",
     "jest": "jest",
