@@ -71,6 +71,7 @@ class RoutingStack extends React.Component {
 
   createRoutes(routes) {
     const { navEnabled, app, location, history, ancestorProps } = this.props;
+    const { stackLocation } = this.state;
 
     if (!routes || !routes.length) {
       return undefined;
@@ -78,7 +79,7 @@ class RoutingStack extends React.Component {
 
     return routes.map((routeData) => {
       const delegateData = {
-        location,
+        location: stackLocation || location,
       };
 
       delegateData.show = ({ path }) => {

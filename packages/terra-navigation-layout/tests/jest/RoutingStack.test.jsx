@@ -121,9 +121,9 @@ describe('RoutingStack', () => {
     const wrapper = mount(testRoutingStack, { context: mockContext });
     wrapper.setContext(mockContext);
 
-
     const cComponent = wrapper.find(CComponent).getElements()[0];
     expect(cComponent.props.routingStackDelegate).toBeDefined();
+    expect(cComponent.props.routingStackDelegate.location.pathname).toBe('/a/b/c');
     expect(cComponent.props.routingStackDelegate.parentPaths).toEqual(['/a', '/a/b']);
     expect(cComponent.props.routingStackDelegate.show).toBeDefined();
     expect(cComponent.props.routingStackDelegate.showParent).toBeDefined();
@@ -135,6 +135,7 @@ describe('RoutingStack', () => {
 
     const bComponent = wrapper.find(BComponent).getElements()[0];
     expect(bComponent.props.routingStackDelegate).toBeDefined();
+    expect(bComponent.props.routingStackDelegate.location.pathname).toBe('/a/b');
     expect(bComponent.props.routingStackDelegate.parentPaths).toEqual(['/a']);
     expect(bComponent.props.routingStackDelegate.show).toBeDefined();
     expect(bComponent.props.routingStackDelegate.showParent).toBeDefined();
@@ -146,6 +147,7 @@ describe('RoutingStack', () => {
 
     const aComponent = wrapper.find(AComponent).getElements()[0];
     expect(aComponent.props.routingStackDelegate).toBeDefined();
+    expect(aComponent.props.routingStackDelegate.location.pathname).toBe('/a');
     expect(aComponent.props.routingStackDelegate.parentPaths).toBeUndefined();
     expect(aComponent.props.routingStackDelegate.show).toBeDefined();
     expect(aComponent.props.routingStackDelegate.showParent).toBeUndefined();
@@ -157,6 +159,7 @@ describe('RoutingStack', () => {
 
     const dComponent = wrapper.find(DComponent).getElements()[0];
     expect(dComponent.props.routingStackDelegate).toBeDefined();
+    expect(dComponent.props.routingStackDelegate.location.pathname).toBe('/a/b/c/d');
     expect(dComponent.props.routingStackDelegate.parentPaths).toEqual(['/a', '/a/b', '/a/b/c']);
     expect(dComponent.props.routingStackDelegate.show).toBeDefined();
     expect(dComponent.props.routingStackDelegate.showParent).toBeDefined();
