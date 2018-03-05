@@ -8,7 +8,6 @@ import TerraApplicationLinksIndex from './packages/terra-application-links/examp
 import TerraApplicationMenuLayoutIndex from './packages/terra-application-menu-layout/examples/Index.site-page';
 import TerraApplicationNameIndex from './packages/terra-application-name/examples/Index.site-page';
 import TerraDisclosureManagerIndex from './packages/terra-disclosure-manager/examples/Index.site-page';
-import TerraEmbeddedComponentIndex from './packages/terra-embedded-component/examples/Index.site-page';
 import TerraLayoutIndex from './packages/terra-layout/examples/Index.site-page';
 import TerraModalManagerIndex from './packages/terra-modal-manager/examples/Index.site-page';
 import TerraNavigationLayoutIndex from './packages/terra-navigation-layout/examples/Index.site-page';
@@ -28,7 +27,6 @@ import ApplicationHeaderNameTruncated from './packages/terra-application-name/ex
 import ApplicationMenuNameDefault from './packages/terra-application-name/examples/test-examples/ApplicationMenuNameDefault.example';
 import ApplicationMenuNameTruncated from './packages/terra-application-name/examples/test-examples/ApplicationMenuNameTruncated.example';
 import DefaultApplicationUtility from './packages/terra-application-utility/examples/test-examples/DefaultApplicationUtility.example';
-import DefaultEmbeddedComponent from './packages/terra-embedded-component/examples/test-examples/DefaultEmbeddedComponent.example';
 import LayoutDefault from './packages/terra-layout/examples/test-examples/LayoutDefault.example';
 import LayoutNoHeader from './packages/terra-layout/examples/test-examples/LayoutNoHeader.example';
 import LayoutNoMenu from './packages/terra-layout/examples/test-examples/LayoutNoMenu.example';
@@ -191,24 +189,6 @@ const componentConfig = {
         name: 'Index',
         path: '/index',
         component: TerraDisclosureManagerIndex,
-      },
-    ],
-  },
-  'terra-embedded-component': {
-    name: 'Embedded Component',
-    path: '/embedded-component',
-    pages: [
-      {
-        name: 'Index',
-        path: '/index',
-        component: TerraEmbeddedComponentIndex,
-      },
-    ],
-    tests: [
-      {
-        name: 'Default Embedded Component',
-        path: '/default-embedded-component',
-        component: DefaultEmbeddedComponent,
       },
     ],
   },

@@ -8,6 +8,7 @@ describe('RoutingStackDelegate', () => {
         parentPaths: ['/1', '/2', '/3'],
         showParent: () => {},
         showRoot: () => {},
+        show: () => {},
         invalidKeyForTest: 'test invalidKey',
       };
       const result = RoutingStackDelegate.create(testData);
@@ -15,6 +16,7 @@ describe('RoutingStackDelegate', () => {
       expect(result.parentPaths).toBe(testData.parentPaths);
       expect(result.showParent).toBe(testData.showParent);
       expect(result.showRoot).toBe(testData.showRoot);
+      expect(result.show).toBe(testData.show);
       expect(result.invalidKeyForTest).toBe(undefined);
     });
   });
@@ -40,12 +42,14 @@ describe('RoutingStackDelegate', () => {
       const parentPaths = ['/1', '/2', '/3'];
       const showParent = () => {};
       const showRoot = () => {};
+      const show = () => {};
 
       const delegate1Data = {
         location,
         parentPaths,
         showParent,
         showRoot,
+        show,
         invalidKeyForTest: 'test invalidKey',
       };
       const delegate1 = RoutingStackDelegate.create(delegate1Data);
@@ -56,6 +60,7 @@ describe('RoutingStackDelegate', () => {
         parentPaths,
         showParent,
         showRoot,
+        show,
         differentInvalidKeyForTest: 'test another invalidKey',
       };
       const delegate2 = RoutingStackDelegate.create(delegate2Data);
@@ -67,12 +72,14 @@ describe('RoutingStackDelegate', () => {
       const parentPaths = ['/1', '/2', '/3'];
       const showParent = () => {};
       const showRoot = () => {};
+      const show = () => {};
 
       const delegate1Data = {
         location: { pathname: '/4' },
         parentPaths,
         showParent,
         showRoot,
+        show,
         invalidKeyForTest: 'test invalidKey',
       };
       const delegate1 = RoutingStackDelegate.create(delegate1Data);
@@ -82,6 +89,7 @@ describe('RoutingStackDelegate', () => {
         parentPaths,
         showParent,
         showRoot,
+        show,
         invalidKeyForTest: 'test invalidKey',
       };
       const delegate2 = RoutingStackDelegate.create(delegate2Data);

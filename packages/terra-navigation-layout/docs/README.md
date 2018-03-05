@@ -91,12 +91,17 @@ All components rendered within the `NavigationLayout` receive a `routingStackDel
 * `parentPaths` - An array of String paths that were determined to preceed the current path in the configuration. For example, if the routes `/pages`, `/pages/:id`, and `/pages/:id/summary` were defined by the config, the component rendered for the path `/pages/123/summary` would receive a parentPaths value of [`/pages`, `/pages/123`]. This set of paths could be used to build breadcrumbs or simple navigation functionality.
 
 Components within the `menu` region get a few extra features, however. To help enable nested menu scenarios, the `routingStackDelegate` will also include the following:
+* `show` - A function that will cause the NavigationLayout to display the menu for the given path. If the given path does not match the current history location, the new location is pushed onto the history stack. If the given path already matches the current history location, only the RoutingStack's internal location is updated; this insures that the history is not being manipulated unnecessarily when navigating down the stack of menu components.
 * `showParent` - A function that will cause the NavigationLayout to display the immediate parent path (if one is present).
 * `showRoot` - A function that will cause the NavigationLayout to display the first (or root) parent path (if one is present, and the number of parent paths is more than 1).
 
 It is important to note that `showParent`/`showRoot` change the location used by the menu components, but they do not change the location of the overall page. For example, if the page location is `/pages/99/summary`, and the menu component calls `showParent`, the menu component for `/pages/99` will be rendered, but the content component for `/pages/99/summary` will still be rendered, and the browser URL will still be `[base-url]/pages/99/summary`.
 
 After calling these navigation functions, the `location` provided in the `routingStackDelegate` match the parent path specified. If the true page location is still necessary, the `withRouter` HOC provided by `react-router` can be utilized as needed. And if this functionality is not desired at all for a given application, these props can be safely ignored.
+
+##### refuseRoutingStackNavigation
+
+The configuration API supports an additional key for each component specification called `refuseRoutingStackNavigation` that will prevent the associated component from appearing in parentPaths and will disallow navigation to it through the `showParent`/`showRoot`. A component with `refuseRoutingStackNavigation` set to `true` will only be presented if the current location matches its route. This is an advanced option that can be used to better control menu-based workflows.
 
 ## Getting Started
 
