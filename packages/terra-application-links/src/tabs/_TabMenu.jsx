@@ -91,7 +91,7 @@ class TabMenu extends React.Component {
   }
 
   handleOnKeyDown(event) {
-    if (event.nativeEvent.keyCode === TabUtils.KEYCODES.ENTER && !this.state.isOpen) {
+    if ((event.nativeEvent.keyCode === TabUtils.KEYCODES.ENTER || event.nativeEvent.keyCode === TabUtils.KEYCODES.SPACE) && !this.state.isOpen) {
       this.setState({ isOpen: true });
     }
   }
@@ -99,7 +99,7 @@ class TabMenu extends React.Component {
   createHiddenTabs() {
     return (
       <TabMenuList>
-        {React.Children.map(this.props.children, child => React.cloneElement(child, { onClick: this.handleOnRequestClose }))}
+        {React.Children.map(this.props.children, child => React.cloneElement(child, { onTabClick: this.handleOnRequestClose }))}
       </TabMenuList>
     );
   }

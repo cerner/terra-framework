@@ -2,16 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-import { NavLink } from 'react-router-dom';
+import { Route, matchPath } from 'react-router-dom';
 import styles from './ApplicationTabs.scss';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  /**
-   * Indicates if the tab is be to desplayed in the tab menu.
-   */
-  isCollapsed: PropTypes.bool,
   /**
    * The path to push to the route.
    */
@@ -20,33 +16,49 @@ const propTypes = {
    * The display text for the tab.
    */
   text: PropTypes.string.isRequired,
+  /**
+   * The click callback of the tab.
+   */
+  onTabClick: PropTypes.func,
 };
 
 const ApplicationTab = ({
-  isCollapsed,
+  onTabClick,
   path,
   text,
   ...customProps
-}) => {
-  const tabClassNames = cx([
-    { tab: !isCollapsed },
-    { 'collapsed-tab': isCollapsed },
-    customProps.className,
-  ]);
+}) => (
+  <Route
+    render={({ location, history }) => {
+      const isActive = !!matchPath(location.pathname, { path });
+      const tabClassNames = cx([
+        'tab',
+        customProps.className,
+      ]);
+      const tabAttr = { 'aria-current': `${isActive}`, role: 'tab' };
 
-  const tabRole = {};
-  if (!isCollapsed) {
-    tabRole.role = 'tab';
-  }
-
-  return (
-    <NavLink {...customProps} {...tabRole} className={tabClassNames} to={path} key={path} activeClassName={cx(['selected'])}>
-      <span className={cx(['tab-inner'])}>
-        {text}
-      </span>
-    </NavLink>
-  );
-};
+      return (
+        <button
+          {...customProps}
+          {...tabAttr}
+          className={tabClassNames}
+          onClick={(event) => {
+            if (!isActive) {
+              history.push(path);
+            }
+            if (onTabClick) {
+              onTabClick(event);
+            }
+          }}
+        >
+          <span className={cx(['tab-inner'])}>
+            {text}
+          </span>
+        </button>
+      );
+    }}
+  />
+);
 
 ApplicationTab.propTypes = propTypes;
 

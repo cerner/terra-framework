@@ -29,7 +29,7 @@ describe('Hover navigation side menu display', () => {
 
   Terra.should.matchScreenshot('#test-menu', { selector: '#test-menu' });
   Terra.should.themeEachCustomProperty('#test-menu', {
-    '--terra-navigation-side-menu-item-background-hover': 'linear-gradient(-90deg, pink, blue)',
+    '--terra-navigation-side-menu-item-hover-background-color': 'orange',
   });
 });
 
@@ -46,7 +46,7 @@ describe('Selected navigation side menu display', () => {
   Terra.should.matchScreenshot('#test-menu', { selector: '#test-menu' });
   Terra.should.beAccessible({ context: '#test-menu' });
   Terra.should.themeEachCustomProperty('#test-menu', {
-    '--terra-navigation-side-menu-item-selected-background-image': 'linear-gradient(-270deg, pink, blue)',
+    '--terra-navigation-side-menu-item-selected-background-color': 'pink',
     '--terra-navigation-side-menu-item-selected-border-left': '1rem dotted orange',
     '--terra-navigation-side-menu-item-selected-padding-left': '0',
   });
