@@ -17,7 +17,7 @@ import InfiniteListExampleSrc from '!raw-loader!./index-examples/InfiniteListExa
 // Example Files
 import InfiniteListExample from './index-examples/InfiniteListExample';
 
-const InfiniteScrollerExamples = () => (
+const InfiniteListExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
@@ -32,4 +32,4 @@ const InfiniteScrollerExamples = () => (
   </div>
 );
 
-export default InfiniteScrollerExamples;
+export default InfiniteListExamples;
