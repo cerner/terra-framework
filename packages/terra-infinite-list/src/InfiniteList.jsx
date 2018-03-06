@@ -14,7 +14,7 @@ const propTypes = {
   /**
    * The child list items to be placed within the infinite list.
    */
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   /**
    * Whether or not unselected items should be disabled.
    * Helpful for enabling max row selection.
@@ -32,7 +32,7 @@ const propTypes = {
     /**
      * An indicator to be displayed when no children are yet present.
      */
-    initialLoadingIndicator: PropTypes.element.isRequired,
+    initialLoadingIndicator: PropTypes.element,
     /**
      * Determines whether or not the loading indicator is visible and if callbacks are triggered.
      */
@@ -44,7 +44,7 @@ const propTypes = {
     /**
      * An indicator to be displayed at the end of the current loaded children.
      */
-    progressiveLoadingIndicator: PropTypes.element.isRequired,
+    progressiveLoadingIndicator: PropTypes.element,
   }),
   /**
    * Whether or not the child list items should have a border color applied.
