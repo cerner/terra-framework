@@ -41,7 +41,6 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
-    "props-table": "props-table ./src/ApplicationUtility.jsx --out-dir ./docs/props-table",
     "test": "npm run test:jest",
     "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json"
   }
