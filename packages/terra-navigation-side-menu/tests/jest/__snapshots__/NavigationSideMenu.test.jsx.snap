@@ -35,6 +35,7 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
   }
 >
   <List
+    className="menu-list"
     isDivided={false}
   >
     <MenuItem
