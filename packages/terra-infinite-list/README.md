@@ -1,22 +1,22 @@
-# Terra Infinite Scroller
+# Terra Infinite List
 
 
-[![NPM version](http://img.shields.io/npm/v/terra-infinite-scroller.svg)](https://www.npmjs.org/package/terra-infinite-scroller)
-[![Build Status](https://travis-ci.org/cerner/terra-core.svg?branch=master)](https://travis-ci.org/cerner/terra-core)
+[![NPM version](http://img.shields.io/npm/v/terra-infinite-list.svg)](https://www.npmjs.org/package/terra-infinite-list)
+[![Build Status](https://travis-ci.org/cerner/terra-framework.svg?branch=master)](https://travis-ci.org/cerner/terra-framework)
 
-The infinite scroller component provides a means of triggering callbacks for additional scroller items.
+The infinite list component provides virtual dom management and data request callbacks to manage large data sets within a list.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-core/tree/master/packages/terra-infinite-scroller/docs)
+- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-infinite-scroller/docs)
 - [LICENSE](#license)
 
 ## Getting Started
 
-- Install from [npmjs](https://www.npmjs.com): `npm install terra-infinite-scroller`
+- Install from [npmjs](https://www.npmjs.com): `npm install terra-infinite-list`
 
 ## LICENSE
 
-Copyright 2017 Cerner Innovation, Inc.
+Copyright 2018 Cerner Innovation, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 

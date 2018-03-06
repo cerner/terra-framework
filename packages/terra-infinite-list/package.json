@@ -1,8 +1,8 @@
 {
-  "name": "terra-infinite-scroller",
-  "main": "lib/InfiniteScroller.js",
+  "name": "terra-infinite-list",
+  "main": "lib/InfiniteList.js",
   "version": "0.0.0",
-  "description": "The infinite scroller component provides a means of triggering callbacks for additional scroller items.",
+  "description": "The infinite list component provides virtual dom management and data request callbacks to manage large data sets within a list.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-core.git"
@@ -10,32 +10,33 @@
   "keywords": [
     "Cerner",
     "Terra",
-    "terra-infinite-scroller",
-    "InfiniteScroller",
+    "terra-infinite-list",
+    "InfiniteList",
     "UI"
   ],
   "author": "Cerner Corporation",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/cerner/terra-core/issues"
+    "url": "https://github.com/cerner/terra-framework/issues"
   },
-  "homepage": "https://github.com/cerner/terra-core#readme",
+  "homepage": "https://github.com/cerner/terra-framework#readme",
   "devDependencies": {
-    "terra-clinical-item-view": "^1.6.0",
-    "terra-props-table": "^1.10.1"
+    "terra-props-table": "^2.1.0"
   },
   "peerDependencies": {
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "terra-base": "^2.8.0",
-    "terra-list": "file:../../../terra-core/packages/terra-list"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "terra-base": "^3.1.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "resize-observer-polyfill": "^1.4.1",
-    "terra-base": "^2.8.0",
-    "terra-list": "file:../../../terra-core/packages/terra-list"
+    "terra-base": "^3.1.0",
+    "terra-clinical-item-view": "^2.0.0",
+    "terra-icon": "^2.1.0",
+    "terra-list": "^2.1.0",
+    "terra-overlay": "^2.1.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
@@ -44,7 +45,7 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
-    "props-table": "props-table ./src/InfiniteScroller.jsx ./src/_ScrollerItem.jsx --out-dir ./docs/props-table",
+    "props-table": "props-table ./src/InfiniteList.jsx --out-dir ./docs/props-table",
     "test": "npm run test:jest && npm run test:nightwatch",
     "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
     "test:nightwatch": "nightwatch -c ../../nightwatch.conf.js"

@@ -8,7 +8,7 @@ import TerraApplicationLinksIndex from './packages/terra-application-links/examp
 import TerraApplicationMenuLayoutIndex from './packages/terra-application-menu-layout/examples/Index.site-page';
 import TerraApplicationNameIndex from './packages/terra-application-name/examples/Index.site-page';
 import TerraDisclosureManagerIndex from './packages/terra-disclosure-manager/examples/Index.site-page';
-import TerraInfiniteScrollerIndex from './packages/terra-infinite-scroller/examples/Index.site-page';
+import TerraInfiniteListIndex from './packages/terra-infinite-list/examples/Index.site-page';
 import TerraLayoutIndex from './packages/terra-layout/examples/Index.site-page';
 import TerraModalManagerIndex from './packages/terra-modal-manager/examples/Index.site-page';
 import TerraNavigationLayoutIndex from './packages/terra-navigation-layout/examples/Index.site-page';
@@ -187,14 +187,14 @@ const componentConfig = {
       },
     ],
   },
-  'terra-infinite-scroller': {
-    name: 'Infinite Scroller',
-    path: '/infinite-scroller',
+  'terra-infinite-list': {
+    name: 'Infinite List',
+    path: '/infinite-list',
     pages: [
       {
         name: 'Index',
         path: '/index',
-        component: TerraInfiniteScrollerIndex,
+        component: TerraInfiniteListIndex,
       },
     ],
   },

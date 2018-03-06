@@ -5,80 +5,78 @@ import 'terra-base/lib/baseStyles';
 import ResizeObserver from 'resize-observer-polyfill';
 import List from 'terra-list';
 import SelectableUtils from 'terra-list/lib/SelectableUtils';
-import ScrollerUtils from './_ScrollerUtils';
-import styles from './InfiniteScroller.scss';
+import InfiniteUtils from './_InfiniteUtils';
+import styles from './InfiniteList.scss';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The scroller children to be placed within the infinite scroller..
+   * The child list items to be placed within the infinite list.
    */
   children: PropTypes.node.isRequired,
   /**
-   * An indicator to be displayed when no children are yet present.
+   * Whether or not unselected items should be disabled.
+   * Helpful for enabling max row selection.
    */
-  initialLoadingIndicator: PropTypes.element.isRequired,
+  disableUnselectedItems: PropTypes.bool,
   /**
-   * Determines whether or not the loading indicator is visible and if callbacks are triggered.
+   * Whether or not the child list items has a disclosure indicator presented.
+   * The behavior is intended to be used with a single selection style list, as multi selection style list should not perform disclosures.
    */
-  isFinishedLoading: PropTypes.bool,
-  /**
-   * Callback trigger when new scroller items are requested..
-   */
-  onRequestItems: PropTypes.func,
-  /**
-   * An indicator to be displayed at the end of the current loaded children.
-   */
-  progressiveLoadingIndicator: PropTypes.element.isRequired,
+  hasChevrons: PropTypes.bool,
   /**
    * Properties related to the list styling.
    */
-  listProps: PropTypes.shape({
+  infiniteProps: PropTypes.shape({
     /**
-     * Whether or not the child list items should have a border color applied.
+     * An indicator to be displayed when no children are yet present.
      */
-    isDivided: PropTypes.bool,
+    initialLoadingIndicator: PropTypes.element.isRequired,
     /**
-     * Whether or not the list is selectable.
+     * Determines whether or not the loading indicator is visible and if callbacks are triggered.
      */
-    isSelectable: PropTypes.bool,
+    isFinishedLoading: PropTypes.bool,
     /**
-     * Whether or not unselected items should be disabled.
-     * Helpful for enabling max row selection.
+     * Callback trigger when new list items are requested..
      */
-    disableUnselectedItems: PropTypes.bool,
+    onRequestItems: PropTypes.func,
     /**
-     * Whether or not the child list items has a disclosure indicator presented.
-     * The behavior is intended to be used with a single selection style list, as multi selection style list should not perform disclosures.
+     * An indicator to be displayed at the end of the current loaded children.
      */
-    hasChevrons: PropTypes.bool,
-    /**
-     * A callback event that will be triggered when selection state changes.
-     */
-    onChange: PropTypes.func,
-    /**
-     * An array of the currectly selected indexes.
-     */
-    selectedIndexes: PropTypes.array,
+    progressiveLoadingIndicator: PropTypes.element.isRequired,
   }),
+  /**
+   * Whether or not the child list items should have a border color applied.
+   */
+  isDivided: PropTypes.bool,
+  /**
+   * Whether or not the list is selectable.
+   */
+  isSelectable: PropTypes.bool,
+  /**
+   * A callback event that will be triggered when selection state changes.
+   */
+  onChange: PropTypes.func,
+  /**
+   * An array of the currectly selected indexes.
+   */
+  selectedIndexes: PropTypes.array,
 };
 
 const defaultProps = {
   children: [],
-  isFinishedLoading: false,
-  listProps: {
-    isDivided: false,
-    isSelectable: false,
-    disableUnselectedItems: false,
-    hasChevrons: false,
-    selectedIndexes: [],
-  },
+  disableUnselectedItems: false,
+  hasChevrons: false,
+  infiniteProps: {},
+  isDivided: false,
+  isSelectable: false,
+  selectedIndexes: [],
 };
 
-const createSpacer = (height, index) => <List.Item isSelectable={false} className={cx(['spacer'])} style={{ height }} key={`scrollerSpacer-${index}`} />;
+const createSpacer = (height, index) => <List.Item isSelectable={false} className={cx(['spacer'])} style={{ height }} key={`infinite-spacer-${index}`} />;
 
-class InfiniteScroller extends React.Component {
+class InfiniteList extends React.Component {
   constructor(props) {
     super(props);
 
@@ -133,9 +131,9 @@ class InfiniteScroller extends React.Component {
   }
 
   triggerItemRequest() {
-    if (!this.props.isFinishedLoading && !this.hasRequestedItems && this.props.onRequestItems) {
+    if (!this.props.infiniteProps.isFinishedLoading && !this.hasRequestedItems && this.props.infiniteProps.onRequestItems) {
       this.hasRequestedItems = true;
-      this.props.onRequestItems();
+      this.props.infiniteProps.onRequestItems();
     }
   }
 
@@ -168,7 +166,7 @@ class InfiniteScroller extends React.Component {
       this.handleResize(entries[0].contentRect);
     });
     this.resizeObserver.observe(this.contentNode);
-    this.contentNode.addEventListener('scroll', this.update); // consider tick
+    this.contentNode.addEventListener('scroll', this.update);
     this.listenersAdded = true;
   }
 
@@ -177,7 +175,7 @@ class InfiniteScroller extends React.Component {
       return;
     }
     this.resizeObserver.disconnect(this.contentNode);
-    this.contentNode.removeEventListener('scroll', this.update); // consider tick
+    this.contentNode.removeEventListener('scroll', this.update);
     this.listenersAdded = false;
   }
 
@@ -215,8 +213,8 @@ class InfiniteScroller extends React.Component {
       return;
     }
 
-    const contentData = ScrollerUtils.getContentData(this.contentNode);
-    const hiddenItems = ScrollerUtils.getHiddenItems(this.scrollGroups, contentData, this.boundary.topBoundryIndex, this.boundary.bottomBoundryIndex);
+    const contentData = InfiniteUtils.getContentData(this.contentNode);
+    const hiddenItems = InfiniteUtils.getHiddenItems(this.scrollGroups, contentData, this.boundary.topBoundryIndex, this.boundary.bottomBoundryIndex);
     this.scrollHeight = contentData.scrollHeight;
 
     if (hiddenItems.topHiddenItem.index !== this.boundary.topBoundryIndex || hiddenItems.bottomHiddenItem.index !== this.boundary.bottomBoundryIndex) {
@@ -230,7 +228,7 @@ class InfiniteScroller extends React.Component {
       this.forceUpdate();
     }
 
-    if (ScrollerUtils.shouldTriggerItemRequest(contentData)) {
+    if (InfiniteUtils.shouldTriggerItemRequest(contentData)) {
       this.triggerItemRequest();
     }
   }
@@ -299,7 +297,7 @@ class InfiniteScroller extends React.Component {
     }
     if (this.contentNode) {
       this.itemsByIndex.forEach((item, itemIndex) => {
-        const scrollItemNode = this.contentNode.querySelector(`[data-infinite-scroller-index="${itemIndex}"]`);
+        const scrollItemNode = this.contentNode.querySelector(`[data-infinite-list-index="${itemIndex}"]`);
         if (scrollItemNode) {
           if (!this.itemsByIndex[itemIndex].height || Math.abs(scrollItemNode.clientHeight - this.itemsByIndex[itemIndex].height) > 1) {
             this.itemsByIndex[itemIndex].height = scrollItemNode.clientHeight;
@@ -342,26 +340,27 @@ class InfiniteScroller extends React.Component {
     };
 
     let newProps = {};
-    if (this.props.listProps.isSelectable) {
-      const wrappedOnClick = SelectableUtils.wrappedOnClickForItem(child, index, this.props.listProps.onChange);
-      const wrappedOnKeyDown = SelectableUtils.wrappedOnKeyDownForItem(child, index, this.props.listProps.onChange);
-      newProps = SelectableUtils.newPropsForItem(child, index, wrappedOnClick, wrappedOnKeyDown, this.props.listProps.hasChevrons, this.props.listProps.selectedIndexes, this.props.listProps.disableUnselectedItems);
+    if (this.props.isSelectable) {
+      const wrappedOnClick = SelectableUtils.wrappedOnClickForItem(child, index, this.props.onChange);
+      const wrappedOnKeyDown = SelectableUtils.wrappedOnKeyDownForItem(child, index, this.props.onChange);
+      newProps = SelectableUtils.newPropsForItem(child, index, wrappedOnClick, wrappedOnKeyDown, this.props.hasChevrons, this.props.selectedIndexes, this.props.disableUnselectedItems);
     }
 
     newProps.refCallback = wrappedCallBack;
-    newProps['data-infinite-scroller-index'] = index;
-    newProps.style = { overflow: 'hidden' };
+    newProps['data-infinite-list-index'] = index;
+    newProps.style = child.props.style ? Object.assign({}, child.props.style, { overflow: 'hidden' }) : { overflow: 'hidden' };
     return React.cloneElement(child, newProps);
   }
 
   render() {
     const {
       children,
-      initialLoadingIndicator,
-      isFinishedLoading,
-      onRequestItems,
-      progressiveLoadingIndicator,
-      listProps,
+      disableUnselectedItems,
+      hasChevrons,
+      infiniteProps,
+      isDivided,
+      isSelectable,
+      selectedIndexes,
       ...customProps
     } = this.props;
     const topSpacer = createSpacer(`${this.boundary.hiddenTopHeight > 0 ? this.boundary.hiddenTopHeight : 0}px`, 0);
@@ -369,11 +368,11 @@ class InfiniteScroller extends React.Component {
 
     let loadingSpinner;
     let visibleChildren;
-    if (!isFinishedLoading) {
+    if (!infiniteProps.isFinishedLoading) {
       if (this.childCount > 0) {
-        loadingSpinner = <List.Item content={progressiveLoadingIndicator} isSelectable={false} key={`infinite-spinner-row-${this.loadingIndex}`} />;
+        loadingSpinner = <List.Item content={infiniteProps.progressiveLoadingIndicator} isSelectable={false} key={`infinite-spinner-row-${this.loadingIndex}`} />;
       } else {
-        visibleChildren = <List.Item content={initialLoadingIndicator} isSelectable={false} key="infinite-spinner-full" style={{ height: '100%', position: 'relative' }} />;
+        visibleChildren = <List.Item content={infiniteProps.initialLoadingIndicator} isSelectable={false} key="infinite-spinner-full" style={{ height: '100%', position: 'relative' }} />;
       }
     }
 
@@ -383,13 +382,13 @@ class InfiniteScroller extends React.Component {
       if ((!this.scrollGroups.length && this.lastChildIndex <= 0) || !this.renderNewChildren) {
         upperChildIndex = this.childCount;
       } else {
-        newChildren = ScrollerUtils.getNewScrollGroups(this.lastChildIndex, this.childrenArray, this.wrapChild);
+        newChildren = InfiniteUtils.getNewScrollGroups(this.lastChildIndex, this.childrenArray, this.wrapChild);
       }
-      visibleChildren = ScrollerUtils.getVisibleScrollGroups(this.scrollGroups, this.childrenArray, this.boundary.topBoundryIndex, this.boundary.bottomBoundryIndex, this.wrapChild, upperChildIndex);
+      visibleChildren = InfiniteUtils.getVisibleScrollGroups(this.scrollGroups, this.childrenArray, this.boundary.topBoundryIndex, this.boundary.bottomBoundryIndex, this.wrapChild, upperChildIndex);
     }
 
     return (
-      <List {...customProps} isDivided={listProps.isDivided} className={cx(['infinite-scroller', customProps.className])} refCallback={this.setContentNode}>
+      <List {...customProps} isDivided={isDivided} className={cx(['infinite-list', customProps.className])} refCallback={this.setContentNode}>
         {topSpacer}
         {visibleChildren}
         {bottomSpacer}
@@ -400,8 +399,8 @@ class InfiniteScroller extends React.Component {
   }
 }
 
-InfiniteScroller.propTypes = propTypes;
-InfiniteScroller.defaultProps = defaultProps;
-InfiniteScroller.Item = List.Item;
+InfiniteList.propTypes = propTypes;
+InfiniteList.defaultProps = defaultProps;
+InfiniteList.Item = List.Item;
 
-export default InfiniteScroller;
+export default InfiniteList;

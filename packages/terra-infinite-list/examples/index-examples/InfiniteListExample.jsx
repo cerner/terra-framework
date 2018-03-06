@@ -6,9 +6,9 @@ import LoadingOverlay from 'terra-overlay/lib/LoadingOverlay';
 import OverlayContainer from 'terra-overlay/lib/OverlayContainer';
 import ItemView from 'terra-clinical-item-view';
 
-import InfiniteScroller from '../../src/InfiniteScroller';
+import InfiniteList from '../../lib/InfiniteList';
 
-class scrollerExample extends React.Component {
+class InfiniteListExample extends React.Component {
   constructor(props) {
     super(props);
 
@@ -58,7 +58,7 @@ class scrollerExample extends React.Component {
     const items = [];
     for (let i = 0; i < 15 * this.state.numberOfPages; i += 1) {
       items.push(
-        <InfiniteScroller.Item
+        <InfiniteList.Item
           key={`${i}`}
           content={
             <ItemView
@@ -88,19 +88,26 @@ class scrollerExample extends React.Component {
       </OverlayContainer>
     );
 
+    const infiniteProps = {
+      isFinishedLoading: !this.state.stillLoading,
+      onRequestItems: this.addMoreData,
+      initialLoadingIndicator: fullLoading,
+      progressiveLoadingIndicator: progressLoading,
+    };
+
     return (
       <div style={{ height: '600px', width: '100%', position: 'relative', border: '1px solid black' }}>
-        <InfiniteScroller
-          isFinishedLoading={!this.state.stillLoading}
-          onRequestItems={this.addMoreData}
-          initialLoadingIndicator={fullLoading}
-          progressiveLoadingIndicator={progressLoading}
-          listProps={{ isSelectable: true, isDivided: true, selectedIndexes: this.state.selectedIndexes, onChange: this.handleOnChange }}
+        <InfiniteList
+          infiniteProps={infiniteProps}
+          isSelectable
+          isDivided
+          onChange={this.handleOnChange}
+          selectedIndexes={this.state.selectedIndexes}
         >
           {items}
-        </InfiniteScroller>
+        </InfiniteList>
       </div>
     );
   }
 }
-export default scrollerExample;
+export default InfiniteListExample;
