@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 -----------------
+
+2.1.0 - (March 6, 2018)
+------------------
 ### Fixed
 * Truncation and padding of the name with new css rules.
 
