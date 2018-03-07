@@ -3,6 +3,11 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added npmrc file with package-lock set to false.
+
+### Changed
+* Temporarily updated screenshots for broken focus.
 
 2.0.0 - (February 21, 2018)
 ------------------
