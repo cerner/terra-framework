@@ -87,6 +87,7 @@ class InfiniteList extends React.Component {
     this.updateItemCache = this.updateItemCache.bind(this);
     this.initializeItemCache = this.initializeItemCache.bind(this);
     this.updateScrollGroups = this.updateScrollGroups.bind(this);
+    this.handleRenderCompletion = this.handleRenderCompletion.bind(this);
     this.handleResize = this.resizeDebounce(this.handleResize.bind(this));
     this.resetTimeout = this.resetTimeout.bind(this);
     this.wrapChild = this.wrapChild.bind(this);
@@ -99,7 +100,9 @@ class InfiniteList extends React.Component {
     if (!this.listenersAdded) {
       this.enableListeners();
     }
-    this.triggerItemRequest();
+    this.handleRenderCompletion();
+    this.updateScrollGroups();
+    this.update(false);
   }
 
   componentWillReceiveProps(newProps) {
@@ -117,9 +120,7 @@ class InfiniteList extends React.Component {
     if (!this.listenersAdded) {
       this.enableListeners();
     }
-    this.renderNewChildren = false;
-    this.preventUpdate = false;
-    this.lastChildIndex = this.childCount;
+    this.handleRenderCompletion();
   }
 
   componentWillUnmount() {
@@ -127,7 +128,12 @@ class InfiniteList extends React.Component {
   }
 
   setContentNode(node) {
+    const wasUndefined = !this.contentNode;
     this.contentNode = node;
+
+    if (this.contentNode && wasUndefined) {
+      this.updateScrollGroups();
+    }
   }
 
   triggerItemRequest() {
@@ -135,6 +141,12 @@ class InfiniteList extends React.Component {
       this.hasRequestedItems = true;
       this.props.infiniteProps.onRequestItems();
     }
+  }
+
+  handleRenderCompletion() {
+    this.renderNewChildren = false;
+    this.preventUpdate = false;
+    this.lastChildIndex = this.childCount;
   }
 
   updateItemCache(props) {
@@ -203,12 +215,12 @@ class InfiniteList extends React.Component {
   }
 
   handleResize() {
-    if (this.scrollHeight !== this.contentNode.scrollHeight) {
+    if (this.scrollHeight !== this.contentNode.scrollHeight || this.clientHeight !== this.contentNode.clientHeight) {
       this.adjustHeight();
     }
   }
 
-  update() {
+  update(ensureUpdate) {
     if (!this.contentNode || this.disableScroll || this.preventUpdate) {
       return;
     }
@@ -216,8 +228,9 @@ class InfiniteList extends React.Component {
     const contentData = InfiniteUtils.getContentData(this.contentNode);
     const hiddenItems = InfiniteUtils.getHiddenItems(this.scrollGroups, contentData, this.boundary.topBoundryIndex, this.boundary.bottomBoundryIndex);
     this.scrollHeight = contentData.scrollHeight;
+    this.clientHeight = contentData.clientHeight;
 
-    if (hiddenItems.topHiddenItem.index !== this.boundary.topBoundryIndex || hiddenItems.bottomHiddenItem.index !== this.boundary.bottomBoundryIndex) {
+    if (ensureUpdate || hiddenItems.topHiddenItem.index !== this.boundary.topBoundryIndex || hiddenItems.bottomHiddenItem.index !== this.boundary.bottomBoundryIndex) {
       this.preventUpdate = true;
       this.boundary = {
         topBoundryIndex: hiddenItems.topHiddenItem.index,
@@ -317,7 +330,7 @@ class InfiniteList extends React.Component {
         bottomBoundryIndex: -1,
         hiddenBottomHeight: -1,
       };
-      this.update();
+      this.update(true);
     }
   }
 

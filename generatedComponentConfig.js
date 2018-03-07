@@ -27,6 +27,10 @@ import ApplicationHeaderNameTruncated from './packages/terra-application-name/ex
 import ApplicationMenuNameDefault from './packages/terra-application-name/examples/test-examples/ApplicationMenuNameDefault.example';
 import ApplicationMenuNameTruncated from './packages/terra-application-name/examples/test-examples/ApplicationMenuNameTruncated.example';
 import DefaultApplicationUtility from './packages/terra-application-utility/examples/test-examples/DefaultApplicationUtility.example';
+import InfiniteListLoading from './packages/terra-infinite-list/examples/test-examples/InfiniteListLoading.example';
+import InfiniteListSelection from './packages/terra-infinite-list/examples/test-examples/InfiniteListSelection.example';
+import InfiniteListUpdating from './packages/terra-infinite-list/examples/test-examples/InfiniteListUpdating.example';
+import InfiniteListVirtual from './packages/terra-infinite-list/examples/test-examples/InfiniteListVirtual.example';
 import LayoutDefault from './packages/terra-layout/examples/test-examples/LayoutDefault.example';
 import LayoutNoHeader from './packages/terra-layout/examples/test-examples/LayoutNoHeader.example';
 import LayoutNoMenu from './packages/terra-layout/examples/test-examples/LayoutNoMenu.example';
@@ -195,6 +199,28 @@ const componentConfig = {
         name: 'Index',
         path: '/index',
         component: TerraInfiniteListIndex,
+      },
+    ],
+    tests: [
+      {
+        name: 'Infinite List Loading',
+        path: '/infinite-list-loading',
+        component: InfiniteListLoading,
+      },
+      {
+        name: 'Infinite List Selection',
+        path: '/infinite-list-selection',
+        component: InfiniteListSelection,
+      },
+      {
+        name: 'Infinite List Updating',
+        path: '/infinite-list-updating',
+        component: InfiniteListUpdating,
+      },
+      {
+        name: 'Infinite List Virtual',
+        path: '/infinite-list-virtual',
+        component: InfiniteListVirtual,
       },
     ],
   },
