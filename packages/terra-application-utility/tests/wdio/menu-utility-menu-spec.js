@@ -1,4 +1,4 @@
-// /* global browser, Terra */
+/* global browser, Terra */
 describe('MenuUtilityMenu', () => {
   beforeEach(() => {
     browser.url('/#/raw/tests/application-utility/default-menu-utility-menu');
@@ -24,7 +24,7 @@ describe('MenuUtilityMenu', () => {
       '--terra-application-utility-menu-divider-after-margin-top': '10px',
       '--terra-application-menu-utility-menu-chevron-height': '2rem',
       '--terra-application-menu-utility-menu-chevron-width': '2rem',
-      '-terra-application-menu-utility-menu-body-item-background-color': 'pink',
+      '--terra-application-menu-utility-menu-body-item-background-color': 'pink',
       '--terra-application-menu-utility-menu-body-item-font-color': 'pink',
       '--terra-application-menu-utility-menu-body-item-font-size': '2rem',
       '--terra-application-menu-utility-menu-body-item-margin-bottom': '1rem',
@@ -55,13 +55,13 @@ describe('MenuUtilityMenu', () => {
 
   describe('Hover: menu utility menu', () => {
     beforeEach(() => {
-      browser.waitForVisible('#test-item-7');
-      browser.moveToObject('#test-item-7');
+      browser.waitForVisible('#test-item-2');
+      browser.moveToObject('#test-item-2');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-item-7' });
-    Terra.should.beAccessible({ context: '#test-item-7' });
-    Terra.should.themeEachCustomProperty('#test-item-7', {
+    Terra.should.matchScreenshot({ selector: '#default' });
+    Terra.should.beAccessible({ context: '#default' });
+    Terra.should.themeEachCustomProperty('#default', {
       '--terra-application-menu-utility-menu-body-item-hover-background-color': 'blue',
     });
   });
@@ -75,7 +75,7 @@ describe('MenuUtilityMenu', () => {
     Terra.should.matchScreenshot({ selector: '#default' });
     Terra.should.beAccessible({ context: '#default' });
     Terra.should.themeEachCustomProperty('#default', {
-      '--terra-application-header-utility-menu-body-item-focus-box-shadow': '0 0 3px 3px rgba(50, 50, 233, 0.5), 0 0 4px 4px rgba(50, 50, 233, 0.35)',
+      '--terra-application-menu-utility-menu-body-item-focus-box-shadow': '0 0 3px 3px rgba(50, 50, 233, 0.5), 0 0 4px 4px rgba(50, 50, 233, 0.35)',
     });
   });
 });

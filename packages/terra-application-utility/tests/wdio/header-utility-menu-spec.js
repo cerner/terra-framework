@@ -5,56 +5,56 @@ describe('HeaderUtilityMenu', () => {
     browser.waitForVisible('#default');
   });
 
-  // describe('Displays a default header utility menu', () => {
-  //   Terra.should.matchScreenshot({ selector: '#default' });
-  //   Terra.should.beAccessible({ context: '#default' });
-  //   Terra.should.themeEachCustomProperty('#default', {
-  //     '--terra-application-header-utility-menu-header-font-size': '2rem',
-  //     '--terra-application-header-utility-menu-header-font-weight': 'normal',
-  //     '--terra-application-header-utility-menu-header-line-height': '1.2',
-  //     '--terra-application-header-utility-header-margin-bottom': '1rem',
-  //     '--terra-application-header-utility-header-margin-top': '1rem',
-  //     '--terra-application-header-utility-menu-initial-page-header-text-margin-left': '1rem',
-  //     '--terra-application-header-utility-menu-noninitial-page-header-text-margin-left': '1rem',
-  //     '--terra-application-header-utility-menu-chevron-width': '2rem',
-  //     '--terra-application-header-utility-menu-body-item-background-color': 'pink',
-  //     '--terra-application-header-utility-menu-body-item-font-color': 'pink',
-  //     '--terra-application-header-utility-menu-body-item-font-size': '2rem',
-  //     '--terra-application-header-utility-menu-body-item-margin-bottom': '1rem',
-  //     '--terra-application-header-utility-menu-body-item-margin-top': '1rem',
-  //     '--terra-application-header-utility-menu-body-item-padding-bottom': '1rem',
-  //     '--terra-application-header-utility-menu-body-item-padding-left': '1rem',
-  //     '--terra-application-header-utility-menu-body-item-padding-top': '1rem',
-  //     '--terra-application-header-utility-menu-body-item-left-inset': '1rem',
-  //     '--terra-application-header-utility-menu-body-item-right-inset': '1rem',
-  //     '--terra-application-header-utility-menu-body-item-checkmark-margin-left': '1rem',
-  //     '--terra-application-header-utility-menu-body-item-checkmark-margin-right': '1rem',
-  //     '--terra-application-header-utility-menu-body-item-checkmark-width': '1rem',
-  //     '--terra-application-header-utility-menu-body-item-chevron-margin-right': '1rem',
-  //     '--terra-application-header-utility-menu-body-item-chevron-width': '1rem',
-  //     '--terra-application-header-utility-menu-body-item-content-height': '3rem',
-  //     '--terra-application-header-utility-menu-body-item-content-padding-left': '3rem',
-  //     '--terra-application-header-utility-menu-body-item-content-width': '3rem',
-  //     '--terra-application-header-utility-menu-footer-item-background-color': 'blue',
-  //     '--terra-application-header-utility-menu-footer-item-border-radius': '1rem',
-  //     '--terra-application-header-utility-menu-footer-item-font-color': 'pink',
-  //     '--terra-application-header-utility-menu-footer-item-font-size': '2rem',
-  //     '--terra-application-header-utility-menu-footer-item-height': '1rem',
-  //     '--terra-application-header-utility-menu-footer-item-margin-bottom': '1rem',
-  //     '--terra-application-header-utility-menu-footer-item-margin-left': '1rem',
-  //     '--terra-application-header-utility-menu-footer-item-margin-right': '1rem',
-  //   });
-  // });
+  describe('Displays a default header utility menu', () => {
+    Terra.should.matchScreenshot({ selector: '#default' });
+    Terra.should.beAccessible({ context: '#default' });
+    Terra.should.themeEachCustomProperty('#default', {
+      '--terra-application-header-utility-menu-header-font-size': '2rem',
+      '--terra-application-header-utility-menu-header-font-weight': 'normal',
+      '--terra-application-header-utility-menu-header-line-height': '1.2',
+      '--terra-application-header-utility-header-margin-bottom': '1rem',
+      '--terra-application-header-utility-header-margin-top': '1rem',
+      '--terra-application-header-utility-menu-initial-page-header-text-margin-left': '1rem',
+      '--terra-application-header-utility-menu-noninitial-page-header-text-margin-left': '1rem',
+      '--terra-application-header-utility-menu-chevron-width': '2rem',
+      '--terra-application-header-utility-menu-body-item-background-color': 'pink',
+      '--terra-application-header-utility-menu-body-item-font-color': 'pink',
+      '--terra-application-header-utility-menu-body-item-font-size': '2rem',
+      '--terra-application-header-utility-menu-body-item-margin-bottom': '1rem',
+      '--terra-application-header-utility-menu-body-item-margin-top': '1rem',
+      '--terra-application-header-utility-menu-body-item-padding-bottom': '1rem',
+      '--terra-application-header-utility-menu-body-item-padding-left': '1rem',
+      '--terra-application-header-utility-menu-body-item-padding-top': '1rem',
+      '--terra-application-header-utility-menu-body-item-left-inset': '1rem',
+      '--terra-application-header-utility-menu-body-item-right-inset': '1rem',
+      '--terra-application-header-utility-menu-body-item-checkmark-margin-left': '1rem',
+      '--terra-application-header-utility-menu-body-item-checkmark-margin-right': '1rem',
+      '--terra-application-header-utility-menu-body-item-checkmark-width': '1rem',
+      '--terra-application-header-utility-menu-body-item-chevron-margin-right': '1rem',
+      '--terra-application-header-utility-menu-body-item-chevron-width': '1rem',
+      '--terra-application-header-utility-menu-body-item-content-height': '3rem',
+      '--terra-application-header-utility-menu-body-item-content-padding-left': '3rem',
+      '--terra-application-header-utility-menu-body-item-content-width': '3rem',
+      '--terra-application-header-utility-menu-footer-item-background-color': 'blue',
+      '--terra-application-header-utility-menu-footer-item-border-radius': '1rem',
+      '--terra-application-header-utility-menu-footer-item-font-color': 'pink',
+      '--terra-application-header-utility-menu-footer-item-font-size': '2rem',
+      '--terra-application-header-utility-menu-footer-item-height': '1rem',
+      '--terra-application-header-utility-menu-footer-item-margin-bottom': '1rem',
+      '--terra-application-header-utility-menu-footer-item-margin-left': '1rem',
+      '--terra-application-header-utility-menu-footer-item-margin-right': '1rem',
+    });
+  });
 
   describe('Hover: header utility menu', () => {
     beforeEach(() => {
-      browser.waitForVisible('#test-item-7');
-      browser.moveToObject('#test-item-7');
+      browser.waitForVisible('#test-item-2');
+      browser.moveToObject('#test-item-2');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-item-7' });
-    Terra.should.beAccessible({ context: '#test-item-7' });
-    Terra.should.themeEachCustomProperty('#test-item-7', {
+    Terra.should.matchScreenshot({ selector: '#default' });
+    Terra.should.beAccessible({ context: '#default' });
+    Terra.should.themeEachCustomProperty('#default', {
       '--terra-application-header-utility-menu-body-item-hover-background-color': 'blue',
     });
   });

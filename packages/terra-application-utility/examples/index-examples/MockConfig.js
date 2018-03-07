@@ -39,6 +39,7 @@ const MockConfig = customComponent =>
         'item-2.1',
         'item-2.2',
       ],
+      id: 'test-item-2',
     },
     {
       key: 'item-3',
