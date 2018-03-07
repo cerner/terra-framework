@@ -1,10 +1,10 @@
 import React from 'react';
 import Image from 'terra-image';
-import MockConfig from '../index-examples/MockConfig';
-import FallbackAvatar from '../index-examples/FallbackAvatar.svg';
-import { ApplicationHeaderUtility, UtilityUtils } from '../../lib/ApplicationUtility';
+import MockConfig from './MockConfig';
+import FallbackAvatar from './FallbackAvatar.svg';
+import { ApplicationMenuUtility, UtilityUtils } from '../../lib/ApplicationUtility';
 
-class DefaultApplicationHeaderUtility extends React.Component {
+class ApplicationMenuUtilityExample extends React.Component {
   constructor(props) {
     super(props);
     this.onDiscloseUtility = this.onDiscloseUtility.bind(this);
@@ -30,20 +30,20 @@ class DefaultApplicationHeaderUtility extends React.Component {
     const title = 'User Name';
 
     return (
-      <div style={{ height: '60px', position: 'relative', width: '150px' }}>
-        <ApplicationHeaderUtility
+      <div style={{ height: '60px', width: '300px' }}>
+        <ApplicationMenuUtility
           id="default"
           menuItems={MockConfig(accessory)}
           onChange={this.handleOnChange}
           onDisclose={this.onDiscloseUtility}
-          title={title}
           selectedKey="menu"
+          title={title}
           accessory={accessory}
-          variant={UtilityUtils.VARIANTS.HEADER}
+          variant={UtilityUtils.VARIANTS.MENU}
         />
       </div>
     );
   }
 }
 
-export default DefaultApplicationHeaderUtility;
+export default ApplicationMenuUtilityExample;

@@ -153,9 +153,9 @@ class UtilityMenuItem extends React.Component {
           aria-label={title}
         >
           <Arrange
-            fitStart={leftInset && <IconCheckmark className={checkmarkClassNames} />}
+            fitStart={leftInset ? <IconCheckmark className={checkmarkClassNames} /> : null}
             fill={cloneFill}
-            fitEnd={rightInset && <IconChevronRight className={chevronClassNames} />}
+            fitEnd={rightInset ? <IconChevronRight className={chevronClassNames} /> : null}
             align={'center'}
             className={arrangeClassNames}
           />
@@ -174,9 +174,9 @@ class UtilityMenuItem extends React.Component {
           aria-label={title}
         >
           <Arrange
-            fitStart={leftInset && <IconCheckmark className={checkmarkClassNames} />}
+            fitStart={leftInset ? <IconCheckmark className={checkmarkClassNames} /> : null}
             fill={<div>{title}</div>}
-            fitEnd={rightInset && <IconChevronRight className={chevronClassNames} />}
+            fitEnd={rightInset ? <IconChevronRight className={chevronClassNames} /> : null}
             align={'center'}
             className={arrangeClassNames}
           />

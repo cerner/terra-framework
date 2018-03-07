@@ -11,10 +11,12 @@ import { version } from '../package.json';
 import ApplicationHeaderUtilitySrc from '!raw-loader!../src/ApplicationHeaderUtility.jsx';
 
 // Example File
-import MockApplicationHeader from './index-examples/MockApplicationHeader';
-import MockModalManager from './index-examples/MockModalManager';
-import MockApplicationHeaderSrc from '!raw-loader!./index-examples/MockApplicationHeader.jsx';
-import MockApplicationMenuSrc from '!raw-loader!./index-examples/MockApplicationMenu.jsx';
+import ApplicationHeaderUtilityExample from './index-examples/ApplicationHeaderUtilityExample';
+import ApplicationMenuUtilityExample from './index-examples/ApplicationMenuUtilityExample';
+import MenuUtilityMenuExample from './index-examples/MenuUtilityMenuExample';
+import ApplicationHeaderUtilityExampleSrc from '!raw-loader!./index-examples/ApplicationHeaderUtilityExample.jsx';
+import MenuUtilityMenuExampleSrc from '!raw-loader!./index-examples/MenuUtilityMenuExample.jsx';
+import ApplicationMenuUtilityExampleSrc from '!raw-loader!./index-examples/ApplicationMenuUtilityExample.jsx';
 
 const ApplicationUtilityExamples = () => (
   <div>
@@ -23,15 +25,23 @@ const ApplicationUtilityExamples = () => (
 
     <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
     <IndexTemplate
-      title="Application Header Utility"
-      example={<MockApplicationHeader />}
-      exampleSrc={MockApplicationHeaderSrc}
+      title="Header: Utility"
+      example={<ApplicationHeaderUtilityExample />}
+      exampleSrc={ApplicationHeaderUtilityExampleSrc}
     />
+    <br />
     <IndexTemplate
-      title="Application Menu Utility"
-      example={<MockModalManager />}
-      exampleSrc={MockApplicationMenuSrc}
+      title="Menu: Utility"
+      example={<ApplicationMenuUtilityExample />}
+      exampleSrc={ApplicationMenuUtilityExampleSrc}
     />
+    <br />
+    <IndexTemplate
+      title="Utility Menu"
+      example={<MenuUtilityMenuExample />}
+      exampleSrc={MenuUtilityMenuExampleSrc}
+    />
+    <br />
     <PropsTable id="props-table" src={ApplicationHeaderUtilitySrc} />
   </div>
 );

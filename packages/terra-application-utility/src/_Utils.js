@@ -30,7 +30,7 @@ const itemShape = PropTypes.shape({
    */
   content: PropTypes.object,
   /**
-   *  The location to place the item. One of Utils.LOCATIONS.BODY, Utils.LOCATIONS.FOOTER.
+   * The location to place the item. One of Utils.LOCATIONS.BODY, Utils.LOCATIONS.FOOTER.
    */
   contentLocation: PropTypes.oneOf([LOCATIONS.BODY, LOCATIONS.FOOTER]),
   /**
@@ -46,7 +46,7 @@ const itemShape = PropTypes.shape({
    */
   title: PropTypes.string,
   /**
-   * Array containing the keys of each child of this item.
+   * Array containing the keys of each child item of this item.
    */
   childKeys: PropTypes.arrayOf(PropTypes.string),
 });

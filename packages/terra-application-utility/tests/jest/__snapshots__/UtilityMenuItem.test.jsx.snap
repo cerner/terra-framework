@@ -19,6 +19,8 @@ exports[`UtilityMenuItem should pass in a custom prop 1`] = `
         
       </div>
     }
+    fitEnd={null}
+    fitStart={null}
   />
 </li>
 `;
@@ -57,6 +59,8 @@ exports[`UtilityMenuItem should render with a title 1`] = `
         title
       </div>
     }
+    fitEnd={null}
+    fitStart={null}
   />
 </li>
 `;
@@ -81,6 +85,8 @@ exports[`UtilityMenuItem should render with content 1`] = `
          test
       </div>
     }
+    fitEnd={null}
+    fitStart={null}
   />
 </li>
 `;
@@ -103,6 +109,8 @@ exports[`UtilityMenuItem should render with default props 1`] = `
         
       </div>
     }
+    fitEnd={null}
+    fitStart={null}
   />
 </li>
 `;
@@ -125,6 +133,8 @@ exports[`UtilityMenuItem should render with hasChevron 1`] = `
         
       </div>
     }
+    fitEnd={null}
+    fitStart={null}
   />
 </li>
 `;
@@ -147,6 +157,8 @@ exports[`UtilityMenuItem should render with isSelectable 1`] = `
         
       </div>
     }
+    fitEnd={null}
+    fitStart={null}
   />
 </li>
 `;
@@ -169,6 +181,8 @@ exports[`UtilityMenuItem should render with isSelected 1`] = `
         
       </div>
     }
+    fitEnd={null}
+    fitStart={null}
   />
 </li>
 `;
@@ -191,6 +205,7 @@ exports[`UtilityMenuItem should render with leftInset 1`] = `
         
       </div>
     }
+    fitEnd={null}
     fitStart={
       <IconCheckmark
         className="checkmark"
@@ -221,6 +236,7 @@ exports[`UtilityMenuItem should render with rightInset 1`] = `
         
       </div>
     }
+    fitEnd={null}
     fitStart={
       <IconCheckmark
         className="checkmark"

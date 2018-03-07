@@ -11,7 +11,9 @@ describe('MenuUtilityMenu', () => {
     Terra.should.themeEachCustomProperty('#default', {
       '--terra-application-menu-utility-menu-header-font-size': '2rem',
       '--terra-application-menu-utility-menu-header-font-weight': 'normal',
-      '--terra-application-menu-utility-menu-header-height': '4rem',
+      '--terra-application-menu-utility-menu-header-line-height': '1.2',
+      '--terra-application-menu-utility-menu-margin-bottom': '1rem',
+      '--terra-application-menu-utility-menu-margin-top': '1rem',
       '--terra-application-menu-utility-menu-initial-page-header-text-margin-left': '1rem',
       '--terra-application-menu-utility-menu-noninitial-page-header-text-margin-left': '1rem',
       '--terra-application-utility-menu-divider-border-bottom': '5px dashed pink',
@@ -60,7 +62,7 @@ describe('MenuUtilityMenu', () => {
     Terra.should.matchScreenshot({ selector: '#test-item-7' });
     Terra.should.beAccessible({ context: '#test-item-7' });
     Terra.should.themeEachCustomProperty('#test-item-7', {
-      '--terra-application-menu-utility-menu-body-item-hover-focus-color': 'blue',
+      '--terra-application-menu-utility-menu-body-item-hover-background-color': 'blue',
     });
   });
 
@@ -72,7 +74,7 @@ describe('MenuUtilityMenu', () => {
     Terra.should.matchScreenshot({ selector: '#default' });
     Terra.should.beAccessible({ context: '#default' });
     Terra.should.themeEachCustomProperty('#default', {
-      '--terra-application-menu-utility-menu-body-item-hover-focus-color': 'blue',
+      '--terra-application-header-utility-menu-body-item-focus-box-shadow': '0 0 3px 3px rgba(50, 50, 233, 0.5), 0 0 4px 4px rgba(50, 50, 233, 0.35)',
     });
   });
 });

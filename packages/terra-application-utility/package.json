@@ -2,7 +2,7 @@
   "name": "terra-application-utility",
   "main": "lib/ApplicationUtility.js",
   "version": "0.0.0",
-  "description": "Houses the utilities menu and user data component (used as the first menu item). The menu items are generated from a config file. There are two versions - a header version and menu version. These should be used with the corresponding header and menu layouts.",
+  "description": "The Utility is used to disclose a utility menu. There are two versions - a header version and menu version. These should be used with the corresponding `terra-application-header-layout` and `terra-application-menu-layout` components.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git"
@@ -40,9 +40,7 @@
     "terra-button": "^2.1.0",
     "terra-content-container": "^2.1.0",
     "terra-icon": "^2.1.0",
-    "terra-image": "^2.1.0",
-    "terra-modal-manager": "^2.0.0",
-    "terra-popup": "^2.1.0"
+    "terra-image": "^2.1.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

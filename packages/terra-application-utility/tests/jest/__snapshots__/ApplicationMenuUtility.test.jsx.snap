@@ -7,6 +7,7 @@ exports[`ApplicationMenuUtility it should pass in a custom prop 1`] = `
   onChange={[Function]}
   onDisclose={[Function]}
   onRequestClose={[Function]}
+  selectedKey="menu"
   title=""
   variant="menu"
 />
@@ -18,6 +19,7 @@ exports[`ApplicationMenuUtility should render with a title 1`] = `
   onChange={[Function]}
   onDisclose={[Function]}
   onRequestClose={[Function]}
+  selectedKey="menu"
   title="name"
   variant="menu"
 />
@@ -30,6 +32,7 @@ exports[`ApplicationMenuUtility should render with an accessory 1`] = `
   onChange={[Function]}
   onDisclose={[Function]}
   onRequestClose={[Function]}
+  selectedKey="menu"
   title=""
   variant="menu"
 />
@@ -41,6 +44,7 @@ exports[`ApplicationMenuUtility should render with default props 1`] = `
   onChange={[Function]}
   onDisclose={[Function]}
   onRequestClose={[Function]}
+  selectedKey="menu"
   title=""
   variant="menu"
 />
@@ -205,6 +209,7 @@ exports[`ApplicationMenuUtility should render with menu items 1`] = `
   onChange={[Function]}
   onDisclose={[Function]}
   onRequestClose={[Function]}
+  selectedKey="menu"
   title=""
   variant="menu"
 />

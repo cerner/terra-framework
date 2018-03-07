@@ -1,6 +1,6 @@
 # Terra Application Utility
 
-Houses the utilities menu and user data component (used as the first menu item). The menu items are generated from a config file. There are two versions - a header version and menu version. These should be used with the corresponding header and menu layouts.
+The Utility is used to disclose a utility menu. There are two versions - a header version and menu version. These should be used with the corresponding `terra-application-header-layout` and `terra-application-menu-layout` components.
 
 ## Getting Started
 
@@ -11,25 +11,23 @@ Houses the utilities menu and user data component (used as the first menu item).
 
 ```jsx
 import React from 'react';
-import { ApplicationHeaderUtility, ApplicationMenuUtility, UserData } from 'terra-application-utility';
+import { ApplicationHeaderUtility, ApplicationMenuUtility } from 'terra-application-utility';
 
 <ApplicationHeaderUtility
   menuItems={menuItems}
   onChange={this.handleOnChange}
   onDisclose={this.onDiscloseUtility}
-  userName={userName}
-  userPhoto={image}
+  title={userName}
+  accessory={image}
 />
 
 <ApplicationMenuUtility
   menuItems={menuItems}
   onChange={this.handleOnChange}
   onDisclose={this.onDiscloseUtility}
-  userName={userName}
-  userPhoto={image}
+  title={userName}
+  accessory={image}
 />
-
-<UserData userDetail={userDetail} userName={userName} userPhoto={userPhoto}>
 
 ```
 

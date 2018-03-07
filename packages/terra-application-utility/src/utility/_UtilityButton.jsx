@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import IconChevronDown from 'terra-icon/lib/icon/IconChevronDown';
+import IconChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 import UtilityMenu from './_UtilityMenu';
 import Utils from '../_Utils';
 import styles from './_UtilityButton.scss';
@@ -18,10 +19,14 @@ const propTypes = {
    * The function to trigger when a menu item is selected.
    */
   onChange: PropTypes.func.isRequired,
-    /**
+  /**
    * The function that discloses the menu.
    */
   onDisclose: PropTypes.func.isRequired,
+  /**
+   * The key of the top level menu.
+   */
+  selectedKey: PropTypes.string.isRequired,
   /**
    * The text associated with utilities.
    */
@@ -39,7 +44,6 @@ const propTypes = {
 const defaultProps = {
   menuItems: [],
   title: '',
-  accessory: undefined,
 };
 
 class ApplicationHeaderUtility extends React.Component {
@@ -62,7 +66,7 @@ class ApplicationHeaderUtility extends React.Component {
   createContent() {
     return (
       <UtilityMenu
-        selectedKey={'menu'}
+        selectedKey={this.props.selectedKey}
         menuItems={this.props.menuItems}
         onChange={this.props.onChange}
         variant={this.props.variant}
@@ -76,6 +80,7 @@ class ApplicationHeaderUtility extends React.Component {
       menuItems,
       onChange,
       onDisclose,
+      selectedKey,
       title,
       accessory,
       variant,
@@ -114,7 +119,7 @@ class ApplicationHeaderUtility extends React.Component {
     return (
       <button {...customProps} className={utilityClassNames} onClick={(event) => { this.handleOnClick(event); }} aria-label={'Utility Button'}>
         {variant === Utils.VARIANTS.MENU ? contentContainer : [cloneAccessory, cloneTitle] }
-        {<IconChevronDown className={iconClassNames} />}
+        {variant === Utils.VARIANTS.MENU ? <IconChevronRight className={iconClassNames} /> : <IconChevronDown className={iconClassNames} />}
       </button>
     );
   }

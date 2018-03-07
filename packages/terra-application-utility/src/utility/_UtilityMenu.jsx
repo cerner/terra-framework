@@ -256,7 +256,6 @@ class UtilityMenu extends React.Component {
         isIconOnly
         text={backText}
         variant={Button.Opts.Variants.UTILITY}
-        // className={cx('back-button')}
       />
     );
     closeButton = (
@@ -267,7 +266,6 @@ class UtilityMenu extends React.Component {
         isIconOnly
         text={closeText}
         variant={Button.Opts.Variants.UTILITY}
-        // className={cx('close-button')}
       />
     );
 

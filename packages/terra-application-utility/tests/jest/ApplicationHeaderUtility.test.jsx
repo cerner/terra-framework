@@ -6,6 +6,7 @@ describe('ApplicationHeaderUtility', () => {
   const mockOnChange = jest.fn();
   const mockOnDisclose = jest.fn();
   const mockOnRequestClose = jest.fn();
+  const selectedKey = 'menu';
   const accessory = <Image />;
   const title = 'name';
 
@@ -16,6 +17,7 @@ describe('ApplicationHeaderUtility', () => {
         onChange={mockOnChange}
         onDisclose={mockOnDisclose}
         onRequestClose={mockOnRequestClose}
+        selectedKey={selectedKey}
       />,
     );
     expect(wrapper).toMatchSnapshot();
@@ -28,6 +30,7 @@ describe('ApplicationHeaderUtility', () => {
         onChange={mockOnChange}
         onDisclose={mockOnDisclose}
         onRequestClose={mockOnRequestClose}
+        selectedKey={selectedKey}
         title={title}
       />,
     );
@@ -41,6 +44,7 @@ describe('ApplicationHeaderUtility', () => {
         onChange={mockOnChange}
         onDisclose={mockOnDisclose}
         onRequestClose={mockOnRequestClose}
+        selectedKey={selectedKey}
         accessory={accessory}
       />,
     );
@@ -54,6 +58,7 @@ describe('ApplicationHeaderUtility', () => {
         onChange={mockOnChange}
         onDisclose={mockOnDisclose}
         onRequestClose={mockOnRequestClose}
+        selectedKey={selectedKey}
       />,
     );
     expect(wrapper).toMatchSnapshot();
@@ -66,6 +71,7 @@ describe('ApplicationHeaderUtility', () => {
         onChange={mockOnChange}
         onDisclose={mockOnDisclose}
         onRequestClose={mockOnRequestClose}
+        selectedKey={selectedKey}
         id="test"
       />,
     );

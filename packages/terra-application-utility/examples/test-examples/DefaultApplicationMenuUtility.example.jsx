@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'terra-image';
 import MockConfig from '../index-examples/MockConfig';
-import FallbackAvatar from '../index-examples/FallBackAvatar.svg';
-import { ApplicationMenuUtility, UtilityUtils } from '../../src/ApplicationUtility';
+import FallbackAvatar from '../index-examples/FallbackAvatar.svg';
+import { ApplicationMenuUtility, UtilityUtils } from '../../lib/ApplicationUtility';
 
 class DefaultApplicationMenuUtility extends React.Component {
   constructor(props) {
@@ -36,6 +36,7 @@ class DefaultApplicationMenuUtility extends React.Component {
           menuItems={MockConfig(accessory)}
           onChange={this.handleOnChange}
           onDisclose={this.onDiscloseUtility}
+          selectedKey="menu"
           title={title}
           accessory={accessory}
           variant={UtilityUtils.VARIANTS.MENU}

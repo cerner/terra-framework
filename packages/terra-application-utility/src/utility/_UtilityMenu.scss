@@ -1,5 +1,6 @@
 :local {
   .header-utility-menu {
+    background-color: var(--terra-application-header-utility-menu-background-color);
     font-family: inherit;
     width: 100%;
     /* stylelint-disable selector-max-compound-selectors*/
@@ -9,12 +10,14 @@
       flex-shrink: 0;
       font-size: var(--terra-application-header-utility-menu-header-font-size, 1rem);
       font-weight: var(--terra-application-header-utility-menu-header-font-weight, normal);
-      height: var(--terra-application-header-utility-menu-header-height, 2rem);
+      line-height: var(--terra-application-header-utility-menu-header-line-height, 1.2);
+      margin-top: var(--terra-application-header-utility-header-margin-top, 0.7143rem);
 
       /* stylelint-disable max-nesting-depth */
       .content-container {
         display: flex;
         justify-content: space-between;
+        margin-bottom: var(--terra-application-header-utility-header-margin-bottom, 0.7143rem);
 
         .left-content-container {
           align-items: center;
@@ -44,6 +47,7 @@
 
       .icon-close {
         flex-shrink: 0;
+        // margin-bottom: var(--terra-application-header-utility-header-margin-bottom, 0.7143rem);
         width: var(--terra-application-header-utility-menu-page-chevron-width, 1rem);
       }
       //   /* stylelint-enable max-nesting-depth */
@@ -65,6 +69,7 @@
   }
 
   .menu-utility-menu {
+    background-color: var(--terra-application-menu-utility-menu-background-color);
     font-family: inherit;
     width: 100%;
 
@@ -74,12 +79,14 @@
       flex-shrink: 0;
       font-size: var(--terra-application-menu-utility-menu-header-font-size, 1rem);
       font-weight: var(--terra-application-menu-utility-menu-header-font-weight, normal);
-      height: var(--terra-application-menu-utility-menu-header-height, 2rem);
+      line-height: var(--terra-application-header-utility-menu-header-line-height, 1.2);
+      margin-top: var(--terra-application-menu-utility-header-margin-top, 0.7143rem);
 
       /* stylelint-disable selector-max-compound-selectors*/
       .content-container {
         display: flex;
         justify-content: space-between;
+        margin-bottom: var(--terra-application-menu-utility-header-margin-bottom, 0.7143rem);
 
         .left-content-container {
           align-items: center;
@@ -107,6 +114,7 @@
 
         .icon-close {
           flex-shrink: 0;
+          // margin-bottom: var(--terra-application-header-utility-header-margin-bottom, 0.7143rem);
           width: var(--terra-application-menu-utility-menu-page-chevron-width, 1rem);
         }
       }

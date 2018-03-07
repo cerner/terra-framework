@@ -7,6 +7,7 @@ describe('UtilityButton', () => {
   const mockOnDisclose = jest.fn();
   const mockOnRequestClose = jest.fn();
   const accessory = <Image />;
+  const selectedKey = 'menu';
   const title = 'name';
   const variant = 'header';
 
@@ -18,6 +19,7 @@ describe('UtilityButton', () => {
         onDisclose={mockOnDisclose}
         onRequestClose={mockOnRequestClose}
         variant={variant}
+        selectedKey={selectedKey}
       />,
     );
     expect(wrapper).toMatchSnapshot();
@@ -32,6 +34,7 @@ describe('UtilityButton', () => {
         onRequestClose={mockOnRequestClose}
         title={title}
         variant={variant}
+        selectedKey={selectedKey}
       />,
     );
     expect(wrapper).toMatchSnapshot();
@@ -46,6 +49,7 @@ describe('UtilityButton', () => {
         onRequestClose={mockOnRequestClose}
         accessory={accessory}
         variant={variant}
+        selectedKey={selectedKey}
       />,
     );
     expect(wrapper).toMatchSnapshot();
@@ -59,6 +63,7 @@ describe('UtilityButton', () => {
         onDisclose={mockOnDisclose}
         onRequestClose={mockOnRequestClose}
         variant={variant}
+        selectedKey={selectedKey}
       />,
     );
     expect(wrapper).toMatchSnapshot();
@@ -72,6 +77,7 @@ describe('UtilityButton', () => {
         onDisclose={mockOnDisclose}
         onRequestClose={mockOnRequestClose}
         variant={variant}
+        selectedKey={selectedKey}
         id="test"
       />,
     );

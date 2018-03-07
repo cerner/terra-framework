@@ -2,7 +2,7 @@
 
 exports[`Divider it should pass in a custom prop 1`] = `
 <div
-  className="divider"
+  className="divider is-header"
   id="testDivider"
   role="separator"
 />
@@ -10,7 +10,7 @@ exports[`Divider it should pass in a custom prop 1`] = `
 
 exports[`Divider should render a default utility menu divider 1`] = `
 <div
-  className="divider"
+  className="divider is-header"
   role="separator"
 />
 `;

@@ -1,9 +1,9 @@
 import React from 'react';
 import Image from 'terra-image';
 import MockConfig from '../index-examples/MockConfig';
-import FallbackAvatar from '../index-examples/FallBackAvatar.svg';
-import { UtilityUtils } from '../../src/ApplicationUtility';
-import UtilityMenu from '../../src/utility/_UtilityMenu';
+import FallbackAvatar from '../index-examples/FallbackAvatar.svg';
+import { UtilityUtils } from '../../lib/ApplicationUtility';
+import UtilityMenu from '../../lib/utility/_UtilityMenu';
 
 class DefaultHeaderUtilityMenu extends React.Component {
   constructor(props) {
@@ -37,4 +37,3 @@ class DefaultHeaderUtilityMenu extends React.Component {
 }
 
 export default DefaultHeaderUtilityMenu;
-

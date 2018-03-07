@@ -4,7 +4,7 @@
 [![NPM version](http://img.shields.io/npm/v/terra-application-utility.svg)](https://www.npmjs.org/package/terra-application-utility)
 [![Build Status](https://travis-ci.org/cerner/terra-framework.svg?branch=master)](https://travis-ci.org/cerner/terra-framework)
 
-Houses the utilities menu and user data component (used as the first menu item). The menu items are generated from a config file. There are two versions - a header version and menu version. These should be used with the corresponding header and menu layouts.
+The Utility is used to disclose a utility menu. There are two versions - a header version and menu version. These should be used with the corresponding `terra-application-header-layout` and `terra-application-menu-layout` components.
 
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-utility/docs)
