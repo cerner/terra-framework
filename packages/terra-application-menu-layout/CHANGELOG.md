@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+2.1.0 - (March 6, 2018)
+------------------
+### Added
+* Added npmrc file with package-lock set to false.
+
 2.0.0 - (February 21, 2018)
 ------------------
 ### Changed
