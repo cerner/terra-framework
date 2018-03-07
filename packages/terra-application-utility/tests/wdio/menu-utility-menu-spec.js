@@ -1,4 +1,4 @@
-/* global browser, Terra */
+// /* global browser, Terra */
 describe('MenuUtilityMenu', () => {
   beforeEach(() => {
     browser.url('/#/raw/tests/application-utility/default-menu-utility-menu');
@@ -68,6 +68,7 @@ describe('MenuUtilityMenu', () => {
 
   describe('Focus: menu utility menu', () => {
     beforeEach(() => {
+      browser.keys('Tab');
       browser.keys('Tab');
     });
 
