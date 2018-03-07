@@ -13,18 +13,6 @@
     "--terra-application-header-name-word-break": "normal",
     "--terra-application-header-name-word-wrap": "normal"
   },
-  "ApplicationList": {
-    "--terra-application-list-color": "#1c1f21",
-    "--terra-application-list-font-size": "1.071rem",
-    "--terra-application-list-padding-bottom": "0.8225rem",
-    "--terra-application-list-padding-left": "1.2143rem",
-    "--terra-application-list-padding-right": "0.7143rem",
-    "--terra-application-list-padding-top": "0.8225rem",
-    "--terra-application-list-background-hover": "linear-gradient(-90deg, transparent, #f1f1f2)",
-    "--terra-application-list-selected-background-image": "linear-gradient(-270deg, transparent, #e8e9ea)",
-    "--terra-application-list-selected-border-left": "0.5rem solid #007cc3",
-    "--terra-application-list-selected-padding-left": "0.7143rem"
-  },
   "ApplicationMenuName": {
     "--terra-application-menu-name-align-items": "center",
     "--terra-application-menu-name-border-bottom": "1px solid #a9a9a9",
@@ -52,7 +40,6 @@
     "--terra-application-tabs-color": "#fff",
     "--terra-application-tabs-font-size": "1rem",
     "--terra-application-tabs-line-height": "1.4",
-    "--terra-application-tabs-padding-horizontal": "1.0715rem",
     "--terra-application-tabs-transition-duration": "0.35s",
     "--terra-application-tabs-transition-timing": "ease",
     "--terra-application-tab-width": "16.7145rem",
@@ -71,12 +58,12 @@
     "--terra-application-tabs-collapsed-padding-left": "1.071rem",
     "--terra-application-tabs-collapsed-padding-right": "1.071rem",
     "--terra-application-tabs-collapsed-padding-top": "0.8225rem",
-    "--terra-application-tabs-collapsed-hover-background": "linear-gradient(-90deg, transparent, #f1f1f2)",
-    "--terra-application-tabs-collapsed-selected-background-image": "linear-gradient(-270deg, transparent, #e8e9ea)",
+    "--terra-application-tabs-collapsed-hover-background": "linear-gradient(-90deg, #fff, #f1f1f2)",
+    "--terra-application-tabs-collapsed-selected-background-image": "linear-gradient(-270deg, #fff, #e8e9ea)",
     "--terra-application-tabs-collapsed-selected-box-shadow": "inset 0.5rem 0 0 0 #007cc3",
+    "--terra-application-tabs-collapsed-selected-font-weight": "600",
     "--terra-application-tabs-menu-content-background-color": "transparent",
-    "--terra-application-tabs-menu-content-color": "#1c1f21",
-    "--terra-application-tabs-menu-content-font-weight": "600"
+    "--terra-application-tabs-menu-content-color": "#1c1f21"
   },
   "Base": {
     "--terra-base-font-family": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
@@ -183,8 +170,7 @@
     "--terra-button-text-and-icon-horizontal-margin": "0.714rem",
     "--terra-button-text-and-icon-margin-between": "0.3571rem",
     "--terra-button-icon-height": "1rem",
-    "--terra-button-icon-width": "1rem",
-    "--terra-button-hover-background-color-utility": "transparent"
+    "--terra-button-icon-width": "1rem"
   },
   "ButtonGroupButton": {
     "--terra-button-group-button-background-color": "#dedfe0",
@@ -238,6 +224,7 @@
     "--terra-list-item-selected-background-color": "#e2f2fc",
     "--terra-list-item-selected-divider-color": "#0092e0",
     "--terra-list-item-hover-background-color": "#f4fafe",
+    "--terra-list-item-focus-background-color": "#f4fafe",
     "--terra-list-item-selected-hover-background-color": "#cbe7fa"
   },
   "Menu": {
@@ -271,17 +258,23 @@
     "--terra-menu-submenu-foreground-color": "#1c1f21"
   },
   "MenuItem": {
+    "--terra-navigation-side-menu-item-border-bottom": "none",
+    "--terra-navigation-side-menu-item-border-left": "none",
+    "--terra-navigation-side-menu-item-border-right": "none",
+    "--terra-navigation-side-menu-item-border-top": "none",
     "--terra-navigation-side-menu-item-color": "#1c1f21",
     "--terra-navigation-side-menu-item-size": "1.071rem",
+    "--terra-navigation-side-menu-item-line-height": "1.42857",
     "--terra-navigation-side-menu-item-padding-bottom": "0.8225rem",
     "--terra-navigation-side-menu-item-padding-left": "1.2143rem",
     "--terra-navigation-side-menu-item-padding-right": "0.7143rem",
     "--terra-navigation-side-menu-item-padding-top": "0.8225rem",
-    "--terra-navigation-side-menu-item-background-hover": "linear-gradient(-90deg, #fff, #f1f1f2)",
-    "--terra-navigation-side-menu-item-selected-background-image": "linear-gradient(-270deg, #fff, #e8e9ea)",
+    "--terra-navigation-side-menu-item-hover-background-color": "#f5fafe",
     "--terra-navigation-side-menu-item-selected-border-left": "0.5rem solid #007cc3",
     "--terra-navigation-side-menu-item-selected-font-weight": "600",
     "--terra-navigation-side-menu-item-selected-padding-left": "0.7143rem",
+    "--terra-navigation-side-menu-item-selected-background-color": "#f4f4f4",
+    "--terra-navigation-side-menu-item-box-shadow": "0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35)",
     "--terra-navigation-side-menu-item-chevron-color": "#787879",
     "--terra-menu-item-hover-color": "#ebf6fd",
     "--terra-menu-item-text-color": "#1c1f21",
@@ -304,6 +297,11 @@
   },
   "ModalOverlay": {
     "--terra-modal-overlay-background-color": "rgba(0, 0, 0, 0.4)"
+  },
+  "NavigationSideMenu": {
+    "--terra-navigation-side-menu-list-background-color": "transparent",
+    "--terra-navigation-side-menu-list-padding-bottom": "0.125rem",
+    "--terra-navigation-side-menu-list-padding-top": "0.125rem"
   },
   "Overlay": {
     "--terra-overlay-dark-background-color": "rgba(28, 31, 33, 0.8)",
