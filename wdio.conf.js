@@ -40,6 +40,11 @@ const config = {
     // other dom modifications are cleared before starting a test.
     global.browser.refresh();
   },
+
+  mochaOpts: {
+    ui: 'bdd',
+    timeout: 20000,
+  },
 };
 
 config.services = wdioConf.config.services.concat([WebpackDevService]);
