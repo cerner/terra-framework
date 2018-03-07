@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+2.1.0 - (March 6, 2018)
+------------------
 ### Added
 * withModalManager higher-order component generator
 

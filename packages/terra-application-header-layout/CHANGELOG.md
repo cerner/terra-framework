@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+2.1.0 - (March 6, 2018)
+------------------
 ### Added
 * Css rule to hide overflow in the case of large content.
 * Added npmrc file with package-lock set to false.
