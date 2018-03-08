@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+###Updated
+* Regenerate jest test snapshots to match new version of enzyme-to-json.
 
 2.1.0 - (March 6, 2018)
 ------------------
