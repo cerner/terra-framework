@@ -1,28 +1,54 @@
 /* global browser, Terra */
 
-const viewports = Terra.viewports('medium');
+const viewports = Terra.viewports('small');
 
-describe('ApplicationTabs', () => {
-  describe('Displays a default application tabs', () => {
+describe('InfiniteList', () => {
+  describe('Displays an infinite list with loading indicator', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/application-links/application-tabs-default');
-      browser.waitForVisible('#test-tabs [data-application-tabs-more]');
-      browser.moveToObject('#test-tabs [data-application-tabs-more]');
+      browser.url('/#/raw/tests/infinite-list/infinite-list-loading');
+      browser.waitForVisible('#test-infinite-list');
     });
 
-    Terra.should.matchScreenshot('#test-tabs', { selector: '#test-tabs', viewports });
+    Terra.should.matchScreenshot('#test-infinite-list', { selector: '#test-infinite-list', viewports });
   });
 
-  describe('Displays a hidden application tabs selection', () => {
+  describe('Displays an infinite list with updating indicator', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/application-links/application-tabs-default');
-      browser.waitForVisible('#test-tabs [data-application-tabs-more]');
-      browser.click('#test-tabs [data-application-tabs-more] span');
-      browser.waitForVisible('[data-application-tab-menu-content]');
-      browser.click('[data-application-tab-menu-content] > *:first-child div');
-      browser.pause(50);
+      browser.url('/#/raw/tests/infinite-list/infinite-list-updating');
+      browser.waitForVisible('#test-infinite-list');
     });
 
-    Terra.should.matchScreenshot('#test-tabs', { selector: '#test-tabs', viewports });
+    Terra.should.matchScreenshot('#test-infinite-list', { selector: '#test-infinite-list', viewports });
+  });
+
+  describe('Displays an infinite list with selection', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/infinite-list/infinite-list-selection');
+      browser.waitForVisible('#test-infinite-list');
+    });
+
+    Terra.should.matchScreenshot('#test-infinite-list', { selector: '#test-infinite-list', viewports });
+  });
+
+  describe('Displays an infinite list with virtual dom from top', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/infinite-list/infinite-list-virtual');
+      browser.waitForVisible('#test-infinite-list');
+      browser.pause(150);
+    });
+
+    Terra.should.matchScreenshot('#test-infinite-list', { selector: '#test-infinite-list', viewports });
+  });
+
+  describe('Displays an infinite list with virtual dom from bottom', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/infinite-list/infinite-list-virtual');
+      browser.waitForVisible('#test-infinite-list [data-infinite-list-index="0"]');
+      browser.pause(150);
+      browser.click('#test-click');
+      browser.waitForVisible('#test-infinite-list [data-infinite-list-index="15"]');
+    });
+
+    Terra.should.matchScreenshot('#test-infinite-list', { selector: '#test-infinite-list', viewports });
   });
 });

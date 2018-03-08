@@ -9,6 +9,7 @@ const InfiniteListUpdating = () => {
 
   return (
     <InfiniteList
+      id="test-infinite-list"
       infiniteProps={infiniteProps}
       selectedIndexes={[0]}
       isSelectable

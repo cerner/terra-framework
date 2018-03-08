@@ -102,7 +102,7 @@ class InfiniteList extends React.Component {
     }
     this.handleRenderCompletion();
     this.updateScrollGroups();
-    this.update(false);
+    this.update(null, false);
   }
 
   componentWillReceiveProps(newProps) {
@@ -220,7 +220,7 @@ class InfiniteList extends React.Component {
     }
   }
 
-  update(ensureUpdate) {
+  update(event, ensureUpdate) {
     if (!this.contentNode || this.disableScroll || this.preventUpdate) {
       return;
     }
@@ -330,7 +330,7 @@ class InfiniteList extends React.Component {
         bottomBoundryIndex: -1,
         hiddenBottomHeight: -1,
       };
-      this.update(true);
+      this.update(null, true);
     }
   }
 

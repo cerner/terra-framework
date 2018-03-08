@@ -10,6 +10,7 @@ const InfiniteListUpdating = () => {
 
   return (
     <InfiniteList
+      id="test-infinite-list"
       infiniteProps={infiniteProps}
     >
       <InfiniteList.Item key="item-0" content={<div style={{ height: '50px', width: '100%', backgroundColor: 'bisque' }}>Item 0</div>} />

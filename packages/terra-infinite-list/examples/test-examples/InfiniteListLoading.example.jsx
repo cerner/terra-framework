@@ -10,6 +10,7 @@ const InfiniteListLoading = () => {
 
   return (
     <InfiniteList
+      id="test-infinite-list"
       infiniteProps={infiniteProps}
     />
   );
