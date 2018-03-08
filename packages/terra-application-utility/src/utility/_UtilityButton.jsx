@@ -70,7 +70,6 @@ class ApplicationHeaderUtility extends React.Component {
         menuItems={this.props.menuItems}
         onChange={this.props.onChange}
         variant={this.props.variant}
-        data-application-header-utility-menu
       />
     );
   }
@@ -90,26 +89,25 @@ class ApplicationHeaderUtility extends React.Component {
     this.onClick = customProps.onClick;
     delete customProps.onClick;
 
-    let utilityClassNames = null;
-    let cloneAccessory = null;
-    let cloneTitle = null;
-    let contentContainer = null;
-    if (variant === Utils.VARIANTS.HEADER) {
-      utilityClassNames = cx(['header-utility-button', customProps.className]);
-    } else {
-      utilityClassNames = cx(['menu-utility-button', customProps.className]);
-    }
-    const accessoryClassNames = cx('accessory');
+    const utilityClassNames = cx([
+      { 'header-utility-button': variant === Utils.VARIANTS.HEADER },
+      { 'menu-utility-button': variant === Utils.VARIANTS.MENU },
+      customProps.className,
+    ]);
     const titleClassNames = cx('title');
     const iconClassNames = cx('icon');
 
+    let cloneAccessory = null;
     if (accessory) {
-      cloneAccessory = React.cloneElement(accessory, { className: accessoryClassNames });
+      cloneAccessory = React.cloneElement(accessory, { className: cx('accessory') });
     }
+
+    let cloneTitle = null;
     if (title) {
       cloneTitle = <span className={titleClassNames}>{title}</span>;
     }
-    contentContainer = (
+
+    const contentContainer = (
       <span className={cx('content-container')}>
         {cloneAccessory}
         {cloneTitle}
@@ -117,7 +115,12 @@ class ApplicationHeaderUtility extends React.Component {
     );
 
     return (
-      <button {...customProps} className={utilityClassNames} onClick={(event) => { this.handleOnClick(event); }} aria-label={'Utility Button'}>
+      <button
+        {...customProps}
+        className={utilityClassNames}
+        onClick={(event) => { this.handleOnClick(event); }}
+        aria-label={'Utility Button'}
+      >
         {variant === Utils.VARIANTS.MENU ? contentContainer : [cloneAccessory, cloneTitle] }
         {variant === Utils.VARIANTS.MENU ? <IconChevronRight className={iconClassNames} /> : <IconChevronDown className={iconClassNames} />}
       </button>

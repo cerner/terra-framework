@@ -66,6 +66,7 @@ class UtilityMenuItem extends React.Component {
   constructor(props) {
     super(props);
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleSelection = this.handleSelection.bind(this);
     this.state = { isSelected: props.isSelected && props.isSelectable };
   }
 
@@ -99,15 +100,16 @@ class UtilityMenuItem extends React.Component {
       variant,
       ...customProps
     } = this.props;
-    let bodyItemClassNames = null;
-    let footerItemClassNames = null;
-    if (variant === Utils.VARIANTS.HEADER) {
-      bodyItemClassNames = cx(['header-utility-body-item']);
-      footerItemClassNames = cx('header-utility-footer-item');
-    } else {
-      bodyItemClassNames = cx(['menu-utility-body-item']);
-      footerItemClassNames = cx('menu-utility-footer-item');
-    }
+
+    const bodyItemClassNames = cx([
+      { 'header-utility-body-item': variant === Utils.VARIANTS.HEADER },
+      { 'menu-utility-body-item': variant === Utils.VARIANTS.MENU },
+    ]);
+
+    const footerItemClassNames = cx([
+      { 'header-utility-footer-item': variant === Utils.VARIANTS.HEADER },
+      { 'menu-utility-footer-item': variant === Utils.VARIANTS.MENU },
+    ]);
 
     const checkmarkClassNames = cx([
       'checkmark',
@@ -124,65 +126,51 @@ class UtilityMenuItem extends React.Component {
       { 'default-right-inset': !rightInset },
     ]);
 
+    /* eslint-disable jsx-a11y/no-static-element-interactions */
+    const renderBodyItem = (fill, handleKeyDown, handleSelection) =>
+      <li
+        {...customProps}
+        tabIndex="0"
+        key={itemKey}
+        onClick={event => handleSelection(event, itemKey)}
+        onKeyDown={event => handleKeyDown(event, itemKey)}
+        role="button"
+        className={bodyItemClassNames}
+        aria-label={title}
+      >
+        <Arrange
+          fitStart={leftInset ? <IconCheckmark className={checkmarkClassNames} /> : null}
+          fill={fill}
+          fitEnd={rightInset ? <IconChevronRight className={chevronClassNames} /> : null}
+          align={'center'}
+          className={arrangeClassNames}
+        />
+      </li>;
+    /* eslint-enable jsx-a11y/no-static-element-interactions */
+
+
+    const renderFooterButton = (handleKeyDown, handleSelection) =>
+      <Button
+        {...customProps}
+        onClick={event => handleSelection(event, itemKey)}
+        onKeyDown={event => handleKeyDown(event, itemKey)}
+        variant={Button.Opts.Variants.NEUTRAL}
+        className={footerItemClassNames}
+        text={title}
+      />;
+
     // Footer items are always buttons. Body items are list items.
     // If content exists and is a body item, render content. Else, render the title text.
-    /* eslint-disable jsx-a11y/no-static-element-interactions */
     let item = null;
+    const handleKeyDown = this.handleKeyDown;
+    const handleSelection = this.handleSelection;
     if (contentLocation === Utils.LOCATIONS.FOOTER) {
-      item = (
-        <Button
-          {...customProps}
-          onClick={event => this.handleSelection(event, itemKey)}
-          onKeyDown={event => this.handleKeyDown(event, itemKey)}
-          variant={Button.Opts.Variants.NEUTRAL}
-          className={footerItemClassNames}
-          text={title}
-        />
-      );
+      item = renderFooterButton(handleKeyDown, handleSelection);
     } else if (content) {
-      item = (
-        <li
-          {...customProps}
-          tabIndex="0"
-          key={itemKey}
-          onClick={event => this.handleSelection(event, itemKey)}
-          onKeyDown={event => this.handleKeyDown(event, itemKey)}
-          role="button"
-          className={bodyItemClassNames}
-          aria-label={title}
-        >
-          <Arrange
-            fitStart={leftInset ? <IconCheckmark className={checkmarkClassNames} /> : null}
-            fill={content}
-            fitEnd={rightInset ? <IconChevronRight className={chevronClassNames} /> : null}
-            align={'center'}
-            className={arrangeClassNames}
-          />
-        </li>
-      );
+      item = renderBodyItem(content, handleKeyDown, handleSelection);
     } else {
-      item = (
-        <li
-          {...customProps}
-          tabIndex="0"
-          key={itemKey}
-          onClick={event => this.handleSelection(event, itemKey)}
-          onKeyDown={event => this.handleKeyDown(event, itemKey)}
-          role="button"
-          className={bodyItemClassNames}
-          aria-label={title}
-        >
-          <Arrange
-            fitStart={leftInset ? <IconCheckmark className={checkmarkClassNames} /> : null}
-            fill={<div>{title}</div>}
-            fitEnd={rightInset ? <IconChevronRight className={chevronClassNames} /> : null}
-            align={'center'}
-            className={arrangeClassNames}
-          />
-        </li>
-      );
+      item = renderBodyItem((<div>{title}</div>), handleKeyDown, handleSelection);
     }
-   /* eslint-enable jsx-a11y/no-static-element-interactions */
     return item;
   }
 }

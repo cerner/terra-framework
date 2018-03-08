@@ -15,11 +15,11 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Key of the top level menu.
+   * The initial selected key. Used as the top level menu page.
    */
   selectedKey: PropTypes.string.isRequired,
   /**
-   * Indicates if the height is bound to a value.
+   * Indicates if the height is bound to it's parent container.
    */
   isHeightBounded: PropTypes.bool,
   /**
@@ -31,13 +31,14 @@ const propTypes = {
    */
   onChange: PropTypes.func.isRequired,
   /**
-   * The function that closes the menu. This will be provided by the header/menu.
+   * The function that closes the menu.
+   * This will be provided by the terra-application-header or terra-application-menu
    */
   onRequestClose: PropTypes.func,
   /**
-   * Sets the Utility variant.
+   * Sets the Utility variant. One of Utils.VARIANTS.HEADER, Utils.VARIANTS.MENU.
    */
-  variant: PropTypes.oneOf([Utils.VARIANTS.HEADER, Utils.VARIANTS.MENU]).isRequired,
+  variant: PropTypes.oneOf([Utils.VARIANTS.HEADER, Utils.VARIANTS.MENU]),
 };
 
 const processMenuItems = (items) => {
@@ -59,12 +60,7 @@ const processMenuItems = (items) => {
   return map;
 };
 
-const hasChevron = (item) => {
-  if (item.childKeys && item.childKeys.length > 0) {
-    return true;
-  }
-  return false;
-};
+const hasChevron = item => item.childKeys && item.childKeys.length > 0;
 
 const contextTypes = {
   /* eslint-disable consistent-return */
@@ -138,11 +134,10 @@ class UtilityMenu extends React.Component {
       return (
         <ul className={cx('body')}>
           {currentItem.childKeys.map((key) => {
-            let item = null;
             if (this.getItem(key).contentLocation !== Utils.LOCATIONS.FOOTER) {
-              item = this.buildItem(key, leftInset, rightInset);
+              return this.buildItem(key, leftInset, rightInset);
             }
-            return item;
+            return null;
           })}
         </ul>
       );
@@ -166,7 +161,7 @@ class UtilityMenu extends React.Component {
   childrenHasCheckmark(item) {
     const childrenHasCheckmark = item.childKeys.some((key) => {
       const currentItem = this.getItem(key);
-      return currentItem.isSelectable === true && currentItem.contentLocation === Utils.LOCATIONS.BODY;
+      return currentItem.isSelectable === true && currentItem.contentLocation !== Utils.LOCATIONS.FOOTER;
     });
     return childrenHasCheckmark;
   }
@@ -174,7 +169,7 @@ class UtilityMenu extends React.Component {
   childrenHasChevron(item) {
     const childrenHasChevron = item.childKeys.some((key) => {
       const childKeys = this.getItem(key).childKeys;
-      return childKeys && childKeys.length > 0 && this.getItem(key).contentLocation === Utils.LOCATIONS.BODY;
+      return childKeys && childKeys.length > 0 && this.getItem(key).contentLocation !== Utils.LOCATIONS.FOOTER;
     });
     return childrenHasChevron;
   }
@@ -234,12 +229,11 @@ class UtilityMenu extends React.Component {
     const { intl } = this.context;
     const backText = intl.formatMessage({ id: 'Terra.application.utility.back' });
     const closeText = intl.formatMessage({ id: 'Terra.application.utility.close' });
-    let menuClassNames = null;
-    if (variant === Utils.VARIANTS.HEADER) {
-      menuClassNames = cx(['header-utility-menu', customProps.className]);
-    } else {
-      menuClassNames = cx(['menu-utility-menu', customProps.className]);
-    }
+    const menuClassNames = cx([
+      { 'header-utility-menu': variant === Utils.VARIANTS.HEADER },
+      { 'menu-utility-menu': variant === Utils.VARIANTS.MENU },
+      customProps.className,
+    ]);
 
     const currentKey = this.state.currentKey;
     const currentItem = this.getItem(currentKey);

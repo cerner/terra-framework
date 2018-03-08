@@ -31,10 +31,6 @@ const propTypes = {
   accessory: PropTypes.element,
 };
 
-const defaultProps = {
-  menuItems: [],
-};
-
 const ApplicationHeaderUtility = ({
   menuItems,
   onChange,
@@ -57,6 +53,5 @@ const ApplicationHeaderUtility = ({
 );
 
 ApplicationHeaderUtility.propTypes = propTypes;
-ApplicationHeaderUtility.defaultProps = defaultProps;
 
 export default ApplicationHeaderUtility;
