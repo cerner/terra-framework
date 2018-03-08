@@ -140,7 +140,6 @@ class UtilityMenuItem extends React.Component {
         />
       );
     } else if (content) {
-      const cloneFill = React.cloneElement(content, { className: cx('content') });
       item = (
         <li
           {...customProps}
@@ -154,7 +153,7 @@ class UtilityMenuItem extends React.Component {
         >
           <Arrange
             fitStart={leftInset ? <IconCheckmark className={checkmarkClassNames} /> : null}
-            fill={cloneFill}
+            fill={content}
             fitEnd={rightInset ? <IconChevronRight className={chevronClassNames} /> : null}
             align={'center'}
             className={arrangeClassNames}

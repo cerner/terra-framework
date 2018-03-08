@@ -25,8 +25,7 @@ class MenuUtilityMenuExample extends React.Component {
   }
 
   render() {
-    const customComponent = <Image src={FallbackAvatar} />;
-
+    const customComponent = <Image src={FallbackAvatar} style={{ width: '1.857rem', height: '1.857rem' }} />;
     return (
       <div>
         <div style={{ height: '300px', width: '300px' }}>

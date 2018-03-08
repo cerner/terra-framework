@@ -51,12 +51,6 @@
     .chevron.has-chevron {
       visibility: visible;
     }
-
-    .content {
-      height: var(--terra-application-header-utility-menu-body-item-content-height, 3rem);
-      padding-left: var(--terra-application-header-utility-menu-body-item-content-padding-left);
-      width: var(--terra-application-header-utility-menu-body-item-content-width, 3rem);
-    }
   }
 
   .header-utility-footer-item {
@@ -123,12 +117,6 @@
 
     .chevron.has-chevron {
       visibility: visible;
-    }
-
-    .content {
-      height: var(--terra-application-menu-utility-menu-body-item-content-height, 3rem);
-      padding-left: var(--terra-application-menu-utility-menu-body-item-content-padding-left);
-      width: var(--terra-application-menu-utility-menu-body-item-content-width, 3rem);
     }
   }
 

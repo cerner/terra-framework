@@ -79,9 +79,7 @@ exports[`UtilityMenuItem should render with content 1`] = `
     align="center"
     className="default-left-inset default-right-inset"
     fill={
-      <div
-        className="content"
-      >
+      <div>
          test
       </div>
     }
