@@ -1,6 +1,7 @@
 # Terra Infinite List
 
 The infinite list component provides virtual dom management and data request callbacks to manage large data sets within a list.
+InfiniteList is a controllerd HOC built upon a terra-list component in order to allow for list style and selection patterns.
 
 ## Getting Started
 
