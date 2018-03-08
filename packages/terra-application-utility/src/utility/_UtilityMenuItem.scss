@@ -9,10 +9,14 @@
     margin-bottom: var(--terra-application-header-utility-menu-body-item-margin-bottom, 0.3571rem);
     margin-top: var(--terra-application-header-utility-menu-body-item-margin-top, 0.3571rem);
     max-width: 100%;
+    overflow-wrap: break-word;
     padding-bottom: var(--terra-application-header-utility-menu-body-item-padding-bottom, 0.3571rem);
     padding-left: var(--terra-application-header-utility-menu-body-item-padding-left, 0.2143rem);
     padding-top: var(--terra-application-header-utility-menu-body-item-padding-top, 0.3571rem);
     text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-word;
+    word-wrap: break-word;
 
     .default-left-inset {
       margin-left: var(--terra-application-header-utility-menu-body-item-left-inset, 0.6429rem);
@@ -75,10 +79,14 @@
     margin-bottom: var(--terra-application-menu-utility-menu-body-item-margin-bottom, 0.3571rem);
     margin-top: var(--terra-application-menu-utility-menu-body-item-margin-top, 0.3571rem);
     max-width: 100%;
+    overflow-wrap: break-word;
     padding-bottom: var(--terra-application-menu-utility-menu-body-item-padding-bottom, 0.3571rem);
     padding-left: var(--terra-application-menu-utility-menu-body-item-padding-left, 0.2143rem);
     padding-top: var(--terra-application-menu-utility-menu-body-item-padding-top, 0.3571rem);
     text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-word;
+    word-wrap: break-word;
 
     .default-left-inset {
       margin-left: var(--terra-application-menu-utility-menu-body-item-left-inset, 0.6429rem);

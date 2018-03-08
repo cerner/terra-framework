@@ -10,15 +10,13 @@ class ApplicationMenuUtilityExample extends React.Component {
     this.onDiscloseUtility = this.onDiscloseUtility.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
     this.state = {
-      utilityComponent: false,
+      discloseCount: 0,
       selectedKey: null,
     };
   }
 
-  onDiscloseUtility(utility) {
-    if (utility) {
-      this.setState({ utilityComponent: !this.state.utilityComponent });
-    }
+  onDiscloseUtility() {
+    this.setState({ discloseCount: this.state.discloseCount += 1 });
   }
 
   handleOnChange(event, key) {
@@ -30,17 +28,20 @@ class ApplicationMenuUtilityExample extends React.Component {
     const title = 'User Name';
 
     return (
-      <div style={{ height: '60px', width: '300px' }}>
-        <ApplicationMenuUtility
-          id="default"
-          menuItems={MockConfig(accessory)}
-          onChange={this.handleOnChange}
-          onDisclose={this.onDiscloseUtility}
-          selectedKey="menu"
-          title={title}
-          accessory={accessory}
-          variant={UtilityUtils.VARIANTS.MENU}
-        />
+      <div>
+        <div style={{ height: '60px', width: '300px' }}>
+          <ApplicationMenuUtility
+            id="default"
+            menuItems={MockConfig(accessory)}
+            onChange={this.handleOnChange}
+            onDisclose={this.onDiscloseUtility}
+            selectedKey="menu"
+            title={title}
+            accessory={accessory}
+            variant={UtilityUtils.VARIANTS.MENU}
+          />
+        </div>
+        <div>{`Disclose count: ${this.state.discloseCount}`}</div>
       </div>
     );
   }

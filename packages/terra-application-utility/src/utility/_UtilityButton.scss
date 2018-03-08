@@ -27,6 +27,7 @@
     }
 
     .accessory {
+      height: var(--terra-application-header-utility-accessory-height, 1.875rem);
       margin-right: var(--terra-application-header-utility-accessory-margin-right, 0.2143rem);
       width: var(--terra-application-header-utility-accessory-width, 1.857rem);
     }
@@ -74,15 +75,15 @@
       justify-content: flex-start;
 
       .accessory {
-        height: var(--terra-application-menu-utility-photo-height, 1.857rem);
-        margin-right: var(--terra-application-menu-utility-photo-margin-right, 0.2143rem);
-        width: var(--terra-application-menu-utility-photo-width, 1.857rem);
+        height: var(--terra-application-menu-utility-accessory-height, 1.857rem);
+        margin-right: var(--terra-application-menu-accessory-photo-margin-right, 0.2143rem);
+        width: var(--terra-application-menu-utility-accessory-width, 1.857rem);
       }
 
       .title {
-        font-size: var(--terra-application-menu-utility-user-name-font-size, 1rem);
-        font-weight: var(--terra-application-menu-utility-user-name-font-size, normal);
-        margin-right: var(--terra-application-menu-utility-user-name-margin-right, 0.2143rem);
+        font-size: var(--terra-application-menu-utility-title-font-size, 1rem);
+        font-weight: var(--terra-application-menu-utility-title-font-size, normal);
+        margin-right: var(--terra-application-menu-utility-title-margin-right, 0.2143rem);
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
