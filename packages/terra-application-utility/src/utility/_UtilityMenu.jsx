@@ -139,7 +139,7 @@ class UtilityMenu extends React.Component {
         <ul className={cx('body')}>
           {currentItem.childKeys.map((key) => {
             let item = null;
-            if (this.getItem(key).contentLocation === Utils.LOCATIONS.BODY) {
+            if (this.getItem(key).contentLocation !== Utils.LOCATIONS.FOOTER) {
               item = this.buildItem(key, leftInset, rightInset);
             }
             return item;
