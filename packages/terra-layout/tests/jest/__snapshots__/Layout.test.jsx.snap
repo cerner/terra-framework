@@ -163,6 +163,7 @@ exports[`Layout Menu Disabled should render a Layout when small 1`] = `
     isOpen={false}
     isToggleEnabled={false}
     onToggle={[Function]}
+    panelBehavior="overlay"
     panelContent={null}
     size="small"
   >
@@ -213,6 +214,7 @@ exports[`Layout Menu Disabled should render a Layout when tiny 1`] = `
     isOpen={false}
     isToggleEnabled={false}
     onToggle={[Function]}
+    panelBehavior="overlay"
     panelContent={null}
     size="tiny"
   >
@@ -458,6 +460,7 @@ exports[`Layout Menu Enabled should render a Layout when small 1`] = `
     isOpen={false}
     isToggleEnabled={false}
     onToggle={[Function]}
+    panelBehavior="overlay"
     panelContent={
       <div
         layoutConfig={
@@ -522,6 +525,7 @@ exports[`Layout Menu Enabled should render a Layout when tiny 1`] = `
     isOpen={false}
     isToggleEnabled={false}
     onToggle={[Function]}
+    panelBehavior="overlay"
     panelContent={
       <div
         layoutConfig={
@@ -587,6 +591,7 @@ exports[`Layout should render a Layout with custom props 1`] = `
     isOpen={false}
     isToggleEnabled={false}
     onToggle={[Function]}
+    panelBehavior="overlay"
     panelContent={null}
     size="tiny"
   >
@@ -613,6 +618,7 @@ exports[`Layout should render a Layout without optional props 1`] = `
     isOpen={false}
     isToggleEnabled={false}
     onToggle={[Function]}
+    panelBehavior="overlay"
     panelContent={null}
     size="tiny"
   >
