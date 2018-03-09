@@ -10,6 +10,10 @@ exports[`UtilityButton it should pass in a custom prop 1`] = `
 >
   <IconChevronDown
     className="icon"
+    data-name="Layer 1"
+    isBidi={true}
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
   />
 </button>
 `;
@@ -28,6 +32,10 @@ exports[`UtilityButton should render with a title 1`] = `
   </span>
   <IconChevronDown
     className="icon"
+    data-name="Layer 1"
+    isBidi={true}
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
   />
 </button>
 `;
@@ -44,6 +52,10 @@ exports[`UtilityButton should render with an accessory 1`] = `
   />
   <IconChevronDown
     className="icon"
+    data-name="Layer 1"
+    isBidi={true}
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
   />
 </button>
 `;
@@ -57,6 +69,10 @@ exports[`UtilityButton should render with default props 1`] = `
 >
   <IconChevronDown
     className="icon"
+    data-name="Layer 1"
+    isBidi={true}
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
   />
 </button>
 `;
@@ -70,6 +86,10 @@ exports[`UtilityButton should render with menu items 1`] = `
 >
   <IconChevronDown
     className="icon"
+    data-name="Layer 1"
+    isBidi={true}
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
   />
 </button>
 `;

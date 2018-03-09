@@ -36,6 +36,8 @@ exports[`UtilityMenuItem should render with a content location 1`] = `
   onClick={[Function]}
   onKeyDown={[Function]}
   text=""
+  type="button"
+  variant="neutral"
 />
 `;
 
