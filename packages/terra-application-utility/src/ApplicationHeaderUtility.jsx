@@ -8,7 +8,36 @@ const propTypes = {
   /**
    * The array containing the menu items to be rendered within the menu.
    */
-  menuItems: PropTypes.arrayOf((Utils.itemShape)).isRequired,
+  menuItems: PropTypes.arrayOf(PropTypes.shape({
+    /**
+     * The unique key associated with this item.
+     */
+    key: PropTypes.string.isRequired,
+    /**
+     * The component associated with this item.
+     */
+    content: PropTypes.object,
+    /**
+     * The location to place the item. One of UtilityUtils.LOCATIONS.BODY, UtilityUtils.LOCATIONS.FOOTER.
+     */
+    contentLocation: PropTypes.oneOf([Utils.LOCATIONS.BODY, Utils.LOCATIONS.FOOTER]),
+    /**
+     * Boolean indicating if the item is selected.
+     */
+    isSelected: PropTypes.bool,
+    /**
+     * Boolean indicating if the item is selectable.
+     */
+    isSelectable: PropTypes.bool,
+    /**
+     * The text associated with this item.
+     */
+    title: PropTypes.string,
+    /**
+     * Array containing the keys of each child item of this item.
+     */
+    childKeys: PropTypes.arrayOf(PropTypes.string),
+  })).isRequired,
   /**
    * The function to trigger when a menu item is selected.
    */
@@ -30,6 +59,7 @@ const propTypes = {
    */
   accessory: PropTypes.element,
 };
+
 
 const ApplicationHeaderUtility = ({
   menuItems,

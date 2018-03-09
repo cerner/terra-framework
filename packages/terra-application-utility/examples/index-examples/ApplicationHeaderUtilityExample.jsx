@@ -28,7 +28,7 @@ class ApplicationHeaderUtilityExample extends React.Component {
     const title = 'User Name';
 
     return (
-      <div>
+      <div style={{ paddingLeft: '4px' }}>
         <div style={{ height: '60px', position: 'relative', width: '150px', backgroundColor: 'bisque' }}>
           <ApplicationHeaderUtility
             id="default"
