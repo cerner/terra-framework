@@ -10,11 +10,11 @@
   }
 
   .infinite-hidden {
-    border: none;
+    border: 0;
     display: block;
-    height: 0px;
-    overflow: hidden;
+    height: 0;
     margin: 0;
+    overflow: hidden;
     padding: 0;
     position: absolute;
     top: 100%;
