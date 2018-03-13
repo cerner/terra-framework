@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const wdioConf = require('terra-toolkit/lib/wdio/conf');
-const WebpackDevService = require('terra-toolkit/lib/wdio/services/index').WebpackDevService;
+const ExpressDevService = require('terra-toolkit/lib/wdio/services/index').ExpressDevService;
 const localIP = require('ip');
 const path = require('path');
 const webpackConfig = require('terra-dev-site/src/config/webpack.config.js');
@@ -40,12 +40,7 @@ const config = {
     // other dom modifications are cleared before starting a test.
     global.browser.refresh();
   },
-
-  mochaOpts: {
-    ui: 'bdd',
-    timeout: 20000,
-  },
 };
 
-config.services = wdioConf.config.services.concat([WebpackDevService]);
+config.services = wdioConf.config.services.concat([ExpressDevService]);
 exports.config = config;
