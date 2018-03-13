@@ -1,7 +1,7 @@
 # Terra Infinite List
 
 The infinite list component provides virtual dom management and data request callbacks to manage large data sets within a list.
-InfiniteList is a controllerd HOC built upon a terra-list component in order to allow for list style and selection patterns.
+InfiniteList is a controllerd HOC built upon the terra-list component in order to allow for list style and selection patterns.
 
 ## Getting Started
 
@@ -19,11 +19,7 @@ import InfiniteList from 'terra-infinite-list';
 render() {
   const items = this.getListItemsFromData();
 
-  const fullLoading = (
-    <OverlayContainer style={{ height: '100%', width: '100%' }}>
-      <LoadingOverlay isOpen isAnimated isRelativeToContainer backgroundStyle="dark" />
-    </OverlayContainer>
-  );
+  const fullLoading = <LoadingOverlay isOpen isAnimated isRelativeToContainer backgroundStyle="dark" />;
 
   const progressLoading = (
     <OverlayContainer style={{ height: '90px', width: '100%' }}>

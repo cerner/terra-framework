@@ -75,7 +75,14 @@ const defaultProps = {
   selectedIndexes: [],
 };
 
-const createSpacer = (height, index) => <List.Item isSelectable={false} className={cx(['spacer'])} style={{ height }} key={`infinite-spacer-${index}`} />;
+const createSpacer = (height, index) => (
+  <List.Item
+    isSelectable={false}
+    className={cx(['spacer'])}
+    style={{ height }}
+    key={`infinite-spacer-${index}`}
+  />
+);
 
 class InfiniteList extends React.Component {
   constructor(props) {
