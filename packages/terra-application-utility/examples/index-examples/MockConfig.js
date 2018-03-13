@@ -1,11 +1,11 @@
-import Utils from '../../src/_Utils';
+import { UtilityUtils } from '../../src/ApplicationUtility';
 
 const MockConfig = customComponent =>
   [
     {
       key: 'menu',
       title: 'Menu',
-      contentLocation: Utils.LOCATIONS.BODY,
+      contentLocation: UtilityUtils.LOCATIONS.BODY,
       isSelected: false,
       isSelectable: false,
       childKeys: [
@@ -22,7 +22,7 @@ const MockConfig = customComponent =>
       key: 'item-1',
       title: 'Item 1',
       content: customComponent,
-      contentLocation: Utils.LOCATIONS.BODY,
+      contentLocation: UtilityUtils.LOCATIONS.BODY,
       isSelected: false,
       isSelectable: false,
       childKeys: [
@@ -32,7 +32,7 @@ const MockConfig = customComponent =>
     {
       key: 'item-2',
       title: 'Item 2',
-      contentLocation: Utils.LOCATIONS.BODY,
+      contentLocation: UtilityUtils.LOCATIONS.BODY,
       isSelected: false,
       isSelectable: false,
       childKeys: [
@@ -44,7 +44,7 @@ const MockConfig = customComponent =>
     {
       key: 'item-3',
       title: 'item-3',
-      contentLocation: Utils.LOCATIONS.FOOTER,
+      contentLocation: UtilityUtils.LOCATIONS.FOOTER,
       isSelected: false,
       isSelectable: false,
       childKeys: [],
@@ -52,7 +52,7 @@ const MockConfig = customComponent =>
     {
       key: 'item-4',
       title: 'Item 4',
-      contentLocation: Utils.LOCATIONS.BODY,
+      contentLocation: UtilityUtils.LOCATIONS.BODY,
       isSelected: false,
       isSelectable: false,
       childKeys: [
@@ -64,7 +64,7 @@ const MockConfig = customComponent =>
     {
       key: 'item-1.1',
       title: 'Item 1.1',
-      contentLocation: Utils.LOCATIONS.BODY,
+      contentLocation: UtilityUtils.LOCATIONS.BODY,
       isSelected: false,
       isSelectable: false,
       childKeys: [],
@@ -72,7 +72,7 @@ const MockConfig = customComponent =>
     {
       key: 'item-2.1',
       title: 'Item 2.1',
-      contentLocation: Utils.LOCATIONS.BODY,
+      contentLocation: UtilityUtils.LOCATIONS.BODY,
       isSelected: false,
       isSelectable: false,
       childKeys: [],
@@ -80,7 +80,7 @@ const MockConfig = customComponent =>
     {
       key: 'item-2.2',
       title: 'Item 2.2',
-      contentLocation: Utils.LOCATIONS.BODY,
+      contentLocation: UtilityUtils.LOCATIONS.BODY,
       isSelected: false,
       isSelectable: false,
       childKeys: [],
@@ -88,7 +88,7 @@ const MockConfig = customComponent =>
     {
       key: 'item-4.1',
       title: 'Item 4.1',
-      contentLocation: Utils.LOCATIONS.BODY,
+      contentLocation: UtilityUtils.LOCATIONS.BODY,
       isSelected: false,
       isSelectable: false,
       childKeys: [],
@@ -96,7 +96,7 @@ const MockConfig = customComponent =>
     {
       key: 'item-4.2',
       title: 'Item 4.2',
-      contentLocation: Utils.LOCATIONS.BODY,
+      contentLocation: UtilityUtils.LOCATIONS.BODY,
       isSelected: false,
       isSelectable: false,
       childKeys: [],
@@ -104,7 +104,7 @@ const MockConfig = customComponent =>
     {
       key: 'item-4.3',
       title: 'Item 4.3',
-      contentLocation: Utils.LOCATIONS.BODY,
+      contentLocation: UtilityUtils.LOCATIONS.BODY,
       isSelected: false,
       isSelectable: false,
       childKeys: [],
@@ -112,7 +112,7 @@ const MockConfig = customComponent =>
     {
       key: 'item-5',
       title: 'Item 5',
-      contentLocation: Utils.LOCATIONS.BODY,
+      contentLocation: UtilityUtils.LOCATIONS.BODY,
       isSelected: false,
       isSelectable: false,
       childKeys: ['item-5.1', 'item-5.2'],
@@ -120,7 +120,7 @@ const MockConfig = customComponent =>
     {
       key: 'item-5.1',
       title: 'Item 5.1',
-      contentLocation: Utils.LOCATIONS.BODY,
+      contentLocation: UtilityUtils.LOCATIONS.BODY,
       isSelected: false,
       isSelectable: true,
       childKeys: [],
@@ -128,7 +128,7 @@ const MockConfig = customComponent =>
     {
       key: 'item-5.2',
       title: 'Item 5.2',
-      contentLocation: Utils.LOCATIONS.BODY,
+      contentLocation: UtilityUtils.LOCATIONS.BODY,
       isSelected: false,
       isSelectable: true,
       childKeys: [],
@@ -136,7 +136,7 @@ const MockConfig = customComponent =>
     {
       key: 'item-6',
       title: 'Item 6',
-      contentLocation: Utils.LOCATIONS.FOOTER,
+      contentLocation: UtilityUtils.LOCATIONS.FOOTER,
       isSelected: false,
       isSelectable: true,
       childKeys: [],
@@ -144,7 +144,7 @@ const MockConfig = customComponent =>
     {
       key: 'item-7',
       title: 'Item 7',
-      contentLocation: Utils.LOCATIONS.BODY,
+      contentLocation: UtilityUtils.LOCATIONS.BODY,
       isSelected: true,
       isSelectable: false,
       childKeys: [],

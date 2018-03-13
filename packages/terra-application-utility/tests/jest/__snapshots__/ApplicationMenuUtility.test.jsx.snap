@@ -1,57 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ApplicationMenuUtility it should pass in a custom prop 1`] = `
-<ApplicationHeaderUtility
+<InjectIntl(ApplicationHeaderUtility)
   id="test"
+  initialSelectedKey="menu"
   menuItems={Array []}
   onChange={[Function]}
   onDisclose={[Function]}
   onRequestClose={[Function]}
-  selectedKey="menu"
-  title=""
   variant="menu"
 />
 `;
 
 exports[`ApplicationMenuUtility should render with a title 1`] = `
-<ApplicationHeaderUtility
+<InjectIntl(ApplicationHeaderUtility)
+  initialSelectedKey="menu"
   menuItems={Array []}
   onChange={[Function]}
   onDisclose={[Function]}
   onRequestClose={[Function]}
-  selectedKey="menu"
   title="name"
   variant="menu"
 />
 `;
 
 exports[`ApplicationMenuUtility should render with an accessory 1`] = `
-<ApplicationHeaderUtility
+<InjectIntl(ApplicationHeaderUtility)
   accessory={<Image />}
+  initialSelectedKey="menu"
   menuItems={Array []}
   onChange={[Function]}
   onDisclose={[Function]}
   onRequestClose={[Function]}
-  selectedKey="menu"
-  title=""
   variant="menu"
 />
 `;
 
 exports[`ApplicationMenuUtility should render with default props 1`] = `
-<ApplicationHeaderUtility
+<InjectIntl(ApplicationHeaderUtility)
+  initialSelectedKey="menu"
   menuItems={Array []}
   onChange={[Function]}
   onDisclose={[Function]}
   onRequestClose={[Function]}
-  selectedKey="menu"
-  title=""
   variant="menu"
 />
 `;
 
 exports[`ApplicationMenuUtility should render with menu items 1`] = `
-<ApplicationHeaderUtility
+<InjectIntl(ApplicationHeaderUtility)
+  initialSelectedKey="menu"
   menuItems={
     Array [
       Object {
@@ -210,8 +208,6 @@ exports[`ApplicationMenuUtility should render with menu items 1`] = `
   onChange={[Function]}
   onDisclose={[Function]}
   onRequestClose={[Function]}
-  selectedKey="menu"
-  title=""
   variant="menu"
 />
 `;

@@ -35,7 +35,7 @@ class ApplicationHeaderUtilityExample extends React.Component {
             menuItems={MockConfig(accessory)}
             onChange={this.handleOnChange}
             onDisclose={this.onDiscloseUtility}
-            selectedKey="menu"
+            initialSelectedKey="menu"
             title={title}
             accessory={accessory}
             variant={UtilityUtils.VARIANTS.HEADER}

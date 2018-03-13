@@ -1,95 +1,213 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UtilityButton it should pass in a custom prop 1`] = `
-<button
-  aria-label="Utility Button"
-  className="header-utility-button"
+<InjectIntl(ApplicationHeaderUtility)
   id="test"
-  onClick={[Function]}
+  initialSelectedKey="menu"
+  menuItems={Array []}
+  onChange={[Function]}
+  onDisclose={[Function]}
   onRequestClose={[Function]}
->
-  <IconChevronDown
-    className="icon"
-    data-name="Layer 1"
-    isBidi={true}
-    viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg"
-  />
-</button>
+  variant="header"
+/>
 `;
 
 exports[`UtilityButton should render with a title 1`] = `
-<button
-  aria-label="Utility Button"
-  className="header-utility-button"
-  onClick={[Function]}
+<InjectIntl(ApplicationHeaderUtility)
+  initialSelectedKey="menu"
+  menuItems={Array []}
+  onChange={[Function]}
+  onDisclose={[Function]}
   onRequestClose={[Function]}
->
-  <span
-    className="title"
-  >
-    name
-  </span>
-  <IconChevronDown
-    className="icon"
-    data-name="Layer 1"
-    isBidi={true}
-    viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg"
-  />
-</button>
+  title="name"
+  variant="header"
+/>
 `;
 
 exports[`UtilityButton should render with an accessory 1`] = `
-<button
-  aria-label="Utility Button"
-  className="header-utility-button"
-  onClick={[Function]}
+<InjectIntl(ApplicationHeaderUtility)
+  accessory={<Image />}
+  initialSelectedKey="menu"
+  menuItems={Array []}
+  onChange={[Function]}
+  onDisclose={[Function]}
   onRequestClose={[Function]}
->
-  <Image
-    className="accessory"
-  />
-  <IconChevronDown
-    className="icon"
-    data-name="Layer 1"
-    isBidi={true}
-    viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg"
-  />
-</button>
+  variant="header"
+/>
 `;
 
 exports[`UtilityButton should render with default props 1`] = `
-<button
-  aria-label="Utility Button"
-  className="header-utility-button"
-  onClick={[Function]}
+<InjectIntl(ApplicationHeaderUtility)
+  initialSelectedKey="menu"
+  menuItems={Array []}
+  onChange={[Function]}
+  onDisclose={[Function]}
   onRequestClose={[Function]}
->
-  <IconChevronDown
-    className="icon"
-    data-name="Layer 1"
-    isBidi={true}
-    viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg"
-  />
-</button>
+  variant="header"
+/>
 `;
 
 exports[`UtilityButton should render with menu items 1`] = `
-<button
-  aria-label="Utility Button"
-  className="header-utility-button"
-  onClick={[Function]}
+<InjectIntl(ApplicationHeaderUtility)
+  initialSelectedKey="menu"
+  menuItems={
+    Array [
+      Object {
+        "childKeys": Array [
+          "item-1",
+          "item-2",
+          "item-3",
+          "item-4",
+          "item-5",
+          "item-6",
+          "item-7",
+        ],
+        "contentLocation": "body",
+        "isSelectable": false,
+        "isSelected": false,
+        "key": "menu",
+        "title": "Menu",
+      },
+      Object {
+        "childKeys": Array [
+          "item-1.1",
+        ],
+        "content": undefined,
+        "contentLocation": "body",
+        "isSelectable": false,
+        "isSelected": false,
+        "key": "item-1",
+        "title": "Item 1",
+      },
+      Object {
+        "childKeys": Array [
+          "item-2.1",
+          "item-2.2",
+        ],
+        "contentLocation": "body",
+        "id": "test-item-2",
+        "isSelectable": false,
+        "isSelected": false,
+        "key": "item-2",
+        "title": "Item 2",
+      },
+      Object {
+        "childKeys": Array [],
+        "contentLocation": "footer",
+        "isSelectable": false,
+        "isSelected": false,
+        "key": "item-3",
+        "title": "item-3",
+      },
+      Object {
+        "childKeys": Array [
+          "item-4.1",
+          "item-4.2",
+          "item-4.3",
+        ],
+        "contentLocation": "body",
+        "isSelectable": false,
+        "isSelected": false,
+        "key": "item-4",
+        "title": "Item 4",
+      },
+      Object {
+        "childKeys": Array [],
+        "contentLocation": "body",
+        "isSelectable": false,
+        "isSelected": false,
+        "key": "item-1.1",
+        "title": "Item 1.1",
+      },
+      Object {
+        "childKeys": Array [],
+        "contentLocation": "body",
+        "isSelectable": false,
+        "isSelected": false,
+        "key": "item-2.1",
+        "title": "Item 2.1",
+      },
+      Object {
+        "childKeys": Array [],
+        "contentLocation": "body",
+        "isSelectable": false,
+        "isSelected": false,
+        "key": "item-2.2",
+        "title": "Item 2.2",
+      },
+      Object {
+        "childKeys": Array [],
+        "contentLocation": "body",
+        "isSelectable": false,
+        "isSelected": false,
+        "key": "item-4.1",
+        "title": "Item 4.1",
+      },
+      Object {
+        "childKeys": Array [],
+        "contentLocation": "body",
+        "isSelectable": false,
+        "isSelected": false,
+        "key": "item-4.2",
+        "title": "Item 4.2",
+      },
+      Object {
+        "childKeys": Array [],
+        "contentLocation": "body",
+        "isSelectable": false,
+        "isSelected": false,
+        "key": "item-4.3",
+        "title": "Item 4.3",
+      },
+      Object {
+        "childKeys": Array [
+          "item-5.1",
+          "item-5.2",
+        ],
+        "contentLocation": "body",
+        "isSelectable": false,
+        "isSelected": false,
+        "key": "item-5",
+        "title": "Item 5",
+      },
+      Object {
+        "childKeys": Array [],
+        "contentLocation": "body",
+        "isSelectable": true,
+        "isSelected": false,
+        "key": "item-5.1",
+        "title": "Item 5.1",
+      },
+      Object {
+        "childKeys": Array [],
+        "contentLocation": "body",
+        "isSelectable": true,
+        "isSelected": false,
+        "key": "item-5.2",
+        "title": "Item 5.2",
+      },
+      Object {
+        "childKeys": Array [],
+        "contentLocation": "footer",
+        "isSelectable": true,
+        "isSelected": false,
+        "key": "item-6",
+        "title": "Item 6",
+      },
+      Object {
+        "childKeys": Array [],
+        "contentLocation": "body",
+        "id": "test-item-7",
+        "isSelectable": false,
+        "isSelected": true,
+        "key": "item-7",
+        "title": "Item 7",
+      },
+    ]
+  }
+  onChange={[Function]}
+  onDisclose={[Function]}
   onRequestClose={[Function]}
->
-  <IconChevronDown
-    className="icon"
-    data-name="Layer 1"
-    isBidi={true}
-    viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg"
-  />
-</button>
+  variant="header"
+/>
 `;

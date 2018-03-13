@@ -8,16 +8,16 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * If the divider shall be placed before the footer
+   * If the divider shall be placed before the header
    */
-  isFooter: PropTypes.bool,
+  isTop: PropTypes.bool,
 };
 
-const UtilityMenuDivider = ({ isFooter, ...customProps }) => {
+const UtilityMenuDivider = ({ isTop, ...customProps }) => {
   const dividerClassNames = cx([
     'divider',
-    { 'is-header': !isFooter },
-    { 'is-footer': isFooter },
+    { 'is-bottom': !isTop },
+    { 'is-top': isTop },
     customProps.className,
   ]);
 

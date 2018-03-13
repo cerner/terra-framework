@@ -16,7 +16,7 @@ describe('UtilityMenu', () => {
     const wrapper = shallow(
       <IntlProvider locale={locale} messages={messages}>
         <HeaderUtilityMenu
-          selectedKey="key"
+          initialSelectedKey="key"
           menuItems={config}
           onChange={mockOnChange}
           onDisclose={mockOnDisclose}
@@ -31,7 +31,7 @@ describe('UtilityMenu', () => {
     const wrapper = shallow(
       <IntlProvider locale={locale} messages={messages}>
         <HeaderUtilityMenu
-          selectedKey="key"
+          initialSelectedKey="key"
           isHeightBounded
           menuItems={config}
           onChange={mockOnChange}
@@ -47,7 +47,7 @@ describe('UtilityMenu', () => {
     const wrapper = shallow(
       <IntlProvider locale={locale} messages={messages}>
         <HeaderUtilityMenu
-          selectedKey="key"
+          initialSelectedKey="key"
           menuItems={config}
           onChange={mockOnChange}
           onDisclose={mockOnDisclose}
@@ -63,7 +63,7 @@ describe('UtilityMenu', () => {
     const wrapper = shallow(
       <IntlProvider locale={locale} messages={messages}>
         <HeaderUtilityMenu
-          selectedKey="key"
+          initialSelectedKey="key"
           menuItems={config}
           onChange={mockOnChange}
           onDisclose={mockOnDisclose}

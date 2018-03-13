@@ -20,7 +20,7 @@ const propTypes = {
   /**
    * The key of the top level menu.
    */
-  selectedKey: PropTypes.string.isRequired,
+  initialSelectedKey: PropTypes.string.isRequired,
   /**
    * The text to be displayed.
    */
@@ -35,7 +35,7 @@ const ApplicationHeaderUtility = ({
   menuItems,
   onChange,
   onDisclose,
-  selectedKey,
+  initialSelectedKey,
   title,
   accessory,
   ...customProps
@@ -45,7 +45,7 @@ const ApplicationHeaderUtility = ({
     menuItems={menuItems}
     onChange={onChange}
     onDisclose={onDisclose}
-    selectedKey={selectedKey}
+    initialSelectedKey={initialSelectedKey}
     title={title}
     accessory={accessory}
     variant={Utils.VARIANTS.MENU}

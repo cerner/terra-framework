@@ -25,7 +25,7 @@ class DefaultMenuUtilityMenu extends React.Component {
       <div style={{ height: '300px', width: '300px' }}>
         <UtilityMenu
           id="default"
-          selectedKey="menu"
+          initialSelectedKey="menu"
           isHeightBounded
           menuItems={MockConfig(customComponent)}
           onChange={this.handleOnChange}

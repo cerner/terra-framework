@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import { injectIntl, intlShape } from 'react-intl';
 import 'terra-base/lib/baseStyles';
 import IconChevronDown from 'terra-icon/lib/icon/IconChevronDown';
 import IconChevronRight from 'terra-icon/lib/icon/IconChevronRight';
@@ -24,9 +25,13 @@ const propTypes = {
    */
   onDisclose: PropTypes.func.isRequired,
   /**
+   * The intl object to be injected for translations. Provided by the injectIntl function.
+   */
+  intl: intlShape.isRequired,
+  /**
    * The key of the top level menu.
    */
-  selectedKey: PropTypes.string.isRequired,
+  initialSelectedKey: PropTypes.string.isRequired,
   /**
    * The text associated with utilities.
    */
@@ -66,7 +71,7 @@ class ApplicationHeaderUtility extends React.Component {
   createContent() {
     return (
       <UtilityMenu
-        selectedKey={this.props.selectedKey}
+        initialSelectedKey={this.props.initialSelectedKey}
         menuItems={this.props.menuItems}
         onChange={this.props.onChange}
         variant={this.props.variant}
@@ -79,7 +84,8 @@ class ApplicationHeaderUtility extends React.Component {
       menuItems,
       onChange,
       onDisclose,
-      selectedKey,
+      initialSelectedKey,
+      intl,
       title,
       accessory,
       variant,
@@ -94,7 +100,6 @@ class ApplicationHeaderUtility extends React.Component {
       { 'menu-utility-button': variant === Utils.VARIANTS.MENU },
       customProps.className,
     ]);
-    const titleClassNames = cx('title');
     const iconClassNames = cx('icon');
 
     let cloneAccessory = null;
@@ -104,7 +109,7 @@ class ApplicationHeaderUtility extends React.Component {
 
     let cloneTitle = null;
     if (title) {
-      cloneTitle = <span className={titleClassNames}>{title}</span>;
+      cloneTitle = <span className={cx('title')}>{title}</span>;
     }
 
     const contentContainer = (
@@ -114,12 +119,13 @@ class ApplicationHeaderUtility extends React.Component {
       </span>
     );
 
+    const buttonText = intl.formatMessage({ id: 'Terra.application.utility.button' });
     return (
       <button
         {...customProps}
         className={utilityClassNames}
         onClick={(event) => { this.handleOnClick(event); }}
-        aria-label={'Utility Button'}
+        aria-label={buttonText}
       >
         {variant === Utils.VARIANTS.MENU ? contentContainer : [cloneAccessory, cloneTitle] }
         {variant === Utils.VARIANTS.MENU ? <IconChevronRight className={iconClassNames} /> : <IconChevronDown className={iconClassNames} />}
@@ -131,4 +137,4 @@ class ApplicationHeaderUtility extends React.Component {
 ApplicationHeaderUtility.propTypes = propTypes;
 ApplicationHeaderUtility.defaultProps = defaultProps;
 
-export default ApplicationHeaderUtility;
+export default injectIntl(ApplicationHeaderUtility);

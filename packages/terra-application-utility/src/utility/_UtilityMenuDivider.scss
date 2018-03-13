@@ -18,11 +18,11 @@
     }
   }
 
-  .divider.is-footer {
+  .divider.is-bottom {
     margin-bottom: var(--terra-application-utility-menu-divider-is-footer-margin-bottom, 0.7143rem);
   }
 
-  .divider.is-header {
+  .divider.is-top {
     margin-bottom: var(--terra-application-utility-menu-divider-is-header-margin-bottom, 0);
   }
 }

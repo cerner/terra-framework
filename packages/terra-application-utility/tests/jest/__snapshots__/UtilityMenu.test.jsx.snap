@@ -1,8 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UtilityMenu it should pass in a custom prop 1`] = `
-<UtilityMenu
+<InjectIntl(UtilityMenu)
   id="test"
+  initialSelectedKey="key"
   menuItems={
     Array [
       Object {
@@ -16,13 +17,13 @@ exports[`UtilityMenu it should pass in a custom prop 1`] = `
   }
   onChange={[Function]}
   onDisclose={[Function]}
-  selectedKey="key"
   variant="header"
 />
 `;
 
 exports[`UtilityMenu should render with default props 1`] = `
-<UtilityMenu
+<InjectIntl(UtilityMenu)
+  initialSelectedKey="key"
   menuItems={
     Array [
       Object {
@@ -36,13 +37,13 @@ exports[`UtilityMenu should render with default props 1`] = `
   }
   onChange={[Function]}
   onDisclose={[Function]}
-  selectedKey="key"
   variant="header"
 />
 `;
 
 exports[`UtilityMenu should render with isHeightBounded 1`] = `
-<UtilityMenu
+<InjectIntl(UtilityMenu)
+  initialSelectedKey="key"
   isHeightBounded={true}
   menuItems={
     Array [
@@ -57,13 +58,13 @@ exports[`UtilityMenu should render with isHeightBounded 1`] = `
   }
   onChange={[Function]}
   onDisclose={[Function]}
-  selectedKey="key"
   variant="header"
 />
 `;
 
 exports[`UtilityMenu should render with onRequestClose set 1`] = `
-<UtilityMenu
+<InjectIntl(UtilityMenu)
+  initialSelectedKey="key"
   menuItems={
     Array [
       Object {
@@ -78,7 +79,6 @@ exports[`UtilityMenu should render with onRequestClose set 1`] = `
   onChange={[Function]}
   onDisclose={[Function]}
   onRequestClose={[Function]}
-  selectedKey="key"
   variant="header"
 />
 `;

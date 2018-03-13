@@ -6,7 +6,7 @@ describe('ApplicationMenuUtility', () => {
   const mockOnChange = jest.fn();
   const mockOnDisclose = jest.fn();
   const mockOnRequestClose = jest.fn();
-  const selectedKey = 'menu';
+  const initialSelectedKey = 'menu';
   const accessory = <Image />;
   const title = 'name';
 
@@ -17,7 +17,7 @@ describe('ApplicationMenuUtility', () => {
         onChange={mockOnChange}
         onDisclose={mockOnDisclose}
         onRequestClose={mockOnRequestClose}
-        selectedKey={selectedKey}
+        initialSelectedKey={initialSelectedKey}
       />,
     );
     expect(wrapper).toMatchSnapshot();
@@ -30,7 +30,7 @@ describe('ApplicationMenuUtility', () => {
         onChange={mockOnChange}
         onDisclose={mockOnDisclose}
         onRequestClose={mockOnRequestClose}
-        selectedKey={selectedKey}
+        initialSelectedKey={initialSelectedKey}
         title={title}
       />,
     );
@@ -44,7 +44,7 @@ describe('ApplicationMenuUtility', () => {
         onChange={mockOnChange}
         onDisclose={mockOnDisclose}
         onRequestClose={mockOnRequestClose}
-        selectedKey={selectedKey}
+        initialSelectedKey={initialSelectedKey}
         accessory={accessory}
       />,
     );
@@ -58,7 +58,7 @@ describe('ApplicationMenuUtility', () => {
         onChange={mockOnChange}
         onDisclose={mockOnDisclose}
         onRequestClose={mockOnRequestClose}
-        selectedKey={selectedKey}
+        initialSelectedKey={initialSelectedKey}
       />,
     );
     expect(wrapper).toMatchSnapshot();
@@ -71,7 +71,7 @@ describe('ApplicationMenuUtility', () => {
         onChange={mockOnChange}
         onDisclose={mockOnDisclose}
         onRequestClose={mockOnRequestClose}
-        selectedKey={selectedKey}
+        initialSelectedKey={initialSelectedKey}
         id="test"
       />,
     );

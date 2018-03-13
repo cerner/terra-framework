@@ -37,7 +37,7 @@ class DefaultApplicationHeaderUtility extends React.Component {
           onChange={this.handleOnChange}
           onDisclose={this.onDiscloseUtility}
           title={title}
-          selectedKey="menu"
+          initialSelectedKey="menu"
           accessory={accessory}
           variant={UtilityUtils.VARIANTS.HEADER}
         />
