@@ -55,9 +55,12 @@ const getBottomFromBottomUp = (scrollItems, index, validBottom) => {
 };
 
 const getHiddenItems = (scrollItems, contentData, previousTopIndex, previousBottomIndex) => {
+  if (!scrollItems || !scrollItems.length) {
+    return { topHiddenItem: { index: -1, height: -1 }, bottomHiddenItem: { index: -1, height: -1 } };
+  }
+
   const validTop = contentData.validTop;
   const validBottom = contentData.validBottom;
-  const scrollHeight = contentData.scrollHeight;
   let topHiddenItem;
   if (validTop > 0) {
     let nextIndex = previousTopIndex;
@@ -76,20 +79,16 @@ const getHiddenItems = (scrollItems, contentData, previousTopIndex, previousBott
   }
 
   let bottomHiddenItem;
-  if (scrollHeight - validBottom > 0) {
-    let nextIndex = previousBottomIndex;
-    if (nextIndex < 0) {
-      nextIndex = 0;
-    }
+  let nextIndex = previousBottomIndex;
+  if (nextIndex < 0) {
+    nextIndex = 0;
+  }
 
-    const bottomItem = scrollItems[nextIndex];
-    if (bottomItem.offsetTop >= validBottom) {
-      bottomHiddenItem = getBottomFromBottomUp(scrollItems, nextIndex, validBottom);
-    } else {
-      bottomHiddenItem = getBottomFromTopDown(scrollItems, nextIndex, validBottom);
-    }
+  const bottomItem = scrollItems[nextIndex];
+  if (bottomItem.offsetTop >= validBottom) {
+    bottomHiddenItem = getBottomFromBottomUp(scrollItems, nextIndex, validBottom);
   } else {
-    bottomHiddenItem = { index: -1, height: -1 };
+    bottomHiddenItem = getBottomFromTopDown(scrollItems, nextIndex, validBottom);
   }
 
   return { topHiddenItem, bottomHiddenItem };

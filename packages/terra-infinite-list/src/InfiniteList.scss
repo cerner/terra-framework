@@ -9,6 +9,18 @@
     width: 100%;
   }
 
+  .infinite-hidden {
+    border: none;
+    display: block;
+    height: 0px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+  }
+
   .full-loading {
     height: 100%;
     overflow: hidden;
@@ -18,7 +30,6 @@
 
   .loading {
     display: block;
-    height: 80px;
     position: relative;
     width: 100%;
   }

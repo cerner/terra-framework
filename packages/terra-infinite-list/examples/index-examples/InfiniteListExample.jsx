@@ -1,6 +1,5 @@
 import React from 'react';
 import IconPerson from 'terra-icon/lib/icon/IconPerson';
-import IconAlert from 'terra-icon/lib/icon/IconAlert';
 import IconInformation from 'terra-icon/lib/icon/IconInformation';
 import LoadingOverlay from 'terra-overlay/lib/LoadingOverlay';
 import OverlayContainer from 'terra-overlay/lib/OverlayContainer';
@@ -52,7 +51,6 @@ class InfiniteListExample extends React.Component {
     const display6 = <ItemView.Display text="End Time: 08-05-2016 16:00:00" />;
     const displays = [display1, display2, display3, display4, display5, display6];
     const comment = <ItemView.Comment text="Faint red rash appeared at 08-05-2016 13:24:00" />;
-    const accessoryStart = <IconAlert />;
     const accessoryEnd = <IconInformation />;
 
     const items = [];
@@ -66,7 +64,7 @@ class InfiniteListExample extends React.Component {
               layout="twoColumns"
               isTruncated
               textEmphasis="start"
-              startAccessory={accessoryStart}
+              startAccessory={`${i}`}
               endAccessory={accessoryEnd}
               comment={comment}
               style={{ marginTop: '10px', marginBottom: '10px' }}
@@ -77,13 +75,11 @@ class InfiniteListExample extends React.Component {
     }
 
     const fullLoading = (
-      <OverlayContainer style={{ height: '100%', width: '100%' }}>
-        <LoadingOverlay isOpen isAnimated isRelativeToContainer backgroundStyle="dark" />
-      </OverlayContainer>
+      <LoadingOverlay isOpen isAnimated isRelativeToContainer backgroundStyle="dark" />
     );
 
     const progressLoading = (
-      <OverlayContainer style={{ height: '90px', width: '100%' }}>
+      <OverlayContainer style={{ height: '80px', width: '100%' }}>
         <LoadingOverlay isOpen isAnimated isRelativeToContainer backgroundStyle="dark" />
       </OverlayContainer>
     );

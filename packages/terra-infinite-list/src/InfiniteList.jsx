@@ -94,7 +94,6 @@ class InfiniteList extends React.Component {
     this.wrapChild = this.wrapChild.bind(this);
 
     this.initializeItemCache(props);
-    this.preventInitialAdjust = true;
   }
 
   componentDidMount() {
@@ -148,6 +147,10 @@ class InfiniteList extends React.Component {
     this.renderNewChildren = false;
     this.preventUpdate = false;
     this.lastChildIndex = this.childCount;
+    if (this.isRenderingNew) {
+      this.isRenderingNew = false;
+      this.update(null, false, true);
+    }
   }
 
   updateItemCache(props) {
@@ -221,7 +224,7 @@ class InfiniteList extends React.Component {
     }
   }
 
-  update(event, ensureUpdate) {
+  update(event, ensureUpdate, preventRequest) {
     if (!this.contentNode || this.disableScroll || this.preventUpdate) {
       return;
     }
@@ -242,7 +245,7 @@ class InfiniteList extends React.Component {
       this.forceUpdate();
     }
 
-    if (InfiniteUtils.shouldTriggerItemRequest(contentData)) {
+    if (!preventRequest && InfiniteUtils.shouldTriggerItemRequest(contentData)) {
       this.triggerItemRequest();
     }
   }
@@ -287,8 +290,9 @@ class InfiniteList extends React.Component {
     if (node) {
       this.itemsByIndex[index] = this.itemsByIndex[index] || {};
       let updatedHeight = false;
-      if (!this.itemsByIndex[index].height || Math.abs(this.itemsByIndex[index].height - node.clientHeight) > 1) {
-        this.itemsByIndex[index].height = node.clientHeight;
+      const newHeight = node.getBoundingClientRect().height;
+      if (!this.itemsByIndex[index].height || Math.abs(this.itemsByIndex[index].height - newHeight) > 1) {
+        this.itemsByIndex[index].height = newHeight;
         updatedHeight = true;
       }
       if (!this.itemsByIndex[index].offsetTop || Math.abs(this.itemsByIndex[index].offsetTop - node.offsetTop) > 1) {
@@ -305,16 +309,13 @@ class InfiniteList extends React.Component {
   }
 
   adjustHeight() {
-    if (this.preventInitialAdjust) {
-      this.preventInitialAdjust = false;
-      return;
-    }
     if (this.contentNode) {
       this.itemsByIndex.forEach((item, itemIndex) => {
         const scrollItemNode = this.contentNode.querySelector(`[data-infinite-list-index="${itemIndex}"]`);
         if (scrollItemNode) {
-          if (!this.itemsByIndex[itemIndex].height || Math.abs(scrollItemNode.clientHeight - this.itemsByIndex[itemIndex].height) > 1) {
-            this.itemsByIndex[itemIndex].height = scrollItemNode.clientHeight;
+          const newHeight = scrollItemNode.getBoundingClientRect().height;
+          if (!this.itemsByIndex[itemIndex].height || Math.abs(newHeight - this.itemsByIndex[itemIndex].height) > 1) {
+            this.itemsByIndex[itemIndex].height = newHeight;
           }
           if (!this.itemsByIndex[itemIndex].offsetTop || Math.abs(this.itemsByIndex[itemIndex].offsetTop - scrollItemNode.offsetTop) > 1) {
             this.itemsByIndex[itemIndex].offsetTop = scrollItemNode.offsetTop;
@@ -382,11 +383,13 @@ class InfiniteList extends React.Component {
 
     let loadingSpinner;
     let visibleChildren;
+    let showDivided = isDivided;
     if (!infiniteProps.isFinishedLoading) {
       if (this.childCount > 0) {
         loadingSpinner = <List.Item content={infiniteProps.progressiveLoadingIndicator} isSelectable={false} key={`infinite-spinner-row-${this.loadingIndex}`} />;
       } else {
         visibleChildren = <List.Item content={infiniteProps.initialLoadingIndicator} isSelectable={false} key="infinite-spinner-full" style={{ height: '100%', position: 'relative' }} />;
+        showDivided = false;
       }
     }
 
@@ -396,19 +399,26 @@ class InfiniteList extends React.Component {
       if ((!this.scrollGroups.length && this.lastChildIndex <= 0) || !this.renderNewChildren) {
         upperChildIndex = this.childCount;
       } else {
-        newChildren = InfiniteUtils.getNewScrollGroups(this.lastChildIndex, this.childrenArray, this.wrapChild);
+        newChildren = (
+          <List {...customProps} isDivided={isDivided} className={cx(['infinite-hidden'])}>
+            {InfiniteUtils.getNewScrollGroups(this.lastChildIndex, this.childrenArray, this.wrapChild)}
+          </List>
+        );
+        this.isRenderingNew = true;
       }
       visibleChildren = InfiniteUtils.getVisibleScrollGroups(this.scrollGroups, this.childrenArray, this.boundary.topBoundryIndex, this.boundary.bottomBoundryIndex, this.wrapChild, upperChildIndex);
     }
 
     return (
-      <List {...customProps} isDivided={isDivided} className={cx(['infinite-list', customProps.className])} refCallback={this.setContentNode}>
-        {topSpacer}
-        {visibleChildren}
-        {bottomSpacer}
+      <React.Fragment>
+        <List {...customProps} isDivided={showDivided} className={cx(['infinite-list', customProps.className])} refCallback={this.setContentNode}>
+          {topSpacer}
+          {visibleChildren}
+          {bottomSpacer}
+          {loadingSpinner}
+        </List>
         {newChildren}
-        {loadingSpinner}
-      </List>
+      </React.Fragment>
     );
   }
 }
