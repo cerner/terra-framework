@@ -19,11 +19,11 @@
     word-wrap: break-word;
 
     .default-left-inset {
-      margin-left: var(--terra-application-header-utility-menu-body-item-left-inset, 0.6429rem);
+      margin-left: var(--terra-application-header-utility-menu-body-item-margin-left, 0.6429rem);
     }
 
     .default-right-inset {
-      margin-right: var(--terra-application-header-utility-menu-body-item-right-inset, 0.6429rem);
+      margin-right: var(--terra-application-header-utility-menu-body-item-margin-right, 0.6429rem);
     }
 
     &:hover {
@@ -89,11 +89,11 @@
     word-wrap: break-word;
 
     .default-left-inset {
-      margin-left: var(--terra-application-menu-utility-menu-body-item-left-inset, 0.6429rem);
+      margin-left: var(--terra-application-menu-utility-menu-body-item-margin-left, 0.6429rem);
     }
 
     .default-right-inset {
-      margin-right: var(--terra-application-menu-utility-menu-body-item-right-inset, 0.6429rem);
+      margin-right: var(--terra-application-menu-utility-menu-body-item-margin-right, 0.6429rem);
     }
 
     &:hover {
@@ -131,7 +131,7 @@
   .menu-utility-footer-item {
     background-color: var(--terra-application-menu-utility-menu-footer-item-background-color, #dedfe0);
     border-radius: var(--terra-application-menu-utility-menu-footer-item-border-radius);
-    color: var(--terra-application-header-utility-menu-footer-item-font-color);
+    color: var(--terra-application-menu-utility-menu-footer-item-font-color);
     cursor: pointer;
     font-size: var(--terra-application-menu-utility-menu-footer-item-font-size, 1rem);
     height: var(--terra-application-menu-utility-menu-footer-item-height, 2rem);

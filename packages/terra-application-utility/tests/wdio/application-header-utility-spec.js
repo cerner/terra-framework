@@ -42,8 +42,7 @@ describe('ApplicationHeaderUtility', () => {
     Terra.should.matchScreenshot({ viewports, selector: '#default' });
     Terra.should.beAccessible({ viewports, context: '#default' });
     Terra.should.themeEachCustomProperty('#default', {
-      '--terra-application-header-utility-focus-outline-color': 'blue',
-      '--terra-application-header-utility-focus-outline-width': '10px',
+      '--terra-application-header-utility-focus-box-shadow': '0 0 4px 4px rgba(80, 80, 233, 0.5), 0 0 6px 7px rgba(80, 80, 233, 0.35)',
     });
   });
 });

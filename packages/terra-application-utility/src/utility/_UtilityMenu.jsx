@@ -238,13 +238,13 @@ class UtilityMenu extends React.Component {
     const headerClassNames = cx([
       'utility-menu-header',
       { 'header-utility-menu-header': variant === Utils.VARIANTS.HEADER },
-      { 'menu-utility-menu-header ': variant === Utils.VARIANTS.MENU },
+      { 'menu-utility-menu-header': variant === Utils.VARIANTS.MENU },
     ]);
 
     const contentContainerClassNames = cx([
       'utility-menu-content-container',
       { 'header-utility-menu-content-container': variant === Utils.VARIANTS.HEADER },
-      { 'menu-utility-menu-content-container ': variant === Utils.VARIANTS.MENU },
+      { 'menu-utility-menu-content-container': variant === Utils.VARIANTS.MENU },
     ]);
 
     const leftContentContainer = cx([
