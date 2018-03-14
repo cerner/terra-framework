@@ -13,11 +13,8 @@ describe('InfiniteList', () => {
       initialLoadingIndicator: <div style={{ height: '100%', width: '100%', position: 'relative' }} />,
       progressiveLoadingIndicator: <div style={{ height: '40px', width: '100%' }} />,
     };
-    const component = (
-      <InfiniteList
-        infiniteProps={infiniteProps}
-      />
-    );
+
+    const component = <InfiniteList infiniteProps={infiniteProps} />;
     const wrapper = shallow(component);
     expect(wrapper).toMatchSnapshot();
   });

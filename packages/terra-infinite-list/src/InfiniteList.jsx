@@ -39,7 +39,7 @@ const propTypes = {
      */
     isFinishedLoading: PropTypes.bool,
     /**
-     * Callback trigger when new list items are requested..
+     * Callback trigger when new list items are requested.
      */
     onRequestItems: PropTypes.func,
     /**
