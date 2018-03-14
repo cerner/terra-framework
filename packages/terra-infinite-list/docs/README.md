@@ -15,38 +15,63 @@ InfiniteList is a controlled HOC built upon the terra-list component in order to
 import React from 'react';
 import InfiniteList from 'terra-infinite-list';
 
+class MyHOC extends React.Component {
+  constructor(props) {
+    super(props);
 
-render() {
-  const items = this.getListItemsFromData();
+    this.handleOnRequestItems = this.handleOnRequestItems.bind(this);
+    this.handleOnChange = this.handleOnChange.bind(this);
+    this.getListItemsForData = this.getListItemsForData.bind(this);
 
-  const fullLoading = <LoadingOverlay isOpen isAnimated isRelativeToContainer backgroundStyle="dark" />;
+    this.state = { stillLoading: true, items: [], selectedIndexes: [] };
+  }
 
-  const progressLoading = (
-    <OverlayContainer style={{ height: '90px', width: '100%' }}>
-      <LoadingOverlay isOpen isAnimated isRelativeToContainer backgroundStyle="dark" />
-    </OverlayContainer>
-  );
+  handleOnRequestItems() {
+    // trigger your axios call for additional items here, upon completation ensure your component updates either through state or redux/context
+    this.setState( { stillLoading: !result.hasMoreData, items: MyHOC.combineMyDataItems(this.state.items, result.items) } );
+  }
 
-  const infiniteProps = {
-    isFinishedLoading: !this.state.stillLoading,
-    onRequestItems: this.handleOnRequestItems,
-    initialLoadingIndicator: fullLoading,
-    progressiveLoadingIndicator: progressLoading,
-  };
+  handleOnChange(event, index) {
+    // do logic to set selected indexes, whether single or multi-select, etc
+    this.setState({ selectedIndexes: myNewSelectedIndexes })
+  }
 
-  return (
-    <InfiniteList
-      infiniteProps={infiniteProps}
-      isSelectable
-      isDivided
-      onChange={this.handleOnChange}
-      selectedIndexes={this.state.selectedIndexes}
-    >
-      {items}
-    </InfiniteList>
-  );
+  getListItemsForData() {
+    // map your data structure to your component, and then set it as the content of your list item
+    return this.state.items.map(item => {
+      return <InfiniteList.Item content={<MyComponent itemData={item} />} key={item.myRowKey} />;
+    });
+  }
+
+  render() {
+    const fullLoading = <LoadingOverlay isOpen isAnimated isRelativeToContainer backgroundStyle="dark" />;
+
+    const progressLoading = (
+      <OverlayContainer style={{ height: 'myHeightValue', width: '100%' }}>
+        <LoadingOverlay isOpen isAnimated isRelativeToContainer backgroundStyle="dark" />
+      </OverlayContainer>
+    );
+
+    const infiniteProps = {
+      isFinishedLoading: !this.state.stillLoading,
+      onRequestItems: this.handleOnRequestItems,
+      initialLoadingIndicator: fullLoading,
+      progressiveLoadingIndicator: progressLoading,
+    };
+
+    return (
+      <InfiniteList
+        infiniteProps={infiniteProps}
+        isSelectable
+        isDivided
+        onChange={this.handleOnChange}
+        selectedIndexes={this.state.selectedIndexes}
+      >
+        {this.getListItemsFromData()}
+      </InfiniteList>
+    );
+  }
 }
-
 ```
 
 ## Component Features

@@ -12,8 +12,8 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The child terra-list ListItems to be placed within the infinite list.
-   * ListItem is exported for consumption in dot notation from InfiniteList. (e.g. InfiniteList.Item)
+   * The child list items, of type InfiniteList.Item, to be placed within the infinite list.
+   * For further documentation of InfiniteList.Item see terra-list's ListItem.
    */
   children: PropTypes.node,
   /**
