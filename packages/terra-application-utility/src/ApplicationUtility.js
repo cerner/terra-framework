@@ -1,6 +1,6 @@
 import ApplicationHeaderUtility from './ApplicationHeaderUtility';
 import ApplicationMenuUtility from './ApplicationMenuUtility';
-import UtilityUtils from './_Utils';
+import UtilityUtils from './Utils';
 
 const ApplicationUtility = {
   ApplicationHeaderUtility,

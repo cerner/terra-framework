@@ -6,7 +6,7 @@ import 'terra-base/lib/baseStyles';
 import IconChevronDown from 'terra-icon/lib/icon/IconChevronDown';
 import IconChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 import UtilityMenu from './_UtilityMenu';
-import Utils from '../_Utils';
+import Utils from '../Utils';
 import styles from './_UtilityButton.scss';
 
 const cx = classNames.bind(styles);

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import 'terra-base/lib/baseStyles';
-import Utils from './_Utils';
+import Utils from './Utils';
 import UtiltyButton from './utility/_UtilityButton';
 
 const propTypes = {

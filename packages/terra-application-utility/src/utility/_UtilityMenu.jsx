@@ -8,7 +8,7 @@ import ContentContainer from 'terra-content-container';
 import IconClose from 'terra-icon/lib/icon/IconClose';
 import IconLeft from 'terra-icon/lib/icon/IconLeft';
 import MenuDivider from './_UtilityMenuDivider';
-import Utils from '../_Utils';
+import Utils from '../Utils';
 import MenuItem from './_UtilityMenuItem';
 import styles from './_UtilityMenu.scss';
 

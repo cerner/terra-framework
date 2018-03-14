@@ -6,7 +6,7 @@ import Arrange from 'terra-arrange';
 import Button from 'terra-button';
 import IconCheckmark from 'terra-icon/lib/icon/IconCheckmark';
 import IconChevronRight from 'terra-icon/lib/icon/IconChevronRight';
-import Utils from '../_Utils';
+import Utils from '../Utils';
 import styles from './_UtilityMenuItem.scss';
 
 const cx = classNames.bind(styles);
