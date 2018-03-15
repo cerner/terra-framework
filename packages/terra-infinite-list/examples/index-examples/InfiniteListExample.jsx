@@ -1,11 +1,13 @@
 import React from 'react';
-import IconPerson from 'terra-icon/lib/icon/IconPerson';
 import IconInformation from 'terra-icon/lib/icon/IconInformation';
 import LoadingOverlay from 'terra-overlay/lib/LoadingOverlay';
 import OverlayContainer from 'terra-overlay/lib/OverlayContainer';
-import ItemView from 'terra-clinical-item-view';
-
+import Arrange from 'terra-arrange';
+import classNames from 'classnames/bind';
+import styles from './InfiniteListExample.scss';
 import InfiniteList from '../../lib/InfiniteList';
+
+const cx = classNames.bind(styles);
 
 class InfiniteListExample extends React.Component {
   constructor(props) {
@@ -23,9 +25,9 @@ class InfiniteListExample extends React.Component {
 
   addMoreData() {
     const newNumberOfPages = this.state.numberOfPages + 1;
-    if (newNumberOfPages > 100) {
+    if (newNumberOfPages > 10) {
       return;
-    } else if (newNumberOfPages > 99) {
+    } else if (newNumberOfPages > 9) {
       this.setState({ stillLoading: false, numberOfPages: newNumberOfPages });
     }
     this.setState({ numberOfPages: newNumberOfPages });
@@ -43,40 +45,33 @@ class InfiniteListExample extends React.Component {
   }
 
   render() {
-    const display1 = <ItemView.Display icon={<IconPerson />} text="Asif Khan" />;
-    const display2 = <ItemView.Display text="Care Position: Primary" />;
-    const display3 = <ItemView.Display text="Room 100A" />;
-    const display4 = <ItemView.Display text="Acuity: 5" />;
-    const display5 = <ItemView.Display text="Start Time: 08-05-2016 12:00:00" />;
-    const display6 = <ItemView.Display text="End Time: 08-05-2016 16:00:00" />;
-    const displays = [display1, display2, display3, display4, display5, display6];
-    const comment = <ItemView.Comment text="Faint red rash appeared at 08-05-2016 13:24:00" />;
-    const accessoryEnd = <IconInformation />;
-
     const items = [];
     for (let i = 0; i < 15 * this.state.numberOfPages; i += 1) {
       items.push(
         <InfiniteList.Item
           key={`${i}`}
           content={
-            <ItemView
-              displays={displays}
-              layout="twoColumns"
-              isTruncated
-              textEmphasis="start"
-              startAccessory={`${i}`}
-              endAccessory={accessoryEnd}
-              comment={comment}
-              style={{ marginTop: '10px', marginBottom: '10px' }}
+            <Arrange
+              fitStart={<h3 style={{ width: '50px' }}>{`${i}`}</h3>}
+              fill={
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Fusce porttitor ullamcorper nisi, vel tincidunt dui pharetra vel.
+                  Morbi eu rutrum nibh, sit amet placerat libero. Integer vel dapibus nibh.
+                  Donec tempor mi vitae lorem congue, ut ultrices metus feugiat. Sed non commodo felis.
+                  Aliquam eget maximus dui, ut rhoncus augue.
+                </p>
+              }
+              fitEnd={<div className={cx(['icon-wrapper'])}><IconInformation /></div>}
+              align="center"
+              fitStartAttributes={{ style: { textAlign: 'center' } }}
             />
           }
         />,
       );
     }
 
-    const fullLoading = (
-      <LoadingOverlay isOpen isAnimated isRelativeToContainer backgroundStyle="dark" />
-    );
+    const fullLoading = <LoadingOverlay isOpen isAnimated isRelativeToContainer backgroundStyle="dark" />;
 
     const progressLoading = (
       <OverlayContainer style={{ height: '80px', width: '100%' }}>
