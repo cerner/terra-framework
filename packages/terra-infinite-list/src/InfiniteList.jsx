@@ -408,12 +408,12 @@ class InfiniteList extends React.Component {
       } else {
         newChildren = (
           <List {...customProps} isDivided={isDivided} className={cx(['infinite-hidden'])}>
-            {InfiniteUtils.getNewScrollGroups(this.lastChildIndex, this.childrenArray, this.wrapChild)}
+            {InfiniteUtils.getNewChildren(this.lastChildIndex, this.childrenArray, this.wrapChild)}
           </List>
         );
         this.isRenderingNew = true;
       }
-      visibleChildren = InfiniteUtils.getVisibleScrollGroups(this.scrollGroups, this.childrenArray, this.boundary.topBoundryIndex, this.boundary.bottomBoundryIndex, this.wrapChild, upperChildIndex);
+      visibleChildren = InfiniteUtils.getVisibleChildren(this.scrollGroups, this.childrenArray, this.boundary.topBoundryIndex, this.boundary.bottomBoundryIndex, this.wrapChild, upperChildIndex);
     }
 
     return (
