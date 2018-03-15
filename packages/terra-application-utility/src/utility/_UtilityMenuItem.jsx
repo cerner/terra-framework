@@ -33,6 +33,10 @@ const propTypes = {
    */
   leftInset: PropTypes.bool,
   /**
+   * Indicates if the item has focus. This is used internally to control focus and does not set initial focus.
+   */
+  isActive: PropTypes.bool,
+  /**
    * Whether this item is selected.
    */
   isSelected: PropTypes.bool,
@@ -44,6 +48,10 @@ const propTypes = {
    * Whether or not the menu item should display a disclosure indicator.
    */
   hasChevron: PropTypes.bool,
+  /**
+   * Function to trigger when a key is pressed.
+   */
+  onKeyDown: PropTypes.func,
   /**
    * Function to trigger when this item is selected.
    */
@@ -65,15 +73,33 @@ const defaultProps = {
 class UtilityMenuItem extends React.Component {
   constructor(props) {
     super(props);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.wrapOnKeyDown = this.wrapOnKeyDown.bind(this);
     this.handleSelection = this.handleSelection.bind(this);
+    this.setItemNode = this.setItemNode.bind(this);
     this.state = { isSelected: props.isSelected && props.isSelectable };
   }
 
-  handleKeyDown(event, key) {
-    if (event.nativeEvent.keyCode === Utils.KEY_CODES.ENTER || event.nativeEvent.keyCode === Utils.KEY_CODES.SPACE || event.nativeEvent.keyCode === Utils.KEY_CODES.RIGHT_ARROW) {
-      this.props.onChange(event, key);
+  componentDidUpdate() {
+    if (this.props.isActive && this.itemNode) {
+      this.itemNode.focus();
     }
+  }
+
+  setItemNode(node) {
+    if (node) {
+      this.itemNode = node;
+    }
+  }
+
+  wrapOnKeyDown(key, onKeyDown) {
+    return ((event) => {
+      if (event.nativeEvent.keyCode === Utils.KEY_CODES.ENTER || event.nativeEvent.keyCode === Utils.KEY_CODES.SPACE || event.nativeEvent.keyCode === Utils.KEY_CODES.RIGHT_ARROW) {
+        this.props.onChange(event, key);
+      }
+      if (onKeyDown) {
+        onKeyDown(event);
+      }
+    });
   }
 
   handleSelection(event, key) {
@@ -91,11 +117,13 @@ class UtilityMenuItem extends React.Component {
       title,
       content,
       contentLocation,
+      isActive,
       isSelected,
       isSelectable,
       hasChevron,
       leftInset,
       onChange,
+      onKeyDown,
       rightInset,
       variant,
       ...customProps
@@ -127,16 +155,17 @@ class UtilityMenuItem extends React.Component {
     ]);
 
     /* eslint-disable jsx-a11y/no-static-element-interactions */
-    const renderBodyItem = (fill, handleKeyDown, handleSelection) =>
+    const renderBodyItem = (fill, wrapOnKeyDown, handleSelection) =>
       <li
         {...customProps}
         tabIndex="0"
         key={itemKey}
         onClick={event => handleSelection(event, itemKey)}
-        onKeyDown={event => handleKeyDown(event, itemKey)}
+        onKeyDown={wrapOnKeyDown(itemKey, onKeyDown)}
         role="button"
         className={bodyItemClassNames}
         aria-label={title}
+        ref={this.setItemNode}
       >
         <Arrange
           fitStart={leftInset ? <IconCheckmark className={checkmarkClassNames} /> : null}
@@ -149,11 +178,11 @@ class UtilityMenuItem extends React.Component {
     /* eslint-enable jsx-a11y/no-static-element-interactions */
 
 
-    const renderFooterButton = (handleKeyDown, handleSelection) =>
+    const renderFooterButton = (wrapOnKeyDown, handleSelection) =>
       <Button
         {...customProps}
         onClick={event => handleSelection(event, itemKey)}
-        onKeyDown={event => handleKeyDown(event, itemKey)}
+        onKeyDown={wrapOnKeyDown(itemKey, onKeyDown)}
         variant={Button.Opts.Variants.NEUTRAL}
         className={footerItemClassNames}
         text={title}
@@ -162,14 +191,14 @@ class UtilityMenuItem extends React.Component {
     // Footer items are always buttons. Body items are list items.
     // If content exists and is a body item, render content. Else, render the title text.
     let item = null;
-    const handleKeyDown = this.handleKeyDown;
+    const wrapOnKeyDown = this.wrapOnKeyDown;
     const handleSelection = this.handleSelection;
     if (contentLocation === Utils.LOCATIONS.FOOTER) {
-      item = renderFooterButton(handleKeyDown, handleSelection);
+      item = renderFooterButton(wrapOnKeyDown, handleSelection);
     } else if (content) {
-      item = renderBodyItem(content, handleKeyDown, handleSelection);
+      item = renderBodyItem(content, wrapOnKeyDown, handleSelection);
     } else {
-      item = renderBodyItem((<div>{title}</div>), handleKeyDown, handleSelection);
+      item = renderBodyItem((<div>{title}</div>), wrapOnKeyDown, handleSelection);
     }
     return item;
   }

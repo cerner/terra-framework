@@ -51,15 +51,7 @@ const processMenuItems = (items) => {
   items.forEach((item) => {
     map.set(
       item.key,
-      { id: item.id,
-        itemKey: item.key,
-        title: item.title,
-        content: item.content,
-        contentLocation: item.contentLocation,
-        isSelected: item.isSelected,
-        isSelectable: item.isSelectable,
-        childKeys: item.childKeys,
-      },
+      { itemKey: item.key, ...item },
     );
   });
   return map;
@@ -77,11 +69,13 @@ class UtilityMenu extends React.Component {
     this.childrenHasCheckmark = this.childrenHasCheckmark.bind(this);
     this.childrenHasChevron = this.childrenHasChevron.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
+    this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
     this.pop = this.pop.bind(this);
     this.push = this.push.bind(this);
     this.state = {
       map: processMenuItems(props.menuItems),
       currentKey: props.initialSelectedKey,
+      focusIndex: -1,
       previousKeyStack: [],
     };
   }
@@ -104,7 +98,7 @@ class UtilityMenu extends React.Component {
     return this.state.map.get(key);
   }
 
-  buildItem(key, leftInset, rightInset) {
+  buildItem(key, leftInset, rightInset, isActive, handleOnKeyDown) {
     const item = this.getItem(key);
     const chevron = hasChevron(item);
     return (
@@ -115,12 +109,14 @@ class UtilityMenu extends React.Component {
         title={item.title}
         content={item.content}
         contentLocation={item.contentLocation}
+        isActive={isActive}
         isSelected={item.isSelected}
         isSelectable={item.isSelectable}
         hasChevron={chevron}
         leftInset={leftInset}
         rightInset={rightInset}
         onChange={this.handleOnChange}
+        onKeyDown={handleOnKeyDown}
         variant={this.props.variant}
       />
     );
@@ -130,11 +126,15 @@ class UtilityMenu extends React.Component {
     if (currentItem && currentItem.childKeys && currentItem.childKeys.length) {
       const leftInset = this.childrenHasCheckmark(currentItem);
       const rightInset = this.childrenHasChevron(currentItem);
+      let index = -1;
       return (
         <ul className={cx('utility-menu-body')}>
           {currentItem.childKeys.map((key) => {
             if (this.getItem(key).contentLocation !== Utils.LOCATIONS.FOOTER) {
-              return this.buildItem(key, leftInset, rightInset);
+              index += 1;
+              const onKeyDown = this.handleOnKeyDown(index);
+              const isActive = index === this.state.focusIndex;
+              return this.buildItem(key, leftInset, rightInset, isActive, onKeyDown);
             }
             return null;
           })}
@@ -194,6 +194,20 @@ class UtilityMenu extends React.Component {
       }
       this.props.onChange(event, key);
     }
+
+    if (this.state.focusIndex !== -1) {
+      this.setState({ focusIndex: -1 });
+    }
+  }
+
+  handleOnKeyDown(index) {
+    return ((event) => {
+      if (event.nativeEvent.keyCode === Utils.KEY_CODES.UP_ARROW) {
+        this.setState({ focusIndex: index - 1 });
+      } else if (event.nativeEvent.keyCode === Utils.KEY_CODES.DOWN_ARROW) {
+        this.setState({ focusIndex: index + 1 });
+      }
+    });
   }
 
   pop() {
