@@ -79,21 +79,17 @@ class InfiniteListExample extends React.Component {
       </OverlayContainer>
     );
 
-    const infiniteProps = {
-      isFinishedLoading: !this.state.stillLoading,
-      onRequestItems: this.addMoreData,
-      initialLoadingIndicator: fullLoading,
-      progressiveLoadingIndicator: progressLoading,
-    };
-
     return (
       <div style={{ height: '600px', width: '100%', position: 'relative', border: '1px solid black' }}>
         <InfiniteList
-          infiniteProps={infiniteProps}
           isSelectable
           isDivided
           onChange={this.handleOnChange}
           selectedIndexes={this.state.selectedIndexes}
+          isFinishedLoading={!this.state.stillLoading}
+          onRequestItems={this.addMoreData}
+          initialLoadingIndicator={fullLoading}
+          progressiveLoadingIndicator={progressLoading}
         >
           {items}
         </InfiniteList>

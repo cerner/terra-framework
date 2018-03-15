@@ -27,30 +27,17 @@ const propTypes = {
    */
   hasChevrons: PropTypes.bool,
   /**
-   * Properties related to the list styling.
+   * An indicator to be displayed when no children are yet present.
    */
-  infiniteProps: PropTypes.shape({
-    /**
-     * An indicator to be displayed when no children are yet present.
-     */
-    initialLoadingIndicator: PropTypes.element,
-    /**
-     * Determines whether or not the loading indicator is visible and if callbacks are triggered.
-     */
-    isFinishedLoading: PropTypes.bool,
-    /**
-     * Callback trigger when new list items are requested.
-     */
-    onRequestItems: PropTypes.func,
-    /**
-     * An indicator to be displayed at the end of the current loaded children.
-     */
-    progressiveLoadingIndicator: PropTypes.element,
-  }),
+  initialLoadingIndicator: PropTypes.element,
   /**
    * Whether or not the child list items should have a border color applied.
    */
   isDivided: PropTypes.bool,
+  /**
+   * Determines whether or not the loading indicator is visible and if callbacks are triggered.
+   */
+  isFinishedLoading: PropTypes.bool,
   /**
    * Whether or not the list is selectable.
    */
@@ -59,6 +46,14 @@ const propTypes = {
    * A callback event that will be triggered when selection state changes.
    */
   onChange: PropTypes.func,
+  /**
+   * Callback trigger when new list items are requested.
+   */
+  onRequestItems: PropTypes.func,
+  /**
+   * An indicator to be displayed at the end of the current loaded children.
+   */
+  progressiveLoadingIndicator: PropTypes.element,
   /**
    * An array of the currectly selected indexes.
    */
@@ -69,8 +64,8 @@ const defaultProps = {
   children: [],
   disableUnselectedItems: false,
   hasChevrons: false,
-  infiniteProps: {},
   isDivided: false,
+  isFinishedLoading: false,
   isSelectable: false,
   selectedIndexes: [],
 };
@@ -144,9 +139,9 @@ class InfiniteList extends React.Component {
   }
 
   triggerItemRequest() {
-    if (!this.props.infiniteProps.isFinishedLoading && !this.hasRequestedItems && this.props.infiniteProps.onRequestItems) {
+    if (!this.props.isFinishedLoading && !this.hasRequestedItems && this.props.onRequestItems) {
       this.hasRequestedItems = true;
-      this.props.infiniteProps.onRequestItems();
+      this.props.onRequestItems();
     }
   }
 
@@ -379,9 +374,12 @@ class InfiniteList extends React.Component {
       children,
       disableUnselectedItems,
       hasChevrons,
-      infiniteProps,
+      initialLoadingIndicator,
       isDivided,
+      isFinishedLoading,
       isSelectable,
+      onRequestItems,
+      progressiveLoadingIndicator,
       selectedIndexes,
       ...customProps
     } = this.props;
@@ -391,11 +389,11 @@ class InfiniteList extends React.Component {
     let loadingSpinner;
     let visibleChildren;
     let showDivided = isDivided;
-    if (!infiniteProps.isFinishedLoading) {
+    if (!isFinishedLoading) {
       if (this.childCount > 0) {
-        loadingSpinner = <List.Item content={infiniteProps.progressiveLoadingIndicator} isSelectable={false} key={`infinite-spinner-row-${this.loadingIndex}`} />;
+        loadingSpinner = <List.Item content={progressiveLoadingIndicator} isSelectable={false} key={`infinite-spinner-row-${this.loadingIndex}`} />;
       } else {
-        visibleChildren = <List.Item content={infiniteProps.initialLoadingIndicator} isSelectable={false} key="infinite-spinner-full" style={{ height: '100%', position: 'relative' }} />;
+        visibleChildren = <List.Item content={initialLoadingIndicator} isSelectable={false} key="infinite-spinner-full" style={{ height: '100%', position: 'relative' }} />;
         showDivided = false;
       }
     }

@@ -3,10 +3,6 @@ import React from 'react';
 import InfiniteList from '../../lib/InfiniteList';
 
 const InfiniteListUpdating = () => {
-  const infiniteProps = {
-    isFinishedLoading: true,
-  };
-
   const style = { height: '100px', width: '100%' };
 
   return (
@@ -15,8 +11,8 @@ const InfiniteListUpdating = () => {
       <div style={{ height: '380px' }}>
         <InfiniteList
           id="test-infinite-list"
-          infiniteProps={infiniteProps}
           isDivided
+          isFinishedLoading
         >
           <InfiniteList.Item key="item-0" content={<div style={style}>Item 0</div>} />
           <InfiniteList.Item key="item-1" content={<div style={style}>Item 1</div>} />

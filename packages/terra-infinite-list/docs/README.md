@@ -52,13 +52,6 @@ class MyHOC extends React.Component {
       </OverlayContainer>
     );
 
-    const infiniteProps = {
-      isFinishedLoading: !this.state.stillLoading,
-      onRequestItems: this.handleOnRequestItems,
-      initialLoadingIndicator: fullLoading,
-      progressiveLoadingIndicator: progressLoading,
-    };
-
     return (
       <InfiniteList
         infiniteProps={infiniteProps}
@@ -66,6 +59,10 @@ class MyHOC extends React.Component {
         isDivided
         onChange={this.handleOnChange}
         selectedIndexes={this.state.selectedIndexes}
+        isFinishedLoading={!this.state.stillLoading}
+        onRequestItems={this.addMoreData}
+        initialLoadingIndicator={fullLoading}
+        progressiveLoadingIndicator={progressLoading}
       >
         {this.getListItemsFromData()}
       </InfiniteList>

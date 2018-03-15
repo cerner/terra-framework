@@ -48,6 +48,11 @@ exports[`InfiniteList should render with initial children 1`] = `
 <React.Fragment>
   <List
     className="infinite-list"
+    infiniteProps={
+      Object {
+        "isFinishedLoading": true,
+      }
+    }
     isDivided={false}
     refCallback={[Function]}
   >
@@ -165,6 +170,11 @@ exports[`InfiniteList should render with initial children 1`] = `
         }
       }
     />
+    <ListItem
+      isSelectable={false}
+      isSelected={false}
+      key="infinite-spinner-row-0"
+    />
   </List>
 </React.Fragment>
 `;
@@ -173,6 +183,11 @@ exports[`InfiniteList should render with list props 1`] = `
 <React.Fragment>
   <List
     className="infinite-list"
+    infiniteProps={
+      Object {
+        "isFinishedLoading": true,
+      }
+    }
     isDivided={true}
     refCallback={[Function]}
   >
@@ -306,6 +321,11 @@ exports[`InfiniteList should render with list props 1`] = `
         }
       }
     />
+    <ListItem
+      isSelectable={false}
+      isSelected={false}
+      key="infinite-spinner-row-0"
+    />
   </List>
 </React.Fragment>
 `;
@@ -314,6 +334,28 @@ exports[`InfiniteList should render with no children and loading 1`] = `
 <React.Fragment>
   <List
     className="infinite-list"
+    infiniteProps={
+      Object {
+        "initialLoadingIndicator": <div
+          style={
+            Object {
+              "height": "100%",
+              "position": "relative",
+              "width": "100%",
+            }
+          }
+        />,
+        "isFinishedLoading": false,
+        "progressiveLoadingIndicator": <div
+          style={
+            Object {
+              "height": "40px",
+              "width": "100%",
+            }
+          }
+        />,
+      }
+    }
     isDivided={false}
     refCallback={[Function]}
   >
@@ -329,17 +371,6 @@ exports[`InfiniteList should render with no children and loading 1`] = `
       }
     />
     <ListItem
-      content={
-        <div
-          style={
-            Object {
-              "height": "100%",
-              "position": "relative",
-              "width": "100%",
-            }
-          }
-        />
-      }
       isSelectable={false}
       isSelected={false}
       key="infinite-spinner-full"
