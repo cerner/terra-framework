@@ -29,7 +29,7 @@ class ApplicationHeaderUtilityExample extends React.Component {
 
     return (
       <div style={{ paddingLeft: '4px' }}>
-        <div style={{ height: '60px', position: 'relative', width: '150px', backgroundColor: 'bisque' }}>
+        <div style={{ height: '60px', position: 'relative', width: '150px', backgroundColor: '#2481ca' }}>
           <ApplicationHeaderUtility
             id="default"
             menuItems={MockConfig(accessory)}

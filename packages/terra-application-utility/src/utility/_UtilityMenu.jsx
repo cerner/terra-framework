@@ -222,8 +222,6 @@ class UtilityMenu extends React.Component {
       ...customProps
     } = this.props;
 
-    const backText = intl.formatMessage({ id: 'Terra.application.utility.back' });
-    const closeText = intl.formatMessage({ id: 'Terra.application.utility.close' });
     const currentKey = this.state.currentKey;
     const currentItem = this.getItem(currentKey);
     const firstPage = currentKey === initialSelectedKey;
@@ -272,6 +270,7 @@ class UtilityMenu extends React.Component {
       { 'menu-utility-menu-icon-close': variant === Utils.VARIANTS.MENU },
     ]);
 
+    const backText = intl.formatMessage({ id: 'Terra.application.utility.back' });
     const backButton = (
       <Button
         onClick={this.pop}
@@ -283,6 +282,7 @@ class UtilityMenu extends React.Component {
       />
     );
 
+    const closeText = intl.formatMessage({ id: 'Terra.application.utility.close' });
     const closeButton = (
       <Button
         onClick={this.props.onRequestClose}
@@ -321,6 +321,7 @@ class UtilityMenu extends React.Component {
       );
     }
 
+    const menuText = intl.formatMessage({ id: 'Terra.application.utility.menu' });
     return (
       <ContentContainer
         {...customProps}
@@ -329,7 +330,7 @@ class UtilityMenu extends React.Component {
         fill={isHeightBounded}
         className={menuClassNames}
         role={'navigation'}
-        aria-label={'Utility Menu'}
+        aria-label={menuText}
       >
         {this.buildListContent(currentItem)}
       </ContentContainer>
@@ -340,6 +341,4 @@ class UtilityMenu extends React.Component {
 UtilityMenu.propTypes = propTypes;
 UtilityMenu.processMenuItems = processMenuItems;
 UtilityMenu.hasChevron = hasChevron;
-// UtilityMenu.contextTypes = contextTypes;
-
 export default injectIntl(UtilityMenu);

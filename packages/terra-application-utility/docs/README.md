@@ -8,9 +8,17 @@ The Utility is used to disclose a utility menu. There are two versions - a heade
   - `npm install terra-application-utility`
 
 ## Menu Items
-The menu items are generated from an array of menu item objects, which can contain up to seven attributes: `key`, `content`, `contentLocation`, `isSelected`, `isSelectable`, `title`, and `childKeys`. Each menu item object *must* have a unique `key` to differentiate itself from other items. `contentLocation` specifies whether to render an item within the body or footer. Body items will render as list items, while footer items will render as buttons. Items will default to body if `contentLocation` is not provided. Utility also enables consumers to render custom components as a body item. To do so, pass this custom component as the `content` prop within the menu item object. To create nested pages, utilize the `childKeys` attribute. Store the `key` of each menu item that will be within the next nested page of this specific menu item.
+The menu items are generated from an array of menu item objects, which can contain up to seven attributes: `key`, `content`, `contentLocation`, `isSelected`, `isSelectable`, `title`, and `childKeys`.
 
-Displayed below is the explicit structure of a menu item.
+1. `key` is **required**. Must be a unique value to differentiate itself from other items.
+2. `content` enables custom components to be rendered as *body* items. Avoid using `content` as a footer item - it will always render as a button.
+3. `contentLocation` indicates if an item will render within the body or footer. Body items will render as list items, while footer items will render as buttons. Items will default to *body* if `contentLocation` is not provided.
+4. `isSelected` enables a HOC to manage the selected states of each item.
+5. `isSelectable` indicates if an item is selectable. A checkmark will be toggled on item selection.
+6. `title` indicates the text to render for this item. If this item contains children, `title` will be used as the header text for the nested page.
+7. `childKeys` is an array of `key`s that enables nested pages. For each menu item contained in the nested page, store it's `key` within this array.
+
+Displayed below is the explicit structure of a menu item:
 
 ```javascript
 PropTypes.shape({
