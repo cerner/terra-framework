@@ -8,7 +8,7 @@ const MockConfig = customComponent =>
       contentLocation: UtilityUtils.LOCATIONS.BODY,
       isSelected: false,
       isSelectable: false,
-      metaData: 'Other Information',
+      metaData: { otherInformation: 'Other Information' },
       childKeys: [
         'item-1',
         'item-2',
@@ -67,7 +67,7 @@ const MockConfig = customComponent =>
       contentLocation: UtilityUtils.LOCATIONS.BODY,
       isSelected: false,
       isSelectable: false,
-      metaData: 'Other Information',
+      metaData: { otherInformation: 'Other Information' },
       childKeys: [],
     },
     {
@@ -144,7 +144,7 @@ const MockConfig = customComponent =>
     },
     {
       key: 'item-7',
-      title: 'Item 7',
+      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
       contentLocation: UtilityUtils.LOCATIONS.BODY,
       isSelected: true,
       isSelectable: false,

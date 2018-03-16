@@ -66,6 +66,9 @@ exports[`UtilityButton should render with menu items 1`] = `
         "isSelectable": false,
         "isSelected": false,
         "key": "menu",
+        "metaData": Object {
+          "otherInformation": "Other Information",
+        },
         "title": "Menu",
       },
       Object {
@@ -84,7 +87,6 @@ exports[`UtilityButton should render with menu items 1`] = `
           "item-2.1",
           "item-2.2",
         ],
-        "contentLocation": "body",
         "id": "test-item-2",
         "isSelectable": false,
         "isSelected": false,
@@ -117,6 +119,9 @@ exports[`UtilityButton should render with menu items 1`] = `
         "isSelectable": false,
         "isSelected": false,
         "key": "item-1.1",
+        "metaData": Object {
+          "otherInformation": "Other Information",
+        },
         "title": "Item 1.1",
       },
       Object {
@@ -201,7 +206,7 @@ exports[`UtilityButton should render with menu items 1`] = `
         "isSelectable": false,
         "isSelected": true,
         "key": "item-7",
-        "title": "Item 7",
+        "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       },
     ]
   }

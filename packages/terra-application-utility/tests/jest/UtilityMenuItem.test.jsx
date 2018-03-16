@@ -55,6 +55,19 @@ describe('UtilityMenuItem', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should render with isActive', () => {
+    const wrapper = shallow(
+      <HeaderUtilityMenuItem
+        itemKey="key"
+        onChange={mockOnChange}
+        hasChevron
+        variant={variant}
+        isActive
+      />,
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('should render with isSelected', () => {
     const wrapper = shallow(
       <HeaderUtilityMenuItem
@@ -85,6 +98,18 @@ describe('UtilityMenuItem', () => {
         itemKey="key"
         onChange={mockOnChange}
         hasChevron
+        variant={variant}
+      />,
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render with onKeyDown', () => {
+    const wrapper = shallow(
+      <HeaderUtilityMenuItem
+        itemKey="key"
+        onChange={mockOnChange}
+        onKeyDown={jest.fn()}
         variant={variant}
       />,
     );

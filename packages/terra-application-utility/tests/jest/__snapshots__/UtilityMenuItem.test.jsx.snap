@@ -137,6 +137,30 @@ exports[`UtilityMenuItem should render with hasChevron 1`] = `
 </li>
 `;
 
+exports[`UtilityMenuItem should render with isActive 1`] = `
+<li
+  aria-label=""
+  className="header-utility-body-item"
+  key="key"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="button"
+  tabIndex="0"
+>
+  <Arrange
+    align="center"
+    className="default-left-inset default-right-inset"
+    fill={
+      <div>
+        
+      </div>
+    }
+    fitEnd={null}
+    fitStart={null}
+  />
+</li>
+`;
+
 exports[`UtilityMenuItem should render with isSelectable 1`] = `
 <li
   aria-label=""
@@ -212,6 +236,30 @@ exports[`UtilityMenuItem should render with leftInset 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       />
     }
+  />
+</li>
+`;
+
+exports[`UtilityMenuItem should render with onKeyDown 1`] = `
+<li
+  aria-label=""
+  className="header-utility-body-item"
+  key="key"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="button"
+  tabIndex="0"
+>
+  <Arrange
+    align="center"
+    className="default-left-inset default-right-inset"
+    fill={
+      <div>
+        
+      </div>
+    }
+    fitEnd={null}
+    fitStart={null}
   />
 </li>
 `;
