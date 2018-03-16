@@ -166,7 +166,7 @@ class InfiniteList extends React.Component {
     this.lastChildIndex = this.childCount;
     if (this.isRenderingNew) {
       this.isRenderingNew = false;
-      this.update(null, false, true);
+      this.update(null, false, true); // Prevent from triggering an item request to avoid infinite loop of loading.
     }
   }
 
