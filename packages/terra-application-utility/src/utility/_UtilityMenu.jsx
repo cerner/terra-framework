@@ -215,7 +215,7 @@ class UtilityMenu extends React.Component {
 
   handleOnKeyDown(index) {
     return ((event) => {
-      if (event.nativeEvent.keyCode === Utils.KEY_CODES.LEFT_ARROW) {
+      if (event.nativeEvent.keyCode === Utils.KEY_CODES.LEFT_ARROW && this.state.currentKey !== this.props.initialSelectedKey) {
         this.pop();
       } else if (event.nativeEvent.keyCode === Utils.KEY_CODES.UP_ARROW) {
         this.setState({ focusIndex: index - 1 });
