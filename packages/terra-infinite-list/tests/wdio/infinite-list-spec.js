@@ -9,7 +9,7 @@ describe('InfiniteList', () => {
       browser.waitForVisible('#test-infinite-list');
     });
 
-    Terra.should.matchScreenshot('#test-infinite-list', { selector: '#test-infinite-list', viewports });
+    Terra.should.matchScreenshot({ selector: '#test-infinite-list', viewports });
   });
 
   describe('Displays an infinite list with updating indicator', () => {
@@ -18,7 +18,7 @@ describe('InfiniteList', () => {
       browser.waitForVisible('#test-infinite-list');
     });
 
-    Terra.should.matchScreenshot('#test-infinite-list', { selector: '#test-infinite-list', viewports });
+    Terra.should.matchScreenshot({ selector: '#test-infinite-list', viewports });
   });
 
   describe('Displays an infinite list with selection', () => {
@@ -27,7 +27,7 @@ describe('InfiniteList', () => {
       browser.waitForVisible('#test-infinite-list');
     });
 
-    Terra.should.matchScreenshot('#test-infinite-list', { selector: '#test-infinite-list', viewports });
+    Terra.should.matchScreenshot({ selector: '#test-infinite-list', viewports });
   });
 
   describe('Displays an infinite list with virtual dom from top', () => {
@@ -37,7 +37,7 @@ describe('InfiniteList', () => {
       browser.pause(150);
     });
 
-    Terra.should.matchScreenshot('#test-infinite-list', { selector: '#test-infinite-list', viewports });
+    Terra.should.matchScreenshot({ selector: '#test-infinite-list', viewports });
   });
 
   describe('Displays an infinite list with virtual dom from bottom', () => {
@@ -49,6 +49,6 @@ describe('InfiniteList', () => {
       browser.waitForVisible('#test-infinite-list [data-infinite-list-index="15"]');
     });
 
-    Terra.should.matchScreenshot('#test-infinite-list', { selector: '#test-infinite-list', viewports });
+    Terra.should.matchScreenshot({ selector: '#test-infinite-list', viewports });
   });
 });
