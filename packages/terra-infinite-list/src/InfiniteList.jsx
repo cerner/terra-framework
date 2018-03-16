@@ -166,11 +166,8 @@ class InfiniteList extends React.Component {
     if (this.isRenderingNew) {
       this.isRenderingNew = false;
       this.update(null, false, true); // Prevent from triggering an item request to avoid infinite loop of loading.
-    } else {
-      const contentData = InfiniteUtils.getContentData(this.contentNode);
-      if (InfiniteUtils.shouldTriggerItemRequest(contentData)) {
-        this.triggerItemRequest();
-      }
+    } else if (this.contentNode && InfiniteUtils.shouldTriggerItemRequest(InfiniteUtils.getContentData(this.contentNode))) {
+      this.triggerItemRequest();
     }
   }
 
