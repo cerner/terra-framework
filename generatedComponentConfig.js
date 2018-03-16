@@ -7,6 +7,7 @@ import TerraApplicationHeaderLayoutIndex from './packages/terra-application-head
 import TerraApplicationLinksIndex from './packages/terra-application-links/examples/Index.site-page';
 import TerraApplicationMenuLayoutIndex from './packages/terra-application-menu-layout/examples/Index.site-page';
 import TerraApplicationNameIndex from './packages/terra-application-name/examples/Index.site-page';
+import TerraApplicationUtilityIndex from './packages/terra-application-utility/examples/Index.site-page';
 import TerraDisclosureManagerIndex from './packages/terra-disclosure-manager/examples/Index.site-page';
 import TerraInfiniteListIndex from './packages/terra-infinite-list/examples/Index.site-page';
 import TerraLayoutIndex from './packages/terra-layout/examples/Index.site-page';
@@ -26,7 +27,10 @@ import ApplicationHeaderNameDefault from './packages/terra-application-name/exam
 import ApplicationHeaderNameTruncated from './packages/terra-application-name/examples/test-examples/ApplicationHeaderNameTruncated.example';
 import ApplicationMenuNameDefault from './packages/terra-application-name/examples/test-examples/ApplicationMenuNameDefault.example';
 import ApplicationMenuNameTruncated from './packages/terra-application-name/examples/test-examples/ApplicationMenuNameTruncated.example';
-import DefaultApplicationUtility from './packages/terra-application-utility/examples/test-examples/DefaultApplicationUtility.example';
+import DefaultApplicationHeaderUtility from './packages/terra-application-utility/examples/test-examples/DefaultApplicationHeaderUtility.example';
+import DefaultApplicationMenuUtility from './packages/terra-application-utility/examples/test-examples/DefaultApplicationMenuUtility.example';
+import DefaultHeaderUtilityMenu from './packages/terra-application-utility/examples/test-examples/DefaultHeaderUtilityMenu.example';
+import DefaultMenuUtilityMenu from './packages/terra-application-utility/examples/test-examples/DefaultMenuUtilityMenu.example';
 import InfiniteListLoading from './packages/terra-infinite-list/examples/test-examples/InfiniteListLoading.example';
 import InfiniteListSelection from './packages/terra-infinite-list/examples/test-examples/InfiniteListSelection.example';
 import InfiniteListUpdating from './packages/terra-infinite-list/examples/test-examples/InfiniteListUpdating.example';
@@ -172,11 +176,33 @@ const componentConfig = {
   'terra-application-utility': {
     name: 'Application Utility',
     path: '/application-utility',
+    pages: [
+      {
+        name: 'Index',
+        path: '/index',
+        component: TerraApplicationUtilityIndex,
+      },
+    ],
     tests: [
       {
-        name: 'Default Application Utility',
-        path: '/default-application-utility',
-        component: DefaultApplicationUtility,
+        name: 'Default Application Header Utility',
+        path: '/default-application-header-utility',
+        component: DefaultApplicationHeaderUtility,
+      },
+      {
+        name: 'Default Application Menu Utility',
+        path: '/default-application-menu-utility',
+        component: DefaultApplicationMenuUtility,
+      },
+      {
+        name: 'Default Header Utility Menu',
+        path: '/default-header-utility-menu',
+        component: DefaultHeaderUtilityMenu,
+      },
+      {
+        name: 'Default Menu Utility Menu',
+        path: '/default-menu-utility-menu',
+        component: DefaultMenuUtilityMenu,
       },
     ],
   },

@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UtilityMenu it should pass in a custom prop 1`] = `
+<InjectIntl(UtilityMenu)
+  id="test"
+  initialSelectedKey="key"
+  menuItems={
+    Array [
+      Object {
+        "childKeys": Array [],
+        "contentLocation": "footer",
+        "isSelected": false,
+        "key": "key",
+        "title": "title",
+      },
+    ]
+  }
+  onChange={[Function]}
+  onDisclose={[Function]}
+  variant="header"
+/>
+`;
+
+exports[`UtilityMenu should render with default props 1`] = `
+<InjectIntl(UtilityMenu)
+  initialSelectedKey="key"
+  menuItems={
+    Array [
+      Object {
+        "childKeys": Array [],
+        "contentLocation": "footer",
+        "isSelected": false,
+        "key": "key",
+        "title": "title",
+      },
+    ]
+  }
+  onChange={[Function]}
+  onDisclose={[Function]}
+  variant="header"
+/>
+`;
+
+exports[`UtilityMenu should render with isHeightBounded 1`] = `
+<InjectIntl(UtilityMenu)
+  initialSelectedKey="key"
+  isHeightBounded={true}
+  menuItems={
+    Array [
+      Object {
+        "childKeys": Array [],
+        "contentLocation": "footer",
+        "isSelected": false,
+        "key": "key",
+        "title": "title",
+      },
+    ]
+  }
+  onChange={[Function]}
+  onDisclose={[Function]}
+  variant="header"
+/>
+`;
+
+exports[`UtilityMenu should render with onRequestClose set 1`] = `
+<InjectIntl(UtilityMenu)
+  initialSelectedKey="key"
+  menuItems={
+    Array [
+      Object {
+        "childKeys": Array [],
+        "contentLocation": "footer",
+        "isSelected": false,
+        "key": "key",
+        "title": "title",
+      },
+    ]
+  }
+  onChange={[Function]}
+  onDisclose={[Function]}
+  onRequestClose={[Function]}
+  variant="header"
+/>
+`;
