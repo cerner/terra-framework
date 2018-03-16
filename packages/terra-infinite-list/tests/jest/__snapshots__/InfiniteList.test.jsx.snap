@@ -48,11 +48,6 @@ exports[`InfiniteList should render with initial children 1`] = `
 <React.Fragment>
   <List
     className="infinite-list"
-    infiniteProps={
-      Object {
-        "isFinishedLoading": true,
-      }
-    }
     isDivided={false}
     refCallback={[Function]}
   >
@@ -170,11 +165,6 @@ exports[`InfiniteList should render with initial children 1`] = `
         }
       }
     />
-    <ListItem
-      isSelectable={false}
-      isSelected={false}
-      key="infinite-spinner-row-0"
-    />
   </List>
 </React.Fragment>
 `;
@@ -183,11 +173,6 @@ exports[`InfiniteList should render with list props 1`] = `
 <React.Fragment>
   <List
     className="infinite-list"
-    infiniteProps={
-      Object {
-        "isFinishedLoading": true,
-      }
-    }
     isDivided={true}
     refCallback={[Function]}
   >
@@ -321,13 +306,71 @@ exports[`InfiniteList should render with list props 1`] = `
         }
       }
     />
-    <ListItem
-      isSelectable={false}
-      isSelected={false}
-      key="infinite-spinner-row-0"
-    />
   </List>
 </React.Fragment>
+`;
+
+exports[`InfiniteList should render with list with style props 1`] = `
+<ul
+  class="list divided infinite-list"
+>
+  <li
+    class="list-item spacer"
+    style="height:0px"
+  />
+  <li
+    class="list-item is-selectable"
+    data-infinite-list-index="0"
+    style="background-color:pink;overflow:hidden"
+    tabindex="0"
+  >
+    <div
+      style="height:20px;width:100%"
+    >
+      item 1
+    </div>
+  </li>
+  <li
+    class="list-item selected is-selectable"
+    data-infinite-list-index="1"
+    style="background-color:red;overflow:hidden"
+    tabindex="0"
+  >
+    <div
+      style="height:20px;width:100%"
+    >
+      item 2
+    </div>
+  </li>
+  <li
+    class="list-item is-selectable"
+    data-infinite-list-index="2"
+    style="background-color:blue;overflow:hidden"
+    tabindex="0"
+  >
+    <div
+      style="height:20px;width:100%"
+    >
+      item 3
+    </div>
+  </li>
+  <li
+    class="list-item is-selectable"
+    data-infinite-list-index="3"
+    style="background-color:yellow;overflow:hidden"
+    tabindex="0"
+  >
+    <div
+      style="height:20px;width:100%"
+    >
+      item 4
+    </div>
+  </li>
+  <li
+    class="list-item spacer"
+    style="height:0px"
+  />
+</ul>
 `;
 
 exports[`InfiniteList should render with no children and loading 1`] = `
