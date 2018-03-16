@@ -1,0 +1,296 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UtilityMenuItem should pass in a custom prop 1`] = `
+<li
+  aria-label=""
+  className="header-utility-body-item"
+  id="test"
+  key="key"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="button"
+  tabIndex="0"
+>
+  <Arrange
+    align="center"
+    className="default-left-inset default-right-inset"
+    fill={
+      <div>
+        
+      </div>
+    }
+    fitEnd={null}
+    fitStart={null}
+  />
+</li>
+`;
+
+exports[`UtilityMenuItem should render with a content location 1`] = `
+<Button
+  className="header-utility-footer-item"
+  isBlock={false}
+  isCompact={false}
+  isDisabled={false}
+  isIconOnly={false}
+  isReversed={false}
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  text=""
+  type="button"
+  variant="neutral"
+/>
+`;
+
+exports[`UtilityMenuItem should render with a title 1`] = `
+<li
+  aria-label="title"
+  className="header-utility-body-item"
+  key="key"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="button"
+  tabIndex="0"
+>
+  <Arrange
+    align="center"
+    className="default-left-inset default-right-inset"
+    fill={
+      <div>
+        title
+      </div>
+    }
+    fitEnd={null}
+    fitStart={null}
+  />
+</li>
+`;
+
+exports[`UtilityMenuItem should render with content 1`] = `
+<li
+  aria-label=""
+  className="header-utility-body-item"
+  key="key"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="button"
+  tabIndex="0"
+>
+  <Arrange
+    align="center"
+    className="default-left-inset default-right-inset"
+    fill={
+      <div>
+         test
+      </div>
+    }
+    fitEnd={null}
+    fitStart={null}
+  />
+</li>
+`;
+
+exports[`UtilityMenuItem should render with default props 1`] = `
+<li
+  aria-label=""
+  className="header-utility-body-item"
+  key="key"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="button"
+  tabIndex="0"
+>
+  <Arrange
+    align="center"
+    className="default-left-inset default-right-inset"
+    fill={
+      <div>
+        
+      </div>
+    }
+    fitEnd={null}
+    fitStart={null}
+  />
+</li>
+`;
+
+exports[`UtilityMenuItem should render with hasChevron 1`] = `
+<li
+  aria-label=""
+  className="header-utility-body-item"
+  key="key"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="button"
+  tabIndex="0"
+>
+  <Arrange
+    align="center"
+    className="default-left-inset default-right-inset"
+    fill={
+      <div>
+        
+      </div>
+    }
+    fitEnd={null}
+    fitStart={null}
+  />
+</li>
+`;
+
+exports[`UtilityMenuItem should render with isActive 1`] = `
+<li
+  aria-label=""
+  className="header-utility-body-item"
+  key="key"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="button"
+  tabIndex="0"
+>
+  <Arrange
+    align="center"
+    className="default-left-inset default-right-inset"
+    fill={
+      <div>
+        
+      </div>
+    }
+    fitEnd={null}
+    fitStart={null}
+  />
+</li>
+`;
+
+exports[`UtilityMenuItem should render with isSelectable 1`] = `
+<li
+  aria-label=""
+  className="header-utility-body-item"
+  key="key"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="button"
+  tabIndex="0"
+>
+  <Arrange
+    align="center"
+    className="default-left-inset default-right-inset"
+    fill={
+      <div>
+        
+      </div>
+    }
+    fitEnd={null}
+    fitStart={null}
+  />
+</li>
+`;
+
+exports[`UtilityMenuItem should render with isSelected 1`] = `
+<li
+  aria-label=""
+  className="header-utility-body-item"
+  key="key"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="button"
+  tabIndex="0"
+>
+  <Arrange
+    align="center"
+    className="default-left-inset default-right-inset"
+    fill={
+      <div>
+        
+      </div>
+    }
+    fitEnd={null}
+    fitStart={null}
+  />
+</li>
+`;
+
+exports[`UtilityMenuItem should render with leftInset 1`] = `
+<li
+  aria-label=""
+  className="header-utility-body-item"
+  key="key"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="button"
+  tabIndex="0"
+>
+  <Arrange
+    align="center"
+    className="default-right-inset"
+    fill={
+      <div>
+        
+      </div>
+    }
+    fitEnd={null}
+    fitStart={
+      <IconCheckmark
+        className="checkmark"
+        data-name="Layer 1"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    }
+  />
+</li>
+`;
+
+exports[`UtilityMenuItem should render with onKeyDown 1`] = `
+<li
+  aria-label=""
+  className="header-utility-body-item"
+  key="key"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="button"
+  tabIndex="0"
+>
+  <Arrange
+    align="center"
+    className="default-left-inset default-right-inset"
+    fill={
+      <div>
+        
+      </div>
+    }
+    fitEnd={null}
+    fitStart={null}
+  />
+</li>
+`;
+
+exports[`UtilityMenuItem should render with rightInset 1`] = `
+<li
+  aria-label=""
+  className="header-utility-body-item"
+  key="key"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="button"
+  tabIndex="0"
+>
+  <Arrange
+    align="center"
+    className="default-right-inset"
+    fill={
+      <div>
+        
+      </div>
+    }
+    fitEnd={null}
+    fitStart={
+      <IconCheckmark
+        className="checkmark"
+        data-name="Layer 1"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    }
+  />
+</li>
+`;

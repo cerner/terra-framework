@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`ApplicationUtility should render a default component 1`] = `
-<div
-  className="application-utility"
->
-  default
-</div>
-`;

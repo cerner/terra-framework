@@ -1,0 +1,111 @@
+:local {
+  .utility-menu {
+    font-family: inherit;
+    width: 100%;
+  }
+
+  .header-utility-menu {
+    background-color: var(--terra-application-header-utility-menu-background-color);
+  }
+
+  .menu-utility-menu {
+    background-color: var(--terra-application-menu-utility-menu-background-color);
+  }
+
+  .utility-menu-header {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+  }
+
+  .header-utility-menu-header {
+    font-size: var(--terra-application-header-utility-menu-header-font-size, 1rem);
+    font-weight: var(--terra-application-header-utility-menu-header-font-weight, normal);
+    line-height: var(--terra-application-header-utility-menu-header-line-height, 1.2);
+    margin-top: var(--terra-application-header-utility-header-margin-top, 0.7143rem);
+  }
+
+  .menu-utility-menu-header {
+    font-size: var(--terra-application-menu-utility-menu-header-font-size, 1rem);
+    font-weight: var(--terra-application-menu-utility-menu-header-font-weight, normal);
+    line-height: var(--terra-application-header-utility-menu-header-line-height, 1.2);
+    margin-top: var(--terra-application-menu-utility-header-margin-top, 0.7143rem);
+  }
+
+  .utility-menu-content-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header-utility-menu-content-container {
+    margin-bottom: var(--terra-application-header-utility-header-margin-bottom, 0.7143rem);
+  }
+
+  .menu-utility-menu-content-container {
+    margin-bottom: var(--terra-application-menu-utility-header-margin-bottom, 0.7143rem);
+  }
+
+  .utility-menu-left-content-container {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .header-utility-menu-initial-page-header-text {
+    margin-left: var(--terra-application-header-utility-menu-initial-page-header-text-margin-left, 0.7143rem);
+  }
+
+  .menu-utility-menu-initial-page-header-text {
+    margin-left: var(--terra-application-menu-utility-menu-initial-page-header-text-margin-left, 0.7143rem);
+  }
+
+  .header-utility-menu-noninitial-page-header-text {
+    margin-left: var(--terra-application-header-utility-menu-noninitial-page-header-text-margin-left, 0);
+  }
+
+  .menu-utility-menu-noninitial-page-header-text {
+    margin-left: var(--terra-application-menu-utility-menu-noninitial-page-header-text-margin-left, 0);
+  }
+
+  .utility-menu-icon-left {
+    flex-shrink: 0;
+  }
+
+  .header-utility-menu-icon-left {
+    width: var(--terra-application-header-utility-menu-chevron-width, 0.7143rem);
+  }
+
+  .menu-utility-menu-icon-left {
+    width: var(--terra-application-menu-utility-menu-chevron-width, 0.7143rem);
+  }
+
+  .utility-menu-right-content-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .utility-menu-icon-close {
+    flex-shrink: 0;
+  }
+
+  .header-utility-menu-icon-close {
+    width: var(--terra-application-header-utility-menu-page-chevron-width, 1rem);
+  }
+
+  .menu-utility-menu-icon-close {
+    width: var(--terra-application-menu-utility-menu-page-chevron-width, 1rem);
+  }
+
+  .utility-menu-body {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .utility-menu-footer {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+  }
+}
