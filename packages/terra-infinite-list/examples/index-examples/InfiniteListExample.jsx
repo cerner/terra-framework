@@ -24,13 +24,13 @@ class InfiniteListExample extends React.Component {
   }
 
   addMoreData() {
-    const newNumberOfPages = this.state.numberOfPages + 1;
-    if (newNumberOfPages > 10) {
+    const newState = { numberOfPages: this.state.numberOfPages + 1 };
+    if (newState.numberOfPages > 10) {
       return;
-    } else if (newNumberOfPages > 9) {
-      this.setState({ stillLoading: false, numberOfPages: newNumberOfPages });
+    } else if (newState.numberOfPages > 9) {
+      newState.stillLoading = false;
     }
-    this.setState({ numberOfPages: newNumberOfPages });
+    this.setState(newState);
   }
 
   debounce(fn, delay) {
