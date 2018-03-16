@@ -107,9 +107,8 @@ class InfiniteList extends React.Component {
     if (!this.listenersAdded) {
       this.enableListeners();
     }
-    this.handleRenderCompletion();
     this.updateScrollGroups();
-    this.update(null, false);
+    this.handleRenderCompletion();
   }
 
   componentWillReceiveProps(newProps) {
@@ -167,6 +166,11 @@ class InfiniteList extends React.Component {
     if (this.isRenderingNew) {
       this.isRenderingNew = false;
       this.update(null, false, true); // Prevent from triggering an item request to avoid infinite loop of loading.
+    } else {
+      const contentData = InfiniteUtils.getContentData(this.contentNode);
+      if (InfiniteUtils.shouldTriggerItemRequest(contentData)) {
+        this.triggerItemRequest();
+      }
     }
   }
 
