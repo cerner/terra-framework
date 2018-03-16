@@ -8,7 +8,7 @@ The Utility is used to disclose a utility menu. There are two versions - a heade
   - `npm install terra-application-utility`
 
 ## Menu Items
-The menu items are generated from an array of menu item objects, which can contain up to seven attributes: `key`, `content`, `contentLocation`, `isSelected`, `isSelectable`, `title`, and `childKeys`.
+The menu items are generated from an array of menu item objects, which can contain up to eight attributes: `childKeys`, `content`, `contentLocation`, `isSelected`, `isSelectable`, `key`, `metaData`, and `title`.
 
 1. `childKeys` is an array of `key`s that enables nested pages. For each menu item contained in the nested page, store it's `key` within this array.
 2. `content` enables custom components to be rendered as *body* items. Avoid using `content` as a footer item - it will always render as a button.
@@ -69,6 +69,7 @@ import { ApplicationHeaderUtility, ApplicationMenuUtility } from 'terra-applicat
   menuItems={menuItems}
   onChange={this.handleOnChange}
   onDisclose={this.onDiscloseUtility}
+  initialSelectedKey={rootKey}
   title={userName}
   accessory={image}
 />
@@ -77,6 +78,7 @@ import { ApplicationHeaderUtility, ApplicationMenuUtility } from 'terra-applicat
   menuItems={menuItems}
   onChange={this.handleOnChange}
   onDisclose={this.onDiscloseUtility}
+  initialSelectedKey={rootKey}
   title={userName}
   accessory={image}
 />
