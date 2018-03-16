@@ -16,8 +16,8 @@ class MenuUtilityMenuExample extends React.Component {
     };
   }
 
-  handleOnChange(event, key) {
-    this.setState({ selectedKey: key });
+  handleOnChange(event, object) {
+    this.setState({ selectedKey: object.key });
   }
 
   handleOnRequestClose() {
