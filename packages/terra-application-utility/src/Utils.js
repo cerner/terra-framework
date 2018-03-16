@@ -22,9 +22,9 @@ const VARIANTS = {
 
 const itemShape = PropTypes.shape({
   /**
-   * The unique key associated with this item.
+   * Array containing the keys of each child item of this item.
    */
-  key: PropTypes.string.isRequired,
+  childKeys: PropTypes.arrayOf(PropTypes.string),
   /**
    * The component associated with this item.
    */
@@ -42,13 +42,17 @@ const itemShape = PropTypes.shape({
    */
   isSelectable: PropTypes.bool,
   /**
+   * The unique key associated with this item.
+   */
+  key: PropTypes.string.isRequired,
+  /**
+   * Optional meta data to be returned along with the item key within the onChange.
+   */
+  metaData: PropTypes.object,
+  /**
    * The text associated with this item.
    */
   title: PropTypes.string,
-  /**
-   * Array containing the keys of each child item of this item.
-   */
-  childKeys: PropTypes.arrayOf(PropTypes.string),
 });
 
 const Utils = {

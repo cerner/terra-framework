@@ -68,6 +68,7 @@ class UtilityMenu extends React.Component {
     this.buildFooterContent = this.buildFooterContent.bind(this);
     this.childrenHasCheckmark = this.childrenHasCheckmark.bind(this);
     this.childrenHasChevron = this.childrenHasChevron.bind(this);
+    this.setMenuNode = this.setMenuNode.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
     this.pop = this.pop.bind(this);
@@ -94,8 +95,20 @@ class UtilityMenu extends React.Component {
     }
   }
 
+  componentDidUpdate() {
+    if (this.menuNode && this.state.focusIndex === -1) {
+      this.menuNode.focus();
+    }
+  }
+
   getItem(key) {
     return this.state.map.get(key);
+  }
+
+  setMenuNode(node) {
+    if (node) {
+      this.menuNode = node;
+    }
   }
 
   buildItem(key, leftInset, rightInset, isActive, handleOnKeyDown) {
@@ -192,7 +205,7 @@ class UtilityMenu extends React.Component {
       if (!item.isSelectable) {
         this.props.onRequestClose();
       }
-      this.props.onChange(event, key);
+      this.props.onChange(event, { key, metaData: item.metaData });
     }
 
     if (this.state.focusIndex !== -1) {
@@ -202,7 +215,9 @@ class UtilityMenu extends React.Component {
 
   handleOnKeyDown(index) {
     return ((event) => {
-      if (event.nativeEvent.keyCode === Utils.KEY_CODES.UP_ARROW) {
+      if (event.nativeEvent.keyCode === Utils.KEY_CODES.LEFT_ARROW) {
+        this.pop();
+      } else if (event.nativeEvent.keyCode === Utils.KEY_CODES.UP_ARROW) {
         this.setState({ focusIndex: index - 1 });
       } else if (event.nativeEvent.keyCode === Utils.KEY_CODES.DOWN_ARROW) {
         this.setState({ focusIndex: index + 1 });
@@ -308,12 +323,16 @@ class UtilityMenu extends React.Component {
       />
     );
 
+    let headerText;
+    if (currentItem !== undefined) {
+      headerText = currentItem.title;
+    }
     const header = (
       <div className={headerClassNames}>
         <span className={contentContainerClassNames}>
           <span className={leftContentContainer}>
             {!firstPage && backButton}
-            <span className={headerTextClassName}>{currentItem.title}</span>
+            <span className={headerTextClassName}>{headerText}</span>
           </span>
           <span className={cx('utility-menu-right-content-container')}>
             {closeButton}
@@ -323,9 +342,9 @@ class UtilityMenu extends React.Component {
       </div>
     );
 
-    let footer = null;
+    let footer;
     const footerItems = this.buildFooterContent(currentItem);
-    const hasFooterItems = footerItems.some(item => item !== null);
+    const hasFooterItems = footerItems ? footerItems.some(item => item !== null) : null;
     if (hasFooterItems) {
       footer = (
         <div className={cx('utility-menu-footer')}>
@@ -337,17 +356,19 @@ class UtilityMenu extends React.Component {
 
     const menuText = intl.formatMessage({ id: 'Terra.application.utility.menu' });
     return (
-      <ContentContainer
-        {...customProps}
-        header={header}
-        footer={footer}
-        fill={isHeightBounded}
-        className={menuClassNames}
-        role={'navigation'}
-        aria-label={menuText}
-      >
-        {this.buildListContent(currentItem)}
-      </ContentContainer>
+      <div ref={this.setMenuNode} style={{ height: isHeightBounded ? '100%' : 'auto', outline: 'none' }} tabIndex="0" >
+        <ContentContainer
+          {...customProps}
+          header={header}
+          footer={footer}
+          fill={isHeightBounded}
+          className={menuClassNames}
+          role={'navigation'}
+          aria-label={menuText}
+        >
+          {this.buildListContent(currentItem)}
+        </ContentContainer>
+      </div>
     );
   }
 }
