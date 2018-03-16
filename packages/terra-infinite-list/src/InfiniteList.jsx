@@ -452,7 +452,9 @@ class InfiniteList extends React.Component {
       selectedIndexes,
       ...customProps
     } = this.props;
+
     const topSpacer = createSpacer(`${this.boundary.hiddenTopHeight > 0 ? this.boundary.hiddenTopHeight : 0}px`, 0);
+
     const bottomSpacer = createSpacer(`${this.boundary.hiddenBottomHeight > 0 ? this.boundary.hiddenBottomHeight : 0}px`, 1);
 
     let loadingSpinner;
