@@ -6,6 +6,7 @@
     border-right: var(--terra-navigation-side-menu-item-border-right, none);
     border-top: var(--terra-navigation-side-menu-item-border-top, none);
     color: var(--terra-navigation-side-menu-item-color, #1c1f21);
+    cursor: pointer;
     display: flex;
     font-size: var(--terra-navigation-side-menu-item-size, 1.071rem);
     line-height: var(--terra-navigation-side-menu-item-line-height, 1.42857);
@@ -19,23 +20,16 @@
     width: 100%;
     z-index: 0;
 
-    &:hover::before,
-    &.is-hovered::before {
+    &:hover,
+    &.is-hovered {
       background-color: var(--terra-navigation-side-menu-item-hover-background-color, #f5fafe);
-      content: '';
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      z-index: -1;
     }
 
     &.is-selected {
       border-left: var(--terra-navigation-side-menu-item-selected-border-left, 0.5rem solid #007cc3);
       font-weight: var(--terra-navigation-side-menu-item-selected-font-weight, 600);
       padding-left: var(--terra-navigation-side-menu-item-selected-padding-left, 0.7143rem);
-      
+
       &::before {
         background-color: var(--terra-navigation-side-menu-item-selected-background-color, #f4f4f4);
         content: '';

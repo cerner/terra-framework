@@ -4,6 +4,11 @@
 import TerraAggregatorIndex from './packages/terra-aggregator/examples/Index.site-page';
 import TerraAppDelegateIndex from './packages/terra-app-delegate/examples/Index.site-page';
 import TerraApplicationHeaderLayoutIndex from './packages/terra-application-header-layout/examples/Index.site-page';
+import TerraApplicationLayoutAbout from './packages/terra-application-layout/examples/About.site-page';
+import TerraApplicationLayoutExample from './packages/terra-application-layout/examples/Example.site-page';
+import TerraApplicationLayoutResponsiveDesign from './packages/terra-application-layout/examples/ResponsiveDesign.site-page';
+import TerraApplicationLayoutUsage from './packages/terra-application-layout/examples/Usage.site-page';
+import TerraApplicationLayoutUtils from './packages/terra-application-layout/examples/Utils.site-page';
 import TerraApplicationLinksIndex from './packages/terra-application-links/examples/Index.site-page';
 import TerraApplicationMenuLayoutIndex from './packages/terra-application-menu-layout/examples/Index.site-page';
 import TerraApplicationNameIndex from './packages/terra-application-name/examples/Index.site-page';
@@ -20,6 +25,7 @@ import TerraThemeProviderIndex from './packages/terra-theme-provider/examples/In
 import AggregatorStandalone from './packages/terra-aggregator/examples/test-examples/AggregatorStandalone.example';
 import AggregatorWithDisclosure from './packages/terra-aggregator/examples/test-examples/AggregatorWithDisclosure.example';
 import ApplicationHeaderDefault from './packages/terra-application-header-layout/examples/test-examples/ApplicationHeaderDefault.example';
+import ApplicationTest from './packages/terra-application-layout/examples/test-examples/ApplicationTest.example';
 import ApplicationTabsDefault from './packages/terra-application-links/examples/test-examples/ApplicationTabsDefault.example';
 import ApplicationMenuDefault from './packages/terra-application-menu-layout/examples/test-examples/ApplicationMenuDefault.example';
 import ApplicationHeaderNameDefault from './packages/terra-application-name/examples/test-examples/ApplicationHeaderNameDefault.example';
@@ -96,6 +102,44 @@ const componentConfig = {
         name: 'Application Header Default',
         path: '/application-header-default',
         component: ApplicationHeaderDefault,
+      },
+    ],
+  },
+  'terra-application-layout': {
+    name: 'Application Layout',
+    path: '/application-layout',
+    pages: [
+      {
+        name: 'About',
+        path: '/about',
+        component: TerraApplicationLayoutAbout,
+      },
+      {
+        name: 'Example',
+        path: '/example',
+        component: TerraApplicationLayoutExample,
+      },
+      {
+        name: 'Responsive Design',
+        path: '/responsive-design',
+        component: TerraApplicationLayoutResponsiveDesign,
+      },
+      {
+        name: 'Usage',
+        path: '/usage',
+        component: TerraApplicationLayoutUsage,
+      },
+      {
+        name: 'Utils',
+        path: '/utils',
+        component: TerraApplicationLayoutUtils,
+      },
+    ],
+    tests: [
+      {
+        name: 'Application Test',
+        path: '/application-test',
+        component: ApplicationTest,
       },
     ],
   },

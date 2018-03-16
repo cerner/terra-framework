@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 -----------------
+### Changed
+* Updated text styling of application name's menu styling.
 
 2.1.0 - (March 6, 2018)
 ------------------

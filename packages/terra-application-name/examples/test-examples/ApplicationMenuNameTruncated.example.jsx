@@ -3,7 +3,7 @@ import Image from 'terra-image';
 import ApplicationMenuName from '../../lib/ApplicationMenuName';
 
 export default () => (
-  <div style={{ width: '150px' }}>
+  <div style={{ width: '150px', backgroundColor: 'green' }}>
     <ApplicationMenuName
       id="truncated"
       title="TitleTitleTitleTitleTitleTitleTitle"

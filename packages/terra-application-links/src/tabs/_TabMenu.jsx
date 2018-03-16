@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Popup from 'terra-popup';
-import { Switch, Route } from 'react-router-dom';
+import { matchPath } from 'react-router-dom';
 import TabMenuList from './_TabMenuList';
 import TabMenuDisplay from './_TabMenuDisplay';
 import TabUtils from './_TabUtils';
@@ -16,9 +16,9 @@ const propTypes = {
    */
   isHidden: PropTypes.bool,
   /**
-   * Ref callback for menu button.
+   * The location as provided by the `withRouter()` HOC.
    */
-  refCallback: PropTypes.func,
+  location: PropTypes.object.isRequired,
 };
 
 const contextTypes = {
@@ -29,20 +29,6 @@ const contextTypes = {
     }
   },
 };
-
-const createRouteDisplay = (props, key, path, text, isSelected) => (
-  <Route
-    path={path}
-    key={key}
-    render={() => (
-      <TabMenuDisplay
-        {...props}
-        text={text}
-        isSelected={isSelected}
-      />
-    )}
-  />
-);
 
 class TabMenu extends React.Component {
   constructor(props, context) {
@@ -58,6 +44,12 @@ class TabMenu extends React.Component {
     this.shouldResetFocus = false;
   }
 
+  componentWillReceiveProps(newProps) {
+    if (this.props.location !== newProps.location) {
+      this.setState({ isOpen: false });
+    }
+  }
+
   componentDidUpdate() {
     if (this.shouldResetFocus && this.targetRef) {
       this.targetRef.focus();
@@ -71,10 +63,6 @@ class TabMenu extends React.Component {
 
   setTargetRef(node) {
     this.targetRef = node;
-
-    if (this.props.refCallback) {
-      this.props.refCallback(node);
-    }
   }
 
   handleOnRequestClose() {
@@ -104,27 +92,35 @@ class TabMenu extends React.Component {
     );
   }
 
-  createRoutes(popup) {
-    const props = {
-      role: 'tab',
-      tabIndex: '0',
-      onClick: this.handleOnClick,
-      onKeyDown: this.handleOnKeyDown,
-      popup,
-      refCallback: this.setTargetRef,
-      isHidden: this.props.isHidden,
-      'data-application-tabs-more': true,
-    };
-
-    const routes = this.props.children.map(child => (
-      createRouteDisplay(props, child.props.path, child.props.path, child.props.text, true)
-    ));
-
+  createDisplay(popup) {
     const { intl } = this.context;
-    const moreText = intl.formatMessage({ id: 'Terra.application.tabs.more' });
-    routes.push(createRouteDisplay(props, 'menu-display-more', undefined, moreText, false));
+    let text = intl.formatMessage({ id: 'Terra.application.tabs.more' });
+    let isSelected = false;
 
-    return routes;
+    const childArray = this.props.children;
+    const count = childArray.length;
+    for (let i = 0; i < count; i += 1) {
+      const child = childArray[i];
+      if (matchPath(this.props.location.pathname, { path: child.props.path })) {
+        text = child.props.text;
+        isSelected = true;
+        break;
+      }
+    }
+
+    return (
+      <TabMenuDisplay
+        onClick={this.handleOnClick}
+        onKeyDown={this.handleOnKeyDown}
+        popup={popup}
+        refCallback={this.setTargetRef}
+        isHidden={this.props.isHidden}
+        text={text}
+        isSelected={isSelected}
+        key="application-tab-more"
+        data-application-tabs-more
+      />
+    );
   }
 
   render() {
@@ -144,11 +140,7 @@ class TabMenu extends React.Component {
       );
     }
 
-    return (
-      <Switch>
-        {this.createRoutes(popup)}
-      </Switch>
-    );
+    return this.createDisplay(popup);
   }
 }
 

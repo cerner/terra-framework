@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 -----------------
+###Changed
+* Changed hover styling to account for IE10.
 
 1.0.0 - (March 6, 2018)
 ------------------

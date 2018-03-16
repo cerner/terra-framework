@@ -4,9 +4,12 @@ Changelog
 Unreleased
 ----------
 
+### Changed
+* Returning promises from toggleMenu/togglePin
+
 2.1.0 - (March 6, 2018)
 ------------------
-###Changed
+### Changed
 * Remove the hover functionality from the layout panel at the medium breakpoint.
 
 ### Added
