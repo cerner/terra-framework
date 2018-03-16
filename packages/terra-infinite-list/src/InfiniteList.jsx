@@ -454,17 +454,30 @@ class InfiniteList extends React.Component {
     } = this.props;
 
     const topSpacer = createSpacer(`${this.boundary.hiddenTopHeight > 0 ? this.boundary.hiddenTopHeight : 0}px`, 0);
-
     const bottomSpacer = createSpacer(`${this.boundary.hiddenBottomHeight > 0 ? this.boundary.hiddenBottomHeight : 0}px`, 1);
 
     let loadingSpinner;
     let visibleChildren;
     let showDivided = isDivided;
+
     if (!isFinishedLoading) {
       if (this.childCount > 0) {
-        loadingSpinner = <List.Item content={progressiveLoadingIndicator} isSelectable={false} key={`infinite-spinner-row-${this.loadingIndex}`} />;
+        loadingSpinner = (
+          <List.Item
+            content={progressiveLoadingIndicator}
+            isSelectable={false}
+            key={`infinite-spinner-row-${this.loadingIndex}`}
+          />
+        );
       } else {
-        visibleChildren = <List.Item content={initialLoadingIndicator} isSelectable={false} key="infinite-spinner-full" style={{ height: '100%', position: 'relative' }} />;
+        visibleChildren = (
+          <List.Item
+            content={initialLoadingIndicator}
+            isSelectable={false}
+            key="infinite-spinner-full"
+            style={{ height: '100%', position: 'relative' }}
+          />
+        );
         showDivided = false;
       }
     }
