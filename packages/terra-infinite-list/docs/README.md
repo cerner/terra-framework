@@ -60,7 +60,7 @@ class MyHOC extends React.Component {
         onChange={this.handleOnChange}
         selectedIndexes={this.state.selectedIndexes}
         isFinishedLoading={!this.state.stillLoading}
-        onRequestItems={this.addMoreData}
+        onRequestItems={this.handleOnRequestItems}
         initialLoadingIndicator={fullLoading}
         progressiveLoadingIndicator={progressLoading}
       >
