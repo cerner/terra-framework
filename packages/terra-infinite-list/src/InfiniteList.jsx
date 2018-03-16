@@ -70,6 +70,11 @@ const defaultProps = {
   selectedIndexes: [],
 };
 
+/**
+ * Returns a ListItem sized according to the provided height to use as a spacer.
+ * @param {number} height - Height to set on the ListItem.
+ * @param {number} index - Index to use as part of the spacers key.
+ */
 const createSpacer = (height, index) => (
   <List.Item
     isSelectable={false}
@@ -129,6 +134,10 @@ class InfiniteList extends React.Component {
     this.disableListeners();
   }
 
+  /**
+   * Sets the html node of contentNode and if it was previously undefined trigger updateScrollGroups.
+   * @param {node} node - Html node of the List.
+   */
   setContentNode(node) {
     const wasUndefined = !this.contentNode;
     this.contentNode = node;
@@ -138,6 +147,9 @@ class InfiniteList extends React.Component {
     }
   }
 
+  /**
+   * If a request for items has not been made trigger onRequestItems.
+   */
   triggerItemRequest() {
     if (!this.props.isFinishedLoading && !this.hasRequestedItems && this.props.onRequestItems) {
       this.hasRequestedItems = true;
@@ -145,6 +157,9 @@ class InfiniteList extends React.Component {
     }
   }
 
+  /**
+   * Following a render reset newChildren values. If new items were render trigger an update calculation.
+   */
   handleRenderCompletion() {
     this.renderNewChildren = false;
     this.preventUpdate = false;
@@ -155,6 +170,10 @@ class InfiniteList extends React.Component {
     }
   }
 
+  /**
+   * Cache the value for the child count and convert the children props to an array.
+   * @param {object} props - React element props.
+   */
   updateItemCache(props) {
     this.childCount = React.Children.count(props.children);
     this.childrenArray = React.Children.toArray(props.children);
@@ -162,6 +181,10 @@ class InfiniteList extends React.Component {
     this.renderNewChildren = true;
   }
 
+  /**
+   * Set the initial state of the virtualization values for the list.
+   * @param {object} props - React element props.
+   */
   initializeItemCache(props) {
     this.loadingIndex = 0;
     this.lastChildIndex = -1;
@@ -176,6 +199,9 @@ class InfiniteList extends React.Component {
     this.updateItemCache(props);
   }
 
+  /**
+   * Adds a resize observer and scroll event listener to the contentNode.
+   */
   enableListeners() {
     if (!this.contentNode) {
       return;
@@ -188,6 +214,9 @@ class InfiniteList extends React.Component {
     this.listenersAdded = true;
   }
 
+  /**
+   * Removes the resize observer and scroll event listener from the contentNode.
+   */
   disableListeners() {
     if (!this.contentNode) {
       return;
@@ -197,6 +226,13 @@ class InfiniteList extends React.Component {
     this.listenersAdded = false;
   }
 
+  /**
+   * Reset the timeout on this.timer.
+   * @param {function} fn - The handleResize function.
+   * @param {object} args - Arguments passed to the handleResize function.
+   * @param {context} context - Javascript context.
+   * @param {double} now - DOMHighResTimeStamp.
+   */
   resetTimeout(fn, args, context, now) {
     clearTimeout(this.timer);
     this.timer = setTimeout(() => {
@@ -206,6 +242,10 @@ class InfiniteList extends React.Component {
     }, 250);
   }
 
+  /**
+   * Debounce the size event and prevent updates from scrolling.
+   * @param {function} fn - The handleResize function.
+   */
   resizeDebounce(fn) {
     return (...args) => {
       const context = this;
@@ -220,12 +260,21 @@ class InfiniteList extends React.Component {
     };
   }
 
+  /**
+   * Triggers a height adjustment if the height or scroll height changes.
+   */
   handleResize() {
     if (this.scrollHeight !== this.contentNode.scrollHeight || this.clientHeight !== this.contentNode.clientHeight) {
       this.adjustHeight();
     }
   }
 
+  /**
+   * Calculates the visible scroll items and if the hidden items have changed force an update.
+   * @param {object} event - Browser DOM event.
+   * @param {bool} ensureUpdate - Regardless of calculation ensure a forceUpdate occurs.
+   * @param {bool} preventRequest - Should triggerItemRequest be prevented.
+   */
   update(event, ensureUpdate, preventRequest) {
     if (!this.contentNode || this.disableScroll || this.preventUpdate) {
       return;
@@ -252,6 +301,9 @@ class InfiniteList extends React.Component {
     }
   }
 
+  /**
+   * Groups scroll items by height to reduce the number of refreshs that occur on scroll.
+   */
   updateScrollGroups() {
     if (!this.contentNode) {
       return;
@@ -288,6 +340,11 @@ class InfiniteList extends React.Component {
     }
   }
 
+  /**
+   * Checks the boundingClientRect for the scroll item's height and offsetTop then caches it.
+   * @param {node} node - The child node for the scroll item.
+   * @param {number} index - Index of the child.
+   */
   updateHeight(node, index) {
     if (node) {
       this.itemsByIndex[index] = this.itemsByIndex[index] || {};
@@ -310,6 +367,9 @@ class InfiniteList extends React.Component {
     }
   }
 
+  /**
+   * Detects which scroll items are on the dom and reads the heights to see if resize has changed the boundClientRect.
+   */
   adjustHeight() {
     if (this.contentNode) {
       this.itemsByIndex.forEach((item, itemIndex) => {
@@ -338,6 +398,10 @@ class InfiniteList extends React.Component {
     }
   }
 
+  /**
+   * Updates the offsetTop of scroll items following the element that adjusted it's height.
+   * @param {number} index - Index of the scroll item that had adjusted it's height.
+   */
   adjustTrailingItems(index) {
     let lastTop = this.itemsByIndex[index].offsetTop;
     let lastHeight = this.itemsByIndex[index].height;
@@ -348,6 +412,11 @@ class InfiniteList extends React.Component {
     }
   }
 
+  /**
+   * Clones the child element with new props for selection, refCallback,  and data attributes.
+   * @param {element} child - React child element.
+   * @param {number} index - Index of the child element.
+   */
   wrapChild(child, index) {
     const wrappedCallBack = (node) => {
       this.updateHeight(node, index);
