@@ -6,7 +6,6 @@ import TerraAppDelegateIndex from './packages/terra-app-delegate/examples/Index.
 import TerraApplicationHeaderLayoutIndex from './packages/terra-application-header-layout/examples/Index.site-page';
 import TerraApplicationLayoutAbout from './packages/terra-application-layout/examples/About.site-page';
 import TerraApplicationLayoutExample from './packages/terra-application-layout/examples/Example.site-page';
-import TerraApplicationLayoutResponsiveDesign from './packages/terra-application-layout/examples/ResponsiveDesign.site-page';
 import TerraApplicationLayoutUsage from './packages/terra-application-layout/examples/Usage.site-page';
 import TerraApplicationLayoutUtils from './packages/terra-application-layout/examples/Utils.site-page';
 import TerraApplicationLinksIndex from './packages/terra-application-links/examples/Index.site-page';
@@ -118,11 +117,6 @@ const componentConfig = {
         name: 'Example',
         path: '/example',
         component: TerraApplicationLayoutExample,
-      },
-      {
-        name: 'Responsive Design',
-        path: '/responsive-design',
-        component: TerraApplicationLayoutResponsiveDesign,
       },
       {
         name: 'Usage',

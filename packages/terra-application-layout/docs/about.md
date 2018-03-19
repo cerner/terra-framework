@@ -3,7 +3,7 @@
 The Terra Application Layout is a responsive, themeable layout for building applications.
 
 The Terra Application Layout provides:
-- A themeable, responsive application header, with APIs for rendering application-specific branding, tabular navigation, and user-centric utility controls.
+- A themeable, responsive application header, capable of rendering application-specific branding, tabular navigation (provided by `terra-application-links`), and user-centric utility controls (provided by `terra-utility`).
 - Responsive menu and content areas, as provided by `terra-layout`.
 - `react-router`-based navigation and configuration, as provided by `terra-navigation-layout`.
 
@@ -17,3 +17,5 @@ The Terra Application Layout provides:
 * [Cross-Browser Support](https://github.com/cerner/terra-core/wiki/Component-Features#cross-browser-support)
 * [Responsive Support](https://github.com/cerner/terra-core/wiki/Component-Features#responsive-support)
 * [Mobile Support](https://github.com/cerner/terra-core/wiki/Component-Features#mobile-support)
+* [Internationalization Support](https://github.com/cerner/terra-core/wiki/Component-Features#internationalization-i18n-support)
+* [Localization Support](https://github.com/cerner/terra-core/wiki/Component-Features#localization-support)

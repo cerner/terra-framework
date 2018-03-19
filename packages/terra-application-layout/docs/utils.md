@@ -19,15 +19,30 @@ In addition to the ApplicationLayout component, the package exports an `Utils` o
 
 ### `utilityHelpers`
 
-- `getDefaultUtilityConfig`
+- `getDefaultUtilityItems`
 
-A function that generates an object conforming to the `utilityConfig` shape and containing the Terra-standard set of utility menu items.
+A function that generates an array containing the Terra-standard set of utility menu items. This array and its contents match the `menuItems` prop expected by `terra-utility` components and can be provided to them directly.
 
-An `intl` parameter is required, as the translated titles for the default configuration must be retrieved from it. Also required is an object containing user information, as the default menu configuration is user-centric. Finally, additional menu configuration items can be provided to be merged with the default items
+An `intl` parameter is required to generate the items, as the translated titles for the default configuration must be retrieved from it. Also required is an object containing user information, as the default menu configuration is user-centric. Finally, additional menu configuration items can be provided to be merged with the default items.
+
+- `defaultKeys` - The set of menu item keys used by the default utility configuration. Values from this object should be used inside custom item configurations as `parentKey` values to appropriately locate the custom items. When selected, selectable items will trigger the `utilityConfig`'s `onChange` function with their associated item key.
+
+|Keys|Description|
+|---|---|
+|`MENU`|Menu page with `USER_INFORMATION`, `SETTINGS`, `HELP`, and `LOG_OUT` as child items.|
+|`USER_INFORMATION`|Menu page with a `CHANGE_PHOTO` child item.|
+|`CHANGE_PHOTO`|Selectable item.|
+|`SETTINGS`|Menu page with `APPEARANCE` and `SECURITY` child items.|
+|`APPEARANCE`|Selectable item.|
+|`SECURITY`|Selectable item.|
+|`HELP`|Menu page with `GETTING_STARTED`, `ABOUT`, and `TERMS_OF_USE` child items.|
+|`GETTING_STARTED`|Selectable item.|
+|`ABOUT`|Selectable item.|
+|`TERMS_OF_USE`|Selectable item.|
+|`LOG_OUT`|Selectable item.|
 
 ```jsx
 import { Utils } from 'terra-application-layout';
-import { UtilityUtils } from 'terra-application-utility';
 import Avatar from 'terra-avatar';
 
 const intl = {}; // Intl should be retrieved from context
@@ -56,18 +71,29 @@ const customUtilityItems = [{
   parentKey: 'additional-1',
 }, {
   key: 'additional-2',
-  contentLocation: UtilityUtils.LOCATIONS.BODY,
   title: 'Custom Checkbox Item',
   isSelectable: true,
   parentKey: Utils.utilityHelpers.defaultKeys.MENU,
 }, {
   key: 'additional-3',
-  contentLocation: UtilityUtils.LOCATIONS.FOOTER,
+  contentLocation: Utils.utilityHelpers.locations.FOOTER,
   title: 'Custom Footer',
   parentKey: Utils.utilityHelpers.defaultKeys.MENU,
 }];
 
-const utilityConfig = Utils.utilityHelpers.getDefaultUtilityConfig(intl, userData, customUtilityItems);
-```
+const menuItems = Utils.utilityHelpers.getDefaultUtilityItems(intl, userData, customUtilityItems);
 
-- `defaultKeys` - The set of menu item keys used by the default utility configuration. Values from this object should be used inside custom item configurations as `parentKey` values to appropriately locate the custom items.
+const utilityConfig = {
+  title: 'Doe, John',
+  accessory: <Avatar variant="user" ariaLabel="Doe, John" />,
+  menuItems: menuItems,
+  selectedKey: 'menu',
+  onChange: (event, itemKey, disclose) => {
+    /**
+     * This function will be called when items are selected within the utility menu.
+     * The disclose parameter is provided for convenience, but any presentation method
+     * could be used to handle that menu content selection.
+     */
+  },
+};
+```

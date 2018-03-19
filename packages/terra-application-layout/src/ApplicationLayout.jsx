@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions  */
 import React from 'react';
 import PropTypes from 'prop-types';
 import AppDelegate from 'terra-app-delegate';
@@ -75,7 +74,7 @@ class ApplicationLayout extends React.Component {
     return navigationItems.map(navigationItem => ({
       path: navigationItem.path,
       text: navigationItem.text,
-      hasSubMenu: menuPaths.filter(configPath => matchPath(navigationItem.path, { path: configPath })).length > 0,
+      hasSubMenu: menuPaths.filter(menuPath => matchPath(navigationItem.path, { path: menuPath })).length > 0,
     }));
   }
 
@@ -93,6 +92,11 @@ class ApplicationLayout extends React.Component {
       refuseRoutingStackNavigation: menuNavigationItems.length === 0,
     };
 
+    /**
+     * The configuration for the primary navigation menu is specified for the
+     * tiny and small breakpoints only. The menu will only be visible when the ApplicationLayout
+     * is compact.
+     */
     return {
       '/': {
         path: '/',

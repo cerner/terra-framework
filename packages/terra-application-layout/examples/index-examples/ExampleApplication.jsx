@@ -5,7 +5,6 @@ import { injectIntl } from 'react-intl';
 import Image from 'terra-image';
 import Avatar from 'terra-avatar';
 import ContentContainer from 'terra-content-container';
-import { UtilityUtils } from 'terra-application-utility';
 
 import ApplicationLayout, { Utils } from '../../src/ApplicationLayout';
 
@@ -220,13 +219,13 @@ const customUtilityItems = [{
   parentKey: 'additional-1',
 }, {
   key: 'additional-2',
-  contentLocation: UtilityUtils.LOCATIONS.BODY,
+  contentLocation: Utils.utilityHelpers.locations.BODY,
   title: 'Custom Checkbox Item',
   isSelectable: true,
   parentKey: Utils.utilityHelpers.defaultKeys.MENU,
 }, {
   key: 'additional-3',
-  contentLocation: UtilityUtils.LOCATIONS.FOOTER,
+  contentLocation: Utils.utilityHelpers.locations.FOOTER,
   title: 'Custom Footer',
   parentKey: Utils.utilityHelpers.defaultKeys.MENU,
 }];
@@ -243,7 +242,7 @@ const ExampleApplication = withRouter(injectIntl(({ location, intl }) => {
   const utilityConfig = Object.freeze({
     title: 'Swanson, Henry',
     accessory: userAvatar,
-    menuItems: Utils.utilityHelpers.getDefaultUtilityConfig(intl, userData, customUtilityItems),
+    menuItems: Utils.utilityHelpers.getDefaultUtilityItems(intl, userData, customUtilityItems),
     initialSelectedKey: Utils.utilityHelpers.defaultKeys.MENU,
     onChange: (event, itemData, disclose) => {
       /**

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { UtilityUtils } from 'terra-application-utility';
 
 /**
  * Shape for the `layoutConfig` prop provided to components within the ApplicationLayout.
@@ -35,20 +36,18 @@ const utilityConfigPropType = PropTypes.shape({
   title: PropTypes.string,
   accessory: PropTypes.element,
   onChange: PropTypes.func.isRequired,
-  menuItems: PropTypes.arrayOf(PropTypes.shape({
-    content: PropTypes.element,
-    contentLocation: PropTypes.string,
-    key: PropTypes.string,
-    title: PropTypes.string,
-    isSelectable: PropTypes.bool,
-    isSelected: PropTypes.bool,
-    childKeys: PropTypes.array,
-  })).isRequired,
+  menuItems: PropTypes.arrayOf(UtilityUtils.itemShape).isRequired,
   initialSelectedKey: PropTypes.string.isRequired,
 });
 
+/**
+ * Shape for utilityConfig's menuItem.
+ */
+const utilityMenuItemPropType = UtilityUtils.itemShape;
+
 export default {
   utilityConfigPropType,
+  utilityMenuItemPropType,
   layoutConfigPropType,
   nameConfigPropType,
   navigationItemsPropType,

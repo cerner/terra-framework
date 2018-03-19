@@ -28,14 +28,14 @@ const aboutTitle = intl => (intl.formatMessage({ id: 'Terra.applicationLayout.ut
 const termsOfUseTitle = intl => (intl.formatMessage({ id: 'Terra.applicationLayout.utilityDefaults.termsOfUse' }));
 const logOutTitle = intl => (intl.formatMessage({ id: 'Terra.applicationLayout.utilityDefaults.logOut' }));
 
-const reconcileChildren = (config, additionalConfig) => {
-  if (!additionalConfig) {
-    return config;
+const reconcileChildren = (items, additionalItems) => {
+  if (!additionalItems) {
+    return items;
   }
 
-  additionalConfig.forEach((item) => {
+  additionalItems.forEach((item) => {
     if (item.parentKey) {
-      const matchedParents = config.filter(configItem => configItem.key === item.parentKey);
+      const matchedParents = items.filter(configItem => configItem.key === item.parentKey);
       if (!matchedParents.length) {
         return;
       }
@@ -50,31 +50,10 @@ const reconcileChildren = (config, additionalConfig) => {
     }
   });
 
-  return config.concat(additionalConfig);
+  return items.concat(additionalItems);
 };
 
-/**
- * userData: PropTypes.element,
- *  <UserData userDetail={userDetail} userName={userName} userPhoto={userPhoto} />
- * additionalConfig: PropTypes.array,
- *  [
- *    {
- *      key: 'additional-1',
- *      contentLocation: UtilityUtils.LOCATIONS.BODY,
- *      title: 'Addtional Title 1',
- *      isSelectable: false,
- *      isSelected: false,
- *      content: <Component />
- *      childKeys: [
- *        'additional-sub-1',
- *        'additional-sub-2',
- *      ],
- *      parentKey: 'existing-parent-1',
- *    },
- *    ...
- *  ]
- */
-const getDefaultUtilityConfig = (intl, userData, additionalConfig) => {
+const getDefaultUtilityItems = (intl, userData, additionalItems) => {
   const userDataComponent = (
     <UserData
       userName={userData.name}
@@ -189,10 +168,11 @@ const getDefaultUtilityConfig = (intl, userData, additionalConfig) => {
     },
   ];
 
-  return reconcileChildren(defaultConfig, additionalConfig);
+  return reconcileChildren(defaultConfig, additionalItems);
 };
 
 export default {
-  getDefaultUtilityConfig,
+  getDefaultUtilityItems,
   defaultKeys,
+  locations: UtilityUtils.LOCATIONS,
 };
