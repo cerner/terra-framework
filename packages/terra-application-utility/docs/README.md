@@ -57,30 +57,40 @@ PropTypes.shape({
   title: PropTypes.string,
 });
 ```
-Here is a sample config [file](https://github.com/cerner/terra-framework/blob/master/packages/terra-application-utility/examples/index-examples/MockConfig.js) containing menu items used in the menu example.
+For reference, checkout the [sample menu item config](https://github.com/cerner/terra-framework/blob/master/packages/terra-application-utility/examples/index-examples/MockConfig.js) used for the bottom `Utility Menu` example.
 
 ## Usage
 
 ```jsx
 import React from 'react';
-import { ApplicationHeaderUtility, ApplicationMenuUtility } from 'terra-application-utility';
+import { ApplicationHeaderUtility, ApplicationMenuUtility, UtilityUtils } from 'terra-application-utility';
+
+const menuItems = [
+  { key: 'menu', title: 'Menu', contentLocation: UtilityUtils.LOCATIONS.BODY, isSelected: false, isSelectable: false, childKeys: [ 'item-1', 'item-2', 'item-3'] },
+  { key: 'item-1', title: 'Item 1', contentLocation: UtilityUtils.LOCATIONS.FOOTER, isSelected: false, isSelectable: true, metaData: { otherFunction: () => {} }, childKeys: [] },
+  { key: 'item-2', title: 'Item 2', contentLocation: UtilityUtils.LOCATIONS.BODY, isSelected: true, isSelectable: true, childKeys: [] },
+  { key: 'item-3', title: 'Item 3', contentLocation: UtilityUtils.LOCATIONS.BODY, isSelected: false, isSelectable: false, childKeys: [] },
+];
+const initialSelectedKey = "menu";
+const title = "Utility";
+const accessory = <img src="https://github.com/cerner/terra-core/raw/master/terra.png" />
 
 <ApplicationHeaderUtility
   menuItems={menuItems}
-  onChange={this.handleOnChange}
-  onDisclose={this.onDiscloseUtility}
-  initialSelectedKey={rootKey}
-  title={userName}
-  accessory={image}
+  onChange={() => {}}
+  onDisclose={() => {}}
+  initialSelectedKey={initialSelectedKey}
+  title={title}
+  accessory={accessory}
 />
 
 <ApplicationMenuUtility
   menuItems={menuItems}
-  onChange={this.handleOnChange}
-  onDisclose={this.onDiscloseUtility}
-  initialSelectedKey={rootKey}
-  title={userName}
-  accessory={image}
+  onChange={() => {}}
+  onDisclose={() => {}}
+  initialSelectedKey={initialSelectedKey}
+  title={title}
+  accessory={accessory}
 />
 
 ```
