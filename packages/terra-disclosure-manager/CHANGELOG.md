@@ -4,6 +4,9 @@ ChangeLog
 Unreleased
 -----------------
 
+### Changed
+* Updated documentation
+
 2.1.0 - (March 6, 2018)
 ------------------
 ### Changed
