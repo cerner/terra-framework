@@ -191,4 +191,36 @@ describe('PrimaryNavigationSideMenu', () => {
       });
     });
   });
+
+  describe('Snapshot tests', () => {
+    it('renders with given props', () => {
+      const exampleMenu = (
+        <PrimaryNavigationSideMenu
+          navigationItems={[{
+            path: '/1',
+            text: '1',
+            hasSubMenu: false,
+          }, {
+            path: '/2',
+            text: '2',
+            hasSubMenu: true,
+          }]}
+          layoutConfig={{
+            toggleMenu: jest.fn(),
+          }}
+          routingStackDelegate={{
+            show: jest.fn(),
+            showParent: jest.fn(),
+          }}
+          location={{
+            pathname: '/1',
+          }}
+        />
+      );
+
+      const result = shallow(exampleMenu);
+
+      expect(result).toMatchSnapshot();
+    });
+  });
 });

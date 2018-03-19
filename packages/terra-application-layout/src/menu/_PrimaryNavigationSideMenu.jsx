@@ -10,21 +10,21 @@ const propTypes = {
   /**
    * The array of navigation Objects to be rendered as items within the navigation menu.
    */
-  navigationItems: ApplicationLayoutPropTypes.navigationItemsPropType,
+  navigationItems: ApplicationLayoutPropTypes.navigationItemsPropType.isRequired,
   /**
    * The Object of layout-related APIs provided to the components of the Layout.
    */
-  layoutConfig: ApplicationLayoutPropTypes.layoutConfigPropType,
+  layoutConfig: ApplicationLayoutPropTypes.layoutConfigPropType.isRequired,
   /**
    * The Object containing RoutingStack APIs provided to children of the RoutingStack.
    */
-  routingStackDelegate: RoutingStackDelegate.propType,
+  routingStackDelegate: RoutingStackDelegate.propType.isRequired,
   /**
    * The location from the router context. This prop is provided by the `withRouter` HOC-generator.
    */
   location: PropTypes.shape({
     pathname: PropTypes.string,
-  }),
+  }).isRequired,
 };
 
 /**
