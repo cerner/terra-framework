@@ -134,7 +134,7 @@ In addition to a `disclose` function, a number of other functions are exposed to
 |`maximize`|Allows a component to maximize its presentation size. This is only provided if the component is not already maximized.|
 |`minimize`|Allows a component to minimize its presentation size. This is only provided if the component is currently maximized.|
 |`requestFocus`|Allows a component to request focus from the disclosure in the event that the disclosure mechanism in use utilizes a focus trap. This can be integrated with the Popup and similar focus-stealing controls.|
-|`requestFocus`|Allows a component to release focus from itself and return it to the disclosure. This can be integrated with the Popup and similar focus-stealing controls.|
+|`releaseFocus`|Allows a component to release focus from itself and return it to the disclosure. This can be integrated with the Popup and similar focus-stealing controls.|
 |`registerDismissCheck`|Allows a component to register a function with the DisclosureManager that will be called before the component is dismissed for any reason.|
 
 Each of these functions returns a Promise that can be used for chaining, if necessary.
