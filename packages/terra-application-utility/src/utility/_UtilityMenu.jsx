@@ -33,11 +33,12 @@ const propTypes = {
   menuItems: PropTypes.arrayOf((Utils.itemShape)).isRequired,
   /**
    * The function to trigger when a menu item is selected.
+   * Returns (event, { key: String, metaData: Object})
    */
   onChange: PropTypes.func.isRequired,
   /**
    * The function that closes the menu.
-   * This will be provided by the terra-application-header or terra-application-menu
+   * This will be provided by the terra-application-header or terra-application-menu.
    */
   onRequestClose: PropTypes.func,
   /**

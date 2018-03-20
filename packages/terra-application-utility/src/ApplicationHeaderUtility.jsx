@@ -11,6 +11,7 @@ const propTypes = {
   menuItems: PropTypes.arrayOf(Utils.itemShape).isRequired,
   /**
    * The function to trigger when a menu item is selected.
+   * Returns `(event, { key: String, metaData: Object})`
    */
   onChange: PropTypes.func.isRequired,
     /**
@@ -18,7 +19,7 @@ const propTypes = {
    */
   onDisclose: PropTypes.func.isRequired,
   /**
-   * The key of the top level menu.
+   * The key of the top level menu page.
    */
   initialSelectedKey: PropTypes.string.isRequired,
   /**
