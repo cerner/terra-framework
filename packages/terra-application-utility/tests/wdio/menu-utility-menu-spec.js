@@ -65,8 +65,7 @@ describe('MenuUtilityMenu', () => {
 
   describe('Focus: menu utility menu', () => {
     beforeEach(() => {
-      browser.keys('Tab');
-      browser.keys('Tab');
+      browser.keys(['Tab', 'Tab', 'Tab']);
     });
 
     Terra.should.matchScreenshot({ selector: '#default' });

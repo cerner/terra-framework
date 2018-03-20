@@ -10,14 +10,14 @@ The Utility is used to disclose a utility menu. There are two versions - a heade
 ## Menu Items
 The menu items are generated from an array of menu item objects, which can contain up to eight attributes: `childKeys`, `content`, `contentLocation`, `isSelected`, `isSelectable`, `key`, `metaData`, and `title`.
 
-1. `childKeys` is an array of `key`s that enables nested pages. For each menu item contained in the nested page, store it's `key` within this array.
-2. `content` enables custom components to be rendered as *body* items. Avoid using `content` as a footer item - it will always render as a button.
-3. `contentLocation` indicates if an item will render within the body or footer. Body items will render as list items, while footer items will render as buttons. Items will default to *body* if `contentLocation` is not provided.
-4. `isSelected` enables a HOC to manage the selected states of each item.
-5. `isSelectable` indicates if an item is selectable. A checkmark will be toggled on item selection.
+1. `childKeys` is an optional array of `keys` (strings). Enables a nested page to be rendered when this menu item is selected. For each menu item within the nested page, store it's `key` within this `childKeys` array.
+2. `content` is an optional object. Enables custom components to be rendered as *body* items. Avoid using `content` as a footer item - it will always render as a button.
+3. `contentLocation` is an optional string, one of `UtilityUtils.LOCATIONS.BODY` or `UtilityUtils.LOCATIONS.FOOTER`. Indicates if an item will render within the body or footer. Body items will render as list items, while footer items will render as buttons. Items will default to *body* if `contentLocation` is not provided.
+4. `isSelected` is an optional boolean. Enables a HOC to manage the selected states of each item.
+5. `isSelectable` is an optional boolean. Indicates if an item is selectable. A checkmark will toggle on item selection.
 6. `key` is **required**. Must be a unique value to differentiate itself from other items. `key` is returned, along with `metaData`, within the onChange.
-7. `metaData` is an optional object. Use this to store other relevant information for this menu item. `metaData` is returned, along with `key`, within the onChange.
-8. `title` indicates the text to render for this item. If this item contains children, `title` will be used as the header text for the nested page.
+7. `metaData` is an optional object. Use this to store other data for this menu item, such as its parent `key` or another function. `metaData` is returned, along with `key`, within the onChange.
+8. `title` is an optional string. Sets the text to render for this item. If this menu item contains `childrenKeys`, `title` will be used as the header text for the nested page.
 
 Displayed below is the explicit structure of a menu item:
 
@@ -32,7 +32,7 @@ PropTypes.shape({
    */
   content: PropTypes.object,
   /**
-   * The location to place the item. One of Utils.LOCATIONS.BODY, Utils.LOCATIONS.FOOTER.
+   * The location to place the item. One of UtilityUtils.LOCATIONS.BODY, UtilityUtils.LOCATIONS.FOOTER.
    */
   contentLocation: PropTypes.oneOf([LOCATIONS.BODY, LOCATIONS.FOOTER]),
   /**
@@ -57,30 +57,40 @@ PropTypes.shape({
   title: PropTypes.string,
 });
 ```
-Here is a sample config [file](https://github.com/cerner/terra-framework/blob/master/packages/terra-application-utility/examples/index-examples/MockConfig.js) containing menu items used in the menu example.
+For reference, checkout the [sample menu item config](https://github.com/cerner/terra-framework/blob/master/packages/terra-application-utility/examples/index-examples/MockConfig.js) used for the bottom `Utility Menu` example.
 
 ## Usage
 
 ```jsx
 import React from 'react';
-import { ApplicationHeaderUtility, ApplicationMenuUtility } from 'terra-application-utility';
+import { ApplicationHeaderUtility, ApplicationMenuUtility, UtilityUtils } from 'terra-application-utility';
+
+const menuItems = [
+  { key: 'menu', title: 'Menu', contentLocation: UtilityUtils.LOCATIONS.BODY, isSelected: false, isSelectable: false, childKeys: [ 'item-1', 'item-2', 'item-3'] },
+  { key: 'item-1', title: 'Item 1', contentLocation: UtilityUtils.LOCATIONS.FOOTER, isSelected: false, isSelectable: true, metaData: { otherFunction: () => {} }, childKeys: [] },
+  { key: 'item-2', title: 'Item 2', contentLocation: UtilityUtils.LOCATIONS.BODY, isSelected: true, isSelectable: true, childKeys: [] },
+  { key: 'item-3', title: 'Item 3', contentLocation: UtilityUtils.LOCATIONS.BODY, isSelected: false, isSelectable: false, childKeys: [] },
+];
+const initialSelectedKey = "menu";
+const title = "Utility";
+const accessory = <img src="https://github.com/cerner/terra-core/raw/master/terra.png" />
 
 <ApplicationHeaderUtility
   menuItems={menuItems}
-  onChange={this.handleOnChange}
-  onDisclose={this.onDiscloseUtility}
-  initialSelectedKey={rootKey}
-  title={userName}
-  accessory={image}
+  onChange={() => {}}
+  onDisclose={() => {}}
+  initialSelectedKey={initialSelectedKey}
+  title={title}
+  accessory={accessory}
 />
 
 <ApplicationMenuUtility
   menuItems={menuItems}
-  onChange={this.handleOnChange}
-  onDisclose={this.onDiscloseUtility}
-  initialSelectedKey={rootKey}
-  title={userName}
-  accessory={image}
+  onChange={() => {}}
+  onDisclose={() => {}}
+  initialSelectedKey={initialSelectedKey}
+  title={title}
+  accessory={accessory}
 />
 
 ```

@@ -1,6 +1,6 @@
 {
   "Terra.application.utility.close": "Fermer",
-  "Terra.application.utility.back": "Précédent",
-  "Terra.application.utility.button": "",
-  "Terra.applicaiton.utility.menu": ""
+  "Terra.application.utility.back": "Retour",
+  "Terra.application.utility.button": "Bouton Utilitaire",
+  "Terra.applicaiton.utility.menu": "Menu Utilitaire"
 }
