@@ -101,10 +101,10 @@ class ApplicationHeader extends React.Component {
     }
   }
 
-  handleUtilityOnChange(event, key) {
+  handleUtilityOnChange(event, itemData) {
     const { utilityConfig, app } = this.props;
 
-    utilityConfig.onChange(event, key, app && app.disclose);
+    utilityConfig.onChange(event, itemData, app && app.disclose);
   }
 
   renderToggle() {

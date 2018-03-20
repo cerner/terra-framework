@@ -66,8 +66,8 @@ const myUtilityConfig = {
     contentLocation: UtilityUtils.LOCATIONS.FOOTER,
     title: 'Footer Item',
   }]),
-  selectedKey: 'menu',
-  onChange: (event, itemKey, disclose) => {
+  initialSelectedKey: 'menu',
+  onChange: (event, itemData, disclose) => {
     /**
      * This function will be called when items are selected within the utility menu.
      * The disclose parameter is provided for convenience, but any presentation method
