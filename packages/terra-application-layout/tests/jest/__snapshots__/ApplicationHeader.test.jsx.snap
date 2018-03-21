@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApplicationHeader should render default component 1`] = `
+<div
+  className="application-header"
+>
+  <ApplicationHeaderLayout
+    extensions={null}
+    logo={null}
+    navigation={null}
+    toggle={null}
+    utilities={null}
+  />
+</div>
+`;
+
+exports[`ApplicationHeader should render props 1`] = `
+<div
+  className="application-header"
+  id="test-header"
+>
+  <ApplicationHeaderLayout
+    extensions={
+      <ApplicationHeaderDefault
+        app={undefined}
+        layoutConfig={
+          Object {
+            "size": "large",
+          }
+        }
+      />
+    }
+    logo={
+      <ApplicationHeaderName
+        accessory={undefined}
+        title="app-test-title"
+      />
+    }
+    navigation={
+      <withRouter(ApplicationTabs)
+        links={
+          Array [
+            Object {
+              "id": "123",
+              "path": "/something1",
+              "text": "item 1",
+            },
+            Object {
+              "id": "234",
+              "path": "/something2",
+              "text": "item 2",
+            },
+            Object {
+              "id": "345",
+              "path": "/something3",
+              "text": "item 3",
+            },
+          ]
+        }
+      />
+    }
+    toggle={null}
+    utilities={
+      <ApplicationHeaderUtility
+        accessory={undefined}
+        data-application-header-utility={true}
+        initialSelectedKey="test-menu"
+        menuItems={
+          Array [
+            Object {
+              "contentLocation": "body",
+              "key": "test-menu",
+              "title": "test-menu-title",
+            },
+          ]
+        }
+        onChange={[Function]}
+        onDisclose={[Function]}
+        title="test-util-title"
+      />
+    }
+  />
+</div>
+`;
