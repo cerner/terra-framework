@@ -3,11 +3,7 @@
 exports[`UserData should render empty component 1`] = `
 <div
   className="user-data"
->
-  <div
-    className="user-info"
-  />
-</div>
+/>
 `;
 
 exports[`UserData should render prop data 1`] = `
