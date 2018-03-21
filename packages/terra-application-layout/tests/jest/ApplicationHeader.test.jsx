@@ -19,7 +19,7 @@ describe('ApplicationHeader', () => {
     const testHeader = (
       <ApplicationHeader.WrappedComponent
         intl={mockIntl}
-        layoutConfig={{ size: 'large' }}        
+        layoutConfig={{ size: 'large' }}
       />
     );
 
