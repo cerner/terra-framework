@@ -20,7 +20,7 @@ const ApplicationLayoutHeader = () => (
             contentLocation: 'body',
             title: 'test-menu-title',
           },
-        ]
+        ],
       }}
       extensions={<ExtensionsExample layoutConfig={{ size: 'large' }} />}
       applicationLinks={[

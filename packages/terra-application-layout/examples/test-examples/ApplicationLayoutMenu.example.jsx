@@ -11,7 +11,7 @@ const ApplicationLayoutMenu = () => (
     <ModalManager>
       <ApplicationMenu
         id="test-menu"
-        layoutConfig={{ size: 'small'}}
+        layoutConfig={{ size: 'small' }}
         nameConfig={{ title: 'app-test-title' }}
         routingStackDelegate={{}}
         utilityConfig={{
