@@ -203,9 +203,7 @@ class UtilityMenu extends React.Component {
         currentKey: key,
       });
     } else {
-      if (!item.isSelectable) {
-        this.props.onRequestClose();
-      }
+      this.props.onRequestClose();
       this.props.onChange(event, { key, metaData: item.metaData });
     }
 
