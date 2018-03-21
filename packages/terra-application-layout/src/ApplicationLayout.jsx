@@ -7,7 +7,7 @@ import { matchPath } from 'react-router-dom';
 import { withModalManager } from 'terra-modal-manager';
 
 import RoutingMenu from './menu/RoutingMenu';
-import ApplicationMenuConfigAdapter from './menu/_ApplicationMenuConfigAdapter';
+import ApplicationMenuWrapper from './menu/_ApplicationMenuWrapper';
 import ApplicationHeader from './header/_ApplicationHeader';
 import ApplicationLayoutPropTypes from './utils/propTypes';
 import Helpers from './utils/helpers';
@@ -111,55 +111,61 @@ class ApplicationLayout extends React.Component {
   }
 
   /**
-   * Builds and returns the routing configuration object for all menus with ApplicationMenuConfigAdapters
+   * Builds and returns the routing configuration object for all menus with ApplicationMenuWrappers
    * wrapped around each component entry.
    */
-  static buildWrappedMenuConfig(props, menuConfig) {
+  static buildApplicationMenus(props, originalMenuConfig) {
     const { nameConfig, utilityConfig, extensions } = props;
 
-    const updatedMenuConfig = {};
-    Object.keys(menuConfig).forEach((menuKey) => {
-      const newMenu = Object.assign({}, menuConfig[menuKey]);
+    const config = {};
+    Object.keys(originalMenuConfig).forEach((menuKey) => {
+      const menuConfig = Object.assign({}, originalMenuConfig[menuKey]);
 
-      const newMenuComponent = Object.assign({}, newMenu.component);
+      const menuComponentConfig = Object.assign({}, menuConfig.component);
 
+      /**
+       * Every supplied menu component is wrapped with an ApplicationMenuWrapper.
+       */
       navigationLayoutSizes.forEach((size) => {
-        if (!newMenuComponent[size]) {
+        if (!menuComponentConfig[size]) {
           return;
         }
 
-        const configForSize = Object.assign({}, newMenuComponent[size]);
+        const componentConfig = Object.assign({}, menuComponentConfig[size]);
+        const componentProps = Object.assign({}, componentConfig.props);
 
-        const propsForSize = Object.assign({}, configForSize.props);
-
-        propsForSize.applicationMenuConfigAdapterProps = {
-          overrideComponentClass: configForSize.componentClass,
+        /**
+         * ApplicationMenuWrapper-specific props are injected into the props object with a prop
+         * called `applicationMenuWrapperProps`.
+         */
+        componentProps.applicationMenuWrapperProps = {
+          contentComponentClass: componentConfig.componentClass,
           nameConfig,
           utilityConfig,
           extensions,
         };
-        configForSize.props = propsForSize;
-        configForSize.componentClass = ApplicationMenuConfigAdapter;
+        componentConfig.props = componentProps;
+        componentConfig.componentClass = ApplicationMenuWrapper;
 
-        newMenuComponent[size] = configForSize;
+        menuComponentConfig[size] = componentConfig;
       });
 
-      newMenu.component = newMenuComponent;
-      updatedMenuConfig[menuKey] = newMenu;
+      menuConfig.component = menuComponentConfig;
+      config[menuKey] = menuConfig;
     });
 
-    return updatedMenuConfig;
+    return config;
   }
 
   /**
-   * Builds and returns the routing configuration object for the ApplicationLayout by injecting the PrimaryNavigationSideMenu
-   * and ApplicationMenuConfigAdapters as necessary.
+   * Builds and returns the routing configuration object for the ApplicationLayout by injecting the RoutingMenu for top navigation
+   * and ApplicationMenuWrapper's as necessary.
    */
   static buildRoutingConfig(props) {
     const { routingConfig } = props;
 
     const updatedConfig = Object.assign({}, routingConfig, {
-      menu: ApplicationLayout.buildWrappedMenuConfig(props, Object.assign({}, routingConfig.menu, ApplicationLayout.buildNavigationMenuConfig(props))),
+      menu: ApplicationLayout.buildApplicationMenus(props, Object.assign({}, routingConfig.menu, ApplicationLayout.buildNavigationMenuConfig(props))),
     });
 
     return updatedConfig;

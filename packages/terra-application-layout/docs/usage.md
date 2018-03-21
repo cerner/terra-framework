@@ -165,7 +165,7 @@ const MyExtensions = ({ app, layoutConfig }) => {
 
 ### `indexPath`
 
-The `indexPath` prop allows consumers to set the default path of the ApplicationLayout. The ApplicationLayout will redirect to this path should users of the consuming application attempt to route to a component not detailed in the `routingConfig` prop. Accordingly, the `indexPath` value must haved an associated entry within the `routingConfig` specification.
+The `indexPath` prop allows consumers to set the default path of the ApplicationLayout. The ApplicationLayout will redirect to this path should users of the consuming application attempt to route to a component not detailed in the `routingConfig` prop. Accordingly, the `indexPath` value must have an associated entry within the `routingConfig` specification.
 
 ### `app`
 

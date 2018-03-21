@@ -30,7 +30,7 @@ const propTypes = {
    */
   text: PropTypes.string.isRequired,
   /**
-   * The click callback of the tab..
+   * The click callback of the tab.
    */
   onTabClick: PropTypes.func,
 };

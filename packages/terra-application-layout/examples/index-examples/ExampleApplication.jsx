@@ -13,6 +13,7 @@ import ApplicationMenu from './application-components/ApplicationMenu';
 import UtilityOption from './application-components/UtilityOption';
 import ApplicationExtensions from './application-components/ApplicationExtensions';
 import ProfilePicture from './henry.jpg';
+import Example from '../Example.site-page';
 
 /**
  * The routingConfig API matches that of the NavigationLayout. Routing specifications for the
@@ -178,7 +179,7 @@ const indexPath = '/page_1';
 
 const userAvatar = (
   <Avatar
-    image={ProfilePicture}
+    // image={ProfilePicture}
     variant="user"
     alt="Swanson, Henry"
     ariaLabel="Swanson, Henry"
@@ -201,87 +202,116 @@ const nameConfig = Object.freeze({
   accessory: <Image variant="rounded" src="https://github.com/cerner/terra-core/raw/master/terra.png" height="26px" width="26px" />,
 });
 
-const customUtilityItems = [{
-  key: 'additional-1',
-  title: 'Drill-in Item',
-  childKeys: [
-    'additional-sub-1',
-    'additional-sub-2',
-  ],
-  parentKey: Utils.utilityHelpers.defaultKeys.MENU,
-}, {
-  key: 'additional-sub-1',
-  title: 'Addtional Item 1 - Sub 1',
-  parentKey: 'additional-1',
-}, {
-  key: 'additional-sub-2',
-  title: 'Addtional Item 1 - Sub 2',
-  parentKey: 'additional-1',
-}, {
-  key: 'additional-2',
-  contentLocation: Utils.utilityHelpers.locations.BODY,
-  title: 'Custom Checkbox Item',
-  isSelectable: true,
-  parentKey: Utils.utilityHelpers.defaultKeys.MENU,
-}, {
-  key: 'additional-3',
-  contentLocation: Utils.utilityHelpers.locations.FOOTER,
-  title: 'Custom Footer',
-  parentKey: Utils.utilityHelpers.defaultKeys.MENU,
-}];
+class ExampleApplication extends React.Component {
+  constructor(props) {
+    super(props);
 
-const ExampleApplication = withRouter(injectIntl(({ location, intl }) => {
-  /**
-   * The data provided for utilityConfig will be visible in the ApplicationLayout's header in the
-   * standard rendering mode and within the menus in the compact rendering mode.
-   *
-   * The ApplicationLayout's Utils export provides a helper function named getDefaultUtilityConfig that will
-   * generate the configuration for the standard set of utility options. If the standard configuration is not
-   * desirable, an entirely custom configuration can be used instead.
-   */
-  const utilityConfig = Object.freeze({
-    title: 'Swanson, Henry',
-    accessory: userAvatar,
-    menuItems: Utils.utilityHelpers.getDefaultUtilityItems(intl, userData, customUtilityItems),
-    initialSelectedKey: Utils.utilityHelpers.defaultKeys.MENU,
-    onChange: (event, itemData, disclose) => {
-      /**
-       * This function will be called when items are selected within the utility menu.
-       * The disclose parameter is provided for convenience, but any presentation method
-       * could be used to handle that menu content selection.
-       */
-      disclose({
-        preferredType: 'modal',
-        size: 'small',
-        content: {
-          key: itemData.key,
-          component: <UtilityOption name={itemData.key} />,
-        },
-      });
-    },
-  });
+    this.state = {
+      checkboxItemEnabled: false,
+    };
+  }
 
-  return (
-    <ContentContainer
-      fill
-      header={<h3>{`Router Location: ${location.pathname}`}</h3>}
-    >
-      <ApplicationLayout
-        nameConfig={nameConfig}
-        utilityConfig={utilityConfig}
-        routingConfig={routingConfig}
-        navigationItems={navigationItems}
-        extensions={<ApplicationExtensions />}
-        indexPath={indexPath}
-      />
-    </ContentContainer>
-  );
-}));
+  render() {
+    const { intl, location } = this.props;
+    const { checkboxItemEnabled } = this.state;
+
+    const customUtilityItems = [{
+      key: 'additional-1',
+      title: 'Drill-in Item',
+      childKeys: [
+        'additional-sub-1',
+        'additional-sub-2',
+      ],
+      parentKey: Utils.utilityHelpers.defaultKeys.MENU,
+    }, {
+      key: 'additional-sub-1',
+      title: 'Addtional Item 1 - Sub 1',
+      parentKey: 'additional-1',
+    }, {
+      key: 'additional-sub-2',
+      title: 'Addtional Item 1 - Sub 2',
+      parentKey: 'additional-1',
+    }, {
+      key: 'checkbox-item',
+      title: 'Custom Checkbox Item',
+      isSelectable: true,
+      isSelected: checkboxItemEnabled,
+      parentKey: Utils.utilityHelpers.defaultKeys.MENU,
+    }, {
+      key: 'additional-3',
+      contentLocation: Utils.utilityHelpers.locations.FOOTER,
+      title: 'Custom Footer',
+      parentKey: Utils.utilityHelpers.defaultKeys.MENU,
+    }];
+
+    /**
+     * The data provided for utilityConfig will be visible in the ApplicationLayout's header in the
+     * standard rendering mode and within the menus in the compact rendering mode.
+     *
+     * The ApplicationLayout's Utils export provides a helper function named getDefaultUtilityConfig that will
+     * generate the configuration for the standard set of utility options. If the standard configuration is not
+     * desirable, an entirely custom configuration can be used instead.
+     */
+    const utilityConfig = Object.freeze({
+      title: 'Swanson, Henry',
+      accessory: userAvatar,
+      menuItems: Utils.utilityHelpers.getDefaultUtilityItems(intl, userData, customUtilityItems),
+      initialSelectedKey: Utils.utilityHelpers.defaultKeys.MENU,
+      onChange: (event, itemData, disclose) => {
+        /**
+         * This function will be called when items are selected within the utility menu.
+         * The disclose parameter is provided for convenience, but any presentation method
+         * could be used to handle that menu content selection.
+         */
+
+        /**
+         * For the checkbox item, we maintain its selection state locally and show no disclosure.
+         */
+        if (itemData.key === 'checkbox-item') {
+          this.setState({
+            checkboxItemEnabled: !checkboxItemEnabled,
+          });
+          return;
+        }
+
+        /**
+         * For everything else, we can present a custom modal component for that content.
+         */
+        disclose({
+          preferredType: 'modal',
+          size: 'small',
+          content: {
+            key: itemData.key,
+            component: <UtilityOption name={itemData.key} />,
+          },
+        });
+      },
+    });
+
+    return (
+      <ContentContainer
+        fill
+        header={<h3>{`Router Location: ${location.pathname}`}</h3>}
+      >
+        <ApplicationLayout
+          nameConfig={nameConfig}
+          utilityConfig={utilityConfig}
+          routingConfig={routingConfig}
+          navigationItems={navigationItems}
+          extensions={<ApplicationExtensions />}
+          indexPath={indexPath}
+        />
+      </ContentContainer>
+    );
+  }
+}
+
+const WrappedApplication = withRouter(injectIntl((ExampleApplication)));
 
 const AppRouter = () => (
   <div style={{ height: '100%' }}>
     <MemoryRouter>
-      <ExampleApplication />
+      <WrappedApplication />
     </MemoryRouter>
   </div>
 );

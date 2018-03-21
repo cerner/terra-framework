@@ -1,7 +1,7 @@
 import React from 'react';
 
 import WrappedApplication from '../../src/ApplicationLayout';
-import ApplicationMenuConfigAdapter from '../../src/menu/_ApplicationMenuConfigAdapter';
+import ApplicationMenuWrapper from '../../src/menu/_ApplicationMenuWrapper';
 import RoutingMenu from '../../src/menu/RoutingMenu';
 
 const ApplicationLayout = WrappedApplication.WrappedComponent;
@@ -173,7 +173,7 @@ describe('ApplicationLayout', () => {
   });
 
   describe('buildWrappedMenuConfig', () => {
-    it('should update the configuration object for menu routes with components wrapped by the ApplicationMenuConfigAdapter', () => {
+    it('should update the configuration object for menu routes with components wrapped by the ApplicationMenuWrapper', () => {
       const nameConfig = {
         name: 'config',
       };
@@ -231,22 +231,22 @@ describe('ApplicationLayout', () => {
         },
       };
 
-      const result = ApplicationLayout.buildWrappedMenuConfig({ nameConfig, utilityConfig }, menuConfig);
+      const result = ApplicationLayout.buildApplicationMenus({ nameConfig, utilityConfig }, menuConfig);
 
       expect(Object.keys(result).length).toBe(2);
-      expect(result['/test_1'].component.default.componentClass).toBe(ApplicationMenuConfigAdapter);
+      expect(result['/test_1'].component.default.componentClass).toBe(ApplicationMenuWrapper);
       expect(result['/test_1'].component.default.props.test).toBe('1');
-      expect(result['/test_1'].component.default.props.applicationMenuConfigAdapterProps).toEqual({
-        overrideComponentClass: TestComponent,
+      expect(result['/test_1'].component.default.props.applicationMenuWrapperProps).toEqual({
+        contentComponentClass: TestComponent,
         nameConfig,
         utilityConfig,
       });
 
       ['tiny', 'small', 'medium', 'large', 'huge'].forEach((size) => {
-        expect(result['/test_2'].component[size].componentClass).toBe(ApplicationMenuConfigAdapter);
+        expect(result['/test_2'].component[size].componentClass).toBe(ApplicationMenuWrapper);
         expect(result['/test_2'].component[size].props.test).toBe('2');
-        expect(result['/test_2'].component[size].props.applicationMenuConfigAdapterProps).toEqual({
-          overrideComponentClass: TestComponent,
+        expect(result['/test_2'].component[size].props.applicationMenuWrapperProps).toEqual({
+          contentComponentClass: TestComponent,
           nameConfig,
           utilityConfig,
         });
@@ -290,8 +290,8 @@ describe('ApplicationLayout', () => {
       ApplicationLayout.buildNavigationMenuConfig = jest.fn();
       ApplicationLayout.buildNavigationMenuConfig.mockReturnValueOnce(navMenuConfig);
 
-      ApplicationLayout.buildWrappedMenuConfig = jest.fn();
-      ApplicationLayout.buildWrappedMenuConfig.mockReturnValueOnce({ new: 'menus' });
+      ApplicationLayout.buildApplicationMenus = jest.fn();
+      ApplicationLayout.buildApplicationMenus.mockReturnValueOnce({ new: 'menus' });
 
       const result = ApplicationLayout.buildRoutingConfig({ routingConfig, navigationItems });
 
@@ -303,10 +303,10 @@ describe('ApplicationLayout', () => {
       expect(ApplicationLayout.buildNavigationMenuConfig.mock.calls.length).toBe(1);
       expect(ApplicationLayout.buildNavigationMenuConfig.mock.calls[0][0]).toEqual({ routingConfig, navigationItems });
 
-      expect(ApplicationLayout.buildWrappedMenuConfig.mock.calls.length).toBe(1);
-      expect(ApplicationLayout.buildWrappedMenuConfig.mock.calls[0][0]).toEqual({ routingConfig, navigationItems });
+      expect(ApplicationLayout.buildApplicationMenus.mock.calls.length).toBe(1);
+      expect(ApplicationLayout.buildApplicationMenus.mock.calls[0][0]).toEqual({ routingConfig, navigationItems });
 
-      const wrapMenuConfigMenus = ApplicationLayout.buildWrappedMenuConfig.mock.calls[0][1];
+      const wrapMenuConfigMenus = ApplicationLayout.buildApplicationMenus.mock.calls[0][1];
       expect(Object.keys(wrapMenuConfigMenus).length).toBe(2);
       expect(wrapMenuConfigMenus['/']).toBeDefined();
       expect(wrapMenuConfigMenus['/test']).toBeDefined();

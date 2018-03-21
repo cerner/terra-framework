@@ -35,11 +35,11 @@ const propTypes = {
   /**
    * The Object containing props from the configuration necessary for ApplicationMenu creation.
    */
-  applicationMenuConfigAdapterProps: PropTypes.shape({
+  applicationMenuWrapperProps: PropTypes.shape({
     /**
      * The Component class that will be rendered as content within the ApplicationMenu.
      */
-    overrideComponentClass: PropTypes.func,
+    contentComponentClass: PropTypes.func.isRequired,
     /**
      * The configuration for ApplicationName component.
      */
@@ -55,30 +55,29 @@ const propTypes = {
   }).isRequired,
 };
 
-const ApplicationMenuConfigAdapter = (props) => {
+const ApplicationMenuWrapper = (props) => {
   const {
     app,
     layoutConfig,
     navigationLayoutRoutes,
     navigationLayoutSize,
     routingStackDelegate,
-    applicationMenuConfigAdapterProps,
+    applicationMenuWrapperProps,
     ...contentProps
   } = props;
 
-  const Content = applicationMenuConfigAdapterProps.overrideComponentClass;
+  const Content = applicationMenuWrapperProps.contentComponentClass;
 
   return (
     <ApplicationMenu
-      key={applicationMenuConfigAdapterProps.key}
       app={app}
       layoutConfig={layoutConfig}
       routingStackDelegate={routingStackDelegate}
       navigationLayoutRoutes={navigationLayoutRoutes}
       navigationLayoutSize={navigationLayoutSize}
-      nameConfig={applicationMenuConfigAdapterProps.nameConfig}
-      utilityConfig={applicationMenuConfigAdapterProps.utilityConfig}
-      extensions={applicationMenuConfigAdapterProps.extensions}
+      nameConfig={applicationMenuWrapperProps.nameConfig}
+      utilityConfig={applicationMenuWrapperProps.utilityConfig}
+      extensions={applicationMenuWrapperProps.extensions}
       content={
         <Content {...contentProps} />
       }
@@ -86,6 +85,6 @@ const ApplicationMenuConfigAdapter = (props) => {
   );
 };
 
-ApplicationMenuConfigAdapter.propTypes = propTypes;
+ApplicationMenuWrapper.propTypes = propTypes;
 
-export default ApplicationMenuConfigAdapter;
+export default ApplicationMenuWrapper;
