@@ -24,6 +24,7 @@ import AggregatorStandalone from './packages/terra-aggregator/examples/test-exam
 import AggregatorWithDisclosure from './packages/terra-aggregator/examples/test-examples/AggregatorWithDisclosure.example';
 import ApplicationHeaderDefault from './packages/terra-application-header-layout/examples/test-examples/ApplicationHeaderDefault.example';
 import ApplicationLayoutHeader from './packages/terra-application-layout/examples/test-examples/ApplicationLayoutHeader.example';
+import ApplicationLayoutHeaderSmall from './packages/terra-application-layout/examples/test-examples/ApplicationLayoutHeaderSmall.example';
 import ApplicationLayoutMenu from './packages/terra-application-layout/examples/test-examples/ApplicationLayoutMenu.example';
 import ApplicationTest from './packages/terra-application-layout/examples/test-examples/ApplicationTest.example';
 import ApplicationTabsDefault from './packages/terra-application-links/examples/test-examples/ApplicationTabsDefault.example';
@@ -130,6 +131,11 @@ const componentConfig = {
         name: 'Application Layout Header',
         path: '/application-layout-header',
         component: ApplicationLayoutHeader,
+      },
+      {
+        name: 'Application Layout Header Small',
+        path: '/application-layout-header-small',
+        component: ApplicationLayoutHeaderSmall,
       },
       {
         name: 'Application Layout Menu',

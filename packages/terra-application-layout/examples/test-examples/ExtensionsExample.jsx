@@ -11,7 +11,7 @@ const ApplicationHeaderDefault = ({ ...customProps }) => {
   }
 
   return (
-    <div style={{ height: '100%' }}>
+    <div style={{ color: '#fff' }}>
       Test Extensions Large
     </div>
   );
