@@ -16,7 +16,7 @@
 
   .toggle-button {
     background-color: var(--terra-application-header-toggle-background-color, transparent);
-    border: none;
+    border: 0;
     color: var(--terra-application-header-toggle-color, #fff);
     cursor: pointer;
     height: 100%;
