@@ -15,8 +15,8 @@ const propTypes = {
    * The array of routing shapes to be rendered as menu items within the RoutingMenu.
    */
   menuItems: PropTypes.arrayOf(PropTypes.shape({
-    text: PropTypes.string,
-    path: PropTypes.string,
+    text: PropTypes.string.isRequired,
+    path: PropTypes.string.isRequired,
     hasSubMenu: PropTypes.bool,
   })),
   /**

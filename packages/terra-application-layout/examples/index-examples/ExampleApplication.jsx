@@ -1,7 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions  */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { MemoryRouter, withRouter } from 'react-router-dom';
-import { injectIntl } from 'react-intl';
+import { injectIntl, intlShape } from 'react-intl';
 import Image from 'terra-image';
 import Avatar from 'terra-avatar';
 import ContentContainer from 'terra-content-container';
@@ -13,7 +14,6 @@ import ApplicationMenu from './application-components/ApplicationMenu';
 import UtilityOption from './application-components/UtilityOption';
 import ApplicationExtensions from './application-components/ApplicationExtensions';
 import ProfilePicture from './henry.jpg';
-import Example from '../Example.site-page';
 
 /**
  * The routingConfig API matches that of the NavigationLayout. Routing specifications for the
@@ -179,7 +179,7 @@ const indexPath = '/page_1';
 
 const userAvatar = (
   <Avatar
-    // image={ProfilePicture}
+    image={ProfilePicture}
     variant="user"
     alt="Swanson, Henry"
     ariaLabel="Swanson, Henry"
@@ -225,11 +225,11 @@ class ExampleApplication extends React.Component {
       parentKey: Utils.utilityHelpers.defaultKeys.MENU,
     }, {
       key: 'additional-sub-1',
-      title: 'Addtional Item 1 - Sub 1',
+      title: 'Additional Item 1 - Sub 1',
       parentKey: 'additional-1',
     }, {
       key: 'additional-sub-2',
-      title: 'Addtional Item 1 - Sub 2',
+      title: 'Additional Item 1 - Sub 2',
       parentKey: 'additional-1',
     }, {
       key: 'checkbox-item',
@@ -305,6 +305,13 @@ class ExampleApplication extends React.Component {
     );
   }
 }
+
+ExampleApplication.propTypes = {
+  intl: intlShape,
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+  }),
+};
 
 const WrappedApplication = withRouter(injectIntl((ExampleApplication)));
 
