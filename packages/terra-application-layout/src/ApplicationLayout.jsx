@@ -23,22 +23,23 @@ const propTypes = {
    */
   app: AppDelegate.propType,
   /**
+   * The content to be rendered in the ApplicationLayout's extensions region. This component will be provided an AppDelegate (as `app`) and
+   * a `layoutConfig` as props to facilitate communication with the ApplicationLayout.
+   */
+  extensions: PropTypes.element,
+  /**
    * The index, or default, path of the routing configuration. The ApplicationLayout will redirect to this path
    * when the router reaches an unknown location.
    */
   indexPath: PropTypes.string.isRequired,
   /**
-   * An array of Objects describing the ApplicationLayout's primary navigation items.
-   */
-  navigationItems: ApplicationLayoutPropTypes.navigationItemsPropType,
-  /**
    * The configuration values for the ApplicationName component.
    */
   nameConfig: ApplicationLayoutPropTypes.nameConfigPropType,
   /**
-   * The configuration values for the ApplicationUtility component.
+   * An array of Objects describing the ApplicationLayout's primary navigation items.
    */
-  utilityConfig: ApplicationLayoutPropTypes.utilityConfigPropType,
+  navigationItems: ApplicationLayoutPropTypes.navigationItemsPropType,
   /**
    * The routing configuration Object. This is very similar to the routingConfig supported by the NavigationLayout; however,
    * the ApplicationLayout only supports configuration for the `menu` and `content` regions of the layout. The '/' path is also blacklisted
@@ -48,12 +49,11 @@ const propTypes = {
   routingConfig: PropTypes.shape({
     menu: routeConfigPropType,
     content: routeConfigPropType,
-  }),
+  }).isRequired,
   /**
-   * The content to be rendered in the ApplicationLayout's extensions region. This component will be provided an AppDelegate (as `app`) and
-   * a `layoutConfig` as props to facilitate communication with the ApplicationLayout.
+   * The configuration values for the ApplicationUtility component.
    */
-  extensions: PropTypes.element,
+  utilityConfig: ApplicationLayoutPropTypes.utilityConfigPropType,
 };
 
 const defaultProps = {

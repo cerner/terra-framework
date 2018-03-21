@@ -10,11 +10,11 @@ const cx = classNames.bind(styles);
 const propTypes = {
   /**
    * More information about the user.
-   * Displayed next to the user photo and below the username.
+   * Displayed next to the userPhoto and below the userName.
    */
   userDetail: PropTypes.string,
   /**
-   * The name to be displayed next to the user photo.
+   * The name to be displayed next to the userPhoto.
    */
   userName: PropTypes.string,
   /**
@@ -31,13 +31,20 @@ const UserData = ({
 }) => {
   const userClassNames = cx(['user-data', customProps.className]);
 
-  return (
-    <div {...customProps} className={userClassNames}>
-      {!!userPhoto && React.cloneElement(userPhoto, { className: cx('photo') })}
+  let userInfo;
+  if (userName || userDetail) {
+    userInfo = (
       <div className={cx('user-info')}>
         {!!userName && <div className={cx('name')}>{userName}</div>}
         {!!userDetail && <div className={cx('detail')}>{userDetail}</div>}
       </div>
+    );
+  }
+
+  return (
+    <div {...customProps} className={userClassNames}>
+      {!!userPhoto && React.cloneElement(userPhoto, { className: cx('photo') })}
+      {userInfo}
     </div>
   );
 };

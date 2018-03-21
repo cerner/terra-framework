@@ -130,7 +130,7 @@ class ApplicationHeader extends React.Component {
   renderAppName() {
     const { nameConfig } = this.props;
 
-    if (nameConfig.accessory || nameConfig.title) {
+    if (nameConfig && (nameConfig.accessory || nameConfig.title)) {
       return (
         <ApplicationHeaderName accessory={nameConfig.accessory} title={nameConfig.title} />
       );

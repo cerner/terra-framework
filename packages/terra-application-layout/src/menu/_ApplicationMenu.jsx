@@ -94,7 +94,7 @@ class ApplicationMenu extends React.Component {
   renderHeader(isCompact) {
     const { nameConfig } = this.props;
 
-    if (isCompact && (nameConfig.accessory || nameConfig.title)) {
+    if (isCompact && nameConfig && (nameConfig.accessory || nameConfig.title)) {
       return (
         <div className={cx(['menu-header'])}>
           <ApplicationMenuName accessory={nameConfig.accessory} title={nameConfig.title} />
