@@ -1,24 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PrimaryNavigationSideMenu Snapshot tests renders with given props 1`] = `
+exports[`RoutingMenu Snapshot tests renders with given props 1`] = `
 <NavigationSideMenu
   menuItems={
     Array [
-      Object {
-        "childKeys": Array [
-          "/1",
-          "/2",
-        ],
-        "isRootMenu": true,
-        "key": "navigationMenu",
-        "text": "",
-      },
       Object {
         "hasSubMenu": false,
         "key": "/1",
         "metaData": Object {
           "hasSubMenu": false,
-          "url": "/1",
+          "path": "/1",
         },
         "text": "1",
       },
@@ -27,15 +18,24 @@ exports[`PrimaryNavigationSideMenu Snapshot tests renders with given props 1`] =
         "key": "/2",
         "metaData": Object {
           "hasSubMenu": true,
-          "url": "/2",
+          "path": "/2",
         },
         "text": "2",
+      },
+      Object {
+        "childKeys": Array [
+          "/1",
+          "/2",
+        ],
+        "isRootMenu": false,
+        "key": "routingMenuRootMenuKey",
+        "text": "",
       },
     ]
   }
   onChange={[Function]}
   routingStackBack={[Function]}
   selectedChildKey="/1"
-  selectedMenuKey="navigationMenu"
+  selectedMenuKey="routingMenuRootMenuKey"
 />
 `;

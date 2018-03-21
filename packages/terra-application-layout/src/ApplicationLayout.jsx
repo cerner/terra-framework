@@ -6,7 +6,7 @@ import { routeConfigPropType } from 'terra-navigation-layout/lib/configurationPr
 import { matchPath } from 'react-router-dom';
 import { withModalManager } from 'terra-modal-manager';
 
-import PrimaryNavigationSideMenu from './menu/_PrimaryNavigationSideMenu';
+import RoutingMenu from './menu/RoutingMenu';
 import ApplicationMenuConfigAdapter from './menu/_ApplicationMenuConfigAdapter';
 import ApplicationHeader from './header/_ApplicationHeader';
 import ApplicationLayoutPropTypes from './utils/propTypes';
@@ -50,7 +50,8 @@ const propTypes = {
     content: routeConfigPropType,
   }),
   /**
-   * The content to be rendered in the ApplicationLayout's extensions region.
+   * The content to be rendered in the ApplicationLayout's extensions region. This component will be provided an AppDelegate (as `app`) and
+   * a `layoutConfig` as props to facilitate communication with the ApplicationLayout.
    */
   extensions: PropTypes.element,
 };
@@ -79,15 +80,16 @@ class ApplicationLayout extends React.Component {
   }
 
   /**
-   * Builds and returns the routing configuration object for the PrimaryNavigationSideMenu.
+   * Builds and returns the routing configuration object for the RoutingMenu that renders the top navigation items at
+   * compact breakpoints.
    */
   static buildNavigationMenuConfig(props) {
     const menuNavigationItems = ApplicationLayout.buildMenuNavigationItems(props);
 
     const componentConfig = {
-      componentClass: PrimaryNavigationSideMenu,
+      componentClass: RoutingMenu,
       props: {
-        navigationItems: menuNavigationItems,
+        menuItems: menuNavigationItems,
       },
       refuseRoutingStackNavigation: menuNavigationItems.length === 0,
     };
@@ -212,7 +214,13 @@ class ApplicationLayout extends React.Component {
 ApplicationLayout.propTypes = propTypes;
 ApplicationLayout.defaultProps = defaultProps;
 
+/**
+ * The ApplicationLayout is wrapped with a ModalManager on export to provide modal functionality
+ * for utility presentation and content convenience.
+ */
 export default withModalManager(ApplicationLayout);
+
+export { RoutingMenu };
 
 const Utils = {
   helpers: Helpers,

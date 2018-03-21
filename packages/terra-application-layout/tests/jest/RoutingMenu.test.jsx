@@ -1,12 +1,12 @@
 import React from 'react';
 import NavigationSideMenu from 'terra-navigation-side-menu';
-import WrappedPrimaryNavigationMenu from '../../src/menu/_PrimaryNavigationSideMenu';
+import WrappedRoutingMenu from '../../src/menu/RoutingMenu';
 
-const PrimaryNavigationSideMenu = WrappedPrimaryNavigationMenu.WrappedComponent;
+const RoutingMenu = WrappedRoutingMenu.WrappedComponent;
 
-describe('PrimaryNavigationSideMenu', () => {
-  describe('buildChildSideNavItems', () => {
-    it('should return array of objects adhering to the SideNavMenu API', () => {
+describe('RoutingMenu', () => {
+  describe('buildSideMenuItems', () => {
+    it('should return array of objects adhering to the NavigationSideMenu API', () => {
       const items = [{
         path: '/1',
         text: '1',
@@ -20,13 +20,13 @@ describe('PrimaryNavigationSideMenu', () => {
         text: '3',
       }];
 
-      const result = PrimaryNavigationSideMenu.buildChildSideNavItems(items);
+      const result = RoutingMenu.buildSideMenuItems(items);
       expect(result).toEqual([{
         key: '/1',
         text: '1',
         hasSubMenu: true,
         metaData: {
-          url: '/1',
+          path: '/1',
           hasSubMenu: true,
         },
       }, {
@@ -34,7 +34,7 @@ describe('PrimaryNavigationSideMenu', () => {
         text: '2',
         hasSubMenu: false,
         metaData: {
-          url: '/2',
+          path: '/2',
           hasSubMenu: false,
         },
       }, {
@@ -42,7 +42,7 @@ describe('PrimaryNavigationSideMenu', () => {
         text: '3',
         hasSubMenu: false,
         metaData: {
-          url: '/3',
+          path: '/3',
           hasSubMenu: false,
         },
       }]);
@@ -73,34 +73,32 @@ describe('PrimaryNavigationSideMenu', () => {
         toggleMenu: jest.fn().mockReturnValue(Promise.resolve()),
       };
 
-      const primaryNavigationMenu = (
-        <PrimaryNavigationSideMenu
+      const routingMenu = (
+        <RoutingMenu
           location={{ pathname: '/2' }}
           routingStackDelegate={mockRoutingStackDelegate}
           layoutConfig={mockLayoutConfig}
-          navigationItems={items}
+          menuItems={items}
         />
       );
 
-      const wrapper = shallow(primaryNavigationMenu);
+      const wrapper = shallow(routingMenu);
 
-      expect(wrapper.state('selectedMenuKey')).toBe('navigationMenu');
       expect(wrapper.state('selectedChildKey')).toBe('/2');
 
       const twoItem = wrapper.find(NavigationSideMenu).getElements()[0];
 
       return twoItem.props.onChange(undefined, {
-        selectedMenuKey: '/2',
-        selectedChildKey: undefined,
+        selectedMenuKey: 'routingMenuRootMenuKey',
+        selectedChildKey: '/2',
         metaData: {
-          url: '/2',
+          path: '/2',
           hasSubMenu: false,
         },
       }).then(() => {
         wrapper.update();
 
-        expect(wrapper.state('selectedMenuKey')).toBe('/2');
-        expect(wrapper.state('selectedChildKey')).toBeUndefined();
+        expect(wrapper.state('selectedChildKey')).toBe('/2');
 
         expect(mockLayoutConfig.toggleMenu.mock.calls.length).toBe(1);
       });
@@ -117,34 +115,32 @@ describe('PrimaryNavigationSideMenu', () => {
         // at larger sizes.
       };
 
-      const primaryNavigationMenu = (
-        <PrimaryNavigationSideMenu
+      const routingMenu = (
+        <RoutingMenu
           location={{ pathname: '/1' }}
           routingStackDelegate={mockRoutingStackDelegate}
           layoutConfig={mockLayoutConfig}
-          navigationItems={items}
+          menuItems={items}
         />
       );
 
-      const wrapper = shallow(primaryNavigationMenu);
+      const wrapper = shallow(routingMenu);
 
-      expect(wrapper.state('selectedMenuKey')).toBe('navigationMenu');
       expect(wrapper.state('selectedChildKey')).toBe('/1');
 
       const twoItem = wrapper.find(NavigationSideMenu).getElements()[0];
 
       return twoItem.props.onChange(undefined, {
-        selectedMenuKey: '/1',
-        selectedChildKey: undefined,
+        selectedMenuKey: 'routingMenuRootMenuKey',
+        selectedChildKey: '/1',
         metaData: {
-          url: '/1',
+          path: '/1',
           hasSubMenu: true,
         },
       }).then(() => {
         wrapper.update();
 
-        expect(wrapper.state('selectedMenuKey')).toBe('/1');
-        expect(wrapper.state('selectedChildKey')).toBeUndefined();
+        expect(wrapper.state('selectedChildKey')).toBe('/1');
       });
     });
 
@@ -158,25 +154,24 @@ describe('PrimaryNavigationSideMenu', () => {
         toggleMenu: jest.fn().mockReturnValue(Promise.resolve()),
       };
 
-      const primaryNavigationMenu = (
-        <PrimaryNavigationSideMenu
+      const routingMenu = (
+        <RoutingMenu
           location={{ pathname: '/1' }}
           routingStackDelegate={mockRoutingStackDelegate}
           layoutConfig={mockLayoutConfig}
-          navigationItems={items}
+          menuItems={items}
         />
       );
 
-      const wrapper = shallow(primaryNavigationMenu);
+      const wrapper = shallow(routingMenu);
 
-      expect(wrapper.state('selectedMenuKey')).toBe('navigationMenu');
       expect(wrapper.state('selectedChildKey')).toBe('/1');
 
       const oneItem = wrapper.find(NavigationSideMenu).getElements()[0];
 
       return oneItem.props.onChange(undefined, {
-        selectedMenuKey: '/1',
-        selectedChildKey: undefined,
+        selectedMenuKey: 'routingMenuRootMenuKey',
+        selectedChildKey: '/1',
         metaData: {
           url: '/1',
           hasSubMenu: true,
@@ -184,8 +179,7 @@ describe('PrimaryNavigationSideMenu', () => {
       }).then(() => {
         wrapper.update();
 
-        expect(wrapper.state('selectedMenuKey')).toBe('/1');
-        expect(wrapper.state('selectedChildKey')).toBeUndefined();
+        expect(wrapper.state('selectedChildKey')).toBe('/1');
 
         expect(mockLayoutConfig.toggleMenu.mock.calls.length).toBe(0);
       });
@@ -195,8 +189,8 @@ describe('PrimaryNavigationSideMenu', () => {
   describe('Snapshot tests', () => {
     it('renders with given props', () => {
       const exampleMenu = (
-        <PrimaryNavigationSideMenu
-          navigationItems={[{
+        <RoutingMenu
+          menuItems={[{
             path: '/1',
             text: '1',
             hasSubMenu: false,

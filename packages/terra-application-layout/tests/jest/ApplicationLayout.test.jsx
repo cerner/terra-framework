@@ -1,8 +1,8 @@
 import React from 'react';
 
 import WrappedApplication from '../../src/ApplicationLayout';
-import PrimaryNavigationSideMenu from '../../src/menu/_PrimaryNavigationSideMenu';
 import ApplicationMenuConfigAdapter from '../../src/menu/_ApplicationMenuConfigAdapter';
+import RoutingMenu from '../../src/menu/RoutingMenu';
 
 const ApplicationLayout = WrappedApplication.WrappedComponent;
 
@@ -129,11 +129,11 @@ describe('ApplicationLayout', () => {
       expect(result['/']).toBeDefined();
       expect(Object.keys(result).length).toBe(1);
       expect(result['/'].path).toBe('/');
-      expect(result['/'].component.tiny.componentClass).toBe(PrimaryNavigationSideMenu);
-      expect(result['/'].component.tiny.props).toEqual({ navigationItems: updatedNavigationItems });
+      expect(result['/'].component.tiny.componentClass).toBe(RoutingMenu);
+      expect(result['/'].component.tiny.props).toEqual({ menuItems: updatedNavigationItems });
       expect(result['/'].component.tiny.refuseRoutingStackNavigation).toBeFalsy();
-      expect(result['/'].component.small.componentClass).toBe(PrimaryNavigationSideMenu);
-      expect(result['/'].component.small.props).toEqual({ navigationItems: updatedNavigationItems });
+      expect(result['/'].component.small.componentClass).toBe(RoutingMenu);
+      expect(result['/'].component.small.props).toEqual({ menuItems: updatedNavigationItems });
       expect(result['/'].component.small.refuseRoutingStackNavigation).toBeFalsy();
       expect(result['/'].component.default).toBeUndefined();
       expect(result['/'].component.medium).toBeUndefined();
@@ -159,11 +159,11 @@ describe('ApplicationLayout', () => {
       expect(result['/']).toBeDefined();
       expect(Object.keys(result).length).toBe(1);
       expect(result['/'].path).toBe('/');
-      expect(result['/'].component.tiny.componentClass).toBe(PrimaryNavigationSideMenu);
-      expect(result['/'].component.tiny.props).toEqual({ navigationItems: updatedNavigationItems });
+      expect(result['/'].component.tiny.componentClass).toBe(RoutingMenu);
+      expect(result['/'].component.tiny.props).toEqual({ menuItems: updatedNavigationItems });
       expect(result['/'].component.tiny.refuseRoutingStackNavigation).toBeTruthy();
-      expect(result['/'].component.small.componentClass).toBe(PrimaryNavigationSideMenu);
-      expect(result['/'].component.small.props).toEqual({ navigationItems: updatedNavigationItems });
+      expect(result['/'].component.small.componentClass).toBe(RoutingMenu);
+      expect(result['/'].component.small.props).toEqual({ menuItems: updatedNavigationItems });
       expect(result['/'].component.small.refuseRoutingStackNavigation).toBeTruthy();
       expect(result['/'].component.default).toBeUndefined();
       expect(result['/'].component.medium).toBeUndefined();

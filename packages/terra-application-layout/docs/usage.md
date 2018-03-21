@@ -34,7 +34,7 @@ The API for the `utilityConfig` matches that of the `ApplicationHeaderUtility` a
 |`title`|String|optional|A string rendered within the utility menu's presentation target.|
 |`accessory`|Element|optional|A React element rendered next to the title.|
 |`menuItems`|Array|required|An array of objects specifying the utility menu options to present.|
-|`selectedKey`|String|required|The string key of the initial menu item to present.|
+|`initialSelectedKey`|String|required|The string key of the initial menu item to present.|
 |`onChange`|Function|required|A function that will be called upon selection of a terminal utility item.|
 
 ```jsx
@@ -66,7 +66,7 @@ const myUtilityConfig = {
     contentLocation: UtilityUtils.LOCATIONS.FOOTER,
     title: 'Footer Item',
   }]),
-  initialSelectedKey: 'menu',
+  initialSelectedKeyf: 'menu',
   onChange: (event, itemData, disclose) => {
     /**
      * This function will be called when items are selected within the utility menu.
@@ -209,60 +209,7 @@ Please review the `Layout` component in `terra-layout` for more information.
 
 ### `routingStackDelegate`
 
-The `routingStackDelegate` contains APIs that allow for virtual navigation within a set of matched component paths.
-
-Imagine a `routingConfiguration` that looks something like this:
-
-```jsx
-const myRoutingConfig = {
-  menu: {
-    '/a': {
-      path: '/a',
-      component: {
-        default: {
-          componentClass: AMenuComponent
-        }
-      }
-    },
-    '/a/b': {
-      path: '/a/b',
-      component: {
-        default: {
-          componentClass: BMenuComponent
-        }
-      }
-    },
-    '/a/b/c': {
-      path: '/a/b/c',
-      component: {
-        default: {
-          componentClass: CMenuComponent
-        }
-      }
-    },
-  }
-  content: {
-    '/a': {
-      path: '/a',
-      component: {
-        default: {
-          componentClass: AContentComponent
-        }
-      }
-    }
-  }
-}
-```
-
-If the global router location is `/a/b/c`, the ApplicationLayout will render `CMenuComponent` in the menu region and `AContentComponent` in the content region. However, given the nested nature of the configuration, the `BMenuComponent` and `AMenuComponent` may still provide important navigation or contextual information for the `AContentComponent`. It would be nice to be able to be able to view those menus without changing the global router location and losing the current users current application context.
-
-The `routingStackDelegate` can do this. When the ApplicationLayout determines (based on path segment comparisons) that a component preceeds the currently presented component, the presented component's `routingStackDelegate` prop will have a defined `showParent` value. When called, `showParent` will change the local location of that stack of components to be that preceeding path. For this example, calling `showParent` from `CMenuComponent` will cause `BMenuComponent` to be displayed. However, the global router location will not change and remain `/a/b/c`. This way, if `AContentComponent` was rendering some content differently based on the additional paths, calling `showParent` will not impact it at all.
-
-Assume `showParent` was selected from `CMenuComponent`, resulting in the presentation of `BMenuComponent`, `showParent` could be called again from within `BMenuComponent`, resulting in the rendering of `AMenuComponent` and a local location of `/a`. The global router location will still be `/a/b/c`, and `AContentComponent` will be oblivious to the changes happening in the menu beside it. Since the last component in the hierarchy has been reached, `showParent` will not be defined on the `AMenuComponent`'s `routingStackDelegate`.
-
-At that point, the user may want to return to their original state and view the `CMenuComponent` again. However, this can be difficult. If the `AMenuComponent` links directly to the `BMenuComponent`, the link will change the global router location to `/a/b` and the user's previous context would be lost. Therefore, `AMenuComponent` should use the other API on the `routingStackDelegate` called `show`. The `show` function will intelligently route to the location provided to it. If the path provided to `show` matches the global router location, or if is a subset match of the global router location, `show` will update the local location to that new route, allowing for virtual downward traversal through the menu stack. If a match to the global router location cannot be determined, `show` will then and only then update the global router location for the new value. Thus, if `show('/a/b')` is called from `AMenuComponent`, `BMenuComponent` will be presented, while the global router context remains `/a/b/c`. If `BMenuComponent` were to then call `show('/a/b/c')`, `CMenuComponent` would be presented, and the local location would again match the global one.
-
-Usage of `showParent` and `show` are required by components within the `ApplicationLayout`. Specifically, `showParent` must be implemented by `menu` components; otherwise, users will not be able to access the default menu created by the `ApplicationLayout` at compact sizes. Please review the `RoutingStackDelegate` section of the `terra-navigation-layout` documentation for more information.
+The `routingStackDelegate` contains APIs that allow for virtual navigation within a set of matched component paths. Please review the RoutingStackDelegate documentation within `terra-navigation-layout` for more information.
 
 ## Summary
 
@@ -272,7 +219,7 @@ Usage of `showParent` and `show` are required by components within the `Applicat
 4. The `routingConfig` prop determines which components get rendered in the ApplicationLayout based on the current router location. Usage of the path `'/'` is restricted for `menu` components inside the `routingConfig`.
 5. The `navigationItems` prop generates primary navigation controls within the layout. The provided navigation items should have associated content in the `routingConfig`.
 6. The `indexPath` prop determines the default redirect location for the layout. The provided path should have associated content in the `routingConfig`.
-7. Components rendered within the ApplicationLayout receive an `app` prop with default support for modal disclosures.
-8. Components rendered within the ApplicationLayout also receive a `layoutConfig` prop for layout state manipulation.
-9. Components rendered within the ApplicationLayout also receive an `routingStackDelegate` prop.
-10. The `show` and `showParent` functions of the `routingStackDelegate` should be used for virtual navigation within configuration regions. Specifically, `showParent` must be implemented by `menu` components to ensure that access to the `ApplicationLayout`'s default menu is maintained.
+7. Menu and content components rendered within the ApplicationLayout receive an `app` prop with default support for modal disclosures.
+8. Menu and content components rendered within the ApplicationLayout also receive a `layoutConfig` prop for layout state manipulation.
+9. Menu and content components rendered within the ApplicationLayout also receive an `routingStackDelegate` prop. The `show` and `showParent` functions of the `routingStackDelegate` should be used for virtual navigation within configuration regions. Specifically, `showParent` must be implemented by `menu` components to ensure that access to the `ApplicationLayout`'s default menu is maintained.
+10. The RoutingMenu component can be used for an off-the-shelf route-based menu navigation.
