@@ -24,6 +24,8 @@ import TerraThemeProviderIndex from './packages/terra-theme-provider/examples/In
 import AggregatorStandalone from './packages/terra-aggregator/examples/test-examples/AggregatorStandalone.example';
 import AggregatorWithDisclosure from './packages/terra-aggregator/examples/test-examples/AggregatorWithDisclosure.example';
 import ApplicationHeaderDefault from './packages/terra-application-header-layout/examples/test-examples/ApplicationHeaderDefault.example';
+import ApplicationLayoutHeader from './packages/terra-application-layout/examples/test-examples/ApplicationLayoutHeader.example';
+import ApplicationLayoutMenu from './packages/terra-application-layout/examples/test-examples/ApplicationLayoutMenu.example';
 import ApplicationTest from './packages/terra-application-layout/examples/test-examples/ApplicationTest.example';
 import ApplicationTabsDefault from './packages/terra-application-links/examples/test-examples/ApplicationTabsDefault.example';
 import ApplicationMenuDefault from './packages/terra-application-menu-layout/examples/test-examples/ApplicationMenuDefault.example';
@@ -130,6 +132,16 @@ const componentConfig = {
       },
     ],
     tests: [
+      {
+        name: 'Application Layout Header',
+        path: '/application-layout-header',
+        component: ApplicationLayoutHeader,
+      },
+      {
+        name: 'Application Layout Menu',
+        path: '/application-layout-menu',
+        component: ApplicationLayoutMenu,
+      },
       {
         name: 'Application Test',
         path: '/application-test',
