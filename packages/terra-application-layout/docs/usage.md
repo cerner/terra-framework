@@ -3,9 +3,64 @@
 - Like all Terra components, the ApplicationLayout requires the presence of a `Base` component (provided by `terra-base`) in its parent hierarchy.
 - Additionally, the ApplicationLayout requires the presence of any `Router` component (provided by `react-router-dom`) in its parent hierarchy.
 
+```jsx
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom'; // MemoryRouter or HashRouter could also be used
+import Base from 'terra-base';
+import ApplicationLayout from 'terra-application-layout';
+
+const MyApp = () => (
+  <BrowserRouter>
+    <Base locale="en-US">
+      <ApplicationLayout
+        nameConfig={nameConfig}
+        utilityConfig={utilityConfig}
+        routingConfig={routingConfig}
+        navigationItems={navigationItems}
+        extensions={<ApplicationExtensions />}
+        indexPath={indexPath}
+      />
+    </Base>
+  </BrowserRouter>
+);
+```
+
 ## Props
 
+### `app`
+#### Is Required: `false`
+
+By default, the ApplicationLayout will render itself within a `ModalManager` and provide modal presentation capabilities to all of its child components. However, the ApplicationLayout accepts an AppDelegate prop (as `app`) that it will fall back to, if necessary. If no `app` prop is provided, the ModalManager provided by the ApplicationLayout will handle all disclosure requests by the ApplicationLayout's children.
+
+### `extensions`
+#### Is Required: `false`
+
+The `extensions` prop allows consumers to render an element within the ApplicationLayout's extensions region. The `extensions` content will be rendered in various ways depending on the current breakpoint. The `extensions` element will receive `app` and `layoutConfig` props from the ApplicationLayout, allowing it to interact with and respond to changes within the ApplicationLayout.
+
+```jsx
+import { Utils } from 'terra-application-layout';
+
+const MyExtensions = ({ app, layoutConfig }) => {
+  if (Utils.helpers.isSizeCompact(layoutConfig.size)) {
+    return (
+      <div>Extensions for ApplicationLayout menu!</div>
+    );
+  } else {
+    return (
+      <div>Extensions for ApplicationLayout header!</div>
+    );
+  }
+};
+```
+
+### `indexPath`
+#### Is Required: `true`
+
+The `indexPath` prop allows consumers to set the default path of the ApplicationLayout. The ApplicationLayout will redirect to this path should users of the consuming application attempt to route to a component not detailed in the `routingConfig` prop. Accordingly, the `indexPath` value must have an associated entry within the `routingConfig` specification.
+
+
 ### `nameConfig`
+#### Is Required: `false`
 
 The `nameConfig` prop allows consuming applications to add their own branding to the ApplicationLayout. The ApplicationLayout will render this content in different ways based on the active responsive breakpoint.
 
@@ -21,7 +76,74 @@ const myNameConfig = {
 }
 ```
 
+### `navigationItems`
+#### Is Required: `false`
+
+The `navigationItems` prop allows consumers to render high-level, primary navigation controls directly within the ApplicationLayout. The ApplicationLayout will render this content in different ways based on the active responsive breakpoint. If `navigationItems` are omitted, no primary navigation controls will be rendered.
+
+Each navigation item provided must be associated to a path that is present within the `routingConfig` specification. The navigation item, as rendered by the ApplicationLayout, will route to that path upon selection.
+
+The value provided for `navigationItems` should be an array of objects with the following API:
+
+|Key Name|Type|Is Required|Description|
+|---|---|---|---|
+|`text`|String|required|A string rendered within the navigation item control.|
+|`path`|Element|required|A string path to route to upon navigation item selection. This path should be present within the `routingConfig` as well.|
+
+```jsx
+const navigationItems = [{
+  path: '/page_1',
+  text: 'Page 1',
+}, {
+  path: '/page_2',
+  text: 'Page 2',
+}];
+```
+
+### `routingConfig`
+#### Is Required: `true`
+
+The `routingConfig` prop allows consuming applications to render components within the ApplicationLayout's `content` and `menu` regions based upon the router location.
+
+The ApplicationLayout directly implements the `NavigationLayout` from `terra-navigation-layout`. However, while the `NavigationLayout` allows for the customization of the `header` region of the layout, the `ApplicationLayout` does not. Any `header` entries provided with the `routingConfig` prop will be ignored. Please review the `NavigationLayout` documentation for more information regarding its usage.
+
+> Note: Usage of the path `'/'` is restricted for `menu` components. The ApplicationLayout will dynamically inject configuration for the `'/'` path when necessary to properly render navigationItems at `compact` breakpoints.
+
+```jsx
+const routingConfig = {
+  content: {
+    'Page 1' : {
+      path: '/page_1',
+      component: {
+        default: {
+          componentClass: Page1Content,
+        },
+      },
+    },
+    'Page 2' : {
+      path: '/page_2',
+      component: {
+        default: {
+          componentClass: Page2Content,
+        },
+      },
+    },
+  },
+  menu: {
+    'Page 1' : {
+      path: '/page_1',
+      component: {
+        default: {
+          componentClass: Page1Menu,
+        },
+      },
+    },
+  },
+};
+```
+
 ### `utilityConfig`
+#### Is Required: `false`
 
 The `utilityConfig` prop allows consuming applications to present an application-level menu directly from the ApplicationLayout. The ApplicationLayout will render this content in different ways based on the active responsive breakpoint.
 
@@ -63,8 +185,8 @@ const myUtilityConfig = {
     key: 'item-4',
     contentLocation: UtilityUtils.LOCATIONS.FOOTER,
     title: 'Footer Item',
-  }]),
-  initialSelectedKeyf: 'menu',
+  }],
+  initialSelectedKey: 'menu',
   onChange: (event, itemData, disclose) => {
     /**
      * This function will be called when items are selected within the utility menu.
@@ -72,104 +194,8 @@ const myUtilityConfig = {
      * could be used to handle that menu content selection.
      */
   },
-}
-```
-
-### `routingConfig`
-
-The `routingConfig` prop allows consuming applications to render components within the ApplicationLayout's `content` and `menu` regions based upon the router location.
-
-The ApplicationLayout directly implements the `NavigationLayout` from `terra-navigation-layout`. However, while the `NavigationLayout` allows for the customization of the `header` region of the layout, the `ApplicationLayout` does not. Any `header` entries provided with the `routingConfig` prop will be ignored. Please review the `NavigationLayout` documentation for more information regarding its usage.
-
-> Note: Usage of the path `'/'` is restricted for `menu` components. The ApplicationLayout will dynamically inject configuration for the `'/'` path when necessary to properly render navigationItems at `compact` breakpoints.
-
-```jsx
-const routingConfig = {
-  content: {
-    'Page 1' : {
-      path: '/page_1',
-      component: {
-        default: {
-          componentClass: Page1Content,
-        },
-      },
-    },
-    'Page 2' : {
-      path: '/page_2',
-      component: {
-        default: {
-          componentClass: Page2Content,
-        },
-      },
-    },
-  },
-  menu: {
-    'Page 1' : {
-      path: '/page_1',
-      component: {
-        default: {
-          componentClass: Page1Menu,
-        },
-      },
-    },
-  },
 };
 ```
-
-### `navigationItems`
-
-The `navigationItems` prop allows consumers to render high-level, primary navigation controls directly within the ApplicationLayout. The ApplicationLayout will render this content in different ways based on the active responsive breakpoint. If `navigationItems` are omitted, no primary navigation controls will be rendered.
-
-Each navigation item provided must be associated to a path that is present within the `routingConfig` specification. The navigation item, as rendered by the ApplicationLayout, will route to that path upon selection.
-
-The value provided for `navigationItems` should be an array of objects with the following API:
-
-|Key Name|Type|Is Required|Description|
-|---|---|---|---|
-|`text`|String|required|A string rendered within the navigation item control.|
-|`path`|Element|required|A string path to route to upon navigation item selection. This path should be present within the `routingConfig` as well.|
-
-```jsx
-/**
- * Given the above routingConfig example, with entries defined for paths '/page_1' and '/page_2',
- * the following configuration would generate controls for moving between those two paths.
- */
-const navigationItems = [{
-  path: '/page_1',
-  text: 'Page 1',
-}, {
-  path: '/page_2',
-  text: 'Page 2',
-}];
-```
-
-### `extensions`
-
-The `extensions` prop allows consumers to render an element within the ApplicationLayout's extensions region. The `extensions` content will be rendered in various ways depending on the current breakpoint. The `extensions` element will receive `app` and `layoutConfig` props from the ApplicationLayout, allowing it to interact with and respond to changes within the ApplicationLayout.
-
-```jsx
-import { Utils } from 'terra-application-layout';
-
-const MyExtensions = ({ app, layoutConfig }) => {
-  if (Utils.helpers.isSizeCompact(layoutConfig.size)) {
-    return (
-      <div>Extensions for ApplicationLayout menu!</div>
-    );
-  } else {
-    return (
-      <div>Extensions for ApplicationLayout header!</div>
-    );
-  }
-};
-```
-
-### `indexPath`
-
-The `indexPath` prop allows consumers to set the default path of the ApplicationLayout. The ApplicationLayout will redirect to this path should users of the consuming application attempt to route to a component not detailed in the `routingConfig` prop. Accordingly, the `indexPath` value must have an associated entry within the `routingConfig` specification.
-
-### `app`
-
-By default, the ApplicationLayout will render itself within a `ModalManager` and provide modal presentation capabilities to all of its child components. However, the ApplicationLayout accepts an AppDelegate prop (as `app`) that it will fall back to, if necessary. If no `app` prop is provided, the ModalManager provided by the ApplicationLayout will handle all disclosure requests by the ApplicationLayout's children.
 
 ## Responsive Design
 
@@ -191,33 +217,12 @@ The `routingConfig` prop specifies which components will be rendered in the Appl
 
 > Note: Because the `ApplicationLayout` utilizes client-side routing provided by `react-router-dom`, the usage of `<a href=>` links and page anchors is restricted. Usage of links and page anchors may negatively impact navigation within an application. `<Link />` components provided by `react-router-dom` or custom events can and should be used instead.
 
-The components rendered in these regions will receive the following props from the ApplicationLayout:
+The components rendered in these regions are guaranteed to receive the following props from the ApplicationLayout:
 
-### `app`
+|Prop Name|Description|
+|---|---|
+|`app`|The AppDelegate instance provided to the ApplicationLayout's contents as created by ApplicationLayout's default `ModalManager`.|
+|`layoutConfig`|The `layoutConfig` contains properties describing the ApplicationLayout's state and functions that allow for the manipulation of that state.|
+|`routingStackDelegate`|The `routingStackDelegate` contains APIs that allow for virtual navigation within a set of matched component paths.|
 
-The AppDelegate instance (as `app`) provided to the ApplicationLayout's contents is created by ApplicationLayout's default `ModalManager`.
-
-Please review the AppDelegate documenation with `terra-app-delegate` for more information regarding the available disclosure options.
-
-### `layoutConfig`
-
-The `layoutConfig` contains properties describing the ApplicationLayout's state and functions that allow for the manipulation of that state.
-
-Please review the `Layout` component in `terra-layout` for more information.
-
-### `routingStackDelegate`
-
-The `routingStackDelegate` contains APIs that allow for virtual navigation within a set of matched component paths. Please review the RoutingStackDelegate documentation within `terra-navigation-layout` for more information.
-
-## Summary
-
-1. The ApplicationLayout requires a `Base` component (from `terra-base`) and any `Router` component (from `react-router-dom`) in its parent hierarchy.
-2. The `nameConfig` prop customizes the ApplicationLayout's branding.
-3. The `utilityConfig` prop generates an utilities menu and presentation controls within the layout. A default set of options can be generated by a helper.
-4. The `routingConfig` prop determines which components get rendered in the ApplicationLayout's `menu` and `content` regions based on the router location. Usage of the path `'/'` is restricted for `menu` components inside the `routingConfig`.
-5. The `navigationItems` prop generates primary navigation controls within the layout. The provided navigation items should have associated content in the `routingConfig`.
-6. The `indexPath` prop determines the default redirect location for the layout. The provided path should have associated content in the `routingConfig`.
-7. Menu and content components rendered within the ApplicationLayout receive an `app` prop with default support for modal disclosures.
-8. Menu and content components rendered within the ApplicationLayout also receive a `layoutConfig` prop for layout state manipulation.
-9. Menu and content components rendered within the ApplicationLayout also receive an `routingStackDelegate` prop. The `show` and `showParent` functions of the `routingStackDelegate` should be used for virtual navigation within configuration regions. Specifically, `showParent` must be implemented by `menu` components to ensure that access to the `ApplicationLayout`'s default menu is maintained.
-10. The RoutingMenu component can be used for an off-the-shelf route-based menu navigation.
+Each component specified in the `routingConfig` needs to be able to accept these props and render appropriately. If a component does not appropriately handle them (i.e. it renders unknown props, like `terra-button` and many other generic Terra components), warnings and/or errors may be thrown.
