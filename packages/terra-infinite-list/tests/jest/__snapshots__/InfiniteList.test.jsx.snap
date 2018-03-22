@@ -1,0 +1,440 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InfiniteList should render a default component 1`] = `
+<React.Fragment>
+  <List
+    className="infinite-list"
+    isDivided={false}
+    refCallback={[Function]}
+  >
+    <ListItem
+      className="spacer"
+      isSelectable={false}
+      isSelected={false}
+      key="infinite-spacer-0"
+      style={
+        Object {
+          "height": "0px",
+        }
+      }
+    />
+    <ListItem
+      isSelectable={false}
+      isSelected={false}
+      key="infinite-spinner-full"
+      style={
+        Object {
+          "height": "100%",
+          "position": "relative",
+        }
+      }
+    />
+    <ListItem
+      className="spacer"
+      isSelectable={false}
+      isSelected={false}
+      key="infinite-spacer-1"
+      style={
+        Object {
+          "height": "0px",
+        }
+      }
+    />
+  </List>
+</React.Fragment>
+`;
+
+exports[`InfiniteList should render with initial children 1`] = `
+<React.Fragment>
+  <List
+    className="infinite-list"
+    isDivided={false}
+    refCallback={[Function]}
+  >
+    <ListItem
+      className="spacer"
+      isSelectable={false}
+      isSelected={false}
+      key="infinite-spacer-0"
+      style={
+        Object {
+          "height": "0px",
+        }
+      }
+    />
+    <ListItem
+      content={
+        <div
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
+          }
+        >
+          item 1
+        </div>
+      }
+      data-infinite-list-index={0}
+      isSelected={false}
+      key=".$item-1"
+      refCallback={[Function]}
+      style={
+        Object {
+          "overflow": "hidden",
+        }
+      }
+    />
+    <ListItem
+      content={
+        <div
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
+          }
+        >
+          item 2
+        </div>
+      }
+      data-infinite-list-index={1}
+      isSelected={false}
+      key=".$item-2"
+      refCallback={[Function]}
+      style={
+        Object {
+          "overflow": "hidden",
+        }
+      }
+    />
+    <ListItem
+      content={
+        <div
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
+          }
+        >
+          item 3
+        </div>
+      }
+      data-infinite-list-index={2}
+      isSelected={false}
+      key=".$item-3"
+      refCallback={[Function]}
+      style={
+        Object {
+          "overflow": "hidden",
+        }
+      }
+    />
+    <ListItem
+      content={
+        <div
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
+          }
+        >
+          item 4
+        </div>
+      }
+      data-infinite-list-index={3}
+      isSelected={false}
+      key=".$item-4"
+      refCallback={[Function]}
+      style={
+        Object {
+          "overflow": "hidden",
+        }
+      }
+    />
+    <ListItem
+      className="spacer"
+      isSelectable={false}
+      isSelected={false}
+      key="infinite-spacer-1"
+      style={
+        Object {
+          "height": "0px",
+        }
+      }
+    />
+  </List>
+</React.Fragment>
+`;
+
+exports[`InfiniteList should render with list props 1`] = `
+<React.Fragment>
+  <List
+    className="infinite-list"
+    isDivided={true}
+    refCallback={[Function]}
+  >
+    <ListItem
+      className="spacer"
+      isSelectable={false}
+      isSelected={false}
+      key="infinite-spacer-0"
+      style={
+        Object {
+          "height": "0px",
+        }
+      }
+    />
+    <ListItem
+      content={
+        <div
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
+          }
+        >
+          item 1
+        </div>
+      }
+      data-infinite-list-index={0}
+      isSelectable={true}
+      isSelected={false}
+      key=".$item-1"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      refCallback={[Function]}
+      style={
+        Object {
+          "overflow": "hidden",
+        }
+      }
+      tabIndex="0"
+    />
+    <ListItem
+      content={
+        <div
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
+          }
+        >
+          item 2
+        </div>
+      }
+      data-infinite-list-index={1}
+      isSelectable={true}
+      isSelected={true}
+      key=".$item-2"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      refCallback={[Function]}
+      style={
+        Object {
+          "overflow": "hidden",
+        }
+      }
+      tabIndex="0"
+    />
+    <ListItem
+      content={
+        <div
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
+          }
+        >
+          item 3
+        </div>
+      }
+      data-infinite-list-index={2}
+      isSelectable={true}
+      isSelected={false}
+      key=".$item-3"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      refCallback={[Function]}
+      style={
+        Object {
+          "overflow": "hidden",
+        }
+      }
+      tabIndex="0"
+    />
+    <ListItem
+      content={
+        <div
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
+          }
+        >
+          item 4
+        </div>
+      }
+      data-infinite-list-index={3}
+      isSelectable={true}
+      isSelected={false}
+      key=".$item-4"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      refCallback={[Function]}
+      style={
+        Object {
+          "overflow": "hidden",
+        }
+      }
+      tabIndex="0"
+    />
+    <ListItem
+      className="spacer"
+      isSelectable={false}
+      isSelected={false}
+      key="infinite-spacer-1"
+      style={
+        Object {
+          "height": "0px",
+        }
+      }
+    />
+  </List>
+</React.Fragment>
+`;
+
+exports[`InfiniteList should render with list with style props 1`] = `
+<ul
+  class="list divided infinite-list"
+>
+  <li
+    class="list-item spacer"
+    style="height:0px"
+  />
+  <li
+    class="list-item is-selectable"
+    data-infinite-list-index="0"
+    style="background-color:pink;overflow:hidden"
+    tabindex="0"
+  >
+    <div
+      style="height:20px;width:100%"
+    >
+      item 1
+    </div>
+  </li>
+  <li
+    class="list-item selected is-selectable"
+    data-infinite-list-index="1"
+    style="background-color:red;overflow:hidden"
+    tabindex="0"
+  >
+    <div
+      style="height:20px;width:100%"
+    >
+      item 2
+    </div>
+  </li>
+  <li
+    class="list-item is-selectable"
+    data-infinite-list-index="2"
+    style="background-color:blue;overflow:hidden"
+    tabindex="0"
+  >
+    <div
+      style="height:20px;width:100%"
+    >
+      item 3
+    </div>
+  </li>
+  <li
+    class="list-item is-selectable"
+    data-infinite-list-index="3"
+    style="background-color:yellow;overflow:hidden"
+    tabindex="0"
+  >
+    <div
+      style="height:20px;width:100%"
+    >
+      item 4
+    </div>
+  </li>
+  <li
+    class="list-item spacer"
+    style="height:0px"
+  />
+</ul>
+`;
+
+exports[`InfiniteList should render with no children and loading 1`] = `
+<React.Fragment>
+  <List
+    className="infinite-list"
+    infiniteProps={
+      Object {
+        "initialLoadingIndicator": <div
+          style={
+            Object {
+              "height": "100%",
+              "position": "relative",
+              "width": "100%",
+            }
+          }
+        />,
+        "isFinishedLoading": false,
+        "progressiveLoadingIndicator": <div
+          style={
+            Object {
+              "height": "40px",
+              "width": "100%",
+            }
+          }
+        />,
+      }
+    }
+    isDivided={false}
+    refCallback={[Function]}
+  >
+    <ListItem
+      className="spacer"
+      isSelectable={false}
+      isSelected={false}
+      key="infinite-spacer-0"
+      style={
+        Object {
+          "height": "0px",
+        }
+      }
+    />
+    <ListItem
+      isSelectable={false}
+      isSelected={false}
+      key="infinite-spinner-full"
+      style={
+        Object {
+          "height": "100%",
+          "position": "relative",
+        }
+      }
+    />
+    <ListItem
+      className="spacer"
+      isSelectable={false}
+      isSelected={false}
+      key="infinite-spacer-1"
+      style={
+        Object {
+          "height": "0px",
+        }
+      }
+    />
+  </List>
+</React.Fragment>
+`;
