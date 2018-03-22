@@ -148,6 +148,7 @@ class RoutingMenu extends React.Component {
         routingStackBack={routingStackDelegate.showParent}
         selectedMenuKey={routingMenuRootMenuKey}
         selectedChildKey={selectedChildKey}
+        data-routing-menu
       />
     );
   }

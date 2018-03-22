@@ -154,7 +154,9 @@ class ApplicationHeader extends React.Component {
     }
 
     /**
-     * When compact, the navigation region of the header renders the application name component instead.
+     * When compact, the navigation region of the header renders the application name component instead. At compact
+     * sizes, the logo region within the ApplicationHeaderLayout is too small to use, so we instead render within
+     * the navigation region which renders with a larger width.
      */
     return this.renderAppName();
   }

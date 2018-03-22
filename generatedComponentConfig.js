@@ -24,10 +24,12 @@ import TerraThemeProviderIndex from './packages/terra-theme-provider/examples/In
 import AggregatorStandalone from './packages/terra-aggregator/examples/test-examples/AggregatorStandalone.example';
 import AggregatorWithDisclosure from './packages/terra-aggregator/examples/test-examples/AggregatorWithDisclosure.example';
 import ApplicationHeaderDefault from './packages/terra-application-header-layout/examples/test-examples/ApplicationHeaderDefault.example';
+import ApplicationLayout from './packages/terra-application-layout/examples/test-examples/ApplicationLayout.example';
+import ApplicationLayoutEmpty from './packages/terra-application-layout/examples/test-examples/ApplicationLayoutEmpty.example';
 import ApplicationLayoutHeader from './packages/terra-application-layout/examples/test-examples/ApplicationLayoutHeader.example';
 import ApplicationLayoutHeaderSmall from './packages/terra-application-layout/examples/test-examples/ApplicationLayoutHeaderSmall.example';
 import ApplicationLayoutMenu from './packages/terra-application-layout/examples/test-examples/ApplicationLayoutMenu.example';
-import ApplicationTest from './packages/terra-application-layout/examples/test-examples/ApplicationTest.example';
+import ApplicationLayoutNoTopNav from './packages/terra-application-layout/examples/test-examples/ApplicationLayoutNoTopNav.example';
 import ApplicationTabsDefault from './packages/terra-application-links/examples/test-examples/ApplicationTabsDefault.example';
 import ApplicationMenuDefault from './packages/terra-application-menu-layout/examples/test-examples/ApplicationMenuDefault.example';
 import ApplicationHeaderNameDefault from './packages/terra-application-name/examples/test-examples/ApplicationHeaderNameDefault.example';
@@ -133,6 +135,16 @@ const componentConfig = {
     ],
     tests: [
       {
+        name: 'Application Layout',
+        path: '/application-layout',
+        component: ApplicationLayout,
+      },
+      {
+        name: 'Application Layout Empty',
+        path: '/application-layout-empty',
+        component: ApplicationLayoutEmpty,
+      },
+      {
         name: 'Application Layout Header',
         path: '/application-layout-header',
         component: ApplicationLayoutHeader,
@@ -148,9 +160,9 @@ const componentConfig = {
         component: ApplicationLayoutMenu,
       },
       {
-        name: 'Application Test',
-        path: '/application-test',
-        component: ApplicationTest,
+        name: 'Application Layout No Top Nav',
+        path: '/application-layout-no-top-nav',
+        component: ApplicationLayoutNoTopNav,
       },
     ],
   },

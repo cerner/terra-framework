@@ -204,8 +204,8 @@ class ApplicationLayout extends React.Component {
             nameConfig={nameConfig}
             utilityConfig={utilityConfig}
             extensions={extensions}
-            applicationLinks={navigationItems ? navigationItems.map(route => ({
-              id: route.path,
+            applicationLinks={navigationItems ? navigationItems.map((route, index) => ({
+              id: `application-layout-tab-${index}`,
               path: route.path,
               text: route.text,
             })) : undefined}

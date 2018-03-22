@@ -3,8 +3,9 @@ ChangeLog
 
 Unreleased
 -----------------
-###Changed
+### Changed
 * Changed hover styling to account for IE10.
+* Added data attributes to rendered content for automated testing.
 
 1.0.0 - (March 6, 2018)
 ------------------
