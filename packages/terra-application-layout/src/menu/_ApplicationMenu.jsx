@@ -46,14 +46,6 @@ const propTypes = {
    */
   routingStackDelegate: RoutingStackDelegate.propType.isRequired,
   /**
-   * The set of routes currently identified by the NavigationLayout. This prop is provided by the NavigationLayout.
-   */
-  navigationLayoutRoutes: PropTypes.arrayOf(processedRoutesPropType),
-  /**
-   * The window size currently identified by the NavigationLayout. This prop is provided by the NavigationLayout.
-   */
-  navigationLayoutSize: PropTypes.string,
-  /**
    * Configuration to be provided to the ApplicationUtility component.
    */
   utilityConfig: ApplicationLayoutPropTypes.utilityConfigPropType,
@@ -143,8 +135,6 @@ class ApplicationMenu extends React.Component {
       layoutConfig,
       nameConfig,
       routingStackDelegate,
-      navigationLayoutRoutes,
-      navigationLayoutSize,
       utilityConfig,
       ...customProps
     } = this.props;
@@ -158,7 +148,7 @@ class ApplicationMenu extends React.Component {
 
     let clonedContent;
     if (content) {
-      clonedContent = React.cloneElement(content, { app, layoutConfig, routingStackDelegate, navigationLayoutRoutes, navigationLayoutSize });
+      clonedContent = React.cloneElement(content, { app, layoutConfig, routingStackDelegate });
     }
 
     return (

@@ -26,8 +26,6 @@ exports[`ApplicationHeader should render props 1`] = `
             "size": "small",
           }
         }
-        navigationLayoutRoutes={undefined}
-        navigationLayoutSize={undefined}
         routingStackDelegate={Object {}}
       />
     }

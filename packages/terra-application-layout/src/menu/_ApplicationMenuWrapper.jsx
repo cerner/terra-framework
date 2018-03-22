@@ -21,17 +21,9 @@ const propTypes = {
    */
   layoutConfig: ApplicationLayoutPropTypes.layoutConfigPropType.isRequired,
   /**
-   * The set of routes currently identified by the NavigationLayout. This prop is provided by the NavigationLayout.
-   */
-  navigationLayoutRoutes: PropTypes.arrayOf(processedRoutesPropType),
-  /**
-   * The window size currently identified by the NavigationLayout. This prop is provided by the NavigationLayout.
-   */
-  navigationLayoutSize: PropTypes.string,
-  /**
    * The Object containing RoutingStack APIs provided to children of the RoutingStack. This prop is provided by the RoutingStack.
    */
-  routingStackDelegate: RoutingStackDelegate.propType,
+  routingStackDelegate: RoutingStackDelegate.propType.isRequired,
   /**
    * The Object containing props from the configuration necessary for ApplicationMenu creation.
    */
@@ -59,8 +51,6 @@ const ApplicationMenuWrapper = (props) => {
   const {
     app,
     layoutConfig,
-    navigationLayoutRoutes,
-    navigationLayoutSize,
     routingStackDelegate,
     applicationMenuWrapperProps,
     ...contentProps
@@ -73,8 +63,6 @@ const ApplicationMenuWrapper = (props) => {
       app={app}
       layoutConfig={layoutConfig}
       routingStackDelegate={routingStackDelegate}
-      navigationLayoutRoutes={navigationLayoutRoutes}
-      navigationLayoutSize={navigationLayoutSize}
       nameConfig={applicationMenuWrapperProps.nameConfig}
       utilityConfig={applicationMenuWrapperProps.utilityConfig}
       extensions={applicationMenuWrapperProps.extensions}
