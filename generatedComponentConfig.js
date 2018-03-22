@@ -9,6 +9,7 @@ import TerraApplicationMenuLayoutIndex from './packages/terra-application-menu-l
 import TerraApplicationNameIndex from './packages/terra-application-name/examples/Index.site-page';
 import TerraApplicationUtilityIndex from './packages/terra-application-utility/examples/Index.site-page';
 import TerraDisclosureManagerIndex from './packages/terra-disclosure-manager/examples/Index.site-page';
+import TerraInfiniteListIndex from './packages/terra-infinite-list/examples/Index.site-page';
 import TerraLayoutIndex from './packages/terra-layout/examples/Index.site-page';
 import TerraModalManagerIndex from './packages/terra-modal-manager/examples/Index.site-page';
 import TerraNavigationLayoutIndex from './packages/terra-navigation-layout/examples/Index.site-page';
@@ -30,6 +31,10 @@ import DefaultApplicationHeaderUtility from './packages/terra-application-utilit
 import DefaultApplicationMenuUtility from './packages/terra-application-utility/examples/test-examples/DefaultApplicationMenuUtility.example';
 import DefaultHeaderUtilityMenu from './packages/terra-application-utility/examples/test-examples/DefaultHeaderUtilityMenu.example';
 import DefaultMenuUtilityMenu from './packages/terra-application-utility/examples/test-examples/DefaultMenuUtilityMenu.example';
+import InfiniteListLoading from './packages/terra-infinite-list/examples/test-examples/InfiniteListLoading.example';
+import InfiniteListSelection from './packages/terra-infinite-list/examples/test-examples/InfiniteListSelection.example';
+import InfiniteListUpdating from './packages/terra-infinite-list/examples/test-examples/InfiniteListUpdating.example';
+import InfiniteListVirtual from './packages/terra-infinite-list/examples/test-examples/InfiniteListVirtual.example';
 import LayoutDefault from './packages/terra-layout/examples/test-examples/LayoutDefault.example';
 import LayoutNoHeader from './packages/terra-layout/examples/test-examples/LayoutNoHeader.example';
 import LayoutNoMenu from './packages/terra-layout/examples/test-examples/LayoutNoMenu.example';
@@ -209,6 +214,39 @@ const componentConfig = {
         name: 'Index',
         path: '/index',
         component: TerraDisclosureManagerIndex,
+      },
+    ],
+  },
+  'terra-infinite-list': {
+    name: 'Infinite List',
+    path: '/infinite-list',
+    pages: [
+      {
+        name: 'Index',
+        path: '/index',
+        component: TerraInfiniteListIndex,
+      },
+    ],
+    tests: [
+      {
+        name: 'Infinite List Loading',
+        path: '/infinite-list-loading',
+        component: InfiniteListLoading,
+      },
+      {
+        name: 'Infinite List Selection',
+        path: '/infinite-list-selection',
+        component: InfiniteListSelection,
+      },
+      {
+        name: 'Infinite List Updating',
+        path: '/infinite-list-updating',
+        component: InfiniteListUpdating,
+      },
+      {
+        name: 'Infinite List Virtual',
+        path: '/infinite-list-virtual',
+        component: InfiniteListVirtual,
       },
     ],
   },
