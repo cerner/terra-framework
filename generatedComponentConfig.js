@@ -30,6 +30,8 @@ import ApplicationLayoutHeader from './packages/terra-application-layout/example
 import ApplicationLayoutHeaderSmall from './packages/terra-application-layout/examples/test-examples/ApplicationLayoutHeaderSmall.example';
 import ApplicationLayoutMenu from './packages/terra-application-layout/examples/test-examples/ApplicationLayoutMenu.example';
 import ApplicationLayoutNoTopNav from './packages/terra-application-layout/examples/test-examples/ApplicationLayoutNoTopNav.example';
+import RoutingMenu from './packages/terra-application-layout/examples/test-examples/RoutingMenu.example';
+import RoutingMenuNoHeader from './packages/terra-application-layout/examples/test-examples/RoutingMenuNoHeader.example';
 import ApplicationTabsDefault from './packages/terra-application-links/examples/test-examples/ApplicationTabsDefault.example';
 import ApplicationMenuDefault from './packages/terra-application-menu-layout/examples/test-examples/ApplicationMenuDefault.example';
 import ApplicationHeaderNameDefault from './packages/terra-application-name/examples/test-examples/ApplicationHeaderNameDefault.example';
@@ -163,6 +165,16 @@ const componentConfig = {
         name: 'Application Layout No Top Nav',
         path: '/application-layout-no-top-nav',
         component: ApplicationLayoutNoTopNav,
+      },
+      {
+        name: 'Routing Menu',
+        path: '/routing-menu',
+        component: RoutingMenu,
+      },
+      {
+        name: 'Routing Menu No Header',
+        path: '/routing-menu-no-header',
+        component: RoutingMenuNoHeader,
       },
     ],
   },
