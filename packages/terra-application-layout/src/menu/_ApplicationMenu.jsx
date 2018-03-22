@@ -5,7 +5,6 @@ import AppDelegate from 'terra-app-delegate';
 import ApplicationMenuLayout from 'terra-application-menu-layout';
 import { ApplicationMenuName } from 'terra-application-name';
 import RoutingStackDelegate from 'terra-navigation-layout/lib/RoutingStackDelegate';
-import { processedRoutesPropType } from 'terra-navigation-layout/lib/configurationPropTypes';
 import { ApplicationMenuUtility } from 'terra-application-utility';
 import { disclosureType as modalDisclosureType } from 'terra-modal-manager';
 import { availableDisclosureSizes } from 'terra-disclosure-manager';

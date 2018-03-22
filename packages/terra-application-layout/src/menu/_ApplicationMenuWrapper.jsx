@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AppDelegate from 'terra-app-delegate';
-import { processedRoutesPropType } from 'terra-navigation-layout';
 import RoutingStackDelegate from 'terra-navigation-layout/lib/RoutingStackDelegate';
 
 import ApplicationMenu from './_ApplicationMenu';
