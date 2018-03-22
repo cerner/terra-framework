@@ -1,8 +1,8 @@
 import React from 'react';
 import AppDelegate from 'terra-app-delegate';
-import WrappedApplication from '../../src/ApplicationLayout';
-import ApplicationMenuWrapper from '../../src/menu/_ApplicationMenuWrapper';
-import RoutingMenu from '../../src/menu/RoutingMenu';
+import WrappedApplication from '../../lib/ApplicationLayout';
+import ApplicationMenuWrapper from '../../lib/menu/_ApplicationMenuWrapper';
+import RoutingMenu from '../../lib/menu/RoutingMenu';
 
 const ApplicationLayout = WrappedApplication.WrappedComponent;
 

@@ -7,7 +7,7 @@ import Image from 'terra-image';
 import Avatar from 'terra-avatar';
 import ContentContainer from 'terra-content-container';
 
-import ApplicationLayout, { Utils } from '../../src/ApplicationLayout';
+import ApplicationLayout, { Utils } from '../../lib/ApplicationLayout';
 
 import ApplicationContent from './application-components/ApplicationContent';
 import ApplicationMenu from './application-components/ApplicationMenu';

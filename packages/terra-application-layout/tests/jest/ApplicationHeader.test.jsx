@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ApplicationHeader from '../../src/header/_ApplicationHeader';
+import ApplicationHeader from '../../lib/header/_ApplicationHeader';
 import ExtensionsExample from '../../examples/test-examples/ExtensionsExample';
 
 const mockIntl = {

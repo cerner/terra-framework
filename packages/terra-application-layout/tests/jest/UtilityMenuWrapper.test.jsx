@@ -1,6 +1,6 @@
 import React from 'react';
 
-import UtilityMenuWrapper from '../../src/menu/_UtilityMenuWrapper';
+import UtilityMenuWrapper from '../../lib/menu/_UtilityMenuWrapper';
 
 describe('UtilityMenuWrapper', () => {
   it('should render prop data', () => {

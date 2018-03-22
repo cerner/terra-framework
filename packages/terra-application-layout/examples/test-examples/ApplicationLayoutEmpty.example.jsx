@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { MemoryRouter, withRouter } from 'react-router-dom';
 import ContentContainer from 'terra-content-container';
 
-import ApplicationLayout, { RoutingMenu } from '../../src/ApplicationLayout';
+import ApplicationLayout, { RoutingMenu } from '../../lib/ApplicationLayout';
 
 const PageContent = ({ contentName }) => (<div>Page Content: {contentName}</div>);
 PageContent.propTypes = {

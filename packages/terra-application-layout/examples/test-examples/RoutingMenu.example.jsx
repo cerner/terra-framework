@@ -2,7 +2,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
-import { RoutingMenu } from '../../src/ApplicationLayout';
+import { RoutingMenu } from '../../lib/ApplicationLayout';
 
 const AppRouter = () => (
   <div style={{ height: '100%' }} id="routing-menu-test">

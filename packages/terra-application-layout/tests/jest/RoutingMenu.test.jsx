@@ -1,6 +1,6 @@
 import React from 'react';
 import NavigationSideMenu from 'terra-navigation-side-menu';
-import WrappedRoutingMenu from '../../src/menu/RoutingMenu';
+import WrappedRoutingMenu from '../../lib/menu/RoutingMenu';
 
 const RoutingMenu = WrappedRoutingMenu.WrappedComponent;
 

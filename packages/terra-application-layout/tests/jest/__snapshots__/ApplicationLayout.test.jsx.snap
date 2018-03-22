@@ -233,12 +233,12 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with giv
       applicationLinks={
         Array [
           Object {
-            "id": "/item_1",
+            "id": "application-layout-tab-0",
             "path": "/item_1",
             "text": "Item 1",
           },
           Object {
-            "id": "/item_2",
+            "id": "application-layout-tab-1",
             "path": "/item_2",
             "text": "Item 2",
           },

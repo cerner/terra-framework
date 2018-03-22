@@ -8,7 +8,7 @@ import Avatar from 'terra-avatar';
 import ContentContainer from 'terra-content-container';
 import Button from 'terra-button';
 
-import ApplicationLayout, { RoutingMenu, Utils } from '../../src/ApplicationLayout';
+import ApplicationLayout, { RoutingMenu, Utils } from '../../lib/ApplicationLayout';
 
 const PageContent = ({ contentName }) => (<div>Page Content: {contentName}</div>);
 PageContent.propTypes = {
@@ -282,9 +282,6 @@ class ApplicationLayoutTest extends React.Component {
 
 ApplicationLayoutTest.propTypes = {
   intl: intlShape,
-  location: PropTypes.shape({
-    pathname: PropTypes.string,
-  }),
 };
 
 const WrappedApplication = withRouter(injectIntl((ApplicationLayoutTest)));

@@ -2,6 +2,7 @@
 
 exports[`RoutingMenu Snapshot tests renders with given props 1`] = `
 <NavigationSideMenu
+  data-routing-menu={true}
   menuItems={
     Array [
       Object {

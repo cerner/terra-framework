@@ -4,7 +4,7 @@ import RoutingStackDelegate from 'terra-navigation-layout/lib/RoutingStackDelega
 import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
 
-import RoutingMenu from '../../../src/menu/RoutingMenu';
+import RoutingMenu from '../../../lib/menu/RoutingMenu';
 
 class ApplicationMenu extends React.Component {
   constructor(props) {

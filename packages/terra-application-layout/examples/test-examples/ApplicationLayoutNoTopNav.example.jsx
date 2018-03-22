@@ -8,7 +8,7 @@ import Avatar from 'terra-avatar';
 import ContentContainer from 'terra-content-container';
 import Button from 'terra-button';
 
-import ApplicationLayout, { RoutingMenu, Utils } from '../../src/ApplicationLayout';
+import ApplicationLayout, { RoutingMenu, Utils } from '../../lib/ApplicationLayout';
 
 const PageContent = ({ contentName }) => (<div>Page Content: {contentName}</div>);
 PageContent.propTypes = {
