@@ -1,14 +1,14 @@
 import React from 'react';
-
+import AppDelegate from 'terra-app-delegate';
 import WrappedApplication from '../../src/ApplicationLayout';
 import ApplicationMenuWrapper from '../../src/menu/_ApplicationMenuWrapper';
 import RoutingMenu from '../../src/menu/RoutingMenu';
 
 const ApplicationLayout = WrappedApplication.WrappedComponent;
 
-const TestComponent = () => (
-  <div className="test">Test</div>
-);
+const TestComponent = () => (<div className="test">Test</div>);
+const ContentComponent = () => (<div>Content</div>);
+const MenuComponent = () => (<div>Menu</div>);
 
 describe('ApplicationLayout', () => {
   describe('buildMenuNavigationItems', () => {
@@ -107,6 +107,16 @@ describe('ApplicationLayout', () => {
   });
 
   describe('buildNavigationMenuConfig', () => {
+    let buildMenuNavigationItemsImpl;
+    beforeEach(() => {
+      buildMenuNavigationItemsImpl = ApplicationLayout.buildMenuNavigationItems;
+      ApplicationLayout.buildMenuNavigationItems = jest.fn();
+    });
+
+    afterEach(() => {
+      ApplicationLayout.buildMenuNavigationItems = buildMenuNavigationItemsImpl;
+    });
+
     it('should return configuration object for primary navigation menu', () => {
       const updatedNavigationItems = [{
         path: '/test',
@@ -114,7 +124,6 @@ describe('ApplicationLayout', () => {
         hasSubMenu: true,
       }];
 
-      ApplicationLayout.buildMenuNavigationItems = jest.fn();
       ApplicationLayout.buildMenuNavigationItems.mockReturnValueOnce(updatedNavigationItems);
 
       const props = {
@@ -144,7 +153,6 @@ describe('ApplicationLayout', () => {
     it('should disable stack navigation in menu when no nav items are provided', () => {
       const updatedNavigationItems = [];
 
-      ApplicationLayout.buildMenuNavigationItems = jest.fn();
       ApplicationLayout.buildMenuNavigationItems.mockReturnValueOnce(updatedNavigationItems);
 
       const props = {
@@ -255,6 +263,22 @@ describe('ApplicationLayout', () => {
   });
 
   describe('buildRoutingConfig', () => {
+    let buildNavigationMenuConfigImpl;
+    let buildApplicationMenusImpl;
+
+    beforeEach(() => {
+      buildNavigationMenuConfigImpl = ApplicationLayout.buildNavigationMenuConfig;
+      ApplicationLayout.buildNavigationMenuConfig = jest.fn();
+
+      buildApplicationMenusImpl = ApplicationLayout.buildApplicationMenus;
+      ApplicationLayout.buildApplicationMenus = jest.fn();
+    });
+
+    afterEach(() => {
+      ApplicationLayout.buildNavigationMenuConfig = buildNavigationMenuConfigImpl;
+      ApplicationLayout.buildApplicationMenus = buildApplicationMenusImpl;
+    });
+
     it('should return the updated and wrapped configuration', () => {
       const routingConfig = {
         content: {
@@ -287,10 +311,7 @@ describe('ApplicationLayout', () => {
         },
       };
 
-      ApplicationLayout.buildNavigationMenuConfig = jest.fn();
       ApplicationLayout.buildNavigationMenuConfig.mockReturnValueOnce(navMenuConfig);
-
-      ApplicationLayout.buildApplicationMenus = jest.fn();
       ApplicationLayout.buildApplicationMenus.mockReturnValueOnce({ new: 'menus' });
 
       const result = ApplicationLayout.buildRoutingConfig({ routingConfig, navigationItems });
@@ -310,6 +331,169 @@ describe('ApplicationLayout', () => {
       expect(Object.keys(wrapMenuConfigMenus).length).toBe(2);
       expect(wrapMenuConfigMenus['/']).toBeDefined();
       expect(wrapMenuConfigMenus['/test']).toBeDefined();
+    });
+  });
+
+  describe('Snapshot Tests', () => {
+    it('renders the ApplicationLayout with given props', () => {
+      const testAppDelegate = AppDelegate.create({});
+      const testExtensions = <div>Extensions</div>;
+      const testNameConfig = {
+        title: 'name config title',
+        accessory: <div>accessory</div>,
+      };
+      const testNavigationItems = [{
+        text: 'Item 1',
+        path: '/item_1',
+      }, {
+        text: 'Item 2',
+        path: '/item_2',
+      }];
+      const testRoutingConfig = {
+        content: {
+          '/item_1': {
+            path: '/item_1',
+            component: {
+              default: {
+                componentClass: ContentComponent,
+                props: {
+                  test: 'content props item 1',
+                },
+              },
+            },
+          },
+          '/item_2': {
+            path: '/item_2',
+            component: {
+              default: {
+                componentClass: ContentComponent,
+                props: {
+                  test: 'content props item 2',
+                },
+              },
+            },
+          },
+        },
+        menu: {
+          '/item_1': {
+            path: '/item_1',
+            component: {
+              default: {
+                componentClass: MenuComponent,
+                props: {
+                  test: 'menu props item 1',
+                },
+              },
+            },
+          },
+          '/item_2': {
+            path: '/item_2',
+            component: {
+              medium: {
+                componentClass: MenuComponent,
+                props: {
+                  test: 'content props item 2',
+                },
+              },
+            },
+          },
+        },
+      };
+
+      const testUtilityConfig = {
+        title: 'Swanson, Henry',
+        accessory: <div>Avatar</div>,
+        menuItems: [{
+          key: 'utility 1',
+          title: 'Utility 1',
+          childKeys: ['utility 2'],
+        }, {
+          key: 'utility 2',
+          title: 'Utility 2',
+        }],
+        initialSelectedKey: 'utility 1',
+        onChange: () => {},
+      };
+
+      const applicationLayout = (
+        <ApplicationLayout
+          app={testAppDelegate}
+          extensions={testExtensions}
+          nameConfig={testNameConfig}
+          navigationItems={testNavigationItems}
+          routingConfig={testRoutingConfig}
+          utilityConfig={testUtilityConfig}
+          indexPath="/item_1"
+        />
+      );
+
+      const result = shallow(applicationLayout);
+
+      expect(result).toMatchSnapshot();
+    });
+
+    it('renders the ApplicationLayout with only required props', () => {
+      const testRoutingConfig = {
+        content: {
+          '/item_1': {
+            path: '/item_1',
+            component: {
+              default: {
+                componentClass: ContentComponent,
+                props: {
+                  test: 'content props item 1',
+                },
+              },
+            },
+          },
+          '/item_2': {
+            path: '/item_2',
+            component: {
+              default: {
+                componentClass: ContentComponent,
+                props: {
+                  test: 'content props item 2',
+                },
+              },
+            },
+          },
+        },
+        menu: {
+          '/item_1': {
+            path: '/item_1',
+            component: {
+              default: {
+                componentClass: MenuComponent,
+                props: {
+                  test: 'menu props item 1',
+                },
+              },
+            },
+          },
+          '/item_2': {
+            path: '/item_2',
+            component: {
+              medium: {
+                componentClass: MenuComponent,
+                props: {
+                  test: 'content props item 2',
+                },
+              },
+            },
+          },
+        },
+      };
+
+      const applicationLayout = (
+        <ApplicationLayout
+          routingConfig={testRoutingConfig}
+          indexPath="/item_1"
+        />
+      );
+
+      const result = shallow(applicationLayout);
+
+      expect(result).toMatchSnapshot();
     });
   });
 });
