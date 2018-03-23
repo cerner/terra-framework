@@ -110,16 +110,64 @@ The ApplicationLayout directly implements the `NavigationLayout` from `terra-nav
 
 ```jsx
 const routingConfig = {
+  /**
+   * Components defined under `content` will render within the ApplicationLayout's body.
+   */
   content: {
-    'Page 1' : {
+    /**
+     * Each entry must be keyed; typically, this key matches the path for the component.
+     */
+    '/page_1' : {
+      /**
+       * The `path` value will be validated against the router location with each location change. When the location
+       * matches this path, the component specified by the sibling `component` value will be rendered. If more than
+       * one component matches the current location, only the component with the closest match will be rendered.
+       */
       path: '/page_1',
+      /**
+       * The `component` value specifies what component will be rendered. The value is an Object with support for the
+       * following keys: default, tiny, small, medium, large, and huge. These keys correspond to the responsive breakpoint
+       * of the ApplicationLayout. When the ApplicationLayout is small, the component under the small key will be rendered.
+       * When the application is large, the component under the large key will be rendered, and so on.
+       *
+       * The default key is different in that its component will render for all breakpoints unless that specific breakpoint is
+       * also defined. For example, if a component is defined for default and small, and the current responsive breakpoint is small,
+       * then the small component will be rendered. However, if the responsive breakpoint were to be huge, then the default component
+       * would be rendered (rather than no component at all).
+       */
       component: {
         default: {
+          /**
+           * The component specification for a given breakpoint must include a componentClass value. This is a React component
+           * function or class. It should not be an instantiated React element. For example, given a component named Page1Content,
+           * the componentClass value should be Page1Content, not `<Page1Content />`.
+           */
           componentClass: Page1Content,
+          /**
+           * Props can also be defined for the component. These will be applied when the React element is created by the
+           * ApplicationLayout. If no props are desired, the `props` key can be omitted.
+           */
+          props: {
+            propFromConfig: 'Value from config',
+          }
         },
+        small: {
+          /**
+           * The same component can be defined for multiple breakpoints. Here, the prop values just are changing for this specific
+           * size.
+           */
+          componentClass: Page1Content,
+          propFromConfig: 'My value is different only when small',
+        }
+        large: {
+          /**
+           * Or, a different component can be loaded altogether.
+           */
+          componentClass: LargePage1Content,
+        }
       },
     },
-    'Page 2' : {
+    '/page_2' : {
       path: '/page_2',
       component: {
         default: {
@@ -128,6 +176,13 @@ const routingConfig = {
       },
     },
   },
+  /**
+   * Components defined under `menu` will render within the ApplicationLayout's menu sidebar. All other aspects of the API
+   * match that of the content region described above.
+   *
+   * A content entry does not need to have an associated menu entry. In this example, because there is no menu defined for
+   * the path '/page_2', the ApplicationLayout will hide the menu sidebar when the '/page_2' content is rendered.
+   */
   menu: {
     'Page 1' : {
       path: '/page_1',
