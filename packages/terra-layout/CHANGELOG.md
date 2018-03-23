@@ -5,7 +5,8 @@ Unreleased
 ----------
 
 ### Changed
-* Returning promises from toggleMenu/togglePin
+* Returned promises from toggleMenu/togglePin
+* Updated menu overlay styles.
 
 2.1.0 - (March 6, 2018)
 ------------------

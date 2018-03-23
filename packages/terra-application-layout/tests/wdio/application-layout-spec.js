@@ -35,9 +35,9 @@ describe('ApplicationLayout', () => {
 
   describe('Navigates with top navigation tabs', () => {
     beforeEach(() => {
-      browser.setViewportSize(Terra.viewports('large')[0]);
+      browser.setViewportSize(Terra.viewports('huge')[0]);
       browser.url('/#/raw/tests/application-layout/application-layout');
-      browser.waitForVisible('#application-layout-test');
+      browser.waitForVisible('#application-layout-tab-1');
       browser.click('#application-layout-tab-1');
     });
 

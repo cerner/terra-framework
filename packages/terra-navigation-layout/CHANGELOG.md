@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated webdriver snapshots due to terra-layout updates.
 
 2.1.0 - (March 6, 2018)
 ------------------

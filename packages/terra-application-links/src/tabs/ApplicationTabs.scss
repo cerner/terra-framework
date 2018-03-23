@@ -96,7 +96,7 @@
     padding: 0;
     position: relative;
     text-decoration: none;
-    transition-duration: var(--terra-application-tabs-transition-duration, 0.35s);
+    transition-duration: var(--terra-application-tabs-transition-duration, 0s);
     transition-property: background-size;
     transition-timing-function: var(--terra-application-tabs-transition-timing, ease);
     width: var(--terra-application-tab-width, 13rem);

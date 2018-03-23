@@ -12,4 +12,18 @@ describe('Application Header', () => {
     Terra.should.matchScreenshot({ viewports, selector: '#test-header' });
     Terra.should.beAccessible({ viewports, context: '#test-header' });
   });
+
+  describe('Displays a application header with themeable styles', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/application-header-layout/application-header-default');
+      browser.waitForVisible('#test-header');
+    });
+
+    Terra.should.matchScreenshot({ viewports, selector: '#test-header' });
+    Terra.should.beAccessible({ viewports, context: '#test-header' });
+
+    Terra.should.themeEachCustomProperty('#test-header', {
+      '--terra-application-header-layout-logo-min-width': '5rem',
+    });
+  });
 });
