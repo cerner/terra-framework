@@ -16,13 +16,24 @@
     flex: 1 1 auto;
     flex-wrap: nowrap;
     height: 100%;
-    justify-content: center;
     overflow: hidden;
     position: relative;
     width: calc(100% - 2 * var(--terra-application-tabs-spacer-width, 2rem));
 
     &:focus {
       outline: none;
+    }
+
+    &.start {
+      justify-content: flex-start;
+    }
+
+    &.center {
+      justify-content: center;
+    }
+
+    &.end {
+      justify-content: flex-end;
     }
   }
 

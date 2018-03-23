@@ -26,7 +26,8 @@ const propTypes = {
    */
   app: AppDelegate.propType,
   /**
-   * Navigational links that will generate list items that will update the path. These paths are matched with react-router for selection.
+   * Navigation tab alignment. Navigational links that will generate list items that will update the path.
+   * These paths are matched with react-router for selection.
    */
   applicationLinks: ApplicationLinksPropType,
   /**
@@ -57,6 +58,10 @@ const propTypes = {
    * Internationalization object with translation APIs. Provided by `injectIntl`.
    */
   intl: intlShape,
+};
+
+const defaultProps = {
+  applicationLinks: {},
 };
 
 class ApplicationHeader extends React.Component {
@@ -144,9 +149,9 @@ class ApplicationHeader extends React.Component {
     const { applicationLinks } = this.props;
 
     if (!isCompact) {
-      if (applicationLinks && applicationLinks.length) {
+      if (applicationLinks.links && applicationLinks.links.length) {
         return (
-          <ApplicationTabs links={applicationLinks} />
+          <ApplicationTabs {...applicationLinks} />
         );
       }
 
@@ -252,5 +257,6 @@ class ApplicationHeader extends React.Component {
 }
 
 ApplicationHeader.propTypes = propTypes;
+ApplicationHeader.defaultProps = defaultProps;
 
 export default injectIntl(ApplicationHeader);

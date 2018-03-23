@@ -13,6 +13,10 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * Alignment of the navigational tabs. ( e.g start, center, end )
+   */
+  alignment: PropTypes.oneOf(['start', 'center', 'end']),
+  /**
    * Navigational links that will generate tabs that will update the path. These paths are matched with react-router to selection.
    */
   links: PropTypes.arrayOf(PropTypes.shape({
@@ -49,6 +53,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  alignment: 'center',
   links: [],
 };
 
@@ -128,6 +133,7 @@ class ApplicationTabs extends React.Component {
 
   render() {
     const {
+      alignment,
       links,
       location,
       match,
@@ -161,7 +167,7 @@ class ApplicationTabs extends React.Component {
     return (
       <div {...customProps} className={cx(['application-tabs'])}>
         <div
-          className={cx(['tabs-container', { 'is-calculating': this.isCalculating }])}
+          className={cx(['tabs-container', { 'is-calculating': this.isCalculating }, alignment])}
           role="tablist"
           ref={this.setContainerNode}
         >

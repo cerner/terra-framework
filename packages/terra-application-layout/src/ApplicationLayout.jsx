@@ -5,6 +5,7 @@ import NavigationLayout from 'terra-navigation-layout';
 import { routeConfigPropType } from 'terra-navigation-layout/lib/configurationPropTypes';
 import { matchPath } from 'react-router-dom';
 import { withModalManager } from 'terra-modal-manager';
+import { ApplicationLinksPropType } from 'terra-application-links';
 
 import RoutingMenu from './menu/RoutingMenu';
 import ApplicationMenuWrapper from './menu/_ApplicationMenuWrapper';
@@ -36,6 +37,10 @@ const propTypes = {
    * The configuration values for the ApplicationName component.
    */
   nameConfig: ApplicationLayoutPropTypes.nameConfigPropType,
+  /**
+   * Alignment of the header's navigation primary tabs. ( e.g start, center, end )
+   */
+  navigationAlignment: ApplicationLinksPropType.alignment,
   /**
    * An array of Objects describing the ApplicationLayout's primary navigation items.
    */
@@ -192,7 +197,7 @@ class ApplicationLayout extends React.Component {
   }
 
   render() {
-    const { app, nameConfig, utilityConfig, navigationItems, indexPath, extensions } = this.props;
+    const { app, nameConfig, utilityConfig, navigationAlignment, navigationItems, indexPath, extensions } = this.props;
     const { applicationLayoutRoutingConfig } = this.state;
 
     return (
@@ -204,11 +209,14 @@ class ApplicationLayout extends React.Component {
             nameConfig={nameConfig}
             utilityConfig={utilityConfig}
             extensions={extensions}
-            applicationLinks={navigationItems ? navigationItems.map((route, index) => ({
-              id: `application-layout-tab-${index}`,
-              path: route.path,
-              text: route.text,
-            })) : undefined}
+            applicationLinks={{
+              alignment: navigationAlignment,
+              links: navigationItems ? navigationItems.map((route, index) => ({
+                id: `application-layout-tab-${index}`,
+                path: route.path,
+                text: route.text,
+              })) : undefined,
+            }}
           />
         )}
         indexPath={indexPath}
