@@ -26,6 +26,7 @@ const propTypes = {
   app: AppDelegate.propType,
   /**
    * The element to be placed within the fill flex styled content area.
+   * This content is intended to be the user configured content for the menu.
    */
   content: PropTypes.element,
   /**
