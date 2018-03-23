@@ -1,6 +1,5 @@
 # Terra Application Utility
 
-
 [![NPM version](http://img.shields.io/npm/v/terra-application-utility.svg)](https://www.npmjs.org/package/terra-application-utility)
 [![Build Status](https://travis-ci.org/cerner/terra-framework.svg?branch=master)](https://travis-ci.org/cerner/terra-framework)
 
