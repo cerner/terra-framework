@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+2.2.0 - (March 23, 2018)
+------------------
 ### Changed
 * Updated webdriver snapshots due to terra-layout updates.
 
@@ -20,7 +23,7 @@ Unreleased
 
 1.2.0 - (February 15, 2018)
 ------------------
-###Changed
+### Changed
 * Updating tests to point to new terra-framework-site location.
 
 1.1.0 - (January 23, 2018)
