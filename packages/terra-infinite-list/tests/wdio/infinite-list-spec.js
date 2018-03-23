@@ -47,6 +47,7 @@ describe('InfiniteList', () => {
       browser.pause(150);
       browser.click('#test-click');
       browser.waitForVisible('#test-infinite-list [data-infinite-list-index="15"]');
+      browser.pause(50);
     });
 
     Terra.should.matchScreenshot({ selector: '#test-infinite-list', viewports });
