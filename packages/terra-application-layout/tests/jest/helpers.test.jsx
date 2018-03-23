@@ -1,4 +1,4 @@
-import helpers from '../../lib/utils/helpers';
+import helpers from '../../src/utils/helpers';
 
 describe('helpers', () => {
   describe('isSizeCompact', () => {

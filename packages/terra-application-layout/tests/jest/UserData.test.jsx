@@ -1,6 +1,6 @@
 import React from 'react';
 
-import UserData from '../../lib/user/_UserData';
+import UserData from '../../src/user/_UserData';
 
 describe('UserData', () => {
   it('should render prop data', () => {

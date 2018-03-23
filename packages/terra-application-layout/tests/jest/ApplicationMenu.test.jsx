@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ApplicationMenu from '../../lib/menu/_ApplicationMenu';
+import ApplicationMenu from '../../src/menu/_ApplicationMenu';
 import ExtensionsExample from '../../examples/test-examples/ExtensionsExample';
 import ContentExample from '../../examples/test-examples/ContentExample';
 

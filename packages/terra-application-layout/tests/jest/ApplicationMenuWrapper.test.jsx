@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ApplicationMenuWrapper from '../../lib/menu/_ApplicationMenuWrapper';
+import ApplicationMenuWrapper from '../../src/menu/_ApplicationMenuWrapper';
 
 describe('ApplicationMenuWrapper', () => {
   it('should render default', () => {

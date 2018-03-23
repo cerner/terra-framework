@@ -1,4 +1,4 @@
-import utilityHelpers from '../../lib/utils/utilityHelpers';
+import utilityHelpers from '../../src/utils/utilityHelpers';
 
 describe('utilityHelpers', () => {
   describe('getDefaultUtilityItems', () => {

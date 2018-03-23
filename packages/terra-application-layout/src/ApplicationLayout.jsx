@@ -121,6 +121,10 @@ class ApplicationLayout extends React.Component {
   static buildApplicationMenus(props, originalMenuConfig) {
     const { nameConfig, utilityConfig, extensions } = props;
 
+    if (!originalMenuConfig) {
+      return undefined;
+    }
+
     const config = {};
     Object.keys(originalMenuConfig).forEach((menuKey) => {
       const menuConfig = Object.assign({}, originalMenuConfig[menuKey]);
@@ -233,11 +237,10 @@ ApplicationLayout.defaultProps = defaultProps;
  */
 export default withModalManager(ApplicationLayout);
 
-export { RoutingMenu };
-
 const Utils = {
   helpers: Helpers,
   utilityHelpers: UtilityHelpers,
   propTypes: ApplicationLayoutPropTypes,
 };
-export { Utils };
+
+export { RoutingMenu, Utils };

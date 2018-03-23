@@ -75,7 +75,7 @@ class ApplicationContent extends React.Component {
         <div>
           <h2>Another Page?</h2>
           <hr />
-          <p>These pages are here to demonstrate the responsive functionality of header navigation tabs. The tabs will collapse into a More tab as space is contrained.</p>
+          <p>These pages are here to demonstrate the responsive functionality of header navigation tabs. The tabs will collapse into a More tab as space is constrained.</p>
           {dummyContent}
         </div>
       );

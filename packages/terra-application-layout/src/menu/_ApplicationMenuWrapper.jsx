@@ -55,6 +55,10 @@ const ApplicationMenuWrapper = (props) => {
     ...contentProps
   } = props;
 
+  /**
+   * This Content component is the component class originally registered in the routingConfig
+   * pre-wrapping. The contentProps are the props that were originally specified in the routingConfig for that component.
+   */
   const Content = applicationMenuWrapperProps.contentComponentClass;
 
   return (
