@@ -38,7 +38,7 @@ By default, the ApplicationLayout will render itself within a `ModalManager` and
 The `extensions` prop allows consumers to render an element within the ApplicationLayout's extensions region. The `extensions` content will be rendered in various ways depending on the current breakpoint. The `extensions` element will receive `app` and `layoutConfig` props from the ApplicationLayout, allowing it to interact with and respond to changes within the ApplicationLayout.
 
 ```jsx
-import { Utils } from 'terra-application-layout';
+import ApplicationLayout, { Utils } from 'terra-application-layout';
 
 const MyExtensions = ({ app, layoutConfig }) => {
   if (Utils.helpers.isSizeCompact(layoutConfig.size)) {
@@ -57,7 +57,6 @@ const MyExtensions = ({ app, layoutConfig }) => {
 #### Is Required: `true`
 
 The `indexPath` prop allows consumers to set the default path of the ApplicationLayout. The ApplicationLayout will redirect to this path should users of the consuming application attempt to route to a component not detailed in the `routingConfig` prop. Accordingly, the `indexPath` value must have an associated entry within the `routingConfig` specification.
-
 
 ### `nameConfig`
 #### Is Required: `false`
@@ -159,7 +158,7 @@ The API for the `utilityConfig` matches that of the `ApplicationHeaderUtility` a
 
 ```jsx
 import Avatar from 'terra-avatar';
-import { UtilityUtils } from 'terra-application-utility';
+import ApplicationLayout, { Utils } from 'terra-application-layout';
 
 const myUtilityConfig = {
   title: 'Doe, John',
@@ -183,7 +182,7 @@ const myUtilityConfig = {
     isSelected: false,
   }, {
     key: 'item-4',
-    contentLocation: UtilityUtils.LOCATIONS.FOOTER,
+    contentLocation: Utils.utilityHelpers.locations.FOOTER,
     title: 'Footer Item',
   }],
   initialSelectedKey: 'menu',
@@ -202,8 +201,6 @@ const myUtilityConfig = {
 The ApplicationLayout has two rendering modes: `standard` and `compact`.
   - The `standard` rendering occurs at `medium`, `large`, and `huge` breakpoints.
   - The `compact` rendering occurs at `tiny` and `small` breakpoints.
-
-Depending on the rendering mode, the ApplicationLayout's prop data is rendered in different ways.
 
 |Prop|`standard` Rendering|`compact` Rendering|
 |---|---|---|

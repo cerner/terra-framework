@@ -42,6 +42,7 @@
     "terra-application-utility": "^0.x",
     "terra-button": "^2.2.0",
     "terra-icon": "^2.2.0",
+    "terra-image": "^2.2.0",
     "terra-navigation-layout": "^2.1.0",
     "terra-popup": "^2.2.0",
     "terra-clinical-action-header": "^2.1.0",
