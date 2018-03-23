@@ -1,4 +1,4 @@
-/* global browser, Terra */
+/* global browser, Terra, before */
 
 const viewports = Terra.viewports('small');
 
@@ -41,6 +41,7 @@ describe('InfiniteList', () => {
   });
 
   describe('Displays an infinite list with virtual dom from bottom', () => {
+    before(() => browser.setViewportSize(Terra.viewports('small')[0]));
     beforeEach(() => {
       browser.url('/#/raw/tests/infinite-list/infinite-list-virtual');
       browser.waitForVisible('#test-infinite-list [data-infinite-list-index="0"]');
@@ -50,6 +51,6 @@ describe('InfiniteList', () => {
       browser.pause(50);
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-infinite-list', viewports });
+    Terra.should.matchScreenshot({ selector: '#test-infinite-list' });
   });
 });

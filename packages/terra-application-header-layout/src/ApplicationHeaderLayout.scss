@@ -12,7 +12,7 @@
   }
 
   .fit,
-  .fill { 
+  .fill {
     align-items: center;
     display: flex;
     height: 100%;
@@ -32,6 +32,10 @@
   .logo,
   .utilities {
     max-width: 40%;
+  }
+
+  .logo {
+    min-width: var(--terra-application-header-layout-logo-min-width, 16.571rem);
   }
 
   .extensions {

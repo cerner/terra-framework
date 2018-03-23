@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApplicationHeader should render default component 1`] = `
+<div
+  className="application-menu"
+>
+  <ApplicationMenuLayout
+    extensions={null}
+    footer={null}
+    header={null}
+  />
+</div>
+`;
+
+exports[`ApplicationHeader should render props 1`] = `
+<div
+  className="application-menu"
+  id="test-menu"
+>
+  <ApplicationMenuLayout
+    content={
+      <ContentExample
+        app={undefined}
+        layoutConfig={
+          Object {
+            "size": "small",
+          }
+        }
+        routingStackDelegate={Object {}}
+      />
+    }
+    extensions={
+      <ApplicationHeaderDefault
+        app={undefined}
+        layoutConfig={
+          Object {
+            "size": "small",
+          }
+        }
+      />
+    }
+    footer={
+      <ApplicationHeaderUtility
+        accessory={undefined}
+        data-application-menu-utility={true}
+        initialSelectedKey="test-menu"
+        menuItems={
+          Array [
+            Object {
+              "contentLocation": "body",
+              "key": "test-menu",
+              "title": "test-menu-title",
+            },
+          ]
+        }
+        onChange={[Function]}
+        onDisclose={[Function]}
+        title="test-util-title"
+      />
+    }
+    header={
+      <div
+        className="menu-header"
+      >
+        <ApplicationMenuName
+          accessory={undefined}
+          title="app-test-title"
+        />
+      </div>
+    }
+  />
+</div>
+`;

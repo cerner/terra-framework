@@ -16,13 +16,24 @@
     flex: 1 1 auto;
     flex-wrap: nowrap;
     height: 100%;
-    justify-content: center;
     overflow: hidden;
     position: relative;
     width: calc(100% - 2 * var(--terra-application-tabs-spacer-width, 2rem));
 
     &:focus {
       outline: none;
+    }
+
+    &.start {
+      justify-content: flex-start;
+    }
+
+    &.center {
+      justify-content: center;
+    }
+
+    &.end {
+      justify-content: flex-end;
     }
   }
 
@@ -36,6 +47,10 @@
     span {
       display: inline-flex;
       max-width: calc(100% - 2 * var(--terra-application-tabs-padding-horizontal, 1.0715rem));
+    }
+
+    &.is-disabled {
+      cursor: default;
     }
   }
 
@@ -62,12 +77,12 @@
   .tab-menu-display {
     align-items: center;
     background-color: transparent;
-    background-image: var(--terra-application-tabs-background-image, linear-gradient(to bottom, #007ee0, #007ee0));
     background-position: var(--terra-application-tabs-background-position, top-left);
     background-repeat: no-repeat;
-    background-size: var(--terra-application-tabs-background-size, 0 4px);
+    background-size: var(--terra-application-tabs-background-size, 0 5px);
     border: 0;
-    border-right: var(--terra-application-tabs-border-right, 1px solid #dedfe0);
+    border-right: var(--terra-application-tabs-border-right, 1px solid #3a67a4);
+    box-shadow: var(--terra-application-tabs-box-shadow, 1px 0 1px #1d98da);
     color: var(--terra-application-tabs-color, #fff);
     cursor: pointer;
     display: flex;
@@ -77,17 +92,19 @@
     justify-content: center;
     line-height: var(--terra-application-tabs-line-height, 1.4);
     max-width: 100%;
+    outline: none;
     padding: 0;
     position: relative;
     text-decoration: none;
-    transition-duration: var(--terra-application-tabs-transition-duration, 0.35s);
+    transition-duration: var(--terra-application-tabs-transition-duration, 0s);
     transition-property: background-size;
     transition-timing-function: var(--terra-application-tabs-transition-timing, ease);
-    width: var(--terra-application-tab-width, 16.7145rem);
+    width: var(--terra-application-tab-width, 13rem);
 
     span {
       display: block;
       overflow: hidden;
+      position: relative; // remove IE10 active click transformation
       text-overflow: ellipsis;
       white-space: nowrap;
       width: 100%;
@@ -95,35 +112,32 @@
       word-wrap: normal;
     }
 
-    &:focus,
-    &.is-focused,
-    &:visited,
-    &.is-visited {
-      border-radius: 0;
-      color: var(--terra-application-tabs-focus-color, #fff);
-    }
-
     &:hover,
     &.is-hovered {
-      background-color: var(--terra-application-tabs-hover-background-color, rgba(0, 0, 0, 0.25));
-      color: var(--terra-application-tabs-hover-color, #fff);
+      background-color: var(--terra-application-tabs-hover-background-color, rgba(0, 0, 0, 0.15));
     }
 
     &[aria-current='true'] {
-      background-color: var(--terra-application-tabs-active-background-color, #fff);
-      background-size: var(--terra-application-tabs-active-background-size, 100% 4px);
-      color: var(--terra-application-tabs-active-color, #000);
+      background-color: var(--terra-application-tabs-hover-background-color, rgba(0, 0, 0, 0.15));
+      background-image: var(--terra-application-tabs-selected-background-image, linear-gradient(to bottom, #5cc2f9, #5cc2f9));
+      background-size: var(--terra-application-tabs-active-background-size, 13rem 5px);
       font-weight: 600;
+    }
 
-      &:hover {
-        background-image: var(--terra-application-tabs-hover-background-image, linear-gradient(to bottom, #c8cacb, #c8cacb));
-        background-size: var(--terra-application-tabs-hover-background-size, 100% 4px);
-      }
+    &.is-focused,
+    &.is-active.is-focused,
+    &:active.is-focused {
+      box-shadow: var(--terra-application-tabs-focus-box-shadow, 1px 0 1px #1d98da, 0 0 1px 0 #fff, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
+      z-index: 5;
     }
 
     &:first-child {
-      border-left: var(--terra-application-tabs-border-left, 1px solid #dedfe0);
-      border-width: var(--terra-application-tabs-border-width-first, 0 1px 0 1px);
+      border-left: var(--terra-application-tabs-border-left, 1px solid #1d98da);
+      box-shadow: var(--terra-application-tabs-box-shadow, 1px 0 1px #1d98da, -1px 0 1px #3a67a4);
+    }
+
+    &.is-focused:first-child {
+      box-shadow: var(--terra-application-tabs-first-child-focus-box-shadow, 1px 0 1px #1d98da, -1px 0 1px #3a67a4, 0 0 1px 0 #fff, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
     }
   }
 
@@ -135,12 +149,15 @@
     background-color: transparent;
     border: 0;
     color: var(--terra-application-tabs-collapsed-color, #1c1f21);
+    cursor: pointer;
     display: block;
-    font-size: var(--terra-application-tabs-font-size, 1rem);
+    font-size: var(--terra-application-tabs-collapsed-font-size, 1rem);
+    outline: none;
     padding-bottom: var(--terra-application-tabs-collapsed-padding-bottom, 0.8225rem);
-    padding-left: var(--terra-application-tabs-collapsed-padding-left, 1.071rem);
-    padding-right: var(--terra-application-tabs-collapsed-padding-right, 1.071rem);
+    padding-left: var(--terra-application-tabs-collapsed-padding-left, 1.2143rem);
+    padding-right: var(--terra-application-tabs-collapsed-padding-right, 0.7143rem);
     padding-top: var(--terra-application-tabs-collapsed-padding-top, 0.8225rem);
+    position: relative;
     text-align: left;
     text-decoration: none;
     text-overflow: unset;
@@ -149,33 +166,44 @@
     width: 100%;
     word-break: break-word;
     word-wrap: break-word;
-    
-    &:focus,
-    &.is-focused,
-    &:hover,
-    &.is-hovered,
-    &:visited,
-    &.is-visited {
-      border-radius: 0;
-      color: var(--terra-application-tabs-collapsed-color, #1c1f21);
-    }
+    z-index: 0;
 
     &:hover,
     &.is-hovered {
-      background: var(--terra-application-tabs-collapsed-hover-background, linear-gradient(-90deg, #fff, #f1f1f2));
+      background-color: var(--terra-application-tabs-collapsed-hover-background-color, #f5fafe);
     }
 
     &[aria-current='true'] {
-      background-image: var(--terra-application-tabs-collapsed-selected-background-image, linear-gradient(-270deg, #fff, #e8e9ea));
       background-size: 100%;
-      box-shadow: var(--terra-application-tabs-collapsed-selected-box-shadow, inset 0.5rem 0 0 0 #007cc3);
+      border-left: var(--terra-application-tabs-collapsed-selected-border-left, 0.5rem solid #007cc3);
       font-weight: var(--terra-application-tabs-collapsed-selected-font-weight, 600);
+      padding-left: var(--terra-application-tabs-collapsed-selected-padding-left, 0.7143rem);
+
+      &::before {
+        background-color: var(--terra-application-tabs-collapsed-selected-background-color, #f4f4f4);
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+      }
+    }
+
+    &.is-focused,
+    &.is-active.is-focused,
+    &:active.is-focused {
+      box-shadow: var(--terra-application-tabs-collapsed-focus-box-shadow, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
+      z-index: 5;
     }
   }
 
-  .tab-menu-list {
+  .tab-menu-list[role='menu'] {
     background-color: var(--terra-application-tabs-menu-content-background-color, transparent);
     color: var(--terra-application-tabs-menu-content-color, #1c1f21);
+    padding-bottom: var(--terra-application-tabs-menu-list-padding-bottom, 0.125rem);
+    padding-top: var(--terra-application-tabs-menu-list-padding-top, 0.125rem);
 
     &.bounded-height {
       height: 100%;

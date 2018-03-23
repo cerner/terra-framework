@@ -167,6 +167,7 @@ class NavigationSideMenu extends React.Component {
         key={key}
         onClick={(event) => { this.handleItemClick(event, key); }}
         onKeyDown={onKeyDown}
+        data-menu-item={item.text}
       />
     );
   }
@@ -199,7 +200,7 @@ class NavigationSideMenu extends React.Component {
 
     let actionHeader;
     if (onBack || !currentItem.isRootMenu) {
-      actionHeader = <ActionHeader onBack={onBack} title={currentItem ? currentItem.text : null} />;
+      actionHeader = <ActionHeader onBack={onBack} title={currentItem ? currentItem.text : null} data-navigation-side-menu-action-header />;
     }
 
     return (

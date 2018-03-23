@@ -1,0 +1,13 @@
+:local {
+  .application-menu {
+    background-color: var(--terra-application-menu-background-color, transparent);
+    height: 100%;
+    position: relative;
+  }
+
+  .menu-header {
+    background-color: var(--terra-application-menu-header-background-color, #0079be);
+    position: relative;
+    width: 100%;
+  }
+}

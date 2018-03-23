@@ -165,6 +165,7 @@ class UtilityMenuItem extends React.Component {
         <Arrange
           fitStart={leftInset ? <IconCheckmark className={checkmarkClassNames} /> : null}
           fill={fill}
+          fillAttributes={{ className: cx('menu-item-fill') }}
           fitEnd={rightInset ? <IconChevronRight className={chevronClassNames} /> : null}
           align={'center'}
           className={arrangeClassNames}
