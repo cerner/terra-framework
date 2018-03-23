@@ -20,6 +20,11 @@ const nameConfigPropType = PropTypes.shape({
   title: PropTypes.string,
 });
 
+  /**
+   * Alignment of the navigational tabs.
+   */
+const navigationAlignmentPropType = PropTypes.oneOf(['start', 'center', 'end']);
+
 /**
  * Shape for ApplicationLayout's `navigationItems` prop.
  */
@@ -50,5 +55,6 @@ export default {
   utilityMenuItemPropType,
   layoutConfigPropType,
   nameConfigPropType,
+  navigationAlignmentPropType,
   navigationItemsPropType,
 };

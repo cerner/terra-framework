@@ -231,18 +231,21 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with giv
   header={
     <InjectIntl(ApplicationHeader)
       applicationLinks={
-        Array [
-          Object {
-            "id": "application-layout-tab-0",
-            "path": "/item_1",
-            "text": "Item 1",
-          },
-          Object {
-            "id": "application-layout-tab-1",
-            "path": "/item_2",
-            "text": "Item 2",
-          },
-        ]
+        Object {
+          "alignment": undefined,
+          "links": Array [
+            Object {
+              "id": "application-layout-tab-0",
+              "path": "/item_1",
+              "text": "Item 1",
+            },
+            Object {
+              "id": "application-layout-tab-1",
+              "path": "/item_2",
+              "text": "Item 2",
+            },
+          ],
+        }
       }
       extensions={
         <div>
@@ -385,7 +388,12 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with onl
   }
   header={
     <InjectIntl(ApplicationHeader)
-      applicationLinks={Array []}
+      applicationLinks={
+        Object {
+          "alignment": undefined,
+          "links": Array [],
+        }
+      }
       extensions={undefined}
       nameConfig={undefined}
       utilityConfig={undefined}

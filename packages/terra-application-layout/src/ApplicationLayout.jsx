@@ -5,7 +5,6 @@ import NavigationLayout from 'terra-navigation-layout';
 import { routeConfigPropType } from 'terra-navigation-layout/lib/configurationPropTypes';
 import { matchPath } from 'react-router-dom';
 import { withModalManager } from 'terra-modal-manager';
-import { ApplicationLinksPropType } from 'terra-application-links';
 
 import RoutingMenu from './menu/RoutingMenu';
 import ApplicationMenuWrapper from './menu/_ApplicationMenuWrapper';
@@ -40,7 +39,7 @@ const propTypes = {
   /**
    * Alignment of the header's navigation primary tabs. ( e.g start, center, end )
    */
-  navigationAlignment: ApplicationLinksPropType.alignment,
+  navigationAlignment: ApplicationLayoutPropTypes.navigationAlignmentPropType,
   /**
    * An array of Objects describing the ApplicationLayout's primary navigation items.
    */
