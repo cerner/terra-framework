@@ -18,10 +18,20 @@ it('should render default component', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-it('should render ApplicationTabs with links', () => {
+it('should render ApplicationTabs with links and alignment', () => {
   const applicationTabs = (
     <IntlProvider locale={locale} messages={messages}>
-      <ApplicationTabs links={testLinkConfig} />
+      <ApplicationTabs links={testLinkConfig} alignment="start" />
+    </IntlProvider>
+  );
+  const wrapper = shallow(applicationTabs);
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should render ApplicationTabs with links and alignment', () => {
+  const applicationTabs = (
+    <IntlProvider locale={locale} messages={messages}>
+      <ApplicationTabs links={testLinkConfig} alignment="start" />
     </IntlProvider>
   );
   const wrapper = shallow(applicationTabs);

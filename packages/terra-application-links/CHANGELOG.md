@@ -4,6 +4,14 @@ ChangeLog
 Unreleased
 -----------------
 
+3.0.0 - (March 23, 2018)
+------------------
+### Added
+* Added the alignment prop which causes this to be a major version bump.
+
+### Changed
+* Changed hover styling to account for IE10.
+
 2.1.0 - (March 6, 2018)
 ------------------
 ### Fixed

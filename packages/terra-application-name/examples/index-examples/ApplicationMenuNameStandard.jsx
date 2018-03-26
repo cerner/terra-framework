@@ -9,10 +9,12 @@ const ApplicationMenuNameStandard = () => (
   <Menu
     style={size}
     header={(
-      <ApplicationMenuName
-        title="App-Name"
-        accessory={<Image variant="rounded" src="https://github.com/cerner/terra-core/raw/master/terra.png" height="26px" width="26px" isFluid />}
-      />
+      <div style={{ backgroundColor: 'green', width: '100%' }}>
+        <ApplicationMenuName
+          title="App-Name"
+          accessory={<Image variant="rounded" src="https://github.com/cerner/terra-core/raw/master/terra.png" height="26px" width="26px" isFluid />}
+        />
+      </div>
     )}
     extensions={<Placeholder text="Extensions" height="50px" />}
     content={<Placeholder text="Content" />}

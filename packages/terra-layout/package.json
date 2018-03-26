@@ -1,7 +1,7 @@
 {
   "name": "terra-layout",
   "main": "lib/Layout.js",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Provides a responsive starting point for the positioning of application components.",
   "repository": {
     "type": "git",
@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "react-router-dom": "^4.2.2",
-    "terra-props-table": "^1.10.1"
+    "terra-props-table": "^2.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",

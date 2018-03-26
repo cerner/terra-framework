@@ -5,7 +5,6 @@ import ResizeObserver from 'resize-observer-polyfill';
 import { withRouter } from 'react-router-dom';
 import 'terra-base/lib/baseStyles';
 import Tab from './_Tab';
-import CollapsedTab from './_CollapsedTab';
 import TabMenu from './_TabMenu';
 import TabUtils from './_TabUtils';
 import styles from './ApplicationTabs.scss';
@@ -13,6 +12,10 @@ import styles from './ApplicationTabs.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * Alignment of the navigational tabs. ( e.g start, center, end )
+   */
+  alignment: PropTypes.oneOf(['start', 'center', 'end']),
   /**
    * Navigational links that will generate tabs that will update the path. These paths are matched with react-router to selection.
    */
@@ -50,6 +53,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  alignment: 'center',
   links: [],
 };
 
@@ -74,7 +78,7 @@ class ApplicationTabs extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    if (this.props.location !== newProps.location) {
+    if (this.props.links.length !== newProps.links.length) {
       this.resetCalculations();
     }
   }
@@ -129,6 +133,7 @@ class ApplicationTabs extends React.Component {
 
   render() {
     const {
+      alignment,
       links,
       location,
       match,
@@ -146,26 +151,28 @@ class ApplicationTabs extends React.Component {
         path: link.path,
         text: link.text,
         key: link.path,
+        location,
+        history,
       };
       if (this.hiddenStartIndex < 0) {
         visibleChildren.push(<Tab {...tabProps} />);
-        hiddenChildren.push(<CollapsedTab {...tabProps} />);
+        hiddenChildren.push(<Tab {...tabProps} isCollapsed />);
       } else if (index < this.hiddenStartIndex) {
         visibleChildren.push(<Tab {...tabProps} />);
       } else {
-        hiddenChildren.push(<CollapsedTab {...tabProps} />);
+        hiddenChildren.push(<Tab {...tabProps} isCollapsed />);
       }
     });
 
     return (
       <div {...customProps} className={cx(['application-tabs'])}>
         <div
-          className={cx(['tabs-container', { 'is-calculating': this.isCalculating }])}
+          className={cx(['tabs-container', { 'is-calculating': this.isCalculating }, alignment])}
           role="tablist"
           ref={this.setContainerNode}
         >
           {visibleChildren}
-          <TabMenu isHidden={this.menuHidden}>
+          <TabMenu location={location} isHidden={this.menuHidden}>
             {hiddenChildren}
           </TabMenu>
         </div>

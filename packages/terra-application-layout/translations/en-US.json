@@ -1,0 +1,14 @@
+{
+  "Terra.applicationLayout.applicationHeader.menuToggleLabel": "Toggle Menu",
+  "Terra.applicationLayout.utilityDefaults.menu": "Menu",
+  "Terra.applicationLayout.utilityDefaults.userInformation": "User Information",
+  "Terra.applicationLayout.utilityDefaults.changePhoto": "Change Photo",
+  "Terra.applicationLayout.utilityDefaults.settings": "Settings",
+  "Terra.applicationLayout.utilityDefaults.appearance": "Appearance",
+  "Terra.applicationLayout.utilityDefaults.security": "Security",
+  "Terra.applicationLayout.utilityDefaults.help": "Help",
+  "Terra.applicationLayout.utilityDefaults.gettingStarted": "Getting Started",
+  "Terra.applicationLayout.utilityDefaults.about": "About",
+  "Terra.applicationLayout.utilityDefaults.termsOfUse": "Terms of Use",
+  "Terra.applicationLayout.utilityDefaults.logOut": "Log Out"
+}

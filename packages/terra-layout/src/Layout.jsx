@@ -82,14 +82,18 @@ class Layout extends React.Component {
   }
 
   toggleMenu() {
-    this.setState({
-      menuIsOpen: !this.state.menuIsOpen,
+    return new Promise((resolve) => {
+      this.setState({
+        menuIsOpen: !this.state.menuIsOpen,
+      }, resolve);
     });
   }
 
   togglePin() {
-    this.setState({
-      menuIsPinned: !this.state.menuIsPinned,
+    return new Promise((resolve) => {
+      this.setState({
+        menuIsPinned: !this.state.menuIsPinned,
+      }, resolve);
     });
   }
 

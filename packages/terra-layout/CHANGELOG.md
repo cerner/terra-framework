@@ -4,9 +4,15 @@ Changelog
 Unreleased
 ----------
 
+2.2.0 - (March 23, 2018)
+------------------
+### Changed
+* Returned promises from toggleMenu/togglePin
+* Updated menu overlay styles.
+
 2.1.0 - (March 6, 2018)
 ------------------
-###Changed
+### Changed
 * Remove the hover functionality from the layout panel at the medium breakpoint.
 
 ### Added
@@ -19,7 +25,7 @@ Unreleased
 
 1.2.0 - (February 15, 2018)
 ------------------
-###Fixed
+### Fixed
 * Nightwatch tests raw route now sets the size of the layout.
 * Content is no longer visible when the slide panel is hidden.
 
@@ -29,7 +35,7 @@ Unreleased
 * Debounce to resize of layout
 * Use display none on the hover section when hidden.
 
-###Changed
+### Changed
 * Updating tests to point to new terra-framework-site location.
 
 1.0.0 - (November 17, 2017)

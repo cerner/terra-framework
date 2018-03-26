@@ -4,6 +4,9 @@
 import TerraAggregatorIndex from './packages/terra-aggregator/examples/Index.site-page';
 import TerraAppDelegateIndex from './packages/terra-app-delegate/examples/Index.site-page';
 import TerraApplicationHeaderLayoutIndex from './packages/terra-application-header-layout/examples/Index.site-page';
+import TerraApplicationLayoutAbout from './packages/terra-application-layout/examples/About.site-page';
+import TerraApplicationLayoutExample from './packages/terra-application-layout/examples/Example.site-page';
+import TerraApplicationLayoutUtils from './packages/terra-application-layout/examples/Utils.site-page';
 import TerraApplicationLinksIndex from './packages/terra-application-links/examples/Index.site-page';
 import TerraApplicationMenuLayoutIndex from './packages/terra-application-menu-layout/examples/Index.site-page';
 import TerraApplicationNameIndex from './packages/terra-application-name/examples/Index.site-page';
@@ -22,7 +25,18 @@ import TerraThemeProviderIndex from './packages/terra-theme-provider/examples/In
 import AggregatorStandalone from './packages/terra-aggregator/examples/test-examples/AggregatorStandalone.example';
 import AggregatorWithDisclosure from './packages/terra-aggregator/examples/test-examples/AggregatorWithDisclosure.example';
 import ApplicationHeaderDefault from './packages/terra-application-header-layout/examples/test-examples/ApplicationHeaderDefault.example';
+import ApplicationLayout from './packages/terra-application-layout/examples/test-examples/ApplicationLayout.example';
+import ApplicationLayoutEmpty from './packages/terra-application-layout/examples/test-examples/ApplicationLayoutEmpty.example';
+import ApplicationLayoutHeader from './packages/terra-application-layout/examples/test-examples/ApplicationLayoutHeader.example';
+import ApplicationLayoutHeaderSmall from './packages/terra-application-layout/examples/test-examples/ApplicationLayoutHeaderSmall.example';
+import ApplicationLayoutMenu from './packages/terra-application-layout/examples/test-examples/ApplicationLayoutMenu.example';
+import ApplicationLayoutNoTopNav from './packages/terra-application-layout/examples/test-examples/ApplicationLayoutNoTopNav.example';
+import RoutingMenu from './packages/terra-application-layout/examples/test-examples/RoutingMenu.example';
+import RoutingMenuNoHeader from './packages/terra-application-layout/examples/test-examples/RoutingMenuNoHeader.example';
+import ApplicationTabsCenter from './packages/terra-application-links/examples/test-examples/ApplicationTabsCenter.example';
 import ApplicationTabsDefault from './packages/terra-application-links/examples/test-examples/ApplicationTabsDefault.example';
+import ApplicationTabsEnd from './packages/terra-application-links/examples/test-examples/ApplicationTabsEnd.example';
+import ApplicationTabsStart from './packages/terra-application-links/examples/test-examples/ApplicationTabsStart.example';
 import ApplicationMenuDefault from './packages/terra-application-menu-layout/examples/test-examples/ApplicationMenuDefault.example';
 import ApplicationHeaderNameDefault from './packages/terra-application-name/examples/test-examples/ApplicationHeaderNameDefault.example';
 import ApplicationHeaderNameTruncated from './packages/terra-application-name/examples/test-examples/ApplicationHeaderNameTruncated.example';
@@ -124,6 +138,69 @@ const componentConfig = {
       },
     ],
   },
+  'terra-application-layout': {
+    name: 'Application Layout',
+    path: '/application-layout',
+    pages: [
+      {
+        name: 'About',
+        path: '/about',
+        component: TerraApplicationLayoutAbout,
+      },
+      {
+        name: 'Example',
+        path: '/example',
+        component: TerraApplicationLayoutExample,
+      },
+      {
+        name: 'Utils',
+        path: '/utils',
+        component: TerraApplicationLayoutUtils,
+      },
+    ],
+    tests: [
+      {
+        name: 'Application Layout',
+        path: '/application-layout',
+        component: ApplicationLayout,
+      },
+      {
+        name: 'Application Layout Empty',
+        path: '/application-layout-empty',
+        component: ApplicationLayoutEmpty,
+      },
+      {
+        name: 'Application Layout Header',
+        path: '/application-layout-header',
+        component: ApplicationLayoutHeader,
+      },
+      {
+        name: 'Application Layout Header Small',
+        path: '/application-layout-header-small',
+        component: ApplicationLayoutHeaderSmall,
+      },
+      {
+        name: 'Application Layout Menu',
+        path: '/application-layout-menu',
+        component: ApplicationLayoutMenu,
+      },
+      {
+        name: 'Application Layout No Top Nav',
+        path: '/application-layout-no-top-nav',
+        component: ApplicationLayoutNoTopNav,
+      },
+      {
+        name: 'Routing Menu',
+        path: '/routing-menu',
+        component: RoutingMenu,
+      },
+      {
+        name: 'Routing Menu No Header',
+        path: '/routing-menu-no-header',
+        component: RoutingMenuNoHeader,
+      },
+    ],
+  },
   'terra-application-links': {
     name: 'Application Links',
     path: '/application-links',
@@ -136,9 +213,24 @@ const componentConfig = {
     ],
     tests: [
       {
+        name: 'Application Tabs Center',
+        path: '/application-tabs-center',
+        component: ApplicationTabsCenter,
+      },
+      {
         name: 'Application Tabs Default',
         path: '/application-tabs-default',
         component: ApplicationTabsDefault,
+      },
+      {
+        name: 'Application Tabs End',
+        path: '/application-tabs-end',
+        component: ApplicationTabsEnd,
+      },
+      {
+        name: 'Application Tabs Start',
+        path: '/application-tabs-start',
+        component: ApplicationTabsStart,
       },
     ],
   },

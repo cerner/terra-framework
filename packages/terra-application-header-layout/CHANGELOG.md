@@ -4,6 +4,14 @@ Changelog
 Unreleased
 ----------
 
+2.2.0 - (March 23, 2018)
+-----------------
+### Changed
+* Updated screenshots
+
+### Added
+* Css for the application header layout logo's min width
+
 2.1.0 - (March 6, 2018)
 ------------------
 ### Added

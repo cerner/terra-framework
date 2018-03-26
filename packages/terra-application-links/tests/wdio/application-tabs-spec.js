@@ -72,4 +72,31 @@ describe('ApplicationTabs', () => {
 
     Terra.should.matchScreenshot('#test-tabs', { selector: '#test-tabs', viewports });
   });
+
+  describe('Displays a application tabs start aligned', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/application-links/application-tabs-start');
+      browser.pause(50);
+    });
+
+    Terra.should.matchScreenshot('#test-tabs', { selector: '#test-tabs', viewports });
+  });
+
+  describe('Displays a application tabs center aligned', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/application-links/application-tabs-center');
+      browser.pause(50);
+    });
+
+    Terra.should.matchScreenshot('#test-tabs', { selector: '#test-tabs', viewports });
+  });
+
+  describe('Displays a application tabs end aligned', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/application-links/application-tabs-end');
+      browser.pause(50);
+    });
+
+    Terra.should.matchScreenshot('#test-tabs', { selector: '#test-tabs', viewports });
+  });
 });

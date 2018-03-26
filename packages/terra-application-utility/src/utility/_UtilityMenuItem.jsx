@@ -76,7 +76,6 @@ class UtilityMenuItem extends React.Component {
     this.wrapOnKeyDown = this.wrapOnKeyDown.bind(this);
     this.handleSelection = this.handleSelection.bind(this);
     this.setItemNode = this.setItemNode.bind(this);
-    this.state = { isSelected: props.isSelected && props.isSelectable };
   }
 
   componentDidUpdate() {
@@ -94,7 +93,7 @@ class UtilityMenuItem extends React.Component {
   wrapOnKeyDown(key, onKeyDown) {
     return ((event) => {
       if (event.nativeEvent.keyCode === Utils.KEY_CODES.ENTER || event.nativeEvent.keyCode === Utils.KEY_CODES.SPACE || event.nativeEvent.keyCode === Utils.KEY_CODES.RIGHT_ARROW) {
-        this.props.onChange(event, key);
+        this.handleSelection(event, key);
       }
       if (onKeyDown) {
         onKeyDown(event);
@@ -104,10 +103,6 @@ class UtilityMenuItem extends React.Component {
 
   handleSelection(event, key) {
     event.preventDefault();
-    if (this.props.isSelectable) {
-      const newIsSelected = !this.state.isSelected;
-      this.setState({ isSelected: newIsSelected });
-    }
     this.props.onChange(event, key);
   }
 
@@ -141,7 +136,7 @@ class UtilityMenuItem extends React.Component {
 
     const checkmarkClassNames = cx([
       'checkmark',
-      { selected: this.state.isSelected },
+      { selected: isSelected },
     ]);
 
     const chevronClassNames = cx([
@@ -170,6 +165,7 @@ class UtilityMenuItem extends React.Component {
         <Arrange
           fitStart={leftInset ? <IconCheckmark className={checkmarkClassNames} /> : null}
           fill={fill}
+          fillAttributes={{ className: cx('menu-item-fill') }}
           fitEnd={rightInset ? <IconChevronRight className={chevronClassNames} /> : null}
           align={'center'}
           className={arrangeClassNames}
