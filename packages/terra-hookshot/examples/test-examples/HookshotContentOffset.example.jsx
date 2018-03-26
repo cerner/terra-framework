@@ -12,7 +12,7 @@ const ContentOffset = () => (
 );
 
 const HookshotExample = () => (
-  <div>
+  <div id="ContentOffset-bounds">
     <ContentOffset />
     <p>Content Offset Applied. (Offset value is &quot;top-offset left-offset&quot;)</p>
     <ul>

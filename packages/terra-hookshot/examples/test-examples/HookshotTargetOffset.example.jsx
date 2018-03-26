@@ -12,7 +12,7 @@ const TargetOffset = () => (
 );
 
 const HookshotExample = () => (
-  <div>
+  <div id="TargetOffset-bounds">
     <TargetOffset />
     <p>Target Offset Applied. (Offset value is &quot;top-offset left-offset&quot;)</p>
     <ul>

@@ -8,9 +8,9 @@ const NoCloseBehavior = () => (
   />
 );
 
-const EcsBehavior = () => (
+const EscBehavior = () => (
   <HookshotTemplate
-    id="EcsBehavior"
+    id="EscBehavior"
     hookshotContentProps={{ closeOnEsc: true, closeOnOutsideClick: false, closeOnResize: false }}
   />
 );
@@ -41,7 +41,7 @@ const HookshotExample = () => (
     <p>All Close Behavior</p>
     <AllBehavior />
     <p>Close on ESC Behavior</p>
-    <EcsBehavior />
+    <EscBehavior />
     <p>Close on Outside Click Behavior</p>
     <OutsideClickBehavior />
     <p>Close on Resize Behavior</p>

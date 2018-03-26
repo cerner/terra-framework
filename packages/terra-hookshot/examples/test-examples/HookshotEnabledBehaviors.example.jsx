@@ -18,7 +18,7 @@ const NotEnabled = () => (
 );
 
 const HookshotExample = () => (
-  <div>
+  <div id="EnabledBehaviors-bounds">
     <p>Content Positioning is enabled. Content is visible.</p>
     <Enabled />
     <p>Content Positioning is not enabled. Content is not visible.</p>
