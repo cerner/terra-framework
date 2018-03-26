@@ -12,7 +12,7 @@ const ContentOffset = () => (
 );
 
 const HookshotExample = () => (
-  <div id="ContentOffset-bounds">
+  <div>
     <ContentOffset />
     <p>Content Offset Applied. (Offset value is &quot;top-offset left-offset&quot;)</p>
     <ul>
@@ -20,6 +20,8 @@ const HookshotExample = () => (
       <li>Target Attachement: bottom start</li>
       <li>Content Offset : 20px -10px</li>
     </ul>
+    <button id="ltr-ContentOffset" onClick={() => { document.getElementsByTagName('html')[0].dir = 'ltr'; }}>LTR</button>
+    <button id="rtl-ContentOffset" onClick={() => { document.getElementsByTagName('html')[0].dir = 'rtl'; }}>RTL</button>
   </div>
 );
 

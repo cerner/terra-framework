@@ -1,11 +1,11 @@
-/* global browser, Terra, before */
+/* global browser, Terra, before, after */
 
 describe('Displays default hookshot', () => {
   before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
   beforeEach(() => {
     browser.url('/#/raw/tests/hookshot/default-hookshot');
     browser.click('#hookshot-standard-button');
-    browser.waitForVisible('#attachment-content');
+    browser.waitForVisible('#testDefaultContent');
   });
 
   Terra.should.matchScreenshot({ selector: '#default-bounds' });
@@ -24,7 +24,7 @@ describe('Displays in primary position when there is enough room with no attachm
   Terra.should.matchScreenshot({ selector: '#attachment-behavior-none-bounds' });
 });
 
-describe('Displays in primary position when there is enough room with no attachment behavior', () => {
+describe('Displays with position pushed when there is not enough room in primary position with no attachment behavior', () => {
   before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
   beforeEach(() => {
     browser.url('/#/raw/tests/hookshot/hookshot-attachment-behavior-none');
@@ -49,7 +49,7 @@ describe('Displays in primary position when there is enough room with flip attac
   Terra.should.matchScreenshot({ selector: '#attachment-behavior-flip-bounds' });
 });
 
-describe('Displays in primary position when there is enough room with flip attachment behavior', () => {
+describe('Displays with position flipped when there is not enough room in primary position with flip attachment behavior', () => {
   before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
   beforeEach(() => {
     browser.url('/#/raw/tests/hookshot/hookshot-attachment-behavior-flip');
@@ -140,19 +140,17 @@ describe('Displays with given margin between the attachment points - Middle Star
   beforeEach(() => {
     browser.url('/#/raw/tests/hookshot/hookshot-attachment-margin');
     browser.click('#attach-MS');
-    browser.click('#trigger-attachment-margin');
     browser.waitForVisible('#attachment-margin-content');
   });
 
   Terra.should.matchScreenshot({ selector: '#attachment-margin-bounds' });
 });
 
-describe('Displays without margin between the attachment points - Middle Center Content Attachment', () => {
+describe('Displays without margin between the attachment points - Middle End Content Attachment', () => {
   before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
   beforeEach(() => {
     browser.url('/#/raw/tests/hookshot/hookshot-attachment-margin');
     browser.click('#attach-ME');
-    browser.click('#trigger-attachment-margin');
     browser.waitForVisible('#attachment-margin-content');
   });
 
@@ -164,7 +162,6 @@ describe('Displays without margin between the attachment points - Middle Center 
   beforeEach(() => {
     browser.url('/#/raw/tests/hookshot/hookshot-attachment-margin');
     browser.click('#attach-MC');
-    browser.click('#trigger-attachment-margin');
     browser.waitForVisible('#attachment-margin-content');
   });
 
@@ -176,7 +173,6 @@ describe('Displays with given margin between the attachment points - Bottom Star
   beforeEach(() => {
     browser.url('/#/raw/tests/hookshot/hookshot-attachment-margin');
     browser.click('#attach-BS');
-    browser.click('#trigger-attachment-margin');
     browser.waitForVisible('#attachment-margin-content');
   });
 
@@ -188,7 +184,6 @@ describe('Displays with given margin between the attachment points - Bottom End 
   beforeEach(() => {
     browser.url('/#/raw/tests/hookshot/hookshot-attachment-margin');
     browser.click('#attach-BE');
-    browser.click('#trigger-attachment-margin');
     browser.waitForVisible('#attachment-margin-content');
   });
 
@@ -200,7 +195,6 @@ describe('Displays with given margin between the attachment points - Bottom Cent
   beforeEach(() => {
     browser.url('/#/raw/tests/hookshot/hookshot-attachment-margin');
     browser.click('#attach-BC');
-    browser.click('#trigger-attachment-margin');
     browser.waitForVisible('#attachment-margin-content');
   });
 
@@ -212,7 +206,6 @@ describe('Displays with given margin between the attachment points - Top Start C
   beforeEach(() => {
     browser.url('/#/raw/tests/hookshot/hookshot-attachment-margin');
     browser.click('#attach-TS');
-    browser.click('#trigger-attachment-margin');
     browser.waitForVisible('#attachment-margin-content');
   });
 
@@ -224,7 +217,6 @@ describe('Displays with given margin between the attachment points - Top End Con
   beforeEach(() => {
     browser.url('/#/raw/tests/hookshot/hookshot-attachment-margin');
     browser.click('#attach-TE');
-    browser.click('#trigger-attachment-margin');
     browser.waitForVisible('#attachment-margin-content');
   });
 
@@ -236,7 +228,6 @@ describe('Displays with given margin between the attachment points - Top Center 
   beforeEach(() => {
     browser.url('/#/raw/tests/hookshot/hookshot-attachment-margin');
     browser.click('#attach-TC');
-    browser.click('#trigger-attachment-margin');
     browser.waitForVisible('#attachment-margin-content');
   });
 
@@ -304,16 +295,18 @@ describe('Display the content offset correctly for dir=ltr', () => {
 });
 
 describe('Displays the content offset correctly for dir=rtl', () => {
-  before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
-  beforeEach(() => {
+  before(() => {
+    browser.setViewportSize(Terra.viewports('medium')[0]);
     browser.url('/#/raw/tests/hookshot/hookshot-content-offset');
-    browser.execute("document.getElementsByTagName('html')[0].dir='rtl';");
-    browser.pause(500);
+    browser.click('#rtl-ContentOffset');
+  });
+  beforeEach(() => {
     browser.click('#trigger-ContentOffset');
+    browser.pause(50);
     browser.waitForVisible('#ContentOffset-content');
   });
-  afterEach(() => {
-    browser.execute("document.getElementsByTagName('html')[0].dir='ltr';");
+  after(() => {
+    browser.click('#ltr-ContentOffset');
   });
 
   Terra.should.matchScreenshot({ selector: '#ContentOffset-bounds' });
@@ -331,29 +324,30 @@ describe('Display the target offset correctly for dir=ltr', () => {
 });
 
 describe('Displays the target offset correctly for dir=rtl', () => {
-  before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
-  beforeEach(() => {
+  before(() => {
+    browser.setViewportSize(Terra.viewports('medium')[0]);
     browser.url('/#/raw/tests/hookshot/hookshot-target-offset');
-    browser.execute("document.getElementsByTagName('html')[0].dir='rtl';");
-    browser.pause(500);
+    browser.click('#rtl-TargetOffset');
+  });
+  beforeEach(() => {
     browser.click('#trigger-TargetOffset');
+    browser.pause(50);
     browser.waitForVisible('#TargetOffset-content');
   });
-  afterEach(() => {
-    browser.execute("document.getElementsByTagName('html')[0].dir='ltr';");
+  after(() => {
+    browser.click('#ltr-TargetOffset');
   });
 
   Terra.should.matchScreenshot({ selector: '#TargetOffset-bounds' });
 });
 
 // Verify Enabled Behaviors
-describe('Displays content pushed up by bounding container', () => {
+describe('Content displays when isEnabled={true} vs isEnabled={false} ', () => {
   before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
   beforeEach(() => {
     browser.url('/#/raw/tests/hookshot/hookshot-enabled-behaviors');
-    browser.click('#push-up');
-    browser.click('#trigger-bounding-container');
-    browser.waitForVisible('#bounding-container-content');
+    browser.waitForVisible('#Enabled-bounds');
+    browser.waitForVisible('#NotEnabled-bounds');
   });
 
   Terra.should.matchScreenshot({ selector: '#EnabledBehaviors-bounds' });
@@ -367,7 +361,7 @@ describe('Closes the hookshot content on ESC when all close behavior is present'
     browser.url('/#/raw/tests/hookshot/hookshot-close-behaviors');
     browser.click('#trigger-AllBehavior');
     browser.waitForVisible('#AllBehavior-content');
-    browser.keys(browser.Keys.ESCAPE);
+    browser.keys('ESCAPE');
   });
 
   Terra.should.matchScreenshot({ selector: '#AllBehavior-bounds' });
@@ -380,8 +374,8 @@ describe('Closes the hookshot content on outside click when all close behavior i
     browser.click('#trigger-AllBehavior');
     browser.waitForVisible('#AllBehavior-content');
     browser
-      .moveToElement('#root', 10, 10)
-      .mouseButtonDown(0);
+      .moveToObject('#root', 10, 10)
+      .leftClick();
   });
 
   Terra.should.matchScreenshot({ selector: '#AllBehavior-bounds' });
@@ -407,7 +401,7 @@ describe('Closes the hookshot content on ESC when closeOnEsc', () => {
     browser.url('/#/raw/tests/hookshot/hookshot-close-behaviors');
     browser.click('#trigger-EscBehavior');
     browser.waitForVisible('#EscBehavior-content');
-    browser.keys(browser.Keys.ESCAPE);
+    browser.keys('ESCAPE');
   });
 
   Terra.should.matchScreenshot({ selector: '#EscBehavior-bounds' });
@@ -421,8 +415,8 @@ describe('Closes the hookshot content on outside click when closeOnOutsideClick'
     browser.click('#trigger-OutsideClickBehavior');
     browser.waitForVisible('#OutsideClickBehavior-content');
     browser
-      .moveToElement('#root', 10, 10)
-      .mouseButtonDown(0);
+      .moveToObject('#root', 10, 10)
+      .leftClick();
   });
 
   Terra.should.matchScreenshot({ selector: '#OutsideClickBehavior-bounds' });
@@ -443,38 +437,41 @@ describe('Closes the hookshot content on outside click when closeOnOutsideClick'
 });
 
 // Verify Close Behaviors - NONE
-describe('Closes the hookshot content on ESC when all close behavior is present', () => {
+describe('Closes the hookshot content on ESC when no close behavior is present', () => {
   before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
   beforeEach(() => {
     browser.url('/#/raw/tests/hookshot/hookshot-close-behaviors');
     browser.click('#trigger-NoCloseBehavior');
     browser.waitForVisible('#NoCloseBehavior-content');
-    browser.keys(browser.Keys.ESCAPE);
+    browser.click('#scroll-bounds');
+    browser.keys('ESCAPE');
   });
 
   Terra.should.matchScreenshot({ selector: '#NoCloseBehavior-bounds' });
 });
 
-describe('Closes the hookshot content on outside click when all close behavior is present', () => {
+describe('Closes the hookshot content on outside click when no close behavior is present', () => {
   before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
   beforeEach(() => {
     browser.url('/#/raw/tests/hookshot/hookshot-close-behaviors');
     browser.click('#trigger-NoCloseBehavior');
     browser.waitForVisible('#NoCloseBehavior-content');
+    browser.click('#scroll-bounds');
     browser
-      .moveToElement('#root', 10, 10)
-      .mouseButtonDown(0);
+      .moveToObject('#root', 10, 10)
+      .leftClick();
   });
 
   Terra.should.matchScreenshot({ selector: '#NoCloseBehavior-bounds' });
 });
 
-describe('Closes the hookshot content on resize when all close behavior is present', () => {
+describe('Closes the hookshot content on resize when no close behavior is present', () => {
   before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
   beforeEach(() => {
     browser.url('/#/raw/tests/hookshot/hookshot-close-behaviors');
     browser.click('#trigger-NoCloseBehavior');
     browser.waitForVisible('#NoCloseBehavior-content');
+    browser.click('#scroll-bounds');
     browser.setViewportSize(Terra.viewports('small')[0]);
     browser.pause(100);
   });
