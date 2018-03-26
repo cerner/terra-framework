@@ -1,914 +1,892 @@
-/* eslint-disable no-unused-expressions */
-// eslint-disable-next-line import/no-extraneous-dependencies
-const { resizeTo } = require('terra-toolkit/lib/nightwatch/responsive-helpers');
+/* global browser, Terra, before */
 
-module.exports = resizeTo(['small'], {
-  // Verifty contentAttachment = "top start"
-  '[1] Display correctly for contentAttachment="top start" & targetAttachment="top start"': (browser) => {
-    browser.url(`${browser.launchUrl}/#/raw/tests/hookshot/hookshot-content-attachment-ts`);
+describe('[1] Display correctly for contentAttachment="top start" & targetAttachment="top start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-ts');
     browser.click('#attach-TS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 1
-    // y value calculation: value =  55 (margin) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 221);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[2] Display correctly for contentAttachment="top start" & targetAttachment="top center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[2] Display correctly for contentAttachment="top start" & targetAttachment="top center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-ts');
     browser.click('#attach-TC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 271);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[3] Display correctly for contentAttachment="top start" & targetAttachment="top end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[3] Display correctly for contentAttachment="top start" & targetAttachment="top end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-ts');
     browser.click('#attach-TE');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 321);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[4] Display correctly for contentAttachment="top start" & targetAttachment="middle start"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[4] Display correctly for contentAttachment="top start" & targetAttachment="middle start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-ts');
     browser.click('#attach-MS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 1
-    // y value calculation: value =  55 (margin) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 221);
-      browser.assert.equal(coordinates.value.y, 74);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[5] Display correctly for contentAttachment="top start" & targetAttachment="middle center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[5] Display correctly for contentAttachment="top start" & targetAttachment="middle center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-ts');
     browser.click('#attach-MC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 271);
-      browser.assert.equal(coordinates.value.y, 74);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[6] Display correctly for contentAttachment="top start" & targetAttachment="middle end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[6] Display correctly for contentAttachment="top start" & targetAttachment="middle end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-ts');
     browser.click('#attach-ME');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 100 (target width) + 1
-    // y value calculation: value =  55 (margin) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 321);
-      browser.assert.equal(coordinates.value.y, 74);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[7] Display correctly for contentAttachment="top start" & targetAttachment="bottom start"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[7] Display correctly for contentAttachment="top start" & targetAttachment="bottom start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-ts');
     browser.click('#attach-BS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 1
-    // y value calculation: value =  55 (margin) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 221);
-      browser.assert.equal(coordinates.value.y, 92);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[8] Display correctly for contentAttachment="top start" & targetAttachment="bottom center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[8] Display correctly for contentAttachment="top start" & targetAttachment="bottom center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-ts');
     browser.click('#attach-BC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 271);
-      browser.assert.equal(coordinates.value.y, 92);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[9] Display correctly for contentAttachment="top start" & targetAttachment="bottom end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[9] Display correctly for contentAttachment="top start" & targetAttachment="bottom end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-ts');
     browser.click('#attach-BE');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 100 (target width) + 1
-    // y value calculation: value =  55 (margin) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 321);
-      browser.assert.equal(coordinates.value.y, 92);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-    // Verifty contentAttachment = "top center"
-  '[10] Display correctly for contentAttachment="top center" & targetAttachment="top start"': (browser) => {
-    browser.url(`${browser.launchUrl}/#/raw/tests/hookshot/hookshot-content-attachment-tc`);
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[10] Display correctly for contentAttachment="top center" & targetAttachment="top start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-tc');
     browser.click('#attach-TS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 1
-    // y value calculation: value =  55 (margin) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 121);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[11] Display correctly for contentAttachment="top center" & targetAttachment="top center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[11] Display correctly for contentAttachment="top center" & targetAttachment="top center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-tc');
     browser.click('#attach-TC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 171);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[12] Display correctly for contentAttachment="top center" & targetAttachment="top end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[12] Display correctly for contentAttachment="top center" & targetAttachment="top end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-tc');
     browser.click('#attach-TE');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 100 (targt width) + 1
-    // y value calculation: value =  55 (margin) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 221);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[13] Display correctly for contentAttachment="top center" & targetAttachment="middle start"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[13] Display correctly for contentAttachment="top center" & targetAttachment="middle start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-tc');
     browser.click('#attach-MS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 1
-    // y value calculation: value =  55 (margin) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 121);
-      browser.assert.equal(coordinates.value.y, 74);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[14] Display correctly for contentAttachment="top center" & targetAttachment="middle center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[14] Display correctly for contentAttachment="top center" & targetAttachment="middle center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-tc');
     browser.click('#attach-MC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 171);
-      browser.assert.equal(coordinates.value.y, 74);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[15] Display correctly for contentAttachment="top center" & targetAttachment="middle end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[15] Display correctly for contentAttachment="top center" & targetAttachment="middle end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-tc');
     browser.click('#attach-ME');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 100 (targt width) + 1
-    // y value calculation: value =  55 (margin) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 221);
-      browser.assert.equal(coordinates.value.y, 74);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[16] Display correctly for contentAttachment="top center" & targetAttachment="bottom start"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[16] Display correctly for contentAttachment="top center" & targetAttachment="bottom start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-tc');
     browser.click('#attach-BS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 1
-    // y value calculation: value =  55 (margin) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 121);
-      browser.assert.equal(coordinates.value.y, 92);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[17] Display correctly for contentAttachment="top center" & targetAttachment="bottom center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[17] Display correctly for contentAttachment="top center" & targetAttachment="bottom center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-tc');
     browser.click('#attach-BC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 171);
-      browser.assert.equal(coordinates.value.y, 92);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[18] Display correctly for contentAttachment="top center" & targetAttachment="bottom end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[18] Display correctly for contentAttachment="top center" & targetAttachment="bottom end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-tc');
     browser.click('#attach-BE');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 100 (targt width) + 1
-    // y value calculation: value =  55 (margin) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 221);
-      browser.assert.equal(coordinates.value.y, 92);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  // Verifty contentAttachment = "top end"
-  '[19] Display correctly for contentAttachment="top end" & targetAttachment="top start"': (browser) => {
-    browser.url(`${browser.launchUrl}/#/raw/tests/hookshot/hookshot-content-attachment-te`);
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[19] Display correctly for contentAttachment="top end" & targetAttachment="top start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-te');
     browser.click('#attach-TS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 1
-    // y value calculation: value =  55 (margin) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 21);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[20] Display correctly for contentAttachment="top end" & targetAttachment="top center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[20] Display correctly for contentAttachment="top end" & targetAttachment="top center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-te');
     browser.click('#attach-TC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 71);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[21] Display correctly for contentAttachment="top end" & targetAttachment="top end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[21] Display correctly for contentAttachment="top end" & targetAttachment="top end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-te');
     browser.click('#attach-TE');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 100 (target width) + 1
-    // y value calculation: value =  55 (margin) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 121);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[22] Display correctly for contentAttachment="top end" & targetAttachment="middle start"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[22] Display correctly for contentAttachment="top end" & targetAttachment="middle start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-te');
     browser.click('#attach-MS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 1
-    // y value calculation: value =  55 (margin) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 21);
-      browser.assert.equal(coordinates.value.y, 74);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[23] Display correctly for contentAttachment="top end" & targetAttachment="middle center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[23] Display correctly for contentAttachment="top end" & targetAttachment="middle center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-te');
     browser.click('#attach-MC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 71);
-      browser.assert.equal(coordinates.value.y, 74);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[24] Display correctly for contentAttachment="top end" & targetAttachment="middle end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[24] Display correctly for contentAttachment="top end" & targetAttachment="middle end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-te');
     browser.click('#attach-ME');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 100 (target width) + 1
-    // y value calculation: value =  55 (margin) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 121);
-      browser.assert.equal(coordinates.value.y, 74);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[25] Display correctly for contentAttachment="top end" & targetAttachment="bottom start"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[25] Display correctly for contentAttachment="top end" & targetAttachment="bottom start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-te');
     browser.click('#attach-BS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 1
-    // y value calculation: value =  55 (margin) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 21);
-      browser.assert.equal(coordinates.value.y, 92);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[26] Display correctly for contentAttachment="top end" & targetAttachment="bottom center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[26] Display correctly for contentAttachment="top end" & targetAttachment="bottom center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-te');
     browser.click('#attach-BC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 71);
-      browser.assert.equal(coordinates.value.y, 92);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[27] Display correctly for contentAttachment="top end" & targetAttachment="bottom end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[27] Display correctly for contentAttachment="top end" & targetAttachment="bottom end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-te');
     browser.click('#attach-BE');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 100 (target width) + 1
-    // y value calculation: value =  55 (margin) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 121);
-      browser.assert.equal(coordinates.value.y, 92);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  // Verifty contentAttachment = "middle start"
-  '[28] Display correctly for contentAttachment="middle start" & targetAttachment="top start"': (browser) => {
-    browser.url(`${browser.launchUrl}/#/raw/tests/hookshot/hookshot-content-attachment-ms`);
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[28] Display correctly for contentAttachment="middle start" & targetAttachment="top start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-ms');
     browser.click('#attach-TS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 221);
-      browser.assert.equal(coordinates.value.y, 38);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[29] Display correctly for contentAttachment="middle start" & targetAttachment="top center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[29] Display correctly for contentAttachment="middle start" & targetAttachment="top center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-ms');
     browser.click('#attach-TC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 271);
-      browser.assert.equal(coordinates.value.y, 38);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[30] Display correctly for contentAttachment="middle start" & targetAttachment="top end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[30] Display correctly for contentAttachment="middle start" & targetAttachment="top end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-ms');
     browser.click('#attach-TE');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 100 (target width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 321);
-      browser.assert.equal(coordinates.value.y, 38);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[31] Display correctly for contentAttachment="middle start" & targetAttachment="middle start"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[31] Display correctly for contentAttachment="middle start" & targetAttachment="middle start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-ms');
     browser.click('#attach-MS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 221);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[32] Display correctly for contentAttachment="middle start" & targetAttachment="middle center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[32] Display correctly for contentAttachment="middle start" & targetAttachment="middle center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-ms');
     browser.click('#attach-MC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 271);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[33] Display correctly for contentAttachment="middle start" & targetAttachment="middle end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[33] Display correctly for contentAttachment="middle start" & targetAttachment="middle end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-ms');
     browser.click('#attach-ME');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 100 (target width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 321);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[34] Display correctly for contentAttachment="middle start" & targetAttachment="bottom start"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[34] Display correctly for contentAttachment="middle start" & targetAttachment="bottom start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-ms');
     browser.click('#attach-BS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 221);
-      browser.assert.equal(coordinates.value.y, 74);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[35] Display correctly for contentAttachment="middle start" & targetAttachment="bottom center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[35] Display correctly for contentAttachment="middle start" & targetAttachment="bottom center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-ms');
     browser.click('#attach-BC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 271);
-      browser.assert.equal(coordinates.value.y, 74);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[36] Display correctly for contentAttachment="middle start" & targetAttachment="bottom end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[36] Display correctly for contentAttachment="middle start" & targetAttachment="bottom end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-ms');
     browser.click('#attach-BE');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 100 (target width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 321);
-      browser.assert.equal(coordinates.value.y, 74);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  // Verifty contentAttachment = "middle center"
-  '[37] Display correctly for contentAttachment="middle center" & targetAttachment="top start"': (browser) => {
-    browser.url(`${browser.launchUrl}/#/raw/tests/hookshot/hookshot-content-attachment-mc`);
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[37] Display correctly for contentAttachment="middle center" & targetAttachment="top start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-mc');
     browser.click('#attach-TS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 121);
-      browser.assert.equal(coordinates.value.y, 38);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[38] Display correctly for contentAttachment="middle center" & targetAttachment="top center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[38] Display correctly for contentAttachment="middle center" & targetAttachment="top center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-mc');
     browser.click('#attach-TC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 171);
-      browser.assert.equal(coordinates.value.y, 38);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[39] Display correctly for contentAttachment="middle center" & targetAttachment="top end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[39] Display correctly for contentAttachment="middle center" & targetAttachment="top end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-mc');
     browser.click('#attach-TE');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 100 (targt width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 221);
-      browser.assert.equal(coordinates.value.y, 38);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[40] Display correctly for contentAttachment="middle center" & targetAttachment="middle start"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[40] Display correctly for contentAttachment="middle center" & targetAttachment="middle start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-mc');
     browser.click('#attach-MS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 121);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[41] Display correctly for contentAttachment="middle center" & targetAttachment="middle center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[41] Display correctly for contentAttachment="middle center" & targetAttachment="middle center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-mc');
     browser.click('#attach-MC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 171);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[42] Display correctly for contentAttachment="middle center" & targetAttachment="middle end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[42] Display correctly for contentAttachment="middle center" & targetAttachment="middle end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-mc');
     browser.click('#attach-ME');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 100 (targt width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 221);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[43] Display correctly for contentAttachment="middle center" & targetAttachment="bottom start"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[43] Display correctly for contentAttachment="middle center" & targetAttachment="bottom start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-mc');
     browser.click('#attach-BS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 121);
-      browser.assert.equal(coordinates.value.y, 74);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[44] Display correctly for contentAttachment="middle center" & targetAttachment="bottom center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[44] Display correctly for contentAttachment="middle center" & targetAttachment="bottom center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-mc');
     browser.click('#attach-BC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 171);
-      browser.assert.equal(coordinates.value.y, 74);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[45] Display correctly for contentAttachment="middle center" & targetAttachment="bottom end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[45] Display correctly for contentAttachment="middle center" & targetAttachment="bottom end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-mc');
     browser.click('#attach-BE');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 100 (targt width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 221);
-      browser.assert.equal(coordinates.value.y, 74);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  // Verifty contentAttachment = "middle end"
-  '[46] Display correctly for contentAttachment="middle end" & targetAttachment="top start"': (browser) => {
-    browser.url(`${browser.launchUrl}/#/raw/tests/hookshot/hookshot-content-attachment-me`);
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[46] Display correctly for contentAttachment="middle end" & targetAttachment="top start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-me');
     browser.click('#attach-TS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 21);
-      browser.assert.equal(coordinates.value.y, 38);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[47] Display correctly for contentAttachment="middle end" & targetAttachment="top center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[47] Display correctly for contentAttachment="middle end" & targetAttachment="top center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-me');
     browser.click('#attach-TC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 71);
-      browser.assert.equal(coordinates.value.y, 38);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[48] Display correctly for contentAttachment="middle end" & targetAttachment="top end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[48] Display correctly for contentAttachment="middle end" & targetAttachment="top end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-me');
     browser.click('#attach-TE');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 100 (target width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 121);
-      browser.assert.equal(coordinates.value.y, 38);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[49] Display correctly for contentAttachment="middle end" & targetAttachment="middle start"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[49] Display correctly for contentAttachment="middle end" & targetAttachment="middle start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-me');
     browser.click('#attach-MS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 21);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[50] Display correctly for contentAttachment="middle end" & targetAttachment="middle center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[50] Display correctly for contentAttachment="middle end" & targetAttachment="middle center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-me');
     browser.click('#attach-MC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 71);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[51] Display correctly for contentAttachment="middle end" & targetAttachment="middle end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[51] Display correctly for contentAttachment="middle end" & targetAttachment="middle end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-me');
     browser.click('#attach-ME');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 100 (target width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 121);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[52] Display correctly for contentAttachment="middle end" & targetAttachment="bottom start"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[52] Display correctly for contentAttachment="middle end" & targetAttachment="bottom start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-me');
     browser.click('#attach-BS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 21);
-      browser.assert.equal(coordinates.value.y, 74);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[53] Display correctly for contentAttachment="middle end" & targetAttachment="bottom center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[53] Display correctly for contentAttachment="middle end" & targetAttachment="bottom center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-me');
     browser.click('#attach-BC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 71);
-      browser.assert.equal(coordinates.value.y, 74);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[54] Display correctly for contentAttachment="middle end" & targetAttachment="bottom end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[54] Display correctly for contentAttachment="middle end" & targetAttachment="bottom end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-me');
     browser.click('#attach-BE');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 100 (target width) + 1
-    // y value calculation: value =  55 (margin) - 36/2 (half content height) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 121);
-      browser.assert.equal(coordinates.value.y, 74);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  // Verifty contentAttachment = "bottom start"
-  '[55] Display correctly for contentAttachment="bottom start" & targetAttachment="top start"': (browser) => {
-    browser.url(`${browser.launchUrl}/#/raw/tests/hookshot/hookshot-content-attachment-bs`);
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[55] Display correctly for contentAttachment="bottom start" & targetAttachment="top start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-bs');
     browser.click('#attach-TS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 221);
-      browser.assert.equal(coordinates.value.y, 20);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[56] Display correctly for contentAttachment="bottom start" & targetAttachment="top center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[56] Display correctly for contentAttachment="bottom start" & targetAttachment="top center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-bs');
     browser.click('#attach-TC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 271);
-      browser.assert.equal(coordinates.value.y, 20);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[57] Display correctly for contentAttachment="bottom start" & targetAttachment="top end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[57] Display correctly for contentAttachment="bottom start" & targetAttachment="top end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-bs');
     browser.click('#attach-TE');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 321);
-      browser.assert.equal(coordinates.value.y, 20);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[58] Display correctly for contentAttachment="bottom start" & targetAttachment="middle start"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[58] Display correctly for contentAttachment="bottom start" & targetAttachment="middle start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-bs');
     browser.click('#attach-MS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 221);
-      browser.assert.equal(coordinates.value.y, 38);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[59] Display correctly for contentAttachment="bottom start" & targetAttachment="middle center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[59] Display correctly for contentAttachment="bottom start" & targetAttachment="middle center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-bs');
     browser.click('#attach-MC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 271);
-      browser.assert.equal(coordinates.value.y, 38);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[60] Display correctly for contentAttachment="bottom start" & targetAttachment="middle end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[60] Display correctly for contentAttachment="bottom start" & targetAttachment="middle end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-bs');
     browser.click('#attach-ME');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 321);
-      browser.assert.equal(coordinates.value.y, 38);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[61] Display correctly for contentAttachment="bottom start" & targetAttachment="bottom start"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[61] Display correctly for contentAttachment="bottom start" & targetAttachment="bottom start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-bs');
     browser.click('#attach-BS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 221);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[62] Display correctly for contentAttachment="bottom start" & targetAttachment="bottom center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[62] Display correctly for contentAttachment="bottom start" & targetAttachment="bottom center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-bs');
     browser.click('#attach-BC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 271);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[63] Display correctly for contentAttachment="bottom start" & targetAttachment="bottom end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[63] Display correctly for contentAttachment="bottom start" & targetAttachment="bottom end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-bs');
     browser.click('#attach-BE');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 321);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  // Verifty contentAttachment = "bottom center"
-  '[64] Display correctly for contentAttachment="bottom center" & targetAttachment="top start"': (browser) => {
-    browser.url(`${browser.launchUrl}/#/raw/tests/hookshot/hookshot-content-attachment-bc`);
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[64] Display correctly for contentAttachment="bottom center" & targetAttachment="top start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-bc');
     browser.click('#attach-TS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 121);
-      browser.assert.equal(coordinates.value.y, 20);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[65] Display correctly for contentAttachment="bottom center" & targetAttachment="top center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[65] Display correctly for contentAttachment="bottom center" & targetAttachment="top center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-bc');
     browser.click('#attach-TC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 171);
-      browser.assert.equal(coordinates.value.y, 20);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[66] Display correctly for contentAttachment="bottom center" & targetAttachment="top end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[66] Display correctly for contentAttachment="bottom center" & targetAttachment="top end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-bc');
     browser.click('#attach-TE');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 100 (targt width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 221);
-      browser.assert.equal(coordinates.value.y, 20);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[67] Display correctly for contentAttachment="bottom center" & targetAttachment="middle start"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[67] Display correctly for contentAttachment="bottom center" & targetAttachment="middle start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-bc');
     browser.click('#attach-MS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 121);
-      browser.assert.equal(coordinates.value.y, 38);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[68] Display correctly for contentAttachment="bottom center" & targetAttachment="middle center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[68] Display correctly for contentAttachment="bottom center" & targetAttachment="middle center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-bc');
     browser.click('#attach-MC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 171);
-      browser.assert.equal(coordinates.value.y, 38);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[69] Display correctly for contentAttachment="bottom center" & targetAttachment="middle end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[69] Display correctly for contentAttachment="bottom center" & targetAttachment="middle end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-bc');
     browser.click('#attach-ME');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 100 (targt width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 221);
-      browser.assert.equal(coordinates.value.y, 38);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[70] Display correctly for contentAttachment="bottom center" & targetAttachment="bottom start"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[70] Display correctly for contentAttachment="bottom center" & targetAttachment="bottom start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-bc');
     browser.click('#attach-BS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 121);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[71] Display correctly for contentAttachment="bottom center" & targetAttachment="bottom center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[71] Display correctly for contentAttachment="bottom center" & targetAttachment="bottom center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-bc');
     browser.click('#attach-BC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 171);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[72] Display correctly for contentAttachment="bottom center" & targetAttachment="bottom end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[72] Display correctly for contentAttachment="bottom center" & targetAttachment="bottom end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-bc');
     browser.click('#attach-BE');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200/2 (half content width) + 100 (targt width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 221);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  // Verifty contentAttachment = "bottom end"
-  '[73] Display correctly for contentAttachment="bottom end" & targetAttachment="top start"': (browser) => {
-    browser.url(`${browser.launchUrl}/#/raw/tests/hookshot/hookshot-content-attachment-be`);
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[73] Display correctly for contentAttachment="bottom end" & targetAttachment="top start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-be');
     browser.click('#attach-TS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 21);
-      browser.assert.equal(coordinates.value.y, 20);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[74] Display correctly for contentAttachment="bottom end" & targetAttachment="top center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[74] Display correctly for contentAttachment="bottom end" & targetAttachment="top center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-be');
     browser.click('#attach-TC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 71);
-      browser.assert.equal(coordinates.value.y, 20);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[75] Display correctly for contentAttachment="bottom end" & targetAttachment="top end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[75] Display correctly for contentAttachment="bottom end" & targetAttachment="top end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-be');
     browser.click('#attach-TE');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 100 (target width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 121);
-      browser.assert.equal(coordinates.value.y, 20);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[76] Display correctly for contentAttachment="bottom end" & targetAttachment="middle start"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[76] Display correctly for contentAttachment="bottom end" & targetAttachment="middle start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-be');
     browser.click('#attach-MS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 21);
-      browser.assert.equal(coordinates.value.y, 38);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[77] Display correctly for contentAttachment="bottom end" & targetAttachment="middle center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[77] Display correctly for contentAttachment="bottom end" & targetAttachment="middle center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-be');
     browser.click('#attach-MC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 71);
-      browser.assert.equal(coordinates.value.y, 38);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[78] Display correctly for contentAttachment="bottom end" & targetAttachment="middle right"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[78] Display correctly for contentAttachment="bottom end" & targetAttachment="middle end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-be');
     browser.click('#attach-ME');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 100 (target width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 36/2 (half target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 121);
-      browser.assert.equal(coordinates.value.y, 38);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[79] Display correctly for contentAttachment="bottom end" & targetAttachment="bottom start"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[79] Display correctly for contentAttachment="bottom end" & targetAttachment="bottom start"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-be');
     browser.click('#attach-BS');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 21);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[80] Display correctly for contentAttachment="bottom end" & targetAttachment="bottom center"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[80] Display correctly for contentAttachment="bottom end" & targetAttachment="bottom center"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-be');
     browser.click('#attach-BC');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 100/2 (half target width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 71);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
 
-  '[81] Display correctly for contentAttachment="bottom end" & targetAttachment="bottom end"': (browser) => {
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
+});
+
+describe('[81] Display correctly for contentAttachment="bottom end" & targetAttachment="bottom end"', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-be');
     browser.click('#attach-BE');
-    browser.expect.element('#attachment-content').to.be.present;
-    // x value calculation: value = 220 (margin) - 200 (content width) + 100 (target width) + 1
-    // y value calculation: value =  55 (margin) - 36 (content height) + 36 (target height) + 1
-    browser.getLocation('#attachment-content', (coordinates) => {
-      browser.assert.equal(coordinates.value.x, 121);
-      browser.assert.equal(coordinates.value.y, 56);
-    });
-  },
+    browser.waitForVisible('#attachment-content');
+  });
+
+  Terra.should.matchScreenshot({ selector: '#attachment-bounds' });
 });
