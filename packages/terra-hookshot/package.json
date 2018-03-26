@@ -38,6 +38,7 @@
     "react-portal": "^4.1.2",
     "resize-observer-polyfill": "^1.4.1",
     "terra-base": "^3.2.0",
+    "terra-button": "^2.3.0",
     "terra-form": "^2.2.0"
   },
   "scripts": {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'terra-button';
-import Hookshot from '../../lib/Hookshot';
 import NumberField from 'terra-form/lib/NumberField';
+import Hookshot from '../../lib/Hookshot';
 
 const ATTACHMENT_POSITIONS = [
   'top start',
