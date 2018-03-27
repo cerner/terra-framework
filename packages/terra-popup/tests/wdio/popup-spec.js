@@ -1,12 +1,12 @@
 /* global  browser, before, Terra */
-const viewports = Terra.viewports('tiny', 'medium');
 
 describe('Popup', () => {
   describe('Arrow Popup', () => {
+    before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => browser.url('/#/raw/tests/popup/arrow-popup'));
 
-    Terra.should.beAccessible({ viewports });
-    Terra.should.themeEachCustomProperty('#root', {
+    Terra.should.beAccessible();
+    Terra.should.themeEachCustomProperty('#test-popup-area', {
       '--terra-popup-content-inner-box-shadow': '10px 10px 36px blue',
       '--terra-popup-content-inner-background-color': 'yellow',
       '--terra-popup-content-inner-border': '10px dashed black',
@@ -14,13 +14,14 @@ describe('Popup', () => {
   });
 
   describe('Bounded Popup', () => {
+    before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => browser.url('/#/raw/tests/popup/bounded-popup'));
 
     // Remove when #1353 is resolved
     const rules = { 'button-name': { enabled: false } };
 
-    Terra.should.beAccessible({ viewports, rules });
-    Terra.should.themeEachCustomProperty({
+    Terra.should.beAccessible({ rules });
+    Terra.should.themeEachCustomProperty('#test-popup-area', {
       '--terra-popup-content-header-border-bottom': '15px double red',
       '--terra-popup-content-close-icon': 'green',
     });
@@ -34,7 +35,7 @@ describe('Popup', () => {
         browser.click('#arrow-button');
       });
 
-      Terra.should.matchScreenshot('#root');
+      Terra.should.matchScreenshot({ selector: '#test-popup-area' });
     });
   });
 
@@ -46,7 +47,7 @@ describe('Popup', () => {
         browser.click('#bounded-button');
       });
 
-      Terra.should.matchScreenshot('#root');
+      Terra.should.matchScreenshot({ selector: '#test-popup-area' });
     });
   });
 
