@@ -33,7 +33,7 @@ class PopupExample extends React.Component {
 
   render() {
     return (
-      <div style={{ height: '300px', width: '500px', background: 'aliceblue' }}>
+      <div id="test-popup-area" style={{ height: '300px', width: '500px', background: 'aliceblue' }}>
         <Popup
           classNameArrow="test-arrow"
           classNameContent="test-content"

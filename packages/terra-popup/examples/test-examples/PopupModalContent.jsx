@@ -29,7 +29,7 @@ class ModalContent extends React.Component {
     const { app } = this.props;
 
     return (
-      <div className="content-container" style={{ height: '100%', padding: '10px' }}>
+      <div id="test-popup-area" className="content-container" style={{ height: '100%', padding: '10px' }}>
         {app && app.releaseFocus ? <h4>Modal focus is released!</h4> : null }
         {app && app.requestFocus ? <h4>Modal focus is trapped!</h4> : null }
         <br />
@@ -44,7 +44,7 @@ class ModalContent extends React.Component {
         >
           <p>This is popup content</p>
         </Popup>
-        <Button id="popup-in-modal" text="Popup In Modal" onClick={this.handlePopupButtonClick} />
+        <Button id="popup-in-modal" style={{ position: 'absolute', left: '125px' }} text="Popup In Modal" onClick={this.handlePopupButtonClick} />
         <br />
         <br />
         <Button className="close-disclosure" text="Close Disclosure" onClick={app.closeDisclosure} />

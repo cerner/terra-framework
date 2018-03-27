@@ -33,7 +33,7 @@ class DefaultPopup extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="test-popup-area" style={{ height: '150px', width: '350px', background: 'aliceblue' }}>
         <Popup
           classNameArrow="test-arrow"
           classNameContent="test-content"
@@ -43,7 +43,7 @@ class DefaultPopup extends React.Component {
         >
           <p>this is popup content</p>
         </Popup>
-        <button id="default-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
+        <button id="default-button" style={{ position: 'absolute', left: '125px' }} onClick={this.handleButtonClick} ref={this.setButtonNode}>
           Default Popup
         </button>
       </div>

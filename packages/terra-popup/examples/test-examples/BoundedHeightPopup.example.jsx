@@ -43,7 +43,7 @@ class BoundedPopup extends React.Component {
 
   render() {
     return (
-      <div style={{ height: '175px', width: '450px', background: 'aliceblue' }} ref={this.setParentNode}>
+      <div id="test-popup-area" style={{ height: '175px', width: '450px', background: 'aliceblue' }} ref={this.setParentNode}>
         <Popup
           boundingRef={this.getParentNode}
           contentHeight="480"

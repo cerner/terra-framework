@@ -34,7 +34,7 @@ class ClassNamePopup extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="test-popup-area" style={{ height: '150px', width: '350px', background: 'aliceblue' }}>
         <Popup
           classNameArrow="terra-test-class-arrow"
           classNameContent="terra-test-class-content"
@@ -47,7 +47,7 @@ class ClassNamePopup extends React.Component {
         >
           <p style={{ padding: '5px' }}>The arrow and content have classes.</p>
         </Popup>
-        <button id="class-name-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
+        <button id="class-name-button" style={{ position: 'absolute', left: '125px' }} onClick={this.handleButtonClick} ref={this.setButtonNode}>
           Class Name Popup
         </button>
       </div>

@@ -34,7 +34,7 @@ class PopupExample extends React.Component {
 
   render() {
     return (
-      <div style={{ height: '300px', width: '500px', background: 'aliceblue' }}>
+      <div id="test-popup-area" style={{ height: '300px', width: '500px', background: 'aliceblue' }}>
         <Popup
           classNameArrow="test-arrow"
           classNameContent="test-content"
@@ -45,7 +45,7 @@ class PopupExample extends React.Component {
           targetRef={this.getButtonNode}
           onRequestClose={this.handleRequestClose}
         >
-          <TestPopupContent size={this.state.size} onClick={() => this.setState({ size: { height: '80px', width: '200px' } }) } />
+          <TestPopupContent size={this.state.size} onClick={() => this.setState({ size: { height: '80px', width: '200px' } })} />
         </Popup>
         <button style={{ position: 'absolute', left: '200px' }} id="default-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
           Default Popup

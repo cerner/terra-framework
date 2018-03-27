@@ -43,7 +43,7 @@ class PopupExample extends React.Component {
 
   render() {
     return (
-      <div style={{ height: '175px', width: '200px', background: 'aliceblue' }} ref={this.setParentNode}>
+      <div id="test-popup-area" style={{ height: '175px', width: '200px', background: 'aliceblue' }} ref={this.setParentNode}>
         <Popup
           boundingRef={this.getParentNode}
           classNameArrow="test-arrow"
