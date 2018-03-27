@@ -5,7 +5,9 @@ describe('Popup', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => browser.url('/#/raw/tests/popup/arrow-popup'));
 
-    Terra.should.beAccessible();
+    const rules = { 'landmark-one-main': { enabled: false } };
+
+    Terra.should.beAccessible({ selector: '.test-content', rules });
     Terra.should.themeEachCustomProperty('#test-popup-area', {
       '--terra-popup-content-inner-box-shadow': '10px 10px 36px blue',
       '--terra-popup-content-inner-background-color': 'yellow',
@@ -18,9 +20,9 @@ describe('Popup', () => {
     beforeEach(() => browser.url('/#/raw/tests/popup/bounded-popup'));
 
     // Remove when #1353 is resolved
-    const rules = { 'button-name': { enabled: false } };
+    const rules = { 'button-name': { enabled: false }, 'landmark-one-main': { enabled: false } };
 
-    Terra.should.beAccessible({ rules });
+    Terra.should.beAccessible({ selector: '.test-content', rules });
     Terra.should.themeEachCustomProperty('#test-popup-area', {
       '--terra-popup-content-header-border-bottom': '15px double red',
       '--terra-popup-content-close-icon': 'green',

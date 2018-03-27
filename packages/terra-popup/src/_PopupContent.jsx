@@ -228,6 +228,7 @@ class PopupContent extends React.Component {
           onOutsideClick={onRequestClose}
           onResize={this.handleOnResize}
           refCallback={refCallback}
+          role="dialog"
         >
           {arrowContent}
           <div {...heightData} {...widthData} className={innerClassNames} style={contentStyle}>

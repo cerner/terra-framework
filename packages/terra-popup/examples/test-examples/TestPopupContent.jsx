@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  onChange: PropTypes.func,
-  onClick: PropTypes.func, 
+  onClick: PropTypes.func,
   size: PropTypes.shape({
     height: PropTypes.string,
     width: PropTypes.string,
@@ -11,7 +10,6 @@ const propTypes = {
 };
 
 const TestPopupContent = ({
-  onChange,
   onClick,
   size,
 }) => (
