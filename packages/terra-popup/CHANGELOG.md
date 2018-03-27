@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Miragte package to terra-framework
 
 2.3.0 - (March 14, 2018)
 ------------------
