@@ -64,7 +64,7 @@ describe('ApplicationLayout', () => {
       browser.url('/#/raw/tests/application-layout/application-layout');
       browser.waitForVisible('#application-layout-test');
       browser.click('[data-application-header-toggle]');
-      browser.waitForVisible('[data-routing-menu]');
+      browser.waitForVisible('[data-routing-menu] [data-navigation-side-menu-action-header] button');
       browser.click('[data-routing-menu] [data-navigation-side-menu-action-header] button');
       browser.waitForVisible('[data-routing-menu]');
     });
@@ -79,7 +79,7 @@ describe('ApplicationLayout', () => {
       browser.url('/#/raw/tests/application-layout/application-layout');
       browser.waitForVisible('#application-layout-test');
       browser.click('[data-application-header-toggle]');
-      browser.waitForVisible('[data-routing-menu]');
+      browser.waitForVisible('[data-routing-menu] [data-navigation-side-menu-action-header] button');
       browser.click('[data-routing-menu] [data-navigation-side-menu-action-header] button');
       browser.waitForVisible('[data-routing-menu] [data-menu-item="Page 2"]');
       browser.click('[data-routing-menu] [data-menu-item="Page 2"]');
