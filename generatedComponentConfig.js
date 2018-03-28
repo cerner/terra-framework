@@ -18,6 +18,7 @@ import TerraLayoutIndex from './packages/terra-layout/examples/Index.site-page';
 import TerraModalManagerIndex from './packages/terra-modal-manager/examples/Index.site-page';
 import TerraNavigationLayoutIndex from './packages/terra-navigation-layout/examples/Index.site-page';
 import TerraNavigationSideMenuIndex from './packages/terra-navigation-side-menu/examples/Index.site-page';
+import TerraPopupIndex from './packages/terra-popup/examples/Index.site-page';
 import TerraSlidePanelManagerIndex from './packages/terra-slide-panel-manager/examples/Index.site-page';
 import TerraThemeProviderIndex from './packages/terra-theme-provider/examples/Index.site-page';
 
@@ -78,6 +79,34 @@ import NavigationLayoutBasic from './packages/terra-navigation-layout/examples/t
 import NavigationLayoutComplex from './packages/terra-navigation-layout/examples/test-examples/NavigationLayoutComplex.example';
 import NavigationSideMenuDefault from './packages/terra-navigation-side-menu/examples/test-examples/NavigationSideMenuDefault.example';
 import NavigationSideMenuRoot from './packages/terra-navigation-side-menu/examples/test-examples/NavigationSideMenuRoot.example';
+import ArrowHorizontalAttachmentsPopup from './packages/terra-popup/examples/test-examples/ArrowHorizontalAttachmentsPopup.example';
+import ArrowHorizontalTargetPopup from './packages/terra-popup/examples/test-examples/ArrowHorizontalTargetPopup.example';
+import ArrowPopup from './packages/terra-popup/examples/test-examples/ArrowPopup.example';
+import ArrowPopupClosed from './packages/terra-popup/examples/test-examples/ArrowPopupClosed.example';
+import ArrowSmallTargetLeftPopup from './packages/terra-popup/examples/test-examples/ArrowSmallTargetLeftPopup.example';
+import ArrowSmallTargetRightPopup from './packages/terra-popup/examples/test-examples/ArrowSmallTargetRightPopup.example';
+import ArrowVerticalAttachmentsPopup from './packages/terra-popup/examples/test-examples/ArrowVerticalAttachmentsPopup.example';
+import ArrowVerticalLeftAdjustmentPopup from './packages/terra-popup/examples/test-examples/ArrowVerticalLeftAdjustmentPopup.example';
+import ArrowVerticalRightAdjustmentPopup from './packages/terra-popup/examples/test-examples/ArrowVerticalRightAdjustmentPopup.example';
+import AutomaticHeightBoundedPopup from './packages/terra-popup/examples/test-examples/AutomaticHeightBoundedPopup.example';
+import AutomaticHeightPopup from './packages/terra-popup/examples/test-examples/AutomaticHeightPopup.example';
+import AutomaticWidthBoundedPopup from './packages/terra-popup/examples/test-examples/AutomaticWidthBoundedPopup.example';
+import AutomaticWidthPopup from './packages/terra-popup/examples/test-examples/AutomaticWidthPopup.example';
+import BoundedHeightPopup from './packages/terra-popup/examples/test-examples/BoundedHeightPopup.example';
+import BoundedPopup from './packages/terra-popup/examples/test-examples/BoundedPopup.example';
+import BoundedPopupClosed from './packages/terra-popup/examples/test-examples/BoundedPopupClosed.example';
+import BoundedWidthPopup from './packages/terra-popup/examples/test-examples/BoundedWidthPopup.example';
+import ClassNamePopup from './packages/terra-popup/examples/test-examples/ClassNamePopup.example';
+import DefaultPopup from './packages/terra-popup/examples/test-examples/DefaultPopup.example';
+import DifferentAttachmentsPopup from './packages/terra-popup/examples/test-examples/DifferentAttachmentsPopup.example';
+import NoHeaderPopup from './packages/terra-popup/examples/test-examples/NoHeaderPopup.example';
+import OverlayPopup from './packages/terra-popup/examples/test-examples/OverlayPopup.example';
+import PopupInsideModal from './packages/terra-popup/examples/test-examples/PopupInsideModal.example';
+import ResizedContentPopup from './packages/terra-popup/examples/test-examples/ResizedContentPopup.example';
+import SizeInvalidPopup from './packages/terra-popup/examples/test-examples/SizeInvalidPopup.example';
+import SizeLargePopup from './packages/terra-popup/examples/test-examples/SizeLargePopup.example';
+import SizeMediumPopup from './packages/terra-popup/examples/test-examples/SizeMediumPopup.example';
+import SizeSmallPopup from './packages/terra-popup/examples/test-examples/SizeSmallPopup.example';
 import SlidePanelManagerDefault from './packages/terra-slide-panel-manager/examples/test-examples/SlidePanelManagerDefault.example';
 import DefaultThemeProvider from './packages/terra-theme-provider/examples/test-examples/DefaultThemeProvider.example';
 import GlobalSwitchThemes from './packages/terra-theme-provider/examples/test-examples/GlobalSwitchThemes.example';
@@ -564,6 +593,159 @@ const componentConfig = {
         name: 'Navigation Side Menu Root',
         path: '/navigation-side-menu-root',
         component: NavigationSideMenuRoot,
+      },
+    ],
+  },
+  'terra-popup': {
+    name: 'Popup',
+    path: '/popup',
+    pages: [
+      {
+        name: 'Index',
+        path: '/index',
+        component: TerraPopupIndex,
+      },
+    ],
+    tests: [
+      {
+        name: 'Arrow Horizontal Attachments Popup',
+        path: '/arrow-horizontal-attachments-popup',
+        component: ArrowHorizontalAttachmentsPopup,
+      },
+      {
+        name: 'Arrow Horizontal Target Popup',
+        path: '/arrow-horizontal-target-popup',
+        component: ArrowHorizontalTargetPopup,
+      },
+      {
+        name: 'Arrow Popup',
+        path: '/arrow-popup',
+        component: ArrowPopup,
+      },
+      {
+        name: 'Arrow Popup Closed',
+        path: '/arrow-popup-closed',
+        component: ArrowPopupClosed,
+      },
+      {
+        name: 'Arrow Small Target Left Popup',
+        path: '/arrow-small-target-left-popup',
+        component: ArrowSmallTargetLeftPopup,
+      },
+      {
+        name: 'Arrow Small Target Right Popup',
+        path: '/arrow-small-target-right-popup',
+        component: ArrowSmallTargetRightPopup,
+      },
+      {
+        name: 'Arrow Vertical Attachments Popup',
+        path: '/arrow-vertical-attachments-popup',
+        component: ArrowVerticalAttachmentsPopup,
+      },
+      {
+        name: 'Arrow Vertical Left Adjustment Popup',
+        path: '/arrow-vertical-left-adjustment-popup',
+        component: ArrowVerticalLeftAdjustmentPopup,
+      },
+      {
+        name: 'Arrow Vertical Right Adjustment Popup',
+        path: '/arrow-vertical-right-adjustment-popup',
+        component: ArrowVerticalRightAdjustmentPopup,
+      },
+      {
+        name: 'Automatic Height Bounded Popup',
+        path: '/automatic-height-bounded-popup',
+        component: AutomaticHeightBoundedPopup,
+      },
+      {
+        name: 'Automatic Height Popup',
+        path: '/automatic-height-popup',
+        component: AutomaticHeightPopup,
+      },
+      {
+        name: 'Automatic Width Bounded Popup',
+        path: '/automatic-width-bounded-popup',
+        component: AutomaticWidthBoundedPopup,
+      },
+      {
+        name: 'Automatic Width Popup',
+        path: '/automatic-width-popup',
+        component: AutomaticWidthPopup,
+      },
+      {
+        name: 'Bounded Height Popup',
+        path: '/bounded-height-popup',
+        component: BoundedHeightPopup,
+      },
+      {
+        name: 'Bounded Popup',
+        path: '/bounded-popup',
+        component: BoundedPopup,
+      },
+      {
+        name: 'Bounded Popup Closed',
+        path: '/bounded-popup-closed',
+        component: BoundedPopupClosed,
+      },
+      {
+        name: 'Bounded Width Popup',
+        path: '/bounded-width-popup',
+        component: BoundedWidthPopup,
+      },
+      {
+        name: 'Class Name Popup',
+        path: '/class-name-popup',
+        component: ClassNamePopup,
+      },
+      {
+        name: 'Default Popup',
+        path: '/default-popup',
+        component: DefaultPopup,
+      },
+      {
+        name: 'Different Attachments Popup',
+        path: '/different-attachments-popup',
+        component: DifferentAttachmentsPopup,
+      },
+      {
+        name: 'No Header Popup',
+        path: '/no-header-popup',
+        component: NoHeaderPopup,
+      },
+      {
+        name: 'Overlay Popup',
+        path: '/overlay-popup',
+        component: OverlayPopup,
+      },
+      {
+        name: 'Popup Inside Modal',
+        path: '/popup-inside-modal',
+        component: PopupInsideModal,
+      },
+      {
+        name: 'Resized Content Popup',
+        path: '/resized-content-popup',
+        component: ResizedContentPopup,
+      },
+      {
+        name: 'Size Invalid Popup',
+        path: '/size-invalid-popup',
+        component: SizeInvalidPopup,
+      },
+      {
+        name: 'Size Large Popup',
+        path: '/size-large-popup',
+        component: SizeLargePopup,
+      },
+      {
+        name: 'Size Medium Popup',
+        path: '/size-medium-popup',
+        component: SizeMediumPopup,
+      },
+      {
+        name: 'Size Small Popup',
+        path: '/size-small-popup',
+        component: SizeSmallPopup,
       },
     ],
   },
