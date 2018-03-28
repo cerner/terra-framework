@@ -2,150 +2,131 @@
 
 const context = '[data-terra-dev-site-content] *:first-child';
 
-describe('Slide panel end', () => {
+describe('Slide panel', () => {
   before(() => browser.setViewportSize(Terra.viewports('large')[0]));
-  beforeEach(() => browser.url('/#/raw/tests/slide-panel/slide-panel-end'));
-  Terra.should.beAccessible({ context });
-  Terra.should.matchScreenshot();
-});
 
-describe('Slide panel fill', () => {
-  before(() => browser.setViewportSize(Terra.viewports('large')[0]));
-  beforeEach(() => {
-    browser.url('/#/raw/tests/slide-panel/slide-panel-fill');
+  describe('Slide panel end', () => {
+    beforeEach(() => browser.url('/#/raw/tests/slide-panel/slide-panel-end'));
+    Terra.should.beAccessible({ context });
+    Terra.should.matchScreenshot();
   });
 
-  Terra.should.matchScreenshot();
-  Terra.should.beAccessible({ context });
-});
+  describe('Slide panel fill', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/slide-panel/slide-panel-fill');
+    });
 
-describe('Slide panel fullscreen', () => {
-  before(() => browser.setViewportSize(Terra.viewports('large')[0]));
-  beforeEach(() => {
-    browser.url('/#/raw/tests/slide-panel/slide-panel-fullscreen');
+    Terra.should.matchScreenshot();
   });
 
-  Terra.should.matchScreenshot();
-  Terra.should.beAccessible({ context });
-});
+  describe('Slide panel fullscreen', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/slide-panel/slide-panel-fullscreen');
+    });
 
-describe('Slide panel large', () => {
-  before(() => browser.setViewportSize(Terra.viewports('large')[0]));
-  beforeEach(() => {
-    browser.url('/#/raw/tests/slide-panel/slide-panel-large');
+    Terra.should.matchScreenshot();
   });
 
-  Terra.should.matchScreenshot();
-  Terra.should.beAccessible({ context });
-});
+  describe('Slide panel large', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/slide-panel/slide-panel-large');
+    });
 
-describe('Slide panel no fill', () => {
-  before(() => browser.setViewportSize(Terra.viewports('large')[0]));
-  beforeEach(() => {
-    browser.url('/#/raw/tests/slide-panel/slide-panel-no-fill');
+    Terra.should.matchScreenshot();
   });
 
-  Terra.should.matchScreenshot();
-  Terra.should.beAccessible({ context });
-});
+  describe('Slide panel no fill', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/slide-panel/slide-panel-no-fill');
+    });
 
-describe('Slide panel overlay', () => {
-  before(() => browser.setViewportSize(Terra.viewports('large')[0]));
-  beforeEach(() => {
-    browser.url('/#/raw/tests/slide-panel/slide-panel-overlay');
+    Terra.should.matchScreenshot();
   });
 
-  Terra.should.matchScreenshot();
-  Terra.should.beAccessible({ context });
-});
+  describe('Slide panel overlay', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/slide-panel/slide-panel-overlay');
+    });
 
-describe('Slide panel small', () => {
-  before(() => browser.setViewportSize(Terra.viewports('large')[0]));
-  beforeEach(() => {
-    browser.url('/#/raw/tests/slide-panel/slide-panel-small');
+    Terra.should.matchScreenshot();
   });
 
-  Terra.should.matchScreenshot();
-  Terra.should.beAccessible({ context });
-});
+  describe('Slide panel small', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/slide-panel/slide-panel-small');
+    });
 
-describe('Slide panel squish', () => {
-  before(() => browser.setViewportSize(Terra.viewports('large')[0]));
-  beforeEach(() => {
-    browser.url('/#/raw/tests/slide-panel/slide-panel-squish');
+    Terra.should.matchScreenshot();
   });
 
-  Terra.should.matchScreenshot();
-  Terra.should.beAccessible({ context });
-});
+  describe('Slide panel squish', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/slide-panel/slide-panel-squish');
+    });
 
-describe('Slide panel start', () => {
-  before(() => browser.setViewportSize(Terra.viewports('large')[0]));
-  beforeEach(() => {
-    browser.url('/#/raw/tests/slide-panel/slide-panel-start');
+    Terra.should.matchScreenshot();
   });
 
-  Terra.should.matchScreenshot();
-  Terra.should.beAccessible({ context });
-});
+  describe('Slide panel start', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/slide-panel/slide-panel-start');
+    });
 
-
-describe('Large size squished slide panel', () => {
-  before(() => browser.setViewportSize(Terra.viewports('large')[0]));
-  beforeEach(() => {
-    browser.url('/#/raw/tests/slide-panel/slide-panel-squish-large');
+    Terra.should.matchScreenshot();
   });
 
-  Terra.should.matchScreenshot();
-  Terra.should.beAccessible({ context });
-});
 
+  describe('Large size squished slide panel', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/slide-panel/slide-panel-squish-large');
+    });
 
-describe('Toggle the slide panel and hidden styles', () => {
-  before(() => browser.setViewportSize(Terra.viewports('large')[0]));
-  beforeEach(() => {
-    browser.url('/#/raw/tests/slide-panel/slide-panel-toggle');
-    browser.waitForExist('#test-slide [aria-hidden="true"]');
+    Terra.should.matchScreenshot();
   });
 
-  Terra.should.matchScreenshot({ selector: '#root' });
-});
 
-describe('Toggle the slide panel click', () => {
-  before(() => browser.setViewportSize(Terra.viewports('large')[0]));
-  beforeEach(() => {
-    browser.url('/#/raw/tests/slide-panel/slide-panel-toggle');
-    browser.click('#test-toggle');
-    browser.waitForExist('#test-slide [aria-hidden="false"]');
-    browser.pause(150);
+  describe('Toggle the slide panel and hidden styles', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/slide-panel/slide-panel-toggle');
+      browser.waitForExist('#test-slide [aria-hidden="true"]');
+    });
+
+    Terra.should.matchScreenshot({ selector: '#root' });
   });
 
-  Terra.should.matchScreenshot({ selector: '#root' });
-});
+  describe('Toggle the slide panel click', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/slide-panel/slide-panel-toggle');
+      browser.click('#test-toggle');
+      browser.waitForExist('#test-slide [aria-hidden="false"]');
+      browser.pause(150);
+    });
 
-describe('Toggle the slide panel double click', () => {
-  before(() => browser.setViewportSize(Terra.viewports('large')[0]));
-  beforeEach(() => {
-    browser.url('/#/raw/tests/slide-panel/slide-panel-toggle');
-    browser.click('#test-toggle');
-    browser.waitForExist('#test-slide [aria-hidden="false"]');
-    browser.pause(150);
-    browser.click('#test-toggle');
-    browser.waitForExist('#test-slide [aria-hidden="true"]');
-    browser.pause(150);
+    Terra.should.matchScreenshot({ selector: '#root' });
   });
 
-  Terra.should.matchScreenshot({ selector: '#root' });
-});
+  describe('Toggle the slide panel double click', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/slide-panel/slide-panel-toggle');
+      browser.click('#test-toggle');
+      browser.waitForExist('#test-slide [aria-hidden="false"]');
+      browser.pause(150);
+      browser.click('#test-toggle');
+      browser.waitForExist('#test-slide [aria-hidden="true"]');
+      browser.pause(150);
+    });
 
-describe('Slide panel theming', () => {
-  before(() => browser.setViewportSize(Terra.viewports('large')[0]));
-  beforeEach(() => browser.url('/#/raw/tests/slide-panel/slide-panel-end'));
+    Terra.should.matchScreenshot({ selector: '#root' });
+  });
 
-  Terra.should.themeEachCustomProperty({
-    '--terra-slide-panel-panel-width-small': '420px',
-    '--terra-slide-panel-panel-width-large-scalar': '0.8',
-    '--terra-slide-panel-shadow-color': 'orange',
-    '--terra-slide-panel-panel-border-color': 'blue',
+  describe('Slide panel theming', () => {
+    beforeEach(() => browser.url('/#/raw/tests/slide-panel/slide-panel-end'));
+
+    Terra.should.themeEachCustomProperty({
+      '--terra-slide-panel-panel-width-small': '420px',
+      '--terra-slide-panel-panel-width-large-scalar': '0.8',
+      '--terra-slide-panel-shadow-color': 'orange',
+      '--terra-slide-panel-panel-border-color': 'blue',
+    });
   });
 });
