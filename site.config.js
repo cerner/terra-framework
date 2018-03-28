@@ -17,6 +17,10 @@ const siteConfig = {
 
     /* The title for the site header. */
     title: 'Terra Framework',
+
+    extensions: {
+      gitHubUrl: 'https://github.com/cerner/terra-framework',
+    },
   },
 };
 
