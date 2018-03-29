@@ -12,6 +12,7 @@ import TerraApplicationMenuLayoutIndex from './packages/terra-application-menu-l
 import TerraApplicationNameIndex from './packages/terra-application-name/examples/Index.site-page';
 import TerraApplicationUtilityIndex from './packages/terra-application-utility/examples/Index.site-page';
 import TerraDisclosureManagerIndex from './packages/terra-disclosure-manager/examples/Index.site-page';
+import TerraHookshotIndex from './packages/terra-hookshot/examples/Index.site-page';
 import TerraInfiniteListIndex from './packages/terra-infinite-list/examples/Index.site-page';
 import TerraLayoutIndex from './packages/terra-layout/examples/Index.site-page';
 import TerraModalManagerIndex from './packages/terra-modal-manager/examples/Index.site-page';
@@ -46,6 +47,25 @@ import DefaultApplicationHeaderUtility from './packages/terra-application-utilit
 import DefaultApplicationMenuUtility from './packages/terra-application-utility/examples/test-examples/DefaultApplicationMenuUtility.example';
 import DefaultHeaderUtilityMenu from './packages/terra-application-utility/examples/test-examples/DefaultHeaderUtilityMenu.example';
 import DefaultMenuUtilityMenu from './packages/terra-application-utility/examples/test-examples/DefaultMenuUtilityMenu.example';
+import DefaultHookshot from './packages/terra-hookshot/examples/test-examples/DefaultHookshot.example';
+import HookshotAttachmentBehaviorAuto from './packages/terra-hookshot/examples/test-examples/HookshotAttachmentBehaviorAuto.example';
+import HookshotAttachmentBehaviorFlip from './packages/terra-hookshot/examples/test-examples/HookshotAttachmentBehaviorFlip.example';
+import HookshotAttachmentBehaviorNone from './packages/terra-hookshot/examples/test-examples/HookshotAttachmentBehaviorNone.example';
+import HookshotAttachmentMargin from './packages/terra-hookshot/examples/test-examples/HookshotAttachmentMargin.example';
+import HookshotBoundingContainer from './packages/terra-hookshot/examples/test-examples/HookshotBoundingContainer.example';
+import HookshotCloseBehaviors from './packages/terra-hookshot/examples/test-examples/HookshotCloseBehaviors.example';
+import HookshotContentAttachmentBC from './packages/terra-hookshot/examples/test-examples/HookshotContentAttachmentBC.example';
+import HookshotContentAttachmentBE from './packages/terra-hookshot/examples/test-examples/HookshotContentAttachmentBE.example';
+import HookshotContentAttachmentBS from './packages/terra-hookshot/examples/test-examples/HookshotContentAttachmentBS.example';
+import HookshotContentAttachmentMC from './packages/terra-hookshot/examples/test-examples/HookshotContentAttachmentMC.example';
+import HookshotContentAttachmentME from './packages/terra-hookshot/examples/test-examples/HookshotContentAttachmentME.example';
+import HookshotContentAttachmentMS from './packages/terra-hookshot/examples/test-examples/HookshotContentAttachmentMS.example';
+import HookshotContentAttachmentTC from './packages/terra-hookshot/examples/test-examples/HookshotContentAttachmentTC.example';
+import HookshotContentAttachmentTE from './packages/terra-hookshot/examples/test-examples/HookshotContentAttachmentTE.example';
+import HookshotContentAttachmentTS from './packages/terra-hookshot/examples/test-examples/HookshotContentAttachmentTS.example';
+import HookshotContentOffset from './packages/terra-hookshot/examples/test-examples/HookshotContentOffset.example';
+import HookshotEnabledBehaviors from './packages/terra-hookshot/examples/test-examples/HookshotEnabledBehaviors.example';
+import HookshotTargetOffset from './packages/terra-hookshot/examples/test-examples/HookshotTargetOffset.example';
 import InfiniteListLoading from './packages/terra-infinite-list/examples/test-examples/InfiniteListLoading.example';
 import InfiniteListSelection from './packages/terra-infinite-list/examples/test-examples/InfiniteListSelection.example';
 import InfiniteListUpdating from './packages/terra-infinite-list/examples/test-examples/InfiniteListUpdating.example';
@@ -335,6 +355,114 @@ const componentConfig = {
         name: 'Index',
         path: '/index',
         component: TerraDisclosureManagerIndex,
+      },
+    ],
+  },
+  'terra-hookshot': {
+    name: 'Hookshot',
+    path: '/hookshot',
+    pages: [
+      {
+        name: 'Index',
+        path: '/index',
+        component: TerraHookshotIndex,
+      },
+    ],
+    tests: [
+      {
+        name: 'Default Hookshot',
+        path: '/default-hookshot',
+        component: DefaultHookshot,
+      },
+      {
+        name: 'Hookshot Attachment Behavior Auto',
+        path: '/hookshot-attachment-behavior-auto',
+        component: HookshotAttachmentBehaviorAuto,
+      },
+      {
+        name: 'Hookshot Attachment Behavior Flip',
+        path: '/hookshot-attachment-behavior-flip',
+        component: HookshotAttachmentBehaviorFlip,
+      },
+      {
+        name: 'Hookshot Attachment Behavior None',
+        path: '/hookshot-attachment-behavior-none',
+        component: HookshotAttachmentBehaviorNone,
+      },
+      {
+        name: 'Hookshot Attachment Margin',
+        path: '/hookshot-attachment-margin',
+        component: HookshotAttachmentMargin,
+      },
+      {
+        name: 'Hookshot Bounding Container',
+        path: '/hookshot-bounding-container',
+        component: HookshotBoundingContainer,
+      },
+      {
+        name: 'Hookshot Close Behaviors',
+        path: '/hookshot-close-behaviors',
+        component: HookshotCloseBehaviors,
+      },
+      {
+        name: 'Hookshot Content Attachment BC',
+        path: '/hookshot-content-attachment-bc',
+        component: HookshotContentAttachmentBC,
+      },
+      {
+        name: 'Hookshot Content Attachment BE',
+        path: '/hookshot-content-attachment-be',
+        component: HookshotContentAttachmentBE,
+      },
+      {
+        name: 'Hookshot Content Attachment BS',
+        path: '/hookshot-content-attachment-bs',
+        component: HookshotContentAttachmentBS,
+      },
+      {
+        name: 'Hookshot Content Attachment MC',
+        path: '/hookshot-content-attachment-mc',
+        component: HookshotContentAttachmentMC,
+      },
+      {
+        name: 'Hookshot Content Attachment ME',
+        path: '/hookshot-content-attachment-me',
+        component: HookshotContentAttachmentME,
+      },
+      {
+        name: 'Hookshot Content Attachment MS',
+        path: '/hookshot-content-attachment-ms',
+        component: HookshotContentAttachmentMS,
+      },
+      {
+        name: 'Hookshot Content Attachment TC',
+        path: '/hookshot-content-attachment-tc',
+        component: HookshotContentAttachmentTC,
+      },
+      {
+        name: 'Hookshot Content Attachment TE',
+        path: '/hookshot-content-attachment-te',
+        component: HookshotContentAttachmentTE,
+      },
+      {
+        name: 'Hookshot Content Attachment TS',
+        path: '/hookshot-content-attachment-ts',
+        component: HookshotContentAttachmentTS,
+      },
+      {
+        name: 'Hookshot Content Offset',
+        path: '/hookshot-content-offset',
+        component: HookshotContentOffset,
+      },
+      {
+        name: 'Hookshot Enabled Behaviors',
+        path: '/hookshot-enabled-behaviors',
+        component: HookshotEnabledBehaviors,
+      },
+      {
+        name: 'Hookshot Target Offset',
+        path: '/hookshot-target-offset',
+        component: HookshotTargetOffset,
       },
     ],
   },
