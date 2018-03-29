@@ -28,6 +28,15 @@ const config = {
 
   webpackPort,
   webpackConfig,
+  axe: {
+    inject: true,
+    options: {
+      rules: [{
+        id: 'landmark-one-main',
+        enabled: false,
+      }],
+    },
+  },
   terra: {
     selector: '[data-terra-dev-site-content] *:first-child',
   },
