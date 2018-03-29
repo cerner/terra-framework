@@ -110,7 +110,7 @@
     "stylelint-order": "^0.7.0",
     "stylelint-scss": "^2.0.0",
     "stylelint-suitcss": "^1.0.0",
-    "terra-dev-site": "0.2.0",
+    "terra-dev-site": "0.3.0",
     "terra-i18n": "^2.1.0",
     "terra-i18n-plugin": "^2.0.0",
     "terra-toolkit": "^2.9.0",
