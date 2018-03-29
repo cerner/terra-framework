@@ -20,6 +20,7 @@ import TerraNavigationLayoutIndex from './packages/terra-navigation-layout/examp
 import TerraNavigationSideMenuIndex from './packages/terra-navigation-side-menu/examples/Index.site-page';
 import TerraPopupIndex from './packages/terra-popup/examples/Index.site-page';
 import TerraSlidePanelManagerIndex from './packages/terra-slide-panel-manager/examples/Index.site-page';
+import TerraSlidePanelIndex from './packages/terra-slide-panel/examples/Index.site-page';
 import TerraThemeProviderIndex from './packages/terra-theme-provider/examples/Index.site-page';
 
 // Component Test Examples
@@ -108,6 +109,17 @@ import SizeLargePopup from './packages/terra-popup/examples/test-examples/SizeLa
 import SizeMediumPopup from './packages/terra-popup/examples/test-examples/SizeMediumPopup.example';
 import SizeSmallPopup from './packages/terra-popup/examples/test-examples/SizeSmallPopup.example';
 import SlidePanelManagerDefault from './packages/terra-slide-panel-manager/examples/test-examples/SlidePanelManagerDefault.example';
+import SlidePanelEnd from './packages/terra-slide-panel/examples/test-examples/SlidePanelEnd.example';
+import SlidePanelFill from './packages/terra-slide-panel/examples/test-examples/SlidePanelFill.example';
+import SlidePanelFullscreen from './packages/terra-slide-panel/examples/test-examples/SlidePanelFullscreen.example';
+import SlidePanelLarge from './packages/terra-slide-panel/examples/test-examples/SlidePanelLarge.example';
+import SlidePanelNoFill from './packages/terra-slide-panel/examples/test-examples/SlidePanelNoFill.example';
+import SlidePanelOverlay from './packages/terra-slide-panel/examples/test-examples/SlidePanelOverlay.example';
+import SlidePanelSmall from './packages/terra-slide-panel/examples/test-examples/SlidePanelSmall.example';
+import SlidePanelSquish from './packages/terra-slide-panel/examples/test-examples/SlidePanelSquish.example';
+import SlidePanelSquishLarge from './packages/terra-slide-panel/examples/test-examples/SlidePanelSquishLarge.example';
+import SlidePanelStart from './packages/terra-slide-panel/examples/test-examples/SlidePanelStart.example';
+import SlidePanelToggle from './packages/terra-slide-panel/examples/test-examples/SlidePanelToggle.example';
 import DefaultThemeProvider from './packages/terra-theme-provider/examples/test-examples/DefaultThemeProvider.example';
 import GlobalSwitchThemes from './packages/terra-theme-provider/examples/test-examples/GlobalSwitchThemes.example';
 import GlobalThemeProvider from './packages/terra-theme-provider/examples/test-examples/GlobalThemeProvider.example';
@@ -764,6 +776,74 @@ const componentConfig = {
         name: 'Slide Panel Manager Default',
         path: '/slide-panel-manager-default',
         component: SlidePanelManagerDefault,
+      },
+    ],
+  },
+  'terra-slide-panel': {
+    name: 'Slide Panel',
+    path: '/slide-panel',
+    pages: [
+      {
+        name: 'Index',
+        path: '/index',
+        component: TerraSlidePanelIndex,
+      },
+    ],
+    tests: [
+      {
+        name: 'Slide Panel End',
+        path: '/slide-panel-end',
+        component: SlidePanelEnd,
+      },
+      {
+        name: 'Slide Panel Fill',
+        path: '/slide-panel-fill',
+        component: SlidePanelFill,
+      },
+      {
+        name: 'Slide Panel Fullscreen',
+        path: '/slide-panel-fullscreen',
+        component: SlidePanelFullscreen,
+      },
+      {
+        name: 'Slide Panel Large',
+        path: '/slide-panel-large',
+        component: SlidePanelLarge,
+      },
+      {
+        name: 'Slide Panel No Fill',
+        path: '/slide-panel-no-fill',
+        component: SlidePanelNoFill,
+      },
+      {
+        name: 'Slide Panel Overlay',
+        path: '/slide-panel-overlay',
+        component: SlidePanelOverlay,
+      },
+      {
+        name: 'Slide Panel Small',
+        path: '/slide-panel-small',
+        component: SlidePanelSmall,
+      },
+      {
+        name: 'Slide Panel Squish',
+        path: '/slide-panel-squish',
+        component: SlidePanelSquish,
+      },
+      {
+        name: 'Slide Panel Squish Large',
+        path: '/slide-panel-squish-large',
+        component: SlidePanelSquishLarge,
+      },
+      {
+        name: 'Slide Panel Start',
+        path: '/slide-panel-start',
+        component: SlidePanelStart,
+      },
+      {
+        name: 'Slide Panel Toggle',
+        path: '/slide-panel-toggle',
+        component: SlidePanelToggle,
       },
     ],
   },
