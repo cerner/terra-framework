@@ -40,7 +40,7 @@ const config = {
   terra: {
     selector: '[data-terra-dev-site-content] *:first-child',
   },
-  
+
   // Define wdio test suites
   suites: {
     suite1: [
