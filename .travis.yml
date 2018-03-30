@@ -19,6 +19,7 @@ env:
 jobs:
   include:
     - stage: Deploy
+      script: skip
       before_deploy:
         - npm run compile:prod
       deploy:
