@@ -15,7 +15,6 @@ env:
   - TEST_SUITE="wdio -- --suite suite2"
   - TEST_SUITE="wdio -- --suite suite3"
   - TEST_SUITE="wdio -- --suite suite4"
-  - TEST_SUITE="wdio -- --suite suite5"
   - TEST_SUITE=danger
 jobs:
   include:
