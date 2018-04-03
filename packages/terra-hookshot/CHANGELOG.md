@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+2.3.0 - (April 3, 2018)
+------------------
 ### Changed
 * Moved terra-hookshot to terra-framework repo.
 
