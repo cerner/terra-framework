@@ -3,28 +3,73 @@
     height: 100%;
   }
 
-  .huge {
-    height: 85%;
-    width: 75%;
-  }
+  .modal-size {
+    // sizes
+    &.huge {
+      height: 85%;
+      width: 75%;
+    }
 
-  .large {
-    height: 75%;
-    width: 55%;
-  }
+    &.large {
+      height: 75%;
+      width: 55%;
+    }
 
-  .medium {
-    height: 65%;
-    width: 55%;
-  }
+    &.medium {
+      height: 65%;
+      width: 55%;
+    }
 
-  .small {
-    height: 50%;
-    width: 50%;
-  }
+    &.small {
+      height: 50%;
+      width: 50%;
+    }
 
-  .tiny {
-    height: 40%;
-    width: 50%;
+    &.tiny {
+      height: 40%;
+      width: 50%;
+    }
+
+    // dimensions - heights
+    &.height-120 {
+      height: 120px;
+    }
+
+    &.height-240 {
+      height: 240px;
+    }
+
+    &.height-360 {
+      height: 360px;
+    }
+
+    &.height-480 {
+      height: 480px;
+    }
+
+    &.height-600 {
+      height: 600px;
+    }
+
+    // dimensions - widths
+    &.width-120 {
+      width: 120px;
+    }
+
+    &.width-240 {
+      width: 240px;
+    }
+
+    &.width-360 {
+      width: 360px;
+    }
+
+    &.width-480 {
+      width: 480px;
+    }
+
+    &.width-600 {
+      width: 600px;
+    }
   }
 }

@@ -7,6 +7,7 @@ import AppDelegate from 'terra-app-delegate';
 import ActionHeader from 'terra-clinical-action-header';
 
 import DisclosureComponent from './DisclosureComponent';
+import { availableDisclosureHeights, availableDisclosureWidths } from '../../src/DisclosureManager';
 
 import styles from './example-styles.scss';
 
@@ -17,11 +18,33 @@ const propTypes = {
   disclosureType: PropTypes.string,
 };
 
+const HEIGHT_KEYS = Object.keys(availableDisclosureHeights);
+const WIDTH_KEYS = Object.keys(availableDisclosureWidths);
+
+const generateOptions = (values) => {
+  return values.map((currentValue, index) => {
+    const keyValue = index;
+    return <option key={keyValue} value={currentValue}>{currentValue}</option>;
+  });
+};
+
 class ContentComponent extends React.Component {
   constructor(props) {
     super(props);
 
     this.renderButton = this.renderButton.bind(this);
+    this.handleSelectChange = this.handleSelectChange.bind(this);
+    this.getId = this.getId.bind(this);
+
+    this.state = { id: 'dimensions', disclosureHeight: 120, disclosureWidth: 120 };
+  }
+
+  getId(name) {
+    return name + this.state.id;
+  }
+
+  handleSelectChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
   }
 
   renderButton(size) {
@@ -44,6 +67,46 @@ class ContentComponent extends React.Component {
     );
   }
 
+  renderFormButton() {
+    const { app, disclosureType } = this.props;
+    const name = `Disclose (${this.state.disclosureHeight}) x (${this.state.disclosureWidth})`;
+
+    return (
+      <Button
+        text={name}
+        onClick={() => {
+          app.disclose({
+            preferredType: disclosureType,
+            dimensions: { height: this.state.disclosureHeight, width: this.state.disclosureWidth },
+            content: {
+              key: 'Content-Disclosure-Dimensions',
+              component: <DisclosureComponent name={`Disclosure Component (${name})`} disclosureType={disclosureType} />,
+            },
+          });
+        }}
+      />
+    );
+  }
+
+  renderForm() {
+    return (
+      <form>
+        <label htmlFor={this.getId('disclosureHeight')}>Pop Content Height</label>
+        <select id={this.getId('disclosureHeight')} name="disclosureHeight" value={this.state.disclosureHeight} onChange={this.handleSelectChange}>
+          {generateOptions(HEIGHT_KEYS)}
+        </select>
+        <br />
+        <br />
+        <label htmlFor={this.getId('disclosureWidth')}>Pop Content Width</label>
+        <select id={this.getId('disclosureWidth')} name="disclosureWidth" value={this.state.disclosureWidth} onChange={this.handleSelectChange}>
+          {generateOptions(WIDTH_KEYS)}
+        </select>
+        <br />
+        <br />
+      </form>
+    );
+  }
+
   render() {
     return (
       <ContentContainer
@@ -62,6 +125,10 @@ class ContentComponent extends React.Component {
           {this.renderButton('fullscreen')}
           <br />
           <p>The child components can disclose content in the panel at various sizes.</p>
+        </div>
+        <div className={cx('content-wrapper')}>
+          {this.renderForm()}
+          {this.renderFormButton()}
         </div>
       </ContentContainer>
     );

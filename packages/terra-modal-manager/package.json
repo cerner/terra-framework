@@ -40,7 +40,7 @@
     "prop-types": "^15.5.8",
     "terra-disclosure-manager": "^2.2.0",
     "terra-heading": "^2.0.1",
-    "terra-modal": "^2.0.1",
+    "terra-modal": "file:../../../terra-core/packages/terra-modal",
     "terra-responsive-element": "^2.0.1",
     "terra-slide-group": "^2.0.1"
   },

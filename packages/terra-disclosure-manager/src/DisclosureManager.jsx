@@ -11,7 +11,23 @@ const availableDisclosureSizes = {
   FULLSCREEN: 'fullscreen',
 };
 
-export { availableDisclosureSizes };
+const availableDisclosureHeights = {
+  120: 120,
+  240: 240,
+  360: 360,
+  480: 480,
+  600: 600,
+};
+
+const availableDisclosureWidths = {
+  120: 120,
+  240: 240,
+  360: 360,
+  480: 480,
+  600: 600,
+};
+
+export { availableDisclosureSizes, availableDisclosureHeights, availableDisclosureWidths };
 
 const propTypes = {
   /**
@@ -81,6 +97,7 @@ class DisclosureManager extends React.Component {
       disclosureIsFocused: true,
       disclosureIsMaximized: false,
       disclosureSize: undefined,
+      disclosureDimensions: undefined,
       disclosureComponentKeys: [],
       disclosureComponentData: {},
     };
@@ -101,6 +118,7 @@ class DisclosureManager extends React.Component {
       disclosureIsOpen: true,
       disclosureIsFocused: true,
       disclosureSize: data.size || availableDisclosureSizes.SMALL,
+      disclosureDimensions: data.dimensions || undefined,
       disclosureComponentKeys: [data.content.key],
       disclosureComponentData: {
         [data.content.key]: {
@@ -141,6 +159,7 @@ class DisclosureManager extends React.Component {
       disclosureIsFocused: false,
       disclosureIsMaximized: false,
       disclosureSize: undefined,
+      disclosureDimensions: undefined,
       disclosureComponentKeys: [],
       disclosureComponentData: {},
     });
@@ -387,7 +406,14 @@ class DisclosureManager extends React.Component {
 
   render() {
     const { render } = this.props;
-    const { disclosureIsOpen, disclosureIsFocused, disclosureIsMaximized, disclosureSize, disclosureComponentKeys } = this.state;
+    const {
+      disclosureIsOpen,
+      disclosureIsFocused,
+      disclosureIsMaximized,
+      disclosureSize,
+      disclosureDimensions,
+      disclosureComponentKeys,
+    } = this.state;
 
     if (!render) {
       return null;
@@ -404,6 +430,7 @@ class DisclosureManager extends React.Component {
         isFocused: disclosureIsFocused,
         isMaximized: disclosureIsMaximized,
         size: disclosureSize,
+        dimensions: disclosureDimensions,
         components: this.renderDisclosureComponents(),
       },
     });

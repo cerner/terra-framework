@@ -41,6 +41,13 @@ const disclosureSizeToPanelSize = {
   [availableDisclosureSizes.HUGE]: 'large',
 };
 
+const disclosureDimensionsToPanelSize = (dimensions) => {
+  if (dimensions.width > 320) {
+    return 'large';
+  }
+  return 'small';
+};
+
 class SlidePanelManager extends React.Component {
   constructor(props) {
     super(props);
@@ -56,13 +63,20 @@ class SlidePanelManager extends React.Component {
       isFullscreen = true;
     }
 
+    let panelSize;
+    if (manager.disclosure.dimensions) {
+      panelSize = disclosureDimensionsToPanelSize(manager.disclosure.dimensions);
+    } else {
+      panelSize = disclosureSizeToPanelSize[manager.disclosure.size];
+    }
+
     return (
       <SlidePanel
         {...customProps}
         fill
         panelBehavior={panelBehavior}
         isFullscreen={isFullscreen}
-        panelSize={disclosureSizeToPanelSize[manager.disclosure.size]}
+        panelSize={panelSize}
         isOpen={manager.disclosure.isOpen}
         panelContent={(
           <SlideGroup items={manager.disclosure.components} isAnimated />
