@@ -5,7 +5,7 @@
 |-|-|-|-|
 | classnames | ^2.2.5 | -- | A simple utility for conditionally joining classNames together |
 | prop-types | ^15.5.8 | -- | Runtime type checking for React props and similar objects. |
-| terra-disclosure-manager | ^2.1.0 | ^16.2.0 | A stateful component used to manage disclosure presentation. |
+| terra-disclosure-manager | ^2.2.0 | ^16.2.0 | A stateful component used to manage disclosure presentation. |
 | terra-heading | ^2.0.1 | ^16.2.0 | Terra includes styling for all standard headings `h1` through `h6`, as well as styles that match the size of their respective heading. |
 | terra-modal | ^2.0.1 | ^16.2.0 | Modals are used to display content in a layer above the app. Modals consist of an overlay and container. Higher order components can provide the modal dialog with a header, body, and close button. |
 | terra-responsive-element | ^2.0.1 | ^16.2.0 | The terra-responsive-element conditionally renders components based on viewport size |
