@@ -29,6 +29,7 @@ import PopupTopCenter from './site-examples/PopupTopCenter';
 import PopupTopLeft from './site-examples/PopupTopLeft';
 import PopupTopRight from './site-examples/PopupTopRight';
 import PopupInsideModal from './site-examples/PopupInsideModal';
+import PopupAttachmentBehavior from './site-examples/PopupAttachmentBehavior';
 
 const PopupExamples = () => (
   <div>
@@ -41,6 +42,8 @@ const PopupExamples = () => (
     />
     <h2 id="arrow-popup" style={{ paddingTop: '20px' }}>Popup Display With Arrow</h2>
     <PopupWithArrow />
+    <h2 id="popup-attachment-behaviors" style={{ paddingTop: '20px' }}>Popup Attachment Behavior</h2>
+    <PopupAttachmentBehavior />
     <h2 id="alignment-popups" style={{ paddingTop: '20px' }}>Popup Attachments</h2>
     <Grid>
       <Grid.Row>

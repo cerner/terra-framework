@@ -34,3 +34,38 @@ exports[`should shallow a default component 1`] = `
   />
 </div>
 `;
+
+exports[`should shallow render a component with push attachment behavior 1`] = `
+<div>
+  <Popup
+    attachmentBehavior="push"
+    boundingRef={null}
+    classNameArrow={null}
+    classNameContent={null}
+    classNameOverlay={null}
+    contentAttachment="top center"
+    contentHeight="80"
+    contentWidth="240"
+    isArrowDisplayed={false}
+    isContentFocusDisabled={false}
+    isHeaderDisabled={false}
+    isOpen={true}
+    onRequestClose={[Function]}
+    releaseFocus={[Function]}
+    requestFocus={[Function]}
+    targetRef={[Function]}
+  >
+    <p>
+      this is popup content
+    </p>
+  </Popup>
+  <div
+    style={
+      Object {
+        "height": "20px",
+        "width": "20px",
+      }
+    }
+  />
+</div>
+`;
