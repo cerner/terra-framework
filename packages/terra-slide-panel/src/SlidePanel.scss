@@ -6,7 +6,7 @@
 
   .main,
   .panel {
-    background-color: #fff;
+    background-color: var(--terra-slide-panel-panel-background-color, #fff);
     box-sizing: border-box;
 
     height: 100%;
