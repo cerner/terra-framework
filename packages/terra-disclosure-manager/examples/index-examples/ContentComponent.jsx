@@ -21,12 +21,12 @@ const propTypes = {
 const HEIGHT_KEYS = Object.keys(availableDisclosureHeights);
 const WIDTH_KEYS = Object.keys(availableDisclosureWidths);
 
-const generateOptions = (values) => {
-  return values.map((currentValue, index) => {
+const generateOptions = values => (
+  values.map((currentValue, index) => {
     const keyValue = index;
     return <option key={keyValue} value={currentValue}>{currentValue}</option>;
-  });
-};
+  })
+);
 
 class ContentComponent extends React.Component {
   constructor(props) {

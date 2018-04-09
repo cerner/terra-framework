@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 -----------------
+### Added
+* Dimension handling to the slide panel manager.
 
 2.2.0 - (March 23, 2018)
 -----------------

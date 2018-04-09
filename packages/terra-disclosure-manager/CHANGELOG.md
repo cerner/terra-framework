@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 -----------------
+### Added
+* Available disclosure dimension heights and widths.
 
 2.2.0 - (March 23, 2018)
 ------------------
