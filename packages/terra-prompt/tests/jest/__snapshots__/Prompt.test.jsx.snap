@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Prompt should render a default component 1`] = `
+<div
+  className="prompt"
+>
+  default
+</div>
+`;
