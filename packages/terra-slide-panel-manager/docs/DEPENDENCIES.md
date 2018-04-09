@@ -5,7 +5,7 @@
 |-|-|-|-|
 | classnames | ^2.2.5 | -- | A simple utility for conditionally joining classNames together |
 | prop-types | ^15.5.8 | -- | Runtime type checking for React props and similar objects. |
-| terra-disclosure-manager | ^2.1.0 | ^16.2.0 | A stateful component used to manage disclosure presentation. |
+| terra-disclosure-manager | ^2.2.0 | ^16.2.0 | A stateful component used to manage disclosure presentation. |
 | terra-slide-group | ^1.15.0 | ^15.4.2 | A component that utilizes the `react-transition-group` library to present a stack of components in an animated fashion |
 | terra-slide-panel | ^1.15.0 | ^15.4.2 | terra-slide-panel |
 

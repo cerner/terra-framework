@@ -3,6 +3,14 @@ Changelog
 
 Unreleased
 ----------
+
+2.4.1 - (April 5, 2018)
+------------------
+### Changed
+* Added terra-mixins dependency
+
+2.4.0 - (April 3, 2018)
+------------------
 ### Changed
 * Miragte package to terra-framework
 
