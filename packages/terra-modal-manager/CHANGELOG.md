@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Add specificity to selectors to override values from terra-modal.
 
 2.2.0 - (March 23, 2018)
 -----------------
