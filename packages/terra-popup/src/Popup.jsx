@@ -23,10 +23,10 @@ const ATTACHMENT_POSITIONS = [
 
 const propTypes = {
   /**
-   * If the primary attachment in not available, how should the content be positioned. Options
-   * include 'auto', 'flip', or 'none'.
+   * If the primary attachment is not available, how should the content be positioned. Options
+   * include 'auto', 'flip', or 'push'.
    */
-  attachmentBehavior: PropTypes.oneOf(Hookshot.attachmentBehaviors),
+  attachmentBehavior: PropTypes.oneOf(['auto', 'flip', 'push']),
   /**
    * The children to be displayed as content within the popup.
    */

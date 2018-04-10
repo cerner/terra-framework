@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Change
+* Removed attachment behavior `none`. Added `push` as a replacement to `none` to regain previous bounded repositioning.
 
 2.4.1 - (April 5, 2018)
 ------------------

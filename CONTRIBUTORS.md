@@ -9,6 +9,7 @@ Cerner Corporation
 - Sairam Rakshith Bhyravabhotla [@rakshith91]
 - Ismail Jones [@papasmile]
 - Alvin Cheung [@pseudofaux]
+- Stephen Esser [@StephenEsser]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -19,3 +20,4 @@ Cerner Corporation
 [@rakshith91]: https://github.com/rakshith91
 [@papasmile]: https://github.com/papasmile
 [@pseudofaux]: https://github.com/pseudofaux
+[@StephenEsser]: https://github.com/StephenEsser

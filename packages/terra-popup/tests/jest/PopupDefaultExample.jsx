@@ -26,6 +26,7 @@ class PopupDefaultExample extends React.Component {
     return (
       <div>
         <Popup
+          {...this.props}
           isOpen={this.state.open}
           targetRef={this.getButtonNode}
           onRequestClose={this.handleRequestClose}
