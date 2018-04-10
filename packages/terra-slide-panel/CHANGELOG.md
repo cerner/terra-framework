@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+2.4.0 - (April 10, 2018)
+-----------------
 ### Changed
 * Allow Slide Panel Background Color to be Themeable
 

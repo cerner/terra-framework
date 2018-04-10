@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+1.3.0 - (April 10, 2018)
+-----------------
 ### Changed
 * Updated the Application Header popup attachment behavior to be `push`
 
