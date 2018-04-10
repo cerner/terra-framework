@@ -13,7 +13,7 @@
 | terra-form | ^2.0.1 | ^16.2.0 | Components for building forms |
 | terra-grid | ^4.0.1 | ^16.2.0 | The grid component provides a flexbox based grid system. |
 | terra-list | ^2.0.1 | ^16.2.0 | terra-list |
-| terra-modal-manager | ^2.2.0 | ^16.2.0 | A Redux-backed Container component that dynamically presents components in a Terra Modal |
+| terra-modal-manager | ^2.3.0 | ^16.2.0 | A Redux-backed Container component that dynamically presents components in a Terra Modal |
 | terra-responsive-element | ^2.0.1 | ^16.2.0 | The terra-responsive-element conditionally renders components based on viewport size |
 | terra-slide-panel-manager | ^2.2.0 | ^16.2.0 | A DisclosureManager implementation that presents disclosed content using a SlidePanel. |
 

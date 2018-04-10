@@ -8,7 +8,7 @@
 | react-intl | ^2.4.0 | ^0.14.9 \|\| ^15.0.0 \|\| ^16.0.0 | Internationalize React apps. This library provides React components and an API to format dates, numbers, and strings, including pluralization and handling translations. |
 | react-router-dom | ^4.2.2 | >=15 | DOM bindings for React Router |
 | terra-application-header-layout | ^2.2.0 | ^16.2.0 | This component renders an application header layout. To be used with a layout. |
-| terra-application-links | ^3.1.1 | ^16.2.0 | This packages contains a list and tab form of ApplicationLinks, to be used in horizontal and vertical display styles. Selection is managed by react-router. |
+| terra-application-links | ^3.2.0 | ^16.2.0 | This packages contains a list and tab form of ApplicationLinks, to be used in horizontal and vertical display styles. Selection is managed by react-router. |
 | terra-application-menu-layout | ^2.1.0 | ^16.2.0 | This component renders an application menu layout. To be used with a terra-layout or terra-navigation-layout. |
 | terra-application-name | ^2.2.0 | ^16.2.0 | Houses the title of the application, along with a logo. There are two versions - a header version and menu version. These should be used with the corresponding header and menu layouts. |
 | terra-application-utility | ^1.0.0 | ^16.2.0 | The Utility is used to disclose a utility menu. There are two versions - a header version and menu version. These should be used with the corresponding `terra-application-header-layout` and `terra-application-menu-layout` components. |
@@ -19,10 +19,10 @@
 | terra-disclosure-manager | ^2.2.0 | ^16.2.0 | A stateful component used to manage disclosure presentation. |
 | terra-icon | ^2.2.0 | ^16.2.0 | terra-icon |
 | terra-image | ^2.2.0 | ^16.2.0 | terra-image |
-| terra-modal-manager | ^2.2.0 | ^16.2.0 | A Redux-backed Container component that dynamically presents components in a Terra Modal |
-| terra-navigation-layout | ^2.2.0 | ^16.2.0 | The Terra Navigation Layout package includes a variety of components and utilities to provide configuration-based, react-router-driven navigation to Terra applications. |
+| terra-modal-manager | ^2.3.0 | ^16.2.0 | A Redux-backed Container component that dynamically presents components in a Terra Modal |
+| terra-navigation-layout | ^2.3.0 | ^16.2.0 | The Terra Navigation Layout package includes a variety of components and utilities to provide configuration-based, react-router-driven navigation to Terra applications. |
 | terra-navigation-side-menu | ^1.1.0 | ^16.2.0 | A structual component for nesting navigational items within the content section of the terra-menu-layout. |
-| terra-popup | ^2.4.1 | ^16.2.0 | The Terra Popup is higher order component that launches terra-hookshot positioned content with the ability to display a dynamic arrow. |
+| terra-popup | ^3.0.0 | ^16.2.0 | The Terra Popup is higher order component that launches terra-hookshot positioned content with the ability to display a dynamic arrow. |
 
 ## devDependencies
 | Dependency | Version | React Version | Description |
