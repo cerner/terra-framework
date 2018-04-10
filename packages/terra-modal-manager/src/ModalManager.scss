@@ -3,28 +3,30 @@
     height: 100%;
   }
 
-  .huge {
-    height: 85%;
-    width: 75%;
-  }
+  .modal-manager {
+    &.huge {
+      height: 85%;
+      width: 75%;
+    }
 
-  .large {
-    height: 75%;
-    width: 55%;
-  }
+    &.large {
+      height: 75%;
+      width: 55%;
+    }
 
-  .medium {
-    height: 65%;
-    width: 55%;
-  }
+    &.medium {
+      height: 65%;
+      width: 55%;
+    }
 
-  .small {
-    height: 50%;
-    width: 50%;
-  }
+    &.small {
+      height: 50%;
+      width: 50%;
+    }
 
-  .tiny {
-    height: 40%;
-    width: 50%;
+    &.tiny {
+      height: 40%;
+      width: 50%;
+    }
   }
 }
