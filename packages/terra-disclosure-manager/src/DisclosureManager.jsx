@@ -12,19 +12,21 @@ const availableDisclosureSizes = {
 };
 
 const availableDisclosureHeights = {
-  120: 120,
-  240: 240,
-  360: 360,
-  480: 480,
-  600: 600,
+  220: 220,
+  340: 340,
+  460: 460,
+  580: 580,
+  720: 720,
+  880: 880,
 };
 
 const availableDisclosureWidths = {
-  120: 120,
-  240: 240,
-  360: 360,
-  480: 480,
-  600: 600,
+  300: 300,
+  620: 620,
+  940: 940,
+  1260: 1260,
+  1580: 1580,
+  1900: 1900,
 };
 
 export { availableDisclosureSizes, availableDisclosureHeights, availableDisclosureWidths };

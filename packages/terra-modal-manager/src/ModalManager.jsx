@@ -24,32 +24,7 @@ class ModalManager extends React.Component {
   constructor(props) {
     super(props);
 
-    this.updateFullscreenState = this.updateFullscreenState.bind(this);
     this.renderModal = this.renderModal.bind(this);
-
-    this.state = {
-      forceFullscreen: false,
-    };
-  }
-
-  componentDidMount() {
-    this.updateFullscreenState();
-    window.addEventListener('resize', this.updateFullscreenState);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateFullscreenState);
-  }
-
-  updateFullscreenState() {
-    const isFullscreen = window.innerWidth < breakpoints.small;
-    const previousFullscreenState = this.state.forceFullscreen;
-
-    if (previousFullscreenState !== isFullscreen) {
-      this.setState({
-        forceFullscreen: isFullscreen,
-      });
-    }
   }
 
   renderModal(manager) {
@@ -60,7 +35,7 @@ class ModalManager extends React.Component {
       customProps.className,
     ]);
 
-    const isFullscreen = this.state.forceFullscreen || manager.disclosure.isMaximized || manager.disclosure.size === availableDisclosureSizes.FULLSCREEN;
+    const isFullscreen = manager.disclosure.isMaximized || manager.disclosure.size === availableDisclosureSizes.FULLSCREEN;
     let modalClasses;
     if (!isFullscreen) {
       if (manager.disclosure.dimensions) {

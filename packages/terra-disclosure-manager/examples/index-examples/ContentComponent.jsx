@@ -36,7 +36,7 @@ class ContentComponent extends React.Component {
     this.handleSelectChange = this.handleSelectChange.bind(this);
     this.getId = this.getId.bind(this);
 
-    this.state = { id: 'dimensions', disclosureHeight: 120, disclosureWidth: 120 };
+    this.state = { id: 'dimensions', disclosureHeight: HEIGHT_KEYS[0], disclosureWidth: WIDTH_KEYS[0] };
   }
 
   getId(name) {
