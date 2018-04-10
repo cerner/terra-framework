@@ -8,6 +8,7 @@ Cerner Corporation
 - Jake LaCombe [@jakelacombe]
 - Sairam Rakshith Bhyravabhotla [@rakshith91]
 - Ismail Jones [@papasmile]
+- Alvin Cheung [@pseudofaux]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -17,3 +18,4 @@ Cerner Corporation
 [@jakelacombe]: https://github.com/JakeLaCombe
 [@rakshith91]: https://github.com/rakshith91
 [@papasmile]: https://github.com/papasmile
+[@pseudofaux]: https://github.com/pseudofaux
