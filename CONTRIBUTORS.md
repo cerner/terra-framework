@@ -7,6 +7,7 @@ Cerner Corporation
 - Mike Hemesath [@mhemesath]
 - Jake LaCombe [@jakelacombe]
 - Sairam Rakshith Bhyravabhotla [@rakshith91]
+- Ismail Jones [@papasmile]
 - Alvin Cheung [@pseudofaux]
 - Stephen Esser [@StephenEsser]
 
@@ -17,5 +18,6 @@ Cerner Corporation
 [@mhemesath]: https://github.com/mhemesath
 [@jakelacombe]: https://github.com/JakeLaCombe
 [@rakshith91]: https://github.com/rakshith91
+[@papasmile]: https://github.com/papasmile
 [@pseudofaux]: https://github.com/pseudofaux
 [@StephenEsser]: https://github.com/StephenEsser

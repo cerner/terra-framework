@@ -13,7 +13,7 @@ This component renders secondary navigation items with react router.
 
 ## Getting Started
 
-- Install from [npmjs](https://www.npmjs.com): `npm install terra-navigation`
+- Install from [npmjs](https://www.npmjs.com): `npm install terra-navigation-layout`
 
 ## LICENSE
 
