@@ -36,6 +36,13 @@ const availableDisclosureWidths = {
   1920: 1920,
 };
 
+const defaultDimensions = { height: availableDisclosureHeights['690'], width: availableDisclosureWidths['1120'] };
+const defaultSize = availableDisclosureSizes.SMALL;
+
+const isValidDimensions = dimensions => availableDisclosureHeights[dimensions.height] && availableDisclosureWidths[dimensions.width];
+
+const isValidSize = size => availableDisclosureSizes[size.toUpperCase()];
+
 export { availableDisclosureSizes, availableDisclosureHeights, availableDisclosureWidths };
 
 const propTypes = {
@@ -123,13 +130,24 @@ class DisclosureManager extends React.Component {
   }
 
   openDisclosure(data) {
-    const dimensions = data.dimensions || data.size ? data.dimensions : { height: availableDisclosureHeights[690], width: availableDisclosureWidths[1120] };
+    let dimensions = data.dimensions;
+    if (dimensions && !isValidDimensions(dimensions)) {
+      dimensions = defaultDimensions;
+    }
+
+    let size = data.size;
+    if (!size || (size && !isValidSize(size))) {
+      if (!dimensions) {
+        dimensions = defaultDimensions;
+      }
+      size = defaultSize;
+    }
 
     this.setState({
       disclosureIsOpen: true,
       disclosureIsFocused: true,
-      disclosureSize: data.size || availableDisclosureSizes.SMALL,
-      disclosureDimensions: dimensions || undefined,
+      disclosureSize: size,
+      disclosureDimensions: dimensions,
       disclosureComponentKeys: [data.content.key],
       disclosureComponentData: {
         [data.content.key]: {

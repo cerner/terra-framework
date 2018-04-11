@@ -117,6 +117,7 @@ class ContentComponent extends React.Component {
         )}
       >
         <div className={cx('content-wrapper')}>
+          {this.renderButton('default')}
           {this.renderButton('tiny')}
           {this.renderButton('small')}
           {this.renderButton('medium')}
