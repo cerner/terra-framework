@@ -6,6 +6,11 @@ Unreleased
 ### Added
 * Dimension handling to the modal manager.
 
+2.3.0 - (April 10, 2018)
+-----------------
+### Changed
+* Add specificity to selectors to override values from terra-modal.
+
 2.2.0 - (March 23, 2018)
 -----------------
 ### Changed
