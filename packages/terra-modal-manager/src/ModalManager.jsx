@@ -4,7 +4,6 @@ import classNames from 'classnames/bind';
 import Modal from 'terra-modal';
 import AppDelegate from 'terra-app-delegate';
 import SlideGroup from 'terra-slide-group';
-import breakpoints from 'terra-responsive-element/lib/breakpoints.scss';
 import DisclosureManager, { availableDisclosureSizes } from 'terra-disclosure-manager';
 
 import 'terra-base/lib/baseStyles';
@@ -18,6 +17,22 @@ const cx = classNames.bind(styles);
 const propTypes = {
   app: AppDelegate.propType,
   children: PropTypes.node,
+};
+
+const heightFromSize = {
+  tiny: 240,
+  small: 420,
+  medium: 600,
+  large: 870,
+  huge: 960,
+};
+
+const widthFromSize = {
+  tiny: 320,
+  small: 640,
+  medium: 960,
+  large: 1280,
+  huge: 1600,
 };
 
 class ModalManager extends React.Component {
@@ -38,11 +53,16 @@ class ModalManager extends React.Component {
     const isFullscreen = manager.disclosure.isMaximized || manager.disclosure.size === availableDisclosureSizes.FULLSCREEN;
     let modalClasses;
     if (!isFullscreen) {
+      let height;
+      let width;
       if (manager.disclosure.dimensions) {
-        modalClasses = cx(['modal-manager', `height-${manager.disclosure.dimensions.height}`, `width-${manager.disclosure.dimensions.width}`]);
+        height = manager.disclosure.dimensions.height;
+        width = manager.disclosure.dimensions.width;
       } else {
-        modalClasses = cx(['modal-manager', styles[manager.disclosure.size]]);
+        height = heightFromSize[manager.disclosure.size];
+        width = widthFromSize[manager.disclosure.size];
       }
+      modalClasses = cx(['modal-manager', `height-${height}`, `width-${width}`]);
     }
 
     return (

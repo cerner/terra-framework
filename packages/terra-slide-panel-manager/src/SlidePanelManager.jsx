@@ -42,7 +42,7 @@ const disclosureSizeToPanelSize = {
 };
 
 const disclosureDimensionsToPanelSize = (dimensions) => {
-  if (dimensions.width > 320) {
+  if (dimensions.width > 480 || dimensions.height > 600) {
     return 'large';
   }
   return 'small';

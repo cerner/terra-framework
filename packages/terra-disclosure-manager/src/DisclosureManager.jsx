@@ -12,21 +12,28 @@ const availableDisclosureSizes = {
 };
 
 const availableDisclosureHeights = {
-  220: 220,
-  340: 340,
-  460: 460,
-  580: 580,
-  720: 720,
-  880: 880,
+  240: 240,
+  420: 420,
+  600: 600,
+  690: 690,
+  780: 780,
+  870: 870,
+  960: 960,
+  1140: 1140,
 };
 
 const availableDisclosureWidths = {
-  300: 300,
-  620: 620,
-  940: 940,
-  1260: 1260,
-  1580: 1580,
-  1900: 1900,
+  320: 320,
+  480: 480,
+  640: 640,
+  800: 800,
+  960: 960,
+  1120: 1120,
+  1280: 1280,
+  1440: 1440,
+  1600: 1600,
+  1760: 1760,
+  1920: 1920,
 };
 
 export { availableDisclosureSizes, availableDisclosureHeights, availableDisclosureWidths };
@@ -116,11 +123,13 @@ class DisclosureManager extends React.Component {
   }
 
   openDisclosure(data) {
+    const dimensions = data.dimensions || data.size ? data.dimensions : { height: availableDisclosureHeights[690], width: availableDisclosureWidths[1120] };
+
     this.setState({
       disclosureIsOpen: true,
       disclosureIsFocused: true,
       disclosureSize: data.size || availableDisclosureSizes.SMALL,
-      disclosureDimensions: data.dimensions || undefined,
+      disclosureDimensions: dimensions || undefined,
       disclosureComponentKeys: [data.content.key],
       disclosureComponentData: {
         [data.content.key]: {
