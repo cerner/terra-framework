@@ -35,8 +35,8 @@
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-disclosure-manager": "^2.2.0",
-    "terra-slide-group": "^1.15.0",
-    "terra-slide-panel": "^1.15.0"
+    "terra-slide-group": "^2.4.0",
+    "terra-slide-panel": "^2.4.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
