@@ -101,7 +101,7 @@ describe('ModalManager', () => {
       browser.setViewportSize(Terra.viewports('large')[0]);
       browser.url('/#/raw/tests/modal-manager/modal-manager-default');
 
-      browser.click('#root-component .disclose-large');
+      browser.click('#root-component .disclose-small');
 
       browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 500);
       browser.click('[class*="slide-group"] #DemoContainer-1 .maximize');
@@ -116,7 +116,7 @@ describe('ModalManager', () => {
       browser.setViewportSize(Terra.viewports('large')[0]);
       browser.url('/#/raw/tests/modal-manager/modal-manager-default');
 
-      browser.click('#root-component .disclose-large');
+      browser.click('#root-component .disclose-small');
 
       browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
       browser.click('[class*="slide-group"] #DemoContainer-1 .maximize');
