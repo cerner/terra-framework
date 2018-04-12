@@ -27,7 +27,7 @@ exports[`ModalManger should disclose content in Modal 1`] = `
       </TestContainer>
       <Modal
         ariaLabel="Modal"
-        classNameModal="modal-manager large"
+        classNameModal="modal-manager height-870 width-1280"
         classNameOverlay={null}
         closeOnEsc={true}
         closeOnOutsideClick={false}
@@ -37,13 +37,14 @@ exports[`ModalManger should disclose content in Modal 1`] = `
         isScrollable={false}
         onRequestClose={[Function]}
         role="document"
+        zIndex="6000"
       >
         <Portal
           isOpened={true}
         >
           <ModalContent
             ariaLabel="Modal"
-            classNameModal="modal-manager large"
+            classNameModal="modal-manager height-870 width-1280"
             classNameOverlay={null}
             closeOnOutsideClick={false}
             isFocused={true}
@@ -51,6 +52,7 @@ exports[`ModalManger should disclose content in Modal 1`] = `
             isScrollable={false}
             onRequestClose={[Function]}
             role="document"
+            zIndex="6000"
           >
             <FocusTrap
               _createFocusTrap={[Function]}
@@ -63,15 +65,16 @@ exports[`ModalManger should disclose content in Modal 1`] = `
                 <ModalOverlay
                   className={null}
                   onClick={null}
+                  zIndex="6000"
                 >
                   <div
-                    className="overlay"
+                    className="overlay layer-6000"
                     onClick={null}
                   />
                 </ModalOverlay>
                 <div
                   aria-label="Modal"
-                  className="modal fixed-size modal-manager large"
+                  className="modal layer-6000 modal-manager height-870 width-1280"
                   role="document"
                   tabIndex="0"
                 >
@@ -215,7 +218,7 @@ exports[`ModalManger should render the ModalManager with custom props 1`] = `
       </TestContainer>
       <Modal
         ariaLabel="Modal"
-        classNameModal="modal-manager undefined"
+        classNameModal="modal-manager"
         classNameOverlay={null}
         closeOnEsc={true}
         closeOnOutsideClick={false}
@@ -225,6 +228,7 @@ exports[`ModalManger should render the ModalManager with custom props 1`] = `
         isScrollable={false}
         onRequestClose={[Function]}
         role="document"
+        zIndex="6000"
       />
     </div>
   </DisclosureManager>
@@ -258,7 +262,7 @@ exports[`ModalManger should render the ModalManager with defaults 1`] = `
       </TestContainer>
       <Modal
         ariaLabel="Modal"
-        classNameModal="modal-manager undefined"
+        classNameModal="modal-manager"
         classNameOverlay={null}
         closeOnEsc={true}
         closeOnOutsideClick={false}
@@ -268,6 +272,7 @@ exports[`ModalManger should render the ModalManager with defaults 1`] = `
         isScrollable={false}
         onRequestClose={[Function]}
         role="document"
+        zIndex="6000"
       />
     </div>
   </DisclosureManager>

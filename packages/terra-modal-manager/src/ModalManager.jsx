@@ -53,16 +53,13 @@ class ModalManager extends React.Component {
     const isFullscreen = manager.disclosure.isMaximized || manager.disclosure.size === availableDisclosureSizes.FULLSCREEN;
     let modalClasses;
     if (!isFullscreen) {
-      let height;
-      let width;
+      const classArray = ['modal-manager'];
       if (manager.disclosure.dimensions) {
-        height = manager.disclosure.dimensions.height;
-        width = manager.disclosure.dimensions.width;
-      } else {
-        height = heightFromSize[manager.disclosure.size];
-        width = widthFromSize[manager.disclosure.size];
+        classArray.push(`height-${manager.disclosure.dimensions.height}`, `width-${manager.disclosure.dimensions.width}`);
+      } else if (manager.disclosure.size) {
+        classArray.push(`height-${heightFromSize[manager.disclosure.size]}`, `width-${widthFromSize[manager.disclosure.size]}`);
       }
-      modalClasses = cx(['modal-manager', `height-${height}`, `width-${width}`]);
+      modalClasses = cx(classArray);
     }
 
     return (
