@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Clean up peer dependencies.
 
 2.3.0 - (April 10, 2018)
 -----------------

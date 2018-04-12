@@ -32,10 +32,7 @@
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
     "terra-app-delegate": "^2.0.0",
-    "terra-base": "^3.0.0",
-    "terra-button": "^2.0.1",
-    "terra-icon": "^2.0.1",
-    "terra-menu": "^2.0.1"
+    "terra-base": "^3.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
