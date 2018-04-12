@@ -8,22 +8,68 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
  /*
- * Content to be displayed as the name
+ * The children passed to the component.
  */
-  name: PropTypes.string,
+  children: PropTypes.node,
+ /*
+ * An array of navigation links with each element specifiying text, href and target keys with appropriate values.
+ */
+  links: PropTypes.array,
+ /*
+ * The component to be displayed in logo area of the footer.
+ */
+  logo: PropTypes.node,
+ /*
+ * The component to be displayed in copyright area of the footer.
+ */
+  copyright: PropTypes.node,
+ /*
+ * The component to be displayed in branding area of the footer.
+ */
+  branding: PropTypes.node,
 };
 
 const defaultProps = {
-  name: 'default',
+  links: [],
+  logo: null,
+  copyright: null,
+  branding: null,
 };
 
-const BrandFooter = ({ name, ...customProps }) => {
+const BrandFooter = ({ children, links, logo, copyright, branding, ...customProps }) => {
   const BrandFooterClassNames = cx([
     'brand-footer',
     customProps.className,
   ]);
 
-  return (<div {...customProps} className={BrandFooterClassNames}>{name}</div>);
+  const linkslength = links.length;
+  return (
+    <footer role="contentinfo" {...customProps} className={BrandFooterClassNames}>
+      {children}
+      {linkslength > 0 ?
+        <nav className={cx('nav')}>
+          <ul className={cx('menu')} role="menu">
+            {links.map((link, index) => (
+              link.target !== undefined ?
+                <li className={cx('list-item')} key={index.toString()}>
+                  <a className={cx('link')} href={link.href} target={link.target}>{link.text}</a>
+                </li> :
+                <li className={cx('list-item')} key={index.toString()}>
+                  <a className={cx('link')} href={link.href} >{link.text}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav> : null}
+      <div className={cx('footer-branding-copyright')} >
+        <div>
+          {logo}
+          {branding}
+        </div>
+        {copyright}
+      </div>
+    </footer>
+  );
 };
 
 BrandFooter.propTypes = propTypes;

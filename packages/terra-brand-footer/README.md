@@ -4,7 +4,8 @@
 [![NPM version](http://img.shields.io/npm/v/terra-brand-footer.svg)](https://www.npmjs.org/package/terra-brand-footer)
 [![Build Status](https://travis-ci.org/cerner/terra-framework.svg?branch=master)](https://travis-ci.org/cerner/terra-framework)
 
-{insert description}
+A standard footer for application layout which provides options such as branding, copyright information, logo and navigation to
+related pages.
 
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-brand-footer/docs)

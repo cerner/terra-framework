@@ -1,5 +1,49 @@
 :local {
   .brand-footer {
-    /* TODO: Add styles */
+    margin: none;
+  }
+
+  /* stylelint-disable selector-no-qualifying-type */
+  .nav {
+    background: #f4f4f4;
+    color: #868a8c;
+    display: block;
+    padding: 0.625rem;
+  }
+
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .list-item {
+    display: inline;
+  }
+
+
+  .list-item:first-child::before {
+    content: '';
+    padding: 0;
+  }
+
+  .list-item::before {
+    content: '/';
+    padding: 0.7142857142857143rem;
+  }
+
+
+  .link {
+    background-color: transparent;
+    color: #0065a3;
+    text-decoration: none;
+  }
+  /* stylelint-enable selector-no-qualifying-type */
+
+  .footer-branding-copyright {
+    background: #007cc3;
+    color: #fff;
+    padding: 1.25rem;
   }
 }

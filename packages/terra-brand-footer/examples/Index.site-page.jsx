@@ -12,8 +12,8 @@ import { version } from '../package.json';
 import BrandFooterSrc from '!raw-loader!../src/BrandFooter';
 
 // Example Files
-import DefaultBrandFooter from './index-examples/DefaultBrandFooter';
-import DefaultBrandFooterSrc from '!raw-loader!./index-examples/DefaultBrandFooter.jsx';
+import DefaultBrandFooter from './index-examples/DefaultBrandFooter.example';
+import DefaultBrandFooterSrc from '!raw-loader!./index-examples/DefaultBrandFooter.example.jsx';
 
 const BrandFooterExamples = () => (
   <div>

@@ -1,6 +1,7 @@
 # Terra Brand Footer
 
-{insert description}
+A standard footer for application layout which provides options such as branding, copyright information, logo and navigation to
+related pages.
 
 ## Getting Started
 
@@ -13,16 +14,18 @@
 import React from 'react';
 import BrandFooter from 'terra-brand-footer';
 
-<BrandFooter {props...} />
+<BrandFooter
+  links=[{
+      {text: 'Some link', href: '#'},
+      {text: 'Another link', href: '#', target: '_blank'}
+  ]}
+  logo={<a href="https://www.cerner.com"><img src="cerner.svg" alt="Cerner" /></a>}
+  copyright={<p>some text for copyright information</p>}
+  branding={<img src="additional-branding.svg" alt="" />}
+<BrandFooter />
 ```
 
 ## Component Features
 
-<!-- Uncomment supported features.
  * [Cross-Browser Support](https://github.com/cerner/terra-core/wiki/Component-Features#cross-browser-support)
- * [Responsive Support](https://github.com/cerner/terra-core/wiki/Component-Features#responsive-support)
- * [Mobile Support](https://github.com/cerner/terra-core/wiki/Component-Features#mobile-support)
- * [Internationalization Support](https://github.com/cerner/terra-core/wiki/Component-Features#internationalization-i18n-support)
- * [Localization Support](https://github.com/cerner/terra-core/wiki/Component-Features#localization-support)
  * [LTR/RTL Support](https://github.com/cerner/terra-core/wiki/Component-Features#ltr--rtl-support)
- -->
