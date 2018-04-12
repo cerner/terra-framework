@@ -3,6 +3,7 @@ Changelog
 
 Unreleased
 ----------
+* Dependency pointing to react 15 version.
 
 2.3.0 - (April 10, 2018)
 -----------------
