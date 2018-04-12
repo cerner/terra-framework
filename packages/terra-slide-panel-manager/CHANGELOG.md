@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Dimension handling to the slide panel manager.
 
+### Changed
+* Update to react 16 dependencies.
+
 2.2.0 - (March 23, 2018)
 -----------------
 ### Changed

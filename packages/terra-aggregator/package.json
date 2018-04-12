@@ -38,7 +38,7 @@
     "terra-button": "^2.0.1",
     "terra-clinical-action-header": "^2.0.0",
     "terra-clinical-header": "^2.0.0",
-    "terra-content-container": "^1.15.0",
+    "terra-content-container": "^2.4.0",
     "terra-disclosure-manager": "^2.2.0",
     "terra-form": "^2.0.1",
     "terra-grid": "^4.0.1",
