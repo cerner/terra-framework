@@ -46,7 +46,7 @@ const BrandFooter = ({ children, links, logo, copyright, branding, ...customProp
   return (
     <footer role="contentinfo" {...customProps} className={BrandFooterClassNames}>
       {children}
-      {linkslength > 0 ?
+      {linkslength > 0 ? (
         <nav className={cx('nav')}>
           <ul className={cx('menu')} role="menu">
             {links.map((link, index) => (
@@ -60,7 +60,9 @@ const BrandFooter = ({ children, links, logo, copyright, branding, ...customProp
               ))
             }
           </ul>
-        </nav> : null}
+        </nav>
+      ) : null
+      }
       <div className={cx('footer-branding-copyright')} >
         <div>
           {logo}
