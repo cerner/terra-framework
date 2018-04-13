@@ -16,27 +16,27 @@ const propTypes = {
  */
   links: PropTypes.array,
  /*
- * The component to be displayed in logo area of the footer.
+ * The content to be displayed in left side area of the footer.
  */
-  logo: PropTypes.node,
+  contentLeft: PropTypes.node,
  /*
- * The component to be displayed in copyright area of the footer.
+ * The content to be displayed in right side area of the footer.
  */
-  copyright: PropTypes.node,
+  contentRight: PropTypes.node,
  /*
- * The component to be displayed in branding area of the footer.
+ * The content to be displayed in bottom area of the footer.
  */
-  branding: PropTypes.node,
+  contentBottom: PropTypes.node,
 };
 
 const defaultProps = {
   links: [],
-  logo: null,
-  copyright: null,
-  branding: null,
+  contentLeft: null,
+  contentRight: null,
+  contentBottom: null,
 };
 
-const BrandFooter = ({ children, links, logo, copyright, branding, ...customProps }) => {
+const BrandFooter = ({ children, links, contentLeft, contentRight, contentBottom, ...customProps }) => {
   const BrandFooterClassNames = cx([
     'brand-footer',
     customProps.className,
@@ -63,12 +63,12 @@ const BrandFooter = ({ children, links, logo, copyright, branding, ...customProp
         </nav>
       ) : null
       }
-      <div className={cx('footer-branding-copyright')} >
+      <div className={cx('footer-content')} >
         <div>
-          {logo}
-          {branding}
+          {contentLeft}
+          {contentRight}
         </div>
-        {copyright}
+        {contentBottom}
       </div>
     </footer>
   );

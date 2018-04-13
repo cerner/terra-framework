@@ -1,7 +1,6 @@
 # Terra Brand Footer
 
-A standard footer for application layout which provides options such as branding, copyright information, logo and navigation to
-related pages.
+A standard footer for application layout which provides content areas to display options such as branding, copyright information, logo and navigation to related pages.
 
 ## Getting Started
 
@@ -19,10 +18,10 @@ import BrandFooter from 'terra-brand-footer';
       {text: 'Some link', href: '#'},
       {text: 'Another link', href: '#', target: '_blank'}
   ]}
-  logo={<a href="https://www.cerner.com"><img src="cerner.svg" alt="Cerner" /></a>}
-  copyright={<p>some text for copyright information</p>}
-  branding={<img src="additional-branding.svg" alt="" />}
-<BrandFooter />
+  contentLeft={<a href="https://www.cerner.com"><img src="cerner.svg" alt="Cerner" /></a>}
+  contentRight={<p>some text for copyright information</p>}
+  contentBottom={<img src="additional-branding.svg" alt="" />}
+/>
 ```
 
 ## Component Features

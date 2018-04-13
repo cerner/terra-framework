@@ -12,7 +12,7 @@ import { version } from '../package.json';
 import BrandFooterSrc from '!raw-loader!../src/BrandFooter';
 
 // Example Files
-import DefaultBrandFooter from './index-examples/DefaultBrandFooter.example';
+import DefaultBrandFooter from './index-examples/DefaultBrandFooter.example.jsx';
 import DefaultBrandFooterSrc from '!raw-loader!./index-examples/DefaultBrandFooter.example.jsx';
 
 const BrandFooterExamples = () => (

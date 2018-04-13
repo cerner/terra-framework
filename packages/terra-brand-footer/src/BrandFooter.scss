@@ -3,12 +3,11 @@
     margin: none;
   }
 
-  /* stylelint-disable selector-no-qualifying-type */
   .nav {
     background: #f4f4f4;
     color: #868a8c;
     display: block;
-    padding: 0.625rem;
+    padding: 0.7142857142857143rem 1.4285714285714286rem;
   }
 
   .menu {
@@ -39,11 +38,10 @@
     color: #0065a3;
     text-decoration: none;
   }
-  /* stylelint-enable selector-no-qualifying-type */
 
-  .footer-branding-copyright {
+  .footer-content {
     background: #007cc3;
-    color: #fff;
-    padding: 1.25rem;
+    color: #f4f4f4;
+    padding: 1.4285714285714286rem;
   }
 }
