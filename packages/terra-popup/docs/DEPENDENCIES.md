@@ -11,10 +11,10 @@
 | terra-button | ^2.3.0 | ^16.2.0 | The terra-button component provides users a way to trigger actions in the UI. |
 | terra-content-container | ^2.2.0 | ^16.2.0 | The Terra ContentContainer is a structural component for the purpose of arranging content with a header. |
 | terra-grid | ^4.2.0 | ^16.2.0 | The grid component provides a flexbox based grid system. |
-| terra-hookshot | ^3.0.0 | ^16.2.0 | The Terra Hookshot component positions portaled content according to target and content attachments, ensuring they stay visually connected. |
+| terra-hookshot | ^3.1.0 | ^16.2.0 | The Terra Hookshot component positions portaled content according to target and content attachments, ensuring they stay visually connected. |
 | terra-list | ^2.3.0 | ^16.2.0 | terra-list |
 | terra-mixins | ^1.0.0 | -- | terra-mixins |
-| terra-modal-manager | ^2.3.0 | ^16.2.0 | A Redux-backed Container component that dynamically presents components in a Terra Modal |
+| terra-modal-manager | ^2.4.0 | ^16.2.0 | A Redux-backed Container component that dynamically presents components in a Terra Modal |
 
 ## devDependencies
 | Dependency | Version | React Version | Description |
