@@ -3,8 +3,16 @@ Changelog
 
 Unreleased
 ----------
+
+2.5.0 - (April 13, 2018)
+------------------
 ### Changed
-* Clean up peer dependencies.
+* Minor dependency updates
+
+2.4.0 - (April 13, 2018)
+-----------------
+### Changed
+* Dependencies are now pointing to react 16 version.
 
 2.3.0 - (April 10, 2018)
 -----------------
