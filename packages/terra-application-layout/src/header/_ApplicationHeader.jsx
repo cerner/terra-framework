@@ -202,7 +202,7 @@ class ApplicationHeader extends React.Component {
     if (utilityComponent) {
       return (
         <Popup
-          attachmentBehavior="none"
+          attachmentBehavior="push"
           contentAttachment="top center"
           contentHeight="auto"
           contentWidth="240"

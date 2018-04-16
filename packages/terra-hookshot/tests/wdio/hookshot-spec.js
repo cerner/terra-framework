@@ -25,15 +25,27 @@ describe('Hookshot', () => {
     Terra.should.matchScreenshot({ selector: '#attachment-behavior-none-bounds' });
   });
 
-  describe('Displays with position pushed when there is not enough room in primary position with no attachment behavior', () => {
+  describe('Displays in primary position when there is not enough room in primary position with no attachment behavior', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/hookshot/hookshot-attachment-behavior-none');
-      browser.click('#position-pushed');
+      browser.click('#position-offset');
       browser.click('#trigger-attachment-behavior-none');
       browser.waitForVisible('#attachment-behavior-none-content');
     });
 
     Terra.should.matchScreenshot({ selector: '#attachment-behavior-none-bounds' });
+  });
+
+  // push position behavior
+  describe('Displays with position pushed when there is not enough room in primary position with no attachment behavior', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/hookshot/hookshot-attachment-behavior-push');
+      browser.click('#position-pushed');
+      browser.click('#trigger-attachment-behavior-push');
+      browser.waitForVisible('#attachment-behavior-push-content');
+    });
+
+    Terra.should.matchScreenshot({ selector: '#attachment-behavior-push-bounds' });
   });
 
   // flip position behavior

@@ -4,6 +4,16 @@ Changelog
 Unreleased
 ----------
 
+3.1.0 - (April 13, 2018)
+------------------
+### Changed
+* Minor dependency updates
+
+3.0.0 - (April 10, 2018)
+-----------------
+### Breaking Change
+* Attachment behavior `none` will no longer reposition content relative to a bounding rect. Content will remain statically positioned to the specified attachment target. Update the attachment behavior of `none` to `push` to regain previous bounded repositioning.
+
 2.3.0 - (April 3, 2018)
 ------------------
 ### Changed

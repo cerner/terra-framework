@@ -53,6 +53,7 @@ import DefaultHookshot from './packages/terra-hookshot/examples/test-examples/De
 import HookshotAttachmentBehaviorAuto from './packages/terra-hookshot/examples/test-examples/HookshotAttachmentBehaviorAuto.example';
 import HookshotAttachmentBehaviorFlip from './packages/terra-hookshot/examples/test-examples/HookshotAttachmentBehaviorFlip.example';
 import HookshotAttachmentBehaviorNone from './packages/terra-hookshot/examples/test-examples/HookshotAttachmentBehaviorNone.example';
+import HookshotAttachmentBehaviorPush from './packages/terra-hookshot/examples/test-examples/HookshotAttachmentBehaviorPush.example';
 import HookshotAttachmentMargin from './packages/terra-hookshot/examples/test-examples/HookshotAttachmentMargin.example';
 import HookshotBoundingContainer from './packages/terra-hookshot/examples/test-examples/HookshotBoundingContainer.example';
 import HookshotCloseBehaviors from './packages/terra-hookshot/examples/test-examples/HookshotCloseBehaviors.example';
@@ -403,6 +404,11 @@ const componentConfig = {
         name: 'Hookshot Attachment Behavior None',
         path: '/hookshot-attachment-behavior-none',
         component: HookshotAttachmentBehaviorNone,
+      },
+      {
+        name: 'Hookshot Attachment Behavior Push',
+        path: '/hookshot-attachment-behavior-push',
+        component: HookshotAttachmentBehaviorPush,
       },
       {
         name: 'Hookshot Attachment Margin',

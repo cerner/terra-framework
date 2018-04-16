@@ -4,6 +4,16 @@ Changelog
 Unreleased
 ----------
 
+2.4.0 - (April 13, 2018)
+------------------
+### Changed
+* Minor dependency updates
+
+2.3.0 - (April 10, 2018)
+-----------------
+### Changed
+* Add specificity to selectors to override values from terra-modal.
+
 2.2.0 - (March 23, 2018)
 -----------------
 ### Changed
