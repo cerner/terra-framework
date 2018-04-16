@@ -7,7 +7,7 @@ Unreleased
 3.1.0 - (April 13, 2018)
 ------------------
 ### Changed
-* Minor dependency updates
+* Minor dependency updates.
 
 3.0.0 - (April 10, 2018)
 -----------------
