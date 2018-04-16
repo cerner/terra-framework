@@ -19,6 +19,7 @@ import TerraModalManagerIndex from './packages/terra-modal-manager/examples/Inde
 import TerraNavigationLayoutIndex from './packages/terra-navigation-layout/examples/Index.site-page';
 import TerraNavigationSideMenuIndex from './packages/terra-navigation-side-menu/examples/Index.site-page';
 import TerraPopupIndex from './packages/terra-popup/examples/Index.site-page';
+import TerraPromptIndex from './packages/terra-prompt/examples/Index.site-page';
 import TerraSlidePanelManagerIndex from './packages/terra-slide-panel-manager/examples/Index.site-page';
 import TerraSlidePanelIndex from './packages/terra-slide-panel/examples/Index.site-page';
 import TerraThemeProviderIndex from './packages/terra-theme-provider/examples/Index.site-page';
@@ -108,6 +109,8 @@ import SizeInvalidPopup from './packages/terra-popup/examples/test-examples/Size
 import SizeLargePopup from './packages/terra-popup/examples/test-examples/SizeLargePopup.example';
 import SizeMediumPopup from './packages/terra-popup/examples/test-examples/SizeMediumPopup.example';
 import SizeSmallPopup from './packages/terra-popup/examples/test-examples/SizeSmallPopup.example';
+import CompletePrompt from './packages/terra-prompt/examples/test-examples/CompletePrompt.example';
+import DefaultPrompt from './packages/terra-prompt/examples/test-examples/DefaultPrompt.example';
 import SlidePanelManagerDefault from './packages/terra-slide-panel-manager/examples/test-examples/SlidePanelManagerDefault.example';
 import SlidePanelEnd from './packages/terra-slide-panel/examples/test-examples/SlidePanelEnd.example';
 import SlidePanelFill from './packages/terra-slide-panel/examples/test-examples/SlidePanelFill.example';
@@ -758,6 +761,29 @@ const componentConfig = {
         name: 'Size Small Popup',
         path: '/size-small-popup',
         component: SizeSmallPopup,
+      },
+    ],
+  },
+  'terra-prompt': {
+    name: 'Prompt',
+    path: '/prompt',
+    pages: [
+      {
+        name: 'Index',
+        path: '/index',
+        component: TerraPromptIndex,
+      },
+    ],
+    tests: [
+      {
+        name: 'Complete Prompt',
+        path: '/complete-prompt',
+        component: CompletePrompt,
+      },
+      {
+        name: 'Default Prompt',
+        path: '/default-prompt',
+        component: DefaultPrompt,
       },
     ],
   },

@@ -12,6 +12,8 @@ import { version } from '../package.json';
 import PromptSrc from '!raw-loader!../src/Prompt';
 
 // Example Files
+import CompletePrompt from './index-examples/CompletePrompt';
+import CompletePromptSrc from '!raw-loader!./index-examples/CompletePrompt.jsx';
 import DefaultPrompt from './index-examples/DefaultPrompt';
 import DefaultPromptSrc from '!raw-loader!./index-examples/DefaultPrompt.jsx';
 
@@ -25,6 +27,11 @@ const PromptExamples = () => (
       title="Prompt - Default"
       example={<DefaultPrompt />}
       exampleSrc={DefaultPromptSrc}
+    />
+    <IndexTemplate
+      title="Prompt - Complete"
+      example={<CompletePrompt />}
+      exampleSrc={CompletePromptSrc}
     />
 
     <PropsTable id="props" src={PromptSrc} />
