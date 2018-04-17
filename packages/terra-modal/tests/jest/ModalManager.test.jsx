@@ -1,41 +1,41 @@
 import React from 'react';
-import ModalManager from '../../src/ModalManager';
+import Modal from '../../src/Modal';
 
 const TestContainer = () => (
   <div>Hello World</div>
 );
 
-describe('ModalManger', () => {
-  it('should render the ModalManager with defaults', () => {
-    const modalManager = (
-      <ModalManager>
+describe('Modal', () => {
+  it('should render the Modal with defaults', () => {
+    const modal = (
+      <Modal>
         <TestContainer />
-      </ModalManager>
+      </Modal>
     );
 
-    const result = mount(modalManager);
+    const result = mount(modal);
     expect(result).toMatchSnapshot();
   });
 
   it('should render the ModalManager with custom props', () => {
-    const modalManager = (
-      <ModalManager id="my-modal-manager" className="test">
+    const modal = (
+      <Modal id="my-modal-manager" className="test">
         <TestContainer />
-      </ModalManager>
+      </Modal>
     );
 
-    const result = mount(modalManager);
+    const result = mount(modal);
     expect(result).toMatchSnapshot();
   });
 
   it('should disclose content in Modal', () => {
-    const modalManager = (
-      <ModalManager>
+    const modal = (
+      <Modal>
         <TestContainer />
-      </ModalManager>
+      </Modal>
     );
 
-    const wrapper = mount(modalManager);
+    const wrapper = mount(modal);
 
     return new Promise((resolve, reject) => {
       const childApp = wrapper.find(TestContainer).getElements()[0].props.app;
