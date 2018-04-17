@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import Modal from 'terra-modal';
+import AbstractModal from 'terra-abstract-modal';
 import AppDelegate from 'terra-app-delegate';
 import SlideGroup from 'terra-slide-group';
 import DisclosureManager, { availableDisclosureSizes } from 'terra-disclosure-manager';
 
 import 'terra-base/lib/baseStyles';
-import styles from './ModalManager.scss';
+import styles from './Modal.scss';
+import withModal from './withModal';
 
 const disclosureType = 'modal';
 export { disclosureType };
@@ -35,7 +36,7 @@ const widthFromSize = {
   huge: 1600,
 };
 
-class ModalManager extends React.Component {
+class Modal extends React.Component {
   constructor(props) {
     super(props);
 
@@ -53,7 +54,7 @@ class ModalManager extends React.Component {
     const isFullscreen = manager.disclosure.isMaximized || manager.disclosure.size === availableDisclosureSizes.FULLSCREEN;
     let modalClasses;
     if (!isFullscreen) {
-      const classArray = ['modal-manager'];
+      const classArray = ['modal'];
       if (manager.disclosure.dimensions) {
         classArray.push(`height-${manager.disclosure.dimensions.height}`, `width-${manager.disclosure.dimensions.width}`);
       } else if (manager.disclosure.size) {
@@ -65,7 +66,7 @@ class ModalManager extends React.Component {
     return (
       <div {...customProps} className={containerClassNames}>
         {manager.children.components}
-        <Modal
+        <AbstractModal
           isFocused={manager.disclosure.isFocused}
           isOpen={manager.disclosure.isOpen}
           isFullscreen={isFullscreen}
@@ -78,7 +79,7 @@ class ModalManager extends React.Component {
           ariaLabel="Modal"
         >
           <SlideGroup items={manager.disclosure.components} isAnimated={!isFullscreen} />
-        </Modal>
+        </AbstractModal>
       </div>
     );
   }
@@ -98,6 +99,7 @@ class ModalManager extends React.Component {
   }
 }
 
-ModalManager.propTypes = propTypes;
+Modal.propTypes = propTypes;
 
-export default ModalManager;
+export default Modal;
+export { withModal };

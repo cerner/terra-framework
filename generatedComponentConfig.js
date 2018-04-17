@@ -15,7 +15,7 @@ import TerraDisclosureManagerIndex from './packages/terra-disclosure-manager/exa
 import TerraHookshotIndex from './packages/terra-hookshot/examples/Index.site-page';
 import TerraInfiniteListIndex from './packages/terra-infinite-list/examples/Index.site-page';
 import TerraLayoutIndex from './packages/terra-layout/examples/Index.site-page';
-import TerraModalManagerIndex from './packages/terra-modal-manager/examples/Index.site-page';
+import TerraModalIndex from './packages/terra-modal/examples/Index.site-page';
 import TerraNavigationLayoutIndex from './packages/terra-navigation-layout/examples/Index.site-page';
 import TerraNavigationSideMenuIndex from './packages/terra-navigation-side-menu/examples/Index.site-page';
 import TerraPopupIndex from './packages/terra-popup/examples/Index.site-page';
@@ -76,7 +76,7 @@ import LayoutDefault from './packages/terra-layout/examples/test-examples/Layout
 import LayoutNoHeader from './packages/terra-layout/examples/test-examples/LayoutNoHeader.example';
 import LayoutNoMenu from './packages/terra-layout/examples/test-examples/LayoutNoMenu.example';
 import LayoutSlidePanelExample from './packages/terra-layout/examples/test-examples/LayoutSlidePanelExample.example';
-import ModalManagerDefault from './packages/terra-modal-manager/examples/test-examples/ModalManagerDefault.example';
+import ModalDefault from './packages/terra-modal/examples/test-examples/ModalDefault.example';
 import NavigationLayoutBasic from './packages/terra-navigation-layout/examples/test-examples/NavigationLayoutBasic.example';
 import NavigationLayoutComplex from './packages/terra-navigation-layout/examples/test-examples/NavigationLayoutComplex.example';
 import NavigationSideMenuDefault from './packages/terra-navigation-side-menu/examples/test-examples/NavigationSideMenuDefault.example';
@@ -550,21 +550,21 @@ const componentConfig = {
       },
     ],
   },
-  'terra-modal-manager': {
-    name: 'Modal Manager',
-    path: '/modal-manager',
+  'terra-modal': {
+    name: 'Modal',
+    path: '/modal',
     pages: [
       {
         name: 'Index',
         path: '/index',
-        component: TerraModalManagerIndex,
+        component: TerraModalIndex,
       },
     ],
     tests: [
       {
-        name: 'Modal Manager Default',
-        path: '/modal-manager-default',
-        component: ModalManagerDefault,
+        name: 'Modal Default',
+        path: '/modal-default',
+        component: ModalDefault,
       },
     ],
   },

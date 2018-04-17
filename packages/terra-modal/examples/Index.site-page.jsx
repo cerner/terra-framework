@@ -2,25 +2,29 @@
 import React from 'react';
 import PropsTable from 'terra-props-table';
 import Markdown from 'terra-markdown';
+import IndexTemplate from 'terra-dev-site/src/IndexPageTemplate';
 
 import ReadMe from '../docs/README.md';
 import { version } from '../package.json';
 
 // Component Source
-import ModalManagerSrc from '!raw-loader!../src/ModalManager.jsx';
+import ModalSrc from '!raw-loader!../src/Modal.jsx';
+import ModalExampleSrc from '!raw-loader!./index-examples/ModalExample.jsx';
 
 // Examples
-import ModalManagerExample from './index-examples/ModalManagerExample';
+import ModalExample from './index-examples/ModalExample';
 
-const ModalManagerExamples = () => (
+const ModalExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
-    <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
-    <ModalManagerExample />
-    <br />
-    <PropsTable id="props-table" src={ModalManagerSrc} />
+    <IndexTemplate
+      title="Example Modal"
+      example={<ModalExample />}
+      exampleSrc={ModalExampleSrc}
+    />
+    <PropsTable id="props" src={ModalSrc} />
   </div>
 );
 
-export default ModalManagerExamples;
+export default ModalExamples;
