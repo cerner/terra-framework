@@ -3,7 +3,8 @@ Changelog
 
 Unreleased
 ----------
-### Added
+### Changed
+* Major version bump. Renaming modal manger to modal.
 * Dimension handling to the modal manager.
 
 2.4.0 - (April 13, 2018)
