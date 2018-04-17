@@ -1,7 +1,7 @@
 {
   "name": "terra-modal",
   "main": "lib/Modal.js",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "The Modal is a DisclosureManager implementation that presents disclosed content using an AbstractModal.",
   "repository": {
     "type": "git",

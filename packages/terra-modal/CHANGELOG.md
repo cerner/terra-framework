@@ -6,6 +6,11 @@ Unreleased
 ### Added
 * Dimension handling to the modal manager.
 
+2.4.0 - (April 13, 2018)
+------------------
+### Changed
+* Minor dependency updates
+
 2.3.0 - (April 10, 2018)
 -----------------
 ### Changed
