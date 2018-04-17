@@ -67,7 +67,7 @@
     "start": "tt:serve",
     "start:build": "npm run generate-config && npm run start",
     "start-heroku": "tt:serve-static --site build ",
-    "test": "jest && wdio",
+    "test": "jest && npm run wdio",
     "wdio": "wdio node_modules/terra-dev-site/src/wdio/wdio.conf.js"
   },
   "devDependencies": {
