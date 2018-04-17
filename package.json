@@ -44,7 +44,7 @@
     "clean:obsolete-snapshots": "npm test -- -u",
     "compile": "npm run compile:src",
     "compile:src": "lerna run compile",
-    "compile:prod": "NODE_ENV=production node --max_old_space_size=2500 node_modules/webpack/bin/webpack.js --config node_modules/terra-dev-site/src/webpack/webpack.config.js -p",
+    "compile:prod": "NODE_ENV=production node --max_old_space_size=3000 node_modules/webpack/bin/webpack.js --config node_modules/terra-dev-site/src/webpack/webpack.config.js -p",
     "danger": "danger",
     "deploy": "npm run compile:prod && gh-pages -d build",
     "dependency-markdown": "node scripts/dependency-markdown-generator/DependencyMarkdownGenerator.js",
