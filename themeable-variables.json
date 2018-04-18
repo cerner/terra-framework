@@ -107,6 +107,14 @@
     "--terra-base-line-height": "1.42857",
     "--terra-base-body-margin": "0"
   },
+  "BrandFooter": {
+    "--terra-brand-footer-nav-background-color": "#f4f4f4",
+    "--terra-brand-footer-nav-color": "#64696c",
+    "--terra-brand-footer-link-color": "#0059a8",
+    "--terra-brand-footer-link-hover-color": "#001f67",
+    "--terra-brand-footer-footer-content-background-color": "#0079be",
+    "--terra-brand-footer-footer-content-color": "#fff"
+  },
   "Button": {
     "--terra-button-border-radius": "0.2142rem",
     "--terra-button-font-size": "1rem",
