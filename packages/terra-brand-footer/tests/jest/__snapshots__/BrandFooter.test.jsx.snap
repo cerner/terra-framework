@@ -22,17 +22,37 @@ exports[`BrandFooter should render with provided content bottom 1`] = `
     className="footer-content"
   >
     <div />
-    <p
-      style={
-        Object {
-          "marignTop": ".7142857142857143rem",
-        }
-      }
-    >
+    <p>
       <small>
         Copyright © 2018 Cerner Corporation.  All Rights Reserved.
       </small>
     </p>
+  </div>
+</footer>
+`;
+
+exports[`BrandFooter should render with provided content right 1`] = `
+<footer
+  className="brand-footer"
+  role="contentinfo"
+>
+  <div
+    className="footer-content"
+  >
+    <div>
+      <div>
+        <p>
+          <small>
+            Powered by
+          </small>
+        </p>
+        <p>
+          <b>
+            React.js
+          </b>
+        </p>
+      </div>
+    </div>
   </div>
 </footer>
 `;
@@ -78,6 +98,177 @@ exports[`BrandFooter should render with provided links 1`] = `
     className="footer-content"
   >
     <div />
+  </div>
+</footer>
+`;
+
+exports[`BrandFooter should render with provided links and content bottom 1`] = `
+<footer
+  className="brand-footer"
+  role="contentinfo"
+>
+  <nav
+    className="nav"
+  >
+    <ul
+      className="menu"
+      role="menu"
+    >
+      <li
+        className="list-item"
+        key="0"
+      >
+        <a
+          className="link"
+          href="https://www.cerner.com/"
+        >
+          Cerner Home
+        </a>
+      </li>
+      <li
+        className="list-item"
+        key="1"
+      >
+        <a
+          className="link"
+          href="https://code.cerner.com/"
+          target="_blank"
+        >
+          Cerner Code
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div
+    className="footer-content"
+  >
+    <div />
+    <p>
+      <small>
+        Copyright © 2018 Cerner Corporation.  All Rights Reserved.
+      </small>
+    </p>
+  </div>
+</footer>
+`;
+
+exports[`BrandFooter should render with provided links and content right 1`] = `
+<footer
+  className="brand-footer"
+  role="contentinfo"
+>
+  <nav
+    className="nav"
+  >
+    <ul
+      className="menu"
+      role="menu"
+    >
+      <li
+        className="list-item"
+        key="0"
+      >
+        <a
+          className="link"
+          href="https://www.cerner.com/"
+        >
+          Cerner Home
+        </a>
+      </li>
+      <li
+        className="list-item"
+        key="1"
+      >
+        <a
+          className="link"
+          href="https://code.cerner.com/"
+          target="_blank"
+        >
+          Cerner Code
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div
+    className="footer-content"
+  >
+    <div>
+      <div>
+        <p>
+          <small>
+            Powered by
+          </small>
+        </p>
+        <p>
+          <b>
+            React.js
+          </b>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+`;
+
+exports[`BrandFooter should render with provided links, content bottom and content right 1`] = `
+<footer
+  className="brand-footer"
+  role="contentinfo"
+>
+  <nav
+    className="nav"
+  >
+    <ul
+      className="menu"
+      role="menu"
+    >
+      <li
+        className="list-item"
+        key="0"
+      >
+        <a
+          className="link"
+          href="https://www.cerner.com/"
+        >
+          Cerner Home
+        </a>
+      </li>
+      <li
+        className="list-item"
+        key="1"
+      >
+        <a
+          className="link"
+          href="https://code.cerner.com/"
+          target="_blank"
+        >
+          Cerner Code
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div
+    className="footer-content"
+  >
+    <div>
+      <div>
+        <p>
+          <small>
+            Powered by
+          </small>
+        </p>
+        <p>
+          <b>
+            React.js
+          </b>
+        </p>
+      </div>
+    </div>
+    <p>
+      <small>
+        Copyright © 2018 Cerner Corporation.  All Rights Reserved.
+      </small>
+    </p>
   </div>
 </footer>
 `;

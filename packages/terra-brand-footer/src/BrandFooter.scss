@@ -4,8 +4,8 @@
   }
 
   .nav {
-    background: #f4f4f4;
-    color: #868a8c;
+    background-color: var(--terra-brand-footer-nav-background-color, #f4f4f4);
+    color: var(--terra-brand-footer-nav-color, #64696c);
     display: block;
     padding: 0.7142857142857143rem 1.4285714285714286rem;
   }
@@ -34,14 +34,17 @@
 
 
   .link {
-    background-color: transparent;
-    color: #0065a3;
+    color: var(--terra-brand-footer-link-color, #0059a8);
     text-decoration: none;
   }
 
+  .link:hover:active {
+    color: var(--terra-brand-footer-link-hover-color, #001f67);
+  }
+
   .footer-content {
-    background: #007cc3;
-    color: #f4f4f4;
+    background-color: var(--terra-brand-footer-footer-content-background-color, #0079be);
+    color: var(--terra-brand-footer-footer-content-color, #fff);
     padding: 1.4285714285714286rem;
   }
 }

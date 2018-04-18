@@ -8,7 +8,6 @@ import ReadMe from '../docs/README.md';
 import { version } from '../package.json';
 
 // Component Source
-// eslint-disable-next-line import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions
 import BrandFooterSrc from '!raw-loader!../src/BrandFooter';
 
 // Example Files

@@ -7,26 +7,26 @@ import styles from './BrandFooter.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
- /*
- * The children passed to the component.
- */
-  children: PropTypes.node,
- /*
- * An array of navigation links with each element specifiying text, href and target keys with appropriate values.
- */
-  links: PropTypes.array,
- /*
- * The content to be displayed in left side area of the footer.
- */
-  contentLeft: PropTypes.node,
- /*
- * The content to be displayed in right side area of the footer.
- */
-  contentRight: PropTypes.node,
- /*
- * The content to be displayed in bottom area of the footer.
- */
-  contentBottom: PropTypes.node,
+   /**
+    * An array of navigation links with each element specifiying text, href and target keys with appropriate values.
+    */
+    links: PropTypes.array,
+   /**
+    * The content to be displayed in left side area of the footer.
+    */
+    contentLeft: PropTypes.node,
+   /**
+    * The content to be displayed in right side area of the footer.
+    */
+    contentRight: PropTypes.node,
+   /**
+    * The content to be displayed in bottom area of the footer.
+    */
+    contentBottom: PropTypes.node,
+   /**
+    * The children passed to the component.
+    */
+    children: PropTypes.node,
 };
 
 const defaultProps = {
@@ -46,22 +46,24 @@ const BrandFooter = ({ children, links, contentLeft, contentRight, contentBottom
   return (
     <footer role="contentinfo" {...customProps} className={BrandFooterClassNames}>
       {children}
-      {linkslength > 0 ? (
-        <nav className={cx('nav')}>
-          <ul className={cx('menu')} role="menu">
-            {links.map((link, index) => (
-              link.target !== undefined ?
-                <li className={cx('list-item')} key={index.toString()}>
-                  <a className={cx('link')} href={link.href} target={link.target}>{link.text}</a>
-                </li> :
-                <li className={cx('list-item')} key={index.toString()}>
-                  <a className={cx('link')} href={link.href} >{link.text}</a>
-                </li>
-              ))
-            }
-          </ul>
-        </nav>
-      ) : null
+      {
+        linkslength > 0 ?
+        (
+          <nav className={cx('nav')}>
+            <ul className={cx('menu')} role="menu">
+              {links.map((link, index) => (
+                link.target !== undefined ?
+                  <li className={cx('list-item')} role="menuitem" key={index.toString()}>
+                    <a className={cx('link')} href={link.href} target={link.target}>{link.text}</a>
+                  </li> :
+                  <li className={cx('list-item')} role="menuitem" key={index.toString()}>
+                    <a className={cx('link')} href={link.href} >{link.text}</a>
+                  </li>
+                ))
+              }
+            </ul>
+          </nav>
+        ) : null
       }
       <div className={cx('footer-content')} >
         <div>
