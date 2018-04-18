@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Change
+* Removed the call to preventDefault in onOutsideClick
 
 3.1.0 - (April 13, 2018)
 ------------------
