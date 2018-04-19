@@ -25,7 +25,7 @@
     "react": "^16.2.0",
     "react-router-dom": "^4.2.2",
     "terra-app-delegate": "^2.0.0",
-    "terra-props-table": "^2.0.0"
+    "terra-props-table": "^2.4.0"
   },
   "peerDependencies": {
     "react": "^16.2.0",
