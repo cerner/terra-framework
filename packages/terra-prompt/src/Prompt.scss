@@ -4,15 +4,54 @@
     align-items: center;
     background: var(--prompt-background, rgba(255, 255, 255, 0.9));
     display: flex;
-    opacity: 0;
     position: fixed;
     z-index: 9000;
   }
 
   .prompt-body {
     font-size: var(--prompt-body-font-size, 1.25rem);
-    padding: var(--prompt-body-padding, 30px);
+    padding: var(--prompt-body-padding, 1.25rem);
     text-align: center;
-    width: var(--prompt-body-width, 400px);
+    width: var(--prompt-body-width, 25rem);
+  }
+
+  .title {
+    color: var(--terra-prompt-title-color, #868a8c);
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    font-size: var(--terra-prompt-title-font-size, 1.714rem);
+    text-align: center;
+    width: 100%;
+  }
+
+  .message {
+    color: var(--terra-prompt-message-color, #1c1f21);
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    font-size: var(--terra-prompt-message-font-size, 1rem);
+    padding-top: var(--terra-prompt-message-padding-top, 0.714rem);
+    text-align: var(--terra-prompt-message-text-align, center);
+    width: 100%;
+  }
+
+  .actions {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: var(--terra-prompt-actions-flex-direction-small-width, row);
+    justify-content: center;
+    padding-bottom: var(--terra-prompt-actions-padding-bottom, 0.4rem);
+    padding-left: var(--terra-prompt-actions-padding-left, 0.4rem);
+    padding-right: var(--terra-prompt-actions-padding-right, 0.4rem);
+    padding-top: var(--terra-prompt-actions-padding-top, 0.4rem);
+    width: 100%;
+
+    > button {
+      flex: var(--terra-prompt-actions-button-flex, initial);
+      flex-shrink: 1;
+      margin-bottom: var(--terra-prompt-actions-button-margin-bottom, 0.4rem);
+      margin-left: var(--terra-prompt-actions-button-margin-left, 0.4rem);
+      margin-right: var(--terra-prompt-actions-button-margin-right, 0.4rem);
+      margin-top: var(--terra-prompt-actions-button-margin-top, 0);
+    }
   }
 }

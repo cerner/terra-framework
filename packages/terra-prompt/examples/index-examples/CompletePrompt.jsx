@@ -1,17 +1,12 @@
 import React from 'react';
 import Button from 'terra-button';
 
-import Prompt from '../../lib/Prompt';
+import Prompt from '../../src/Prompt';
 
-const buttons = [<Button text="Ok" />];
 const CompletePrompt = () => (
-  <div>
-    <Prompt
-      title="Prompt"
-      message="This is a prompt"
-      actions={buttons}
-    />
-  </div>
+  <Prompt title="Hello" message="Welcome to Prompt">
+    <Button text="Ok" />
+  </Prompt>
 );
 
 export default CompletePrompt;
