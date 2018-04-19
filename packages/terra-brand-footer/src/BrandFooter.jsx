@@ -7,26 +7,26 @@ import styles from './BrandFooter.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
-   /**
-    * An array of navigation links with each element specifiying text, href and target keys with appropriate values.
-    */
-    links: PropTypes.array,
-   /**
-    * The content to be displayed in left side area of the footer.
-    */
-    contentLeft: PropTypes.node,
-   /**
-    * The content to be displayed in right side area of the footer.
-    */
-    contentRight: PropTypes.node,
-   /**
-    * The content to be displayed in bottom area of the footer.
-    */
-    contentBottom: PropTypes.node,
-   /**
-    * The children passed to the component.
-    */
-    children: PropTypes.node,
+ /**
+  * An array of navigation links with each element specifiying text, href and target keys with appropriate values.
+  */
+  links: PropTypes.array,
+ /**
+  * The content to be displayed in left side area of the footer.
+  */
+  contentLeft: PropTypes.node,
+ /**
+  * The content to be displayed in right side area of the footer.
+  */
+  contentRight: PropTypes.node,
+ /**
+  * The content to be displayed in bottom area of the footer.
+  */
+  contentBottom: PropTypes.node,
+ /**
+  * The children passed to the component.
+  */
+  children: PropTypes.node,
 };
 
 const defaultProps = {
