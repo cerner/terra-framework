@@ -23,10 +23,6 @@ const propTypes = {
   * The content to be displayed in bottom area of the footer.
   */
   contentBottom: PropTypes.node,
- /**
-  * The children passed to the component.
-  */
-  children: PropTypes.node,
 };
 
 const defaultProps = {
@@ -36,7 +32,7 @@ const defaultProps = {
   contentBottom: null,
 };
 
-const BrandFooter = ({ children, links, contentLeft, contentRight, contentBottom, ...customProps }) => {
+const BrandFooter = ({ links, contentLeft, contentRight, contentBottom, ...customProps }) => {
   const BrandFooterClassNames = cx([
     'brand-footer',
     customProps.className,
@@ -45,26 +41,21 @@ const BrandFooter = ({ children, links, contentLeft, contentRight, contentBottom
   const linkslength = links.length;
   return (
     <footer role="contentinfo" {...customProps} className={BrandFooterClassNames}>
-      {children}
-      {
-        linkslength > 0 ?
-        (
-          <nav className={cx('nav')}>
-            <ul className={cx('menu')} role="menu">
-              {links.map((link, index) => (
-                link.target !== undefined ?
-                  <li className={cx('list-item')} role="menuitem" key={index.toString()}>
-                    <a className={cx('link')} href={link.href} target={link.target}>{link.text}</a>
-                  </li> :
-                  <li className={cx('list-item')} role="menuitem" key={index.toString()}>
-                    <a className={cx('link')} href={link.href} >{link.text}</a>
-                  </li>
-                ))
-              }
-            </ul>
-          </nav>
-        ) : null
-      }
+      {linkslength > 0 ? (
+        <nav className={cx('nav')}>
+          <ul className={cx('menu')} role="menu">
+            {links.map((link, index) => (
+              <li className={cx('list-item')} role="menuitem" key={index.toString()}>
+                {link.target !== undefined ? (
+                  <a className={cx('link')} href={link.href} target={link.target} >{link.text}</a>
+                ) : (
+                  <a className={cx('link')} href={link.href} >{link.text}</a>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
+      ) : null}
       <div className={cx('footer-content')} >
         <div>
           {contentLeft}

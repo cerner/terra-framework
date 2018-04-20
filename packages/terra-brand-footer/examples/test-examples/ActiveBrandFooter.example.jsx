@@ -1,9 +1,14 @@
 import React from 'react';
 
+import classNames from 'classnames/bind';
 import BrandFooter from '../../lib/BrandFooter';
+import styles from './ActiveBrandFooter.scss';
+
+const cx = classNames.bind(styles);
 
 export default () =>
   <BrandFooter
+    className={cx('active-brand-footer')}
     links={[
       { text: 'Terra UI', href: 'http://terra-ui.herokuapp.com/static/#/site/home' },
       { text: 'Cerner', href: 'https://www.cerner.com/', target: '_blank' },

@@ -38,8 +38,14 @@
     text-decoration: none;
   }
 
-  .link:hover:active {
+  .link:hover,
+  .link.hover {
     color: var(--terra-brand-footer-link-hover-color, #001f67);
+  }
+
+  .link:active,
+  .link {
+    color: var(--terra-brand-footer-link-active-color, #001f67);
   }
 
   .footer-content {

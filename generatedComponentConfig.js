@@ -50,6 +50,8 @@ import DefaultApplicationMenuUtility from './packages/terra-application-utility/
 import DefaultHeaderUtilityMenu from './packages/terra-application-utility/examples/test-examples/DefaultHeaderUtilityMenu.example';
 import DefaultMenuUtilityMenu from './packages/terra-application-utility/examples/test-examples/DefaultMenuUtilityMenu.example';
 import DefaultBrandFooter from './packages/terra-brand-footer/examples/test-examples/DefaultBrandFooter.example';
+import ActiveBrandFooter from './packages/terra-brand-footer/examples/test-examples/ActiveBrandFooter.example';
+import HoveredBrandFooter from './packages/terra-brand-footer/examples/test-examples/HoveredBrandFooter.example';
 import DefaultHookshot from './packages/terra-hookshot/examples/test-examples/DefaultHookshot.example';
 import HookshotAttachmentBehaviorAuto from './packages/terra-hookshot/examples/test-examples/HookshotAttachmentBehaviorAuto.example';
 import HookshotAttachmentBehaviorFlip from './packages/terra-hookshot/examples/test-examples/HookshotAttachmentBehaviorFlip.example';
@@ -377,6 +379,16 @@ const componentConfig = {
         name: 'Default Brand Footer',
         path: '/default-brand-footer',
         component: DefaultBrandFooter,
+      },
+      {
+        name: 'Hovered Brand Footer',
+        path: '/hovered-brand-footer',
+        component: HoveredBrandFooter,
+      },
+      {
+        name: 'Active Brand Footer',
+        path: '/active-brand-footer',
+        component: ActiveBrandFooter,
       },
     ],
   },
