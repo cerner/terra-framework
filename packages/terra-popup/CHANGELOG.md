@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.0.0 - (April 20, 2018)
+------------------
 ### Changed
 * Added a call to preventDefault on onOutsideClick
 
