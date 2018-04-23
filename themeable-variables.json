@@ -290,6 +290,7 @@
     "--terra-modal-fixed-margin": "0 auto"
   },
   "ModalOverlay": {
+    "--terra-abstract-modal-overlay-background-color": "rgba(0, 0, 0, 0.4)",
     "--terra-modal-overlay-background-color": "rgba(0, 0, 0, 0.4)"
   },
   "NavigationSideMenu": {
@@ -332,12 +333,6 @@
     "--terra-popup-overlay-z-index": "7000"
   },
   "Prompt": {
-    "--terra-status-view-title-color": "#868a8c",
-    "--terra-status-view-title-font-size": "1.714rem",
-    "--terra-status-view-message-color": "#1c1f21",
-    "--terra-status-view-message-font-size": "1rem",
-    "--terra-status-view-message-padding-top": "0.714rem",
-    "--terra-status-view-message-text-align": "center",
     "--terra-prompt-title-color": "#868a8c",
     "--terra-prompt-title-font-size": "1.714rem",
     "--terra-prompt-message-color": "#1c1f21",
@@ -345,15 +340,15 @@
     "--terra-prompt-message-padding-top": "0.714rem",
     "--terra-prompt-message-text-align": "center",
     "--terra-prompt-actions-flex-direction-small-width": "row",
-    "--terra-prompt-actions-padding-top": "0.4rem",
-    "--terra-prompt-actions-button-flex": "initial",
-    "--terra-prompt-actions-button-margin-left": "0.4rem",
-    "--terra-prompt-actions-button-margin-right": "0.4rem",
-    "--terra-prompt-actions-button-margin-top": "0",
-    "--terra-prompt-actions-button-margin-bottom": "0.4rem",
     "--terra-prompt-actions-padding-bottom": "0.4rem",
     "--terra-prompt-actions-padding-left": "0.4rem",
-    "--terra-prompt-actions-padding-right": "0.4rem"
+    "--terra-prompt-actions-padding-right": "0.4rem",
+    "--terra-prompt-actions-padding-top": "0.4rem",
+    "--terra-prompt-actions-button-flex": "initial",
+    "--terra-prompt-actions-button-margin-bottom": "0.4rem",
+    "--terra-prompt-actions-button-margin-left": "0.4rem",
+    "--terra-prompt-actions-button-margin-right": "0.4rem",
+    "--terra-prompt-actions-button-margin-top": "0"
   },
   "SlidePanel": {
     "--terra-slide-panel-panel-width-small": "320px",

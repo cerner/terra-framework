@@ -1,11 +1,9 @@
 :local {
   .prompt {
-    /* TODO: Add styles */
     align-items: center;
     background: var(--prompt-background, rgba(255, 255, 255, 0.9));
     display: flex;
     position: fixed;
-    z-index: 9000;
   }
 
   .prompt-body {

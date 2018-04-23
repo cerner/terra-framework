@@ -6,16 +6,12 @@ const clickOK = () => {
   alert('You clicked OK');
 };
 
-const clickClose = () => {
-  alert('You clicked OK');
-};
-
 class CompletePrompt extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      isOpen: true,
+      isOpen: false,
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -34,19 +30,22 @@ class CompletePrompt extends React.Component {
     return (
       <div>
         <Prompt
+          showprompt={this.state.isOpen}
+          onRequestClose={this.handleCloseModal}
           title="This is the title"
           message="This is the message"
-          actions={[<Button
-            text="Ok"
-            onClick={clickOK}
-          />,
+          actions={[
+            <Button
+              text="Ok"
+              onClick={clickOK}
+            />,
             <Button
               text="Close"
-              onClick={clickClose}
+              onClick={this.handleCloseModal}
             />,
           ]}
         />
-        <button text="Trii" />
+        <Button text="Trigger Prompt" onClick={this.handleOpenModal} />
       </div>
     );
   }

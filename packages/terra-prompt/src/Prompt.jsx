@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Modal from 'terra-modal';
+import AbstractModal from 'terra-abstract-modal';
 import Button from 'terra-button';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
@@ -21,13 +21,22 @@ const propTypes = {
   /**
    * Array of buttons. Restricted to terra-button.
    */
-  actions: PropTypes.arrayOf(PropTypes.node),
+  actions: PropTypes.arrayOf(elementType(Button)),
+  /*
+   * Toggle to show prompt or not
+   */
+  showprompt: PropTypes.bool,
+  /*
+   * Callback function indicating a close condition was met, should be combined with showprompt for state management.
+   */
+  onRequestClose: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
   title: null,
   message: null,
   actions: [],
+  showprompt: false,
 };
 
 const actionSection = (actions) => {
@@ -40,26 +49,33 @@ const actionSection = (actions) => {
 
 class Prompt extends React.Component {
   render() {
+    if (!this.props.showprompt) {
+      return null;
+    }
+
     const {
       title,
       message,
       actions,
+      showprompt,
       ...customProps
     } = this.props;
 
     return (
       <div {...customProps} className={cx('prompt')}>
-        <Modal
-          ariaLabel="My Modal"
-          isOpen
-          onRequestClose
+        <AbstractModal
+          ariaLabel="Prompt AbstractModal"
+          classNameModal={cx('prompt', 'prompt-body')}
+          isOpen={this.props.showprompt}
+          onRequestClose={this.props.onRequestClose}
+          zIndex="8000"
         >
           <div className={cx('prompt-body')}>
             <div className={cx('title')}>{title}</div>
             <div className={cx('message')}>{message}</div>
           </div>
           {actionSection(actions)}
-        </Modal>
+        </AbstractModal>
       </div>
     );
   }
