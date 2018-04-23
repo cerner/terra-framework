@@ -12,6 +12,7 @@ import TerraApplicationMenuLayoutIndex from './packages/terra-application-menu-l
 import TerraApplicationNameIndex from './packages/terra-application-name/examples/Index.site-page';
 import TerraApplicationUtilityIndex from './packages/terra-application-utility/examples/Index.site-page';
 import TerraDisclosureManagerIndex from './packages/terra-disclosure-manager/examples/Index.site-page';
+import TerraFormValidationIndex from './packages/terra-form-validation/examples/Index.site-page';
 import TerraHookshotIndex from './packages/terra-hookshot/examples/Index.site-page';
 import TerraInfiniteListIndex from './packages/terra-infinite-list/examples/Index.site-page';
 import TerraLayoutIndex from './packages/terra-layout/examples/Index.site-page';
@@ -368,6 +369,17 @@ const componentConfig = {
         name: 'Index',
         path: '/index',
         component: TerraDisclosureManagerIndex,
+      },
+    ],
+  },
+  'terra-form-validation': {
+    name: 'Form Validation',
+    path: '/form-validation',
+    pages: [
+      {
+        name: 'Index',
+        path: '/index',
+        component: TerraFormValidationIndex,
       },
     ],
   },
