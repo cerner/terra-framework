@@ -1,10 +1,12 @@
-Changelog
+Terra Modal - Changelog
 =========
 
 Unreleased
 ----------
-### Changed
+### Breaking Change
 * Major version bump. Renaming modal manger to modal.
+* [Upgrade Guide][1]
+### Changed
 * Dimension handling to the modal manager.
 
 2.4.0 - (April 13, 2018)
@@ -154,3 +156,5 @@ Unreleased
 1.0.0 - (June 28, 2017)
 ------------------
 Initial stable release
+
+[1]: https://github.com/cerner/terra-framework/tree/master/packages/terra-modal/docs/UPGRADEGUIDE.md

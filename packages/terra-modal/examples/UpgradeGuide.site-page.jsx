@@ -2,13 +2,13 @@
 import React from 'react';
 import Markdown from 'terra-markdown';
 
-import ChangeLog from '../CHANGELOG.md';
+import UpgradeGuide from '../docs/UPGRADEGUIDE.md';
 import { version } from '../package.json';
 
 const ModalExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
-    <Markdown id="change" src={ChangeLog} />
+    <Markdown id="upgrade" src={UpgradeGuide} />
   </div>
 );
 

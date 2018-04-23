@@ -2,13 +2,15 @@
 import React from 'react';
 import Markdown from 'terra-markdown';
 
-import ChangeLog from '../CHANGELOG.md';
+import ModalExample from './index-examples/ModalExample';
 import { version } from '../package.json';
+import Example from '../docs/example.md';
 
 const ModalExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
-    <Markdown id="change" src={ChangeLog} />
+    <Markdown id="readme" src={Example} />
+    <ModalExample />
   </div>
 );
 

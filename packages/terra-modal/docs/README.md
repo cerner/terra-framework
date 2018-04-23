@@ -1,4 +1,4 @@
-# Terra Modal
+# Terra Modal - About
 
 The Modal is a DisclosureManager implementation that presents disclosed content using an AbstractModal.
 
