@@ -1,6 +1,6 @@
 # Terra Modal - Upgrade Guide
 
-## terra-modal 2.0/terra-modal-manager 2.0 => terra-modal 3.0
+## 2.0 => 3.0
 Terra Modal now implements the terra-disclosure-manager, so modal manager is no longer needed.
 
 ## Steps for uplifting from terra-modal 2.0
