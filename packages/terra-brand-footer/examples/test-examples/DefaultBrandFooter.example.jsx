@@ -11,11 +11,6 @@ export default () =>
     contentLeft={
       <a
         href="http://terra-ui.herokuapp.com/static/#/site/home"
-        style={{
-          backgroundColor: 'transparent',
-          color: '#0065a3',
-          textDecoration: 'none',
-        }}
         aria-label="link"
       >
         <svg
