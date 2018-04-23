@@ -348,8 +348,7 @@
   },
   "SlidePanel": {
     "--terra-slide-panel-panel-background-color": "#fff",
-    "--terra-slide-panel-panel-width-small": "320px",
-    "--terra-slide-panel-panel-width-large": "60%"
+    "--terra-slide-panel-panel-width-small": "320px"
   },
   "UserData": {
     "--terra-application-user-data-photo-height": "3.571rem",

@@ -4,6 +4,11 @@ ChangeLog
 Unreleased
 -----------------
 
+2.3.0 - (April 13, 2018)
+-----------------
+### Changed
+* Dependencies are now pointing to react 16 version.
+
 2.2.0 - (March 23, 2018)
 -----------------
 ### Changed

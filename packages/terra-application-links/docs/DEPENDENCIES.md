@@ -9,7 +9,7 @@
 | terra-base | ^3.0.0 | ^16.2.0 | The base component sets minimal global styles for an application. |
 | terra-icon | ^2.0.1 | ^16.2.0 | terra-icon |
 | terra-list | ^2.0.1 | ^16.2.0 | terra-list |
-| terra-popup | ^3.0.0 | ^16.2.0 | The Terra Popup is higher order component that launches terra-hookshot positioned content with the ability to display a dynamic arrow. |
+| terra-popup | ^3.2.0 | ^16.2.0 | The Terra Popup is higher order component that launches terra-hookshot positioned content with the ability to display a dynamic arrow. |
 
 ## devDependencies
 | Dependency | Version | React Version | Description |
