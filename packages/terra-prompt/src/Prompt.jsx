@@ -4,7 +4,7 @@ import AbstractModal from 'terra-abstract-modal';
 import Button from 'terra-button';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-import { elementType } from 'react-prop-types';
+import { elementType } from 'airbnb-prop-types';
 import styles from './Prompt.scss';
 
 const cx = classNames.bind(styles);
@@ -23,7 +23,7 @@ const propTypes = {
    */
   actions: PropTypes.arrayOf(elementType(Button)),
   /*
-   * Toggle to show prompt or not
+   * Toggle to show prompt or not.
    */
   showprompt: PropTypes.bool,
   /*
@@ -43,7 +43,6 @@ const actionSection = (actions) => {
   if (!actions || !actions.length) {
     return null;
   }
-
   return <div className={cx('actions')}>{actions}</div>;
 };
 
@@ -58,14 +57,15 @@ class Prompt extends React.Component {
       message,
       actions,
       showprompt,
+      onRequestClose,
       ...customProps
     } = this.props;
 
     return (
       <div {...customProps} className={cx('prompt')}>
         <AbstractModal
-          ariaLabel="Prompt AbstractModal"
-          classNameModal={cx('prompt', 'prompt-body')}
+          ariaLabel="Prompt"
+          classNameModal={cx('prompt')}
           isOpen={this.props.showprompt}
           onRequestClose={this.props.onRequestClose}
           zIndex="8000"
@@ -73,8 +73,8 @@ class Prompt extends React.Component {
           <div className={cx('prompt-body')}>
             <div className={cx('title')}>{title}</div>
             <div className={cx('message')}>{message}</div>
+            {actionSection(actions)}
           </div>
-          {actionSection(actions)}
         </AbstractModal>
       </div>
     );

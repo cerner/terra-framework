@@ -14,15 +14,15 @@ class CompletePrompt extends React.Component {
       isOpen: false,
     };
 
-    this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.handleOpenPrompt = this.handleOpenPrompt.bind(this);
+    this.handleClosePrompt = this.handleClosePrompt.bind(this);
   }
 
-  handleOpenModal() {
+  handleOpenPrompt() {
     this.setState({ isOpen: true });
   }
 
-  handleCloseModal() {
+  handleClosePrompt() {
     this.setState({ isOpen: false });
   }
 
@@ -31,7 +31,7 @@ class CompletePrompt extends React.Component {
       <div>
         <Prompt
           showprompt={this.state.isOpen}
-          onRequestClose={this.handleCloseModal}
+          onRequestClose={this.handleClosePrompt}
           title="This is the title"
           message="This is the message"
           actions={[
@@ -41,11 +41,11 @@ class CompletePrompt extends React.Component {
             />,
             <Button
               text="Close"
-              onClick={this.handleCloseModal}
+              onClick={this.handleClosePrompt}
             />,
           ]}
         />
-        <Button text="Trigger Prompt" onClick={this.handleOpenModal} />
+        <Button text="Trigger Prompt" onClick={this.handleOpenPrompt} />
       </div>
     );
   }

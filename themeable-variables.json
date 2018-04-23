@@ -348,7 +348,7 @@
     "--terra-prompt-actions-button-margin-bottom": "0.4rem",
     "--terra-prompt-actions-button-margin-left": "0.4rem",
     "--terra-prompt-actions-button-margin-right": "0.4rem",
-    "--terra-prompt-actions-button-margin-top": "0"
+    "--terra-prompt-actions-button-margin-top": "0.4rem"
   },
   "SlidePanel": {
     "--terra-slide-panel-panel-width-small": "320px",
