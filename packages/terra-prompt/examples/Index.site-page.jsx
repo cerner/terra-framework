@@ -16,9 +16,6 @@ import CompletePrompt from './index-examples/CompletePrompt';
 import CompletePromptSrc from '!raw-loader!./index-examples/CompletePrompt.jsx';
 import CompletePromptWithLongMessage from './index-examples/CompletePromptWithLongMessage';
 import CompletePromptWithLongMessageSrc from '!raw-loader!./index-examples/CompletePromptWithLongMessage.jsx';
-import DefaultPrompt from './index-examples/DefaultPrompt';
-import DefaultPromptSrc from '!raw-loader!./index-examples/DefaultPrompt.jsx';
-
 
 const PromptExamples = () => (
   <div>
@@ -26,11 +23,6 @@ const PromptExamples = () => (
     <Markdown id="readme" src={ReadMe} />
 
     <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
-    <IndexTemplate
-      title="Prompt - Default"
-      example={<DefaultPrompt />}
-      exampleSrc={DefaultPromptSrc}
-    />
     <IndexTemplate
       title="Prompt - Complete"
       example={<CompletePrompt />}
