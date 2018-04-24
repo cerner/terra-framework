@@ -345,8 +345,8 @@
     "--terra-prompt-actions-button-margin": "0.8rem 0.4rem 0 0.4rem"
   },
   "SlidePanel": {
-    "--terra-slide-panel-panel-width-small": "320px",
-    "--terra-slide-panel-panel-width-large": "60%"
+    "--terra-slide-panel-panel-background-color": "#fff",
+    "--terra-slide-panel-panel-width-small": "320px"
   },
   "UserData": {
     "--terra-application-user-data-photo-height": "3.571rem",
