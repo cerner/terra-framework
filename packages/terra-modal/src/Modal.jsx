@@ -51,16 +51,14 @@ class Modal extends React.Component {
       customProps.className,
     ]);
 
+    const classArray = ['modal'];
     const isFullscreen = manager.disclosure.isMaximized || manager.disclosure.size === availableDisclosureSizes.FULLSCREEN;
-    let modalClasses;
     if (!isFullscreen) {
-      const classArray = ['modal'];
       if (manager.disclosure.dimensions) {
         classArray.push(`height-${manager.disclosure.dimensions.height}`, `width-${manager.disclosure.dimensions.width}`);
       } else if (manager.disclosure.size) {
         classArray.push(`height-${heightFromSize[manager.disclosure.size]}`, `width-${widthFromSize[manager.disclosure.size]}`);
       }
-      modalClasses = cx(classArray);
     }
 
     return (
@@ -70,7 +68,7 @@ class Modal extends React.Component {
           isFocused={manager.disclosure.isFocused}
           isOpen={manager.disclosure.isOpen}
           isFullscreen={isFullscreen}
-          classNameModal={modalClasses}
+          classNameModal={cx(classArray)}
           onRequestClose={() => {
             manager.closeDisclosure();
           }}

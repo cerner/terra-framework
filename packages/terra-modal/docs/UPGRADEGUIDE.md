@@ -21,7 +21,7 @@ Within your component use the terra-app-delegate disclosure pattern to launch yo
   handleButtonClick() {
 -    this.setState({ isOpen: true });
 +    this.props.app.disclose({
-+      preferredType: disclosureType,
++      preferredType: 'modal',
 +      size: disclosureSize,
 +      content: {
 +        key: 'my-modal-component-instance',
