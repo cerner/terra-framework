@@ -111,6 +111,7 @@ import SizeLargePopup from './packages/terra-popup/examples/test-examples/SizeLa
 import SizeMediumPopup from './packages/terra-popup/examples/test-examples/SizeMediumPopup.example';
 import SizeSmallPopup from './packages/terra-popup/examples/test-examples/SizeSmallPopup.example';
 import CompletePrompt from './packages/terra-prompt/examples/test-examples/CompletePrompt.example';
+import CompletePromptWithLongMessage from './packages/terra-prompt/examples/test-examples/CompletePromptWithLongMessage.example';
 import DefaultPrompt from './packages/terra-prompt/examples/test-examples/DefaultPrompt.example';
 import SlidePanelManagerDefault from './packages/terra-slide-panel-manager/examples/test-examples/SlidePanelManagerDefault.example';
 import SlidePanelEnd from './packages/terra-slide-panel/examples/test-examples/SlidePanelEnd.example';
@@ -785,6 +786,11 @@ const componentConfig = {
         name: 'Complete Prompt',
         path: '/complete-prompt',
         component: CompletePrompt,
+      },
+      {
+        name: 'Complete Prompt With Long Message',
+        path: '/complete-prompt-with-long-message',
+        component: CompletePromptWithLongMessage,
       },
       {
         name: 'Default Prompt',

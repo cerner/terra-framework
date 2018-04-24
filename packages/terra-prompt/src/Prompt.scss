@@ -1,7 +1,8 @@
 :local {
   .prompt {
     align-items: center;
-    background: var(--prompt-background, rgba(255, 255, 255, 0.9));
+    background: var(--prompt-background, #fff);
+    border-radius: 0.6rem;
     display: flex;
     position: fixed;
   }
@@ -14,7 +15,7 @@
   }
 
   .title {
-    color: var(--terra-prompt-title-color, #868a8c);
+    color: var(--terra-prompt-title-color, #75767d);
     flex: 0 0 auto;
     flex-wrap: wrap;
     font-size: var(--terra-prompt-title-font-size, 1.714rem);
@@ -37,19 +38,13 @@
     flex: 0 0 auto;
     flex-direction: var(--terra-prompt-actions-flex-direction-small-width, row);
     justify-content: center;
-    padding-bottom: var(--terra-prompt-actions-padding-bottom, 0.4rem);
-    padding-left: var(--terra-prompt-actions-padding-left, 0.4rem);
-    padding-right: var(--terra-prompt-actions-padding-right, 0.4rem);
-    padding-top: var(--terra-prompt-actions-padding-top, 0.4rem);
+    padding: var(--terra-prompt-actions-padding, 0.4rem);
     width: 100%;
 
     > button {
       flex: var(--terra-prompt-actions-button-flex, initial);
       flex-shrink: 1;
-      margin-bottom: var(--terra-prompt-actions-button-margin-bottom, 0.4rem);
-      margin-left: var(--terra-prompt-actions-button-margin-left, 0.4rem);
-      margin-right: var(--terra-prompt-actions-button-margin-right, 0.4rem);
-      margin-top: var(--terra-prompt-actions-button-margin-top, 0.4rem);
+      margin: var(--terra-prompt-actions-button-margin, 0.8rem 0.4rem 0 0.4rem);
     }
   }
 }

@@ -14,8 +14,11 @@ import PromptSrc from '!raw-loader!../src/Prompt';
 // Example Files
 import CompletePrompt from './index-examples/CompletePrompt';
 import CompletePromptSrc from '!raw-loader!./index-examples/CompletePrompt.jsx';
+import CompletePromptWithLongMessage from './index-examples/CompletePromptWithLongMessage';
+import CompletePromptWithLongMessageSrc from '!raw-loader!./index-examples/CompletePromptWithLongMessage.jsx';
 import DefaultPrompt from './index-examples/DefaultPrompt';
 import DefaultPromptSrc from '!raw-loader!./index-examples/DefaultPrompt.jsx';
+
 
 const PromptExamples = () => (
   <div>
@@ -32,6 +35,11 @@ const PromptExamples = () => (
       title="Prompt - Complete"
       example={<CompletePrompt />}
       exampleSrc={CompletePromptSrc}
+    />
+    <IndexTemplate
+      title="Prompt - Complete with Long Message"
+      example={<CompletePromptWithLongMessage />}
+      exampleSrc={CompletePromptWithLongMessageSrc}
     />
 
     <PropsTable id="props" src={PromptSrc} />

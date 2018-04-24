@@ -6,7 +6,7 @@ const clickOK = () => {
   alert('You clicked OK');
 };
 
-class CompletePrompt extends React.Component {
+class CompletePromptWithLongMessage extends React.Component {
   constructor() {
     super();
 
@@ -33,7 +33,7 @@ class CompletePrompt extends React.Component {
           showprompt={this.state.showprompt}
           onRequestClose={this.handleCloseModal}
           title="This is the title"
-          message="This is the message"
+          message="This is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the message"
           actions={[
             <Button
               text="Ok"
@@ -51,4 +51,4 @@ class CompletePrompt extends React.Component {
   }
 }
 
-export default CompletePrompt;
+export default CompletePromptWithLongMessage;

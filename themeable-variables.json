@@ -255,8 +255,8 @@
     "--terra-list-item-selected-background-color": "#e2f2fc",
     "--terra-list-item-selected-divider-color": "#0092e0",
     "--terra-list-item-hover-background-color": "#f4fafe",
-    "--terra-list-item-focus-background-color": "#f4fafe",
-    "--terra-list-item-selected-hover-background-color": "#cbe7fa"
+    "--terra-list-item-selected-hover-background-color": "#cbe7fa",
+    "--terra-list-item-focus-background-color": "#f4fafe"
   },
   "MenuItem": {
     "--terra-navigation-side-menu-item-border-bottom": "none",
@@ -333,22 +333,16 @@
     "--terra-popup-overlay-z-index": "7000"
   },
   "Prompt": {
-    "--terra-prompt-title-color": "#868a8c",
+    "--terra-prompt-title-color": "#75767d",
     "--terra-prompt-title-font-size": "1.714rem",
     "--terra-prompt-message-color": "#1c1f21",
     "--terra-prompt-message-font-size": "1rem",
     "--terra-prompt-message-padding-top": "0.714rem",
     "--terra-prompt-message-text-align": "center",
     "--terra-prompt-actions-flex-direction-small-width": "row",
-    "--terra-prompt-actions-padding-bottom": "0.4rem",
-    "--terra-prompt-actions-padding-left": "0.4rem",
-    "--terra-prompt-actions-padding-right": "0.4rem",
-    "--terra-prompt-actions-padding-top": "0.4rem",
+    "--terra-prompt-actions-padding": "0.4rem",
     "--terra-prompt-actions-button-flex": "initial",
-    "--terra-prompt-actions-button-margin-bottom": "0.4rem",
-    "--terra-prompt-actions-button-margin-left": "0.4rem",
-    "--terra-prompt-actions-button-margin-right": "0.4rem",
-    "--terra-prompt-actions-button-margin-top": "0.4rem"
+    "--terra-prompt-actions-button-margin": "0.8rem 0.4rem 0 0.4rem"
   },
   "SlidePanel": {
     "--terra-slide-panel-panel-width-small": "320px",

@@ -11,7 +11,7 @@ class CompletePrompt extends React.Component {
     super();
 
     this.state = {
-      isOpen: false,
+      showprompt: false,
     };
 
     this.handleOpenPrompt = this.handleOpenPrompt.bind(this);
@@ -19,33 +19,35 @@ class CompletePrompt extends React.Component {
   }
 
   handleOpenPrompt() {
-    this.setState({ isOpen: true });
+    this.setState({ showprompt: true });
   }
 
   handleClosePrompt() {
-    this.setState({ isOpen: false });
+    this.setState({ showprompt: false });
   }
 
   render() {
     return (
       <div>
         <Prompt
-          showprompt={this.state.isOpen}
+          showprompt={this.state.showprompt}
           onRequestClose={this.handleClosePrompt}
-          title="This is the title"
-          message="This is the message"
+          title="Title goes here"
+          message="Click ok to show alert and Close to go back."
           actions={[
             <Button
+              id="prompt-ok"
               text="Ok"
               onClick={clickOK}
             />,
             <Button
+              id="prompt-close"
               text="Close"
               onClick={this.handleClosePrompt}
             />,
           ]}
         />
-        <Button text="Trigger Prompt" onClick={this.handleOpenPrompt} />
+        <Button id="trigger-prompt" text="Trigger Prompt" onClick={this.handleOpenPrompt} />
       </div>
     );
   }

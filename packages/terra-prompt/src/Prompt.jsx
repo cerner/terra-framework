@@ -25,7 +25,7 @@ const propTypes = {
   /*
    * Toggle to show prompt or not.
    */
-  showprompt: PropTypes.bool,
+  showprompt: PropTypes.bool.isRequired,
   /*
    * Callback function indicating a close condition was met, should be combined with showprompt for state management.
    */
@@ -36,7 +36,6 @@ const defaultProps = {
   title: null,
   message: null,
   actions: [],
-  showprompt: false,
 };
 
 const actionSection = (actions) => {
