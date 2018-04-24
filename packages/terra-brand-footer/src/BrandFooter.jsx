@@ -10,7 +10,20 @@ const propTypes = {
  /**
   * An array of navigation links with each element specifiying text, href and target keys with appropriate values.
   */
-  links: PropTypes.array,
+  links: PropTypes.arrayOf(PropTypes.shape({
+    /**
+     * text to be disaplyed as navigational link.
+     */
+    text: PropTypes.string,
+    /**
+     * url of the navigational link.
+     */
+    href: PropTypes.string,
+    /**
+     * attribute to open on same or different tab on clicking the navigational link.
+     */
+    target: PropTypes.string,
+  })),
  /**
   * The content to be displayed in left side area of the footer.
   */
@@ -44,8 +57,8 @@ const BrandFooter = ({ links, contentLeft, contentRight, contentBottom, ...custo
       {linkslength > 0 ? (
         <nav className={cx('nav')}>
           <ul className={cx('menu')} role="menu">
-            {links.map((link, index) => (
-              <li className={cx('list-item')} role="menuitem" key={index.toString()}>
+            {links.map(link => (
+              <li className={cx('list-item')} role="menuitem" key={link.text + link.href}>
                 {link.target !== undefined ? (
                   <a className={cx('link')} href={link.href} target={link.target} >{link.text}</a>
                 ) : (
@@ -57,11 +70,13 @@ const BrandFooter = ({ links, contentLeft, contentRight, contentBottom, ...custo
         </nav>
       ) : null}
       <div className={cx('footer-content')} >
-        <div>
+        <div className={cx('content-top')}>
           {contentLeft}
           {contentRight}
         </div>
-        {contentBottom}
+        <div className={cx('content-bottom')}>
+          {contentBottom}
+        </div>
       </div>
     </footer>
   );

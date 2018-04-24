@@ -51,4 +51,13 @@
     color: var(--terra-brand-footer-footer-content-color, #fff);
     padding: 1.4285714285714286rem;
   }
+
+  .content-top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .content-bottom {
+    margin-top: 0.7142857142857143rem;
+  }
 }
