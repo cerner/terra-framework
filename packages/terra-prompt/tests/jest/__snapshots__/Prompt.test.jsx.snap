@@ -1,9 +1,255 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Prompt should render a default component 1`] = `
-<div
-  className="prompt"
->
-  default
+exports[`should mount an complete prompt 1`] = `
+<CompletePrompt>
+  <div>
+    <Prompt
+      actions={
+        Array [
+          <Button
+            id="prompt-ok"
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isIconOnly={false}
+            isReversed={false}
+            onClick={[Function]}
+            text="Ok"
+            type="button"
+            variant="neutral"
+          />,
+          <Button
+            id="prompt-close"
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isIconOnly={false}
+            isReversed={false}
+            onClick={[Function]}
+            text="Close"
+            type="button"
+            variant="neutral"
+          />,
+        ]
+      }
+      message="Click ok to show alert and Close to go back."
+      onRequestClose={[Function]}
+      showprompt={false}
+      title="Title goes here"
+    />
+    <Button
+      id="trigger-prompt"
+      isBlock={false}
+      isCompact={false}
+      isDisabled={false}
+      isIconOnly={false}
+      isReversed={false}
+      onClick={[Function]}
+      text="Trigger Prompt"
+      type="button"
+      variant="neutral"
+    >
+      <button
+        aria-disabled={false}
+        aria-label={null}
+        className="button neutral"
+        disabled={false}
+        id="trigger-prompt"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        type="button"
+      >
+        <span
+          className="text-only"
+        >
+          <span
+            className=""
+          >
+            Trigger Prompt
+          </span>
+        </span>
+      </button>
+    </Button>
+  </div>
+</CompletePrompt>
+`;
+
+exports[`should mount an complete prompt with long message 1`] = `
+<CompletePrompt>
+  <div>
+    <Prompt
+      actions={
+        Array [
+          <Button
+            id="prompt-ok"
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isIconOnly={false}
+            isReversed={false}
+            onClick={[Function]}
+            text="Ok"
+            type="button"
+            variant="neutral"
+          />,
+          <Button
+            id="prompt-close"
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isIconOnly={false}
+            isReversed={false}
+            onClick={[Function]}
+            text="Close"
+            type="button"
+            variant="neutral"
+          />,
+        ]
+      }
+      message="Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back."
+      onRequestClose={[Function]}
+      showprompt={false}
+      title="Title goes here"
+    />
+    <Button
+      id="trigger-prompt"
+      isBlock={false}
+      isCompact={false}
+      isDisabled={false}
+      isIconOnly={false}
+      isReversed={false}
+      onClick={[Function]}
+      text="Trigger Prompt"
+      type="button"
+      variant="neutral"
+    >
+      <button
+        aria-disabled={false}
+        aria-label={null}
+        className="button neutral"
+        disabled={false}
+        id="trigger-prompt"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        type="button"
+      >
+        <span
+          className="text-only"
+        >
+          <span
+            className=""
+          >
+            Trigger Prompt
+          </span>
+        </span>
+      </button>
+    </Button>
+  </div>
+</CompletePrompt>
+`;
+
+exports[`should shallow a complete prompt 1`] = `
+<div>
+  <Prompt
+    actions={
+      Array [
+        <Button
+          id="prompt-ok"
+          isBlock={false}
+          isCompact={false}
+          isDisabled={false}
+          isIconOnly={false}
+          isReversed={false}
+          onClick={[Function]}
+          text="Ok"
+          type="button"
+          variant="neutral"
+        />,
+        <Button
+          id="prompt-close"
+          isBlock={false}
+          isCompact={false}
+          isDisabled={false}
+          isIconOnly={false}
+          isReversed={false}
+          onClick={[Function]}
+          text="Close"
+          type="button"
+          variant="neutral"
+        />,
+      ]
+    }
+    message="Click ok to show alert and Close to go back."
+    onRequestClose={[Function]}
+    showprompt={false}
+    title="Title goes here"
+  />
+  <Button
+    id="trigger-prompt"
+    isBlock={false}
+    isCompact={false}
+    isDisabled={false}
+    isIconOnly={false}
+    isReversed={false}
+    onClick={[Function]}
+    text="Trigger Prompt"
+    type="button"
+    variant="neutral"
+  />
+</div>
+`;
+
+exports[`should shallow a complete prompt with long message 1`] = `
+<div>
+  <Prompt
+    actions={
+      Array [
+        <Button
+          id="prompt-ok"
+          isBlock={false}
+          isCompact={false}
+          isDisabled={false}
+          isIconOnly={false}
+          isReversed={false}
+          onClick={[Function]}
+          text="Ok"
+          type="button"
+          variant="neutral"
+        />,
+        <Button
+          id="prompt-close"
+          isBlock={false}
+          isCompact={false}
+          isDisabled={false}
+          isIconOnly={false}
+          isReversed={false}
+          onClick={[Function]}
+          text="Close"
+          type="button"
+          variant="neutral"
+        />,
+      ]
+    }
+    message="Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back."
+    onRequestClose={[Function]}
+    showprompt={false}
+    title="Title goes here"
+  />
+  <Button
+    id="trigger-prompt"
+    isBlock={false}
+    isCompact={false}
+    isDisabled={false}
+    isIconOnly={false}
+    isReversed={false}
+    onClick={[Function]}
+    text="Trigger Prompt"
+    type="button"
+    variant="neutral"
+  />
 </div>
 `;

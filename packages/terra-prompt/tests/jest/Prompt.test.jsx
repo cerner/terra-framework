@@ -1,24 +1,23 @@
 import React from 'react';
-import Prompt from '../../src/Prompt';
+import CompletePrompt from '../../examples/test-examples/CompletePrompt.example';
+import CompletePromptWithLongMessage from '../../examples/test-examples/CompletePromptWithLongMessage.example';
 
-describe('Prompt', () => {
-  const defaultRender = <Prompt />;
+it('should shallow a complete prompt', () => {
+  const modal = shallow(<CompletePrompt />);
+  expect(modal).toMatchSnapshot();
+});
 
-  // Snapshot Tests
-  it('should render a default component', () => {
-    const wrapper = shallow(defaultRender);
-    expect(wrapper).toMatchSnapshot();
-  });
+it('should mount an complete prompt', () => {
+  const modal = mount(<CompletePrompt />);
+  expect(modal).toMatchSnapshot();
+});
 
-  // Prop Tests
-  it('should use the default value when no value is given', () => {
-    const wrapper = shallow(defaultRender);
-    expect(wrapper.find('.prompt').text()).toEqual('default');
-  });
+it('should shallow a complete prompt with long message', () => {
+  const modal = shallow(<CompletePromptWithLongMessage />);
+  expect(modal).toMatchSnapshot();
+});
 
-  // Structure Tests
-  it('should have the class prompt', () => {
-    const wrapper = shallow(defaultRender);
-    expect(wrapper.prop('className')).toContain('prompt');
-  });
+it('should mount an complete prompt with long message', () => {
+  const modal = mount(<CompletePromptWithLongMessage />);
+  expect(modal).toMatchSnapshot();
 });
