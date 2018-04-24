@@ -1,11 +1,9 @@
 # Terra Prompt
 
-`terra-prompt` is a notification dialog component built over the `terra-abstract-modal`. It has the highest z-index of 8001. It is a common component to be used for confirmation/acceptance criteria style dialogs. 
-
 [![NPM version](http://img.shields.io/npm/v/terra-prompt.svg)](https://www.npmjs.org/package/terra-prompt)
 [![Build Status](https://travis-ci.org/cerner/terra-framework.svg?branch=master)](https://travis-ci.org/cerner/terra-framework)
 
-{insert description}
+`terra-prompt` is a notification dialog component built over the `terra-abstract-modal`. It has the highest z-index of 8001. It is a common component to be used for confirmation/acceptance criteria style dialogs.
 
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-prompt/docs)
