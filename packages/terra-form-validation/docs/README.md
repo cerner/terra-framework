@@ -1,4 +1,4 @@
-# Terra Form Validation
+# Form Validation
 
 To write form validations for your component, Terra recommends using [react-final-form](https://github.com/final-form/react-final-form). This package contains several different hooks and functionality for performing validations at various levels which include:
 
@@ -7,14 +7,13 @@ To write form validations for your component, Terra recommends using [react-fina
 - Validation synchronously (Such as for unit user name implementations)
 - Restricting inputs to a particular format.
 
-For other functionality that is provided, consult the documentation provided by *react-final-form*.
+For other functionality that is provided, consult the package's [documentation](https://github.com/final-form/react-final-form).
 
 ## Getting Started
 
 Import Form and Field from react-final-form, and build your form like the following, where Form wraps the entire form, and Field is used for each individual import on the form.
 
 ```jsx
-
 const required = value => (value ? undefined : 'Required')
 
 export default class MainEntry extends React.Component {
@@ -70,17 +69,15 @@ As long as a non empty message is returned from the function, that indicates tha
 ## Integration with Terra components
 To use terra form components with react-final-form, all that needs to be handled is to pass the appropriate InputField, TextareaField, or custom build Field as children to a react-final-form Field component.
 
-```jsx
-```
 
-## Example Terra Form Usage
+### Example Terra Form Usage
 
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 import I18n from 'terra-i18n';
 import { Form, Field } from 'react-final-form';
-import TerraField from 'terra-form-field';
+import InputField from 'terra-form-input/lib/InputField';
 
 const validateUniqueUser = async (name) => {
   let response = new Promise((resolve, reject) => {
@@ -105,9 +102,8 @@ export default class MainEntry extends React.Component {
     this.submitForm = this.submitForm.bind(this);
   }
 
-  submitForm(e) {
-    e.preventDefault
-    alert('Form Submitted');
+  submitForm(values) {
+    console.log(values);
   }
 
   renderForm({ handleSubmit, reset, submitting, pristine, values, invalid }) {
@@ -125,20 +121,20 @@ export default class MainEntry extends React.Component {
           name="description"
         >
           {({ input, meta, placeholder, ...rest }) => (
-            <TerraField
+            <InputField
               {...rest}
               label="Description"
               error={meta.error}
               isInvalid={!meta.valid}
               required
-            >
-              <Input
-                {...input}
-                placeholder="Description"
-                onChange={(e) => {input.onChange(e.target.value);}}
-                value={input.value}
-              />
-            </TerraField>
+              onChange={(e) => {input.onChange(e.target.value);}}
+              value={input.value}
+              inputAttrs={{
+                type: 'text',
+                placeholder: 'Description',
+                ...input
+              }}
+            />
           )}
         </Field>
         <Field
@@ -146,20 +142,21 @@ export default class MainEntry extends React.Component {
           validate={validateUniqueUser}
         >
           {({ input, meta,  ...rest }) => (
-            <TerraField
-              {...rest}
+            <InputField
+              inputId: 'user-name',
               label="User Name"
               error={meta.error}
               isInvalid={!meta.valid}
               required
-            >
-              <Input
-                {...input}
-                placeholder="Description"
-                onChange={(e) => {input.onChange(e.target.value);}}
-                value={input.value}
-              />
-            </TerraField>
+              onChange={(e) => {input.onChange(e.target.value);}}
+              value={input.value}
+              inputAttrs={{
+                type: 'text',
+                placeholder: 'User Name',
+                ...input,
+              }}
+              {...rest}
+            />
           )}
         </Field>
         <button type="submit" disabled={invalid || pristine}>

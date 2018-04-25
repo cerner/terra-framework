@@ -1,24 +1,24 @@
+/* eslint-disable class-methods-use-this */
+
 import React from 'react';
-import ReactDOM from 'react-dom';
-import I18n from 'terra-i18n';
 import { Form, Field } from 'react-final-form';
 import TerraField from 'terra-form-field';
 import Input from 'terra-form-input';
+import Button from 'terra-button';
+import Spacer from 'terra-spacer';
 
 const validateUniqueUser = async (name) => {
-  let response = new Promise((resolve, reject) => {
-    if (name !== 'LaCombe') {
+  const response = new Promise((resolve) => {
+    if (name !== 'TerraUser') {
       return resolve('');
-    } else {
-      return resolve('Name is Unavailable');
     }
+
+    return resolve('Name is Unavailable');
   });
 
   await response;
   return response;
-}
-
-const required = value => (value ? undefined : 'Required')
+};
 
 export default class MainEntry extends React.Component {
   constructor(props) {
@@ -28,17 +28,17 @@ export default class MainEntry extends React.Component {
     this.submitForm = this.submitForm.bind(this);
   }
 
-  submitForm(e) {
-    e.preventDefault
-    alert('Form Submitted');
+  submitForm(values) {
+    this.setState({
+      submittedValues: values,
+    });
   }
 
-  renderForm({ handleSubmit, reset, submitting, pristine, values, invalid }) {
+  renderForm({ handleSubmit, pristine, invalid }) {
     return (
-      <form 
+      <form
         onSubmit={handleSubmit}
       >
-        <h1>Hello People!</h1>
         <Field
           name="description"
         >
@@ -53,7 +53,7 @@ export default class MainEntry extends React.Component {
               <Input
                 {...input}
                 placeholder="Description"
-                onChange={(e) => {input.onChange(e.target.value);}}
+                onChange={(e) => { input.onChange(e.target.value); }}
                 value={input.value}
               />
             </TerraField>
@@ -63,52 +63,56 @@ export default class MainEntry extends React.Component {
           name="user_name"
           validate={validateUniqueUser}
         >
-          {({ input, meta,  ...rest }) => (
+          {({ input, meta, ...rest }) => (
             <TerraField
               {...rest}
               label="User Name"
               error={meta.error}
-              isInvalid={!meta.valid}
+              isInvalid={!meta.error}
               required
             >
               <Input
                 {...input}
                 placeholder="Description"
-                onChange={(e) => {input.onChange(e.target.value);}}
+                onChange={(e) => { input.onChange(e.target.value); }}
                 value={input.value}
               />
             </TerraField>
           )}
         </Field>
-        <button type="submit" disabled={invalid || pristine}>
-          Submit
-        </button>
+        <Button text="Submit" isDisabled={invalid || pristine} type={Button.Opts.Types.SUBMIT} />
       </form>
     );
   }
 
   render() {
     return (
-      <Form
-        style={{marginLeft: '1.428'}}
-        onSubmit={this.submitForm}
-        render={this.renderForm}
-        initialValues={{description: ''}}
-        validate={(values) => {
-          const errors = {};
+      <Spacer marginTop="small">
+        <Form
+          onSubmit={this.submitForm}
+          render={this.renderForm}
+          initialValues={{ description: '' }}
+          validate={(values) => {
+            const errors = {};
 
-          if (!values.description) {
-            errors.description = "Required"
-          }
+            if (!values.description) {
+              errors.description = 'Required';
+            }
 
-          if (!values.user_name) {
-            errors.user_name = "Required"
-          }
+            if (!values.user_name) {
+              errors.user_name = 'Required';
+            }
 
-          return errors;
-        }}
-        >
-      </Form>
+            return errors;
+          }}
+        />
+        {this.state.submittedValues &&
+          <div>
+            <p>Form Submitted Successfully With</p>
+            <pre>{JSON.stringify(this.state.submittedValues, 0, 2)}</pre>
+          </div>
+        }
+      </Spacer>
     );
   }
 }
