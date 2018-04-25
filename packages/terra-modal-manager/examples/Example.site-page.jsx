@@ -2,7 +2,7 @@
 import React from 'react';
 import Markdown from 'terra-markdown';
 
-import ModalExample from './index-examples/ModalExample';
+import ModalManagerExample from './index-examples/ModalManagerExample';
 import { version } from '../package.json';
 import Example from '../docs/example.md';
 
@@ -10,7 +10,7 @@ const ModalExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={Example} />
-    <ModalExample />
+    <ModalManagerExample />
   </div>
 );
 

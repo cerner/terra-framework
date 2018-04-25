@@ -7,14 +7,14 @@ import ReadMe from '../docs/README.md';
 import { version } from '../package.json';
 
 // Component Source
-import ModalSrc from '!raw-loader!../src/Modal.jsx';
+import ModalMangerSrc from '!raw-loader!../src/ModalManger.jsx';
 
-const ModalExamples = () => (
+const ModalMangerExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
-    <PropsTable id="props" src={ModalSrc} />
+    <PropsTable id="props" src={ModalMangerSrc} />
   </div>
 );
 
-export default ModalExamples;
+export default ModalMangerExamples;

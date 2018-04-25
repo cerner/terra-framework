@@ -1,16 +1,16 @@
 import React from 'react';
-import Modal from '../../src/Modal';
+import ModalManager from '../../src/ModalManager';
 
 const TestContainer = () => (
   <div>Hello World</div>
 );
 
 describe('Modal', () => {
-  it('should render the Modal with defaults', () => {
+  it('should render the ModalManager with defaults', () => {
     const modal = (
-      <Modal>
+      <ModalManager>
         <TestContainer />
-      </Modal>
+      </ModalManager>
     );
 
     const result = mount(modal);
@@ -19,9 +19,9 @@ describe('Modal', () => {
 
   it('should render the ModalManager with custom props', () => {
     const modal = (
-      <Modal id="my-modal-manager" className="test">
+      <ModalManager id="my-modal-manager" className="test">
         <TestContainer />
-      </Modal>
+      </ModalManager>
     );
 
     const result = mount(modal);
@@ -30,9 +30,9 @@ describe('Modal', () => {
 
   it('should disclose content in Modal', () => {
     const modal = (
-      <Modal>
+      <ModalManager>
         <TestContainer />
-      </Modal>
+      </ModalManager>
     );
 
     const wrapper = mount(modal);

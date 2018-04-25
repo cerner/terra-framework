@@ -7,8 +7,8 @@ import SlideGroup from 'terra-slide-group';
 import DisclosureManager, { availableDisclosureSizes } from 'terra-disclosure-manager';
 
 import 'terra-base/lib/baseStyles';
-import styles from './Modal.scss';
-import withModal from './withModal';
+import styles from './ModalManager.scss';
+import withModalManager from './withModalManager';
 
 const disclosureType = 'modal';
 export { disclosureType };
@@ -36,7 +36,7 @@ const widthFromSize = {
   huge: 1600,
 };
 
-class Modal extends React.Component {
+class ModalManager extends React.Component {
   constructor(props) {
     super(props);
 
@@ -97,7 +97,7 @@ class Modal extends React.Component {
   }
 }
 
-Modal.propTypes = propTypes;
+ModalManager.propTypes = propTypes;
 
-export default Modal;
-export { withModal };
+export default ModalManager;
+export { withModalManager };

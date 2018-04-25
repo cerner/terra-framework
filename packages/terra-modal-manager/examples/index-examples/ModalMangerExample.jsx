@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ContentComponent from 'terra-disclosure-manager/examples/index-examples/ContentComponent';
 
-import Modal from '../../src/Modal';
+import ModalManger from '../../src/ModalManager';
 
 import styles from './example-styles.scss';
 
@@ -13,14 +13,14 @@ const propTypes = {
   behavior: PropTypes.string,
 };
 
-const ModalExample = () => (
+const ModalMangerExample = () => (
   <div className={cx('example-wrapper')}>
-    <Modal>
+    <ModalManger>
       <ContentComponent disclosureType="modal" />
-    </Modal>
+    </ModalManger>
   </div>
 );
 
-ModalExample.propTypes = propTypes;
+ModalMangerExample.propTypes = propTypes;
 
-export default ModalExample;
+export default ModalMangerExample;

@@ -1,6 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AppDelegate from 'terra-app-delegate';
+import { availableDisclosureHeights, availableDisclosureWidths } from '../../lib/DisclosureManager';
+
+const HEIGHT_KEYS = Object.keys(availableDisclosureHeights);
+const WIDTH_KEYS = Object.keys(availableDisclosureWidths);
+
+const generateOptions = values => (
+  values.map((currentValue, index) => {
+    const keyValue = index;
+    return <option key={keyValue} value={currentValue}>{currentValue}</option>;
+  })
+);
 
 class TestExample extends React.Component {
   constructor(props) {
@@ -14,9 +25,18 @@ class TestExample extends React.Component {
     this.minimize = this.minimize.bind(this);
     this.requestFocus = this.requestFocus.bind(this);
     this.releaseFocus = this.releaseFocus.bind(this);
+
+    this.renderFormButton = this.renderFormButton.bind(this);
+    this.renderForm = this.renderForm.bind(this);
+    this.getId = this.getId.bind(this);
+    this.state = { id: 'dimensions', disclosureHeight: HEIGHT_KEYS[0], disclosureWidth: WIDTH_KEYS[0] };
   }
 
-  disclose(size) {
+  getId(name) {
+    return name + this.state.id;
+  }
+
+  disclose(size, dimensions) {
     const { disclosureType, nestedIndex } = this.props;
 
     const newIndex = nestedIndex + 1;
@@ -24,6 +44,7 @@ class TestExample extends React.Component {
       this.props.app.disclose({
         preferredType: disclosureType,
         size,
+        dimensions,
         content: {
           key: `DemoContainer-${newIndex}`,
           component: <TestExample identifier={`DemoContainer-${newIndex}`} nestedIndex={newIndex} />,
@@ -60,6 +81,37 @@ class TestExample extends React.Component {
     this.props.app.releaseFocus();
   }
 
+  renderFormButton() {
+    const name = `Disclose (${this.state.disclosureHeight}) x (${this.state.disclosureWidth})`;
+
+    return (
+      <button
+        onClick={this.disclose(undefined, { height: this.state.disclosureHeight, width: this.state.disclosureWidth })}
+      >
+        {name}
+      </button>
+    );
+  }
+
+  renderForm() {
+    return (
+      <form>
+        <label htmlFor={this.getId('disclosureHeight')}>Pop Content Height</label>
+        <select id={this.getId('disclosureHeight')} name="disclosureHeight" value={this.state.disclosureHeight} onChange={this.handleSelectChange}>
+          {generateOptions(HEIGHT_KEYS)}
+        </select>
+        <br />
+        <br />
+        <label htmlFor={this.getId('disclosureWidth')}>Pop Content Width</label>
+        <select id={this.getId('disclosureWidth')} name="disclosureWidth" value={this.state.disclosureWidth} onChange={this.handleSelectChange}>
+          {generateOptions(WIDTH_KEYS)}
+        </select>
+        <br />
+        <br />
+      </form>
+    );
+  }
+
   render() {
     const { app, identifier } = this.props;
 
@@ -79,6 +131,10 @@ class TestExample extends React.Component {
         <button className="disclose-large" onClick={this.disclose('large')}>Disclose Large</button>
         <button className="disclose-huge" onClick={this.disclose('huge')}>Disclose Huge</button>
         <button className="disclose-fullscreen" onClick={this.disclose('fullscreen')}>Disclose Fullscreen</button>
+        <div style={{ padding: '0.7rem' }}>
+          {this.renderForm()}
+          {this.renderFormButton()}
+        </div>
         {app && app.dismiss ? <button className="dismiss" onClick={this.dismiss}>Dismiss</button> : null }
         {app && app.closeDisclosure ? <button className="close-disclosure" onClick={this.closeDisclosure}>Close Disclosure</button> : null }
         {app && app.goBack ? <button className="go-back" onClick={this.goBack}>Go Back</button> : null }
