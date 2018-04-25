@@ -7,13 +7,6 @@ import { availableDisclosureHeights, availableDisclosureWidths } from '../../lib
 const HEIGHT_KEYS = Object.keys(availableDisclosureHeights);
 const WIDTH_KEYS = Object.keys(availableDisclosureWidths);
 
-const generateOptions = values => (
-  values.map((currentValue, index) => {
-    const keyValue = index;
-    return <option key={keyValue} value={currentValue}>{currentValue}</option>;
-  })
-);
-
 class TestExample extends React.Component {
   constructor(props) {
     super(props);
@@ -27,15 +20,23 @@ class TestExample extends React.Component {
     this.requestFocus = this.requestFocus.bind(this);
     this.releaseFocus = this.releaseFocus.bind(this);
 
+    this.generateOptions = this.generateOptions.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
     this.renderFormButton = this.renderFormButton.bind(this);
     this.renderForm = this.renderForm.bind(this);
     this.getId = this.getId.bind(this);
-    this.state = { id: 'dimensions', disclosureHeight: HEIGHT_KEYS[0], disclosureWidth: WIDTH_KEYS[0] };
+    this.state = { id: 'disclosureDimensions', disclosureHeight: HEIGHT_KEYS[0], disclosureWidth: WIDTH_KEYS[0] };
   }
 
   getId(name) {
-    return name + this.state.id;
+    return `${this.state.id}-${name}-${this.props.nestedIndex}`;
+  }
+
+  generateOptions(values, name) {
+    return values.map((currentValue, index) => {
+      const keyValue = index;
+      return <option id={`${name}-${currentValue}-${this.props.nestedIndex}`} key={keyValue} value={currentValue}>{currentValue}</option>;
+    });
   }
 
   handleSelectChange(event) {
@@ -92,6 +93,7 @@ class TestExample extends React.Component {
 
     return (
       <button
+        id={`disclose-dimension-${this.props.nestedIndex}`}
         onClick={this.disclose(undefined, { height: this.state.disclosureHeight, width: this.state.disclosureWidth })}
       >
         {name}
@@ -102,15 +104,15 @@ class TestExample extends React.Component {
   renderForm() {
     return (
       <form>
-        <label htmlFor={this.getId('disclosureHeight')}>Pop Content Height</label>
-        <select id={this.getId('disclosureHeight')} name="disclosureHeight" value={this.state.disclosureHeight} onChange={this.handleSelectChange}>
-          {generateOptions(HEIGHT_KEYS)}
+        <label htmlFor={this.getId('height')}>Pop Content Height</label>
+        <select id={this.getId('height')} name="disclosureHeight" value={this.state.disclosureHeight} onChange={this.handleSelectChange}>
+          {this.generateOptions(HEIGHT_KEYS, 'height')}
         </select>
         <br />
         <br />
-        <label htmlFor={this.getId('disclosureWidth')}>Pop Content Width</label>
-        <select id={this.getId('disclosureWidth')} name="disclosureWidth" value={this.state.disclosureWidth} onChange={this.handleSelectChange}>
-          {generateOptions(WIDTH_KEYS)}
+        <label htmlFor={this.getId('width')}>Pop Content Width</label>
+        <select id={this.getId('width')} name="disclosureWidth" value={this.state.disclosureWidth} onChange={this.handleSelectChange}>
+          {this.generateOptions(WIDTH_KEYS, 'width')}
         </select>
         <br />
         <br />
