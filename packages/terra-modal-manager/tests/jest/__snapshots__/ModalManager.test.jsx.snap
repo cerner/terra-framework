@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal should disclose content in Modal 1`] = `
-<Modal>
+<ModalManager>
   <DisclosureManager
     render={[Function]}
     supportedDisclosureTypes={
@@ -183,54 +183,11 @@ exports[`Modal should disclose content in Modal 1`] = `
       </AbstractModal>
     </div>
   </DisclosureManager>
-</Modal>
-`;
-
-exports[`Modal should render the Modal with defaults 1`] = `
-<Modal>
-  <DisclosureManager
-    render={[Function]}
-    supportedDisclosureTypes={
-      Array [
-        "modal",
-      ]
-    }
-  >
-    <div
-      className="container"
-    >
-      <TestContainer
-        app={
-          AppDelegateInstance {
-            "disclose": [Function],
-          }
-        }
-        key=".0"
-      >
-        <div>
-          Hello World
-        </div>
-      </TestContainer>
-      <AbstractModal
-        ariaLabel="Modal"
-        classNameModal="modal"
-        classNameOverlay={null}
-        closeOnEsc={true}
-        closeOnOutsideClick={false}
-        isFocused={true}
-        isFullscreen={false}
-        isOpen={false}
-        onRequestClose={[Function]}
-        role="document"
-        zIndex="6000"
-      />
-    </div>
-  </DisclosureManager>
-</Modal>
+</ModalManager>
 `;
 
 exports[`Modal should render the ModalManager with custom props 1`] = `
-<Modal
+<ModalManager
   className="test"
   id="my-modal-manager"
 >
@@ -273,5 +230,48 @@ exports[`Modal should render the ModalManager with custom props 1`] = `
       />
     </div>
   </DisclosureManager>
-</Modal>
+</ModalManager>
+`;
+
+exports[`Modal should render the ModalManager with defaults 1`] = `
+<ModalManager>
+  <DisclosureManager
+    render={[Function]}
+    supportedDisclosureTypes={
+      Array [
+        "modal",
+      ]
+    }
+  >
+    <div
+      className="container"
+    >
+      <TestContainer
+        app={
+          AppDelegateInstance {
+            "disclose": [Function],
+          }
+        }
+        key=".0"
+      >
+        <div>
+          Hello World
+        </div>
+      </TestContainer>
+      <AbstractModal
+        ariaLabel="Modal"
+        classNameModal="modal"
+        classNameOverlay={null}
+        closeOnEsc={true}
+        closeOnOutsideClick={false}
+        isFocused={true}
+        isFullscreen={false}
+        isOpen={false}
+        onRequestClose={[Function]}
+        role="document"
+        zIndex="6000"
+      />
+    </div>
+  </DisclosureManager>
+</ModalManager>
 `;
