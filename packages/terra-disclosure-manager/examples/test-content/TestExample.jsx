@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AppDelegate from 'terra-app-delegate';
+import ContentContainer from 'terra-content-container';
 import { availableDisclosureHeights, availableDisclosureWidths } from '../../lib/DisclosureManager';
 
 const HEIGHT_KEYS = Object.keys(availableDisclosureHeights);
@@ -26,6 +27,7 @@ class TestExample extends React.Component {
     this.requestFocus = this.requestFocus.bind(this);
     this.releaseFocus = this.releaseFocus.bind(this);
 
+    this.handleSelectChange = this.handleSelectChange.bind(this);
     this.renderFormButton = this.renderFormButton.bind(this);
     this.renderForm = this.renderForm.bind(this);
     this.getId = this.getId.bind(this);
@@ -34,6 +36,10 @@ class TestExample extends React.Component {
 
   getId(name) {
     return name + this.state.id;
+  }
+
+  handleSelectChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
   }
 
   disclose(size, dimensions) {
@@ -116,14 +122,10 @@ class TestExample extends React.Component {
     const { app, identifier } = this.props;
 
     return (
-      <div id={identifier} className="nested-component" style={{ height: '100%', padding: '10px' }}>
-        <h2>Content Component</h2>
-        <br />
+      <ContentContainer id={identifier} className="nested-component" fill header={<h2 style={{ margin: '0', borderBottom: '1px solid black' }}>Content Component</h2>}>
         <h4>id: {identifier}</h4>
-        <br />
         {app && app.releaseFocus ? <h4>Modal has lost focus!</h4> : null }
         {app && app.requestFocus ? <h4>Modal has gained focus!</h4> : null }
-        <br />
         <button className="disclose" onClick={this.disclose()}>Disclose</button>
         <button className="disclose-tiny" onClick={this.disclose('tiny')}>Disclose Tiny</button>
         <button className="disclose-small" onClick={this.disclose('small')}>Disclose Small</button>
@@ -142,7 +144,7 @@ class TestExample extends React.Component {
         {app && app.minimize ? <button className="minimize" onClick={this.minimize}>Minimize</button> : null }
         {app && app.requestFocus ? <button className="requestFocus" onClick={this.requestFocus}>Request Focus</button> : null }
         {app && app.releaseFocus ? <button className="releaseFocus" onClick={this.releaseFocus}>Release Focus</button> : null }
-      </div>
+      </ContentContainer>
     );
   }
 }

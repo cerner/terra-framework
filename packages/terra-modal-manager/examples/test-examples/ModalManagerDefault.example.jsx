@@ -3,11 +3,9 @@ import TestExample from 'terra-disclosure-manager/examples/test-content/TestExam
 import ModalManager from '../../lib/ModalManager';
 
 const ModalManagerDefault = () => (
-  <div role="main">
-    <ModalManager>
-      <TestExample identifier="root-component" disclosureType="modal" />
-    </ModalManager>
-  </div>
+  <ModalManager>
+    <TestExample role="main" identifier="root-component" disclosureType="modal" />
+  </ModalManager>
 );
 
 export default ModalManagerDefault;
