@@ -15,10 +15,10 @@ import TerraDisclosureManagerIndex from './packages/terra-disclosure-manager/exa
 import TerraHookshotIndex from './packages/terra-hookshot/examples/Index.site-page';
 import TerraInfiniteListIndex from './packages/terra-infinite-list/examples/Index.site-page';
 import TerraLayoutIndex from './packages/terra-layout/examples/Index.site-page';
-import TerraModalAbout from './packages/terra-modal/examples/About.site-page';
-import TerraModalChangeLog from './packages/terra-modal/examples/ChangeLog.site-page';
-import TerraModalExample from './packages/terra-modal/examples/Example.site-page';
-import TerraModalUpgradeGuide from './packages/terra-modal/examples/UpgradeGuide.site-page';
+import TerraModalManagerAbout from './packages/terra-modal-manager/examples/About.site-page';
+import TerraModalManagerChangeLog from './packages/terra-modal-manager/examples/ChangeLog.site-page';
+import TerraModalManagerExample from './packages/terra-modal-manager/examples/Example.site-page';
+import TerraModalManagerUpgradeGuide from './packages/terra-modal-manager/examples/UpgradeGuide.site-page';
 import TerraNavigationLayoutIndex from './packages/terra-navigation-layout/examples/Index.site-page';
 import TerraNavigationSideMenuIndex from './packages/terra-navigation-side-menu/examples/Index.site-page';
 import TerraPopupIndex from './packages/terra-popup/examples/Index.site-page';
@@ -79,7 +79,7 @@ import LayoutDefault from './packages/terra-layout/examples/test-examples/Layout
 import LayoutNoHeader from './packages/terra-layout/examples/test-examples/LayoutNoHeader.example';
 import LayoutNoMenu from './packages/terra-layout/examples/test-examples/LayoutNoMenu.example';
 import LayoutSlidePanelExample from './packages/terra-layout/examples/test-examples/LayoutSlidePanelExample.example';
-import ModalDefault from './packages/terra-modal/examples/test-examples/ModalDefault.example';
+import ModalManagerDefault from './packages/terra-modal-manager/examples/test-examples/ModalManagerDefault.example';
 import NavigationLayoutBasic from './packages/terra-navigation-layout/examples/test-examples/NavigationLayoutBasic.example';
 import NavigationLayoutComplex from './packages/terra-navigation-layout/examples/test-examples/NavigationLayoutComplex.example';
 import NavigationSideMenuDefault from './packages/terra-navigation-side-menu/examples/test-examples/NavigationSideMenuDefault.example';
@@ -553,36 +553,36 @@ const componentConfig = {
       },
     ],
   },
-  'terra-modal': {
-    name: 'Modal',
-    path: '/modal',
+  'terra-modal-manager': {
+    name: 'Modal Manager',
+    path: '/modal-manager',
     pages: [
       {
         name: 'About',
         path: '/about',
-        component: TerraModalAbout,
+        component: TerraModalManagerAbout,
       },
       {
         name: 'Change Log',
         path: '/change-log',
-        component: TerraModalChangeLog,
+        component: TerraModalManagerChangeLog,
       },
       {
         name: 'Example',
         path: '/example',
-        component: TerraModalExample,
+        component: TerraModalManagerExample,
       },
       {
         name: 'Upgrade Guide',
         path: '/upgrade-guide',
-        component: TerraModalUpgradeGuide,
+        component: TerraModalManagerUpgradeGuide,
       },
     ],
     tests: [
       {
-        name: 'Modal Default',
-        path: '/modal-default',
-        component: ModalDefault,
+        name: 'Modal Manager Default',
+        path: '/modal-manager-default',
+        component: ModalManagerDefault,
       },
     ],
   },

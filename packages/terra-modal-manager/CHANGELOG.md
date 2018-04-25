@@ -1,13 +1,13 @@
-Terra Modal - Changelog
+Terra Modal Manager - Changelog
 =========
 
 Unreleased
 ----------
 ### Breaking Change
-* Major version bump. Renaming modal manger to modal.
-* [Upgrade Guide][1]
+* Major version bump. Removing redux support.
 ### Changed
 * Dimension handling to the modal manager.
+* [Upgrade Guide For Modal][1]
 
 2.4.0 - (April 13, 2018)
 ------------------
