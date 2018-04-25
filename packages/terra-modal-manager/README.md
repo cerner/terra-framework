@@ -1,18 +1,18 @@
-# Terra Modal
+# Terra Modal Manager
 
 
-[![NPM version](http://img.shields.io/npm/v/terra-modal.svg)](https://www.npmjs.org/package/terra-modal)
+[![NPM version](http://img.shields.io/npm/v/terra-modal-manager.svg)](https://www.npmjs.org/package/terra-modal-manager)
 [![Build Status](https://travis-ci.org/cerner/terra-framework.svg?branch=master)](https://travis-ci.org/cerner/terra-framework)
 
-The Modal is a DisclosureManager implementation that presents disclosed content using an AbstractModal.
+The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-modal/docs)
+- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-modal-manager/docs)
 - [LICENSE](#license)
 
 ## Getting Started
 
-- Install from [npmjs](https://www.npmjs.com): `npm install terra-modal`
+- Install from [npmjs](https://www.npmjs.com): `npm install terra-modal-manager`
 
 ## LICENSE
 
