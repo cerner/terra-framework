@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+1.5.0 - (April 20, 2018)
+------------------
+### Changed
+* Added nl and nl-BE to supported locales
+
 1.4.0 - (April 13, 2018)
 ------------------
 ### Changed
