@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal should disclose content in Modal 1`] = `
+exports[`ModalManager should disclose content in Modal 1`] = `
 <ModalManager>
   <DisclosureManager
     render={[Function]}
@@ -186,7 +186,7 @@ exports[`Modal should disclose content in Modal 1`] = `
 </ModalManager>
 `;
 
-exports[`Modal should render the ModalManager with custom props 1`] = `
+exports[`ModalManager should render the ModalManager with custom props 1`] = `
 <ModalManager
   className="test"
   id="my-modal-manager"
@@ -233,7 +233,7 @@ exports[`Modal should render the ModalManager with custom props 1`] = `
 </ModalManager>
 `;
 
-exports[`Modal should render the ModalManager with defaults 1`] = `
+exports[`ModalManager should render the ModalManager with defaults 1`] = `
 <ModalManager>
   <DisclosureManager
     render={[Function]}

@@ -5,37 +5,37 @@ const TestContainer = () => (
   <div>Hello World</div>
 );
 
-describe('Modal', () => {
+describe('ModalManager', () => {
   it('should render the ModalManager with defaults', () => {
-    const modal = (
+    const modalManager = (
       <ModalManager>
         <TestContainer />
       </ModalManager>
     );
 
-    const result = mount(modal);
+    const result = mount(modalManager);
     expect(result).toMatchSnapshot();
   });
 
   it('should render the ModalManager with custom props', () => {
-    const modal = (
+    const modalManager = (
       <ModalManager id="my-modal-manager" className="test">
         <TestContainer />
       </ModalManager>
     );
 
-    const result = mount(modal);
+    const result = mount(modalManager);
     expect(result).toMatchSnapshot();
   });
 
   it('should disclose content in Modal', () => {
-    const modal = (
+    const modalManager = (
       <ModalManager>
         <TestContainer />
       </ModalManager>
     );
 
-    const wrapper = mount(modal);
+    const wrapper = mount(modalManager);
 
     return new Promise((resolve, reject) => {
       const childApp = wrapper.find(TestContainer).getElements()[0].props.app;
