@@ -51,7 +51,7 @@ class ModalManager extends React.Component {
       customProps.className,
     ]);
 
-    const classArray = ['modal'];
+    const classArray = ['modal-manager'];
     const isFullscreen = manager.disclosure.isMaximized || manager.disclosure.size === availableDisclosureSizes.FULLSCREEN;
     if (!isFullscreen) {
       if (manager.disclosure.dimensions) {

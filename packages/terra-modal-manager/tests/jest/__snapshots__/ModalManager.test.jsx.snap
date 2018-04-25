@@ -27,7 +27,7 @@ exports[`Modal should disclose content in Modal 1`] = `
       </TestContainer>
       <AbstractModal
         ariaLabel="Modal"
-        classNameModal="modal height-870 width-1280"
+        classNameModal="modal-manager height-870 width-1280"
         classNameOverlay={null}
         closeOnEsc={true}
         closeOnOutsideClick={false}
@@ -43,7 +43,7 @@ exports[`Modal should disclose content in Modal 1`] = `
         >
           <ModalContent
             ariaLabel="Modal"
-            classNameModal="modal height-870 width-1280"
+            classNameModal="modal-manager height-870 width-1280"
             classNameOverlay={null}
             closeOnOutsideClick={false}
             isFocused={true}
@@ -73,7 +73,7 @@ exports[`Modal should disclose content in Modal 1`] = `
                 </ModalOverlay>
                 <div
                   aria-label="Modal"
-                  className="abstract-modal layer-6000 modal height-870 width-1280"
+                  className="abstract-modal layer-6000 modal-manager height-870 width-1280"
                   role="document"
                   tabIndex="0"
                 >
@@ -217,7 +217,7 @@ exports[`Modal should render the ModalManager with custom props 1`] = `
       </TestContainer>
       <AbstractModal
         ariaLabel="Modal"
-        classNameModal="modal"
+        classNameModal="modal-manager"
         classNameOverlay={null}
         closeOnEsc={true}
         closeOnOutsideClick={false}
@@ -260,7 +260,7 @@ exports[`Modal should render the ModalManager with defaults 1`] = `
       </TestContainer>
       <AbstractModal
         ariaLabel="Modal"
-        classNameModal="modal"
+        classNameModal="modal-manager"
         classNameOverlay={null}
         closeOnEsc={true}
         closeOnOutsideClick={false}

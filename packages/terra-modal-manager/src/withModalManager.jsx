@@ -15,7 +15,7 @@ const withModalManager = (Component) => {
     app: AppDelegate.propType,
   };
 
-  ModalManagerHOC.displayName = `withModal(${Component.displayName || Component.name})`;
+  ModalManagerHOC.displayName = `withModalManager(${Component.displayName || Component.name})`;
 
   return ModalManagerHOC;
 };
