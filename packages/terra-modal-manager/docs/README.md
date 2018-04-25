@@ -60,22 +60,15 @@ const MyContentComponent = ({ app }) => (
     />
   </div>
 );
-    app.disclose({
-      preferredType: disclosureType,
-      size: disclosureSize,
-      content: {
-        key: 'my-modal-component-instance',
-        component: <MyModalComponent />
-      }
-    });
-let MyModalComponent = () => (
+
+let MyModalManagerComponent = () => (
   <ModalManager>
     <MyContentComponent />
   </ModalManager>
 );
 
 // Alternatively, `withModalManager` can be used to wrap a ModalManager around MyContentComponent automatically.
-MyModalComponent = withModalManager(MyContentComponent);
+MyModalManagerComponent = withModalManager(MyContentComponent);
 
 ```
 
