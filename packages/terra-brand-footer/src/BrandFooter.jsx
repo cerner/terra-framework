@@ -56,9 +56,9 @@ const BrandFooter = ({ links, contentLeft, contentRight, contentBottom, ...custo
     <footer role="contentinfo" {...customProps} className={BrandFooterClassNames}>
       {linkslength > 0 ? (
         <nav className={cx('nav')}>
-          <ul className={cx('menu')} role="menu">
+          <ul className={cx('menu')}>
             {links.map(link => (
-              <li className={cx('list-item')} role="menuitem" key={link.text + link.href}>
+              <li className={cx('list-item')} key={link.text + link.href}>
                 {link.target !== undefined ? (
                   <a className={cx('link')} href={link.href} target={link.target} >{link.text}</a>
                 ) : (
