@@ -1,13 +1,13 @@
 import React from 'react';
 import TestExample from 'terra-disclosure-manager/examples/test-content/TestExample';
-import ModalManger from '../../lib/ModalManager';
+import ModalManager from '../../lib/ModalManager';
 
-const ModalMangerDefault = () => (
+const ModalManagerDefault = () => (
   <div role="main">
-    <ModalManger>
+    <ModalManager>
       <TestExample identifier="root-component" disclosureType="modal" />
-    </ModalManger>
+    </ModalManager>
   </div>
 );
 
-export default ModalMangerDefault;
+export default ModalManagerDefault;
