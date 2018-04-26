@@ -8,7 +8,7 @@ viewports.forEach((viewport) => {
     });
 
     describe('Disclose Default', () => {
-      before(() => {
+      beforeEach(() => {
         browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
         browser.click('#root-component .disclose');
       });
@@ -18,7 +18,7 @@ viewports.forEach((viewport) => {
     });
 
     describe('Disclose Tiny', () => {
-      before(() => {
+      beforeEach(() => {
         browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
         browser.click('#root-component .disclose-tiny');
       });
@@ -27,7 +27,7 @@ viewports.forEach((viewport) => {
     });
 
     describe('Disclose Small', () => {
-      before(() => {
+      beforeEach(() => {
         browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
         browser.click('#root-component .disclose-small');
       });
@@ -36,7 +36,7 @@ viewports.forEach((viewport) => {
     });
 
     describe('Disclose Medium', () => {
-      before(() => {
+      beforeEach(() => {
         browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
         browser.click('#root-component .disclose-medium');
       });
@@ -45,7 +45,7 @@ viewports.forEach((viewport) => {
     });
 
     describe('Disclose Large', () => {
-      before(() => {
+      beforeEach(() => {
         browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
         browser.click('#root-component .disclose-large');
       });
@@ -54,7 +54,7 @@ viewports.forEach((viewport) => {
     });
 
     describe('Disclose Huge', () => {
-      before(() => {
+      beforeEach(() => {
         browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
         browser.click('#root-component .disclose-huge');
       });
@@ -63,7 +63,7 @@ viewports.forEach((viewport) => {
     });
 
     describe('Disclose Fullscreen', () => {
-      before(() => {
+      beforeEach(() => {
         browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
         browser.click('#root-component .disclose-fullscreen');
       });
@@ -80,7 +80,7 @@ viewports.forEach((viewport) => {
     });
 
     describe('Disclose Width-320', () => {
-      before(() => {
+      beforeEach(() => {
         browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-320-0');
@@ -91,7 +91,7 @@ viewports.forEach((viewport) => {
     });
 
     describe('Disclose Width-480', () => {
-      before(() => {
+      beforeEach(() => {
         browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-480-0');
@@ -102,7 +102,7 @@ viewports.forEach((viewport) => {
     });
 
     describe('Disclose Width-640', () => {
-      before(() => {
+      beforeEach(() => {
         browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-640-0');
@@ -113,7 +113,7 @@ viewports.forEach((viewport) => {
     });
 
     describe('Disclose Height-240', () => {
-      before(() => {
+      beforeEach(() => {
         browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-240-0');
@@ -124,7 +124,7 @@ viewports.forEach((viewport) => {
     });
 
     describe('Disclose Height-420', () => {
-      before(() => {
+      beforeEach(() => {
         browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-420-0');
@@ -135,7 +135,7 @@ viewports.forEach((viewport) => {
     });
 
     describe('Disclose Height-600', () => {
-      before(() => {
+      beforeEach(() => {
         browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-600-0');
@@ -146,7 +146,7 @@ viewports.forEach((viewport) => {
     });
 
     describe('Disclose Height-690', () => {
-      before(() => {
+      beforeEach(() => {
         browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-690-0');

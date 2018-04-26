@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update webdriver screenshots.
 
 3.2.0 - (April 20, 2018)
 ------------------
