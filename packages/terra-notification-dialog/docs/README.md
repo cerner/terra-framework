@@ -1,29 +1,29 @@
-# Terra Prompt
+# Terra NotificationDialog
 
-`terra-prompt` is a notification dialog component built over the `terra-abstract-modal`. It has the highest z-index of 8001. It is a common component to be used for confirmation/acceptance criteria style dialogs. 
+`terra-notification-dialog` is a notification dialog component built over the `terra-abstract-modal`. It has the highest z-index of 8001. It is a common component to be used for confirmation/acceptance criteria style dialogs. 
 
 ## Getting Started
 
 - Install with [npmjs](https://www.npmjs.com):
-  - `npm install terra-prompt`
+  - `npm install terra-notification-dialog`
 
 ## Usage
 
 ```jsx
 import React from 'react';
 import Button from 'terra-button';
-import Prompt from '../../src/Prompt';
+import NotificationDialog from '../../src/NotificationDialog';
 
 const clickOK = () => {
   alert('You clicked OK');
 };
 
-class CompletePrompt extends React.Component {
+class CompleteNotificationDialog extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      showprompt: false,
+      showNotificationDialog: false,
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -31,18 +31,18 @@ class CompletePrompt extends React.Component {
   }
 
   handleOpenModal() {
-    this.setState({ showprompt: true });
+    this.setState({ showNotificationDialog: true });
   }
 
   handleCloseModal() {
-    this.setState({ showprompt: false });
+    this.setState({ showNotificationDialog: false });
   }
 
   render() {
     return (
       <div>
-        <Prompt
-          showprompt={this.state.showprompt}
+        <NotificationDialog
+          showNotificationDialog={this.state.showNotificationDialog}
           onRequestClose={this.handleCloseModal}
           title="This is the title"
           message="This is the message"
@@ -57,13 +57,13 @@ class CompletePrompt extends React.Component {
             />,
           ]}
         />
-        <Button text="Trigger Prompt" onClick={this.handleOpenModal} />
+        <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
       </div>
     );
   }
 }
 
-export default CompletePrompt;
+export default CompleteNotificationDialog;
 ```
 
 ## Component Features

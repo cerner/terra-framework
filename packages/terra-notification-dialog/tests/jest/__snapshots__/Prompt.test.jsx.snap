@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should mount an complete prompt 1`] = `
-<CompletePrompt>
+exports[`should mount an complete notification-dialog 1`] = `
+<CompleteNotificationDialog>
   <div>
-    <Prompt
+    <NotificationDialog
       actions={
         Array [
           <Button
-            id="prompt-ok"
+            id="notification-dialog-ok"
             isBlock={false}
             isCompact={false}
             isDisabled={false}
@@ -19,7 +19,7 @@ exports[`should mount an complete prompt 1`] = `
             variant="neutral"
           />,
           <Button
-            id="prompt-close"
+            id="notification-dialog-close"
             isBlock={false}
             isCompact={false}
             isDisabled={false}
@@ -34,18 +34,18 @@ exports[`should mount an complete prompt 1`] = `
       }
       message="Click ok to show alert and Close to go back."
       onRequestClose={[Function]}
-      showprompt={false}
+      showNotificationDialog={false}
       title="Title goes here"
     />
     <Button
-      id="trigger-prompt"
+      id="trigger-notification-dialog"
       isBlock={false}
       isCompact={false}
       isDisabled={false}
       isIconOnly={false}
       isReversed={false}
       onClick={[Function]}
-      text="Trigger Prompt"
+      text="Trigger NotificationDialog"
       type="button"
       variant="neutral"
     >
@@ -54,7 +54,7 @@ exports[`should mount an complete prompt 1`] = `
         aria-label={null}
         className="button neutral"
         disabled={false}
-        id="trigger-prompt"
+        id="trigger-notification-dialog"
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -67,23 +67,23 @@ exports[`should mount an complete prompt 1`] = `
           <span
             className=""
           >
-            Trigger Prompt
+            Trigger NotificationDialog
           </span>
         </span>
       </button>
     </Button>
   </div>
-</CompletePrompt>
+</CompleteNotificationDialog>
 `;
 
-exports[`should mount an complete prompt with long message 1`] = `
-<CompletePrompt>
+exports[`should mount an complete notification-dialog with long message 1`] = `
+<CompleteNotificationDialog>
   <div>
-    <Prompt
+    <NotificationDialog
       actions={
         Array [
           <Button
-            id="prompt-ok"
+            id="notification-dialog-ok"
             isBlock={false}
             isCompact={false}
             isDisabled={false}
@@ -95,7 +95,7 @@ exports[`should mount an complete prompt with long message 1`] = `
             variant="neutral"
           />,
           <Button
-            id="prompt-close"
+            id="notification-dialog-close"
             isBlock={false}
             isCompact={false}
             isDisabled={false}
@@ -110,18 +110,18 @@ exports[`should mount an complete prompt with long message 1`] = `
       }
       message="Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back."
       onRequestClose={[Function]}
-      showprompt={false}
+      showNotificationDialog={false}
       title="Title goes here"
     />
     <Button
-      id="trigger-prompt"
+      id="trigger-notification-dialog"
       isBlock={false}
       isCompact={false}
       isDisabled={false}
       isIconOnly={false}
       isReversed={false}
       onClick={[Function]}
-      text="Trigger Prompt"
+      text="Trigger NotificationDialog"
       type="button"
       variant="neutral"
     >
@@ -130,7 +130,7 @@ exports[`should mount an complete prompt with long message 1`] = `
         aria-label={null}
         className="button neutral"
         disabled={false}
-        id="trigger-prompt"
+        id="trigger-notification-dialog"
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -143,22 +143,22 @@ exports[`should mount an complete prompt with long message 1`] = `
           <span
             className=""
           >
-            Trigger Prompt
+            Trigger NotificationDialog
           </span>
         </span>
       </button>
     </Button>
   </div>
-</CompletePrompt>
+</CompleteNotificationDialog>
 `;
 
-exports[`should shallow a complete prompt 1`] = `
+exports[`should shallow a complete notification-dialog 1`] = `
 <div>
-  <Prompt
+  <NotificationDialog
     actions={
       Array [
         <Button
-          id="prompt-ok"
+          id="notification-dialog-ok"
           isBlock={false}
           isCompact={false}
           isDisabled={false}
@@ -170,7 +170,7 @@ exports[`should shallow a complete prompt 1`] = `
           variant="neutral"
         />,
         <Button
-          id="prompt-close"
+          id="notification-dialog-close"
           isBlock={false}
           isCompact={false}
           isDisabled={false}
@@ -185,31 +185,31 @@ exports[`should shallow a complete prompt 1`] = `
     }
     message="Click ok to show alert and Close to go back."
     onRequestClose={[Function]}
-    showprompt={false}
+    showNotificationDialog={false}
     title="Title goes here"
   />
   <Button
-    id="trigger-prompt"
+    id="trigger-notification-dialog"
     isBlock={false}
     isCompact={false}
     isDisabled={false}
     isIconOnly={false}
     isReversed={false}
     onClick={[Function]}
-    text="Trigger Prompt"
+    text="Trigger NotificationDialog"
     type="button"
     variant="neutral"
   />
 </div>
 `;
 
-exports[`should shallow a complete prompt with long message 1`] = `
+exports[`should shallow a complete notification-dialog with long message 1`] = `
 <div>
-  <Prompt
+  <NotificationDialog
     actions={
       Array [
         <Button
-          id="prompt-ok"
+          id="notification-dialog-ok"
           isBlock={false}
           isCompact={false}
           isDisabled={false}
@@ -221,7 +221,7 @@ exports[`should shallow a complete prompt with long message 1`] = `
           variant="neutral"
         />,
         <Button
-          id="prompt-close"
+          id="notification-dialog-close"
           isBlock={false}
           isCompact={false}
           isDisabled={false}
@@ -236,18 +236,18 @@ exports[`should shallow a complete prompt with long message 1`] = `
     }
     message="Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back."
     onRequestClose={[Function]}
-    showprompt={false}
+    showNotificationDialog={false}
     title="Title goes here"
   />
   <Button
-    id="trigger-prompt"
+    id="trigger-notification-dialog"
     isBlock={false}
     isCompact={false}
     isDisabled={false}
     isIconOnly={false}
     isReversed={false}
     onClick={[Function]}
-    text="Trigger Prompt"
+    text="Trigger NotificationDialog"
     type="button"
     variant="neutral"
   />

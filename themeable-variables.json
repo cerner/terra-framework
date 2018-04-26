@@ -255,8 +255,8 @@
     "--terra-list-item-selected-background-color": "#e2f2fc",
     "--terra-list-item-selected-divider-color": "#0092e0",
     "--terra-list-item-hover-background-color": "#f4fafe",
-    "--terra-list-item-selected-hover-background-color": "#cbe7fa",
-    "--terra-list-item-focus-background-color": "#f4fafe"
+    "--terra-list-item-focus-background-color": "#f4fafe",
+    "--terra-list-item-selected-hover-background-color": "#cbe7fa"
   },
   "MenuItem": {
     "--terra-navigation-side-menu-item-border-bottom": "none",
@@ -298,6 +298,18 @@
     "--terra-navigation-side-menu-list-padding-bottom": "0.125rem",
     "--terra-navigation-side-menu-list-padding-top": "0.125rem"
   },
+  "NotificationDialog": {
+    "--terra-notification-dialog-title-color": "#75767d",
+    "--terra-notification-dialog-title-font-size": "1.714rem",
+    "--terra-notification-dialog-message-color": "#1c1f21",
+    "--terra-notification-dialog-message-font-size": "1rem",
+    "--terra-notification-dialog-message-padding-top": "0.714rem",
+    "--terra-notification-dialog-message-text-align": "center",
+    "--terra-notification-dialog-actions-flex-direction-small-width": "row",
+    "--terra-notification-dialog-actions-padding": "0.4rem",
+    "--terra-notification-dialog-actions-button-flex": "initial",
+    "--terra-notification-dialog-actions-button-margin": "0.8rem 0.4rem 0 0.4rem"
+  },
   "Overlay": {
     "--terra-overlay-dark-background-color": "rgba(28, 31, 33, 0.8)",
     "--terra-overlay-dark-background-image": "none",
@@ -332,21 +344,9 @@
     "--terra-popup-overlay-opacity": "0.01",
     "--terra-popup-overlay-z-index": "7000"
   },
-  "Prompt": {
-    "--terra-prompt-title-color": "#75767d",
-    "--terra-prompt-title-font-size": "1.714rem",
-    "--terra-prompt-message-color": "#1c1f21",
-    "--terra-prompt-message-font-size": "1rem",
-    "--terra-prompt-message-padding-top": "0.714rem",
-    "--terra-prompt-message-text-align": "center",
-    "--terra-prompt-actions-flex-direction-small-width": "row",
-    "--terra-prompt-actions-padding": "0.4rem",
-    "--terra-prompt-actions-button-flex": "initial",
-    "--terra-prompt-actions-button-margin": "0.8rem 0.4rem 0 0.4rem"
-  },
   "SlidePanel": {
-    "--terra-slide-panel-panel-background-color": "#fff",
-    "--terra-slide-panel-panel-width-small": "320px"
+    "--terra-slide-panel-panel-width-small": "320px",
+    "--terra-slide-panel-panel-width-large": "60%"
   },
   "UserData": {
     "--terra-application-user-data-photo-height": "3.571rem",

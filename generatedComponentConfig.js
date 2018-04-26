@@ -19,7 +19,7 @@ import TerraModalManagerIndex from './packages/terra-modal-manager/examples/Inde
 import TerraNavigationLayoutIndex from './packages/terra-navigation-layout/examples/Index.site-page';
 import TerraNavigationSideMenuIndex from './packages/terra-navigation-side-menu/examples/Index.site-page';
 import TerraPopupIndex from './packages/terra-popup/examples/Index.site-page';
-import TerraPromptIndex from './packages/terra-prompt/examples/Index.site-page';
+import TerraNotificationDialogIndex from './packages/terra-notification-dialog/examples/Index.site-page';
 import TerraSlidePanelManagerIndex from './packages/terra-slide-panel-manager/examples/Index.site-page';
 import TerraSlidePanelIndex from './packages/terra-slide-panel/examples/Index.site-page';
 import TerraThemeProviderIndex from './packages/terra-theme-provider/examples/Index.site-page';
@@ -110,9 +110,9 @@ import SizeInvalidPopup from './packages/terra-popup/examples/test-examples/Size
 import SizeLargePopup from './packages/terra-popup/examples/test-examples/SizeLargePopup.example';
 import SizeMediumPopup from './packages/terra-popup/examples/test-examples/SizeMediumPopup.example';
 import SizeSmallPopup from './packages/terra-popup/examples/test-examples/SizeSmallPopup.example';
-import CompletePrompt from './packages/terra-prompt/examples/test-examples/CompletePrompt.example';
-import CompletePromptWithLongMessage from './packages/terra-prompt/examples/test-examples/CompletePromptWithLongMessage.example';
-import DefaultPrompt from './packages/terra-prompt/examples/test-examples/DefaultPrompt.example';
+import CompleteNotificationDialog from './packages/terra-notification-dialog/examples/test-examples/CompleteNotificationDialog.example';
+import CompleteNotificationDialogWithLongMessage from './packages/terra-notification-dialog/examples/test-examples/CompleteNotificationDialogWithLongMessage.example';
+import DefaultNotificationDialog from './packages/terra-notification-dialog/examples/test-examples/DefaultNotificationDialog.example';
 import SlidePanelManagerDefault from './packages/terra-slide-panel-manager/examples/test-examples/SlidePanelManagerDefault.example';
 import SlidePanelEnd from './packages/terra-slide-panel/examples/test-examples/SlidePanelEnd.example';
 import SlidePanelFill from './packages/terra-slide-panel/examples/test-examples/SlidePanelFill.example';
@@ -771,31 +771,31 @@ const componentConfig = {
       },
     ],
   },
-  'terra-prompt': {
-    name: 'Prompt',
-    path: '/prompt',
+  'terra-notification-dialog': {
+    name: 'NotificationDialog',
+    path: '/notification-dialog',
     pages: [
       {
         name: 'Index',
         path: '/index',
-        component: TerraPromptIndex,
+        component: TerraNotificationDialogIndex,
       },
     ],
     tests: [
       {
-        name: 'Complete Prompt',
-        path: '/complete-prompt',
-        component: CompletePrompt,
+        name: 'Complete NotificationDialog',
+        path: '/complete-notification-dialog',
+        component: CompleteNotificationDialog,
       },
       {
-        name: 'Complete Prompt With Long Message',
-        path: '/complete-prompt-with-long-message',
-        component: CompletePromptWithLongMessage,
+        name: 'Complete NotificationDialog With Long Message',
+        path: '/complete-notification-dialog-with-long-message',
+        component: CompleteNotificationDialogWithLongMessage,
       },
       {
-        name: 'Default Prompt',
-        path: '/default-prompt',
-        component: DefaultPrompt,
+        name: 'Default NotificationDialog',
+        path: '/default-notification-dialog',
+        component: DefaultNotificationDialog,
       },
     ],
   },

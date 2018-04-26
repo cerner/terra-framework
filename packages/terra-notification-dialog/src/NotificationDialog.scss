@@ -1,0 +1,50 @@
+:local {
+  .notification-dialog {
+    align-items: center;
+    background: var(--notification-dialog-background, #fff);
+    border-radius: 0.6rem;
+    display: flex;
+    position: fixed;
+  }
+
+  .notification-dialog-body {
+    font-size: var(--notification-dialog-body-font-size, 1.25rem);
+    padding: var(--notification-dialog-body-padding, 1.25rem);
+    text-align: center;
+    width: var(--notification-dialog-body-width, 25rem);
+  }
+
+  .title {
+    color: var(--terra-notification-dialog-title-color, #75767d);
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    font-size: var(--terra-notification-dialog-title-font-size, 1.714rem);
+    text-align: center;
+    width: 100%;
+  }
+
+  .message {
+    color: var(--terra-notification-dialog-message-color, #1c1f21);
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    font-size: var(--terra-notification-dialog-message-font-size, 1rem);
+    padding-top: var(--terra-notification-dialog-message-padding-top, 0.714rem);
+    text-align: var(--terra-notification-dialog-message-text-align, center);
+    width: 100%;
+  }
+
+  .actions {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: var(--terra-notification-dialog-actions-flex-direction-small-width, row);
+    justify-content: center;
+    padding: var(--terra-notification-dialog-actions-padding, 0.4rem);
+    width: 100%;
+
+    > button {
+      flex: var(--terra-notification-dialog-actions-button-flex, initial);
+      flex-shrink: 1;
+      margin: var(--terra-notification-dialog-actions-button-margin, 0.8rem 0.4rem 0 0.4rem);
+    }
+  }
+}
