@@ -10,10 +10,17 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Default', () => {
       before(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
-          .click('#root-component .disclose-tiny'));
+          .click('#root-component .disclose'));
 
       Terra.should.matchScreenshot({ selector });
       Terra.should.beAccessible();
+      Terra.should.themeEachCustomProperty(selector, {
+        '--terra-modal-manager-background-color': 'blue',
+        '--terra-modal-manager-border': '3px dotted pink',
+        '--terra-modal-manager-border-radius': '10px',
+        '--terra-modal-manager-box-shadow': '0 6px 4px rgba(124, 0, 0, 0.3)',
+        '--terra-modal-manager-foreground-color': 'yellow',
+      });
     });
 
     describe('Disclose Tiny', () => {
