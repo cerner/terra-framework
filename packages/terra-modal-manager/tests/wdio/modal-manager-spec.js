@@ -14,12 +14,15 @@ viewports.forEach((viewport) => {
 
       Terra.should.matchScreenshot({ selector });
       Terra.should.beAccessible();
-      Terra.should.themeEachCustomProperty(selector, {
-        '--terra-modal-manager-background-color': 'blue',
-        '--terra-modal-manager-border': '3px dotted pink',
-        '--terra-modal-manager-border-radius': '10px',
-        '--terra-modal-manager-box-shadow': '0 6px 4px rgba(124, 0, 0, 0.3)',
-        '--terra-modal-manager-foreground-color': 'yellow',
+      Terra.should.themeCombinationOfCustomProperties({
+        testName: 'themed',
+        selector: '[class*="modal-manager"]',
+        properties: {
+          '--terra-modal-manager-border': '5px dotted purple',
+          '--terra-modal-manager-border-radius': '10px',
+          '--terra-modal-manager-box-shadow': '2px 3px orange',
+          '--terra-modal-manager-foreground-color': 'yellow',
+        },
       });
     });
 

@@ -221,6 +221,7 @@ describe('SlidePanelManager- Behaviors', () => {
 
       browser.click('#root-component .disclose-large');
 
+      browser.pause(500);
       browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
       browser.click('[class*="slide-group"] #DemoContainer-1 .maximize');
 
