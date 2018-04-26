@@ -85,6 +85,8 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-320-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.pause(300);
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector: '#site' });
@@ -96,6 +98,8 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-480-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.pause(300);
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector: '#site' });
@@ -107,6 +111,8 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-640-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.pause(300);
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector: '#site' });
@@ -118,6 +124,8 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-240-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.pause(300);
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector: '#site' });
@@ -129,6 +137,8 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-420-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.pause(300);
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector: '#site' });
@@ -140,6 +150,8 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-600-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.pause(300);
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector: '#site' });
@@ -151,6 +163,8 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-690-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.pause(300);
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector: '#site' });
