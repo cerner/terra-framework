@@ -82,6 +82,7 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-320-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector });
@@ -93,6 +94,7 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-480-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector });
@@ -104,6 +106,7 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-640-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector });
@@ -115,6 +118,7 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-800-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector });
@@ -126,6 +130,7 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-960-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector });
@@ -137,6 +142,7 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-1120-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector });
@@ -148,6 +154,7 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-1280-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector });
@@ -159,6 +166,7 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-1440-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector });
@@ -170,6 +178,7 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-1600-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector });
@@ -181,6 +190,7 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-1760-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector });
@@ -192,6 +202,7 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-1920-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector });
@@ -203,6 +214,7 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-240-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector });
@@ -214,6 +226,7 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-420-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector });
@@ -225,6 +238,7 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-600-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector });
@@ -236,6 +250,7 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-690-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector });
@@ -247,6 +262,7 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-780-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector });
@@ -258,6 +274,7 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-870-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector });
@@ -269,6 +286,7 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-960-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector });
@@ -280,6 +298,7 @@ viewports.forEach((viewport) => {
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-1140-0');
         browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
       Terra.should.matchScreenshot({ selector });
