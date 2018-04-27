@@ -23,7 +23,7 @@
   "devDependencies": {
     "terra-app-delegate": "^2.0.0",
     "terra-base": "^3.0.0",
-    "terra-props-table": "^2.0.0"
+    "terra-props-table": "^2.4.0"
   },
   "peerDependencies": {
     "react": "^16.2.0",
@@ -49,6 +49,6 @@
     "lint:scss": "stylelint src/**/*.scss",
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
-    "test:wdio": "wdio ../../wdio.conf.js"
+    "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   }
 }
