@@ -17,7 +17,7 @@ import TerraInfiniteListIndex from '../packages/terra-infinite-list/examples/Ind
 import TerraLayoutIndex from '../packages/terra-layout/examples/Index.site-page';
 import TerraModalManagerAbout from '../packages/terra-modal-manager/examples/About.site-page';
 import TerraModalManagerChangeLog from '../packages/terra-modal-manager/examples/ChangeLog.site-page';
-import TerraModalManagerIndex from '../packages/terra-modal-manager/examples/Index.site-page';
+import TerraModalManagerExample from '../packages/terra-modal-manager/examples/Example.site-page';
 import TerraModalManagerUpgradeGuide from '../packages/terra-modal-manager/examples/UpgradeGuide.site-page';
 import TerraNavigationLayoutIndex from '../packages/terra-navigation-layout/examples/Index.site-page';
 import TerraNavigationSideMenuIndex from '../packages/terra-navigation-side-menu/examples/Index.site-page';
