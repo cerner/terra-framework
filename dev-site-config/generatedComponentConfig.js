@@ -19,7 +19,7 @@ import TerraModalManagerIndex from '../packages/terra-modal-manager/examples/Ind
 import TerraNavigationLayoutIndex from '../packages/terra-navigation-layout/examples/Index.site-page';
 import TerraNavigationSideMenuIndex from '../packages/terra-navigation-side-menu/examples/Index.site-page';
 import TerraPopupIndex from '../packages/terra-popup/examples/Index.site-page';
-import TerraNotificationDialogIndex from './packages/terra-notification-dialog/examples/Index.site-page';
+import TerraNotificationDialogIndex from '../packages/terra-notification-dialog/examples/Index.site-page';
 import TerraSlidePanelManagerIndex from '../packages/terra-slide-panel-manager/examples/Index.site-page';
 import TerraSlidePanelIndex from '../packages/terra-slide-panel/examples/Index.site-page';
 import TerraThemeProviderIndex from '../packages/terra-theme-provider/examples/Index.site-page';
@@ -110,9 +110,9 @@ import SizeInvalidPopup from '../packages/terra-popup/examples/test-examples/Siz
 import SizeLargePopup from '../packages/terra-popup/examples/test-examples/SizeLargePopup.example';
 import SizeMediumPopup from '../packages/terra-popup/examples/test-examples/SizeMediumPopup.example';
 import SizeSmallPopup from '../packages/terra-popup/examples/test-examples/SizeSmallPopup.example';
-import CompleteNotificationDialog from './packages/terra-notification-dialog/examples/test-examples/CompleteNotificationDialog.example';
-import CompleteNotificationDialogWithLongMessage from './packages/terra-notification-dialog/examples/test-examples/CompleteNotificationDialogWithLongMessage.example';
-import DefaultNotificationDialog from './packages/terra-notification-dialog/examples/test-examples/DefaultNotificationDialog.example';
+import CompleteNotificationDialog from '../packages/terra-notification-dialog/examples/test-examples/CompleteNotificationDialog.example';
+import CompleteNotificationDialogWithLongMessage from '../packages/terra-notification-dialog/examples/test-examples/CompleteNotificationDialogWithLongMessage.example';
+import DefaultNotificationDialog from '../packages/terra-notification-dialog/examples/test-examples/DefaultNotificationDialog.example';
 import SlidePanelManagerDefault from '../packages/terra-slide-panel-manager/examples/test-examples/SlidePanelManagerDefault.example';
 import SlidePanelEnd from '../packages/terra-slide-panel/examples/test-examples/SlidePanelEnd.example';
 import SlidePanelFill from '../packages/terra-slide-panel/examples/test-examples/SlidePanelFill.example';

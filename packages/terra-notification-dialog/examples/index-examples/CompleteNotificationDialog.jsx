@@ -3,7 +3,7 @@ import Button from 'terra-button';
 import NotificationDialog from '../../src/NotificationDialog';
 
 const clickOK = () => {
-  alert('You clicked OK');
+  alert('You clicked OK');  // eslint-disable-line no-alert
 };
 
 class CompleteNotificationDialog extends React.Component {
