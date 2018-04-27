@@ -6,8 +6,8 @@
   }
 
   .side-menu-action-header {
-    background-color: var(--terra-navigation-side-menu-action-header-background-color);
-    border-bottom-color: var(--terra-navigation-side-menu-action-header-border-bottom-color);
+    background-color: var(--terra-navigation-side-menu-action-header-background-color, #f4f4f4);
+    border-bottom-color: var(--terra-navigation-side-menu-action-header-border-bottom-color, #dedfe0);
     color: var(--terra-navigation-side-menu-action-header-color);
   }
 }
