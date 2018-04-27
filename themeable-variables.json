@@ -255,8 +255,8 @@
     "--terra-list-item-selected-background-color": "#e2f2fc",
     "--terra-list-item-selected-divider-color": "#0092e0",
     "--terra-list-item-hover-background-color": "#f4fafe",
-    "--terra-list-item-focus-background-color": "#f4fafe",
-    "--terra-list-item-selected-hover-background-color": "#cbe7fa"
+    "--terra-list-item-selected-hover-background-color": "#cbe7fa",
+    "--terra-list-item-focus-background-color": "#f4fafe"
   },
   "MenuItem": {
     "--terra-navigation-side-menu-item-border-bottom": "none",
@@ -290,8 +290,8 @@
     "--terra-modal-fixed-margin": "0 auto"
   },
   "ModalOverlay": {
-    "--terra-modal-overlay-background-color": "rgba(0, 0, 0, 0.4)",
-    "--terra-abstract-modal-overlay-background-color": "rgba(0, 0, 0, 0.4)"
+    "--terra-abstract-modal-overlay-background-color": "rgba(0, 0, 0, 0.4)",
+    "--terra-modal-overlay-background-color": "rgba(0, 0, 0, 0.4)"
   },
   "NavigationSideMenu": {
     "--terra-navigation-side-menu-list-background-color": "transparent",
