@@ -5,14 +5,15 @@ exports[`Layout should render a NavigationSideMenu with default props 1`] = `
   fill={true}
   header={
     <ActionHeader
+      className="side-menu-action-header"
       data-navigation-side-menu-action-header={true}
-      keepCloseButton={false}
+      level={1}
       onBack={[Function]}
-      onClose={null}
-      onMaximize={null}
-      onMinimize={null}
-      onNext={null}
-      onPrevious={null}
+      onClose={undefined}
+      onMaximize={undefined}
+      onMinimize={undefined}
+      onNext={undefined}
+      onPrevious={undefined}
       title={null}
     />
   }
@@ -24,14 +25,15 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
   fill={true}
   header={
     <ActionHeader
+      className="side-menu-action-header"
       data-navigation-side-menu-action-header={true}
-      keepCloseButton={false}
+      level={1}
       onBack={[Function]}
-      onClose={null}
-      onMaximize={null}
-      onMinimize={null}
-      onNext={null}
-      onPrevious={null}
+      onClose={undefined}
+      onMaximize={undefined}
+      onMinimize={undefined}
+      onNext={undefined}
+      onPrevious={undefined}
       title="Test Menu"
     />
   }

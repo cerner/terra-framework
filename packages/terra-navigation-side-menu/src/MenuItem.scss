@@ -1,4 +1,11 @@
 :local {
+  .list-item {
+    border-bottom: var(--terra-navigation-side-menu-list-item-border-bottom, none);
+    border-left: var(--terra-navigation-side-menu-list-item-border-left, none);
+    border-right: var(--terra-navigation-side-menu-list-item-border-right, none);
+    border-top: var(--terra-navigation-side-menu-list-item-border-top, none);
+  }
+
   .menu-item {
     align-items: stretch;
     border-bottom: var(--terra-navigation-side-menu-item-border-bottom, none);
@@ -23,10 +30,12 @@
     &:hover,
     &.is-hovered {
       background-color: var(--terra-navigation-side-menu-item-hover-background-color, #f5fafe);
+      color: var(--terra-navigation-side-menu-item-hover-color);
     }
 
     &.is-selected {
       border-left: var(--terra-navigation-side-menu-item-selected-border-left, 0.5rem solid #007cc3);
+      color: var(--terra-navigation-side-menu-item-selected-color);
       font-weight: var(--terra-navigation-side-menu-item-selected-font-weight, 600);
       padding-left: var(--terra-navigation-side-menu-item-selected-padding-left, 0.7143rem);
 
@@ -39,6 +48,11 @@
         top: 0;
         width: 100%;
         z-index: -1;
+      }
+
+      &:hover,
+      &.is-hovered {
+        color: var(--terra-navigation-side-menu-item-selected-hover-color);
       }
     }
 
