@@ -4,6 +4,12 @@ Changelog
 Unreleased
 ----------
 
+1.6.0 - (April 30, 2018)
+------------------
+### Changed
+* Minor dependency updates
+* Do not release snapshots to npm
+
 1.5.0 - (April 20, 2018)
 ------------------
 ### Changed
