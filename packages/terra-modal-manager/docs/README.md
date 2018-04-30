@@ -21,7 +21,7 @@ The ModalManager responds to the `"modal"` disclosure type. Components that wish
 
 ### withModalManager
 
-The main export from the `terra-modal-manager` package also exports a higher-order component generator called `withModalManager`. The component provided to the generator will be wrapped by a Modal and provided with an `app` prop.
+The main export from the `terra-modal-manager` package also exports a higher-order component generator called `withModalManager`. The component provided to the generator will be wrapped by a ModalManager and provided with an `app` prop.
 
 ### Example
 
