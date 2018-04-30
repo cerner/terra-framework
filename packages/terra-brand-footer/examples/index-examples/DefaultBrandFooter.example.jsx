@@ -6,7 +6,7 @@ export default () =>
   <BrandFooter
     links={[
       { text: 'Terra UI', href: 'http://terra-ui.com/' },
-      { text: 'Terra UI Components', href: 'http://terra-ui.herokuapp.com/static/#/site/components' },
+      { text: 'Terra UI Components', href: 'http://terra-ui.com/static/#/site/components' },
       { text: 'Cerner Home', href: 'https://www.cerner.com/' },
       { text: 'Cerner Code', href: 'https://code.cerner.com/', target: '_blank' },
     ]}
@@ -22,7 +22,6 @@ export default () =>
         <svg
           style={{
             border: '0',
-            maxWidth: '100%',
             height: '40px',
             verticalAlign: 'top',
           }}
@@ -36,7 +35,6 @@ export default () =>
       <svg
         style={{
           border: '0',
-          maxWidth: '100%',
           height: '40px',
           verticalAlign: 'top',
         }}

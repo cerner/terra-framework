@@ -5,7 +5,7 @@ import BrandFooter from '../../lib/BrandFooter';
 export default () =>
   <BrandFooter
     links={[
-      { text: 'Terra UI', href: 'http://terra-ui.herokuapp.com/static/#/site/home' },
+      { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/home' },
       { text: 'Cerner', href: 'https://www.cerner.com/', target: '_blank' },
     ]}
     contentLeft={
