@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import List from 'terra-list';
-import ActionHeader from 'terra-clinical-action-header';
+import ActionHeader from 'terra-action-header';
 import ContentContainer from 'terra-content-container';
 import MenuItem from './_MenuItem';
 
@@ -200,7 +200,7 @@ class NavigationSideMenu extends React.Component {
 
     let actionHeader;
     if (onBack || !currentItem.isRootMenu) {
-      actionHeader = <ActionHeader onBack={onBack} title={currentItem ? currentItem.text : null} data-navigation-side-menu-action-header />;
+      actionHeader = <ActionHeader className={cx('side-menu-action-header')} onBack={onBack} title={currentItem ? currentItem.text : null} data-navigation-side-menu-action-header />;
     }
 
     return (

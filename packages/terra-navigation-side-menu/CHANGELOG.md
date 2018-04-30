@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 -----------------
+### Changed
+* Added theme styles to support legacy look
+* Replaced use of action-header component with terra-core's action-header
 
 1.1.0 - (March 23, 2018)
 ------------------
