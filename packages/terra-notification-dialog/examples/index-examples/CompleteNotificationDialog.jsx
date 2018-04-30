@@ -33,6 +33,7 @@ class CompleteNotificationDialog extends React.Component {
           showNotificationDialog={this.state.showNotificationDialog}
           onRequestClose={this.handleCloseModal}
           title="This is the title"
+          header="Dynamic Header"
           message="This is the message"
           actions={[
             <Button
