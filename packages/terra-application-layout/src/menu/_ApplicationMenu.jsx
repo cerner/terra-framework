@@ -7,7 +7,6 @@ import { ApplicationMenuName } from 'terra-application-name';
 import RoutingStackDelegate from 'terra-navigation-layout/lib/RoutingStackDelegate';
 import { ApplicationMenuUtility } from 'terra-application-utility';
 import { disclosureType as modalDisclosureType } from 'terra-modal-manager';
-import { availableDisclosureSizes } from 'terra-disclosure-manager';
 
 import 'terra-base/lib/baseStyles';
 import ApplicationLayoutPropTypes from '../utils/propTypes';
@@ -68,7 +67,7 @@ class ApplicationMenu extends React.Component {
     if (app && utilityMenu) {
       app.disclose({
         preferredType: modalDisclosureType,
-        size: availableDisclosureSizes.SMALL,
+        dimensions: { height: '420', width: '320' },
         content: {
           component: <UtilityMenuWrapper>{utilityMenu}</UtilityMenuWrapper>,
           key: 'application-menu-utility-menu',
