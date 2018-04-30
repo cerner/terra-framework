@@ -47,7 +47,7 @@ export default () =>
     }
     contentBottom={
       <span>
-        <small>Copyright &copy; 2018 Cerner Corporation.  All Rights Reserved.</small>
+        <small>Copyright 2018 Cerner Innovation, Inc.  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;).</small>
       </span>
     }
   />;
