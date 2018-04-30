@@ -21,7 +21,7 @@ const propTypes = {
   /**
    * Header of the notification-dialog.
    */
-  header: PropTypes.string,
+  header: PropTypes.string.isRequired,
   /**
    * Title of the notification-dialog.
    */
@@ -35,7 +35,7 @@ const propTypes = {
    */
   actions: PropTypes.arrayOf(PropTypes.instanceOf(Button)),
   /**
-   *
+   * Type of notification. Determines the icon in the notification
    */
   type: PropTypes.oneOf(NotificationTypes),
   /**
@@ -49,7 +49,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  header: null,
   title: null,
   message: null,
   actions: [],
