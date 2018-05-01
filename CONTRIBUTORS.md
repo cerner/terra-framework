@@ -10,6 +10,7 @@ Cerner Corporation
 - Ismail Jones [@papasmile]
 - Alvin Cheung [@pseudofaux]
 - Stephen Esser [@StephenEsser]
+- Nathan Faltermeier [@Blackop778]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -21,3 +22,4 @@ Cerner Corporation
 [@papasmile]: https://github.com/papasmile
 [@pseudofaux]: https://github.com/pseudofaux
 [@StephenEsser]: https://github.com/StephenEsser
+[@Blackop778]: https://github.com/Blackop778
