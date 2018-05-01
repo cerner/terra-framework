@@ -33,6 +33,16 @@ describe('NotificationDialog', () => {
     Terra.should.matchScreenshot({ viewports, selector });
   });
 
+  describe('Complete notification-dialog with a long message', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/notification-dialog/no-variant-notification-dialog');
+      browser.click('#trigger-notification-dialog');
+    });
+
+    Terra.should.beAccessible({ viewports, selector });
+    Terra.should.matchScreenshot({ viewports, selector });
+  });
+
   describe('Complete notification-dialog with themeable properties', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/notification-dialog/complete-notification-dialog');

@@ -15,7 +15,7 @@ import Button from 'terra-button';
 import NotificationDialog from '../../src/NotificationDialog';
 
 const clickOK = () => {
-  alert('You clicked OK');
+  alert('You clicked OK');  // eslint-disable-line no-alert
 };
 
 class CompleteNotificationDialog extends React.Component {
@@ -42,19 +42,22 @@ class CompleteNotificationDialog extends React.Component {
     return (
       <div>
         <NotificationDialog
+          variant={NotificationDialog.Opts.Variants.ALERT}
           showNotificationDialog={this.state.showNotificationDialog}
           onRequestClose={this.handleCloseModal}
           title="This is the title"
           message="This is the message"
           actions={[
-            <Button
-              text="Ok"
-              onClick={clickOK}
-            />,
-            <Button
-              text="Close"
-              onClick={this.handleCloseModal}
-            />,
+            {
+              key: 'action',
+              text: 'Ok',
+              onClick: clickOK,
+            },
+            {
+              key: 'dismiss',
+              text: 'Close',
+              onClick: this.handleCloseModal,
+            },
           ]}
         />
         <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
@@ -64,6 +67,7 @@ class CompleteNotificationDialog extends React.Component {
 }
 
 export default CompleteNotificationDialog;
+
 ```
 
 ## Component Features

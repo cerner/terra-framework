@@ -2,15 +2,20 @@
   .notification-dialog {
     background: var(--notification-dialog-background, #fff);
     border-radius: var(--notification-dialog-border-radius, 0.3125rem);
-    position: fixed;
-    width: var(--notification-dialog-width, 31.25rem);
+    // position: fixed;
   }
 
   .notification-dialog-body {
     background-color: var(--notification-dialog-body-color, #fff);
-    font-size: var(--notification-dialog-body-font-size, 1.25rem);
+    display: inline-flex;
+    flex-direction: initial;
     padding: var(--notification-dialog-body-padding, 1.25rem);
-    text-align: center;
+    width: 100%;
+  }
+
+  .notification-dialog-body-text {
+    background-color: var(--notification-dialog-body-color, #fff);
+    font-size: var(--notification-dialog-body-font-size, 1.25rem);
   }
 
   .header-body {
@@ -32,15 +37,24 @@
     font-size: var(--notification-dialog-footer-font-size, 0.8rem);
   }
 
+  .icon-div {
+    > svg {
+      height: 2rem;
+      margin-right: var(--terra-notification-dialog-icon-margin-right, 1.25rem);
+      width: 2rem;
+    }
+  }
+
   .title {
     color: var(--terra-notification-dialog-title-color, #000);
     flex: 0 0 auto;
     flex-wrap: wrap;
     font-family: var(--notification-dialog-header-font-family, Helvetica);
-    font-size: var(--terra-notification-dialog-title-font-size, 1.125rem);
+    font-size: var(--terra-notification-dialog-title-font-size, 1rem);
     font-weight: var(--terra-notification-dialog-title-font-weight, bold);
     text-align: var(--terra-notification-dialog-title-text-align, left);
     width: 100%;
+    word-wrap: break-word;
   }
 
   .message {
@@ -51,6 +65,7 @@
     padding-top: var(--terra-notification-dialog-message-padding-top, 1rem);
     text-align: var(--terra-notification-dialog-message-text-align, left);
     width: 100%;
+    word-wrap: break-word;
   }
 
   .actions {

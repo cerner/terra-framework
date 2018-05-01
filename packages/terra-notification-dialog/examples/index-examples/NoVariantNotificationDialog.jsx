@@ -6,7 +6,7 @@ const clickOK = () => {
   alert('You clicked OK');  // eslint-disable-line no-alert
 };
 
-class CompleteNotificationDialog extends React.Component {
+class NoVariantNotificationDialog extends React.Component {
   constructor() {
     super();
 
@@ -30,7 +30,7 @@ class CompleteNotificationDialog extends React.Component {
     return (
       <div>
         <NotificationDialog
-          variant={NotificationDialog.Opts.Variants.ALERT}
+          header="No Variant for this dialog"
           showNotificationDialog={this.state.showNotificationDialog}
           onRequestClose={this.handleCloseModal}
           title="Make sure that the title relates directly to the choices."
@@ -54,4 +54,4 @@ class CompleteNotificationDialog extends React.Component {
   }
 }
 
-export default CompleteNotificationDialog;
+export default NoVariantNotificationDialog;

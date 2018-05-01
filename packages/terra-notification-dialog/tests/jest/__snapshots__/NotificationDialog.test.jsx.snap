@@ -6,39 +6,25 @@ exports[`should mount an complete notification-dialog 1`] = `
     <NotificationDialog
       actions={
         Array [
-          <Button
-            id="notification-dialog-ok"
-            isBlock={false}
-            isCompact={false}
-            isDisabled={false}
-            isIconOnly={false}
-            isReversed={false}
-            onClick={[Function]}
-            text="Ok"
-            type="button"
-            variant="neutral"
-          />,
-          <Button
-            id="notification-dialog-close"
-            isBlock={false}
-            isCompact={false}
-            isDisabled={false}
-            isIconOnly={false}
-            isReversed={false}
-            onClick={[Function]}
-            text="Close"
-            type="button"
-            variant="neutral"
-          />,
+          Object {
+            "key": "action",
+            "onClick": [Function],
+            "text": "Ok",
+          },
+          Object {
+            "key": "dismiss",
+            "onClick": [Function],
+            "text": "Close",
+          },
         ]
       }
-      message="Click ok to show alert and Close to go back."
+      message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
       onRequestClose={[Function]}
       showNotificationDialog={false}
-      title="Title goes here"
+      title="Make sure that the title relates directly to the choices."
+      variant="Alert"
     />
     <Button
-      id="trigger-notification-dialog"
       isBlock={false}
       isCompact={false}
       isDisabled={false}
@@ -54,7 +40,6 @@ exports[`should mount an complete notification-dialog 1`] = `
         aria-label={null}
         className="button neutral"
         disabled={false}
-        id="trigger-notification-dialog"
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -82,39 +67,25 @@ exports[`should mount an complete notification-dialog with long message 1`] = `
     <NotificationDialog
       actions={
         Array [
-          <Button
-            id="notification-dialog-ok"
-            isBlock={false}
-            isCompact={false}
-            isDisabled={false}
-            isIconOnly={false}
-            isReversed={false}
-            onClick={[Function]}
-            text="Ok"
-            type="button"
-            variant="neutral"
-          />,
-          <Button
-            id="notification-dialog-close"
-            isBlock={false}
-            isCompact={false}
-            isDisabled={false}
-            isIconOnly={false}
-            isReversed={false}
-            onClick={[Function]}
-            text="Close"
-            type="button"
-            variant="neutral"
-          />,
+          Object {
+            "key": "action",
+            "onClick": [Function],
+            "text": "Ok",
+          },
+          Object {
+            "key": "dismiss",
+            "onClick": [Function],
+            "text": "Close",
+          },
         ]
       }
-      message="Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back."
+      message="This is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the message"
       onRequestClose={[Function]}
       showNotificationDialog={false}
-      title="Title goes here"
+      title="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
+      variant="Success"
     />
     <Button
-      id="trigger-notification-dialog"
       isBlock={false}
       isCompact={false}
       isDisabled={false}
@@ -130,7 +101,6 @@ exports[`should mount an complete notification-dialog with long message 1`] = `
         aria-label={null}
         className="button neutral"
         disabled={false}
-        id="trigger-notification-dialog"
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -157,39 +127,25 @@ exports[`should shallow a complete notification-dialog 1`] = `
   <NotificationDialog
     actions={
       Array [
-        <Button
-          id="notification-dialog-ok"
-          isBlock={false}
-          isCompact={false}
-          isDisabled={false}
-          isIconOnly={false}
-          isReversed={false}
-          onClick={[Function]}
-          text="Ok"
-          type="button"
-          variant="neutral"
-        />,
-        <Button
-          id="notification-dialog-close"
-          isBlock={false}
-          isCompact={false}
-          isDisabled={false}
-          isIconOnly={false}
-          isReversed={false}
-          onClick={[Function]}
-          text="Close"
-          type="button"
-          variant="neutral"
-        />,
+        Object {
+          "key": "action",
+          "onClick": [Function],
+          "text": "Ok",
+        },
+        Object {
+          "key": "dismiss",
+          "onClick": [Function],
+          "text": "Close",
+        },
       ]
     }
-    message="Click ok to show alert and Close to go back."
+    message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
     onRequestClose={[Function]}
     showNotificationDialog={false}
-    title="Title goes here"
+    title="Make sure that the title relates directly to the choices."
+    variant="Alert"
   />
   <Button
-    id="trigger-notification-dialog"
     isBlock={false}
     isCompact={false}
     isDisabled={false}
@@ -208,39 +164,25 @@ exports[`should shallow a complete notification-dialog with long message 1`] = `
   <NotificationDialog
     actions={
       Array [
-        <Button
-          id="notification-dialog-ok"
-          isBlock={false}
-          isCompact={false}
-          isDisabled={false}
-          isIconOnly={false}
-          isReversed={false}
-          onClick={[Function]}
-          text="Ok"
-          type="button"
-          variant="neutral"
-        />,
-        <Button
-          id="notification-dialog-close"
-          isBlock={false}
-          isCompact={false}
-          isDisabled={false}
-          isIconOnly={false}
-          isReversed={false}
-          onClick={[Function]}
-          text="Close"
-          type="button"
-          variant="neutral"
-        />,
+        Object {
+          "key": "action",
+          "onClick": [Function],
+          "text": "Ok",
+        },
+        Object {
+          "key": "dismiss",
+          "onClick": [Function],
+          "text": "Close",
+        },
       ]
     }
-    message="Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back.Click ok to show alert and Close to go back."
+    message="This is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the message"
     onRequestClose={[Function]}
     showNotificationDialog={false}
-    title="Title goes here"
+    title="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
+    variant="Success"
   />
   <Button
-    id="trigger-notification-dialog"
     isBlock={false}
     isCompact={false}
     isDisabled={false}

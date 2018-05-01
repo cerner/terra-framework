@@ -30,19 +30,22 @@ class CompleteNotificationDialogWithLongMessage extends React.Component {
     return (
       <div>
         <NotificationDialog
+          variant={NotificationDialog.Opts.Variants.SUCCESS}
           showNotificationDialog={this.state.showNotificationDialog}
           onRequestClose={this.handleCloseModal}
-          title="This is the title"
+          title="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
           message="This is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the message"
           actions={[
-            <Button
-              text="Ok"
-              onClick={clickOK}
-            />,
-            <Button
-              text="Close"
-              onClick={this.handleCloseModal}
-            />,
+            {
+              key: 'action',
+              text: 'Ok',
+              onClick: clickOK,
+            },
+            {
+              key: 'dismiss',
+              text: 'Close',
+              onClick: this.handleCloseModal,
+            },
           ]}
         />
         <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} />

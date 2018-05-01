@@ -18,8 +18,8 @@ import TerraLayoutIndex from '../packages/terra-layout/examples/Index.site-page'
 import TerraModalManagerIndex from '../packages/terra-modal-manager/examples/Index.site-page';
 import TerraNavigationLayoutIndex from '../packages/terra-navigation-layout/examples/Index.site-page';
 import TerraNavigationSideMenuIndex from '../packages/terra-navigation-side-menu/examples/Index.site-page';
-import TerraPopupIndex from '../packages/terra-popup/examples/Index.site-page';
 import TerraNotificationDialogIndex from '../packages/terra-notification-dialog/examples/Index.site-page';
+import TerraPopupIndex from '../packages/terra-popup/examples/Index.site-page';
 import TerraSlidePanelManagerIndex from '../packages/terra-slide-panel-manager/examples/Index.site-page';
 import TerraSlidePanelIndex from '../packages/terra-slide-panel/examples/Index.site-page';
 import TerraThemeProviderIndex from '../packages/terra-theme-provider/examples/Index.site-page';
@@ -82,6 +82,10 @@ import NavigationLayoutBasic from '../packages/terra-navigation-layout/examples/
 import NavigationLayoutComplex from '../packages/terra-navigation-layout/examples/test-examples/NavigationLayoutComplex.example';
 import NavigationSideMenuDefault from '../packages/terra-navigation-side-menu/examples/test-examples/NavigationSideMenuDefault.example';
 import NavigationSideMenuRoot from '../packages/terra-navigation-side-menu/examples/test-examples/NavigationSideMenuRoot.example';
+import CompleteNotificationDialog from '../packages/terra-notification-dialog/examples/test-examples/CompleteNotificationDialog.example';
+import CompleteNotificationDialogWithLongMessage from '../packages/terra-notification-dialog/examples/test-examples/CompleteNotificationDialogWithLongMessage.example';
+import DefaultNotificationDialog from '../packages/terra-notification-dialog/examples/test-examples/DefaultNotificationDialog.example';
+import NoVariantNotificationDialog from '../packages/terra-notification-dialog/examples/test-examples/NoVariantNotificationDialog.example';
 import ArrowHorizontalAttachmentsPopup from '../packages/terra-popup/examples/test-examples/ArrowHorizontalAttachmentsPopup.example';
 import ArrowHorizontalTargetPopup from '../packages/terra-popup/examples/test-examples/ArrowHorizontalTargetPopup.example';
 import ArrowPopup from '../packages/terra-popup/examples/test-examples/ArrowPopup.example';
@@ -110,9 +114,6 @@ import SizeInvalidPopup from '../packages/terra-popup/examples/test-examples/Siz
 import SizeLargePopup from '../packages/terra-popup/examples/test-examples/SizeLargePopup.example';
 import SizeMediumPopup from '../packages/terra-popup/examples/test-examples/SizeMediumPopup.example';
 import SizeSmallPopup from '../packages/terra-popup/examples/test-examples/SizeSmallPopup.example';
-import CompleteNotificationDialog from '../packages/terra-notification-dialog/examples/test-examples/CompleteNotificationDialog.example';
-import CompleteNotificationDialogWithLongMessage from '../packages/terra-notification-dialog/examples/test-examples/CompleteNotificationDialogWithLongMessage.example';
-import DefaultNotificationDialog from '../packages/terra-notification-dialog/examples/test-examples/DefaultNotificationDialog.example';
 import SlidePanelManagerDefault from '../packages/terra-slide-panel-manager/examples/test-examples/SlidePanelManagerDefault.example';
 import SlidePanelEnd from '../packages/terra-slide-panel/examples/test-examples/SlidePanelEnd.example';
 import SlidePanelFill from '../packages/terra-slide-panel/examples/test-examples/SlidePanelFill.example';
@@ -618,6 +619,39 @@ const componentConfig = {
       },
     ],
   },
+  'terra-notification-dialog': {
+    name: 'Notification Dialog',
+    path: '/notification-dialog',
+    pages: [
+      {
+        name: 'Index',
+        path: '/index',
+        component: TerraNotificationDialogIndex,
+      },
+    ],
+    tests: [
+      {
+        name: 'Complete Notification Dialog',
+        path: '/complete-notification-dialog',
+        component: CompleteNotificationDialog,
+      },
+      {
+        name: 'Complete Notification Dialog With Long Message',
+        path: '/complete-notification-dialog-with-long-message',
+        component: CompleteNotificationDialogWithLongMessage,
+      },
+      {
+        name: 'Default Notification Dialog',
+        path: '/default-notification-dialog',
+        component: DefaultNotificationDialog,
+      },
+      {
+        name: 'No Variant Notification Dialog',
+        path: '/no-variant-notification-dialog',
+        component: NoVariantNotificationDialog,
+      },
+    ],
+  },
   'terra-popup': {
     name: 'Popup',
     path: '/popup',
@@ -768,34 +802,6 @@ const componentConfig = {
         name: 'Size Small Popup',
         path: '/size-small-popup',
         component: SizeSmallPopup,
-      },
-    ],
-  },
-  'terra-notification-dialog': {
-    name: 'NotificationDialog',
-    path: '/notification-dialog',
-    pages: [
-      {
-        name: 'Index',
-        path: '/index',
-        component: TerraNotificationDialogIndex,
-      },
-    ],
-    tests: [
-      {
-        name: 'Complete NotificationDialog',
-        path: '/complete-notification-dialog',
-        component: CompleteNotificationDialog,
-      },
-      {
-        name: 'Complete NotificationDialog With Long Message',
-        path: '/complete-notification-dialog-with-long-message',
-        component: CompleteNotificationDialogWithLongMessage,
-      },
-      {
-        name: 'Default NotificationDialog',
-        path: '/default-notification-dialog',
-        component: DefaultNotificationDialog,
       },
     ],
   },

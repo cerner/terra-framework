@@ -16,6 +16,8 @@ import CompleteNotificationDialog from './index-examples/CompleteNotificationDia
 import CompleteNotificationDialogSrc from '!raw-loader!./index-examples/CompleteNotificationDialog.jsx';
 import CompleteNotificationDialogWithLongMessage from './index-examples/CompleteNotificationDialogWithLongMessage';
 import CompleteNotificationDialogWithLongMessageSrc from '!raw-loader!./index-examples/CompleteNotificationDialogWithLongMessage.jsx';
+import NoVariantNotificationDialog from './index-examples/NoVariantNotificationDialog';
+import NoVariantNotificationDialogSrc from '!raw-loader!./index-examples/NoVariantNotificationDialog.jsx';
 
 const NotificationDialogExamples = () => (
   <div>
@@ -32,6 +34,11 @@ const NotificationDialogExamples = () => (
       title="NotificationDialog - Complete with Long Message"
       example={<CompleteNotificationDialogWithLongMessage />}
       exampleSrc={CompleteNotificationDialogWithLongMessageSrc}
+    />
+    <IndexTemplate
+      title="NotificationDialog - No Variant"
+      example={<NoVariantNotificationDialog />}
+      exampleSrc={NoVariantNotificationDialogSrc}
     />
 
     <PropsTable id="props" src={NotificationDialogSrc} />
