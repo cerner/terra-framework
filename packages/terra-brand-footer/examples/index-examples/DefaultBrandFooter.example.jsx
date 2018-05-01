@@ -23,6 +23,7 @@ export default () =>
           style={{
             border: '0',
             height: '40px',
+            width: '92px',
             verticalAlign: 'top',
           }}
           xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 40"
@@ -36,6 +37,7 @@ export default () =>
         style={{
           border: '0',
           height: '40px',
+          width: '90px',
           verticalAlign: 'top',
         }}
         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 40"
