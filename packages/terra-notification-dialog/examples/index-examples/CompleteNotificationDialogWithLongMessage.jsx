@@ -48,7 +48,7 @@ class CompleteNotificationDialogWithLongMessage extends React.Component {
             },
           ]}
         />
-        <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
+        <Button text="Trigger Notification Dialog" onClick={this.handleOpenModal} />
       </div>
     );
   }

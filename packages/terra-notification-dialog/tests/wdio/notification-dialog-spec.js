@@ -3,16 +3,6 @@ const viewports = Terra.viewports('tiny', 'medium', 'large');
 const selector = '#root';
 
 describe('NotificationDialog', () => {
-  describe('Default with no title, message or actions', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/notification-dialog/default-notification-dialog');
-      browser.click('#trigger-notification-dialog');
-    });
-
-    Terra.should.beAccessible({ viewports, selector });
-    Terra.should.matchScreenshot({ viewports, selector });
-  });
-
   describe('Complete notification-dialog title, message and actions', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/notification-dialog/complete-notification-dialog');
@@ -33,7 +23,7 @@ describe('NotificationDialog', () => {
     Terra.should.matchScreenshot({ viewports, selector });
   });
 
-  describe('Complete notification-dialog with a long message', () => {
+  describe('No Variant notification-dialog', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/notification-dialog/no-variant-notification-dialog');
       browser.click('#trigger-notification-dialog');

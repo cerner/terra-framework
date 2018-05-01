@@ -84,7 +84,6 @@ import NavigationSideMenuDefault from '../packages/terra-navigation-side-menu/ex
 import NavigationSideMenuRoot from '../packages/terra-navigation-side-menu/examples/test-examples/NavigationSideMenuRoot.example';
 import CompleteNotificationDialog from '../packages/terra-notification-dialog/examples/test-examples/CompleteNotificationDialog.example';
 import CompleteNotificationDialogWithLongMessage from '../packages/terra-notification-dialog/examples/test-examples/CompleteNotificationDialogWithLongMessage.example';
-import DefaultNotificationDialog from '../packages/terra-notification-dialog/examples/test-examples/DefaultNotificationDialog.example';
 import NoVariantNotificationDialog from '../packages/terra-notification-dialog/examples/test-examples/NoVariantNotificationDialog.example';
 import ArrowHorizontalAttachmentsPopup from '../packages/terra-popup/examples/test-examples/ArrowHorizontalAttachmentsPopup.example';
 import ArrowHorizontalTargetPopup from '../packages/terra-popup/examples/test-examples/ArrowHorizontalTargetPopup.example';
@@ -639,11 +638,6 @@ const componentConfig = {
         name: 'Complete Notification Dialog With Long Message',
         path: '/complete-notification-dialog-with-long-message',
         component: CompleteNotificationDialogWithLongMessage,
-      },
-      {
-        name: 'Default Notification Dialog',
-        path: '/default-notification-dialog',
-        component: DefaultNotificationDialog,
       },
       {
         name: 'No Variant Notification Dialog',

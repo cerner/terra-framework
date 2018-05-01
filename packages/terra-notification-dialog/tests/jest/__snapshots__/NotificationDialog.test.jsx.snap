@@ -25,6 +25,7 @@ exports[`should mount an complete notification-dialog 1`] = `
       variant="Alert"
     />
     <Button
+      id="trigger-notification-dialog"
       isBlock={false}
       isCompact={false}
       isDisabled={false}
@@ -40,6 +41,7 @@ exports[`should mount an complete notification-dialog 1`] = `
         aria-label={null}
         className="button neutral"
         disabled={false}
+        id="trigger-notification-dialog"
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -62,7 +64,7 @@ exports[`should mount an complete notification-dialog 1`] = `
 `;
 
 exports[`should mount an complete notification-dialog with long message 1`] = `
-<CompleteNotificationDialog>
+<CompleteNotificationDialogWithLongMessage>
   <div>
     <NotificationDialog
       actions={
@@ -86,6 +88,7 @@ exports[`should mount an complete notification-dialog with long message 1`] = `
       variant="Success"
     />
     <Button
+      id="trigger-notification-dialog"
       isBlock={false}
       isCompact={false}
       isDisabled={false}
@@ -101,6 +104,7 @@ exports[`should mount an complete notification-dialog with long message 1`] = `
         aria-label={null}
         className="button neutral"
         disabled={false}
+        id="trigger-notification-dialog"
         onBlur={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -119,7 +123,7 @@ exports[`should mount an complete notification-dialog with long message 1`] = `
       </button>
     </Button>
   </div>
-</CompleteNotificationDialog>
+</CompleteNotificationDialogWithLongMessage>
 `;
 
 exports[`should shallow a complete notification-dialog 1`] = `
@@ -146,6 +150,7 @@ exports[`should shallow a complete notification-dialog 1`] = `
     variant="Alert"
   />
   <Button
+    id="trigger-notification-dialog"
     isBlock={false}
     isCompact={false}
     isDisabled={false}
@@ -183,6 +188,7 @@ exports[`should shallow a complete notification-dialog with long message 1`] = `
     variant="Success"
   />
   <Button
+    id="trigger-notification-dialog"
     isBlock={false}
     isCompact={false}
     isDisabled={false}

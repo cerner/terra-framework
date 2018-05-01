@@ -2,7 +2,11 @@
   .notification-dialog {
     background: var(--notification-dialog-background, #fff);
     border-radius: var(--notification-dialog-border-radius, 0.3125rem);
-    // position: fixed;
+    position: fixed;
+
+    @media screen and (max-width: 768px) {
+      width: calc(100% - 2 * var(--notification-dialog-width, 10px));
+    }
   }
 
   .notification-dialog-body {
