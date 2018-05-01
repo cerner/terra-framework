@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should mount an complete notification-dialog 1`] = `
+exports[`should mount a complete notification-dialog 1`] = `
 <CompleteNotificationDialog>
   <div>
     <NotificationDialog
@@ -63,7 +63,7 @@ exports[`should mount an complete notification-dialog 1`] = `
 </CompleteNotificationDialog>
 `;
 
-exports[`should mount an complete notification-dialog with long message 1`] = `
+exports[`should mount a complete notification-dialog with long message 1`] = `
 <CompleteNotificationDialogWithLongMessage>
   <div>
     <NotificationDialog
@@ -124,6 +124,70 @@ exports[`should mount an complete notification-dialog with long message 1`] = `
     </Button>
   </div>
 </CompleteNotificationDialogWithLongMessage>
+`;
+
+exports[`should mount a notification-dialog with no variant 1`] = `
+<NoVariantNotificationDialog>
+  <div>
+    <NotificationDialog
+      actions={
+        Array [
+          Object {
+            "key": "action",
+            "onClick": [Function],
+            "text": "Ok",
+          },
+          Object {
+            "key": "dismiss",
+            "onClick": [Function],
+            "text": "Close",
+          },
+        ]
+      }
+      header="No Variant for this dialog"
+      message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
+      onRequestClose={[Function]}
+      showNotificationDialog={false}
+      title="Make sure that the title relates directly to the choices."
+      variant="Custom"
+    />
+    <Button
+      id="trigger-notification-dialog"
+      isBlock={false}
+      isCompact={false}
+      isDisabled={false}
+      isIconOnly={false}
+      isReversed={false}
+      onClick={[Function]}
+      text="Trigger Notification Dialog"
+      type="button"
+      variant="neutral"
+    >
+      <button
+        aria-disabled={false}
+        aria-label={null}
+        className="button neutral"
+        disabled={false}
+        id="trigger-notification-dialog"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        type="button"
+      >
+        <span
+          className="text-only"
+        >
+          <span
+            className=""
+          >
+            Trigger Notification Dialog
+          </span>
+        </span>
+      </button>
+    </Button>
+  </div>
+</NoVariantNotificationDialog>
 `;
 
 exports[`should shallow a complete notification-dialog 1`] = `
@@ -196,6 +260,45 @@ exports[`should shallow a complete notification-dialog with long message 1`] = `
     isReversed={false}
     onClick={[Function]}
     text="Trigger NotificationDialog"
+    type="button"
+    variant="neutral"
+  />
+</div>
+`;
+
+exports[`should shallow a notification-dialog with no variant 1`] = `
+<div>
+  <NotificationDialog
+    actions={
+      Array [
+        Object {
+          "key": "action",
+          "onClick": [Function],
+          "text": "Ok",
+        },
+        Object {
+          "key": "dismiss",
+          "onClick": [Function],
+          "text": "Close",
+        },
+      ]
+    }
+    header="No Variant for this dialog"
+    message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
+    onRequestClose={[Function]}
+    showNotificationDialog={false}
+    title="Make sure that the title relates directly to the choices."
+    variant="Custom"
+  />
+  <Button
+    id="trigger-notification-dialog"
+    isBlock={false}
+    isCompact={false}
+    isDisabled={false}
+    isIconOnly={false}
+    isReversed={false}
+    onClick={[Function]}
+    text="Trigger Notification Dialog"
     type="button"
     variant="neutral"
   />
