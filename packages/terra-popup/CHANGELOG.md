@@ -6,6 +6,12 @@ Unreleased
 ### Changed
 * Update webdriver screenshots.
 
+2.3.0 - (April 30, 2018)
+------------------
+### Changed
+* Minor dependency updates
+* Do not release snapshots to npm
+
 3.2.0 - (April 20, 2018)
 ------------------
 ### Changed
