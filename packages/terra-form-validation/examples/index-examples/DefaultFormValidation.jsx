@@ -55,7 +55,7 @@ export default class MainEntry extends React.Component {
               onChange={(e) => { input.onChange(e.target.value); }}
               value={input.value}
               required
-            />              
+            />
           )}
         </Field>
         <Field

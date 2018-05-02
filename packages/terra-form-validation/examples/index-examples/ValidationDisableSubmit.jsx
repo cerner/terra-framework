@@ -49,7 +49,7 @@ export default class MainEntry extends React.Component {
               isInvalid={!meta.valid}
               inputAttrs={{
                 placeholder: 'Description',
-                ...input
+                ...input,
               }}
               onChange={(e) => { input.onChange(e.target.value); }}
               value={input.value}
