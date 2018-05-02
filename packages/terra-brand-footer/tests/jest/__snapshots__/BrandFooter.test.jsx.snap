@@ -1,0 +1,543 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BrandFooter should render a default component 1`] = `
+<footer
+  className="brand-footer"
+  role="contentinfo"
+>
+  <div
+    className="footer-content"
+  >
+    <div
+      className="content-top"
+    />
+    <div
+      className="content-bottom"
+    />
+  </div>
+</footer>
+`;
+
+exports[`BrandFooter should render with content bottom and content left 1`] = `
+<footer
+  className="brand-footer"
+  role="contentinfo"
+>
+  <div
+    className="footer-content"
+  >
+    <div
+      className="content-top"
+    >
+      <img
+        alt="terra-ui"
+        height="40px"
+        src="https://github.com/cerner/terra-core/raw/master/terra.png"
+        width="40px"
+      />
+    </div>
+    <div
+      className="content-bottom"
+    >
+      <p>
+        <small>
+          Copyright © 2018 Cerner Corporation.  All Rights Reserved.
+        </small>
+      </p>
+    </div>
+  </div>
+</footer>
+`;
+
+exports[`BrandFooter should render with content bottom and content right 1`] = `
+<footer
+  className="brand-footer"
+  role="contentinfo"
+>
+  <div
+    className="footer-content"
+  >
+    <div
+      className="content-top"
+    >
+      <div>
+        <p>
+          <small>
+            Powered by
+          </small>
+        </p>
+        <p>
+          <b>
+            React.js
+          </b>
+        </p>
+      </div>
+    </div>
+    <div
+      className="content-bottom"
+    >
+      <p>
+        <small>
+          Copyright © 2018 Cerner Corporation.  All Rights Reserved.
+        </small>
+      </p>
+    </div>
+  </div>
+</footer>
+`;
+
+exports[`BrandFooter should render with content bottom, content right and content left 1`] = `
+<footer
+  className="brand-footer"
+  role="contentinfo"
+>
+  <div
+    className="footer-content"
+  >
+    <div
+      className="content-top"
+    >
+      <img
+        alt="terra-ui"
+        height="40px"
+        src="https://github.com/cerner/terra-core/raw/master/terra.png"
+        width="40px"
+      />
+      <div>
+        <p>
+          <small>
+            Powered by
+          </small>
+        </p>
+        <p>
+          <b>
+            React.js
+          </b>
+        </p>
+      </div>
+    </div>
+    <div
+      className="content-bottom"
+    >
+      <p>
+        <small>
+          Copyright © 2018 Cerner Corporation.  All Rights Reserved.
+        </small>
+      </p>
+    </div>
+  </div>
+</footer>
+`;
+
+exports[`BrandFooter should render with content right and content left 1`] = `
+<footer
+  className="brand-footer"
+  role="contentinfo"
+>
+  <div
+    className="footer-content"
+  >
+    <div
+      className="content-top"
+    >
+      <img
+        alt="terra-ui"
+        height="40px"
+        src="https://github.com/cerner/terra-core/raw/master/terra.png"
+        width="40px"
+      />
+      <div>
+        <p>
+          <small>
+            Powered by
+          </small>
+        </p>
+        <p>
+          <b>
+            React.js
+          </b>
+        </p>
+      </div>
+    </div>
+    <div
+      className="content-bottom"
+    />
+  </div>
+</footer>
+`;
+
+exports[`BrandFooter should render with provided content bottom 1`] = `
+<footer
+  className="brand-footer"
+  role="contentinfo"
+>
+  <div
+    className="footer-content"
+  >
+    <div
+      className="content-top"
+    />
+    <div
+      className="content-bottom"
+    >
+      <p>
+        <small>
+          Copyright © 2018 Cerner Corporation.  All Rights Reserved.
+        </small>
+      </p>
+    </div>
+  </div>
+</footer>
+`;
+
+exports[`BrandFooter should render with provided content left 1`] = `
+<footer
+  className="brand-footer"
+  role="contentinfo"
+>
+  <div
+    className="footer-content"
+  >
+    <div
+      className="content-top"
+    >
+      <img
+        alt="terra-ui"
+        height="40px"
+        src="https://github.com/cerner/terra-core/raw/master/terra.png"
+        width="40px"
+      />
+    </div>
+    <div
+      className="content-bottom"
+    />
+  </div>
+</footer>
+`;
+
+exports[`BrandFooter should render with provided content right 1`] = `
+<footer
+  className="brand-footer"
+  role="contentinfo"
+>
+  <div
+    className="footer-content"
+  >
+    <div
+      className="content-top"
+    >
+      <div>
+        <p>
+          <small>
+            Powered by
+          </small>
+        </p>
+        <p>
+          <b>
+            React.js
+          </b>
+        </p>
+      </div>
+    </div>
+    <div
+      className="content-bottom"
+    />
+  </div>
+</footer>
+`;
+
+exports[`BrandFooter should render with provided links 1`] = `
+<footer
+  className="brand-footer"
+  role="contentinfo"
+>
+  <nav
+    className="nav"
+  >
+    <ul
+      className="menu"
+    >
+      <li
+        className="list-item"
+        key="Cerner Homehttps://www.cerner.com/"
+      >
+        <a
+          className="link"
+          href="https://www.cerner.com/"
+        >
+          Cerner Home
+        </a>
+      </li>
+      <li
+        className="list-item"
+        key="Cerner Codehttps://code.cerner.com/"
+      >
+        <a
+          className="link"
+          href="https://code.cerner.com/"
+          target="_blank"
+        >
+          Cerner Code
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div
+    className="footer-content"
+  >
+    <div
+      className="content-top"
+    />
+    <div
+      className="content-bottom"
+    />
+  </div>
+</footer>
+`;
+
+exports[`BrandFooter should render with provided links and content bottom 1`] = `
+<footer
+  className="brand-footer"
+  role="contentinfo"
+>
+  <nav
+    className="nav"
+  >
+    <ul
+      className="menu"
+    >
+      <li
+        className="list-item"
+        key="Cerner Homehttps://www.cerner.com/"
+      >
+        <a
+          className="link"
+          href="https://www.cerner.com/"
+        >
+          Cerner Home
+        </a>
+      </li>
+      <li
+        className="list-item"
+        key="Cerner Codehttps://code.cerner.com/"
+      >
+        <a
+          className="link"
+          href="https://code.cerner.com/"
+          target="_blank"
+        >
+          Cerner Code
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div
+    className="footer-content"
+  >
+    <div
+      className="content-top"
+    />
+    <div
+      className="content-bottom"
+    >
+      <p>
+        <small>
+          Copyright © 2018 Cerner Corporation.  All Rights Reserved.
+        </small>
+      </p>
+    </div>
+  </div>
+</footer>
+`;
+
+exports[`BrandFooter should render with provided links and content left 1`] = `
+<footer
+  className="brand-footer"
+  role="contentinfo"
+>
+  <nav
+    className="nav"
+  >
+    <ul
+      className="menu"
+    >
+      <li
+        className="list-item"
+        key="Cerner Homehttps://www.cerner.com/"
+      >
+        <a
+          className="link"
+          href="https://www.cerner.com/"
+        >
+          Cerner Home
+        </a>
+      </li>
+      <li
+        className="list-item"
+        key="Cerner Codehttps://code.cerner.com/"
+      >
+        <a
+          className="link"
+          href="https://code.cerner.com/"
+          target="_blank"
+        >
+          Cerner Code
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div
+    className="footer-content"
+  >
+    <div
+      className="content-top"
+    >
+      <img
+        alt="terra-ui"
+        height="40px"
+        src="https://github.com/cerner/terra-core/raw/master/terra.png"
+        width="40px"
+      />
+    </div>
+    <div
+      className="content-bottom"
+    />
+  </div>
+</footer>
+`;
+
+exports[`BrandFooter should render with provided links and content right 1`] = `
+<footer
+  className="brand-footer"
+  role="contentinfo"
+>
+  <nav
+    className="nav"
+  >
+    <ul
+      className="menu"
+    >
+      <li
+        className="list-item"
+        key="Cerner Homehttps://www.cerner.com/"
+      >
+        <a
+          className="link"
+          href="https://www.cerner.com/"
+        >
+          Cerner Home
+        </a>
+      </li>
+      <li
+        className="list-item"
+        key="Cerner Codehttps://code.cerner.com/"
+      >
+        <a
+          className="link"
+          href="https://code.cerner.com/"
+          target="_blank"
+        >
+          Cerner Code
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div
+    className="footer-content"
+  >
+    <div
+      className="content-top"
+    >
+      <div>
+        <p>
+          <small>
+            Powered by
+          </small>
+        </p>
+        <p>
+          <b>
+            React.js
+          </b>
+        </p>
+      </div>
+    </div>
+    <div
+      className="content-bottom"
+    />
+  </div>
+</footer>
+`;
+
+exports[`BrandFooter should render with provided links, content left, content bottom and content right 1`] = `
+<footer
+  className="brand-footer"
+  role="contentinfo"
+>
+  <nav
+    className="nav"
+  >
+    <ul
+      className="menu"
+    >
+      <li
+        className="list-item"
+        key="Cerner Homehttps://www.cerner.com/"
+      >
+        <a
+          className="link"
+          href="https://www.cerner.com/"
+        >
+          Cerner Home
+        </a>
+      </li>
+      <li
+        className="list-item"
+        key="Cerner Codehttps://code.cerner.com/"
+      >
+        <a
+          className="link"
+          href="https://code.cerner.com/"
+          target="_blank"
+        >
+          Cerner Code
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div
+    className="footer-content"
+  >
+    <div
+      className="content-top"
+    >
+      <img
+        alt="terra-ui"
+        height="40px"
+        src="https://github.com/cerner/terra-core/raw/master/terra.png"
+        width="40px"
+      />
+      <div>
+        <p>
+          <small>
+            Powered by
+          </small>
+        </p>
+        <p>
+          <b>
+            React.js
+          </b>
+        </p>
+      </div>
+    </div>
+    <div
+      className="content-bottom"
+    >
+      <p>
+        <small>
+          Copyright © 2018 Cerner Corporation.  All Rights Reserved.
+        </small>
+      </p>
+    </div>
+  </div>
+</footer>
+`;
