@@ -2,8 +2,7 @@
 
 import React from 'react';
 import { Form, Field } from 'react-final-form';
-import TerraField from 'terra-form-field';
-import Input from 'terra-form-input';
+import InputField from 'terra-form-input/lib/InputField';
 import Button from 'terra-button';
 import Spacer from 'terra-spacer';
 
@@ -44,21 +43,21 @@ export default class MainEntry extends React.Component {
           validate={validateUniqueUser}
         >
           {({ input, meta, ...rest }) => (
-            <TerraField
+            <InputField
               {...rest}
               label="User Name"
               error={meta.error}
               help="TerraUser is unavailable. Use this name to test async"
               isInvalid={!meta.valid}
+              onChange={(e) => { input.onChange(e.target.value); }}
+              inputAttrs={{
+                placeholder: 'Description',
+                required: true,
+                ...input,
+              }}
+              value={input.value}
               required
-            >
-              <Input
-                {...input}
-                placeholder="Description"
-                onChange={(e) => { input.onChange(e.target.value); }}
-                value={input.value}
-              />
-            </TerraField>
+            />
           )}
         </Field>
         <Button text="Submit" isDisabled={invalid || pristine} type={Button.Opts.Types.SUBMIT} />

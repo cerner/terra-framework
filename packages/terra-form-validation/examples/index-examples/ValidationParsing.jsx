@@ -2,8 +2,7 @@
 
 import React from 'react';
 import { Form, Field } from 'react-final-form';
-import TerraField from 'terra-form-field';
-import Input from 'terra-form-input';
+import InputField from 'terra-form-input/lib/InputField';
 import Button from 'terra-button';
 import Spacer from 'terra-spacer';
 
@@ -52,20 +51,20 @@ export default class MainEntry extends React.Component {
           parse={numericOnly}
         >
           {({ input, meta, ...rest }) => (
-            <TerraField
+            <InputField
               {...rest}
               label="Vacation Days Remaining"
               error={meta.error}
               isInvalid={!meta.valid}
+              inputAttrs={{
+                placeholder: '# of Vacation Days remaining',
+                required: true,
+                ...input,
+              }}
+              onChange={(e) => { input.onChange(e.target.value); }}
+              value={input.value}
               required
-            >
-              <Input
-                {...input}
-                placeholder="# of Vacation Days remaining"
-                onChange={(e) => { input.onChange(e.target.value); }}
-                value={input.value}
-              />
-            </TerraField>
+            />
           )}
         </Field>
         <Field
@@ -74,20 +73,20 @@ export default class MainEntry extends React.Component {
           parse={enforcePhoneNumber}
         >
           {({ input, meta, ...rest }) => (
-            <TerraField
+            <InputField
               {...rest}
               label="Phone Number"
               error={meta.error}
               isInvalid={!meta.valid}
+              inputAttrs={{
+                placeholder: '(###) ###-####',
+                required: true,
+                ...input,
+              }}
+              onChange={(e) => { input.onChange(e.target.value); }}
+              value={input.value}
               required
-            >
-              <Input
-                {...input}
-                placeholder="(###) ###-####"
-                onChange={(e) => { input.onChange(e.target.value); }}
-                value={input.value}
-              />
-            </TerraField>
+            />
           )}
         </Field>
         <Button text="Submit" isDisabled={invalid || pristine} type={Button.Opts.Types.SUBMIT} />
