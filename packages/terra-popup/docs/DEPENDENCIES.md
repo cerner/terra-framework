@@ -11,16 +11,16 @@
 | terra-button | ^2.3.0 | ^16.2.0 | The terra-button component provides users a way to trigger actions in the UI. |
 | terra-content-container | ^2.2.0 | ^16.2.0 | The Terra ContentContainer is a structural component for the purpose of arranging content with a header. |
 | terra-grid | ^4.2.0 | ^16.2.0 | The grid component provides a flexbox based grid system. |
-| terra-hookshot | ^4.0.0 | ^16.2.0 | The Terra Hookshot component positions portaled content according to target and content attachments, ensuring they stay visually connected. |
+| terra-hookshot | ^4.1.0 | ^16.2.0 | The Terra Hookshot component positions portaled content according to target and content attachments, ensuring they stay visually connected. |
 | terra-list | ^2.3.0 | ^16.2.0 | terra-list |
 | terra-mixins | ^1.0.0 | -- | terra-mixins |
-| terra-modal-manager | ^2.4.0 | ^16.2.0 | A Redux-backed Container component that dynamically presents components in a Terra Modal |
+| terra-modal-manager | ^2.5.0 | ^16.2.0 | A Redux-backed Container component that dynamically presents components in a Terra Modal |
 
 ## devDependencies
 | Dependency | Version | React Version | Description |
 |-|-|-|-|
-| terra-app-delegate | ^2.0.0 | -- | An object that provides a set of functions used to facilitate communcation between Containers and their consuming Containers/Applications |
-| terra-props-table | ^2.0.0 | ^16.2.0 | terra-props-table |
+| terra-app-delegate | ^2.1.0 | -- | An object that provides a set of functions used to facilitate communcation between Containers and their consuming Containers/Applications |
+| terra-props-table | ^2.4.0 | ^16.2.0 | terra-props-table |
 
 ## peerDependencies
 | Dependency | Version | React Version | Description |

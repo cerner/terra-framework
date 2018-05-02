@@ -1,0 +1,64 @@
+:local {
+  .brand-footer {
+    margin: none;
+  }
+
+  .nav {
+    background-color: var(--terra-brand-footer-nav-background-color, #f4f4f4);
+    color: var(--terra-brand-footer-nav-color, #64696c);
+    display: block;
+    padding: 0.7142857142857143rem 1.4285714285714286rem;
+  }
+
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .list-item {
+    display: inline;
+  }
+
+
+  .list-item:first-child::before {
+    content: '';
+    padding: 0;
+  }
+
+  .list-item::before {
+    content: '/';
+    padding: 0.7142857142857143rem;
+  }
+
+
+  .link {
+    color: var(--terra-brand-footer-link-color, #0059a8);
+    text-decoration: none;
+  }
+
+  .link:hover {
+    color: var(--terra-brand-footer-link-hover-color, #001f67);
+  }
+
+  .link:active {
+    color: var(--terra-brand-footer-link-active-color, #001f67);
+  }
+
+  .footer-content {
+    background-color: var(--terra-brand-footer-footer-content-background-color, #0079be);
+    color: var(--terra-brand-footer-footer-content-color, #fff);
+    padding: 1.4285714285714286rem;
+  }
+
+  .content-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .content-bottom {
+    margin-top: 0.7142857142857143rem;
+  }
+}

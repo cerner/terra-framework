@@ -11,6 +11,7 @@ import TerraApplicationLinksIndex from '../packages/terra-application-links/exam
 import TerraApplicationMenuLayoutIndex from '../packages/terra-application-menu-layout/examples/Index.site-page';
 import TerraApplicationNameIndex from '../packages/terra-application-name/examples/Index.site-page';
 import TerraApplicationUtilityIndex from '../packages/terra-application-utility/examples/Index.site-page';
+import TerraBrandFooterIndex from '../packages/terra-brand-footer/examples/Index.site-page';
 import TerraDisclosureManagerIndex from '../packages/terra-disclosure-manager/examples/Index.site-page';
 import TerraFormValidationIndex from '../packages/terra-form-validation/examples/Index.site-page';
 import TerraFormValidationValidationEvents from '../packages/terra-form-validation/examples/ValidationEvents.site-page';
@@ -51,6 +52,9 @@ import DefaultApplicationHeaderUtility from '../packages/terra-application-utili
 import DefaultApplicationMenuUtility from '../packages/terra-application-utility/examples/test-examples/DefaultApplicationMenuUtility.example';
 import DefaultHeaderUtilityMenu from '../packages/terra-application-utility/examples/test-examples/DefaultHeaderUtilityMenu.example';
 import DefaultMenuUtilityMenu from '../packages/terra-application-utility/examples/test-examples/DefaultMenuUtilityMenu.example';
+import DefaultBrandFooter from '../packages/terra-brand-footer/examples/test-examples/DefaultBrandFooter.example';
+import ActiveBrandFooter from '../packages/terra-brand-footer/examples/test-examples/ActiveBrandFooter.example';
+import HoveredBrandFooter from '../packages/terra-brand-footer/examples/test-examples/HoveredBrandFooter.example';
 import DefaultHookshot from '../packages/terra-hookshot/examples/test-examples/DefaultHookshot.example';
 import HookshotAttachmentBehaviorAuto from '../packages/terra-hookshot/examples/test-examples/HookshotAttachmentBehaviorAuto.example';
 import HookshotAttachmentBehaviorFlip from '../packages/terra-hookshot/examples/test-examples/HookshotAttachmentBehaviorFlip.example';
@@ -360,6 +364,34 @@ const componentConfig = {
         name: 'Default Menu Utility Menu',
         path: '/default-menu-utility-menu',
         component: DefaultMenuUtilityMenu,
+      },
+    ],
+  },
+  'terra-brand-footer': {
+    name: 'Brand Footer',
+    path: '/brand-footer',
+    pages: [
+      {
+        name: 'Index',
+        path: '/index',
+        component: TerraBrandFooterIndex,
+      },
+    ],
+    tests: [
+      {
+        name: 'Default Brand Footer',
+        path: '/default-brand-footer',
+        component: DefaultBrandFooter,
+      },
+      {
+        name: 'Hovered Brand Footer',
+        path: '/hovered-brand-footer',
+        component: HoveredBrandFooter,
+      },
+      {
+        name: 'Active Brand Footer',
+        path: '/active-brand-footer',
+        component: ActiveBrandFooter,
       },
     ],
   },
