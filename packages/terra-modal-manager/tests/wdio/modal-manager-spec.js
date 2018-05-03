@@ -1,59 +1,318 @@
-/* global browser, Terra, before, expect */
+/* global browser, Terra, before, beforeEach, expect */
 const viewports = Terra.viewports('tiny', 'large');
 const selector = '#root';
 
-describe('ModalManager', () => {
-  describe('Disclose Tiny', () => {
-    before(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
-        .click('#root-component .disclose-tiny'));
+viewports.forEach((viewport) => {
+  describe('ModalManager - Size Props', () => {
+    before(() => {
+      browser.setViewportSize(viewport);
+    });
 
-    Terra.should.matchScreenshot({ selector, viewports });
-    Terra.should.beAccessible({ viewports });
+    describe('Disclose Default', () => {
+      beforeEach(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
+          .click('#root-component .disclose'));
+
+      Terra.should.matchScreenshot({ selector });
+      Terra.should.beAccessible();
+      Terra.should.themeCombinationOfCustomProperties({
+        testName: 'themed',
+        selector: '[class*="modal-manager"]',
+        properties: {
+          '--terra-modal-manager-border': '5px dotted purple',
+          '--terra-modal-manager-border-radius': '10px',
+          '--terra-modal-manager-box-shadow': '2px 3px orange',
+          '--terra-modal-manager-foreground-color': 'yellow',
+        },
+      });
+    });
+
+    describe('Disclose Tiny', () => {
+      beforeEach(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
+          .click('#root-component .disclose-tiny'));
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Small', () => {
+      beforeEach(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
+          .click('#root-component .disclose-small'));
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Medium', () => {
+      beforeEach(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
+          .click('#root-component .disclose-medium'));
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Large', () => {
+      beforeEach(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
+          .click('#root-component .disclose-large'));
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Huge', () => {
+      beforeEach(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
+          .click('#root-component .disclose-huge'));
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Fullscreen', () => {
+      beforeEach(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
+          .click('#root-component .disclose-fullscreen'));
+
+      Terra.should.matchScreenshot({ selector });
+    });
   });
+});
 
-  describe('Disclose Small', () => {
-    before(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
-        .click('#root-component .disclose-small'));
+viewports.forEach((viewport) => {
+  describe('ModalManager - Dimensions Props', () => {
+    before(() => {
+      browser.setViewportSize(viewport);
+    });
 
-    Terra.should.matchScreenshot({ selector, viewports });
-    Terra.should.beAccessible({ viewports });
+    describe('Disclose Width-320', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.click('#disclosureDimensions-width-0');
+        browser.click('#width-320-0');
+        browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
+      });
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Width-480', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.click('#disclosureDimensions-width-0');
+        browser.click('#width-480-0');
+        browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
+      });
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Width-640', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.click('#disclosureDimensions-width-0');
+        browser.click('#width-640-0');
+        browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
+      });
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Width-800', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.click('#disclosureDimensions-width-0');
+        browser.click('#width-800-0');
+        browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
+      });
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Width-960', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.click('#disclosureDimensions-width-0');
+        browser.click('#width-960-0');
+        browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
+      });
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Width-1120', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.click('#disclosureDimensions-width-0');
+        browser.click('#width-1120-0');
+        browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
+      });
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Width-1280', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.click('#disclosureDimensions-width-0');
+        browser.click('#width-1280-0');
+        browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
+      });
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Width-1440', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.click('#disclosureDimensions-width-0');
+        browser.click('#width-1440-0');
+        browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
+      });
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Width-1600', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.click('#disclosureDimensions-width-0');
+        browser.click('#width-1600-0');
+        browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
+      });
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Width-1760', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.click('#disclosureDimensions-width-0');
+        browser.click('#width-1760-0');
+        browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
+      });
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Width-1920', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.click('#disclosureDimensions-width-0');
+        browser.click('#width-1920-0');
+        browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
+      });
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Height-240', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.click('#disclosureDimensions-height-0');
+        browser.click('#height-240-0');
+        browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
+      });
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Height-420', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.click('#disclosureDimensions-height-0');
+        browser.click('#height-420-0');
+        browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
+      });
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Height-600', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.click('#disclosureDimensions-height-0');
+        browser.click('#height-600-0');
+        browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
+      });
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Height-690', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.click('#disclosureDimensions-height-0');
+        browser.click('#height-690-0');
+        browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
+      });
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Height-780', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.click('#disclosureDimensions-height-0');
+        browser.click('#height-780-0');
+        browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
+      });
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Height-870', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.click('#disclosureDimensions-height-0');
+        browser.click('#height-870-0');
+        browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
+      });
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Height-960', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.click('#disclosureDimensions-height-0');
+        browser.click('#height-960-0');
+        browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
+      });
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
+    describe('Disclose Height-1140', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.click('#disclosureDimensions-height-0');
+        browser.click('#height-1140-0');
+        browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
+      });
+
+      Terra.should.matchScreenshot({ selector });
+    });
   });
+});
 
-  describe('Disclose Medium', () => {
-    before(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
-        .click('#root-component .disclose-medium'));
-
-    Terra.should.matchScreenshot({ selector, viewports });
-    Terra.should.beAccessible({ viewports });
-  });
-
-  describe('Disclose Large', () => {
-    before(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
-        .click('#root-component .disclose-large'));
-
-    Terra.should.matchScreenshot({ selector, viewports });
-    Terra.should.beAccessible({ viewports });
-  });
-
-  describe('Disclose Huge', () => {
-    before(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
-        .click('#root-component .disclose-huge'));
-
-    Terra.should.matchScreenshot({ selector, viewports });
-    Terra.should.beAccessible({ viewports });
-  });
-
-  describe('Disclose Fullscreen', () => {
-    before(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
-        .click('#root-component .disclose-fullscreen'));
-
-    Terra.should.matchScreenshot({ selector, viewports });
-    Terra.should.beAccessible({ viewports });
+describe('ModalManager - Behaviors', () => {
+  before(() => {
+    browser.setViewportSize(Terra.viewports('large')[0]);
   });
 
   describe('Nested Disclose', () => {
-    before(() => {
-      browser.setViewportSize(Terra.viewports('large')[0]);
+    beforeEach(() => {
       browser.url('/#/raw/tests/modal-manager/modal-manager-default');
 
       browser.click('#root-component .disclose-large');
@@ -63,12 +322,10 @@ describe('ModalManager', () => {
     });
 
     Terra.should.matchScreenshot({ selector });
-    Terra.should.beAccessible();
   });
 
   describe('Disclosure - Dismiss', () => {
-    before(() => {
-      browser.setViewportSize(Terra.viewports('large')[0]);
+    beforeEach(() => {
       browser.url('/#/raw/tests/modal-manager/modal-manager-default');
 
       browser.click('#root-component .disclose-large');
@@ -78,12 +335,10 @@ describe('ModalManager', () => {
     });
 
     Terra.should.matchScreenshot({ selector });
-    Terra.should.beAccessible();
   });
 
   describe('Disclosure - Close Disclosure', () => {
-    before(() => {
-      browser.setViewportSize(Terra.viewports('large')[0]);
+    beforeEach(() => {
       browser.url('/#/raw/tests/modal-manager/modal-manager-default');
 
       browser.click('#root-component .disclose-large');
@@ -93,30 +348,26 @@ describe('ModalManager', () => {
     });
 
     Terra.should.matchScreenshot({ selector });
-    Terra.should.beAccessible();
   });
 
   describe('Disclosure - Maximize', () => {
-    before(() => {
-      browser.setViewportSize(Terra.viewports('large')[0]);
+    beforeEach(() => {
       browser.url('/#/raw/tests/modal-manager/modal-manager-default');
 
-      browser.click('#root-component .disclose-large');
+      browser.click('#root-component .disclose-small');
 
       browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 500);
       browser.click('[class*="slide-group"] #DemoContainer-1 .maximize');
     });
 
     Terra.should.matchScreenshot({ selector });
-    Terra.should.beAccessible();
   });
 
   describe('Disclosure - Minimize', () => {
-    before(() => {
-      browser.setViewportSize(Terra.viewports('large')[0]);
+    beforeEach(() => {
       browser.url('/#/raw/tests/modal-manager/modal-manager-default');
 
-      browser.click('#root-component .disclose-large');
+      browser.click('#root-component .disclose-small');
 
       browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
       browser.click('[class*="slide-group"] #DemoContainer-1 .maximize');
@@ -128,12 +379,10 @@ describe('ModalManager', () => {
     });
 
     Terra.should.matchScreenshot({ selector });
-    Terra.should.beAccessible();
   });
 
   describe('Disclosure - RequestFocus', () => {
-    before(() => {
-      browser.setViewportSize(Terra.viewports('large')[0]);
+    beforeEach(() => {
       browser.url('/#/raw/tests/modal-manager/modal-manager-default');
 
       browser.click('#root-component .disclose-large');
@@ -143,12 +392,10 @@ describe('ModalManager', () => {
     });
 
     Terra.should.matchScreenshot({ selector });
-    Terra.should.beAccessible();
   });
 
   describe('Disclosure - ReleaseFocus', () => {
-    before(() => {
-      browser.setViewportSize(Terra.viewports('large')[0]);
+    beforeEach(() => {
       browser.url('/#/raw/tests/modal-manager/modal-manager-default');
 
       browser.click('#root-component .disclose-large');
@@ -163,6 +410,5 @@ describe('ModalManager', () => {
     });
 
     Terra.should.matchScreenshot({ selector });
-    Terra.should.beAccessible();
   });
 });

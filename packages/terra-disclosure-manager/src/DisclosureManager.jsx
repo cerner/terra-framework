@@ -11,7 +11,39 @@ const availableDisclosureSizes = {
   FULLSCREEN: 'fullscreen',
 };
 
-export { availableDisclosureSizes };
+const availableDisclosureHeights = {
+  240: 240,
+  420: 420,
+  600: 600,
+  690: 690,
+  780: 780,
+  870: 870,
+  960: 960,
+  1140: 1140,
+};
+
+const availableDisclosureWidths = {
+  320: 320,
+  480: 480,
+  640: 640,
+  800: 800,
+  960: 960,
+  1120: 1120,
+  1280: 1280,
+  1440: 1440,
+  1600: 1600,
+  1760: 1760,
+  1920: 1920,
+};
+
+const defaultDimensions = { height: availableDisclosureHeights['690'], width: availableDisclosureWidths['1120'] };
+const defaultSize = availableDisclosureSizes.SMALL;
+
+const isValidDimensions = dimensions => availableDisclosureHeights[dimensions.height] && availableDisclosureWidths[dimensions.width];
+
+const isValidSize = size => availableDisclosureSizes[size.toUpperCase()];
+
+export { availableDisclosureSizes, availableDisclosureHeights, availableDisclosureWidths };
 
 const propTypes = {
   /**
@@ -81,6 +113,7 @@ class DisclosureManager extends React.Component {
       disclosureIsFocused: true,
       disclosureIsMaximized: false,
       disclosureSize: undefined,
+      disclosureDimensions: undefined,
       disclosureComponentKeys: [],
       disclosureComponentData: {},
     };
@@ -97,10 +130,28 @@ class DisclosureManager extends React.Component {
   }
 
   openDisclosure(data) {
+    let dimensions = data.dimensions;
+    if (dimensions && !isValidDimensions(dimensions)) {
+      // dimensions were provided, but are invalid, set the default
+      dimensions = defaultDimensions;
+    }
+
+    let size = data.size;
+    if (!size || (size && !isValidSize(size))) {
+      // no valid size passed
+      if (!dimensions) {
+        // no valid size and no valid dimensions, set the default
+        dimensions = defaultDimensions;
+      }
+      // ensure size set for pacivity
+      size = defaultSize;
+    }
+
     this.setState({
       disclosureIsOpen: true,
       disclosureIsFocused: true,
-      disclosureSize: data.size || availableDisclosureSizes.SMALL,
+      disclosureSize: size,
+      disclosureDimensions: dimensions,
       disclosureComponentKeys: [data.content.key],
       disclosureComponentData: {
         [data.content.key]: {
@@ -141,6 +192,7 @@ class DisclosureManager extends React.Component {
       disclosureIsFocused: false,
       disclosureIsMaximized: false,
       disclosureSize: undefined,
+      disclosureDimensions: undefined,
       disclosureComponentKeys: [],
       disclosureComponentData: {},
     });
@@ -387,7 +439,14 @@ class DisclosureManager extends React.Component {
 
   render() {
     const { render } = this.props;
-    const { disclosureIsOpen, disclosureIsFocused, disclosureIsMaximized, disclosureSize, disclosureComponentKeys } = this.state;
+    const {
+      disclosureIsOpen,
+      disclosureIsFocused,
+      disclosureIsMaximized,
+      disclosureSize,
+      disclosureDimensions,
+      disclosureComponentKeys,
+    } = this.state;
 
     if (!render) {
       return null;
@@ -404,6 +463,7 @@ class DisclosureManager extends React.Component {
         isFocused: disclosureIsFocused,
         isMaximized: disclosureIsMaximized,
         size: disclosureSize,
+        dimensions: disclosureDimensions,
         components: this.renderDisclosureComponents(),
       },
     });

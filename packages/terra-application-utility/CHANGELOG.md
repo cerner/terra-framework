@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 -----------------
+### Changed
+* Update test examples to properly adjust for inline-block icon
 
 1.3.0 - (April 30, 2018)
 ------------------

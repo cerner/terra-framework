@@ -1,9 +1,9 @@
 import React from 'react';
 import TestExample from 'terra-disclosure-manager/examples/test-content/TestExample';
-import ModalManager from '../../lib/index';
+import ModalManager from '../../lib/ModalManager';
 
 const ModalManagerDefault = () => (
-  <div role="main">
+  <div role="main" style={{ height: '100%' }}>
     <ModalManager>
       <TestExample identifier="root-component" disclosureType="modal" />
     </ModalManager>
