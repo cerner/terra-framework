@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Regenerate screenshots.
 
 2.3.0 - (April 30, 2018)
 ------------------

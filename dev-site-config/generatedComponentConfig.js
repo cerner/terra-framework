@@ -16,7 +16,10 @@ import TerraDisclosureManagerIndex from '../packages/terra-disclosure-manager/ex
 import TerraHookshotIndex from '../packages/terra-hookshot/examples/Index.site-page';
 import TerraInfiniteListIndex from '../packages/terra-infinite-list/examples/Index.site-page';
 import TerraLayoutIndex from '../packages/terra-layout/examples/Index.site-page';
-import TerraModalManagerIndex from '../packages/terra-modal-manager/examples/Index.site-page';
+import TerraModalManagerAbout from '../packages/terra-modal-manager/examples/About.site-page';
+import TerraModalManagerChangeLog from '../packages/terra-modal-manager/examples/ChangeLog.site-page';
+import TerraModalManagerExample from '../packages/terra-modal-manager/examples/Example.site-page';
+import TerraModalManagerUpgradeGuide from '../packages/terra-modal-manager/examples/UpgradeGuide.site-page';
 import TerraNavigationLayoutIndex from '../packages/terra-navigation-layout/examples/Index.site-page';
 import TerraNavigationSideMenuIndex from '../packages/terra-navigation-side-menu/examples/Index.site-page';
 import TerraPopupIndex from '../packages/terra-popup/examples/Index.site-page';
@@ -587,9 +590,24 @@ const componentConfig = {
     path: '/modal-manager',
     pages: [
       {
-        name: 'Index',
-        path: '/index',
-        component: TerraModalManagerIndex,
+        name: 'About',
+        path: '/about',
+        component: TerraModalManagerAbout,
+      },
+      {
+        name: 'Change Log',
+        path: '/change-log',
+        component: TerraModalManagerChangeLog,
+      },
+      {
+        name: 'Example',
+        path: '/example',
+        component: TerraModalManagerExample,
+      },
+      {
+        name: 'Upgrade Guide',
+        path: '/upgrade-guide',
+        component: TerraModalManagerUpgradeGuide,
       },
     ],
     tests: [
