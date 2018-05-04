@@ -18,9 +18,9 @@ exports[`should mount a complete notification-dialog 1`] = `
           },
         ]
       }
+      isOpen={false}
       message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
       onRequestClose={[Function]}
-      showNotificationDialog={false}
       title="Make sure that the title relates directly to the choices."
       variant="Alert"
     />
@@ -81,9 +81,9 @@ exports[`should mount a complete notification-dialog with long message 1`] = `
           },
         ]
       }
+      isOpen={false}
       message="This is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the message"
       onRequestClose={[Function]}
-      showNotificationDialog={false}
       title="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
       variant="Success"
     />
@@ -145,9 +145,9 @@ exports[`should mount a notification-dialog with no variant 1`] = `
         ]
       }
       header="No Variant for this dialog"
+      isOpen={false}
       message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
       onRequestClose={[Function]}
-      showNotificationDialog={false}
       title="Make sure that the title relates directly to the choices."
       variant="Custom"
     />
@@ -207,9 +207,9 @@ exports[`should shallow a complete notification-dialog 1`] = `
         },
       ]
     }
+    isOpen={false}
     message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
     onRequestClose={[Function]}
-    showNotificationDialog={false}
     title="Make sure that the title relates directly to the choices."
     variant="Alert"
   />
@@ -245,9 +245,9 @@ exports[`should shallow a complete notification-dialog with long message 1`] = `
         },
       ]
     }
+    isOpen={false}
     message="This is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the message"
     onRequestClose={[Function]}
-    showNotificationDialog={false}
     title="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
     variant="Success"
   />
@@ -284,9 +284,9 @@ exports[`should shallow a notification-dialog with no variant 1`] = `
       ]
     }
     header="No Variant for this dialog"
+    isOpen={false}
     message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
     onRequestClose={[Function]}
-    showNotificationDialog={false}
     title="Make sure that the title relates directly to the choices."
     variant="Custom"
   />

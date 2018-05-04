@@ -11,7 +11,7 @@ class CompleteNotificationDialogWithLongMessage extends React.Component {
     super();
 
     this.state = {
-      showNotificationDialog: false,
+      isOpen: false,
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -19,11 +19,11 @@ class CompleteNotificationDialogWithLongMessage extends React.Component {
   }
 
   handleOpenModal() {
-    this.setState({ showNotificationDialog: true });
+    this.setState({ isOpen: true });
   }
 
   handleCloseModal() {
-    this.setState({ showNotificationDialog: false });
+    this.setState({ isOpen: false });
   }
 
   render() {
@@ -31,7 +31,7 @@ class CompleteNotificationDialogWithLongMessage extends React.Component {
       <div>
         <NotificationDialog
           variant={NotificationDialog.Opts.Variants.SUCCESS}
-          showNotificationDialog={this.state.showNotificationDialog}
+          isOpen={this.state.isOpen}
           onRequestClose={this.handleCloseModal}
           title="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
           message="This is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the message"

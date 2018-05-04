@@ -64,9 +64,9 @@ const propTypes = {
   /**
    * Toggle to show notification-dialog or not.
    */
-  showNotificationDialog: PropTypes.bool.isRequired,
+  isOpen: PropTypes.bool.isRequired,
   /**
-   * Callback function indicating a close condition was met, should be combined with showNotificationDialog for state management.
+   * Callback function indicating a close condition was met, should be combined with isOpen for state management.
    */
   onRequestClose: PropTypes.func.isRequired,
 };
@@ -120,7 +120,7 @@ const getIcon = (variant, customIcon = null) => {
 
 class NotificationDialog extends React.Component {
   render() {
-    if (!this.props.showNotificationDialog) {
+    if (!this.props.isOpen) {
       return null;
     }
 
@@ -131,37 +131,36 @@ class NotificationDialog extends React.Component {
       actions,
       variant,
       customIcon,
-      showNotificationDialog,
+      isOpen,
       onRequestClose,
       ...customProps
     } = this.props;
 
     const defaultHeader = variant === variants.CUSTOM ? '' : `${variant}`;
+    const notificationDialogClassNames = cx('notification-dialog', customProps.className);
 
     return (
-      <div {...customProps} className={cx('notification-dialog')}>
-        <AbstractModal
-          ariaLabel="NotificationDialog"
-          classNameModal={cx('notification-dialog')}
-          isOpen={this.props.showNotificationDialog}
-          onRequestClose={this.props.onRequestClose}
-          closeOnEsc={false}
-          closeOnOutsideClick={false}
-          zIndex="8000"
-        >
-          <div className={cx('header-body')}>{header || defaultHeader}</div>
-          <div className={cx('notification-dialog-body')}>
-            {variant &&
-              <div className={cx('icon-div')}>{getIcon(variant, customIcon)}</div>
-            }
-            <div className={cx('notification-dialog-body-text')}>
-              <div className={cx('title')}>{title}</div>
-              <div className={cx('message')}>{message}</div>
-            </div>
+      <AbstractModal
+        ariaLabel="NotificationDialog"
+        classNameModal={notificationDialogClassNames}
+        isOpen={this.props.isOpen}
+        onRequestClose={this.props.onRequestClose}
+        closeOnEsc={false}
+        closeOnOutsideClick={false}
+        zIndex="8000"
+      >
+        <div className={cx('header-body')}>{header || defaultHeader}</div>
+        <div className={cx('notification-dialog-body')}>
+          {variant &&
+            <div className={cx('icon-div')}>{getIcon(variant, customIcon)}</div>
+          }
+          <div className={cx('notification-dialog-body-text')}>
+            <div className={cx('title')}>{title}</div>
+            <div className={cx('message')}>{message}</div>
           </div>
-          <div className={cx('footer-body')}>{actionSection(actions)}</div>
-        </AbstractModal>
-      </div>
+        </div>
+        <div className={cx('footer-body')}>{actionSection(actions)}</div>
+      </AbstractModal>
     );
   }
 }

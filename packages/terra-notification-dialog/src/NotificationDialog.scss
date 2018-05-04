@@ -83,7 +83,10 @@
     > button {
       flex: var(--terra-notification-dialog-actions-button-flex, initial);
       flex-shrink: 1;
-      margin: var(--terra-notification-dialog-actions-button-margin, 0.4rem 0.4rem 0.4rem 0.4rem);
+      margin-bottom: var(--terra-notification-dialog-actions-button-margin-bottom, 0.4rem);
+      margin-left: var(--terra-notification-dialog-actions-button-margin-left, 0.4rem);
+      margin-right: var(--terra-notification-dialog-actions-button-margin-right, 0.4rem);
+      margin-top: var(--terra-notification-dialog-actions-button-margin-top, 0.4rem);
     }
   }
 }
