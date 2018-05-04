@@ -13,9 +13,9 @@
 ## devDependencies
 | Dependency | Version | React Version | Description |
 |-|-|-|-|
-| terra-app-delegate | ^2.0.0 | -- | An object that provides a set of functions used to facilitate communcation between Containers and their consuming Containers/Applications |
+| terra-app-delegate | ^2.1.0 | -- | An object that provides a set of functions used to facilitate communcation between Containers and their consuming Containers/Applications |
 | terra-base | 3.0.0 | ^16.2.0 | The base component sets minimal global styles for an application. |
-| terra-props-table | ^2.0.0 | ^16.2.0 | terra-props-table |
+| terra-props-table | ^2.4.0 | ^16.2.0 | terra-props-table |
 
 ## peerDependencies
 | Dependency | Version | React Version | Description |

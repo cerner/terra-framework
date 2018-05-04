@@ -1,6 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AppDelegate from 'terra-app-delegate';
+import ContentContainer from 'terra-content-container';
+import { availableDisclosureHeights, availableDisclosureWidths } from '../../lib/DisclosureManager';
+
+const HEIGHT_KEYS = Object.keys(availableDisclosureHeights);
+const WIDTH_KEYS = Object.keys(availableDisclosureWidths);
 
 class TestExample extends React.Component {
   constructor(props) {
@@ -14,9 +19,31 @@ class TestExample extends React.Component {
     this.minimize = this.minimize.bind(this);
     this.requestFocus = this.requestFocus.bind(this);
     this.releaseFocus = this.releaseFocus.bind(this);
+
+    this.generateOptions = this.generateOptions.bind(this);
+    this.handleSelectChange = this.handleSelectChange.bind(this);
+    this.renderFormButton = this.renderFormButton.bind(this);
+    this.renderForm = this.renderForm.bind(this);
+    this.getId = this.getId.bind(this);
+    this.state = { id: 'disclosureDimensions', disclosureHeight: HEIGHT_KEYS[0], disclosureWidth: WIDTH_KEYS[0] };
   }
 
-  disclose(size) {
+  getId(name) {
+    return `${this.state.id}-${name}-${this.props.nestedIndex}`;
+  }
+
+  generateOptions(values, name) {
+    return values.map((currentValue, index) => {
+      const keyValue = index;
+      return <option id={`${name}-${currentValue}-${this.props.nestedIndex}`} key={keyValue} value={currentValue}>{currentValue}</option>;
+    });
+  }
+
+  handleSelectChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
+  }
+
+  disclose(size, dimensions) {
     const { disclosureType, nestedIndex } = this.props;
 
     const newIndex = nestedIndex + 1;
@@ -24,6 +51,7 @@ class TestExample extends React.Component {
       this.props.app.disclose({
         preferredType: disclosureType,
         size,
+        dimensions,
         content: {
           key: `DemoContainer-${newIndex}`,
           component: <TestExample identifier={`DemoContainer-${newIndex}`} nestedIndex={newIndex} />,
@@ -60,18 +88,46 @@ class TestExample extends React.Component {
     this.props.app.releaseFocus();
   }
 
+  renderFormButton() {
+    const name = `Disclose (${this.state.disclosureHeight}) x (${this.state.disclosureWidth})`;
+
+    return (
+      <button
+        id={`disclose-dimension-${this.props.nestedIndex}`}
+        onClick={this.disclose(undefined, { height: this.state.disclosureHeight, width: this.state.disclosureWidth })}
+      >
+        {name}
+      </button>
+    );
+  }
+
+  renderForm() {
+    return (
+      <form>
+        <label htmlFor={this.getId('height')}>Pop Content Height</label>
+        <select id={this.getId('height')} name="disclosureHeight" value={this.state.disclosureHeight} onChange={this.handleSelectChange}>
+          {this.generateOptions(HEIGHT_KEYS, 'height')}
+        </select>
+        <br />
+        <br />
+        <label htmlFor={this.getId('width')}>Pop Content Width</label>
+        <select id={this.getId('width')} name="disclosureWidth" value={this.state.disclosureWidth} onChange={this.handleSelectChange}>
+          {this.generateOptions(WIDTH_KEYS, 'width')}
+        </select>
+        <br />
+        <br />
+      </form>
+    );
+  }
+
   render() {
     const { app, identifier } = this.props;
 
     return (
-      <div id={identifier} className="nested-component" style={{ height: '100%', padding: '10px' }}>
-        <h2>Content Component</h2>
-        <br />
+      <ContentContainer id={identifier} className="nested-component" fill header={<h2 style={{ margin: '0', borderBottom: '1px solid black' }}>Content Component</h2>}>
         <h4>id: {identifier}</h4>
-        <br />
         {app && app.releaseFocus ? <h4>Modal has lost focus!</h4> : null }
         {app && app.requestFocus ? <h4>Modal has gained focus!</h4> : null }
-        <br />
         <button className="disclose" onClick={this.disclose()}>Disclose</button>
         <button className="disclose-tiny" onClick={this.disclose('tiny')}>Disclose Tiny</button>
         <button className="disclose-small" onClick={this.disclose('small')}>Disclose Small</button>
@@ -79,6 +135,10 @@ class TestExample extends React.Component {
         <button className="disclose-large" onClick={this.disclose('large')}>Disclose Large</button>
         <button className="disclose-huge" onClick={this.disclose('huge')}>Disclose Huge</button>
         <button className="disclose-fullscreen" onClick={this.disclose('fullscreen')}>Disclose Fullscreen</button>
+        <div style={{ padding: '0.7rem' }}>
+          {this.renderForm()}
+          {this.renderFormButton()}
+        </div>
         {app && app.dismiss ? <button className="dismiss" onClick={this.dismiss}>Dismiss</button> : null }
         {app && app.closeDisclosure ? <button className="close-disclosure" onClick={this.closeDisclosure}>Close Disclosure</button> : null }
         {app && app.goBack ? <button className="go-back" onClick={this.goBack}>Go Back</button> : null }
@@ -86,7 +146,7 @@ class TestExample extends React.Component {
         {app && app.minimize ? <button className="minimize" onClick={this.minimize}>Minimize</button> : null }
         {app && app.requestFocus ? <button className="requestFocus" onClick={this.requestFocus}>Request Focus</button> : null }
         {app && app.releaseFocus ? <button className="releaseFocus" onClick={this.releaseFocus}>Release Focus</button> : null }
-      </div>
+      </ContentContainer>
     );
   }
 }

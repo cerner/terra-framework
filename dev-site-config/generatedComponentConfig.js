@@ -11,11 +11,15 @@ import TerraApplicationLinksIndex from '../packages/terra-application-links/exam
 import TerraApplicationMenuLayoutIndex from '../packages/terra-application-menu-layout/examples/Index.site-page';
 import TerraApplicationNameIndex from '../packages/terra-application-name/examples/Index.site-page';
 import TerraApplicationUtilityIndex from '../packages/terra-application-utility/examples/Index.site-page';
+import TerraBrandFooterIndex from '../packages/terra-brand-footer/examples/Index.site-page';
 import TerraDisclosureManagerIndex from '../packages/terra-disclosure-manager/examples/Index.site-page';
 import TerraHookshotIndex from '../packages/terra-hookshot/examples/Index.site-page';
 import TerraInfiniteListIndex from '../packages/terra-infinite-list/examples/Index.site-page';
 import TerraLayoutIndex from '../packages/terra-layout/examples/Index.site-page';
-import TerraModalManagerIndex from '../packages/terra-modal-manager/examples/Index.site-page';
+import TerraModalManagerAbout from '../packages/terra-modal-manager/examples/About.site-page';
+import TerraModalManagerChangeLog from '../packages/terra-modal-manager/examples/ChangeLog.site-page';
+import TerraModalManagerExample from '../packages/terra-modal-manager/examples/Example.site-page';
+import TerraModalManagerUpgradeGuide from '../packages/terra-modal-manager/examples/UpgradeGuide.site-page';
 import TerraNavigationLayoutIndex from '../packages/terra-navigation-layout/examples/Index.site-page';
 import TerraNavigationSideMenuIndex from '../packages/terra-navigation-side-menu/examples/Index.site-page';
 import TerraNotificationDialogIndex from '../packages/terra-notification-dialog/examples/Index.site-page';
@@ -49,6 +53,9 @@ import DefaultApplicationHeaderUtility from '../packages/terra-application-utili
 import DefaultApplicationMenuUtility from '../packages/terra-application-utility/examples/test-examples/DefaultApplicationMenuUtility.example';
 import DefaultHeaderUtilityMenu from '../packages/terra-application-utility/examples/test-examples/DefaultHeaderUtilityMenu.example';
 import DefaultMenuUtilityMenu from '../packages/terra-application-utility/examples/test-examples/DefaultMenuUtilityMenu.example';
+import DefaultBrandFooter from '../packages/terra-brand-footer/examples/test-examples/DefaultBrandFooter.example';
+import ActiveBrandFooter from '../packages/terra-brand-footer/examples/test-examples/ActiveBrandFooter.example';
+import HoveredBrandFooter from '../packages/terra-brand-footer/examples/test-examples/HoveredBrandFooter.example';
 import DefaultHookshot from '../packages/terra-hookshot/examples/test-examples/DefaultHookshot.example';
 import HookshotAttachmentBehaviorAuto from '../packages/terra-hookshot/examples/test-examples/HookshotAttachmentBehaviorAuto.example';
 import HookshotAttachmentBehaviorFlip from '../packages/terra-hookshot/examples/test-examples/HookshotAttachmentBehaviorFlip.example';
@@ -364,6 +371,34 @@ const componentConfig = {
       },
     ],
   },
+  'terra-brand-footer': {
+    name: 'Brand Footer',
+    path: '/brand-footer',
+    pages: [
+      {
+        name: 'Index',
+        path: '/index',
+        component: TerraBrandFooterIndex,
+      },
+    ],
+    tests: [
+      {
+        name: 'Default Brand Footer',
+        path: '/default-brand-footer',
+        component: DefaultBrandFooter,
+      },
+      {
+        name: 'Hovered Brand Footer',
+        path: '/hovered-brand-footer',
+        component: HoveredBrandFooter,
+      },
+      {
+        name: 'Active Brand Footer',
+        path: '/active-brand-footer',
+        component: ActiveBrandFooter,
+      },
+    ],
+  },
   'terra-disclosure-manager': {
     name: 'Disclosure Manager',
     path: '/disclosure-manager',
@@ -559,9 +594,24 @@ const componentConfig = {
     path: '/modal-manager',
     pages: [
       {
-        name: 'Index',
-        path: '/index',
-        component: TerraModalManagerIndex,
+        name: 'About',
+        path: '/about',
+        component: TerraModalManagerAbout,
+      },
+      {
+        name: 'Change Log',
+        path: '/change-log',
+        component: TerraModalManagerChangeLog,
+      },
+      {
+        name: 'Example',
+        path: '/example',
+        component: TerraModalManagerExample,
+      },
+      {
+        name: 'Upgrade Guide',
+        path: '/upgrade-guide',
+        component: TerraModalManagerUpgradeGuide,
       },
     ],
     tests: [
