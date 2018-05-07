@@ -34,13 +34,14 @@
     }
 
     &.is-selected {
+      background-color: var(--terra-navigation-side-menu-item-selected-background-color, #f4f4f4);
       border-left: var(--terra-navigation-side-menu-item-selected-border-left, 0.5rem solid #007cc3);
       color: var(--terra-navigation-side-menu-item-selected-color);
       font-weight: var(--terra-navigation-side-menu-item-selected-font-weight, 600);
       padding-left: var(--terra-navigation-side-menu-item-selected-padding-left, 0.7143rem);
 
       &::before {
-        background-color: var(--terra-navigation-side-menu-item-selected-background-color, #f4f4f4);
+        background-image: var(--terra-navigation-side-menu-item-selected-background-image);
         content: '';
         height: 100%;
         left: 0;
