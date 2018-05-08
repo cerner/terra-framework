@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 -----------------
+
+1.3.0 - (May 8, 2018)
+------------------
 ### Changed
 * Adjusted themable styles for selected item background color/image styles
 
