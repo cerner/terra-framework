@@ -35,18 +35,14 @@ class CompleteNotificationDialog extends React.Component {
           onRequestClose={this.handleCloseModal}
           title="Make sure that the title relates directly to the choices."
           message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
-          actions={[
-            {
-              key: 'action',
-              text: 'Ok',
-              onClick: clickOK,
-            },
-            {
-              key: 'dismiss',
-              text: 'Close',
-              onClick: this.handleCloseModal,
-            },
-          ]}
+          primaryAction={{
+            text: 'Ok',
+            onClick: clickOK,
+          }}
+          secondaryAction={{
+            text: 'Cancel',
+            onClick: this.handleCloseModal,
+          }}
         />
         <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
       </div>

@@ -23,7 +23,7 @@ class CompleteNotificationDialog extends React.Component {
     super();
 
     this.state = {
-      showNotificationDialog: false,
+      isOpen: false,
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -31,11 +31,11 @@ class CompleteNotificationDialog extends React.Component {
   }
 
   handleOpenModal() {
-    this.setState({ showNotificationDialog: true });
+    this.setState({ isOpen: true });
   }
 
   handleCloseModal() {
-    this.setState({ showNotificationDialog: false });
+    this.setState({ isOpen: false });
   }
 
   render() {
@@ -43,30 +43,27 @@ class CompleteNotificationDialog extends React.Component {
       <div>
         <NotificationDialog
           variant={NotificationDialog.Opts.Variants.ALERT}
-          showNotificationDialog={this.state.showNotificationDialog}
+          isOpen={this.state.isOpen}
           onRequestClose={this.handleCloseModal}
-          title="This is the title"
-          message="This is the message"
-          actions={[
-            {
-              key: 'action',
-              text: 'Ok',
-              onClick: clickOK,
-            },
-            {
-              key: 'dismiss',
-              text: 'Close',
-              onClick: this.handleCloseModal,
-            },
-          ]}
+          title="Make sure that the title relates directly to the choices."
+          message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
+          primaryAction={{
+            text: 'Ok',
+            onClick: clickOK,
+          }}
+          secondaryAction={{
+            text: 'Cancel',
+            onClick: this.handleCloseModal,
+          }}
         />
-        <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
+        <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
       </div>
     );
   }
 }
 
 export default CompleteNotificationDialog;
+
 
 ```
 

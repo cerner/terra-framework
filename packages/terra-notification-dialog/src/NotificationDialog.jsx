@@ -17,7 +17,6 @@ const variants = {
   ALERT: 'Alert',
   ERROR: 'Error',
   WARNING: 'Warning',
-  ADVISORY: 'Advisory',
   INFO: 'Info',
   SUCCESS: 'Success',
   CUSTOM: 'Custom',
@@ -37,13 +36,19 @@ const propTypes = {
    */
   message: PropTypes.string,
   /**
-   * Array of buttons. Restricted to two buttons.
+   * The Action of the primary button.
    */
-  actions: PropTypes.arrayOf(PropTypes.shape({
-    key: PropTypes.oneOf(['action', 'dismiss']),
+  primaryAction: PropTypes.shape({
     text: PropTypes.string,
     onClick: PropTypes.func,
-  })),
+  }),
+  /**
+   * The Action of the secondary button.
+   */
+  secondaryAction: PropTypes.shape({
+    text: PropTypes.string,
+    onClick: PropTypes.func,
+  }),
   /**
    * The variant of notification to be rendered.
    * Use the Notification.Opts.Variants attribute of the Notification component for access to these variant strings.
@@ -52,7 +57,6 @@ const propTypes = {
     variants.ALERT,
     variants.ERROR,
     variants.WARNING,
-    variants.ADVISORY,
     variants.INFO,
     variants.SUCCESS,
     variants.CUSTOM,
@@ -78,22 +82,19 @@ const defaultProps = {
   variant: variants.CUSTOM,
 };
 
-const actionSection = (actions) => {
+const actionSection = (primaryAction, secondaryAction) => {
   let actionButton = null;
   let dismissButton = null;
-  if (!actions || !actions.length) {
+  if (!primaryAction && !secondaryAction) {
     return null;
   }
-
-  for (let i = 0; i < actions.length; i += 1) {
-    const action = actions[i];
-    if (action.key === 'action') {
-      actionButton = <Button text={action.text} variant={Button.Opts.Variants.EMPHASIS} onClick={action.onClick} />;
-    }
-    if (action.key === 'dismiss') {
-      dismissButton = <Button text={action.text} onClick={action.onClick} />;
-    }
+  if (primaryAction) {
+    actionButton = <Button text={primaryAction.text} variant={Button.Opts.Variants.EMPHASIS} onClick={primaryAction.onClick} />;
   }
+  if (secondaryAction) {
+    dismissButton = <Button text={secondaryAction.text} onClick={secondaryAction.onClick} />;
+  }
+
   return <div className={cx('actions')}>{actionButton}{dismissButton}</div>;
 };
 
@@ -105,8 +106,6 @@ const getIcon = (variant, customIcon = null) => {
       return (<IconError />);
     case variants.WARNING:
       return (<IconWarning />);
-    case variants.ADVISORY:
-      return null;
     case variants.INFO:
       return (<IconInformation />);
     case variants.SUCCESS:
@@ -128,7 +127,8 @@ class NotificationDialog extends React.Component {
       header,
       title,
       message,
-      actions,
+      primaryAction,
+      secondaryAction,
       variant,
       customIcon,
       isOpen,
@@ -159,7 +159,7 @@ class NotificationDialog extends React.Component {
             <div className={cx('message')}>{message}</div>
           </div>
         </div>
-        <div className={cx('footer-body')}>{actionSection(actions)}</div>
+        <div className={cx('footer-body')}>{actionSection(primaryAction, secondaryAction)}</div>
       </AbstractModal>
     );
   }
