@@ -17,7 +17,7 @@ exports[`should mount a complete notification-dialog 1`] = `
       secondaryAction={
         Object {
           "onClick": [Function],
-          "text": "Cancel",
+          "text": "Close",
         }
       }
       title="Make sure that the title relates directly to the choices."
@@ -79,7 +79,7 @@ exports[`should mount a complete notification-dialog with long message 1`] = `
       secondaryAction={
         Object {
           "onClick": [Function],
-          "text": "Cancel",
+          "text": "Close",
         }
       }
       title="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
@@ -142,7 +142,7 @@ exports[`should mount a notification-dialog with no variant 1`] = `
       secondaryAction={
         Object {
           "onClick": [Function],
-          "text": "Cancel",
+          "text": "Close",
         }
       }
       title="Make sure that the title relates directly to the choices."
@@ -203,7 +203,7 @@ exports[`should shallow a complete notification-dialog 1`] = `
     secondaryAction={
       Object {
         "onClick": [Function],
-        "text": "Cancel",
+        "text": "Close",
       }
     }
     title="Make sure that the title relates directly to the choices."
@@ -240,7 +240,7 @@ exports[`should shallow a complete notification-dialog with long message 1`] = `
     secondaryAction={
       Object {
         "onClick": [Function],
-        "text": "Cancel",
+        "text": "Close",
       }
     }
     title="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
@@ -278,7 +278,7 @@ exports[`should shallow a notification-dialog with no variant 1`] = `
     secondaryAction={
       Object {
         "onClick": [Function],
-        "text": "Cancel",
+        "text": "Close",
       }
     }
     title="Make sure that the title relates directly to the choices."
