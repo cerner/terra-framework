@@ -8,7 +8,7 @@ Unreleased
 ------------------
 ### Major Change
 * Updated to use terra-modal-manager v3.0.0
-* Updated to use terra-popup v3.0.0
+* Updated to use terra-popup v4.0.0
 
 1.6.0 - (April 30, 2018)
 ------------------

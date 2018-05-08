@@ -7,7 +7,7 @@ Unreleased
 4.0.0 - (May 8, 2018)
 ------------------
 ### Major Change
-* Updated to use terra-popup v3.0.0
+* Updated to use terra-popup v4.0.0
 
 ### Changed
 * Adjusted themable styles for selected item background color/image styles
