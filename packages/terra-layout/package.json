@@ -27,8 +27,7 @@
     "terra-base": "^3.0.0"
   },
   "devDependencies": {
-    "react-router-dom": "^4.2.2",
-    "terra-props-table": "^2.4.0"
+    "react-router-dom": "^4.2.2"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -37,6 +36,7 @@
     "terra-base": "^3.0.0",
     "terra-button": "^2.0.1",
     "terra-content-container": "^2.0.1",
+    "terra-doc-template": "^1.1.0",
     "terra-icon": "^2.0.1",
     "terra-overlay": "^2.0.1",
     "terra-responsive-element": "^2.0.1"

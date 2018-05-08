@@ -1,14 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import React from 'react';
-import PropsTable from 'terra-props-table';
-import Markdown from 'terra-markdown';
-import IndexTemplate from 'terra-dev-site/src/IndexPageTemplate';
-
+import DocTemplate from 'terra-doc-template';
+import { name } from '../package.json';
 import ReadMe from '../docs/README.md';
-import { version } from '../package.json';
 
 // Component Source
-// eslint-disable-next-line import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions
 import SlidePanelSrc from '!raw-loader!../src/SlidePanel';
 import DefaultSlidePanelSrc from '!raw-loader!./index-examples/DefaultSlidePanel.jsx';
 import SlidePanelOverlaySrc from '!raw-loader!./test-examples/SlidePanelOverlay.example.jsx';
@@ -33,74 +29,69 @@ import SlidePanelFullscreen from './test-examples/SlidePanelFullscreen.example';
 import SlidePanelFill from './test-examples/SlidePanelFill.example';
 import SlidePanelNoFill from './test-examples/SlidePanelNoFill.example';
 
-const SlidePanelExamples = () => (
-  <div>
-    <div id="version">Version: {version}</div>
-    <Markdown id="readme" src={ReadMe} />
-
-    <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
-    <IndexTemplate
-      title="SlidePanel - Controlled Demo"
-      example={<DefaultSlidePanel />}
-      exampleSrc={DefaultSlidePanelSrc}
-    />
-
-    <IndexTemplate
-      title="SlidePanel - Behavior - Overlay"
-      example={<SlidePanelOverlay />}
-      exampleSrc={SlidePanelOverlaySrc}
-    />
-
-    <IndexTemplate
-      title="SlidePanel - Behavior - Squish"
-      example={<SlidePanelSquish />}
-      exampleSrc={SlidePanelSquishSrc}
-    />
-
-    <IndexTemplate
-      title="SlidePanel - Position - Start"
-      example={<SlidePanelStart />}
-      exampleSrc={SlidePanelStartSrc}
-    />
-
-    <IndexTemplate
-      title="SlidePanel - Position - End"
-      example={<SlidePanelEnd />}
-      exampleSrc={SlidePanelEndSrc}
-    />
-
-    <IndexTemplate
-      title="SlidePanel - Size - Small"
-      example={<SlidePanelSmall />}
-      exampleSrc={SlidePanelSmallSrc}
-    />
-
-    <IndexTemplate
-      title="SlidePanel - Size - Large"
-      example={<SlidePanelLarge />}
-      exampleSrc={SlidePanelLargeSrc}
-    />
-
-    <IndexTemplate
-      title="SlidePanel - Fullscreen"
-      example={<SlidePanelFullscreen />}
-      exampleSrc={SlidePanelFullscreenSrc}
-    />
-
-    <IndexTemplate
-      title="SlidePanel - Fill"
-      example={<SlidePanelFill />}
-      exampleSrc={SlidePanelFillSrc}
-    />
-
-    <IndexTemplate
-      title="SlidePanel - Fill Off"
-      example={<SlidePanelNoFill />}
-      exampleSrc={SlidePanelNoFillSrc}
-    />
-
-    <PropsTable id="props" src={SlidePanelSrc} />
-  </div>
+const DocPage = () => (
+  <DocTemplate
+    packageName={name}
+    readme={ReadMe}
+    srcPath={`https://github.com/cerner/terra-framework/tree/master/packages/${name}`}
+    examples={[
+      {
+        title: 'SlidePanel - Controlled Demo',
+        example: <DefaultSlidePanel />,
+        source: DefaultSlidePanelSrc,
+      },
+      {
+        title: 'SlidePanel - Behavior - Overlay',
+        example: <SlidePanelOverlay />,
+        source: SlidePanelOverlaySrc,
+      },
+      {
+        title: 'SlidePanel - Behavior - Squish',
+        example: <SlidePanelSquish />,
+        source: SlidePanelSquishSrc,
+      },
+      {
+        title: 'SlidePanel - Position - Start',
+        example: <SlidePanelStart />,
+        source: SlidePanelStartSrc,
+      },
+      {
+        title: 'SlidePanel - Position - End',
+        example: <SlidePanelEnd />,
+        source: SlidePanelEndSrc,
+      },
+      {
+        title: 'SlidePanel - Size - Small',
+        example: <SlidePanelSmall />,
+        source: SlidePanelSmallSrc,
+      },
+      {
+        title: 'SlidePanel - Size - Large',
+        example: <SlidePanelLarge />,
+        source: SlidePanelLargeSrc,
+      },
+      {
+        title: 'SlidePanel - Fullscreen',
+        example: <SlidePanelFullscreen />,
+        source: SlidePanelFullscreenSrc,
+      },
+      {
+        title: 'SlidePanel - Fill',
+        example: <SlidePanelFill />,
+        source: SlidePanelFillSrc,
+      },
+      {
+        title: 'SlidePanel - Fill Off',
+        example: <SlidePanelNoFill />,
+        source: SlidePanelNoFillSrc,
+      },
+    ]}
+    propsTables={[
+      {
+        componentSrc: SlidePanelSrc,
+      },
+    ]}
+  />
 );
 
-export default SlidePanelExamples;
+export default DocPage;

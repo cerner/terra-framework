@@ -23,8 +23,7 @@
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "devDependencies": {
     "terra-app-delegate": "^2.1.0",
-    "terra-base": "^3.0.0",
-    "terra-props-table": "^2.4.0"
+    "terra-base": "^3.0.0"
   },
   "peerDependencies": {
     "react": "^16.2.0",
@@ -40,6 +39,7 @@
     "terra-clinical-header": "^2.0.0",
     "terra-content-container": "^2.4.0",
     "terra-disclosure-manager": "^2.3.0",
+    "terra-doc-template": "^1.1.0",
     "terra-form": "^2.0.1",
     "terra-grid": "^4.0.1",
     "terra-list": "^2.0.1",
