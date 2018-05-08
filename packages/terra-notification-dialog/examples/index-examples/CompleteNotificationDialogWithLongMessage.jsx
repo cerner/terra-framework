@@ -40,7 +40,7 @@ class CompleteNotificationDialogWithLongMessage extends React.Component {
             onClick: clickOK,
           }}
           secondaryAction={{
-            text: 'Cancel',
+            text: 'Close',
             onClick: this.handleCloseModal,
           }}
         />
