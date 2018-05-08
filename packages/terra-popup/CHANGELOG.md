@@ -3,8 +3,14 @@ Changelog
 
 Unreleased
 ----------
+
+3.0.0 - (May 8, 2018)
+------------------
+### Major Change
+* Updated to use terra-modal-manager v3.0.0
+
 ### Changed
-* Update webdriver screenshots.
+* Update webdriver screenshots
 
 2.3.0 - (April 30, 2018)
 ------------------
