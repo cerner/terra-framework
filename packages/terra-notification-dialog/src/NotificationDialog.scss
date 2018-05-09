@@ -2,6 +2,8 @@
   .notification-dialog {
     background: var(--notification-dialog-background, #fff);
     border-radius: var(--notification-dialog-border-radius, 0.3125rem);
+    display: flex;
+    flex-direction: column;
     position: fixed;
 
     @media screen and (max-width: 768px) {
@@ -12,8 +14,11 @@
   .notification-dialog-body {
     background-color: var(--notification-dialog-body-color, #fff);
     display: inline-flex;
+    flex: 1 1 auto;
     flex-direction: initial;
+    height: 100%;
     padding: var(--notification-dialog-body-padding, 1.25rem);
+    overflow: auto;
     width: 100%;
   }
 
@@ -27,6 +32,7 @@
     border-color: var(--notification-dialog-header-border-color, #dedfe0);
     border-style: var(--notification-dialog-header-border-style, solid);
     border-width: var(--notification-dialog-header-border-width, 0.0625rem);
+    display: 0 0 auto;
     font-family: var(--notification-dialog-header-font-family, Helvetica);
     font-size: var(--notification-dialog-header-font-size, 1.125rem);
     padding: var(--notification-dialog-body-padding, 0.8rem);
@@ -39,6 +45,7 @@
     border-style: var(--notification-dialog-footer-border-style, solid);
     border-width: var(--notification-dialog-footer-border-width, 0.0625rem);
     font-size: var(--notification-dialog-footer-font-size, 0.8rem);
+    flex: 0 0 auto;
   }
 
   .icon-div {
