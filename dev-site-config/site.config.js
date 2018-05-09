@@ -1,4 +1,4 @@
-const componentConfig = require('./generatedComponentConfig');
+// const componentConfig = require('./generatedComponentConfig');
 const navConfig = require('./navigation.config');
 const path = require('path');
 
