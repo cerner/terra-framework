@@ -4,6 +4,12 @@ Changelog
 Unreleased
 ----------
 
+2.0.0 - (May 8, 2018)
+------------------
+### Major Change
+* Updated to use terra-modal-manager v3.0.0
+* Updated to use terra-popup v4.0.0
+
 1.6.0 - (April 30, 2018)
 ------------------
 ### Changed

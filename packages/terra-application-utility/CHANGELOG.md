@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 -----------------
+
+1.4.0 - (May 8, 2018)
+------------------
 ### Changed
 * Update test examples to properly adjust for inline-block icon
 

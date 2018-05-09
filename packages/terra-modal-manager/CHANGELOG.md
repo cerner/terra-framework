@@ -3,8 +3,12 @@ Terra Modal Manager - Changelog
 
 Unreleased
 ----------
+
+3.0.0 - (May 8, 2018)
+------------------
 ### Breaking Change
 * Major version bump. Removing redux support.
+
 ### Changed
 * Dimension handling to the modal manager.
 * [Upgrade Guide For Modal][1]

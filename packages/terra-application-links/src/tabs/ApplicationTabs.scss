@@ -174,13 +174,14 @@
     }
 
     &[aria-current='true'] {
+      background-color: var(--terra-application-tabs-collapsed-selected-background-color, #f4f4f4);
       background-size: 100%;
       border-left: var(--terra-application-tabs-collapsed-selected-border-left, 0.5rem solid #007cc3);
       font-weight: var(--terra-application-tabs-collapsed-selected-font-weight, 600);
       padding-left: var(--terra-application-tabs-collapsed-selected-padding-left, 0.7143rem);
 
       &::before {
-        background-color: var(--terra-application-tabs-collapsed-selected-background-color, #f4f4f4);
+        background-image: var(--terra-application-tabs-collapsed-selected-background-image);
         content: '';
         height: 100%;
         left: 0;
