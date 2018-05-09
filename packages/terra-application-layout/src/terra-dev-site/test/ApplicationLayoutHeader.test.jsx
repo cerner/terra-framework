@@ -2,7 +2,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import ApplicationHeader from '../../header/_ApplicationHeader';
-import ExtensionsExample from './ExtensionsExample';
+import ExtensionsExample from './common/ExtensionsExample';
 
 const ApplicationLayoutHeader = () => (
   <MemoryRouter>

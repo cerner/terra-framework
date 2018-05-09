@@ -10,8 +10,8 @@ import { version } from '../../../package.json';
 // Component Source
 /* eslint-disable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import ApplicationHeaderNameSrc from '!raw-loader!../../../src/ApplicationHeaderName.jsx';
-import ApplicationHeaderNameStandardSrc from '!raw-loader!./example/ApplicationHeaderNameStandard.jsx';
-import ApplicationMenuNameStandardSrc from '!raw-loader!./example/ApplicationMenuNameStandard.jsx';
+import ApplicationHeaderNameStandardSrc from '!raw-loader!../../../src/terra-dev-site/doc//example/ApplicationHeaderNameStandard.jsx';
+import ApplicationMenuNameStandardSrc from '!raw-loader!../../../src/terra-dev-site/doc//example/ApplicationMenuNameStandard.jsx';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 
 // Example Files

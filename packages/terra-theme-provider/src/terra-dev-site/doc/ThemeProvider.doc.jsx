@@ -12,7 +12,7 @@ import ThemeProviderSrc from '!raw-loader!../../../src/ThemeProvider';
 
 // Example Files
 import DefaultThemeProvider from './example/DefaultThemeProvider';
-import DefaultThemeProviderSrc from '!raw-loader!./example/DefaultThemeProvider.jsx';
+import DefaultThemeProviderSrc from '!raw-loader!.../../../src/terra-dev-site/doc/example/DefaultThemeProvider.jsx';
 
 const ThemeProviderExample = () => (
   <div>

@@ -11,8 +11,8 @@ import { version } from '../../../package.json';
 import NavigationLayoutSrc from '!raw-loader!../../../src/NavigationLayout.jsx';
 
 // Example Files
-import NavigationLayoutStandard from './index-examples/NavigationLayoutStandard';
-import NavigationLayoutStandardSrc from '!raw-loader!./index-examples/NavigationLayoutStandard.jsx';
+import NavigationLayoutStandard from './example/NavigationLayoutStandard';
+import NavigationLayoutStandardSrc from '!raw-loader!../../../src/terra-dev-site/doc//example/NavigationLayoutStandard.jsx';
 
 const NavigationLayoutExamples = () => (
   <div>

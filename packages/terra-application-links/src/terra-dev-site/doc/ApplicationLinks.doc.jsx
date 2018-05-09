@@ -12,7 +12,7 @@ import ApplicationLinkConfig from './common/ApplicationLinkConfig';
 // Component Source
 /* eslint-disable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import TabsSrc from '!raw-loader!../../../src/tabs/ApplicationTabs.jsx';
-import TabExampleSrc from '!raw-loader!./example/ApplicationTabsExample.jsx';
+import TabExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc//example/ApplicationTabsExample.jsx';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 
 // Example Files

@@ -1,6 +1,6 @@
 import React from 'react';
-import ApplicationMenuLayout from '../../lib/ApplicationMenuLayout';
-import PlaceHolder from './Placeholder';
+import ApplicationMenuLayout from '../../../ApplicationMenuLayout';
+import PlaceHolder from '../common/Placeholder';
 
 const Menu = () => (
   <div style={{ height: '450px', width: '300px' }}>

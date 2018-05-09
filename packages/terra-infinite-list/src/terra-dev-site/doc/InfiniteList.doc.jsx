@@ -10,7 +10,7 @@ import { version } from '../../../package.json';
 // Component Source
 /* eslint-disable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import InfiniteListSrc from '!raw-loader!../../../src/InfiniteList.jsx';
-import InfiniteListExampleSrc from '!raw-loader!./example/InfiniteListExample.jsx';
+import InfiniteListExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc//example/InfiniteListExample.jsx';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 
 

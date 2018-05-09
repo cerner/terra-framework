@@ -9,8 +9,8 @@ import IndexTemplate from 'terra-dev-site/src/IndexPageTemplate';
 
 // Component Source
 import PopupSrc from '!raw-loader!../../..//src/Popup.jsx';
-import PopupStandardSrc from '!raw-loader!./example/PopupStandard.jsx';
-import PopupInsideModalSrc from '!raw-loader!./example/PopupInsideModal.jsx';
+import PopupStandardSrc from '!raw-loader!../../../src/terra-dev-site/doc//example/PopupStandard.jsx';
+import PopupInsideModalSrc from '!raw-loader!../../../src/terra-dev-site/doc//example/PopupInsideModal.jsx';
 
 // Example Files
 import PopupStandard from './example/PopupStandard';

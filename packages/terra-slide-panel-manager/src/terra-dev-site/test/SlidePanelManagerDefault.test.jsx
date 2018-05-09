@@ -1,5 +1,5 @@
 import React from 'react';
-import TestExample from 'terra-disclosure-manager/examples/test-content/TestExample';
+import TestExample from 'terra-disclosure-manager/lib/terra-dev-site/test/common/TestExample';
 import SlidePanelManager from '../../SlidePanelManager';
 
 const SlidePanelManagerDefault = () => (

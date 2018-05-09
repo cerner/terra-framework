@@ -3,7 +3,7 @@ import React from 'react';
 import { MemoryRouter, withRouter } from 'react-router-dom';
 import Markdown from 'terra-markdown';
 import ToggleButton from 'terra-toggle-button';
-import NavigationLayout from '../../lib/NavigationLayout';
+import NavigationLayout from '../../../NavigationLayout';
 
 import ConfigReadMe from './NavigationLayoutStandardConfig.md';
 

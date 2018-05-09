@@ -14,9 +14,9 @@ import ApplicationHeaderUtilitySrc from '!raw-loader!../../../src/ApplicationHea
 import ApplicationHeaderUtilityExample from './example/ApplicationHeaderUtilityExample';
 import ApplicationMenuUtilityExample from './example/ApplicationMenuUtilityExample';
 import MenuUtilityMenuExample from './example/MenuUtilityMenuExample';
-import ApplicationHeaderUtilityExampleSrc from '!raw-loader!./example/ApplicationHeaderUtilityExample.jsx';
-import MenuUtilityMenuExampleSrc from '!raw-loader!./example/MenuUtilityMenuExample.jsx';
-import ApplicationMenuUtilityExampleSrc from '!raw-loader!./example/ApplicationMenuUtilityExample.jsx';
+import ApplicationHeaderUtilityExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc//example/ApplicationHeaderUtilityExample.jsx';
+import MenuUtilityMenuExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc//example/MenuUtilityMenuExample.jsx';
+import ApplicationMenuUtilityExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc//example/ApplicationMenuUtilityExample.jsx';
 
 const ApplicationUtilityExamples = () => (
   <div>

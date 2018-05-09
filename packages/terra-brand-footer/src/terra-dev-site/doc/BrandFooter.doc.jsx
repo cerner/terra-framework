@@ -4,15 +4,15 @@ import PropsTable from 'terra-props-table';
 import Markdown from 'terra-markdown';
 import IndexTemplate from 'terra-dev-site/src/IndexPageTemplate';
 
-import ReadMe from '../docs/README.md';
-import { version } from '../package.json';
+import ReadMe from '../../../docs/README.md';
+import { version } from '../../../package.json';
 
 // Component Source
-import BrandFooterSrc from '!raw-loader!../src/BrandFooter';
+import BrandFooterSrc from '!raw-loader!../../../src/BrandFooter';
 
 // Example Files
-import DefaultBrandFooter from './example/DefaultBrandFooter.example.jsx';
-import DefaultBrandFooterSrc from '!raw-loader!./example/DefaultBrandFooter.example.jsx';
+import DefaultBrandFooter from './example/DefaultBrandFooter.jsx';
+import DefaultBrandFooterSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/DefaultBrandFooter.jsx';
 
 const BrandFooterExamples = () => (
   <div>

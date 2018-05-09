@@ -10,8 +10,8 @@ import IndexTemplate from 'terra-dev-site/src/IndexPageTemplate';
 /* eslint-disable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import HookshotSrc from '!raw-loader!terra-hookshot/src/Hookshot';
 import HookshotContentSrc from '!raw-loader!terra-hookshot/src/HookshotContent';
-import HookshotExampleSrc from '!raw-loader!./index-examples/HookshotExample';
-import BoundedHookshotExampleSrc from '!raw-loader!./index-examples/BoundedHookshotExample';
+import HookshotExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/HookshotExample';
+import BoundedHookshotExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/BoundedHookshotExample';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 
 

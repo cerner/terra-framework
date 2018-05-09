@@ -6,7 +6,7 @@ import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
 import IconFeaturedOutline from 'terra-icon/lib/icon/IconFeaturedOutline';
 
 import ExtensionsDisclosure from './ExtensionsDisclosure';
-import { Utils } from '../../../../ApplicationLayout';
+import { Utils } from '../../../ApplicationLayout';
 
 const propTypes = {
   app: AppDelegate.propType,

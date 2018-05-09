@@ -3,8 +3,8 @@ import React from 'react';
 import ModalManager from 'terra-modal-manager';
 import { MemoryRouter } from 'react-router-dom';
 import ApplicationMenu from '../../menu/_ApplicationMenu';
-import ExtensionsExample from './ExtensionsExample';
-import ContentExample from './ContentExample';
+import ExtensionsExample from './common/ExtensionsExample';
+import ContentExample from './common/ContentExample';
 
 const ApplicationLayoutMenu = () => (
   <MemoryRouter>

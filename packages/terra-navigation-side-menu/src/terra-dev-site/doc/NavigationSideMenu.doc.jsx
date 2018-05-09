@@ -12,7 +12,7 @@ import NavigationSideMenuSrc from '!raw-loader!../../../src/NavigationSideMenu.j
 
 // Examples
 import NavigationSideMenuExample from './example/NavigationSideMenuExample';
-import NavigationSideMenuExampleSrc from '!raw-loader!./example/NavigationSideMenuExample.jsx';
+import NavigationSideMenuExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc//example/NavigationSideMenuExample.jsx';
 
 const NavigationSideMenuExamples = () => (
   <div>

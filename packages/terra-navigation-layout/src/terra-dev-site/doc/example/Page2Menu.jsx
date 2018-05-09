@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import RoutingStackDelegate from '../../lib/RoutingStackDelegate';
+import RoutingStackDelegate from '../../../RoutingStackDelegate';
 
 const Page2Menu = ({ layoutConfig, routingStackDelegate }) => (
   <div style={{ height: 'calc(100% - 10px)', width: 'calc(100% - 10px)', border: '4px dashed lightgrey', margin: '5px', position: 'relative' }}>

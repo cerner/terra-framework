@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'terra-image';
-import MockConfig from '../component/common/MockConfig';
-import FallbackAvatar from '../component/common/FallbackAvatar.svg';
+import MockConfig from '../doc/common/MockConfig';
+import FallbackAvatar from '../doc/common/FallbackAvatar.svg';
 import { UtilityUtils } from '../../ApplicationUtility';
 import UtilityMenu from '../../utility/_UtilityMenu';
 

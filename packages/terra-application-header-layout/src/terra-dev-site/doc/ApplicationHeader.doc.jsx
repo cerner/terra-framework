@@ -12,7 +12,7 @@ import HeaderLayoutSrc from '!raw-loader!../../../src/ApplicationHeaderLayout.js
 
 // Example File
 import HeaderWireframe from './example/HeaderWireframe';
-import HeaderWireframeSrc from '!raw-loader!./example/HeaderWireframe.jsx';
+import HeaderWireframeSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/HeaderWireframe.jsx';
 
 const HeaderLayoutExamples = () => (
   <div>

@@ -4,15 +4,15 @@ import PropsTable from 'terra-props-table';
 import Markdown from 'terra-markdown';
 import IndexTemplate from 'terra-dev-site/src/IndexPageTemplate';
 
-import ReadMe from '../../docs/README.md';
-import { version } from '../../package.json';
+import ReadMe from '../../../docs/README.md';
+import { version } from '../../../package.json';
 
 // Component Source
 import MenuLayoutSrc from '!raw-loader!../../../src/ApplicationMenuLayout.jsx';
 
 // Example File
 import MenuWireframe from './example/MenuWireframe';
-import MenuWireframeSrc from '!raw-loader!./example/MenuWireframe.jsx';
+import MenuWireframeSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/MenuWireframe.jsx';
 
 const NavigationExamples = () => (
   <div>
