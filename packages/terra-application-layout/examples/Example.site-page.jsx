@@ -14,7 +14,7 @@ const DocPage = () => (
     examples={[
       {
         title: 'Example Theme Provider',
-        example: <ExampleApplication />,
+        example: <div style={{ height: '500px' }}><ExampleApplication /></div>,
         source: ExampleApplicationSrc,
       },
     ]}
