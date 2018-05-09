@@ -6,7 +6,6 @@ The Terra Popup is higher order component that launches [terra-hookshot][4] posi
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-popup`
-  - `yarn add terra-popup`
 
 ## Usage
 

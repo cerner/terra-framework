@@ -6,7 +6,6 @@ This component renders an application header layout. To be used with a terra-lay
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-application-header-layout`
-  - `yarn add terra-application-header-layout`
 
 ## Component Features
 * [Cross-Browser Support](https://github.com/cerner/terra-core/wiki/Component-Features#cross-browser-support)

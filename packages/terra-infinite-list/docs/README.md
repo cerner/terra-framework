@@ -7,7 +7,6 @@ InfiniteList is a controlled HOC built upon the terra-list component in order to
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-infinite-list`
-  - `yarn add terra-infinite-list`
 
 ## Usage
 
@@ -75,4 +74,3 @@ class MyHOC extends React.Component {
 * [Cross-Browser Support](https://github.com/cerner/terra-core/wiki/Component-Features#cross-browser-support)
 * [Responsive Support](https://github.com/cerner/terra-core/wiki/Component-Features#responsive-support)
 * [Mobile Support](https://github.com/cerner/terra-core/wiki/Component-Features#mobile-support)
-

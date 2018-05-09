@@ -107,7 +107,6 @@ The configuration API supports an additional key for each component specificatio
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-navigation-layout`
-  - `yarn add terra-navigation-layout`
 
 ## Usage
 

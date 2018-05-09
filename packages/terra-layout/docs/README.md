@@ -18,7 +18,6 @@ To facilitate communication between the Layout and its content, the Layout provi
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-layout`
-  - `yarn add terra-layout`
 
 ## Component Features
 * [Cross-Browser Support](https://github.com/cerner/terra-core/wiki/Component-Features#cross-browser-support)
