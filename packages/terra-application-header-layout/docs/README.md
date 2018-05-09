@@ -8,21 +8,6 @@ This component renders an application header layout. To be used with a terra-lay
   - `npm install terra-application-header-layout`
   - `yarn add terra-application-header-layout`
 
-## Usage
-
-```jsx
-import React from 'react';
-import ApplicationHeaderLayout from 'terra-application-header-layout';
-
-<ApplicationHeaderLayout
-  toggle={toggle}
-  navigation={content}
-  logo={logo}
-  extensions={extensions}
-  utilities={utility}
-/>
-```
-
 ## Component Features
 * [Cross-Browser Support](https://github.com/cerner/terra-core/wiki/Component-Features#cross-browser-support)
 * [Responsive Support](https://github.com/cerner/terra-core/wiki/Component-Features#responsive-support)

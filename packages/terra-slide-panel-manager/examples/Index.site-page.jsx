@@ -9,6 +9,7 @@ import SlidePanelManagerSrc from '!raw-loader!../src/SlidePanelManager.jsx';
 
 // Examples
 import SlidePanelManagerExample from './index-examples/SlidePanelManagerExample';
+import SlidePanelManagerExampleSrc from '!raw-loader!./index-examples/SlidePanelManagerExample';
 
 const DocPage = () => (
   <DocTemplate
@@ -19,15 +20,18 @@ const DocPage = () => (
       {
         title: 'Overlay Example',
         example: <SlidePanelManagerExample behavior="overlay" />,
+        source: SlidePanelManagerExampleSrc,
       },
       {
         title: 'Squish Example',
         example: <SlidePanelManagerExample behavior="squish" />,
+        source: SlidePanelManagerExampleSrc,
       },
     ]}
     propsTables={[
       {
         componentSrc: SlidePanelManagerSrc,
+        source: SlidePanelManagerExampleSrc,
       },
     ]}
   />

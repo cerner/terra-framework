@@ -20,21 +20,6 @@ To facilitate communication between the Layout and its content, the Layout provi
   - `npm install terra-layout`
   - `yarn add terra-layout`
 
-## Usage
-
-```jsx
-import React from 'react';
-import Layout from 'terra-layout';
-import { HeaderExample, MenuExample, ContentExample } from './your/examples';
-
-<Layout
-  header={<HeaderExample />}
-  menu={<MenuExample />}
->
-  <ContentExample />
-</Layout>
-```
-
 ## Component Features
 * [Cross-Browser Support](https://github.com/cerner/terra-core/wiki/Component-Features#cross-browser-support)
 * [Responsive Support](https://github.com/cerner/terra-core/wiki/Component-Features#responsive-support)

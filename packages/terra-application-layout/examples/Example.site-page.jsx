@@ -13,7 +13,6 @@ const DocPage = () => (
     srcPath={`https://github.com/cerner/terra-framework/tree/master/packages/${name}`}
     examples={[
       {
-        title: 'Example Theme Provider',
         example: <div style={{ height: '500px' }}><ExampleApplication /></div>,
         source: ExampleApplicationSrc,
       },

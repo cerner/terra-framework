@@ -7,18 +7,6 @@ Houses the title of the application, along with a logo. There are two versions -
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-application-name`
 
-## Usage
-
-```jsx
-import React from 'react';
-import HeaderName from 'terra-application-name/lib/ApplicationHeaderName';
-/* Or */
-import MenuName from 'terra-application-name/lib/ApplicationMenuName';
-
-<HeaderName title="Name of Application" />
-<MenuName title="Name of Application" />
-```
-
 ## Component Features
 
  * [Cross-Browser Support](https://github.com/cerner/terra-core/wiki/Component-Features#cross-browser-support)
