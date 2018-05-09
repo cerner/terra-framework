@@ -4,11 +4,11 @@ import Image from 'terra-image';
 import Placeholder from '../common/Placeholder';
 import ApplicationHeaderName from '../../../ApplicationHeaderName';
 
-const size = { height: '450px', width: '3000px' };
+const size = { height: '50px', width: '100%' };
 const ApplicationHeaderNameStandard = () => (
   <ApplicationHeaderLayout
     style={size}
-    header={(
+    logo={(
       <div style={{ backgroundColor: 'green' }}>
         <ApplicationHeaderName
           title="App-Name"
@@ -16,9 +16,9 @@ const ApplicationHeaderNameStandard = () => (
         />
       </div>
     )}
-    extensions={<Placeholder text="Extensions" width="80px" />}
+    extensions={<Placeholder text="Extensions" width="100px" />}
     navigation={<Placeholder text="Content" />}
-    utilities={<Placeholder text="Utiltities" height="80px" />}
+    utilities={<Placeholder text="Utiltities" width="100px" />}
   />
 );
 
