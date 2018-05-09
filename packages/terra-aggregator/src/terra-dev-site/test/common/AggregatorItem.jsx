@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TestExample from 'terra-disclosure-manager/examples/test-content/TestExample';
+import TestExample from 'terra-disclosure-manager/lib/terra-dev-site/test/common/TestExample';
 import SelectableList from 'terra-list/lib/SelectableList';
 
 class AggregatorItem extends React.Component {

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import ContentComponent from 'terra-disclosure-manager/examples/index-examples/ContentComponent';
+import ContentComponent from 'terra-disclosure-manager/lib/terra-dev-site/doc/example/ContentComponent';
 import SlidePanelManager from '../../../SlidePanelManager';
 
 import styles from './example-styles.scss';

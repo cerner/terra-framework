@@ -1,7 +1,7 @@
 import React from 'react';
 import Menu from 'terra-application-menu-layout';
 import Image from 'terra-image';
-import Placeholder from 'terra-application-header-layout/examples/index-examples/Placeholder';
+import Placeholder from '../common/Placeholder';
 import ApplicationMenuName from '../../../ApplicationMenuName';
 
 const size = { height: '450px', width: '300px' };

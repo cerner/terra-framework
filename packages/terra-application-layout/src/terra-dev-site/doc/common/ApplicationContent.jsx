@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import AppDelegate from 'terra-app-delegate';
 import { Route } from 'react-router-dom';
 import Button from 'terra-button';
-import DisclosureComponent from 'terra-disclosure-manager/examples/index-examples/DisclosureComponent';
+import DisclosureComponent from 'terra-disclosure-manager/lib/terra-dev-site/doc/example/DisclosureComponent';
+
 import ContentContainer from 'terra-content-container';
 
 const dummyContent = (

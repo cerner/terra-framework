@@ -6,7 +6,7 @@ import ContentContainer from 'terra-content-container';
 import Header from 'terra-clinical-header';
 import AppDelegate from 'terra-app-delegate';
 import ActionHeader from 'terra-clinical-action-header';
-import DisclosureComponent from 'terra-disclosure-manager/examples/index-examples/DisclosureComponent';
+import DisclosureComponent from 'terra-disclosure-manager/lib/terra-dev-site/doc/example/DisclosureComponent';
 
 const ReadonlyModal = ({ app }) => (
   <ContentContainer
