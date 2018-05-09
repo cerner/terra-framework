@@ -20,7 +20,7 @@ exports[`should mount a complete notification-dialog 1`] = `
         }
       }
       title="Make sure that the title relates directly to the choices."
-      variant="Alert"
+      variant="alert"
     />
     <Button
       id="trigger-notification-dialog"
@@ -81,7 +81,7 @@ exports[`should mount a complete notification-dialog with long message 1`] = `
         }
       }
       title="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
-      variant="Success"
+      variant="success"
     />
     <Button
       id="trigger-notification-dialog"
@@ -143,7 +143,7 @@ exports[`should mount a notification-dialog with no variant 1`] = `
         }
       }
       title="Make sure that the title relates directly to the choices."
-      variant="Custom"
+      variant="custom"
     />
     <Button
       id="trigger-notification-dialog"
@@ -203,7 +203,7 @@ exports[`should shallow a complete notification-dialog 1`] = `
       }
     }
     title="Make sure that the title relates directly to the choices."
-    variant="Alert"
+    variant="alert"
   />
   <Button
     id="trigger-notification-dialog"
@@ -239,7 +239,7 @@ exports[`should shallow a complete notification-dialog with long message 1`] = `
       }
     }
     title="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
-    variant="Success"
+    variant="success"
   />
   <Button
     id="trigger-notification-dialog"
@@ -276,7 +276,7 @@ exports[`should shallow a notification-dialog with no variant 1`] = `
       }
     }
     title="Make sure that the title relates directly to the choices."
-    variant="Custom"
+    variant="custom"
   />
   <Button
     id="trigger-notification-dialog"

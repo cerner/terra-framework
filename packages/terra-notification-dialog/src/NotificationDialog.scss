@@ -17,8 +17,8 @@
     flex: 1 1 auto;
     flex-direction: initial;
     height: 100%;
-    padding: var(--notification-dialog-body-padding, 1.25rem);
     overflow: auto;
+    padding: var(--notification-dialog-body-padding, 1.25rem);
     width: 100%;
   }
 
@@ -44,8 +44,8 @@
     border-color: var(--notification-dialog-footer-border-color, #dedfe0);
     border-style: var(--notification-dialog-footer-border-style, solid);
     border-width: var(--notification-dialog-footer-border-width, 0.0625rem);
-    font-size: var(--notification-dialog-footer-font-size, 0.8rem);
     flex: 0 0 auto;
+    font-size: var(--notification-dialog-footer-font-size, 0.8rem);
   }
 
   .icon-div {

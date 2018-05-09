@@ -14,12 +14,12 @@ import styles from './NotificationDialog.scss';
 const cx = classNames.bind(styles);
 
 const variants = {
-  ALERT: 'Alert',
-  ERROR: 'Error',
-  WARNING: 'Warning',
-  INFO: 'Info',
-  SUCCESS: 'Success',
-  CUSTOM: 'Custom',
+  ALERT: 'alert',
+  ERROR: 'error',
+  WARNING: 'warning',
+  INFO: 'info',
+  SUCCESS: 'success',
+  CUSTOM: 'custom',
 };
 
 const propTypes = {
@@ -116,6 +116,15 @@ const getIcon = (variant, customIcon = null) => {
   }
 };
 
+const contextTypes = {
+  /* eslint-disable consistent-return */
+  intl: (context) => {
+    if (context.intl === undefined) {
+      return new Error('Please add locale prop to Base component to load translations');
+    }
+  },
+};
+
 class NotificationDialog extends React.Component {
   render() {
     if (!this.props.isOpen) {
@@ -135,7 +144,9 @@ class NotificationDialog extends React.Component {
       ...customProps
     } = this.props;
 
-    const defaultHeader = variant === variants.CUSTOM ? '' : `${variant}`;
+    const { intl } = this.context;
+
+    const defaultHeader = variant === variants.CUSTOM ? '' : intl.formatMessage({ id: `Terra.notification.dialog.${variant}` });
     const notificationDialogClassNames = cx('notification-dialog', customProps.className);
 
     return (
@@ -166,6 +177,7 @@ class NotificationDialog extends React.Component {
 
 NotificationDialog.propTypes = propTypes;
 NotificationDialog.defaultProps = defaultProps;
+NotificationDialog.contextTypes = contextTypes;
 NotificationDialog.Opts = {};
 NotificationDialog.Opts.Variants = variants;
 
