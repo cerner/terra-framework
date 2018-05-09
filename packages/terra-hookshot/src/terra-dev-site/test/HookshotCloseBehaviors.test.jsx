@@ -1,5 +1,5 @@
 import React from 'react';
-import HookshotTemplate from './HookshotTestTemplate';
+import HookshotTemplate from './common/HookshotTestTemplate';
 
 const NoCloseBehavior = () => (
   <HookshotTemplate

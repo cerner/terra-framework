@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'terra-button';
-import Popup from '../../lib/Popup';
-import ExamplePopupContent from './ExamplePopupContent';
+import Popup from '../../../Popup';
+import ExamplePopupContent from '../common/ExamplePopupContent';
 
 class PopupBottomCenter extends React.Component {
   constructor(props) {
