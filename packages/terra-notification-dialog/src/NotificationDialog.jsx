@@ -78,7 +78,6 @@ const propTypes = {
 const defaultProps = {
   title: null,
   message: null,
-  actions: [],
   variant: variants.CUSTOM,
 };
 
