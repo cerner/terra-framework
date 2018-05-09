@@ -8,11 +8,11 @@ import ContentContainer from 'terra-content-container';
 
 import ApplicationLayout, { Utils } from '../../../ApplicationLayout';
 
-import ApplicationContent from './application-components/ApplicationContent';
-import ApplicationMenu from './application-components/ApplicationMenu';
-import UtilityOption from './application-components/UtilityOption';
-import ApplicationExtensions from './application-components/ApplicationExtensions';
-import ProfilePicture from './henry.jpg';
+import ApplicationContent from '../common/ApplicationContent';
+import ApplicationMenu from '../common/ApplicationMenu';
+import UtilityOption from '../common/UtilityOption';
+import ApplicationExtensions from '../common/ApplicationExtensions';
+import ProfilePicture from '../common/henry.jpg';
 
 /**
  * The routingConfig API matches that of the NavigationLayout. Routing specifications for the
