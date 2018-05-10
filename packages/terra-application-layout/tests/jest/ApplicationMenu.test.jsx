@@ -1,8 +1,8 @@
 import React from 'react';
 
 import ApplicationMenu from '../../src/menu/_ApplicationMenu';
-import ExtensionsExample from '../../examples/test-examples/ExtensionsExample';
-import ContentExample from '../../examples/test-examples/ContentExample';
+import ExtensionsExample from '../../src/terra-dev-site/test/common/ExtensionsExample';
+import ContentExample from '../../src/terra-dev-site/test/common/ContentExample';
 
 describe('ApplicationHeader', () => {
   it('should render default component', () => {

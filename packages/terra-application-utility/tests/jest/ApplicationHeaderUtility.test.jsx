@@ -1,6 +1,6 @@
 import React from 'react';
 import { ApplicationHeaderUtility } from '../../src/ApplicationUtility';
-import MockConfig from '../../examples/index-examples/MockConfig';
+import MockConfig from '../../src/terra-dev-site/doc/common/MockConfig';
 
 describe('ApplicationHeaderUtility', () => {
   const mockOnChange = jest.fn();

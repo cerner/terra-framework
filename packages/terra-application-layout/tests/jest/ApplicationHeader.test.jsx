@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ApplicationHeader from '../../src/header/_ApplicationHeader';
-import ExtensionsExample from '../../examples/test-examples/ExtensionsExample';
+import ExtensionsExample from '../../src/terra-dev-site/test/common/ExtensionsExample';
 
 const mockIntl = {
   formatDate: () => 'mock-date',

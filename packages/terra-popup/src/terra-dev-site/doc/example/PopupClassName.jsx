@@ -29,9 +29,9 @@ class PopupClassName extends React.Component {
     return (
       <div>
         <Popup
-          classNameArrow="terra-ExampleClass-arrow"
-          classNameContent="terra-ExampleClass-content"
-          classNameOverlay="terra-ExampleClass-overlay"
+          classNameArrow="terra-example-class-arrow"
+          classNameContent="terra-example-class-content"
+          classNameOverlay="terra-example-class-overlay"
           isArrowDisplayed
           isOpen={this.state.open}
           onRequestClose={this.handleRequestClose}
