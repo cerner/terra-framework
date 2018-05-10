@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'terra-button';
-import NotificationDialog from '../../src/NotificationDialog';
+import NotificationDialog, { NotificationDialogVariants } from '../../src/NotificationDialog';
 
 const clickOK = () => {
   alert('You clicked OK');  // eslint-disable-line no-alert
@@ -30,7 +30,7 @@ class CompleteNotificationDialogWithLongMessage extends React.Component {
     return (
       <div>
         <NotificationDialog
-          variant={NotificationDialog.Opts.Variants.SUCCESS}
+          variant={NotificationDialogVariants.SUCCESS}
           isOpen={this.state.isOpen}
           onRequestClose={this.handleCloseModal}
           title="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"

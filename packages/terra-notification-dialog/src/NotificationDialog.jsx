@@ -51,7 +51,7 @@ const propTypes = {
   }),
   /**
    * The variant of notification to be rendered.
-   * Use the Notification.Opts.Variants attribute of the Notification component for access to these variant strings.
+   * Use one of alert, error, warning, info, success, custom.
    */
   variant: PropTypes.oneOf([
     variants.ALERT,
@@ -157,7 +157,7 @@ class NotificationDialog extends React.Component {
         onRequestClose={this.props.onRequestClose}
         closeOnEsc={false}
         closeOnOutsideClick={false}
-        zIndex="8000"
+        zIndex="9000"
       >
         <div className={cx('header-body')}>{header || defaultHeader}</div>
         <div className={cx('notification-dialog-body')}>
@@ -178,7 +178,6 @@ class NotificationDialog extends React.Component {
 NotificationDialog.propTypes = propTypes;
 NotificationDialog.defaultProps = defaultProps;
 NotificationDialog.contextTypes = contextTypes;
-NotificationDialog.Opts = {};
-NotificationDialog.Opts.Variants = variants;
 
+export { variants as NotificationDialogVariants };
 export default NotificationDialog;

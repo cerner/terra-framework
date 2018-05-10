@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'terra-button';
-import NotificationDialog from '../../src/NotificationDialog';
+import NotificationDialog, { NotificationDialogVariants } from '../../src/NotificationDialog';
 
 const clickOK = () => {
   alert('You clicked OK');  // eslint-disable-line no-alert
@@ -30,7 +30,7 @@ class CompleteNotificationDialog extends React.Component {
     return (
       <div>
         <NotificationDialog
-          variant={NotificationDialog.Opts.Variants.ALERT}
+          variant={NotificationDialogVariants.ALERT}
           isOpen={this.state.isOpen}
           onRequestClose={this.handleCloseModal}
           title="Make sure that the title relates directly to the choices."

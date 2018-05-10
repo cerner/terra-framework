@@ -1,6 +1,6 @@
 # Terra NotificationDialog
 
-`terra-notification-dialog` is a notification dialog component built over the `terra-abstract-modal`. It has the highest z-index of 8001. It is a common component to be used for confirmation/acceptance criteria style dialogs. 
+`terra-notification-dialog` is a notification dialog component built over the `terra-abstract-modal`. It has the highest z-index of 9001. It is a common component to be used for confirmation/acceptance criteria style dialogs. 
 
 ## Getting Started
 
