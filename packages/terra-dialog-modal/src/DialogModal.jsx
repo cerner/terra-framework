@@ -25,7 +25,7 @@ const propTypes = {
  /**
   * Aria Label of the dialog modal.
   */
-  ariaLabel: PropTypes.string,
+  ariaLabel: PropTypes.string.isRequired,
  /**
   * Header of the dialog modal.
   */
