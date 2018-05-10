@@ -1,0 +1,89 @@
+:local {
+  .dialog-modal {
+    /* TODO: Add styles */
+    background-color: var(--terra-dialog-modal-color, #fff);
+    border-radius: var(--terra-dialog-modal-border-radius, 0.3125rem);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: fixed;
+    transform: 'translate(-50%,-50%)';
+
+    &.width-320 {
+      width: 320px;
+    }
+   
+    &.width-480 {
+      width: 480px;
+    }
+
+    &.width-640 {
+      width: 640px;
+    }
+
+    &.width-800 {
+      width: 800px;
+    }
+
+    &.width-960 {
+      width: 960px;
+    }
+
+    &.width-1120 {
+      width: 1120px;
+    }
+
+    &.width-1280 {
+      width: 1280px;
+    }
+
+    &.width-1440 {
+      width: 1440px;
+    }
+
+    &.width-1600 {
+      width: 1600px;
+    }
+
+    &.width-1760 {
+      width: 1760px;
+    }
+
+    &.width-1920 {
+      width: 1920px;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: calc(100% - 2 * var(--terra-dialog-modal-max-width, 10px));
+    }
+  }
+
+  .dialog-modal-header {
+    background-color: var(--terra-dialog-modal-header-color, #f9f9f9);
+    border-color: var(--terra-dialog-modal-header-border-color, #dedfe0);
+    border-style: var(--terra-dialog-modal-header-border-style, solid);
+    border-width: var(--terra-dialog-modal-header-border-width, 0.0625rem);
+    display: 0 0 auto;
+    text-align: left;
+  }
+
+  .dialog-modal-body {
+    background-color: var(--terra-dialog-modal-body-color, #fff);
+    display: inline-flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+    padding: var(--terra-dialog-modal-body-padding, 1.25rem);
+    width: 100%;
+    word-wrap: break-word;
+  }
+
+  .dialog-modal-footer {
+    background-color: var(--terra-dialog-modal-footer-color, #f9f9f9);
+    border-color: var(--terra-dialog-modal-footer-border-color, #dedfe0);
+    border-style: var(--terra-dialog-modal-footer-border-style, solid);
+    border-width: var(--terra-dialog-modal-footer-border-width, 0.0625rem);
+    flex: 0 0 auto;
+  }
+}

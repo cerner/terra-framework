@@ -12,6 +12,7 @@ import TerraApplicationMenuLayoutIndex from '../packages/terra-application-menu-
 import TerraApplicationNameIndex from '../packages/terra-application-name/examples/Index.site-page';
 import TerraApplicationUtilityIndex from '../packages/terra-application-utility/examples/Index.site-page';
 import TerraBrandFooterIndex from '../packages/terra-brand-footer/examples/Index.site-page';
+import TerraDialogModalIndex from '../packages/terra-dialog-modal/examples/Index.site-page';
 import TerraDisclosureManagerIndex from '../packages/terra-disclosure-manager/examples/Index.site-page';
 import TerraHookshotIndex from '../packages/terra-hookshot/examples/Index.site-page';
 import TerraInfiniteListIndex from '../packages/terra-infinite-list/examples/Index.site-page';
@@ -52,9 +53,11 @@ import DefaultApplicationHeaderUtility from '../packages/terra-application-utili
 import DefaultApplicationMenuUtility from '../packages/terra-application-utility/examples/test-examples/DefaultApplicationMenuUtility.example';
 import DefaultHeaderUtilityMenu from '../packages/terra-application-utility/examples/test-examples/DefaultHeaderUtilityMenu.example';
 import DefaultMenuUtilityMenu from '../packages/terra-application-utility/examples/test-examples/DefaultMenuUtilityMenu.example';
-import DefaultBrandFooter from '../packages/terra-brand-footer/examples/test-examples/DefaultBrandFooter.example';
 import ActiveBrandFooter from '../packages/terra-brand-footer/examples/test-examples/ActiveBrandFooter.example';
+import DefaultBrandFooter from '../packages/terra-brand-footer/examples/test-examples/DefaultBrandFooter.example';
 import HoveredBrandFooter from '../packages/terra-brand-footer/examples/test-examples/HoveredBrandFooter.example';
+import DefaultDialogModal from '../packages/terra-dialog-modal/examples/test-examples/DefaultDialogModal.example';
+import DialogModalWithLongText from '../packages/terra-dialog-modal/examples/test-examples/DialogModalWithLongText.example';
 import DefaultHookshot from '../packages/terra-hookshot/examples/test-examples/DefaultHookshot.example';
 import HookshotAttachmentBehaviorAuto from '../packages/terra-hookshot/examples/test-examples/HookshotAttachmentBehaviorAuto.example';
 import HookshotAttachmentBehaviorFlip from '../packages/terra-hookshot/examples/test-examples/HookshotAttachmentBehaviorFlip.example';
@@ -379,6 +382,11 @@ const componentConfig = {
     ],
     tests: [
       {
+        name: 'Active Brand Footer',
+        path: '/active-brand-footer',
+        component: ActiveBrandFooter,
+      },
+      {
         name: 'Default Brand Footer',
         path: '/default-brand-footer',
         component: DefaultBrandFooter,
@@ -388,10 +396,28 @@ const componentConfig = {
         path: '/hovered-brand-footer',
         component: HoveredBrandFooter,
       },
+    ],
+  },
+  'terra-dialog-modal': {
+    name: 'Dialog Modal',
+    path: '/dialog-modal',
+    pages: [
       {
-        name: 'Active Brand Footer',
-        path: '/active-brand-footer',
-        component: ActiveBrandFooter,
+        name: 'Index',
+        path: '/index',
+        component: TerraDialogModalIndex,
+      },
+    ],
+    tests: [
+      {
+        name: 'Default Dialog Modal',
+        path: '/default-dialog-modal',
+        component: DefaultDialogModal,
+      },
+      {
+        name: 'Dialog Modal With Long Text',
+        path: '/dialog-modal-with-long-text',
+        component: DialogModalWithLongText,
       },
     ],
   },
