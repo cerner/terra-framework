@@ -5,7 +5,7 @@ describe('Aggregator', () => {
 
   describe('Standalone', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/aggregator/aggregator-standalone');
+      browser.url('/#/raw/tests/terra-aggregator/aggregator-standalone');
 
       browser.click('#test-aggregator #section1');
       browser.click('#test-aggregator #section2');
@@ -18,7 +18,7 @@ describe('Aggregator', () => {
 
   describe('With Disclosure - Open', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/aggregator/aggregator-with-disclosure');
+      browser.url('/#/raw/tests/terra-aggregator/aggregator-with-disclosure');
 
       browser.click('#test-aggregator #section1');
     });
@@ -29,7 +29,7 @@ describe('Aggregator', () => {
 
   describe('With Disclosure - Close from focus release', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/aggregator/aggregator-with-disclosure');
+      browser.url('/#/raw/tests/terra-aggregator/aggregator-with-disclosure');
 
       browser.click('#test-aggregator #section1');
 
@@ -44,7 +44,7 @@ describe('Aggregator', () => {
 
   describe('With Disclosure - Close from explicit close', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/aggregator/aggregator-with-disclosure');
+      browser.url('/#/raw/tests/terra-aggregator/aggregator-with-disclosure');
 
       browser.click('#test-aggregator #section1');
 

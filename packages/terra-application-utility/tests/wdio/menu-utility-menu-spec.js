@@ -1,7 +1,7 @@
 /* global browser, Terra */
 describe('MenuUtilityMenu', () => {
   beforeEach(() => {
-    browser.url('/#/raw/tests/application-utility/default-menu-utility-menu');
+    browser.url('/#/raw/tests/terra-application-utility/default-menu-utility-menu');
     browser.waitForVisible('#default');
   });
 

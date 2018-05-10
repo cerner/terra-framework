@@ -5,7 +5,7 @@ describe('Hookshot', () => {
 
   describe('Displays default hookshot', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/default-hookshot');
+      browser.url('/#/raw/tests/terra-hookshot/default-hookshot');
       browser.click('#hookshot-standard-button');
       browser.waitForVisible('#testDefaultContent');
     });
@@ -27,7 +27,7 @@ describe('Hookshot', () => {
 
   describe('Displays in primary position when there is not enough room in primary position with no attachment behavior', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/hookshot-attachment-behavior-none');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-attachment-behavior-none');
       browser.click('#position-offset');
       browser.click('#trigger-attachment-behavior-none');
       browser.waitForVisible('#attachment-behavior-none-content');
@@ -39,7 +39,7 @@ describe('Hookshot', () => {
   // push position behavior
   describe('Displays with position pushed when there is not enough room in primary position with no attachment behavior', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/hookshot-attachment-behavior-push');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-attachment-behavior-push');
       browser.click('#position-pushed');
       browser.click('#trigger-attachment-behavior-push');
       browser.waitForVisible('#attachment-behavior-push-content');
@@ -51,7 +51,7 @@ describe('Hookshot', () => {
   // flip position behavior
   describe('Displays in primary position when there is enough room with flip attachment behavior', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/hookshot-attachment-behavior-flip');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-attachment-behavior-flip');
       browser.click('#position-primary');
       browser.click('#trigger-attachment-behavior-flip');
       browser.waitForVisible('#attachment-behavior-flip-content');
@@ -62,7 +62,7 @@ describe('Hookshot', () => {
 
   describe('Displays with position flipped when there is not enough room in primary position with flip attachment behavior', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/hookshot-attachment-behavior-flip');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-attachment-behavior-flip');
       browser.click('#position-flipped');
       browser.click('#trigger-attachment-behavior-flip');
       browser.waitForVisible('#attachment-behavior-flip-content');
@@ -73,7 +73,7 @@ describe('Hookshot', () => {
 
   describe('Displays with position pushed when there is not enough room in primary or flipped position with flip attachment behavior', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/hookshot-attachment-behavior-flip');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-attachment-behavior-flip');
       browser.click('#position-flipped');
       browser.click('#trigger-attachment-behavior-flip');
       browser.waitForVisible('#attachment-behavior-flip-content');
@@ -85,7 +85,7 @@ describe('Hookshot', () => {
   // auto position behavior
   describe('Displays in primary position when there is enough room with auto attachment behavior', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/hookshot-attachment-behavior-auto');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-attachment-behavior-auto');
       browser.click('#position-primary');
       browser.click('#trigger-attachment-behavior-auto');
       browser.waitForVisible('#attachment-behavior-auto-content');
@@ -96,7 +96,7 @@ describe('Hookshot', () => {
 
   describe('Displays with position flipped when there is not enough room in primary position with auto attachment behavior', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/hookshot-attachment-behavior-auto');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-attachment-behavior-auto');
       browser.click('#position-flipped');
       browser.click('#trigger-attachment-behavior-auto');
       browser.waitForVisible('#attachment-behavior-auto-content');
@@ -107,7 +107,7 @@ describe('Hookshot', () => {
 
   describe('Displays with position rotated 90 degrees when there is not enough room in primary or flipped positions with auto attachment behavior', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/hookshot-attachment-behavior-auto');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-attachment-behavior-auto');
       browser.click('#position-90-deg');
       browser.click('#trigger-attachment-behavior-auto');
       browser.waitForVisible('#attachment-behavior-auto-content');
@@ -118,7 +118,7 @@ describe('Hookshot', () => {
 
   describe('Displays with position rotated -90 degrees when there is not enough room in primary, flipped, or 90 degree positions with auto attachment behavior', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/hookshot-attachment-behavior-auto');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-attachment-behavior-auto');
       browser.click('#position-neg-90-deg');
       browser.click('#trigger-attachment-behavior-auto');
       browser.waitForVisible('#attachment-behavior-auto-content');
@@ -129,7 +129,7 @@ describe('Hookshot', () => {
 
   describe('Displays with position pushed when there is not enough room in primary, flipped, 90 degree, or -90 degree positions with auto attachment', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/hookshot-attachment-behavior-auto');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-attachment-behavior-auto');
       browser.click('#position-pushed');
       browser.click('#trigger-attachment-behavior-auto');
       browser.waitForVisible('#attachment-behavior-auto-content');
@@ -140,7 +140,7 @@ describe('Hookshot', () => {
 
   // attachmentMargin: validate number set adjusts positioning by so much.
   describe('Displays with given margin between the attachment points', () => {
-    before(() => browser.url('/#/raw/tests/hookshot/hookshot-attachment-margin'));
+    before(() => browser.url('/#/raw/tests/terra-hookshot/hookshot-attachment-margin'));
 
     it('Top Start Content Attachment', () => {
       browser.click('#attach-TS');
@@ -200,7 +200,7 @@ describe('Hookshot', () => {
 
   // boundingRef: test - top bottom start end bounding container adjustments.
   describe('Displays content pushed by bounding container', () => {
-    before(() => browser.url('/#/raw/tests/hookshot/hookshot-bounding-container'));
+    before(() => browser.url('/#/raw/tests/terra-hookshot/hookshot-bounding-container'));
 
     it('Push Left', () => {
       browser.click('#push-left');
@@ -235,7 +235,7 @@ describe('Hookshot', () => {
   describe('Display the content offset correctly for dir=ltr', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/hookshot-content-offset');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-content-offset');
       browser.waitForVisible('#ContentOffset-content');
     });
 
@@ -245,7 +245,7 @@ describe('Hookshot', () => {
   describe('Displays the content offset correctly for dir=rtl', () => {
     before(() => {
       browser.setViewportSize(Terra.viewports('medium')[0]);
-      browser.url('/#/raw/tests/hookshot/hookshot-content-offset');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-content-offset');
       browser.click('#rtl-ContentOffset');
     });
     beforeEach(() => {
@@ -264,7 +264,7 @@ describe('Hookshot', () => {
   describe('Display the target offset correctly for dir=ltr', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/hookshot-target-offset');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-target-offset');
       browser.waitForVisible('#TargetOffset-content');
     });
 
@@ -274,7 +274,7 @@ describe('Hookshot', () => {
   describe('Displays the target offset correctly for dir=rtl', () => {
     before(() => {
       browser.setViewportSize(Terra.viewports('medium')[0]);
-      browser.url('/#/raw/tests/hookshot/hookshot-target-offset');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-target-offset');
       browser.click('#rtl-TargetOffset');
     });
     beforeEach(() => {
@@ -293,7 +293,7 @@ describe('Hookshot', () => {
   describe('Content displays when isEnabled={true} vs isEnabled={false} ', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/hookshot-enabled-behaviors');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-enabled-behaviors');
       browser.waitForVisible('#Enabled-bounds');
       browser.waitForVisible('#NotEnabled-bounds');
     });
@@ -306,7 +306,7 @@ describe('Hookshot', () => {
   describe('Closes the hookshot content on ESC when all close behavior is present', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/hookshot-close-behaviors');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-close-behaviors');
       browser.click('#trigger-AllBehavior');
       browser.waitForVisible('#AllBehavior-content');
       browser.keys('ESCAPE');
@@ -318,7 +318,7 @@ describe('Hookshot', () => {
   describe('Closes the hookshot content on outside click when all close behavior is present', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/hookshot-close-behaviors');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-close-behaviors');
       browser.click('#trigger-AllBehavior');
       browser.waitForVisible('#AllBehavior-content');
       browser
@@ -332,7 +332,7 @@ describe('Hookshot', () => {
   describe('Closes the hookshot content on resize when all close behavior is present', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/hookshot-close-behaviors');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-close-behaviors');
       browser.click('#trigger-AllBehavior');
       browser.waitForVisible('#AllBehavior-content');
       browser.setViewportSize(Terra.viewports('small')[0]);
@@ -346,7 +346,7 @@ describe('Hookshot', () => {
   describe('Closes the hookshot content on ESC when closeOnEsc', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/hookshot-close-behaviors');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-close-behaviors');
       browser.click('#trigger-EscBehavior');
       browser.waitForVisible('#EscBehavior-content');
       browser.keys('ESCAPE');
@@ -359,7 +359,7 @@ describe('Hookshot', () => {
   describe('Closes the hookshot content on outside click when closeOnOutsideClick', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/hookshot-close-behaviors');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-close-behaviors');
       browser.click('#trigger-OutsideClickBehavior');
       browser.waitForVisible('#OutsideClickBehavior-content');
       browser
@@ -374,7 +374,7 @@ describe('Hookshot', () => {
   describe('Closes the hookshot content on outside click when closeOnOutsideClick', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/hookshot-close-behaviors');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-close-behaviors');
       browser.click('#trigger-ResizeBehavior');
       browser.waitForVisible('#ResizeBehavior-content');
       browser.setViewportSize(Terra.viewports('small')[0]);
@@ -388,7 +388,7 @@ describe('Hookshot', () => {
   describe('Closes the hookshot content on ESC when no close behavior is present', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/hookshot-close-behaviors');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-close-behaviors');
       browser.click('#trigger-NoCloseBehavior');
       browser.waitForVisible('#NoCloseBehavior-content');
       browser.click('#scroll-bounds');
@@ -401,7 +401,7 @@ describe('Hookshot', () => {
   describe('Closes the hookshot content on outside click when no close behavior is present', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/hookshot-close-behaviors');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-close-behaviors');
       browser.click('#trigger-NoCloseBehavior');
       browser.waitForVisible('#NoCloseBehavior-content');
       browser.click('#scroll-bounds');
@@ -416,7 +416,7 @@ describe('Hookshot', () => {
   describe('Closes the hookshot content on resize when no close behavior is present', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
-      browser.url('/#/raw/tests/hookshot/hookshot-close-behaviors');
+      browser.url('/#/raw/tests/terra-hookshot/hookshot-close-behaviors');
       browser.click('#trigger-NoCloseBehavior');
       browser.waitForVisible('#NoCloseBehavior-content');
       browser.click('#scroll-bounds');

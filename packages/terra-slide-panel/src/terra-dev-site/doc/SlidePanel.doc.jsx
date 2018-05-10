@@ -11,27 +11,27 @@ import { version } from '../../../package.json';
 // eslint-disable-next-line import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions
 import SlidePanelSrc from '!raw-loader!../../../src/SlidePanel';
 import DefaultSlidePanelSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/DefaultSlidePanel.jsx';
-import SlidePanelOverlaySrc from '!raw-loader!../../../src/terra-dev-site/test/SlidePanelOverlay.test.jsx';
-import SlidePanelSquishSrc from '!raw-loader!../../../src/terra-dev-site/test/SlidePanelSquish.test.jsx';
-import SlidePanelStartSrc from '!raw-loader!../../../src/terra-dev-site/test/SlidePanelStart.test.jsx';
-import SlidePanelEndSrc from '!raw-loader!../../../src/terra-dev-site/test/SlidePanelEnd.test.jsx';
-import SlidePanelSmallSrc from '!raw-loader!../../../src/terra-dev-site/test/SlidePanelSmall.test.jsx';
-import SlidePanelLargeSrc from '!raw-loader!../../../src/terra-dev-site/test/SlidePanelLarge.test.jsx';
-import SlidePanelFullscreenSrc from '!raw-loader!../../../src/terra-dev-site/test/SlidePanelFullscreen.test.jsx';
-import SlidePanelFillSrc from '!raw-loader!../../../src/terra-dev-site/test/SlidePanelFill.test.jsx';
-import SlidePanelNoFillSrc from '!raw-loader!../../../src/terra-dev-site/test/SlidePanelNoFill.test.jsx';
+import SlidePanelOverlaySrc from '!raw-loader!../../../src/terra-dev-site/test/slide-panel/SlidePanelOverlay.test.jsx';
+import SlidePanelSquishSrc from '!raw-loader!../../../src/terra-dev-site/test/slide-panel/SlidePanelSquish.test.jsx';
+import SlidePanelStartSrc from '!raw-loader!../../../src/terra-dev-site/test/slide-panel/SlidePanelStart.test.jsx';
+import SlidePanelEndSrc from '!raw-loader!../../../src/terra-dev-site/test/slide-panel/SlidePanelEnd.test.jsx';
+import SlidePanelSmallSrc from '!raw-loader!../../../src/terra-dev-site/test/slide-panel/SlidePanelSmall.test.jsx';
+import SlidePanelLargeSrc from '!raw-loader!../../../src/terra-dev-site/test/slide-panel/SlidePanelLarge.test.jsx';
+import SlidePanelFullscreenSrc from '!raw-loader!../../../src/terra-dev-site/test/slide-panel/SlidePanelFullscreen.test.jsx';
+import SlidePanelFillSrc from '!raw-loader!../../../src/terra-dev-site/test/slide-panel/SlidePanelFill.test.jsx';
+import SlidePanelNoFillSrc from '!raw-loader!../../../src/terra-dev-site/test/slide-panel/SlidePanelNoFill.test.jsx';
 
 // Example Files
 import DefaultSlidePanel from '../../../src/terra-dev-site/doc/example/DefaultSlidePanel';
-import SlidePanelOverlay from '../../../src/terra-dev-site/test/SlidePanelOverlay.test';
-import SlidePanelSquish from '../../../src/terra-dev-site/test/SlidePanelSquish.test';
-import SlidePanelStart from '../../../src/terra-dev-site/test/SlidePanelStart.test';
-import SlidePanelEnd from '../../../src/terra-dev-site/test/SlidePanelEnd.test';
-import SlidePanelSmall from '../../../src/terra-dev-site/test/SlidePanelSmall.test';
-import SlidePanelLarge from '../../../src/terra-dev-site/test/SlidePanelLarge.test';
-import SlidePanelFullscreen from '../../../src/terra-dev-site/test/SlidePanelFullscreen.test';
-import SlidePanelFill from '../../../src/terra-dev-site/test/SlidePanelFill.test';
-import SlidePanelNoFill from '../../../src/terra-dev-site/test/SlidePanelNoFill.test';
+import SlidePanelOverlay from '../../../src/terra-dev-site/test/slide-panel/SlidePanelOverlay.test';
+import SlidePanelSquish from '../../../src/terra-dev-site/test/slide-panel/SlidePanelSquish.test';
+import SlidePanelStart from '../../../src/terra-dev-site/test/slide-panel/SlidePanelStart.test';
+import SlidePanelEnd from '../../../src/terra-dev-site/test/slide-panel/SlidePanelEnd.test';
+import SlidePanelSmall from '../../../src/terra-dev-site/test/slide-panel/SlidePanelSmall.test';
+import SlidePanelLarge from '../../../src/terra-dev-site/test/slide-panel/SlidePanelLarge.test';
+import SlidePanelFullscreen from '../../../src/terra-dev-site/test/slide-panel/SlidePanelFullscreen.test';
+import SlidePanelFill from '../../../src/terra-dev-site/test/slide-panel/SlidePanelFill.test';
+import SlidePanelNoFill from '../../../src/terra-dev-site/test/slide-panel/SlidePanelNoFill.test';
 
 const SlidePanelExamples = () => (
   <div>

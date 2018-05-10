@@ -6,7 +6,7 @@ describe('Hookshot targetAttachment and contentAttachment combinations', () => {
 
   // Content Attachment: Top Start
   describe('contentAttachment="top start"', () => {
-    before(() => browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-ts'));
+    before(() => browser.url('/#/raw/tests/terra-hookshot/hookshot-content-attachment-ts'));
 
     it('targetAttachment="top start"', () => {
       browser.click('#attach-TS');
@@ -65,7 +65,7 @@ describe('Hookshot targetAttachment and contentAttachment combinations', () => {
 
   // Content Attachment: Top Center
   describe('contentAttachment="top center"', () => {
-    before(() => browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-tc'));
+    before(() => browser.url('/#/raw/tests/terra-hookshot/hookshot-content-attachment-tc'));
 
     it('targetAttachment="top start"', () => {
       browser.click('#attach-TS');
@@ -124,7 +124,7 @@ describe('Hookshot targetAttachment and contentAttachment combinations', () => {
 
   // Content Attachment: Top End
   describe('contentAttachment="top end"', () => {
-    before(() => browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-te'));
+    before(() => browser.url('/#/raw/tests/terra-hookshot/hookshot-content-attachment-te'));
 
     it('targetAttachment="top start"', () => {
       browser.click('#attach-TS');
@@ -183,7 +183,7 @@ describe('Hookshot targetAttachment and contentAttachment combinations', () => {
 
   // Content Attachment: Middle Start
   describe('contentAttachment="middle start"', () => {
-    before(() => browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-ms'));
+    before(() => browser.url('/#/raw/tests/terra-hookshot/hookshot-content-attachment-ms'));
 
     it('targetAttachment="top start"', () => {
       browser.click('#attach-TS');
@@ -242,7 +242,7 @@ describe('Hookshot targetAttachment and contentAttachment combinations', () => {
 
   // Content Attachment: Middle Center
   describe('contentAttachment="middle center"', () => {
-    before(() => browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-mc'));
+    before(() => browser.url('/#/raw/tests/terra-hookshot/hookshot-content-attachment-mc'));
 
     it('targetAttachment="top start"', () => {
       browser.click('#attach-TS');
@@ -301,7 +301,7 @@ describe('Hookshot targetAttachment and contentAttachment combinations', () => {
 
   // Content Attachment: Middle End
   describe('contentAttachment="middle end"', () => {
-    before(() => browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-me'));
+    before(() => browser.url('/#/raw/tests/terra-hookshot/hookshot-content-attachment-me'));
 
     it('targetAttachment="top start"', () => {
       browser.click('#attach-TS');
@@ -360,7 +360,7 @@ describe('Hookshot targetAttachment and contentAttachment combinations', () => {
 
   // Content Attachment: Bottom Start
   describe('contentAttachment="bottom start"', () => {
-    before(() => browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-bs'));
+    before(() => browser.url('/#/raw/tests/terra-hookshot/hookshot-content-attachment-bs'));
 
     it('targetAttachment="top start"', () => {
       browser.click('#attach-TS');
@@ -419,7 +419,7 @@ describe('Hookshot targetAttachment and contentAttachment combinations', () => {
 
   // Content Attachment: Bottom Center
   describe('contentAttachment="bottom center"', () => {
-    before(() => browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-bc'));
+    before(() => browser.url('/#/raw/tests/terra-hookshot/hookshot-content-attachment-bc'));
 
     it('targetAttachment="top start"', () => {
       browser.click('#attach-TS');
@@ -478,7 +478,7 @@ describe('Hookshot targetAttachment and contentAttachment combinations', () => {
 
   // Content Attachment: Bottom End
   describe('contentAttachment="bottom end"', () => {
-    before(() => browser.url('/#/raw/tests/hookshot/hookshot-content-attachment-be'));
+    before(() => browser.url('/#/raw/tests/terra-hookshot/hookshot-content-attachment-be'));
 
     it('targetAttachment="top start"', () => {
       browser.click('#attach-TS');
