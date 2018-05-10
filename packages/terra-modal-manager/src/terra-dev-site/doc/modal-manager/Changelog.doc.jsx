@@ -2,8 +2,8 @@
 import React from 'react';
 import Markdown from 'terra-markdown';
 
-import ChangeLog from '../../../CHANGELOG.md';
-import { version } from '../../../package.json';
+import ChangeLog from '../../../../CHANGELOG.md';
+import { version } from '../../../../package.json';
 
 const ModalExamples = () => (
   <div>

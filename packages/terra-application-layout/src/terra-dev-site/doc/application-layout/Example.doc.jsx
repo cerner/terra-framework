@@ -4,12 +4,12 @@ import Markdown from 'terra-markdown';
 import ContentContainer from 'terra-content-container';
 import Button from 'terra-button';
 import SlidePanel from 'terra-slide-panel';
-import ExampleApplicationSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/ExampleApplication.jsx';
+import ExampleApplicationSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ExampleApplication.jsx';
 
-import { version } from '../../../package.json';
-import ExampleDoc from '../../../docs/example.md';
+import { version } from '../../../../package.json';
+import ExampleDoc from '../../../../docs/example.md';
 
-import ExampleApplication from './example/ExampleApplication';
+import ExampleApplication from '../example/ExampleApplication';
 
 class Example extends React.Component {
   constructor(props) {

@@ -2,9 +2,9 @@
 import React from 'react';
 import Markdown from 'terra-markdown';
 
-import ModalManagerExample from './example/ModalManagerExample';
-import { version } from '../../../package.json';
-import Example from '../../../docs/example.md';
+import ModalManagerExample from '../example/ModalManagerExample';
+import { version } from '../../../../package.json';
+import Example from '../../../../docs/example.md';
 
 const ModalExamples = () => (
   <div>

@@ -1,21 +1,21 @@
 // const componentConfig = require('./generatedComponentConfig');
-const navConfig = require('./navigation.config');
-const path = require('path');
+// const navConfig = require('./navigation.config');
+// const path = require('path');
 
 const siteConfig = {
   // navConfig,
 
-  /* The component configuration path. */
-  // componentConfig,
-  // pagesConfig: componentConfig,
-  generatePages: {
-    searchPatterns: [
-      // path.resolve(path.join(process.cwd(), 'packages', '*', 'examples', '**', '*.{example,site-page}.{jsx,js}')),
-    ],
-    // types: ['component', 'test'],
-    roots: [process.cwd()],
-    dir: 'terra-dev-site',
-  },
+  // /* The component configuration path. */
+  // // componentConfig,
+  // // pagesConfig: componentConfig,
+  // generatePages: {
+  //   searchPatterns: [
+  //     // path.resolve(path.join(process.cwd(), 'packages', '*', 'examples', '**', '*.{example,site-page}.{jsx,js}')),
+  //   ],
+  //   // types: ['component', 'test'],
+  //   roots: [process.cwd()],
+  //   entryPointDir: 'terra-dev-site',
+  // },
 
   /* The markdown content to display on the home page. */
   // readMeContent: '../README.md',

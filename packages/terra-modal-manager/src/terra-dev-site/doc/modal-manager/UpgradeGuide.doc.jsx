@@ -2,8 +2,8 @@
 import React from 'react';
 import Markdown from 'terra-markdown';
 
-import UpgradeGuide from '../../../docs/UPGRADEGUIDE.md';
-import { version } from '../../../package.json';
+import UpgradeGuide from '../../../../docs/UPGRADEGUIDE.md';
+import { version } from '../../../../package.json';
 
 const ModalExamples = () => (
   <div>

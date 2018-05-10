@@ -3,11 +3,11 @@ import React from 'react';
 import PropsTable from 'terra-props-table';
 import Markdown from 'terra-markdown';
 
-import ReadMe from '../../../docs/README.md';
-import { version } from '../../../package.json';
+import ReadMe from '../../../../docs/README.md';
+import { version } from '../../../../package.json';
 
 // Component Source
-import ModalManagerSrc from '!raw-loader!../../../src/ModalManager.jsx';
+import ModalManagerSrc from '!raw-loader!../../../../src/ModalManager.jsx';
 
 const ModalManagerExamples = () => (
   <div>
