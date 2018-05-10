@@ -14,6 +14,8 @@ import DialogModalSrc from '!raw-loader!../src/DialogModal';
 // Example Files
 import DefaultDialogModal from './index-examples/DefaultDialogModal';
 import DefaultDialogModalSrc from '!raw-loader!./index-examples/DefaultDialogModal.jsx';
+import DialogModalWithLongText from './index-examples/DialogModalWithLongText';
+import DialogModalWithLongTextSrc from '!raw-loader!./index-examples/DialogModalWithLongText.jsx';
 
 const DialogModalExamples = () => (
   <div>
@@ -25,6 +27,11 @@ const DialogModalExamples = () => (
       title="DialogModal - Default"
       example={<DefaultDialogModal />}
       exampleSrc={DefaultDialogModalSrc}
+    />
+    <IndexTemplate
+      title="DialogModal with longer text and a width of 800"
+      example={<DialogModalWithLongText />}
+      exampleSrc={DialogModalWithLongTextSrc}
     />
 
     <PropsTable id="props" src={DialogModalSrc} />
