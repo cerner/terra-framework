@@ -23,6 +23,10 @@ const widthFromSize = {
 
 const propTypes = {
  /**
+  * Aria Label of the dialog modal.
+  */
+  ariaLabel: PropTypes.string,
+ /**
   * Header of the dialog modal.
   */
   header: PropTypes.element.isRequired,
@@ -73,6 +77,7 @@ class DialogModal extends React.Component {
       isOpen,
       releaseFocus,
       requestFocus,
+      ariaLabel,
       width,
       ...customProps
     } = this.props;
@@ -89,7 +94,7 @@ class DialogModal extends React.Component {
     return (
       <div {...customProps} className={DialogModalClassNames}>
         <AbstractModal
-          ariaLabel="DialogModal"
+          ariaLabel={this.props.ariaLabel}
           classNameModal={cx('dialog-modal', `width-${widthFromSize[width]}`)}
           isOpen={this.props.isOpen}
           onRequestClose={this.props.onRequestClose}
