@@ -11,7 +11,7 @@ import { version } from '../../../package.json';
 import BrandFooterSrc from '!raw-loader!../../../src/BrandFooter';
 
 // Example Files
-import DefaultBrandFooter from './example/DefaultBrandFooter.jsx';
+import DefaultBrandFooter from './example/DefaultBrandFooter';
 import DefaultBrandFooterSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/DefaultBrandFooter.jsx';
 
 const BrandFooterExamples = () => (
