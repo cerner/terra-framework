@@ -1,45 +1,47 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import React from 'react';
-import PropsTable from 'terra-props-table';
-import Markdown from 'terra-markdown';
-import ReadMe from 'terra-hookshot/docs/README.md';
-import { version } from 'terra-hookshot/package.json';
-import IndexTemplate from 'terra-dev-site/src/IndexPageTemplate';
+import DocTemplate from 'terra-doc-template';
+import { name } from '../package.json';
+import ReadMe from '../docs/README.md';
 
 // Component Source
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
-import HookshotSrc from '!raw-loader!terra-hookshot/src/Hookshot';
-import HookshotContentSrc from '!raw-loader!terra-hookshot/src/HookshotContent';
+import HookshotSrc from '!raw-loader!../src/Hookshot';
+import HookshotContentSrc from '!raw-loader!../src/HookshotContent';
 import HookshotExampleSrc from '!raw-loader!./index-examples/HookshotExample';
 import BoundedHookshotExampleSrc from '!raw-loader!./index-examples/BoundedHookshotExample';
-/* eslint-enable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
-
 
 // Example Files
 import HookshotExample from './index-examples/HookshotExample';
 import BoundedHookshotExample from './index-examples/BoundedHookshotExample';
 
-const HookshotExamples = () => (
-  <div>
-    <div id="version">Version: {version}</div>
-    <Markdown id="readme" src={ReadMe} />
-    <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
-
-    <IndexTemplate
-      title="Window Bound Hookshot"
-      example={<HookshotExample />}
-      exampleSrc={HookshotExampleSrc}
-    />
-
-    <IndexTemplate
-      title="Container Bound Hookshot"
-      example={<BoundedHookshotExample />}
-      exampleSrc={BoundedHookshotExampleSrc}
-    />
-
-    <PropsTable id="props-hookshot" src={HookshotSrc} componentName="Hookshot" />
-    <PropsTable id="props-hookshot-content" src={HookshotContentSrc} componentName="Hookshot Content" />
-  </div>
+const DocPage = () => (
+  <DocTemplate
+    packageName={name}
+    readme={ReadMe}
+    srcPath={`https://github.com/cerner/terra-framework/tree/master/packages/${name}`}
+    examples={[
+      {
+        title: 'Window Bound Hookshot',
+        example: <HookshotExample />,
+        source: HookshotExampleSrc,
+      },
+      {
+        title: 'Container Bound Hookshot',
+        example: <BoundedHookshotExample />,
+        source: BoundedHookshotExampleSrc,
+      },
+    ]}
+    propsTables={[
+      {
+        componentName: 'Hookshot',
+        componentSrc: HookshotSrc,
+      },
+      {
+        componentName: 'Hookshot Content',
+        componentSrc: HookshotContentSrc,
+      },
+    ]}
+  />
 );
 
-export default HookshotExamples;
+export default DocPage;
