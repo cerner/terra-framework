@@ -34,7 +34,6 @@ class StandaloneAggregatorExample extends React.Component {
   render() {
     const body = (
       <div>
-        <h3>Aggregator without disclosure</h3>
         <button onClick={() => { this.setState({ flip: !this.state.flip }); }}>Flip Section Order</button>
         <button onClick={() => { this.forceUpdate(); }}>Force Aggregator Render</button>
         <Aggregator

@@ -6,7 +6,6 @@ The Aggregator provides focus-based mechanisms for managing actions across dispa
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-aggregator`
-  - `yarn add terra-aggregator`
 
 ## Usage
 

@@ -9,7 +9,6 @@ Hookshot is currently utilized in the following component(s):<br />
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-hookshot`
-  - `yarn add terra-hookshot`
 
 ## Usage
 

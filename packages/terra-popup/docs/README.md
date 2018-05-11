@@ -6,60 +6,8 @@ The Terra Popup is higher order component that launches [terra-hookshot][4] posi
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-popup`
-  - `yarn add terra-popup`
 
 ## Usage
-
-```jsx
-import React from 'react';
-import Popup from 'terra-popup';
-
-class PopupExampleComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleButtonClick = this.handleButtonClick.bind(this);
-    this.handleRequestClose = this.handleRequestClose.bind(this);
-    this.setButtonNode = this.setButtonNode.bind(this);
-    this.getButtonNode = this.getButtonNode.bind(this);
-    this.state = { open: false };
-  }
-
-  setButtonNode(node) {
-    this.buttonNode = node;
-  }
-
-  getButtonNode() {
-    return this.buttonNode;
-  }
-
-  handleButtonClick() {
-    this.setState({ open: true });
-  }
-
-  handleRequestClose() {
-    this.setState({ open: false });
-  }
-
-  render() {
-    return (
-      <div>
-        <Popup
-          isOpen={this.state.open}
-          onRequestClose={this.handleRequestClose}
-          targetRef={this.getButtonNode}
-        >
-          <p>this is example popup content</p>
-        </Popup>
-        <button onClick={this.handleButtonClick} ref={this.setButtonNode}>
-          Example Button Text
-        </button>
-      </div>
-    );
-  }
-}
-
-export default PopupExampleComponent;
-```
 
 ### Implementation Notes:
 
@@ -103,7 +51,7 @@ As stateless react elements do not return a ref, but may be desired targets for 
           targetRef={getButtonNode}
 ```
 ##### Wrap the element in span or div. The weakness of this option is that you need to ensure the wrapping div fits the content, while still styled correctly on the page.
- 
+
 ```jsx
   getButtonNode() {
     return this.buttonNode;
@@ -133,4 +81,3 @@ When setting either the contentHeight or contentWidth to 'auto' the popup will l
 [2]: https://github.com/cerner/terra-framework/tree/master/packages/terra-app-delegate/docs
 [3]: https://github.com/cerner/terra-framework/tree/master/packages/terra-modal-manager/docs
 [4]: https://github.com/cerner/terra-framework/tree/master/packages/terra-hookshot/docs
-
