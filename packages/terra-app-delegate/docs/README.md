@@ -7,7 +7,6 @@ their consuming Containers/Applications.
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-app-delegate`
-  - `yarn add terra-app-delegate`
 
 ## Usage
 

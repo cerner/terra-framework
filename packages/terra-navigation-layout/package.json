@@ -1,7 +1,7 @@
 {
   "name": "terra-navigation-layout",
   "main": "lib/NavigationLayout.js",
-  "version": "2.2.0",
+  "version": "2.5.0",
   "description": "The Terra Navigation Layout package includes a variety of components and utilities to provide configuration-based, react-router-driven navigation to Terra applications.",
   "repository": {
     "type": "git",
@@ -24,26 +24,23 @@
   "devDependencies": {
     "react": "^16.2.0",
     "react-router-dom": "^4.2.2",
-    "terra-app-delegate": "^2.0.0",
-    "terra-props-table": "^2.0.0"
+    "terra-app-delegate": "^2.1.0"
   },
   "peerDependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
     "terra-app-delegate": "^2.0.0",
-    "terra-base": "^3.0.0",
-    "terra-button": "^2.0.1",
-    "terra-icon": "^2.0.1",
-    "terra-menu": "^2.0.1"
+    "terra-base": "^3.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-base": "^3.0.0",
     "terra-button": "^2.0.1",
+    "terra-doc-template": "^1.1.0",
     "terra-icon": "^2.0.1",
-    "terra-layout": "^2.2.0",
+    "terra-layout": "^2.4.0",
     "terra-menu": "^2.0.1",
     "terra-responsive-element": "^2.0.1",
     "terra-toggle-button": "^2.0.1"
@@ -57,6 +54,6 @@
     "lint:scss": "stylelint src/**/*.scss",
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
-    "test:wdio": "wdio ../../wdio.conf.js"
+    "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   }
 }

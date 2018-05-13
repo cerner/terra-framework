@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ModalManger should disclose content in Modal 1`] = `
+exports[`ModalManager should disclose content in Modal 1`] = `
 <ModalManager>
   <DisclosureManager
     render={[Function]}
@@ -25,25 +25,25 @@ exports[`ModalManger should disclose content in Modal 1`] = `
           Hello World
         </div>
       </TestContainer>
-      <Modal
+      <AbstractModal
         ariaLabel="Modal"
-        classNameModal="large"
+        classNameModal="modal-manager height-870 width-1280"
         classNameOverlay={null}
         closeOnEsc={true}
         closeOnOutsideClick={false}
         isFocused={true}
         isFullscreen={false}
         isOpen={true}
-        isScrollable={false}
         onRequestClose={[Function]}
         role="document"
+        zIndex="6000"
       >
         <Portal
           isOpened={true}
         >
           <ModalContent
             ariaLabel="Modal"
-            classNameModal="large"
+            classNameModal="modal-manager height-870 width-1280"
             classNameOverlay={null}
             closeOnOutsideClick={false}
             isFocused={true}
@@ -51,6 +51,7 @@ exports[`ModalManger should disclose content in Modal 1`] = `
             isScrollable={false}
             onRequestClose={[Function]}
             role="document"
+            zIndex="6000"
           >
             <FocusTrap
               _createFocusTrap={[Function]}
@@ -63,15 +64,16 @@ exports[`ModalManger should disclose content in Modal 1`] = `
                 <ModalOverlay
                   className={null}
                   onClick={null}
+                  zIndex="6000"
                 >
                   <div
-                    className="overlay"
+                    className="overlay layer-6000"
                     onClick={null}
                   />
                 </ModalOverlay>
                 <div
                   aria-label="Modal"
-                  className="modal fixed-size large"
+                  className="abstract-modal layer-6000 modal-manager height-870 width-1280"
                   role="document"
                   tabIndex="0"
                 >
@@ -178,13 +180,13 @@ exports[`ModalManger should disclose content in Modal 1`] = `
             </FocusTrap>
           </ModalContent>
         </Portal>
-      </Modal>
+      </AbstractModal>
     </div>
   </DisclosureManager>
 </ModalManager>
 `;
 
-exports[`ModalManger should render the ModalManager with custom props 1`] = `
+exports[`ModalManager should render the ModalManager with custom props 1`] = `
 <ModalManager
   className="test"
   id="my-modal-manager"
@@ -213,25 +215,25 @@ exports[`ModalManger should render the ModalManager with custom props 1`] = `
           Hello World
         </div>
       </TestContainer>
-      <Modal
+      <AbstractModal
         ariaLabel="Modal"
-        classNameModal="undefined"
+        classNameModal="modal-manager"
         classNameOverlay={null}
         closeOnEsc={true}
         closeOnOutsideClick={false}
         isFocused={true}
         isFullscreen={false}
         isOpen={false}
-        isScrollable={false}
         onRequestClose={[Function]}
         role="document"
+        zIndex="6000"
       />
     </div>
   </DisclosureManager>
 </ModalManager>
 `;
 
-exports[`ModalManger should render the ModalManager with defaults 1`] = `
+exports[`ModalManager should render the ModalManager with defaults 1`] = `
 <ModalManager>
   <DisclosureManager
     render={[Function]}
@@ -256,18 +258,18 @@ exports[`ModalManger should render the ModalManager with defaults 1`] = `
           Hello World
         </div>
       </TestContainer>
-      <Modal
+      <AbstractModal
         ariaLabel="Modal"
-        classNameModal="undefined"
+        classNameModal="modal-manager"
         classNameOverlay={null}
         closeOnEsc={true}
         closeOnOutsideClick={false}
         isFocused={true}
         isFullscreen={false}
         isOpen={false}
-        isScrollable={false}
         onRequestClose={[Function]}
         role="document"
+        zIndex="6000"
       />
     </div>
   </DisclosureManager>

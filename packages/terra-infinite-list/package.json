@@ -1,7 +1,7 @@
 {
   "name": "terra-infinite-list",
   "main": "lib/InfiniteList.js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "The infinite list component provides virtual dom management and data request callbacks to manage large data sets within a list.",
   "repository": {
     "type": "git",
@@ -20,9 +20,6 @@
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "devDependencies": {
-    "terra-props-table": "^2.1.0"
-  },
   "peerDependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -34,6 +31,7 @@
     "resize-observer-polyfill": "^1.4.1",
     "terra-arrange": "^2.3.0",
     "terra-base": "^3.1.0",
+    "terra-doc-template": "^1.1.0",
     "terra-icon": "^2.1.0",
     "terra-list": "^2.1.0",
     "terra-overlay": "^2.1.0"
@@ -48,6 +46,6 @@
     "props-table": "props-table ./src/InfiniteList.jsx --out-dir ./docs/props-table",
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
-    "test:wdio": "wdio ../../wdio.conf.js"
+    "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   }
 }

@@ -1,8 +1,33 @@
-Changelog
+Terra Modal Manager - Changelog
 =========
 
 Unreleased
 ----------
+
+3.0.0 - (May 8, 2018)
+------------------
+### Breaking Change
+* Major version bump. Removing redux support.
+
+### Changed
+* Dimension handling to the modal manager.
+* [Upgrade Guide For Modal][1]
+
+2.5.0 - (April 30, 2018)
+------------------
+### Changed
+* Minor dependency updates
+* Do not release snapshots to npm
+
+2.4.0 - (April 13, 2018)
+------------------
+### Changed
+* Minor dependency updates
+
+2.3.0 - (April 10, 2018)
+-----------------
+### Changed
+* Add specificity to selectors to override values from terra-modal.
 
 2.2.0 - (March 23, 2018)
 -----------------
@@ -141,3 +166,5 @@ Unreleased
 1.0.0 - (June 28, 2017)
 ------------------
 Initial stable release
+
+[1]: https://github.com/cerner/terra-framework/tree/master/packages/terra-modal/docs/UPGRADEGUIDE.md

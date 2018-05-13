@@ -7,15 +7,6 @@ This packages contains a list and tab form of ApplicationLinks, to be used in ho
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-application-links`
 
-## Usage
-
-```jsx
-import React from 'react';
-import { ApplicationTabs } from 'terra-application-links';
-
-<ApplicationTabs links={links} />
-```
-
 ## Component Features
 
  * [Cross-Browser Support](https://github.com/cerner/terra-core/wiki/Component-Features#cross-browser-support)

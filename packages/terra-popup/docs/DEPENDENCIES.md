@@ -10,22 +10,23 @@
 | terra-base | ^3.2.0 | ^16.2.0 | The base component sets minimal global styles for an application. |
 | terra-button | ^2.3.0 | ^16.2.0 | The terra-button component provides users a way to trigger actions in the UI. |
 | terra-content-container | ^2.2.0 | ^16.2.0 | The Terra ContentContainer is a structural component for the purpose of arranging content with a header. |
-| terra-hookshot | ^2.2.0 | ^16.2.0 | The Terra Hookshot component positions portaled content according to target and content attachments, ensuring they stay visually connected. |
+| terra-grid | ^4.2.0 | ^16.2.0 | The grid component provides a flexbox based grid system. |
+| terra-hookshot | ^4.1.0 | ^16.2.0 | The Terra Hookshot component positions portaled content according to target and content attachments, ensuring they stay visually connected. |
+| terra-list | ^2.3.0 | ^16.2.0 | terra-list |
+| terra-mixins | ^1.0.0 | -- | terra-mixins |
+| terra-modal-manager | ^3.0.0 | ^16.2.0 | The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal. |
 
 ## devDependencies
 | Dependency | Version | React Version | Description |
 |-|-|-|-|
-| react-redux | ^5.0.4 | ^0.14.0 \|\| ^15.0.0-0 \|\| ^16.0.0-0 | Official React bindings for Redux |
-| redux | ^3.6.0 | -- | Predictable state container for JavaScript apps |
-| terra-app-delegate | ^1.9.0 | -- | An object that provides a set of functions used to facilitate communcation between Containers and their consuming Containers/Applications |
-| terra-modal-manager | ^1.18.0 | ^15.4.2 | A Redux-backed Container component that dynamically presents components in a Terra Modal |
+| terra-app-delegate | ^2.1.0 | -- | An object that provides a set of functions used to facilitate communcation between Containers and their consuming Containers/Applications |
+| terra-props-table | ^2.4.0 | ^16.2.0 | terra-props-table |
 
 ## peerDependencies
 | Dependency | Version | React Version | Description |
 |-|-|-|-|
 | react | ^16.2.0 | -- | React is a JavaScript library for building user interfaces. |
 | react-dom | ^16.2.0 | ^16.0.0 | React package for working with the DOM. |
+| terra-app-delegate | ^2.0.0 | -- | An object that provides a set of functions used to facilitate communcation between Containers and their consuming Containers/Applications |
 | terra-base | ^3.2.0 | ^16.2.0 | The base component sets minimal global styles for an application. |
-| terra-content-container | ^2.2.0 | ^16.2.0 | The Terra ContentContainer is a structural component for the purpose of arranging content with a header. |
-| terra-hookshot | ^2.2.0 | ^16.2.0 | The Terra Hookshot component positions portaled content according to target and content attachments, ensuring they stay visually connected. |
-| terra-icon | ^2.0.1 | ^15.4.2 | terra-icon |
+| terra-mixins | ^1.0.0 | -- | terra-mixins |

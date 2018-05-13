@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ContentComponent from 'terra-disclosure-manager/examples/index-examples/ContentComponent';
 
-import ModalManager from '../../src/index';
+import ModalManager from '../../src/ModalManager';
 
 import styles from './example-styles.scss';
 

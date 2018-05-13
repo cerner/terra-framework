@@ -4,7 +4,7 @@
 [![NPM version](http://img.shields.io/npm/v/terra-modal-manager.svg)](https://www.npmjs.org/package/terra-modal-manager)
 [![Build Status](https://travis-ci.org/cerner/terra-framework.svg?branch=master)](https://travis-ci.org/cerner/terra-framework)
 
-The ModalManager is a Redux-backed Container component that presents a single or multiple components using the `terra-modal`.
+The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal.
 
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-modal-manager/docs)

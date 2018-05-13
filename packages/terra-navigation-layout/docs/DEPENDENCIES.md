@@ -8,7 +8,7 @@
 | terra-base | ^3.0.0 | ^16.2.0 | The base component sets minimal global styles for an application. |
 | terra-button | ^2.0.1 | ^16.2.0 | The terra-button component provides users a way to trigger actions in the UI. |
 | terra-icon | ^2.0.1 | ^16.2.0 | terra-icon |
-| terra-layout | ^2.1.0 | ^16.2.0 | Provides a responsive starting point for the positioning of application components. |
+| terra-layout | ^2.4.0 | ^16.2.0 | Provides a responsive starting point for the positioning of application components. |
 | terra-menu | ^2.0.1 | ^16.2.0 | The menu is a popup component that displays a list of items, item groups, and dividers. Menu Items can be actionable, have toggle-style selection, or have nested submenu items. Menu Item groups are a single-select grouping of menu items. The Menu will determine the height of the popup based on the number of items in the main menu. |
 | terra-responsive-element | ^2.0.1 | ^16.2.0 | The terra-responsive-element conditionally renders components based on viewport size |
 | terra-toggle-button | ^2.0.1 | ^16.2.0 | Toggle button component that transitions content in and out with the click on a button. |
@@ -18,8 +18,8 @@
 |-|-|-|-|
 | react | ^16.2.0 | -- | React is a JavaScript library for building user interfaces. |
 | react-router-dom | ^4.2.2 | >=15 | DOM bindings for React Router |
-| terra-app-delegate | ^2.0.0 | -- | An object that provides a set of functions used to facilitate communcation between Containers and their consuming Containers/Applications |
-| terra-props-table | ^1.10.1 | ^15.4.2 | terra-props-table |
+| terra-app-delegate | ^2.1.0 | -- | An object that provides a set of functions used to facilitate communcation between Containers and their consuming Containers/Applications |
+| terra-props-table | ^2.4.0 | ^16.2.0 | terra-props-table |
 
 ## peerDependencies
 | Dependency | Version | React Version | Description |
@@ -29,6 +29,3 @@
 | react-router-dom | ^4.2.2 | >=15 | DOM bindings for React Router |
 | terra-app-delegate | ^2.0.0 | -- | An object that provides a set of functions used to facilitate communcation between Containers and their consuming Containers/Applications |
 | terra-base | ^3.0.0 | ^16.2.0 | The base component sets minimal global styles for an application. |
-| terra-button | ^2.0.1 | ^16.2.0 | The terra-button component provides users a way to trigger actions in the UI. |
-| terra-icon | ^2.0.1 | ^16.2.0 | terra-icon |
-| terra-menu | ^2.0.1 | ^16.2.0 | The menu is a popup component that displays a list of items, item groups, and dividers. Menu Items can be actionable, have toggle-style selection, or have nested submenu items. Menu Item groups are a single-select grouping of menu items. The Menu will determine the height of the popup based on the number of items in the main menu. |

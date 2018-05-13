@@ -19,6 +19,7 @@ const HORIZONTAL_ATTACHMENTS = [
 const ATTACHMENT_BEHAVIORS = [
   'auto',
   'flip',
+  'push',
   'none',
 ];
 
@@ -28,6 +29,7 @@ const propTypes = {
    * Valid values:
    *  'auto': returns 180 degrees, returns rotate 90 degree, returns rotate -90 degrees, returns primary attachment
    *  'flip': returns 180 degrees, returns primary attachment
+   *  'push': pushes content to remain within the bounding rect, returns primary attachment
    *  'none': returns primary attachment
    */
   attachmentBehavior: PropTypes.oneOf(ATTACHMENT_BEHAVIORS),
@@ -36,7 +38,7 @@ const propTypes = {
    */
   attachmentMargin: PropTypes.number,
   /**
-   * Reference to the bounding container, will use window if nothing is provided.
+   * Reference to the bounding container. Defaults to window unless attachment behavior is set to none.
    */
   boundingRef: PropTypes.func,
   /**
@@ -149,7 +151,12 @@ class Hookshot extends React.Component {
   getNodeRects() {
     const targetRect = HookshotUtils.getBounds(this.props.targetRef());
     const contentRect = HookshotUtils.getBounds(this.contentNode);
-    const boundingRect = HookshotUtils.getBoundingRect(this.props.boundingRef ? this.props.boundingRef() : 'window');
+
+    let boundingRect = null;
+    if (this.props.attachmentBehavior !== 'none') {
+      boundingRect = HookshotUtils.getBoundingRect(this.props.boundingRef ? this.props.boundingRef() : 'window');
+    }
+
     return { targetRect, contentRect, boundingRect };
   }
 
@@ -213,7 +220,7 @@ class Hookshot extends React.Component {
     if (resetCache) {
       this.cachedRects = this.getNodeRects();
     } else {
-      if (this.props.boundingRef) {
+      if (this.props.boundingRef && this.props.attachmentBehavior !== 'none') {
         this.cachedRects.boundingRect = HookshotUtils.getBoundingRect(this.props.boundingRef());
       }
       this.cachedRects.targetRect = HookshotUtils.getBounds(this.props.targetRef());

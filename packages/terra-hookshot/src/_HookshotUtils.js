@@ -448,7 +448,7 @@ const getRotatedPositions = (positions, margin, rotation) => {
  * @ param {string} behavior - The attachemnt behavior which indicates the available content rotations.
  */
 const getAlternatePositions = (positions, boundingRect, margin, behavior) => {
-  if (behavior !== 'none') {
+  if (behavior === 'auto' || behavior === 'flip') {
     // Attempt to flip content 180 degrees
     let newPositions = getMirroredPositions(positions, margin);
     if (isValidPositions(newPositions, boundingRect)) {
@@ -534,13 +534,14 @@ const positionStyleFromBounds = (boundingRect, content, target, margin, behavior
   // Get relative content and target positions
   let positions = getRelativePositions(content, targetPosition, margin);
 
-  if (!isValidPositions(positions, boundingRect)) {
-    // Try to find valid alternative positions
-    positions = getAlternatePositions(positions, boundingRect, margin, behavior);
-  }
+  if (boundingRect) {
+    if (!isValidPositions(positions, boundingRect)) {
+      // Try to find valid alternative positions
+      positions = getAlternatePositions(positions, boundingRect, margin, behavior);
+    }
 
-  // Get bounded content and target positions
-  positions = getBoundedPositions(positions, boundingRect);
+    positions = getBoundedPositions(positions, boundingRect);
+  }
 
   return {
     style: {

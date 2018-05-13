@@ -4,6 +4,45 @@ ChangeLog
 Unreleased
 -----------------
 
+4.0.0 - (May 8, 2018)
+------------------
+### Major Change
+* Updated to use terra-popup v4.0.0
+
+### Changed
+* Adjusted themable styles for selected item background color/image styles
+
+3.5.0 - (April 30, 2018)
+------------------
+### Changed
+* Minor dependency updates
+* Do not release snapshots to npm
+
+3.4.0 - (April 20, 2018)
+------------------
+### Changed
+* Added nl and nl-BE to supported locales
+
+3.3.0 - (April 13, 2018)
+------------------
+### Changed
+* Minor dependency updates
+
+3.2.0 - (April 10, 2018)
+-----------------
+### Changed
+* Minor dependency updates
+
+3.1.1 - (April 5, 2018)
+------------------
+### Changed
+* Minor dependency updates
+
+3.1.0 - (April 3, 2018)
+------------------
+### Changed
+* Minor dependency updates
+
 3.0.0 - (March 23, 2018)
 ------------------
 ### Added

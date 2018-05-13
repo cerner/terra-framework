@@ -25,7 +25,6 @@ const items = Object.freeze([{
 
 const CustomRenderAggregatorExample = () => (
   <div>
-    <h3>Aggregator with custom render</h3>
     <Aggregator
       items={items}
       render={renderData => (

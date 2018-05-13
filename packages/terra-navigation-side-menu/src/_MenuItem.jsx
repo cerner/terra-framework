@@ -101,6 +101,7 @@ class MenuItem extends React.Component {
 
     return (
       <List.Item
+        className={cx('list-item')}
         content={
           /* eslint-disable jsx-a11y/no-static-element-interactions */
           <div

@@ -5,7 +5,7 @@ const TestContainer = () => (
   <div>Hello World</div>
 );
 
-describe('ModalManger', () => {
+describe('ModalManager', () => {
   it('should render the ModalManager with defaults', () => {
     const modalManager = (
       <ModalManager>

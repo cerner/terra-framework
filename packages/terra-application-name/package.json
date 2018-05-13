@@ -1,7 +1,7 @@
 {
   "name": "terra-application-name",
   "main": "lib/ApplicationName.js",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Houses the title of the application, along with a logo. There are two versions - a header version and menu version. These should be used with the corresponding header and menu layouts.",
   "repository": {
     "type": "git",
@@ -21,9 +21,6 @@
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "devDependencies": {
-    "terra-props-table": "^2.0.0"
-  },
   "peerDependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -32,10 +29,11 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-app-delegate": "^2.0.0",
-    "terra-application-header-layout": "^2.2.0",
-    "terra-application-menu-layout": "^2.1.0",
+    "terra-app-delegate": "^2.1.0",
+    "terra-application-header-layout": "^2.3.0",
+    "terra-application-menu-layout": "^2.2.0",
     "terra-base": "^3.0.0",
+    "terra-doc-template": "^1.1.0",
     "terra-image": "^2.0.1",
     "terra-responsive-element": "^2.0.1"
   },
@@ -48,6 +46,6 @@
     "lint:scss": "stylelint src/**/*.scss",
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
-    "test:wdio": "wdio ../../wdio.conf.js"
+    "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   }
 }

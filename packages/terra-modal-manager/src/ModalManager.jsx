@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import Modal from 'terra-modal';
+import AbstractModal from 'terra-abstract-modal';
 import AppDelegate from 'terra-app-delegate';
 import SlideGroup from 'terra-slide-group';
-import breakpoints from 'terra-responsive-element/lib/breakpoints.scss';
 import DisclosureManager, { availableDisclosureSizes } from 'terra-disclosure-manager';
 
 import 'terra-base/lib/baseStyles';
 import styles from './ModalManager.scss';
+import withModalManager from './withModalManager';
 
 const disclosureType = 'modal';
 export { disclosureType };
@@ -20,36 +20,27 @@ const propTypes = {
   children: PropTypes.node,
 };
 
+const heightFromSize = {
+  tiny: 240,
+  small: 420,
+  medium: 600,
+  large: 870,
+  huge: 960,
+};
+
+const widthFromSize = {
+  tiny: 320,
+  small: 640,
+  medium: 960,
+  large: 1280,
+  huge: 1600,
+};
+
 class ModalManager extends React.Component {
   constructor(props) {
     super(props);
 
-    this.updateFullscreenState = this.updateFullscreenState.bind(this);
     this.renderModal = this.renderModal.bind(this);
-
-    this.state = {
-      forceFullscreen: false,
-    };
-  }
-
-  componentDidMount() {
-    this.updateFullscreenState();
-    window.addEventListener('resize', this.updateFullscreenState);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateFullscreenState);
-  }
-
-  updateFullscreenState() {
-    const isFullscreen = window.innerWidth < breakpoints.small;
-    const previousFullscreenState = this.state.forceFullscreen;
-
-    if (previousFullscreenState !== isFullscreen) {
-      this.setState({
-        forceFullscreen: isFullscreen,
-      });
-    }
   }
 
   renderModal(manager) {
@@ -60,17 +51,24 @@ class ModalManager extends React.Component {
       customProps.className,
     ]);
 
-    const isFullscreen = this.state.forceFullscreen || manager.disclosure.isMaximized || manager.disclosure.size === availableDisclosureSizes.FULLSCREEN;
-    const modalClasses = !isFullscreen ? cx([styles[manager.disclosure.size]]) : undefined;
+    const classArray = ['modal-manager'];
+    const isFullscreen = manager.disclosure.isMaximized || manager.disclosure.size === availableDisclosureSizes.FULLSCREEN;
+    if (!isFullscreen) {
+      if (manager.disclosure.dimensions) {
+        classArray.push(`height-${manager.disclosure.dimensions.height}`, `width-${manager.disclosure.dimensions.width}`);
+      } else if (manager.disclosure.size) {
+        classArray.push(`height-${heightFromSize[manager.disclosure.size]}`, `width-${widthFromSize[manager.disclosure.size]}`);
+      }
+    }
 
     return (
       <div {...customProps} className={containerClassNames}>
         {manager.children.components}
-        <Modal
+        <AbstractModal
           isFocused={manager.disclosure.isFocused}
           isOpen={manager.disclosure.isOpen}
           isFullscreen={isFullscreen}
-          classNameModal={modalClasses}
+          classNameModal={cx(classArray)}
           onRequestClose={() => {
             manager.closeDisclosure();
           }}
@@ -79,7 +77,7 @@ class ModalManager extends React.Component {
           ariaLabel="Modal"
         >
           <SlideGroup items={manager.disclosure.components} isAnimated={!isFullscreen} />
-        </Modal>
+        </AbstractModal>
       </div>
     );
   }
@@ -102,3 +100,4 @@ class ModalManager extends React.Component {
 ModalManager.propTypes = propTypes;
 
 export default ModalManager;
+export { withModalManager };
