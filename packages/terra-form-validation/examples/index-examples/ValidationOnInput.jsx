@@ -44,12 +44,12 @@ export default class MainEntry extends React.Component {
           {({ input, meta, placeholder, ...rest }) => (
             <InputField
               {...rest}
+              inputId="profile-description"
               label="Description"
               error={meta.error}
               isInvalid={!meta.valid}
               inputAttrs={{
                 placeholder: 'Description',
-                required: true,
                 ...input,
               }}
               onChange={(e) => { input.onChange(e.target.value); }}
@@ -65,12 +65,12 @@ export default class MainEntry extends React.Component {
           {({ input, meta, ...rest }) => (
             <InputField
               {...rest}
+              inputId="user-name"
               label="User Name"
               error={meta.error}
-              isInvalid={!meta.error}
+              isInvalid={meta.error !== undefined}
               inputAttrs={{
                 placeholder: 'Description',
-                required: true,
                 ...input,
               }}
               onChange={(e) => { input.onChange(e.target.value); }}

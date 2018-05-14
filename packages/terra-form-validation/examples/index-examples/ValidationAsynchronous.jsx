@@ -45,6 +45,7 @@ export default class MainEntry extends React.Component {
           {({ input, meta, ...rest }) => (
             <InputField
               {...rest}
+              inputId="user-name-async"
               label="User Name"
               error={meta.error}
               help="TerraUser is unavailable. Use this name to test async"
@@ -52,7 +53,6 @@ export default class MainEntry extends React.Component {
               onChange={(e) => { input.onChange(e.target.value); }}
               inputAttrs={{
                 placeholder: 'Description',
-                required: true,
                 ...input,
               }}
               value={input.value}

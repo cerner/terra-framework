@@ -3,6 +3,7 @@
 import React from 'react';
 import { Form, Field } from 'react-final-form';
 import InputField from 'terra-form-input/lib/InputField';
+import TextareaField from 'terra-form-textarea/lib/TextareaField';
 import Button from 'terra-button';
 import Spacer from 'terra-spacer';
 
@@ -39,32 +40,13 @@ export default class MainEntry extends React.Component {
         onSubmit={handleSubmit}
       >
         <Field
-          name="description"
-        >
-          {({ input, meta, placeholder, ...rest }) => (
-            <InputField
-              {...rest}
-              label="Description"
-              error={meta.error}
-              isInvalid={!meta.valid}
-              inputAttrs={{
-                placeholder: 'Description',
-                required: true,
-                ...input,
-              }}
-              onChange={(e) => { input.onChange(e.target.value); }}
-              value={input.value}
-              required
-            />
-          )}
-        </Field>
-        <Field
           name="user_name"
           validate={validateUniqueUser}
         >
           {({ input, meta, ...rest }) => (
             <InputField
               {...rest}
+              inputId="user-name"
               label="User Name"
               error={meta.error}
               isInvalid={!meta.valid}
@@ -72,11 +54,30 @@ export default class MainEntry extends React.Component {
               help="TerraUser is not available"
               inputAttrs={{
                 placeholder: 'Description',
-                required: true,
                 ...input,
               }}
               onChange={(e) => { input.onChange(e.target.value); }}
               value={input.value}
+            />
+          )}
+        </Field>
+        <Field
+          name="description"
+        >
+          {({ input, meta, placeholder, ...rest }) => (
+            <TextareaField
+              {...rest}
+              inputId="description-field"
+              label="Description"
+              error={meta.error}
+              isInvalid={!meta.valid}
+              inputAttrs={{
+                placeholder: 'Description',
+                ...input,
+              }}
+              onChange={(e) => { input.onChange(e.target.value); }}
+              value={input.value}
+              required
             />
           )}
         </Field>

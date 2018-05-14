@@ -44,6 +44,7 @@ export default class MainEntry extends React.Component {
           {({ input, meta, placeholder, ...rest }) => (
             <InputField
               {...rest}
+              inputId="description-input"
               label="Description"
               error={meta.error}
               isInvalid={!meta.valid}
@@ -64,13 +65,13 @@ export default class MainEntry extends React.Component {
           {({ input, meta, ...rest }) => (
             <InputField
               {...rest}
+              inputId="user-name-disabled"
               label="User Name"
               error={meta.error}
-              isInvalid={!meta.error}
+              isInvalid={meta.error !== undefined}
               onChange={(e) => { input.onChange(e.target.value); }}
               inputAttrs={{
                 placeholder: 'Description',
-                required: true,
                 ...input,
               }}
               value={input.value}

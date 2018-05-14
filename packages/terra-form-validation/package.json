@@ -33,9 +33,14 @@
     "react-final-form": "^3.3.1",
     "terra-base": "^3.1.0",
     "terra-button": "^2.7.0",
+    "terra-form-checkbox": "^2.8.0",
     "terra-form-input": "^1.6.0",
+    "terra-form-radio": "^2.8.0",
+    "terra-form-select": "^3.0.0",
+    "terra-form-textarea": "^2.8.0",
     "terra-i18n": "^2.6.0",
-    "terra-spacer": "^2.6.0"
+    "terra-spacer": "^2.6.0",
+    "terra-text": "^2.8.0"
   },
   "scripts": {
     "lint": "npm run lint:js && npm run lint:scss",

@@ -53,12 +53,12 @@ export default class MainEntry extends React.Component {
           {({ input, meta, ...rest }) => (
             <InputField
               {...rest}
+              inputId="vacation-days"
               label="Vacation Days Remaining"
               error={meta.error}
               isInvalid={!meta.valid}
               inputAttrs={{
                 placeholder: '# of Vacation Days remaining',
-                required: true,
                 ...input,
               }}
               onChange={(e) => { input.onChange(e.target.value); }}
@@ -75,12 +75,12 @@ export default class MainEntry extends React.Component {
           {({ input, meta, ...rest }) => (
             <InputField
               {...rest}
+              inputId="phone-number"
               label="Phone Number"
               error={meta.error}
               isInvalid={!meta.valid}
               inputAttrs={{
                 placeholder: '(###) ###-####',
-                required: true,
                 ...input,
               }}
               onChange={(e) => { input.onChange(e.target.value); }}
