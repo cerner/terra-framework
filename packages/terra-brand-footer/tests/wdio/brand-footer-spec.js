@@ -3,7 +3,7 @@ const viewports = Terra.viewports('tiny', 'large');
 
 describe('BrandFooter', () => {
   describe('Default', () => {
-    beforeEach(() => browser.url('/#/raw/tests/terra-brand-footer/default-brand-footer'));
+    beforeEach(() => browser.url('/#/raw/tests/terra-brand-footer/brand-footer/default-brand-footer'));
 
     const rules = { bypass: { enabled: false } };
 
@@ -20,7 +20,7 @@ describe('BrandFooter', () => {
 
   describe('Hovered', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/terra-brand-footer/hovered-brand-footer');
+      browser.url('/#/raw/tests/terra-brand-footer/brand-footer/hovered-brand-footer');
     });
 
     Terra.should.matchScreenshot({ viewports });
@@ -31,7 +31,7 @@ describe('BrandFooter', () => {
 
   describe('Active', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/terra-brand-footer/active-brand-footer');
+      browser.url('/#/raw/tests/terra-brand-footer/brand-footer/active-brand-footer');
     });
 
     Terra.should.themeEachCustomProperty({

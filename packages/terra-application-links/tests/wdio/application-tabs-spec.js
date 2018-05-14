@@ -62,7 +62,7 @@ describe('ApplicationTabs', () => {
 
   describe('Displays a hidden application tabs selection', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/terra-application-links/application-tabs-default');
+      browser.url('/#/raw/tests/terra-application-links/application-links/application-tabs-default');
       browser.waitForVisible('#test-tabs [data-application-tabs-more]');
       browser.click('#test-tabs [data-application-tabs-more] span');
       browser.waitForVisible('[data-application-tab-menu-content]');
@@ -75,7 +75,7 @@ describe('ApplicationTabs', () => {
 
   describe('Displays a application tabs start aligned', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/terra-application-links/application-tabs-start');
+      browser.url('/#/raw/tests/terra-application-links/application-links/application-tabs-start');
       browser.pause(50);
     });
 
@@ -84,7 +84,7 @@ describe('ApplicationTabs', () => {
 
   describe('Displays a application tabs center aligned', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/terra-application-links/application-tabs-center');
+      browser.url('/#/raw/tests/terra-application-links/application-links/application-tabs-center');
       browser.pause(50);
     });
 
@@ -93,7 +93,7 @@ describe('ApplicationTabs', () => {
 
   describe('Displays a application tabs end aligned', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/terra-application-links/application-tabs-end');
+      browser.url('/#/raw/tests/terra-application-links/application-links/application-tabs-end');
       browser.pause(50);
     });
 

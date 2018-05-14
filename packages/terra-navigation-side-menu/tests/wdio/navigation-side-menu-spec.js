@@ -3,7 +3,7 @@
 describe('Default navigation side menu display', () => {
   before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
   beforeEach(() => {
-    browser.url('/#/raw/tests/terra-navigation-side-menu/navigation-side-menu-default');
+    browser.url('/#/raw/tests/terra-navigation-side-menu/navigation-side-menu/navigation-side-menu-default');
     browser.waitForVisible('#test-menu');
   });
 
@@ -26,7 +26,7 @@ describe('Default navigation side menu display', () => {
 describe('Hover navigation side menu display', () => {
   before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
   beforeEach(() => {
-    browser.url('/#/raw/tests/terra-navigation-side-menu/navigation-side-menu-default');
+    browser.url('/#/raw/tests/terra-navigation-side-menu/navigation-side-menu/navigation-side-menu-default');
     browser.waitForVisible('#test-menu');
     browser.moveToObject('#test-menu #test-item-1');
   });
@@ -41,7 +41,7 @@ describe('Hover navigation side menu display', () => {
 describe('Selected navigation side menu display', () => {
   before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
   beforeEach(() => {
-    browser.url('/#/raw/tests/terra-navigation-side-menu/navigation-side-menu-default');
+    browser.url('/#/raw/tests/terra-navigation-side-menu/navigation-side-menu/navigation-side-menu-default');
     browser.waitForVisible('#test-menu');
     browser.moveToObject('#test-menu #test-item-1');
     browser.click('#test-menu #test-item-1');
@@ -61,7 +61,7 @@ describe('Selected navigation side menu display', () => {
 describe('isRootMenu navigation side menu display', () => {
   before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
   beforeEach(() => {
-    browser.url('/#/raw/tests/terra-navigation-side-menu/navigation-side-menu-root');
+    browser.url('/#/raw/tests/terra-navigation-side-menu/navigation-side-menu/navigation-side-menu-root');
     browser.waitForVisible('#test-menu');
   });
 

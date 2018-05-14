@@ -4,7 +4,7 @@ const viewports = Terra.viewports('tiny', 'medium');
 
 describe('ApplicationHeaderUtility', () => {
   beforeEach(() => {
-    browser.url('/#/raw/tests/terra-application-utility/default-application-header-utility');
+    browser.url('/#/raw/tests/terra-application-utility/application-utility/default-application-header-utility');
     browser.waitForVisible('#default');
   });
 
