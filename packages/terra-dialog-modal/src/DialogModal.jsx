@@ -87,23 +87,22 @@ class DialogModal extends React.Component {
     }
 
     return (
-      <div {...customProps}>
-        <AbstractModal
-          ariaLabel={this.props.ariaLabel}
-          classNameModal={cx('dialog-modal-wrapper', `width-${widthFromSize[width]}`, customProps.className)}
-          isOpen={this.props.isOpen}
-          onRequestClose={this.props.onRequestClose}
-          zIndex="8000"
-        >
-          <div className={cx('dialog-modal-inner-wrapper')}>
-            <div className={cx('dialog-modal-container')}>
-              <div className={cx('dialog-modal-header')}>{header}</div>
-              <div className={cx('dialog-modal-main')}>{children}</div>
-              <div className={cx('dialog-modal-footer')}>{footer}</div>
-            </div>
+      <AbstractModal
+        ariaLabel={this.props.ariaLabel}
+        classNameModal={cx('dialog-modal-wrapper', `width-${widthFromSize[width]}`, customProps.className)}
+        isOpen={this.props.isOpen}
+        onRequestClose={this.props.onRequestClose}
+        zIndex="8000"
+      >
+        <div {...customProps} className={cx('dialog-modal-inner-wrapper')}>
+          <div className={cx('dialog-modal-container')}>
+            <div className={cx('dialog-modal-header')}>{header}</div>
+            <div className={cx('dialog-modal-main')}>{children}</div>
+            <div className={cx('dialog-modal-footer')}>{footer}</div>
           </div>
-        </AbstractModal>
-      </div>);
+        </div>
+      </AbstractModal>
+    );
   }
 }
 
