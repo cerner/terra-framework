@@ -2,16 +2,16 @@
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { MemoryRouter } from 'react-router-dom';
-import { name } from '../package.json';
-import ReadMe from '../docs/README.md';
-import ApplicationLinkConfig from './index-examples/ApplicationLinkConfig';
+import { name } from '../../../../package.json';
+import ReadMe from '../../../../docs/README.md';
+import ApplicationLinkConfig from './example/ApplicationLinkConfig';
 
 // Component Source
-import TabsSrc from '!raw-loader!../src/tabs/ApplicationTabs.jsx';
-import TabExampleSrc from '!raw-loader!./index-examples/ApplicationTabsExample.jsx';
+import TabsSrc from '!raw-loader!../../../../src/tabs/ApplicationTabs.jsx';
+import TabExampleSrc from '!raw-loader!./example/ApplicationTabsExample.jsx';
 
 // Example Files
-import ApplicationTabsExample from './index-examples/ApplicationTabsExample';
+import ApplicationTabsExample from './example/ApplicationTabsExample';
 
 const DocPage = () => (
   <MemoryRouter

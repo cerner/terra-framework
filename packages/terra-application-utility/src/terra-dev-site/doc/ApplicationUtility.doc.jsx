@@ -1,19 +1,19 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
-import { name } from '../package.json';
-import ReadMe from '../docs/README.md';
+import { name } from '../../../../package.json';
+import ReadMe from '../../../../docs/README.md';
 
 // Component Source
-import ApplicationHeaderUtilitySrc from '!raw-loader!../src/ApplicationHeaderUtility.jsx';
+import ApplicationHeaderUtilitySrc from '!raw-loader!../../../../src/ApplicationHeaderUtility.jsx';
 
 // Example File
-import ApplicationHeaderUtilityExample from './index-examples/ApplicationHeaderUtilityExample';
-import ApplicationMenuUtilityExample from './index-examples/ApplicationMenuUtilityExample';
-import MenuUtilityMenuExample from './index-examples/MenuUtilityMenuExample';
-import ApplicationHeaderUtilityExampleSrc from '!raw-loader!./index-examples/ApplicationHeaderUtilityExample.jsx';
-import MenuUtilityMenuExampleSrc from '!raw-loader!./index-examples/MenuUtilityMenuExample.jsx';
-import ApplicationMenuUtilityExampleSrc from '!raw-loader!./index-examples/ApplicationMenuUtilityExample.jsx';
+import ApplicationHeaderUtilityExample from './example/ApplicationHeaderUtilityExample';
+import ApplicationMenuUtilityExample from './example/ApplicationMenuUtilityExample';
+import MenuUtilityMenuExample from './example/MenuUtilityMenuExample';
+import ApplicationHeaderUtilityExampleSrc from '!raw-loader!./example/ApplicationHeaderUtilityExample.jsx';
+import MenuUtilityMenuExampleSrc from '!raw-loader!./example/MenuUtilityMenuExample.jsx';
+import ApplicationMenuUtilityExampleSrc from '!raw-loader!./example/ApplicationMenuUtilityExample.jsx';
 
 const DocPage = () => (
   <DocTemplate

@@ -1,15 +1,15 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
-import { name } from '../package.json';
-import ReadMe from '../docs/README.md';
+import { name } from '../../../../package.json';
+import ReadMe from '../../../../docs/README.md';
 
 // Component Source
-import BrandFooterSrc from '!raw-loader!../src/BrandFooter';
+import BrandFooterSrc from '!raw-loader!../../../../src/BrandFooter';
 
 // Example Files
-import DefaultBrandFooter from './index-examples/DefaultBrandFooter.example.jsx';
-import DefaultBrandFooterSrc from '!raw-loader!./index-examples/DefaultBrandFooter.example.jsx';
+import DefaultBrandFooter from './example/DefaultBrandFooter.example.jsx';
+import DefaultBrandFooterSrc from '!raw-loader!./example/DefaultBrandFooter.example.jsx';
 
 const DocPage = () => (
   <DocTemplate

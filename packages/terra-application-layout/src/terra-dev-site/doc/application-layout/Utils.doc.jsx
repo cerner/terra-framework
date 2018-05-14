@@ -1,8 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
-import { name } from '../package.json';
-import UtilsDoc from '../docs/utils.md';
+import { name } from '../../../../package.json';
+import UtilsDoc from '../../../../docs/utils.md';
 
 const DocPage = () => (
   <DocTemplate

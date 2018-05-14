@@ -6,28 +6,28 @@ import ReadMe from '../docs/README.md';
 
 // Component Source
 import SlidePanelSrc from '!raw-loader!../src/SlidePanel';
-import DefaultSlidePanelSrc from '!raw-loader!./index-examples/DefaultSlidePanel.jsx';
-import SlidePanelOverlaySrc from '!raw-loader!./test-examples/SlidePanelOverlay.example.jsx';
-import SlidePanelSquishSrc from '!raw-loader!./test-examples/SlidePanelSquish.example.jsx';
-import SlidePanelStartSrc from '!raw-loader!./test-examples/SlidePanelStart.example.jsx';
-import SlidePanelEndSrc from '!raw-loader!./test-examples/SlidePanelEnd.example.jsx';
-import SlidePanelSmallSrc from '!raw-loader!./test-examples/SlidePanelSmall.example.jsx';
-import SlidePanelLargeSrc from '!raw-loader!./test-examples/SlidePanelLarge.example.jsx';
-import SlidePanelFullscreenSrc from '!raw-loader!./test-examples/SlidePanelFullscreen.example.jsx';
-import SlidePanelFillSrc from '!raw-loader!./test-examples/SlidePanelFill.example.jsx';
-import SlidePanelNoFillSrc from '!raw-loader!./test-examples/SlidePanelNoFill.example.jsx';
+import DefaultSlidePanelSrc from '!raw-loader!./example/DefaultSlidePanel.jsx';
+import SlidePanelOverlaySrc from '!raw-loader!./test/slide-panel/SlidePanelOverlay.test.jsx';
+import SlidePanelSquishSrc from '!raw-loader!./test/slide-panel/SlidePanelSquish.test.jsx';
+import SlidePanelStartSrc from '!raw-loader!./test/slide-panel/SlidePanelStart.test.jsx';
+import SlidePanelEndSrc from '!raw-loader!./test/slide-panel/SlidePanelEnd.test.jsx';
+import SlidePanelSmallSrc from '!raw-loader!./test/slide-panel/SlidePanelSmall.test.jsx';
+import SlidePanelLargeSrc from '!raw-loader!./test/slide-panel/SlidePanelLarge.test.jsx';
+import SlidePanelFullscreenSrc from '!raw-loader!./test/slide-panel/SlidePanelFullscreen.test.jsx';
+import SlidePanelFillSrc from '!raw-loader!./test/slide-panel/SlidePanelFill.test.jsx';
+import SlidePanelNoFillSrc from '!raw-loader!./test/slide-panel/SlidePanelNoFill.test.jsx';
 
 // Example Files
-import DefaultSlidePanel from './index-examples/DefaultSlidePanel';
-import SlidePanelOverlay from './test-examples/SlidePanelOverlay.example';
-import SlidePanelSquish from './test-examples/SlidePanelSquish.example';
-import SlidePanelStart from './test-examples/SlidePanelStart.example';
-import SlidePanelEnd from './test-examples/SlidePanelEnd.example';
-import SlidePanelSmall from './test-examples/SlidePanelSmall.example';
-import SlidePanelLarge from './test-examples/SlidePanelLarge.example';
-import SlidePanelFullscreen from './test-examples/SlidePanelFullscreen.example';
-import SlidePanelFill from './test-examples/SlidePanelFill.example';
-import SlidePanelNoFill from './test-examples/SlidePanelNoFill.example';
+import DefaultSlidePanel from './example/DefaultSlidePanel';
+import SlidePanelOverlay from '../test/slide-panel/SlidePanelOverlay.test';
+import SlidePanelSquish from '../test/slide-panel/SlidePanelSquish.test';
+import SlidePanelStart from '../test/slide-panel/SlidePanelStart.test';
+import SlidePanelEnd from '../test/slide-panel/SlidePanelEnd.test';
+import SlidePanelSmall from '../test/slide-panel/SlidePanelSmall.test';
+import SlidePanelLarge from '../test/slide-panel/SlidePanelLarge.test';
+import SlidePanelFullscreen from '../test/slide-panel/SlidePanelFullscreen.test';
+import SlidePanelFill from '../test/slide-panel/SlidePanelFill.test';
+import SlidePanelNoFill from '../test/slide-panel/SlidePanelNoFill.test';
 
 const DocPage = () => (
   <DocTemplate

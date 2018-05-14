@@ -1,31 +1,31 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
-import { name } from '../package.json';
+import { name } from '../../../package.json';
 import ReadMe from 'terra-popup/docs/README.md';
 
 // Component Source
 import PopupSrc from '!raw-loader!terra-popup/src/Popup.jsx';
 
 // Example Files
-import PopupStandard from './site-examples/PopupStandard';
-import PopupStandardSrc from '!raw-loader!./site-examples/PopupStandard';
-import PopupBounded from './site-examples/PopupBounded';
-import PopupBoundedSrc from '!raw-loader!./site-examples/PopupBounded';
-import PopupNoHeader from './site-examples/PopupNoHeader';
-import PopupNoHeaderSrc from '!raw-loader!./site-examples/PopupNoHeader';
-import PopupWithArrow from './site-examples/PopupWithArrow';
-import PopupWithArrowSrc from '!raw-loader!./site-examples/PopupWithArrow';
-import PopupClassName from './site-examples/PopupClassName';
-import PopupClassNameSrc from '!raw-loader!./site-examples/PopupClassName';
-import PopupDimensions from './site-examples/PopupDimensions';
-import PopupDimensionsSrc from '!raw-loader!./site-examples/PopupDimensions';
-import PopupInsideModal from './site-examples/PopupInsideModal';
-import PopupInsideModalSrc from '!raw-loader!./site-examples/PopupInsideModal';
-import PopupAttachmentBehavior from './site-examples/PopupAttachmentBehavior';
-import PopupAttachmentBehaviorSrc from '!raw-loader!./site-examples/PopupAttachmentBehavior';
-import PopupAttachments from './site-examples/PopupAttachments';
-import PopupAttachmentsSrc from '!raw-loader!./site-examples/PopupAttachments';
+import PopupStandard from './example/PopupStandard';
+import PopupStandardSrc from '!raw-loader!./example/PopupStandard';
+import PopupBounded from './example/PopupBounded';
+import PopupBoundedSrc from '!raw-loader!./example/PopupBounded';
+import PopupNoHeader from './example/PopupNoHeader';
+import PopupNoHeaderSrc from '!raw-loader!./example/PopupNoHeader';
+import PopupWithArrow from './example/PopupWithArrow';
+import PopupWithArrowSrc from '!raw-loader!./example/PopupWithArrow';
+import PopupClassName from './example/PopupClassName';
+import PopupClassNameSrc from '!raw-loader!./example/PopupClassName';
+import PopupDimensions from './example/PopupDimensions';
+import PopupDimensionsSrc from '!raw-loader!./example/PopupDimensions';
+import PopupInsideModal from './example/PopupInsideModal';
+import PopupInsideModalSrc from '!raw-loader!./example/PopupInsideModal';
+import PopupAttachmentBehavior from './example/PopupAttachmentBehavior';
+import PopupAttachmentBehaviorSrc from '!raw-loader!./example/PopupAttachmentBehavior';
+import PopupAttachments from './example/PopupAttachments';
+import PopupAttachmentsSrc from '!raw-loader!./example/PopupAttachments';
 
 const DocPage = () => (
   <DocTemplate

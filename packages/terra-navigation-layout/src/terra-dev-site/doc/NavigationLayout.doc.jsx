@@ -1,15 +1,15 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions  */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
-import { name } from '../package.json';
-import ReadMe from '../docs/README.md';
+import { name } from '../../../package.json';
+import ReadMe from '../../../docs/README.md';
 
 // Component Source
-import NavigationLayoutSrc from '!raw-loader!../src/NavigationLayout.jsx';
+import NavigationLayoutSrc from '!raw-loader!../../../src/NavigationLayout.jsx';
 
 // Example Files
-import NavigationLayoutStandard from './index-examples/NavigationLayoutStandard';
-import NavigationLayoutStandardSrc from '!raw-loader!./index-examples/NavigationLayoutStandard.jsx';
+import NavigationLayoutStandard from './example/NavigationLayoutStandard';
+import NavigationLayoutStandardSrc from '!raw-loader!./example/NavigationLayoutStandard.jsx';
 
 const DocPage = () => (
   <DocTemplate

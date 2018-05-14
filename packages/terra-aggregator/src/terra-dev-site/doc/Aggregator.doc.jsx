@@ -1,23 +1,23 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
-import { name } from '../package.json';
-import ReadMe from '../docs/README.md';
+import { name } from '../../../package.json';
+import ReadMe from '../../../docs/README.md';
 
 // Component Source
-import AggregatorSrc from '!raw-loader!../src/Aggregator.jsx';
+import AggregatorSrc from '!raw-loader!../../../src/Aggregator.jsx';
 
 // Example Files
-import StandaloneAggregatorExample from './index-examples/StandaloneAggregatorExample';
-import StandaloneAggregatorExampleSrc from '!raw-loader!./index-examples/StandaloneAggregatorExample';
-import CustomRenderAggregatorExample from './index-examples/CustomRenderAggregatorExample';
-import CustomRenderAggregatorExampleSrc from '!raw-loader!./index-examples/CustomRenderAggregatorExample';
-import AggregatorInModalExample from './index-examples/AggregatorInModalExample';
-import AggregatorInModalExampleSrc from '!raw-loader!./index-examples/AggregatorInModalExample';
-import CombinedDisclosureExample from './index-examples/CombinedDisclosureExample';
-import CombinedDisclosureExampleSrc from '!raw-loader!./index-examples/CombinedDisclosureExample';
-import DisclosureBypassExample from './index-examples/DisclosureBypassExample';
-import DisclosureBypassExampleSrc from '!raw-loader!./index-examples/DisclosureBypassExample';
+import StandaloneAggregatorExample from './example/StandaloneAggregatorExample';
+import StandaloneAggregatorExampleSrc from '!raw-loader!./example/StandaloneAggregatorExample';
+import CustomRenderAggregatorExample from './example/CustomRenderAggregatorExample';
+import CustomRenderAggregatorExampleSrc from '!raw-loader!./example/CustomRenderAggregatorExample';
+import AggregatorInModalExample from './example/AggregatorInModalExample';
+import AggregatorInModalExampleSrc from '!raw-loader!./example/AggregatorInModalExample';
+import CombinedDisclosureExample from './example/CombinedDisclosureExample';
+import CombinedDisclosureExampleSrc from '!raw-loader!./example/CombinedDisclosureExample';
+import DisclosureBypassExample from './example/DisclosureBypassExample';
+import DisclosureBypassExampleSrc from '!raw-loader!./example/DisclosureBypassExample';
 
 const DocPage = () => (
   <DocTemplate
