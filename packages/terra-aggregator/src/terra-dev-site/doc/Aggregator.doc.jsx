@@ -1,23 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import React from 'react';
-<<<<<<< HEAD:packages/terra-aggregator/src/terra-dev-site/doc/Aggregator.doc.jsx
-import PropsTable from 'terra-props-table';
-import Markdown from 'terra-markdown';
-import ReadMe from '../../../docs/README.md';
-import { version } from '../../../package.json';
-
-// Component Source
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
-import AggregatorSrc from '!raw-loader!../../../src/Aggregator.jsx';
-/* eslint-enable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
-
-// Example Files
-import StandaloneAggregatorExample from './example/StandaloneAggregatorExample';
-import CustomRenderAggregatorExample from './example/CustomRenderAggregatorExample';
-import AggregatorInModalExample from './example/AggregatorInModalExample';
-import CombinedDisclosureExample from './example/CombinedDisclosureExample';
-import DisclosureBypassExample from './example/DisclosureBypassExample';
-=======
 import DocTemplate from 'terra-doc-template';
 import { name } from '../package.json';
 import ReadMe from '../docs/README.md';
@@ -36,7 +18,6 @@ import CombinedDisclosureExample from './index-examples/CombinedDisclosureExampl
 import CombinedDisclosureExampleSrc from '!raw-loader!./index-examples/CombinedDisclosureExample';
 import DisclosureBypassExample from './index-examples/DisclosureBypassExample';
 import DisclosureBypassExampleSrc from '!raw-loader!./index-examples/DisclosureBypassExample';
->>>>>>> master:packages/terra-aggregator/examples/Index.site-page.jsx
 
 const DocPage = () => (
   <DocTemplate
