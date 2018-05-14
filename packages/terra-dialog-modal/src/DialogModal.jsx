@@ -90,14 +90,18 @@ class DialogModal extends React.Component {
       <div {...customProps} className={DialogModalClassNames}>
         <AbstractModal
           ariaLabel="DialogModal"
-          classNameModal={cx('dialog-modal', `width-${widthFromSize[width]}`)}
+          classNameModal={cx('dialog-modal-wrapper', `width-${widthFromSize[width]}`)}
           isOpen={this.props.isOpen}
           onRequestClose={this.props.onRequestClose}
           zIndex="8000"
         >
-          <div className={cx('dialog-modal-header')}>{header}</div>
-          <div className={cx('dialog-modal-body')}>{children}</div>
-          <div className={cx('dialog-modal-footer')}>{footer}</div>
+          <div className={cx('dialog-modal-inner-wrapper')}>
+            <div className={cx('dialog-modal-container')}>
+              <div className={cx('dialog-modal-header')}>{header}</div>
+              <div className={cx('dialog-modal-main')}>{children}</div>
+              <div className={cx('dialog-modal-footer')}>{footer}</div>
+            </div>
+          </div>
         </AbstractModal>
       </div>);
   }

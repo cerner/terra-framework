@@ -47,6 +47,12 @@ class DialogModalWithLongText extends React.Component {
           <p>{text}</p>
           <p>{text}</p>
           <p>{text}</p>
+          <p>{text}</p>
+          <p>{text}</p>
+          <p>{text}</p>
+          <p>{text}</p>
+          <p>{text}</p>
+          <p>{text}</p>
         </DialogModal>
         <Button id="trigger-dialog-modal" text="Trigger Dialog Modal" onClick={this.handleOpenModal} />
       </div>
