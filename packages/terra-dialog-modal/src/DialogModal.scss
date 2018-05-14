@@ -72,8 +72,20 @@
     flex: 0 0 auto;
   }
 
+  .dialog-modal-header {
+    background-color: var(--terra-dialog-modal-header-color, #f9f9f9);
+    border: var(--terra-dialog-modal-header-border, 0.0625rem solid #dedfe0);
+  }
+
   .dialog-modal-main {
+    background-color: var(--terra-dialog-modal-body-color, #fff);
     flex: 0 1 auto;
     overflow-y: auto;
+    padding: var(--terra-dialog-modal-body-padding, 1.25rem);
+  }
+
+  .dialog-modal-footer {
+    background-color: var(--terra-dialog-modal-footer-color, #f9f9f9);
+    border: var(--terra-dialog-modal-footer-border, 0.0625rem solid #dedfe0);
   }
 }
