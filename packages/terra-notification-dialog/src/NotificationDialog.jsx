@@ -159,17 +159,21 @@ class NotificationDialog extends React.Component {
         closeOnOutsideClick={false}
         zIndex="9000"
       >
-        <div className={cx('header-body')}>{header || defaultHeader}</div>
-        <div className={cx('notification-dialog-body')}>
-          {variant &&
-            <div className={cx('icon-div')}>{getIcon(variant, customIcon)}</div>
-          }
-          <div className={cx('notification-dialog-body-text')}>
-            <div className={cx('title')}>{title}</div>
-            <div className={cx('message')}>{message}</div>
+        <div className={cx('notification-dialog-inner-wrapper')}>
+          <div className={cx('notification-dialog-container')}>
+            <div className={cx('header-body')}>{header || defaultHeader}</div>
+            <div className={cx('notification-dialog-body')}>
+              {variant &&
+                <div className={cx('icon-div')}>{getIcon(variant, customIcon)}</div>
+              }
+              <div className={cx('notification-dialog-body-text')}>
+                <div className={cx('title')}>{title}</div>
+                <div className={cx('message')}>{message}</div>
+              </div>
+            </div>
+            <div className={cx('footer-body')}>{actionSection(primaryAction, secondaryAction)}</div>
           </div>
         </div>
-        <div className={cx('footer-body')}>{actionSection(primaryAction, secondaryAction)}</div>
       </AbstractModal>
     );
   }
