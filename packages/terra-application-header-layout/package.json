@@ -28,13 +28,11 @@
     "react-dom": "^16.2.0",
     "terra-base": "^3.0.0"
   },
-  "devDependencies": {
-    "terra-props-table": "^2.4.0"
-  },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-base": "^3.0.0",
+    "terra-doc-template": "^1.1.0",
     "terra-responsive-element": "^2.0.1"
   },
   "scripts": {

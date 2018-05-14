@@ -23,14 +23,3 @@ The following themes are available via `ThemeProvider.Opts.Themes`
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-theme-provider`
-
-## Usage
-
-```jsx
-import React from 'react';
-import ThemeProvider from 'terra-theme-provider';
-
-<ThemeProvider themeName={ThemeProvider.Opts.Themes.CONSUMER}>
-  <App />
-</ThemeProvider>
-```

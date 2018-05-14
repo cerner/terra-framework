@@ -4,6 +4,14 @@ ChangeLog
 Unreleased
 -----------------
 
+4.0.0 - (May 8, 2018)
+------------------
+### Major Change
+* Updated to use terra-popup v4.0.0
+
+### Changed
+* Adjusted themable styles for selected item background color/image styles
+
 3.5.0 - (April 30, 2018)
 ------------------
 ### Changed

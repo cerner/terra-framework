@@ -14,7 +14,7 @@
 | terra-hookshot | ^4.1.0 | ^16.2.0 | The Terra Hookshot component positions portaled content according to target and content attachments, ensuring they stay visually connected. |
 | terra-list | ^2.3.0 | ^16.2.0 | terra-list |
 | terra-mixins | ^1.0.0 | -- | terra-mixins |
-| terra-modal-manager | ^2.5.0 | ^16.2.0 | A Redux-backed Container component that dynamically presents components in a Terra Modal |
+| terra-modal-manager | ^3.0.0 | ^16.2.0 | The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal. |
 
 ## devDependencies
 | Dependency | Version | React Version | Description |

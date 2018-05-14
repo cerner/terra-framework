@@ -45,7 +45,6 @@ ModalManagerBypass.propTypes = {
 
 const ModalBypassExample = () => (
   <div>
-    <h3>Aggregator with disclosure bypass</h3>
     <p>
       In this example, the Aggregator items are provided with the ModalManager disclosure function directly.
       Calling that function does not require Aggregator focus and will bypass the Aggregator entirely. This can be
