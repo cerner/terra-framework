@@ -1,11 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
-import { name } from '../../../../package.json';
-import ReadMe from '../../../../docs/README.md';
+import { name } from '../../../package.json';
+import ReadMe from '../../../docs/README.md';
 
 // Component Source
-import ApplicationHeaderNameSrc from '!raw-loader!../../../../src/ApplicationHeaderName.jsx';
+import ApplicationHeaderNameSrc from '!raw-loader!../../../src/ApplicationHeaderName.jsx';
 import ApplicationHeaderNameStandardSrc from '!raw-loader!./example/ApplicationHeaderNameStandard.jsx';
 import ApplicationMenuNameStandardSrc from '!raw-loader!./example/ApplicationMenuNameStandard.jsx';
 

@@ -1,21 +1,21 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
-import { name } from '../package.json';
-import ReadMe from '../docs/README.md';
+import { name } from '../../../package.json';
+import ReadMe from '../../../docs/README.md';
 
 // Component Source
-import SlidePanelSrc from '!raw-loader!../src/SlidePanel';
+import SlidePanelSrc from '!raw-loader!../../../src/SlidePanel';
 import DefaultSlidePanelSrc from '!raw-loader!./example/DefaultSlidePanel.jsx';
-import SlidePanelOverlaySrc from '!raw-loader!./test/slide-panel/SlidePanelOverlay.test.jsx';
-import SlidePanelSquishSrc from '!raw-loader!./test/slide-panel/SlidePanelSquish.test.jsx';
-import SlidePanelStartSrc from '!raw-loader!./test/slide-panel/SlidePanelStart.test.jsx';
-import SlidePanelEndSrc from '!raw-loader!./test/slide-panel/SlidePanelEnd.test.jsx';
-import SlidePanelSmallSrc from '!raw-loader!./test/slide-panel/SlidePanelSmall.test.jsx';
-import SlidePanelLargeSrc from '!raw-loader!./test/slide-panel/SlidePanelLarge.test.jsx';
-import SlidePanelFullscreenSrc from '!raw-loader!./test/slide-panel/SlidePanelFullscreen.test.jsx';
-import SlidePanelFillSrc from '!raw-loader!./test/slide-panel/SlidePanelFill.test.jsx';
-import SlidePanelNoFillSrc from '!raw-loader!./test/slide-panel/SlidePanelNoFill.test.jsx';
+import SlidePanelOverlaySrc from '!raw-loader!../test/slide-panel/SlidePanelOverlay.test.jsx';
+import SlidePanelSquishSrc from '!raw-loader!../test/slide-panel/SlidePanelSquish.test.jsx';
+import SlidePanelStartSrc from '!raw-loader!../test/slide-panel/SlidePanelStart.test.jsx';
+import SlidePanelEndSrc from '!raw-loader!../test/slide-panel/SlidePanelEnd.test.jsx';
+import SlidePanelSmallSrc from '!raw-loader!../test/slide-panel/SlidePanelSmall.test.jsx';
+import SlidePanelLargeSrc from '!raw-loader!../test/slide-panel/SlidePanelLarge.test.jsx';
+import SlidePanelFullscreenSrc from '!raw-loader!../test/slide-panel/SlidePanelFullscreen.test.jsx';
+import SlidePanelFillSrc from '!raw-loader!../test/slide-panel/SlidePanelFill.test.jsx';
+import SlidePanelNoFillSrc from '!raw-loader!../test/slide-panel/SlidePanelNoFill.test.jsx';
 
 // Example Files
 import DefaultSlidePanel from './example/DefaultSlidePanel';

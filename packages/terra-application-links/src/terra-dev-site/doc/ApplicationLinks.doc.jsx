@@ -2,12 +2,12 @@
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { MemoryRouter } from 'react-router-dom';
-import { name } from '../../../../package.json';
-import ReadMe from '../../../../docs/README.md';
-import ApplicationLinkConfig from './example/ApplicationLinkConfig';
+import { name } from '../../../package.json';
+import ReadMe from '../../../docs/README.md';
+import ApplicationLinkConfig from './common/ApplicationLinkConfig';
 
 // Component Source
-import TabsSrc from '!raw-loader!../../../../src/tabs/ApplicationTabs.jsx';
+import TabsSrc from '!raw-loader!../../../src/tabs/ApplicationTabs.jsx';
 import TabExampleSrc from '!raw-loader!./example/ApplicationTabsExample.jsx';
 
 // Example Files

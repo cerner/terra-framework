@@ -2,7 +2,7 @@
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { name } from '../../../package.json';
-import ReadMe from '../../.../docs/README.md';
+import ReadMe from '../../../docs/README.md';
 
 // Component Source
 import HeaderLayoutSrc from '!raw-loader!../../../src/ApplicationHeaderLayout.jsx';
