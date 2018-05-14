@@ -42,6 +42,7 @@ class DialogModalExample extends React.Component {
     return (
       <div>
         <DialogModal
+          ariaLabel="Dialog Modal Example"
           isOpen={this.state.isOpen}
           onRequestClose={this.handleCloseModal}
           header={<ActionHeader title="Action Header used here" onClose={this.handleCloseModal} />}

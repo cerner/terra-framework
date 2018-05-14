@@ -38,6 +38,7 @@ class DialogModalWithLongText extends React.Component {
     return (
       <div>
         <DialogModal
+          ariaLabel="Dialog Modal Long"
           isOpen={this.state.isOpen}
           onRequestClose={this.handleCloseModal}
           header={<ActionHeader title="Action Header used here" onClose={this.handleCloseModal} />}
