@@ -1,6 +1,8 @@
 # Validation Events
 
-The default behavior of *react-final-form* is to validate dynamically (while the user is interacting with the form, and on form load). To use this behavior, simply use the error key of the meta data passed to an individual form component, and pass it to the appropriate InputField for TextareaField, like so below.
+## Dynamic Validation
+
+The default behavior of *react-final-form* is to dynamically validate, meaning it validates the content while the user is interacting with the form, and when a form loads. To use this behavior, simply use the error key of the meta data passed to an individual form component, and pass it to the error prop of either the InputField or TextareaField, like in the example below.
 
 ```jsx
   <Field
@@ -26,37 +28,43 @@ The default behavior of *react-final-form* is to validate dynamically (while the
 
 ## Validation on submit
 
-Validating submit is easy as well. In addition to meta.error, use the boolean meta.submitFailed to identify when a form submission did not succeed.
+Validating on submit is easy as well. In addition to meta.error, the meta.submitFailed boolean value can be used to identify when a form submission did not succeed.
 
 ```jsx
-  <Field
-    name="description"
-  >
-    {({ input, meta, placeholder, ...rest }) => (
-      <InputField
-        {...rest}
-        label="Description"
-        error={meta.error}
-        isInvalid={meta.submitFailed && meta.error}
-        required
-        onChange={(e) => {input.onChange(e.target.value);}}
-        value={input.value}
-        inputAttrs={{
-          type: 'text',
-          ...input,
-        }}
-      />
-    )}
-  </Field>
+import { Field } from 'react-final-form';
+import InputField from 'terra-form-input/lib/InputField';
+
+<Field
+  name="description"
+>
+  {({ input, meta, placeholder, ...rest }) => (
+    <InputField
+      {...rest}
+      label="Description"
+      error={meta.error}
+      isInvalid={meta.submitFailed && meta.error !== undefined}
+      required
+      onChange={(e) => {input.onChange(e.target.value);}}
+      value={input.value}
+      inputAttrs={{
+        type: 'text',
+        ...input,
+      }}
+    />
+  )}
+</Field>
 ```
 
-## Disable form submit for an invalid form.
+## Disable form submit for an invalid form
 
-The form render function contains attributes such as invalid and pristine (untouched state) that allow for you to enable and disable the submission button. All you need to do is pass in the attribute you wish to check in order to see if the button should be enabled or not.
+The form render function contains attributes such as invalid (the form has errors on it) and pristine (the form has not been touched yet by the user) that allow for you to enable and disable the submission button. All you need to do is pass in the attribute you wish to check in order to see if the button should be enabled or not.
 
 Example
 
 ```jsx
+import { Form, Field } from 'react-final-form';
+import InputField from 'terra-form-input/lib/InputField';
+
   render() {
     return (
         <Form
@@ -69,7 +77,7 @@ Example
 
   renderForm({ handleSubmit, reset, submitting, pristine, values, invalid }) {
     return (
-      <form 
+      <form
         onSubmit={handleSubmit}
       >
         <h1>Hello People!</h1>

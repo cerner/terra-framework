@@ -41,7 +41,7 @@ export default class MainEntry extends React.Component {
               inputId="description"
               label="Description"
               error={meta.error}
-              isInvalid={meta.submitFailed && meta.error !== undefined}
+              isInvalid={meta.submitFailed}
               inputAttrs={{
                 placeholder: 'Description',
                 ...input,
