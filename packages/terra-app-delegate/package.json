@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "dependencies": {
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.5.8",
+    "terra-doc-template": "^1.1.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

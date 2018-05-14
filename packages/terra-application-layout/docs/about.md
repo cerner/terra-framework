@@ -11,7 +11,6 @@ The Terra Application Layout provides:
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-application-layout`
-  - `yarn add terra-application-layout`
 
 ## Component Features
 

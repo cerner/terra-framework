@@ -6,7 +6,6 @@ The Terra SlidePanel component is a progressive disclosure mechanism that allows
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-slide-panel`
-  - `yarn add terra-slide-panel`
 
 
 ## Component Features

@@ -1,16 +1,16 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import Markdown from 'terra-markdown';
-import AboutDoc from '../../../../docs/about.md';
-import UsageDoc from '../../../../docs/usage.md';
-import { version } from '../../../../package.json';
+import DocTemplate from 'terra-doc-template';
+import { name } from '../package.json';
+import AboutDoc from '../docs/about.md';
+import UsageDoc from '../docs/usage.md';
 
-const About = () => (
-  <div>
-    <div id="version">Version: {version}</div>
-    <Markdown id="about" src={AboutDoc} />
-    <Markdown id="usage" src={UsageDoc} />
-  </div>
+const DocPage = () => (
+  <DocTemplate
+    packageName={name}
+    readme={`${AboutDoc}\n${UsageDoc}`}
+    srcPath={`https://github.com/cerner/terra-framework/tree/master/packages/${name}`}
+  />
 );
 
-export default About;
+export default DocPage;

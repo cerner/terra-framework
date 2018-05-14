@@ -42,7 +42,6 @@ class SimpleAggregatorExample extends React.Component {
   render() {
     const body = (
       <div>
-        <h3>Aggregator inside modal disclosure</h3>
         <ModalManager>
           <ModalButton />
         </ModalManager>

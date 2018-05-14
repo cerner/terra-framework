@@ -1,15 +1,14 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import React from 'react';
-import Markdown from 'terra-markdown';
+import DocTemplate from 'terra-doc-template';
+import { name } from '../package.json';
+import ChangeLog from '../CHANGELOG.md';
 
-import ChangeLog from '../../../../CHANGELOG.md';
-import { version } from '../../../../package.json';
-
-const ModalExamples = () => (
-  <div>
-    <div id="version">Version: {version}</div>
-    <Markdown id="change" src={ChangeLog} />
-  </div>
+const DocPage = () => (
+  <DocTemplate
+    packageName={name}
+    readme={ChangeLog}
+  />
 );
 
-export default ModalExamples;
+export default DocPage;

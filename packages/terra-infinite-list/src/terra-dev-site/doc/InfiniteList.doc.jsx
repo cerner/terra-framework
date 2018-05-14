@@ -1,35 +1,34 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import React from 'react';
-import PropsTable from 'terra-props-table';
-import Markdown from 'terra-markdown';
-import IndexTemplate from 'terra-dev-site/src/IndexPageTemplate';
-
-import ReadMe from '../../../docs/README.md';
-import { version } from '../../../package.json';
+import DocTemplate from 'terra-doc-template';
+import { name } from '../package.json';
+import ReadMe from '../docs/README.md';
 
 // Component Source
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
-import InfiniteListSrc from '!raw-loader!../../../src/InfiniteList.jsx';
-import InfiniteListExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc//example/InfiniteListExample.jsx';
-/* eslint-enable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
-
+import InfiniteListSrc from '!raw-loader!../src/InfiniteList.jsx';
+import InfiniteListExampleSrc from '!raw-loader!./index-examples/InfiniteListExample.jsx';
 
 // Example Files
-import InfiniteListExample from './example/InfiniteListExample';
+import InfiniteListExample from './index-examples/InfiniteListExample';
 
-const InfiniteListExamples = () => (
-  <div>
-    <div id="version">Version: {version}</div>
-    <Markdown id="readme" src={ReadMe} />
-
-    <IndexTemplate
-      title="Example Infinite List"
-      example={<InfiniteListExample />}
-      exampleSrc={InfiniteListExampleSrc}
-    />
-
-    <PropsTable id="props" src={InfiniteListSrc} />
-  </div>
+const DocPage = () => (
+  <DocTemplate
+    packageName={name}
+    readme={ReadMe}
+    srcPath={`https://github.com/cerner/terra-framework/tree/master/packages/${name}`}
+    examples={[
+      {
+        title: 'Example Infinite List',
+        example: <InfiniteListExample />,
+        source: InfiniteListExampleSrc,
+      },
+    ]}
+    propsTables={[
+      {
+        componentSrc: InfiniteListSrc,
+      },
+    ]}
+  />
 );
 
-export default InfiniteListExamples;
+export default DocPage;

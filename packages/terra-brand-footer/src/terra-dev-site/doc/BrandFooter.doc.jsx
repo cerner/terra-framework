@@ -1,33 +1,34 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import React from 'react';
-import PropsTable from 'terra-props-table';
-import Markdown from 'terra-markdown';
-import IndexTemplate from 'terra-dev-site/src/IndexPageTemplate';
-
-import ReadMe from '../../../docs/README.md';
-import { version } from '../../../package.json';
+import DocTemplate from 'terra-doc-template';
+import { name } from '../package.json';
+import ReadMe from '../docs/README.md';
 
 // Component Source
-import BrandFooterSrc from '!raw-loader!../../../src/BrandFooter';
+import BrandFooterSrc from '!raw-loader!../src/BrandFooter';
 
 // Example Files
-import DefaultBrandFooter from './example/DefaultBrandFooter';
-import DefaultBrandFooterSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/DefaultBrandFooter.jsx';
+import DefaultBrandFooter from './index-examples/DefaultBrandFooter.example.jsx';
+import DefaultBrandFooterSrc from '!raw-loader!./index-examples/DefaultBrandFooter.example.jsx';
 
-const BrandFooterExamples = () => (
-  <div>
-    <div id="version">Version: {version}</div>
-    <Markdown id="readme" src={ReadMe} />
-
-    <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
-    <IndexTemplate
-      title="BrandFooter - Default"
-      example={<DefaultBrandFooter />}
-      exampleSrc={DefaultBrandFooterSrc}
-    />
-
-    <PropsTable id="props" src={BrandFooterSrc} />
-  </div>
+const DocPage = () => (
+  <DocTemplate
+    packageName={name}
+    readme={ReadMe}
+    srcPath={`https://github.com/cerner/terra-framework/tree/master/packages/${name}`}
+    examples={[
+      {
+        title: 'BrandFooter - Default',
+        example: <DefaultBrandFooter />,
+        source: DefaultBrandFooterSrc,
+      },
+    ]}
+    propsTables={[
+      {
+        componentSrc: BrandFooterSrc,
+      },
+    ]}
+  />
 );
 
-export default BrandFooterExamples;
+export default DocPage;
