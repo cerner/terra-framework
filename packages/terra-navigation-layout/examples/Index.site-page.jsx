@@ -1,11 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions  */
 import React from 'react';
-import PropsTable from 'terra-props-table';
-import Markdown from 'terra-markdown';
-import IndexTemplate from 'terra-dev-site/src/IndexPageTemplate';
-
+import DocTemplate from 'terra-doc-template';
+import { name } from '../package.json';
 import ReadMe from '../docs/README.md';
-import { version } from '../package.json';
 
 // Component Source
 import NavigationLayoutSrc from '!raw-loader!../src/NavigationLayout.jsx';
@@ -14,23 +11,24 @@ import NavigationLayoutSrc from '!raw-loader!../src/NavigationLayout.jsx';
 import NavigationLayoutStandard from './index-examples/NavigationLayoutStandard';
 import NavigationLayoutStandardSrc from '!raw-loader!./index-examples/NavigationLayoutStandard.jsx';
 
-const NavigationLayoutExamples = () => (
-  <div>
-    <div id="version">
-      Version: {version}
-      <a style={{ float: 'right' }} href={'https://github.com/cerner/terra-framework/blob/master/packages/terra-layout/CHANGELOG.md'}>ChangeLog</a>
-    </div>
-    <Markdown id="readme" src={ReadMe} />
-
-    <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
-    <IndexTemplate
-      title="Example Navigation Layout"
-      example={<NavigationLayoutStandard />}
-      exampleSrc={NavigationLayoutStandardSrc}
-    />
-
-    <PropsTable id="props-table" src={NavigationLayoutSrc} />
-  </div>
+const DocPage = () => (
+  <DocTemplate
+    packageName={name}
+    readme={ReadMe}
+    srcPath={`https://github.com/cerner/terra-framework/tree/master/packages/${name}`}
+    examples={[
+      {
+        title: 'Example Navigation Layout',
+        example: <NavigationLayoutStandard />,
+        source: NavigationLayoutStandardSrc,
+      },
+    ]}
+    propsTables={[
+      {
+        componentSrc: NavigationLayoutSrc,
+      },
+    ]}
+  />
 );
 
-export default NavigationLayoutExamples;
+export default DocPage;
