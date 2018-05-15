@@ -140,6 +140,24 @@ const contextTypes = {
 
 class NotificationDialog extends React.Component {
 
+  componentDidMount() {
+    if (this.props.isFocused && this.props.isOpen && this.props.requestFocus) {
+      this.props.requestFocus();
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.props.isFocused && this.props.isOpen && this.props.requestFocus) {
+      this.props.requestFocus();
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.props.releaseFocus) {
+      this.props.releaseFocus();
+    }
+  }
+
   render() {
     if (!this.props.isOpen) {
       return null;

@@ -21,24 +21,6 @@ class CompleteNotificationDialog extends React.Component {
     this.handleOnReleaseFocus = this.handleOnReleaseFocus.bind(this);
   }
 
-  componentDidMount() {
-    if (this.state.isFocused && this.state.isOpen && this.props.requestFocus) {
-      this.props.requestFocus();
-    }
-  }
-
-  componentDidUpdate() {
-    if (this.state.isFocused && this.state.isOpen && this.props.requestFocus) {
-      this.props.requestFocus();
-    }
-  }
-
-  componentWillUnmount() {
-    if (this.props.releaseFocus) {
-      this.props.releaseFocus();
-    }
-  }
-
   handleOpenModal() {
     this.setState({ isOpen: true });
   }
