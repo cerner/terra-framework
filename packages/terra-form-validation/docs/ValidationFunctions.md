@@ -22,6 +22,37 @@ const minLength = value => {
 }
 ```
 
+In order to use them, you just need to provide the validation prop on the react-final-form Field component, and populate the desired input component with the onChange and value provided through the Field validation library, like in the example usage below:
+
+```jsx
+import { Field } from 'react-final-form';
+import InputField from 'terra-form-input/lib/InputField';
+
+<Field
+  type="text"
+  name="user_name"
+  validate={required}
+>
+  {({ input, meta, placeholder, ...rest }) => (
+    <InputField
+      {...rest}
+      inputId="description"
+      label="Description"
+      error={meta.error}
+      isInvalid={meta.submitFailed}
+      inputAttrs={{
+        placeholder: 'Description',
+        ...input,
+      }}
+      required
+
+      onChange={(e) => { input.onChange(e.target.value); }}
+      value={input.value}
+    />
+  )}
+</Field>
+```
+
 ## Asynchronous Validations
 
 There maybe times you need to do remote validations such as for Unique Username checks. This involved awaiting for a Promise to resolve, and passing it's value off to the validation function.
@@ -52,15 +83,21 @@ Form inputs can be parsed to ensure input values follow specific formats. This c
 
 ```jsx
 const normalizePhone = value => {
-  if (!value) return value
-  const onlyNums = value.replace(/[^\d]/g, '')
-  if (onlyNums.length <= 3) return onlyNums
-  if (onlyNums.length <= 7)
-    return `(${onlyNums.slice(0, 3)}) ${onlyNums.slice(3)}`
-  return `(${onlyNums.slice(0, 3)}) ${onlyNums.slice(3, 6)}-${onlyNums.slice(
-    6,
-    10
-  )}`
+  if (!value) {
+    return value
+  };
+
+  const onlyNums = value.replace(/[^\d]/g, '');
+
+  if (onlyNums.length <= 3) {
+    return onlyNums;
+  }
+
+  else if (onlyNums.length <= 7) {
+    return `(${onlyNums.slice(0, 3)}) ${onlyNums.slice(3)}`;
+  } else {
+    return `(${onlyNums.slice(0, 3)}) ${onlyNums.slice(3, 6)}-${onlyNums.slice(6, 10)}`;
+  }
 }
 
 ```
