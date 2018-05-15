@@ -9,7 +9,13 @@ Terra recommends using [react-final-form](https://github.com/final-form/react-fi
 
 For other functionality that is provided, consult [react-final-form documentation](https://github.com/final-form/react-final-form).
 
-Usage
+Usage:
+
+react-final-form consists of a wrapping Form element that houses the validation logic, and Field elements that validate individual inputs of a given form.
+
+To start, you need to import the Form component from react-final-form, and set the onSubmit and render props of the Form. onSubmit is a function with a single argument that is an object of the submitted form values, and the render function is essentially a function that returns a native form rendered in react. The render function has several different props provided by react-final-form that can be used for creating your forms (see [form render props](https://github.com/final-form/react-final-form#formrenderprops) for all possible options). One thing to note is that inside the render function, handleSubmit needs to be passed into the native form component as well.
+
+Below is a base example of how to set all these steps up:
 
 ```jsx
 import React from 'react';
@@ -88,3 +94,5 @@ export default class MainEntry extends React.Component {
   }
 }
 ```
+
+See links in the sidebar for working with additional validation events and writing custom validations.
