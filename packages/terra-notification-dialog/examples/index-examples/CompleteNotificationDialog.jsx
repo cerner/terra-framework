@@ -12,13 +12,10 @@ class CompleteNotificationDialog extends React.Component {
 
     this.state = {
       isOpen: false,
-      isFocused: false,
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
-    this.handleOnRequestFocus = this.handleOnRequestFocus.bind(this);
-    this.handleOnReleaseFocus = this.handleOnReleaseFocus.bind(this);
   }
 
   handleOpenModal() {
@@ -29,21 +26,12 @@ class CompleteNotificationDialog extends React.Component {
     this.setState({ isOpen: false });
   }
 
-  handleOnRequestFocus() {
-    this.setState({ isFocused: true });
-  }
-
-  handleOnReleaseFocus() {
-    this.setState({ isFocused: false });
-  }
-
   render() {
     return (
       <div>
         <NotificationDialog
           variant={NotificationDialogVariants.ALERT}
           isOpen={this.state.isOpen}
-          isFocused={this.state.isFocused}
           onRequestClose={this.handleCloseModal}
           title="Make sure that the title relates directly to the choices."
           message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
@@ -55,8 +43,6 @@ class CompleteNotificationDialog extends React.Component {
             text: 'Close',
             onClick: this.handleCloseModal,
           }}
-          requestFocus={this.handleOnRequestFocus}
-          releaseFocus={this.handleOnReleaseFocus}
         />
         <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
       </div>
