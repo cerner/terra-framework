@@ -11,10 +11,13 @@ class DefaultDialogModal extends React.Component {
 
     this.state = {
       isOpen: false,
+      isFocused: false,
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.handleOnRequestFocus = this.handleOnRequestFocus.bind(this);
+    this.handleOnReleaseFocus = this.handleOnReleaseFocus.bind(this);
   }
 
   handleOpenModal() {
@@ -23,6 +26,14 @@ class DefaultDialogModal extends React.Component {
 
   handleCloseModal() {
     this.setState({ isOpen: false });
+  }
+
+  handleOnRequestFocus() {
+    this.setState({ isFocused: false });
+  }
+
+  handleOnReleaseFocus() {
+    this.setState({ isFocused: true });
   }
 
   render() {
@@ -43,6 +54,9 @@ class DefaultDialogModal extends React.Component {
           onRequestClose={this.handleCloseModal}
           header={<ActionHeader title="Action Header used here" onClose={this.handleCloseModal} />}
           footer={<ActionFooter start="Footer Goes here" />}
+          isFocused={this.state.isFocused}
+          requestFocus={this.handleOnRequestFocus}
+          releaseFocus={this.handleOnReleaseFocus}
         >
           <p>{paraOne}</p>
         </DialogModal>
