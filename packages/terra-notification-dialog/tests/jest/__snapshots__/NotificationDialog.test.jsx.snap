@@ -4,6 +4,7 @@ exports[`should mount a complete notification-dialog 1`] = `
 <CompleteNotificationDialog>
   <div>
     <NotificationDialog
+      isFocused={false}
       isOpen={false}
       message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
       onRequestClose={[Function]}
@@ -65,6 +66,7 @@ exports[`should mount a complete notification-dialog with long message 1`] = `
 <CompleteNotificationDialogWithLongMessage>
   <div>
     <NotificationDialog
+      isFocused={false}
       isOpen={false}
       message="This is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the message"
       onRequestClose={[Function]}
@@ -127,6 +129,7 @@ exports[`should mount a notification-dialog with no variant 1`] = `
   <div>
     <NotificationDialog
       header="No Variant for this dialog"
+      isFocused={false}
       isOpen={false}
       message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
       onRequestClose={[Function]}
@@ -187,6 +190,7 @@ exports[`should mount a notification-dialog with no variant 1`] = `
 exports[`should shallow a complete notification-dialog 1`] = `
 <div>
   <NotificationDialog
+    isFocused={false}
     isOpen={false}
     message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
     onRequestClose={[Function]}
@@ -223,6 +227,7 @@ exports[`should shallow a complete notification-dialog 1`] = `
 exports[`should shallow a complete notification-dialog with long message 1`] = `
 <div>
   <NotificationDialog
+    isFocused={false}
     isOpen={false}
     message="This is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the message"
     onRequestClose={[Function]}
@@ -260,6 +265,7 @@ exports[`should shallow a notification-dialog with no variant 1`] = `
 <div>
   <NotificationDialog
     header="No Variant for this dialog"
+    isFocused={false}
     isOpen={false}
     message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
     onRequestClose={[Function]}
