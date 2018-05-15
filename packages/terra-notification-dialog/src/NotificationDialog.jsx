@@ -70,10 +70,6 @@ const propTypes = {
    */
   isOpen: PropTypes.bool.isRequired,
   /**
-   * Toggle to focus notification-dialog or not.
-   */
-  isFocused: PropTypes.bool,
-  /**
    * Callback function indicating a close condition was met, should be combined with isOpen for state management.
    */
   onRequestClose: PropTypes.func.isRequired,
@@ -90,7 +86,6 @@ const propTypes = {
 const defaultProps = {
   title: null,
   message: null,
-  isFocused: false,
   variant: variants.CUSTOM,
 };
 
@@ -141,13 +136,13 @@ const contextTypes = {
 class NotificationDialog extends React.Component {
 
   componentDidMount() {
-    if (this.props.isFocused && this.props.isOpen && this.props.requestFocus) {
+    if (this.props.isOpen && this.props.requestFocus) {
       this.props.requestFocus();
     }
   }
 
   componentDidUpdate() {
-    if (this.props.isFocused && this.props.isOpen && this.props.requestFocus) {
+    if (this.props.isOpen && this.props.requestFocus) {
       this.props.requestFocus();
     }
   }
@@ -171,7 +166,6 @@ class NotificationDialog extends React.Component {
       secondaryAction,
       variant,
       customIcon,
-      isFocused,
       isOpen,
       onRequestClose,
       releaseFocus,
@@ -186,7 +180,6 @@ class NotificationDialog extends React.Component {
 
     return (
       <AbstractModal
-        isFocused={isFocused}
         ariaLabel="NotificationDialog"
         classNameModal={notificationDialogClassNames}
         isOpen={this.props.isOpen}
