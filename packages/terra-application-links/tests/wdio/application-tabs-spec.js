@@ -5,7 +5,7 @@ const viewports = Terra.viewports('small', 'large');
 describe('ApplicationTabs', () => {
   describe('Displays a default application tabs', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/terra-application-links/application-tabs-default');
+      browser.url('/#/raw/tests/terra-application-links/application-links/application-tabs-default');
       browser.waitForVisible('#test-tabs [data-application-tabs-more]');
       browser.moveToObject('#test-tabs [data-application-tabs-more]');
     });
@@ -38,7 +38,7 @@ describe('ApplicationTabs', () => {
 
   describe('Displays collapsed application tabs', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/terra-application-links/application-tabs-default');
+      browser.url('/#/raw/tests/terra-application-links/application-links/application-tabs-default');
       browser.waitForVisible('#test-tabs [data-application-tabs-more]');
       browser.click('#test-tabs [data-application-tabs-more]');
       browser.waitForVisible('[data-application-tab-menu-content]');

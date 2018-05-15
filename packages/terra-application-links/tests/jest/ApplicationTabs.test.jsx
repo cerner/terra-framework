@@ -3,7 +3,7 @@ import React from 'react';
 import { IntlProvider } from 'react-intl';
 import ApplicationTabs from '../../src/tabs/ApplicationTabs';
 import messages from '../../translations/en-US.json';
-import testLinkConfig from '../testLinkConfig';
+import testLinkConfig from './testLinkConfig';
 
 const locale = 'en-US';
 
