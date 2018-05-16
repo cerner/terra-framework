@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ModalManager from 'terra-modal-manager';
 import CompleteNotificationDialog from './CompleteNotificationDialog';
@@ -7,10 +6,6 @@ import CompleteNotificationDialog from './CompleteNotificationDialog';
 import styles from './example-styles.scss';
 
 const cx = classNames.bind(styles);
-
-const propTypes = {
-  behavior: PropTypes.string,
-};
 
 const NotificationDialogOnModalManager = () => (
   <div className={cx('example-wrapper')}>
@@ -21,7 +16,5 @@ const NotificationDialogOnModalManager = () => (
     </ModalManager>
   </div>
 );
-
-NotificationDialogOnModalManager.propTypes = propTypes;
 
 export default NotificationDialogOnModalManager;
