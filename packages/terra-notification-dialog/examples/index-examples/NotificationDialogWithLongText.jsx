@@ -109,7 +109,7 @@ class NotificationDialogWithLongText extends React.Component {
     return (
       <div>
         <NotificationDialog
-          variant={NotificationDialogVariants.ALERT}
+          variant={NotificationDialogVariants.WARNING}
           isOpen={this.state.isOpen}
           onRequestClose={this.handleCloseModal}
           title="Make sure that the title relates directly to the choices."
