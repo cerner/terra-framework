@@ -26,6 +26,7 @@ export default class MainEntry extends React.Component {
 
     this.state = {};
     this.submitForm = this.submitForm.bind(this);
+    this.renderForm = this.renderForm.bind(this);
   }
 
   submitForm(values) {
@@ -80,13 +81,19 @@ export default class MainEntry extends React.Component {
           )}
         </Field>
         <Button text="Submit" isDisabled={invalid || pristine} type={Button.Opts.Types.SUBMIT} />
+        {this.state.submittedValues &&
+          <div>
+            <p>Form Submitted Successfully With</p>
+            <pre>{JSON.stringify(this.state.submittedValues, 0, 2)}</pre>
+          </div>
+        }
       </form>
     );
   }
 
   render() {
     return (
-      <Spacer marginTop="small">
+      <Spacer marginBottom="small">
         <Form
           onSubmit={this.submitForm}
           render={this.renderForm}
@@ -105,12 +112,6 @@ export default class MainEntry extends React.Component {
             return errors;
           }}
         />
-        {this.state.submittedValues &&
-          <div>
-            <p>Form Submitted Successfully With</p>
-            <pre>{JSON.stringify(this.state.submittedValues, 0, 2)}</pre>
-          </div>
-        }
       </Spacer>
     );
   }

@@ -94,7 +94,7 @@ export default class MainEntry extends React.Component {
 
   render() {
     return (
-      <Spacer marginTop="small">
+      <Spacer marginBottom="small">
         <Form
           onSubmit={this.submitForm}
           render={this.renderForm}
