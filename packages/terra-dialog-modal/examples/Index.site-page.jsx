@@ -1,11 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import React from 'react';
-import PropsTable from 'terra-props-table';
-import Markdown from 'terra-markdown';
-import IndexTemplate from 'terra-dev-site/src/IndexPageTemplate';
+import DocTemplate from 'terra-doc-template';
 
 import ReadMe from '../docs/README.md';
-import { version } from '../package.json';
+import { name } from '../package.json';
 
 // Component Source
 // eslint-disable-next-line import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions
@@ -18,24 +16,29 @@ import DialogModalWithLongText from './index-examples/DialogModalWithLongText';
 import DialogModalWithLongTextSrc from '!raw-loader!./index-examples/DialogModalWithLongText.jsx';
 
 const DialogModalExamples = () => (
-  <div>
-    <div id="version">Version: {version}</div>
-    <Markdown id="readme" src={ReadMe} />
-
-    <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
-    <IndexTemplate
-      title="DialogModal - Default"
-      example={<DefaultDialogModal />}
-      exampleSrc={DefaultDialogModalSrc}
-    />
-    <IndexTemplate
-      title="DialogModal with longer text and a width of 800"
-      example={<DialogModalWithLongText />}
-      exampleSrc={DialogModalWithLongTextSrc}
-    />
-
-    <PropsTable id="props" src={DialogModalSrc} />
-  </div>
+  <DocTemplate
+    packageName={name}
+    readme={ReadMe}
+    srcPath={`https://github.com/cerner/terra-framework/tree/master/packages/${name}`}
+    examples={[
+      {
+        title: 'Default Dialog Modal',
+        example: <DefaultDialogModal />,
+        source: DefaultDialogModalSrc,
+      },
+      {
+        title: 'Dialog Modal With Long Text',
+        example: <DialogModalWithLongText />,
+        source: DialogModalWithLongTextSrc,
+      },
+    ]}
+    propsTables={[
+      {
+        componentName: 'Dialog Modal',
+        componentSrc: DialogModalSrc,
+      },
+    ]}
+  />
 );
 
 export default DialogModalExamples;
