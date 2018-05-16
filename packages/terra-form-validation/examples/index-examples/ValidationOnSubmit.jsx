@@ -4,10 +4,12 @@ import React from 'react';
 import { Form, Field } from 'react-final-form';
 import InputField from 'terra-form-input/lib/InputField';
 import Checkbox from 'terra-form-checkbox';
+import CheckboxField from 'terra-form-checkbox/lib/CheckboxField';
+import TerraField from 'terra-form-field';
 import Radio from 'terra-form-radio';
+import RadioField from 'terra-form-radio/lib/RadioField';
 import Button from 'terra-button';
 import Spacer from 'terra-spacer';
-import Text from 'terra-text';
 import Select from 'terra-form-select';
 
 const required = value => (value && value.length > 0 ? undefined : 'Required');
@@ -26,7 +28,7 @@ export default class MainEntry extends React.Component {
     });
   }
 
-  renderForm({ handleSubmit }) {
+  renderForm({ handleSubmit, errors, submitFailed }) {
     return (
       <form
         onSubmit={handleSubmit}
@@ -53,77 +55,80 @@ export default class MainEntry extends React.Component {
           )}
         </Field>
         <div>
-          <h2>Which kind of meal would you like?</h2>
-          <Field
-            name="meal"
-            type="radio"
-            value="chicken"
-            validate={required}
-            component={({ input, meta, ...rest }) => (
-              <Radio
-                inputAttrs={{ ...input }}
-                labelText="Chicken"
-                id={input.id}
-                name={input.name}
-                checked={!!input.checked}
-                onChange={input.onChange}
-                value={input.value}
-                {...rest}
-              />
-            )}
-          />
-          <Field
-            name="meal"
-            type="radio"
-            value="vegetarian"
-            validate={required}
-            component={({ input, meta, ...rest }) => (
-              <Radio
-                inputAttrs={{ ...input }}
-                labelText="Vegetarian"
-                id={input.id}
-                name={input.name}
-                checked={!!input.checked}
-                onChange={input.onChange}
-                value={input.value}
-                {...rest}
-              />
-            )}
-          />
-          <Field
-            name="meal"
-            type="radio"
-            value="fish"
-            validate={required}
-            component={({ input, meta, ...rest }) => (
-              <Radio
-                inputAttrs={{ ...input }}
-                labelText="Fish"
-                id={input.id}
-                name={input.name}
-                checked={!!input.checked}
-                onChange={input.onChange}
-                value={input.value}
-                {...rest}
-              />
-            )}
-          />
-          <Field
-            name="meal"
-            subscription={{ error: true, submitFailed: true }}
-            render={({ meta }) => (
-              meta.submitFailed ? <Text color="#e50000">{meta.error}</Text> : null
-            )}
-          />
+          <RadioField
+            legend="Which kind of meal would you like?"
+            isInvalid={submitFailed && errors.meal !== undefined}
+            error={errors.meal}
+          >
+            <Field
+              name="meal"
+              type="radio"
+              value="chicken"
+              validate={required}
+              component={({ input, meta, ...rest }) => (
+                <Radio
+                  inputAttrs={{ ...input }}
+                  labelText="Chicken"
+                  id={input.id}
+                  name={input.name}
+                  checked={!!input.checked}
+                  onChange={input.onChange}
+                  value={input.value}
+                  {...rest}
+                />
+              )}
+            />
+            <Field
+              name="meal"
+              type="radio"
+              value="vegetarian"
+              validate={required}
+              component={({ input, meta, ...rest }) => (
+                <Radio
+                  inputAttrs={{ ...input }}
+                  labelText="Vegetarian"
+                  id={input.id}
+                  name={input.name}
+                  checked={!!input.checked}
+                  onChange={input.onChange}
+                  value={input.value}
+                  {...rest}
+                />
+              )}
+            />
+            <Field
+              name="meal"
+              type="radio"
+              value="fish"
+              validate={required}
+              component={({ input, meta, ...rest }) => (
+                <Radio
+                  inputAttrs={{ ...input }}
+                  labelText="Fish"
+                  id={input.id}
+                  name={input.name}
+                  checked={!!input.checked}
+                  onChange={input.onChange}
+                  value={input.value}
+                  {...rest}
+                />
+              )}
+            />
+          </RadioField>
         </div>
         <Field
           name="travel"
           type="select"
           validate={required}
           component={({ input, meta }) => (
-            <div>
-              <h2>Which Airliner are you traveling on?</h2>
+            <TerraField
+              htmlFor="airliner"
+              label="Which Airliner are you traveling on?"
+              isInvalid={meta.submitFailed && meta.error !== undefined}
+              error={meta.error}
+            >
               <Select
+                id="airliner"
                 name={input.name}
                 onChange={(e, value) => { input.onChange(value); }}
                 defaultValue={input.value}
@@ -133,73 +138,70 @@ export default class MainEntry extends React.Component {
                 <Select.Option value="alaska" display="Alaska" key="alaska" />
                 <Select.Option value="hawaii" display="Hawaii" key="hawaii" />
               </Select>
-              <Text color="#e50000">{meta.submitFailed && meta.error}</Text>
-            </div>
+            </TerraField>
           )}
         />
         <div>
-          <h2>What are all the conference tracks you plan on attending?</h2>
-          <Field
-            name="tracks[]"
-            type="checkbox"
-            value="developer"
-            validate={required}
-            component={({ input, meta, ...rest }) => (
-              <Checkbox
-                inputAttrs={{ ...input }}
-                labelText="Developer"
-                id={input.id}
-                name={input.name}
-                checked={!!input.checked}
-                onChange={input.onChange}
-                value={input.value}
-                {...rest}
-              />
-            )}
-          />
-          <Field
-            name="tracks[]"
-            type="checkbox"
-            value="designer"
-            validate={required}
-            component={({ input, meta, ...rest }) => (
-              <Checkbox
-                inputAttrs={{ ...input }}
-                labelText="Designer"
-                id={input.id}
-                name={input.name}
-                checked={!!input.checked}
-                onChange={input.onChange}
-                value={input.value}
-                {...rest}
-              />
-            )}
-          />
-          <Field
-            name="tracks[]"
-            type="checkbox"
-            value="soft_skills"
-            validate={required}
-            component={({ input, meta, ...rest }) => (
-              <Checkbox
-                inputAttrs={{ ...input }}
-                labelText="Soft skills"
-                id={input.id}
-                name={input.name}
-                checked={!!input.checked}
-                onChange={input.onChange}
-                value={input.value}
-                {...rest}
-              />
-            )}
-          />
-          <Field
-            name="tracks[]"
-            subscription={{ error: true, submitFailed: true }}
-            render={({ meta }) => (
-              meta.submitFailed ? <Text color="#e50000">{meta.error}</Text> : null
-            )}
-          />
+          <CheckboxField
+            legend="What are all the conference tracks you plan on attending?"
+            error={errors.tracks}
+            isInvalid={submitFailed && errors.tracks !== undefined}
+          >
+            <Field
+              name="tracks[]"
+              type="checkbox"
+              value="developer"
+              validate={required}
+              component={({ input, meta, ...rest }) => (
+                <Checkbox
+                  inputAttrs={{ ...input }}
+                  labelText="Developer"
+                  id={input.id}
+                  name={input.name}
+                  checked={!!input.checked}
+                  onChange={input.onChange}
+                  value={input.value}
+                  {...rest}
+                />
+              )}
+            />
+            <Field
+              name="tracks[]"
+              type="checkbox"
+              value="designer"
+              validate={required}
+              component={({ input, meta, ...rest }) => (
+                <Checkbox
+                  inputAttrs={{ ...input }}
+                  labelText="Designer"
+                  id={input.id}
+                  name={input.name}
+                  checked={!!input.checked}
+                  onChange={input.onChange}
+                  value={input.value}
+                  {...rest}
+                />
+              )}
+            />
+            <Field
+              name="tracks[]"
+              type="checkbox"
+              value="soft_skills"
+              validate={required}
+              component={({ input, meta, ...rest }) => (
+                <Checkbox
+                  inputAttrs={{ ...input }}
+                  labelText="Soft skills"
+                  id={input.id}
+                  name={input.name}
+                  checked={!!input.checked}
+                  onChange={input.onChange}
+                  value={input.value}
+                  {...rest}
+                />
+              )}
+            />
+          </CheckboxField>
         </div>
         <Button text="Submit" type={Button.Opts.Types.SUBMIT} />
       </form>
