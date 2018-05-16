@@ -69,7 +69,7 @@
     "start:build": "npm run generate-config && npm run start",
     "start-heroku": "tt:serve-static --site build ",
     "test": "jest && npm run wdio",
-    "wdio": "wdio"
+    "wdio": "wdio node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -110,7 +110,7 @@
     "stylelint-scss": "^3.1.0",
     "stylelint-suitcss": "^3.0.0",
     "terra-dev-site": "0.6.0",
-    "terra-toolkit": "git://github.com/cerner/terra-toolkit.git#test_parallel",
+    "terra-toolkit": "^3.3.1",
     "xfc": "^1.2.1"
   }
 }
