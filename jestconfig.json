@@ -3,7 +3,9 @@
     "raf/polyfill",
     "./jestsetup.js"
   ],
-  "testPathIgnorePatterns":["/node_modules/", "/terra-dev-site/"],
+  "testMatch": [
+    "**/tests/**/(*.)(spec|test).js?(x)"
+  ],
   "snapshotSerializers": [
     "./node_modules/enzyme-to-json/serializer"
   ],
