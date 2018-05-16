@@ -14,6 +14,8 @@ import DefaultDialogModal from './index-examples/DefaultDialogModal';
 import DefaultDialogModalSrc from '!raw-loader!./index-examples/DefaultDialogModal.jsx';
 import DialogModalWithLongText from './index-examples/DialogModalWithLongText';
 import DialogModalWithLongTextSrc from '!raw-loader!./index-examples/DialogModalWithLongText.jsx';
+import DialogModalOnModalManager from './index-examples/DialogModalOnModalManager';
+import DialogModalOnModalManagerSrc from '!raw-loader!./index-examples/DialogModalOnModalManager.jsx';
 
 const DialogModalExamples = () => (
   <DocTemplate
@@ -30,6 +32,11 @@ const DialogModalExamples = () => (
         title: 'Dialog Modal With Long Text',
         example: <DialogModalWithLongText />,
         source: DialogModalWithLongTextSrc,
+      },
+      {
+        title: 'Dialog Modal On Modal Manager',
+        example: <DialogModalOnModalManager />,
+        source: DialogModalOnModalManagerSrc,
       },
     ]}
     propsTables={[
