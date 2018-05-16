@@ -50,9 +50,8 @@ export default class MainEntry extends React.Component {
           validate={required}
           parse={numericOnly}
         >
-          {({ input, meta, ...rest }) => (
+          {({ input, meta }) => (
             <InputField
-              {...rest}
               inputId="vacation-days"
               label="Vacation Days Remaining"
               error={meta.error}
@@ -72,9 +71,8 @@ export default class MainEntry extends React.Component {
           validate={required}
           parse={enforcePhoneNumber}
         >
-          {({ input, meta, ...rest }) => (
+          {({ input, meta }) => (
             <InputField
-              {...rest}
               inputId="phone-number"
               label="Phone Number"
               error={meta.error}

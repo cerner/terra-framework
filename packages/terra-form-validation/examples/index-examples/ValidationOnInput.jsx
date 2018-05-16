@@ -41,9 +41,8 @@ export default class MainEntry extends React.Component {
         <Field
           name="description"
         >
-          {({ input, meta, placeholder, ...rest }) => (
+          {({ input, meta }) => (
             <InputField
-              {...rest}
               inputId="profile-description"
               label="Description"
               error={meta.error}
@@ -62,9 +61,8 @@ export default class MainEntry extends React.Component {
           name="user_name"
           validate={validateUniqueUser}
         >
-          {({ input, meta, ...rest }) => (
+          {({ input, meta }) => (
             <InputField
-              {...rest}
               inputId="user-name"
               label="User Name"
               error={meta.error}

@@ -42,9 +42,8 @@ export default class MainEntry extends React.Component {
           name="user_name"
           validate={validateUniqueUser}
         >
-          {({ input, meta, ...rest }) => (
+          {({ input, meta }) => (
             <InputField
-              {...rest}
               inputId="user-name-async"
               label="User Name"
               error={meta.error}

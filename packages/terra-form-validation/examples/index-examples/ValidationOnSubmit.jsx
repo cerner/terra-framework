@@ -37,9 +37,8 @@ export default class MainEntry extends React.Component {
           name="description"
           validate={required}
         >
-          {({ input, meta, placeholder, ...rest }) => (
+          {({ input, meta }) => (
             <InputField
-              {...rest}
               inputId="description"
               label="Description"
               error={meta.error}
@@ -65,7 +64,7 @@ export default class MainEntry extends React.Component {
               type="radio"
               value="chicken"
               validate={required}
-              component={({ input, meta, ...rest }) => (
+              component={({ input }) => (
                 <Radio
                   inputAttrs={{ ...input }}
                   labelText="Chicken"
@@ -74,7 +73,6 @@ export default class MainEntry extends React.Component {
                   checked={!!input.checked}
                   onChange={input.onChange}
                   value={input.value}
-                  {...rest}
                 />
               )}
             />
@@ -83,7 +81,7 @@ export default class MainEntry extends React.Component {
               type="radio"
               value="vegetarian"
               validate={required}
-              component={({ input, meta, ...rest }) => (
+              component={({ input }) => (
                 <Radio
                   inputAttrs={{ ...input }}
                   labelText="Vegetarian"
@@ -92,7 +90,6 @@ export default class MainEntry extends React.Component {
                   checked={!!input.checked}
                   onChange={input.onChange}
                   value={input.value}
-                  {...rest}
                 />
               )}
             />
@@ -101,7 +98,7 @@ export default class MainEntry extends React.Component {
               type="radio"
               value="fish"
               validate={required}
-              component={({ input, meta, ...rest }) => (
+              component={({ input }) => (
                 <Radio
                   inputAttrs={{ ...input }}
                   labelText="Fish"
@@ -110,7 +107,6 @@ export default class MainEntry extends React.Component {
                   checked={!!input.checked}
                   onChange={input.onChange}
                   value={input.value}
-                  {...rest}
                 />
               )}
             />
@@ -152,7 +148,7 @@ export default class MainEntry extends React.Component {
               type="checkbox"
               value="developer"
               validate={required}
-              component={({ input, meta, ...rest }) => (
+              component={({ input }) => (
                 <Checkbox
                   inputAttrs={{ ...input }}
                   labelText="Developer"
@@ -161,7 +157,6 @@ export default class MainEntry extends React.Component {
                   checked={!!input.checked}
                   onChange={input.onChange}
                   value={input.value}
-                  {...rest}
                 />
               )}
             />
@@ -170,7 +165,7 @@ export default class MainEntry extends React.Component {
               type="checkbox"
               value="designer"
               validate={required}
-              component={({ input, meta, ...rest }) => (
+              component={({ input }) => (
                 <Checkbox
                   inputAttrs={{ ...input }}
                   labelText="Designer"
@@ -179,7 +174,6 @@ export default class MainEntry extends React.Component {
                   checked={!!input.checked}
                   onChange={input.onChange}
                   value={input.value}
-                  {...rest}
                 />
               )}
             />
@@ -188,7 +182,7 @@ export default class MainEntry extends React.Component {
               type="checkbox"
               value="soft_skills"
               validate={required}
-              component={({ input, meta, ...rest }) => (
+              component={({ input }) => (
                 <Checkbox
                   inputAttrs={{ ...input }}
                   labelText="Soft skills"
@@ -197,7 +191,6 @@ export default class MainEntry extends React.Component {
                   checked={!!input.checked}
                   onChange={input.onChange}
                   value={input.value}
-                  {...rest}
                 />
               )}
             />
