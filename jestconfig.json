@@ -4,7 +4,7 @@
     "./jestsetup.js"
   ],
   "testMatch": [
-    "**/tests/**/(*.)(spec|test).js?(x)"
+    "**/jest/**/(*.)(spec|test).js?(x)"
   ],
   "snapshotSerializers": [
     "./node_modules/enzyme-to-json/serializer"
