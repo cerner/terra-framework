@@ -12,7 +12,7 @@ const propTypes = {
   behavior: PropTypes.string,
 };
 
-const ModalManagerExample = () => (
+const NotificationDialogOnModalManager = () => (
   <div className={cx('example-wrapper')}>
     <ModalManager>
       <h4> Notification Dialog on Modal Manager</h4>
@@ -22,6 +22,6 @@ const ModalManagerExample = () => (
   </div>
 );
 
-ModalManagerExample.propTypes = propTypes;
+NotificationDialogOnModalManager.propTypes = propTypes;
 
-export default ModalManagerExample;
+export default NotificationDialogOnModalManager;
