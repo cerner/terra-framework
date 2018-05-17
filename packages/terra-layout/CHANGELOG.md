@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Moved examples to src
 
 2.4.0 - (April 30, 2018)
 ------------------
