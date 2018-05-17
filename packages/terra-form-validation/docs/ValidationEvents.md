@@ -2,7 +2,7 @@
 
 ## Dynamic Validation
 
-The default behavior of *react-final-form* is to dynamically validate, meaning it validates the content while the user is interacting with the form, and when a form loads. To use this behavior, simply use the error key of the meta data passed to an individual form component, and pass it to the error prop of either the InputField or TextareaField, like in the example below.
+The default behavior of *react-final-form* is to dynamically validate, meaning it validates the content while the user is interacting with the form, and when a form loads. To use this behavior, simply use the error key of the meta data passed to an individual form component, and pass it to the error prop of the Terra Field component (TextareaField, InputField, ...), like in the example below.
 
 ```jsx
 import React from 'react';
@@ -60,7 +60,7 @@ import InputField from 'terra-form-input/lib/InputField';
 </Field>
 ```
 
-## Disable form submit for an invalid form
+## Disable form submission for an invalid form
 
 The form render function contains attributes such as invalid (the form has errors on it) and pristine (the form has not been touched yet by the user) that allow for you to enable and disable the submission button. All you need to do is pass in the attribute you wish to check in order to see if the button should be enabled or not.
 
