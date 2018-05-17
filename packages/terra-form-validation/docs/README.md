@@ -23,12 +23,8 @@ To get a visual on what the implementation looks like, see below:
 import React from 'react';
 import { Form, Field } from 'react-final-form';
 import InputField from 'terra-form-input/lib/InputField';
-import Checkbox from 'terra-form-checkbox';
-import Radio from 'terra-form-radio';
 import Button from 'terra-button';
 import Spacer from 'terra-spacer';
-import Text from 'terra-text';
-import Select from 'terra-form-select';
 
 const required = value => (value && value.length > 0 ? undefined : 'Required');
 

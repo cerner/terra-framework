@@ -5,6 +5,10 @@
 The default behavior of *react-final-form* is to dynamically validate, meaning it validates the content while the user is interacting with the form, and when a form loads. To use this behavior, simply use the error key of the meta data passed to an individual form component, and pass it to the error prop of either the InputField or TextareaField, like in the example below.
 
 ```jsx
+import React from 'react';
+import { Field } from 'react-final-form';
+import InputField from 'terra-form-input/lib/InputField';
+
   <Field
     name="description"
   >
@@ -31,6 +35,7 @@ The default behavior of *react-final-form* is to dynamically validate, meaning i
 Validating on submit is easy as well. In addition to meta.error, the meta.submitFailed boolean value can be used to identify when a form submission did not succeed.
 
 ```jsx
+import React from 'react';
 import { Field } from 'react-final-form';
 import InputField from 'terra-form-input/lib/InputField';
 
