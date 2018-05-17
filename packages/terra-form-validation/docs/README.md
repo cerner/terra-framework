@@ -1,6 +1,6 @@
 # Form Validation
 
-Terra recommends using [react-final-form](https://github.com/final-form/react-final-form) to write from validations for components. This package contains several different hooks and functionality for performing validations at various levels which include:
+Terra recommends using [react-final-form](https://github.com/final-form/react-final-form) to write form validations for components. This package contains several different hooks and functionality for performing validations at various levels which include:
 
 - Validating onChange
 - Validating onSubmit
@@ -15,7 +15,7 @@ react-final-form consists of a wrapping Form element that houses the validation 
 
 To start, you need to import the Form component from react-final-form, and set the onSubmit and render props of the Form. onSubmit is a function with a single argument that is an object of the submitted form values, and the render function is essentially a function that returns a native form rendered in react. The render function has several different props provided by react-final-form that can be used for creating your forms (see [form render props](https://github.com/final-form/react-final-form#formrenderprops) for all possible options). One thing to note is that inside the render function, handleSubmit needs to be passed into the native form component as well.
 
-When rendering individual fields inside the form, there are a few things that need to be done. The first is to create a Field component using the Field object from react-final-form, and setting the name, initial value, and validate props. Then inside the Field children, render a function with the arguments input and meta. input prop contains information specific to the event such as value and name, and meta includes information related to field errors, submission state, validity status. You can view more of the provided attributes [here](https://github.com/final-form/react-final-form#fieldrenderprops). For immediate use, make sure that the function returns a form element with the onChange, value, and other input attributes set appropriately.
+When rendering individual fields inside the form, there are a few things that need to be done. The first is to create a Field component using the Field object from react-final-form, and setting the name, initial value, and validate props. Then inside the Field children, render a function with the arguments input and meta. The input prop contains information specific to the event such as value and name, and meta includes information related to field errors, submission state, validity status. You can view more of the provided attributes [here](https://github.com/final-form/react-final-form#fieldrenderprops). For immediate use, make sure that the function returns a form element with the onChange, value, and other input attributes set appropriately.
 
 To get a visual on what the implementation looks like, see below:
 
