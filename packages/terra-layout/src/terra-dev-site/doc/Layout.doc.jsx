@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions, import/no-duplicates */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { name } from '../../../package.json';
@@ -9,11 +9,11 @@ import LayoutSrc from '!raw-loader!../../../src/Layout.jsx';
 
 // Example Files
 import LayoutStandard from './example/LayoutStandard';
-import LayoutStandardSrc from '!raw-loader!./example/LayoutStandard.jsx';
+import LayoutStandardSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/LayoutStandard.jsx';
 import LayoutMenuDisabled from './example/LayoutMenuDisabled';
-import LayoutMenuDisabledSrc from '!raw-loader!./example/LayoutMenuDisabled.jsx';
+import LayoutMenuDisabledSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/LayoutMenuDisabled.jsx';
 import LayoutNoHeader from './example/LayoutNoHeader';
-import LayoutNoHeaderSrc from '!raw-loader!./example/LayoutNoHeader.jsx';
+import LayoutNoHeaderSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/LayoutNoHeader.jsx';
 
 const DocPage = () => (
   <DocTemplate

@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions, import/no-duplicates */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { MemoryRouter } from 'react-router-dom';
@@ -8,7 +8,7 @@ import ApplicationLinkConfig from './common/ApplicationLinkConfig';
 
 // Component Source
 import TabsSrc from '!raw-loader!../../../src/tabs/ApplicationTabs.jsx';
-import TabExampleSrc from '!raw-loader!./example/ApplicationTabsExample.jsx';
+import TabExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/ApplicationTabsExample.jsx';
 
 // Example Files
 import ApplicationTabsExample from './example/ApplicationTabsExample';

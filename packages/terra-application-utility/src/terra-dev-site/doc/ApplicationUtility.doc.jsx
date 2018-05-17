@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions, import/no-duplicates */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { name } from '../../../package.json';
@@ -11,9 +11,9 @@ import ApplicationHeaderUtilitySrc from '!raw-loader!../../../src/ApplicationHea
 import ApplicationHeaderUtilityExample from './example/ApplicationHeaderUtilityExample';
 import ApplicationMenuUtilityExample from './example/ApplicationMenuUtilityExample';
 import MenuUtilityMenuExample from './example/MenuUtilityMenuExample';
-import ApplicationHeaderUtilityExampleSrc from '!raw-loader!./example/ApplicationHeaderUtilityExample.jsx';
-import MenuUtilityMenuExampleSrc from '!raw-loader!./example/MenuUtilityMenuExample.jsx';
-import ApplicationMenuUtilityExampleSrc from '!raw-loader!./example/ApplicationMenuUtilityExample.jsx';
+import ApplicationHeaderUtilityExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/ApplicationHeaderUtilityExample.jsx';
+import MenuUtilityMenuExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/MenuUtilityMenuExample.jsx';
+import ApplicationMenuUtilityExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/ApplicationMenuUtilityExample.jsx';
 
 const DocPage = () => (
   <DocTemplate

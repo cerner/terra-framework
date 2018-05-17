@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions, import/no-duplicates */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { name } from '../../../package.json';
@@ -9,15 +9,15 @@ import AggregatorSrc from '!raw-loader!../../../src/Aggregator.jsx';
 
 // Example Files
 import StandaloneAggregatorExample from './example/StandaloneAggregatorExample';
-import StandaloneAggregatorExampleSrc from '!raw-loader!./example/StandaloneAggregatorExample';
+import StandaloneAggregatorExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/StandaloneAggregatorExample.jsx';
 import CustomRenderAggregatorExample from './example/CustomRenderAggregatorExample';
-import CustomRenderAggregatorExampleSrc from '!raw-loader!./example/CustomRenderAggregatorExample';
+import CustomRenderAggregatorExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/CustomRenderAggregatorExample.jsx';
 import AggregatorInModalExample from './example/AggregatorInModalExample';
-import AggregatorInModalExampleSrc from '!raw-loader!./example/AggregatorInModalExample';
+import AggregatorInModalExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/AggregatorInModalExample.jsx';
 import CombinedDisclosureExample from './example/CombinedDisclosureExample';
-import CombinedDisclosureExampleSrc from '!raw-loader!./example/CombinedDisclosureExample';
+import CombinedDisclosureExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/CombinedDisclosureExample.jsx';
 import DisclosureBypassExample from './example/DisclosureBypassExample';
-import DisclosureBypassExampleSrc from '!raw-loader!./example/DisclosureBypassExample';
+import DisclosureBypassExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/DisclosureBypassExample.jsx';
 
 const DocPage = () => (
   <DocTemplate

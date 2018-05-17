@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions, import/no-duplicates */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { name } from '../../../package.json';
@@ -9,7 +9,7 @@ import SlidePanelManagerSrc from '!raw-loader!../../../src/SlidePanelManager.jsx
 
 // Examples
 import SlidePanelManagerExample from './example/SlidePanelManagerExample';
-import SlidePanelManagerExampleSrc from '!raw-loader!./example/SlidePanelManagerExample';
+import SlidePanelManagerExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/SlidePanelManagerExample.jsx';
 
 const DocPage = () => (
   <DocTemplate

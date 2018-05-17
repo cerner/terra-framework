@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions, import/no-duplicates */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { name } from '../../../package.json';
@@ -7,8 +7,8 @@ import ReadMe from '../../../docs/README.md';
 // Component Source
 import HookshotSrc from '!raw-loader!../../../src/Hookshot';
 import HookshotContentSrc from '!raw-loader!../../../src/HookshotContent';
-import HookshotExampleSrc from '!raw-loader!./example/HookshotExample';
-import BoundedHookshotExampleSrc from '!raw-loader!./example/BoundedHookshotExample';
+import HookshotExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/HookshotExample.jsx';
+import BoundedHookshotExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/BoundedHookshotExample.jsx';
 
 // Example Files
 import HookshotExample from './example/HookshotExample';

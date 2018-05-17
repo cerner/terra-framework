@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions, import/no-duplicates */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { name } from '../../../package.json';
@@ -9,7 +9,7 @@ import ThemeProviderSrc from '!raw-loader!../../../src/ThemeProvider';
 
 // Example Files
 import DefaultThemeProvider from './example/DefaultThemeProvider';
-import DefaultThemeProviderSrc from '!raw-loader!./example/DefaultThemeProvider.jsx';
+import DefaultThemeProviderSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/DefaultThemeProvider.jsx';
 
 const DocPage = () => (
   <DocTemplate

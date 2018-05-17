@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions, import/no-duplicates */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { name } from '../../../package.json';
@@ -6,8 +6,8 @@ import ReadMe from '../../../docs/README.md';
 
 // Component Source
 import ApplicationHeaderNameSrc from '!raw-loader!../../../src/ApplicationHeaderName.jsx';
-import ApplicationHeaderNameStandardSrc from '!raw-loader!./example/ApplicationHeaderNameStandard.jsx';
-import ApplicationMenuNameStandardSrc from '!raw-loader!./example/ApplicationMenuNameStandard.jsx';
+import ApplicationHeaderNameStandardSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/ApplicationHeaderNameStandard.jsx';
+import ApplicationMenuNameStandardSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/ApplicationMenuNameStandard.jsx';
 
 // Example Files
 import ApplicationHeaderNameStandard from './example/ApplicationHeaderNameStandard';

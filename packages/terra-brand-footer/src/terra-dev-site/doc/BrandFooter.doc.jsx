@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions, import/no-duplicates */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { name } from '../../../package.json';
@@ -8,8 +8,8 @@ import ReadMe from '../../../docs/README.md';
 import BrandFooterSrc from '!raw-loader!../../../src/BrandFooter';
 
 // Example Files
-import DefaultBrandFooter from './example/DefaultBrandFooter.jsx';
-import DefaultBrandFooterSrc from '!raw-loader!./example/DefaultBrandFooter.jsx';
+import DefaultBrandFooter from './example/DefaultBrandFooter';
+import DefaultBrandFooterSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/DefaultBrandFooter.jsx';
 
 const DocPage = () => (
   <DocTemplate

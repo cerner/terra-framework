@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions, import/no-duplicates */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { name } from '../../../package.json';
@@ -9,23 +9,23 @@ import PopupSrc from '!raw-loader!terra-popup/src/Popup.jsx';
 
 // Example Files
 import PopupStandard from './example/PopupStandard';
-import PopupStandardSrc from '!raw-loader!./example/PopupStandard';
+import PopupStandardSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/PopupStandard.jsx';
 import PopupBounded from './example/PopupBounded';
-import PopupBoundedSrc from '!raw-loader!./example/PopupBounded';
+import PopupBoundedSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/PopupBounded.jsx';
 import PopupNoHeader from './example/PopupNoHeader';
-import PopupNoHeaderSrc from '!raw-loader!./example/PopupNoHeader';
+import PopupNoHeaderSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/PopupNoHeader.jsx';
 import PopupWithArrow from './example/PopupWithArrow';
-import PopupWithArrowSrc from '!raw-loader!./example/PopupWithArrow';
+import PopupWithArrowSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/PopupWithArrow.jsx';
 import PopupClassName from './example/PopupClassName';
-import PopupClassNameSrc from '!raw-loader!./example/PopupClassName';
+import PopupClassNameSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/PopupClassName.jsx';
 import PopupDimensions from './example/PopupDimensions';
-import PopupDimensionsSrc from '!raw-loader!./example/PopupDimensions';
+import PopupDimensionsSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/PopupDimensions.jsx';
 import PopupInsideModal from './example/PopupInsideModal';
-import PopupInsideModalSrc from '!raw-loader!./example/PopupInsideModal';
+import PopupInsideModalSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/PopupInsideModal.jsx';
 import PopupAttachmentBehavior from './example/PopupAttachmentBehavior';
-import PopupAttachmentBehaviorSrc from '!raw-loader!./example/PopupAttachmentBehavior';
+import PopupAttachmentBehaviorSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/PopupAttachmentBehavior.jsx';
 import PopupAttachments from './example/PopupAttachments';
-import PopupAttachmentsSrc from '!raw-loader!./example/PopupAttachments';
+import PopupAttachmentsSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/PopupAttachments.jsx';
 
 const DocPage = () => (
   <DocTemplate

@@ -1,9 +1,9 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions, import/no-duplicates */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { name } from '../../../../package.json';
 import ModalManagerExample from '../example/ModalManagerExample';
-import ModalManagerExampleSrc from '!raw-loader!../example/ModalManagerExample';
+import ModalManagerExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ModalManagerExample';
 import Example from '../../../../docs/example.md';
 
 const DocPage = () => (

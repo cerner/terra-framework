@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions, import/no-duplicates */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { name } from '../../../package.json';
@@ -9,7 +9,7 @@ import NavigationSideMenuSrc from '!raw-loader!../../../src/NavigationSideMenu.j
 
 // Examples
 import NavigationSideMenuExample from './example/NavigationSideMenuExample';
-import NavigationSideMenuExampleSrc from '!raw-loader!./example/NavigationSideMenuExample.jsx';
+import NavigationSideMenuExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/NavigationSideMenuExample.jsx';
 
 const DocPage = () => (
   <DocTemplate
