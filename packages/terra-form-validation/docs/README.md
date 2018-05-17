@@ -9,6 +9,12 @@ Terra recommends using [react-final-form](https://github.com/final-form/react-fi
 
 For other functionality that is provided, consult [react-final-form documentation](https://github.com/final-form/react-final-form).
 
+## Integration with Terra
+
+To easily integrate react-final-form with Terra form elements, we have created individual Field components inside of terra-form-input (InputField), terra-form-textarea (TextareaField), terra-form-radio (RadioField) and terra-form-checkbox (CheckboxField). For integrating with terra-form-select components, a Select element can be combined with a terra-form-field component. There are future enhancements to add a Field component to terra-form-select.
+
+For all of these field components, the isInvalid and error props of the Fields will be set from the data coming from react-final-form.
+
 ## Usage
 
 react-final-form consists of a wrapping Form element that houses the validation logic, and Field elements that validate individual inputs of a given form.
