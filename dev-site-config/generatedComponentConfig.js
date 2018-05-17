@@ -14,6 +14,7 @@ import TerraApplicationUtilityIndex from '../packages/terra-application-utility/
 import TerraBrandFooterIndex from '../packages/terra-brand-footer/examples/Index.site-page';
 import TerraDisclosureManagerIndex from '../packages/terra-disclosure-manager/examples/Index.site-page';
 import TerraFormValidationIndex from '../packages/terra-form-validation/examples/Index.site-page';
+import TerraFormValidationValidationComponents from '../packages/terra-form-validation/examples/ValidationComponents.site-page';
 import TerraFormValidationValidationEvents from '../packages/terra-form-validation/examples/ValidationEvents.site-page';
 import TerraFormValidationValidationFunctions from '../packages/terra-form-validation/examples/ValidationFunctions.site-page';
 import TerraHookshotIndex from '../packages/terra-hookshot/examples/Index.site-page';
@@ -55,8 +56,8 @@ import DefaultApplicationHeaderUtility from '../packages/terra-application-utili
 import DefaultApplicationMenuUtility from '../packages/terra-application-utility/examples/test-examples/DefaultApplicationMenuUtility.example';
 import DefaultHeaderUtilityMenu from '../packages/terra-application-utility/examples/test-examples/DefaultHeaderUtilityMenu.example';
 import DefaultMenuUtilityMenu from '../packages/terra-application-utility/examples/test-examples/DefaultMenuUtilityMenu.example';
-import DefaultBrandFooter from '../packages/terra-brand-footer/examples/test-examples/DefaultBrandFooter.example';
 import ActiveBrandFooter from '../packages/terra-brand-footer/examples/test-examples/ActiveBrandFooter.example';
+import DefaultBrandFooter from '../packages/terra-brand-footer/examples/test-examples/DefaultBrandFooter.example';
 import HoveredBrandFooter from '../packages/terra-brand-footer/examples/test-examples/HoveredBrandFooter.example';
 import DefaultHookshot from '../packages/terra-hookshot/examples/test-examples/DefaultHookshot.example';
 import HookshotAttachmentBehaviorAuto from '../packages/terra-hookshot/examples/test-examples/HookshotAttachmentBehaviorAuto.example';
@@ -382,6 +383,11 @@ const componentConfig = {
     ],
     tests: [
       {
+        name: 'Active Brand Footer',
+        path: '/active-brand-footer',
+        component: ActiveBrandFooter,
+      },
+      {
         name: 'Default Brand Footer',
         path: '/default-brand-footer',
         component: DefaultBrandFooter,
@@ -390,11 +396,6 @@ const componentConfig = {
         name: 'Hovered Brand Footer',
         path: '/hovered-brand-footer',
         component: HoveredBrandFooter,
-      },
-      {
-        name: 'Active Brand Footer',
-        path: '/active-brand-footer',
-        component: ActiveBrandFooter,
       },
     ],
   },
@@ -417,6 +418,11 @@ const componentConfig = {
         name: 'Index',
         path: '/index',
         component: TerraFormValidationIndex,
+      },
+      {
+        name: 'Validation Components',
+        path: '/validation-components',
+        component: TerraFormValidationValidationComponents,
       },
       {
         name: 'Validation Events',
