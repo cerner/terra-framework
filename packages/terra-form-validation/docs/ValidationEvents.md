@@ -30,9 +30,9 @@ import InputField from 'terra-form-input/lib/InputField';
   </Field>
 ```
 
-## Validation on submit
+## Display Validation onSubmit
 
-Validating on submit is easy as well. In addition to meta.error, the meta.submitFailed boolean value can be used to identify when a form submission did not succeed.
+Forms written with react-final-form are always validated dynamically, but you can delay showing the validation errors until the form is submitted. The meta argument contains an attribute submitFailed that indicates the last submit was a failure. To display errors on validation, set the isInvalid prop equal to meta.submitFailed like in the example below.
 
 ```jsx
 import React from 'react';
@@ -69,6 +69,7 @@ Example
 ```jsx
 import { Form, Field } from 'react-final-form';
 import InputField from 'terra-form-input/lib/InputField';
+import Button from 'terra-button';
 
   render() {
     return (
