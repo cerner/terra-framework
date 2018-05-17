@@ -1,5 +1,4 @@
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import ResponsiveElement from 'terra-responsive-element/lib/ResponsiveElement';
 import ApplicationHeaderLayout from '../../../ApplicationHeaderLayout';
 import ExtensionsExample from '../common/ExtensionsExample';

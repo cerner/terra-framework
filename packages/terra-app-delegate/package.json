@@ -20,6 +20,9 @@
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
+  "peerDependencies": {
+    "react": "^16.2.0"
+  },
   "dependencies": {
     "prop-types": "^15.5.8",
     "terra-doc-template": "^1.1.0"

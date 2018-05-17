@@ -1,11 +1,11 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions, import/no-duplicates */
+/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-duplicates */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { name } from '../../../package.json';
-import ReadMe from 'terra-popup/docs/README.md';
+import ReadMe from '../../../docs/README.md';
 
 // Component Source
-import PopupSrc from '!raw-loader!terra-popup/src/Popup.jsx';
+import PopupSrc from '!raw-loader!../../../src/Popup.jsx';
 
 // Example Files
 import PopupStandard from './example/PopupStandard';
