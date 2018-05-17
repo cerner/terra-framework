@@ -2,7 +2,7 @@
 
 *react-final-form* gives you the ability to create your own validation functions. For custom validations, the idea is that a message will be returned if the function finds an error with the form input value, or returns undefined if no errors are detected for the given input value.
 
-Example validation functions
+**Example validation functions**
 
 ```js
 const required = value => (value ? undefined : 'Required')
@@ -57,7 +57,7 @@ import InputField from 'terra-form-input/lib/InputField';
 
 There maybe times you need to do remote validations such as Unique Username checks. This involves awaiting for a Promise to resolve, and passing it's value off to the validation function.
 
-Example Asynchronous Validation
+**Example Asynchronous Validation**
 
 ```jsx
 const validateUniqueUser = async (name) => {
