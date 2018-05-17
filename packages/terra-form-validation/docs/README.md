@@ -9,7 +9,7 @@ Terra recommends using [react-final-form](https://github.com/final-form/react-fi
 
 For other functionality that is provided, consult [react-final-form documentation](https://github.com/final-form/react-final-form).
 
-Usage:
+## Usage
 
 react-final-form consists of a wrapping Form element that houses the validation logic, and Field elements that validate individual inputs of a given form.
 
