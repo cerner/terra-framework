@@ -68,7 +68,6 @@
     "publish": "npm whoami && check-installed-dependencies && npm run compile && npm test && lerna publish",
     "postpublish": "npm run dependency-markdown && git add --all && git commit -m 'Updated DEPENDENCIES.md files'",
     "start": "tt:serve",
-    "start:build": "npm run generate-config && npm run start",
     "start-heroku": "tt:serve-static --site build ",
     "test": "jest && npm run wdio",
     "wdio": "wdio node_modules/terra-dev-site/config/wdio/wdio.conf.js",
