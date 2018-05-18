@@ -13,7 +13,7 @@ import TerraApplicationNameIndex from '../packages/terra-application-name/exampl
 import TerraApplicationUtilityIndex from '../packages/terra-application-utility/examples/Index.site-page';
 import TerraBrandFooterIndex from '../packages/terra-brand-footer/examples/Index.site-page';
 import TerraDisclosureManagerIndex from '../packages/terra-disclosure-manager/examples/Index.site-page';
-import TerraFormValidationIndex from '../packages/terra-form-validation/examples/Index.site-page';
+import TerraFormValidationFormValidation from '../packages/terra-form-validation/examples/FormValidation.site-page';
 import TerraFormValidationValidationComponents from '../packages/terra-form-validation/examples/ValidationComponents.site-page';
 import TerraFormValidationValidationEvents from '../packages/terra-form-validation/examples/ValidationEvents.site-page';
 import TerraFormValidationValidationFunctions from '../packages/terra-form-validation/examples/ValidationFunctions.site-page';
@@ -415,9 +415,9 @@ const componentConfig = {
     path: '/form-validation',
     pages: [
       {
-        name: 'Index',
-        path: '/index',
-        component: TerraFormValidationIndex,
+        name: 'Form Validation',
+        path: '/form-validation',
+        component: TerraFormValidationFormValidation,
       },
       {
         name: 'Validation Components',
