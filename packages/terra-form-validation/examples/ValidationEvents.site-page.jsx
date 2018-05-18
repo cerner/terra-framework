@@ -27,11 +27,6 @@ const FormValidationExamples = () => (
         source: ValidationOnSubmitSrc,
       },
       {
-        title: 'Validation onSubmit',
-        example: <ValidationOnSubmit />,
-        source: ValidationOnSubmitSrc,
-      },
-      {
         title: 'Validation Disable Submit',
         example: <ValidationDisableSubmit />,
         source: ValidationDisableSubmitSrc,

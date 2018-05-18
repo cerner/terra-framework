@@ -48,7 +48,7 @@ export default class MainEntry extends React.Component {
               label="User Name"
               error={meta.error}
               help="TerraUser is unavailable. Use this name to test async"
-              isInvalid={!meta.valid}
+              isInvalid={meta.submitFailed && meta.error !== undefined}
               onChange={(e) => { input.onChange(e.target.value); }}
               inputAttrs={{
                 placeholder: 'Description',

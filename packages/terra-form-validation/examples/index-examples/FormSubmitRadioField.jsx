@@ -23,15 +23,16 @@ export default class MainEntry extends React.Component {
     });
   }
 
-  renderForm({ handleSubmit, errors }) {
+  renderForm({ handleSubmit, errors, submitFailed }) {
     return (
       <form
         onSubmit={handleSubmit}
       >
         <RadioField
           legend="Which kind of meal would you like?"
-          isInvalid={errors.meal !== undefined}
+          isInvalid={submitFailed && errors.meal !== undefined}
           error={errors.meal}
+          required
         >
           <Field
             name="meal"

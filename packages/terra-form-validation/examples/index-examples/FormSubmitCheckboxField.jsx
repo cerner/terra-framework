@@ -23,7 +23,7 @@ export default class MainEntry extends React.Component {
     });
   }
 
-  renderForm({ handleSubmit, errors }) {
+  renderForm({ handleSubmit, errors, submitFailed }) {
     return (
       <form
         onSubmit={handleSubmit}
@@ -31,7 +31,8 @@ export default class MainEntry extends React.Component {
         <CheckboxField
           legend="What are all the conference tracks you plan on attending?"
           error={errors.tracks}
-          isInvalid={errors.tracks !== undefined}
+          isInvalid={submitFailed && errors.tracks !== undefined}
+          required
         >
           <Field
             name="tracks[]"

@@ -29,10 +29,22 @@ To get a visual on what the implementation looks like, see below:
 import React from 'react';
 import { Form, Field } from 'react-final-form';
 import InputField from 'terra-form-input/lib/InputField';
+import TextareaField from 'terra-form-textarea/lib/TextareaField';
 import Button from 'terra-button';
 import Spacer from 'terra-spacer';
 
-const required = value => (value && value.length > 0 ? undefined : 'Required');
+const validateUniqueUser = async (name) => {
+  const response = new Promise((resolve) => {
+    if (name !== 'TerraUser') {
+      return resolve('');
+    }
+
+    return resolve('Name is Unavailable');
+  });
+
+  await response;
+  return response;
+};
 
 export default class MainEntry extends React.Component {
   constructor(props) {
@@ -40,6 +52,7 @@ export default class MainEntry extends React.Component {
 
     this.state = {};
     this.submitForm = this.submitForm.bind(this);
+    this.renderForm = this.renderForm.bind(this);
   }
 
   submitForm(values) {
@@ -48,18 +61,38 @@ export default class MainEntry extends React.Component {
     });
   }
 
-  renderForm({ handleSubmit }) {
+  renderForm({ handleSubmit, pristine, invalid }) {
     return (
       <form
         onSubmit={handleSubmit}
       >
         <Field
-          name="description"
-          validate={required}
+          name="user_name"
+          validate={validateUniqueUser}
         >
           {({ input, meta }) => (
             <InputField
-              inputId="description"
+              inputId="user-name"
+              label="User Name"
+              error={meta.error}
+              isInvalid={meta.submitFailed}
+              required
+              help="TerraUser is not available"
+              inputAttrs={{
+                placeholder: 'Description',
+                ...input,
+              }}
+              onChange={(e) => { input.onChange(e.target.value); }}
+              value={input.value}
+            />
+          )}
+        </Field>
+        <Field
+          name="description"
+        >
+          {({ input, meta }) => (
+            <TextareaField
+              inputId="description-field"
               label="Description"
               error={meta.error}
               isInvalid={meta.submitFailed}
@@ -74,24 +107,24 @@ export default class MainEntry extends React.Component {
           )}
         </Field>
         <Button text="Submit" type={Button.Opts.Types.SUBMIT} />
-      </form>
-    );
-  }
-
-  render() {
-    return (
-      <Spacer marginTop="small">
-        <Form
-          onSubmit={this.submitForm}
-          render={this.renderForm}
-          initialValues={{ description: '' }}
-        />
         {this.state.submittedValues &&
           <div>
             <p>Form Submitted Successfully With</p>
             <pre>{JSON.stringify(this.state.submittedValues, 0, 2)}</pre>
           </div>
         }
+      </form>
+    );
+  }
+
+  render() {
+    return (
+      <Spacer marginBottom="small">
+        <Form
+          onSubmit={this.submitForm}
+          render={this.renderForm}
+          initialValues={{ description: '' }}
+        />
       </Spacer>
     );
   }

@@ -35,7 +35,7 @@ export default class MainEntry extends React.Component {
     });
   }
 
-  renderForm({ handleSubmit, pristine, invalid }) {
+  renderForm({ handleSubmit }) {
     return (
       <form
         onSubmit={handleSubmit}
@@ -49,7 +49,7 @@ export default class MainEntry extends React.Component {
               inputId="user-name"
               label="User Name"
               error={meta.error}
-              isInvalid={!meta.valid}
+              isInvalid={meta.submitFailed && !meta.valid}
               required
               help="TerraUser is not available"
               inputAttrs={{
@@ -69,7 +69,7 @@ export default class MainEntry extends React.Component {
               inputId="description-field"
               label="Description"
               error={meta.error}
-              isInvalid={!meta.valid}
+              isInvalid={meta.submitFailed && !meta.valid}
               inputAttrs={{
                 placeholder: 'Description',
                 ...input,
@@ -80,7 +80,7 @@ export default class MainEntry extends React.Component {
             />
           )}
         </Field>
-        <Button text="Submit" isDisabled={invalid || pristine} type={Button.Opts.Types.SUBMIT} />
+        <Button text="Submit" type={Button.Opts.Types.SUBMIT} />
         {this.state.submittedValues &&
           <div>
             <p>Form Submitted Successfully With</p>
