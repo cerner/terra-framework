@@ -55,7 +55,7 @@ export default class MainEntry extends React.Component {
               inputId="vacation-days"
               label="Vacation Days Remaining"
               error={meta.error}
-              isInvalid={!meta.valid}
+              isInvalid={meta.submitFailed && !meta.valid}
               inputAttrs={{
                 placeholder: '# of Vacation Days remaining',
                 ...input,
@@ -76,7 +76,7 @@ export default class MainEntry extends React.Component {
               inputId="phone-number"
               label="Phone Number"
               error={meta.error}
-              isInvalid={!meta.valid}
+              isInvalid={meta.submitFailed && !meta.valid}
               inputAttrs={{
                 placeholder: '(###) ###-####',
                 ...input,

@@ -55,7 +55,9 @@ import InputField from 'terra-form-input/lib/InputField';
 
 ## Asynchronous Validations
 
-There maybe times you need to do remote validations such as Unique Username checks. This involves awaiting for a Promise to resolve, and passing it's value off to the validation function.
+There maybe times you need to do remote validations such as Unique Username checks. To best handle this scenario with wide browser support, an OnBlurValidation can be added to a component, where the function takes in two parameters: the value of the input, and a callback setError that sets the error status of the input.
+
+**Note**: If you need to run this in IE11, the [transform-async-to-generator](https://www.npmjs.com/package/babel-plugin-transform-async-to-generator) plugin needs to be added to your .babelrc file.
 
 **Example Asynchronous Validation**
 

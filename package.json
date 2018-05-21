@@ -1,5 +1,5 @@
 {
-  "name": "terra-framework", 
+  "name": "terra-framework",
   "private": true,
   "version": "0.1.0",
   "description": "terra-framework",
@@ -112,5 +112,8 @@
     "terra-dev-site": "0.6.0",
     "terra-toolkit": "^3.3.1",
     "xfc": "^1.2.1"
+  },
+  "dependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1"
   }
 }

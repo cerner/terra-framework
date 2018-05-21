@@ -8,6 +8,9 @@ import Spacer from 'terra-spacer';
 
 const validateUniqueUser = async (name) => {
   const response = new Promise((resolve) => {
+    if (!name) {
+      return resolve('Required');
+    }
     if (name !== 'TerraUser') {
       return resolve('');
     }
@@ -33,7 +36,7 @@ export default class MainEntry extends React.Component {
     });
   }
 
-  renderForm({ handleSubmit, pristine, invalid }) {
+  renderForm({ handleSubmit }) {
     return (
       <form
         onSubmit={handleSubmit}
@@ -50,16 +53,13 @@ export default class MainEntry extends React.Component {
               help="TerraUser is unavailable. Use this name to test async"
               isInvalid={meta.submitFailed && meta.error !== undefined}
               onChange={(e) => { input.onChange(e.target.value); }}
-              inputAttrs={{
-                placeholder: 'Description',
-                ...input,
-              }}
+              inputAttrs={{ ...input }}
               value={input.value}
               required
             />
           )}
         </Field>
-        <Button text="Submit" isDisabled={invalid || pristine} type={Button.Opts.Types.SUBMIT} />
+        <Button text="Submit" type={Button.Opts.Types.SUBMIT} />
       </form>
     );
   }
