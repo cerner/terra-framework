@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ContentComponent from 'terra-disclosure-manager/lib/terra-dev-site/doc/example/ContentComponent';
 
-import ModalManager from '../../../ModalManager';
-
-import styles from './example-styles.scss';
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+import ModalManager from 'terra-modal-manager/lib/ModalManager';
+import styles from 'terra-modal-manager/lib/terra-dev-site/doc/example/example-styles.scss';
+/* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 const cx = classNames.bind(styles);
 

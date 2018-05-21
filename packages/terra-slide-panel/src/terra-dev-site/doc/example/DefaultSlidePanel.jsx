@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SlidePanel from '../../../SlidePanel';
+// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+import SlidePanel from 'terra-slide-panel/lib/SlidePanel';
 
 const mainContentForSlidePanel = togglePanelHandler => (
   <div>

@@ -1,8 +1,10 @@
 import React from 'react';
 import Menu from 'terra-application-menu-layout';
 import Image from 'terra-image';
-import Placeholder from '../common/Placeholder';
-import ApplicationMenuName from '../../../ApplicationMenuName';
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+import Placeholder from 'terra-application-name/lib/terra-dev-site/doc/common/Placeholder';
+import ApplicationMenuName from 'terra-application-name/lib/ApplicationMenuName';
+/* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 const size = { height: '450px', width: '300px' };
 const ApplicationMenuNameStandard = () => (

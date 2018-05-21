@@ -1,8 +1,10 @@
 import React from 'react';
 import Image from 'terra-image';
-import MockConfig from '../common/MockConfig';
-import FallbackAvatar from '../common/FallbackAvatar.svg';
-import { ApplicationHeaderUtility, UtilityUtils } from '../../../ApplicationUtility';
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+import MockConfig from 'terra-application-utility/lib/terra-dev-site/doc/common/MockConfig';
+import FallbackAvatar from 'terra-application-utility/lib/terra-dev-site/doc/common/FallbackAvatar.svg';
+import { ApplicationHeaderUtility, UtilityUtils } from 'terra-application-utility/lib/ApplicationUtility';
+/* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 class ApplicationHeaderUtilityExample extends React.Component {
   constructor(props) {

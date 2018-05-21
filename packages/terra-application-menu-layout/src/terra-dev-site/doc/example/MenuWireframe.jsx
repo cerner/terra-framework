@@ -1,6 +1,8 @@
 import React from 'react';
-import ApplicationMenuLayout from '../../../ApplicationMenuLayout';
-import PlaceHolder from '../common/Placeholder';
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+import ApplicationMenuLayout from 'terra-application-menu-layout/lib/ApplicationMenuLayout';
+import PlaceHolder from 'terra-application-menu-layout/lib/terra-dev-site/doc/common/Placeholder';
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 const Menu = () => (
   <div style={{ height: '450px', width: '300px' }}>

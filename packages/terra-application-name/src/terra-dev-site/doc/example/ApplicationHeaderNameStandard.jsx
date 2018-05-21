@@ -1,8 +1,10 @@
 import React from 'react';
 import ApplicationHeaderLayout from 'terra-application-header-layout';
 import Image from 'terra-image';
-import Placeholder from '../common/Placeholder';
-import ApplicationHeaderName from '../../../ApplicationHeaderName';
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+import Placeholder from 'terra-application-name/lib/terra-dev-site/doc/common/Placeholder';
+import ApplicationHeaderName from 'terra-application-name/lib/ApplicationHeaderName';
+/* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 const size = { height: '50px', width: '100%' };
 const ApplicationHeaderNameStandard = () => (

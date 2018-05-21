@@ -5,8 +5,10 @@ import AppDelegate from 'terra-app-delegate';
 import ModalManager from 'terra-modal-manager';
 import SlidePanelManager from 'terra-slide-panel-manager';
 
-import AggregatorContainer from '../common/AggregatorContainer';
-import AggregatorItem from '../common/AggregatorItem';
+/* eslint-disable import/no-unresolved, import/extensions */
+import AggregatorContainer from 'terra-aggregator/lib/terra-dev-site/doc/common/AggregatorContainer';
+import AggregatorItem from 'terra-aggregator/lib/terra-dev-site/doc/common/AggregatorItem';
+/* eslint-enable import/no-unresolved, import/extensions */
 
 const propTypes = {
   size: PropTypes.string,

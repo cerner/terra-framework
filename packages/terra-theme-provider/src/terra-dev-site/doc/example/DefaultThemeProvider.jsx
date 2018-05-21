@@ -1,6 +1,8 @@
 import React from 'react';
-import ThemeProvider from '../../../ThemeProvider';
-import MockThemeComponent from './MockThemeComponent';
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+import ThemeProvider from 'terra-theme-provider/lib/ThemeProvider';
+import MockThemeComponent from 'terra-theme-provider/lib/terra-dev-site/doc/example/MockThemeComponent';
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 class DefaultThemeProvider extends React.Component {
   constructor(props) {

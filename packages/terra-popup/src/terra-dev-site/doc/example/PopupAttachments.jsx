@@ -1,16 +1,18 @@
 import React from 'react';
 import Grid from 'terra-grid';
 
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 // attachment examples
-import PopupBottomCenter from './PopupBottomCenter';
-import PopupBottomLeft from './PopupBottomLeft';
-import PopupBottomRight from './PopupBottomRight';
-import PopupMiddleCenter from './PopupMiddleCenter';
-import PopupMiddleLeft from './PopupMiddleLeft';
-import PopupMiddleRight from './PopupMiddleRight';
-import PopupTopCenter from './PopupTopCenter';
-import PopupTopLeft from './PopupTopLeft';
-import PopupTopRight from './PopupTopRight';
+import PopupBottomCenter from 'terra-popup/lib/terra-dev-site/doc/example/PopupBottomCenter';
+import PopupBottomLeft from 'terra-popup/lib/terra-dev-site/doc/example/PopupBottomLeft';
+import PopupBottomRight from 'terra-popup/lib/terra-dev-site/doc/example/PopupBottomRight';
+import PopupMiddleCenter from 'terra-popup/lib/terra-dev-site/doc/example/PopupMiddleCenter';
+import PopupMiddleLeft from 'terra-popup/lib/terra-dev-site/doc/example/PopupMiddleLeft';
+import PopupMiddleRight from 'terra-popup/lib/terra-dev-site/doc/example/PopupMiddleRight';
+import PopupTopCenter from 'terra-popup/lib/terra-dev-site/doc/example/PopupTopCenter';
+import PopupTopLeft from 'terra-popup/lib/terra-dev-site/doc/example/PopupTopLeft';
+import PopupTopRight from 'terra-popup/lib/terra-dev-site/doc/example/PopupTopRight';
+/* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 const PopupAttachements = () => (
   <Grid>

@@ -1,9 +1,11 @@
 import React from 'react';
 import Image from 'terra-image';
-import MockConfig from '../common/MockConfig';
-import FallbackAvatar from '../common/FallbackAvatar.svg';
-import { UtilityUtils } from '../../../ApplicationUtility';
-import UtilityMenu from '../../../utility/_UtilityMenu';
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+import MockConfig from 'terra-application-utility/lib/terra-dev-site/doc/common/MockConfig';
+import FallbackAvatar from 'terra-application-utility/lib/terra-dev-site/doc/common/FallbackAvatar.svg';
+import { UtilityUtils } from 'terra-application-utility/lib/ApplicationUtility';
+import UtilityMenu from 'terra-application-utility/lib/utility/_UtilityMenu';
+/* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 class MenuUtilityMenuExample extends React.Component {
   constructor(props) {

@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import ModalManager from 'terra-modal-manager';
 import SlidePanelManager from 'terra-slide-panel-manager';
 
-import AggregatorContainer from '../common/AggregatorContainer';
-import AggregatorItem from '../common/AggregatorItem';
-import SimpleAggregatorItem from '../common/SimpleAggregatorItem';
+/* eslint-disable import/no-unresolved, import/extensions */
+import AggregatorContainer from 'terra-aggregator/lib/terra-dev-site/doc/common/AggregatorContainer';
+import AggregatorItem from 'terra-aggregator/lib/terra-dev-site/doc/common/AggregatorItem';
+import SimpleAggregatorItem from 'terra-aggregator/lib/terra-dev-site/doc/common/SimpleAggregatorItem';
+/* eslint-enable import/no-unresolved, import/extensions */
 
 const propTypes = {
   size: PropTypes.string,

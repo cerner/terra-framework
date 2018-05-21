@@ -6,13 +6,14 @@ import Image from 'terra-image';
 import Avatar from 'terra-avatar';
 import ContentContainer from 'terra-content-container';
 
-import ApplicationLayout, { Utils } from '../../../ApplicationLayout';
-
-import ApplicationContent from '../common/ApplicationContent';
-import ApplicationMenu from '../common/ApplicationMenu';
-import UtilityOption from '../common/UtilityOption';
-import ApplicationExtensions from '../common/ApplicationExtensions';
-import ProfilePicture from '../common/henry.jpg';
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+import ApplicationLayout, { Utils } from 'terra-application-layout/lib/ApplicationLayout';
+import ApplicationContent from 'terra-application-layout/lib/terra-dev-site/doc/common/ApplicationContent';
+import ApplicationMenu from 'terra-application-layout/lib/terra-dev-site/doc/common/ApplicationMenu';
+import UtilityOption from 'terra-application-layout/lib/terra-dev-site/doc/common/UtilityOption';
+import ApplicationExtensions from 'terra-application-layout/lib/terra-dev-site/doc/common/ApplicationExtensions';
+import ProfilePicture from 'terra-application-layout/lib/terra-dev-site/doc/common/henry.jpg';
+/* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 /**
  * The routingConfig API matches that of the NavigationLayout. Routing specifications for the

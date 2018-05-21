@@ -3,17 +3,17 @@ import React from 'react';
 import { MemoryRouter, withRouter } from 'react-router-dom';
 import Markdown from 'terra-markdown';
 import ToggleButton from 'terra-toggle-button';
-import NavigationLayout from '../../../NavigationLayout';
-
-import ConfigReadMe from './NavigationLayoutStandardConfig.md';
-
-import HeaderExample from './HeaderExample';
-import MenuExample from './MenuExample';
-import Page1Content from './Page1Content';
-import Page2Content from './Page2Content';
-import Page3Content from './Page3Content';
-import Page1Menu from './Page1Menu';
-import Page2Menu from './Page2Menu';
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+import NavigationLayout from 'terra-navigation-layout/lib/NavigationLayout';
+import ConfigReadMe from 'terra-navigation-layout/lib/terra-dev-site/doc/example/NavigationLayoutStandardConfig.md';
+import HeaderExample from 'terra-navigation-layout/lib/terra-dev-site/doc/example/HeaderExample';
+import MenuExample from 'terra-navigation-layout/lib/terra-dev-site/doc/example/MenuExample';
+import Page1Content from 'terra-navigation-layout/lib/terra-dev-site/doc/example/Page1Content';
+import Page2Content from 'terra-navigation-layout/lib/terra-dev-site/doc/example/Page2Content';
+import Page3Content from 'terra-navigation-layout/lib/terra-dev-site/doc/example/Page3Content';
+import Page1Menu from 'terra-navigation-layout/lib/terra-dev-site/doc/example/Page1Menu';
+import Page2Menu from 'terra-navigation-layout/lib/terra-dev-site/doc/example/Page2Menu';
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 // If changing config, ensure NavigationLayoutStandardConfig.md is updated to match
 const config = {

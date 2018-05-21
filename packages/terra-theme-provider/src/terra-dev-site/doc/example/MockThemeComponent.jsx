@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-import styles from './MockThemeComponent.scss';
+// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
+import styles from 'terra-theme-provider/lib/terra-dev-site/doc/example/MockThemeComponent.scss';
 
 const cx = classNames.bind(styles);
 

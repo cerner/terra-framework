@@ -1,8 +1,10 @@
 import React from 'react';
-import Layout from '../../../Layout';
 
-import ContentExample from '../common/ContentExample';
-import MenuExample from '../common/MenuExample';
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+import Layout from 'terra-layout/lib/Layout';
+import ContentExample from 'terra-layout/lib/terra-dev-site/doc/common/ContentExample';
+import MenuExample from 'terra-layout/lib/terra-dev-site/doc/common/MenuExample';
+/* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 const layout = () => (
   <Layout

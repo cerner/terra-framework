@@ -4,8 +4,10 @@ import LoadingOverlay from 'terra-overlay/lib/LoadingOverlay';
 import OverlayContainer from 'terra-overlay/lib/OverlayContainer';
 import Arrange from 'terra-arrange';
 import classNames from 'classnames/bind';
-import styles from './InfiniteListExample.scss';
-import InfiniteList from '../../../InfiniteList';
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+import styles from 'terra-infinite-list/lib/terra-dev-site/doc/example/InfiniteListExample.scss';
+import InfiniteList from 'terra-infinite-list/lib/InfiniteList';
+/* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 const cx = classNames.bind(styles);
 

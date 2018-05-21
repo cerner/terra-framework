@@ -1,7 +1,8 @@
 import React from 'react';
 import Button from 'terra-button';
 import NumberField from 'terra-form/lib/NumberField';
-import Hookshot from '../../../Hookshot';
+// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
+import Hookshot from 'terra-hookshot/lib/Hookshot';
 
 const ATTACHMENT_POSITIONS = [
   'top start',

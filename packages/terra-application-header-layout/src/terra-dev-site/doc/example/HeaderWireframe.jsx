@@ -1,11 +1,13 @@
 import React from 'react';
 import ResponsiveElement from 'terra-responsive-element/lib/ResponsiveElement';
-import ApplicationHeaderLayout from '../../../ApplicationHeaderLayout';
-import ExtensionsExample from '../common/ExtensionsExample';
-import LogoExample from '../common/LogoExample';
-import NavigationExample from '../common/NavigationExample';
-import ToggleExample from '../common/ToggleExample';
-import UtilitiesExample from '../common/UtilitiesExample';
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+import ApplicationHeaderLayout from 'terra-application-header-layout/lib/ApplicationHeaderLayout';
+import ExtensionsExample from 'terra-application-header-layout/lib/terra-dev-site/doc/common/ExtensionsExample';
+import LogoExample from 'terra-application-header-layout/lib/terra-dev-site/doc/common/LogoExample';
+import NavigationExample from 'terra-application-header-layout/lib/terra-dev-site/doc/common/NavigationExample';
+import ToggleExample from 'terra-application-header-layout/lib/terra-dev-site/doc/common/ToggleExample';
+import UtilitiesExample from 'terra-application-header-layout/lib/terra-dev-site/doc/common/UtilitiesExample';
+/* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 const HeaderWireframe = () => {
   const tinyHeader = (

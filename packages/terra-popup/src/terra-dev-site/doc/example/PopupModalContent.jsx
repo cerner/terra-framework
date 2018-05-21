@@ -1,8 +1,10 @@
 import React from 'react';
 import Button from 'terra-button';
 import AppDelegate from 'terra-app-delegate';
-import Popup from '../../../Popup';
-import ExamplePopupContent from '../common/ExamplePopupContent';
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+import Popup from 'terra-popup/lib/Popup';
+import ExamplePopupContent from 'terra-popup/lib/terra-dev-site/doc/common/ExamplePopupContent';
+/* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 class ModalContainer extends React.Component {
   constructor(props) {

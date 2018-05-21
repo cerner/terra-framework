@@ -1,8 +1,10 @@
 import React from 'react';
 import Button from 'terra-button';
-import Popup from '../../../Popup';
-import ExamplePopupContent from '../common/ExamplePopupContent';
-import './PopupClassName.scss';
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+import Popup from 'terra-popup/lib/Popup';
+import ExamplePopupContent from 'terra-popup/lib/terra-dev-site/doc/common/ExamplePopupContent';
+import 'terra-popup/lib/terra-dev-site/doc/example/PopupClassName.scss';
+/* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 class PopupClassName extends React.Component {
   constructor(props) {

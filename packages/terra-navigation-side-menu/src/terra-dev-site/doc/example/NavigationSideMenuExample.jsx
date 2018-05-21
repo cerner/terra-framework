@@ -1,6 +1,7 @@
 import React from 'react';
 import Base from 'terra-base';
-import NavigationSideMenu from '../../../NavigationSideMenu';
+// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+import NavigationSideMenu from 'terra-navigation-side-menu/lib/NavigationSideMenu';
 
 class NavigationSideMenuDefault extends React.Component {
   constructor(props) {

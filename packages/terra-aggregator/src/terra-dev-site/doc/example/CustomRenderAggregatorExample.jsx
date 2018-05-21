@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Grid from 'terra-grid';
 
-import Aggregator from '../../../Aggregator';
-import AggregatorItem from '../common/AggregatorItem';
+/* eslint-disable import/no-unresolved, import/extensions */
+import Aggregator from 'terra-aggregator/lib/Aggregator';
+import AggregatorItem from 'terra-aggregator/lib/terra-dev-site/doc/common/AggregatorItem';
+/* eslint-enable import/no-unresolved, import/extensions */
 
 const propTypes = {
   size: PropTypes.string,

@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import AppDelegate from 'terra-app-delegate';
 import ModalManager from 'terra-modal-manager';
 
-import ModalAggregator from '../common/ModalAggregator';
+// eslint-disable-next-line import/no-unresolved, import/extensions
+import ModalAggregator from 'terra-aggregator/lib/terra-dev-site/doc/common/ModalAggregator';
 
 const propTypes = {
   size: PropTypes.string,
