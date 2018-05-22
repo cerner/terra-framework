@@ -6,6 +6,7 @@
 | babel-cli | ^6.24.1 | -- | Babel command line. |
 | babel-core | ^6.24.1 | -- | Babel compiler core. |
 | babel-jest | ^21.0.0 | -- | Jest plugin to use babel for transformation. |
+| babel-plugin-transform-async-to-generator | ^6.24.1 | -- | Turn async functions into ES2015 generators |
 | babel-plugin-transform-object-assign | ^6.22.0 | -- | Replace Object.assign with an inline helper |
 | babel-plugin-transform-object-rest-spread | ^6.23.0 | -- | Compile object rest and spread to ES5 |
 | babel-preset-es2015 | ^6.24.1 | -- | Babel preset for all es2015 plugins. |
@@ -40,6 +41,6 @@
 | stylelint-order | ^0.8.1 | -- | A collection of order related linting rules for stylelint. |
 | stylelint-scss | ^3.1.0 | -- | A collection of SCSS specific rules for stylelint |
 | stylelint-suitcss | ^3.0.0 | -- | A collection of stylelint plugins for SUIT CSS |
-| terra-dev-site | 0.5.0 | ^16.2.0 | Dynamically builds a react-hash-routed site based on site configuration, navigation configuration and component configuration. |
-| terra-toolkit | ^3.0.0 | -- | Utilities to help when developing terra modules. |
+| terra-dev-site | 0.6.0 | ^16.2.0 | Dynamically builds a react-hash-routed site based on site configuration, navigation configuration and component configuration. |
+| terra-toolkit | ^3.3.1 | -- | Utilities to help when developing terra modules. |
 | xfc | ^1.2.1 | -- | A Cross Frame Container that handles securely embedding web content into a 3rd party domain |
