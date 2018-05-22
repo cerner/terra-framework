@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AbstractModal from 'terra-abstract-modal';
 import Button from 'terra-button';
-import IconAlert from 'terra-icon/lib/icon/IconAlert';
-import IconError from 'terra-icon/lib/icon/IconError';
-import IconWarning from 'terra-icon/lib/icon/IconWarning';
-import IconInformation from 'terra-icon/lib/icon/IconInformation';
-import IconSuccess from 'terra-icon/lib/icon/IconSuccess';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
+import IconAlert from './IconAlert';
+import IconError from './IconError';
+import IconInformation from './IconInformation';
+import IconSuccess from './IconSuccess';
+import IconWarning from './IconWarning';
 import styles from './NotificationDialog.scss';
 
 const cx = classNames.bind(styles);
@@ -86,7 +86,7 @@ const propTypes = {
 const defaultProps = {
   title: null,
   message: null,
-  variant: variants.CUSTOM,
+  variant: null,
 };
 
 const actionSection = (primaryAction, secondaryAction) => {
@@ -197,7 +197,7 @@ class NotificationDialog extends React.Component {
             <div className={cx('header-body')}>{header || defaultHeader}</div>
             <div className={cx('notification-dialog-body')}>
               {variant &&
-                <div className={cx('icon-div')}>{getIcon(variant, customIcon)}</div>
+                <div className={cx('icon-div')}><svg className={cx(variant)}>{getIcon(variant, customIcon)}</svg></div>
               }
               <div className={cx('notification-dialog-body-text')}>
                 <div className={cx('title')}>{title}</div>

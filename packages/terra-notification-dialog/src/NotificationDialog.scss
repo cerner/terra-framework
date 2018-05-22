@@ -63,6 +63,26 @@
       margin-right: var(--terra-notification-dialog-icon-margin-right, 1.25rem);
       width: 2rem;
     }
+
+    > .alert {
+      fill: var(--terra-notification-dialog-icon, #e50000);
+    }
+
+    > .warning {
+      fill: #ffc20a;
+    }
+
+    > .info {
+      fill: #007cc3;
+    }
+
+    > .success {
+      fill: #78c346;
+    }
+
+    > .error {
+      fill: #e50000;
+    }
   }
 
   .title {
