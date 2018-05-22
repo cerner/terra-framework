@@ -34,6 +34,7 @@
     "react-final-form": "^3.3.1",
     "terra-base": "^3.1.0",
     "terra-button": "^2.7.0",
+    "terra-doc-template": "^1.1.0",
     "terra-form-checkbox": "^2.9.0",
     "terra-form-field": "^2.10.0",
     "terra-form-input": "^1.6.0",
