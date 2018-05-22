@@ -10,7 +10,7 @@ exports[`should mount a complete notification-dialog 1`] = `
       primaryAction={
         Object {
           "onClick": [Function],
-          "text": "Ok",
+          "text": "OK",
         }
       }
       secondaryAction={
@@ -71,7 +71,7 @@ exports[`should mount a complete notification-dialog with long message 1`] = `
       primaryAction={
         Object {
           "onClick": [Function],
-          "text": "Ok",
+          "text": "OK",
         }
       }
       secondaryAction={
@@ -133,7 +133,7 @@ exports[`should mount a notification-dialog with no variant 1`] = `
       primaryAction={
         Object {
           "onClick": [Function],
-          "text": "Ok",
+          "text": "OK",
         }
       }
       secondaryAction={
@@ -193,7 +193,7 @@ exports[`should shallow a complete notification-dialog 1`] = `
     primaryAction={
       Object {
         "onClick": [Function],
-        "text": "Ok",
+        "text": "OK",
       }
     }
     secondaryAction={
@@ -229,7 +229,7 @@ exports[`should shallow a complete notification-dialog with long message 1`] = `
     primaryAction={
       Object {
         "onClick": [Function],
-        "text": "Ok",
+        "text": "OK",
       }
     }
     secondaryAction={
@@ -266,7 +266,7 @@ exports[`should shallow a notification-dialog with no variant 1`] = `
     primaryAction={
       Object {
         "onClick": [Function],
-        "text": "Ok",
+        "text": "OK",
       }
     }
     secondaryAction={

@@ -115,7 +115,7 @@ class NotificationDialogWithLongText extends React.Component {
           title="Make sure that the title relates directly to the choices."
           message={message}
           primaryAction={{
-            text: 'Ok',
+            text: 'OK',
             onClick: clickOK,
           }}
           secondaryAction={{

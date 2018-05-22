@@ -36,7 +36,7 @@ class CompleteNotificationDialogWithLongMessage extends React.Component {
           title="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
           message="This is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the message"
           primaryAction={{
-            text: 'Ok',
+            text: 'OK',
             onClick: clickOK,
           }}
           secondaryAction={{

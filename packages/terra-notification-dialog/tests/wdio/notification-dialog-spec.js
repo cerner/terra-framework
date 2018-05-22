@@ -66,7 +66,7 @@ describe('NotificationDialog', () => {
       '#root',
       {
         '--terra-notification-dialog-actions-flex-direction-small-width': 'row-reverse',
-        '--terra-notification-dialog-actions-padding': '0',
+        '--terra-notification-dialog-footer-padding': '0',
         '--terra-notification-dialog-actions-button-flex': '1',
         '--terra-notification-dialog-actions-button-margin-bottom': '0rem',
         '--terra-notification-dialog-actions-button-margin-left': '0rem',

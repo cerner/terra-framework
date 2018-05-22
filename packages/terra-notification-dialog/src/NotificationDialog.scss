@@ -43,7 +43,7 @@
 
   .header-body {
     background-color: var(--notification-dialog-header-color, #f9f9f9);
-    border: var(--notification-dialog-header-border, 0.0625rem solid #dedfe0);
+    border-bottom: var(--notification-dialog-header-border, 0.0625rem solid #dedfe0);
     font-size: var(--notification-dialog-header-font-size, 1.125rem);
     padding: var(--notification-dialog-body-padding, 0.8rem);
     text-align: left;
@@ -51,9 +51,10 @@
 
   .footer-body {
     background-color: var(--notification-dialog-footer-color, #f9f9f9);
-    border: var(--notification-dialog-footer-border, 0.0625rem solid #dedfe0);
+    border-top: var(--notification-dialog-footer-border, 0.0625rem solid #dedfe0);
     flex: 0 0 auto;
     font-size: var(--notification-dialog-footer-font-size, 0.8rem);
+    padding: var(--terra-notification-dialog-footer-padding, 0.28571rem 0.35714rem);
   }
 
   .icon-div {
@@ -91,7 +92,6 @@
     flex: 0 0 auto;
     flex-direction: var(--terra-notification-dialog-actions-flex-direction-small-width, row);
     justify-content: flex-end;
-    padding: var(--terra-notification-dialog-actions-padding, 0.4rem);
     width: 100%;
 
     > button {

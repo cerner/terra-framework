@@ -36,7 +36,7 @@ class NoVariantNotificationDialog extends React.Component {
           title="Make sure that the title relates directly to the choices."
           message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
           primaryAction={{
-            text: 'Ok',
+            text: 'OK',
             onClick: clickOK,
           }}
           secondaryAction={{
