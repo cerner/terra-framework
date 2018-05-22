@@ -14,6 +14,10 @@ import TerraApplicationUtilityIndex from '../packages/terra-application-utility/
 import TerraBrandFooterIndex from '../packages/terra-brand-footer/examples/Index.site-page';
 import TerraDialogModalIndex from '../packages/terra-dialog-modal/examples/Index.site-page';
 import TerraDisclosureManagerIndex from '../packages/terra-disclosure-manager/examples/Index.site-page';
+import TerraFormValidationFormValidation from '../packages/terra-form-validation/examples/FormValidation.site-page';
+import TerraFormValidationValidationComponents from '../packages/terra-form-validation/examples/ValidationComponents.site-page';
+import TerraFormValidationValidationEvents from '../packages/terra-form-validation/examples/ValidationEvents.site-page';
+import TerraFormValidationValidationFunctions from '../packages/terra-form-validation/examples/ValidationFunctions.site-page';
 import TerraHookshotIndex from '../packages/terra-hookshot/examples/Index.site-page';
 import TerraInfiniteListIndex from '../packages/terra-infinite-list/examples/Index.site-page';
 import TerraLayoutIndex from '../packages/terra-layout/examples/Index.site-page';
@@ -429,6 +433,32 @@ const componentConfig = {
         name: 'Index',
         path: '/index',
         component: TerraDisclosureManagerIndex,
+      },
+    ],
+  },
+  'terra-form-validation': {
+    name: 'Form Validation',
+    path: '/form-validation',
+    pages: [
+      {
+        name: 'Form Validation',
+        path: '/form-validation',
+        component: TerraFormValidationFormValidation,
+      },
+      {
+        name: 'Validation Components',
+        path: '/validation-components',
+        component: TerraFormValidationValidationComponents,
+      },
+      {
+        name: 'Validation Events',
+        path: '/validation-events',
+        component: TerraFormValidationValidationEvents,
+      },
+      {
+        name: 'Validation Functions',
+        path: '/validation-functions',
+        component: TerraFormValidationValidationFunctions,
       },
     ],
   },

@@ -1,5 +1,5 @@
 {
-  "name": "terra-framework", 
+  "name": "terra-framework",
   "private": true,
   "version": "0.1.0",
   "description": "terra-framework",
@@ -75,6 +75,7 @@
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-jest": "^21.0.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-object-assign": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
