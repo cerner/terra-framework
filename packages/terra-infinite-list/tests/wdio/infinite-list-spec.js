@@ -55,15 +55,17 @@ describe('InfiniteList', () => {
   });
 
   describe('Displays an infinite list same count and different content', () => {
-    before(() => browser.setViewportSize(Terra.viewports('small')[0]));
-    beforeEach(() => {
+    before(() => {
+      browser.setViewportSize(Terra.viewports('small')[0]);
       browser.url('/#/raw/tests/infinite-list/infinite-list-same-count');
       browser.waitForVisible('#test-infinite-list');
       browser.pause(150);
+    });
+    Terra.should.matchScreenshot('before-update', { selector: '#test-infinite-list' });
+    it('update the child items', () => {
       browser.click('#test-click');
       browser.pause(50);
     });
-
-    Terra.should.matchScreenshot({ selector: '#test-infinite-list' });
+    Terra.should.matchScreenshot('after-update', { selector: '#test-infinite-list' });
   });
 });
