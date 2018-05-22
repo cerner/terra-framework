@@ -5,7 +5,7 @@
     "publish": {
       "ignore": [
         "DEPENDENCIES.md",
-        "packages/terra-form-validation/**/*"
+        "terra-form-validation"
       ]
     }
   },
