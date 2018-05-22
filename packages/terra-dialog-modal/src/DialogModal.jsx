@@ -81,8 +81,12 @@ class DialogModal extends React.Component {
   }
 
   componentDidUpdate() {
-    if (this.props.isFocused && this.props.isOpen && this.props.requestFocus) {
-      this.props.requestFocus();
+    if (this.props.isOpen) {
+      if (this.props.requestFocus) {
+        this.props.requestFocus();
+      }
+    } else if (this.props.releaseFocus) {
+      this.props.releaseFocus();
     }
   }
 
