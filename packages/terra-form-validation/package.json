@@ -1,0 +1,51 @@
+{
+  "name": "terra-form-validation",
+  "main": "docs/README.md",
+  "version": "0.0.0",
+  "description": "Form Validation Examples for Terra",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cerner/terra-framework.git"
+  },
+  "keywords": [
+    "Cerner",
+    "Terra",
+    "Framework",
+    "terra-form-validation",
+    "FormValidation",
+    "UI"
+  ],
+  "author": "Cerner Corporation",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cerner/terra-framework/issues"
+  },
+  "homepage": "https://github.com/cerner/terra-framework#readme",
+  "peerDependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "terra-base": "^3.1.0"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "final-form": "^4.6.0",
+    "prop-types": "^15.5.8",
+    "react-final-form": "^3.3.1",
+    "terra-base": "^3.1.0",
+    "terra-button": "^2.7.0",
+    "terra-form-checkbox": "^2.9.0",
+    "terra-form-field": "^2.10.0",
+    "terra-form-input": "^1.6.0",
+    "terra-form-radio": "^2.9.0",
+    "terra-form-select": "^3.0.0",
+    "terra-form-textarea": "^2.8.0",
+    "terra-i18n": "^2.6.0",
+    "terra-spacer": "^2.6.0"
+  },
+  "scripts": {
+    "lint": "npm run lint:js && npm run lint:scss",
+    "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
+    "lint:scss": "stylelint src/**/*.scss"
+  }
+}
