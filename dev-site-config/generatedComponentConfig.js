@@ -52,8 +52,8 @@ import DefaultApplicationHeaderUtility from '../packages/terra-application-utili
 import DefaultApplicationMenuUtility from '../packages/terra-application-utility/examples/test-examples/DefaultApplicationMenuUtility.example';
 import DefaultHeaderUtilityMenu from '../packages/terra-application-utility/examples/test-examples/DefaultHeaderUtilityMenu.example';
 import DefaultMenuUtilityMenu from '../packages/terra-application-utility/examples/test-examples/DefaultMenuUtilityMenu.example';
-import DefaultBrandFooter from '../packages/terra-brand-footer/examples/test-examples/DefaultBrandFooter.example';
 import ActiveBrandFooter from '../packages/terra-brand-footer/examples/test-examples/ActiveBrandFooter.example';
+import DefaultBrandFooter from '../packages/terra-brand-footer/examples/test-examples/DefaultBrandFooter.example';
 import HoveredBrandFooter from '../packages/terra-brand-footer/examples/test-examples/HoveredBrandFooter.example';
 import DefaultHookshot from '../packages/terra-hookshot/examples/test-examples/DefaultHookshot.example';
 import HookshotAttachmentBehaviorAuto from '../packages/terra-hookshot/examples/test-examples/HookshotAttachmentBehaviorAuto.example';
@@ -76,6 +76,7 @@ import HookshotContentOffset from '../packages/terra-hookshot/examples/test-exam
 import HookshotEnabledBehaviors from '../packages/terra-hookshot/examples/test-examples/HookshotEnabledBehaviors.example';
 import HookshotTargetOffset from '../packages/terra-hookshot/examples/test-examples/HookshotTargetOffset.example';
 import InfiniteListLoading from '../packages/terra-infinite-list/examples/test-examples/InfiniteListLoading.example';
+import InfiniteListSameCount from '../packages/terra-infinite-list/examples/test-examples/InfiniteListSameCount.example';
 import InfiniteListSelection from '../packages/terra-infinite-list/examples/test-examples/InfiniteListSelection.example';
 import InfiniteListUpdating from '../packages/terra-infinite-list/examples/test-examples/InfiniteListUpdating.example';
 import InfiniteListVirtual from '../packages/terra-infinite-list/examples/test-examples/InfiniteListVirtual.example';
@@ -379,6 +380,11 @@ const componentConfig = {
     ],
     tests: [
       {
+        name: 'Active Brand Footer',
+        path: '/active-brand-footer',
+        component: ActiveBrandFooter,
+      },
+      {
         name: 'Default Brand Footer',
         path: '/default-brand-footer',
         component: DefaultBrandFooter,
@@ -387,11 +393,6 @@ const componentConfig = {
         name: 'Hovered Brand Footer',
         path: '/hovered-brand-footer',
         component: HoveredBrandFooter,
-      },
-      {
-        name: 'Active Brand Footer',
-        path: '/active-brand-footer',
-        component: ActiveBrandFooter,
       },
     ],
   },
@@ -534,6 +535,11 @@ const componentConfig = {
         name: 'Infinite List Loading',
         path: '/infinite-list-loading',
         component: InfiniteListLoading,
+      },
+      {
+        name: 'Infinite List Same Count',
+        path: '/infinite-list-same-count',
+        component: InfiniteListSameCount,
       },
       {
         name: 'Infinite List Selection',

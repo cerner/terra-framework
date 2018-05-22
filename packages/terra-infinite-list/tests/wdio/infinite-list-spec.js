@@ -53,4 +53,17 @@ describe('InfiniteList', () => {
 
     Terra.should.matchScreenshot({ selector: '#test-infinite-list' });
   });
+
+  describe('Displays an infinite list same count and different content', () => {
+    before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+    beforeEach(() => {
+      browser.url('/#/raw/tests/infinite-list/infinite-list-same-count');
+      browser.waitForVisible('#test-infinite-list');
+      browser.pause(150);
+      browser.click('#test-click');
+      browser.pause(50);
+    });
+
+    Terra.should.matchScreenshot({ selector: '#test-infinite-list' });
+  });
 });

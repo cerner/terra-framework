@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* New props of children with different content update correctly
+* Double request for items prevented during render
 
 1.1.0 - (April 30, 2018)
 ------------------
