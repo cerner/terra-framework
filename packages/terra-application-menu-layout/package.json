@@ -1,7 +1,7 @@
 {
   "name": "terra-application-menu-layout",
   "main": "lib/ApplicationMenuLayout.js",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "This component renders an application menu layout. To be used with a terra-layout or terra-navigation-layout.",
   "repository": {
     "type": "git",
@@ -33,7 +33,7 @@
     "prop-types": "^15.5.8",
     "terra-base": "^3.0.0",
     "terra-doc-template": "^1.1.0"
-    },
+  },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
     "compile:clean": "rimraf lib",
