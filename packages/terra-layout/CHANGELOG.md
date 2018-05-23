@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Moved examples to src
 
+2.5.0 - (May 22, 2018)
+------------------
+### Changed
+* Minor dependency updates
+
 2.4.0 - (April 30, 2018)
 ------------------
 ### Changed

@@ -8,14 +8,10 @@
 | resize-observer-polyfill | ^1.4.1 | -- | A polyfill for the Resize Observer API |
 | terra-arrange | ^2.3.0 | ^16.2.0 | The arrange component is used for horizontally arranging and vertically aligning a single row of container elements. |
 | terra-base | ^3.1.0 | ^16.2.0 | The base component sets minimal global styles for an application. |
+| terra-doc-template | ^1.1.0 | ^16.2.0 | Provides an adjustable template for documentation pages. |
 | terra-icon | ^2.1.0 | ^16.2.0 | terra-icon |
 | terra-list | ^2.1.0 | ^16.2.0 | terra-list |
 | terra-overlay | ^2.1.0 | ^16.2.0 | The Overlay component is a component that creates an semi-transparent overlay screen that blocks interactions with the elements underneath the display. There are two types of overlays: fullscreen and relative to its container. |
-
-## devDependencies
-| Dependency | Version | React Version | Description |
-|-|-|-|-|
-| terra-props-table | ^2.4.0 | ^16.2.0 | terra-props-table |
 
 ## peerDependencies
 | Dependency | Version | React Version | Description |

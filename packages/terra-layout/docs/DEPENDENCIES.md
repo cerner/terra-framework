@@ -9,6 +9,7 @@
 | terra-base | ^3.0.0 | ^16.2.0 | The base component sets minimal global styles for an application. |
 | terra-button | ^2.0.1 | ^16.2.0 | The terra-button component provides users a way to trigger actions in the UI. |
 | terra-content-container | ^2.0.1 | ^16.2.0 | The Terra ContentContainer is a structural component for the purpose of arranging content with a header. |
+| terra-doc-template | ^1.1.0 | ^16.2.0 | Provides an adjustable template for documentation pages. |
 | terra-icon | ^2.0.1 | ^16.2.0 | terra-icon |
 | terra-overlay | ^2.0.1 | ^16.2.0 | The Overlay component is a component that creates an semi-transparent overlay screen that blocks interactions with the elements underneath the display. There are two types of overlays: fullscreen and relative to its container. |
 | terra-responsive-element | ^2.0.1 | ^16.2.0 | The terra-responsive-element conditionally renders components based on viewport size |
@@ -17,7 +18,6 @@
 | Dependency | Version | React Version | Description |
 |-|-|-|-|
 | react-router-dom | ^4.2.2 | >=15 | DOM bindings for React Router |
-| terra-props-table | ^2.4.0 | ^16.2.0 | terra-props-table |
 
 ## peerDependencies
 | Dependency | Version | React Version | Description |
