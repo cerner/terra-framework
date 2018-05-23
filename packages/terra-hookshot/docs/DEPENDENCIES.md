@@ -10,12 +10,8 @@
 | resize-observer-polyfill | ^1.4.1 | -- | A polyfill for the Resize Observer API |
 | terra-base | ^3.2.0 | ^16.2.0 | The base component sets minimal global styles for an application. |
 | terra-button | ^2.3.0 | ^16.2.0 | The terra-button component provides users a way to trigger actions in the UI. |
+| terra-doc-template | ^1.1.0 | ^16.2.0 | Provides an adjustable template for documentation pages. |
 | terra-form | ^2.2.0 | ^16.2.0 | Components for building forms |
-
-## devDependencies
-| Dependency | Version | React Version | Description |
-|-|-|-|-|
-| terra-props-table | ^2.4.0 | ^16.2.0 | terra-props-table |
 
 ## peerDependencies
 | Dependency | Version | React Version | Description |
