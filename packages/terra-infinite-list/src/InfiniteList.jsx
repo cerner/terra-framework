@@ -119,6 +119,8 @@ class InfiniteList extends React.Component {
       this.updateItemCache(newProps);
     } else if (newChildCount < this.childCount) {
       this.initializeItemCache(newProps);
+    } else {
+      this.childrenArray = React.Children.toArray(newProps.children);
     }
   }
 
@@ -147,10 +149,10 @@ class InfiniteList extends React.Component {
   }
 
   /**
-   * If a request for items has not been made trigger onRequestItems.
+   * If a request for items has not been made and/or updates are not pending trigger onRequestItems.
    */
   triggerItemRequest() {
-    if (!this.props.isFinishedLoading && !this.hasRequestedItems && this.props.onRequestItems) {
+    if (!this.props.isFinishedLoading && !this.hasRequestedItems && !this.isRenderingNew && this.props.onRequestItems) {
       this.hasRequestedItems = true;
       this.props.onRequestItems();
     }

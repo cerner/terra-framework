@@ -81,6 +81,7 @@ import HookshotContentOffset from '../packages/terra-hookshot/examples/test-exam
 import HookshotEnabledBehaviors from '../packages/terra-hookshot/examples/test-examples/HookshotEnabledBehaviors.example';
 import HookshotTargetOffset from '../packages/terra-hookshot/examples/test-examples/HookshotTargetOffset.example';
 import InfiniteListLoading from '../packages/terra-infinite-list/examples/test-examples/InfiniteListLoading.example';
+import InfiniteListSameCount from '../packages/terra-infinite-list/examples/test-examples/InfiniteListSameCount.example';
 import InfiniteListSelection from '../packages/terra-infinite-list/examples/test-examples/InfiniteListSelection.example';
 import InfiniteListUpdating from '../packages/terra-infinite-list/examples/test-examples/InfiniteListUpdating.example';
 import InfiniteListVirtual from '../packages/terra-infinite-list/examples/test-examples/InfiniteListVirtual.example';
@@ -568,6 +569,11 @@ const componentConfig = {
         name: 'Infinite List Loading',
         path: '/infinite-list-loading',
         component: InfiniteListLoading,
+      },
+      {
+        name: 'Infinite List Same Count',
+        path: '/infinite-list-same-count',
+        component: InfiniteListSameCount,
       },
       {
         name: 'Infinite List Selection',
