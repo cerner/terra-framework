@@ -57,7 +57,7 @@ describe('InfiniteList', () => {
   describe('Displays an infinite list same count and different content', () => {
     before(() => {
       browser.setViewportSize(Terra.viewports('small')[0]);
-      browser.url('/#/raw/tests/infinite-list/infinite-list-same-count');
+      browser.url('/#/raw/tests/terra-infinite-list/infinite-list/infinite-list-same-count');
       browser.waitForVisible('#test-infinite-list');
       browser.pause(150);
     });
