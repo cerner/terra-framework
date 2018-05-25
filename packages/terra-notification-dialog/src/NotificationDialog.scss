@@ -65,23 +65,23 @@
     }
 
     > .alert {
-      fill: var(--terra-notification-dialog-icon, #e50000);
+      fill: var(--terra-notification-dialog-alert-icon, #e50000);
     }
 
     > .warning {
-      fill: #ffc20a;
+      fill: var(--terra-notification-dialog-warning-icon, #ffc20a);
     }
 
     > .info {
-      fill: #007cc3;
+      fill: var(--terra-notification-dialog-info-icon, #007cc3);
     }
 
     > .success {
-      fill: #78c346;
+      fill: var(--terra-notification-dialog-success-icon, #78c346);
     }
 
     > .error {
-      fill: #e50000;
+      fill: var(--terra-notification-dialog-error-icon, #e50000);
     }
   }
 
