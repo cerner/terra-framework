@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Moved examples to src
+
 ### Fixed
 * New props of children with different content update correctly
 * Double request for items prevented during render

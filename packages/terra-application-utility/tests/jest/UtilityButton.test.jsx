@@ -2,7 +2,7 @@ import React from 'react';
 import { IntlProvider } from 'react-intl';
 import messages from '../../translations/en-US.json';
 import UtilityButton from '../../src/utility/_UtilityButton';
-import MockConfig from '../../examples/index-examples/MockConfig';
+import MockConfig from '../../src/terra-dev-site/doc/common/MockConfig';
 
 describe('UtilityButton', () => {
   const mockOnChange = jest.fn();

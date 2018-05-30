@@ -9,7 +9,7 @@ viewports.forEach((viewport) => {
     });
 
     describe('Disclose Default', () => {
-      beforeEach(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
+      beforeEach(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default')
           .click('#root-component .disclose'));
 
       Terra.should.matchScreenshot({ selector });
@@ -27,42 +27,42 @@ viewports.forEach((viewport) => {
     });
 
     describe('Disclose Tiny', () => {
-      beforeEach(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
+      beforeEach(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default')
           .click('#root-component .disclose-tiny'));
 
       Terra.should.matchScreenshot({ selector });
     });
 
     describe('Disclose Small', () => {
-      beforeEach(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
+      beforeEach(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default')
           .click('#root-component .disclose-small'));
 
       Terra.should.matchScreenshot({ selector });
     });
 
     describe('Disclose Medium', () => {
-      beforeEach(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
+      beforeEach(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default')
           .click('#root-component .disclose-medium'));
 
       Terra.should.matchScreenshot({ selector });
     });
 
     describe('Disclose Large', () => {
-      beforeEach(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
+      beforeEach(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default')
           .click('#root-component .disclose-large'));
 
       Terra.should.matchScreenshot({ selector });
     });
 
     describe('Disclose Huge', () => {
-      beforeEach(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
+      beforeEach(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default')
           .click('#root-component .disclose-huge'));
 
       Terra.should.matchScreenshot({ selector });
     });
 
     describe('Disclose Fullscreen', () => {
-      beforeEach(() => browser.url('/#/raw/tests/modal-manager/modal-manager-default')
+      beforeEach(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default')
           .click('#root-component .disclose-fullscreen'));
 
       Terra.should.matchScreenshot({ selector });
@@ -78,7 +78,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Width-320', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-320-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -90,7 +90,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Width-480', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-480-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -102,7 +102,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Width-640', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-640-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -114,7 +114,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Width-800', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-800-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -126,7 +126,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Width-960', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-960-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -138,7 +138,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Width-1120', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-1120-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -150,7 +150,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Width-1280', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-1280-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -162,7 +162,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Width-1440', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-1440-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -174,7 +174,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Width-1600', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-1600-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -186,7 +186,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Width-1760', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-1760-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -198,7 +198,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Width-1920', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-1920-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -210,7 +210,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Height-240', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-240-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -222,7 +222,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Height-420', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-420-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -234,7 +234,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Height-600', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-600-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -246,7 +246,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Height-690', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-690-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -258,7 +258,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Height-780', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-780-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -270,7 +270,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Height-870', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-870-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -282,7 +282,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Height-960', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-960-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -294,7 +294,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Height-1140', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+        browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-1140-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -313,7 +313,7 @@ describe('ModalManager - Behaviors', () => {
 
   describe('Nested Disclose', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
 
       browser.click('#root-component .disclose-large');
 
@@ -326,7 +326,7 @@ describe('ModalManager - Behaviors', () => {
 
   describe('Disclosure - Dismiss', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
 
       browser.click('#root-component .disclose-large');
 
@@ -339,7 +339,7 @@ describe('ModalManager - Behaviors', () => {
 
   describe('Disclosure - Close Disclosure', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
 
       browser.click('#root-component .disclose-large');
 
@@ -352,7 +352,7 @@ describe('ModalManager - Behaviors', () => {
 
   describe('Disclosure - Maximize', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
 
       browser.click('#root-component .disclose-small');
 
@@ -365,7 +365,7 @@ describe('ModalManager - Behaviors', () => {
 
   describe('Disclosure - Minimize', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
 
       browser.click('#root-component .disclose-small');
 
@@ -383,7 +383,7 @@ describe('ModalManager - Behaviors', () => {
 
   describe('Disclosure - RequestFocus', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
 
       browser.click('#root-component .disclose-large');
 
@@ -396,7 +396,7 @@ describe('ModalManager - Behaviors', () => {
 
   describe('Disclosure - ReleaseFocus', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/modal-manager/modal-manager-default');
+      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
 
       browser.click('#root-component .disclose-large');
 

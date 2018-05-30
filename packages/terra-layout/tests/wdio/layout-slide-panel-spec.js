@@ -3,7 +3,7 @@
 describe('Toggle the slide panel and hidden styles', () => {
   before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
   beforeEach(() => {
-    browser.url('/#/raw/tests/layout/layout-slide-panel-example');
+    browser.url('/#/raw/tests/terra-layout/layout/layout-slide-panel-example');
     browser.waitForExist('[class*=_panel_][aria-hidden="true"]');
   });
 
@@ -13,7 +13,7 @@ describe('Toggle the slide panel and hidden styles', () => {
 describe('Toggle the slide panel click', () => {
   before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
   beforeEach(() => {
-    browser.url('/#/raw/tests/layout/layout-slide-panel-example');
+    browser.url('/#/raw/tests/terra-layout/layout/layout-slide-panel-example');
     browser.click('#test-toggle-1');
     browser.waitForExist('[class*=_panel_][aria-hidden="false"]');
   });
@@ -24,7 +24,7 @@ describe('Toggle the slide panel click', () => {
 describe('Toggle the slide panel double click', () => {
   before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
   beforeEach(() => {
-    browser.url('/#/raw/tests/layout/layout-slide-panel-example');
+    browser.url('/#/raw/tests/terra-layout/layout/layout-slide-panel-example');
     browser.click('#test-toggle-1');
     browser.waitForExist('[class*=_panel_][aria-hidden="false"]');
     browser.pause(150);
