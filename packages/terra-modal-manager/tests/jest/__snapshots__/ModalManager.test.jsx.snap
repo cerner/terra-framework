@@ -21,9 +21,9 @@ exports[`ModalManager should disclose content in Modal 1`] = `
         }
         key=".0"
       >
-        <div>
+        <button>
           Hello World
-        </div>
+        </button>
       </TestContainer>
       <AbstractModal
         ariaLabel="Modal"
@@ -164,9 +164,9 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                                   }
                                   key="DISCLOSE_KEY"
                                 >
-                                  <div>
+                                  <button>
                                     Hello World
-                                  </div>
+                                  </button>
                                 </TestContainer>
                               </div>
                             </Slide>
@@ -211,9 +211,9 @@ exports[`ModalManager should render the ModalManager with custom props 1`] = `
         }
         key=".0"
       >
-        <div>
+        <button>
           Hello World
-        </div>
+        </button>
       </TestContainer>
       <AbstractModal
         ariaLabel="Modal"
@@ -254,9 +254,9 @@ exports[`ModalManager should render the ModalManager with defaults 1`] = `
         }
         key=".0"
       >
-        <div>
+        <button>
           Hello World
-        </div>
+        </button>
       </TestContainer>
       <AbstractModal
         ariaLabel="Modal"

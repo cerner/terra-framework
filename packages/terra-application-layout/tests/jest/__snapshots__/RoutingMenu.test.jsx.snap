@@ -35,7 +35,7 @@ exports[`RoutingMenu Snapshot tests renders with given props 1`] = `
     ]
   }
   onChange={[Function]}
-  routingStackBack={[Function]}
+  routingStackBack={[MockFunction]}
   selectedChildKey="/1"
   selectedMenuKey="routingMenuRootMenuKey"
 />
