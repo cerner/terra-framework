@@ -38,6 +38,15 @@ const propTypes = {
    */
   attachmentMargin: PropTypes.number,
   /**
+   * Screen representation of the bounding rectangle.
+   */
+  boundingRect: PropTypes.shape({
+    x: PropTypes.number,
+    y: PropTypes.number,
+    height: PropTypes.number,
+    width: PropTypes.number,
+  }),
+  /**
    * Reference to the bounding container. Defaults to window unless attachment behavior is set to none.
    */
   boundingRef: PropTypes.func,
@@ -73,9 +82,18 @@ const propTypes = {
    */
   onPosition: PropTypes.func,
   /**
+   * Screen representation of the target rectangle.
+   */
+  targetRect: PropTypes.shape({
+    x: PropTypes.number,
+    y: PropTypes.number,
+    height: PropTypes.number,
+    width: PropTypes.number,
+  }),
+  /**
    * Required element that the content will hookshot to.
    */
-  targetRef: PropTypes.func.isRequired,
+  targetRef: PropTypes.func,
   /**
    * Object containing the vertical and horizontal attachment values for the target.
    * Valid values: { horizontal: ['start', 'center', 'end'], vertical: ['top', 'middle', 'bottom'] }.
@@ -96,9 +114,11 @@ const propTypes = {
 const defaultProps = {
   attachmentMargin: 0,
   attachmentBehavior: 'auto',
+  boundingRect: undefined,
   contentOffset: { horizontal: 0, vertical: 0 },
   isEnabled: false,
   isOpen: false,
+  targetRect: undefined,
   targetOffset: { horizontal: 0, vertical: 0 },
 };
 
@@ -149,12 +169,34 @@ class Hookshot extends React.Component {
   }
 
   getNodeRects() {
-    const targetRect = HookshotUtils.getBounds(this.props.targetRef());
     const contentRect = HookshotUtils.getBounds(this.contentNode);
 
-    let boundingRect = null;
+    let targetRect;
+    if (this.props.targetRect) {
+      targetRect = {
+        left: this.props.targetRect.x,
+        top: this.props.targetRect.y,
+        right: this.props.targetRect.x + this.props.targetRect.width,
+        bottom: this.props.targetRect.y + this.props.targetRect.height,
+        height: this.props.targetRect.height,
+        width: this.props.targetRect.width,
+      };
+    } else {
+      targetRect = HookshotUtils.getBounds(this.props.targetRef());
+    }
+
+    let boundingRect;
     if (this.props.attachmentBehavior !== 'none') {
-      boundingRect = HookshotUtils.getBoundingRect(this.props.boundingRef ? this.props.boundingRef() : 'window');
+      if (this.props.boundingRect) {
+        boundingRect = {
+          left: this.props.boundingRect.x,
+          top: this.props.boundingRect.y,
+          right: this.props.boundingRect.x + this.props.boundingRect.width,
+          bottom: this.props.boundingRect.y + this.props.boundingRect.height,
+        };
+      } else {
+        boundingRect = HookshotUtils.getBoundingRect(this.props.boundingRef ? this.props.boundingRef() : 'window');
+      }
     }
 
     return { targetRect, contentRect, boundingRect };
@@ -186,7 +228,7 @@ class Hookshot extends React.Component {
   }
 
   enableListeners() {
-    const target = this.props.targetRef();
+    const target = this.props.targetRef ? this.props.targetRef() : null;
     if (!target) {
       return;
     }
@@ -223,7 +265,9 @@ class Hookshot extends React.Component {
       if (this.props.boundingRef && this.props.attachmentBehavior !== 'none') {
         this.cachedRects.boundingRect = HookshotUtils.getBoundingRect(this.props.boundingRef());
       }
-      this.cachedRects.targetRect = HookshotUtils.getBounds(this.props.targetRef());
+      if (!this.props.targetRect) {
+        this.cachedRects.targetRect = HookshotUtils.getBounds(this.props.targetRef());
+      }
     }
 
     this.content.rect = this.cachedRects.contentRect;
@@ -265,7 +309,7 @@ class Hookshot extends React.Component {
   }
 
   update(event) {
-    if (!this.props.targetRef() || !this.contentNode) {
+    if ((!this.props.targetRef && !this.props.targetRect) || !this.contentNode) {
       return;
     }
     this.updateHookshot(event);
@@ -297,12 +341,14 @@ class Hookshot extends React.Component {
     const {
       attachmentBehavior,
       attachmentMargin,
+      boundingRect,
       boundingRef,
       children,
       contentAttachment,
       contentOffset,
       isEnabled,
       isOpen,
+      targetRect,
       targetRef,
       targetAttachment,
       targetOffset,

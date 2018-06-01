@@ -126,11 +126,12 @@ class HookshotStandard extends React.Component {
         <Hookshot
           attachmentBehavior={this.state.hookshotAttachmentBehavior}
           attachmentMargin={this.state.hookshotAttachmentMargin}
+          boundingRect={{ x: 400, y: 500, height: 200, width: 200 }}
           contentAttachment={attachmentValues(this.state.hookshotContentAttachment)}
           isEnabled
           isOpen={this.state.isOpen}
           targetAttachment={attachmentValues(this.state.hookshotTargetAttachment)}
-          targetRef={() => document.getElementById('hookshot-standard-button')}
+          targetRect={{ x: 3000, y: 3000, height: 0, width: 0 }}
         >
           {hookshotContent}
         </Hookshot>
