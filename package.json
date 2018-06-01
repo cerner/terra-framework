@@ -69,6 +69,7 @@
     "postpublish": "npm run dependency-markdown && git add --all && git commit -m 'Updated DEPENDENCIES.md files'",
     "start": "tt:serve",
     "start-heroku": "tt:serve-static --site build ",
+    "start-static": "tt:serve-static --config webpack.config",
     "test": "jest && npm run wdio",
     "wdio": "wdio node_modules/terra-dev-site/config/wdio/wdio.conf.js",
     "tds:generate-app-config": "tds:generate-app-config"
