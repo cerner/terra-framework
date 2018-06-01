@@ -9,11 +9,6 @@ exports[`Layout should render a NavigationSideMenu with default props 1`] = `
       data-navigation-side-menu-action-header={true}
       level={1}
       onBack={[Function]}
-      onClose={undefined}
-      onMaximize={undefined}
-      onMinimize={undefined}
-      onNext={undefined}
-      onPrevious={undefined}
       title={null}
     />
   }
@@ -29,11 +24,6 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
       data-navigation-side-menu-action-header={true}
       level={1}
       onBack={[Function]}
-      onClose={undefined}
-      onMaximize={undefined}
-      onMinimize={undefined}
-      onNext={undefined}
-      onPrevious={undefined}
       title="Test Menu"
     />
   }
