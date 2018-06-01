@@ -51,6 +51,7 @@ class HookshotStandard extends React.Component {
     this.handleRequestClose = this.handleRequestClose.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleMouseMove = this.handleMouseMove.bind(this);
     this.getId = this.getId.bind(this);
     this.state = {
       isOpen: false,
@@ -65,8 +66,12 @@ class HookshotStandard extends React.Component {
     return name + this.state.id;
   }
 
-  handleButtonClick() {
-    this.setState({ isOpen: !this.state.isOpen });
+  handleButtonClick(event) {
+    this.setState({ isOpen: !this.state.isOpen, rect: { x: event.clientX, y: event.clientY, height: 0, width: 0 } });
+  }
+
+  handleMouseMove(event) {
+    this.setState({ rect: { x: event.clientX, y: event.clientY, height: 0, width: 0 } });
   }
 
   handleRequestClose() {
@@ -93,7 +98,7 @@ class HookshotStandard extends React.Component {
     );
 
     return (
-      <div>
+      <div onMouseMove={this.handleMouseMove}>
         <form>
           <label htmlFor={this.getId('hookshotAttachmentBehavior')}>Attachment Behavior</label>
           <select id={this.getId('hookshotAttachmentBehavior')} name="hookshotAttachmentBehavior" value={this.state.hookshotAttachmentBehavior} onChange={this.handleSelectChange}>
@@ -126,12 +131,11 @@ class HookshotStandard extends React.Component {
         <Hookshot
           attachmentBehavior={this.state.hookshotAttachmentBehavior}
           attachmentMargin={this.state.hookshotAttachmentMargin}
-          boundingRect={{ x: 400, y: 500, height: 200, width: 200 }}
           contentAttachment={attachmentValues(this.state.hookshotContentAttachment)}
           isEnabled
           isOpen={this.state.isOpen}
           targetAttachment={attachmentValues(this.state.hookshotTargetAttachment)}
-          targetRect={{ x: 3000, y: 3000, height: 0, width: 0 }}
+          targetRect={this.state.rect}
         >
           {hookshotContent}
         </Hookshot>
