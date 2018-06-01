@@ -20,7 +20,6 @@ exports[`ApplicationHeader should render props 1`] = `
   <ApplicationMenuLayout
     content={
       <ContentExample
-        app={undefined}
         layoutConfig={
           Object {
             "size": "small",
@@ -31,7 +30,6 @@ exports[`ApplicationHeader should render props 1`] = `
     }
     extensions={
       <ApplicationHeaderDefault
-        app={undefined}
         layoutConfig={
           Object {
             "size": "small",
@@ -41,7 +39,6 @@ exports[`ApplicationHeader should render props 1`] = `
     }
     footer={
       <ApplicationHeaderUtility
-        accessory={undefined}
         data-application-menu-utility={true}
         initialSelectedKey="test-menu"
         menuItems={
@@ -63,7 +60,6 @@ exports[`ApplicationHeader should render props 1`] = `
         className="menu-header"
       >
         <ApplicationMenuName
-          accessory={undefined}
           title="app-test-title"
         />
       </div>

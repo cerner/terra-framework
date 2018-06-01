@@ -394,9 +394,6 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with onl
           "links": Array [],
         }
       }
-      extensions={undefined}
-      nameConfig={undefined}
-      utilityConfig={undefined}
     />
   }
   indexPath="/item_1"
