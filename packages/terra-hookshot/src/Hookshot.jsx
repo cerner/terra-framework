@@ -73,14 +73,14 @@ const propTypes = {
    */
   onPosition: PropTypes.func,
   /**
-   * Client coordinates to serve as the archor point for the content.
+   * Client coordinates to serve as the anchor point for the hookshot'd content.
    */
   targetCoordinates: PropTypes.shape({
     x: PropTypes.number,
     y: PropTypes.number,
   }),
   /**
-   * Element to serve as the archor point for the content. (If targetCoordinates are provided, this is ignored.)
+   * Element to serve as the anchor point for the hookshot'd content. (If targetCoordinates are provided, this is ignored.)
    */
   targetRef: PropTypes.func,
   /**
