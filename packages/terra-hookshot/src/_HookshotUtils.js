@@ -13,6 +13,21 @@ const MIRROR_TB = {
 };
 
 /**
+ * This function returns a rect 2px x 2px with the origin based at (1,1), allow for evenly centered attachment points.
+ * As a result of the 2x2 size, bounds checking errors as a result of rounding are eliminated.
+ *
+ * @ param {object} coords - THe x and y client coordinates.
+ */
+const getRectFromCoords = coords => ({
+  top: coords.y - 1,
+  right: coords.x + 1,
+  bottom: coords.y + 1,
+  left: coords.x - 1,
+  width: 2,
+  height: 2,
+});
+
+/**
  * This function returns the size of an element and its position relative to the viewport. It takes into account parent <frame> offsets
  * if the element lies within a nested document (<frame> or <iframe>-like).
  *
@@ -182,6 +197,11 @@ const getBoundingRect = (boundingElement) => {
 
   return rect;
 };
+
+/**
+ * This function returns the attachment object for the target when using coordinate based positioning.
+ */
+const getCoordinateAttachment = () => ({ vertical: 'middle', horizontal: 'center' });
 
 /**
  * This function returns the attachment object, adjusted for RTL conversion.
@@ -555,9 +575,11 @@ const positionStyleFromBounds = (boundingRect, content, target, margin, behavior
 
 export default {
   getScrollParents,
+  getRectFromCoords,
   getBounds,
   getBoundingRect,
   mirrorAttachment,
+  getCoordinateAttachment,
   getDirectionalAttachment,
   getDirectionalOffset,
   positionStyleFromBounds,

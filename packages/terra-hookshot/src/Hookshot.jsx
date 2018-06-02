@@ -84,11 +84,9 @@ const propTypes = {
   /**
    * Screen representation of the target rectangle.
    */
-  targetRect: PropTypes.shape({
+  targetCoordinates: PropTypes.shape({
     x: PropTypes.number,
     y: PropTypes.number,
-    height: PropTypes.number,
-    width: PropTypes.number,
   }),
   /**
    * Required element that the content will hookshot to.
@@ -118,7 +116,7 @@ const defaultProps = {
   contentOffset: { horizontal: 0, vertical: 0 },
   isEnabled: false,
   isOpen: false,
-  targetRect: undefined,
+  targetCoordinates: undefined,
   targetOffset: { horizontal: 0, vertical: 0 },
 };
 
@@ -168,38 +166,26 @@ class Hookshot extends React.Component {
     this.contentNode = node;
   }
 
-  getNodeRects() {
-    const contentRect = HookshotUtils.getBounds(this.contentNode);
-
-    let targetRect;
-    if (this.props.targetRect) {
-      targetRect = {
-        left: this.props.targetRect.x,
-        top: this.props.targetRect.y,
-        right: this.props.targetRect.x + this.props.targetRect.width,
-        bottom: this.props.targetRect.y + this.props.targetRect.height,
-        height: this.props.targetRect.height,
-        width: this.props.targetRect.width,
-      };
-    } else {
-      targetRect = HookshotUtils.getBounds(this.props.targetRef());
+  getValidBoundingRect() {
+    if (this.props.attachmentBehavior === 'none') {
+      return undefined;
     }
+    return HookshotUtils.getBoundingRect(this.props.boundingRef ? this.props.boundingRef() : 'window');
+  }
 
-    let boundingRect;
-    if (this.props.attachmentBehavior !== 'none') {
-      if (this.props.boundingRect) {
-        boundingRect = {
-          left: this.props.boundingRect.x,
-          top: this.props.boundingRect.y,
-          right: this.props.boundingRect.x + this.props.boundingRect.width,
-          bottom: this.props.boundingRect.y + this.props.boundingRect.height,
-        };
-      } else {
-        boundingRect = HookshotUtils.getBoundingRect(this.props.boundingRef ? this.props.boundingRef() : 'window');
-      }
+  getValidTargetRect() {
+    if (this.props.targetCoordinates) {
+      return HookshotUtils.getRectFromCoords(this.props.targetCoordinates);
     }
+    return HookshotUtils.getBounds(this.props.targetRef());
+  }
 
-    return { targetRect, contentRect, boundingRect };
+  getNodeRects(resetCache) {
+    return {
+      contentRect: resetCache ? HookshotUtils.getBounds(this.contentNode) : this.cachedRects.contentRect,
+      targetRect: this.getValidTargetRect(),
+      boundingRect: this.getValidBoundingRect(),
+    };
   }
 
   tick(event) {
@@ -259,17 +245,7 @@ class Hookshot extends React.Component {
   }
 
   position(event, resetCache) {
-    if (resetCache) {
-      this.cachedRects = this.getNodeRects();
-    } else {
-      if (this.props.boundingRef && this.props.attachmentBehavior !== 'none') {
-        this.cachedRects.boundingRect = HookshotUtils.getBoundingRect(this.props.boundingRef());
-      }
-      if (!this.props.targetRect) {
-        this.cachedRects.targetRect = HookshotUtils.getBounds(this.props.targetRef());
-      }
-    }
-
+    this.cachedRects = this.getNodeRects(resetCache);
     this.content.rect = this.cachedRects.contentRect;
     this.target.rect = this.cachedRects.targetRect;
 
@@ -309,7 +285,7 @@ class Hookshot extends React.Component {
   }
 
   update(event) {
-    if ((!this.props.targetRef && !this.props.targetRect) || !this.contentNode) {
+    if ((!this.props.targetRef && !this.props.targetCoordinates) || !this.contentNode) {
       return;
     }
     this.updateHookshot(event);
@@ -348,7 +324,7 @@ class Hookshot extends React.Component {
       contentOffset,
       isEnabled,
       isOpen,
-      targetRect,
+      targetCoordinates,
       targetRef,
       targetAttachment,
       targetOffset,
@@ -366,8 +342,15 @@ class Hookshot extends React.Component {
     };
     this.target = {
       offset: HookshotUtils.getDirectionalOffset(targetOffset, isRTL),
-      attachment: targetAttachment ? HookshotUtils.getDirectionalAttachment(targetAttachment, isRTL) : HookshotUtils.mirrorAttachment(this.content.attachment),
     };
+
+    if (targetCoordinates) {
+      this.target.attachment = HookshotUtils.getCoordinateAttachment();
+    } else if (targetAttachment) {
+      this.target.attachment = HookshotUtils.getDirectionalAttachment(targetAttachment, isRTL);
+    } else {
+      this.target.attachment = HookshotUtils.mirrorAttachment(this.content.attachment);
+    }
 
     return (
       <Portal isOpened={isOpen}>
