@@ -15,8 +15,8 @@ exports[`UtilityMenu it should pass in a custom prop 1`] = `
       },
     ]
   }
-  onChange={[Function]}
-  onDisclose={[Function]}
+  onChange={[MockFunction]}
+  onDisclose={[MockFunction]}
   variant="header"
 />
 `;
@@ -35,8 +35,8 @@ exports[`UtilityMenu should render with default props 1`] = `
       },
     ]
   }
-  onChange={[Function]}
-  onDisclose={[Function]}
+  onChange={[MockFunction]}
+  onDisclose={[MockFunction]}
   variant="header"
 />
 `;
@@ -56,8 +56,8 @@ exports[`UtilityMenu should render with isHeightBounded 1`] = `
       },
     ]
   }
-  onChange={[Function]}
-  onDisclose={[Function]}
+  onChange={[MockFunction]}
+  onDisclose={[MockFunction]}
   variant="header"
 />
 `;
@@ -76,9 +76,9 @@ exports[`UtilityMenu should render with onRequestClose set 1`] = `
       },
     ]
   }
-  onChange={[Function]}
-  onDisclose={[Function]}
-  onRequestClose={[Function]}
+  onChange={[MockFunction]}
+  onDisclose={[MockFunction]}
+  onRequestClose={[MockFunction]}
   variant="header"
 />
 `;
