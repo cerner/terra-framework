@@ -150,7 +150,7 @@ class HookshotStandard extends React.Component {
         >
           {hookshotContent}
         </Hookshot>
-        <div style={{ height: '200px', width: '400px', background: 'aliceblue', overflow: 'auto', position: 'relative' }} ref={this.setParentNode}>
+        <div style={{ border: '1px dashed black', height: '200px', maxWidth: '100%', width: '400px', background: 'aliceblue', overflow: 'auto', position: 'relative' }} ref={this.setParentNode}>
           <div style={{ position: 'relative', height: '600px', width: '1200px' }}>
             <Button id="hookshot-bounded-button" text="Hookshot Example" onClick={this.handleButtonClick} style={{ position: 'absolute', left: '600px', top: '300px' }} />
           </div>
