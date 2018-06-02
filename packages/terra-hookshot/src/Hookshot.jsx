@@ -38,15 +38,6 @@ const propTypes = {
    */
   attachmentMargin: PropTypes.number,
   /**
-   * Screen representation of the bounding rectangle.
-   */
-  boundingRect: PropTypes.shape({
-    x: PropTypes.number,
-    y: PropTypes.number,
-    height: PropTypes.number,
-    width: PropTypes.number,
-  }),
-  /**
    * Reference to the bounding container. Defaults to window unless attachment behavior is set to none.
    */
   boundingRef: PropTypes.func,
@@ -82,14 +73,14 @@ const propTypes = {
    */
   onPosition: PropTypes.func,
   /**
-   * Screen representation of the target rectangle.
+   * Client coordinates to serve as the archor point for the content.
    */
   targetCoordinates: PropTypes.shape({
     x: PropTypes.number,
     y: PropTypes.number,
   }),
   /**
-   * Required element that the content will hookshot to.
+   * Element to serve as the archor point for the content. (If targetCoordinates are provided, this is ignored.)
    */
   targetRef: PropTypes.func,
   /**
@@ -112,11 +103,9 @@ const propTypes = {
 const defaultProps = {
   attachmentMargin: 0,
   attachmentBehavior: 'auto',
-  boundingRect: undefined,
   contentOffset: { horizontal: 0, vertical: 0 },
   isEnabled: false,
   isOpen: false,
-  targetCoordinates: undefined,
   targetOffset: { horizontal: 0, vertical: 0 },
 };
 
@@ -317,7 +306,6 @@ class Hookshot extends React.Component {
     const {
       attachmentBehavior,
       attachmentMargin,
-      boundingRect,
       boundingRef,
       children,
       contentAttachment,
