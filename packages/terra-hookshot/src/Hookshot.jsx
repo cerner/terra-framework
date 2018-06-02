@@ -86,6 +86,7 @@ const propTypes = {
   /**
    * Object containing the vertical and horizontal attachment values for the target.
    * Valid values: { horizontal: ['start', 'center', 'end'], vertical: ['top', 'middle', 'bottom'] }.
+   * If targetCoordinates are provided { horizontal: 'center', vertical: 'middle' } will be applied.
    */
   targetAttachment: PropTypes.shape({
     horizontal: PropTypes.oneOf(HORIZONTAL_ATTACHMENTS),
