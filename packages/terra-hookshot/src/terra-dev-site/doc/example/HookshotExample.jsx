@@ -51,7 +51,6 @@ class HookshotStandard extends React.Component {
     this.handleRequestClose = this.handleRequestClose.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleMouseMove = this.handleMouseMove.bind(this);
     this.getId = this.getId.bind(this);
     this.state = {
       isOpen: false,
@@ -66,14 +65,8 @@ class HookshotStandard extends React.Component {
     return name + this.state.id;
   }
 
-  handleButtonClick(event) {
-    this.setState({ isOpen: !this.state.isOpen, coordinates: { x: event.clientX, y: event.clientY } });
-  }
-
-  handleMouseMove(event) {
-    if (this.state.isOpen) {
-      this.setState({ coordinates: { x: event.clientX, y: event.clientY } });
-    }
+  handleButtonClick() {
+    this.setState({ isOpen: !this.state.isOpen });
   }
 
   handleRequestClose() {
@@ -100,7 +93,7 @@ class HookshotStandard extends React.Component {
     );
 
     return (
-      <div onMouseMove={this.handleMouseMove} style={{ border: '1px dashed black' }}>
+      <div>
         <form>
           <label htmlFor={this.getId('hookshotAttachmentBehavior')}>Attachment Behavior</label>
           <select id={this.getId('hookshotAttachmentBehavior')} name="hookshotAttachmentBehavior" value={this.state.hookshotAttachmentBehavior} onChange={this.handleSelectChange}>
@@ -137,7 +130,7 @@ class HookshotStandard extends React.Component {
           isEnabled
           isOpen={this.state.isOpen}
           targetAttachment={attachmentValues(this.state.hookshotTargetAttachment)}
-          targetCoordinates={this.state.coordinates}
+          targetRef={() => document.getElementById('hookshot-standard-button')}
         >
           {hookshotContent}
         </Hookshot>
