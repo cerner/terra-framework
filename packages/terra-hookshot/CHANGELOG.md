@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Introduce targetCoordinates to hookshot functionality.
 
 4.3.0 - (May 30, 2018)
 ------------------
