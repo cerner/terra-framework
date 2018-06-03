@@ -117,6 +117,10 @@ class Hookshot extends React.Component {
     this.getNodeRects = this.getNodeRects.bind(this);
     this.update = this.update.bind(this);
     this.tick = this.tick.bind(this);
+    this.getBoundingRef = this.getBoundingRef.bind(this);
+    this.getTargetRef = this.getTargetRef.bind(this);
+    this.getValidBoundingRect = this.getValidBoundingRect.bind(this);
+    this.getValidTargetRect = this.getValidTargetRect.bind(this);
     this.state = { isEnabled: props.isEnabled && props.isOpen };
     this.listenersAdded = false;
     this.lastCall = null;
@@ -156,6 +160,10 @@ class Hookshot extends React.Component {
     this.contentNode = node;
   }
 
+  getBoundingRef() {
+    return this.props.boundingRef ? this.props.boundingRef() : undefined;
+  }
+
   getTargetRef() {
     return this.props.targetRef ? this.props.targetRef() : undefined;
   }
@@ -164,14 +172,14 @@ class Hookshot extends React.Component {
     if (this.props.attachmentBehavior === 'none') {
       return undefined;
     }
-    return HookshotUtils.getBoundingRect(this.props.boundingRef ? this.props.boundingRef() : 'window');
+    return HookshotUtils.getBoundingRect(this.getBoundingRef() || 'window');
   }
 
   getValidTargetRect() {
     if (this.props.targetCoordinates) {
       return HookshotUtils.getRectFromCoords(this.props.targetCoordinates);
     }
-    return HookshotUtils.getBounds(this.props.targetRef());
+    return HookshotUtils.getBounds(this.getTargetRef());
   }
 
   getNodeRects(resetContentCache) {
@@ -208,17 +216,17 @@ class Hookshot extends React.Component {
   }
 
   enableListeners() {
-    const target = this.getTargetRef();
-    if (!target) {
+    const childElement = this.getTargetRef() || this.getBoundingRef();
+    if (!childElement) {
       return;
     }
 
     ['resize', 'scroll', 'touchmove'].forEach(event => window.addEventListener(event, this.tick));
 
     this.parentListeners = [];
-    const scrollParents = HookshotUtils.getScrollParents(target);
+    const scrollParents = HookshotUtils.getScrollParents(childElement);
     scrollParents.forEach((parent) => {
-      if (parent !== target.ownerDocument) {
+      if (parent !== childElement.ownerDocument) {
         parent.addEventListener('scroll', this.tick);
         this.parentListeners.push(parent);
       }
