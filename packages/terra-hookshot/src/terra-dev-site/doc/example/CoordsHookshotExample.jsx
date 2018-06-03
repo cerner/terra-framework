@@ -56,6 +56,9 @@ class HookshotStandard extends React.Component {
     this.state = {
       isOpen: false,
       coordinates: undefined,
+      hookshotContentAttachment: ATTACHMENT_POSITIONS[1],
+      hookshotAttachmentBehavior: Hookshot.attachmentBehaviors[0],
+      hookshotAttachmentMargin: 0,
     };
   }
 
