@@ -156,6 +156,10 @@ class Hookshot extends React.Component {
     this.contentNode = node;
   }
 
+  getTargetRef() {
+    return this.props.targetRef ? this.props.targetRef() : undefined;
+  }
+
   getValidBoundingRect() {
     if (this.props.attachmentBehavior === 'none') {
       return undefined;
@@ -170,9 +174,9 @@ class Hookshot extends React.Component {
     return HookshotUtils.getBounds(this.props.targetRef());
   }
 
-  getNodeRects(resetCache) {
+  getNodeRects(resetContentCache) {
     return {
-      contentRect: resetCache ? HookshotUtils.getBounds(this.contentNode) : this.cachedRects.contentRect,
+      contentRect: resetContentCache ? HookshotUtils.getBounds(this.contentNode) : this.cachedRects.contentRect,
       targetRect: this.getValidTargetRect(),
       boundingRect: this.getValidBoundingRect(),
     };
@@ -204,7 +208,7 @@ class Hookshot extends React.Component {
   }
 
   enableListeners() {
-    const target = this.props.targetRef ? this.props.targetRef() : null;
+    const target = this.getTargetRef();
     if (!target) {
       return;
     }
@@ -234,8 +238,8 @@ class Hookshot extends React.Component {
     this.listenersAdded = false;
   }
 
-  position(event, resetCache) {
-    this.cachedRects = this.getNodeRects(resetCache);
+  position(event, resetContentCache) {
+    this.cachedRects = this.getNodeRects(resetContentCache);
     this.content.rect = this.cachedRects.contentRect;
     this.target.rect = this.cachedRects.targetRect;
 
@@ -275,7 +279,7 @@ class Hookshot extends React.Component {
   }
 
   update(event) {
-    if ((!this.props.targetRef && !this.props.targetCoordinates) || !this.contentNode) {
+    if ((!this.getTargetRef() && !this.props.targetCoordinates) || !this.contentNode) {
       return;
     }
     this.updateHookshot(event);
