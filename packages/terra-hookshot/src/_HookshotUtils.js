@@ -199,9 +199,9 @@ const getBoundingRect = (boundingElement) => {
 };
 
 /**
- * This function returns the attachment object for the target when using coordinate based positioning.
+ * This object contains the attachment values for the target when using coordinate based positioning.
  */
-const getCoordinateAttachment = () => ({ vertical: 'middle', horizontal: 'center' });
+const coordinateAttachment = { vertical: 'middle', horizontal: 'center' };
 
 /**
  * This function returns the attachment object, adjusted for RTL conversion.
@@ -579,7 +579,7 @@ export default {
   getBounds,
   getBoundingRect,
   mirrorAttachment,
-  getCoordinateAttachment,
+  coordinateAttachment,
   getDirectionalAttachment,
   getDirectionalOffset,
   positionStyleFromBounds,

@@ -346,7 +346,7 @@ class Hookshot extends React.Component {
     };
 
     if (targetCoordinates) {
-      this.target.attachment = HookshotUtils.getCoordinateAttachment();
+      this.target.attachment = HookshotUtils.coordinateAttachment;
     } else if (targetAttachment) {
       this.target.attachment = HookshotUtils.getDirectionalAttachment(targetAttachment, isRTL);
     } else {
