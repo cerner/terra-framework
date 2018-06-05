@@ -56,7 +56,7 @@ describe('HeaderUtilityMenu', () => {
     });
   });
 
-  describe('Focus: header utility menu', () => {
+  describe('Focus-header utility menu', () => {
     beforeEach(() => {
       browser.keys(['Tab', 'Tab', 'Tab']);
     });
