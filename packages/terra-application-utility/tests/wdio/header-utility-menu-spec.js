@@ -43,7 +43,7 @@ describe('HeaderUtilityMenu', () => {
     });
   });
 
-  describe('Hover: header utility menu', () => {
+  describe('Hover-header utility menu', () => {
     beforeEach(() => {
       browser.waitForVisible('#test-item-2');
       browser.moveToObject('#test-item-2');
