@@ -113,7 +113,7 @@
     "stylelint-scss": "^3.1.0",
     "stylelint-suitcss": "^3.0.0",
     "terra-dev-site": "^1.0.0",
-    "terra-toolkit": "^3.3.1",
+    "terra-toolkit": "3.5.0",
     "xfc": "^1.2.1"
   }
 }
