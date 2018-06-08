@@ -5,7 +5,7 @@ const selector = '#root';
 describe('NotificationDialog', () => {
   describe('Complete notification-dialog title, message and actions', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/notification-dialog/complete-notification-dialog');
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
       browser.click('#trigger-notification-dialog');
     });
 
@@ -15,7 +15,7 @@ describe('NotificationDialog', () => {
 
   describe('Complete notification-dialog with a long message', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/notification-dialog/complete-notification-dialog-with-long-message');
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog-with-long-message');
       browser.click('#trigger-notification-dialog');
     });
 
@@ -25,7 +25,7 @@ describe('NotificationDialog', () => {
 
   describe('No Variant notification-dialog', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/notification-dialog/no-variant-notification-dialog');
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/no-variant-notification-dialog');
       browser.click('#trigger-notification-dialog');
     });
 
@@ -35,7 +35,7 @@ describe('NotificationDialog', () => {
 
   describe('Complete notification-dialog with themeable properties', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/notification-dialog/complete-notification-dialog');
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
       browser.click('#trigger-notification-dialog');
     });
 
@@ -58,7 +58,7 @@ describe('NotificationDialog', () => {
 
   describe('Complete notification-dialog with themeable actions', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/notification-dialog/complete-notification-dialog');
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
       browser.click('#trigger-notification-dialog');
     });
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import intlContexts from './intl-context-setup';
-import CompleteNotificationDialog from '../../examples/test-examples/CompleteNotificationDialog.example';
-import CompleteNotificationDialogWithLongMessage from '../../examples/test-examples/CompleteNotificationDialogWithLongMessage.example';
-import NoVariantNotificationDialog from '../../examples/test-examples/NoVariantNotificationDialog.example';
+import CompleteNotificationDialog from '../../src/terra-dev-site/test/notification-dialog/CompleteNotificationDialog.test';
+import CompleteNotificationDialogWithLongMessage from '../../src/terra-dev-site/test/notification-dialog/CompleteNotificationDialogWithLongMessage.test';
+import NoVariantNotificationDialog from '../../src/terra-dev-site/test/notification-dialog/NoVariantNotificationDialog.test';
 
 it('should shallow a complete notification-dialog', () => {
   const modal = shallow(<CompleteNotificationDialog />, intlContexts.shallowContext);

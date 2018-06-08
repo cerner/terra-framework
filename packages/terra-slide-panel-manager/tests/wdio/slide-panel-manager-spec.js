@@ -9,7 +9,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Default', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
+        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
         browser.click('#root-component .disclose');
       });
 
@@ -19,7 +19,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Tiny', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
+        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
         browser.click('#root-component .disclose-tiny');
       });
 
@@ -28,7 +28,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Small', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
+        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
         browser.click('#root-component .disclose-small');
       });
 
@@ -37,7 +37,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Medium', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
+        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
         browser.click('#root-component .disclose-medium');
       });
 
@@ -46,7 +46,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Large', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
+        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
         browser.click('#root-component .disclose-large');
       });
 
@@ -55,7 +55,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Huge', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
+        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
         browser.click('#root-component .disclose-huge');
       });
 
@@ -64,7 +64,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Fullscreen', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
+        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
         browser.click('#root-component .disclose-fullscreen');
       });
 
@@ -81,7 +81,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Width-320', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
+        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-320-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -94,7 +94,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Width-480', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
+        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-480-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -107,7 +107,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Width-640', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
+        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-640-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -120,7 +120,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Height-240', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
+        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-240-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -133,7 +133,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Height-420', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
+        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-420-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -146,7 +146,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Height-600', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
+        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-600-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -159,7 +159,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Height-690', () => {
       beforeEach(() => {
-        browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
+        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-690-0');
         browser.click('#root-component #disclose-dimension-0');
@@ -179,7 +179,7 @@ describe('SlidePanelManager- Behaviors', () => {
 
   describe('Nested Disclose', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
+      browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
 
       browser.click('#root-component .disclose-large');
 
@@ -192,7 +192,7 @@ describe('SlidePanelManager- Behaviors', () => {
 
   describe('Disclosure - Dismiss', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
+      browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
 
       browser.click('#root-component .disclose-large');
 
@@ -205,7 +205,7 @@ describe('SlidePanelManager- Behaviors', () => {
 
   describe('Disclosure - Close Disclosure', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
+      browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
 
       browser.click('#root-component .disclose-large');
 
@@ -218,7 +218,7 @@ describe('SlidePanelManager- Behaviors', () => {
 
   describe('Disclosure - Maximize', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
+      browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
 
       browser.click('#root-component .disclose-large');
 
@@ -231,7 +231,7 @@ describe('SlidePanelManager- Behaviors', () => {
 
   describe('Disclosure - Minimize', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
+      browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
 
       browser.click('#root-component .disclose-large');
 
@@ -250,7 +250,7 @@ describe('SlidePanelManager- Behaviors', () => {
 
   describe('Disclosure - RequestFocus', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
+      browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
 
       browser.click('#root-component .disclose-large');
 
@@ -263,7 +263,7 @@ describe('SlidePanelManager- Behaviors', () => {
 
   describe('Disclosure - ReleaseFocus', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/slide-panel-manager/slide-panel-manager-default');
+      browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
 
       browser.click('#root-component .disclose-large');
 

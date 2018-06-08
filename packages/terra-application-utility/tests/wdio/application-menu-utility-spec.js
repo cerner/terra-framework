@@ -4,7 +4,7 @@ const viewports = Terra.viewports('tiny', 'medium');
 
 describe('ApplicationMenuUtility', () => {
   beforeEach(() => {
-    browser.url('/#/raw/tests/application-utility/default-application-menu-utility');
+    browser.url('/#/raw/tests/terra-application-utility/application-utility/default-application-menu-utility');
     browser.waitForVisible('#default');
   });
 

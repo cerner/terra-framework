@@ -5,7 +5,7 @@ const viewports = Terra.viewports('small');
 describe('InfiniteList', () => {
   describe('Displays an infinite list with loading indicator', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/infinite-list/infinite-list-loading');
+      browser.url('/#/raw/tests/terra-infinite-list/infinite-list/infinite-list-loading');
       browser.waitForVisible('#test-infinite-list');
     });
 
@@ -14,7 +14,7 @@ describe('InfiniteList', () => {
 
   describe('Displays an infinite list with updating indicator', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/infinite-list/infinite-list-updating');
+      browser.url('/#/raw/tests/terra-infinite-list/infinite-list/infinite-list-updating');
       browser.waitForVisible('#test-infinite-list');
     });
 
@@ -23,7 +23,7 @@ describe('InfiniteList', () => {
 
   describe('Displays an infinite list with selection', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/infinite-list/infinite-list-selection');
+      browser.url('/#/raw/tests/terra-infinite-list/infinite-list/infinite-list-selection');
       browser.waitForVisible('#test-infinite-list');
     });
 
@@ -32,7 +32,7 @@ describe('InfiniteList', () => {
 
   describe('Displays an infinite list with virtual dom from top', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/infinite-list/infinite-list-virtual');
+      browser.url('/#/raw/tests/terra-infinite-list/infinite-list/infinite-list-virtual');
       browser.waitForVisible('#test-infinite-list');
       browser.pause(150);
     });
@@ -43,7 +43,7 @@ describe('InfiniteList', () => {
   describe('Displays an infinite list with virtual dom from bottom', () => {
     before(() => browser.setViewportSize(Terra.viewports('small')[0]));
     beforeEach(() => {
-      browser.url('/#/raw/tests/infinite-list/infinite-list-virtual');
+      browser.url('/#/raw/tests/terra-infinite-list/infinite-list/infinite-list-virtual');
       browser.waitForVisible('#test-infinite-list [data-infinite-list-index="0"]');
       browser.pause(150);
       browser.click('#test-click');
@@ -57,7 +57,7 @@ describe('InfiniteList', () => {
   describe('Displays an infinite list same count and different content', () => {
     before(() => {
       browser.setViewportSize(Terra.viewports('small')[0]);
-      browser.url('/#/raw/tests/infinite-list/infinite-list-same-count');
+      browser.url('/#/raw/tests/terra-infinite-list/infinite-list/infinite-list-same-count');
       browser.waitForVisible('#test-infinite-list');
       browser.pause(150);
     });

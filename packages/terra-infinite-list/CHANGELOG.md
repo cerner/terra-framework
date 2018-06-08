@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+1.3.0 - (May 30, 2018)
+------------------
+### Changed
+* Moved examples to src
+
 ### Fixed
 * New props of children with different content update correctly
 * Double request for items prevented during render

@@ -5,9 +5,9 @@ exports[`ApplicationHeaderUtility it should pass in a custom prop 1`] = `
   id="test"
   initialSelectedKey="menu"
   menuItems={Array []}
-  onChange={[Function]}
-  onDisclose={[Function]}
-  onRequestClose={[Function]}
+  onChange={[MockFunction]}
+  onDisclose={[MockFunction]}
+  onRequestClose={[MockFunction]}
   variant="header"
 />
 `;
@@ -16,9 +16,9 @@ exports[`ApplicationHeaderUtility should render with a title 1`] = `
 <InjectIntl(ApplicationHeaderUtility)
   initialSelectedKey="menu"
   menuItems={Array []}
-  onChange={[Function]}
-  onDisclose={[Function]}
-  onRequestClose={[Function]}
+  onChange={[MockFunction]}
+  onDisclose={[MockFunction]}
+  onRequestClose={[MockFunction]}
   title="name"
   variant="header"
 />
@@ -29,9 +29,9 @@ exports[`ApplicationHeaderUtility should render with an accessory 1`] = `
   accessory={<Image />}
   initialSelectedKey="menu"
   menuItems={Array []}
-  onChange={[Function]}
-  onDisclose={[Function]}
-  onRequestClose={[Function]}
+  onChange={[MockFunction]}
+  onDisclose={[MockFunction]}
+  onRequestClose={[MockFunction]}
   variant="header"
 />
 `;
@@ -40,9 +40,9 @@ exports[`ApplicationHeaderUtility should render with default props 1`] = `
 <InjectIntl(ApplicationHeaderUtility)
   initialSelectedKey="menu"
   menuItems={Array []}
-  onChange={[Function]}
-  onDisclose={[Function]}
-  onRequestClose={[Function]}
+  onChange={[MockFunction]}
+  onDisclose={[MockFunction]}
+  onRequestClose={[MockFunction]}
   variant="header"
 />
 `;
@@ -210,9 +210,9 @@ exports[`ApplicationHeaderUtility should render with menu items 1`] = `
       },
     ]
   }
-  onChange={[Function]}
-  onDisclose={[Function]}
-  onRequestClose={[Function]}
+  onChange={[MockFunction]}
+  onDisclose={[MockFunction]}
+  onRequestClose={[MockFunction]}
   variant="header"
 />
 `;
