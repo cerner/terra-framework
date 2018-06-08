@@ -2,24 +2,24 @@
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 
-import ReadMe from '../docs/README.md';
-import { name } from '../package.json';
+import ReadMe from '../../../docs/README.md';
+import { name } from '../../../package.json';
 
 // Component Source
 // eslint-disable-next-line import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions
-import NotificationDialogSrc from '!raw-loader!../../../NotificationDialog';
+import NotificationDialogSrc from '!raw-loader!../../../src/NotificationDialog';
 
 // Example Files
-import CompleteNotificationDialog from './index-examples/CompleteNotificationDialog';
-import CompleteNotificationDialogSrc from '!raw-loader!./index-examples/CompleteNotificationDialog.jsx';
-import CompleteNotificationDialogWithLongMessage from './index-examples/CompleteNotificationDialogWithLongMessage';
-import CompleteNotificationDialogWithLongMessageSrc from '!raw-loader!./index-examples/CompleteNotificationDialogWithLongMessage.jsx';
-import NoVariantNotificationDialog from './index-examples/NoVariantNotificationDialog';
-import NoVariantNotificationDialogSrc from '!raw-loader!./index-examples/NoVariantNotificationDialog.jsx';
-import NotificationDialogWithLongText from './index-examples/NotificationDialogWithLongText';
-import NotificationDialogWithLongTextSrc from '!raw-loader!./index-examples/NotificationDialogWithLongText.jsx';
-import NotificationDialogOnModalManager from './index-examples/NotificationDialogOnModalManager';
-import NotificationDialogOnModalManagerSrc from '!raw-loader!./index-examples/NotificationDialogOnModalManager.jsx';
+import CompleteNotificationDialog from './examples/CompleteNotificationDialog';
+import CompleteNotificationDialogSrc from '!raw-loader!./examples/CompleteNotificationDialog.jsx';
+import CompleteNotificationDialogWithLongMessage from './examples/CompleteNotificationDialogWithLongMessage';
+import CompleteNotificationDialogWithLongMessageSrc from '!raw-loader!./examples/CompleteNotificationDialogWithLongMessage.jsx';
+import NoVariantNotificationDialog from './examples/NoVariantNotificationDialog';
+import NoVariantNotificationDialogSrc from '!raw-loader!./examples/NoVariantNotificationDialog.jsx';
+import NotificationDialogWithLongText from './examples/NotificationDialogWithLongText';
+import NotificationDialogWithLongTextSrc from '!raw-loader!./examples/NotificationDialogWithLongText.jsx';
+import NotificationDialogOnModalManager from './examples/NotificationDialogOnModalManager';
+import NotificationDialogOnModalManagerSrc from '!raw-loader!./examples/NotificationDialogOnModalManager.jsx';
 
 const DocPage = () => (
   <DocTemplate
