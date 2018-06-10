@@ -9,8 +9,8 @@ describe('NotificationDialog', () => {
       browser.click('#trigger-notification-dialog');
     });
 
-    Terra.should.beAccessible({ viewports });
-    Terra.should.matchScreenshot({ viewports });
+    Terra.should.beAccessible({ viewports, selector });
+    Terra.should.matchScreenshot({ viewports, selector });
   });
 
   describe('Complete notification-dialog with a long message', () => {
