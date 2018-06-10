@@ -4,11 +4,6 @@ import AbstractModal from 'terra-abstract-modal';
 import Button from 'terra-button';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-import IconAlert from './IconAlert';
-import IconError from './IconError';
-import IconInformation from './IconInformation';
-import IconSuccess from './IconSuccess';
-import IconWarning from './IconWarning';
 import styles from './NotificationDialog.scss';
 
 const cx = classNames.bind(styles);
@@ -108,15 +103,15 @@ const actionSection = (primaryAction, secondaryAction) => {
 const getIcon = (variant, customIcon = null) => {
   switch (variant) {
     case variants.ALERT:
-      return (<svg className={cx('alert')}/>);
+      return (<svg className={cx('alert')} />);
     case variants.ERROR:
-      return (<svg className={cx('error')}/>);
+      return (<svg className={cx('error')} />);
     case variants.WARNING:
-      return (<svg className={cx('warning')}/>);
+      return (<svg className={cx('warning')} />);
     case variants.INFO:
-      return (<svg className={cx('info')}/>);
+      return (<svg className={cx('info')} />);
     case variants.SUCCESS:
-      return (<svg className={cx('success')}/>);
+      return (<svg className={cx('success')} />);
     case variants.CUSTOM:
       return customIcon;
     default:
