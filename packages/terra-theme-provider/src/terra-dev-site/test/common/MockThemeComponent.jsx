@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
+import '../../theme/scoped-theme.scss';
 import styles from './MockThemeComponent.scss';
 
 const cx = classNames.bind(styles);
