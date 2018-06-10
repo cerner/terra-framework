@@ -108,15 +108,15 @@ const actionSection = (primaryAction, secondaryAction) => {
 const getIcon = (variant, customIcon = null) => {
   switch (variant) {
     case variants.ALERT:
-      return (<IconAlert />);
+      return (<svg className={cx('alert')}/>);
     case variants.ERROR:
-      return (<IconError />);
+      return (<svg className={cx('error')}/>);
     case variants.WARNING:
-      return (<IconWarning />);
+      return (<svg className={cx('warning')}/>);
     case variants.INFO:
-      return (<IconInformation />);
+      return (<svg className={cx('info')}/>);
     case variants.SUCCESS:
-      return (<IconSuccess />);
+      return (<svg className={cx('success')}/>);
     case variants.CUSTOM:
       return customIcon;
     default:
@@ -197,7 +197,7 @@ class NotificationDialog extends React.Component {
             <div className={cx('header-body')}>{header || defaultHeader}</div>
             <div className={cx('notification-dialog-body')}>
               {variant &&
-                <div className={cx('icon-div')}><svg className={cx(variant)}>{getIcon(variant, customIcon)}</svg></div>
+                <div className={cx('icon-div')}>{getIcon(variant, customIcon)}</div>
               }
               <div className={cx('notification-dialog-body-text')}>
                 <div className={cx('title')}>{title}</div>

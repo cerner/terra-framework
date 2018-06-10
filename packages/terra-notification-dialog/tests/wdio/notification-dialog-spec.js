@@ -9,8 +9,8 @@ describe('NotificationDialog', () => {
       browser.click('#trigger-notification-dialog');
     });
 
-    Terra.should.beAccessible({ viewports, selector });
-    Terra.should.matchScreenshot({ viewports, selector });
+    Terra.should.beAccessible({ viewports });
+    Terra.should.matchScreenshot({ viewports });
   });
 
   describe('Complete notification-dialog with a long message', () => {
@@ -65,7 +65,7 @@ describe('NotificationDialog', () => {
     Terra.should.themeEachCustomProperty(
       '#root',
       {
-        '--terra-notification-dialog-actions-flex-direction-small-width': 'row-reverse',
+        '--terra-notification-dialog-actions-flex-direction': 'row-reverse',
         '--terra-notification-dialog-footer-padding': '0',
         '--terra-notification-dialog-actions-button-flex': '1',
         '--terra-notification-dialog-actions-button-margin-bottom': '0rem',
