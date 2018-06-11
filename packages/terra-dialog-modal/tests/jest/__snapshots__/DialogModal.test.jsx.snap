@@ -7,19 +7,13 @@ exports[`should mount an open dialogModal 1`] = `
       ariaLabel="Dialog Modal Example"
       footer={
         <ActionFooter
-          end={undefined}
           start="Footer Goes here"
         />
       }
       header={
         <ActionHeader
           level={1}
-          onBack={undefined}
           onClose={[Function]}
-          onMaximize={undefined}
-          onMinimize={undefined}
-          onNext={undefined}
-          onPrevious={undefined}
           title="Action Header used here"
         />
       }
@@ -76,19 +70,13 @@ exports[`should mount an open dialogModal 800 width 1`] = `
       ariaLabel="Dialog Modal Example"
       footer={
         <ActionFooter
-          end={undefined}
           start="Footer Goes here"
         />
       }
       header={
         <ActionHeader
           level={1}
-          onBack={undefined}
           onClose={[Function]}
-          onMaximize={undefined}
-          onMinimize={undefined}
-          onNext={undefined}
-          onPrevious={undefined}
           title="Action Header used here"
         />
       }
@@ -145,19 +133,13 @@ exports[`should mount an open dialogModal 960 width 1`] = `
       ariaLabel="Dialog Modal Example"
       footer={
         <ActionFooter
-          end={undefined}
           start="Footer Goes here"
         />
       }
       header={
         <ActionHeader
           level={1}
-          onBack={undefined}
           onClose={[Function]}
-          onMaximize={undefined}
-          onMinimize={undefined}
-          onNext={undefined}
-          onPrevious={undefined}
           title="Action Header used here"
         />
       }
@@ -214,19 +196,13 @@ exports[`should mount an open dialogModal 1120 width 1`] = `
       ariaLabel="Dialog Modal Example"
       footer={
         <ActionFooter
-          end={undefined}
           start="Footer Goes here"
         />
       }
       header={
         <ActionHeader
           level={1}
-          onBack={undefined}
           onClose={[Function]}
-          onMaximize={undefined}
-          onMinimize={undefined}
-          onNext={undefined}
-          onPrevious={undefined}
           title="Action Header used here"
         />
       }
@@ -283,19 +259,13 @@ exports[`should mount an open dialogModal 1280 width 1`] = `
       ariaLabel="Dialog Modal Example"
       footer={
         <ActionFooter
-          end={undefined}
           start="Footer Goes here"
         />
       }
       header={
         <ActionHeader
           level={1}
-          onBack={undefined}
           onClose={[Function]}
-          onMaximize={undefined}
-          onMinimize={undefined}
-          onNext={undefined}
-          onPrevious={undefined}
           title="Action Header used here"
         />
       }
@@ -352,19 +322,13 @@ exports[`should mount an open dialogModal 1440 width 1`] = `
       ariaLabel="Dialog Modal Example"
       footer={
         <ActionFooter
-          end={undefined}
           start="Footer Goes here"
         />
       }
       header={
         <ActionHeader
           level={1}
-          onBack={undefined}
           onClose={[Function]}
-          onMaximize={undefined}
-          onMinimize={undefined}
-          onNext={undefined}
-          onPrevious={undefined}
           title="Action Header used here"
         />
       }
@@ -421,19 +385,13 @@ exports[`should mount an open dialogModal 1600 width 1`] = `
       ariaLabel="Dialog Modal Example"
       footer={
         <ActionFooter
-          end={undefined}
           start="Footer Goes here"
         />
       }
       header={
         <ActionHeader
           level={1}
-          onBack={undefined}
           onClose={[Function]}
-          onMaximize={undefined}
-          onMinimize={undefined}
-          onNext={undefined}
-          onPrevious={undefined}
           title="Action Header used here"
         />
       }
@@ -490,19 +448,13 @@ exports[`should mount an open dialogModal 1760 width 1`] = `
       ariaLabel="Dialog Modal Example"
       footer={
         <ActionFooter
-          end={undefined}
           start="Footer Goes here"
         />
       }
       header={
         <ActionHeader
           level={1}
-          onBack={undefined}
           onClose={[Function]}
-          onMaximize={undefined}
-          onMinimize={undefined}
-          onNext={undefined}
-          onPrevious={undefined}
           title="Action Header used here"
         />
       }
@@ -559,19 +511,13 @@ exports[`should mount an open dialogModal 1920 width 1`] = `
       ariaLabel="Dialog Modal Example"
       footer={
         <ActionFooter
-          end={undefined}
           start="Footer Goes here"
         />
       }
       header={
         <ActionHeader
           level={1}
-          onBack={undefined}
           onClose={[Function]}
-          onMaximize={undefined}
-          onMinimize={undefined}
-          onNext={undefined}
-          onPrevious={undefined}
           title="Action Header used here"
         />
       }
@@ -625,19 +571,13 @@ exports[`should shallow an open dialogModal 1`] = `
     ariaLabel="Dialog Modal Example"
     footer={
       <ActionFooter
-        end={undefined}
         start="Footer Goes here"
       />
     }
     header={
       <ActionHeader
         level={1}
-        onBack={undefined}
         onClose={[Function]}
-        onMaximize={undefined}
-        onMinimize={undefined}
-        onNext={undefined}
-        onPrevious={undefined}
         title="Action Header used here"
       />
     }
@@ -680,19 +620,13 @@ exports[`should shallow an open dialogModal 800 width 1`] = `
     ariaLabel="Dialog Modal Example"
     footer={
       <ActionFooter
-        end={undefined}
         start="Footer Goes here"
       />
     }
     header={
       <ActionHeader
         level={1}
-        onBack={undefined}
         onClose={[Function]}
-        onMaximize={undefined}
-        onMinimize={undefined}
-        onNext={undefined}
-        onPrevious={undefined}
         title="Action Header used here"
       />
     }
@@ -735,19 +669,13 @@ exports[`should shallow an open dialogModal 960 width 1`] = `
     ariaLabel="Dialog Modal Example"
     footer={
       <ActionFooter
-        end={undefined}
         start="Footer Goes here"
       />
     }
     header={
       <ActionHeader
         level={1}
-        onBack={undefined}
         onClose={[Function]}
-        onMaximize={undefined}
-        onMinimize={undefined}
-        onNext={undefined}
-        onPrevious={undefined}
         title="Action Header used here"
       />
     }
@@ -790,19 +718,13 @@ exports[`should shallow an open dialogModal 1120 width 1`] = `
     ariaLabel="Dialog Modal Example"
     footer={
       <ActionFooter
-        end={undefined}
         start="Footer Goes here"
       />
     }
     header={
       <ActionHeader
         level={1}
-        onBack={undefined}
         onClose={[Function]}
-        onMaximize={undefined}
-        onMinimize={undefined}
-        onNext={undefined}
-        onPrevious={undefined}
         title="Action Header used here"
       />
     }
@@ -845,19 +767,13 @@ exports[`should shallow an open dialogModal 1280 width 1`] = `
     ariaLabel="Dialog Modal Example"
     footer={
       <ActionFooter
-        end={undefined}
         start="Footer Goes here"
       />
     }
     header={
       <ActionHeader
         level={1}
-        onBack={undefined}
         onClose={[Function]}
-        onMaximize={undefined}
-        onMinimize={undefined}
-        onNext={undefined}
-        onPrevious={undefined}
         title="Action Header used here"
       />
     }
@@ -900,19 +816,13 @@ exports[`should shallow an open dialogModal 1440 width 1`] = `
     ariaLabel="Dialog Modal Example"
     footer={
       <ActionFooter
-        end={undefined}
         start="Footer Goes here"
       />
     }
     header={
       <ActionHeader
         level={1}
-        onBack={undefined}
         onClose={[Function]}
-        onMaximize={undefined}
-        onMinimize={undefined}
-        onNext={undefined}
-        onPrevious={undefined}
         title="Action Header used here"
       />
     }
@@ -955,19 +865,13 @@ exports[`should shallow an open dialogModal 1600 width 1`] = `
     ariaLabel="Dialog Modal Example"
     footer={
       <ActionFooter
-        end={undefined}
         start="Footer Goes here"
       />
     }
     header={
       <ActionHeader
         level={1}
-        onBack={undefined}
         onClose={[Function]}
-        onMaximize={undefined}
-        onMinimize={undefined}
-        onNext={undefined}
-        onPrevious={undefined}
         title="Action Header used here"
       />
     }
@@ -1010,19 +914,13 @@ exports[`should shallow an open dialogModal 1760 width 1`] = `
     ariaLabel="Dialog Modal Example"
     footer={
       <ActionFooter
-        end={undefined}
         start="Footer Goes here"
       />
     }
     header={
       <ActionHeader
         level={1}
-        onBack={undefined}
         onClose={[Function]}
-        onMaximize={undefined}
-        onMinimize={undefined}
-        onNext={undefined}
-        onPrevious={undefined}
         title="Action Header used here"
       />
     }
@@ -1065,19 +963,13 @@ exports[`should shallow an open dialogModal 1920 width 1`] = `
     ariaLabel="Dialog Modal Example"
     footer={
       <ActionFooter
-        end={undefined}
         start="Footer Goes here"
       />
     }
     header={
       <ActionHeader
         level={1}
-        onBack={undefined}
         onClose={[Function]}
-        onMaximize={undefined}
-        onMinimize={undefined}
-        onNext={undefined}
-        onPrevious={undefined}
         title="Action Header used here"
       />
     }
