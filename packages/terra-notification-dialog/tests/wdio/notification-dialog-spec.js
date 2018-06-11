@@ -1,16 +1,20 @@
-/* global browser, Terra */
+/* global browser, Terra, before */
 const viewports = Terra.viewports('tiny', 'medium', 'large');
 const selector = '#root';
 
-describe('NotificationDialog', () => {
+Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
+  before(() => {
+    browser.setViewportSize(viewport);
+  });
+
   describe('Complete notification-dialog title, message and actions', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
       browser.click('#trigger-notification-dialog');
     });
 
-    Terra.should.beAccessible({ viewports, selector });
-    Terra.should.matchScreenshot({ viewports, selector });
+    Terra.should.beAccessible({ selector });
+    Terra.should.matchScreenshot({ selector });
   });
 
   describe('Complete notification-dialog with a long message', () => {
@@ -19,8 +23,8 @@ describe('NotificationDialog', () => {
       browser.click('#trigger-notification-dialog');
     });
 
-    Terra.should.beAccessible({ viewports, selector });
-    Terra.should.matchScreenshot({ viewports, selector });
+    Terra.should.beAccessible({ selector });
+    Terra.should.matchScreenshot({ selector });
   });
 
   describe('No Variant notification-dialog', () => {
@@ -29,8 +33,8 @@ describe('NotificationDialog', () => {
       browser.click('#trigger-notification-dialog');
     });
 
-    Terra.should.beAccessible({ viewports, selector });
-    Terra.should.matchScreenshot({ viewports, selector });
+    Terra.should.beAccessible({ selector });
+    Terra.should.matchScreenshot({ selector });
   });
 
   describe('Complete notification-dialog with themeable properties', () => {
@@ -39,9 +43,10 @@ describe('NotificationDialog', () => {
       browser.click('#trigger-notification-dialog');
     });
 
-    Terra.should.themeEachCustomProperty(
-      '#root',
-      {
+    Terra.should.themeCombinationOfCustomProperties({
+      testName: 'themed',
+      selector: '#root',
+      properties: {
         '--notification-dialog-background': '#FFFF33',
         '--notification-dialog-body-font-size': '2.5rem',
         '--notification-dialog-body-padding': '2.5rem',
@@ -53,7 +58,7 @@ describe('NotificationDialog', () => {
         '--terra-notification-dialog-message-padding-top': '1rem',
         '--terra-notification-dialog-message-text-align': 'left',
       },
-    );
+    });
   });
 
   describe('Complete notification-dialog with themeable icons', () => {
@@ -62,12 +67,13 @@ describe('NotificationDialog', () => {
       browser.click('#trigger-notification-dialog');
     });
 
-    Terra.should.themeEachCustomProperty(
-      '#root',
-      {
+    Terra.should.themeCombinationOfCustomProperties({
+      testName: 'themed',
+      selector: '#root',
+      properties: {
         '--terra-notification-dialog-alert-icon': '#000',
       },
-    );
+    });
   });
 
   describe('Complete notification-dialog with themeable actions', () => {
@@ -76,9 +82,10 @@ describe('NotificationDialog', () => {
       browser.click('#trigger-notification-dialog');
     });
 
-    Terra.should.themeEachCustomProperty(
-      '#root',
-      {
+    Terra.should.themeCombinationOfCustomProperties({
+      testName: 'themed',
+      selector: '#root',
+      properties: {
         '--terra-notification-dialog-actions-flex-direction': 'row-reverse',
         '--terra-notification-dialog-footer-padding': '0',
         '--terra-notification-dialog-actions-button-flex': '1',
@@ -87,6 +94,6 @@ describe('NotificationDialog', () => {
         '--terra-notification-dialog-actions-button-margin-right': '0rem',
         '--terra-notification-dialog-actions-button-margin-top': '0rem',
       },
-    );
+    });
   });
 });
