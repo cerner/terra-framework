@@ -22,7 +22,6 @@ exports[`ApplicationHeader should render props 1`] = `
   <ApplicationHeaderLayout
     extensions={
       <ApplicationHeaderDefault
-        app={undefined}
         layoutConfig={
           Object {
             "size": "large",
@@ -32,7 +31,6 @@ exports[`ApplicationHeader should render props 1`] = `
     }
     logo={
       <ApplicationHeaderName
-        accessory={undefined}
         title="app-test-title"
       />
     }
@@ -62,7 +60,6 @@ exports[`ApplicationHeader should render props 1`] = `
     toggle={null}
     utilities={
       <ApplicationHeaderUtility
-        accessory={undefined}
         data-application-header-utility={true}
         initialSelectedKey="test-menu"
         menuItems={

@@ -2,10 +2,10 @@
 
 const viewports = Terra.viewports('tiny', 'medium');
 
-describe('Application Header', () => {
-  describe('Displays a default application header', () => {
+describe('Application Header Layout', () => {
+  describe('Displays a default application header layout', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/application-header-layout/application-header-default');
+      browser.url('/#/raw/tests/terra-application-header-layout/application-header-layout/application-header-default');
       browser.waitForVisible('#test-header');
     });
 
@@ -13,9 +13,9 @@ describe('Application Header', () => {
     Terra.should.beAccessible({ viewports, context: '#test-header' });
   });
 
-  describe('Displays a application header with themeable styles', () => {
+  describe('Displays a application header layout with themeable styles', () => {
     beforeEach(() => {
-      browser.url('/#/raw/tests/application-header-layout/application-header-default');
+      browser.url('/#/raw/tests/terra-application-header-layout/application-header-layout/application-header-default');
       browser.waitForVisible('#test-header');
     });
 

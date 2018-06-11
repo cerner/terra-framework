@@ -1,6 +1,6 @@
 import React from 'react';
 import { ApplicationMenuUtility } from '../../src/ApplicationUtility';
-import MockConfig from '../../examples/index-examples/MockConfig';
+import MockConfig from '../../src/terra-dev-site/doc/common/MockConfig';
 
 describe('ApplicationMenuUtility', () => {
   const mockOnChange = jest.fn();

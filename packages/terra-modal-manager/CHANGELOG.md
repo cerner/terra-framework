@@ -4,6 +4,16 @@ Terra Modal Manager - Changelog
 Unreleased
 ----------
 
+3.3.0 - (June 5, 2018)
+------------------
+### Changed
+* Minor dependency updates
+
+3.2.0 - (May 30, 2018)
+------------------
+### Changed
+* Moved examples to src
+
 3.1.0 - (May 22, 2018)
 ------------------
 ### Changed

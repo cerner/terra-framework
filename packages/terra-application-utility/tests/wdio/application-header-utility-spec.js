@@ -4,7 +4,7 @@ const viewports = Terra.viewports('tiny', 'medium');
 
 describe('ApplicationHeaderUtility', () => {
   beforeEach(() => {
-    browser.url('/#/raw/tests/application-utility/default-application-header-utility');
+    browser.url('/#/raw/tests/terra-application-utility/application-utility/default-application-header-utility');
     browser.waitForVisible('#default');
   });
 
@@ -28,7 +28,7 @@ describe('ApplicationHeaderUtility', () => {
     });
   });
 
-  describe('Hover: application header utility', () => {
+  describe('Hover-application header utility', () => {
     beforeEach(() => { browser.moveToObject('#default'); });
     Terra.should.matchScreenshot({ viewports, selector: '#default' });
     Terra.should.beAccessible({ viewports, context: '#default' });
@@ -37,7 +37,7 @@ describe('ApplicationHeaderUtility', () => {
     });
   });
 
-  describe('Focus: application header utility', () => {
+  describe('Focus-application header utility', () => {
     beforeEach(() => { browser.keys('Tab'); });
     Terra.should.matchScreenshot({ viewports, selector: '#default' });
     Terra.should.beAccessible({ viewports, context: '#default' });

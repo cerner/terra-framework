@@ -1,7 +1,7 @@
 /* global browser, Terra */
 describe('MenuUtilityMenu', () => {
   beforeEach(() => {
-    browser.url('/#/raw/tests/application-utility/default-menu-utility-menu');
+    browser.url('/#/raw/tests/terra-application-utility/application-utility/default-menu-utility-menu');
     browser.waitForVisible('#default');
   });
 
@@ -50,7 +50,7 @@ describe('MenuUtilityMenu', () => {
     });
   });
 
-  describe('Hover: menu utility menu', () => {
+  describe('Hover-menu utility menu', () => {
     beforeEach(() => {
       browser.waitForVisible('#test-item-2');
       browser.moveToObject('#test-item-2');
@@ -63,7 +63,7 @@ describe('MenuUtilityMenu', () => {
     });
   });
 
-  describe('Focus: menu utility menu', () => {
+  describe('Focus-menu utility menu', () => {
     beforeEach(() => {
       browser.keys(['Tab', 'Tab', 'Tab']);
     });

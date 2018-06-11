@@ -1,0 +1,7 @@
+:local {
+  .mock-theme-component {
+    background-color: var(--terra-mock-background-color, #000);
+    color: var(--terra-mock-color, #fff);
+    display: var(--terra-mock-display, inline);
+  }
+}

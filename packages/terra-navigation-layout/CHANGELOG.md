@@ -4,6 +4,16 @@ Changelog
 Unreleased
 ----------
 
+2.8.0 - (June 5, 2018)
+------------------
+### Changed
+* Minor dependency updates
+
+2.7.0 - (May 30, 2018)
+------------------
+### Changed
+* Moved examples to src
+
 2.6.0 - (May 22, 2018)
 ------------------
 ### Changed

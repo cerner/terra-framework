@@ -4,7 +4,7 @@ const viewports = Terra.viewports('tiny', 'medium');
 
 describe('ApplicationMenuUtility', () => {
   beforeEach(() => {
-    browser.url('/#/raw/tests/application-utility/default-application-menu-utility');
+    browser.url('/#/raw/tests/terra-application-utility/application-utility/default-application-menu-utility');
     browser.waitForVisible('#default');
   });
 
@@ -31,7 +31,7 @@ describe('ApplicationMenuUtility', () => {
     });
   });
 
-  describe('Hover: application menu utility', () => {
+  describe('Hover-application menu utility', () => {
     beforeEach(() => { browser.moveToObject('#default'); });
     Terra.should.matchScreenshot({ viewports, selector: '#default' });
     Terra.should.beAccessible({ viewports, context: '#default' });
@@ -40,7 +40,7 @@ describe('ApplicationMenuUtility', () => {
     });
   });
 
-  describe('Focus: application menu utility', () => {
+  describe('Focus-application menu utility', () => {
     beforeEach(() => { browser.keys('Tab'); });
     Terra.should.matchScreenshot({ viewports, selector: '#default' });
     Terra.should.beAccessible({ viewports, context: '#default' });
