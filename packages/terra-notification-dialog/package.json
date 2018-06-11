@@ -29,10 +29,8 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "react-intl": "^2.4.0",
     "terra-abstract-modal": "^1.2.0",
     "terra-app-delegate": "^2.1.0",
-    "terra-base": "^3.1.0",
     "terra-button": "^2.5.0",
     "terra-doc-template": "^1.2.0",
     "terra-icon": "^2.6.0",
@@ -46,7 +44,7 @@
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
     "test": "npm run test:jest && npm run test:wdio",
-    "test:jest": "jest ./tests/jest/* --config ../../jestconfig.js",
+    "test:jest": "jest --config ../../jestconfig.js",
     "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   }
 }

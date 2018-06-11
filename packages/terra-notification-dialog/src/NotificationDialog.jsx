@@ -36,7 +36,7 @@ const propTypes = {
   primaryAction: PropTypes.shape({
     text: PropTypes.string,
     onClick: PropTypes.func,
-  }),
+  }).isRequired,
   /**
    * The Action of the secondary button.
    */
