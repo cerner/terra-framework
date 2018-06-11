@@ -1,5 +1,4 @@
 /* global browser, Terra, before */
-const viewports = Terra.viewports('tiny', 'medium', 'large');
 const selector = '#root';
 
 Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
