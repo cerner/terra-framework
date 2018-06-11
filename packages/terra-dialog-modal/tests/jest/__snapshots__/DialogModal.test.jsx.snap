@@ -22,7 +22,7 @@ exports[`should mount an open dialogModal 1`] = `
       onRequestClose={[Function]}
       releaseFocus={null}
       requestFocus={null}
-      width="480"
+      width="640"
     />
     <Button
       isBlock={false}
@@ -61,9 +61,9 @@ exports[`should mount an open dialogModal 1`] = `
 </DialogModalExample>
 `;
 
-exports[`should mount an open dialogModal 800 width 1`] = `
+exports[`should mount an open dialogModal 320 width 1`] = `
 <DialogModalExample
-  width="800"
+  width="320"
 >
   <div>
     <DialogModal
@@ -85,7 +85,7 @@ exports[`should mount an open dialogModal 800 width 1`] = `
       onRequestClose={[Function]}
       releaseFocus={null}
       requestFocus={null}
-      width="800"
+      width="320"
     />
     <Button
       isBlock={false}
@@ -187,69 +187,6 @@ exports[`should mount an open dialogModal 960 width 1`] = `
 </DialogModalExample>
 `;
 
-exports[`should mount an open dialogModal 1120 width 1`] = `
-<DialogModalExample
-  width="1120"
->
-  <div>
-    <DialogModal
-      ariaLabel="Dialog Modal Example"
-      footer={
-        <ActionFooter
-          start="Footer Goes here"
-        />
-      }
-      header={
-        <ActionHeader
-          level={1}
-          onClose={[Function]}
-          title="Action Header used here"
-        />
-      }
-      isFocused={false}
-      isOpen={false}
-      onRequestClose={[Function]}
-      releaseFocus={null}
-      requestFocus={null}
-      width="1120"
-    />
-    <Button
-      isBlock={false}
-      isCompact={false}
-      isDisabled={false}
-      isIconOnly={false}
-      isReversed={false}
-      onClick={[Function]}
-      text="Trigger Dialog Modal"
-      type="button"
-      variant="neutral"
-    >
-      <button
-        aria-disabled={false}
-        aria-label={null}
-        className="button neutral"
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        type="button"
-      >
-        <span
-          className="text-only"
-        >
-          <span
-            className=""
-          >
-            Trigger Dialog Modal
-          </span>
-        </span>
-      </button>
-    </Button>
-  </div>
-</DialogModalExample>
-`;
-
 exports[`should mount an open dialogModal 1280 width 1`] = `
 <DialogModalExample
   width="1280"
@@ -275,69 +212,6 @@ exports[`should mount an open dialogModal 1280 width 1`] = `
       releaseFocus={null}
       requestFocus={null}
       width="1280"
-    />
-    <Button
-      isBlock={false}
-      isCompact={false}
-      isDisabled={false}
-      isIconOnly={false}
-      isReversed={false}
-      onClick={[Function]}
-      text="Trigger Dialog Modal"
-      type="button"
-      variant="neutral"
-    >
-      <button
-        aria-disabled={false}
-        aria-label={null}
-        className="button neutral"
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        type="button"
-      >
-        <span
-          className="text-only"
-        >
-          <span
-            className=""
-          >
-            Trigger Dialog Modal
-          </span>
-        </span>
-      </button>
-    </Button>
-  </div>
-</DialogModalExample>
-`;
-
-exports[`should mount an open dialogModal 1440 width 1`] = `
-<DialogModalExample
-  width="1440"
->
-  <div>
-    <DialogModal
-      ariaLabel="Dialog Modal Example"
-      footer={
-        <ActionFooter
-          start="Footer Goes here"
-        />
-      }
-      header={
-        <ActionHeader
-          level={1}
-          onClose={[Function]}
-          title="Action Header used here"
-        />
-      }
-      isFocused={false}
-      isOpen={false}
-      onRequestClose={[Function]}
-      releaseFocus={null}
-      requestFocus={null}
-      width="1440"
     />
     <Button
       isBlock={false}
@@ -439,132 +313,6 @@ exports[`should mount an open dialogModal 1600 width 1`] = `
 </DialogModalExample>
 `;
 
-exports[`should mount an open dialogModal 1760 width 1`] = `
-<DialogModalExample
-  width="1760"
->
-  <div>
-    <DialogModal
-      ariaLabel="Dialog Modal Example"
-      footer={
-        <ActionFooter
-          start="Footer Goes here"
-        />
-      }
-      header={
-        <ActionHeader
-          level={1}
-          onClose={[Function]}
-          title="Action Header used here"
-        />
-      }
-      isFocused={false}
-      isOpen={false}
-      onRequestClose={[Function]}
-      releaseFocus={null}
-      requestFocus={null}
-      width="1760"
-    />
-    <Button
-      isBlock={false}
-      isCompact={false}
-      isDisabled={false}
-      isIconOnly={false}
-      isReversed={false}
-      onClick={[Function]}
-      text="Trigger Dialog Modal"
-      type="button"
-      variant="neutral"
-    >
-      <button
-        aria-disabled={false}
-        aria-label={null}
-        className="button neutral"
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        type="button"
-      >
-        <span
-          className="text-only"
-        >
-          <span
-            className=""
-          >
-            Trigger Dialog Modal
-          </span>
-        </span>
-      </button>
-    </Button>
-  </div>
-</DialogModalExample>
-`;
-
-exports[`should mount an open dialogModal 1920 width 1`] = `
-<DialogModalExample
-  width="1920"
->
-  <div>
-    <DialogModal
-      ariaLabel="Dialog Modal Example"
-      footer={
-        <ActionFooter
-          start="Footer Goes here"
-        />
-      }
-      header={
-        <ActionHeader
-          level={1}
-          onClose={[Function]}
-          title="Action Header used here"
-        />
-      }
-      isFocused={false}
-      isOpen={false}
-      onRequestClose={[Function]}
-      releaseFocus={null}
-      requestFocus={null}
-      width="1920"
-    />
-    <Button
-      isBlock={false}
-      isCompact={false}
-      isDisabled={false}
-      isIconOnly={false}
-      isReversed={false}
-      onClick={[Function]}
-      text="Trigger Dialog Modal"
-      type="button"
-      variant="neutral"
-    >
-      <button
-        aria-disabled={false}
-        aria-label={null}
-        className="button neutral"
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        type="button"
-      >
-        <span
-          className="text-only"
-        >
-          <span
-            className=""
-          >
-            Trigger Dialog Modal
-          </span>
-        </span>
-      </button>
-    </Button>
-  </div>
-</DialogModalExample>
-`;
-
 exports[`should shallow an open dialogModal 1`] = `
 <div>
   <DialogModal
@@ -586,7 +334,7 @@ exports[`should shallow an open dialogModal 1`] = `
     onRequestClose={[Function]}
     releaseFocus={null}
     requestFocus={null}
-    width="480"
+    width="640"
   >
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -614,7 +362,7 @@ exports[`should shallow an open dialogModal 1`] = `
 </div>
 `;
 
-exports[`should shallow an open dialogModal 800 width 1`] = `
+exports[`should shallow an open dialogModal 320 width 1`] = `
 <div>
   <DialogModal
     ariaLabel="Dialog Modal Example"
@@ -635,7 +383,7 @@ exports[`should shallow an open dialogModal 800 width 1`] = `
     onRequestClose={[Function]}
     releaseFocus={null}
     requestFocus={null}
-    width="800"
+    width="320"
   >
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -712,55 +460,6 @@ exports[`should shallow an open dialogModal 960 width 1`] = `
 </div>
 `;
 
-exports[`should shallow an open dialogModal 1120 width 1`] = `
-<div>
-  <DialogModal
-    ariaLabel="Dialog Modal Example"
-    footer={
-      <ActionFooter
-        start="Footer Goes here"
-      />
-    }
-    header={
-      <ActionHeader
-        level={1}
-        onClose={[Function]}
-        title="Action Header used here"
-      />
-    }
-    isFocused={false}
-    isOpen={false}
-    onRequestClose={[Function]}
-    releaseFocus={null}
-    requestFocus={null}
-    width="1120"
-  >
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Maecenas molestie in lorem vel facilisis. Quisque ac enim nec lectus malesuada faucibus.
-      Integer congue feugiat ultricies.
-       Nunc non mauris sed tellus cursus vestibulum nec quis ipsum.
-      Vivamus ornare magna justo, et volutpat tortor congue ut. Nulla facilisi.
-       Cras in venenatis turpis. Nullam id odio justo. Etiam vehicula lectus vel purus consectetur cursus id sit amet diam.
-      Donec facilisis dui non orci hendrerit pharetra. Suspendisse blandit dictum turpis, in consectetur ipsum hendrerit eget.
-      Nam vehicula, arcu vitae egestas porttitor,
-      turpis nisi pulvinar neque, ut lacinia urna purus sit amet elit.
-    </p>
-  </DialogModal>
-  <Button
-    isBlock={false}
-    isCompact={false}
-    isDisabled={false}
-    isIconOnly={false}
-    isReversed={false}
-    onClick={[Function]}
-    text="Trigger Dialog Modal"
-    type="button"
-    variant="neutral"
-  />
-</div>
-`;
-
 exports[`should shallow an open dialogModal 1280 width 1`] = `
 <div>
   <DialogModal
@@ -810,55 +509,6 @@ exports[`should shallow an open dialogModal 1280 width 1`] = `
 </div>
 `;
 
-exports[`should shallow an open dialogModal 1440 width 1`] = `
-<div>
-  <DialogModal
-    ariaLabel="Dialog Modal Example"
-    footer={
-      <ActionFooter
-        start="Footer Goes here"
-      />
-    }
-    header={
-      <ActionHeader
-        level={1}
-        onClose={[Function]}
-        title="Action Header used here"
-      />
-    }
-    isFocused={false}
-    isOpen={false}
-    onRequestClose={[Function]}
-    releaseFocus={null}
-    requestFocus={null}
-    width="1440"
-  >
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Maecenas molestie in lorem vel facilisis. Quisque ac enim nec lectus malesuada faucibus.
-      Integer congue feugiat ultricies.
-       Nunc non mauris sed tellus cursus vestibulum nec quis ipsum.
-      Vivamus ornare magna justo, et volutpat tortor congue ut. Nulla facilisi.
-       Cras in venenatis turpis. Nullam id odio justo. Etiam vehicula lectus vel purus consectetur cursus id sit amet diam.
-      Donec facilisis dui non orci hendrerit pharetra. Suspendisse blandit dictum turpis, in consectetur ipsum hendrerit eget.
-      Nam vehicula, arcu vitae egestas porttitor,
-      turpis nisi pulvinar neque, ut lacinia urna purus sit amet elit.
-    </p>
-  </DialogModal>
-  <Button
-    isBlock={false}
-    isCompact={false}
-    isDisabled={false}
-    isIconOnly={false}
-    isReversed={false}
-    onClick={[Function]}
-    text="Trigger Dialog Modal"
-    type="button"
-    variant="neutral"
-  />
-</div>
-`;
-
 exports[`should shallow an open dialogModal 1600 width 1`] = `
 <div>
   <DialogModal
@@ -881,104 +531,6 @@ exports[`should shallow an open dialogModal 1600 width 1`] = `
     releaseFocus={null}
     requestFocus={null}
     width="1600"
-  >
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Maecenas molestie in lorem vel facilisis. Quisque ac enim nec lectus malesuada faucibus.
-      Integer congue feugiat ultricies.
-       Nunc non mauris sed tellus cursus vestibulum nec quis ipsum.
-      Vivamus ornare magna justo, et volutpat tortor congue ut. Nulla facilisi.
-       Cras in venenatis turpis. Nullam id odio justo. Etiam vehicula lectus vel purus consectetur cursus id sit amet diam.
-      Donec facilisis dui non orci hendrerit pharetra. Suspendisse blandit dictum turpis, in consectetur ipsum hendrerit eget.
-      Nam vehicula, arcu vitae egestas porttitor,
-      turpis nisi pulvinar neque, ut lacinia urna purus sit amet elit.
-    </p>
-  </DialogModal>
-  <Button
-    isBlock={false}
-    isCompact={false}
-    isDisabled={false}
-    isIconOnly={false}
-    isReversed={false}
-    onClick={[Function]}
-    text="Trigger Dialog Modal"
-    type="button"
-    variant="neutral"
-  />
-</div>
-`;
-
-exports[`should shallow an open dialogModal 1760 width 1`] = `
-<div>
-  <DialogModal
-    ariaLabel="Dialog Modal Example"
-    footer={
-      <ActionFooter
-        start="Footer Goes here"
-      />
-    }
-    header={
-      <ActionHeader
-        level={1}
-        onClose={[Function]}
-        title="Action Header used here"
-      />
-    }
-    isFocused={false}
-    isOpen={false}
-    onRequestClose={[Function]}
-    releaseFocus={null}
-    requestFocus={null}
-    width="1760"
-  >
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Maecenas molestie in lorem vel facilisis. Quisque ac enim nec lectus malesuada faucibus.
-      Integer congue feugiat ultricies.
-       Nunc non mauris sed tellus cursus vestibulum nec quis ipsum.
-      Vivamus ornare magna justo, et volutpat tortor congue ut. Nulla facilisi.
-       Cras in venenatis turpis. Nullam id odio justo. Etiam vehicula lectus vel purus consectetur cursus id sit amet diam.
-      Donec facilisis dui non orci hendrerit pharetra. Suspendisse blandit dictum turpis, in consectetur ipsum hendrerit eget.
-      Nam vehicula, arcu vitae egestas porttitor,
-      turpis nisi pulvinar neque, ut lacinia urna purus sit amet elit.
-    </p>
-  </DialogModal>
-  <Button
-    isBlock={false}
-    isCompact={false}
-    isDisabled={false}
-    isIconOnly={false}
-    isReversed={false}
-    onClick={[Function]}
-    text="Trigger Dialog Modal"
-    type="button"
-    variant="neutral"
-  />
-</div>
-`;
-
-exports[`should shallow an open dialogModal 1920 width 1`] = `
-<div>
-  <DialogModal
-    ariaLabel="Dialog Modal Example"
-    footer={
-      <ActionFooter
-        start="Footer Goes here"
-      />
-    }
-    header={
-      <ActionHeader
-        level={1}
-        onClose={[Function]}
-        title="Action Header used here"
-      />
-    }
-    isFocused={false}
-    isOpen={false}
-    onRequestClose={[Function]}
-    releaseFocus={null}
-    requestFocus={null}
-    width="1920"
   >
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. 

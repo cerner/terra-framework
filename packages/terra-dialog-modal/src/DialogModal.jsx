@@ -9,16 +9,10 @@ const cx = classNames.bind(styles);
 
 const widthFromSize = {
   320: 320,
-  480: 480,
   640: 640,
-  800: 800,
   960: 960,
-  1120: 1120,
   1280: 1280,
-  1440: 1440,
   1600: 1600,
-  1760: 1760,
-  1920: 1920,
 };
 
 const propTypes = {
@@ -59,7 +53,7 @@ const propTypes = {
    */
   requestFocus: PropTypes.func,
   /**
-   * Width of the dialog modal. Defaults to 480px.
+   * Width of the dialog modal. Defaults to 640px. Allows 320, 640, 960, 1280 and 1600.
    */
   width: PropTypes.oneOf(Object.keys(widthFromSize)),
 };
@@ -70,7 +64,7 @@ const defaultProps = {
   isFocused: false,
   releaseFocus: null,
   requestFocus: null,
-  width: '480',
+  width: '640',
 };
 
 class DialogModal extends React.Component {
