@@ -21,25 +21,6 @@
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
-  "jest": {
-    "collectCoverageFrom": [
-      "packages/**/src/*.js",
-      "packages/**/src/*.jsx"
-    ],
-    "setupFiles": [
-      "raf/polyfill",
-      "./jestsetup.js"
-    ],
-    "testMatch": [
-      "**/jest/**/(*.)(spec|test).js?(x)"
-    ],
-    "snapshotSerializers": [
-      "<rootDir>/node_modules/enzyme-to-json/serializer"
-    ],
-    "moduleNameMapper": {
-      "\\.(css|scss|svg)$": "identity-obj-proxy"
-    }
-  },
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "bootstrap:hoist": "lerna bootstrap --hoist",
@@ -54,8 +35,8 @@
     "dependency-markdown": "node scripts/dependency-markdown-generator/DependencyMarkdownGenerator.js",
     "heroku-prebuild": "npm install rimraf && npm install -g lerna@2.1.2 && lerna init",
     "heroku-postbuild": "npm install --only=dev && npm run compile:prod",
-    "jest": "jest",
-    "jest:coverage": "jest --coverage",
+    "jest": "jest --config jestconfig.js",
+    "jest:coverage": "jest --coverage --config jestconfig.js",
     "link-parent-bin": "link-parent-bin",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx .",
@@ -70,7 +51,7 @@
     "start": "tt:serve",
     "start-heroku": "tt:serve-static --site build ",
     "start-static": "tt:serve-static --config webpack.config",
-    "test": "jest && npm run wdio",
+    "test": "npm run jest && npm run wdio",
     "wdio": "wdio node_modules/terra-dev-site/config/wdio/wdio.conf.js",
     "tds:generate-app-config": "tds:generate-app-config"
   },
