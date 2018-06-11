@@ -11,15 +11,15 @@ import NotificationDialogSrc from '!raw-loader!../../../src/NotificationDialog';
 
 // Example Files
 import CompleteNotificationDialog from './example/CompleteNotificationDialog';
-import CompleteNotificationDialogSrc from '!raw-loader!./example/CompleteNotificationDialog.jsx';
+import CompleteNotificationDialogSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/CompleteNotificationDialog.jsx';
 import CompleteNotificationDialogWithLongMessage from './example/CompleteNotificationDialogWithLongMessage';
-import CompleteNotificationDialogWithLongMessageSrc from '!raw-loader!./example/CompleteNotificationDialogWithLongMessage.jsx';
+import CompleteNotificationDialogWithLongMessageSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/CompleteNotificationDialogWithLongMessage.jsx';
 import NoVariantNotificationDialog from './example/NoVariantNotificationDialog';
-import NoVariantNotificationDialogSrc from '!raw-loader!./example/NoVariantNotificationDialog.jsx';
+import NoVariantNotificationDialogSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/NoVariantNotificationDialog.jsx';
 import NotificationDialogWithLongText from './example/NotificationDialogWithLongText';
-import NotificationDialogWithLongTextSrc from '!raw-loader!./example/NotificationDialogWithLongText.jsx';
+import NotificationDialogWithLongTextSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/NotificationDialogWithLongText.jsx';
 import NotificationDialogOnModalManager from './example/NotificationDialogOnModalManager';
-import NotificationDialogOnModalManagerSrc from '!raw-loader!./example/NotificationDialogOnModalManager.jsx';
+import NotificationDialogOnModalManagerSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/NotificationDialogOnModalManager.jsx';
 
 const DocPage = () => (
   <DocTemplate
