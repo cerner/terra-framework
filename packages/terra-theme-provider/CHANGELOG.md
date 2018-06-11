@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 -----------------
+### Fixed
+* theme provider provides it's own mock theme for testing and the example.
 
 2.5.0 - (May 30, 2018)
 ------------------

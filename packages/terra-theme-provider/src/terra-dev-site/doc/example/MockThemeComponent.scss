@@ -1,14 +1,3 @@
-@import '~terra-mixins';
-
-@include cerner-mock-theme {
-  --terra-base-font-size: 20px;
-  --terra-base-background-color: #f00;
-  --terra-base-color: #0f0;
-  --terra-mock-background-color: #f00;
-  --terra-mock-color: #00f;
-  --terra-mock-display: inline-block;
-}
-
 :local {
   .mock-theme-component {
     background-color: var(--terra-mock-background-color, #000);
