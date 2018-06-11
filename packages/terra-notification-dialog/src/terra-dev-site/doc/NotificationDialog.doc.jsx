@@ -10,16 +10,16 @@ import { name } from '../../../package.json';
 import NotificationDialogSrc from '!raw-loader!../../../src/NotificationDialog';
 
 // Example Files
-import CompleteNotificationDialog from './examples/CompleteNotificationDialog';
-import CompleteNotificationDialogSrc from '!raw-loader!./examples/CompleteNotificationDialog.jsx';
-import CompleteNotificationDialogWithLongMessage from './examples/CompleteNotificationDialogWithLongMessage';
-import CompleteNotificationDialogWithLongMessageSrc from '!raw-loader!./examples/CompleteNotificationDialogWithLongMessage.jsx';
-import NoVariantNotificationDialog from './examples/NoVariantNotificationDialog';
-import NoVariantNotificationDialogSrc from '!raw-loader!./examples/NoVariantNotificationDialog.jsx';
-import NotificationDialogWithLongText from './examples/NotificationDialogWithLongText';
-import NotificationDialogWithLongTextSrc from '!raw-loader!./examples/NotificationDialogWithLongText.jsx';
-import NotificationDialogOnModalManager from './examples/NotificationDialogOnModalManager';
-import NotificationDialogOnModalManagerSrc from '!raw-loader!./examples/NotificationDialogOnModalManager.jsx';
+import CompleteNotificationDialog from './example/CompleteNotificationDialog';
+import CompleteNotificationDialogSrc from '!raw-loader!./example/CompleteNotificationDialog.jsx';
+import CompleteNotificationDialogWithLongMessage from './example/CompleteNotificationDialogWithLongMessage';
+import CompleteNotificationDialogWithLongMessageSrc from '!raw-loader!./example/CompleteNotificationDialogWithLongMessage.jsx';
+import NoVariantNotificationDialog from './example/NoVariantNotificationDialog';
+import NoVariantNotificationDialogSrc from '!raw-loader!./example/NoVariantNotificationDialog.jsx';
+import NotificationDialogWithLongText from './example/NotificationDialogWithLongText';
+import NotificationDialogWithLongTextSrc from '!raw-loader!./example/NotificationDialogWithLongText.jsx';
+import NotificationDialogOnModalManager from './example/NotificationDialogOnModalManager';
+import NotificationDialogOnModalManagerSrc from '!raw-loader!./example/NotificationDialogOnModalManager.jsx';
 
 const DocPage = () => (
   <DocTemplate
