@@ -56,6 +56,20 @@ describe('NotificationDialog', () => {
     );
   });
 
+  describe('Complete notification-dialog with themeable icons', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
+      browser.click('#trigger-notification-dialog');
+    });
+
+    Terra.should.themeEachCustomProperty(
+      '#root',
+      {
+        '--terra-notification-dialog-alert-icon': '#000',
+      },
+    );
+  });
+
   describe('Complete notification-dialog with themeable actions', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
