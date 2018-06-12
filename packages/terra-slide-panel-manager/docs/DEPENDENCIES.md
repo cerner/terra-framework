@@ -5,10 +5,10 @@
 |-|-|-|-|
 | classnames | ^2.2.5 | -- | A simple utility for conditionally joining classNames together |
 | prop-types | ^15.5.8 | -- | Runtime type checking for React props and similar objects. |
-| terra-disclosure-manager | ^2.6.0 | ^16.2.0 | A stateful component used to manage disclosure presentation. |
+| terra-disclosure-manager | ^2.7.0 | ^16.2.0 | A stateful component used to manage disclosure presentation. |
 | terra-doc-template | ^1.1.0 | ^16.2.0 | Provides an adjustable template for documentation pages. |
 | terra-slide-group | ^2.4.0 | ^16.2.0 | A component that utilizes the `react-transition-group` library to present a stack of components in an animated fashion |
-| terra-slide-panel | ^2.8.0 | ^16.2.0 | The Terra SlidePanel component is a progressive disclosure mechanism that allows additional content to be shown and hidden in a variety of ways. |
+| terra-slide-panel | ^2.9.0 | ^16.2.0 | The Terra SlidePanel component is a progressive disclosure mechanism that allows additional content to be shown and hidden in a variety of ways. |
 
 ## peerDependencies
 | Dependency | Version | React Version | Description |
