@@ -81,7 +81,7 @@ const propTypes = {
 const defaultProps = {
   title: null,
   message: null,
-  variant: null,
+  variant: variants.CUSTOM,
 };
 
 const actionSection = (primaryAction, secondaryAction) => {

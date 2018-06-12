@@ -79,6 +79,39 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
     Terra.should.matchScreenshot({ selector });
   });
 
+  describe('Notification-dialog with minimal props', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-minimal-props');
+      browser.setViewportSize(viewport);
+      browser.click('#trigger-notification-dialog');
+    });
+
+    Terra.should.beAccessible({ selector });
+    Terra.should.matchScreenshot({ selector });
+  });
+
+  describe('Notification-dialog with No Title', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-no-title');
+      browser.setViewportSize(viewport);
+      browser.click('#trigger-notification-dialog');
+    });
+
+    Terra.should.beAccessible({ selector });
+    Terra.should.matchScreenshot({ selector });
+  });
+
+  describe('Notification-dialog with No Message', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-no-message');
+      browser.setViewportSize(viewport);
+      browser.click('#trigger-notification-dialog');
+    });
+
+    Terra.should.beAccessible({ selector });
+    Terra.should.matchScreenshot({ selector });
+  });
+
   describe('Complete notification-dialog with themeable properties', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
