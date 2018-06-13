@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 -----------------
+### Added
+* Added the option to put section headers in the nav bar
 
 2.6.0 - (June 12, 2018)
 ------------------
