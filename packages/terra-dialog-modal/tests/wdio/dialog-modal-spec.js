@@ -1,14 +1,11 @@
-/* global before, browser, Terra */
+/* global browser, Terra */
 const selector = '#root';
 
 Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
-  before(() => {
-    browser.setViewportSize(viewport);
-  });
-
   describe('Default Dialog Modal', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-dialog-modal/dialog-modal/default-dialog-modal');
+      browser.setViewportSize(viewport);
       browser.click('#trigger-dialog-modal');
     });
     Terra.should.beAccessible({ selector });
@@ -18,6 +15,7 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
   describe('Default Dialog Modal with Themable Properties', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-dialog-modal/dialog-modal/default-dialog-modal');
+      browser.setViewportSize(viewport);
       browser.click('#trigger-dialog-modal');
     });
 
@@ -39,6 +37,7 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
   describe('Dialog Modal With Long text', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-dialog-modal/dialog-modal/dialog-modal-with-long-text');
+      browser.setViewportSize(viewport);
       browser.click('#trigger-dialog-modal');
     });
     Terra.should.beAccessible({ selector });
