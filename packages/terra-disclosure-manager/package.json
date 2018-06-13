@@ -1,7 +1,7 @@
 {
   "name": "terra-disclosure-manager",
   "main": "lib/DisclosureManager.js",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "description": "A stateful component used to manage disclosure presentation.",
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "devDependencies": {
-    "terra-app-delegate": "^2.3.0",
+    "terra-app-delegate": "^2.4.0",
     "terra-base": "3.0.0"
   },
   "peerDependencies": {
@@ -48,6 +48,6 @@
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
     "test": "npm run test:jest",
-    "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json"
+    "test:jest": "jest --config ../../jestconfig.js"
   }
 }

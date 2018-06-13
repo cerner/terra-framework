@@ -1,7 +1,7 @@
 {
   "name": "terra-app-delegate",
   "main": "lib/app-delegate/AppDelegate.js",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "An object that provides a set of functions used to facilitate communcation between Containers and their consuming Containers/Applications",
   "repository": {
     "type": "git",
@@ -34,7 +34,7 @@
     "lint": "npm run lint:js",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "test": "npm run test:jest && npm run test:nightwatch",
-    "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
+    "test:jest": "jest --config ../../jestconfig.js",
     "test:nightwatch": "echo \"No Nightwatch tests written.\" && exit 0"
   }
 }

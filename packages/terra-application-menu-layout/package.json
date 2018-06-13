@@ -1,7 +1,7 @@
 {
   "name": "terra-application-menu-layout",
   "main": "lib/ApplicationMenuLayout.js",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "description": "This component renders an application menu layout. To be used with a terra-layout or terra-navigation-layout.",
   "repository": {
     "type": "git",
@@ -42,7 +42,7 @@
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
     "test": "npm run test:jest && npm run test:wdio",
-    "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
+    "test:jest": "jest --config ../../jestconfig.js",
     "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   }
 }

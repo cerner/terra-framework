@@ -1,7 +1,7 @@
 {
   "name": "terra-modal-manager",
   "main": "lib/ModalManager.js",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "description": "The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal.",
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "devDependencies": {
-    "terra-app-delegate": "^2.3.0",
+    "terra-app-delegate": "^2.4.0",
     "terra-base": "^3.0.0"
   },
   "peerDependencies": {
@@ -34,7 +34,7 @@
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-abstract-modal": "^1.0.0",
-    "terra-disclosure-manager": "^2.6.0",
+    "terra-disclosure-manager": "^2.7.0",
     "terra-doc-template": "^1.1.0",
     "terra-heading": "^2.0.1",
     "terra-responsive-element": "^2.0.1",
@@ -48,7 +48,7 @@
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
     "test": "npm run test:jest && npm run test:wdio",
-    "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
+    "test:jest": "jest --config ../../jestconfig.js",
     "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "terra-aggregator",
   "main": "lib/Aggregator.js",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "description": "The Aggregator provides focus-based mechanisms for managing actions across disparate components.",
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "devDependencies": {
-    "terra-app-delegate": "^2.3.0",
+    "terra-app-delegate": "^2.4.0",
     "terra-base": "^3.0.0"
   },
   "peerDependencies": {
@@ -38,14 +38,14 @@
     "terra-clinical-action-header": "^2.0.0",
     "terra-clinical-header": "^2.0.0",
     "terra-content-container": "^2.4.0",
-    "terra-disclosure-manager": "^2.6.0",
+    "terra-disclosure-manager": "^2.7.0",
     "terra-doc-template": "^1.1.0",
     "terra-form": "^2.0.1",
     "terra-grid": "^4.0.1",
     "terra-list": "^2.0.1",
-    "terra-modal-manager": "^3.3.0",
+    "terra-modal-manager": "^3.4.0",
     "terra-responsive-element": "^2.0.1",
-    "terra-slide-panel-manager": "^2.7.0"
+    "terra-slide-panel-manager": "^2.8.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
@@ -55,7 +55,7 @@
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
     "test": "npm run test:jest && npm run test:wdio",
-    "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
+    "test:jest": "jest --config ../../jestconfig.js",
     "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   }
 }

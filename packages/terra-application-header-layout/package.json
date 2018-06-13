@@ -1,7 +1,7 @@
 {
   "name": "terra-application-header-layout",
   "main": "lib/ApplicationHeaderLayout.js",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "description": "This component renders an application header layout. To be used with a layout.",
   "repository": {
     "type": "git",
@@ -43,7 +43,7 @@
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
     "test": "npm run test:jest && npm run test:wdio",
-    "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
+    "test:jest": "jest --config ../../jestconfig.js",
     "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   }
 }

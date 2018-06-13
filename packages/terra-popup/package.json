@@ -1,7 +1,7 @@
 {
   "name": "terra-popup",
   "main": "lib/Popup.js",
-  "version": "4.3.0",
+  "version": "4.4.0",
   "description": "The Terra Popup is higher order component that launches terra-hookshot positioned content with the ability to display a dynamic arrow.",
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "devDependencies": {
-    "terra-app-delegate": "^2.3.0"
+    "terra-app-delegate": "^2.4.0"
   },
   "peerDependencies": {
     "react": "^16.2.0",
@@ -40,10 +40,10 @@
     "terra-content-container": "^2.2.0",
     "terra-doc-template": "^1.1.0",
     "terra-grid": "^4.2.0",
-    "terra-hookshot": "^4.3.0",
+    "terra-hookshot": "^4.4.0",
     "terra-list": "^2.3.0",
     "terra-mixins": "^1.0.0",
-    "terra-modal-manager": "^3.3.0"
+    "terra-modal-manager": "^3.4.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
@@ -53,7 +53,7 @@
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
     "test": "npm run test:jest && npm run test:wdio",
-    "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
+    "test:jest": "jest --config ../../jestconfig.js",
     "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   }
 }

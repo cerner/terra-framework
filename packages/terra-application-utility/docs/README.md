@@ -57,7 +57,7 @@ PropTypes.shape({
   title: PropTypes.string,
 });
 ```
-For reference, checkout the [sample menu item config](https://github.com/cerner/terra-framework/blob/master/packages/terra-application-utility/examples/index-examples/MockConfig.js) used for the bottom `Utility Menu` example.
+For reference, checkout the [sample menu item config](https://github.com/cerner/terra-framework/blob/master/packages/terra-application-utility/src/terra-dev-site/doc/common/MockConfig.js) used for the bottom `Utility Menu` example.
 
 ## Component Features
 

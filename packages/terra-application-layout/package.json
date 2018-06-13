@@ -1,7 +1,7 @@
 {
   "name": "terra-application-layout",
   "main": "lib/ApplicationLayout.js",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "The Terra Application Layout is a responsive, themeable layout for building applications.",
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "devDependencies": {
-    "terra-app-delegate": "^2.3.0",
+    "terra-app-delegate": "^2.4.0",
     "terra-base": "^3.0.0"
   },
   "peerDependencies": {
@@ -36,23 +36,23 @@
     "prop-types": "^15.5.8",
     "react-intl": "^2.4.0",
     "react-router-dom": "^4.2.2",
-    "terra-application-header-layout": "^2.5.0",
-    "terra-application-links": "^4.3.0",
-    "terra-application-menu-layout": "^2.4.0",
-    "terra-application-name": "^2.5.0",
-    "terra-application-utility": "^1.7.0",
+    "terra-application-header-layout": "^2.6.0",
+    "terra-application-links": "^4.4.0",
+    "terra-application-menu-layout": "^2.5.0",
+    "terra-application-name": "^2.6.0",
+    "terra-application-utility": "^1.8.0",
     "terra-avatar": "^1.0.0",
     "terra-button": "^2.2.0",
     "terra-clinical-action-header": "^2.1.0",
     "terra-content-container": "^2.2.0",
-    "terra-disclosure-manager": "^2.6.0",
+    "terra-disclosure-manager": "^2.7.0",
     "terra-doc-template": "^1.1.0",
     "terra-icon": "^2.2.0",
     "terra-image": "^2.2.0",
-    "terra-modal-manager": "^3.3.0",
-    "terra-navigation-layout": "^2.8.0",
-    "terra-navigation-side-menu": "^1.6.0",
-    "terra-popup": "^4.3.0"
+    "terra-modal-manager": "^3.4.0",
+    "terra-navigation-layout": "^2.9.0",
+    "terra-navigation-side-menu": "^1.7.0",
+    "terra-popup": "^4.4.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
@@ -62,7 +62,7 @@
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
     "test": "npm run test:jest && npm run test:wdio",
-    "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
+    "test:jest": "jest --config ../../jestconfig.js",
     "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   }
 }
