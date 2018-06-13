@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'terra-button';
-import PropTypes from 'prop-types';
+import AppDelegate from 'terra-app-delegate';
 import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
 
 const clickOK = () => {
@@ -8,8 +8,7 @@ const clickOK = () => {
 };
 
 const propTypes = {
-  releaseFocus: PropTypes.func,
-  requestFocus: PropTypes.func,
+  app: AppDelegate.propType,
 };
 
 class NotificationDialogWithFocus extends React.Component {
@@ -49,8 +48,8 @@ class NotificationDialogWithFocus extends React.Component {
             text: 'Close',
             onClick: this.handleCloseModal,
           }}
-          requestFocus={this.props.requestFocus}
-          releaseFocus={this.props.releaseFocus}
+          requestFocus={this.props.app.requestFocus}
+          releaseFocus={this.props.app.releaseFocus}
         />
         <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
       </div>
