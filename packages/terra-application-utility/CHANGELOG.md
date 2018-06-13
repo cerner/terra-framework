@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 -----------------
+
+1.8.0 - (June 12, 2018)
+------------------
 ### Changed
 * Fix sample config link
 
