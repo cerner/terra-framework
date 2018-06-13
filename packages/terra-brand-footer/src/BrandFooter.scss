@@ -17,14 +17,19 @@
     padding-right: 0;
   }
 
-  .list-item {
+  .list-header {
+    color: var(--terra-brand-footer-nav-header-color, #64696c);
     display: inline;
+    font-size: 1.5em;
   }
 
-
-  .list-item:first-child::before {
+  .list-header::before {
     content: '';
-    padding: 0;
+    padding: 0.7142857142857143rem;
+  }
+
+  .list-item {
+    display: inline;
   }
 
   .list-item::before {
@@ -32,6 +37,17 @@
     padding: 0.7142857142857143rem;
   }
 
+  .list-header:first-child::before,
+  .list-item:first-child::before {
+    content: '';
+    padding: 0;
+  }
+
+  // A / isn't needed to separate an item from the header it follows
+  .list-header + .list-item::before {
+    content: '';
+    padding: 0.7142857142857143rem;
+  }
 
   .link {
     color: var(--terra-brand-footer-link-color, #0059a8);

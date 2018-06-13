@@ -18,6 +18,93 @@ exports[`BrandFooter should render a default component 1`] = `
 </footer>
 `;
 
+exports[`BrandFooter should render starting with a section header 1`] = `
+<footer
+  className="brand-footer"
+  role="contentinfo"
+>
+  <nav
+    className="nav"
+  >
+    <ul
+      className="menu"
+    >
+      <li
+        className="list-header"
+        key="Cerner Links"
+      >
+        Cerner Links
+      </li>
+    </ul>
+  </nav>
+  <div
+    className="footer-content"
+  >
+    <div
+      className="content-top"
+    />
+    <div
+      className="content-bottom"
+    />
+  </div>
+</footer>
+`;
+
+exports[`BrandFooter should render with a section header and provided links 1`] = `
+<footer
+  className="brand-footer"
+  role="contentinfo"
+>
+  <nav
+    className="nav"
+  >
+    <ul
+      className="menu"
+    >
+      <li
+        className="list-item"
+        key="Cerner Homehttps://www.cerner.com/"
+      >
+        <a
+          className="link"
+          href="https://www.cerner.com/"
+        >
+          Cerner Home
+        </a>
+      </li>
+      <li
+        className="list-header"
+        key="Cerner Links"
+      >
+        Cerner Links
+      </li>
+      <li
+        className="list-item"
+        key="Cerner Codehttps://code.cerner.com/"
+      >
+        <a
+          className="link"
+          href="https://code.cerner.com/"
+          target="_blank"
+        >
+          Cerner Code
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div
+    className="footer-content"
+  >
+    <div
+      className="content-top"
+    />
+    <div
+      className="content-bottom"
+    />
+  </div>
+</footer>
+`;
+
 exports[`BrandFooter should render with content bottom and content left 1`] = `
 <footer
   className="brand-footer"

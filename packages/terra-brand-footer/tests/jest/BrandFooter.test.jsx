@@ -21,6 +21,26 @@ describe('BrandFooter', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should render with a section header and provided links', () => {
+    const wrapper = shallow(<BrandFooter
+      links={[
+        { text: 'Cerner Home', href: 'https://www.cerner.com/' },
+        { text: 'Cerner Links' },
+        { text: 'Cerner Code', href: 'https://code.cerner.com/', target: '_blank' },
+      ]}
+    />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render starting with a section header', () => {
+    const wrapper = shallow(<BrandFooter
+      links={[
+        { text: 'Cerner Links' },
+      ]}
+    />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('should render with provided content left', () => {
     const wrapper = shallow(
       <BrandFooter

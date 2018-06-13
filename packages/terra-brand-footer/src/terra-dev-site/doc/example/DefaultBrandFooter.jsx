@@ -6,8 +6,10 @@ import BrandFooter from 'terra-brand-footer/lib/BrandFooter';
 export default () =>
   <BrandFooter
     links={[
+      { text: 'Terra UI Links' },
       { text: 'Terra UI', href: 'http://terra-ui.com/' },
       { text: 'Terra UI Components', href: 'http://terra-ui.com/static/#/site/components' },
+      { text: 'Cerner Links' },
       { text: 'Cerner Home', href: 'https://www.cerner.com/' },
       { text: 'Cerner Code', href: 'https://code.cerner.com/', target: '_blank' },
     ]}

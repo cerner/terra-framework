@@ -18,6 +18,23 @@ describe('BrandFooter', () => {
     });
   });
 
+  describe('Section Headers', () => {
+    beforeEach(() => browser.url('/#/raw/tests/terra-brand-footer/brand-footer/section-header-brand-footer'));
+
+    const rules = { bypass: { enabled: false } };
+
+    Terra.should.beAccessible({ viewports, rules });
+    Terra.should.matchScreenshot({ viewports });
+    Terra.should.themeEachCustomProperty({
+      '--terra-brand-footer-nav-background-color': 'pink',
+      '--terra-brand-footer-nav-color': 'yellow',
+      '--terra-brand-footer-nav-header-color': 'orange',
+      '--terra-brand-footer-link-color': 'green',
+      '--terra-brand-footer-footer-content-background-color': 'red',
+      '--terra-brand-footer-footer-content-color': 'black',
+    });
+  });
+
   describe('Hovered', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-brand-footer/brand-footer/hovered-brand-footer');

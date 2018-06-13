@@ -12,15 +12,15 @@ const propTypes = {
   */
   links: PropTypes.arrayOf(PropTypes.shape({
     /**
-     * text to be disaplyed as navigational link.
+     * Text to be disaplyed as navigational link if `href` is provided. If `href` is not provided the text will be a section header.
      */
-    text: PropTypes.string,
+    text: PropTypes.string.isRequired,
     /**
-     * url of the navigational link.
+     * Url of the navigational link.
      */
     href: PropTypes.string,
     /**
-     * attribute to open on same or different tab on clicking the navigational link.
+     * Attribute to open on same or different tab on clicking the navigational link.
      */
     target: PropTypes.string,
   })),
@@ -54,21 +54,27 @@ const BrandFooter = ({ links, contentLeft, contentRight, contentBottom, ...custo
   const linkslength = links.length;
   return (
     <footer role="contentinfo" {...customProps} className={BrandFooterClassNames}>
-      {linkslength > 0 ? (
+      {linkslength > 0 && (
         <nav className={cx('nav')}>
           <ul className={cx('menu')}>
-            {links.map(link => (
-              <li className={cx('list-item')} key={link.text + link.href}>
-                {link.target !== undefined ? (
-                  <a className={cx('link')} href={link.href} target={link.target} >{link.text}</a>
-                ) : (
-                  <a className={cx('link')} href={link.href} >{link.text}</a>
-                )}
-              </li>
-            ))}
+            {links.map((link) => {
+              // It's a link
+              if (link.href) {
+                return (<li className={cx('list-item')} key={link.text + link.href}>
+                  {link.target !== undefined ? (
+                    <a className={cx('link')} href={link.href} target={link.target} >{link.text}</a>
+                  ) : (
+                    <a className={cx('link')} href={link.href} >{link.text}</a>
+                  )}
+                </li>);
+              }
+
+              // It's a section header
+              return <li className={cx('list-header')} key={link.text}>{link.text}</li>;
+            })}
           </ul>
         </nav>
-      ) : null}
+      )}
       <div className={cx('footer-content')} >
         <div className={cx('content-top')}>
           {contentLeft}
