@@ -2,12 +2,11 @@ import React from 'react';
 import Button from 'terra-button';
 import ActionHeader from 'terra-action-header';
 import ActionFooter from 'terra-action-footer';
-import PropTypes from 'prop-types';
+import AppDelegate from 'terra-app-delegate';
 import DialogModal from '../../../DialogModal';
 
 const propTypes = {
-  releaseFocus: PropTypes.func,
-  requestFocus: PropTypes.func,
+  app: AppDelegate.propType,
 };
 
 class DialogModalWithFocus extends React.Component {
@@ -16,13 +15,10 @@ class DialogModalWithFocus extends React.Component {
 
     this.state = {
       isOpen: false,
-      isFocused: false,
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
-    this.handleOnRequestFocus = this.handleOnRequestFocus.bind(this);
-    this.handleOnReleaseFocus = this.handleOnReleaseFocus.bind(this);
   }
 
   handleOpenModal() {
@@ -31,14 +27,6 @@ class DialogModalWithFocus extends React.Component {
 
   handleCloseModal() {
     this.setState({ isOpen: false });
-  }
-
-  handleOnRequestFocus() {
-    this.setState({ isFocused: false });
-  }
-
-  handleOnReleaseFocus() {
-    this.setState({ isFocused: true });
   }
 
   render() {
@@ -59,9 +47,8 @@ class DialogModalWithFocus extends React.Component {
           onRequestClose={this.handleCloseModal}
           header={<ActionHeader title="Action Header used here" onClose={this.handleCloseModal} />}
           footer={<ActionFooter start="Footer Goes here" />}
-          isFocused={this.state.isFocused}
-          requestFocus={this.props.requestFocus}
-          releaseFocus={this.props.releaseFocus}
+          requestFocus={this.props.app.requestFocus}
+          releaseFocus={this.props.app.releaseFocus}
         >
           <p>{paraOne}</p>
         </DialogModal>

@@ -9,7 +9,6 @@ class DialogModalContainer extends React.Component {
     super(props);
 
     this.disclose = this.disclose.bind(this);
-    this.closeDisclosure = this.closeDisclosure.bind(this);
   }
 
   disclose() {
@@ -17,13 +16,9 @@ class DialogModalContainer extends React.Component {
       preferredType: 'modal',
       content: {
         key: 'DemoContainer',
-        component: <DialogModalWithFocus requestFocus={this.props.app.requestFocus} releaseFocus={this.props.app.releaseFocus} />,
+        component: <DialogModalWithFocus />,
       },
     });
-  }
-
-  closeDisclosure() {
-    this.props.app.closeDisclosure();
   }
 
   render() {
