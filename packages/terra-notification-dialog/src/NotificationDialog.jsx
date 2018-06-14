@@ -194,10 +194,8 @@ class NotificationDialog extends React.Component {
               {variant &&
                 <div className={cx('icon-div')}>{getIcon(variant, customIcon)}</div>
               }
-              <div className={cx('notification-dialog-body-text')}>
-                <div className={cx('title')}>{title}</div>
-                <div className={cx('message')}>{message}</div>
-              </div>
+              <div className={cx('title')}>{title}</div>
+              <div className={cx('message')}>{message}</div>
             </div>
             <div className={cx('footer-body')}>{actionSection(primaryAction, secondaryAction)}</div>
           </div>
