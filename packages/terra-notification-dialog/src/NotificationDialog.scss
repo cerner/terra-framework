@@ -12,7 +12,7 @@
   }
 
   .notification-dialog-body {
-    background-color: var(--notification-dialog-body-color, #fff);
+    background-color: var(--notification-dialog-body-background-color, #fff);
     display: inline-flex;
     flex: 1 1 auto;
     flex-direction: row;
