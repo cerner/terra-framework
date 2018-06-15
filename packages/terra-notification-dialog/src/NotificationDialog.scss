@@ -96,10 +96,13 @@
     flex: 0 0 auto;
     flex-wrap: wrap;
     font-size: var(--terra-notification-dialog-message-font-size, 1rem);
-    padding-top: var(--terra-notification-dialog-message-padding-top, 1rem);
     text-align: var(--terra-notification-dialog-message-text-align, left);
     width: 100%;
     word-wrap: break-word;
+  }
+
+  .title + .message {
+    padding-top: var(--terra-notification-dialog-message-padding-top, 1rem);
   }
 
   .actions {

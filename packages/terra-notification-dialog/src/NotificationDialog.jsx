@@ -100,18 +100,18 @@ const actionSection = (primaryAction, secondaryAction) => {
   return <div className={cx('actions')}>{actionButton}{dismissButton}</div>;
 };
 
-const getIcon = (variant, customIcon = null) => {
+const getIcon = (intl, variant, customIcon = null) => {
   switch (variant) {
     case variants.ALERT:
-      return (<svg className={cx('alert')} />);
+      return (<svg className={cx('alert')} role="img" alt={intl.formatMessage({ id: 'Terra.notification.dialog.alert' })} />);
     case variants.ERROR:
-      return (<svg className={cx('error')} />);
+      return (<svg className={cx('error')} role="img" alt={intl.formatMessage({ id: 'Terra.notification.dialog.error' })} />);
     case variants.WARNING:
-      return (<svg className={cx('warning')} />);
+      return (<svg className={cx('warning')} role="img" alt={intl.formatMessage({ id: 'Terra.notification.dialog.warning' })} />);
     case variants.INFO:
-      return (<svg className={cx('info')} />);
+      return (<svg className={cx('info')} role="img" alt={intl.formatMessage({ id: 'Terra.notification.dialog.info' })} />);
     case variants.SUCCESS:
-      return (<svg className={cx('success')} />);
+      return (<svg className={cx('success')} role="img" alt={intl.formatMessage({ id: 'Terra.notification.dialog.success' })} />);
     case variants.CUSTOM:
       return customIcon;
     default:
@@ -179,7 +179,9 @@ class NotificationDialog extends React.Component {
 
     return (
       <AbstractModal
-        ariaLabel="NotificationDialog"
+        aria-labelledby="notification-dialog-header"
+        aria-describedby="notification-dialog-text"
+        role="dialog"
         classNameModal={notificationDialogClassNames}
         isOpen={this.props.isOpen}
         onRequestClose={this.props.onRequestClose}
@@ -189,14 +191,18 @@ class NotificationDialog extends React.Component {
       >
         <div className={cx('notification-dialog-inner-wrapper')}>
           <div className={cx('notification-dialog-container')}>
-            <div className={cx('header-body')}>{header || defaultHeader}</div>
+            <div id="notification-dialog-header" className={cx('header-body')}>{header || defaultHeader}</div>
             <div className={cx('notification-dialog-body')}>
               {variant &&
-                <div className={cx('icon-div')}>{getIcon(variant, customIcon)}</div>
+                <div className={cx('icon-div')}>{getIcon(intl, variant, customIcon)}</div>
               }
-              <div>
-                <div className={cx('title')}>{title}</div>
-                <div className={cx('message')}>{message}</div>
+              <div id="notification-dialog-text">
+                {title &&
+                  <div className={cx('title')}>{title}</div>
+                }
+                {message &&
+                  <div className={cx('message')}>{message}</div>
+                }
               </div>
             </div>
             <div className={cx('footer-body')}>{actionSection(primaryAction, secondaryAction)}</div>
