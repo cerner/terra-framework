@@ -111,6 +111,7 @@ class DialogModal extends React.Component {
     return (
       <AbstractModal
         ariaLabel={this.props.ariaLabel}
+        role="dialog"
         classNameModal={cx('dialog-modal-wrapper', `width-${widthFromSize[width]}`)}
         isOpen={this.props.isOpen}
         onRequestClose={this.props.onRequestClose}
