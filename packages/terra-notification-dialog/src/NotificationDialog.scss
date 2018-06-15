@@ -1,0 +1,124 @@
+:local {
+  .notification-dialog {
+    background: var(--notification-dialog-background, #fff);
+    border-radius: var(--notification-dialog-border-radius, 5px);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+
+    @media screen and (max-width: 768px) {
+      width: calc(100% - 2 * var(--notification-dialog-small-horizontal-inset, 10px));
+    }
+  }
+
+  .notification-dialog-body {
+    background-color: var(--notification-dialog-body-background-color, #fff);
+    display: inline-flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    height: 100%;
+    overflow: auto;
+    padding: var(--notification-dialog-body-padding, 1.25rem);
+    width: 100%;
+  }
+
+  // This flex container is needed for IE 10 / IE 11 to render correctly
+  .notification-dialog-inner-wrapper {
+    display: flex;
+    flex-direction: row;
+    max-height: 80vh;
+  }
+
+  .notification-dialog-container {
+    display: flex;
+    flex-direction: column;
+    max-height: inherit; // `inherit` value needed for IE10 to scroll modal-body when overflowed
+    width: 100%; // Needed for IE to wrap content correctly in flexbox
+  }
+
+  .header-body {
+    background-color: var(--notification-dialog-header-background-color, #f9f9f9);
+    border-bottom: var(--notification-dialog-header-border-bottom, 0.0625rem solid #dedfe0);
+    font-size: var(--notification-dialog-header-font-size, 1.125rem);
+    padding: var(--notification-dialog-header-padding, 0.8rem);
+    text-align: left;
+  }
+
+  .footer-body {
+    background-color: var(--notification-dialog-footer-background-color, #f9f9f9);
+    border-top: var(--notification-dialog-footer-border-top, 0.0625rem solid #dedfe0);
+    flex: 0 0 auto;
+    font-size: var(--notification-dialog-footer-font-size, 0.8rem);
+    padding: var(--terra-notification-dialog-footer-padding, 0.28571rem 0.35714rem);
+  }
+
+  .icon-div {
+    > svg {
+      height: 2rem;
+      margin-right: var(--terra-notification-dialog-icon-margin-right, 1.25rem);
+      width: 2rem;
+    }
+
+    > .alert {
+      background: var(--terra-notification-dialog-alert-icon, url("data:image/svg+xml;utf8, <svg viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'><path fill='%23e50000' d='M1.2 45c-1.1 0-1.6-.8-1-1.7L23 3.7c.5-1 1.4-1 2 0l22.8 39.6c.5 1 .1 1.7-1 1.7H1.2z'/><path fill='%23fff' d='M21.5 36.7h5V42h-5v-5.3zm0-22.7h5v17.3h-5V14z'/></svg>"));
+    }
+
+    > .warning {
+      background: var(--terra-notification-dialog-warning-icon, url("data:image/svg+xml;utf8, <svg viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'><path fill='%23ffc20a' d='M1.2 45c-1.1 0-1.6-.8-1-1.7L23 3.7c.5-1 1.4-1 2 0l22.8 39.6c.5 1 .1 1.7-1 1.7H1.2z'/><path fill='%231c1f21' d='M47.7 43.3L25 3.7c-.3-.5-.6-.7-1-.7s-.7.2-1 .7L.2 43.3c-.5 1-.1 1.7 1 1.7h45.5c1.1 0 1.6-.8 1-1.7zm-45.9.2L24 5l22.2 38.5H1.8zm19.7-6.8h5V42h-5v-5.3zm0-22.7h5v17.3h-5V14z'/></svg>"));
+    }
+
+    > .info {
+      background: var(--terra-notification-dialog-info-icon, url("data:image/svg+xml;utf8, <svg viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'><path fill='%23007cc3' d='M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z'/><path fill='%23fff' d='M24.1 32.7c.7-1.8 6.3-11 2.4-13.5-2.2-1.4-5.2-.5-7.6 1.2l-.2 1.6c1.4-.5 2.8-.5 3.2.7 1 2.9-2.5 8-3.5 10.7-2.6 7.2 3.7 8.1 8.1 5.1l.2-1.7c-2.3.6-4-.3-2.6-4.1zM26.5 8c1.9 0 3.5 1.6 3.5 3.5S28.4 15 26.5 15 23 13.4 23 11.5 24.6 8 26.5 8z'/></svg>"));
+    }
+
+    > .success {
+      background: var(--terra-notification-dialog-success-icon, url("data:image/svg+xml;utf8, <svg viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'><path fill='%2378c346' d='M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z'/><path fill='%23fff' d='M20 36.4L6.7 23.1l3.6-3.6 9.7 9.9 17.7-17.9 3.6 3.6L20 36.4z'/></svg>"));
+    }
+
+    > .error {
+      background: var(--terra-notification-dialog-error-icon, url("data:image/svg+xml;utf8, <svg viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'><path fill='%23e50000' d='M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z'/><path fill='%23fff' d='M7 21.5h34v5H7v-5z'/></svg>"));
+    }
+  }
+
+  .title {
+    color: var(--terra-notification-dialog-title-color, #000);
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    font-size: var(--terra-notification-dialog-title-font-size, 1rem);
+    font-weight: var(--terra-notification-dialog-title-font-weight, bold);
+    text-align: var(--terra-notification-dialog-title-text-align, left);
+    width: 100%;
+    word-wrap: break-word;
+  }
+
+  .message {
+    color: var(--terra-notification-dialog-message-color, #000);
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    font-size: var(--terra-notification-dialog-message-font-size, 1rem);
+    text-align: var(--terra-notification-dialog-message-text-align, left);
+    width: 100%;
+    word-wrap: break-word;
+  }
+
+  .title + .message {
+    padding-top: var(--terra-notification-dialog-message-padding-top, 1rem);
+  }
+
+  .actions {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: var(--terra-notification-dialog-actions-flex-direction, row);
+    justify-content: flex-end;
+    width: 100%;
+
+    > button {
+      flex: var(--terra-notification-dialog-actions-button-flex, initial);
+      flex-shrink: 1;
+      margin-bottom: var(--terra-notification-dialog-actions-button-margin-bottom, 0.4rem);
+      margin-left: var(--terra-notification-dialog-actions-button-margin-left, 0.4rem);
+      margin-right: var(--terra-notification-dialog-actions-button-margin-right, 0.4rem);
+      margin-top: var(--terra-notification-dialog-actions-button-margin-top, 0.4rem);
+    }
+  }
+}
