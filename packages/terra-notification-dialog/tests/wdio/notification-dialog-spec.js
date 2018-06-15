@@ -124,7 +124,7 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
       selector: '#root',
       properties: {
         '--notification-dialog-background': '#FFFF33',
-        '--notification-dialog-body-font-size': '2.5rem',
+        '--notification-dialog-body-font-size': '0.15rem',
         '--notification-dialog-body-padding': '2.5rem',
         '--notification-dialog-body-width': '45rem',
         '--terra-notification-dialog-title-color': '#c00',

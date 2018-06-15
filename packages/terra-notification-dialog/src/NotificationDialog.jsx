@@ -103,15 +103,15 @@ const actionSection = (primaryAction, secondaryAction) => {
 const getIcon = (intl, variant, customIcon = null) => {
   switch (variant) {
     case variants.ALERT:
-      return (<svg className={cx('alert')} role="img" alt={intl.formatMessage({ id: 'Terra.notification.dialog.alert' })} />);
+      return (<svg className={cx('alert')} role="presentation" alt={intl.formatMessage({ id: 'Terra.notification.dialog.alert' })} />);
     case variants.ERROR:
-      return (<svg className={cx('error')} role="img" alt={intl.formatMessage({ id: 'Terra.notification.dialog.error' })} />);
+      return (<svg className={cx('error')} role="presentation" alt={intl.formatMessage({ id: 'Terra.notification.dialog.error' })} />);
     case variants.WARNING:
-      return (<svg className={cx('warning')} role="img" alt={intl.formatMessage({ id: 'Terra.notification.dialog.warning' })} />);
+      return (<svg className={cx('warning')} role="presentation" alt={intl.formatMessage({ id: 'Terra.notification.dialog.warning' })} />);
     case variants.INFO:
-      return (<svg className={cx('info')} role="img" alt={intl.formatMessage({ id: 'Terra.notification.dialog.info' })} />);
+      return (<svg className={cx('info')} role="presentation" alt={intl.formatMessage({ id: 'Terra.notification.dialog.info' })} />);
     case variants.SUCCESS:
-      return (<svg className={cx('success')} role="img" alt={intl.formatMessage({ id: 'Terra.notification.dialog.success' })} />);
+      return (<svg className={cx('success')} role="presentation" alt={intl.formatMessage({ id: 'Terra.notification.dialog.success' })} />);
     case variants.CUSTOM:
       return customIcon;
     default:
@@ -179,9 +179,10 @@ class NotificationDialog extends React.Component {
 
     return (
       <AbstractModal
+        aria-label="Notification Dialog"
         aria-labelledby="notification-dialog-header"
-        aria-describedby="notification-dialog-text"
-        role="dialog"
+        aria-describedby={title ? 'notification-dialog-title' : 'notification-dialog-header'}
+        role="alertdialog"
         classNameModal={notificationDialogClassNames}
         isOpen={this.props.isOpen}
         onRequestClose={this.props.onRequestClose}
@@ -196,9 +197,9 @@ class NotificationDialog extends React.Component {
               {variant &&
                 <div className={cx('icon-div')}>{getIcon(intl, variant, customIcon)}</div>
               }
-              <div id="notification-dialog-text">
+              <div>
                 {title &&
-                  <div className={cx('title')}>{title}</div>
+                  <div id="notification-dialog-title" className={cx('title')}>{title}</div>
                 }
                 {message &&
                   <div className={cx('message')}>{message}</div>
