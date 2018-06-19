@@ -10,6 +10,16 @@ exports[`ThemeProvider should render a theme provider component 1`] = `
 </div>
 `;
 
+exports[`ThemeProvider should render a theme with a custom class 1`] = `
+<div
+  className="cerner-mock-theme customClass"
+>
+  <p>
+     Child content 
+  </p>
+</div>
+`;
+
 exports[`ThemeProvider should shallow render a theme provider component 1`] = `
 <div
   className="cerner-mock-theme"
