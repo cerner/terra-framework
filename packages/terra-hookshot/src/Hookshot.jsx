@@ -76,8 +76,8 @@ const propTypes = {
    * Client coordinates to serve as the anchor point for the hookshot'd content.
    */
   targetCoordinates: PropTypes.shape({
-    x: PropTypes.number,
-    y: PropTypes.number,
+    x: PropTypes.number.isRequired,
+    y: PropTypes.number.isRequired,
   }),
   /**
    * Element to serve as the anchor point for the hookshot'd content. (If targetCoordinates are provided, this is ignored.)

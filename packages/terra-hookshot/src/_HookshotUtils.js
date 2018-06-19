@@ -13,8 +13,8 @@ const MIRROR_TB = {
 };
 
 /**
- * This function returns a rect 2px x 2px with the origin based at (1,1), allow for evenly centered attachment points.
- * As a result of the 2x2 size, bounds checking errors as a result of rounding are eliminated.
+ * This function returns a rect 2px x 2px with the origin based at (1,1), which allows for evenly centered attachment points.
+ * As a result of the 2x2 size, positioning issues caused by coordinate rounding are eliminated.
  *
  * @ param {object} coords - THe x and y client coordinates.
  */
