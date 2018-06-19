@@ -87,47 +87,47 @@ describe('Aggregator', () => {
     ));
 
     return Promise.resolve()
-    .then(() => {
-      expect(wrapper.state().focusedItemId).toBe(undefined);
-      expect(wrapper.state().focusedItemState).toBe(undefined);
-    })
-    .then(() => wrapper.find(AggregatorItem).getElements()[0].props.aggregatorDelegate.requestFocus({ item1State: 'testState' }))
-    .then(({ disclose }) => {
-      wrapper.update();
+      .then(() => {
+        expect(wrapper.state().focusedItemId).toBe(undefined);
+        expect(wrapper.state().focusedItemState).toBe(undefined);
+      })
+      .then(() => wrapper.find(AggregatorItem).getElements()[0].props.aggregatorDelegate.requestFocus({ item1State: 'testState' }))
+      .then(({ disclose }) => {
+        wrapper.update();
 
-      expect(wrapper.state().focusedItemId).toBe('1');
-      expect(wrapper.state().focusedItemState).toEqual({ item1State: 'testState' });
+        expect(wrapper.state().focusedItemId).toBe('1');
+        expect(wrapper.state().focusedItemState).toEqual({ item1State: 'testState' });
 
-      // No disclose function was provided to the Aggregator, so one is not provided to the AggregatorItems.
-      expect(disclose).toBe(undefined);
+        // No disclose function was provided to the Aggregator, so one is not provided to the AggregatorItems.
+        expect(disclose).toBe(undefined);
 
-      const firstItem = wrapper.find(AggregatorItem).getElements()[0];
+        const firstItem = wrapper.find(AggregatorItem).getElements()[0];
 
-      expect(firstItem.props.aggregatorDelegate.hasFocus).toBe(true);
-      expect(firstItem.props.aggregatorDelegate.requestFocus).not.toBe(undefined);
-      expect(firstItem.props.aggregatorDelegate.releaseFocus).not.toBe(undefined);
-      expect(firstItem.props.aggregatorDelegate.itemState).toEqual({ item1State: 'testState' });
-    })
-    .then(() => wrapper.find(AggregatorItem).getElements()[1].props.aggregatorDelegate.requestFocus({ item2State: 'differentState' }))
-    .then(() => {
-      wrapper.update();
+        expect(firstItem.props.aggregatorDelegate.hasFocus).toBe(true);
+        expect(firstItem.props.aggregatorDelegate.requestFocus).not.toBe(undefined);
+        expect(firstItem.props.aggregatorDelegate.releaseFocus).not.toBe(undefined);
+        expect(firstItem.props.aggregatorDelegate.itemState).toEqual({ item1State: 'testState' });
+      })
+      .then(() => wrapper.find(AggregatorItem).getElements()[1].props.aggregatorDelegate.requestFocus({ item2State: 'differentState' }))
+      .then(() => {
+        wrapper.update();
 
-      expect(wrapper.state().focusedItemId).toBe('2');
-      expect(wrapper.state().focusedItemState).toEqual({ item2State: 'differentState' });
+        expect(wrapper.state().focusedItemId).toBe('2');
+        expect(wrapper.state().focusedItemState).toEqual({ item2State: 'differentState' });
 
-      const firstItem = wrapper.find(AggregatorItem).getElements()[0];
-      const secondItem = wrapper.find(AggregatorItem).getElements()[1];
+        const firstItem = wrapper.find(AggregatorItem).getElements()[0];
+        const secondItem = wrapper.find(AggregatorItem).getElements()[1];
 
-      expect(firstItem.props.aggregatorDelegate.hasFocus).toBe(false);
-      expect(firstItem.props.aggregatorDelegate.requestFocus).not.toBe(undefined);
-      expect(firstItem.props.aggregatorDelegate.releaseFocus).toBe(undefined);
-      expect(firstItem.props.aggregatorDelegate.itemState).toBe(undefined);
+        expect(firstItem.props.aggregatorDelegate.hasFocus).toBe(false);
+        expect(firstItem.props.aggregatorDelegate.requestFocus).not.toBe(undefined);
+        expect(firstItem.props.aggregatorDelegate.releaseFocus).toBe(undefined);
+        expect(firstItem.props.aggregatorDelegate.itemState).toBe(undefined);
 
-      expect(secondItem.props.aggregatorDelegate.hasFocus).toBe(true);
-      expect(secondItem.props.aggregatorDelegate.requestFocus).not.toBe(undefined);
-      expect(secondItem.props.aggregatorDelegate.releaseFocus).not.toBe(undefined);
-      expect(secondItem.props.aggregatorDelegate.itemState).toEqual({ item2State: 'differentState' });
-    });
+        expect(secondItem.props.aggregatorDelegate.hasFocus).toBe(true);
+        expect(secondItem.props.aggregatorDelegate.requestFocus).not.toBe(undefined);
+        expect(secondItem.props.aggregatorDelegate.releaseFocus).not.toBe(undefined);
+        expect(secondItem.props.aggregatorDelegate.itemState).toEqual({ item2State: 'differentState' });
+      });
   });
 
   it('should provide a working requestFocus implementation with disclose function', () => {
@@ -152,26 +152,26 @@ describe('Aggregator', () => {
     ));
 
     return Promise.resolve()
-    .then(() => {
-      expect(wrapper.state().focusedItemId).toBe(undefined);
-      expect(wrapper.state().focusedItemState).toBe(undefined);
-    })
-    .then(() => wrapper.find(AggregatorItem).getElements()[0].props.aggregatorDelegate.requestFocus({ item1State: 'testState' }))
-    .then(({ disclose }) => {
-      wrapper.update();
+      .then(() => {
+        expect(wrapper.state().focusedItemId).toBe(undefined);
+        expect(wrapper.state().focusedItemState).toBe(undefined);
+      })
+      .then(() => wrapper.find(AggregatorItem).getElements()[0].props.aggregatorDelegate.requestFocus({ item1State: 'testState' }))
+      .then(({ disclose }) => {
+        wrapper.update();
 
-      expect(wrapper.state().focusedItemId).toBe('1');
-      expect(wrapper.state().focusedItemState).toEqual({ item1State: 'testState' });
+        expect(wrapper.state().focusedItemId).toBe('1');
+        expect(wrapper.state().focusedItemState).toEqual({ item1State: 'testState' });
 
-      expect(disclose).not.toBe(undefined);
+        expect(disclose).not.toBe(undefined);
 
-      const firstItem = wrapper.find(AggregatorItem).getElements()[0];
+        const firstItem = wrapper.find(AggregatorItem).getElements()[0];
 
-      expect(firstItem.props.aggregatorDelegate.hasFocus).toBe(true);
-      expect(firstItem.props.aggregatorDelegate.requestFocus).not.toBe(undefined);
-      expect(firstItem.props.aggregatorDelegate.releaseFocus).not.toBe(undefined);
-      expect(firstItem.props.aggregatorDelegate.itemState).toEqual({ item1State: 'testState' });
-    });
+        expect(firstItem.props.aggregatorDelegate.hasFocus).toBe(true);
+        expect(firstItem.props.aggregatorDelegate.requestFocus).not.toBe(undefined);
+        expect(firstItem.props.aggregatorDelegate.releaseFocus).not.toBe(undefined);
+        expect(firstItem.props.aggregatorDelegate.itemState).toEqual({ item1State: 'testState' });
+      });
   });
 
   it('should provide a working releaseFocus implementation', () => {
@@ -193,37 +193,37 @@ describe('Aggregator', () => {
     ));
 
     return Promise.resolve()
-    .then(() => {
-      expect(wrapper.state().focusedItemId).toBe(undefined);
-      expect(wrapper.state().focusedItemState).toBe(undefined);
-    })
-    .then(() => wrapper.find(AggregatorItem).getElements()[0].props.aggregatorDelegate.requestFocus({ item1State: 'testState' }))
-    .then(() => {
-      wrapper.update();
+      .then(() => {
+        expect(wrapper.state().focusedItemId).toBe(undefined);
+        expect(wrapper.state().focusedItemState).toBe(undefined);
+      })
+      .then(() => wrapper.find(AggregatorItem).getElements()[0].props.aggregatorDelegate.requestFocus({ item1State: 'testState' }))
+      .then(() => {
+        wrapper.update();
 
-      expect(wrapper.state().focusedItemId).toBe('1');
-      expect(wrapper.state().focusedItemState).toEqual({ item1State: 'testState' });
+        expect(wrapper.state().focusedItemId).toBe('1');
+        expect(wrapper.state().focusedItemState).toEqual({ item1State: 'testState' });
 
-      const firstItem = wrapper.find(AggregatorItem).getElements()[0];
+        const firstItem = wrapper.find(AggregatorItem).getElements()[0];
 
-      expect(firstItem.props.aggregatorDelegate.hasFocus).toBe(true);
-      expect(firstItem.props.aggregatorDelegate.requestFocus).not.toBe(undefined);
-      expect(firstItem.props.aggregatorDelegate.releaseFocus).not.toBe(undefined);
-      expect(firstItem.props.aggregatorDelegate.itemState).toEqual({ item1State: 'testState' });
-    })
-    .then(() => wrapper.find(AggregatorItem).getElements()[0].props.aggregatorDelegate.releaseFocus())
-    .then(() => {
-      wrapper.update();
+        expect(firstItem.props.aggregatorDelegate.hasFocus).toBe(true);
+        expect(firstItem.props.aggregatorDelegate.requestFocus).not.toBe(undefined);
+        expect(firstItem.props.aggregatorDelegate.releaseFocus).not.toBe(undefined);
+        expect(firstItem.props.aggregatorDelegate.itemState).toEqual({ item1State: 'testState' });
+      })
+      .then(() => wrapper.find(AggregatorItem).getElements()[0].props.aggregatorDelegate.releaseFocus())
+      .then(() => {
+        wrapper.update();
 
-      expect(wrapper.state().focusedItemId).toBe(undefined);
-      expect(wrapper.state().focusedItemState).toEqual(undefined);
+        expect(wrapper.state().focusedItemId).toBe(undefined);
+        expect(wrapper.state().focusedItemState).toEqual(undefined);
 
-      const firstItem = wrapper.find(AggregatorItem).getElements()[0];
+        const firstItem = wrapper.find(AggregatorItem).getElements()[0];
 
-      expect(firstItem.props.aggregatorDelegate.hasFocus).toBe(false);
-      expect(firstItem.props.aggregatorDelegate.requestFocus).not.toBe(undefined);
-      expect(firstItem.props.aggregatorDelegate.releaseFocus).toBe(undefined);
-      expect(firstItem.props.aggregatorDelegate.itemState).toEqual(undefined);
-    });
+        expect(firstItem.props.aggregatorDelegate.hasFocus).toBe(false);
+        expect(firstItem.props.aggregatorDelegate.requestFocus).not.toBe(undefined);
+        expect(firstItem.props.aggregatorDelegate.releaseFocus).toBe(undefined);
+        expect(firstItem.props.aggregatorDelegate.itemState).toEqual(undefined);
+      });
   });
 });

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import ModalManager from 'terra-modal-manager';
 import SlidePanelManager from 'terra-slide-panel-manager';
 
@@ -8,10 +7,6 @@ import AggregatorContainer from 'terra-aggregator/lib/terra-dev-site/doc/common/
 import AggregatorItem from 'terra-aggregator/lib/terra-dev-site/doc/common/AggregatorItem';
 import SimpleAggregatorItem from 'terra-aggregator/lib/terra-dev-site/doc/common/SimpleAggregatorItem';
 /* eslint-enable import/no-unresolved, import/extensions */
-
-const propTypes = {
-  size: PropTypes.string,
-};
 
 const items = Object.freeze([{
   key: 'SECTION_0',
@@ -35,7 +30,5 @@ const CombinedDisclosureExample = () => (
     </ModalManager>
   </div>
 );
-
-CombinedDisclosureExample.propTypes = propTypes;
 
 export default CombinedDisclosureExample;

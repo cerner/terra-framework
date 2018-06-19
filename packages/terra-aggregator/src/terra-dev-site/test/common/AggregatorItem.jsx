@@ -21,18 +21,18 @@ class AggregatorItem extends React.Component {
     aggregatorDelegate.requestFocus({
       index,
     })
-    .then(({ disclose }) => {
-      if (disclose) {
-        disclose({
-          preferredType: 'panel',
-          size: 'small',
-          content: {
-            key: `Disclosure for ${name}`,
-            component: <TestExample identifier={`Disclosure for ${name}`} />,
-          },
-        });
-      }
-    });
+      .then(({ disclose }) => {
+        if (disclose) {
+          disclose({
+            preferredType: 'panel',
+            size: 'small',
+            content: {
+              key: `Disclosure for ${name}`,
+              component: <TestExample identifier={`Disclosure for ${name}`} />,
+            },
+          });
+        }
+      });
   }
 
   render() {
