@@ -4,6 +4,9 @@ ChangeLog
 Unreleased
 -----------------
 
+### Added
+* Custom classNames are able to be added
+
 2.9.0 - (June 12, 2018)
 ------------------
 ### Fixed
