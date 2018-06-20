@@ -7,6 +7,11 @@ import DialogModal from '../../src/DialogModal';
 
 const propTypes = {
   width: PropTypes.string,
+  isFocused: PropTypes.bool,
+};
+
+const defaultProps = {
+  isFocused: false,
 };
 
 class DialogModalExample extends React.Component {
@@ -44,6 +49,7 @@ class DialogModalExample extends React.Component {
         <DialogModal
           ariaLabel="Dialog Modal Example"
           isOpen={this.state.isOpen}
+          isFocused={this.props.isFocused}
           onRequestClose={this.handleCloseModal}
           header={<ActionHeader title="Action Header used here" onClose={this.handleCloseModal} />}
           footer={<ActionFooter start="Footer Goes here" />}
@@ -58,4 +64,5 @@ class DialogModalExample extends React.Component {
 }
 
 DialogModalExample.propTypes = propTypes;
+DialogModalExample.defaultProps = defaultProps;
 export default DialogModalExample;

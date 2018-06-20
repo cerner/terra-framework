@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should mount an open dialogModal 1`] = `
-<DialogModalExample>
+<DialogModalExample
+  isFocused={false}
+>
   <div>
     <DialogModal
       ariaLabel="Dialog Modal Example"
@@ -63,6 +65,7 @@ exports[`should mount an open dialogModal 1`] = `
 
 exports[`should mount an open dialogModal 320 width 1`] = `
 <DialogModalExample
+  isFocused={false}
   width="320"
 >
   <div>
@@ -126,6 +129,7 @@ exports[`should mount an open dialogModal 320 width 1`] = `
 
 exports[`should mount an open dialogModal 960 width 1`] = `
 <DialogModalExample
+  isFocused={false}
   width="960"
 >
   <div>
@@ -189,6 +193,7 @@ exports[`should mount an open dialogModal 960 width 1`] = `
 
 exports[`should mount an open dialogModal 1280 width 1`] = `
 <DialogModalExample
+  isFocused={false}
   width="1280"
 >
   <div>
@@ -252,6 +257,7 @@ exports[`should mount an open dialogModal 1280 width 1`] = `
 
 exports[`should mount an open dialogModal 1600 width 1`] = `
 <DialogModalExample
+  isFocused={false}
   width="1600"
 >
   <div>
@@ -270,6 +276,198 @@ exports[`should mount an open dialogModal 1600 width 1`] = `
         />
       }
       isFocused={false}
+      isOpen={false}
+      onRequestClose={[Function]}
+      releaseFocus={null}
+      requestFocus={null}
+      width="1600"
+    />
+    <Button
+      isBlock={false}
+      isCompact={false}
+      isDisabled={false}
+      isIconOnly={false}
+      isReversed={false}
+      onClick={[Function]}
+      text="Trigger Dialog Modal"
+      type="button"
+      variant="neutral"
+    >
+      <button
+        aria-disabled={false}
+        aria-label={null}
+        className="button neutral"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        type="button"
+      >
+        <span
+          className="text-only"
+        >
+          <span
+            className=""
+          >
+            Trigger Dialog Modal
+          </span>
+        </span>
+      </button>
+    </Button>
+  </div>
+</DialogModalExample>
+`;
+
+exports[`should mount an open dialogModal 1600 width 2`] = `
+<DialogModalExample
+  isFocused={false}
+  width="1600"
+>
+  <div>
+    <DialogModal
+      ariaLabel="Dialog Modal Example"
+      footer={
+        <ActionFooter
+          start="Footer Goes here"
+        />
+      }
+      header={
+        <ActionHeader
+          level={1}
+          onClose={[Function]}
+          title="Action Header used here"
+        />
+      }
+      isFocused={false}
+      isOpen={false}
+      onRequestClose={[Function]}
+      releaseFocus={null}
+      requestFocus={null}
+      width="1600"
+    />
+    <Button
+      isBlock={false}
+      isCompact={false}
+      isDisabled={false}
+      isIconOnly={false}
+      isReversed={false}
+      onClick={[Function]}
+      text="Trigger Dialog Modal"
+      type="button"
+      variant="neutral"
+    >
+      <button
+        aria-disabled={false}
+        aria-label={null}
+        className="button neutral"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        type="button"
+      >
+        <span
+          className="text-only"
+        >
+          <span
+            className=""
+          >
+            Trigger Dialog Modal
+          </span>
+        </span>
+      </button>
+    </Button>
+  </div>
+</DialogModalExample>
+`;
+
+exports[`should mount an open dialogModal with focus released 1`] = `
+<DialogModalExample
+  isFocused={false}
+  width="1600"
+>
+  <div>
+    <DialogModal
+      ariaLabel="Dialog Modal Example"
+      footer={
+        <ActionFooter
+          start="Footer Goes here"
+        />
+      }
+      header={
+        <ActionHeader
+          level={1}
+          onClose={[Function]}
+          title="Action Header used here"
+        />
+      }
+      isFocused={false}
+      isOpen={false}
+      onRequestClose={[Function]}
+      releaseFocus={null}
+      requestFocus={null}
+      width="1600"
+    />
+    <Button
+      isBlock={false}
+      isCompact={false}
+      isDisabled={false}
+      isIconOnly={false}
+      isReversed={false}
+      onClick={[Function]}
+      text="Trigger Dialog Modal"
+      type="button"
+      variant="neutral"
+    >
+      <button
+        aria-disabled={false}
+        aria-label={null}
+        className="button neutral"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        type="button"
+      >
+        <span
+          className="text-only"
+        >
+          <span
+            className=""
+          >
+            Trigger Dialog Modal
+          </span>
+        </span>
+      </button>
+    </Button>
+  </div>
+</DialogModalExample>
+`;
+
+exports[`should mount an open dialogModal with focus requested 1`] = `
+<DialogModalExample
+  isFocused={true}
+  width="1600"
+>
+  <div>
+    <DialogModal
+      ariaLabel="Dialog Modal Example"
+      footer={
+        <ActionFooter
+          start="Footer Goes here"
+        />
+      }
+      header={
+        <ActionHeader
+          level={1}
+          onClose={[Function]}
+          title="Action Header used here"
+        />
+      }
+      isFocused={true}
       isOpen={false}
       onRequestClose={[Function]}
       releaseFocus={null}
