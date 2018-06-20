@@ -15,7 +15,7 @@ import React from 'react';
 import Button from 'terra-button';
 import ActionHeader from 'terra-action-header';
 import ActionFooter from 'terra-action-footer';
-import DialogModal from '../../src/DialogModal';
+import DialogModal from 'terra-dialog-modal';
 
 
 class DefaultDialogModal extends React.Component {
