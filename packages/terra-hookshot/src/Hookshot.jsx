@@ -73,12 +73,20 @@ const propTypes = {
    */
   onPosition: PropTypes.func,
   /**
-   * Required element that the content will hookshot to.
+   * Client coordinates to serve as the anchor point for the hookshot'd content.
    */
-  targetRef: PropTypes.func.isRequired,
+  targetCoordinates: PropTypes.shape({
+    x: PropTypes.number.isRequired,
+    y: PropTypes.number.isRequired,
+  }),
+  /**
+   * Element to serve as the anchor point for the hookshot'd content. (If targetCoordinates are provided, this is ignored.)
+   */
+  targetRef: PropTypes.func,
   /**
    * Object containing the vertical and horizontal attachment values for the target.
    * Valid values: { horizontal: ['start', 'center', 'end'], vertical: ['top', 'middle', 'bottom'] }.
+   * If targetCoordinates are provided { horizontal: 'center', vertical: 'middle' } will be applied.
    */
   targetAttachment: PropTypes.shape({
     horizontal: PropTypes.oneOf(HORIZONTAL_ATTACHMENTS),
@@ -109,6 +117,10 @@ class Hookshot extends React.Component {
     this.getNodeRects = this.getNodeRects.bind(this);
     this.update = this.update.bind(this);
     this.tick = this.tick.bind(this);
+    this.getBoundingRef = this.getBoundingRef.bind(this);
+    this.getTargetRef = this.getTargetRef.bind(this);
+    this.getValidBoundingRect = this.getValidBoundingRect.bind(this);
+    this.getValidTargetRect = this.getValidTargetRect.bind(this);
     this.state = { isEnabled: props.isEnabled && props.isOpen };
     this.listenersAdded = false;
     this.lastCall = null;
@@ -148,16 +160,34 @@ class Hookshot extends React.Component {
     this.contentNode = node;
   }
 
-  getNodeRects() {
-    const targetRect = HookshotUtils.getBounds(this.props.targetRef());
-    const contentRect = HookshotUtils.getBounds(this.contentNode);
+  getBoundingRef() {
+    return this.props.boundingRef ? this.props.boundingRef() : undefined;
+  }
 
-    let boundingRect = null;
-    if (this.props.attachmentBehavior !== 'none') {
-      boundingRect = HookshotUtils.getBoundingRect(this.props.boundingRef ? this.props.boundingRef() : 'window');
+  getTargetRef() {
+    return this.props.targetRef ? this.props.targetRef() : undefined;
+  }
+
+  getValidBoundingRect() {
+    if (this.props.attachmentBehavior === 'none') {
+      return undefined;
     }
+    return HookshotUtils.getBoundingRect(this.getBoundingRef() || 'window');
+  }
 
-    return { targetRect, contentRect, boundingRect };
+  getValidTargetRect() {
+    if (this.props.targetCoordinates) {
+      return HookshotUtils.getRectFromCoords(this.props.targetCoordinates);
+    }
+    return HookshotUtils.getBounds(this.getTargetRef());
+  }
+
+  getNodeRects(resetContentCache) {
+    return {
+      contentRect: resetContentCache ? HookshotUtils.getBounds(this.contentNode) : this.cachedRects.contentRect,
+      targetRect: this.getValidTargetRect(),
+      boundingRect: this.getValidBoundingRect(),
+    };
   }
 
   tick(event) {
@@ -186,17 +216,17 @@ class Hookshot extends React.Component {
   }
 
   enableListeners() {
-    const target = this.props.targetRef();
-    if (!target) {
+    const childElement = this.getTargetRef() || this.getBoundingRef();
+    if (!childElement) {
       return;
     }
 
     ['resize', 'scroll', 'touchmove'].forEach(event => window.addEventListener(event, this.tick));
 
     this.parentListeners = [];
-    const scrollParents = HookshotUtils.getScrollParents(target);
+    const scrollParents = HookshotUtils.getScrollParents(childElement);
     scrollParents.forEach((parent) => {
-      if (parent !== target.ownerDocument) {
+      if (parent !== childElement.ownerDocument) {
         parent.addEventListener('scroll', this.tick);
         this.parentListeners.push(parent);
       }
@@ -216,16 +246,8 @@ class Hookshot extends React.Component {
     this.listenersAdded = false;
   }
 
-  position(event, resetCache) {
-    if (resetCache) {
-      this.cachedRects = this.getNodeRects();
-    } else {
-      if (this.props.boundingRef && this.props.attachmentBehavior !== 'none') {
-        this.cachedRects.boundingRect = HookshotUtils.getBoundingRect(this.props.boundingRef());
-      }
-      this.cachedRects.targetRect = HookshotUtils.getBounds(this.props.targetRef());
-    }
-
+  position(event, resetContentCache) {
+    this.cachedRects = this.getNodeRects(resetContentCache);
     this.content.rect = this.cachedRects.contentRect;
     this.target.rect = this.cachedRects.targetRect;
 
@@ -265,7 +287,7 @@ class Hookshot extends React.Component {
   }
 
   update(event) {
-    if (!this.props.targetRef() || !this.contentNode) {
+    if ((!this.getTargetRef() && !this.props.targetCoordinates) || !this.contentNode) {
       return;
     }
     this.updateHookshot(event);
@@ -303,6 +325,7 @@ class Hookshot extends React.Component {
       contentOffset,
       isEnabled,
       isOpen,
+      targetCoordinates,
       targetRef,
       targetAttachment,
       targetOffset,
@@ -320,8 +343,15 @@ class Hookshot extends React.Component {
     };
     this.target = {
       offset: HookshotUtils.getDirectionalOffset(targetOffset, isRTL),
-      attachment: targetAttachment ? HookshotUtils.getDirectionalAttachment(targetAttachment, isRTL) : HookshotUtils.mirrorAttachment(this.content.attachment),
     };
+
+    if (targetCoordinates) {
+      this.target.attachment = HookshotUtils.coordinateAttachment;
+    } else if (targetAttachment) {
+      this.target.attachment = HookshotUtils.getDirectionalAttachment(targetAttachment, isRTL);
+    } else {
+      this.target.attachment = HookshotUtils.mirrorAttachment(this.content.attachment);
+    }
 
     return (
       <Portal isOpened={isOpen}>
