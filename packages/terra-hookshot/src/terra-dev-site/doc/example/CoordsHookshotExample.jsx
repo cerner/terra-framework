@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from 'terra-button';
 import NumberField from 'terra-form/lib/NumberField';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import Hookshot from 'terra-hookshot/lib/Hookshot';
@@ -47,25 +46,20 @@ const attachmentValues = (attachment) => {
 class HookshotStandard extends React.Component {
   constructor(props) {
     super(props);
-    this.handleButtonClick = this.handleButtonClick.bind(this);
+    this.handleRegionClick = this.handleRegionClick.bind(this);
     this.handleRequestClose = this.handleRequestClose.bind(this);
-    this.handleSelectChange = this.handleSelectChange.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
     this.setParentNode = this.setParentNode.bind(this);
     this.getParentNode = this.getParentNode.bind(this);
+    this.handleSelectChange = this.handleSelectChange.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
     this.getId = this.getId.bind(this);
     this.state = {
       isOpen: false,
+      coordinates: undefined,
       hookshotContentAttachment: ATTACHMENT_POSITIONS[1],
-      hookshotTargetAttachment: ATTACHMENT_POSITIONS[7],
       hookshotAttachmentBehavior: Hookshot.attachmentBehaviors[0],
       hookshotAttachmentMargin: 0,
     };
-  }
-
-  componentDidMount() {
-    this.parentNode.scrollTop = 225;
-    this.parentNode.scrollLeft = 475;
   }
 
   getId(name) {
@@ -80,8 +74,8 @@ class HookshotStandard extends React.Component {
     return this.parentNode;
   }
 
-  handleButtonClick() {
-    this.setState({ isOpen: !this.state.isOpen });
+  handleRegionClick(event) {
+    this.setState({ isOpen: !this.state.isOpen, coordinates: { x: event.clientX, y: event.clientY } });
   }
 
   handleRequestClose() {
@@ -108,6 +102,7 @@ class HookshotStandard extends React.Component {
     );
 
     return (
+      /* eslint-disable jsx-a11y/no-static-element-interactions */
       <div>
         <form>
           <label htmlFor={this.getId('hookshotAttachmentBehavior')}>Attachment Behavior</label>
@@ -131,31 +126,23 @@ class HookshotStandard extends React.Component {
           </select>
           <br />
           <br />
-          <label htmlFor={this.getId('hookshotTargetAttachment')}>Target Attachment</label>
-          <select id={this.getId('hookshotTargetAttachment')} name="hookshotTargetAttachment" value={this.state.hookshotTargetAttachment} onChange={this.handleSelectChange}>
-            {generateOptions(ATTACHMENT_POSITIONS)}
-          </select>
-          <br />
-          <br />
         </form>
-        <Hookshot
-          attachmentBehavior={this.state.hookshotAttachmentBehavior}
-          attachmentMargin={this.state.hookshotAttachmentMargin}
-          boundingRef={this.getParentNode}
-          contentAttachment={attachmentValues(this.state.hookshotContentAttachment)}
-          isEnabled
-          isOpen={this.state.isOpen}
-          targetAttachment={attachmentValues(this.state.hookshotTargetAttachment)}
-          targetRef={() => document.getElementById('hookshot-bounded-button')}
-        >
-          {hookshotContent}
-        </Hookshot>
-        <div style={{ border: '1px dashed black', height: '200px', maxWidth: '100%', width: '400px', background: 'aliceblue', overflow: 'auto', position: 'relative' }} ref={this.setParentNode}>
-          <div style={{ position: 'relative', height: '600px', width: '1200px' }}>
-            <Button id="hookshot-bounded-button" text="Hookshot Example" onClick={this.handleButtonClick} style={{ position: 'absolute', left: '600px', top: '300px' }} />
-          </div>
+        <div onClick={this.handleRegionClick} style={{ border: '1px dashed black', backgroundColor: 'aliceblue', height: '300px', width: '100%' }} ref={this.setParentNode}>
+          Click Inside
+          <Hookshot
+            attachmentBehavior={this.state.hookshotAttachmentBehavior}
+            attachmentMargin={this.state.hookshotAttachmentMargin}
+            boundingRef={this.getParentNode}
+            contentAttachment={attachmentValues(this.state.hookshotContentAttachment)}
+            isEnabled
+            isOpen={this.state.isOpen}
+            targetCoordinates={this.state.coordinates}
+          >
+            {hookshotContent}
+          </Hookshot>
         </div>
       </div>
+      /* eslint-enable jsx-a11y/no-static-element-interactions */
     );
   }
 }
