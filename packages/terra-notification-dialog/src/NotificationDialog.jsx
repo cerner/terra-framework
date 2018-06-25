@@ -179,7 +179,7 @@ class NotificationDialog extends React.Component {
 
     return (
       <AbstractModal
-        aria-label="Notification Dialog"
+        ariaLabel="Notification Dialog"
         aria-labelledby="notification-dialog-header"
         aria-describedby={title ? 'notification-dialog-title' : 'notification-dialog-header'}
         role="alertdialog"
