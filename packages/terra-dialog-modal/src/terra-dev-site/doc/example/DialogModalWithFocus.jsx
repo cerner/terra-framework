@@ -53,6 +53,9 @@ class DialogModalWithFocus extends React.Component {
           <p>{paraOne}</p>
         </DialogModal>
         <Button text="Trigger Dialog Modal" onClick={this.handleOpenModal} />
+        <br />
+        <br />
+        <Button text="Close Modal Manager" onClick={this.props.app.closeDisclosure} />
       </div>
     );
   }
