@@ -72,20 +72,10 @@
     flex: 0 0 auto;
   }
 
-  .dialog-modal-header {
-    background-color: var(--terra-dialog-modal-body-header-background-color, #f9f9f9);
-    border-bottom: var(--terra-dialog-modal-header-border-bottom, 1px solid #dedfe0);
-  }
-
   .dialog-modal-body {
-    background-color: var(--terra-dialog-modal-body-background-color, #fff);
+    background-color: var(--terra-dialog-modal-body-background-color);
     flex: 0 1 auto;
     overflow-y: auto;
-    padding: var(--terra-dialog-modal-body-padding, 1.25rem);
-  }
-
-  .dialog-modal-footer {
-    background-color: var(--terra-dialog-modal-body-footer-background-color, #f9f9f9);
-    border-top: var(--terra-dialog-modal-footer-border-top, 1px solid #dedfe0);
+    padding: var(--terra-dialog-modal-body-padding, 0.7142857143rem);
   }
 }

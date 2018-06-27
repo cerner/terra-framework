@@ -16,6 +16,8 @@ import DialogModalWithLongText from './example/DialogModalWithLongText';
 import DialogModalWithLongTextSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/DialogModalWithLongText.jsx';
 import DialogModalOnModalManager from './example/DialogModalOnModalManager';
 import DialogModalOnModalManagerSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/DialogModalOnModalManager.jsx';
+import DialogModalWithCustomHeaderAndCustomFooter from './example/DialogModalWithCustomHeaderAndCustomFooter';
+import DialogModalWithCustomHeaderAndCustomFooterSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/DialogModalWithCustomHeaderAndCustomFooter.jsx';
 
 const DialogModalExamples = () => (
   <DocTemplate
@@ -37,6 +39,11 @@ const DialogModalExamples = () => (
         title: 'Dialog Modal On Modal Manager',
         example: <DialogModalOnModalManager />,
         source: DialogModalOnModalManagerSrc,
+      },
+      {
+        title: 'Dialog Modal With Custom Header and Custom Footer',
+        example: <DialogModalWithCustomHeaderAndCustomFooter />,
+        source: DialogModalWithCustomHeaderAndCustomFooterSrc,
       },
     ]}
     propsTables={[

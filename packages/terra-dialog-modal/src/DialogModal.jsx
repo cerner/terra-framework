@@ -119,9 +119,9 @@ class DialogModal extends React.Component {
       >
         <div {...customProps} className={cx('dialog-modal-inner-wrapper', customProps.className)}>
           <div className={cx('dialog-modal-container')}>
-            <div className={cx('dialog-modal-header')}>{header}</div>
+            <div>{header}</div>
             <div className={cx('dialog-modal-body')}>{children}</div>
-            <div className={cx('dialog-modal-footer')}>{footer}</div>
+            <div>{footer}</div>
           </div>
         </div>
       </AbstractModal>
