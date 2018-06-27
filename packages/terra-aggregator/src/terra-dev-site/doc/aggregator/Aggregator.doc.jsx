@@ -1,23 +1,23 @@
 /* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-duplicates */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
-import { name } from '../../../package.json';
-import ReadMe from '../../../docs/README.md';
+import { name } from '../../../../package.json';
+import ReadMe from '../../../../docs/README.md';
 
 // Component Source
-import AggregatorSrc from '!raw-loader!../../../src/Aggregator.jsx';
+import AggregatorSrc from '!raw-loader!../../../../src/Aggregator.jsx';
 
 // Example Files
-import StandaloneAggregatorExample from './example/StandaloneAggregatorExample';
-import StandaloneAggregatorExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/StandaloneAggregatorExample.jsx';
-import CustomRenderAggregatorExample from './example/CustomRenderAggregatorExample';
-import CustomRenderAggregatorExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/CustomRenderAggregatorExample.jsx';
-import AggregatorInModalExample from './example/AggregatorInModalExample';
-import AggregatorInModalExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/AggregatorInModalExample.jsx';
-import CombinedDisclosureExample from './example/CombinedDisclosureExample';
-import CombinedDisclosureExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/CombinedDisclosureExample.jsx';
-import DisclosureBypassExample from './example/DisclosureBypassExample';
-import DisclosureBypassExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/DisclosureBypassExample.jsx';
+import StandaloneAggregatorExample from '../example/StandaloneAggregatorExample';
+import StandaloneAggregatorExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/StandaloneAggregatorExample.jsx';
+import CustomRenderAggregatorExample from '../example/CustomRenderAggregatorExample';
+import CustomRenderAggregatorExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/CustomRenderAggregatorExample.jsx';
+import AggregatorInModalExample from '../example/AggregatorInModalExample';
+import AggregatorInModalExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/AggregatorInModalExample.jsx';
+import CombinedDisclosureExample from '../example/CombinedDisclosureExample';
+import CombinedDisclosureExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/CombinedDisclosureExample.jsx';
+import DisclosureBypassExample from '../example/DisclosureBypassExample';
+import DisclosureBypassExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DisclosureBypassExample.jsx';
 
 const DocPage = () => (
   <DocTemplate
