@@ -1,7 +1,7 @@
 :local {
   .dialog-modal-wrapper {
     background-color: var(--terra-dialog-modal-background-color, #fff);
-    border-radius: var(--terra-dialog-modal-border-radius, 0.3125rem);
+    border-radius: var(--terra-dialog-modal-border-radius, 5px);
 
 
     &.width-320 {
@@ -49,7 +49,7 @@
     }
 
     @media screen and (max-width: 768px) {
-      width: calc(100% - 2 * var(--terra-dialog-modal-max-width, 10px));
+      width: calc(100% - 2 * var(--terra-dialog-modal-small-horizontal-inset, 10px));
     }
   }
 
@@ -74,18 +74,18 @@
 
   .dialog-modal-header {
     background-color: var(--terra-dialog-modal-body-header-background-color, #f9f9f9);
-    border: var(--terra-dialog-modal-header-border, 0.0625rem solid #dedfe0);
+    border-bottom: var(--terra-dialog-modal-header-border-bottom, 1px solid #dedfe0);
   }
 
-  .dialog-modal-main {
-    background-color: var(--terra-dialog-modal-main-background-color, #fff);
+  .dialog-modal-body {
+    background-color: var(--terra-dialog-modal-body-background-color, #fff);
     flex: 0 1 auto;
     overflow-y: auto;
-    padding: var(--terra-dialog-modal-main-padding, 1.25rem);
+    padding: var(--terra-dialog-modal-body-padding, 1.25rem);
   }
 
   .dialog-modal-footer {
     background-color: var(--terra-dialog-modal-body-footer-background-color, #f9f9f9);
-    border: var(--terra-dialog-modal-footer-border, 0.0625rem solid #dedfe0);
+    border-top: var(--terra-dialog-modal-footer-border-top, 1px solid #dedfe0);
   }
 }
