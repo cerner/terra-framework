@@ -42,8 +42,8 @@ class DialogModalWithLongText extends React.Component {
           isOpen={this.state.isOpen}
           onRequestClose={this.handleCloseModal}
           header={<ActionHeader title="Action Header used here" onClose={this.handleCloseModal} />}
-          footer={<ActionFooter start="Footer Goes here" />}
-          width="800"
+          footer={<ActionFooter start="Action Footer used here" />}
+          width="960"
         >
           <p>{text}</p>
           <p>{text}</p>

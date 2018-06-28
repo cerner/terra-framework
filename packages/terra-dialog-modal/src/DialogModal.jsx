@@ -11,6 +11,7 @@ const widthFromSize = {
   320: 320,
   640: 640,
   960: 960,
+  1120: 1120,
   1280: 1280,
   1600: 1600,
 };
@@ -53,7 +54,9 @@ const propTypes = {
    */
   requestFocus: PropTypes.func,
   /**
-   * Width of the dialog modal. Defaults to 640px. Allows 320, 640, 960, 1280 and 1600.
+   * Width of the dialog modal. Allows one of `320`, `640`, `960`, `1120`, `1280`, or `1600`.
+   *
+   * _(Uses same sizes as terra-modal-manager: tiny:320, small:640, medium:960, default:1120, large:1280, huge:1600)_
    */
   width: PropTypes.oneOf(Object.keys(widthFromSize)),
 };
@@ -64,7 +67,7 @@ const defaultProps = {
   isFocused: false,
   releaseFocus: null,
   requestFocus: null,
-  width: '640',
+  width: '1120',
 };
 
 class DialogModal extends React.Component {
@@ -108,11 +111,18 @@ class DialogModal extends React.Component {
       return null;
     }
 
+    const classArray = ['dialog-modal-wrapper'];
+    if (width in widthFromSize) {
+      classArray.push(`width-${widthFromSize[width]}`);
+    } else {
+      classArray.push('width-1120');
+    }
+
     return (
       <AbstractModal
         ariaLabel={this.props.ariaLabel}
         role="dialog"
-        classNameModal={cx('dialog-modal-wrapper', `width-${widthFromSize[width]}`)}
+        classNameModal={cx(classArray)}
         isOpen={this.props.isOpen}
         onRequestClose={this.props.onRequestClose}
         zIndex="8000"

@@ -24,7 +24,7 @@ exports[`should mount an open dialogModal 1`] = `
       onRequestClose={[Function]}
       releaseFocus={null}
       requestFocus={null}
-      width="640"
+      width="1120"
     />
     <Button
       isBlock={false}
@@ -532,7 +532,7 @@ exports[`should shallow an open dialogModal 1`] = `
     onRequestClose={[Function]}
     releaseFocus={null}
     requestFocus={null}
-    width="640"
+    width="1120"
   >
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
