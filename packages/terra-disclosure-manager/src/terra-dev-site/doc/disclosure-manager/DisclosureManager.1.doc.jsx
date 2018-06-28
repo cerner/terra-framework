@@ -1,11 +1,11 @@
 /* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
-import { name } from '../../../package.json';
-import ReadMe from '../../../docs/README.md';
+import { name } from '../../../../package.json';
+import ReadMe from '../../../../docs/README.md';
 
 // Component Source
-import DisclosureManagerSrc from '!raw-loader!../../../src/DisclosureManager.jsx';
+import DisclosureManagerSrc from '!raw-loader!../../../../src/DisclosureManager.jsx';
 
 const DocPage = () => (
   <DocTemplate

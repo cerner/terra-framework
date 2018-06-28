@@ -1,19 +1,19 @@
 /* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-duplicates */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
-import { name } from '../../../package.json';
-import ReadMe from '../../../docs/README.md';
+import { name } from '../../../../package.json';
+import ReadMe from '../../../../docs/README.md';
 
 // Component Source
-import ApplicationHeaderUtilitySrc from '!raw-loader!../../../src/ApplicationHeaderUtility.jsx';
+import ApplicationHeaderUtilitySrc from '!raw-loader!../../../../src/ApplicationHeaderUtility.jsx';
 
 // Example File
-import ApplicationHeaderUtilityExample from './example/ApplicationHeaderUtilityExample';
-import ApplicationMenuUtilityExample from './example/ApplicationMenuUtilityExample';
-import MenuUtilityMenuExample from './example/MenuUtilityMenuExample';
-import ApplicationHeaderUtilityExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/ApplicationHeaderUtilityExample.jsx';
-import MenuUtilityMenuExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/MenuUtilityMenuExample.jsx';
-import ApplicationMenuUtilityExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/ApplicationMenuUtilityExample.jsx';
+import ApplicationHeaderUtilityExample from '../example/ApplicationHeaderUtilityExample';
+import ApplicationMenuUtilityExample from '../example/ApplicationMenuUtilityExample';
+import MenuUtilityMenuExample from '../example/MenuUtilityMenuExample';
+import ApplicationHeaderUtilityExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ApplicationHeaderUtilityExample.jsx';
+import MenuUtilityMenuExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/MenuUtilityMenuExample.jsx';
+import ApplicationMenuUtilityExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ApplicationMenuUtilityExample.jsx';
 
 const DocPage = () => (
   <DocTemplate
