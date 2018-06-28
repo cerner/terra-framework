@@ -53,6 +53,7 @@ class HookshotContent extends React.Component {
     this.enableContentResizeListener = this.enableContentResizeListener.bind(this);
     this.disableContentResizeListener = this.disableContentResizeListener.bind(this);
     this.updateListeners = this.updateListeners.bind(this);
+    this.animationFrameID = null;
   }
 
   componentDidMount() {
@@ -139,7 +140,9 @@ class HookshotContent extends React.Component {
   enableContentResizeListener() {
     if (!this.contentResizeListenerAdded) {
       this.resizeObserver = new ResizeObserver((entries) => {
-        this.props.onContentResize(entries[0].contentRect);
+        this.animationFrameID = window.requestAnimationFrame(() => {
+          this.props.onContentResize(entries[0].contentRect);
+        });
       });
       this.resizeObserver.observe(this.contentNode);
       this.contentResizeListenerAdded = true;
@@ -148,6 +151,7 @@ class HookshotContent extends React.Component {
 
   disableContentResizeListener() {
     if (this.contentResizeListenerAdded) {
+      window.cancelAnimationFrame(this.animationFrameID);
       this.resizeObserver.disconnect(this.contentNode);
       this.contentNode = null;
       this.contentResizeListenerAdded = false;
