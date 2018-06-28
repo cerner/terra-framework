@@ -1,12 +1,11 @@
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
-import { name } from '../../../../package.json';
 import ChangeLog from '../../../../CHANGELOG.md';
 
 const DocPage = () => (
   <DocTemplate
-    packageName={name}
+    packageName="terra-layout"
+    srcPath="https://github.com/cerner/terra-framework/tree/master/packages/terra-layout"
     readme={ChangeLog}
   />
 );
