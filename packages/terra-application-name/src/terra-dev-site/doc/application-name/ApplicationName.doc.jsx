@@ -1,17 +1,17 @@
 /* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-duplicates */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
-import { name } from '../../../package.json';
-import ReadMe from '../../../docs/README.md';
+import { name } from '../../../../package.json';
+import ReadMe from '../../../../docs/README.md';
 
 // Component Source
-import ApplicationHeaderNameSrc from '!raw-loader!../../../src/ApplicationHeaderName.jsx';
-import ApplicationHeaderNameStandardSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/ApplicationHeaderNameStandard.jsx';
-import ApplicationMenuNameStandardSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/ApplicationMenuNameStandard.jsx';
+import ApplicationHeaderNameSrc from '!raw-loader!../../../../src/ApplicationHeaderName.jsx';
+import ApplicationHeaderNameStandardSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ApplicationHeaderNameStandard.jsx';
+import ApplicationMenuNameStandardSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ApplicationMenuNameStandard.jsx';
 
 // Example Files
-import ApplicationHeaderNameStandard from './example/ApplicationHeaderNameStandard';
-import ApplicationMenuNameStandard from './example/ApplicationMenuNameStandard';
+import ApplicationHeaderNameStandard from '../example/ApplicationHeaderNameStandard';
+import ApplicationMenuNameStandard from '../example/ApplicationMenuNameStandard';
 
 const DocPage = () => (
   <DocTemplate
