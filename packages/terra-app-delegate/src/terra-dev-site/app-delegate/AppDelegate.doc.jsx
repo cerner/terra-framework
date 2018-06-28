@@ -1,7 +1,7 @@
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
-import { name } from '../../package.json';
-import ReadMe from '../../docs/README.md';
+import { name } from '../../../package.json';
+import ReadMe from '../../../docs/README.md';
 
 const AppDelegateExamples = () => (
   <DocTemplate
