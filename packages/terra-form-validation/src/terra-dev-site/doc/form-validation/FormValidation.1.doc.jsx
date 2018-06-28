@@ -6,8 +6,8 @@ import ReadMe from '../../../../docs/README.md';
 
 
 // Example Files
-import DefaultFormValidation from './example/DefaultFormValidation';
-import DefaultFormValidationSrc from '!raw-loader!../../../../src/terra-dev-site/doc/form-validation/example/DefaultFormValidation';
+import DefaultFormValidation from '../example/DefaultFormValidation';
+import DefaultFormValidationSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DefaultFormValidation';
 
 const FormValidationExamples = () => (
   <DocTemplate

@@ -1,20 +1,20 @@
 /* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-duplicates */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
-import { name } from '../../../package.json';
-import ReadMe from '../../../docs/README.md';
+import { name } from '../../../../package.json';
+import ReadMe from '../../../../docs/README.md';
 
 // Component Source
-import HookshotSrc from '!raw-loader!../../../src/Hookshot';
-import HookshotContentSrc from '!raw-loader!../../../src/HookshotContent';
-import HookshotExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/HookshotExample.jsx';
-import BoundedHookshotExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/BoundedHookshotExample.jsx';
-import CoordsHookshotExampleSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/CoordsHookshotExample.jsx';
+import HookshotSrc from '!raw-loader!../../../../src/Hookshot';
+import HookshotContentSrc from '!raw-loader!../../../../src/HookshotContent';
+import HookshotExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/HookshotExample.jsx';
+import BoundedHookshotExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/BoundedHookshotExample.jsx';
+import CoordsHookshotExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/CoordsHookshotExample.jsx';
 
 // Example Files
-import HookshotExample from './example/HookshotExample';
-import BoundedHookshotExample from './example/BoundedHookshotExample';
-import CoordsHookshotExample from './example/CoordsHookshotExample';
+import HookshotExample from '../example/HookshotExample';
+import BoundedHookshotExample from '../example/BoundedHookshotExample';
+import CoordsHookshotExample from '../example/CoordsHookshotExample';
 
 const DocPage = () => (
   <DocTemplate

@@ -6,10 +6,10 @@ import Documentation from '../../../../docs/ValidationFunctions.md';
 
 
 // Example Files
-import ValidationAsynchronous from './example/ValidationAsynchronous';
-import ValidationAsynchronousSrc from '!raw-loader!../../../../src/terra-dev-site/doc/form-validation/example/ValidationAsynchronous';
-import ValidationParsing from './example/ValidationParsing';
-import ValidationParsingSrc from '!raw-loader!../../../../src/terra-dev-site/doc/form-validation/example/ValidationParsing';
+import ValidationAsynchronous from '../example/ValidationAsynchronous';
+import ValidationAsynchronousSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ValidationAsynchronous';
+import ValidationParsing from '../example/ValidationParsing';
+import ValidationParsingSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ValidationParsing';
 
 const FormValidationExamples = () => (
   <DocTemplate

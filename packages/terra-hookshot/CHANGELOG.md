@@ -5,6 +5,8 @@ Unreleased
 ----------
 ### Changed
 * Introduce targetCoordinates to hookshot functionality.
+### Added
+* Change logs to documentation on terra-dev-site
 
 4.4.0 - (June 12, 2018)
 ------------------

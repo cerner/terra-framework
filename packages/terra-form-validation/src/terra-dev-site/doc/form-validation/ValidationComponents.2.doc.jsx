@@ -5,12 +5,12 @@ import DocTemplate from 'terra-doc-template';
 import Documentation from '../../../../docs/ValidationComponents.md';
 
 // Example File
-import DefaultFormValidation from './example/DefaultFormValidation';
-import DefaultFormValidationSrc from '!raw-loader!../../../../src/terra-dev-site/doc/form-validation/example/DefaultFormValidation';
-import FormSubmitRadioField from './example/FormSubmitRadioField';
-import FormSubmitRadioFieldSrc from '!raw-loader!../../../../src/terra-dev-site/doc/form-validation/example/FormSubmitRadioField';
-import FormSubmitCheckboxField from './example/FormSubmitCheckboxField';
-import FormSubmitCheckboxFieldSrc from '!raw-loader!../../../../src/terra-dev-site/doc/form-validation/example/FormSubmitCheckboxField';
+import DefaultFormValidation from '../example/DefaultFormValidation';
+import DefaultFormValidationSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DefaultFormValidation';
+import FormSubmitRadioField from '../example/FormSubmitRadioField';
+import FormSubmitRadioFieldSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/FormSubmitRadioField';
+import FormSubmitCheckboxField from '../example/FormSubmitCheckboxField';
+import FormSubmitCheckboxFieldSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/FormSubmitCheckboxField';
 
 const FormValidationExamples = () => (
   <DocTemplate
