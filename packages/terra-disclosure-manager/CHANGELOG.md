@@ -6,6 +6,11 @@ Unreleased
 ### Added
 * Change logs to documentation on terra-dev-site
 
+2.8.0 - (June 29, 2018)
+------------------
+### Fixed
+Fixed reusable test example to be accessible
+
 2.7.0 - (June 12, 2018)
 ------------------
 ### Changed
