@@ -1,0 +1,81 @@
+:local {
+  .dialog-modal-wrapper {
+    background-color: var(--terra-dialog-modal-background-color, #fff);
+    border-radius: var(--terra-dialog-modal-border-radius, 5px);
+
+
+    &.width-320 {
+      width: 320px;
+    }
+
+    &.width-480 {
+      width: 480px;
+    }
+
+    &.width-640 {
+      width: 640px;
+    }
+
+    &.width-800 {
+      width: 800px;
+    }
+
+    &.width-960 {
+      width: 960px;
+    }
+
+    &.width-1120 {
+      width: 1120px;
+    }
+
+    &.width-1280 {
+      width: 1280px;
+    }
+
+    &.width-1440 {
+      width: 1440px;
+    }
+
+    &.width-1600 {
+      width: 1600px;
+    }
+
+    &.width-1760 {
+      width: 1760px;
+    }
+
+    &.width-1920 {
+      width: 1920px;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: calc(100% - 2 * var(--terra-dialog-modal-small-horizontal-inset, 10px));
+    }
+  }
+
+  // This flex container is needed for IE 10 / IE 11 to render correctly
+  .dialog-modal-inner-wrapper {
+    display: flex;
+    flex-direction: row;
+    max-height: 80vh;
+  }
+
+  .dialog-modal-container {
+    display: flex;
+    flex-direction: column;
+    max-height: inherit; // `inherit` value needed for IE10 to scroll modal-body when overflowed
+    width: 100%; // Needed for IE to wrap content correctly in flexbox
+  }
+
+  .dialog-modal-header,
+  .dialog-modal-footer {
+    flex: 0 0 auto;
+  }
+
+  .dialog-modal-body {
+    background-color: var(--terra-dialog-modal-body-background-color);
+    flex: 0 1 auto;
+    overflow-y: auto;
+    padding: var(--terra-dialog-modal-body-padding, 0.7142857143rem);
+  }
+}
