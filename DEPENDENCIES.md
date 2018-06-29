@@ -40,6 +40,6 @@
 | stylelint-order | ^0.8.1 | -- | A collection of order related linting rules for stylelint. |
 | stylelint-scss | ^3.1.0 | -- | A collection of SCSS specific rules for stylelint |
 | stylelint-suitcss | ^3.0.0 | -- | A collection of stylelint plugins for SUIT CSS |
-| terra-dev-site | ^1.2.0 | ^16.2.0 | Dynamically builds a react-hash-routed site based on site configuration, navigation configuration and component configuration. |
-| terra-toolkit | ^3.5.0 | -- | Utilities to help when developing terra modules. |
+| terra-dev-site | ^2.0.0 | ^16.2.0 | Dynamically builds a react-hash-routed site based on site configuration, navigation configuration and component configuration. |
+| terra-toolkit | ^4.0.0 | -- | Utilities to help when developing terra modules. |
 | xfc | ^1.2.1 | -- | A Cross Frame Container that handles securely embedding web content into a 3rd party domain |
