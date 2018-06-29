@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 -----------------
+### Changed
+* Clean up dependencies
 
 2.7.0 - (June 29, 2018)
 ------------------
