@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 -----------------
+### Fixed
+Fixed reusable test example to be accessible
 
 2.7.0 - (June 12, 2018)
 ------------------
