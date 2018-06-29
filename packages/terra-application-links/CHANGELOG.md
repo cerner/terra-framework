@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 -----------------
+
+4.5.0 - (June 29, 2018)
+------------------
 ### Fixed
 * Corrected the 'resize observer loop limit reached' error with animation frames.
 
