@@ -10,7 +10,7 @@
 | terra-button | ^2.5.0 | ^16.2.0 | The terra-button component provides users a way to trigger actions in the UI. |
 | terra-doc-template | ^1.2.0 | ^16.2.0 | Provides an adjustable template for documentation pages. |
 | terra-icon | ^2.6.0 | ^16.2.0 | terra-icon |
-| terra-modal-manager | ^3.0.0 | ^16.2.0 | The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal. |
+| terra-modal-manager | ^3.5.0 | ^16.2.0 | The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal. |
 
 ## peerDependencies
 | Dependency | Version | React Version | Description |
