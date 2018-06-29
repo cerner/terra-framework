@@ -4,10 +4,69 @@
   }
 
   .nav {
-    background-color: var(--terra-brand-footer-nav-background-color, #f4f4f4);
-    color: var(--terra-brand-footer-nav-color, #64696c);
-    display: block;
+    background-color: var(--terra-brand-footer-nav-background-color, #153d70);
+    color: var(--terra-brand-footer-nav-color, #8baaca);
+
+    flex-wrap: wrap;
     padding: 0.7142857142857143rem 1.4285714285714286rem;
+    width: 100%;
+  }
+
+  .nav-vertical {
+    align-content: stretch;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .menu {
+      flex-grow: 1;
+      min-width: 240px;
+      padding-right: 1.4285714286rem;
+    }
+
+    .list-item {
+      display: block;
+      padding-bottom: 0.357142857142857rem;
+      padding-top: 0.357142857142857rem;
+    }
+
+    .list-header {
+      display: block;
+      padding-bottom: 0.7142857143rem;
+      padding-top: 1.4285714286rem;
+    }
+  }
+
+  .nav-horizontal {
+    display: flex;
+    flex-direction: column;
+
+    .menu {
+      width: 100%;
+    }
+
+    .list-item {
+      display: inline-block;
+    }
+  
+    .list-item:first-child::before {
+      content: '';
+      padding: 0;
+    }
+
+    /* stylelint-disable selector-max-compound-selectors */
+    // A / isn't needed to separate an item from the header it follows
+    .list-header + .list-item::before {
+      content: '';
+      padding-left: 0;
+      padding-right: 0.7142857142857143rem;
+    }
+    /* stylelint-enable selector-max-compound-selectors */
+  
+    .list-item::before {
+      content: '/';
+      padding: 0.7142857142857143rem;
+    }
   }
 
   .menu {
@@ -18,48 +77,37 @@
   }
 
   .list-header {
-    color: var(--terra-brand-footer-nav-header-color, #64696c);
+    color: var(--terra-brand-footer-nav-header-color, #4bb8ef);
     display: inline;
-    font-size: 1.5em;
-  }
-
-  .list-header::before {
-    content: '';
-    padding: 0.7142857142857143rem;
-  }
-
-  .list-item {
-    display: inline;
-  }
-
-  .list-item::before {
-    content: '/';
-    padding: 0.7142857142857143rem;
-  }
-
-  .list-header:first-child::before,
-  .list-item:first-child::before {
-    content: '';
-    padding: 0;
-  }
-
-  // A / isn't needed to separate an item from the header it follows
-  .list-header + .list-item::before {
-    content: '';
-    padding: 0.7142857142857143rem;
+    font-family: inherit ('Helvetica Neue',Helvetica,Arial,sans-serif);
+    font-size: 0.7857rem;
+    font-weight: 600;
+    line-height: 1.45;
+    text-transform: uppercase;
   }
 
   .link {
-    color: var(--terra-brand-footer-link-color, #0059a8);
+    color: var(--terra-brand-footer-link-color, #fff);
+    font-family: inherit ('Helvetica Neue',Helvetica,Arial,sans-serif);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.6;
     text-decoration: none;
   }
 
   .link:hover {
-    color: var(--terra-brand-footer-link-hover-color, #001f67);
+    color: var(--terra-brand-footer-link-hover-color, #fff);
+    text-decoration: underline;
   }
 
   .link:active {
-    color: var(--terra-brand-footer-link-active-color, #001f67);
+    color: var(--terra-brand-footer-link-active-color, #fff);
+    text-decoration: underline;
+  }
+
+  .link:focus {
+    color: var(--terra-brand-footer-link-focus-color, #fff);
+    text-decoration: underline;
   }
 
   .footer-content {
