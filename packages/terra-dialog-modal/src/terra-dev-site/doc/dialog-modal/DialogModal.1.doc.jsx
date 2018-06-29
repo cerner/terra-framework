@@ -2,22 +2,22 @@
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 
-import ReadMe from '../../../docs/README.md';
-import { name } from '../../../package.json';
+import ReadMe from '../../../../docs/README.md';
+import { name } from '../../../../package.json';
 
 // Component Source
 // eslint-disable-next-line import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions
-import DialogModalSrc from '!raw-loader!../../../src/DialogModal';
+import DialogModalSrc from '!raw-loader!../../../../src/DialogModal';
 
 // Example Files
-import DefaultDialogModal from './example/DefaultDialogModal';
-import DefaultDialogModalSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/DefaultDialogModal.jsx';
-import DialogModalWithLongText from './example/DialogModalWithLongText';
-import DialogModalWithLongTextSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/DialogModalWithLongText.jsx';
-import DialogModalOnModalManager from './example/DialogModalOnModalManager';
-import DialogModalOnModalManagerSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/DialogModalOnModalManager.jsx';
-import DialogModalWithCustomHeaderAndCustomFooter from './example/DialogModalWithCustomHeaderAndCustomFooter';
-import DialogModalWithCustomHeaderAndCustomFooterSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/DialogModalWithCustomHeaderAndCustomFooter.jsx';
+import DefaultDialogModal from '../example/DefaultDialogModal';
+import DefaultDialogModalSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DefaultDialogModal.jsx';
+import DialogModalWithLongText from '../example/DialogModalWithLongText';
+import DialogModalWithLongTextSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DialogModalWithLongText.jsx';
+import DialogModalOnModalManager from '../example/DialogModalOnModalManager';
+import DialogModalOnModalManagerSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DialogModalOnModalManager.jsx';
+import DialogModalWithCustomHeaderAndCustomFooter from '../example/DialogModalWithCustomHeaderAndCustomFooter';
+import DialogModalWithCustomHeaderAndCustomFooterSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DialogModalWithCustomHeaderAndCustomFooter.jsx';
 
 const DialogModalExamples = () => (
   <DocTemplate
