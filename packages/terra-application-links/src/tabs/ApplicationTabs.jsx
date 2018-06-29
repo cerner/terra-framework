@@ -66,15 +66,18 @@ class ApplicationTabs extends React.Component {
   }
 
   componentDidMount() {
-    this.resizeObserver = new ResizeObserver(() => {
-      // Resetting the state so that all elements will be rendered face-up for width calculations
-      if (this.hiddenStartIndex !== -1 || this.menuHidden || !this.isCalculating) {
-        this.resetCalculations();
-        this.forceUpdate();
+    this.resizeObserver = new ResizeObserver((entries) => {
+      this.contentWidth = entries[0].contentRect.width;
+      if (!this.isCalculating) {
+        this.animationFrameID = window.requestAnimationFrame(() => {
+          // Resetting the calculations so that all elements will be rendered face-up for width calculations
+          this.resetCalculations();
+          this.forceUpdate();
+        });
       }
     });
     this.resizeObserver.observe(this.container);
-    this.handleResize(this.container.clientWidth);
+    this.handleResize(this.contentWidth);
   }
 
   componentWillReceiveProps(newProps) {
@@ -85,11 +88,13 @@ class ApplicationTabs extends React.Component {
 
   componentDidUpdate() {
     if (this.isCalculating) {
-      this.handleResize(this.container.clientWidth);
+      this.isCalculating = false;
+      this.handleResize(this.contentWidth);
     }
   }
 
   componentWillUnmount() {
+    window.cancelAnimationFrame(this.animationFrameID);
     this.resizeObserver.disconnect(this.container);
     this.container = null;
   }
@@ -100,6 +105,7 @@ class ApplicationTabs extends React.Component {
   }
 
   resetCalculations() {
+    this.animationFrameID = null;
     this.hiddenStartIndex = -1;
     this.menuHidden = false;
     this.isCalculating = true;
@@ -126,7 +132,6 @@ class ApplicationTabs extends React.Component {
     if (this.hiddenStartIndex !== newHideIndex) {
       this.hiddenStartIndex = newHideIndex;
       this.menuHidden = isMenuHidden;
-      this.isCalculating = false;
       this.forceUpdate();
     }
   }

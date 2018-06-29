@@ -426,4 +426,14 @@ describe('Hookshot', () => {
 
     Terra.should.matchScreenshot({ selector: '#NoCloseBehavior-bounds' });
   });
+
+  describe('Displays hookshot positioned by target coordinates', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-hookshot/hookshot/hookshot-coordinates');
+      browser.click('#coords-button');
+      browser.waitForVisible('#test-coords-content');
+    });
+
+    Terra.should.matchScreenshot({ selector: '#coords-test' });
+  });
 });

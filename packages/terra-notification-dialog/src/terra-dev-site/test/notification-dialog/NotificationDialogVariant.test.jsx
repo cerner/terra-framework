@@ -8,7 +8,7 @@ const clickOK = () => {
 };
 
 const propTypes = {
-  variant: PropTypes.oneOf(NotificationDialogVariants),
+  variant: PropTypes.oneOf(Object.values(NotificationDialogVariants)),
 };
 
 class NotificationDialogVariant extends React.Component {

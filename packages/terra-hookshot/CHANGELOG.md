@@ -4,6 +4,14 @@ Changelog
 Unreleased
 ----------
 
+4.5.0 - (June 29, 2018)
+------------------
+### Changed
+* Introduce targetCoordinates to hookshot functionality.
+
+### Fixed
+* Corrected the 'resize observer loop limit reached' error with animation frames.
+
 4.4.0 - (June 12, 2018)
 ------------------
 ### Changed
