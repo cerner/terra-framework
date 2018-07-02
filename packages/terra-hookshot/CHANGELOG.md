@@ -10,6 +10,8 @@ Unreleased
 ------------------
 ### Changed
 * Introduce targetCoordinates to hookshot functionality.
+### Added
+* Change logs to documentation on terra-dev-site
 
 ### Fixed
 * Corrected the 'resize observer loop limit reached' error with animation frames.

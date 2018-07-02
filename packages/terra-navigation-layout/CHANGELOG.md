@@ -6,6 +6,9 @@ Unreleased
 ### Changed
 * Remove dependency on terra-menu, update dependency on reponsive-element.
 
+### Added
+* Change logs to documentation on terra-dev-site
+
 2.10.0 - (June 29, 2018)
 ------------------
 ### Changed
