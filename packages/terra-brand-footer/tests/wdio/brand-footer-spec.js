@@ -34,25 +34,4 @@ describe('BrandFooter', () => {
       '--terra-brand-footer-footer-content-color': 'black',
     });
   });
-
-  describe('Hovered', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-brand-footer/brand-footer/hovered-brand-footer');
-    });
-
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.themeEachCustomProperty({
-      '--terra-brand-footer-link-hover-color': 'brown',
-    });
-  });
-
-  describe('Active', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-brand-footer/brand-footer/active-brand-footer');
-    });
-
-    Terra.should.themeEachCustomProperty({
-      '--terra-brand-footer-link-active-color': 'maroon',
-    });
-  });
 });

@@ -5,7 +5,7 @@ import BrandFooter from '../../../BrandFooter';
 export default () =>
   <BrandFooter
     sections={{
-      displayVertically: false,
+      displayVertically: true,
       linkGroups: [
         {
           headerText: 'Links',

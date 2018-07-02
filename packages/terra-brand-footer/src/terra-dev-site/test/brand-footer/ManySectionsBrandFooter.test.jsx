@@ -1,26 +1,87 @@
 import React from 'react';
 
-import classNames from 'classnames/bind';
 import BrandFooter from '../../../BrandFooter';
-import styles from './ActiveBrandFooter.scss';
 
-const cx = classNames.bind(styles);
-
-export default () =>
+export default () => (
   <BrandFooter
-    className={cx('active-brand-footer')}
-    links={[
-      { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/home' },
-      { text: 'Cerner', href: 'https://www.cerner.com/', target: '_blank' },
-    ]}
+    sections={{
+      displayVertically: true,
+      linkGroups: [
+        {
+          headerText: 'Links',
+          links: [
+            { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/homea' },
+            { text: 'Cerner', href: 'https://www.cerner.com/a', target: '_blank' },
+            { text: 'Cerner', href: 'https://www.cerner.com/b', target: '_blank' },
+            { text: 'Cerner', href: 'https://www.cerner.com/c', target: '_blank' },
+            { text: 'Cerner', href: 'https://www.cerner.com/d', target: '_blank' },
+          ],
+        },
+        {
+          headerText: 'More Links',
+          links: [
+            { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/a' },
+            { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/b' },
+            { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/c' },
+            { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/d' },
+            { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/e' },
+          ],
+        },
+        {
+          headerText: 'Extra Links',
+          links: [
+            { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/homeb' },
+            { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/homec' },
+            { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/homed' },
+            { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/homee' },
+            { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/homef' },
+            { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/homeg' },
+            { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/homeh' },
+          ],
+        },
+        {
+          links: [
+            { text: 'No Header', href: 'http://terra-ui.com/static/#/site/homea' },
+            { text: 'No Header', href: 'http://terra-ui.com/static/#/site/homeb' },
+            { text: 'No Header', href: 'http://terra-ui.com/static/#/site/homec' },
+            { text: 'No Header', href: 'http://terra-ui.com/static/#/site/homed' },
+          ],
+        },
+        {
+          links: [
+            { text: 'No Header', href: 'http://terra-ui.com/static/#/site/homea' },
+            { text: 'No Header', href: 'http://terra-ui.com/static/#/site/homeb' },
+            { text: 'No Header', href: 'http://terra-ui.com/static/#/site/homec' },
+            { text: 'No Header', href: 'http://terra-ui.com/static/#/site/homed' },
+          ],
+        },
+        {
+          headerText: 'Extra Links',
+          links: [
+            { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/homeb' },
+            { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/homec' },
+            { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/homed' },
+            { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/homee' },
+            { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/homef' },
+            { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/homeg' },
+            { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/homeh' },
+          ],
+        },
+        {
+          headerText: 'Links',
+          links: [
+            { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/homea' },
+            { text: 'Cerner', href: 'https://www.cerner.com/a', target: '_blank' },
+            { text: 'Cerner', href: 'https://www.cerner.com/b', target: '_blank' },
+            { text: 'Cerner', href: 'https://www.cerner.com/c', target: '_blank' },
+            { text: 'Cerner', href: 'https://www.cerner.com/d', target: '_blank' },
+          ],
+        },
+      ],
+    }}
     contentLeft={
       <a
-        href="http://terra-ui.herokuapp.com/static/#/site/home"
-        style={{
-          backgroundColor: 'transparent',
-          color: '#0065a3',
-          textDecoration: 'none',
-        }}
+        href="http://terra-ui.com/"
         aria-label="link"
       >
         <svg
@@ -40,7 +101,6 @@ export default () =>
       <svg
         style={{
           border: '0',
-          maxWidth: '100%',
           height: '40px',
           width: '147px',
           verticalAlign: 'top',
@@ -51,8 +111,9 @@ export default () =>
       </svg>
     }
     contentBottom={
-      <p style={{ marignTop: '.7142857142857143rem' }} >
+      <span>
         <small>Copyright &copy; 2018 Cerner Corporation.  All Rights Reserved.</small>
-      </p>
+      </span>
     }
-  />;
+  />
+);

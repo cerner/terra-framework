@@ -4,10 +4,17 @@ import BrandFooter from '../../../BrandFooter';
 
 export default () =>
   <BrandFooter
-    links={[
-      { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/home' },
-      { text: 'Cerner', href: 'https://www.cerner.com/', target: '_blank' },
-    ]}
+    sections={{
+      displayVertically: false,
+      linkGroups: [
+        {
+          links: [
+            { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/home' },
+            { text: 'Cerner', href: 'https://www.cerner.com/', target: '_blank' },
+          ],
+        },
+      ],
+    }}
     contentLeft={
       <a
         href="http://terra-ui.com/"

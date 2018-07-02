@@ -7,6 +7,7 @@
     background-color: var(--terra-brand-footer-nav-background-color, #153d70);
     color: var(--terra-brand-footer-nav-color, #8baaca);
 
+    display: flex;
     flex-wrap: wrap;
     padding: 0.7142857142857143rem 1.4285714285714286rem;
     width: 100%;
@@ -14,12 +15,10 @@
 
   .nav-vertical {
     align-content: stretch;
-    display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
 
     .menu {
-      flex-grow: 1;
+      flex: 1 1 0%;
       min-width: 240px;
       padding-right: 1.4285714286rem;
     }
@@ -38,7 +37,6 @@
   }
 
   .nav-horizontal {
-    display: flex;
     flex-direction: column;
 
     .menu {
@@ -48,6 +46,10 @@
     .list-item {
       display: inline-block;
     }
+
+    .list-header {
+      display: inline-block;
+    }
   
     .list-item:first-child::before {
       content: '';
@@ -55,7 +57,7 @@
     }
 
     /* stylelint-disable selector-max-compound-selectors */
-    // A / isn't needed to separate an item from the header it follows
+    // A '/' isn't needed to separate an item from the header it follows
     .list-header + .list-item::before {
       content: '';
       padding-left: 0;
@@ -78,8 +80,7 @@
 
   .list-header {
     color: var(--terra-brand-footer-nav-header-color, #4bb8ef);
-    display: inline;
-    font-family: inherit ('Helvetica Neue',Helvetica,Arial,sans-serif);
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 0.7857rem;
     font-weight: 600;
     line-height: 1.45;
@@ -88,7 +89,7 @@
 
   .link {
     color: var(--terra-brand-footer-link-color, #fff);
-    font-family: inherit ('Helvetica Neue',Helvetica,Arial,sans-serif);
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.6;
@@ -111,7 +112,7 @@
   }
 
   .footer-content {
-    background-color: var(--terra-brand-footer-footer-content-background-color, #0079be);
+    background-color: var(--terra-brand-footer-footer-content-background-color, #153d70);
     color: var(--terra-brand-footer-footer-content-color, #fff);
     padding: 1.4285714285714286rem;
   }
@@ -120,6 +121,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-bottom: 0.7142857142857143rem;
   }
 
   .content-bottom {

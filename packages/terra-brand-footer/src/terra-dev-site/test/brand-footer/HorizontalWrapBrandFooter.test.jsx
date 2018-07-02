@@ -2,8 +2,9 @@ import React from 'react';
 
 import BrandFooter from '../../../BrandFooter';
 
-export default () =>
+export default () => (
   <BrandFooter
+    style={{ maxWidth: '500px' }}
     sections={{
       displayVertically: false,
       linkGroups: [
@@ -18,6 +19,18 @@ export default () =>
           headerText: 'More Links',
           links: [
             { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/' },
+            { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/a' },
+            { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/b' },
+            { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/c' },
+            { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/d' },
+            { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/e' },
+            { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/f' },
+          ],
+        },
+        {
+          headerText: '',
+          links: [
+            { text: 'Cerner Github', href: 'https://github.com/cerner' },
           ],
         },
       ],
@@ -58,4 +71,5 @@ export default () =>
         <small>Copyright &copy; 2018 Cerner Corporation.  All Rights Reserved.</small>
       </span>
     }
-  />;
+  />
+);

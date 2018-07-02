@@ -90,38 +90,43 @@ const BrandFooter = ({ links, sections, contentLeft, contentRight, contentBottom
     customProps.className,
   ]);
 
-  const displayOldLinks = links.length > 0 && sections.linkGroups.length === 0;
+  const processedSections = {};
+  if (links.length > 0 && sections.linkGroups.length === 0) {
+    processedSections.displayVertically = false;
+    processedSections.linkGroups = [{
+      headerText: '',
+      links,
+      id: 0,
+    }];
+  } else {
+    processedSections.displayVertically = sections.displayVertically;
+    processedSections.linkGroups = sections.linkGroups;
 
-  const containsASectionHeader = !displayOldLinks && sections.linkGroups.some(linkGroup => linkGroup.headerText);
+    // Assign ids to use as keys
+    for (let i = 0; i < processedSections.linkGroups.length; i += 1) {
+      processedSections.linkGroups[i].id = i;
+    }
+  }
+
+  // The old links prop can't have section headers. Needed for vertical layout to insert padding to keep columns without headers aligned
+  const containsASectionHeader = processedSections.linkGroups.some(linkGroup => linkGroup.headerText);
 
   return (
     <footer role="contentinfo" {...customProps} className={BrandFooterClassNames}>
-      {displayOldLinks && (
-        <nav className={cx(['nav', 'nav-horizontal'])}>
-          <ul className={cx('menu')}>
-            {links.map(link => (
-              <li className={cx('list-item')} key={link.text + link.href}>
-                {link.target !== undefined ? (
-                  <a className={cx('link')} href={link.href} target={link.target} >{link.text}</a>
-                ) : (
-                  <a className={cx('link')} href={link.href} >{link.text}</a>
-                )}
-              </li>
-            ))}
-          </ul>
-        </nav>
-      )}
       { // Don't use !displayOldLinks because we should only display sections links if some have been provided
-        sections.linkGroups.length > 0 && (
-        <nav className={cx('nav')}>
-          <div className={cx(!sections.displayVertically ? 'nav-horizontal' : 'nav-vertical')}>
-            {sections.linkGroups.map(linkGroup => (
-              <ul className={cx('menu')}>
-                {((containsASectionHeader && sections.displayVertically) || linkGroup.headerText) && (
-                  <li className={cx('list-header')} key={linkGroup.headerText}>
-                    {linkGroup.headerText || (containsASectionHeader && '\u200B')}
-                  </li>
-                )}
+        processedSections.linkGroups.length > 0 && (
+        <nav className={cx(['nav', !processedSections.displayVertically ? 'nav-horizontal' : 'nav-vertical'])}>
+            {processedSections.linkGroups.map(linkGroup => (
+              <ul className={cx('menu')} key={linkGroup.id}>
+                { // When displaying vertically if one column has a header all columns are aligned as if they have a header
+                  ((containsASectionHeader && processedSections.displayVertically) || linkGroup.headerText) && (
+                    <li className={cx('list-header')} key={linkGroup.headerText}>
+                      { // Insert a zero width space to act as a placeholder section header that doesn't display
+                        linkGroup.headerText || '\u200B'
+                      }
+                    </li>
+                  )
+                }
                 {linkGroup.links.map((link) => {
                   if (link.target !== undefined) {
                     return <li className={cx('list-item')} key={link.text + link.href}><a className={cx('link')} href={link.href} target={link.target} >{link.text}</a></li>;
@@ -132,7 +137,6 @@ const BrandFooter = ({ links, sections, contentLeft, contentRight, contentBottom
                 )}
               </ul>
             ))}
-          </div>
         </nav>
       )}
       <div className={cx('footer-content')} >
