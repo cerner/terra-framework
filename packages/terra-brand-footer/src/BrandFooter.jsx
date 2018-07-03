@@ -8,7 +8,9 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
  /**
-  * An array of navigation links with each element specifiying text, href and target keys with appropriate values. *DEPRECATED*: Use `sections` prop instead.
+  * An array of navigation links with each element specifiying text, href and target keys with appropriate values.
+  *
+  * **DEPRECATED**: Use `sections` prop instead.
   */
   links: PropTypes.arrayOf(PropTypes.shape({
    /**
@@ -26,10 +28,27 @@ const propTypes = {
   })),
  /**
   * A set of navigation links to be displayed with optional headers. Will override the `links` prop if both are provided.
+  *
+  * ```
+  * Object structured like:
+  * {
+  *   displayVertically: boolean,
+  *   linkGroups: [
+  *     {
+  *       headerText: string,
+  *       links: [
+  *         text: required string,
+  *         href: required string,
+  *         target: string,
+  *       ],
+  *     }
+  *   ],
+  * }
+  * ```
   */
   sections: PropTypes.shape({
    /**
-    * If true link groups will be laid out from top to bottom, left to right
+    * If true link groups will be laid out from top to bottom then left to right
     */
     displayVertically: PropTypes.bool,
    /**
