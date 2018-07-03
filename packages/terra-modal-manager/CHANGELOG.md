@@ -3,6 +3,8 @@ Terra Modal Manager - Changelog
 
 Unreleased
 ----------
+### Added
+* Change logs to documentation on terra-dev-site
 
 3.5.0 - (June 29, 2018)
 ------------------

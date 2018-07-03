@@ -4,7 +4,9 @@ ChangeLog
 Unreleased
 -----------------
 ### Added
-* Added the option to put section headers in the nav bar
+* Section headers can be put in the nav bar
+* The navigation bar can be displayed vertically
+* Change logs to documentation on terra-dev-site
 
 1.4.0 - (June 29, 2018)
 ------------------
