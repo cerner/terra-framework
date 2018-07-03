@@ -1,11 +1,11 @@
 /* global browser, Terra */
 const viewports = Terra.viewports('tiny', 'large');
 
+const rules = { bypass: { enabled: false } };
+
 describe('BrandFooter', () => {
   describe('Default', () => {
     beforeEach(() => browser.url('/#/raw/tests/terra-brand-footer/brand-footer/default-brand-footer'));
-
-    const rules = { bypass: { enabled: false } };
 
     Terra.should.beAccessible({ viewports, rules });
     Terra.should.matchScreenshot({ viewports });
@@ -18,10 +18,33 @@ describe('BrandFooter', () => {
     });
   });
 
+  describe('Links Prop', () => {
+    beforeEach(() => browser.url('/#/raw/tests/terra-brand-footer/brand-footer/links-prop-brand-footer'));
+
+    Terra.should.beAccessible({ viewports, rules });
+    Terra.should.matchScreenshot({ viewports });
+    Terra.should.themeEachCustomProperty({
+      '--terra-brand-footer-nav-background-color': 'pink',
+      '--terra-brand-footer-nav-color': 'yellow',
+      '--terra-brand-footer-link-color': 'green',
+      '--terra-brand-footer-footer-content-background-color': 'red',
+      '--terra-brand-footer-footer-content-color': 'black',
+    });
+  });
+
+  describe('No Nav', () => {
+    beforeEach(() => browser.url('/#/raw/tests/terra-brand-footer/brand-footer/no-nav-brand-footer'));
+
+    Terra.should.beAccessible({ viewports, rules });
+    Terra.should.matchScreenshot({ viewports });
+    Terra.should.themeEachCustomProperty({
+      '--terra-brand-footer-footer-content-background-color': 'red',
+      '--terra-brand-footer-footer-content-color': 'black',
+    });
+  });
+
   describe('Section Headers', () => {
     beforeEach(() => browser.url('/#/raw/tests/terra-brand-footer/brand-footer/section-header-brand-footer'));
-
-    const rules = { bypass: { enabled: false } };
 
     Terra.should.beAccessible({ viewports, rules });
     Terra.should.matchScreenshot({ viewports });
@@ -33,5 +56,39 @@ describe('BrandFooter', () => {
       '--terra-brand-footer-footer-content-background-color': 'red',
       '--terra-brand-footer-footer-content-color': 'black',
     });
+  });
+
+  describe('Vertical Nav', () => {
+    beforeEach(() => browser.url('/#/raw/tests/terra-brand-footer/brand-footer/vertical-nav-brand-footer'));
+
+    Terra.should.beAccessible({ viewports, rules });
+    Terra.should.matchScreenshot({ viewports });
+    Terra.should.themeEachCustomProperty({
+      '--terra-brand-footer-nav-background-color': 'pink',
+      '--terra-brand-footer-nav-color': 'yellow',
+      '--terra-brand-footer-nav-header-color': 'orange',
+      '--terra-brand-footer-link-color': 'green',
+      '--terra-brand-footer-footer-content-background-color': 'red',
+      '--terra-brand-footer-footer-content-color': 'black',
+    });
+  });
+
+  describe('Vertical Mixed Headers', () => {
+    beforeEach(() => browser.url('/#/raw/tests/terra-brand-footer/brand-footer/vertical-mixed-headers-brand-footer'));
+
+    Terra.should.matchScreenshot({ viewports });
+  });
+
+  describe('Horizontal Wrap', () => {
+    beforeEach(() => browser.url('/#/raw/tests/terra-brand-footer/brand-footer/horizontal-wrap-brand-footer'));
+
+    Terra.should.matchScreenshot({ viewports });
+  });
+
+  describe('Many Sections', () => {
+    beforeEach(() => browser.url('/#/raw/tests/terra-brand-footer/brand-footer/many-sections-brand-footer'));
+
+    // Any viewport below large is too small to display the whole page
+    Terra.should.matchScreenshot({ viewports: Terra.viewports('large') });
   });
 });
