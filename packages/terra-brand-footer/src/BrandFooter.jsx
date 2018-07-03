@@ -113,15 +113,14 @@ const BrandFooter = ({ links, sections, contentLeft, contentRight, contentBottom
 
   return (
     <footer role="contentinfo" {...customProps} className={BrandFooterClassNames}>
-      { // Don't use !displayOldLinks because we should only display sections links if some have been provided
-        processedSections.linkGroups.length > 0 && (
+      {processedSections.linkGroups.length > 0 && (
         <nav className={cx(['nav', !processedSections.displayVertically ? 'nav-horizontal' : 'nav-vertical'])}>
             {processedSections.linkGroups.map(linkGroup => (
               <ul className={cx('menu')} key={linkGroup.id}>
                 { // When displaying vertically if one column has a header all columns are aligned as if they have a header
                   ((containsASectionHeader && processedSections.displayVertically) || linkGroup.headerText) && (
                     <li className={cx('list-header')} key={linkGroup.headerText}>
-                      { // Insert a zero width space to act as a placeholder section header that doesn't display
+                      { // Insert a zero width space to act as a placeholder section header that doesn't display but takes vertical space
                         linkGroup.headerText || '\u200B'
                       }
                     </li>
@@ -129,10 +128,22 @@ const BrandFooter = ({ links, sections, contentLeft, contentRight, contentBottom
                 }
                 {linkGroup.links && linkGroup.links.map((link) => {
                   if (link.target !== undefined) {
-                    return <li className={cx('list-item')} key={link.text + link.href}><a className={cx('link')} href={link.href} target={link.target} >{link.text}</a></li>;
+                    return (
+                      <li className={cx('list-item')} key={link.text + link.href}>
+                        <a className={cx('link')} href={link.href} target={link.target} >
+                          {link.text}
+                        </a>
+                      </li>
+                    );
                   }
 
-                  return <li className={cx('list-item')} key={link.text + link.href}><a className={cx('link')} href={link.href} >{link.text}</a></li>;
+                  return (
+                    <li className={cx('list-item')} key={link.text + link.href}>
+                      <a className={cx('link')} href={link.href} target={link.target} >
+                        {link.text}
+                      </a>
+                    </li>
+                  );
                 },
                 )}
               </ul>
