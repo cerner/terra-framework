@@ -6,6 +6,14 @@ Unreleased
 ### Changed
 * Clean up dependencies
 
+
+1.11.0 - (July 6, 2018)
+------------------
+### Changed
+* Minor dependency updates
+
+1.10.0 - (July 3, 2018)
+------------------
 ### Added
 * Change logs to documentation on terra-dev-site
 
