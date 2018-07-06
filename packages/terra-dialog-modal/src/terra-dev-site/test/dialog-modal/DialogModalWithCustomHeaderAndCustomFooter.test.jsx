@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'terra-button';
-import DialogModal from '../../../../src/DialogModal';
+import DialogModal from '../../../DialogModal';
 
 const CustomHeaderFooterStyles = {
   border: '2px dashed #4e832b',
