@@ -4,7 +4,7 @@ ChangeLog
 Unreleased
 -----------------
 ### Fixed
-* Fix webpack issue due to referencing src in the docs examples instead of a relative path which would end up hitting lib which has been transpiled.
+* Fix webpack issue due to referencing src in the docs examples and tests instead of a relative path which would end up hitting lib which has been transpiled.
 
 1.1.0 - (July 3, 2018)
 ------------------
