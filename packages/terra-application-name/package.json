@@ -32,10 +32,9 @@
     "terra-app-delegate": "^2.5.0",
     "terra-application-header-layout": "^2.9.0",
     "terra-application-menu-layout": "^2.7.0",
-    "terra-base": "^3.0.0",
     "terra-doc-template": "^1.1.0",
     "terra-image": "^2.0.1",
-    "terra-responsive-element": "^2.0.1"
+    "terra-responsive-element": "^3.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

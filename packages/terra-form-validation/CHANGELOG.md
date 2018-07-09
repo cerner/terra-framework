@@ -1,5 +1,7 @@
 ChangeLog
 =========
+### Changed
+* Clean up dependencies
 
 Unreleased
 -----------------

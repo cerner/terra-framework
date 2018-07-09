@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Clean up dependencies
+
 
 1.6.0 - (July 3, 2018)
 ------------------
