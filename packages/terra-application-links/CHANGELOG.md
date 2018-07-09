@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 -----------------
+### Changed
+* Clean up dependencies
+
 
 4.6.0 - (July 3, 2018)
 ------------------

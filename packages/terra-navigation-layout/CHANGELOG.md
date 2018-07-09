@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Remove dependency on terra-menu, update dependency on reponsive-element.
+
 
 2.11.0 - (July 3, 2018)
 ------------------
