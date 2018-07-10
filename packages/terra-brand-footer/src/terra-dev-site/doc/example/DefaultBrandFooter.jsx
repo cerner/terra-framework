@@ -5,25 +5,23 @@ import BrandFooter from 'terra-brand-footer/lib/BrandFooter';
 
 export default () =>
   <BrandFooter
-    sections={{
-      displayVertically: false,
-      linkGroups: [
-        {
-          headerText: 'Terra UI Links',
-          links: [
-            { text: 'Terra UI', href: 'http://terra-ui.com/' },
-            { text: 'Terra UI Components', href: 'http://terra-ui.com/static/#/site/components' },
-          ],
-        },
-        {
-          headerText: 'Cerner Links',
-          links: [
-            { text: 'Cerner Home', href: 'https://www.cerner.com/' },
-            { text: 'Cerner Code', href: 'https://code.cerner.com/', target: '_blank' },
-          ],
-        },
-      ],
-    }}
+    isVertical={false}
+    sections={[
+      {
+        headerText: 'Terra UI Links',
+        links: [
+          { text: 'Terra UI', href: 'http://terra-ui.com/' },
+          { text: 'Terra UI Components', href: 'http://terra-ui.com/static/#/site/components' },
+        ],
+      },
+      {
+        headerText: 'Cerner Links',
+        links: [
+          { text: 'Cerner Home', href: 'https://www.cerner.com/' },
+          { text: 'Cerner Code', href: 'https://code.cerner.com/', target: '_blank' },
+        ],
+      },
+    ]}
     contentLeft={
       <a
         href="http://terra-ui.com/"

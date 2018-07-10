@@ -4,30 +4,28 @@ import BrandFooter from '../../../BrandFooter';
 
 export default () =>
   <BrandFooter
-    sections={{
-      displayVertically: true,
-      linkGroups: [
-        {
-          headerText: 'Links',
-          links: [
-            { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/home' },
-            { text: 'Cerner', href: 'https://www.cerner.com/', target: '_blank' },
-          ],
-        },
-        {
-          headerText: '',
-          links: [
-            { text: 'Cerner Github', href: 'https://github.com/cerner' },
-          ],
-        },
-        {
-          headerText: 'More Links',
-          links: [
-            { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/' },
-          ],
-        },
-      ],
-    }}
+    isVertical
+    sections={[
+      {
+        headerText: 'Links',
+        links: [
+          { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/home' },
+          { text: 'Cerner', href: 'https://www.cerner.com/', target: '_blank' },
+        ],
+      },
+      {
+        headerText: '',
+        links: [
+          { text: 'Cerner Github', href: 'https://github.com/cerner' },
+        ],
+      },
+      {
+        headerText: 'More Links',
+        links: [
+          { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/' },
+        ],
+      },
+    ]}
     contentLeft={
       <a
         href="http://terra-ui.com/"

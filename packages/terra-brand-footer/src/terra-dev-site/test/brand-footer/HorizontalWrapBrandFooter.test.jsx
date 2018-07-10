@@ -5,36 +5,34 @@ import BrandFooter from '../../../BrandFooter';
 export default () => (
   <BrandFooter
     style={{ maxWidth: '500px' }}
-    sections={{
-      displayVertically: false,
-      linkGroups: [
-        {
-          headerText: 'Links',
-          links: [
-            { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/home' },
-            { text: 'Cerner', href: 'https://www.cerner.com/', target: '_blank' },
-          ],
-        },
-        {
-          headerText: 'More Links',
-          links: [
-            { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/' },
-            { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/a' },
-            { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/b' },
-            { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/c' },
-            { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/d' },
-            { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/e' },
-            { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/f' },
-          ],
-        },
-        {
-          headerText: '',
-          links: [
-            { text: 'Cerner Github', href: 'https://github.com/cerner' },
-          ],
-        },
-      ],
-    }}
+    isVertical={false}
+    sections={[
+      {
+        headerText: 'Links',
+        links: [
+          { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/home' },
+          { text: 'Cerner', href: 'https://www.cerner.com/', target: '_blank' },
+        ],
+      },
+      {
+        headerText: 'More Links',
+        links: [
+          { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/' },
+          { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/a' },
+          { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/b' },
+          { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/c' },
+          { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/d' },
+          { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/e' },
+          { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/f' },
+        ],
+      },
+      {
+        headerText: '',
+        links: [
+          { text: 'Cerner Github', href: 'https://github.com/cerner' },
+        ],
+      },
+    ]}
     contentLeft={
       <a
         href="http://terra-ui.com/"
