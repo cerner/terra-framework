@@ -7,7 +7,6 @@
 | prop-types | ^15.5.8 | -- | Runtime type checking for React props and similar objects. |
 | resize-observer-polyfill | ^1.4.1 | -- | A polyfill for the Resize Observer API |
 | terra-arrange | ^2.3.0 | ^16.2.0 | The arrange component is used for horizontally arranging and vertically aligning a single row of container elements. |
-| terra-base | ^3.1.0 | ^16.2.0 | The base component sets minimal global styles for an application. |
 | terra-doc-template | ^1.1.0 | ^16.2.0 | Provides an adjustable template for documentation pages. |
 | terra-icon | ^2.1.0 | ^16.2.0 | terra-icon |
 | terra-list | ^2.1.0 | ^16.2.0 | terra-list |
