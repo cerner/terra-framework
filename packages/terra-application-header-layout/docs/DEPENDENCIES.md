@@ -5,9 +5,8 @@
 |-|-|-|-|
 | classnames | ^2.2.5 | -- | A simple utility for conditionally joining classNames together |
 | prop-types | ^15.5.8 | -- | Runtime type checking for React props and similar objects. |
-| terra-base | ^3.0.0 | ^16.2.0 | The base component sets minimal global styles for an application. |
 | terra-doc-template | ^1.1.0 | ^16.2.0 | Provides an adjustable template for documentation pages. |
-| terra-responsive-element | ^2.0.1 | ^16.2.0 | The terra-responsive-element conditionally renders components based on viewport size |
+| terra-responsive-element | ^3.0.0 | ^16.2.0 | The terra-responsive-element conditionally renders components based on viewport size |
 
 ## peerDependencies
 | Dependency | Version | React Version | Description |

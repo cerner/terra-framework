@@ -32,7 +32,6 @@
     "final-form": "^4.6.0",
     "prop-types": "^15.5.8",
     "react-final-form": "^3.3.1",
-    "terra-base": "^3.1.0",
     "terra-button": "^2.7.0",
     "terra-doc-template": "^1.1.0",
     "terra-form-checkbox": "^2.9.0",

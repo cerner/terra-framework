@@ -1,7 +1,7 @@
 {
   "name": "terra-slide-panel",
   "main": "lib/SlidePanel.js",
-  "version": "2.9.0",
+  "version": "2.12.0",
   "description": "The Terra SlidePanel component is a progressive disclosure mechanism that allows additional content to be shown and hidden in a variety of ways.",
   "repository": {
     "type": "git",
@@ -29,7 +29,6 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-base": "^3.2.0",
     "terra-doc-template": "^1.1.0"
   },
   "scripts": {

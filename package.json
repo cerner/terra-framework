@@ -57,12 +57,11 @@
     "postinstall:project": "link-parent-bin && npm run compile && npm run bootstrap:hoist",
     "publish": "npm whoami && check-installed-dependencies && npm run compile && npm test && lerna publish",
     "postpublish": "npm run dependency-markdown && git add --all && git commit -m 'Updated DEPENDENCIES.md files'",
-    "start": "tt:serve",
-    "start-heroku": "tt:serve-static --site build ",
-    "start-static": "tt:serve-static --config webpack.config",
+    "start": "tt-serve",
+    "start-heroku": "tt-serve-static --site build ",
+    "start-static": "tt-serve-static",
     "test": "npm run jest && npm run wdio",
-    "wdio": "wdio node_modules/terra-dev-site/config/wdio/wdio.conf.js",
-    "tds:generate-app-config": "tds:generate-app-config"
+    "wdio": "wdio node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -97,8 +96,8 @@
     "shelljs": "^0.8.2",
     "stylelint": "^9.2.0",
     "stylelint-config-terra": "^1.0.0",
-    "terra-dev-site": "^1.2.0",
-    "terra-toolkit": "^3.5.0",
+    "terra-dev-site": "^2.0.0",
+    "terra-toolkit": "^4.0.0",
     "xfc": "^1.2.1"
   }
 }

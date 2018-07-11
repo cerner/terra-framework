@@ -4,10 +4,27 @@ ChangeLog
 Unreleased
 -----------------
 
+2.10.0 - (July 10, 2018)
+------------------
+### Changed
+* Clean up dependencies
+
+2.9.0 - (July 3, 2018)
+------------------
+### Added
+* Change logs to documentation on terra-dev-site
+
+2.8.0 - (June 29, 2018)
+------------------
+### Changed
+* Minor dependency updates
+
+2.7.0 - (June 19, 2018)
+----------------
 ### Added
 * Custom classNames are able to be added
 
-2.9.0 - (June 12, 2018)
+2.6.0 - (June 12, 2018)
 ------------------
 ### Fixed
 * theme provider provides it's own mock theme for testing and the example.

@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+2.5.0 - (July 3, 2018)
+------------------
+### Added
+* Change logs to documentation on terra-dev-site
+
 2.4.0 - (June 12, 2018)
 ------------------
 ### Changed

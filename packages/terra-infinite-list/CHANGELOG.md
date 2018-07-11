@@ -4,6 +4,21 @@ Changelog
 Unreleased
 ----------
 
+1.7.0 - (July 10, 2018)
+------------------
+### Changed
+* Clean up dependencies
+
+1.6.0 - (July 3, 2018)
+------------------
+### Added
+* Change logs to documentation on terra-dev-site
+
+1.5.0 - (June 29, 2018)
+------------------
+### Changed
+* Minor dependency updates
+
 1.4.0 - (June 12, 2018)
 ------------------
 ### Changed
