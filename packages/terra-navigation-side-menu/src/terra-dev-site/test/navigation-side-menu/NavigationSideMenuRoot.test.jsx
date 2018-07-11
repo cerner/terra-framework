@@ -29,7 +29,10 @@ class NavigationSideMenuDefault extends React.Component {
     let content;
     if (this.state.selectedMenuKey === 'fake-parent') {
       content = (
-        <div style={{ height: '100%', width: '100%', position: 'relative', backgroundColor: 'pink' }}>
+        <div style={{
+ height: '100%', width: '100%', position: 'relative', backgroundColor: 'pink',
+}}
+        >
           <button onClick={this.resetMenuState}>
             Child Route
           </button>
@@ -41,8 +44,12 @@ class NavigationSideMenuDefault extends React.Component {
         <NavigationSideMenu
           id="test-menu"
           menuItems={[
-            { key: 'menu', text: 'Menu', childKeys: ['submenu1', 'submenu2', 'submenu3', 'submenu4'], isRootMenu: true },
-            { key: 'submenu1', text: 'Sub Menu 1', childKeys: ['subsubmenu1', 'subsubmenu2', 'subsubmenu3'], id: 'test-item-1' },
+            {
+ key: 'menu', text: 'Menu', childKeys: ['submenu1', 'submenu2', 'submenu3', 'submenu4'], isRootMenu: true,
+},
+            {
+ key: 'submenu1', text: 'Sub Menu 1', childKeys: ['subsubmenu1', 'subsubmenu2', 'subsubmenu3'], id: 'test-item-1',
+},
             { key: 'submenu2', text: 'Sub Menu 2' },
             { key: 'submenu3', text: 'Sub Menu 3' },
             { key: 'submenu4', text: 'Sub Menu 4' },

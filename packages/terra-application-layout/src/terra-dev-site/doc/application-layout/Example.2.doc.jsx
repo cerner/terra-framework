@@ -1,10 +1,12 @@
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-duplicates */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { name } from '../../../../package.json';
 import ExampleDoc from '../../../../docs/example.md';
 import ExampleApplication from '../example/ExampleApplication';
-import ExampleApplicationSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ExampleApplication.jsx';
+
+/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
+import ExampleApplicationSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ExampleApplication';
+/* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
   <DocTemplate

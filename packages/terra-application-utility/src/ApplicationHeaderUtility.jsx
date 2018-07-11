@@ -14,7 +14,7 @@ const propTypes = {
    * Returns `(event, { key: String, metaData: Object})`
    */
   onChange: PropTypes.func.isRequired,
-    /**
+  /**
    * The function that discloses the menu.
    */
   onDisclose: PropTypes.func.isRequired,

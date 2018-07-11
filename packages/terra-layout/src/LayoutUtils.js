@@ -1,6 +1,8 @@
 import breakpoints from 'terra-responsive-element/lib/breakpoints.scss';
 
-const { small, medium, large, huge } = breakpoints;
+const {
+  small, medium, large, huge,
+} = breakpoints;
 
 const getBreakpointSize = (queryWidth) => {
   const width = queryWidth || window.innerWidth;

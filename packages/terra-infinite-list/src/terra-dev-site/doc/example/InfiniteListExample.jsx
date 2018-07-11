@@ -49,28 +49,26 @@ class InfiniteListExample extends React.Component {
   render() {
     const items = [];
     for (let i = 0; i < 15 * this.state.numberOfPages; i += 1) {
-      items.push(
-        <InfiniteList.Item
-          key={`${i}`}
-          content={
-            <Arrange
-              fitStart={<h3 style={{ width: '50px' }}>{`${i}`}</h3>}
-              fill={
-                <p>
+      items.push(<InfiniteList.Item
+        key={`${i}`}
+        content={
+          <Arrange
+            fitStart={<h3 style={{ width: '50px' }}>{`${i}`}</h3>}
+            fill={
+              <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Fusce porttitor ullamcorper nisi, vel tincidunt dui pharetra vel.
                   Morbi eu rutrum nibh, sit amet placerat libero. Integer vel dapibus nibh.
                   Donec tempor mi vitae lorem congue, ut ultrices metus feugiat. Sed non commodo felis.
                   Aliquam eget maximus dui, ut rhoncus augue.
-                </p>
+              </p>
               }
-              fitEnd={<div className={cx(['icon-wrapper'])}><IconInformation /></div>}
-              align="center"
-              fitStartAttributes={{ style: { textAlign: 'center' } }}
-            />
+            fitEnd={<div className={cx(['icon-wrapper'])}><IconInformation /></div>}
+            align="center"
+            fitStartAttributes={{ style: { textAlign: 'center' } }}
+          />
           }
-        />,
-      );
+      />);
     }
 
     const fullLoading = <LoadingOverlay isOpen isAnimated isRelativeToContainer backgroundStyle="dark" />;
@@ -82,7 +80,10 @@ class InfiniteListExample extends React.Component {
     );
 
     return (
-      <div style={{ height: '600px', width: '100%', position: 'relative', border: '1px solid black' }}>
+      <div style={{
+ height: '600px', width: '100%', position: 'relative', border: '1px solid black',
+}}
+      >
         <InfiniteList
           isSelectable
           isDivided

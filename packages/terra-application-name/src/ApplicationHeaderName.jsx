@@ -19,10 +19,10 @@ const propTypes = {
 };
 
 const ApplicationHeaderName = ({
-    accessory,
-    title,
-    ...customProps
-  }) => {
+  accessory,
+  title,
+  ...customProps
+}) => {
   const ApplicationHeaderNameClassNames = cx([
     'application-header-name',
     customProps.className,

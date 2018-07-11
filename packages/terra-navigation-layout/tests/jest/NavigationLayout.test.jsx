@@ -46,18 +46,20 @@ describe('NavigationLayout', () => {
   });
 
   it('should render a NavigationLayout with provided components', () => {
-    const wrapper = shallow(<NavigationLayout.WrappedComponent
-      location={{
-        pathname: '/a/b/c',
-      }}
-      match={{}}
-      history={{}}
-      config={{}}
-      header={<Header />}
-      menu={<Menu />}
-    >
-      <Content />
-    </NavigationLayout.WrappedComponent>);
+    const wrapper = shallow(
+      <NavigationLayout.WrappedComponent
+        location={{
+          pathname: '/a/b/c',
+        }}
+        match={{}}
+        history={{}}
+        config={{}}
+        header={<Header />}
+        menu={<Menu />}
+      >
+        <Content />
+      </NavigationLayout.WrappedComponent>
+    );
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -114,7 +116,7 @@ describe('NavigationLayout', () => {
       menu={<Menu />}
     >
       <Content />
-    </NavigationLayout.WrappedComponent>);
+  </NavigationLayout.WrappedComponent>);
     expect(wrapper).toMatchSnapshot();
   });
 

@@ -47,46 +47,46 @@ const reduceRouteConfig = (routeConfig, size) => {
 
     return availableRoutes;
   }, [])
-  .sort((routeA, routeB) => {
-    if (routeA.path < routeB.path) {
-      return 1;
-    } else if (routeA.path > routeB.path) {
-      return -1;
-    }
+    .sort((routeA, routeB) => {
+      if (routeA.path < routeB.path) {
+        return 1;
+      } else if (routeA.path > routeB.path) {
+        return -1;
+      }
 
-    return 0;
-  })
-  .map((route, index, array) => {
+      return 0;
+    })
+    .map((route, index, array) => {
     // The root path '/' cannot have any parent routes, so further processing is unnecessary.
-    if (route.path === '/') {
-      return route;
-    }
+      if (route.path === '/') {
+        return route;
+      }
 
-    // The path being tested is split into segments. Those segments are then rejoined to produce the set of
-    // potential parent paths. Those potential paths are then filtered against the set of actual paths that
-    // were generated so that only matching parent paths are returned.
+      // The path being tested is split into segments. Those segments are then rejoined to produce the set of
+      // potential parent paths. Those potential paths are then filtered against the set of actual paths that
+      // were generated so that only matching parent paths are returned.
 
-    const pathSegments = route.path.split('/');
+      const pathSegments = route.path.split('/');
 
-    const potentialParentPaths = [];
-    // The number of necessary iterations is 2 less than the number of total segments.
-    for (let i = 0, length = pathSegments.length; i < length - 2; i += 1) {
-      pathSegments.pop();
-      potentialParentPaths.push(pathSegments.join('/'));
-    }
+      const potentialParentPaths = [];
+      // The number of necessary iterations is 2 less than the number of total segments.
+      for (let i = 0, length = pathSegments.length; i < length - 2; i += 1) {
+        pathSegments.pop();
+        potentialParentPaths.push(pathSegments.join('/'));
+      }
 
-    // The root path is added manually as it cannot be produced by the above joins.
-    potentialParentPaths.push('/');
+      // The root path is added manually as it cannot be produced by the above joins.
+      potentialParentPaths.push('/');
 
-    const matchedParentPaths = array.filter(testRoute => (
-      potentialParentPaths.indexOf(testRoute.path) !== -1 && !testRoute.refuseRoutingStackNavigation
-    ))
-    .map(parentRoute => parentRoute.path);
+      const matchedParentPaths = array.filter(testRoute => (
+        potentialParentPaths.indexOf(testRoute.path) !== -1 && !testRoute.refuseRoutingStackNavigation
+      ))
+        .map(parentRoute => parentRoute.path);
 
-    return Object.assign({}, route, {
-      parentPaths: matchedParentPaths.reverse(),
+      return Object.assign({}, route, {
+        parentPaths: matchedParentPaths.reverse(),
+      });
     });
-  });
 };
 
 /**

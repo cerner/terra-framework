@@ -68,10 +68,8 @@ const componentConfigPropType = PropTypes.objectOf((propValue, key, componentNam
 const routePropType = PropTypes.shape({
   path: (props, propName, componentName) => {
     if (!/\/.*/.test(props[propName])) {
-      return new Error(
-        `Invalid prop \`${propName}\` supplied to` +
-        ` \`${componentName}\`. Validation failed. ${propName} must start with a forward slash (/).`,
-      );
+      return new Error(`Invalid prop \`${propName}\` supplied to` +
+        ` \`${componentName}\`. Validation failed. ${propName} must start with a forward slash (/).`);
     }
     return true;
   },

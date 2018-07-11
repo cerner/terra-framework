@@ -70,7 +70,9 @@ class RoutingStack extends React.Component {
   }
 
   createRoutes(routes) {
-    const { navEnabled, app, location, history, ancestorProps } = this.props;
+    const {
+      navEnabled, app, location, history, ancestorProps,
+    } = this.props;
     const { stackLocation } = this.state;
 
     if (!routes || !routes.length) {

@@ -340,7 +340,9 @@ class DisclosureManager extends React.Component {
 
   renderDisclosureComponents() {
     const { app } = this.props;
-    const { disclosureComponentKeys, disclosureComponentData, disclosureIsMaximized, disclosureIsFocused, disclosureSize } = this.state;
+    const {
+      disclosureComponentKeys, disclosureComponentData, disclosureIsMaximized, disclosureIsFocused, disclosureSize,
+    } = this.state;
 
     return disclosureComponentKeys.map((componentKey, index) => {
       const componentData = disclosureComponentData[componentKey];

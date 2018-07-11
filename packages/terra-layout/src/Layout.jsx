@@ -99,7 +99,9 @@ class Layout extends React.Component {
 
   renderHeader() {
     const { header } = this.props;
-    const { size, menuIsOpen, isToggleMenu, menuIsPresent } = this.state;
+    const {
+      size, menuIsOpen, isToggleMenu, menuIsPresent,
+    } = this.state;
 
     if (!header) {
       return null;
@@ -118,7 +120,9 @@ class Layout extends React.Component {
 
   renderMenu() {
     const { menu } = this.props;
-    const { size, menuIsOpen, menuIsPinned, isToggleMenu, menuIsPresent } = this.state;
+    const {
+      size, menuIsOpen, menuIsPinned, isToggleMenu, menuIsPresent,
+    } = this.state;
     const shouldAllowMenuToggle = isToggleMenu && menuIsPresent;
 
     if (!menuIsPresent) {
@@ -137,7 +141,9 @@ class Layout extends React.Component {
 
   renderContent() {
     const { children } = this.props;
-    const { size, menuIsOpen, isToggleMenu, menuIsPresent } = this.state;
+    const {
+      size, menuIsOpen, isToggleMenu, menuIsPresent,
+    } = this.state;
     const shouldAllowMenuToggle = isToggleMenu && menuIsPresent;
 
     return (
@@ -161,7 +167,9 @@ class Layout extends React.Component {
 
   render() {
     const { menuText } = this.props;
-    const { menuIsOpen, menuIsPinned, size, isFixedMenu, isToggleMenu } = this.state;
+    const {
+      menuIsOpen, menuIsPinned, size, isFixedMenu, isToggleMenu,
+    } = this.state;
 
     return (
       <ContentContainer

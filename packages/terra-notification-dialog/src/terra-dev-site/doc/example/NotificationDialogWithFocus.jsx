@@ -4,7 +4,7 @@ import AppDelegate from 'terra-app-delegate';
 import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
 
 const clickOK = () => {
-  alert('You clicked OK');  // eslint-disable-line no-alert
+  alert('You clicked OK'); // eslint-disable-line no-alert
 };
 
 const propTypes = {

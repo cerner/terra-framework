@@ -24,7 +24,7 @@ const UtilityMenuWrapper = ({
   children,
   ...customProps
 }) => (
-    React.cloneElement(children, { ...customProps, onRequestClose: app.dismiss, isHeightBounded: true })
+  React.cloneElement(children, { ...customProps, onRequestClose: app.dismiss, isHeightBounded: true })
 );
 
 UtilityMenuWrapper.propTypes = propTypes;

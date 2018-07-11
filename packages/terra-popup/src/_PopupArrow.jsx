@@ -22,9 +22,9 @@ const propTypes = {
 };
 
 const PopupArrow = ({
-    refCallback,
-    ...customProps
-  }) => <div {...customProps} className={cx(['popup-arrow', customProps.className])} ref={refCallback} />;
+  refCallback,
+  ...customProps
+}) => <div {...customProps} className={cx(['popup-arrow', customProps.className])} ref={refCallback} />;
 
 PopupArrow.propTypes = propTypes;
 PopupArrow.Opts = {

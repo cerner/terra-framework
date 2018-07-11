@@ -59,10 +59,10 @@ describe('SlidePanelManager', () => {
         },
       }).then(resolve).catch(reject);
     })
-    .then(() => {
-      wrapper.update();
+      .then(() => {
+        wrapper.update();
 
-      expect(wrapper).toMatchSnapshot();
-    });
+        expect(wrapper).toMatchSnapshot();
+      });
   });
 });

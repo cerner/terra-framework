@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Redirect,
-} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import classNames from 'classnames/bind';
 
 import AppDelegate from 'terra-app-delegate';
@@ -32,7 +30,9 @@ const propTypes = {
   stackNavigationIsEnabled: PropTypes.bool,
 };
 
-const NavigationLayoutContent = ({ app, navigationLayoutRoutes, redirectPath, stackNavigationIsEnabled, ...customProps }) => (
+const NavigationLayoutContent = ({
+  app, navigationLayoutRoutes, redirectPath, stackNavigationIsEnabled, ...customProps
+}) => (
   <div className={cx('content')}>
     <RoutingStack
       navEnabled={stackNavigationIsEnabled}

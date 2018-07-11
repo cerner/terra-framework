@@ -180,7 +180,7 @@ class UtilityMenu extends React.Component {
 
   childrenHasChevron(item) {
     const childrenHasChevron = item.childKeys.some((key) => {
-      const childKeys = this.getItem(key).childKeys;
+      const { childKeys } = this.getItem(key);
       return childKeys && childKeys.length > 0 && this.getItem(key).contentLocation !== Utils.LOCATIONS.FOOTER;
     });
     return childrenHasChevron;
@@ -195,7 +195,7 @@ class UtilityMenu extends React.Component {
    * @param {*} key
    */
   handleOnChange(event, key) {
-    const childKeys = this.getItem(key).childKeys;
+    const { childKeys } = this.getItem(key);
     const item = this.getItem(key);
     if (childKeys && childKeys.length > 0) {
       this.setState({
@@ -362,7 +362,7 @@ class UtilityMenu extends React.Component {
           footer={footer}
           fill={isHeightBounded}
           className={menuClassNames}
-          role={'navigation'}
+          role="navigation"
           aria-label={menuText}
         >
           {this.buildListContent(currentItem)}

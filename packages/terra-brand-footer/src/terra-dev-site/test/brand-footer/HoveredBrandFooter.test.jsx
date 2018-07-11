@@ -6,7 +6,7 @@ import styles from './HoveredBrandFooter.scss';
 const cx = classNames.bind(styles);
 
 export default () =>
-  <BrandFooter
+  (<BrandFooter
     className={cx('hover-brand-footer')}
     links={[
       { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/home' },
@@ -53,4 +53,4 @@ export default () =>
         <small>Copyright &copy; 2018 Cerner Corporation.  All Rights Reserved.</small>
       </p>
     }
-  />;
+  />);

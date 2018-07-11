@@ -11,7 +11,10 @@ export default () => (
       initialEntries={testShortConfig.map(link => link.path)}
       initialIndex={0}
     >
-      <div style={{ border: '1px solid lightGray', width: '100%', backgroundColor: 'green', height: '39px', position: 'relative' }}>
+      <div style={{
+ border: '1px solid lightGray', width: '100%', backgroundColor: 'green', height: '39px', position: 'relative',
+}}
+      >
         <ApplicationTabs id="test-tabs" alignment="center" links={testShortConfig} />
       </div>
     </MemoryRouter>

@@ -7,7 +7,7 @@ import styles from './BrandFooter.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
- /**
+  /**
   * An array of navigation links with each element specifiying text, href and target keys with appropriate values.
   */
   links: PropTypes.arrayOf(PropTypes.shape({
@@ -24,15 +24,15 @@ const propTypes = {
      */
     target: PropTypes.string,
   })),
- /**
+  /**
   * The content to be displayed in left side area of the footer.
   */
   contentLeft: PropTypes.node,
- /**
+  /**
   * The content to be displayed in right side area of the footer.
   */
   contentRight: PropTypes.node,
- /**
+  /**
   * The content to be displayed in bottom area of the footer.
   */
   contentBottom: PropTypes.node,
@@ -45,7 +45,9 @@ const defaultProps = {
   contentBottom: null,
 };
 
-const BrandFooter = ({ links, contentLeft, contentRight, contentBottom, ...customProps }) => {
+const BrandFooter = ({
+  links, contentLeft, contentRight, contentBottom, ...customProps
+}) => {
   const BrandFooterClassNames = cx([
     'brand-footer',
     customProps.className,

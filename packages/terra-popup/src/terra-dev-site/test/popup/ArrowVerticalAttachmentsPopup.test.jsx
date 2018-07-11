@@ -45,7 +45,13 @@ class AlignmentPopup extends React.Component {
   render() {
     return (
       <div>
-        <div id="test-popup-area" style={{ position: 'relative', height: '200px', width: '200px', background: 'aliceblue' }} ref={this.setParentNode}>
+        <div
+          id="test-popup-area"
+          style={{
+ position: 'relative', height: '200px', width: '200px', background: 'aliceblue',
+}}
+          ref={this.setParentNode}
+        >
           <Popup
             boundingRef={this.getParentNode}
             classNameArrow="test-arrow"
@@ -60,7 +66,14 @@ class AlignmentPopup extends React.Component {
           >
             <p style={{ padding: '5px' }}>This popup arrow has vertical attachment.</p>
           </Popup>
-          <button id="alignment-button" style={{ position: 'absolute', left: 'calc(50% - 10px)', top: 'calc(50% - 10px)', height: '20px', width: '20px', backgroundColor: '#c00' }} onClick={this.handleButtonClick} ref={this.setButtonNode} />
+          <button
+            id="alignment-button"
+            style={{
+ position: 'absolute', left: 'calc(50% - 10px)', top: 'calc(50% - 10px)', height: '20px', width: '20px', backgroundColor: '#c00',
+}}
+            onClick={this.handleButtonClick}
+            ref={this.setButtonNode}
+          />
         </div>
         <p>Choose Content Attachment:</p>
         <button id="attach-Left" value="bottom left" onClick={this.handleAttachment}>Attach Bottom Left</button>
