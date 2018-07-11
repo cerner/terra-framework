@@ -30,6 +30,17 @@
   "stylelint": {
     "extends": "stylelint-config-terra"
   },
+  "browserslist": [
+    "extends node_modules/terra-toolkit/config/browserslist"
+  ],
+  "stylelint": {
+    "extends": "node_modules/terra-toolkit/config/stylelint.conf"
+  },
+  "eslintConfig": {
+    "extends": [
+      "node_modules/terra-toolkit/config/eslint.conf"
+    ]
+  },
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "bootstrap:hoist": "lerna bootstrap --hoist",
@@ -59,8 +70,12 @@
     "postpublish": "npm run dependency-markdown && git add --all && git commit -m 'Updated DEPENDENCIES.md files'",
     "start": "tt-serve",
     "start-heroku": "tt-serve-static --site build ",
+<<<<<<< Updated upstream
     "start-static": "tt-serve-static",
     "test": "npm run jest && npm run wdio",
+=======
+    "test": "jest && npm run wdio",
+>>>>>>> Stashed changes
     "wdio": "wdio node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   },
   "devDependencies": {
@@ -95,9 +110,17 @@
     "rimraf": "^2.6.1",
     "shelljs": "^0.8.2",
     "stylelint": "^9.2.0",
+<<<<<<< Updated upstream
     "stylelint-config-terra": "^1.0.0",
     "terra-dev-site": "^2.0.0",
     "terra-toolkit": "^4.0.0",
     "xfc": "^1.2.1"
+=======
+    "stylelint-config-sass-guidelines": "^5.0.0",
+    "stylelint-order": "^0.8.1",
+    "stylelint-scss": "^3.1.0",
+    "stylelint-suitcss": "^3.0.0",
+    "terra-dev-site": "git://github.com/cerner/terra-dev-site#use-i18n-locale-testing-tt-v3-and-site-changes"
+>>>>>>> Stashed changes
   }
 }
