@@ -11,7 +11,6 @@ class DefaultApplicationHeaderUtility extends React.Component {
     this.handleOnChange = this.handleOnChange.bind(this);
     this.state = {
       utilityComponent: false,
-      selectedKey: null,
     };
   }
 
@@ -22,7 +21,6 @@ class DefaultApplicationHeaderUtility extends React.Component {
   }
 
   handleOnChange(event, key) {
-    this.setState({ selectedKey: key });
   }
 
   render() {

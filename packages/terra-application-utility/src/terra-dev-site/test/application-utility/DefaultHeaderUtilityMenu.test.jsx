@@ -10,12 +10,10 @@ class DefaultHeaderUtilityMenu extends React.Component {
     super(props);
     this.handleOnChange = this.handleOnChange.bind(this);
     this.state = {
-      selectedKey: null,
     };
   }
 
   handleOnChange(event, key) {
-    this.setState({ selectedKey: key });
   }
 
   render() {
