@@ -155,8 +155,8 @@ describe('BrandFooter', () => {
     Terra.should.matchScreenshot({ viewports });
   });
 
-  describe('Many Link Groups', () => {
-    before(() => browser.url('/#/raw/tests/terra-brand-footer/brand-footer/many-link-groups-brand-footer'));
+  describe('Many Sections', () => {
+    before(() => browser.url('/#/raw/tests/terra-brand-footer/brand-footer/many-sections-brand-footer'));
 
     // Medium exemplifies 3x2 layout and Large 4 in a row with 2 on the botton row
     Terra.should.beAccessible({ viewports: Terra.viewports('medium', 'large'), rules });
