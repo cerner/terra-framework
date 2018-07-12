@@ -7,7 +7,6 @@
 | final-form | ^4.6.0 | -- | 🏁 Framework agnostic, high performance, subscription-based form state management |
 | prop-types | ^15.5.8 | -- | Runtime type checking for React props and similar objects. |
 | react-final-form | ^3.3.1 | ^15.3.0 \|\| ^16.0.0-0 | 🏁 High performance subscription-based form state management for React |
-| terra-base | ^3.1.0 | ^16.2.0 | The base component sets minimal global styles for an application. |
 | terra-button | ^2.7.0 | ^16.2.0 | The terra-button component provides users a way to trigger actions in the UI. |
 | terra-doc-template | ^1.1.0 | ^16.2.0 | Provides an adjustable template for documentation pages. |
 | terra-form-checkbox | ^2.9.0 | ^16.2.0 | The Terra Form Checkbox is a responsive input component rendered as a box. When activated, a check mark shall appear. Focus can be activated through tabbing and the checked state can be toggled with the space bar. |

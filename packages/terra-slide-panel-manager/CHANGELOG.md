@@ -4,6 +4,11 @@ ChangeLog
 Unreleased
 -----------------
 
+2.11.0 - (July 10, 2018)
+------------------
+### Changed
+* Minor dependency updates
+
 2.10.0 - (July 3, 2018)
 ------------------
 ### Added
