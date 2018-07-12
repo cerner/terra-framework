@@ -66,16 +66,6 @@ export default () => (
           { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/homeh' },
         ],
       },
-      {
-        headerText: 'Links',
-        links: [
-          { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/homea' },
-          { text: 'Cerner', href: 'https://www.cerner.com/a', target: '_blank' },
-          { text: 'Cerner', href: 'https://www.cerner.com/b', target: '_blank' },
-          { text: 'Cerner', href: 'https://www.cerner.com/c', target: '_blank' },
-          { text: 'Cerner', href: 'https://www.cerner.com/d', target: '_blank' },
-        ],
-      },
     ]}
   />
 );

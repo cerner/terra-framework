@@ -134,19 +134,10 @@ const BrandFooter = ({ links, sections, isVertical, contentLeft, contentRight, c
               )
             }
             {linkGroup.links && linkGroup.links.map((link) => {
-              if (link.target !== undefined) {
-                return (
-                  <li className={cx('list-item')} key={link.text + link.href}>
-                    <a className={cx('link')} href={link.href} target={link.target}>
-                      {link.text}
-                    </a>
-                  </li>
-                );
-              }
-
+              const spreadTarget = link.target !== undefined ? { target: link.target } : {};
               return (
                 <li className={cx('list-item')} key={link.text + link.href}>
-                  <a className={cx('link')} href={link.href}>
+                  <a className={cx('link')} href={link.href} {...spreadTarget}>
                     {link.text}
                   </a>
                 </li>

@@ -85,8 +85,8 @@ describe('BrandFooter', () => {
   describe('Many Sections', () => {
     before(() => browser.url('/#/raw/tests/terra-brand-footer/brand-footer/many-sections-brand-footer'));
 
-    // Use medium because large is just too large to wrap the nav into three rows
-    Terra.should.beAccessible({ viewports: Terra.viewports('medium'), rules });
-    Terra.should.matchScreenshot({ viewports: Terra.viewports('medium') });
+    // Medium exemplifies 3x2 layout and Large 4 in a row with 2 on the botton row
+    Terra.should.beAccessible({ viewports: Terra.viewports('medium', 'large'), rules });
+    Terra.should.matchScreenshot({ viewports: Terra.viewports('medium', 'large') });
   });
 });
