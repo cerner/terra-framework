@@ -3,9 +3,11 @@ ChangeLog
 
 Unreleased
 -----------------
+
+1.12.0 - (July 10, 2018)
+------------------
 ### Changed
 * Clean up dependencies
-
 
 1.11.0 - (July 6, 2018)
 ------------------

@@ -3,9 +3,11 @@ Changelog
 
 Unreleased
 ----------
+
+2.10.0 - (July 10, 2018)
+------------------
 ### Changed
 * Clean up dependencies
-
 
 2.9.0 - (July 6, 2018)
 ------------------
