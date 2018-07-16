@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added `sv` and `sv-SE` translations
 
+### Fixed
+* Removed usage of CSS `initial` value because Internet Explorer does not support it
+
 1.2.0 - (July 3, 2018)
 ------------------
 ### Changed
