@@ -113,7 +113,7 @@
     width: 100%;
 
     > button {
-      flex: var(--terra-notification-dialog-actions-button-flex, initial);
+      flex: var(--terra-notification-dialog-actions-button-flex, 0 1 auto);
       flex-shrink: 1;
       margin-bottom: var(--terra-notification-dialog-actions-button-margin-bottom, 0.4rem);
       margin-left: var(--terra-notification-dialog-actions-button-margin-left, 0.4rem);
