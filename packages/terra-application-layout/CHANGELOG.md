@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added `sv` and `sv-SE` translations
 
 2.8.0 - (July 10, 2018)
 ------------------
