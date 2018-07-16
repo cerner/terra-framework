@@ -1,6 +1,9 @@
 :local {
   .brand-footer {
-    margin: var(--terra-brand-footer-margin, 0);
+    margin-bottom: var(--terra-brand-footer-margin-bottom, 0);
+    margin-left: var(--terra-brand-footer-margin-left, 0);
+    margin-right: var(--terra-brand-footer-margin-right, 0);
+    margin-top: var(--terra-brand-footer-margin-top, 0);
   }
 
   .nav {
@@ -9,7 +12,10 @@
 
     display: flex;
     flex-wrap: wrap;
-    padding: var(--terra-brand-footer-nav-padding, 0.7142857142857143rem 1.4285714285714286rem);
+    padding-bottom: var(--terra-brand-footer-nav-padding-bottom, 0.7142857142857143rem);
+    padding-left: var(--terra-brand-footer-nav-padding-left, 1.4285714285714286rem);
+    padding-right: var(--terra-brand-footer-nav-padding-right, 1.4285714285714286rem);
+    padding-top: var(--terra-brand-footer-nav-padding-top, 0.7142857142857143rem);
     width: 100%;
   }
 
@@ -62,19 +68,25 @@
     .list-header + .list-item::before {
       content: '';
       padding-left: 0;
-      padding-right: var(--terra-brand-footer-horizontal-nav-first-link-padding-right-before, 0.7142857142857143rem);
+      padding-right: var(--terra-brand-footer-horizontal-nav-first-link-padding-before-right, 0.7142857142857143rem);
     }
     /* stylelint-enable selector-max-compound-selectors */
   
     .list-item::before {
       content: '/';
-      padding: var(--terra-brand-footer-horizontal-nav-link-padding-before, 0.7142857142857143rem);
+      padding-bottom: var(--terra-brand-footer-horizontal-nav-link-padding-before-bottom, 0.7142857142857143rem);
+      padding-left: var(--terra-brand-footer-horizontal-nav-link-padding-before-top, 0.7142857142857143rem);
+      padding-right: var(--terra-brand-footer-horizontal-nav-link-padding-before-left, 0.7142857142857143rem);
+      padding-top: var(--terra-brand-footer-horizontal-nav-link-padding-before-right, 0.7142857142857143rem);
     }
   }
 
   .menu {
     list-style: none;
-    margin: var(--terra-brand-footer-link-group-margin, 0);
+    margin-bottom: var(--terra-brand-footer-link-group-margin-bottom, 0);
+    margin-left: var(--terra-brand-footer-link-group-margin-top, 0);
+    margin-right: var(--terra-brand-footer-link-group-margin-left, 0);
+    margin-top: var(--terra-brand-footer-link-group-margin-right, 0);
     padding-left: 0;
     padding-right: 0;
   }
@@ -113,7 +125,10 @@
   .footer-content {
     background-color: var(--terra-brand-footer-footer-content-background-color, #153d70);
     color: var(--terra-brand-footer-footer-content-color, #fff);
-    padding: var(--terra-brand-footer-footer-content-padding, 1.4285714285714286rem);
+    padding-bottom: var(--terra-brand-footer-footer-content-padding-bottom, 1.4285714285714286rem);
+    padding-left: var(--terra-brand-footer-footer-content-padding-top, 1.4285714285714286rem);
+    padding-right: var(--terra-brand-footer-footer-content-padding-left, 1.4285714285714286rem);
+    padding-top: var(--terra-brand-footer-footer-content-padding-right, 1.4285714285714286rem);
   }
 
   .content-top {
