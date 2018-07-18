@@ -2,7 +2,10 @@ ChangeLog
 =========
 
 Unreleased
------------------
+----------
+
+1.3.0 - (July 17, 2018)
+------------------
 ### Fixed
 * Removed usage of CSS `initial` value because Internet Explorer does not support it
 
@@ -19,5 +22,5 @@ Unreleased
 * Change logs to documentation on terra-dev-site
 
 1.0.0 - (June 19, 2018)
-----------------
+------------------
 * Initial stable release
