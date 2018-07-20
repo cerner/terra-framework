@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 -----------------
+### Added
+* Section headers can be put in the nav bar
+* The navigation bar can be displayed vertically
 
 1.6.0 - (July 10, 2018)
 ------------------

@@ -5,14 +5,9 @@ import BrandFooter from '../../../BrandFooter';
 export default () =>
   <div id="wrapper">
     <BrandFooter
-      isVertical={false}
-      sections={[
-        {
-          links: [
-            { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/home' },
-            { text: 'Cerner', href: 'https://www.cerner.com/', target: '_blank' },
-          ],
-        },
+      links={[
+        { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/home' },
+        { text: 'Cerner', href: 'https://www.cerner.com/', target: '_blank' },
       ]}
       contentLeft={
         <a
