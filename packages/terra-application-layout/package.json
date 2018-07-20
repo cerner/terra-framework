@@ -43,7 +43,7 @@
     "terra-application-utility": "^1.12.0",
     "terra-avatar": "^1.0.0",
     "terra-button": "^2.2.0",
-    "terra-clinical-action-header": "^2.1.0",
+    "terra-action-header": "^1.14.0",
     "terra-content-container": "^2.2.0",
     "terra-disclosure-manager": "^2.9.0",
     "terra-doc-template": "^1.1.0",

@@ -3,6 +3,14 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added dependency on action-header
+
+### Changed
+* Replaced clinical-action-header with action-header
+
+### Removed
+Removed dependency on terra-clinical-action-header
 
 2.8.0 - (July 10, 2018)
 ------------------
