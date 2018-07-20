@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 -----------------
+### Added
+* Expanded support for navigational paths.
 
 4.7.0 - (July 10, 2018)
 ------------------

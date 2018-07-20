@@ -10,6 +10,10 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * The optional external path. Executes on window.open();
+   */
+  externalPath: PropTypes.string,
+  /**
    * The history as provided by the `withRouter()` HOC.
    */
   history: PropTypes.object.isRequired,
@@ -84,6 +88,14 @@ class ApplicationTab extends React.Component {
   }
 
   handleOnClick(event) {
+    if (this.props.externalPath && this.props.externalPath.length > 0) {
+      window.open(this.props.externalPath);
+      if (this.props.onTabClick) {
+        this.props.onTabClick(event);
+      }
+      return;
+    }
+
     if (!this.isCurrentPath()) {
       this.props.history.push(this.props.path);
     } else if (this.props.onTabClick) {
@@ -93,6 +105,7 @@ class ApplicationTab extends React.Component {
 
   render() {
     const {
+      externalPath,
       history,
       isCollapsed,
       location,

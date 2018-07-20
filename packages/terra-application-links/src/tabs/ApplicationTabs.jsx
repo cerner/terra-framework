@@ -156,6 +156,7 @@ class ApplicationTabs extends React.Component {
         path: link.path,
         text: link.text,
         key: link.path,
+        externalPath: link.externalPath,
         location,
         history,
       };
