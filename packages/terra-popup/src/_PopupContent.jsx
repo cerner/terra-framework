@@ -138,6 +138,9 @@ class PopupContent extends React.Component {
     if (isWidthAutomatic) {
       newProps.isWidthBounded = isWidthBounded;
     }
+    if (isHeightBounded && isWidthBounded && this.props.isHeaderDisabled) {
+      newProps.closeButtonRequired = true;
+    }
     return React.Children.map(children, child => React.cloneElement(child, newProps));
   }
 
