@@ -1,9 +1,0 @@
-:local {
-  .active-brand-footer {
-    // stylelint-disable selector-max-compound-selectors
-    nav a {
-      color: var(--terra-brand-footer-link-active-color, #001f67);
-    }
-    // stylelint enable
-  }
-}
