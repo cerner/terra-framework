@@ -1,4 +1,4 @@
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-duplicates */
+/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-duplicates, import/no-unresolved */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { name } from '../../../../package.json';
@@ -10,6 +10,8 @@ import BrandFooterSrc from '!raw-loader!../../../../src/BrandFooter';
 // Example Files
 import DefaultBrandFooter from '../example/DefaultBrandFooter';
 import DefaultBrandFooterSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DefaultBrandFooter.jsx';
+import VerticalBrandFooter from '../example/VerticalBrandFooter';
+import VerticalBrandFooterSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/VerticalBrandFooter.jsx';
 
 const DocPage = () => (
   <DocTemplate
@@ -21,6 +23,11 @@ const DocPage = () => (
         title: 'BrandFooter - Default',
         example: <DefaultBrandFooter />,
         source: DefaultBrandFooterSrc,
+      },
+      {
+        title: 'BrandFooter - Vertical Navigation Bar',
+        example: <VerticalBrandFooter />,
+        source: VerticalBrandFooterSrc,
       },
     ]}
     propsTables={[
