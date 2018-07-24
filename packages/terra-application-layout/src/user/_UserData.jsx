@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 
-import styles from './UserData.scss';
+import styles from './UserData.module.scss';
 
 const cx = classNames.bind(styles);
 
