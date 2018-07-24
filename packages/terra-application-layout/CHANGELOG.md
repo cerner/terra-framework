@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Added
+* Added `sv` and `sv-SE` translations
 * Added dependency on action-header
 
 ### Changed
