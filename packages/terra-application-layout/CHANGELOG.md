@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added `sv` and `sv-SE` translations
 
+### Changed
+* Add .module extension to SCSS file(s)
+
 2.8.0 - (July 10, 2018)
 ------------------
 ### Changed
