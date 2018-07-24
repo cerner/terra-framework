@@ -70,11 +70,13 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with giv
                 },
                 "menuItems": Array [
                   Object {
+                    "externalLink": undefined,
                     "hasSubMenu": true,
                     "path": "/item_1",
                     "text": "Item 1",
                   },
                   Object {
+                    "externalLink": undefined,
                     "hasSubMenu": true,
                     "path": "/item_2",
                     "text": "Item 2",
@@ -121,11 +123,13 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with giv
                 },
                 "menuItems": Array [
                   Object {
+                    "externalLink": undefined,
                     "hasSubMenu": true,
                     "path": "/item_1",
                     "text": "Item 1",
                   },
                   Object {
+                    "externalLink": undefined,
                     "hasSubMenu": true,
                     "path": "/item_2",
                     "text": "Item 2",
@@ -235,11 +239,13 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with giv
           "alignment": undefined,
           "links": Array [
             Object {
+              "externalLink": undefined,
               "id": "application-layout-tab-0",
               "path": "/item_1",
               "text": "Item 1",
             },
             Object {
+              "externalLink": undefined,
               "id": "application-layout-tab-1",
               "path": "/item_2",
               "text": "Item 2",
