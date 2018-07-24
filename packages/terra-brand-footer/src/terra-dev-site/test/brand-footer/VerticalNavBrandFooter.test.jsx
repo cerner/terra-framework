@@ -1,26 +1,28 @@
 import React from 'react';
 
-import classNames from 'classnames/bind';
 import BrandFooter from '../../../BrandFooter';
-import styles from './ActiveBrandFooter.scss';
-
-const cx = classNames.bind(styles);
 
 export default () =>
   <BrandFooter
-    className={cx('active-brand-footer')}
-    links={[
-      { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/home' },
-      { text: 'Cerner', href: 'https://www.cerner.com/', target: '_blank' },
+    isVertical
+    sections={[
+      {
+        headerText: 'Links',
+        links: [
+          { text: 'Terra UI', href: 'http://terra-ui.com/static/#/site/home' },
+          { text: 'Cerner', href: 'https://www.cerner.com/', target: '_blank' },
+        ],
+      },
+      {
+        headerText: 'More Links',
+        links: [
+          { text: 'Cerner Engineering', href: 'https://engineering.cerner.com/' },
+        ],
+      },
     ]}
     contentLeft={
       <a
-        href="http://terra-ui.herokuapp.com/static/#/site/home"
-        style={{
-          backgroundColor: 'transparent',
-          color: '#0065a3',
-          textDecoration: 'none',
-        }}
+        href="http://terra-ui.com/"
         aria-label="link"
       >
         <svg
@@ -40,7 +42,6 @@ export default () =>
       <svg
         style={{
           border: '0',
-          maxWidth: '100%',
           height: '40px',
           width: '147px',
           verticalAlign: 'top',
@@ -51,8 +52,8 @@ export default () =>
       </svg>
     }
     contentBottom={
-      <p style={{ marignTop: '.7142857142857143rem' }} >
+      <span>
         <small>Copyright &copy; 2018 Cerner Corporation.  All Rights Reserved.</small>
-      </p>
+      </span>
     }
   />;

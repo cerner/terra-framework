@@ -5,7 +5,7 @@ import BrandFooter from 'terra-brand-footer/lib/BrandFooter';
 
 export default () =>
   <BrandFooter
-    isVertical={false}
+    isVertical
     sections={[
       {
         headerText: 'Terra UI Links',

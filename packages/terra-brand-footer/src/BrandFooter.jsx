@@ -9,21 +9,67 @@ const cx = classNames.bind(styles);
 const propTypes = {
  /**
   * An array of navigation links with each element specifiying text, href and target keys with appropriate values.
+  *
+  * **DEPRECATED**: Use `sections` prop instead.
   */
   links: PropTypes.arrayOf(PropTypes.shape({
-    /**
-     * text to be disaplyed as navigational link.
-     */
+   /**
+    * Text to be disaplyed as navigational link.
+    */
     text: PropTypes.string,
-    /**
-     * url of the navigational link.
-     */
+   /**
+    * URL of the navigational link.
+    */
     href: PropTypes.string,
-    /**
-     * attribute to open on same or different tab on clicking the navigational link.
-     */
+   /**
+    * Attribute to open on same or different tab on clicking the navigational link.
+    */
     target: PropTypes.string,
   })),
+ /**
+  * A set of navigation links to be displayed with optional headers. Will override the `links` prop if both are provided.
+  *
+  * ```
+  * Array structured like:
+  * [
+  *   {
+  *     headerText: string,
+  *     links: [
+  *       text: required string,
+  *       href: required string,
+  *       target: string,
+  *     ],
+  *   },
+  * ]
+  * ```
+  */
+  sections: PropTypes.arrayOf(PropTypes.shape({
+   /**
+    * The optional text to display as a header
+    */
+    headerText: PropTypes.string,
+   /**
+    * An array of navigation links with each element specifiying text, href and target keys with appropriate values.
+    */
+    links: PropTypes.arrayOf(PropTypes.shape({
+     /**
+      * Text to be disaplyed as navigational link.
+      */
+      text: PropTypes.string.isRequired,
+     /**
+      * URL of the navigational link.
+      */
+      href: PropTypes.string.isRequired,
+     /**
+      * Attribute to open on same or different tab on clicking the navigational link.
+      */
+      target: PropTypes.string,
+    })),
+  })),
+ /**
+  * If true link sections will be laid out from top to bottom, then left to right if the max width is reached
+  */
+  isVertical: PropTypes.bool,
  /**
   * The content to be displayed in left side area of the footer.
   */
@@ -40,35 +86,73 @@ const propTypes = {
 
 const defaultProps = {
   links: [],
+  sections: [],
+  isVertical: false,
   contentLeft: null,
   contentRight: null,
   contentBottom: null,
 };
 
-const BrandFooter = ({ links, contentLeft, contentRight, contentBottom, ...customProps }) => {
+const BrandFooter = ({ links, sections, isVertical, contentLeft, contentRight, contentBottom, ...customProps }) => {
   const BrandFooterClassNames = cx([
     'brand-footer',
     customProps.className,
   ]);
 
-  const linkslength = links.length;
+  let processedSections;
+  if (links.length > 0 && sections.length === 0) {
+    processedSections = [{
+      headerText: '',
+      links,
+      id: 0,
+    }];
+  } else {
+    processedSections = sections;
+
+    // Assign ids to use as keys
+    for (let i = 0; i < processedSections.length; i += 1) {
+      processedSections[i].id = i;
+    }
+  }
+
+  // The old links prop can't have section headers. Needed for vertical layout to insert padding to keep columns without headers aligned
+  const containsASectionHeader = processedSections.some(linkGroup => linkGroup.headerText);
+
+  let navigation;
+  if (processedSections.length > 0) {
+    navigation = (
+      <nav className={cx(['nav', isVertical ? 'nav-vertical' : 'nav-horizontal'])}>
+        {processedSections.map(linkGroup => (
+          <ul className={cx('menu')} key={linkGroup.id}>
+            { // When displaying vertically if one column has a header all columns are aligned as if they have a header
+              ((containsASectionHeader && isVertical) || linkGroup.headerText) && (
+                <li className={cx('list-header')} key={linkGroup.headerText}>
+                  { // Insert a zero width space to act as a placeholder section header that doesn't display but takes vertical space
+                    linkGroup.headerText || '\u200B'
+                  }
+                </li>
+              )
+            }
+            {linkGroup.links && linkGroup.links.map((link) => {
+              const spreadTarget = link.target !== undefined ? { target: link.target } : {};
+              return (
+                <li className={cx('list-item')} key={link.text + link.href}>
+                  <a className={cx('link')} href={link.href} {...spreadTarget}>
+                    {link.text}
+                  </a>
+                </li>
+              );
+            },
+            )}
+          </ul>
+        ))}
+      </nav>
+    );
+  }
+
   return (
     <footer role="contentinfo" {...customProps} className={BrandFooterClassNames}>
-      {linkslength > 0 ? (
-        <nav className={cx('nav')}>
-          <ul className={cx('menu')}>
-            {links.map(link => (
-              <li className={cx('list-item')} key={link.text + link.href}>
-                {link.target !== undefined ? (
-                  <a className={cx('link')} href={link.href} target={link.target} >{link.text}</a>
-                ) : (
-                  <a className={cx('link')} href={link.href} >{link.text}</a>
-                )}
-              </li>
-            ))}
-          </ul>
-        </nav>
-      ) : null}
+      {navigation}
       <div className={cx('footer-content')} >
         <div className={cx('content-top')}>
           {contentLeft}
