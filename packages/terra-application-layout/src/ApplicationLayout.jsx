@@ -77,7 +77,7 @@ class ApplicationLayout extends React.Component {
 
     const menuPaths = Object.keys(routingConfig.menu).map(key => (routingConfig.menu[key].path));
     return navigationItems.map(navigationItem => ({
-      externalPath: navigationItem.externalPath,
+      externalLink: navigationItem.externalLink,
       path: navigationItem.path,
       text: navigationItem.text,
       hasSubMenu: menuPaths.filter(menuPath => matchPath(navigationItem.path, { path: menuPath })).length > 0,
@@ -219,7 +219,7 @@ class ApplicationLayout extends React.Component {
                 id: `application-layout-tab-${index}`,
                 path: route.path,
                 text: route.text,
-                externalPath: route.externalPath,
+                externalLink: route.externalLink,
               })) : undefined,
             }}
           />

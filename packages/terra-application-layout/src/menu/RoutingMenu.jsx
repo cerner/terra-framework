@@ -52,7 +52,7 @@ class RoutingMenu extends React.Component {
       hasSubMenu: !!item.hasSubMenu,
       metaData: {
         path: item.path,
-        externalPath: item.externalPath,
+        externalLink: item.externalLink,
         hasSubMenu: !!item.hasSubMenu,
       },
     }));
@@ -102,15 +102,14 @@ class RoutingMenu extends React.Component {
 
 
     let routeFunc;
-    if (data.metaData.externalPath && data.metaData.externalPath.length > 0) {
-      routeFunc = () => window.open(data.metaData.externalPath);
+    if (data.metaData.externalLink) {
+      routeFunc = () => window.open(data.metaData.externalLink.path, data.metaData.externalLink.target || '_blank');
     } else {
       this.setState({
         selectedChildKey: data.selectedChildKey,
       });
       routeFunc = () => routingStackDelegate.show({ path: data.metaData.path });
     }
-
 
     /**
      * If the menuItem does not indicate the presence of a subsequent menu, it is assumed that a terminal
