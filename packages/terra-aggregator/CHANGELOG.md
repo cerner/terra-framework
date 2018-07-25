@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.8.0 - (July 25, 2018)
+------------------
 ### Added
 * Added dependency on arrange
 * Added dependency on action-header

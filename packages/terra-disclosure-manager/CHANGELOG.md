@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 -----------------
+
+2.10.0 - (July 25, 2018)
+------------------
 ### Added
 * Added dependency on action-header
 
