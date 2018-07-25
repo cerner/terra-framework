@@ -1,4 +1,4 @@
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions */
+/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { name } from '../../../../package.json';

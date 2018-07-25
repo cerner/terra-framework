@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Added
+* Added `sv` and `sv-SE` translations
 * Expanded support for navigational paths.
 
 2.8.0 - (July 10, 2018)
