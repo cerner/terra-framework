@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ContentContainer from 'terra-content-container';
-import Header from 'terra-clinical-header';
+import SectionHeader from 'terra-section-header';
 
 const propTypes = {
   aggregatorDelegate: PropTypes.object,
@@ -12,7 +12,7 @@ const SimpleAggregatorItem = ({ name, aggregatorDelegate, ...customProps }) => (
   <ContentContainer
     {...customProps}
     header={(
-      <Header
+      <SectionHeader
         title={name}
       />
     )}

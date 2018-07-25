@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.8.0 - (July 25, 2018)
+------------------
 ### Changed
 * Popup Content will clone prop to indicate missing close button
 * Add .module extension to SCSS file(s)
