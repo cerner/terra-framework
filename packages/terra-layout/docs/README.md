@@ -2,7 +2,7 @@
 
 The Layout component provides a responsive starting point for the positioning of application components.
 
-The Layout is responsive at the following breakpoints (as defined by the [terra-responsive-element](https://github.com/cerner/terra-core/blob/master/packages/terra-responsive-element/src/breakpoints.scss)):
+The Layout is responsive at the following breakpoints (as defined by the [terra-responsive-element](https://github.com/cerner/terra-core/blob/master/packages/terra-responsive-element/src/breakpoints.module.scss)):
 * Desktop [`medium`, `large`, `huge`] - The menu is pinned open and not dismissable. The content region is resized to account for the menu, and the menu is presented under the header content.
 * Tablet [`small`] - The menu is disclosed by a programatic toggle provided to the header content. The header content must adhere to a Layout-specific prop API and properly display a toggle button if necessary. The header is overlaid by the menu when open, and the menu is dismissed by clicking in the negative overlay space.
 * Phone [`tiny`] - This breakpoint's behavior is similar to that of Tablet, with the only difference being the menu size. The menu is presented as nearly full-screen, leaving only enough negative space to allow for dismissal.
