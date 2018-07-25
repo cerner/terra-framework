@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import { matchPath } from 'react-router-dom';
 import TabUtils from './_TabUtils';
-import styles from './ApplicationTabs.scss';
+import styles from './ApplicationTabs.module.scss';
 
 const cx = classNames.bind(styles);
 

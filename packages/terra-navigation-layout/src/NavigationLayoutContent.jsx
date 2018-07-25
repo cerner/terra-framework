@@ -9,7 +9,7 @@ import AppDelegate from 'terra-app-delegate';
 import RoutingStack from './RoutingStack';
 import { processedRoutesPropType } from './configurationPropTypes';
 
-import styles from './NavigationLayoutContent.scss';
+import styles from './NavigationLayoutContent.module.scss';
 
 const cx = classNames.bind(styles);
 
