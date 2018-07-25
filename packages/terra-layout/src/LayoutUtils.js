@@ -1,4 +1,4 @@
-import breakpoints from 'terra-responsive-element/lib/breakpoints.scss';
+import breakpoints from 'terra-responsive-element/lib/breakpoints.module.scss';
 
 const { small, medium, large, huge } = breakpoints;
 

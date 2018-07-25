@@ -6,7 +6,7 @@ import {
 
 import AppDelegate from 'terra-app-delegate';
 import Layout from 'terra-layout';
-import breakpoints from 'terra-responsive-element/lib/breakpoints.scss';
+import breakpoints from 'terra-responsive-element/lib/breakpoints.module.scss';
 
 import NavigationLayoutContent from './NavigationLayoutContent';
 import { navigationLayoutConfigPropType, supportedComponentBreakpoints } from './configurationPropTypes';

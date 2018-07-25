@@ -6,7 +6,7 @@ import ResizeObserver from 'resize-observer-polyfill';
 import List from 'terra-list';
 import SelectableUtils from 'terra-list/lib/SelectableUtils';
 import InfiniteUtils from './_InfiniteUtils';
-import styles from './InfiniteList.scss';
+import styles from './InfiniteList.module.scss';
 
 const cx = classNames.bind(styles);
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import onClickOutside from 'react-onclickoutside';
 import ResizeObserver from 'resize-observer-polyfill';
-import styles from './HookshotContent.scss';
+import styles from './HookshotContent.module.scss';
 
 const cx = classNames.bind(styles);
 /**
