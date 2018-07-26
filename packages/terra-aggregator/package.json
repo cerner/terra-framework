@@ -44,7 +44,7 @@
     "terra-grid": "^4.0.1",
     "terra-list": "^2.0.1",
     "terra-modal-manager": "^3.7.0",
-    "terra-responsive-element": "^2.0.1",
+    "terra-responsive-element": "^3.0.0",
     "terra-section-header": "^1.16.0",
     "terra-slide-panel-manager": "^2.12.0"
   },

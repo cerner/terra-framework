@@ -3,6 +3,8 @@ Terra Modal Manager - Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated to use terra-responsive-element v3
 
 3.7.0 - (July 25, 2018)
 ------------------
