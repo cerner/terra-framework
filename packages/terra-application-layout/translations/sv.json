@@ -1,0 +1,14 @@
+{
+  "Terra.applicationLayout.applicationHeader.menuToggleLabel": "Växla meny",
+  "Terra.applicationLayout.utilityDefaults.menu": "Meny",
+  "Terra.applicationLayout.utilityDefaults.userInformation": "Användaruppgifter",
+  "Terra.applicationLayout.utilityDefaults.changePhoto": "Byt bild",
+  "Terra.applicationLayout.utilityDefaults.settings": "Inställningar",
+  "Terra.applicationLayout.utilityDefaults.appearance": "Utseende",
+  "Terra.applicationLayout.utilityDefaults.security": "Säkerhet",
+  "Terra.applicationLayout.utilityDefaults.help": "Hjälp",
+  "Terra.applicationLayout.utilityDefaults.gettingStarted": "Kom igång",
+  "Terra.applicationLayout.utilityDefaults.about": "Om",
+  "Terra.applicationLayout.utilityDefaults.termsOfUse": "Användningsvillkor",
+  "Terra.applicationLayout.utilityDefaults.logOut": "Logga ut"
+}

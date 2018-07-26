@@ -58,7 +58,7 @@
     "publish": "npm whoami && check-installed-dependencies && npm run compile && npm test && lerna publish",
     "postpublish": "npm run dependency-markdown && git add --all && git commit -m 'Updated DEPENDENCIES.md files'",
     "start": "tt-serve",
-    "start-heroku": "tt-serve-static --site build ",
+    "start-heroku": "tt-heroku-serve-static",
     "start-static": "tt-serve-static",
     "test": "npm run jest && npm run wdio",
     "wdio": "wdio node_modules/terra-dev-site/config/wdio/wdio.conf.js"
@@ -97,7 +97,7 @@
     "stylelint": "^9.2.0",
     "stylelint-config-terra": "^1.0.0",
     "terra-dev-site": "^2.0.0",
-    "terra-toolkit": "^4.0.0",
+    "terra-toolkit": "^4.5.0",
     "xfc": "^1.2.1"
   }
 }

@@ -10,7 +10,7 @@ import IconLeft from 'terra-icon/lib/icon/IconLeft';
 import MenuDivider from './_UtilityMenuDivider';
 import Utils from '../Utils';
 import MenuItem from './_UtilityMenuItem';
-import styles from './_UtilityMenu.scss';
+import styles from './_UtilityMenu.module.scss';
 
 const cx = classNames.bind(styles);
 

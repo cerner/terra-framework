@@ -4,6 +4,11 @@ Terra Modal Manager - Changelog
 Unreleased
 ----------
 
+3.7.0 - (July 25, 2018)
+------------------
+### Changed
+* Add .module extension to SCSS file(s)
+
 3.6.0 - (July 3, 2018)
 ------------------
 ### Added

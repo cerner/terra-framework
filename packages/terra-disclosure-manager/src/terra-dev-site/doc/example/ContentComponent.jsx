@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
 import AppDelegate from 'terra-app-delegate';
-import ActionHeader from 'terra-clinical-action-header';
+import ActionHeader from 'terra-action-header';
 
 import DisclosureComponent from './DisclosureComponent';
 import { availableDisclosureHeights, availableDisclosureWidths } from '../../../DisclosureManager';

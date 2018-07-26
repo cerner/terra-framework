@@ -14,7 +14,7 @@ import Helpers from '../utils/helpers';
 
 import UtilityMenuWrapper from './_UtilityMenuWrapper';
 
-import styles from './ApplicationMenu.scss';
+import styles from './ApplicationMenu.module.scss';
 
 const cx = classNames.bind(styles);
 

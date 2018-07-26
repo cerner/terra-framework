@@ -7,7 +7,7 @@ import ActionHeader from 'terra-action-header';
 import ContentContainer from 'terra-content-container';
 import MenuItem from './_MenuItem';
 
-import styles from './NavigationSideMenu.scss';
+import styles from './NavigationSideMenu.module.scss';
 
 const cx = classNames.bind(styles);
 
