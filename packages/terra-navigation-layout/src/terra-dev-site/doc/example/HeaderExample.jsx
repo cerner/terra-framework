@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 
 const propTypes = {
-  layoutConfig: PropTypes.object,
+  layoutConfig: PropTypes.shape({}),
+};
+
+const inlineButtonStyle = {
+  display: 'inline', marginLeft: '5px', height: '25px', border: '1px dashed lightgrey',
 };
 
 const HeaderExample = ({ layoutConfig }) => (
@@ -15,15 +19,17 @@ const HeaderExample = ({ layoutConfig }) => (
 }}
     >
       <h2 style={{ display: 'inline', margin: 0 }}>Header</h2>
-      {layoutConfig.toggleMenu && <button
-        style={{
- display: 'inline', marginLeft: '5px', height: '25px', border: '1px dashed lightgrey',
-}}
-        onClick={layoutConfig.toggleMenu}
-      >Toggle Menu
-                                  </button>}
+      {layoutConfig.toggleMenu &&
+        <button
+          style={inlineButtonStyle}
+          onClick={layoutConfig.toggleMenu}
+        >Toggle Menu
+        </button>}
+      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       {layoutConfig.size !== 'small' && layoutConfig.size !== 'tiny' && <Link to="/page1" style={{ paddingLeft: '5px' }}>Page 1</Link>}
+      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       {layoutConfig.size !== 'small' && layoutConfig.size !== 'tiny' && <Link to="/page2" style={{ paddingLeft: '5px' }}>Page 2</Link>}
+      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       {layoutConfig.size !== 'small' && layoutConfig.size !== 'tiny' && <Link to="/page3" style={{ paddingLeft: '5px' }}>Page 3</Link>}
     </div>
   </div>

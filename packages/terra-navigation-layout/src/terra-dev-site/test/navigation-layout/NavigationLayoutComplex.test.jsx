@@ -12,6 +12,7 @@ const config = {
           componentClass: () => (
             <div>
               <div className="test-header">Header</div>
+              {/* eslint-disable  jsx-a11y/anchor-is-valid */}
               <Link to="/page1" className="page-1-link">Page 1</Link>
               <Link to="/page2" className="page-2-link">Page 2</Link>
               <Link to="/page3" className="page-3-link">Page 3</Link>

@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const inlineButtonStyle = {
+  display: 'inline', marginLeft: '5px', height: '25px', border: '1px dashed lightgrey',
+};
+
 const Page2Content = ({ layoutConfig }) => (
   <div style={{
  height: 'calc(100% - 10px)', width: 'calc(100% - 10px)', border: '4px dashed lightgrey', margin: '5px', position: 'relative',
@@ -10,13 +14,12 @@ const Page2Content = ({ layoutConfig }) => (
 }}
     >
       <h2 style={{ margin: '0' }}>Page 2 Content</h2>
-      {layoutConfig.toggleMenu && <button
-        style={{
- display: 'inline', marginLeft: '5px', height: '25px', border: '1px dashed lightgrey',
-}}
-        onClick={layoutConfig.toggleMenu}
-      >Toggle Menu
-                                  </button>}
+      {layoutConfig.toggleMenu &&
+        <button
+          style={inlineButtonStyle}
+          onClick={layoutConfig.toggleMenu}
+        >Toggle Menu
+        </button>}
     </div>
   </div>
 );

@@ -41,7 +41,7 @@ const propTypes = {
 class MenuItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { active: false, focused: false, mouseWasClicked: false };
+    this.state = { active: false, focused: false };
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleKeyUp = this.handleKeyUp.bind(this);
     this.handleOnBlur = this.handleOnBlur.bind(this);
@@ -103,7 +103,7 @@ class MenuItem extends React.Component {
       <List.Item
         className={cx('list-item')}
         content={
-          /* eslint-disable jsx-a11y/no-static-element-interactions */
+          /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */
           <div
             {...customProps}
             tabIndex="0"

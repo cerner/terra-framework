@@ -70,6 +70,7 @@ const reduceRouteConfig = (routeConfig, size) => {
 
       const potentialParentPaths = [];
       // The number of necessary iterations is 2 less than the number of total segments.
+      // eslint-disable-next-line prefer-destructuring
       for (let i = 0, length = pathSegments.length; i < length - 2; i += 1) {
         pathSegments.pop();
         potentialParentPaths.push(pathSegments.join('/'));
