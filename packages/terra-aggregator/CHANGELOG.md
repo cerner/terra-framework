@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.9.0 - (July 26, 2018)
+------------------
 ### Changed
 * Updated to use terra-responsive-element v3
 
