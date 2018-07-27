@@ -5,7 +5,7 @@ import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
 import TextField from 'terra-form/lib/TextField';
 import AppDelegate from 'terra-app-delegate';
-import ActionHeader from 'terra-clinical-action-header';
+import ActionHeader from 'terra-action-header';
 
 import styles from './example-styles.scss';
 

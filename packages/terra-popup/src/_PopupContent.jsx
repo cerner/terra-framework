@@ -5,7 +5,7 @@ import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
 import FocusTrap from 'focus-trap-react';
 import Hookshot from 'terra-hookshot';
-import styles from './PopupContent.scss';
+import styles from './PopupContent.module.scss';
 
 const cx = classNames.bind(styles);
 /**

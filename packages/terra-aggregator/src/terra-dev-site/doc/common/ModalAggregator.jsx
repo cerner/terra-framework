@@ -1,7 +1,7 @@
 import React from 'react';
 import AppDelegate from 'terra-app-delegate';
 import ContentContainer from 'terra-content-container';
-import ActionHeader from 'terra-clinical-action-header';
+import ActionHeader from 'terra-action-header';
 
 import AggregatorContainer from './AggregatorContainer';
 import AggregatorItem from './AggregatorItem';

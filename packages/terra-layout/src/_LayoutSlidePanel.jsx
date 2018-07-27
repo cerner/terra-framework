@@ -6,7 +6,7 @@ import OverlayContainer from 'terra-overlay/lib/OverlayContainer';
 
 import 'terra-base/lib/baseStyles';
 
-import styles from './LayoutSlidePanel.scss';
+import styles from './LayoutSlidePanel.module.scss';
 
 const cx = classNames.bind(styles);
 

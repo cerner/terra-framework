@@ -2,8 +2,20 @@ ChangeLog
 =========
 
 Unreleased
+------------------
+
+1.5.0 - (July 26, 2018)
+------------------
+### Changed
+* Minor dependency updates
+
+1.4.0 - (July 25, 2018)
+------------------
 ### Added
 * Added `sv` and `sv-SE` translations
+
+### Changed
+* Add .module extension to SCSS file(s)
 
 1.3.0 - (July 17, 2018)
 ------------------

@@ -4,6 +4,24 @@ Changelog
 Unreleased
 ----------
 
+3.9.0 - (July 26, 2018)
+------------------
+### Changed
+* Updated to use terra-responsive-element v3
+
+3.8.0 - (July 25, 2018)
+------------------
+### Added
+* Added dependency on arrange
+* Added dependency on action-header
+
+### Changed
+* Replaced clinical-header and clinical-action-header with arrange and action-header
+
+### Removed
+Removed dependency on terra-clinical-action-header
+Removed dependency on terra-clinical-header
+
 3.7.0 - (July 10, 2018)
 ------------------
 ### Changed

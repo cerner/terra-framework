@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import Button from 'terra-button';
 import SelectableList from 'terra-list/lib/SelectableList';
 import ContentContainer from 'terra-content-container';
-import Header from 'terra-clinical-header';
+import Arrange from 'terra-arrange';
 import AppDelegate from 'terra-app-delegate';
-import ActionHeader from 'terra-clinical-action-header';
+import ActionHeader from 'terra-action-header';
 import DisclosureComponent from 'terra-disclosure-manager/lib/terra-dev-site/doc/example/DisclosureComponent';
 
 const ReadonlyModal = ({ app }) => (
@@ -114,12 +114,14 @@ class AggregatorItem extends React.Component {
       <ContentContainer
         {...customProps}
         header={(
-          <Header
-            title={name} startContent={(
+          <Arrange
+            style={{ background: '#f4f4f4', padding: '0.71429rem 0.5rem', fontSize: '1.285rem' }}
+            fitStart={(
               <div style={{ marginRight: '.7rem' }}>
                 {disclose ? <Button text="Modal (Without Requesting Focus)" onClick={this.launchModal} /> : null}
               </div>
-          )}
+            )}
+            fill={<div>{name}</div>}
           />
         )}
       >
