@@ -42,13 +42,14 @@ const HeaderWireframe = () => {
 
   return (
     <div style={{ height: '60px', position: 'relative', width: '100%' }}>
-      <ResponsiveElement
-        defaultElement={tinyHeader}
-        tiny={tinyHeader}
-        small={smallHeader}
-        medium={mediumHeader}
-        style={{ height: '100%' }}
-      />
+      <div style={{ height: '100%' }}>
+        <ResponsiveElement
+          defaultElement={tinyHeader}
+          tiny={tinyHeader}
+          small={smallHeader}
+          medium={mediumHeader}
+        />
+      </div>
     </div>
   );
 };
