@@ -159,6 +159,16 @@ describe('Popup', () => {
     Terra.should.matchScreenshot({ selector: '#test-popup-area' });
   });
 
+  describe('Displays a popup bounded by width and height with no header', () => {
+    before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-popup/popup/bounded-no-header-popup');
+      browser.waitForVisible('.test-content');
+    });
+
+    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+  });
+
   describe('Verifies content and arrow classnames are applied', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
