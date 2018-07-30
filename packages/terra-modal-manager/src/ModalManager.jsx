@@ -7,7 +7,7 @@ import SlideGroup from 'terra-slide-group';
 import DisclosureManager, { availableDisclosureSizes } from 'terra-disclosure-manager';
 
 import 'terra-base/lib/baseStyles';
-import styles from './ModalManager.scss';
+import styles from './ModalManager.module.scss';
 import withModalManager from './withModalManager';
 
 const disclosureType = 'modal';

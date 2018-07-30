@@ -1,7 +1,7 @@
 {
   "name": "terra-application-name",
   "main": "lib/ApplicationName.js",
-  "version": "2.10.0",
+  "version": "2.12.0",
   "description": "Houses the title of the application, along with a logo. There are two versions - a header version and menu version. These should be used with the corresponding header and menu layouts.",
   "repository": {
     "type": "git",
@@ -30,8 +30,8 @@
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-app-delegate": "^2.5.0",
-    "terra-application-header-layout": "^2.10.0",
-    "terra-application-menu-layout": "^2.8.0",
+    "terra-application-header-layout": "^2.12.0",
+    "terra-application-menu-layout": "^2.9.0",
     "terra-doc-template": "^1.1.0",
     "terra-image": "^2.0.1",
     "terra-responsive-element": "^3.0.0"

@@ -5,7 +5,7 @@ import 'terra-base/lib/baseStyles';
 import List from 'terra-list';
 import ChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 
-import styles from './MenuItem.scss';
+import styles from './MenuItem.module.scss';
 
 const cx = classNames.bind(styles);
 

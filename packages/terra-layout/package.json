@@ -1,7 +1,7 @@
 {
   "name": "terra-layout",
   "main": "lib/Layout.js",
-  "version": "2.9.0",
+  "version": "2.11.0",
   "description": "Provides a responsive starting point for the positioning of application components.",
   "repository": {
     "type": "git",
@@ -39,7 +39,7 @@
     "terra-doc-template": "^1.1.0",
     "terra-icon": "^2.0.1",
     "terra-overlay": "^2.0.1",
-    "terra-responsive-element": "^2.0.1"
+    "terra-responsive-element": "^3.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

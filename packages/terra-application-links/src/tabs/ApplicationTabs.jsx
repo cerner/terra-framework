@@ -7,7 +7,7 @@ import 'terra-base/lib/baseStyles';
 import Tab from './_Tab';
 import TabMenu from './_TabMenu';
 import TabUtils from './_TabUtils';
-import styles from './ApplicationTabs.scss';
+import styles from './ApplicationTabs.module.scss';
 
 const cx = classNames.bind(styles);
 
