@@ -16,4 +16,5 @@ module.exports = {
   moduleNameMapper: {
     '\\.(css|scss|svg)$': 'identity-obj-proxy',
   },
+  testURL: 'http://localhost',
 };
