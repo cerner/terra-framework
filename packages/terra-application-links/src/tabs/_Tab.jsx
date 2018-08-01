@@ -10,6 +10,13 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * The optional external link. Executes on window.open();
+   */
+  externalLink: PropTypes.shape({
+    path: PropTypes.string.isRequired,
+    target: PropTypes.string,
+  }),
+  /**
    * The history as provided by the `withRouter()` HOC.
    */
   history: PropTypes.object.isRequired,
@@ -84,6 +91,14 @@ class ApplicationTab extends React.Component {
   }
 
   handleOnClick(event) {
+    if (this.props.externalLink) {
+      window.open(this.props.externalLink.path, this.props.externalLink.target || '_blank');
+      if (this.props.onTabClick) {
+        this.props.onTabClick(event);
+      }
+      return;
+    }
+
     if (!this.isCurrentPath()) {
       this.props.history.push(this.props.path);
     } else if (this.props.onTabClick) {
@@ -93,6 +108,7 @@ class ApplicationTab extends React.Component {
 
   render() {
     const {
+      externalLink,
       history,
       isCollapsed,
       location,

@@ -9,6 +9,7 @@ exports[`RoutingMenu Snapshot tests renders with given props 1`] = `
         "hasSubMenu": false,
         "key": "/1",
         "metaData": Object {
+          "externalLink": undefined,
           "hasSubMenu": false,
           "path": "/1",
         },
@@ -18,6 +19,7 @@ exports[`RoutingMenu Snapshot tests renders with given props 1`] = `
         "hasSubMenu": true,
         "key": "/2",
         "metaData": Object {
+          "externalLink": undefined,
           "hasSubMenu": true,
           "path": "/2",
         },
