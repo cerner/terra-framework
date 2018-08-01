@@ -13,6 +13,7 @@ Unreleased
 ------------------
 ### Added
 * Added `sv` and `sv-SE` translations
+* Expanded support for navigational paths.
 
 ### Changed
 * Add .module extension to SCSS file(s)

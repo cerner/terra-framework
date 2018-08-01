@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Expanded support for navigational paths.
 
 2.10.0 - (July 26, 2018)
 ------------------
