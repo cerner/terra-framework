@@ -33,8 +33,7 @@ describe('Aggregator', () => {
 
       browser.click('#test-aggregator #section1');
 
-      const timeout = browser.globals.opitions.
-      browser.waitForVisible('[class*="slide-group"] .close-disclosure');
+      browser.waitForVisible('[class*="slide-group"] .close-disclosure', 500);
 
       browser.click('#test-aggregator #section1');
     });
