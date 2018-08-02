@@ -30,7 +30,9 @@
       "react/forbid-prop-types": "false"
     },
     "settings": {
-      "polyfills": [ "promises"]
+      "polyfills": [
+        "promises"
+      ]
     }
   },
   "stylelint": {
