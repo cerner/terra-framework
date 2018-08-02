@@ -29,7 +29,7 @@ ReadonlyModal.propTypes = {
 };
 
 const propTypes = {
-  aggregatorDelegate: PropTypes.shape({}),
+  aggregatorDelegate: PropTypes.object,
   name: PropTypes.string,
   disclosureType: PropTypes.string,
   disclose: PropTypes.func,

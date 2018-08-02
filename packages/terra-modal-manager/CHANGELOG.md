@@ -3,6 +3,14 @@ Terra Modal Manager - Changelog
 
 Unreleased
 ----------
+### Changed
+* Formatting changes per eslint v4 update
+
+### Fixed
+* Lint errors regarding file path resolution
+
+### Removed
+* Unused proptype in example
 
 3.8.0 - (July 26, 2018)
 ------------------

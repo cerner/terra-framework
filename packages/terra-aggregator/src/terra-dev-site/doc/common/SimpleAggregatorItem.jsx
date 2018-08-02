@@ -4,7 +4,7 @@ import ContentContainer from 'terra-content-container';
 import SectionHeader from 'terra-section-header';
 
 const propTypes = {
-  aggregatorDelegate: PropTypes.shape({}),
+  aggregatorDelegate: PropTypes.object,
   name: PropTypes.string,
 };
 
