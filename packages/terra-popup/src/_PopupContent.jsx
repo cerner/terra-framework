@@ -130,13 +130,16 @@ class PopupContent extends React.Component {
     return value > 0 && maxValue > 0 && value >= maxValue;
   }
 
-  static cloneChildren(children, isHeightAutomatic, isWidthAutomatic, isHeightBounded, isWidthBounded) {
+  static cloneChildren(children, isHeightAutomatic, isWidthAutomatic, isHeightBounded, isWidthBounded, isHeaderDisabled) {
     const newProps = {};
     if (isHeightAutomatic) {
       newProps.isHeightBounded = isHeightBounded;
     }
     if (isWidthAutomatic) {
       newProps.isWidthBounded = isWidthBounded;
+    }
+    if (isHeightBounded && isWidthBounded && isHeaderDisabled) {
+      newProps.closeButtonRequired = 'true';
     }
     return React.Children.map(children, child => React.cloneElement(child, newProps));
   }
@@ -203,7 +206,7 @@ class PopupContent extends React.Component {
     const isWidthBounded = PopupContent.isBounded(contentWidth, contentWidthMax);
     const isFullScreen = isHeightBounded && isWidthBounded;
 
-    let content = PopupContent.cloneChildren(children, isHeightAutomatic, isWidthAutomatic, isHeightBounded, isWidthBounded);
+    let content = PopupContent.cloneChildren(children, isHeightAutomatic, isWidthAutomatic, isHeightBounded, isWidthBounded, isHeaderDisabled);
     if (isFullScreen && !isHeaderDisabled) {
       content = PopupContent.addPopupHeader(content, onRequestClose);
     }
