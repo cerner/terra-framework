@@ -52,6 +52,7 @@ class RoutingMenu extends React.Component {
       hasSubMenu: !!item.hasSubMenu,
       metaData: {
         path: item.path,
+        externalLink: item.externalLink,
         hasSubMenu: !!item.hasSubMenu,
       },
     }));
@@ -99,9 +100,16 @@ class RoutingMenu extends React.Component {
   handleMenuChange(event, data) {
     const { routingStackDelegate, layoutConfig } = this.props;
 
-    this.setState({
-      selectedChildKey: data.selectedChildKey,
-    });
+
+    let routeFunc;
+    if (data.metaData.externalLink) {
+      routeFunc = () => window.open(data.metaData.externalLink.path, data.metaData.externalLink.target || '_blank');
+    } else {
+      this.setState({
+        selectedChildKey: data.selectedChildKey,
+      });
+      routeFunc = () => routingStackDelegate.show({ path: data.metaData.path });
+    }
 
     /**
      * If the menuItem does not indicate the presence of a subsequent menu, it is assumed that a terminal
@@ -110,14 +118,14 @@ class RoutingMenu extends React.Component {
      */
     if (!data.metaData.hasSubMenu && layoutConfig.toggleMenu) {
       return layoutConfig.toggleMenu().then(() => {
-        routingStackDelegate.show({ path: data.metaData.path });
+        routeFunc();
       });
     }
 
     /**
      * Otherwise, the layout is left alone and navigation occurs immediately.
      */
-    return Promise.resolve().then(() => routingStackDelegate.show({ path: data.metaData.path }));
+    return Promise.resolve().then(() => routeFunc());
   }
 
   render() {

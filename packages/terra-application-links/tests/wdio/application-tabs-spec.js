@@ -99,4 +99,15 @@ describe('ApplicationTabs', () => {
 
     Terra.should.matchScreenshot('#test-tabs', { selector: '#test-tabs', viewports });
   });
+
+  describe('Navigates away from the site', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-application-links/application-links/application-tabs-external');
+      browser.pause(50);
+      browser.click('#test-tabs #test-button');
+      browser.pause(100);
+    });
+
+    Terra.should.matchScreenshot('External tabs', { selector: 'body', viewports });
+  });
 });
