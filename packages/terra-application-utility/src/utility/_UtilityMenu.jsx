@@ -199,6 +199,7 @@ class UtilityMenu extends React.Component {
     const item = this.getItem(key);
     if (childKeys && childKeys.length > 0) {
       this.setState({
+        // eslint-disable-next-line react/no-unused-state
         previousKey: this.push(this.state.currentKey),
         currentKey: key,
       });
@@ -250,7 +251,7 @@ class UtilityMenu extends React.Component {
       ...customProps
     } = this.props;
 
-    const currentKey = this.state.currentKey;
+    const { currentKey } = this.state;
     const currentItem = this.getItem(currentKey);
     const firstPage = currentKey === initialSelectedKey;
 
@@ -354,6 +355,7 @@ class UtilityMenu extends React.Component {
     }
 
     const menuText = intl.formatMessage({ id: 'Terra.application.utility.menu' });
+    /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
     return (
       <div ref={this.setMenuNode} style={{ height: isHeightBounded ? '100%' : 'auto', outline: 'none' }} tabIndex="0" >
         <ContentContainer
@@ -369,6 +371,7 @@ class UtilityMenu extends React.Component {
         </ContentContainer>
       </div>
     );
+    /* eslint-enable jsx-a11y/no-noninteractive-tabindex */
   }
 }
 

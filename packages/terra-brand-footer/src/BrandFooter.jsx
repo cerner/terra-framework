@@ -93,7 +93,9 @@ const defaultProps = {
   contentBottom: null,
 };
 
-const BrandFooter = ({ links, sections, isVertical, contentLeft, contentRight, contentBottom, ...customProps }) => {
+const BrandFooter = ({
+  links, sections, isVertical, contentLeft, contentRight, contentBottom, ...customProps
+}) => {
   const BrandFooterClassNames = cx([
     'brand-footer',
     customProps.className,
@@ -142,8 +144,7 @@ const BrandFooter = ({ links, sections, isVertical, contentLeft, contentRight, c
                   </a>
                 </li>
               );
-            },
-            )}
+            })}
           </ul>
         ))}
       </nav>

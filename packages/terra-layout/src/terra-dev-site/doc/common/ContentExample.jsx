@@ -10,13 +10,14 @@ const content = ({ layoutConfig }) => (
 }}
     >
       <h2 style={{ margin: '0' }}>Content</h2>
-      {layoutConfig.toggleMenu && <button
-        style={{
- display: 'inline', marginLeft: '5px', height: '25px', border: '1px dashed lightgrey',
-}}
-        onClick={layoutConfig.toggleMenu}
-      >Toggle Menu
-                                  </button>}
+      {layoutConfig.toggleMenu &&
+        <button
+          style={{
+   display: 'inline', marginLeft: '5px', height: '25px', border: '1px dashed lightgrey',
+  }}
+          onClick={layoutConfig.toggleMenu}
+        >Toggle Menu
+        </button>}
     </div>
   </div>
 );

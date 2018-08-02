@@ -20,9 +20,6 @@ class DefaultApplicationHeaderUtility extends React.Component {
     }
   }
 
-  handleOnChange(event, key) {
-  }
-
   render() {
     const accessory = <Image src={FallbackAvatar} />;
     const title = 'User Name';
@@ -32,7 +29,7 @@ class DefaultApplicationHeaderUtility extends React.Component {
         <ApplicationHeaderUtility
           id="default"
           menuItems={MockConfig(accessory)}
-          onChange={this.handleOnChange}
+          onChange={() => {}}
           onDisclose={this.onDiscloseUtility}
           title={title}
           initialSelectedKey="menu"

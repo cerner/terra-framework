@@ -45,6 +45,7 @@ const getActualBoundingClientRect = (node) => {
   };
 
   if (node.ownerDocument !== document) {
+    // eslint-disable-next-line prefer-destructuring
     const frameElement = node.ownerDocument.defaultView.frameElement;
     if (frameElement) {
       const frameRect = getActualBoundingClientRect(frameElement);
@@ -65,7 +66,7 @@ const getActualBoundingClientRect = (node) => {
  */
 const getScrollParents = (element) => {
   const computedStyle = getComputedStyle(element) || {};
-  const position = computedStyle.position;
+  const { position } = computedStyle;
   const parents = [];
 
   if (position === 'fixed') {
@@ -155,8 +156,10 @@ const getBoundingRect = (boundingElement) => {
   if (boundingElement === 'window') {
     return {
       top: 0,
+      // eslint-disable-next-line no-restricted-globals
       bottom: innerHeight,
       left: 0,
+      // eslint-disable-next-line no-restricted-globals
       right: innerWidth,
     };
   }
@@ -292,8 +295,8 @@ const rotateContentAttachment = (attachment, angle) => {
  * @ param {Object} boundingRect - The bounding rectangle.
  */
 const isValidPositions = (positions, boundingRect) => {
-  const content = positions.content;
-  const attachment = content.attachment;
+  const { content } = positions;
+  const { attachment } = content;
   const contentRect = content.rect;
 
   if (attachment.vertical === 'middle') {
@@ -566,7 +569,9 @@ const positionStyleFromBounds = (boundingRect, content, target, margin, behavior
   return {
     style: {
       position: 'absolute',
+      // eslint-disable-next-line no-restricted-globals
       left: `${Math.round(positions.content.x + pageXOffset)}px`,
+      // eslint-disable-next-line no-restricted-globals
       top: `${Math.round(positions.content.y + pageYOffset)}px`,
     },
     positions,

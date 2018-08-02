@@ -33,7 +33,7 @@ class ApplicationHeaderUtilityExample extends React.Component {
           <ApplicationHeaderUtility
             id="default"
             menuItems={MockConfig(accessory)}
-            onChange={()=>{}}
+            onChange={() => {}}
             onDisclose={this.onDiscloseUtility}
             initialSelectedKey="menu"
             title={title}

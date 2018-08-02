@@ -26,7 +26,7 @@ exports[`ApplicationMenuUtility should render with a title 1`] = `
 
 exports[`ApplicationMenuUtility should render with an accessory 1`] = `
 <InjectIntl(ApplicationHeaderUtility)
-  accessory={<Image />}
+  accessory={<image />}
   initialSelectedKey="menu"
   menuItems={Array []}
   onChange={[MockFunction]}

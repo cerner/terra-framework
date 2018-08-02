@@ -102,6 +102,7 @@ class TabMenu extends React.Component {
     for (let i = 0; i < count; i += 1) {
       const child = childArray[i];
       if (matchPath(this.props.location.pathname, { path: child.props.path })) {
+        // eslint-disable-next-line prefer-destructuring
         text = child.props.text;
         isSelected = true;
         break;

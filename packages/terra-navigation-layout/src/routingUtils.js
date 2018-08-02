@@ -100,7 +100,7 @@ const validateMatchExists = (pathname, routes) => {
   if (!routes || !pathname) {
     return false;
   }
-
+  // eslint-disable-next-line prefer-destructuring
   for (let i = 0, length = routes.length; i < length; i += 1) {
     const testRoute = routes[i];
     if (matchPath(pathname, { path: testRoute.path })) {

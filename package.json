@@ -25,7 +25,13 @@
     "extends browserslist-config-terra"
   ],
   "eslintConfig": {
-    "extends": "terra"
+    "extends": "terra",
+    "rules": {
+      "react/forbid-prop-types": "false"
+    },
+    "settings": {
+      "polyfills": [ "promises"]
+    }
   },
   "stylelint": {
     "extends": "stylelint-config-terra"

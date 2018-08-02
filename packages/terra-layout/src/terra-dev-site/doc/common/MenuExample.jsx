@@ -10,27 +10,30 @@ const menu = ({ layoutConfig }) => (
 }}
     >
       <h2 style={{ margin: '0' }}>Menu</h2>
-      {layoutConfig.toggleMenu && <button
-        style={{
- display: 'inline', marginLeft: '5px', height: '25px', border: '1px dashed lightgrey',
-}}
-        onClick={layoutConfig.toggleMenu}
-      >Toggle Menu
-                                  </button>}
-      {layoutConfig.togglePin && !layoutConfig.menuIsPinned && <button
-        style={{
- display: 'inline', marginLeft: '5px', height: '25px', border: '1px dashed lightgrey',
-}}
-        onClick={layoutConfig.togglePin}
-      >Pin
-                                                               </button>}
-      {layoutConfig.togglePin && layoutConfig.menuIsPinned && <button
-        style={{
- display: 'inline', marginLeft: '5px', height: '25px', border: '1px dashed lightgrey',
-}}
-        onClick={layoutConfig.togglePin}
-      >Unpin
-                                                              </button>}
+      {layoutConfig.toggleMenu &&
+        <button
+          style={{
+   display: 'inline', marginLeft: '5px', height: '25px', border: '1px dashed lightgrey',
+  }}
+          onClick={layoutConfig.toggleMenu}
+        >Toggle Menu
+        </button>}
+      {layoutConfig.togglePin && !layoutConfig.menuIsPinned &&
+        <button
+          style={{
+   display: 'inline', marginLeft: '5px', height: '25px', border: '1px dashed lightgrey',
+  }}
+          onClick={layoutConfig.togglePin}
+        >Pin
+        </button>}
+      {layoutConfig.togglePin && layoutConfig.menuIsPinned &&
+        <button
+          style={{
+   display: 'inline', marginLeft: '5px', height: '25px', border: '1px dashed lightgrey',
+  }}
+          onClick={layoutConfig.togglePin}
+        >Unpin
+        </button>}
     </div>
   </div>
 );

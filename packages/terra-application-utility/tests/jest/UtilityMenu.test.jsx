@@ -15,7 +15,7 @@ describe('UtilityMenu', () => {
   const locale = 'en-US';
 
   it('should render with default props', () => {
-    const wrapper = shallow(
+    const component = (
       <IntlProvider locale={locale} messages={messages}>
         <HeaderUtilityMenu
           initialSelectedKey="key"
@@ -24,12 +24,14 @@ describe('UtilityMenu', () => {
           onDisclose={mockOnDisclose}
           variant={variant}
         />
-      </IntlProvider>);
+      </IntlProvider>
+    );
+    const wrapper = shallow(component);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render with isHeightBounded', () => {
-    const wrapper = shallow(
+    const component = (
       <IntlProvider locale={locale} messages={messages}>
         <HeaderUtilityMenu
           initialSelectedKey="key"
@@ -40,11 +42,12 @@ describe('UtilityMenu', () => {
           variant={variant}
         />
       </IntlProvider>);
+    const wrapper = shallow(component);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render with onRequestClose set', () => {
-    const wrapper = shallow(
+    const component = (
       <IntlProvider locale={locale} messages={messages}>
         <HeaderUtilityMenu
           initialSelectedKey="key"
@@ -55,11 +58,12 @@ describe('UtilityMenu', () => {
           variant={variant}
         />
       </IntlProvider>);
+    const wrapper = shallow(component);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('it should pass in a custom prop', () => {
-    const wrapper = shallow(
+    const component = (
       <IntlProvider locale={locale} messages={messages}>
         <HeaderUtilityMenu
           initialSelectedKey="key"
@@ -70,6 +74,7 @@ describe('UtilityMenu', () => {
           id="test"
         />
       </IntlProvider>);
+    const wrapper = shallow(component);
     expect(wrapper).toMatchSnapshot();
   });
 });

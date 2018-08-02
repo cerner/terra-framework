@@ -130,12 +130,13 @@ class DisclosureManager extends React.Component {
   }
 
   openDisclosure(data) {
-    let dimensions = data.dimensions;
+    let { dimensions } = data;
     if (dimensions && !isValidDimensions(dimensions)) {
       // dimensions were provided, but are invalid, set the default
       dimensions = defaultDimensions;
     }
 
+    // eslint-disable-next-line prefer-destructuring
     let size = data.size;
     if (!size || (size && !isValidSize(size))) {
       // no valid size passed

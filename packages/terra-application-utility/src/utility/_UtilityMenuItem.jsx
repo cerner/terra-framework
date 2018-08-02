@@ -149,9 +149,9 @@ class UtilityMenuItem extends React.Component {
       { 'default-right-inset': !rightInset },
     ]);
 
-    /* eslint-disable jsx-a11y/no-static-element-interactions */
-    const renderBodyItem = (fill, wrapOnKeyDown, handleSelection) =>
-      (<li
+    /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-element-to-interactive-role */
+    const renderBodyItem = (fill, wrapOnKeyDown, handleSelection) => (
+      <li
         {...customProps}
         tabIndex="0"
         key={itemKey}

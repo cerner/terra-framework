@@ -43,7 +43,8 @@ class ApplicationMenuUtilityExample extends React.Component {
             variant={UtilityUtils.VARIANTS.MENU}
           />
         </div>
-        <div>{`Disclose count: ${this.state.discloseCount}`}</div>
+        <div>{`Trigger event for: ${this.state.selectedKey}.`}</div>
+        <div>{`Disclose count: ${this.state.discloseCount}.`}</div>
       </div>
     );
   }

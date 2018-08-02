@@ -13,9 +13,6 @@ class DefaultMenuUtilityMenu extends React.Component {
     };
   }
 
-  handleOnChange(event, key) {
-  }
-
   render() {
     const customComponent = <div style={{ display: 'grid' }}><Image src={FallbackAvatar} style={{ width: '1.857rem', height: '1.857rem' }} /></div>;
 
@@ -26,7 +23,7 @@ class DefaultMenuUtilityMenu extends React.Component {
           initialSelectedKey="menu"
           isHeightBounded
           menuItems={MockConfig(customComponent)}
-          onChange={this.handleOnChange}
+          onChange={() => {}}
           variant={UtilityUtils.VARIANTS.MENU}
         />
       </div>
