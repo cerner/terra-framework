@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.10.0 - (August 8, 2018)
+------------------
 ### Changed
 * Popup Content will clone prop to indicate missing close button
 
