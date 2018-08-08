@@ -9,6 +9,11 @@ Unreleased
 ### Fixed
 * Lint errors regarding file path resolution
 
+4.11.0 - (August 8, 2018)
+------------------
+### Changed
+* Minor dependency updates
+
 4.10.0 - (August 1, 2018)
 ------------------
 ### Added
