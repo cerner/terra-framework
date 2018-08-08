@@ -12,7 +12,7 @@
 | terra-doc-template | ^1.1.0 | ^16.2.0 | Provides an adjustable template for documentation pages. |
 | terra-icon | ^2.0.1 | ^16.2.0 | terra-icon |
 | terra-overlay | ^2.0.1 | ^16.2.0 | The Overlay component is a component that creates an semi-transparent overlay screen that blocks interactions with the elements underneath the display. There are two types of overlays: fullscreen and relative to its container. |
-| terra-responsive-element | ^2.0.1 | ^16.2.0 | The terra-responsive-element conditionally renders components based on viewport size |
+| terra-responsive-element | ^3.0.0 | ^16.2.0 | The terra-responsive-element conditionally renders components based on viewport size |
 
 ## devDependencies
 | Dependency | Version | React Version | Description |
