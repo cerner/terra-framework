@@ -1,9 +1,9 @@
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-duplicates, import/no-unresolved */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { name } from '../../../../package.json';
 import ReadMe from '../../../../docs/README.md';
 
+/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
 import PopupSrc from '!raw-loader!../../../../src/Popup.jsx';
 
@@ -26,6 +26,7 @@ import PopupAttachmentBehavior from '../example/PopupAttachmentBehavior';
 import PopupAttachmentBehaviorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/PopupAttachmentBehavior.jsx';
 import PopupAttachments from '../example/PopupAttachments';
 import PopupAttachmentsSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/PopupAttachments.jsx';
+/* eslint-enabled import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
   <DocTemplate

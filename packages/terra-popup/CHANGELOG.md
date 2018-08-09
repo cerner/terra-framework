@@ -7,6 +7,10 @@ Unreleased
 4.10.0 - (August 8, 2018)
 ------------------
 ### Changed
+* Formatting changes per eslint v4 update
+
+### Fixed
+* Lint errors regarding file path resolution
 * Popup Content will clone prop to indicate missing close button
 
 4.9.0 - (July 26, 2018)

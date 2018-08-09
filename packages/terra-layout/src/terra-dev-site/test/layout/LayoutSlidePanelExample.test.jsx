@@ -19,7 +19,10 @@ class LayoutSlidePanelExample extends React.Component {
       <div style={{ height: '768px', width: '100%', position: 'relative' }}>
         <LayoutSlidePanel
           panelContent={
-            <div style={{ height: '100%', width: '100%', position: 'relative', backgroundColor: 'red' }}>
+            <div style={{
+ height: '100%', width: '100%', position: 'relative', backgroundColor: 'red',
+}}
+            >
               <button id="test-toggle-2" onClick={this.toggleMenu}>toggle</button>
             </div>
           }
@@ -31,7 +34,10 @@ class LayoutSlidePanelExample extends React.Component {
           onToggle={() => {}}
           toggleText="toggle text"
         >
-          <div style={{ height: '100%', width: '100%', position: 'relative', backgroundColor: 'blue' }}>
+          <div style={{
+ height: '100%', width: '100%', position: 'relative', backgroundColor: 'blue',
+}}
+          >
             <button id="test-toggle-1" onClick={this.toggleMenu}>
               toggle
             </button>

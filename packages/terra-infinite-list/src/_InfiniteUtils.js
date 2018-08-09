@@ -90,8 +90,8 @@ const getHiddenItems = (scrollItems, contentData, previousTopIndex, previousBott
     return { topHiddenItem: { index: -1, height: -1 }, bottomHiddenItem: { index: -1, height: -1 } };
   }
 
-  const validTop = contentData.validTop;
-  const validBottom = contentData.validBottom;
+  const { validTop, validBottom } = contentData;
+
   let topHiddenItem;
   if (validTop > 0) {
     let nextIndex = previousTopIndex;
@@ -130,9 +130,8 @@ const getHiddenItems = (scrollItems, contentData, previousTopIndex, previousBott
  * @param {node} contentNode - Html node of the scroll parent.
  */
 const getContentData = (contentNode) => {
-  const scrollTop = contentNode.scrollTop;
-  const scrollHeight = contentNode.scrollHeight;
-  const clientHeight = contentNode.clientHeight;
+  const { scrollTop, scrollHeight, clientHeight } = contentNode;
+
   return {
     scrollTop,
     scrollHeight,

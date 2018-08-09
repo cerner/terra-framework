@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import AppDelegate from 'terra-app-delegate';
 
 import ModalManager from 'terra-modal-manager';
@@ -9,10 +8,6 @@ import SlidePanelManager from 'terra-slide-panel-manager';
 import AggregatorContainer from 'terra-aggregator/lib/terra-dev-site/doc/common/AggregatorContainer';
 import AggregatorItem from 'terra-aggregator/lib/terra-dev-site/doc/common/AggregatorItem';
 /* eslint-enable import/no-unresolved, import/extensions */
-
-const propTypes = {
-  size: PropTypes.string,
-};
 
 const items = Object.freeze([{
   key: 'SECTION_0',
@@ -57,7 +52,5 @@ const ModalBypassExample = () => (
     </ModalManager>
   </div>
 );
-
-ModalBypassExample.propTypes = propTypes;
 
 export default ModalBypassExample;

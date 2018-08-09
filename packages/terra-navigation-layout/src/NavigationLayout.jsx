@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  withRouter,
-} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import AppDelegate from 'terra-app-delegate';
 import Layout from 'terra-layout';
@@ -14,7 +12,9 @@ import { reduceRouteConfig, validateMatchExists } from './routingUtils';
 
 const getBreakpointSize = (queryWidth) => {
   const width = queryWidth || window.innerWidth;
-  const { small, medium, large, huge } = breakpoints;
+  const {
+    small, medium, large, huge,
+  } = breakpoints;
 
   if (width >= huge) {
     return 'huge';

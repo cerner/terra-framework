@@ -41,6 +41,7 @@ class DisclosureComponent extends React.Component {
   checkLockState() {
     if (this.state.text && this.state.text.length) {
       return new Promise((resolve, reject) => {
+        // eslint-disable-next-line no-restricted-globals
         if (!confirm(`${this.props.name} has unsaved changes that will be lost. Do you wish to continue?`)) { // eslint-disable-line no-alert
           reject();
           return;

@@ -46,75 +46,82 @@ describe('NavigationLayout', () => {
   });
 
   it('should render a NavigationLayout with provided components', () => {
-    const wrapper = shallow(<NavigationLayout.WrappedComponent
-      location={{
-        pathname: '/a/b/c',
-      }}
-      match={{}}
-      history={{}}
-      config={{}}
-      header={<Header />}
-      menu={<Menu />}
-    >
-      <Content />
-    </NavigationLayout.WrappedComponent>);
+    const component = (
+      <NavigationLayout.WrappedComponent
+        location={{
+          pathname: '/a/b/c',
+        }}
+        match={{}}
+        history={{}}
+        config={{}}
+        header={<Header />}
+        menu={<Menu />}
+      >
+        <Content />
+      </NavigationLayout.WrappedComponent>);
+
+    const wrapper = shallow(component);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render a NavigationLayout with provided components and forward relevant config', () => {
-    const wrapper = shallow(<NavigationLayout.WrappedComponent
-      location={{
-        pathname: '/a/b/c',
-      }}
-      match={{}}
-      history={{}}
-      app={AppDelegate.create({})}
-      config={{
-        header: {
-          '/': {
-            path: '/',
-            component: {
-              default: {
-                componentClass: ConfigComponent,
-                props: {
-                  type: 'header',
+    const component = (
+      <NavigationLayout.WrappedComponent
+        location={{
+          pathname: '/a/b/c',
+        }}
+        match={{}}
+        history={{}}
+        app={AppDelegate.create({})}
+        config={{
+          header: {
+            '/': {
+              path: '/',
+              component: {
+                default: {
+                  componentClass: ConfigComponent,
+                  props: {
+                    type: 'header',
+                  },
                 },
               },
             },
           },
-        },
-        menu: {
-          '/': {
-            path: '/',
-            component: {
-              default: {
-                componentClass: ConfigComponent,
-                props: {
-                  type: 'menu',
+          menu: {
+            '/': {
+              path: '/',
+              component: {
+                default: {
+                  componentClass: ConfigComponent,
+                  props: {
+                    type: 'menu',
+                  },
                 },
               },
             },
           },
-        },
-        content: {
-          '/': {
-            path: '/',
-            component: {
-              default: {
-                componentClass: ConfigComponent,
-                props: {
-                  type: 'content',
+          content: {
+            '/': {
+              path: '/',
+              component: {
+                default: {
+                  componentClass: ConfigComponent,
+                  props: {
+                    type: 'content',
+                  },
                 },
               },
             },
           },
-        },
-      }}
-      header={<Header />}
-      menu={<Menu />}
-    >
-      <Content />
-    </NavigationLayout.WrappedComponent>);
+        }}
+        header={<Header />}
+        menu={<Menu />}
+      >
+        <Content />
+      </NavigationLayout.WrappedComponent>
+    );
+
+    const wrapper = shallow(component);
     expect(wrapper).toMatchSnapshot();
   });
 

@@ -48,7 +48,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  menuItems: [],
   title: '',
 };
 

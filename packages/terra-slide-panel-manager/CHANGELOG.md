@@ -3,6 +3,11 @@ ChangeLog
 
 Unreleased
 -----------------
+### Changed
+* Formatting changes per eslint v4 update
+
+### Fixed
+* Lint errors regarding file path resolution
 
 2.12.0 - (July 25, 2018)
 ------------------

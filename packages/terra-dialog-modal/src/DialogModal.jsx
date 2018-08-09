@@ -17,19 +17,19 @@ const widthFromSize = {
 };
 
 const propTypes = {
- /**
+  /**
   * Aria Label of the dialog modal.
   */
   ariaLabel: PropTypes.string.isRequired,
- /**
+  /**
   * Header of the dialog modal.
   */
   header: PropTypes.element.isRequired,
- /**
+  /**
   * Footer of the dialog modal.
   */
   footer: PropTypes.element.isRequired,
- /**
+  /**
   * Contents of the dialog modal.
   */
   children: PropTypes.node,
@@ -94,7 +94,8 @@ class DialogModal extends React.Component {
   }
 
   render() {
-    const { header,
+    const {
+      header,
       footer,
       children,
       onRequestClose,

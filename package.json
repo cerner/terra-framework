@@ -21,6 +21,23 @@
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
+  "browserslist": [
+    "extends browserslist-config-terra"
+  ],
+  "eslintConfig": {
+    "extends": "terra",
+    "rules": {
+      "react/forbid-prop-types": "false"
+    },
+    "settings": {
+      "polyfills": [
+        "promises"
+      ]
+    }
+  },
+  "stylelint": {
+    "extends": "stylelint-config-terra"
+  },
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "bootstrap:hoist": "lerna bootstrap --hoist",
@@ -63,16 +80,14 @@
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "browserslist-config-terra": "^1.0.0",
     "check-installed-dependencies": "^1.0.0",
     "danger": "^3.7.14",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.2.2",
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.9.0",
+    "eslint": "^4.19.1",
+    "eslint-config-terra": "^1.0.0",
     "gh-pages": "^1.1.0",
     "glob": "^7.1.1",
     "identity-obj-proxy": "^3.0.0",
@@ -88,10 +103,7 @@
     "rimraf": "^2.6.1",
     "shelljs": "^0.8.2",
     "stylelint": "^9.2.0",
-    "stylelint-config-sass-guidelines": "^5.0.0",
-    "stylelint-order": "^0.8.1",
-    "stylelint-scss": "^3.1.0",
-    "stylelint-suitcss": "^3.0.0",
+    "stylelint-config-terra": "^1.0.0",
     "terra-dev-site": "^2.0.0",
     "terra-toolkit": "^4.5.0",
     "xfc": "^1.2.1"

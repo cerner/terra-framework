@@ -32,7 +32,6 @@ const propTypes = {
   aggregatorDelegate: PropTypes.object,
   name: PropTypes.string,
   disclosureType: PropTypes.string,
-
   disclose: PropTypes.func,
   registerDismissCheck: PropTypes.func,
   requestDisclosureFocus: PropTypes.func,
@@ -70,21 +69,21 @@ class AggregatorItem extends React.Component {
     aggregatorDelegate.requestFocus({
       index,
     })
-    .then(({ disclose }) => {
-      if (disclose) {
-        disclose({
-          preferredType: this.props.disclosureType,
-          size: disclosureSizeForIndex[index],
-          content: {
-            key: `Nested ${name}`,
-            component: <DisclosureComponent name={`Nested ${name}`} disclosureType={this.props.disclosureType} />,
-          },
-        });
-      }
-    })
-    .catch((error) => {
-      console.log(`Section - Selection denied - ${error}`); // eslint-disable-line no-console
-    });
+      .then(({ disclose }) => {
+        if (disclose) {
+          disclose({
+            preferredType: this.props.disclosureType,
+            size: disclosureSizeForIndex[index],
+            content: {
+              key: `Nested ${name}`,
+              component: <DisclosureComponent name={`Nested ${name}`} disclosureType={this.props.disclosureType} />,
+            },
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(`Section - Selection denied - ${error}`); // eslint-disable-line no-console
+      });
   }
 
   launchModal() {
@@ -103,7 +102,9 @@ class AggregatorItem extends React.Component {
   }
 
   render() {
-    const { name, disclosureType, disclose, aggregatorDelegate, requestDisclosureFocus, releaseDisclosureFocus, registerDismissCheck, ...customProps } = this.props;
+    const {
+      name, disclosureType, disclose, aggregatorDelegate, requestDisclosureFocus, releaseDisclosureFocus, registerDismissCheck, ...customProps
+    } = this.props;
 
     let selectedIndex;
     if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState && aggregatorDelegate.itemState.index !== undefined) {

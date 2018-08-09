@@ -8,10 +8,8 @@ class DefaultApplicationHeaderUtility extends React.Component {
   constructor(props) {
     super(props);
     this.onDiscloseUtility = this.onDiscloseUtility.bind(this);
-    this.handleOnChange = this.handleOnChange.bind(this);
     this.state = {
       utilityComponent: false,
-      selectedKey: null,
     };
   }
 
@@ -19,10 +17,6 @@ class DefaultApplicationHeaderUtility extends React.Component {
     if (utility) {
       this.setState({ utilityComponent: !this.state.utilityComponent });
     }
-  }
-
-  handleOnChange(event, key) {
-    this.setState({ selectedKey: key });
   }
 
   render() {
@@ -34,7 +28,7 @@ class DefaultApplicationHeaderUtility extends React.Component {
         <ApplicationHeaderUtility
           id="default"
           menuItems={MockConfig(accessory)}
-          onChange={this.handleOnChange}
+          onChange={() => {}}
           onDisclose={this.onDiscloseUtility}
           title={title}
           initialSelectedKey="menu"

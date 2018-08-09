@@ -180,7 +180,7 @@ class UtilityMenu extends React.Component {
 
   childrenHasChevron(item) {
     const childrenHasChevron = item.childKeys.some((key) => {
-      const childKeys = this.getItem(key).childKeys;
+      const { childKeys } = this.getItem(key);
       return childKeys && childKeys.length > 0 && this.getItem(key).contentLocation !== Utils.LOCATIONS.FOOTER;
     });
     return childrenHasChevron;
@@ -195,10 +195,11 @@ class UtilityMenu extends React.Component {
    * @param {*} key
    */
   handleOnChange(event, key) {
-    const childKeys = this.getItem(key).childKeys;
+    const { childKeys } = this.getItem(key);
     const item = this.getItem(key);
     if (childKeys && childKeys.length > 0) {
       this.setState({
+        // eslint-disable-next-line react/no-unused-state
         previousKey: this.push(this.state.currentKey),
         currentKey: key,
       });
@@ -250,7 +251,7 @@ class UtilityMenu extends React.Component {
       ...customProps
     } = this.props;
 
-    const currentKey = this.state.currentKey;
+    const { currentKey } = this.state;
     const currentItem = this.getItem(currentKey);
     const firstPage = currentKey === initialSelectedKey;
 
@@ -354,6 +355,7 @@ class UtilityMenu extends React.Component {
     }
 
     const menuText = intl.formatMessage({ id: 'Terra.application.utility.menu' });
+    /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
     return (
       <div ref={this.setMenuNode} style={{ height: isHeightBounded ? '100%' : 'auto', outline: 'none' }} tabIndex="0" >
         <ContentContainer
@@ -362,13 +364,14 @@ class UtilityMenu extends React.Component {
           footer={footer}
           fill={isHeightBounded}
           className={menuClassNames}
-          role={'navigation'}
+          role="navigation"
           aria-label={menuText}
         >
           {this.buildListContent(currentItem)}
         </ContentContainer>
       </div>
     );
+    /* eslint-enable jsx-a11y/no-noninteractive-tabindex */
   }
 }
 

@@ -3,6 +3,9 @@ ChangeLog
 ### Changed
 * Clean up dependencies
 
+### Fix
+* Lint errors regarding file path resolution
+
 Unreleased
 -----------------
 * Initial stable release

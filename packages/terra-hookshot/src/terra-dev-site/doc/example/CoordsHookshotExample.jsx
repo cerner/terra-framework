@@ -127,7 +127,14 @@ class HookshotStandard extends React.Component {
           <br />
           <br />
         </form>
-        <div onClick={this.handleRegionClick} style={{ border: '1px dashed black', backgroundColor: 'aliceblue', height: '300px', width: '100%' }} ref={this.setParentNode}>
+        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
+        <div
+          onClick={this.handleRegionClick}
+          style={{
+            border: '1px dashed black', backgroundColor: 'aliceblue', height: '300px', width: '100%',
+          }}
+          ref={this.setParentNode}
+        >
           Click Inside
           <Hookshot
             attachmentBehavior={this.state.hookshotAttachmentBehavior}

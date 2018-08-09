@@ -58,22 +58,6 @@ class RoutingMenu extends React.Component {
     }));
   }
 
-  /**
-   * This function compares the given path against the paths of the given menuItems. If a match
-   * (partial or otherwise) is detected, that path is returned. If no match is detected, `undefined` is returned.
-   * @param {String} path is the path to be matched against
-   * @param {Array} menuItems is the Array of menuItem objects as specified by the RoutingMenu's proptype definition.
-   */
-  static getSelectedChildKey(path, menuItems) {
-    for (let i = 0, itemCount = menuItems.length; i < itemCount; i += 1) {
-      const navItem = menuItems[i];
-      if (navItem.path && matchPath(path, { path: navItem.path })) {
-        return navItem.path;
-      }
-    }
-    return undefined;
-  }
-
   constructor(props) {
     super(props);
 
@@ -95,6 +79,22 @@ class RoutingMenu extends React.Component {
     this.setState({
       selectedChildKey: RoutingMenu.getSelectedChildKey(nextProps.location.pathname, nextProps.menuItems),
     });
+  }
+
+  /**
+   * This function compares the given path against the paths of the given menuItems. If a match
+   * (partial or otherwise) is detected, that path is returned. If no match is detected, `undefined` is returned.
+   * @param {String} path is the path to be matched against
+   * @param {Array} menuItems is the Array of menuItem objects as specified by the RoutingMenu's proptype definition.
+   */
+  static getSelectedChildKey(path, menuItems) {
+    for (let i = 0, itemCount = menuItems.length; i < itemCount; i += 1) {
+      const navItem = menuItems[i];
+      if (navItem.path && matchPath(path, { path: navItem.path })) {
+        return navItem.path;
+      }
+    }
+    return undefined;
   }
 
   handleMenuChange(event, data) {

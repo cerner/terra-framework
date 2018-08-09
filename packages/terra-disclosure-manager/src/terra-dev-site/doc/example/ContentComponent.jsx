@@ -112,7 +112,7 @@ class ContentComponent extends React.Component {
       <ContentContainer
         header={(
           <ActionHeader
-            title={'Manager Child'}
+            title="Manager Child"
           />
         )}
       >

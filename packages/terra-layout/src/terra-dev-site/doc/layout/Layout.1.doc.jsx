@@ -1,9 +1,9 @@
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-duplicates, import/no-unresolved */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { name } from '../../../../package.json';
 import ReadMe from '../../../../docs/README.md';
 
+/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
 import LayoutSrc from '!raw-loader!../../../../src/Layout.jsx';
 
@@ -14,6 +14,7 @@ import LayoutMenuDisabled from '../example/LayoutMenuDisabled';
 import LayoutMenuDisabledSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/LayoutMenuDisabled.jsx';
 import LayoutNoHeader from '../example/LayoutNoHeader';
 import LayoutNoHeaderSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/LayoutNoHeader.jsx';
+/* eslint-enabled import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
   <DocTemplate

@@ -8,14 +8,14 @@ describe('UtilityButton', () => {
   const mockOnChange = jest.fn();
   const mockOnDisclose = jest.fn();
   const mockOnRequestClose = jest.fn();
-  const accessory = <Image />;
+  const accessory = <image />;
   const initialSelectedKey = 'menu';
   const title = 'name';
   const variant = 'header';
   const locale = 'en-US';
 
   it('should render with default props', () => {
-    const wrapper = shallow(
+    const component = (
       <IntlProvider locale={locale} messages={messages}>
         <UtilityButton
           menuItems={[]}
@@ -25,13 +25,14 @@ describe('UtilityButton', () => {
           variant={variant}
           initialSelectedKey={initialSelectedKey}
         />
-      </IntlProvider>,
+      </IntlProvider>
     );
+    const wrapper = shallow(component);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render with a title', () => {
-    const wrapper = shallow(
+    const component = (
       <IntlProvider locale={locale} messages={messages}>
         <UtilityButton
           menuItems={[]}
@@ -42,13 +43,14 @@ describe('UtilityButton', () => {
           variant={variant}
           initialSelectedKey={initialSelectedKey}
         />
-      </IntlProvider>,
+      </IntlProvider>
     );
+    const wrapper = shallow(component);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render with an accessory', () => {
-    const wrapper = shallow(
+    const component = (
       <IntlProvider locale={locale} messages={messages}>
         <UtilityButton
           menuItems={[]}
@@ -59,13 +61,14 @@ describe('UtilityButton', () => {
           variant={variant}
           initialSelectedKey={initialSelectedKey}
         />
-      </IntlProvider>,
+      </IntlProvider>
     );
+    const wrapper = shallow(component);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render with menu items', () => {
-    const wrapper = shallow(
+    const component = (
       <IntlProvider locale={locale} messages={messages}>
         <UtilityButton
           menuItems={MockConfig()}
@@ -75,13 +78,14 @@ describe('UtilityButton', () => {
           variant={variant}
           initialSelectedKey={initialSelectedKey}
         />
-      </IntlProvider>,
+      </IntlProvider>
     );
+    const wrapper = shallow(component);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('it should pass in a custom prop', () => {
-    const wrapper = shallow(
+    const component = (
       <IntlProvider locale={locale} messages={messages}>
         <UtilityButton
           menuItems={[]}
@@ -92,8 +96,9 @@ describe('UtilityButton', () => {
           initialSelectedKey={initialSelectedKey}
           id="test"
         />
-      </IntlProvider>,
+      </IntlProvider>
     );
+    const wrapper = shallow(component);
     expect(wrapper).toMatchSnapshot();
   });
 });

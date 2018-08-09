@@ -1,13 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 /* eslint-disable import/no-unresolved, import/extensions */
 import Aggregator from 'terra-aggregator/lib/Aggregator';
 import AggregatorItem from 'terra-aggregator/lib/terra-dev-site/doc/common/AggregatorItem';
 /* eslint-enable import/no-unresolved, import/extensions */
-
-const propTypes = {
-  size: PropTypes.string,
-};
 
 const items = Object.freeze([{
   key: 'SECTION_0',
@@ -46,7 +42,5 @@ class StandaloneAggregatorExample extends React.Component {
     return body;
   }
 }
-
-StandaloneAggregatorExample.propTypes = propTypes;
 
 export default StandaloneAggregatorExample;

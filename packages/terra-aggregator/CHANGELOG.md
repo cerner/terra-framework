@@ -3,6 +3,14 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Formatting changes per eslint v4 update
+
+### Fixed
+* Lint errors regarding file path resolution
+
+### Removed
+* Removed unused props and state in examples
 
 3.9.0 - (July 26, 2018)
 ------------------

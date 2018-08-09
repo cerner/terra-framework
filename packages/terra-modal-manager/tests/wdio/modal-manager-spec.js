@@ -10,7 +10,7 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Default', () => {
       beforeEach(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default')
-          .click('#root-component .disclose'));
+        .click('#root-component .disclose'));
 
       Terra.should.matchScreenshot({ selector });
       Terra.should.beAccessible();
@@ -28,42 +28,42 @@ viewports.forEach((viewport) => {
 
     describe('Disclose Tiny', () => {
       beforeEach(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default')
-          .click('#root-component .disclose-tiny'));
+        .click('#root-component .disclose-tiny'));
 
       Terra.should.matchScreenshot({ selector });
     });
 
     describe('Disclose Small', () => {
       beforeEach(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default')
-          .click('#root-component .disclose-small'));
+        .click('#root-component .disclose-small'));
 
       Terra.should.matchScreenshot({ selector });
     });
 
     describe('Disclose Medium', () => {
       beforeEach(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default')
-          .click('#root-component .disclose-medium'));
+        .click('#root-component .disclose-medium'));
 
       Terra.should.matchScreenshot({ selector });
     });
 
     describe('Disclose Large', () => {
       beforeEach(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default')
-          .click('#root-component .disclose-large'));
+        .click('#root-component .disclose-large'));
 
       Terra.should.matchScreenshot({ selector });
     });
 
     describe('Disclose Huge', () => {
       beforeEach(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default')
-          .click('#root-component .disclose-huge'));
+        .click('#root-component .disclose-huge'));
 
       Terra.should.matchScreenshot({ selector });
     });
 
     describe('Disclose Fullscreen', () => {
       beforeEach(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default')
-          .click('#root-component .disclose-fullscreen'));
+        .click('#root-component .disclose-fullscreen'));
 
       Terra.should.matchScreenshot({ selector });
     });

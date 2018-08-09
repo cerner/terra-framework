@@ -48,7 +48,9 @@ class ApplicationMenu extends React.Component {
         footer={(
           <div style={{ padding: '10px', borderTop: '1px solid lightgrey' }}>
             <Button
-              text="Custom Event 1" isBlock onClick={() => {
+              text="Custom Event 1"
+              isBlock
+              onClick={() => {
                 const evt = document.createEvent('CustomEvent');
                 evt.initCustomEvent('applicationMenu.itemSelected', false, false, 'Custom Event 1');
                 document.dispatchEvent(evt);
@@ -60,7 +62,9 @@ class ApplicationMenu extends React.Component {
               style={{ marginBottom: '5px' }}
             />
             <Button
-              text="Custom Event 2" isBlock onClick={() => {
+              text="Custom Event 2"
+              isBlock
+              onClick={() => {
                 const evt = document.createEvent('CustomEvent');
                 evt.initCustomEvent('applicationMenu.itemSelected', false, false, 'Custom Event 2');
                 document.dispatchEvent(evt);

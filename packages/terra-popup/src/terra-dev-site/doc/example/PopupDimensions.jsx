@@ -61,14 +61,14 @@ class PopupDimensions extends React.Component {
         <form>
           <label htmlFor={this.getId('popupContentHeight')}>Pop Content Height</label>
           <select id={this.getId('popupContentHeight')} name="popupContentHeight" value={this.state.popupContentHeight} onChange={this.handleSelectChange}>
-            <option value={'Default'}>Default</option>
+            <option value="Default">Default</option>
             {PopupDimensions.generateOptions(HEIGHT_KEYS)}
           </select>
           <br />
           <br />
           <label htmlFor={this.getId('popupContentWidth')}>Pop Content Width</label>
           <select id={this.getId('popupContentWidth')} name="popupContentWidth" value={this.state.popupContentWidth} onChange={this.handleSelectChange}>
-            <option value={'Default'}>Default</option>
+            <option value="Default">Default</option>
             {PopupDimensions.generateOptions(WIDTH_KEYS)}
           </select>
           <br />

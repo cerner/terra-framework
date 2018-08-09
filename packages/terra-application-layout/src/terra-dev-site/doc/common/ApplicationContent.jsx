@@ -68,7 +68,9 @@ class ApplicationContent extends React.Component {
   }
 
   render() {
-    const { layoutConfig, app, basePath, contentName, noMenu, showDummyContent } = this.props;
+    const {
+      layoutConfig, app, basePath, contentName, noMenu, showDummyContent,
+    } = this.props;
 
     let bodyContent;
     if (showDummyContent) {
@@ -125,7 +127,8 @@ class ApplicationContent extends React.Component {
           <hr />
           <p>The ApplicationLayout ensures all content and menu components receive an AppDelegate prop (as <b>app</b>), with ModalManager support included by default. The ApplicationLayout can be wrapped in additional DisclosureManagers to provide additional disclosure capabilities.</p>
           <Button
-            text="Launch Modal" onClick={() => {
+            text="Launch Modal"
+            onClick={() => {
               app.disclose({
                 preferredType: 'modal',
                 size: 'medium',

@@ -95,30 +95,6 @@ const defaultProps = {
 };
 
 class PopupContent extends React.Component {
-  static getDimensionStyle(value, maxValue, isAutomatic) {
-    if (value > 0) {
-      if (maxValue > 0 && value >= maxValue) {
-        return `${maxValue.toString()}px`;
-      } else if (!isAutomatic) {
-        return `${value.toString()}px`;
-      }
-    }
-    return null;
-  }
-
-  static getContentStyle(height, maxHeight, width, maxWidth, isHeightAutomatic, isWidthAutomatic) {
-    const heightStyle = PopupContent.getDimensionStyle(height, maxHeight, isHeightAutomatic);
-    const widthStyle = PopupContent.getDimensionStyle(width, maxWidth, isWidthAutomatic);
-    const contentStyle = {};
-    if (heightStyle) {
-      contentStyle.height = heightStyle;
-    }
-    if (widthStyle) {
-      contentStyle.width = widthStyle;
-    }
-    return contentStyle;
-  }
-
   static addPopupHeader(children, onRequestClose) {
     const icon = <span className={cx('close-icon')} />;
     const button = <Button variant="utility" className={cx('close')} isIconOnly icon={icon} onClick={onRequestClose} />;
@@ -162,6 +138,30 @@ class PopupContent extends React.Component {
     if (this.props.releaseFocus) {
       this.props.releaseFocus();
     }
+  }
+
+  static getContentStyle(height, maxHeight, width, maxWidth, isHeightAutomatic, isWidthAutomatic) {
+    const heightStyle = PopupContent.getDimensionStyle(height, maxHeight, isHeightAutomatic);
+    const widthStyle = PopupContent.getDimensionStyle(width, maxWidth, isWidthAutomatic);
+    const contentStyle = {};
+    if (heightStyle) {
+      contentStyle.height = heightStyle;
+    }
+    if (widthStyle) {
+      contentStyle.width = widthStyle;
+    }
+    return contentStyle;
+  }
+
+  static getDimensionStyle(value, maxValue, isAutomatic) {
+    if (value > 0) {
+      if (maxValue > 0 && value >= maxValue) {
+        return `${maxValue.toString()}px`;
+      } else if (!isAutomatic) {
+        return `${value.toString()}px`;
+      }
+    }
+    return null;
   }
 
   handleOnResize(event) {

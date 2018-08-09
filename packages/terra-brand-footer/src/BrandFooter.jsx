@@ -7,26 +7,26 @@ import styles from './BrandFooter.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
- /**
+  /**
   * An array of navigation links with each element specifiying text, href and target keys with appropriate values.
   *
   * **DEPRECATED**: Use `sections` prop instead.
   */
   links: PropTypes.arrayOf(PropTypes.shape({
-   /**
+    /**
     * Text to be disaplyed as navigational link.
     */
     text: PropTypes.string,
-   /**
+    /**
     * URL of the navigational link.
     */
     href: PropTypes.string,
-   /**
+    /**
     * Attribute to open on same or different tab on clicking the navigational link.
     */
     target: PropTypes.string,
   })),
- /**
+  /**
   * A set of navigation links to be displayed with optional headers. Will override the `links` prop if both are provided.
   *
   * ```
@@ -44,41 +44,41 @@ const propTypes = {
   * ```
   */
   sections: PropTypes.arrayOf(PropTypes.shape({
-   /**
+    /**
     * The optional text to display as a header
     */
     headerText: PropTypes.string,
-   /**
+    /**
     * An array of navigation links with each element specifiying text, href and target keys with appropriate values.
     */
     links: PropTypes.arrayOf(PropTypes.shape({
-     /**
+      /**
       * Text to be disaplyed as navigational link.
       */
       text: PropTypes.string.isRequired,
-     /**
+      /**
       * URL of the navigational link.
       */
       href: PropTypes.string.isRequired,
-     /**
+      /**
       * Attribute to open on same or different tab on clicking the navigational link.
       */
       target: PropTypes.string,
     })),
   })),
- /**
+  /**
   * If true link sections will be laid out from top to bottom, then left to right if the max width is reached
   */
   isVertical: PropTypes.bool,
- /**
+  /**
   * The content to be displayed in left side area of the footer.
   */
   contentLeft: PropTypes.node,
- /**
+  /**
   * The content to be displayed in right side area of the footer.
   */
   contentRight: PropTypes.node,
- /**
+  /**
   * The content to be displayed in bottom area of the footer.
   */
   contentBottom: PropTypes.node,
@@ -93,7 +93,9 @@ const defaultProps = {
   contentBottom: null,
 };
 
-const BrandFooter = ({ links, sections, isVertical, contentLeft, contentRight, contentBottom, ...customProps }) => {
+const BrandFooter = ({
+  links, sections, isVertical, contentLeft, contentRight, contentBottom, ...customProps
+}) => {
   const BrandFooterClassNames = cx([
     'brand-footer',
     customProps.className,
@@ -142,8 +144,7 @@ const BrandFooter = ({ links, sections, isVertical, contentLeft, contentRight, c
                   </a>
                 </li>
               );
-            },
-            )}
+            })}
           </ul>
         ))}
       </nav>

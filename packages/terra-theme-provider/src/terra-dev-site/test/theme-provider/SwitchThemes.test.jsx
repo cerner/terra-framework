@@ -2,7 +2,6 @@ import React from 'react';
 import ThemeProvider from '../../../ThemeProvider';
 import MockThemeComponent from '../common/MockThemeComponent';
 
-
 class SwitchThemes extends React.Component {
   constructor(props) {
     super(props);
@@ -20,7 +19,7 @@ class SwitchThemes extends React.Component {
     return (
       <div>
         <form>
-          <label htmlFor="themeName">Theme Switcher</label>
+          <label htmlFor="theme">Theme Switcher</label>
           <select id="theme" name="themeName" value={this.state.themeName} onChange={this.handleSelectChange}>
             <option value="">Default Theme</option>
             <option value={ThemeProvider.Opts.Themes.MOCK}>Mock Theme</option>

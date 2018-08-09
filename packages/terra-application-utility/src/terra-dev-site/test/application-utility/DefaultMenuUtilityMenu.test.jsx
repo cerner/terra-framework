@@ -8,14 +8,8 @@ import UtilityMenu from '../../../utility/_UtilityMenu';
 class DefaultMenuUtilityMenu extends React.Component {
   constructor(props) {
     super(props);
-    this.handleOnChange = this.handleOnChange.bind(this);
     this.state = {
-      selectedKey: null,
     };
-  }
-
-  handleOnChange(event, key) {
-    this.setState({ selectedKey: key });
   }
 
   render() {
@@ -28,7 +22,7 @@ class DefaultMenuUtilityMenu extends React.Component {
           initialSelectedKey="menu"
           isHeightBounded
           menuItems={MockConfig(customComponent)}
-          onChange={this.handleOnChange}
+          onChange={() => {}}
           variant={UtilityUtils.VARIANTS.MENU}
         />
       </div>

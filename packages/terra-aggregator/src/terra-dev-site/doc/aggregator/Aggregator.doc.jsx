@@ -1,9 +1,9 @@
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-duplicates, import/no-unresolved */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { name } from '../../../../package.json';
 import ReadMe from '../../../../docs/README.md';
 
+/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
 import AggregatorSrc from '!raw-loader!../../../../src/Aggregator.jsx';
 
@@ -18,6 +18,7 @@ import CombinedDisclosureExample from '../example/CombinedDisclosureExample';
 import CombinedDisclosureExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/CombinedDisclosureExample.jsx';
 import DisclosureBypassExample from '../example/DisclosureBypassExample';
 import DisclosureBypassExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DisclosureBypassExample.jsx';
+/* eslint-enabled import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
   <DocTemplate

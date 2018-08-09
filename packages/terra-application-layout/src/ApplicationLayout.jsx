@@ -201,7 +201,9 @@ class ApplicationLayout extends React.Component {
   }
 
   render() {
-    const { app, nameConfig, utilityConfig, navigationAlignment, navigationItems, indexPath, extensions } = this.props;
+    const {
+      app, nameConfig, utilityConfig, navigationAlignment, navigationItems, indexPath, extensions,
+    } = this.props;
     const { applicationLayoutRoutingConfig } = this.state;
 
     return (

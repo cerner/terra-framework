@@ -55,7 +55,9 @@ class ThemeProvider extends React.Component {
   }
 
   render() {
-    const { themeName, isGlobalTheme, children, ...customProps } = this.props;
+    const {
+      themeName, isGlobalTheme, children, ...customProps
+    } = this.props;
     return (<div {...customProps} className={cx(themeName, customProps.className)}>{children}</div>);
   }
 }

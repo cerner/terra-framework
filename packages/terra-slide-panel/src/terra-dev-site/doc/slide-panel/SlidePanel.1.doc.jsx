@@ -1,9 +1,9 @@
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-duplicates, import/no-unresolved */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { name } from '../../../../package.json';
 import ReadMe from '../../../../docs/README.md';
 
+/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
 import SlidePanelSrc from '!raw-loader!../../../../src/SlidePanel';
 import DefaultSlidePanelSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DefaultSlidePanel.jsx';
@@ -28,6 +28,7 @@ import SlidePanelLarge from '../../test/slide-panel/SlidePanelLarge.test';
 import SlidePanelFullscreen from '../../test/slide-panel/SlidePanelFullscreen.test';
 import SlidePanelFill from '../../test/slide-panel/SlidePanelFill.test';
 import SlidePanelNoFill from '../../test/slide-panel/SlidePanelNoFill.test';
+/* eslint-enabled import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
   <DocTemplate

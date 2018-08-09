@@ -19,10 +19,10 @@ const propTypes = {
 };
 
 const ApplicationMenuName = ({
-    accessory,
-    title,
-    ...customProps
-  }) => {
+  accessory,
+  title,
+  ...customProps
+}) => {
   const ApplicationMenuNameClassNames = cx([
     'application-menu-name',
     customProps.className,

@@ -149,8 +149,8 @@ class UtilityMenuItem extends React.Component {
       { 'default-right-inset': !rightInset },
     ]);
 
-    /* eslint-disable jsx-a11y/no-static-element-interactions */
-    const renderBodyItem = (fill, wrapOnKeyDown, handleSelection) =>
+    /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-element-to-interactive-role */
+    const renderBodyItem = (fill, wrapOnKeyDown, handleSelection) => (
       <li
         {...customProps}
         tabIndex="0"
@@ -167,28 +167,29 @@ class UtilityMenuItem extends React.Component {
           fill={fill}
           fillAttributes={{ className: cx('menu-item-fill') }}
           fitEnd={rightInset ? <IconChevronRight className={chevronClassNames} /> : null}
-          align={'center'}
+          align="center"
           className={arrangeClassNames}
         />
-      </li>;
+      </li>);
     /* eslint-enable jsx-a11y/no-static-element-interactions */
 
 
     const renderFooterButton = (wrapOnKeyDown, handleSelection) =>
-      <Button
+      (<Button
         {...customProps}
         onClick={event => handleSelection(event, itemKey)}
         onKeyDown={wrapOnKeyDown(itemKey, onKeyDown)}
         variant={Button.Opts.Variants.NEUTRAL}
         className={footerItemClassNames}
         text={title}
-      />;
+      />);
 
     // Footer items are always buttons. Body items are list items.
     // If content exists and is a body item, render content. Else, render the title text.
     let item = null;
-    const wrapOnKeyDown = this.wrapOnKeyDown;
-    const handleSelection = this.handleSelection;
+    const {
+      wrapOnKeyDown, handleSelection,
+    } = this;
     if (contentLocation === Utils.LOCATIONS.FOOTER) {
       item = renderFooterButton(wrapOnKeyDown, handleSelection);
     } else if (content) {
