@@ -8,7 +8,6 @@ import UtilityMenu from '../../../utility/_UtilityMenu';
 class DefaultMenuUtilityMenu extends React.Component {
   constructor(props) {
     super(props);
-    this.handleOnChange = this.handleOnChange.bind(this);
     this.state = {
     };
   }

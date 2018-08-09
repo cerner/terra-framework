@@ -140,6 +140,19 @@ class PopupContent extends React.Component {
     }
   }
 
+  static getContentStyle(height, maxHeight, width, maxWidth, isHeightAutomatic, isWidthAutomatic) {
+    const heightStyle = PopupContent.getDimensionStyle(height, maxHeight, isHeightAutomatic);
+    const widthStyle = PopupContent.getDimensionStyle(width, maxWidth, isWidthAutomatic);
+    const contentStyle = {};
+    if (heightStyle) {
+      contentStyle.height = heightStyle;
+    }
+    if (widthStyle) {
+      contentStyle.width = widthStyle;
+    }
+    return contentStyle;
+  }
+
   static getDimensionStyle(value, maxValue, isAutomatic) {
     if (value > 0) {
       if (maxValue > 0 && value >= maxValue) {
