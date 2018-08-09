@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`InfiniteList should render a default component 1`] = `
-<React.Fragment>
+<Fragment>
   <List
     className="infinite-list"
     isDivided={false}
@@ -41,11 +41,11 @@ exports[`InfiniteList should render a default component 1`] = `
       }
     />
   </List>
-</React.Fragment>
+</Fragment>
 `;
 
 exports[`InfiniteList should render with initial children 1`] = `
-<React.Fragment>
+<Fragment>
   <List
     className="infinite-list"
     isDivided={false}
@@ -166,11 +166,11 @@ exports[`InfiniteList should render with initial children 1`] = `
       }
     />
   </List>
-</React.Fragment>
+</Fragment>
 `;
 
 exports[`InfiniteList should render with list props 1`] = `
-<React.Fragment>
+<Fragment>
   <List
     className="infinite-list"
     isDivided={true}
@@ -315,7 +315,7 @@ exports[`InfiniteList should render with list props 1`] = `
       }
     />
   </List>
-</React.Fragment>
+</Fragment>
 `;
 
 exports[`InfiniteList should render with list with style props 1`] = `
@@ -390,7 +390,7 @@ exports[`InfiniteList should render with list with style props 1`] = `
 `;
 
 exports[`InfiniteList should render with no children and loading 1`] = `
-<React.Fragment>
+<Fragment>
   <List
     className="infinite-list"
     infiniteProps={
@@ -452,5 +452,5 @@ exports[`InfiniteList should render with no children and loading 1`] = `
       }
     />
   </List>
-</React.Fragment>
+</Fragment>
 `;
