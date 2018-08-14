@@ -19,6 +19,7 @@ const Page1Content = ({ layoutConfig }) => (
       {layoutConfig.toggleMenu
         && (
         <button
+          type="button"
           style={inlineButtonStyle}
           onClick={layoutConfig.toggleMenu}
         >

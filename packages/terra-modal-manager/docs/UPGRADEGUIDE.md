@@ -38,10 +38,10 @@ Within your component use the terra-app-delegate disclosure pattern to launch yo
 -          <div>
 -            <h1>My Modal</h1>
 -            <p>Additional content goes here</p>
--            <button onClick={this.handleCloseModal}>Close Modal</button>
+-            <button type="button" onClick={this.handleCloseModal}>Close Modal</button>
 -          </div>
 -       </Modal>
-        <button onClick={this.handleButtonClick}>Open Modal</button>
+        <button type="button" onClick={this.handleButtonClick}>Open Modal</button>
 -     </div>
     );
   }

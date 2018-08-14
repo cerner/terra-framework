@@ -60,7 +60,7 @@ class DimensionPopup extends React.Component {
           >
             <p>This popup defaults its size.</p>
           </Popup>
-          <button id="dimension-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
+          <button type="button" id="dimension-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
             Invalid Popup
           </button>
         </div>

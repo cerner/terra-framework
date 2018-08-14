@@ -14,7 +14,7 @@ const TestPopupContent = ({
   size,
 }) => (
   <div style={{ height: size.height, width: size.width, backgroundColor: 'red' }}>
-    <button id="resize-content" onClick={onClick}>
+    <button type="button" id="resize-content" onClick={onClick}>
       Resize
     </button>
   </div>

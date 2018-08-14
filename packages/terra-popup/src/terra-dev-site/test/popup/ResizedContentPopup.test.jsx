@@ -47,7 +47,7 @@ class PopupExample extends React.Component {
         >
           <TestPopupContent size={this.state.size} onClick={() => this.setState({ size: { height: '80px', width: '200px' } })} />
         </Popup>
-        <button style={{ position: 'absolute', left: '200px' }} id="default-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
+        <button type="button" style={{ position: 'absolute', left: '200px' }} id="default-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
           Default Popup
         </button>
       </div>

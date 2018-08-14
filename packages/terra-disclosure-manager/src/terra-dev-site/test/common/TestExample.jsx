@@ -93,6 +93,7 @@ class TestExample extends React.Component {
 
     return (
       <button
+        type="button"
         id={`disclose-dimension-${this.props.nestedIndex}`}
         onClick={this.disclose(undefined, { height: this.state.disclosureHeight, width: this.state.disclosureWidth })}
       >
@@ -131,24 +132,24 @@ id:
         </p>
         {app && app.releaseFocus ? <p>Modal has lost focus!</p> : null }
         {app && app.requestFocus ? <p>Modal has gained focus!</p> : null }
-        <button className="disclose" onClick={this.disclose()}>Disclose</button>
-        <button className="disclose-tiny" onClick={this.disclose('tiny')}>Disclose Tiny</button>
-        <button className="disclose-small" onClick={this.disclose('small')}>Disclose Small</button>
-        <button className="disclose-medium" onClick={this.disclose('medium')}>Disclose Medium</button>
-        <button className="disclose-large" onClick={this.disclose('large')}>Disclose Large</button>
-        <button className="disclose-huge" onClick={this.disclose('huge')}>Disclose Huge</button>
-        <button className="disclose-fullscreen" onClick={this.disclose('fullscreen')}>Disclose Fullscreen</button>
+        <button type="button" className="disclose" onClick={this.disclose()}>Disclose</button>
+        <button type="button" className="disclose-tiny" onClick={this.disclose('tiny')}>Disclose Tiny</button>
+        <button type="button" className="disclose-small" onClick={this.disclose('small')}>Disclose Small</button>
+        <button type="button" className="disclose-medium" onClick={this.disclose('medium')}>Disclose Medium</button>
+        <button type="button" className="disclose-large" onClick={this.disclose('large')}>Disclose Large</button>
+        <button type="button" className="disclose-huge" onClick={this.disclose('huge')}>Disclose Huge</button>
+        <button type="button" className="disclose-fullscreen" onClick={this.disclose('fullscreen')}>Disclose Fullscreen</button>
         <div style={{ padding: '0.7rem' }}>
           {this.renderForm()}
           {this.renderFormButton()}
         </div>
-        {app && app.dismiss ? <button className="dismiss" onClick={this.dismiss}>Dismiss</button> : null }
-        {app && app.closeDisclosure ? <button className="close-disclosure" onClick={this.closeDisclosure}>Close Disclosure</button> : null }
-        {app && app.goBack ? <button className="go-back" onClick={this.goBack}>Go Back</button> : null }
-        {app && app.maximize ? <button className="maximize" onClick={this.maximize}>Maximize</button> : null }
-        {app && app.minimize ? <button className="minimize" onClick={this.minimize}>Minimize</button> : null }
-        {app && app.requestFocus ? <button className="requestFocus" onClick={this.requestFocus}>Request Focus</button> : null }
-        {app && app.releaseFocus ? <button className="releaseFocus" onClick={this.releaseFocus}>Release Focus</button> : null }
+        {app && app.dismiss ? <button type="button" className="dismiss" onClick={this.dismiss}>Dismiss</button> : null }
+        {app && app.closeDisclosure ? <button type="button" className="close-disclosure" onClick={this.closeDisclosure}>Close Disclosure</button> : null }
+        {app && app.goBack ? <button type="button" className="go-back" onClick={this.goBack}>Go Back</button> : null }
+        {app && app.maximize ? <button type="button" className="maximize" onClick={this.maximize}>Maximize</button> : null }
+        {app && app.minimize ? <button type="button" className="minimize" onClick={this.minimize}>Minimize</button> : null }
+        {app && app.requestFocus ? <button type="button" className="requestFocus" onClick={this.requestFocus}>Request Focus</button> : null }
+        {app && app.releaseFocus ? <button type="button" className="releaseFocus" onClick={this.releaseFocus}>Release Focus</button> : null }
       </ContentContainer>
     );
   }

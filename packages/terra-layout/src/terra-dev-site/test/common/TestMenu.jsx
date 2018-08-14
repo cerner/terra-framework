@@ -20,6 +20,7 @@ const TestMenu = ({ layoutConfig }) => (
       {layoutConfig.toggleMenu
         && (
         <button
+          type="button"
           className="test-menu-toggle"
           style={{
             display: 'inline', marginLeft: '5px', height: '25px', border: '1px dashed lightgrey',

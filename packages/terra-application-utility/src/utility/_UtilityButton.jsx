@@ -122,6 +122,7 @@ class ApplicationHeaderUtility extends React.Component {
     const buttonText = intl.formatMessage({ id: 'Terra.application.utility.button' });
     return (
       <button
+        type="button"
         {...customProps}
         className={utilityClassNames}
         onClick={(event) => { this.handleOnClick(event); }}

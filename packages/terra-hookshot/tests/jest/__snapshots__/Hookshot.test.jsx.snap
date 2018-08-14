@@ -2,7 +2,7 @@
 
 exports[`should render a default component 1`] = `
 <div>
-  <button
+  <button type="button"
     id="hookshot-standard-button"
   />
 </div>
@@ -51,7 +51,7 @@ exports[`should shallow a default component 1`] = `
       </div>
     </OnClickOutside(HookshotContent)>
   </Hookshot>
-  <button
+  <button type="button"
     id="hookshot-standard-button"
     onClick={[Function]}
   />

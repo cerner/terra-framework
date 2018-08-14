@@ -23,7 +23,7 @@ class LayoutSlidePanelExample extends React.Component {
               height: '100%', width: '100%', position: 'relative', backgroundColor: 'red',
             }}
             >
-              <button id="test-toggle-2" onClick={this.toggleMenu}>toggle</button>
+              <button type="button" id="test-toggle-2" onClick={this.toggleMenu}>toggle</button>
             </div>
 )}
           panelBehavior="overlay"
@@ -38,7 +38,7 @@ class LayoutSlidePanelExample extends React.Component {
             height: '100%', width: '100%', position: 'relative', backgroundColor: 'blue',
           }}
           >
-            <button id="test-toggle-1" onClick={this.toggleMenu}>
+            <button type="button" id="test-toggle-1" onClick={this.toggleMenu}>
               toggle
             </button>
           </div>

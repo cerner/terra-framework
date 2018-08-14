@@ -55,7 +55,7 @@ class PopupExample extends React.Component {
         >
           <p style={{ height: '400px' }}>This is popup content with a automatic height of 400px.</p>
         </Popup>
-        <button id="default-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
+        <button type="button" id="default-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
           Default Popup
         </button>
       </div>

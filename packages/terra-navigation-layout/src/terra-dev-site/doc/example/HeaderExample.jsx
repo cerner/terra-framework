@@ -23,6 +23,7 @@ const HeaderExample = ({ layoutConfig }) => (
       {layoutConfig.toggleMenu
         && (
         <button
+          type="button"
           style={inlineButtonStyle}
           onClick={layoutConfig.toggleMenu}
         >

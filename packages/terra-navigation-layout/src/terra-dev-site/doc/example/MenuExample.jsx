@@ -18,6 +18,7 @@ const MenuExample = ({ layoutConfig }) => (
       {layoutConfig.toggleMenu
         && (
         <button
+          type="button"
           style={inlineButtonStyle}
           onClick={layoutConfig.toggleMenu}
         >
@@ -27,6 +28,7 @@ Toggle Menu
       {layoutConfig.togglePin && !layoutConfig.menuIsPinned
         && (
         <button
+          type="button"
           style={inlineButtonStyle}
           onClick={layoutConfig.togglePin}
         >
@@ -36,6 +38,7 @@ Pin
       {layoutConfig.togglePin && layoutConfig.menuIsPinned
         && (
         <button
+          type="button"
           style={inlineButtonStyle}
           onClick={layoutConfig.togglePin}
         >

@@ -20,6 +20,7 @@ const content = ({
       {layoutConfig.toggleMenu
         && (
         <button
+          type="button"
           style={{
             display: 'inline', marginLeft: '5px', height: '25px', border: '1px dashed lightgrey',
           }}

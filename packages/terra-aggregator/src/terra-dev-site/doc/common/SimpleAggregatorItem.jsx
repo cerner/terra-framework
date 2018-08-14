@@ -20,6 +20,7 @@ const SimpleAggregatorItem = ({ name, aggregatorDelegate, ...customProps }) => (
     { aggregatorDelegate.hasFocus
       ? (
         <button
+          type="button"
           onClick={() => {
             aggregatorDelegate.releaseFocus();
           }}
@@ -29,6 +30,7 @@ const SimpleAggregatorItem = ({ name, aggregatorDelegate, ...customProps }) => (
       )
       : (
         <button
+          type="button"
           onClick={() => {
             aggregatorDelegate.requestFocus();
           }}

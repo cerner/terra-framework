@@ -68,6 +68,7 @@ class AlignmentPopup extends React.Component {
             <p style={{ padding: '5px' }}>This popup arrow was horizontally attached.</p>
           </Popup>
           <button
+            type="button"
             id="alignment-button"
             style={{
               position: 'absolute', top: '20px', height: '20px', width: '20px', backgroundColor: '#c00',
@@ -77,9 +78,9 @@ class AlignmentPopup extends React.Component {
           />
         </div>
         <p>Choose Target Attachment:</p>
-        <button id="attach-Top" value="top right" onClick={this.handleAttachment}>Attach Top Right</button>
-        <button id="attach-Middle" value="middle right" onClick={this.handleAttachment}>Attach Middle Right</button>
-        <button id="attach-Bottom" value="bottom right" onClick={this.handleAttachment}>Attach Bottom Right</button>
+        <button type="button" id="attach-Top" value="top right" onClick={this.handleAttachment}>Attach Top Right</button>
+        <button type="button" id="attach-Middle" value="middle right" onClick={this.handleAttachment}>Attach Middle Right</button>
+        <button type="button" id="attach-Bottom" value="bottom right" onClick={this.handleAttachment}>Attach Bottom Right</button>
       </div>
     );
   }

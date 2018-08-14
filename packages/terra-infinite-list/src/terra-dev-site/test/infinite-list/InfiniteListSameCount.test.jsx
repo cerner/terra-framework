@@ -29,7 +29,7 @@ class InfiniteListSameCount extends React.Component {
 
     return (
       <div>
-        <button id="test-click" onClick={this.handleUpdateItems}>update items</button>
+        <button type="button" id="test-click" onClick={this.handleUpdateItems}>update items</button>
         <div style={{ width: '100%', height: '250px' }}>
           <InfiniteList
             id="test-infinite-list"

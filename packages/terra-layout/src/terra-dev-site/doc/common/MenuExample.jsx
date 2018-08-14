@@ -14,6 +14,7 @@ const menu = ({ layoutConfig }) => (
       {layoutConfig.toggleMenu
         && (
         <button
+          type="button"
           style={{
             display: 'inline', marginLeft: '5px', height: '25px', border: '1px dashed lightgrey',
           }}
@@ -25,6 +26,7 @@ Toggle Menu
       {layoutConfig.togglePin && !layoutConfig.menuIsPinned
         && (
         <button
+          type="button"
           style={{
             display: 'inline', marginLeft: '5px', height: '25px', border: '1px dashed lightgrey',
           }}
@@ -36,6 +38,7 @@ Pin
       {layoutConfig.togglePin && layoutConfig.menuIsPinned
         && (
         <button
+          type="button"
           style={{
             display: 'inline', marginLeft: '5px', height: '25px', border: '1px dashed lightgrey',
           }}

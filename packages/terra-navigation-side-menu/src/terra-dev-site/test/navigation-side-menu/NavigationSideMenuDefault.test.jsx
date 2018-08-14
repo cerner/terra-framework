@@ -33,7 +33,7 @@ class NavigationSideMenuDefault extends React.Component {
           height: '100%', width: '100%', position: 'relative', backgroundColor: 'pink',
         }}
         >
-          <button onClick={this.resetMenuState}>
+          <button type="button" onClick={this.resetMenuState}>
             Child Route
           </button>
           <p>Parent Route</p>

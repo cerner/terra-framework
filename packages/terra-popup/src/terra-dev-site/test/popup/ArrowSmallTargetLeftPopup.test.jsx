@@ -66,6 +66,7 @@ class OffsetPopup extends React.Component {
           <p style={{ padding: '5px' }}>This popup was adjusted because the target was smaller than the arrow position allowed.</p>
         </Popup>
         <button
+          type="button"
           id="offset-button"
           style={{
             position: 'absolute', left: '10px', height: '10px', width: '10px', backgroundColor: '#c00',

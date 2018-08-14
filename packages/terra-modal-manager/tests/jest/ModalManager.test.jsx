@@ -2,7 +2,7 @@ import React from 'react';
 import ModalManager from '../../src/ModalManager';
 
 const TestContainer = () => (
-  <button>Hello World</button>
+  <button type="button">Hello World</button>
 );
 
 describe('ModalManager', () => {

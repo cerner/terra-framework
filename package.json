@@ -28,8 +28,7 @@
     "extends": "terra",
     "rules": {
       "react/forbid-prop-types": "false",
-      "react/destructuring-assignment": "0",
-      "react/no-access-state-in-setstate": "0"
+      "react/destructuring-assignment": "0"
     },
     "settings": {
       "polyfills": [

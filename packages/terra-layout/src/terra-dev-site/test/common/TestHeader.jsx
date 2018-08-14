@@ -22,6 +22,7 @@ const TestHeader = ({
       {layoutConfig.toggleMenu
         && (
         <button
+          type="button"
           className="test-header-toggle"
           style={{
             display: 'inline', marginLeft: '5px', height: '25px', border: '1px dashed lightgrey',

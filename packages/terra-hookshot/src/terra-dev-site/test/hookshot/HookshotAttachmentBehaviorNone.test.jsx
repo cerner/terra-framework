@@ -28,8 +28,8 @@ class HookshotAttachmentBehaviorNone extends React.Component {
         />
         <p> Choose the positioning behavior </p>
         <p> Primary position is on the middle right</p>
-        <button id="position-primary" value="primary" onClick={this.handlePositionClick}>Primary</button>
-        <button id="position-offset" value="offset" onClick={this.handlePositionClick}>Offset</button>
+        <button type="button" id="position-primary" value="primary" onClick={this.handlePositionClick}>Primary</button>
+        <button type="button" id="position-offset" value="offset" onClick={this.handlePositionClick}>Offset</button>
       </div>
     );
   }

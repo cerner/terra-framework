@@ -19,6 +19,7 @@ const Page1Menu = ({ layoutConfig, routingStackDelegate }) => (
       {routingStackDelegate && routingStackDelegate.showParent
         && (
         <button
+          type="button"
           style={inlineButtonStyle}
           onClick={routingStackDelegate.showParent}
         >
@@ -28,6 +29,7 @@ Go Back
       {layoutConfig.toggleMenu
         && (
         <button
+          type="button"
           style={inlineButtonStyle}
           onClick={layoutConfig.toggleMenu}
         >
@@ -37,6 +39,7 @@ Toggle Menu
       {layoutConfig.togglePin && !layoutConfig.menuIsPinned
         && (
         <button
+          type="button"
           style={inlineButtonStyle}
           onClick={layoutConfig.togglePin}
         >
@@ -46,6 +49,7 @@ Pin
       {layoutConfig.togglePin && layoutConfig.menuIsPinned
         && (
         <button
+          type="button"
           style={inlineButtonStyle}
           onClick={layoutConfig.togglePin}
         >

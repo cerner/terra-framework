@@ -66,6 +66,7 @@ class AlignmentPopup extends React.Component {
           <p style={{ padding: '5px' }}>This popup arrow has verital-left attachment, but was adjusted to be on the screen.</p>
         </Popup>
         <button
+          type="button"
           id="alignment-button"
           style={{
             position: 'absolute', top: '0px', height: '20px', width: '20px', backgroundColor: '#c00',

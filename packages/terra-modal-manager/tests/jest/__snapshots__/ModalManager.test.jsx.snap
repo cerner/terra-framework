@@ -21,7 +21,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
         }
         key=".0"
       >
-        <button>
+        <button type="button">
           Hello World
         </button>
       </TestContainer>
@@ -164,7 +164,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                                   }
                                   key="DISCLOSE_KEY"
                                 >
-                                  <button>
+                                  <button type="button">
                                     Hello World
                                   </button>
                                 </TestContainer>
@@ -211,7 +211,7 @@ exports[`ModalManager should render the ModalManager with custom props 1`] = `
         }
         key=".0"
       >
-        <button>
+        <button type="button">
           Hello World
         </button>
       </TestContainer>
@@ -254,7 +254,7 @@ exports[`ModalManager should render the ModalManager with defaults 1`] = `
         }
         key=".0"
       >
-        <button>
+        <button type="button">
           Hello World
         </button>
       </TestContainer>

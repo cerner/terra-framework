@@ -34,7 +34,7 @@ exports[`should mount a complete notification-dialog 1`] = `
       type="button"
       variant="neutral"
     >
-      <button
+      <button type="button"
         aria-disabled={false}
         aria-label={null}
         className="button neutral"
@@ -95,7 +95,7 @@ exports[`should mount a complete notification-dialog with long message 1`] = `
       type="button"
       variant="neutral"
     >
-      <button
+      <button type="button"
         aria-disabled={false}
         aria-label={null}
         className="button neutral"
@@ -157,7 +157,7 @@ exports[`should mount a notification-dialog with no variant 1`] = `
       type="button"
       variant="neutral"
     >
-      <button
+      <button type="button"
         aria-disabled={false}
         aria-label={null}
         className="button neutral"

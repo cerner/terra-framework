@@ -45,7 +45,7 @@ class ArrowPopup extends React.Component {
         >
           <p>this is popup content</p>
         </Popup>
-        <button id="arrow-button" style={{ marginTop: '40px', float: 'right' }} onClick={this.handleButtonClick} ref={this.setButtonNode}>
+        <button type="button" id="arrow-button" style={{ marginTop: '40px', float: 'right' }} onClick={this.handleButtonClick} ref={this.setButtonNode}>
           Arrow Popup
         </button>
       </div>
