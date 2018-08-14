@@ -10,7 +10,7 @@ class SlidePanelDemo extends React.Component {
   }
 
   handlePanelToggle() {
-    this.setState({ panelIsOpen: !this.state.panelIsOpen });
+    this.setState(prevState => ({ panelIsOpen: !prevState.panelIsOpen }));
   }
 
   render() {

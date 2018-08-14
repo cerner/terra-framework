@@ -11,7 +11,7 @@ class LayoutSlidePanelExample extends React.Component {
   }
 
   toggleMenu() {
-    this.setState({ isOpen: !this.state.isOpen });
+    this.setState(prevState => ({ isOpen: !prevState.isOpen }));
   }
 
   render() {

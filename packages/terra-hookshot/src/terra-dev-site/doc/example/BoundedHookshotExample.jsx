@@ -81,7 +81,7 @@ class HookshotStandard extends React.Component {
   }
 
   handleButtonClick() {
-    this.setState({ isOpen: !this.state.isOpen });
+    this.setState(prevState => ({ isOpen: !prevState.isOpen }));
   }
 
   handleRequestClose() {

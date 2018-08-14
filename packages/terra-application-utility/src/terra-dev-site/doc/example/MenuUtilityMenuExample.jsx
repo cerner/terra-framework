@@ -23,7 +23,7 @@ class MenuUtilityMenuExample extends React.Component {
   }
 
   handleOnRequestClose() {
-    this.setState({ requestCloseCount: this.state.requestCloseCount += 1 });
+    this.setState(prevState => ({ requestCloseCount: prevState.requestCloseCount + 1 }));
   }
 
   render() {
