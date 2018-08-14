@@ -215,7 +215,7 @@ const coordinateAttachment = { vertical: 'middle', horizontal: 'center' };
 const getDirectionalAttachment = (attachment, isRTL) => {
   if (attachment.horizontal === 'start') {
     return { vertical: attachment.vertical, horizontal: (isRTL ? 'right' : 'left') };
-  } else if (attachment.horizontal === 'end') {
+  } if (attachment.horizontal === 'end') {
     return { vertical: attachment.vertical, horizontal: (isRTL ? 'left' : 'right') };
   }
   return attachment;
@@ -302,11 +302,11 @@ const isValidPositions = (positions, boundingRect) => {
   if (attachment.vertical === 'middle') {
     if (attachment.horizontal === 'right') {
       return content.x >= boundingRect.left;
-    } else if (attachment.horizontal === 'left') {
+    } if (attachment.horizontal === 'left') {
       return content.x + contentRect.width <= boundingRect.right;
     }
     return true;
-  } else if (attachment.vertical === 'top') {
+  } if (attachment.vertical === 'top') {
     return content.y + contentRect.height <= boundingRect.bottom;
   }
 

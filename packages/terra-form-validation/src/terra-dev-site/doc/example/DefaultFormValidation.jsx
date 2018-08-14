@@ -81,11 +81,13 @@ export default class MainEntry extends React.Component {
           )}
         </Field>
         <Button text="Submit" type={Button.Opts.Types.SUBMIT} />
-        {this.state.submittedValues &&
+        {this.state.submittedValues
+          && (
           <div>
             <p>Form Submitted Successfully With</p>
             <pre>{JSON.stringify(this.state.submittedValues, 0, 2)}</pre>
           </div>
+          )
         }
       </form>
     );

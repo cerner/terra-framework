@@ -189,11 +189,11 @@ class ApplicationLayout extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.nameConfig !== nextProps.nameConfig ||
-        this.props.utilityConfig !== nextProps.utilityConfig ||
-        this.props.routingConfig !== nextProps.routingConfig ||
-        this.props.navigationItems !== nextProps.navigationItems ||
-        this.props.indexPath !== nextProps.indexPath) {
+    if (this.props.nameConfig !== nextProps.nameConfig
+        || this.props.utilityConfig !== nextProps.utilityConfig
+        || this.props.routingConfig !== nextProps.routingConfig
+        || this.props.navigationItems !== nextProps.navigationItems
+        || this.props.indexPath !== nextProps.indexPath) {
       this.setState({
         applicationLayoutRoutingConfig: ApplicationLayout.buildRoutingConfig(nextProps),
       });

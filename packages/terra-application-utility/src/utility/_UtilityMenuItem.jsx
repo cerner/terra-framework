@@ -174,15 +174,16 @@ class UtilityMenuItem extends React.Component {
     /* eslint-enable jsx-a11y/no-static-element-interactions */
 
 
-    const renderFooterButton = (wrapOnKeyDown, handleSelection) =>
-      (<Button
+    const renderFooterButton = (wrapOnKeyDown, handleSelection) => (
+      <Button
         {...customProps}
         onClick={event => handleSelection(event, itemKey)}
         onKeyDown={wrapOnKeyDown(itemKey, onKeyDown)}
         variant={Button.Opts.Variants.NEUTRAL}
         className={footerItemClassNames}
         text={title}
-      />);
+      />
+    );
 
     // Footer items are always buttons. Body items are list items.
     // If content exists and is a body item, render content. Else, render the title text.

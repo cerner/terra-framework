@@ -103,11 +103,13 @@ export default class MainEntry extends React.Component {
             return errors;
           }}
         />
-        {this.state.submittedValues &&
+        {this.state.submittedValues
+          && (
           <div>
             <p>Form Submitted Successfully With</p>
             <pre>{JSON.stringify(this.state.submittedValues, 0, 2)}</pre>
           </div>
+          )
         }
       </Spacer>
     );

@@ -16,12 +16,12 @@ class SlidePanelDemo extends React.Component {
   render() {
     return (
       <div style={{
- border: '1px lightgrey solid', height: '768px', width: '100%', position: 'relative',
-}}
+        border: '1px lightgrey solid', height: '768px', width: '100%', position: 'relative',
+      }}
       >
         <SlidePanel
           id="test-slide"
-          mainContent={<div style={{ height: '100%', width: '100%', backgroundColor: 'red' }}><button id="test-toggle" style={{ backgroundColor: 'green' }}onClick={this.handlePanelToggle}>toggle</button></div>}
+          mainContent={<div style={{ height: '100%', width: '100%', backgroundColor: 'red' }}><button id="test-toggle" style={{ backgroundColor: 'green' }} onClick={this.handlePanelToggle}>toggle</button></div>}
           panelContent={<div style={{ height: '100%', width: '100%', backgroundColor: 'blue' }} />}
           panelSize="small"
           panelBehavior="overlay"

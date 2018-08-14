@@ -6,7 +6,12 @@ import ContentContainer from 'terra-content-container';
 
 import ApplicationLayout, { RoutingMenu } from '../../../ApplicationLayout';
 
-const PageContent = ({ contentName }) => (<div>Page Content: {contentName}</div>);
+const PageContent = ({ contentName }) => (
+  <div>
+Page Content:
+    {contentName}
+  </div>
+);
 PageContent.propTypes = {
   contentName: PropTypes.string,
 };

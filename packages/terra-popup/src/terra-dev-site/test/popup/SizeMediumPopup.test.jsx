@@ -44,8 +44,8 @@ class DimensionPopup extends React.Component {
   render() {
     return (
       <div style={{
- position: 'relative', height: '100%', width: '100%', overflow: 'auto',
-}}
+        position: 'relative', height: '100%', width: '100%', overflow: 'auto',
+      }}
       >
         <div id="test-popup-area" style={{ height: '160px', width: '350px', background: 'aliceblue' }} ref={this.setParentNode}>
           <Popup

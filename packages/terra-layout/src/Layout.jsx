@@ -152,8 +152,8 @@ class Layout extends React.Component {
         header={isToggleMenu && this.renderHeader()}
         style={{ outline: 'none' }}
       >
-        {children ?
-          React.cloneElement(children, {
+        {children
+          ? React.cloneElement(children, {
             layoutConfig: {
               size,
               toggleMenu: shouldAllowMenuToggle ? this.toggleMenu : undefined,

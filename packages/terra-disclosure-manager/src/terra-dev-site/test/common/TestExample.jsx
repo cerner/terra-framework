@@ -125,7 +125,10 @@ class TestExample extends React.Component {
 
     return (
       <ContentContainer id={identifier} className="nested-component" fill header={<h2 style={{ margin: '0', borderBottom: '1px solid black' }}>Content Component</h2>}>
-        <p>id: {identifier}</p>
+        <p>
+id:
+          {identifier}
+        </p>
         {app && app.releaseFocus ? <p>Modal has lost focus!</p> : null }
         {app && app.requestFocus ? <p>Modal has gained focus!</p> : null }
         <button className="disclose" onClick={this.disclose()}>Disclose</button>

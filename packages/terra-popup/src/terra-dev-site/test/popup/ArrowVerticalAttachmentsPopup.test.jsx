@@ -48,8 +48,8 @@ class AlignmentPopup extends React.Component {
         <div
           id="test-popup-area"
           style={{
- position: 'relative', height: '200px', width: '200px', background: 'aliceblue',
-}}
+            position: 'relative', height: '200px', width: '200px', background: 'aliceblue',
+          }}
           ref={this.setParentNode}
         >
           <Popup
@@ -69,8 +69,8 @@ class AlignmentPopup extends React.Component {
           <button
             id="alignment-button"
             style={{
- position: 'absolute', left: 'calc(50% - 10px)', top: 'calc(50% - 10px)', height: '20px', width: '20px', backgroundColor: '#c00',
-}}
+              position: 'absolute', left: 'calc(50% - 10px)', top: 'calc(50% - 10px)', height: '20px', width: '20px', backgroundColor: '#c00',
+            }}
             onClick={this.handleButtonClick}
             ref={this.setButtonNode}
           />

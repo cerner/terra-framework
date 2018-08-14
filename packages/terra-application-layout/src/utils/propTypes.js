@@ -20,7 +20,7 @@ const nameConfigPropType = PropTypes.shape({
   title: PropTypes.string,
 });
 
-  /**
+/**
    * Alignment of the navigational tabs.
    */
 const navigationAlignmentPropType = PropTypes.oneOf(['start', 'center', 'end']);

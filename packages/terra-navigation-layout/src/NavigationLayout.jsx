@@ -18,11 +18,11 @@ const getBreakpointSize = (queryWidth) => {
 
   if (width >= huge) {
     return 'huge';
-  } else if (width >= large) {
+  } if (width >= large) {
     return 'large';
-  } else if (width >= medium) {
+  } if (width >= medium) {
     return 'medium';
-  } else if (width >= small) {
+  } if (width >= small) {
     return 'small';
   }
   return 'tiny';

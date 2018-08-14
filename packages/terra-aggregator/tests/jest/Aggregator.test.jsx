@@ -62,7 +62,7 @@ describe('Aggregator', () => {
               </div>
             </div>
           </div>
-          )}
+        )}
       />
     ));
     expect(result).toMatchSnapshot();

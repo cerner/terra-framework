@@ -97,7 +97,12 @@ const actionSection = (primaryAction, secondaryAction) => {
     dismissButton = <Button text={secondaryAction.text} onClick={secondaryAction.onClick} />;
   }
 
-  return <div className={cx('actions')}>{actionButton}{dismissButton}</div>;
+  return (
+    <div className={cx('actions')}>
+      {actionButton}
+      {dismissButton}
+    </div>
+  );
 };
 
 const getIcon = (intl, variant, customIcon = null) => {
@@ -193,15 +198,15 @@ class NotificationDialog extends React.Component {
           <div className={cx('notification-dialog-container')}>
             <div id="notification-dialog-header" className={cx('header-body')}>{header || defaultHeader}</div>
             <div className={cx('notification-dialog-body')}>
-              {variant &&
-                <div className={cx('icon-div')}>{getIcon(intl, variant, customIcon)}</div>
+              {variant
+                && <div className={cx('icon-div')}>{getIcon(intl, variant, customIcon)}</div>
               }
               <div>
-                {title &&
-                  <div id="notification-dialog-title" className={cx('title')}>{title}</div>
+                {title
+                  && <div id="notification-dialog-title" className={cx('title')}>{title}</div>
                 }
-                {message &&
-                  <div className={cx('message')}>{message}</div>
+                {message
+                  && <div className={cx('message')}>{message}</div>
                 }
               </div>
             </div>

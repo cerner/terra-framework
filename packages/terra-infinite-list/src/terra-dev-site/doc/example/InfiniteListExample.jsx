@@ -29,7 +29,7 @@ class InfiniteListExample extends React.Component {
     const newState = { numberOfPages: this.state.numberOfPages + 1 };
     if (newState.numberOfPages > 10) {
       return;
-    } else if (newState.numberOfPages > 9) {
+    } if (newState.numberOfPages > 9) {
       newState.stillLoading = false;
     }
     this.setState(newState);
@@ -51,10 +51,10 @@ class InfiniteListExample extends React.Component {
     for (let i = 0; i < 15 * this.state.numberOfPages; i += 1) {
       items.push(<InfiniteList.Item
         key={`${i}`}
-        content={
+        content={(
           <Arrange
             fitStart={<h3 style={{ width: '50px' }}>{`${i}`}</h3>}
-            fill={
+            fill={(
               <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Fusce porttitor ullamcorper nisi, vel tincidunt dui pharetra vel.
@@ -62,12 +62,12 @@ class InfiniteListExample extends React.Component {
                   Donec tempor mi vitae lorem congue, ut ultrices metus feugiat. Sed non commodo felis.
                   Aliquam eget maximus dui, ut rhoncus augue.
               </p>
-              }
+)}
             fitEnd={<div className={cx(['icon-wrapper'])}><IconInformation /></div>}
             align="center"
             fitStartAttributes={{ style: { textAlign: 'center' } }}
           />
-          }
+)}
       />);
     }
 
@@ -81,8 +81,8 @@ class InfiniteListExample extends React.Component {
 
     return (
       <div style={{
- height: '600px', width: '100%', position: 'relative', border: '1px solid black',
-}}
+        height: '600px', width: '100%', position: 'relative', border: '1px solid black',
+      }}
       >
         <InfiniteList
           isSelectable

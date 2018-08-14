@@ -8,30 +8,40 @@ const inlineButtonStyle = {
 
 const MenuExample = ({ layoutConfig }) => (
   <div style={{
- height: 'calc(100% - 10px)', width: 'calc(100% - 10px)', border: '4px dashed lightgrey', margin: '5px', position: 'relative',
-}}>
+    height: 'calc(100% - 10px)', width: 'calc(100% - 10px)', border: '4px dashed lightgrey', margin: '5px', position: 'relative',
+  }}
+  >
     <div style={{
- position: 'absolute', top: '50%', left: '50%', color: 'grey', transform: 'translate3d(-50%, -50%, 0)',
-}}
+      position: 'absolute', top: '50%', left: '50%', color: 'grey', transform: 'translate3d(-50%, -50%, 0)',
+    }}
     >
-      {layoutConfig.toggleMenu &&
+      {layoutConfig.toggleMenu
+        && (
         <button
           style={inlineButtonStyle}
           onClick={layoutConfig.toggleMenu}
-        >Toggle Menu
-        </button>}
-      {layoutConfig.togglePin && !layoutConfig.menuIsPinned &&
+        >
+Toggle Menu
+        </button>
+        )}
+      {layoutConfig.togglePin && !layoutConfig.menuIsPinned
+        && (
         <button
           style={inlineButtonStyle}
           onClick={layoutConfig.togglePin}
-        >Pin
-        </button>}
-      {layoutConfig.togglePin && layoutConfig.menuIsPinned &&
+        >
+Pin
+        </button>
+        )}
+      {layoutConfig.togglePin && layoutConfig.menuIsPinned
+        && (
         <button
           style={inlineButtonStyle}
           onClick={layoutConfig.togglePin}
-        >Unpin
-        </button>}
+        >
+Unpin
+        </button>
+        )}
       <h2 style={{ margin: '0' }}>Menu</h2>
       <br />
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}

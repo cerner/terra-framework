@@ -54,4 +54,3 @@ class HookshotAttachmentBehaviorAuto extends React.Component {
 }
 
 export default HookshotAttachmentBehaviorAuto;
-

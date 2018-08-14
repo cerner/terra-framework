@@ -12,8 +12,8 @@ export default () => (
       initialIndex={0}
     >
       <div style={{
- border: '1px solid lightGray', width: '100%', backgroundColor: 'green', height: '39px', position: 'relative',
-}}
+        border: '1px solid lightGray', width: '100%', backgroundColor: 'green', height: '39px', position: 'relative',
+      }}
       >
         <ApplicationTabs id="test-tabs" alignment="start" links={testShortConfig} />
       </div>
