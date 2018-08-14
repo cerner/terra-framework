@@ -8,6 +8,7 @@ import DisclosureManager, { availableDisclosureSizes } from 'terra-disclosure-ma
 
 import 'terra-base/lib/baseStyles';
 import styles from './ModalManager.module.scss';
+/* eslint-disable-next-line import/no-cycle */
 import withModalManager from './withModalManager';
 
 const disclosureType = 'modal';
