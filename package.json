@@ -27,8 +27,7 @@
   "eslintConfig": {
     "extends": "terra",
     "rules": {
-      "react/forbid-prop-types": "false",
-      "react/destructuring-assignment": "0"
+      "react/forbid-prop-types": "false"
     },
     "settings": {
       "polyfills": [
