@@ -4,7 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
-* Formatting changes per eslint v4 update
+* Formatting changes per eslint v5 update
 
 ### Fixed
 * Lint errors regarding file path resolution
