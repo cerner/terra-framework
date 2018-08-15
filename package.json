@@ -56,7 +56,7 @@
     "jest:coverage": "jest --coverage --config jestconfig.js",
     "link-parent-bin": "link-parent-bin",
     "lint": "npm run lint:js && npm run lint:scss",
-    "lint:js": "eslint --ext .js,.jsx . --fix",
+    "lint:js": "eslint --ext .js,.jsx .",
     "lint:scss": "stylelint 'packages/**/src/**/*.scss' --syntax scss",
     "nightwatch": "nightwatch",
     "pretest": "npm run lint",
