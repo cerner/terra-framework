@@ -37,7 +37,7 @@ exports[`should mount an open dialogModal 1`] = `
       type="button"
       variant="neutral"
     >
-      <button type="button"
+      <button
         aria-disabled={false}
         aria-label={null}
         className="button neutral"
@@ -101,7 +101,7 @@ exports[`should mount an open dialogModal 320 width 1`] = `
       type="button"
       variant="neutral"
     >
-      <button type="button"
+      <button
         aria-disabled={false}
         aria-label={null}
         className="button neutral"
@@ -165,7 +165,7 @@ exports[`should mount an open dialogModal 960 width 1`] = `
       type="button"
       variant="neutral"
     >
-      <button type="button"
+      <button
         aria-disabled={false}
         aria-label={null}
         className="button neutral"
@@ -229,7 +229,7 @@ exports[`should mount an open dialogModal 1280 width 1`] = `
       type="button"
       variant="neutral"
     >
-      <button type="button"
+      <button
         aria-disabled={false}
         aria-label={null}
         className="button neutral"
@@ -293,7 +293,7 @@ exports[`should mount an open dialogModal 1600 width 1`] = `
       type="button"
       variant="neutral"
     >
-      <button type="button"
+      <button
         aria-disabled={false}
         aria-label={null}
         className="button neutral"
@@ -357,7 +357,7 @@ exports[`should mount an open dialogModal 1600 width 2`] = `
       type="button"
       variant="neutral"
     >
-      <button type="button"
+      <button
         aria-disabled={false}
         aria-label={null}
         className="button neutral"
@@ -421,7 +421,7 @@ exports[`should mount an open dialogModal with focus released 1`] = `
       type="button"
       variant="neutral"
     >
-      <button type="button"
+      <button
         aria-disabled={false}
         aria-label={null}
         className="button neutral"
@@ -485,7 +485,7 @@ exports[`should mount an open dialogModal with focus requested 1`] = `
       type="button"
       variant="neutral"
     >
-      <button type="button"
+      <button
         aria-disabled={false}
         aria-label={null}
         className="button neutral"
@@ -535,7 +535,7 @@ exports[`should shallow an open dialogModal 1`] = `
     width="1120"
   >
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
       Maecenas molestie in lorem vel facilisis. Quisque ac enim nec lectus malesuada faucibus.
       Integer congue feugiat ultricies.
        Nunc non mauris sed tellus cursus vestibulum nec quis ipsum.
@@ -584,7 +584,7 @@ exports[`should shallow an open dialogModal 320 width 1`] = `
     width="320"
   >
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
       Maecenas molestie in lorem vel facilisis. Quisque ac enim nec lectus malesuada faucibus.
       Integer congue feugiat ultricies.
        Nunc non mauris sed tellus cursus vestibulum nec quis ipsum.
@@ -633,7 +633,7 @@ exports[`should shallow an open dialogModal 960 width 1`] = `
     width="960"
   >
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
       Maecenas molestie in lorem vel facilisis. Quisque ac enim nec lectus malesuada faucibus.
       Integer congue feugiat ultricies.
        Nunc non mauris sed tellus cursus vestibulum nec quis ipsum.
@@ -682,7 +682,7 @@ exports[`should shallow an open dialogModal 1280 width 1`] = `
     width="1280"
   >
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
       Maecenas molestie in lorem vel facilisis. Quisque ac enim nec lectus malesuada faucibus.
       Integer congue feugiat ultricies.
        Nunc non mauris sed tellus cursus vestibulum nec quis ipsum.
@@ -731,7 +731,7 @@ exports[`should shallow an open dialogModal 1600 width 1`] = `
     width="1600"
   >
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
       Maecenas molestie in lorem vel facilisis. Quisque ac enim nec lectus malesuada faucibus.
       Integer congue feugiat ultricies.
        Nunc non mauris sed tellus cursus vestibulum nec quis ipsum.
