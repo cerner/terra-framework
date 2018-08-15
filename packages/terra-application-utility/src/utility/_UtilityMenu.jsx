@@ -198,11 +198,7 @@ class UtilityMenu extends React.Component {
     const { childKeys } = this.getItem(key);
     const item = this.getItem(key);
     if (childKeys && childKeys.length > 0) {
-      this.setState(prevState => ({
-        // eslint-disable-next-line react/no-unused-state
-        previousKey: this.push(prevState.currentKey),
-        currentKey: key,
-      }));
+      this.setState(prevState => ({ previousKey: this.push(prevState.currentKey), currentKey: key }));
     } else {
       this.props.onRequestClose();
       this.props.onChange(event, { key, metaData: item.metaData });
@@ -226,14 +222,18 @@ class UtilityMenu extends React.Component {
   }
 
   pop() {
-    this.setState(prevState => ({
-      previousKeyStack: prevState.previousKeyStack.slice(),
-      currentKey: prevState.previousKeyStack.slice().pop(),
-    }));
+    this.setState((prevState) => {
+      const newStack = prevState.previousKeyStack.slice();
+      return { previousKeyStack: newStack, currentKey: newStack.pop() };
+    });
   }
 
   push(key) {
-    this.setState(prevState => ({ previousKeyStack: prevState.previousKeyStack.slice().push(key) }));
+    this.setState((prevState) => {
+      const newStack = prevState.previousKeyStack.slice();
+      newStack.push(key);
+      return { previousKeyStack: newStack };
+    });
   }
 
   render() {

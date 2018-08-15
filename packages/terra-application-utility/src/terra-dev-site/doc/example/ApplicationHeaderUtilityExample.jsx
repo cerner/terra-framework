@@ -10,7 +10,6 @@ class ApplicationHeaderUtilityExample extends React.Component {
   constructor(props) {
     super(props);
     this.onDiscloseUtility = this.onDiscloseUtility.bind(this);
-    this.handleOnChange = this.handleOnChange.bind(this);
     this.state = {
       discloseCount: 0,
     };
