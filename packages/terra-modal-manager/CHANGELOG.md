@@ -3,6 +3,9 @@ Terra Modal Manager - Changelog
 
 Unreleased
 ----------
+
+3.9.0 - (August 13, 2018)
+------------------
 ### Changed
 * Formatting changes per eslint v4 update
 
