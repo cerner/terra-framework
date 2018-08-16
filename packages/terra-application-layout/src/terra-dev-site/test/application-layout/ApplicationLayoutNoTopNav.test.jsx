@@ -12,7 +12,8 @@ import ApplicationLayout, { RoutingMenu, Utils } from '../../../ApplicationLayou
 
 const PageContent = ({ contentName }) => (
   <div>
-Page Content:
+    Page Content:
+    {' '}
     {contentName}
   </div>
 );
