@@ -5,12 +5,12 @@
 
 ```jsx
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom'; // MemoryRouter or HashRouter could also be used
+import { HashRouter } from 'react-router-dom'; // BrowserRouter (with additional server configuration) or MemoryRouter could also be used
 import Base from 'terra-base';
 import ApplicationLayout from 'terra-application-layout';
 
 const MyApp = () => (
-  <BrowserRouter>
+  <HashRouter>
     <Base locale="en-US">
       <ApplicationLayout
         nameConfig={nameConfig}
@@ -21,7 +21,7 @@ const MyApp = () => (
         indexPath={indexPath}
       />
     </Base>
-  </BrowserRouter>
+  </HashRouter>
 );
 ```
 
