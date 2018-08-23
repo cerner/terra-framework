@@ -7,7 +7,7 @@ const InfiniteListUpdating = () => {
 
   return (
     <div>
-      <button id="test-click" onClick={() => { document.querySelector('#test-infinite-list').scrollTop = 1600; }}>button</button>
+      <button type="button" id="test-click" onClick={() => { document.querySelector('#test-infinite-list').scrollTop = 1600; }}>button</button>
       <div style={{ height: '380px' }}>
         <InfiniteList
           id="test-infinite-list"

@@ -34,6 +34,7 @@ class HookshotTemplate extends React.Component {
           />
         </Hookshot>
         <button
+          type="button"
           id="coords-button"
           onClick={this.triggerHookshot}
         >

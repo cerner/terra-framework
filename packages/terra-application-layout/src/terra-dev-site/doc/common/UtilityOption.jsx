@@ -22,7 +22,10 @@ const UtilityOption = ({ name, app }) => (
       />
    )}
   >
-    <div style={{ padding: '10px' }}>Content for utility key: {name}</div>
+    <div style={{ padding: '10px' }}>
+Content for utility key:
+      {name}
+    </div>
   </ContentContainer>
 );
 

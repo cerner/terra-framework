@@ -52,7 +52,7 @@ class BoundedPopupClosed extends React.Component {
         >
           <p style={{ padding: '5px' }}>This popup is bounded and presents a header.</p>
         </Popup>
-        <button id="bounded-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
+        <button type="button" id="bounded-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
           Bounded Popup
         </button>
       </div>

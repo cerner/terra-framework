@@ -48,7 +48,7 @@ const HookshotExample = () => (
     <ResizeBehavior />
     <p>No Close Behavior - Once opened, content stays on the screen when scrolling occurs.</p>
     <NoCloseBehavior />
-    <button id="scroll-bounds">Scroll Button</button>
+    <button type="button" id="scroll-bounds">Scroll Button</button>
   </div>
 );
 

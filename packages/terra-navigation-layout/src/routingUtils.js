@@ -50,7 +50,7 @@ const reduceRouteConfig = (routeConfig, size) => {
     .sort((routeA, routeB) => {
       if (routeA.path < routeB.path) {
         return 1;
-      } else if (routeA.path > routeB.path) {
+      } if (routeA.path > routeB.path) {
         return -1;
       }
 

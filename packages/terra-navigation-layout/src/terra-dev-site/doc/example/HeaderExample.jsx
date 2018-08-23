@@ -12,19 +12,24 @@ const inlineButtonStyle = {
 
 const HeaderExample = ({ layoutConfig }) => (
   <div style={{
- height: '60px', width: 'calc(100% - 10px)', border: '4px dashed lightgrey', margin: '5px', position: 'relative', display: 'flex',
-}}>
+    height: '60px', width: 'calc(100% - 10px)', border: '4px dashed lightgrey', margin: '5px', position: 'relative', display: 'flex',
+  }}
+  >
     <div style={{
- position: 'absolute', top: '50%', left: '50%', color: 'grey', transform: 'translate3d(-50%, -50%, 0)',
-}}
+      position: 'absolute', top: '50%', left: '50%', color: 'grey', transform: 'translate3d(-50%, -50%, 0)',
+    }}
     >
       <h2 style={{ display: 'inline', margin: 0 }}>Header</h2>
-      {layoutConfig.toggleMenu &&
+      {layoutConfig.toggleMenu
+        && (
         <button
+          type="button"
           style={inlineButtonStyle}
           onClick={layoutConfig.toggleMenu}
-        >Toggle Menu
-        </button>}
+        >
+Toggle Menu
+        </button>
+        )}
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       {layoutConfig.size !== 'small' && layoutConfig.size !== 'tiny' && <Link to="/page1" style={{ paddingLeft: '5px' }}>Page 1</Link>}
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}

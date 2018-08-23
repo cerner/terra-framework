@@ -35,19 +35,19 @@ const defaultProps = {
 const attachmentValues = (attachment) => {
   if (attachment === 'middle start') {
     return { vertical: 'middle', horizontal: 'start' };
-  } else if (attachment === 'middle end') {
+  } if (attachment === 'middle end') {
     return { vertical: 'middle', horizontal: 'end' };
-  } else if (attachment === 'middle center') {
+  } if (attachment === 'middle center') {
     return { vertical: 'middle', horizontal: 'center' };
-  } else if (attachment === 'top start') {
+  } if (attachment === 'top start') {
     return { vertical: 'top', horizontal: 'start' };
-  } else if (attachment === 'top end') {
+  } if (attachment === 'top end') {
     return { vertical: 'top', horizontal: 'end' };
-  } else if (attachment === 'top center') {
+  } if (attachment === 'top center') {
     return { vertical: 'top', horizontal: 'center' };
-  } else if (attachment === 'bottom start') {
+  } if (attachment === 'bottom start') {
     return { vertical: 'bottom', horizontal: 'start' };
-  } else if (attachment === 'bottom end') {
+  } if (attachment === 'bottom end') {
     return { vertical: 'bottom', horizontal: 'end' };
   }
   return { vertical: 'bottom', horizontal: 'center' };
@@ -104,10 +104,11 @@ class HookshotTemplate extends React.Component {
           />
         </Hookshot>
         <button
+          type="button"
           id={`trigger-${id}`}
           style={{
- width: '100px', height: '36px', backgroundColor: 'lightGrey', marginLeft: buttonMarginLeft, marginRight: buttonMarginRight, marginTop: buttonMarginTop,
-}}
+            width: '100px', height: '36px', backgroundColor: 'lightGrey', marginLeft: buttonMarginLeft, marginRight: buttonMarginRight, marginTop: buttonMarginTop,
+          }}
           onClick={this.triggerHookshot}
         >
           Trigger Hookshot

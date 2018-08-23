@@ -47,8 +47,8 @@ class OffsetPopup extends React.Component {
       <div
         id="test-popup-area"
         style={{
- position: 'relative', height: '200px', width: '200px', background: 'aliceblue',
-}}
+          position: 'relative', height: '200px', width: '200px', background: 'aliceblue',
+        }}
         ref={this.setParentNode}
       >
         <Popup
@@ -66,10 +66,11 @@ class OffsetPopup extends React.Component {
           <p style={{ padding: '5px' }}>This popup was adjusted because the target was smaller than the arrow position allowed.</p>
         </Popup>
         <button
+          type="button"
           id="offset-button"
           style={{
- position: 'absolute', right: '10px', bottom: '0px', height: '10px', width: '10px', backgroundColor: '#c00',
-}}
+            position: 'absolute', right: '10px', bottom: '0px', height: '10px', width: '10px', backgroundColor: '#c00',
+          }}
           onClick={this.handleButtonClick}
           ref={this.setButtonNode}
         />

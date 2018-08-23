@@ -102,7 +102,7 @@ class MenuItem extends React.Component {
     return (
       <List.Item
         className={cx('list-item')}
-        content={
+        content={(
           /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */
           <div
             {...customProps}
@@ -118,7 +118,7 @@ class MenuItem extends React.Component {
             {hasChevron && <span className={cx('chevron')}><ChevronRight height="0.8em" width="0.8em" /></span>}
           </div>
           /* eslint-enable jsx-ally/no-static-element-interactions */
-        }
+        )}
       />
     );
   }

@@ -119,6 +119,7 @@ class ApplicationHeader extends React.Component {
       return (
         <div className={cx('toolbar-toggle')}>
           <button
+            type="button"
             className={cx('toggle-button')}
             aria-label={intl.formatMessage({ id: 'Terra.applicationLayout.applicationHeader.menuToggleLabel' })}
             onClick={layoutConfig.toggleMenu}

@@ -7,7 +7,7 @@ const mainContentForSlidePanel = togglePanelHandler => (
   <div>
     <header style={{ backgroundColor: 'lightgrey' }}>
       <h3 style={{ margin: '0px', padding: '5px', display: 'inline-block' }}>Main Content</h3>
-      <button onClick={togglePanelHandler} style={{ display: 'inline-block' }}>Toggle Panel</button>
+      <button type="button" onClick={togglePanelHandler} style={{ display: 'inline-block' }}>Toggle Panel</button>
     </header>
     <div style={{ margin: '5px' }}>
       <p>
@@ -33,8 +33,8 @@ const panelContentForSlidePanel = (togglePanelHandler, toggleFullscreenHandler) 
   <div>
     <header style={{ backgroundColor: 'lightgrey' }}>
       <h3 style={{ margin: '0px', padding: '5px', display: 'inline-block' }}>Panel Content</h3>
-      <button onClick={togglePanelHandler} style={{ display: 'inline-block' }}>Toggle Panel</button>
-      <button onClick={toggleFullscreenHandler} style={{ display: 'inline-block' }}>Toggle Fullscreen</button>
+      <button type="button" onClick={togglePanelHandler} style={{ display: 'inline-block' }}>Toggle Panel</button>
+      <button type="button" onClick={toggleFullscreenHandler} style={{ display: 'inline-block' }}>Toggle Fullscreen</button>
     </header>
     <div style={{ margin: '5px' }}>
       <p>This is the panel content area of the slide panel.</p>

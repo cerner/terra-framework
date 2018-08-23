@@ -43,7 +43,7 @@ const CustomRenderAggregatorExample = () => (
             </Grid.Column>
           </Grid.Row>
         </Grid>
-        )}
+      )}
     />
   </div>
 );

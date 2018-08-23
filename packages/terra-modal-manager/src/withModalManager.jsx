@@ -1,5 +1,6 @@
 import React from 'react';
 import AppDelegate from 'terra-app-delegate';
+/* eslint-disable-next-line import/no-cycle */
 import ModalManager from './ModalManager';
 
 const withModalManager = (Component) => {

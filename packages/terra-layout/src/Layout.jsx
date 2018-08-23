@@ -64,7 +64,7 @@ class Layout extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState(Layout.stateForProps(nextProps, this.state));
+    this.setState(prevState => (Layout.stateForProps(nextProps, prevState)));
   }
 
   componentWillUnmount() {
@@ -83,17 +83,17 @@ class Layout extends React.Component {
 
   toggleMenu() {
     return new Promise((resolve) => {
-      this.setState({
-        menuIsOpen: !this.state.menuIsOpen,
-      }, resolve);
+      this.setState(prevState => ({
+        menuIsOpen: !prevState.menuIsOpen,
+      }), resolve);
     });
   }
 
   togglePin() {
     return new Promise((resolve) => {
-      this.setState({
-        menuIsPinned: !this.state.menuIsPinned,
-      }, resolve);
+      this.setState(prevState => ({
+        menuIsPinned: !prevState.menuIsPinned,
+      }), resolve);
     });
   }
 
@@ -152,8 +152,8 @@ class Layout extends React.Component {
         header={isToggleMenu && this.renderHeader()}
         style={{ outline: 'none' }}
       >
-        {children ?
-          React.cloneElement(children, {
+        {children
+          ? React.cloneElement(children, {
             layoutConfig: {
               size,
               toggleMenu: shouldAllowMenuToggle ? this.toggleMenu : undefined,

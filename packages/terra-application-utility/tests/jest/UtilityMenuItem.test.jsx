@@ -4,7 +4,7 @@ import HeaderUtilityMenuItem from '../../src/utility/_UtilityMenuItem';
 describe('UtilityMenuItem', () => {
   const mockOnChange = jest.fn();
   const title = 'title';
-  const content = (<div > test</div>);
+  const content = (<div> test</div>);
   const contentLocation = 'footer';
   const variant = 'header';
 

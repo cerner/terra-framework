@@ -31,8 +31,8 @@ class StandaloneAggregatorExample extends React.Component {
   render() {
     const body = (
       <div>
-        <button onClick={() => { this.setState({ flip: !this.state.flip }); }}>Flip Section Order</button>
-        <button onClick={() => { this.forceUpdate(); }}>Force Aggregator Render</button>
+        <button type="button" onClick={() => { this.setState(prevState => ({ flip: !prevState.flip })); }}>Flip Section Order</button>
+        <button type="button" onClick={() => { this.forceUpdate(); }}>Force Aggregator Render</button>
         <Aggregator
           items={this.state.flip ? Object.assign([], items).reverse() : items}
         />

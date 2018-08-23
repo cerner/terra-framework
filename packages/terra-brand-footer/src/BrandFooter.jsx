@@ -154,7 +154,7 @@ const BrandFooter = ({
   return (
     <footer role="contentinfo" {...customProps} className={BrandFooterClassNames}>
       {navigation}
-      <div className={cx('footer-content')} >
+      <div className={cx('footer-content')}>
         <div className={cx('content-top')}>
           {contentLeft}
           {contentRight}

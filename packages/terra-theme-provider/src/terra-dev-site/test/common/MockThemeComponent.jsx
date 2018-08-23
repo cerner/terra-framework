@@ -15,7 +15,7 @@ const propTypes = {
 };
 
 const MockThemeComponent = ({ children, ...customProps }) => (
-  <div {...customProps} className={cx('mock-theme-component', customProps.className)} >
+  <div {...customProps} className={cx('mock-theme-component', customProps.className)}>
     {children}
   </div>
 );

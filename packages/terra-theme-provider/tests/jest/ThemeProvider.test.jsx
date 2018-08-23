@@ -9,7 +9,7 @@ describe('ThemeProvider', () => {
   );
 
   const customClassRender = (
-    <ThemeProvider themeName={ThemeProvider.Opts.Themes.MOCK} className="customClass" >
+    <ThemeProvider themeName={ThemeProvider.Opts.Themes.MOCK} className="customClass">
       <p> Child content </p>
     </ThemeProvider>
   );

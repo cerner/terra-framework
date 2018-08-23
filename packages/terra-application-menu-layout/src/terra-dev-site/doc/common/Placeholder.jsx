@@ -21,15 +21,16 @@ const Placeholder = ({
   borderColor, height, text, textColor, width,
 }) => (
   <div style={{
- height, width, position: 'relative', padding: '5px',
-}}>
+    height, width, position: 'relative', padding: '5px',
+  }}
+  >
     <div style={{
- height: '100%', width: '100%', position: 'relative', border: `3px dashed ${borderColor}`,
-}}
+      height: '100%', width: '100%', position: 'relative', border: `3px dashed ${borderColor}`,
+    }}
     >
       <div style={{
- position: 'absolute', top: '50%', left: '50%', color: textColor, transform: 'translate3d(-50%, -50%, 0)',
-}}
+        position: 'absolute', top: '50%', left: '50%', color: textColor, transform: 'translate3d(-50%, -50%, 0)',
+      }}
       >
         <h3>{text}</h3>
       </div>

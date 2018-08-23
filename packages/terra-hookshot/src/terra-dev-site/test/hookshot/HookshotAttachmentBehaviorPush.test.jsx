@@ -29,8 +29,8 @@ class HookshotAttachmentBehaviorPush extends React.Component {
         />
         <p>Choose the positioning behavior</p>
         <p>Primary position is on the middle right</p>
-        <button id="position-primary" value="primary" onClick={this.handlePositionClick}>Primary</button>
-        <button id="position-pushed" value="pushed" onClick={this.handlePositionClick}>Pushed by bounds</button>
+        <button type="button" id="position-primary" value="primary" onClick={this.handlePositionClick}>Primary</button>
+        <button type="button" id="position-pushed" value="pushed" onClick={this.handlePositionClick}>Pushed by bounds</button>
       </div>
     );
   }

@@ -20,8 +20,8 @@ const HookshotExample = () => (
       <li>Target Attachement: bottom start</li>
       <li>Content Offset : 20px -10px</li>
     </ul>
-    <button id="ltr-ContentOffset" onClick={() => { document.getElementsByTagName('html')[0].dir = 'ltr'; }}>LTR</button>
-    <button id="rtl-ContentOffset" onClick={() => { document.getElementsByTagName('html')[0].dir = 'rtl'; }}>RTL</button>
+    <button type="button" id="ltr-ContentOffset" onClick={() => { document.getElementsByTagName('html')[0].dir = 'ltr'; }}>LTR</button>
+    <button type="button" id="rtl-ContentOffset" onClick={() => { document.getElementsByTagName('html')[0].dir = 'rtl'; }}>RTL</button>
   </div>
 );
 

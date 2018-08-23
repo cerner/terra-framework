@@ -25,19 +25,19 @@ const generateOptions = values => (
 const attachmentValues = (attachment) => {
   if (attachment === 'middle start') {
     return { vertical: 'middle', horizontal: 'start' };
-  } else if (attachment === 'middle end') {
+  } if (attachment === 'middle end') {
     return { vertical: 'middle', horizontal: 'end' };
-  } else if (attachment === 'middle center') {
+  } if (attachment === 'middle center') {
     return { vertical: 'middle', horizontal: 'center' };
-  } else if (attachment === 'top start') {
+  } if (attachment === 'top start') {
     return { vertical: 'top', horizontal: 'start' };
-  } else if (attachment === 'top end') {
+  } if (attachment === 'top end') {
     return { vertical: 'top', horizontal: 'end' };
-  } else if (attachment === 'top center') {
+  } if (attachment === 'top center') {
     return { vertical: 'top', horizontal: 'center' };
-  } else if (attachment === 'bottom start') {
+  } if (attachment === 'bottom start') {
     return { vertical: 'bottom', horizontal: 'start' };
-  } else if (attachment === 'bottom end') {
+  } if (attachment === 'bottom end') {
     return { vertical: 'bottom', horizontal: 'end' };
   }
   return { vertical: 'bottom', horizontal: 'center' };
@@ -75,7 +75,7 @@ class HookshotStandard extends React.Component {
   }
 
   handleRegionClick(event) {
-    this.setState({ isOpen: !this.state.isOpen, coordinates: { x: event.clientX, y: event.clientY } });
+    this.setState(prevState => ({ isOpen: !prevState.isOpen, coordinates: { x: event.clientX, y: event.clientY } }));
   }
 
   handleRequestClose() {

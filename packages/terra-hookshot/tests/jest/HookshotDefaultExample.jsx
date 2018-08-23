@@ -10,7 +10,7 @@ class HookshotDefaultExample extends React.Component {
   }
 
   handleButtonClick() {
-    this.setState({ isOpen: !this.state.isOpen });
+    this.setState(prevState => ({ isOpen: !prevState.isOpen }));
   }
 
   handleRequestClose() {
@@ -34,7 +34,7 @@ class HookshotDefaultExample extends React.Component {
         >
           {hookshotContent}
         </Hookshot>
-        <button id="hookshot-standard-button" onClick={this.handleButtonClick} />
+        <button type="button" id="hookshot-standard-button" onClick={this.handleButtonClick} />
       </div>
     );
   }

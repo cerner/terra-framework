@@ -169,7 +169,7 @@ const getSecondaryArrowPosition = (contentPosition, targetPosition, arrowOffset,
   if (positions.length > 1) {
     if (contentAttachment.vertical === 'middle' && positions.indexOf(contentAttachment.horizontal) >= 0) {
       return contentAttachment.horizontal;
-    } else if (positions.indexOf(contentAttachment.vertical) >= 0) {
+    } if (positions.indexOf(contentAttachment.vertical) >= 0) {
       return contentAttachment.vertical;
     }
   }

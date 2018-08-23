@@ -55,7 +55,7 @@ class BoundedPopup extends React.Component {
         >
           <p style={{ padding: '5px' }}>This popup is bounded by height.</p>
         </Popup>
-        <button id="bounded-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
+        <button type="button" id="bounded-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
           Bounded Height
         </button>
       </div>

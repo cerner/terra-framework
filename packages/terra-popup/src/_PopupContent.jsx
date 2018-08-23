@@ -157,7 +157,7 @@ class PopupContent extends React.Component {
     if (value > 0) {
       if (maxValue > 0 && value >= maxValue) {
         return `${maxValue.toString()}px`;
-      } else if (!isAutomatic) {
+      } if (!isAutomatic) {
         return `${value.toString()}px`;
       }
     }

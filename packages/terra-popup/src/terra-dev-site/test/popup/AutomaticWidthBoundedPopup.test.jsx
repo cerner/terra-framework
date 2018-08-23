@@ -55,7 +55,7 @@ class PopupExample extends React.Component {
         >
           <p style={{ width: '400px' }}>This is popup content with a automatic width of 400px, but is bounded by the parent width of 200px.</p>
         </Popup>
-        <button id="default-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
+        <button type="button" id="default-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
           Default Popup
         </button>
       </div>

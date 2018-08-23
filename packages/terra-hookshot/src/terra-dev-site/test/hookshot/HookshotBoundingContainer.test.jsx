@@ -44,10 +44,10 @@ class HookshotBoundingContainer extends React.Component {
         />
         <p> Position should be pushed by bounding container </p>
         <p> Choose position behavior </p>
-        <button id="push-up" value="up" onClick={this.handlePositionClick}>Pushed Up</button>
-        <button id="push-down" value="down" onClick={this.handlePositionClick}>Pushed Down</button>
-        <button id="push-left" value="left" onClick={this.handlePositionClick}>Pushed Left</button>
-        <button id="push-right" value="right" onClick={this.handlePositionClick}>Pushed Right</button>
+        <button type="button" id="push-up" value="up" onClick={this.handlePositionClick}>Pushed Up</button>
+        <button type="button" id="push-down" value="down" onClick={this.handlePositionClick}>Pushed Down</button>
+        <button type="button" id="push-left" value="left" onClick={this.handlePositionClick}>Pushed Left</button>
+        <button type="button" id="push-right" value="right" onClick={this.handlePositionClick}>Pushed Right</button>
       </div>
     );
   }

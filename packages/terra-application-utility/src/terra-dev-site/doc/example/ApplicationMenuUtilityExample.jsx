@@ -18,7 +18,7 @@ class ApplicationMenuUtilityExample extends React.Component {
   }
 
   onDiscloseUtility() {
-    this.setState({ discloseCount: this.state.discloseCount += 1 });
+    this.setState(prevState => ({ discloseCount: prevState.discloseCount + 1 }));
   }
 
   handleOnChange(event, key) {

@@ -44,8 +44,8 @@ class DimensionPopup extends React.Component {
   render() {
     return (
       <div style={{
- position: 'relative', height: '100%', width: '100%', overflow: 'auto',
-}}
+        position: 'relative', height: '100%', width: '100%', overflow: 'auto',
+      }}
       >
         <div id="test-popup-area" style={{ height: '300px', width: '300px', background: 'aliceblue' }} ref={this.setParentNode}>
           <Popup
@@ -60,7 +60,7 @@ class DimensionPopup extends React.Component {
           >
             <p>This popup defaults its size.</p>
           </Popup>
-          <button id="dimension-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
+          <button type="button" id="dimension-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
             Invalid Popup
           </button>
         </div>

@@ -17,21 +17,27 @@ const SimpleAggregatorItem = ({ name, aggregatorDelegate, ...customProps }) => (
       />
     )}
   >
-    { aggregatorDelegate.hasFocus ?
-      <button
-        onClick={() => {
-          aggregatorDelegate.releaseFocus();
-        }}
-      >
+    { aggregatorDelegate.hasFocus
+      ? (
+        <button
+          type="button"
+          onClick={() => {
+            aggregatorDelegate.releaseFocus();
+          }}
+        >
         Release Focus
-      </button> :
-      <button
-        onClick={() => {
-          aggregatorDelegate.requestFocus();
-        }}
-      >
+        </button>
+      )
+      : (
+        <button
+          type="button"
+          onClick={() => {
+            aggregatorDelegate.requestFocus();
+          }}
+        >
         Get Focus
-      </button>
+        </button>
+      )
     }
     {aggregatorDelegate.hasFocus ? <h4>Section has focus!</h4> : null}
   </ContentContainer>

@@ -47,8 +47,8 @@ class AlignmentPopup extends React.Component {
       <div
         id="test-popup-area"
         style={{
- position: 'relative', height: '200px', width: '200px', background: 'aliceblue',
-}}
+          position: 'relative', height: '200px', width: '200px', background: 'aliceblue',
+        }}
         ref={this.setParentNode}
       >
         <Popup
@@ -66,10 +66,11 @@ class AlignmentPopup extends React.Component {
           <p style={{ padding: '5px' }}>This popup arrow has vertical-right attachment, but was adjusted to be on the screen.</p>
         </Popup>
         <button
+          type="button"
           id="alignment-button"
           style={{
- position: 'absolute', right: '0px', height: '20px', width: '20px', backgroundColor: '#c00',
-}}
+            position: 'absolute', right: '0px', height: '20px', width: '20px', backgroundColor: '#c00',
+          }}
           onClick={this.handleButtonClick}
           ref={this.setButtonNode}
         />

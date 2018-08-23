@@ -7,6 +7,7 @@ import ModalAggregator from 'terra-aggregator/lib/terra-dev-site/doc/common/Moda
 
 const ModalButton = ({ app }) => (
   <button
+    type="button"
     onClick={() => {
       app.disclose({
         preferredType: 'modal',

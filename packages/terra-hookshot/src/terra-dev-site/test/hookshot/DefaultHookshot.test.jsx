@@ -33,8 +33,8 @@ class HookshotStandard extends React.Component {
       <div
         id="default-bounds"
         style={{
- border: '1px dashed grey', height: '145px', width: '500px', position: 'relative',
-}}
+          border: '1px dashed grey', height: '145px', width: '500px', position: 'relative',
+        }}
       >
         <Hookshot
           contentAttachment={{ vertical: 'bottom', horizontal: 'center' }}
@@ -44,7 +44,7 @@ class HookshotStandard extends React.Component {
         >
           {hookshotContent}
         </Hookshot>
-        <button style={{ position: 'absolute', left: '210px', top: '50%' }} id="hookshot-standard-button" onClick={this.handleButtonClick}>Default Hookshot</button>
+        <button type="button" style={{ position: 'absolute', left: '210px', top: '50%' }} id="hookshot-standard-button" onClick={this.handleButtonClick}>Default Hookshot</button>
       </div>
     );
   }

@@ -15,7 +15,7 @@ class DefaultApplicationMenuUtility extends React.Component {
 
   onDiscloseUtility(utility) {
     if (utility) {
-      this.setState({ utilityComponent: !this.state.utilityComponent });
+      this.setState(prevState => ({ utilityComponent: !prevState.utilityComponent }));
     }
   }
 

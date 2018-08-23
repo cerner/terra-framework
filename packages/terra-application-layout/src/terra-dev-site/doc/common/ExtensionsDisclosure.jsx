@@ -22,7 +22,10 @@ const ExtensionsDisclosure = ({ name, app }) => (
       />
    )}
   >
-    <div style={{ padding: '10px' }}>Content for extension: {name}</div>
+    <div style={{ padding: '10px' }}>
+Content for extension:
+      {name}
+    </div>
   </ContentContainer>
 );
 

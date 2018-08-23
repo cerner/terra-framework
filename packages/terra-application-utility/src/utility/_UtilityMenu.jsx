@@ -198,11 +198,7 @@ class UtilityMenu extends React.Component {
     const { childKeys } = this.getItem(key);
     const item = this.getItem(key);
     if (childKeys && childKeys.length > 0) {
-      this.setState({
-        // eslint-disable-next-line react/no-unused-state
-        previousKey: this.push(this.state.currentKey),
-        currentKey: key,
-      });
+      this.setState(prevState => ({ previousKey: this.push(prevState.currentKey), currentKey: key }));
     } else {
       this.props.onRequestClose();
       this.props.onChange(event, { key, metaData: item.metaData });
@@ -226,17 +222,18 @@ class UtilityMenu extends React.Component {
   }
 
   pop() {
-    const newStack = this.state.previousKeyStack.slice();
-    this.setState({
-      previousKeyStack: newStack,
-      currentKey: newStack.pop(),
+    this.setState((prevState) => {
+      const newStack = prevState.previousKeyStack.slice();
+      return { previousKeyStack: newStack, currentKey: newStack.pop() };
     });
   }
 
   push(key) {
-    const newStack = this.state.previousKeyStack.slice();
-    newStack.push(key);
-    this.setState({ previousKeyStack: newStack });
+    this.setState((prevState) => {
+      const newStack = prevState.previousKeyStack.slice();
+      newStack.push(key);
+      return { previousKeyStack: newStack };
+    });
   }
 
   render() {
@@ -357,7 +354,7 @@ class UtilityMenu extends React.Component {
     const menuText = intl.formatMessage({ id: 'Terra.application.utility.menu' });
     /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
     return (
-      <div ref={this.setMenuNode} style={{ height: isHeightBounded ? '100%' : 'auto', outline: 'none' }} tabIndex="0" >
+      <div ref={this.setMenuNode} style={{ height: isHeightBounded ? '100%' : 'auto', outline: 'none' }} tabIndex="0">
         <ContentContainer
           {...customProps}
           header={header}

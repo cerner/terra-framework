@@ -40,8 +40,8 @@ class PopupNoHeader extends React.Component {
     return (
       <div
         style={{
- height: '200px', width: '200px', background: 'aliceblue', overflow: 'hidden',
-}}
+          height: '200px', width: '200px', background: 'aliceblue', overflow: 'hidden',
+        }}
         ref={this.setParentNode}
       >
         <Popup

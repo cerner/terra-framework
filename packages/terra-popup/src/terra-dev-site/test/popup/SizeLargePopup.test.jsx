@@ -44,8 +44,8 @@ class DimensionPopup extends React.Component {
   render() {
     return (
       <div style={{
- position: 'relative', height: '100%', width: '100%', overflow: 'scroll',
-}}
+        position: 'relative', height: '100%', width: '100%', overflow: 'scroll',
+      }}
       >
         <div id="test-popup-area" style={{ height: '300px', width: '1000px', background: 'aliceblue' }} ref={this.setParentNode}>
           <Popup
@@ -60,7 +60,7 @@ class DimensionPopup extends React.Component {
           >
             <p>This popup is 240h by 960w.</p>
           </Popup>
-          <button id="dimension-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
+          <button type="button" id="dimension-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
             Large Popup
           </button>
         </div>
