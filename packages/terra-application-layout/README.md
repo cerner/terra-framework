@@ -2,8 +2,8 @@
 
 The Terra Application Layout is a responsive, themeable layout for building applications.
 
-[![NPM version](http://img.shields.io/npm/v/terra-application-layout.svg)](https://www.npmjs.org/package/terra-application-layout)
-[![Build Status](https://travis-ci.org/cerner/terra-framework.svg?branch=master)](https://travis-ci.org/cerner/terra-framework)
+[![NPM version](https://badgen.net/npm/v/terra-application-layout)](https://www.npmjs.org/package/terra-application-layout)
+[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.org/cerner/terra-framework)
 
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-application/docs)
