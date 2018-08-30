@@ -1,8 +1,13 @@
-Terra Modal Manager - Changelog
+Changelog
 =========
 
 Unreleased
 ----------
+
+3.10.0 - (August 30, 2018)
+------------------
+### Changed
+* Formatting changes per eslint v5 update
 
 3.9.0 - (August 13, 2018)
 ------------------
