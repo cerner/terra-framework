@@ -1,8 +1,8 @@
 # Terra Infinite List
 
 
-[![NPM version](http://img.shields.io/npm/v/terra-infinite-list.svg)](https://www.npmjs.org/package/terra-infinite-list)
-[![Build Status](https://travis-ci.org/cerner/terra-framework.svg?branch=master)](https://travis-ci.org/cerner/terra-framework)
+[![NPM version](https://badgen.net/npm/v/terra-infinite-list)](https://www.npmjs.org/package/terra-infinite-list)
+[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.org/cerner/terra-framework)
 
 The infinite list component provides virtual dom management and data request callbacks to manage large data sets within a list.
 

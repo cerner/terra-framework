@@ -1,7 +1,7 @@
 # Terra SlidePanel Manager
 
-[![NPM version](http://img.shields.io/npm/v/terra-slide-panel-manager.svg)](https://www.npmjs.org/package/terra-slide-panel-manager)
-[![Build Status](https://travis-ci.org/cerner/terra-framework.svg?branch=master)](https://travis-ci.org/cerner/terra-framework)
+[![NPM version](https://badgen.net/npm/v/terra-slide-panel-manager)](https://www.npmjs.org/package/terra-slide-panel-manager)
+[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.org/cerner/terra-framework)
 
 The SlidePanelManager is a DisclosureManager implementation that presents disclosed content using a SlidePanel.
 

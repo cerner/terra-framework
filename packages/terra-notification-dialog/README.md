@@ -1,7 +1,7 @@
 # Terra NotificationDialog
 
-[![NPM version](http://img.shields.io/npm/v/terra-notification-dialog.svg)](https://www.npmjs.org/package/terra-notification-dialog)
-[![Build Status](https://travis-ci.org/cerner/terra-framework.svg?branch=master)](https://travis-ci.org/cerner/terra-framework)
+[![NPM version](https://badgen.net/npm/v/terra-notification-dialog)](https://www.npmjs.org/package/terra-notification-dialog)
+[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.org/cerner/terra-framework)
 
 `terra-notification-dialog` is a notification dialog component built over the `terra-abstract-modal`. It has the highest z-index of 9001. It is a common component to be used for confirmation/acceptance criteria style dialogs.
 

@@ -26,7 +26,7 @@
 | identity-obj-proxy | ^3.0.0 | -- | an identity object using ES6 proxies |
 | jest | ^23.1.0 | -- | Delightful JavaScript Testing. |
 | lerna | ^2.8.0 | -- | Tool for managing JavaScript projects with multiple packages |
-| link-parent-bin | ^0.2.0 | -- | [![Build Status](https://travis-ci.org/nicojs/node-link-parent-bin.svg?branch=master)](https://travis-ci.org/nicojs/node-link-parent-bin) |
+| link-parent-bin | ^0.2.0 | -- | [![Build Status](https://badgen.net/travis/nicojs/node-link-parent-bin)](https://travis-ci.org/nicojs/node-link-parent-bin) |
 | load-json-file | ^5.0.0 | -- | Read and parse a JSON file |
 | raf | ^3.4.0 | -- | requestAnimationFrame polyfill for node and the browser |
 | react | ^16.2.0 | -- | React is a JavaScript library for building user interfaces. |

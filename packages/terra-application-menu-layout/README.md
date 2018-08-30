@@ -1,8 +1,8 @@
 # Terra Application Menu Layout
 
 
-[![NPM version](http://img.shields.io/npm/v/terra-application-menu-layout.svg)](https://www.npmjs.org/package/terra-application-menu-layout)
-[![Build Status](https://travis-ci.org/cerner/terra.svg?branch=master)](https://travis-ci.org/cerner/terra-framework)
+[![NPM version](https://badgen.net/npm/v/terra-application-menu-layout)](https://www.npmjs.org/package/terra-application-menu-layout)
+[![Build Status](https://badgen.net/travis/cerner/terra)](https://travis-ci.org/cerner/terra-framework)
 
 This component renders an application menu layout. To be used with a terra-layout or terra-navigation-layout.
 

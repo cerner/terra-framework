@@ -1,8 +1,8 @@
 # Terra Application Links
 
 
-[![NPM version](http://img.shields.io/npm/v/terra-applicaiton-links.svg)](https://www.npmjs.org/package/terra-application-links)
-[![Build Status](https://travis-ci.org/cerner/terra-framework.svg?branch=master)](https://travis-ci.org/cerner/terra-framework)
+[![NPM version](https://badgen.net/npm/v/terra-applicaiton-links)](https://www.npmjs.org/package/terra-application-links)
+[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.org/cerner/terra-framework)
 
 This packages contains a list and tab form of ApplicationLinks, to be used in horizontal and vertical display styles. Selection is managed by react-router.
 
