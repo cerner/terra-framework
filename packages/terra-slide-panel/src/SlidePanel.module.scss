@@ -110,6 +110,7 @@
 
   // Fullscreen
   .is-fullscreen[data-slide-panel-panel-size] > .panel {
+    border-radius: var(--terra-slide-panel-panel-fullscreen-border-radius);
     width: 100%;
   }
 
