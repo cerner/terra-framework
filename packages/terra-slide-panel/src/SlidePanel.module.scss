@@ -8,6 +8,7 @@
   .panel {
     background-color: var(--terra-slide-panel-panel-background-color, #fff);
     background-image: var(--terra-slide-panel-panel-background-image);
+    border-radius: var(--terra-slide-panel-panel-border-radius);
     box-sizing: border-box;
 
     height: 100%;
