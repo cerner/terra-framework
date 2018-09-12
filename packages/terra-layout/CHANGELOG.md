@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+2.15.0 - (September 11, 2018)
+------------------
 ### Changed
 * Made content area a main node
 
