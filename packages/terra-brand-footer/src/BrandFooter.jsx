@@ -125,27 +125,29 @@ const BrandFooter = ({
     navigation = (
       <nav className={cx(['nav', isVertical ? 'nav-vertical' : 'nav-horizontal'])}>
         {processedSections.map(linkGroup => (
-          <ul className={cx('menu')} key={linkGroup.id}>
+          <section className={cx('navigation-section')} key={linkGroup.id}>
             { // When displaying vertically if one column has a header all columns are aligned as if they have a header
               ((containsASectionHeader && isVertical) || linkGroup.headerText) && (
-                <li className={cx('list-header')} key={linkGroup.headerText}>
+                <h3 className={cx('list-header')} key={linkGroup.headerText}>
                   { // Insert a zero width space to act as a placeholder section header that doesn't display but takes vertical space
                     linkGroup.headerText || '\u200B'
                   }
-                </li>
+                </h3>
               )
             }
-            {linkGroup.links && linkGroup.links.map((link) => {
-              const spreadTarget = link.target !== undefined ? { target: link.target } : {};
-              return (
-                <li className={cx('list-item')} key={link.text + link.href}>
-                  <a className={cx('link')} href={link.href} {...spreadTarget}>
-                    {link.text}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
+            <ul className={cx('menu')}>
+              {linkGroup.links && linkGroup.links.map((link) => {
+                const spreadTarget = link.target !== undefined ? { target: link.target } : {};
+                return (
+                  <li className={cx('list-item')} key={link.text + link.href}>
+                    <a className={cx('link')} href={link.href} {...spreadTarget}>
+                      {link.text}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
         ))}
       </nav>
     );

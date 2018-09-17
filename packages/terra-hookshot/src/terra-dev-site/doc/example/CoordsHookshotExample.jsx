@@ -75,7 +75,8 @@ class HookshotStandard extends React.Component {
   }
 
   handleRegionClick(event) {
-    this.setState(prevState => ({ isOpen: !prevState.isOpen, coordinates: { x: event.clientX, y: event.clientY } }));
+    const coordinates = { x: event.clientX, y: event.clientY };
+    this.setState(prevState => ({ isOpen: !prevState.isOpen, coordinates }));
   }
 
   handleRequestClose() {
