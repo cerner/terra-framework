@@ -1,5 +1,3 @@
-/* global browser, Terra, before, beforeEach, expect */
-
 describe('Aggregator', () => {
   before(() => browser.setViewportSize(Terra.viewports('large')[0]));
 

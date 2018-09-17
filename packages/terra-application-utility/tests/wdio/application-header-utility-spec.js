@@ -1,5 +1,3 @@
-/* global browser, Terra */
-
 const viewports = Terra.viewports('tiny', 'medium');
 
 describe('ApplicationHeaderUtility', () => {

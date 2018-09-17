@@ -1,5 +1,3 @@
-/* global browser, Terra, beforeEach, expect */
-
 const viewports = Terra.viewports('tiny', 'medium');
 
 describe('Application Header Layout', () => {

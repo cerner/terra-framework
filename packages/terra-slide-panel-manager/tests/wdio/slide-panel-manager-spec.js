@@ -1,4 +1,3 @@
-/* global browser, Terra, beforeEach, before, expect */
 const viewports = Terra.viewports('tiny', 'large');
 
 viewports.forEach((viewport) => {
