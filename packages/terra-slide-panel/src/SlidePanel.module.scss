@@ -6,8 +6,6 @@
 
   .main,
   .panel {
-    background-color: var(--terra-slide-panel-panel-background-color, #fff);
-    background-image: var(--terra-slide-panel-panel-background-image);
     box-sizing: border-box;
 
     height: 100%;
@@ -22,11 +20,15 @@
   }
 
   .main {
+    background-color: var(--terra-slide-panel-main-background-color, #fff);
+    background-image: var(--terra-slide-panel-main-background-image);
     position: relative;
     z-index: 0;
   }
 
   .panel {
+    background-color: var(--terra-slide-panel-panel-background-color, #fff);
+    background-image: var(--terra-slide-panel-panel-background-image);
     border-radius: var(--terra-slide-panel-panel-border-radius);
     position: absolute;
     z-index: 500; // z-index used to set master above detail in visual stacking context.
