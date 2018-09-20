@@ -1,5 +1,3 @@
-/* global browser, Terra, before */
-
 describe('Default navigation side menu display', () => {
   before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
   beforeEach(() => {

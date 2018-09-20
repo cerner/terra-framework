@@ -1,4 +1,3 @@
-/* global browser, Terra, before, beforeEach, expect */
 const viewports = Terra.viewports('tiny', 'large');
 const selector = '#root';
 

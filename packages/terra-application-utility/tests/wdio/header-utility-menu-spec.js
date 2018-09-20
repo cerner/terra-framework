@@ -1,4 +1,3 @@
-/* global browser, Terra */
 describe('HeaderUtilityMenu', () => {
   beforeEach(() => {
     browser.url('/#/raw/tests/terra-application-utility/application-utility/default-header-utility-menu');

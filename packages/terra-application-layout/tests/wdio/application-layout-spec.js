@@ -1,5 +1,3 @@
-/* global browser, Terra, beforeEach */
-
 const viewports = Terra.viewports('small', 'large');
 
 describe('ApplicationLayout', () => {
