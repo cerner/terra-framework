@@ -1,5 +1,3 @@
-/* global browser, Terra, before */
-
 const viewports = Terra.viewports('small');
 
 describe('InfiniteList', () => {

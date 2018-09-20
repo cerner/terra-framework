@@ -1,4 +1,4 @@
-/* global browser, Terra, before, after */
+/* global after */
 
 describe('Hookshot', () => {
   before(() => browser.setViewportSize(Terra.viewports('medium')[0]));

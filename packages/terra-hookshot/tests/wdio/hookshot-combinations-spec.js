@@ -1,5 +1,3 @@
-/* global browser, Terra, before */
-
 // 81 Attachment Variants Combinin Target and Content Attachements
 describe('Hookshot targetAttachment and contentAttachment combinations', () => {
   before(() => browser.setViewportSize(Terra.viewports('small')[0]));
