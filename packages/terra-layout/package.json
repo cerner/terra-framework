@@ -33,7 +33,6 @@
     "classnames": "^2.2.5",
     "lodash.debounce": "^4.0.8",
     "prop-types": "^15.5.8",
-    "terra-base": "^3.0.0",
     "terra-button": "^2.0.1",
     "terra-content-container": "^2.0.1",
     "terra-doc-template": "^1.1.0",

@@ -12,6 +12,7 @@ Cerner Corporation
 - Stephen Esser [@StephenEsser]
 - Nathan Faltermeier [@Blackop778]
 - Ben Boersma [@BenBoersma]
+- Alex Brisimitzakis [@AlexBrizi]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -25,3 +26,4 @@ Cerner Corporation
 [@StephenEsser]: https://github.com/StephenEsser
 [@Blackop778]: https://github.com/Blackop778
 [@BenBoersma]: https://github.com/BenBoersma
+[@AlexBrizi]: https://github.com/AlexBrizi
