@@ -4,6 +4,9 @@ Changelog
 Unreleased
 ----------
 
+### Changed
+* The application menu is closed when presenting utilities at compact sizes
+
 2.17.0 (September 17, 2018)
 
 ### Changed

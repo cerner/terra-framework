@@ -62,7 +62,11 @@ class ApplicationMenu extends React.Component {
   }
 
   handleUtilityDiscloseRequest(utilityMenu) {
-    const { app } = this.props;
+    const { app, layoutConfig } = this.props;
+
+    if (layoutConfig && layoutConfig.toggleMenu) {
+      layoutConfig.toggleMenu();
+    }
 
     if (app && utilityMenu) {
       app.disclose({
