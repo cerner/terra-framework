@@ -3,8 +3,11 @@ Changelog
 
 Unreleased
 ----------
+
+1.11.0 - (September 25, 2018)
+------------------
 ### Changed
-* Make brand footing markup more accessible.
+* Improved brand footer accessibility.
 
 1.10.0 - (September 5, 2018)
 ------------------

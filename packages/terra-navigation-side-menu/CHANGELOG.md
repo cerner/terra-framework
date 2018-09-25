@@ -4,8 +4,8 @@ Changelog
 Unreleased
 ----------
 
-1.14.0 (September 17, 2018)
-
+1.14.0 - (September 25, 2018)
+------------------
 ### Changed
 * Removed terra-base duplicate from dependencies (kept instance in peerDependencies)
 

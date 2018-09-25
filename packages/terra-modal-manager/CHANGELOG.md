@@ -4,8 +4,8 @@ Changelog
 Unreleased
 ----------
 
-3.12.0 (September 17, 2018)
-
+3.12.0 - (September 25, 2018)
+------------------
 ### Changed
 * Removed terra-base duplicate from devDependencies
 
