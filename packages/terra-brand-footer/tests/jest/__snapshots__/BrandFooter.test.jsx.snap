@@ -26,17 +26,20 @@ exports[`BrandFooter should render a section header 1`] = `
   <nav
     className="nav nav-horizontal"
   >
-    <ul
-      className="menu"
+    <section
+      className="navigation-section"
       key="0"
     >
-      <li
+      <h3
         className="list-header"
         key="Cerner Links"
       >
         Cerner Links
-      </li>
-    </ul>
+      </h3>
+      <ul
+        className="menu"
+      />
+    </section>
   </nav>
   <div
     className="footer-content"
@@ -59,22 +62,26 @@ exports[`BrandFooter should render the sections prop instead of links prop 1`] =
   <nav
     className="nav nav-horizontal"
   >
-    <ul
-      className="menu"
+    <section
+      className="navigation-section"
       key="0"
     >
-      <li
-        className="list-item"
-        key="Sections Prop linkhttps://www.cerner.com/"
+      <ul
+        className="menu"
       >
-        <a
-          className="link"
-          href="https://www.cerner.com/"
+        <li
+          className="list-item"
+          key="Sections Prop linkhttps://www.cerner.com/"
         >
-          Sections Prop link
-        </a>
-      </li>
-    </ul>
+          <a
+            className="link"
+            href="https://www.cerner.com/"
+          >
+            Sections Prop link
+          </a>
+        </li>
+      </ul>
+    </section>
   </nav>
   <div
     className="footer-content"
@@ -97,40 +104,44 @@ exports[`BrandFooter should render with a section header and provided links 1`] 
   <nav
     className="nav nav-horizontal"
   >
-    <ul
-      className="menu"
+    <section
+      className="navigation-section"
       key="0"
     >
-      <li
+      <h3
         className="list-header"
         key="Cerner Links"
       >
         Cerner Links
-      </li>
-      <li
-        className="list-item"
-        key="Cerner Homehttps://www.cerner.com/"
+      </h3>
+      <ul
+        className="menu"
       >
-        <a
-          className="link"
-          href="https://www.cerner.com/"
+        <li
+          className="list-item"
+          key="Cerner Homehttps://www.cerner.com/"
         >
-          Cerner Home
-        </a>
-      </li>
-      <li
-        className="list-item"
-        key="Cerner Codehttps://code.cerner.com/"
-      >
-        <a
-          className="link"
-          href="https://code.cerner.com/"
-          target="_blank"
+          <a
+            className="link"
+            href="https://www.cerner.com/"
+          >
+            Cerner Home
+          </a>
+        </li>
+        <li
+          className="list-item"
+          key="Cerner Codehttps://code.cerner.com/"
         >
-          Cerner Code
-        </a>
-      </li>
-    </ul>
+          <a
+            className="link"
+            href="https://code.cerner.com/"
+            target="_blank"
+          >
+            Cerner Code
+          </a>
+        </li>
+      </ul>
+    </section>
   </nav>
   <div
     className="footer-content"
@@ -301,74 +312,82 @@ exports[`BrandFooter should render with multiple link groups 1`] = `
   <nav
     className="nav nav-horizontal"
   >
-    <ul
-      className="menu"
+    <section
+      className="navigation-section"
       key="0"
     >
-      <li
+      <h3
         className="list-header"
         key="Cerner Links"
       >
         Cerner Links
-      </li>
-      <li
-        className="list-item"
-        key="Cerner Homehttps://www.cerner.com/"
+      </h3>
+      <ul
+        className="menu"
       >
-        <a
-          className="link"
-          href="https://www.cerner.com/"
+        <li
+          className="list-item"
+          key="Cerner Homehttps://www.cerner.com/"
         >
-          Cerner Home
-        </a>
-      </li>
-      <li
-        className="list-item"
-        key="Cerner Codehttps://code.cerner.com/"
-      >
-        <a
-          className="link"
-          href="https://code.cerner.com/"
-          target="_blank"
+          <a
+            className="link"
+            href="https://www.cerner.com/"
+          >
+            Cerner Home
+          </a>
+        </li>
+        <li
+          className="list-item"
+          key="Cerner Codehttps://code.cerner.com/"
         >
-          Cerner Code
-        </a>
-      </li>
-    </ul>
-    <ul
-      className="menu"
+          <a
+            className="link"
+            href="https://code.cerner.com/"
+            target="_blank"
+          >
+            Cerner Code
+          </a>
+        </li>
+      </ul>
+    </section>
+    <section
+      className="navigation-section"
       key="1"
     >
-      <li
+      <h3
         className="list-header"
         key="Cerner Links Again"
       >
         Cerner Links Again
-      </li>
-      <li
-        className="list-item"
-        key="Cerner Home Alsohttps://www.cerner.com/"
+      </h3>
+      <ul
+        className="menu"
       >
-        <a
-          className="link"
-          href="https://www.cerner.com/"
+        <li
+          className="list-item"
+          key="Cerner Home Alsohttps://www.cerner.com/"
         >
-          Cerner Home Also
-        </a>
-      </li>
-      <li
-        className="list-item"
-        key="Cerner Code As Wellhttps://code.cerner.com/"
-      >
-        <a
-          className="link"
-          href="https://code.cerner.com/"
-          target="_blank"
+          <a
+            className="link"
+            href="https://www.cerner.com/"
+          >
+            Cerner Home Also
+          </a>
+        </li>
+        <li
+          className="list-item"
+          key="Cerner Code As Wellhttps://code.cerner.com/"
         >
-          Cerner Code As Well
-        </a>
-      </li>
-    </ul>
+          <a
+            className="link"
+            href="https://code.cerner.com/"
+            target="_blank"
+          >
+            Cerner Code As Well
+          </a>
+        </li>
+      </ul>
+    </section>
   </nav>
   <div
     className="footer-content"
@@ -471,34 +490,38 @@ exports[`BrandFooter should render with provided links 1`] = `
   <nav
     className="nav nav-horizontal"
   >
-    <ul
-      className="menu"
+    <section
+      className="navigation-section"
       key="0"
     >
-      <li
-        className="list-item"
-        key="Cerner Homehttps://www.cerner.com/"
+      <ul
+        className="menu"
       >
-        <a
-          className="link"
-          href="https://www.cerner.com/"
+        <li
+          className="list-item"
+          key="Cerner Homehttps://www.cerner.com/"
         >
-          Cerner Home
-        </a>
-      </li>
-      <li
-        className="list-item"
-        key="Cerner Codehttps://code.cerner.com/"
-      >
-        <a
-          className="link"
-          href="https://code.cerner.com/"
-          target="_blank"
+          <a
+            className="link"
+            href="https://www.cerner.com/"
+          >
+            Cerner Home
+          </a>
+        </li>
+        <li
+          className="list-item"
+          key="Cerner Codehttps://code.cerner.com/"
         >
-          Cerner Code
-        </a>
-      </li>
-    </ul>
+          <a
+            className="link"
+            href="https://code.cerner.com/"
+            target="_blank"
+          >
+            Cerner Code
+          </a>
+        </li>
+      </ul>
+    </section>
   </nav>
   <div
     className="footer-content"
@@ -521,34 +544,38 @@ exports[`BrandFooter should render with provided links and content bottom 1`] = 
   <nav
     className="nav nav-horizontal"
   >
-    <ul
-      className="menu"
+    <section
+      className="navigation-section"
       key="0"
     >
-      <li
-        className="list-item"
-        key="Cerner Homehttps://www.cerner.com/"
+      <ul
+        className="menu"
       >
-        <a
-          className="link"
-          href="https://www.cerner.com/"
+        <li
+          className="list-item"
+          key="Cerner Homehttps://www.cerner.com/"
         >
-          Cerner Home
-        </a>
-      </li>
-      <li
-        className="list-item"
-        key="Cerner Codehttps://code.cerner.com/"
-      >
-        <a
-          className="link"
-          href="https://code.cerner.com/"
-          target="_blank"
+          <a
+            className="link"
+            href="https://www.cerner.com/"
+          >
+            Cerner Home
+          </a>
+        </li>
+        <li
+          className="list-item"
+          key="Cerner Codehttps://code.cerner.com/"
         >
-          Cerner Code
-        </a>
-      </li>
-    </ul>
+          <a
+            className="link"
+            href="https://code.cerner.com/"
+            target="_blank"
+          >
+            Cerner Code
+          </a>
+        </li>
+      </ul>
+    </section>
   </nav>
   <div
     className="footer-content"
@@ -577,34 +604,38 @@ exports[`BrandFooter should render with provided links and content bottom 2`] = 
   <nav
     className="nav nav-horizontal"
   >
-    <ul
-      className="menu"
+    <section
+      className="navigation-section"
       key="0"
     >
-      <li
-        className="list-item"
-        key="Cerner Homehttps://www.cerner.com/"
+      <ul
+        className="menu"
       >
-        <a
-          className="link"
-          href="https://www.cerner.com/"
+        <li
+          className="list-item"
+          key="Cerner Homehttps://www.cerner.com/"
         >
-          Cerner Home
-        </a>
-      </li>
-      <li
-        className="list-item"
-        key="Cerner Codehttps://code.cerner.com/"
-      >
-        <a
-          className="link"
-          href="https://code.cerner.com/"
-          target="_blank"
+          <a
+            className="link"
+            href="https://www.cerner.com/"
+          >
+            Cerner Home
+          </a>
+        </li>
+        <li
+          className="list-item"
+          key="Cerner Codehttps://code.cerner.com/"
         >
-          Cerner Code
-        </a>
-      </li>
-    </ul>
+          <a
+            className="link"
+            href="https://code.cerner.com/"
+            target="_blank"
+          >
+            Cerner Code
+          </a>
+        </li>
+      </ul>
+    </section>
   </nav>
   <div
     className="footer-content"
@@ -633,34 +664,38 @@ exports[`BrandFooter should render with provided links and content left 1`] = `
   <nav
     className="nav nav-horizontal"
   >
-    <ul
-      className="menu"
+    <section
+      className="navigation-section"
       key="0"
     >
-      <li
-        className="list-item"
-        key="Cerner Homehttps://www.cerner.com/"
+      <ul
+        className="menu"
       >
-        <a
-          className="link"
-          href="https://www.cerner.com/"
+        <li
+          className="list-item"
+          key="Cerner Homehttps://www.cerner.com/"
         >
-          Cerner Home
-        </a>
-      </li>
-      <li
-        className="list-item"
-        key="Cerner Codehttps://code.cerner.com/"
-      >
-        <a
-          className="link"
-          href="https://code.cerner.com/"
-          target="_blank"
+          <a
+            className="link"
+            href="https://www.cerner.com/"
+          >
+            Cerner Home
+          </a>
+        </li>
+        <li
+          className="list-item"
+          key="Cerner Codehttps://code.cerner.com/"
         >
-          Cerner Code
-        </a>
-      </li>
-    </ul>
+          <a
+            className="link"
+            href="https://code.cerner.com/"
+            target="_blank"
+          >
+            Cerner Code
+          </a>
+        </li>
+      </ul>
+    </section>
   </nav>
   <div
     className="footer-content"
@@ -690,34 +725,38 @@ exports[`BrandFooter should render with provided links and content left 2`] = `
   <nav
     className="nav nav-horizontal"
   >
-    <ul
-      className="menu"
+    <section
+      className="navigation-section"
       key="0"
     >
-      <li
-        className="list-item"
-        key="Cerner Homehttps://www.cerner.com/"
+      <ul
+        className="menu"
       >
-        <a
-          className="link"
-          href="https://www.cerner.com/"
+        <li
+          className="list-item"
+          key="Cerner Homehttps://www.cerner.com/"
         >
-          Cerner Home
-        </a>
-      </li>
-      <li
-        className="list-item"
-        key="Cerner Codehttps://code.cerner.com/"
-      >
-        <a
-          className="link"
-          href="https://code.cerner.com/"
-          target="_blank"
+          <a
+            className="link"
+            href="https://www.cerner.com/"
+          >
+            Cerner Home
+          </a>
+        </li>
+        <li
+          className="list-item"
+          key="Cerner Codehttps://code.cerner.com/"
         >
-          Cerner Code
-        </a>
-      </li>
-    </ul>
+          <a
+            className="link"
+            href="https://code.cerner.com/"
+            target="_blank"
+          >
+            Cerner Code
+          </a>
+        </li>
+      </ul>
+    </section>
   </nav>
   <div
     className="footer-content"
@@ -747,34 +786,38 @@ exports[`BrandFooter should render with provided links and content right 1`] = `
   <nav
     className="nav nav-horizontal"
   >
-    <ul
-      className="menu"
+    <section
+      className="navigation-section"
       key="0"
     >
-      <li
-        className="list-item"
-        key="Cerner Homehttps://www.cerner.com/"
+      <ul
+        className="menu"
       >
-        <a
-          className="link"
-          href="https://www.cerner.com/"
+        <li
+          className="list-item"
+          key="Cerner Homehttps://www.cerner.com/"
         >
-          Cerner Home
-        </a>
-      </li>
-      <li
-        className="list-item"
-        key="Cerner Codehttps://code.cerner.com/"
-      >
-        <a
-          className="link"
-          href="https://code.cerner.com/"
-          target="_blank"
+          <a
+            className="link"
+            href="https://www.cerner.com/"
+          >
+            Cerner Home
+          </a>
+        </li>
+        <li
+          className="list-item"
+          key="Cerner Codehttps://code.cerner.com/"
         >
-          Cerner Code
-        </a>
-      </li>
-    </ul>
+          <a
+            className="link"
+            href="https://code.cerner.com/"
+            target="_blank"
+          >
+            Cerner Code
+          </a>
+        </li>
+      </ul>
+    </section>
   </nav>
   <div
     className="footer-content"
@@ -810,34 +853,38 @@ exports[`BrandFooter should render with provided links and content right 2`] = `
   <nav
     className="nav nav-horizontal"
   >
-    <ul
-      className="menu"
+    <section
+      className="navigation-section"
       key="0"
     >
-      <li
-        className="list-item"
-        key="Cerner Homehttps://www.cerner.com/"
+      <ul
+        className="menu"
       >
-        <a
-          className="link"
-          href="https://www.cerner.com/"
+        <li
+          className="list-item"
+          key="Cerner Homehttps://www.cerner.com/"
         >
-          Cerner Home
-        </a>
-      </li>
-      <li
-        className="list-item"
-        key="Cerner Codehttps://code.cerner.com/"
-      >
-        <a
-          className="link"
-          href="https://code.cerner.com/"
-          target="_blank"
+          <a
+            className="link"
+            href="https://www.cerner.com/"
+          >
+            Cerner Home
+          </a>
+        </li>
+        <li
+          className="list-item"
+          key="Cerner Codehttps://code.cerner.com/"
         >
-          Cerner Code
-        </a>
-      </li>
-    </ul>
+          <a
+            className="link"
+            href="https://code.cerner.com/"
+            target="_blank"
+          >
+            Cerner Code
+          </a>
+        </li>
+      </ul>
+    </section>
   </nav>
   <div
     className="footer-content"
@@ -873,34 +920,38 @@ exports[`BrandFooter should render with provided links, content left, content bo
   <nav
     className="nav nav-horizontal"
   >
-    <ul
-      className="menu"
+    <section
+      className="navigation-section"
       key="0"
     >
-      <li
-        className="list-item"
-        key="Cerner Homehttps://www.cerner.com/"
+      <ul
+        className="menu"
       >
-        <a
-          className="link"
-          href="https://www.cerner.com/"
+        <li
+          className="list-item"
+          key="Cerner Homehttps://www.cerner.com/"
         >
-          Cerner Home
-        </a>
-      </li>
-      <li
-        className="list-item"
-        key="Cerner Codehttps://code.cerner.com/"
-      >
-        <a
-          className="link"
-          href="https://code.cerner.com/"
-          target="_blank"
+          <a
+            className="link"
+            href="https://www.cerner.com/"
+          >
+            Cerner Home
+          </a>
+        </li>
+        <li
+          className="list-item"
+          key="Cerner Codehttps://code.cerner.com/"
         >
-          Cerner Code
-        </a>
-      </li>
-    </ul>
+          <a
+            className="link"
+            href="https://code.cerner.com/"
+            target="_blank"
+          >
+            Cerner Code
+          </a>
+        </li>
+      </ul>
+    </section>
   </nav>
   <div
     className="footer-content"
@@ -948,34 +999,38 @@ exports[`BrandFooter should render with provided links, content left, content bo
   <nav
     className="nav nav-horizontal"
   >
-    <ul
-      className="menu"
+    <section
+      className="navigation-section"
       key="0"
     >
-      <li
-        className="list-item"
-        key="Cerner Homehttps://www.cerner.com/"
+      <ul
+        className="menu"
       >
-        <a
-          className="link"
-          href="https://www.cerner.com/"
+        <li
+          className="list-item"
+          key="Cerner Homehttps://www.cerner.com/"
         >
-          Cerner Home
-        </a>
-      </li>
-      <li
-        className="list-item"
-        key="Cerner Codehttps://code.cerner.com/"
-      >
-        <a
-          className="link"
-          href="https://code.cerner.com/"
-          target="_blank"
+          <a
+            className="link"
+            href="https://www.cerner.com/"
+          >
+            Cerner Home
+          </a>
+        </li>
+        <li
+          className="list-item"
+          key="Cerner Codehttps://code.cerner.com/"
         >
-          Cerner Code
-        </a>
-      </li>
-    </ul>
+          <a
+            className="link"
+            href="https://code.cerner.com/"
+            target="_blank"
+          >
+            Cerner Code
+          </a>
+        </li>
+      </ul>
+    </section>
   </nav>
   <div
     className="footer-content"
@@ -1023,34 +1078,38 @@ exports[`BrandFooter should render with the links prop 1`] = `
   <nav
     className="nav nav-horizontal"
   >
-    <ul
-      className="menu"
+    <section
+      className="navigation-section"
       key="0"
     >
-      <li
-        className="list-item"
-        key="Cerner Homehttps://www.cerner.com/"
+      <ul
+        className="menu"
       >
-        <a
-          className="link"
-          href="https://www.cerner.com/"
+        <li
+          className="list-item"
+          key="Cerner Homehttps://www.cerner.com/"
         >
-          Cerner Home
-        </a>
-      </li>
-      <li
-        className="list-item"
-        key="Cerner Codehttps://code.cerner.com/"
-      >
-        <a
-          className="link"
-          href="https://code.cerner.com/"
-          target="_blank"
+          <a
+            className="link"
+            href="https://www.cerner.com/"
+          >
+            Cerner Home
+          </a>
+        </li>
+        <li
+          className="list-item"
+          key="Cerner Codehttps://code.cerner.com/"
         >
-          Cerner Code
-        </a>
-      </li>
-    </ul>
+          <a
+            className="link"
+            href="https://code.cerner.com/"
+            target="_blank"
+          >
+            Cerner Code
+          </a>
+        </li>
+      </ul>
+    </section>
   </nav>
   <div
     className="footer-content"

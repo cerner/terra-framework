@@ -1,5 +1,3 @@
-/* global browser, Terra, before */
-
 const context = '[data-terra-dev-site-content] *:first-child';
 
 describe('Slide panel', () => {

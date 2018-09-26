@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+4.12.0 - (September 25, 2018)
+------------------
+### Fixed
+* Broken coordiantes example for setState.
+
 4.11.0 - (September 5, 2018)
 ------------------
 ### Changed

@@ -4,6 +4,12 @@ Changelog
 Unreleased
 ----------
 
+2.17.0 - (September 25, 2018)
+------------------
+### Changed
+* The application menu is closed when presenting utilities at compact sizes
+* Removed terra-base duplicate from devDependencies
+
 2.16.0 - (September 11, 2018)
 ------------------
 ### Changed

@@ -1,5 +1,3 @@
-/* global  browser, before, Terra */
-
 describe('Popup', () => {
   describe('Arrow Popup', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));

@@ -1,7 +1,7 @@
 {
   "name": "terra-layout",
   "main": "lib/Layout.js",
-  "version": "2.15.0",
+  "version": "2.16.0",
   "description": "Provides a responsive starting point for the positioning of application components.",
   "repository": {
     "type": "git",
@@ -33,7 +33,6 @@
     "classnames": "^2.2.5",
     "lodash.debounce": "^4.0.8",
     "prop-types": "^15.5.8",
-    "terra-base": "^3.0.0",
     "terra-button": "^2.0.1",
     "terra-content-container": "^2.0.1",
     "terra-doc-template": "^1.1.0",
