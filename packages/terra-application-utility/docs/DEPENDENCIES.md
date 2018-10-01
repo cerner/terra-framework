@@ -5,7 +5,6 @@
 |-|-|-|-|
 | classnames | ^2.2.5 | -- | A simple utility for conditionally joining classNames together |
 | prop-types | ^15.5.8 | -- | Runtime type checking for React props and similar objects. |
-| react-intl | ^2.4.0 | ^0.14.9 \|\| ^15.0.0 \|\| ^16.0.0 | Internationalize React apps. This library provides React components and an API to format dates, numbers, and strings, including pluralization and handling translations. |
 | terra-app-delegate | ^2.7.0 | ^16.4.2 | An object that provides a set of functions used to facilitate communcation between Containers and their consuming Containers/Applications |
 | terra-application-header-layout | ^2.15.0 | ^16.4.2 | This component renders an application header layout. To be used with a layout. |
 | terra-application-menu-layout | ^2.12.0 | ^16.4.2 | This component renders an application menu layout. To be used with a terra-layout or terra-navigation-layout. |

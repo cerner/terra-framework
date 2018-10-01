@@ -5,7 +5,6 @@
 |-|-|-|-|
 | classnames | ^2.2.5 | -- | A simple utility for conditionally joining classNames together |
 | prop-types | ^15.5.8 | -- | Runtime type checking for React props and similar objects. |
-| react-intl | ^2.4.0 | ^0.14.9 \|\| ^15.0.0 \|\| ^16.0.0 | Internationalize React apps. This library provides React components and an API to format dates, numbers, and strings, including pluralization and handling translations. |
 | react-router-dom | ^4.2.2 | >=15 | DOM bindings for React Router |
 | terra-action-header | ^1.14.0 | ^16.4.2 | The terra-action-header component is a header bar containing a title and optional actionable items such as links and buttons. |
 | terra-application-header-layout | ^2.15.0 | ^16.4.2 | This component renders an application header layout. To be used with a layout. |
