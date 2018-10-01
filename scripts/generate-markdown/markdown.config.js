@@ -43,5 +43,5 @@ const config = {
   },
 };
 
-const markdownPath = path.join(__dirname, 'README.md');
+const markdownPath = path.join(__dirname, '../../README.md');
 markdownMagic(markdownPath, config);
