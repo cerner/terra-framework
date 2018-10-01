@@ -14,6 +14,7 @@ Cerner Corporation
 - Ben Boersma [@BenBoersma]
 - Alex Brisimitzakis [@AlexBrizi]
 - Adam Parker [@amichaelparker]
+- Cory McDonald [@corymcdonald]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -29,3 +30,4 @@ Cerner Corporation
 [@BenBoersma]: https://github.com/BenBoersma
 [@AlexBrizi]: https://github.com/AlexBrizi
 [@amichaelparker]: https://github.com/amichaelparker
+[@corymcdonald]: https://github.com/corymcdonald
