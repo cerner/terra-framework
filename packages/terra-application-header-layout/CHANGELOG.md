@@ -4,6 +4,8 @@ Changelog
 Unreleased
 ----------
 
+Use injectIntl prop from terra-base
+
 2.16.0 - (September 25, 2018)
 ------------------
 ### Changed
