@@ -13,6 +13,7 @@ Cerner Corporation
 - Nathan Faltermeier [@Blackop778]
 - Ben Boersma [@BenBoersma]
 - Alex Brisimitzakis [@AlexBrizi]
+- Adam Parker [@amichaelparker]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -27,3 +28,4 @@ Cerner Corporation
 [@Blackop778]: https://github.com/Blackop778
 [@BenBoersma]: https://github.com/BenBoersma
 [@AlexBrizi]: https://github.com/AlexBrizi
+[@amichaelparker]: https://github.com/amichaelparker
