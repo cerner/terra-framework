@@ -6,6 +6,7 @@
     color: var(--terra-application-menu-name-color, #fff);
     display: flex;
     flex: var(--terra-application-menu-name-flex, 0 0 auto);
+    font-size: var(--terra-application-menu-name-font-size);
     height: var(--terra-application-menu-name-height, 3.5725rem);
     max-width: 100%;
     padding-bottom: var(--terra-application-menu-name-padding-bottom, 0.3571rem);

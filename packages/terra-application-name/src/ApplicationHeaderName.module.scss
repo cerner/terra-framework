@@ -5,6 +5,7 @@
     color: var(--terra-application-header-name-color, #fff);
     display: flex;
     flex: var(--terra-application-header-name-flex, 0 0 auto);
+    font-size: var(--terra-application-header-name-font-size);
     max-width: 100%;
   }
 
