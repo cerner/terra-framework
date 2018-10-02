@@ -10,6 +10,7 @@ describe('Popup', () => {
       '--terra-popup-content-inner-box-shadow': '10px 10px 36px blue',
       '--terra-popup-content-inner-background-color': 'yellow',
       '--terra-popup-content-inner-border': '10px dashed black',
+      '--terra-popup-arrow-inner-color': 'red',
     });
   });
 
