@@ -55,7 +55,7 @@
   .menu-utility-button {
     align-items: center;
     background-color: var(--terra-application-menu-utility-background-color, transparent);
-    border-bottom-width: var(--terra-application-menu-utility-border-right-width, 0);
+    border-bottom-width: var(--terra-application-menu-utility-border-bottom-width, 0);
     border-left-width: var(--terra-application-menu-utility-border-left-width, 0);
     border-radius: var(--terra-application-menu-utility-border-radius, 0);
     border-right-width: var(--terra-application-menu-utility-border-right-width, 0);
@@ -72,11 +72,20 @@
 
     &:hover {
       background-color: var(--terra-application-menu-utility-hover-background-color);
+
+      .icon {
+        color: var(--terra-application-menu-utility-hover-icon-color);
+      }
     }
 
     &:focus {
+      background-color: var(--terra-application-menu-utility-focus-background-color);
       box-shadow: var(--terra-application-menu-utility-focus-box-shadow, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
       outline: 0;
+
+      .icon {
+        color: var(--terra-application-menu-utility-focus-icon-color);
+      }
     }
 
     /* stylelint-disable selector-max-compound-selectors*/
@@ -93,7 +102,7 @@
 
       .title {
         font-size: var(--terra-application-menu-utility-title-font-size, 1rem);
-        font-weight: var(--terra-application-menu-utility-title-font-size, normal);
+        font-weight: var(--terra-application-menu-utility-title-font-weight, normal);
         margin-right: var(--terra-application-menu-utility-title-margin-right, 0.2143rem);
         overflow: hidden;
         text-overflow: ellipsis;
