@@ -47,10 +47,12 @@ const propTypes = {
    * The icon to be used for a notification of type custom. This will not be used for any other notification types.
    */
   customIcon: PropTypes.element,
+  /**
+   * Object containing data relevant to management of the TransientNotificationDialog's presentation state.
+   */
   transientComponent: PropTypes.shape({
     containerId: PropTypes.string,
-    remove: PropTypes.func,
-  }),
+  }).isRequired,
 };
 
 class TransientNotificationDialog extends React.Component {
@@ -72,13 +74,19 @@ class TransientNotificationDialog extends React.Component {
    *                    has been mounted.
    */
   static present(props, id, locale, customMessages) {
-    return transientUtils.presentTransientComponent((
+    return transientUtils.presentComponent((
       <TransientNotificationDialog {...props} />
     ), id, locale, customMessages);
   }
 
+  /**
+   * Unmounts a currently presented TransientNotificationDialog instance.
+   * @param {String} id The id string used to identify the element containing the TransientNotificationDialog.
+   * @returns {Promise} A Promise is returned. The Promise will be resolved after the component is unmounted, or the Promise will
+   *                    be rejected if the id does match a currently presented transient component.
+   */
   static remove(id) {
-    return transientUtils.removeTransientComponent(id);
+    return transientUtils.removeComponent(id);
   }
 
   constructor(props) {
@@ -95,7 +103,7 @@ class TransientNotificationDialog extends React.Component {
       primaryAction.onClick();
     }
 
-    transientComponent.remove();
+    TransientNotificationDialog.remove(transientComponent.containerId);
   }
 
   handleSecondaryAction() {
@@ -105,7 +113,7 @@ class TransientNotificationDialog extends React.Component {
       secondaryAction.onClick();
     }
 
-    transientComponent.remove();
+    TransientNotificationDialog.remove(transientComponent.containerId);
   }
 
   render() {
