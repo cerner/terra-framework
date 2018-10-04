@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import { injectIntl, intlShape } from 'terra-base';
 import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
 import TextField from 'terra-form/lib/TextField';
 import AppDelegate from 'terra-app-delegate';
 import ActionHeader from 'terra-action-header';
-
+import { NotificationDialogVariants, mountNotificationDialog } from 'terra-notification-dialog/lib/ConfirmNotificationDialog';
 import styles from './example-styles.scss';
 
 const cx = classNames.bind(styles);
@@ -15,6 +16,7 @@ const propTypes = {
   app: AppDelegate.propType,
   name: PropTypes.string,
   disclosureType: PropTypes.string,
+  intl: intlShape,
 };
 
 const defaultProps = {
@@ -39,15 +41,27 @@ class DisclosureComponent extends React.Component {
   }
 
   checkLockState() {
+    const { intl } = this.props;
+
     if (this.state.text && this.state.text.length) {
       return new Promise((resolve, reject) => {
-        // eslint-disable-next-line no-restricted-globals
-        if (!confirm(`${this.props.name} has unsaved changes that will be lost. Do you wish to continue?`)) { // eslint-disable-line no-alert
-          reject();
-          return;
-        }
-
-        resolve();
+        mountNotificationDialog({
+          variant: NotificationDialogVariants.WARNING,
+          title: this.props.name,
+          message: `${this.props.name} has unsaved changes that will be lost. Do you wish to continue?`,
+          primaryAction: {
+            text: 'OK',
+            onClick: () => {
+              resolve();
+            },
+          },
+          secondaryAction: {
+            text: 'Cancel',
+            onClick: () => {
+              reject();
+            },
+          },
+        }, 'confirm-notification-dialog-example-container', intl.locale);
       });
     }
 
@@ -91,7 +105,7 @@ class DisclosureComponent extends React.Component {
                 size: 'small',
                 content: {
                   key: `Nested ${name}`,
-                  component: <DisclosureComponent name={`Nested ${name}`} disclosureType={disclosureType} />,
+                  component: <IntlDisclosureComponent name={`Nested ${name}`} disclosureType={disclosureType} />,
                 },
               });
             }}
@@ -117,4 +131,6 @@ class DisclosureComponent extends React.Component {
 DisclosureComponent.propTypes = propTypes;
 DisclosureComponent.defaultProps = defaultProps;
 
-export default DisclosureComponent;
+const IntlDisclosureComponent = injectIntl(DisclosureComponent);
+
+export default IntlDisclosureComponent;

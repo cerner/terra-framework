@@ -14,8 +14,8 @@ import transientUtils from './_transientUtils';
  *                    the Promise will be rejected. Otherwise, the Promise will be resolved after the TransientNotificationDialog
  *                    has been mounted.
  */
-const mount = (props, id, locale, customMessages) => transientUtils.mount((
-  <InjectedTransientNotificationDialog {...props} />
+const mountNotificationDialog = (props, id, locale, customMessages) => transientUtils.mount((
+  <InjectedConfirmNotificationDialog {...props} />
 ), id, locale, customMessages);
 
 /**
@@ -24,7 +24,7 @@ const mount = (props, id, locale, customMessages) => transientUtils.mount((
  * @returns {Promise} A Promise is returned. The Promise will be resolved after the component is unmounted, or the Promise will
  *                    be rejected if the id does match a currently presented transient component.
  */
-const unmount = id => transientUtils.unmount(id);
+const unmountNotificationDialog = id => transientUtils.unmount(id);
 
 const propTypes = {
   /**
@@ -66,14 +66,14 @@ const propTypes = {
    */
   customIcon: PropTypes.element,
   /**
-   * Object containing data relevant to management of the TransientNotificationDialog's presentation state.
+   * Object containing data relevant to management of the ConfirmNotificationDialog's presentation state.
    */
   transientComponent: PropTypes.shape({
     containerId: PropTypes.string,
   }).isRequired,
 };
 
-class TransientNotificationDialog extends React.Component {
+class ConfirmNotificationDialog extends React.Component {
   /**
    * The TransientNotificationDialog will not be closed unless an action is selected.
    * onRequestClose is a required prop of the NotificationDialog. This static is defined for
@@ -95,7 +95,7 @@ class TransientNotificationDialog extends React.Component {
       primaryAction.onClick();
     }
 
-    unmount(transientComponent.containerId);
+    unmountNotificationDialog(transientComponent.containerId);
   }
 
   handleSecondaryAction() {
@@ -105,7 +105,7 @@ class TransientNotificationDialog extends React.Component {
       secondaryAction.onClick();
     }
 
-    unmount(transientComponent.containerId);
+    unmountNotificationDialog(transientComponent.containerId);
   }
 
   render() {
@@ -136,19 +136,19 @@ class TransientNotificationDialog extends React.Component {
         primaryAction={wrappedPrimaryAction}
         secondaryAction={wrappedSecondaryAction}
         isOpen
-        onRequestClose={TransientNotificationDialog.handleRequestClose}
+        onRequestClose={ConfirmNotificationDialog.handleRequestClose}
       />
     );
   }
 }
 
-TransientNotificationDialog.propTypes = propTypes;
+ConfirmNotificationDialog.propTypes = propTypes;
 
-const InjectedTransientNotificationDialog = transientUtils.injectTransientComponent(TransientNotificationDialog);
+const InjectedConfirmNotificationDialog = transientUtils.injectTransientComponent(ConfirmNotificationDialog);
 
-export default InjectedTransientNotificationDialog;
+export default InjectedConfirmNotificationDialog;
 export {
   NotificationDialogVariants,
-  mount,
-  unmount,
+  mountNotificationDialog,
+  unmountNotificationDialog,
 };
