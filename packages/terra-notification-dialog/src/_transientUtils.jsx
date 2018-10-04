@@ -11,7 +11,7 @@ import Base from 'terra-base';
  * @returns {Promise} A Promise is returned. If a component is already mounted for the given id value, the Promise will
  *                    be rejected. Otherwise, the Promise will be resolved after the component has been mounted.
  */
-const presentComponent = (component, containerId, locale, customMessages) => {
+const mount = (component, containerId, locale, customMessages) => {
   /**
    * If an element with the chosen id is already present, the new presentation is aborted.
    */
@@ -44,7 +44,7 @@ const presentComponent = (component, containerId, locale, customMessages) => {
  * @returns {Promise} A Promise is returned. The Promise will be resolved after the component is unmounted, or the Promise will
  *                    be rejected if the id does match a currently presented transient component.
  */
-const removeComponent = (id) => {
+const unmount = (id) => {
   const mountElement = document.getElementById(id);
 
   /**
@@ -66,6 +66,6 @@ const removeComponent = (id) => {
 
 
 export default {
-  presentComponent,
-  removeComponent,
+  mount,
+  unmount,
 };

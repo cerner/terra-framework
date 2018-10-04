@@ -6,10 +6,6 @@ import transientUtils from './_transientUtils';
 
 const propTypes = {
   /**
-   * Header of the notification-dialog.
-   */
-  header: PropTypes.string,
-  /**
    * Title of the notification-dialog.
    */
   title: PropTypes.string,
@@ -52,7 +48,7 @@ const propTypes = {
    */
   transientComponent: PropTypes.shape({
     containerId: PropTypes.string,
-  }).isRequired,
+  }),
 };
 
 class TransientNotificationDialog extends React.Component {
@@ -73,8 +69,8 @@ class TransientNotificationDialog extends React.Component {
    *                    the Promise will be rejected. Otherwise, the Promise will be resolved after the TransientNotificationDialog
    *                    has been mounted.
    */
-  static present(props, id, locale, customMessages) {
-    return transientUtils.presentComponent((
+  static mount(props, id, locale, customMessages) {
+    return transientUtils.mount((
       <TransientNotificationDialog {...props} />
     ), id, locale, customMessages);
   }
@@ -85,8 +81,8 @@ class TransientNotificationDialog extends React.Component {
    * @returns {Promise} A Promise is returned. The Promise will be resolved after the component is unmounted, or the Promise will
    *                    be rejected if the id does match a currently presented transient component.
    */
-  static remove(id) {
-    return transientUtils.removeComponent(id);
+  static unmount(id) {
+    return transientUtils.unmount(id);
   }
 
   constructor(props) {
@@ -103,7 +99,7 @@ class TransientNotificationDialog extends React.Component {
       primaryAction.onClick();
     }
 
-    TransientNotificationDialog.remove(transientComponent.containerId);
+    TransientNotificationDialog.unmount(transientComponent.containerId);
   }
 
   handleSecondaryAction() {
@@ -113,7 +109,7 @@ class TransientNotificationDialog extends React.Component {
       secondaryAction.onClick();
     }
 
-    TransientNotificationDialog.remove(transientComponent.containerId);
+    TransientNotificationDialog.unmount(transientComponent.containerId);
   }
 
   render() {
@@ -153,3 +149,6 @@ class TransientNotificationDialog extends React.Component {
 TransientNotificationDialog.propTypes = propTypes;
 
 export default TransientNotificationDialog;
+export {
+  NotificationDialogVariants,
+};

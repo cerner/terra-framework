@@ -20,6 +20,9 @@ import NotificationDialogWithLongText from '../example/NotificationDialogWithLon
 import NotificationDialogWithLongTextSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/NotificationDialogWithLongText.jsx';
 import NotificationDialogOnModalManager from '../example/NotificationDialogOnModalManager';
 import NotificationDialogOnModalManagerSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/NotificationDialogOnModalManager.jsx';
+import TransientNotificationDialogExample from '../example/TransientNotificationDialogExample';
+import TransientNotificationDialogExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TransientNotificationDialogExample.jsx';
+
 /* eslint-enabled import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
@@ -52,6 +55,11 @@ const DocPage = () => (
         title: 'Notification Dialog On Modal Manager',
         example: <NotificationDialogOnModalManager />,
         source: NotificationDialogOnModalManagerSrc,
+      },
+      {
+        title: 'Transient Notification Dialog',
+        example: <TransientNotificationDialogExample />,
+        source: TransientNotificationDialogExampleSrc,
       },
     ]}
     propsTables={[

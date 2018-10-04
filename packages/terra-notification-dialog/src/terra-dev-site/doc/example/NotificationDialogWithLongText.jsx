@@ -105,7 +105,7 @@ class NotificationDialogWithLongText extends React.Component {
       ' Cras in venenatis turpis. Nullam id odio justo. Etiam vehicula lectus vel purus consectetur cursus id sit amet diam.',
       'Donec facilisis dui non orci hendrerit pharetra. Suspendisse blandit dictum turpis, in consectetur ipsum hendrerit eget.',
       'Nam vehicula, arcu vitae egestas porttitor,',
-      'turpis nisi pulvinar neque, ut lacinia urna purus sit amet elit.'];
+      'turpis nisi pulvinar neque, ut lacinia urna purus sit amet elit.'].join(' ');
     return (
       <div>
         <NotificationDialog
