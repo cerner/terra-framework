@@ -31,7 +31,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-base": "3.24.0",
+    "terra-base": "^3.24.0",
     "terra-doc-template": "^1.1.0",
     "terra-responsive-element": "^3.0.0"
   },
