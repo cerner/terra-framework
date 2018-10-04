@@ -5,6 +5,7 @@
     border-right-width: var(--terra-application-utility-menu-divider-border-bottom-right, 0);
     border-top: var(--terra-application-utility-menu-divider-border-bottom, 1px solid #dedfe0);
     height: var(--terra-application-utility-menu-divider-height, 0.2143rem);
+    outline: none;
     width: 100%;
 
     &::after {
