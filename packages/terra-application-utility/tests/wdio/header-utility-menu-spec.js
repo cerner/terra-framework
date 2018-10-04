@@ -15,7 +15,7 @@ describe('HeaderUtilityMenu', () => {
       '--terra-application-header-utility-header-margin-top': '1rem',
       '--terra-application-header-utility-menu-initial-page-header-text-margin-left': '1rem',
       '--terra-application-header-utility-menu-noninitial-page-header-text-margin-left': '1rem',
-      '--terra-application-header-utility-menu-chevron-width': '2rem',
+      '--terra-application-header-utility-menu-back-width': '2rem',
       '--terra-application-header-utility-menu-body-item-background-color': 'pink',
       '--terra-application-header-utility-menu-body-item-font-color': 'pink',
       '--terra-application-header-utility-menu-body-item-font-size': '2rem',
