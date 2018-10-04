@@ -41,7 +41,7 @@ class DisclosureComponent extends React.Component {
   }
 
   checkLockState() {
-    const { intl } = this.props;
+    const { app, intl } = this.props;
 
     if (this.state.text && this.state.text.length) {
       return new Promise((resolve, reject) => {
@@ -60,6 +60,16 @@ class DisclosureComponent extends React.Component {
             onClick: () => {
               reject();
             },
+          },
+          releaseFocus: () => {
+            if (this.props.app.releaseFocus) {
+              this.props.app.releaseFocus();
+            }
+          },
+          requestFocus: () => {
+            if (this.props.app.requestFocus) {
+              this.props.app.requestFocus();
+            }
           },
         }, 'confirm-notification-dialog-example-container', intl.locale);
       });

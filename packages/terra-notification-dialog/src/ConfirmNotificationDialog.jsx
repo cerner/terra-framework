@@ -5,13 +5,13 @@ import NotificationDialog, { NotificationDialogVariants } from './NotificationDi
 import transientUtils from './_transientUtils';
 
 /**
- * Renders an instance of the TransientNotificationDialog to the DOM.
- * @param {Object} props The prop values to apply to the TransientNotificationDialog.
- * @param {String} id An id that will be used to create the element to which the TransientNotificationDialog will be mounted.
+ * Renders an instance of the ConfirmNotificationDialog to the DOM.
+ * @param {Object} props The prop values to apply to the ConfirmNotificationDialog.
+ * @param {String} id An id that will be used to create the element to which the ConfirmNotificationDialog will be mounted.
  * @param {String} locale The string locale used to load translated messages.
  * @param {Object} customMessages The object containing custom messages for the given locale.
- * @returns {Promise} A Promise is returned. If a TransientNotificationDialog is already mounted for the given id value,
- *                    the Promise will be rejected. Otherwise, the Promise will be resolved after the TransientNotificationDialog
+ * @returns {Promise} A Promise is returned. If a ConfirmNotificationDialog is already mounted for the given id value,
+ *                    the Promise will be rejected. Otherwise, the Promise will be resolved after the ConfirmNotificationDialog
  *                    has been mounted.
  */
 const mountNotificationDialog = (props, id, locale, customMessages) => transientUtils.mount((
@@ -19,8 +19,8 @@ const mountNotificationDialog = (props, id, locale, customMessages) => transient
 ), id, locale, customMessages);
 
 /**
- * Unmounts a currently presented TransientNotificationDialog instance.
- * @param {String} id The id string used to identify the element containing the TransientNotificationDialog.
+ * Unmounts a currently presented ConfirmNotificationDialog instance.
+ * @param {String} id The id string used to identify the element containing the ConfirmNotificationDialog.
  * @returns {Promise} A Promise is returned. The Promise will be resolved after the component is unmounted, or the Promise will
  *                    be rejected if the id does match a currently presented transient component.
  */
@@ -66,6 +66,14 @@ const propTypes = {
    */
   customIcon: PropTypes.element,
   /**
+   * A callback function to let the containing component (e.g. modal) to regain focus.
+   */
+  releaseFocus: PropTypes.func,
+  /**
+   * A callback function to request focus from the containing component (e.g. modal).
+   */
+  requestFocus: PropTypes.func,
+  /**
    * Object containing data relevant to management of the ConfirmNotificationDialog's presentation state.
    */
   transientComponent: PropTypes.shape({
@@ -75,7 +83,7 @@ const propTypes = {
 
 class ConfirmNotificationDialog extends React.Component {
   /**
-   * The TransientNotificationDialog will not be closed unless an action is selected.
+   * The ConfirmNotificationDialog will not be closed unless an action is selected.
    * onRequestClose is a required prop of the NotificationDialog. This static is defined for
    * rendering efficiency.
    */
