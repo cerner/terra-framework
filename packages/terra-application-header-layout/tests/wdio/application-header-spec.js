@@ -39,6 +39,5 @@ describe('Application Header Layout', () => {
     });
 
     Terra.should.matchScreenshot('Not Visible', { viewports, selector: '#test-header' });
-
   });
 });

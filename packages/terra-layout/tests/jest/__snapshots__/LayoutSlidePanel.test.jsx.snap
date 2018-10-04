@@ -22,9 +22,15 @@ exports[`LayoutSlidePanel should render when small 1`] = `
       isScrollable={false}
       onRequestClose={[Function]}
     />
-    <div>
-      Child
-    </div>
+    <main
+      className="main-container"
+      id="terra-main"
+      tabIndex="-1"
+    >
+      <div>
+        Child
+      </div>
+    </main>
   </OverlayContainer>
 </div>
 `;
@@ -51,9 +57,15 @@ exports[`LayoutSlidePanel should render when tiny 1`] = `
       isScrollable={false}
       onRequestClose={[Function]}
     />
-    <div>
-      Child
-    </div>
+    <main
+      className="main-container"
+      id="terra-main"
+      tabIndex="-1"
+    >
+      <div>
+        Child
+      </div>
+    </main>
   </OverlayContainer>
 </div>
 `;
@@ -80,9 +92,15 @@ exports[`LayoutSlidePanel should render with provided props 1`] = `
       isScrollable={false}
       onRequestClose={[Function]}
     />
-    <div>
-      Child
-    </div>
+    <main
+      className="main-container"
+      id="terra-main"
+      tabIndex="-1"
+    >
+      <div>
+        Child
+      </div>
+    </main>
   </OverlayContainer>
 </div>
 `;
@@ -103,6 +121,11 @@ exports[`LayoutSlidePanel should render without optional props 1`] = `
       isOpen={false}
       isRelativeToContainer={true}
       isScrollable={false}
+    />
+    <main
+      className="main-container"
+      id="terra-main"
+      tabIndex="-1"
     />
   </OverlayContainer>
 </div>
