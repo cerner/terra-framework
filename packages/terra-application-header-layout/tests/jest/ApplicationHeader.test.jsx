@@ -1,5 +1,5 @@
 import React from 'react';
-import { IntlProvider } from 'react-intl';
+import { IntlProvider } from 'terra-base';
 
 import ApplicationHeaderLayout from '../../src/ApplicationHeaderLayout';
 
