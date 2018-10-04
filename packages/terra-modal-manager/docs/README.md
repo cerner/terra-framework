@@ -73,9 +73,9 @@ MyModalManagerComponent = withModalManager(MyContentComponent);
 ```
 
 ## Component Features
-* [Cross-Browser Support](https://github.com/cerner/terra-core/wiki/Component-Features#cross-browser-support)
-* [Responsive Support](https://github.com/cerner/terra-core/wiki/Component-Features#responsive-support)
-* [Mobile Support](https://github.com/cerner/terra-core/wiki/Component-Features#mobile-support)
+* [Cross-Browser Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
+* [Responsive Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#responsive-support)
+* [Mobile Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#mobile-support)
 
 [1]: https://github.com/cerner/terra-core/tree/master/packages/terra-content-container/docs
 [2]: https://github.com/cerner/terra-core/tree/master/packages/terra-dialog/docs
