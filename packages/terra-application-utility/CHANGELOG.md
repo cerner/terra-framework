@@ -4,7 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
-* Set the divider's outline to none
+* Remove tabindex from divider
 
 1.18.0 - (September 25, 2018)
 ------------------
