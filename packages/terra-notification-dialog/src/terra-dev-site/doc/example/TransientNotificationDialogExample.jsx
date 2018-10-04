@@ -1,8 +1,7 @@
 import React from 'react';
 import { injectIntl, intlShape } from 'terra-base';
 import Button from 'terra-button';
-import TransientNotificationDialog from '../../../TransientNotificationDialog';
-import { NotificationDialogVariants } from '../../../NotificationDialog';
+import { NotificationDialogVariants, mount } from '../../../TransientNotificationDialog';
 
 class TransientNotificationDialogExample extends React.Component {
   constructor() {
@@ -12,10 +11,10 @@ class TransientNotificationDialogExample extends React.Component {
   }
 
   renderNotificationDialog() {
-    TransientNotificationDialog.mount({
+    mount({
       variant: NotificationDialogVariants.WARNING,
       title: 'Transient NotificationDialog',
-      message: 'This NotificationDialog is rendered in a separate React tree that is mounted directly to the <body> element. It will only be closed upon taking interaction with the primary or secondary action buttons.',
+      message: 'Click an action button to dismiss.',
       primaryAction: {
         text: 'OK',
         onClick: () => {
@@ -23,7 +22,7 @@ class TransientNotificationDialogExample extends React.Component {
         },
       },
       secondaryAction: {
-        text: 'Close',
+        text: 'Cancel',
         onClick: () => {
           alert('You clicked Cancel. The TransientNotificationDialog will now close.'); // eslint-disable-line no-alert
         },

@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import Base from 'terra-base';
+
+const TransientComponentContext = createContext();
 
 /**
  * Mounts a transient component to the document. The component will be wrapped by a Base component to provide i18n.
@@ -21,20 +23,28 @@ const mount = (component, containerId, locale, customMessages) => {
 
   const mountElement = document.createElement('div');
   mountElement.id = containerId;
+  mountElement.setAttribute('data-terra-transient-component', true);
   document.body.appendChild(mountElement);
 
   return new Promise((resolve) => {
     render((
       <Base locale={locale} customMessages={customMessages}>
-        {React.cloneElement(component, {
-          transientComponent: {
+        <TransientComponentContext.Provider
+          value={{
             containerId,
-          },
-        })}
+          }}
+        >
+          {component}
+        </TransientComponentContext.Provider>
       </Base>
     ),
     mountElement,
-    () => { resolve(); });
+    () => {
+      /**
+       * The Promise is resolved within the render callback.
+       */
+      resolve();
+    });
   });
 };
 
@@ -64,8 +74,21 @@ const unmount = (id) => {
   });
 };
 
+const injectTransientComponent = (Component) => {
+  const InjectedComponent = props => (
+    <TransientComponentContext.Consumer>
+      {transientComponent => <Component {...props} transientComponent={transientComponent} />}
+    </TransientComponentContext.Consumer>
+  );
+
+  InjectedComponent.displayName = `injectTransientComponent(${Component.displayName})`;
+
+  return InjectedComponent;
+};
+
 
 export default {
   mount,
   unmount,
+  injectTransientComponent,
 };

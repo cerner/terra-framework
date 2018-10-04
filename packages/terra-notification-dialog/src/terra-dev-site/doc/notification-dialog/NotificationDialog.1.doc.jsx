@@ -58,6 +58,7 @@ const DocPage = () => (
       },
       {
         title: 'Transient Notification Dialog',
+        description: 'The TransientNotificationDialog is rendered in a separate React tree that is mounted directly to the <body> element. It will only be closed upon taking interaction with the primary or secondary action buttons. The TransientNotificationDialog can be used as a styled replacement for confirmation dialogs and other use cases that require a workflow to be blocked until user input is detected.',
         example: <TransientNotificationDialogExample />,
         source: TransientNotificationDialogExampleSrc,
       },
