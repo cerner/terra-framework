@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated component readme feature links
 
 1.11.0 - (September 25, 2018)
 ------------------
