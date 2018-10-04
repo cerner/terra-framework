@@ -23,6 +23,9 @@
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
+  "devDependencies": {
+    "react-intl": "^2.4.0"
+  },
   "peerDependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
@@ -31,6 +34,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
+    "terra-base": "3.3.0",
     "terra-doc-template": "^1.1.0",
     "terra-responsive-element": "^3.0.0"
   },
