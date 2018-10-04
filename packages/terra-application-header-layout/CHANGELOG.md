@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added skip to content button
 
 2.16.0 - (September 25, 2018)
 ------------------
