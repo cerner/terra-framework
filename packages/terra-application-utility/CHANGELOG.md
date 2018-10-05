@@ -6,6 +6,9 @@ Unreleased
 ### Fixed
 * Focus on first menu item
 
+### Changed
+* Remove tabindex from divider
+
 1.18.0 - (September 25, 2018)
 ------------------
 ### Changed
