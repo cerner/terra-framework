@@ -35,6 +35,7 @@
   .utility-menu-content-container {
     display: flex;
     justify-content: space-between;
+    min-height: var(--terra-application-utility-header-min-height);
   }
 
   .header-utility-menu-content-container {
