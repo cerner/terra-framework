@@ -28,14 +28,33 @@
 
     &:hover {
       background-color: var(--terra-application-header-utility-menu-body-item-hover-background-color, #ebf6fd);
+
+      .checkmark {
+        color: var(--terra-application-header-utility-menu-body-item-checkmark-hover-color);
+      }
+
+      .chevron {
+        color: var(--terra-application-header-utility-menu-body-item-chevron-hover-color);
+      }
+
     }
 
     &:focus {
       box-shadow: var(--terra-application-header-utility-menu-body-item-focus-box-shadow, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
       outline: 0;
+
+      .checkmark {
+        color: var(--terra-application-header-utility-menu-body-item-checkmark-focus-color);
+      }
+
+      .chevron {
+        color: var(--terra-application-header-utility-menu-body-item-chevron-focus-color);
+      }
+
     }
 
     .checkmark {
+      color: var(--terra-application-header-utility-menu-body-item-checkmark-color);
       flex-shrink: 0;
       margin-left: var(--terra-application-header-utility-menu-body-item-checkmark-margin-left, 0.2857rem);
       margin-right: var(--terra-application-header-utility-menu-body-item-checkmark-margin-right, 0.6rem);
@@ -48,6 +67,7 @@
     }
 
     .chevron {
+      color: var(--terra-application-header-utility-menu-body-item-chevron-color);
       margin-right: var(--terra-application-header-utility-menu-body-item-chevron-margin-right, 0.2143rem);
       visibility: hidden;
       width: var(--terra-application-header-utility-menu-body-item-chevron-width, 0.7143rem);
@@ -99,14 +119,31 @@
 
     &:hover {
       background-color: var(--terra-application-menu-utility-menu-body-item-hover-background-color, #ebf6fd);
+
+      .checkmark {
+        color: var(--terra-application-menu-utility-menu-body-item-checkmark-hover-color);
+      }
+
+      .chevron {
+        color: var(--terra-application-menu-utility-menu-body-item-chevron-hover-color);
+      }
     }
 
     &:focus {
       box-shadow: var(--terra-application-menu-utility-menu-body-item-focus-box-shadow, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
       outline: 0;
+
+      .checkmark {
+        color: var(--terra-application-menu-utility-menu-body-item-checkmark-focus-color);
+      }
+
+      .chevron {
+        color: var(--terra-application-menu-utility-menu-body-item-chevron-focus-color);
+      }
     }
 
     .checkmark {
+      color: var(--terra-application-menu-utility-menu-body-item-checkmark-color);
       flex-shrink: 0;
       margin-left: var(--terra-application-menu-utility-menu-body-item-checkmark-margin-left, 0.2857rem);
       margin-right: var(--terra-application-menu-utility-menu-body-item-checkmark-margin-right, 0.5rem);
@@ -119,6 +156,7 @@
     }
 
     .chevron {
+      color: var(--terra-application-menu-utility-menu-body-item-chevron-color);
       flex-shrink: 0;
       margin-right: var(--terra-application-menu-utility-menu-body-item-chevron-margin-right, 0.2143rem);
       visibility: hidden;
