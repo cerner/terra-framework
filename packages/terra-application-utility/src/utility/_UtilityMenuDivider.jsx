@@ -21,7 +21,7 @@ const UtilityMenuDivider = ({ isTop, ...customProps }) => {
     customProps.className,
   ]);
 
-  return <div {...customProps} className={dividerClassNames} role="separator" tabIndex={-1} />;
+  return <div {...customProps} className={dividerClassNames} role="separator" />;
 };
 
 UtilityMenuDivider.propTypes = propTypes;
