@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Added
 * Webdriver theme test for --terra-popup-arrow-inner-color
+* Upgrade focus-trap-react version to ^4.0.1
 
 4.14.0 - (September 25, 2018)
 ------------------
