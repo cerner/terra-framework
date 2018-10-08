@@ -5,7 +5,6 @@ exports[`Divider it should pass in a custom prop 1`] = `
   className="divider is-bottom"
   id="testDivider"
   role="separator"
-  tabIndex={-1}
 />
 `;
 
@@ -13,6 +12,5 @@ exports[`Divider should render a default utility menu divider 1`] = `
 <div
   className="divider is-bottom"
   role="separator"
-  tabIndex={-1}
 />
 `;
