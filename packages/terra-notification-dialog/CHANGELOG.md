@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+1.10.0 - (October 8, 2018)
+------------------
+### Changed
+* Updated links in docs on supported features
+
 1.9.0 - (September 25, 2018)
 ------------------
 ### Changed
