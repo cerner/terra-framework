@@ -63,6 +63,11 @@
       background-color: var(--terra-navigation-side-menu-item-background-color);
       box-shadow: var(--terra-navigation-side-menu-item-box-shadow, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
       z-index: 5;
+
+      /* stylelint-disable-next-line max-compound-selectors */
+      .chevron > svg {
+        color: var(--terra-navigation-side-menu-item-selected-focus-chevron-color);
+      }
     }
   }
 
