@@ -88,7 +88,9 @@
     padding-left: 10px;
 
     > svg {
+      height: var(--terra-navigation-side-menu-item-chevron-height, 0.8em);
       color: var(--terra-navigation-side-menu-item-chevron-color, #787879);
+      width: var(--terra-navigation-side-menu-item-chevron-width, 0.8em);
     }
   }
 }
