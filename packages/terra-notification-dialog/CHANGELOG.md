@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Fixed icon display in notification dialog in IE
 
 1.10.0 - (October 8, 2018)
 ------------------

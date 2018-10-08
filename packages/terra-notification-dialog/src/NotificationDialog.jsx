@@ -108,15 +108,15 @@ const actionSection = (primaryAction, secondaryAction) => {
 const getIcon = (intl, variant, customIcon = null) => {
   switch (variant) {
     case variants.ALERT:
-      return (<svg className={cx('alert')} role="presentation" alt={intl.formatMessage({ id: 'Terra.notification.dialog.alert' })} />);
+      return (<span className={cx(['icon', 'alert'])} />);
     case variants.ERROR:
-      return (<svg className={cx('error')} role="presentation" alt={intl.formatMessage({ id: 'Terra.notification.dialog.error' })} />);
+      return (<span className={cx(['icon', 'error'])} />);
     case variants.WARNING:
-      return (<svg className={cx('warning')} role="presentation" alt={intl.formatMessage({ id: 'Terra.notification.dialog.warning' })} />);
+      return (<span className={cx(['icon', 'warning'])} />);
     case variants.INFO:
-      return (<svg className={cx('info')} role="presentation" alt={intl.formatMessage({ id: 'Terra.notification.dialog.info' })} />);
+      return (<span className={cx(['icon', 'info'])} />);
     case variants.SUCCESS:
-      return (<svg className={cx('success')} role="presentation" alt={intl.formatMessage({ id: 'Terra.notification.dialog.success' })} />);
+      return (<span className={cx(['icon', 'success'])} />);
     case variants.CUSTOM:
       return customIcon;
     default:
@@ -199,7 +199,7 @@ class NotificationDialog extends React.Component {
             <div id="notification-dialog-header" className={cx('header-body')}>{header || defaultHeader}</div>
             <div className={cx('notification-dialog-body')}>
               {variant
-                && <div className={cx('icon-div')}>{getIcon(intl, variant, customIcon)}</div>
+                && <div className={cx('icon-container')}>{getIcon(intl, variant, customIcon)}</div>
               }
               <div>
                 {title
