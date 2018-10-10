@@ -9,7 +9,7 @@
   .photo {
     flex: 0 0 auto;
     height: var(--terra-application-user-data-photo-height, 3.571rem);
-    margin-right: var(--terra-application-user-data-photo, 0.5714rem);
+    margin-right: var(--terra-application-user-data-photo-margin-right, 0.5714rem);
     width: var(--terra-application-user-data-photo-width, 3.571rem);
   }
 
@@ -20,6 +20,7 @@
 
   .name {
     font-size: var(--terra-application-user-data-name-font-size, 1.143rem);
+    font-weight: var(--terra-application-user-data-name-font-weight);
     overflow-wrap: break-word;
     white-space: normal;
     word-break: break-word;

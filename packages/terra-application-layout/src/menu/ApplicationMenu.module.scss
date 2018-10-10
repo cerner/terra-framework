@@ -7,6 +7,7 @@
 
   .menu-header {
     background-color: var(--terra-application-menu-header-background-color, #0079be);
+    background-image: var(--terra-application-menu-header-background-image);
     position: relative;
     width: 100%;
   }
