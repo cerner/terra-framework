@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
+import tabbable from 'tabbable';
 import HookshotContent from './HookshotContent';
 import HookshotUtils from './_HookshotUtils';
 
@@ -134,6 +135,14 @@ class Hookshot extends React.Component {
         this.enableListeners();
       }
       this.update();
+    }
+
+    if (this.contentNode !== undefined) {
+      const tabbableItems = tabbable(this.contentNode);
+
+      if (tabbableItems) {
+        tabbableItems[0].focus();
+      }
     }
   }
 
