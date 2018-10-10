@@ -15,6 +15,7 @@ Cerner Corporation
 - Alex Brisimitzakis [@AlexBrizi]
 - Adam Parker [@amichaelparker]
 - Corentin Leruth [@tatchi]
+- Brett Jankord [@bjankord]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -31,3 +32,4 @@ Cerner Corporation
 [@AlexBrizi]: https://github.com/AlexBrizi
 [@amichaelparker]: https://github.com/amichaelparker
 [@tatchi]: https://github.com/tatchi
+[@bjankord]: https://github.com/bjankord
