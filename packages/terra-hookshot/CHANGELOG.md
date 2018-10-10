@@ -3,8 +3,6 @@ Changelog
 
 Unreleased
 ----------
-### Changed
-* Improved focus management on iOS for hookshot containers which contain focusable elements
 
 4.12.0 - (September 25, 2018)
 ------------------

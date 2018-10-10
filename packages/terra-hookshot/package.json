@@ -34,7 +34,6 @@
     "react-onclickoutside": "^5.11.1",
     "react-portal": "^4.1.2",
     "resize-observer-polyfill": "^1.4.1",
-    "tabbable": "^3.1.1",
     "terra-button": "^2.3.0",
     "terra-doc-template": "^1.1.0",
     "terra-form": "^2.2.0"

@@ -46,6 +46,7 @@ class PopupAttachmentBehavior extends React.Component {
             isOpen={this.state.open}
             targetRef={() => document.getElementById('popup-behavior-target')}
             onRequestClose={this.handleRequestClose}
+            isContentFocusDisabled
           >
             <ExamplePopupContent onChange={this.handleRequestClose} />
           </Popup>

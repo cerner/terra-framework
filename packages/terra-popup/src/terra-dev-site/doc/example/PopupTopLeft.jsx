@@ -35,6 +35,7 @@ class PopupTopLeft extends React.Component {
           isOpen={this.state.open}
           onRequestClose={this.handleRequestClose}
           targetRef={() => document.getElementById('popup-top-left')}
+          isContentFocusDisabled
         >
           <ExamplePopupContent onChange={this.handleOnChange} />
         </Popup>

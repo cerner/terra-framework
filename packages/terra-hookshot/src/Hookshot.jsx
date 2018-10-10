@@ -136,14 +136,6 @@ class Hookshot extends React.Component {
       }
       this.update();
     }
-
-    if (this.contentNode !== undefined) {
-      const tabbableItems = tabbable(this.contentNode);
-
-      if (tabbableItems) {
-        tabbableItems[0].focus();
-      }
-    }
   }
 
   componentWillReceiveProps(newProps) {

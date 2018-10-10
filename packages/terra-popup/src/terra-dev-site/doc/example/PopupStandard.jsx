@@ -33,6 +33,7 @@ class PopupStandard extends React.Component {
           isOpen={this.state.open}
           targetRef={() => document.getElementById('popup-standard-button')}
           onRequestClose={this.handleRequestClose}
+          isContentFocusDisabled
         >
           <ExamplePopupContent onChange={this.handleOnChange} />
         </Popup>
