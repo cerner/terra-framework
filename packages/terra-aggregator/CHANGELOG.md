@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+3.14.0 - (October 8, 2018)
+------------------
+### Changed
+* Updated links in docs on supported features
+
 3.13.0 - (September 25, 2018)
 ------------------
 ### Changed
