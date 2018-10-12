@@ -49,7 +49,7 @@ describe('ApplicationTabs', () => {
     Terra.should.themeEachCustomProperty('[data-application-tab-menu-content]', {
       '--terra-application-tabs-collapsed-color': 'blue',
       '--terra-application-tabs-collapsed-hover-background': 'linear-gradient(-90deg, orange, red)',
-      '--terra-application-tabs-collapsed-active-background-image': 'linear-gradient(-270deg, red, orange)',
+      '--terra-application-tabs-collapsed-selected-background-image': 'linear-gradient(-270deg, red, orange)',
       '--terra-application-tabs-collapsed-padding-top': '0',
       '--terra-application-tabs-collapsed-padding-right': '0',
       '--terra-application-tabs-collapsed-padding-bottom': '0',
