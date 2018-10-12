@@ -76,7 +76,7 @@
   .tab,
   .tab-menu-display {
     align-items: center;
-    background-color: transparent;
+    background-color: var(--terra-application-tabs-background-color, transparent);
     background-position: var(--terra-application-tabs-background-position, top-left);
     background-repeat: no-repeat;
     background-size: var(--terra-application-tabs-background-size, 0 5px);
@@ -118,17 +118,18 @@
     }
 
     &[aria-current='true'] {
-      background-color: var(--terra-application-tabs-hover-background-color, rgba(0, 0, 0, 0.15));
+      background-color: var(--terra-application-tabs-selected-background-color, rgba(0, 0, 0, 0.15));
       background-image: var(--terra-application-tabs-selected-background-image, linear-gradient(to bottom, #5cc2f9, #5cc2f9));
-      background-size: var(--terra-application-tabs-active-background-size, 13rem 5px);
-      border-left: var(--terra-application-tabs-active-border-left);
-      border-right: var(--terra-application-tabs-active-border-right, 1px solid #3a67a4);
-      font-weight: var(--terra-application-tabs-active-font-weight, 600);
+      background-size: var(--terra-application-tabs-selected-background-size, 13rem 5px);
+      border-left: var(--terra-application-tabs-selected-border-left);
+      border-right: var(--terra-application-tabs-selected-border-right, 1px solid #3a67a4);
+      font-weight: var(--terra-application-tabs-selected-font-weight, 600);
     }
 
     &.is-focused,
     &.is-active.is-focused,
     &:active.is-focused {
+      background-color: var(--terra-application-tabs-focus-background-color);
       box-shadow: var(--terra-application-tabs-focus-box-shadow, 1px 0 1px #1d98da, 0 0 1px 0 #fff, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
       z-index: 5;
     }
