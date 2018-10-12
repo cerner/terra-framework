@@ -35,6 +35,7 @@ class PopupMiddleRight extends React.Component {
           isOpen={this.state.open}
           targetRef={() => document.getElementById('popup-middle-right')}
           onRequestClose={this.handleRequestClose}
+          isContentFocusDisabled
         >
           <ExamplePopupContent onChange={this.handleOnChange} />
         </Popup>
