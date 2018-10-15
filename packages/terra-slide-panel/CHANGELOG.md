@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Divs reordered to change tab order
 
+2.18.0 - (October 8, 2018)
+------------------
+### Changed
+* Upgrade focus-trap-react version to ^4.0.1
+
 2.17.0 - (September 25, 2018)
 ------------------
 ### Changed

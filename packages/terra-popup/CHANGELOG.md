@@ -3,6 +3,15 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated popup examples to highlight how to achieve better focus management for screen readers
+
+4.15.0 - (October 8, 2018)
+------------------
+### Changed
+* Updated links in docs on supported features
+* Upgrade focus-trap-react version to ^4.0.1
+
 ### Added
 * Webdriver theme test for --terra-popup-arrow-inner-color
 

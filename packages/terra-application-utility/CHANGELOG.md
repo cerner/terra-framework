@@ -3,8 +3,14 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Focus on first menu item
+
+1.19.0 - (October 8, 2018)
+------------------
 ### Changed
 * Remove tabindex from divider
+* Updated links in docs on supported features
 
 1.18.0 - (September 25, 2018)
 ------------------

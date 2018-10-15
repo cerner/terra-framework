@@ -52,6 +52,7 @@ class PopupNoHeader extends React.Component {
           isOpen={this.state.open}
           onRequestClose={this.handleRequestClose}
           targetRef={() => document.getElementById('popup-no-header')}
+          isContentFocusDisabled
         >
           <ExamplePopupContent onChange={this.handleOnChange} />
         </Popup>

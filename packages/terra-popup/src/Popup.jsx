@@ -76,7 +76,7 @@ const propTypes = {
    */
   isArrowDisplayed: PropTypes.bool,
   /**
-   * Should the popup content have tab focus. Set this is your content doesn't contain any focusable elements.
+   * Set this to `true` if your content has focusable elements and you want them to receive focus instead of focusing on the default popup frame when the popup is opened.
    */
   isContentFocusDisabled: PropTypes.bool,
   /**
