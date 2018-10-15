@@ -34,6 +34,7 @@ class PopupArrow extends React.Component {
           isOpen={this.state.open}
           onRequestClose={this.handleRequestClose}
           targetRef={() => document.getElementById('popup-with-arrow')}
+          isContentFocusDisabled
         >
           <ExamplePopupContent onChange={this.handleOnChange} />
         </Popup>
