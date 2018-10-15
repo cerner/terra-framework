@@ -43,6 +43,7 @@ class ModalContainer extends React.Component {
           targetRef={() => document.getElementById('popup-in-modal')}
           releaseFocus={app.releaseFocus}
           requestFocus={app.requestFocus}
+          isContentFocusDisabled
         >
           <ExamplePopupContent onChange={this.handlePopupOnChange} />
         </Popup>
