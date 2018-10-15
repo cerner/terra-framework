@@ -86,7 +86,11 @@ const ApplicationHeaderLayout = ({
   }
 
   const skipToContent = () => {
-    document.getElementById('terra-main').focus();
+    const mainContainer = document.querySelector(['[data-terra-layout-main]']);
+
+    if (mainContainer) {
+      mainContainer.focus();
+    }
   };
 
   const skipToContentButton = (
