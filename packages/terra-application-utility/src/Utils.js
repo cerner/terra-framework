@@ -8,6 +8,7 @@ const KEY_CODES = {
   LEFT_ARROW: 37,
   RIGHT_ARROW: 39,
   BACK_SPACE: 8,
+  TAB: 9,
 };
 
 const LOCATIONS = {
