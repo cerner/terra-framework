@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+1.20.0 - (October 16, 2018)
+------------------
 ### Fixed
 * Focus on first menu item
 

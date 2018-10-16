@@ -3,8 +3,11 @@ Changelog
 
 Unreleased
 ----------
+
+2.19.0 - (October 16, 2018)
+------------------
 ### Changed
-* Divs reordered to change tab order
+* Reordered DOM structure to change tab order
 
 2.18.0 - (October 8, 2018)
 ------------------
