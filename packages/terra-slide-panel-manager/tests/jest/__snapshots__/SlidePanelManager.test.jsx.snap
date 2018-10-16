@@ -58,6 +58,22 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
         data-slide-panel-panel-size="large"
       >
         <div
+          className="main"
+        >
+          <TestContainer
+            app={
+              AppDelegateInstance {
+                "disclose": [Function],
+              }
+            }
+            key=".0"
+          >
+            <div>
+              Hello World
+            </div>
+          </TestContainer>
+        </div>
+        <div
           aria-hidden="false"
           className="panel"
         >
@@ -160,22 +176,6 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
             </TransitionGroup>
           </SlideGroup>
         </div>
-        <div
-          className="main"
-        >
-          <TestContainer
-            app={
-              AppDelegateInstance {
-                "disclose": [Function],
-              }
-            }
-            key=".0"
-          >
-            <div>
-              Hello World
-            </div>
-          </TestContainer>
-        </div>
       </div>
     </SlidePanel>
   </DisclosureManager>
@@ -230,15 +230,6 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
         id="my-slide-panel-manager"
       >
         <div
-          aria-hidden="true"
-          className="panel"
-        >
-          <SlideGroup
-            isAnimated={true}
-            items={Array []}
-          />
-        </div>
-        <div
           className="main"
         >
           <TestContainer
@@ -253,6 +244,15 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
               Hello World
             </div>
           </TestContainer>
+        </div>
+        <div
+          aria-hidden="true"
+          className="panel"
+        >
+          <SlideGroup
+            isAnimated={true}
+            items={Array []}
+          />
         </div>
       </div>
     </SlidePanel>
@@ -303,15 +303,6 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
         data-slide-panel-panel-size="small"
       >
         <div
-          aria-hidden="true"
-          className="panel"
-        >
-          <SlideGroup
-            isAnimated={true}
-            items={Array []}
-          />
-        </div>
-        <div
           className="main"
         >
           <TestContainer
@@ -326,6 +317,15 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
               Hello World
             </div>
           </TestContainer>
+        </div>
+        <div
+          aria-hidden="true"
+          className="panel"
+        >
+          <SlideGroup
+            isAnimated={true}
+            items={Array []}
+          />
         </div>
       </div>
     </SlidePanel>
@@ -376,15 +376,6 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
         data-slide-panel-panel-size="small"
       >
         <div
-          aria-hidden="true"
-          className="panel"
-        >
-          <SlideGroup
-            isAnimated={true}
-            items={Array []}
-          />
-        </div>
-        <div
           className="main"
         >
           <TestContainer
@@ -399,6 +390,15 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
               Hello World
             </div>
           </TestContainer>
+        </div>
+        <div
+          aria-hidden="true"
+          className="panel"
+        >
+          <SlideGroup
+            isAnimated={true}
+            items={Array []}
+          />
         </div>
       </div>
     </SlidePanel>

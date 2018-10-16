@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Divs reordered to change tab order
 
 2.18.0 - (October 8, 2018)
 ------------------
