@@ -1,7 +1,7 @@
 {
   "name": "terra-application-links",
   "main": "lib/ApplicationLinks.js",
-  "version": "4.16.0",
+  "version": "4.17.0",
   "description": "This packages contains a list and tab form of ApplicationLinks, to be used in horizontal and vertical display styles. Selection is managed by react-router.",
   "repository": {
     "type": "git",
@@ -37,7 +37,7 @@
     "terra-doc-template": "^1.1.0",
     "terra-icon": "^2.0.1",
     "terra-list": "^2.0.1",
-    "terra-popup": "^4.15.0"
+    "terra-popup": "^4.16.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
