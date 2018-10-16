@@ -24,4 +24,20 @@ describe('Application Header Layout', () => {
       '--terra-application-header-layout-logo-min-width': '5rem',
     });
   });
+
+  describe('Displays the Skip to Content when focused onto', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-application-header-layout/application-header-layout/application-header-default');
+      browser.waitForVisible('#test-header');
+      browser.keys(['Tab']);
+    });
+
+    Terra.should.matchScreenshot('Visible', { viewports, selector: '#test-header' });
+
+    it('should hide the button after a tab', () => {
+      browser.keys(['Tab', 'Tab']);
+    });
+
+    Terra.should.matchScreenshot('Not Visible', { viewports, selector: '#test-header' });
+  });
 });
