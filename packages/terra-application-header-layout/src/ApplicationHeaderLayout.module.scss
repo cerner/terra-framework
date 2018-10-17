@@ -41,4 +41,29 @@
   .extensions {
     max-width: 100%;
   }
+
+  .header-body {
+    position: relative;
+  }
+
+  .skip-content {
+    background-color: var(--terra-application-header-background-color, #0079be);
+    clip: rect(1px, 1px, 1px, 1px);
+    color: #fff;
+    height: 1px;
+    margin: 0;
+    overflow: hidden;
+    padding: 1rem 2rem;
+    position: absolute;
+    width: 1px;
+
+    &:focus {
+      clip: auto;
+      height: auto;
+      left: 0;
+      top: 0;
+      width: auto;
+      z-index: 20;
+    }
+  }
 }

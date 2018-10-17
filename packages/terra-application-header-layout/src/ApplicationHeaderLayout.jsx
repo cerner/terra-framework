@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import { injectIntl, intlShape } from 'terra-base';
 import 'terra-base/lib/baseStyles';
 
 import styles from './ApplicationHeaderLayout.module.scss';
@@ -16,6 +17,10 @@ const propTypes = {
    * Logo element to be placed at the start of the header after the toggle element.
    * */
   logo: PropTypes.element,
+  /**
+   * intl object programatically imported through injectIntl from terra-base.
+   * */
+  intl: intlShape.isRequired,
   /**
    * Navigation element to be placed within the fill area of the header.
    * */
@@ -34,6 +39,7 @@ const ApplicationHeaderLayout = ({
   extensions,
   logo,
   navigation,
+  intl,
   toggle,
   utilities,
   ...customProps
@@ -79,10 +85,25 @@ const ApplicationHeaderLayout = ({
     );
   }
 
+  const skipToContent = () => {
+    const mainContainer = document.querySelector(['[data-terra-layout-main]']);
+
+    if (mainContainer) {
+      mainContainer.focus();
+    }
+  };
+
+  const skipToContentButton = (
+    <button type="button" onClick={skipToContent} className={cx('skip-content')}>
+      {intl.formatMessage({ id: 'Terra.ApplicationHeaderLayout.SkipToContent' })}
+    </button>
+  );
+
   let headerBody;
   if (headerInner || logoElement || utilitiesElement) {
     headerBody = (
       <div className={cx(['fill', 'header-body'])}>
+        {skipToContentButton}
         {logoElement}
         {headerInner}
         {utilitiesElement}
@@ -100,4 +121,4 @@ const ApplicationHeaderLayout = ({
 
 ApplicationHeaderLayout.propTypes = propTypes;
 
-export default ApplicationHeaderLayout;
+export default injectIntl(ApplicationHeaderLayout);

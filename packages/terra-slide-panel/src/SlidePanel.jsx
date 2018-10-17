@@ -131,11 +131,11 @@ class SlidePanel extends React.Component {
         data-slide-panel-panel-position={panelPosition}
         data-slide-panel-panel-size={panelSize}
       >
-        <div className={cx(['panel'])} aria-hidden={this.isHidden ? 'true' : 'false'} ref={this.setPanelNode}>
-          {panelContent}
-        </div>
         <div className={cx('main')}>
           {mainContent}
+        </div>
+        <div className={cx(['panel'])} aria-hidden={this.isHidden ? 'true' : 'false'} ref={this.setPanelNode}>
+          {panelContent}
         </div>
       </div>
     );

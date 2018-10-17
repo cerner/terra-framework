@@ -213,9 +213,9 @@ class UtilityMenu extends React.Component {
     return ((event) => {
       if (event.nativeEvent.keyCode === Utils.KEY_CODES.LEFT_ARROW && this.state.currentKey !== this.props.initialSelectedKey) {
         this.pop();
-      } else if (event.nativeEvent.keyCode === Utils.KEY_CODES.UP_ARROW) {
+      } else if (event.nativeEvent.keyCode === Utils.KEY_CODES.UP_ARROW && this.state.focusIndex !== 0) {
         this.setState({ focusIndex: index - 1 });
-      } else if (event.nativeEvent.keyCode === Utils.KEY_CODES.DOWN_ARROW) {
+      } else if (event.nativeEvent.keyCode === Utils.KEY_CODES.DOWN_ARROW || event.nativeEvent.keyCode === Utils.KEY_CODES.tab) {
         this.setState({ focusIndex: index + 1 });
       }
     });
