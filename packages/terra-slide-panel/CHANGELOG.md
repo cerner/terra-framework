@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated the controlled slidepanel example's focus management
 
 2.19.0 - (October 16, 2018)
 ------------------
