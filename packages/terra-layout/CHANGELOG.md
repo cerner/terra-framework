@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+2.18.0 - (October 16, 2018)
+------------------
+### Changed
+* Added id of terra-main to the main node
+
 2.17.0 - (October 8, 2018)
 ------------------
 ### Changed
