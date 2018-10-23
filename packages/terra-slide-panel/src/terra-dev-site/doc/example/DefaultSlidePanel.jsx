@@ -95,7 +95,7 @@ class DefaultSlidePanel extends React.Component {
   handlePanelToggle() {
     this.setState(prevState => ({
       panelIsOpen: !prevState.panelIsOpen,
-      panelIsFullscreen: !!prevState.panelIsOpen,
+      panelIsFullscreen: prevState.panelIsOpen,
     }));
   }
 
