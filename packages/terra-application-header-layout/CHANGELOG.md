@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+2.19.0 - (October 24, 2018)
+------------------
 ### Changed
 * Import `injectIntl` and `intlShape` from react-intl instead of terra-base
 
