@@ -7,13 +7,18 @@ const mainContentForSlidePanel = togglePanelHandler => (
   <div>
     <header style={{ backgroundColor: 'lightgrey' }}>
       <h3 style={{ margin: '0px', padding: '5px', display: 'inline-block' }}>Main Content</h3>
-      <button type="button" onClick={togglePanelHandler} style={{ display: 'inline-block' }}>Toggle Panel</button>
+      <button id="mainToggleBtn" type="button" onClick={togglePanelHandler} style={{ display: 'inline-block' }}>Main Toggle Panel</button>
     </header>
     <div style={{ margin: '5px' }}>
       <p>
         This is the main content area of the slide panel.
         The overall height of the SlidePanel is determined by
         the intrinsic height of the content in this container.
+      </p>
+      <p>
+        {'Focus is moved to the toggle button in the panel container when the panel is opened via the componentDidUpdate lifecycle hook in '}
+        <a href="https://github.com/cerner/terra-framework/blob/master/packages/terra-slide-panel/src/terra-dev-site/doc/example/DefaultSlidePanel.jsx">the example code</a>
+        {'.'}
       </p>
       <ul>
         <li>Item 1</li>
@@ -33,11 +38,16 @@ const panelContentForSlidePanel = (togglePanelHandler, toggleFullscreenHandler) 
   <div>
     <header style={{ backgroundColor: 'lightgrey' }}>
       <h3 style={{ margin: '0px', padding: '5px', display: 'inline-block' }}>Panel Content</h3>
-      <button type="button" onClick={togglePanelHandler} style={{ display: 'inline-block' }}>Toggle Panel</button>
+      <button id="panelToggleBtn" type="button" onClick={togglePanelHandler} style={{ display: 'inline-block' }}>Panel Toggle Panel</button>
       <button type="button" onClick={toggleFullscreenHandler} style={{ display: 'inline-block' }}>Toggle Fullscreen</button>
     </header>
     <div style={{ margin: '5px' }}>
       <p>This is the panel content area of the slide panel.</p>
+      <p>
+        {'Focus is moved to the toggle button in the main container when the panel is closed via the componentDidUpdate lifecycle hook in '}
+        <a href="https://github.com/cerner/terra-framework/blob/master/packages/terra-slide-panel/src/terra-dev-site/doc/example/DefaultSlidePanel.jsx">the example code</a>
+        {'.'}
+      </p>
       <ul>
         <li>Item 1</li>
         <li>Item 2</li>
@@ -72,16 +82,21 @@ class DefaultSlidePanel extends React.Component {
     this.handleFullscreenToggle = this.handleFullscreenToggle.bind(this);
   }
 
-  handlePanelToggle() {
-    const newState = this.state;
-
-    newState.panelIsOpen = !this.state.panelIsOpen;
-
-    if (!newState.panelIsOpen) {
-      newState.panelIsFullscreen = false;
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState && !prevState.panelIsOpen) {
+      // Shift focus to button in panel container
+      document.getElementById('panelToggleBtn').focus();
+    } else {
+      // Shift focus to button in main container
+      document.getElementById('mainToggleBtn').focus();
     }
+  }
 
-    this.setState(newState);
+  handlePanelToggle() {
+    this.setState(prevState => ({
+      panelIsOpen: !prevState.panelIsOpen,
+      panelIsFullscreen: prevState.panelIsOpen,
+    }));
   }
 
   handleFullscreenToggle() {
