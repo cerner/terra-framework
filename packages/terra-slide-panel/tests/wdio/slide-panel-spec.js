@@ -109,7 +109,7 @@ describe('Slide panel', () => {
     Terra.should.themeEachCustomProperty({
       '--terra-slide-panel-panel-width-small': '420px',
       '--terra-slide-panel-panel-width-large-scalar': '0.8',
-      '--terra-slide-panel-shadow-color': 'orange',
+      '--terra-slide-panel-overlay-shadow-color': 'orange',
       '--terra-slide-panel-panel-border-color': 'blue',
       '--terra-slide-panel-panel-border-radius': '5px',
     });
