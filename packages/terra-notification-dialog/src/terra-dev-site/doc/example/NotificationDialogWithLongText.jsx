@@ -113,7 +113,7 @@ class NotificationDialogWithLongText extends React.Component {
           isOpen={this.state.isOpen}
           onRequestClose={this.handleCloseModal}
           title="Make sure that the title relates directly to the choices."
-          message={message}
+          message={message[0]}
           primaryAction={{
             text: 'OK',
             onClick: clickOK,
