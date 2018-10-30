@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppDelegate from 'terra-app-delegate';
+import DisclosureManagerDelegate from './DisclosureManagerDelegate';
+import DisclosureManagerContext from './DisclosureManagerContext';
+import withDisclosureManager from './withDisclosureManager';
 
 const availableDisclosureSizes = {
   TINY: 'tiny',
@@ -47,11 +49,6 @@ export { availableDisclosureSizes, availableDisclosureHeights, availableDisclosu
 
 const propTypes = {
   /**
-   * An AppDelegate instance that will be integrated with the DisclosureManager instance. The DisclosureManager will defer to it if unsupported
-   * actions occur.
-   */
-  app: AppDelegate.propType,
-  /**
    * The child components that will be provided with an AppDelegate 'app' prop used to interact with the DisclosureManager instance.
    */
   children: PropTypes.node,
@@ -64,6 +61,11 @@ const propTypes = {
    * utilize its 'app' prop and forward the request instead of handling the request itself.
    */
   supportedDisclosureTypes: PropTypes.array,
+  /**
+   * A DisclosureManagerDelegate instance provided by a parent DisclosureManager. This prop is automatically provided by `withDisclosureManager` and should not
+   * be explicitly given to the component.
+   */
+  disclosureManager: DisclosureManagerDelegate.propType,
 };
 
 const defaultProps = {
@@ -121,12 +123,12 @@ class DisclosureManager extends React.Component {
 
   /**
    * Determines if the provided disclosure type is supported by the DisclosureManager.
-   * @return `true` if the type is supported or if there is no fallback `app` present. `false` is returned otherwise.
+   * @return `true` if the type is supported or if there is no fallback `disclosureManager` present. `false` is returned otherwise.
    */
   disclosureTypeIsSupported(type) {
-    const { app, supportedDisclosureTypes } = this.props;
+    const { disclosureManager, supportedDisclosureTypes } = this.props;
 
-    return supportedDisclosureTypes.indexOf(type) >= 0 || !app;
+    return supportedDisclosureTypes.indexOf(type) >= 0 || !disclosureManager;
   }
 
   openDisclosure(data) {
@@ -300,14 +302,14 @@ class DisclosureManager extends React.Component {
   }
 
   renderContentComponents() {
-    const { children, app } = this.props;
+    const { children, disclosureManager } = this.props;
 
-    const appDelegate = {};
+    const delegate = {};
 
     /**
      * The disclose function provided will open the disclosure with the provided content.
      */
-    appDelegate.disclose = (data) => {
+    delegate.disclose = (data) => {
       if (this.disclosureTypeIsSupported(data.preferredType)) {
         return this.safelyCloseDisclosure()
           .then(() => {
@@ -331,16 +333,18 @@ class DisclosureManager extends React.Component {
             };
           });
       }
-      return app.disclose(data);
+      return disclosureManager.disclose(data);
     };
 
-    return React.Children.map(children, child => React.cloneElement(child, {
-      app: AppDelegate.clone(app, appDelegate),
-    }));
+    return (
+      <DisclosureManagerContext.Provider value={DisclosureManagerDelegate.create(delegate)}>
+        {children}
+      </DisclosureManagerContext.Provider>
+    );
   }
 
   renderDisclosureComponents() {
-    const { app } = this.props;
+    const { disclosureManager } = this.props;
     const {
       disclosureComponentKeys, disclosureComponentData, disclosureIsMaximized, disclosureIsFocused, disclosureSize,
     } = this.state;
@@ -350,12 +354,12 @@ class DisclosureManager extends React.Component {
       const isFullscreen = disclosureSize === availableDisclosureSizes.FULLSCREEN;
       const popContent = this.generatePopFunction(componentData.key);
 
-      const disclosureApp = {};
+      const delegate = {};
 
       /**
        * The disclose function provided will push content onto the disclosure stack.
        */
-      disclosureApp.disclose = (data) => {
+      delegate.disclose = (data) => {
         if (this.disclosureTypeIsSupported(data.preferredType)) {
           return Promise.resolve()
             .then(() => {
@@ -369,74 +373,68 @@ class DisclosureManager extends React.Component {
               };
             });
         }
-        return app.disclose(data);
+        return disclosureManager.disclose(data);
       };
 
       /**
        * Allows a component to remove itself from the disclosure stack. If the component is the only element in the disclosure stack,
        * the disclosure is closed.
        */
-      disclosureApp.dismiss = index > 0 ? popContent : this.safelyCloseDisclosure;
+      delegate.dismiss = index > 0 ? popContent : this.safelyCloseDisclosure;
 
       /**
        * Allows a component to close the entire disclosure stack.
        */
-      disclosureApp.closeDisclosure = this.safelyCloseDisclosure;
+      delegate.closeDisclosure = this.safelyCloseDisclosure;
 
       /**
        * Allows a component to remove itself from the disclosure stack. Functionally similar to `dismiss`, however `onBack` is
        * only provided to components in the stack that have a previous sibling.
        */
-      disclosureApp.goBack = index > 0 ? popContent : undefined;
+      delegate.goBack = index > 0 ? popContent : undefined;
 
       /**
        * Allows a component to request focus from the disclosure in the event that the disclosure mechanism in use utilizes a focus trap.
        */
-      disclosureApp.requestFocus = disclosureIsFocused ? () => Promise.resolve().then(this.releaseDisclosureFocus) : undefined;
+      delegate.requestFocus = disclosureIsFocused ? () => Promise.resolve().then(this.releaseDisclosureFocus) : undefined;
 
       /**
        * Allows a component to release focus from itself and return it to the disclosure.
        */
-      disclosureApp.releaseFocus = !disclosureIsFocused ? () => Promise.resolve().then(this.requestDisclosureFocus) : undefined;
+      delegate.releaseFocus = !disclosureIsFocused ? () => Promise.resolve().then(this.requestDisclosureFocus) : undefined;
 
       /**
        * Allows a component to maximize its presentation size. This is only provided if the component is not already maximized.
        */
-      disclosureApp.maximize = (!isFullscreen && !disclosureIsMaximized) ? () => (Promise.resolve().then(this.maximizeDisclosure)) : undefined;
+      delegate.maximize = (!isFullscreen && !disclosureIsMaximized) ? () => (Promise.resolve().then(this.maximizeDisclosure)) : undefined;
 
       /**
        * Allows a component to minimize its presentation size. This is only provided if the component is currently maximized.
        */
-      disclosureApp.minimize = (!isFullscreen && disclosureIsMaximized) ? () => (Promise.resolve().then(this.minimizeDisclosure)) : undefined;
+      delegate.minimize = (!isFullscreen && disclosureIsMaximized) ? () => (Promise.resolve().then(this.minimizeDisclosure)) : undefined;
 
       /**
        * Allows a component to register a function with the DisclosureManager that will be called before the component is dismissed for any reason.
        */
-      disclosureApp.registerDismissCheck = (checkFunc) => {
+      delegate.registerDismissCheck = (checkFunc) => {
         this.dismissChecks[componentData.key] = checkFunc;
 
-        if (app && app.registerDismissCheck) {
+        if (disclosureManager && disclosureManager.registerDismissCheck) {
           // The combination of all managed dismiss checks is registered to the parent app delegate to ensure
           // that all are accounted for by the parent.
-          return app.registerDismissCheck(() => Promise.all(Object.values(this.dismissChecks)));
+          return disclosureManager.registerDismissCheck(() => Promise.all(Object.values(this.dismissChecks)));
         }
 
         return Promise.resolve();
       };
 
-      if (componentData.component) {
-        return React.cloneElement(componentData.component, {
-          key: componentData.key,
-          app: AppDelegate.create(disclosureApp),
-        });
-      }
-
-      const ComponentClass = AppDelegate.getComponentForDisclosure(componentData.name);
-      if (!ComponentClass) {
-        return undefined;
-      }
-
-      return <ComponentClass key={componentData.key} {...componentData.props} app={AppDelegate.create(disclosureApp)} />;
+      return (
+        <React.Fragment key={componentData.key}>
+          <DisclosureManagerContext.Provider value={DisclosureManagerDelegate.create(delegate)}>
+            {componentData.component}
+          </DisclosureManagerContext.Provider>
+        </React.Fragment>
+      );
     });
   }
 
@@ -476,4 +474,7 @@ class DisclosureManager extends React.Component {
 DisclosureManager.propTypes = propTypes;
 DisclosureManager.defaultProps = defaultProps;
 
-export default DisclosureManager;
+const disclosureManagerShape = DisclosureManagerDelegate.propType;
+
+export default withDisclosureManager(DisclosureManager);
+export { withDisclosureManager, disclosureManagerShape };

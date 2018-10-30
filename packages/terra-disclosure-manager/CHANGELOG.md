@@ -3,6 +3,12 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* DisclosureManager consumer APIs are provided using context instead of prop injection
+
+### Added
+* Added exports for withDisclosureManager and disclosureManagerShape
+* Added Upgrade Guide for conversion from v2.x to v3.x
 
 2.14.0 - (October 8, 2018)
 ------------------
