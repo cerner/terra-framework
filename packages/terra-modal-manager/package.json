@@ -33,7 +33,7 @@
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-abstract-modal": "^1.0.0",
-    "terra-disclosure-manager": "^2.14.0",
+    "terra-disclosure-manager": "2.13.0",
     "terra-doc-template": "^1.1.0",
     "terra-heading": "^2.0.1",
     "terra-responsive-element": "^3.0.0",
