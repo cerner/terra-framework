@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Overlay from 'terra-overlay';
 import OverlayContainer from 'terra-overlay/lib/OverlayContainer';
+import tabbable from 'tabbable';
 
 import 'terra-base/lib/baseStyles';
 
@@ -90,6 +91,7 @@ class LayoutSlidePanel extends React.Component {
     if (!this.props.isOpen && this.panelNode) {
       this.panelNode.setAttribute('aria-hidden', 'true');
       this.isHidden = true;
+      document.querySelector('button[data-application-header-toggle]').focus();
     }
   }
 
@@ -100,6 +102,9 @@ class LayoutSlidePanel extends React.Component {
       // If the panel is opening remove the hidden attribute so the animation performs correctly.
       this.panelNode.setAttribute('aria-hidden', 'false');
       this.isHidden = false;
+      if (tabbable(this.panelNode)[0]) {
+        tabbable(this.panelNode)[0].focus();
+      }
     }
   }
 
