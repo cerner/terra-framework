@@ -91,7 +91,14 @@ class LayoutSlidePanel extends React.Component {
     if (!this.props.isOpen && this.panelNode) {
       this.panelNode.setAttribute('aria-hidden', 'true');
       this.isHidden = true;
-      document.querySelector('button[data-application-header-toggle]').focus();
+
+      // Sends focus back to the application layout header toggle button if it exists
+      if (document.querySelector('button[data-application-header-toggle]')) {
+        document.querySelector('button[data-application-header-toggle]').focus();
+      // Else, we'll send focus back to first interactable element in the main panel
+      } else if (tabbable(document.querySelector('[data-terra-layout-main]'))[0]) {
+        tabbable(document.querySelector('[data-terra-layout-main]'))[0].focus();
+      }
     }
   }
 
