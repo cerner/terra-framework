@@ -3,8 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
-### Changed
-* DisclosureManager consumer APIs are provided using context instead of prop injection
+### Breaking Change
+* Added Context-based API for consumer-facing DisclosureManager APIs
+* Removed injection of `app` prop into child/disclosure components.
 
 ### Added
 * Added exports for withDisclosureManager and disclosureManagerShape

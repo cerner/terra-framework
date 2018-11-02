@@ -35,11 +35,12 @@ describe('DisclosureManager', () => {
 
   const validateInitialState = (wrapper) => {
     expect(wrapper.state().disclosureIsOpen).toBeFalsy();
-    expect(wrapper.state().disclosureIsFocused).toBeTruthy();
+    expect(wrapper.state().disclosureIsFocused).toBeFalsy();
     expect(wrapper.state().disclosureIsMaximized).toBeFalsy();
     expect(wrapper.state().disclosureSize).toBeUndefined();
     expect(wrapper.state().disclosureComponentKeys).toEqual([]);
     expect(wrapper.state().disclosureComponentData).toEqual({});
+    expect(wrapper.state().disclosureComponents).toEqual([]);
   };
 
   const validateChildAppDelegate = (wrapper) => {
@@ -74,6 +75,7 @@ describe('DisclosureManager', () => {
         expect(wrapper.state().disclosureComponentKeys).toEqual(['DISCLOSE_KEY']);
         expect(wrapper.state().disclosureComponentData.DISCLOSE_KEY.key).toEqual('DISCLOSE_KEY');
         expect(wrapper.state().disclosureComponentData.DISCLOSE_KEY.component.props.id).toEqual('disclosure-component');
+        expect(wrapper.state().disclosureComponents.length).toEqual(1);
 
         const disclosureContentManager = wrapper.find('#disclosure-component').getElements()[1].props.disclosureManager;
         expect(disclosureContentManager).toBeDefined();
@@ -145,6 +147,7 @@ describe('DisclosureManager', () => {
         expect(wrapper.state().disclosureComponentKeys).toEqual(['DISCLOSE_KEY']);
         expect(wrapper.state().disclosureComponentData.DISCLOSE_KEY.key).toEqual('DISCLOSE_KEY');
         expect(wrapper.state().disclosureComponentData.DISCLOSE_KEY.component.props.id).toEqual('disclosure-component');
+        expect(wrapper.state().disclosureComponents.length).toEqual(1);
 
         return new Promise((resolve, reject) => {
           dismissDisclosureInstance().then(resolve).catch(reject);
@@ -185,6 +188,7 @@ describe('DisclosureManager', () => {
         expect(wrapper.state().disclosureComponentKeys).toEqual(['DISCLOSE_KEY']);
         expect(wrapper.state().disclosureComponentData.DISCLOSE_KEY.key).toEqual('DISCLOSE_KEY');
         expect(wrapper.state().disclosureComponentData.DISCLOSE_KEY.component.props.id).toEqual('disclosure-component');
+        expect(wrapper.state().disclosureComponents.length).toEqual(1);
 
         const disclosureContentApp = wrapper.find('#disclosure-component').getElements()[1].props.disclosureManager;
         expect(disclosureContentApp).toBeDefined();
@@ -213,6 +217,7 @@ describe('DisclosureManager', () => {
         expect(wrapper.state().disclosureComponentKeys).toEqual(['DISCLOSE_KEY']);
         expect(wrapper.state().disclosureComponentData.DISCLOSE_KEY.key).toEqual('DISCLOSE_KEY');
         expect(wrapper.state().disclosureComponentData.DISCLOSE_KEY.component.props.id).toEqual('disclosure-component');
+        expect(wrapper.state().disclosureComponents.length).toEqual(1);
 
         const disclosureContentApp = wrapper.find('#disclosure-component').getElements()[1].props.disclosureManager;
         expect(disclosureContentApp).toBeDefined();
@@ -260,6 +265,7 @@ describe('DisclosureManager', () => {
         expect(wrapper.state().disclosureComponentKeys).toEqual(['DISCLOSE_KEY']);
         expect(wrapper.state().disclosureComponentData.DISCLOSE_KEY.key).toEqual('DISCLOSE_KEY');
         expect(wrapper.state().disclosureComponentData.DISCLOSE_KEY.component.props.id).toEqual('disclosure-component');
+        expect(wrapper.state().disclosureComponents.length).toEqual(1);
 
         const disclosureContentApp = wrapper.find('#disclosure-component').getElements()[1].props.disclosureManager;
         expect(disclosureContentApp).toBeDefined();
@@ -302,6 +308,7 @@ describe('DisclosureManager', () => {
         expect(wrapper.state().disclosureComponentKeys).toEqual(['DISCLOSE_KEY']);
         expect(wrapper.state().disclosureComponentData.DISCLOSE_KEY.key).toEqual('DISCLOSE_KEY');
         expect(wrapper.state().disclosureComponentData.DISCLOSE_KEY.component.props.id).toEqual('disclosure-component');
+        expect(wrapper.state().disclosureComponents.length).toEqual(1);
 
         const disclosureContentApp = wrapper.find('#disclosure-component').getElements()[1].props.disclosureManager;
         expect(disclosureContentApp).toBeDefined();
@@ -330,6 +337,7 @@ describe('DisclosureManager', () => {
         expect(wrapper.state().disclosureComponentKeys).toEqual(['DISCLOSE_KEY']);
         expect(wrapper.state().disclosureComponentData.DISCLOSE_KEY.key).toEqual('DISCLOSE_KEY');
         expect(wrapper.state().disclosureComponentData.DISCLOSE_KEY.component.props.id).toEqual('disclosure-component');
+        expect(wrapper.state().disclosureComponents.length).toEqual(1);
 
         const disclosureContentApp = wrapper.find('#disclosure-component').getElements()[1].props.disclosureManager;
         expect(disclosureContentApp).toBeDefined();
@@ -371,6 +379,7 @@ describe('DisclosureManager', () => {
         expect(wrapper.state().disclosureSize).toBeUndefined();
         expect(wrapper.state().disclosureComponentKeys).toEqual([]);
         expect(wrapper.state().disclosureComponentData).toEqual({});
+        expect(wrapper.state().disclosureComponents).toEqual([]);
       });
   });
 
@@ -400,6 +409,7 @@ describe('DisclosureManager', () => {
         expect(wrapper.state().disclosureSize).toBeUndefined();
         expect(wrapper.state().disclosureComponentKeys).toEqual([]);
         expect(wrapper.state().disclosureComponentData).toEqual({});
+        expect(wrapper.state().disclosureComponents).toEqual([]);
       });
   });
 
@@ -437,6 +447,7 @@ describe('DisclosureManager', () => {
         expect(wrapper.state().disclosureComponentKeys).toEqual(['DISCLOSE_KEY', 'NESTED']);
         expect(wrapper.state().disclosureComponentData.NESTED.key).toEqual('NESTED');
         expect(wrapper.state().disclosureComponentData.NESTED.component.props.id).toEqual('nested-disclosure-component');
+        expect(wrapper.state().disclosureComponents.length).toEqual(2);
 
         const disclosureContentApp = wrapper.find('#nested-disclosure-component').getElements()[1].props.disclosureManager;
         expect(disclosureContentApp).toBeDefined();
@@ -464,6 +475,7 @@ describe('DisclosureManager', () => {
         expect(wrapper.state().disclosureSize).toBe('large');
         expect(wrapper.state().disclosureComponentKeys).toEqual(['DISCLOSE_KEY']);
         expect(wrapper.state().disclosureComponentData.NESTED).toBeUndefined();
+        expect(wrapper.state().disclosureComponents.length).toEqual(1);
       });
   });
 
@@ -486,6 +498,7 @@ describe('DisclosureManager', () => {
             component: <div id="disclosure-comp" />,
           },
         },
+        disclosureComponents: [<div id="disclosure-comp" />],
       }, resolve);
     })
       .then(() => {
@@ -501,7 +514,7 @@ describe('DisclosureManager', () => {
 
         expect(firstRenderPayload.disclosure).toBeDefined();
         expect(firstRenderPayload.disclosure.isOpen).toBeFalsy();
-        expect(firstRenderPayload.disclosure.isFocused).toBeTruthy();
+        expect(firstRenderPayload.disclosure.isFocused).toBeFalsy();
         expect(firstRenderPayload.disclosure.isMaximized).toBeFalsy();
         expect(firstRenderPayload.disclosure.size).toBeUndefined();
         expect(firstRenderPayload.disclosure.components.length).toEqual(0);

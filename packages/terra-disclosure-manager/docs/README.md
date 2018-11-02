@@ -67,7 +67,55 @@ Example (using the Modal and SlideGroup):
 
 ### Interacting with the Disclosure Manager
 
-The DisclosureManager wraps its contents in a context provider that exposes an instance of a DisclosureManagerDelegate, an object containing DisclosureManager APIs,  to components based upon their presented location. Components can use the higher order component generator `withDisclosureManager()` to wrap themselves automatically in a context consumer and receive a prop named `disclosureManager` containing the DisclosureManagerDelegate instance. The various APIs are detailed below.
+The DisclosureManager wraps its contents in a context provider that exposes an instance of a DisclosureManagerDelegate, an object containing DisclosureManager APIs, to components based upon their presented location. 
+
+#### withDisclosureManager
+
+Components can use the higher order component generator `withDisclosureManager()` to wrap themselves automatically in a context consumer and receive a prop named `disclosureManager` containing a DisclosureManagerDelegate instance.
+
+```jsx
+import Base from 'terra-base';
+import ModalManager from 'terra-modal-manager'; 
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
+
+const MyDisclosureComponent = withDisclosureManager({ disclosureManager }) => (
+  <Button
+    text="Close Modal"
+    onClick={() => { 
+      disclosureManager.closeDisclosure();
+    }}
+  />
+);
+MyDisclosureComponent.propTypes = {
+  disclosureManager: disclosureManagerShape,
+}
+
+const MyComponent = withDisclosureManager({ disclosureManager }) => (
+  <Button
+    text="Launch Modal"
+    onClick={() => { 
+      disclosureManager.disclose({
+        preferredType: 'modal',
+        content: {
+          key: 'MY-MODAL-DISCLOSURE',
+          component: <MyDisclosureComponent />,
+        }
+      });
+    }}
+  />
+);
+MyComponent.propTypes = {
+  disclosureManager: disclosureManagerShape,
+}
+
+const MyApp = () => (
+  <Base locale="en">
+    <ModalManager>
+      <MyComponent />
+    </ModalManager>
+  </Base>
+)
+```
 
 #### Children
 
