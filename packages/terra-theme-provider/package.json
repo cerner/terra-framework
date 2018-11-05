@@ -1,7 +1,7 @@
 {
   "name": "terra-theme-provider",
   "main": "lib/ThemeProvider.js",
-  "version": "2.15.0",
+  "version": "2.16.0",
   "description": "The theme provider component provides a theme to Terra UI components rendered within it via CSS custom properties a.k.a CSS variables.",
   "repository": {
     "type": "git",
