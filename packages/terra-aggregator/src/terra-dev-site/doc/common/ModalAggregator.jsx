@@ -1,9 +1,10 @@
 import React from 'react';
-import AppDelegate from 'terra-app-delegate';
+import PropTypes from 'prop-types';
 import ContentContainer from 'terra-content-container';
 import ActionHeader from 'terra-action-header';
+import { withDisclosureManager } from 'terra-disclosure-manager';
 
-import AggregatorContainer from './AggregatorContainer';
+import Aggregator from '../../../Aggregator';
 import AggregatorItem from './AggregatorItem';
 import SimpleAggregatorItem from './SimpleAggregatorItem';
 
@@ -18,20 +19,19 @@ const items = Object.freeze([{
   component: <SimpleAggregatorItem name="No Disclosure Section" />,
 }]);
 
-const ModalAggregator = ({ app }) => (
+const ModalAggregator = ({ disclosureManager }) => (
   <ContentContainer
     fill
-    header={<ActionHeader onClose={app.closeDisclosure} onBack={app.goBack} />}
+    header={<ActionHeader onClose={disclosureManager.closeDisclosure} onBack={disclosureManager.goBack} />}
   >
-    <AggregatorContainer
-      app={app}
+    <Aggregator
       items={items}
     />
   </ContentContainer>
 );
 
 ModalAggregator.propTypes = {
-  app: AppDelegate.propType,
+  disclosureManager: PropTypes.object,
 };
 
-export default ModalAggregator;
+export default withDisclosureManager(ModalAggregator);

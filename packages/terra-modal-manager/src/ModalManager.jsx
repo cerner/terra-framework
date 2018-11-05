@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import AbstractModal from 'terra-abstract-modal';
-import AppDelegate from 'terra-app-delegate';
 import SlideGroup from 'terra-slide-group';
 import DisclosureManager, { availableDisclosureSizes } from 'terra-disclosure-manager';
 
@@ -17,8 +16,8 @@ export { disclosureType };
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  app: AppDelegate.propType,
   children: PropTypes.node,
+  disclosureManager: PropTypes.object,
 };
 
 const heightFromSize = {
@@ -45,7 +44,7 @@ class ModalManager extends React.Component {
   }
 
   renderModal(manager) {
-    const { app, children, ...customProps } = this.props;
+    const { children, ...customProps } = this.props;
 
     const containerClassNames = cx([
       'container',
@@ -84,11 +83,10 @@ class ModalManager extends React.Component {
   }
 
   render() {
-    const { app, children } = this.props;
+    const { children } = this.props;
 
     return (
       <DisclosureManager
-        app={app}
         supportedDisclosureTypes={[disclosureType]}
         render={this.renderModal}
       >

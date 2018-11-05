@@ -1,22 +1,22 @@
 # Terra Modal Manager - Upgrade Guide
 
-## Upgrading from v3.x to v4.x
+## Upgrading from v2.x to v3.x
 
-With the release of terra-disclosure-manager v3.x, the ModalManager now provides its APIs through context instead of prop injection. Please view the terra-disclosure-manager documentation/upgrade guide for more information. 
+With the release of terra-disclosure-manager v3.x, the SlidePanelManager now provides its APIs through context instead of prop injection. Please view the terra-disclosure-manager documentation/upgrade guide for more information. 
 
-The below example code details the changes necessary to interact with terra-modal-manager v4.x.
+The below example code details the changes necessary to interact with terra-slide-panel-manager v3.x.
 
 ```jsx
 /**
  * v3.x
  */
 import Base from 'terra-base';
-import ModalManager from 'terra-modal-manager'; 
+import SlidePanelManager from 'terra-slide-panel-manager'; 
 import AppDelegate from 'terra-app-delegate';
 
 const MyDisclosureComponent = ({ app }) => (
   <Button
-    text="Close Modal"
+    text="Close Panel"
     onClick={() => { 
       app.closeDisclosure();
     }}
@@ -28,12 +28,12 @@ MyDisclosureComponent.propType = {
 
 const MyComponent = ({ app }) => (
   <Button
-    text="Launch Modal"
+    text="Launch Panel"
     onClick={() => { 
       app.disclose({
-        preferredType: 'modal',
+        preferredType: 'panel',
         content: {
-          key: 'MY-MODAL-DISCLOSURE',
+          key: 'MY-PANEL-DISCLOSURE',
           component: <MyDisclosureComponent />,
         }
       });
@@ -46,9 +46,9 @@ MyComponent.propType = {
 
 const MyApp = () => (
   <Base locale="en">
-    <ModalManager>
+    <SlidePanelManager>
       <MyComponent />
-    </ModalManager>
+    </SlidePanelManager>
   </Base>
 )
 
@@ -56,12 +56,12 @@ const MyApp = () => (
  * v4.x
  */
 import Base from 'terra-base';
-import ModalManager from 'terra-modal-manager'; 
+import SlidePanelManager from 'terra-slide-panel-manager'; 
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 
 const MyDisclosureComponent = withDisclosureManager({ disclosureManager }) => (
   <Button
-    text="Close Modal"
+    text="Close Panel"
     onClick={() => { 
       disclosureManager.closeDisclosure();
     }}
@@ -73,12 +73,12 @@ MyDisclosureComponent.propTypes = {
 
 const MyComponent = withDisclosureManager({ disclosureManager }) => (
   <Button
-    text="Launch Modal"
+    text="Launch Panel"
     onClick={() => { 
       disclosureManager.disclose({
-        preferredType: 'modal',
+        preferredType: 'panel',
         content: {
-          key: 'MY-MODAL-DISCLOSURE',
+          key: 'MY-PANEL-DISCLOSURE',
           component: <MyDisclosureComponent />,
         }
       });
@@ -91,9 +91,9 @@ MyComponent.propTypes = {
 
 const MyApp = () => (
   <Base locale="en">
-    <ModalManager>
+    <SlidePanelManager>
       <MyComponent />
-    </ModalManager>
+    </SlidePanelManager>
   </Base>
 )
 ```

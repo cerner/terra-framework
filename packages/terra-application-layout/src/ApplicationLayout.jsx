@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppDelegate from 'terra-app-delegate';
 import NavigationLayout from 'terra-navigation-layout';
 import { routeConfigPropType } from 'terra-navigation-layout/lib/configurationPropTypes';
 import { matchPath } from 'react-router-dom';
@@ -16,12 +15,6 @@ import UtilityHelpers from './utils/utilityHelpers';
 const navigationLayoutSizes = ['default', 'tiny', 'small', 'medium', 'large', 'huge'];
 
 const propTypes = {
-  /**
-   * The AppDelegate instance provided by `withModalManager`. If an AppDelegate instance is
-   * explicitly provided to the ApplicationLayout, the ModalManager will wrap it and
-   * fall back to its defined APIs as needed.
-   */
-  app: AppDelegate.propType,
   /**
    * The content to be rendered in the ApplicationLayout's extensions region. This component will be provided an AppDelegate (as `app`) and
    * a `layoutConfig` as props to facilitate communication with the ApplicationLayout.
@@ -202,13 +195,12 @@ class ApplicationLayout extends React.Component {
 
   render() {
     const {
-      app, nameConfig, utilityConfig, navigationAlignment, navigationItems, indexPath, extensions,
+      nameConfig, utilityConfig, navigationAlignment, navigationItems, indexPath, extensions,
     } = this.props;
     const { applicationLayoutRoutingConfig } = this.state;
 
     return (
       <NavigationLayout
-        app={app}
         config={applicationLayoutRoutingConfig}
         header={(
           <ApplicationHeader

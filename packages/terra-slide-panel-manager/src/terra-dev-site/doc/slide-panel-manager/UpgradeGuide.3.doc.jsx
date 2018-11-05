@@ -1,14 +1,14 @@
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
-import { name } from '../../../package.json';
-import ReadMe from '../../../docs/README.md';
+import { name } from '../../../../package.json';
+import UpgradeGuide from '../../../../docs/UPGRADEGUIDE.md';
 
-const AppDelegateExamples = () => (
+const UpgradeGuidePage = () => (
   <DocTemplate
     packageName={name}
-    readme={ReadMe}
+    readme={UpgradeGuide}
     srcPath={`https://github.com/cerner/terra-framework/tree/master/packages/${name}`}
   />
 );
 
-export default AppDelegateExamples;
+export default UpgradeGuidePage;

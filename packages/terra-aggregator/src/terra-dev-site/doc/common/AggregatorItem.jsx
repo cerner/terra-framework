@@ -4,17 +4,18 @@ import Button from 'terra-button';
 import SelectableList from 'terra-list/lib/SelectableList';
 import ContentContainer from 'terra-content-container';
 import Arrange from 'terra-arrange';
-import AppDelegate from 'terra-app-delegate';
 import ActionHeader from 'terra-action-header';
-import DisclosureComponent from 'terra-disclosure-manager/lib/terra-dev-site/doc/example/DisclosureComponent';
+import { withDisclosureManager } from 'terra-disclosure-manager';
 
-const ReadonlyModal = ({ app }) => (
+import DisclosureComponent from './DisclosureComponent';
+
+const ReadonlyModal = withDisclosureManager(({ disclosureManager }) => (
   <ContentContainer
     header={(
       <ActionHeader
         title="Info Modal"
-        onClose={app.closeDisclosure}
-        onBack={app.goBack}
+        onClose={disclosureManager.closeDisclosure}
+        onBack={disclosureManager.goBack}
       />
     )}
   >
@@ -22,20 +23,17 @@ const ReadonlyModal = ({ app }) => (
       <p>This modal was not presented through the Aggregator. The Aggregator state was maintained.</p>
     </div>
   </ContentContainer>
-);
+));
 
 ReadonlyModal.propTypes = {
-  app: AppDelegate.propType,
+  disclosureManager: PropTypes.object,
 };
 
 const propTypes = {
   aggregatorDelegate: PropTypes.object,
   name: PropTypes.string,
   disclosureType: PropTypes.string,
-  disclose: PropTypes.func,
-  registerDismissCheck: PropTypes.func,
-  requestDisclosureFocus: PropTypes.func,
-  releaseDisclosureFocus: PropTypes.func,
+  disclosureManager: PropTypes.object,
 };
 
 class AggregatorItem extends React.Component {
@@ -87,11 +85,11 @@ class AggregatorItem extends React.Component {
   }
 
   launchModal() {
-    const { disclose } = this.props;
+    const { disclosureManager } = this.props;
 
     const key = `ModalContent-${Date.now()}`;
 
-    disclose({
+    disclosureManager.disclose({
       preferredType: 'modal',
       size: 'small',
       content: {
@@ -103,7 +101,7 @@ class AggregatorItem extends React.Component {
 
   render() {
     const {
-      name, disclosureType, disclose, aggregatorDelegate, requestDisclosureFocus, releaseDisclosureFocus, registerDismissCheck, ...customProps
+      name, disclosureType, disclosureManager, aggregatorDelegate, ...customProps
     } = this.props;
 
     let selectedIndex;
@@ -119,7 +117,7 @@ class AggregatorItem extends React.Component {
             style={{ background: '#f4f4f4', padding: '0.71429rem 0.5rem', fontSize: '1.285rem' }}
             fitStart={(
               <div style={{ marginRight: '.7rem' }}>
-                {disclose ? <Button text="Modal (Without Requesting Focus)" onClick={this.launchModal} /> : null}
+                {disclosureManager && disclosureManager.disclose ? <Button text="Modal (Without Requesting Focus)" onClick={this.launchModal} /> : null}
               </div>
             )}
             fill={<div>{name}</div>}
@@ -169,4 +167,4 @@ class AggregatorItem extends React.Component {
 
 AggregatorItem.propTypes = propTypes;
 
-export default AggregatorItem;
+export default withDisclosureManager(AggregatorItem);

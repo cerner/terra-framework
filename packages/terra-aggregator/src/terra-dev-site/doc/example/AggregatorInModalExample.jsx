@@ -1,15 +1,16 @@
 import React from 'react';
-import AppDelegate from 'terra-app-delegate';
+import PropTypes from 'prop-types';
+import { withDisclosureManager } from 'terra-disclosure-manager';
 import ModalManager from 'terra-modal-manager';
 
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import ModalAggregator from 'terra-aggregator/lib/terra-dev-site/doc/common/ModalAggregator';
 
-const ModalButton = ({ app }) => (
+const ModalButton = ({ disclosureManager }) => (
   <button
     type="button"
     onClick={() => {
-      app.disclose({
+      disclosureManager.disclose({
         preferredType: 'modal',
         size: 'large',
         content: {
@@ -24,7 +25,7 @@ const ModalButton = ({ app }) => (
 );
 
 ModalButton.propTypes = {
-  app: AppDelegate.propType,
+  disclosureManager: PropTypes.object,
 };
 
 const SimpleAggregatorExample = () => (
@@ -35,4 +36,4 @@ const SimpleAggregatorExample = () => (
   </div>
 );
 
-export default SimpleAggregatorExample;
+export default withDisclosureManager(SimpleAggregatorExample);

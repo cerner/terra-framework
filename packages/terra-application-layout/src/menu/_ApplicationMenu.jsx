@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import AppDelegate from 'terra-app-delegate';
 import ApplicationMenuLayout from 'terra-application-menu-layout';
 import { ApplicationMenuName } from 'terra-application-name';
 import RoutingStackDelegate from 'terra-navigation-layout/lib/RoutingStackDelegate';
 import { ApplicationMenuUtility } from 'terra-application-utility';
 import { disclosureType as modalDisclosureType } from 'terra-modal-manager';
+import { withDisclosureManager } from 'terra-disclosure-manager';
 
 import 'terra-base/lib/baseStyles';
 import ApplicationLayoutPropTypes from '../utils/propTypes';
@@ -20,9 +20,8 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The AppDelegate instance that will be propagated to the components presented within the NavigationLayout.
    */
-  app: AppDelegate.propType,
+  disclosureManager: PropTypes.object,
   /**
    * The element to be placed within the fill flex styled content area.
    * This content is intended to be the user configured content for the menu.
@@ -62,14 +61,14 @@ class ApplicationMenu extends React.Component {
   }
 
   handleUtilityDiscloseRequest(utilityMenu) {
-    const { app, layoutConfig } = this.props;
+    const { disclosureManager, layoutConfig } = this.props;
 
     if (layoutConfig && layoutConfig.toggleMenu) {
       layoutConfig.toggleMenu();
     }
 
-    if (app && utilityMenu) {
-      app.disclose({
+    if (disclosureManager && utilityMenu) {
+      disclosureManager.disclose({
         preferredType: modalDisclosureType,
         dimensions: { height: '420', width: '320' },
         content: {
@@ -81,9 +80,9 @@ class ApplicationMenu extends React.Component {
   }
 
   handleUtilityOnChange(event, itemData) {
-    const { utilityConfig, app } = this.props;
+    const { utilityConfig, disclosureManager } = this.props;
 
-    utilityConfig.onChange(event, itemData, app && app.disclose);
+    utilityConfig.onChange(event, itemData, disclosureManager && disclosureManager.disclose);
   }
 
   renderHeader(isCompact) {
@@ -101,10 +100,10 @@ class ApplicationMenu extends React.Component {
   }
 
   renderExtensions(isCompact) {
-    const { app, layoutConfig, extensions } = this.props;
+    const { layoutConfig, extensions } = this.props;
 
     if (isCompact && extensions) {
-      return React.cloneElement(extensions, { app, layoutConfig });
+      return React.cloneElement(extensions, { layoutConfig });
     }
 
     return null;
@@ -132,7 +131,7 @@ class ApplicationMenu extends React.Component {
 
   render() {
     const {
-      app,
+      disclosureManager,
       content,
       extensions,
       layoutConfig,
@@ -151,7 +150,7 @@ class ApplicationMenu extends React.Component {
 
     let clonedContent;
     if (content) {
-      clonedContent = React.cloneElement(content, { app, layoutConfig, routingStackDelegate });
+      clonedContent = React.cloneElement(content, { layoutConfig, routingStackDelegate });
     }
 
     return (
@@ -169,4 +168,4 @@ class ApplicationMenu extends React.Component {
 
 ApplicationMenu.propTypes = propTypes;
 
-export default ApplicationMenu;
+export default withDisclosureManager(ApplicationMenu);

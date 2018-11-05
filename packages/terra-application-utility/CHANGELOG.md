@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Removed
+* Removed dependency on terra-app-delegate package.
 
 1.21.0 - (October 24, 2018)
 ------------------

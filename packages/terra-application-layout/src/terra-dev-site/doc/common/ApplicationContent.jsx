@@ -1,11 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppDelegate from 'terra-app-delegate';
+import { withDisclosureManager } from 'terra-disclosure-manager';
 import { Route } from 'react-router-dom';
 import Button from 'terra-button';
-import DisclosureComponent from 'terra-disclosure-manager/lib/terra-dev-site/doc/example/DisclosureComponent';
 
 import ContentContainer from 'terra-content-container';
+
+const DisclosureComponent = withDisclosureManager(({ disclosureManager }) => (
+  <ContentContainer
+    fill
+  >
+    <p>Hello World</p>
+    <Button text="Close Modal" onClick={disclosureManager.closeDisclosure} />
+  </ContentContainer>
+));
+
 
 const dummyContent = (
   <div>
@@ -69,7 +78,7 @@ class ApplicationContent extends React.Component {
 
   render() {
     const {
-      layoutConfig, app, basePath, contentName, noMenu, showDummyContent,
+      layoutConfig, disclosureManager, basePath, contentName, noMenu, showDummyContent,
     } = this.props;
 
     let bodyContent;
@@ -137,14 +146,12 @@ which contains APIs for manipulating the layout state. When the layout is tiny o
           <h2>Progressive Disclosure</h2>
           <hr />
           <p>
-The ApplicationLayout ensures all content and menu components receive an AppDelegate prop (as
-            <b>app</b>
-), with ModalManager support included by default. The ApplicationLayout can be wrapped in additional DisclosureManagers to provide additional disclosure capabilities.
+The ApplicationLayout includes ModalManager support by default. The ApplicationLayout can be wrapped in additional DisclosureManagers to provide additional disclosure capabilities.
           </p>
           <Button
             text="Launch Modal"
             onClick={() => {
-              app.disclose({
+              disclosureManager.disclose({
                 preferredType: 'modal',
                 size: 'medium',
                 content: {
@@ -175,11 +182,11 @@ ApplicationContent.propTypes = {
   layoutConfig: PropTypes.shape({
     toggleMenu: PropTypes.func,
   }),
-  app: AppDelegate.propType,
+  disclosureManager: PropTypes.object,
   basePath: PropTypes.string,
   contentName: PropTypes.string,
   noMenu: PropTypes.bool,
   showDummyContent: PropTypes.bool,
 };
 
-export default ApplicationContent;
+export default withDisclosureManager(ApplicationContent);

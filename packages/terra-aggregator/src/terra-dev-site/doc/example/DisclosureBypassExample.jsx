@@ -1,44 +1,27 @@
 import React from 'react';
-import AppDelegate from 'terra-app-delegate';
-
 import ModalManager from 'terra-modal-manager';
 import SlidePanelManager from 'terra-slide-panel-manager';
 
 /* eslint-disable import/no-unresolved, import/extensions */
-import AggregatorContainer from 'terra-aggregator/lib/terra-dev-site/doc/common/AggregatorContainer';
+import Aggregator from 'terra-aggregator/lib/Aggregator';
 import AggregatorItem from 'terra-aggregator/lib/terra-dev-site/doc/common/AggregatorItem';
 /* eslint-enable import/no-unresolved, import/extensions */
 
 const items = Object.freeze([{
   key: 'SECTION_0',
-  component: <AggregatorItem name="Section 0" disclosureType="panel" />,
+  component: <AggregatorItem name="Section 0" disclosureType="panel" key="SECTION_0" />,
 }, {
   key: 'SECTION_1',
-  component: <AggregatorItem name="Section 1" disclosureType="panel" />,
+  component: <AggregatorItem name="Section 1" disclosureType="panel" key="SECTION_1" />,
 }]);
 
-const ModalManagerBypass = ({ app }) => {
-  const updatedItems = items.map(item => (
-    {
-      key: item.key,
-      component: React.cloneElement(item.component, {
-        disclose: app.disclose,
-      }),
-    }
-  ));
-
-  return (
-    <SlidePanelManager app={app}>
-      <AggregatorContainer
-        items={updatedItems}
-      />
-    </SlidePanelManager>
-  );
-};
-
-ModalManagerBypass.propTypes = {
-  app: AppDelegate.propType,
-};
+const ModalManagerBypass = () => (
+  <SlidePanelManager>
+    <Aggregator
+      items={items}
+    />
+  </SlidePanelManager>
+);
 
 const ModalBypassExample = () => (
   <div>

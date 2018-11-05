@@ -26,9 +26,6 @@ describe('ApplicationMenuWrapper', () => {
   it('should render prop data', () => {
     const testWrapper = (
       <ApplicationMenuWrapper
-        app={{
-          dismiss: jest.fn(),
-        }}
         navigationItems={[
           {
             path: 'test-item-path',

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppDelegate from 'terra-app-delegate';
 import DisclosureManager, { availableDisclosureSizes } from 'terra-disclosure-manager';
 import SlideGroup from 'terra-slide-group';
 import SlidePanel from 'terra-slide-panel';
@@ -9,11 +8,6 @@ const disclosureType = 'panel';
 export { disclosureType };
 
 const propTypes = {
-  /**
-   * An AppDelegate instance that will be used in fallback scenarios by the SlidePanelManager. If not provided, the SlidePanelManager
-   * will handle any and all disclosure requests it receives.
-   */
-  app: AppDelegate.propType,
   /**
    * The components to display in the body of the SlidePanel. These components will be provided with an AppDelegate prop (as `app`) that
    * will allow them to disclose content.
@@ -57,7 +51,7 @@ class SlidePanelManager extends React.Component {
 
   renderSlidePanel(manager) {
     const {
-      app, children, panelBehavior, ...customProps
+      children, panelBehavior, ...customProps
     } = this.props;
 
     let isFullscreen;
@@ -89,11 +83,10 @@ class SlidePanelManager extends React.Component {
   }
 
   render() {
-    const { app, children } = this.props;
+    const { children } = this.props;
 
     return (
       <DisclosureManager
-        app={app}
         supportedDisclosureTypes={[disclosureType]}
         render={this.renderSlidePanel}
       >

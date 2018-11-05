@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withDisclosureManager } from 'terra-disclosure-manager';
 
 const propTypes = {
   /**
@@ -17,10 +18,8 @@ const propTypes = {
    */
   render: PropTypes.func,
   /**
-   * A function that will be provided to Aggregator items that have received focus. The function must adhere to the standardized
-   * AppDelegate disclosure API.
    */
-  disclose: PropTypes.func,
+  disclosureManager: PropTypes.object,
 };
 
 const defaultProps = {
@@ -75,7 +74,7 @@ class Aggregator extends React.Component {
   }
 
   requestFocus(itemId, itemState) {
-    const { disclose } = this.props;
+    const { disclosureManager } = this.props;
     const { focusedItemId } = this.state;
 
     return new Promise((resolve, reject) => {
@@ -86,10 +85,10 @@ class Aggregator extends React.Component {
           const focusRequestPayload = {};
 
           /**
-           * If the Aggregator is provided with disclosure functionality, the focus request is resolved with a custom
+           * If the Aggregator is rendered within the context of a DisclosureManager, the focus request is resolved with a custom
            * disclose implementation.
            */
-          if (disclose) {
+          if (disclosureManager) {
             focusRequestPayload.disclose = (data) => {
               /**
                * If the itemId no longer matches the focusedItemId, then the disclose is being called after
@@ -100,7 +99,7 @@ class Aggregator extends React.Component {
                 return Promise.reject();
               }
 
-              return disclose(data)
+              return disclosureManager.disclose(data)
                 .then(({ afterDismiss, dismissDisclosure, ...other }) => {
                   /**
                    * The disclosure's dismissDisclosure instance is cached so it can be called later. If an Aggregator item is
@@ -225,4 +224,4 @@ class Aggregator extends React.Component {
 Aggregator.propTypes = propTypes;
 Aggregator.defaultProps = defaultProps;
 
-export default Aggregator;
+export default withDisclosureManager(Aggregator);

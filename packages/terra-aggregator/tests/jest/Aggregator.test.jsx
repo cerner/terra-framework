@@ -14,7 +14,7 @@ AggregatorItem.propTypes = {
 describe('Aggregator', () => {
   it('should render an Aggregator without optional props', () => {
     const result = shallow((
-      <Aggregator />
+      <Aggregator.WrappedComponent />
     ));
     expect(result).toMatchSnapshot();
   });
@@ -32,7 +32,7 @@ describe('Aggregator', () => {
     }];
 
     const result = shallow((
-      <Aggregator
+      <Aggregator.WrappedComponent
         items={items}
       />
     ));
@@ -52,7 +52,7 @@ describe('Aggregator', () => {
     }];
 
     const result = shallow((
-      <Aggregator
+      <Aggregator.WrappedComponent
         items={items}
         render={renderData => (
           <div id="custom">
@@ -81,7 +81,7 @@ describe('Aggregator', () => {
     }];
 
     const wrapper = shallow((
-      <Aggregator
+      <Aggregator.WrappedComponent
         items={items}
       />
     ));
@@ -98,7 +98,6 @@ describe('Aggregator', () => {
         expect(wrapper.state().focusedItemId).toBe('1');
         expect(wrapper.state().focusedItemState).toEqual({ item1State: 'testState' });
 
-        // No disclose function was provided to the Aggregator, so one is not provided to the AggregatorItems.
         expect(disclose).toBe(undefined);
 
         const firstItem = wrapper.find(AggregatorItem).getElements()[0];
@@ -143,10 +142,10 @@ describe('Aggregator', () => {
     }];
 
     const wrapper = shallow((
-      <Aggregator
+      <Aggregator.WrappedComponent
         items={items}
-        disclose={() => {
-          // IM A DISCLOSE FUNCTION WOOHOO
+        disclosureManager={{
+          disclose: () => {},
         }}
       />
     ));
@@ -187,7 +186,7 @@ describe('Aggregator', () => {
     }];
 
     const wrapper = mount((
-      <Aggregator
+      <Aggregator.WrappedComponent
         items={items}
       />
     ));

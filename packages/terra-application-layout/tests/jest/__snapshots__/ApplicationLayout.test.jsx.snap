@@ -2,7 +2,6 @@
 
 exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with given props 1`] = `
 <withRouter(NavigationLayout)
-  app={AppDelegateInstance {}}
   config={
     Object {
       "content": Object {
@@ -233,7 +232,7 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with giv
     }
   }
   header={
-    <InjectIntl(ApplicationHeader)
+    <InjectIntl(withDisclosureManager(ApplicationHeader))
       applicationLinks={
         Object {
           "alignment": undefined,
@@ -393,7 +392,7 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with onl
     }
   }
   header={
-    <InjectIntl(ApplicationHeader)
+    <InjectIntl(withDisclosureManager(ApplicationHeader))
       applicationLinks={
         Object {
           "alignment": undefined,

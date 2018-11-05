@@ -1,9 +1,10 @@
 import React from 'react';
+import { withDisclosureManager } from 'terra-disclosure-manager';
 import ModalManager from '../../src/ModalManager';
 
-const TestContainer = () => (
-  <button type="button">Hello World</button>
-);
+const TestContainer = withDisclosureManager(({ id }) => (
+  <button id={id} type="button">Hello World</button>
+));
 
 describe('ModalManager', () => {
   it('should render the ModalManager with defaults', () => {
@@ -31,15 +32,15 @@ describe('ModalManager', () => {
   it('should disclose content in Modal', () => {
     const modalManager = (
       <ModalManager>
-        <TestContainer />
+        <TestContainer id="test" />
       </ModalManager>
     );
 
     const wrapper = mount(modalManager);
 
     return new Promise((resolve, reject) => {
-      const childApp = wrapper.find(TestContainer).getElements()[0].props.app;
-      childApp.disclose({
+      const childDisclosureManager = wrapper.find('#test').getElements()[1].props.disclosureManager;
+      childDisclosureManager.disclose({
         preferredType: 'modal',
         size: 'large',
         content: {

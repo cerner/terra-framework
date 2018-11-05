@@ -3,16 +3,11 @@ Changelog
 
 Unreleased
 ----------
-
-4.17.0 - (October 30, 2018)
-------------------
 ### Changed
-* Update mixin import to be more explicit
+* Updated examples to consume terra-disclosure-manager v3.x
 
-4.16.0 - (October 16, 2018)
-------------------
-### Changed
-* Updated popup examples to highlight how to achieve better focus management for screen readers
+### Removed
+* Removed dependency on terra-app-delegate package.
 
 4.15.0 - (October 8, 2018)
 ------------------
