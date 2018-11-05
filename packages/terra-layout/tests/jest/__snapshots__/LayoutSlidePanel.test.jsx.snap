@@ -21,6 +21,7 @@ exports[`LayoutSlidePanel should render when small 1`] = `
       isRelativeToContainer={true}
       isScrollable={false}
       onRequestClose={[Function]}
+      zIndex="100"
     />
     <main
       className="main-container"
@@ -56,6 +57,7 @@ exports[`LayoutSlidePanel should render when tiny 1`] = `
       isRelativeToContainer={true}
       isScrollable={false}
       onRequestClose={[Function]}
+      zIndex="100"
     />
     <main
       className="main-container"
@@ -91,6 +93,7 @@ exports[`LayoutSlidePanel should render with provided props 1`] = `
       isRelativeToContainer={true}
       isScrollable={false}
       onRequestClose={[Function]}
+      zIndex="100"
     />
     <main
       className="main-container"
@@ -121,6 +124,7 @@ exports[`LayoutSlidePanel should render without optional props 1`] = `
       isOpen={false}
       isRelativeToContainer={true}
       isScrollable={false}
+      zIndex="100"
     />
     <main
       className="main-container"
