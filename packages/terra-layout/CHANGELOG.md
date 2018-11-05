@@ -4,6 +4,9 @@ Changelog
 Unreleased
 ----------
 
+### Changed
+* Updated Jest snapshots due to dependency updates
+
 2.18.0 - (October 16, 2018)
 ------------------
 ### Changed
