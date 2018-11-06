@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Added focus management to shift between layout panel and toggle button when it is opened and closed
+* Regenerated jest snapshots
 
 2.18.0 - (October 16, 2018)
 ------------------
