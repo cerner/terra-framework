@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Restructured theme tests into a separate file
 * Updated examples to consume terra-disclosure-manager v3.x
 
 ### Removed

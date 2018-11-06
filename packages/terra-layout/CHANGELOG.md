@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Regenerated jest snapshots
 
 ### Changed
 * Updated snapshots due to dependency updates
