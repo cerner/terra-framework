@@ -21,7 +21,7 @@ describe('propType', () => {
 });
 
 describe('create', () => {
-  it('should expose a create function that creates an AppDelegate instance', () => {
+  it('should expose a create function that creates an DisclosureManagerDelegate instance', () => {
     const disclosureManagerLocalInstance = DisclosureManagerDelegate.create({
       disclose, dismiss, closeDisclosure, goBack, maximize, minimize, requestFocus, releaseFocus, registerDismissCheck, notSupported,
     });

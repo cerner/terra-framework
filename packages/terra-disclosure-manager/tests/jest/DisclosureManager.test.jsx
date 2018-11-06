@@ -23,6 +23,25 @@ describe('DisclosureManager', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should render when trapNestedDisclosureRequests is provided', () => {
+    const disclosureManager = (
+      <DisclosureManager.WrappedComponent
+        render={manager => (
+          <div id="wrapper">
+            {manager.children.components}
+          </div>
+        )}
+        trapNestedDisclosureRequests
+      >
+        <TestChild id="child1" />
+        <TestChild id="child2" />
+      </DisclosureManager.WrappedComponent>
+    );
+
+    const wrapper = mount(disclosureManager);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   const mountDisclosureManager = (disclosureTypes, renderFunc) => mount((
     <DisclosureManager.WrappedComponent
       render={renderFunc}
@@ -43,7 +62,7 @@ describe('DisclosureManager', () => {
     expect(wrapper.state().disclosureComponents).toEqual([]);
   };
 
-  const validateChildAppDelegate = (wrapper) => {
+  const validateChildDelegate = (wrapper) => {
     const childDisclosureManager1 = wrapper.find('#child1').getElements()[1].props.disclosureManager;
     expect(childDisclosureManager1).toBeDefined();
     expect(childDisclosureManager1.disclose).toBeDefined();
@@ -101,7 +120,7 @@ describe('DisclosureManager', () => {
     ));
 
     validateInitialState(wrapper);
-    validateChildAppDelegate(wrapper);
+    validateChildDelegate(wrapper);
 
     return triggerChildDisclose(wrapper);
   });
@@ -118,7 +137,7 @@ describe('DisclosureManager', () => {
     ));
 
     validateInitialState(wrapper);
-    validateChildAppDelegate(wrapper);
+    validateChildDelegate(wrapper);
 
     return new Promise((resolve, reject) => {
       const childApp1 = wrapper.find('#child1').getElements()[1].props.disclosureManager;
@@ -170,7 +189,7 @@ describe('DisclosureManager', () => {
     ));
 
     validateInitialState(wrapper);
-    validateChildAppDelegate(wrapper);
+    validateChildDelegate(wrapper);
 
     return triggerChildDisclose(wrapper)
       .then(() => new Promise((resolve, reject) => {
@@ -242,7 +261,7 @@ describe('DisclosureManager', () => {
     ));
 
     validateInitialState(wrapper);
-    validateChildAppDelegate(wrapper);
+    validateChildDelegate(wrapper);
 
     return new Promise((resolve, reject) => {
       const childApp1 = wrapper.find('#child1').getElements()[1].props.disclosureManager;
@@ -290,7 +309,7 @@ describe('DisclosureManager', () => {
     ));
 
     validateInitialState(wrapper);
-    validateChildAppDelegate(wrapper);
+    validateChildDelegate(wrapper);
 
     return triggerChildDisclose(wrapper)
       .then(() => new Promise((resolve, reject) => {
@@ -362,7 +381,7 @@ describe('DisclosureManager', () => {
     ));
 
     validateInitialState(wrapper);
-    validateChildAppDelegate(wrapper);
+    validateChildDelegate(wrapper);
 
     return triggerChildDisclose(wrapper)
       .then(() => new Promise((resolve, reject) => {
@@ -392,7 +411,7 @@ describe('DisclosureManager', () => {
     ));
 
     validateInitialState(wrapper);
-    validateChildAppDelegate(wrapper);
+    validateChildDelegate(wrapper);
 
     return triggerChildDisclose(wrapper)
       .then(() => new Promise((resolve, reject) => {
@@ -422,7 +441,79 @@ describe('DisclosureManager', () => {
     ));
 
     validateInitialState(wrapper);
-    validateChildAppDelegate(wrapper);
+    validateChildDelegate(wrapper);
+
+    return triggerChildDisclose(wrapper)
+      .then(() => new Promise((resolve, reject) => {
+        const disclosureContentApp = wrapper.find('#disclosure-component').getElements()[1].props.disclosureManager;
+
+        disclosureContentApp.disclose({
+          preferredType: 'not-test',
+          size: 'huge',
+          content: {
+            key: 'NESTED',
+            component: <TestChild id="nested-disclosure-component" />,
+          },
+        }).then(resolve).catch(reject);
+      }))
+      .then(() => {
+        wrapper.update();
+
+        expect(wrapper.state().disclosureIsOpen).toBeTruthy();
+        expect(wrapper.state().disclosureIsFocused).toBeTruthy();
+        expect(wrapper.state().disclosureIsMaximized).toBeFalsy();
+        expect(wrapper.state().disclosureSize).toBe('large');
+        expect(wrapper.state().disclosureComponentKeys).toEqual(['DISCLOSE_KEY', 'NESTED']);
+        expect(wrapper.state().disclosureComponentData.NESTED.key).toEqual('NESTED');
+        expect(wrapper.state().disclosureComponentData.NESTED.component.props.id).toEqual('nested-disclosure-component');
+        expect(wrapper.state().disclosureComponents.length).toEqual(2);
+
+        const disclosureContentApp = wrapper.find('#nested-disclosure-component').getElements()[1].props.disclosureManager;
+        expect(disclosureContentApp).toBeDefined();
+        expect(disclosureContentApp.disclose).toBeDefined();
+        expect(disclosureContentApp.dismiss).toBeDefined();
+        expect(disclosureContentApp.closeDisclosure).toBeDefined();
+        expect(disclosureContentApp.goBack).toBeDefined();
+        expect(disclosureContentApp.maximize).toBeDefined();
+        expect(disclosureContentApp.minimize).toBeUndefined();
+        expect(disclosureContentApp.requestFocus).toBeDefined();
+        expect(disclosureContentApp.releaseFocus).toBeUndefined();
+        expect(disclosureContentApp.registerDismissCheck).toBeDefined();
+      })
+      .then(() => new Promise((resolve, reject) => {
+        const disclosureContentApp = wrapper.find('#nested-disclosure-component').getElements()[1].props.disclosureManager;
+
+        disclosureContentApp.goBack().then(resolve).catch(reject);
+      }))
+      .then(() => {
+        wrapper.update();
+
+        expect(wrapper.state().disclosureIsOpen).toBeTruthy();
+        expect(wrapper.state().disclosureIsFocused).toBeTruthy();
+        expect(wrapper.state().disclosureIsMaximized).toBeFalsy();
+        expect(wrapper.state().disclosureSize).toBe('large');
+        expect(wrapper.state().disclosureComponentKeys).toEqual(['DISCLOSE_KEY']);
+        expect(wrapper.state().disclosureComponentData.NESTED).toBeUndefined();
+        expect(wrapper.state().disclosureComponents.length).toEqual(1);
+      });
+  });
+
+  it('should provide the disclosure content with restricted nested disclose functionality if trapNestedDisclosureRequests is enabled', () => {
+    const wrapper = mount((
+      <DisclosureManager.WrappedComponent
+        render={manager => (
+          <div id="wrapper">
+            {manager.children.components}
+            {manager.disclosure.components}
+          </div>
+        )}
+        supportedDisclosureTypes={['test']}
+        trapNestedDisclosureRequests
+      >
+        <TestChild id="child1" />
+        <TestChild id="child2" />
+      </DisclosureManager.WrappedComponent>
+    ));
 
     return triggerChildDisclose(wrapper)
       .then(() => new Promise((resolve, reject) => {
@@ -478,6 +569,7 @@ describe('DisclosureManager', () => {
         expect(wrapper.state().disclosureComponents.length).toEqual(1);
       });
   });
+
 
   it('should provide render function with the current state', () => {
     const mockRender = jest.fn();

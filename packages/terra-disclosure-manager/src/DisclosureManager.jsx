@@ -28,7 +28,7 @@ export { availableDisclosureSizes, availableDisclosureHeights, availableDisclosu
 
 const propTypes = {
   /**
-   * The child components that will be provided with an AppDelegate 'app' prop used to interact with the DisclosureManager instance.
+   * The child components that will be provided the disclosure functionality.
    */
   children: PropTypes.node,
   /**
@@ -40,6 +40,11 @@ const propTypes = {
    * utilize its 'app' prop and forward the request instead of handling the request itself.
    */
   supportedDisclosureTypes: PropTypes.array,
+  /**
+   * A boolean indicating whether or not the DisclosureManager should handle all nested disclosure requests. When enabled, the DisclosureManager will handle all
+   * disclose requests coming from disclosured components, regardless of the preferred disclosure type.
+   */
+  trapNestedDisclosureRequests: PropTypes.bool,
   /**
    * A DisclosureManagerDelegate instance provided by a parent DisclosureManager. This prop is automatically provided by `withDisclosureManager` and should not
    * be explicitly given to the component.
@@ -177,7 +182,7 @@ class DisclosureManager extends React.Component {
       },
     };
 
-    this.setState(Object.assign(newState, { disclosureComponents: this.renderDisclosureComponents(this.props.disclosureManager, newState) }));
+    this.setState(Object.assign(newState, { disclosureComponents: this.renderDisclosureComponents(this.props.disclosureManager, newState, undefined, this.props.trapNestedDisclosureRequests) }));
   }
 
   pushDisclosure(data) {
@@ -190,7 +195,7 @@ class DisclosureManager extends React.Component {
       props: data.content.props,
       component: data.content.component,
     };
-    newState.disclosureComponents = newState.disclosureComponents.concat(this.renderDisclosureComponents(this.props.disclosureManager, newState, [data.content.key]));
+    newState.disclosureComponents = newState.disclosureComponents.concat(this.renderDisclosureComponents(this.props.disclosureManager, newState, [data.content.key], this.props.trapNestedDisclosureRequests));
 
     this.setState(newState);
   }
@@ -221,28 +226,28 @@ class DisclosureManager extends React.Component {
     const newState = DisclosureManager.cloneDisclosureState(this.state);
     newState.disclosureIsFocused = true;
 
-    this.setState(Object.assign(newState, { disclosureComponents: this.renderDisclosureComponents(this.props.disclosureManager, newState) }));
+    this.setState(Object.assign(newState, { disclosureComponents: this.renderDisclosureComponents(this.props.disclosureManager, newState, undefined, this.props.trapNestedDisclosureRequests) }));
   }
 
   releaseDisclosureFocus() {
     const newState = DisclosureManager.cloneDisclosureState(this.state);
     newState.disclosureIsFocused = false;
 
-    this.setState(Object.assign(newState, { disclosureComponents: this.renderDisclosureComponents(this.props.disclosureManager, newState) }));
+    this.setState(Object.assign(newState, { disclosureComponents: this.renderDisclosureComponents(this.props.disclosureManager, newState, undefined, this.props.trapNestedDisclosureRequests) }));
   }
 
   maximizeDisclosure() {
     const newState = DisclosureManager.cloneDisclosureState(this.state);
     newState.disclosureIsMaximized = true;
 
-    this.setState(Object.assign(newState, { disclosureComponents: this.renderDisclosureComponents(this.props.disclosureManager, newState) }));
+    this.setState(Object.assign(newState, { disclosureComponents: this.renderDisclosureComponents(this.props.disclosureManager, newState, undefined, this.props.trapNestedDisclosureRequests) }));
   }
 
   minimizeDisclosure() {
     const newState = DisclosureManager.cloneDisclosureState(this.state);
     newState.disclosureIsMaximized = false;
 
-    this.setState(Object.assign(newState, { disclosureComponents: this.renderDisclosureComponents(this.props.disclosureManager, newState) }));
+    this.setState(Object.assign(newState, { disclosureComponents: this.renderDisclosureComponents(this.props.disclosureManager, newState, undefined, this.props.trapNestedDisclosureRequests) }));
   }
 
   /**
@@ -376,8 +381,9 @@ class DisclosureManager extends React.Component {
    * @param {Object} disclosureState An Object representing the state of the disclosure manager.
    * @param {Array} componentKeysOverride An Array of component keys representing the components that are to be generated. If not provided, all component keys
    *                                      found in the disclosureState will be used for generation.
+   * @param {Boolean} trapNestedDisclosureRequests A Boolean value indicating whether or not disclosures for disclosure components should be strict.
    */
-  renderDisclosureComponents(disclosureManager, disclosureState, componentKeysOverride) {
+  renderDisclosureComponents(disclosureManager, disclosureState, componentKeysOverride, trapNestedDisclosureRequests) {
     const {
       disclosureComponentKeys, disclosureComponentData, disclosureIsMaximized, disclosureIsFocused, disclosureSize,
     } = disclosureState;
@@ -394,7 +400,7 @@ class DisclosureManager extends React.Component {
        * The disclose function provided will push content onto the disclosure stack.
        */
       delegate.disclose = (data) => {
-        if (this.disclosureTypeIsSupported(data.preferredType)) {
+        if (trapNestedDisclosureRequests || this.disclosureTypeIsSupported(data.preferredType)) {
           return Promise.resolve()
             .then(() => {
               this.pushDisclosure(data);
