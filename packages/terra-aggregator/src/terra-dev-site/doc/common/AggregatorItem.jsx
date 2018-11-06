@@ -34,6 +34,8 @@ const propTypes = {
   name: PropTypes.string,
   disclosureType: PropTypes.string,
   disclosureManager: PropTypes.object,
+  discloseOnSelect: PropTypes.bool,
+  customDisclose: PropTypes.func,
 };
 
 class AggregatorItem extends React.Component {
@@ -45,7 +47,7 @@ class AggregatorItem extends React.Component {
   }
 
   handleSelection(event, index) {
-    const { aggregatorDelegate, name } = this.props;
+    const { aggregatorDelegate, name, discloseOnSelect } = this.props;
 
     const disclosureSizeForIndex = {
       0: 'tiny',
@@ -68,7 +70,7 @@ class AggregatorItem extends React.Component {
       index,
     })
       .then(({ disclose }) => {
-        if (disclose) {
+        if (discloseOnSelect) {
           disclose({
             preferredType: this.props.disclosureType,
             size: disclosureSizeForIndex[index],
@@ -85,11 +87,11 @@ class AggregatorItem extends React.Component {
   }
 
   launchModal() {
-    const { disclosureManager } = this.props;
+    const { customDisclose } = this.props;
 
     const key = `ModalContent-${Date.now()}`;
 
-    disclosureManager.disclose({
+    customDisclose({
       preferredType: 'modal',
       size: 'small',
       content: {
@@ -101,7 +103,7 @@ class AggregatorItem extends React.Component {
 
   render() {
     const {
-      name, disclosureType, disclosureManager, aggregatorDelegate, ...customProps
+      name, disclosureType, disclosureManager, aggregatorDelegate, discloseOnSelect, customDisclose, ...customProps
     } = this.props;
 
     let selectedIndex;
@@ -117,7 +119,7 @@ class AggregatorItem extends React.Component {
             style={{ background: '#f4f4f4', padding: '0.71429rem 0.5rem', fontSize: '1.285rem' }}
             fitStart={(
               <div style={{ marginRight: '.7rem' }}>
-                {disclosureManager && disclosureManager.disclose ? <Button text="Modal (Without Requesting Focus)" onClick={this.launchModal} /> : null}
+                {customDisclose ? <Button text="Modal (Without Requesting Focus)" onClick={this.launchModal} /> : null}
               </div>
             )}
             fill={<div>{name}</div>}

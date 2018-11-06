@@ -6,7 +6,7 @@ import ModalManager from 'terra-modal-manager';
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import ModalAggregator from 'terra-aggregator/lib/terra-dev-site/doc/common/ModalAggregator';
 
-const ModalButton = ({ disclosureManager }) => (
+const ModalButton = withDisclosureManager(({ disclosureManager }) => (
   <button
     type="button"
     onClick={() => {
@@ -22,7 +22,7 @@ const ModalButton = ({ disclosureManager }) => (
   >
     Launch Modal
   </button>
-);
+));
 
 ModalButton.propTypes = {
   disclosureManager: PropTypes.object,
@@ -36,4 +36,4 @@ const SimpleAggregatorExample = () => (
   </div>
 );
 
-export default withDisclosureManager(SimpleAggregatorExample);
+export default SimpleAggregatorExample;

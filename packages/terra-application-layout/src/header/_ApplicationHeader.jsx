@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { injectIntl, intlShape } from 'terra-base';
+import { injectIntl, intlShape } from 'react-intl';
 import { withDisclosureManager } from 'terra-disclosure-manager';
 import ApplicationHeaderLayout from 'terra-application-header-layout';
 import { ApplicationHeaderUtility } from 'terra-application-utility';

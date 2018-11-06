@@ -10,13 +10,13 @@ import SimpleAggregatorItem from './SimpleAggregatorItem';
 
 const items = Object.freeze([{
   key: 'SECTION_0',
-  component: <AggregatorItem name="Slide Panel Section" disclosureType="panel" />,
+  component: <AggregatorItem name="Slide Panel Section" disclosureType="panel" discloseOnSelect />,
 }, {
   key: 'SECTION_1',
-  component: <AggregatorItem name="Modal Section" disclosureType="modal" />,
+  component: <AggregatorItem name="Modal Section" disclosureType="modal" discloseOnSelect />,
 }, {
   key: 'SECTION_2',
-  component: <SimpleAggregatorItem name="No Disclosure Section" />,
+  component: <SimpleAggregatorItem name="No Disclosure Section" discloseOnSelect />,
 }]);
 
 const ModalAggregator = ({ disclosureManager }) => (

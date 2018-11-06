@@ -9,8 +9,7 @@ export { disclosureType };
 
 const propTypes = {
   /**
-   * The components to display in the body of the SlidePanel. These components will be provided with an AppDelegate prop (as `app`) that
-   * will allow them to disclose content.
+   * The components to display in the body of the SlidePanel.
    */
   children: PropTypes.node,
   /**

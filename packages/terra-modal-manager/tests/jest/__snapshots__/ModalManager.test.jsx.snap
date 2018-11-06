@@ -9,6 +9,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
         "modal",
       ]
     }
+    trapNestedDisclosureRequests={true}
   >
     <DisclosureManager
       render={[Function]}
@@ -17,6 +18,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
           "modal",
         ]
       }
+      trapNestedDisclosureRequests={true}
     >
       <div
         className="container"
@@ -254,6 +256,7 @@ exports[`ModalManager should render the ModalManager with custom props 1`] = `
         "modal",
       ]
     }
+    trapNestedDisclosureRequests={true}
   >
     <DisclosureManager
       render={[Function]}
@@ -262,6 +265,7 @@ exports[`ModalManager should render the ModalManager with custom props 1`] = `
           "modal",
         ]
       }
+      trapNestedDisclosureRequests={true}
     >
       <div
         className="container test"
@@ -310,6 +314,7 @@ exports[`ModalManager should render the ModalManager with defaults 1`] = `
         "modal",
       ]
     }
+    trapNestedDisclosureRequests={true}
   >
     <DisclosureManager
       render={[Function]}
@@ -318,6 +323,7 @@ exports[`ModalManager should render the ModalManager with defaults 1`] = `
           "modal",
         ]
       }
+      trapNestedDisclosureRequests={true}
     >
       <div
         className="container"

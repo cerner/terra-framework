@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
-import TextField from 'terra-form/lib/TextField';
+import Input from 'terra-form-input';
 import ActionHeader from 'terra-action-header';
 import { withDisclosureManager } from 'terra-disclosure-manager';
 
@@ -101,7 +101,7 @@ class DisclosureComponent extends React.Component {
           <br />
           <br />
           <p>The disclosed component can register a dismiss check function that can interrupt and prevent dismissal. This component will prompt the user if text is detected in the input field below.</p>
-          <TextField
+          <Input
             value={this.state.text || ''}
             onChange={(event) => {
               this.setState({

@@ -5,9 +5,10 @@ Unreleased
 ----------
 ### Breaking Change
 * Consumed DisclosureManager v3.0 - Updated to Context-provided consumer API vs. prop injection
+* Removed `withModalManager()` export to prevent confusion with the new context changes
 
 ### Removed
-* Removed dependency on terra-app-delegate package.
+* Removed dependency on terra-app-delegate package
 
 3.13.0 - (October 8, 2018)
 ------------------

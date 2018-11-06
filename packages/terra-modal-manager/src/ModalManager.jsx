@@ -7,8 +7,6 @@ import DisclosureManager, { availableDisclosureSizes } from 'terra-disclosure-ma
 
 import 'terra-base/lib/baseStyles';
 import styles from './ModalManager.module.scss';
-/* eslint-disable-next-line import/no-cycle */
-import withModalManager from './withModalManager';
 
 const disclosureType = 'modal';
 export { disclosureType };
@@ -89,6 +87,7 @@ class ModalManager extends React.Component {
       <DisclosureManager
         supportedDisclosureTypes={[disclosureType]}
         render={this.renderModal}
+        trapNestedDisclosureRequests
       >
         {children}
       </DisclosureManager>
@@ -99,4 +98,3 @@ class ModalManager extends React.Component {
 ModalManager.propTypes = propTypes;
 
 export default ModalManager;
-export { withModalManager };

@@ -6,22 +6,25 @@ import SlidePanelManager from 'terra-slide-panel-manager';
 import Aggregator from 'terra-aggregator/lib/Aggregator';
 import AggregatorItem from 'terra-aggregator/lib/terra-dev-site/doc/common/AggregatorItem';
 /* eslint-enable import/no-unresolved, import/extensions */
+import { withDisclosureManager } from 'terra-disclosure-manager';
 
-const items = Object.freeze([{
-  key: 'SECTION_0',
-  component: <AggregatorItem name="Section 0" disclosureType="panel" key="SECTION_0" />,
-}, {
-  key: 'SECTION_1',
-  component: <AggregatorItem name="Section 1" disclosureType="panel" key="SECTION_1" />,
-}]);
+const ModalManagerBypass = withDisclosureManager(({ disclosureManager }) => {
+  const items = Object.freeze([{
+    key: 'SECTION_0',
+    component: <AggregatorItem name="Section 0" disclosureType="panel" key="SECTION_0" customDisclose={disclosureManager.disclose} discloseOnSelect />,
+  }, {
+    key: 'SECTION_1',
+    component: <AggregatorItem name="Section 1" disclosureType="panel" key="SECTION_1" customDisclose={disclosureManager.disclose} discloseOnSelect />,
+  }]);
 
-const ModalManagerBypass = () => (
-  <SlidePanelManager>
-    <Aggregator
-      items={items}
-    />
-  </SlidePanelManager>
-);
+  return (
+    <SlidePanelManager>
+      <Aggregator
+        items={items}
+      />
+    </SlidePanelManager>
+  );
+});
 
 const ModalBypassExample = () => (
   <div>

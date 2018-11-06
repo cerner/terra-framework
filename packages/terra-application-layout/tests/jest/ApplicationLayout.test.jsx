@@ -1,9 +1,7 @@
 import React from 'react';
-import WrappedApplication from '../../src/ApplicationLayout';
+import ApplicationLayout from '../../src/ApplicationLayout';
 import ApplicationMenuWrapper from '../../src/menu/_ApplicationMenuWrapper';
 import RoutingMenu from '../../src/menu/RoutingMenu';
-
-const ApplicationLayout = WrappedApplication.WrappedComponent;
 
 const TestComponent = () => (<div className="test">Test</div>);
 const ContentComponent = () => (<div>Content</div>);

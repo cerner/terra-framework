@@ -15,7 +15,7 @@ const propTypes = {
 };
 
 /**
- * The UtilityMenuWrapper handles the plumbing between its AppDelegate and the
+ * The UtilityMenuWrapper handles the plumbing between its disclosureManager and the
  * utility menu dismissal requests.
  */
 const UtilityMenuWrapper = ({
