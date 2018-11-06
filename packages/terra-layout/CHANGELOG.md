@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Regenerated jest snapshots
 
 2.18.0 - (October 16, 2018)
 ------------------
