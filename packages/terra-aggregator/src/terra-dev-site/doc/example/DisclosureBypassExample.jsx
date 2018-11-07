@@ -8,6 +8,13 @@ import AggregatorItem from 'terra-aggregator/lib/terra-dev-site/doc/common/Aggre
 /* eslint-enable import/no-unresolved, import/extensions */
 import { withDisclosureManager } from 'terra-disclosure-manager';
 
+const Wrapper = withDisclosureManager(({ items, disclosureManager }) => (
+  <Aggregator
+    items={items}
+    disclose={disclosureManager.disclose}
+  />
+));
+
 const ModalManagerBypass = withDisclosureManager(({ disclosureManager }) => {
   const items = Object.freeze([{
     key: 'SECTION_0',
@@ -19,9 +26,7 @@ const ModalManagerBypass = withDisclosureManager(({ disclosureManager }) => {
 
   return (
     <SlidePanelManager>
-      <Aggregator
-        items={items}
-      />
+      <Wrapper items={items} />
     </SlidePanelManager>
   );
 });

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withDisclosureManager } from 'terra-disclosure-manager';
 import Aggregator from '../../../Aggregator';
 
 const propTypes = {
@@ -9,11 +10,12 @@ const propTypes = {
   })),
 };
 
-const AggregatorContainer = ({ items }) => (
+const AggregatorContainer = withDisclosureManager(({ items, disclosureManager }) => (
   <Aggregator
     items={items}
+    disclose={disclosureManager.disclose}
   />
-);
+));
 
 AggregatorContainer.propTypes = propTypes;
 

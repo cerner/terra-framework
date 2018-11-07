@@ -121,4 +121,4 @@ DisclosureComponent.defaultProps = defaultProps;
 
 const WrappedDisclosureComponent = withDisclosureManager(DisclosureComponent);
 
-export default withDisclosureManager(WrappedDisclosureComponent);
+export default WrappedDisclosureComponent;

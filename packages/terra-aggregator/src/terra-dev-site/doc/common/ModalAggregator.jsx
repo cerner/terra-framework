@@ -16,7 +16,7 @@ const items = Object.freeze([{
   component: <AggregatorItem name="Modal Section" disclosureType="modal" discloseOnSelect />,
 }, {
   key: 'SECTION_2',
-  component: <SimpleAggregatorItem name="No Disclosure Section" discloseOnSelect />,
+  component: <SimpleAggregatorItem name="No Disclosure Section" />,
 }]);
 
 const ModalAggregator = ({ disclosureManager }) => (
@@ -26,6 +26,7 @@ const ModalAggregator = ({ disclosureManager }) => (
   >
     <Aggregator
       items={items}
+      disclose={disclosureManager.disclose}
     />
   </ContentContainer>
 );

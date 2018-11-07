@@ -64,10 +64,11 @@ import Base from 'terra-base';
 import Button from 'terra-button';
 import Aggregator from '../../src/Aggregator';
 import SlidePanelManager, { disclosureType } from 'terra-slide-panel-manager';
+import { withDisclosureManager } from 'terra-disclosure-manager';
 
-const DisclosureComponent = ({ app }) => (
+const DisclosureComponent = withDisclosureManager({ disclosureManager }) => (
   <div>
-    <Button text="Dismiss" onClick={() => { app.dismiss(); }} />
+    <Button text="Dismiss" onClick={() => { disclosureManager.dismiss(); }} />
   </div>
 );
 
@@ -108,10 +109,10 @@ const aggregatorItems = [{
   component: <Section />,
 }];
 
-const MyAggregator = ({ app }) => (
+const MyAggregator = withDisclosureManager({ disclosureManager }) => (
   <Aggregator
     items={aggregatorItems}
-    disclose={app.disclose}
+    disclose={disclosureManager.disclose}
   />
 );
 

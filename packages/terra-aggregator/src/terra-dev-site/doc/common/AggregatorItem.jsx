@@ -33,7 +33,6 @@ const propTypes = {
   aggregatorDelegate: PropTypes.object,
   name: PropTypes.string,
   disclosureType: PropTypes.string,
-  disclosureManager: PropTypes.object,
   discloseOnSelect: PropTypes.bool,
   customDisclose: PropTypes.func,
 };
@@ -103,7 +102,7 @@ class AggregatorItem extends React.Component {
 
   render() {
     const {
-      name, disclosureType, disclosureManager, aggregatorDelegate, discloseOnSelect, customDisclose, ...customProps
+      name, disclosureType, aggregatorDelegate, discloseOnSelect, customDisclose, ...customProps
     } = this.props;
 
     let selectedIndex;
@@ -169,4 +168,4 @@ class AggregatorItem extends React.Component {
 
 AggregatorItem.propTypes = propTypes;
 
-export default withDisclosureManager(AggregatorItem);
+export default AggregatorItem;
