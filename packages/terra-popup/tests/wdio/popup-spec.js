@@ -6,11 +6,14 @@ describe('Popup', () => {
     const rules = { 'landmark-one-main': { enabled: false } };
 
     Terra.should.beAccessible({ selector: '.test-content', rules });
-    Terra.should.themeEachCustomProperty('#test-popup-area', {
-      '--terra-popup-content-inner-box-shadow': '10px 10px 36px blue',
-      '--terra-popup-content-inner-background-color': 'yellow',
-      '--terra-popup-content-inner-border': '10px dashed black',
-      '--terra-popup-arrow-inner-color': 'red',
+    Terra.should.themeCombinationOfCustomProperties({
+      testName: 'themed',
+      properties: {
+        '--terra-popup-content-inner-box-shadow': '10px 10px 36px blue',
+        '--terra-popup-content-inner-background-color': 'yellow',
+        '--terra-popup-content-inner-border': '10px dashed black',
+        '--terra-popup-arrow-inner-color': 'red',
+      },
     });
   });
 
@@ -22,9 +25,12 @@ describe('Popup', () => {
     const rules = { 'button-name': { enabled: false }, 'landmark-one-main': { enabled: false } };
 
     Terra.should.beAccessible({ selector: '.test-content', rules });
-    Terra.should.themeEachCustomProperty('#test-popup-area', {
-      '--terra-popup-content-header-border-bottom': '15px double red',
-      '--terra-popup-content-close-icon': 'green',
+    Terra.should.themeCombinationOfCustomProperties({
+      testName: 'themed',
+      properties: {
+        '--terra-popup-content-header-border-bottom': '15px double red',
+        '--terra-popup-content-close-icon': 'green',
+      },
     });
   });
 

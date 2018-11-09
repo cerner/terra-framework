@@ -9,9 +9,12 @@ describe('ApplicationMenu', () => {
 
     Terra.should.matchScreenshot('#test-menu', { selector: '#test-menu', viewports });
     Terra.should.beAccessible({ viewports, context: '#test-menu' });
-    Terra.should.themeEachCustomProperty('#test-menu', {
-      '--terra-application-menu-background-color': 'pink',
-      '--terra-application-menu-header-background-color': 'blue',
+    Terra.should.themeCombinationOfCustomProperties({
+      testName: 'themed',
+      properties: {
+        '--terra-application-menu-background-color': 'pink',
+        '--terra-application-menu-header-background-color': 'blue',
+      },
     });
 
     describe('Displays an application menu utilities', () => {
