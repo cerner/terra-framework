@@ -3,8 +3,6 @@ import Button from 'terra-button';
 import DialogModal from '../../../DialogModal';
 
 const CustomHeaderFooterStyles = {
-  border: '2px dashed #4e832b',
-  color: '#4e832b',
   height: '38px',
   lineHeight: '2',
   padding: '2px 2px 2px 5px',
