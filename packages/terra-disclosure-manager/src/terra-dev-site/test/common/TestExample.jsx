@@ -125,7 +125,7 @@ class TestExample extends React.Component {
     const { app, identifier } = this.props;
 
     return (
-      <ContentContainer id={identifier} className="nested-component" fill header={<h2 style={{ margin: '0', borderBottom: '1px solid black' }}>Content Component</h2>}>
+      <ContentContainer id={identifier} className="nested-component" fill header={<h2 style={{ margin: '0', borderBottom: '1px solid black' }}> Content Component</h2>} style={{ backgroundColor: 'white' }}>
         <p>
           id:
           {' '}
