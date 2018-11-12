@@ -46,9 +46,9 @@ describe('MenuUtilityMenu', () => {
         '--terra-application-menu-utility-menu-header-font-size': '1.5rem',
         '--terra-application-menu-utility-menu-header-font-weight': 'normal',
         '--terra-application-menu-utility-menu-header-line-height': '1.2',
-        '--terra-application-menu-utility-menu-body-item-font-color': 'pink',
+        '--terra-application-menu-utility-menu-body-item-font-color': 'red',
         '--terra-application-menu-utility-menu-body-item-font-size': '1.5rem',
-        '--terra-application-menu-utility-menu-footer-item-font-color': 'pink',
+        '--terra-application-menu-utility-menu-footer-item-font-color': 'red',
         '--terra-application-menu-utility-menu-footer-item-font-size': '1.5rem',
       },
     });

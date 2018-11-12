@@ -33,9 +33,9 @@ describe('HeaderUtilityMenu', () => {
       properties: {
         '--terra-application-header-utility-menu-header-font-size': '1.5rem',
         '--terra-application-header-utility-menu-header-font-weight': 'normal',
-        '--terra-application-header-utility-menu-body-item-font-color': 'pink',
+        '--terra-application-header-utility-menu-body-item-font-color': 'red',
         '--terra-application-header-utility-menu-body-item-font-size': '1.5rem',
-        '--terra-application-header-utility-menu-footer-item-font-color': 'pink',
+        '--terra-application-header-utility-menu-footer-item-font-color': 'red',
         '--terra-application-header-utility-menu-footer-item-font-size': '1.5rem',
       },
     });
@@ -47,33 +47,6 @@ describe('HeaderUtilityMenu', () => {
         '--terra-application-header-utility-menu-body-item-padding-top': '1rem',
       },
     });
-    /* Terra.should.themeEachCustomProperty('#default', {
-      '--terra-application-header-utility-menu-header-font-size': '2rem',
-      '--terra-application-header-utility-menu-header-font-weight': 'normal',
-      '--terra-application-header-utility-header-margin-bottom': '1rem',
-      '--terra-application-header-utility-header-margin-top': '1rem',
-      '--terra-application-header-utility-menu-body-item-background-color': 'pink',
-      '--terra-application-header-utility-menu-body-item-font-color': 'pink',
-      '--terra-application-header-utility-menu-body-item-font-size': '2rem',
-      '--terra-application-header-utility-menu-body-item-margin-bottom': '1rem',
-      '--terra-application-header-utility-menu-body-item-margin-top': '1rem',
-      '--terra-application-header-utility-menu-body-item-padding-bottom': '1rem',
-      '--terra-application-header-utility-menu-body-item-padding-left': '1rem',
-      '--terra-application-header-utility-menu-body-item-padding-top': '1rem',
-      '--terra-application-header-utility-menu-body-item-margin-left': '1rem',
-      '--terra-application-header-utility-menu-body-item-checkmark-margin-left': '1rem',
-      '--terra-application-header-utility-menu-body-item-checkmark-margin-right': '1rem',
-      '--terra-application-header-utility-menu-body-item-chevron-margin-right': '1rem',
-      '--terra-application-header-utility-menu-body-item-chevron-width': '1rem',
-      '--terra-application-header-utility-menu-footer-item-background-color': 'blue',
-      '--terra-application-header-utility-menu-footer-item-border-radius': '1rem',
-      '--terra-application-header-utility-menu-footer-item-font-color': 'pink',
-      '--terra-application-header-utility-menu-footer-item-font-size': '2rem',
-      '--terra-application-header-utility-menu-footer-item-height': '1rem',
-      '--terra-application-header-utility-menu-footer-item-margin-bottom': '1rem',
-      '--terra-application-header-utility-menu-footer-item-margin-left': '1rem',
-      '--terra-application-header-utility-menu-footer-item-margin-right': '1rem',
-    }); */
   });
 
   describe('Hover-header utility menu', () => {
