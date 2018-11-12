@@ -139,7 +139,7 @@ exports[`BrandFooter should render with a section header and provided links 1`] 
           >
             <span
               aria-hidden={true}
-              className="span"
+              className="separator"
             >
               /
             </span>
@@ -353,7 +353,7 @@ exports[`BrandFooter should render with multiple link groups 1`] = `
           >
             <span
               aria-hidden={true}
-              className="span"
+              className="separator"
             >
               /
             </span>
@@ -397,7 +397,7 @@ exports[`BrandFooter should render with multiple link groups 1`] = `
           >
             <span
               aria-hidden={true}
-              className="span"
+              className="separator"
             >
               /
             </span>
@@ -537,7 +537,7 @@ exports[`BrandFooter should render with provided links 1`] = `
           >
             <span
               aria-hidden={true}
-              className="span"
+              className="separator"
             >
               /
             </span>
@@ -597,7 +597,7 @@ exports[`BrandFooter should render with provided links and content bottom 1`] = 
           >
             <span
               aria-hidden={true}
-              className="span"
+              className="separator"
             >
               /
             </span>
@@ -663,7 +663,7 @@ exports[`BrandFooter should render with provided links and content bottom 2`] = 
           >
             <span
               aria-hidden={true}
-              className="span"
+              className="separator"
             >
               /
             </span>
@@ -729,7 +729,7 @@ exports[`BrandFooter should render with provided links and content left 1`] = `
           >
             <span
               aria-hidden={true}
-              className="span"
+              className="separator"
             >
               /
             </span>
@@ -796,7 +796,7 @@ exports[`BrandFooter should render with provided links and content left 2`] = `
           >
             <span
               aria-hidden={true}
-              className="span"
+              className="separator"
             >
               /
             </span>
@@ -863,7 +863,7 @@ exports[`BrandFooter should render with provided links and content right 1`] = `
           >
             <span
               aria-hidden={true}
-              className="span"
+              className="separator"
             >
               /
             </span>
@@ -936,7 +936,7 @@ exports[`BrandFooter should render with provided links and content right 2`] = `
           >
             <span
               aria-hidden={true}
-              className="span"
+              className="separator"
             >
               /
             </span>
@@ -1009,7 +1009,7 @@ exports[`BrandFooter should render with provided links, content left, content bo
           >
             <span
               aria-hidden={true}
-              className="span"
+              className="separator"
             >
               /
             </span>
@@ -1094,7 +1094,7 @@ exports[`BrandFooter should render with provided links, content left, content bo
           >
             <span
               aria-hidden={true}
-              className="span"
+              className="separator"
             >
               /
             </span>
@@ -1179,7 +1179,7 @@ exports[`BrandFooter should render with the links prop 1`] = `
           >
             <span
               aria-hidden={true}
-              className="span"
+              className="separator"
             >
               /
             </span>
