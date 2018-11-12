@@ -81,6 +81,7 @@
     background-repeat: no-repeat;
     background-size: var(--terra-application-tabs-background-size, 0 5px);
     border: 0;
+    border-left: var(--terra-application-tabs-border-left);
     border-right: var(--terra-application-tabs-border-right, 1px solid #3a67a4);
     box-shadow: var(--terra-application-tabs-box-shadow, 1px 0 1px #1d98da);
     color: var(--terra-application-tabs-color, #fff);
