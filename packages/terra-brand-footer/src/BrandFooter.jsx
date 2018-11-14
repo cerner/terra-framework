@@ -141,8 +141,8 @@ const BrandFooter = ({
                 const separator = (!isVertical && index >= 1) ? <span className={cx('separator')} aria-hidden>/</span> : '';
                 return (
                   <li className={cx('list-item')} key={link.text + link.href}>
+                    {separator}
                     <a className={cx('link')} href={link.href} {...spreadTarget}>
-                      {separator}
                       {link.text}
                     </a>
                   </li>
