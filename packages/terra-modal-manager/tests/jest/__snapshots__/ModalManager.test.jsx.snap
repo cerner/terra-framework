@@ -37,7 +37,8 @@ exports[`ModalManager should disclose content in Modal 1`] = `
         isFullscreen={false}
         isOpen={true}
         onRequestClose={[Function]}
-        role="document"
+        role="dialog"
+        rootSelector="[data-terra-base]"
         zIndex="6000"
       >
         <Portal
@@ -52,8 +53,9 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                   />
                   <div
                     aria-label="Modal"
+                    aria-modal="true"
                     class="abstract-modal layer-6000 modal-manager height-870 width-1280"
-                    role="document"
+                    role="dialog"
                     tabindex="0"
                   >
                     <div
@@ -78,6 +80,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
             }
           >
             <ModalContent
+              aria-modal="true"
               ariaLabel="Modal"
               classNameModal="modal-manager height-870 width-1280"
               classNameOverlay={null}
@@ -86,7 +89,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
               isFullscreen={false}
               isScrollable={false}
               onRequestClose={[Function]}
-              role="document"
+              role="dialog"
               zIndex="6000"
             >
               <FocusTrap
@@ -109,8 +112,9 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                   </ModalOverlay>
                   <div
                     aria-label="Modal"
+                    aria-modal="true"
                     className="abstract-modal layer-6000 modal-manager height-870 width-1280"
-                    role="document"
+                    role="dialog"
                     tabIndex="0"
                   >
                     <SlideGroup
@@ -266,7 +270,8 @@ exports[`ModalManager should render the ModalManager with custom props 1`] = `
         isFullscreen={false}
         isOpen={false}
         onRequestClose={[Function]}
-        role="document"
+        role="dialog"
+        rootSelector="[data-terra-base]"
         zIndex="6000"
       />
     </div>
@@ -311,7 +316,8 @@ exports[`ModalManager should render the ModalManager with defaults 1`] = `
         isFullscreen={false}
         isOpen={false}
         onRequestClose={[Function]}
-        role="document"
+        role="dialog"
+        rootSelector="[data-terra-base]"
         zIndex="6000"
       />
     </div>
