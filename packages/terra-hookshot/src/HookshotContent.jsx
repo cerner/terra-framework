@@ -40,6 +40,19 @@ const propTypes = {
   refCallback: PropTypes.func,
 };
 
+
+// shim for SVGElement classList for IE 10 / IE 11
+// More info: https://github.com/Pomax/react-onclickoutside#ie-does-not-support-classlist-for-svg-elements
+if (!('classList' in SVGElement.prototype)) {
+  Object.defineProperty(SVGElement.prototype, 'classList', {
+    get() {
+      return {
+        contains: className => this.className.baseVal.split(' ').indexOf(className) !== -1,
+      };
+    },
+  });
+}
+
 class HookshotContent extends React.Component {
   constructor(props) {
     super(props);
@@ -180,9 +193,14 @@ class HookshotContent extends React.Component {
       ...customProps
     } = this.props;
 
-    // Delete the disableOnClickOutside and enableOnClickOutside prop that comes from react-onclickoutside.
+    // Delete the unnecessary props that come from react-onclickoutside.
     delete customProps.disableOnClickOutside;
     delete customProps.enableOnClickOutside;
+    delete customProps.eventTypes;
+    delete customProps.excludeScrollbar;
+    delete customProps.outsideClickIgnoreClass;
+    delete customProps.preventDefault;
+    delete customProps.stopPropagation;
     // Delete the closePortal prop that comes from react-portal.
     delete customProps.closePortal;
 
