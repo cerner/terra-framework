@@ -108,7 +108,7 @@
     "stylelint-config-terra": "^1.0.0",
     "terra-base": "^3.0.0",
     "terra-dev-site": "^2.0.0",
-    "terra-toolkit": "^4.5.0",
+    "terra-toolkit": "^4.16.0",
     "xfc": "^1.2.1"
   }
 }
