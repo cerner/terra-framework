@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update jest snapshots
 
 3.13.0 - (October 8, 2018)
 ------------------
