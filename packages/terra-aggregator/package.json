@@ -1,7 +1,7 @@
 {
   "name": "terra-aggregator",
   "main": "lib/Aggregator.js",
-  "version": "3.16.0",
+  "version": "3.17.0",
   "description": "The Aggregator provides focus-based mechanisms for managing actions across disparate components.",
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "devDependencies": {
-    "terra-app-delegate": "^2.7.0"
+    "terra-app-delegate": "^2.8.0"
   },
   "peerDependencies": {
     "react": "^16.4.2",
@@ -37,15 +37,15 @@
     "terra-arrange": "^2.19.0",
     "terra-button": "^2.0.1",
     "terra-content-container": "^2.4.0",
-    "terra-disclosure-manager": "^2.14.0",
+    "terra-disclosure-manager": "^2.15.0",
     "terra-doc-template": "^1.1.0",
     "terra-form": "^2.0.1",
     "terra-grid": "^4.0.1",
     "terra-list": "^2.0.1",
-    "terra-modal-manager": "^3.13.0",
+    "terra-modal-manager": "^3.14.0",
     "terra-responsive-element": "^3.0.0",
     "terra-section-header": "^1.16.0",
-    "terra-slide-panel-manager": "^2.19.0"
+    "terra-slide-panel-manager": "^2.20.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build && tt-pack",
