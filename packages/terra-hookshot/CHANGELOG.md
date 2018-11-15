@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Change
+* Added existence check for SVGElement
 
 4.13.0 - (November 15, 2018)
 ------------------
