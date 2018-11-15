@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Fixed preventDefault error
 
 4.18.0 - (November 15, 2018)
 ------------------
