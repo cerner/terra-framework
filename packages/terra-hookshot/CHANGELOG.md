@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.13.0 - (November 15, 2018)
+------------------
 ### Change
 * Update react-onclickoutside to ^6.7.1
 
