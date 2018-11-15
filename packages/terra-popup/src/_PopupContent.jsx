@@ -123,7 +123,6 @@ class PopupContent extends React.Component {
   constructor(props) {
     super(props);
     this.handleOnResize = this.handleOnResize.bind(this);
-    this.handleOutsideClick = this.handleOutsideClick.bind(this);
   }
 
   componentDidMount() {
@@ -168,15 +167,6 @@ class PopupContent extends React.Component {
     if (this.props.onResize) {
       this.props.onResize(event, this.windowWidth);
     }
-  }
-
-  /**
-   * Callback triggered when a target outside of the content is clicked.
-   * @param {event} event - The click event.
-   */
-  handleOutsideClick(event) {
-    event.preventDefault();
-    this.props.onRequestClose(event);
   }
 
   render() {
@@ -237,8 +227,9 @@ class PopupContent extends React.Component {
           data-terra-popup-content
           onContentResize={(isHeightAutomatic || isWidthAutomatic) ? onContentResize : undefined}
           onEsc={onRequestClose}
-          onOutsideClick={this.handleOutsideClick}
+          onOutsideClick={this.props.onRequestClose}
           onResize={this.handleOnResize}
+          preventDefault
           refCallback={refCallback}
           role="dialog"
         >
