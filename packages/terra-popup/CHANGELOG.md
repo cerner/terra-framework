@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Replaced use of componentWillMount with componentDidMount
 
 4.18.0 - (November 15, 2018)
 ------------------

@@ -11,13 +11,10 @@ class DefaultPopup extends React.Component {
     this.state = { open: false };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.overlayStyle = document.documentElement.style.overflow;
     this.overlayId = document.documentElement.id;
     document.documentElement.id = 'popup-overlay-test';
-  }
-
-  componentDidMount() {
     document.documentElement.style.overflow = 'auto';
   }
 
