@@ -3,6 +3,14 @@ Changelog
 
 Unreleased
 ----------
+
+4.13.1 - (November 15, 2018)
+------------------
+### Change
+* Added existence check for SVGElement, fixes issue with older version of jsdom
+
+4.13.0 - (November 15, 2018)
+------------------
 ### Change
 * Update react-onclickoutside to ^6.7.1
 

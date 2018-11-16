@@ -3,7 +3,11 @@ Changelog
 
 Unreleased
 ----------
+
+1.10.0 - (November 15, 2018)
+------------------
 ### Changed
+* Minor dependency update
 * Restructured theme tests into a separate file
 
 1.9.0 - (October 16, 2018)
