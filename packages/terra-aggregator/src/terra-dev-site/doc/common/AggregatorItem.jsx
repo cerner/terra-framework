@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'terra-button';
-import SelectableList from 'terra-list/lib/SelectableList';
+import List, { Item } from 'terra-list/lib/SelectableList';
 import ContentContainer from 'terra-content-container';
 import Arrange from 'terra-arrange';
 import AppDelegate from 'terra-app-delegate';
@@ -46,7 +46,7 @@ class AggregatorItem extends React.Component {
     this.launchModal = this.launchModal.bind(this);
   }
 
-  handleSelection(event, index) {
+  handleSelection(event, metaData) {
     const { aggregatorDelegate, name } = this.props;
 
     const disclosureSizeForIndex = {
@@ -58,7 +58,7 @@ class AggregatorItem extends React.Component {
       5: 'fullscreen',
     };
 
-    if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState.index === index) {
+    if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState.selectedKey === metaData.key) {
       aggregatorDelegate.releaseFocus()
         .catch(() => {
           console.log('Section - Focus release failed. Something must be locked.'); // eslint-disable-line no-console
@@ -67,7 +67,7 @@ class AggregatorItem extends React.Component {
     }
 
     aggregatorDelegate.requestFocus({
-      index,
+      selectedKey: metaData.key,
     })
       .then(({ disclose }) => {
         if (disclose) {
@@ -126,42 +126,58 @@ class AggregatorItem extends React.Component {
           />
         )}
       >
-        <SelectableList
+        <List
           isDivided
-          selectedIndexes={selectedIndex !== undefined ? [selectedIndex] : []}
-          onChange={this.handleSelection}
         >
-          <SelectableList.Item
-            content={
-              <div style={{ padding: '.7rem' }}>Row 0</div>
-            }
-          />
-          <SelectableList.Item
-            content={
-              <div style={{ padding: '.7rem' }}>Row 1</div>
-            }
-          />
-          <SelectableList.Item
-            content={
-              <div style={{ padding: '.7rem' }}>Row 2</div>
-            }
-          />
-          <SelectableList.Item
-            content={
-              <div style={{ padding: '.7rem' }}>Row 3</div>
-            }
-          />
-          <SelectableList.Item
-            content={
-              <div style={{ padding: '.7rem' }}>Row 4</div>
-            }
-          />
-          <SelectableList.Item
-            content={
-              <div style={{ padding: '.7rem' }}>Row 5</div>
-            }
-          />
-        </SelectableList>
+          <Item
+            isSelected={key === 'item-0'}
+            isSelectable
+            onSelect={this.handleSelection}
+            metaData={{ key: 'item-0' }}
+          >
+            <div style={{ padding: '.7rem' }}>Row 0</div>
+          </Item>
+          <Item
+            isSelected={key === 'item-1'}
+            isSelectable
+            onSelect={this.handleSelection}
+            metaData={{ key: 'item-1' }}
+          >
+            <div style={{ padding: '.7rem' }}>Row 1</div>
+          </Item>
+          <Item
+            isSelected={key === 'item-2'}
+            isSelectable
+            onSelect={this.handleSelection}
+            metaData={{ key: 'item-2' }}
+          >
+            <div style={{ padding: '.7rem' }}>Row 2</div>
+          </Item>
+          <Item
+            isSelected={key === 'item-3'}
+            isSelectable
+            onSelect={this.handleSelection}
+            metaData={{ key: 'item-3' }}
+          >
+            <div style={{ padding: '.7rem' }}>Row 3</div>
+          </Item>
+          <Item
+            isSelected={key === 'item-4'}
+            isSelectable
+            onSelect={this.handleSelection}
+            metaData={{ key: 'item-4' }}
+          >
+            <div style={{ padding: '.7rem' }}>Row 4</div>
+          </Item>
+          <Item
+            isSelected={key === 'item-5'}
+            isSelectable
+            onSelect={this.handleSelection}
+            metaData={{ key: 'item-5' }}
+          >
+            <div style={{ padding: '.7rem' }}>Row 5</div>
+          </Item>
+        </List>
       </ContentContainer>
     );
   }

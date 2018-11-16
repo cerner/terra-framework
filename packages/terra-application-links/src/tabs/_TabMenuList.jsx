@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import List from 'terra-list';
+import List, { Item } from 'terra-list';
 import styles from './ApplicationTabs.module.scss';
 
 const cx = classNames.bind(styles);
@@ -40,7 +40,7 @@ const ApplicationTabMenuContent = ({
     ref={refCallback}
   >
     {React.Children.map(children, child => (
-      <List.Item content={child} key={child.props.path} role="menuitem" />
+      <Item key={child.props.path} role="menuitem">{child}</Item>
     ))}
   </List>
 );

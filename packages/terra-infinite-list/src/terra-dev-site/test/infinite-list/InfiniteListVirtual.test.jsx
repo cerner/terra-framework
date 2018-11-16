@@ -1,6 +1,6 @@
 import React from 'react';
 
-import InfiniteList from '../../../InfiniteList';
+import InfiniteList, { Item } from '../../../InfiniteList';
 
 const InfiniteListUpdating = () => {
   const style = { height: '100px', width: '100%' };
@@ -14,22 +14,22 @@ const InfiniteListUpdating = () => {
           isDivided
           isFinishedLoading
         >
-          <InfiniteList.Item key="item-0" content={<div style={style}>Item 0</div>} />
-          <InfiniteList.Item key="item-1" content={<div style={style}>Item 1</div>} />
-          <InfiniteList.Item key="item-2" content={<div style={style}>Item 2</div>} />
-          <InfiniteList.Item key="item-3" content={<div style={style}>Item 3</div>} />
-          <InfiniteList.Item key="item-4" content={<div style={style}>Item 4</div>} />
-          <InfiniteList.Item key="item-5" content={<div style={style}>Item 5</div>} />
-          <InfiniteList.Item key="item-6" content={<div style={style}>Item 6</div>} />
-          <InfiniteList.Item key="item-7" content={<div style={style}>Item 7</div>} />
-          <InfiniteList.Item key="item-8" content={<div style={style}>Item 8</div>} />
-          <InfiniteList.Item key="item-9" content={<div style={style}>Item 9</div>} />
-          <InfiniteList.Item key="item-10" content={<div style={style}>Item 10</div>} />
-          <InfiniteList.Item key="item-11" content={<div style={style}>Item 11</div>} />
-          <InfiniteList.Item key="item-12" content={<div style={style}>Item 12</div>} />
-          <InfiniteList.Item key="item-13" content={<div style={style}>Item 13</div>} />
-          <InfiniteList.Item key="item-14" content={<div style={style}>Item 14</div>} />
-          <InfiniteList.Item key="item-15" content={<div style={style}>Item 15</div>} />
+          <Item key="item-0"><div style={style}>Item 0</div></Item>
+          <Item key="item-1"><div style={style}>Item 1</div></Item>
+          <Item key="item-2"><div style={style}>Item 2</div></Item>
+          <Item key="item-3"><div style={style}>Item 3</div></Item>
+          <Item key="item-4"><div style={style}>Item 4</div></Item>
+          <Item key="item-5"><div style={style}>Item 5</div></Item>
+          <Item key="item-6"><div style={style}>Item 6</div></Item>
+          <Item key="item-7"><div style={style}>Item 7</div></Item>
+          <Item key="item-8"><div style={style}>Item 8</div></Item>
+          <Item key="item-9"><div style={style}>Item 9</div></Item>
+          <Item key="item-10"><div style={style}>Item 10</div></Item>
+          <Item key="item-11"><div style={style}>Item 11</div></Item>
+          <Item key="item-12"><div style={style}>Item 12</div></Item>
+          <Item key="item-13"><div style={style}>Item 13</div></Item>
+          <Item key="item-14"><div style={style}>Item 14</div></Item>
+          <Item key="item-15"><div style={style}>Item 15</div></Item>
         </InfiniteList>
       </div>
     </div>

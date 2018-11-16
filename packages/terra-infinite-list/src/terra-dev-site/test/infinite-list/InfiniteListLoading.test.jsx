@@ -11,7 +11,7 @@ const InfiniteListLoading = () => (
         height: '100%', width: '100%', position: 'relative', backgroundColor: 'aliceblue',
       }}
       >
-Loading
+        Loading
       </div>
 )}
   />

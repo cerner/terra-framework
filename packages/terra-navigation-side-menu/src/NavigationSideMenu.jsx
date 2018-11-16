@@ -174,7 +174,7 @@ class NavigationSideMenu extends React.Component {
 
   buildListContent(currentItem) {
     if (currentItem && currentItem.childKeys && currentItem.childKeys.length) {
-      return <List className={cx(['menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</List>;
+      return <List role="listbox" className={cx(['menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</List>;
     }
     return null;
   }

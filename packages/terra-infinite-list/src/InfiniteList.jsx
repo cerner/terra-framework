@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import ResizeObserver from 'resize-observer-polyfill';
-import List from 'terra-list';
-import SelectableUtils from 'terra-list/lib/SelectableUtils';
+import debounce from 'lodash.debounce';
+import List, { Item, SectionHeader, SubsectionHeader } from 'terra-list';
 import InfiniteUtils from './_InfiniteUtils';
 import styles from './InfiniteList.module.scss';
 
@@ -16,16 +16,6 @@ const propTypes = {
    * For further documentation of InfiniteList.Item see terra-list's ListItem.
    */
   children: PropTypes.node,
-  /**
-   * Whether or not unselected items should be disabled.
-   * Helpful for enabling max row selection.
-   */
-  disableUnselectedItems: PropTypes.bool,
-  /**
-   * Whether or not the child list items has a disclosure indicator presented.
-   * The behavior is intended to be used with a single selection style list, as multi selection style list should not perform disclosures.
-   */
-  hasChevrons: PropTypes.bool,
   /**
    * An indicator to be displayed when no children are yet present.
    */
@@ -39,14 +29,6 @@ const propTypes = {
    */
   isFinishedLoading: PropTypes.bool,
   /**
-   * Whether or not the list is selectable.
-   */
-  isSelectable: PropTypes.bool,
-  /**
-   * A callback event that will be triggered when selection state changes.
-   */
-  onChange: PropTypes.func,
-  /**
    * Callback trigger when new list items are requested.
    */
   onRequestItems: PropTypes.func,
@@ -54,20 +36,12 @@ const propTypes = {
    * An indicator to be displayed at the end of the current loaded children.
    */
   progressiveLoadingIndicator: PropTypes.element,
-  /**
-   * An array of the currectly selected indexes.
-   */
-  selectedIndexes: PropTypes.array,
 };
 
 const defaultProps = {
   children: [],
-  disableUnselectedItems: false,
-  hasChevrons: false,
   isDivided: false,
   isFinishedLoading: false,
-  isSelectable: false,
-  selectedIndexes: [],
 };
 
 /**
@@ -76,8 +50,7 @@ const defaultProps = {
  * @param {number} index - Index to use as part of the spacers key.
  */
 const createSpacer = (height, index) => (
-  <List.Item
-    isSelectable={false}
+  <Item
     className={cx(['spacer'])}
     style={{ height }}
     key={`infinite-spacer-${index}`}
@@ -97,6 +70,7 @@ class InfiniteList extends React.Component {
     this.updateScrollGroups = this.updateScrollGroups.bind(this);
     this.handleRenderCompletion = this.handleRenderCompletion.bind(this);
     this.handleResize = this.resizeDebounce(this.handleResize.bind(this));
+    this.resetPointerEvents = debounce(this.resetPointerEvents.bind(this), 50);
     this.resetTimeout = this.resetTimeout.bind(this);
     this.wrapChild = this.wrapChild.bind(this);
 
@@ -111,17 +85,19 @@ class InfiniteList extends React.Component {
     this.handleRenderCompletion();
   }
 
-  componentWillReceiveProps(newProps) {
-    const newChildCount = React.Children.count(newProps.children);
+  shouldComponentUpdate(nextProps) {
+    const newChildCount = React.Children.count(nextProps.children);
     if (newChildCount > this.childCount) {
       this.lastChildIndex = this.childCount;
       this.loadingIndex += 1;
-      this.updateItemCache(newProps);
+      this.updateItemCache(nextProps);
     } else if (newChildCount < this.childCount) {
-      this.initializeItemCache(newProps);
+      this.initializeItemCache(nextProps);
     } else {
-      this.childrenArray = React.Children.toArray(newProps.children);
+      this.childrenArray = React.Children.toArray(nextProps.children);
     }
+
+    return true;
   }
 
   componentDidUpdate() {
@@ -189,6 +165,7 @@ class InfiniteList extends React.Component {
    * @param {object} props - React element props.
    */
   initializeItemCache(props) {
+    this.isScrolling = false;
     this.loadingIndex = 0;
     this.lastChildIndex = -1;
     this.itemsByIndex = [];
@@ -282,6 +259,11 @@ class InfiniteList extends React.Component {
     if (!this.contentNode || this.disableScroll || this.preventUpdate) {
       return;
     }
+    if (!this.isScrolling) {
+      this.contentNode.style['pointer-events'] = 'none';
+      this.isScrolling = true;
+    }
+    this.resetPointerEvents();
 
     const contentData = InfiniteUtils.getContentData(this.contentNode);
     const hiddenItems = InfiniteUtils.getHiddenItems(this.scrollGroups, contentData, this.boundary.topBoundryIndex, this.boundary.bottomBoundryIndex);
@@ -302,6 +284,14 @@ class InfiniteList extends React.Component {
     if (!preventRequest && InfiniteUtils.shouldTriggerItemRequest(contentData)) {
       this.triggerItemRequest();
     }
+  }
+
+  /**
+   * Restore the pointer events, following a debounce.
+   */
+  resetPointerEvents() {
+    this.contentNode.style['pointer-events'] = 'auto';
+    this.isScrolling = false;
   }
 
   /**
@@ -428,13 +418,6 @@ class InfiniteList extends React.Component {
       }
     };
 
-    let newProps = {};
-    if (this.props.isSelectable) {
-      const wrappedOnClick = SelectableUtils.wrappedOnClickForItem(child, index, this.props.onChange);
-      const wrappedOnKeyDown = SelectableUtils.wrappedOnKeyDownForItem(child, index, this.props.onChange);
-      newProps = SelectableUtils.newPropsForItem(child, index, wrappedOnClick, wrappedOnKeyDown, this.props.hasChevrons, this.props.selectedIndexes, this.props.disableUnselectedItems);
-    }
-
     newProps.refCallback = wrappedCallBack;
     newProps['data-infinite-list-index'] = index;
     newProps.style = child.props.style ? Object.assign({}, child.props.style, { overflow: 'hidden' }) : { overflow: 'hidden' };
@@ -466,20 +449,20 @@ class InfiniteList extends React.Component {
     if (!isFinishedLoading) {
       if (this.childCount > 0) {
         loadingSpinner = (
-          <List.Item
-            content={progressiveLoadingIndicator}
-            isSelectable={false}
+          <Item
             key={`infinite-spinner-row-${this.loadingIndex}`}
-          />
+          >
+            {progressiveLoadingIndicator}
+          </Item>
         );
       } else {
         visibleChildren = (
-          <List.Item
-            content={initialLoadingIndicator}
-            isSelectable={false}
+          <Item
             key="infinite-spinner-full"
             style={{ height: '100%', position: 'relative' }}
-          />
+          >
+            {initialLoadingIndicator}
+          </Item>
         );
         showDivided = false;
       }
@@ -492,7 +475,7 @@ class InfiniteList extends React.Component {
         upperChildIndex = this.childCount;
       } else {
         newChildren = (
-          <List {...customProps} isDivided={isDivided} className={cx(['infinite-hidden'])}>
+          <List {...customProps} className={cx(['infinite-hidden'])}>
             {InfiniteUtils.getNewChildren(this.lastChildIndex, this.childrenArray, this.wrapChild)}
           </List>
         );
@@ -517,6 +500,10 @@ class InfiniteList extends React.Component {
 
 InfiniteList.propTypes = propTypes;
 InfiniteList.defaultProps = defaultProps;
-InfiniteList.Item = List.Item;
 
 export default InfiniteList;
+export {
+  Item,
+  SectionHeader,
+  SubsectionHeader
+};

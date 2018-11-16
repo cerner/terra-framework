@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "lodash.debounce": "^4.0.8",
     "prop-types": "^15.5.8",
     "resize-observer-polyfill": "^1.4.1",
     "terra-arrange": "^2.3.0",
