@@ -16,6 +16,7 @@ Cerner Corporation
 - Adam Parker [@amichaelparker]
 - Corentin Leruth [@tatchi]
 - Brett Jankord [@bjankord]
+- Matthew Carr [@Matthematic]
 - Jaime Mackey [@jmsv6d]
 
 [@tbiethman]: https://github.com/tbiethman
@@ -34,4 +35,5 @@ Cerner Corporation
 [@amichaelparker]: https://github.com/amichaelparker
 [@tatchi]: https://github.com/tatchi
 [@bjankord]: https://github.com/bjankord
+[@Matthematic]: https://github.com/Matthematic
 [@jmsv6d]: https://github.com/jmsv6d
