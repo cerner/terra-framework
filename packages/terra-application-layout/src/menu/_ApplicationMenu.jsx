@@ -6,7 +6,7 @@ import { ApplicationMenuName } from 'terra-application-name';
 import RoutingStackDelegate from 'terra-navigation-layout/lib/RoutingStackDelegate';
 import { ApplicationMenuUtility } from 'terra-application-utility';
 import { disclosureType as modalDisclosureType } from 'terra-modal-manager';
-import { withDisclosureManager } from 'terra-disclosure-manager';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 
 import 'terra-base/lib/baseStyles';
 import ApplicationLayoutPropTypes from '../utils/propTypes';
@@ -19,9 +19,6 @@ import styles from './ApplicationMenu.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  /**
-   */
-  disclosureManager: PropTypes.object,
   /**
    * The element to be placed within the fill flex styled content area.
    * This content is intended to be the user configured content for the menu.
@@ -47,6 +44,10 @@ const propTypes = {
    * Configuration to be provided to the ApplicationUtility component.
    */
   utilityConfig: ApplicationLayoutPropTypes.utilityConfigPropType,
+  /**
+   * DisclosureManagerDelegate instance automatically provided by a DisclosureManagerProvider.
+   */
+  disclosureManager: disclosureManagerShape,
 };
 
 class ApplicationMenu extends React.Component {

@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Button from 'terra-button';
-import { withDisclosureManager } from 'terra-disclosure-manager';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import Popup from '../../../Popup';
 
 class ModalContent extends React.Component {
@@ -55,7 +54,7 @@ class ModalContent extends React.Component {
 }
 
 ModalContent.propTypes = {
-  disclosureManager: PropTypes.object,
+  disclosureManager: disclosureManagerShape,
 };
 
 export default withDisclosureManager(ModalContent);

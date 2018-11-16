@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withDisclosureManager } from 'terra-disclosure-manager';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 
 import 'terra-base/lib/baseStyles';
 
 const propTypes = {
   /**
+   * DisclosureManagerDelegate instance automatically provided by a DisclosureManagerProvider.
    */
-  disclosureManager: PropTypes.object,
+  disclosureManager: disclosureManagerShape,
   /**
    * The utility menu to be wrapped.
    */

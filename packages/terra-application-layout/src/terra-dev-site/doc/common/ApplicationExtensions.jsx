@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withDisclosureManager } from 'terra-disclosure-manager';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import Button from 'terra-button';
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
@@ -10,7 +9,7 @@ import ExtensionsDisclosure from './ExtensionsDisclosure';
 import { Utils } from '../../../ApplicationLayout';
 
 const propTypes = {
-  disclosureManager: PropTypes.object,
+  disclosureManager: disclosureManagerShape,
   layoutConfig: Utils.propTypes.layoutConfigPropType, // eslint-disable-line react/forbid-foreign-prop-types
 };
 

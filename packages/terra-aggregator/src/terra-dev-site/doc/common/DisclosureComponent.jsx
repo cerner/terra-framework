@@ -5,7 +5,7 @@ import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
 import Input from 'terra-form-input';
 import ActionHeader from 'terra-action-header';
-import { withDisclosureManager } from 'terra-disclosure-manager';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 
 import styles from './example-styles.scss';
 
@@ -14,7 +14,7 @@ const cx = classNames.bind(styles);
 const propTypes = {
   name: PropTypes.string,
   disclosureType: PropTypes.string,
-  disclosureManager: PropTypes.object,
+  disclosureManager: disclosureManagerShape,
 };
 
 const defaultProps = {

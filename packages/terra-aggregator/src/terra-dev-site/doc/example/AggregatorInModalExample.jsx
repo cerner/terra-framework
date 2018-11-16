@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withDisclosureManager } from 'terra-disclosure-manager';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import ModalManager from 'terra-modal-manager';
 
 // eslint-disable-next-line import/no-unresolved, import/extensions
@@ -25,7 +24,7 @@ const ModalButton = withDisclosureManager(({ disclosureManager }) => (
 ));
 
 ModalButton.propTypes = {
-  disclosureManager: PropTypes.object,
+  disclosureManager: disclosureManagerShape,
 };
 
 const SimpleAggregatorExample = () => (

@@ -5,7 +5,7 @@ import SelectableList from 'terra-list/lib/SelectableList';
 import ContentContainer from 'terra-content-container';
 import Arrange from 'terra-arrange';
 import ActionHeader from 'terra-action-header';
-import { withDisclosureManager } from 'terra-disclosure-manager';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 
 import DisclosureComponent from './DisclosureComponent';
 
@@ -26,7 +26,7 @@ const ReadonlyModal = withDisclosureManager(({ disclosureManager }) => (
 ));
 
 ReadonlyModal.propTypes = {
-  disclosureManager: PropTypes.object,
+  disclosureManager: disclosureManagerShape,
 };
 
 const propTypes = {

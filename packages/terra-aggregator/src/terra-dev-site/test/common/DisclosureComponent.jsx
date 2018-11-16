@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ContentContainer from 'terra-content-container';
-import { availableDisclosureHeights, availableDisclosureWidths, withDisclosureManager } from 'terra-disclosure-manager';
+import {
+  availableDisclosureHeights, availableDisclosureWidths, withDisclosureManager, disclosureManagerShape,
+} from 'terra-disclosure-manager';
 
 const HEIGHT_KEYS = Object.keys(availableDisclosureHeights);
 const WIDTH_KEYS = Object.keys(availableDisclosureWidths);
@@ -156,7 +158,7 @@ class DisclosureComponent extends React.Component {
 }
 
 DisclosureComponent.propTypes = {
-  disclosureManager: PropTypes.object,
+  disclosureManager: disclosureManagerShape,
   identifier: PropTypes.string,
   disclosureType: PropTypes.string,
   nestedIndex: PropTypes.number,

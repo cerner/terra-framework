@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import AbstractModal from 'terra-abstract-modal';
 import SlideGroup from 'terra-slide-group';
-import DisclosureManager, { availableDisclosureSizes } from 'terra-disclosure-manager';
+import DisclosureManager, { availableDisclosureSizes, disclosureManagerShape } from 'terra-disclosure-manager';
 
 import 'terra-base/lib/baseStyles';
 import styles from './ModalManager.module.scss';
@@ -14,8 +14,11 @@ export { disclosureType };
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * The components to be rendered in the body of the ModalManager. These components will receive the 
+   * disclosure capabilities through the DisclosureManger's context API.
+   */
   children: PropTypes.node,
-  disclosureManager: PropTypes.object,
 };
 
 const heightFromSize = {

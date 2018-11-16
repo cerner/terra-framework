@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withDisclosureManager } from 'terra-disclosure-manager';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import { Route } from 'react-router-dom';
 import Button from 'terra-button';
 
@@ -182,7 +182,7 @@ ApplicationContent.propTypes = {
   layoutConfig: PropTypes.shape({
     toggleMenu: PropTypes.func,
   }),
-  disclosureManager: PropTypes.object,
+  disclosureManager: disclosureManagerShape,
   basePath: PropTypes.string,
   contentName: PropTypes.string,
   noMenu: PropTypes.bool,

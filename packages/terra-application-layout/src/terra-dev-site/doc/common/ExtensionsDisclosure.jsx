@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withDisclosureManager } from 'terra-disclosure-manager';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import ContentContainer from 'terra-content-container';
 import ActionHeader from 'terra-action-header';
 
 const propTypes = {
   name: PropTypes.string,
-  disclosureManager: PropTypes.object,
+  disclosureManager: disclosureManagerShape,
 };
 
 const ExtensionsDisclosure = ({ name, disclosureManager }) => (

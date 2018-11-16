@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import ContentContainer from 'terra-content-container';
 import ActionHeader from 'terra-action-header';
-import { withDisclosureManager } from 'terra-disclosure-manager';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 
 import Aggregator from '../../../Aggregator';
 import AggregatorItem from './AggregatorItem';
@@ -32,7 +31,7 @@ const ModalAggregator = ({ disclosureManager }) => (
 );
 
 ModalAggregator.propTypes = {
-  disclosureManager: PropTypes.object,
+  disclosureManager: disclosureManagerShape,
 };
 
 export default withDisclosureManager(ModalAggregator);

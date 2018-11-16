@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Button from 'terra-button';
-import { withDisclosureManager } from 'terra-disclosure-manager';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
 
 const clickOK = () => {
@@ -9,7 +8,7 @@ const clickOK = () => {
 };
 
 const propTypes = {
-  disclosureManager: PropTypes.object,
+  disclosureManager: disclosureManagerShape,
 };
 
 class NotificationDialogWithFocus extends React.Component {

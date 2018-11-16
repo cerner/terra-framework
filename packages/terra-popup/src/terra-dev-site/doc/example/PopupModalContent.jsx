@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Button from 'terra-button';
-import { withDisclosureManager } from 'terra-disclosure-manager';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import Popup from 'terra-popup/lib/Popup';
 import ExamplePopupContent from 'terra-popup/lib/terra-dev-site/doc/common/ExamplePopupContent';
@@ -58,7 +57,7 @@ class ModalContainer extends React.Component {
 }
 
 ModalContainer.propTypes = {
-  disclosureManager: PropTypes.object,
+  disclosureManager: disclosureManagerShape,
 };
 
 export default withDisclosureManager(ModalContainer);

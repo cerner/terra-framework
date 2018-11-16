@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';
-import { withDisclosureManager } from 'terra-disclosure-manager';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import ApplicationHeaderLayout from 'terra-application-header-layout';
 import { ApplicationHeaderUtility } from 'terra-application-utility';
 import { ApplicationHeaderName } from 'terra-application-name';
@@ -21,9 +21,6 @@ import styles from './ApplicationHeader.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  /**
-   */
-  disclosureManager: PropTypes.object,
   /**
    * Navigation tab alignment. Navigational links that will generate list items that will update the path.
    * These paths are matched with react-router for selection.
@@ -57,6 +54,10 @@ const propTypes = {
    * Internationalization object with translation APIs. Provided by `injectIntl`.
    */
   intl: intlShape,
+  /**
+   * DisclosureManagerDelegate instance automatically provided by a DisclosureManagerProvider.
+   */
+  disclosureManager: disclosureManagerShape,
 };
 
 const defaultProps = {

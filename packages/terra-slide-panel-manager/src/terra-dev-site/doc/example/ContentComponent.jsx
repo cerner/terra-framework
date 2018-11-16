@@ -5,7 +5,9 @@ import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
 import ActionHeader from 'terra-action-header';
 
-import { availableDisclosureHeights, availableDisclosureWidths, withDisclosureManager } from 'terra-disclosure-manager';
+import {
+  availableDisclosureHeights, availableDisclosureWidths, withDisclosureManager, disclosureManagerShape,
+} from 'terra-disclosure-manager';
 import DisclosureComponent from './DisclosureComponent';
 
 import styles from './example-styles.scss';
@@ -14,7 +16,7 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   disclosureType: PropTypes.string,
-  disclosureManager: PropTypes.object,
+  disclosureManager: disclosureManagerShape,
 };
 
 const HEIGHT_KEYS = Object.keys(availableDisclosureHeights);

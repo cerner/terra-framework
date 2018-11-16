@@ -1,14 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Button from 'terra-button';
 import ActionHeader from 'terra-action-header';
 import ActionFooter from 'terra-action-footer';
-import { withDisclosureManager } from 'terra-disclosure-manager';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 
 import DialogModal from '../../../DialogModal';
 
 const propTypes = {
-  disclosureManager: PropTypes.object,
+  disclosureManager: disclosureManagerShape,
 };
 
 class DialogModalWithFocus extends React.Component {
