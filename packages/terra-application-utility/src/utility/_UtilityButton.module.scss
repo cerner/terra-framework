@@ -33,6 +33,7 @@
     }
 
     .icon {
+      color: var(--terra-application-header-utility-icon-color);
       min-width: var(--terra-application-header-utility-icon-min-width, 1.857rem);
     }
 
@@ -111,6 +112,7 @@
     }
 
     .icon {
+      color: var(--terra-application-header-utility-icon-color);
       min-width: var(--terra-application-menu-utility-icon-min-width, 1.857rem);
     }
     /* stylelint-enable selector-max-compound-selectors*/
