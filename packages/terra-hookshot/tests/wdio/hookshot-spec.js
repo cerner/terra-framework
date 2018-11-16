@@ -370,14 +370,30 @@ describe('Hookshot', () => {
     Terra.should.matchScreenshot({ selector: '#OutsideClickBehavior-bounds' });
   });
 
+  // Verify Close Behaviors - CLICK on SVG
+  describe('Closes the hookshot content on outside click on SVG when closeOnOutsideClick', () => {
+    before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-hookshot/hookshot/hookshot-close-behaviors');
+      browser.click('#trigger-OutsideClickBehaviorWithSvgs');
+      browser.waitForVisible('#OutsideClickBehaviorWithSvgs-content');
+      browser
+        .moveToObject('#svg1', 10, 10)
+        .leftClick();
+    });
+
+    Terra.should.matchScreenshot({ selector: '#OutsideClickBehaviorWithSvgs-bounds' });
+  });
+
   // Verify Close Behaviors - RESIZE
-  describe('Closes the hookshot content on outside click when closeOnOutsideClick', () => {
+  describe('Closes the hookshot content on resize', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-hookshot/hookshot/hookshot-close-behaviors');
       browser.click('#trigger-ResizeBehavior');
       browser.waitForVisible('#ResizeBehavior-content');
       browser.setViewportSize(Terra.viewports('small')[0]);
+      browser.click('#scroll-bounds');
       browser.pause(100);
     });
 

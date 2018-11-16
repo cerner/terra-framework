@@ -1,7 +1,7 @@
 {
   "name": "terra-slide-panel",
   "main": "lib/SlidePanel.js",
-  "version": "2.20.0",
+  "version": "2.21.0",
   "description": "The Terra SlidePanel component is a progressive disclosure mechanism that allows additional content to be shown and hidden in a variety of ways.",
   "repository": {
     "type": "git",
@@ -32,7 +32,7 @@
     "terra-doc-template": "^1.1.0"
   },
   "scripts": {
-    "compile": "npm run compile:clean && npm run compile:build",
+    "compile": "npm run compile:clean && npm run compile:build && tt-pack",
     "compile:clean": "rimraf lib",
     "compile:build": "babel src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",

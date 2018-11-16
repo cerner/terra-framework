@@ -1,7 +1,7 @@
 {
   "name": "terra-infinite-list",
   "main": "lib/InfiniteList.js",
-  "version": "1.13.0",
+  "version": "1.14.0",
   "description": "The infinite list component provides virtual dom management and data request callbacks to manage large data sets within a list.",
   "repository": {
     "type": "git",
@@ -39,7 +39,7 @@
     "terra-overlay": "^2.1.0"
   },
   "scripts": {
-    "compile": "npm run compile:clean && npm run compile:build",
+    "compile": "npm run compile:clean && npm run compile:build && tt-pack",
     "compile:clean": "rimraf lib",
     "compile:build": "babel src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",

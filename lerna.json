@@ -5,7 +5,8 @@
     "publish": {
       "ignore": [
         "DEPENDENCIES.md",
-        "terra-form-validation"
+        "terra-form-validation",
+        "*.tgz"
       ]
     }
   },

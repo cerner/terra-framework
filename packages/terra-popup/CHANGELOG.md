@@ -9,6 +9,27 @@ Unreleased
 ### Removed
 * Removed dependency on terra-app-delegate package.
 
+
+4.18.1 - (November 15, 2018)
+------------------
+### Changed
+* Patch dependency update
+
+4.18.0 - (November 15, 2018)
+------------------
+### Changed
+* Minor dependency update
+
+4.17.0 - (October 30, 2018)
+------------------
+### Changed
+* Update mixin import to be more explicit
+
+4.16.0 - (October 16, 2018)
+------------------
+### Changed
+* Updated popup examples to highlight how to achieve better focus management for screen readers
+
 4.15.0 - (October 8, 2018)
 ------------------
 ### Changed
