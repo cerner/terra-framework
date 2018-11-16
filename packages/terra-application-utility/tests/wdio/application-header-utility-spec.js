@@ -19,7 +19,7 @@ describe('ApplicationHeaderUtility', () => {
         '--terra-application-header-utility-color': 'purple',
         '--terra-application-header-utility-padding-left': '20px',
         '--terra-application-header-utility-padding-right': '20px',
-        '--terra-application-header-utility-icon-min-width': '15px',
+        '--terra-application-header-utility-icon-width': '15px',
         '--terra-application-header-utility-accessory-height': '2rem',
         '--terra-application-header-utility-accessory-margin-right': '20px',
         '--terra-application-header-utility-accessory-width': '2rem',

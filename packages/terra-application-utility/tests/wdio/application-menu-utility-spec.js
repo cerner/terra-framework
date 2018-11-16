@@ -22,7 +22,7 @@ describe('ApplicationMenuUtility', () => {
         '--terra-application-menu-utility-color': 'purple',
         '--terra-application-menu-utility-padding-left': '20px',
         '--terra-application-menu-utility-padding-right': '20px',
-        '--terra-application-menu-utility-icon-min-width': '15px',
+        '--terra-application-menu-utility-icon-width': '15px',
         '--terra-application-menu-utility-accessory-height': '2rem',
         '--terra-application-menu-utility-accessory-margin-right': '20px',
         '--terra-application-menu-utility-accessory-width': '2rem',

@@ -34,7 +34,8 @@
 
     .icon {
       color: var(--terra-application-header-utility-icon-color);
-      min-width: var(--terra-application-header-utility-icon-min-width, 1.857rem);
+      height: var(--terra-application-header-utility-icon-height, 1.857rem);
+      width: var(--terra-application-header-utility-icon-width, 1.857rem);
     }
 
     .accessory {
@@ -112,8 +113,9 @@
     }
 
     .icon {
-      color: var(--terra-application-header-utility-icon-color);
-      min-width: var(--terra-application-menu-utility-icon-min-width, 1.857rem);
+      color: var(--terra-application-menu-utility-icon-color);
+      height: var(--terra-application-menu-utility-icon-height, 1.857rem);
+      width: var(--terra-application-menu-utility-icon-width, 1.857rem);
     }
     /* stylelint-enable selector-max-compound-selectors*/
   }

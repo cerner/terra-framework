@@ -19,6 +19,7 @@
   }
 
   .header-utility-menu-header {
+    color: var(--terra-application-header-utility-menu-header-color);
     font-size: var(--terra-application-header-utility-menu-header-font-size, 1rem);
     font-weight: var(--terra-application-header-utility-menu-header-font-weight, normal);
     line-height: var(--terra-application-header-utility-menu-header-line-height, 1.2);
@@ -26,6 +27,7 @@
   }
 
   .menu-utility-menu-header {
+    color: var(--terra-application-header-utility-menu-menu-color);
     font-size: var(--terra-application-menu-utility-menu-header-font-size, 1rem);
     font-weight: var(--terra-application-menu-utility-menu-header-font-weight, normal);
     line-height: var(--terra-application-header-utility-menu-header-line-height, 1.2);
@@ -35,7 +37,6 @@
   .utility-menu-content-container {
     display: flex;
     justify-content: space-between;
-    min-height: var(--terra-application-utility-header-min-height);
   }
 
   .header-utility-menu-content-container {
@@ -90,6 +91,7 @@
   }
 
   .header-utility-menu-icon-close {
+    display: var(--terra-application-header-utility-menu-page-display);
     width: var(--terra-application-header-utility-menu-page-close-width, 1rem);
   }
 
