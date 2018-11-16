@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'terra-button';
-import AppDelegate from 'terra-app-delegate';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import PopupModalContent from './PopupModalContent';
 
 class ModalContainer extends React.Component {
@@ -11,7 +11,7 @@ class ModalContainer extends React.Component {
   }
 
   disclose() {
-    this.props.app.disclose({
+    this.props.disclosureManager.disclose({
       preferredType: 'modal',
       size: '',
       content: {
@@ -27,7 +27,7 @@ class ModalContainer extends React.Component {
 }
 
 ModalContainer.propTypes = {
-  app: AppDelegate.propType,
+  disclosureManager: disclosureManagerShape,
 };
 
-export default ModalContainer;
+export default withDisclosureManager(ModalContainer);

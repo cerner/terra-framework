@@ -1,5 +1,5 @@
 import React from 'react';
-import AppDelegate from 'terra-app-delegate';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import Button from 'terra-button';
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
@@ -9,8 +9,8 @@ import ExtensionsDisclosure from './ExtensionsDisclosure';
 import { Utils } from '../../../ApplicationLayout';
 
 const propTypes = {
-  app: AppDelegate.propType,
-  layoutConfig: Utils.propTypes.layoutConfigPropType,
+  disclosureManager: disclosureManagerShape,
+  layoutConfig: Utils.propTypes.layoutConfigPropType, // eslint-disable-line react/forbid-foreign-prop-types
 };
 
 class ApplicationExtensions extends React.Component {
@@ -21,9 +21,9 @@ class ApplicationExtensions extends React.Component {
   }
 
   discloseExtensionContent(extensionName) {
-    const { app } = this.props;
+    const { disclosureManager } = this.props;
 
-    app.disclose({
+    disclosureManager.disclose({
       preferredType: 'modal',
       size: 'tiny',
       content: {
@@ -59,4 +59,4 @@ class ApplicationExtensions extends React.Component {
 
 ApplicationExtensions.propTypes = propTypes;
 
-export default ApplicationExtensions;
+export default withDisclosureManager(ApplicationExtensions);

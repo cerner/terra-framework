@@ -1,37 +1,37 @@
 import React from 'react';
-import AppDelegate from 'terra-app-delegate';
 import ContentContainer from 'terra-content-container';
 import ActionHeader from 'terra-action-header';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 
-import AggregatorContainer from './AggregatorContainer';
+import Aggregator from '../../../Aggregator';
 import AggregatorItem from './AggregatorItem';
 import SimpleAggregatorItem from './SimpleAggregatorItem';
 
 const items = Object.freeze([{
   key: 'SECTION_0',
-  component: <AggregatorItem name="Slide Panel Section" disclosureType="panel" />,
+  component: <AggregatorItem name="Slide Panel Section" disclosureType="panel" discloseOnSelect />,
 }, {
   key: 'SECTION_1',
-  component: <AggregatorItem name="Modal Section" disclosureType="modal" />,
+  component: <AggregatorItem name="Modal Section" disclosureType="modal" discloseOnSelect />,
 }, {
   key: 'SECTION_2',
   component: <SimpleAggregatorItem name="No Disclosure Section" />,
 }]);
 
-const ModalAggregator = ({ app }) => (
+const ModalAggregator = ({ disclosureManager }) => (
   <ContentContainer
     fill
-    header={<ActionHeader onClose={app.closeDisclosure} onBack={app.goBack} />}
+    header={<ActionHeader onClose={disclosureManager.closeDisclosure} onBack={disclosureManager.goBack} />}
   >
-    <AggregatorContainer
-      app={app}
+    <Aggregator
       items={items}
+      disclose={disclosureManager.disclose}
     />
   </ContentContainer>
 );
 
 ModalAggregator.propTypes = {
-  app: AppDelegate.propType,
+  disclosureManager: disclosureManagerShape,
 };
 
-export default ModalAggregator;
+export default withDisclosureManager(ModalAggregator);

@@ -1,44 +1,35 @@
 import React from 'react';
-import AppDelegate from 'terra-app-delegate';
-
 import ModalManager from 'terra-modal-manager';
 import SlidePanelManager from 'terra-slide-panel-manager';
 
 /* eslint-disable import/no-unresolved, import/extensions */
-import AggregatorContainer from 'terra-aggregator/lib/terra-dev-site/doc/common/AggregatorContainer';
+import Aggregator from 'terra-aggregator/lib/Aggregator';
 import AggregatorItem from 'terra-aggregator/lib/terra-dev-site/doc/common/AggregatorItem';
 /* eslint-enable import/no-unresolved, import/extensions */
+import { withDisclosureManager } from 'terra-disclosure-manager';
 
-const items = Object.freeze([{
-  key: 'SECTION_0',
-  component: <AggregatorItem name="Section 0" disclosureType="panel" />,
-}, {
-  key: 'SECTION_1',
-  component: <AggregatorItem name="Section 1" disclosureType="panel" />,
-}]);
+const Wrapper = withDisclosureManager(({ items, disclosureManager }) => (
+  <Aggregator
+    items={items}
+    disclose={disclosureManager.disclose}
+  />
+));
 
-const ModalManagerBypass = ({ app }) => {
-  const updatedItems = items.map(item => (
-    {
-      key: item.key,
-      component: React.cloneElement(item.component, {
-        disclose: app.disclose,
-      }),
-    }
-  ));
+const ModalManagerBypass = withDisclosureManager(({ disclosureManager }) => {
+  const items = Object.freeze([{
+    key: 'SECTION_0',
+    component: <AggregatorItem name="Section 0" disclosureType="panel" key="SECTION_0" customDisclose={disclosureManager.disclose} discloseOnSelect />,
+  }, {
+    key: 'SECTION_1',
+    component: <AggregatorItem name="Section 1" disclosureType="panel" key="SECTION_1" customDisclose={disclosureManager.disclose} discloseOnSelect />,
+  }]);
 
   return (
-    <SlidePanelManager app={app}>
-      <AggregatorContainer
-        items={updatedItems}
-      />
+    <SlidePanelManager>
+      <Wrapper items={items} />
     </SlidePanelManager>
   );
-};
-
-ModalManagerBypass.propTypes = {
-  app: AppDelegate.propType,
-};
+});
 
 const ModalBypassExample = () => (
   <div>

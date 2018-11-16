@@ -3,6 +3,22 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated examples to consume terra-disclosure-manager v3.x
+
+### Removed
+* Removed dependency on terra-app-delegate package.
+
+
+4.18.1 - (November 15, 2018)
+------------------
+### Changed
+* Patch dependency update
+
+4.18.0 - (November 15, 2018)
+------------------
+### Changed
+* Minor dependency update
 
 4.17.0 - (October 30, 2018)
 ------------------

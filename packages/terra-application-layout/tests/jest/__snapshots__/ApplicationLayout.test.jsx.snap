@@ -1,407 +1,410 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with given props 1`] = `
-<withRouter(NavigationLayout)
-  app={AppDelegateInstance {}}
-  config={
-    Object {
-      "content": Object {
-        "/item_1": Object {
-          "component": Object {
-            "default": Object {
-              "componentClass": [Function],
-              "props": Object {
-                "test": "content props item 1",
-              },
-            },
-          },
-          "path": "/item_1",
-        },
-        "/item_2": Object {
-          "component": Object {
-            "default": Object {
-              "componentClass": [Function],
-              "props": Object {
-                "test": "content props item 2",
-              },
-            },
-          },
-          "path": "/item_2",
-        },
-      },
-      "menu": Object {
-        "/": Object {
-          "component": Object {
-            "small": Object {
-              "componentClass": [Function],
-              "props": Object {
-                "applicationMenuWrapperProps": Object {
-                  "contentComponentClass": [Function],
-                  "extensions": <div>
-                    Extensions
-                  </div>,
-                  "nameConfig": Object {
-                    "accessory": <div>
-                      accessory
-                    </div>,
-                    "title": "name config title",
-                  },
-                  "utilityConfig": Object {
-                    "accessory": <div>
-                      Avatar
-                    </div>,
-                    "initialSelectedKey": "utility 1",
-                    "menuItems": Array [
-                      Object {
-                        "childKeys": Array [
-                          "utility 2",
-                        ],
-                        "key": "utility 1",
-                        "title": "Utility 1",
-                      },
-                      Object {
-                        "key": "utility 2",
-                        "title": "Utility 2",
-                      },
-                    ],
-                    "onChange": [Function],
-                    "title": "Swanson, Henry",
-                  },
+<ModalManager>
+  <withRouter(NavigationLayout)
+    config={
+      Object {
+        "content": Object {
+          "/item_1": Object {
+            "component": Object {
+              "default": Object {
+                "componentClass": [Function],
+                "props": Object {
+                  "test": "content props item 1",
                 },
-                "menuItems": Array [
-                  Object {
-                    "externalLink": undefined,
-                    "hasSubMenu": true,
-                    "path": "/item_1",
-                    "text": "Item 1",
-                  },
-                  Object {
-                    "externalLink": undefined,
-                    "hasSubMenu": true,
-                    "path": "/item_2",
-                    "text": "Item 2",
-                  },
-                ],
               },
-              "refuseRoutingStackNavigation": false,
             },
-            "tiny": Object {
-              "componentClass": [Function],
-              "props": Object {
-                "applicationMenuWrapperProps": Object {
-                  "contentComponentClass": [Function],
-                  "extensions": <div>
-                    Extensions
-                  </div>,
-                  "nameConfig": Object {
-                    "accessory": <div>
-                      accessory
-                    </div>,
-                    "title": "name config title",
-                  },
-                  "utilityConfig": Object {
-                    "accessory": <div>
-                      Avatar
-                    </div>,
-                    "initialSelectedKey": "utility 1",
-                    "menuItems": Array [
-                      Object {
-                        "childKeys": Array [
-                          "utility 2",
-                        ],
-                        "key": "utility 1",
-                        "title": "Utility 1",
-                      },
-                      Object {
-                        "key": "utility 2",
-                        "title": "Utility 2",
-                      },
-                    ],
-                    "onChange": [Function],
-                    "title": "Swanson, Henry",
-                  },
-                },
-                "menuItems": Array [
-                  Object {
-                    "externalLink": undefined,
-                    "hasSubMenu": true,
-                    "path": "/item_1",
-                    "text": "Item 1",
-                  },
-                  Object {
-                    "externalLink": undefined,
-                    "hasSubMenu": true,
-                    "path": "/item_2",
-                    "text": "Item 2",
-                  },
-                ],
-              },
-              "refuseRoutingStackNavigation": false,
-            },
+            "path": "/item_1",
           },
-          "path": "/",
-        },
-        "/item_1": Object {
-          "component": Object {
-            "default": Object {
-              "componentClass": [Function],
-              "props": Object {
-                "applicationMenuWrapperProps": Object {
-                  "contentComponentClass": [Function],
-                  "extensions": <div>
-                    Extensions
-                  </div>,
-                  "nameConfig": Object {
-                    "accessory": <div>
-                      accessory
-                    </div>,
-                    "title": "name config title",
-                  },
-                  "utilityConfig": Object {
-                    "accessory": <div>
-                      Avatar
-                    </div>,
-                    "initialSelectedKey": "utility 1",
-                    "menuItems": Array [
-                      Object {
-                        "childKeys": Array [
-                          "utility 2",
-                        ],
-                        "key": "utility 1",
-                        "title": "Utility 1",
-                      },
-                      Object {
-                        "key": "utility 2",
-                        "title": "Utility 2",
-                      },
-                    ],
-                    "onChange": [Function],
-                    "title": "Swanson, Henry",
-                  },
+          "/item_2": Object {
+            "component": Object {
+              "default": Object {
+                "componentClass": [Function],
+                "props": Object {
+                  "test": "content props item 2",
                 },
-                "test": "menu props item 1",
               },
             },
+            "path": "/item_2",
           },
-          "path": "/item_1",
         },
-        "/item_2": Object {
-          "component": Object {
-            "medium": Object {
-              "componentClass": [Function],
-              "props": Object {
-                "applicationMenuWrapperProps": Object {
-                  "contentComponentClass": [Function],
-                  "extensions": <div>
-                    Extensions
-                  </div>,
-                  "nameConfig": Object {
-                    "accessory": <div>
-                      accessory
+        "menu": Object {
+          "/": Object {
+            "component": Object {
+              "small": Object {
+                "componentClass": [Function],
+                "props": Object {
+                  "applicationMenuWrapperProps": Object {
+                    "contentComponentClass": [Function],
+                    "extensions": <div>
+                      Extensions
                     </div>,
-                    "title": "name config title",
+                    "nameConfig": Object {
+                      "accessory": <div>
+                        accessory
+                      </div>,
+                      "title": "name config title",
+                    },
+                    "utilityConfig": Object {
+                      "accessory": <div>
+                        Avatar
+                      </div>,
+                      "initialSelectedKey": "utility 1",
+                      "menuItems": Array [
+                        Object {
+                          "childKeys": Array [
+                            "utility 2",
+                          ],
+                          "key": "utility 1",
+                          "title": "Utility 1",
+                        },
+                        Object {
+                          "key": "utility 2",
+                          "title": "Utility 2",
+                        },
+                      ],
+                      "onChange": [Function],
+                      "title": "Swanson, Henry",
+                    },
                   },
-                  "utilityConfig": Object {
-                    "accessory": <div>
-                      Avatar
-                    </div>,
-                    "initialSelectedKey": "utility 1",
-                    "menuItems": Array [
-                      Object {
-                        "childKeys": Array [
-                          "utility 2",
-                        ],
-                        "key": "utility 1",
-                        "title": "Utility 1",
-                      },
-                      Object {
-                        "key": "utility 2",
-                        "title": "Utility 2",
-                      },
-                    ],
-                    "onChange": [Function],
-                    "title": "Swanson, Henry",
-                  },
+                  "menuItems": Array [
+                    Object {
+                      "externalLink": undefined,
+                      "hasSubMenu": true,
+                      "path": "/item_1",
+                      "text": "Item 1",
+                    },
+                    Object {
+                      "externalLink": undefined,
+                      "hasSubMenu": true,
+                      "path": "/item_2",
+                      "text": "Item 2",
+                    },
+                  ],
                 },
-                "test": "content props item 2",
+                "refuseRoutingStackNavigation": false,
+              },
+              "tiny": Object {
+                "componentClass": [Function],
+                "props": Object {
+                  "applicationMenuWrapperProps": Object {
+                    "contentComponentClass": [Function],
+                    "extensions": <div>
+                      Extensions
+                    </div>,
+                    "nameConfig": Object {
+                      "accessory": <div>
+                        accessory
+                      </div>,
+                      "title": "name config title",
+                    },
+                    "utilityConfig": Object {
+                      "accessory": <div>
+                        Avatar
+                      </div>,
+                      "initialSelectedKey": "utility 1",
+                      "menuItems": Array [
+                        Object {
+                          "childKeys": Array [
+                            "utility 2",
+                          ],
+                          "key": "utility 1",
+                          "title": "Utility 1",
+                        },
+                        Object {
+                          "key": "utility 2",
+                          "title": "Utility 2",
+                        },
+                      ],
+                      "onChange": [Function],
+                      "title": "Swanson, Henry",
+                    },
+                  },
+                  "menuItems": Array [
+                    Object {
+                      "externalLink": undefined,
+                      "hasSubMenu": true,
+                      "path": "/item_1",
+                      "text": "Item 1",
+                    },
+                    Object {
+                      "externalLink": undefined,
+                      "hasSubMenu": true,
+                      "path": "/item_2",
+                      "text": "Item 2",
+                    },
+                  ],
+                },
+                "refuseRoutingStackNavigation": false,
               },
             },
+            "path": "/",
           },
-          "path": "/item_2",
+          "/item_1": Object {
+            "component": Object {
+              "default": Object {
+                "componentClass": [Function],
+                "props": Object {
+                  "applicationMenuWrapperProps": Object {
+                    "contentComponentClass": [Function],
+                    "extensions": <div>
+                      Extensions
+                    </div>,
+                    "nameConfig": Object {
+                      "accessory": <div>
+                        accessory
+                      </div>,
+                      "title": "name config title",
+                    },
+                    "utilityConfig": Object {
+                      "accessory": <div>
+                        Avatar
+                      </div>,
+                      "initialSelectedKey": "utility 1",
+                      "menuItems": Array [
+                        Object {
+                          "childKeys": Array [
+                            "utility 2",
+                          ],
+                          "key": "utility 1",
+                          "title": "Utility 1",
+                        },
+                        Object {
+                          "key": "utility 2",
+                          "title": "Utility 2",
+                        },
+                      ],
+                      "onChange": [Function],
+                      "title": "Swanson, Henry",
+                    },
+                  },
+                  "test": "menu props item 1",
+                },
+              },
+            },
+            "path": "/item_1",
+          },
+          "/item_2": Object {
+            "component": Object {
+              "medium": Object {
+                "componentClass": [Function],
+                "props": Object {
+                  "applicationMenuWrapperProps": Object {
+                    "contentComponentClass": [Function],
+                    "extensions": <div>
+                      Extensions
+                    </div>,
+                    "nameConfig": Object {
+                      "accessory": <div>
+                        accessory
+                      </div>,
+                      "title": "name config title",
+                    },
+                    "utilityConfig": Object {
+                      "accessory": <div>
+                        Avatar
+                      </div>,
+                      "initialSelectedKey": "utility 1",
+                      "menuItems": Array [
+                        Object {
+                          "childKeys": Array [
+                            "utility 2",
+                          ],
+                          "key": "utility 1",
+                          "title": "Utility 1",
+                        },
+                        Object {
+                          "key": "utility 2",
+                          "title": "Utility 2",
+                        },
+                      ],
+                      "onChange": [Function],
+                      "title": "Swanson, Henry",
+                    },
+                  },
+                  "test": "content props item 2",
+                },
+              },
+            },
+            "path": "/item_2",
+          },
         },
-      },
+      }
     }
-  }
-  header={
-    <InjectIntl(ApplicationHeader)
-      applicationLinks={
-        Object {
-          "alignment": undefined,
-          "links": Array [
-            Object {
-              "externalLink": undefined,
-              "id": "application-layout-tab-0",
-              "path": "/item_1",
-              "text": "Item 1",
-            },
-            Object {
-              "externalLink": undefined,
-              "id": "application-layout-tab-1",
-              "path": "/item_2",
-              "text": "Item 2",
-            },
-          ],
+    header={
+      <InjectIntl(withDisclosureManager(ApplicationHeader))
+        applicationLinks={
+          Object {
+            "alignment": undefined,
+            "links": Array [
+              Object {
+                "externalLink": undefined,
+                "id": "application-layout-tab-0",
+                "path": "/item_1",
+                "text": "Item 1",
+              },
+              Object {
+                "externalLink": undefined,
+                "id": "application-layout-tab-1",
+                "path": "/item_2",
+                "text": "Item 2",
+              },
+            ],
+          }
         }
-      }
-      extensions={
-        <div>
-          Extensions
-        </div>
-      }
-      nameConfig={
-        Object {
-          "accessory": <div>
-            accessory
-          </div>,
-          "title": "name config title",
+        extensions={
+          <div>
+            Extensions
+          </div>
         }
-      }
-      utilityConfig={
-        Object {
-          "accessory": <div>
-            Avatar
-          </div>,
-          "initialSelectedKey": "utility 1",
-          "menuItems": Array [
-            Object {
-              "childKeys": Array [
-                "utility 2",
-              ],
-              "key": "utility 1",
-              "title": "Utility 1",
-            },
-            Object {
-              "key": "utility 2",
-              "title": "Utility 2",
-            },
-          ],
-          "onChange": [Function],
-          "title": "Swanson, Henry",
+        nameConfig={
+          Object {
+            "accessory": <div>
+              accessory
+            </div>,
+            "title": "name config title",
+          }
         }
-      }
-    />
-  }
-  indexPath="/item_1"
-/>
+        utilityConfig={
+          Object {
+            "accessory": <div>
+              Avatar
+            </div>,
+            "initialSelectedKey": "utility 1",
+            "menuItems": Array [
+              Object {
+                "childKeys": Array [
+                  "utility 2",
+                ],
+                "key": "utility 1",
+                "title": "Utility 1",
+              },
+              Object {
+                "key": "utility 2",
+                "title": "Utility 2",
+              },
+            ],
+            "onChange": [Function],
+            "title": "Swanson, Henry",
+          }
+        }
+      />
+    }
+    indexPath="/item_1"
+  />
+</ModalManager>
 `;
 
 exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with only required props 1`] = `
-<withRouter(NavigationLayout)
-  config={
-    Object {
-      "content": Object {
-        "/item_1": Object {
-          "component": Object {
-            "default": Object {
-              "componentClass": [Function],
-              "props": Object {
-                "test": "content props item 1",
-              },
-            },
-          },
-          "path": "/item_1",
-        },
-        "/item_2": Object {
-          "component": Object {
-            "default": Object {
-              "componentClass": [Function],
-              "props": Object {
-                "test": "content props item 2",
-              },
-            },
-          },
-          "path": "/item_2",
-        },
-      },
-      "menu": Object {
-        "/": Object {
-          "component": Object {
-            "small": Object {
-              "componentClass": [Function],
-              "props": Object {
-                "applicationMenuWrapperProps": Object {
-                  "contentComponentClass": [Function],
-                  "extensions": undefined,
-                  "nameConfig": undefined,
-                  "utilityConfig": undefined,
+<ModalManager>
+  <withRouter(NavigationLayout)
+    config={
+      Object {
+        "content": Object {
+          "/item_1": Object {
+            "component": Object {
+              "default": Object {
+                "componentClass": [Function],
+                "props": Object {
+                  "test": "content props item 1",
                 },
-                "menuItems": Array [],
               },
-              "refuseRoutingStackNavigation": true,
             },
-            "tiny": Object {
-              "componentClass": [Function],
-              "props": Object {
-                "applicationMenuWrapperProps": Object {
-                  "contentComponentClass": [Function],
-                  "extensions": undefined,
-                  "nameConfig": undefined,
-                  "utilityConfig": undefined,
-                },
-                "menuItems": Array [],
-              },
-              "refuseRoutingStackNavigation": true,
-            },
+            "path": "/item_1",
           },
-          "path": "/",
-        },
-        "/item_1": Object {
-          "component": Object {
-            "default": Object {
-              "componentClass": [Function],
-              "props": Object {
-                "applicationMenuWrapperProps": Object {
-                  "contentComponentClass": [Function],
-                  "extensions": undefined,
-                  "nameConfig": undefined,
-                  "utilityConfig": undefined,
+          "/item_2": Object {
+            "component": Object {
+              "default": Object {
+                "componentClass": [Function],
+                "props": Object {
+                  "test": "content props item 2",
                 },
-                "test": "menu props item 1",
               },
             },
+            "path": "/item_2",
           },
-          "path": "/item_1",
         },
-        "/item_2": Object {
-          "component": Object {
-            "medium": Object {
-              "componentClass": [Function],
-              "props": Object {
-                "applicationMenuWrapperProps": Object {
-                  "contentComponentClass": [Function],
-                  "extensions": undefined,
-                  "nameConfig": undefined,
-                  "utilityConfig": undefined,
+        "menu": Object {
+          "/": Object {
+            "component": Object {
+              "small": Object {
+                "componentClass": [Function],
+                "props": Object {
+                  "applicationMenuWrapperProps": Object {
+                    "contentComponentClass": [Function],
+                    "extensions": undefined,
+                    "nameConfig": undefined,
+                    "utilityConfig": undefined,
+                  },
+                  "menuItems": Array [],
                 },
-                "test": "content props item 2",
+                "refuseRoutingStackNavigation": true,
+              },
+              "tiny": Object {
+                "componentClass": [Function],
+                "props": Object {
+                  "applicationMenuWrapperProps": Object {
+                    "contentComponentClass": [Function],
+                    "extensions": undefined,
+                    "nameConfig": undefined,
+                    "utilityConfig": undefined,
+                  },
+                  "menuItems": Array [],
+                },
+                "refuseRoutingStackNavigation": true,
               },
             },
+            "path": "/",
           },
-          "path": "/item_2",
+          "/item_1": Object {
+            "component": Object {
+              "default": Object {
+                "componentClass": [Function],
+                "props": Object {
+                  "applicationMenuWrapperProps": Object {
+                    "contentComponentClass": [Function],
+                    "extensions": undefined,
+                    "nameConfig": undefined,
+                    "utilityConfig": undefined,
+                  },
+                  "test": "menu props item 1",
+                },
+              },
+            },
+            "path": "/item_1",
+          },
+          "/item_2": Object {
+            "component": Object {
+              "medium": Object {
+                "componentClass": [Function],
+                "props": Object {
+                  "applicationMenuWrapperProps": Object {
+                    "contentComponentClass": [Function],
+                    "extensions": undefined,
+                    "nameConfig": undefined,
+                    "utilityConfig": undefined,
+                  },
+                  "test": "content props item 2",
+                },
+              },
+            },
+            "path": "/item_2",
+          },
         },
-      },
-    }
-  }
-  header={
-    <InjectIntl(ApplicationHeader)
-      applicationLinks={
-        Object {
-          "alignment": undefined,
-          "links": Array [],
-        }
       }
-    />
-  }
-  indexPath="/item_1"
-/>
+    }
+    header={
+      <InjectIntl(withDisclosureManager(ApplicationHeader))
+        applicationLinks={
+          Object {
+            "alignment": undefined,
+            "links": Array [],
+          }
+        }
+      />
+    }
+    indexPath="/item_1"
+  />
+</ModalManager>
 `;

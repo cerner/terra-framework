@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'terra-button';
-import AppDelegate from 'terra-app-delegate';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import Popup from 'terra-popup/lib/Popup';
 import ExamplePopupContent from 'terra-popup/lib/terra-dev-site/doc/common/ExamplePopupContent';
@@ -29,20 +29,20 @@ class ModalContainer extends React.Component {
   }
 
   render() {
-    const { app } = this.props;
+    const { disclosureManager } = this.props;
 
     return (
       <div className="content-container" style={{ height: '100%', padding: '10px' }}>
-        {app && app.releaseFocus ? <h4>Modal focus is released!</h4> : null }
-        {app && app.requestFocus ? <h4>Modal focus is trapped!</h4> : null }
+        {disclosureManager && disclosureManager.releaseFocus ? <h4>Modal focus is released!</h4> : null }
+        {disclosureManager && disclosureManager.requestFocus ? <h4>Modal focus is trapped!</h4> : null }
         <br />
         <Popup
           isArrowDisplayed
           isOpen={this.state.open}
           onRequestClose={this.handlePopupRequestClose}
           targetRef={() => document.getElementById('popup-in-modal')}
-          releaseFocus={app.releaseFocus}
-          requestFocus={app.requestFocus}
+          releaseFocus={disclosureManager.releaseFocus}
+          requestFocus={disclosureManager.requestFocus}
           isContentFocusDisabled
         >
           <ExamplePopupContent onChange={this.handlePopupOnChange} />
@@ -50,14 +50,14 @@ class ModalContainer extends React.Component {
         <Button id="popup-in-modal" text="Popup In Modal" onClick={this.handlePopupButtonClick} />
         <br />
         <br />
-        <Button className="close-disclosure" text="Close Disclosure" onClick={app.closeDisclosure} />
+        <Button className="close-disclosure" text="Close Disclosure" onClick={disclosureManager.closeDisclosure} />
       </div>
     );
   }
 }
 
 ModalContainer.propTypes = {
-  app: AppDelegate.propType,
+  disclosureManager: disclosureManagerShape,
 };
 
-export default ModalContainer;
+export default withDisclosureManager(ModalContainer);

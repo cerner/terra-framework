@@ -37,7 +37,17 @@ exports[`should shallow a default component 1`] = `
     targetRef={[Function]}
   >
     <OnClickOutside(HookshotContent)
+      eventTypes={
+        Array [
+          "mousedown",
+          "touchstart",
+        ]
+      }
+      excludeScrollbar={false}
       onRequestClose={[Function]}
+      outsideClickIgnoreClass="ignore-react-onclickoutside"
+      preventDefault={false}
+      stopPropagation={false}
     >
       <div
         style={
