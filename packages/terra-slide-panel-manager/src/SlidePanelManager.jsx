@@ -9,7 +9,7 @@ export { disclosureType };
 
 const propTypes = {
   /**
-   * The components to be rendered in the body of the SlidePanelManager. These components will receive the 
+   * The components to be rendered in the body of the SlidePanelManager. These components will receive the
    * disclosure capabilities through the DisclosureManger's context API.
    */
   children: PropTypes.node,
