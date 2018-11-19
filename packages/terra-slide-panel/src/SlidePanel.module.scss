@@ -25,7 +25,6 @@
 
   .panel {
     background-color: var(--terra-slide-panel-panel-background-color, #fff);
-    border-radius: var(--terra-slide-panel-panel-border-radius);
     position: absolute;
     z-index: 500; // z-index used to set master above detail in visual stacking context.
   }
@@ -77,14 +76,12 @@
   // Overlay
   .is-open[data-slide-panel-panel-behavior='overlay'] {
     @media (min-width: 768px), print {
-      background-color: var(--terra-slide-panel-overlay-background-color, #fff);
-
       &[data-slide-panel-panel-position='start'] > .panel {
-        box-shadow: 1px 0 5px var(--terra-slide-panel-overlay-shadow-color, #bcbfc0);
+        box-shadow: var(--terra-slide-panel-panel-overlay-position-start-box-shadow, 1px 0 0 0 #cdced0, -16px 0 16px 14px rgba(77, 87, 92, 0.45), -12px 0 24px 18px rgba(100, 105, 108, 0.06), 0 0 100px 20px rgba(28, 31, 33, 0.04));
       }
 
       &[data-slide-panel-panel-position='end'] > .panel {
-        box-shadow: -1px 0 5px var(--terra-slide-panel-overlay-shadow-color, #bcbfc0);
+        box-shadow: var(--terra-slide-panel-panel-overlay-position-end-box-shadow, -1px 0 0 0 #cdced0, 16px 0 16px 14px rgba(77, 87, 92, 0.45), 12px 0 24px 18px rgba(100, 105, 108, 0.06), 0 0 100px 20px rgba(28, 31, 33, 0.04));
       }
     }
   }
@@ -92,7 +89,9 @@
   // Squish
   .is-open[data-slide-panel-panel-behavior='squish'] {
     @media (min-width: 768px), print {
-      background-color: var(--terra-slide-panel-panel-squish-background-color, #fff);
+      > .main {
+        background-color: var(--terra-slide-panel-main-squish-background-color, #fff);
+      }
 
       &[data-slide-panel-panel-size='small'] > .main {
         width: calc(100% - #{var(--terra-slide-panel-panel-squish-width-small, 320px)});
@@ -100,6 +99,10 @@
 
       &[data-slide-panel-panel-size='large'] > .main {
         width: calc(100% * (1 - #{var(--terra-slide-panel-panel-squish-width-large-scalar, 0.6)}));
+      }
+
+      > .panel {
+        background-color: var(--terra-slide-panel-panel-squish-background-color, #fff);
       }
 
       &[data-slide-panel-panel-position='start'] > .panel {
@@ -114,7 +117,6 @@
 
   // Fullscreen
   .is-fullscreen[data-slide-panel-panel-size] > .panel {
-    border-radius: var(--terra-slide-panel-panel-fullscreen-border-radius);
     width: 100%;
   }
 
