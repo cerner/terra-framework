@@ -48,12 +48,13 @@
 
   .skip-content {
     background-color: var(--terra-application-header-layout-background-color, #0079be);
+    border-radius: var(--terra-application-header-layout-border-radius, 0);
     clip: rect(1px, 1px, 1px, 1px);
-    color: #fff;
+    color: var(--terra-application-header-layout-color, #fff);
     height: 1px;
-    margin: 0;
+    margin: var(--terra-application-header-layout-margin, 0);
     overflow: hidden;
-    padding: 1rem 2rem;
+    padding: var(--terra-application-header-layout-padding, 1rem 2rem);
     position: absolute;
     width: 1px;
 
