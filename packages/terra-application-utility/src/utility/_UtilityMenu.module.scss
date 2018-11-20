@@ -74,10 +74,12 @@
   }
 
   .header-utility-menu-icon-left {
+    margin-right: var(--terra-application-header-utility-menu-back-margin-right);
     width: var(--terra-application-header-utility-menu-back-width, 0.7143rem);
   }
 
   .menu-utility-menu-icon-left {
+    margin-right: var(--terra-application-menu-utility-menu-back-margin-right);
     width: var(--terra-application-menu-utility-menu-back-width, 0.7143rem);
   }
 
