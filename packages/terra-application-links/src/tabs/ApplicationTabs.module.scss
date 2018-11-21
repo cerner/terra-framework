@@ -83,7 +83,7 @@
     border: 0;
     border-left: var(--terra-application-tabs-border-left);
     border-right: var(--terra-application-tabs-border-right, 1px solid #3a67a4);
-    box-shadow: var(--terra-application-tabs-box-shadow, 1px 0 1px #1d98da);
+    box-shadow: var(--terra-application-tabs-box-shadow, 1px 0 0 0 #1d98da);
     color: var(--terra-application-tabs-color, #fff);
     cursor: pointer;
     display: flex;
@@ -122,8 +122,9 @@
       background-color: var(--terra-application-tabs-selected-background-color, rgba(0, 0, 0, 0.15));
       background-image: var(--terra-application-tabs-selected-background-image, linear-gradient(to bottom, #5cc2f9, #5cc2f9));
       background-size: var(--terra-application-tabs-selected-background-size, 13rem 5px);
-      border-left: var(--terra-application-tabs-selected-border-left);
+      border-left: var(--terra-application-tabs-selected-border-left, 1px solid #3a67a4);
       border-right: var(--terra-application-tabs-selected-border-right, 1px solid #3a67a4);
+      box-shadow: var(--terra-application-tabs-selected-box-shadow, 1px 0 0 0 #1d98da, -1px 0 0 0 #1d98da);
       font-weight: var(--terra-application-tabs-selected-font-weight, 600);
     }
 
@@ -136,12 +137,22 @@
     }
 
     &:first-child {
-      border-left: var(--terra-application-tabs-border-left, 1px solid #1d98da);
-      box-shadow: var(--terra-application-tabs-box-shadow, 1px 0 1px #1d98da, -1px 0 1px #3a67a4);
+      border-left: var(--terra-application-tabs-first-child-border-left, 1px solid #1d98da);
+      box-shadow: var(--terra-application-tabs-first-child-box-shadow, 1px 0 0 0 #1d98da, -1px 0 0 0 #3a67a4);
+      margin-left: var(--terra-application-tabs-first-child-margin-left, 1px);
     }
 
     &.is-focused:first-child {
       box-shadow: var(--terra-application-tabs-first-child-focus-box-shadow, 1px 0 1px #1d98da, -1px 0 1px #3a67a4, 0 0 1px 0 #fff, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
+    }
+
+    &[aria-current='true']:first-child {
+      border-left: var(--terra-application-tabs-first-child-selected-border-left, 1px solid #3a67a4);
+      box-shadow: var(--terra-application-tabs-first-child-selected-box-shadow, 1px 0 0 0 #1d98da, -1px 0 0 0 #1d98da);
+    }
+
+    &:last-child {
+      margin-right: var(--terra-application-tabs-last-child-margin-right, 1px);
     }
   }
 
