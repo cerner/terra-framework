@@ -35,7 +35,6 @@
     .icon {
       color: var(--terra-application-header-utility-icon-color);
       height: var(--terra-application-header-utility-icon-height, 1.857rem);
-      margin-left: var(--terra-application-header-utility-icon-margin-left);
       width: var(--terra-application-header-utility-icon-width, 1.857rem);
     }
 
@@ -116,7 +115,6 @@
     .icon {
       color: var(--terra-application-menu-utility-icon-color);
       height: var(--terra-application-menu-utility-icon-height, 1.857rem);
-      margin-left: var(--terra-application-menu-utility-icon-margin-left);
       width: var(--terra-application-menu-utility-icon-width, 1.857rem);
     }
     /* stylelint-enable selector-max-compound-selectors*/
