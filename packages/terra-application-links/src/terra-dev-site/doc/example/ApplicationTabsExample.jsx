@@ -10,7 +10,7 @@ const ApplicationTabsExample = () => (
       border: '1px solid lightGray', backgroundColor: '#2481ca', width: '100%', height: '50px', position: 'relative',
     }}
   >
-    <ApplicationTabs alignment="end" links={ApplicationLinkConfig} />
+    <ApplicationTabs alignment="center" links={ApplicationLinkConfig} />
   </div>
 );
 
