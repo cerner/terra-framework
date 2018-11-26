@@ -6,6 +6,9 @@ Unreleased
 ### Changed
 * Wdio tests changed to use themeCombinationOfCustomProperties
 
+### Fixed
+* Fixed preventDefault error
+
 4.18.1 - (November 15, 2018)
 ------------------
 ### Changed
