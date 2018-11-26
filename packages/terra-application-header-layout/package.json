@@ -1,7 +1,7 @@
 {
   "name": "terra-application-header-layout",
   "main": "lib/ApplicationHeaderLayout.js",
-  "version": "2.19.0",
+  "version": "2.20.0",
   "description": "This component renders an application header layout. To be used with a layout.",
   "repository": {
     "type": "git",
@@ -36,7 +36,7 @@
     "terra-responsive-element": "^3.0.0"
   },
   "scripts": {
-    "compile": "npm run compile:clean && npm run compile:build && tt-pack",
+    "compile": "npm run compile:clean && npm run compile:build",
     "compile:clean": "rimraf lib",
     "compile:build": "babel src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",

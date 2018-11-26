@@ -3,7 +3,11 @@ Changelog
 
 Unreleased
 ----------
+
+1.12.0 - (November 15, 2018)
+------------------
 ### Changed
+* Minor dependency update
 * Updated component readme feature links
 * Moved link separator out of CSS to hide from screen readers
 

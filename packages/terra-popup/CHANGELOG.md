@@ -3,6 +3,18 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Fixed preventDefault error
+
+4.18.1 - (November 15, 2018)
+------------------
+### Changed
+* Patch dependency update
+
+4.18.0 - (November 15, 2018)
+------------------
+### Changed
+* Minor dependency update
 
 4.17.0 - (October 30, 2018)
 ------------------
