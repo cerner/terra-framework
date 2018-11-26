@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added missing ar, es-ES, es-US, fr-FR, and pt-BR translations.
 
 1.13.0 - (November 15, 2018)
 ------------------

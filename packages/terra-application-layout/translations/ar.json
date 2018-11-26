@@ -1,14 +1,14 @@
 {
-  "Terra.applicationLayout.applicationHeader.menuToggleLabel": "Toggle Menu",
-  "Terra.applicationLayout.utilityDefaults.menu": "Menu",
-  "Terra.applicationLayout.utilityDefaults.userInformation": "User Information",
-  "Terra.applicationLayout.utilityDefaults.changePhoto": "Change Photo",
-  "Terra.applicationLayout.utilityDefaults.settings": "Settings",
-  "Terra.applicationLayout.utilityDefaults.appearance": "Appearance",
-  "Terra.applicationLayout.utilityDefaults.security": "Security",
-  "Terra.applicationLayout.utilityDefaults.help": "Help",
-  "Terra.applicationLayout.utilityDefaults.gettingStarted": "Getting Started",
-  "Terra.applicationLayout.utilityDefaults.about": "About",
-  "Terra.applicationLayout.utilityDefaults.termsOfUse": "Terms of Use",
-  "Terra.applicationLayout.utilityDefaults.logOut": "Log Out"
+  "Terra.applicationLayout.applicationHeader.menuToggleLabel": "تبديل القائمة",
+  "Terra.applicationLayout.utilityDefaults.menu": "القائمة",
+  "Terra.applicationLayout.utilityDefaults.userInformation": "معلومات المستخدم",
+  "Terra.applicationLayout.utilityDefaults.changePhoto": "تغيير الصورة",
+  "Terra.applicationLayout.utilityDefaults.settings": "الإعدادات",
+  "Terra.applicationLayout.utilityDefaults.appearance": "المظهر",
+  "Terra.applicationLayout.utilityDefaults.security": "الأمن",
+  "Terra.applicationLayout.utilityDefaults.help": "المساعدة",
+  "Terra.applicationLayout.utilityDefaults.gettingStarted": "بدء الاستخدام",
+  "Terra.applicationLayout.utilityDefaults.about": "تقريبي",
+  "Terra.applicationLayout.utilityDefaults.termsOfUse": "شروط الاستخدام",
+  "Terra.applicationLayout.utilityDefaults.logOut": "تسجيل الخروج"
 }
