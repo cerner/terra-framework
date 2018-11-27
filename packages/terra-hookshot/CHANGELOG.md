@@ -4,7 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Fixed
-* Fixed lint error
+* Lint error
 
 4.13.1 - (November 15, 2018)
 ------------------
