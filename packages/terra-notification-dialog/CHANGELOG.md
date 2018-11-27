@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Minor improvements to doc examples
 * Updated examples to consume terra-disclosure-manager v3.x
 
 ### Removed

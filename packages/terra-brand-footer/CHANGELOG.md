@@ -9,6 +9,7 @@ Unreleased
 ### Changed
 * Minor dependency update
 * Updated component readme feature links
+* Moved link separator out of CSS to hide from screen readers
 
 1.11.0 - (September 25, 2018)
 ------------------
