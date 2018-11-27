@@ -43,7 +43,7 @@ const propTypes = {
 
 // shim for SVGElement classList for IE 10 / IE 11
 // More info: https://github.com/Pomax/react-onclickoutside#ie-does-not-support-classlist-for-svg-elements
-if (typeof SVGElement !== "undefined" && !('classList' in SVGElement.prototype)) {
+if (typeof SVGElement !== 'undefined' && !('classList' in SVGElement.prototype)) {
   Object.defineProperty(SVGElement.prototype, 'classList', {
     get() {
       return {
