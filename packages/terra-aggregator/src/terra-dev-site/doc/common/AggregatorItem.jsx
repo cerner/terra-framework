@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'terra-button';
-import List, { Item } from 'terra-list/lib/SelectableList';
+import List, { Item } from 'terra-list';
 import ContentContainer from 'terra-content-container';
 import Arrange from 'terra-arrange';
 import AppDelegate from 'terra-app-delegate';
@@ -58,7 +58,7 @@ class AggregatorItem extends React.Component {
       5: 'fullscreen',
     };
 
-    if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState.selectedKey === metaData.key) {
+    if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState.selectedIndex === metaData.index) {
       aggregatorDelegate.releaseFocus()
         .catch(() => {
           console.log('Section - Focus release failed. Something must be locked.'); // eslint-disable-line no-console
@@ -67,13 +67,13 @@ class AggregatorItem extends React.Component {
     }
 
     aggregatorDelegate.requestFocus({
-      selectedKey: metaData.key,
+      selectedIndex: metaData.index,
     })
       .then(({ disclose }) => {
         if (disclose) {
           disclose({
             preferredType: this.props.disclosureType,
-            size: disclosureSizeForIndex[index],
+            size: disclosureSizeForIndex[metaData.index],
             content: {
               key: `Nested ${name}`,
               component: <DisclosureComponent name={`Nested ${name}`} disclosureType={this.props.disclosureType} />,
@@ -107,8 +107,8 @@ class AggregatorItem extends React.Component {
     } = this.props;
 
     let selectedIndex;
-    if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState && aggregatorDelegate.itemState.index !== undefined) {
-      selectedIndex = aggregatorDelegate.itemState.index;
+    if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState && aggregatorDelegate.itemState.selectedIndex !== undefined) {
+      selectedIndex = aggregatorDelegate.itemState.selectedIndex;
     }
 
     return (
@@ -130,50 +130,50 @@ class AggregatorItem extends React.Component {
           isDivided
         >
           <Item
-            isSelected={key === 'item-0'}
+            isSelected={selectedIndex === 0}
             isSelectable
             onSelect={this.handleSelection}
-            metaData={{ key: 'item-0' }}
+            metaData={{ index: 0 }}
           >
             <div style={{ padding: '.7rem' }}>Row 0</div>
           </Item>
           <Item
-            isSelected={key === 'item-1'}
+            isSelected={selectedIndex === 1}
             isSelectable
             onSelect={this.handleSelection}
-            metaData={{ key: 'item-1' }}
+            metaData={{ index: 1 }}
           >
             <div style={{ padding: '.7rem' }}>Row 1</div>
           </Item>
           <Item
-            isSelected={key === 'item-2'}
+            isSelected={selectedIndex === 2}
             isSelectable
             onSelect={this.handleSelection}
-            metaData={{ key: 'item-2' }}
+            metaData={{ index: 2 }}
           >
             <div style={{ padding: '.7rem' }}>Row 2</div>
           </Item>
           <Item
-            isSelected={key === 'item-3'}
+            isSelected={selectedIndex === 3}
             isSelectable
             onSelect={this.handleSelection}
-            metaData={{ key: 'item-3' }}
+            metaData={{ index: 3 }}
           >
             <div style={{ padding: '.7rem' }}>Row 3</div>
           </Item>
           <Item
-            isSelected={key === 'item-4'}
+            isSelected={selectedIndex === 4}
             isSelectable
             onSelect={this.handleSelection}
-            metaData={{ key: 'item-4' }}
+            metaData={{ index: 4 }}
           >
             <div style={{ padding: '.7rem' }}>Row 4</div>
           </Item>
           <Item
-            isSelected={key === 'item-5'}
+            isSelected={selectedIndex === 5}
             isSelectable
             onSelect={this.handleSelection}
-            metaData={{ key: 'item-5' }}
+            metaData={{ index: 5 }}
           >
             <div style={{ padding: '.7rem' }}>Row 5</div>
           </Item>

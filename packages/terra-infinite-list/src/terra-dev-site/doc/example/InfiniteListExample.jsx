@@ -19,10 +19,11 @@ class InfiniteListExample extends React.Component {
     this.addMoreData = debounce(this.addMoreData.bind(this), 1000);
     this.handleSelection = this.handleSelection.bind(this);
 
-    this.state = { stillLoading: true, numberOfPages: 0, selectedIndexes: [] };
+    this.state = { stillLoading: true, numberOfPages: 0, selectedKey: null };
   }
 
-  handleOnChange(event, metaData) {
+  handleSelection(event, metaData) {
+    event.preventDefault();
     this.setState({ selectedKey: metaData.key });
   }
 
@@ -62,7 +63,7 @@ class InfiniteListExample extends React.Component {
             align="center"
             fitStartAttributes={{ style: { textAlign: 'center' } }}
           />
-        </Item>
+        </Item>,
       );
     }
 

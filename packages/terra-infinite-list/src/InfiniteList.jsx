@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import ResizeObserver from 'resize-observer-polyfill';
-import debounce from 'lodash.debounce';
 import List, { Item, SectionHeader, SubsectionHeader } from 'terra-list';
 import InfiniteUtils from './_InfiniteUtils';
 import styles from './InfiniteList.module.scss';
@@ -70,7 +69,6 @@ class InfiniteList extends React.Component {
     this.updateScrollGroups = this.updateScrollGroups.bind(this);
     this.handleRenderCompletion = this.handleRenderCompletion.bind(this);
     this.handleResize = this.resizeDebounce(this.handleResize.bind(this));
-    this.resetPointerEvents = debounce(this.resetPointerEvents.bind(this), 50);
     this.resetTimeout = this.resetTimeout.bind(this);
     this.wrapChild = this.wrapChild.bind(this);
 
@@ -165,7 +163,6 @@ class InfiniteList extends React.Component {
    * @param {object} props - React element props.
    */
   initializeItemCache(props) {
-    this.isScrolling = false;
     this.loadingIndex = 0;
     this.lastChildIndex = -1;
     this.itemsByIndex = [];
@@ -259,11 +256,6 @@ class InfiniteList extends React.Component {
     if (!this.contentNode || this.disableScroll || this.preventUpdate) {
       return;
     }
-    if (!this.isScrolling) {
-      this.contentNode.style['pointer-events'] = 'none';
-      this.isScrolling = true;
-    }
-    this.resetPointerEvents();
 
     const contentData = InfiniteUtils.getContentData(this.contentNode);
     const hiddenItems = InfiniteUtils.getHiddenItems(this.scrollGroups, contentData, this.boundary.topBoundryIndex, this.boundary.bottomBoundryIndex);
@@ -284,14 +276,6 @@ class InfiniteList extends React.Component {
     if (!preventRequest && InfiniteUtils.shouldTriggerItemRequest(contentData)) {
       this.triggerItemRequest();
     }
-  }
-
-  /**
-   * Restore the pointer events, following a debounce.
-   */
-  resetPointerEvents() {
-    this.contentNode.style['pointer-events'] = 'auto';
-    this.isScrolling = false;
   }
 
   /**
@@ -411,16 +395,17 @@ class InfiniteList extends React.Component {
    * @param {number} index - Index of the child element.
    */
   wrapChild(child, index) {
-    const wrappedCallBack = (node) => {
+    const wrappedCallback = (node) => {
       this.updateHeight(node, index);
       if (child.props.refCallback) {
         child.props.refCallback(node);
       }
     };
-
-    newProps.refCallback = wrappedCallBack;
-    newProps['data-infinite-list-index'] = index;
-    newProps.style = child.props.style ? Object.assign({}, child.props.style, { overflow: 'hidden' }) : { overflow: 'hidden' };
+    const newProps = {
+      refCallback: wrappedCallback,
+      'data-infinite-list-index': index,
+      style: child.props.style ? Object.assign({}, child.props.style, { overflow: 'hidden' }) : { overflow: 'hidden' },
+    };
     return React.cloneElement(child, newProps);
   }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TestExample from 'terra-disclosure-manager/lib/terra-dev-site/test/common/TestExample';
-import SelectableList from 'terra-list/lib/SelectableList';
+import List, { Item } from 'terra-list';
 
 class AggregatorItem extends React.Component {
   constructor(props) {
@@ -10,16 +10,16 @@ class AggregatorItem extends React.Component {
     this.handleSelection = this.handleSelection.bind(this);
   }
 
-  handleSelection(event, index) {
+  handleSelection(event, metaData) {
     const { aggregatorDelegate, name } = this.props;
 
-    if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState.index === index) {
+    if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState.selectedKey === metaData.key) {
       aggregatorDelegate.releaseFocus();
       return;
     }
 
     aggregatorDelegate.requestFocus({
-      index,
+      selectedKey: metaData.key,
     })
       .then(({ disclose }) => {
         if (disclose) {
@@ -38,23 +38,24 @@ class AggregatorItem extends React.Component {
   render() {
     const { name, aggregatorDelegate, targetId } = this.props;
 
-    let selectedIndex;
-    if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState && aggregatorDelegate.itemState.index !== undefined) {
-      selectedIndex = aggregatorDelegate.itemState.index;
+    let selectedKey;
+    if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState && aggregatorDelegate.itemState.selectedKey !== undefined) {
+      selectedKey = aggregatorDelegate.itemState.selectedKey;
     }
 
     return (
-      <SelectableList
+      <List
         isDivided
-        selectedIndexes={selectedIndex !== undefined ? [selectedIndex] : []}
-        onChange={this.handleSelection}
       >
-        <SelectableList.Item
-          content={
-            <div id={targetId}>{name}</div>
-          }
-        />
-      </SelectableList>
+        <Item
+          isSelectable
+          isSelected={selectedKey === 'test-key'}
+          onSelect={this.handleSelection}
+          metaData={{ key: 'test-key' }}
+        >
+          <div id={targetId}>{name}</div>
+        </Item>
+      </List>
     );
   }
 }
