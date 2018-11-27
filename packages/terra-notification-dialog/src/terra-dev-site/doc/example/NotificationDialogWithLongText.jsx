@@ -27,7 +27,7 @@ class NotificationDialogWithLongText extends React.Component {
   }
 
   render() {
-    const message = [`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    const message = `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       Maecenas molestie in lorem vel facilisis. Quisque ac enim nec lectus malesuada faucibus.
       Integer congue feugiat ultricies.
       Nunc non mauris sed tellus cursus vestibulum nec quis ipsum.
@@ -105,7 +105,7 @@ class NotificationDialogWithLongText extends React.Component {
       Cras in venenatis turpis. Nullam id odio justo. Etiam vehicula lectus vel purus consectetur cursus id sit amet diam.
       Donec facilisis dui non orci hendrerit pharetra. Suspendisse blandit dictum turpis, in consectetur ipsum hendrerit eget.
       Nam vehicula, arcu vitae egestas porttitor,
-      turpis nisi pulvinar neque, ut lacinia urna purus sit amet elit.`];
+      turpis nisi pulvinar neque, ut lacinia urna purus sit amet elit.`;
     return (
       <div>
         <NotificationDialog
@@ -113,7 +113,7 @@ class NotificationDialogWithLongText extends React.Component {
           isOpen={this.state.isOpen}
           onRequestClose={this.handleCloseModal}
           title="Make sure that the title relates directly to the choices."
-          message={message[0]}
+          message={message}
           primaryAction={{
             text: 'OK',
             onClick: clickOK,
