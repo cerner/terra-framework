@@ -33,8 +33,8 @@ class CompleteNotificationDialogWithLongMessage extends React.Component {
           variant={NotificationDialogVariants.SUCCESS}
           isOpen={this.state.isOpen}
           onRequestClose={this.handleCloseModal}
-          title="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
-          message="This is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the message"
+          title="This is the title. This is the title. This is the title. This is the title. This is the title. This is the title. This is the title. This is the title."
+          message="This is the message. This is the message. This is the message. This is the message. This is the message. This is the message. This is the message. This is the message. This is the message. This is the message."
           primaryAction={{
             text: 'OK',
             onClick: clickOK,
