@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Minor improvements to doc examples
 
 1.13.0 - (November 15, 2018)
 ------------------
