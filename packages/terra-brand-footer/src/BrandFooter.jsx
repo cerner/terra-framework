@@ -136,10 +136,12 @@ const BrandFooter = ({
               )
             }
             <ul className={cx('menu')}>
-              {linkGroup.links && linkGroup.links.map((link) => {
+              {linkGroup.links && linkGroup.links.map((link, index) => {
                 const spreadTarget = link.target !== undefined ? { target: link.target } : {};
+                const separator = (!isVertical && index >= 1) ? <span className={cx('separator')} aria-hidden>/</span> : '';
                 return (
                   <li className={cx('list-item')} key={link.text + link.href}>
+                    {separator}
                     <a className={cx('link')} href={link.href} {...spreadTarget}>
                       {link.text}
                     </a>
