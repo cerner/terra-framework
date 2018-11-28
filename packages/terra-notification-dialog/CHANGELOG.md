@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added missing ar, es-ES, es-US, fr-FR, and pt-BR translations.
+
 ### Changed
 * Minor improvements to doc examples
 * Updated examples to consume terra-disclosure-manager v3.x
