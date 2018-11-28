@@ -2,230 +2,249 @@
 
 exports[`ModalManager should disclose content in Modal 1`] = `
 <ModalManager>
-  <DisclosureManager
+  <withDisclosureManager(DisclosureManager)
     render={[Function]}
     supportedDisclosureTypes={
       Array [
         "modal",
       ]
     }
+    trapNestedDisclosureRequests={true}
   >
-    <div
-      className="container"
+    <DisclosureManager
+      render={[Function]}
+      supportedDisclosureTypes={
+        Array [
+          "modal",
+        ]
+      }
+      trapNestedDisclosureRequests={true}
     >
-      <TestContainer
-        app={
-          AppDelegateInstance {
-            "disclose": [Function],
-          }
-        }
-        key=".0"
+      <div
+        className="container"
       >
-        <button
-          type="button"
+        <withDisclosureManager(Component)
+          id="test"
         >
-          Hello World
-        </button>
-      </TestContainer>
-      <AbstractModal
-        ariaLabel="Modal"
-        classNameModal="modal-manager height-870 width-1280"
-        classNameOverlay={null}
-        closeOnEsc={true}
-        closeOnOutsideClick={false}
-        isFocused={true}
-        isFullscreen={false}
-        isOpen={true}
-        onRequestClose={[Function]}
-        role="dialog"
-        rootSelector="[data-terra-base]"
-        zIndex="6000"
-      >
-        <Portal
-          isOpened={true}
+          <Component
+            disclosureManager={
+              DisclosureManagerDelegateInstance {
+                "disclose": [Function],
+              }
+            }
+            id="test"
+          >
+            <button
+              id="test"
+              type="button"
+            >
+              Hello World
+            </button>
+          </Component>
+        </withDisclosureManager(Component)>
+        <AbstractModal
+          ariaLabel="Modal"
+          classNameModal="modal-manager height-870 width-1280"
+          classNameOverlay={null}
+          closeOnEsc={true}
+          closeOnOutsideClick={false}
+          isFocused={true}
+          isFullscreen={false}
+          isOpen={true}
+          onRequestClose={[Function]}
+          role="dialog"
+          rootSelector="[data-terra-base]"
+          zIndex="6000"
         >
           <Portal
-            containerInfo={
-              <div>
+            isOpened={true}
+          >
+            <Portal
+              containerInfo={
                 <div>
-                  <div
-                    class="overlay layer-6000"
-                  />
-                  <div
-                    aria-label="Modal"
-                    aria-modal="true"
-                    class="abstract-modal layer-6000 modal-manager height-870 width-1280"
-                    role="dialog"
-                    tabindex="0"
-                  >
+                  <div>
                     <div
-                      class="slide-group"
+                      class="overlay layer-6000"
+                    />
+                    <div
+                      aria-label="Modal"
+                      aria-modal="true"
+                      class="abstract-modal layer-6000 modal-manager height-870 width-1280"
+                      role="dialog"
+                      tabindex="0"
                     >
                       <div
-                        class="slide"
+                        class="slide-group"
                       >
                         <div
-                          class="slide-shadow"
-                        />
-                        <button
-                          type="button"
+                          class="slide"
                         >
-                          Hello World
-                        </button>
+                          <div
+                            class="slide-shadow"
+                          />
+                          <button
+                            type="button"
+                          >
+                            Hello World
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            }
-          >
-            <ModalContent
-              aria-modal="true"
-              ariaLabel="Modal"
-              classNameModal="modal-manager height-870 width-1280"
-              classNameOverlay={null}
-              closeOnOutsideClick={false}
-              isFocused={true}
-              isFullscreen={false}
-              isScrollable={false}
-              onRequestClose={[Function]}
-              role="dialog"
-              zIndex="6000"
+              }
             >
-              <FocusTrap
-                _createFocusTrap={[Function]}
-                active={true}
-                focusTrapOptions={Object {}}
-                paused={false}
-                tag="div"
+              <ModalContent
+                aria-modal="true"
+                ariaLabel="Modal"
+                classNameModal="modal-manager height-870 width-1280"
+                classNameOverlay={null}
+                closeOnOutsideClick={false}
+                isFocused={true}
+                isFullscreen={false}
+                isScrollable={false}
+                onRequestClose={[Function]}
+                role="dialog"
+                zIndex="6000"
               >
-                <div>
-                  <ModalOverlay
-                    className={null}
-                    onClick={null}
-                    zIndex="6000"
-                  >
-                    <div
-                      className="overlay layer-6000"
+                <FocusTrap
+                  _createFocusTrap={[Function]}
+                  active={true}
+                  focusTrapOptions={Object {}}
+                  paused={false}
+                  tag="div"
+                >
+                  <div>
+                    <ModalOverlay
+                      className={null}
                       onClick={null}
-                    />
-                  </ModalOverlay>
-                  <div
-                    aria-label="Modal"
-                    aria-modal="true"
-                    className="abstract-modal layer-6000 modal-manager height-870 width-1280"
-                    role="dialog"
-                    tabIndex="0"
-                  >
-                    <SlideGroup
-                      isAnimated={true}
-                      items={
-                        Array [
-                          <TestContainer
-                            app={
-                              AppDelegateInstance {
-                                "closeDisclosure": [Function],
-                                "disclose": [Function],
-                                "dismiss": [Function],
-                                "maximize": [Function],
-                                "registerDismissCheck": [Function],
-                                "requestFocus": [Function],
-                              }
-                            }
-                          />,
-                        ]
-                      }
+                      zIndex="6000"
                     >
-                      <TransitionGroup
-                        childFactory={[Function]}
-                        className="slide-group"
-                        component="div"
-                        key="DISCLOSE_KEY"
-                      >
-                        <div
-                          className="slide-group"
-                        >
-                          <CSSTransition
-                            classNames={
-                              Object {
-                                "enter": "enter",
-                                "enterActive": "enter-active",
-                                "exit": "exit",
-                                "exitActive": "exit-active",
+                      <div
+                        className="overlay layer-6000"
+                        onClick={null}
+                      />
+                    </ModalOverlay>
+                    <div
+                      aria-label="Modal"
+                      aria-modal="true"
+                      className="abstract-modal layer-6000 modal-manager height-870 width-1280"
+                      role="dialog"
+                      tabIndex="0"
+                    >
+                      <SlideGroup
+                        isAnimated={true}
+                        items={
+                          Array [
+                            <Context.Provider
+                              value={
+                                DisclosureManagerDelegateInstance {
+                                  "closeDisclosure": [Function],
+                                  "disclose": [Function],
+                                  "dismiss": [Function],
+                                  "maximize": [Function],
+                                  "registerDismissCheck": [Function],
+                                  "requestFocus": [Function],
+                                }
                               }
-                            }
-                            enter={true}
-                            exit={true}
-                            id="shmmoop"
-                            in={true}
-                            key=".$DISCLOSE_KEY"
-                            onEntered={[Function]}
-                            onExit={[Function]}
-                            onExited={[Function]}
-                            timeout={300}
+                            >
+                              <withDisclosureManager(Component) />
+                            </Context.Provider>,
+                          ]
+                        }
+                      >
+                        <TransitionGroup
+                          childFactory={[Function]}
+                          className="slide-group"
+                          component="div"
+                          key="DISCLOSE_KEY"
+                        >
+                          <div
+                            className="slide-group"
                           >
-                            <Transition
-                              appear={false}
+                            <CSSTransition
+                              classNames={
+                                Object {
+                                  "enter": "enter",
+                                  "enterActive": "enter-active",
+                                  "exit": "exit",
+                                  "exitActive": "exit-active",
+                                }
+                              }
                               enter={true}
                               exit={true}
                               id="shmmoop"
                               in={true}
-                              mountOnEnter={false}
-                              onEnter={[Function]}
+                              key=".$DISCLOSE_KEY"
                               onEntered={[Function]}
-                              onEntering={[Function]}
                               onExit={[Function]}
                               onExited={[Function]}
-                              onExiting={[Function]}
                               timeout={300}
-                              unmountOnExit={false}
                             >
-                              <Slide
+                              <Transition
+                                appear={false}
+                                enter={true}
+                                exit={true}
                                 id="shmmoop"
-                                isHidden={false}
+                                in={true}
+                                mountOnEnter={false}
+                                onEnter={[Function]}
+                                onEntered={[Function]}
+                                onEntering={[Function]}
+                                onExit={[Function]}
+                                onExited={[Function]}
+                                onExiting={[Function]}
+                                timeout={300}
+                                unmountOnExit={false}
                               >
-                                <div
-                                  aria-hidden={null}
-                                  className="slide"
+                                <Slide
+                                  id="shmmoop"
+                                  isHidden={false}
                                 >
                                   <div
-                                    className="slide-shadow"
-                                  />
-                                  <TestContainer
-                                    app={
-                                      AppDelegateInstance {
-                                        "closeDisclosure": [Function],
-                                        "disclose": [Function],
-                                        "dismiss": [Function],
-                                        "maximize": [Function],
-                                        "registerDismissCheck": [Function],
-                                        "requestFocus": [Function],
-                                      }
-                                    }
-                                    key="DISCLOSE_KEY"
+                                    aria-hidden={null}
+                                    className="slide"
                                   >
-                                    <button
-                                      type="button"
-                                    >
-                                      Hello World
-                                    </button>
-                                  </TestContainer>
-                                </div>
-                              </Slide>
-                            </Transition>
-                          </CSSTransition>
-                        </div>
-                      </TransitionGroup>
-                    </SlideGroup>
+                                    <div
+                                      className="slide-shadow"
+                                    />
+                                    <withDisclosureManager(Component)>
+                                      <Component
+                                        disclosureManager={
+                                          DisclosureManagerDelegateInstance {
+                                            "closeDisclosure": [Function],
+                                            "disclose": [Function],
+                                            "dismiss": [Function],
+                                            "maximize": [Function],
+                                            "registerDismissCheck": [Function],
+                                            "requestFocus": [Function],
+                                          }
+                                        }
+                                      >
+                                        <button
+                                          type="button"
+                                        >
+                                          Hello World
+                                        </button>
+                                      </Component>
+                                    </withDisclosureManager(Component)>
+                                  </div>
+                                </Slide>
+                              </Transition>
+                            </CSSTransition>
+                          </div>
+                        </TransitionGroup>
+                      </SlideGroup>
+                    </div>
                   </div>
-                </div>
-              </FocusTrap>
-            </ModalContent>
+                </FocusTrap>
+              </ModalContent>
+            </Portal>
           </Portal>
-        </Portal>
-      </AbstractModal>
-    </div>
-  </DisclosureManager>
+        </AbstractModal>
+      </div>
+    </DisclosureManager>
+  </withDisclosureManager(DisclosureManager)>
 </ModalManager>
 `;
 
@@ -234,93 +253,117 @@ exports[`ModalManager should render the ModalManager with custom props 1`] = `
   className="test"
   id="my-modal-manager"
 >
-  <DisclosureManager
+  <withDisclosureManager(DisclosureManager)
     render={[Function]}
     supportedDisclosureTypes={
       Array [
         "modal",
       ]
     }
+    trapNestedDisclosureRequests={true}
   >
-    <div
-      className="container test"
-      id="my-modal-manager"
+    <DisclosureManager
+      render={[Function]}
+      supportedDisclosureTypes={
+        Array [
+          "modal",
+        ]
+      }
+      trapNestedDisclosureRequests={true}
     >
-      <TestContainer
-        app={
-          AppDelegateInstance {
-            "disclose": [Function],
-          }
-        }
-        key=".0"
+      <div
+        className="container test"
+        id="my-modal-manager"
       >
-        <button
-          type="button"
-        >
-          Hello World
-        </button>
-      </TestContainer>
-      <AbstractModal
-        ariaLabel="Modal"
-        classNameModal="modal-manager"
-        classNameOverlay={null}
-        closeOnEsc={true}
-        closeOnOutsideClick={false}
-        isFocused={true}
-        isFullscreen={false}
-        isOpen={false}
-        onRequestClose={[Function]}
-        role="dialog"
-        rootSelector="[data-terra-base]"
-        zIndex="6000"
-      />
-    </div>
-  </DisclosureManager>
+        <withDisclosureManager(Component)>
+          <Component
+            disclosureManager={
+              DisclosureManagerDelegateInstance {
+                "disclose": [Function],
+              }
+            }
+          >
+            <button
+              type="button"
+            >
+              Hello World
+            </button>
+          </Component>
+        </withDisclosureManager(Component)>
+        <AbstractModal
+          ariaLabel="Modal"
+          classNameModal="modal-manager"
+          classNameOverlay={null}
+          closeOnEsc={true}
+          closeOnOutsideClick={false}
+          isFocused={false}
+          isFullscreen={false}
+          isOpen={false}
+          onRequestClose={[Function]}
+          role="dialog"
+          rootSelector="[data-terra-base]"
+          zIndex="6000"
+        />
+      </div>
+    </DisclosureManager>
+  </withDisclosureManager(DisclosureManager)>
 </ModalManager>
 `;
 
 exports[`ModalManager should render the ModalManager with defaults 1`] = `
 <ModalManager>
-  <DisclosureManager
+  <withDisclosureManager(DisclosureManager)
     render={[Function]}
     supportedDisclosureTypes={
       Array [
         "modal",
       ]
     }
+    trapNestedDisclosureRequests={true}
   >
-    <div
-      className="container"
+    <DisclosureManager
+      render={[Function]}
+      supportedDisclosureTypes={
+        Array [
+          "modal",
+        ]
+      }
+      trapNestedDisclosureRequests={true}
     >
-      <TestContainer
-        app={
-          AppDelegateInstance {
-            "disclose": [Function],
-          }
-        }
-        key=".0"
+      <div
+        className="container"
       >
-        <button
-          type="button"
-        >
-          Hello World
-        </button>
-      </TestContainer>
-      <AbstractModal
-        ariaLabel="Modal"
-        classNameModal="modal-manager"
-        classNameOverlay={null}
-        closeOnEsc={true}
-        closeOnOutsideClick={false}
-        isFocused={true}
-        isFullscreen={false}
-        isOpen={false}
-        onRequestClose={[Function]}
-        role="dialog"
-        rootSelector="[data-terra-base]"
-        zIndex="6000"
-      />
-    </div>
-  </DisclosureManager>
+        <withDisclosureManager(Component)>
+          <Component
+            disclosureManager={
+              DisclosureManagerDelegateInstance {
+                "disclose": [Function],
+              }
+            }
+          >
+            <button
+              type="button"
+            >
+              Hello World
+            </button>
+          </Component>
+        </withDisclosureManager(Component)>
+        <AbstractModal
+          ariaLabel="Modal"
+          classNameModal="modal-manager"
+          classNameOverlay={null}
+          closeOnEsc={true}
+          closeOnOutsideClick={false}
+          isFocused={false}
+          isFullscreen={false}
+          isOpen={false}
+          onRequestClose={[Function]}
+          role="dialog"
+          rootSelector="[data-terra-base]"
+          zIndex="6000"
+        />
+      </div>
+    </DisclosureManager>
+  </withDisclosureManager(DisclosureManager)>
 </ModalManager>
 `;

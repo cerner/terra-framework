@@ -1,22 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppDelegate from 'terra-app-delegate';
+import { withDisclosureManager } from 'terra-disclosure-manager';
 import Aggregator from '../../../Aggregator';
 
 const propTypes = {
-  app: AppDelegate.propType,
   items: PropTypes.arrayOf(PropTypes.shape({
     key: PropTypes.string,
     component: PropTypes.element,
   })),
 };
 
-const AggregatorContainer = ({ app, items }) => (
+const AggregatorContainer = withDisclosureManager(({ items, disclosureManager }) => (
   <Aggregator
-    disclose={app.disclose}
     items={items}
+    disclose={disclosureManager.disclose}
   />
-);
+));
 
 AggregatorContainer.propTypes = propTypes;
 
