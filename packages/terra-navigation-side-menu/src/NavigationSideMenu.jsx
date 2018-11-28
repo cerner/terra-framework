@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import List from 'terra-list';
 import ActionHeader from 'terra-action-header';
 import ContentContainer from 'terra-content-container';
+import SearchField from 'terra-search-field';
+import { FormattedMessage } from 'react-intl';
 import MenuItem from './_MenuItem';
 
 import styles from './NavigationSideMenu.module.scss';
@@ -96,20 +98,25 @@ const processMenuItems = (menuItems) => {
   return { items, parents };
 };
 
-class NavigationSideMenu extends React.Component {
+const searchFilter = (searchable = '', by = '') => searchable.toLowerCase().search(by.toLowerCase()) >= 0;
+
+class NavigationSideMenu extends Component {
   constructor(props) {
     super(props);
 
     this.handleBackClick = this.handleBackClick.bind(this);
     this.handleItemClick = this.handleItemClick.bind(this);
+    this.handleFilter = this.handleFilter.bind(this);
 
     const { items, parents } = processMenuItems(props.menuItems);
-    this.state = { items, parents };
+    const keys = items[props.selectedMenuKey].childKeys || [];
+    this.state = { items, parents, keys };
   }
 
   componentWillReceiveProps(nextProps) {
     const { items, parents } = processMenuItems(nextProps.menuItems);
-    this.setState({ items, parents });
+    const keys = items[nextProps.selectedMenuKey].childKeys || [];
+    this.state = { items, parents, keys };
   }
 
   handleBackClick(event) {
@@ -149,6 +156,16 @@ class NavigationSideMenu extends React.Component {
     }
   }
 
+  handleFilter(event) {
+    const filterText = event.target.value;
+    const { selectedMenuKey } = this.props;
+    const { items } = this.state;
+    const currentItemChildKeys = items[selectedMenuKey].childKeys || [];
+
+    const keys = currentItemChildKeys.filter(key => searchFilter(items[key].text, filterText));
+    this.setState({ keys });
+  }
+
   buildListItem(key) {
     const item = this.state.items[key];
     const onKeyDown = (event) => {
@@ -172,11 +189,11 @@ class NavigationSideMenu extends React.Component {
     );
   }
 
-  buildListContent(currentItem) {
-    if (currentItem && currentItem.childKeys && currentItem.childKeys.length) {
-      return <List className={cx(['menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</List>;
-    }
-    return null;
+  buildListContent(keys) {
+    return (keys && keys.length
+      ? <List className={cx(['menu-list'])}>{keys.map(key => this.buildListItem(key))}</List>
+      : <FormattedMessage id="Terra.NavigationSideMenu.noMatch" />
+    );
   }
 
   render() {
@@ -188,24 +205,43 @@ class NavigationSideMenu extends React.Component {
       selectedMenuKey,
       ...customProps
     } = this.props;
+    const { keys } = this.state;
     const currentItem = this.state.items[selectedMenuKey];
 
     let onBack;
-    const parentKey = this.state.parents[this.props.selectedMenuKey];
+    const parentKey = this.state.parents[selectedMenuKey];
     if (parentKey) {
       onBack = this.handleBackClick;
     } else {
       onBack = routingStackBack;
     }
 
-    let actionHeader;
+    let header;
     if (onBack || !currentItem.isRootMenu) {
-      actionHeader = <ActionHeader className={cx('side-menu-action-header')} onBack={onBack} title={currentItem ? currentItem.text : null} data-navigation-side-menu-action-header />;
+      header = (
+        <Fragment>
+          <ActionHeader
+            className={cx('side-menu-action-header')}
+            onBack={onBack}
+            title={currentItem ? currentItem.text : null}
+            data-navigation-side-menu-action-header
+          />
+          <FormattedMessage id="Terra.NavigationSideMenu.filter">
+            {placeholder => (
+              <SearchField
+                isBlock
+                placeholder={placeholder}
+                onChange={this.handleFilter}
+              />
+            )}
+          </FormattedMessage>
+        </Fragment>
+      );
     }
 
     return (
-      <ContentContainer {...customProps} header={actionHeader} fill>
-        {this.buildListContent(currentItem)}
+      <ContentContainer {...customProps} header={header} fill>
+        {this.buildListContent(keys)}
       </ContentContainer>
     );
   }
