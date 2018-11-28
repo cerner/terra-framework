@@ -1,26 +1,90 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DisclosureManager should render using the provided render function 1`] = `
-<div
-  id="wrapper"
+<DisclosureManager
+  render={[Function]}
+  supportedDisclosureTypes={Array []}
 >
   <div
-    app={
-      AppDelegateInstance {
-        "disclose": [Function],
-      }
-    }
-    id="child1"
-    key=".0"
-  />
+    id="wrapper"
+  >
+    <withDisclosureManager(Component)
+      id="child1"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "disclose": [Function],
+          }
+        }
+        id="child1"
+      >
+        <div
+          id="child1"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+    <withDisclosureManager(Component)
+      id="child2"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "disclose": [Function],
+          }
+        }
+        id="child2"
+      >
+        <div
+          id="child2"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+  </div>
+</DisclosureManager>
+`;
+
+exports[`DisclosureManager should render when trapNestedDisclosureRequests is provided 1`] = `
+<DisclosureManager
+  render={[Function]}
+  supportedDisclosureTypes={Array []}
+  trapNestedDisclosureRequests={true}
+>
   <div
-    app={
-      AppDelegateInstance {
-        "disclose": [Function],
-      }
-    }
-    id="child2"
-    key=".1"
-  />
-</div>
+    id="wrapper"
+  >
+    <withDisclosureManager(Component)
+      id="child1"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "disclose": [Function],
+          }
+        }
+        id="child1"
+      >
+        <div
+          id="child1"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+    <withDisclosureManager(Component)
+      id="child2"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "disclose": [Function],
+          }
+        }
+        id="child2"
+      >
+        <div
+          id="child2"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+  </div>
+</DisclosureManager>
 `;

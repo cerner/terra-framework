@@ -3,6 +3,13 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Change
+* Updated ApplicationLayout and related components to interface directly with a parent DisclosureManager. 
+* Removed instances of the ApplicationLayout and related components injecting an `app` prop into child components.
+
+### Added
+* Added missing ar translations.
+
 ### Changed
 * Wdio tests changed to use themeCombinationOfCustomProperties
 

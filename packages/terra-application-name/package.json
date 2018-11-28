@@ -29,7 +29,6 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-app-delegate": "^2.8.0",
     "terra-application-header-layout": "^2.20.0",
     "terra-application-menu-layout": "^2.15.0",
     "terra-doc-template": "^1.1.0",

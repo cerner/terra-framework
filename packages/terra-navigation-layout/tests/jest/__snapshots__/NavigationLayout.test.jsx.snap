@@ -4,7 +4,6 @@ exports[`NavigationLayout should render a NavigationLayout with defaulted compon
 <Layout
   header={
     <NavigationLayoutContent
-      app={AppDelegateInstance {}}
       navigationLayoutRoutes={
         Array [
           Object {
@@ -23,7 +22,6 @@ exports[`NavigationLayout should render a NavigationLayout with defaulted compon
   }
   menu={
     <NavigationLayoutContent
-      app={AppDelegateInstance {}}
       navigationLayoutRoutes={
         Array [
           Object {
@@ -43,7 +41,6 @@ exports[`NavigationLayout should render a NavigationLayout with defaulted compon
   }
 >
   <NavigationLayoutContent
-    app={AppDelegateInstance {}}
     navigationLayoutRoutes={
       Array [
         Object {
@@ -89,7 +86,6 @@ exports[`NavigationLayout should render a NavigationLayout with provided compone
 <Layout
   header={
     <Header
-      app={AppDelegateInstance {}}
       navigationLayoutRoutes={
         Array [
           Object {
@@ -108,7 +104,6 @@ exports[`NavigationLayout should render a NavigationLayout with provided compone
   }
   menu={
     <Menu
-      app={AppDelegateInstance {}}
       navigationLayoutRoutes={
         Array [
           Object {
@@ -127,7 +122,6 @@ exports[`NavigationLayout should render a NavigationLayout with provided compone
   }
 >
   <Content
-    app={AppDelegateInstance {}}
     navigationLayoutRoutes={
       Array [
         Object {
@@ -168,7 +162,6 @@ exports[`NavigationLayout should render a NavigationLayout without menu if locat
 <Layout
   header={
     <NavigationLayoutContent
-      app={AppDelegateInstance {}}
       navigationLayoutRoutes={
         Array [
           Object {
@@ -188,7 +181,6 @@ exports[`NavigationLayout should render a NavigationLayout without menu if locat
   menu={null}
 >
   <NavigationLayoutContent
-    app={AppDelegateInstance {}}
     navigationLayoutRoutes={
       Array [
         Object {

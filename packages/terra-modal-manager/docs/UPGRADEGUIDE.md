@@ -1,48 +1,99 @@
-# Terra Modal Manger - Upgrade Guide
+# Terra Modal Manager - Upgrade Guide
 
-## Steps for uplifting from terra-modal 2.0
-If you were previously consuming terra-modal directly, you will need to wrap your component or application with terra-modal-manager, rather than pull the modal into implementation.
-```diff
-+import ModalManger from 'terra-modal-manager';
+## Upgrading from v3.x to v4.x
 
-const MyApplication = () => (
-+  <ModalManager>
--  <MyComponent myProps={propData} />
-+    <MyComponent myProps={propData} />
-+  </ModalManger>
+With the release of terra-disclosure-manager v3.x, the ModalManager now provides its APIs through context instead of prop injection. Please view the terra-disclosure-manager documentation/upgrade guide for more information. 
+
+The below example code details the changes necessary to interact with terra-modal-manager v4.x.
+
+```jsx
+/**
+ * v3.x
+ */
+import Base from 'terra-base';
+import ModalManager from 'terra-modal-manager'; 
+import AppDelegate from 'terra-app-delegate';
+
+const MyDisclosureComponent = ({ app }) => (
+  <Button
+    text="Close Modal"
+    onClick={() => { 
+      app.closeDisclosure();
+    }}
+  />
 );
-```
+MyDisclosureComponent.propType = {
+  app: AppDelegate.propType,
+}
 
-Within your component use the terra-app-delegate disclosure pattern to launch your modal.
-```diff
-  handleButtonClick() {
--    this.setState({ isOpen: true });
-+    this.props.app.disclose({
-+      preferredType: 'modal',
-+      size: disclosureSize,
-+      content: {
-+        key: 'my-modal-component-instance',
-+        component: <MyModalComponent />
-+      }
-+    });
-  }
+const MyComponent = ({ app }) => (
+  <Button
+    text="Launch Modal"
+    onClick={() => { 
+      app.disclose({
+        preferredType: 'modal',
+        content: {
+          key: 'MY-MODAL-DISCLOSURE',
+          component: <MyDisclosureComponent />,
+        }
+      });
+    }}
+  />
+);
+MyComponent.propType = {
+  app: AppDelegate.propType,
+}
 
-  render() {
-    return (
--      <div>
--        <Modal
--          ariaLabel="My Modal"
--          isOpen={this.state.isOpen}
--          onRequestClose={this.handleCloseModal}
--        >
--          <div>
--            <h1>My Modal</h1>
--            <p>Additional content goes here</p>
--            <button type="button" onClick={this.handleCloseModal}>Close Modal</button>
--          </div>
--       </Modal>
-        <button type="button" onClick={this.handleButtonClick}>Open Modal</button>
--     </div>
-    );
-  }
+const MyApp = () => (
+  <Base locale="en">
+    <ModalManager>
+      <MyComponent />
+    </ModalManager>
+  </Base>
+)
+
+/**
+ * v4.x
+ */
+import Base from 'terra-base';
+import ModalManager from 'terra-modal-manager'; 
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
+
+const MyDisclosureComponent = withDisclosureManager({ disclosureManager }) => (
+  <Button
+    text="Close Modal"
+    onClick={() => { 
+      disclosureManager.closeDisclosure();
+    }}
+  />
+);
+MyDisclosureComponent.propTypes = {
+  disclosureManager: disclosureManagerShape,
+}
+
+const MyComponent = withDisclosureManager({ disclosureManager }) => (
+  <Button
+    text="Launch Modal"
+    onClick={() => { 
+      disclosureManager.disclose({
+        preferredType: 'modal',
+        content: {
+          key: 'MY-MODAL-DISCLOSURE',
+          component: <MyDisclosureComponent />,
+        }
+      });
+    }}
+  />
+);
+MyComponent.propTypes = {
+  disclosureManager: disclosureManagerShape,
+}
+
+const MyApp = () => (
+  <Base locale="en">
+    <ModalManager>
+      <MyComponent />
+    </ModalManager>
+  </Base>
+)
 ```

@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'terra-button';
-import AppDelegate from 'terra-app-delegate';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import Popup from '../../../Popup';
 
 class ModalContent extends React.Component {
@@ -26,12 +26,12 @@ class ModalContent extends React.Component {
   }
 
   render() {
-    const { app } = this.props;
+    const { disclosureManager } = this.props;
 
     return (
       <div id="test-popup-area" className="content-container" style={{ height: '100%', padding: '10px' }}>
-        {app && app.releaseFocus ? <h4>Modal focus is released!</h4> : null }
-        {app && app.requestFocus ? <h4>Modal focus is trapped!</h4> : null }
+        {disclosureManager && disclosureManager.releaseFocus ? <h4>Modal focus is released!</h4> : null }
+        {disclosureManager && disclosureManager.requestFocus ? <h4>Modal focus is trapped!</h4> : null }
         <br />
         <Popup
           isArrowDisplayed
@@ -39,22 +39,22 @@ class ModalContent extends React.Component {
           isOpen={this.state.open}
           onRequestClose={this.handlePopupRequestClose}
           targetRef={() => document.getElementById('popup-in-modal')}
-          releaseFocus={app.releaseFocus}
-          requestFocus={app.requestFocus}
+          releaseFocus={disclosureManager.releaseFocus}
+          requestFocus={disclosureManager.requestFocus}
         >
           <p>This is popup content</p>
         </Popup>
         <Button id="popup-in-modal" style={{ position: 'absolute', left: '125px' }} text="Popup In Modal" onClick={this.handlePopupButtonClick} />
         <br />
         <br />
-        <Button className="close-disclosure" text="Close Disclosure" onClick={app.closeDisclosure} />
+        <Button className="close-disclosure" text="Close Disclosure" onClick={disclosureManager.closeDisclosure} />
       </div>
     );
   }
 }
 
 ModalContent.propTypes = {
-  app: AppDelegate.propType,
+  disclosureManager: disclosureManagerShape,
 };
 
-export default ModalContent;
+export default withDisclosureManager(ModalContent);

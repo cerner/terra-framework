@@ -32,10 +32,10 @@
     "terra-abstract-modal": "^1.1.0",
     "terra-action-footer": "^1.5.0",
     "terra-action-header": "^1.2.0",
-    "terra-app-delegate": "^2.8.0",
     "terra-button": "^2.8.0",
     "terra-doc-template": "^1.5.0",
-    "terra-modal-manager": "^3.14.0"
+    "terra-modal-manager": "^3.14.0",
+    "terra-disclosure-manager": "^2.15.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
