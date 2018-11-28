@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Add ability to filter navigation side menu list items by user input
 
 1.17.0 - (December 3, 2018)
 ------------------
