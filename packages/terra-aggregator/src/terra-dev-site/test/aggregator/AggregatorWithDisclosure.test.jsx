@@ -1,6 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import SlidePanelManager from 'terra-slide-panel-manager';
+import { withDisclosureManager } from 'terra-disclosure-manager';
+
 import Aggregator from '../../../Aggregator';
 import AggregatorItem from '../common/AggregatorItem';
 
@@ -18,21 +19,17 @@ const items = Object.freeze([{
   component: <AggregatorItem name="Section 3" targetId="section3" />,
 }]);
 
-const AggregatorWrapper = ({ app }) => (
+const Wrapper = withDisclosureManager(({ disclosureManager }) => (
   <Aggregator
-    disclose={app.disclose}
     items={items}
+    disclose={disclosureManager.disclose}
   />
-);
-
-AggregatorWrapper.propTypes = {
-  app: PropTypes.shape({}),
-};
+));
 
 const AggregatorWithDisclosure = () => (
   <div id="test-aggregator" role="main" style={{ height: '500px' }}>
     <SlidePanelManager>
-      <AggregatorWrapper />
+      <Wrapper />
     </SlidePanelManager>
   </div>
 );

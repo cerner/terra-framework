@@ -2,14 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import AbstractModal from 'terra-abstract-modal';
-import AppDelegate from 'terra-app-delegate';
 import SlideGroup from 'terra-slide-group';
 import DisclosureManager, { availableDisclosureSizes } from 'terra-disclosure-manager';
 
 import 'terra-base/lib/baseStyles';
 import styles from './ModalManager.module.scss';
-/* eslint-disable-next-line import/no-cycle */
-import withModalManager from './withModalManager';
 
 const disclosureType = 'modal';
 export { disclosureType };
@@ -17,7 +14,10 @@ export { disclosureType };
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  app: AppDelegate.propType,
+  /**
+   * The components to be rendered in the body of the ModalManager. These components will receive the
+   * disclosure capabilities through the DisclosureManger's context API.
+   */
   children: PropTypes.node,
 };
 
@@ -45,7 +45,7 @@ class ModalManager extends React.Component {
   }
 
   renderModal(manager) {
-    const { app, children, ...customProps } = this.props;
+    const { children, ...customProps } = this.props;
 
     const containerClassNames = cx([
       'container',
@@ -84,13 +84,13 @@ class ModalManager extends React.Component {
   }
 
   render() {
-    const { app, children } = this.props;
+    const { children } = this.props;
 
     return (
       <DisclosureManager
-        app={app}
         supportedDisclosureTypes={[disclosureType]}
         render={this.renderModal}
+        trapNestedDisclosureRequests
       >
         {children}
       </DisclosureManager>
@@ -101,4 +101,3 @@ class ModalManager extends React.Component {
 ModalManager.propTypes = propTypes;
 
 export default ModalManager;
-export { withModalManager };

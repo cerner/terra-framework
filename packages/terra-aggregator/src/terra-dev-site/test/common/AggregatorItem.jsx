@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TestExample from 'terra-disclosure-manager/lib/terra-dev-site/test/common/TestExample';
 import SelectableList from 'terra-list/lib/SelectableList';
+import DisclosureComponent from './DisclosureComponent';
 
 class AggregatorItem extends React.Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class AggregatorItem extends React.Component {
             size: 'small',
             content: {
               key: `Disclosure for ${name}`,
-              component: <TestExample identifier={`Disclosure for ${name}`} />,
+              component: <DisclosureComponent identifier={`Disclosure for ${name}`} />,
             },
           });
         }

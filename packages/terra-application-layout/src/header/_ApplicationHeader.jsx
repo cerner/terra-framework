@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';
-import AppDelegate from 'terra-app-delegate';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import ApplicationHeaderLayout from 'terra-application-header-layout';
 import { ApplicationHeaderUtility } from 'terra-application-utility';
 import { ApplicationHeaderName } from 'terra-application-name';
@@ -21,10 +21,6 @@ import styles from './ApplicationHeader.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  /**
-   * The AppDelegate instance that will be propagated to the components presented within the NavigationLayout.
-   */
-  app: AppDelegate.propType,
   /**
    * Navigation tab alignment. Navigational links that will generate list items that will update the path.
    * These paths are matched with react-router for selection.
@@ -58,6 +54,10 @@ const propTypes = {
    * Internationalization object with translation APIs. Provided by `injectIntl`.
    */
   intl: intlShape,
+  /**
+   * DisclosureManagerDelegate instance automatically provided by a DisclosureManagerProvider.
+   */
+  disclosureManager: disclosureManagerShape,
 };
 
 const defaultProps = {
@@ -107,9 +107,9 @@ class ApplicationHeader extends React.Component {
   }
 
   handleUtilityOnChange(event, itemData) {
-    const { utilityConfig, app } = this.props;
+    const { utilityConfig, disclosureManager } = this.props;
 
-    utilityConfig.onChange(event, itemData, app && app.disclose);
+    utilityConfig.onChange(event, itemData, disclosureManager && disclosureManager.disclose);
   }
 
   renderToggle() {
@@ -168,10 +168,10 @@ class ApplicationHeader extends React.Component {
   }
 
   renderExtensions(isCompact) {
-    const { app, layoutConfig, extensions } = this.props;
+    const { layoutConfig, extensions } = this.props;
 
     if (!isCompact && extensions) {
-      return React.cloneElement(extensions, { app, layoutConfig });
+      return React.cloneElement(extensions, { layoutConfig });
     }
 
     return null;
@@ -223,7 +223,7 @@ class ApplicationHeader extends React.Component {
 
   render() {
     const {
-      app,
+      disclosureManager,
       applicationLinks,
       extensions,
       layoutConfig,
@@ -260,4 +260,4 @@ class ApplicationHeader extends React.Component {
 ApplicationHeader.propTypes = propTypes;
 ApplicationHeader.defaultProps = defaultProps;
 
-export default injectIntl(ApplicationHeader);
+export default injectIntl(withDisclosureManager(ApplicationHeader));

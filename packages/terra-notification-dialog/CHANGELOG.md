@@ -3,6 +3,15 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added missing ar, es-ES, es-US, fr-FR, and pt-BR translations.
+
+### Changed
+* Minor improvements to doc examples
+* Updated examples to consume terra-disclosure-manager v3.x
+
+### Removed
+* Removed dependency on terra-app-delegate package.
 
 1.13.0 - (November 15, 2018)
 ------------------

@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
-import TextField from 'terra-form/lib/TextField';
-import AppDelegate from 'terra-app-delegate';
+import Input from 'terra-form-input';
 import ActionHeader from 'terra-action-header';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 
 import styles from './example-styles.scss';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  app: AppDelegate.propType,
   name: PropTypes.string,
   disclosureType: PropTypes.string,
+  disclosureManager: disclosureManagerShape,
 };
 
 const defaultProps = {
@@ -33,8 +33,10 @@ class DisclosureComponent extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.app && this.props.app.registerDismissCheck) {
-      this.props.app.registerDismissCheck(this.checkLockState);
+    const { disclosureManager } = this.props;
+
+    if (disclosureManager && disclosureManager.registerDismissCheck) {
+      disclosureManager.registerDismissCheck(this.checkLockState);
     }
   }
 
@@ -55,7 +57,7 @@ class DisclosureComponent extends React.Component {
   }
 
   render() {
-    const { app, name, disclosureType } = this.props;
+    const { disclosureManager, name, disclosureType } = this.props;
 
     return (
       <ContentContainer
@@ -63,10 +65,10 @@ class DisclosureComponent extends React.Component {
         header={(
           <ActionHeader
             title={`Disclosure - ${name}`}
-            onClose={app.closeDisclosure}
-            onBack={app.goBack}
-            onMaximize={app.maximize}
-            onMinimize={app.minimize}
+            onClose={disclosureManager.closeDisclosure}
+            onBack={disclosureManager.goBack}
+            onMaximize={disclosureManager.maximize}
+            onMinimize={disclosureManager.minimize}
           />
         )}
       >
@@ -77,7 +79,7 @@ class DisclosureComponent extends React.Component {
           <Button
             text="Dismiss"
             onClick={() => {
-              app.dismiss()
+              disclosureManager.dismiss()
                 .catch(() => {
                   console.log('Dismiss failed. A lock must be in place.'); // eslint-disable-line no-console
                 });
@@ -86,12 +88,12 @@ class DisclosureComponent extends React.Component {
           <Button
             text="Disclose Again"
             onClick={() => {
-              app.disclose({
+              disclosureManager.disclose({
                 preferredType: disclosureType,
                 size: 'small',
                 content: {
                   key: `Nested ${name}`,
-                  component: <DisclosureComponent name={`Nested ${name}`} disclosureType={disclosureType} />,
+                  component: <WrappedDisclosureComponent name={`Nested ${name}`} disclosureType={disclosureType} />,
                 },
               });
             }}
@@ -99,7 +101,7 @@ class DisclosureComponent extends React.Component {
           <br />
           <br />
           <p>The disclosed component can register a dismiss check function that can interrupt and prevent dismissal. This component will prompt the user if text is detected in the input field below.</p>
-          <TextField
+          <Input
             value={this.state.text || ''}
             onChange={(event) => {
               this.setState({
@@ -117,4 +119,6 @@ class DisclosureComponent extends React.Component {
 DisclosureComponent.propTypes = propTypes;
 DisclosureComponent.defaultProps = defaultProps;
 
-export default DisclosureComponent;
+const WrappedDisclosureComponent = withDisclosureManager(DisclosureComponent);
+
+export default WrappedDisclosureComponent;

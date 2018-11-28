@@ -1,14 +1,18 @@
 import PropTypes from 'prop-types';
-import {
-  registerComponentForDisclosure,
-  getComponentForDisclosure,
-} from '../disclosure-component-registry/DisclosureComponentRegistry';
 
 const supportedAttributes = [
-  'disclose', 'dismiss', 'closeDisclosure', 'goBack', 'maximize', 'minimize', 'requestFocus', 'releaseFocus', 'registerDismissCheck',
+  'disclose',
+  'dismiss',
+  'closeDisclosure',
+  'goBack',
+  'maximize',
+  'minimize',
+  'requestFocus',
+  'releaseFocus',
+  'registerDismissCheck',
 ];
 
-class AppDelegateInstance {
+class DisclosureManagerDelegateInstance {
   constructor(data) {
     supportedAttributes.forEach((attribute) => {
       if (data[attribute]) {
@@ -19,7 +23,7 @@ class AppDelegateInstance {
 }
 
 const create = data => (
-  Object.freeze(new AppDelegateInstance(data))
+  Object.freeze(new DisclosureManagerDelegateInstance(data))
 );
 
 const clone = (delegate, data) => {
@@ -47,7 +51,7 @@ const isEqual = (delegateA, delegateB) => {
   ));
 };
 
-const AppDelegate = {
+const DisclosureManagerDelegate = {
   propType: PropTypes.objectOf((propValue, key, componentName, location, propFullName) => {
     if (supportedAttributes.indexOf(key) < 0) {
       return new Error(`Invalid key '${key}' supplied to ${componentName}'s '${propFullName}' prop. Validation failed.`);
@@ -58,8 +62,6 @@ const AppDelegate = {
   create,
   clone,
   isEqual,
-  registerComponentForDisclosure,
-  getComponentForDisclosure,
 };
 
-export default AppDelegate;
+export default DisclosureManagerDelegate;

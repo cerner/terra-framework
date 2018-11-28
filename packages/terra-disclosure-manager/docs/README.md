@@ -9,10 +9,6 @@ The DisclosureManager is a stateful component used to manage disclosure presenta
 
 ## Usage
 
-### Implementation Requirements
-
-The DisclosureManager utilizes the AppDelegate API to manage disclosure requests. The components provided as children to the DisclosureManager, and the components disclosed within it, must support an AppDelegate prop (as `app`). This AppDelegate instance will provide component-specific implementations of the various control mechanisms for the manager.
-
 ### Rendering
 
 The DisclosureManager does not implement a traditional render function. A `render` prop should be provided to the DisclosureManager in order to render the various components managed by the DisclosureManager. The `render` function should accept an Object parameter containing the DisclosureManager's state.
@@ -30,13 +26,13 @@ The DisclosureManager does not implement a traditional render function. A `rende
 
 |Key|Value|
 |---|---|
-|`components`|An Array of React components to render as content. These components are provided with an AppDelegate prop (as `app`) with DisclosureManager integration for disclosing content.|
+|`components`|An Array of React components to render as content.|
 
 `disclosure` Object API:
 
 |Key|Value|
 |---|---|
-|`components`|An Array of React components to render in a disclosure mechanism. These components are provided with an AppDelegate prop (as `app`) with DisclosureManager integration for disclosure management.|
+|`components`|An Array of React components to render in a disclosure mechanism.|
 |`isOpen`|A boolean indicating the current display state of the DisclosureManager.|
 |`isFocused`|A boolean indicating the current focus state of the DisclosureManager.|
 |`isMaximized`|A boolean indicating the current maximize state of the DisclosureManager.|
@@ -71,15 +67,65 @@ Example (using the Modal and SlideGroup):
 
 ### Interacting with the Disclosure Manager
 
+The DisclosureManager wraps its contents in a context provider that exposes an instance of a DisclosureManagerDelegate, an object containing DisclosureManager APIs, to components based upon their presented location. 
+
+#### withDisclosureManager
+
+Components can use the higher order component generator `withDisclosureManager()` to wrap themselves automatically in a context consumer and receive a prop named `disclosureManager` containing a DisclosureManagerDelegate instance.
+
+```jsx
+import Base from 'terra-base';
+import ModalManager from 'terra-modal-manager'; 
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
+
+const MyDisclosureComponent = withDisclosureManager({ disclosureManager }) => (
+  <Button
+    text="Close Modal"
+    onClick={() => { 
+      disclosureManager.closeDisclosure();
+    }}
+  />
+);
+MyDisclosureComponent.propTypes = {
+  disclosureManager: disclosureManagerShape,
+}
+
+const MyComponent = withDisclosureManager({ disclosureManager }) => (
+  <Button
+    text="Launch Modal"
+    onClick={() => { 
+      disclosureManager.disclose({
+        preferredType: 'modal',
+        content: {
+          key: 'MY-MODAL-DISCLOSURE',
+          component: <MyDisclosureComponent />,
+        }
+      });
+    }}
+  />
+);
+MyComponent.propTypes = {
+  disclosureManager: disclosureManagerShape,
+}
+
+const MyApp = () => (
+  <Base locale="en">
+    <ModalManager>
+      <MyComponent />
+    </ModalManager>
+  </Base>
+)
+```
+
 #### Children
 
-The AppDelegate provided to the child components contains a `disclose` function. This `disclose` function validates the disclosure type with which it is provided against the set of supported disclosure types given to the DisclosureManager as a prop. If the provided type is not supported, and if the DisclosureManager was given an AppDelegate prop to fall back to, the DisclosureManager will call the disclose function provided by its AppDelegate prop.
+The DisclosureManagerDelegate provided to the child components contains a `disclose` function. This `disclose` function validates the disclosure type with which it is provided against the set of supported disclosure types given to the DisclosureManager as a prop. If the provided type is not supported, and if the DisclosureManager detects another DisclosureManager higher in the component hierarchy, the DisclosureManager will call the disclose function provided by that parent DisclosureManager instance.
 
 If the type is supported, the DisclosureManager will check the currently disclosed component's state to ensure it can be replaced. If the disclosure is denied, then `disclose` returns a rejected Promise. If the disclosure is allowed, then a resolved Promise is returned. This Promise will be resolved with an Object containing functions and Promises that can be used to manipulate the disclosure, if necessary. Included are `dismissDisclosure`, a function that will dismiss the disclosed content, and `afterDismiss`, a deferred Promise that will be resolved when the disclosed content is dismissed by any means. Alternatively, if the additional logic isn't needed, the returned Promise can be completely ignored.
 
 Example:
 ```javascript
-app.disclose({
+disclosureManager.disclose({
   preferredType: 'disclosure-type',
   size: 'large',
   content: {
@@ -123,7 +169,7 @@ app.disclose({
 
 #### Disclosure Content
 
-In addition to a `disclose` function, a number of other functions are exposed to manage various segments of the disclosure state. The included functions are:
+In addition to a `disclose` function, a number of other functions are exposed to components rendered in the disclosure mechanism to manage various segments of the disclosure state. The included functions are:
 
 |Function|Description|
 |---|---|
@@ -148,11 +194,11 @@ Example:
 // MyDisclosedComponent.jsx
 
 componentDidMount() {
-  const { app } = this.props;
+  const { disclosureManager } = this.props;
 
   // A dismiss function can be registered multiple times, but it usually makes sense to
   // register a bound function a single time on mount.
-  app.registerDismissCheck(this.unsavedChangesCheck);
+  disclosureManager.registerDismissCheck(this.unsavedChangesCheck);
 }
 
 unsavedChangesCheck() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'terra-button';
-import AppDelegate from 'terra-app-delegate';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import NotificationDialogWithFocus from './NotificationDialogWithFocus';
 
 class NotificationDialogModalContainer extends React.Component {
@@ -11,7 +11,7 @@ class NotificationDialogModalContainer extends React.Component {
   }
 
   disclose() {
-    this.props.app.disclose({
+    this.props.disclosureManager.disclose({
       preferredType: 'modal',
       content: {
         key: 'DemoContainer',
@@ -21,12 +21,6 @@ class NotificationDialogModalContainer extends React.Component {
   }
 
   render() {
-    /* eslint-disable no-unused-vars */
-    const {
-      app,
-    } = this.props;
-    /* eslint-enable no-unused-vars */
-
     return (
       <Button text="Disclose" onClick={this.disclose} />
     );
@@ -34,7 +28,7 @@ class NotificationDialogModalContainer extends React.Component {
 }
 
 NotificationDialogModalContainer.propTypes = {
-  app: AppDelegate.propType,
+  disclosureManager: disclosureManagerShape,
 };
 
-export default NotificationDialogModalContainer;
+export default withDisclosureManager(NotificationDialogModalContainer);
