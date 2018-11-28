@@ -88,6 +88,7 @@
     margin-bottom: var(--terra-application-header-utility-menu-footer-item-margin-bottom, 0.7143rem);
     margin-left: var(--terra-application-header-utility-menu-footer-item-margin-left, 0.7143rem);
     margin-right: var(--terra-application-header-utility-menu-footer-item-margin-right, 0.7143rem);
+    margin-top: var(--terra-application-header-utility-menu-footer-item-margin-top);
   }
 
   .menu-utility-body-item {
@@ -176,6 +177,7 @@
     margin-bottom: var(--terra-application-menu-utility-menu-footer-item-margin-bottom, 0.7143rem);
     margin-left: var(--terra-application-menu-utility-menu-footer-item-margin-left, 0.7143rem);
     margin-right: var(--terra-application-menu-utility-utility-menu-footer-item-margin-bottom, 0.7143rem);
+    margin-top: var(--terra-application-menu-utility-menu-footer-item-margin-top);
   }
 
   .menu-item-fill {
