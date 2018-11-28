@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added missing ar, es-ES, es-US, fr-FR, and pt-BR translations.
 
+### Changed
+* Minor improvements to doc examples
+
 1.13.0 - (November 15, 2018)
 ------------------
 ### Changed

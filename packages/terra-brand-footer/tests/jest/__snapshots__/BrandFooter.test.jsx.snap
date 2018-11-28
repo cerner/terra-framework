@@ -132,6 +132,12 @@ exports[`BrandFooter should render with a section header and provided links 1`] 
           className="list-item"
           key="Cerner Codehttps://code.cerner.com/"
         >
+          <span
+            aria-hidden={true}
+            className="separator"
+          >
+            /
+          </span>
           <a
             className="link"
             href="https://code.cerner.com/"
@@ -340,6 +346,12 @@ exports[`BrandFooter should render with multiple link groups 1`] = `
           className="list-item"
           key="Cerner Codehttps://code.cerner.com/"
         >
+          <span
+            aria-hidden={true}
+            className="separator"
+          >
+            /
+          </span>
           <a
             className="link"
             href="https://code.cerner.com/"
@@ -378,6 +390,12 @@ exports[`BrandFooter should render with multiple link groups 1`] = `
           className="list-item"
           key="Cerner Code As Wellhttps://code.cerner.com/"
         >
+          <span
+            aria-hidden={true}
+            className="separator"
+          >
+            /
+          </span>
           <a
             className="link"
             href="https://code.cerner.com/"
@@ -512,6 +530,12 @@ exports[`BrandFooter should render with provided links 1`] = `
           className="list-item"
           key="Cerner Codehttps://code.cerner.com/"
         >
+          <span
+            aria-hidden={true}
+            className="separator"
+          >
+            /
+          </span>
           <a
             className="link"
             href="https://code.cerner.com/"
@@ -566,6 +590,12 @@ exports[`BrandFooter should render with provided links and content bottom 1`] = 
           className="list-item"
           key="Cerner Codehttps://code.cerner.com/"
         >
+          <span
+            aria-hidden={true}
+            className="separator"
+          >
+            /
+          </span>
           <a
             className="link"
             href="https://code.cerner.com/"
@@ -626,6 +656,12 @@ exports[`BrandFooter should render with provided links and content bottom 2`] = 
           className="list-item"
           key="Cerner Codehttps://code.cerner.com/"
         >
+          <span
+            aria-hidden={true}
+            className="separator"
+          >
+            /
+          </span>
           <a
             className="link"
             href="https://code.cerner.com/"
@@ -686,6 +722,12 @@ exports[`BrandFooter should render with provided links and content left 1`] = `
           className="list-item"
           key="Cerner Codehttps://code.cerner.com/"
         >
+          <span
+            aria-hidden={true}
+            className="separator"
+          >
+            /
+          </span>
           <a
             className="link"
             href="https://code.cerner.com/"
@@ -747,6 +789,12 @@ exports[`BrandFooter should render with provided links and content left 2`] = `
           className="list-item"
           key="Cerner Codehttps://code.cerner.com/"
         >
+          <span
+            aria-hidden={true}
+            className="separator"
+          >
+            /
+          </span>
           <a
             className="link"
             href="https://code.cerner.com/"
@@ -808,6 +856,12 @@ exports[`BrandFooter should render with provided links and content right 1`] = `
           className="list-item"
           key="Cerner Codehttps://code.cerner.com/"
         >
+          <span
+            aria-hidden={true}
+            className="separator"
+          >
+            /
+          </span>
           <a
             className="link"
             href="https://code.cerner.com/"
@@ -875,6 +929,12 @@ exports[`BrandFooter should render with provided links and content right 2`] = `
           className="list-item"
           key="Cerner Codehttps://code.cerner.com/"
         >
+          <span
+            aria-hidden={true}
+            className="separator"
+          >
+            /
+          </span>
           <a
             className="link"
             href="https://code.cerner.com/"
@@ -942,6 +1002,12 @@ exports[`BrandFooter should render with provided links, content left, content bo
           className="list-item"
           key="Cerner Codehttps://code.cerner.com/"
         >
+          <span
+            aria-hidden={true}
+            className="separator"
+          >
+            /
+          </span>
           <a
             className="link"
             href="https://code.cerner.com/"
@@ -1021,6 +1087,12 @@ exports[`BrandFooter should render with provided links, content left, content bo
           className="list-item"
           key="Cerner Codehttps://code.cerner.com/"
         >
+          <span
+            aria-hidden={true}
+            className="separator"
+          >
+            /
+          </span>
           <a
             className="link"
             href="https://code.cerner.com/"
@@ -1100,6 +1172,12 @@ exports[`BrandFooter should render with the links prop 1`] = `
           className="list-item"
           key="Cerner Codehttps://code.cerner.com/"
         >
+          <span
+            aria-hidden={true}
+            className="separator"
+          >
+            /
+          </span>
           <a
             className="link"
             href="https://code.cerner.com/"
