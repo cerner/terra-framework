@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Replaced use of componentWillMount with componentDidMount
+
 ### Fixed
 * Fixed preventDefault error
 
