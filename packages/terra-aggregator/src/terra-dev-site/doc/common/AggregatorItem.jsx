@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'terra-button';
-import List, { Item } from 'terra-list';
+import List, { Item } from 'terra-list2';
 import ContentContainer from 'terra-content-container';
 import Arrange from 'terra-arrange';
 import AppDelegate from 'terra-app-delegate';
@@ -106,9 +106,9 @@ class AggregatorItem extends React.Component {
       name, disclosureType, disclose, aggregatorDelegate, requestDisclosureFocus, releaseDisclosureFocus, registerDismissCheck, ...customProps
     } = this.props;
 
-    let selectedIndex;
+    let index;
     if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState && aggregatorDelegate.itemState.selectedIndex !== undefined) {
-      selectedIndex = aggregatorDelegate.itemState.selectedIndex;
+      index = aggregatorDelegate.itemState.selectedIndex;
     }
 
     return (
@@ -128,9 +128,10 @@ class AggregatorItem extends React.Component {
       >
         <List
           isDivided
+          role="listbox"
         >
           <Item
-            isSelected={selectedIndex === 0}
+            isSelected={index === 0}
             isSelectable
             onSelect={this.handleSelection}
             metaData={{ index: 0 }}
@@ -138,7 +139,7 @@ class AggregatorItem extends React.Component {
             <div style={{ padding: '.7rem' }}>Row 0</div>
           </Item>
           <Item
-            isSelected={selectedIndex === 1}
+            isSelected={index === 1}
             isSelectable
             onSelect={this.handleSelection}
             metaData={{ index: 1 }}
@@ -146,7 +147,7 @@ class AggregatorItem extends React.Component {
             <div style={{ padding: '.7rem' }}>Row 1</div>
           </Item>
           <Item
-            isSelected={selectedIndex === 2}
+            isSelected={index === 2}
             isSelectable
             onSelect={this.handleSelection}
             metaData={{ index: 2 }}
@@ -154,7 +155,7 @@ class AggregatorItem extends React.Component {
             <div style={{ padding: '.7rem' }}>Row 2</div>
           </Item>
           <Item
-            isSelected={selectedIndex === 3}
+            isSelected={index === 3}
             isSelectable
             onSelect={this.handleSelection}
             metaData={{ index: 3 }}
@@ -162,7 +163,7 @@ class AggregatorItem extends React.Component {
             <div style={{ padding: '.7rem' }}>Row 3</div>
           </Item>
           <Item
-            isSelected={selectedIndex === 4}
+            isSelected={index === 4}
             isSelectable
             onSelect={this.handleSelection}
             metaData={{ index: 4 }}
@@ -170,7 +171,7 @@ class AggregatorItem extends React.Component {
             <div style={{ padding: '.7rem' }}>Row 4</div>
           </Item>
           <Item
-            isSelected={selectedIndex === 5}
+            isSelected={index === 5}
             isSelectable
             onSelect={this.handleSelection}
             metaData={{ index: 5 }}

@@ -1,5 +1,5 @@
 import React from 'react';
-import InfiniteList from '../../src/InfiniteList';
+import InfiniteList, { Item } from '../../src/InfiniteList';
 
 describe('InfiniteList', () => {
   it('should render a default component', () => {
@@ -14,7 +14,7 @@ describe('InfiniteList', () => {
       progressiveLoadingIndicator: <div style={{ height: '40px', width: '100%' }} />,
     };
 
-    const component = <InfiniteList infiniteProps={infiniteProps} />;
+    const component = <InfiniteList {...infiniteProps} />;
     const wrapper = shallow(component);
     expect(wrapper).toMatchSnapshot();
   });
@@ -24,10 +24,18 @@ describe('InfiniteList', () => {
       <InfiniteList
         isFinishedLoading
       >
-        <InfiniteList.Item key={`item-${1}`} content={<div style={{ height: '20px', width: '100%' }}>item 1</div>} />
-        <InfiniteList.Item key={`item-${2}`} content={<div style={{ height: '20px', width: '100%' }}>item 2</div>} />
-        <InfiniteList.Item key={`item-${3}`} content={<div style={{ height: '20px', width: '100%' }}>item 3</div>} />
-        <InfiniteList.Item key={`item-${4}`} content={<div style={{ height: '20px', width: '100%' }}>item 4</div>} />
+        <Item key={`item-${1}`}>
+          <div style={{ height: '20px', width: '100%' }}>item 1</div>
+        </Item>
+        <Item key={`item-${2}`}>
+          <div style={{ height: '20px', width: '100%' }}>item 2</div>
+        </Item>
+        <Item key={`item-${3}`}>
+          <div style={{ height: '20px', width: '100%' }}>item 3</div>
+        </Item>
+        <Item key={`item-${4}`}>
+          <div style={{ height: '20px', width: '100%' }}>item 4</div>
+        </Item>
       </InfiniteList>
     );
     const wrapper = shallow(component);
@@ -38,14 +46,21 @@ describe('InfiniteList', () => {
     const component = (
       <InfiniteList
         isFinishedLoading
-        isSelectable
         isDivided
-        selectedIndexes={[1]}
+        role="listbox"
       >
-        <InfiniteList.Item key={`item-${1}`} content={<div style={{ height: '20px', width: '100%' }}>item 1</div>} />
-        <InfiniteList.Item key={`item-${2}`} content={<div style={{ height: '20px', width: '100%' }}>item 2</div>} />
-        <InfiniteList.Item key={`item-${3}`} content={<div style={{ height: '20px', width: '100%' }}>item 3</div>} />
-        <InfiniteList.Item key={`item-${4}`} content={<div style={{ height: '20px', width: '100%' }}>item 4</div>} />
+        <Item isSelectable key={`item-${1}`}>
+          <div style={{ height: '20px', width: '100%' }}>item 1</div>
+        </Item>
+        <Item isSelectable isSelected key={`item-${2}`}>
+          <div style={{ height: '20px', width: '100%' }}>item 2</div>
+        </Item>
+        <Item isSelectable key={`item-${3}`}>
+          <div style={{ height: '20px', width: '100%' }}>item 3</div>
+        </Item>
+        <Item isSelectable key={`item-${4}`}>
+          <div style={{ height: '20px', width: '100%' }}>item 4</div>
+        </Item>
       </InfiniteList>
     );
     const wrapper = shallow(component);
@@ -56,14 +71,21 @@ describe('InfiniteList', () => {
     const component = (
       <InfiniteList
         isFinishedLoading
-        isSelectable
         isDivided
-        selectedIndexes={[1]}
+        role="listbox"
       >
-        <InfiniteList.Item style={{ backgroundColor: 'pink' }} key={`item-${1}`} content={<div style={{ height: '20px', width: '100%' }}>item 1</div>} />
-        <InfiniteList.Item style={{ backgroundColor: 'red' }} key={`item-${2}`} content={<div style={{ height: '20px', width: '100%' }}>item 2</div>} />
-        <InfiniteList.Item style={{ backgroundColor: 'blue' }} key={`item-${3}`} content={<div style={{ height: '20px', width: '100%' }}>item 3</div>} />
-        <InfiniteList.Item style={{ backgroundColor: 'yellow' }} key={`item-${4}`} content={<div style={{ height: '20px', width: '100%' }}>item 4</div>} />
+        <Item isSelectable style={{ backgroundColor: 'pink' }} key={`item-${1}`}>
+          <div style={{ height: '20px', width: '100%' }}>item 1</div>
+        </Item>
+        <Item isSelectable isSelected style={{ backgroundColor: 'red' }} key={`item-${2}`}>
+          <div style={{ height: '20px', width: '100%' }}>item 2</div>
+        </Item>
+        <Item isSelectable style={{ backgroundColor: 'blue' }} key={`item-${3}`}>
+          <div style={{ height: '20px', width: '100%' }}>item 3</div>
+        </Item>
+        <Item isSelectable style={{ backgroundColor: 'yellow' }} key={`item-${4}`}>
+          <div style={{ height: '20px', width: '100%' }}>item 4</div>
+        </Item>
       </InfiniteList>
     );
     const wrapper = render(component);

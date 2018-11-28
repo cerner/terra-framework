@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TestExample from 'terra-disclosure-manager/lib/terra-dev-site/test/common/TestExample';
-import List, { Item } from 'terra-list';
+import List, { Item } from 'terra-list2';
 
 class AggregatorItem extends React.Component {
   constructor(props) {
@@ -38,18 +38,19 @@ class AggregatorItem extends React.Component {
   render() {
     const { name, aggregatorDelegate, targetId } = this.props;
 
-    let selectedKey;
+    let key;
     if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState && aggregatorDelegate.itemState.selectedKey !== undefined) {
-      selectedKey = aggregatorDelegate.itemState.selectedKey;
+      key = aggregatorDelegate.itemState.selectedKey;
     }
 
     return (
       <List
         isDivided
+        role="listbox"
       >
         <Item
           isSelectable
-          isSelected={selectedKey === 'test-key'}
+          isSelected={key === 'test-key'}
           onSelect={this.handleSelection}
           metaData={{ key: 'test-key' }}
         >

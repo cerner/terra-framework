@@ -35,12 +35,17 @@ const propTypes = {
    * An indicator to be displayed at the end of the current loaded children.
    */
   progressiveLoadingIndicator: PropTypes.element,
+  /**
+   * Accessibility role of the list, defaults to 'none'. If creating a list with selectable items, pass 'listbox'.
+   */
+  role: PropTypes.string,
 };
 
 const defaultProps = {
   children: [],
   isDivided: false,
   isFinishedLoading: false,
+  role: 'none',
 };
 
 /**
@@ -412,15 +417,11 @@ class InfiniteList extends React.Component {
   render() {
     const {
       children,
-      disableUnselectedItems,
-      hasChevrons,
       initialLoadingIndicator,
       isDivided,
       isFinishedLoading,
-      isSelectable,
       onRequestItems,
       progressiveLoadingIndicator,
-      selectedIndexes,
       ...customProps
     } = this.props;
 
@@ -490,5 +491,5 @@ export default InfiniteList;
 export {
   Item,
   SectionHeader,
-  SubsectionHeader
+  SubsectionHeader,
 };

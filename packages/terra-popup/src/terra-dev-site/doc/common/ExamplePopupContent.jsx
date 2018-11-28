@@ -13,7 +13,7 @@ const createListItem = (onChange, index) => (
     onSelect={onChange}
     key={`item-${index}`}
   >
-    <Placeholder title={ `Example Value ${index}` } style={{ height: '50px' }} />
+    <Placeholder title={`Example Value ${index}`} style={{ height: '50px' }} />
   </Item>
 );
 
@@ -23,7 +23,7 @@ const ExamplePopupContent = ({
   const listItems = [];
   for (let index = 0; index < 12; index += 1) {
     listItems.push(createListItem(onChange, index));
-  };
+  }
   return (
     <List isDivided>
       {listItems}
