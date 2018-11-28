@@ -4,7 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Added
-* Add ability to filter navigation side menu list items by user input
+* Add optional toolbar prop that displays below the side menu action header
 
 1.17.0 - (December 3, 2018)
 ------------------

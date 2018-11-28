@@ -5,8 +5,6 @@ import 'terra-base/lib/baseStyles';
 import List from 'terra-list';
 import ActionHeader from 'terra-action-header';
 import ContentContainer from 'terra-content-container';
-import SearchField from 'terra-search-field';
-import { FormattedMessage } from 'react-intl';
 import MenuItem from './_MenuItem';
 
 import styles from './NavigationSideMenu.module.scss';
@@ -71,6 +69,10 @@ const propTypes = {
    * Key of the currently selected menu page.
    */
   selectedMenuKey: PropTypes.string.isRequired,
+  /**
+   * An optional toolbar to display below the side menu action header
+   */
+  toolbar: PropTypes.element,
 };
 
 const defaultProps = {
@@ -98,25 +100,20 @@ const processMenuItems = (menuItems) => {
   return { items, parents };
 };
 
-const searchFilter = (searchable = '', by = '') => searchable.toLowerCase().search(by.toLowerCase()) >= 0;
-
 class NavigationSideMenu extends Component {
   constructor(props) {
     super(props);
 
     this.handleBackClick = this.handleBackClick.bind(this);
     this.handleItemClick = this.handleItemClick.bind(this);
-    this.handleFilter = this.handleFilter.bind(this);
 
     const { items, parents } = processMenuItems(props.menuItems);
-    const keys = items[props.selectedMenuKey].childKeys || [];
-    this.state = { items, parents, keys };
+    this.state = { items, parents };
   }
 
   componentWillReceiveProps(nextProps) {
     const { items, parents } = processMenuItems(nextProps.menuItems);
-    const keys = items[nextProps.selectedMenuKey].childKeys || [];
-    this.state = { items, parents, keys };
+    this.setState({ items, parents });
   }
 
   handleBackClick(event) {
@@ -156,16 +153,6 @@ class NavigationSideMenu extends Component {
     }
   }
 
-  handleFilter(event) {
-    const filterText = event.target.value;
-    const { selectedMenuKey } = this.props;
-    const { items } = this.state;
-    const currentItemChildKeys = items[selectedMenuKey].childKeys || [];
-
-    const keys = currentItemChildKeys.filter(key => searchFilter(items[key].text, filterText));
-    this.setState({ keys });
-  }
-
   buildListItem(key) {
     const item = this.state.items[key];
     const onKeyDown = (event) => {
@@ -189,10 +176,10 @@ class NavigationSideMenu extends Component {
     );
   }
 
-  buildListContent(keys) {
-    return (keys && keys.length
-      ? <List className={cx(['menu-list'])}>{keys.map(key => this.buildListItem(key))}</List>
-      : <FormattedMessage id="Terra.NavigationSideMenu.noMatch" />
+  buildListContent(currentItem) {
+    return (currentItem && currentItem.childKeys && currentItem.childKeys.length
+      ? <List className={cx(['menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</List>
+      : null
     );
   }
 
@@ -203,9 +190,9 @@ class NavigationSideMenu extends Component {
       routingStackBack,
       selectedChildKey,
       selectedMenuKey,
+      toolbar,
       ...customProps
     } = this.props;
-    const { keys } = this.state;
     const currentItem = this.state.items[selectedMenuKey];
 
     let onBack;
@@ -226,22 +213,14 @@ class NavigationSideMenu extends Component {
             title={currentItem ? currentItem.text : null}
             data-navigation-side-menu-action-header
           />
-          <FormattedMessage id="Terra.NavigationSideMenu.filter">
-            {placeholder => (
-              <SearchField
-                isBlock
-                placeholder={placeholder}
-                onChange={this.handleFilter}
-              />
-            )}
-          </FormattedMessage>
+          {toolbar}
         </Fragment>
       );
     }
 
     return (
       <ContentContainer {...customProps} header={header} fill>
-        {this.buildListContent(keys)}
+        {this.buildListContent(currentItem)}
       </ContentContainer>
     );
   }
