@@ -1,4 +1,4 @@
-import AppDelegate from '../../src/app-delegate/AppDelegate';
+import DisclosureManagerDelegate from '../../src/DisclosureManagerDelegate';
 
 const disclose = () => {};
 const dismiss = () => {};
@@ -10,32 +10,32 @@ const requestFocus = () => {};
 const releaseFocus = () => {};
 const registerDismissCheck = () => {};
 const notSupported = () => {};
-const appDelegateInstance = AppDelegate.create({
+const disclosureManagerInstance = DisclosureManagerDelegate.create({
   disclose, dismiss, closeDisclosure, goBack, maximize, minimize, requestFocus, releaseFocus, registerDismissCheck,
 });
 
 describe('propType', () => {
   it('should provide a defined PropType', () => {
-    expect(AppDelegate.propType).not.toBe(undefined);
+    expect(DisclosureManagerDelegate.propType).not.toBe(undefined);
   });
 });
 
 describe('create', () => {
-  it('should expose a create function that creates an AppDelegate instance', () => {
-    const appDelegateLocalInstance = AppDelegate.create({
+  it('should expose a create function that creates an DisclosureManagerDelegate instance', () => {
+    const disclosureManagerLocalInstance = DisclosureManagerDelegate.create({
       disclose, dismiss, closeDisclosure, goBack, maximize, minimize, requestFocus, releaseFocus, registerDismissCheck, notSupported,
     });
 
-    expect(appDelegateLocalInstance.disclose).toBe(disclose);
-    expect(appDelegateLocalInstance.dismiss).toBe(dismiss);
-    expect(appDelegateLocalInstance.closeDisclosure).toBe(closeDisclosure);
-    expect(appDelegateLocalInstance.goBack).toBe(goBack);
-    expect(appDelegateLocalInstance.maximize).toBe(maximize);
-    expect(appDelegateLocalInstance.minimize).toBe(minimize);
-    expect(appDelegateLocalInstance.requestFocus).toBe(requestFocus);
-    expect(appDelegateLocalInstance.releaseFocus).toBe(releaseFocus);
-    expect(appDelegateLocalInstance.registerDismissCheck).toBe(registerDismissCheck);
-    expect(appDelegateLocalInstance.thisIsATestWhatAmIDoing).toBe(undefined);
+    expect(disclosureManagerLocalInstance.disclose).toBe(disclose);
+    expect(disclosureManagerLocalInstance.dismiss).toBe(dismiss);
+    expect(disclosureManagerLocalInstance.closeDisclosure).toBe(closeDisclosure);
+    expect(disclosureManagerLocalInstance.goBack).toBe(goBack);
+    expect(disclosureManagerLocalInstance.maximize).toBe(maximize);
+    expect(disclosureManagerLocalInstance.minimize).toBe(minimize);
+    expect(disclosureManagerLocalInstance.requestFocus).toBe(requestFocus);
+    expect(disclosureManagerLocalInstance.releaseFocus).toBe(releaseFocus);
+    expect(disclosureManagerLocalInstance.registerDismissCheck).toBe(registerDismissCheck);
+    expect(disclosureManagerLocalInstance.thisIsATestWhatAmIDoing).toBe(undefined);
   });
 });
 
@@ -51,7 +51,7 @@ describe('clone', () => {
     const cloneReleaseFocus = () => {};
     const cloneRegisterDismissCheck = () => {};
 
-    const clonedDelegate = AppDelegate.clone(appDelegateInstance, {
+    const clonedDelegate = DisclosureManagerDelegate.clone(disclosureManagerInstance, {
       disclose: cloneDisclose,
       dismiss: cloneDismiss,
       closeDisclosure: cloneCloseDisclosure,
@@ -77,7 +77,7 @@ describe('clone', () => {
   it('should keep functions from original instance if not provided', () => {
     const cloneDisclose = () => {};
     const cloneDismiss = () => {};
-    const clonedDelegate = AppDelegate.clone(appDelegateInstance, {
+    const clonedDelegate = DisclosureManagerDelegate.clone(disclosureManagerInstance, {
       disclose: cloneDisclose,
       dismiss: cloneDismiss,
     });
@@ -96,103 +96,91 @@ describe('clone', () => {
 
 describe('isEqual', () => {
   it('should return true when all attributes are equal', () => {
-    const appDelegateLocalInstance = AppDelegate.create({
+    const appDelegateLocalInstance = DisclosureManagerDelegate.create({
       disclose, dismiss, closeDisclosure, goBack, maximize, minimize, requestFocus, releaseFocus, registerDismissCheck,
     });
 
-    expect(AppDelegate.isEqual(appDelegateInstance, appDelegateLocalInstance)).toBe(true);
+    expect(DisclosureManagerDelegate.isEqual(disclosureManagerInstance, appDelegateLocalInstance)).toBe(true);
   });
 
   it('should return true when refs are equal', () => {
-    expect(AppDelegate.isEqual(appDelegateInstance, appDelegateInstance)).toBe(true);
+    expect(DisclosureManagerDelegate.isEqual(disclosureManagerInstance, disclosureManagerInstance)).toBe(true);
   });
 
   it('should return false when disclose does not match', () => {
-    const appDelegateLocalInstance = AppDelegate.create({
+    const appDelegateLocalInstance = DisclosureManagerDelegate.create({
       disclose: () => {}, dismiss, closeDisclosure, goBack, maximize, minimize, requestFocus, releaseFocus, registerDismissCheck,
     });
 
-    expect(AppDelegate.isEqual(appDelegateInstance, appDelegateLocalInstance)).toBe(false);
+    expect(DisclosureManagerDelegate.isEqual(disclosureManagerInstance, appDelegateLocalInstance)).toBe(false);
   });
 
   it('should return false when dismiss does not match', () => {
-    const appDelegateLocalInstance = AppDelegate.create({
+    const appDelegateLocalInstance = DisclosureManagerDelegate.create({
       disclose, dismiss: () => {}, closeDisclosure, goBack, maximize, minimize, requestFocus, releaseFocus, registerDismissCheck,
     });
 
-    expect(AppDelegate.isEqual(appDelegateInstance, appDelegateLocalInstance)).toBe(false);
+    expect(DisclosureManagerDelegate.isEqual(disclosureManagerInstance, appDelegateLocalInstance)).toBe(false);
   });
 
   it('should return false when closeDisclosure does not match', () => {
-    const appDelegateLocalInstance = AppDelegate.create({
+    const appDelegateLocalInstance = DisclosureManagerDelegate.create({
       disclose, dismiss, closeDisclosure: () => {}, goBack, maximize, minimize, requestFocus, releaseFocus, registerDismissCheck,
     });
 
-    expect(AppDelegate.isEqual(appDelegateInstance, appDelegateLocalInstance)).toBe(false);
+    expect(DisclosureManagerDelegate.isEqual(disclosureManagerInstance, appDelegateLocalInstance)).toBe(false);
   });
 
   it('should return false when goBack does not match', () => {
-    const appDelegateLocalInstance = AppDelegate.create({
+    const appDelegateLocalInstance = DisclosureManagerDelegate.create({
       disclose, dismiss, closeDisclosure, goBack: () => {}, maximize, minimize, requestFocus, releaseFocus, registerDismissCheck,
     });
 
-    expect(AppDelegate.isEqual(appDelegateInstance, appDelegateLocalInstance)).toBe(false);
+    expect(DisclosureManagerDelegate.isEqual(disclosureManagerInstance, appDelegateLocalInstance)).toBe(false);
   });
 
   it('should return false when maximize does not match', () => {
-    const appDelegateLocalInstance = AppDelegate.create({
+    const appDelegateLocalInstance = DisclosureManagerDelegate.create({
       disclose, dismiss, closeDisclosure, goBack, maximize: () => {}, minimize, requestFocus, releaseFocus, registerDismissCheck,
     });
 
-    expect(AppDelegate.isEqual(appDelegateInstance, appDelegateLocalInstance)).toBe(false);
+    expect(DisclosureManagerDelegate.isEqual(disclosureManagerInstance, appDelegateLocalInstance)).toBe(false);
   });
 
   it('should return false when minimize does not match', () => {
-    const appDelegateLocalInstance = AppDelegate.create({
+    const appDelegateLocalInstance = DisclosureManagerDelegate.create({
       disclose, dismiss, closeDisclosure, goBack, maximize, minimize: () => {}, requestFocus, releaseFocus, registerDismissCheck,
     });
 
-    expect(AppDelegate.isEqual(appDelegateInstance, appDelegateLocalInstance)).toBe(false);
+    expect(DisclosureManagerDelegate.isEqual(disclosureManagerInstance, appDelegateLocalInstance)).toBe(false);
   });
 
   it('should return false when requestFocus does not match', () => {
-    const appDelegateLocalInstance = AppDelegate.create({
+    const appDelegateLocalInstance = DisclosureManagerDelegate.create({
       disclose, dismiss, closeDisclosure, goBack, maximize, minimize, requestFocus: () => {}, releaseFocus, registerDismissCheck,
     });
 
-    expect(AppDelegate.isEqual(appDelegateInstance, appDelegateLocalInstance)).toBe(false);
+    expect(DisclosureManagerDelegate.isEqual(disclosureManagerInstance, appDelegateLocalInstance)).toBe(false);
   });
 
   it('should return false when releaseFocus does not match', () => {
-    const appDelegateLocalInstance = AppDelegate.create({
+    const appDelegateLocalInstance = DisclosureManagerDelegate.create({
       disclose, dismiss, closeDisclosure, goBack, maximize, minimize, requestFocus, releaseFocus: () => {}, registerDismissCheck,
     });
 
-    expect(AppDelegate.isEqual(appDelegateInstance, appDelegateLocalInstance)).toBe(false);
+    expect(DisclosureManagerDelegate.isEqual(disclosureManagerInstance, appDelegateLocalInstance)).toBe(false);
   });
 
   it('should return false when registerDismissCheck does not match', () => {
-    const appDelegateLocalInstance = AppDelegate.create({
+    const appDelegateLocalInstance = DisclosureManagerDelegate.create({
       disclose, dismiss, closeDisclosure, goBack, maximize, minimize, requestFocus, releaseFocus, registerDismissCheck: () => {},
     });
 
-    expect(AppDelegate.isEqual(appDelegateInstance, appDelegateLocalInstance)).toBe(false);
+    expect(DisclosureManagerDelegate.isEqual(disclosureManagerInstance, appDelegateLocalInstance)).toBe(false);
   });
 
   it('should return false when either parameter is undefined', () => {
-    expect(AppDelegate.isEqual(AppDelegate.create({}), undefined)).toBe(false);
-    expect(AppDelegate.isEqual(undefined, AppDelegate.create({}))).toBe(false);
-  });
-});
-
-describe('registerComponentForDisclosure', () => {
-  it('should expose registerComponentForDisclosure', () => {
-    expect(AppDelegate.registerComponentForDisclosure).not.toBe(undefined);
-  });
-});
-
-describe('getComponentForDisclosure', () => {
-  it('should expose getComponentForDisclosure', () => {
-    expect(AppDelegate.getComponentForDisclosure).not.toBe(undefined);
+    expect(DisclosureManagerDelegate.isEqual(DisclosureManagerDelegate.create({}), undefined)).toBe(false);
+    expect(DisclosureManagerDelegate.isEqual(undefined, DisclosureManagerDelegate.create({}))).toBe(false);
   });
 });

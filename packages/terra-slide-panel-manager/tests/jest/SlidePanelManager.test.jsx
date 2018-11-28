@@ -1,9 +1,10 @@
 import React from 'react';
+import { withDisclosureManager } from 'terra-disclosure-manager';
 import SlidePanelManager from '../../src/SlidePanelManager';
 
-const TestContainer = () => (
-  <div>Hello World</div>
-);
+const TestContainer = withDisclosureManager(({ id }) => (
+  <div id={id}>Hello World</div>
+));
 
 describe('SlidePanelManager', () => {
   it('should render the SlidePanelManager with defaults', () => {
@@ -42,15 +43,15 @@ describe('SlidePanelManager', () => {
   it('should disclose content in SlidePanel', () => {
     const slidePanelManager = (
       <SlidePanelManager>
-        <TestContainer />
+        <TestContainer id="test" />
       </SlidePanelManager>
     );
 
     const wrapper = mount(slidePanelManager);
 
     return new Promise((resolve, reject) => {
-      const childApp = wrapper.find(TestContainer).getElements()[0].props.app;
-      childApp.disclose({
+      const childDisclosureManager = wrapper.find('#test').getElements()[1].props.disclosureManager;
+      childDisclosureManager.disclose({
         preferredType: 'modal',
         size: 'large',
         content: {

@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppDelegate from 'terra-app-delegate';
 import NavigationLayout from 'terra-navigation-layout';
 import { routeConfigPropType } from 'terra-navigation-layout/lib/configurationPropTypes';
 import { matchPath } from 'react-router-dom';
-import { withModalManager } from 'terra-modal-manager';
+import ModalManager from 'terra-modal-manager';
 
 import RoutingMenu from './menu/RoutingMenu';
 import ApplicationMenuWrapper from './menu/_ApplicationMenuWrapper';
@@ -17,13 +16,7 @@ const navigationLayoutSizes = ['default', 'tiny', 'small', 'medium', 'large', 'h
 
 const propTypes = {
   /**
-   * The AppDelegate instance provided by `withModalManager`. If an AppDelegate instance is
-   * explicitly provided to the ApplicationLayout, the ModalManager will wrap it and
-   * fall back to its defined APIs as needed.
-   */
-  app: AppDelegate.propType,
-  /**
-   * The content to be rendered in the ApplicationLayout's extensions region. This component will be provided an AppDelegate (as `app`) and
+   * The content to be rendered in the ApplicationLayout's extensions region. This component will be provided
    * a `layoutConfig` as props to facilitate communication with the ApplicationLayout.
    */
   extensions: PropTypes.element,
@@ -202,32 +195,33 @@ class ApplicationLayout extends React.Component {
 
   render() {
     const {
-      app, nameConfig, utilityConfig, navigationAlignment, navigationItems, indexPath, extensions,
+      nameConfig, utilityConfig, navigationAlignment, navigationItems, indexPath, extensions,
     } = this.props;
     const { applicationLayoutRoutingConfig } = this.state;
 
     return (
-      <NavigationLayout
-        app={app}
-        config={applicationLayoutRoutingConfig}
-        header={(
-          <ApplicationHeader
-            nameConfig={nameConfig}
-            utilityConfig={utilityConfig}
-            extensions={extensions}
-            applicationLinks={{
-              alignment: navigationAlignment,
-              links: navigationItems ? navigationItems.map((route, index) => ({
-                id: `application-layout-tab-${index}`,
-                path: route.path,
-                text: route.text,
-                externalLink: route.externalLink,
-              })) : undefined,
-            }}
-          />
-        )}
-        indexPath={indexPath}
-      />
+      <ModalManager>
+        <NavigationLayout
+          config={applicationLayoutRoutingConfig}
+          header={(
+            <ApplicationHeader
+              nameConfig={nameConfig}
+              utilityConfig={utilityConfig}
+              extensions={extensions}
+              applicationLinks={{
+                alignment: navigationAlignment,
+                links: navigationItems ? navigationItems.map((route, index) => ({
+                  id: `application-layout-tab-${index}`,
+                  path: route.path,
+                  text: route.text,
+                  externalLink: route.externalLink,
+                })) : undefined,
+              }}
+            />
+          )}
+          indexPath={indexPath}
+        />
+      </ModalManager>
     );
   }
 }
@@ -235,11 +229,7 @@ class ApplicationLayout extends React.Component {
 ApplicationLayout.propTypes = propTypes;
 ApplicationLayout.defaultProps = defaultProps;
 
-/**
- * The ApplicationLayout is wrapped with a ModalManager on export to provide modal functionality
- * for utility presentation and content convenience.
- */
-export default withModalManager(ApplicationLayout);
+export default ApplicationLayout;
 
 const Utils = {
   helpers: Helpers,

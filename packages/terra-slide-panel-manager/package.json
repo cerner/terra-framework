@@ -25,14 +25,17 @@
   "peerDependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "terra-app-delegate": "^2.0.0",
     "terra-base": "^3.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
+    "terra-action-header": "^1.26.0",
+    "terra-button": "^2.27.0",
+    "terra-content-container": "^2.26.0",
     "terra-disclosure-manager": "^2.15.0",
     "terra-doc-template": "^1.1.0",
+    "terra-form-input": "^1.28.0",
     "terra-slide-group": "^2.4.0",
     "terra-slide-panel": "^2.21.0"
   },

@@ -3,6 +3,13 @@ ChangeLog
 
 Unreleased
 ----------
+### Breaking Change
+* Added Context-based API for consumer-facing DisclosureManager APIs
+* Removed injection of `app` prop into child/disclosure components.
+
+### Added
+* Added exports for withDisclosureManager and disclosureManagerShape
+* Added Upgrade Guide for conversion from v2.x to v3.x
 
 2.15.0 - (November 15, 2018)
 ------------------

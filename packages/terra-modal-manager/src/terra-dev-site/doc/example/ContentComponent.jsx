@@ -3,19 +3,20 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
-import AppDelegate from 'terra-app-delegate';
 import ActionHeader from 'terra-action-header';
 
+import {
+  availableDisclosureHeights, availableDisclosureWidths, withDisclosureManager, disclosureManagerShape,
+} from 'terra-disclosure-manager';
 import DisclosureComponent from './DisclosureComponent';
-import { availableDisclosureHeights, availableDisclosureWidths } from '../../../DisclosureManager';
 
 import styles from './example-styles.scss';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  app: AppDelegate.propType,
   disclosureType: PropTypes.string,
+  disclosureManager: disclosureManagerShape,
 };
 
 const HEIGHT_KEYS = Object.keys(availableDisclosureHeights);
@@ -48,13 +49,13 @@ class ContentComponent extends React.Component {
   }
 
   renderButton(size) {
-    const { app, disclosureType } = this.props;
+    const { disclosureManager, disclosureType } = this.props;
 
     return (
       <Button
         text={`Disclose (${size})`}
         onClick={() => {
-          app.disclose({
+          disclosureManager.disclose({
             preferredType: disclosureType,
             size,
             content: {
@@ -68,14 +69,14 @@ class ContentComponent extends React.Component {
   }
 
   renderFormButton() {
-    const { app, disclosureType } = this.props;
+    const { disclosureManager, disclosureType } = this.props;
     const name = `Disclose (${this.state.disclosureHeight}) x (${this.state.disclosureWidth})`;
 
     return (
       <Button
         text={name}
         onClick={() => {
-          app.disclose({
+          disclosureManager.disclose({
             preferredType: disclosureType,
             dimensions: { height: this.state.disclosureHeight, width: this.state.disclosureWidth },
             content: {
@@ -138,4 +139,4 @@ class ContentComponent extends React.Component {
 
 ContentComponent.propTypes = propTypes;
 
-export default ContentComponent;
+export default withDisclosureManager(ContentComponent);
