@@ -6,6 +6,10 @@ Unreleased
 ### Added
 * Added missing ar translations.
 
+### Breaking Change
+* Updated ApplicationLayout and related components to interface directly with a parent DisclosureManager. 
+* Removed instances of the ApplicationLayout and related components injecting an `app` prop into child components.
+
 2.22.1 - (November 15, 2018)
 ------------------
 ### Changed

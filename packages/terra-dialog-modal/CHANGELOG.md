@@ -9,6 +9,10 @@ Unreleased
 ### Changed
 * Minor dependency update
 * Restructured theme tests into a separate file
+* Updated examples to consume terra-disclosure-manager v3.x
+
+### Removed
+* Removed dependency on terra-app-delegate package.
 
 1.9.0 - (October 16, 2018)
 ------------------

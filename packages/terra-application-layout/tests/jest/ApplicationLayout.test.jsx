@@ -1,10 +1,7 @@
 import React from 'react';
-import AppDelegate from 'terra-app-delegate';
-import WrappedApplication from '../../src/ApplicationLayout';
+import ApplicationLayout from '../../src/ApplicationLayout';
 import ApplicationMenuWrapper from '../../src/menu/_ApplicationMenuWrapper';
 import RoutingMenu from '../../src/menu/RoutingMenu';
-
-const ApplicationLayout = WrappedApplication.WrappedComponent;
 
 const TestComponent = () => (<div className="test">Test</div>);
 const ContentComponent = () => (<div>Content</div>);
@@ -336,7 +333,6 @@ describe('ApplicationLayout', () => {
 
   describe('Snapshot Tests', () => {
     it('renders the ApplicationLayout with given props', () => {
-      const testAppDelegate = AppDelegate.create({});
       const testExtensions = <div>Extensions</div>;
       const testNameConfig = {
         title: 'name config title',
@@ -417,7 +413,6 @@ describe('ApplicationLayout', () => {
 
       const applicationLayout = (
         <ApplicationLayout
-          app={testAppDelegate}
           extensions={testExtensions}
           nameConfig={testNameConfig}
           navigationItems={testNavigationItems}

@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import ContentComponent from 'terra-disclosure-manager/lib/terra-dev-site/doc/example/ContentComponent';
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import SlidePanelManager from 'terra-slide-panel-manager/lib/SlidePanelManager';
 import styles from 'terra-slide-panel-manager/lib/terra-dev-site/doc/example/example-styles.scss';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+
+import ContentComponent from './ContentComponent';
 
 const cx = classNames.bind(styles);
 

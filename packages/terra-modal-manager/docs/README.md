@@ -15,40 +15,37 @@ ModalManager provides the ability to handle and navigate stacked disclosures.
 
 ### Implementation Requirements
 
-The ModalManager utilizes the AppDelegate API to manage disclosure requests. The components provided as children to the ModalManager, and the components disclosed within it, must support an AppDelegate prop (as `app`). This AppDelegate instance will provide component-specific implementations of the various control mechanisms for the manager.
+The ModalManager utilizes the DisclosureManager API to manage disclosure requests. The components provided as children to the ModalManager, and the components disclosed within it, must interface with the ModalManager's context using the `withDisclosureManager()` higher-order component generator provided by the `terra-disclosure-manager` package.
 
 The ModalManager responds to the `"modal"` disclosure type. Components that wish to disclose content using the ModalManager should provide a preferred type of `"modal"`. This value is exported from the package as `disclosureType`. Please see the [DisclosureManager documentation](http://engineering.cerner.com/terra-framework/#/site/components/disclosure-manager/index) for a full description of the ModalManager's capabilities.
-
-### withModalManager
-
-The main export from the `terra-modal-manager` package also exports a higher-order component generator called `withModalManager`. The component provided to the generator will be wrapped by a ModalManager and provided with an `app` prop.
 
 ### Example
 
 ```jsx
 import React from 'react';
 import Button from 'terra-button';
-import ModalManager, { disclosureType, withModalManager } from 'terra-modal-manager';
+import ModalManager, { disclosureType } from 'terra-modal-manager';
+import { withDisclosureManager } from 'terra-disclosure-manager';
 
-const MyModalComponent = ({ app }) => (
+const MyModalComponent = withDisclosureManager(({ disclosureManager }) => (
   <div>
     <p>I am in the modal!</p>
     <Button
       text="Dismiss"
       onClick={() => {
-        app.dismiss();
+        disclosureManager.dismiss();
       }}
     />
   </div>
-);
+));
 
-const MyContentComponent = ({ app }) => (
+const MyContentComponent = withDisclosureManager(({ disclosureManager }) => (
   <div>
     <p>I am in the body!</p>
     <Button
       text="Open Modal"
       onClick={() => {
-        app.disclose({
+        disclosureManager.disclose({
           preferredType: disclosureType,
           size: 'large',
           content: {
@@ -59,16 +56,13 @@ const MyContentComponent = ({ app }) => (
       }}
     />
   </div>
-);
+));
 
 let MyModalManagerComponent = () => (
   <ModalManager>
     <MyContentComponent />
   </ModalManager>
 );
-
-// Alternatively, `withModalManager` can be used to wrap a ModalManager around MyContentComponent automatically.
-MyModalManagerComponent = withModalManager(MyContentComponent);
 
 ```
 

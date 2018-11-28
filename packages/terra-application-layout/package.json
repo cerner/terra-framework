@@ -21,19 +21,15 @@
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "devDependencies": {
-    "terra-app-delegate": "^2.8.0"
-  },
   "peerDependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "terra-app-delegate": "^2.0.0",
+    "react-intl": "^2.4.0",
     "terra-base": "^3.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "react-intl": "^2.4.0",
     "react-router-dom": "^4.2.2",
     "terra-action-header": "^1.14.0",
     "terra-application-header-layout": "^2.20.0",

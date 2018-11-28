@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppDelegate from 'terra-app-delegate';
 import ContentContainer from 'terra-content-container';
-import { availableDisclosureHeights, availableDisclosureWidths } from '../../../DisclosureManager';
+import {
+  availableDisclosureHeights, availableDisclosureWidths, withDisclosureManager, disclosureManagerShape,
+} from 'terra-disclosure-manager';
 
 const HEIGHT_KEYS = Object.keys(availableDisclosureHeights);
 const WIDTH_KEYS = Object.keys(availableDisclosureWidths);
 
-class TestExample extends React.Component {
+class DisclosureComponent extends React.Component {
   constructor(props) {
     super(props);
 
@@ -48,44 +49,44 @@ class TestExample extends React.Component {
 
     const newIndex = nestedIndex + 1;
     return () => {
-      this.props.app.disclose({
+      this.props.disclosureManager.disclose({
         preferredType: disclosureType,
         size,
         dimensions,
         content: {
           key: `DemoContainer-${newIndex}`,
-          component: <TestExample identifier={`DemoContainer-${newIndex}`} nestedIndex={newIndex} />,
+          component: <WrappedDisclosureComponent identifier={`DemoContainer-${newIndex}`} nestedIndex={newIndex} />,
         },
       });
     };
   }
 
   dismiss() {
-    this.props.app.dismiss();
+    this.props.disclosureManager.dismiss();
   }
 
   closeDisclosure() {
-    this.props.app.closeDisclosure();
+    this.props.disclosureManager.closeDisclosure();
   }
 
   goBack() {
-    this.props.app.goBack();
+    this.props.disclosureManager.goBack();
   }
 
   maximize() {
-    this.props.app.maximize();
+    this.props.disclosureManager.maximize();
   }
 
   minimize() {
-    this.props.app.minimize();
+    this.props.disclosureManager.minimize();
   }
 
   requestFocus() {
-    this.props.app.requestFocus();
+    this.props.disclosureManager.requestFocus();
   }
 
   releaseFocus() {
-    this.props.app.releaseFocus();
+    this.props.disclosureManager.releaseFocus();
   }
 
   renderFormButton() {
@@ -122,7 +123,7 @@ class TestExample extends React.Component {
   }
 
   render() {
-    const { app, identifier } = this.props;
+    const { disclosureManager, identifier } = this.props;
 
     return (
       <ContentContainer id={identifier} className="nested-component" fill header={<h2 style={{ margin: '0', borderBottom: '1px solid black' }}>Content Component</h2>}>
@@ -131,8 +132,8 @@ class TestExample extends React.Component {
           {' '}
           {identifier}
         </p>
-        {app && app.releaseFocus ? <p>Modal has lost focus!</p> : null }
-        {app && app.requestFocus ? <p>Modal has gained focus!</p> : null }
+        {disclosureManager && disclosureManager.releaseFocus ? <p>Modal has lost focus!</p> : null }
+        {disclosureManager && disclosureManager.requestFocus ? <p>Modal has gained focus!</p> : null }
         <button type="button" className="disclose" onClick={this.disclose()}>Disclose</button>
         <button type="button" className="disclose-tiny" onClick={this.disclose('tiny')}>Disclose Tiny</button>
         <button type="button" className="disclose-small" onClick={this.disclose('small')}>Disclose Small</button>
@@ -144,27 +145,29 @@ class TestExample extends React.Component {
           {this.renderForm()}
           {this.renderFormButton()}
         </div>
-        {app && app.dismiss ? <button type="button" className="dismiss" onClick={this.dismiss}>Dismiss</button> : null }
-        {app && app.closeDisclosure ? <button type="button" className="close-disclosure" onClick={this.closeDisclosure}>Close Disclosure</button> : null }
-        {app && app.goBack ? <button type="button" className="go-back" onClick={this.goBack}>Go Back</button> : null }
-        {app && app.maximize ? <button type="button" className="maximize" onClick={this.maximize}>Maximize</button> : null }
-        {app && app.minimize ? <button type="button" className="minimize" onClick={this.minimize}>Minimize</button> : null }
-        {app && app.requestFocus ? <button type="button" className="requestFocus" onClick={this.requestFocus}>Request Focus</button> : null }
-        {app && app.releaseFocus ? <button type="button" className="releaseFocus" onClick={this.releaseFocus}>Release Focus</button> : null }
+        {disclosureManager && disclosureManager.dismiss ? <button type="button" className="dismiss" onClick={this.dismiss}>Dismiss</button> : null }
+        {disclosureManager && disclosureManager.closeDisclosure ? <button type="button" className="close-disclosure" onClick={this.closeDisclosure}>Close Disclosure</button> : null }
+        {disclosureManager && disclosureManager.goBack ? <button type="button" className="go-back" onClick={this.goBack}>Go Back</button> : null }
+        {disclosureManager && disclosureManager.maximize ? <button type="button" className="maximize" onClick={this.maximize}>Maximize</button> : null }
+        {disclosureManager && disclosureManager.minimize ? <button type="button" className="minimize" onClick={this.minimize}>Minimize</button> : null }
+        {disclosureManager && disclosureManager.requestFocus ? <button type="button" className="requestFocus" onClick={this.requestFocus}>Request Focus</button> : null }
+        {disclosureManager && disclosureManager.releaseFocus ? <button type="button" className="releaseFocus" onClick={this.releaseFocus}>Release Focus</button> : null }
       </ContentContainer>
     );
   }
 }
 
-TestExample.propTypes = {
-  app: AppDelegate.propType,
+DisclosureComponent.propTypes = {
+  disclosureManager: disclosureManagerShape,
   identifier: PropTypes.string,
   disclosureType: PropTypes.string,
   nestedIndex: PropTypes.number,
 };
 
-TestExample.defaultProps = {
+DisclosureComponent.defaultProps = {
   nestedIndex: 0,
 };
 
-export default TestExample;
+const WrappedDisclosureComponent = withDisclosureManager(DisclosureComponent);
+
+export default WrappedDisclosureComponent;

@@ -1,16 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppDelegate from 'terra-app-delegate';
 import RoutingStackDelegate from 'terra-navigation-layout/lib/RoutingStackDelegate';
 
 import ApplicationMenu from './_ApplicationMenu';
 import ApplicationLayoutPropTypes from '../utils/propTypes';
 
 const propTypes = {
-  /**
-   * The AppDelegate instance to provide to the ApplicationMenu.
-   */
-  app: AppDelegate.propType,
   /**
    * Array of navigation Objects to be rendered as tabs within the Application Header.
    */
@@ -48,7 +43,6 @@ const propTypes = {
 
 const ApplicationMenuWrapper = (props) => {
   const {
-    app,
     layoutConfig,
     routingStackDelegate,
     applicationMenuWrapperProps,
@@ -63,7 +57,6 @@ const ApplicationMenuWrapper = (props) => {
 
   return (
     <ApplicationMenu
-      app={app}
       layoutConfig={layoutConfig}
       routingStackDelegate={routingStackDelegate}
       nameConfig={applicationMenuWrapperProps.nameConfig}

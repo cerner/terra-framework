@@ -2,11 +2,12 @@ import React from 'react';
 import Button from 'terra-button';
 import ActionHeader from 'terra-action-header';
 import ActionFooter from 'terra-action-footer';
-import AppDelegate from 'terra-app-delegate';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
+
 import DialogModal from '../../../DialogModal';
 
 const propTypes = {
-  app: AppDelegate.propType,
+  disclosureManager: disclosureManagerShape,
 };
 
 class DialogModalWithFocus extends React.Component {
@@ -47,19 +48,19 @@ class DialogModalWithFocus extends React.Component {
           onRequestClose={this.handleCloseModal}
           header={<ActionHeader title="Action Header used here" onClose={this.handleCloseModal} />}
           footer={<ActionFooter start="Action Footer used here" />}
-          requestFocus={this.props.app.requestFocus}
-          releaseFocus={this.props.app.releaseFocus}
+          requestFocus={this.props.disclosureManager.requestFocus}
+          releaseFocus={this.props.disclosureManager.releaseFocus}
         >
           <p>{paraOne}</p>
         </DialogModal>
         <Button text="Trigger Dialog Modal" onClick={this.handleOpenModal} />
         <br />
         <br />
-        <Button text="Close Modal Manager" onClick={this.props.app.closeDisclosure} />
+        <Button text="Close Modal Manager" onClick={this.props.disclosureManager.closeDisclosure} />
       </div>
     );
   }
 }
 
 DialogModalWithFocus.propTypes = propTypes;
-export default DialogModalWithFocus;
+export default withDisclosureManager(DialogModalWithFocus);
