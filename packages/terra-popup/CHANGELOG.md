@@ -3,8 +3,17 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Replaced use of componentWillMount with componentDidMount
+
 ### Fixed
 * Fixed preventDefault error
+
+### Changed
+* Updated examples to consume terra-disclosure-manager v3.x
+
+### Removed
+* Removed dependency on terra-app-delegate package.
 
 4.18.1 - (November 15, 2018)
 ------------------

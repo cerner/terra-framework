@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withDisclosureManager should render using the provided render function 1`] = `
+<withDisclosureManager(Component)>
+  <Component>
+    <div>
+      I am a test component
+    </div>
+  </Component>
+</withDisclosureManager(Component)>
+`;

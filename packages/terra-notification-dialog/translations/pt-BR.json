@@ -1,7 +1,7 @@
 {
-  "Terra.notification.dialog.info": "Information",
-  "Terra.notification.dialog.error": "Error",
-  "Terra.notification.dialog.warning": "Warning",
-  "Terra.notification.dialog.alert": "Alert",
-  "Terra.notification.dialog.success": "Success"
+  "Terra.notification.dialog.info": "Informações",
+  "Terra.notification.dialog.error": "Erro",
+  "Terra.notification.dialog.warning": "Advertência",
+  "Terra.notification.dialog.alert": "Alerta",
+  "Terra.notification.dialog.success": "Êxito"
 }

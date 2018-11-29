@@ -1,5 +1,4 @@
 import React from 'react';
-import AppDelegate from 'terra-app-delegate';
 import NavigationLayout from '../../src/NavigationLayout';
 
 const Header = () => (
@@ -72,7 +71,6 @@ describe('NavigationLayout', () => {
         }}
         match={{}}
         history={{}}
-        app={AppDelegate.create({})}
         config={{
           header: {
             '/': {
@@ -132,7 +130,6 @@ describe('NavigationLayout', () => {
       }}
       match={{}}
       history={{}}
-      app={AppDelegate.create({})}
       indexPath="/"
       config={{
         header: {
@@ -186,7 +183,6 @@ describe('NavigationLayout', () => {
       }}
       match={{}}
       history={{}}
-      app={AppDelegate.create({})}
       indexPath="/"
       config={{
         header: {

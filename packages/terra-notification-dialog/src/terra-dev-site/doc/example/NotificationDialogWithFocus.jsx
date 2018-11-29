@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'terra-button';
-import AppDelegate from 'terra-app-delegate';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
 
 const clickOK = () => {
@@ -8,7 +8,7 @@ const clickOK = () => {
 };
 
 const propTypes = {
-  app: AppDelegate.propType,
+  disclosureManager: disclosureManagerShape,
 };
 
 class NotificationDialogWithFocus extends React.Component {
@@ -48,8 +48,8 @@ class NotificationDialogWithFocus extends React.Component {
             text: 'Close',
             onClick: this.handleCloseModal,
           }}
-          requestFocus={this.props.app.requestFocus}
-          releaseFocus={this.props.app.releaseFocus}
+          requestFocus={this.props.disclosureManager.requestFocus}
+          releaseFocus={this.props.disclosureManager.releaseFocus}
         />
         <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
       </div>
@@ -58,4 +58,4 @@ class NotificationDialogWithFocus extends React.Component {
 }
 
 NotificationDialogWithFocus.propTypes = propTypes;
-export default NotificationDialogWithFocus;
+export default withDisclosureManager(NotificationDialogWithFocus);

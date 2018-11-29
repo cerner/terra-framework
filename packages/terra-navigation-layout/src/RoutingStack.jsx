@@ -6,16 +6,11 @@ import {
   withRouter,
   matchPath,
 } from 'react-router-dom';
-import AppDelegate from 'terra-app-delegate';
 
 import RoutingStackDelegate from './RoutingStackDelegate';
 import { processedRoutesPropType } from './configurationPropTypes';
 
 const propTypes = {
-  /**
-   * The AppDelegate instance that will be provided to the components rendered by the RoutingStack.
-   */
-  app: AppDelegate.propType,
   /**
    * The routing configuration from which Routes will be generated.
    */
@@ -71,7 +66,7 @@ class RoutingStack extends React.Component {
 
   createRoutes(routes) {
     const {
-      navEnabled, app, location, history, ancestorProps,
+      navEnabled, location, history, ancestorProps,
     } = this.props;
     const { stackLocation } = this.state;
 
@@ -129,7 +124,6 @@ class RoutingStack extends React.Component {
                   {...ancestorProps}
                   {...routeData.componentProps}
                   routingStackDelegate={RoutingStackDelegate.create(delegateData)}
-                  app={app}
                 />
               )}
             />

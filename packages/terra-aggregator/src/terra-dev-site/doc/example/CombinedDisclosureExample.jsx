@@ -1,31 +1,37 @@
 import React from 'react';
 import ModalManager from 'terra-modal-manager';
 import SlidePanelManager from 'terra-slide-panel-manager';
+import { withDisclosureManager } from 'terra-disclosure-manager';
 
 /* eslint-disable import/no-unresolved, import/extensions */
-import AggregatorContainer from 'terra-aggregator/lib/terra-dev-site/doc/common/AggregatorContainer';
+import Aggregator from 'terra-aggregator/lib/Aggregator';
 import AggregatorItem from 'terra-aggregator/lib/terra-dev-site/doc/common/AggregatorItem';
 import SimpleAggregatorItem from 'terra-aggregator/lib/terra-dev-site/doc/common/SimpleAggregatorItem';
 /* eslint-enable import/no-unresolved, import/extensions */
 
 const items = Object.freeze([{
   key: 'SECTION_0',
-  component: <AggregatorItem name="Slide Panel Section" disclosureType="panel" />,
+  component: <AggregatorItem name="Slide Panel Section" disclosureType="panel" discloseOnSelect />,
 }, {
   key: 'SECTION_1',
-  component: <AggregatorItem name="Modal Section" disclosureType="modal" />,
+  component: <AggregatorItem name="Modal Section" disclosureType="modal" discloseOnSelect />,
 }, {
   key: 'SECTION_2',
   component: <SimpleAggregatorItem name="No Disclosure Section" />,
 }]);
 
+const Wrapper = withDisclosureManager(({ disclosureManager }) => (
+  <Aggregator
+    items={items}
+    disclose={disclosureManager.disclose}
+  />
+));
+
 const CombinedDisclosureExample = () => (
   <div>
     <ModalManager>
       <SlidePanelManager>
-        <AggregatorContainer
-          items={items}
-        />
+        <Wrapper />
       </SlidePanelManager>
     </ModalManager>
   </div>

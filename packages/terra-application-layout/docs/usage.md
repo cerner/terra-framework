@@ -27,11 +27,6 @@ const MyApp = () => (
 
 ## Props
 
-### `app`
-#### Is Required: `false`
-
-By default, the ApplicationLayout will render itself within a `ModalManager` and provide modal presentation capabilities to all of its child components. However, the ApplicationLayout accepts an AppDelegate prop (as `app`) that it will fall back to, if necessary. If no `app` prop is provided, the ModalManager provided by the ApplicationLayout will handle all disclosure requests by the ApplicationLayout's children.
-
 ### `extensions`
 #### Is Required: `false`
 
@@ -273,7 +268,6 @@ The components rendered in these regions are guaranteed to receive the following
 
 |Prop Name|Description|
 |---|---|
-|`app`|The AppDelegate instance provided to the ApplicationLayout's contents as created by ApplicationLayout's default `ModalManager`.|
 |`layoutConfig`|The `layoutConfig` contains properties describing the ApplicationLayout's state and functions that allow for the manipulation of that state.|
 |`routingStackDelegate`|The `routingStackDelegate` contains APIs that allow for virtual navigation within a set of matched component paths.|
 

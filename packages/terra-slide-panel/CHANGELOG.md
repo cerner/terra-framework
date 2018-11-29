@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Slide panel's aria-hidden value when the panel is toggled
 
 2.21.0 - (November 15, 2018)
 ------------------

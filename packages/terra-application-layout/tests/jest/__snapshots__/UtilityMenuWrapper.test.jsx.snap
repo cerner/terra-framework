@@ -1,10 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UtilityMenuWrapper should render prop data 1`] = `
-<div
-  isHeightBounded={true}
-  onRequestClose={[MockFunction]}
->
-  Child
-</div>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;

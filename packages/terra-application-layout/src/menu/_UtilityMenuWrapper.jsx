@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppDelegate from 'terra-app-delegate';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 
 import 'terra-base/lib/baseStyles';
 
 const propTypes = {
   /**
-   * The AppDelegate instance that will be propagated to the components presented within the NavigationLayout.
+   * DisclosureManagerDelegate instance automatically provided by a DisclosureManagerProvider.
    */
-  app: AppDelegate.propType,
+  disclosureManager: disclosureManagerShape,
   /**
    * The utility menu to be wrapped.
    */
@@ -16,17 +16,17 @@ const propTypes = {
 };
 
 /**
- * The UtilityMenuWrapper handles the plumbing between its AppDelegate and the
+ * The UtilityMenuWrapper handles the plumbing between its disclosureManager and the
  * utility menu dismissal requests.
  */
 const UtilityMenuWrapper = ({
-  app,
+  disclosureManager,
   children,
   ...customProps
 }) => (
-  React.cloneElement(children, { ...customProps, onRequestClose: app.dismiss, isHeightBounded: true })
+  React.cloneElement(children, { ...customProps, onRequestClose: disclosureManager.dismiss, isHeightBounded: true })
 );
 
 UtilityMenuWrapper.propTypes = propTypes;
 
-export default UtilityMenuWrapper;
+export default withDisclosureManager(UtilityMenuWrapper);

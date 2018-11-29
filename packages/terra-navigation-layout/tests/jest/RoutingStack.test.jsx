@@ -1,5 +1,4 @@
 import React from 'react';
-import AppDelegate from 'terra-app-delegate';
 import { MemoryRouter } from 'react-router-dom';
 import RoutingStack from '../../src/RoutingStack';
 
@@ -29,7 +28,6 @@ describe('RoutingStack', () => {
   it('should render a RoutingStack with provided routes and nav disabled', () => {
     const testRoutingStack = (
       <RoutingStack.WrappedComponent
-        app={AppDelegate.create({})}
         location={{
           pathname: '/a/b/c',
         }}
@@ -75,7 +73,6 @@ describe('RoutingStack', () => {
       >
         <RoutingStack
           navEnabled
-          app={AppDelegate.create({})}
           ancestorProps={{
             parentProp: 'parent prop value',
           }}
