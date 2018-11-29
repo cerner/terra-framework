@@ -46,7 +46,7 @@ const devSiteRoutingMenuRootMenuKey = 'devSiteRoutingMenuRootMenuKey';
  * @param {string} by is the string to match by
  * @returns {(searchable?: string) => Boolean}
  */
-const searchFilter = (by = '') => (searchable = '') => searchable.toLowerCase().search(by.toLowerCase()) >= 0;
+export const searchFilter = (by = '') => (searchable = '') => searchable.toLowerCase().search(by.toLowerCase()) >= 0;
 
 /**
  * This function converts the given menuItems from the DevSiteRoutingMenu API to the NavigationSideMenu API.
@@ -54,7 +54,7 @@ const searchFilter = (by = '') => (searchable = '') => searchable.toLowerCase().
  * values are set as metaData on the item so that `handleMenuChange` will have easy access to those values.
  * @param {Array} menuItems is the Array of menuItem objects as specified by the DevSiteRoutingMenu's proptype definition.
  */
-const buildSideMenuItems = menuItems => menuItems.map(item => ({
+export const buildSideMenuItems = menuItems => menuItems.map(item => ({
   key: item.path,
   text: item.text,
   hasSubMenu: !!item.hasSubMenu,
