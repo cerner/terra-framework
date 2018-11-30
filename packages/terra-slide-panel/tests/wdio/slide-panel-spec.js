@@ -106,11 +106,14 @@ describe('Slide panel', () => {
   describe('Slide panel theming', () => {
     beforeEach(() => browser.url('/#/raw/tests/terra-slide-panel/slide-panel/slide-panel-end'));
 
-    Terra.should.themeEachCustomProperty({
-      '--terra-slide-panel-panel-width-small': '420px',
-      '--terra-slide-panel-panel-width-large-scalar': '0.8',
-      '--terra-slide-panel-shadow-color': 'orange',
-      '--terra-slide-panel-panel-border-color': 'blue',
+    Terra.should.themeCombinationOfCustomProperties({
+      testName: 'themed',
+      properties: {
+        '--terra-slide-panel-panel-width-small': '420px',
+        '--terra-slide-panel-panel-width-large-scalar': '0.8',
+        '--terra-slide-panel-shadow-color': 'orange',
+        '--terra-slide-panel-panel-border-color': 'blue',
+      },
     });
   });
 });

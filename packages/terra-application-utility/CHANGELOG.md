@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Wdio tests changed to use themeCombinationOfCustomProperties
+
 ### Removed
 * Removed dependency on terra-app-delegate package.
 

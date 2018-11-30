@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Wdio tests changed to use themeCombinationOfCustomProperties
 * Replaced use of componentWillMount with componentDidMount
 
 ### Fixed
