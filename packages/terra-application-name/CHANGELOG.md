@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update example to use terra-framework's checked in image
 
 2.21.0 - (December 3, 2018)
 ------------------
