@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.0.0 - (December 3, 2018)
+------------------
 ### Breaking Change
 * Consumed DisclosureManager v3.0 - Updated to Context-provided consumer API vs. prop injection
 

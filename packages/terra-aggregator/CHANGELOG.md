@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.18.0 - (December 3, 2018)
+------------------
 ### Changed
 * Updated examples to consume terra-disclosure-manager v3.x
 

@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.0.0 - (December 3, 2018)
+------------------
 ### Breaking Change
 * Updated ApplicationLayout and related components to interface directly with a parent DisclosureManager. 
 * Removed instances of the ApplicationLayout and related components injecting an `app` prop into child components.

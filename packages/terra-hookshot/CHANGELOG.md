@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.14.0 - (December 3, 2018)
+------------------
 ### Fixed
 * Lint error
 

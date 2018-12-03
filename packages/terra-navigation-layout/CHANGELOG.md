@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.0.0 - (December 3, 2018)
+------------------
 ### Breaking Change
 * Removed instances of the NavigationLayout and related components injecting an `app` prop into child components.
 
