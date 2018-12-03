@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Migrate package to the terra-framework repository
 
 2.29.0 - (November 19, 2018)
 ------------------

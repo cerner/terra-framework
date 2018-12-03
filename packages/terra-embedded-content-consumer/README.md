@@ -2,12 +2,12 @@
 
 
 [![NPM version](https://badgen.net/npm/v/terra-embedded-content-consumer)](https://www.npmjs.org/package/terra-embedded-content-consumer)
-[![Build Status](https://badgen.net/travis/cerner/terra-core)](https://travis-ci.org/cerner/terra-core)
+[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.org/cerner/terra-framework)
 
 The Embedded Content Consumer is the application component which is embedding web content within it.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-core/tree/master/packages/terra-embedded-content-consumer/docs)
+- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-embedded-content-consumer/docs)
 - [LICENSE](#license)
 
 ## Getting Started
