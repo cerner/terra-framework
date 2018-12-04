@@ -219,7 +219,7 @@ class PopupContent extends React.Component {
     const widthData = isWidthAutomatic ? { 'data-terra-popup-automatic-width': true } : {};
 
     return (
-      <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true }}>
+      <FocusTrap paused="true" focusTrapOptions={{ returnFocusOnDeactivate: true }}>
         <Hookshot.Content
           {...customProps}
           className={contentClassNames}
@@ -227,7 +227,6 @@ class PopupContent extends React.Component {
           data-terra-popup-content
           onContentResize={(isHeightAutomatic || isWidthAutomatic) ? onContentResize : undefined}
           onEsc={onRequestClose}
-          onOutsideClick={this.props.onRequestClose}
           onResize={this.handleOnResize}
           refCallback={refCallback}
           role="dialog"

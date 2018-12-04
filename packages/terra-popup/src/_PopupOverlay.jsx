@@ -18,6 +18,11 @@ const defaultProps = {
 };
 
 class PopupOverlay extends React.Component {
+  constructor() {
+    super();
+    this.handleOnClick = this.handleOnClick.bind(this);
+  }
+
   componentDidMount() {
     // Disable scrolling on the page when Overlay is displayed
     this.overlayStyle = document.documentElement.style.overflow;
@@ -29,17 +34,32 @@ class PopupOverlay extends React.Component {
     document.documentElement.style.overflow = this.overlayStyle;
   }
 
+
+  handleOnClick(event) {
+    if (this.props.onRequestClose) {
+      this.props.onRequestClose(event);
+    }
+  }
+
   render() {
     const { children, ...customProps } = this.props;
-
     // Delete the closePortal prop that comes from react-portal.
     delete customProps.closePortal;
+    // Delete onRequestClose prop we use to close popup.
+    delete customProps.onRequestClose;
 
     return (
-      <div {...customProps} className={cx(['popup-overlay', customProps.className])}>
-        <div className={cx('inner')} />
-        {children}
-      </div>
+      <React.Fragment>
+        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+        <div
+          onClick={this.handleOnClick}
+          {...customProps}
+          className={cx(['popup-overlay', customProps.className])}
+        >
+          <div className={cx('inner')} />
+          {children}
+        </div>
+      </React.Fragment>
     );
   }
 }
