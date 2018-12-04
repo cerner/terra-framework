@@ -9,19 +9,22 @@ describe('ApplicationMenu', () => {
 
     Terra.should.matchScreenshot('#test-menu', { selector: '#test-menu', viewports });
     Terra.should.beAccessible({ viewports, context: '#test-menu' });
-    Terra.should.themeEachCustomProperty('#test-menu', {
-      '--terra-application-layout-menu-background-color': 'pink',
-      '--terra-application-layout-menu-header-background-color': 'blue',
+    Terra.should.themeCombinationOfCustomProperties({
+      testName: 'themed',
+      properties: {
+        '--terra-application-layout-menu-background-color': 'pink',
+        '--terra-application-layout-menu-header-background-color': 'blue',
+      },
+    });
+  });
+
+  describe('Displays an application menu utilities', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout-menu');
+      browser.waitForVisible('#test-menu');
+      browser.click('[data-application-menu-utility]');
     });
 
-    describe('Displays an application menu utilities', () => {
-      beforeEach(() => {
-        browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout-menu');
-        browser.waitForVisible('#test-menu');
-        browser.click('[data-application-menu-utility]');
-      });
-
-      Terra.should.matchScreenshot({ viewports });
-    });
+    Terra.should.matchScreenshot({ viewports });
   });
 });

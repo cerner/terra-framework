@@ -13,19 +13,12 @@ describe('MenuUtilityMenu', () => {
       properties: {
         '--terra-application-menu-utility-menu-header-font-size': '2rem',
         '--terra-application-menu-utility-menu-header-font-weight': 'normal',
-        '--terra-application-menu-utility-menu-header-line-height': '1.2',
-        '--terra-application-menu-utility-menu-margin-bottom': '1rem',
-        '--terra-application-menu-utility-menu-margin-top': '1rem',
         '--terra-application-menu-utility-menu-initial-page-header-text-margin-left': '1rem',
         '--terra-application-menu-utility-menu-noninitial-page-header-text-margin-left': '1rem',
         '--terra-application-utility-menu-divider-border-top': '5px dashed pink',
         '--terra-application-utility-menu-divider-height': '1rem',
-        '--terra-application-utility-menu-divider-margin-top': '10px',
         '--terra-application-utility-menu-divider-border-after-top': '5px dashed pink',
         '--terra-application-utility-menu-divider-after-height': '1rem',
-        '--terra-application-utility-menu-divider-after-margin-top': '10px',
-        '--terra-application-menu-utility-menu-chevron-height': '2rem',
-        '--terra-application-menu-utility-menu-chevron-width': '2rem',
         '--terra-application-menu-utility-menu-body-item-background-color': 'pink',
         '--terra-application-menu-utility-menu-body-item-font-color': 'pink',
         '--terra-application-menu-utility-menu-body-item-font-size': '2rem',
@@ -47,6 +40,26 @@ describe('MenuUtilityMenu', () => {
         '--terra-application-menu-utility-menu-footer-item-margin-bottom': '1rem',
         '--terra-application-menu-utility-menu-footer-item-margin-left': '1rem',
         '--terra-application-menu-utility-menu-footer-item-margin-right': '1rem',
+      },
+    });
+    Terra.should.themeCombinationOfCustomProperties({
+      testName: 'themed-fonts',
+      properties: {
+        '--terra-application-menu-utility-menu-header-font-size': '1.5rem',
+        '--terra-application-menu-utility-menu-header-font-weight': 'normal',
+        '--terra-application-menu-utility-menu-header-line-height': '1.2',
+        '--terra-application-menu-utility-menu-body-item-font-color': 'red',
+        '--terra-application-menu-utility-menu-body-item-font-size': '1.5rem',
+        '--terra-application-menu-utility-menu-footer-item-font-color': 'red',
+        '--terra-application-menu-utility-menu-footer-item-font-size': '1.5rem',
+      },
+    });
+    Terra.should.themeCombinationOfCustomProperties({
+      testName: 'themed-padding',
+      properties: {
+        '--terra-application-menu-utility-menu-body-item-padding-bottom': '1rem',
+        '--terra-application-menu-utility-menu-body-item-padding-left': '1rem',
+        '--terra-application-menu-utility-menu-body-item-padding-top': '1rem',
       },
     });
   });
