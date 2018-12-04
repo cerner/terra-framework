@@ -229,7 +229,6 @@ class PopupContent extends React.Component {
           onEsc={onRequestClose}
           onOutsideClick={this.props.onRequestClose}
           onResize={this.handleOnResize}
-          preventDefault
           refCallback={refCallback}
           role="dialog"
         >

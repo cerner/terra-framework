@@ -4,7 +4,12 @@ Changelog
 Unreleased
 ----------
 
-4.19.1 - (December 3, 2018)
+4.19.1 - (December 4, 2018)
+------------------
+### Removed
+* Removed preventDefault prop on PopupContent component. This is handled by react-onClickOutside.
+
+4.19.0 - (December 3, 2018)
 ------------------
 ### Changed
 * Wdio tests changed to use themeCombinationOfCustomProperties
