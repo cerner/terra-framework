@@ -42,6 +42,25 @@ describe('HeaderUtilityMenu', () => {
         '--terra-application-header-utility-menu-footer-item-margin-right': '1rem',
       },
     });
+    Terra.should.themeCombinationOfCustomProperties({
+      testName: 'themed-fonts',
+      properties: {
+        '--terra-application-header-utility-menu-header-font-size': '1.5rem',
+        '--terra-application-header-utility-menu-header-font-weight': 'normal',
+        '--terra-application-header-utility-menu-body-item-font-color': 'red',
+        '--terra-application-header-utility-menu-body-item-font-size': '1.5rem',
+        '--terra-application-header-utility-menu-footer-item-font-color': 'red',
+        '--terra-application-header-utility-menu-footer-item-font-size': '1.5rem',
+      },
+    });
+    Terra.should.themeCombinationOfCustomProperties({
+      testName: 'themed-padding',
+      properties: {
+        '--terra-application-header-utility-menu-body-item-padding-bottom': '1rem',
+        '--terra-application-header-utility-menu-body-item-padding-left': '1rem',
+        '--terra-application-header-utility-menu-body-item-padding-top': '1rem',
+      },
+    });
   });
 
   describe('Hover-header utility menu', () => {

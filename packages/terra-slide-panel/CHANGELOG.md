@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Wdio tests changed to use themeCombinationOfCustomProperties
+
 ### Fixed
 * Slide panel's aria-hidden value when the panel is toggled
 

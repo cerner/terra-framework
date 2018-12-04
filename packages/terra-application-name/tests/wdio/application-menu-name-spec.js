@@ -6,14 +6,17 @@ describe('ApplicationMenuName', () => {
 
     Terra.should.matchScreenshot({ viewports, selector: '#default' });
     Terra.should.beAccessible({ viewports, context: '#default' });
-    Terra.should.themeEachCustomProperty('#default', {
-      '--terra-application-menu-name-align-items': 'left',
-      '--terra-application-menu-name-color': '#800080',
-      '--terra-application-menu-name-flex': '1 1 auto',
-      '--terra-application-menu-name-accessory-padding-left': '1rem',
-      '--terra-application-menu-name-title-font-weight': 'bold',
-      '--terra-application-menu-name-title-padding-left': '1rem',
-      '--terra-application-menu-name-title-padding-right': '3rem',
+    Terra.should.themeCombinationOfCustomProperties({
+      testName: 'themed',
+      properties: {
+        '--terra-application-menu-name-align-items': 'left',
+        '--terra-application-menu-name-color': '#800080',
+        '--terra-application-menu-name-flex': '1 1 auto',
+        '--terra-application-menu-name-accessory-padding-left': '1rem',
+        '--terra-application-menu-name-title-font-weight': 'bold',
+        '--terra-application-menu-name-title-padding-left': '1rem',
+        '--terra-application-menu-name-title-padding-right': '3rem',
+      },
     });
   });
 
