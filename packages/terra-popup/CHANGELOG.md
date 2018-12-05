@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.20.0 - (December 5, 2018)
+------------------
 ### Added
 * Added onClickOutside detection to popup overlay
 
