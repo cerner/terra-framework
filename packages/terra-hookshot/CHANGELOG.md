@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Export version of HookshotContent that does not use onClickOutside HOC
 
 4.14.0 - (December 3, 2018)
 ------------------
