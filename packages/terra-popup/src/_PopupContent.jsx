@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
 import FocusTrap from 'focus-trap-react';
-import HookshotContent from 'terra-hookshot/lib/HookshotContent';
+import Hookshot from 'terra-hookshot';
 import styles from './PopupContent.module.scss';
 
 const cx = classNames.bind(styles);
@@ -220,7 +220,7 @@ class PopupContent extends React.Component {
 
     return (
       <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: true }}>
-        <HookshotContent
+        <Hookshot.Content
           {...customProps}
           className={contentClassNames}
           tabIndex={isFocusedDisabled ? null : '0'}
@@ -235,7 +235,7 @@ class PopupContent extends React.Component {
           <div {...heightData} {...widthData} className={innerClassNames} style={contentStyle}>
             {content}
           </div>
-        </HookshotContent>
+        </Hookshot.Content>
       </FocusTrap>
     );
   }

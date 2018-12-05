@@ -216,4 +216,3 @@ HookshotContent.propTypes = propTypes;
 const onClickOutsideContent = onClickOutside(HookshotContent);
 
 export default onClickOutsideContent;
-export { HookshotContent };
