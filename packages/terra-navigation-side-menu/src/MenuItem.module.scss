@@ -65,7 +65,7 @@
       box-shadow: var(--terra-navigation-side-menu-item-focus-box-shadow, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
       z-index: 5;
 
-      /* stylelint-disable-next-line max-compound-selectors */
+      /* stylelint-disable-next-line selector-max-compound-selectors */
       .chevron > svg {
         color: var(--terra-navigation-side-menu-item-selected-focus-chevron-color);
       }
@@ -89,8 +89,8 @@
     padding-left: 10px;
 
     > svg {
-      height: var(--terra-navigation-side-menu-item-chevron-height, 0.8em);
       color: var(--terra-navigation-side-menu-item-chevron-color, #787879);
+      height: var(--terra-navigation-side-menu-item-chevron-height, 0.8em);
       width: var(--terra-navigation-side-menu-item-chevron-width, 0.8em);
     }
   }

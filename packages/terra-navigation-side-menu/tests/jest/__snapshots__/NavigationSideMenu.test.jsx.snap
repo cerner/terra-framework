@@ -2,6 +2,7 @@
 
 exports[`Layout should render a NavigationSideMenu with default props 1`] = `
 <ContentContainer
+  className="side-menu-content-container"
   fill={true}
   header={
     <ActionHeader
@@ -17,6 +18,7 @@ exports[`Layout should render a NavigationSideMenu with default props 1`] = `
 
 exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
 <ContentContainer
+  className="side-menu-content-container"
   fill={true}
   header={
     <ActionHeader
@@ -29,7 +31,7 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
   }
 >
   <List
-    className="menu-list"
+    className="side-menu-list"
     isDivided={false}
   >
     <MenuItem

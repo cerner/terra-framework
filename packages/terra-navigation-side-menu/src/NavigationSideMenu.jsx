@@ -174,7 +174,7 @@ class NavigationSideMenu extends React.Component {
 
   buildListContent(currentItem) {
     if (currentItem && currentItem.childKeys && currentItem.childKeys.length) {
-      return <List className={cx(['menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</List>;
+      return <List className={cx(['side-menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</List>;
     }
     return null;
   }
@@ -204,7 +204,7 @@ class NavigationSideMenu extends React.Component {
     }
 
     return (
-      <ContentContainer {...customProps} header={actionHeader} fill>
+      <ContentContainer {...customProps} header={actionHeader} fill className={cx(['side-menu-content-container'])}>
         {this.buildListContent(currentItem)}
       </ContentContainer>
     );
