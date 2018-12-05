@@ -18,7 +18,7 @@ const propTypes = {
   render: PropTypes.func,
   /**
    * A function that will be provided to Aggregator items that have received focus. The function must adhere to the standardized
-   * AppDelegate disclosure API.
+   * DisclosureManager disclosure API.
    */
   disclose: PropTypes.func,
 };
@@ -86,7 +86,7 @@ class Aggregator extends React.Component {
           const focusRequestPayload = {};
 
           /**
-           * If the Aggregator is provided with disclosure functionality, the focus request is resolved with a custom
+           * If the Aggregator is rendered within the context of a DisclosureManager, the focus request is resolved with a custom
            * disclose implementation.
            */
           if (disclose) {

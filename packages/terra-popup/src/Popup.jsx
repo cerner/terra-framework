@@ -287,7 +287,10 @@ class Popup extends React.Component {
     return (
       <div>
         <Portal isOpened={isOpen}>
-          <PopupOverlay className={this.props.classNameOverlay} />
+          <PopupOverlay
+            className={this.props.classNameOverlay}
+            onRequestClose={this.props.onRequestClose}
+          />
         </Portal>
         <Hookshot
           attachmentBehavior={attachmentBehavior}

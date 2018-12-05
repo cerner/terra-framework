@@ -4,6 +4,19 @@ Changelog
 Unreleased
 ----------
 
+3.19.0 - (December 5, 2018)
+------------------
+### Changed
+* Minor dependency update
+
+3.18.0 - (December 3, 2018)
+------------------
+### Changed
+* Updated examples to consume terra-disclosure-manager v3.x
+
+### Removed
+* Removed terra-app-delegate dependency
+
 3.17.0 - (November 15, 2018)
 ------------------
 ### Changed

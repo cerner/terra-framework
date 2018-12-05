@@ -3,8 +3,30 @@ Changelog
 
 Unreleased
 ----------
+
+4.20.0 - (December 5, 2018)
+------------------
+### Added
+* Added onClickOutside detection to popup overlay
+
+### Changed
+* Replaced hookshot content component with a version that does not use onClickOutside HOC
+* Disabled focus trap when popup is open and users click outside of the popup
+
+4.19.1 - (December 3, 2018)
+------------------
+### Changed
+* Wdio tests changed to use themeCombinationOfCustomProperties
+* Replaced use of componentWillMount with componentDidMount
+
 ### Fixed
 * Fixed preventDefault error
+
+### Changed
+* Updated examples to consume terra-disclosure-manager v3.x
+
+### Removed
+* Removed dependency on terra-app-delegate package.
 
 4.18.1 - (November 15, 2018)
 ------------------

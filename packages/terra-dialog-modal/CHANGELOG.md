@@ -4,11 +4,25 @@ Changelog
 Unreleased
 ----------
 
+1.12.0 - (December 5, 2018)
+------------------
+### Changed
+* Minor dependency update
+
+1.11.0 - (December 3, 2018)
+------------------
+### Changed
+* Minor dependency bump
+
 1.10.0 - (November 15, 2018)
 ------------------
 ### Changed
 * Minor dependency update
 * Restructured theme tests into a separate file
+* Updated examples to consume terra-disclosure-manager v3.x
+
+### Removed
+* Removed dependency on terra-app-delegate package.
 
 1.9.0 - (October 16, 2018)
 ------------------

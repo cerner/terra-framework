@@ -4,6 +4,19 @@ Changelog
 Unreleased
 ----------
 
+3.1.0 - (December 5, 2018)
+------------------
+### Changed
+* Minor dependency update
+
+3.0.0 - (December 3, 2018)
+------------------
+### Breaking Change
+* Consumed DisclosureManager v3.0 - Updated to Context-provided consumer API vs. prop injection
+
+### Removed
+* Removed dependency on terra-app-delegate package.
+
 2.20.0 - (November 15, 2018)
 ------------------
 ### Changed

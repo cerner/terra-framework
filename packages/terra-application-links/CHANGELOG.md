@@ -4,6 +4,16 @@ Changelog
 Unreleased
 ----------
 
+4.21.0 - (December 5, 2018)
+------------------
+### Changed
+* Minor dependency update
+
+4.20.0 - (December 3, 2018)
+------------------
+### Changed
+* Wdio tests changed to use themeCombinationOfCustomProperties
+
 4.19.1 - (November 15, 2018)
 ------------------
 ### Changed

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
-import AppDelegate from 'terra-app-delegate';
 import Layout from 'terra-layout';
 import breakpoints from 'terra-responsive-element/lib/breakpoints.module.scss';
 
@@ -31,27 +30,23 @@ const getBreakpointSize = (queryWidth) => {
 const propTypes = {
   /**
    * The component to render within the NavigationLayout's `header` region. If provided, this component
-   * must appropriately handle the NavigationLayout-supplied props: `app`, `routeConfig`, and `navigationLayoutSize`.
+   * must appropriately handle the NavigationLayout-supplied props: `routeConfig`, and `navigationLayoutSize`.
    */
   header: PropTypes.element,
   /**
    * The component to render within the NavigationLayout's `menu` region. If provided, this component
-   * must appropriately handle the NavigationLayout-supplied props: `app`, `routeConfig`, and `navigationLayoutSize`.
+   * must appropriately handle the NavigationLayout-supplied props: `routeConfig`, and `navigationLayoutSize`.
    */
   menu: PropTypes.element,
   /**
    * The component to render within the NavigationLayout's `content` region. If provided, this component
-   * must appropriately handle the NavigationLayout-supplied props: `app`, `routeConfig`, and `navigationLayoutSize`.
+   * must appropriately handle the NavigationLayout-supplied props: `routeConfig`, and `navigationLayoutSize`.
    */
   children: PropTypes.element,
   /**
    * The String to display in the NavigationLayout's hover-target menu disclosure.
    */
   menuText: PropTypes.string,
-  /**
-   * The AppDelegate instance that will be propagated to the components presented within the NavigationLayout.
-   */
-  app: AppDelegate.propType,
   /**
    * The configuration Object that will be used to generate the specified regions of the NavigationLayout.
    * Note: The config prop is treated as an immutable object to prevent unnecessary processing and improve performance.
@@ -143,11 +138,9 @@ class NavigationLayout extends React.Component {
       return null;
     }
 
-    const { app } = this.props;
     const { size } = this.state;
 
     return React.cloneElement(element, {
-      app,
       navigationLayoutRoutes: routes,
       navigationLayoutSize: size,
     });
@@ -158,7 +151,6 @@ class NavigationLayout extends React.Component {
       header,
       children,
       menu,
-      app,
       menuText,
       config,
       indexPath,

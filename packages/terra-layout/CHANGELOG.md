@@ -4,11 +4,24 @@ Changelog
 Unreleased
 ----------
 
+2.21.0 - (December 5, 2018)
+------------------
+### Changed
+* Minor dependency update
+
+2.20.0 - (December 3, 2018)
+------------------
+### Changed
+* Minor dependency bump
+
 2.19.0 - (November 15, 2018)
 ------------------
 ### Changed
 * Added focus management to shift between layout panel and toggle button when it is opened and closed
 * Regenerated jest snapshots
+
+### Changed
+* Updated snapshots due to dependency updates
 
 2.18.0 - (October 16, 2018)
 ------------------
