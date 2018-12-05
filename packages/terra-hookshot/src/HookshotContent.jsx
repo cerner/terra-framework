@@ -56,7 +56,7 @@ if (typeof SVGElement !== 'undefined' && !('classList' in SVGElement.prototype))
 class HookshotContent extends React.Component {
   constructor(props) {
     super(props);
-    // this.handleClickOutside = this.handleClickOutside.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
     this.handleKeydown = this.handleKeydown.bind(this);
     this.handleResize = this.debounce(this.handleResize.bind(this), 100);
     this.enableEscListener = this.enableEscListener.bind(this);
@@ -89,11 +89,11 @@ class HookshotContent extends React.Component {
     }
   }
 
-  // handleClickOutside(event) {
-  //   if (this.props.onOutsideClick) {
-  //     this.props.onOutsideClick(event);
-  //   }
-  // }
+  handleClickOutside(event) {
+    if (this.props.onOutsideClick) {
+      this.props.onOutsideClick(event);
+    }
+  }
 
   handleKeydown(event) {
     if (event.keyCode === KEYCODES.ESCAPE) {
@@ -213,6 +213,7 @@ class HookshotContent extends React.Component {
 }
 
 HookshotContent.propTypes = propTypes;
-// const onClickOutsideContent = onClickOutside(HookshotContent);
+const onClickOutsideContent = onClickOutside(HookshotContent);
 
-export default HookshotContent;
+export default onClickOutsideContent;
+export { HookshotContent };
