@@ -217,7 +217,6 @@ class PopupContent extends React.Component {
 
     const heightData = isHeightAutomatic ? { 'data-terra-popup-automatic-height': true } : {};
     const widthData = isWidthAutomatic ? { 'data-terra-popup-automatic-width': true } : {};
-    delete customProps.isOpen;
 
     return (
       <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: true }}>
