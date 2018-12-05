@@ -77,11 +77,21 @@
   .is-open[data-slide-panel-panel-behavior='overlay'] {
     @media (min-width: 768px), print {
       &[data-slide-panel-panel-position='start'] > .panel {
-        box-shadow: var(--terra-slide-panel-panel-overlay-position-start-box-shadow, 1px 0 0 0 #cdced0, -16px 0 16px 14px rgba(77, 87, 92, 0.45), -12px 0 24px 18px rgba(100, 105, 108, 0.06), 0 0 100px 20px rgba(28, 31, 33, 0.04));
+        [dir=ltr] & {
+          box-shadow: var(--terra-slide-panel-panel-overlay-position-start-box-shadow, 1px 0 0 0 #cdced0, -16px 0 16px 14px rgba(77, 87, 92, 0.45), -12px 0 24px 18px rgba(100, 105, 108, 0.06), 0 0 100px 20px rgba(28, 31, 33, 0.04));
+        }
+        [dir=rtl] & {
+          box-shadow: var(--terra-slide-panel-panel-overlay-position-end-box-shadow, -1px 0 0 0 #cdced0, 16px 0 16px 14px rgba(77, 87, 92, 0.45), 12px 0 24px 18px rgba(100, 105, 108, 0.06), 0 0 100px 20px rgba(28, 31, 33, 0.04));
+        }
       }
 
       &[data-slide-panel-panel-position='end'] > .panel {
-        box-shadow: var(--terra-slide-panel-panel-overlay-position-end-box-shadow, -1px 0 0 0 #cdced0, 16px 0 16px 14px rgba(77, 87, 92, 0.45), 12px 0 24px 18px rgba(100, 105, 108, 0.06), 0 0 100px 20px rgba(28, 31, 33, 0.04));
+        [dir=ltr] & {
+          box-shadow: var(--terra-slide-panel-panel-overlay-position-end-box-shadow, -1px 0 0 0 #cdced0, 16px 0 16px 14px rgba(77, 87, 92, 0.45), 12px 0 24px 18px rgba(100, 105, 108, 0.06), 0 0 100px 20px rgba(28, 31, 33, 0.04));
+        }
+        [dir=rtl] & {
+          box-shadow: var(--terra-slide-panel-panel-overlay-position-start-box-shadow, 1px 0 0 0 #cdced0, -16px 0 16px 14px rgba(77, 87, 92, 0.45), -12px 0 24px 18px rgba(100, 105, 108, 0.06), 0 0 100px 20px rgba(28, 31, 33, 0.04));
+        }      
       }
     }
   }
