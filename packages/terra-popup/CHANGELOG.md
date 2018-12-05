@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added onClickOutside detection to popup overlay
+
+### Changed
+* Replaced hookshot content component with a version that does not use onClickOutside HOC
+* Disabled focus trap when popup is open and users click outside of the popup
 
 4.19.1 - (December 3, 2018)
 ------------------
