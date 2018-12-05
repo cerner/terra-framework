@@ -6,6 +6,11 @@ Unreleased
 ### Added
 * Shim for <main> tag IE compatibility added to _LayoutSlidePanel
 
+2.21.0 - (December 5, 2018)
+------------------
+### Changed
+* Minor dependency update
+
 2.20.0 - (December 3, 2018)
 ------------------
 ### Changed
