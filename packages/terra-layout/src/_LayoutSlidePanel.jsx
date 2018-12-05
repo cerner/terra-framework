@@ -68,6 +68,7 @@ class LayoutSlidePanel extends React.Component {
   }
 
   componentDidMount() {
+    document.createElement('main'); // shim for <main> tag not being recognized in IE
     if (this.panelNode) {
       this.panelNode.addEventListener('transitionend', this.handleTransitionEnd);
     }
