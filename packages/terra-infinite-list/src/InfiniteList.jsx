@@ -409,7 +409,6 @@ class InfiniteList extends React.Component {
     const newProps = {
       refCallback: wrappedCallback,
       'data-infinite-list-index': index,
-      style: child.props.style ? Object.assign({}, child.props.style, { overflow: 'hidden' }) : { overflow: 'hidden' },
     };
     return React.cloneElement(child, newProps);
   }
