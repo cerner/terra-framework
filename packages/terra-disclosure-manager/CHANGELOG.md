@@ -3,6 +3,14 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.1.0 - (December 5, 2018)
+------------------
+### Changed
+* Minor dependency update
+
+3.0.0 - (December 3, 2018)
+------------------
 ### Breaking Change
 * Added Context-based API for consumer-facing DisclosureManager APIs
 * Removed injection of `app` prop into child/disclosure components.

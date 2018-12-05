@@ -3,6 +3,14 @@ Changelog
 
 Unreleased
 ----------
+
+4.1.0 - (December 5, 2018)
+------------------
+### Changed
+* Minor dependency update
+
+4.0.0 - (December 3, 2018)
+------------------
 ### Breaking Change
 * Consumed DisclosureManager v3.0 - Updated to Context-provided consumer API vs. prop injection
 * Removed `withModalManager()` export to prevent confusion with the new context changes

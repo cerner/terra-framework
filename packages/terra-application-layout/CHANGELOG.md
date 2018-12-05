@@ -3,8 +3,17 @@ Changelog
 
 Unreleased
 ----------
+
+3.1.0 - (December 5, 2018)
+------------------
+### Changed
+* Update examples to use terra-framework's checked in image
+* Minor dependency bump
+
+3.0.0 - (December 3, 2018)
+------------------
 ### Breaking Change
-* Updated ApplicationLayout and related components to interface directly with a parent DisclosureManager. 
+* Updated ApplicationLayout and related components to interface directly with a parent DisclosureManager.
 * Removed instances of the ApplicationLayout and related components injecting an `app` prop into child components.
 
 ### Added
