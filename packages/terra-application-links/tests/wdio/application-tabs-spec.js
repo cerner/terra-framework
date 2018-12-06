@@ -11,9 +11,9 @@ describe('ApplicationTabs', () => {
     Terra.should.matchScreenshot('#test-tabs', { selector: '#test-tabs', viewports });
     Terra.should.beAccessible({ viewports, context: '#test-tabs' });
     Terra.should.themeCombinationOfCustomProperties({
+      selector: '#test-tabs',
       testName: 'themed',
       properties: {
-        '--terra-application-tabs-spacer-width': '5rem',
         '--terra-application-tab-width': '9rem',
         '--terra-application-tabs-margin-next-to-icon': '1rem',
         '--terra-application-tabs-menu-arrow-left-margin': '2rem',
@@ -25,7 +25,7 @@ describe('ApplicationTabs', () => {
         '--terra-application-tabs-color': '#000',
         '--terra-application-tabs-font-size': '1rem',
         '--terra-application-tabs-line-height': '1',
-        '--terra-application-tabs-padding': '1rem 2rem',
+        '--terra-application-tabs-padding-horizontal': '2rem',
         '--terra-application-tabs-hover-background-color': 'rgba(0, 0, 0, 0.15)',
         '--terra-application-tabs-active-background-color': 'pink',
         '--terra-application-tabs-active-background-size': '100% 9px',
