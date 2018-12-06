@@ -6,6 +6,11 @@ Unreleased
 ### Added
 * Add optional toolbar prop that displays below the side menu action header
 
+1.18.0 - (December 5, 2018)
+------------------
+### Changed
+* Minor dependency update
+
 1.17.0 - (December 3, 2018)
 ------------------
 ### Changed
