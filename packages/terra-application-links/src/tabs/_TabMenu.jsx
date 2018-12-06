@@ -44,11 +44,11 @@ class TabMenu extends React.Component {
     };
     this.shouldResetFocus = false;
   }
+
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.location !== prevState.prevPropsLocation) {
       return { isOpen: false };
     }
-
     return null;
   }
 
