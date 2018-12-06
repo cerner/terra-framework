@@ -51,11 +51,9 @@ class RoutingStack extends React.Component {
     };
   }
 
-  componentWillReceiveProps() {
-    this.setState({
-      // The stackLocation must be reset upon rerendering to be in sync with any navigation that may have occurred.
-      stackLocation: undefined,
-    });
+  static getDerivedStateFromProps() {
+    // The stackLocation must be reset upon rerendering to be in sync with any navigation that may have occurred.
+    return { stackLocation: undefined };
   }
 
   updateStackLocation(path) {
