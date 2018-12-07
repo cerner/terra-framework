@@ -104,9 +104,7 @@ class UtilityMenuItem extends React.Component {
 
   handleSelection(event, key) {
     event.preventDefault();
-    //if (this.props.onChange) {
-      this.props.onChange(event, key);
-    //}
+    this.props.onChange(event, key);
   }
 
   render() {
@@ -195,10 +193,9 @@ class UtilityMenuItem extends React.Component {
     const {
       wrapOnKeyDown, handleSelection,
     } = this;
+
     if (contentLocation === Utils.LOCATIONS.FOOTER) {
       item = renderFooterButton(wrapOnKeyDown, handleSelection);
-    } else if (content && isReadOnly) {
-      item = renderBodyItem(content, wrapOnKeyDown);
     } else if (content) {
       item = renderBodyItem(content, wrapOnKeyDown, handleSelection);
     } else {

@@ -127,13 +127,10 @@ class UtilityMenu extends React.Component {
         isReadOnly={item.isReadOnly}
         isSelected={item.isSelected}
         isSelectable={item.isSelectable}
-        //isSelected={item.isReadOnly ? false : item.isSelected}
-        //isSelectable={item.isReadOnly ? false : item.isSelectable}
         hasChevron={chevron}
         leftInset={leftInset}
         rightInset={rightInset}
-        onChange={this.handleOnChange}
-        //onChange={item.isReadOnly ? () => {} : this.handleOnChange}
+        onChange={item.isReadOnly ? () => {} : this.handleOnChange}
         onKeyDown={handleOnKeyDown}
         variant={this.props.variant}
       />
