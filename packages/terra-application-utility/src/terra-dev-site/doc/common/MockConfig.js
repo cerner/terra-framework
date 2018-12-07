@@ -131,6 +131,7 @@ const MockConfig = customComponent => [
     contentLocation: UtilityUtils.LOCATIONS.BODY,
     isSelected: false,
     isSelectable: true,
+    isReadOnly: true,
     childKeys: [],
   },
   {

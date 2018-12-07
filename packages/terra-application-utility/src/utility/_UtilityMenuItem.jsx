@@ -36,6 +36,7 @@ const propTypes = {
    * Indicates if the item has focus. This is used internally to control focus and does not set initial focus.
    */
   isActive: PropTypes.bool,
+  isReadOnly: PropTypes.bool,
   /**
    * Whether this item is selected.
    */
@@ -103,7 +104,9 @@ class UtilityMenuItem extends React.Component {
 
   handleSelection(event, key) {
     event.preventDefault();
-    this.props.onChange(event, key);
+    //if (this.props.onChange) {
+      this.props.onChange(event, key);
+    //}
   }
 
   render() {
@@ -113,6 +116,7 @@ class UtilityMenuItem extends React.Component {
       content,
       contentLocation,
       isActive,
+      isReadOnly,
       isSelected,
       isSelectable,
       hasChevron,
@@ -193,6 +197,8 @@ class UtilityMenuItem extends React.Component {
     } = this;
     if (contentLocation === Utils.LOCATIONS.FOOTER) {
       item = renderFooterButton(wrapOnKeyDown, handleSelection);
+    } else if (content && isReadOnly) {
+      item = renderBodyItem(content, wrapOnKeyDown);
     } else if (content) {
       item = renderBodyItem(content, wrapOnKeyDown, handleSelection);
     } else {
