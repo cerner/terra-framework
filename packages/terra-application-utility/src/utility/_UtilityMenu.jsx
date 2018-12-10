@@ -79,8 +79,8 @@ class UtilityMenu extends React.Component {
       currentKey: props.initialSelectedKey,
       focusIndex: -1,
       previousKeyStack: [],
-      prevPropsInitialSelectedKey: this.props.initialSelectedKey,
-      prevPropsMenuItems: this.props.menuItems,
+      prevPropsInitialSelectedKey: props.initialSelectedKey,
+      prevPropsMenuItems: props.menuItems,
     };
   }
 
