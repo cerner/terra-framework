@@ -128,6 +128,10 @@ class Hookshot extends React.Component {
     this.pendingTimeout = null;
   }
 
+  static getDerivedStateFromProps(nextProps) {
+    return { isEnabled: nextProps.isEnabled && nextProps.isOpen };
+  }
+
   componentDidMount() {
     if (this.state.isEnabled) {
       if (!this.listenersAdded) {
@@ -135,10 +139,6 @@ class Hookshot extends React.Component {
       }
       this.update();
     }
-  }
-
-  componentWillReceiveProps(newProps) {
-    this.setState({ isEnabled: newProps.isEnabled && newProps.isOpen });
   }
 
   componentDidUpdate() {
