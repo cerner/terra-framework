@@ -34,6 +34,9 @@ const itemShape = PropTypes.shape({
    * The location to place the item. One of Utils.LOCATIONS.BODY, Utils.LOCATIONS.FOOTER.
    */
   contentLocation: PropTypes.oneOf([LOCATIONS.BODY, LOCATIONS.FOOTER]),
+  /**
+   * Boolean indicating if the item is read-only. Takes precedence over isSelected/Selectable.
+   */
   isReadOnly: PropTypes.bool,
   /**
    * Boolean indicating if the item is selected.

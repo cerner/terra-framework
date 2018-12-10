@@ -36,7 +36,6 @@ const propTypes = {
    * Indicates if the item has focus. This is used internally to control focus and does not set initial focus.
    */
   isActive: PropTypes.bool,
-  isReadOnly: PropTypes.bool,
   /**
    * Whether this item is selected.
    */
@@ -114,7 +113,6 @@ class UtilityMenuItem extends React.Component {
       content,
       contentLocation,
       isActive,
-      isReadOnly,
       isSelected,
       isSelectable,
       hasChevron,

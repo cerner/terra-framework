@@ -112,4 +112,18 @@ describe('ApplicationLayout', () => {
     Terra.should.matchScreenshot({ selector: '#application-layout-test' });
     Terra.should.beAccessible({ context: '#application-layout-test' });
   });
+
+  describe('Presents utility menu from header and checks for closure on read-only item click', () => {
+    beforeEach(() => {
+      browser.setViewportSize(Terra.viewports('large')[0]);
+      browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout');
+      browser.waitForVisible('[data-application-header-utility]');
+      browser.click('[data-application-header-utility]');
+      browser.waitForVisible('#readonly');
+      browser.click('#readonly');
+    });
+
+    Terra.should.matchScreenshot({ selector: '#application-layout-test' });
+    Terra.should.beAccessible({ context: '#application-layout-test' });
+  });
 });
