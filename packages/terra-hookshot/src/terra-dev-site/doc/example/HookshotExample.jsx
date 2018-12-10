@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'terra-button';
-import NumberField from 'terra-form/lib/NumberField';
+import InputField from 'terra-form-input/lib/InputField';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import Hookshot from 'terra-hookshot/lib/Hookshot';
 
@@ -44,6 +44,8 @@ const attachmentValues = (attachment) => {
   return { vertical: 'bottom', horizontal: 'center' };
 };
 
+const getId = name => `${name}Example`;
+
 class HookshotStandard extends React.Component {
   constructor(props) {
     super(props);
@@ -51,7 +53,6 @@ class HookshotStandard extends React.Component {
     this.handleRequestClose = this.handleRequestClose.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.getId = this.getId.bind(this);
     this.state = {
       isOpen: false,
       hookshotContentAttachment: ATTACHMENT_POSITIONS[1],
@@ -59,10 +60,6 @@ class HookshotStandard extends React.Component {
       hookshotAttachmentBehavior: Hookshot.attachmentBehaviors[0],
       hookshotAttachmentMargin: 0,
     };
-  }
-
-  getId(name) {
-    return name + this.state.id;
   }
 
   handleButtonClick() {
@@ -78,7 +75,8 @@ class HookshotStandard extends React.Component {
   }
 
   handleInputChange(event) {
-    this.setState({ [event.target.name]: Number.parseFloat(event.target.value) });
+    const value = Number.parseFloat(event.target.value);
+    this.setState({ [event.target.name]: value });
   }
 
   render() {
@@ -94,35 +92,32 @@ class HookshotStandard extends React.Component {
 
     return (
       <div>
-        <form>
-          <label htmlFor={this.getId('hookshotAttachmentBehavior')}>Attachment Behavior</label>
-          <select id={this.getId('hookshotAttachmentBehavior')} name="hookshotAttachmentBehavior" value={this.state.hookshotAttachmentBehavior} onChange={this.handleSelectChange}>
-            {generateOptions(Hookshot.attachmentBehaviors)}
-          </select>
-          <br />
-          <br />
-          <NumberField
-            label="Attachment Margin in Px"
-            id={this.getId('hookshotAttachmentMargin')}
-            name="hookshotAttachmentMargin"
-            defaultValue={0}
-            value={this.state.hookshotAttachmentMargin}
-            style={{ width: '200px' }}
-            onChange={this.handleInputChange}
-          />
-          <label htmlFor={this.getId('hookshotContentAttachment')}>Content Attachment</label>
-          <select id={this.getId('hookshotContentAttachment')} name="hookshotContentAttachment" value={this.state.hookshotContentAttachment} onChange={this.handleSelectChange}>
-            {generateOptions(ATTACHMENT_POSITIONS)}
-          </select>
-          <br />
-          <br />
-          <label htmlFor={this.getId('hookshotTargetAttachment')}>Target Attachment</label>
-          <select id={this.getId('hookshotTargetAttachment')} name="hookshotTargetAttachment" value={this.state.hookshotTargetAttachment} onChange={this.handleSelectChange}>
-            {generateOptions(ATTACHMENT_POSITIONS)}
-          </select>
-          <br />
-          <br />
-        </form>
+        <label htmlFor={getId('hookshotAttachmentBehavior')}>Attachment Behavior</label>
+        <select id={getId('hookshotAttachmentBehavior')} name="hookshotAttachmentBehavior" value={this.state.hookshotAttachmentBehavior} onChange={this.handleSelectChange}>
+          {generateOptions(Hookshot.attachmentBehaviors)}
+        </select>
+        <br />
+        <br />
+        <InputField
+          label="Attachment Margin in Px"
+          inputId={getId('hookshotAttachmentMargin')}
+          inputAttrs={{ name: 'hookshotAttachmentMargin' }}
+          defaultValue={this.state.hookshotAttachmentMargin}
+          style={{ width: '200px' }}
+          onChange={this.handleInputChange}
+        />
+        <label htmlFor={getId('hookshotContentAttachment')}>Content Attachment</label>
+        <select id={getId('hookshotContentAttachment')} name="hookshotContentAttachment" value={this.state.hookshotContentAttachment} onChange={this.handleSelectChange}>
+          {generateOptions(ATTACHMENT_POSITIONS)}
+        </select>
+        <br />
+        <br />
+        <label htmlFor={getId('hookshotTargetAttachment')}>Target Attachment</label>
+        <select id={getId('hookshotTargetAttachment')} name="hookshotTargetAttachment" value={this.state.hookshotTargetAttachment} onChange={this.handleSelectChange}>
+          {generateOptions(ATTACHMENT_POSITIONS)}
+        </select>
+        <br />
+        <br />
         <Hookshot
           attachmentBehavior={this.state.hookshotAttachmentBehavior}
           attachmentMargin={this.state.hookshotAttachmentMargin}
