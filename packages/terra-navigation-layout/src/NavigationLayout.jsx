@@ -118,7 +118,6 @@ class NavigationLayout extends React.Component {
     return null;
   }
 
-
   componentDidMount() {
     window.addEventListener('resize', this.updateSize);
   }
