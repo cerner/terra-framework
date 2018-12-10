@@ -64,7 +64,7 @@ class DisclosureManager extends React.Component {
     const newState = Object.assign({}, state);
     newState.disclosureComponentKeys = Object.assign([], newState.disclosureComponentKeys);
     newState.disclosureComponentData = Object.assign({}, newState.disclosureComponentData);
-    newState.disclosureComponents = Object.assign([], newState.disclosureComponents);
+    newState.disclosureComponentDelegates = Object.assign([], newState.disclosureComponentDelegates);
 
     return newState;
   }
@@ -72,15 +72,15 @@ class DisclosureManager extends React.Component {
   constructor(props) {
     super(props);
 
+    this.generateChildComponentDelegate = this.generateChildComponentDelegate.bind(this);
+    this.generateDisclosureComponentDelegate = this.generateDisclosureComponentDelegate.bind(this);
+
     this.resolveDismissPromise = this.resolveDismissPromise.bind(this);
     this.resolveDismissChecksInSequence = this.resolveDismissChecksInSequence.bind(this);
 
     this.disclosureTypeIsSupported = this.disclosureTypeIsSupported.bind(this);
     this.safelyCloseDisclosure = this.safelyCloseDisclosure.bind(this);
     this.generatePopFunction = this.generatePopFunction.bind(this);
-
-    this.renderContentComponents = this.renderContentComponents.bind(this);
-    this.renderDisclosureComponents = this.renderDisclosureComponents.bind(this);
 
     this.openDisclosure = this.openDisclosure.bind(this);
     this.pushDisclosure = this.pushDisclosure.bind(this);
@@ -96,7 +96,7 @@ class DisclosureManager extends React.Component {
     this.onDismissResolvers = {};
 
     this.state = {
-      childComponents: this.renderContentComponents(props.disclosureManager, props.children),
+      childComponentDelegate: this.generateChildComponentDelegate(),
       disclosureIsOpen: false,
       disclosureIsFocused: false,
       disclosureIsMaximized: false,
@@ -104,37 +104,130 @@ class DisclosureManager extends React.Component {
       disclosureDimensions: undefined,
       disclosureComponentKeys: [],
       disclosureComponentData: {},
-      disclosureComponents: [],
+      disclosureComponentDelegates: [],
     };
   }
 
-  componentDidUpdate(prevProps) {
-    const { children, disclosureManager } = this.props;
+  generateChildComponentDelegate() {
+    return DisclosureManagerDelegate.create({
+      disclose: (data) => {
+        if (this.disclosureTypeIsSupported(data.preferredType)) {
+          return this.safelyCloseDisclosure()
+            .then(() => {
+              this.openDisclosure(data);
+              /**
+               * The disclose Promise chain is resolved with a set of APIs that the disclosing content can use to
+               * manipulate the disclosure, if necessary.
+               */
+              return {
+                /**
+                 * The afterDismiss value is a deferred Promise that will be resolved when the disclosed component is dismissed.
+                 */
+                afterDismiss: new Promise((resolve) => {
+                  this.onDismissResolvers[data.content.key] = resolve;
+                }),
+                /**
+                 * The dismissDisclosure value is a function that the disclosing component can use to manually close the disclosure.
+                 * Any and all dismiss checks are still performed.
+                 */
+                dismissDisclosure: this.safelyCloseDisclosure,
+              };
+            });
+        }
 
-    if (children !== prevProps.children || disclosureManager !== prevProps.disclosureManager) {
-      /**
-       * With the future deprecation of componentWillReceiveProps, there is no existing lifecycle method
-       * that allows for old and new prop comparisons before rendering. componentDidUpdate can be
-       * used to ensure that the state is sycned with the props when necessary; however, if the state does
-       * need to be updated, a second render will need to occur. I do not anticipate this happening often
-       * given how the component is typically consumed.
-       *
-       * Usage of setState in componentDidUpdate is flagged by eslint due to the potential of infinite renders.
-       * However, this implementation of setState should be safe.
-       */
-      // eslint-disable-next-line react/no-did-update-set-state
-      this.setState({
-        childComponents: this.renderContentComponents(disclosureManager, children),
-        disclosureIsOpen: false,
-        disclosureIsFocused: false,
-        disclosureIsMaximized: false,
-        disclosureSize: undefined,
-        disclosureDimensions: undefined,
-        disclosureComponentKeys: [],
-        disclosureComponentData: {},
-        disclosureComponents: [],
-      });
-    }
+        return this.props.disclosureManager.disclose(data);
+      },
+    });
+  }
+
+  generateDisclosureComponentDelegate(componentKey, disclosureState) {
+    const {
+      disclosureComponentKeys, disclosureComponentData, disclosureIsMaximized, disclosureIsFocused, disclosureSize,
+    } = disclosureState;
+
+    const componentData = disclosureComponentData[componentKey];
+    const isFullscreen = disclosureSize === availableDisclosureSizes.FULLSCREEN;
+    const popContent = this.generatePopFunction(componentData.key);
+    const componentIndex = disclosureComponentKeys.indexOf(componentKey);
+
+    const delegate = {};
+
+    /**
+     * The disclose function provided will push content onto the disclosure stack.
+     */
+    delegate.disclose = (data) => {
+      if (this.props.trapNestedDisclosureRequests || this.disclosureTypeIsSupported(data.preferredType)) {
+        return Promise.resolve()
+          .then(() => {
+            this.pushDisclosure(data);
+
+            return {
+              afterDismiss: new Promise((resolve) => {
+                this.onDismissResolvers[data.content.key] = resolve;
+              }),
+              dismissDisclosure: this.generatePopFunction(data.content.key),
+            };
+          });
+      }
+
+      return this.props.disclosureManager.disclose(data);
+    };
+
+    /**
+     * Allows a component to remove itself from the disclosure stack. If the component is the only element in the disclosure stack,
+     * the disclosure is closed.
+     */
+    delegate.dismiss = componentIndex > 0 ? popContent : this.safelyCloseDisclosure;
+
+    /**
+     * Allows a component to close the entire disclosure stack.
+     */
+    delegate.closeDisclosure = this.safelyCloseDisclosure;
+
+    /**
+     * Allows a component to remove itself from the disclosure stack. Functionally similar to `dismiss`, however `onBack` is
+     * only provided to components in the stack that have a previous sibling.
+     */
+    delegate.goBack = componentIndex > 0 ? popContent : undefined;
+
+    /**
+     * Allows a component to request focus from the disclosure in the event that the disclosure mechanism in use utilizes a focus trap.
+     */
+    delegate.requestFocus = disclosureIsFocused ? () => Promise.resolve().then(this.releaseDisclosureFocus) : undefined;
+
+    /**
+     * Allows a component to release focus from itself and return it to the disclosure.
+     */
+    delegate.releaseFocus = !disclosureIsFocused ? () => Promise.resolve().then(this.requestDisclosureFocus) : undefined;
+
+    /**
+     * Allows a component to maximize its presentation size. This is only provided if the component is not already maximized.
+     */
+    delegate.maximize = (!isFullscreen && !disclosureIsMaximized) ? () => (Promise.resolve().then(this.maximizeDisclosure)) : undefined;
+
+    /**
+     * Allows a component to minimize its presentation size. This is only provided if the component is currently maximized.
+     */
+    delegate.minimize = (!isFullscreen && disclosureIsMaximized) ? () => (Promise.resolve().then(this.minimizeDisclosure)) : undefined;
+
+    /**
+     * Allows a component to register a function with the DisclosureManager that will be called before the component is dismissed for any reason.
+     */
+    delegate.registerDismissCheck = (checkFunc) => {
+      const { disclosureManager } = this.props;
+
+      this.dismissChecks[componentData.key] = checkFunc;
+
+      if (disclosureManager && disclosureManager.registerDismissCheck) {
+        // The combination of all managed dismiss checks is registered to the parent app delegate to ensure
+        // that all are accounted for by the parent.
+        return disclosureManager.registerDismissCheck(() => Promise.all(Object.values(this.dismissChecks)));
+      }
+
+      return Promise.resolve();
+    };
+
+    return DisclosureManagerDelegate.create(delegate);
   }
 
   /**
@@ -181,8 +274,9 @@ class DisclosureManager extends React.Component {
         },
       },
     };
+    newState.disclosureComponentDelegates = [this.generateDisclosureComponentDelegate(data.content.key, newState)];
 
-    this.setState(Object.assign(newState, { disclosureComponents: this.renderDisclosureComponents(this.props.disclosureManager, newState, undefined, this.props.trapNestedDisclosureRequests) }));
+    this.setState(newState);
   }
 
   pushDisclosure(data) {
@@ -195,7 +289,7 @@ class DisclosureManager extends React.Component {
       props: data.content.props,
       component: data.content.component,
     };
-    newState.disclosureComponents = newState.disclosureComponents.concat(this.renderDisclosureComponents(this.props.disclosureManager, newState, [data.content.key], this.props.trapNestedDisclosureRequests));
+    newState.disclosureComponentDelegates = newState.disclosureComponentDelegates.concat(this.generateDisclosureComponentDelegate(data.content.key, newState));
 
     this.setState(newState);
   }
@@ -204,7 +298,7 @@ class DisclosureManager extends React.Component {
     const newState = DisclosureManager.cloneDisclosureState(this.state);
 
     newState.disclosureComponentData[newState.disclosureComponentKeys.pop()] = undefined;
-    newState.disclosureComponents.pop();
+    newState.disclosureComponentDelegates.pop();
 
     this.setState(newState);
   }
@@ -218,36 +312,40 @@ class DisclosureManager extends React.Component {
       disclosureDimensions: undefined,
       disclosureComponentKeys: [],
       disclosureComponentData: {},
-      disclosureComponents: [],
+      disclosureComponentDelegates: [],
     });
   }
 
   requestDisclosureFocus() {
     const newState = DisclosureManager.cloneDisclosureState(this.state);
     newState.disclosureIsFocused = true;
+    newState.disclosureComponentDelegates = newState.disclosureComponentKeys.map(key => this.generateDisclosureComponentDelegate(key, newState));
 
-    this.setState(Object.assign(newState, { disclosureComponents: this.renderDisclosureComponents(this.props.disclosureManager, newState, undefined, this.props.trapNestedDisclosureRequests) }));
+    this.setState(newState);
   }
 
   releaseDisclosureFocus() {
     const newState = DisclosureManager.cloneDisclosureState(this.state);
     newState.disclosureIsFocused = false;
+    newState.disclosureComponentDelegates = newState.disclosureComponentKeys.map(key => this.generateDisclosureComponentDelegate(key, newState));
 
-    this.setState(Object.assign(newState, { disclosureComponents: this.renderDisclosureComponents(this.props.disclosureManager, newState, undefined, this.props.trapNestedDisclosureRequests) }));
+    this.setState(newState);
   }
 
   maximizeDisclosure() {
     const newState = DisclosureManager.cloneDisclosureState(this.state);
     newState.disclosureIsMaximized = true;
+    newState.disclosureComponentDelegates = newState.disclosureComponentKeys.map(key => this.generateDisclosureComponentDelegate(key, newState));
 
-    this.setState(Object.assign(newState, { disclosureComponents: this.renderDisclosureComponents(this.props.disclosureManager, newState, undefined, this.props.trapNestedDisclosureRequests) }));
+    this.setState(newState);
   }
 
   minimizeDisclosure() {
     const newState = DisclosureManager.cloneDisclosureState(this.state);
     newState.disclosureIsMaximized = false;
+    newState.disclosureComponentDelegates = newState.disclosureComponentKeys.map(key => this.generateDisclosureComponentDelegate(key, newState));
 
-    this.setState(Object.assign(newState, { disclosureComponents: this.renderDisclosureComponents(this.props.disclosureManager, newState, undefined, this.props.trapNestedDisclosureRequests) }));
+    this.setState(newState);
   }
 
   /**
@@ -326,167 +424,18 @@ class DisclosureManager extends React.Component {
     };
   }
 
-  /**
-   * Generates an Array of component instances based on the given children. These components can be stored in state to ensure subsequent
-   * renders are more efficient and do not unnecessarily generate new DisclosureManagerDelegate instances.
-   * @param {DisclosureManagerDelegate} disclosureManager A DisclosureManagerDelegate instance that will be used as a fallback in cases where unsupported
-   *                                                      disclosure types are requested.
-   * @param {Children} children The children prop value that will be wrapped in the generated provider.
-   */
-  renderContentComponents(disclosureManager, children) {
-    const delegate = {};
-
-    /**
-     * The disclose function provided will open the disclosure with the provided content.
-     */
-    delegate.disclose = (data) => {
-      if (this.disclosureTypeIsSupported(data.preferredType)) {
-        return this.safelyCloseDisclosure()
-          .then(() => {
-            this.openDisclosure(data);
-            /**
-             * The disclose Promise chain is resolved with a set of APIs that the disclosing content can use to
-             * manipulate the disclosure, if necessary.
-             */
-            return {
-              /**
-               * The afterDismiss value is a deferred Promise that will be resolved when the disclosed component is dismissed.
-               */
-              afterDismiss: new Promise((resolve) => {
-                this.onDismissResolvers[data.content.key] = resolve;
-              }),
-              /**
-               * The dismissDisclosure value is a function that the disclosing component can use to manually close the disclosure.
-               * Any and all dismiss checks are still performed.
-               */
-              dismissDisclosure: this.safelyCloseDisclosure,
-            };
-          });
-      }
-      return disclosureManager.disclose(data);
-    };
-
-    return (
-      <DisclosureManagerContext.Provider value={DisclosureManagerDelegate.create(delegate)}>
-        {children}
-      </DisclosureManagerContext.Provider>
-    );
-  }
-
-  /**
-   * Generates an Array of component instances based on the given disclosure state. These components can be stored in state to ensure subsequent
-   * renders are more efficient and do not unnecessarily generate new DisclosureManagerDelegate instances.
-   * @param {DisclosureManagerDelegate} disclosureManager A DisclosureManagerDelegate instance that will be used as a fallback in cases where unsupported
-   *                                                      disclosure types are requested.
-   * @param {Object} disclosureState An Object representing the state of the disclosure manager.
-   * @param {Array} componentKeysOverride An Array of component keys representing the components that are to be generated. If not provided, all component keys
-   *                                      found in the disclosureState will be used for generation.
-   * @param {Boolean} trapNestedDisclosureRequests A Boolean value indicating whether or not disclosures for disclosure components should be strict.
-   */
-  renderDisclosureComponents(disclosureManager, disclosureState, componentKeysOverride, trapNestedDisclosureRequests) {
-    const {
-      disclosureComponentKeys, disclosureComponentData, disclosureIsMaximized, disclosureIsFocused, disclosureSize,
-    } = disclosureState;
-
-    return (componentKeysOverride || disclosureComponentKeys).map((componentKey) => {
-      const componentData = disclosureComponentData[componentKey];
-      const isFullscreen = disclosureSize === availableDisclosureSizes.FULLSCREEN;
-      const popContent = this.generatePopFunction(componentData.key);
-      const componentIndex = disclosureComponentKeys.indexOf(componentKey);
-
-      const delegate = {};
-
-      /**
-       * The disclose function provided will push content onto the disclosure stack.
-       */
-      delegate.disclose = (data) => {
-        if (trapNestedDisclosureRequests || this.disclosureTypeIsSupported(data.preferredType)) {
-          return Promise.resolve()
-            .then(() => {
-              this.pushDisclosure(data);
-
-              return {
-                afterDismiss: new Promise((resolve) => {
-                  this.onDismissResolvers[data.content.key] = resolve;
-                }),
-                dismissDisclosure: this.generatePopFunction(data.content.key),
-              };
-            });
-        }
-        return disclosureManager.disclose(data);
-      };
-
-      /**
-       * Allows a component to remove itself from the disclosure stack. If the component is the only element in the disclosure stack,
-       * the disclosure is closed.
-       */
-      delegate.dismiss = componentIndex > 0 ? popContent : this.safelyCloseDisclosure;
-
-      /**
-       * Allows a component to close the entire disclosure stack.
-       */
-      delegate.closeDisclosure = this.safelyCloseDisclosure;
-
-      /**
-       * Allows a component to remove itself from the disclosure stack. Functionally similar to `dismiss`, however `onBack` is
-       * only provided to components in the stack that have a previous sibling.
-       */
-      delegate.goBack = componentIndex > 0 ? popContent : undefined;
-
-      /**
-       * Allows a component to request focus from the disclosure in the event that the disclosure mechanism in use utilizes a focus trap.
-       */
-      delegate.requestFocus = disclosureIsFocused ? () => Promise.resolve().then(this.releaseDisclosureFocus) : undefined;
-
-      /**
-       * Allows a component to release focus from itself and return it to the disclosure.
-       */
-      delegate.releaseFocus = !disclosureIsFocused ? () => Promise.resolve().then(this.requestDisclosureFocus) : undefined;
-
-      /**
-       * Allows a component to maximize its presentation size. This is only provided if the component is not already maximized.
-       */
-      delegate.maximize = (!isFullscreen && !disclosureIsMaximized) ? () => (Promise.resolve().then(this.maximizeDisclosure)) : undefined;
-
-      /**
-       * Allows a component to minimize its presentation size. This is only provided if the component is currently maximized.
-       */
-      delegate.minimize = (!isFullscreen && disclosureIsMaximized) ? () => (Promise.resolve().then(this.minimizeDisclosure)) : undefined;
-
-      /**
-       * Allows a component to register a function with the DisclosureManager that will be called before the component is dismissed for any reason.
-       */
-      delegate.registerDismissCheck = (checkFunc) => {
-        this.dismissChecks[componentData.key] = checkFunc;
-
-        if (disclosureManager && disclosureManager.registerDismissCheck) {
-          // The combination of all managed dismiss checks is registered to the parent app delegate to ensure
-          // that all are accounted for by the parent.
-          return disclosureManager.registerDismissCheck(() => Promise.all(Object.values(this.dismissChecks)));
-        }
-
-        return Promise.resolve();
-      };
-
-      return (
-        <DisclosureManagerContext.Provider value={DisclosureManagerDelegate.create(delegate)} key={componentData.key}>
-          {componentData.component}
-        </DisclosureManagerContext.Provider>
-      );
-    });
-  }
-
   render() {
-    const { render } = this.props;
+    const { render, children } = this.props;
     const {
-      childComponents,
+      childComponentDelegate,
       disclosureIsOpen,
       disclosureIsFocused,
       disclosureIsMaximized,
       disclosureSize,
       disclosureDimensions,
       disclosureComponentKeys,
-      disclosureComponents,
+      disclosureComponentData,
+      disclosureComponentDelegates,
     } = this.state;
 
     if (!render) {
@@ -497,7 +446,11 @@ class DisclosureManager extends React.Component {
       dismissPresentedComponent: (disclosureComponentKeys.length > 1) ? this.generatePopFunction(disclosureComponentKeys[disclosureComponentKeys.length - 1]) : this.safelyCloseDisclosure,
       closeDisclosure: this.safelyCloseDisclosure,
       children: {
-        components: childComponents,
+        components: (
+          <DisclosureManagerContext.Provider value={childComponentDelegate}>
+            {children}
+          </DisclosureManagerContext.Provider>
+        ),
       },
       disclosure: {
         isOpen: disclosureIsOpen,
@@ -505,7 +458,11 @@ class DisclosureManager extends React.Component {
         isMaximized: disclosureIsMaximized,
         size: disclosureSize,
         dimensions: disclosureDimensions,
-        components: disclosureComponents,
+        components: disclosureComponentKeys.map((key, index) => (
+          <DisclosureManagerContext.Provider value={disclosureComponentDelegates[index]} key={key}>
+            {disclosureComponentData[key].component}
+          </DisclosureManagerContext.Provider>
+        )),
       },
     });
   }
