@@ -189,6 +189,9 @@ class NavigationSideMenu extends React.Component {
       ...customProps
     } = this.props;
     const currentItem = this.state.items[selectedMenuKey];
+    let sideMenuContentContainerClassNames = cx([
+      'side-menu-content-container',
+    ]);
 
     let onBack;
     const parentKey = this.state.parents[this.props.selectedMenuKey];
@@ -201,10 +204,12 @@ class NavigationSideMenu extends React.Component {
     let actionHeader;
     if (onBack || !currentItem.isRootMenu) {
       actionHeader = <ActionHeader className={cx('side-menu-action-header')} onBack={onBack} title={currentItem ? currentItem.text : null} data-navigation-side-menu-action-header />;
+    } else {
+      sideMenuContentContainerClassNames = cx(['side-menu-content-container', 'is-root']);
     }
 
     return (
-      <ContentContainer {...customProps} header={actionHeader} fill className={cx(['side-menu-content-container'])}>
+      <ContentContainer {...customProps} header={actionHeader} fill className={sideMenuContentContainerClassNames}>
         {this.buildListContent(currentItem)}
       </ContentContainer>
     );
