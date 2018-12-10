@@ -111,18 +111,22 @@ class InfiniteList extends React.Component {
     this.handleRenderCompletion();
   }
 
-  componentDidUpdate() {
-    const newChildCount = React.Children.count(this.props.children);
+  shouldComponentUpdate(nextProps) {
+    const newChildCount = React.Children.count(nextProps.children);
     if (newChildCount > this.childCount) {
       this.lastChildIndex = this.childCount;
       this.loadingIndex += 1;
-      this.updateItemCache(this.props);
+      this.updateItemCache(nextProps);
     } else if (newChildCount < this.childCount) {
-      this.initializeItemCache(this.props);
+      this.initializeItemCache(nextProps);
     } else {
-      this.childrenArray = React.Children.toArray(this.props.children);
+      this.childrenArray = React.Children.toArray(nextProps.children);
     }
 
+    return true;
+  }
+
+  componentDidUpdate() {
     if (!this.listenersAdded) {
       this.enableListeners();
     }
