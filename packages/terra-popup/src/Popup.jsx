@@ -130,10 +130,10 @@ class Popup extends React.Component {
     this.contentWidth = PopupWidths[props.contentWidth];
   }
 
-  componentWillReceiveProps(newProps) {
-    this.isContentSized = newProps.contentHeight !== 'auto' && newProps.contentWidth !== 'auto';
-    this.contentHeight = PopupHeights[newProps.contentHeight];
-    this.contentWidth = PopupWidths[newProps.contentWidth];
+  componentDidUpdate() {
+    this.isContentSized = this.props.contentHeight !== 'auto' && this.props.contentWidth !== 'auto';
+    this.contentHeight = PopupHeights[this.props.contentHeight];
+    this.contentWidth = PopupWidths[this.props.contentWidth];
   }
 
   setArrowPosition(contentPosition, targetPosition) {
