@@ -79,21 +79,21 @@ class UtilityMenu extends React.Component {
       currentKey: props.initialSelectedKey,
       focusIndex: -1,
       previousKeyStack: [],
+      prevPropsInitialSelectedKey: this.props.initialSelectedKey,
+      prevPropsMenuItems: this.props.menuItems,
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.initialSelectedKey !== this.props.initialSelectedKey) {
-      this.setState({
-        currentKey: nextProps.initialSelectedKey,
-      });
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.initialSelectedKey !== prevState.prevPropsInitialSelectedKey) {
+      return { currentKey: nextProps.initialSelectedKey };
     }
 
-    if (nextProps.menuItems !== this.props.menuItems) {
-      this.setState({
-        map: processMenuItems(nextProps.menuItems),
-      });
+    if (nextProps.menuItems !== prevState.prevPropsMenuItems) {
+      return { map: processMenuItems(nextProps.menuItems) };
     }
+
+    return null;
   }
 
   componentDidUpdate() {
