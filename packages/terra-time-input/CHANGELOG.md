@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Removed use of componentWillMount from examples
+* Removed use of componentWillReceiveProps
 * Migrate package to the terra-framework repository
 
 ### Added
