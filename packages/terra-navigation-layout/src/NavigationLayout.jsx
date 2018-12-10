@@ -104,19 +104,23 @@ class NavigationLayout extends React.Component {
     this.state = {
       size: getBreakpointSize(),
       processedRoutes: NavigationLayout.processRouteConfig(props.config),
+      prevPropsConfig: props.config,
     };
   }
 
-  componentDidMount() {
-    window.addEventListener('resize', this.updateSize);
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.config !== prevState.prevPropsConfig) {
+      return {
+        processedRoutes: NavigationLayout.processRouteConfig(nextProps.config),
+      };
+    }
+
+    return null;
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.config !== this.props.config) {
-      this.setState({
-        processedRoutes: NavigationLayout.processRouteConfig(nextProps.config),
-      });
-    }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.updateSize);
   }
 
   componentWillUnmount() {
