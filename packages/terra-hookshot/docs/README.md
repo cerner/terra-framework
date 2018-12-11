@@ -37,4 +37,4 @@ render() {
 
 ```
 
-[1]: https://github.com/cerner/terra-core/tree/master/packages/terra-popup/docs
+[1]: https://github.com/cerner/terra-framework/tree/master/packages/terra-popup/docs

@@ -58,6 +58,7 @@ describe('Selected navigation side menu display', () => {
     testName: 'themed',
     properties: {
       '--terra-navigation-side-menu-item-selected-background-color': 'pink',
+      '--terra-navigation-side-menu-item-selected-hover-background-color': 'pink',
       '--terra-navigation-side-menu-item-selected-color': 'black',
       '--terra-navigation-side-menu-item-selected-border-left': '1rem dotted orange',
       '--terra-navigation-side-menu-item-selected-padding-left': '0',

@@ -3,6 +3,15 @@ Changelog
 
 Unreleased
 ----------
+
+2.22.0 - (December 5, 2018)
+------------------
+### Changed
+* Minor dependency update
+* Update example to use terra-framework's checked in image
+
+2.21.0 - (December 3, 2018)
+------------------
 ### Changed
 * Wdio tests changed to use themeCombinationOfCustomProperties
 
