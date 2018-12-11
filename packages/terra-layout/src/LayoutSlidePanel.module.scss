@@ -26,10 +26,10 @@
   }
 
   .panel {
-    background-color: var(--layout-slide-panel-background-color, #fff);
+    background-color: var(--terra-layout-slide-panel-background-color, #fff);
     position: absolute;
     transform: translate3d(-100%, 0, 0);
-    width: var(--layout-slide-panel-desktop-panel-width, 18.571rem);
+    width: var(--terra-layout-slide-panel-desktop-panel-width, 18.571rem);
     z-index: 5000;
   }
 
@@ -39,22 +39,22 @@
   }
 
   .panel.is-tiny {
-    width: var(--layout-slide-panel-phone-panel-width, calc(100% - 3.571rem));
+    width: var(--terra-layout-slide-panel-phone-panel-width, calc(100% - 3.571rem));
   }
 
   .panel.is-small {
-    width: var(--layout-slide-panel-tablet-panel-width, 22.857rem);
+    width: var(--terra-layout-slide-panel-tablet-panel-width, 22.857rem);
   }
 
   // Overlay
   .is-open.is-overlay > .panel {
     /* stylelint-disable selector-max-compound-selectors */
     [dir=ltr] & {
-      box-shadow: var(--layout-slide-panel-overlay-panel-box-shadow-ltr, 1px 0 0 0 #1c1f21, 0 0 5px 1px #000, 0 0 12px 2px rgba(0, 0, 0, 0.8));
+      box-shadow: var(--terra-layout-slide-panel-overlay-panel-ltr-box-shadow, 1px 0 0 0 #1c1f21, 0 0 5px 1px #000, 0 0 12px 2px rgba(0, 0, 0, 0.8));
     }
 
     [dir=rtl] & {
-      box-shadow: var(--layout-slide-panel-overlay-panel-box-shadow-rtl, -1px 0 0 0 #1c1f21, 0 0 5px 1px #000, 0 0 12px 2px rgba(0, 0, 0, 0.8)); 
+      box-shadow: var(--terra-layout-slide-panel-overlay-panel-rtl-box-shadow, -1px 0 0 0 #1c1f21, 0 0 5px 1px #000, 0 0 12px 2px rgba(0, 0, 0, 0.8));
     }
     /* stylelint-enable selector-max-compound-selectors */
   }
@@ -66,10 +66,11 @@
     }
 
     > .panel {
-      background-color: var(--layout-slide-panel-squish-panel-background-color, #fff);
-      border-right: 1px solid var(--layout-slide-panel-squish-panel-border-color, #d3d4d5);
+      background-color: var(--terra-layout-slide-panel-squish-panel-background-color, #fff);
+      border-right: 1px solid transperent;
+      border-right-color: var(--terra-layout-slide-panel-squish-panel-border-right-color, #d3d4d5);
       transition: none;
-      width: calc(1px + #{var(--layout-slide-panel-desktop-panel-width, 18.571rem)});
+      width: calc(1px + #{var(--terra-layout-slide-panel-desktop-panel-width, 18.571rem)});
     }
   }
 
