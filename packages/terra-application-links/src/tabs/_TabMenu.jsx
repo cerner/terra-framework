@@ -40,19 +40,16 @@ class TabMenu extends React.Component {
     this.setTargetRef = this.setTargetRef.bind(this);
     this.state = {
       isOpen: false,
-      prevPropsLocation: this.props.location,
     };
     this.shouldResetFocus = false;
   }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.location !== prevState.prevPropsLocation) {
-      return { isOpen: false };
+  componentDidUpdate(prevProps) {
+    if (prevProps.location !== this.props.location) {
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({ isOpen: false });
     }
-    return null;
-  }
 
-  componentDidUpdate() {
     if (this.shouldResetFocus && this.targetRef) {
       this.targetRef.focus();
       this.shouldResetFocus = this.targetRef !== document.activeElement;
