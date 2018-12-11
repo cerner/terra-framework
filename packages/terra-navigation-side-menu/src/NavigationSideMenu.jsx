@@ -113,8 +113,7 @@ class NavigationSideMenu extends React.Component {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.menuItems !== prevState.prevPropsMenuItem) {
-      const { items, parents } = processMenuItems(nextProps.menuItems);
-      return { items, parents };
+      return processMenuItems(nextProps.menuItems);
     }
     return null;
   }
