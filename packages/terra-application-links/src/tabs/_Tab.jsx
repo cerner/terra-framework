@@ -147,7 +147,7 @@ class ApplicationTab extends React.Component {
         onBlur={this.handleOnBlur}
       >
         <span className={cx(['tab-inner'])}>
-          {text}
+          <span className={cx(['tab-label'])}>{text}</span>
         </span>
       </ComponentClass>
     );

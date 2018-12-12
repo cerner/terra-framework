@@ -5,8 +5,8 @@
     flex-wrap: nowrap;
     height: 100%;
     justify-content: center;
-    padding-left: var(--terra-application-tabs-spacer-width, 2rem);
-    padding-right: var(--terra-application-tabs-spacer-width, 2rem);
+    padding-left: var(--terra-application-tabs-container-padding-left, 1.85714rem);
+    padding-right: var(--terra-application-tabs-container-padding-right, 1.85714rem);
     position: relative;
     width: 100%;
   }
@@ -18,7 +18,7 @@
     height: 100%;
     overflow: hidden;
     position: relative;
-    width: calc(100% - 2 * var(--terra-application-tabs-spacer-width, 2rem));
+    width: calc(100% -  var(--terra-application-tabs-container-padding-left, 1.85714rem) - var(--terra-application-tabs-container-padding-right, 1.85714rem));
 
     &:focus {
       outline: none;
@@ -42,119 +42,169 @@
   }
 
   .tab {
-    text-align: center;
-
-    span {
-      display: inline-flex;
-      max-width: calc(100% - 2 * var(--terra-application-tabs-padding-horizontal, 1.0715rem));
-    }
-
     &.is-disabled {
       cursor: default;
     }
   }
 
   .tab-menu-display {
-    .inner {
+    .tab-menu-display-label {
       align-items: center;
       display: inline-flex;
-      max-width: calc(100% - 2 * var(--terra-application-tabs-padding-horizontal, 1.0715rem));
+      max-width: 100%;
     }
 
     span {
-      flex: 0 1 auto;
+      display: block;
       min-width: 0;
+      overflow: hidden;
+      position: relative; // remove IE10 active click transformation
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-break: normal;
+      word-wrap: normal;
     }
 
     svg {
       flex: 0 0 auto;
       font-size: 0.571rem;
-      margin-left: var(--terra-application-tabs-menu-arrow-left-margin, 0.5rem);
+      margin-left: var(--terra-application-tabs-menu-arrow-left-margin, 0.2857rem);
     }
   }
 
   .tab,
   .tab-menu-display {
-    align-items: center;
-    background-color: var(--terra-application-tabs-background-color, transparent);
-    background-position: var(--terra-application-tabs-background-position, top left);
-    background-repeat: no-repeat;
-    background-size: var(--terra-application-tabs-background-size, 0 5px);
+    background-color: transparent;
     border: 0;
-    border-left: var(--terra-application-tabs-border-left);
-    border-right: var(--terra-application-tabs-border-right, 1px solid #3a67a4);
-    box-shadow: var(--terra-application-tabs-box-shadow, 1px 0 0 0 #1d98da);
-    color: var(--terra-application-tabs-color, #fff);
+    box-sizing: border-box;
+    color: var(--terra-application-tabs-tab-color, #fff);
     cursor: pointer;
     display: flex;
     flex: 0 0 auto;
-    font-size: var(--terra-application-tabs-font-size, 1rem);
+    font-size: var(--terra-application-tabs-tab-font-size, 0.9285714rem);
+    font-weight: var(--terra-application-tabs-tab-font-weight, normal);
     height: 100%;
-    justify-content: center;
-    line-height: var(--terra-application-tabs-line-height, 1.4);
+    line-height: var(--terra-application-tabs-tab-line-height, 1.4);
+    margin: 0;
     max-width: 100%;
     outline: none;
     padding: 0;
     position: relative;
+    text-align: center;
     text-decoration: none;
-    transition-duration: var(--terra-application-tabs-transition-duration, 0s);
-    transition-property: background-size;
-    transition-timing-function: var(--terra-application-tabs-transition-timing, ease);
     width: var(--terra-application-tab-width, 13rem);
 
-    span {
+    &::before {
+      background-color: var(--terra-application-tabs-tab-divider-before-background-color, #1d98da);
+      border-left: var(--terra-application-tabs-tab-divider-before-border-left, 1px solid #3a67a4);
+      border-right: var(--terra-application-tabs-tab-divider-before-border-right, 1px solid #1d98da);
+      content: '';
       display: block;
+      height: 100%;
+      left: 0;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      width: var(--terra-application-tabs-tab-divider-before-width, 2px);
+    }
+
+    .tab-inner {
+      align-items: center;
+      background-color: var(--terra-application-tabs-tab-background-color, transparent);
+      background-position: var(--terra-application-tabs-tab-background-position, top left);
+      background-repeat: no-repeat;
+      background-size: var(--terra-application-tabs-tab-background-size, 0 5px);
+      box-shadow: var(--terra-application-tabs-tab-box-shadow);
+      box-sizing: border-box;
+      display: flex;
+      flex: 0 0 auto;
+      height: 100%;
+      justify-content: center;
+      left: var(--terra-application-tabs-tab-position-left, 2px);
+      overflow: hidden;
+      padding-left: var(--terra-application-tabs-tab-padding-left, 1.0715rem);
+      padding-right: var(--terra-application-tabs-tab-padding-right, 1.0715rem);
+      position: absolute;
+      top: 0;
+      transition-duration: var(--terra-application-tabs-tab-transition-duration, 0s);
+      transition-property: background-size;
+      transition-timing-function: var(--terra-application-tabs-tab-transition-timing, ease);
+      width: calc(100% - var(--terra-application-tabs-tab-divider-before-width, 2px));
+    }
+
+    .tab-label {
+      display: block;
+      max-width: 100%;
       overflow: hidden;
       position: relative; // remove IE10 active click transformation
       text-overflow: ellipsis;
       white-space: nowrap;
-      width: 100%;
       word-break: normal;
       word-wrap: normal;
     }
 
     &:hover,
     &.is-hovered {
-      background-color: var(--terra-application-tabs-hover-background-color, rgba(0, 0, 0, 0.15));
+      .tab-inner {
+        background-color: var(--terra-application-tabs-tab-hover-background-color, rgba(0, 0, 0, 0.15));
+      }
     }
 
     &[aria-current='true'] {
-      background-color: var(--terra-application-tabs-selected-background-color, rgba(0, 0, 0, 0.15));
-      background-image: var(--terra-application-tabs-selected-background-image, linear-gradient(to bottom, #5cc2f9, #5cc2f9));
-      background-size: var(--terra-application-tabs-selected-background-size, 13rem 5px);
-      border-left: var(--terra-application-tabs-selected-border-left, 1px solid #3a67a4);
-      border-right: var(--terra-application-tabs-selected-border-right, 1px solid #3a67a4);
-      box-shadow: var(--terra-application-tabs-selected-box-shadow, 1px 0 0 0 #1d98da, -1px 0 0 0 #1d98da);
-      font-weight: var(--terra-application-tabs-selected-font-weight, 600);
+      font-weight: var(--terra-application-tabs-selected-font-weight, 500);
+      text-shadow: var(--terra-application-tabs-selected-text-shadow, 1px 1px 0 rgba(0, 0, 0, 0.45), 0 4px 6px rgba(0, 0, 0, 0.15));
+
+      &::before {
+        background-color: var(--terra-application-tabs-tab-divider-before-background-color, #1d98da);
+        border-left-color: var(--terra-application-tabs-tab-divider-before-border-left-color, #1d98da);
+        border-right-color: var(--terra-application-tabs-tab-divider-before-border-right-color, #3a67a4);
+      }
+
+      .tab-inner {
+        background-color: var(--terra-application-tabs-selected-background-color, rgba(0, 0, 0, 0.15));
+        background-image: var(--terra-application-tabs-selected-background-image, linear-gradient(to bottom, #5cc2f9, #5cc2f9));
+        background-size: var(--terra-application-tabs-selected-background-size, 13.215rem 6px);
+        box-shadow: var(--terra-application-tabs-selected-box-shadow, inset 0 -15px 30px -5px rgba(0, 0, 0, 0.3));
+      }
     }
 
     &.is-focused,
     &.is-active.is-focused,
     &:active.is-focused {
-      background-color: var(--terra-application-tabs-focus-background-color);
-      box-shadow: var(--terra-application-tabs-focus-box-shadow, 1px 0 1px #1d98da, 0 0 1px 0 #fff, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
       z-index: 5;
-    }
 
-    &:first-child {
-      border-left: var(--terra-application-tabs-first-child-border-left, 1px solid #1d98da);
-      box-shadow: var(--terra-application-tabs-first-child-box-shadow, 1px 0 0 0 #1d98da, -1px 0 0 0 #3a67a4);
-      margin-left: var(--terra-application-tabs-first-child-margin-left, 1px);
-    }
+      .tab-inner {
+        background-color: var(--terra-application-tabs-tab-focus-background-color);
+        box-shadow: var(--terra-application-tabs-tab-focus-box-shadow, inset 0 0 0 1px #ccedfe, inset 0 0 0 4px rgba(204, 237, 254, 0.35));
+      }
 
-    &.is-focused:first-child {
-      box-shadow: var(--terra-application-tabs-first-child-focus-box-shadow, 1px 0 1px #1d98da, -1px 0 1px #3a67a4, 0 0 1px 0 #fff, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
-    }
-
-    &[aria-current='true']:first-child {
-      border-left: var(--terra-application-tabs-first-child-selected-border-left, 1px solid #3a67a4);
-      box-shadow: var(--terra-application-tabs-first-child-selected-box-shadow, 1px 0 0 0 #1d98da, -1px 0 0 0 #1d98da);
+      &[aria-current='true'] .tab-inner {
+        background-color: var(--terra-application-tabs-tab-selected-focus-background-color, rgba(0, 0, 0, 0.15));
+        box-shadow: var(--terra-application-tabs-tab-selected-focus-box-shadow, inset 0 0 0 1px #ccedfe, inset 0 0 0 4px rgba(204, 237, 254, 0.35), inset 0 -15px 30px -5px rgba(0, 0, 0, 0.3));
+      }
     }
 
     &:last-child {
-      margin-right: var(--terra-application-tabs-last-child-margin-right, 1px);
+      .tab-inner {
+        width: calc(100% - var(--terra-application-tabs-tab-divider-before-width, 2px) - var(--terra-application-tabs-tab-divider-last-child-after-width, 2px));
+      }
+
+      &::after {
+        background-color: var(--terra-application-tabs-tab-divider-last-child-after-background-color, #1d98da);
+        border-left: var(--terra-application-tabs-tab-divider-last-child-after-border-left, 1px solid #3a67a4);
+        border-right: var(--terra-application-tabs-tab-divider-last-child-after-border-right, 1px solid #1d98da);
+        content: '';
+        display: inline-block;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: var(--terra-application-tabs-tab-divider-last-child-after-width, 2px);
+      }
     }
   }
+  
 
   .tab-menu-display.is-hidden {
     display: none;

@@ -118,9 +118,11 @@ class TabMenuDisplay extends React.Component {
         onKeyUp={this.handleKeyUp}
         onBlur={this.handleOnBlur}
       >
-        <div className={cx(['inner'])}>
-          <span>{text}</span>
-          <IconCaretDown />
+        <div className={cx(['tab-inner'])}>
+          <div className={cx(['tab-menu-display-label'])}>
+            <span>{text}</span>
+            <IconCaretDown />
+          </div>
         </div>
         {popup}
       </div>
