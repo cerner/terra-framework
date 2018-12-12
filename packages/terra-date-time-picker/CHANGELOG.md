@@ -5,13 +5,12 @@ Unreleased
 ----------
 ### Added
 * Added missing ar translations
-### Changed
-* Migrate terra-date-time-picker to terra-framework repository.
 
 ### Changed
 * Removed use of componentWillReceiveProps
 * Removed use of componentWillMount
 * Updated component to use injectIntl
+* Migrate terra-date-time-picker to terra-framework repository.
 
 2.38.1 - (November 20, 2018)
 ------------------
