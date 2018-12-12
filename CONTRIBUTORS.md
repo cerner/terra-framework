@@ -19,6 +19,7 @@ Cerner Corporation
 - Matthew Carr [@Matthematic]
 - Jaime Mackey [@jmsv6d]
 - Noah Benham [@noahbenham]
+- Cody Price [@dev-cprice]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -39,3 +40,4 @@ Cerner Corporation
 [@Matthematic]: https://github.com/Matthematic
 [@jmsv6d]: https://github.com/jmsv6d
 [@noahbenham]: https://github.com/noahbenham
+[@dev-cprice]: https://github.com/dev-cprice
