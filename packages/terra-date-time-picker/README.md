@@ -2,12 +2,12 @@
 
 
 [![NPM version](https://badgen.net/npm/v/terra-date-time-picker)](https://www.npmjs.org/package/terra-date-time-picker)
-[![Build Status](https://badgen.net/travis/cerner/terra-core)](https://travis-ci.org/cerner/terra-core)
+[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.org/cerner/terra-framework)
 
 The DateTimePicker component has a date picker for selecting date and a time input for entering time. DateTimePicker supports the Spring and Fall daylight saving time changes.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-core/tree/master/packages/terra-date-time-picker/docs)
+- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-date-time-picker/docs)
 - [LICENSE](#license)
 
 ## Getting Started
