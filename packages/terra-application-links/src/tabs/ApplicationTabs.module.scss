@@ -92,7 +92,7 @@
     position: relative;
     text-align: center;
     text-decoration: none;
-    width: var(--terra-application-tab-width, 13rem);
+    width: var(--terra-application-tabs-tab-width, 13rem);
 
     &::before {
       background-color: var(--terra-application-tabs-tab-divider-before-background-color, #1d98da);
