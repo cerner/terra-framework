@@ -24,17 +24,17 @@
   "peerDependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "terra-base": "^3.1.0"
+    "terra-base": "^3.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-abstract-modal": "^1.25.1",
-    "terra-action-footer": "^1.5.0",
-    "terra-action-header": "^1.32.1",
-    "terra-button": "^2.31.1",
+    "terra-abstract-modal": "^1.0.0",
+    "terra-action-footer": "^1.0.0",
+    "terra-action-header": "^1.0.0",
+    "terra-button": "^2.0.0",
     "terra-disclosure-manager": "^3.1.0",
-    "terra-doc-template": "^1.22.0",
+    "terra-doc-template": "^1.0.0",
     "terra-modal-manager": "^4.1.0"
   },
   "scripts": {
