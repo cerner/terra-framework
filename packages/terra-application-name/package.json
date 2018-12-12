@@ -31,8 +31,8 @@
     "prop-types": "^15.5.8",
     "terra-application-header-layout": "^2.22.0",
     "terra-application-menu-layout": "^2.17.0",
-    "terra-doc-template": "^1.1.0",
-    "terra-image": "^2.0.1",
+    "terra-doc-template": "^1",
+    "terra-image": "^2.29.0",
     "terra-responsive-element": "^3.0.0"
   },
   "scripts": {

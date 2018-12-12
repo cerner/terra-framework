@@ -29,12 +29,12 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-abstract-modal": "^1.2.0",
-    "terra-button": "^2.5.0",
+    "terra-abstract-modal": "^1.25.1",
+    "terra-button": "^2.31.1",
     "terra-disclosure-manager": "^3.1.0",
-    "terra-doc-template": "^1.2.0",
-    "terra-icon": "^2.6.0",
-    "terra-mixins": "^1.0.0",
+    "terra-doc-template": "^1",
+    "terra-icon": "^2.29.1",
+    "terra-mixins": "^1.23.0",
     "terra-modal-manager": "^4.1.0"
   },
   "scripts": {

@@ -34,9 +34,9 @@
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "resize-observer-polyfill": "^1.4.1",
-    "terra-doc-template": "^1.1.0",
-    "terra-icon": "^2.0.1",
-    "terra-list": "^2.0.1",
+    "terra-doc-template": "^1",
+    "terra-icon": "^2.29.1",
+    "terra-list": "^2.31.1",
     "terra-popup": "^4.20.0"
   },
   "scripts": {
