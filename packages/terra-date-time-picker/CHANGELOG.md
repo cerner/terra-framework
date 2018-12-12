@@ -5,6 +5,8 @@ Unreleased
 ----------
 ### Added
 * Added missing ar translations
+### Changed
+* Migrate terra-date-time-picker to terra-framework repository.
 
 ### Changed
 * Removed use of componentWillReceiveProps
