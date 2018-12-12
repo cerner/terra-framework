@@ -81,6 +81,7 @@
     cursor: pointer;
     display: flex;
     flex: 0 0 auto;
+    font-family: inherit;
     font-size: var(--terra-application-tabs-tab-font-size, 0.9285714rem);
     font-weight: var(--terra-application-tabs-tab-font-weight, normal);
     height: 100%;
