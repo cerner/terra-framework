@@ -24,6 +24,17 @@ describe('Default navigation side menu display', () => {
   });
 });
 
+describe('Default navigation side menu display with toolbar', () => {
+  before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
+  beforeEach(() => {
+    browser.url('/#/raw/tests/terra-navigation-side-menu/navigation-side-menu/navigation-side-menu-default-with-toolbar');
+    browser.waitForVisible('#test-menu');
+  });
+
+  Terra.should.matchScreenshot('#test-menu', { selector: '#test-menu' });
+  Terra.should.beAccessible({ context: '#test-menu' });
+});
+
 describe('Hover navigation side menu display', () => {
   before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
   beforeEach(() => {
