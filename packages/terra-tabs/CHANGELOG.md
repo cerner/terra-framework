@@ -3,9 +3,11 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Migrate package to terra-framework repository
+
 ### Fixed
 * Lint Errors
-* Migrate package to terra-framework repository
 
 3.30.1 - (November 20, 2018)
 ------------------
