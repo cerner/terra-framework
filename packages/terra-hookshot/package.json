@@ -35,7 +35,7 @@
     "react-portal": "^4.1.2",
     "resize-observer-polyfill": "^1.4.1",
     "terra-button": "^2.31.1",
-    "terra-doc-template": "^1",
+    "terra-doc-template": "^1.22.0",
     "terra-form": "^2.10.0"
   },
   "scripts": {
