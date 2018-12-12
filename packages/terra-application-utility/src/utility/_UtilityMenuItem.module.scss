@@ -145,4 +145,17 @@
   .menu-item-fill {
     width: 100%;
   }
+
+  .read-only {
+    cursor: text;
+
+    &:hover {
+      background-color: var(--terra-application-header-utility-menu-body-item-hover-background-color);
+    }
+
+    &:focus {
+      box-shadow: var(--terra-application-header-utility-menu-body-item-focus-box-shadow);
+      outline: 0;
+    }
+  }
 }

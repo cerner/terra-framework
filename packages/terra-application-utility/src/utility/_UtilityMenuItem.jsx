@@ -37,6 +37,10 @@ const propTypes = {
    */
   isActive: PropTypes.bool,
   /**
+   * Whether this item is read-only.
+   */
+  isReadOnly: PropTypes.bool,
+  /**
    * Whether this item is selected.
    */
   isSelected: PropTypes.bool,
@@ -113,6 +117,7 @@ class UtilityMenuItem extends React.Component {
       content,
       contentLocation,
       isActive,
+      isReadOnly,
       isSelected,
       isSelectable,
       hasChevron,
@@ -127,6 +132,7 @@ class UtilityMenuItem extends React.Component {
     const bodyItemClassNames = cx([
       { 'header-utility-body-item': variant === Utils.VARIANTS.HEADER },
       { 'menu-utility-body-item': variant === Utils.VARIANTS.MENU },
+      { 'read-only': isReadOnly },
     ]);
 
     const footerItemClassNames = cx([
