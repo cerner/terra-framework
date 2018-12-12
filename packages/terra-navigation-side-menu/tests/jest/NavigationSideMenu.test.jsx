@@ -14,6 +14,18 @@ describe('Layout', () => {
     expect(result).toMatchSnapshot();
   });
 
+  it('should render a NavigationSideMenu with a toolbar', () => {
+    const result = shallow((
+      <NavigationSideMenu
+        onChange={jest.fn()}
+        routingStackBack={jest.fn()}
+        selectedMenuKey=""
+        toolbar={<div>Toolbar</div>}
+      />
+    ));
+    expect(result).toMatchSnapshot();
+  });
+
   it('should render a NavigationSideMenu with selectedKey', () => {
     const result = shallow((
       <NavigationSideMenu

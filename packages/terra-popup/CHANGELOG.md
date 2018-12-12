@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Prevent click events from propagating from popup overlay
 
 4.20.0 - (December 5, 2018)
 ------------------
