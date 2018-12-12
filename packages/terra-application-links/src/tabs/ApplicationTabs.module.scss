@@ -151,13 +151,13 @@
     }
 
     &[aria-current='true'] {
-      font-weight: var(--terra-application-tabs-selected-font-weight, 500);
-      text-shadow: var(--terra-application-tabs-selected-text-shadow, 1px 1px 0 rgba(0, 0, 0, 0.45), 0 4px 6px rgba(0, 0, 0, 0.15));
+      font-weight: var(--terra-application-tabs-tab-selected-font-weight, 500);
+      text-shadow: var(--terra-application-tabs-tab-selected-text-shadow, 1px 1px 0 rgba(0, 0, 0, 0.45), 0 4px 6px rgba(0, 0, 0, 0.15));
 
       &::before {
-        background-color: var(--terra-application-tabs-tab-divider-before-background-color, #1d98da);
-        border-left-color: var(--terra-application-tabs-tab-divider-before-border-left-color, #1d98da);
-        border-right-color: var(--terra-application-tabs-tab-divider-before-border-right-color, #3a67a4);
+        background-color: var(--terra-application-tabs-tab-selected-divider-before-background-color, #1d98da);
+        border-left-color: var(--terra-application-tabs-tab-selected-divider-before-border-left-color, #1d98da);
+        border-right-color: var(--terra-application-tabs-tab-selected-divider-before-border-right-color, #3a67a4);
       }
 
       .tab-inner {
