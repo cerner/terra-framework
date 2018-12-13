@@ -91,11 +91,11 @@ Components in beta stage may include breaking changes, new features, and bug fix
 Please review [Terra's Internationalization documentation](https://engineering.cerner.com/terra-ui/#/getting-started/terra-ui/internationalization) for more information. Included are directions on consumption and how internationalization is setup.
 
 ### Packages Requiring I18n
-- [terra-application-header](https://github.com/cerner/terra-framework/tree/master/packages/application-header)
-- [terra-application-layout](https://github.com/cerner/terra-framework/tree/master/packages/application-layout)
-- [terra-application-links](https://github.com/cerner/terra-framework/tree/master/packages/application-links)
-- [terra-application-utility](https://github.com/cerner/terra-framework/tree/master/packages/application-utility)
-- [terra-notification-dialog](https://github.com/cerner/terra-framework/tree/master/packages/notification-dialog)
+- [terra-application-header](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-header)
+- [terra-application-layout](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-layout)
+- [terra-application-links](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-links)
+- [terra-application-utility](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-utility)
+- [terra-notification-dialog](https://github.com/cerner/terra-framework/tree/master/packages/terra-notification-dialog)
 - [terra-time-input](https://github.com/cerner/terra-framework/tree/master/packages/terra-time-input)
 
 ## Contributing
