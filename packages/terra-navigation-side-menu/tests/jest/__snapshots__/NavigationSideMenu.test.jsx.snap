@@ -1,17 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Layout should render a NavigationSideMenu with a toolbar 1`] = `
+<ContentContainer
+  className="side-menu-content-container"
+  fill={true}
+  header={
+    <React.Fragment>
+      <ActionHeader
+        className="side-menu-action-header"
+        data-navigation-side-menu-action-header={true}
+        level={1}
+        onBack={[MockFunction]}
+        title={null}
+      />
+      <div>
+        Toolbar
+      </div>
+    </React.Fragment>
+  }
+/>
+`;
+
 exports[`Layout should render a NavigationSideMenu with default props 1`] = `
 <ContentContainer
   className="side-menu-content-container"
   fill={true}
   header={
-    <ActionHeader
-      className="side-menu-action-header"
-      data-navigation-side-menu-action-header={true}
-      level={1}
-      onBack={[Function]}
-      title={null}
-    />
+    <React.Fragment>
+      <ActionHeader
+        className="side-menu-action-header"
+        data-navigation-side-menu-action-header={true}
+        level={1}
+        onBack={[Function]}
+        title={null}
+      />
+    </React.Fragment>
   }
 />
 `;
@@ -21,13 +44,15 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
   className="side-menu-content-container"
   fill={true}
   header={
-    <ActionHeader
-      className="side-menu-action-header"
-      data-navigation-side-menu-action-header={true}
-      level={1}
-      onBack={[Function]}
-      title="Test Menu"
-    />
+    <React.Fragment>
+      <ActionHeader
+        className="side-menu-action-header"
+        data-navigation-side-menu-action-header={true}
+        level={1}
+        onBack={[Function]}
+        title="Test Menu"
+      />
+    </React.Fragment>
   }
 >
   <List

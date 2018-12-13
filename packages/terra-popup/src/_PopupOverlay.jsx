@@ -36,6 +36,7 @@ class PopupOverlay extends React.Component {
 
 
   handleOnClick(event) {
+    event.stopPropagation();
     if (this.props.onRequestClose) {
       this.props.onRequestClose(event);
     }
