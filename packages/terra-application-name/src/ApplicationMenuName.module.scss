@@ -20,7 +20,7 @@
   }
 
   .accessory {
-    display: var(--terra-application-name-menu-accessory-display, flex);
+    display: var(--terra-application-name-menu-accessory-display, block);
     flex: 0 0 auto;
     line-height: 0;
     max-width: 100%;
