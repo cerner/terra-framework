@@ -20,6 +20,7 @@
   }
 
   .accessory {
+    display: var(--terra-application-name-menu-accessory-display, flex);
     flex: 0 0 auto;
     line-height: 0;
     max-width: 100%;
@@ -33,6 +34,7 @@
     padding-left: var(--terra-application-name-menu-title-padding-left);
     padding-right: var(--terra-application-name-menu-title-padding-right);
     text-overflow: var(--terra-application-name-menu-title-text-overflow);
+    text-shadow: var(--terra-application-name-menu-title-text-shadow);
     white-space: var(--terra-application-name-menu-title-white-space);
     word-break: var(--terra-application-name-menu-title-word-break, break-word);
     word-wrap: var(--terra-application-name-menu-title-word-wrap, break-word);
