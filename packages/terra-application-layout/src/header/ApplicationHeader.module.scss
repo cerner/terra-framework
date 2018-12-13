@@ -5,6 +5,17 @@
     border: var(--terra-application-header-border, 0.07143rem solid rgba(255, 255, 255, 0.17));
     height: var(--terra-application-header-height, 3.5725rem);
     position: relative;
+    
+    &::before {
+      background-image: var(--terra-application-layout-header-before-background-image, none);
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+    }
   }
 
   .toolbar-toggle {
