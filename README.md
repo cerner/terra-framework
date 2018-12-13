@@ -91,6 +91,9 @@ Components in beta stage may include breaking changes, new features, and bug fix
 ## Internationalization (I18n)
 Please review [Terra's Internationalization documentation](https://engineering.cerner.com/terra-ui/#/getting-started/terra-ui/internationalization) for more information. Included are directions on consumption and how internationalization is setup.
 
+### Packages Requiring I18n
+- [terra-menu](https://github.com/cerner/terra-framework/tree/master/packages/terra-menu)
+
 ## Contributing
 
 Please read through our [contributing guidelines](CONTRIBUTING.md). Included are directions for issue reporting and pull requests.
