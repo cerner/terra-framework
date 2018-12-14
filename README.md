@@ -67,6 +67,8 @@ Components in beta stage may include breaking changes, new features, and bug fix
 | [terra-slide-panel](https://github.com/cerner/terra-framework/tree/master/packages/terra-slide-panel) | [![NPM version](https://badgen.net/npm/v/terra-slide-panel)](https://www.npmjs.org/package/terra-slide-panel) | ![Stable](https://badgen.net/badge/status/Stable/green) | [![terra-slide-panel](https://badgen.net/david/dep/cerner/terra-framework/packages/terra-slide-panel)](https://david-dm.org/cerner/terra-framework?path=packages/terra-slide-panel) |
 | [terra-slide-panel-manager](https://github.com/cerner/terra-framework/tree/master/packages/terra-slide-panel-manager) | [![NPM version](https://badgen.net/npm/v/terra-slide-panel-manager)](https://www.npmjs.org/package/terra-slide-panel-manager) | ![Stable](https://badgen.net/badge/status/Stable/green) | [![terra-slide-panel-manager](https://badgen.net/david/dep/cerner/terra-framework/packages/terra-slide-panel-manager)](https://david-dm.org/cerner/terra-framework?path=packages/terra-slide-panel-manager) |
 | [terra-theme-provider](https://github.com/cerner/terra-framework/tree/master/packages/terra-theme-provider) | [![NPM version](https://badgen.net/npm/v/terra-theme-provider)](https://www.npmjs.org/package/terra-theme-provider) | ![Stable](https://badgen.net/badge/status/Stable/green) | [![terra-theme-provider](https://badgen.net/david/dep/cerner/terra-framework/packages/terra-theme-provider)](https://david-dm.org/cerner/terra-framework?path=packages/terra-theme-provider) |
+| [terra-time-input](https://github.com/cerner/terra-framework/tree/master/packages/terra-time-input) | [![NPM version](https://badgen.net/npm/v/terra-time-input)](https://www.npmjs.org/package/terra-time-input) | ![Stable](https://badgen.net/badge/status/Stable/green) | [![terra-time-input](https://badgen.net/david/dep/cerner/terra-framework/packages/terra-time-input)](https://david-dm.org/cerner/terra-framework?path=packages/terra-time-input) |
+
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ### Deprecated
@@ -87,6 +89,14 @@ Components in beta stage may include breaking changes, new features, and bug fix
 
 ## Internationalization (I18n)
 Please review [Terra's Internationalization documentation](https://engineering.cerner.com/terra-ui/#/getting-started/terra-ui/internationalization) for more information. Included are directions on consumption and how internationalization is setup.
+
+### Packages Requiring I18n
+- [terra-application-header](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-header)
+- [terra-application-layout](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-layout)
+- [terra-application-links](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-links)
+- [terra-application-utility](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-utility)
+- [terra-notification-dialog](https://github.com/cerner/terra-framework/tree/master/packages/terra-notification-dialog)
+- [terra-time-input](https://github.com/cerner/terra-framework/tree/master/packages/terra-time-input)
 
 ## Contributing
 

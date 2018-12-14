@@ -34,13 +34,13 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-button": "^2.0.1",
-    "terra-doc-template": "^1.1.0",
-    "terra-icon": "^2.0.1",
+    "terra-button": "^2.0.0",
+    "terra-doc-template": "^1.0.0",
+    "terra-icon": "^2.0.0",
     "terra-layout": "^2.21.0",
     "terra-markdown": "^2.6.0",
     "terra-responsive-element": "^3.0.0",
-    "terra-toggle-button": "^2.0.1"
+    "terra-toggle-button": "^2.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
