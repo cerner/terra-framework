@@ -181,6 +181,7 @@ class ApplicationTabs extends React.Component {
           <TabMenu location={location} isHidden={this.menuHidden}>
             {hiddenChildren}
           </TabMenu>
+          <div className={cx(['divider-after-last-tab'])} />
         </div>
       </div>
     );
