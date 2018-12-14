@@ -21,23 +21,26 @@ describe('Time Input Twelve Hour', () => {
         '--terra-time-input-padding-left': '1.178em',
         '--terra-time-input-padding-right': '1.178em',
         '--terra-time-input-padding-top': '1.178em',
-        '--terra-time-input-time-input-group-margin-left': '1.357em',
-        '--terra-time-input-time-input-group-margin-right': '1.357em',
+        '--terra-time-input-time-input-group-minute-margin-left': '1.357em',
+        '--terra-time-input-time-input-group-hour-margin-right': '1.357em',
         '--terra-time-input-line-height': '2',
-        '--terra-time-input-width-input': '7.14em',
-        '--terra-time-input-input-padding-bottom': '0.714em',
-        '--terra-time-input-input-padding-left': '0.714em',
-        '--terra-time-input-input-padding-right': '0.714em',
-        '--terra-time-input-input-padding-top': '0.714em',
+        '--terra-time-input-mobile-line-height': '0.5',
+        '--terra-time-input-mobile-padding-bottom': '0.714em',
+        '--terra-time-input-mobile-padding-left': '0.714em',
+        '--terra-time-input-mobile-padding-right': '0.714em',
+        '--terra-time-input-mobile-padding-top': '0.714em',
         '--terra-time-input-desktop-input-height': '2.8em',
-        '--terra-time-input-desktop-focused-input-background': 'rgba(139, 194, 249, 0.3)',
+        '--terra-time-input-desktop-background-color': '#fff',
+        '--terra-time-input-desktop-input-border-radius': '0.5em',
+        '--terra-time-input-desktop-focused-input-background-color': 'rgba(139, 194, 249, 0.3)',
         '--terra-time-input-time-spacer-margin-bottom': '0.357em',
         '--terra-time-input-time-spacer-margin-left': '0.2858em',
         '--terra-time-input-time-spacer-margin-right': '0.2858em',
-        '--terra-time-input-time-spacer-input-margin-top': '0.714em',
+        '--terra-time-input-time-spacer-margin-top': '0.714em',
+        '--terra-time-input-time-mobile-spacer-margin-top': '0.714em',
         '--terra-time-input-keyboard-border-style': 'solid',
         '--terra-time-input-keyboard-border-width': '2px',
-        '--terra-time-input-meridiem-display-left-margin': '0.1429em',
+        '--terra-time-input-meridiem-display-margin-left': '0.1429em',
         '--terra-time-input-meridiem-padding-bottom': '0',
         '--terra-time-input-meridiem-padding-left': '0',
         '--terra-time-input-meridiem-padding-right': '0',
@@ -83,6 +86,11 @@ describe('Time Input Twelve Hour', () => {
   describe('Twelve Hour Meridiem - Auto focuses on meridiem when filling out whole time', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/default');
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
+      });
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('1234p');
@@ -94,6 +102,11 @@ describe('Time Input Twelve Hour', () => {
   describe('Twelve Hour Meridiem - Auto focuses on meridiem when filling out minute', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/default');
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
+      });
 
       browser.click('#timeInput input[name="terra-time-minute-time-input"]');
       browser.keys('34p');
@@ -105,6 +118,11 @@ describe('Time Input Twelve Hour', () => {
   describe('Twelve Hour Meridiem - Sets hour to 12 without meridiem change for hour input 00', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/default');
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
+      });
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('00');
@@ -116,6 +134,11 @@ describe('Time Input Twelve Hour', () => {
   describe('Twelve Hour Meridiem - Sets hour to 12 without meridiem change for hour input 00', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/default');
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
+      });
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('00');
@@ -127,6 +150,11 @@ describe('Time Input Twelve Hour', () => {
   describe('Twelve Hour Meridiem - Up Arrow on hour does not change meridiem', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/default');
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
+      });
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys(['ArrowUp']);
@@ -138,6 +166,11 @@ describe('Time Input Twelve Hour', () => {
   describe('Twelve Hour - Changes time to 01 when up is pressed on hour of 12', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/default');
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
+      });
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('12');
@@ -151,6 +184,11 @@ describe('Time Input Twelve Hour', () => {
   describe('Twelve Hour - Changes time to 12 when down is pressed on hour of 01', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/default');
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
+      });
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('01');
@@ -164,6 +202,11 @@ describe('Time Input Twelve Hour', () => {
   describe('Twelve Hour Meridiem - Switched when up is press on hour of 11', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/default');
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
+      });
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('11');
@@ -177,6 +220,11 @@ describe('Time Input Twelve Hour', () => {
   describe('Twelve Hour Meridiem - Switched when down is press on hour of 12', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/default');
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
+      });
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('12');
@@ -190,6 +238,11 @@ describe('Time Input Twelve Hour', () => {
   describe('Twelve Hour - Sets time to 12 when hour is 0 and onBlur is called', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/default');
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
+      });
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('0');
@@ -202,6 +255,11 @@ describe('Time Input Twelve Hour', () => {
   describe('Twelve Hour - Sets time to 12 when hour is 0 and onBlur is called', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/default');
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
+      });
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('0');
@@ -214,6 +272,11 @@ describe('Time Input Twelve Hour', () => {
   describe('Twelve Hour - Sets time to 12 when hour is 0 and onBlur is called', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/default');
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
+      });
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('0');
@@ -226,6 +289,11 @@ describe('Time Input Twelve Hour', () => {
   describe('Twelve Hour - Focuses to minute when left is pressed from meridiem', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/default');
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
+      });
 
       browser.click('#timeInput input[value="a.m."]');
       browser.keys(['ArrowLeft']);
@@ -237,6 +305,11 @@ describe('Time Input Twelve Hour', () => {
   describe('Twelve Hour - Focuses to minute when delete is pressed from meridiem', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/default');
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
+      });
 
       browser.click('#timeInput input[value="a.m."]');
       browser.keys(['Delete']);
