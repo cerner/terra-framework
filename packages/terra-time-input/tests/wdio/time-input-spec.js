@@ -11,7 +11,7 @@ describe('Time Input', () => {
     Terra.should.themeCombinationOfCustomProperties({
       testName: 'themed',
       properties: {
-        '--terra-time-input-background': '#ff7777',
+        '--terra-time-input-background-color': '#ff7777',
         '--terra-time-input-border-color': '#000000',
         '--terra-time-input-border-radius': '10px',
         '--terra-time-input-border-style': 'dashed',
@@ -66,14 +66,14 @@ describe('Time Input', () => {
       properties: {
         '--terra-time-input-transition-duration': '0s',
         '--terra-time-input-transition-timing-function': 'ease',
-        '--terra-time-input-animation-background': 'linear-gradient(to bottom, #9fc3b2, #9fc3b2)',
-        '--terra-time-input-background-start': '0 0',
+        '--terra-time-input-animation-background-image': 'linear-gradient(to bottom, #9fc3b2, #9fc3b2)',
+        '--terra-time-input-background-size': '0 0',
         '--terra-time-input-focus-keyboard-border-color': '#0000f2',
         '--terra-time-input-focus-keyboard-border-style': 'solid',
         '--terra-time-input-focus-keyboard-border-width': '1px',
         '--terra-time-input-focus-keyboard-opacity': '1',
-        '--terra-time-input-focus-keyboard-animation-size': '100% 10px',
-        '--terra-time-input-focus-keyboard-box-shadow-ltr': '10 10 8px #cccccc',
+        '--terra-time-input-focus-keyboard-background-size': '100% 10px',
+        '--terra-time-input-focus-keyboard-ltr-box-shadow': '10 10 8px #cccccc',
         '--terra-time-input-desktop-focused-input-background-color': '#ab1f02',
       },
     });
@@ -92,14 +92,14 @@ describe('Time Input', () => {
       properties: {
         '--terra-time-input-transition-duration': '0s',
         '--terra-time-input-transition-timing-function': 'ease',
-        '--terra-time-input-animation-background': 'linear-gradient(to bottom, #9fc3b2, #9fc3b2)',
-        '--terra-time-input-background-start': '0 0',
+        '--terra-time-input-animation-background-image': 'linear-gradient(to bottom, #9fc3b2, #9fc3b2)',
+        '--terra-time-input-background-size': '0 0',
         '--terra-time-input-focus-keyboard-border-color': '#0000f2',
         '--terra-time-input-focus-keyboard-border-style': 'solid',
         '--terra-time-input-focus-keyboard-border-width': '1px',
         '--terra-time-input-focus-keyboard-opacity': '1',
-        '--terra-time-input-focus-keyboard-animation-size': '100% 10px',
-        '--terra-time-input-focus-keyboard-box-shadow-ltr': '10 10 8px #cccccc',
+        '--terra-time-input-focus-keyboard-background-size': '100% 10px',
+        '--terra-time-input-focus-keyboard-ltr-box-shadow': '10 10 8px #cccccc',
         '--terra-time-input-desktop-focused-input-background-color': '#ab1f02',
       },
     });
