@@ -5,8 +5,9 @@
     flex-wrap: nowrap;
     height: 100%;
     justify-content: center;
-    padding-left: var(--terra-application-tabs-container-padding-left, 1.85714rem);
-    padding-right: var(--terra-application-tabs-container-padding-right, 1.85714rem);
+    overflow: hidden;
+    padding-left: var(--terra-application-tabs-container-side-padding, 1.4285714286rem);
+    padding-right: var(--terra-application-tabs-container-padding-right, 1.4285714286rem);
     position: relative;
     width: 100%;
   }
@@ -16,9 +17,9 @@
     flex: 1 1 auto;
     flex-wrap: nowrap;
     height: 100%;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
-    width: calc(100% -  var(--terra-application-tabs-container-padding-left, 1.85714rem) - var(--terra-application-tabs-container-padding-right, 1.85714rem));
+    width: calc(100% - var(--terra-application-tabs-container-padding-left, 1.4285714286rem) - var(--terra-application-tabs-container-padding-right, 1.4285714286rem));
 
     &:focus {
       outline: none;
@@ -34,17 +35,6 @@
 
     &.end {
       justify-content: flex-end;
-    }
-
-    &::after {
-      background-color: #0ff;
-      display: block;
-      height: 20px;
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 20px;
-      z-index: 10;
     }
   }
 
@@ -108,9 +98,10 @@
     width: var(--terra-application-tabs-tab-width, 13rem);
 
     &::before {
-      background-color: var(--terra-application-tabs-tab-divider-before-background-color, #1d98da);
-      border-left: var(--terra-application-tabs-tab-divider-before-border-left, 1px solid #3a67a4);
-      border-right: var(--terra-application-tabs-tab-divider-before-border-right, 1px solid #1d98da);
+      background-color: var(--terra-application-tabs-tab-divider-before-background-color, #0079be);
+      background-image: var(--terra-application-tabs-tab-divider-before-background-image);
+      border-left: var(--terra-application-tabs-tab-divider-before-border-left, 1px solid rgba(0, 0, 0, 0.17));
+      border-right: var(--terra-application-tabs-tab-divider-before-border-right, 1px solid rgba(255, 255, 255, 0.17));
       content: '';
       display: block;
       height: 100%;
@@ -168,9 +159,10 @@
       text-shadow: var(--terra-application-tabs-tab-selected-text-shadow, none);
 
       &::before {
-        background-color: var(--terra-application-tabs-tab-selected-divider-before-background-color, #1d98da);
-        border-left-color: var(--terra-application-tabs-tab-selected-divider-before-border-left-color, #1d98da);
-        border-right-color: var(--terra-application-tabs-tab-selected-divider-before-border-right-color, #3a67a4);
+        background-color: var(--terra-application-tabs-tab-selected-divider-before-background-color, #0079be);
+        background-image: var(--terra-application-tabs-tab-selected-divider-before-background-image);
+        border-left-color: var(--terra-application-tabs-tab-selected-divider-before-border-left-color, rgba(255, 255, 255, 0.17));
+        border-right-color: var(--terra-application-tabs-tab-selected-divider-before-border-right-color, rgba(0, 0, 0, 0.17));
       }
 
       .tab-inner {
@@ -188,12 +180,12 @@
 
       .tab-inner {
         background-color: var(--terra-application-tabs-tab-focus-background-color);
-        box-shadow: var(--terra-application-tabs-tab-focus-box-shadow, inset 0 0 0 1px #ccedfe, inset 0 0 0 4px rgba(204, 237, 254, 0.35));
+        box-shadow: var(--terra-application-tabs-tab-focus-box-shadow, inset 0 0 0 4px rgba(118, 179, 209, 0.65));
       }
 
       &[aria-current='true'] .tab-inner {
         background-color: var(--terra-application-tabs-tab-selected-focus-background-color, rgba(0, 0, 0, 0.15));
-        box-shadow: var(--terra-application-tabs-tab-selected-focus-box-shadow, inset 0 0 0 1px #ccedfe, inset 0 0 0 4px rgba(204, 237, 254, 0.35), inset 0 -15px 30px -5px rgba(0, 0, 0, 0.3));
+        box-shadow: var(--terra-application-tabs-tab-selected-focus-box-shadow, inset 0 0 0 4px rgba(118, 179, 209, 0.65), inset 0 -15px 30px -5px rgba(0, 0, 0, 0.3));
       }
     }
   }
