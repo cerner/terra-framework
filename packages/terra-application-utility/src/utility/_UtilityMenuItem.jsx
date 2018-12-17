@@ -157,11 +157,11 @@ class UtilityMenuItem extends React.Component {
 
     const roles = isReadOnly ? 'note' : 'button';
 
-    /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-element-to-interactive-role */
+    /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-element-to-interactive-role, jsx-a11y/no-noninteractive-tabindex */
     const renderBodyItem = (fill, wrapOnKeyDown, handleSelection) => (
       <li
         {...customProps}
-        tabIndex={!isReadOnly ? '0' : undefined}
+        tabIndex="0"
         key={itemKey}
         onClick={!isReadOnly ? event => handleSelection(event, itemKey) : undefined}
         onKeyDown={!isReadOnly ? wrapOnKeyDown(itemKey, onKeyDown) : undefined}

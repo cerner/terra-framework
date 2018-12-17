@@ -31,7 +31,6 @@ exports[`UtilityMenu it should render with a read-only menu item 1`] = `
         "childKeys": Array [],
         "contentLocation": "footer",
         "isReadOnly": true,
-        "isSelected": false,
         "key": "key",
         "title": "title",
       },
