@@ -70,6 +70,16 @@
       border-right: 1px solid var(--layout-slide-panel-squish-panel-border-color, #d3d4d5);
       transition: none;
       width: calc(1px + #{var(--layout-slide-panel-desktop-panel-width, 18.571rem)});
+
+      /* stylelint-disable selector-max-compound-selectors */
+      [dir=ltr] & {
+        box-shadow: var(--layout-slide-panel-squish-panel-box-shadow-ltr);
+      }
+
+      [dir=rtl] & {
+        box-shadow: var(--layout-slide-panel-squish-panel-box-shadow-rtl); 
+      }
+      /* stylelint-enable selector-max-compound-selectors */
     }
   }
 
