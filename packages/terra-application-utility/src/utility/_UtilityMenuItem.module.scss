@@ -150,11 +150,11 @@
     cursor: text;
 
     &:hover {
-      background-color: var(--terra-application-header-utility-menu-body-item-hover-background-color);
+      background-color: transparent;
     }
 
     &:focus {
-      box-shadow: var(--terra-application-header-utility-menu-body-item-focus-box-shadow);
+      box-shadow: none;
       outline: 0;
     }
   }
