@@ -8,7 +8,7 @@
     cursor: pointer;
     display: flex;
     font-family: inherit;
-    height: 100%;
+    height: var(--terra-application-header-utility-height, 100%);
     justify-content: var(--terra-application-header-utility-justify-content, space-between);
     padding-left: var(--terra-application-header-utility-padding-left, 0.5714rem);
     padding-right: var(--terra-application-header-utility-padding-right, 0.5714rem);
