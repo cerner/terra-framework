@@ -3,7 +3,7 @@
   [dir=rtl] {
     // These are relative to screen coordinates, so no bi-di concerns
     .popup-arrow {
-      border: var(--terra-popup-arrow-size, 11px) solid transparent;
+      border: var(--terra-popup-arrow-border, 11px) solid transparent;
       display: none;
       height: 0;
       left: 50%;
@@ -13,7 +13,7 @@
       z-index: 7002;
 
       &::after {
-        border: var(--terra-popup-arrow-after-size, 10px) solid transparent;
+        border: var(--terra-popup-arrow-after-border, 10px) solid transparent;
         content: '';
         height: 0;
         position: absolute;
@@ -32,8 +32,8 @@
       &::after {
         border-bottom-color: var(--terra-popup-arrow-after-border-bottom-color, #fff);
         border-top-width: 0;
-        left: calc(-1 * var(--terra-popup-arrow-after-size, 10px));
-        top: var(--terra-popup-arrow-after-inset-size, 2px);
+        left: calc(-1 * var(--terra-popup-align-arrow-top-after-left, 10px));
+        top: var(--terra-popup-align-arrow-top-after-top, 2px);
       }
     }
 
@@ -47,8 +47,8 @@
       &::after {
         border-bottom-width: 0;
         border-top-color: var(--terra-popup-arrow-after-border-top-color, #fff);
-        bottom: var(--terra-popup-arrow-after-inset-size, 2px);
-        left: calc(-1 * var(--terra-popup-arrow-after-size, 10px));
+        bottom: var(--terra-popup-align-arrow-bottom-after-bottom, 2px);
+        left: calc(-1 * var(--terra-popup-align-arrow-bottom-after-left, 10px));
       }
     }
 
@@ -62,8 +62,8 @@
       &::after {
         border-left-width: 0;
         border-right-color: var(--terra-popup-arrow-after-border-right-color, #fff);
-        left: var(--terra-popup-arrow-after-inset-size, 2px);
-        top: calc(-1 * var(--terra-popup-arrow-after-size, 10px));
+        left: var(--terra-popup-align-arrow-left-after-left, 2px);
+        top: calc(-1 * var(--terra-popup-align-arrow-left-after-top, 10px));
       }
     }
 
@@ -77,8 +77,8 @@
       &::after {
         border-left-color: var(--terra-popup-arrow-after-border-left-color, #fff);
         border-right-width: 0;
-        right: var(--terra-popup-arrow-after-inset-size, 2px);
-        top: calc(-1 * var(--terra-popup-arrow-after-size, 10px));
+        right: var(--terra-popup-align-arrow-right-after-right, 2px);
+        top: calc(-1 * var(--terra-popup-align-arrow-right-after-top, 10px));
       }
     }
   }
