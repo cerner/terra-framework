@@ -16,7 +16,7 @@
     align-items: center;
     display: flex;
     height: 100%;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
   }
 
@@ -35,7 +35,7 @@
   }
 
   .logo {
-    min-width: var(--terra-application-header-layout-logo-min-width, 16.571rem);
+    min-width: var(--terra-application-header-layout-logo-min-width, 17.14286rem);
   }
 
   .extensions {
