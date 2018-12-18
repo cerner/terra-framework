@@ -37,7 +37,7 @@ class ContentComponent extends React.Component {
     this.handleSelectChange = this.handleSelectChange.bind(this);
     this.getId = this.getId.bind(this);
 
-    this.state = { id: 'dimensions', disclosureHeight: HEIGHT_KEYS[0], disclosureWidth: WIDTH_KEYS[0] };
+    this.state = { id: `dimensions${Math.floor(Math.random() * 100000)}`, disclosureHeight: HEIGHT_KEYS[0], disclosureWidth: WIDTH_KEYS[0] };
   }
 
   getId(name) {
@@ -91,7 +91,7 @@ class ContentComponent extends React.Component {
 
   renderForm() {
     return (
-      <form>
+      <div>
         <label htmlFor={this.getId('disclosureHeight')}>Pop Content Height</label>
         <select id={this.getId('disclosureHeight')} name="disclosureHeight" value={this.state.disclosureHeight} onChange={this.handleSelectChange}>
           {generateOptions(HEIGHT_KEYS)}
@@ -104,7 +104,7 @@ class ContentComponent extends React.Component {
         </select>
         <br />
         <br />
-      </form>
+      </div>
     );
   }
 

@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated readme so headings have logical nesting.
 
 3.1.0 - (December 5, 2018)
 ------------------
