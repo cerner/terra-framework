@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated dev site to be more accessible.
 
 2.19.0 - (December 5, 2018)
 ------------------
