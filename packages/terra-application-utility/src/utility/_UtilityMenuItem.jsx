@@ -155,17 +155,15 @@ class UtilityMenuItem extends React.Component {
       { 'default-right-inset': !rightInset },
     ]);
 
-    const roles = isReadOnly ? 'note' : 'button';
-
     /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-element-to-interactive-role, jsx-a11y/no-noninteractive-tabindex */
     const renderBodyItem = (fill, wrapOnKeyDown, handleSelection) => (
       <li
         {...customProps}
-        tabIndex="0"
+        tabIndex={!isReadOnly ? '0' : undefined}
         key={itemKey}
         onClick={!isReadOnly ? event => handleSelection(event, itemKey) : undefined}
         onKeyDown={!isReadOnly ? wrapOnKeyDown(itemKey, onKeyDown) : undefined}
-        role={roles}
+        role={isReadOnly ? 'note' : 'button'}
         className={bodyItemClassNames}
         aria-label={title}
         ref={this.setItemNode}
