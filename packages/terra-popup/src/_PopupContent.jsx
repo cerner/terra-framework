@@ -94,10 +94,19 @@ const defaultProps = {
   isWidthAutomatic: false,
 };
 
+const contextTypes = {
+  /* eslint-disable consistent-return */
+  intl: (context) => {
+    if (context.intl === undefined) {
+      return new Error('Component is internationalized, and must be wrapped in terra-base');
+    }
+  },
+};
+
 class PopupContent extends React.Component {
-  static addPopupHeader(children, onRequestClose) {
+  static addPopupHeader(children, onRequestClose, close) {
     const icon = <span className={cx('close-icon')} />;
-    const button = <Button variant="utility" isIconOnly icon={icon} onClick={onRequestClose} text="close" />;
+    const button = <Button variant="utility" isIconOnly icon={icon} onClick={onRequestClose} text={close} />;
     const header = <div className={cx('header')}>{button}</div>;
     return <ContentContainer header={header} fill>{children}</ContentContainer>;
   }
@@ -191,6 +200,8 @@ class PopupContent extends React.Component {
       ...customProps
     } = this.props;
 
+    const { intl } = this.context;
+    const close = intl.formatMessage({ id: 'Terra.popup.header.close' });
     const contentStyle = PopupContent.getContentStyle(contentHeight, contentHeightMax, contentWidth, contentWidthMax, isHeightAutomatic, isWidthAutomatic);
     const isHeightBounded = PopupContent.isBounded(contentHeight, contentHeightMax);
     const isWidthBounded = PopupContent.isBounded(contentWidth, contentWidthMax);
@@ -198,7 +209,7 @@ class PopupContent extends React.Component {
 
     let content = PopupContent.cloneChildren(children, isHeightAutomatic, isWidthAutomatic, isHeightBounded, isWidthBounded, isHeaderDisabled);
     if (isFullScreen && !isHeaderDisabled) {
-      content = PopupContent.addPopupHeader(content, onRequestClose);
+      content = PopupContent.addPopupHeader(content, onRequestClose, close);
     }
 
     const contentClassNames = cx([
@@ -243,6 +254,7 @@ class PopupContent extends React.Component {
 
 PopupContent.propTypes = propTypes;
 PopupContent.defaultProps = defaultProps;
+PopupContent.contextTypes = contextTypes;
 PopupContent.Opts = {
   cornerSize: CORNER_SIZE,
 };
