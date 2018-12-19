@@ -97,7 +97,7 @@ const defaultProps = {
 class PopupContent extends React.Component {
   static addPopupHeader(children, onRequestClose) {
     const icon = <span className={cx('close-icon')} />;
-    const button = <Button variant="utility" className={cx('close')} isIconOnly icon={icon} onClick={onRequestClose} />;
+    const button = <Button variant="utility" isIconOnly icon={icon} onClick={onRequestClose} text="close" />;
     const header = <div className={cx('header')}>{button}</div>;
     return <ContentContainer header={header} fill>{children}</ContentContainer>;
   }

@@ -6,6 +6,10 @@ Unreleased
 ### Changed
 * Prevent click events from propagating from popup overlay
 
+### Fixed
+* Removed 'close' class from _PopupContent button
+* Added text prop to _PopupContent button for conversion to aria-label in Button component
+
 4.20.0 - (December 5, 2018)
 ------------------
 ### Added
