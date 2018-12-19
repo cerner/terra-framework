@@ -3,6 +3,10 @@ Changelog
 
 Unreleased
 ----------
+
+### Fixed
+* Updated Data-menu-item attribute value of Menuitem to Unique key value
+
 ### Added
 * Add optional toolbar prop that displays below the side menu action header
 

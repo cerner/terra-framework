@@ -3,6 +3,10 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated dev site examples to not have duplicate ids.
+* Updated dev site to have logically nested headings.
+* Updated dev site examples to not use form tags.
 
 1.15.0 - (December 5, 2018)
 ------------------

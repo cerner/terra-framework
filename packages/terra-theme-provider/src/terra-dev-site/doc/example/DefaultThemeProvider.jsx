@@ -28,7 +28,7 @@ class DefaultThemeProvider extends React.Component {
       themeSwitcher = (
         <div style={{ marginBottom: '1rem' }}>
           <label htmlFor="theme"> Theme: </label>
-          <select value={this.state.theme} onChange={this.handleThemeChange}>
+          <select id="theme" value={this.state.theme} onChange={this.handleThemeChange}>
             <option value="">Default</option>
             <option value={ThemeProvider.Opts.Themes.MOCK}>Mock Theme</option>
           </select>
