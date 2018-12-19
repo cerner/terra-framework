@@ -56,7 +56,7 @@ Custom Header
         >
           <p>{text}</p>
         </DialogModal>
-        <Button id="trigger-dialog-modal" text="Trigger Dialog Modal" onClick={this.handleOpenModal} />
+        <Button text="Trigger Dialog Modal" onClick={this.handleOpenModal} />
       </div>
     );
   }

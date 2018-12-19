@@ -79,8 +79,8 @@ describe('ApplicationLayout', () => {
       browser.click('[data-application-header-toggle]');
       browser.waitForVisible('[data-routing-menu] [data-navigation-side-menu-action-header] button');
       browser.click('[data-routing-menu] [data-navigation-side-menu-action-header] button');
-      browser.waitForVisible('[data-routing-menu] [data-menu-item="Page 2"]');
-      browser.click('[data-routing-menu] [data-menu-item="Page 2"]');
+      browser.waitForVisible('[data-routing-menu] [data-menu-item="/page_2"]');
+      browser.click('[data-routing-menu] [data-menu-item="/page_2"]');
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test' });

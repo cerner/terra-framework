@@ -36,7 +36,8 @@
     "resize-observer-polyfill": "^1.4.1",
     "terra-button": "^2.0.0",
     "terra-doc-template": "^1.0.0",
-    "terra-form": "^2.0.0"
+    "terra-form-input": "^1.0.0",
+    "terra-form-select": "^4.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

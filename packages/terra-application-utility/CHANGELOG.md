@@ -6,6 +6,8 @@ Unreleased
 ### Added
 * Read-only property added to menu item shape
 * Jest test added for read-only property
+### Changed
+* Updated dev site examples to not have duplicate ids.
 
 1.24.0 - (December 5, 2018)
 ------------------
