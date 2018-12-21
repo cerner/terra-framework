@@ -200,8 +200,6 @@ class PopupContent extends React.Component {
       ...customProps
     } = this.props;
 
-    const { intl } = this.context;
-    const close = intl.formatMessage({ id: 'Terra.popup.header.close' });
     const contentStyle = PopupContent.getContentStyle(contentHeight, contentHeightMax, contentWidth, contentWidthMax, isHeightAutomatic, isWidthAutomatic);
     const isHeightBounded = PopupContent.isBounded(contentHeight, contentHeightMax);
     const isWidthBounded = PopupContent.isBounded(contentWidth, contentWidthMax);
@@ -209,6 +207,8 @@ class PopupContent extends React.Component {
 
     let content = PopupContent.cloneChildren(children, isHeightAutomatic, isWidthAutomatic, isHeightBounded, isWidthBounded, isHeaderDisabled);
     if (isFullScreen && !isHeaderDisabled) {
+      const { intl } = this.context;
+      const close = intl.formatMessage({ id: 'Terra.popup.header.close' });
       content = PopupContent.addPopupHeader(content, onRequestClose, close);
     }
 
