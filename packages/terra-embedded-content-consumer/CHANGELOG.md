@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Migrate package to the terra-framework repository
+* Added title attribute to example iframes.
 
 2.29.0 - (November 19, 2018)
 ------------------
