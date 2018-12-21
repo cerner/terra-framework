@@ -37,7 +37,7 @@ const propTypes = {
    */
   isActive: PropTypes.bool,
   /**
-   * Whether this item is read-only.
+   * Whether the item is read-only.
    */
   isReadOnly: PropTypes.bool,
   /**

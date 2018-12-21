@@ -36,6 +36,10 @@ PropTypes.shape({
    */
   contentLocation: PropTypes.oneOf([LOCATIONS.BODY, LOCATIONS.FOOTER]),
   /**
+   * Whether the item is read-only.
+   */
+  isReadOnly: PropTypes.bool,
+  /**
    * Boolean indicating if the item is selected.
    */
   isSelected: PropTypes.bool,
