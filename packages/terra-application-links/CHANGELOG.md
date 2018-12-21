@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Fixed font family inheritance on application tab buttons
 
 4.21.0 - (December 5, 2018)
 ------------------
