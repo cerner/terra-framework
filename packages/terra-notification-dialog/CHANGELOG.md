@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Removed
+* Removed onRequestClose prop.
+
 ### Changed
 * Updated dev site examples to not have duplicate ids.
 * Updated dev site to have logically nested headings.
