@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.16.0 - (January 2, 2019)
+------------------
 ### Changed
 * Updated dev site examples to not have duplicate ids.
 * Updated dev site examples to use terra-form-input and terra-form-select to improve accessability.
