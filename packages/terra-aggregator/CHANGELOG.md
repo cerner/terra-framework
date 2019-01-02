@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+3.20.0 - (January 2, 2019)
+------------------
+### Changed
+* Removed local timeout values from wdio tests
+
 3.19.0 - (December 5, 2018)
 ------------------
 ### Changed

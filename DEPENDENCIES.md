@@ -29,9 +29,9 @@
 | markdown-magic | ^0.1.25 | -- | Automatically update markdown files with content from external sources |
 | raf | ^3.4.0 | -- | requestAnimationFrame polyfill for node and the browser |
 | react | ^16.4.2 | -- | React is a JavaScript library for building user interfaces. |
-| react-dom | ^16.4.2 | ^16.6.3 | React package for working with the DOM. |
+| react-dom | ^16.4.2 | ^16.0.0 | React package for working with the DOM. |
 | react-router-dom | ^4.2.2 | >=15 | DOM bindings for React Router |
-| react-test-renderer | ^16.4.2 | ^16.6.3 | React package for snapshot testing. |
+| react-test-renderer | ^16.4.2 | ^16.0.0 | React package for snapshot testing. |
 | rimraf | ^2.6.1 | -- | A deep deletion module for node (like `rm -rf`) |
 | shelljs | ^0.8.2 | -- | Portable Unix shell commands for Node.js |
 | stylelint | ^9.2.0 | -- | A mighty, modern CSS linter. |
