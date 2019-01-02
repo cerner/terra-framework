@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+2.30.0 - (January 2, 2019)
+------------------
 ### Changed
 * Migrate package to the terra-framework repository
 * Added title attribute to example iframes.
