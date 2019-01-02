@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.2.0 - (January 2, 2019)
+------------------
 ### Fixed
 * Corrected state management during update lifecycle to prevent undesired disclosure closures
 

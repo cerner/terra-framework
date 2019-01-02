@@ -6,6 +6,11 @@ Unreleased
 ### Added
 * Wdio test added for read-only menu item
 
+3.2.0 - (January 2, 2019)
+------------------
+### Changed
+* Minor dependency update
+
 3.1.0 - (December 5, 2018)
 ------------------
 ### Changed
