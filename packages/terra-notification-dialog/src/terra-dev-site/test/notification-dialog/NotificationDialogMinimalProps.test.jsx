@@ -27,7 +27,6 @@ class NotificationDialogMinimalProps extends React.Component {
       <div>
         <NotificationDialog
           isOpen={this.state.isOpen}
-          onRequestClose={this.handleCloseModal}
           primaryAction={{
             text: 'Close',
             onClick: this.handleCloseModal,
