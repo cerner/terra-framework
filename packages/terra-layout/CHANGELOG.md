@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+2.22.0 - (January 2, 2019)
+------------------
 ### Added
 * Shim for <main> tag IE compatibility added to _LayoutSlidePanel
 

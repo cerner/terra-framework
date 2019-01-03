@@ -3,6 +3,15 @@ Changelog
 
 Unreleased
 ----------
+### Removed
+* Removed onRequestClose prop.
+
+1.16.0 - (January 2, 2019)
+------------------
+### Changed
+* Updated dev site examples to not have duplicate ids.
+* Updated dev site to have logically nested headings.
+* Updated dev site examples to not use form tags.
 
 1.15.0 - (December 5, 2018)
 ------------------

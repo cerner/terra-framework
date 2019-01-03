@@ -60,7 +60,7 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
     isDivided={false}
   >
     <MenuItem
-      data-menu-item="Test Menu 1"
+      data-menu-item="test1"
       isSelected={false}
       key="test1"
       onClick={[Function]}
@@ -68,7 +68,7 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
       text="Test Menu 1"
     />
     <MenuItem
-      data-menu-item="Test Menu 2"
+      data-menu-item="test2"
       isSelected={false}
       key="test2"
       onClick={[Function]}
@@ -76,7 +76,7 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
       text="Test Menu 2"
     />
     <MenuItem
-      data-menu-item="Test Menu 3"
+      data-menu-item="test3"
       isSelected={false}
       key="test3"
       onClick={[Function]}
@@ -84,7 +84,7 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
       text="Test Menu 3"
     />
     <MenuItem
-      data-menu-item="Test Menu 4"
+      data-menu-item="test4"
       isSelected={false}
       key="test4"
       onClick={[Function]}
