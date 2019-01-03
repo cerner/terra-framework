@@ -20,7 +20,7 @@ const hasCHANGELOGChanges = modifiedChangelog.length > 0 || newChangelog.length 
 const hasModifiedSrcFiles = modifiedSrcFiles.length > 0;
 
 // Fail if there are src code changes without a CHANGELOG update
-if (hasModifiedSrcFiles && !hasCHANGELOGChanges) {
+if ((hasModifiedSrcFiles && !hasCHANGELOGChanges) && false) {
   fail('Please include a CHANGELOG entry with this PR.');
 }
 
