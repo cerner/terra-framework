@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+1.19.0 - (January 2, 2019)
+------------------
+### Fixed
+* Updated Data-menu-item attribute value of Menuitem to Unique key value
+
 ### Added
 * Add optional toolbar prop that displays below the side menu action header
 

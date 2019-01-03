@@ -171,7 +171,7 @@ class NavigationSideMenu extends Component {
         key={key}
         onClick={(event) => { this.handleItemClick(event, key); }}
         onKeyDown={onKeyDown}
-        data-menu-item={item.text}
+        data-menu-item={key}
       />
     );
   }

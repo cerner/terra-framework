@@ -28,7 +28,6 @@ class NotificationDialogNoMessage extends React.Component {
         <NotificationDialog
           variant={NotificationDialogVariants.INFO}
           isOpen={this.state.isOpen}
-          onRequestClose={this.handleCloseModal}
           title="There is no message here."
           primaryAction={{
             text: 'Close',

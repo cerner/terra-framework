@@ -20,6 +20,7 @@ Cerner Corporation
 - Jaime Mackey [@jmsv6d]
 - Noah Benham [@noahbenham]
 - Cody Price [@dev-cprice]
+- Shetty Akarsh [@@ShettyAkarsh]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -41,3 +42,4 @@ Cerner Corporation
 [@jmsv6d]: https://github.com/jmsv6d
 [@noahbenham]: https://github.com/noahbenham
 [@dev-cprice]: https://github.com/dev-cprice
+[@ShettyAkarsh]: https://github.com/ShettyAkarsh
