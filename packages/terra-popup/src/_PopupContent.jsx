@@ -52,7 +52,7 @@ const propTypes = {
    */
   contentWidthMax: PropTypes.number,
   /**
-   * The intl object to be injected for translations. Provided by the injectIntl function.
+   * @private The intl object to be injected for translations. Provided by the injectIntl function.
    */
   intl: intlShape.isRequired,
   /**
