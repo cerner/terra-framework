@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+1.25.0 - (January 2, 2019)
+------------------
 ### Changed
 * Updated dev site examples to not have duplicate ids.
 

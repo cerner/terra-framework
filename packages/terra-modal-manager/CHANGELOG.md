@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.2.0 - (January 2, 2019)
+------------------
 ### Changed
 * Updated dev site examples to not use forms or have duplicate ids
 

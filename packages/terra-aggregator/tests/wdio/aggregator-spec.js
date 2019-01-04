@@ -31,7 +31,7 @@ describe('Aggregator', () => {
 
       browser.click('#test-aggregator #section1');
 
-      browser.waitForVisible('[class*="slide-group"] .close-disclosure', 1000);
+      browser.waitForVisible('[class*="slide-group"] .close-disclosure');
 
       browser.click('#test-aggregator #section1');
     });
@@ -46,7 +46,7 @@ describe('Aggregator', () => {
 
       browser.click('#test-aggregator #section1');
 
-      browser.waitForVisible('[class*="slide-group"] .close-disclosure', 1000);
+      browser.waitForVisible('[class*="slide-group"] .close-disclosure');
 
       browser.click('[class*="slide-group"] .close-disclosure');
     });
