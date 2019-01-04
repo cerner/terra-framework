@@ -1,4 +1,5 @@
 import React from 'react';
+import { injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Button from 'terra-button';
@@ -51,6 +52,10 @@ const propTypes = {
    */
   contentWidthMax: PropTypes.number,
   /**
+   * The intl object to be injected for translations. Provided by the injectIntl function.
+   */
+  intl: intlShape.isRequired,
+  /**
    * Set this to `true` if your content has focusable elements and you want them to receive focus instead of focusing on the default popup frame when the popup is opened.
    */
   isFocusedDisabled: PropTypes.bool,
@@ -92,15 +97,6 @@ const defaultProps = {
   isHeaderDisabled: false,
   isHeightAutomatic: false,
   isWidthAutomatic: false,
-};
-
-const contextTypes = {
-  /* eslint-disable consistent-return */
-  intl: (context) => {
-    if (context.intl === undefined) {
-      return new Error('Component is internationalized, and must be wrapped in terra-base');
-    }
-  },
 };
 
 class PopupContent extends React.Component {
@@ -187,6 +183,7 @@ class PopupContent extends React.Component {
       contentHeightMax,
       contentWidth,
       contentWidthMax,
+      intl,
       isFocusedDisabled,
       isHeaderDisabled,
       isHeightAutomatic,
@@ -207,7 +204,6 @@ class PopupContent extends React.Component {
 
     let content = PopupContent.cloneChildren(children, isHeightAutomatic, isWidthAutomatic, isHeightBounded, isWidthBounded, isHeaderDisabled);
     if (isFullScreen && !isHeaderDisabled) {
-      const { intl } = this.context;
       const close = intl.formatMessage({ id: 'Terra.popup.header.close' });
       content = PopupContent.addPopupHeader(content, onRequestClose, close);
     }
@@ -254,9 +250,8 @@ class PopupContent extends React.Component {
 
 PopupContent.propTypes = propTypes;
 PopupContent.defaultProps = defaultProps;
-PopupContent.contextTypes = contextTypes;
 PopupContent.Opts = {
   cornerSize: CORNER_SIZE,
 };
 
-export default PopupContent;
+export default injectIntl(PopupContent);

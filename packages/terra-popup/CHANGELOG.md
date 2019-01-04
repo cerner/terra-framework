@@ -3,15 +3,18 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Removed 'close' class from `_PopupContent` button
+* Added text prop to `_PopupContent` button for conversion to aria-label in Button component
+
+### Added
+* react-intl dependency added for i18n translations
+* intl prop added to `_PopupContent` for i18n message formatting
 
 4.21.0 - (January 2, 2019)
 ------------------
 ### Changed
 * Prevent click events from propagating from popup overlay
-
-### Fixed
-* Removed 'close' class from `_PopupContent` button
-* Added text prop to `_PopupContent` button for conversion to aria-label in Button component
 
 4.20.0 - (December 5, 2018)
 ------------------
