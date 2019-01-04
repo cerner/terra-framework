@@ -3,7 +3,7 @@
   .application-header-name {
     align-items: var(--terra-application-name-header-align-items, center);
     box-sizing: border-box;
-    color: var(--terra-application-name-header--color, #fff);
+    color: var(--terra-application-name-header-color, #fff);
     display: flex;
     flex: 1 1 auto;
     font-family: inherit;
@@ -29,7 +29,7 @@
   .title {
     flex: 0 1 auto;
     font-weight: var(--terra-application-name-header-title-font-weight, bold);
-    overflow: var(--terra-application-name-header-name-title-overflow, hidden);
+    overflow: var(--terra-application-name-header-title-overflow, hidden);
     padding-left: var(--terra-application-name-header-title-padding-left);
     padding-right: var(--terra-application-name-header-title-padding-right);
     text-overflow: var(--terra-application-name-header-title-text-overflow, ellipsis);
