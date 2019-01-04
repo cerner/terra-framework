@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Increase specificity of UserData photo CSS class
 
 3.2.0 - (January 2, 2019)
 ------------------
