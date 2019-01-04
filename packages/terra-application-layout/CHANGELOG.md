@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update terra-avatar to 2.0
 
 3.2.0 - (January 2, 2019)
 ------------------

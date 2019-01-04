@@ -183,9 +183,7 @@ const indexPath = '/page_1';
 const userAvatar = (
   <Avatar
     image={ProfilePicture}
-    variant="user"
     alt="Swanson, Henry"
-    ariaLabel="Swanson, Henry"
     key="user_avatar"
   />
 );
