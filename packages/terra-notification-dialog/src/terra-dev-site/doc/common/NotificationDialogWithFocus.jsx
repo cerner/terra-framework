@@ -68,8 +68,8 @@ class NotificationDialogWithFocus extends React.Component {
           requestFocus={this.props.disclosureManager.requestFocus}
           releaseFocus={this.props.disclosureManager.releaseFocus}
         />
-        <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
-        <Button text="Dismiss" onClick={this.props.disclosureManager.dismiss} />
+        <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} id="trigger-notification-dialog" />
+        <Button text="Dismiss" onClick={this.props.disclosureManager.dismiss} id="dismiss-modal" />
         <Popup
           isArrowDisplayed
           isOpen={this.state.open}

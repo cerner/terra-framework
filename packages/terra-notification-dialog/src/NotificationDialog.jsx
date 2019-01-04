@@ -140,18 +140,18 @@ class NotificationDialog extends React.Component {
     }
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     if (this.props.isOpen) {
-      if (this.props.requestFocus) {
+      if (!prevProps.isOpen && this.props.requestFocus) {
         this.props.requestFocus();
       }
-    } else if (this.props.releaseFocus) {
+    } else if (prevProps.isOpen && this.props.releaseFocus) {
       this.props.releaseFocus();
     }
   }
 
   componentWillUnmount() {
-    if (this.props.releaseFocus) {
+    if (this.props.isOpen && this.props.releaseFocus) {
       this.props.releaseFocus();
     }
   }
