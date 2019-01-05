@@ -5,6 +5,7 @@ import EmbeddedContentConsumer from 'terra-embedded-content-consumer/lib/Embedde
 const OnReadyConsumer = () => (
   <EmbeddedContentConsumer
     src="#/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/providers/on-ready-provider"
+    options={{ iframeAttrs: { title: 'On ready events example' } }}
     fill
   />
 );
