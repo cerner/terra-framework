@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Wdio test added for read-only menu item
+
 ### Changed
 * Increase specificity of UserData photo CSS class
 

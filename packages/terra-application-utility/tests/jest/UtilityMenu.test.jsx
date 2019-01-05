@@ -62,6 +62,25 @@ describe('UtilityMenu', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('it should render with a read-only menu item', () => {
+    const menuitem = [{
+      key: 'key', title: 'title', contentLocation: 'footer', isReadOnly: true, childKeys: [],
+    }];
+    const component = (
+      <IntlProvider locale={locale} messages={messages}>
+        <HeaderUtilityMenu
+          initialSelectedKey="key"
+          menuItems={menuitem}
+          onChange={mockOnChange}
+          onDisclose={mockOnDisclose}
+          variant={variant}
+          id="test"
+        />
+      </IntlProvider>);
+    const wrapper = shallow(component);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('it should pass in a custom prop', () => {
     const component = (
       <IntlProvider locale={locale} messages={messages}>
