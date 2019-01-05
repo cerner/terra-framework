@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Read-only property added to menu item shape
+* Jest test added for read-only property
 
 1.25.0 - (January 2, 2019)
 ------------------
