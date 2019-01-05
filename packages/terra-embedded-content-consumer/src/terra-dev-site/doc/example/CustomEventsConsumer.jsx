@@ -21,6 +21,7 @@ const CustomEventsConsumer = () => (
   <div id="CustomEvents">
     <EmbeddedContentConsumer
       src="#/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"
+      options={{ iframeAttrs: { title: 'Custom events example' } }}
       eventHandlers={eventHandlers}
     />
   </div>
