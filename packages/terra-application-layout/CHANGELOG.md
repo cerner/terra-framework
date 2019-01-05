@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.3.0 - (January 5, 2019)
+------------------
 ### Added
 * Wdio test added for read-only menu item
 
