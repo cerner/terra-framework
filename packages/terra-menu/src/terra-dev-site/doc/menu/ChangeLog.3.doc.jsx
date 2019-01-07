@@ -5,7 +5,7 @@ import ChangeLog from '../../../../CHANGELOG.md';
 const DocPage = () => (
   <DocTemplate
     packageName="terra-menu"
-    srcPath="https://github.com/cerner/terra-core/tree/master/packages/terra-menu"
+    srcPath="https://github.com/cerner/terra-framework/tree/master/packages/terra-menu"
     readme={ChangeLog}
   />
 );
