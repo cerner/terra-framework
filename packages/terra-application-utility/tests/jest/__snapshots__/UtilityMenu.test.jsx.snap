@@ -21,6 +21,27 @@ exports[`UtilityMenu it should pass in a custom prop 1`] = `
 />
 `;
 
+exports[`UtilityMenu it should render with a read-only menu item 1`] = `
+<InjectIntl(UtilityMenu)
+  id="test"
+  initialSelectedKey="key"
+  menuItems={
+    Array [
+      Object {
+        "childKeys": Array [],
+        "contentLocation": "footer",
+        "isReadOnly": true,
+        "key": "key",
+        "title": "title",
+      },
+    ]
+  }
+  onChange={[MockFunction]}
+  onDisclose={[MockFunction]}
+  variant="header"
+/>
+`;
+
 exports[`UtilityMenu should render with default props 1`] = `
 <InjectIntl(UtilityMenu)
   initialSelectedKey="key"

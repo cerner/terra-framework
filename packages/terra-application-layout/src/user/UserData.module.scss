@@ -4,13 +4,13 @@
     display: flex;
     flex: 1 1 auto;
     justify-content: flex-start;
-  }
 
-  .photo {
-    flex: 0 0 auto;
-    height: var(--terra-application-user-data-photo-height, 3.571rem);
-    margin-right: var(--terra-application-user-data-photo, 0.5714rem);
-    width: var(--terra-application-user-data-photo-width, 3.571rem);
+    .photo {
+      flex: 0 0 auto;
+      height: var(--terra-application-user-data-photo-height, 3.571rem);
+      margin-right: var(--terra-application-user-data-photo, 0.5714rem);
+      width: var(--terra-application-user-data-photo-width, 3.571rem);
+    }
   }
 
   .user-info {

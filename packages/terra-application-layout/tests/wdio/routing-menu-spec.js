@@ -25,7 +25,7 @@ describe('RoutingMenu', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-application-layout/application-layout/routing-menu-external');
       browser.waitForVisible('#routing-menu-test');
-      browser.click('[data-menu-item="Item 3"]');
+      browser.click('[data-menu-item="/item_3"]');
       browser.pause(100);
     });
 
