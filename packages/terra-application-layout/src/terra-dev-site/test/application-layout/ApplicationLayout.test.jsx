@@ -246,6 +246,12 @@ class ApplicationLayoutTest extends React.Component {
       isSelected: checkboxItemEnabled,
       parentKey: Utils.utilityHelpers.defaultKeys.MENU,
     }, {
+      key: 'read-only-item',
+      title: 'Custom Read-Only Item',
+      id: 'readonly',
+      isReadOnly: true,
+      parentKey: Utils.utilityHelpers.defaultKeys.MENU,
+    }, {
       key: 'additional-3',
       contentLocation: Utils.utilityHelpers.locations.FOOTER,
       title: 'Custom Footer',

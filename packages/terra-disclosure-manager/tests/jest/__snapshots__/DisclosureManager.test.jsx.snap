@@ -1,5 +1,489 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`DisclosureManager should provide the disclosure content with closeDisclosure functionality 1`] = `
+<DisclosureManager
+  render={[Function]}
+  supportedDisclosureTypes={
+    Array [
+      "test",
+    ]
+  }
+>
+  <div
+    id="wrapper"
+  >
+    <withDisclosureManager(Component)
+      id="child1"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "disclose": [Function],
+          }
+        }
+        id="child1"
+      >
+        <div
+          id="child1"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+    <withDisclosureManager(Component)
+      id="child2"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "disclose": [Function],
+          }
+        }
+        id="child2"
+      >
+        <div
+          id="child2"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+    <withDisclosureManager(Component)
+      id="disclosure-component"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "closeDisclosure": [Function],
+            "disclose": [Function],
+            "dismiss": [Function],
+            "maximize": [Function],
+            "registerDismissCheck": [Function],
+            "requestFocus": [Function],
+          }
+        }
+        id="disclosure-component"
+      >
+        <div
+          id="disclosure-component"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+  </div>
+</DisclosureManager>
+`;
+
+exports[`DisclosureManager should provide the disclosure content with dismiss functionality 1`] = `
+<DisclosureManager
+  render={[Function]}
+  supportedDisclosureTypes={
+    Array [
+      "test",
+    ]
+  }
+>
+  <div
+    id="wrapper"
+  >
+    <withDisclosureManager(Component)
+      id="child1"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "disclose": [Function],
+          }
+        }
+        id="child1"
+      >
+        <div
+          id="child1"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+    <withDisclosureManager(Component)
+      id="child2"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "disclose": [Function],
+          }
+        }
+        id="child2"
+      >
+        <div
+          id="child2"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+    <withDisclosureManager(Component)
+      id="disclosure-component"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "closeDisclosure": [Function],
+            "disclose": [Function],
+            "dismiss": [Function],
+            "maximize": [Function],
+            "registerDismissCheck": [Function],
+            "requestFocus": [Function],
+          }
+        }
+        id="disclosure-component"
+      >
+        <div
+          id="disclosure-component"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+  </div>
+</DisclosureManager>
+`;
+
+exports[`DisclosureManager should provide the disclosure content with maximize/minimize functionality 1`] = `
+<DisclosureManager
+  render={[Function]}
+  supportedDisclosureTypes={
+    Array [
+      "test",
+    ]
+  }
+>
+  <div
+    id="wrapper"
+  >
+    <withDisclosureManager(Component)
+      id="child1"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "disclose": [Function],
+          }
+        }
+        id="child1"
+      >
+        <div
+          id="child1"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+    <withDisclosureManager(Component)
+      id="child2"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "disclose": [Function],
+          }
+        }
+        id="child2"
+      >
+        <div
+          id="child2"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+    <withDisclosureManager(Component)
+      id="disclosure-component"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "closeDisclosure": [Function],
+            "disclose": [Function],
+            "dismiss": [Function],
+            "maximize": [Function],
+            "registerDismissCheck": [Function],
+            "requestFocus": [Function],
+          }
+        }
+        id="disclosure-component"
+      >
+        <div
+          id="disclosure-component"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+  </div>
+</DisclosureManager>
+`;
+
+exports[`DisclosureManager should provide the disclosure content with nested disclose functionality 1`] = `
+<DisclosureManager
+  render={[Function]}
+  supportedDisclosureTypes={
+    Array [
+      "test",
+    ]
+  }
+>
+  <div
+    id="wrapper"
+  >
+    <withDisclosureManager(Component)
+      id="child1"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "disclose": [Function],
+          }
+        }
+        id="child1"
+      >
+        <div
+          id="child1"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+    <withDisclosureManager(Component)
+      id="child2"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "disclose": [Function],
+          }
+        }
+        id="child2"
+      >
+        <div
+          id="child2"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+    <withDisclosureManager(Component)
+      id="disclosure-component"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "closeDisclosure": [Function],
+            "disclose": [Function],
+            "dismiss": [Function],
+            "maximize": [Function],
+            "registerDismissCheck": [Function],
+            "requestFocus": [Function],
+          }
+        }
+        id="disclosure-component"
+      >
+        <div
+          id="disclosure-component"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+  </div>
+</DisclosureManager>
+`;
+
+exports[`DisclosureManager should provide the disclosure content with requestFocus/releaseFocus functionality 1`] = `
+<DisclosureManager
+  render={[Function]}
+  supportedDisclosureTypes={
+    Array [
+      "test",
+    ]
+  }
+>
+  <div
+    id="wrapper"
+  >
+    <withDisclosureManager(Component)
+      id="child1"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "disclose": [Function],
+          }
+        }
+        id="child1"
+      >
+        <div
+          id="child1"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+    <withDisclosureManager(Component)
+      id="child2"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "disclose": [Function],
+          }
+        }
+        id="child2"
+      >
+        <div
+          id="child2"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+    <withDisclosureManager(Component)
+      id="disclosure-component"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "closeDisclosure": [Function],
+            "disclose": [Function],
+            "dismiss": [Function],
+            "maximize": [Function],
+            "registerDismissCheck": [Function],
+            "requestFocus": [Function],
+          }
+        }
+        id="disclosure-component"
+      >
+        <div
+          id="disclosure-component"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+  </div>
+</DisclosureManager>
+`;
+
+exports[`DisclosureManager should provide the disclosure content with restricted nested disclose functionality if trapNestedDisclosureRequests is enabled 1`] = `
+<DisclosureManager
+  render={[Function]}
+  supportedDisclosureTypes={
+    Array [
+      "test",
+    ]
+  }
+  trapNestedDisclosureRequests={true}
+>
+  <div
+    id="wrapper"
+  >
+    <withDisclosureManager(Component)
+      id="child1"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "disclose": [Function],
+          }
+        }
+        id="child1"
+      >
+        <div
+          id="child1"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+    <withDisclosureManager(Component)
+      id="child2"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "disclose": [Function],
+          }
+        }
+        id="child2"
+      >
+        <div
+          id="child2"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+    <withDisclosureManager(Component)
+      id="disclosure-component"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "closeDisclosure": [Function],
+            "disclose": [Function],
+            "dismiss": [Function],
+            "maximize": [Function],
+            "registerDismissCheck": [Function],
+            "requestFocus": [Function],
+          }
+        }
+        id="disclosure-component"
+      >
+        <div
+          id="disclosure-component"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+  </div>
+</DisclosureManager>
+`;
+
+exports[`DisclosureManager should provide the given children an app prop that should trigger disclosures 1`] = `
+<DisclosureManager
+  render={[Function]}
+  supportedDisclosureTypes={
+    Array [
+      "test",
+    ]
+  }
+>
+  <div
+    id="wrapper"
+  >
+    <withDisclosureManager(Component)
+      id="child1"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "disclose": [Function],
+          }
+        }
+        id="child1"
+      >
+        <div
+          id="child1"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+    <withDisclosureManager(Component)
+      id="child2"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "disclose": [Function],
+          }
+        }
+        id="child2"
+      >
+        <div
+          id="child2"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+    <withDisclosureManager(Component)
+      id="disclosure-component"
+    >
+      <Component
+        disclosureManager={
+          DisclosureManagerDelegateInstance {
+            "closeDisclosure": [Function],
+            "disclose": [Function],
+            "dismiss": [Function],
+            "maximize": [Function],
+            "registerDismissCheck": [Function],
+            "requestFocus": [Function],
+          }
+        }
+        id="disclosure-component"
+      >
+        <div
+          id="disclosure-component"
+        />
+      </Component>
+    </withDisclosureManager(Component)>
+  </div>
+</DisclosureManager>
+`;
+
 exports[`DisclosureManager should render using the provided render function 1`] = `
 <DisclosureManager
   render={[Function]}

@@ -1,7 +1,7 @@
 {
   "name": "terra-application-utility",
   "main": "lib/ApplicationUtility.js",
-  "version": "1.24.0",
+  "version": "1.26.0",
   "description": "The Utility is used to disclose a utility menu. There are two versions - a header version and menu version. These should be used with the corresponding `terra-application-header-layout` and `terra-application-menu-layout` components.",
   "repository": {
     "type": "git",
@@ -30,14 +30,14 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-application-header-layout": "^2.22.0",
-    "terra-application-menu-layout": "^2.17.0",
-    "terra-arrange": "^2.1.0",
-    "terra-button": "^2.1.0",
-    "terra-content-container": "^2.1.0",
-    "terra-doc-template": "^1.1.0",
-    "terra-icon": "^2.1.0",
-    "terra-image": "^2.1.0"
+    "terra-application-header-layout": "^2.24.0",
+    "terra-application-menu-layout": "^2.19.0",
+    "terra-arrange": "^2.0.0",
+    "terra-button": "^2.0.0",
+    "terra-content-container": "^2.0.0",
+    "terra-doc-template": "^1.0.0",
+    "terra-icon": "^2.0.0",
+    "terra-image": "^2.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

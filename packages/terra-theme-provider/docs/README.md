@@ -8,7 +8,7 @@ If you need to theme styles on to the `html` or `body` elements applied in terra
 * Apps should only use the `isGlobalTheme` prop on one theme provider component.
 * The CSS custom properties applied via the theme provided only works in browsers which have native support for CSS custom properties.
 
-### Theme Names
+## Theme Names
 The theme provider component offers a set of first class terra theme names via `ThemeProvider.Opts.Themes`.
 These are intended to be used with the `themeName` prop:
 

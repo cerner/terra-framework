@@ -4,11 +4,11 @@ The `NavigationLayout` is a configuration-based, `react-router`-driven layout. I
 
 The `NavigationLayout` is able to successfully render with just the config object defining its structure. However, custom components can be provided directly to the NavigationLayout for the `header`, `menu`, and `content` props. Those custom components will be provided with any relevant configuration data to allow them to render things as they see fit.
 
-#### Prerequisites
+## Prerequisites
 * The `NavigationLayout` must have a `Router` (or other high-level router like `BrowserRouter`, `HashRouter`, or `MemoryRouter`) as a component ancestor.
 * A configuration prop must be supplied to the `NavigationLayout` that defines the desired routing setup. The `NavigationLayout` treats this prop as immutable for caching and performance reasons. If a configuration object is changing due to a state change in a higher component, a new object instance must be provided for those changes to take effect.
 
-#### Configuration API
+## Configuration API
 
 The configuration object is structured like the below example. A couple key takeaways:
 * The `header`, `menu`, and `content` regions have a separate configurations but share the same configuration APIs. These can be omitted if routing is unnecessary for an individual section.
@@ -84,7 +84,7 @@ The configuration object is structured like the below example. A couple key take
 }
 ```
 
-#### RoutingStackDelegate
+## RoutingStackDelegate
 
 All components rendered within the `NavigationLayout` receive a `routingStackDelegate` prop. This prop contains the following attributes:
 * `location` - The location used to render the component. This can be used to build NavLinks or other components that might desire the current location.
@@ -99,7 +99,7 @@ It is important to note that `showParent`/`showRoot` change the location used by
 
 After calling these navigation functions, the `location` provided in the `routingStackDelegate` match the parent path specified. If the true page location is still necessary, the `withRouter` HOC provided by `react-router` can be utilized as needed. And if this functionality is not desired at all for a given application, these props can be safely ignored.
 
-##### refuseRoutingStackNavigation
+## refuseRoutingStackNavigation
 
 The configuration API supports an additional key for each component specification called `refuseRoutingStackNavigation` that will prevent the associated component from appearing in parentPaths and will disallow navigation to it through the `showParent`/`showRoot`. A component with `refuseRoutingStackNavigation` set to `true` will only be presented if the current location matches its route. This is an advanced option that can be used to better control menu-based workflows.
 
@@ -107,4 +107,3 @@ The configuration API supports an additional key for each component specificatio
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-navigation-layout`
-

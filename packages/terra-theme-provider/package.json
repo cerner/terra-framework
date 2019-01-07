@@ -1,7 +1,7 @@
 {
   "name": "terra-theme-provider",
   "main": "lib/ThemeProvider.js",
-  "version": "2.19.0",
+  "version": "2.21.0",
   "description": "The theme provider component provides a theme to Terra UI components rendered within it via CSS custom properties a.k.a CSS variables.",
   "repository": {
     "type": "git",
@@ -28,8 +28,8 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-doc-template": "^1.1.0",
-    "terra-mixins": "^1.12.0"
+    "terra-doc-template": "^1.0.0",
+    "terra-mixins": "^1.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
