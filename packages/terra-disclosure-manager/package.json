@@ -1,7 +1,7 @@
 {
   "name": "terra-disclosure-manager",
   "main": "lib/DisclosureManager.js",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "A stateful component used to manage disclosure presentation.",
   "repository": {
     "type": "git",
