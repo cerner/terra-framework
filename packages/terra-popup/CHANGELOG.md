@@ -6,6 +6,16 @@ Unreleased
 ### Changed
 * Remove use of componentWillReceiveProps
 
+4.22.0 - (January 5, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+4.21.0 - (January 2, 2019)
+------------------
+### Changed
+* Prevent click events from propagating from popup overlay
+
 4.20.0 - (December 5, 2018)
 ------------------
 ### Added

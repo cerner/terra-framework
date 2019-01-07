@@ -183,9 +183,7 @@ const indexPath = '/page_1';
 const userAvatar = (
   <Avatar
     image={ProfilePicture}
-    variant="user"
     alt="Swanson, Henry"
-    ariaLabel="Swanson, Henry"
     key="user_avatar"
   />
 );
@@ -243,6 +241,13 @@ class ExampleApplication extends React.Component {
       title: 'Custom Checkbox Item',
       isSelectable: true,
       isSelected: checkboxItemEnabled,
+      isReadOnly: false,
+      parentKey: Utils.utilityHelpers.defaultKeys.MENU,
+    }, {
+      key: 'readonly-item',
+      title: 'Custom ReadOnly Item',
+      isSelectable: true,
+      isReadOnly: true,
       parentKey: Utils.utilityHelpers.defaultKeys.MENU,
     }, {
       key: 'additional-3',

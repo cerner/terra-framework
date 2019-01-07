@@ -33,7 +33,6 @@ class ApplicationMenuUtilityExample extends React.Component {
       <div>
         <div style={{ height: '60px', width: '300px', paddingLeft: '4px' }}>
           <ApplicationMenuUtility
-            id="default"
             menuItems={MockConfig(accessory)}
             onChange={this.handleOnChange}
             onDisclose={this.onDiscloseUtility}

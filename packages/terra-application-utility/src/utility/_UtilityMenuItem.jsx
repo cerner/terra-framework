@@ -37,6 +37,10 @@ const propTypes = {
    */
   isActive: PropTypes.bool,
   /**
+   * Whether the item is read-only.
+   */
+  isReadOnly: PropTypes.bool,
+  /**
    * Whether this item is selected.
    */
   isSelected: PropTypes.bool,
@@ -113,6 +117,7 @@ class UtilityMenuItem extends React.Component {
       content,
       contentLocation,
       isActive,
+      isReadOnly,
       isSelected,
       isSelectable,
       hasChevron,
@@ -127,6 +132,7 @@ class UtilityMenuItem extends React.Component {
     const bodyItemClassNames = cx([
       { 'header-utility-body-item': variant === Utils.VARIANTS.HEADER },
       { 'menu-utility-body-item': variant === Utils.VARIANTS.MENU },
+      { 'read-only': isReadOnly },
     ]);
 
     const footerItemClassNames = cx([
@@ -149,15 +155,15 @@ class UtilityMenuItem extends React.Component {
       { 'default-right-inset': !rightInset },
     ]);
 
-    /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-element-to-interactive-role */
+    /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-element-to-interactive-role, jsx-a11y/no-noninteractive-tabindex */
     const renderBodyItem = (fill, wrapOnKeyDown, handleSelection) => (
       <li
         {...customProps}
-        tabIndex="0"
+        tabIndex={!isReadOnly ? '0' : undefined}
         key={itemKey}
-        onClick={event => handleSelection(event, itemKey)}
-        onKeyDown={wrapOnKeyDown(itemKey, onKeyDown)}
-        role="button"
+        onClick={!isReadOnly ? event => handleSelection(event, itemKey) : undefined}
+        onKeyDown={!isReadOnly ? wrapOnKeyDown(itemKey, onKeyDown) : undefined}
+        role={isReadOnly ? 'note' : 'button'}
         className={bodyItemClassNames}
         aria-label={title}
         ref={this.setItemNode}
@@ -191,6 +197,7 @@ class UtilityMenuItem extends React.Component {
     const {
       wrapOnKeyDown, handleSelection,
     } = this;
+
     if (contentLocation === Utils.LOCATIONS.FOOTER) {
       item = renderFooterButton(wrapOnKeyDown, handleSelection);
     } else if (content) {
