@@ -188,9 +188,7 @@ const indexPath = '/page_1';
 
 const userAvatar = (
   <Avatar
-    variant="user"
     alt="User, Test"
-    ariaLabel="User, Test"
     key="user_avatar"
   />
 );
