@@ -50,7 +50,7 @@ const intl = {}; // Intl should be retrieved from context
 const userData = {
   name: 'Person, Joe',
   detail: 'Example Person',
-  photo: <Avatar />,
+  photo: <Avatar alt="Doe, John"/>,
 };
 
 const customUtilityItems = [{
@@ -85,7 +85,7 @@ const menuItems = Utils.utilityHelpers.getDefaultUtilityItems(intl, userData, cu
 
 const utilityConfig = {
   title: 'Doe, John',
-  accessory: <Avatar variant="user" ariaLabel="Doe, John" />,
+  accessory: <Avatar alt="Doe, John" />,
   menuItems: menuItems,
   initialSelectedKey: 'menu',
   onChange: (event, itemData, disclose) => {
