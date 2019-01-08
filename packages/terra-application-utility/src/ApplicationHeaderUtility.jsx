@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import 'terra-base/lib/baseStyles';
 import Utils from './Utils';
-import UtiltyButton from './utility/_UtilityButton';
+import UtilityButton from './utility/_UtilityButton';
 
 const propTypes = {
   /**
@@ -41,7 +41,7 @@ const ApplicationHeaderUtility = ({
   accessory,
   ...customProps
 }) => (
-  <UtiltyButton
+  <UtilityButton
     {...customProps}
     menuItems={menuItems}
     onChange={onChange}

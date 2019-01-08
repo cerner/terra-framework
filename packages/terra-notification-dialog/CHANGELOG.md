@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+1.17.0 - (January 5, 2019)
+------------------
 ### Removed
 * Removed onRequestClose prop.
 
