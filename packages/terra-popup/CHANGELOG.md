@@ -11,6 +11,9 @@ Unreleased
 * react-intl dependency added for i18n translations
 * intl prop added to `_PopupContent` for i18n message formatting
 
+### Changed
+* Remove use of componentWillReceiveProps
+
 4.22.0 - (January 5, 2019)
 ------------------
 ### Changed
