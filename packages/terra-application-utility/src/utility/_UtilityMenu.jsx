@@ -285,6 +285,10 @@ class UtilityMenu extends React.Component {
       { 'menu-utility-menu-noninitial-page-header-text': !firstPage && variant === Utils.VARIANTS.MENU },
     ]);
 
+    const closeButtonClassNames = cx([
+      { 'header-utility-menu-button-close': variant === Utils.VARIANTS.HEADER },
+    ]);
+
     const iconLeftClassNames = cx([
       'utility-menu-icon-left',
       { 'header-utility-menu-icon-left': variant === Utils.VARIANTS.HEADER },
@@ -318,6 +322,7 @@ class UtilityMenu extends React.Component {
         isIconOnly
         text={closeText}
         variant={Button.Opts.Variants.UTILITY}
+        className={closeButtonClassNames}
       />
     );
 
