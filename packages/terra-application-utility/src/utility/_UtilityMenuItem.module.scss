@@ -183,4 +183,17 @@
   .menu-item-fill {
     width: 100%;
   }
+
+  .read-only {
+    cursor: text;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    &:focus {
+      box-shadow: none;
+      outline: 0;
+    }
+  }
 }

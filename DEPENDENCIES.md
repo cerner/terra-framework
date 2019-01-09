@@ -25,7 +25,6 @@
 | jest | ^23.1.0 | -- | Delightful JavaScript Testing. |
 | lerna | ^2.8.0 | -- | Tool for managing JavaScript projects with multiple packages |
 | link-parent-bin | ^0.2.0 | -- | [![Build Status](https://travis-ci.org/nicojs/node-link-parent-bin.svg?branch=master)](https://travis-ci.org/nicojs/node-link-parent-bin) |
-| load-json-file | ^5.0.0 | -- | Read and parse a JSON file |
 | markdown-magic | ^0.1.25 | -- | Automatically update markdown files with content from external sources |
 | raf | ^3.4.0 | -- | requestAnimationFrame polyfill for node and the browser |
 | react | ^16.4.2 | -- | React is a JavaScript library for building user interfaces. |

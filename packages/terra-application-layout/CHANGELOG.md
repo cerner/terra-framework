@@ -3,6 +3,16 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update terra-avatar to 2.0
+
+3.3.0 - (January 5, 2019)
+------------------
+### Added
+* Wdio test added for read-only menu item
+
+### Changed
+* Increase specificity of UserData photo CSS class
 
 3.2.0 - (January 2, 2019)
 ------------------

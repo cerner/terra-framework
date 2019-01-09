@@ -12,7 +12,7 @@
 | terra-application-menu-layout | ^2.18.0 | ^16.4.2 | This component renders an application menu layout. To be used with a terra-layout or terra-navigation-layout. |
 | terra-application-name | ^2.23.0 | ^16.4.2 | Houses the title of the application, along with a logo. There are two versions - a header version and menu version. These should be used with the corresponding header and menu layouts. |
 | terra-application-utility | ^1.25.0 | ^16.4.2 | The Utility is used to disclose a utility menu. There are two versions - a header version and menu version. These should be used with the corresponding `terra-application-header-layout` and `terra-application-menu-layout` components. |
-| terra-avatar | ^1.0.0 | ^16.4.2 | The terra-avatar component displays an avatar, which can be either an image or text, in a circular frame. If neither an image or text is provided, a variant-based fallback icon is used. |
+| terra-avatar | ^2.0.0 | ^16.4.2 | Contains components that represent a person, location or entity. Variants include Avatar, Facility, and SharedUser. |
 | terra-button | ^2.0.0 | ^16.4.2 | The terra-button component provides users a way to trigger actions in the UI. |
 | terra-content-container | ^2.0.0 | ^16.4.2 | The Terra ContentContainer is a structural component for the purpose of arranging content with a header. |
 | terra-disclosure-manager | ^3.2.0 | ^16.4.2 | A stateful component used to manage disclosure presentation. |
