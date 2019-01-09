@@ -4,6 +4,16 @@ Changelog
 Unreleased
 ----------
 
+3.3.0 - (January 5, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+3.2.0 - (January 2, 2019)
+------------------
+### Changed
+* Updated readme so headings have logical nesting.
+
 3.1.0 - (December 5, 2018)
 ------------------
 ### Changed

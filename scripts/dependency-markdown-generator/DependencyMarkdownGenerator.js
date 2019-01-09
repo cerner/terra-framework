@@ -3,15 +3,15 @@
 /* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 const fs = require('fs');
 const path = require('path');
-const loadJsonFile = require('load-json-file');
 const glob = require('glob');
+const lernaJson = require('../../lerna.json');
 const aggregateDependencies = require('./aggregateDependencies');
 const generateDependencyTable = require('./generateDependencyTable');
 
 const packagePaths = ['./'];
 
 // Get the base directory paths for each package
-loadJsonFile.sync(path.resolve('lerna.json')).packages.forEach((globPath) => {
+lernaJson.packages.forEach((globPath) => {
   glob.sync(globPath).forEach((packagePath) => {
     if (fs.existsSync(packagePath)) {
       packagePaths.push(packagePath);

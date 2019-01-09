@@ -3,6 +3,14 @@ Changelog
 
 Unreleased
 ----------
+
+2.36.0 - (January 5, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+2.35.0 - (January 2, 2019)
+------------------
 ### Changed
 * Removed use of componentWillMount from examples
 * Removed use of componentWillReceiveProps
