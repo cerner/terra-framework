@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
@@ -69,6 +69,10 @@ const propTypes = {
    * Key of the currently selected menu page.
    */
   selectedMenuKey: PropTypes.string.isRequired,
+  /**
+   * An optional toolbar to display below the side menu action header
+   */
+  toolbar: PropTypes.element,
 };
 
 const defaultProps = {
@@ -96,7 +100,7 @@ const processMenuItems = (menuItems) => {
   return { items, parents };
 };
 
-class NavigationSideMenu extends React.Component {
+class NavigationSideMenu extends Component {
   constructor(props) {
     super(props);
 
@@ -104,12 +108,18 @@ class NavigationSideMenu extends React.Component {
     this.handleItemClick = this.handleItemClick.bind(this);
 
     const { items, parents } = processMenuItems(props.menuItems);
-    this.state = { items, parents };
+    this.state = {
+      items,
+      parents,
+      prevPropsMenuItem: props.menuItems,
+    };
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { items, parents } = processMenuItems(nextProps.menuItems);
-    this.setState({ items, parents });
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.menuItems !== prevState.prevPropsMenuItem) {
+      return processMenuItems(nextProps.menuItems);
+    }
+    return null;
   }
 
   handleBackClick(event) {
@@ -167,16 +177,16 @@ class NavigationSideMenu extends React.Component {
         key={key}
         onClick={(event) => { this.handleItemClick(event, key); }}
         onKeyDown={onKeyDown}
-        data-menu-item={item.text}
+        data-menu-item={key}
       />
     );
   }
 
   buildListContent(currentItem) {
-    if (currentItem && currentItem.childKeys && currentItem.childKeys.length) {
-      return <List className={cx(['menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</List>;
-    }
-    return null;
+    return (currentItem && currentItem.childKeys && currentItem.childKeys.length
+      ? <List className={cx(['menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</List>
+      : null
+    );
   }
 
   render() {
@@ -186,25 +196,36 @@ class NavigationSideMenu extends React.Component {
       routingStackBack,
       selectedChildKey,
       selectedMenuKey,
+      toolbar,
       ...customProps
     } = this.props;
     const currentItem = this.state.items[selectedMenuKey];
 
     let onBack;
-    const parentKey = this.state.parents[this.props.selectedMenuKey];
+    const parentKey = this.state.parents[selectedMenuKey];
     if (parentKey) {
       onBack = this.handleBackClick;
     } else {
       onBack = routingStackBack;
     }
 
-    let actionHeader;
+    let header;
     if (onBack || !currentItem.isRootMenu) {
-      actionHeader = <ActionHeader className={cx('side-menu-action-header')} onBack={onBack} title={currentItem ? currentItem.text : null} data-navigation-side-menu-action-header />;
+      header = (
+        <Fragment>
+          <ActionHeader
+            className={cx('side-menu-action-header')}
+            onBack={onBack}
+            title={currentItem ? currentItem.text : null}
+            data-navigation-side-menu-action-header
+          />
+          {toolbar}
+        </Fragment>
+      );
     }
 
     return (
-      <ContentContainer {...customProps} header={actionHeader} fill>
+      <ContentContainer {...customProps} header={header} fill>
         {this.buildListContent(currentItem)}
       </ContentContainer>
     );
