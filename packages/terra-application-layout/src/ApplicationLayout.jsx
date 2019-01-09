@@ -178,19 +178,28 @@ class ApplicationLayout extends React.Component {
 
     this.state = {
       applicationLayoutRoutingConfig: ApplicationLayout.buildRoutingConfig(this.props),
+      prevProps: {
+        nameConfig: props.nameConfig,
+        routingConfig: props.routingConfig,
+        utilityConfig: props.utilityConfig,
+        navigationItems: props.navigationItems,
+        indexPath: props.indexPath,
+      },
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.nameConfig !== nextProps.nameConfig
-        || this.props.utilityConfig !== nextProps.utilityConfig
-        || this.props.routingConfig !== nextProps.routingConfig
-        || this.props.navigationItems !== nextProps.navigationItems
-        || this.props.indexPath !== nextProps.indexPath) {
-      this.setState({
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (prevState.prevProps.nameConfig !== nextProps.nameConfig
+      || prevState.prevProps.utilityConfig !== nextProps.utilityConfig
+      || prevState.prevProps.routingConfig !== nextProps.routingConfig
+      || prevState.prevProps.navigationItems !== nextProps.navigationItems
+      || prevState.prevProps.indexPath !== nextProps.indexPath) {
+      return {
         applicationLayoutRoutingConfig: ApplicationLayout.buildRoutingConfig(nextProps),
-      });
+      };
     }
+
+    return null;
   }
 
   render() {
