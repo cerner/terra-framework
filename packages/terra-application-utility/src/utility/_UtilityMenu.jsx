@@ -286,7 +286,7 @@ class UtilityMenu extends React.Component {
     ]);
 
     const closeButtonClassNames = cx([
-      {'header-utility-menu-button-close': variant === Utils.VARIANTS.HEADER},
+      { 'header-utility-menu-button-close': variant === Utils.VARIANTS.HEADER },
     ]);
 
     const iconLeftClassNames = cx([
