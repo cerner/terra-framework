@@ -1,7 +1,7 @@
 {
   "name": "terra-disclosure-manager",
   "main": "lib/DisclosureManager.js",
-  "version": "3.1.0",
+  "version": "3.3.0",
   "description": "A stateful component used to manage disclosure presentation.",
   "repository": {
     "type": "git",
@@ -29,10 +29,10 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-action-header": "^1.14.0",
-    "terra-button": "^2.0.1",
-    "terra-content-container": "^2.0.1",
-    "terra-doc-template": "^1.1.0"
+    "terra-action-header": "^1.0.0",
+    "terra-button": "^2.0.0",
+    "terra-content-container": "^2.0.0",
+    "terra-doc-template": "^1.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

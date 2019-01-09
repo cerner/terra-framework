@@ -22,12 +22,7 @@ class PopupDimensions extends React.Component {
     this.handleRequestClose = this.handleRequestClose.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
-    this.getId = this.getId.bind(this);
     this.state = { open: false };
-  }
-
-  getId(name) {
-    return name + this.state.id;
   }
 
   handleButtonClick() {
@@ -58,22 +53,20 @@ class PopupDimensions extends React.Component {
 
     return (
       <div>
-        <form>
-          <label htmlFor={this.getId('popupContentHeight')}>Pop Content Height</label>
-          <select id={this.getId('popupContentHeight')} name="popupContentHeight" value={this.state.popupContentHeight} onChange={this.handleSelectChange}>
-            <option value="Default">Default</option>
-            {PopupDimensions.generateOptions(HEIGHT_KEYS)}
-          </select>
-          <br />
-          <br />
-          <label htmlFor={this.getId('popupContentWidth')}>Pop Content Width</label>
-          <select id={this.getId('popupContentWidth')} name="popupContentWidth" value={this.state.popupContentWidth} onChange={this.handleSelectChange}>
-            <option value="Default">Default</option>
-            {PopupDimensions.generateOptions(WIDTH_KEYS)}
-          </select>
-          <br />
-          <br />
-        </form>
+        <label htmlFor="popupContentHeight">Pop Content Height</label>
+        <select id="popupContentHeight" name="popupContentHeight" value={this.state.popupContentHeight} onChange={this.handleSelectChange}>
+          <option value="Default">Default</option>
+          {PopupDimensions.generateOptions(HEIGHT_KEYS)}
+        </select>
+        <br />
+        <br />
+        <label htmlFor="popupContentWidth">Pop Content Width</label>
+        <select id="popupContentWidth" name="popupContentWidth" value={this.state.popupContentWidth} onChange={this.handleSelectChange}>
+          <option value="Default">Default</option>
+          {PopupDimensions.generateOptions(WIDTH_KEYS)}
+        </select>
+        <br />
+        <br />
         <div>
           <Popup
             {...contentDimensions}
