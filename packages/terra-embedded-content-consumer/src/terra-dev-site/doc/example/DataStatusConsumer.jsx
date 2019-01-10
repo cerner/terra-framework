@@ -7,7 +7,6 @@ Consumer.init();
 
 const createListItem = (itemName) => {
   const listItem = document.createElement('li');
-  listItem.setAttribute('id', itemName);
   listItem.appendChild(document.createTextNode(itemName));
 
   return listItem;
@@ -24,7 +23,7 @@ const appendLifeCycleStatuses = (statuses) => {
   }
 };
 
-const options = { secret: 'OAuth Secret' };
+const options = { secret: 'OAuth Secret', iframeAttrs: { title: 'Embedded application lifecycle example' } };
 const lifeCycleStatuses = [];
 const onMount = () => {
   lifeCycleStatuses.push('Mounted');
