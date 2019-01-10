@@ -69,16 +69,22 @@ class RoutingMenu extends React.Component {
      */
     this.state = {
       selectedChildKey: RoutingMenu.getSelectedChildKey(props.location.pathname, props.menuItems),
+      prevPropsLocationPathName: props.location.pathname,
+      prevPropsMenuItems: props.menuItems,
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    /**
-     * The selectedChildKey is re-evaluated when new props are received to keep the internal state consistent.
-     */
-    this.setState({
-      selectedChildKey: RoutingMenu.getSelectedChildKey(nextProps.location.pathname, nextProps.menuItems),
-    });
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.location.pathname !== prevState.prevPropsLocationPathName || nextProps.menuItems !== prevState.prevPropsMenuItems) {
+      /**
+       * The selectedChildKey is re-evaluated when new props are received to keep the internal state consistent.
+       */
+      return {
+        selectedChildKey: RoutingMenu.getSelectedChildKey(nextProps.location.pathname, nextProps.menuItems),
+      };
+    }
+
+    return null;
   }
 
   /**

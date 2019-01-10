@@ -5,6 +5,7 @@ import EmbeddedContentConsumer from 'terra-embedded-content-consumer/lib/Embedde
 const FillConsumer = () => (
   <EmbeddedContentConsumer
     src="#/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/providers/fill-provider"
+    options={{ iframeAttrs: { title: 'Filled content example' } }}
   />
 );
 
