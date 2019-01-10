@@ -3,6 +3,14 @@ Changelog
 
 Unreleased
 ----------
+
+1.14.0 - (January 5, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+1.13.0 - (January 2, 2019)
+------------------
 ### Changed
 * Updated dev site examples not have duplicate ids.
 

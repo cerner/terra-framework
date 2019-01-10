@@ -16,12 +16,23 @@
 
 - [Supported Browsers](#supported-browsers)
 - [Packages](#packages)
+  - [Versioning](#versioning)
+  - [Status](#status)
+  - [Deprecated](#deprecated)
+- [Supported Browsers](#supported-browsers)
+- [Internationalization (I18n)](#internationalization-i18n)
+  - [Packages Requiring I18n](#packages-requiring-i18n)
 - [Contributing](#contributing)
+- [Local Development](#local-development)
 - [LICENSE](#license)
 
-## Packages
+<h2 id="packages">
+  Packages
+</h2>
 
-### Versioning
+<h3 id="versioning">
+  Versioning
+</h3>
 
 When a component reaches v1.0.0., it is considered to be stable and will follow [SemVer](http://semver.org/) for versioning.
 1. MAJOR versions represent breaking changes
@@ -35,7 +46,10 @@ We view the React.js props API of our components as our main public API. We use 
 Prior to components reaching v1.0.0, a component is considered to be in a beta stage.
 Components in beta stage may include breaking changes, new features, and bug fixes all within v0.x.x releases.
 
-### Status
+<h3 id="status">
+  Status
+</h3>
+
 ![Stable](https://badgen.net/badge/status/Stable/green)
 ![Beta](https://badgen.net/badge/status/Beta/orange)
 ![Deprecated](https://badgen.net/badge/status/Deprecated/grey)
@@ -71,13 +85,17 @@ Components in beta stage may include breaking changes, new features, and bug fix
 
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
-### Deprecated
+<h3 id="deprecated">
+  Deprecated
+</h3>
 
 | Terra Package      | Version | Status | Dependencies |
 |--------------------|---------|--------|--------------|
 | [terra-app-delegate](https://github.com/cerner/terra-framework/tree/master/packages/terra-app-delegate) | [![NPM version](https://badgen.net/npm/v/terra-app-delegate)](https://www.npmjs.org/package/terra-app-delegate) | ![Deprecated](https://badgen.net/badge/status/Stable/grey) | [![terra-app-delegate]](https://badgen.net/badge/dependencies/n%2Fa/grey) |
 
-## Supported Browsers
+<h2 id="supported-browsers">
+  Supported Browsers
+</h2>
 
 | Browser                     | Version |
 |-----------------------------|---------|
@@ -87,10 +105,14 @@ Components in beta stage may include breaking changes, new features, and bug fix
 | Internet Explorer           | 10 & 11 |
 | Safari & Mobile Safari      | Current |
 
-## Internationalization (I18n)
+<h2 id="internationalization-i18n">
+  Internationalization (I18n)
+</h2>
 Please review [Terra's Internationalization documentation](https://engineering.cerner.com/terra-ui/#/getting-started/terra-ui/internationalization) for more information. Included are directions on consumption and how internationalization is setup.
 
-### Packages Requiring I18n
+<h3 id="packages-requiring-i18n">
+  Packages Requiring I18n
+</h3>
 - [terra-application-header](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-header)
 - [terra-application-layout](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-layout)
 - [terra-application-links](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-links)
@@ -98,11 +120,15 @@ Please review [Terra's Internationalization documentation](https://engineering.c
 - [terra-notification-dialog](https://github.com/cerner/terra-framework/tree/master/packages/terra-notification-dialog)
 - [terra-time-input](https://github.com/cerner/terra-framework/tree/master/packages/terra-time-input)
 
-## Contributing
+<h2 id="contributing">
+  Contributing
+</h2>
 
 Please read through our [contributing guidelines](CONTRIBUTING.md). Included are directions for issue reporting and pull requests.
 
-## Local Development
+<h2 id="local-development">
+  Local Development
+</h2>
 
 1. Install docker https://www.docker.com/ to run browser tests.
 2. Install dependencies and run tests.
@@ -111,9 +137,11 @@ npm install
 npm run test
 ```
 
-## LICENSE
+<h2 id="license">
+  LICENSE
+</h2>
 
-Copyright 2017 Cerner Innovation, Inc.
+Copyright 2017 - 2019 Cerner Innovation, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 

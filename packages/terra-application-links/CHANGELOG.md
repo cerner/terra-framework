@@ -3,6 +3,14 @@ Changelog
 
 Unreleased
 ----------
+
+4.23.0 - (January 5, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+4.22.0 - (January 2, 2019)
+------------------
 ### Fixed
 * Fixed font family inheritance on application tab buttons
 
