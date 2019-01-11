@@ -121,7 +121,6 @@ class Hookshot extends React.Component {
     this.getTargetRef = this.getTargetRef.bind(this);
     this.getValidBoundingRect = this.getValidBoundingRect.bind(this);
     this.getValidTargetRect = this.getValidTargetRect.bind(this);
-    this.state = { isEnabled: props.isEnabled && props.isOpen };
     this.listenersAdded = false;
     this.lastCall = null;
     this.lastDuration = null;
@@ -129,7 +128,7 @@ class Hookshot extends React.Component {
   }
 
   componentDidMount() {
-    if (this.state.isEnabled) {
+    if (this.props.isEnabled && this.props.isOpen) {
       if (!this.listenersAdded) {
         this.enableListeners();
       }
@@ -137,12 +136,8 @@ class Hookshot extends React.Component {
     }
   }
 
-  componentWillReceiveProps(newProps) {
-    this.setState({ isEnabled: newProps.isEnabled && newProps.isOpen });
-  }
-
   componentDidUpdate() {
-    if (this.state.isEnabled) {
+    if (this.props.isEnabled && this.props.isOpen) {
       if (!this.listenersAdded) {
         this.enableListeners();
       }
