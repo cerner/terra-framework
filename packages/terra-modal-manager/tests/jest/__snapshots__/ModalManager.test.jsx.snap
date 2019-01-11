@@ -110,7 +110,11 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                 <FocusTrap
                   _createFocusTrap={[Function]}
                   active={true}
-                  focusTrapOptions={Object {}}
+                  focusTrapOptions={
+                    Object {
+                      "fallbackFocus": [Function],
+                    }
+                  }
                   paused={false}
                   tag="div"
                 >
