@@ -89,10 +89,10 @@
 
     .separator {
       color: var(--terra-brand-footer-horizontal-nav-link-divider-color, #8baaca);
-      padding-bottom: var(--terra-brand-footer-horizontal-nav-link-before-padding-bottom, 0.7142857142857143rem);
-      padding-left: var(--terra-brand-footer-horizontal-nav-link-before-padding-left, 0.7142857142857143rem);
-      padding-right: var(--terra-brand-footer-horizontal-nav-link-before-padding-right, 0.7142857142857143rem);
-      padding-top: var(--terra-brand-footer-horizontal-nav-link-before-padding-top, 0.7142857142857143rem);
+      padding-bottom: var(--terra-brand-footer-horizontal-nav-link-separator-padding-bottom, 0.7142857142857143rem);
+      padding-left: var(--terra-brand-footer-horizontal-nav-link-separator-padding-left, 0.7142857142857143rem);
+      padding-right: var(--terra-brand-footer-horizontal-nav-link-separator-padding-right, 0.7142857142857143rem);
+      padding-top: var(--terra-brand-footer-horizontal-nav-link-separator-padding-top, 0.7142857142857143rem);
     }
   }
 
