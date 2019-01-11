@@ -34,11 +34,11 @@
     "lodash.debounce": "^4.0.8",
     "prop-types": "^15.5.8",
     "tabbable": "^3.1.1",
-    "terra-button": "^2.0.0",
+    "terra-button": "^3.0.0",
     "terra-content-container": "^2.0.0",
-    "terra-doc-template": "^1.0.0",
+    "terra-doc-template": "^2.0.0",
     "terra-icon": "^2.0.0",
-    "terra-overlay": "^2.0.0",
+    "terra-overlay": "^3.0.0",
     "terra-responsive-element": "^3.0.0"
   },
   "scripts": {
