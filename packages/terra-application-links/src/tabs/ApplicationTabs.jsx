@@ -80,10 +80,11 @@ class ApplicationTabs extends React.Component {
     this.handleResize(this.contentWidth);
   }
 
-  componentWillReceiveProps(newProps) {
-    if (this.props.links.length !== newProps.links.length) {
+  shouldComponentUpdate(nextProps) {
+    if (this.props.links.length !== nextProps.links.length) {
       this.resetCalculations();
     }
+    return true;
   }
 
   componentDidUpdate() {
