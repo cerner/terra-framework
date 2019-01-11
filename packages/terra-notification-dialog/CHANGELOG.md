@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Fixed focus trap management
 
 1.17.0 - (January 5, 2019)
 ------------------
