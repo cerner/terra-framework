@@ -3,6 +3,14 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Removed 'close' class from `_PopupContent` button
+* Added text prop to `_PopupContent` button for conversion to aria-label in Button component
+
+### Added
+* react-intl dependency added for i18n translations
+* intl prop added to `_PopupContent` for i18n message formatting
+
 ### Changed
 * Remove use of componentWillReceiveProps
 
