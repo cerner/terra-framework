@@ -28,7 +28,6 @@ class NotificationDialogNoTitle extends React.Component {
         <NotificationDialog
           variant={NotificationDialogVariants.ERROR}
           isOpen={this.state.isOpen}
-          onRequestClose={this.handleCloseModal}
           message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
           primaryAction={{
             text: 'Close',
