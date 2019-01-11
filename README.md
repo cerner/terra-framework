@@ -118,6 +118,7 @@ Please review [Terra's Internationalization documentation](https://engineering.c
 - [terra-application-links](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-links)
 - [terra-application-utility](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-utility)
 - [terra-notification-dialog](https://github.com/cerner/terra-framework/tree/master/packages/terra-notification-dialog)
+- [terra-popup](https://github.com/cerner/terra-framework/tree/master/packages/terra-popup)
 - [terra-time-input](https://github.com/cerner/terra-framework/tree/master/packages/terra-time-input)
 
 <h2 id="contributing">

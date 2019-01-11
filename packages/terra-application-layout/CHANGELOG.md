@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Removed use of componentWillReceiveProps
+* Update terra-avatar to 2.0
 
 3.3.0 - (January 5, 2019)
 ------------------

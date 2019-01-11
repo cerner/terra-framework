@@ -108,12 +108,18 @@ class NavigationSideMenu extends Component {
     this.handleItemClick = this.handleItemClick.bind(this);
 
     const { items, parents } = processMenuItems(props.menuItems);
-    this.state = { items, parents };
+    this.state = {
+      items,
+      parents,
+      prevPropsMenuItem: props.menuItems,
+    };
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { items, parents } = processMenuItems(nextProps.menuItems);
-    this.setState({ items, parents });
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.menuItems !== prevState.prevPropsMenuItem) {
+      return processMenuItems(nextProps.menuItems);
+    }
+    return null;
   }
 
   handleBackClick(event) {
