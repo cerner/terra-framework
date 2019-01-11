@@ -53,7 +53,7 @@
     &.is-focused {
       @include focus-styles;
       background-color: var(--terra-time-input-focus-background-color, #fff);
-      background-size: var(--terra-time-input-focus-keyboard-background-size, 0 0);
+      background-size: var(--terra-time-input-focus-background-size, 0 0);
       color: var(--terra-time-input-focus-color, #1c1f21);
 
 
