@@ -19,15 +19,7 @@ export default () => (
       border: '1px solid lightGray', width: '100%', backgroundColor: 'green', height: '39px', position: 'relative',
     }}
     >
-<<<<<<< HEAD
-      <div style={demoheaderstyles}>
-        <ApplicationTabs id="test-tabs" alignment="end" links={testExternalConfig} />
-      </div>
-    </MemoryRouter>
-  </Base>
-=======
       <ApplicationTabs id="test-tabs" alignment="end" links={testExternalConfig} />
     </div>
   </MemoryRouter>
->>>>>>> master
 );
