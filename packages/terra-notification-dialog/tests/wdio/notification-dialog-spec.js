@@ -179,16 +179,32 @@ describe('NotificationDialog with additional focus trap sources within a modal m
   before(() => {
     browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-on-modal-manager');
     browser.setViewportSize(Terra.viewports('medium')[0]);
+    browser.click('#disclose-modal');
   });
-  browser.click('#disclose-modal');
-  browser.click('#popup-in-modal');
-  Terra.should.matchScreenshot();
-  browser.click('#trigger-notification-dialog');
-  Terra.should.matchScreenshot();
-  browser.click('#trigger-notification-dialog');
-  Terra.should.matchScreenshot();
-  browser.click('[class*="notification-dialog-inner-wrapper"] button:last-child');
-  Terra.should.matchScreenshot();
-  browser.click('#dismiss-modal');
-  Terra.should.matchScreenshot();
+
+  it('opens popup', () => {
+    browser.click('#popup-in-modal');
+  });
+
+  Terra.should.matchScreenshot('Open popup', { selector: '[class*="abstract-modal"]' });
+
+  it('dismisses popup', () => {
+    browser
+      .moveToObject('#root', 300, 300)
+      .leftClick();
+  });
+
+  Terra.should.matchScreenshot('Close popup', { selector: '[class*="abstract-modal"]' });
+
+  it('opens notification dialog', () => {
+    browser.click('#trigger-notification-dialog');
+  });
+
+  Terra.should.matchScreenshot('Open notification dialog', { selector: '[class*="abstract-modal"]' });
+
+  it('dismiss notification dialog', () => {
+    browser.click('[class*="notification-dialog-inner-wrapper"] button:last-child');
+  });
+
+  Terra.should.matchScreenshot('Close notification dialog', { selector: '[class*="abstract-modal"]' });
 });

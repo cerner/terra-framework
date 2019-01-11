@@ -1,6 +1,6 @@
 import React from 'react';
 import ModalManager from 'terra-modal-manager';
-import NotificationDialogModalContainer from './NotificationDialogModalContainer';
+import NotificationDialogModalContainer from '../../doc/common/NotificationDialogModalContainer';
 
 const NotificationDialogOnModalManager = () => (
   <ModalManager>
