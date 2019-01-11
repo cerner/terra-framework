@@ -29,10 +29,10 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-action-header": "^1.0.0",
-    "terra-button": "^2.0.0",
+    "terra-action-header": "^2.0.0",
+    "terra-button": "^3.0.0",
     "terra-content-container": "^2.0.0",
-    "terra-doc-template": "^1.0.0"
+    "terra-doc-template": "^2.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
