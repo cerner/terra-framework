@@ -1,10 +1,11 @@
 const selector = '#root';
 
 Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
+  before(() => browser.setViewportSize(viewport));
+
   describe('Complete notification-dialog title, message and actions', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
-      browser.setViewportSize(viewport);
       browser.click('#trigger-notification-dialog');
     });
 
@@ -15,7 +16,6 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
   describe('Success Variant notification-dialog', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-success');
-      browser.setViewportSize(viewport);
       browser.click('#trigger-notification-dialog');
     });
 
@@ -26,7 +26,6 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
   describe('Info Variant notification-dialog', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-info');
-      browser.setViewportSize(viewport);
       browser.click('#trigger-notification-dialog');
     });
 
@@ -37,7 +36,6 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
   describe('Error Variant notification-dialog', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-error');
-      browser.setViewportSize(viewport);
       browser.click('#trigger-notification-dialog');
     });
 
@@ -48,7 +46,6 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
   describe('Warning Variant notification-dialog', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-warning');
-      browser.setViewportSize(viewport);
       browser.click('#trigger-notification-dialog');
     });
 
@@ -59,7 +56,6 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
   describe('Complete notification-dialog with a long message', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog-with-long-message');
-      browser.setViewportSize(viewport);
       browser.click('#trigger-notification-dialog');
     });
 
@@ -70,7 +66,6 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
   describe('No Variant notification-dialog', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/no-variant-notification-dialog');
-      browser.setViewportSize(viewport);
       browser.click('#trigger-notification-dialog');
     });
 
@@ -81,7 +76,6 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
   describe('Notification-dialog with minimal props', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-minimal-props');
-      browser.setViewportSize(viewport);
       browser.click('#trigger-notification-dialog');
     });
 
@@ -92,7 +86,6 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
   describe('Notification-dialog with No Title', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-no-title');
-      browser.setViewportSize(viewport);
       browser.click('#trigger-notification-dialog');
     });
 
@@ -103,7 +96,6 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
   describe('Notification-dialog with No Message', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-no-message');
-      browser.setViewportSize(viewport);
       browser.click('#trigger-notification-dialog');
     });
 
@@ -114,7 +106,6 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
   describe('Complete notification-dialog with themeable properties', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
-      browser.setViewportSize(viewport);
       browser.click('#trigger-notification-dialog');
     });
 
@@ -139,7 +130,6 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
   describe('Complete notification-dialog with themeable icons', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
-      browser.setViewportSize(viewport);
       browser.click('#trigger-notification-dialog');
     });
 
@@ -155,7 +145,6 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
   describe('Complete notification-dialog with themeable actions', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
-      browser.setViewportSize(viewport);
       browser.click('#trigger-notification-dialog');
     });
 
