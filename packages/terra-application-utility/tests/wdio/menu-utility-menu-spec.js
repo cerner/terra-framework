@@ -11,10 +11,10 @@ describe('MenuUtilityMenu', () => {
       testName: 'themed',
       selector: '#default',
       properties: {
-        '--terra-application-utility-menu-menu-header-font-size': '2rem',
-        '--terra-application-utility-menu-menu-header-font-weight': 'normal',
-        '--terra-application-utility-menu-menu-initial-page-header-text-margin-left': '1rem',
-        '--terra-application-utility-menu-menu-noninitial-page-header-text-margin-left': '1rem',
+        '--terra-application-utility-menu-type-menu-header-font-size': '2rem',
+        '--terra-application-utility-menu-type-menu-header-font-weight': 'normal',
+        '--terra-application-utility-menu-type-menu-initial-page-header-text-margin-left': '1rem',
+        '--terra-application-utility-menu-type-menu-noninitial-page-header-text-margin-left': '1rem',
         '--terra-application-utility-menu-divider-border-top': '5px dashed pink',
         '--terra-application-utility-menu-divider-height': '1rem',
         '--terra-application-utility-menu-divider-after-border-top': '5px dashed pink',
@@ -45,9 +45,9 @@ describe('MenuUtilityMenu', () => {
     Terra.should.themeCombinationOfCustomProperties({
       testName: 'themed-fonts',
       properties: {
-        '--terra-application-utility-menu-menu-header-font-size': '1.5rem',
-        '--terra-application-utility-menu-menu-header-font-weight': 'normal',
-        '--terra-application-utility-menu-menu-header-line-height': '1.2',
+        '--terra-application-utility-menu-type-menu-header-font-size': '1.5rem',
+        '--terra-application-utility-menu-type-menu-header-font-weight': 'normal',
+        '--terra-application-utility-menu-type-menu-header-line-height': '1.2',
         '--terra-application-utility-menu-body-item-font-color': 'red',
         '--terra-application-utility-menu-body-item-font-size': '1.5rem',
         '--terra-application-utility-menu-footer-item-font-color': 'red',

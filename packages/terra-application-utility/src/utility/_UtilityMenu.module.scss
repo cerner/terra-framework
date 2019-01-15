@@ -5,11 +5,11 @@
   }
 
   .header-utility-menu {
-    background-color: var(--terra-application-utility-header-menu-background-color);
+    background-color: var(--terra-application-utility-header-type-menu-background-color);
   }
 
   .menu-utility-menu {
-    background-color: var(--terra-application-utility-menu-menu-background-color);
+    background-color: var(--terra-application-utility-menu-type-menu-background-color);
   }
 
   .utility-menu-header {
@@ -19,33 +19,33 @@
   }
 
   .header-utility-menu-header {
-    color: var(--terra-application-utility-header-menu-header-color);
-    font-size: var(--terra-application-utility-header-menu-header-font-size, 1rem);
-    font-weight: var(--terra-application-utility-header-menu-header-font-weight, normal);
-    line-height: var(--terra-application-utility-header-menu-header-line-height, 1.2);
-    margin-top: var(--terra-application-utility-header-header-margin-top, 0.7143rem);
+    color: var(--terra-application-utility-header-type-menu-header-color);
+    font-size: var(--terra-application-utility-header-type-menu-header-font-size, 1rem);
+    font-weight: var(--terra-application-utility-header-type-menu-header-font-weight, normal);
+    line-height: var(--terra-application-utility-header-type-menu-header-line-height, 1.2);
+    margin-top: var(--terra-application-utility-header-type-menu-header-margin-top, 0.7143rem);
   }
 
   .menu-utility-menu-header {
-    color: var(--terra-application-utility-menu-menu-header-color);
-    font-size: var(--terra-application-utility-menu-menu-header-font-size, 1rem);
-    font-weight: var(--terra-application-utility-menu-menu-header-font-weight, normal);
-    line-height: var(--terra-application-utility-menu-menu-header-line-height, 1.2);
-    margin-top: var(--terra-application-utility-menu-menu-header-margin-top, 0.7143rem);
+    color: var(--terra-application-utility-menu-type-menu-header-color);
+    font-size: var(--terra-application-utility-menu-type-menu-header-font-size, 1rem);
+    font-weight: var(--terra-application-utility-menu-type-menu-header-font-weight, normal);
+    line-height: var(--terra-application-utility-menu-type-menu-header-line-height, 1.2);
+    margin-top: var(--terra-application-utility-menu-type-menu-header-margin-top, 0.7143rem);
   }
 
   .utility-menu-content-container {
     display: flex;
     justify-content: space-between;
-    min-height: var(--terra-application-utility-header-menu-header-min-height);
+    min-height: var(--terra-application-utility-header-type-menu-header-min-height);
   }
 
   .header-utility-menu-content-container {
-    margin-bottom: var(--terra-application-utility-header-header-margin-bottom, 0.7143rem);
+    margin-bottom: var(--terra-application-utility-header-type-menu-header-margin-bottom, 0.7143rem);
   }
 
   .menu-utility-menu-content-container {
-    margin-bottom: var(--terra-application-utility-menu-header-margin-bottom, 0.7143rem);
+    margin-bottom: var(--terra-application-utility-menu-type-menu-header-margin-bottom, 0.7143rem);
   }
 
   .utility-menu-left-content-container {
@@ -56,28 +56,28 @@
   }
 
   .header-utility-menu-initial-page-header-text {
-    margin-left: var(--terra-application-utility-header-menu-initial-page-header-text-margin-left, 0.7143rem);
+    margin-left: var(--terra-application-utility-header-type-menu-initial-page-header-text-margin-left, 0.7143rem);
     overflow: hidden;
     overflow-wrap: break-word;
     word-wrap: break-word;
   }
 
   .menu-utility-menu-initial-page-header-text {
-    margin-left: var(--terra-application-utility-menu-menu-initial-page-header-text-margin-left, 0.7143rem);
+    margin-left: var(--terra-application-utility-menu-type-menu-initial-page-header-text-margin-left, 0.7143rem);
     overflow: hidden;
     overflow-wrap: break-word;
     word-wrap: break-word;
   }
 
   .header-utility-menu-noninitial-page-header-text {
-    margin-left: var(--terra-application-utility-header-menu-noninitial-page-header-text-margin-left, 0);
+    margin-left: var(--terra-application-utility-header-type-menu-noninitial-page-header-text-margin-left, 0);
     overflow: hidden;
     overflow-wrap: break-word;
     word-wrap: break-word;
   }
 
   .menu-utility-menu-noninitial-page-header-text {
-    margin-left: var(--terra-application-utility-menu-menu-noninitial-page-header-text-margin-left, 0);
+    margin-left: var(--terra-application-utility-menu-type-menu-noninitial-page-header-text-margin-left, 0);
     overflow: hidden;
     overflow-wrap: break-word;
     word-wrap: break-word;
@@ -88,11 +88,11 @@
   }
 
   .header-utility-menu-icon-left {
-    width: var(--terra-application-utility-header-menu-back-width, 0.7143rem);
+    width: var(--terra-application-utility-header-type-menu-back-width, 0.7143rem);
   }
 
   .menu-utility-menu-icon-left {
-    width: var(--terra-application-utility-menu-menu-back-width, 0.7143rem);
+    width: var(--terra-application-utility-menu-type-menu-back-width, 0.7143rem);
   }
 
   .utility-menu-right-content-container {
@@ -101,7 +101,7 @@
   }
 
   .header-utility-menu-button-close {
-    display: var(--terra-application-utility-header-menu-button-close-display);
+    display: var(--terra-application-utility-header-type-menu-button-close-display);
   }
 
   .utility-menu-icon-close {
@@ -109,12 +109,12 @@
   }
 
   .header-utility-menu-icon-close {
-    display: var(--terra-application-utility-header-menu-page-display);
-    width: var(--terra-application-utility-header-menu-page-close-width, 1rem);
+    display: var(--terra-application-utility-header-type-menu-page-display);
+    width: var(--terra-application-utility-header-type-menu-page-close-width, 1rem);
   }
 
   .menu-utility-menu-icon-close {
-    width: var(--terra-application-utility-menu-menu-page-close-width, 1rem);
+    width: var(--terra-application-utility-menu-type-menu-page-close-width, 1rem);
   }
 
   .utility-menu-body {
@@ -128,6 +128,6 @@
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
-    margin-bottom: var(--terra-application-utility-menu-margin-bottom);
+    margin-bottom: var(--terra-application-utility-menu-type-margin-bottom);
   }
 }
