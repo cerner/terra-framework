@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Change
+* Updated variable names to match new naming standard
+* Added new variables for css theming
+* Removed variables for css theming
+* Updated terra-core dependencies
+
 ### Changed
 * Removed use of componentWillReceiveProps
 * Update terra-avatar to 2.0

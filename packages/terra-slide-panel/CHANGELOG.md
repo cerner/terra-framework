@@ -3,6 +3,11 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Change
+* Updated variable names to match new naming standard
+* Added new variables for css theming
+* Removed variables for css theming
+* Updated terra-core dependencies
 
 2.25.0 - (January 5, 2019)
 ------------------
