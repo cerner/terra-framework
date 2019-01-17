@@ -10,7 +10,7 @@ describe('Time Input Twelve Hour', () => {
     Terra.should.themeCombinationOfCustomProperties({
       testName: 'themed',
       properties: {
-        '--terra-time-input-background': '#ff7777',
+        '--terra-time-input-background-color': '#ff7777',
         '--terra-time-input-border-color': '#000000',
         '--terra-time-input-border-radius': '10px',
         '--terra-time-input-border-style': 'dashed',

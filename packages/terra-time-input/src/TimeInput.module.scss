@@ -3,19 +3,19 @@
 
 :local {
   @mixin focus-styles {
-    border-color: var(--terra-time-input-focus-keyboard-border-color, #4cb2e9);
-    border-style: var(--terra-time-input-focus-keyboard-border-style, solid);
-    border-width: var(--terra-time-input-focus-keyboard-border-width, 1px);
-    opacity: var(--terra-time-input-focus-keyboard-opacity, 1);
+    border-color: var(--terra-time-input-focus-border-color, #4cb2e9);
+    border-style: var(--terra-time-input-focus-border-style, solid);
+    border-width: var(--terra-time-input-focus-border-width, 1px);
+    opacity: var(--terra-time-input-focus-opacity, 1);
     outline: none;
   }
 
   .time-input {
-    background-color: var(--terra-time-input-background, #fff);
-    background-image: var(--terra-time-input-animation-background, none);
+    background-color: var(--terra-time-input-background-color, #fff);
+    background-image: var(--terra-time-input-background-image, none);
     background-position: 0 100%;
     background-repeat: no-repeat;
-    background-size: var(--terra-time-input-background-start, 0 0);
+    background-size: var(--terra-time-input-background-size, 0 0);
     border-color: var(--terra-time-input-border-color, #dedfe0);
     border-radius: var(--terra-time-input-border-radius, 3px);
     border-style: var(--terra-time-input-border-style, solid);
@@ -44,7 +44,7 @@
       .time-input-minute {
         color: var(--terra-time-input-hover-color, #1c1f21);
       }
-      
+
       .meridiem-display {
         color: var(--terra-time-input-hover-color, #1c1f21);
       }
@@ -53,23 +53,23 @@
     &.is-focused {
       @include focus-styles;
       background-color: var(--terra-time-input-focus-background-color, #fff);
-      background-size: var(--terra-time-input-focus-keyboard-animation-size, 0 0);
+      background-size: var(--terra-time-input-focus-background-size, 0 0);
       color: var(--terra-time-input-focus-color, #1c1f21);
 
 
       [dir=ltr] & {
-        box-shadow: var(--terra-time-input-focus-keyboard-box-shadow-ltr, 0 0 8px #a6d9f4);
+        box-shadow: var(--terra-time-input-focus-ltr-box-shadow, 0 0 8px #a6d9f4);
       }
 
       [dir=rtl] & {
-        box-shadow: var(--terra-time-input-focus-keyboard-box-shadow-rtl, 0 0 8px #a6d9f4);
+        box-shadow: var(--terra-time-input-focus-rtl-box-shadow, 0 0 8px #a6d9f4);
       }
 
       .time-input-hour,
       .time-input-minute {
         color: var(--terra-time-input-focus-color, #1c1f21);
       }
-      
+
       .meridiem-display {
         color: var(--terra-time-input-focus-color, #1c1f21);
       }
@@ -105,11 +105,11 @@
 
   .time-input-hour,
   .time-input-minute {
-    background-color: var(--terra-time-input-background, #fff);
-    background-image: var(--terra-time-input-animation-background, none);
+    background-color: var(--terra-time-input-background-color, #fff);
+    background-image: var(--terra-time-input-background-image, none);
     background-position: 0 100%;
     background-repeat: no-repeat;
-    background-size: var(--terra-time-input-background-start, 0 0);
+    background-size: var(--terra-time-input-background-size, 0 0);
     border-color: var(--terra-time-input-border-color, #dedfe0);
     border-radius: var(--terra-time-input-border-radius, 3px);
     border-style: var(--terra-time-input-border-style, solid);
@@ -120,7 +120,7 @@
     display: table;
     height: var(--terra-time-input-mobile-height, 2.1428571429rem);
     line-height: var(--terra-time-input-mobile-line-height, 1.429);
-    min-width: var(--terra-time-input-mobile-width-input, 4rem);
+    min-width: var(--terra-time-input-mobile-min-width, 4rem);
     padding-bottom: var(--terra-time-input-mobile-padding-bottom, 0.2857142857rem);
     padding-left: var(--terra-time-input-mobile-padding-left, 0.2857142857rem);
     padding-right: var(--terra-time-input-mobile-padding-right, 0.2857142857rem);
@@ -138,14 +138,14 @@
 
     &:focus {
       @include focus-styles;
-      background-size: var(--terra-time-input-focus-keyboard-animation-size, 0 0);
+      background-size: var(--terra-time-input-focus-background-size, 0 0);
 
       [dir=ltr] & {
-        box-shadow: var(--terra-time-input-focus-keyboard-box-shadow-ltr, 0 0 8px #a6d9f4);
+        box-shadow: var(--terra-time-input-focus-ltr-box-shadow, 0 0 8px #a6d9f4);
       }
 
       [dir=rtl] & {
-        box-shadow: var(--terra-time-input-focus-keyboard-box-shadow-rtl, 0 0 8px #a6d9f4);
+        box-shadow: var(--terra-time-input-focus-rtl-box-shadow, 0 0 8px #a6d9f4);
       }
     }
 
@@ -256,7 +256,7 @@
     background-color: var(--terra-time-input-meridiem-button-background-color, #dedfe0);
     border-color: var(--terra-time-input-meridiem-button-border-color, #c8cacb);
     color: var(--terra-time-input-meridiem-button-color, #1c1f21);
-    font-size: var(--terra-time-input-font-size, 1rem);
+    font-size: var(--terra-time-input-meridiem-button-font-size, 1rem);
     height: var(--terra-time-input-mobile-height, 2.1428571429rem);
     line-height: var(--terra-time-input-mobile-line-height, 1.429);
     outline: none;

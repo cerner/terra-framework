@@ -16,7 +16,7 @@
     color: var(--terra-navigation-side-menu-item-color, #1c1f21);
     cursor: pointer;
     display: flex;
-    font-size: var(--terra-navigation-side-menu-item-size, 1.071rem);
+    font-size: var(--terra-navigation-side-menu-item-font-size, 1.071rem);
     line-height: var(--terra-navigation-side-menu-item-line-height, 1.42857);
     outline: none;
     padding-bottom: var(--terra-navigation-side-menu-item-padding-bottom, 0.8225rem);
@@ -29,7 +29,15 @@
     z-index: 0;
 
     &:hover,
-    &.is-hovered,
+    &.is-hovered {
+      background-color: var(--terra-navigation-side-menu-item-hover-background-color, #f5fafe);
+      color: var(--terra-navigation-side-menu-item-hover-color);
+
+      .chevron {
+        color: var(--terra-navigation-side-menu-item-hover-chevron-color, #bcbfc0);
+      }
+    }
+
     &.is-focused:not(.is-selected):hover,
     &.is-focused:not(.is-selected).is-hovered {
       background-color: var(--terra-navigation-side-menu-item-hover-background-color, #f5fafe);
@@ -51,12 +59,20 @@
     }
 
     &:active,
-    &.is-active,
+    &.is-active {
+      background-color: var(--terra-navigation-side-menu-item-active-background-color, #f5fafe);
+      z-index: 5;
+
+      .chevron {
+        color: var(--terra-navigation-side-menu-item-active-chevron-color, #bcbfc0);
+      }
+    }
+
     &:active.is-focused,
     &.is-active.is-focused {
       background-color: var(--terra-navigation-side-menu-item-active-background-color, #f5fafe);
       z-index: 5;
-  
+
       .chevron {
         color: var(--terra-navigation-side-menu-item-active-chevron-color, #bcbfc0);
       }
@@ -70,7 +86,7 @@
       padding-left: var(--terra-navigation-side-menu-item-selected-padding-left, 0.7143rem);
 
       &::before {
-        background-image: var(--terra-navigation-side-menu-item-selected-background-image);
+        background-image: var(--terra-navigation-side-menu-item-selected-before-background-image);
         content: '';
         height: 100%;
         left: 0;
@@ -83,7 +99,7 @@
       .chevron {
         color: var(--terra-navigation-side-menu-item-selected-chevron-color, #909496);
       }
-      
+
       &:hover,
       &.is-hovered {
         background-color: var(--terra-navigation-side-menu-item-selected-hover-background-color, #f4f4f4);
@@ -103,8 +119,8 @@
         .chevron {
           color: var(--terra-navigation-side-menu-item-selected-focus-chevron-color, #909496);
         }
-      }  
-    }    
+      }
+    }
   }
 
   .title,

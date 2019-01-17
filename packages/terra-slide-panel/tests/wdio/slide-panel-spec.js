@@ -107,11 +107,12 @@ describe('Slide panel', () => {
     beforeEach(() => browser.url('/#/raw/tests/terra-slide-panel/slide-panel/slide-panel-end'));
 
     Terra.should.themeEachCustomProperty({
-      '--terra-slide-panel-panel-width-small': '420px',
+      '--terra-slide-panel-panel-small-width': '420px',
       '--terra-slide-panel-panel-width-large-scalar': '0.8',
       '--terra-slide-panel-panel-overlay-position-start-box-shadow': '1px 0 5px 0 orange',
       '--terra-slide-panel-panel-overlay-position-end-box-shadow': '-1px 0 5px 0 orange',
-      '--terra-slide-panel-panel-squish-border-color': 'blue',
+      '--terra-slide-panel-panel-squish-border-left-color': 'blue',
+      '--terra-slide-panel-panel-squish-border-right-color': 'blue',
     });
   });
 });

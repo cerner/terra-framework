@@ -65,7 +65,7 @@
   @media all and (min-width: 768px) {
     // Set explicit width on larger screens
     [data-slide-panel-panel-size='small'] > .panel {
-      width: var(--terra-slide-panel-panel-width-small, 320px);
+      width: var(--terra-slide-panel-panel-small-width, 320px);
     }
 
     [data-slide-panel-panel-size='large'] > .panel {
@@ -97,8 +97,8 @@
 
         [dir=rtl] & {
           box-shadow: var(--terra-slide-panel-panel-overlay-position-start-box-shadow, 1px 0 0 0 #cdced0, -16px 0 16px 14px rgba(77, 87, 92, 0.45), -12px 0 24px 18px rgba(100, 105, 108, 0.06), 0 0 100px 20px rgba(28, 31, 33, 0.04));
-        }  
-        /* stylelint-enable selector-max-compound-selectors */    
+        }
+        /* stylelint-enable selector-max-compound-selectors */
       }
     }
   }
@@ -124,11 +124,13 @@
       }
 
       &[data-slide-panel-panel-position='start'] > .panel {
-        border-right: 1px solid var(--terra-slide-panel-panel-squish-border-color, #d3d4d5);
+        border-right: 1px solid transparent;
+        border-right-color: var(--terra-slide-panel-panel-squish-border-right-color, #d3d4d5);
       }
 
       &[data-slide-panel-panel-position='end'] > .panel {
-        border-left: 1px solid var(--terra-slide-panel-panel-squish-border-color, #d3d4d5);
+        border-left: 1px solid transparent;
+        border-left-color: var(--terra-slide-panel-panel-squish-border-left-color, #d3d4d5);
       }
     }
   }
