@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Update terra-avatar to 2.0
+* Update external links example to point to terra-ui.com
 
 3.3.0 - (January 5, 2019)
 ------------------

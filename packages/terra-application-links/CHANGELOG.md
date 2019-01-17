@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changes
+* Update external links example to point to terra-ui.com
 
 4.23.0 - (January 5, 2019)
 ------------------
