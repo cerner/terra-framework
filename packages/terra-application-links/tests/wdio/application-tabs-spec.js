@@ -33,6 +33,7 @@ describe('ApplicationTabs', () => {
         '--terra-application-tabs-hover-background-image': 'linear-gradient(to bottom, orange,red)',
         '--terra-application-tabs-hover-background-size': '100% 9px',
         '--terra-application-tabs-hover-color': 'gray',
+        '--terra-application-tabs-text-transform': 'uppercase',
       },
     });
   });
@@ -60,6 +61,7 @@ describe('ApplicationTabs', () => {
         '--terra-application-tabs-collapsed-padding-right': '0',
         '--terra-application-tabs-collapsed-padding-bottom': '0',
         '--terra-application-tabs-collapsed-padding-left': '0',
+        '--terra-application-tabs-text-transform': 'uppercase',
       },
     });
   });
