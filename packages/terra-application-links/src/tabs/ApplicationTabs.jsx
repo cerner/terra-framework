@@ -172,7 +172,7 @@ class ApplicationTabs extends React.Component {
     });
 
     return (
-      <div {...customProps} className={cx(['application-tabs'])}>
+      <div {...customProps} className={cx(['tabs-wrapper'])}>
         <div
           className={cx(['tabs-container', { 'is-calculating': this.isCalculating }, alignment])}
           role="tablist"

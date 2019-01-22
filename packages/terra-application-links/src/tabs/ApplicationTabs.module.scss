@@ -1,13 +1,13 @@
 :local {
-  .application-tabs {
+  .tabs-wrapper {
     display: flex;
     flex: 1 1 auto;
     flex-wrap: nowrap;
     height: 100%;
     justify-content: center;
     overflow: hidden;
-    padding-left: var(--terra-application-links-tabs-container-padding-left, 1.4285714286rem);
-    padding-right: var(--terra-application-links-tabs-container-padding-right, 1.4285714286rem);
+    padding-left: var(--terra-application-links-tabs-wrapper-padding-left, 1.4285714286rem);
+    padding-right: var(--terra-application-links-tabs-wrapper-padding-right, 1.4285714286rem);
     position: relative;
     width: 100%;
   }
