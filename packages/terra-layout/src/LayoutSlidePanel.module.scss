@@ -62,7 +62,7 @@
   // Squish
   .is-open.is-squish {
     > .content {
-      width: calc(100% - #{var(--terra-layout-slide-panel-panel-width, 18.571rem)} - #{var(--terra-layout-slide-panel-squish-panel-border-right, 1px)});
+      width: calc(100% - #{var(--terra-layout-slide-panel-panel-width, 18.571rem)} - #{var(--terra-layout-slide-panel-squish-panel-border-right-width, 1px)});
     }
 
     > .panel {
@@ -71,7 +71,7 @@
       border-right-style: solid;
       border-right-width: var(--terra-layout-slide-panel-squish-panel-border-right-width, 1px);
       transition: none;
-      width: calc(#{var(--terra-layout-slide-panel-squish-panel-border-right, 1px)} + #{var(--terra-layout-slide-panel-panel-width, 18.571rem)});
+      width: calc(#{var(--terra-layout-slide-panel-squish-panel-border-right-width, 1px)} + #{var(--terra-layout-slide-panel-panel-width, 18.571rem)});
 
       /* stylelint-disable selector-max-compound-selectors */
       [dir=ltr] & {

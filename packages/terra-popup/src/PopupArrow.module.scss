@@ -3,7 +3,9 @@
   [dir=rtl] {
     // These are relative to screen coordinates, so no bi-di concerns
     .popup-arrow {
-      border: var(--terra-popup-arrow-border, 11px) solid transparent;
+      border-color: transparent;
+      border-style: solid;
+      border-width: var(--terra-popup-arrow-border-width, 11px);
       display: none;
       height: 0;
       left: 50%;
@@ -13,7 +15,9 @@
       z-index: 7002;
 
       &::after {
-        border: var(--terra-popup-arrow-after-border, 10px) solid transparent;
+        border-color: transparent;
+        border-style: solid;
+        border-width: var(--terra-popup-arrow-after-border-width, 10px);
         content: '';
         height: 0;
         position: absolute;

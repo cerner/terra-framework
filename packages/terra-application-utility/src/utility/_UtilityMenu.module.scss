@@ -88,11 +88,11 @@
   }
 
   .header-utility-menu-icon-left {
-    width: var(--terra-application-utility-header-type-menu-back-width, 0.7143rem);
+    width: var(--terra-application-utility-header-type-menu-back-icon-width, 0.7143rem);
   }
 
   .menu-utility-menu-icon-left {
-    width: var(--terra-application-utility-menu-type-menu-back-width, 0.7143rem);
+    width: var(--terra-application-utility-menu-type-menu-back-icon-width, 0.7143rem);
   }
 
   .utility-menu-right-content-container {
@@ -110,11 +110,11 @@
 
   .header-utility-menu-icon-close {
     display: var(--terra-application-utility-header-type-menu-page-display);
-    width: var(--terra-application-utility-header-type-menu-page-close-width, 1rem);
+    width: var(--terra-application-utility-header-type-menu-page-close-icon-width, 1rem);
   }
 
   .menu-utility-menu-icon-close {
-    width: var(--terra-application-utility-menu-type-menu-page-close-width, 1rem);
+    width: var(--terra-application-utility-menu-type-menu-page-close-icon-width, 1rem);
   }
 
   .utility-menu-body {
