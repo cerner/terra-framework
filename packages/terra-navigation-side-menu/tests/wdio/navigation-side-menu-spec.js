@@ -20,6 +20,7 @@ describe('Default navigation side menu display', () => {
       '--terra-navigation-side-menu-item-padding-right': '0',
       '--terra-navigation-side-menu-item-padding-bottom': '0',
       '--terra-navigation-side-menu-item-padding-left': '0',
+      '--terra-navigation-side-menu-item-text-transform': 'uppercase',
     },
   });
 });

@@ -95,6 +95,10 @@
     position: relative;
     text-align: center;
     text-decoration: none;
+    text-transform: var(--terra-application-links-tabs-tab-text-transform, none);
+    transition-duration: var(--terra-application-links-tabs-tab-transition-duration, 0s);
+    transition-property: background-size;
+    transition-timing-function: var(--terra-application-links-tabs-tab-transition-timing-function, ease);
     width: var(--terra-application-links-tabs-tab-width, 13rem);
 
     &::before {

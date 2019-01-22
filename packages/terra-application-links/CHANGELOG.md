@@ -11,6 +11,7 @@ Unreleased
 
 ### Changed
 * Remove use of componentWillReceiveProps
+* Add css variable to text-transform the text values in the tabs
 
 4.23.0 - (January 5, 2019)
 ------------------

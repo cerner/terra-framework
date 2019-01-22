@@ -21,6 +21,7 @@ Cerner Corporation
 - Noah Benham [@noahbenham]
 - Cody Price [@dev-cprice]
 - Shetty Akarsh [@@ShettyAkarsh]
+- Alex Bezek [@alex-bezek]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -43,3 +44,4 @@ Cerner Corporation
 [@noahbenham]: https://github.com/noahbenham
 [@dev-cprice]: https://github.com/dev-cprice
 [@ShettyAkarsh]: https://github.com/ShettyAkarsh
+[@alex-bezek]: https://github.com/alex-bezek
