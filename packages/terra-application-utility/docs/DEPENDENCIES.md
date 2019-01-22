@@ -5,8 +5,8 @@
 |-|-|-|-|
 | classnames | ^2.2.5 | -- | A simple utility for conditionally joining classNames together |
 | prop-types | ^15.5.8 | -- | Runtime type checking for React props and similar objects. |
-| terra-application-header-layout | ^2.23.0 | ^16.4.2 | This component renders an application header layout. To be used with a layout. |
-| terra-application-menu-layout | ^2.18.0 | ^16.4.2 | This component renders an application menu layout. To be used with a terra-layout or terra-navigation-layout. |
+| terra-application-header-layout | ^2.24.0 | ^16.4.2 | This component renders an application header layout. To be used with a layout. |
+| terra-application-menu-layout | ^2.19.0 | ^16.4.2 | This component renders an application menu layout. To be used with a terra-layout or terra-navigation-layout. |
 | terra-arrange | ^2.0.0 | ^16.4.2 | The arrange component is used for horizontally arranging and vertically aligning a single row of container elements. |
 | terra-button | ^2.0.0 | ^16.4.2 | The terra-button component provides users a way to trigger actions in the UI. |
 | terra-content-container | ^2.0.0 | ^16.4.2 | The Terra ContentContainer is a structural component for the purpose of arranging content with a header. |
