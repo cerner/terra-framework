@@ -24,6 +24,7 @@
     padding-top: var(--terra-navigation-side-menu-item-padding-top, 0.8225rem);
     position: relative;
     text-decoration: none;
+    text-transform: var(--terra-navigation-side-menu-item-text-transform, none);
     width: 100%;
     z-index: 0;
 
