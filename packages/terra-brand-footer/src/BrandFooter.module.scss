@@ -80,7 +80,7 @@
 
     /* stylelint-disable selector-max-compound-selectors */
     // A '/' isn't needed to separate an item from the header it follows
-    .list-header + .menu::before {
+    .list-header + .menu::before { 
       content: '';
       padding-left: 0;
       padding-right: var(--terra-brand-footer-horizontal-nav-first-link-before-padding-right, 0.7142857142857143rem);
@@ -88,7 +88,7 @@
     /* stylelint-enable selector-max-compound-selectors */
 
     .separator {
-      color: var(--terra-brand-footer-horizontal-nav-link-divider-color, #8baaca);
+      color: var(--terra-brand-footer-horizontal-nav-link-separator-color, #8baaca);
       padding-bottom: var(--terra-brand-footer-horizontal-nav-link-separator-padding-bottom, 0.7142857142857143rem);
       padding-left: var(--terra-brand-footer-horizontal-nav-link-separator-padding-left, 0.7142857142857143rem);
       padding-right: var(--terra-brand-footer-horizontal-nav-link-separator-padding-right, 0.7142857142857143rem);
