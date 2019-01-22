@@ -29,6 +29,7 @@
     "classnames": "^2.2.5",
     "focus-trap-react": "^4.0.1",
     "prop-types": "^15.5.8",
+    "react-intl": "^2.7.2",
     "react-portal": "^4.1.2",
     "terra-button": "^2.0.0",
     "terra-content-container": "^2.0.0",
@@ -42,7 +43,7 @@
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
-    "compile:clean": "rimraf lib",
+    "compile:clean": "shx rm -rf lib",
     "compile:build": "babel src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",

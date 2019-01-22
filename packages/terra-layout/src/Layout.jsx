@@ -44,6 +44,14 @@ class Layout extends React.Component {
     });
   }
 
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps !== prevState.prevProps) {
+      return Layout.stateForProps(nextProps, prevState);
+    }
+
+    return null;
+  }
+
   constructor(props) {
     super(props);
 
@@ -56,15 +64,12 @@ class Layout extends React.Component {
 
     this.state = Layout.stateForProps(props, {
       size: getBreakpointSize(),
+      prevProps: this.props,
     });
   }
 
   componentDidMount() {
     window.addEventListener('resize', this.updateSize);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState(prevState => (Layout.stateForProps(nextProps, prevState)));
   }
 
   componentWillUnmount() {

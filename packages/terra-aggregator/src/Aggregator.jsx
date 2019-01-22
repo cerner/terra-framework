@@ -43,11 +43,11 @@ class Aggregator extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { items } = this.props;
+  componentDidUpdate(prevProps) {
+    const { items } = prevProps;
     const { focusedItemId } = this.state;
 
-    if (nextProps.items !== this.props.items) {
+    if (this.props.items !== prevProps.items) {
       // If the currently focused item is not present in the new items set,
       // the focus is forcefully released to clean up any presented disclosures.
       let focusItemIsPresent;
@@ -56,7 +56,6 @@ class Aggregator extends React.Component {
           focusItemIsPresent = true;
         }
       });
-
       if (!focusItemIsPresent) {
         this.releaseFocus(undefined, true);
       }

@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Remove usage of componentWillReceiveProps
 
 1.26.0 - (January 5, 2019)
 ------------------
