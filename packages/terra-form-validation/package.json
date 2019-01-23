@@ -25,7 +25,7 @@
   "peerDependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "terra-base": "^3.0.0"
+    "terra-base": "^4.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -35,13 +35,13 @@
     "terra-button": "^3.0.0",
     "terra-doc-template": "^2.0.0",
     "terra-form-checkbox": "^3.0.0",
-    "terra-form-field": "^2.0.0",
+    "terra-form-field": "^3.0.0",
     "terra-form-input": "^2.0.0",
     "terra-form-radio": "^3.0.0",
     "terra-form-select": "^5.0.0",
     "terra-form-textarea": "^3.0.0",
-    "terra-i18n": "^2.0.0",
-    "terra-spacer": "^2.0.0"
+    "terra-i18n": "^3.0.0",
+    "terra-spacer": "^3.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
