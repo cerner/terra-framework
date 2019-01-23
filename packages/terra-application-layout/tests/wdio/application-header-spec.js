@@ -13,6 +13,7 @@ describe('ApplicationHeader', () => {
       testName: 'themed',
       properties: {
         '--terra-application-header-background-color': 'red',
+        '--terra-application-layout-navbar-box-shadow': '0px 0px 10px',
         '--terra-application-header-border': '3px dotted purple',
         '--terra-application-header-height': '5rem',
       },

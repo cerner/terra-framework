@@ -15,7 +15,7 @@
   }
 
   .is-animated {
-    transition: transform 0.15s ease;
+    transition: left 0.15s ease;
   }
 
   .content {
@@ -27,15 +27,15 @@
 
   .panel {
     background-color: var(--layout-slide-panel-background-color, #fff);
+    left: -100%; // Using left allows background-attachment: fixed on DOM elements nested within
     position: absolute;
-    transform: translate3d(-100%, 0, 0);
     width: var(--layout-slide-panel-desktop-panel-width, 18.571rem);
     z-index: 5000;
   }
 
   // Move the slider back to its origin when its on-screen.
   .is-open > .panel {
-    transform: translate3d(0, 0, 0);
+    left: 0; // Using left allows background-attachment: fixed on DOM elements nested within
   }
 
   .panel.is-tiny {
@@ -59,6 +59,7 @@
 
     > .panel {
       border-right: 0.07143rem solid var(--layout-slide-panel-panel-border-color, #d3d4d5);
+      border-right-width: var(--terra-layout-slide-panel-squish-panel-border-right-width, 1px);
       transition: none;
       width: calc(0.07143rem + #{var(--layout-slide-panel-desktop-panel-width, 18.571rem)});
     }
