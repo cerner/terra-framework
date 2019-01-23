@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* New CSS custom property: `--terra-application-layout-navbar-box-shadow`
+
 ### Changed
 * Removed use of componentWillReceiveProps
 * Update terra-avatar to 2.0

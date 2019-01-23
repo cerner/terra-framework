@@ -3,9 +3,14 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* New CSS custom property: `--terra-navigation-side-menu-item-selected-background-attachment`
+* New CSS custom property: `--terra-navigation-side-menu-item-selected-background-size`
+* New CSS custom property: `--terra-navigation-side-menu-item-selected-before-background-image`
+* New CSS custom property: `--terra-navigation-side-menu-item-text-transform`
+
 ### Changed
 * Remove use of componentWillReceiveProps
-* Add a css variable to text-transform the text values in the nav items
 
 1.20.0 - (January 5, 2019)
 ------------------

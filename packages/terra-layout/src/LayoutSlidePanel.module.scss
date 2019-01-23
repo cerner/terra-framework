@@ -59,6 +59,7 @@
 
     > .panel {
       border-right: 0.07143rem solid var(--layout-slide-panel-panel-border-color, #d3d4d5);
+      border-right-width: var(--terra-layout-slide-panel-squish-panel-border-right-width, 1px);
       transition: none;
       width: calc(0.07143rem + #{var(--layout-slide-panel-desktop-panel-width, 18.571rem)});
     }

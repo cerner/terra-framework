@@ -2,8 +2,10 @@
   .application-header {
     background-color: var(--terra-application-header-background-color, #0079be);
     border: var(--terra-application-header-border, 0.07143rem solid rgba(255, 255, 255, 0.17));
+    box-shadow: var(--terra-application-layout-navbar-box-shadow);
     height: var(--terra-application-header-height, 3.5725rem);
     position: relative;
+    z-index: 5001;
   }
 
   .toolbar-toggle {

@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* New CSS custom property: `--terra-layout-slide-panel-squish-panel-border-right-width`
+
 ### Changed
 * Remove use of componentWillReceiveProps
 
