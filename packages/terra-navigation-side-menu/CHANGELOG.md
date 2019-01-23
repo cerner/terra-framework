@@ -11,7 +11,6 @@ Unreleased
 
 ### Changed
 * Remove use of componentWillReceiveProps
-* Add a css variable to text-transform the text values in the nav items
 
 1.20.0 - (January 5, 2019)
 ------------------

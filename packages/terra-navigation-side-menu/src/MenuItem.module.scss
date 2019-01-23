@@ -80,7 +80,10 @@
     }
 
     &.is-selected {
+      background-attachment: var(--terra-navigation-side-menu-item-selected-background-attachment);
       background-color: var(--terra-navigation-side-menu-item-selected-background-color, #f4f4f4);
+      background-image: var(--terra-navigation-side-menu-item-selected-background-image);
+      background-size: var(--terra-navigation-side-menu-item-selected-background-size);
       border-left: var(--terra-navigation-side-menu-item-selected-border-left, 0.5rem solid #007cc3);
       color: var(--terra-navigation-side-menu-item-selected-color);
       font-weight: var(--terra-navigation-side-menu-item-selected-font-weight, 600);

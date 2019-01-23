@@ -9,7 +9,7 @@
     padding-right: var(--terra-application-layout-navbar-padding-right);
     position: relative;
     z-index: 5001;
-    
+
     &::before {
       background-color: var(--terra-application-layout-navbar-before-background-color, transparent);
       background-image: var(--terra-application-layout-navbar-before-background-image, none);
@@ -50,7 +50,7 @@
       height: var(--terra-application-layout-toggle-button-icon-height, 1rem);
       width: var(--terra-application-layout-toggle-button-icon-width, 1rem);
     }
-    
+
     &:hover {
       background-color: var(--terra-application-layout-toggle-button-hover-background-color, rgba(0, 0, 0, 0.15));
       border-color: var(--terra-application-layout-toggle-button-hover-border-color);
