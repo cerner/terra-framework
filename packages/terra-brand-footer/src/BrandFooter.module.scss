@@ -80,7 +80,7 @@
 
     /* stylelint-disable selector-max-compound-selectors */
     // A '/' isn't needed to separate an item from the header it follows
-    .list-header + .menu::before { 
+    .list-header + .menu::before {
       content: '';
       padding-left: 0;
       padding-right: var(--terra-brand-footer-horizontal-nav-first-link-before-padding-right, 0.7142857142857143rem);
