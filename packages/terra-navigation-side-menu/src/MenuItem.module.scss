@@ -24,6 +24,7 @@
     padding-top: var(--terra-navigation-side-menu-item-padding-top, 0.8225rem);
     position: relative;
     text-decoration: none;
+    text-transform: var(--terra-navigation-side-menu-item-text-transform, none);
     width: 100%;
     z-index: 0;
 
@@ -34,14 +35,17 @@
     }
 
     &.is-selected {
+      background-attachment: var(--terra-navigation-side-menu-item-selected-background-attachment);
       background-color: var(--terra-navigation-side-menu-item-selected-background-color, #f4f4f4);
+      background-image: var(--terra-navigation-side-menu-item-selected-background-image);
+      background-size: var(--terra-navigation-side-menu-item-selected-background-size);
       border-left: var(--terra-navigation-side-menu-item-selected-border-left, 0.5rem solid #007cc3);
       color: var(--terra-navigation-side-menu-item-selected-color);
       font-weight: var(--terra-navigation-side-menu-item-selected-font-weight, 600);
       padding-left: var(--terra-navigation-side-menu-item-selected-padding-left, 0.7143rem);
 
       &::before {
-        background-image: var(--terra-navigation-side-menu-item-selected-background-image);
+        background-image: var(--terra-navigation-side-menu-item-selected-before-background-image);
         content: '';
         height: 100%;
         left: 0;

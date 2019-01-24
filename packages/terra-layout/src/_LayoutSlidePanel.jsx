@@ -163,7 +163,7 @@ class LayoutSlidePanel extends React.Component {
           {panelContent}
         </div>
         <OverlayContainer className={cx('content')}>
-          <Overlay isRelativeToContainer onRequestClose={onToggle} isOpen={isOverlayOpen} backgroundStyle={overlayBackground} />
+          <Overlay isRelativeToContainer onRequestClose={onToggle} isOpen={isOverlayOpen} backgroundStyle={overlayBackground} zIndex="6000" />
           <main data-terra-layout-main tabIndex="-1" className={cx('main-container')}>
             {children}
           </main>
