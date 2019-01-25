@@ -7,6 +7,7 @@
 |-|-|
 | --notification-dialog-background | --terra-notification-dialog-background |
 | --notification-dialog-border-radius | --terra-notification-dialog-border-radius |
+| --notification-dialog-small-horizontal-inset | --terra-notification-dialog-small-horizontal-inset |
 | --notification-dialog-body-background-color | --terra-notification-dialog-body-background-color |
 | --notification-dialog-body-padding | --terra-notification-dialog-body-padding |
 | --notification-dialog-header-background-color | --terra-notification-dialog-header-background-color |

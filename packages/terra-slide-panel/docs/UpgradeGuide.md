@@ -11,12 +11,12 @@
 * --terra-slide-panel-main-background-color
 * --terra-slide-panel-panel-overlay-position-start-box-shadow
 * --terra-slide-panel-panel-overlay-position-end-box-shadow
-* --terra-slide-panel-panel-overlay-position-end-box-shadow
-* --terra-slide-panel-panel-overlay-position-start-box-shadow
 * --terra-slide-panel-main-squish-background-color
 * --terra-slide-panel-panel-squish-background-color
 * --terra-slide-panel-panel-squish-border-right-color
 * --terra-slide-panel-panel-squish-border-left-color
+* --terra-slide-panel-panel-squish-width-small
+* --terra-slide-panel-panel-squish-width-large-scalar
 
 #### Removed
 * --terra-slide-panel-shadow-color

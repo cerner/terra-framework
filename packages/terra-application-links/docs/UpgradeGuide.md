@@ -5,6 +5,10 @@
 #### Renamed
 | Previous | New |
 |-|-|
+| --terra-application-tabs-spacer-width | --terra-application-links-tabs-wrapper-padding-left |
+| --terra-application-tabs-spacer-width | --terra-application-links-tabs-wrapper-padding-right |
+| --terra-application-tabs-spacer-width | --terra-application-links-tabs-container-padding-left |
+| --terra-application-tabs-spacer-width | --terra-application-links-tabs-container-padding-right |
 | --terra-application-tabs-menu-arrow-left-margin | --terra-application-links-tabs-menu-arrow-margin-left |
 | --terra-application-tabs-collapsed-color | --terra-application-links-tabs-collapsed-color |
 | --terra-application-tabs-collapsed-font-size | --terra-application-links-tabs-collapsed-font-size |
@@ -25,8 +29,6 @@
 | --terra-application-tabs-menu-list-padding-top | --terra-application-links-tabs-menu-list-padding-top |
 
 #### Added
-* --terra-application-links-tabs-wrapper-padding-left
-* --terra-application-links-tabs-wrapper-padding-right
 * --terra-application-links-tabs-tab-color
 * --terra-application-links-tabs-tab-font-size
 * --terra-application-links-tabs-tab-font-weight
@@ -47,8 +49,6 @@
 * --terra-application-links-tabs-tab-position-left
 * --terra-application-links-tabs-tab-padding-left
 * --terra-application-links-tabs-tab-padding-right
-* --terra-application-links-tabs-tab-transition-duration
-* --terra-application-links-tabs-tab-transition-timing-function
 * --terra-application-links-tabs-tab-hover-background-color
 * --terra-application-links-tabs-tab-selected-font-weight
 * --terra-application-links-tabs-tab-selected-text-shadow
@@ -64,12 +64,9 @@
 * --terra-application-links-tabs-tab-active-focus-box-shadow
 * --terra-application-links-tabs-tab-selected-active-focus-background-color
 * --terra-application-links-tabs-tab-selected-active-focus-box-shadow
-* --terra-application-links-tabs-tab-divider-before-width
 * --terra-application-links-tabs-collapsed-active-focus-background-color
 
 #### Removed
-* --terra-application-tabs-spacer-width
-* --terra-application-tabs-spacer-width
 * --terra-application-tabs-background-position
 * --terra-application-tabs-background-size
 * --terra-application-tabs-border-right

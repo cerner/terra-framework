@@ -13,6 +13,7 @@
 | --terra-application-menu-header-background-color | --terra-application-layout-menu-header-background-color |
 | --terra-application-user-data-photo-height | --terra-application-layout-user-data-photo-height |
 | --terra-application-user-data-photo | --terra-application-layout-user-data-photo-margin-right |
+| --terra-application-user-data-photo-height | --terra-application-layout-user-data-photo-height |
 | --terra-application-user-data-photo-width | --terra-application-layout-user-data-photo-width |
 | --terra-application-user-data-name-font-size | --terra-application-layout-user-data-name-font-size |
 | --terra-application-user-data-detail-font-size | --terra-application-layout-user-data-detail-font-size |
@@ -21,6 +22,7 @@
 * --terra-application-layout-navbar-background-color
 * --terra-application-layout-navbar-background-image
 * --terra-application-layout-navbar-border
+* --terra-application-layout-navbar-box-shadow
 * --terra-application-layout-navbar-height
 * --terra-application-layout-navbar-padding-left
 * --terra-application-layout-navbar-padding-right
