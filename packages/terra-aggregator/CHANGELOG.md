@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.0.0 - (January 25, 2019)
+------------------
 ### Breaking Change
 * Updated terra-core dependencies
 
