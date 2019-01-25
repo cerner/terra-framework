@@ -15,7 +15,7 @@
   }
 
   .is-animated {
-    transition: left 0.15s ease;
+    transition: var(--terra-layout-slide-panel-transition);
   }
 
   .content {
