@@ -15,7 +15,7 @@
   }
 
   .is-animated {
-    transition: var(--terra-layout-slide-panel-transition);
+    transition: var(--terra-layout-slide-panel-transition, none);
   }
 
   .content {
