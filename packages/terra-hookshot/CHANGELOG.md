@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Change
+* Updated terra-core dependencies
+
 ### Changed
 * Removed usage of componentWillReceiveProps
 

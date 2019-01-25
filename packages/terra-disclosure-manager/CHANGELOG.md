@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Breaking Change
+* Updated terra-core dependencies
 
 3.3.0 - (January 5, 2019)
 ------------------

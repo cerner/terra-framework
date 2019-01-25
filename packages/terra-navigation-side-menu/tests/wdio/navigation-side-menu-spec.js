@@ -15,7 +15,7 @@ describe('Default navigation side menu display', () => {
       '--terra-navigation-side-menu-list-item-border-right': '5px solid #f00',
       '--terra-navigation-side-menu-list-item-border-top': '5px solid #f00',
       '--terra-navigation-side-menu-item-color': 'green',
-      '--terra-navigation-side-menu-item-size': '0.5rem',
+      '--terra-navigation-side-menu-item-font-size': '0.5rem',
       '--terra-navigation-side-menu-item-padding-top': '0',
       '--terra-navigation-side-menu-item-padding-right': '0',
       '--terra-navigation-side-menu-item-padding-bottom': '0',
@@ -70,6 +70,7 @@ describe('Selected navigation side menu display', () => {
     testName: 'themed',
     properties: {
       '--terra-navigation-side-menu-item-selected-background-color': 'pink',
+      '--terra-navigation-side-menu-item-selected-hover-background-color': 'pink',
       '--terra-navigation-side-menu-item-selected-color': 'black',
       '--terra-navigation-side-menu-item-selected-border-left': '1rem dotted orange',
       '--terra-navigation-side-menu-item-selected-padding-left': '0',

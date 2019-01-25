@@ -3,11 +3,11 @@ Changelog
 
 Unreleased
 ----------
-### Added
-* New CSS custom property: `--terra-navigation-side-menu-item-selected-background-attachment`
-* New CSS custom property: `--terra-navigation-side-menu-item-selected-background-size`
-* New CSS custom property: `--terra-navigation-side-menu-item-selected-before-background-image`
-* New CSS custom property: `--terra-navigation-side-menu-item-text-transform`
+### Breaking Change
+* Updated variable names to match new naming standard
+* Added new variables for css theming
+* Removed variables for css theming
+* Updated terra-core dependencies
 
 ### Changed
 * Remove use of componentWillReceiveProps

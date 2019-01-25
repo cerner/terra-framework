@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Change
+* Updated variable names to match new naming standard
+* Updated terra-core dependencies
 
 1.16.0 - (January 5, 2019)
 ------------------
