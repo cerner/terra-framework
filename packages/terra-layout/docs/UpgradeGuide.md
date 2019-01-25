@@ -15,7 +15,6 @@
 * --terra-layout-slide-panel-overlay-panel-rtl-box-shadow
 * --terra-layout-slide-panel-squish-panel-background-color
 * --terra-layout-slide-panel-squish-panel-border-right-color
-* --terra-layout-slide-panel-squish-panel-border-right-width
 * --terra-layout-slide-panel-squish-panel-ltr-box-shadow
 * --terra-layout-slide-panel-squish-panel-rtl-box-shadow
 

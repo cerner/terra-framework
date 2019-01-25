@@ -52,10 +52,10 @@
 | --terra-application-menu-utility-menu-initial-page-header-text-margin-left | --terra-application-utility-menu-type-menu-initial-page-header-text-margin-left |
 | --terra-application-header-utility-menu-noninitial-page-header-text-margin-left | --terra-application-utility-header-type-menu-noninitial-page-header-text-margin-left |
 | --terra-application-menu-utility-menu-noninitial-page-header-text-margin-left | --terra-application-utility-menu-type-menu-noninitial-page-header-text-margin-left |
-| --terra-application-header-utility-menu-chevron-width | --terra-application-utility-header-type-menu-back-width |
-| --terra-application-menu-utility-menu-chevron-width | --terra-application-utility-menu-type-menu-back-width |
-| --terra-application-header-utility-menu-page-chevron-width | --terra-application-utility-header-type-menu-page-close-width |
-| --terra-application-menu-utility-menu-page-chevron-width | --terra-application-utility-menu-type-menu-page-close-width |
+| --terra-application-header-utility-menu-chevron-width | --terra-application-utility-header-type-menu-back-icon-width |
+| --terra-application-menu-utility-menu-chevron-width | --terra-application-utility-menu-type-menu-back-icon-width |
+| --terra-application-header-utility-menu-page-chevron-width | --terra-application-utility-header-type-menu-page-close-icon-width |
+| --terra-application-menu-utility-menu-page-chevron-width | --terra-application-utility-menu-type-menu-page-close-icon-width |
 | --terra-application-utility-menu-divider-border-bottom-width | --terra-application-utility-menu-divider-border-left-width |
 | --terra-application-utility-menu-divider-border-bottom-right | --terra-application-utility-menu-divider-border-right-width |
 | --terra-application-utility-menu-divider-border-bottom | --terra-application-utility-menu-divider-border-top |

@@ -6,7 +6,6 @@
 | Previous | New |
 |-|-|
 | --terra-navigation-side-menu-item-size | --terra-navigation-side-menu-item-font-size |
-| --terra-navigation-side-menu-item-selected-background-image | --terra-navigation-side-menu-item-selected-before-background-image |
 
 #### Added
 * --terra-navigation-side-menu-list-item-background-color

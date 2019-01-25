@@ -6,6 +6,7 @@
 | Previous | New |
 |-|-|
 | --terra-brand-footer-horizontal-nav-first-link-padding-before-right | --terra-brand-footer-horizontal-nav-first-link-before-padding-right |
+| --terra-brand-footer-horizontal-nav-link-divider-color | --terra-brand-footer-horizontal-nav-link-separator-color |
 | --terra-brand-footer-horizontal-nav-link-padding-before-bottom | --terra-brand-footer-horizontal-nav-link-separator-padding-bottom |
 | --terra-brand-footer-horizontal-nav-link-padding-before-top | --terra-brand-footer-horizontal-nav-link-separator-padding-left |
 | --terra-brand-footer-horizontal-nav-link-padding-before-left | --terra-brand-footer-horizontal-nav-link-separator-padding-right |

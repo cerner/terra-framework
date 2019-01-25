@@ -21,7 +21,6 @@
 * --terra-application-layout-navbar-background-color
 * --terra-application-layout-navbar-background-image
 * --terra-application-layout-navbar-border
-* --terra-application-layout-navbar-box-shadow
 * --terra-application-layout-navbar-height
 * --terra-application-layout-navbar-padding-left
 * --terra-application-layout-navbar-padding-right
