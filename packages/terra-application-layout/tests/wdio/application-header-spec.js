@@ -12,10 +12,9 @@ describe('ApplicationHeader', () => {
     Terra.should.themeCombinationOfCustomProperties({
       testName: 'themed',
       properties: {
-        '--terra-application-header-background-color': 'red',
-        '--terra-application-layout-navbar-box-shadow': '0px 0px 10px',
-        '--terra-application-header-border': '3px dotted purple',
-        '--terra-application-header-height': '5rem',
+        '--terra-application-layout-navbar-background-color': 'red',
+        '--terra-application-layout-navbar-border': '3px dotted purple',
+        '--terra-application-layout-navbar-height': '5rem',
       },
     });
   });
@@ -30,13 +29,13 @@ describe('ApplicationHeader', () => {
     Terra.should.themeCombinationOfCustomProperties({
       testName: 'themed',
       properties: {
-        '--terra-application-header-toggle-icon-height': '2rem',
-        '--terra-application-header-toggle-icon-width': '2rem',
-        '--terra-application-header-toggle-color': '#green',
-        '--terra-application-header-toggle-background-color': 'orange',
-        '--terra-application-header-toggle-width': '2rem',
-        '--terra-application-header-toggle-border-right': '5px dotted yellow',
-        '--terra-application-header-toggle-box-shadow': 'inset -2rem 0 0 0 green',
+        '--terra-application-layout-toggle-button-icon-height': '2rem',
+        '--terra-application-layout-toggle-button-icon-width': '2rem',
+        '--terra-application-layout-toggle-button-color': '#green',
+        '--terra-application-layout-toggle-button-background-color': 'orange',
+        '--terra-application-layout-navbar-toggle-width': '2rem',
+        '--terra-application-layout-navbar-toggle-border-right': '5px dotted yellow',
+        '--terra-application-layout-navbar-toggle-box-shadow': 'inset -2rem 0 0 0 green',
       },
     });
   });

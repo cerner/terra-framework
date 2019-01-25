@@ -26,7 +26,7 @@
   "peerDependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "terra-base": "^3.0.0"
+    "terra-base": "^4.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -34,10 +34,10 @@
     "react-onclickoutside": "^6.7.1",
     "react-portal": "^4.1.2",
     "resize-observer-polyfill": "^1.4.1",
-    "terra-button": "^2.0.0",
-    "terra-doc-template": "^1.0.0",
-    "terra-form-input": "^1.0.0",
-    "terra-form-select": "^4.0.0"
+    "terra-button": "^3.0.0",
+    "terra-doc-template": "^2.0.0",
+    "terra-form-input": "^2.0.0",
+    "terra-form-select": "^5.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

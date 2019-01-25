@@ -3,6 +3,10 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Change
+* Updated variable names to match new naming standard
+* Updated terra-core dependencies
+
 ### Changed
 * Remove use of componentWillReceiveProps
 

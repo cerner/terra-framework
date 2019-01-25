@@ -1,42 +1,52 @@
 :local {
   .header-utility-button {
     align-items: center;
-    background-color: var(--terra-application-header-utility-background-color, transparent);
-    border-radius: var(--terra-application-header-utility-border-radius);
-    border-width: var(--terra-application-header-utility-border-width, 0);
-    color: var(--terra-application-header-utility-color, #fff);
+    background-color: var(--terra-application-utility-header-background-color, transparent);
+    border-radius: var(--terra-application-utility-header-border-radius);
+    border-width: var(--terra-application-utility-header-border-width, 0);
+    color: var(--terra-application-utility-header-color, #fff);
     cursor: pointer;
     display: flex;
     font-family: inherit;
-    height: 100%;
-    justify-content: space-between;
-    padding-left: var(--terra-application-header-utility-padding-left, 0.5714rem);
-    padding-right: var(--terra-application-header-utility-padding-right, 0.5714rem);
+    height: var(--terra-application-utility-header-height, 100%);
+    justify-content: var(--terra-application-utility-header-justify-content, space-between);
+    padding-left: var(--terra-application-utility-header-padding-left, 0.5714rem);
+    padding-right: var(--terra-application-utility-header-padding-right, 0.5714rem);
     width: 100%;
 
     &:hover {
-      background-color: var(--terra-application-header-utility-hover-background-color);
+      background-color: var(--terra-application-utility-header-hover-background-color);
+
+      .icon {
+        color: var(--terra-application-utility-header-hover-icon-color);
+      }
     }
 
     &:focus {
-      box-shadow: var(--terra-application-header-utility-focus-box-shadow, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
+      background-color: var(--terra-application-utility-header-focus-background-color);
+      box-shadow: var(--terra-application-utility-header-focus-box-shadow, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
       outline: 0;
+
+      .icon {
+        color: var(--terra-application-utility-header-focus-icon-color);
+      }
     }
 
     .icon {
-      min-width: var(--terra-application-header-utility-icon-min-width, 1.857rem);
+      color: var(--terra-application-utility-header-icon-color);
+      width: var(--terra-application-utility-header-icon-width, 1.857rem);
     }
 
     .accessory {
-      height: var(--terra-application-header-utility-accessory-height, 1.875rem);
-      margin-right: var(--terra-application-header-utility-accessory-margin-right, 0.2143rem);
-      width: var(--terra-application-header-utility-accessory-width, 1.857rem);
+      height: var(--terra-application-utility-header-accessory-height, 1.875rem);
+      margin-right: var(--terra-application-utility-header-accessory-margin-right, 0.2143rem);
+      width: var(--terra-application-utility-header-accessory-width, 1.857rem);
     }
 
     .title {
-      font-size: var(--terra-application-header-utility-title-font-size, 1rem);
-      font-weight: var(--terra-application-header-utility-title-font-weight, normal);
-      margin-right: var(--terra-application-header-utility-title-margin-right, 0.2143rem);
+      font-size: var(--terra-application-utility-header-title-font-size, 1rem);
+      font-weight: var(--terra-application-utility-header-title-font-weight, normal);
+      margin-right: var(--terra-application-utility-header-title-margin-right, 0.2143rem);
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -45,29 +55,40 @@
 
   .menu-utility-button {
     align-items: center;
-    background-color: var(--terra-application-menu-utility-background-color, transparent);
-    border-bottom-width: var(--terra-application-menu-utility-border-right-width, 0);
-    border-left-width: var(--terra-application-menu-utility-border-left-width, 0);
-    border-radius: var(--terra-application-menu-utility-border-radius, 0);
-    border-right-width: var(--terra-application-menu-utility-border-right-width, 0);
-    border-top: var(--terra-application-menu-utility-border-top, 1px solid #a9a9a9);
-    color: var(--terra-application-menu-utility-color, #000);
+    background-color: var(--terra-application-utility-menu-background-color, transparent);
+    border-bottom-width: var(--terra-application-utility-menu-border-bottom-width, 0);
+    border-left-width: var(--terra-application-utility-menu-border-left-width, 0);
+    border-radius: var(--terra-application-utility-menu-border-radius, 0);
+    border-right-width: var(--terra-application-utility-menu-border-right-width, 0);
+    border-top: var(--terra-application-utility-menu-border-top, 1px solid #a9a9a9);
+    color: var(--terra-application-utility-menu-color, #000);
     cursor: pointer;
     display: flex;
     font-family: inherit;
     height: 100%;
     justify-content: space-between;
-    padding-bottom: var(--terra-application-menu-utility-padding-bottom, 0.5714rem);
-    padding-top: var(--terra-application-menu-utility-padding-top, 0.5714rem);
+    padding-bottom: var(--terra-application-utility-menu-padding-bottom, 0.5714rem);
+    padding-left: var(--terra-application-utility-menu-padding-left, 0.4286rem);
+    padding-right: var(--terra-application-utility-menu-padding-right, 0.4286rem);
+    padding-top: var(--terra-application-utility-menu-padding-top, 0.5714rem);
     width: 100%;
 
     &:hover {
-      background-color: var(--terra-application-menu-utility-hover-background-color);
+      background-color: var(--terra-application-utility-menu-hover-background-color);
+
+      .icon {
+        color: var(--terra-application-utility-menu-hover-icon-color);
+      }
     }
 
     &:focus {
-      box-shadow: var(--terra-application-menu-utility-focus-box-shadow, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
+      background-color: var(--terra-application-utility-menu-focus-background-color);
+      box-shadow: var(--terra-application-utility-menu-focus-box-shadow, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
       outline: 0;
+
+      .icon {
+        color: var(--terra-application-utility-menu-focus-icon-color);
+      }
     }
 
     /* stylelint-disable selector-max-compound-selectors*/
@@ -77,15 +98,15 @@
       justify-content: flex-start;
 
       .accessory {
-        height: var(--terra-application-menu-utility-accessory-height, 1.857rem);
-        margin-right: var(--terra-application-menu-accessory-photo-margin-right, 0.2143rem);
-        width: var(--terra-application-menu-utility-accessory-width, 1.857rem);
+        height: var(--terra-application-utility-menu-accessory-height, 1.857rem);
+        margin-right: var(--terra-application-utility-menu-accessory-photo-margin-right, 0.2143rem);
+        width: var(--terra-application-utility-menu-accessory-width, 1.857rem);
       }
 
       .title {
-        font-size: var(--terra-application-menu-utility-title-font-size, 1rem);
-        font-weight: var(--terra-application-menu-utility-title-font-size, normal);
-        margin-right: var(--terra-application-menu-utility-title-margin-right, 0.2143rem);
+        font-size: var(--terra-application-utility-menu-title-font-size, 1rem);
+        font-weight: var(--terra-application-utility-menu-title-font-weight, normal);
+        margin-right: var(--terra-application-utility-menu-title-margin-right, 0.2143rem);
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -93,7 +114,8 @@
     }
 
     .icon {
-      min-width: var(--terra-application-menu-utility-icon-min-width, 1.857rem);
+      color: var(--terra-application-utility-menu-icon-color);
+      width: var(--terra-application-utility-menu-icon-width, 1.857rem);
     }
     /* stylelint-enable selector-max-compound-selectors*/
   }
