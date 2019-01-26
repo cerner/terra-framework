@@ -568,7 +568,6 @@ const positionStyleFromBounds = (boundingRect, content, target, margin, behavior
 
   return {
     style: {
-      position: 'absolute',
       // eslint-disable-next-line no-restricted-globals
       left: `${Math.round(positions.content.x + pageXOffset)}px`,
       // eslint-disable-next-line no-restricted-globals
