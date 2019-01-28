@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+2.0.0 - (January 25, 2019)
+------------------
 ### Breaking Change
 * Added new variables for css theming
 * Updated terra-core dependencies
