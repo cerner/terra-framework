@@ -1,17 +1,17 @@
 :local {
   .divider {
     border-bottom-width: var(--terra-application-utility-menu-divider-border-bottom-width, 0);
-    border-left-width: var(--terra-application-utility-menu-divider-border-bottom-width, 0);
-    border-right-width: var(--terra-application-utility-menu-divider-border-bottom-right, 0);
-    border-top: var(--terra-application-utility-menu-divider-border-bottom, 1px solid #dedfe0);
+    border-left-width: var(--terra-application-utility-menu-divider-border-left-width, 0);
+    border-right-width: var(--terra-application-utility-menu-divider-border-right-width, 0);
+    border-top: var(--terra-application-utility-menu-divider-border-top, 1px solid #dedfe0);
     height: var(--terra-application-utility-menu-divider-height, 0.2143rem);
     width: 100%;
 
     &::after {
       border-bottom-width: var(--terra-application-utility-menu-divider-after-border-bottom-width, 0);
-      border-left-width: var(--terra-application-utility-menu-divider-after-border-bottom-width, 0);
-      border-right-width: var(--terra-application-utility-menu-divider-after-border-bottom-right, 0);
-      border-top: var(--terra-application-utility-menu-divider-border-after-bottom, 1px solid #dedfe0);
+      border-left-width: var(--terra-application-utility-menu-divider-after-border-left-width, 0);
+      border-right-width: var(--terra-application-utility-menu-divider-after-border-right-width, 0);
+      border-top: var(--terra-application-utility-menu-divider-after-border-top, 1px solid #dedfe0);
       content: '';
       display: block;
       height: var(--terra-application-utility-menu-divider-after-height, 0.2143rem);
@@ -26,4 +26,3 @@
     margin-bottom: var(--terra-application-utility-menu-divider-is-header-margin-bottom, 0);
   }
 }
-

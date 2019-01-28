@@ -3,6 +3,22 @@ Changelog
 
 Unreleased
 ----------
+
+3.0.0 - (January 25, 2019)
+------------------
+### Breaking Change
+* Updated variable names to match new naming standard
+* Added new variables for css theming
+* Removed variables for css theming
+* Updated terra-core dependencies
+
+2.36.0 - (January 5, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+2.35.0 - (January 2, 2019)
+------------------
 ### Changed
 * Removed use of componentWillMount from examples
 * Removed use of componentWillReceiveProps

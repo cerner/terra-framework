@@ -117,7 +117,7 @@ class ApplicationHeader extends React.Component {
 
     if (layoutConfig.toggleMenu) {
       return (
-        <div className={cx('toolbar-toggle')}>
+        <div className={cx('navbar-toggle')}>
           <button
             type="button"
             className={cx('toggle-button')}
@@ -236,7 +236,7 @@ class ApplicationHeader extends React.Component {
     } = this.props;
 
     const headerClassNames = cx([
-      'application-header',
+      'application-navbar',
       customProps.className,
     ]);
 

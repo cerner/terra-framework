@@ -12,7 +12,7 @@ describe('Popup', () => {
         '--terra-popup-content-inner-box-shadow': '10px 10px 36px blue',
         '--terra-popup-content-inner-background-color': 'yellow',
         '--terra-popup-content-inner-border': '10px dashed black',
-        '--terra-popup-arrow-inner-color': 'red',
+        '--terra-popup-right-align-arrow-after-border-left-color': 'red',
       },
     });
   });
@@ -29,7 +29,7 @@ describe('Popup', () => {
       testName: 'themed',
       properties: {
         '--terra-popup-content-header-border-bottom': '15px double red',
-        '--terra-popup-content-close-icon': 'green',
+        '--terra-popup-content-close-icon-background': 'green',
       },
     });
   });

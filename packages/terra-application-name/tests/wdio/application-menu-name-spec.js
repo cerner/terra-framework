@@ -9,20 +9,19 @@ describe('ApplicationMenuName', () => {
     Terra.should.themeCombinationOfCustomProperties({
       testName: 'themed',
       properties: {
-        '--terra-application-menu-name-align-items': 'left',
-        '--terra-application-menu-name-color': '#800080',
-        '--terra-application-menu-name-flex': '1 1 auto',
-        '--terra-application-menu-name-accessory-padding-left': '1rem',
-        '--terra-application-menu-name-title-font-weight': 'bold',
-        '--terra-application-menu-name-title-padding-left': '1rem',
-        '--terra-application-menu-name-title-padding-right': '3rem',
+        '--terra-application-name-menu-align-items': 'flex-start',
+        '--terra-application-name-menu-color': '#800080',
+        '--terra-application-name-menu-accessory-padding-right': '1rem',
+        '--terra-application-name-menu-title-font-weight': 'bold',
+        '--terra-application-name-menu-padding-left': '1rem',
+        '--terra-application-name-menu-padding-right': '3rem',
       },
     });
   });
 
-  describe('Displays a truncated application menu name', () => {
-    beforeEach(() => browser.url('/#/raw/tests/terra-application-name/application-name/application-menu-name-truncated'));
+  describe('Displays a wrapping application menu name', () => {
+    beforeEach(() => browser.url('/#/raw/tests/terra-application-name/application-name/application-menu-name-wrapping'));
 
-    Terra.should.matchScreenshot({ viewports, selector: '#truncated' });
+    Terra.should.matchScreenshot({ viewports, selector: '#wrapping' });
   });
 });

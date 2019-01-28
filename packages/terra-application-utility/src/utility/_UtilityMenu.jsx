@@ -79,21 +79,21 @@ class UtilityMenu extends React.Component {
       currentKey: props.initialSelectedKey,
       focusIndex: -1,
       previousKeyStack: [],
+      prevPropsInitialSelectedKey: props.initialSelectedKey,
+      prevPropsMenuItems: props.menuItems,
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.initialSelectedKey !== this.props.initialSelectedKey) {
-      this.setState({
-        currentKey: nextProps.initialSelectedKey,
-      });
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.initialSelectedKey !== prevState.prevPropsInitialSelectedKey) {
+      return { currentKey: nextProps.initialSelectedKey };
     }
 
-    if (nextProps.menuItems !== this.props.menuItems) {
-      this.setState({
-        map: processMenuItems(nextProps.menuItems),
-      });
+    if (nextProps.menuItems !== prevState.prevPropsMenuItems) {
+      return { map: processMenuItems(nextProps.menuItems) };
     }
+
+    return null;
   }
 
   componentDidUpdate() {
@@ -124,12 +124,13 @@ class UtilityMenu extends React.Component {
         content={item.content}
         contentLocation={item.contentLocation}
         isActive={isActive}
+        isReadOnly={item.isReadOnly}
         isSelected={item.isSelected}
         isSelectable={item.isSelectable}
         hasChevron={chevron}
         leftInset={leftInset}
         rightInset={rightInset}
-        onChange={this.handleOnChange}
+        onChange={item.isReadOnly ? () => {} : this.handleOnChange}
         onKeyDown={handleOnKeyDown}
         variant={this.props.variant}
       />
@@ -284,6 +285,10 @@ class UtilityMenu extends React.Component {
       { 'menu-utility-menu-noninitial-page-header-text': !firstPage && variant === Utils.VARIANTS.MENU },
     ]);
 
+    const closeButtonClassNames = cx([
+      { 'header-utility-menu-button-close': variant === Utils.VARIANTS.HEADER },
+    ]);
+
     const iconLeftClassNames = cx([
       'utility-menu-icon-left',
       { 'header-utility-menu-icon-left': variant === Utils.VARIANTS.HEADER },
@@ -317,6 +322,7 @@ class UtilityMenu extends React.Component {
         isIconOnly
         text={closeText}
         variant={Button.Opts.Variants.UTILITY}
+        className={closeButtonClassNames}
       />
     );
 
