@@ -188,9 +188,7 @@ const indexPath = '/page_1';
 
 const userAvatar = (
   <Avatar
-    variant="user"
     alt="User, Test"
-    ariaLabel="User, Test"
     key="user_avatar"
   />
 );
@@ -244,6 +242,12 @@ class ApplicationLayoutTest extends React.Component {
       title: 'Custom Checkbox Item',
       isSelectable: true,
       isSelected: checkboxItemEnabled,
+      parentKey: Utils.utilityHelpers.defaultKeys.MENU,
+    }, {
+      key: 'read-only-item',
+      title: 'Custom Read-Only Item',
+      id: 'readonly',
+      isReadOnly: true,
       parentKey: Utils.utilityHelpers.defaultKeys.MENU,
     }, {
       key: 'additional-3',

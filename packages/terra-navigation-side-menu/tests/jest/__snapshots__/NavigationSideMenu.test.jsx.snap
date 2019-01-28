@@ -2,6 +2,7 @@
 
 exports[`Layout should render a NavigationSideMenu with a toolbar 1`] = `
 <ContentContainer
+  className="side-menu-content-container"
   fill={true}
   header={
     <React.Fragment>
@@ -22,6 +23,7 @@ exports[`Layout should render a NavigationSideMenu with a toolbar 1`] = `
 
 exports[`Layout should render a NavigationSideMenu with default props 1`] = `
 <ContentContainer
+  className="side-menu-content-container"
   fill={true}
   header={
     <React.Fragment>
@@ -39,6 +41,7 @@ exports[`Layout should render a NavigationSideMenu with default props 1`] = `
 
 exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
 <ContentContainer
+  className="side-menu-content-container"
   fill={true}
   header={
     <React.Fragment>
@@ -53,11 +56,11 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
   }
 >
   <List
-    className="menu-list"
+    className="side-menu-list"
     isDivided={false}
   >
     <MenuItem
-      data-menu-item="Test Menu 1"
+      data-menu-item="test1"
       isSelected={false}
       key="test1"
       onClick={[Function]}
@@ -65,7 +68,7 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
       text="Test Menu 1"
     />
     <MenuItem
-      data-menu-item="Test Menu 2"
+      data-menu-item="test2"
       isSelected={false}
       key="test2"
       onClick={[Function]}
@@ -73,7 +76,7 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
       text="Test Menu 2"
     />
     <MenuItem
-      data-menu-item="Test Menu 3"
+      data-menu-item="test3"
       isSelected={false}
       key="test3"
       onClick={[Function]}
@@ -81,7 +84,7 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
       text="Test Menu 3"
     />
     <MenuItem
-      data-menu-item="Test Menu 4"
+      data-menu-item="test4"
       isSelected={false}
       key="test4"
       onClick={[Function]}

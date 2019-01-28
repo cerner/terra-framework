@@ -80,10 +80,11 @@ class ApplicationTabs extends React.Component {
     this.handleResize(this.contentWidth);
   }
 
-  componentWillReceiveProps(newProps) {
-    if (this.props.links.length !== newProps.links.length) {
+  shouldComponentUpdate(nextProps) {
+    if (this.props.links.length !== nextProps.links.length) {
       this.resetCalculations();
     }
+    return true;
   }
 
   componentDidUpdate() {
@@ -171,7 +172,7 @@ class ApplicationTabs extends React.Component {
     });
 
     return (
-      <div {...customProps} className={cx(['application-tabs'])}>
+      <div {...customProps} className={cx(['tabs-wrapper'])}>
         <div
           className={cx(['tabs-container', { 'is-calculating': this.isCalculating }, alignment])}
           role="tablist"
@@ -181,6 +182,7 @@ class ApplicationTabs extends React.Component {
           <TabMenu location={location} isHidden={this.menuHidden}>
             {hiddenChildren}
           </TabMenu>
+          <div className={cx(['divider-after-last-tab'])} />
         </div>
       </div>
     );
