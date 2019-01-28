@@ -3,7 +3,6 @@ Changelog
 
 Unreleased
 ----------
-
 4.21.0 - (December 5, 2018)
 ------------------
 ### Changed

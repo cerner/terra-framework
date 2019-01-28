@@ -36,13 +36,13 @@ The [Modal][4] component by default will trap focus. In order to interact with t
 [1]: https://github.com/Hacker0x01/react-datepicker
 [2]: http://momentjs.com/docs/
 [3]: https://github.com/cerner/terra-framework/tree/master/packages/terra-modal-manager/docs
-[4]: https://github.com/cerner/terra-framework/tree/master/packages/terra-modal/docs
-[5]: https://github.com/cerner/terra-framework/tree/master/packages/terra-app-delegate/docs
+[4]: https://github.com/cerner/terra-core/tree/master/packages/terra-modal/docs
+[5]: https://github.com/cerner/terra-core/tree/master/packages/terra-app-delegate/docs
 [6]: https://github.com/cerner/terra-core/tree/master/packages/terra-base/docs
-[7]: https://github.com/cerner/terra-framework/tree/master/packages/terra-date-picker/docs
+[7]: https://github.com/cerner/terra-core/tree/master/packages/terra-date-picker/docs
 [8]: https://github.com/cerner/terra-framework/tree/master/packages/terra-time-input/docs
-[9]: https://github.com/cerner/terra-framework/blob/master/packages/terra-date-time-picker/src/terra-dev-site/doc/example/DateTimePickerInsideModal.jsx
-[10]: https://github.com/cerner/terra-framework/blob/master/packages/terra-date-time-picker/src/terra-dev-site/common/DateTimePickerModalContainer.jsx
+[9]: https://github.com/cerner/terra-framework/blob/master/packages/terra-date-time-picker/tests/nightwatch/components/DateTimePickerInsideModal.jsx
+[10]: https://github.com/cerner/terra-framework/blob/master/packages/terra-date-time-picker/tests/nightwatch/components/DateTimePickerModalContainer.jsx
 
 ## Component Features
 * [Cross-Browser Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
