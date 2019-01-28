@@ -22,7 +22,7 @@ const AppRouter = () => (
           path: '/item_3',
           hasSubMenu: false,
           externalLink: {
-            path: 'http://terra-ui.com',
+            path: 'https://engineering.cerner.com/terra-ui/#/home/terra-ui/index',
             target: '_self',
           },
         }]}

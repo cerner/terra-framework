@@ -5,7 +5,7 @@ const testLinkConfig = [
     path: '/test2',
     text: 'External Link Example',
     externalLink: {
-      path: 'http://terra-ui.com',
+      path: 'https://engineering.cerner.com/terra-ui/#/home/terra-ui/index',
       target: '_self',
     },
   },

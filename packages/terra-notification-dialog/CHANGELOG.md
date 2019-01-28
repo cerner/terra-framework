@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update wdio spec to set the viewport at the top-level instead of in each test's before hook for faster execution
 
 1.17.0 - (January 5, 2019)
 ------------------
