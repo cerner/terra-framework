@@ -1,5 +1,8 @@
 ChangeLog
 =========
+### Breaking Change
+* Updated terra-core dependencies
+
 ### Added
 * Change logs to documentation on terra-dev-site
 

@@ -108,12 +108,18 @@ class NavigationSideMenu extends Component {
     this.handleItemClick = this.handleItemClick.bind(this);
 
     const { items, parents } = processMenuItems(props.menuItems);
-    this.state = { items, parents };
+    this.state = {
+      items,
+      parents,
+      prevPropsMenuItem: props.menuItems,
+    };
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { items, parents } = processMenuItems(nextProps.menuItems);
-    this.setState({ items, parents });
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.menuItems !== prevState.prevPropsMenuItem) {
+      return processMenuItems(nextProps.menuItems);
+    }
+    return null;
   }
 
   handleBackClick(event) {
@@ -171,14 +177,14 @@ class NavigationSideMenu extends Component {
         key={key}
         onClick={(event) => { this.handleItemClick(event, key); }}
         onKeyDown={onKeyDown}
-        data-menu-item={item.text}
+        data-menu-item={key}
       />
     );
   }
 
   buildListContent(currentItem) {
     return (currentItem && currentItem.childKeys && currentItem.childKeys.length
-      ? <List className={cx(['menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</List>
+      ? <List className={cx(['side-menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</List>
       : null
     );
   }
@@ -194,6 +200,9 @@ class NavigationSideMenu extends Component {
       ...customProps
     } = this.props;
     const currentItem = this.state.items[selectedMenuKey];
+    let sideMenuContentContainerClassNames = cx([
+      'side-menu-content-container',
+    ]);
 
     let onBack;
     const parentKey = this.state.parents[selectedMenuKey];
@@ -216,10 +225,12 @@ class NavigationSideMenu extends Component {
           {toolbar}
         </Fragment>
       );
+    } else {
+      sideMenuContentContainerClassNames = cx(['side-menu-content-container', 'is-root']);
     }
 
     return (
-      <ContentContainer {...customProps} header={header} fill>
+      <ContentContainer {...customProps} header={header} fill className={sideMenuContentContainerClassNames}>
         {this.buildListContent(currentItem)}
       </ContentContainer>
     );

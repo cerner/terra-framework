@@ -1,7 +1,7 @@
 {
   "name": "terra-popup",
   "main": "lib/Popup.js",
-  "version": "4.20.0",
+  "version": "5.0.0",
   "description": "The Terra Popup is higher order component that launches terra-hookshot positioned content with the ability to display a dynamic arrow.",
   "repository": {
     "type": "git",
@@ -23,26 +23,27 @@
   "peerDependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "terra-base": "^3.2.0"
+    "terra-base": "^4.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "focus-trap-react": "^4.0.1",
     "prop-types": "^15.5.8",
+    "react-intl": "^2.7.2",
     "react-portal": "^4.1.2",
-    "terra-button": "^2.31.1",
-    "terra-content-container": "^2.30.1",
-    "terra-disclosure-manager": "^3.1.0",
-    "terra-doc-template": "^1.22.0",
-    "terra-grid": "^4.2.0",
-    "terra-hookshot": "^4.15.0",
-    "terra-list": "^2.31.1",
-    "terra-mixins": "^1.23.0",
-    "terra-modal-manager": "^4.1.0"
+    "terra-button": "^3.0.0",
+    "terra-content-container": "^3.0.0",
+    "terra-disclosure-manager": "^4.0.0",
+    "terra-doc-template": "^2.0.0",
+    "terra-grid": "^5.0.0",
+    "terra-hookshot": "^5.0.0",
+    "terra-list": "^3.0.0",
+    "terra-mixins": "^1.0.0",
+    "terra-modal-manager": "^5.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
-    "compile:clean": "rimraf lib",
+    "compile:clean": "shx rm -rf lib",
     "compile:build": "babel src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
