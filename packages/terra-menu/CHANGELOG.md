@@ -1,10 +1,14 @@
 Changelog
 =========
 
-Unreleased
-----------
+3.29.0 - (January 2, 2019)
+------------------
 ### Changed
+* Minor dependency version bump
 * Removed usage of componentWillReceiveProps
+* Updated theme variables
+* Make menu item outline on focus themeable and provide browser default fallback.
+* Updated site examples to be more accessible.
 * Migrate package to the terra-framework repository
 
 3.28.1 - (November 20, 2018)
