@@ -3,82 +3,86 @@
   [dir=rtl] {
     // These are relative to screen coordinates, so no bi-di concerns
     .popup-arrow {
-      border: var(--terra-popup-arrow-size, 11px) solid transparent;
+      border-color: transparent;
+      border-style: solid;
+      border-width: var(--terra-popup-arrow-border-width, 11px);
       display: none;
       height: 0;
       left: 50%;
       position: absolute;
       top: 50%;
       width: 0;
-      z-index: var(--terra-popup-arrow-z-index, 7002);
+      z-index: 7002;
 
       &::after {
-        border: var(--terra-popup-arrow-inner-size, 10px) solid transparent;
+        border-color: transparent;
+        border-style: solid;
+        border-width: var(--terra-popup-arrow-after-border-width, 10px);
         content: '';
         height: 0;
         position: absolute;
         width: 0;
-        z-index: var(--terra-popup-arrow-inner-z-index, 7003);
+        z-index: 7003;
       }
     }
 
     .popup-arrow[data-align-arrow='top'] {
-      border-bottom-color: var(--terra-popup-arrow-color, #b2b5b6);
+      border-bottom-color: var(--terra-popup-top-align-arrow-border-bottom-color, #b2b5b6);
       border-top-width: 0;
       display: block;
       top: 0;
       transform: translate3d(-100%, -100%, 0);
 
       &::after {
-        border-bottom-color: var(--terra-popup-arrow-inner-color, #fff);
+        border-bottom-color: var(--terra-popup-top-align-arrow-after-border-bottom-color, #fff);
         border-top-width: 0;
-        left: calc(-1 * var(--terra-popup-arrow-inner-size, 10px));
-        top: var(--terra-popup-arrow-inner-inset-size, 2px);
+        left: calc(-1 * var(--terra-popup-top-align-arrow-after-left, 10px));
+        top: var(--terra-popup-top-align-arrow-after-top, 2px);
       }
     }
 
     .popup-arrow[data-align-arrow='bottom'] {
       border-bottom-width: 0;
-      border-top-color: var(--terra-popup-arrow-color, #b2b5b6);
+      border-top-color: var(--terra-popup-bottom-align-arrow-border-top-color, #b2b5b6);
       display: block;
       top: 100%;
       transform: translate3d(-100%, 0, 0);
 
       &::after {
         border-bottom-width: 0;
-        border-top-color: var(--terra-popup-arrow-inner-color, #fff);
-        bottom: var(--terra-popup-arrow-inner-inset-size, 2px);
-        left: calc(-1 * var(--terra-popup-arrow-inner-size, 10px));
+        border-top-color: var(--terra-popup-bottom-align-arrow-after-border-top-color, #fff);
+        bottom: var(--terra-popup-bottom-align-arrow-after-bottom, 2px);
+        left: calc(-1 * var(--terra-popup-bottom-align-arrow-after-left, 10px));
       }
     }
 
     .popup-arrow[data-align-arrow='left'] {
       border-left-width: 0;
-      border-right-color: var(--terra-popup-arrow-color, #b2b5b6);
+      border-right-color: var(--terra-popup-left-align-arrow-border-right-color, #b2b5b6);
       display: block;
       left: 0;
       transform: translate3d(-100%, -100%, 0);
 
       &::after {
         border-left-width: 0;
-        border-right-color: var(--terra-popup-arrow-inner-color, #fff);
-        left: var(--terra-popup-arrow-inner-inset-size, 2px);
-        top: calc(-1 * var(--terra-popup-arrow-inner-size, 10px));
+        border-right-color: var(--terra-popup-left-align-arrow-after-border-right-color, #fff);
+        left: var(--terra-popup-left-align-arrow-after-left, 2px);
+        top: calc(-1 * var(--terra-popup-left-align-arrow-after-top, 10px));
       }
     }
 
     .popup-arrow[data-align-arrow='right'] {
-      border-left-color: var(--terra-popup-arrow-color, #b2b5b6);
+      border-left-color: var(--terra-popup-right-align-arrow-border-left-color, #b2b5b6);
       border-right-width: 0;
       display: block;
       left: 100%;
       transform: translate3d(0, -100%, 0);
 
       &::after {
-        border-left-color: var(--terra-popup-arrow-inner-color, #fff);
+        border-left-color: var(--terra-popup-right-align-arrow-after-border-left-color, #fff);
         border-right-width: 0;
-        right: var(--terra-popup-arrow-inner-inset-size, 2px);
-        top: calc(-1 * var(--terra-popup-arrow-inner-size, 10px));
+        right: var(--terra-popup-right-align-arrow-after-right, 2px);
+        top: calc(-1 * var(--terra-popup-right-align-arrow-after-top, 10px));
       }
     }
   }

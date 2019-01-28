@@ -22,7 +22,7 @@ exports[`LayoutSlidePanel should render when small 1`] = `
       isScrollable={false}
       onRequestClose={[Function]}
       rootSelector="[data-terra-base]"
-      zIndex="100"
+      zIndex="6000"
     />
     <main
       className="main-container"
@@ -59,7 +59,7 @@ exports[`LayoutSlidePanel should render when tiny 1`] = `
       isScrollable={false}
       onRequestClose={[Function]}
       rootSelector="[data-terra-base]"
-      zIndex="100"
+      zIndex="6000"
     />
     <main
       className="main-container"
@@ -96,7 +96,7 @@ exports[`LayoutSlidePanel should render with provided props 1`] = `
       isScrollable={false}
       onRequestClose={[Function]}
       rootSelector="[data-terra-base]"
-      zIndex="100"
+      zIndex="6000"
     />
     <main
       className="main-container"
@@ -128,7 +128,7 @@ exports[`LayoutSlidePanel should render without optional props 1`] = `
       isRelativeToContainer={true}
       isScrollable={false}
       rootSelector="[data-terra-base]"
-      zIndex="100"
+      zIndex="6000"
     />
     <main
       className="main-container"

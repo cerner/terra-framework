@@ -1,7 +1,7 @@
 {
   "name": "terra-disclosure-manager",
   "main": "lib/DisclosureManager.js",
-  "version": "3.3.0",
+  "version": "4.0.0",
   "description": "A stateful component used to manage disclosure presentation.",
   "repository": {
     "type": "git",
@@ -24,19 +24,19 @@
   "peerDependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "terra-base": "^3.0.0"
+    "terra-base": "^4.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-action-header": "^1.0.0",
-    "terra-button": "^2.0.0",
-    "terra-content-container": "^2.0.0",
-    "terra-doc-template": "^1.0.0"
+    "terra-action-header": "^2.0.0",
+    "terra-button": "^3.0.0",
+    "terra-content-container": "^3.0.0",
+    "terra-doc-template": "^2.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
-    "compile:clean": "rimraf lib",
+    "compile:clean": "shx rm -rf lib",
     "compile:build": "babel src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",

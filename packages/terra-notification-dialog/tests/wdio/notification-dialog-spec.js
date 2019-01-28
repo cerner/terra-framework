@@ -122,10 +122,10 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
       testName: 'themed',
       selector: '#root',
       properties: {
-        '--notification-dialog-background': '#FFFF33',
-        '--notification-dialog-body-font-size': '0.15rem',
-        '--notification-dialog-body-padding': '2.5rem',
-        '--notification-dialog-body-width': '45rem',
+        '--terra-notification-dialog-background': '#FFFF33',
+        '--terra-notification-dialog-body-font-size': '0.15rem',
+        '--terra-notification-dialog-body-padding': '2.5rem',
+        '--terra-notification-dialog-body-width': '45rem',
         '--terra-notification-dialog-title-color': '#c00',
         '--terra-notification-dialog-title-font-size': '3rem',
         '--terra-notification-dialog-message-color': '#c00',
@@ -147,7 +147,7 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
       testName: 'themed',
       selector: '#root',
       properties: {
-        '--terra-notification-dialog-alert-icon': '#000',
+        '--terra-notification-dialog-alert-icon-background': '#000',
       },
     });
   });

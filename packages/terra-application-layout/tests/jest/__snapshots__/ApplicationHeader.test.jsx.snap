@@ -2,7 +2,7 @@
 
 exports[`ApplicationHeader should render default component 1`] = `
 <div
-  className="application-header"
+  className="application-navbar"
 >
   <InjectIntl(ApplicationHeaderLayout)
     extensions={null}
@@ -16,7 +16,7 @@ exports[`ApplicationHeader should render default component 1`] = `
 
 exports[`ApplicationHeader should render props 1`] = `
 <div
-  className="application-header"
+  className="application-navbar"
   id="test-header"
 >
   <InjectIntl(ApplicationHeaderLayout)

@@ -3,8 +3,18 @@ Changelog
 
 Unreleased
 ----------
+
+5.0.0 - (January 25, 2019)
+------------------
+### Breaking Change
+* Updated variable names to match new naming standard
+* Added new variables for css theming
+* Removed variables for css theming
+* Updated terra-core dependencies
+
 ### Changed
 * Remove use of componentWillReceiveProps
+* Add css variable to text-transform the text values in the tabs
 
 4.23.0 - (January 5, 2019)
 ------------------

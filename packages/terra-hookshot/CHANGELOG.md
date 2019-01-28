@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+5.0.0 - (January 25, 2019)
+------------------
+### Breaking Change
+* Updated terra-core dependencies
+
 ### Changed
 * Removed usage of componentWillReceiveProps
 
