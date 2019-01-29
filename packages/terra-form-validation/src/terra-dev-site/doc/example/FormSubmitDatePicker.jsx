@@ -2,24 +2,20 @@
 
 import React from 'react';
 import { Form, Field } from 'react-final-form';
-import InputField from 'terra-form-input/lib/InputField';
+import DatePicker from 'terra-date-picker';
+import TerraField from 'terra-form-field';
 import Button from 'terra-button';
 import Spacer from 'terra-spacer';
 
-const validateUniqueUser = async (name) => {
-  const response = new Promise((resolve) => {
-    if (!name) {
-      return resolve('Required');
-    }
-    if (name !== 'TerraUser') {
-      return resolve('');
-    }
+const validateDate = (value) => {
+  if (!value) {
+    return 'Required';
+  }
+  if (value.search(/[0-1][0-9]\/([0-2][0-9]|3[0-1])\/[0-9]{4}/i) <= -1) {
+    return 'Date is Invalid';
+  }
 
-    return resolve('Name is Unavailable');
-  });
-
-  await response;
-  return response;
+  return undefined;
 };
 
 export default class MainEntry extends React.Component {
@@ -42,21 +38,22 @@ export default class MainEntry extends React.Component {
         onSubmit={handleSubmit}
       >
         <Field
-          name="user_name"
-          validate={validateUniqueUser}
+          name="user_date"
+          validate={validateDate}
         >
           {({ input, meta }) => (
-            <InputField
-              inputId="user-name-async"
-              label="User Name"
+            <TerraField
+              label="Enter your birthday"
               error={meta.error}
-              help="TerraUser is unavailable. Use this name to test async"
               isInvalid={meta.submitFailed && meta.error !== undefined}
-              onChange={(e) => { input.onChange(e.target.value); }}
-              inputAttrs={{ ...input }}
-              value={input.value}
               required
-            />
+            >
+              <DatePicker
+                name="user_date"
+                id="default"
+                onChangeRaw={(event, date) => { input.onChange(date); }}
+              />
+            </TerraField>
           )}
         </Field>
         <Button text="Submit" type={Button.Opts.Types.SUBMIT} />
@@ -70,7 +67,6 @@ export default class MainEntry extends React.Component {
         <Form
           onSubmit={this.submitForm}
           render={this.renderForm}
-          validateOnBlur
         />
         {this.state.submittedValues
           && (
