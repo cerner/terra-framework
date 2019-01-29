@@ -226,3 +226,52 @@ render() {
   );
 }
 ```
+
+## DatePicker
+
+The DatePicker can be used as well with react-final-form. One thing to note is that the onChange function for a DatePicker doesn't store the value on the event object, as that isn't a native input. For your onChange function, be sure that you use both event and value arguments that are returned, and that the onChange function for react-final-form uses the value argument. Finally, a field is not provided with the DatePicker, so it's recommended to combine terra-date-picker with terra-form-field.
+
+### Example
+
+```jsx
+import React from 'react';
+import { Form, Field } from react-final-form;
+import DatePicker from 'terra-date-picker';
+import TerraField from 'terra-form-field';
+
+const validateDate = (value) => {
+  if (!value) {
+    return 'Required';
+  }
+  if (value.search(/[0-1][0-9]\/([0-2][0-9]|3[0-1])\/[0-9]{4}/i) <= -1) {
+    return 'Date is Invalid';
+  }
+
+  return undefined;
+};
+
+<form
+  onSubmit={handleSubmit}
+>
+  <Field
+    name="user_date"
+    validate={validateDate}
+  >
+    {({ input, meta }) => (
+      <TerraField
+        label="Enter your birthday"
+        error={meta.error}
+        isInvalid={meta.submitFailed && meta.error !== undefined}
+        required
+      >
+        <DatePicker
+          name="user_date"
+          id="default"
+          onChangeRaw={(event, date) => { input.onChange(date); }}
+        />
+      </TerraField>
+    )}
+  </Field>
+  <Button text="Submit" type={Button.Opts.Types.SUBMIT} />
+</form>
+```
