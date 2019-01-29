@@ -1,4 +1,4 @@
-# Terra Modal Manager - Upgrade Guide
+# Terra Slide Panel Manager - Upgrade Guide
 
 ## Upgrading from v2.x to v3.x
 
