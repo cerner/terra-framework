@@ -5,11 +5,11 @@
   }
 
   .header-utility-menu {
-    background-color: var(--terra-application-header-utility-menu-background-color);
+    background-color: var(--terra-application-utility-header-type-menu-background-color);
   }
 
   .menu-utility-menu {
-    background-color: var(--terra-application-menu-utility-menu-background-color);
+    background-color: var(--terra-application-utility-menu-type-menu-background-color);
   }
 
   .utility-menu-header {
@@ -19,52 +19,68 @@
   }
 
   .header-utility-menu-header {
-    font-size: var(--terra-application-header-utility-menu-header-font-size, 1rem);
-    font-weight: var(--terra-application-header-utility-menu-header-font-weight, normal);
-    line-height: var(--terra-application-header-utility-menu-header-line-height, 1.2);
-    margin-top: var(--terra-application-header-utility-header-margin-top, 0.7143rem);
+    color: var(--terra-application-utility-header-type-menu-header-color);
+    font-size: var(--terra-application-utility-header-type-menu-header-font-size, 1rem);
+    font-weight: var(--terra-application-utility-header-type-menu-header-font-weight, normal);
+    line-height: var(--terra-application-utility-header-type-menu-header-line-height, 1.2);
+    margin-top: var(--terra-application-utility-header-type-menu-header-margin-top, 0.7143rem);
   }
 
   .menu-utility-menu-header {
-    font-size: var(--terra-application-menu-utility-menu-header-font-size, 1rem);
-    font-weight: var(--terra-application-menu-utility-menu-header-font-weight, normal);
-    line-height: var(--terra-application-header-utility-menu-header-line-height, 1.2);
-    margin-top: var(--terra-application-menu-utility-header-margin-top, 0.7143rem);
+    color: var(--terra-application-utility-menu-type-menu-header-color);
+    font-size: var(--terra-application-utility-menu-type-menu-header-font-size, 1rem);
+    font-weight: var(--terra-application-utility-menu-type-menu-header-font-weight, normal);
+    line-height: var(--terra-application-utility-menu-type-menu-header-line-height, 1.2);
+    margin-top: var(--terra-application-utility-menu-type-menu-header-margin-top, 0.7143rem);
   }
 
   .utility-menu-content-container {
     display: flex;
     justify-content: space-between;
+    min-height: var(--terra-application-utility-header-type-menu-header-min-height);
   }
 
   .header-utility-menu-content-container {
-    margin-bottom: var(--terra-application-header-utility-header-margin-bottom, 0.7143rem);
+    margin-bottom: var(--terra-application-utility-header-type-menu-header-margin-bottom, 0.7143rem);
   }
 
   .menu-utility-menu-content-container {
-    margin-bottom: var(--terra-application-menu-utility-header-margin-bottom, 0.7143rem);
+    margin-bottom: var(--terra-application-utility-menu-type-menu-header-margin-bottom, 0.7143rem);
   }
 
   .utility-menu-left-content-container {
     align-items: center;
     display: flex;
     justify-content: flex-start;
+    overflow: hidden;
   }
 
   .header-utility-menu-initial-page-header-text {
-    margin-left: var(--terra-application-header-utility-menu-initial-page-header-text-margin-left, 0.7143rem);
+    margin-left: var(--terra-application-utility-header-type-menu-initial-page-header-text-margin-left, 0.7143rem);
+    overflow: hidden;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
 
   .menu-utility-menu-initial-page-header-text {
-    margin-left: var(--terra-application-menu-utility-menu-initial-page-header-text-margin-left, 0.7143rem);
+    margin-left: var(--terra-application-utility-menu-type-menu-initial-page-header-text-margin-left, 0.7143rem);
+    overflow: hidden;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
 
   .header-utility-menu-noninitial-page-header-text {
-    margin-left: var(--terra-application-header-utility-menu-noninitial-page-header-text-margin-left, 0);
+    margin-left: var(--terra-application-utility-header-type-menu-noninitial-page-header-text-margin-left, 0);
+    overflow: hidden;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
 
   .menu-utility-menu-noninitial-page-header-text {
-    margin-left: var(--terra-application-menu-utility-menu-noninitial-page-header-text-margin-left, 0);
+    margin-left: var(--terra-application-utility-menu-type-menu-noninitial-page-header-text-margin-left, 0);
+    overflow: hidden;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
 
   .utility-menu-icon-left {
@@ -72,11 +88,11 @@
   }
 
   .header-utility-menu-icon-left {
-    width: var(--terra-application-header-utility-menu-chevron-width, 0.7143rem);
+    width: var(--terra-application-utility-header-type-menu-back-icon-width, 0.7143rem);
   }
 
   .menu-utility-menu-icon-left {
-    width: var(--terra-application-menu-utility-menu-chevron-width, 0.7143rem);
+    width: var(--terra-application-utility-menu-type-menu-back-icon-width, 0.7143rem);
   }
 
   .utility-menu-right-content-container {
@@ -84,16 +100,21 @@
     justify-content: flex-end;
   }
 
+  .header-utility-menu-button-close {
+    display: var(--terra-application-utility-header-type-menu-button-close-display);
+  }
+
   .utility-menu-icon-close {
     flex-shrink: 0;
   }
 
   .header-utility-menu-icon-close {
-    width: var(--terra-application-header-utility-menu-page-chevron-width, 1rem);
+    display: var(--terra-application-utility-header-type-menu-page-display);
+    width: var(--terra-application-utility-header-type-menu-page-close-icon-width, 1rem);
   }
 
   .menu-utility-menu-icon-close {
-    width: var(--terra-application-menu-utility-menu-page-chevron-width, 1rem);
+    width: var(--terra-application-utility-menu-type-menu-page-close-icon-width, 1rem);
   }
 
   .utility-menu-body {
@@ -107,5 +128,6 @@
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
+    margin-bottom: var(--terra-application-utility-menu-margin-bottom);
   }
 }

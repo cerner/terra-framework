@@ -3,8 +3,14 @@ Changelog
 
 Unreleased
 ----------
-### Added
-* New CSS custom property: `--terra-layout-slide-panel-squish-panel-border-right-width`
+
+3.0.0 - (January 25, 2019)
+------------------
+### Breaking Change
+* Updated variable names to match new naming standard
+* Added new variables for css theming
+* Removed variables for css theming
+* Updated terra-core dependencies
 
 ### Changed
 * Remove use of componentWillReceiveProps

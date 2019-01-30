@@ -1,27 +1,41 @@
 /* stylelint-disable selector-class-pattern */
 :local {
   .application-header-name {
-    align-items: var(--terra-application-header-name-align-items, center);
-    color: var(--terra-application-header-name-color, #fff);
+    align-items: var(--terra-application-name-header-align-items, center);
+    box-sizing: border-box;
+    color: var(--terra-application-name-header-color, #fff);
     display: flex;
-    flex: var(--terra-application-header-name-flex, 0 0 auto);
+    flex: 1 1 auto;
+    font-family: inherit;
+    font-size: var(--terra-application-name-header-font-size, 1.0714285714rem);
+    height: 100%;
+    letter-spacing: var(--terra-application-name-header-letter-spacing);
+    line-height: var(--terra-application-name-header-line-height);
     max-width: 100%;
+    padding-bottom: var(--terra-application-name-header-padding-bottom, 0.357143rem);
+    padding-left: var(--terra-application-name-header-padding-left, 0.357143rem);
+    padding-right: var(--terra-application-name-header-padding-right, 0.357143rem);
+    padding-top: var(--terra-application-name-header-padding-top, 0.357143rem);
   }
 
   .accessory {
+    display: var(--terra-application-name-header-accessory-display, block);
     flex: 0 0 auto;
-    padding-left: var(--terra-application-header-name-accessory-padding-left, 0.3571rem);
+    line-height: 0;
+    max-width: 100%;
+    padding-right: var(--terra-application-name-header-accessory-padding-right, 0.357143rem);
   }
 
   .title {
     flex: 0 1 auto;
-    font-weight: var(--terra-application-header-name-title-font-weight, bold);
-    overflow: var(--terra-application-header-name-title-overflow, hidden);
-    padding-left: var(--terra-application-header-name-title-padding-left, 0.3571rem);
-    padding-right: var(--terra-application-header-name-title-padding-right, 0.3571rem);
-    text-overflow: var(--terra-application-header-name-text-overflow, ellipsis);
-    white-space: var(--terra-application-header-name-white-space, nowrap);
-    word-break: var(--terra-application-header-name-word-break, normal);
-    word-wrap: var(--terra-application-header-name-word-wrap, normal);
+    font-weight: var(--terra-application-name-header-title-font-weight, bold);
+    overflow: var(--terra-application-name-header-title-overflow, hidden);
+    padding-left: var(--terra-application-name-header-title-padding-left);
+    padding-right: var(--terra-application-name-header-title-padding-right);
+    text-overflow: var(--terra-application-name-header-title-text-overflow, ellipsis);
+    text-shadow: var(--terra-application-name-header-title-text-shadow);
+    white-space: var(--terra-application-name-header-title-white-space, nowrap);
+    word-break: var(--terra-application-name-header-title-word-break, normal);
+    word-wrap: var(--terra-application-name-header-title-word-wrap, normal);
   }
 }

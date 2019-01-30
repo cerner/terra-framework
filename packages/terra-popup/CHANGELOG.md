@@ -3,6 +3,15 @@ Changelog
 
 Unreleased
 ----------
+
+5.0.0 - (January 25, 2019)
+------------------
+### Breaking Change
+* Updated variable names to match new naming standard
+* Added new variables for css theming
+* Removed variables for css theming
+* Updated terra-core dependencies
+
 ### Fixed
 * Removed 'close' class from `_PopupContent` button
 * Added text prop to `_PopupContent` button for conversion to aria-label in Button component

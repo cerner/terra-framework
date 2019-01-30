@@ -35,7 +35,7 @@
 | shx | ^0.3.2 | -- | Portable Shell Commands for Node |
 | stylelint | ^9.2.0 | -- | A mighty, modern CSS linter. |
 | stylelint-config-terra | ^1.0.0 | -- | Terra Stylelint Shared Config |
-| terra-base | ^3.0.0 | ^16.4.2 | The base component sets minimal global styles for an application. |
+| terra-base | ^4.0.0 | ^16.4.2 | The base component sets minimal global styles for an application. |
 | terra-dev-site | ^2.0.0 | ^16.4.2 | Dynamically builds a react-hash-routed site based on site configuration, navigation configuration and component configuration. |
 | terra-toolkit | ^4.16.0 | -- | Utilities to help when developing terra modules. |
 | xfc | ^1.2.1 | -- | A Cross Frame Container that handles securely embedding web content into a 3rd party domain |

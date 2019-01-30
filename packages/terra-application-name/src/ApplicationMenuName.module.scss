@@ -1,34 +1,42 @@
 /* stylelint-disable selector-class-pattern */
 :local {
   .application-menu-name {
-    align-items: var(--terra-application-menu-name-align-items, center);
-    border-bottom: var(--terra-application-menu-name-border-bottom, 1px solid #a9a9a9);
-    color: var(--terra-application-menu-name-color, #fff);
+    align-items: var(--terra-application-name-menu-align-items, center);
+    border-bottom: var(--terra-application-name-menu-border-bottom, 1px solid #a9a9a9);
+    box-sizing: border-box;
+    color: var(--terra-application-name-menu-color, #fff);
     display: flex;
-    flex: var(--terra-application-menu-name-flex, 0 0 auto);
-    height: var(--terra-application-menu-name-height, 3.5725rem);
-    max-width: 100%;
-    padding-bottom: var(--terra-application-menu-name-padding-bottom, 0.3571rem);
-    padding-top: var(--terra-application-menu-name-padding-top, 0.3571rem);
+    flex: 0 0 auto;
+    font-size: var(--terra-application-name-menu-font-size, 1.0714285714rem);
+    letter-spacing: var(--terra-application-name-menu-letter-spacing);
+    line-height: var(--terra-application-name-menu-line-height);
+    min-height: var(--terra-application-name-menu-min-height, 3.5725rem);
+    padding-bottom: var(--terra-application-name-menu-padding-bottom, 0.3571rem);
+    padding-left: var(--terra-application-name-menu-padding-left, 0.3571rem);
+    padding-right: var(--terra-application-name-menu-padding-right, 0.3571rem);
+    padding-top: var(--terra-application-name-menu-padding-top, 0.3571rem);
     position: relative;
     width: 100%;
   }
 
   .accessory {
+    display: var(--terra-application-name-menu-accessory-display, block);
     flex: 0 0 auto;
+    line-height: 0;
     max-width: 100%;
-    padding-left: var(--terra-application-menu-name-accessory-padding-left, 0.3571rem);
+    padding-right: var(--terra-application-name-menu-accessory-padding-right, 0.3571rem);
   }
 
   .title {
     flex: 0 1 auto;
-    font-weight: var(--terra-application-header-name-title-font-weight, bold);
-    overflow: var(--terra-application-menu-name-title-overflow, hidden);
-    padding-left: var(--terra-application-menu-name-title-padding-left, 0.3571rem);
-    padding-right: var(--terra-application-menu-name-title-padding-right, 0.3571rem);
-    text-overflow: var(--terra-application-menu-name-text-overflow, ellipsis);
-    white-space: var(--terra-application-menu-name-white-space, nowrap);
-    word-break: var(--terra-application-menu-name-word-break, normal);
-    word-wrap: var(--terra-application-menu-name-word-wrap, normal);
+    font-weight: var(--terra-application-name-menu-title-font-weight, bold);
+    overflow: var(--terra-application-name-menu-title-overflow);
+    padding-left: var(--terra-application-name-menu-title-padding-left);
+    padding-right: var(--terra-application-name-menu-title-padding-right);
+    text-overflow: var(--terra-application-name-menu-title-text-overflow);
+    text-shadow: var(--terra-application-name-menu-title-text-shadow);
+    white-space: var(--terra-application-name-menu-title-white-space);
+    word-break: var(--terra-application-name-menu-title-word-break, break-word);
+    word-wrap: var(--terra-application-name-menu-title-word-wrap, break-word);
   }
 }

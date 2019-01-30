@@ -12,8 +12,8 @@ describe('ApplicationMenu', () => {
     Terra.should.themeCombinationOfCustomProperties({
       testName: 'themed',
       properties: {
-        '--terra-application-menu-background-color': 'pink',
-        '--terra-application-menu-header-background-color': 'blue',
+        '--terra-application-layout-menu-background-color': 'pink',
+        '--terra-application-layout-menu-header-background-color': 'blue',
       },
     });
   });
