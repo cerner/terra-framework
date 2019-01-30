@@ -5,8 +5,8 @@ import UpgradeGuide from '../../../../docs/UPGRADEGUIDE.md';
 
 const DocPage = () => (
   <DocTemplate
-    packageName="terra-menu"
-    srcPath="https://github.com/cerner/terra-framework/tree/master/packages/terra-menu"
+    packageName="terra-tabs"
+    srcPath="https://github.com/cerner/terra-framework/tree/master/packages/terra-tabs"
     readme={UpgradeGuide}
   />
 );
