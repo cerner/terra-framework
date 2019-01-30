@@ -6,7 +6,7 @@ import UpgradeGuide from '../../../../docs/UPGRADEGUIDE.md';
 const DocPage = () => (
   <DocTemplate
     packageName="terra-date-time-picker"
-    srcPath="https://github.com/cerner/terra-core/tree/master/packages/terra-date-time-picker"
+    srcPath="https://github.com/cerner/terra-framework/tree/master/packages/terra-date-time-picker"
     readme={UpgradeGuide}
   />
 );
