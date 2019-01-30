@@ -13,6 +13,10 @@ Unreleased
 * Updated terra-core dependencies
 
 ### Changed
+* Application Links Role from tab to link
+
+------------------
+### Changed
 * Remove use of componentWillReceiveProps
 * Add css variable to text-transform the text values in the tabs
 

@@ -131,7 +131,7 @@ class ApplicationTab extends React.Component {
 
     let ComponentClass = 'div';
     if (!isCollapsed) {
-      tabAttr.role = 'tab';
+      tabAttr.role = 'link';
       ComponentClass = 'button';
     }
 
