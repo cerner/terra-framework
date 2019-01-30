@@ -29,6 +29,7 @@ export default () => (
           backgroundColor: 'transparent',
           color: '#0065a3',
           textDecoration: 'none',
+          aria-label: "Terra UI Home",
         }}
       >
         <svg
