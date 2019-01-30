@@ -125,6 +125,7 @@ Please review [Terra's Internationalization documentation](https://engineering.c
 - [terra-menu](https://github.com/cerner/terra-framework/tree/master/packages/terra-menu)
 - [terra-notification-dialog](https://github.com/cerner/terra-framework/tree/master/packages/terra-notification-dialog)
 - [terra-popup](https://github.com/cerner/terra-framework/tree/master/packages/terra-popup)
+- [terra-tabs](https://github.com/cerner/terra-framework/tree/master/packages/terra-tabs)
 - [terra-time-input](https://github.com/cerner/terra-framework/tree/master/packages/terra-time-input)
 
 <h2 id="contributing">
