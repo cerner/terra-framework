@@ -1,46 +1,66 @@
 :local {
   .header-utility-body-item {
-    background-color: var(--terra-application-header-utility-menu-body-item-background-color);
-    color: var(--terra-application-header-utility-menu-body-item-font-color);
+    background-color: var(--terra-application-utility-header-body-item-background-color);
+    color: var(--terra-application-utility-header-body-item-font-color);
     cursor: pointer;
     font-family: inherit;
-    font-size: var(--terra-application-header-utility-menu-body-item-font-size, 1rem);
+    font-size: var(--terra-application-utility-header-body-item-font-size, 1rem);
     list-style-type: none;
-    margin-bottom: var(--terra-application-header-utility-menu-body-item-margin-bottom, 0.3571rem);
-    margin-top: var(--terra-application-header-utility-menu-body-item-margin-top, 0.3571rem);
+    margin-bottom: var(--terra-application-utility-header-body-item-margin-bottom, 0.3571rem);
+    margin-top: var(--terra-application-utility-header-body-item-margin-top, 0.3571rem);
     max-width: 100%;
     overflow-wrap: break-word;
-    padding-bottom: var(--terra-application-header-utility-menu-body-item-padding-bottom, 0.3571rem);
-    padding-left: var(--terra-application-header-utility-menu-body-item-padding-left, 0.2143rem);
-    padding-top: var(--terra-application-header-utility-menu-body-item-padding-top, 0.3571rem);
+    padding-bottom: var(--terra-application-utility-header-body-item-padding-bottom, 0.3571rem);
+    padding-left: var(--terra-application-utility-header-body-item-padding-left, 0.2143rem);
+    padding-top: var(--terra-application-utility-header-body-item-padding-top, 0.3571rem);
     text-overflow: ellipsis;
     white-space: normal;
     word-break: break-word;
     word-wrap: break-word;
 
     .default-left-inset {
-      margin-left: var(--terra-application-header-utility-menu-body-item-margin-left, 0.6429rem);
+      margin-left: var(--terra-application-utility-header-body-item-margin-left, 0.6429rem);
     }
 
     .default-right-inset {
-      margin-right: var(--terra-application-header-utility-menu-body-item-margin-right, 0.6429rem);
+      margin-right: var(--terra-application-utility-header-body-item-margin-right, 0.6429rem);
     }
 
     &:hover {
-      background-color: var(--terra-application-header-utility-menu-body-item-hover-background-color, #ebf6fd);
+      background-color: var(--terra-application-utility-header-body-item-hover-background-color, #ebf6fd);
+
+      .checkmark {
+        color: var(--terra-application-utility-header-body-item-checkmark-hover-color);
+      }
+
+      .chevron {
+        color: var(--terra-application-utility-header-body-item-chevron-hover-color);
+      }
+
     }
 
     &:focus {
-      box-shadow: var(--terra-application-header-utility-menu-body-item-focus-box-shadow, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
+      background-color: var(--terra-application-utility-header-body-item-focus-background-color);
+      box-shadow: var(--terra-application-utility-header-body-item-focus-box-shadow, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
       outline: 0;
+
+      .checkmark {
+        color: var(--terra-application-utility-header-body-item-checkmark-focus-color);
+      }
+
+      .chevron {
+        color: var(--terra-application-utility-header-body-item-chevron-focus-color);
+      }
+
     }
 
     .checkmark {
+      color: var(--terra-application-utility-header-body-item-checkmark-color);
       flex-shrink: 0;
-      margin-left: var(--terra-application-header-utility-menu-body-item-checkmark-margin-left, 0.2857rem);
-      margin-right: var(--terra-application-header-utility-menu-body-item-checkmark-margin-right, 0.6rem);
+      margin-left: var(--terra-application-utility-header-body-item-checkmark-margin-left, 0.2857rem);
+      margin-right: var(--terra-application-utility-header-body-item-checkmark-margin-right, 0.6rem);
       visibility: hidden;
-      width: var(--terra-application-header-utility-menu-body-item-checkmark-width, 0.7143rem);
+      width: var(--terra-application-utility-header-body-item-checkmark-width, 0.7143rem);
     }
 
     .selected.checkmark {
@@ -48,9 +68,10 @@
     }
 
     .chevron {
-      margin-right: var(--terra-application-header-utility-menu-body-item-chevron-margin-right, 0.2143rem);
+      color: var(--terra-application-utility-header-body-item-chevron-color);
+      margin-right: var(--terra-application-utility-header-body-item-chevron-margin-right, 0.2143rem);
       visibility: hidden;
-      width: var(--terra-application-header-utility-menu-body-item-chevron-width, 0.7143rem);
+      width: var(--terra-application-utility-header-body-item-chevron-width, 0.7143rem);
     }
 
     .chevron.has-chevron {
@@ -59,59 +80,76 @@
   }
 
   .header-utility-footer-item {
-    background-color: var(--terra-application-header-utility-menu-footer-item-background-color, #dedfe0);
-    border-radius: var(--terra-application-header-utility-menu-footer-item-border-radius);
-    color: var(--terra-application-header-utility-menu-footer-item-font-color);
+    background-color: var(--terra-application-utility-header-footer-item-background-color, #dedfe0);
+    color: var(--terra-application-utility-header-footer-item-font-color);
     cursor: pointer;
     font-family: inherit;
-    font-size: var(--terra-application-header-utility-menu-footer-item-font-size, 1rem);
-    height: var(--terra-application-header-utility-menu-footer-item-height, 2rem);
-    margin-bottom: var(--terra-application-header-utility-menu-footer-item-margin-bottom, 0.7143rem);
-    margin-left: var(--terra-application-header-utility-menu-footer-item-margin-left, 0.7143rem);
-    margin-right: var(--terra-application-header-utility-menu-footer-item-margin-right, 0.7143rem);
+    font-size: var(--terra-application-utility-header-footer-item-font-size, 1rem);
+    margin-bottom: var(--terra-application-utility-header-footer-item-margin-bottom, 0.7143rem);
+    margin-left: var(--terra-application-utility-header-footer-item-margin-left, 0.7143rem);
+    margin-right: var(--terra-application-utility-header-footer-item-margin-right, 0.7143rem);
+    margin-top: var(--terra-application-utility-header-footer-item-margin-top);
   }
 
   .menu-utility-body-item {
-    background-color: var(--terra-application-menu-utility-menu-body-item-background-color);
-    color: var(--terra-application-menu-utility-menu-body-item-font-color);
+    background-color: var(--terra-application-utility-menu-body-item-background-color);
+    color: var(--terra-application-utility-menu-body-item-font-color);
     cursor: pointer;
-    font-size: var(--terra-application-menu-utility-menu-body-item-font-size, 1rem);
+    font-size: var(--terra-application-utility-menu-body-item-font-size, 1rem);
     list-style-type: none;
-    margin-bottom: var(--terra-application-menu-utility-menu-body-item-margin-bottom, 0.3571rem);
-    margin-top: var(--terra-application-menu-utility-menu-body-item-margin-top, 0.3571rem);
+    margin-bottom: var(--terra-application-utility-menu-body-item-margin-bottom, 0.3571rem);
+    margin-top: var(--terra-application-utility-menu-body-item-margin-top, 0.3571rem);
     max-width: 100%;
     overflow-wrap: break-word;
-    padding-bottom: var(--terra-application-menu-utility-menu-body-item-padding-bottom, 0.3571rem);
-    padding-left: var(--terra-application-menu-utility-menu-body-item-padding-left, 0.2143rem);
-    padding-top: var(--terra-application-menu-utility-menu-body-item-padding-top, 0.3571rem);
+    padding-bottom: var(--terra-application-utility-menu-body-item-padding-bottom, 0.3571rem);
+    padding-left: var(--terra-application-utility-menu-body-item-padding-left, 0.2143rem);
+    padding-top: var(--terra-application-utility-menu-body-item-padding-top, 0.3571rem);
     text-overflow: ellipsis;
     white-space: normal;
     word-break: break-word;
     word-wrap: break-word;
 
     .default-left-inset {
-      margin-left: var(--terra-application-menu-utility-menu-body-item-margin-left, 0.6429rem);
+      margin-left: var(--terra-application-utility-menu-body-item-margin-left, 0.6429rem);
     }
 
     .default-right-inset {
-      margin-right: var(--terra-application-menu-utility-menu-body-item-margin-right, 0.6429rem);
+      margin-right: var(--terra-application-utility-menu-body-item-margin-right, 0.6429rem);
     }
 
     &:hover {
-      background-color: var(--terra-application-menu-utility-menu-body-item-hover-background-color, #ebf6fd);
+      background-color: var(--terra-application-utility-menu-body-item-hover-background-color, #ebf6fd);
+
+      .checkmark {
+        color: var(--terra-application-utility-menu-body-item-checkmark-hover-color);
+      }
+
+      .chevron {
+        color: var(--terra-application-utility-menu-body-item-chevron-hover-color);
+      }
     }
 
     &:focus {
-      box-shadow: var(--terra-application-menu-utility-menu-body-item-focus-box-shadow, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
+      background-color: var(--terra-application-utility-menu-body-item-focus-background-color);
+      box-shadow: var(--terra-application-utility-menu-body-item-focus-box-shadow, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
       outline: 0;
+
+      .checkmark {
+        color: var(--terra-application-utility-menu-body-item-checkmark-focus-color);
+      }
+
+      .chevron {
+        color: var(--terra-application-utility-menu-body-item-chevron-focus-color);
+      }
     }
 
     .checkmark {
+      color: var(--terra-application-utility-menu-body-item-checkmark-color);
       flex-shrink: 0;
-      margin-left: var(--terra-application-menu-utility-menu-body-item-checkmark-margin-left, 0.2857rem);
-      margin-right: var(--terra-application-menu-utility-menu-body-item-checkmark-margin-right, 0.5rem);
+      margin-left: var(--terra-application-utility-menu-body-item-checkmark-margin-left, 0.2857rem);
+      margin-right: var(--terra-application-utility-menu-body-item-checkmark-margin-right, 0.5rem);
       visibility: hidden;
-      width: var(--terra-application-menu-utility-menu-body-item-checkmark-width, 0.7143rem);
+      width: var(--terra-application-utility-menu-body-item-checkmark-width, 0.7143rem);
     }
 
     .selected.checkmark {
@@ -119,10 +157,11 @@
     }
 
     .chevron {
+      color: var(--terra-application-utility-menu-body-item-chevron-color);
       flex-shrink: 0;
-      margin-right: var(--terra-application-menu-utility-menu-body-item-chevron-margin-right, 0.2143rem);
+      margin-right: var(--terra-application-utility-menu-body-item-chevron-margin-right, 0.2143rem);
       visibility: hidden;
-      width: var(--terra-application-menu-utility-menu-body-item-chevron-width, 0.7143rem);
+      width: var(--terra-application-utility-menu-body-item-chevron-width, 0.7143rem);
     }
 
     .chevron.has-chevron {
@@ -131,18 +170,30 @@
   }
 
   .menu-utility-footer-item {
-    background-color: var(--terra-application-menu-utility-menu-footer-item-background-color, #dedfe0);
-    border-radius: var(--terra-application-menu-utility-menu-footer-item-border-radius);
-    color: var(--terra-application-menu-utility-menu-footer-item-font-color);
+    background-color: var(--terra-application-utility-menu-footer-item-background-color, #dedfe0);
+    color: var(--terra-application-utility-menu-footer-item-font-color);
     cursor: pointer;
-    font-size: var(--terra-application-menu-utility-menu-footer-item-font-size, 1rem);
-    height: var(--terra-application-menu-utility-menu-footer-item-height, 2rem);
-    margin-bottom: var(--terra-application-menu-utility-menu-footer-item-margin-bottom, 0.7143rem);
-    margin-left: var(--terra-application-menu-utility-menu-footer-item-margin-left, 0.7143rem);
-    margin-right: var(--terra-application-menu-utility-utility-menu-footer-item-margin-bottom, 0.7143rem);
+    font-size: var(--terra-application-utility-menu-footer-item-font-size, 1rem);
+    margin-bottom: var(--terra-application-utility-menu-footer-item-margin-bottom, 0.7143rem);
+    margin-left: var(--terra-application-utility-menu-footer-item-margin-left, 0.7143rem);
+    margin-right: var(--terra-application-utility-menu-footer-item-margin-right, 0.7143rem);
+    margin-top: var(--terra-application-utility-menu-footer-item-margin-top);
   }
 
   .menu-item-fill {
     width: 100%;
+  }
+
+  .read-only {
+    cursor: text;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    &:focus {
+      box-shadow: none;
+      outline: 0;
+    }
   }
 }

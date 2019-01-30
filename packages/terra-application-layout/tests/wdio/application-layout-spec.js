@@ -79,8 +79,8 @@ describe('ApplicationLayout', () => {
       browser.click('[data-application-header-toggle]');
       browser.waitForVisible('[data-routing-menu] [data-navigation-side-menu-action-header] button');
       browser.click('[data-routing-menu] [data-navigation-side-menu-action-header] button');
-      browser.waitForVisible('[data-routing-menu] [data-menu-item="Page 2"]');
-      browser.click('[data-routing-menu] [data-menu-item="Page 2"]');
+      browser.waitForVisible('[data-routing-menu] [data-menu-item="/page_2"]');
+      browser.click('[data-routing-menu] [data-menu-item="/page_2"]');
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test' });
@@ -107,6 +107,20 @@ describe('ApplicationLayout', () => {
       browser.click('[data-application-header-toggle]');
       browser.waitForVisible('[data-application-menu-utility]');
       browser.click('[data-application-menu-utility]');
+    });
+
+    Terra.should.matchScreenshot({ selector: '#application-layout-test' });
+    Terra.should.beAccessible({ context: '#application-layout-test' });
+  });
+
+  describe('Presents utility menu from header and checks for closure on read-only item click', () => {
+    beforeEach(() => {
+      browser.setViewportSize(Terra.viewports('large')[0]);
+      browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout');
+      browser.waitForVisible('[data-application-header-utility]');
+      browser.click('[data-application-header-utility]');
+      browser.waitForVisible('#readonly');
+      browser.click('#readonly');
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test' });

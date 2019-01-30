@@ -4,6 +4,28 @@ Changelog
 Unreleased
 ----------
 
+2.0.0 - (January 25, 2019)
+------------------
+### Breaking Change
+* Updated variable names to match new naming standard
+* Added new variables for css theming
+* Removed variables for css theming
+* Updated terra-core dependencies
+
+### Changed
+* Remove usage of componentWillReceiveProps
+
+1.26.0 - (January 5, 2019)
+------------------
+### Added
+* Read-only property added to menu item shape
+* Jest test added for read-only property
+
+1.25.0 - (January 2, 2019)
+------------------
+### Changed
+* Updated dev site examples to not have duplicate ids.
+
 1.24.0 - (December 5, 2018)
 ------------------
 ### Changed

@@ -16,7 +16,7 @@ const MIRROR_TB = {
  * This function returns a rect 2px x 2px with the origin based at (1,1), which allows for evenly centered attachment points.
  * As a result of the 2x2 size, positioning issues caused by coordinate rounding are eliminated.
  *
- * @ param {object} coords - THe x and y client coordinates.
+ * @ param {object} coords - The x and y client coordinates.
  */
 const getRectFromCoords = coords => ({
   top: coords.y - 1,
@@ -568,7 +568,6 @@ const positionStyleFromBounds = (boundingRect, content, target, margin, behavior
 
   return {
     style: {
-      position: 'absolute',
       // eslint-disable-next-line no-restricted-globals
       left: `${Math.round(positions.content.x + pageXOffset)}px`,
       // eslint-disable-next-line no-restricted-globals
