@@ -18,6 +18,8 @@ import AbstractModalFallbackFocusSelector from '../example/AbstractModalFallback
 import AbstractModalFallbackFocusSelectorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/AbstractModalFallbackFocusSelector';
 import AbstractModalFallbackFocusFunction from '../example/AbstractModalFallbackFocusFunction';
 import AbstractModalFallbackFocusFunctionSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/AbstractModalFallbackFocusFunction';
+import AbstractModalEscapeDeactivates from '../example/AbstractModalEscapeDeactivates';
+import AbstractModalEscapeDeactivatesSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/AbstractModalEscapeDeactivates';
 
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
@@ -25,7 +27,7 @@ const DocPage = () => (
   <DocTemplate
     packageName={name}
     readme={ReadMe}
-    srcPath={`https://github.com/cerner/terra-framework/tree/master/packages/${name}`}
+    srcPath={`https://github.com/cerner/terra-core/tree/master/packages/${name}`}
     examples={[
       {
         title: 'Default Modal',
@@ -51,6 +53,11 @@ const DocPage = () => (
         title: 'Fallback Focus with dom selector',
         example: <AbstractModalFallbackFocusSelector />,
         source: AbstractModalFallbackFocusSelectorSrc,
+      },
+      {
+        title: 'Modal with Esc Key Focus Escape Toggle',
+        example: <AbstractModalEscapeDeactivates />,
+        source: AbstractModalEscapeDeactivatesSrc,
       },
     ]}
     propsTables={[

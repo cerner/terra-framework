@@ -32,6 +32,10 @@ const propTypes = {
    */
   closeOnOutsideClick: PropTypes.bool,
   /**
+   * Default: false. If set to true, the Escape key will trigger deactivation of the focus trap.
+   */
+  escapeDeactivates: PropTypes.bool,
+  /**
    * Element to fallback focus on if the FocusTrap can not find any focusable elements. Valid values are a valid
    * dom selector string that is passed into document.querySelector or a function
    * that returns a dom element. If using a dom selector, ensure that the query works for all browsers with
@@ -76,6 +80,7 @@ const defaultProps = {
   classNameOverlay: null,
   closeOnEsc: true,
   closeOnOutsideClick: true,
+  escapeDeactivates: false,
   isFocused: true,
   isFullscreen: false,
   role: 'dialog',
@@ -134,6 +139,7 @@ class AbstractModal extends React.Component {
       classNameOverlay,
       closeOnEsc,
       closeOnOutsideClick,
+      escapeDeactivates,
       fallbackFocus,
       isFocused,
       isFullscreen,
@@ -163,6 +169,7 @@ class AbstractModal extends React.Component {
           classNameModal={classNameModal}
           classNameOverlay={classNameOverlay}
           role={role}
+          escapeDeactivates={escapeDeactivates}
           fallbackFocus={fallbackFocus}
           isFocused={isFocused}
           isFullscreen={isFullscreen}

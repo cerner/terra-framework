@@ -36,6 +36,10 @@ const propTypes = {
    */
   onRequestClose: PropTypes.func.isRequired,
   /**
+   * Default: false. If set to true, the Escape key will trigger deactivation of the focus trap.
+   */
+  escapeDeactivates: PropTypes.bool,
+  /**
    * Element to fallback focus on if the FocusTrap can not find any focusable elements. Valid values are a valid
    * dom selector string that is passed into document.querySelector or a function
    * that returns a dom element. If using a dom selector, ensure that the query works for all browsers with
@@ -89,6 +93,7 @@ class ModalContent extends React.Component {
       classNameOverlay,
       closeOnOutsideClick,
       onRequestClose,
+      escapeDeactivates,
       fallbackFocus,
       role,
       isFocused,
@@ -126,6 +131,7 @@ class ModalContent extends React.Component {
       <FocusTrap
         paused={!isFocused}
         focusTrapOptions={{
+          escapeDeactivates,
           fallbackFocus: this.fallbackFocus,
         }}
       >
