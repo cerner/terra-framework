@@ -1,6 +1,10 @@
 ChangeLog
 =========
+### Breaking Change
+* Updated terra-core dependencies
+
 ### Added
+* Example of integration with terra-date-picker
 * Change logs to documentation on terra-dev-site
 
 ### Changed

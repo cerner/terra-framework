@@ -115,7 +115,7 @@ class MenuItem extends React.Component {
             <div className={cx('title')}>
               {text}
             </div>
-            {hasChevron && <span className={cx('chevron')}><ChevronRight height="0.8em" width="0.8em" /></span>}
+            {hasChevron && <span className={cx('chevron')}><ChevronRight /></span>}
           </div>
           /* eslint-enable jsx-ally/no-static-element-interactions */
         )}

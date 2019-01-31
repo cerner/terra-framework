@@ -6,17 +6,17 @@ import Placeholder from 'terra-application-name/lib/terra-dev-site/doc/common/Pl
 import ApplicationHeaderName from 'terra-application-name/lib/ApplicationHeaderName';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
-const size = { height: '50px', width: '100%' };
+const demosize = { height: '50px', width: '100%' };
+const demobgcolor = { backgroundColor: 'rgb(140, 161, 177)' };
 const ApplicationHeaderNameStandard = () => (
   <ApplicationHeaderLayout
-    style={size}
+    style={demosize}
     logo={(
-      <div style={{ backgroundColor: 'green' }}>
-        <ApplicationHeaderName
-          title="App-Name"
-          accessory={<Image variant="rounded" src="https://github.com/cerner/terra-framework/raw/master/terra.png" height="26px" width="26px" isFluid />}
-        />
-      </div>
+      <ApplicationHeaderName
+        title="App-Name"
+        accessory={<Image variant="rounded" src="https://github.com/cerner/terra-framework/raw/master/terra.png" height="26px" width="26px" isFluid />}
+        style={demobgcolor}
+      />
     )}
     extensions={<Placeholder text="Extensions" width="100px" />}
     navigation={<Placeholder text="Content" />}

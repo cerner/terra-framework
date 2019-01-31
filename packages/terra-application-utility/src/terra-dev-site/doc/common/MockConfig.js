@@ -16,6 +16,7 @@ const MockConfig = customComponent => [
       'item-5',
       'item-6',
       'item-7',
+      'item-8',
     ],
   },
   {
@@ -149,6 +150,16 @@ const MockConfig = customComponent => [
     isSelectable: false,
     childKeys: [],
     id: 'test-item-7',
+  },
+  {
+    key: 'item-8',
+    title: 'Read Only Item',
+    contentLocation: UtilityUtils.LOCATIONS.BODY,
+    isReadOnly: true,
+    isSelected: false,
+    isSelectable: false,
+    childKeys: [],
+    id: 'test-item-8',
   },
 ];
 

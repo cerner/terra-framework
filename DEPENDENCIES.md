@@ -25,18 +25,16 @@
 | jest | ^23.1.0 | -- | Delightful JavaScript Testing. |
 | lerna | ^2.8.0 | -- | Tool for managing JavaScript projects with multiple packages |
 | link-parent-bin | ^0.2.0 | -- | [![Build Status](https://travis-ci.org/nicojs/node-link-parent-bin.svg?branch=master)](https://travis-ci.org/nicojs/node-link-parent-bin) |
-| load-json-file | ^5.0.0 | -- | Read and parse a JSON file |
 | markdown-magic | ^0.1.25 | -- | Automatically update markdown files with content from external sources |
 | raf | ^3.4.0 | -- | requestAnimationFrame polyfill for node and the browser |
 | react | ^16.4.2 | -- | React is a JavaScript library for building user interfaces. |
-| react-dom | ^16.4.2 | ^16.6.3 | React package for working with the DOM. |
+| react-dom | ^16.4.2 | ^16.0.0 | React package for working with the DOM. |
+| react-intl | ^2.7.2 | ^0.14.9 \|\| ^15.0.0 \|\| ^16.0.0 | Internationalize React apps. This library provides React components and an API to format dates, numbers, and strings, including pluralization and handling translations. |
 | react-router-dom | ^4.2.2 | >=15 | DOM bindings for React Router |
-| react-test-renderer | ^16.4.2 | ^16.6.3 | React package for snapshot testing. |
-| rimraf | ^2.6.1 | -- | A deep deletion module for node (like `rm -rf`) |
-| shelljs | ^0.8.2 | -- | Portable Unix shell commands for Node.js |
+| react-test-renderer | ^16.4.2 | ^16.0.0 | React package for snapshot testing. |
 | stylelint | ^9.2.0 | -- | A mighty, modern CSS linter. |
 | stylelint-config-terra | ^1.0.0 | -- | Terra Stylelint Shared Config |
-| terra-base | ^3.0.0 | ^16.4.2 | The base component sets minimal global styles for an application. |
+| terra-base | ^4.0.0 | ^16.4.2 | The base component sets minimal global styles for an application. |
 | terra-dev-site | ^2.0.0 | ^16.4.2 | Dynamically builds a react-hash-routed site based on site configuration, navigation configuration and component configuration. |
 | terra-toolkit | ^4.16.0 | -- | Utilities to help when developing terra modules. |
 | xfc | ^1.2.1 | -- | A Cross Frame Container that handles securely embedding web content into a 3rd party domain |
