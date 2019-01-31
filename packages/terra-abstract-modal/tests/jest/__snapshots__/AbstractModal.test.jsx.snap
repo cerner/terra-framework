@@ -11,6 +11,7 @@ exports[`should allow us to pass in a dom selector as a fallbackFocus 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
+      escapeDeactivates={false}
       isFocused={true}
       isFullscreen={false}
       isOpen={true}
@@ -57,6 +58,7 @@ exports[`should allow us to pass in a dom selector as a fallbackFocus 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            escapeDeactivates={false}
             isFocused={true}
             isFullscreen={false}
             isScrollable={false}
@@ -69,6 +71,7 @@ exports[`should allow us to pass in a dom selector as a fallbackFocus 1`] = `
               active={true}
               focusTrapOptions={
                 Object {
+                  "escapeDeactivates": false,
                   "fallbackFocus": [Function],
                 }
               }
@@ -132,6 +135,7 @@ exports[`should allow us to pass in a function as fallbackFocus 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
+      escapeDeactivates={false}
       isFocused={true}
       isFullscreen={false}
       isOpen={true}
@@ -178,6 +182,7 @@ exports[`should allow us to pass in a function as fallbackFocus 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            escapeDeactivates={false}
             isFocused={true}
             isFullscreen={false}
             isScrollable={false}
@@ -190,6 +195,7 @@ exports[`should allow us to pass in a function as fallbackFocus 1`] = `
               active={true}
               focusTrapOptions={
                 Object {
+                  "escapeDeactivates": false,
                   "fallbackFocus": [Function],
                 }
               }
@@ -251,6 +257,7 @@ exports[`should mount an open modal 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
+      escapeDeactivates={false}
       isFocused={true}
       isFullscreen={false}
       isOpen={true}
@@ -297,6 +304,7 @@ exports[`should mount an open modal 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            escapeDeactivates={false}
             isFocused={true}
             isFullscreen={false}
             isScrollable={false}
@@ -309,6 +317,7 @@ exports[`should mount an open modal 1`] = `
               active={true}
               focusTrapOptions={
                 Object {
+                  "escapeDeactivates": false,
                   "fallbackFocus": [Function],
                 }
               }
@@ -372,6 +381,7 @@ exports[`should mount an open modal 7000 z-index 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
+      escapeDeactivates={false}
       isFocused={true}
       isFullscreen={false}
       isOpen={true}
@@ -418,6 +428,7 @@ exports[`should mount an open modal 7000 z-index 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            escapeDeactivates={false}
             isFocused={true}
             isFullscreen={false}
             isScrollable={false}
@@ -430,6 +441,7 @@ exports[`should mount an open modal 7000 z-index 1`] = `
               active={true}
               focusTrapOptions={
                 Object {
+                  "escapeDeactivates": false,
                   "fallbackFocus": [Function],
                 }
               }
@@ -493,6 +505,7 @@ exports[`should mount an open modal 8000 z-index 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
+      escapeDeactivates={false}
       isFocused={true}
       isFullscreen={false}
       isOpen={true}
@@ -539,6 +552,7 @@ exports[`should mount an open modal 8000 z-index 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            escapeDeactivates={false}
             isFocused={true}
             isFullscreen={false}
             isScrollable={false}
@@ -551,6 +565,7 @@ exports[`should mount an open modal 8000 z-index 1`] = `
               active={true}
               focusTrapOptions={
                 Object {
+                  "escapeDeactivates": false,
                   "fallbackFocus": [Function],
                 }
               }
@@ -614,6 +629,7 @@ exports[`should mount an open modal 9000 z-index 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
+      escapeDeactivates={false}
       isFocused={true}
       isFullscreen={false}
       isOpen={true}
@@ -660,6 +676,7 @@ exports[`should mount an open modal 9000 z-index 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            escapeDeactivates={false}
             isFocused={true}
             isFullscreen={false}
             isScrollable={false}
@@ -672,6 +689,7 @@ exports[`should mount an open modal 9000 z-index 1`] = `
               active={true}
               focusTrapOptions={
                 Object {
+                  "escapeDeactivates": false,
                   "fallbackFocus": [Function],
                 }
               }
@@ -735,6 +753,7 @@ exports[`should mount an open modal set to fullscreen 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
+      escapeDeactivates={false}
       isFocused={true}
       isFullscreen={true}
       isOpen={true}
@@ -781,6 +800,7 @@ exports[`should mount an open modal set to fullscreen 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            escapeDeactivates={false}
             isFocused={true}
             isFullscreen={true}
             isScrollable={false}
@@ -793,6 +813,7 @@ exports[`should mount an open modal set to fullscreen 1`] = `
               active={true}
               focusTrapOptions={
                 Object {
+                  "escapeDeactivates": false,
                   "fallbackFocus": [Function],
                 }
               }
@@ -854,6 +875,7 @@ exports[`should render the correct snapshot for iPads 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
+      escapeDeactivates={false}
       isFocused={true}
       isFullscreen={false}
       isOpen={true}
@@ -900,6 +922,7 @@ exports[`should render the correct snapshot for iPads 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            escapeDeactivates={false}
             isFocused={true}
             isFullscreen={false}
             isScrollable={false}
@@ -912,6 +935,7 @@ exports[`should render the correct snapshot for iPads 1`] = `
               active={true}
               focusTrapOptions={
                 Object {
+                  "escapeDeactivates": false,
                   "fallbackFocus": [Function],
                 }
               }
@@ -973,6 +997,7 @@ exports[`should render the correct snapshot for iPhones 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
+      escapeDeactivates={false}
       isFocused={true}
       isFullscreen={false}
       isOpen={true}
@@ -1019,6 +1044,7 @@ exports[`should render the correct snapshot for iPhones 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            escapeDeactivates={false}
             isFocused={true}
             isFullscreen={false}
             isScrollable={false}
@@ -1031,6 +1057,7 @@ exports[`should render the correct snapshot for iPhones 1`] = `
               active={true}
               focusTrapOptions={
                 Object {
+                  "escapeDeactivates": false,
                   "fallbackFocus": [Function],
                 }
               }
@@ -1092,6 +1119,7 @@ exports[`should render the correct snapshot for iPods 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
+      escapeDeactivates={false}
       isFocused={true}
       isFullscreen={false}
       isOpen={true}
@@ -1138,6 +1166,7 @@ exports[`should render the correct snapshot for iPods 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            escapeDeactivates={false}
             isFocused={true}
             isFullscreen={false}
             isScrollable={false}
@@ -1150,6 +1179,7 @@ exports[`should render the correct snapshot for iPods 1`] = `
               active={true}
               focusTrapOptions={
                 Object {
+                  "escapeDeactivates": false,
                   "fallbackFocus": [Function],
                 }
               }
@@ -1210,6 +1240,7 @@ exports[`should shallow an open modal 1`] = `
     classNameOverlay={null}
     closeOnEsc={true}
     closeOnOutsideClick={true}
+    escapeDeactivates={false}
     isFocused={true}
     isFullscreen={false}
     isOpen={true}
@@ -1247,6 +1278,7 @@ exports[`should shallow an open modal 6000 z-index 1`] = `
     classNameOverlay={null}
     closeOnEsc={true}
     closeOnOutsideClick={true}
+    escapeDeactivates={false}
     isFocused={true}
     isFullscreen={false}
     isOpen={true}
@@ -1284,6 +1316,7 @@ exports[`should shallow an open modal 7000 z-index 1`] = `
     classNameOverlay={null}
     closeOnEsc={true}
     closeOnOutsideClick={true}
+    escapeDeactivates={false}
     isFocused={true}
     isFullscreen={false}
     isOpen={true}
@@ -1321,6 +1354,7 @@ exports[`should shallow an open modal 8000 z-index 1`] = `
     classNameOverlay={null}
     closeOnEsc={true}
     closeOnOutsideClick={true}
+    escapeDeactivates={false}
     isFocused={true}
     isFullscreen={false}
     isOpen={true}
@@ -1358,6 +1392,7 @@ exports[`should shallow an open modal 9000 z-index 1`] = `
     classNameOverlay={null}
     closeOnEsc={true}
     closeOnOutsideClick={true}
+    escapeDeactivates={false}
     isFocused={true}
     isFullscreen={false}
     isOpen={true}
