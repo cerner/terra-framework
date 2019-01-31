@@ -27,7 +27,7 @@ const DocPage = () => (
   <DocTemplate
     packageName={name}
     readme={ReadMe}
-    srcPath={`https://github.com/cerner/terra-core/tree/master/packages/${name}`}
+    srcPath={`https://github.com/cerner/terra-framework/tree/master/packages/${name}`}
     examples={[
       {
         title: 'Default Modal',

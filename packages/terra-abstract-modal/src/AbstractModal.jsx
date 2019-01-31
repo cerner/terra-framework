@@ -32,7 +32,7 @@ const propTypes = {
    */
   closeOnOutsideClick: PropTypes.bool,
   /**
-   * Default: false. If set to true, the Escape key will trigger deactivation of the focus trap.
+   * If set to true, the Escape key will trigger deactivation of the focus trap.
    */
   escapeDeactivates: PropTypes.bool,
   /**
