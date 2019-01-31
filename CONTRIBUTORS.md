@@ -20,7 +20,7 @@ Cerner Corporation
 - Jaime Mackey [@jmsv6d]
 - Noah Benham [@noahbenham]
 - Cody Price [@dev-cprice]
-- Shetty Akarsh [@@ShettyAkarsh]
+- Shetty Akarsh [@ShettyAkarsh]
 - Alex Bezek [@alex-bezek]
 - Supreeth MR [@supreethmr]
 

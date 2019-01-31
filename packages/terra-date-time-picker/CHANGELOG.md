@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Throws NPE if manually entered valid date is outside of allotted datetime range.
+
 ### Changed
 * Migrate package to the terra-framework repository
 
