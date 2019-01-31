@@ -6,6 +6,10 @@ Unreleased
 ### Changed
 * Migrate package to the terra-framework repository
 
+### Added
+* 'escapeDeactivates' prop to AbstractModal
+* Dev site example for escapeDeactivates behavior
+
 2.1.0 - (January 26, 2019)
 ------------------
 ### Changed
