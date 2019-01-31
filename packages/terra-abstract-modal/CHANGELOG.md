@@ -4,6 +4,39 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Migrate package to the terra-framework repository
+
+2.1.0 - (January 26, 2019)
+------------------
+### Changed
+* Minor dependency version bump
+
+2.0.0 - (January 22, 2019)
+------------------
+### Changed
+* Updated theme variables
+
+1.29.0 - (January 22, 2019)
+------------------
+### Changed
+* Updated dependencies to fix major version bump issues
+
+1.28.0 - (January 22, 2019)
+------------------
+### Changed
+* Updated dependencies to fix major version bump issues
+
+1.27.0 - (January 8, 2019)
+------------------
+### Changed
+* Minor dependency version bump
+
+1.26.0 - (January 2, 2019)
+------------------
+### Added
+* Added support for the fallbackFocus option of FocusTrap
+
+### Changed
 * Removed use of componentWillReceiveProps
 
 1.25.1 - (November 20, 2018)

@@ -6,7 +6,7 @@ import ChangeLog from '../../../../CHANGELOG.md';
 const DocPage = () => (
   <DocTemplate
     packageName="terra-abstract-modal"
-    srcPath="https://github.com/cerner/terra-core/tree/master/packages/terra-abstract-modal"
+    srcPath="https://github.com/cerner/terra-framework/tree/master/packages/terra-abstract-modal"
     readme={ChangeLog}
   />
 );
