@@ -25,11 +25,11 @@ export default () => (
     contentLeft={(
       <a
         href="http://terra-ui.com/"
+        ariaLabel: "Terra UI Home"
         style={{
           backgroundColor: 'transparent',
           color: '#0065a3',
           textDecoration: 'none',
-          aria-label: "Terra UI Home",
         }}
       >
         <svg
