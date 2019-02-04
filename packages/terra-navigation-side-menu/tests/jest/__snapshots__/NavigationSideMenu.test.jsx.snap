@@ -2,6 +2,7 @@
 
 exports[`Layout should render a NavigationSideMenu with a toolbar 1`] = `
 <ContentContainer
+  className="side-menu-content-container"
   fill={true}
   header={
     <React.Fragment>
@@ -22,6 +23,7 @@ exports[`Layout should render a NavigationSideMenu with a toolbar 1`] = `
 
 exports[`Layout should render a NavigationSideMenu with default props 1`] = `
 <ContentContainer
+  className="side-menu-content-container"
   fill={true}
   header={
     <React.Fragment>
@@ -39,6 +41,7 @@ exports[`Layout should render a NavigationSideMenu with default props 1`] = `
 
 exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
 <ContentContainer
+  className="side-menu-content-container"
   fill={true}
   header={
     <React.Fragment>
@@ -53,7 +56,7 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
   }
 >
   <List
-    className="menu-list"
+    className="side-menu-list"
     isDivided={false}
   >
     <MenuItem

@@ -6,6 +6,13 @@ Unreleased
 ### Fixed
 * Fixed focus trap management
 
+2.0.0 - (January 25, 2019)
+------------------
+### Breaking Change
+* Updated variable names to match new naming standard
+* Added new variables for css theming
+* Updated terra-core dependencies
+
 1.17.0 - (January 5, 2019)
 ------------------
 ### Removed

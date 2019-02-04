@@ -1,34 +1,71 @@
 :local {
-  .application-header {
-    background-color: var(--terra-application-header-background-color, #0079be);
-    border: var(--terra-application-header-border, 0.07143rem solid rgba(255, 255, 255, 0.17));
-    height: var(--terra-application-header-height, 3.5725rem);
+  .application-navbar {
+    background-color: var(--terra-application-layout-navbar-background-color, #0079be);
+    background-image: var(--terra-application-layout-navbar-background-image);
+    border: var(--terra-application-layout-navbar-border);
+    box-shadow: var(--terra-application-layout-navbar-box-shadow);
+    height: var(--terra-application-layout-navbar-height, 3.5714285714rem);
+    padding-left: var(--terra-application-layout-navbar-padding-left);
+    padding-right: var(--terra-application-layout-navbar-padding-right);
     position: relative;
-  }
+    z-index: 5001;
 
-  .toolbar-toggle {
-    align-items: center;
-    border-right: var(--terra-application-header-toggle-border-right, 0.07143rem solid rgba(255, 255, 255, 0.17));
-    box-shadow: var(--terra-application-header-toggle-box-shadow, inset -0.07143rem 0 0 0 rgba(0, 0, 0, 0.17));
-    height: 100%;
-    width: var(--terra-application-header-toggle-width, 3.5725rem);
-  }
-
-  .toggle-button {
-    background-color: var(--terra-application-header-toggle-background-color, transparent);
-    border: 0;
-    color: var(--terra-application-header-toggle-color, #fff);
-    cursor: pointer;
-    height: 100%;
-    width: 100%;
-
-    > svg {
-      height: var(--terra-application-header-toggle-icon-height, 1rem);
-      width: var(--terra-application-header-toggle-icon-width, 1rem);
+    &::before {
+      background-color: var(--terra-application-layout-navbar-before-background-color, transparent);
+      background-image: var(--terra-application-layout-navbar-before-background-image, none);
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
     }
   }
 
-  .toggle-button:hover {
-    background-color: var(--terra-application-header-toggle-hover-background-color, rgba(0, 0, 0, 0.15));
+  .navbar-toggle {
+    align-items: center;
+    border-right: var(--terra-application-layout-navbar-toggle-border-right, 1px solid rgba(255, 255, 255, 0.17));
+    box-shadow: var(--terra-application-layout-navbar-toggle-box-shadow, inset -1px 0 0 0 rgba(0, 0, 0, 0.17));
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    overflow: visible;
+    width: var(--terra-application-layout-navbar-toggle-width, 3.6428571429rem);
+  }
+
+  .toggle-button {
+    background-color: var(--terra-application-layout-toggle-button-background-color, transparent);
+    border: var(--terra-application-layout-toggle-button-border, 0);
+    border-radius: var(--terra-application-layout-toggle-button-border-radius);
+    box-shadow: var(--terra-application-layout-toggle-button-box-shadow);
+    color: var(--terra-application-layout-toggle-button-color, #fff);
+    cursor: pointer;
+    height: var(--terra-application-layout-toggle-button-height, 100%);
+    left: var(--terra-application-layout-toggle-button-left, 0);
+    padding: var(--terra-application-layout-toggle-button-padding, 1.2857142857rem);
+    position: relative;
+    width: var(--terra-application-layout-toggle-button-width, 100%);
+
+    > svg {
+      height: var(--terra-application-layout-toggle-button-icon-height, 1rem);
+      width: var(--terra-application-layout-toggle-button-icon-width, 1rem);
+    }
+
+    &:hover {
+      background-color: var(--terra-application-layout-toggle-button-hover-background-color, rgba(0, 0, 0, 0.15));
+      border-color: var(--terra-application-layout-toggle-button-hover-border-color);
+      border-radius: var(--terra-application-layout-toggle-button-hover-border-radius);
+      box-shadow: var(--terra-application-layout-toggle-button-hover-box-shadow);
+      color: var(--terra-application-layout-toggle-button-hover-color, #fff);
+    }
+
+    &:focus {
+      background-color: var(--terra-application-layout-toggle-button-focus-background-color, rgba(0, 0, 0, 0.15));
+      border-color: var(--terra-application-layout-toggle-button-focus-border-color);
+      border-radius: var(--terra-application-layout-toggle-button-focus-border-radius);
+      box-shadow: var(--terra-application-layout-toggle-button-focus-box-shadow);
+      color: var(--terra-application-layout-toggle-button-focus-color, #fff);
+      outline: none;
+    }
   }
 }
