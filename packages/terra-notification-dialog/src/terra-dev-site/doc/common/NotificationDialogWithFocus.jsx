@@ -6,7 +6,7 @@ import ExamplePopupContent from 'terra-popup/lib/terra-dev-site/doc/common/Examp
 import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
 
 const clickOK = () => {
-  console.log('You clicked OK'); // eslint-disable-line no-console
+  alert('You clicked OK'); // eslint-disable-line no-alert
 };
 
 const propTypes = {
@@ -54,6 +54,7 @@ class NotificationDialogWithFocus extends React.Component {
         <NotificationDialog
           variant={NotificationDialogVariants.ALERT}
           isOpen={this.state.isOpen}
+          onRequestClose={this.handleCloseModal}
           title="Make sure that the title relates directly to the choices."
           message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
           primaryAction={{
@@ -67,8 +68,8 @@ class NotificationDialogWithFocus extends React.Component {
           requestFocus={this.props.disclosureManager.requestFocus}
           releaseFocus={this.props.disclosureManager.releaseFocus}
         />
-        <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
-        <Button text="Dismiss" onClick={this.props.disclosureManager.dismiss} />
+        <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} id="trigger-notification-dialog" />
+        <Button text="Dismiss" onClick={this.props.disclosureManager.dismiss} id="dismiss-modal" />
         <Popup
           isArrowDisplayed
           isOpen={this.state.open}

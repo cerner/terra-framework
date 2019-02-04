@@ -23,7 +23,7 @@ class NotificationDialogModalContainer extends React.Component {
   render() {
     return (
       <div>
-        <Button text="Disclose" onClick={this.disclose} />
+        <Button text="Disclose" onClick={this.disclose} id="disclose-modal" />
       </div>
     );
   }
