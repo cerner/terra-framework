@@ -25,7 +25,7 @@ export default () => (
     contentLeft={(
       <a
         href="http://terra-ui.com/"
-        aria-label: "Terra UI Home"
+        aria-label="Terra UI Home"
         style={{
           backgroundColor: 'transparent',
           color: '#0065a3',
