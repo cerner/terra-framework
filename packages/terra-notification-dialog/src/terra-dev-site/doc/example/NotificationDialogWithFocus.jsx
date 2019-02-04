@@ -6,7 +6,7 @@ import ExamplePopupContent from 'terra-popup/lib/terra-dev-site/doc/common/Examp
 import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
 
 const clickOK = () => {
-  alert('You clicked OK'); // eslint-disable-line no-alert
+  console.log('You clicked OK'); // eslint-disable-line no-console
 };
 
 const propTypes = {
