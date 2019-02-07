@@ -30,6 +30,10 @@ const propTypes = {
    * The accessory element to be displayed next to the title.
    */
   accessory: PropTypes.element,
+  /**
+   * The role attribute to set on the menu.
+   */
+  menuRole: PropTypes.string,
 };
 
 const ApplicationHeaderUtility = ({
@@ -39,6 +43,7 @@ const ApplicationHeaderUtility = ({
   initialSelectedKey,
   title,
   accessory,
+  menuRole,
   ...customProps
 }) => (
   <UtilityButton
@@ -49,6 +54,7 @@ const ApplicationHeaderUtility = ({
     initialSelectedKey={initialSelectedKey}
     title={title}
     accessory={accessory}
+    role={menuRole}
     variant={Utils.VARIANTS.HEADER}
   />
 );

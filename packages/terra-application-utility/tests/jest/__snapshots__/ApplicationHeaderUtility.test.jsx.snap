@@ -24,6 +24,19 @@ exports[`ApplicationHeaderUtility should render with a title 1`] = `
 />
 `;
 
+exports[`ApplicationHeaderUtility should render with a user specified role 1`] = `
+<InjectIntl(ApplicationHeaderUtility)
+  initialSelectedKey="menu"
+  menuItems={Array []}
+  onChange={[MockFunction]}
+  onDisclose={[MockFunction]}
+  onRequestClose={[MockFunction]}
+  role="menu"
+  title="name"
+  variant="header"
+/>
+`;
+
 exports[`ApplicationHeaderUtility should render with an accessory 1`] = `
 <InjectIntl(ApplicationHeaderUtility)
   accessory={<image />}
