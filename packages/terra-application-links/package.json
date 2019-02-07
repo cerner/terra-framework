@@ -1,7 +1,7 @@
 {
   "name": "terra-application-links",
   "main": "lib/ApplicationLinks.js",
-  "version": "4.23.0",
+  "version": "5.1.0",
   "description": "This packages contains a list and tab form of ApplicationLinks, to be used in horizontal and vertical display styles. Selection is managed by react-router.",
   "repository": {
     "type": "git",
@@ -28,20 +28,20 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-router-dom": "^4.2.2",
-    "terra-base": "^3.0.0"
+    "terra-base": "^4.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "resize-observer-polyfill": "^1.4.1",
-    "terra-doc-template": "^1.0.0",
-    "terra-icon": "^2.0.0",
-    "terra-list": "^2.0.0",
-    "terra-popup": "^4.22.0"
+    "terra-doc-template": "^2.2.0",
+    "terra-icon": "^3.1.0",
+    "terra-list": "^3.0.0",
+    "terra-popup": "^5.1.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
-    "compile:clean": "shx rm -rf lib",
+    "compile:clean": "rm -rf lib",
     "compile:build": "babel src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",

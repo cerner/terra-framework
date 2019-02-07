@@ -7,12 +7,12 @@
 | lodash.debounce | ^4.0.8 | -- | The lodash method `_.debounce` exported as a module. |
 | prop-types | ^15.5.8 | -- | Runtime type checking for React props and similar objects. |
 | tabbable | ^3.1.1 | -- | Returns an array of all tabbable DOM nodes within a containing node. |
-| terra-button | ^2.0.0 | ^16.4.2 | The terra-button component provides users a way to trigger actions in the UI. |
-| terra-content-container | ^2.0.0 | ^16.4.2 | The Terra ContentContainer is a structural component for the purpose of arranging content with a header. |
-| terra-doc-template | ^1.0.0 | ^16.4.2 | Provides an adjustable template for documentation pages. |
-| terra-icon | ^2.0.0 | ^16.4.2 | The terra-icon component is used to visually represent a literal or symbolic object intended to initiate an action, communicate a status, or navigate the workflow. |
-| terra-overlay | ^2.0.0 | ^16.4.2 | The Overlay component is a component that creates an semi-transparent overlay screen that blocks interactions with the elements underneath the display. There are two types of overlays: fullscreen and relative to its container. |
-| terra-responsive-element | ^3.0.0 | ^16.4.2 | The terra-responsive-element conditionally renders components based on viewport size |
+| terra-button | ^3.3.0 | ^16.4.2 | The terra-button component provides users a way to trigger actions in the UI. |
+| terra-content-container | ^3.0.0 | ^16.4.2 | The Terra ContentContainer is a structural component for the purpose of arranging content with a header. |
+| terra-doc-template | ^2.2.0 | ^16.4.2 | Provides an adjustable template for documentation pages. |
+| terra-icon | ^3.1.0 | ^16.4.2 | The terra-icon component is used to visually represent a literal or symbolic object intended to initiate an action, communicate a status, or navigate the workflow. |
+| terra-overlay | ^3.0.0 | ^16.4.2 | The Overlay component is a component that creates an semi-transparent overlay screen that blocks interactions with the elements underneath the display. There are two types of overlays: fullscreen and relative to its container. |
+| terra-responsive-element | ^4.0.0 | ^16.4.2 | The terra-responsive-element conditionally renders components based on viewport size |
 
 ## devDependencies
 | Dependency | Version | React Version | Description |
@@ -24,4 +24,4 @@
 |-|-|-|-|
 | react | ^16.4.2 | -- | React is a JavaScript library for building user interfaces. |
 | react-dom | ^16.4.2 | ^16.0.0 | React package for working with the DOM. |
-| terra-base | ^3.0.0 | ^16.4.2 | The base component sets minimal global styles for an application. |
+| terra-base | ^4.0.0 | ^16.4.2 | The base component sets minimal global styles for an application. |

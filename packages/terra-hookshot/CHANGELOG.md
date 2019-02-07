@@ -3,6 +3,17 @@ Changelog
 
 Unreleased
 ----------
+
+5.1.0 - (February 5, 2019)
+------------------
+### Removed
+* Vestigial fixed styling removed and default to absolute. 
+
+5.0.0 - (January 25, 2019)
+------------------
+### Breaking Change
+* Updated terra-core dependencies
+
 ### Changed
 * Removed usage of componentWillReceiveProps
 

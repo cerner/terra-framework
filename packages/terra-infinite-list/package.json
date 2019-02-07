@@ -1,7 +1,7 @@
 {
   "name": "terra-infinite-list",
   "main": "lib/InfiniteList.js",
-  "version": "1.18.0",
+  "version": "2.1.0",
   "description": "The infinite list component provides virtual dom management and data request callbacks to manage large data sets within a list.",
   "repository": {
     "type": "git",
@@ -26,21 +26,21 @@
   "peerDependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "terra-base": "^3.0.0"
+    "terra-base": "^4.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "resize-observer-polyfill": "^1.4.1",
-    "terra-arrange": "^2.0.0",
-    "terra-doc-template": "^1.0.0",
-    "terra-icon": "^2.0.0",
-    "terra-list": "^2.0.0",
-    "terra-overlay": "^2.0.0"
+    "terra-arrange": "^3.0.0",
+    "terra-doc-template": "^2.2.0",
+    "terra-icon": "^3.1.0",
+    "terra-list": "^3.0.0",
+    "terra-overlay": "^3.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
-    "compile:clean": "shx rm -rf lib",
+    "compile:clean": "rm -rf lib",
     "compile:build": "babel src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",

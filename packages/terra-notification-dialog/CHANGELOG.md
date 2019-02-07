@@ -6,6 +6,18 @@ Unreleased
 ### Changed
 * Update wdio spec to set the viewport at the top-level instead of in each test's before hook for faster execution
 
+2.1.0 - (February 5, 2019)
+------------------
+### Fixed
+* Fixed focus trap management
+
+2.0.0 - (January 25, 2019)
+------------------
+### Breaking Change
+* Updated variable names to match new naming standard
+* Added new variables for css theming
+* Updated terra-core dependencies
+
 1.17.0 - (January 5, 2019)
 ------------------
 ### Removed
