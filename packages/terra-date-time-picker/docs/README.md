@@ -39,7 +39,7 @@ The [Modal][4] component by default will trap focus. In order to interact with t
 [4]: https://github.com/cerner/terra-core/tree/master/packages/terra-modal/docs
 [5]: https://github.com/cerner/terra-core/tree/master/packages/terra-app-delegate/docs
 [6]: https://github.com/cerner/terra-core/tree/master/packages/terra-base/docs
-[7]: https://github.com/cerner/terra-core/tree/master/packages/terra-date-picker/docs
+[7]: https://github.com/cerner/terra-framework/tree/master/packages/terra-date-picker/docs
 [8]: https://github.com/cerner/terra-framework/tree/master/packages/terra-time-input/docs
 [9]: https://github.com/cerner/terra-framework/blob/master/packages/terra-date-time-picker/tests/nightwatch/components/DateTimePickerInsideModal.jsx
 [10]: https://github.com/cerner/terra-framework/blob/master/packages/terra-date-time-picker/tests/nightwatch/components/DateTimePickerModalContainer.jsx
