@@ -41,7 +41,8 @@ describe('UtilityMenu', () => {
           onDisclose={mockOnDisclose}
           variant={variant}
         />
-      </IntlProvider>);
+      </IntlProvider>
+    );
     const wrapper = shallow(component);
     expect(wrapper).toMatchSnapshot();
   });
@@ -57,7 +58,8 @@ describe('UtilityMenu', () => {
           onRequestClose={mockOnRequestClose}
           variant={variant}
         />
-      </IntlProvider>);
+      </IntlProvider>
+    );
     const wrapper = shallow(component);
     expect(wrapper).toMatchSnapshot();
   });
@@ -76,7 +78,8 @@ describe('UtilityMenu', () => {
           variant={variant}
           id="test"
         />
-      </IntlProvider>);
+      </IntlProvider>
+    );
     const wrapper = shallow(component);
     expect(wrapper).toMatchSnapshot();
   });
@@ -92,7 +95,8 @@ describe('UtilityMenu', () => {
           variant={variant}
           id="test"
         />
-      </IntlProvider>);
+      </IntlProvider>
+    );
     const wrapper = shallow(component);
     expect(wrapper).toMatchSnapshot();
   });

@@ -78,7 +78,7 @@ class UtilityMenu extends React.Component {
       map: processMenuItems(props.menuItems),
       currentKey: props.initialSelectedKey,
       focusIndex: -1,
-      previousKeyStack: [],
+      previousKeyStack: [], // eslint-disable-line react/no-unused-state
       prevPropsInitialSelectedKey: props.initialSelectedKey,
       prevPropsMenuItems: props.menuItems,
     };
@@ -199,6 +199,7 @@ class UtilityMenu extends React.Component {
     const { childKeys } = this.getItem(key);
     const item = this.getItem(key);
     if (childKeys && childKeys.length > 0) {
+      // TODO: Figure out intention of previousKey variable
       this.setState(prevState => ({ previousKey: this.push(prevState.currentKey), currentKey: key }));
     } else {
       this.props.onRequestClose();
