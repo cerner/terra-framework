@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update external links example to point to terra-ui.com
 
 4.1.0 - (February 5, 2019)
 ------------------
@@ -20,7 +22,6 @@ Unreleased
 ### Changed
 * Removed use of componentWillReceiveProps
 * Update terra-avatar to 2.0
-* Update external links example to point to terra-ui.com
 
 3.3.0 - (January 5, 2019)
 ------------------

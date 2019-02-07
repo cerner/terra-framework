@@ -11,6 +11,10 @@ describe('Time Input Twelve Hour Mobile', () => {
     browser.execute('if (!window.ontouchstart) { window.ontouchstart = "true"; }');
   });
 
+  after(() => {
+    browser.execute('if (window.ontouchstart) { window.ontouchstart = "false"; }');
+  });
+
   describe('Twelve Hour Mobile - Default with no time', () => {
     before(() => browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/mobile'));
 

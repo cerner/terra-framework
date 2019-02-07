@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update external links example to point to terra-ui.com
 
 5.1.0 - (February 5, 2019)
 ------------------
@@ -24,7 +26,6 @@ Unreleased
 ### Changed
 * Remove use of componentWillReceiveProps
 * Add css variable to text-transform the text values in the tabs
-* Update external links example to point to terra-ui.com
 
 4.23.0 - (January 5, 2019)
 ------------------
