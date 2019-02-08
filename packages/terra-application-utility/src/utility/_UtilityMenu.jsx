@@ -73,12 +73,11 @@ class UtilityMenu extends React.Component {
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
     this.pop = this.pop.bind(this);
-    this.push = this.push.bind(this);
     this.state = {
       map: processMenuItems(props.menuItems),
       currentKey: props.initialSelectedKey,
       focusIndex: -1,
-      previousKeyStack: [],
+      previousKeyStack: [], // eslint-disable-line react/no-unused-state
       prevPropsInitialSelectedKey: props.initialSelectedKey,
       prevPropsMenuItems: props.menuItems,
     };
@@ -189,9 +188,8 @@ class UtilityMenu extends React.Component {
 
   /**
    * Function to trigger when an item is selected.
-   * 1. Has children: navigate to the next page
-   * 2. Toggles: trigger onChange without closing the menu.
-   * 3. Endpoint: close menu and trigger onChange.
+   * * Has children: navigate to the next page
+   * * Endpoint: close menu and trigger onChange.
    * @param {*} event
    * @param {*} key
    */
@@ -199,7 +197,11 @@ class UtilityMenu extends React.Component {
     const { childKeys } = this.getItem(key);
     const item = this.getItem(key);
     if (childKeys && childKeys.length > 0) {
-      this.setState(prevState => ({ previousKey: this.push(prevState.currentKey), currentKey: key }));
+      this.setState((prevState) => {
+        const newStack = prevState.previousKeyStack.slice();
+        newStack.push(prevState.currentKey);
+        return { previousKeyStack: newStack, currentKey: key };
+      });
     } else {
       this.props.onRequestClose();
       this.props.onChange(event, { key, metaData: item.metaData });
@@ -226,14 +228,6 @@ class UtilityMenu extends React.Component {
     this.setState((prevState) => {
       const newStack = prevState.previousKeyStack.slice();
       return { previousKeyStack: newStack, currentKey: newStack.pop() };
-    });
-  }
-
-  push(key) {
-    this.setState((prevState) => {
-      const newStack = prevState.previousKeyStack.slice();
-      newStack.push(key);
-      return { previousKeyStack: newStack };
     });
   }
 

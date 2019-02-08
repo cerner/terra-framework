@@ -8,7 +8,7 @@ const clickOK = () => {
 };
 
 const propTypes = {
-  variant: PropTypes.oneOf(Object.values(NotificationDialogVariants)),
+  variant: PropTypes.oneOf(Object.values(NotificationDialogVariants)), // eslint-disable-line compat/compat
 };
 
 class NotificationDialogVariant extends React.Component {
