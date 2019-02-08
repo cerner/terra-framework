@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+2.1.0 - (February 5, 2019)
+------------------
 ### Fixed
 * Fixed focus trap management
 

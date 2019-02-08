@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+5.1.0 - (February 5, 2019)
+------------------
 ### Removed
 * Vestigial fixed styling removed and default to absolute. 
 

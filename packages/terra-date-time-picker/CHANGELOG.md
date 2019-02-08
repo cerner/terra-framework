@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.5.0 - (February 5, 2019)
+------------------
 ### Changed
 * Migrate package to the terra-framework repository
 
