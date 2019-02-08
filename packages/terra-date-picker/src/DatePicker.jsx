@@ -356,7 +356,6 @@ class DatePicker extends React.Component {
         {required && <span className={cx(['required'])}>*</span>}
         <div className={cx(['date-picker'])}>
           <ResponsiveElement
-            className={cx(['date-picker'])}
             responsiveTo="window"
             defaultElement={portalPicker}
             small={popupPicker}
