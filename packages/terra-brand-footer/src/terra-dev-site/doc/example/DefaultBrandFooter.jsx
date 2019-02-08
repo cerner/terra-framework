@@ -95,4 +95,5 @@ export default () => (
         <small>Copyright 2018 - 2019 Cerner Innovation, Inc.  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;).</small>
       </span>
 )}
-  />);
+  />
+);
