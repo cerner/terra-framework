@@ -3,10 +3,14 @@ import PropTypes from 'prop-types';
 import ReactDatePicker from 'react-datepicker';
 import 'terra-base/lib/baseStyles';
 import ResponsiveElement from 'terra-responsive-element';
+import classNames from 'classnames/bind';
 import PopperContainer from './_PopperContainer';
 import DateInput from './DateInput';
 import DateUtil from './DateUtil';
 import styles from './DatePicker.module.scss';
+
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -71,6 +75,10 @@ const propTypes = {
    */
   requestFocus: PropTypes.func,
   /**
+   * Whether or not the date is required.
+   */
+  required: PropTypes.bool,
+  /**
    * An ISO 8601 string representation of the initial value to show in the date input.
    * This prop name is derived from react-datepicker but is analogous to value in a form input field.
    */
@@ -90,6 +98,7 @@ const defaultProps = {
   onClickOutside: undefined,
   onSelect: undefined,
   releaseFocus: undefined,
+  required: false,
   requestFocus: undefined,
   selectedDate: undefined,
 };
@@ -239,6 +248,7 @@ class DatePicker extends React.Component {
       onClickOutside,
       onSelect,
       requestFocus,
+      required,
       releaseFocus,
       selectedDate,
       ...customProps
@@ -342,12 +352,16 @@ class DatePicker extends React.Component {
     );
 
     return (
-      <div className={styles['date-picker']}>
-        <ResponsiveElement
-          responsiveTo="window"
-          defaultElement={portalPicker}
-          small={popupPicker}
-        />
+      <div className={cx(['container-div'])}>
+        {required && <span className={cx(['required'])}>*</span>}
+        <div className={cx(['date-picker'])}>
+          <ResponsiveElement
+            className={cx(['date-picker'])}
+            responsiveTo="window"
+            defaultElement={portalPicker}
+            small={popupPicker}
+          />
+        </div>
       </div>
     );
   }

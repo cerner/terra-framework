@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added 'required' prop to match terra-form components' required prop
 
 3.4.0 - (February 5, 2019)
 ------------------

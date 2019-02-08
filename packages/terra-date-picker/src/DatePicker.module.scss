@@ -4,6 +4,10 @@
 
 /* stylelint-disable selector-max-compound-selectors, max-nesting-depth */
 :local {
+  .container-div {
+    display: inline-block;
+  }
+
   .date-picker {
     display: inline-block;
 
@@ -42,6 +46,13 @@
         }
       }
     }
+  }
+
+  .required {
+    color: var(--terra-date-picker-required-color , #e50000);
+    display: inline-block;
+    padding-right: var(--terra-date-picker-required-padding-right, 0.357em);
+    vertical-align: center;
   }
 }
 /* stylelint-enable */

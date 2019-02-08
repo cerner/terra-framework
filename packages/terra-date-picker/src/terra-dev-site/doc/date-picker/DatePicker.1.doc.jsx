@@ -22,6 +22,8 @@ import DatePickerDefaultDate from '../example/DatePickerDefaultDate';
 import DatePickerDefaultDateSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DatePickerDefaultDate';
 import DatePickerInsideModal from '../example/DatePickerInsideModal';
 import DatePickerInsideModalSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DatePickerInsideModal';
+import DatePickerRequired from '../example/DatePickerRequired';
+import DatePickerRequiredSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DatePickerRequired';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
@@ -64,6 +66,11 @@ const DocPage = () => (
         title: 'Presented Inside Modal',
         example: <DatePickerInsideModal />,
         source: DatePickerInsideModalSrc,
+      },
+      {
+        title: 'Required',
+        example: <DatePickerRequired />,
+        source: DatePickerRequiredSrc,
       },
     ]}
     propsTables={[

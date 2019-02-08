@@ -330,4 +330,22 @@ describe('Date Picker', () => {
     Terra.should.matchScreenshot();
     Terra.should.beAccessible({ rules: ignoredA11y });
   });
+
+  describe('Required Date Picker', () => {
+    before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-required'));
+
+    it('creates a hidden input and empty value attr. when no date is entered', () => {
+      expect(browser.getAttribute('[data-terra-date-input-hidden]', 'name')).to.equal('date-input');
+      expect(browser.getAttribute('[data-terra-date-input-hidden]', 'value')).to.equal('');
+    });
+
+    it('sets the date', () => {
+      browser.setValue('input[name="terra-date-date-input"]', '06/01/2017');
+      browser.keys('Enter');
+      browser.click('[class*="button"]');
+    });
+
+    Terra.should.matchScreenshot('date picker required');
+    Terra.should.beAccessible({ rules: ignoredA11y });
+  });
 });
