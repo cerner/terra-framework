@@ -230,7 +230,7 @@ class DateTimePicker extends React.Component {
 
   handleTimeChange(event, time) {
     this.timeValue = time;
-    const validDate = DateTimeUtils.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeWithinRange(this.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue));
+    const validDate = DateTimeUtils.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeWithinRange(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat));
     const validTime = DateTimeUtils.isValidTime(this.timeValue);
     const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
 
@@ -348,10 +348,6 @@ class DateTimePicker extends React.Component {
 
   handleOnRequestClose() {
     this.setState({ isTimeClarificationOpen: false });
-  }
-
-  convertDateTimeStringToMomentObject(date, time) {
-    return DateTimeUtils.updateTime(DateUtil.createSafeDate(DateUtil.convertToISO8601(date, this.state.dateFormat)), time);
   }
 
   renderTimeClarification() {
