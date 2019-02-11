@@ -260,6 +260,12 @@ class DatePicker extends React.Component {
     delete customProps.onCalendarButtonClick;
     delete customProps.onInputFocus;
 
+    const attributes = Object.assign({}, customProps);
+
+    if (required) {
+      attributes['aria-required'] = 'true';
+    }
+
     const { intl } = this.context;
     const todayString = intl.formatMessage({ id: 'Terra.datePicker.today' });
     const dateFormat = DateUtil.getFormatByLocale(intl.locale);
@@ -271,7 +277,7 @@ class DatePicker extends React.Component {
 
     const portalPicker = (
       <ReactDatePicker
-        {...customProps}
+        {...attributes}
         selected={this.state.selectedDate}
         onChange={this.handleChange}
         onChangeRaw={this.handleChangeRaw}
@@ -308,7 +314,7 @@ class DatePicker extends React.Component {
 
     const popupPicker = (
       <ReactDatePicker
-        {...customProps}
+        {...attributes}
         selected={this.state.selectedDate}
         onChange={this.handleChange}
         onChangeRaw={this.handleChangeRaw}
