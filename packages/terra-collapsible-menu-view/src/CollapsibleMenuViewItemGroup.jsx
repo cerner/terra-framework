@@ -70,22 +70,22 @@ class CollapsibleMenuViewItemGroup extends React.Component {
     const { isCollapsibleMenuItem } = this.context;
 
     if (isCollapsibleMenuItem && selectedKeys.length) {
-          return (
-            <li>
-              <Menu.ItemGroup {...customProps} onChange={this.handleOnChange}>
-                {children}
-              </Menu.ItemGroup>
-            </li>
-          );
-        } if (isCollapsibleMenuItem) {
-          return (
-            <li>
-              <List {...customProps} onChange={this.handleOnChange}>
-                {children}
-              </List>
-            </li>
-          );
-        }
+      return (
+        <li>
+          <Menu.ItemGroup {...customProps} onChange={this.handleOnChange}>
+            {children}
+          </Menu.ItemGroup>
+        </li>
+      );
+    } if (isCollapsibleMenuItem) {
+        return (
+          <li>
+            <List {...customProps} onChange={this.handleOnChange}>
+              {children}
+            </List>
+          </li>
+        );
+      }
 
     const buttonGroupClassNames = cx([
       'face-up-item',
