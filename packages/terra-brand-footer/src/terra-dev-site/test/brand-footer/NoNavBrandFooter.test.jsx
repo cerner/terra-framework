@@ -79,4 +79,5 @@ export default () => (
         <small>Copyright &copy; 2018 Cerner Corporation.  All Rights Reserved.</small>
       </span>
 )}
-  />);
+  />
+);

@@ -57,7 +57,8 @@ describe('NavigationLayout', () => {
         menu={<Menu />}
       >
         <Content />
-      </NavigationLayout.WrappedComponent>);
+      </NavigationLayout.WrappedComponent>
+    );
 
     const wrapper = shallow(component);
     expect(wrapper).toMatchSnapshot();

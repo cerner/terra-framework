@@ -255,10 +255,6 @@ class Hookshot extends React.Component {
     );
 
     let styleUpdated = false;
-    if (this.contentNode.style.position !== result.style.position) {
-      this.contentNode.style.position = result.style.position;
-      styleUpdated = true;
-    }
     const newTransform = `translate3d(${result.style.left}, ${result.style.top}, 0px)`;
     if (this.contentNode.style.transform !== newTransform) {
       this.contentNode.style.transform = newTransform;

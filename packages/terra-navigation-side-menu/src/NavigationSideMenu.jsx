@@ -184,7 +184,7 @@ class NavigationSideMenu extends Component {
 
   buildListContent(currentItem) {
     if (currentItem && currentItem.childKeys && currentItem.childKeys.length) {
-      return <List role="listbox" className={cx(['menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</List>;
+      return <List role="listbox" className={cx(['side-menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</List>;
     }
     return null;
   }
@@ -200,6 +200,9 @@ class NavigationSideMenu extends Component {
       ...customProps
     } = this.props;
     const currentItem = this.state.items[selectedMenuKey];
+    let sideMenuContentContainerClassNames = cx([
+      'side-menu-content-container',
+    ]);
 
     let onBack;
     const parentKey = this.state.parents[selectedMenuKey];
@@ -222,10 +225,12 @@ class NavigationSideMenu extends Component {
           {toolbar}
         </Fragment>
       );
+    } else {
+      sideMenuContentContainerClassNames = cx(['side-menu-content-container', 'is-root']);
     }
 
     return (
-      <ContentContainer {...customProps} header={header} fill>
+      <ContentContainer {...customProps} header={header} fill className={sideMenuContentContainerClassNames}>
         {this.buildListContent(currentItem)}
       </ContentContainer>
     );

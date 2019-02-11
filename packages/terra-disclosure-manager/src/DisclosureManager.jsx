@@ -221,6 +221,7 @@ class DisclosureManager extends React.Component {
       if (disclosureManager && disclosureManager.registerDismissCheck) {
         // The combination of all managed dismiss checks is registered to the parent app delegate to ensure
         // that all are accounted for by the parent.
+        // eslint-disable-next-line compat/compat
         return disclosureManager.registerDismissCheck(() => Promise.all(Object.values(this.dismissChecks)));
       }
 

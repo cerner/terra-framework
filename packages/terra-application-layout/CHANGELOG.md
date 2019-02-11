@@ -3,8 +3,19 @@ Changelog
 
 Unreleased
 ----------
-### Added
-* New CSS custom property: `--terra-application-layout-navbar-box-shadow`
+
+4.1.0 - (February 5, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+4.0.0 - (January 25, 2019)
+------------------
+### Breaking Change
+* Updated variable names to match new naming standard
+* Added new variables for css theming
+* Removed variables for css theming
+* Updated terra-core dependencies
 
 ### Changed
 * Removed use of componentWillReceiveProps

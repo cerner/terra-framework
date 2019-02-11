@@ -22,6 +22,7 @@ Cerner Corporation
 - Cody Price [@dev-cprice]
 - Shetty Akarsh [@@ShettyAkarsh]
 - Alex Bezek [@alex-bezek]
+- Supreeth MR [@supreethmr]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -45,3 +46,4 @@ Cerner Corporation
 [@dev-cprice]: https://github.com/dev-cprice
 [@ShettyAkarsh]: https://github.com/ShettyAkarsh
 [@alex-bezek]: https://github.com/alex-bezek
+[@supreethmr]: https://github.com/supreethmr
