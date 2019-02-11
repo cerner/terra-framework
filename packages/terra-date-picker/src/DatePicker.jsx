@@ -352,7 +352,7 @@ class DatePicker extends React.Component {
     );
 
     return (
-      <div className={cx(['container-div'])}>
+      <div className={cx(['date-picker-wrapper'])}>
         {required && <span className={cx(['required'])}>*</span>}
         <div className={cx(['date-picker'])}>
           <ResponsiveElement
