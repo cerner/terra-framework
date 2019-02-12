@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Added discernible text to footer Terra UI link
 
 2.1.0 - (February 5, 2019)
 ------------------

@@ -8,6 +8,11 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * @private
+   * Callback function indicating a close condition was met.
+   */
+  onRequestClose: PropTypes.func,
+  /**
    * The string representation of the index.
    */
   children: PropTypes.node,
