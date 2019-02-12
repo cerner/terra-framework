@@ -81,7 +81,7 @@ class InfiniteListExample extends React.Component {
       }}
       >
         <InfiniteList
-          isDivided
+          dividerStyle="standard"
           isFinishedLoading={!this.state.stillLoading}
           onRequestItems={this.addMoreData}
           initialLoadingIndicator={fullLoading}

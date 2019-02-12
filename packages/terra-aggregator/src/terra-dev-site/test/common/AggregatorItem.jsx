@@ -45,7 +45,7 @@ class AggregatorItem extends React.Component {
 
     return (
       <List
-        isDivided
+        dividerStyle="standard"
         role="listbox"
       >
         <Item

@@ -71,7 +71,6 @@ class NotificationDialogWithFocus extends React.Component {
           targetRef={() => document.getElementById('popup-in-modal')}
           releaseFocus={this.props.disclosureManager.releaseFocus}
           requestFocus={this.props.disclosureManager.requestFocus}
-          isContentFocusDisabled
         >
           <Placeholder title="Popup Content" />
         </Popup>

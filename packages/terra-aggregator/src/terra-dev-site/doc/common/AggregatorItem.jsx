@@ -126,7 +126,7 @@ class AggregatorItem extends React.Component {
         )}
       >
         <List
-          isDivided
+          dividerStyle="standard"
           role="listbox"
         >
           <Item
