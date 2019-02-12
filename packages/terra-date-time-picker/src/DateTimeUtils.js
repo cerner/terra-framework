@@ -1,4 +1,5 @@
 import moment from 'moment-timezone';
+import DateUtil from 'terra-date-picker/lib/DateUtil';
 
 class DateTimeUtils {
   static createSafeDate(date) {
@@ -108,6 +109,10 @@ class DateTimeUtils {
 
   static getStandardTZDisplay() {
     return moment('2017-01-01').tz(moment.tz.guess()).format('z');
+  }
+
+  static convertDateTimeStringToMomentObject(date, time, dateformat) {
+    return DateTimeUtils.updateTime(DateUtil.createSafeDate(DateUtil.convertToISO8601(date, dateformat)), time);
   }
 }
 
