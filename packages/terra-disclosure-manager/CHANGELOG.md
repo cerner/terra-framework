@@ -4,6 +4,9 @@ ChangeLog
 Unreleased
 ----------
 
+### Removed
+* Removed unused dependencies
+
 4.1.0 - (February 5, 2019)
 ------------------
 ### Changed
