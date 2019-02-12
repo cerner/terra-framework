@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Removed dependency on terra-list
 
 5.1.0 - (February 5, 2019)
 ------------------

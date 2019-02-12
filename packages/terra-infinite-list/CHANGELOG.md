@@ -3,6 +3,17 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Change
+* Update to terra-list v4
+* -- Update props to match List's new API
+* -- Selection state now managed outside of the infinite list
+* -- Expose SectionHeader and SubsectionHeader for use within list
+* -- Removed isDivided prop
+* -- Removed isSelectable prop
+* -- Removed selectedIndexes prop
+* -- Removed hasChevrons prop
+* -- Added dividerStyle prop
+* -- Added paddingStyle prop
 
 2.1.0 - (February 5, 2019)
 ------------------

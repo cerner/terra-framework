@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Breaking Change
+* Update to terra-list v4, the result of themeable variables changing
+
 ### Changed
 * Wrapped Collapsible Menu Items in <li>
 

@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Change
+* Update to terra-list v4, the result of themeable variables changing
 
 4.5.0 - (February 5, 2019)
 ------------------

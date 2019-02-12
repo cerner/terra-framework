@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Removed dependency on terra-list
+* Removed dependency on terra-grid
 
 5.1.0 - (February 5, 2019)
 ------------------
