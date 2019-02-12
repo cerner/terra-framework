@@ -25,6 +25,7 @@ export default () => (
     contentLeft={(
       <a
         href="http://terra-ui.com/"
+        aria-label="Terra UI Home"
         style={{
           backgroundColor: 'transparent',
           color: '#0065a3',
@@ -95,4 +96,5 @@ export default () => (
         <small>Copyright 2018 - 2019 Cerner Innovation, Inc.  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;).</small>
       </span>
 )}
-  />);
+  />
+);
