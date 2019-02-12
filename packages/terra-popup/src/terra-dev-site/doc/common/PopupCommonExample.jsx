@@ -1,28 +1,33 @@
 import React from 'react';
 import Button from 'terra-button';
+import PropTypes from 'prop-types';
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import Popup from 'terra-popup/lib/Popup';
 import Placeholder from 'terra-doc-template/lib/Placeholder';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
-class PopupBounded extends React.Component {
+const propTypes = {
+  attachmentBehavior: PropTypes.string,
+  contentAttachment: PropTypes.string,
+  isArrowDisplayed: PropTypes.bool,
+  title: PropTypes.string,
+};
+
+const defaultProps = {
+  attachmentBehavior: 'auto',
+  contentAttachment: 'top center',
+  isArrowDisplayed: true,
+  title: '',
+};
+
+class PopupAttachment extends React.Component {
   constructor(props) {
     super(props);
     this.handleButtonClick = this.handleButtonClick.bind(this);
     this.handleRequestClose = this.handleRequestClose.bind(this);
-    this.setParentNode = this.setParentNode.bind(this);
-    this.getParentNode = this.getParentNode.bind(this);
     this.setButtonNode = this.setButtonNode.bind(this);
     this.getButtonNode = this.getButtonNode.bind(this);
     this.state = { open: false };
-  }
-
-  setParentNode(node) {
-    this.parentNode = node;
-  }
-
-  getParentNode() {
-    return this.parentNode;
   }
 
   setButtonNode(node) {
@@ -42,30 +47,32 @@ class PopupBounded extends React.Component {
   }
 
   render() {
+    const {
+      attachmentBehavior,
+      contentAttachment,
+      isArrowDisplayed,
+      title,
+    } = this.props;
+
     return (
-      <div
-        style={{
-          height: '200px', width: '200px', background: 'aliceblue', overflow: 'hidden',
-        }}
-        ref={this.setParentNode}
-      >
+      <React.Fragment>
         <Popup
-          boundingRef={this.getParentNode}
-          classNameArrow="test-arrow"
-          classNameContent="test-content"
-          contentHeight="240"
-          contentWidth="320"
+          attachmentBehavior={attachmentBehavior}
+          contentAttachment={contentAttachment}
+          isArrowDisplayed={isArrowDisplayed}
           isOpen={this.state.open}
-          onRequestClose={this.handleRequestClose}
           targetRef={this.getButtonNode}
-          isContentFocusDisabled
+          onRequestClose={this.handleRequestClose}
         >
           <Placeholder title="Popup Content" />
         </Popup>
-        <Button text="Bounded Popup" onClick={this.handleButtonClick} refCallback={this.setButtonNode} />
-      </div>
+        <Button text={title} onClick={this.handleButtonClick} refCallback={this.setButtonNode} />
+      </React.Fragment>
     );
   }
 }
 
-export default PopupBounded;
+PopupAttachment.propTypes = propTypes;
+PopupAttachment.defaultProps = defaultProps;
+
+export default PopupAttachment;

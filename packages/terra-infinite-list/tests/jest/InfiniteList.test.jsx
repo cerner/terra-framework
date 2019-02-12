@@ -46,7 +46,8 @@ describe('InfiniteList', () => {
     const component = (
       <InfiniteList
         isFinishedLoading
-        isDivided
+        dividerStyle="standard"
+        paddingStyle="standard"
         role="listbox"
       >
         <Item isSelectable key={`item-${1}`}>
@@ -71,7 +72,8 @@ describe('InfiniteList', () => {
     const component = (
       <InfiniteList
         isFinishedLoading
-        isDivided
+        dividerStyle="standard"
+        paddingStyle="standard"
         role="listbox"
       >
         <Item isSelectable style={{ backgroundColor: 'pink' }} key={`item-${1}`}>

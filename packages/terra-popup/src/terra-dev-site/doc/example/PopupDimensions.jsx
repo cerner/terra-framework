@@ -2,11 +2,24 @@ import React from 'react';
 import Button from 'terra-button';
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import Popup from 'terra-popup/lib/Popup';
-import ExamplePopupContent from 'terra-popup/lib/terra-dev-site/doc/common/ExamplePopupContent';
+import Placeholder from 'terra-doc-template/lib/Placeholder';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 const HEIGHT_KEYS = Object.keys(Popup.Opts.heights);
 const WIDTH_KEYS = Object.keys(Popup.Opts.widths);
+
+/* eslint-disable */
+const PopupContent = ({ contentStyle, isHeightBounded, isWidthBounded }) => {
+  let title = 'Popup Content';
+  if (isHeightBounded) {
+    title += ' HeightBounded';
+  }
+  if (isWidthBounded) {
+    title += ' WidthBounded';
+  }
+  return <Placeholder title={title} style={contentStyle} />;
+};
+/* eslint-enable */
 
 class PopupDimensions extends React.Component {
   static generateOptions(values) {
@@ -20,7 +33,6 @@ class PopupDimensions extends React.Component {
     super(props);
     this.handleButtonClick = this.handleButtonClick.bind(this);
     this.handleRequestClose = this.handleRequestClose.bind(this);
-    this.handleOnChange = this.handleOnChange.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
     this.state = { open: false };
   }
@@ -30,10 +42,6 @@ class PopupDimensions extends React.Component {
   }
 
   handleRequestClose() {
-    this.setState({ open: false });
-  }
-
-  handleOnChange() {
     this.setState({ open: false });
   }
 
@@ -51,6 +59,13 @@ class PopupDimensions extends React.Component {
       contentDimensions.contentWidth = this.state.popupContentWidth;
     }
 
+    const contentStyle = {};
+    if (this.state.popupContentHeight === 'auto') {
+      contentStyle.height = '500px';
+    }
+    if (this.state.popupContentWidth === 'auto') {
+      contentStyle.width = '500px';
+    }
     return (
       <div>
         <label htmlFor="popupContentHeight">Pop Content Height</label>
@@ -75,9 +90,8 @@ class PopupDimensions extends React.Component {
             isOpen={this.state.open}
             onRequestClose={this.handleRequestClose}
             targetRef={() => document.getElementById('popup-dimensions')}
-            isContentFocusDisabled
           >
-            <ExamplePopupContent onChange={this.handleOnChange} />
+            <PopupContent contentStyle={contentStyle} />
           </Popup>
           <Button id="popup-dimensions" text={`${this.state.popupContentHeight || 'Default'} x ${this.state.popupContentWidth || 'Default'} Popup`} onClick={this.handleButtonClick} />
         </div>

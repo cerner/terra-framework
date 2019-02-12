@@ -11,7 +11,7 @@ const InfiniteListUpdating = () => {
       <div style={{ height: '380px' }}>
         <InfiniteList
           id="test-infinite-list"
-          isDivided
+          dividerStyle="standard"
           isFinishedLoading
         >
           <Item key="item-0"><div style={style}>Item 0</div></Item>

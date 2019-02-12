@@ -4,7 +4,8 @@ exports[`InfiniteList should render a default component 1`] = `
 <Fragment>
   <List
     className="infinite-list"
-    isDivided={false}
+    dividerStyle="none"
+    paddingStyle="none"
     refCallback={[Function]}
     role="none"
   >
@@ -20,10 +21,7 @@ exports[`InfiniteList should render a default component 1`] = `
         }
       }
     />
-    <ListItem
-      hasChevron={false}
-      isSelectable={false}
-      isSelected={false}
+    <li
       key="infinite-spinner-full"
       style={
         Object {
@@ -52,7 +50,8 @@ exports[`InfiniteList should render with initial children 1`] = `
 <Fragment>
   <List
     className="infinite-list"
-    isDivided={false}
+    dividerStyle="none"
+    paddingStyle="none"
     refCallback={[Function]}
     role="none"
   >
@@ -75,11 +74,6 @@ exports[`InfiniteList should render with initial children 1`] = `
       isSelected={false}
       key=".$item-1"
       refCallback={[Function]}
-      style={
-        Object {
-          "overflow": "hidden",
-        }
-      }
     >
       <div
         style={
@@ -99,11 +93,6 @@ exports[`InfiniteList should render with initial children 1`] = `
       isSelected={false}
       key=".$item-2"
       refCallback={[Function]}
-      style={
-        Object {
-          "overflow": "hidden",
-        }
-      }
     >
       <div
         style={
@@ -123,11 +112,6 @@ exports[`InfiniteList should render with initial children 1`] = `
       isSelected={false}
       key=".$item-3"
       refCallback={[Function]}
-      style={
-        Object {
-          "overflow": "hidden",
-        }
-      }
     >
       <div
         style={
@@ -147,11 +131,6 @@ exports[`InfiniteList should render with initial children 1`] = `
       isSelected={false}
       key=".$item-4"
       refCallback={[Function]}
-      style={
-        Object {
-          "overflow": "hidden",
-        }
-      }
     >
       <div
         style={
@@ -184,7 +163,8 @@ exports[`InfiniteList should render with list props 1`] = `
 <Fragment>
   <List
     className="infinite-list"
-    isDivided={true}
+    dividerStyle="standard"
+    paddingStyle="standard"
     refCallback={[Function]}
     role="listbox"
   >
@@ -207,11 +187,6 @@ exports[`InfiniteList should render with list props 1`] = `
       isSelected={false}
       key=".$item-1"
       refCallback={[Function]}
-      style={
-        Object {
-          "overflow": "hidden",
-        }
-      }
     >
       <div
         style={
@@ -231,11 +206,6 @@ exports[`InfiniteList should render with list props 1`] = `
       isSelected={true}
       key=".$item-2"
       refCallback={[Function]}
-      style={
-        Object {
-          "overflow": "hidden",
-        }
-      }
     >
       <div
         style={
@@ -255,11 +225,6 @@ exports[`InfiniteList should render with list props 1`] = `
       isSelected={false}
       key=".$item-3"
       refCallback={[Function]}
-      style={
-        Object {
-          "overflow": "hidden",
-        }
-      }
     >
       <div
         style={
@@ -279,11 +244,6 @@ exports[`InfiniteList should render with list props 1`] = `
       isSelected={false}
       key=".$item-4"
       refCallback={[Function]}
-      style={
-        Object {
-          "overflow": "hidden",
-        }
-      }
     >
       <div
         style={
@@ -314,27 +274,34 @@ exports[`InfiniteList should render with list props 1`] = `
 
 exports[`InfiniteList should render with list with style props 1`] = `
 <ul
-  class="list infinite-list"
-  data-list-items-divided="true"
+  class="list padding-standard divider-standard infinite-list"
   role="listbox"
 >
   <li
     class="list-item spacer"
     style="height:0px"
-  />
+  >
+    <div
+      class="item-fill"
+    />
+  </li>
   <li
     aria-selected="false"
     class="list-item is-selectable"
     data-infinite-list-index="0"
     data-item-show-focus="true"
     role="option"
-    style="background-color:pink;overflow:hidden"
+    style="background-color:pink"
     tabindex="0"
   >
     <div
-      style="height:20px;width:100%"
+      class="item-fill"
     >
-      item 1
+      <div
+        style="height:20px;width:100%"
+      >
+        item 1
+      </div>
     </div>
   </li>
   <li
@@ -343,13 +310,17 @@ exports[`InfiniteList should render with list with style props 1`] = `
     data-infinite-list-index="1"
     data-item-show-focus="true"
     role="option"
-    style="background-color:red;overflow:hidden"
+    style="background-color:red"
     tabindex="0"
   >
     <div
-      style="height:20px;width:100%"
+      class="item-fill"
     >
-      item 2
+      <div
+        style="height:20px;width:100%"
+      >
+        item 2
+      </div>
     </div>
   </li>
   <li
@@ -358,13 +329,17 @@ exports[`InfiniteList should render with list with style props 1`] = `
     data-infinite-list-index="2"
     data-item-show-focus="true"
     role="option"
-    style="background-color:blue;overflow:hidden"
+    style="background-color:blue"
     tabindex="0"
   >
     <div
-      style="height:20px;width:100%"
+      class="item-fill"
     >
-      item 3
+      <div
+        style="height:20px;width:100%"
+      >
+        item 3
+      </div>
     </div>
   </li>
   <li
@@ -373,19 +348,27 @@ exports[`InfiniteList should render with list with style props 1`] = `
     data-infinite-list-index="3"
     data-item-show-focus="true"
     role="option"
-    style="background-color:yellow;overflow:hidden"
+    style="background-color:yellow"
     tabindex="0"
   >
     <div
-      style="height:20px;width:100%"
+      class="item-fill"
     >
-      item 4
+      <div
+        style="height:20px;width:100%"
+      >
+        item 4
+      </div>
     </div>
   </li>
   <li
     class="list-item spacer"
     style="height:0px"
-  />
+  >
+    <div
+      class="item-fill"
+    />
+  </li>
 </ul>
 `;
 
@@ -393,7 +376,8 @@ exports[`InfiniteList should render with no children and loading 1`] = `
 <Fragment>
   <List
     className="infinite-list"
-    isDivided={false}
+    dividerStyle="none"
+    paddingStyle="none"
     refCallback={[Function]}
     role="none"
   >
@@ -409,10 +393,7 @@ exports[`InfiniteList should render with no children and loading 1`] = `
         }
       }
     />
-    <ListItem
-      hasChevron={false}
-      isSelectable={false}
-      isSelected={false}
+    <li
       key="infinite-spinner-full"
       style={
         Object {
@@ -430,7 +411,7 @@ exports[`InfiniteList should render with no children and loading 1`] = `
           }
         }
       />
-    </ListItem>
+    </li>
     <ListItem
       className="spacer"
       hasChevron={false}

@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import ResizeObserver from 'resize-observer-polyfill';
-import List, { Item, SectionHeader, SubsectionHeader } from 'terra-list';
+import List, {
+  Item, SectionHeader, SubsectionHeader,
+} from 'terra-list';
 import InfiniteUtils from './_InfiniteUtils';
 import styles from './InfiniteList.module.scss';
 
@@ -11,18 +13,19 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The child list items, of type InfiniteList.Item, to be placed within the infinite list.
-   * For further documentation of InfiniteList.Item see terra-list's ListItem.
+   * The child list items, of type InfiniteList Item, to be placed within the infinite list.
+   * For further documentation of InfiniteList Item see terra-list's ListItem.
    */
   children: PropTypes.node,
+  /**
+   * Whether or not the list's child items should have a border color applied.
+   * One of `'none'`, `'standard'`, `'bottom-only'`.
+   */
+  dividerStyle: PropTypes.oneOf(['none', 'standard', 'bottom-only']),
   /**
    * An indicator to be displayed when no children are yet present.
    */
   initialLoadingIndicator: PropTypes.element,
-  /**
-   * Whether or not the child list items should have a border color applied.
-   */
-  isDivided: PropTypes.bool,
   /**
    * Determines whether or not the loading indicator is visible and if callbacks are triggered.
    */
@@ -31,6 +34,11 @@ const propTypes = {
    * Callback trigger when new list items are requested.
    */
   onRequestItems: PropTypes.func,
+  /**
+   * The padding styling to apply to the child list item content.
+   * One of `'none'`, `'standard'`, `'compact'`.
+   */
+  paddingStyle: PropTypes.oneOf(['none', 'standard', 'compact']),
   /**
    * An indicator to be displayed at the end of the current loaded children.
    */
@@ -43,8 +51,9 @@ const propTypes = {
 
 const defaultProps = {
   children: [],
-  isDivided: false,
+  dividerStyle: 'none',
   isFinishedLoading: false,
+  paddingStyle: 'none',
   role: 'none',
 };
 
@@ -417,10 +426,10 @@ class InfiniteList extends React.Component {
     const {
       children,
       initialLoadingIndicator,
-      isDivided,
       isFinishedLoading,
       onRequestItems,
       progressiveLoadingIndicator,
+      role,
       ...customProps
     } = this.props;
 
@@ -429,28 +438,31 @@ class InfiniteList extends React.Component {
 
     let loadingSpinner;
     let visibleChildren;
-    let showDivided = isDivided;
 
     if (!isFinishedLoading) {
       if (this.childCount > 0) {
         loadingSpinner = (
-          <Item
+          <li
             key={`infinite-spinner-row-${this.loadingIndex}`}
           >
             {progressiveLoadingIndicator}
-          </Item>
+          </li>
         );
       } else {
         visibleChildren = (
-          <Item
+          <li
             key="infinite-spinner-full"
             style={{ height: '100%', position: 'relative' }}
           >
             {initialLoadingIndicator}
-          </Item>
+          </li>
         );
-        showDivided = false;
       }
+    }
+
+    const attrSpread = {};
+    if (role && role.length > 0 && role !== 'none') {
+      attrSpread.role = role;
     }
 
     let newChildren;
@@ -460,7 +472,7 @@ class InfiniteList extends React.Component {
         upperChildIndex = this.childCount;
       } else {
         newChildren = (
-          <List {...customProps} className={cx(['infinite-hidden'])}>
+          <List {...customProps} {...attrSpread} className={cx(['infinite-hidden'])}>
             {InfiniteUtils.getNewChildren(this.lastChildIndex, this.childrenArray, this.wrapChild)}
           </List>
         );
@@ -471,7 +483,7 @@ class InfiniteList extends React.Component {
 
     return (
       <React.Fragment>
-        <List {...customProps} isDivided={showDivided} className={cx(['infinite-list', customProps.className])} refCallback={this.setContentNode}>
+        <List {...customProps} {...attrSpread} className={cx(['infinite-list', customProps.className])} refCallback={this.setContentNode}>
           {topSpacer}
           {visibleChildren}
           {bottomSpacer}

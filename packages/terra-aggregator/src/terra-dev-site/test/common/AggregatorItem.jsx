@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import List, { Item } from 'terra-list2';
+import List, { Item } from 'terra-list';
 import DisclosureComponent from './DisclosureComponent';
 
 class AggregatorItem extends React.Component {

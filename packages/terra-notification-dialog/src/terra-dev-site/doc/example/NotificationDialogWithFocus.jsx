@@ -2,7 +2,7 @@ import React from 'react';
 import Button from 'terra-button';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import Popup from 'terra-popup/lib/Popup';
-import ExamplePopupContent from 'terra-popup/lib/terra-dev-site/doc/common/ExamplePopupContent';
+import Placeholder from 'terra-doc-template/lib/Placeholder';
 import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
 
 const clickOK = () => {
@@ -25,7 +25,6 @@ class NotificationDialogWithFocus extends React.Component {
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handlePopupButtonClick = this.handlePopupButtonClick.bind(this);
     this.handlePopupRequestClose = this.handlePopupRequestClose.bind(this);
-    this.handlePopupOnChange = this.handlePopupOnChange.bind(this);
   }
 
   handleOpenModal() {
@@ -41,10 +40,6 @@ class NotificationDialogWithFocus extends React.Component {
   }
 
   handlePopupRequestClose() {
-    this.setState({ open: false });
-  }
-
-  handlePopupOnChange() {
     this.setState({ open: false });
   }
 
@@ -78,7 +73,7 @@ class NotificationDialogWithFocus extends React.Component {
           requestFocus={this.props.disclosureManager.requestFocus}
           isContentFocusDisabled
         >
-          <ExamplePopupContent onChange={this.handlePopupOnChange} />
+          <Placeholder title="Popup Content" />
         </Popup>
         <Button id="popup-in-modal" text="Popup In Modal" onClick={this.handlePopupButtonClick} />
       </div>
