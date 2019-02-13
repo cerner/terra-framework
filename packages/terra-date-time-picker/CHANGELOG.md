@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Throws NPE if manually entered valid date is outside of allotted datetime range.
 
 3.5.0 - (February 5, 2019)
 ------------------
