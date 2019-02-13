@@ -11,9 +11,9 @@
 }
 
 .placeholder-list-item {
+  border-bottom: 1px solid #dedfe0;
   margin: 0;
   overflow: hidden;
-  border-bottom: 1px solid #dedfe0;
 
   &:last-of-type {
     border-bottom: 0;
