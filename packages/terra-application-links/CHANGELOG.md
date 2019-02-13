@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+5.2.0 - (February 13, 2019)
+------------------
 ### Changed
 * Removed dependency on terra-list
 

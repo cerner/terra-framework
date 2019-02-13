@@ -3,9 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+3.0.0 - (February 13, 2019)
+------------------
 ### Breaking Change
 * Update to terra-list v4
-* Update props to match List's new API, Guides: 
+* Update props to match List's new API, Guides:
 * https://github.com/cerner/terra-core/tree/master/packages/terra-list/docs/guides
 * Selection state now managed outside of the infinite list
 * Expose `SectionHeader` and `SubsectionHeader` for use within list

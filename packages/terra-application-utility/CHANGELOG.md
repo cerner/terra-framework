@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+2.2.0 - (February 13, 2019)
+------------------
 ### Fixed
 * Fix lint errors from eslint-react-plugin
 

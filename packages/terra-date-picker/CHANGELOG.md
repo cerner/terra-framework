@@ -4,10 +4,15 @@ Changelog
 Unreleased
 ----------
 
+3.5.0 - (February 13, 2019)
+------------------
+### Changed
+* Minor dependency version bump
+
 3.4.0 - (February 5, 2019)
 ------------------
 ### Changed
-* Migrate to terra-framework 
+* Migrate to terra-framework
 
 3.3.0 - (January 26, 2019)
 ------------------
