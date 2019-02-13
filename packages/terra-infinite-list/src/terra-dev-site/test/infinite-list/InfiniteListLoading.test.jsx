@@ -1,6 +1,6 @@
 import React from 'react';
 
-import InfiniteList from '../../../InfiniteList';
+import InfiniteList from '../../../index';
 
 const InfiniteListLoading = () => (
   <InfiniteList

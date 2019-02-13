@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import ResizeObserver from 'resize-observer-polyfill';
-import List, {
-  Item, SectionHeader, SubsectionHeader,
-} from 'terra-list';
+import List from 'terra-list';
 import InfiniteUtils from './_InfiniteUtils';
 import styles from './InfiniteList.module.scss';
 
@@ -63,7 +61,7 @@ const defaultProps = {
  * @param {number} index - Index to use as part of the spacers key.
  */
 const createSpacer = (height, index) => (
-  <Item
+  <li
     className={cx(['spacer'])}
     style={{ height }}
     key={`infinite-spacer-${index}`}
@@ -443,6 +441,7 @@ class InfiniteList extends React.Component {
       if (this.childCount > 0) {
         loadingSpinner = (
           <li
+            className={cx('spacer')}
             key={`infinite-spinner-row-${this.loadingIndex}`}
           >
             {progressiveLoadingIndicator}
@@ -451,8 +450,9 @@ class InfiniteList extends React.Component {
       } else {
         visibleChildren = (
           <li
+            className={cx('spacer')}
             key="infinite-spinner-full"
-            style={{ height: '100%', position: 'relative' }}
+            style={{ height: '100%' }}
           >
             {initialLoadingIndicator}
           </li>
@@ -499,8 +499,3 @@ InfiniteList.propTypes = propTypes;
 InfiniteList.defaultProps = defaultProps;
 
 export default InfiniteList;
-export {
-  Item,
-  SectionHeader,
-  SubsectionHeader,
-};

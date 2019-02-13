@@ -1,5 +1,5 @@
 import React from 'react';
-import InfiniteList, { Item } from '../../../InfiniteList';
+import InfiniteList, { Item } from '../../../index';
 
 class InfiniteListSameCount extends React.Component {
   constructor(props) {

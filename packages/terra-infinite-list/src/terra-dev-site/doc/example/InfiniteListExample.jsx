@@ -7,7 +7,7 @@ import classNames from 'classnames/bind';
 import debounce from 'lodash.debounce';
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import styles from 'terra-infinite-list/lib/terra-dev-site/doc/example/InfiniteListExample.scss';
-import InfiniteList, { Item } from 'terra-infinite-list/lib/InfiniteList';
+import InfiniteList, { Item } from 'terra-infinite-list/lib/index';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 const cx = classNames.bind(styles);

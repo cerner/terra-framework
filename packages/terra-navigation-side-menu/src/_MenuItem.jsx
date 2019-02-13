@@ -102,7 +102,7 @@ class MenuItem extends React.Component {
     return (
       <li
         className={cx('list-item')}
-        aria-selected="false"
+        aria-selected={isSelected}
         role="option"
       >
         <div

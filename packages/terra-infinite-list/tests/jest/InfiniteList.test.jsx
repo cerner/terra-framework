@@ -1,5 +1,5 @@
 import React from 'react';
-import InfiniteList, { Item } from '../../src/InfiniteList';
+import InfiniteList, { Item } from '../../src/index';
 
 describe('InfiniteList', () => {
   it('should render a default component', () => {

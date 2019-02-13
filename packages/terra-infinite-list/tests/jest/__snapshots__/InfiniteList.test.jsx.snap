@@ -9,11 +9,8 @@ exports[`InfiniteList should render a default component 1`] = `
     refCallback={[Function]}
     role="none"
   >
-    <ListItem
+    <li
       className="spacer"
-      hasChevron={false}
-      isSelectable={false}
-      isSelected={false}
       key="infinite-spacer-0"
       style={
         Object {
@@ -22,19 +19,16 @@ exports[`InfiniteList should render a default component 1`] = `
       }
     />
     <li
+      className="spacer"
       key="infinite-spinner-full"
       style={
         Object {
           "height": "100%",
-          "position": "relative",
         }
       }
     />
-    <ListItem
+    <li
       className="spacer"
-      hasChevron={false}
-      isSelectable={false}
-      isSelected={false}
       key="infinite-spacer-1"
       style={
         Object {
@@ -55,11 +49,8 @@ exports[`InfiniteList should render with initial children 1`] = `
     refCallback={[Function]}
     role="none"
   >
-    <ListItem
+    <li
       className="spacer"
-      hasChevron={false}
-      isSelectable={false}
-      isSelected={false}
       key="infinite-spacer-0"
       style={
         Object {
@@ -143,11 +134,8 @@ exports[`InfiniteList should render with initial children 1`] = `
         item 4
       </div>
     </ListItem>
-    <ListItem
+    <li
       className="spacer"
-      hasChevron={false}
-      isSelectable={false}
-      isSelected={false}
       key="infinite-spacer-1"
       style={
         Object {
@@ -168,11 +156,8 @@ exports[`InfiniteList should render with list props 1`] = `
     refCallback={[Function]}
     role="listbox"
   >
-    <ListItem
+    <li
       className="spacer"
-      hasChevron={false}
-      isSelectable={false}
-      isSelected={false}
       key="infinite-spacer-0"
       style={
         Object {
@@ -256,11 +241,8 @@ exports[`InfiniteList should render with list props 1`] = `
         item 4
       </div>
     </ListItem>
-    <ListItem
+    <li
       className="spacer"
-      hasChevron={false}
-      isSelectable={false}
-      isSelected={false}
       key="infinite-spacer-1"
       style={
         Object {
@@ -278,13 +260,9 @@ exports[`InfiniteList should render with list with style props 1`] = `
   role="listbox"
 >
   <li
-    class="list-item spacer"
+    class="spacer"
     style="height:0px"
-  >
-    <div
-      class="item-fill"
-    />
-  </li>
+  />
   <li
     aria-selected="false"
     class="list-item is-selectable"
@@ -362,13 +340,9 @@ exports[`InfiniteList should render with list with style props 1`] = `
     </div>
   </li>
   <li
-    class="list-item spacer"
+    class="spacer"
     style="height:0px"
-  >
-    <div
-      class="item-fill"
-    />
-  </li>
+  />
 </ul>
 `;
 
@@ -381,11 +355,8 @@ exports[`InfiniteList should render with no children and loading 1`] = `
     refCallback={[Function]}
     role="none"
   >
-    <ListItem
+    <li
       className="spacer"
-      hasChevron={false}
-      isSelectable={false}
-      isSelected={false}
       key="infinite-spacer-0"
       style={
         Object {
@@ -394,11 +365,11 @@ exports[`InfiniteList should render with no children and loading 1`] = `
       }
     />
     <li
+      className="spacer"
       key="infinite-spinner-full"
       style={
         Object {
           "height": "100%",
-          "position": "relative",
         }
       }
     >
@@ -412,11 +383,8 @@ exports[`InfiniteList should render with no children and loading 1`] = `
         }
       />
     </li>
-    <ListItem
+    <li
       className="spacer"
-      hasChevron={false}
-      isSelectable={false}
-      isSelected={false}
       key="infinite-spacer-1"
       style={
         Object {

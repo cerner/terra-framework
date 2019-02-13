@@ -1,6 +1,6 @@
 import React from 'react';
 
-import InfiniteList, { Item } from '../../../InfiniteList';
+import InfiniteList, { Item } from '../../../index';
 
 const InfiniteListUpdating = () => {
   const style = { height: '100px', width: '100%' };
