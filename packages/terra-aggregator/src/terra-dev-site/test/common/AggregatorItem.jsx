@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import List, { Item } from 'terra-list';
+import List from '../../doc/common/placeholder-list/PlaceholderList';
+import Item from '../../doc/common/placeholder-list/PlaceholderListItem';
 import DisclosureComponent from './DisclosureComponent';
 
 class AggregatorItem extends React.Component {
@@ -10,16 +11,16 @@ class AggregatorItem extends React.Component {
     this.handleSelection = this.handleSelection.bind(this);
   }
 
-  handleSelection(event, metaData) {
+  handleSelection(event, key) {
     const { aggregatorDelegate, name } = this.props;
 
-    if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState.selectedKey === metaData.key) {
+    if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState.selectedKey === key) {
       aggregatorDelegate.releaseFocus();
       return;
     }
 
     aggregatorDelegate.requestFocus({
-      selectedKey: metaData.key,
+      selectedKey: key,
     })
       .then(({ disclose }) => {
         if (disclose) {
@@ -44,15 +45,11 @@ class AggregatorItem extends React.Component {
     }
 
     return (
-      <List
-        dividerStyle="standard"
-        role="listbox"
-      >
+      <List>
         <Item
-          isSelectable
           isSelected={key === 'test-key'}
-          onSelect={this.handleSelection}
-          metaData={{ key: 'test-key' }}
+          onSelect={event => this.handleSelection(event, 'test-key')}
+          isPadded={false}
         >
           <div id={targetId}>{name}</div>
         </Item>

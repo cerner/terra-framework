@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'terra-button';
-import List, { Item } from 'terra-list';
 import ContentContainer from 'terra-content-container';
 import Arrange from 'terra-arrange';
 import ActionHeader from 'terra-action-header';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
+import List from './placeholder-list/PlaceholderList';
+import Item from './placeholder-list/PlaceholderListItem';
 
 import DisclosureComponent from './DisclosureComponent';
 
@@ -45,7 +46,7 @@ class AggregatorItem extends React.Component {
     this.launchModal = this.launchModal.bind(this);
   }
 
-  handleSelection(event, metaData) {
+  handleSelection(event, index) {
     const { aggregatorDelegate, name, discloseOnSelect } = this.props;
 
     const disclosureSizeForIndex = {
@@ -57,7 +58,7 @@ class AggregatorItem extends React.Component {
       5: 'fullscreen',
     };
 
-    if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState.selectedIndex === metaData.index) {
+    if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState.selectedIndex === index) {
       aggregatorDelegate.releaseFocus()
         .catch(() => {
           console.log('Section - Focus release failed. Something must be locked.'); // eslint-disable-line no-console
@@ -66,13 +67,13 @@ class AggregatorItem extends React.Component {
     }
 
     aggregatorDelegate.requestFocus({
-      selectedIndex: metaData.index,
+      selectedIndex: index,
     })
       .then(({ disclose }) => {
         if (discloseOnSelect) {
           disclose({
             preferredType: this.props.disclosureType,
-            size: disclosureSizeForIndex[metaData.index],
+            size: disclosureSizeForIndex[index],
             content: {
               key: `Nested ${name}`,
               component: <DisclosureComponent name={`Nested ${name}`} disclosureType={this.props.disclosureType} />,
@@ -125,57 +126,42 @@ class AggregatorItem extends React.Component {
           />
         )}
       >
-        <List
-          dividerStyle="standard"
-          role="listbox"
-        >
+        <List isPadded>
           <Item
             isSelected={index === 0}
-            isSelectable
-            onSelect={this.handleSelection}
-            metaData={{ index: 0 }}
+            onSelect={event => this.handleSelection(event, 0)}
           >
-            <div style={{ padding: '.7rem' }}>Row 0</div>
+            <div>Row 0</div>
           </Item>
           <Item
             isSelected={index === 1}
-            isSelectable
-            onSelect={this.handleSelection}
-            metaData={{ index: 1 }}
+            onSelect={event => this.handleSelection(event, 1)}
           >
-            <div style={{ padding: '.7rem' }}>Row 1</div>
+            <div>Row 1</div>
           </Item>
           <Item
             isSelected={index === 2}
-            isSelectable
-            onSelect={this.handleSelection}
-            metaData={{ index: 2 }}
+            onSelect={event => this.handleSelection(event, 2)}
           >
-            <div style={{ padding: '.7rem' }}>Row 2</div>
+            <div>Row 2</div>
           </Item>
           <Item
             isSelected={index === 3}
-            isSelectable
-            onSelect={this.handleSelection}
-            metaData={{ index: 3 }}
+            onSelect={event => this.handleSelection(event, 3)}
           >
-            <div style={{ padding: '.7rem' }}>Row 3</div>
+            <div>Row 3</div>
           </Item>
           <Item
             isSelected={index === 4}
-            isSelectable
-            onSelect={this.handleSelection}
-            metaData={{ index: 4 }}
+            onSelect={event => this.handleSelection(event, 4)}
           >
-            <div style={{ padding: '.7rem' }}>Row 4</div>
+            <div>Row 4</div>
           </Item>
           <Item
             isSelected={index === 5}
-            isSelectable
-            onSelect={this.handleSelection}
-            metaData={{ index: 5 }}
+            onSelect={event => this.handleSelection(event, 5)}
           >
-            <div style={{ padding: '.7rem' }}>Row 5</div>
+            <div>Row 5</div>
           </Item>
         </List>
       </ContentContainer>
