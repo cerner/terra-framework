@@ -24,11 +24,21 @@
   "peerDependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "terra-base": "^4.0.0"
+    "terra-base": "^4.0.0",
+    "terra-breakpoints": "^2.0.0",
+    "terra-disclosure-manager": "^4.0.0",
+    "terra-modal-manager": "^5.0.0",
+    "terra-theme-provider": "^3.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.5.8",
+    "terra-doc-template": "^2.0.0",
+    "terra-base": "^4.0.0",
+    "terra-breakpoints": "^2.0.0",
+    "terra-disclosure-manager": "^4.0.0",
+    "terra-modal-manager": "^5.0.0",
+    "terra-theme-provider": "^3.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

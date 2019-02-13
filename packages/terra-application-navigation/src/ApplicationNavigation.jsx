@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Overlay from 'terra-overlay';
-import { withActiveBreakpoint } from 'terra-breakpoints';
+import { Breakpoints } from 'terra-application';
 import FocusTrap from 'focus-trap-react';
 
 import ApplicationLayoutPropTypes from './utils/propTypes';
@@ -13,8 +13,7 @@ import ExtensionBar from './extensions/ExtensionBar';
 import ApplicationHeader from './header/_ApplicationHeader';
 import ApplicationMenu from './menu/_ApplicationMenu';
 
-import 'terra-base/lib/baseStyles';
-
+// import 'terra-base/lib/baseStyles';
 import styles from './ApplicationNavigation.module.scss';
 
 const cx = classNames.bind(styles);
@@ -254,7 +253,7 @@ class ApplicationLayout extends React.Component {
 ApplicationLayout.propTypes = propTypes;
 ApplicationLayout.defaultProps = defaultProps;
 
-export default withActiveBreakpoint(ApplicationLayout);
+export default Breakpoints.withActiveBreakpoint(ApplicationLayout);
 
 const Utils = {
   helpers: Helpers,

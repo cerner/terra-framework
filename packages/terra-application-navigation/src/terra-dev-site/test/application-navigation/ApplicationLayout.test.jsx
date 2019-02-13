@@ -3,15 +3,15 @@ import React from 'react';
 import {
   MemoryRouter,
 } from 'react-router-dom';
+import Application from 'terra-application';
 
-import ApplicationBase from './test-app/ApplicationBase';
 import TestApplication from './test-app/TestApplication';
 
 const ApplicationLayoutTestWrapper = () => (
   <MemoryRouter>
-    <ApplicationBase>
+    <Application>
       <TestApplication />
-    </ApplicationBase>
+    </Application>
   </MemoryRouter>
 );
 

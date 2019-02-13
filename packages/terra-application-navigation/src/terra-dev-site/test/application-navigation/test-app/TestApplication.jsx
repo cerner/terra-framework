@@ -8,7 +8,7 @@ import { injectIntl, intlShape } from 'react-intl';
 import Image from 'terra-image';
 import ContentContainer from 'terra-content-container';
 import ActionHeader from 'terra-action-header';
-import { withDisclosureManager } from 'terra-disclosure-manager';
+import { DisclosureManager } from 'terra-application';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconPill from 'terra-icon/lib/icon/IconPill';
 import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
@@ -21,7 +21,7 @@ import CommonContent from './CommonContent';
 import profileImage from './henry.jpg';
 import heroImage from './hero.jpg';
 
-const DisclosureComponent = withDisclosureManager(({ disclosureManager, text }) => (
+const DisclosureComponent = DisclosureManager.withDisclosureManager(({ disclosureManager, text }) => (
   <ContentContainer
     header={(
       <ActionHeader title="Disclosure Component" onBack={disclosureManager.goBack} onClose={disclosureManager.closeDisclosure} />
@@ -257,4 +257,4 @@ TestApplication.propTypes = {
   intl: intlShape,
 };
 
-export default withDisclosureManager(withRouter(injectIntl((TestApplication))));
+export default DisclosureManager.withDisclosureManager(withRouter(injectIntl((TestApplication))));
