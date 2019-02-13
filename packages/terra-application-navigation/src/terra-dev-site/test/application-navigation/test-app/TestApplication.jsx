@@ -198,7 +198,7 @@ class TestApplication extends React.Component {
         }}
         menuHeroConfig={{
           component: <Image src={heroImage} variant="rounded" style={{ height: '150px', width: '100%' }} />,
-          padded: false,
+          padded: true,
         }}
         utilityHeroConfig={{
           component: <Image src={heroImage} variant="rounded" style={{ height: '150px', width: '100%' }} />,
