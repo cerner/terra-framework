@@ -1,0 +1,55 @@
+:local {
+  .utility-button {
+    align-items: center;
+    background-color: var(--terra-application-utility-header-background-color, transparent);
+    border-radius: var(--terra-application-utility-header-border-radius);
+    border-width: var(--terra-application-utility-header-border-width, 0);
+    color: var(--terra-application-utility-header-color, #fff);
+    cursor: pointer;
+    display: flex;
+    font-family: inherit;
+    height: var(--terra-application-utility-header-height, 100%);
+    justify-content: var(--terra-application-utility-header-justify-content, space-between);
+    padding-left: var(--terra-application-utility-header-padding-left, 0.5714rem);
+    padding-right: var(--terra-application-utility-header-padding-right, 0.5714rem);
+    width: 100%;
+
+    &:hover {
+      background-color: var(--terra-application-utility-header-hover-background-color);
+
+      .icon {
+        color: var(--terra-application-utility-header-hover-icon-color);
+      }
+    }
+
+    &:focus {
+      background-color: var(--terra-application-utility-header-focus-background-color);
+      box-shadow: var(--terra-application-utility-header-focus-box-shadow, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
+      outline: 0;
+
+      .icon {
+        color: var(--terra-application-utility-header-focus-icon-color);
+      }
+    }
+
+    .icon {
+      color: var(--terra-application-utility-header-icon-color);
+      width: var(--terra-application-utility-header-icon-width, 1.857rem);
+    }
+
+    .avatar {
+      height: var(--terra-application-utility-header-accessory-height, 1.875rem);
+      margin-right: var(--terra-application-utility-header-accessory-margin-right, 0.2143rem);
+      width: var(--terra-application-utility-header-accessory-width, 1.857rem);
+    }
+
+    .title {
+      font-size: var(--terra-application-utility-header-title-font-size, 1rem);
+      font-weight: var(--terra-application-utility-header-title-font-weight, normal);
+      margin-right: var(--terra-application-utility-header-title-margin-right, 0.2143rem);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}

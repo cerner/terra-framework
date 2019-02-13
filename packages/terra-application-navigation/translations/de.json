@@ -1,0 +1,14 @@
+{
+  "Terra.applicationLayout.applicationHeader.menuToggleLabel": "Menü ein-/ausblenden",
+  "Terra.applicationLayout.utilityDefaults.menu": "Menü",
+  "Terra.applicationLayout.utilityDefaults.userInformation": "Benutzerdaten",
+  "Terra.applicationLayout.utilityDefaults.changePhoto": "Foto ändern",
+  "Terra.applicationLayout.utilityDefaults.settings": "Einstellungen",
+  "Terra.applicationLayout.utilityDefaults.appearance": "Erscheinungsbild",
+  "Terra.applicationLayout.utilityDefaults.security": "Berechtigung",
+  "Terra.applicationLayout.utilityDefaults.help": "Hilfe",
+  "Terra.applicationLayout.utilityDefaults.gettingStarted": "Erste Schritte",
+  "Terra.applicationLayout.utilityDefaults.about": "Info über",
+  "Terra.applicationLayout.utilityDefaults.termsOfUse": "Nutzungsbestimmungen",
+  "Terra.applicationLayout.utilityDefaults.logOut": "Abmelden"
+}

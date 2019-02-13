@@ -1,0 +1,78 @@
+/* stylelint-disable selector-class-pattern */
+:local {
+  .fit {
+    flex: 0 0 auto;
+  }
+
+  .fill {
+    flex: 1 1 auto;
+    justify-content: space-between;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .fit,
+  .fill {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    overflow: visible;
+    position: relative;
+  }
+
+  .start {
+    justify-content: flex-start;
+  }
+
+  .end,
+  .header-inner {
+    justify-content: flex-end;
+  }
+
+  .logo,
+  .utilities {
+    max-width: 40%;
+  }
+
+  .logo {
+    min-width: var(--terra-application-header-layout-logo-min-width, 17.14286rem);
+  }
+
+  .extensions {
+    max-width: 100%;
+  }
+
+  .header-body {
+    position: relative;
+  }
+
+  .skip-content {
+    background-color: var(--terra-application-header-layout-background-color, #0079be);
+    border: var(--terra-application-header-layout-border, 1px solid #fff);
+    border-radius: var(--terra-application-header-layout-border-radius, 0);
+    clip: rect(1px, 1px, 1px, 1px);
+    color: var(--terra-application-header-layout-color, #fff);
+    height: 1px;
+    margin: var(--terra-application-header-layout-margin, 0);
+    outline: none;
+    overflow: hidden;
+    padding: var(--terra-application-header-layout-padding, 1rem 2rem);
+    position: absolute;
+    width: 1px;
+
+    &:focus {
+      clip: auto;
+      height: auto;
+      left: 0;
+      top: 0;
+      width: auto;
+      z-index: 20;
+    }
+
+    // Remove the inner border and padding in Firefox.
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+  }
+}

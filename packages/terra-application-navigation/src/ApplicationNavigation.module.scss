@@ -1,0 +1,90 @@
+@import "~terra-breakpoints/lib/media-queries";
+
+:local {
+  .application-layout-container {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .menu-panel {
+    background-color: var(--terra-application-layout-menu-panel-panel-background-color, rgba(17, 22, 25, 0.3));
+    height: 100%;
+    position: relative;
+    top: 0;
+    width: var(--terra-application-layout-menu-panel-panel-width-default, calc(100% - 3.571rem));
+    z-index: 0;
+    
+    @include terra-mq-small-up {
+      width: var(--terra-application-layout-menu-panel-panel-width-medium, 20rem);
+    } 
+  }
+
+  .body {
+    background-color: #fff;
+    box-shadow: -7px 0 9px -7px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: transform 0.15s ease-out;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .menu-is-open > .body {
+    transform: translate3d(var(--terra-application-layout-menu-panel-panel-width-default, calc(100% - 3.571rem), 0, 0));
+
+    @include terra-mq-small-up {
+      transform: translate3d(var(--terra-application-layout-menu-panel-panel-width-medium, 20rem), 0, 0);
+    } 
+  }
+
+  .content {
+    display: block;
+    flex: 1 1 auto;
+    height: 100%;
+    overflow: auto;
+  }
+
+  .extensions-layout {
+    display: flex;
+  }
+
+  .extensions-drawer {
+    background-color: green;
+    display: flex;
+    max-height: calc(100% - 3.5725rem);
+    max-width: 100%;
+    overflow: hidden;
+    position: absolute;
+    right: 138px;
+    top: 3.5725rem;
+    z-index: 100;
+  }
+
+  .extensions-drawer.is-compact {
+    width: 100%;
+    right: 0px;
+  }
+
+  .extensions-item {
+    align-items: center;
+    background-color: orange;
+    border-radius: 10px;
+    border: 2px solid green;
+    cursor: pointer;
+    display: flex;
+    height: 3.5725rem;
+    justify-content: center;
+    outline: none;
+    overflow: hidden;
+    width: 3.5725rem;
+  }
+
+  .extensions-item:hover {
+    background-color: red;
+  }
+}

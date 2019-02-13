@@ -1,0 +1,83 @@
+:local {
+  .large-user-layout {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 20px;
+
+    .avatar,
+    .name,
+    .detail {
+      flex: 1 1 auto;
+    }
+  
+    .avatar-container {
+      margin-bottom: 12px;
+    }
+  
+    .avatar {
+      font-size: 3rem;
+    }
+
+    .name {
+      color: #fff;  
+      font-size: 18px;
+      font-weight: 500;
+      overflow-wrap: break-word;
+      text-align: center;
+      white-space: normal;
+      word-break: break-word;
+      word-wrap: break-word;
+    }
+  
+    .detail {
+      color: rgba(255, 255, 255, 0.7);  
+      font-size: 14x;
+      overflow-wrap: break-word;
+      text-align: center;
+      white-space: normal;
+      word-break: break-word;
+      word-wrap: break-word;
+    }  
+  }
+
+  .small-user-layout {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+
+    .avatar-container {
+      flex: 0 0 auto;
+      height: var(--terra-application-layout-user-data-photo-height, 3.571rem);
+      margin-right: var(--terra-application-layout-user-data-photo-margin-right, 0.5714rem);
+      width: var(--terra-application-layout-user-data-photo-width, 3.571rem);
+    }
+  
+    .info-container {
+      flex: 1 1 auto;
+      width: 100%;
+    }
+  
+    .name {
+      color: #fff;
+      font-size: var(--terra-application-layout-user-data-name-font-size, 1.143rem);
+      font-weight: var(--terra-application-layout-user-data-name-font-weight);
+      overflow-wrap: break-word;
+      white-space: normal;
+      word-break: break-word;
+      word-wrap: break-word;
+    }
+  
+    .detail {
+      color: rgba(255, 255, 255, 0.7);  
+      font-size: var(--terra-application-layout-user-data-detail-font-size, 0.8571rem);
+      overflow-wrap: break-word;
+      white-space: normal;
+      word-break: break-word;
+      word-wrap: break-word;
+    }  
+  }
+}
+

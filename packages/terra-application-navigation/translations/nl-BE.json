@@ -1,0 +1,14 @@
+{
+  "Terra.applicationLayout.applicationHeader.menuToggleLabel": "Menu",
+  "Terra.applicationLayout.utilityDefaults.menu": "Menu",
+  "Terra.applicationLayout.utilityDefaults.userInformation": "Gebruikersinformatie",
+  "Terra.applicationLayout.utilityDefaults.changePhoto": "Foto wijzigen",
+  "Terra.applicationLayout.utilityDefaults.settings": "Instellingen",
+  "Terra.applicationLayout.utilityDefaults.appearance": "Uiterlijk",
+  "Terra.applicationLayout.utilityDefaults.security": "Beveiliging",
+  "Terra.applicationLayout.utilityDefaults.help": "Help",
+  "Terra.applicationLayout.utilityDefaults.gettingStarted": "Aan de slag",
+  "Terra.applicationLayout.utilityDefaults.about": "Over",
+  "Terra.applicationLayout.utilityDefaults.termsOfUse": "Gebruiksvoorwaarden",
+  "Terra.applicationLayout.utilityDefaults.logOut": "Afmelden"
+}

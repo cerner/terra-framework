@@ -102,7 +102,7 @@
     "stylelint": "^9.2.0",
     "stylelint-config-terra": "^2.0.0",
     "terra-base": "^4.0.0",
-    "terra-dev-site": "^3.0.0",
+    "terra-dev-site": "cerner/terra-dev-site#application-layout-updates",
     "terra-toolkit": "^4.16.0",
     "xfc": "^1.2.1"
   }
