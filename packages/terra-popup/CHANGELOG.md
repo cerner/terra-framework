@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Add Opts object onto Intl wrapped component so it's available when accessed by `PopupContent.Opts`
+
 ### Added
 * Added en-AU translations
 
