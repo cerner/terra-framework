@@ -55,9 +55,9 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
     </React.Fragment>
   }
 >
-  <List
+  <ul
     className="side-menu-list"
-    isDivided={false}
+    role="listbox"
   >
     <MenuItem
       data-menu-item="test1"
@@ -91,6 +91,6 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
       onKeyDown={[Function]}
       text="Test Menu 4"
     />
-  </List>
+  </ul>
 </ContentContainer>
 `;

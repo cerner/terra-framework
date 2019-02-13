@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Breaking Change
+* Major dependency version bump of terra-list
+
 ### Changed
 * Wrapped Collapsible Menu Items in <li>
 

@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Change
+* Major dependency version bump of terra-list
 
 4.5.0 - (February 5, 2019)
 ------------------
