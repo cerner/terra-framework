@@ -5,7 +5,7 @@ import ApplicationLayoutPropTypes from '../utils/propTypes';
 import { isSizeCompact } from '../utils/helpers';
 import ExtensionButton from './ExtensionButton';
 
-import styles from '../ApplicationLayout.module.scss';
+import styles from '../ApplicationNavigation.module.scss';
 
 const cx = classNames.bind(styles);
 

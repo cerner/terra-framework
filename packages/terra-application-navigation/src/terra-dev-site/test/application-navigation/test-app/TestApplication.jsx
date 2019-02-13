@@ -248,7 +248,7 @@ class TestApplication extends React.Component {
           <Route path="/page_6" render={() => <CommonContent contentName="Page 6" />} />
           <Route path="/page_7" render={() => <CommonContent contentName="Page 7" />} />
         </Switch>
-      </ApplicationLayout>
+      </ApplicationNavigation>
     );
   }
 }
