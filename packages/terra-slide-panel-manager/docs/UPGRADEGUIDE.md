@@ -59,19 +59,19 @@ import Base from 'terra-base';
 import SlidePanelManager from 'terra-slide-panel-manager'; 
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 
-const MyDisclosureComponent = withDisclosureManager({ disclosureManager }) => (
+const MyDisclosureComponent = withDisclosureManager(({ disclosureManager }) => (
   <Button
     text="Close Panel"
     onClick={() => { 
       disclosureManager.closeDisclosure();
     }}
   />
-);
+));
 MyDisclosureComponent.propTypes = {
   disclosureManager: disclosureManagerShape,
 }
 
-const MyComponent = withDisclosureManager({ disclosureManager }) => (
+const MyComponent = withDisclosureManager(({ disclosureManager }) => (
   <Button
     text="Launch Panel"
     onClick={() => { 
@@ -84,7 +84,7 @@ const MyComponent = withDisclosureManager({ disclosureManager }) => (
       });
     }}
   />
-);
+));
 MyComponent.propTypes = {
   disclosureManager: disclosureManagerShape,
 }
