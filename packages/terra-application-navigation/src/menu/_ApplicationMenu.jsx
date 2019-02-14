@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import Button from 'terra-button';
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import IconUnknown from 'terra-icon/lib/icon/IconUnknown';
 
@@ -46,7 +45,7 @@ const ApplicationMenu = ({
 
   let logout;
   if (onSelectLogout) {
-    logout = <Button isBlock text="Logout" onClick={onSelectLogout} />;
+    logout = <button onClick={onSelectLogout}>Logout</button>;
   }
 
   return (

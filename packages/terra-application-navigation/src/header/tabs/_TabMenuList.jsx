@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import List from 'terra-list';
 
 import styles from './ApplicationTabs.module.scss';
 
@@ -26,14 +25,14 @@ const propTypes = {
   refCallback: PropTypes.func,
 };
 
-const ApplicationTabMenuContent = ({
+const TabMenuList = ({
   children,
   isHeightBounded,
   isWidthBounded,
   refCallback,
   ...customProps
 }) => (
-  <List
+  <ul
     {...customProps}
     data-application-tab-menu-content
     className={cx(['tab-menu-list', { 'height-bounded': isHeightBounded }, { 'width-bounded': isWidthBounded }])}
@@ -41,11 +40,11 @@ const ApplicationTabMenuContent = ({
     ref={refCallback}
   >
     {React.Children.map(children, child => (
-      <List.Item content={child} key={child.props.tabKey} role="menuitem" />
+      <li key={child.props.path} role="menuitem">{child}</li>
     ))}
-  </List>
+  </ul>
 );
 
-ApplicationTabMenuContent.propTypes = propTypes;
+TabMenuList.propTypes = propTypes;
 
-export default ApplicationTabMenuContent;
+export default TabMenuList;

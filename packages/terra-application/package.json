@@ -23,12 +23,7 @@
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "peerDependencies": {
     "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "terra-base": "^4.0.0",
-    "terra-breakpoints": "^2.0.0",
-    "terra-disclosure-manager": "^4.0.0",
-    "terra-modal-manager": "^5.0.0",
-    "terra-theme-provider": "^3.0.0"
+    "react-dom": "^16.4.2"
   },
   "dependencies": {
     "classnames": "^2.2.5",

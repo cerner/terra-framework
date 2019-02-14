@@ -475,4 +475,6 @@ DisclosureManager.defaultProps = defaultProps;
 const disclosureManagerShape = DisclosureManagerDelegate.propType;
 
 export default withDisclosureManager(DisclosureManager);
-export { withDisclosureManager, disclosureManagerShape };
+export {
+  withDisclosureManager, disclosureManagerShape, DisclosureManagerContext, DisclosureManagerDelegate,
+};
