@@ -43,7 +43,7 @@ const defaultProps = {
   tabs: [],
 };
 
-class ApplicationTabs extends React.Component {
+class Tabs extends React.Component {
   constructor(props) {
     super(props);
     this.setContainerNode = this.setContainerNode.bind(this);
@@ -174,7 +174,7 @@ class ApplicationTabs extends React.Component {
   }
 }
 
-ApplicationTabs.propTypes = propTypes;
-ApplicationTabs.defaultProps = defaultProps;
+Tabs.propTypes = propTypes;
+Tabs.defaultProps = defaultProps;
 
-export default ApplicationTabs;
+export default Tabs;

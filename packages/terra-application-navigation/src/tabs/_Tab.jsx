@@ -29,7 +29,7 @@ const propTypes = {
   isActive: PropTypes.bool,
 };
 
-class ApplicationTab extends React.Component {
+class Tab extends React.Component {
   constructor(props) {
     super(props);
     this.state = { active: false, focused: false };
@@ -118,6 +118,6 @@ class ApplicationTab extends React.Component {
   }
 }
 
-ApplicationTab.propTypes = propTypes;
+Tab.propTypes = propTypes;
 
-export default ApplicationTab;
+export default Tab;

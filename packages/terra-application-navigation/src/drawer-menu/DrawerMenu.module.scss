@@ -1,5 +1,5 @@
 :local {
-  .application-menu {
+  .drawer-menu {
     background-color: #2a4b77;
     display: flex;
     flex-direction: column;
@@ -14,8 +14,6 @@
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       box-shadow: 0 -10px 10px 5px #1b2c40, 0 -1px 0 0 #485666;
       flex: 0 0 auto;
-      height: 55px;
-      padding: 10px;
       position: relative;
     }
 

@@ -30,14 +30,16 @@ const defaultProps = {
 const DrawerMenu = ({
   userConfig, heroConfig, navigationItems, activeNavigationItemKey, onSelectNavigationItem, onSelectSettings, onSelectHelp, onSelectLogout,
 }) => {
+  let hero;
+  if (heroConfig) {
+    hero = !heroConfig.removeContainerPadding ? (
+      <div className={cx(['padded-hero-container', { 'pad-bottom': !userConfig }])}>{heroConfig.component}</div>
+    ) : heroConfig.component;
+  }
+
   let user;
   if (userConfig) {
     user = heroConfig ? <DrawerMenuUser userConfig={userConfig} /> : <DrawerMenuUser userConfig={userConfig} variant="large" />;
-  }
-
-  let hero;
-  if (heroConfig) {
-    hero = !heroConfig.removeContainerPadding ? <div className={cx(['padded-hero-container', { 'pad-bottom': !userConfig }])}>{heroConfig.component}</div> : heroConfig.component;
   }
 
   let logout;
@@ -46,7 +48,7 @@ const DrawerMenu = ({
   }
 
   return (
-    <div className={cx('application-menu')}>
+    <div className={cx('drawer-menu')}>
       <div className={cx('vertical-overflow-container')}>
         <div className={cx('header')}>
           {hero}

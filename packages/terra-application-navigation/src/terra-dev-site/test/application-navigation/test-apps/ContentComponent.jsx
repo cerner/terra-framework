@@ -2,7 +2,7 @@ import React from 'react';
 
 import ContentContainer from 'terra-content-container';
 
-const PageContent = ({
+const ContentComponent = ({
   contentName, children,
 }) => (
   <ContentContainer
@@ -28,4 +28,4 @@ const PageContent = ({
   </ContentContainer>
 );
 
-export default PageContent;
+export default ContentComponent;

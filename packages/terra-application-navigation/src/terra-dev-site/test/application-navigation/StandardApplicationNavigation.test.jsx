@@ -5,14 +5,14 @@ import {
 } from 'react-router-dom';
 import Application from 'terra-application';
 
-import TestApplication from './test-app/TestApplication';
+import StandardApplicationNavigation from './test-apps/StandardApplicationNavigation';
 
-const ApplicationLayoutTestWrapper = () => (
+const StandardApplicationNavigationTest = () => (
   <MemoryRouter>
     <Application>
-      <TestApplication />
+      <StandardApplicationNavigation />
     </Application>
   </MemoryRouter>
 );
 
-export default ApplicationLayoutTestWrapper;
+export default StandardApplicationNavigationTest;
