@@ -1,11 +1,11 @@
 const viewports = Terra.viewports('small', 'large');
 
-describe('ApplicationTabs', () => {
-  viewports.forEach((viewport) => {
+viewports.forEach((viewport) => {
+  describe('ApplicationTabs', () => {
     before(() => {
       browser.setViewportSize(viewport);
     });
-
+    
     describe('Displays a default application tabs', () => {
       beforeEach(() => {
         browser.url('/#/raw/tests/terra-application-links/application-links/application-tabs-default');
