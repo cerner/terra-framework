@@ -46,25 +46,25 @@ const propTypes = {
    * If provided, the Application will render with a height determined by its inner content and
    * potentially overflow its parent container.
    */
-  parentOverflowIsEnabled: PropTypes.bool,
+  fitToParentIsDisabled: PropTypes.bool,
 };
 
 const Application = ({
-  locale, customTranslatedMessages, translationsLoadingPlaceholder, themeName, themeIsGlobal, parentOverflowIsEnabled, children,
+  locale, customTranslatedMessages, translationsLoadingPlaceholder, themeName, themeIsGlobal, fitToParentIsDisabled, children,
 }) => (
   <Base
-    className={cx(['application-base', { fill: !parentOverflowIsEnabled }])}
+    className={cx(['application-base', { fill: !fitToParentIsDisabled }])}
     customMessages={customTranslatedMessages}
     translationsLoadingPlaceholder={translationsLoadingPlaceholder}
     locale={locale}
   >
     <ThemeProvider
-      className={cx(['application-theme-provider', { fill: !parentOverflowIsEnabled }])}
+      className={cx(['application-theme-provider', { fill: !fitToParentIsDisabled }])}
       themeName={themeName}
       isGlobalTheme={themeIsGlobal}
     >
       <ActiveBreakpointProvider>
-        <ModalManager className={parentOverflowIsEnabled ? cx('application-modal-manager-overflow') : undefined}>
+        <ModalManager className={fitToParentIsDisabled ? cx('application-modal-manager-overflow') : undefined}>
           {children}
         </ModalManager>
       </ActiveBreakpointProvider>

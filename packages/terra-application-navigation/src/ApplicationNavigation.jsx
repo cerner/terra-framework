@@ -9,7 +9,7 @@ import ExtensionDrawer from './extensions/ExtensionDrawer';
 import ExtensionBar from './extensions/ExtensionBar';
 import Header from './header/_Header';
 import DrawerMenu from './drawer-menu/_DrawerMenu';
-import { shouldRenderDrawerMenu } from './utils/helpers';
+import { shouldRenderCompactNavigation } from './utils/helpers';
 import {
   userConfigPropType, heroConfigPropType, navigationItemsPropType, navigationAlignmentPropType, extensionConfigPropType, nameConfigPropType,
 } from './utils/propTypes';
@@ -69,7 +69,7 @@ const defaultProps = {
 
 class ApplicationNavigation extends React.Component {
   static getDerivedStateFromProps(props, state) {
-    if (state.drawerMenuIsOpen && !shouldRenderDrawerMenu(props.activeBreakpoint)) {
+    if (state.drawerMenuIsOpen && !shouldRenderCompactNavigation(props.activeBreakpoint)) {
       return {
         drawerMenuIsOpen: false,
       };
@@ -195,7 +195,7 @@ class ApplicationNavigation extends React.Component {
     return (
       <div className={cx(['application-layout-container', { 'menu-is-open': drawerMenuIsOpen }])}>
         <div className={cx('menu-panel')} aria-hidden={!drawerMenuIsOpen ? true : null} ref={this.setDrawerMenuNode} style={this.hideMenu && !drawerMenuIsOpen ? { visibility: 'hidden' } : null}>
-          {shouldRenderDrawerMenu(activeBreakpoint) ? (
+          {shouldRenderCompactNavigation(activeBreakpoint) ? (
             <FocusTrap
               active={drawerMenuIsOpen}
               focusTrapOptions={{

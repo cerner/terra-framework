@@ -9,7 +9,7 @@ import HeaderLayout from './_HeaderLayout';
 import Tabs from '../tabs/_Tabs';
 import UtilityMenuButton from '../utility-menu/_UtilityMenuButton';
 import UtilityMenu from '../utility-menu/_UtilityMenu';
-import { shouldRenderDrawerMenu } from '../utils/helpers';
+import { shouldRenderCompactNavigation } from '../utils/helpers';
 import {
   userConfigPropType, heroConfigPropType, navigationItemsPropType, navigationAlignmentPropType, nameConfigPropType,
 } from '../utils/propTypes';
@@ -218,7 +218,7 @@ class Header extends React.Component {
     } = this.props;
 
     let headerLayout;
-    if (shouldRenderDrawerMenu(activeBreakpoint)) {
+    if (shouldRenderCompactNavigation(activeBreakpoint)) {
       /**
        * When compact, the navigation region of the header renders the application name component instead. At compact
        * sizes, the logo region within the HeaderLayout is too small to use, so we instead render within

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { extensionConfigPropType } from '../utils/propTypes';
-import { shouldRenderDrawerMenu } from '../utils/helpers';
+import { shouldRenderCompactNavigation } from '../utils/helpers';
 import ExtensionButton from './ExtensionButton';
 
 import styles from '../ApplicationNavigation.module.scss';
@@ -52,7 +52,7 @@ const ExtensionBar = ({
       onSelect={onRequestClose}
     />
   );
-  if (shouldRenderDrawerMenu(activeBreakpoint)) {
+  if (shouldRenderCompactNavigation(activeBreakpoint)) {
     return (
       <div {...customProps} className={cx('extensions-layout')}>
         {moreButton}

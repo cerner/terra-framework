@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import FocusTrap from 'focus-trap-react';
 import onClickOutside from 'react-onclickoutside';
 import { extensionConfigPropType } from '../utils/propTypes';
-import { shouldRenderDrawerMenu } from '../utils/helpers';
+import { shouldRenderCompactNavigation } from '../utils/helpers';
 import ExtensionButton from './ExtensionButton';
 
 import styles from '../ApplicationNavigation.module.scss';
@@ -89,14 +89,14 @@ class ExtensionDrawer extends React.Component {
     delete customProps.stopPropagation;
 
     let extensionItems = extensionConfig.extensions;
-    if (!shouldRenderDrawerMenu(activeBreakpoint)) {
+    if (!shouldRenderCompactNavigation(activeBreakpoint)) {
       extensionItems = extensionConfig.extensions.slice(3);
     }
 
     const maxIndex = extensionItems.length - 1;
     return (
       <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true }}>
-        <div {...customProps} className={cx(['extensions-drawer', { 'is-compact': shouldRenderDrawerMenu(activeBreakpoint) }])}>
+        <div {...customProps} className={cx(['extensions-drawer', { 'is-compact': shouldRenderCompactNavigation(activeBreakpoint) }])}>
           {extensionItems.map((item, index) => {
             const key = `${item.text}-${index}`;
             return (

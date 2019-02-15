@@ -1,11 +1,11 @@
 /**
  */
-const shouldRenderDrawerMenu = size => size === 'tiny' || size === 'small' || size === 'medium';
+const shouldRenderCompactNavigation = activeBreakpoint => activeBreakpoint === 'tiny' || activeBreakpoint === 'small' || activeBreakpoint === 'medium';
 
 export default {
-  shouldRenderDrawerMenu,
+  shouldRenderCompactNavigation,
 };
 
 export {
-  shouldRenderDrawerMenu,
+  shouldRenderCompactNavigation,
 };
