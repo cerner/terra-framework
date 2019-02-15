@@ -7,12 +7,12 @@ import Application from 'terra-application';
 
 import ApplicationNavigationTest from './test-apps/ApplicationNavigationTest';
 
-const StandardApplicationNavigationTest = () => (
+const NoSettingsOrHelpTest = () => (
   <MemoryRouter>
     <Application>
-      <ApplicationNavigationTest />
+      <ApplicationNavigationTest hideNavigationItems />
     </Application>
   </MemoryRouter>
 );
 
-export default StandardApplicationNavigationTest;
+export default NoSettingsOrHelpTest;

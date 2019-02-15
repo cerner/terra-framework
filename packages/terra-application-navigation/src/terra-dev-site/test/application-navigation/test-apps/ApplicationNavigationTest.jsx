@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions  */
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   withRouter, Redirect, matchPath, Switch, Route,
 } from 'react-router-dom';
@@ -68,7 +69,7 @@ const utilityHeroConfig = {
   removeContainerPadding: false,
 };
 
-class StandardApplicationNavigation extends React.Component {
+class ApplicationNavigationTest extends React.Component {
   static getActiveNavigationItem(location) {
     for (let i = 0, numberOfNavigationItems = navigationItems.length; i < numberOfNavigationItems; i += 1) {
       if (matchPath(location.pathname, navigationItems[i].key)) {
@@ -81,7 +82,7 @@ class StandardApplicationNavigation extends React.Component {
 
   static getDerivedStateFromProps(newProps) {
     return {
-      activeNavigationItem: StandardApplicationNavigation.getActiveNavigationItem(newProps.location),
+      activeNavigationItem: ApplicationNavigationTest.getActiveNavigationItem(newProps.location),
     };
   }
 
@@ -159,6 +160,15 @@ class StandardApplicationNavigation extends React.Component {
   }
 
   render() {
+    const {
+      hideSettings,
+      hideHelp,
+      hideLogout,
+      hideNavigationItems,
+      hideUser,
+      hideHero,
+    } = this.props;
+
     const { activeNavigationItem } = this.state;
 
     if (!activeNavigationItem) {
@@ -210,15 +220,15 @@ class StandardApplicationNavigation extends React.Component {
       <ApplicationNavigation
         nameConfig={nameConfig}
         extensionConfig={extensionConfig}
-        userConfig={userConfig}
-        menuHeroConfig={menuHeroConfig}
-        utilityHeroConfig={utilityHeroConfig}
-        navigationItems={navigationItems}
+        userConfig={!hideUser ? userConfig : undefined}
+        menuHeroConfig={!hideHero ? menuHeroConfig : undefined}
+        utilityHeroConfig={!hideHero ? utilityHeroConfig : undefined}
+        navigationItems={!hideNavigationItems ? navigationItems : undefined}
         activeNavigationItemKey={activeNavigationItem.key}
-        onSelectNavigationItem={this.handleNavigationItemSelection}
-        onSelectSettings={this.handleSettingsSelection}
-        onSelectHelp={this.handleHelpSelection}
-        onSelectLogout={this.handleLogoutSelection}
+        onSelectNavigationItem={!hideNavigationItems ? this.handleNavigationItemSelection : null}
+        onSelectSettings={!hideSettings ? this.handleSettingsSelection : undefined}
+        onSelectHelp={!hideHelp ? this.handleHelpSelection : undefined}
+        onSelectLogout={!hideLogout ? this.handleLogoutSelection : undefined}
       >
         <Switch>
           <Route path="/page_1" render={() => <ContentComponent contentName="Page 1" />} />
@@ -234,8 +244,15 @@ class StandardApplicationNavigation extends React.Component {
   }
 }
 
-StandardApplicationNavigation.propTypes = {
+ApplicationNavigationTest.propTypes = {
   disclosureManager: DisclosureManager.disclosureManagerShape,
+  history: PropTypes.object,
+  hideLogout: PropTypes.bool,
+  hideSettings: PropTypes.bool,
+  hideHelp: PropTypes.bool,
+  hideNavigationItems: PropTypes.bool,
+  hideUser: PropTypes.bool,
+  hideHero: PropTypes.bool,
 };
 
-export default DisclosureManager.withDisclosureManager(withRouter((StandardApplicationNavigation)));
+export default DisclosureManager.withDisclosureManager(withRouter((ApplicationNavigationTest)));

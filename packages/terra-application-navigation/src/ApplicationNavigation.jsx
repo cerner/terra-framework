@@ -230,7 +230,7 @@ class ApplicationNavigation extends React.Component {
             navigationItemAlignment={navigationAlignment}
             activeNavigationItemKey={activeNavigationItemKey}
             onSelectNavigationItem={onSelectNavigationItem}
-            onMenuToggle={navigationItems.length ? this.handleMenuToggle : undefined}
+            onMenuToggle={this.handleMenuToggle}
             userConfig={userConfig}
             heroConfig={utilityHeroConfig}
             onSelectSettings={onSelectSettings}

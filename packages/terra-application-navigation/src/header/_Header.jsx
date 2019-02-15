@@ -107,9 +107,9 @@ class Header extends React.Component {
   }
 
   renderToggle() {
-    const { onMenuToggle, intl } = this.props;
+    const { onMenuToggle, intl, activeBreakpoint } = this.props;
 
-    if (onMenuToggle) {
+    if (onMenuToggle && shouldRenderCompactNavigation(activeBreakpoint)) {
       return (
         <div className={cx('toggle-button-container')}>
           <button
