@@ -5,7 +5,7 @@ viewports.forEach((viewport) => {
     before(() => {
       browser.setViewportSize(viewport);
     });
-    
+
     describe('Displays a default application tabs', () => {
       beforeEach(() => {
         browser.url('/#/raw/tests/terra-application-links/application-links/application-tabs-default');
