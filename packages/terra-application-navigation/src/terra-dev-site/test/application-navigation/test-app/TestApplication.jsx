@@ -194,15 +194,15 @@ class TestApplication extends React.Component {
           name: 'Test User',
           detail: 'Super Cool Person',
           initials: 'TU',
-          image: profileImage,
+          imageSrc: profileImage,
         }}
         menuHeroConfig={{
           component: <Image src={heroImage} variant="rounded" style={{ height: '150px', width: '100%' }} />,
-          padded: true,
+          removeContainerPadding: false,
         }}
         utilityHeroConfig={{
           component: <Image src={heroImage} variant="rounded" style={{ height: '150px', width: '100%' }} />,
-          padded: true,
+          removeContainerPadding: true,
         }}
         navigationItems={navigationItems}
         activeNavigationItemKey={activeNavigationItem.key}

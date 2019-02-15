@@ -5,12 +5,14 @@ import Overlay from 'terra-overlay';
 import { Breakpoints } from 'terra-application';
 import FocusTrap from 'focus-trap-react';
 
-import ApplicationNavigationPropTypes from './utils/propTypes';
-import Helpers, { isSizeCompact } from './utils/helpers';
 import ExtensionDrawer from './extensions/ExtensionDrawer';
 import ExtensionBar from './extensions/ExtensionBar';
 import Header from './header/_Header';
 import DrawerMenu from './drawer-menu/_DrawerMenu';
+import { shouldRenderDrawerMenu } from './utils/helpers';
+import {
+  userConfigPropType, heroConfigPropType, navigationItemsPropType, navigationAlignmentPropType, extensionConfigPropType, nameConfigPropType,
+} from './utils/propTypes';
 
 import styles from './ApplicationNavigation.module.scss';
 
@@ -41,13 +43,13 @@ const createExtensionDrawer = (extensionConfig, activeBreakpoint, extensionIsOpe
 };
 
 const propTypes = {
-  nameConfig: ApplicationNavigationPropTypes.nameConfigPropType,
-  extensionConfig: ApplicationNavigationPropTypes.extensionConfigPropType,
-  userConfig: PropTypes.object,
-  menuHeroConfig: PropTypes.object,
-  utilityHeroConfig: PropTypes.object,
-  navigationAlignment: ApplicationNavigationPropTypes.navigationAlignmentPropType,
-  navigationItems: ApplicationNavigationPropTypes.navigationItemsPropType,
+  nameConfig: nameConfigPropType,
+  extensionConfig: extensionConfigPropType,
+  userConfig: userConfigPropType,
+  menuHeroConfig: heroConfigPropType,
+  utilityHeroConfig: heroConfigPropType,
+  navigationAlignment: navigationAlignmentPropType,
+  navigationItems: navigationItemsPropType,
   activeNavigationItemKey: PropTypes.string,
   onSelectNavigationItem: PropTypes.func,
   onSelectSettings: PropTypes.func,
@@ -67,9 +69,9 @@ const defaultProps = {
 
 class ApplicationNavigation extends React.Component {
   static getDerivedStateFromProps(props, state) {
-    if (state.menuIsOpen && !isSizeCompact(props.activeBreakpoint)) {
+    if (state.drawerMenuIsOpen && !shouldRenderDrawerMenu(props.activeBreakpoint)) {
       return {
-        menuIsOpen: false,
+        drawerMenuIsOpen: false,
       };
     }
 
@@ -81,7 +83,7 @@ class ApplicationNavigation extends React.Component {
     this.generateMenuClosingCallback = this.generateMenuClosingCallback.bind(this);
 
     this.handleTransitionEnd = this.handleTransitionEnd.bind(this);
-    this.setMenuPanelNode = this.setMenuPanelNode.bind(this);
+    this.setDrawerMenuNode = this.setDrawerMenuNode.bind(this);
     this.handleMenuToggle = this.handleMenuToggle.bind(this);
     this.handleExtensionToggle = this.handleExtensionToggle.bind(this);
     this.renderNavigationMenu = this.renderNavigationMenu.bind(this);
@@ -94,7 +96,7 @@ class ApplicationNavigation extends React.Component {
     this.hideMenu = true;
 
     this.state = {
-      menuIsOpen: false,
+      drawerMenuIsOpen: false,
       extensionIsOpen: false,
     };
   }
@@ -112,8 +114,8 @@ class ApplicationNavigation extends React.Component {
   }
 
 
-  setMenuPanelNode(node) {
-    this.menuPanelNode = node;
+  setDrawerMenuNode(node) {
+    this.drawerMenuNode = node;
   }
 
   generateMenuClosingCallback(wrappedFunctionName) {
@@ -125,7 +127,7 @@ class ApplicationNavigation extends React.Component {
       }
 
       this.setState({
-        menuIsOpen: false,
+        drawerMenuIsOpen: false,
       }, () => {
         wrappedFunction(...args);
       });
@@ -134,7 +136,7 @@ class ApplicationNavigation extends React.Component {
 
   handleMenuToggle() {
     this.setState(state => ({
-      menuIsOpen: !state.menuIsOpen,
+      drawerMenuIsOpen: !state.drawerMenuIsOpen,
     }));
   }
 
@@ -145,8 +147,8 @@ class ApplicationNavigation extends React.Component {
   }
 
   handleTransitionEnd() {
-    if (!this.state.menuIsOpen) {
-      this.menuPanelNode.style.visibility = 'hidden';
+    if (!this.state.drawerMenuIsOpen) {
+      this.drawerMenuNode.style.visibility = 'hidden';
       this.hideMenu = true;
     } else {
       this.hideMenu = false;
@@ -177,33 +179,32 @@ class ApplicationNavigation extends React.Component {
     const {
       nameConfig, navigationAlignment, navigationItems, extensionConfig, activeBreakpoint, children, activeNavigationItemKey, onSelectNavigationItem, userConfig, utilityHeroConfig, onSelectSettings, onSelectHelp, onSelectLogout,
     } = this.props;
-    const { menuIsOpen, extensionIsOpen } = this.state;
+    const { drawerMenuIsOpen, extensionIsOpen } = this.state;
 
-    const isCompact = isSizeCompact(activeBreakpoint);
     const extensions = createExtensions(extensionConfig, activeBreakpoint, extensionIsOpen, this.handleExtensionToggle);
     const extensionDrawer = createExtensionDrawer(extensionConfig, activeBreakpoint, extensionIsOpen, this.handleExtensionToggle);
 
     /**
-     * Reset visibility to ensure menu will be visible if the menu is being opened. If it's not being opened, the visibility will
+     * Reset visibility to ensure drawer menu will be visible if the menu is being presented. If it's not being opened, the visibility will
      * be immediately set to hidden when the menuPanel is re
      */
-    if (this.menuPanelNode) {
-      this.menuPanelNode.style.visibility = '';
+    if (this.drawerMenuNode) {
+      this.drawerMenuNode.style.visibility = '';
     }
 
     return (
-      <div className={cx(['application-layout-container', { 'menu-is-open': menuIsOpen }])}>
-        <div className={cx('menu-panel')} aria-hidden={!menuIsOpen ? true : null} ref={this.setMenuPanelNode} style={this.hideMenu && !menuIsOpen ? { visibility: 'hidden' } : null}>
-          {isCompact && navigationItems.length ? (
+      <div className={cx(['application-layout-container', { 'menu-is-open': drawerMenuIsOpen }])}>
+        <div className={cx('menu-panel')} aria-hidden={!drawerMenuIsOpen ? true : null} ref={this.setDrawerMenuNode} style={this.hideMenu && !drawerMenuIsOpen ? { visibility: 'hidden' } : null}>
+          {shouldRenderDrawerMenu(activeBreakpoint) ? (
             <FocusTrap
-              active={menuIsOpen}
+              active={drawerMenuIsOpen}
               focusTrapOptions={{
                 escapeDeactivates: true,
                 returnFocusOnDeactivate: true,
                 clickOutsideDeactivates: true,
                 onDeactivate: () => {
-                  if (this.state.menuIsOpen) {
-                    this.setState({ menuIsOpen: false });
+                  if (this.state.drawerMenuIsOpen) {
+                    this.setState({ drawerMenuIsOpen: false });
                   }
                 },
               }}
@@ -218,7 +219,7 @@ class ApplicationNavigation extends React.Component {
         </div>
         <div
           className={cx('body')}
-          aria-hidden={menuIsOpen ? true : null}
+          aria-hidden={drawerMenuIsOpen ? true : null}
           ref={(ref) => { this.bodyRef = ref; }}
         >
           <Header
@@ -241,7 +242,7 @@ class ApplicationNavigation extends React.Component {
             <Overlay isRelativeToContainer onRequestClose={event => event.stopPropagation()} isOpen={extensionIsOpen} backgroundStyle="dark" style={{ zIndex: '7000' }} />
             {children}
           </main>
-          <Overlay isRelativeToContainer isOpen={menuIsOpen} backgroundStyle="clear" />
+          <Overlay isRelativeToContainer isOpen={drawerMenuIsOpen} backgroundStyle="clear" />
         </div>
       </div>
     );
@@ -252,10 +253,3 @@ ApplicationNavigation.propTypes = propTypes;
 ApplicationNavigation.defaultProps = defaultProps;
 
 export default Breakpoints.withActiveBreakpoint(ApplicationNavigation);
-
-const Utils = {
-  helpers: Helpers,
-  propTypes: ApplicationNavigationPropTypes,
-};
-
-export { Utils };

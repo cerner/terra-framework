@@ -1,24 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import IconUnknown from 'terra-icon/lib/icon/IconUnknown';
 
 import DrawerMenuUser from './_DrawerMenuUser';
+import { userConfigPropType, heroConfigPropType, navigationItemsPropType } from '../utils/propTypes';
 
 import styles from './DrawerMenu.module.scss';
 
 const cx = classNames.bind(styles);
 
-const KEYCODES = {
-  ENTER: 13,
-  SPACE: 32,
-};
-
 const propTypes = {
-  userConfig: PropTypes.object,
-  heroConfig: PropTypes.object,
-  navigationItems: PropTypes.array,
+  userConfig: userConfigPropType,
+  heroConfig: heroConfigPropType,
+  navigationItems: navigationItemsPropType,
   activeNavigationItemKey: PropTypes.string,
   onSelectNavigationItem: PropTypes.func,
   onSelectSettings: PropTypes.func,
@@ -40,7 +37,7 @@ const DrawerMenu = ({
 
   let hero;
   if (heroConfig) {
-    hero = heroConfig.padded ? <div className={cx(['padded-hero-container', { 'pad-bottom': !userConfig }])}>{heroConfig.component}</div> : heroConfig.component;
+    hero = !heroConfig.removeContainerPadding ? <div className={cx(['padded-hero-container', { 'pad-bottom': !userConfig }])}>{heroConfig.component}</div> : heroConfig.component;
   }
 
   let logout;
@@ -67,7 +64,7 @@ const DrawerMenu = ({
                 }
               }}
               onKeyDown={(event) => {
-                if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
+                if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
                   event.preventDefault();
                   onSelectNavigationItem(item.key);
                 }
@@ -87,7 +84,7 @@ const DrawerMenu = ({
               className={cx('utility-list-item')}
               onClick={() => { onSelectSettings(); }}
               onKeyDown={(event) => {
-                if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
+                if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
                   event.preventDefault();
                   onSelectSettings();
                 }
@@ -106,7 +103,7 @@ const DrawerMenu = ({
               className={cx('utility-list-item')}
               onClick={() => { onSelectHelp(); }}
               onKeyDown={(event) => {
-                if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
+                if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
                   event.preventDefault();
                   onSelectHelp();
                 }

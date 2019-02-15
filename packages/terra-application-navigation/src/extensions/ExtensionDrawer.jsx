@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import FocusTrap from 'focus-trap-react';
 import onClickOutside from 'react-onclickoutside';
-import ApplicationLayoutPropTypes from '../utils/propTypes';
-import { isSizeCompact } from '../utils/helpers';
+import { extensionConfigPropType } from '../utils/propTypes';
+import { shouldRenderDrawerMenu } from '../utils/helpers';
 import ExtensionButton from './ExtensionButton';
 
 import styles from '../ApplicationNavigation.module.scss';
@@ -23,7 +23,7 @@ const propTypes = {
   /**
    * The content to be rendered in the ApplicationLayout's extensions region.
    */
-  extensionConfig: ApplicationLayoutPropTypes.extensionConfigPropType,
+  extensionConfig: extensionConfigPropType,
   /**
    * The configuration values for the ApplicationName component.
    */
@@ -89,14 +89,14 @@ class ExtensionDrawer extends React.Component {
     delete customProps.stopPropagation;
 
     let extensionItems = extensionConfig.extensions;
-    if (!isSizeCompact(activeBreakpoint)) {
+    if (!shouldRenderDrawerMenu(activeBreakpoint)) {
       extensionItems = extensionConfig.extensions.slice(3);
     }
 
     const maxIndex = extensionItems.length - 1;
     return (
       <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true }}>
-        <div {...customProps} className={cx(['extensions-drawer', { 'is-compact': isSizeCompact(activeBreakpoint) }])}>
+        <div {...customProps} className={cx(['extensions-drawer', { 'is-compact': shouldRenderDrawerMenu(activeBreakpoint) }])}>
           {extensionItems.map((item, index) => {
             const key = `${item.text}-${index}`;
             return (

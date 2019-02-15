@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 import Popup from 'terra-popup';
 
 import TabMenuList from './_TabMenuList';
 import TabMenuDisplay from './_TabMenuDisplay';
-import { KEYCODES } from '../utils/helpers';
 
 const propTypes = {
   /**
@@ -15,6 +15,7 @@ const propTypes = {
    * Should the menu be hidden, set to true if there are no hidden items.
    */
   isHidden: PropTypes.bool,
+  activeTabKey: PropTypes.string,
 };
 
 const contextTypes = {
@@ -41,14 +42,14 @@ class TabMenu extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.activeTabKey !== this.props.activeTabKey) {
-      // eslint-disable-next-line react/no-did-update-set-state
-      this.setState({ isOpen: false });
-    }
-
     if (this.shouldResetFocus && this.targetRef) {
       this.targetRef.focus();
       this.shouldResetFocus = this.targetRef !== document.activeElement;
+    }
+
+    if (prevProps.activeTabKey !== this.props.activeTabKey) {
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({ isOpen: false });
     }
   }
 
@@ -74,7 +75,7 @@ class TabMenu extends React.Component {
   }
 
   handleOnKeyDown(event) {
-    if ((event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) && !this.state.isOpen) {
+    if ((event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) && !this.state.isOpen) {
       this.setState({ isOpen: true });
     }
   }

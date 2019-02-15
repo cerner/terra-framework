@@ -6,6 +6,7 @@ import ResizeObserver from 'resize-observer-polyfill';
 import Tab from './_Tab';
 import TabMenu from './_TabMenu';
 import styles from './Tabs.module.scss';
+import { navigationAlignmentPropType } from '../utils/propTypes';
 
 const cx = classNames.bind(styles);
 
@@ -13,7 +14,7 @@ const propTypes = {
   /**
    * Alignment of the navigational tabs. ( e.g start, center, end )
    */
-  alignment: PropTypes.oneOf(['start', 'center', 'end']),
+  alignment: navigationAlignmentPropType,
   /**
    * Array of objects representing the tabs.
    */
@@ -163,7 +164,7 @@ class ApplicationTabs extends React.Component {
           ref={this.setContainerNode}
         >
           {visibleChildren}
-          <TabMenu isHidden={this.menuHidden}>
+          <TabMenu isHidden={this.menuHidden} activeTabKey={activeTabKey}>
             {hiddenChildren}
           </TabMenu>
           <div className={cx(['divider-after-last-tab'])} />

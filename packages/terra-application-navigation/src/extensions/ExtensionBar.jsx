@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import ApplicationLayoutPropTypes from '../utils/propTypes';
-import { isSizeCompact } from '../utils/helpers';
+import { extensionConfigPropType } from '../utils/propTypes';
+import { shouldRenderDrawerMenu } from '../utils/helpers';
 import ExtensionButton from './ExtensionButton';
 
 import styles from '../ApplicationNavigation.module.scss';
@@ -17,7 +17,7 @@ const propTypes = {
   /**
    * The content to be rendered in the ApplicationLayout's extensions region.
    */
-  extensionConfig: ApplicationLayoutPropTypes.extensionConfigPropType,
+  extensionConfig: extensionConfigPropType,
   /**
    * The configuration values for the ApplicationName component.
    */
@@ -52,7 +52,7 @@ const ExtensionBar = ({
       onSelect={onRequestClose}
     />
   );
-  if (isSizeCompact(activeBreakpoint)) {
+  if (shouldRenderDrawerMenu(activeBreakpoint)) {
     return (
       <div {...customProps} className={cx('extensions-layout')}>
         {moreButton}

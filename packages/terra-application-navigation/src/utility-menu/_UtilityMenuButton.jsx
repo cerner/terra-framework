@@ -7,11 +7,12 @@ import IconChevronDown from 'terra-icon/lib/icon/IconChevronDown';
 import IconKnurling from 'terra-icon/lib/icon/IconKnurling';
 
 import styles from './UtilityMenuButton.module.scss';
+import { userConfigPropType } from '../utils/propTypes';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  userConfig: PropTypes.object,
+  userConfig: userConfigPropType,
   onClick: PropTypes.func,
   refCallback: PropTypes.func,
   intl: intlShape,
@@ -32,7 +33,7 @@ const UtilityMenuButton = ({
   >
     {userConfig ? (
       <React.Fragment>
-        <Avatar alt={userConfig.name} image={userConfig.image} initials={userConfig.initials} className={cx('avatar')} />
+        <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials} className={cx('avatar')} />
         <span className={cx('title')}>{userConfig.name}</span>
         <IconChevronDown className={cx('icon')} />
       </React.Fragment>

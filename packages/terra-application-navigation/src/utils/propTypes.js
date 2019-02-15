@@ -1,29 +1,16 @@
 import PropTypes from 'prop-types';
-import { UtilityUtils } from 'terra-application-utility';
 
-/**
- * Shape for the `layoutConfig` prop provided to components within the ApplicationLayout.
- */
-const layoutConfigPropType = PropTypes.shape({
-  size: PropTypes.string,
-  toggleMenu: PropTypes.func,
-  menuIsOpen: PropTypes.bool,
-  togglePin: PropTypes.bool,
-  menuIsPinned: PropTypes.bool,
+const userConfigPropType = PropTypes.shape({
+  name: PropTypes.string.isRequired,
+  detail: PropTypes.string,
+  initials: PropTypes.string,
+  imageSrc: PropTypes.string,
 });
 
-/**
- * Shape for ApplicationLayout's `nameConfig` prop.
- */
-const nameConfigPropType = PropTypes.shape({
-  accessory: PropTypes.element,
-  title: PropTypes.string,
+const heroConfigPropType = PropTypes.shape({
+  component: PropTypes.node,
+  removeContainerPadding: PropTypes.bool,
 });
-
-/**
-   * Alignment of the navigational tabs.
-   */
-const navigationAlignmentPropType = PropTypes.oneOf(['start', 'center', 'end']);
 
 /**
  * Shape for ApplicationLayout's `navigationItems` prop.
@@ -35,20 +22,9 @@ const navigationItemsPropType = PropTypes.arrayOf(PropTypes.shape({
 }));
 
 /**
- * Shape for ApplicationLayout's `utilityConfig` prop.
+ * Alignment of the navigational tabs.
  */
-const utilityConfigPropType = PropTypes.shape({
-  title: PropTypes.string,
-  accessory: PropTypes.element,
-  onChange: PropTypes.func.isRequired,
-  menuItems: PropTypes.arrayOf(UtilityUtils.itemShape).isRequired,
-  initialSelectedKey: PropTypes.string.isRequired,
-});
-
-/**
- * Shape for utilityConfig's menuItem.
- */
-const utilityMenuItemPropType = UtilityUtils.itemShape;
+const navigationAlignmentPropType = PropTypes.oneOf(['start', 'center', 'end']);
 
 /**
  * Shape for ApplicationLayout's 'extensionConfig' prop.
@@ -74,12 +50,18 @@ const extensionConfigPropType = PropTypes.shape({
   })),
 });
 
+/**
+ * Shape for ApplicationLayout's `nameConfig` prop.
+ */
+const nameConfigPropType = PropTypes.shape({
+  accessory: PropTypes.element,
+  title: PropTypes.string,
+});
+
 export default {
-  utilityConfigPropType,
-  utilityMenuItemPropType,
-  layoutConfigPropType,
-  nameConfigPropType,
-  navigationAlignmentPropType,
-  navigationItemsPropType,
-  extensionConfigPropType,
+  userConfigPropType, heroConfigPropType, navigationItemsPropType, navigationAlignmentPropType, nameConfigPropType, extensionConfigPropType,
+};
+
+export {
+  userConfigPropType, heroConfigPropType, navigationItemsPropType, navigationAlignmentPropType, nameConfigPropType, extensionConfigPropType,
 };

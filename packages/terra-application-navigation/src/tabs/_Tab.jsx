@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-
-import { KEYCODES } from '../utils/helpers';
+import { KEY_SPACE, KEY_RETURN, KEY_TAB } from 'keycode-js';
 import styles from './Tabs.module.scss';
 
 const cx = classNames.bind(styles);
@@ -46,12 +45,12 @@ class ApplicationTab extends React.Component {
 
   handleKeyDown(event) {
     // Add active state to FF browsers
-    if (event.nativeEvent.keyCode === KEYCODES.SPACE) {
+    if (event.nativeEvent.keyCode === KEY_SPACE) {
       this.setState({ active: true });
     }
 
     // Add focus styles for keyboard navigation
-    if (event.nativeEvent.keyCode === KEYCODES.SPACE || event.nativeEvent.keyCode === KEYCODES.ENTER) {
+    if (event.nativeEvent.keyCode === KEY_SPACE || event.nativeEvent.keyCode === KEY_RETURN) {
       this.setState({ focused: true });
 
       event.preventDefault();
@@ -61,12 +60,12 @@ class ApplicationTab extends React.Component {
 
   handleKeyUp(event) {
     // Remove active state from FF broswers
-    if (event.nativeEvent.keyCode === KEYCODES.SPACE) {
+    if (event.nativeEvent.keyCode === KEY_SPACE) {
       this.setState({ active: false });
     }
 
     // Apply focus styles for keyboard navigation
-    if (event.nativeEvent.keyCode === KEYCODES.TAB) {
+    if (event.nativeEvent.keyCode === KEY_TAB) {
       event.preventDefault();
       event.stopPropagation();
       this.setState({ focused: true });

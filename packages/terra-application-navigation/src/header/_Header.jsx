@@ -9,8 +9,10 @@ import HeaderLayout from './_HeaderLayout';
 import Tabs from '../tabs/_Tabs';
 import UtilityMenuButton from '../utility-menu/_UtilityMenuButton';
 import UtilityMenu from '../utility-menu/_UtilityMenu';
-import ApplicationLayoutPropTypes from '../utils/propTypes';
-import { isSizeCompact } from '../utils/helpers';
+import { shouldRenderDrawerMenu } from '../utils/helpers';
+import {
+  userConfigPropType, heroConfigPropType, navigationItemsPropType, navigationAlignmentPropType, nameConfigPropType,
+} from '../utils/propTypes';
 
 import styles from './Header.module.scss';
 
@@ -24,15 +26,15 @@ const propTypes = {
   /**
    * Configuration values for the ApplicationName component.
    */
-  nameConfig: ApplicationLayoutPropTypes.nameConfigPropType,
+  nameConfig: nameConfigPropType,
   /**
    * Array of navigation items to render within the Header.
    */
-  navigationItems: PropTypes.array,
+  navigationItems: navigationItemsPropType,
   /**
    * The string specifying the desired alignment for the navigation items.
    */
-  navigationItemAlignment: ApplicationLayoutPropTypes.navigationAlignmentPropType,
+  navigationItemAlignment: navigationAlignmentPropType,
   /**
    * The string identifying the currently active navigation item.
    */
@@ -53,8 +55,8 @@ const propTypes = {
    * @private Internationalization object with translation APIs automatically provided by a Base ancestor.
    */
   intl: intlShape,
-  userConfig: PropTypes.object,
-  heroConfig: PropTypes.object,
+  userConfig: userConfigPropType,
+  heroConfig: heroConfigPropType,
   onSelectSettings: PropTypes.func,
   onSelectHelp: PropTypes.func,
   onSelectLogout: PropTypes.func,
@@ -215,10 +217,8 @@ class Header extends React.Component {
       extensions,
     } = this.props;
 
-    const isCompact = isSizeCompact(activeBreakpoint);
-
     let headerLayout;
-    if (isCompact) {
+    if (shouldRenderDrawerMenu(activeBreakpoint)) {
       /**
        * When compact, the navigation region of the header renders the application name component instead. At compact
        * sizes, the logo region within the HeaderLayout is too small to use, so we instead render within
