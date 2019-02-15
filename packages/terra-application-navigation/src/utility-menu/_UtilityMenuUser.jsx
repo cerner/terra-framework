@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Avatar from 'terra-avatar';
 
-import styles from './UtilityUserLayout.module.scss';
+import styles from './UtilityMenuUser.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -11,7 +11,7 @@ const propTypes = {
   userConfig: PropTypes.object,
 };
 
-const UtilityUserLayout = ({ userConfig }) => (
+const UtilityMenuUser = ({ userConfig }) => (
   <div className={cx('utility-user-layout')}>
     <div className={cx('avatar')}>
       <Avatar alt={userConfig.name} image={userConfig.image} initials={userConfig.initials} />
@@ -23,6 +23,6 @@ const UtilityUserLayout = ({ userConfig }) => (
   </div>
 );
 
-UtilityUserLayout.propTypes = propTypes;
+UtilityMenuUser.propTypes = propTypes;
 
-export default UtilityUserLayout;
+export default UtilityMenuUser;

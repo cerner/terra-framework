@@ -6,7 +6,7 @@ import Avatar from 'terra-avatar';
 import IconChevronDown from 'terra-icon/lib/icon/IconChevronDown';
 import IconKnurling from 'terra-icon/lib/icon/IconKnurling';
 
-import styles from './UtilityButton.module.scss';
+import styles from './UtilityMenuButton.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -19,7 +19,7 @@ const propTypes = {
 
 const defaultProps = {};
 
-const UtilityButton = ({
+const UtilityMenuButton = ({
   userConfig, onClick, refCallback, intl,
 }) => (
   <button
@@ -42,7 +42,7 @@ const UtilityButton = ({
   </button>
 );
 
-UtilityButton.propTypes = propTypes;
-UtilityButton.defaultProps = defaultProps;
+UtilityMenuButton.propTypes = propTypes;
+UtilityMenuButton.defaultProps = defaultProps;
 
-export default injectIntl(UtilityButton);
+export default injectIntl(UtilityMenuButton);

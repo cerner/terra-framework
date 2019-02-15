@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Avatar from 'terra-avatar';
 
-import styles from './MenuUserLayout.module.scss';
+import styles from './DrawerMenuUser.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -16,7 +16,7 @@ const defaultProps = {
   variant: 'small',
 };
 
-const MenuUserLayout = ({ userConfig, variant }) => (
+const DrawerMenuUser = ({ userConfig, variant }) => (
   <div className={variant === 'small' ? cx('small-user-layout') : cx('large-user-layout')}>
     <div className={cx('avatar-container')}>
       <Avatar alt={userConfig.name} image={userConfig.image} initials={userConfig.initials} className={cx('avatar')} />
@@ -28,7 +28,7 @@ const MenuUserLayout = ({ userConfig, variant }) => (
   </div>
 );
 
-MenuUserLayout.propTypes = propTypes;
-MenuUserLayout.defaultProps = defaultProps;
+DrawerMenuUser.propTypes = propTypes;
+DrawerMenuUser.defaultProps = defaultProps;
 
-export default MenuUserLayout;
+export default DrawerMenuUser;

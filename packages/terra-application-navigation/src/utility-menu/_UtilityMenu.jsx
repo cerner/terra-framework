@@ -4,9 +4,9 @@ import classNames from 'classnames/bind';
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import IconUnknown from 'terra-icon/lib/icon/IconUnknown';
 
-import MenuUserLayout from './_MenuUserLayout';
+import UtilityMenuUser from './_UtilityMenuUser';
 
-import styles from './ApplicationMenu.module.scss';
+import styles from './UtilityMenu.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -18,24 +18,17 @@ const KEYCODES = {
 const propTypes = {
   userConfig: PropTypes.object,
   heroConfig: PropTypes.object,
-  navigationItems: PropTypes.array,
-  activeNavigationItemKey: PropTypes.string,
-  onSelectNavigationItem: PropTypes.func,
   onSelectSettings: PropTypes.func,
   onSelectHelp: PropTypes.func,
   onSelectLogout: PropTypes.func,
 };
 
-const defaultProps = {
-  navigationItems: [],
-};
-
-const ApplicationMenu = ({
-  userConfig, heroConfig, navigationItems, activeNavigationItemKey, onSelectNavigationItem, onSelectSettings, onSelectHelp, onSelectLogout,
+const UtilityMenu = ({
+  userConfig, heroConfig, onSelectSettings, onSelectHelp, onSelectLogout,
 }) => {
   let user;
   if (userConfig) {
-    user = heroConfig ? <MenuUserLayout userConfig={userConfig} /> : <MenuUserLayout userConfig={userConfig} variant="large" />;
+    user = <UtilityMenuUser userConfig={userConfig} />;
   }
 
   let hero;
@@ -49,41 +42,16 @@ const ApplicationMenu = ({
   }
 
   return (
-    <div className={cx('application-menu')}>
+    <div className={cx('utility-menu-layout')}>
       <div className={cx('vertical-overflow-container')}>
         <div className={cx('header')}>
           {hero}
           {user}
         </div>
-        <ul className={cx('navigation-list')} role="listbox">
-          {navigationItems.map(item => (
-            <li
-              key={item.key}
-              className={cx(['navigation-list-item', { active: item.key === activeNavigationItemKey }])}
-              aria-selected={item.key === activeNavigationItemKey ? true : null}
-              onClick={() => {
-                if (onSelectNavigationItem) {
-                  onSelectNavigationItem(item.key);
-                }
-              }}
-              onKeyDown={(event) => {
-                if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
-                  event.preventDefault();
-                  onSelectNavigationItem(item.key);
-                }
-              }}
-              role="option"
-              tabIndex="0"
-            >
-              {item.key === activeNavigationItemKey ? <div className={cx('active-indicator')} /> : null}
-              {item.text}
-            </li>
-          ))}
-        </ul>
         <ul className={cx('utility-list')} role="listbox">
           {onSelectSettings ? (
             <li
-              key="application-menu.settings"
+              key="utility-menu-layout.settings"
               className={cx('utility-list-item')}
               onClick={() => { onSelectSettings(); }}
               onKeyDown={(event) => {
@@ -102,7 +70,7 @@ const ApplicationMenu = ({
           ) : null}
           {onSelectHelp ? (
             <li
-              key="application-menu.help"
+              key="utility-menu-layout.help"
               className={cx('utility-list-item')}
               onClick={() => { onSelectHelp(); }}
               onKeyDown={(event) => {
@@ -128,7 +96,6 @@ const ApplicationMenu = ({
   );
 };
 
-ApplicationMenu.propTypes = propTypes;
-ApplicationMenu.defaultProps = defaultProps;
+UtilityMenu.propTypes = propTypes;
 
-export default ApplicationMenu;
+export default UtilityMenu;

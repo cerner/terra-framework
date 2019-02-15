@@ -5,12 +5,12 @@ import Overlay from 'terra-overlay';
 import { Breakpoints } from 'terra-application';
 import FocusTrap from 'focus-trap-react';
 
-import ApplicationLayoutPropTypes from './utils/propTypes';
+import ApplicationNavigationPropTypes from './utils/propTypes';
 import Helpers, { isSizeCompact } from './utils/helpers';
 import ExtensionDrawer from './extensions/ExtensionDrawer';
 import ExtensionBar from './extensions/ExtensionBar';
-import ApplicationHeader from './header/_ApplicationHeader';
-import ApplicationMenu from './menu/_ApplicationMenu';
+import Header from './header/_Header';
+import DrawerMenu from './drawer-menu/_DrawerMenu';
 
 import styles from './ApplicationNavigation.module.scss';
 
@@ -41,13 +41,13 @@ const createExtensionDrawer = (extensionConfig, activeBreakpoint, extensionIsOpe
 };
 
 const propTypes = {
-  nameConfig: ApplicationLayoutPropTypes.nameConfigPropType,
-  extensionConfig: ApplicationLayoutPropTypes.extensionConfigPropType,
+  nameConfig: ApplicationNavigationPropTypes.nameConfigPropType,
+  extensionConfig: ApplicationNavigationPropTypes.extensionConfigPropType,
   userConfig: PropTypes.object,
   menuHeroConfig: PropTypes.object,
   utilityHeroConfig: PropTypes.object,
-  navigationAlignment: ApplicationLayoutPropTypes.navigationAlignmentPropType,
-  navigationItems: ApplicationLayoutPropTypes.navigationItemsPropType,
+  navigationAlignment: ApplicationNavigationPropTypes.navigationAlignmentPropType,
+  navigationItems: ApplicationNavigationPropTypes.navigationItemsPropType,
   activeNavigationItemKey: PropTypes.string,
   onSelectNavigationItem: PropTypes.func,
   onSelectSettings: PropTypes.func,
@@ -65,7 +65,7 @@ const defaultProps = {
   navigationItems: [],
 };
 
-class ApplicationLayout extends React.Component {
+class ApplicationNavigation extends React.Component {
   static getDerivedStateFromProps(props, state) {
     if (state.menuIsOpen && !isSizeCompact(props.activeBreakpoint)) {
       return {
@@ -160,7 +160,7 @@ class ApplicationLayout extends React.Component {
     } = this.props;
 
     return (
-      <ApplicationMenu
+      <DrawerMenu
         userConfig={userConfig}
         heroConfig={menuHeroConfig}
         navigationItems={navigationItems}
@@ -221,7 +221,7 @@ class ApplicationLayout extends React.Component {
           aria-hidden={menuIsOpen ? true : null}
           ref={(ref) => { this.bodyRef = ref; }}
         >
-          <ApplicationHeader
+          <Header
             activeBreakpoint={activeBreakpoint}
             nameConfig={nameConfig}
             extensions={extensions}
@@ -248,14 +248,14 @@ class ApplicationLayout extends React.Component {
   }
 }
 
-ApplicationLayout.propTypes = propTypes;
-ApplicationLayout.defaultProps = defaultProps;
+ApplicationNavigation.propTypes = propTypes;
+ApplicationNavigation.defaultProps = defaultProps;
 
-export default Breakpoints.withActiveBreakpoint(ApplicationLayout);
+export default Breakpoints.withActiveBreakpoint(ApplicationNavigation);
 
 const Utils = {
   helpers: Helpers,
-  propTypes: ApplicationLayoutPropTypes,
+  propTypes: ApplicationNavigationPropTypes,
 };
 
 export { Utils };

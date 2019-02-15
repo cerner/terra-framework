@@ -5,20 +5,20 @@ import { injectIntl, intlShape } from 'react-intl';
 import IconMenu from 'terra-icon/lib/icon/IconMenu';
 import Popup from 'terra-popup';
 
-import ApplicationHeaderLayout from './_ApplicationHeaderLayout';
-import Tabs from './tabs/_Tabs';
-import UtilityButton from './utility/_UtilityButton';
-import UtilityMenuLayout from './utility/_UtilityMenuLayout';
+import HeaderLayout from './_HeaderLayout';
+import Tabs from '../tabs/_Tabs';
+import UtilityMenuButton from '../utility-menu/_UtilityMenuButton';
+import UtilityMenu from '../utility-menu/_UtilityMenu';
 import ApplicationLayoutPropTypes from '../utils/propTypes';
 import { isSizeCompact } from '../utils/helpers';
 
-import styles from './ApplicationHeader.module.scss';
+import styles from './Header.module.scss';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * A function to be executed upon selection of the ApplicationHeader's toggle button.
+   * A function to be executed upon selection of the Header's toggle button.
    */
   onMenuToggle: PropTypes.func,
   /**
@@ -26,7 +26,7 @@ const propTypes = {
    */
   nameConfig: ApplicationLayoutPropTypes.nameConfigPropType,
   /**
-   * Array of navigation items to render within the ApplicationHeader.
+   * Array of navigation items to render within the Header.
    */
   navigationItems: PropTypes.array,
   /**
@@ -65,7 +65,7 @@ const defaultProps = {
   navigationItemAlignment: 'center',
 };
 
-class ApplicationHeader extends React.Component {
+class Header extends React.Component {
   constructor(props) {
     super(props);
 
@@ -163,7 +163,7 @@ class ApplicationHeader extends React.Component {
   renderUtilities() {
     const { userConfig } = this.props;
     return (
-      <UtilityButton
+      <UtilityMenuButton
         userConfig={userConfig}
         onClick={() => {
           this.setState({
@@ -195,7 +195,7 @@ class ApplicationHeader extends React.Component {
           onRequestClose={this.handleUtilityPopupCloseRequest}
           targetRef={() => (this.utilityButtonRef)}
         >
-          <UtilityMenuLayout
+          <UtilityMenu
             heroConfig={heroConfig}
             userConfig={userConfig}
             onSelectSettings={onSelectSettings ? this.handleSettingsSelection : undefined}
@@ -221,11 +221,11 @@ class ApplicationHeader extends React.Component {
     if (isCompact) {
       /**
        * When compact, the navigation region of the header renders the application name component instead. At compact
-       * sizes, the logo region within the ApplicationHeaderLayout is too small to use, so we instead render within
+       * sizes, the logo region within the HeaderLayout is too small to use, so we instead render within
        * the navigation region which renders with a larger width.
        */
       headerLayout = (
-        <ApplicationHeaderLayout
+        <HeaderLayout
           toggle={this.renderToggle()}
           navigation={this.renderAppName()}
           extensions={extensions}
@@ -234,7 +234,7 @@ class ApplicationHeader extends React.Component {
       );
     } else {
       headerLayout = (
-        <ApplicationHeaderLayout
+        <HeaderLayout
           logo={this.renderAppName()}
           navigation={this.renderNavigationTabs()}
           extensions={extensions}
@@ -253,7 +253,7 @@ class ApplicationHeader extends React.Component {
   }
 }
 
-ApplicationHeader.propTypes = propTypes;
-ApplicationHeader.defaultProps = defaultProps;
+Header.propTypes = propTypes;
+Header.defaultProps = defaultProps;
 
-export default injectIntl(ApplicationHeader);
+export default injectIntl(Header);

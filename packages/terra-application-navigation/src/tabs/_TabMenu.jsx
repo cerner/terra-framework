@@ -4,7 +4,7 @@ import Popup from 'terra-popup';
 
 import TabMenuList from './_TabMenuList';
 import TabMenuDisplay from './_TabMenuDisplay';
-import { KEYCODES } from '../../utils/helpers';
+import { KEYCODES } from '../utils/helpers';
 
 const propTypes = {
   /**

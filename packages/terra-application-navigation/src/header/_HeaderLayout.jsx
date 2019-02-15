@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';
 
-import styles from './ApplicationHeaderLayout.module.scss';
+import styles from './HeaderLayout.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -42,7 +42,7 @@ const defaultProps = {
   skipToContentSelector: '[data-terra-layout-main]',
 };
 
-const ApplicationHeaderLayout = ({
+const HeaderLayout = ({
   extensions,
   logo,
   navigation,
@@ -126,7 +126,7 @@ const ApplicationHeaderLayout = ({
   );
 };
 
-ApplicationHeaderLayout.propTypes = propTypes;
-ApplicationHeaderLayout.defaultProps = defaultProps;
+HeaderLayout.propTypes = propTypes;
+HeaderLayout.defaultProps = defaultProps;
 
-export default injectIntl(ApplicationHeaderLayout);
+export default injectIntl(HeaderLayout);

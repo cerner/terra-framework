@@ -4,9 +4,9 @@ import classNames from 'classnames/bind';
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import IconUnknown from 'terra-icon/lib/icon/IconUnknown';
 
-import UtilityUserLayout from './_UtilityUserLayout';
+import DrawerMenuUser from './_DrawerMenuUser';
 
-import styles from './UtilityMenuLayout.module.scss';
+import styles from './DrawerMenu.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -18,17 +18,24 @@ const KEYCODES = {
 const propTypes = {
   userConfig: PropTypes.object,
   heroConfig: PropTypes.object,
+  navigationItems: PropTypes.array,
+  activeNavigationItemKey: PropTypes.string,
+  onSelectNavigationItem: PropTypes.func,
   onSelectSettings: PropTypes.func,
   onSelectHelp: PropTypes.func,
   onSelectLogout: PropTypes.func,
 };
 
-const UtilityMenuLayout = ({
-  userConfig, heroConfig, onSelectSettings, onSelectHelp, onSelectLogout,
+const defaultProps = {
+  navigationItems: [],
+};
+
+const DrawerMenu = ({
+  userConfig, heroConfig, navigationItems, activeNavigationItemKey, onSelectNavigationItem, onSelectSettings, onSelectHelp, onSelectLogout,
 }) => {
   let user;
   if (userConfig) {
-    user = <UtilityUserLayout userConfig={userConfig} />;
+    user = heroConfig ? <DrawerMenuUser userConfig={userConfig} /> : <DrawerMenuUser userConfig={userConfig} variant="large" />;
   }
 
   let hero;
@@ -38,20 +45,45 @@ const UtilityMenuLayout = ({
 
   let logout;
   if (onSelectLogout) {
-    logout = <button onClick={onSelectLogout}>Logout</button>;
+    logout = <button type="button" onClick={onSelectLogout}>Logout</button>;
   }
 
   return (
-    <div className={cx('utility-menu-layout')}>
+    <div className={cx('application-menu')}>
       <div className={cx('vertical-overflow-container')}>
         <div className={cx('header')}>
           {hero}
           {user}
         </div>
+        <ul className={cx('navigation-list')} role="listbox">
+          {navigationItems.map(item => (
+            <li
+              key={item.key}
+              className={cx(['navigation-list-item', { active: item.key === activeNavigationItemKey }])}
+              aria-selected={item.key === activeNavigationItemKey ? true : null}
+              onClick={() => {
+                if (onSelectNavigationItem) {
+                  onSelectNavigationItem(item.key);
+                }
+              }}
+              onKeyDown={(event) => {
+                if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
+                  event.preventDefault();
+                  onSelectNavigationItem(item.key);
+                }
+              }}
+              role="option"
+              tabIndex="0"
+            >
+              {item.key === activeNavigationItemKey ? <div className={cx('active-indicator')} /> : null}
+              {item.text}
+            </li>
+          ))}
+        </ul>
         <ul className={cx('utility-list')} role="listbox">
           {onSelectSettings ? (
             <li
-              key="utility-menu-layout.settings"
+              key="application-menu.settings"
               className={cx('utility-list-item')}
               onClick={() => { onSelectSettings(); }}
               onKeyDown={(event) => {
@@ -70,7 +102,7 @@ const UtilityMenuLayout = ({
           ) : null}
           {onSelectHelp ? (
             <li
-              key="utility-menu-layout.help"
+              key="application-menu.help"
               className={cx('utility-list-item')}
               onClick={() => { onSelectHelp(); }}
               onKeyDown={(event) => {
@@ -96,6 +128,7 @@ const UtilityMenuLayout = ({
   );
 };
 
-UtilityMenuLayout.propTypes = propTypes;
+DrawerMenu.propTypes = propTypes;
+DrawerMenu.defaultProps = defaultProps;
 
-export default UtilityMenuLayout;
+export default DrawerMenu;
