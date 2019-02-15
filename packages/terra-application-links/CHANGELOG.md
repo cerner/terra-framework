@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Fixed TabMenuList styling.
 
 5.2.0 - (February 13, 2019)
 ------------------
