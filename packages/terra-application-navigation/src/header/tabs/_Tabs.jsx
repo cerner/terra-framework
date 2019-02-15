@@ -3,11 +3,9 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
 
-import 'terra-base/lib/baseStyles';
-
 import Tab from './_Tab';
 import TabMenu from './_TabMenu';
-import styles from './ApplicationTabs.module.scss';
+import styles from './Tabs.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -158,16 +156,17 @@ class ApplicationTabs extends React.Component {
     });
 
     return (
-      <div className={cx(['application-tabs'])}>
+      <div className={cx(['tabs-wrapper'])}>
         <div
           className={cx(['tabs-container', { 'is-calculating': this.isCalculating }, alignment])}
           role="tablist"
           ref={this.setContainerNode}
         >
           {visibleChildren}
-          <TabMenu isHidden={this.menuHidden} activeTabKey={activeTabKey}>
+          <TabMenu isHidden={this.menuHidden}>
             {hiddenChildren}
           </TabMenu>
+          <div className={cx(['divider-after-last-tab'])} />
         </div>
       </div>
     );

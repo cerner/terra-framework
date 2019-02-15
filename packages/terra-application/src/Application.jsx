@@ -12,13 +12,16 @@ import styles from './Application.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * The components to render within the Application.
+   */
   children: PropTypes.node,
   /**
-   * The locale name.
+   * The locale name to be used to load translated messages.
    */
   locale: PropTypes.string,
   /**
-   * Customized translations provided by consuming application only for current locale.
+   * Custom translations for the current locale.
    */
   customTranslatedMessages: (props, propName, componentName) => {
     if (Object.keys(props[propName]).length !== 0 && props.locale === undefined) {
@@ -26,14 +29,23 @@ const propTypes = {
     }
   },
   /**
-   * The component(s) that will be wrapped by `<Base />` ONLY
-   * in the event that translations have not been loaded yet.
+   * The component to render while the translation files are being retrieved.
    * NOTE: Absolutely no locale-dependent logic should be
    * utilized in this placeholder.
    */
   translationsLoadingPlaceholder: PropTypes.node,
+  /**
+   * The name of the theme to apply to the application using terra-theme-provider.
+   */
   themeName: PropTypes.string,
+  /**
+   * If provided, the theme styles are applied to the entire document.
+   */
   themeIsGlobal: PropTypes.bool,
+  /**
+   * If provided, the Application will render with a height determined by its inner content and
+   * potentially overflow its parent container.
+   */
   parentOverflowIsEnabled: PropTypes.bool,
 };
 

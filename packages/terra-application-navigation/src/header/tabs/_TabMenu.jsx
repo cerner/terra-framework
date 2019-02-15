@@ -15,10 +15,6 @@ const propTypes = {
    * Should the menu be hidden, set to true if there are no hidden items.
    */
   isHidden: PropTypes.bool,
-  /**
-   * A string identifying the currently active tab.
-   */
-  activeTabKey: PropTypes.string,
 };
 
 const contextTypes = {
@@ -44,13 +40,12 @@ class TabMenu extends React.Component {
     this.shouldResetFocus = false;
   }
 
-  componentWillReceiveProps(newProps) {
-    if (this.props.activeTabKey !== newProps.activeTabKey) {
+  componentDidUpdate(prevProps) {
+    if (prevProps.activeTabKey !== this.props.activeTabKey) {
+      // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ isOpen: false });
     }
-  }
 
-  componentDidUpdate() {
     if (this.shouldResetFocus && this.targetRef) {
       this.targetRef.focus();
       this.shouldResetFocus = this.targetRef !== document.activeElement;
@@ -101,7 +96,6 @@ class TabMenu extends React.Component {
   }
 
   createDisplay(popup) {
-    const { activeTabKey } = this.props;
     const { intl } = this.context;
     let text = intl.formatMessage({ id: 'Terra.application.tabs.more' });
     let isSelected = false;
@@ -110,7 +104,7 @@ class TabMenu extends React.Component {
     const count = childArray.length;
     for (let i = 0; i < count; i += 1) {
       const child = childArray[i];
-      if (activeTabKey === child.props.tabKey) {
+      if (child.props.isActive) {
         // eslint-disable-next-line prefer-destructuring
         text = child.props.text;
         isSelected = true;

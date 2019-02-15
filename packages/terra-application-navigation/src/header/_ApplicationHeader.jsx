@@ -6,7 +6,7 @@ import IconMenu from 'terra-icon/lib/icon/IconMenu';
 import Popup from 'terra-popup';
 
 import ApplicationHeaderLayout from './_ApplicationHeaderLayout';
-import ApplicationTabs from './tabs/_ApplicationTabs';
+import Tabs from './tabs/_Tabs';
 import UtilityButton from './utility/_UtilityButton';
 import UtilityMenuLayout from './utility/_UtilityMenuLayout';
 import ApplicationLayoutPropTypes from '../utils/propTypes';
@@ -148,7 +148,7 @@ class ApplicationHeader extends React.Component {
 
     if (navigationItems.length) {
       return (
-        <ApplicationTabs
+        <Tabs
           alignment={navigationItemAlignment}
           tabs={navigationItems}
           activeTabKey={activeNavigationItemKey}

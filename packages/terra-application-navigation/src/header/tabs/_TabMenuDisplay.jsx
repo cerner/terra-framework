@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 
 import { KEYCODES } from '../../utils/helpers';
-import styles from './ApplicationTabs.module.scss';
+import styles from './Tabs.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -119,9 +119,11 @@ class TabMenuDisplay extends React.Component {
         onKeyUp={this.handleKeyUp}
         onBlur={this.handleOnBlur}
       >
-        <div className={cx(['inner'])}>
-          <span>{text}</span>
-          <IconCaretDown />
+        <div className={cx(['tab-inner'])}>
+          <div className={cx(['tab-menu-display-label'])}>
+            <span>{text}</span>
+            <IconCaretDown />
+          </div>
         </div>
         {popup}
       </div>

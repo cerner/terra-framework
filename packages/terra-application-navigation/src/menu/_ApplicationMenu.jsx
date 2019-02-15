@@ -45,7 +45,7 @@ const ApplicationMenu = ({
 
   let logout;
   if (onSelectLogout) {
-    logout = <button onClick={onSelectLogout}>Logout</button>;
+    logout = <button type="button" onClick={onSelectLogout}>Logout</button>;
   }
 
   return (

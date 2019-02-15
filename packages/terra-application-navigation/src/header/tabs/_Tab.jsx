@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
-import 'terra-base/lib/baseStyles';
 import { KEYCODES } from '../../utils/helpers';
-import styles from './ApplicationTabs.module.scss';
+import styles from './Tabs.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -98,7 +97,7 @@ class ApplicationTab extends React.Component {
 
     let ComponentClass = 'div';
     if (!isCollapsed) {
-      tabAttr.role = 'tab';
+      tabAttr.role = 'link';
       ComponentClass = 'button';
     }
 
@@ -113,7 +112,7 @@ class ApplicationTab extends React.Component {
         onBlur={this.handleOnBlur}
       >
         <span className={cx(['tab-inner'])}>
-          {text}
+          <span className={cx(['tab-label'])}>{text}</span>
         </span>
       </ComponentClass>
     );

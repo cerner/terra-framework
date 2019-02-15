@@ -11,7 +11,7 @@ import styles from './UtilityButton.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  userConfig: PropTypes.func,
+  userConfig: PropTypes.object,
   onClick: PropTypes.func,
   refCallback: PropTypes.func,
   intl: intlShape,

@@ -7,13 +7,11 @@ import FocusTrap from 'focus-trap-react';
 
 import ApplicationLayoutPropTypes from './utils/propTypes';
 import Helpers, { isSizeCompact } from './utils/helpers';
-import UtilityHelpers from './utils/utilityHelpers';
 import ExtensionDrawer from './extensions/ExtensionDrawer';
 import ExtensionBar from './extensions/ExtensionBar';
 import ApplicationHeader from './header/_ApplicationHeader';
 import ApplicationMenu from './menu/_ApplicationMenu';
 
-// import 'terra-base/lib/baseStyles';
 import styles from './ApplicationNavigation.module.scss';
 
 const cx = classNames.bind(styles);
@@ -257,7 +255,6 @@ export default Breakpoints.withActiveBreakpoint(ApplicationLayout);
 
 const Utils = {
   helpers: Helpers,
-  utilityHelpers: UtilityHelpers,
   propTypes: ApplicationLayoutPropTypes,
 };
 
