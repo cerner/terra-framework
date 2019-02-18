@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added en-AU translations.
+
 ### Fixed
 * Fixed TabMenuList styling.
 
