@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`the Opts object should match the snapshot 1`] = `
+exports[`PopupContent should match the snapshot 1`] = `
 Object {
   "cornerSize": 3,
+  "default": [Function],
 }
 `;

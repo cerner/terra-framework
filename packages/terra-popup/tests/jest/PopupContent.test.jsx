@@ -1,7 +1,7 @@
-import PopupContent from '../../src/_PopupContent';
+import * as PopupContent from '../../src/_PopupContent';
 
-describe('the Opts object', () => {
+describe('PopupContent', () => {
   it('should match the snapshot', () => {
-    expect(PopupContent.Opts).toMatchSnapshot();
+    expect(PopupContent).toMatchSnapshot();
   });
 });

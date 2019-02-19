@@ -251,10 +251,8 @@ class PopupContent extends React.Component {
 PopupContent.propTypes = propTypes;
 PopupContent.defaultProps = defaultProps;
 
-const PopupContentWithIntl = injectIntl(PopupContent);
+export default injectIntl(PopupContent);
 
-PopupContentWithIntl.Opts = {
-  cornerSize: CORNER_SIZE,
+export {
+  CORNER_SIZE as cornerSize,
 };
-
-export default PopupContentWithIntl;
