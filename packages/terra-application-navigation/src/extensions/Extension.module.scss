@@ -1,0 +1,24 @@
+/* stylelint-disable selector-class-pattern */
+:local {
+  .extension {
+    align-items: center;
+    background-color: orange;
+    border-radius: 10px;
+    border: 2px solid green;
+    cursor: pointer;
+    display: flex;
+    height: 3.5725rem;
+    justify-content: center;
+    outline: none;
+    overflow: hidden;
+    width: 3.5725rem;
+  }
+
+  .extension:hover {
+    background-color: red;
+  }
+
+  .extension-count {
+    background-color: pink;
+  }
+}

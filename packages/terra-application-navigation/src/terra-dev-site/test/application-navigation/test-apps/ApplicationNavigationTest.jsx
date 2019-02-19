@@ -188,6 +188,7 @@ class ApplicationNavigationTest extends React.Component {
           metaData: { key: 'Pill' },
           onSelect: this.handleExtensionSelect,
           text: '1',
+          notifyKey: 'pill',
         },
         {
           image: <IconVisualization />,

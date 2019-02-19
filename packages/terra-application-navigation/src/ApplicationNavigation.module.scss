@@ -48,43 +48,4 @@
     height: 100%;
     overflow: auto;
   }
-
-  .extensions-layout {
-    display: flex;
-  }
-
-  .extensions-drawer {
-    background-color: green;
-    display: flex;
-    max-height: calc(100% - 3.5725rem);
-    max-width: 100%;
-    overflow: hidden;
-    position: absolute;
-    right: 138px;
-    top: 3.5725rem;
-    z-index: 100;
-  }
-
-  .extensions-drawer.is-compact {
-    width: 100%;
-    right: 0px;
-  }
-
-  .extensions-item {
-    align-items: center;
-    background-color: orange;
-    border-radius: 10px;
-    border: 2px solid green;
-    cursor: pointer;
-    display: flex;
-    height: 3.5725rem;
-    justify-content: center;
-    outline: none;
-    overflow: hidden;
-    width: 3.5725rem;
-  }
-
-  .extensions-item:hover {
-    background-color: red;
-  }
 }

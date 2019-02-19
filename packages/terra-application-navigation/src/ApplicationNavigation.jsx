@@ -5,8 +5,7 @@ import Overlay from 'terra-overlay';
 import { Breakpoints } from 'terra-application';
 import FocusTrap from 'focus-trap-react';
 
-import ExtensionDrawer from './extensions/ExtensionDrawer';
-import ExtensionBar from './extensions/ExtensionBar';
+import Extensions from './extensions/Extensions';
 import Header from './header/_Header';
 import DrawerMenu from './drawer-menu/_DrawerMenu';
 import { shouldRenderCompactNavigation } from './utils/helpers';
@@ -18,29 +17,12 @@ import styles from './ApplicationNavigation.module.scss';
 
 const cx = classNames.bind(styles);
 
-const createExtensions = (extensionConfig, activeBreakpoint, extensionIsOpen, handleExtensionToggle) => (
-  <ExtensionBar
+const createExtensions = (extensionConfig, activeBreakpoint) => (
+  <Extensions
     extensionConfig={extensionConfig}
     activeBreakpoint={activeBreakpoint}
-    isOpen={extensionIsOpen}
-    onRequestClose={handleExtensionToggle}
   />
 );
-
-const createExtensionDrawer = (extensionConfig, activeBreakpoint, extensionIsOpen, handleExtensionToggle) => {
-  if (!extensionConfig || !extensionIsOpen) {
-    return null;
-  }
-
-  return (
-    <ExtensionDrawer
-      extensionConfig={extensionConfig}
-      activeBreakpoint={activeBreakpoint}
-      isOpen={extensionIsOpen}
-      onRequestClose={handleExtensionToggle}
-    />
-  );
-};
 
 const propTypes = {
   nameConfig: nameConfigPropType,
@@ -85,7 +67,6 @@ class ApplicationNavigation extends React.Component {
     this.handleTransitionEnd = this.handleTransitionEnd.bind(this);
     this.setDrawerMenuNode = this.setDrawerMenuNode.bind(this);
     this.handleMenuToggle = this.handleMenuToggle.bind(this);
-    this.handleExtensionToggle = this.handleExtensionToggle.bind(this);
     this.renderNavigationMenu = this.renderNavigationMenu.bind(this);
 
     this.handleNavigationItemSelection = this.generateMenuClosingCallback('onSelectNavigationItem');
@@ -97,7 +78,6 @@ class ApplicationNavigation extends React.Component {
 
     this.state = {
       drawerMenuIsOpen: false,
-      extensionIsOpen: false,
     };
   }
 
@@ -140,12 +120,6 @@ class ApplicationNavigation extends React.Component {
     }));
   }
 
-  handleExtensionToggle() {
-    this.setState(state => ({
-      extensionIsOpen: !state.extensionIsOpen,
-    }));
-  }
-
   handleTransitionEnd() {
     if (!this.state.drawerMenuIsOpen) {
       this.drawerMenuNode.style.visibility = 'hidden';
@@ -181,8 +155,7 @@ class ApplicationNavigation extends React.Component {
     } = this.props;
     const { drawerMenuIsOpen, extensionIsOpen } = this.state;
 
-    const extensions = createExtensions(extensionConfig, activeBreakpoint, extensionIsOpen, this.handleExtensionToggle);
-    const extensionDrawer = createExtensionDrawer(extensionConfig, activeBreakpoint, extensionIsOpen, this.handleExtensionToggle);
+    const extensions = createExtensions(extensionConfig, activeBreakpoint);
 
     /**
      * Reset visibility to ensure drawer menu will be visible if the menu is being presented. If it's not being opened, the visibility will
@@ -237,7 +210,6 @@ class ApplicationNavigation extends React.Component {
             onSelectHelp={onSelectHelp}
             onSelectLogout={onSelectLogout}
           />
-          {extensionDrawer}
           <main tabIndex="-1" className={cx('content')} data-terra-application-layout-main>
             <Overlay isRelativeToContainer onRequestClose={event => event.stopPropagation()} isOpen={extensionIsOpen} backgroundStyle="dark" style={{ zIndex: '7000' }} />
             {children}
