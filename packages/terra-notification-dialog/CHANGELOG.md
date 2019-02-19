@@ -3,6 +3,13 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added en-AU translations
+
+2.2.0 - (February 13, 2019)
+------------------
+### Changed
+* Minor dependency update
 
 2.1.0 - (February 5, 2019)
 ------------------

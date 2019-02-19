@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-import List from 'terra-list';
 import ActionHeader from 'terra-action-header';
 import ContentContainer from 'terra-content-container';
 import MenuItem from './_MenuItem';
@@ -183,10 +182,10 @@ class NavigationSideMenu extends Component {
   }
 
   buildListContent(currentItem) {
-    return (currentItem && currentItem.childKeys && currentItem.childKeys.length
-      ? <List className={cx(['side-menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</List>
-      : null
-    );
+    if (currentItem && currentItem.childKeys && currentItem.childKeys.length) {
+      return <ul role="listbox" className={cx(['side-menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</ul>;
+    }
+    return null;
   }
 
   render() {
