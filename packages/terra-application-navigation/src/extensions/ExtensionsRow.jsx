@@ -40,6 +40,17 @@ const defaultProps = {
   activeBreakpoint: '',
 };
 
+const shouldShowHiddenAlert = (extensionItems, alerts) => {
+  for (let i = 0; i < extensionItems.length; i += 1) {
+    const item = extensionItems[i];
+    const alertCount = alerts && item.notifyKey ? alerts[item.notifyKey] : null;
+    if (alertCount > 0) {
+      return true;
+    }
+  }
+  return false;
+};
+
 const createExtensions = (extensionItems, alerts, onRequestClose) => (
   extensionItems.map((item, index) => {
     const key = `${item.text}-${index}`;
@@ -58,9 +69,14 @@ const createExtensions = (extensionItems, alerts, onRequestClose) => (
   })
 );
 
-const createFancyButton = (onClick, refCallback) => (
-  <Extension onSelect={onClick} refCallback={refCallback} />
-);
+const createFancyButton = (hiddenItems, alerts, onClick, refCallback) => {
+  if (!hiddenItems || !hiddenItems.length) {
+    return null;
+  }
+
+  const showAlerts = shouldShowHiddenAlert(hiddenItems, alerts);
+  return <Extension onSelect={onClick} refCallback={refCallback} alertCount={showAlerts ? 1 : 0} />;
+};
 
 const ExtensionsRow = ({
   activeBreakpoint,
@@ -74,15 +90,14 @@ const ExtensionsRow = ({
     return null;
   }
 
-  let extensionItems = extensionConfig.extensions.slice(0, 3);
-  if (shouldRenderCompactNavigation(activeBreakpoint)) {
-    extensionItems = extensionConfig.extensions.slice(0, 1);
-  }
+  const sliceIndex = shouldRenderCompactNavigation(activeBreakpoint) ? 1 : 3;
+  const extensionItems = extensionConfig.extensions.slice(0, sliceIndex);
+  const hiddenItems = extensionConfig.extensions.slice(sliceIndex);
 
   return (
     <div className={cx('extensions-row')}>
       {createExtensions(extensionItems, alerts, onRequestClose)}
-      {createFancyButton(onClick, refCallback)}
+      {createFancyButton(hiddenItems, alerts, onClick, refCallback)}
     </div>
   );
 };
