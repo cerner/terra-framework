@@ -6,6 +6,9 @@ Unreleased
 ### Fixed
 * Remove Opts export, instead named export cornerSize
 
+### Changed
+* Remove need to use `injectIntl`, use `<FormattedMessage />` instead
+
 ### Added
 * Added en-AU translations
 

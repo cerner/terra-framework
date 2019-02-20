@@ -1,5 +1,5 @@
 import React from 'react';
-import { injectIntl, intlShape } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Button from 'terra-button';
@@ -52,10 +52,6 @@ const propTypes = {
    */
   contentWidthMax: PropTypes.number,
   /**
-   * @private The intl object to be injected for translations. Provided by the injectIntl function.
-   */
-  intl: intlShape.isRequired,
-  /**
    * Set this to `true` if your content has focusable elements and you want them to receive focus instead of focusing on the default popup frame when the popup is opened.
    */
   isFocusedDisabled: PropTypes.bool,
@@ -100,10 +96,15 @@ const defaultProps = {
 };
 
 class PopupContent extends React.Component {
-  static addPopupHeader(children, onRequestClose, close) {
+  static addPopupHeader(children, onRequestClose) {
     const icon = <span className={cx('close-icon')} />;
-    const button = <Button variant="utility" isIconOnly icon={icon} onClick={onRequestClose} text={close} />;
-    const header = <div className={cx('header')}>{button}</div>;
+    const header = (
+      <div className={cx('header')}>
+        <FormattedMessage id="Terra.popup.header.close">
+          {text => <Button variant="utility" isIconOnly icon={icon} onClick={onRequestClose} text={text} />}
+        </FormattedMessage>
+      </div>
+    );
     return <ContentContainer header={header} fill>{children}</ContentContainer>;
   }
 
@@ -183,7 +184,6 @@ class PopupContent extends React.Component {
       contentHeightMax,
       contentWidth,
       contentWidthMax,
-      intl,
       isFocusedDisabled,
       isHeaderDisabled,
       isHeightAutomatic,
@@ -204,8 +204,7 @@ class PopupContent extends React.Component {
 
     let content = PopupContent.cloneChildren(children, isHeightAutomatic, isWidthAutomatic, isHeightBounded, isWidthBounded, isHeaderDisabled);
     if (isFullScreen && !isHeaderDisabled) {
-      const close = intl.formatMessage({ id: 'Terra.popup.header.close' });
-      content = PopupContent.addPopupHeader(content, onRequestClose, close);
+      content = PopupContent.addPopupHeader(content, onRequestClose);
     }
 
     const contentClassNames = cx([
@@ -251,7 +250,7 @@ class PopupContent extends React.Component {
 PopupContent.propTypes = propTypes;
 PopupContent.defaultProps = defaultProps;
 
-export default injectIntl(PopupContent);
+export default PopupContent;
 
 export {
   CORNER_SIZE as cornerSize,

@@ -83,6 +83,7 @@
     "danger": "^3.7.14",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-intl": "^3.0.0",
     "enzyme-to-json": "^3.2.2",
     "eslint": "^5.0.0",
     "eslint-config-terra": "^2.0.0",
