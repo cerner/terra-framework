@@ -4,7 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Fixed
-* Add Opts object onto Intl wrapped component so it's available when accessed by `PopupContent.Opts`
+* Remove Opts export, instead named export cornerSize
 
 ### Added
 * Added en-AU translations
