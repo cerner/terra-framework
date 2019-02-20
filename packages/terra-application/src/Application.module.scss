@@ -3,19 +3,15 @@
   .application-theme-provider {
     position: relative;
   }  
-  
-  .application-base.fill {
-    height: 100%;
-  }
-  
+    
   .application-theme-provider.fill {
+    height: 100%;
+  } 
+
+  .application-base.fill {
     height: 100%;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
-  } 
-
-  .root-fill {
-    height: 100%;
   }
 
   .application-modal-manager-overflow {

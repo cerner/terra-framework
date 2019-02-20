@@ -24,6 +24,10 @@ const propTypes = {
    * Custom translations for the current locale.
    */
   customTranslatedMessages: (props, propName, componentName) => {
+    if (!props[propName]) {
+      return null;
+    }
+
     if (Object.keys(props[propName]).length !== 0 && props.locale === undefined) {
       return new Error(`Missing locale prop for ${propName} in ${componentName} props`);
     }
@@ -52,24 +56,24 @@ const propTypes = {
 const Application = ({
   locale, customTranslatedMessages, translationsLoadingPlaceholder, themeName, themeIsGlobal, fitToParentIsDisabled, children,
 }) => (
-  <Base
-    className={cx(['application-base', { fill: !fitToParentIsDisabled }])}
-    customMessages={customTranslatedMessages}
-    translationsLoadingPlaceholder={translationsLoadingPlaceholder}
-    locale={locale}
+  <ThemeProvider
+    className={cx(['application-theme-provider', { fill: !fitToParentIsDisabled }])}
+    themeName={themeName}
+    isGlobalTheme={themeIsGlobal}
   >
-    <ThemeProvider
-      className={cx(['application-theme-provider', { fill: !fitToParentIsDisabled }])}
-      themeName={themeName}
-      isGlobalTheme={themeIsGlobal}
+    <Base
+      className={cx(['application-base', { fill: !fitToParentIsDisabled }])}
+      customMessages={customTranslatedMessages}
+      translationsLoadingPlaceholder={translationsLoadingPlaceholder}
+      locale={locale}
     >
       <ActiveBreakpointProvider>
         <ModalManager className={fitToParentIsDisabled ? cx('application-modal-manager-overflow') : undefined}>
           {children}
         </ModalManager>
       </ActiveBreakpointProvider>
-    </ThemeProvider>
-  </Base>
+    </Base>
+  </ThemeProvider>
 );
 
 Application.propTypes = propTypes;

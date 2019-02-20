@@ -34,11 +34,20 @@
     z-index: 1;
   }
 
-  .menu-is-open > .body {
-    transform: translate3d(var(--terra-application-layout-menu-panel-panel-width-default, calc(100% - 3.571rem), 0, 0));
+
+  [dir=ltr] .menu-is-open > .body {
+    transform: translate3d(var(--terra-application-layout-menu-panel-panel-width-default, calc(100% - 3.571rem)), 0, 0);
 
     @include terra-mq-small-up {
       transform: translate3d(var(--terra-application-layout-menu-panel-panel-width-medium, 20rem), 0, 0);
+    } 
+  }
+
+  [dir=rtl] .menu-is-open > .body {
+    transform: translate3d(calc(-1 * var(--terra-application-layout-menu-panel-panel-width-default, calc(100% - 3.571rem))), 0, 0);
+
+    @include terra-mq-small-up {
+      transform: translate3d(calc(-1 * var(--terra-application-layout-menu-panel-panel-width-medium, 20rem)), 0, 0);
     } 
   }
 
