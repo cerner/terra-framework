@@ -18,11 +18,11 @@ const AppRouter = () => (
           path: '/item_2',
           hasSubMenu: true,
         }, {
-          text: 'Item 3',
+          text: 'External Link Example',
           path: '/item_3',
           hasSubMenu: false,
           externalLink: {
-            path: 'http://test.brokenurl.terra-framework.com',
+            path: 'https://engineering.cerner.com/terra-ui/#/home/terra-ui/index',
             target: '_self',
           },
         }]}

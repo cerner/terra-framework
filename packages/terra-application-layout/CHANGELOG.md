@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added en-AU translations
 
+### Changed
+* Update external links example to point to terra-ui.com
+
 4.2.0 - (February 13, 2019)
 ------------------
 ### Changed

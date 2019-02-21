@@ -113,6 +113,8 @@ describe('ApplicationTabs', () => {
       browser.pause(100);
     });
 
-    Terra.should.matchScreenshot('External tabs', { selector: 'body', viewports });
+    it('successfully navigated away', () => {
+      expect(browser.url().value).to.equal('https://engineering.cerner.com/terra-ui/#/home/terra-ui/index');
+    });
   });
 });

@@ -8,11 +8,11 @@ const ignoredA11y = {
 describe('Time Input Twelve Hour Mobile', () => {
   before(() => {
     browser.setViewportSize(Terra.viewports('tiny')[0]);
-    browser.execute(() => {
-      if (!window.ontouchstart) {
-        window.ontouchstart = 'true';
-      }
-    });
+    browser.execute('if (!window.ontouchstart) { window.ontouchstart = "true"; }');
+  });
+
+  after(() => {
+    browser.execute('if (window.ontouchstart) { window.ontouchstart = "false"; }');
   });
 
   describe('Twelve Hour Mobile - Default with no time', () => {
