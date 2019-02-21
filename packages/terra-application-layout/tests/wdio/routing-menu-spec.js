@@ -29,7 +29,8 @@ describe('RoutingMenu', () => {
       browser.pause(100);
     });
 
-    Terra.should.matchScreenshot({ selector: 'body', viewports });
-    Terra.should.beAccessible({ viewports, context: '#routing-menu-test' });
+    it('successfully navigated away', () => {
+      expect(browser.url().value).to.equal('https://engineering.cerner.com/terra-ui/#/home/terra-ui/index');
+    });
   });
 });
