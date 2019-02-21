@@ -2,6 +2,8 @@ import React from 'react';
 import { IntlProvider } from 'react-intl';
 import DateTimePicker from '../../lib/DateTimePicker';
 import messages from '../../translations/en-US.json';
+import dateInputMessages from '../../node_modules/terra-date-picker/translations/en-US.json';
+import timeInputMessages from '../../node_modules/terra-time-input/translations/en-US.json';
 
 const locale = 'en-US';
 
@@ -115,4 +117,23 @@ it('should render a disabled date time picker', () => {
       <DateTimePicker name="date-time-input" disabled utcOffset={0} />
     </IntlProvider>));
   expect(datePicker).toMatchSnapshot();
+});
+
+it('Should not throw any errors while date value is outside of the Min, Max range and new time value is being entered ', () => {
+  const allMessages = Object.assign(messages, dateInputMessages, timeInputMessages);
+
+  const datePicker = mount((
+    <IntlProvider locale={locale} messages={allMessages}>
+      <DateTimePicker name="date-time-input" maxDateTime="2017-04-01T10:30" minDateTime="2017-04-10T10:30" />
+    </IntlProvider>
+  ));
+
+  const dateInput = datePicker.find({ name: 'terra-date-input', type: 'text' }).at(0);
+  dateInput.simulate('change', { target: { value: '04/12/2017' } });
+  expect(() => {
+    const hourInput = datePicker.find({ name: 'terra-time-hour-input' }).at(0);
+    hourInput.simulate('change', { target: { value: '21' } });
+    const minuteInput = datePicker.find({ name: 'terra-time-minute-input' }).at(0);
+    minuteInput.simulate('change', { target: { value: '30' } });
+  }).not.toThrowError();
 });

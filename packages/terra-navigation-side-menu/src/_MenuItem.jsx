@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-import List from 'terra-list';
 import ChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 
 import styles from './MenuItem.module.scss';
@@ -99,28 +98,29 @@ class MenuItem extends React.Component {
       customProps.className,
     ]);
 
+    /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */
     return (
-      <List.Item
+      <li
         className={cx('list-item')}
-        content={(
-          /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */
-          <div
-            {...customProps}
-            tabIndex="0"
-            className={itemClassNames}
-            onKeyDown={this.handleKeyDown}
-            onKeyUp={this.handleKeyUp}
-            onBlur={this.handleOnBlur}
-          >
-            <div className={cx('title')}>
-              {text}
-            </div>
-            {hasChevron && <span className={cx('chevron')}><ChevronRight /></span>}
+        aria-selected={isSelected}
+        role="option"
+      >
+        <div
+          {...customProps}
+          tabIndex="0"
+          className={itemClassNames}
+          onKeyDown={this.handleKeyDown}
+          onKeyUp={this.handleKeyUp}
+          onBlur={this.handleOnBlur}
+        >
+          <div className={cx('title')}>
+            {text}
           </div>
-          /* eslint-enable jsx-ally/no-static-element-interactions */
-        )}
-      />
+          {hasChevron && <span className={cx('chevron')}><ChevronRight /></span>}
+        </div>
+      </li>
     );
+    /* eslint-enable jsx-ally/no-static-element-interactions */
   }
 }
 

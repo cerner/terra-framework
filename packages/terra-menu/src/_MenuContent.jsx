@@ -363,7 +363,6 @@ class MenuContent extends React.Component {
   }
 }
 
-
 MenuContent.propTypes = propTypes;
 MenuContent.defaultProps = defaultProps;
 MenuContent.childContextTypes = childContextTypes;

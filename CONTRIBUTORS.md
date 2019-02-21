@@ -23,6 +23,7 @@ Cerner Corporation
 - Shetty Akarsh [@@ShettyAkarsh]
 - Alex Bezek [@alex-bezek]
 - Supreeth MR [@supreethmr]
+- Shetty Akarsh [@ShettyAkarsh]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -47,3 +48,4 @@ Cerner Corporation
 [@ShettyAkarsh]: https://github.com/ShettyAkarsh
 [@alex-bezek]: https://github.com/alex-bezek
 [@supreethmr]: https://github.com/supreethmr
+[@ShettyAkarsh]: https://github.com/ShettyAkarsh
