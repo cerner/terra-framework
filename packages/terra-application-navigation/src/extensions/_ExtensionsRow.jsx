@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { extensionConfigPropType } from '../utils/propTypes';
 import { shouldRenderCompactNavigation } from '../utils/helpers';
-import Extension from './Extension';
+import ExtensionRollup from './_ExtensionRollup';
+import ExtensionHelper from './_ExtensionHelper';
+import { EXTENSION_COUNT } from './_ExtensionUtils';
 
 import styles from './ExtensionsRow.module.scss';
 
@@ -21,11 +23,11 @@ const propTypes = {
   /**
    * The configuration values for the ApplicationName component.
    */
-  alerts: PropTypes.object,
+  notifications: PropTypes.object,
   /**
    * The configuration values for the ApplicationName component.
    */
-  onClick: PropTypes.func,
+  onRollupSelect: PropTypes.func,
   /**
    * The configuration values for the ApplicationName component.
    */
@@ -40,49 +42,35 @@ const defaultProps = {
   activeBreakpoint: '',
 };
 
-const shouldShowHiddenAlert = (extensionItems, alerts) => {
+const shouldShowNotifications = (extensionItems, notifications) => {
   for (let i = 0; i < extensionItems.length; i += 1) {
     const item = extensionItems[i];
-    const alertCount = alerts && item.notifyKey ? alerts[item.notifyKey] : null;
-    if (alertCount > 0) {
+    const notificationCount = notifications && item.notifyKey ? notifications[item.notifyKey] : null;
+    if (notificationCount > 0) {
       return true;
     }
   }
   return false;
 };
 
-const createExtensions = (extensionItems, alerts, onRequestClose) => (
-  extensionItems.map((item, index) => {
-    const key = `${item.text}-${index}`;
-    const alertCount = alerts && item.notifyKey ? alerts[item.notifyKey] : null;
-    return (
-      <Extension
-        alertCount={alertCount}
-        key={key}
-        image={item.image}
-        text={item.text}
-        metaData={item.metaData}
-        onSelect={item.onSelect}
-        onRequestClose={onRequestClose}
-      />
-    );
-  })
-);
-
-const createFancyButton = (hiddenItems, alerts, onClick, refCallback) => {
+const createRollupButton = (hiddenItems, notifications, onRollupSelect, refCallback) => {
   if (!hiddenItems || !hiddenItems.length) {
     return null;
   }
-
-  const showAlerts = shouldShowHiddenAlert(hiddenItems, alerts);
-  return <Extension onSelect={onClick} refCallback={refCallback} alertCount={showAlerts ? 1 : 0} />;
+  return (
+    <ExtensionRollup
+      onSelect={onRollupSelect}
+      refCallback={refCallback}
+      hasChildNotifications={shouldShowNotifications(hiddenItems, notifications)}
+    />
+  );
 };
 
 const ExtensionsRow = ({
   activeBreakpoint,
   extensionConfig,
-  alerts,
-  onClick,
+  notifications,
+  onRollupSelect,
   refCallback,
   onRequestClose,
 }) => {
@@ -90,14 +78,14 @@ const ExtensionsRow = ({
     return null;
   }
 
-  const sliceIndex = shouldRenderCompactNavigation(activeBreakpoint) ? 1 : 3;
+  const sliceIndex = shouldRenderCompactNavigation(activeBreakpoint) ? EXTENSION_COUNT.SMALL : EXTENSION_COUNT.LARGE;
   const extensionItems = extensionConfig.extensions.slice(0, sliceIndex);
   const hiddenItems = extensionConfig.extensions.slice(sliceIndex);
 
   return (
     <div className={cx('extensions-row')}>
-      {createExtensions(extensionItems, alerts, onRequestClose)}
-      {createFancyButton(hiddenItems, alerts, onClick, refCallback)}
+      {ExtensionHelper(extensionItems, notifications, onRequestClose, false)}
+      {createRollupButton(hiddenItems, notifications, onRollupSelect, refCallback)}
     </div>
   );
 };

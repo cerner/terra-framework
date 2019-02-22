@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Popup from 'terra-popup';
 import { extensionConfigPropType } from '../utils/propTypes';
-import ExtensionsPopupView from './ExtensionsPopupView';
-import ExtensionsRow from './ExtensionsRow';
+import ExtensionsPopupView from './_ExtensionsPopupView';
+import ExtensionsRow from './_ExtensionsRow';
 
 const propTypes = {
   /**
@@ -47,16 +47,15 @@ class Extensions extends React.Component {
     this.getButtonNode = this.getButtonNode.bind(this);
     this.handleRequestClose = this.handleRequestClose.bind(this);
     this.handleExtensionUpdate = this.handleExtensionUpdate.bind(this);
-    this.handleExtensionClick = this.handleExtensionClick.bind(this);
+    this.handleRollupSelect = this.handleRollupSelect.bind(this);
 
     this.state = { isOpen: false };
-    this.alerts = {};
+    this.notifications = {};
   }
 
+  // const event = new CustomEvent('terra-app-nav-extension-update', { detail: { pill: 9 } });
+  // document.dispatchEvent(event);
   componentDidMount() {
-    // const event = new CustomEvent('terra-app-nav-extension-update', { detail: { pill: 9 } });
-    // document.dispatchEvent(event);
-
     document.addEventListener('terra-app-nav-extension-update', this.handleExtensionUpdate);
   }
 
@@ -77,18 +76,18 @@ class Extensions extends React.Component {
     const data = event.detail;
     const keyEntries = Object.keys(data);
     keyEntries.forEach((key) => {
-      const value = this.alerts[key];
+      const value = this.notifications[key];
       const newValue = data[key];
       if (value) {
         if (newValue === 0) {
-          delete this.alerts[key];
+          delete this.notifications[key];
           wasUpdated = true;
         } else if (value !== newValue) {
-          this.alerts[key] = newValue;
+          this.notifications[key] = newValue;
           wasUpdated = true;
         }
       } else {
-        this.alerts[key] = newValue;
+        this.notifications[key] = newValue;
         wasUpdated = true;
       }
     });
@@ -102,7 +101,7 @@ class Extensions extends React.Component {
     this.setState({ isOpen: false });
   }
 
-  handleExtensionClick() {
+  handleRollupSelect() {
     this.setState({ isOpen: true });
   }
 
@@ -126,17 +125,17 @@ class Extensions extends React.Component {
           onRequestClose={this.handleRequestClose}
         >
           <ExtensionsPopupView
-            alerts={this.alerts}
+            notifications={this.notifications}
             extensionConfig={extensionConfig}
             activeBreakpoint={activeBreakpoint}
             onRequestClose={this.handleRequestClose}
           />
         </Popup>
         <ExtensionsRow
-          alerts={this.alerts}
+          notifications={this.notifications}
           extensionConfig={extensionConfig}
           activeBreakpoint={activeBreakpoint}
-          onClick={this.handleExtensionClick}
+          onRollupSelect={this.handleRollupSelect}
           refCallback={this.setButtonNode}
           onRequestClose={this.handleRequestClose}
         />

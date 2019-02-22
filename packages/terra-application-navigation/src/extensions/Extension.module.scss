@@ -2,23 +2,56 @@
 :local {
   .extension {
     align-items: center;
-    background-color: orange;
     border-radius: 10px;
-    border: 2px solid green;
+    color: #fff;
     cursor: pointer;
     display: flex;
     height: 3.5725rem;
     justify-content: center;
     outline: none;
     overflow: hidden;
+    position: relative;
     width: 3.5725rem;
+
+    &:hover {
+      background-color: red;
+    }
   }
 
-  .extension:hover {
-    background-color: red;
+  .extension-row {
+    align-items: center;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+    display: flex;
+    height: 3.5725rem;
+    justify-content: space-between;
+    outline: none;
+    overflow: hidden;
+    width: 100%;
+
+    &:hover {
+      background-color: red;
+    }
+
+    &:last-of-type {
+      border: 0;
+    }
+  }
+
+  .extension-image,
+  .extension-row-count {
+    flex: 0 0  auto;
+    padding: 10px;
+  }
+
+  .extension-text {
+    flex: 1 1 auto;
+    width: 100%;
   }
 
   .extension-count {
-    background-color: pink;
+    position: absolute;
+    left: 70%;
+    top: 10%;
   }
 }

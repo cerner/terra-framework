@@ -5,7 +5,7 @@ import Overlay from 'terra-overlay';
 import { Breakpoints } from 'terra-application';
 import FocusTrap from 'focus-trap-react';
 
-import Extensions from './extensions/Extensions';
+import Extensions from './extensions/_Extensions';
 import Header from './header/_Header';
 import DrawerMenu from './drawer-menu/_DrawerMenu';
 import { shouldRenderCompactNavigation } from './utils/helpers';

@@ -21,6 +21,9 @@
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
+  "devDependencies": {
+    "terra-application": "^0.0.0"
+  },
   "peerDependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",

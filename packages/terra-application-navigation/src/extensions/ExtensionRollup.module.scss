@@ -1,0 +1,26 @@
+/* stylelint-disable selector-class-pattern */
+:local {
+  .extension {
+    align-items: center;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    height: 3.5725rem;
+    justify-content: center;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    width: 3.5725rem;
+
+    &:hover {
+      background-color: red;
+    }
+  }
+
+  .extension-count {
+    position: absolute;
+    left: 70%;
+    top: 10%;
+  }
+}
