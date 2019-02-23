@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added en-AU translations.
 
+### Changed
+* Update external links example to point to terra-ui.com
+
 ### Fixed
 * Fixed TabMenuList styling.
 
