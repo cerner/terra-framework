@@ -118,6 +118,7 @@ Please review [Terra's Internationalization documentation](https://engineering.c
 <h3 id="packages-requiring-i18n">
   Packages Requiring I18n
 </h3>
+
 - [terra-application-header](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-header)
 - [terra-application-layout](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-layout)
 - [terra-application-links](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-links)
