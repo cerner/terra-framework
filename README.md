@@ -113,6 +113,7 @@ Components in beta stage may include breaking changes, new features, and bug fix
 <h2 id="internationalization-i18n">
   Internationalization (I18n)
 </h2>
+
 Please review [Terra's Internationalization documentation](https://engineering.cerner.com/terra-ui/#/getting-started/terra-ui/internationalization) for more information. Included are directions on consumption and how internationalization is setup.
 
 <h3 id="packages-requiring-i18n">
