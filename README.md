@@ -94,9 +94,9 @@ Components in beta stage may include breaking changes, new features, and bug fix
   Deprecated
 </h3>
 
-| Terra Package      | Version | Status | Dependencies |
-|--------------------|---------|--------|--------------|
-| [terra-app-delegate](https://github.com/cerner/terra-framework/tree/master/packages/terra-app-delegate) | [![NPM version](https://badgen.net/npm/v/terra-app-delegate)](https://www.npmjs.org/package/terra-app-delegate) | ![Deprecated](https://badgen.net/badge/status/Stable/grey) | [![terra-app-delegate]](https://badgen.net/badge/dependencies/n%2Fa/grey) |
+| Terra Package      | Version | Status |
+|--------------------|---------|--------|
+| [terra-app-delegate](https://github.com/cerner/terra-framework/tree/master/packages/terra-app-delegate) | [![NPM version](https://badgen.net/npm/v/terra-app-delegate)](https://www.npmjs.org/package/terra-app-delegate) | ![Deprecated](https://badgen.net/badge/status/Stable/grey) |
 
 <h2 id="supported-browsers">
   Supported Browsers
