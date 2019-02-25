@@ -8,8 +8,7 @@
 | resize-observer-polyfill | ^1.4.1 | -- | A polyfill for the Resize Observer API |
 | terra-doc-template | ^2.2.0 | ^16.4.2 | Provides an adjustable template for documentation pages. |
 | terra-icon | ^3.1.0 | ^16.4.2 | The terra-icon component is used to visually represent a literal or symbolic object intended to initiate an action, communicate a status, or navigate the workflow. |
-| terra-list | ^3.0.0 | ^16.4.2 | The Terra List is a structural component to arrange content within list/listitems. |
-| terra-popup | ^5.1.0 | ^16.4.2 | The Terra Popup is higher order component that launches terra-hookshot positioned content with the ability to display a dynamic arrow. |
+| terra-popup | ^5.2.0 | ^16.4.2 | The Terra Popup is higher order component that launches terra-hookshot positioned content with the ability to display a dynamic arrow. |
 
 ## devDependencies
 | Dependency | Version | React Version | Description |

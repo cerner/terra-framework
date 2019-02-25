@@ -1,31 +1,18 @@
 import React from 'react';
-import Button from 'terra-button';
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
-import Popup from 'terra-popup/lib/Popup';
-import ExamplePopupContent from 'terra-popup/lib/terra-dev-site/doc/common/ExamplePopupContent';
+import PopupCommonExample from 'terra-popup/lib/terra-dev-site/doc/common/PopupCommonExample';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 class PopupAttachmentBehavior extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { open: false, behavior: 'auto' };
-
-    this.openPopup = this.openPopup.bind(this);
+    this.state = { behavior: 'auto' };
     this.handleChange = this.handleChange.bind(this);
-    this.handleRequestClose = this.handleRequestClose.bind(this);
   }
 
   handleChange(event) {
     this.setState({ behavior: event.target.value });
-  }
-
-  handleRequestClose() {
-    this.setState({ open: false });
-  }
-
-  openPopup() {
-    this.setState({ open: true });
   }
 
   render() {
@@ -37,20 +24,7 @@ class PopupAttachmentBehavior extends React.Component {
           <option value="flip">Flip</option>
           <option value="push">Push</option>
         </select>
-        <div>
-          <Button id="popup-behavior-target" text="Open Popup" onClick={this.openPopup} />
-          <Popup
-            attachmentBehavior={this.state.behavior}
-            contentAttachment="top center"
-            isArrowDisplayed
-            isOpen={this.state.open}
-            targetRef={() => document.getElementById('popup-behavior-target')}
-            onRequestClose={this.handleRequestClose}
-            isContentFocusDisabled
-          >
-            <ExamplePopupContent onChange={this.handleRequestClose} />
-          </Popup>
-        </div>
+        <PopupCommonExample title="Open Popup" attachmentBehavior={this.state.behavior} />
       </div>
     );
   }

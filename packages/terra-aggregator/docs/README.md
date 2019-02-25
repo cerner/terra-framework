@@ -109,12 +109,12 @@ const aggregatorItems = [{
   component: <Section />,
 }];
 
-const MyAggregator = withDisclosureManager({ disclosureManager }) => (
+const MyAggregator = withDisclosureManager(({ disclosureManager }) => (
   <Aggregator
     items={aggregatorItems}
     disclose={disclosureManager.disclose}
   />
-);
+));
 
 const MyApp = () => (
   <Base>
