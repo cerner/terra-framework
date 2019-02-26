@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added en-AU translations
 
+### Fixed
+* Removed prop breaking the modal example
+
 5.2.0 - (February 13, 2019)
 ------------------
 ### Changed
