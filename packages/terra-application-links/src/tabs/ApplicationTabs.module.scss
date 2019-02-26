@@ -264,6 +264,9 @@
   .tab-menu-list[role='menu'] {
     background-color: var(--terra-application-links-tabs-menu-content-background-color, transparent);
     color: var(--terra-application-links-tabs-menu-content-color, #1c1f21);
+    list-style: none;
+    margin: 0;
+    padding: 0;
     padding-bottom: var(--terra-application-links-tabs-menu-list-padding-bottom, 0.125rem);
     padding-top: var(--terra-application-links-tabs-menu-list-padding-top, 0.125rem);
 
