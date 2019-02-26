@@ -33,7 +33,7 @@ The below example code details the changes necessary to interact with terra-moda
  };
 
 - const MyComponent = ({ app }) => (
-+ const MyComponent = withDisclosureManager({ disclosureManager }) => (
++ const MyComponent = withDisclosureManager(({ disclosureManager }) => (
     <Button
       text="Launch Modal"
       onClick={() => { 
