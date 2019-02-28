@@ -4,6 +4,16 @@ Changelog
 Unreleased
 ----------
 
+2.3.0 - (February 26, 2019)
+------------------
+### Added
+* Added en-AU translations
+
+2.2.0 - (February 13, 2019)
+------------------
+### Fixed
+* Fix lint errors from eslint-react-plugin
+
 2.1.0 - (February 5, 2019)
 ------------------
 ### Changed

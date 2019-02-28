@@ -3,7 +3,7 @@ import Button from 'terra-button';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import Popup from 'terra-popup/lib/Popup';
-import ExamplePopupContent from 'terra-popup/lib/terra-dev-site/doc/common/ExamplePopupContent';
+import Placeholder from 'terra-doc-template/lib/Placeholder';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 class ModalContainer extends React.Component {
@@ -12,7 +12,6 @@ class ModalContainer extends React.Component {
 
     this.handlePopupButtonClick = this.handlePopupButtonClick.bind(this);
     this.handlePopupRequestClose = this.handlePopupRequestClose.bind(this);
-    this.handlePopupOnChange = this.handlePopupOnChange.bind(this);
     this.state = { open: false };
   }
 
@@ -21,10 +20,6 @@ class ModalContainer extends React.Component {
   }
 
   handlePopupRequestClose() {
-    this.setState({ open: false });
-  }
-
-  handlePopupOnChange() {
     this.setState({ open: false });
   }
 
@@ -43,9 +38,8 @@ class ModalContainer extends React.Component {
           targetRef={() => document.getElementById('popup-in-modal')}
           releaseFocus={disclosureManager.releaseFocus}
           requestFocus={disclosureManager.requestFocus}
-          isContentFocusDisabled
         >
-          <ExamplePopupContent onChange={this.handlePopupOnChange} />
+          <Placeholder title="Popup Content" />
         </Popup>
         <Button id="popup-in-modal" text="Popup In Modal" onClick={this.handlePopupButtonClick} />
         <br />

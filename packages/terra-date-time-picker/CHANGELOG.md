@@ -4,6 +4,19 @@ ChangeLog
 Unreleased
 ----------
 
+3.7.0 - (February 26, 2019)
+------------------
+### Added
+* Added en-AU translations
+
+### Fixed
+* Changed browser.execute functions in wdio spec to be strings for IE and FF driver compatibility
+
+3.6.0 - (February 13, 2019)
+------------------
+### Fixed
+* Throws NPE if manually entered valid date is outside of allotted datetime range.
+
 3.5.0 - (February 5, 2019)
 ------------------
 ### Changed

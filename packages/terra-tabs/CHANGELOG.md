@@ -4,6 +4,16 @@ ChangeLog
 Unreleased
 ----------
 
+5.1.0 - (February 26, 2019)
+------------------
+### Added
+* Added en-AU translations
+
+5.0.0 - (February 13, 2019)
+------------------
+### Breaking Change
+* Major dependency version bump of terra-menu
+
 4.5.0 - (February 5, 2019)
 ------------------
 ### Changed

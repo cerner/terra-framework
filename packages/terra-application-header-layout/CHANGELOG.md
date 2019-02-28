@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+3.2.0 - (February 26, 2019)
+------------------
+### Added
+* Added en-AU translations.
+
 3.1.0 - (February 5, 2019)
 ------------------
 ### Changed

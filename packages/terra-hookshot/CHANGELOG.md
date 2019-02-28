@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+5.2.0 - (February 26, 2019)
+------------------
+### Fixed
+* Updated test spec to scroll to bottom of test page before interacting with elements.
+
 5.1.0 - (February 5, 2019)
 ------------------
 ### Removed

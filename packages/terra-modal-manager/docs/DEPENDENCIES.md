@@ -9,7 +9,7 @@
 | terra-action-header | ^2.0.0 | ^16.4.2 | The terra-action-header component is a header bar containing a title and optional actionable items such as links and buttons. |
 | terra-button | ^3.3.0 | ^16.4.2 | The terra-button component provides users a way to trigger actions in the UI. |
 | terra-content-container | ^3.0.0 | ^16.4.2 | The Terra ContentContainer is a structural component for the purpose of arranging content with a header. |
-| terra-disclosure-manager | ^4.1.0 | ^16.4.2 | A stateful component used to manage disclosure presentation. |
+| terra-disclosure-manager | ^4.3.0 | ^16.4.2 | A stateful component used to manage disclosure presentation. |
 | terra-doc-template | ^2.2.0 | ^16.4.2 | Provides an adjustable template for documentation pages. |
 | terra-form-input | ^2.3.0 | ^16.4.2 | Element for building out inputs in a form. |
 | terra-heading | ^3.0.0 | ^16.4.2 | Terra includes styling for all standard headings `h1` through `h6`, as well as styles that match the size of their respective heading. |

@@ -4,6 +4,20 @@ Changelog
 Unreleased
 ----------
 
+5.3.0 - (February 26, 2019)
+------------------
+### Added
+* Added en-AU translations
+
+### Fixed
+* Removed prop breaking the modal example
+
+5.2.0 - (February 13, 2019)
+------------------
+### Changed
+* Removed dependency on terra-list
+* Removed dependency on terra-grid
+
 5.1.0 - (February 5, 2019)
 ------------------
 ### Changed

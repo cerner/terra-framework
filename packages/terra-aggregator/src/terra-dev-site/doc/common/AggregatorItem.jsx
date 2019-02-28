@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'terra-button';
-import SelectableList from 'terra-list/lib/SelectableList';
 import ContentContainer from 'terra-content-container';
 import Arrange from 'terra-arrange';
 import ActionHeader from 'terra-action-header';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
+import List from './placeholder-list/PlaceholderList';
+import Item from './placeholder-list/PlaceholderListItem';
 
 import DisclosureComponent from './DisclosureComponent';
 
@@ -57,7 +58,7 @@ class AggregatorItem extends React.Component {
       5: 'fullscreen',
     };
 
-    if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState.index === index) {
+    if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState.selectedIndex === index) {
       aggregatorDelegate.releaseFocus()
         .catch(() => {
           console.log('Section - Focus release failed. Something must be locked.'); // eslint-disable-line no-console
@@ -66,7 +67,7 @@ class AggregatorItem extends React.Component {
     }
 
     aggregatorDelegate.requestFocus({
-      index,
+      selectedIndex: index,
     })
       .then(({ disclose }) => {
         if (discloseOnSelect) {
@@ -105,9 +106,9 @@ class AggregatorItem extends React.Component {
       name, disclosureType, aggregatorDelegate, discloseOnSelect, customDisclose, ...customProps
     } = this.props;
 
-    let selectedIndex;
-    if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState && aggregatorDelegate.itemState.index !== undefined) {
-      selectedIndex = aggregatorDelegate.itemState.index;
+    let index;
+    if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState && aggregatorDelegate.itemState.selectedIndex !== undefined) {
+      index = aggregatorDelegate.itemState.selectedIndex;
     }
 
     return (
@@ -125,42 +126,44 @@ class AggregatorItem extends React.Component {
           />
         )}
       >
-        <SelectableList
-          isDivided
-          selectedIndexes={selectedIndex !== undefined ? [selectedIndex] : []}
-          onChange={this.handleSelection}
-        >
-          <SelectableList.Item
-            content={
-              <div style={{ padding: '.7rem' }}>Row 0</div>
-            }
-          />
-          <SelectableList.Item
-            content={
-              <div style={{ padding: '.7rem' }}>Row 1</div>
-            }
-          />
-          <SelectableList.Item
-            content={
-              <div style={{ padding: '.7rem' }}>Row 2</div>
-            }
-          />
-          <SelectableList.Item
-            content={
-              <div style={{ padding: '.7rem' }}>Row 3</div>
-            }
-          />
-          <SelectableList.Item
-            content={
-              <div style={{ padding: '.7rem' }}>Row 4</div>
-            }
-          />
-          <SelectableList.Item
-            content={
-              <div style={{ padding: '.7rem' }}>Row 5</div>
-            }
-          />
-        </SelectableList>
+        <List isPadded>
+          <Item
+            isSelected={index === 0}
+            onSelect={event => this.handleSelection(event, 0)}
+          >
+            <div>Row 0</div>
+          </Item>
+          <Item
+            isSelected={index === 1}
+            onSelect={event => this.handleSelection(event, 1)}
+          >
+            <div>Row 1</div>
+          </Item>
+          <Item
+            isSelected={index === 2}
+            onSelect={event => this.handleSelection(event, 2)}
+          >
+            <div>Row 2</div>
+          </Item>
+          <Item
+            isSelected={index === 3}
+            onSelect={event => this.handleSelection(event, 3)}
+          >
+            <div>Row 3</div>
+          </Item>
+          <Item
+            isSelected={index === 4}
+            onSelect={event => this.handleSelection(event, 4)}
+          >
+            <div>Row 4</div>
+          </Item>
+          <Item
+            isSelected={index === 5}
+            onSelect={event => this.handleSelection(event, 5)}
+          >
+            <div>Row 5</div>
+          </Item>
+        </List>
       </ContentContainer>
     );
   }
