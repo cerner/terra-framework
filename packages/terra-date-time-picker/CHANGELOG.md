@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.7.0 - (February 26, 2019)
+------------------
 ### Added
 * Added en-AU translations
 
