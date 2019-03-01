@@ -73,7 +73,6 @@ class UtilityButton extends React.Component {
   }
 
   createContent() {
-    console.log(`role inside utility button : ${this.props.menurole}`)
     return (
       <UtilityMenu
         initialSelectedKey={this.props.initialSelectedKey}
