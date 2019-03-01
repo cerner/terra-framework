@@ -1,5 +1,5 @@
 import React from 'react';
-import InfiniteList from '../../../InfiniteList';
+import InfiniteList, { Item } from '../../../index';
 
 class InfiniteListSameCount extends React.Component {
   constructor(props) {
@@ -14,17 +14,17 @@ class InfiniteListSameCount extends React.Component {
 
   render() {
     const items1 = [
-      <InfiniteList.Item key="item-0" content={<div style={{ height: '50px', width: '100%', backgroundColor: 'bisque' }}>Item 0</div>} />,
-      <InfiniteList.Item key="item-1" content={<div style={{ height: '50px', width: '100%', backgroundColor: 'darkgoldenrod' }}>Item 1</div>} />,
-      <InfiniteList.Item key="item-2" content={<div style={{ height: '50px', width: '100%', backgroundColor: 'bisque' }}>Item 2</div>} />,
-      <InfiniteList.Item key="item-3" content={<div style={{ height: '50px', width: '100%', backgroundColor: 'darkgoldenrod' }}>Item 3</div>} />,
+      <Item key="item-0"><div style={{ height: '50px', width: '100%', backgroundColor: 'bisque' }}>Item 0</div></Item>,
+      <Item key="item-1"><div style={{ height: '50px', width: '100%', backgroundColor: 'darkgoldenrod' }}>Item 1</div></Item>,
+      <Item key="item-2"><div style={{ height: '50px', width: '100%', backgroundColor: 'bisque' }}>Item 2</div></Item>,
+      <Item key="item-3"><div style={{ height: '50px', width: '100%', backgroundColor: 'darkgoldenrod' }}>Item 3</div></Item>,
     ];
 
     const items2 = [
-      <InfiniteList.Item key="item-0" content={<div style={{ height: '50px', width: '100%', backgroundColor: 'cadetblue' }}>Item 0</div>} />,
-      <InfiniteList.Item key="item-1" content={<div style={{ height: '50px', width: '100%', backgroundColor: 'crimson' }}>Item 1</div>} />,
-      <InfiniteList.Item key="item-2" content={<div style={{ height: '50px', width: '100%', backgroundColor: 'cadetblue' }}>Item 2</div>} />,
-      <InfiniteList.Item key="item-3" content={<div style={{ height: '50px', width: '100%', backgroundColor: 'crimson' }}>Item 3</div>} />,
+      <Item key="item-0"><div style={{ height: '50px', width: '100%', backgroundColor: 'cadetblue' }}>Item 0</div></Item>,
+      <Item key="item-1"><div style={{ height: '50px', width: '100%', backgroundColor: 'crimson' }}>Item 1</div></Item>,
+      <Item key="item-2"><div style={{ height: '50px', width: '100%', backgroundColor: 'cadetblue' }}>Item 2</div></Item>,
+      <Item key="item-3"><div style={{ height: '50px', width: '100%', backgroundColor: 'crimson' }}>Item 3</div></Item>,
     ];
 
     return (

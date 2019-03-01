@@ -59,14 +59,14 @@ import Base from 'terra-base';
 import ModalManager from 'terra-modal-manager'; 
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 
-const MyDisclosureComponent = withDisclosureManager({ disclosureManager }) => (
+const MyDisclosureComponent = withDisclosureManager(({ disclosureManager }) => (
   <Button
     text="Close Modal"
     onClick={() => { 
       disclosureManager.closeDisclosure();
     }}
   />
-);
+));
 MyDisclosureComponent.propTypes = {
   disclosureManager: disclosureManagerShape,
 }

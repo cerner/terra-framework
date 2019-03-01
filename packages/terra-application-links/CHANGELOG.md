@@ -4,6 +4,27 @@ Changelog
 Unreleased
 ----------
 
+5.3.0 - (February 26, 2019)
+------------------
+### Added
+* Added en-AU translations.
+
+### Changed
+* Update external links example to point to terra-ui.com
+
+### Fixed
+* Fixed TabMenuList styling.
+
+5.2.0 - (February 13, 2019)
+------------------
+### Changed
+* Removed dependency on terra-list
+
+5.1.0 - (February 5, 2019)
+------------------
+### Changed
+* Minor dependency update
+
 5.0.0 - (January 25, 2019)
 ------------------
 ### Breaking Change

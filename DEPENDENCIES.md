@@ -33,8 +33,8 @@
 | react-router-dom | ^4.2.2 | >=15 | DOM bindings for React Router |
 | react-test-renderer | ^16.4.2 | ^16.0.0 | React package for snapshot testing. |
 | stylelint | ^9.2.0 | -- | A mighty, modern CSS linter. |
-| stylelint-config-terra | ^1.0.0 | -- | Terra Stylelint Shared Config |
+| stylelint-config-terra | ^2.0.0 | -- | Terra Stylelint Shared Config |
 | terra-base | ^4.0.0 | ^16.4.2 | The base component sets minimal global styles for an application. |
-| terra-dev-site | ^2.0.0 | ^16.4.2 | Dynamically builds a react-hash-routed site based on site configuration, navigation configuration and component configuration. |
+| terra-dev-site | ^3.0.0 | ^16.4.2 | Dynamically builds a react-hash-routed site based on site configuration, navigation configuration and component configuration. |
 | terra-toolkit | ^4.16.0 | -- | Utilities to help when developing terra modules. |
 | xfc | ^1.2.1 | -- | A Cross Frame Container that handles securely embedding web content into a 3rd party domain |

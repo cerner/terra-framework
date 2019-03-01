@@ -1,6 +1,6 @@
 import React from 'react';
 
-import InfiniteList from '../../../InfiniteList';
+import InfiniteList from '../../../index';
 
 const InfiniteListLoading = () => (
   <InfiniteList
@@ -11,7 +11,7 @@ const InfiniteListLoading = () => (
         height: '100%', width: '100%', position: 'relative', backgroundColor: 'aliceblue',
       }}
       >
-Loading
+        Loading
       </div>
 )}
   />

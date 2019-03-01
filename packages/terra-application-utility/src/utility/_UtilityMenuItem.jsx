@@ -176,7 +176,8 @@ class UtilityMenuItem extends React.Component {
           align="center"
           className={arrangeClassNames}
         />
-      </li>);
+      </li>
+    );
     /* eslint-enable jsx-a11y/no-static-element-interactions */
 
 

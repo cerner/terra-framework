@@ -1,5 +1,3 @@
-/* global after */
-
 describe('Hookshot', () => {
   before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
 
@@ -375,6 +373,7 @@ describe('Hookshot', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-hookshot/hookshot/hookshot-close-behaviors');
+      browser.click('#scroll-bounds');
       browser.click('#trigger-OutsideClickBehaviorWithSvgs');
       browser.waitForVisible('#OutsideClickBehaviorWithSvgs-content');
       browser
@@ -405,9 +404,9 @@ describe('Hookshot', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-hookshot/hookshot/hookshot-close-behaviors');
+      browser.click('#scroll-bounds');
       browser.click('#trigger-NoCloseBehavior');
       browser.waitForVisible('#NoCloseBehavior-content');
-      browser.click('#scroll-bounds');
       browser.keys('ESCAPE');
     });
 
@@ -418,9 +417,9 @@ describe('Hookshot', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-hookshot/hookshot/hookshot-close-behaviors');
+      browser.click('#scroll-bounds');
       browser.click('#trigger-NoCloseBehavior');
       browser.waitForVisible('#NoCloseBehavior-content');
-      browser.click('#scroll-bounds');
       browser
         .moveToObject('#root', 10, 10)
         .leftClick();
@@ -433,9 +432,9 @@ describe('Hookshot', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-hookshot/hookshot/hookshot-close-behaviors');
+      browser.click('#scroll-bounds');
       browser.click('#trigger-NoCloseBehavior');
       browser.waitForVisible('#NoCloseBehavior-content');
-      browser.click('#scroll-bounds');
       browser.setViewportSize(Terra.viewports('small')[0]);
       browser.pause(100);
     });

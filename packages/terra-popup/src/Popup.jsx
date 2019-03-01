@@ -44,15 +44,15 @@ const propTypes = {
    */
   boundingRef: PropTypes.func,
   /**
-   * CSS classnames that are append to the arrow.
+   * @private CSS classnames that are append to the arrow.
    */
   classNameArrow: PropTypes.string,
   /**
-   * CSS classnames that are append to the popup content inner.
+   * @private CSS classnames that are append to the popup content inner.
    */
   classNameContent: PropTypes.string,
   /**
-   * CSS classnames that are append to the overlay.
+   * @private CSS classnames that are append to the overlay.
    */
   classNameOverlay: PropTypes.string,
   /**
@@ -286,7 +286,7 @@ class Popup extends React.Component {
     const hookshotContent = this.createPopupContent(boundingRef ? boundingRef() : undefined, showArrow);
 
     return (
-      <div>
+      <React.Fragment>
         <Portal isOpened={isOpen}>
           <PopupOverlay
             className={this.props.classNameOverlay}
@@ -307,7 +307,7 @@ class Popup extends React.Component {
         >
           {hookshotContent}
         </Hookshot>
-      </div>
+      </React.Fragment>
     );
   }
 }

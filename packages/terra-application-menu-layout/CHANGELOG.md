@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+3.1.0 - (February 5, 2019)
+------------------
+### Fixed
+* Hiding overflow on content region to correct flexbox layout
+
 3.0.0 - (January 25, 2019)
 ------------------
 ### Breaking Change
