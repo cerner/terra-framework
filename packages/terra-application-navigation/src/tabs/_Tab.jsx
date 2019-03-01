@@ -27,6 +27,7 @@ const propTypes = {
    * Boolean indicating whether or not the Tab should render as active.
    */
   isActive: PropTypes.bool,
+  refCallback: PropTypes.func,
 };
 
 class Tab extends React.Component {
@@ -83,6 +84,7 @@ class Tab extends React.Component {
       isCollapsed,
       text,
       isActive,
+      refCallback,
     } = this.props;
 
     const tabClassNames = cx([
@@ -109,9 +111,11 @@ class Tab extends React.Component {
         onKeyDown={this.handleKeyDown}
         onKeyUp={this.handleKeyUp}
         onBlur={this.handleOnBlur}
+        ref={refCallback}
       >
         <span className={cx(['tab-inner'])}>
           <span className={cx(['tab-label'])}>{text}</span>
+          <span className={cx(['tab-count'])}>999+</span>
         </span>
       </ComponentClass>
     );

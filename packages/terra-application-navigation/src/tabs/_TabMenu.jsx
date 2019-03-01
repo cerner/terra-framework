@@ -16,6 +16,7 @@ const propTypes = {
    */
   isHidden: PropTypes.bool,
   activeTabKey: PropTypes.string,
+  menuRefCallback: PropTypes.func,
 };
 
 const contextTypes = {
@@ -98,7 +99,8 @@ class TabMenu extends React.Component {
 
   createDisplay(popup) {
     const { intl } = this.context;
-    let text = intl.formatMessage({ id: 'Terra.application.tabs.more' });
+    const moreText = intl.formatMessage({ id: 'Terra.application.tabs.more' });
+    let text = moreText;
     let isSelected = false;
 
     const childArray = this.props.children;
@@ -114,17 +116,26 @@ class TabMenu extends React.Component {
     }
 
     return (
-      <TabMenuDisplay
-        onClick={this.handleOnClick}
-        onKeyDown={this.handleOnKeyDown}
-        popup={popup}
-        refCallback={this.setTargetRef}
-        isHidden={this.props.isHidden}
-        text={text}
-        isSelected={isSelected}
-        key="application-tab-more"
-        data-application-tabs-more
-      />
+      <React.Fragment>
+        <TabMenuDisplay
+          onClick={this.handleOnClick}
+          onKeyDown={this.handleOnKeyDown}
+          popup={popup}
+          refCallback={(node) => { this.setTargetRef(node); this.props.menuRefCallback(node, true); }}
+          isHidden={this.props.isHidden}
+          text={text}
+          isSelected={isSelected}
+          key="application-tab-more"
+          data-application-tabs-more
+        />
+        <TabMenuDisplay
+          refCallback={(node) => { this.props.menuRefCallback(node, false); }}
+          text={moreText}
+          key="application-tab-hidden"
+          style={{ height: '0', position: 'absolute', top: '100%' }}
+          aria-hidden="true"
+        />
+      </React.Fragment>
     );
   }
 

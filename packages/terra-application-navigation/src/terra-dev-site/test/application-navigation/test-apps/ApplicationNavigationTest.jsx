@@ -28,7 +28,7 @@ const navigationItems = [{
   text: 'Page 2',
 }, {
   key: '/page_3',
-  text: 'Page 3',
+  text: 'Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3',
 }, {
   key: '/page_4',
   text: 'Page 4',
@@ -40,7 +40,7 @@ const navigationItems = [{
   text: 'Page 6',
 }, {
   key: '/page_7',
-  text: 'Page 7',
+  text: 'Page 7Page 7Page 7',
 }];
 
 /**

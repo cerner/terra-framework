@@ -18,8 +18,9 @@
     flex-wrap: nowrap;
     height: 100%;
     overflow: visible;
-    position: relative;
-    width: calc(100% - var(--terra-application-navigation-tabs-container-padding-left, 1.4285714286rem) - var(--terra-application-navigation-tabs-container-padding-right, 1.4285714286rem));
+    // position: relative;
+    width: 100%;
+    // width: calc(100% - var(--terra-application-navigation-tabs-container-padding-left, 1.4285714286rem) - var(--terra-application-navigation-tabs-container-padding-right, 1.4285714286rem));
 
     &:focus {
       outline: none;
@@ -74,6 +75,32 @@
   }
 
   .tab,
+  .tab-menu-display {
+    background-size: var(--terra-application-navigation-tabs-tab-background-size, 0 5px);
+    background-position: var(--terra-application-navigation-tabs-tab-background-position, top left);
+    background-repeat: no-repeat;
+    min-width: 10rem;
+    overflow: hidden;
+
+    .tab-inner {
+      min-width: 10rem;
+    }
+  }
+
+  .tab {
+    .tab-inner {
+      max-width: 15rem;
+    }
+  }
+
+  .tab-menu-display {
+    max-width: 100%;
+    .tab-inner {
+      max-width: 100%;
+    }
+  }
+
+  .tab,
   .tab-menu-display,
   .divider-after-last-tab {
     background-color: transparent;
@@ -89,7 +116,7 @@
     height: 100%;
     line-height: var(--terra-application-navigation-tabs-tab-line-height, 1.4);
     margin: 0;
-    max-width: 100%;
+    // max-width: 100%;
     outline: none;
     padding: 0;
     position: relative;
@@ -99,7 +126,6 @@
     transition-duration: var(--terra-application-navigation-tabs-tab-transition-duration, 0s);
     transition-property: background-size;
     transition-timing-function: var(--terra-application-navigation-tabs-tab-transition-timing-function, ease);
-    width: var(--terra-application-navigation-tabs-tab-width, 13rem);
 
     &::before {
       background-color: var(--terra-application-navigation-tabs-tab-divider-before-background-color, #0079be);
@@ -118,10 +144,10 @@
 
     .tab-inner {
       align-items: center;
-      background-color: var(--terra-application-navigation-tabs-tab-background-color, transparent);
-      background-position: var(--terra-application-navigation-tabs-tab-background-position, top left);
-      background-repeat: no-repeat;
-      background-size: var(--terra-application-navigation-tabs-tab-background-size, 0 5px);
+      // background-color: var(--terra-application-navigation-tabs-tab-background-color, transparent);
+      // background-position: var(--terra-application-navigation-tabs-tab-background-position, top left);
+      // background-repeat: no-repeat;
+      // background-size: var(--terra-application-navigation-tabs-tab-background-size, 0 5px);
       box-shadow: var(--terra-application-navigation-tabs-tab-box-shadow);
       box-sizing: border-box;
       display: flex;
@@ -132,12 +158,14 @@
       overflow: hidden;
       padding-left: var(--terra-application-navigation-tabs-tab-padding-left, 1.0715rem);
       padding-right: var(--terra-application-navigation-tabs-tab-padding-right, 1.0715rem);
-      position: absolute;
+      // position: absolute;
       top: 0;
       transition-duration: var(--terra-application-navigation-tabs-tab-transition-duration, 0s);
       transition-property: background-size;
       transition-timing-function: var(--terra-application-navigation-tabs-tab-transition-timing-function, ease);
-      width: calc(100% - var(--terra-application-navigation-tabs-tab-divider-before-width, 2px));
+      // width: calc(100% - var(--terra-application-navigation-tabs-tab-divider-before-width, 2px));
+
+      // max-width: 100%;
     }
 
     .tab-label {
@@ -153,9 +181,7 @@
 
     &:hover,
     &.is-hovered {
-      .tab-inner {
-        background-color: var(--terra-application-navigation-tabs-tab-hover-background-color, rgba(0, 0, 0, 0.15));
-      }
+      background-color: var(--terra-application-navigation-tabs-tab-hover-background-color, rgba(0, 0, 0, 0.15));
     }
 
     &[aria-current='true'] {
@@ -169,12 +195,10 @@
         border-right-color: var(--terra-application-navigation-tabs-tab-selected-divider-before-border-right-color, rgba(0, 0, 0, 0.17));
       }
 
-      .tab-inner {
-        background-color: var(--terra-application-navigation-tabs-tab-selected-background-color, rgba(0, 0, 0, 0.15));
-        background-image: var(--terra-application-navigation-tabs-tab-selected-background-image, linear-gradient(to bottom, #5cc2f9, #5cc2f9));
-        background-size: var(--terra-application-navigation-tabs-tab-selected-background-size, 13.215rem 6px);
-        box-shadow: var(--terra-application-navigation-tabs-tab-selected-box-shadow, none);
-      }
+      background-color: var(--terra-application-navigation-tabs-tab-selected-background-color, rgba(0, 0, 0, 0.15));
+      background-image: var(--terra-application-navigation-tabs-tab-selected-background-image, linear-gradient(to bottom, #5cc2f9, #5cc2f9));
+      background-size: var(--terra-application-navigation-tabs-tab-selected-background-size, 100% 6px);
+      box-shadow: var(--terra-application-navigation-tabs-tab-selected-box-shadow, none);
     }
 
     &.is-focused,
@@ -182,12 +206,14 @@
     &:active.is-focused {
       z-index: 5;
 
-      .tab-inner {
+      .tab,
+      .tab-menu-display, {
         background-color: var(--terra-application-navigation-tabs-tab-active-focus-background-color);
         box-shadow: var(--terra-application-navigation-tabs-tab-active-focus-box-shadow, inset 0 0 0 4px rgba(118, 179, 209, 0.65));
       }
 
-      &[aria-current='true'] .tab-inner {
+      &[aria-current='true'].tab,
+      &[aria-current='true'].tab-menu-display,{
         background-color: var(--terra-application-navigation-tabs-tab-selected-active-focus-background-color, rgba(0, 0, 0, 0.15));
         box-shadow: var(--terra-application-navigation-tabs-tab-selected-active-focus-box-shadow, inset 0 0 0 4px rgba(118, 179, 209, 0.65), inset 0 -15px 30px -5px rgba(0, 0, 0, 0.3));
       }
@@ -228,6 +254,18 @@
     word-wrap: break-word;
     z-index: 0;
 
+    .tab-inner {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      .tab-count {
+        background-color: transparent;
+        border-color: black;
+      }
+    }
+
     &:hover,
     &.is-hovered {
       background-color: var(--terra-application-navigation-tabs-collapsed-hover-background-color, #f5fafe);
@@ -245,7 +283,7 @@
         content: '';
         height: 100%;
         left: 0;
-        position: absolute;
+        // position: absolute;
         top: 0;
         width: 100%;
         z-index: -1;
@@ -278,5 +316,14 @@
     &.bounded-width {
       width: 100%;
     }
+  }
+
+  .tab-count {
+    background-color: green;
+    border: 1px solid white;
+    border-radius: 30px;
+    flex: 0 0 auto;
+    margin-left: 5px;
+    padding: 0 5px;
   }
 }

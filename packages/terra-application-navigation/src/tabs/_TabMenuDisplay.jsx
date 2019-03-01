@@ -122,6 +122,7 @@ class TabMenuDisplay extends React.Component {
         <div className={cx(['tab-inner'])}>
           <div className={cx(['tab-menu-display-label'])}>
             <span>{text}</span>
+            <span className={cx(['tab-count'])}>999+</span>
             <IconCaretDown />
           </div>
         </div>

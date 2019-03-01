@@ -27,6 +27,10 @@ const propTypes = {
      * The display text for the tab.
      */
     text: PropTypes.string.isRequired,
+    /**
+     * The display text for the tab.
+     */
+    noficationCount: PropTypes.number,
   })),
   /**
    * A string identifying the currently active tab.
@@ -48,7 +52,10 @@ class Tabs extends React.Component {
     super(props);
     this.setContainerNode = this.setContainerNode.bind(this);
     this.handleResize = this.handleResize.bind(this);
+    this.setMenuRef = this.setMenuRef.bind(this);
+    this.setChildRef = this.setChildRef.bind(this);
     this.resetCalculations();
+    this.childWidths = [];
   }
 
   componentDidMount() {
@@ -66,10 +73,11 @@ class Tabs extends React.Component {
     this.handleResize(this.contentWidth);
   }
 
-  componentWillReceiveProps(newProps) {
-    if (this.props.tabs.length !== newProps.tabs.length) {
+  shouldComponentUpdate(nextProps) {
+    if (this.props.tabs.length !== nextProps.tabs.length || this.props.activeTabKey !== nextProps.activeTabKey) {
       this.resetCalculations();
     }
+    return true;
   }
 
   componentDidUpdate() {
@@ -90,6 +98,20 @@ class Tabs extends React.Component {
     this.container = node;
   }
 
+  setChildRef(ref, index) {
+    if (!ref) { return; }
+    this.childWidths[index] = ref.getBoundingClientRect().width;
+  }
+
+  setMenuRef(ref, isVisible) {
+    if (!ref) { return; }
+    if (isVisible) {
+      this.menuWidth = ref.getBoundingClientRect().width;
+    } else {
+      this.moreWidth = ref.getBoundingClientRect().width;
+    }
+  }
+
   resetCalculations() {
     this.animationFrameID = null;
     this.hiddenStartIndex = -1;
@@ -99,19 +121,82 @@ class Tabs extends React.Component {
 
   handleResize(width) {
     // Calculate hide index
-    const childrenCount = this.props.tabs.length;
-    const tabWidth = childrenCount > 1 ? this.container.children[0].getBoundingClientRect().width : 0;
-    const availableWidth = width - tabWidth;
+    const { tabs, activeTabKey } = this.props;
+    const childrenCount = tabs.length;
+    const availableWidth = width;
 
     let newHideIndex = childrenCount;
-    let calcMinWidth = 0;
     let isMenuHidden = true;
-    for (let i = 0; i < childrenCount; i += 1) {
-      calcMinWidth += tabWidth;
-      if (calcMinWidth > availableWidth && !(i === childrenCount - 1 && calcMinWidth <= width)) {
-        newHideIndex = i;
-        isMenuHidden = false;
-        break;
+    if (availableWidth <= this.menuWidth) {
+      // only menu visible
+      newHideIndex = 0;
+      isMenuHidden = false;
+    } else {
+      // total width
+      const totalWidth = this.childWidths.reduce((total, newWidth) => total + newWidth, 0);
+      if (totalWidth <= availableWidth) {
+        // all visible
+        newHideIndex = childrenCount;
+        isMenuHidden = true;
+      } else if (activeTabKey) {
+        // not all visible
+        let currentActiveIndex = -1;
+        for (let i = 0; i < childrenCount; i += 1) {
+          if (tabs[i].key === activeTabKey) {
+            currentActiveIndex = i;
+            break;
+          }
+        }
+
+        if (currentActiveIndex >= 0) {
+          const moreWidth = availableWidth - this.moreWidth;
+          const menuWidth = availableWidth - this.menuWidth;
+
+          let moreIndex = childrenCount;
+          let moreHidden = true;
+
+          let menuIndex = childrenCount;
+          let menuHidden = true;
+
+          let calcMinWidth = 0;
+          for (let i = 0; i < childrenCount; i += 1) {
+            calcMinWidth += this.childWidths[i];
+            if (calcMinWidth > moreWidth) {
+              moreIndex = i;
+              moreHidden = false;
+              break;
+            }
+          }
+
+          calcMinWidth = 0;
+          for (let i = 0; i < childrenCount; i += 1) {
+            calcMinWidth += this.childWidths[i];
+            if (calcMinWidth > menuWidth) {
+              menuIndex = i;
+              menuHidden = false;
+              break;
+            }
+          }
+
+          if (currentActiveIndex < moreIndex) {
+            newHideIndex = moreIndex;
+            isMenuHidden = moreHidden;
+          } else {
+            newHideIndex = menuIndex;
+            isMenuHidden = menuHidden;
+          }
+        } else {
+          // no selected index, use standard menu
+          let calcMinWidth = 0;
+          for (let i = 0; i < childrenCount; i += 1) {
+            calcMinWidth += this.childWidths[i];
+            if (calcMinWidth > availableWidth - this.moreWidth) {
+              newHideIndex = i;
+              isMenuHidden = false;
+              break;
+            }
+          }
+        }
       }
     }
 
@@ -147,7 +232,7 @@ class Tabs extends React.Component {
       };
 
       if (this.hiddenStartIndex < 0) {
-        visibleChildren.push(<Tab {...tabProps} />);
+        visibleChildren.push(<Tab {...tabProps} refCallback={ref => this.setChildRef(ref, index)} />);
         hiddenChildren.push(<Tab {...tabProps} isCollapsed />);
       } else if (index < this.hiddenStartIndex) {
         visibleChildren.push(<Tab {...tabProps} />);
@@ -164,7 +249,7 @@ class Tabs extends React.Component {
           ref={this.setContainerNode}
         >
           {visibleChildren}
-          <TabMenu isHidden={this.menuHidden} activeTabKey={activeTabKey}>
+          <TabMenu isHidden={this.menuHidden} activeTabKey={activeTabKey} menuRefCallback={this.setMenuRef}>
             {hiddenChildren}
           </TabMenu>
           <div className={cx(['divider-after-last-tab'])} />
