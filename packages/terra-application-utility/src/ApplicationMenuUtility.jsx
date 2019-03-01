@@ -33,17 +33,21 @@ const propTypes = {
   /**
    * The role attribute to set on the menu.
    */
-  menuRole: PropTypes.string,
+  menurole: PropTypes.string,
 };
 
-const ApplicationHeaderUtility = ({
+const defaultProps = {
+  menurole: 'navigation',
+};
+
+const ApplicationMenuUtility = ({
   menuItems,
   onChange,
   onDisclose,
   initialSelectedKey,
   title,
   accessory,
-  menuRole,
+  menurole,
   ...customProps
 }) => (
   <UtilityButton
@@ -54,11 +58,12 @@ const ApplicationHeaderUtility = ({
     initialSelectedKey={initialSelectedKey}
     title={title}
     accessory={accessory}
-    role={menuRole}
+    menurole={menurole}
     variant={Utils.VARIANTS.MENU}
   />
 );
 
-ApplicationHeaderUtility.propTypes = propTypes;
+ApplicationMenuUtility.propTypes = propTypes;
+ApplicationMenuUtility.defaultProps = defaultProps;
 
-export default ApplicationHeaderUtility;
+export default ApplicationMenuUtility;

@@ -44,7 +44,7 @@ const propTypes = {
   /**
    * The role attribute to set on the menu.
    */
-  menuRole: PropTypes.string,
+  menurole: PropTypes.string,
   /**
    * Sets the Utility variant.
    */
@@ -55,7 +55,7 @@ const defaultProps = {
   title: '',
 };
 
-class ApplicationHeaderUtility extends React.Component {
+class UtilityButton extends React.Component {
   constructor(props) {
     super(props);
     this.handleOnClick = this.handleOnClick.bind(this);
@@ -73,10 +73,11 @@ class ApplicationHeaderUtility extends React.Component {
   }
 
   createContent() {
+    console.log(`role inside utility button : ${this.props.menurole}`)
     return (
       <UtilityMenu
         initialSelectedKey={this.props.initialSelectedKey}
-        menuRole={this.props.menuRole}
+        menurole={this.props.menurole}
         menuItems={this.props.menuItems}
         onChange={this.props.onChange}
         variant={this.props.variant}
@@ -140,7 +141,7 @@ class ApplicationHeaderUtility extends React.Component {
   }
 }
 
-ApplicationHeaderUtility.propTypes = propTypes;
-ApplicationHeaderUtility.defaultProps = defaultProps;
+UtilityButton.propTypes = propTypes;
+UtilityButton.defaultProps = defaultProps;
 
-export default injectIntl(ApplicationHeaderUtility);
+export default injectIntl(UtilityButton);

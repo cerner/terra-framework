@@ -69,7 +69,7 @@ describe('ApplicationMenuUtility', () => {
   });
 
   it('should render with a user specified role', () => {
-    const role = 'menu';
+    const menuRole = 'menu';
     const wrapper = shallow(<ApplicationMenuUtility
       menuItems={[]}
       onChange={mockOnChange}
@@ -77,9 +77,24 @@ describe('ApplicationMenuUtility', () => {
       onRequestClose={mockOnRequestClose}
       initialSelectedKey={initialSelectedKey}
       title={title}
-      menuRole={role}
+      menurole={menuRole}
     />);
-    expect(wrapper.prop('role')).toBe(role);
+    expect(wrapper.prop('menurole')).toBe(menuRole);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render with a default role when no role is specified', () => {
+    const defaultMenuRole = 'navigation';
+    const wrapper = shallow(<ApplicationMenuUtility
+      menuItems={[]}
+      onChange={mockOnChange}
+      onDisclose={mockOnDisclose}
+      onRequestClose={mockOnRequestClose}
+      initialSelectedKey={initialSelectedKey}
+      title={title}
+      menurole={defaultMenuRole}
+    />);
+    expect(wrapper.prop('menurole')).toBe(defaultMenuRole);
     expect(wrapper).toMatchSnapshot();
   });
 });

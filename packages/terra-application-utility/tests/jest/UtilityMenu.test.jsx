@@ -102,7 +102,7 @@ describe('UtilityMenu', () => {
   });
 
   it('should render with a user specified role', () => {
-    const role = 'menu';
+    const menuRole = 'menu';
     const component = (
       <IntlProvider locale={locale} messages={messages}>
         <HeaderUtilityMenu
@@ -111,31 +111,13 @@ describe('UtilityMenu', () => {
           onChange={mockOnChange}
           onDisclose={mockOnDisclose}
           variant={variant}
-          role={role}
+          menurole={menuRole}
           id="test"
         />
-      </IntlProvider>);
+      </IntlProvider>
+    );
     const wrapper = shallow(component);
-    expect(wrapper.prop('role')).toBe(role);
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should render with a default role', () => {
-    const defaultRole = 'navigation';
-    const component = (
-      <IntlProvider locale={locale} messages={messages}>
-        <HeaderUtilityMenu
-          initialSelectedKey="key"
-          menuItems={config}
-          onChange={mockOnChange}
-          onDisclose={mockOnDisclose}
-          variant={variant}
-          role={defaultRole}
-          id="test"
-        />
-      </IntlProvider>);
-    const wrapper = shallow(component);
-    expect(wrapper.prop('role')).toBe(defaultRole);
+    expect(wrapper.prop('menurole')).toBe(menuRole);
     expect(wrapper).toMatchSnapshot();
   });
 });

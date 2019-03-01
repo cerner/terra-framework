@@ -42,28 +42,6 @@ exports[`UtilityMenu it should render with a read-only menu item 1`] = `
 />
 `;
 
-exports[`UtilityMenu should render with a default role 1`] = `
-<InjectIntl(UtilityMenu)
-  id="test"
-  initialSelectedKey="key"
-  menuItems={
-    Array [
-      Object {
-        "childKeys": Array [],
-        "contentLocation": "footer",
-        "isSelected": false,
-        "key": "key",
-        "title": "title",
-      },
-    ]
-  }
-  onChange={[MockFunction]}
-  onDisclose={[MockFunction]}
-  role="navigation"
-  variant="header"
-/>
-`;
-
 exports[`UtilityMenu should render with a user specified role 1`] = `
 <InjectIntl(UtilityMenu)
   id="test"
@@ -79,9 +57,9 @@ exports[`UtilityMenu should render with a user specified role 1`] = `
       },
     ]
   }
+  menurole="menu"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
-  role="menu"
   variant="header"
 />
 `;
