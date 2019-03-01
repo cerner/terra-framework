@@ -3,15 +3,13 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* escapeDeactivates option set on focus trap to prevent escape from breaking focus
 
 2.2.0 - (February 5, 2019)
 ------------------
 ### Changed
 * Migrate package to the terra-framework repository
-
-### Added
-* 'escapeDeactivates' prop to AbstractModal
-* Dev site example for escapeDeactivates behavior
 
 2.1.0 - (January 26, 2019)
 ------------------
