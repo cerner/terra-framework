@@ -131,7 +131,6 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
       </button>
       <button
         aria-disabled="false"
-        aria-pressed="false"
         class="button neutral button-group-button meridiem-button"
         type="button"
       >
@@ -221,7 +220,6 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
       </button>
       <button
         aria-disabled="false"
-        aria-pressed="false"
         class="button neutral button-group-button meridiem-button"
         type="button"
       >
@@ -311,7 +309,6 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
       </button>
       <button
         aria-disabled="false"
-        aria-pressed="false"
         class="button neutral button-group-button meridiem-button"
         type="button"
       >
@@ -405,7 +402,6 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
     </button>
     <button
       aria-disabled="false"
-      aria-pressed="false"
       class="button neutral button-group-button meridiem-button"
       type="button"
     >

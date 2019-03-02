@@ -69,6 +69,7 @@ exports[`should allow us to pass in a dom selector as a fallbackFocus 1`] = `
               active={true}
               focusTrapOptions={
                 Object {
+                  "escapeDeactivates": false,
                   "fallbackFocus": [Function],
                 }
               }
@@ -190,6 +191,7 @@ exports[`should allow us to pass in a function as fallbackFocus 1`] = `
               active={true}
               focusTrapOptions={
                 Object {
+                  "escapeDeactivates": false,
                   "fallbackFocus": [Function],
                 }
               }
@@ -309,6 +311,7 @@ exports[`should mount an open modal 1`] = `
               active={true}
               focusTrapOptions={
                 Object {
+                  "escapeDeactivates": false,
                   "fallbackFocus": [Function],
                 }
               }
@@ -430,6 +433,7 @@ exports[`should mount an open modal 7000 z-index 1`] = `
               active={true}
               focusTrapOptions={
                 Object {
+                  "escapeDeactivates": false,
                   "fallbackFocus": [Function],
                 }
               }
@@ -551,6 +555,7 @@ exports[`should mount an open modal 8000 z-index 1`] = `
               active={true}
               focusTrapOptions={
                 Object {
+                  "escapeDeactivates": false,
                   "fallbackFocus": [Function],
                 }
               }
@@ -672,6 +677,7 @@ exports[`should mount an open modal 9000 z-index 1`] = `
               active={true}
               focusTrapOptions={
                 Object {
+                  "escapeDeactivates": false,
                   "fallbackFocus": [Function],
                 }
               }
@@ -793,6 +799,7 @@ exports[`should mount an open modal set to fullscreen 1`] = `
               active={true}
               focusTrapOptions={
                 Object {
+                  "escapeDeactivates": false,
                   "fallbackFocus": [Function],
                 }
               }
@@ -912,6 +919,7 @@ exports[`should render the correct snapshot for iPads 1`] = `
               active={true}
               focusTrapOptions={
                 Object {
+                  "escapeDeactivates": false,
                   "fallbackFocus": [Function],
                 }
               }
@@ -1031,6 +1039,7 @@ exports[`should render the correct snapshot for iPhones 1`] = `
               active={true}
               focusTrapOptions={
                 Object {
+                  "escapeDeactivates": false,
                   "fallbackFocus": [Function],
                 }
               }
@@ -1150,6 +1159,7 @@ exports[`should render the correct snapshot for iPods 1`] = `
               active={true}
               focusTrapOptions={
                 Object {
+                  "escapeDeactivates": false,
                   "fallbackFocus": [Function],
                 }
               }
