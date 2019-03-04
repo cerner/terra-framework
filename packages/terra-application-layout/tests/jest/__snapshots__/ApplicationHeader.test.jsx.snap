@@ -71,7 +71,7 @@ exports[`ApplicationHeader should render props 1`] = `
             },
           ]
         }
-        menurole="Navigation"
+        menuRole="navigation"
         onChange={[Function]}
         onDisclose={[Function]}
         title="test-util-title"
