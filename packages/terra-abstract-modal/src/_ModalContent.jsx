@@ -126,6 +126,7 @@ class ModalContent extends React.Component {
       <FocusTrap
         paused={!isFocused}
         focusTrapOptions={{
+          escapeDeactivates: false,
           fallbackFocus: this.fallbackFocus,
         }}
       >
