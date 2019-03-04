@@ -1,6 +1,6 @@
 import React from 'react';
-import { shallowWithIntl, mountWithIntl } from 'enzyme-intl'; // eslint-disable-line import/no-extraneous-dependencies
 import PopupContent, * as PopupContentExports from '../../src/_PopupContent';
+import { shallowContext, mountContext } from './intl-context-setup';
 
 describe('PopupContent', () => {
   const requiredProps = {
@@ -18,7 +18,7 @@ describe('PopupContent', () => {
           {children}
         </PopupContent>
       );
-      const wrapper = shallowWithIntl(subject);
+      const wrapper = shallow(subject, shallowContext);
 
       it('matches the snapshot', () => {
         expect(wrapper).toMatchSnapshot();
@@ -38,12 +38,12 @@ describe('PopupContent', () => {
       );
 
       it('matches the shallow snapshot', () => {
-        const wrapper = shallowWithIntl(subject);
+        const wrapper = shallow(subject, shallowContext);
         expect(wrapper).toMatchSnapshot();
       });
 
       it('matches the mount snapshot', () => {
-        const wrapper = mountWithIntl(subject);
+        const wrapper = mount(subject, mountContext);
         expect(wrapper).toMatchSnapshot();
       });
     });
