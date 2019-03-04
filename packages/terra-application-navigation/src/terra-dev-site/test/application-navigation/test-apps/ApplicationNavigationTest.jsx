@@ -23,18 +23,21 @@ import heroCloseupImage from './heroCloseup.jpg';
 const navigationItems = [{
   key: '/page_1',
   text: 'Page 1',
+  notificationCount: 1000,
 }, {
   key: '/page_2',
   text: 'Page 2',
 }, {
   key: '/page_3',
   text: 'Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3',
+  notificationCount: 62,
 }, {
   key: '/page_4',
   text: 'Page 4',
 }, {
   key: '/page_5',
   text: 'Page 5',
+  notificationCount: 5,
 }, {
   key: '/page_6',
   text: 'Page 6',

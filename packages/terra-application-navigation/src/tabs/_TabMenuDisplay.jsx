@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import { KEY_SPACE, KEY_RETURN, KEY_TAB } from 'keycode-js';
+import Count from '../count/Count';
 
 import styles from './Tabs.module.scss';
 
@@ -33,11 +34,13 @@ const propTypes = {
    * Ref callback for menu display.
    */
   refCallback: PropTypes.func,
+  showNotificationRollup: PropTypes.bool,
 };
 
 const defaultProps = {
   isSelected: false,
   isHidden: false,
+  showNotificationRollup: false,
 };
 
 class TabMenuDisplay extends React.Component {
@@ -93,6 +96,7 @@ class TabMenuDisplay extends React.Component {
       onKeyDown,
       popup,
       refCallback,
+      showNotificationRollup,
       text,
       ...customProps
     } = this.props;
@@ -122,7 +126,7 @@ class TabMenuDisplay extends React.Component {
         <div className={cx(['tab-inner'])}>
           <div className={cx(['tab-menu-display-label'])}>
             <span>{text}</span>
-            <span className={cx(['tab-count'])}>999+</span>
+            {showNotificationRollup && <Count isRollup />}
             <IconCaretDown />
           </div>
         </div>

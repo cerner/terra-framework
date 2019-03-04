@@ -17,6 +17,7 @@ const propTypes = {
   isHidden: PropTypes.bool,
   activeTabKey: PropTypes.string,
   menuRefCallback: PropTypes.func,
+  showNotificationRollup: PropTypes.bool,
 };
 
 const contextTypes = {
@@ -127,6 +128,7 @@ class TabMenu extends React.Component {
           isSelected={isSelected}
           key="application-tab-more"
           data-application-tabs-more
+          showNotificationRollup={this.props.showNotificationRollup}
         />
         <TabMenuDisplay
           refCallback={(node) => { this.props.menuRefCallback(node, false); }}
@@ -134,6 +136,7 @@ class TabMenu extends React.Component {
           key="application-tab-hidden"
           style={{ height: '0', position: 'absolute', top: '100%' }}
           aria-hidden="true"
+          showNotificationRollup={this.props.showNotificationRollup}
         />
       </React.Fragment>
     );

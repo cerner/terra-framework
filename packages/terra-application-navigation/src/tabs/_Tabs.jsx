@@ -218,6 +218,7 @@ class Tabs extends React.Component {
     const visibleChildren = [];
     const hiddenChildren = [];
 
+    let showNotificationRollup = false;
     tabs.forEach((tab, index) => {
       const tabProps = {
         text: tab.text,
@@ -229,14 +230,21 @@ class Tabs extends React.Component {
           }
         },
         isActive: tab.key === activeTabKey,
+        notificationCount: tab.notificationCount,
       };
 
       if (this.hiddenStartIndex < 0) {
+        if (tab.notificationCount > 0) {
+          showNotificationRollup = true;
+        }
         visibleChildren.push(<Tab {...tabProps} refCallback={ref => this.setChildRef(ref, index)} />);
         hiddenChildren.push(<Tab {...tabProps} isCollapsed />);
       } else if (index < this.hiddenStartIndex) {
         visibleChildren.push(<Tab {...tabProps} />);
       } else {
+        if (tab.notificationCount > 0) {
+          showNotificationRollup = true;
+        }
         hiddenChildren.push(<Tab {...tabProps} isCollapsed />);
       }
     });
@@ -249,7 +257,7 @@ class Tabs extends React.Component {
           ref={this.setContainerNode}
         >
           {visibleChildren}
-          <TabMenu isHidden={this.menuHidden} activeTabKey={activeTabKey} menuRefCallback={this.setMenuRef}>
+          <TabMenu isHidden={this.menuHidden} activeTabKey={activeTabKey} menuRefCallback={this.setMenuRef} showNotificationRollup={showNotificationRollup}>
             {hiddenChildren}
           </TabMenu>
           <div className={cx(['divider-after-last-tab'])} />

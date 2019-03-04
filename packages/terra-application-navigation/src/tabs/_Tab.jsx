@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { KEY_SPACE, KEY_RETURN, KEY_TAB } from 'keycode-js';
+import Count from '../count/Count';
 import styles from './Tabs.module.scss';
 
 const cx = classNames.bind(styles);
@@ -23,6 +24,7 @@ const propTypes = {
    * The click callback of the tab.
    */
   onTabClick: PropTypes.func,
+  notificationCount: PropTypes.number,
   /**
    * Boolean indicating whether or not the Tab should render as active.
    */
@@ -85,6 +87,7 @@ class Tab extends React.Component {
       text,
       isActive,
       refCallback,
+      notificationCount,
     } = this.props;
 
     const tabClassNames = cx([
@@ -115,7 +118,7 @@ class Tab extends React.Component {
       >
         <span className={cx(['tab-inner'])}>
           <span className={cx(['tab-label'])}>{text}</span>
-          <span className={cx(['tab-count'])}>999+</span>
+          {notificationCount > 0 && <Count value={notificationCount} isInline={isCollapsed} />}
         </span>
       </ComponentClass>
     );

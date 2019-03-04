@@ -259,11 +259,6 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
-
-      .tab-count {
-        background-color: transparent;
-        border-color: black;
-      }
     }
 
     &:hover,
@@ -316,14 +311,5 @@
     &.bounded-width {
       width: 100%;
     }
-  }
-
-  .tab-count {
-    background-color: green;
-    border: 1px solid white;
-    border-radius: 30px;
-    flex: 0 0 auto;
-    margin-left: 5px;
-    padding: 0 5px;
   }
 }
