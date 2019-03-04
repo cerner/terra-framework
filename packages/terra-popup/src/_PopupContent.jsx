@@ -95,15 +95,6 @@ const defaultProps = {
   isWidthAutomatic: false,
 };
 
-const contextTypes = {
-  /* eslint-disable consistent-return */
-  intl: (context) => {
-    if (context.intl === undefined) {
-      return new Error('Please add locale prop to Base component to load translations');
-    }
-  },
-};
-
 class PopupContent extends React.Component {
   static addPopupHeader(children, onRequestClose) {
     const icon = <span className={cx('close-icon')} />;
@@ -258,7 +249,6 @@ class PopupContent extends React.Component {
 
 PopupContent.propTypes = propTypes;
 PopupContent.defaultProps = defaultProps;
-PopupContent.contextTypes = contextTypes;
 
 export default PopupContent;
 
