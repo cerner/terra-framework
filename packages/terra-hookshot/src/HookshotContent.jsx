@@ -38,14 +38,6 @@ const propTypes = {
    * The function returning the frame html reference.
    */
   refCallback: PropTypes.func,
-  /**
-   * @private The function returning the frame html reference.
-   */
-  enableOnClickOutside: PropTypes.func,
-  /**
-   * @private The function returning the frame html reference.
-   */
-  disableOnClickOutside: PropTypes.func,
 };
 
 
@@ -73,11 +65,8 @@ class HookshotContent extends React.Component {
     this.disableResizeListener = this.disableResizeListener.bind(this);
     this.enableContentResizeListener = this.enableContentResizeListener.bind(this);
     this.disableContentResizeListener = this.disableContentResizeListener.bind(this);
-    this.enableClickOutsideListener = this.enableClickOutsideListener.bind(this);
-    this.disableClickOutsideListener = this.disableClickOutsideListener.bind(this);
     this.updateListeners = this.updateListeners.bind(this);
     this.animationFrameID = null;
-    this.clickOutsideListenerAdded = true; // onClickOutside is on by default
   }
 
   componentDidMount() {
@@ -92,7 +81,6 @@ class HookshotContent extends React.Component {
     this.disableEscListener();
     this.disableResizeListener();
     this.disableContentResizeListener();
-    this.disableClickOutsideListener();
   }
 
   handleResize(event) {
@@ -131,26 +119,6 @@ class HookshotContent extends React.Component {
       this.enableContentResizeListener();
     } else {
       this.disableContentResizeListener();
-    }
-
-    if (this.props.onOutsideClick) {
-      this.enableClickOutsideListener();
-    } else {
-      this.disableClickOutsideListener();
-    }
-  }
-
-  enableClickOutsideListener() {
-    if (!this.clickOutsideListenerAdded) {
-      this.props.enableOnClickOutside();
-      this.clickOutsideListenerAdded = true;
-    }
-  }
-
-  disableClickOutsideListener() {
-    if (this.clickOutsideListenerAdded) {
-      this.props.disableOnClickOutside();
-      this.clickOutsideListenerAdded = false;
     }
   }
 
@@ -237,7 +205,11 @@ class HookshotContent extends React.Component {
     delete customProps.closePortal;
 
     return (
-      <div {...customProps} className={cx(['content', customProps.className])} ref={(element) => { this.contentNode = element; if (refCallback) { refCallback(element); } }}>
+      <div
+        {...customProps}
+        className={cx(['content', customProps.className])}
+        ref={(element) => { this.contentNode = element; if (refCallback) { refCallback(element); } }}
+      >
         {children}
       </div>
     );

@@ -290,7 +290,7 @@ class Hookshot extends React.Component {
   }
 
   cloneContent(content) {
-    return React.cloneElement(content, { refCallback: this.wrappedRefCallback(content) });
+    return React.cloneElement(content, { refCallback: this.wrappedRefCallback(content), disableOnClickOutside: !content.props.onClickOutside });
   }
 
   wrappedRefCallback(content) {
