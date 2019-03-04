@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Hookshot from 'terra-hookshot';
 import { Portal } from 'react-portal';
-import PopupContent from './_PopupContent';
+import PopupContent, { cornerSize } from './_PopupContent';
 import PopupArrow from './_PopupArrow';
 import PopupOverlay from './_PopupOverlay';
 import PopupUtils from './_PopupUtils';
@@ -138,7 +138,7 @@ class Popup extends React.Component {
   }
 
   setArrowPosition(contentPosition, targetPosition) {
-    const arrowPosition = PopupUtils.getArrowPosition(contentPosition, targetPosition, PopupArrow.Opts.arrowSize, PopupContent.Opts.cornerSize);
+    const arrowPosition = PopupUtils.getArrowPosition(contentPosition, targetPosition, PopupArrow.Opts.arrowSize, cornerSize);
     if (!arrowPosition) {
       this.arrowNode.removeAttribute(PopupArrow.Opts.positionAttr);
       return;
@@ -146,11 +146,11 @@ class Popup extends React.Component {
     this.arrowNode.setAttribute(PopupArrow.Opts.positionAttr, arrowPosition);
 
     if (arrowPosition === 'top' || arrowPosition === 'bottom') {
-      this.arrowNode.style.left = PopupUtils.leftOffset(contentPosition, targetPosition, PopupArrow.Opts.arrowSize, PopupContent.Opts.cornerSize);
+      this.arrowNode.style.left = PopupUtils.leftOffset(contentPosition, targetPosition, PopupArrow.Opts.arrowSize, cornerSize);
       this.arrowNode.style.top = '';
     } else {
       this.arrowNode.style.left = '';
-      this.arrowNode.style.top = PopupUtils.topOffset(contentPosition, targetPosition, PopupArrow.Opts.arrowSize, PopupContent.Opts.cornerSize);
+      this.arrowNode.style.top = PopupUtils.topOffset(contentPosition, targetPosition, PopupArrow.Opts.arrowSize, cornerSize);
     }
   }
 
@@ -281,7 +281,7 @@ class Popup extends React.Component {
     let cOffset;
     const showArrow = isArrowDisplayed && contentAttachment !== 'middle center';
     if (showArrow) {
-      cOffset = PopupUtils.getContentOffset(cAttachment, tAttachment, this.props.targetRef(), PopupArrow.Opts.arrowSize, PopupContent.Opts.cornerSize);
+      cOffset = PopupUtils.getContentOffset(cAttachment, tAttachment, this.props.targetRef(), PopupArrow.Opts.arrowSize, cornerSize);
     }
     const hookshotContent = this.createPopupContent(boundingRef ? boundingRef() : undefined, showArrow);
 

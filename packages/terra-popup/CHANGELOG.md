@@ -3,7 +3,11 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Remove Opts export, instead named export cornerSize
+
 ### Changed
+* Remove need to use `injectIntl`, use `<FormattedMessage />` instead
 * Updated docs
 
 5.3.0 - (February 26, 2019)
