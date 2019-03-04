@@ -94,9 +94,9 @@ Components in beta stage may include breaking changes, new features, and bug fix
   Deprecated
 </h3>
 
-| Terra Package      | Version | Status | Dependencies |
-|--------------------|---------|--------|--------------|
-| [terra-app-delegate](https://github.com/cerner/terra-framework/tree/master/packages/terra-app-delegate) | [![NPM version](https://badgen.net/npm/v/terra-app-delegate)](https://www.npmjs.org/package/terra-app-delegate) | ![Deprecated](https://badgen.net/badge/status/Stable/grey) | [![terra-app-delegate]](https://badgen.net/badge/dependencies/n%2Fa/grey) |
+| Terra Package      | Version | Status |
+|--------------------|---------|--------|
+| [terra-app-delegate](https://github.com/cerner/terra-framework/tree/master/packages/terra-app-delegate) | [![NPM version](https://badgen.net/npm/v/terra-app-delegate)](https://www.npmjs.org/package/terra-app-delegate) | ![Deprecated](https://badgen.net/badge/status/Deprecated/grey) |
 
 <h2 id="supported-browsers">
   Supported Browsers
@@ -113,11 +113,13 @@ Components in beta stage may include breaking changes, new features, and bug fix
 <h2 id="internationalization-i18n">
   Internationalization (I18n)
 </h2>
+
 Please review [Terra's Internationalization documentation](https://engineering.cerner.com/terra-ui/#/getting-started/terra-ui/internationalization) for more information. Included are directions on consumption and how internationalization is setup.
 
 <h3 id="packages-requiring-i18n">
   Packages Requiring I18n
 </h3>
+
 - [terra-application-header](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-header)
 - [terra-application-layout](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-layout)
 - [terra-application-links](https://github.com/cerner/terra-framework/tree/master/packages/terra-application-links)

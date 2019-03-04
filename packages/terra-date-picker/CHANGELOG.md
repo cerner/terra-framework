@@ -3,8 +3,14 @@ Changelog
 
 Unreleased
 ----------
+
+3.6.0 - (February 26, 2019)
+------------------
 ### Added
 * Added en-AU translations
+
+### Fixed
+* Changed expected selenium driver error to be non-Chrome specific for IE and FF driver compatibility
 
 3.5.0 - (February 13, 2019)
 ------------------

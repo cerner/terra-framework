@@ -3,8 +3,16 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Updated failing wdio test selector due to aria-pressed prop changes
+
+3.2.0 - (February 26, 2019)
+------------------
 ### Added
 * Added en-AU translations
+
+### Fixed
+* Changed browser.execute function in wdio spec to be a string for IE and FF driver compatibility
 
 3.1.0 - (February 5, 2019)
 ------------------

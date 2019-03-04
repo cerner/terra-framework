@@ -9,8 +9,13 @@ Unreleased
 ### Changed
 * Remove need to use `injectIntl`, use `<FormattedMessage />` instead
 
+5.3.0 - (February 26, 2019)
+------------------
 ### Added
 * Added en-AU translations
+
+### Fixed
+* Removed prop breaking the modal example
 
 5.2.0 - (February 13, 2019)
 ------------------
