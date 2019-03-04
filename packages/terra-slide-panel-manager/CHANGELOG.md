@@ -3,8 +3,6 @@ Changelog
 
 Unreleased
 ----------
-### Changed
-* Updated docs
 
 4.3.0 - (February 26, 2019)
 ------------------

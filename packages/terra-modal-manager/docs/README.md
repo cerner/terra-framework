@@ -39,6 +39,10 @@ const MyModalComponent = withDisclosureManager(({ disclosureManager }) => (
   </div>
 ));
 
+MyModalComponent.propTypes = {
+  disclosureManager: disclosureManagerShape,
+}
+
 const MyContentComponent = withDisclosureManager(({ disclosureManager }) => (
   <div>
     <p>I am in the body!</p>
@@ -57,6 +61,10 @@ const MyContentComponent = withDisclosureManager(({ disclosureManager }) => (
     />
   </div>
 ));
+
+MyContentComponent.propTypes = {
+  disclosureManager: disclosureManagerShape,
+}
 
 let MyModalManagerComponent = () => (
   <ModalManager>
