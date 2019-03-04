@@ -76,7 +76,7 @@ class UtilityButton extends React.Component {
     return (
       <UtilityMenu
         initialSelectedKey={this.props.initialSelectedKey}
-        menurole={this.props.menurole}
+        menuRole={this.props.menurole}
         menuItems={this.props.menuItems}
         onChange={this.props.onChange}
         variant={this.props.variant}

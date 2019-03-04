@@ -77,7 +77,7 @@ describe('ApplicationHeaderUtility', () => {
       onRequestClose={mockOnRequestClose}
       initialSelectedKey={initialSelectedKey}
       title={title}
-      menurole={menuRole}
+      menuRole={menuRole}
     />);
     expect(wrapper.prop('menurole')).toBe(menuRole);
     expect(wrapper).toMatchSnapshot();
@@ -92,7 +92,7 @@ describe('ApplicationHeaderUtility', () => {
       onRequestClose={mockOnRequestClose}
       initialSelectedKey={initialSelectedKey}
       title={title}
-      menurole={defaultMenuRole}
+      menuRole={defaultMenuRole}
     />);
     expect(wrapper.prop('menurole')).toBe(defaultMenuRole);
     expect(wrapper).toMatchSnapshot();

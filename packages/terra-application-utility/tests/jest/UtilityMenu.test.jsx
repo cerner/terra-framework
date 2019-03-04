@@ -111,13 +111,13 @@ describe('UtilityMenu', () => {
           onChange={mockOnChange}
           onDisclose={mockOnDisclose}
           variant={variant}
-          menurole={menuRole}
+          menuRole={menuRole}
           id="test"
         />
       </IntlProvider>
     );
     const wrapper = shallow(component);
-    expect(wrapper.prop('menurole')).toBe(menuRole);
+    expect(wrapper.prop('menuRole')).toBe(menuRole);
     expect(wrapper).toMatchSnapshot();
   });
 });

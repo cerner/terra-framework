@@ -57,7 +57,7 @@ exports[`UtilityMenu should render with a user specified role 1`] = `
       },
     ]
   }
-  menurole="menu"
+  menuRole="menu"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   variant="header"

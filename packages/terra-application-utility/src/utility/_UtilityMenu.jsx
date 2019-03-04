@@ -45,7 +45,7 @@ const propTypes = {
    *
    * The role attribute of Utility Menu.
    */
-  menurole: PropTypes.string,
+  menuRole: PropTypes.string,
   /**
    * Sets the Utility variant. One of Utils.VARIANTS.HEADER, Utils.VARIANTS.MENU.
    */
@@ -64,7 +64,7 @@ const processMenuItems = (items) => {
 };
 
 const defaultProps = {
-  menurole: 'navigation',
+  menuRole: 'navigation',
 };
 
 const hasChevron = item => item.childKeys && item.childKeys.length > 0;
@@ -249,7 +249,7 @@ class UtilityMenu extends React.Component {
       onChange,
       onRequestClose,
       variant,
-      menurole,
+      menuRole,
       ...customProps
     } = this.props;
 
@@ -371,7 +371,7 @@ class UtilityMenu extends React.Component {
           footer={footer}
           fill={isHeightBounded}
           className={menuClassNames}
-          role={menurole}
+          role={menuRole}
           aria-label={menuText}
         >
           {this.buildListContent(currentItem)}
