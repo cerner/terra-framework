@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+5.4.0 - (March 5, 2019)
+------------------
 ### Fixed
 * Remove Opts export, instead named export cornerSize
 

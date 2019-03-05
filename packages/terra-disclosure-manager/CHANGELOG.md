@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.4.0 - (March 5, 2019)
+------------------
 ### Changed
 * Updated docs
 
