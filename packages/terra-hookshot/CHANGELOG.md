@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Disable outClickOutside if no callback function is passed.
 
 5.2.0 - (February 26, 2019)
 ------------------
