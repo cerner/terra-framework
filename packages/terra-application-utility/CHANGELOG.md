@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* menurole property added to Application Utility for Utility Menu
+* Jest test added for menurole property
 
 2.3.0 - (February 26, 2019)
 ------------------

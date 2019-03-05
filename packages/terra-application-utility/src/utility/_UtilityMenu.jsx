@@ -42,6 +42,11 @@ const propTypes = {
    */
   onRequestClose: PropTypes.func,
   /**
+   *
+   * The role attribute of Utility Menu.
+   */
+  menuRole: PropTypes.string,
+  /**
    * Sets the Utility variant. One of Utils.VARIANTS.HEADER, Utils.VARIANTS.MENU.
    */
   variant: PropTypes.oneOf([Utils.VARIANTS.HEADER, Utils.VARIANTS.MENU]),
@@ -56,6 +61,10 @@ const processMenuItems = (items) => {
     );
   });
   return map;
+};
+
+const defaultProps = {
+  menuRole: 'navigation',
 };
 
 const hasChevron = item => item.childKeys && item.childKeys.length > 0;
@@ -240,6 +249,7 @@ class UtilityMenu extends React.Component {
       onChange,
       onRequestClose,
       variant,
+      menuRole,
       ...customProps
     } = this.props;
 
@@ -361,7 +371,7 @@ class UtilityMenu extends React.Component {
           footer={footer}
           fill={isHeightBounded}
           className={menuClassNames}
-          role="navigation"
+          role={menuRole}
           aria-label={menuText}
         >
           {this.buildListContent(currentItem)}
@@ -373,6 +383,7 @@ class UtilityMenu extends React.Component {
 }
 
 UtilityMenu.propTypes = propTypes;
+UtilityMenu.defaultProps = defaultProps;
 UtilityMenu.processMenuItems = processMenuItems;
 UtilityMenu.hasChevron = hasChevron;
 export default injectIntl(UtilityMenu);
