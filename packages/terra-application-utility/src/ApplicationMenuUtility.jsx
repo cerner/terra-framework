@@ -58,7 +58,7 @@ const ApplicationMenuUtility = ({
     initialSelectedKey={initialSelectedKey}
     title={title}
     accessory={accessory}
-    menurole={menuRole}
+    menuRole={menuRole}
     variant={Utils.VARIANTS.MENU}
   />
 );

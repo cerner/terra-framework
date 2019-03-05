@@ -79,7 +79,7 @@ describe('ApplicationMenuUtility', () => {
       title={title}
       menuRole={menuRole}
     />);
-    expect(wrapper.prop('menurole')).toBe(menuRole);
+    expect(wrapper.prop('menuRole')).toBe(menuRole);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -94,7 +94,7 @@ describe('ApplicationMenuUtility', () => {
       title={title}
       menuRole={defaultMenuRole}
     />);
-    expect(wrapper.prop('menurole')).toBe(defaultMenuRole);
+    expect(wrapper.prop('menuRole')).toBe(defaultMenuRole);
     expect(wrapper).toMatchSnapshot();
   });
 });

@@ -44,7 +44,7 @@ const propTypes = {
   /**
    * The role attribute to set on the menu.
    */
-  menurole: PropTypes.string,
+  menuRole: PropTypes.string,
   /**
    * Sets the Utility variant.
    */
@@ -76,7 +76,7 @@ class UtilityButton extends React.Component {
     return (
       <UtilityMenu
         initialSelectedKey={this.props.initialSelectedKey}
-        menuRole={this.props.menurole}
+        menuRole={this.props.menuRole}
         menuItems={this.props.menuItems}
         onChange={this.props.onChange}
         variant={this.props.variant}
@@ -99,6 +99,7 @@ class UtilityButton extends React.Component {
 
     this.onClick = customProps.onClick;
     delete customProps.onClick;
+    delete customProps.menuRole;
 
     const utilityClassNames = cx([
       { 'header-utility-button': variant === Utils.VARIANTS.HEADER },

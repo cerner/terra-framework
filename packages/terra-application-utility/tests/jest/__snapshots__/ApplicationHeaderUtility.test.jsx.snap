@@ -5,7 +5,7 @@ exports[`ApplicationHeaderUtility it should pass in a custom prop 1`] = `
   id="test"
   initialSelectedKey="menu"
   menuItems={Array []}
-  menurole="navigation"
+  menuRole="navigation"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   onRequestClose={[MockFunction]}
@@ -17,7 +17,7 @@ exports[`ApplicationHeaderUtility should render with a default role when no role
 <InjectIntl(UtilityButton)
   initialSelectedKey="menu"
   menuItems={Array []}
-  menurole="navigation"
+  menuRole="navigation"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   onRequestClose={[MockFunction]}
@@ -30,7 +30,7 @@ exports[`ApplicationHeaderUtility should render with a title 1`] = `
 <InjectIntl(UtilityButton)
   initialSelectedKey="menu"
   menuItems={Array []}
-  menurole="navigation"
+  menuRole="navigation"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   onRequestClose={[MockFunction]}
@@ -43,7 +43,7 @@ exports[`ApplicationHeaderUtility should render with a user specified role 1`] =
 <InjectIntl(UtilityButton)
   initialSelectedKey="menu"
   menuItems={Array []}
-  menurole="menu"
+  menuRole="menu"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   onRequestClose={[MockFunction]}
@@ -57,7 +57,7 @@ exports[`ApplicationHeaderUtility should render with an accessory 1`] = `
   accessory={<image />}
   initialSelectedKey="menu"
   menuItems={Array []}
-  menurole="navigation"
+  menuRole="navigation"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   onRequestClose={[MockFunction]}
@@ -69,7 +69,7 @@ exports[`ApplicationHeaderUtility should render with default props 1`] = `
 <InjectIntl(UtilityButton)
   initialSelectedKey="menu"
   menuItems={Array []}
-  menurole="navigation"
+  menuRole="navigation"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   onRequestClose={[MockFunction]}
@@ -251,7 +251,7 @@ exports[`ApplicationHeaderUtility should render with menu items 1`] = `
       },
     ]
   }
-  menurole="navigation"
+  menuRole="navigation"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   onRequestClose={[MockFunction]}
