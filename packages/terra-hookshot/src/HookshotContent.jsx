@@ -205,7 +205,11 @@ class HookshotContent extends React.Component {
     delete customProps.closePortal;
 
     return (
-      <div {...customProps} className={cx(['content', customProps.className])} ref={(element) => { this.contentNode = element; refCallback(element); }}>
+      <div
+        {...customProps}
+        className={cx(['content', customProps.className])}
+        ref={(element) => { this.contentNode = element; if (refCallback) { refCallback(element); } }}
+      >
         {children}
       </div>
     );

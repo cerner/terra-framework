@@ -78,7 +78,7 @@ describe('Time Input Twelve Hour Mobile', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/mobile');
 
-      browser.click('#timeInputValueProvided button[aria-pressed="false"]');
+      browser.click('#timeInputValueProvided button:not([aria-pressed="true"])');
     });
 
     Terra.should.matchScreenshot({ viewports });

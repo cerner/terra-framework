@@ -24,6 +24,7 @@ const MyDisclosureComponent = ({ app }) => (
     }}
   />
 );
+
 MyDisclosureComponent.propType = {
   app: AppDelegate.propType,
 }
@@ -42,6 +43,7 @@ const MyComponent = ({ app }) => (
     }}
   />
 );
+
 MyComponent.propType = {
   app: AppDelegate.propType,
 }
@@ -61,19 +63,20 @@ import Base from 'terra-base';
 import ModalManager from 'terra-modal-manager'; 
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 
-const MyDisclosureComponent = withDisclosureManager({ disclosureManager }) => (
+const MyDisclosureComponent = withDisclosureManager(({ disclosureManager }) => (
   <Button
     text="Close Modal"
     onClick={() => { 
       disclosureManager.closeDisclosure();
     }}
   />
-);
+));
+
 MyDisclosureComponent.propTypes = {
   disclosureManager: disclosureManagerShape,
 }
 
-const MyComponent = withDisclosureManager({ disclosureManager }) => (
+const MyComponent = withDisclosureManager(({ disclosureManager }) => (
   <Button
     text="Launch Modal"
     onClick={() => { 
@@ -86,7 +89,8 @@ const MyComponent = withDisclosureManager({ disclosureManager }) => (
       });
     }}
   />
-);
+));
+
 MyComponent.propTypes = {
   disclosureManager: disclosureManagerShape,
 }
