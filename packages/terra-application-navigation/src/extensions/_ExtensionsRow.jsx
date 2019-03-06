@@ -23,10 +23,6 @@ const propTypes = {
   /**
    * The configuration values for the ApplicationName component.
    */
-  notifications: PropTypes.object,
-  /**
-   * The configuration values for the ApplicationName component.
-   */
   onRollupSelect: PropTypes.func,
   /**
    * The configuration values for the ApplicationName component.
@@ -42,18 +38,16 @@ const defaultProps = {
   activeBreakpoint: '',
 };
 
-const shouldShowNotifications = (extensionItems, notifications) => {
+const shouldShowNotifications = (extensionItems) => {
   for (let i = 0; i < extensionItems.length; i += 1) {
-    const item = extensionItems[i];
-    const notificationCount = notifications && item.notifyKey ? notifications[item.notifyKey] : null;
-    if (notificationCount > 0) {
+    if (extensionItems[i].notificationCount > 0) {
       return true;
     }
   }
   return false;
 };
 
-const createRollupButton = (hiddenItems, notifications, onRollupSelect, refCallback) => {
+const createRollupButton = (hiddenItems, onRollupSelect, refCallback) => {
   if (!hiddenItems || !hiddenItems.length) {
     return null;
   }
@@ -61,7 +55,7 @@ const createRollupButton = (hiddenItems, notifications, onRollupSelect, refCallb
     <ExtensionRollup
       onSelect={onRollupSelect}
       refCallback={refCallback}
-      hasChildNotifications={shouldShowNotifications(hiddenItems, notifications)}
+      hasChildNotifications={shouldShowNotifications(hiddenItems)}
     />
   );
 };
@@ -69,7 +63,6 @@ const createRollupButton = (hiddenItems, notifications, onRollupSelect, refCallb
 const ExtensionsRow = ({
   activeBreakpoint,
   extensionConfig,
-  notifications,
   onRollupSelect,
   refCallback,
   onRequestClose,
@@ -84,8 +77,8 @@ const ExtensionsRow = ({
 
   return (
     <div className={cx('extensions-row')}>
-      {ExtensionHelper(extensionItems, notifications, onRequestClose, false)}
-      {createRollupButton(hiddenItems, notifications, onRollupSelect, refCallback)}
+      {ExtensionHelper(extensionItems, onRequestClose, false)}
+      {createRollupButton(hiddenItems, onRollupSelect, refCallback)}
     </div>
   );
 };

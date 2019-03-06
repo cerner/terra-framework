@@ -191,7 +191,7 @@ class ApplicationNavigationTest extends React.Component {
           metaData: { key: 'Pill' },
           onSelect: this.handleExtensionSelect,
           text: 'Pill',
-          notifyKey: 'pill',
+          notificationCount: 100,
         },
         {
           image: <IconVisualization />,
@@ -216,6 +216,7 @@ class ApplicationNavigationTest extends React.Component {
           metaData: { key: 'Trophy' },
           onSelect: this.handleExtensionSelect,
           text: 'Trophy',
+          notificationCount: 5,
         },
       ],
     };

@@ -44,7 +44,9 @@
       cursor: pointer;
       display: flex;
       font-size: 16px;
-      height: 44px;
+      // height: 44px;
+      justify-content: space-between;
+      overflow: hidden;
       padding: 13px 20px 12px;
       position: relative;
     }

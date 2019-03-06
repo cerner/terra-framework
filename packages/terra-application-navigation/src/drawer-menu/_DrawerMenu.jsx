@@ -6,6 +6,7 @@ import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import IconUnknown from 'terra-icon/lib/icon/IconUnknown';
 
 import DrawerMenuUser from './_DrawerMenuUser';
+import Count from '../count/_Count';
 import { userConfigPropType, heroConfigPropType, navigationItemsPropType } from '../utils/propTypes';
 
 import styles from './DrawerMenu.module.scss';
@@ -75,7 +76,8 @@ const DrawerMenu = ({
               tabIndex="0"
             >
               {item.key === activeNavigationItemKey ? <div className={cx('active-indicator')} /> : null}
-              {item.text}
+              <span>{item.text}</span>
+              {item.notificationCount > 0 && <Count value={item.notificationCount} isInline isDark />}
             </li>
           ))}
         </ul>

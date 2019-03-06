@@ -46,21 +46,9 @@ class Extensions extends React.Component {
     this.setButtonNode = this.setButtonNode.bind(this);
     this.getButtonNode = this.getButtonNode.bind(this);
     this.handleRequestClose = this.handleRequestClose.bind(this);
-    this.handleExtensionUpdate = this.handleExtensionUpdate.bind(this);
     this.handleRollupSelect = this.handleRollupSelect.bind(this);
 
     this.state = { isOpen: false };
-    this.notifications = {};
-  }
-
-  // const event = new CustomEvent('terra-app-nav-extension-update', { detail: { pill: 9 } });
-  // document.dispatchEvent(event);
-  componentDidMount() {
-    document.addEventListener('terra-app-nav-extension-update', this.handleExtensionUpdate);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('terra-app-nav-extension-update', this.handleExtensionUpdate);
   }
 
   setButtonNode(node) {
@@ -69,32 +57,6 @@ class Extensions extends React.Component {
 
   getButtonNode() {
     return this.buttonNode;
-  }
-
-  handleExtensionUpdate(event) {
-    let wasUpdated = false;
-    const data = event.detail;
-    const keyEntries = Object.keys(data);
-    keyEntries.forEach((key) => {
-      const value = this.notifications[key];
-      const newValue = data[key];
-      if (value) {
-        if (newValue === 0) {
-          delete this.notifications[key];
-          wasUpdated = true;
-        } else if (value !== newValue) {
-          this.notifications[key] = newValue;
-          wasUpdated = true;
-        }
-      } else {
-        this.notifications[key] = newValue;
-        wasUpdated = true;
-      }
-    });
-
-    if (wasUpdated) {
-      this.forceUpdate();
-    }
   }
 
   handleRequestClose() {
@@ -125,14 +87,12 @@ class Extensions extends React.Component {
           onRequestClose={this.handleRequestClose}
         >
           <ExtensionsPopupView
-            notifications={this.notifications}
             extensionConfig={extensionConfig}
             activeBreakpoint={activeBreakpoint}
             onRequestClose={this.handleRequestClose}
           />
         </Popup>
         <ExtensionsRow
-          notifications={this.notifications}
           extensionConfig={extensionConfig}
           activeBreakpoint={activeBreakpoint}
           onRollupSelect={this.handleRollupSelect}

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { KEY_SPACE, KEY_RETURN, KEY_TAB } from 'keycode-js';
-import Count from '../count/Count';
+import Count from '../count/_Count';
 import styles from './Tabs.module.scss';
 
 const cx = classNames.bind(styles);

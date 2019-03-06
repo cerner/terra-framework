@@ -30,6 +30,7 @@ const Count = ({
   isInline,
   isDark,
   isRollup,
+  ...customProps
 }) => {
   let validatedValue = value;
   if (isRollup) {
@@ -43,7 +44,7 @@ const Count = ({
   }
 
   return (
-    <span className={cx(['count', { 'is-inline': isInline }, { 'is-dark': isDark }])}>
+    <span {...customProps} className={cx(['count', { 'is-inline': isInline }, { 'is-dark': isDark }, customProps.className])}>
       {validatedValue}
     </span>
   );

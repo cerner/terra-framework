@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconTile from 'terra-icon/lib/icon/IconTile';
 import { createKeyDown, createOnClick } from './_ExtensionUtils';
+import Count from '../count/_Count';
 
 import styles from './Extension.module.scss';
 
@@ -47,7 +48,7 @@ const Extension = ({
       ref={refCallback}
     >
       <IconTile />
-      {hasChildNotifications > 0 && <div className={cx('extension-count')}>!</div>}
+      {hasChildNotifications && <Count isRollup className={cx('extension-count')} />}
     </div>
   );
 };

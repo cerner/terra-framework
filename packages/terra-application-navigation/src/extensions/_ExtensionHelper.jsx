@@ -2,10 +2,10 @@ import React from 'react';
 import Extension from './_Extension';
 import ExtensionWithPopup from './_ExtensionWithPopup';
 
-const createExtensions = (extensionItems, notifications, onRequestClose, isHidden) => (
+const createExtensions = (extensionItems, onRequestClose, isHidden) => (
   extensionItems.map((item, index) => {
     const key = `${item.text}-${index}`;
-    const notificationCount = notifications && item.notifyKey ? notifications[item.notifyKey] : null;
+    const notificationCount = item.notificationCount ? item.notificationCount : null;
     if (item.type === 'popup') {
       return (
         <ExtensionWithPopup

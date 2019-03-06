@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './Extension.module.scss';
 import { createKeyDown, createOnClick } from './_ExtensionUtils';
+import Count from '../count/_Count';
 
 const cx = classNames.bind(styles);
 
@@ -62,7 +63,7 @@ const createRowStyle = (notificationCount, onClick, keyDown, refCallback, image,
     <div className={cx('extension-text')}>
       {text}
     </div>
-    {notificationCount > 0 && <div className={cx('extension-row-count')}>{notificationCount}</div>}
+    {notificationCount > 0 && <Count value={notificationCount} isInline className={cx('extension-row-count')} />}
   </div>
 );
 
@@ -77,7 +78,7 @@ const createIconStyle = (notificationCount, onClick, keyDown, refCallback, image
     ref={refCallback}
   >
     {image}
-    {notificationCount > 0 && <div className={cx('extension-count')}>{notificationCount}</div>}
+    {notificationCount > 0 && <Count value={notificationCount} className={cx('extension-count')} />}
   </div>
 );
 

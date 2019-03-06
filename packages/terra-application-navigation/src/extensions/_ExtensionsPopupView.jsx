@@ -20,10 +20,6 @@ const propTypes = {
    */
   extensionConfig: extensionConfigPropType,
   /**
-   * The configuration values for the ApplicationName component.
-   */
-  notifications: PropTypes.object,
-  /**
    * Function callback for closing the drawer.
    */
   onRequestClose: PropTypes.func,
@@ -36,7 +32,6 @@ const defaultProps = {
 const ExtensionsPopupView = ({
   activeBreakpoint,
   extensionConfig,
-  notifications,
   onRequestClose,
 }) => {
   if (!extensionConfig) {
@@ -50,7 +45,7 @@ const ExtensionsPopupView = ({
 
   return (
     <div className={cx('extensions-popup-view')}>
-      {ExtensionHelper(extensionItems, notifications, onRequestClose, true)}
+      {ExtensionHelper(extensionItems, onRequestClose, true)}
     </div>
   );
 };
