@@ -5,6 +5,7 @@ import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import DatePicker from 'terra-date-picker';
 import TimeInput from 'terra-time-input';
+import KeyCode from 'keycode-js';
 import DateUtil from 'terra-date-picker/lib/DateUtil';
 import styles from './DateTimePicker.module.scss';
 import DateTimeUtils from './DateTimeUtils';
@@ -97,10 +98,6 @@ const defaultProps = {
   requestFocus: undefined,
   timeInputAttributes: undefined,
   value: undefined,
-};
-
-const keyCodes = {
-  ARROWDOWN: 40,
 };
 
 class DateTimePicker extends React.Component {
@@ -239,7 +236,7 @@ class DateTimePicker extends React.Component {
     if (validDate && validTime) {
       const updatedDateTime = DateTimeUtils.updateTime(previousDateTime, time);
 
-      if (event.keyCode === keyCodes.ARROWDOWN
+      if (event.keyCode === KeyCode.KEY_DOWN
         && previousDateTime && updatedDateTime && previousDateTime.format() === updatedDateTime.format()) {
         updatedDateTime.subtract(1, 'hours');
       }

@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Popup from 'terra-popup';
 import { matchPath } from 'react-router-dom';
+import KeyCode from 'keycode-js';
 import TabMenuList from './_TabMenuList';
 import TabMenuDisplay from './_TabMenuDisplay';
-import TabUtils from './_TabUtils';
 
 const propTypes = {
   /**
@@ -78,7 +78,7 @@ class TabMenu extends React.Component {
   }
 
   handleOnKeyDown(event) {
-    if ((event.nativeEvent.keyCode === TabUtils.KEYCODES.ENTER || event.nativeEvent.keyCode === TabUtils.KEYCODES.SPACE) && !this.state.isOpen) {
+    if ((event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) && !this.state.isOpen) {
       this.setState({ isOpen: true });
     }
   }
