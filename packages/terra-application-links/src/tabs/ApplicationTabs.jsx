@@ -190,6 +190,5 @@ class ApplicationTabs extends React.Component {
 
 ApplicationTabs.propTypes = propTypes;
 ApplicationTabs.defaultProps = defaultProps;
-ApplicationTabs.Utils = TabUtils;
 
 export default withRouter(ApplicationTabs);
