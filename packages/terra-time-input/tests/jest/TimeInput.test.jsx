@@ -4,7 +4,6 @@ import React from 'react';
 import KeyCode from 'keycode-js';
 import intlContexts from './intl-context-setup';
 import TimeInput from '../../src/TimeInput';
-import TimeUtil from '../../src/TimeUtil';
 
 const mockEvent = {
   preventDefault: jest.fn(),
