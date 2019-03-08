@@ -26,7 +26,7 @@ class ApplicationMenuUtilityExample extends React.Component {
   }
 
   render() {
-    const accessory = <Image src={FallbackAvatar} />;
+    const accessory = <Image alt="Fallback Avatar" src={FallbackAvatar} />;
     const title = 'User Name';
 
     return (

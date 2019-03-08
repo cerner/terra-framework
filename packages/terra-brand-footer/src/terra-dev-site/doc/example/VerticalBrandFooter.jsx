@@ -2,6 +2,7 @@ import React from 'react';
 
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import BrandFooter from 'terra-brand-footer/lib/BrandFooter';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 
 export default () => (
   <BrandFooter
@@ -32,6 +33,7 @@ export default () => (
           textDecoration: 'none',
         }}
       >
+        <VisuallyHiddenText text="Terra UI" />
         <svg
           style={{
             border: '0',
