@@ -104,7 +104,6 @@
     "terra-base": "^4.0.0",
     "terra-dev-site": "^3.0.0",
     "terra-toolkit": "^4.16.0",
-    "terra-visually-hidden-text": "^2.0.0",
     "xfc": "^1.2.1"
   }
 }
