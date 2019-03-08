@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+2.3.0 - (March 5, 2019)
+------------------
+### Changed
+* escapeDeactivates option set on focus trap to prevent escape from breaking focus
+
 2.2.0 - (February 5, 2019)
 ------------------
 ### Changed

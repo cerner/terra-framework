@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UtilityButton it should pass in a custom prop 1`] = `
-<InjectIntl(ApplicationHeaderUtility)
+<InjectIntl(UtilityButton)
   id="test"
   initialSelectedKey="menu"
   menuItems={Array []}
@@ -13,7 +13,7 @@ exports[`UtilityButton it should pass in a custom prop 1`] = `
 `;
 
 exports[`UtilityButton should render with a title 1`] = `
-<InjectIntl(ApplicationHeaderUtility)
+<InjectIntl(UtilityButton)
   initialSelectedKey="menu"
   menuItems={Array []}
   onChange={[MockFunction]}
@@ -25,7 +25,7 @@ exports[`UtilityButton should render with a title 1`] = `
 `;
 
 exports[`UtilityButton should render with an accessory 1`] = `
-<InjectIntl(ApplicationHeaderUtility)
+<InjectIntl(UtilityButton)
   accessory={<image />}
   initialSelectedKey="menu"
   menuItems={Array []}
@@ -37,7 +37,7 @@ exports[`UtilityButton should render with an accessory 1`] = `
 `;
 
 exports[`UtilityButton should render with default props 1`] = `
-<InjectIntl(ApplicationHeaderUtility)
+<InjectIntl(UtilityButton)
   initialSelectedKey="menu"
   menuItems={Array []}
   onChange={[MockFunction]}
@@ -48,7 +48,7 @@ exports[`UtilityButton should render with default props 1`] = `
 `;
 
 exports[`UtilityButton should render with menu items 1`] = `
-<InjectIntl(ApplicationHeaderUtility)
+<InjectIntl(UtilityButton)
   initialSelectedKey="menu"
   menuItems={
     Array [

@@ -77,6 +77,6 @@ The [Modal Manager][1] component will always trap focus within its presented mod
 ##### Rendering a popup using automatic sizing
 When setting either the contentHeight or contentWidth to 'auto' the popup will layout to the size of the content. If the content is larger than the set bounding area it will be resized to fit the bounding area, and the content will be decorated with the props isHeightBounded/isWidthBounded in order to allow the content to respond to the resized state. Automatic sized popups will reposition if the inner content resizes, though animated size changes are heavily discouraged and not fully supported; as performance is severly impacted even in the best conditions with capable hardware.
 
-[1]: https://github.com/cerner/terra-framework/blob/master/packages/terra-disclosure-manager/src/DisclosureManagerDelegate.js
-[2]: https://github.com/cerner/terra-framework/tree/master/packages/terra-modal-manager/docs
-[3]: https://github.com/cerner/terra-framework/tree/master/packages/terra-hookshot/docs
+[1]: https://engineering.cerner.com/terra-ui/#/components/terra-disclosure-manager/disclosure-manager/about
+[2]: https://engineering.cerner.com/terra-ui/#/components/terra-modal-manager/modal-manager/about
+[3]: https://engineering.cerner.com/terra-ui/#/components/terra-hookshot/hookshot/hookshot

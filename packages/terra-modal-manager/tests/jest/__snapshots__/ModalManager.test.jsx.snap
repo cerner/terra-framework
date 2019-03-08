@@ -112,6 +112,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                   active={true}
                   focusTrapOptions={
                     Object {
+                      "escapeDeactivates": false,
                       "fallbackFocus": [Function],
                     }
                   }

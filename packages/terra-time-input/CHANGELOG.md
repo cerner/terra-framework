@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+3.3.0 - (March 5, 2019)
+------------------
+### Fixed
+* Updated failing wdio test selector due to aria-pressed prop changes
+
 3.2.0 - (February 26, 2019)
 ------------------
 ### Added

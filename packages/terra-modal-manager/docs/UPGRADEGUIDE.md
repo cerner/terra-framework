@@ -22,6 +22,7 @@ const MyDisclosureComponent = ({ app }) => (
     }}
   />
 );
+
 MyDisclosureComponent.propType = {
   app: AppDelegate.propType,
 }
@@ -40,6 +41,7 @@ const MyComponent = ({ app }) => (
     }}
   />
 );
+
 MyComponent.propType = {
   app: AppDelegate.propType,
 }
@@ -67,11 +69,12 @@ const MyDisclosureComponent = withDisclosureManager(({ disclosureManager }) => (
     }}
   />
 ));
+
 MyDisclosureComponent.propTypes = {
   disclosureManager: disclosureManagerShape,
 }
 
-const MyComponent = withDisclosureManager({ disclosureManager }) => (
+const MyComponent = withDisclosureManager(({ disclosureManager }) => (
   <Button
     text="Launch Modal"
     onClick={() => { 
@@ -84,7 +87,8 @@ const MyComponent = withDisclosureManager({ disclosureManager }) => (
       });
     }}
   />
-);
+));
+
 MyComponent.propTypes = {
   disclosureManager: disclosureManagerShape,
 }
