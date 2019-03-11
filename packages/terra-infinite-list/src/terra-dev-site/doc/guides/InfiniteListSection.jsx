@@ -5,7 +5,7 @@ import Placeholder from 'terra-doc-template/lib/Placeholder';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 import mockData from './mock-data/mock-section';
-import MyExampleContainer from './common/MyExampleContainer';
+import MyExampleContainer from '../common/MyExampleContainer';
 
 const createListItem = itemData => (
   <Item key={itemData.key}>

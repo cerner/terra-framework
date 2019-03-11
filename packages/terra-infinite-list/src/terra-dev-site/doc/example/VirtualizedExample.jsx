@@ -15,15 +15,15 @@ const createListItem = itemData => (
 
 const createItems = data => data.map(item => createListItem(item));
 
-const InitialLoadingExample = () => (
+const VirtualizedExample = () => (
   <MyExampleContainer>
     <InfiniteList
       dividerStyle="standard"
       isFinishedLoading
     >
-      {createItems(mockData)}
+      {createItems(mockData())}
     </InfiniteList>
   </MyExampleContainer>
 );
 
-export default InitialLoadingExample;
+export default VirtualizedExample;
