@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated doc page to remove duplicate ID's
 
 4.4.0 - (March 5, 2019)
 ------------------
