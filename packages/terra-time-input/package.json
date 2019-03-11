@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "keycode-js": "^1.0.4",
     "prop-types": "^15.5.8",
     "terra-button-group": "^3.0.0",
     "terra-doc-template": "^2.2.0",
