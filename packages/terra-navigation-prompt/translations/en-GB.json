@@ -1,0 +1,6 @@
+{
+  "Terra.navigationPromptCheckpoint.confirmPromptText": "Confirm",
+  "Terra.navigationPromptCheckpoint.denyPromptText": "Cancel",
+  "Terra.navigationPromptCheckpoint.promptTitle": "Unsaved Changes",
+  "Terra.navigationPromptCheckpoint.promptMessage": "Unsaved changes were detected. Do you wish to continue?"
+}

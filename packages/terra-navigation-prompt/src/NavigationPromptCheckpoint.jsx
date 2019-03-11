@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import NotificationDialog from 'terra-notification-dialog';
 import PromptRegistrationContext from './PromptRegistrationContext';
+import CheckpointNotificationDialog from './_CheckpointNotificationDialog';
 
 const propTypes = {
   /**
@@ -200,29 +200,21 @@ class NavigationPromptCheckpoint extends React.Component {
       <PromptRegistrationContext.Provider value={this.promptProviderValue}>
         {children}
         {confirmationPrompt ? (
-          <NotificationDialog
-            isOpen
-            title={this.getResolverTitleString()}
-            message={this.getResolverMessageString()}
-            primaryAction={{
-              text: 'OK',
-              onClick: () => {
-                confirmationPrompt.resolve();
-                this.setState({
-                  confirmationPrompt: undefined,
-                });
-              },
+          <CheckpointNotificationDialog
+            customTitle={this.getResolverTitleString()}
+            customMessage={this.getResolverMessageString()}
+            onConfirm={() => {
+              confirmationPrompt.resolve();
+              this.setState({
+                confirmationPrompt: undefined,
+              });
             }}
-            secondaryAction={{
-              text: 'Cancel',
-              onClick: () => {
-                confirmationPrompt.reject();
-                this.setState({
-                  confirmationPrompt: undefined,
-                });
-              },
+            onCancel={() => {
+              confirmationPrompt.reject();
+              this.setState({
+                confirmationPrompt: undefined,
+              });
             }}
-            variant="warning"
           />
         ) : undefined}
       </PromptRegistrationContext.Provider>
