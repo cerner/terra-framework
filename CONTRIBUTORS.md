@@ -24,7 +24,8 @@ Cerner Corporation
 - Alex Bezek [@alex-bezek]
 - Supreeth MR [@supreethmr]
 - Shetty Akarsh [@ShettyAkarsh]
-- Gabe Parra    [@gabeparra01]
+- Gabe Parra [@gabeparra01]
+
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
