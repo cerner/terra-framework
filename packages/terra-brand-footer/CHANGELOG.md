@@ -4,7 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
-* Added visually hidden text to brand footer examples to correct Section 508 errors
+* Updated brand footer examples to use styled text to correct Section 508 warning
 
 2.2.0 - (February 13, 2019)
 ------------------
