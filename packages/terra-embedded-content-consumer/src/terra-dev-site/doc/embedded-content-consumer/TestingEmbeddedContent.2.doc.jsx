@@ -3,7 +3,7 @@ import DocTemplate from 'terra-doc-template';
 import ReadMe from '../../../../docs/TestingEmbeddedApplications.md';
 import { name } from '../../../../package.json';
 
-/* eslint-disable import/no-webpack-loader-syntax, import/extensions, import/no-duplicates */
+/* eslint-disable import/no-webpack-loader-syntax, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
 import EmbeddedContentProviderTestTemplate from '!raw-loader!../../../../src/EmbeddedContentProviderTestTemplate.jsx';
 

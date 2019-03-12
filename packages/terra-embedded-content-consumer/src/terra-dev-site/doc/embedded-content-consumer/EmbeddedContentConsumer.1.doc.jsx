@@ -4,7 +4,7 @@ import { Consumer } from 'xfc';
 import ReadMe from '../../../../docs/README.md';
 import { name } from '../../../../package.json';
 
-/* eslint-disable import/no-webpack-loader-syntax, import/extensions, import/no-duplicates */
+/* eslint-disable import/no-webpack-loader-syntax, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
 import EmbeddedContentConsumerSrc from '!raw-loader!../../../../src/EmbeddedContentConsumer.jsx';
 
