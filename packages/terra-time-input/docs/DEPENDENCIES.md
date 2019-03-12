@@ -4,6 +4,7 @@
 | Dependency | Version | React Version | Description |
 |-|-|-|-|
 | classnames | ^2.2.5 | -- | A simple utility for conditionally joining classNames together |
+| keycode-js | ^1.0.4 | -- | A JavaScript package with Key Code constants |
 | prop-types | ^15.5.8 | -- | Runtime type checking for React props and similar objects. |
 | terra-button-group | ^3.0.0 | ^16.4.2 | The Terra Button Group component groups buttons and can maintain a toggle selection state. |
 | terra-doc-template | ^2.2.0 | ^16.4.2 | Provides an adjustable template for documentation pages. |

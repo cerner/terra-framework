@@ -12,9 +12,9 @@
 | terra-content-container | ^3.0.0 | ^16.4.2 | The Terra ContentContainer is a structural component for the purpose of arranging content with a header. |
 | terra-disclosure-manager | ^4.4.0 | ^16.4.2 | A stateful component used to manage disclosure presentation. |
 | terra-doc-template | ^2.2.0 | ^16.4.2 | Provides an adjustable template for documentation pages. |
-| terra-hookshot | ^5.3.0 | ^16.4.2 | The Terra Hookshot component positions portaled content according to target and content attachments, ensuring they stay visually connected. |
+| terra-hookshot | ^5.4.0 | ^16.4.2 | The Terra Hookshot component positions portaled content according to target and content attachments, ensuring they stay visually connected. |
 | terra-mixins | ^1.0.0 | -- | The terra-mixins component supplies global mixins for use throughout the Terra ecosystem. |
-| terra-modal-manager | ^5.4.0 | ^16.4.2 | The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal. |
+| terra-modal-manager | ^5.5.0 | ^16.4.2 | The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal. |
 
 ## peerDependencies
 | Dependency | Version | React Version | Description |
