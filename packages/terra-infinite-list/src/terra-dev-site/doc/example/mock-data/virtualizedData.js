@@ -1,5 +1,5 @@
 
-const mockData = () => {
+const mockData = (() => {
   const items = [];
   for (let i = 0; i < 100; i += 1) {
     items.push(
@@ -11,6 +11,6 @@ const mockData = () => {
   }
 
   return items;
-};
+})();
 
 export default mockData;

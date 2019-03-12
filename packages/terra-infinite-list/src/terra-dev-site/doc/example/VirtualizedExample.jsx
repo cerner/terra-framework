@@ -21,7 +21,7 @@ const VirtualizedExample = () => (
       dividerStyle="standard"
       isFinishedLoading
     >
-      {createItems(mockData())}
+      {createItems(mockData)}
     </InfiniteList>
   </MyExampleContainer>
 );
