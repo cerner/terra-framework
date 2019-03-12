@@ -5,6 +5,7 @@ import 'terra-base/lib/baseStyles';
 import Input from 'terra-form-input';
 import ButtonGroup from 'terra-button-group';
 
+import KeyCode from 'keycode-js';
 import TimeUtil from './TimeUtil';
 import styles from './TimeInput.module.scss';
 
@@ -348,7 +349,7 @@ class TimeInput extends React.Component {
     let { meridiem } = this.state;
     const previousStateValue = stateValue;
 
-    if (event.keyCode === TimeUtil.keyCodes.ARROWUP) {
+    if (event.keyCode === KeyCode.KEY_UP) {
       stateValue = TimeUtil.incrementHour(stateValue, this.props.variant);
 
       // Hitting 12 when incrementing up changes the meridiem
@@ -361,7 +362,7 @@ class TimeInput extends React.Component {
       }
     }
 
-    if (event.keyCode === TimeUtil.keyCodes.ARROWDOWN) {
+    if (event.keyCode === KeyCode.KEY_DOWN) {
       stateValue = TimeUtil.decrementHour(stateValue, this.props.variant);
 
       // Hitting 11 when incrementing down changes the meridiem
@@ -374,7 +375,7 @@ class TimeInput extends React.Component {
       this.handleValueChange(event, TimeUtil.inputType.HOUR, stateValue, meridiem);
     }
 
-    if (event.keyCode === TimeUtil.keyCodes.ARROWRIGHT) {
+    if (event.keyCode === KeyCode.KEY_RIGHT) {
       this.focusMinute(event);
     }
   }
@@ -399,11 +400,11 @@ class TimeInput extends React.Component {
     let stateValue = this.state.minute;
     const previousStateValue = stateValue;
 
-    if (event.keyCode === TimeUtil.keyCodes.ARROWUP) {
+    if (event.keyCode === KeyCode.KEY_UP) {
       stateValue = TimeUtil.incrementMinute(stateValue);
     }
 
-    if (event.keyCode === TimeUtil.keyCodes.ARROWDOWN) {
+    if (event.keyCode === KeyCode.KEY_DOWN) {
       stateValue = TimeUtil.decrementMinute(stateValue);
     }
 
@@ -411,13 +412,13 @@ class TimeInput extends React.Component {
       this.handleValueChange(event, TimeUtil.inputType.MINUTE, stateValue, this.state.meridiem);
     }
 
-    if (event.keyCode === TimeUtil.keyCodes.ARROWLEFT
-        || event.keyCode === TimeUtil.keyCodes.DELETE
-        || event.keyCode === TimeUtil.keyCodes.BACKSPACE) {
+    if (event.keyCode === KeyCode.KEY_LEFT
+        || event.keyCode === KeyCode.KEY_DELETE
+        || event.keyCode === KeyCode.KEY_BACK_SPACE) {
       this.focusHour(event);
     }
 
-    if (event.keyCode === TimeUtil.keyCodes.ARROWRIGHT) {
+    if (event.keyCode === KeyCode.KEY_RIGHT) {
       this.focusMeridiem(event);
     }
   }
@@ -499,9 +500,9 @@ class TimeInput extends React.Component {
   }
 
   handleMeridiemInputKeyDown(event) {
-    if (event.keyCode === TimeUtil.keyCodes.ARROWLEFT
-        || event.keyCode === TimeUtil.keyCodes.DELETE
-        || event.keyCode === TimeUtil.keyCodes.BACKSPACE) {
+    if (event.keyCode === KeyCode.KEY_LEFT
+        || event.keyCode === KeyCode.KEY_DELETE
+        || event.keyCode === KeyCode.KEY_BACK_SPACE) {
       this.minuteInput.focus();
       event.preventDefault();
     }
