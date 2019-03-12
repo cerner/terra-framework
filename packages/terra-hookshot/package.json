@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "keycode-js": "^1.0.4",
     "prop-types": "^15.5.8",
     "react-onclickoutside": "^6.7.1",
     "react-portal": "^4.1.2",

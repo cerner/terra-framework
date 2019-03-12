@@ -5,7 +5,7 @@ import CheckIcon from 'terra-icon/lib/icon/IconCheckmark';
 import ChevronIcon from 'terra-icon/lib/icon/IconChevronRight';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-import MenuUtils from './_MenuUtils';
+import KeyCode from 'keycode-js';
 import styles from './MenuItem.module.scss';
 
 const cx = classNames.bind(styles);
@@ -114,7 +114,7 @@ class MenuItem extends React.Component {
 
   wrapOnKeyDown(onKeyDown) {
     return ((event) => {
-      if (event.nativeEvent.keyCode === MenuUtils.KEYCODES.ENTER || event.nativeEvent.keyCode === MenuUtils.KEYCODES.SPACE) {
+      if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
         this.handleSelection(event);
 
         // Only add active style if the menu doesn't have a sub menu to avoid active style being stuck enabled
@@ -126,7 +126,7 @@ class MenuItem extends React.Component {
           this.props.onClick(event);
         }
       // Remove active state when tab key is released while while holding the space key to avoid active style being stuck enabled
-      } else if (event.nativeEvent.keyCode === MenuUtils.KEYCODES.TAB) {
+      } else if (event.nativeEvent.keyCode === KeyCode.KEY_TAB) {
         this.setState({ isActive: false });
       }
 
@@ -138,7 +138,7 @@ class MenuItem extends React.Component {
 
   wrapOnKeyUp(onKeyUp) {
     return ((event) => {
-      if (event.nativeEvent.keyCode === MenuUtils.KEYCODES.ENTER || event.nativeEvent.keyCode === MenuUtils.KEYCODES.SPACE) {
+      if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
         this.setState({ isActive: false });
       }
 

@@ -6,7 +6,6 @@ import { withRouter } from 'react-router-dom';
 import 'terra-base/lib/baseStyles';
 import Tab from './_Tab';
 import TabMenu from './_TabMenu';
-import TabUtils from './_TabUtils';
 import styles from './ApplicationTabs.module.scss';
 
 const cx = classNames.bind(styles);
@@ -191,6 +190,5 @@ class ApplicationTabs extends React.Component {
 
 ApplicationTabs.propTypes = propTypes;
 ApplicationTabs.defaultProps = defaultProps;
-ApplicationTabs.Utils = TabUtils;
 
 export default withRouter(ApplicationTabs);

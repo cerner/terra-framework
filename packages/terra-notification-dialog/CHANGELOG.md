@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added missing nl-BE translation
 
 2.4.0 - (March 5, 2019)
 ------------------
