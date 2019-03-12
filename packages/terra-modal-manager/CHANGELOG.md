@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+5.5.0 - (March 12, 2019)
+------------------
 ### Removed
 * Removed dependency terra-heading
 
