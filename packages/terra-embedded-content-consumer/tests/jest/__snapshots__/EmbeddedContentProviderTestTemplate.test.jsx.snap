@@ -1,20 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should accept onMount and onUnmount props 1`] = `
-<EmbeddedContentProviderTestTemplate
-  onMount={[Function]}
-  onUnmount={[Function]}
->
-  <div
-    data-embedded-content-consumer-provider-test-template={true}
-  >
-    <div>
-      Content to display
-    </div>
-  </div>
-</EmbeddedContentProviderTestTemplate>
-`;
-
 exports[`should render the provider test template 1`] = `
 <div
   data-embedded-content-consumer-provider-test-template="true"
