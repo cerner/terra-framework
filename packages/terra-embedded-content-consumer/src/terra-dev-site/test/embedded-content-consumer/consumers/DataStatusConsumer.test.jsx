@@ -23,9 +23,11 @@ const lifeCycleStatuses = [];
 const onMount = () => {
   lifeCycleStatuses.push('Mounted');
 };
+
 const onLaunch = () => {
   lifeCycleStatuses.push('Launched');
 };
+
 const onAuthorize = () => {
   lifeCycleStatuses.push('Authorized');
   lifeCycleStatuses.forEach((status) => { appendLifeCycleStatus(status); });
@@ -33,7 +35,7 @@ const onAuthorize = () => {
 
 const DataStatusConsumer = () => (
   <EmbeddedContentConsumer
-    src="#/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/providers/data-status-provider"
+    src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/data-status-provider"
     onMount={onMount}
     onLaunch={onLaunch}
     onAuthorize={onAuthorize}

@@ -22,7 +22,7 @@ const eventHandlers = [
 const CustomEventsConsumer = () => (
   <div id="CustomEvents">
     <EmbeddedContentConsumer
-      src="#/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"
+      src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"
       eventHandlers={eventHandlers}
     />
   </div>
