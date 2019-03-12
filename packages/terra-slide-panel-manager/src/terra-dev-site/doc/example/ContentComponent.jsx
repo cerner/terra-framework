@@ -17,6 +17,7 @@ const cx = classNames.bind(styles);
 const propTypes = {
   disclosureType: PropTypes.string,
   disclosureManager: disclosureManagerShape,
+  panelBehavior: PropTypes.oneOf(['overlay', 'squish']),
 };
 
 const HEIGHT_KEYS = Object.keys(availableDisclosureHeights);
@@ -92,14 +93,14 @@ class ContentComponent extends React.Component {
   renderForm() {
     return (
       <form>
-        <label htmlFor={this.getId('disclosureHeight')}>Pop Content Height</label>
-        <select id={this.getId('disclosureHeight')} name="disclosureHeight" value={this.state.disclosureHeight} onChange={this.handleSelectChange}>
+        <label htmlFor={this.getId(`disclosureHeight${this.props.panelBehavior}`)}>Pop Content Height</label>
+        <select id={this.getId(`disclosureHeight${this.props.panelBehavior}`)} name="disclosureHeight" value={this.state.disclosureHeight} onChange={this.handleSelectChange}>
           {generateOptions(HEIGHT_KEYS)}
         </select>
         <br />
         <br />
-        <label htmlFor={this.getId('disclosureWidth')}>Pop Content Width</label>
-        <select id={this.getId('disclosureWidth')} name="disclosureWidth" value={this.state.disclosureWidth} onChange={this.handleSelectChange}>
+        <label htmlFor={this.getId(`disclosureWidth${this.props.panelBehavior}`)}>Pop Content Width</label>
+        <select id={this.getId(`disclosureWidth${this.props.panelBehavior}`)} name="disclosureWidth" value={this.state.disclosureWidth} onChange={this.handleSelectChange}>
           {generateOptions(WIDTH_KEYS)}
         </select>
         <br />

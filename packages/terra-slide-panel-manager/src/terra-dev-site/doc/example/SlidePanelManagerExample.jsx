@@ -17,7 +17,7 @@ const propTypes = {
 const SlidePanelManagerExample = ({ behavior }) => (
   <div className={cx('example-wrapper')}>
     <SlidePanelManager panelBehavior={behavior}>
-      <ContentComponent disclosureType="panel" />
+      <ContentComponent panelBehavior={behavior} disclosureType="panel" />
     </SlidePanelManager>
   </div>
 );

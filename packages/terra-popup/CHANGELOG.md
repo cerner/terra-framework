@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Updated heading levels in doc site README.md to correct Section 508 errors
 
+5.5.0 - (March 12, 2019)
+------------------
+### Changed
+* Minor dependency update
+
 5.4.0 - (March 5, 2019)
 ------------------
 ### Fixed

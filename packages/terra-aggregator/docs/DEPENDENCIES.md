@@ -13,10 +13,10 @@
 | terra-doc-template | ^2.2.0 | ^16.4.2 | Provides an adjustable template for documentation pages. |
 | terra-form-input | ^2.3.0 | ^16.4.2 | Element for building out inputs in a form. |
 | terra-grid | ^5.0.0 | ^16.4.2 | The grid component provides a flexbox based grid system. |
-| terra-modal-manager | ^5.4.0 | ^16.4.2 | The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal. |
+| terra-modal-manager | ^5.5.0 | ^16.4.2 | The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal. |
 | terra-responsive-element | ^4.0.0 | ^16.4.2 | The terra-responsive-element conditionally renders components based on viewport size |
 | terra-section-header | ^2.0.0 | ^16.4.2 | Section Header component that contains text and can be optionally interacted with. |
-| terra-slide-panel-manager | ^4.4.0 | ^16.4.2 | A DisclosureManager implementation that presents disclosed content using a SlidePanel. |
+| terra-slide-panel-manager | ^4.5.0 | ^16.4.2 | A DisclosureManager implementation that presents disclosed content using a SlidePanel. |
 
 ## peerDependencies
 | Dependency | Version | React Version | Description |
