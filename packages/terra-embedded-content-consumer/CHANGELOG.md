@@ -4,7 +4,7 @@ ChangeLog
 Unreleased
 ----------
 ### Added
-* EmbeddedContentProviderTestTemplate for testing embedded applicaitons
+* EmbeddedContentProviderTestTemplate for testing embedded applications
 
 ### Changed
 * Updated existing provider examples to use the EmbeddedContentProviderTestTemplate

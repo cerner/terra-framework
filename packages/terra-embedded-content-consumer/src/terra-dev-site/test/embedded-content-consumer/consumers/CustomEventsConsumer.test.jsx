@@ -7,14 +7,16 @@ Consumer.init();
 const eventHandlers = [
   {
     key: 'EventA',
-    handler: () => {
+    handler: (consumer) => {
       document.getElementById('CustomEvents').style.border = 'thick dashed #0000FF';
+      consumer.trigger('Event-Reply', { eventReply: 'eventA', borderColor: '#0000FF' });
     },
   },
   {
     key: 'EventB',
-    handler: () => {
+    handler: (consumer) => {
       document.getElementById('CustomEvents').style.border = 'thick dashed #00FF00';
+      consumer.trigger('Event-Reply', { eventReply: 'eventB', borderColor: '#00FF00' });
     },
   },
 ];
