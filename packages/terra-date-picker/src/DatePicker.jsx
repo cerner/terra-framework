@@ -3,14 +3,10 @@ import PropTypes from 'prop-types';
 import ReactDatePicker from 'react-datepicker';
 import 'terra-base/lib/baseStyles';
 import ResponsiveElement from 'terra-responsive-element';
-import classNames from 'classnames/bind';
 import PopperContainer from './_PopperContainer';
 import DateInput from './DateInput';
 import DateUtil from './DateUtil';
 import styles from './DatePicker.module.scss';
-
-
-const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -358,15 +354,12 @@ class DatePicker extends React.Component {
     );
 
     return (
-      <div className={cx(['date-picker-wrapper'])}>
-        {required && <span className={cx(['required'])}>*</span>}
-        <div className={cx(['date-picker'])}>
-          <ResponsiveElement
-            responsiveTo="window"
-            defaultElement={portalPicker}
-            small={popupPicker}
-          />
-        </div>
+      <div className={styles['date-picker']}>
+        <ResponsiveElement
+          responsiveTo="window"
+          defaultElement={portalPicker}
+          small={popupPicker}
+        />
       </div>
     );
   }
