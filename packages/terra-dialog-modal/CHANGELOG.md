@@ -3,6 +3,13 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Doc site 'modal on modal' example heading level changed to correct Section 508 error
+
+2.5.0 - (March 12, 2019)
+------------------
+### Changed
+* Minor dependency update
 
 2.4.0 - (March 5, 2019)
 ------------------

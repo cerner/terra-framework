@@ -4,17 +4,12 @@ import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import ActionHeader from 'terra-action-header';
 import ContentContainer from 'terra-content-container';
+import KeyCode from 'keycode-js';
 import MenuItem from './_MenuItem';
 
 import styles from './NavigationSideMenu.module.scss';
 
 const cx = classNames.bind(styles);
-
-const KEYCODES = {
-  ENTER: 13,
-  SPACE: 32,
-  TAB: 9,
-};
 
 const propTypes = {
   /**
@@ -161,7 +156,7 @@ class NavigationSideMenu extends Component {
   buildListItem(key) {
     const item = this.state.items[key];
     const onKeyDown = (event) => {
-      if (event.nativeEvent.keyCode === KEYCODES.SPACE || event.nativeEvent.keyCode === KEYCODES.ENTER) {
+      if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_RETURN) {
         event.preventDefault();
         this.handleItemClick(event, key);
       }

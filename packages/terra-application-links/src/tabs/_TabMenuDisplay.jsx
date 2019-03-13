@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
-import TabUtils from './_TabUtils';
+import KeyCode from 'keycode-js';
 import styles from './ApplicationTabs.module.scss';
 
 const cx = classNames.bind(styles);
@@ -58,12 +58,12 @@ class TabMenuDisplay extends React.Component {
 
   handleKeyDown(event) {
     // Add active state to FF browsers
-    if (event.nativeEvent.keyCode === TabUtils.KEYCODES.SPACE) {
+    if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
       this.setState({ active: true });
     }
 
     // Add focus styles for keyboard navigation
-    if (event.nativeEvent.keyCode === TabUtils.KEYCODES.SPACE || event.nativeEvent.keyCode === TabUtils.KEYCODES.ENTER) {
+    if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_RETURN) {
       this.setState({ focused: true });
 
       event.preventDefault();
@@ -75,12 +75,12 @@ class TabMenuDisplay extends React.Component {
 
   handleKeyUp(event) {
     // Remove active state from FF broswers
-    if (event.nativeEvent.keyCode === TabUtils.KEYCODES.SPACE) {
+    if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
       this.setState({ active: false });
     }
 
     // Apply focus styles for keyboard navigation
-    if (event.nativeEvent.keyCode === TabUtils.KEYCODES.TAB) {
+    if (event.nativeEvent.keyCode === KeyCode.KEY_TAB) {
       this.setState({ focused: true });
     }
   }

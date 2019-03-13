@@ -1,17 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import KeyCode from 'keycode-js';
 import onClickOutside from 'react-onclickoutside';
 import ResizeObserver from 'resize-observer-polyfill';
 import styles from './HookshotContent.module.scss';
 
 const cx = classNames.bind(styles);
-/**
- * Key code value for the escape key.
- */
-const KEYCODES = {
-  ESCAPE: 27,
-};
 
 const propTypes = {
   /**
@@ -96,7 +91,7 @@ class HookshotContent extends React.Component {
   }
 
   handleKeydown(event) {
-    if (event.keyCode === KEYCODES.ESCAPE) {
+    if (event.keyCode === KeyCode.KEY_ESCAPE) {
       event.preventDefault();
       this.props.onEsc(event);
     }
