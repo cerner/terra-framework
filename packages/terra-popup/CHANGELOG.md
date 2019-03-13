@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated heading levels in doc site README.md to correct Section 508 errors
 
 5.5.0 - (March 12, 2019)
 ------------------

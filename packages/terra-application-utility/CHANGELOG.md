@@ -10,6 +10,9 @@ Unreleased
 * menurole property added to Application Utility for Utility Menu
 * Jest test added for menurole property
 
+### Changed
+* Alt text added to fallback avatar images in doc site examples to correct Section 508 warnings
+
 2.3.0 - (February 26, 2019)
 ------------------
 ### Added
