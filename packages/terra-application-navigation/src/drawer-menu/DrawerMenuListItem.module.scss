@@ -1,0 +1,50 @@
+:local {
+  .item {
+    align-items: center;
+    background-color: #1a2f4b; // TODO  THEME
+    color: rgba(255, 255, 255, 0.8); // TODO THEME
+    cursor: pointer;
+    display: flex;
+    font-size: 1.1428571429rem; // TODO THEME
+    font-weight: 400; // TODO THEME
+    justify-content: flex-start;
+    line-height: 1.429rem; // TODO THEME
+    overflow: hidden;
+    padding: 0.8571428571rem 1.4285714286rem; // TODO THEME
+    position: relative;
+  }
+  
+  .icon {
+    flex: 0 0 auto;
+    margin-right: 0.7142857143rem; // TODO THEME
+  }
+
+  .text {
+    flex: 1 1 auto;
+  }
+
+  .item.is-selected {
+    box-shadow: inset 0.3571428571rem 0 0 0 #599ffd; // TODO THEME
+    color: rgba(255, 255, 255, 1); // TODO THEME
+    font-weight: 500; // TODO THEME
+  }
+
+  .item.is-selected:focus {
+    box-shadow: inset -2px 2px 0 0 #b5d4fe, inset 0 -2px 0 0 #b5d4fe, inset 0.3571428571rem 0 0 0 #599ffd; // TODO THEME
+  }
+
+  .item:hover {
+    background-color: #2a4b77; // TODO THEME
+    color: rgba(255, 255, 255, 1); // TODO THEME
+  }
+
+  .item:focus {
+    box-shadow: inset 0 0 0 2px #b5d4fe; // TODO THEME
+    outline: none;
+  }
+
+  .item:active {
+    background-color: rgba(17, 22, 25, 0.75); // TODO THEME
+    color: rgba(255, 255, 255, 1); // TODO THEME
+  }
+}

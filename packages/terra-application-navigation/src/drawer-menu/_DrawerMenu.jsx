@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
+import Button from 'terra-button';
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import IconUnknown from 'terra-icon/lib/icon/IconUnknown';
 
+import DrawerMenuListItem from './_DrawerMenuListItem';
 import DrawerMenuUser from './_DrawerMenuUser';
-import Count from '../count/_Count';
 import { userConfigPropType, heroConfigPropType, navigationItemsPropType } from '../utils/propTypes';
 
 import styles from './DrawerMenu.module.scss';
@@ -45,7 +45,7 @@ const DrawerMenu = ({
 
   let logout;
   if (onSelectLogout) {
-    logout = <button type="button" onClick={onSelectLogout}>Logout</button>;
+    logout = <Button onClick={onSelectLogout} isBlock text="Logout" />;
   }
 
   return (
@@ -57,68 +57,33 @@ const DrawerMenu = ({
         </div>
         <ul className={cx('navigation-list')} role="listbox">
           {navigationItems.map(item => (
-            <li
+            <DrawerMenuListItem
               key={item.key}
-              className={cx(['navigation-list-item', { active: item.key === activeNavigationItemKey }])}
-              aria-selected={item.key === activeNavigationItemKey ? true : null}
-              onClick={() => {
-                if (onSelectNavigationItem) {
-                  onSelectNavigationItem(item.key);
-                }
-              }}
-              onKeyDown={(event) => {
-                if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
-                  event.preventDefault();
-                  onSelectNavigationItem(item.key);
-                }
-              }}
-              role="option"
-              tabIndex="0"
-            >
-              {item.key === activeNavigationItemKey ? <div className={cx('active-indicator')} /> : null}
-              <span>{item.text}</span>
-              {item.notificationCount > 0 && <Count value={item.notificationCount} isInline isDark />}
-            </li>
+              text={item.text}
+              notificationCount={item.notificationCount}
+              onSelect={onSelectNavigationItem ? () => {
+                onSelectNavigationItem(item.key);
+              } : undefined}
+              isSelected={item.key === activeNavigationItemKey}
+            />
           ))}
         </ul>
         <ul className={cx('utility-list')} role="listbox">
           {onSelectSettings ? (
-            <li
-              key="application-menu.settings"
-              className={cx('utility-list-item')}
-              onClick={() => { onSelectSettings(); }}
-              onKeyDown={(event) => {
-                if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
-                  event.preventDefault();
-                  onSelectSettings();
-                }
-              }}
-              role="option"
-              aria-selected={false}
-              tabIndex="0"
-            >
-              <IconSettings className={cx('utility-menu-icon')} />
-              Settings
-            </li>
+            <DrawerMenuListItem
+              key="application-navigation.drawer-menu.settings"
+              text="Settings" // TODO INTL
+              icon={<IconSettings />}
+              onSelect={onSelectSettings}
+            />
           ) : null}
           {onSelectHelp ? (
-            <li
-              key="application-menu.help"
-              className={cx('utility-list-item')}
-              onClick={() => { onSelectHelp(); }}
-              onKeyDown={(event) => {
-                if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
-                  event.preventDefault();
-                  onSelectHelp();
-                }
-              }}
-              role="option"
-              aria-selected={false}
-              tabIndex="0"
-            >
-              <IconUnknown className={cx('utility-menu-icon')} />
-              Help
-            </li>
+            <DrawerMenuListItem
+              key="application-navigation.drawer-menu.help"
+              text="Help" // TODO INTL
+              icon={<IconUnknown />}
+              onSelect={onSelectSettings}
+            />
           ) : null}
         </ul>
       </div>

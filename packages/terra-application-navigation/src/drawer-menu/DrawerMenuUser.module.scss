@@ -1,6 +1,7 @@
 :local {
   .large-user-layout {
     align-items: center;
+    background-color: rgba(17, 22, 25, 0.3); // TODO THEME
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -43,16 +44,22 @@
   }
 
   .small-user-layout {
-    align-items: center;
+    align-items: top;
+    background-color: rgba(17, 22, 25, 0.3); // TODO THEME
     display: flex;
     justify-content: flex-start;
-    padding: 20px;
+    padding: 0.7142857143rem 1.4285714286rem; // TODO THEME
 
     .avatar-container {
       flex: 0 0 auto;
-      height: var(--terra-application-layout-user-data-photo-height, 3.571rem);
-      margin-right: var(--terra-application-layout-user-data-photo-margin-right, 0.5714rem);
-      width: var(--terra-application-layout-user-data-photo-width, 3.571rem);
+      height: 30px; // TODO THEME
+      margin-right: 0.5rem; // TODO THEME
+      width: 30px; // TODO THEME
+    }
+
+    .avatar {
+      height: 30px;
+      width: 30px;
     }
   
     .info-container {
@@ -61,9 +68,10 @@
     }
   
     .name {
-      color: #fff;
-      font-size: var(--terra-application-layout-user-data-name-font-size, 1.143rem);
-      font-weight: var(--terra-application-layout-user-data-name-font-weight);
+      color: rgba(255, 255, 255, 1); // TODO THEME
+      font-size: 1rem; // TODO THEME
+      font-weight: 500; // TODO THEME
+      line-height: 1rem; // TODO THEME
       overflow-wrap: break-word;
       white-space: normal;
       word-break: break-word;
@@ -71,9 +79,11 @@
     }
   
     .detail {
-      color: rgba(255, 255, 255, 0.7);  
-      font-size: var(--terra-application-layout-user-data-detail-font-size, 0.8571rem);
+      color: rgba(255, 255, 255, 0.7); // TODO THEME
+      font-size: 0.8571428571rem; // TODO THEME
+      line-height: 0.8571428571rem; // TODO THEME
       overflow-wrap: break-word;
+      padding-top: 0.2142857143rem;
       white-space: normal;
       word-break: break-word;
       word-wrap: break-word;
