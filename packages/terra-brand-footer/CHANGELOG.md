@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated brand footer examples to use styled text to correct Section 508 warning
 
 2.2.0 - (February 13, 2019)
 ------------------

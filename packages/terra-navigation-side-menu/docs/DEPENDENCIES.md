@@ -4,6 +4,7 @@
 | Dependency | Version | React Version | Description |
 |-|-|-|-|
 | classnames | ^2.2.5 | -- | A simple utility for conditionally joining classNames together |
+| keycode-js | ^1.0.4 | -- | A JavaScript package with Key Code constants |
 | prop-types | ^15.5.8 | -- | Runtime type checking for React props and similar objects. |
 | terra-action-header | ^2.0.0 | ^16.4.2 | The terra-action-header component is a header bar containing a title and optional actionable items such as links and buttons. |
 | terra-content-container | ^3.0.0 | ^16.4.2 | The Terra ContentContainer is a structural component for the purpose of arranging content with a header. |

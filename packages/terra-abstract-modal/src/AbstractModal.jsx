@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
 import 'terra-base/lib/baseStyles';
+import KeyCode from 'keycode-js';
 import ModalContent from './_ModalContent';
 
 const zIndexes = ['6000', '7000', '8000', '9000'];
@@ -83,10 +84,6 @@ const defaultProps = {
   zIndex: '6000',
 };
 
-const KEYCODES = {
-  ESCAPE: 27,
-};
-
 class AbstractModal extends React.Component {
   constructor() {
     super();
@@ -113,7 +110,7 @@ class AbstractModal extends React.Component {
   }
 
   handleKeydown(e) {
-    if (e.keyCode === KEYCODES.ESCAPE && this.props.isOpen && this.props.closeOnEsc && this.props.isFocused) {
+    if (e.keyCode === KeyCode.KEY_ESCAPE && this.props.isOpen && this.props.closeOnEsc && this.props.isFocused) {
       this.props.onRequestClose();
     }
   }

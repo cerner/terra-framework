@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Doc site upgrade guide markdown altered to correct 508 heading error
 
 4.4.0 - (March 5, 2019)
 ------------------
