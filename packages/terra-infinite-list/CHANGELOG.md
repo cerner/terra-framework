@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Documentation for including section headers and subsection headers to the infinite list. 
 
 3.0.0 - (February 13, 2019)
 ------------------
