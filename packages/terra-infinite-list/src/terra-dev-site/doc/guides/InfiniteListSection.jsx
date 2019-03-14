@@ -20,8 +20,8 @@ const createSection = (sectionData) => {
       title={sectionData.title}
     />,
   ];
-  const sectionItems = sectionData.childItems.map(childItem => createListItem(childItem));
-  return section.concat(sectionItems);
+  sectionData.childItems.forEach(childItem => section.push(createListItem(childItem)));
+  return section;
 };
 
 const createSections = data => data.map(section => createSection(section));

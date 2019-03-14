@@ -20,8 +20,8 @@ const createSubSection = (subsectionData) => {
       title={subsectionData.title}
     />,
   ];
-  const sectionItems = subsectionData.childItems.map(childItem => createListItem(childItem));
-  return section.concat(sectionItems);
+  subsectionData.childItems.forEach(childItem => section.push(createListItem(childItem)));
+  return section;
 };
 
 const createSection = (sectionData) => {
@@ -31,8 +31,8 @@ const createSection = (sectionData) => {
       title={sectionData.title}
     />,
   ];
-  const sectionItems = sectionData.childItems.map(subsection => createSubSection(subsection));
-  return section.concat(sectionItems);
+  sectionData.childItems.forEach(subsection => section.push(createSubSection(subsection)));
+  return section;
 };
 
 const createSections = data => data.map(section => createSection(section));
