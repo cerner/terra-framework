@@ -25,7 +25,7 @@ const DrawerMenuUser = ({ userConfig, variant }) => (
     </div>
     <div className={cx('info-container')}>
       <div className={cx('name')}>{userConfig.name}</div>
-      <div className={cx('detail')}>{userConfig.detail}</div>
+      {userConfig.detail ? <div className={cx('detail')}>{userConfig.detail}</div> : null}
     </div>
   </div>
 );

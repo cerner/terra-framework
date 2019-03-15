@@ -49,11 +49,13 @@ const DrawerMenu = ({
   }
 
   return (
-    <div className={cx('drawer-menu')}>
+    <div className={cx('drawer-menu')} tabIndex="0">
       <div className={cx('vertical-overflow-container')}>
         <div className={cx('header')}>
-          {hero}
-          {user}
+          <div className={cx('header-background-fill')}>
+            {hero}
+            {user}
+          </div>
         </div>
         <ul className={cx('navigation-list')} role="listbox">
           {navigationItems.map(item => (

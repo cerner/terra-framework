@@ -5,6 +5,7 @@
     flex-direction: column;
     height: 100%;
     justify-content: space-between;
+    outline: none;
     overflow: hidden;
     position: relative;
 
@@ -26,8 +27,12 @@
     }
 
     .header {
-      background-color: #2a4b77;
+      background-color: #2a4b77; // TODO THEME (SAME AS drawer-menu background-color);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .header-background-fill {
+      background-color: rgba(17, 22, 25, 0.3); // TODO THEME
     }
 
     .navigation-list,

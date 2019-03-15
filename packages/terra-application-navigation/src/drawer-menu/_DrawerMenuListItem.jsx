@@ -22,12 +22,19 @@ const DrawerMenuListItem = ({
   <li
     className={cx(['item', { 'is-selected': isSelected }])}
     aria-selected={isSelected}
+    data-item-show-focus
     onClick={onSelect}
     onKeyDown={(event) => {
       if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
         event.preventDefault();
         onSelect();
       }
+    }}
+    onBlur={(event) => {
+      event.currentTarget.setAttribute('data-item-show-focus', 'true');
+    }}
+    onMouseDown={(event) => {
+      event.currentTarget.setAttribute('data-item-show-focus', 'false');
     }}
     role="option"
     tabIndex="0"

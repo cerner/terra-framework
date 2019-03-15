@@ -1,7 +1,6 @@
 :local {
   .large-user-layout {
     align-items: center;
-    background-color: rgba(17, 22, 25, 0.3); // TODO THEME
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -45,7 +44,6 @@
 
   .small-user-layout {
     align-items: top;
-    background-color: rgba(17, 22, 25, 0.3); // TODO THEME
     display: flex;
     justify-content: flex-start;
     padding: 0.7142857143rem 1.4285714286rem; // TODO THEME
@@ -58,12 +56,15 @@
     }
 
     .avatar {
-      height: 30px;
-      width: 30px;
+      height: 30px; // TODO THEME
+      width: 30px;  // TODO THEME
     }
   
     .info-container {
+      display: flex;
       flex: 1 1 auto;
+      flex-direction: column;
+      justify-content: space-around;
       width: 100%;
     }
   
