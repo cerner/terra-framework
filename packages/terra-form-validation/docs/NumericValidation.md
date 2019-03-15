@@ -94,9 +94,11 @@ With this, we have a pretty simple number type input with a basic validation tie
 
 We also have our `<Field>`'s validation function defined and ready to be added to, with it only having a basic check to see if there is a value.
 
-A thing of note is that our validation function, `validateNumber`, will be given it's argument in the form of a string despite it being a number type input. This doesn't impact simple operators too much like `<` and `>` but it is information you should know for when your building custom validation functions.
+Because we have added to the `inputAttrs` prop  of `<InputField>` the value of `type: 'number'` this also means we have a bit of browser enforcement on the inputted value. Mainly that it has to be a number of some sort so it only accepts certain characters.
 
-The 2nd thing of note is that even though we specified the input as a number type, it will still take some 'wrong' values and place them in the field but give them as `undefined`. Specifically the input will accept values such as `--1` or `2.0.32` but then when the validation functions run the value given to them will be `undefined`. With our code is currently setup that means we will just return a value of `Required` via the `<Form>`'s validation function.
+A thing of note is that even though we specified the input as a number type, it will still take some 'wrong' values and place them in the field but give them as `undefined`. Specifically the input will accept values such as `--1` or `2.0.32` but then when the validation functions run the value given to them will be `undefined`. With our code is currently setup that means we will just return a value of `Required` via the `<Form>`'s validation function.
+
+The 2nd thing of note is that our validation function, `validateNumber`, will be given it's argument in the form of a string despite it being a number type input. This doesn't impact simple operators too much like `<` and `>` but it is information you should know for when your building custom validation functions.
 
 With this in mind, we'll first start by giving a minimum and maximum to our value. For simplicity's sake lets go with a minimum of 10 and a maximum of 100.
 
@@ -130,4 +132,20 @@ const validateNumber = (value) => {
 };
 ```
 
-This way of validating for precision has a few quirks with it, mainly that if we give it a value of `23.023000` it would fail the validation, because of the extra `0`s at the end.
+This way of validating for precision has a few quirks with it, mainly that if we give it a value of `23.023000` it would fail the validation, because of the extra `0`s at the end despite this number effectively being the same as `23.023`.
+
+For the sake of the example lets try a different way of validating. Let us, instead of using string function to validate, convert the value given to us to a `Number` instead. With it being a number we can use the `Number` class function `toFixed` which allows us to automatically take a value to a given precision.
+
+```javascript
+const validateNumber = (value) => {
+  ...
+  const valueNum = Number(value);
+  if (valueNum.toFixed(3) != valueNum) {
+    return 'Value has more than 3 decimal points';
+  }
+
+  return undefined;
+};
+```
+
+With this we compare the value given us to same value to a given precision. Which means if we are handed `45.4321`, we will compare it to `45.432`, which is not equal and will return the failure message. The quirk with this validation is that if you give it `23.023000` it will succeed because it will be compared to `23.023` and be found equal. 

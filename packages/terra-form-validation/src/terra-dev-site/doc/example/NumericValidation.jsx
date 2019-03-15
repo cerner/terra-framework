@@ -14,6 +14,10 @@ const validateNumber = (value) => {
   if (value > 100) {
     return 'Value should not be over 100.';
   }
+  const valueNum = Number(value);
+  if (valueNum.toFixed(3) != valueNum) {
+    return 'Value has more than 3 decimal points';
+  }
   const valueSplit = value.split('.');
   if (valueSplit.length === 2 && valueSplit[1].length > 3) {
     return 'Value has more than 3 decimal points';
