@@ -1,29 +1,157 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render a default date time picker 1`] = `
-<TimeClarification
-  disabled={false}
-  isOffsetButtonHidden={true}
-  isOpen={true}
-  onDaylightSavingButtonClick={[MockFunction]}
-  onOffsetButtonClick={[MockFunction]}
-  onRequestClose={[MockFunction]}
-  onStandardTimeButtonClick={[MockFunction]}
-  releaseFocus={[MockFunction]}
-  requestFocus={[MockFunction]}
-/>
+<div>
+  <AbstractModal
+    ariaLabel="Time Clarification"
+    classNameModal="time-clarification"
+    classNameOverlay={null}
+    closeOnEsc={false}
+    closeOnOutsideClick={false}
+    isFocused={true}
+    isFullscreen={false}
+    isOpen={true}
+    onRequestClose={[MockFunction]}
+    role="dialog"
+    rootSelector="[data-terra-base]"
+    zIndex="9000"
+  >
+    <div>
+      <header
+        className="header"
+      >
+        <h1
+          className="title"
+        >
+          Terra.dateTimePicker.timeClarification.title
+        </h1>
+      </header>
+      <div
+        className="body"
+      >
+        <p>
+          Terra.dateTimePicker.timeClarification.message
+        </p>
+      </div>
+      <div
+        className="buttons"
+      >
+        <Button
+          className="button-daylight"
+          isBlock={false}
+          isCompact={false}
+          isDisabled={false}
+          isIconOnly={false}
+          isReversed={false}
+          onClick={[Function]}
+          text="Terra.dateTimePicker.timeClarification.button.daylightSaving"
+          type="button"
+          variant="emphasis"
+        />
+        <Button
+          className="button-standard"
+          isBlock={false}
+          isCompact={false}
+          isDisabled={false}
+          isIconOnly={false}
+          isReversed={false}
+          onClick={[Function]}
+          text="Terra.dateTimePicker.timeClarification.button.standardTime"
+          type="button"
+          variant="emphasis"
+        />
+      </div>
+    </div>
+  </AbstractModal>
+  <Button
+    className="button-offset button-offset-hidden"
+    isBlock={false}
+    isCompact={true}
+    isDisabled={false}
+    isIconOnly={false}
+    isReversed={false}
+    onClick={[MockFunction]}
+    text=""
+    type="button"
+    variant="neutral"
+  />
+</div>
 `;
 
 exports[`should render a disabled time clarification 1`] = `
-<TimeClarification
-  disabled={true}
-  isOffsetButtonHidden={true}
-  isOpen={true}
-  onDaylightSavingButtonClick={[MockFunction]}
-  onOffsetButtonClick={[MockFunction]}
-  onRequestClose={[MockFunction]}
-  onStandardTimeButtonClick={[MockFunction]}
-  releaseFocus={[MockFunction]}
-  requestFocus={[MockFunction]}
-/>
+<div>
+  <AbstractModal
+    ariaLabel="Time Clarification"
+    classNameModal="time-clarification"
+    classNameOverlay={null}
+    closeOnEsc={false}
+    closeOnOutsideClick={false}
+    isFocused={true}
+    isFullscreen={false}
+    isOpen={true}
+    onRequestClose={[MockFunction]}
+    role="dialog"
+    rootSelector="[data-terra-base]"
+    zIndex="9000"
+  >
+    <div>
+      <header
+        className="header"
+      >
+        <h1
+          className="title"
+        >
+          Terra.dateTimePicker.timeClarification.title
+        </h1>
+      </header>
+      <div
+        className="body"
+      >
+        <p>
+          Terra.dateTimePicker.timeClarification.message
+        </p>
+      </div>
+      <div
+        className="buttons"
+      >
+        <Button
+          className="button-daylight"
+          isBlock={false}
+          isCompact={false}
+          isDisabled={false}
+          isIconOnly={false}
+          isReversed={false}
+          onClick={[Function]}
+          text="Terra.dateTimePicker.timeClarification.button.daylightSaving"
+          type="button"
+          variant="emphasis"
+        />
+        <Button
+          className="button-standard"
+          isBlock={false}
+          isCompact={false}
+          isDisabled={false}
+          isIconOnly={false}
+          isReversed={false}
+          onClick={[Function]}
+          text="Terra.dateTimePicker.timeClarification.button.standardTime"
+          type="button"
+          variant="emphasis"
+        />
+      </div>
+    </div>
+  </AbstractModal>
+  <Button
+    className="button-offset button-offset-hidden"
+    isBlock={false}
+    isCompact={true}
+    isDisabled={true}
+    isIconOnly={false}
+    isReversed={false}
+    onClick={[MockFunction]}
+    text=""
+    type="button"
+    variant="neutral"
+  />
+</div>
 `;
