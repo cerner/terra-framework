@@ -20,7 +20,17 @@
 
   .extension-count {
     position: absolute;
-    left: 70%;
-    top: 10%;
+    right: 4px;
+    top: 4px;
+  }
+
+  .extension-image {
+    height: 14px;
+    overflow: hidden;
+    width: 14px;
+
+    & > svg {
+      vertical-align: top;
+    }
   }
 }

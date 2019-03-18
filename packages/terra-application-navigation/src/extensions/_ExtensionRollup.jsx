@@ -47,8 +47,12 @@ const Extension = ({
       onClick={onClick}
       ref={refCallback}
     >
-      <IconTile />
-      {hasChildNotifications && <Count isRollup className={cx('extension-count')} />}
+      <div className={cx('extension-inner')}>
+        <div className={cx('extension-image')}>
+          <IconTile />
+        </div>
+        {hasChildNotifications && <Count isRollup className={cx('extension-count')} />}
+      </div>
     </div>
   );
 };

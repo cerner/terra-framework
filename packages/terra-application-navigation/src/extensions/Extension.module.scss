@@ -10,11 +10,18 @@
     outline: none;
     // overflow: hidden;
     position: relative;
-    width: 3.5725rem;
 
     &:hover {
-      background-color: rgba(0, 0, 0, 0.15);
+      .extension-inner {
+        background-color: rgba(0, 0, 0, 0.15);
+        border-radius: 100%;
+      }
     }
+  }
+
+  .extension-inner {
+    padding: 8px;
+    position: relative;
   }
 
   .extension-row {
@@ -39,7 +46,13 @@
   }
 
   .extension-image {
-    padding-right: 10px;
+    height: 14px;
+    overflow: hidden;
+    width: 14px;
+
+    & > svg {
+      vertical-align: top;
+    }
   }
 
   .extension-image,
@@ -55,7 +68,7 @@
   .extension-count {
     margin-left: 10px;
     position: absolute;
-    right: 0;
-    top: 10%;
+    right: -1px;
+    top: -2px;
   }
 }

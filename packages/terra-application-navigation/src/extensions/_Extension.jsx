@@ -77,8 +77,12 @@ const createIconStyle = (notificationCount, onClick, keyDown, refCallback, image
     onClick={onClick}
     ref={refCallback}
   >
-    {image}
-    {notificationCount > 0 && <Count value={notificationCount} className={cx('extension-count')} />}
+    <div className={cx('extension-inner')}>
+      <div className={cx('extension-image')}>
+        {image}
+      </div>
+      {notificationCount > 0 && <Count value={notificationCount} className={cx('extension-count')} />}
+    </div>
   </div>
 );
 
