@@ -23,10 +23,7 @@ const propTypes = {
    * A function to be executed upon selection of the Header's toggle button.
    */
   onMenuToggle: PropTypes.func,
-  /**
-   * Configuration values for the ApplicationName component.
-   */
-  nameConfig: nameConfigPropType,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   /**
    * Array of navigation items to render within the Header.
    */
@@ -129,13 +126,12 @@ class Header extends React.Component {
   }
 
   renderAppName() {
-    const { nameConfig } = this.props;
+    const { title } = this.props;
 
-    if (nameConfig && (nameConfig.accessory || nameConfig.title)) {
+    if (title) {
       return (
         <div className={cx('application-name-container')}>
-          {nameConfig.accessory && <div className={cx('application-name-accessory')}>{nameConfig.accessory}</div>}
-          {nameConfig.title && <div className={cx('application-name-title')}>{nameConfig.title}</div>}
+          {typeof title === 'string' ? <div className={cx('application-name-title')}>{title}</div> : title}
         </div>
       );
     }

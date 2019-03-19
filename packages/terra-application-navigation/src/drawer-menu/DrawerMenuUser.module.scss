@@ -4,26 +4,41 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    padding: 20px;
+    padding: 3.286rem 1.4285714286rem 2.1428571429rem; // TODO THEME
 
-    .avatar,
     .name,
     .detail {
       flex: 1 1 auto;
     }
   
     .avatar-container {
-      margin-bottom: 12px;
+      align-items: center;
+      display: flex;
+      height: 96px;
+      justify-content: center;
+      margin-bottom: 1.143rem; // TODO THEME
+      position: relative;
+      width: 96px;
     }
   
+    .avatar-outline {
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }
+
     .avatar {
-      font-size: 3rem;
+      height: 90px;
+      width: 90px;
     }
 
     .name {
-      color: #fff;  
-      font-size: 18px;
+      color: #fff;
+      font-size: 1.2857142857rem;
       font-weight: 500;
+      line-height: 1.2857142857rem;
       overflow-wrap: break-word;
       text-align: center;
       white-space: normal;
@@ -33,7 +48,9 @@
   
     .detail {
       color: rgba(255, 255, 255, 0.7);  
-      font-size: 14x;
+      font-size: 1rem;
+      line-height: 1rem;
+      margin-top: 0.2142857143rem;
       overflow-wrap: break-word;
       text-align: center;
       white-space: normal;

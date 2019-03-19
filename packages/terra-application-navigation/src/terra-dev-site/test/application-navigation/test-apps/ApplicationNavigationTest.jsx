@@ -46,15 +46,6 @@ const navigationItems = [{
   text: 'Page 7Page 7Page 7',
 }];
 
-/**
- * The data provided for nameConfig will be visible in the ApplicationLayout's header, as well
- * as in any menus at the tiny and small breakpoints.
- */
-const nameConfig = Object.freeze({
-  title: 'Test Application',
-  accessory: <Image variant="rounded" src="https://github.com/cerner/terra-core/raw/master/terra.png" height="26px" width="26px" />,
-});
-
 const userConfig = {
   name: 'Test User',
   detail: 'Super Cool Person',
@@ -223,7 +214,7 @@ class ApplicationNavigationTest extends React.Component {
 
     return (
       <ApplicationNavigation
-        nameConfig={nameConfig}
+        title="Test Application"
         extensionConfig={extensionConfig}
         userConfig={!hideUser ? userConfig : undefined}
         menuHeroConfig={!hideHero ? menuHeroConfig : undefined}

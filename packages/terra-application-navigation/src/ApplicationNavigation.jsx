@@ -10,7 +10,7 @@ import Header from './header/_Header';
 import DrawerMenu from './drawer-menu/_DrawerMenu';
 import { shouldRenderCompactNavigation } from './utils/helpers';
 import {
-  userConfigPropType, heroConfigPropType, navigationItemsPropType, navigationAlignmentPropType, extensionConfigPropType, nameConfigPropType,
+  userConfigPropType, heroConfigPropType, navigationItemsPropType, navigationAlignmentPropType, extensionConfigPropType,
 } from './utils/propTypes';
 
 import styles from './ApplicationNavigation.module.scss';
@@ -25,7 +25,7 @@ const createExtensions = (extensionConfig, activeBreakpoint) => (
 );
 
 const propTypes = {
-  nameConfig: nameConfigPropType,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   extensionConfig: extensionConfigPropType,
   userConfig: userConfigPropType,
   menuHeroConfig: heroConfigPropType,
@@ -151,7 +151,7 @@ class ApplicationNavigation extends React.Component {
 
   render() {
     const {
-      nameConfig, navigationAlignment, navigationItems, extensionConfig, activeBreakpoint, children, activeNavigationItemKey, onSelectNavigationItem, userConfig, utilityHeroConfig, onSelectSettings, onSelectHelp, onSelectLogout,
+      title, navigationAlignment, navigationItems, extensionConfig, activeBreakpoint, children, activeNavigationItemKey, onSelectNavigationItem, userConfig, utilityHeroConfig, onSelectSettings, onSelectHelp, onSelectLogout,
     } = this.props;
     const { drawerMenuIsOpen, extensionIsOpen } = this.state;
 
@@ -197,7 +197,7 @@ class ApplicationNavigation extends React.Component {
         >
           <Header
             activeBreakpoint={activeBreakpoint}
-            nameConfig={nameConfig}
+            title={title}
             extensions={extensions}
             navigationItems={navigationItems}
             navigationItemAlignment={navigationAlignment}
