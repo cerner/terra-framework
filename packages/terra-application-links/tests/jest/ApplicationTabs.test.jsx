@@ -4,6 +4,7 @@ import { IntlProvider } from 'react-intl';
 import ApplicationTabs from '../../src/tabs/ApplicationTabs';
 import messages from '../../translations/en-US.json';
 import testLinkConfig from './testLinkConfig';
+import testLinksWithIconsConfig from './testLinksWithIconsConfig';
 
 const locale = 'en-US';
 
@@ -28,10 +29,10 @@ it('should render ApplicationTabs with links and alignment', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-it('should render ApplicationTabs with links and alignment', () => {
+it('should render ApplicationTabs with icons', () => {
   const applicationTabs = (
     <IntlProvider locale={locale} messages={messages}>
-      <ApplicationTabs links={testLinkConfig} alignment="start" />
+      <ApplicationTabs links={testLinksWithIconsConfig} />
     </IntlProvider>
   );
   const wrapper = shallow(applicationTabs);
