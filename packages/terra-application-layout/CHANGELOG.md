@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Changed demo mock colors to be themable
+
 ### Added
 * Support for icons in the primary navigation items
 

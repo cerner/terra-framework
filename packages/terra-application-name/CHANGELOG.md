@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Updated doc site example images with alt text to correct Section 508 warnings
+* Changed demo mock background colors to be themable
 
 3.2.0 - (February 26, 2019)
 ------------------
