@@ -138,6 +138,7 @@ class ApplicationTab extends Component {
       'tab-inner',
       { 'tab-inner-with-icon': hasIcon },
     ]);
+    const ChildElement = hasIcon ? 'div' : 'span';
 
     return (
       <button
@@ -152,10 +153,10 @@ class ApplicationTab extends Component {
         onKeyUp={this.handleKeyUp}
         onBlur={this.handleOnBlur}
       >
-        <div className={childrenClassNames}>
+        <ChildElement className={childrenClassNames}>
           {hasIcon && <span className={cx(['tab-icon'])}>{icon}</span>}
           <span className={cx(['tab-label'])}>{text}</span>
-        </div>
+        </ChildElement>
       </button>
     );
   }
