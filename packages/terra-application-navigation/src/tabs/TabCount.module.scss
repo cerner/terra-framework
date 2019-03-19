@@ -1,0 +1,53 @@
+@keyframes pulse {
+  0%   {
+    transform: scale(1.0);
+  }
+  25%  {
+    transform: scale(1.1);
+  }
+  50%  {
+    transform: scale(1.2);
+  }
+  50%  {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}
+
+[data-count-pulse='true'] {
+  animation: pulse 0.5s 1;
+}
+
+:local {
+  .count {
+    background-color: #ffb200;
+    border-radius: 30px;
+    color: #000;
+    flex: 0 0 auto;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 17px;
+    margin: 0;
+  }
+
+  .is-inline {
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+    font-size: 14px;
+    padding: 1px 7px;
+    flex: 0 0 auto;
+  }
+
+  .one {
+    width: 20px;
+  }
+  .two {
+    width: 25px;
+  }
+  .plus {
+    width: 30px;
+  }
+}

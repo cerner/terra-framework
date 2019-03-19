@@ -31,6 +31,10 @@ const propTypes = {
      * The display text for the tab.
      */
     noficationCount: PropTypes.number,
+    /**
+     * The display text for the tab.
+     */
+    hasNotifications: PropTypes.bool,
   })),
   /**
    * A string identifying the currently active tab.
@@ -103,13 +107,9 @@ class Tabs extends React.Component {
     this.childWidths[index] = ref.getBoundingClientRect().width;
   }
 
-  setMenuRef(ref, isVisible) {
+  setMenuRef(ref) {
     if (!ref) { return; }
-    if (isVisible) {
-      this.menuWidth = ref.getBoundingClientRect().width;
-    } else {
-      this.moreWidth = ref.getBoundingClientRect().width;
-    }
+    this.moreWidth = ref.getBoundingClientRect().width;
   }
 
   resetCalculations() {
@@ -121,82 +121,19 @@ class Tabs extends React.Component {
 
   handleResize(width) {
     // Calculate hide index
-    const { tabs, activeTabKey } = this.props;
+    const { tabs } = this.props;
     const childrenCount = tabs.length;
-    const availableWidth = width;
-
+    const moreWidth = width - this.moreWidth;
     let newHideIndex = childrenCount;
     let isMenuHidden = true;
-    if (availableWidth <= this.menuWidth) {
-      // only menu visible
-      newHideIndex = 0;
-      isMenuHidden = false;
-    } else {
-      // total width
-      const totalWidth = this.childWidths.reduce((total, newWidth) => total + newWidth, 0);
-      if (totalWidth <= availableWidth) {
-        // all visible
-        newHideIndex = childrenCount;
-        isMenuHidden = true;
-      } else if (activeTabKey) {
-        // not all visible
-        let currentActiveIndex = -1;
-        for (let i = 0; i < childrenCount; i += 1) {
-          if (tabs[i].key === activeTabKey) {
-            currentActiveIndex = i;
-            break;
-          }
-        }
 
-        if (currentActiveIndex >= 0) {
-          const moreWidth = availableWidth - this.moreWidth;
-          const menuWidth = availableWidth - this.menuWidth;
-
-          let moreIndex = childrenCount;
-          let moreHidden = true;
-
-          let menuIndex = childrenCount;
-          let menuHidden = true;
-
-          let calcMinWidth = 0;
-          for (let i = 0; i < childrenCount; i += 1) {
-            calcMinWidth += this.childWidths[i];
-            if (calcMinWidth > moreWidth) {
-              moreIndex = i;
-              moreHidden = false;
-              break;
-            }
-          }
-
-          calcMinWidth = 0;
-          for (let i = 0; i < childrenCount; i += 1) {
-            calcMinWidth += this.childWidths[i];
-            if (calcMinWidth > menuWidth) {
-              menuIndex = i;
-              menuHidden = false;
-              break;
-            }
-          }
-
-          if (currentActiveIndex < moreIndex) {
-            newHideIndex = moreIndex;
-            isMenuHidden = moreHidden;
-          } else {
-            newHideIndex = menuIndex;
-            isMenuHidden = menuHidden;
-          }
-        } else {
-          // no selected index, use standard menu
-          let calcMinWidth = 0;
-          for (let i = 0; i < childrenCount; i += 1) {
-            calcMinWidth += this.childWidths[i];
-            if (calcMinWidth > availableWidth - this.moreWidth) {
-              newHideIndex = i;
-              isMenuHidden = false;
-              break;
-            }
-          }
-        }
+    let calcMinWidth = 0;
+    for (let i = 0; i < childrenCount; i += 1) {
+      calcMinWidth += this.childWidths[i];
+      if (calcMinWidth > moreWidth) {
+        newHideIndex = i;
+        isMenuHidden = false;
+        break;
       }
     }
 
@@ -231,6 +168,7 @@ class Tabs extends React.Component {
         },
         isActive: tab.key === activeTabKey,
         notificationCount: tab.notificationCount,
+        hasCount: tab.hasNotifications,
       };
 
       if (this.hiddenStartIndex < 0) {

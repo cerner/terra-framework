@@ -6,8 +6,6 @@
     height: 100%;
     justify-content: center;
     overflow: hidden;
-    padding-left: var(--terra-application-navigation-tabs-wrapper-padding-left, 1.4285714286rem);
-    padding-right: var(--terra-application-navigation-tabs-wrapper-padding-right, 1.4285714286rem);
     position: relative;
     width: 100%;
   }
@@ -18,9 +16,7 @@
     flex-wrap: nowrap;
     height: 100%;
     overflow: visible;
-    // position: relative;
     width: 100%;
-    // width: calc(100% - var(--terra-application-navigation-tabs-container-padding-left, 1.4285714286rem) - var(--terra-application-navigation-tabs-container-padding-right, 1.4285714286rem));
 
     &:focus {
       outline: none;
@@ -79,18 +75,7 @@
     background-size: var(--terra-application-navigation-tabs-tab-background-size, 0 5px);
     background-position: var(--terra-application-navigation-tabs-tab-background-position, top left);
     background-repeat: no-repeat;
-    min-width: 10rem;
     overflow: hidden;
-
-    .tab-inner {
-      min-width: 10rem;
-    }
-  }
-
-  .tab {
-    .tab-inner {
-      max-width: 15rem;
-    }
   }
 
   .tab-menu-display {
@@ -114,9 +99,7 @@
     font-size: var(--terra-application-navigation-tabs-tab-font-size, 0.9285714rem);
     font-weight: var(--terra-application-navigation-tabs-tab-font-weight, normal);
     height: 100%;
-    line-height: var(--terra-application-navigation-tabs-tab-line-height, 1.4);
     margin: 0;
-    // max-width: 100%;
     outline: none;
     padding: 0;
     position: relative;
@@ -144,10 +127,6 @@
 
     .tab-inner {
       align-items: center;
-      // background-color: var(--terra-application-navigation-tabs-tab-background-color, transparent);
-      // background-position: var(--terra-application-navigation-tabs-tab-background-position, top left);
-      // background-repeat: no-repeat;
-      // background-size: var(--terra-application-navigation-tabs-tab-background-size, 0 5px);
       box-shadow: var(--terra-application-navigation-tabs-tab-box-shadow);
       box-sizing: border-box;
       display: flex;
@@ -156,27 +135,28 @@
       justify-content: center;
       left: var(--terra-application-navigation-tabs-tab-position-left, 2px);
       overflow: hidden;
-      padding-left: var(--terra-application-navigation-tabs-tab-padding-left, 1.0715rem);
-      padding-right: var(--terra-application-navigation-tabs-tab-padding-right, 1.0715rem);
-      // position: absolute;
       top: 0;
       transition-duration: var(--terra-application-navigation-tabs-tab-transition-duration, 0s);
       transition-property: background-size;
       transition-timing-function: var(--terra-application-navigation-tabs-tab-transition-timing-function, ease);
-      // width: calc(100% - var(--terra-application-navigation-tabs-tab-divider-before-width, 2px));
-
-      // max-width: 100%;
     }
 
     .tab-label {
       display: block;
       max-width: 100%;
       overflow: hidden;
-      position: relative; // remove IE10 active click transformation
+      position: absolute; // remove IE10 active click transformation
       text-overflow: ellipsis;
       white-space: nowrap;
       word-break: normal;
       word-wrap: normal;
+    }
+
+    .tab-label-bold {
+      font-weight: 500;
+      display: block;
+      top: 0px;
+      visibility: hidden;
     }
 
     &:hover,
@@ -187,6 +167,31 @@
     &[aria-current='true'] {
       font-weight: var(--terra-application-navigation-tabs-tab-selected-font-weight, 500);
       text-shadow: var(--terra-application-navigation-tabs-tab-selected-text-shadow, none);
+
+
+      .has-count {
+        .tab-label {
+          left: 45px;
+        }
+      }
+    
+      .has-one-digit {
+        .tab-label {
+          left: 40px;
+        }
+      }
+    
+      .has-two-digit {
+        .tab-label {
+          left: 35px;
+        }
+      }
+    
+      .has-plus-digit {
+        .tab-label {
+          left: 30px;
+        }
+      }
 
       &::before {
         background-color: var(--terra-application-navigation-tabs-tab-selected-divider-before-background-color, #0079be);
@@ -225,10 +230,6 @@
     pointer-events: none;
     // repeats the styling from the :before psuedo selector above
     width: var(--terra-application-navigation-tabs-tab-divider-before-width, 2px);
-  }
-
-  .tab-menu-display.is-hidden {
-    display: none;
   }
 
   .collapsed-tab {
@@ -278,7 +279,6 @@
         content: '';
         height: 100%;
         left: 0;
-        // position: absolute;
         top: 0;
         width: 100%;
         z-index: -1;
@@ -311,5 +311,39 @@
     &.bounded-width {
       width: 100%;
     }
+  }
+
+  .tab,
+  .tab-menu-display {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .tab-count {
+    position: absolute;
+    right: 30px;
+  }
+
+  .tab-count-inline {
+    flex: 0 0 auto;
+  }
+
+  .has-count {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .has-one-digit {
+    padding-left: 40px;
+    padding-right: 57px;
+  }
+
+  .has-two-digit {
+    padding-left: 35px;
+    padding-right: 62px;
+  }
+
+  .has-plus-digit {
+    padding-right: 67px;
   }
 }

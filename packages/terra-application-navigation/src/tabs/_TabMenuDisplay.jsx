@@ -103,7 +103,6 @@ class TabMenuDisplay extends React.Component {
 
     const displayClassNames = cx([
       'tab-menu-display',
-      { 'is-hidden': isHidden },
       { 'is-active': this.state.active },
       { 'is-focused': this.state.focused },
       customProps.className,

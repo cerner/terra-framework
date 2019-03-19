@@ -101,7 +101,6 @@ class TabMenu extends React.Component {
   createDisplay(popup) {
     const { intl } = this.context;
     const moreText = intl.formatMessage({ id: 'Terra.application.tabs.more' });
-    let text = moreText;
     let isSelected = false;
 
     const childArray = this.props.children;
@@ -110,35 +109,24 @@ class TabMenu extends React.Component {
       const child = childArray[i];
       if (child.props.isActive) {
         // eslint-disable-next-line prefer-destructuring
-        text = child.props.text;
         isSelected = true;
         break;
       }
     }
 
     return (
-      <React.Fragment>
-        <TabMenuDisplay
-          onClick={this.handleOnClick}
-          onKeyDown={this.handleOnKeyDown}
-          popup={popup}
-          refCallback={(node) => { this.setTargetRef(node); this.props.menuRefCallback(node, true); }}
-          isHidden={this.props.isHidden}
-          text={text}
-          isSelected={isSelected}
-          key="application-tab-more"
-          data-application-tabs-more
-          showNotificationRollup={this.props.showNotificationRollup}
-        />
-        <TabMenuDisplay
-          refCallback={(node) => { this.props.menuRefCallback(node, false); }}
-          text={moreText}
-          key="application-tab-hidden"
-          style={{ height: '0', position: 'absolute', top: '100%' }}
-          aria-hidden="true"
-          showNotificationRollup={this.props.showNotificationRollup}
-        />
-      </React.Fragment>
+      <TabMenuDisplay
+        onClick={this.handleOnClick}
+        onKeyDown={this.handleOnKeyDown}
+        popup={popup}
+        refCallback={(node) => { this.setTargetRef(node); this.props.menuRefCallback(node, true); }}
+        isHidden={this.props.isHidden}
+        text={moreText}
+        isSelected={isSelected}
+        key="application-tab-more"
+        data-application-tabs-more
+        showNotificationRollup={this.props.showNotificationRollup}
+      />
     );
   }
 

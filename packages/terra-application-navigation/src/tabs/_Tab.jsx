@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { KEY_SPACE, KEY_RETURN, KEY_TAB } from 'keycode-js';
-import Count from '../count/_Count';
+import Count from './_TabCount';
 import styles from './Tabs.module.scss';
 
 const cx = classNames.bind(styles);
@@ -30,6 +30,7 @@ const propTypes = {
    */
   isActive: PropTypes.bool,
   refCallback: PropTypes.func,
+  hasCount: PropTypes.bool,
 };
 
 class Tab extends React.Component {
@@ -40,6 +41,28 @@ class Tab extends React.Component {
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleKeyUp = this.handleKeyUp.bind(this);
     this.handleOnBlur = this.handleOnBlur.bind(this);
+    this.setNode = this.setNode.bind(this);
+    this.listener = this.listener.bind(this);
+  }
+
+  componentDidMount() {
+    if (this.node) {
+      this.node.addEventListener('animationend', this.listener);
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.notificationCount > prevProps.notificationCount) {
+      this.node.setAttribute('data-count-pulse', 'true');
+    }
+  }
+
+  setNode(node) {
+    this.node = node;
+  }
+
+  listener() {
+    this.node.setAttribute('data-count-pulse', 'false');
   }
 
   handleOnBlur() {
@@ -85,10 +108,28 @@ class Tab extends React.Component {
     const {
       isCollapsed,
       text,
+      hasCount,
       isActive,
       refCallback,
       notificationCount,
     } = this.props;
+
+    // if props change add animations.
+
+    let countClass = hasCount && !isCollapsed ? 'has-count' : null;
+    let numberOfDigits = null;
+    if (notificationCount > 0 && !isCollapsed) {
+      if (notificationCount < 10) {
+        countClass = 'has-one-digit';
+        numberOfDigits = 'one';
+      } else if (notificationCount < 100) {
+        countClass = 'has-two-digit';
+        numberOfDigits = 'two';
+      } else {
+        countClass = 'has-plus-digit';
+        numberOfDigits = 'plus';
+      }
+    }
 
     const tabClassNames = cx([
       { tab: !isCollapsed },
@@ -96,6 +137,7 @@ class Tab extends React.Component {
       { 'is-disabled': isActive && !isCollapsed },
       { 'is-active': this.state.active },
       { 'is-focused': this.state.focused },
+      countClass,
     ]);
     const tabAttr = { 'aria-current': isActive };
 
@@ -118,7 +160,8 @@ class Tab extends React.Component {
       >
         <span className={cx(['tab-inner'])}>
           <span className={cx(['tab-label'])}>{text}</span>
-          {notificationCount > 0 && <Count value={notificationCount} isInline={isCollapsed} />}
+          {!isCollapsed && <span className={cx(['tab-label-bold'])}>{text}</span>}
+          {notificationCount > 0 && <span className={cx([{ 'tab-count': !isCollapsed, 'tab-count-inline': isCollapsed }])}><Count refCallback={this.setNode} value={notificationCount} isInline={isCollapsed} tabDigits={numberOfDigits} /></span>}
         </span>
       </ComponentClass>
     );

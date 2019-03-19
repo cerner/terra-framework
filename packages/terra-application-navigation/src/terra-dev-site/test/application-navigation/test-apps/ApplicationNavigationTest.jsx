@@ -24,13 +24,16 @@ const navigationItems = [{
   key: '/page_1',
   text: 'Page 1',
   notificationCount: 1000,
+  hasNotifications: true,
 }, {
   key: '/page_2',
   text: 'Page 2',
+  hasNotifications: true,
 }, {
   key: '/page_3',
   text: 'Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3',
   notificationCount: 62,
+  hasNotifications: true,
 }, {
   key: '/page_4',
   text: 'Page 4',
@@ -38,6 +41,37 @@ const navigationItems = [{
   key: '/page_5',
   text: 'Page 5',
   notificationCount: 5,
+  hasNotifications: true,
+}, {
+  key: '/page_6',
+  text: 'Page 6',
+}, {
+  key: '/page_7',
+  text: 'Page 7Page 7Page 7',
+}];
+
+const navigationItems2 = [{
+  key: '/page_1',
+  text: 'Page 1',
+  notificationCount: 1000,
+  hasNotifications: true,
+}, {
+  key: '/page_2',
+  text: 'Page 2',
+  hasNotifications: true,
+}, {
+  key: '/page_3',
+  text: 'Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3',
+  notificationCount: 65,
+  hasNotifications: true,
+}, {
+  key: '/page_4',
+  text: 'Page 4',
+}, {
+  key: '/page_5',
+  text: 'Page 5',
+  notificationCount: 6,
+  hasNotifications: true,
 }, {
   key: '/page_6',
   text: 'Page 6',
@@ -91,6 +125,7 @@ class ApplicationNavigationTest extends React.Component {
 
     this.state = {
       activeNavigationItemKey: undefined,
+      useItems2: false,
     };
   }
 
@@ -174,7 +209,11 @@ class ApplicationNavigationTest extends React.Component {
         {
           image: <IconSearch />,
           metaData: { key: 'Search' },
-          onSelect: this.handleExtensionSelect,
+          onSelect: () => {
+            this.setState(prevState => ({
+              useItems2: !prevState.useItems2,
+            }));
+          },
           text: 'Search',
         },
         {
@@ -212,6 +251,11 @@ class ApplicationNavigationTest extends React.Component {
       ],
     };
 
+    let itemToUse = navigationItems;
+    if (this.state.useItems2) {
+      itemToUse = navigationItems2;
+    }
+
     return (
       <ApplicationNavigation
         title="Test Application"
@@ -219,7 +263,7 @@ class ApplicationNavigationTest extends React.Component {
         userConfig={!hideUser ? userConfig : undefined}
         menuHeroConfig={!hideHero ? menuHeroConfig : undefined}
         utilityHeroConfig={!hideHero ? utilityHeroConfig : undefined}
-        navigationItems={!hideNavigationItems ? navigationItems : undefined}
+        navigationItems={!hideNavigationItems ? itemToUse : undefined}
         activeNavigationItemKey={activeNavigationItem.key}
         onSelectNavigationItem={!hideNavigationItems ? this.handleNavigationItemSelection : null}
         onSelectSettings={!hideSettings ? this.handleSettingsSelection : undefined}
