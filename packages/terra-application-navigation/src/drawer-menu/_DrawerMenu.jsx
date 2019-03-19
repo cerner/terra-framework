@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import Button from 'terra-button';
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import IconUnknown from 'terra-icon/lib/icon/IconUnknown';
 
 import DrawerMenuListItem from './_DrawerMenuListItem';
 import DrawerMenuUser from './_DrawerMenuUser';
+import DrawerMenuFooterButton from './_DrawerMenuFooterButton';
 import { userConfigPropType, heroConfigPropType, navigationItemsPropType } from '../utils/propTypes';
 
 import styles from './DrawerMenu.module.scss';
@@ -45,7 +45,7 @@ const DrawerMenu = ({
 
   let logout;
   if (onSelectLogout) {
-    logout = <Button onClick={onSelectLogout} isBlock text="Logout" />;
+    logout = <DrawerMenuFooterButton onClick={onSelectLogout} text="Logout" />;
   }
 
   return (
