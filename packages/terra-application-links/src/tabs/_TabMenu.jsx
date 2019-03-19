@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Popup from 'terra-popup';
 import { matchPath } from 'react-router-dom';
 import KeyCode from 'keycode-js';
-import IconMore from 'terra-icon/lib/icon/IconEllipses';
 import TabMenuList from './_TabMenuList';
 import TabMenuDisplay from './_TabMenuDisplay';
 
