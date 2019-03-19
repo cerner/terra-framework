@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom';
 import 'terra-base/lib/baseStyles';
 import Tab from './_Tab';
 import TabMenu from './_TabMenu';
+import CollapsedTab from './_CollapsedTab';
 import styles from './ApplicationTabs.module.scss';
 
 const cx = classNames.bind(styles);
@@ -31,6 +32,8 @@ const propTypes = {
      * The display text for the link.
      */
     text: PropTypes.string.isRequired,
+
+    icon: PropTypes.icon,
   })),
   /**
    * The location as provided by the `withRouter()` HOC.
@@ -49,6 +52,8 @@ const propTypes = {
    * within a StaticRouter.
    */
   staticContext: PropTypes.object,
+
+  hasIcons: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -144,11 +149,12 @@ class ApplicationTabs extends React.Component {
       match,
       history,
       staticContext,
+      hasIcons,
       ...customProps
     } = this.props;
 
-    const visibleChildren = [];
-    const hiddenChildren = [];
+    const visibleTabs = [];
+    const collapsedTabs = [];
 
     links.forEach((link, index) => {
       const tabProps = {
@@ -157,16 +163,18 @@ class ApplicationTabs extends React.Component {
         text: link.text,
         key: link.path,
         externalLink: link.externalLink,
+        icon: link.icon,
         location,
         history,
       };
+
       if (this.hiddenStartIndex < 0) {
-        visibleChildren.push(<Tab {...tabProps} />);
-        hiddenChildren.push(<Tab {...tabProps} isCollapsed />);
+        visibleTabs.push(<Tab {...tabProps} />);
+        collapsedTabs.push(<CollapsedTab {...tabProps} />);
       } else if (index < this.hiddenStartIndex) {
-        visibleChildren.push(<Tab {...tabProps} />);
+        visibleTabs.push(<Tab {...tabProps} />);
       } else {
-        hiddenChildren.push(<Tab {...tabProps} isCollapsed />);
+        collapsedTabs.push(<CollapsedTab {...tabProps} />);
       }
     });
 
@@ -177,9 +185,9 @@ class ApplicationTabs extends React.Component {
           role="tablist"
           ref={this.setContainerNode}
         >
-          {visibleChildren}
-          <TabMenu location={location} isHidden={this.menuHidden}>
-            {hiddenChildren}
+          {visibleTabs}
+          <TabMenu location={location} isHidden={this.menuHidden} hasIcons={hasIcons}>
+            {collapsedTabs}
           </TabMenu>
           <div className={cx(['divider-after-last-tab'])} />
         </div>
