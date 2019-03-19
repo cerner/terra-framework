@@ -1,9 +1,13 @@
 import React from 'react';
 import Image from 'terra-image';
+import classNames from 'classnames/bind';
 import ApplicationMenuName from '../../../ApplicationMenuName';
+import demoStyles from './demoStyles.scss';
+
+const cx = classNames.bind(demoStyles);
 
 export default () => (
-  <div style={{ width: '150px', backgroundColor: 'green' }}>
+  <div className={cx(['demo-background-color', 'demo-truncate-width'])}>
     <ApplicationMenuName
       id="wrapping"
       title="Title TitleTitleTitleTitleTitle Title Title Title Title Title"
