@@ -91,7 +91,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.1.0",
     "lerna": "^2.8.0",
-    "link-parent-bin": "^0.2.0",
+    "link-parent-bin": "^1.0.0",
     "markdown-magic": "^0.1.25",
     "raf": "^3.4.0",
     "react": "^16.4.2",
