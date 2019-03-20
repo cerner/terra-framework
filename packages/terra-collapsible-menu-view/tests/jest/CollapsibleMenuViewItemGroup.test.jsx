@@ -1,43 +1,44 @@
 import React from 'react';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { shallowWithIntl } from 'terra-enzyme-intl';
 import CollapsibleMenuViewItemGroup from '../../src/CollapsibleMenuViewItemGroup';
 import CollapsibleMenuViewItem from '../../src/CollapsibleMenuViewItem';
-import intlContexts from './intl-context-setup';
 
 describe('CollapsibleMenuViewItemGroup', () => {
   // Snapshot Tests
   it('should render a default component', () => {
-    const wrapper = shallow(
+    const wrapper = shallowWithIntl(
       (
         <CollapsibleMenuViewItemGroup>
           <CollapsibleMenuViewItem text="Testing" />
           <CollapsibleMenuViewItem text="Testing" />
         </CollapsibleMenuViewItemGroup>
-      ), intlContexts.shallowContext,
+      ),
     );
     expect(wrapper).toMatchSnapshot();
   });
 
   // Props
   it('should merge custom props', () => {
-    const wrapper = shallow(
+    const wrapper = shallowWithIntl(
       (
         <CollapsibleMenuViewItemGroup className="Testing">
           <CollapsibleMenuViewItem text="Testing" />
           <CollapsibleMenuViewItem text="Testing" />
         </CollapsibleMenuViewItemGroup>
-      ), intlContexts.shallowContext,
+      ),
     );
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render a selectable button group', () => {
-    const wrapper = shallow(
+    const wrapper = shallowWithIntl(
       (
         <CollapsibleMenuViewItemGroup selectedKeys={['key1']}>
           <CollapsibleMenuViewItem text="Testing" key="key1" />
           <CollapsibleMenuViewItem text="Testing" key="key2" />
         </CollapsibleMenuViewItemGroup>
-      ), intlContexts.shallowContext,
+      ),
     );
     expect(wrapper).toMatchSnapshot();
   });
@@ -45,7 +46,7 @@ describe('CollapsibleMenuViewItemGroup', () => {
   describe('Collapsible Menu Context', () => {
     it('should render a menu item group when selectable', () => {
       const context = { isCollapsibleMenuItem: true };
-      const wrapper = shallow(
+      const wrapper = shallowWithIntl(
         (
           <CollapsibleMenuViewItemGroup selectedKeys={['key1']}>
             <CollapsibleMenuViewItem text="Testing" key="key1" />
@@ -58,7 +59,7 @@ describe('CollapsibleMenuViewItemGroup', () => {
 
     it('should merge custom props', () => {
       const context = { isCollapsibleMenuItem: true };
-      const wrapper = shallow(
+      const wrapper = shallowWithIntl(
         (
           <CollapsibleMenuViewItemGroup className="Testing">
             <CollapsibleMenuViewItem text="Testing" />
@@ -71,7 +72,7 @@ describe('CollapsibleMenuViewItemGroup', () => {
 
     it('should merge custom props when selectable', () => {
       const context = { isCollapsibleMenuItem: true };
-      const wrapper = shallow(
+      const wrapper = shallowWithIntl(
         (
           <CollapsibleMenuViewItemGroup className="Testing" selectedKeys={['key1']}>
             <CollapsibleMenuViewItem text="Testing" key="key1" />
@@ -84,7 +85,7 @@ describe('CollapsibleMenuViewItemGroup', () => {
 
     it('should render menu items when selectedKeys is not set', () => {
       const context = { isCollapsibleMenuItem: true };
-      const wrapper = shallow(
+      const wrapper = shallowWithIntl(
         (
           <CollapsibleMenuViewItemGroup>
             <CollapsibleMenuViewItem text="Testing" />

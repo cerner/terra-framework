@@ -1,18 +1,10 @@
 import React from 'react';
 import Icon from 'terra-icon/lib/icon/IconFeatured';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { mockIntl } from 'terra-enzyme-intl';
+
 import ApplicationHeader from '../../src/header/_ApplicationHeader';
 import ExtensionsExample from '../../src/terra-dev-site/test/common/ExtensionsExample';
-
-const mockIntl = {
-  formatDate: () => 'mock-date',
-  formatTime: () => 'mock-time',
-  formatRelative: () => 'mock-relative',
-  formatNumber: () => 'mock-relative',
-  formatPlural: () => 'mock-plural',
-  formatMessage: () => 'mock-message',
-  formatHTMLMessage: () => 'mock-html-message',
-  now: () => 'mock-now',
-};
 
 describe('ApplicationHeader', () => {
   it('should render default component', () => {

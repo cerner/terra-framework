@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.3.0 - (March 20, 2019)
+------------------
 ### Changed
 * Updated doc site example images with alt text to correct Section 508 warnings
 * Changed demo mock background colors to be themable
