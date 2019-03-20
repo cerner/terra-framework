@@ -6,7 +6,7 @@ import demoStyles from './demoStyles.scss';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 const ApplicationTabsExample = () => (
-  <div style={demoStyles['demo-header']}>
+  <div className={demoStyles['demo-header']}>
     <ApplicationTabs alignment="center" links={ApplicationLinkConfig} />
   </div>
 );

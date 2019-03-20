@@ -1,3 +1,5 @@
+@import '~terra-breakpoints/lib/media-queries';
+
 :local {
   .application-navbar {
     background-color: var(--terra-application-layout-navbar-background-color, #0079be);
@@ -23,7 +25,11 @@
   }
 
   .application-navbar-with-icons {
-    height: var(--terra-application-layout-navbar-with-icons-height, 5.142857143rem);
+    height: var(--terra-application-layout-navbar-with-icons-mobile-height, 3.5714285714rem);
+
+    @include terra-mq-large-up {
+      height: var(--terra-application-layout-navbar-with-icons-height, 5.142857143rem);
+    }
   }
 
   .navbar-toggle {

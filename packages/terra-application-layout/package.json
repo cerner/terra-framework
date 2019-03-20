@@ -38,6 +38,7 @@
     "terra-application-name": "^3.2.0",
     "terra-application-utility": "^2.4.0",
     "terra-avatar": "^2.0.0",
+    "terra-breakpoints": "^2.3.0",
     "terra-button": "^3.3.0",
     "terra-content-container": "^3.0.0",
     "terra-disclosure-manager": "^4.4.0",

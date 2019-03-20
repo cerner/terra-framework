@@ -1,15 +1,18 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
+import classNames from 'classnames/bind';
 import ApplicationTabs from '../../../tabs/ApplicationTabs';
 import testLinksWithIconsConfig from '../common/testLinksWithIconsConfig';
-import demoStyles from './demoStyles.scss';
+import styles from './demoStyles.scss';
+
+const cx = classNames.bind(styles);
 
 export default () => (
   <MemoryRouter
     initialEntries={testLinksWithIconsConfig.map(link => link.path)}
     initialIndex={0}
   >
-    <div style={demoStyles['demo-header'] + demoStyles['demo-header-with-icons']}>
+    <div className={cx(['demo-header', 'demo-header-with-icons'])}>
       <ApplicationTabs id="test-tabs" links={testLinksWithIconsConfig} />
     </div>
   </MemoryRouter>
