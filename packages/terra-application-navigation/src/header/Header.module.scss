@@ -22,6 +22,10 @@
     }
   }
 
+  .has-icons {
+    height: var(--terra-application-header-has-icon-height, 5.142857143rem);
+  }
+
   .toggle-button-container {
     align-items: center;
     border-right: var(--terra-application-layout-navbar-toggle-border-right, 1px solid rgba(255, 255, 255, 0.17));

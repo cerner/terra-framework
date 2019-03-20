@@ -3,15 +3,11 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { KEY_SPACE, KEY_RETURN, KEY_TAB } from 'keycode-js';
 import Count from './_TabCount';
-import styles from './Tab.module.scss';
+import styles from './CollapsedTab.module.scss';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  /**
-   * Whether or not the tab is collapsed styled and present in the menu.
-   */
-  isCollapsed: PropTypes.bool,
   /**
    * The identifier for the tab.
    */
@@ -24,13 +20,21 @@ const propTypes = {
    * The click callback of the tab.
    */
   onTabClick: PropTypes.func,
+  /**
+   * Boolean indicating whether or not the Tab should render as active.
+   */
   notificationCount: PropTypes.number,
   /**
    * Boolean indicating whether or not the Tab should render as active.
    */
   isActive: PropTypes.bool,
+  /**
+   * Boolean indicating whether or not the Tab should render as active.
+   */
   refCallback: PropTypes.func,
-  hasCount: PropTypes.bool,
+  /**
+   * Boolean indicating whether or not the Tab should render as active.
+   */
   icon: PropTypes.element,
 };
 
@@ -107,45 +111,24 @@ class Tab extends React.Component {
 
   render() {
     const {
-      isCollapsed,
       text,
-      hasCount,
       icon,
       isActive,
       refCallback,
       notificationCount,
     } = this.props;
 
-    let countClass = hasCount ? 'has-count' : null;
-    let numberOfDigits = null;
-    if (notificationCount > 0) {
-      if (notificationCount < 10) {
-        countClass = 'has-one-digit';
-        numberOfDigits = 'one';
-      } else if (notificationCount < 100) {
-        countClass = 'has-two-digit';
-        numberOfDigits = 'two';
-      } else {
-        countClass = 'has-plus-digit';
-        numberOfDigits = 'plus';
-      }
-    }
-
     const tabClassNames = cx([
-      'tab',
-      { 'is-disabled': isActive && !isCollapsed },
+      'collapsed-tab',
       { 'is-active': this.state.active },
       { 'is-focused': this.state.focused },
-      { 'has-icon': !!icon },
-      countClass,
     ]);
     const tabAttr = { 'aria-current': isActive };
 
     return (
-      <button
+      <div
         {...tabAttr}
-        type="button"
-        role="link"
+        role="button"
         tabIndex="0"
         className={tabClassNames}
         onClick={this.handleOnClick}
@@ -154,13 +137,12 @@ class Tab extends React.Component {
         onBlur={this.handleOnBlur}
         ref={refCallback}
       >
-        <span className={cx(['tab-inner'])}>
-          {!!icon && <span className={cx('tab-icon')}>{icon}</span>}
-          <span className={cx(['tab-label'])}>{text}</span>
-          {!isCollapsed && <span className={cx(['tab-label-bold'])}>{text}</span>}
-          {notificationCount > 0 && <span className={cx('tab-count')}><Count refCallback={this.setNode} value={notificationCount} tabDigits={numberOfDigits} /></span>}
+        <span className={cx(['collapsed-inner'])}>
+          {!!icon && <div className={cx(['collapsed-icon'])}>{icon}</div>}
+          <span className={cx(['collapsed-label'])}>{text}</span>
+          {notificationCount > 0 && <span className={cx('collapsed-count')}><Count refCallback={this.setNode} value={notificationCount} isInline /></span>}
         </span>
-      </button>
+      </div>
     );
   }
 }

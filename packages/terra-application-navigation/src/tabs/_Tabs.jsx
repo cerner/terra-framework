@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
 
 import Tab from './_Tab';
+import CollapsedTab from './_CollapsedTab';
 import TabMenu from './_TabMenu';
 import styles from './Tabs.module.scss';
 import { navigationAlignmentPropType } from '../utils/propTypes';
@@ -44,10 +45,12 @@ const propTypes = {
    * A function to be executed upon selection of a tab.
    */
   onTabSelect: PropTypes.func,
+  hasIcons: PropTypes.bool,
 };
 
 const defaultProps = {
   alignment: 'center',
+  hasIcons: false,
   tabs: [],
 };
 
@@ -169,6 +172,7 @@ class Tabs extends React.Component {
         isActive: tab.key === activeTabKey,
         notificationCount: tab.notificationCount,
         hasCount: tab.hasNotifications,
+        icon: tab.icon,
       };
 
       if (this.hiddenStartIndex < 0) {
@@ -176,14 +180,13 @@ class Tabs extends React.Component {
           showNotificationRollup = true;
         }
         visibleChildren.push(<Tab {...tabProps} refCallback={ref => this.setChildRef(ref, index)} />);
-        hiddenChildren.push(<Tab {...tabProps} isCollapsed />);
       } else if (index < this.hiddenStartIndex) {
         visibleChildren.push(<Tab {...tabProps} />);
       } else {
         if (tab.notificationCount > 0) {
           showNotificationRollup = true;
         }
-        hiddenChildren.push(<Tab {...tabProps} isCollapsed />);
+        hiddenChildren.push(<CollapsedTab {...tabProps} />);
       }
     });
 

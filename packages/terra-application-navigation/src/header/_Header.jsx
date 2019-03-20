@@ -139,7 +139,7 @@ class Header extends React.Component {
     return null;
   }
 
-  renderNavigationTabs() {
+  renderNavigationTabs(headerHasAnyIcons) {
     const {
       navigationItems, navigationItemAlignment, activeNavigationItemKey, onSelectNavigationItem,
     } = this.props;
@@ -151,6 +151,7 @@ class Header extends React.Component {
           tabs={navigationItems}
           activeTabKey={activeNavigationItemKey}
           onTabSelect={onSelectNavigationItem}
+          hasIcons={headerHasAnyIcons}
         />
       );
     }
@@ -211,7 +212,10 @@ class Header extends React.Component {
     const {
       activeBreakpoint,
       extensions,
+      navigationItems,
     } = this.props;
+
+    const headerHasAnyIcons = navigationItems.some(({ icon }) => icon);
 
     let headerLayout;
     if (shouldRenderCompactNavigation(activeBreakpoint)) {
@@ -232,7 +236,7 @@ class Header extends React.Component {
       headerLayout = (
         <HeaderLayout
           logo={this.renderAppName()}
-          navigation={this.renderNavigationTabs()}
+          navigation={this.renderNavigationTabs(headerHasAnyIcons)}
           extensions={extensions}
           utilities={this.renderUtilities()}
           skipToContentSelector="[data-terra-application-layout-main]"
@@ -241,7 +245,7 @@ class Header extends React.Component {
     }
 
     return (
-      <div className={cx('application-header')}>
+      <div className={cx(['application-header', { 'has-icons': headerHasAnyIcons }])}>
         {headerLayout}
         {this.renderUtilitiesPopup()}
       </div>

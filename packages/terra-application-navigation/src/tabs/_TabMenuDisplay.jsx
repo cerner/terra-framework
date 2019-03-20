@@ -5,7 +5,7 @@ import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import { KEY_SPACE, KEY_RETURN, KEY_TAB } from 'keycode-js';
 import Count from '../count/_Count';
 
-import styles from './Tabs.module.scss';
+import styles from './Tab.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -34,6 +34,9 @@ const propTypes = {
    * Ref callback for menu display.
    */
   refCallback: PropTypes.func,
+  /**
+   * Ref callback for menu display.
+   */
   showNotificationRollup: PropTypes.bool,
 };
 

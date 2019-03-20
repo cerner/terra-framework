@@ -1,0 +1,67 @@
+:local {
+  .collapsed-tab {
+    background-color: transparent;
+    border: 0;
+    color: var(--terra-application-navigation-tabs-collapsed-color, #1c1f21);
+    cursor: pointer;
+    display: block;
+    font-size: var(--terra-application-navigation-tabs-collapsed-font-size, 1rem);
+    outline: none;
+    padding-bottom: var(--terra-application-navigation-tabs-collapsed-padding-bottom, 0.8225rem);
+    padding-left: var(--terra-application-navigation-tabs-collapsed-padding-left, 1.2143rem);
+    padding-right: var(--terra-application-navigation-tabs-collapsed-padding-right, 0.7143rem);
+    padding-top: var(--terra-application-navigation-tabs-collapsed-padding-top, 0.8225rem);
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    text-overflow: unset;
+    transition-duration: 0;
+    white-space: normal;
+    width: 100%;
+    word-break: break-word;
+    word-wrap: break-word;
+    z-index: 0;
+
+    .collapsed-inner {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    &:hover,
+    &.is-hovered {
+      background-color: var(--terra-application-navigation-tabs-collapsed-hover-background-color, #f5fafe);
+    }
+
+    &[aria-current='true'] {
+      background-color: var(--terra-application-navigation-tabs-collapsed-selected-background-color, #f4f4f4);
+      background-size: 100%;
+      border-left: var(--terra-application-navigation-tabs-collapsed-selected-border-left, 0.5rem solid #007cc3);
+      font-weight: var(--terra-application-navigation-tabs-collapsed-selected-font-weight, 600);
+      padding-left: var(--terra-application-navigation-tabs-collapsed-selected-padding-left, 0.7143rem);
+
+      &::before {
+        background-image: var(--terra-application-navigation-tabs-collapsed-selected-before-background-image);
+        content: '';
+        height: 100%;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+      }
+    }
+
+    &.is-focused,
+    &.is-active.is-focused,
+    &:active.is-focused {
+      background-color: var(--terra-application-navigation-tabs-collapsed-active-focus-background-color);
+      box-shadow: var(--terra-application-navigation-tabs-collapsed-active-focus-box-shadow, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
+      z-index: 5;
+    }
+  }
+
+  .collapsed-count {
+    flex: 0 0 auto;
+  }
+}
