@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+5.6.0 - (March 20, 2019)
+------------------
 ### Changed
 * Updated heading levels in doc site README.md to correct Section 508 errors
 * Update Jest tests to use terra-enzyme-intl
