@@ -10,7 +10,7 @@ import Header from './header/_Header';
 import DrawerMenu from './drawer-menu/_DrawerMenu';
 import { shouldRenderCompactNavigation } from './utils/helpers';
 import {
-  userConfigPropType, heroConfigPropType, navigationItemsPropType, navigationAlignmentPropType, extensionConfigPropType,
+  userConfigPropType, heroConfigPropType, navigationItemsPropType, navigationAlignmentPropType, extensionConfigPropType, utilityItemsPropType,
 } from './utils/propTypes';
 
 import styles from './ApplicationNavigation.module.scss';
@@ -33,10 +33,12 @@ const propTypes = {
   navigationAlignment: navigationAlignmentPropType,
   navigationItems: navigationItemsPropType,
   activeNavigationItemKey: PropTypes.string,
-  onSelectNavigationItem: PropTypes.func,
+  onSelectNavigationItem: PropTypes.func, // eslint-disable-line react/no-unused-prop-types
   onSelectSettings: PropTypes.func,
   onSelectHelp: PropTypes.func,
   onSelectLogout: PropTypes.func,
+  utilityItems: utilityItemsPropType,
+  onSelectUtilityItem: PropTypes.func, // eslint-disable-line react/no-unused-prop-types
   children: PropTypes.node,
   /**
    * @private
@@ -73,6 +75,7 @@ class ApplicationNavigation extends React.Component {
     this.handleSettingsSelection = this.generateMenuClosingCallback('onSelectSettings');
     this.handleHelpSelection = this.generateMenuClosingCallback('onSelectHelp');
     this.handleLogoutSelection = this.generateMenuClosingCallback('onSelectLogout');
+    this.handleUtilityItemSelection = this.generateMenuClosingCallback('onSelectUtilityItem');
 
     this.hideMenu = true;
 
@@ -100,6 +103,10 @@ class ApplicationNavigation extends React.Component {
 
   generateMenuClosingCallback(wrappedFunctionName) {
     return (...args) => {
+      /**
+       * The functions are retrieved from props during each execution to ensure
+       * the most current value is used.
+       */
       const wrappedFunction = this.props[wrappedFunctionName];
 
       if (!wrappedFunction) {
@@ -132,7 +139,7 @@ class ApplicationNavigation extends React.Component {
   renderNavigationMenu() {
     const {
       userConfig, menuHeroConfig, navigationItems, activeNavigationItemKey,
-      onSelectSettings, onSelectHelp, onSelectLogout,
+      onSelectSettings, onSelectHelp, onSelectLogout, utilityItems,
     } = this.props;
 
     return (
@@ -145,13 +152,15 @@ class ApplicationNavigation extends React.Component {
         onSelectSettings={onSelectSettings ? this.handleSettingsSelection : undefined}
         onSelectHelp={onSelectHelp ? this.handleHelpSelection : undefined}
         onSelectLogout={onSelectLogout ? this.handleLogoutSelection : undefined}
+        utilityItems={utilityItems}
+        onSelectUtilityItem={this.handleUtilityItemSelection}
       />
     );
   }
 
   render() {
     const {
-      title, navigationAlignment, navigationItems, extensionConfig, activeBreakpoint, children, activeNavigationItemKey, onSelectNavigationItem, userConfig, utilityHeroConfig, onSelectSettings, onSelectHelp, onSelectLogout,
+      title, navigationAlignment, navigationItems, extensionConfig, activeBreakpoint, children, activeNavigationItemKey, userConfig, utilityHeroConfig, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems,
     } = this.props;
     const { drawerMenuIsOpen, extensionIsOpen } = this.state;
 
@@ -202,13 +211,15 @@ class ApplicationNavigation extends React.Component {
             navigationItems={navigationItems}
             navigationItemAlignment={navigationAlignment}
             activeNavigationItemKey={activeNavigationItemKey}
-            onSelectNavigationItem={onSelectNavigationItem}
+            onSelectNavigationItem={this.handleNavigationItemSelection}
             onMenuToggle={this.handleMenuToggle}
             userConfig={userConfig}
             heroConfig={utilityHeroConfig}
             onSelectSettings={onSelectSettings}
             onSelectHelp={onSelectHelp}
             onSelectLogout={onSelectLogout}
+            utilityItems={utilityItems}
+            onSelectUtilityItem={this.handleUtilityItemSelection}
           />
           <main tabIndex="-1" className={cx('content')} data-terra-application-layout-main>
             <Overlay isRelativeToContainer onRequestClose={event => event.stopPropagation()} isOpen={extensionIsOpen} backgroundStyle="dark" style={{ zIndex: '7000' }} />

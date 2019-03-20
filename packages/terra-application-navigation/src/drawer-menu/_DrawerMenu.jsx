@@ -7,7 +7,9 @@ import IconUnknown from 'terra-icon/lib/icon/IconUnknown';
 import DrawerMenuListItem from './_DrawerMenuListItem';
 import DrawerMenuUser from './_DrawerMenuUser';
 import DrawerMenuFooterButton from './_DrawerMenuFooterButton';
-import { userConfigPropType, heroConfigPropType, navigationItemsPropType } from '../utils/propTypes';
+import {
+  userConfigPropType, heroConfigPropType, navigationItemsPropType, utilityItemsPropType,
+} from '../utils/propTypes';
 
 import styles from './DrawerMenu.module.scss';
 
@@ -22,14 +24,17 @@ const propTypes = {
   onSelectSettings: PropTypes.func,
   onSelectHelp: PropTypes.func,
   onSelectLogout: PropTypes.func,
+  utilityItems: utilityItemsPropType,
+  onSelectUtilityItem: PropTypes.func,
 };
 
 const defaultProps = {
   navigationItems: [],
+  utilityItems: [],
 };
 
 const DrawerMenu = ({
-  userConfig, heroConfig, navigationItems, activeNavigationItemKey, onSelectNavigationItem, onSelectSettings, onSelectHelp, onSelectLogout,
+  userConfig, heroConfig, navigationItems, activeNavigationItemKey, onSelectNavigationItem, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem,
 }) => {
   let hero;
   if (heroConfig) {
@@ -87,6 +92,16 @@ const DrawerMenu = ({
               onSelect={onSelectSettings}
             />
           ) : null}
+          {utilityItems.map(item => (
+            <DrawerMenuListItem
+              key={item.key}
+              text={item.text}
+              icon={item.icon}
+              onSelect={onSelectUtilityItem ? () => {
+                onSelectUtilityItem(item.key);
+              } : undefined}
+            />
+          ))}
         </ul>
       </div>
       <div className={cx('footer')}>

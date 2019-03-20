@@ -16,6 +16,7 @@ const DrawerMenuFooterButton = ({ text, onClick }) => (
     className={cx('drawer-menu-footer-button')}
     type="button"
     onClick={onClick}
+    data-button-show-focus
     onBlur={(event) => {
       event.currentTarget.setAttribute('data-button-show-focus', 'true');
     }}

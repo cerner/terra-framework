@@ -12,6 +12,8 @@ import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
 import IconLightbulb from 'terra-icon/lib/icon/IconLightbulb';
 import IconCalculator from 'terra-icon/lib/icon/IconCalculator';
 import IconTrophy from 'terra-icon/lib/icon/IconTrophy';
+import IconProjects from 'terra-icon/lib/icon/IconProjects';
+import IconSpinner from 'terra-icon/lib/icon/IconSpinner';
 
 import ApplicationNavigation from '../../../../ApplicationNavigation';
 import ContentComponent from './ContentComponent';
@@ -97,6 +99,16 @@ const utilityHeroConfig = {
   removeContainerPadding: false,
 };
 
+const utilityItems = [{
+  key: 'Custom Utility 1',
+  text: 'Custom Utility 1',
+  icon: <IconProjects />,
+}, {
+  key: 'Custom Utility 2',
+  text: 'Custom Utility 2',
+  icon: <IconSpinner />,
+}];
+
 class ApplicationNavigationTest extends React.Component {
   static getActiveNavigationItem(location) {
     for (let i = 0, numberOfNavigationItems = navigationItems.length; i < numberOfNavigationItems; i += 1) {
@@ -122,6 +134,7 @@ class ApplicationNavigationTest extends React.Component {
     this.handleSettingsSelection = this.handleSettingsSelection.bind(this);
     this.handleHelpSelection = this.handleHelpSelection.bind(this);
     this.handleLogoutSelection = this.handleLogoutSelection.bind(this);
+    this.handleCustomUtilitySelection = this.handleCustomUtilitySelection.bind(this);
 
     this.state = {
       activeNavigationItemKey: undefined,
@@ -184,6 +197,19 @@ class ApplicationNavigationTest extends React.Component {
       content: {
         key: 'logout-component',
         component: <DisclosureComponent text="Logout" />,
+      },
+    });
+  }
+
+  handleCustomUtilitySelection(utilityItemKey) {
+    const { disclosureManager } = this.props;
+
+    disclosureManager.disclose({
+      preferredType: 'modal',
+      size: 'small',
+      content: {
+        key: utilityItemKey,
+        component: <DisclosureComponent text={utilityItemKey} />,
       },
     });
   }
@@ -269,15 +295,17 @@ class ApplicationNavigationTest extends React.Component {
         onSelectSettings={!hideSettings ? this.handleSettingsSelection : undefined}
         onSelectHelp={!hideHelp ? this.handleHelpSelection : undefined}
         onSelectLogout={!hideLogout ? this.handleLogoutSelection : undefined}
+        utilityItems={utilityItems}
+        onSelectUtilityItem={this.handleCustomUtilitySelection}
       >
         <Switch>
-          <Route path="/page_1" render={() => <ContentComponent contentName="Page 1" />} />
-          <Route path="/page_2" render={() => <ContentComponent contentName="Page 2" />} />
-          <Route path="/page_3" render={() => <ContentComponent contentName="Page 3" />} />
-          <Route path="/page_4" render={() => <ContentComponent contentName="Page 4" />} />
-          <Route path="/page_5" render={() => <ContentComponent contentName="Page 5" />} />
-          <Route path="/page_6" render={() => <ContentComponent contentName="Page 6" />} />
-          <Route path="/page_7" render={() => <ContentComponent contentName="Page 7" />} />
+          <Route path="/page_1" render={() => <ContentComponent contentName="Page 1" numberOfParagraphs={1} />} />
+          <Route path="/page_2" render={() => <ContentComponent contentName="Page 2" numberOfParagraphs={2} />} />
+          <Route path="/page_3" render={() => <ContentComponent contentName="Page 3" numberOfParagraphs={3} />} />
+          <Route path="/page_4" render={() => <ContentComponent contentName="Page 4" numberOfParagraphs={4} />} />
+          <Route path="/page_5" render={() => <ContentComponent contentName="Page 5" numberOfParagraphs={5} />} />
+          <Route path="/page_6" render={() => <ContentComponent contentName="Page 6" numberOfParagraphs={6} />} />
+          <Route path="/page_7" render={() => <ContentComponent contentName="Page 7" numberOfParagraphs={7} />} />
         </Switch>
       </ApplicationNavigation>
     );

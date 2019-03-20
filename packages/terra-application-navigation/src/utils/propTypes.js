@@ -21,6 +21,12 @@ const navigationItemsPropType = PropTypes.arrayOf(PropTypes.shape({
   hasSubMenu: PropTypes.bool,
 }));
 
+const utilityItemsPropType = PropTypes.arrayOf(PropTypes.shape({
+  key: PropTypes.string.isRequired,
+  icon: PropTypes.element,
+  text: PropTypes.string.isRequired,
+}));
+
 /**
  * Alignment of the navigational tabs.
  */
@@ -50,18 +56,10 @@ const extensionConfigPropType = PropTypes.shape({
   })),
 });
 
-/**
- * Shape for ApplicationLayout's `nameConfig` prop.
- */
-const nameConfigPropType = PropTypes.shape({
-  accessory: PropTypes.element,
-  title: PropTypes.string,
-});
-
 export default {
-  userConfigPropType, heroConfigPropType, navigationItemsPropType, navigationAlignmentPropType, nameConfigPropType, extensionConfigPropType,
+  userConfigPropType, heroConfigPropType, navigationItemsPropType, navigationAlignmentPropType, utilityItemsPropType, extensionConfigPropType,
 };
 
 export {
-  userConfigPropType, heroConfigPropType, navigationItemsPropType, navigationAlignmentPropType, nameConfigPropType, extensionConfigPropType,
+  userConfigPropType, heroConfigPropType, navigationItemsPropType, navigationAlignmentPropType, utilityItemsPropType, extensionConfigPropType,
 };
