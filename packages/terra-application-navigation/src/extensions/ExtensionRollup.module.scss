@@ -2,26 +2,26 @@
 :local {
   .extension {
     align-items: center;
-    border-radius: 10px;
     color: #fff;
     cursor: pointer;
     display: flex;
     height: 3.5725rem;
     justify-content: center;
     outline: none;
-    overflow: hidden;
+    // overflow: hidden;
     position: relative;
-    width: 3.5725rem;
 
     &:hover {
-      background-color: red;
+      .extension-inner {
+        background-color: rgba(0, 0, 0, 0.15);
+        border-radius: 100%;
+      }
     }
   }
 
-  .extension-count {
-    position: absolute;
-    right: 4px;
-    top: 4px;
+  .extension-inner {
+    padding: 8px;
+    position: relative;
   }
 
   .extension-image {
@@ -32,5 +32,22 @@
     & > svg {
       vertical-align: top;
     }
+  }
+
+  .extension-image,
+  .extension-row-count {
+    flex: 0 0  auto;
+  }
+
+  .extension-text {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .extension-count {
+    margin-left: 10px;
+    position: absolute;
+    right: 4px;
+    top: 4px;
   }
 }

@@ -5,7 +5,7 @@ import IconTile from 'terra-icon/lib/icon/IconTile';
 import { createKeyDown, createOnClick } from './_ExtensionUtils';
 import Count from '../count/_Count';
 
-import styles from './Extension.module.scss';
+import styles from './ExtensionRollup.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -36,7 +36,6 @@ const Extension = ({
   const keyDown = createKeyDown(null, onSelect, null);
   const onClick = createOnClick(null, onSelect, null);
 
-  // TODO: May use icon instead of exclamation.
   return (
     <div
       aria-label="more button text"// TODO: fix this.

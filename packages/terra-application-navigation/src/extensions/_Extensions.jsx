@@ -4,6 +4,7 @@ import Popup from 'terra-popup';
 import { extensionConfigPropType } from '../utils/propTypes';
 import ExtensionsPopupView from './_ExtensionsPopupView';
 import ExtensionsRow from './_ExtensionsRow';
+import { shouldRenderCompactNavigation } from '../utils/helpers';
 
 const propTypes = {
   /**
@@ -77,9 +78,15 @@ class Extensions extends React.Component {
       return null;
     }
 
+    let attachmentSpread;
+    if (shouldRenderCompactNavigation(activeBreakpoint)) {
+      attachmentSpread = { contentAttachment: 'top right', targetAttachment: 'bottom center' };
+    }
+
     return (
       <React.Fragment>
         <Popup
+          {...attachmentSpread}
           contentHeight="auto"
           isArrowDisplayed
           isOpen={this.state.isOpen}
