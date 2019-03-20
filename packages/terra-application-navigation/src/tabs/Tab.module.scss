@@ -103,6 +103,7 @@
 
     .tab-label {
       display: block;
+      line-height: 15px;
       max-width: 100%;
       overflow: hidden;
       position: absolute; // remove IE10 active click transformation
@@ -189,10 +190,6 @@
   .tab-count {
     position: absolute;
     right: 30px;
-  }
-
-  .tab-count-inline {
-    flex: 0 0 auto;
   }
 
   .has-count {
