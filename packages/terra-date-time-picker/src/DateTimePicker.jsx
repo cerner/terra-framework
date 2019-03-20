@@ -263,7 +263,7 @@ class DateTimePicker extends React.Component {
       dateTime: newDateTime,
     });
 
-    if (this.props.onChange) {
+    if (this.props.onChange && !DateTimeUtils.checkAmbiguousTime(newDateTime)) {
       this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '');
     }
   }
@@ -325,7 +325,12 @@ class DateTimePicker extends React.Component {
 
     if (!newDateTime.isDST()) {
       newDateTime.subtract(1, 'hour');
-      this.handleChange(event, newDateTime);
+      this.setState({
+        dateTime: newDateTime,
+      });
+    }
+    if (this.props.onChange) {
+      this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '');
     }
   }
 
@@ -335,7 +340,12 @@ class DateTimePicker extends React.Component {
 
     if (newDateTime.isDST()) {
       newDateTime.add(1, 'hour');
-      this.handleChange(event, newDateTime);
+      this.setState({
+        dateTime: newDateTime,
+      });
+    }
+    if (this.props.onChange) {
+      this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '');
     }
   }
 
