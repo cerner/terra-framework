@@ -7,6 +7,8 @@ class CustomEventsConsumer extends React.Component {
     super(props);
 
     this.onMount = this.onMount.bind(this);
+    this.handleEventA = this.handleEventA.bind(this);
+    this.handleEventB = this.handleEventB.bind(this);
   }
 
   onMount(frame) {
@@ -40,6 +42,7 @@ class CustomEventsConsumer extends React.Component {
         <EmbeddedContentConsumer
           src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"
           options={{ iframeAttrs: { title: 'Custom events example' } }}
+          onMount={this.onMount}
           eventHandlers={eventHandlers}
         />
       </div>
