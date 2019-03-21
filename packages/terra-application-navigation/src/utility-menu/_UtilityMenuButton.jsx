@@ -29,6 +29,13 @@ const UtilityMenuButton = ({
     onClick={onClick}
     aria-label={intl.formatMessage({ id: 'Terra.application.utility.button' })}
     data-application-header-utility
+    data-item-show-focus
+    onBlur={(event) => {
+      event.currentTarget.setAttribute('data-item-show-focus', 'true');
+    }}
+    onMouseDown={(event) => {
+      event.currentTarget.setAttribute('data-item-show-focus', 'false');
+    }}
   >
     <span className={cx('focus-me')}>
       {userConfig ? (
