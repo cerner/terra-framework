@@ -36,7 +36,7 @@ const navigationItems = [{
   text: 'Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3',
   notificationCount: 62,
   hasNotifications: true,
-  icon: <IconVisualization />,
+  // icon: <IconVisualization />,
 }, {
   key: '/page_4',
   text: 'Page 4',

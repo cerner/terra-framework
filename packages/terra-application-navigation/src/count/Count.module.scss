@@ -18,14 +18,19 @@
     font-size: 14px;
   }
 
-  .is-dark {
-    background-color: blue;
-    border: 1px solid yellow;
-    color: #fff;
+  .is-dark {  
+    border-radius: 30px;
+    border: solid 1px rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+    font-weight: normal;
+    height: 20px;
+    padding: 4px 7px;
   }
 
   .is-rollup {
     height: 8px;
+    padding: 0;
     width: 8px;
   }
 }

@@ -28,18 +28,23 @@ const UtilityMenuButton = ({
     className={cx('utility-button')}
     onClick={onClick}
     aria-label={intl.formatMessage({ id: 'Terra.application.utility.button' })}
-    ref={refCallback}
     data-application-header-utility
   >
-    {userConfig ? (
-      <React.Fragment>
-        <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials} className={cx('avatar')} />
-        <span className={cx('title')}>{userConfig.name}</span>
-        <IconChevronDown className={cx('icon')} />
-      </React.Fragment>
-    ) : (
-      <IconKnurling className={cx('icon')} />
-    )}
+    <span className={cx('focus-me')}>
+      {userConfig ? (
+        <React.Fragment>
+          <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials} className={cx('avatar')} />
+          <span className={cx('title')}>{userConfig.name}</span>
+          <IconChevronDown className={cx('icon')} />
+          <span className={cx('im-tall')} ref={refCallback} />
+        </React.Fragment>
+      ) : (
+        <React.Fragment>
+          <IconKnurling className={cx('icon')} />
+          <span className={cx('im-tall')} ref={refCallback} />
+        </React.Fragment>
+      )}
+    </span>
   </button>
 );
 

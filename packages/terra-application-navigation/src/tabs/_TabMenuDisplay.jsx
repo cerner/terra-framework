@@ -127,9 +127,9 @@ class TabMenuDisplay extends React.Component {
       >
         <div className={cx(['tab-inner'])}>
           <div className={cx(['tab-menu-display-label'])}>
-            <span>{text}</span>
-            {showNotificationRollup && <Count isRollup />}
-            <IconCaretDown />
+            <span className={cx(['tab-menu-display-text'])}>{text}</span>
+            {showNotificationRollup && <Count className={cx(['tab-menu-count'])} isRollup />}
+            <IconCaretDown className={cx(['tab-menu-display-icon'])} />
           </div>
         </div>
         {popup}

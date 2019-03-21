@@ -111,4 +111,10 @@
       word-wrap: var(--terra-application-name-header-title-word-wrap, normal);
     }  
   }
+
+  .toggle-count {
+    position: absolute;
+    right: 14px;
+    top: 14px;
+  }
 }

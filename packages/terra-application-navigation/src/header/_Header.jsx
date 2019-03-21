@@ -10,6 +10,7 @@ import Tabs from '../tabs/_Tabs';
 import UtilityMenuButton from '../utility-menu/_UtilityMenuButton';
 import UtilityMenu from '../utility-menu/_UtilityMenu';
 import { shouldRenderCompactNavigation } from '../utils/helpers';
+import Count from '../count/_Count';
 import {
   userConfigPropType, heroConfigPropType, navigationItemsPropType, navigationAlignmentPropType, nameConfigPropType,
 } from '../utils/propTypes';
@@ -103,7 +104,7 @@ class Header extends React.Component {
     this.setState({ utilityPopupIsOpen: false });
   }
 
-  renderToggle() {
+  renderToggle(headerHasAnyCounts) {
     const { onMenuToggle, intl, activeBreakpoint } = this.props;
 
     if (onMenuToggle && shouldRenderCompactNavigation(activeBreakpoint)) {
@@ -117,6 +118,7 @@ class Header extends React.Component {
             data-application-header-toggle
           >
             <IconMenu />
+            {headerHasAnyCounts && <Count className={cx(['toggle-count'])} isRollup />}
           </button>
         </div>
       );
@@ -186,12 +188,14 @@ class Header extends React.Component {
       return (
         <Popup
           attachmentBehavior="push"
+          contentAttachment="top right"
           contentHeight="auto"
           contentWidth="240"
           isArrowDisplayed
           isHeaderDisabled
           isOpen
           onRequestClose={this.handleUtilityPopupCloseRequest}
+          targetAttachment="bottom center"
           targetRef={() => (this.utilityButtonRef)}
         >
           <UtilityMenu
@@ -216,6 +220,7 @@ class Header extends React.Component {
     } = this.props;
 
     const headerHasAnyIcons = navigationItems.some(({ icon }) => icon);
+    const headerHasAnyCounts = navigationItems.some(({ notificationCount }) => notificationCount > 0);
 
     let headerLayout;
     if (shouldRenderCompactNavigation(activeBreakpoint)) {
@@ -226,7 +231,7 @@ class Header extends React.Component {
        */
       headerLayout = (
         <HeaderLayout
-          toggle={this.renderToggle()}
+          toggle={this.renderToggle(headerHasAnyCounts)}
           navigation={this.renderAppName()}
           extensions={extensions}
           skipToContentSelector="[data-terra-application-layout-main]"
