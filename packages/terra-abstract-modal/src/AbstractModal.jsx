@@ -80,7 +80,7 @@ const defaultProps = {
   isFocused: true,
   isFullscreen: false,
   role: 'dialog',
-  rootSelector: '[data-terra-base]',
+  rootSelector: '#root',
   zIndex: '6000',
 };
 

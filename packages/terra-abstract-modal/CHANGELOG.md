@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated `rootProp` default value from `[data-terra-base]` to `#root`
 
 2.4.0 - (March 12, 2019)
 ------------------
