@@ -10,7 +10,7 @@ With prop injection, the `app` prop was only provided to immediate children of t
 
 The below examples show contrasting v2.x and v3.x implementations of components that interact with a DisclosureManager (in this case, a ModalManager).
 
-### v2
+## v2
 ```jsx
 import Base from 'terra-base';
 import ModalManager from 'terra-modal-manager'; 

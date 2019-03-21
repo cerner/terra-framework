@@ -1,7 +1,7 @@
 {
   "name": "terra-time-input",
   "main": "lib/TimeInput.js",
-  "version": "3.3.0",
+  "version": "3.5.0",
   "description": "A controlled input component for entering time.",
   "repository": {
     "type": "git",

@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 const DialogModalOnModalManager = () => (
   <div className={cx('example-wrapper')}>
     <ModalManager>
-      <h4> Dialog Modal on Modal Manager</h4>
+      <h3> Dialog Modal on Modal Manager</h3>
       <p> Dialog Modal has z-index of 8001 which is higher than that of modal manager. Click the button to trigger Dialog Modal </p>
       <DialogModalContainer />
     </ModalManager>

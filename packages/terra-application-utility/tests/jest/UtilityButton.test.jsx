@@ -1,6 +1,6 @@
 import React from 'react';
-import { IntlProvider } from 'react-intl';
-import messages from '../../translations/en-US.json';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { shallowWithIntl } from 'terra-enzyme-intl';
 import UtilityButton from '../../src/utility/_UtilityButton';
 import MockConfig from '../../src/terra-dev-site/doc/common/MockConfig';
 
@@ -12,93 +12,82 @@ describe('UtilityButton', () => {
   const initialSelectedKey = 'menu';
   const title = 'name';
   const variant = 'header';
-  const locale = 'en-US';
 
   it('should render with default props', () => {
     const component = (
-      <IntlProvider locale={locale} messages={messages}>
-        <UtilityButton
-          menuItems={[]}
-          onChange={mockOnChange}
-          onDisclose={mockOnDisclose}
-          onRequestClose={mockOnRequestClose}
-          variant={variant}
-          initialSelectedKey={initialSelectedKey}
-        />
-      </IntlProvider>
+      <UtilityButton
+        menuItems={[]}
+        onChange={mockOnChange}
+        onDisclose={mockOnDisclose}
+        onRequestClose={mockOnRequestClose}
+        variant={variant}
+        initialSelectedKey={initialSelectedKey}
+      />
     );
-    const wrapper = shallow(component);
+    const wrapper = shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render with a title', () => {
     const component = (
-      <IntlProvider locale={locale} messages={messages}>
-        <UtilityButton
-          menuItems={[]}
-          onChange={mockOnChange}
-          onDisclose={mockOnDisclose}
-          onRequestClose={mockOnRequestClose}
-          title={title}
-          variant={variant}
-          initialSelectedKey={initialSelectedKey}
-        />
-      </IntlProvider>
+      <UtilityButton
+        menuItems={[]}
+        onChange={mockOnChange}
+        onDisclose={mockOnDisclose}
+        onRequestClose={mockOnRequestClose}
+        title={title}
+        variant={variant}
+        initialSelectedKey={initialSelectedKey}
+      />
     );
-    const wrapper = shallow(component);
+    const wrapper = shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render with an accessory', () => {
     const component = (
-      <IntlProvider locale={locale} messages={messages}>
-        <UtilityButton
-          menuItems={[]}
-          onChange={mockOnChange}
-          onDisclose={mockOnDisclose}
-          onRequestClose={mockOnRequestClose}
-          accessory={accessory}
-          variant={variant}
-          initialSelectedKey={initialSelectedKey}
-        />
-      </IntlProvider>
+      <UtilityButton
+        menuItems={[]}
+        onChange={mockOnChange}
+        onDisclose={mockOnDisclose}
+        onRequestClose={mockOnRequestClose}
+        accessory={accessory}
+        variant={variant}
+        initialSelectedKey={initialSelectedKey}
+      />
     );
-    const wrapper = shallow(component);
+    const wrapper = shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render with menu items', () => {
     const component = (
-      <IntlProvider locale={locale} messages={messages}>
-        <UtilityButton
-          menuItems={MockConfig()}
-          onChange={mockOnChange}
-          onDisclose={mockOnDisclose}
-          onRequestClose={mockOnRequestClose}
-          variant={variant}
-          initialSelectedKey={initialSelectedKey}
-        />
-      </IntlProvider>
+      <UtilityButton
+        menuItems={MockConfig()}
+        onChange={mockOnChange}
+        onDisclose={mockOnDisclose}
+        onRequestClose={mockOnRequestClose}
+        variant={variant}
+        initialSelectedKey={initialSelectedKey}
+      />
     );
-    const wrapper = shallow(component);
+    const wrapper = shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('it should pass in a custom prop', () => {
     const component = (
-      <IntlProvider locale={locale} messages={messages}>
-        <UtilityButton
-          menuItems={[]}
-          onChange={mockOnChange}
-          onDisclose={mockOnDisclose}
-          onRequestClose={mockOnRequestClose}
-          variant={variant}
-          initialSelectedKey={initialSelectedKey}
-          id="test"
-        />
-      </IntlProvider>
+      <UtilityButton
+        menuItems={[]}
+        onChange={mockOnChange}
+        onDisclose={mockOnDisclose}
+        onRequestClose={mockOnRequestClose}
+        variant={variant}
+        initialSelectedKey={initialSelectedKey}
+        id="test"
+      />
     );
-    const wrapper = shallow(component);
+    const wrapper = shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
 });
