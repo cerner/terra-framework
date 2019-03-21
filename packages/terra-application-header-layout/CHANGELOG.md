@@ -9,6 +9,10 @@ Unreleased
 ### Changed
 * Update Jest tests to use terra-enzyme-intl
 
+### Fixed
+* Fixed styling of the header content in IE11. 
+
+
 3.2.0 - (February 26, 2019)
 ------------------
 ### Added
