@@ -10,9 +10,6 @@ Unreleased
 * Updated existing provider examples to use the EmbeddedContentProviderTestTemplate
 * Changed Provider examples to use `.provider` extension to fix provider examples in terra-ui
 
-### Fixed
-* In the embedded-content-consumer event handler callback, pass the frame such that consumers can send custom events to the XFC provider of the embedded content
-
 ### Removed
 * Dead code tests / examples that tested XFC implementation
 

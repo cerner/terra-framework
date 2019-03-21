@@ -6,7 +6,7 @@ import './ProviderTestTemplate.scss';
 
 const propTypes = {
   /**
-   * The content which is will embedded in an iframe by the XFC consumer.
+   * The content which will be embedded in an iframe by the XFC consumer.
    */
   children: PropTypes.node.isRequired,
 };

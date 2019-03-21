@@ -56,7 +56,7 @@ class EmbeddedContentConsumer extends React.Component {
 
   addEventListener(eventName, eventHandler) {
     if (eventName && eventHandler) {
-      this.xfcFrame.on(eventName, () => eventHandler(this.xfcFrame));
+      this.xfcFrame.on(eventName, eventHandler);
     }
   }
 

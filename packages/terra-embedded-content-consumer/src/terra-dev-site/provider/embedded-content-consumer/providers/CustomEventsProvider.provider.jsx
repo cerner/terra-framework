@@ -48,7 +48,7 @@ class EmbeddedContent extends React.Component {
         </ol>
         <p>Then, to demonstrate seamless communication, click the button and read message sent by the embbedded-content-consumer to the embedded content. </p>
         <button onClick={this.onClick} type="button">Toggle Border Color!</button>
-        <div id="embedded-content-consumer-reply">no message as been sent</div>
+        <div id="embedded-content-consumer-reply">No message has been sent.</div>
       </div>
     );
   }
