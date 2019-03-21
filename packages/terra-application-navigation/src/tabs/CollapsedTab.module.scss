@@ -52,9 +52,7 @@
       }
     }
 
-    &.is-focused,
-    &.is-active.is-focused,
-    &:active.is-focused {
+    &[data-item-show-focus='true']:focus {
       background-color: var(--terra-application-navigation-tabs-collapsed-active-focus-background-color);
       box-shadow: var(--terra-application-navigation-tabs-collapsed-active-focus-box-shadow, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
       z-index: 5;

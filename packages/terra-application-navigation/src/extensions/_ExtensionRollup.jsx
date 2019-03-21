@@ -45,6 +45,13 @@ const Extension = ({
       tabIndex="0"
       onClick={onClick}
       ref={refCallback}
+      data-item-show-focus
+      onBlur={(event) => {
+        event.currentTarget.setAttribute('data-item-show-focus', 'true');
+      }}
+      onMouseDown={(event) => {
+        event.currentTarget.setAttribute('data-item-show-focus', 'false');
+      }}
     >
       <div className={cx('extension-inner')}>
         <div className={cx('extension-image')}>

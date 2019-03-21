@@ -56,6 +56,13 @@ const createRowStyle = (notificationCount, onClick, keyDown, refCallback, image,
     role="button"
     tabIndex="0"
     ref={refCallback}
+    data-item-show-focus
+    onBlur={(event) => {
+      event.currentTarget.setAttribute('data-item-show-focus', 'true');
+    }}
+    onMouseDown={(event) => {
+      event.currentTarget.setAttribute('data-item-show-focus', 'false');
+    }}
   >
     <div className={cx('extension-image')}>
       {image}
@@ -76,6 +83,13 @@ const createIconStyle = (notificationCount, onClick, keyDown, refCallback, image
     tabIndex="0"
     onClick={onClick}
     ref={refCallback}
+    data-item-show-focus
+    onBlur={(event) => {
+      event.currentTarget.setAttribute('data-item-show-focus', 'true');
+    }}
+    onMouseDown={(event) => {
+      event.currentTarget.setAttribute('data-item-show-focus', 'false');
+    }}
   >
     <div className={cx('extension-inner')}>
       <div className={cx('extension-image')}>

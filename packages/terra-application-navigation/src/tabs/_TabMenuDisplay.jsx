@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
-import { KEY_SPACE, KEY_RETURN, KEY_TAB } from 'keycode-js';
+import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 import Count from '../count/_Count';
 
 import styles from './Tab.module.scss';
@@ -51,44 +51,15 @@ class TabMenuDisplay extends React.Component {
     super(props, context);
 
     this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.handleKeyUp = this.handleKeyUp.bind(this);
-    this.handleOnBlur = this.handleOnBlur.bind(this);
-
-    this.state = { focused: false };
-  }
-
-  handleOnBlur() {
-    if (!this.props.popup) {
-      this.setState({ focused: false });
-    }
   }
 
   handleKeyDown(event) {
-    // Add active state to FF browsers
-    if (event.nativeEvent.keyCode === KEY_SPACE) {
-      this.setState({ active: true });
-    }
-
     // Add focus styles for keyboard navigation
     if (event.nativeEvent.keyCode === KEY_SPACE || event.nativeEvent.keyCode === KEY_RETURN) {
-      this.setState({ focused: true });
-
       event.preventDefault();
       if (this.props.onKeyDown) {
         this.props.onKeyDown(event);
       }
-    }
-  }
-
-  handleKeyUp(event) {
-    // Remove active state from FF broswers
-    if (event.nativeEvent.keyCode === KEY_SPACE) {
-      this.setState({ active: false });
-    }
-
-    // Apply focus styles for keyboard navigation
-    if (event.nativeEvent.keyCode === KEY_TAB) {
-      this.setState({ focused: true });
     }
   }
 
@@ -106,8 +77,6 @@ class TabMenuDisplay extends React.Component {
 
     const displayClassNames = cx([
       'tab-menu-display',
-      { 'is-active': this.state.active },
-      { 'is-focused': this.state.focused },
       customProps.className,
     ]);
     const attributes = { 'aria-current': isSelected };
@@ -122,8 +91,13 @@ class TabMenuDisplay extends React.Component {
         className={displayClassNames}
         ref={(node) => { this.contentNode = node; this.props.refCallback(node); }}
         onKeyDown={this.handleKeyDown}
-        onKeyUp={this.handleKeyUp}
-        onBlur={this.handleOnBlur}
+        data-item-show-focus
+        onBlur={(event) => {
+          event.currentTarget.setAttribute('data-item-show-focus', 'true');
+        }}
+        onMouseDown={(event) => {
+          event.currentTarget.setAttribute('data-item-show-focus', 'false');
+        }}
       >
         <div className={cx(['tab-inner'])}>
           <div className={cx(['tab-menu-display-label'])}>

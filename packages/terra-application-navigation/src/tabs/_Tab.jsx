@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { KEY_SPACE, KEY_RETURN, KEY_TAB } from 'keycode-js';
+import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 import Count from './_TabCount';
 import styles from './Tab.module.scss';
 
@@ -37,11 +37,8 @@ const propTypes = {
 class Tab extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { active: false, focused: false };
     this.handleOnClick = this.handleOnClick.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.handleKeyUp = this.handleKeyUp.bind(this);
-    this.handleOnBlur = this.handleOnBlur.bind(this);
     this.setNode = this.setNode.bind(this);
     this.listener = this.listener.bind(this);
   }
@@ -66,36 +63,11 @@ class Tab extends React.Component {
     this.node.setAttribute('data-count-pulse', 'false');
   }
 
-  handleOnBlur() {
-    this.setState({ focused: false });
-  }
-
   handleKeyDown(event) {
-    // Add active state to FF browsers
-    if (event.nativeEvent.keyCode === KEY_SPACE) {
-      this.setState({ active: true });
-    }
-
     // Add focus styles for keyboard navigation
     if (event.nativeEvent.keyCode === KEY_SPACE || event.nativeEvent.keyCode === KEY_RETURN) {
-      this.setState({ focused: true });
-
       event.preventDefault();
       this.handleOnClick(event);
-    }
-  }
-
-  handleKeyUp(event) {
-    // Remove active state from FF broswers
-    if (event.nativeEvent.keyCode === KEY_SPACE) {
-      this.setState({ active: false });
-    }
-
-    // Apply focus styles for keyboard navigation
-    if (event.nativeEvent.keyCode === KEY_TAB) {
-      event.preventDefault();
-      event.stopPropagation();
-      this.setState({ focused: true });
     }
   }
 
@@ -134,8 +106,6 @@ class Tab extends React.Component {
     const tabClassNames = cx([
       'tab',
       { 'is-disabled': isActive && !isCollapsed },
-      { 'is-active': this.state.active },
-      { 'is-focused': this.state.focused },
       { 'has-icon': !!icon },
       countClass,
     ]);
@@ -150,8 +120,13 @@ class Tab extends React.Component {
         className={tabClassNames}
         onClick={this.handleOnClick}
         onKeyDown={this.handleKeyDown}
-        onKeyUp={this.handleKeyUp}
-        onBlur={this.handleOnBlur}
+        data-item-show-focus
+        onBlur={(event) => {
+          event.currentTarget.setAttribute('data-item-show-focus', 'true');
+        }}
+        onMouseDown={(event) => {
+          event.currentTarget.setAttribute('data-item-show-focus', 'false');
+        }}
         ref={refCallback}
       >
         <span className={cx(['tab-inner'])}>

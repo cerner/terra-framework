@@ -2,19 +2,17 @@
 :local {
   .extension {
     align-items: center;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
     display: flex;
     height: 3.5725rem;
     justify-content: center;
     outline: none;
-    // overflow: hidden;
     position: relative;
 
     &:hover {
       .extension-inner {
-        background-color: rgba(0, 0, 0, 0.15);
-        border-radius: 100%;
+        color: #fff;
       }
     }
   }
@@ -35,6 +33,14 @@
     overflow: hidden;
     padding: 10px;
     width: 100%;
+
+    &[data-item-show-focus='true']:focus {
+      background-color: green;
+
+      &:hover {
+        background-color: red;
+      }
+    }
 
     &:hover {
       background-color: rgba(0, 0, 0, 0.15);
@@ -70,5 +76,18 @@
     position: absolute;
     right: -1px;
     top: -2px;
+  }
+
+  .extension[data-item-show-focus='true']:focus {
+    .extension-inner {
+      background-color: rgba(0, 0, 0, 0.15);
+      border-radius: 100%;
+    }
+  }
+
+  .extension:active {
+    .extension-inner {
+      color: rgba(255, 255, 255, 0.5);
+    }
   }
 }
