@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated prop onChange call logic with respect to ambiguous date-times.
 
 3.10.0 - (March 20, 2019)
 ------------------
