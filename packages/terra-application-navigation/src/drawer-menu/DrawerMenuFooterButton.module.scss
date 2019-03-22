@@ -2,11 +2,26 @@
   .drawer-menu-footer-button {
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
     color: rgba(17, 22, 25, 0.85);
     font-size: 1rem;
     outline: none;
+    overflow-wrap: break-word; /* Modern browsers */
     padding: 8px 0.7142857143rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    touch-action: manipulation; // Enable fast tap interaction in webkit browsers; see https://webkit.org/blog/5610/more-responsive-tapping-on-ios/
+    user-select: none; // Prevent text selection on buttons on mobile devices
+    white-space: normal;
     width: 100%;
+    word-wrap: break-word; /* For IE 10 and IE 11 */
+
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
 
     &:hover {
       background-color: rgba(255, 255, 255, 1);

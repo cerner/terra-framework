@@ -1,14 +1,12 @@
 :local {
   .utility-menu-layout {
     background-color: #fff;
-    display: flex;
     flex-direction: column;
-    height: 100%;
     justify-content: space-between;
     overflow: hidden;
     position: relative;
     width: 100%;
-
+    
     .footer {
       background-image: var(--terra-application-layout-menu-header-background-image);
       flex: 0 0 auto;
@@ -36,14 +34,11 @@
       padding-inline-start: 0;
       padding-top: 0.8571428571rem;
     }
-  }
 
-  .padded-hero-container {
-    padding: 20px 20px 0;
-  }
-
-  .padded-hero-container.pad-bottom {
-    padding: 20px;
+    &.fill {
+      display: flex;
+      height: 100%;
+    }
   }
 }
 

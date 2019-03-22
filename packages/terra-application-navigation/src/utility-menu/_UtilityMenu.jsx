@@ -23,10 +23,11 @@ const propTypes = {
   onSelectLogout: PropTypes.func,
   utilityItems: utilityItemsPropType,
   onSelectUtilityItem: PropTypes.func,
+  isHeightBounded: PropTypes.bool,
 };
 
 const UtilityMenu = ({
-  userConfig, heroConfig, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem,
+  userConfig, heroConfig, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem, isHeightBounded,
 }) => {
   let user;
   if (userConfig) {
@@ -50,7 +51,7 @@ const UtilityMenu = ({
   }
 
   return (
-    <div className={cx('utility-menu-layout')}>
+    <div className={cx(['utility-menu-layout', { fill: isHeightBounded }])}>
       <div className={cx('vertical-overflow-container')}>
         <div className={cx('header')}>
           {hero}
