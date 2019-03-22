@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated `rootProp` default value from `[data-terra-base]` to `#root`
 
 ### Removed
 * Removed peer dependency on terra-base
