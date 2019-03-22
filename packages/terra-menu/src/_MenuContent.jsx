@@ -1,4 +1,5 @@
 import React from 'react';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
 import { injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
 import List from 'terra-list';
