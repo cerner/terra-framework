@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
-import 'terra-base/lib/baseStyles';
 import KeyCode from 'keycode-js';
 import Menu from './_TabMenu';
 import styles from './Tabs.module.scss';

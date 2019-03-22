@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import 'terra-base/lib/baseStyles';
 import ResizeObserver from 'resize-observer-polyfill';
 import List from 'terra-list';
 import InfiniteUtils from './_InfiniteUtils';

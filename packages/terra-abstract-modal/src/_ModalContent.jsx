@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import FocusTrap from 'focus-trap-react';
-import 'terra-base/lib/baseStyles';
 import ModalOverlay from './_ModalOverlay';
 import styles from './AbstractModal.module.scss';
 
