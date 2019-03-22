@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Background color for header utility example changed to increase contrast ratio
 
 2.5.0 - (March 20, 2019)
 ------------------
