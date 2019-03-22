@@ -1,9 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UtilityMenu it should pass in a custom prop 1`] = `
-<InjectIntl(UtilityMenu)
+<UtilityMenu
   id="test"
   initialSelectedKey="key"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   menuItems={
     Array [
       Object {
@@ -15,6 +42,7 @@ exports[`UtilityMenu it should pass in a custom prop 1`] = `
       },
     ]
   }
+  menuRole="navigation"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   variant="header"
@@ -22,9 +50,36 @@ exports[`UtilityMenu it should pass in a custom prop 1`] = `
 `;
 
 exports[`UtilityMenu it should render with a read-only menu item 1`] = `
-<InjectIntl(UtilityMenu)
+<UtilityMenu
   id="test"
   initialSelectedKey="key"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   menuItems={
     Array [
       Object {
@@ -36,6 +91,7 @@ exports[`UtilityMenu it should render with a read-only menu item 1`] = `
       },
     ]
   }
+  menuRole="navigation"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   variant="header"
@@ -43,9 +99,36 @@ exports[`UtilityMenu it should render with a read-only menu item 1`] = `
 `;
 
 exports[`UtilityMenu should render with a user specified role 1`] = `
-<InjectIntl(UtilityMenu)
+<UtilityMenu
   id="test"
   initialSelectedKey="key"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   menuItems={
     Array [
       Object {
@@ -65,8 +148,35 @@ exports[`UtilityMenu should render with a user specified role 1`] = `
 `;
 
 exports[`UtilityMenu should render with default props 1`] = `
-<InjectIntl(UtilityMenu)
+<UtilityMenu
   initialSelectedKey="key"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   menuItems={
     Array [
       Object {
@@ -78,6 +188,7 @@ exports[`UtilityMenu should render with default props 1`] = `
       },
     ]
   }
+  menuRole="navigation"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   variant="header"
@@ -85,8 +196,35 @@ exports[`UtilityMenu should render with default props 1`] = `
 `;
 
 exports[`UtilityMenu should render with isHeightBounded 1`] = `
-<InjectIntl(UtilityMenu)
+<UtilityMenu
   initialSelectedKey="key"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   isHeightBounded={true}
   menuItems={
     Array [
@@ -99,6 +237,7 @@ exports[`UtilityMenu should render with isHeightBounded 1`] = `
       },
     ]
   }
+  menuRole="navigation"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   variant="header"
@@ -106,8 +245,35 @@ exports[`UtilityMenu should render with isHeightBounded 1`] = `
 `;
 
 exports[`UtilityMenu should render with onRequestClose set 1`] = `
-<InjectIntl(UtilityMenu)
+<UtilityMenu
   initialSelectedKey="key"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   menuItems={
     Array [
       Object {
@@ -119,6 +285,7 @@ exports[`UtilityMenu should render with onRequestClose set 1`] = `
       },
     ]
   }
+  menuRole="navigation"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   onRequestClose={[MockFunction]}

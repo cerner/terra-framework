@@ -24,7 +24,7 @@
 | identity-obj-proxy | ^3.0.0 | -- | an identity object using ES6 proxies |
 | jest | ^23.1.0 | -- | Delightful JavaScript Testing. |
 | lerna | ^2.8.0 | -- | Tool for managing JavaScript projects with multiple packages |
-| link-parent-bin | ^0.2.0 | -- | [![Build Status](https://travis-ci.org/nicojs/node-link-parent-bin.svg?branch=master)](https://travis-ci.org/nicojs/node-link-parent-bin) |
+| link-parent-bin | ^1.0.0 | -- | [![Build Status](https://travis-ci.org/nicojs/node-link-parent-bin.svg?branch=master)](https://travis-ci.org/nicojs/node-link-parent-bin) |
 | markdown-magic | ^0.1.25 | -- | Automatically update markdown files with content from external sources |
 | raf | ^3.4.0 | -- | requestAnimationFrame polyfill for node and the browser |
 | react | ^16.4.2 | -- | React is a JavaScript library for building user interfaces. |
@@ -36,5 +36,6 @@
 | stylelint-config-terra | ^2.0.0 | -- | Terra Stylelint Shared Config |
 | terra-base | ^4.0.0 | ^16.4.2 | The base component sets minimal global styles for an application. |
 | terra-dev-site | ^3.0.0 | ^16.4.2 | Dynamically builds a react-hash-routed site based on site configuration, navigation configuration and component configuration. |
+| terra-enzyme-intl | ^3.0.0 | 16.x | Enzyme helpers for fortifying tests that depend on react-intl by decoupling the need for actual translations. |
 | terra-toolkit | ^4.16.0 | -- | Utilities to help when developing terra modules. |
 | xfc | ^1.2.1 | -- | A Cross Frame Container that handles securely embedding web content into a 3rd party domain |

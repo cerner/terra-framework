@@ -1,20 +1,75 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UtilityButton it should pass in a custom prop 1`] = `
-<InjectIntl(UtilityButton)
+<UtilityButton
   id="test"
   initialSelectedKey="menu"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   menuItems={Array []}
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   onRequestClose={[MockFunction]}
+  title=""
   variant="header"
 />
 `;
 
 exports[`UtilityButton should render with a title 1`] = `
-<InjectIntl(UtilityButton)
+<UtilityButton
   initialSelectedKey="menu"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   menuItems={Array []}
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
@@ -25,31 +80,114 @@ exports[`UtilityButton should render with a title 1`] = `
 `;
 
 exports[`UtilityButton should render with an accessory 1`] = `
-<InjectIntl(UtilityButton)
+<UtilityButton
   accessory={<image />}
   initialSelectedKey="menu"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   menuItems={Array []}
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   onRequestClose={[MockFunction]}
+  title=""
   variant="header"
 />
 `;
 
 exports[`UtilityButton should render with default props 1`] = `
-<InjectIntl(UtilityButton)
+<UtilityButton
   initialSelectedKey="menu"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   menuItems={Array []}
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   onRequestClose={[MockFunction]}
+  title=""
   variant="header"
 />
 `;
 
 exports[`UtilityButton should render with menu items 1`] = `
-<InjectIntl(UtilityButton)
+<UtilityButton
   initialSelectedKey="menu"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   menuItems={
     Array [
       Object {
@@ -224,6 +362,7 @@ exports[`UtilityButton should render with menu items 1`] = `
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   onRequestClose={[MockFunction]}
+  title=""
   variant="header"
 />
 `;

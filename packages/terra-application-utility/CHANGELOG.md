@@ -6,11 +6,19 @@ Unreleased
 ### Changed
 * Background color for header utility example changed to increase contrast ratio
 
+2.5.0 - (March 20, 2019)
+------------------
+### Changed
+* Update Jest tests to use terra-enzyme-intl
+
 2.4.0 - (March 12, 2019)
 ------------------
 ### Added
 * menurole property added to Application Utility for Utility Menu
 * Jest test added for menurole property
+
+### Changed
+* Alt text added to fallback avatar images in doc site examples to correct Section 508 warnings
 
 2.3.0 - (February 26, 2019)
 ------------------
