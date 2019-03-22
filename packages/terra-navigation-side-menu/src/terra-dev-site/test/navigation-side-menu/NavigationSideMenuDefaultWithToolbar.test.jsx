@@ -1,5 +1,4 @@
 import React from 'react';
-import Base from 'terra-base';
 import NavigationSideMenu from '../../../NavigationSideMenu';
 
 class NavigationSideMenuDefault extends React.Component {
@@ -65,11 +64,9 @@ class NavigationSideMenuDefault extends React.Component {
     }
 
     return (
-      <Base>
-        <div style={{ height: '768px', width: '300px', position: 'relative' }}>
-          {content}
-        </div>
-      </Base>
+      <div style={{ height: '768px', width: '300px', position: 'relative' }}>
+        {content}
+      </div>
     );
   }
 }

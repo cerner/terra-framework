@@ -1,5 +1,5 @@
 import React from 'react';
-import { injectIntl, intlShape } from 'terra-base';
+import { injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
 import List from 'terra-list';
 import IconLeft from 'terra-icon/lib/icon/IconLeft';

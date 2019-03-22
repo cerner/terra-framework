@@ -16,7 +16,7 @@ const propTypes = {
    * */
   logo: PropTypes.element,
   /**
-   * intl object programatically imported through injectIntl from terra-base.
+   * intl object programmatically imported through injectIntl from react-intl.
    * */
   intl: intlShape.isRequired,
   /**
