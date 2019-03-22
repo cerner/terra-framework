@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Background color for header utility example changed to increase contrast ratio
 
 ### Removed
 * Removed peer dependency on terra-base
