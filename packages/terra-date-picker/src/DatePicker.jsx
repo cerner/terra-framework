@@ -311,6 +311,7 @@ class DatePicker extends React.Component {
         onChangeRaw={this.handleChangeRaw}
         onClickOutside={this.handleOnClickOutside}
         onSelect={this.handleOnSelect}
+        required={required}
         customInput={(
           <DateInput
             onInputFocus={this.handleOnInputFocus}
