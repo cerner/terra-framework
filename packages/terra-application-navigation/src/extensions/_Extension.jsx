@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './Extension.module.scss';
 import { createKeyDown, createOnClick } from './_ExtensionUtils';
-import Count from '../count/_Count';
+import Count from './_ExtensionCount';
 
 const cx = classNames.bind(styles);
 

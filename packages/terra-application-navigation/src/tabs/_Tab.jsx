@@ -51,24 +51,6 @@ class Tab extends React.Component {
     super(props);
     this.handleOnClick = this.handleOnClick.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.setCountNode = this.setCountNode.bind(this);
-    this.listener = this.listener.bind(this);
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.notificationCount > prevProps.notificationCount && this.countNode) {
-      this.countNode.addEventListener('animationend', this.listener);
-      this.countNode.setAttribute('data-count-pulse', 'true');
-    }
-  }
-
-  setCountNode(node) {
-    this.countNode = node;
-  }
-
-  listener() {
-    this.countNode.setAttribute('data-count-pulse', 'false');
-    this.countNode.removeEventListener('animationend', this.listener);
   }
 
   handleKeyDown(event) {
@@ -97,17 +79,13 @@ class Tab extends React.Component {
     } = this.props;
 
     let countClass = hasCount ? 'has-count' : null;
-    let numberOfDigits = null;
     if (notificationCount > 0) {
       if (notificationCount < 10) {
         countClass = 'has-one-digit';
-        numberOfDigits = 'one';
       } else if (notificationCount < 100) {
         countClass = 'has-two-digit';
-        numberOfDigits = 'two';
       } else {
         countClass = 'has-plus-digit';
-        numberOfDigits = 'plus';
       }
     }
 
@@ -141,7 +119,7 @@ class Tab extends React.Component {
           {!!icon && <span className={cx('tab-icon')}>{icon}</span>}
           <span className={cx(['tab-label'])}>{text}</span>
           {!isCollapsed && <span className={cx(['tab-label-bold'])}>{text}</span>}
-          {notificationCount > 0 && <span className={cx('tab-count')}><Count refCallback={this.setCountNode} value={notificationCount} tabDigits={numberOfDigits} /></span>}
+          {notificationCount > 0 && <span className={cx('tab-count')}><Count refCallback={this.setCountNode} value={notificationCount} /></span>}
         </span>
       </button>
     );

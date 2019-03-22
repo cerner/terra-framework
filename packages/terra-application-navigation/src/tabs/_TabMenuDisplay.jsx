@@ -56,24 +56,6 @@ class TabMenuDisplay extends React.Component {
     super(props, context);
 
     this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.listener = this.listener.bind(this);
-    this.setCountNode = this.setCountNode.bind(this);
-  }
-
-  componentDidUpdate() {
-    if (this.props.isPulsed && this.countNode) {
-      this.countNode.addEventListener('animationend', this.listener);
-      this.countNode.setAttribute('data-count-pulse', 'true');
-    }
-  }
-
-  setCountNode(node) {
-    this.countNode = node;
-  }
-
-  listener() {
-    this.countNode.setAttribute('data-count-pulse', 'false');
-    this.countNode.removeEventListener('animationend', this.listener);
   }
 
   handleKeyDown(event) {
@@ -126,7 +108,7 @@ class TabMenuDisplay extends React.Component {
         <div className={cx(['tab-inner'])}>
           <div className={cx(['tab-menu-display-label'])}>
             <span className={cx(['tab-menu-display-text'])}>{text}</span>
-            {showNotificationRollup && <Count className={cx(['tab-menu-count'])} refCallback={this.setCountNode} isRollup />}
+            {showNotificationRollup && <Count className={cx(['tab-menu-count'])} value={isPulsed ? 1 : 0} isRollup />}
             <IconCaretDown className={cx(['tab-menu-display-icon'])} />
           </div>
         </div>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 
-import Count from '../count/_Count';
+import Count from './_DrawerCount';
 import styles from './DrawerMenuListItem.module.scss';
 
 const cx = classNames.bind(styles);
@@ -41,7 +41,7 @@ const DrawerMenuListItem = ({
   >
     {icon ? <div className={cx('icon')}>{icon}</div> : null}
     <div className={cx('text')}>{text}</div>
-    {notificationCount > 0 && <Count value={notificationCount} isInline isDark />}
+    {notificationCount > 0 && <Count value={notificationCount} />}
   </li>
 );
 

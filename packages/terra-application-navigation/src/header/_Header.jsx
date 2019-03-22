@@ -10,7 +10,7 @@ import Tabs from '../tabs/_Tabs';
 import UtilityMenuHeaderButton from '../utility-menu/_UtilityMenuHeaderButton';
 import UtilityMenu from '../utility-menu/_UtilityMenu';
 import { shouldRenderCompactNavigation } from '../utils/helpers';
-import Count from '../count/_Count';
+import Count from './_ToggleCount';
 import {
   userConfigPropType, heroConfigPropType, navigationItemsPropType, navigationAlignmentPropType, utilityItemsPropType,
 } from '../utils/propTypes';
@@ -82,9 +82,9 @@ class Header extends React.Component {
     this.handleSettingsSelection = this.generatePopupClosingCallback('onSelectSettings');
     this.handleHelpSelection = this.generatePopupClosingCallback('onSelectHelp');
     this.handleLogoutSelection = this.generatePopupClosingCallback('onSelectLogout');
-    this.handleUtilityItemSelection = this.generatePopupClosingCallback('onSelectUtilityItem');
 
     this.state = { utilityPopupIsOpen: false };
+    this.previousNotifications = [];
   }
 
   generatePopupClosingCallback(wrappedFunctionName) {
@@ -107,10 +107,28 @@ class Header extends React.Component {
     this.setState({ utilityPopupIsOpen: false });
   }
 
+  shouldPulse(navigationItems) {
+    let shouldPulse = false;
+
+    const newNotifications = navigationItems.map(item => item.notificationCount);
+    if (newNotifications.length === this.previousNotifications.length) {
+      for (let i = 0; i < newNotifications.length; i += 1) {
+        if (newNotifications[i] > this.previousNotifications[i]) {
+          shouldPulse = true;
+          break;
+        }
+      }
+    }
+    this.previousNotifications = newNotifications;
+    return shouldPulse;
+  }
+
   renderToggle(headerHasAnyCounts) {
-    const { onMenuToggle, intl, activeBreakpoint } = this.props;
+    const { onMenuToggle, intl, activeBreakpoint, navigationItems } = this.props;
 
     if (onMenuToggle && shouldRenderCompactNavigation(activeBreakpoint)) {
+      const isPulsed = this.shouldPulse(navigationItems);
+
       return (
         <div className={cx('toggle-button-container')}>
           <button
@@ -121,7 +139,7 @@ class Header extends React.Component {
             data-application-header-toggle
           >
             <IconMenu />
-            {headerHasAnyCounts && <Count className={cx(['toggle-count'])} isRollup />}
+            {headerHasAnyCounts && <Count className={cx(['toggle-count'])} value={isPulsed ? 1 : 0} />}
           </button>
         </div>
       );

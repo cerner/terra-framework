@@ -15,9 +15,21 @@ const propTypes = {
    * Should the menu be hidden, set to true if there are no hidden items.
    */
   isHidden: PropTypes.bool,
+  /**
+   * Should the menu be hidden, set to true if there are no hidden items.
+   */
   activeTabKey: PropTypes.string,
+  /**
+   * Should the menu be hidden, set to true if there are no hidden items.
+   */
   menuRefCallback: PropTypes.func,
+  /**
+   * Should the menu be hidden, set to true if there are no hidden items.
+   */
   showNotificationRollup: PropTypes.bool,
+  /**
+   * Should the menu be hidden, set to true if there are no hidden items.
+   */
   isPulsed: PropTypes.bool,
 };
 
@@ -41,15 +53,9 @@ class TabMenu extends React.Component {
     this.state = {
       isOpen: false,
     };
-    this.shouldResetFocus = false;
   }
 
   componentDidUpdate(prevProps) {
-    if (this.shouldResetFocus && this.targetRef) {
-      this.targetRef.focus();
-      this.shouldResetFocus = this.targetRef !== document.activeElement;
-    }
-
     if (prevProps.activeTabKey !== this.props.activeTabKey) {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ isOpen: false });
@@ -66,7 +72,6 @@ class TabMenu extends React.Component {
 
   handleOnRequestClose() {
     if (this.state.isOpen) {
-      this.shouldResetFocus = true;
       this.setState({ isOpen: false });
     }
   }
@@ -121,7 +126,7 @@ class TabMenu extends React.Component {
         onClick={this.handleOnClick}
         onKeyDown={this.handleOnKeyDown}
         popup={popup}
-        refCallback={(node) => { this.setTargetRef(node); this.props.menuRefCallback(node, true); }}
+        refCallback={(node) => { this.setTargetRef(node); this.props.menuRefCallback(node); }}
         isHidden={this.props.isHidden}
         text={moreText}
         isSelected={isSelected}
