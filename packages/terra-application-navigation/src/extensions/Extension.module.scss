@@ -49,6 +49,10 @@
     &:last-of-type {
       border: 0;
     }
+
+    .extension-image {
+      margin-right: 10px;
+    }
   }
 
   .extension-image {
@@ -57,7 +61,7 @@
     width: 14px;
 
     & > svg {
-      vertical-align: top;
+      position: absolute;
     }
   }
 
