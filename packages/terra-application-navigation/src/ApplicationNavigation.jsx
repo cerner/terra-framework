@@ -129,7 +129,7 @@ class ApplicationNavigation extends React.Component {
 
   handleTransitionEnd() {
     if (!this.state.drawerMenuIsOpen) {
-      this.drawerMenuNode.style.visibility = 'hidden';
+      this.drawerMenuNode.style.display = 'none';
       this.hideMenu = true;
     } else {
       this.hideMenu = false;
@@ -167,16 +167,16 @@ class ApplicationNavigation extends React.Component {
     const extensions = createExtensions(extensionConfig, activeBreakpoint);
 
     /**
-     * Reset visibility to ensure drawer menu will be visible if the menu is being presented. If it's not being opened, the visibility will
-     * be immediately set to hidden when the menuPanel is re
+     * Reset display to ensure drawer menu will be visible if the menu is being presented. If it's not being opened, the display will
+     * be immediately set to hidden when the menuPanel is rendered
      */
     if (this.drawerMenuNode) {
-      this.drawerMenuNode.style.visibility = '';
+      this.drawerMenuNode.style.display = '';
     }
 
     return (
       <div className={cx(['application-layout-container', { 'menu-is-open': drawerMenuIsOpen }])}>
-        <div className={cx('menu-panel')} aria-hidden={!drawerMenuIsOpen ? true : null} ref={this.setDrawerMenuNode} style={this.hideMenu && !drawerMenuIsOpen ? { visibility: 'hidden' } : null}>
+        <div className={cx('menu-panel')} aria-hidden={!drawerMenuIsOpen ? true : null} ref={this.setDrawerMenuNode} style={this.hideMenu && !drawerMenuIsOpen ? { display: 'none' } : null}>
           {shouldRenderCompactNavigation(activeBreakpoint) ? (
             <FocusTrap
               active={drawerMenuIsOpen}

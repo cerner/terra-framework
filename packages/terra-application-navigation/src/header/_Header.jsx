@@ -7,12 +7,12 @@ import Popup from 'terra-popup';
 
 import HeaderLayout from './_HeaderLayout';
 import Tabs from '../tabs/_Tabs';
-import UtilityMenuButton from '../utility-menu/_UtilityMenuButton';
+import UtilityMenuHeaderButton from '../utility-menu/_UtilityMenuHeaderButton';
 import UtilityMenu from '../utility-menu/_UtilityMenu';
 import { shouldRenderCompactNavigation } from '../utils/helpers';
 import Count from '../count/_Count';
 import {
-  userConfigPropType, heroConfigPropType, navigationItemsPropType, navigationAlignmentPropType, nameConfigPropType,
+  userConfigPropType, heroConfigPropType, navigationItemsPropType, navigationAlignmentPropType, utilityItemsPropType,
 } from '../utils/propTypes';
 
 import styles from './Header.module.scss';
@@ -58,6 +58,8 @@ const propTypes = {
   onSelectSettings: PropTypes.func,
   onSelectHelp: PropTypes.func,
   onSelectLogout: PropTypes.func,
+  utilityItems: utilityItemsPropType,
+  onSelectUtilityItem: PropTypes.func,
 };
 
 const defaultProps = {
@@ -80,6 +82,7 @@ class Header extends React.Component {
     this.handleSettingsSelection = this.generatePopupClosingCallback('onSelectSettings');
     this.handleHelpSelection = this.generatePopupClosingCallback('onSelectHelp');
     this.handleLogoutSelection = this.generatePopupClosingCallback('onSelectLogout');
+    this.handleUtilityItemSelection = this.generatePopupClosingCallback('onSelectUtilityItem');
 
     this.state = { utilityPopupIsOpen: false };
   }
@@ -164,7 +167,7 @@ class Header extends React.Component {
   renderUtilities() {
     const { userConfig } = this.props;
     return (
-      <UtilityMenuButton
+      <UtilityMenuHeaderButton
         userConfig={userConfig}
         onClick={() => {
           this.setState({
@@ -180,7 +183,7 @@ class Header extends React.Component {
 
   renderUtilitiesPopup() {
     const {
-      heroConfig, userConfig, onSelectSettings, onSelectHelp, onSelectLogout,
+      heroConfig, userConfig, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem,
     } = this.props;
     const { utilityPopupIsOpen } = this.state;
 
@@ -190,7 +193,7 @@ class Header extends React.Component {
           attachmentBehavior="push"
           contentAttachment="top right"
           contentHeight="auto"
-          contentWidth="240"
+          contentWidth="320"
           isArrowDisplayed
           isHeaderDisabled
           isOpen
@@ -204,6 +207,8 @@ class Header extends React.Component {
             onSelectSettings={onSelectSettings ? this.handleSettingsSelection : undefined}
             onSelectHelp={onSelectHelp ? this.handleHelpSelection : undefined}
             onSelectLogout={onSelectLogout ? this.handleLogoutSelection : undefined}
+            utilityItems={utilityItems}
+            onSelectUtilityItem={onSelectUtilityItem ? this.handleUtilityItemSelection : undefined}
           />
         </Popup>
       );

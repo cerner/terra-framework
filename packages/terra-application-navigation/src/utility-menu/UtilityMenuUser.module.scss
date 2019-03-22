@@ -1,39 +1,50 @@
 :local {
   .utility-user-layout {
-    align-items: center;
+    align-items: top;
     display: flex;
     justify-content: flex-start;
-    padding: 20px 20px;
-  }
+    padding: 0.8571428571rem 0.7142857143rem 0.8571428571rem 1.0714285714rem; // TODO THEME
 
-  .avatar {
-    flex: 0 0 auto;
-    height: var(--terra-application-layout-user-data-photo-height, 3.571rem);
-    margin-right: var(--terra-application-layout-user-data-photo-margin-right, 0.5714rem);
-    width: var(--terra-application-layout-user-data-photo-width, 3.571rem);
-  }
+    .avatar-container {
+      flex: 0 0 auto;
+      height: 54px; // TODO THEME
+      margin-right: 0.7142857143rem; // TODO THEME
+      width: 54px; // TODO THEME
+    }
 
-  .info {
-    flex: 1 1 auto;
-    width: 100%;
-  }
-
-  .name {
-    color: #fff;
-    font-size: var(--terra-application-layout-user-data-name-font-size, 1.143rem);
-    font-weight: var(--terra-application-layout-user-data-name-font-weight);
-    overflow-wrap: break-word;
-    white-space: normal;
-    word-break: break-word;
-    word-wrap: break-word;
-  }
-
-  .detail {
-    color: rgba(255, 255, 255, 0.7);  
-    font-size: var(--terra-application-layout-user-data-detail-font-size, 0.8571rem);
-    overflow-wrap: break-word;
-    white-space: normal;
-    word-break: break-word;
-    word-wrap: break-word;
+    .avatar {
+      height: 54px; // TODO THEME
+      width: 54px;  // TODO THEME
+    }
+  
+    .info-container {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+    }
+  
+    .name {
+      color: rgba(17, 22, 25, 0.85); // TODO THEME
+      font-size: 1.143rem; // TODO THEME
+      font-weight: 500; // TODO THEME
+      // line-height: 1rem; // TODO THEME
+      overflow-wrap: break-word;
+      white-space: normal;
+      word-break: break-word;
+      word-wrap: break-word;
+    }
+  
+    .detail {
+      color: rgba(17, 22, 25, 0.75); // TODO THEME
+      font-size: 1rem; // TODO THEME
+      // line-height: 0.8571428571rem; // TODO THEME
+      overflow-wrap: break-word;
+      padding-top: 0.2142857143rem;
+      white-space: normal;
+      word-break: break-word;
+      word-wrap: break-word;
+    }  
   }
 }

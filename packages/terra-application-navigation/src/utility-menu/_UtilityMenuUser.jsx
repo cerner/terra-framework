@@ -14,12 +14,13 @@ const propTypes = {
 
 const UtilityMenuUser = ({ userConfig }) => (
   <div className={cx('utility-user-layout')}>
-    <div className={cx('avatar')}>
-      <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials} />
+    <div className={cx('avatar-container')}>
+      <div className={cx('avatar-outline')} />
+      <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials} className={cx('avatar')} />
     </div>
-    <div className={cx('info')}>
+    <div className={cx('info-container')}>
       <div className={cx('name')}>{userConfig.name}</div>
-      <div className={cx('detail')}>{userConfig.detail}</div>
+      {userConfig.detail ? <div className={cx('detail')}>{userConfig.detail}</div> : null}
     </div>
   </div>
 );

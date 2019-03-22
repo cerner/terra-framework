@@ -105,7 +105,7 @@ const utilityItems = [{
   icon: <IconProjects />,
 }, {
   key: 'Custom Utility 2',
-  text: 'Custom Utility 2',
+  text: 'Custom Utility 2 - This is a long, long, long, long, long, long, long, long, long, long, long one',
   icon: <IconSpinner />,
 }];
 

@@ -4,9 +4,12 @@ import classNames from 'classnames/bind';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import IconUnknown from 'terra-icon/lib/icon/IconUnknown';
+import ActionFooter from 'terra-action-footer';
+import Button from 'terra-button';
 
 import UtilityMenuUser from './_UtilityMenuUser';
-import { userConfigPropType, heroConfigPropType } from '../utils/propTypes';
+import UtilityMenuListItem from './_UtilityMenuListItem';
+import { userConfigPropType, heroConfigPropType, utilityItemsPropType } from '../utils/propTypes';
 
 import styles from './UtilityMenu.module.scss';
 
@@ -18,10 +21,12 @@ const propTypes = {
   onSelectSettings: PropTypes.func,
   onSelectHelp: PropTypes.func,
   onSelectLogout: PropTypes.func,
+  utilityItems: utilityItemsPropType,
+  onSelectUtilityItem: PropTypes.func,
 };
 
 const UtilityMenu = ({
-  userConfig, heroConfig, onSelectSettings, onSelectHelp, onSelectLogout,
+  userConfig, heroConfig, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem,
 }) => {
   let user;
   if (userConfig) {
@@ -30,12 +35,18 @@ const UtilityMenu = ({
 
   let hero;
   if (heroConfig) {
-    hero = !heroConfig.removeContainerPadding ? <div className={cx(['padded-hero-container', { 'pad-bottom': !userConfig }])}>{heroConfig.component}</div> : heroConfig.component;
+    hero = heroConfig.component;
   }
 
-  let logout;
+  let footer;
   if (onSelectLogout) {
-    logout = <button type="button" onClick={onSelectLogout}>Logout</button>;
+    footer = (
+      <div className={cx('footer')}>
+        <ActionFooter
+          end={<Button text="Logout" onClick={onSelectLogout} />}
+        />
+      </div>
+    );
   }
 
   return (
@@ -46,49 +57,35 @@ const UtilityMenu = ({
           {user}
         </div>
         <ul className={cx('utility-list')} role="listbox">
+          {utilityItems.map(item => (
+            <UtilityMenuListItem
+              key={item.key}
+              onSelect={onSelectUtilityItem ? () => {
+                onSelectUtilityItem(item.key);
+              } : undefined}
+              icon={item.icon}
+              text={item.text}
+            />
+          ))}
           {onSelectSettings ? (
-            <li
+            <UtilityMenuListItem
               key="utility-menu-layout.settings"
-              className={cx('utility-list-item')}
-              onClick={() => { onSelectSettings(); }}
-              onKeyDown={(event) => {
-                if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
-                  event.preventDefault();
-                  onSelectSettings();
-                }
-              }}
-              role="option"
-              aria-selected={false}
-              tabIndex="0"
-            >
-              <IconSettings className={cx('utility-menu-icon')} />
-              Settings
-            </li>
+              onSelect={onSelectSettings}
+              icon={<IconSettings />}
+              text="Settings"
+            />
           ) : null}
           {onSelectHelp ? (
-            <li
+            <UtilityMenuListItem
               key="utility-menu-layout.help"
-              className={cx('utility-list-item')}
-              onClick={() => { onSelectHelp(); }}
-              onKeyDown={(event) => {
-                if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
-                  event.preventDefault();
-                  onSelectHelp();
-                }
-              }}
-              role="option"
-              aria-selected={false}
-              tabIndex="0"
-            >
-              <IconUnknown className={cx('utility-menu-icon')} />
-              Help
-            </li>
+              onSelect={onSelectHelp}
+              icon={<IconUnknown />}
+              text="Help"
+            />
           ) : null}
         </ul>
       </div>
-      <div className={cx('footer')}>
-        {logout}
-      </div>
+      {footer}
     </div>
   );
 };

@@ -77,6 +77,16 @@ const DrawerMenu = ({
           ))}
         </ul>
         <ul className={cx('utility-list')} role="listbox">
+          {utilityItems.map(item => (
+            <DrawerMenuListItem
+              key={item.key}
+              text={item.text}
+              icon={item.icon}
+              onSelect={onSelectUtilityItem ? () => {
+                onSelectUtilityItem(item.key);
+              } : undefined}
+            />
+          ))}
           {onSelectSettings ? (
             <DrawerMenuListItem
               key="application-navigation.drawer-menu.settings"
@@ -93,16 +103,6 @@ const DrawerMenu = ({
               onSelect={onSelectSettings}
             />
           ) : null}
-          {utilityItems.map(item => (
-            <DrawerMenuListItem
-              key={item.key}
-              text={item.text}
-              icon={item.icon}
-              onSelect={onSelectUtilityItem ? () => {
-                onSelectUtilityItem(item.key);
-              } : undefined}
-            />
-          ))}
         </ul>
       </div>
       <div className={cx('footer')}>
