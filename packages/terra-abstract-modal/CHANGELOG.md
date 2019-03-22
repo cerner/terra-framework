@@ -6,6 +6,10 @@ Unreleased
 ### Changed
 * Updated `rootProp` default value from `[data-terra-base]` to `#root`
 
+### Removed
+* Removed peer dependency on terra-base
+* Removed baseStyles import from terra-base
+
 2.4.0 - (March 12, 2019)
 ------------------
 ### Changed
