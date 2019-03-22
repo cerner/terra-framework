@@ -72,6 +72,7 @@ const DrawerMenu = ({
                 onSelectNavigationItem(item.key);
               } : undefined}
               isSelected={item.key === activeNavigationItemKey}
+              icon={item.icon}
             />
           ))}
         </ul>

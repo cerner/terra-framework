@@ -115,6 +115,6 @@
   .toggle-count {
     position: absolute;
     right: 14px;
-    top: 14px;
+    top: calc(50% - 11px);
   }
 }
