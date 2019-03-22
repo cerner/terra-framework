@@ -1,0 +1,9 @@
+:local {
+  .demo-background-color {
+    background-color: var(--terra-application-name-demo-background-color, #008000);
+  }
+
+  .demo-truncate-width {
+    width: 150px;
+  }
+}

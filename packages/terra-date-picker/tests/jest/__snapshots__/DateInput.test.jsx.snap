@@ -10,12 +10,13 @@ exports[`should render a default date input 1`] = `
   />
   <input
     class="form-input input"
+    intl="[object Object]"
     name="terra-date-undefined"
     type="text"
   />
   <button
     aria-disabled="false"
-    aria-label="Open Calendar"
+    aria-label="Terra.datePicker.openCalendar"
     class="button neutral compact button"
     type="button"
   >
@@ -57,6 +58,7 @@ exports[`should render a default date input with all props 1`] = `
   <input
     class="form-input input"
     id="terra-date-input"
+    intl="[object Object]"
     name="terra-date-date-input"
     placeholder="MM/DD/YYYY"
     type="text"
@@ -64,7 +66,7 @@ exports[`should render a default date input with all props 1`] = `
   />
   <button
     aria-disabled="false"
-    aria-label="Open Calendar"
+    aria-label="Terra.datePicker.openCalendar"
     class="button neutral compact button"
     type="button"
   >
