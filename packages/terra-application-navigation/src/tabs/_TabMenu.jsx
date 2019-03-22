@@ -18,6 +18,7 @@ const propTypes = {
   activeTabKey: PropTypes.string,
   menuRefCallback: PropTypes.func,
   showNotificationRollup: PropTypes.bool,
+  isPulsed: PropTypes.bool,
 };
 
 const contextTypes = {
@@ -116,6 +117,7 @@ class TabMenu extends React.Component {
 
     return (
       <TabMenuDisplay
+        isPulsed={this.props.isPulsed}
         onClick={this.handleOnClick}
         onKeyDown={this.handleOnKeyDown}
         popup={popup}

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
-import Count from '../count/_Count';
+import Count from './_TabCount';
 
 import styles from './Tab.module.scss';
 
@@ -38,9 +38,14 @@ const propTypes = {
    * Ref callback for menu display.
    */
   showNotificationRollup: PropTypes.bool,
+  /**
+   * Ref callback for menu display.
+   */
+  isPulsed: PropTypes.bool,
 };
 
 const defaultProps = {
+  isPulsed: false,
   isSelected: false,
   isHidden: false,
   showNotificationRollup: false,
@@ -51,6 +56,24 @@ class TabMenuDisplay extends React.Component {
     super(props, context);
 
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.listener = this.listener.bind(this);
+    this.setCountNode = this.setCountNode.bind(this);
+  }
+
+  componentDidUpdate() {
+    if (this.props.isPulsed && this.countNode) {
+      this.countNode.addEventListener('animationend', this.listener);
+      this.countNode.setAttribute('data-count-pulse', 'true');
+    }
+  }
+
+  setCountNode(node) {
+    this.countNode = node;
+  }
+
+  listener() {
+    this.countNode.setAttribute('data-count-pulse', 'false');
+    this.countNode.removeEventListener('animationend', this.listener);
   }
 
   handleKeyDown(event) {
@@ -72,6 +95,7 @@ class TabMenuDisplay extends React.Component {
       refCallback,
       showNotificationRollup,
       text,
+      isPulsed,
       ...customProps
     } = this.props;
 
@@ -89,7 +113,7 @@ class TabMenuDisplay extends React.Component {
         role="tab"
         tabIndex="0"
         className={displayClassNames}
-        ref={(node) => { this.contentNode = node; this.props.refCallback(node); }}
+        ref={refCallback}
         onKeyDown={this.handleKeyDown}
         data-item-show-focus
         onBlur={(event) => {
@@ -102,7 +126,7 @@ class TabMenuDisplay extends React.Component {
         <div className={cx(['tab-inner'])}>
           <div className={cx(['tab-menu-display-label'])}>
             <span className={cx(['tab-menu-display-text'])}>{text}</span>
-            {showNotificationRollup && <Count className={cx(['tab-menu-count'])} isRollup />}
+            {showNotificationRollup && <Count className={cx(['tab-menu-count'])} refCallback={this.setCountNode} isRollup />}
             <IconCaretDown className={cx(['tab-menu-display-icon'])} />
           </div>
         </div>

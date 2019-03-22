@@ -23,6 +23,10 @@ const propTypes = {
    * Prop from popup, determines if the menu height is bound by the screen.
    */
   isRollup: PropTypes.bool,
+  /**
+   * Prop from popup, determines if the menu height is bound by the screen.
+   */
+  refCallback: PropTypes.func,
 };
 
 const Count = ({
@@ -30,6 +34,7 @@ const Count = ({
   isInline,
   isDark,
   isRollup,
+  refCallback,
   ...customProps
 }) => {
   let validatedValue = value;
@@ -44,7 +49,7 @@ const Count = ({
   }
 
   return (
-    <span {...customProps} className={cx(['count', { 'is-inline': isInline }, { 'is-dark': isDark }, { 'is-rollup': isRollup }, customProps.className])}>
+    <span {...customProps} ref={refCallback} className={cx(['count', { 'is-inline': isInline }, { 'is-dark': isDark }, { 'is-rollup': isRollup }, customProps.className])}>
       {validatedValue}
     </span>
   );

@@ -24,13 +24,25 @@ const propTypes = {
    * The click callback of the tab.
    */
   onTabClick: PropTypes.func,
+  /**
+   * Boolean indicating whether or not the Tab should render as active.
+   */
   notificationCount: PropTypes.number,
   /**
    * Boolean indicating whether or not the Tab should render as active.
    */
   isActive: PropTypes.bool,
+  /**
+   * Boolean indicating whether or not the Tab should render as active.
+   */
   refCallback: PropTypes.func,
+  /**
+   * Boolean indicating whether or not the Tab should render as active.
+   */
   hasCount: PropTypes.bool,
+  /**
+   * Boolean indicating whether or not the Tab should render as active.
+   */
   icon: PropTypes.element,
 };
 
@@ -39,28 +51,24 @@ class Tab extends React.Component {
     super(props);
     this.handleOnClick = this.handleOnClick.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.setNode = this.setNode.bind(this);
+    this.setCountNode = this.setCountNode.bind(this);
     this.listener = this.listener.bind(this);
   }
 
-  componentDidMount() {
-    if (this.node) {
-      this.node.addEventListener('animationend', this.listener);
-    }
-  }
-
   componentDidUpdate(prevProps) {
-    if (this.props.notificationCount > prevProps.notificationCount) {
-      this.node.setAttribute('data-count-pulse', 'true');
+    if (this.props.notificationCount > prevProps.notificationCount && this.countNode) {
+      this.countNode.addEventListener('animationend', this.listener);
+      this.countNode.setAttribute('data-count-pulse', 'true');
     }
   }
 
-  setNode(node) {
-    this.node = node;
+  setCountNode(node) {
+    this.countNode = node;
   }
 
   listener() {
-    this.node.setAttribute('data-count-pulse', 'false');
+    this.countNode.setAttribute('data-count-pulse', 'false');
+    this.countNode.removeEventListener('animationend', this.listener);
   }
 
   handleKeyDown(event) {
@@ -133,7 +141,7 @@ class Tab extends React.Component {
           {!!icon && <span className={cx('tab-icon')}>{icon}</span>}
           <span className={cx(['tab-label'])}>{text}</span>
           {!isCollapsed && <span className={cx(['tab-label-bold'])}>{text}</span>}
-          {notificationCount > 0 && <span className={cx('tab-count')}><Count refCallback={this.setNode} value={notificationCount} tabDigits={numberOfDigits} /></span>}
+          {notificationCount > 0 && <span className={cx('tab-count')}><Count refCallback={this.setCountNode} value={notificationCount} tabDigits={numberOfDigits} /></span>}
         </span>
       </button>
     );

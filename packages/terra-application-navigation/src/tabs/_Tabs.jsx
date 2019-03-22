@@ -63,12 +63,16 @@ class Tabs extends React.Component {
     this.setChildRef = this.setChildRef.bind(this);
     this.resetCalculations();
     this.childWidths = [];
+    this.previousNotifications = [];
   }
 
   componentDidMount() {
     this.resizeObserver = new ResizeObserver((entries) => {
-      this.contentWidth = entries[0].contentRect.width;
-      if (!this.isCalculating) {
+      const widthDidChange = this.contentWidth !== entries[0].contentRect.width;
+      if (widthDidChange) {
+        this.contentWidth = entries[0].contentRect.width;
+      }
+      if (!this.isCalculating && widthDidChange) {
         this.animationFrameID = window.requestAnimationFrame(() => {
           // Resetting the calculations so that all elements will be rendered face-up for width calculations
           this.resetCalculations();
@@ -147,6 +151,20 @@ class Tabs extends React.Component {
     }
   }
 
+  shouldPulse(hiddenNotifications) {
+    let shouldPulse = false;
+    if (hiddenNotifications.length === this.previousNotifications.length) {
+      for (let i = 0; i < hiddenNotifications.length; i += 1) {
+        if (hiddenNotifications[i] > this.previousNotifications[i]) {
+          shouldPulse = true;
+          break;
+        }
+      }
+    }
+    this.previousNotifications = hiddenNotifications;
+    return shouldPulse;
+  }
+
   render() {
     const {
       alignment,
@@ -155,10 +173,10 @@ class Tabs extends React.Component {
       onTabSelect,
     } = this.props;
 
+    let showNotificationRollup = false;
     const visibleChildren = [];
     const hiddenChildren = [];
-
-    let showNotificationRollup = false;
+    const hiddenNotifications = [];
     tabs.forEach((tab, index) => {
       const tabProps = {
         text: tab.text,
@@ -186,19 +204,25 @@ class Tabs extends React.Component {
         if (tab.notificationCount > 0) {
           showNotificationRollup = true;
         }
+        hiddenNotifications.push(tab.notificationCount);
         hiddenChildren.push(<CollapsedTab {...tabProps} />);
       }
     });
 
     return (
-      <div className={cx(['tabs-wrapper'])}>
+      <div className={cx(['tabs-wrapper'])} ref={this.setContainerNode}>
         <div
           className={cx(['tabs-container', { 'is-calculating': this.isCalculating }, alignment])}
           role="tablist"
-          ref={this.setContainerNode}
         >
           {visibleChildren}
-          <TabMenu isHidden={this.menuHidden} activeTabKey={activeTabKey} menuRefCallback={this.setMenuRef} showNotificationRollup={showNotificationRollup}>
+          <TabMenu
+            isPulsed={this.shouldPulse(hiddenNotifications)}
+            isHidden={this.menuHidden}
+            activeTabKey={activeTabKey}
+            menuRefCallback={this.setMenuRef}
+            showNotificationRollup={showNotificationRollup}
+          >
             {hiddenChildren}
           </TabMenu>
           <div className={cx(['divider-after-last-tab'])} />
