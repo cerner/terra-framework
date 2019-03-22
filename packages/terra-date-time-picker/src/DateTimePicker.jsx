@@ -264,6 +264,7 @@ class DateTimePicker extends React.Component {
       dateTime: newDateTime,
     });
 
+    // We want to not fire onChange in the event that the new time is ambiguous and the old time was not. This way the user can use TimeClarification before we fire the onChange function.
     if (this.props.onChange && !this.state.isAmbiguousTime && !DateTimeUtils.checkAmbiguousTime(newDateTime)) {
       this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '');
     }
@@ -333,6 +334,9 @@ class DateTimePicker extends React.Component {
         this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '');
       }
     } else if (this.props.onChange && !this.wasOffsetButtonClicked) {
+      // Since we now don't fire onChange in our handleChange function if the new value is ambiguous and the old value wasn't,
+      // this is to fire onChange in the event that TimeClarification dialog was launched in any way that isn't the user clicking the OffsetButton.
+      // In the case that the User clicks the OffsetButton, we should have already fired onChange and don't need to fire it again unless they changed the DateTime.
       this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '');
     }
     this.wasOffsetButtonClicked = false;
@@ -351,6 +355,9 @@ class DateTimePicker extends React.Component {
         this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '');
       }
     } else if (this.props.onChange && !this.wasOffsetButtonClicked) {
+      // Since we now don't fire onChange in our handleChange function if the new value is ambiguous and the old value wasn't,
+      // this is to fire onChange in the event that TimeClarification dialog was launched in any way that isn't the user clicking the OffsetButton.
+      // In the case that the User clicks the OffsetButton, we should have already fired onChange and don't need to fire it again unless they changed the DateTime.
       this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '');
     }
     this.wasOffsetButtonClicked = false;
