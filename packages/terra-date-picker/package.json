@@ -41,6 +41,9 @@
     "terra-modal-manager": "^5.6.0",
     "terra-responsive-element": "^4.0.0"
   },
+  "devDependencies": {
+    "terra-enzyme-intl": "^3.0.0"
+  },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
     "compile:clean": "rm -rf lib",
