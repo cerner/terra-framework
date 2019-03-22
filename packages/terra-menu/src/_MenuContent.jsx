@@ -7,7 +7,6 @@ import ContentContainer from 'terra-content-container';
 import IconClose from 'terra-icon/lib/icon/IconClose';
 import Arrange from 'terra-arrange';
 import classNames from 'classnames/bind';
-import 'terra-base/lib/baseStyles';
 import KeyCode from 'keycode-js';
 import MenuUtils from './_MenuUtils';
 import styles from './Menu.module.scss';

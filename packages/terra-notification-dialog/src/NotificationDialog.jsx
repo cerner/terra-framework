@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import AbstractModal from 'terra-abstract-modal';
 import Button from 'terra-button';
 import classNames from 'classnames/bind';
-import 'terra-base/lib/baseStyles';
 import styles from './NotificationDialog.module.scss';
 
 const cx = classNames.bind(styles);

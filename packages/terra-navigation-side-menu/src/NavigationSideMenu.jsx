@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import 'terra-base/lib/baseStyles';
 import ActionHeader from 'terra-action-header';
 import ContentContainer from 'terra-content-container';
 import KeyCode from 'keycode-js';

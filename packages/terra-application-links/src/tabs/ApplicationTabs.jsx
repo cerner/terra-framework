@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
 import { withRouter } from 'react-router-dom';
-import 'terra-base/lib/baseStyles';
 import Tab from './_Tab';
 import TabMenu from './_TabMenu';
 import styles from './ApplicationTabs.module.scss';

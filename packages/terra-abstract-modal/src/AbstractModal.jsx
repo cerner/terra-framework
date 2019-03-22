@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
-import 'terra-base/lib/baseStyles';
 import KeyCode from 'keycode-js';
 import ModalContent from './_ModalContent';
 
