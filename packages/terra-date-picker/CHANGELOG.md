@@ -5,7 +5,6 @@ Unreleased
 ----------
 ### Added
 * Added 'required' prop to match terra-form components' required prop
-git
 
 3.9.0 - (March 20, 2019)
 ------------------
