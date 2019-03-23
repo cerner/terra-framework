@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Added a medium size slide panel that is .4 scalar.
 
 ### Removed
 * Removed peer dependency on terra-base

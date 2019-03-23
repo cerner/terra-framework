@@ -29,7 +29,7 @@ const propTypes = {
   /**
    * The size at which the panel will be displayed. One of `small`, `large`.
    */
-  panelSize: PropTypes.oneOf(['small', 'large']),
+  panelSize: PropTypes.oneOf(['small', 'medium', 'large']),
 
   /**
    * Whether or not, when open, the panel should be displayed with the full width of the SlidePanel.

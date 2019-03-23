@@ -1,6 +1,7 @@
 Cerner Corporation
 
 - Tyler Biethman [@tbiethman]
+- Chris Boyle [@Chris-Boyle]
 - Matt Henkes [@mjhenkes]
 - Emily Rohrbough [@emilyrohrbough]
 - Dave Kasper [@dkasper-was-taken]

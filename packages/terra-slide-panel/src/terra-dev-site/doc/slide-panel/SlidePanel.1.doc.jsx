@@ -12,6 +12,7 @@ import SlidePanelSquishSrc from '!raw-loader!../../../../src/terra-dev-site/test
 import SlidePanelStartSrc from '!raw-loader!../../../../src/terra-dev-site/test/slide-panel/SlidePanelStart.test.jsx';
 import SlidePanelEndSrc from '!raw-loader!../../../../src/terra-dev-site/test/slide-panel/SlidePanelEnd.test.jsx';
 import SlidePanelSmallSrc from '!raw-loader!../../../../src/terra-dev-site/test/slide-panel/SlidePanelSmall.test.jsx';
+import SlidePanelMediumSrc from '!raw-loader!../../../../src/terra-dev-site/test/slide-panel/SlidePanelMedium.test.jsx';
 import SlidePanelLargeSrc from '!raw-loader!../../../../src/terra-dev-site/test/slide-panel/SlidePanelLarge.test.jsx';
 import SlidePanelFullscreenSrc from '!raw-loader!../../../../src/terra-dev-site/test/slide-panel/SlidePanelFullscreen.test.jsx';
 import SlidePanelFillSrc from '!raw-loader!../../../../src/terra-dev-site/test/slide-panel/SlidePanelFill.test.jsx';
@@ -24,6 +25,7 @@ import SlidePanelSquish from '../../test/slide-panel/SlidePanelSquish.test';
 import SlidePanelStart from '../../test/slide-panel/SlidePanelStart.test';
 import SlidePanelEnd from '../../test/slide-panel/SlidePanelEnd.test';
 import SlidePanelSmall from '../../test/slide-panel/SlidePanelSmall.test';
+import SlidePanelMedium from '../../test/slide-panel/SlidePanelMedium.test';
 import SlidePanelLarge from '../../test/slide-panel/SlidePanelLarge.test';
 import SlidePanelFullscreen from '../../test/slide-panel/SlidePanelFullscreen.test';
 import SlidePanelFill from '../../test/slide-panel/SlidePanelFill.test';
@@ -65,6 +67,11 @@ const DocPage = () => (
         title: 'SlidePanel - Size - Small',
         example: <SlidePanelSmall />,
         source: SlidePanelSmallSrc,
+      },
+      {
+        title: 'SlidePanel - Size - Medium',
+        example: <SlidePanelMedium />,
+        source: SlidePanelMediumSrc,
       },
       {
         title: 'SlidePanel - Size - Large',
