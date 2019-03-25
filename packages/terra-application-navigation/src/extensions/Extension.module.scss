@@ -22,36 +22,47 @@
     position: relative;
   }
 
+  .extensions-popup-view {
+    width: 280px;
+    background-color: #77b1fd; // TODO REMOVE
+  }
+
   .extension-row {
     align-items: center;
-    border-bottom: 1px solid black;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     cursor: pointer;
     display: flex;
-    height: 3.5725rem;
     justify-content: space-between;
     outline: none;
     overflow: hidden;
-    padding: 10px;
+    padding: 0.7142857143rem 1.0714285714rem;
     width: 100%;
 
     &[data-item-show-focus='true']:focus {
-      background-color: green;
-
-      &:hover {
-        background-color: red;
-      }
+      background-color: rgba(255, 255, 255, 0.3);
     }
 
     &:hover {
-      background-color: rgba(0, 0, 0, 0.15);
+      background-color: rgba(255, 255, 255, 0.9);
     }
 
-    &:last-of-type {
-      border: 0;
+    &:active {
+      background-color: rgba(255, 255, 255, 1);
     }
 
-    .extension-image {
-      margin-right: 10px;
+    .extension-icon {
+      color: #4983d1;
+      margin-right: 0.5rem;
+    }
+
+    .extension-text {
+      color: rgba(17, 22, 25, 0.75);
+      font-size: 1rem;
+    }
+
+    .extension-row-count {
+      margin-left: 0.5rem;
     }
   }
 

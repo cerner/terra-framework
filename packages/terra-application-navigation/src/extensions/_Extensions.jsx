@@ -88,6 +88,7 @@ class Extensions extends React.Component {
         <Popup
           {...attachmentSpread}
           contentHeight="auto"
+          contentWidth="auto"
           isArrowDisplayed
           isOpen={this.state.isOpen}
           targetRef={this.getButtonNode}

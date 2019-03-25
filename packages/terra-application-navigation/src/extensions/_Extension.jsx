@@ -64,7 +64,7 @@ const createRowStyle = (notificationCount, onClick, keyDown, refCallback, image,
       event.currentTarget.setAttribute('data-item-show-focus', 'false');
     }}
   >
-    <div className={cx('extension-image')}>
+    <div className={cx('extension-icon')}>
       {image}
     </div>
     <div className={cx('extension-text')}>
