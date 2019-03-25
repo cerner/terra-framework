@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Update react/react-dom peer-dependency to latest stable minor release
+* Added alt text to app logo image used in doc example
 
 ### Removed
 * Removed peer dependency on terra-base
