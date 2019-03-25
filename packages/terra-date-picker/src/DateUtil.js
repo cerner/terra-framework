@@ -30,18 +30,28 @@ class DateUtil {
   }
 
   // Checks if a given date is out of the range between the start and end dates.
-  static isDateOutOfRange(sourceDate, startDate, endDate) {
-    if (!sourceDate || !sourceDate.isValid()
-      || !startDate || !startDate.isValid()
-      || !endDate || !endDate.isValid()) {
-      return false;
+  static isDateOutOfRange(sourceDate, minDate, maxDate) {
+    if (sourceDate && sourceDate.isValid()) {
+      if (minDate && minDate.isValid() && (!maxDate || !maxDate.isValid())) {
+        if (sourceDate.isBefore(minDate)) {
+          return true;
+        }
+      }
+
+      if ((!minDate || !minDate.isValid()) && maxDate && maxDate.isValid()) {
+        if (sourceDate.isAfter(maxDate)) {
+          return true;
+        }
+      }
+
+      if (minDate && minDate.isValid() && maxDate && maxDate.isValid()) {
+        if (sourceDate.isBefore(minDate) || sourceDate.isAfter(maxDate)) {
+          return true;
+        }
+      }
     }
 
-    if (sourceDate.isSameOrAfter(startDate) && sourceDate.isSameOrBefore(endDate)) {
-      return false;
-    }
-
-    return true;
+    return false;
   }
 
   // Checks if a given date is one of the excluded dates.
