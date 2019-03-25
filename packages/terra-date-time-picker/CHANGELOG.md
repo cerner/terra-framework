@@ -6,6 +6,10 @@ Unreleased
 ### Changed
 * Updated prop onChange call logic with respect to ambiguous date-times.
 
+### Removed
+* Removed peer dependency on terra-base
+* Removed baseStyles import from terra-base
+
 3.10.0 - (March 20, 2019)
 ------------------
 ### Changed

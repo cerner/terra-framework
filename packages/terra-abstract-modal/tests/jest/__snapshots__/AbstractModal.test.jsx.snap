@@ -16,7 +16,7 @@ exports[`should allow us to pass in a dom selector as a fallbackFocus 1`] = `
       isOpen={true}
       onRequestClose={[Function]}
       role="dialog"
-      rootSelector="[data-terra-base]"
+      rootSelector="#root"
       zIndex="6000"
     >
       <Portal
@@ -138,7 +138,7 @@ exports[`should allow us to pass in a function as fallbackFocus 1`] = `
       isOpen={true}
       onRequestClose={[Function]}
       role="dialog"
-      rootSelector="[data-terra-base]"
+      rootSelector="#root"
       zIndex="6000"
     >
       <Portal
@@ -258,7 +258,7 @@ exports[`should mount an open modal 1`] = `
       isOpen={true}
       onRequestClose={[Function]}
       role="dialog"
-      rootSelector="[data-terra-base]"
+      rootSelector="#root"
       zIndex="6000"
     >
       <Portal
@@ -380,7 +380,7 @@ exports[`should mount an open modal 7000 z-index 1`] = `
       isOpen={true}
       onRequestClose={[Function]}
       role="dialog"
-      rootSelector="[data-terra-base]"
+      rootSelector="#root"
       zIndex="7000"
     >
       <Portal
@@ -502,7 +502,7 @@ exports[`should mount an open modal 8000 z-index 1`] = `
       isOpen={true}
       onRequestClose={[Function]}
       role="dialog"
-      rootSelector="[data-terra-base]"
+      rootSelector="#root"
       zIndex="8000"
     >
       <Portal
@@ -624,7 +624,7 @@ exports[`should mount an open modal 9000 z-index 1`] = `
       isOpen={true}
       onRequestClose={[Function]}
       role="dialog"
-      rootSelector="[data-terra-base]"
+      rootSelector="#root"
       zIndex="9000"
     >
       <Portal
@@ -746,7 +746,7 @@ exports[`should mount an open modal set to fullscreen 1`] = `
       isOpen={true}
       onRequestClose={[Function]}
       role="dialog"
-      rootSelector="[data-terra-base]"
+      rootSelector="#root"
       zIndex="6000"
     >
       <Portal
@@ -866,7 +866,7 @@ exports[`should render the correct snapshot for iPads 1`] = `
       isOpen={true}
       onRequestClose={[Function]}
       role="dialog"
-      rootSelector="[data-terra-base]"
+      rootSelector="#root"
       zIndex="6000"
     >
       <Portal
@@ -986,7 +986,7 @@ exports[`should render the correct snapshot for iPhones 1`] = `
       isOpen={true}
       onRequestClose={[Function]}
       role="dialog"
-      rootSelector="[data-terra-base]"
+      rootSelector="#root"
       zIndex="6000"
     >
       <Portal
@@ -1106,7 +1106,7 @@ exports[`should render the correct snapshot for iPods 1`] = `
       isOpen={true}
       onRequestClose={[Function]}
       role="dialog"
-      rootSelector="[data-terra-base]"
+      rootSelector="#root"
       zIndex="6000"
     >
       <Portal
@@ -1225,7 +1225,7 @@ exports[`should shallow an open modal 1`] = `
     isOpen={true}
     onRequestClose={[Function]}
     role="dialog"
-    rootSelector="[data-terra-base]"
+    rootSelector="#root"
     zIndex="6000"
   >
     <div>
@@ -1262,7 +1262,7 @@ exports[`should shallow an open modal 6000 z-index 1`] = `
     isOpen={true}
     onRequestClose={[Function]}
     role="dialog"
-    rootSelector="[data-terra-base]"
+    rootSelector="#root"
     zIndex="6000"
   >
     <div>
@@ -1299,7 +1299,7 @@ exports[`should shallow an open modal 7000 z-index 1`] = `
     isOpen={true}
     onRequestClose={[Function]}
     role="dialog"
-    rootSelector="[data-terra-base]"
+    rootSelector="#root"
     zIndex="7000"
   >
     <div>
@@ -1336,7 +1336,7 @@ exports[`should shallow an open modal 8000 z-index 1`] = `
     isOpen={true}
     onRequestClose={[Function]}
     role="dialog"
-    rootSelector="[data-terra-base]"
+    rootSelector="#root"
     zIndex="8000"
   >
     <div>
@@ -1373,7 +1373,7 @@ exports[`should shallow an open modal 9000 z-index 1`] = `
     isOpen={true}
     onRequestClose={[Function]}
     role="dialog"
-    rootSelector="[data-terra-base]"
+    rootSelector="#root"
     zIndex="9000"
   >
     <div>

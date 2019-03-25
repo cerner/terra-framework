@@ -4,9 +4,6 @@ import classNames from 'classnames/bind';
 import Overlay from 'terra-overlay';
 import OverlayContainer from 'terra-overlay/lib/OverlayContainer';
 import tabbable from 'tabbable';
-
-import 'terra-base/lib/baseStyles';
-
 import styles from './LayoutSlidePanel.module.scss';
 
 const cx = classNames.bind(styles);

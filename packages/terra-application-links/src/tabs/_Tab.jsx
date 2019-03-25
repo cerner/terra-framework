@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import 'terra-base/lib/baseStyles';
 import { matchPath } from 'react-router-dom';
 import KeyCode from 'keycode-js';
 import styles from './ApplicationTabs.module.scss';
