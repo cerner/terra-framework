@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import List, { Utils } from 'terra-list';
-import 'terra-base/lib/baseStyles';
 
 const propTypes = {
   /**

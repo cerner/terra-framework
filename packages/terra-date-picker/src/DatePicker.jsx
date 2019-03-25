@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDatePicker from 'react-datepicker';
-import 'terra-base/lib/baseStyles';
 import ResponsiveElement from 'terra-responsive-element';
 import PopperContainer from './_PopperContainer';
 import DateInput from './DateInput';
