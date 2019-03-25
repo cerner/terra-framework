@@ -82,6 +82,7 @@ class Header extends React.Component {
     this.handleSettingsSelection = this.generatePopupClosingCallback('onSelectSettings');
     this.handleHelpSelection = this.generatePopupClosingCallback('onSelectHelp');
     this.handleLogoutSelection = this.generatePopupClosingCallback('onSelectLogout');
+    this.handleUtilityItemSelection = this.generatePopupClosingCallback('onSelectUtilityItem');
 
     this.state = { utilityPopupIsOpen: false };
     this.previousNotifications = [];
@@ -124,7 +125,9 @@ class Header extends React.Component {
   }
 
   renderToggle(headerHasAnyCounts) {
-    const { onMenuToggle, intl, activeBreakpoint, navigationItems } = this.props;
+    const {
+      onMenuToggle, intl, activeBreakpoint, navigationItems,
+    } = this.props;
 
     if (onMenuToggle && shouldRenderCompactNavigation(activeBreakpoint)) {
       const isPulsed = this.shouldPulse(navigationItems);
