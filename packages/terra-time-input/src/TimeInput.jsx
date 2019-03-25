@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import 'terra-base/lib/baseStyles';
 import Input from 'terra-form-input';
 import ButtonGroup from 'terra-button-group';
 

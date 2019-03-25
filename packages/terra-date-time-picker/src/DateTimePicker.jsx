@@ -2,7 +2,6 @@ import React from 'react';
 import { injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import 'terra-base/lib/baseStyles';
 import DatePicker from 'terra-date-picker';
 import TimeInput from 'terra-time-input';
 import KeyCode from 'keycode-js';
@@ -39,7 +38,7 @@ const propTypes = {
    */
   includeDates: PropTypes.arrayOf(PropTypes.string),
   /**
-   * intl object programatically imported through injectIntl from terra-base.
+   * intl object programmatically imported through injectIntl from react-intl.
    * */
   intl: intlShape.isRequired,
   /**

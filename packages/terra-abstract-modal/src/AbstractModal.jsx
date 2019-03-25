@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
-import 'terra-base/lib/baseStyles';
 import KeyCode from 'keycode-js';
 import ModalContent from './_ModalContent';
 
@@ -80,7 +79,7 @@ const defaultProps = {
   isFocused: true,
   isFullscreen: false,
   role: 'dialog',
-  rootSelector: '[data-terra-base]',
+  rootSelector: '#root',
   zIndex: '6000',
 };
 

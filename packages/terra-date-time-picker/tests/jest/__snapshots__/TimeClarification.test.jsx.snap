@@ -13,7 +13,7 @@ exports[`should render a default date time picker 1`] = `
     isOpen={true}
     onRequestClose={[MockFunction]}
     role="dialog"
-    rootSelector="[data-terra-base]"
+    rootSelector="#root"
     zIndex="9000"
   >
     <div>
@@ -91,7 +91,7 @@ exports[`should render a disabled time clarification 1`] = `
     isOpen={true}
     onRequestClose={[MockFunction]}
     role="dialog"
-    rootSelector="[data-terra-base]"
+    rootSelector="#root"
     zIndex="9000"
   >
     <div>

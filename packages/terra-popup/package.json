@@ -21,15 +21,14 @@
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "peerDependencies": {
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "terra-base": "^4.0.0"
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-intl": "^2.8.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "focus-trap-react": "^4.0.1",
     "prop-types": "^15.5.8",
-    "react-intl": "^2.7.2",
     "react-portal": "^4.1.2",
     "terra-button": "^3.3.0",
     "terra-content-container": "^3.0.0",

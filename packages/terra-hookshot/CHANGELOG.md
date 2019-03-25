@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update react/react-dom peer-dependency to latest stable minor release
+
+### Removed
+* Removed peer dependency on terra-base
+* Removed baseStyles import from terra-base
 
 5.4.0 - (March 12, 2019)
 ------------------
@@ -22,7 +28,7 @@ Unreleased
 5.1.0 - (February 5, 2019)
 ------------------
 ### Removed
-* Vestigial fixed styling removed and default to absolute. 
+* Vestigial fixed styling removed and default to absolute.
 
 5.0.0 - (January 25, 2019)
 ------------------
