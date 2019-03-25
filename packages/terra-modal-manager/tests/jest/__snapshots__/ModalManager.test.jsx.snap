@@ -53,7 +53,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
           isOpen={true}
           onRequestClose={[Function]}
           role="dialog"
-          rootSelector="[data-terra-base]"
+          rootSelector="#root"
           zIndex="6000"
         >
           <Portal
@@ -306,7 +306,7 @@ exports[`ModalManager should render the ModalManager with custom props 1`] = `
           isOpen={false}
           onRequestClose={[Function]}
           role="dialog"
-          rootSelector="[data-terra-base]"
+          rootSelector="#root"
           zIndex="6000"
         />
       </div>
@@ -364,7 +364,7 @@ exports[`ModalManager should render the ModalManager with defaults 1`] = `
           isOpen={false}
           onRequestClose={[Function]}
           role="dialog"
-          rootSelector="[data-terra-base]"
+          rootSelector="#root"
           zIndex="6000"
         />
       </div>

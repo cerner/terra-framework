@@ -6,6 +6,10 @@ Unreleased
 ### Added
 * Documentation for including section headers and subsection headers to the infinite list. 
 
+### Removed
+* Removed peer dependency on terra-base
+* Removed baseStyles import from terra-base
+
 3.0.0 - (February 13, 2019)
 ------------------
 ### Breaking Change

@@ -1,7 +1,7 @@
 {
   "name": "terra-time-input",
   "main": "lib/TimeInput.js",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "description": "A controlled input component for entering time.",
   "repository": {
     "type": "git",
@@ -23,8 +23,7 @@
   "peerDependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-intl": "^2.7.2",
-    "terra-base": "^4.0.0"
+    "react-intl": "^2.8.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",

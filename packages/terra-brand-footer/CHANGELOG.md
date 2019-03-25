@@ -3,6 +3,13 @@ Changelog
 
 Unreleased
 ----------
+
+### Removed
+* Removed peer dependency on terra-base
+* Removed baseStyles import from terra-base
+
+2.3.0 - (March 20, 2019)
+------------------
 ### Changed
 * Updated brand footer examples to use styled text to correct Section 508 warning
 

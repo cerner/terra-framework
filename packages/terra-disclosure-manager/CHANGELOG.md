@@ -3,6 +3,13 @@ ChangeLog
 
 Unreleased
 ----------
+
+### Removed
+* Removed peer dependency on terra-base
+* Removed baseStyles import from terra-base
+
+4.5.0 - (March 20, 2019)
+------------------
 ### Changed
 * Doc site upgrade guide markdown altered to correct 508 heading error
 
