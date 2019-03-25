@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import 'terra-base/lib/baseStyles';
 import Arrange from 'terra-arrange';
 import Button from 'terra-button';
 import IconCheckmark from 'terra-icon/lib/icon/IconCheckmark';

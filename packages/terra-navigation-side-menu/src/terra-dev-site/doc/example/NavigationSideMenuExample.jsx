@@ -1,5 +1,4 @@
 import React from 'react';
-import Base from 'terra-base';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import NavigationSideMenu from 'terra-navigation-side-menu/lib/NavigationSideMenu';
 
@@ -65,14 +64,12 @@ class NavigationSideMenuDefault extends React.Component {
     }
 
     return (
-      <Base>
-        <div style={{
-          height: '450px', width: '300px', position: 'relative', border: '1px solid lightgrey',
-        }}
-        >
-          {content}
-        </div>
-      </Base>
+      <div style={{
+        height: '450px', width: '300px', position: 'relative', border: '1px solid lightgrey',
+      }}
+      >
+        {content}
+      </div>
     );
   }
 }

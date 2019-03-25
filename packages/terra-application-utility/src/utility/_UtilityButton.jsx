@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';
-import 'terra-base/lib/baseStyles';
 import IconChevronDown from 'terra-icon/lib/icon/IconChevronDown';
 import IconChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 import UtilityMenu from './_UtilityMenu';

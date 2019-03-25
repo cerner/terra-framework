@@ -67,7 +67,7 @@ const reconcileChildren = (defaultItems, additionalItems) => {
 /**
  * The function generates a set of ApplicationLayout-standard utility menu items.
  *
- * @param {Object} intl is the intl context object provided by `terra-base`.
+ * @param {Object} intl is the intl context object provided by `react-intl`.
  * @param {Object} userData is an Object of user information data used to build the user data menu item.
  * Shape: {
  *   name: {String} The user's name

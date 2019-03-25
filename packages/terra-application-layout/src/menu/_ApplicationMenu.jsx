@@ -8,7 +8,6 @@ import { ApplicationMenuUtility } from 'terra-application-utility';
 import { disclosureType as modalDisclosureType } from 'terra-modal-manager';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 
-import 'terra-base/lib/baseStyles';
 import ApplicationLayoutPropTypes from '../utils/propTypes';
 import Helpers from '../utils/helpers';
 
