@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Updated prop onChange call logic with respect to ambiguous date-times.
+* Update react/react-dom peer-dependency to latest stable minor release
 
 ### Removed
 * Removed peer dependency on terra-base
