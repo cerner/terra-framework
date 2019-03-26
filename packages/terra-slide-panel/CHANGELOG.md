@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Added a medium size slide panel that is .4 scalar.
+* Update react/react-dom peer-dependency to latest stable minor release
 
 ### Removed
 * Removed peer dependency on terra-base

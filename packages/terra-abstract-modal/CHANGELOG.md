@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Update react/react-dom peer-dependency to latest stable minor release
 * Updated `rootProp` default value from `[data-terra-base]` to `#root`
 
 ### Removed
