@@ -11,10 +11,6 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Whether or not the menu display should be hidden.
-   */
-  isHidden: PropTypes.bool,
-  /**
    * Whether or not the menu display should be animated with selection.
    */
   isSelected: PropTypes.bool,
@@ -47,7 +43,6 @@ const propTypes = {
 const defaultProps = {
   isPulsed: false,
   isSelected: false,
-  isHidden: false,
   showNotificationRollup: false,
 };
 
@@ -70,7 +65,6 @@ class TabMenuDisplay extends React.Component {
 
   render() {
     const {
-      isHidden,
       isSelected,
       onKeyDown,
       popup,

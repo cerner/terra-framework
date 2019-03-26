@@ -127,7 +127,6 @@ class TabMenu extends React.Component {
         onKeyDown={this.handleOnKeyDown}
         popup={popup}
         refCallback={(node) => { this.setTargetRef(node); this.props.menuRefCallback(node); }}
-        isHidden={this.props.isHidden}
         text={moreText}
         isSelected={isSelected}
         key="application-tab-more"
@@ -138,6 +137,10 @@ class TabMenu extends React.Component {
   }
 
   render() {
+    if (this.props.isHidden) {
+      return null;
+    }
+
     let popup;
     if (this.state.isOpen) {
       popup = (
