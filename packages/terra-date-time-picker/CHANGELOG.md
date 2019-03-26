@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.11.0 - (March 26, 2019)
+------------------
 ### Changed
 * Updated prop onChange call logic with respect to ambiguous date-times.
 * Update react/react-dom peer-dependency to latest stable minor release
