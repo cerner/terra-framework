@@ -1,7 +1,10 @@
+
 import React from 'react';
 import PropTypes from 'prop-types';
-import ReactDatePicker from './react-datepicker';
 import ResponsiveElement from 'terra-responsive-element';
+
+/* eslint-disable-next-line  */
+import ReactDatePicker from './react-datepicker';
 import PopperContainer from './_PopperContainer';
 import DateInput from './DateInput';
 import DateUtil from './DateUtil';

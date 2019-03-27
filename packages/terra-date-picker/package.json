@@ -42,6 +42,9 @@
     "terra-modal-manager": "^5.7.0",
     "terra-responsive-element": "^4.0.0"
   },
+  "devDependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1"
+  },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
     "compile:clean": "rm -rf lib",
