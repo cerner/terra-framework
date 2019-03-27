@@ -3,7 +3,7 @@
 To achieve sections within the InfiniteList the only supported implementation is directly consuming the static variant of the `SectionHeader` component. Expand/collapse functionality is not supported within the infinite list. 
 
 ## Map Section Structure
-So in our first step a `SectionHeader` needs to be created for each associated section. We'll add it to the initialization of an array that will be expanded in following steps.
+So in our first step a `SectionHeader` needs to be created for each associated section. We'll add it to the initialization of an array that will be expanded in the following steps.
 ```jsx
   const createSection = (sectionData) => {
     const section = [
@@ -15,7 +15,7 @@ So in our first step a `SectionHeader` needs to be created for each associated s
     return section;
   };
 ```
-Next we'll create an array with the first item being our section header, and the nloop through the associated child items for the section appending them to the initial array.
+Next we'll create an array with the first item being our section header, and then loop through the associated child items for the section appending them to the initial array.
 ```jsx
   const createSection = (sectionData) => {
     const section = [

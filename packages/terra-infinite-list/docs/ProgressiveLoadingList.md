@@ -1,6 +1,6 @@
 # Terra InfiniteList - Progressive Loading
 
-To limit the impact of large data sets, progressive loading of list items is available through the InfiniteList. As the InfiniteList approaches the bottom of the it's scrollHeight the `onRequestItems` callback will execute, allowing the implementation to lazy load data into the list.
+To limit the impact of large data sets, progressive loading of list items is available through the InfiniteList. As the InfiniteList approaches the bottom of its scrollHeight the `onRequestItems` callback will execute, allowing the implementation to lazy load data into the list.
 
 ## State Management
 First we'll be defaulting our state to an empty array of items, a null page key, and false for isFinishedLoading in the constructor. 
@@ -34,7 +34,7 @@ We can then implement the unpack of our state data into our list items.
     ));
   }
 ```
-Finally we'll declare our infinite list looping. Providing the InfiniteList with an `initialLoadingIndicator` and `progressiveLoadingIndicator`. The infinite list doesn't have no visual styling, so loading indicators are customizable. Followed up with setting the `onRequestItems` to our requestData method.
+Finally we'll declare our infinite list looping. Providing the InfiniteList with an `initialLoadingIndicator` and `progressiveLoadingIndicator`. The infinite list does not have visual styling, so loading indicators are customizable. Followed up with setting the `onRequestItems` to our requestData method.
 ```jsx
   render() {
     return (
