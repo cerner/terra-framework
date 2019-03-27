@@ -161,6 +161,7 @@ class DateTimePicker extends React.Component {
   }
 
   handleOnDateBlur(event) {
+    debugger;
     const isDateTimeValid = DateTimeUtils.isValidDateTime(event.target.value, this.timeValue, this.state.dateFormat);
     const enteredDateTime = isDateTimeValid ? this.state.dateTime : null;
 
