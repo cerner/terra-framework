@@ -2,7 +2,7 @@
 
 The Embedded Content Consumer is the managed application component which is embedding web content within an iframe. The Embedded Content Consumer is responsible for the communication between its embedded content to its framework, such that interaction with embedded content appears seemless.
 
-Under the hood, the embedded-content-consumer utilizes an [`XFC (Cross-Frame-Container)`](https://www.npmjs.com/package/xfc) Consumer to mange the iframe size and to listen for messages bridged out from the embedded content through an XFC provider. 
+Under the hood, the embedded-content-consumer utilizes an [`XFC (Cross-Frame-Container)`](https://www.npmjs.com/package/xfc) Consumer to manage the iframe size and to listen for messages bridged out from the embedded content through an XFC provider. 
 
 The embedded-content-consumer will use the messages sent from the embedded content to determine if updates are neeed within itself. Otherwise if the embedded content needs to be updated, embedded-content-consumer should send a reply message to the embedded content provider. Then, the embedded content will update itself when it receives the embedded-content-consumer message.
 
