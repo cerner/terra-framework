@@ -10,96 +10,61 @@ With prop injection, the `app` prop was only provided to immediate children of t
 
 The below examples show contrasting v2.x and v3.x implementations of components that interact with a DisclosureManager (in this case, a ModalManager).
 
-## v2
-```jsx
-import Base from 'terra-base';
-import ModalManager from 'terra-modal-manager'; 
-import AppDelegate from 'terra-app-delegate';
 
-const MyDisclosureComponent = ({ app }) => (
-  <Button
-    text="Close Modal"
-    onClick={() => { 
-      app.closeDisclosure();
-    }}
-  />
-);
+```diff
+/**
+ * v2.x to v3.x
+ */
+ import Base from 'terra-base';
+ import ModalManager from 'terra-modal-manager'; 
+- import AppDelegate from 'terra-app-delegate';
++ import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 
-MyDisclosureComponent.propType = {
-  app: AppDelegate.propType,
-}
+- const MyDisclosureComponent = ({ app }) => (
++ const MyDisclosureComponent = withDisclosureManager(({ disclosureManager }) => (
+   <Button
+     text="Close Modal"
+     onClick={() => { 
+-      app.closeDisclosure();
++      disclosureManager.closeDisclosure();
+     }}
+   />
+- );
++ ));
 
-const MyComponent = ({ app }) => (
-  <Button
-    text="Launch Modal"
-    onClick={() => { 
-      app.disclose({
-        preferredType: 'modal',
-        content: {
-          key: 'MY-MODAL-DISCLOSURE',
-          component: <MyDisclosureComponent />,
-        }
-      });
-    }}
-  />
-);
+ MyDisclosureComponent.propType = {
+-   app: AppDelegate.propType,
++   disclosureManager: disclosureManagerShape,
+ };
 
-MyComponent.propType = {
-  app: AppDelegate.propType,
-}
+- const MyComponent = ({ app }) => (
++ const MyComponent = withDisclosureManager(({ disclosureManager }) => (
+    <Button
+      text="Launch Modal"
+      onClick={() => { 
+-       app.disclose({
++       disclosureManager.disclose({
+          preferredType: 'modal',
+          content: {
+            key: 'MY-MODAL-DISCLOSURE',
+            component: <MyDisclosureComponent />,
+          }
+        });
+      }}
+   />
+- );
++ ));
+ 
+ MyComponent.propType = {
+-   app: AppDelegate.propType,
++   disclosureManager: disclosureManagerShape,
+ };
 
-const MyApp = () => (
-  <Base locale="en">
-    <ModalManager>
-      <MyComponent />
-    </ModalManager>
-  </Base>
-)
-```
-
-### v3
-```jsx
-import Base from 'terra-base';
-import ModalManager from 'terra-modal-manager'; 
-import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
-
-const MyDisclosureComponent = withDisclosureManager(({ disclosureManager }) => (
-  <Button
-    text="Close Modal"
-    onClick={() => { 
-      disclosureManager.closeDisclosure();
-    }}
-  />
-));
-
-MyDisclosureComponent.propTypes = {
-  disclosureManager: disclosureManagerShape,
-}
-
-const MyComponent = withDisclosureManager(({ disclosureManager }) => (
-  <Button
-    text="Launch Modal"
-    onClick={() => { 
-      disclosureManager.disclose({
-        preferredType: 'modal',
-        content: {
-          key: 'MY-MODAL-DISCLOSURE',
-          component: <MyDisclosureComponent />,
-        }
-      });
-    }}
-  />
-));
-
-MyComponent.propTypes = {
-  disclosureManager: disclosureManagerShape,
-}
-
-const MyApp = () => (
-  <Base locale="en">
-    <ModalManager>
-      <MyComponent />
-    </ModalManager>
-  </Base>
-)
+ const MyApp = () => (
+   <Base locale="en">
+     <ModalManager>
+       <MyComponent />
+     </ModalManager>
+   </Base>
+ );
 ```
