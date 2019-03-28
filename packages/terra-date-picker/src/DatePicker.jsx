@@ -70,6 +70,10 @@ const propTypes = {
    */
   requestFocus: PropTypes.func,
   /**
+   * Whether or not the date is required.
+   */
+  required: PropTypes.bool,
+  /**
    * An ISO 8601 string representation of the initial value to show in the date input.
    * This prop name is derived from react-datepicker but is analogous to value in a form input field.
    */
@@ -89,6 +93,7 @@ const defaultProps = {
   onClickOutside: undefined,
   onSelect: undefined,
   releaseFocus: undefined,
+  required: false,
   requestFocus: undefined,
   selectedDate: undefined,
 };
@@ -238,6 +243,7 @@ class DatePicker extends React.Component {
       onClickOutside,
       onSelect,
       requestFocus,
+      required,
       releaseFocus,
       selectedDate,
       ...customProps
@@ -266,6 +272,7 @@ class DatePicker extends React.Component {
         onChangeRaw={this.handleChangeRaw}
         onClickOutside={this.handleOnClickOutside}
         onSelect={this.handleOnSelect}
+        required={required}
         customInput={(
           <DateInput
             onInputFocus={this.handleOnInputFocus}
@@ -303,6 +310,7 @@ class DatePicker extends React.Component {
         onChangeRaw={this.handleChangeRaw}
         onClickOutside={this.handleOnClickOutside}
         onSelect={this.handleOnSelect}
+        required={required}
         customInput={(
           <DateInput
             onInputFocus={this.handleOnInputFocus}
