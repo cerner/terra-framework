@@ -65,6 +65,11 @@ const propTypes = {
    */
   onChangeRaw: PropTypes.func,
   /**
+   * A callback function to execute when a selection is made in the date picker.
+   * The first parameter is the event. The second parameter is the selected input value.
+   */
+  onSelect: PropTypes.func,
+  /**
    * A callback function to let the containing component (e.g. modal) to regain focus.
    */
   releaseFocus: PropTypes.func,
@@ -94,6 +99,7 @@ const defaultProps = {
   minDateTime: undefined,
   onChange: undefined,
   onChangeRaw: undefined,
+  onSelect: undefined,
   releaseFocus: undefined,
   requestFocus: undefined,
   timeInputAttributes: undefined,
@@ -158,6 +164,9 @@ class DateTimePicker extends React.Component {
 
     if (!previousDateTime || previousDateTime.format() !== updatedDateTime.format()) {
       this.checkAmbiguousTime(updatedDateTime);
+    }
+    if (this.props.onSelect) {
+      this.props.onSelect(event, selectedDate);
     }
   }
 
@@ -372,6 +381,7 @@ class DateTimePicker extends React.Component {
       includeDates,
       onChange,
       onChangeRaw,
+      onSelect,
       maxDateTime,
       minDateTime,
       name,
