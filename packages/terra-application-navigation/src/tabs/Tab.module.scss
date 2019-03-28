@@ -58,7 +58,6 @@
     flex: 0 0 auto;
     font-family: inherit;
     font-size: var(--terra-application-navigation-tabs-tab-font-size, 0.9285714rem);
-    font-weight: var(--terra-application-navigation-tabs-tab-font-weight, normal);
     height: 100%;
     margin: 0;
     outline: none;
@@ -107,18 +106,11 @@
       line-height: 17px;
       max-width: 100%;
       overflow: hidden;
-      position: absolute; // remove IE10 active click transformation
+      position: relative; // remove IE10 active click transformation
       text-overflow: ellipsis;
       white-space: nowrap;
       word-break: normal;
       word-wrap: normal;
-    }
-
-    .tab-label-bold {
-      font-weight: 500;
-      display: block;
-      top: 0px;
-      visibility: hidden;
     }
 
     &:hover,
@@ -127,33 +119,7 @@
     }
 
     &[aria-current='true'] {
-      font-weight: var(--terra-application-navigation-tabs-tab-selected-font-weight, 500);
       text-shadow: var(--terra-application-navigation-tabs-tab-selected-text-shadow, none);
-
-
-      .has-count {
-        .tab-label {
-          left: 45px;
-        }
-      }
-    
-      .has-one-digit {
-        .tab-label {
-          left: 40px;
-        }
-      }
-    
-      .has-two-digit {
-        .tab-label {
-          left: 35px;
-        }
-      }
-    
-      .has-plus-digit {
-        .tab-label {
-          left: 30px;
-        }
-      }
 
       &::before {
         background-color: var(--terra-application-navigation-tabs-tab-selected-divider-before-background-color, #0079be);

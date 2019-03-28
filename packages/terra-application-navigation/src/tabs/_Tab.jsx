@@ -118,7 +118,6 @@ class Tab extends React.Component {
         <span className={cx(['tab-inner'])}>
           {!!icon && <span className={cx('tab-icon')}>{icon}</span>}
           <span className={cx(['tab-label'])}>{text}</span>
-          {!isCollapsed && <span className={cx(['tab-label-bold'])}>{text}</span>}
           {notificationCount > 0 && <span className={cx('tab-count')}><Count refCallback={this.setCountNode} value={notificationCount} /></span>}
         </span>
       </button>
