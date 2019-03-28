@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Removed
+* Removed minDateTime and maxDateTime props in favor of using form validation to validate date ranges.
 
 3.11.0 - (March 26, 2019)
 ------------------

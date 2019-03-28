@@ -152,43 +152,6 @@ exports[`should render a date time picker with included dates 1`] = `
 />
 `;
 
-exports[`should render a date time picker with min and max dates 1`] = `
-<DateTimePicker
-  disabled={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  maxDateTime="2017-04-01"
-  minDateTime="2017-04-10"
-  name="date-time-input"
-  utcOffset={0}
-/>
-`;
-
 exports[`should render a date time picker with onChange 1`] = `
 <DateTimePicker
   disabled={false}

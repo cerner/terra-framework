@@ -42,14 +42,6 @@ const propTypes = {
    * */
   intl: intlShape.isRequired,
   /**
-   * An ISO 8601 string representation of the maximum date time.
-   */
-  maxDateTime: PropTypes.string,
-  /**
-   * An ISO 8601 string representation of the minimum date time.
-   */
-  minDateTime: PropTypes.string,
-  /**
    * Name of the date input. The name should be unique.
    */
   name: PropTypes.string.isRequired,
@@ -89,8 +81,6 @@ const defaultProps = {
   excludeDates: undefined,
   filterDate: undefined,
   includeDates: undefined,
-  maxDateTime: undefined,
-  minDateTime: undefined,
   onChange: undefined,
   onChangeRaw: undefined,
   releaseFocus: undefined,
@@ -226,7 +216,7 @@ class DateTimePicker extends React.Component {
 
   handleTimeChange(event, time) {
     this.timeValue = time;
-    const validDate = DateTimeUtils.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeWithinRange(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat));
+    const validDate = DateTimeUtils.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeAcceptable(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat));
     const validTime = DateTimeUtils.isValidTime(this.timeValue);
     const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
 
@@ -301,21 +291,11 @@ class DateTimePicker extends React.Component {
   }
 
   validateDefaultDate() {
-    return this.isDateTimeWithinRange(this.state.dateTime);
+    return this.isDateTimeAcceptable(this.state.dateTime);
   }
 
-  isDateTimeWithinRange(newDateTime) {
-    let isAcceptable = true;
-
-    if (DateUtil.isDateOutOfRange(newDateTime, DateUtil.createSafeDate(this.props.minDateTime), DateUtil.createSafeDate(this.props.maxDateTime))) {
-      isAcceptable = false;
-    }
-
-    if (DateUtil.isDateExcluded(newDateTime, this.props.excludeDates)) {
-      isAcceptable = false;
-    }
-
-    return isAcceptable;
+  isDateTimeAcceptable(newDateTime) {
+    return !DateUtil.isDateExcluded(newDateTime, this.props.excludeDates);
   }
 
   handleDaylightSavingButtonClick(event) {
@@ -371,8 +351,6 @@ class DateTimePicker extends React.Component {
       includeDates,
       onChange,
       onChangeRaw,
-      maxDateTime,
-      minDateTime,
       name,
       requestFocus,
       releaseFocus,
@@ -407,8 +385,6 @@ class DateTimePicker extends React.Component {
           filterDate={filterDate}
           includeDates={includeDates}
           inputAttributes={dateInputAttributes}
-          maxDate={maxDateTime}
-          minDate={minDateTime}
           selectedDate={dateValue}
           name="input"
           releaseFocus={releaseFocus}

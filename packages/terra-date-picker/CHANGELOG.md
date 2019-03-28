@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Honor min/max range when only either minDate or maxDate is set.
 
 3.10.0 - (March 26, 2019)
 ------------------
