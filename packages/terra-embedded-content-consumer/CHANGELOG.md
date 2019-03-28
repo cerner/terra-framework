@@ -7,14 +7,20 @@ Unreleased
 * EmbeddedContentProviderTestTemplate for testing embedded applications
 
 ### Changed
-* Update react/react-dom peer-dependency to latest stable minor release
 * Updated existing provider examples to use the EmbeddedContentProviderTestTemplate
 * Changed Provider examples to use `.provider` extension to fix provider examples in terra-ui
 
 ### Removed
+* Dead code tests / examples that tested XFC implementation
+
+3.2.0 - (March 26, 2019)
+------------------
+### Changed
+* Update react/react-dom peer-dependency to latest stable minor release
+
+### Removed
 * Removed peer dependency on terra-base
 * Removed baseStyles import from terra-base
-* Dead code tests / examples that tested XFC implementation
 
 3.1.0 - (February 5, 2019)
 ------------------

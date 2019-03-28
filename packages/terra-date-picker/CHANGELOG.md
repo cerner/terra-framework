@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+3.10.0 - (March 26, 2019)
+------------------
+### Added
+* Added 'required' prop to match terra-form components' required prop
+
 ### Changed
 * Update react/react-dom peer-dependency to latest stable minor release
 
