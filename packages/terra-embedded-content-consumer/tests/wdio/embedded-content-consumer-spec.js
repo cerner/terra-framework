@@ -13,17 +13,37 @@ describe('Embedded Content Consumer', () => {
     before(() => {
       browser.url('#/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/consumers/custom-event-consumer');
       browser.waitForExist('#CustomEvent');
-      browser.pause(1000);
     });
 
     Terra.should.matchScreenshot({ viewports });
+
+
+    it('Provider triggers EventA message', () => {
+      const myFrame = browser.element('iframe[src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-event-provider"]').value;
+      browser.frame(myFrame);
+
+      browser.click('#EventA');
+      browser.frameParent();
+    });
+
+    Terra.should.matchScreenshot('EventA', { viewports });
   });
 
   describe('custom-events', () => {
     before(() => {
       browser.url('#/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/consumers/custom-events-consumer');
       browser.waitForExist('#CustomEvents');
-      browser.pause(1000);
+    });
+
+    Terra.should.matchScreenshot({ viewports });
+
+
+    it('Provider triggers EventA message', () => {
+      const myFrame = browser.element('iframe[src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]').value;
+      browser.frame(myFrame);
+
+      browser.click('#EventA');
+      browser.frameParent();
     });
 
     Terra.should.matchScreenshot('EventA', { viewports });
@@ -36,9 +56,12 @@ describe('Embedded Content Consumer', () => {
       browser.frameParent();
     });
 
-    it('waits for Provider to trigger eventB', () => {
-      // Waiting for events to execute.
-      browser.pause(10000);
+    it('Provider triggers EventB message', () => {
+      const myFrame = browser.element('iframe[src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]').value;
+      browser.frame(myFrame);
+
+      browser.click('#EventB');
+      browser.frameParent();
     });
 
     Terra.should.matchScreenshot('EventB', { viewports });
