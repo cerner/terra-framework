@@ -96,9 +96,9 @@ class Extensions extends React.Component {
     if (activeBreakpoint === 'tiny' || activeBreakpoint === 'small') {
       sliceIndex = EXTENSION_COUNT.SMALL;
     } else if (activeBreakpoint === 'medium') {
-      sliceIndex = extensionConfig.mediumCount; // 3 - 5?
+      sliceIndex = extensionConfig.mediumCount || 3;
     } else {
-      sliceIndex = extensionConfig.largeCount; // 1 - 6
+      sliceIndex = extensionConfig.largeCount || 5;
     }
 
     if (extensionConfig.extensions.length <= sliceIndex + 1) {
