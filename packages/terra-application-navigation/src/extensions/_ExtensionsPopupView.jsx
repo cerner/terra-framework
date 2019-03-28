@@ -3,25 +3,17 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ContentContainer from 'terra-content-container';
 import ActionHeader from 'terra-action-header';
-
-import { extensionConfigPropType } from '../utils/propTypes';
-import { shouldRenderCompactNavigation } from '../utils/helpers';
 import ExtensionHelper from './_ExtensionHelper';
-import { EXTENSION_COUNT } from './_ExtensionUtils';
 
-import styles from './Extension.module.scss';
+import styles from './ExtensionsPopupView.module.scss';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The currently active breakpoint.
-   */
-  activeBreakpoint: PropTypes.string,
-  /**
    * The content to be rendered in the ApplicationLayout's extensions region.
    */
-  extensionConfig: extensionConfigPropType,
+  extensions: PropTypes.array,
   /**
    * Function callback for closing the drawer.
    */
@@ -34,34 +26,22 @@ const propTypes = {
 };
 
 const defaultProps = {
-  activeBreakpoint: '',
+  extensions: [],
 };
 
 const ExtensionsPopupView = ({
-  activeBreakpoint,
-  extensionConfig,
+  extensions,
   onRequestClose,
   isHeightBounded,
-}) => {
-  if (!extensionConfig) {
-    return null;
-  }
-
-  let extensionItems = extensionConfig.extensions.slice(EXTENSION_COUNT.LARGE);
-  if (shouldRenderCompactNavigation(activeBreakpoint)) {
-    extensionItems = extensionConfig.extensions.slice(EXTENSION_COUNT.SMALL);
-  }
-
-  return (
-    <ContentContainer
-      header={<ActionHeader title="Extensions" />}
-      fill={isHeightBounded}
-      className={cx('extensions-popup-view')}
-    >
-      {ExtensionHelper(extensionItems, onRequestClose, true)}
-    </ContentContainer>
-  );
-};
+}) => (
+  <ContentContainer
+    header={<ActionHeader title="Extensions" />}
+    fill={isHeightBounded}
+    className={cx('extensions-popup-view')}
+  >
+    {ExtensionHelper(extensions, onRequestClose, true)}
+  </ContentContainer>
+);
 
 ExtensionsPopupView.propTypes = propTypes;
 ExtensionsPopupView.defaultProps = defaultProps;

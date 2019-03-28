@@ -1,0 +1,54 @@
+:local {
+  .extension-row {
+    align-items: center;
+    background-clip: padding-box;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    outline: none;
+    overflow: hidden;
+    padding: 0.7142857143rem 1.0714285714rem;
+    width: 100%;
+
+    .extension-icon {
+      color: #4983d1;
+      margin-right: 0.5rem;
+    }
+
+    .extension-text {
+      color: rgba(17, 22, 25, 0.75);
+      flex: 1 1 auto;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    .extension-row-count {
+      flex: 0 0  auto;
+      margin-left: 0.5rem;
+    }
+
+    .extension-image {
+      height: 14px;
+      overflow: hidden;
+      width: 14px;
+  
+      & > svg {
+        position: absolute;
+      }
+    }
+
+    &[data-item-show-focus='true']:focus {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    &:active {
+      background-color: rgba(255, 255, 255, 1);
+    }
+  }
+}

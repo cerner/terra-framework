@@ -1,10 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 import Popup from 'terra-popup';
 import { extensionConfigPropType } from '../utils/propTypes';
 import ExtensionsPopupView from './_ExtensionsPopupView';
-import ExtensionsRow from './_ExtensionsRow';
+import ExtensionRollup from './_ExtensionRollup';
+import ExtensionHelper from './_ExtensionHelper';
+import { EXTENSION_COUNT } from './_ExtensionUtils';
 import { shouldRenderCompactNavigation } from '../utils/helpers';
+import styles from './Extensions.module.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -21,24 +27,27 @@ const defaultProps = {
   activeBreakpoint: '',
 };
 
-const polyFill = () => {
-  if (typeof window.CustomEvent === 'function') {
-    return false;
+const shouldShowNotifications = (extensionItems) => {
+  for (let i = 0; i < extensionItems.length; i += 1) {
+    if (extensionItems[i].notificationCount > 0) {
+      return true;
+    }
   }
-
-  const CustomEvent = (event, params) => {
-    const params2 = params || { bubbles: false, cancelable: false, detail: null };
-    const evt = document.createEvent('CustomEvent');
-    evt.initCustomEvent(event, params2.bubbles, params2.cancelable, params2.detail);
-    return evt;
-  };
-
-  CustomEvent.prototype = window.Event.prototype;
-  window.CustomEvent = CustomEvent;
-
-  return true;
+  return false;
 };
-polyFill();
+
+const createRollupButton = (hiddenItems, onRollupSelect, refCallback) => {
+  if (!hiddenItems || !hiddenItems.length) {
+    return null;
+  }
+  return (
+    <ExtensionRollup
+      onSelect={onRollupSelect}
+      refCallback={refCallback}
+      hasChildNotifications={shouldShowNotifications(hiddenItems)}
+    />
+  );
+};
 
 class Extensions extends React.Component {
   constructor(props) {
@@ -83,6 +92,22 @@ class Extensions extends React.Component {
       attachmentSpread = { contentAttachment: 'top right', targetAttachment: 'bottom center' };
     }
 
+    let sliceIndex;
+    if (activeBreakpoint === 'tiny' || activeBreakpoint === 'small') {
+      sliceIndex = EXTENSION_COUNT.SMALL;
+    } else if (activeBreakpoint === 'medium') {
+      sliceIndex = extensionConfig.mediumCount; // 3 - 5?
+    } else {
+      sliceIndex = extensionConfig.largeCount; // 1 - 6
+    }
+
+    if (extensionConfig.extensions.length <= sliceIndex + 1) {
+      sliceIndex = extensionConfig.extensions.length;
+    }
+
+    const visibleItems = extensionConfig.extensions.slice(0, sliceIndex);
+    const hiddenItems = extensionConfig.extensions.slice(sliceIndex);
+
     return (
       <React.Fragment>
         <Popup
@@ -95,18 +120,15 @@ class Extensions extends React.Component {
           onRequestClose={this.handleRequestClose}
         >
           <ExtensionsPopupView
-            extensionConfig={extensionConfig}
+            extensions={hiddenItems}
             activeBreakpoint={activeBreakpoint}
             onRequestClose={this.handleRequestClose}
           />
         </Popup>
-        <ExtensionsRow
-          extensionConfig={extensionConfig}
-          activeBreakpoint={activeBreakpoint}
-          onRollupSelect={this.handleRollupSelect}
-          refCallback={this.setButtonNode}
-          onRequestClose={this.handleRequestClose}
-        />
+        <div className={cx('extensions-row')}>
+          {ExtensionHelper(visibleItems, this.handleRequestClose, false)}
+          {createRollupButton(hiddenItems, this.handleRollupSelect, this.setButtonNode)}
+        </div>
       </React.Fragment>
     );
   }

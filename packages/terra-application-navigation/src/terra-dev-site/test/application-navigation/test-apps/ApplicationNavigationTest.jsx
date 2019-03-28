@@ -231,6 +231,8 @@ class ApplicationNavigationTest extends React.Component {
     }
 
     const extensionConfig = {
+      largeCount: 4,
+      mediumCount: 3,
       extensions: [
         {
           image: <IconSearch />,
