@@ -8,7 +8,6 @@ Unreleased
 ------------------
 ### Changed
 * Update react/react-dom peer-dependency to latest stable minor release
-* Forked React Datepicker
 
 ### Removed
 * Removed peer dependency on terra-base
