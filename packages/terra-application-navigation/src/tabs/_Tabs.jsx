@@ -137,7 +137,7 @@ class Tabs extends React.Component {
     let calcMinWidth = 0;
     for (let i = 0; i < childrenCount; i += 1) {
       calcMinWidth += this.childWidths[i];
-      if (calcMinWidth > moreWidth) {
+      if (calcMinWidth > moreWidth && !(i === childrenCount - 1 && calcMinWidth <= width)) {
         newHideIndex = i;
         isMenuHidden = false;
         break;
