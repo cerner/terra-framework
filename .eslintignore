@@ -3,4 +3,4 @@ node_modules
 coverage
 build
 **/aggregated-translations/*.*
-**/react-datepicker/*.*
+packages/terra-date-picker/src/react-datepicker/*.*
