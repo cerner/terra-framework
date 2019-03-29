@@ -7,11 +7,6 @@ const userConfigPropType = PropTypes.shape({
   imageSrc: PropTypes.string,
 });
 
-const heroConfigPropType = PropTypes.shape({
-  component: PropTypes.node,
-  removeContainerPadding: PropTypes.bool,
-});
-
 /**
  * Shape for ApplicationLayout's `navigationItems` prop.
  */
@@ -59,9 +54,9 @@ const extensionConfigPropType = PropTypes.shape({
 });
 
 export default {
-  userConfigPropType, heroConfigPropType, navigationItemsPropType, navigationAlignmentPropType, utilityItemsPropType, extensionConfigPropType,
+  userConfigPropType, navigationItemsPropType, navigationAlignmentPropType, utilityItemsPropType, extensionConfigPropType,
 };
 
 export {
-  userConfigPropType, heroConfigPropType, navigationItemsPropType, navigationAlignmentPropType, utilityItemsPropType, extensionConfigPropType,
+  userConfigPropType, navigationItemsPropType, navigationAlignmentPropType, utilityItemsPropType, extensionConfigPropType,
 };

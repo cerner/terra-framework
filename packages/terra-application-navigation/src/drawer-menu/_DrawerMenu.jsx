@@ -8,7 +8,7 @@ import DrawerMenuListItem from './_DrawerMenuListItem';
 import DrawerMenuUser from './_DrawerMenuUser';
 import DrawerMenuFooterButton from './_DrawerMenuFooterButton';
 import {
-  userConfigPropType, heroConfigPropType, navigationItemsPropType, utilityItemsPropType,
+  userConfigPropType, navigationItemsPropType, utilityItemsPropType,
 } from '../utils/propTypes';
 
 import styles from './DrawerMenu.module.scss';
@@ -16,8 +16,11 @@ import styles from './DrawerMenu.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * A configuration object containing information about the user.
+   */
   userConfig: userConfigPropType,
-  heroConfig: heroConfigPropType,
+  hero: PropTypes.element,
   navigationItems: navigationItemsPropType,
   activeNavigationItemKey: PropTypes.string,
   onSelectNavigationItem: PropTypes.func,
@@ -34,18 +37,11 @@ const defaultProps = {
 };
 
 const DrawerMenu = ({
-  userConfig, heroConfig, navigationItems, activeNavigationItemKey, onSelectNavigationItem, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem,
+  userConfig, hero, navigationItems, activeNavigationItemKey, onSelectNavigationItem, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem,
 }) => {
-  let hero;
-  if (heroConfig) {
-    hero = !heroConfig.removeContainerPadding ? (
-      <div className={cx(['padded-hero-container', { 'pad-bottom': !userConfig }])}>{heroConfig.component}</div>
-    ) : heroConfig.component;
-  }
-
   let user;
   if (userConfig) {
-    user = heroConfig ? <DrawerMenuUser userConfig={userConfig} /> : <DrawerMenuUser userConfig={userConfig} variant="large" />;
+    user = hero ? <DrawerMenuUser userConfig={userConfig} /> : <DrawerMenuUser userConfig={userConfig} variant="large" />;
   }
 
   let logout;

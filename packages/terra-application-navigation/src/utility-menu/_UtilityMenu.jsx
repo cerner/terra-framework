@@ -9,7 +9,7 @@ import Button from 'terra-button';
 
 import UtilityMenuUser from './_UtilityMenuUser';
 import UtilityMenuListItem from './_UtilityMenuListItem';
-import { userConfigPropType, heroConfigPropType, utilityItemsPropType } from '../utils/propTypes';
+import { userConfigPropType, utilityItemsPropType } from '../utils/propTypes';
 
 import styles from './UtilityMenu.module.scss';
 
@@ -17,7 +17,7 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   userConfig: userConfigPropType,
-  heroConfig: heroConfigPropType,
+  hero: PropTypes.element,
   onSelectSettings: PropTypes.func,
   onSelectHelp: PropTypes.func,
   onSelectLogout: PropTypes.func,
@@ -27,16 +27,11 @@ const propTypes = {
 };
 
 const UtilityMenu = ({
-  userConfig, heroConfig, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem, isHeightBounded,
+  userConfig, hero, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem, isHeightBounded,
 }) => {
   let user;
   if (userConfig) {
     user = <UtilityMenuUser userConfig={userConfig} />;
-  }
-
-  let hero;
-  if (heroConfig) {
-    hero = heroConfig.component;
   }
 
   let footer;

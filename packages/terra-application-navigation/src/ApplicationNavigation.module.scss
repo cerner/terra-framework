@@ -1,14 +1,15 @@
 @import '~terra-application/lib/breakpoints/media-queries';
 
 :local {
-  .application-layout-container {
+  .application-navigation,
+  .drawer-menu-focus-trap-container {
     height: 100%;
     overflow: hidden;
     position: relative;
     width: 100%;
   }
 
-  .menu-panel {
+  .drawer-menu-container {
     background-color: var(--terra-application-layout-menu-panel-panel-background-color, rgba(17, 22, 25, 0.3));
     height: 100%;
     position: relative;
@@ -18,10 +19,10 @@
     
     @include terra-mq-small-up {
       width: var(--terra-application-layout-menu-panel-panel-width-medium, 20rem);
-    } 
+    }
   }
 
-  .body {
+  .content-layout {
     background-color: #fff;
     box-shadow: -10px 0 15px 0 rgba(17, 22, 25, 0.63);
     display: flex;
@@ -34,8 +35,7 @@
     z-index: 1;
   }
 
-
-  [dir=ltr] .menu-is-open > .body {
+  [dir=ltr] .content-layout.drawer-menu-is-open {
     transform: translate3d(var(--terra-application-layout-menu-panel-panel-width-default, calc(100% - 3.571rem)), 0, 0);
 
     @include terra-mq-small-up {
@@ -43,7 +43,7 @@
     } 
   }
 
-  [dir=rtl] .menu-is-open > .body {
+  [dir=rtl] .content-layout.drawer-menu-is-open {
     transform: translate3d(calc(-1 * var(--terra-application-layout-menu-panel-panel-width-default, calc(100% - 3.571rem))), 0, 0);
 
     @include terra-mq-small-up {
@@ -51,7 +51,7 @@
     } 
   }
 
-  .content {
+  .main-container {
     display: block;
     flex: 1 1 auto;
     height: 100%;

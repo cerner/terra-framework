@@ -12,7 +12,7 @@ import UtilityMenu from '../utility-menu/_UtilityMenu';
 import { shouldRenderCompactNavigation } from '../utils/helpers';
 import Count from './_ToggleCount';
 import {
-  userConfigPropType, heroConfigPropType, navigationItemsPropType, navigationAlignmentPropType, utilityItemsPropType,
+  userConfigPropType, navigationItemsPropType, navigationAlignmentPropType, utilityItemsPropType,
 } from '../utils/propTypes';
 
 import styles from './Header.module.scss';
@@ -54,7 +54,7 @@ const propTypes = {
    */
   intl: intlShape,
   userConfig: userConfigPropType,
-  heroConfig: heroConfigPropType,
+  hero: PropTypes.element,
   onSelectSettings: PropTypes.func,
   onSelectHelp: PropTypes.func,
   onSelectLogout: PropTypes.func,
@@ -204,7 +204,7 @@ class Header extends React.Component {
 
   renderUtilitiesPopup() {
     const {
-      heroConfig, userConfig, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem,
+      hero, userConfig, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem,
     } = this.props;
     const { utilityPopupIsOpen } = this.state;
 
@@ -223,7 +223,7 @@ class Header extends React.Component {
           targetRef={() => (this.utilityButtonRef)}
         >
           <UtilityMenu
-            heroConfig={heroConfig}
+            hero={hero}
             userConfig={userConfig}
             onSelectSettings={onSelectSettings ? this.handleSettingsSelection : undefined}
             onSelectHelp={onSelectHelp ? this.handleHelpSelection : undefined}

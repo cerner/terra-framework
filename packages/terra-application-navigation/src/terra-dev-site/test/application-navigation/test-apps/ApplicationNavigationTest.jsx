@@ -89,15 +89,8 @@ const userConfig = {
   imageSrc: profileImage,
 };
 
-const menuHeroConfig = {
-  component: <Image src={heroImage} variant="rounded" style={{ height: '150px', width: '100%' }} />,
-  removeContainerPadding: false,
-};
-
-const utilityHeroConfig = {
-  component: <Image src={heroCloseupImage} variant="rounded" style={{ height: '100px', width: '100%' }} />,
-  removeContainerPadding: false,
-};
+const drawerMenuHero = <Image src={heroImage} variant="rounded" style={{ height: 'auto', width: '100%' }} />;
+const utilityMenuHero = <Image src={heroCloseupImage} variant="rounded" style={{ height: 'auto', width: '100%' }} />;
 
 const utilityItems = [{
   key: 'Custom Utility 1',
@@ -289,8 +282,8 @@ class ApplicationNavigationTest extends React.Component {
         title="Test Application"
         extensionConfig={extensionConfig}
         userConfig={!hideUser ? userConfig : undefined}
-        menuHeroConfig={!hideHero ? menuHeroConfig : undefined}
-        utilityHeroConfig={!hideHero ? utilityHeroConfig : undefined}
+        drawerMenuHero={!hideHero ? drawerMenuHero : undefined}
+        utilityMenuHero={!hideHero ? utilityMenuHero : undefined}
         navigationItems={!hideNavigationItems ? itemToUse : undefined}
         activeNavigationItemKey={activeNavigationItem.key}
         onSelectNavigationItem={!hideNavigationItems ? this.handleNavigationItemSelection : null}
