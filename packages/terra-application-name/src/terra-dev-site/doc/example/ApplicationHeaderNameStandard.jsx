@@ -1,7 +1,7 @@
 import React from 'react';
 import ApplicationHeaderLayout from 'terra-application-header-layout';
 import Image from 'terra-image';
-import classNames from 'classnames/bind'
+import classNames from 'classnames/bind';
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import Placeholder from 'terra-application-name/lib/terra-dev-site/doc/common/Placeholder';
 import ApplicationHeaderName from 'terra-application-name/lib/ApplicationHeaderName';
