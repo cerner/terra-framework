@@ -27,7 +27,6 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "moment": "^2.21.0",
-    "popper.js": "^1.14.3",
     "prop-types": "^15.5.8",
     "react-onclickoutside": "^6.6.3",
     "react-popper": "^0.7.4",
@@ -50,7 +49,7 @@
     "compile:build": "babel src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
-    "lint:scss": "stylelint src/**/*.scss --ignore-path ../../.stylelintignore",
+    "lint:scss": "stylelint src/**/*.scss --ignore-path .stylelintignore",
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest --config ../../jestconfig.js",
     "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"
