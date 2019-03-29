@@ -7,13 +7,9 @@ const userConfigPropType = PropTypes.shape({
   imageSrc: PropTypes.string,
 });
 
-/**
- * Shape for ApplicationLayout's `navigationItems` prop.
- */
 const navigationItemsPropType = PropTypes.arrayOf(PropTypes.shape({
   key: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  hasSubMenu: PropTypes.bool,
 }));
 
 const utilityItemsPropType = PropTypes.arrayOf(PropTypes.shape({
@@ -21,11 +17,6 @@ const utilityItemsPropType = PropTypes.arrayOf(PropTypes.shape({
   icon: PropTypes.element,
   text: PropTypes.string.isRequired,
 }));
-
-/**
- * Alignment of the navigational tabs.
- */
-const navigationAlignmentPropType = PropTypes.oneOf(['start', 'center', 'end']);
 
 /**
  * Shape for ApplicationLayout's 'extensionConfig' prop.
@@ -54,9 +45,9 @@ const extensionConfigPropType = PropTypes.shape({
 });
 
 export default {
-  userConfigPropType, navigationItemsPropType, navigationAlignmentPropType, utilityItemsPropType, extensionConfigPropType,
+  userConfigPropType, navigationItemsPropType, utilityItemsPropType, extensionConfigPropType,
 };
 
 export {
-  userConfigPropType, navigationItemsPropType, navigationAlignmentPropType, utilityItemsPropType, extensionConfigPropType,
+  userConfigPropType, navigationItemsPropType, utilityItemsPropType, extensionConfigPropType,
 };

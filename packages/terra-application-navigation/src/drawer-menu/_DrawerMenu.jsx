@@ -17,17 +17,53 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * A configuration object containing information about the user.
+   * A configuration object with information pertaining to the application's user.
    */
   userConfig: userConfigPropType,
+  /**
+   * A hero element to render within the DrawerMenu.
+   */
   hero: PropTypes.element,
+  /**
+   * An array of configuration objects with information specifying the creation of navigation items.
+   */
   navigationItems: navigationItemsPropType,
+  /**
+   * A string key representing the currently active navigation item. This value should match one of the item keys provided in the
+   * `navigationItems` array.
+   */
   activeNavigationItemKey: PropTypes.string,
+  /**
+   * A function to be executed upon the selection of a navigation item.
+   * Ex: `onSelectNavigationItem(String selectedNavigationItemKey)`
+   */
   onSelectNavigationItem: PropTypes.func,
+  /**
+   * A function to be executed upon the selection of the Settings utility item.
+   * If `onSelectSettings` is not provided, the Settings utility item will not be rendered.
+   * Ex: `onSelectSettings()`
+   */
   onSelectSettings: PropTypes.func,
+  /**
+   * A function to be executed upon the selection of the Help utility item.
+   * If `onSelectHelp` is not provided, the Help utility item will not be rendered.
+   * Ex: `onSelectLogout()`
+   */
   onSelectHelp: PropTypes.func,
+  /**
+   * A function to be executed upon the selection of the Logout action button.
+   * If `onSelectLogout` is not provided, the Logout action button will not be rendered.
+   * Ex: `onSelectLogout()`
+   */
   onSelectLogout: PropTypes.func,
+  /**
+   * An array of configuration objects with information specifying the creation of additional utility menu items.
+   */
   utilityItems: utilityItemsPropType,
+  /**
+   * A function to be executed upon the selection of a custom utility item.
+   * Ex: `onSelectUtilityItem(String selectedUtilityItemKey)`
+   */
   onSelectUtilityItem: PropTypes.func,
 };
 
@@ -39,15 +75,8 @@ const defaultProps = {
 const DrawerMenu = ({
   userConfig, hero, navigationItems, activeNavigationItemKey, onSelectNavigationItem, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem,
 }) => {
-  let user;
-  if (userConfig) {
-    user = hero ? <DrawerMenuUser userConfig={userConfig} /> : <DrawerMenuUser userConfig={userConfig} variant="large" />;
-  }
-
-  let logout;
-  if (onSelectLogout) {
-    logout = <DrawerMenuFooterButton onClick={onSelectLogout} text="Logout" />;
-  }
+  const userComponent = userConfig ? <DrawerMenuUser userConfig={userConfig} variant={hero ? 'small' : 'large'} /> : undefined;
+  const logoutButton = onSelectLogout ? <DrawerMenuFooterButton onClick={onSelectLogout} text="Logout" /> : undefined;
 
   return (
     <div className={cx('drawer-menu')} tabIndex="0">
@@ -55,37 +84,32 @@ const DrawerMenu = ({
         <div className={cx('header')}>
           <div className={cx('header-background-fill')}>
             {hero}
-            {user}
+            {userComponent}
           </div>
         </div>
-        <ul className={cx('navigation-list')} role="listbox">
+        <ul className={cx('navigation-item-list')} role="listbox">
           {navigationItems.map(item => (
             <DrawerMenuListItem
               key={item.key}
               text={item.text}
               notificationCount={item.notificationCount}
-              onSelect={onSelectNavigationItem ? () => {
-                onSelectNavigationItem(item.key);
-              } : undefined}
+              onSelect={onSelectNavigationItem && onSelectNavigationItem.bind(null, item.key)}
               isSelected={item.key === activeNavigationItemKey}
               icon={item.icon}
             />
           ))}
         </ul>
-        <ul className={cx('utility-list')} role="listbox">
+        <ul className={cx('utility-item-list')} role="listbox">
           {utilityItems.map(item => (
             <DrawerMenuListItem
               key={item.key}
               text={item.text}
               icon={item.icon}
-              onSelect={onSelectUtilityItem ? () => {
-                onSelectUtilityItem(item.key);
-              } : undefined}
+              onSelect={onSelectUtilityItem && onSelectUtilityItem.bind(null, item.key)}
             />
           ))}
           {onSelectSettings ? (
             <DrawerMenuListItem
-              key="application-navigation.drawer-menu.settings"
               text="Settings" // TODO INTL
               icon={<IconSettings />}
               onSelect={onSelectSettings}
@@ -93,7 +117,6 @@ const DrawerMenu = ({
           ) : null}
           {onSelectHelp ? (
             <DrawerMenuListItem
-              key="application-navigation.drawer-menu.help"
               text="Help" // TODO INTL
               icon={<IconUnknown />}
               onSelect={onSelectSettings}
@@ -102,7 +125,7 @@ const DrawerMenu = ({
         </ul>
       </div>
       <div className={cx('footer')}>
-        {logout}
+        {logoutButton}
       </div>
     </div>
   );

@@ -8,57 +8,49 @@
     outline: none;
     overflow: hidden;
     position: relative;
-
-    .footer {
-      background-color: rgba(17, 22, 25, 0.2); // TODO: THEME
-      border-top: 1px solid rgba(255, 255, 255, 0.2); // TODO: THEME
-      box-shadow: 0 -10px 10px 5px #1a2f4b; // TODO: THEME
-      flex: 0 0 auto;
-      padding: 0.7142857143rem; // TODO: THEME
-      position: relative;
-    }
-
-    .vertical-overflow-container {
-      background-color: #1a2f4b; // TODO: THEME
-      flex: 1 1 auto;
-      height: 100%;
-      min-height: 0;
-      overflow: auto;
-    }
-
-    .header {
-      background-color: #2a4b77; // TODO THEME (SAME AS drawer-menu background-color);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .header-background-fill {
-      background-color: rgba(17, 22, 25, 0.3); // TODO THEME
-    }
-
-    .navigation-list,
-    .utility-list {
-      background-color: #2a4b77; // TODO THEME, SAME AS drawer-menu background
-      list-style: none;
-      margin: 0;
-      padding: 0;  
-    }
-
-    .navigation-list > li {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1); // TODO THEME
-    }
-
-    .utility-list { 
-      margin-bottom: 0.7142857143rem; // TODO THEME
-      margin-top: 0.7142857143rem; // TODO THEME
-    }
   }
 
-  .padded-hero-container {
-    padding: 20px 20px 0;
+  .footer {
+    background-color: rgba(17, 22, 25, 0.2); // TODO: THEME
+    border-top: 1px solid rgba(255, 255, 255, 0.2); // TODO: THEME
+    box-shadow: 0 -10px 10px 5px #1a2f4b; // TODO: THEME
+    flex: 0 0 auto;
+    padding: 0.7142857143rem; // TODO: THEME
+    position: relative;
   }
 
-  .padded-hero-container.pad-bottom {
-    padding: 20px;
+  .vertical-overflow-container {
+    background-color: #1a2f4b; // TODO: THEME
+    flex: 1 1 auto;
+    height: 100%;
+    min-height: 0;
+    overflow: auto;
+  }
+
+  .header {
+    background-color: #2a4b77; // TODO THEME (SAME AS drawer-menu background-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .header-background-fill {
+    background-color: rgba(17, 22, 25, 0.3); // TODO THEME
+  }
+
+  .navigation-item-list,
+  .utility-item-list {
+    background-color: #2a4b77; // TODO THEME, SAME AS drawer-menu background
+    list-style: none;
+    margin: 0;
+    padding: 0;  
+  }
+
+  .navigation-item-list > * {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); // TODO THEME
+  }
+
+  .utility-item-list { 
+    margin-bottom: 0.7142857143rem; // TODO THEME
+    margin-top: 0.7142857143rem; // TODO THEME
   }
 }
 
