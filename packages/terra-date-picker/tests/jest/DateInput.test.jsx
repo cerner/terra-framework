@@ -15,6 +15,7 @@ it('should render a default date input with all props', () => {
       name="date-input"
       placeholder="MM/DD/YYYY"
       value="01/01/2017"
+      onBlur={() => {}}
       onChange={() => {}}
       onClick={() => {}}
       onKeyDown={() => {}}

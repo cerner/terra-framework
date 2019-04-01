@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Change the onBlur event to get triggered only when the entire time input component loses focus.
 
 3.6.0 - (March 26, 2019)
 ------------------

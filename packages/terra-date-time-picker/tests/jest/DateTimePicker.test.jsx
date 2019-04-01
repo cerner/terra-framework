@@ -54,6 +54,12 @@ it('should render a date time picker with requestFocus', () => {
   expect(datePicker).toMatchSnapshot();
 });
 
+it('should render a date time picker with onBlur', () => {
+  const onBlur = () => {};
+  const datePicker = shallowWithIntl(<DateTimePicker name="date-time-input" onBlur={onBlur} utcOffset={0} />);
+  expect(datePicker).toMatchSnapshot();
+});
+
 it('should render a date time picker with onChange', () => {
   const onChange = () => {};
   const datePicker = shallowWithIntl(<DateTimePicker name="date-time-input" onChange={onChange} utcOffset={0} />);
