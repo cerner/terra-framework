@@ -103,3 +103,8 @@ it('should render a disabled date picker', () => {
   const datePicker = shallowWithIntl(<DatePicker name="date-input" disabled utcOffset={0} />);
   expect(datePicker).toMatchSnapshot();
 });
+
+it('should render a required date input and date picker', () => {
+  const datePicker = shallowWithIntl(<DatePicker name="date-input" utcOffset={0} required />);
+  expect(datePicker).toMatchSnapshot();
+});

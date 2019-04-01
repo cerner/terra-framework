@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ContentContainer from 'terra-content-container';
 import ResponsiveElement from 'terra-responsive-element';
-import 'terra-base/lib/baseStyles';
 import TabPane from './TabPane';
 import CollapsibleTabs from './_CollapsibleTabs';
 import CollapsedTabs from './_CollapsedTabs';

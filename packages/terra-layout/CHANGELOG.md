@@ -3,6 +3,17 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Updated snapshots to account for Overlay's `rootProp` default value from `[data-terra-base]` to `#root`
+
+3.2.0 - (March 26, 2019)
+------------------
+### Changed
+* Update react/react-dom peer-dependency to latest stable minor release
+
+### Removed
+* Removed peer dependency on terra-base
+* Removed baseStyles import from terra-base
 
 3.1.0 - (February 5, 2019)
 ------------------

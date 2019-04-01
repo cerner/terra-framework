@@ -4,7 +4,6 @@ import Arrange from 'terra-arrange';
 import CheckIcon from 'terra-icon/lib/icon/IconCheckmark';
 import ChevronIcon from 'terra-icon/lib/icon/IconChevronRight';
 import classNames from 'classnames/bind';
-import 'terra-base/lib/baseStyles';
 import KeyCode from 'keycode-js';
 import styles from './MenuItem.module.scss';
 
