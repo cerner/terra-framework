@@ -57,6 +57,7 @@ class SlidePanel extends React.Component {
   constructor(props) {
     super(props);
     this.setPanelNode = this.setPanelNode.bind(this);
+    this.setMainNode = this.setMainNode.bind(this);
     this.handleTransitionEnd = this.handleTransitionEnd.bind(this);
     this.preparePanelForTransition = this.preparePanelForTransition.bind(this);
 
@@ -83,10 +84,15 @@ class SlidePanel extends React.Component {
     this.panelNode = node;
   }
 
+  setMainNode(node) {
+    this.mainNode = node;
+  }
+
   handleTransitionEnd() {
     if (!this.props.isOpen) {
       this.panelNode.setAttribute('aria-hidden', 'true');
       this.isHidden = true;
+      this.mainNode.focus();
     }
   }
 
@@ -98,6 +104,7 @@ class SlidePanel extends React.Component {
         // If the panel is opening remove the hidden attribute so the animation performs correctly.
         this.panelNode.setAttribute('aria-hidden', 'false');
         this.isHidden = false;
+        this.panelNode.focus();
       } else {
         this.handleTransitionEnd();
       }
@@ -134,10 +141,10 @@ class SlidePanel extends React.Component {
         data-slide-panel-panel-position={panelPosition}
         data-slide-panel-panel-size={panelSize}
       >
-        <div className={cx('main')}>
+        <div className={cx('main')} tabIndex="-1" ref={this.setMainNode}>
           {mainContent}
         </div>
-        <div className={cx(['panel'])} aria-hidden={this.isHidden ? 'true' : 'false'} ref={this.setPanelNode}>
+        <div className={cx(['panel'])} tabIndex="-1" aria-hidden={this.isHidden ? 'true' : 'false'} ref={this.setPanelNode}>
           {panelContent}
         </div>
       </div>
