@@ -46,12 +46,12 @@ const CheckpointNotificationDialog = injectIntl(({
       title={title}
       message={message}
       primaryAction={{
-        text: intl.formatMessage({ id: 'Terra.navigationPromptCheckpoint.confirmPromptText' }),
-        onClick: onConfirm,
-      }}
-      secondaryAction={{
         text: intl.formatMessage({ id: 'Terra.navigationPromptCheckpoint.denyPromptText' }),
         onClick: onCancel,
+      }}
+      secondaryAction={{
+        text: intl.formatMessage({ id: 'Terra.navigationPromptCheckpoint.confirmPromptText' }),
+        onClick: onConfirm,
       }}
       variant="warning"
     />

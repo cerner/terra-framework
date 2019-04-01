@@ -109,7 +109,7 @@ class NavigationPromptCheckpoint extends React.Component {
     const { customResolverTitle } = this.props;
 
     if (!customResolverTitle) {
-      return 'Unsaved Changes';
+      return undefined;
     }
 
     if (typeof customResolverTitle === 'string') {
@@ -123,7 +123,7 @@ class NavigationPromptCheckpoint extends React.Component {
     const { customResolverMessage } = this.props;
 
     if (!customResolverMessage) {
-      return 'Unsaved changes were detected. Do you wish to continue?';
+      return undefined;
     }
 
     if (typeof customResolverMessage === 'string') {
