@@ -6,7 +6,7 @@ import React from 'react';
  * for register/deregisterPrompt to minimize branching logic in the context consumers.
  */
 export default React.createContext({
-  isDefaultValue: true,
+  isDefaultContextValue: true,
   registerPrompt: () => {},
   deregisterPrompt: () => {},
 });

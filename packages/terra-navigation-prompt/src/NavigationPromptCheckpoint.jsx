@@ -91,7 +91,9 @@ class NavigationPromptCheckpoint extends React.Component {
       deregisterPrompt: this.deregisterPrompt,
     };
 
-    this.state = {};
+    this.state = {
+      confirmationPrompt: undefined,
+    };
   }
 
   componentWillUnmount() {
@@ -99,7 +101,7 @@ class NavigationPromptCheckpoint extends React.Component {
 
     if (onPromptChange) {
       /**
-       * The implementer is notified a final time with an empty set of prompt data.
+       * The consumer is notified on unmount with an empty set of prompt data to clean up any previously mounted prompts.
        */
       onPromptChange([]);
     }

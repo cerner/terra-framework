@@ -21,7 +21,7 @@ class NavigationPrompt extends React.Component {
 
     /**
      * A unique identifier is generated for each NavigationPrompt during construction. This will be used to
-     * uniquely register/deregister the prompt with ancestor checkpoints without requiring implementers to
+     * uniquely register/deregister the prompt with ancestor checkpoints without requiring consumers to
      * define unique identifiers themselves.
      */
     this.uuid = uuidv4();
@@ -34,9 +34,10 @@ class NavigationPrompt extends React.Component {
     /**
      * If the ancestorCheckpoint value is the ProviderRegistrationContext's default value, then there is not a matching NavigationPromptCheckpoint in the hierarchy.
      */
-    if (ancestorCheckpoint.isDefaultValue) {
-      console.warn('A NavigationPromptCheckpoint was not rendered above a NavigationPrompt. If this is unexpected, validate that the expected version of the terra-navigation-prompt package is installed.');
-      return;
+    if (ancestorCheckpoint.isDefaultContextValue && process.env.NODE_ENV !== 'production') {
+      /* eslint-disable no-console */
+      console.warn('A NavigationPrompt was not rendered within the context of a NavigationPromptCheckpoint. If this is unexpected, validate that the expected version of the terra-navigation-prompt package is installed.');
+      /* eslint-enable no-console */
     }
 
     ancestorCheckpoint.registerPrompt(this.uuid, description, metaData);
@@ -60,9 +61,7 @@ class NavigationPrompt extends React.Component {
   }
 
   componentWillUnmount() {
-    const ancestorCheckpoint = this.context;
-
-    ancestorCheckpoint.deregisterPrompt(this.uuid);
+    this.context.deregisterPrompt(this.uuid);
   }
 
   render() {
