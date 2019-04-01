@@ -16,7 +16,13 @@
     }
   
     .extension-image {
-      flex: 0 0  auto;
+      height: 14px;
+      overflow: hidden;
+      width: 14px;
+  
+      & > svg {
+        position: absolute;
+      }
     }
   
     .extension-count {
