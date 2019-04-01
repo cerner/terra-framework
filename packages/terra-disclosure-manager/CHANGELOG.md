@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Doc Updates
+* Introduced safety checks for nested disclosure dismissals 
 
 4.6.0 - (March 26, 2019)
 ------------------
