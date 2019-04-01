@@ -185,6 +185,7 @@ TimeUtil.validateTime = new RegExp('^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$');
 TimeUtil.inputType = {
   HOUR: 0,
   MINUTE: 1,
+  MERIDIEM: 2,
 };
 
 TimeUtil.isConsideredMobileDevice = () => window.matchMedia('(max-width: 1024px)').matches

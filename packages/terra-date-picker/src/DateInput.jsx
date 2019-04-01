@@ -19,6 +19,10 @@ const propTypes = {
    */
   name: PropTypes.string,
   /**
+   * A callback function triggered when the input or calendar button loses focus. function(event)
+   */
+  onBlur: PropTypes.func,
+  /**
    * A callback function to execute when a valid date is selected or entered.
    */
   onChange: PropTypes.func,
@@ -55,6 +59,7 @@ const propTypes = {
 const defaultProps = {
   inputAttributes: undefined,
   name: undefined,
+  onBlur: undefined,
   onChange: undefined,
   onClick: undefined,
   onKeyDown: undefined,
@@ -120,6 +125,7 @@ class DatePickerInput extends React.Component {
     const {
       inputAttributes,
       name,
+      onBlur,
       onChange,
       onClick,
       onKeyDown,
@@ -166,6 +172,7 @@ class DatePickerInput extends React.Component {
           onChange={onChange}
           placeholder={placeholder}
           onFocus={this.onInputFocus}
+          onBlur={onBlur}
         />
         <Button
           className={styles.button}
@@ -176,6 +183,7 @@ class DatePickerInput extends React.Component {
           isIconOnly
           isCompact
           isDisabled={additionalInputProps.disabled}
+          onBlur={onBlur}
         />
       </div>
     );

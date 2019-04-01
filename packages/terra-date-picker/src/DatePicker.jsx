@@ -47,6 +47,11 @@ const propTypes = {
    */
   name: PropTypes.string.isRequired,
   /**
+   * A callback function triggered when the date picker component loses focus.
+   * This event does not get triggered when the focus is moved from the date input to the calendar button since the focus is still within the main date picker component.
+   */
+  onBlur: PropTypes.func,
+  /**
    * A callback function to execute when a valid date is selected or entered.
    * The first parameter is the event. The second parameter is the changed date value.
    */
@@ -91,6 +96,7 @@ const defaultProps = {
   inputAttributes: undefined,
   maxDate: undefined,
   minDate: undefined,
+  onBlur: undefined,
   onChange: undefined,
   onChangeRaw: undefined,
   onClickOutside: undefined,
@@ -120,6 +126,7 @@ class DatePicker extends React.Component {
     };
 
     this.isDefaultDateAcceptable = false;
+    this.handleBlur = this.handleBlur.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeRaw = this.handleChangeRaw.bind(this);
     this.handleOnSelect = this.handleOnSelect.bind(this);
@@ -173,6 +180,19 @@ class DatePicker extends React.Component {
     // The picker will be dismissed and the focus will be released so that the containing component (e.g. modal) can regain focus.
     if (this.props.releaseFocus) {
       this.props.releaseFocus();
+    }
+  }
+
+  handleBlur(event) {
+    if (this.props.onBlur) {
+      // Modern browsers support event.relatedTarget but event.relatedTarget returns null in IE 10 / IE 11.
+      // IE 11 sets document.activeElement to the next focused element before the blur event is called.
+      const activeTarget = event.relatedTarget ? event.relatedTarget : document.activeElement;
+
+      // Handle blur only if focus has moved out of the entire date picker component.
+      if (!this.dateNode.contains(activeTarget)) {
+        this.props.onBlur(event);
+      }
     }
   }
 
@@ -241,6 +261,7 @@ class DatePicker extends React.Component {
       maxDate,
       minDate,
       name,
+      onBlur,
       onChange,
       onChangeRaw,
       onClickOutside,
@@ -271,6 +292,7 @@ class DatePicker extends React.Component {
       <ReactDatePicker
         {...customProps}
         selected={this.state.selectedDate}
+        onBlur={this.handleBlur}
         onChange={this.handleChange}
         onChangeRaw={this.handleChangeRaw}
         onClickOutside={this.handleOnClickOutside}
@@ -309,6 +331,7 @@ class DatePicker extends React.Component {
       <ReactDatePicker
         {...customProps}
         selected={this.state.selectedDate}
+        onBlur={this.handleBlur}
         onChange={this.handleChange}
         onChangeRaw={this.handleChangeRaw}
         onClickOutside={this.handleOnClickOutside}
@@ -352,7 +375,10 @@ class DatePicker extends React.Component {
     );
 
     return (
-      <div className={styles['date-picker']}>
+      <div
+        className={styles['date-picker']}
+        ref={(node) => { this.dateNode = node; }}
+      >
         <ResponsiveElement
           responsiveTo="window"
           defaultElement={portalPicker}

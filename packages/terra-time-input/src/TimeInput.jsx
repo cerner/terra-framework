@@ -35,7 +35,8 @@ const propTypes = {
    */
   name: PropTypes.string.isRequired,
   /**
-   * A callback function to execute when either the hour or minute loses focus.
+   * A callback function to execute when the entire time input component loses focus.
+   * This event does not get triggered when the focus is moved from the hour input to the minute input or meridiem because the focus is still within the main time input component.
    */
   onBlur: PropTypes.func,
   /**
@@ -100,10 +101,11 @@ class TimeInput extends React.Component {
     this.handleMinuteFocus = this.handleMinuteFocus.bind(this);
     this.handleHourBlur = this.handleHourBlur.bind(this);
     this.handleMinuteBlur = this.handleMinuteBlur.bind(this);
+    this.handleMeridiemBlur = this.handleMeridiemBlur.bind(this);
     this.handleMeridiemChange = this.handleMeridiemChange.bind(this);
     this.handleMeridiemInputKeyDown = this.handleMeridiemInputKeyDown.bind(this);
     this.meridiemFocus = this.meridiemFocus.bind(this);
-    this.meridiemBlur = this.meridiemBlur.bind(this);
+
     this.handleMeridiemButtonChange = this.handleMeridiemButtonChange.bind(this);
 
     let hour = TimeUtil.splitHour(value);
@@ -215,26 +217,40 @@ class TimeInput extends React.Component {
     this.setState({ minuteInitialFocused: false });
   }
 
+  handleMeridiemBlur(event) {
+    this.handleBlur(event, TimeUtil.inputType.MERIDIEM);
+    this.setState({ meridiemFocused: false });
+  }
+
   handleBlur(event, type) {
     this.setState({ isFocused: false });
 
-    let stateValue = event.target.value;
+    if (type === TimeUtil.inputType.HOUR || type === TimeUtil.inputType.MINUTE) {
+      let stateValue = event.target.value;
 
-    // Prepend a 0 to the value when losing focus and the value is single digit.
-    if (stateValue.length === 1) {
-      if (this.props.variant === TimeUtil.FORMAT_12_HOUR
-          && type === TimeUtil.inputType.HOUR
-          && stateValue === '0') {
-        stateValue = '12';
-      } else {
-        stateValue = '0'.concat(stateValue);
+      // Prepend a 0 to the value when losing focus and the value is single digit.
+      if (stateValue.length === 1) {
+        if (this.props.variant === TimeUtil.FORMAT_12_HOUR
+            && type === TimeUtil.inputType.HOUR
+            && stateValue === '0') {
+          stateValue = '12';
+        } else {
+          stateValue = '0'.concat(stateValue);
+        }
+
+        this.handleValueChange(event, type, stateValue, this.state.meridiem);
       }
-
-      this.handleValueChange(event, type, stateValue, this.state.meridiem);
     }
 
     if (this.props.onBlur) {
-      this.props.onBlur(event);
+      // Modern browsers support event.relatedTarget but event.relatedTarget returns null in IE 10 / IE 11.
+      // IE 11 sets document.activeElement to the next focused element before the blur event is called.
+      const activeTarget = event.relatedTarget ? event.relatedTarget : document.activeElement;
+
+      // Handle blur only if focus has moved out of the entire time input component.
+      if (!this.timeInputNode.contains(activeTarget)) {
+        this.props.onBlur(event);
+      }
     }
   }
 
@@ -328,13 +344,6 @@ class TimeInput extends React.Component {
     });
 
     this.meridiemInput.focus();
-  }
-
-  meridiemBlur() {
-    this.setState({
-      isFocused: false,
-      meridiemFocused: false,
-    });
   }
 
   /**
@@ -546,7 +555,11 @@ class TimeInput extends React.Component {
     }
 
     return (
-      <div {...customProps} className={cx(['mobile-time-picker', customProps.className])}>
+      <div
+        {...customProps}
+        className={cx(['mobile-time-picker', customProps.className])}
+        ref={(node) => { this.timeInputNode = node; }}
+      >
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
           // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
@@ -606,12 +619,14 @@ class TimeInput extends React.Component {
               className={cx('meridiem-button')}
               text={this.anteMeridiem}
               isDisabled={disabled}
+              onBlur={this.handleMeridiemBlur}
             />
             <ButtonGroup.Button
               key={this.postMeridiem}
               className={cx('meridiem-button')}
               text={this.postMeridiem}
               isDisabled={disabled}
+              onBlur={this.handleMeridiemBlur}
             />
           </ButtonGroup>
         )}
@@ -662,7 +677,11 @@ class TimeInput extends React.Component {
 
     /* eslint-disable jsx-a11y/no-static-element-interactions */
     return (
-      <div {...customProps} className={timeInputClassNames}>
+      <div
+        {...customProps}
+        className={timeInputClassNames}
+        ref={(node) => { this.timeInputNode = node; }}
+      >
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
           // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
@@ -731,7 +750,7 @@ class TimeInput extends React.Component {
               <select
                 aria-label={this.context.intl.formatMessage({ id: 'Terra.timeInput.select.meridiem' })} // value in translations set to 'Select Meridiem'
                 ref={(input) => { this.meridiemInput = input; }}
-                onBlur={this.meridiemBlur}
+                onBlur={this.handleMeridiemBlur}
                 onFocus={this.meridiemFocus}
                 name={'terra-time-meridiem-'.concat(name)}
                 value={this.state.meridiem}

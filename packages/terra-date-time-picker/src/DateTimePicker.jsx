@@ -54,6 +54,11 @@ const propTypes = {
    */
   name: PropTypes.string.isRequired,
   /**
+   * A callback function triggered when the entire date time picker component loses focus.
+   * This event does not get triggered when the focus is moved from the date input to the time input because the focus is still within the main date time picker component.
+   */
+  onBlur: PropTypes.func,
+  /**
    * A callback function to execute when a valid date is selected or entered.
    * The first parameter is the event. The second parameter is the changed input value.
    */
@@ -91,6 +96,7 @@ const defaultProps = {
   includeDates: undefined,
   maxDateTime: undefined,
   minDateTime: undefined,
+  onBlur: undefined,
   onChange: undefined,
   onChangeRaw: undefined,
   releaseFocus: undefined,
@@ -162,21 +168,43 @@ class DateTimePicker extends React.Component {
   }
 
   handleOnDateBlur(event) {
-    const isDateTimeValid = DateTimeUtils.isValidDateTime(event.target.value, this.timeValue, this.state.dateFormat);
-    const enteredDateTime = isDateTimeValid ? this.state.dateTime : null;
+    // Modern browsers support event.relatedTarget but event.relatedTarget returns null in IE 10 / IE 11.
+    // IE 11 sets document.activeElement to the next focused element before the blur event is called.
+    const activeTarget = event.relatedTarget ? event.relatedTarget : document.activeElement;
 
-    this.checkAmbiguousTime(enteredDateTime);
+    // Handle blur only if focus has moved out of the entire date time picker component.
+    if (!this.dateTimeNode.contains(activeTarget)) {
+      const isDateTimeValid = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat);
+      const enteredDateTime = isDateTimeValid ? this.state.dateTime : null;
+
+      this.checkAmbiguousTime(enteredDateTime);
+
+      if (this.props.onBlur) {
+        this.props.onBlur(event);
+      }
+    }
   }
 
-  handleOnTimeBlur() {
-    const isDateTimeValid = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat);
-    let updatedDateTime;
+  handleOnTimeBlur(event) {
+    // Modern browsers support event.relatedTarget but event.relatedTarget returns null in IE 10 / IE 11.
+    // IE 11 sets document.activeElement to the next focused element before the blur event is called.
+    const activeTarget = event.relatedTarget ? event.relatedTarget : document.activeElement;
 
-    if (isDateTimeValid) {
-      updatedDateTime = DateTimeUtils.updateTime(this.state.dateTime, this.timeValue);
+    // Handle blur only if focus has moved out of the entire date time picker component.
+    if (!this.dateTimeNode.contains(activeTarget)) {
+      const isDateTimeValid = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat);
+      let updatedDateTime;
+
+      if (isDateTimeValid) {
+        updatedDateTime = DateTimeUtils.updateTime(this.state.dateTime, this.timeValue);
+      }
+
+      this.checkAmbiguousTime(updatedDateTime);
+
+      if (this.props.onBlur) {
+        this.props.onBlur(event);
+      }
     }
-
-    this.checkAmbiguousTime(updatedDateTime);
   }
 
   checkAmbiguousTime(dateTime) {
@@ -384,6 +412,7 @@ class DateTimePicker extends React.Component {
         onRequestClose={this.handleOnRequestClose}
         releaseFocus={this.props.releaseFocus}
         requestFocus={this.props.requestFocus}
+        onBlur={this.handleOnTimeBlur}
       />
     );
   }
@@ -395,6 +424,7 @@ class DateTimePicker extends React.Component {
       excludeDates,
       filterDate,
       includeDates,
+      onBlur,
       onChange,
       onChangeRaw,
       maxDateTime,
@@ -411,7 +441,11 @@ class DateTimePicker extends React.Component {
     const dateValue = DateTimeUtils.formatMomentDateTime(dateTime, 'YYYY-MM-DD');
 
     return (
-      <div {...customProps} className={cx('date-time-picker')}>
+      <div
+        {...customProps}
+        className={cx('date-time-picker')}
+        ref={(node) => { this.dateTimeNode = node; }}
+      >
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
           // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
