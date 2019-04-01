@@ -27,9 +27,9 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "moment": "^2.21.0",
-    "popper.js": "^1.14.3",
     "prop-types": "^15.5.8",
-    "react-datepicker": "^0.64.0",
+    "react-onclickoutside": "^6.6.3",
+    "react-popper": "^0.7.4",
     "react-portal": "^4.1.2",
     "terra-button": "^3.3.0",
     "terra-disclosure-manager": "^4.6.0",
@@ -40,13 +40,16 @@
     "terra-modal-manager": "^5.7.0",
     "terra-responsive-element": "^4.0.0"
   },
+  "devDependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1"
+  },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
     "compile:clean": "rm -rf lib",
     "compile:build": "babel src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
-    "lint:scss": "stylelint src/**/*.scss",
+    "lint:scss": "stylelint src/**/*.scss --ignore-path .stylelintignore",
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest --config ../../jestconfig.js",
     "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"
