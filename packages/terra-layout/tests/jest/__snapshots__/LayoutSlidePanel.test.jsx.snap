@@ -14,6 +14,7 @@ exports[`LayoutSlidePanel should render when small 1`] = `
   </div>
   <OverlayContainer
     className="content"
+    overlay={null}
   >
     <Overlay
       backgroundStyle="dark"
@@ -21,7 +22,7 @@ exports[`LayoutSlidePanel should render when small 1`] = `
       isRelativeToContainer={true}
       isScrollable={false}
       onRequestClose={[Function]}
-      rootSelector="[data-terra-base]"
+      rootSelector="#root"
       zIndex="6000"
     />
     <main
@@ -51,6 +52,7 @@ exports[`LayoutSlidePanel should render when tiny 1`] = `
   </div>
   <OverlayContainer
     className="content"
+    overlay={null}
   >
     <Overlay
       backgroundStyle="dark"
@@ -58,7 +60,7 @@ exports[`LayoutSlidePanel should render when tiny 1`] = `
       isRelativeToContainer={true}
       isScrollable={false}
       onRequestClose={[Function]}
-      rootSelector="[data-terra-base]"
+      rootSelector="#root"
       zIndex="6000"
     />
     <main
@@ -88,6 +90,7 @@ exports[`LayoutSlidePanel should render with provided props 1`] = `
   </div>
   <OverlayContainer
     className="content"
+    overlay={null}
   >
     <Overlay
       backgroundStyle="clear"
@@ -95,7 +98,7 @@ exports[`LayoutSlidePanel should render with provided props 1`] = `
       isRelativeToContainer={true}
       isScrollable={false}
       onRequestClose={[Function]}
-      rootSelector="[data-terra-base]"
+      rootSelector="#root"
       zIndex="6000"
     />
     <main
@@ -121,13 +124,14 @@ exports[`LayoutSlidePanel should render without optional props 1`] = `
   />
   <OverlayContainer
     className="content"
+    overlay={null}
   >
     <Overlay
       backgroundStyle="clear"
       isOpen={false}
       isRelativeToContainer={true}
       isScrollable={false}
-      rootSelector="[data-terra-base]"
+      rootSelector="#root"
       zIndex="6000"
     />
     <main

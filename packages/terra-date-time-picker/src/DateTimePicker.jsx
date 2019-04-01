@@ -166,7 +166,7 @@ class DateTimePicker extends React.Component {
       this.checkAmbiguousTime(updatedDateTime);
     }
     if (this.props.onSelect) {
-      this.props.onSelect(event, selectedDate);
+      this.props.onSelect(event, updatedDateTime.format());
     }
   }
 

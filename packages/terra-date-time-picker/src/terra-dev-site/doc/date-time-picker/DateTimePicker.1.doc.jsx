@@ -26,8 +26,6 @@ import DateTimePickerDST from '../example/DateTimePickerDST';
 import DateTimePickerDSTSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DateTimePickerDST';
 import DateTimePickerInsideModal from '../example/DateTimePickerInsideModal';
 import DateTimePickerInsideModalSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DateTimePickerInsideModal';
-import DateTimePickerOnSelect from '../example/DateTimePickerOnSelect';
-import DateTimePickerOnSelectSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DateTimePickerOnSelect';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
@@ -133,11 +131,6 @@ to see the starting and ending dates of daylight saving time for the current yea
         title: 'Presented Inside Modal',
         example: <DateTimePickerInsideModal />,
         source: DateTimePickerInsideModalSrc,
-      },
-      {
-        title: 'OnSelect Usage',
-        example: <DateTimePickerOnSelect />,
-        source: DateTimePickerOnSelectSrc,
       },
     ]}
     propsTables={[
