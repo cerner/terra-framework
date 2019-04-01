@@ -11,6 +11,9 @@ Unreleased
 
 ### Changed
 * Update react/react-dom peer-dependency to latest stable minor release
+* Forked React Datepicker at version 0.64.0
+* Removed react-datepicker as dependency
+* Added react-popper and react-onclickoutside as dependencies
 
 ### Removed
 * Removed peer dependency on terra-base
