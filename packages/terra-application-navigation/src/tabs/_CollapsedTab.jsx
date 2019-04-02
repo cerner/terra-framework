@@ -43,28 +43,6 @@ class CollpasedTab extends React.Component {
     super(props);
     this.handleOnClick = this.handleOnClick.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.setNode = this.setNode.bind(this);
-    this.listener = this.listener.bind(this);
-  }
-
-  componentDidMount() {
-    if (this.node) {
-      this.node.addEventListener('animationend', this.listener);
-    }
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.notificationCount > prevProps.notificationCount) {
-      this.node.setAttribute('data-count-pulse', 'true');
-    }
-  }
-
-  setNode(node) {
-    this.node = node;
-  }
-
-  listener() {
-    this.node.setAttribute('data-count-pulse', 'false');
   }
 
   handleKeyDown(event) {
@@ -116,7 +94,7 @@ class CollpasedTab extends React.Component {
           <div className={cx(['collapsed-check', { 'is-active': isActive }])} />
           {!!icon && <div className={cx(['collapsed-icon'])}>{icon}</div>}
           <span className={cx(['collapsed-label'])}>{text}</span>
-          {notificationCount > 0 && <span className={cx('collapsed-count')}><Count refCallback={this.setNode} value={notificationCount} isInline /></span>}
+          {notificationCount > 0 && <span className={cx('collapsed-count')}><Count value={notificationCount} isInline /></span>}
         </span>
       </div>
     );
