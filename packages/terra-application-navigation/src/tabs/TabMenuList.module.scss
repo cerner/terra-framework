@@ -1,13 +1,9 @@
 :local {
   .tab-menu-list[role='menu'] {
-    background-color: var(--terra-application-navigation-tabs-menu-content-background-color, transparent);
-    color: var(--terra-application-navigation-tabs-menu-content-color, #1c1f21);
+    background-color: #77b1fd; // TODO REMOVE
     list-style: none;
     margin: 0;
-    padding-bottom: var(--terra-application-navigation-tabs-menu-list-padding-bottom, 0.125rem);
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: var(--terra-application-navigation-tabs-menu-list-padding-top, 0.125rem);
+    padding: 0;
 
     &.bounded-height {
       height: 100%;

@@ -113,6 +113,7 @@ class CollpasedTab extends React.Component {
         ref={refCallback}
       >
         <span className={cx(['collapsed-inner'])}>
+          <div className={cx(['collapsed-check', { 'is-active': isActive }])} />
           {!!icon && <div className={cx(['collapsed-icon'])}>{icon}</div>}
           <span className={cx(['collapsed-label'])}>{text}</span>
           {notificationCount > 0 && <span className={cx('collapsed-count')}><Count refCallback={this.setNode} value={notificationCount} isInline /></span>}
