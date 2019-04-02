@@ -20,6 +20,9 @@ Unreleased
 * Update Jest tests to use terra-enzyme-intl
 * Changed demo mock colors to be themable
 
+### Added
+* Support for icons in the primary navigation items
+
 4.5.0 - (March 12, 2019)
 ------------------
 ### Changed

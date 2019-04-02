@@ -32,6 +32,8 @@ const propTypes = {
    * Ref callback for menu display.
    */
   refCallback: PropTypes.func,
+
+  icon: PropTypes.node,
 };
 
 const defaultProps = {
@@ -93,8 +95,11 @@ class TabMenuDisplay extends React.Component {
       popup,
       refCallback,
       text,
+      icon,
       ...customProps
     } = this.props;
+
+    const hasIcon = !!icon;
 
     const displayClassNames = cx([
       'tab-menu-display',
@@ -104,6 +109,11 @@ class TabMenuDisplay extends React.Component {
       customProps.className,
     ]);
     const attributes = { 'aria-current': isSelected };
+
+    const moreButtonClassNames = cx([
+      'tab-inner',
+      { 'tab-inner-with-icon': hasIcon },
+    ]);
 
     return (
       /* eslint-disable jsx-a11y/no-static-element-interactions */
@@ -118,7 +128,8 @@ class TabMenuDisplay extends React.Component {
         onKeyUp={this.handleKeyUp}
         onBlur={this.handleOnBlur}
       >
-        <div className={cx(['tab-inner'])}>
+        <div className={moreButtonClassNames}>
+          {hasIcon && <span className={cx(['tab-menu-display-icon'])}>{icon}</span>}
           <div className={cx(['tab-menu-display-label'])}>
             <span>{text}</span>
             <IconCaretDown />

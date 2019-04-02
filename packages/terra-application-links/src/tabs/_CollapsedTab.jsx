@@ -41,7 +41,7 @@ const propTypes = {
   icon: PropTypes.node,
 };
 
-class ApplicationTab extends Component {
+class CollapseTab extends Component {
   constructor(props) {
     super(props);
     this.state = { active: false, focused: false };
@@ -119,48 +119,39 @@ class ApplicationTab extends Component {
 
     const { active, focused } = this.state;
 
-    const isCollapsed = false;
-    const hasIcon = !!icon;
     const isCurrent = this.isCurrentPath();
 
+    const hasIcon = !!icon;
+
     const tabClassNames = cx([
-      'tab',
-      { 'tab-with-icon': hasIcon },
-      { 'is-disabled': isCurrent && !isCollapsed },
+      'collapsed-tab',
+      { 'collapsed-tab-with-icon': hasIcon },
       { 'is-active': active },
       { 'is-focused': focused },
       customProps.className,
     ]);
     const tabAttr = { 'aria-current': isCurrent };
 
-    const childrenClassNames = cx([
-      'tab-inner',
-      { 'tab-inner-with-icon': hasIcon },
-    ]);
-    const ChildElement = hasIcon ? 'div' : 'span';
-
     return (
-      <button
+      <li
         {...customProps}
         {...tabAttr}
-        role="link"
-        type="button"
-        tabIndex="0"
+        role="menuitem"
         className={tabClassNames}
         onClick={this.handleOnClick}
         onKeyDown={this.handleKeyDown}
         onKeyUp={this.handleKeyUp}
         onBlur={this.handleOnBlur}
       >
-        <ChildElement className={childrenClassNames}>
-          {hasIcon && <span className={cx(['tab-icon'])}>{icon}</span>}
+        <div className={cx(['tab-inner'])}>
+          {icon && <span className={cx(['collapsed-tab-icon'])}>{icon}</span>}
           <span className={cx(['tab-label'])}>{text}</span>
-        </ChildElement>
-      </button>
+        </div>
+      </li>
     );
   }
 }
 
-ApplicationTab.propTypes = propTypes;
+CollapseTab.propTypes = propTypes;
 
-export default ApplicationTab;
+export default CollapseTab;
