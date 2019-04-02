@@ -119,6 +119,7 @@ class DateTimePicker extends React.Component {
     this.dateValue = DateTimeUtils.formatMomentDateTime(this.state.dateTime, this.state.dateFormat);
     this.timeValue = DateTimeUtils.hasTime(this.props.value) ? DateTimeUtils.formatISODateTime(this.props.value, 'HH:mm') : '';
     this.isDefaultDateTimeAcceptable = true;
+    this.wasOffsetButtonClicked = false;
 
     this.handleDateChange = this.handleDateChange.bind(this);
     this.handleDateChangeRaw = this.handleDateChangeRaw.bind(this);
@@ -262,7 +263,9 @@ class DateTimePicker extends React.Component {
       dateTime: newDateTime,
     });
 
-    if (this.props.onChange) {
+    // If the new time is ambiguous and the old time is not, do not fire onChange.
+    // This allows a user to use TimeClarification before onChange is fired.
+    if (this.props.onChange && (this.state.isAmbiguousTime || !DateTimeUtils.checkAmbiguousTime(newDateTime))) {
       this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '');
     }
   }
@@ -324,8 +327,19 @@ class DateTimePicker extends React.Component {
 
     if (!newDateTime.isDST()) {
       newDateTime.subtract(1, 'hour');
-      this.handleChange(event, newDateTime);
+      this.setState({
+        dateTime: newDateTime,
+      });
+      if (this.props.onChange) {
+        this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '');
+      }
+    } else if (this.props.onChange && !this.wasOffsetButtonClicked) {
+      // This fires onChange if the TimeClarification dialog was launched without using the OffsetButton.
+      // If the user clicks the OffsetButton, onChange should have already been fired and does not need to be fired
+      // again (unless they change the DateTime).
+      this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '');
     }
+    this.wasOffsetButtonClicked = false;
   }
 
   handleStandardTimeButtonClick(event) {
@@ -334,11 +348,23 @@ class DateTimePicker extends React.Component {
 
     if (newDateTime.isDST()) {
       newDateTime.add(1, 'hour');
-      this.handleChange(event, newDateTime);
+      this.setState({
+        dateTime: newDateTime,
+      });
+      if (this.props.onChange) {
+        this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '');
+      }
+    } else if (this.props.onChange && !this.wasOffsetButtonClicked) {
+      // This fires onChange if the TimeClarification dialog was launched without using the OffsetButton.
+      // If the user clicks the OffsetButton, onChange should have already been fired and does not need to be fired
+      // again (unless they change the DateTime).
+      this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '');
     }
+    this.wasOffsetButtonClicked = false;
   }
 
   handleOffsetButtonClick() {
+    this.wasOffsetButtonClicked = true;
     this.setState(prevState => ({ isTimeClarificationOpen: !prevState.isTimeClarificationOpen }));
   }
 
