@@ -3,6 +3,9 @@
     &.is-disabled {
       cursor: default;
     }
+    &::-moz-focus-inner {
+      border: 0;
+    }
   }
 
   .tab-menu-display {
