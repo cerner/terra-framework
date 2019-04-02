@@ -39,7 +39,7 @@ const Form = ({ title }) => {
 
 The Form renders the NavigationPrompt when the input has a non-empty value. If it were to render the NavigationPrompt at all times, the user would be prompted inappropriately when the input is empty.
 
-The Form provides its `title` prop as the NavigationPrompt's `description` prop to give it an identifying feature. The `description` doesn't need to be unique across all rendered NavigationPrompts, but it should give your users a good idea of where the unsaved changes are at. For our purposes, the Form's `title` is sufficient.
+The Form provides its `title` prop as the NavigationPrompt's `description` prop to give it an identifying feature. The `description` doesn't need to be unique across all rendered NavigationPrompts, but it should give our users a good idea of where the unsaved changes are at. For our purposes, the Form's `title` is sufficient.
 
 Now that the Form is rendering a NavigationPrompt, the FormSwitcher needs to render a NavigationPromptCheckpoint around the Form to detect that prompt.
 
