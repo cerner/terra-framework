@@ -12,20 +12,20 @@ import NavigationPrompt, { NavigationPromptCheckpoint } from '../../../../index'
 
 const Form = ({ title }) => {
   const [inputValue, setInputValue] = useState('');
-- const promptMetaData = useRef({		
--	  timeOfLastInput: undefined,		
-- });	
+- const promptMetaData = useRef({
+-   timeOfLastInput: undefined,
+- });
   return (
     <div>
       <p>{title}</p>
--     {inputValue.length ? <NavigationPrompt description={title} metaData={promptMetaData.current} /> : undefined}	      
+-     {inputValue.length ? <NavigationPrompt description={title} metaData={promptMetaData.current} /> : undefined}
 +     {inputValue.length ? <NavigationPrompt description={title} /> : undefined}
       <input
         type="text"
         onChange={(event) => {
--         promptMetaData.current = {		
--	          timeOfLastInput: Date.now(),		
--	        };	          
+-         promptMetaData.current = {
+-           timeOfLastInput: Date.now(),
+-         };
           setInputValue(event.target.value);
         }}
         value={inputValue}
@@ -44,7 +44,7 @@ const Form = ({ title }) => {
 
 const FormSwitcher = () => {
   const [activeForm, setActiveForm] = useState('Form 1');
-- const formCheckpointRef = useRef();	  
+- const formCheckpointRef = useRef();
 + const [activePrompts, setActivePrompts] = useState([]);
 
   return (
@@ -58,8 +58,8 @@ const FormSwitcher = () => {
 +       disabled={activeForm === 'Form 1' || activePrompts.length}
         onClick={() => {
 -         formCheckpointRef.current.resolvePrompts('Form Switcher', 'Switching forms will result in lost data.').then(() => {
--           setActiveForm('Form 1');		
--         });	
+-           setActiveForm('Form 1');
+-         });
 +         setActiveForm('Form 1');
         }}
       >
@@ -71,15 +71,15 @@ const FormSwitcher = () => {
 +       disabled={activeForm === 'Form 2' || activePrompts.length}
         onClick={() => {
 -         formCheckpointRef.current.resolvePrompts('Form Switcher', 'Switching forms will result in lost data.').then(() => {
--           setActiveForm('Form 2');		
--         });	
+-           setActiveForm('Form 2');
+-         });
 +         setActiveForm('Form 2');
         }}
       >
         Switch to Form 2
       </button>
       <NavigationPromptCheckpoint
--       ref={formCheckpointRef}	
+-       ref={formCheckpointRef}
 +       onPromptChange={(prompts) => {
 +         setActivePrompts(prompts);
 +       }}

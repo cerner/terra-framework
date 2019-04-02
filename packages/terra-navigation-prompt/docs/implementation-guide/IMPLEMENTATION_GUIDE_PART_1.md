@@ -57,7 +57,7 @@ const FormSwitcher = () => {
         type="button"
         disabled={activeForm === 'Form 1'}
         onClick={() => {
--         setActiveForm('Form 1');	          
+-         setActiveForm('Form 1');
 +         formCheckpointRef.current.resolvePrompts().then(() => {
 +           setActiveForm('Form 1');
 +         });
@@ -69,7 +69,7 @@ const FormSwitcher = () => {
         type="button"
         disabled={activeForm === 'Form 2'}
         onClick={() => {
--         setActiveForm('Form 2');	          
+-         setActiveForm('Form 2');
 +         formCheckpointRef.current.resolvePrompts().then(() => {
 +           setActiveForm('Form 2');
 +         });

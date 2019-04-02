@@ -14,7 +14,7 @@ const Form = ({ title }) => {
   return (
     <div>
       <p>{title}</p>
--     {inputValue.length ? <NavigationPrompt description={title} /> : undefined}           
+-     {inputValue.length ? <NavigationPrompt description={title} /> : undefined}
 +     {inputValue.length ? <NavigationPrompt description={title} metaData={promptMetaData.current} /> : undefined}
       <input
         type="text"
@@ -49,14 +49,14 @@ const FormSwitcher = () => {
   return (
     <div>
       <h2>Form Switcher</h2>
--     <p>The user will be prompted with the standard messaging when Forms are switched with unsaved changes present.</p>	      
+-     <p>The user will be prompted with the standard messaging when Forms are switched with unsaved changes present.</p>
 +     <p>The user will be prompted with custom messaging when Forms are switched with unsaved changes present.</p>
       <button
         type="button"
         disabled={activeForm === 'Form 1'}
         onClick={() => {
--          formCheckpointRef.current.resolvePrompts().then(() => {          
-+          formCheckpointRef.current.resolvePrompts('Form Switcher', 'Switching forms will result in lost data.').then(() => {
+-         formCheckpointRef.current.resolvePrompts().then(() => {
++         formCheckpointRef.current.resolvePrompts('Form Switcher', 'Switching forms will result in lost data.').then(() => {
             setActiveForm('Form 1');
           });
         }}
@@ -67,7 +67,7 @@ const FormSwitcher = () => {
         type="button"
         disabled={activeForm === 'Form 2'}
         onClick={() => {
--          formCheckpointRef.current.resolvePrompts().then(() => {          
+-          formCheckpointRef.current.resolvePrompts().then(() => {
 +          formCheckpointRef.current.resolvePrompts('Form Switcher', 'Switching forms will result in lost data.').then(() => {
             setActiveForm('Form 2');
           });
