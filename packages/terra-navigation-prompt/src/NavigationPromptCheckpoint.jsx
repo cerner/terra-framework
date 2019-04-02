@@ -10,48 +10,6 @@ const propTypes = {
    */
   children: PropTypes.node,
   /**
-   * If a string is provided, the string will be used directly as the title of the NotificationDialog presented during
-   * prompt resolution.
-   *
-   * If a function is provided, the function will be executed during prompt resolution with the expectation that it returns
-   * a string to be used as the NotificationDialog title. The function will be provided with an array of data objects
-   * representing the registered NavigationPrompts as the sole argument.
-   *
-   * Function Example:
-   *
-   * `(arrayOfPrompts) => {
-   *   arrayOfPrompts.forEach((prompt) => {
-   *     console.log(prompt.description);
-   *     console.log(prompt.metaData);
-   *   })
-   *   return 'Custom Title';
-   * }`
-   *
-   * If not provided, a default title will be presented.
-   */
-  customResolverTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  /**
-   * If a string is provided, the string will be used directly as the message of the NotificationDialog presented during
-   * prompt resolution.
-   *
-   * If a function is provided, the function will be executed during prompt resolution with the expectation that it returns
-   * a string to be used as the NotificationDialog message. The function will be provided with an array of data objects
-   * representing the registered NavigationPrompts as the sole argument.
-   *
-   * Function Example:
-   *
-   * `(arrayOfPrompts) => {
-   *   arrayOfPrompts.forEach((prompt) => {
-   *     console.log(prompt.description);
-   *     console.log(prompt.metaData);
-   *   })
-   *   return 'Custom Message';
-   * }`
-   *
-   * If not provided, a default message will be presented.
-   */
-  customResolverMessage: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  /**
    * A function that will be executed when NavigationPrompts are registered to or deregistered from the NavigationPromptCheckpoint instance.
    * This can be used to track registered prompts outside of a NavigationPromptCheckpoint and handle prompt resolution directly, if necessary.
    * The function will be provided with an array of data objects representing the registered NavigationPrompts as the sole argument. An empty
@@ -78,9 +36,6 @@ class NavigationPromptCheckpoint extends React.Component {
   constructor(props) {
     super(props);
 
-    this.getResolverTitleString = this.getResolverTitleString.bind(this);
-    this.getResolverMessageString = this.getResolverMessageString.bind(this);
-
     this.registerPrompt = this.registerPrompt.bind(this);
     this.deregisterPrompt = this.deregisterPrompt.bind(this);
     this.resolvePrompts = this.resolvePrompts.bind(this);
@@ -105,34 +60,6 @@ class NavigationPromptCheckpoint extends React.Component {
        */
       onPromptChange([]);
     }
-  }
-
-  getResolverTitleString() {
-    const { customResolverTitle } = this.props;
-
-    if (!customResolverTitle) {
-      return undefined;
-    }
-
-    if (typeof customResolverTitle === 'string') {
-      return customResolverTitle;
-    }
-
-    return customResolverTitle(NavigationPromptCheckpoint.getPromptArray(this.registeredPrompts));
-  }
-
-  getResolverMessageString() {
-    const { customResolverMessage } = this.props;
-
-    if (!customResolverMessage) {
-      return undefined;
-    }
-
-    if (typeof customResolverMessage === 'string') {
-      return customResolverMessage;
-    }
-
-    return customResolverMessage(NavigationPromptCheckpoint.getPromptArray(this.registeredPrompts));
   }
 
   registerPrompt(promptId, promptDescription, metaData) {
@@ -176,7 +103,7 @@ class NavigationPromptCheckpoint extends React.Component {
    * This function is part of the NavigationPromptCheckpoint's public API. Changes to this function name or overall functionality
    * will impact the package's version.
    */
-  resolvePrompts() {
+  resolvePrompts(title, message) {
     if (!Object.keys(this.registeredPrompts).length) {
       /**
        * If no prompts are registered, then no prompts must be rendered.
@@ -189,7 +116,9 @@ class NavigationPromptCheckpoint extends React.Component {
      */
     return new Promise((resolve, reject) => {
       this.setState({
-        confirmationPrompt: { resolve, reject },
+        confirmationPrompt: {
+          resolve, reject, title, message,
+        },
       });
     });
   }
@@ -203,8 +132,8 @@ class NavigationPromptCheckpoint extends React.Component {
         {children}
         {confirmationPrompt ? (
           <CheckpointNotificationDialog
-            customTitle={this.getResolverTitleString()}
-            customMessage={this.getResolverMessageString()}
+            customTitle={confirmationPrompt.title}
+            customMessage={confirmationPrompt.message}
             onConfirm={() => {
               confirmationPrompt.resolve();
               this.setState({

@@ -57,13 +57,15 @@ Input.propTypes = {
 const Form = ({ title }) => {
   const [timeStamp, setTimeStamp] = useState(Date.now());
   const inputCheckpointRef = useRef();
+  const registeredPromptsRef = useRef([]);
 
   return (
     <div style={{ padding: '10px', border: '1px solid lightgrey' }}>
       <NavigationPromptCheckpoint
         ref={inputCheckpointRef}
-        customResolverTitle={prompts => `${prompts.map(prompt => prompt.description).join(', ')}`}
-        customResolverMessage={prompts => `There are unsubmitted changes in ${prompts.map(prompt => `${prompt.description} (${prompt.metaData.value})`).join(', ')}. Continue with Form reset?`}
+        onPromptChange={(prompts) => {
+          registeredPromptsRef.current = prompts;
+        }}
       >
         <React.Fragment key={timeStamp}>
           <h3>{title}</h3>
@@ -79,7 +81,10 @@ const Form = ({ title }) => {
           <button
             type="button"
             onClick={() => {
-              inputCheckpointRef.current.resolvePrompts().then(() => {
+              const customTitle = registeredPromptsRef.current.map(prompt => prompt.description).join(', ');
+              const customMessage = `There are unsubmitted changes in ${registeredPromptsRef.current.map(prompt => `${prompt.description} (${prompt.metaData.value})`).join(', ')}. Continue with Form reset?`;
+
+              inputCheckpointRef.current.resolvePrompts(customTitle, customMessage).then(() => {
                 setTimeStamp(Date.now());
               }).catch(() => {
                 // User prevented navigation.

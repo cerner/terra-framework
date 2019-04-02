@@ -2,25 +2,26 @@
 
 ## Part 2 - Using Custom Messages in NavigationPromptCheckpoint
 
-The FormSwitcher's checkpoint renders a default message and title in its NotificationDialog. This may be sufficient for most use cases, but you want to render a custom title and message that give your users more context.
+The FormSwitcher's checkpoint renders a default message and title in its NotificationDialog. This may be sufficient for most use cases, but we want to render a custom title and message that give our users more context.
 
-```jsx
+```diff
 const Form = ({ title }) => {
   const [inputValue, setInputValue] = useState('');
-  const promptMetaData = useRef({
-    timeOfLastInput: undefined,
-  });
++  const promptMetaData = useRef({
++    timeOfLastInput: undefined,
++  });
 
   return (
     <div>
       <p>{title}</p>
-      {inputValue.length ? <NavigationPrompt description={title} metaData={promptMetaData.current} /> : undefined}
+-     {inputValue.length ? <NavigationPrompt description={title} /> : undefined}           
++     {inputValue.length ? <NavigationPrompt description={title} metaData={promptMetaData.current} /> : undefined}
       <input
         type="text"
         onChange={(event) => {
-          promptMetaData.current = {
-            timeOfLastInput: Date.now(),
-          };
++         promptMetaData.current = {
++           timeOfLastInput: Date.now(),
++         };
           setInputValue(event.target.value);
         }}
         value={inputValue}
@@ -38,9 +39,9 @@ const Form = ({ title }) => {
 };
 ```
 
-You add some metaData to the Form's NavigationPrompt. For your (admittedly contrived) use case, you want to know the when the last input change ocurred, so you store that value and provide it to the NavigationPrompt as metaData.
+We add some metaData to the Form's NavigationPrompt. For our (admittedly contrived) use case, we want to know the when the last input change ocurred, so we store that value and provide it to the NavigationPrompt as metaData.
 
-```jsx
+```diff
 const FormSwitcher = () => {
   const [activeForm, setActiveForm] = useState('Form 1');
   const formCheckpointRef = useRef();
@@ -48,11 +49,14 @@ const FormSwitcher = () => {
   return (
     <div>
       <h2>Form Switcher</h2>
+-     <p>The user will be prompted with the standard messaging when Forms are switched with unsaved changes present.</p>	      
++     <p>The user will be prompted with custom messaging when Forms are switched with unsaved changes present.</p>
       <button
         type="button"
         disabled={activeForm === 'Form 1'}
         onClick={() => {
-          formCheckpointRef.current.resolvePrompts().then(() => {
+-          formCheckpointRef.current.resolvePrompts().then(() => {          
++          formCheckpointRef.current.resolvePrompts('Form Switcher', 'Switching forms will result in lost data.').then(() => {
             setActiveForm('Form 1');
           });
         }}
@@ -63,7 +67,8 @@ const FormSwitcher = () => {
         type="button"
         disabled={activeForm === 'Form 2'}
         onClick={() => {
-          formCheckpointRef.current.resolvePrompts().then(() => {
+-          formCheckpointRef.current.resolvePrompts().then(() => {          
++          formCheckpointRef.current.resolvePrompts('Form Switcher', 'Switching forms will result in lost data.').then(() => {
             setActiveForm('Form 2');
           });
         }}
@@ -72,8 +77,6 @@ const FormSwitcher = () => {
       </button>
       <NavigationPromptCheckpoint
         ref={formCheckpointRef}
-        customResolverTitle={prompts => `${prompts.map(prompt => prompt.description).join(', ')}`}
-        customResolverMessage={prompts => `There are unsubmitted changes in ${prompts.map(prompt => `${prompt.description} (${prompt.metaData.timeOfLastInput})`).join(', ')}. Continue with Form switch?`}
       >
         <Form title={activeForm} key={activeForm} />
       </NavigationPromptCheckpoint>
@@ -82,4 +85,4 @@ const FormSwitcher = () => {
 };
 ```
 
-You then provide the FormSwitcher's checkpoint with customResolverTitle and customResolverMessage props. These props take either strings or, as in your case, functions that return a string. The functions are called with an array of the currently registered NavigationPrompts found by the checkpoint. You can then construct your own title and message using the prompt descriptions and metaData values. This will give your users a better idea of where the unsaved changes are at and whether or not they care about them.
+When we call `resolvePrompts`, we provide custom title and message strings built with the navigation data returned by `onPromptChange`. This will give our users a better idea of where the unsaved changes are at and whether or not they care about them.

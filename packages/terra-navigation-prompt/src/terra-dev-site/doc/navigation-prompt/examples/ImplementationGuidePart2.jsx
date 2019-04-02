@@ -50,7 +50,7 @@ const FormSwitcher = () => {
         type="button"
         disabled={activeForm === 'Form 1'}
         onClick={() => {
-          formCheckpointRef.current.resolvePrompts().then(() => {
+          formCheckpointRef.current.resolvePrompts('Form Switcher', 'Switching forms will result in lost data.').then(() => {
             setActiveForm('Form 1');
           });
         }}
@@ -61,7 +61,7 @@ const FormSwitcher = () => {
         type="button"
         disabled={activeForm === 'Form 2'}
         onClick={() => {
-          formCheckpointRef.current.resolvePrompts().then(() => {
+          formCheckpointRef.current.resolvePrompts('Form Switcher', 'Switching forms will result in lost data.').then(() => {
             setActiveForm('Form 2');
           });
         }}
@@ -70,8 +70,6 @@ const FormSwitcher = () => {
       </button>
       <NavigationPromptCheckpoint
         ref={formCheckpointRef}
-        customResolverTitle={prompts => `${prompts.map(prompt => prompt.description).join(', ')}`}
-        customResolverMessage={prompts => `There are unsubmitted changes in ${prompts.map(prompt => `${prompt.description} (${prompt.metaData.timeOfLastInput})`).join(', ')}. Continue with Form switch?`}
       >
         <Form title={activeForm} key={activeForm} />
       </NavigationPromptCheckpoint>

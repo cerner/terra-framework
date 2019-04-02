@@ -58,13 +58,6 @@ const FormSwitcher = () => {
       >
         Switch to Form 2
       </button>
-      {activePrompts.length ? (
-        <p>
-          {activePrompts.map(prompt => prompt.description).join(', ')}
-          {' '}
-          has unsaved changes.
-        </p>
-      ) : null}
       <NavigationPromptCheckpoint
         onPromptChange={(prompts) => {
           setActivePrompts(prompts);
