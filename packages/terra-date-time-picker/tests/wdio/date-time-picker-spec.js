@@ -52,8 +52,8 @@ describe('DateTimePicker', () => {
   describe('Time Clarification Dialog', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-dst');
-      browser.click('input[name="terra-time-hour-input"]');
       browser.click('input[name="terra-time-minute-input"]');
+      browser.keys('Tab');
       browser.waitForVisible('[class*="time-clarification"]');
     });
 
@@ -75,8 +75,8 @@ describe('DateTimePicker', () => {
   describe('Time Clarification Dialog Dismissal', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-dst');
-      browser.click('input[name="terra-time-hour-input"]');
       browser.click('input[name="terra-time-minute-input"]');
+      browser.keys('Tab');
       browser.waitForVisible('[class*="time-clarification"]');
     });
 
@@ -93,8 +93,8 @@ describe('DateTimePicker', () => {
     if (includesTZ) {
       before(() => {
         browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-dst');
-        browser.click('input[name="terra-time-hour-input"]');
         browser.click('input[name="terra-time-minute-input"]');
+        browser.keys('Tab');
         browser.waitForVisible('[class*="time-clarification"]');
       });
 
@@ -112,8 +112,8 @@ describe('DateTimePicker', () => {
     if (includesTZ) {
       before(() => {
         browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-dst');
-        browser.click('input[name="terra-time-hour-input"]');
         browser.click('input[name="terra-time-minute-input"]');
+        browser.keys('Tab');
         browser.waitForVisible('[class*="time-clarification"]');
       });
 
@@ -130,8 +130,8 @@ describe('DateTimePicker', () => {
   describe('Time Clarification Dialog Disabled', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-dst-disabled');
-      browser.click('input[name="terra-time-hour-input"]');
       browser.click('input[name="terra-time-minute-input"]');
+      browser.keys('Tab');
       browser.waitForVisible('[class*="time-clarification"]');
       browser.click('[class*="button-daylight"]');
       browser.click('#date-time-picker-toggler');
@@ -140,6 +140,39 @@ describe('DateTimePicker', () => {
     const ignoredDisabledAlly = Object.assign({ 'color-contrast': { enabled: false } }, ignoredA11y);
     Terra.should.beAccessible({ rules: ignoredDisabledAlly });
     Terra.should.matchScreenshot({ viewports });
+  });
+
+  describe('OnBlur', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-on-blur');
+
+      it('puts focus on the input', () => {
+        browser.click('input[name="terra-date-input"]');
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        browser.execute('document.querySelector(\'input[name="terra-date-input"]\').style.caretColor = "transparent";');
+        expect(browser.getText('#blur-state')).to.equal('Blur not triggered');
+      });
+
+      it('tabs to the calendar button and onBlur is not triggered', () => {
+        browser.keys('Tab');
+        expect(browser.getText('#blur-state')).to.equal('Blur not triggered');
+      });
+
+      it('tabs to the hour input and onBlur is not triggered', () => {
+        browser.keys('Tab');
+        expect(browser.getText('#blur-state')).to.equal('Blur not triggered');
+      });
+
+      it('tabs to the hour input and onBlur is not triggered', () => {
+        browser.setValue('input[name="terra-time-hour-input"]', '10');
+        expect(browser.getText('#blur-state')).to.equal('Blur not triggered');
+      });
+
+      it('tabs out of the component and onBlur is triggered', () => {
+        browser.keys('Tab');
+        expect(browser.getText('#blur-state')).to.equal('Blur triggered');
+      });
+    });
   });
 
   describe('OnChange', () => {

@@ -232,6 +232,29 @@ describe('Date Picker', () => {
     Terra.should.beAccessible({ rules: ignoredA11y });
   });
 
+  describe('On Blur', () => {
+    before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-on-blur'));
+
+    it('puts focus on the input', () => {
+      browser.click('input[name="terra-date-date-input-onblur"]');
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('input').style.caretColor = 'transparent';
+      });
+      expect(browser.getText('#blur-state')).to.equal('Blur not triggered');
+    });
+
+    it('tabs to the calendar button and onBlur is not triggered', () => {
+      browser.keys('Tab');
+      expect(browser.getText('#blur-state')).to.equal('Blur not triggered');
+    });
+
+    it('tabs out of the component and onBlur is triggered', () => {
+      browser.keys('Tab');
+      expect(browser.getText('#blur-state')).to.equal('Blur triggered');
+    });
+  });
+
   describe('On Change', () => {
     before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-on-change'));
 

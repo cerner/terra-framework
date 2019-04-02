@@ -322,6 +322,36 @@ describe('Time Input onChange operations', () => {
   });
 });
 
+describe('Time Input onBlur operations', () => {
+  describe('Time Input onBlur', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-blur');
+      browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
+        expect(browser.getText('#blur-state')).to.equal('Blur not triggered');
+      });
+
+      it('tabs to the minute input and onBlur is not triggered', () => {
+        browser.keys('Tab');
+        expect(browser.getText('#blur-state')).to.equal('Blur not triggered');
+      });
+
+      it('tabs to the meridiem and onBlur is not triggered', () => {
+        browser.keys('Tab');
+        expect(browser.getText('#blur-state')).to.equal('Blur not triggered');
+      });
+
+      it('tabs out of the component and onBlur is triggered', () => {
+        browser.keys('Tab');
+        expect(browser.getText('#blur-state')).to.equal('Blur triggered');
+      });
+    });
+  });
+});
+
 describe('Time Input up and down arrow operations', () => {
   describe('DOWN_ARROW decrements hour by 1', () => {
     before(() => {
