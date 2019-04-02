@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import 'terra-base/lib/baseStyles';
 import Arrange from 'terra-arrange';
 import Button from 'terra-button';
 import IconCheckmark from 'terra-icon/lib/icon/IconCheckmark';
@@ -157,7 +156,7 @@ class UtilityMenuItem extends React.Component {
 
     /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-element-to-interactive-role, jsx-a11y/no-noninteractive-tabindex */
     const renderBodyItem = (fill, wrapOnKeyDown, handleSelection) => (
-      <li
+      <div
         {...customProps}
         tabIndex={!isReadOnly ? '0' : undefined}
         key={itemKey}
@@ -176,7 +175,7 @@ class UtilityMenuItem extends React.Component {
           align="center"
           className={arrangeClassNames}
         />
-      </li>
+      </div>
     );
     /* eslint-enable jsx-a11y/no-static-element-interactions */
 

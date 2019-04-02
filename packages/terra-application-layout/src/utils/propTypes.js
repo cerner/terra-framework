@@ -32,6 +32,7 @@ const navigationItemsPropType = PropTypes.arrayOf(PropTypes.shape({
   path: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   hasSubMenu: PropTypes.bool,
+  icon: PropTypes.node,
 }));
 
 /**

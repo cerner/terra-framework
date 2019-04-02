@@ -1,39 +1,21 @@
 import React from 'react';
-/* eslint-disable import/no-extraneous-dependencies */
-import { IntlProvider } from 'react-intl';
-import ApplicationTabs from '../../src/tabs/ApplicationTabs';
-import messages from '../../translations/en-US.json';
-import testLinkConfig from './testLinkConfig';
 
-const locale = 'en-US';
+import ApplicationTabs from '../../src/tabs/ApplicationTabs';
+import testLinkConfig from './testLinkConfig';
+import testLinksWithIconsConfig from './testLinksWithIconsConfig';
 
 // Snapshot tests
-it('should render default component', () => {
-  const applicationTabs = (
-    <IntlProvider locale={locale} messages={messages}>
-      <ApplicationTabs />
-    </IntlProvider>
-  );
-  const wrapper = shallow(applicationTabs);
+it('should render ApplicationTabs with links and alignment', () => {
+  const wrapper = shallow(<div><ApplicationTabs links={testLinkConfig} alignment="start" /></div>);
   expect(wrapper).toMatchSnapshot();
 });
 
-it('should render ApplicationTabs with links and alignment', () => {
-  const applicationTabs = (
-    <IntlProvider locale={locale} messages={messages}>
-      <ApplicationTabs links={testLinkConfig} alignment="start" />
-    </IntlProvider>
+it('should render ApplicationTabs with icons', () => {
+  const subject = (
+    <div>
+      <ApplicationTabs links={testLinksWithIconsConfig} />
+    </div>
   );
-  const wrapper = shallow(applicationTabs);
-  expect(wrapper).toMatchSnapshot();
-});
-
-it('should render ApplicationTabs with links and alignment', () => {
-  const applicationTabs = (
-    <IntlProvider locale={locale} messages={messages}>
-      <ApplicationTabs links={testLinkConfig} alignment="start" />
-    </IntlProvider>
-  );
-  const wrapper = shallow(applicationTabs);
+  const wrapper = shallow(subject);
   expect(wrapper).toMatchSnapshot();
 });

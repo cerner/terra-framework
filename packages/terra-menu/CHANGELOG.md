@@ -3,6 +3,23 @@ Changelog
 
 Unreleased
 ----------
+
+5.5.0 - (March 26, 2019)
+------------------
+### Changed
+* Update react/react-dom peer-dependency to latest stable minor release
+
+### Removed
+* Removed peer dependency on terra-base
+* Removed baseStyles import from terra-base
+
+5.4.0 - (March 20, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+5.3.0 - (March 12, 2019)
+------------------
 ### Changed
 * Replaced local keyCode values with keycode-js npm package
 

@@ -1,18 +1,10 @@
 import React from 'react';
+import Icon from 'terra-icon/lib/icon/IconFeatured';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { mockIntl } from 'terra-enzyme-intl';
 
 import ApplicationHeader from '../../src/header/_ApplicationHeader';
 import ExtensionsExample from '../../src/terra-dev-site/test/common/ExtensionsExample';
-
-const mockIntl = {
-  formatDate: () => 'mock-date',
-  formatTime: () => 'mock-time',
-  formatRelative: () => 'mock-relative',
-  formatNumber: () => 'mock-relative',
-  formatPlural: () => 'mock-plural',
-  formatMessage: () => 'mock-message',
-  formatHTMLMessage: () => 'mock-html-message',
-  now: () => 'mock-now',
-};
 
 describe('ApplicationHeader', () => {
   it('should render default component', () => {
@@ -73,5 +65,41 @@ describe('ApplicationHeader', () => {
     const result = shallow(testHeader);
 
     expect(result).toMatchSnapshot();
+  });
+
+  describe('with icons', () => {
+    const subject = (
+      <ApplicationHeader.WrappedComponent
+        intl={mockIntl}
+        layoutConfig={{ size: 'large' }}
+        applicationLinks={{
+          links: [
+            {
+              id: '123',
+              path: '/something1',
+              text: 'item 1',
+              icon: <Icon />,
+            },
+            {
+              id: '234',
+              path: '/something2',
+              text: 'item 2',
+              icon: <Icon />,
+            },
+            {
+              id: '345',
+              path: '/something3',
+              text: 'item 3',
+              icon: <Icon />,
+            },
+          ],
+        }}
+      />
+    );
+    const wrapper = shallow(subject);
+
+    it('should match the snapshot', () => {
+      expect(wrapper).toMatchSnapshot();
+    });
   });
 });

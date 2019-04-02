@@ -38,6 +38,7 @@ class TabMenu extends React.Component {
     this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
     this.getTargetRef = this.getTargetRef.bind(this);
     this.setTargetRef = this.setTargetRef.bind(this);
+    this.createDisplay = this.createDisplay.bind(this);
     this.state = {
       isOpen: false,
     };
@@ -83,26 +84,20 @@ class TabMenu extends React.Component {
     }
   }
 
-  createHiddenTabs() {
-    return (
-      <TabMenuList>
-        {React.Children.map(this.props.children, child => React.cloneElement(child, { onTabClick: this.handleOnRequestClose }))}
-      </TabMenuList>
-    );
-  }
-
   createDisplay(popup) {
+    const { location } = this.props;
     const { intl } = this.context;
     let text = intl.formatMessage({ id: 'Terra.application.tabs.more' });
+    let icon;
     let isSelected = false;
 
     const childArray = this.props.children;
     const count = childArray.length;
     for (let i = 0; i < count; i += 1) {
       const child = childArray[i];
-      if (matchPath(this.props.location.pathname, { path: child.props.path })) {
-        // eslint-disable-next-line prefer-destructuring
-        text = child.props.text;
+      if (matchPath(location.pathname, { path: child.props.path })) {
+        text = child.props.text; // eslint-disable-line prefer-destructuring
+        icon = child.props.icon; // eslint-disable-line prefer-destructuring
         isSelected = true;
         break;
       }
@@ -117,6 +112,7 @@ class TabMenu extends React.Component {
         isHidden={this.props.isHidden}
         text={text}
         isSelected={isSelected}
+        icon={icon}
         key="application-tab-more"
         data-application-tabs-more
       />
@@ -124,18 +120,24 @@ class TabMenu extends React.Component {
   }
 
   render() {
+    const { children } = this.props;
+    const { isOpen } = this.state;
+
     let popup;
-    if (this.state.isOpen) {
+    if (isOpen) {
+      const extraChildProps = { onTabClick: this.handleOnRequestClose };
       popup = (
         <Popup
           contentHeight="auto"
           contentWidth="240"
           onRequestClose={this.handleOnRequestClose}
           targetRef={this.getTargetRef}
-          isOpen={this.state.isOpen}
+          isOpen={isOpen}
           isArrowDisplayed
         >
-          {this.createHiddenTabs()}
+          <TabMenuList>
+            {React.Children.map(children, child => React.cloneElement(child, extraChildProps))}
+          </TabMenuList>
         </Popup>
       );
     }

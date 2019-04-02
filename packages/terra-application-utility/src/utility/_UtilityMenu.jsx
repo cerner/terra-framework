@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';
-import 'terra-base/lib/baseStyles';
 import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
 import IconClose from 'terra-icon/lib/icon/IconClose';
@@ -138,7 +137,7 @@ class UtilityMenu extends React.Component {
         hasChevron={chevron}
         leftInset={leftInset}
         rightInset={rightInset}
-        onChange={item.isReadOnly ? () => {} : this.handleOnChange}
+        onChange={item.isReadOnly ? () => { } : this.handleOnChange}
         onKeyDown={handleOnKeyDown}
         variant={this.props.variant}
       />
@@ -151,7 +150,7 @@ class UtilityMenu extends React.Component {
       const rightInset = this.childrenHasChevron(currentItem);
       let index = -1;
       return (
-        <ul className={cx('utility-menu-body')}>
+        <div className={cx('utility-menu-body')}>
           {currentItem.childKeys.map((key) => {
             if (this.getItem(key).contentLocation !== Utils.LOCATIONS.FOOTER) {
               index += 1;
@@ -161,7 +160,7 @@ class UtilityMenu extends React.Component {
             }
             return null;
           })}
-        </ul>
+        </div>
       );
     }
     return null;

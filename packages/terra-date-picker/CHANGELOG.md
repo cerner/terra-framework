@@ -4,6 +4,31 @@ Changelog
 Unreleased
 ----------
 
+3.10.0 - (March 26, 2019)
+------------------
+### Added
+* Added 'required' prop to match terra-form components' required prop
+
+### Changed
+* Update react/react-dom peer-dependency to latest stable minor release
+* Forked React Datepicker at version 0.64.0
+* Removed react-datepicker as dependency
+* Added react-popper and react-onclickoutside as dependencies
+
+### Removed
+* Removed peer dependency on terra-base
+* Removed baseStyles import from terra-base
+
+3.9.0 - (March 20, 2019)
+------------------
+### Changed
+* Update Jest tests to use terra-enzyme-intl
+
+3.8.0 - (March 12, 2019)
+------------------
+### Changed
+* Minor dependency update
+
 3.7.0 - (March 5, 2019)
 ------------------
 ### Changed
