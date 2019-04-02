@@ -11,8 +11,6 @@ import IconMenu from 'terra-icon/lib/icon/IconMenu';
 import Popup from 'terra-popup';
 import { processedRoutesPropType } from 'terra-navigation-layout/lib/configurationPropTypes';
 
-import 'terra-base/lib/baseStyles';
-
 import ApplicationLayoutPropTypes from '../utils/propTypes';
 import Helpers from '../utils/helpers';
 

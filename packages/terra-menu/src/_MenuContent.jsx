@@ -1,5 +1,6 @@
 import React from 'react';
-import { injectIntl, intlShape } from 'terra-base';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
 import List from 'terra-list';
 import IconLeft from 'terra-icon/lib/icon/IconLeft';
@@ -7,7 +8,6 @@ import ContentContainer from 'terra-content-container';
 import IconClose from 'terra-icon/lib/icon/IconClose';
 import Arrange from 'terra-arrange';
 import classNames from 'classnames/bind';
-import 'terra-base/lib/baseStyles';
 import KeyCode from 'keycode-js';
 import MenuUtils from './_MenuUtils';
 import styles from './Menu.module.scss';
