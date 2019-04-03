@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Changed the parameter in filterDate prop from a moment object to an ISO string.
 
 3.11.0 - (April 2, 2019)
 ------------------
