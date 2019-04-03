@@ -1,5 +1,70 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should render ApplicationTabs with icons 1`] = `
+<div>
+  <withRouter(ApplicationTabs)
+    links={
+      Array [
+        Object {
+          "icon": <IconFeatured
+            data-name="Layer 1"
+            viewBox="0 0 48 48"
+            xmlns="http://www.w3.org/2000/svg"
+          />,
+          "path": "/test1",
+          "text": "test 1",
+        },
+        Object {
+          "icon": <IconFeatured
+            data-name="Layer 1"
+            viewBox="0 0 48 48"
+            xmlns="http://www.w3.org/2000/svg"
+          />,
+          "path": "/test2",
+          "text": "test 2",
+        },
+        Object {
+          "icon": <IconFeatured
+            data-name="Layer 1"
+            viewBox="0 0 48 48"
+            xmlns="http://www.w3.org/2000/svg"
+          />,
+          "path": "/test3",
+          "text": "test 3",
+        },
+        Object {
+          "icon": <IconFeatured
+            data-name="Layer 1"
+            viewBox="0 0 48 48"
+            xmlns="http://www.w3.org/2000/svg"
+          />,
+          "path": "/test4",
+          "text": "test 4",
+        },
+        Object {
+          "icon": <IconFeatured
+            data-name="Layer 1"
+            viewBox="0 0 48 48"
+            xmlns="http://www.w3.org/2000/svg"
+          />,
+          "path": "/test5",
+          "text": "test 5",
+        },
+        Object {
+          "icon": <IconFeatured
+            data-name="Layer 1"
+            viewBox="0 0 48 48"
+            xmlns="http://www.w3.org/2000/svg"
+          />,
+          "path": "/test6",
+          "text": "test 6",
+        },
+      ]
+    }
+  />
+</div>
+`;
+
 exports[`should render ApplicationTabs with links and alignment 1`] = `
 <div>
   <withRouter(ApplicationTabs)

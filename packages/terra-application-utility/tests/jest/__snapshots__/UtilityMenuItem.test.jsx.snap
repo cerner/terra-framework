@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UtilityMenuItem should pass in a custom prop 1`] = `
-<li
+<div
   aria-label=""
   className="header-utility-body-item"
   id="test"
@@ -27,7 +27,7 @@ exports[`UtilityMenuItem should pass in a custom prop 1`] = `
     fitEnd={null}
     fitStart={null}
   />
-</li>
+</div>
 `;
 
 exports[`UtilityMenuItem should render with a content location 1`] = `
@@ -47,7 +47,7 @@ exports[`UtilityMenuItem should render with a content location 1`] = `
 `;
 
 exports[`UtilityMenuItem should render with a title 1`] = `
-<li
+<div
   aria-label="title"
   className="header-utility-body-item"
   key="key"
@@ -72,11 +72,11 @@ exports[`UtilityMenuItem should render with a title 1`] = `
     fitEnd={null}
     fitStart={null}
   />
-</li>
+</div>
 `;
 
 exports[`UtilityMenuItem should render with content 1`] = `
-<li
+<div
   aria-label=""
   className="header-utility-body-item"
   key="key"
@@ -101,11 +101,11 @@ exports[`UtilityMenuItem should render with content 1`] = `
     fitEnd={null}
     fitStart={null}
   />
-</li>
+</div>
 `;
 
 exports[`UtilityMenuItem should render with default props 1`] = `
-<li
+<div
   aria-label=""
   className="header-utility-body-item"
   key="key"
@@ -130,11 +130,11 @@ exports[`UtilityMenuItem should render with default props 1`] = `
     fitEnd={null}
     fitStart={null}
   />
-</li>
+</div>
 `;
 
 exports[`UtilityMenuItem should render with hasChevron 1`] = `
-<li
+<div
   aria-label=""
   className="header-utility-body-item"
   key="key"
@@ -159,11 +159,11 @@ exports[`UtilityMenuItem should render with hasChevron 1`] = `
     fitEnd={null}
     fitStart={null}
   />
-</li>
+</div>
 `;
 
 exports[`UtilityMenuItem should render with isActive 1`] = `
-<li
+<div
   aria-label=""
   className="header-utility-body-item"
   key="key"
@@ -188,11 +188,11 @@ exports[`UtilityMenuItem should render with isActive 1`] = `
     fitEnd={null}
     fitStart={null}
   />
-</li>
+</div>
 `;
 
 exports[`UtilityMenuItem should render with isSelectable 1`] = `
-<li
+<div
   aria-label=""
   className="header-utility-body-item"
   key="key"
@@ -217,11 +217,11 @@ exports[`UtilityMenuItem should render with isSelectable 1`] = `
     fitEnd={null}
     fitStart={null}
   />
-</li>
+</div>
 `;
 
 exports[`UtilityMenuItem should render with isSelected 1`] = `
-<li
+<div
   aria-label=""
   className="header-utility-body-item"
   key="key"
@@ -246,11 +246,11 @@ exports[`UtilityMenuItem should render with isSelected 1`] = `
     fitEnd={null}
     fitStart={null}
   />
-</li>
+</div>
 `;
 
 exports[`UtilityMenuItem should render with leftInset 1`] = `
-<li
+<div
   aria-label=""
   className="header-utility-body-item"
   key="key"
@@ -282,11 +282,11 @@ exports[`UtilityMenuItem should render with leftInset 1`] = `
       />
     }
   />
-</li>
+</div>
 `;
 
 exports[`UtilityMenuItem should render with onKeyDown 1`] = `
-<li
+<div
   aria-label=""
   className="header-utility-body-item"
   key="key"
@@ -311,11 +311,11 @@ exports[`UtilityMenuItem should render with onKeyDown 1`] = `
     fitEnd={null}
     fitStart={null}
   />
-</li>
+</div>
 `;
 
 exports[`UtilityMenuItem should render with rightInset 1`] = `
-<li
+<div
   aria-label=""
   className="header-utility-body-item"
   key="key"
@@ -347,5 +347,5 @@ exports[`UtilityMenuItem should render with rightInset 1`] = `
       />
     }
   />
-</li>
+</div>
 `;

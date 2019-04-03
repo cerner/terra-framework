@@ -6,6 +6,11 @@ Unreleased
 ### Added
 * Added onSelect function prop that fires when selecting a date via date picker.
 
+3.12.0 - (April 2, 2019)
+------------------
+### Changed
+* Minor dependency update
+
 3.11.0 - (March 26, 2019)
 ------------------
 ### Changed

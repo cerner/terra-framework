@@ -38,9 +38,7 @@ const TabMenuList = ({
     role="menu"
     ref={refCallback}
   >
-    {React.Children.map(children, child => (
-      <li key={child.props.path} role="menuitem">{child}</li>
-    ))}
+    {children}
   </ul>
 );
 

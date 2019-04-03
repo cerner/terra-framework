@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+4.8.0 - (April 2, 2019)
+------------------
+### Added
+* Support for icons in the primary navigation items
+
 4.7.0 - (March 26, 2019)
 ------------------
 ### Changed
