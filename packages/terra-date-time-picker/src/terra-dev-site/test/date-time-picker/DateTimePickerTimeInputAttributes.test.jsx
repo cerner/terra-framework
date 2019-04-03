@@ -4,6 +4,7 @@ import DateTimePickerExampleTemplate from '../../common/DateTimePickerExampleTem
 const DateTimePickerExample = () => (
   <DateTimePickerExampleTemplate
     timeInputAttributes={{ id: 'time-input-example', readOnly: true }}
+    timeVariant="12-hour"
   />
 );
 

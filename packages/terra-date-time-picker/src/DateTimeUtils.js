@@ -116,4 +116,20 @@ class DateTimeUtils {
   }
 }
 
+// These formats are designed to be the possible props for the
+// variant prop of the TimeInput. They should not change.
+Object.defineProperty(DateTimeUtils, 'FORMAT_12_HOUR', {
+  value: '12-hour',
+  configurable: false,
+  enumerable: true,
+  writable: false,
+});
+
+Object.defineProperty(DateTimeUtils, 'FORMAT_24_HOUR', {
+  value: '24-hour',
+  configurable: false,
+  enumerable: true,
+  writable: false,
+});
+
 export default DateTimeUtils;

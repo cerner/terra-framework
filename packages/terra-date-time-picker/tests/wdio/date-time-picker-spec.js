@@ -332,4 +332,12 @@ describe('DateTimePicker', () => {
 
     Terra.should.matchScreenshot({ viewports });
   });
+
+  describe('Time Input displays Twelve Hour format when timeVariant is specified', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-time-input-attributes');
+    });
+
+    Terra.should.matchScreenshot({ viewports });
+  });
 });

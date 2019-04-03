@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+#Added
+* Added timeVariant prop to datetime picker to support 12-hour format.
 
 3.12.0 - (April 2, 2019)
 ------------------
