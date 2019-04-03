@@ -12,19 +12,15 @@ const propTypes = {
    */
   value: PropTypes.number,
   /**
-   * Prop from popup, determines if the menu height is bound by the screen.
+   * Whether or not the count is to be display in inline style.
    */
   isInline: PropTypes.bool,
   /**
-   * Prop from popup, determines if the menu height is bound by the screen.
-   */
-  isDark: PropTypes.bool,
-  /**
-   * Prop from popup, determines if the menu height is bound by the screen.
+   * Whether or not the count represents rolled up counts.
    */
   isRollup: PropTypes.bool,
   /**
-   * Prop from popup, determines if the menu height is bound by the screen.
+   * Callback function for the count node.
    */
   refCallback: PropTypes.func,
 };
@@ -56,7 +52,6 @@ class TabCount extends React.Component {
     const {
       value,
       isInline,
-      isDark,
       isRollup,
       refCallback,
       ...customProps
@@ -87,7 +82,6 @@ class TabCount extends React.Component {
         className={cx([
           'count',
           { 'is-inline': isInline },
-          { 'is-dark': isDark },
           { 'is-rollup': isRollup },
           digitClass,
           customProps.className,

@@ -31,11 +31,11 @@ const propTypes = {
    */
   refCallback: PropTypes.func,
   /**
-   * Ref callback for menu display.
+   * Should the count notificaiton be displayed on the menu display.
    */
   showNotificationRollup: PropTypes.bool,
   /**
-   * Ref callback for menu display.
+   * Whether or not the notification should pulse animate.
    */
   isPulsed: PropTypes.bool,
 };

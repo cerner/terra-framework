@@ -11,11 +11,11 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The content to be rendered in the ApplicationLayout's extensions region.
+   * An array of extensions representing the rolled up items.
    */
   extensions: PropTypes.array,
   /**
-   * Function callback for closing the drawer.
+   * Function callback for closing the popup.
    */
   onRequestClose: PropTypes.func,
   /**

@@ -9,31 +9,31 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The currently active breakpoint.
+   * The image to display for the associated extension action.
    */
   image: PropTypes.element,
   /**
-   * The configuration values for the ApplicationName component.
+   * Meta data to be returned in the onSelect callback.
    */
   metaData: PropTypes.object,
   /**
-   * The currently active breakpoint.
+   * The number of notifications to be displayed for the extension.
    */
   notificationCount: PropTypes.number,
   /**
-   * Function callback for closing the drawer.
+   * Function callback for closing the extension rollup if hidden.
    */
   onRequestClose: PropTypes.func,
   /**
-   * Function callback for closing the drawer.
+   * Function callback for selection of the extension. Return (event, metaData).
    */
   onSelect: PropTypes.func,
   /**
-   * Function callback for closing the drawer.
+   * Callback function for the extension node.
    */
   refCallback: PropTypes.func,
   /**
-   * The content to be rendered in the ApplicationLayout's extensions region.
+   * The text display for the extension, either the aira label or the inline text.
    */
   text: PropTypes.string,
 };

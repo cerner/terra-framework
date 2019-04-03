@@ -11,19 +11,19 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The currently active breakpoint.
+   * Whether or not hidden extensions have notifications.
    */
   hasChildNotifications: PropTypes.bool,
   /**
-   * Function callback for closing the drawer.
+   * Function callback for selection of the extension rollup.
    */
   onSelect: PropTypes.func,
   /**
-   * Function callback for closing the drawer.
+   * Callback function for the rollup node.
    */
   refCallback: PropTypes.func,
   /**
-   * The currently active breakpoint.
+   * Whether or not the notification count should pulse.
    */
   isPulsed: PropTypes.bool,
 };

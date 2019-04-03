@@ -6,7 +6,7 @@ import ContentContainer from 'terra-content-container';
 
 const propTypes = {
   /**
-   * Function callback for closing the drawer.
+   * Child content to be rendered within the extension disclosure.
    */
   children: PropTypes.node,
   /**

@@ -29,8 +29,25 @@ const createOnClick = (onRequestClose, onSelect, metaData) => (
   }
 );
 
+const sliceIndexForBreakpoint = (activeBreakpoint, extensionConfig) => {
+  let sliceIndex;
+  if (activeBreakpoint === 'tiny' || activeBreakpoint === 'small') {
+    sliceIndex = EXTENSION_COUNT.SMALL;
+  } else if (activeBreakpoint === 'medium') {
+    sliceIndex = extensionConfig.mediumCount || 3;
+  } else {
+    sliceIndex = extensionConfig.largeCount || 5;
+  }
+
+  if (extensionConfig.extensions.length <= sliceIndex + 1) {
+    sliceIndex = extensionConfig.extensions.length;
+  }
+  return sliceIndex;
+};
+
 export {
   createKeyDown,
   createOnClick,
+  sliceIndexForBreakpoint,
   EXTENSION_COUNT,
 };

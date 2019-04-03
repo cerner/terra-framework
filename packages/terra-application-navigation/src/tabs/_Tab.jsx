@@ -25,7 +25,7 @@ const propTypes = {
    */
   onTabClick: PropTypes.func,
   /**
-   * Boolean indicating whether or not the Tab should render as active.
+   * The number of notifications to be displayed for the tab.
    */
   notificationCount: PropTypes.number,
   /**
@@ -33,15 +33,15 @@ const propTypes = {
    */
   isActive: PropTypes.bool,
   /**
-   * Boolean indicating whether or not the Tab should render as active.
+   * Callback function for the tab node.
    */
   refCallback: PropTypes.func,
   /**
-   * Boolean indicating whether or not the Tab should render as active.
+   * Boolean indicating whether or not the Tab should account for count spacing.
    */
   hasCount: PropTypes.bool,
   /**
-   * Boolean indicating whether or not the Tab should render as active.
+   * An option icon for tab.
    */
   icon: PropTypes.element,
 };

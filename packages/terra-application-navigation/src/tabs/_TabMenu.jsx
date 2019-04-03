@@ -16,19 +16,19 @@ const propTypes = {
    */
   isHidden: PropTypes.bool,
   /**
-   * Should the menu be hidden, set to true if there are no hidden items.
+   * A string identifying the currently active tab.
    */
   activeTabKey: PropTypes.string,
   /**
-   * Should the menu be hidden, set to true if there are no hidden items.
+   * Callback for the ref of the TabMenuDisplay.
    */
   menuRefCallback: PropTypes.func,
   /**
-   * Should the menu be hidden, set to true if there are no hidden items.
+   * Should the count notificaiton be displayed on the menu display.
    */
   showNotificationRollup: PropTypes.bool,
   /**
-   * Should the menu be hidden, set to true if there are no hidden items.
+   * Whether or not the notification should pulse animate.
    */
   isPulsed: PropTypes.bool,
 };

@@ -15,23 +15,12 @@
     flex: 1 1 auto;
     flex-wrap: nowrap;
     height: 100%;
+    justify-content: center;
     overflow: visible;
-    width: 100%;
+    width: 100%;  
 
     &:focus {
       outline: none;
-    }
-
-    &.start {
-      justify-content: flex-start;
-    }
-
-    &.center {
-      justify-content: center;
-    }
-
-    &.end {
-      justify-content: flex-end;
     }
   }
 

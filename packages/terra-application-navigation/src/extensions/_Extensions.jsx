@@ -6,7 +6,7 @@ import { extensionConfigPropType } from '../utils/propTypes';
 import ExtensionsPopupView from './_ExtensionsPopupView';
 import ExtensionRollup from './_ExtensionRollup';
 import ExtensionHelper from './_ExtensionHelper';
-import { EXTENSION_COUNT } from './_ExtensionUtils';
+import { sliceIndexForBreakpoint } from './_ExtensionUtils';
 import { shouldRenderCompactNavigation } from '../utils/helpers';
 import styles from './Extensions.module.scss';
 
@@ -18,7 +18,7 @@ const propTypes = {
    */
   activeBreakpoint: PropTypes.string,
   /**
-   * The content to be rendered in the ApplicationLayout's extensions region.
+   * The extension config for breakpoint display and items.
    */
   extensionConfig: extensionConfigPropType,
 };
@@ -92,19 +92,7 @@ class Extensions extends React.Component {
       attachmentSpread = { contentAttachment: 'top right', targetAttachment: 'bottom center' };
     }
 
-    let sliceIndex;
-    if (activeBreakpoint === 'tiny' || activeBreakpoint === 'small') {
-      sliceIndex = EXTENSION_COUNT.SMALL;
-    } else if (activeBreakpoint === 'medium') {
-      sliceIndex = extensionConfig.mediumCount || 3;
-    } else {
-      sliceIndex = extensionConfig.largeCount || 5;
-    }
-
-    if (extensionConfig.extensions.length <= sliceIndex + 1) {
-      sliceIndex = extensionConfig.extensions.length;
-    }
-
+    const sliceIndex = sliceIndexForBreakpoint(activeBreakpoint, extensionConfig);
     const visibleItems = extensionConfig.extensions.slice(0, sliceIndex);
     const hiddenItems = extensionConfig.extensions.slice(sliceIndex);
 

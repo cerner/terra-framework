@@ -8,15 +8,15 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The child tabs to be placed in the menu.
+   * The number of notifications to display..
    */
   value: PropTypes.number,
   /**
-   * Prop from popup, determines if the menu height is bound by the screen.
+   * Whether or not the count is to be display in inline style.
    */
   isInline: PropTypes.bool,
   /**
-   * Prop from popup, determines if the menu height is bound by the screen.
+   * Whether or not the count represents rolled up counts.
    */
   isRollup: PropTypes.bool,
 };

@@ -7,15 +7,10 @@ import Tab from './_Tab';
 import CollapsedTab from './_CollapsedTab';
 import TabMenu from './_TabMenu';
 import styles from './Tabs.module.scss';
-import { navigationAlignmentPropType } from '../utils/propTypes';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  /**
-   * Alignment of the navigational tabs. ( e.g start, center, end )
-   */
-  alignment: navigationAlignmentPropType,
   /**
    * Array of objects representing the tabs.
    */
@@ -29,11 +24,11 @@ const propTypes = {
      */
     text: PropTypes.string.isRequired,
     /**
-     * The display text for the tab.
+     * The value of the notification count.
      */
     noficationCount: PropTypes.number,
     /**
-     * The display text for the tab.
+     * Whether or not the tab has the potentional for a count.
      */
     hasNotifications: PropTypes.bool,
   })),
@@ -49,7 +44,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  alignment: 'center',
   hasIcons: false,
   tabs: [],
 };
@@ -167,7 +161,6 @@ class Tabs extends React.Component {
 
   render() {
     const {
-      alignment,
       tabs,
       activeTabKey,
       onTabSelect,
@@ -212,7 +205,7 @@ class Tabs extends React.Component {
     return (
       <div className={cx(['tabs-wrapper'])} ref={this.setContainerNode}>
         <div
-          className={cx(['tabs-container', { 'is-calculating': this.isCalculating }, alignment])}
+          className={cx(['tabs-container', { 'is-calculating': this.isCalculating }])}
           role="tablist"
         >
           {visibleChildren}

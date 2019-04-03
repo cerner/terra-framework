@@ -7,37 +7,37 @@ import ContentWrapper from './_ContentWrapper';
 
 const propTypes = {
   /**
-   * The currently active breakpoint.
+   * The content to be displayed within the popup/modal disclosure.
    */
   content: PropTypes.element,
-  /**
-   * The currently active breakpoint.
+  /*
+   * @private The content to be rendered in the ApplicationLayout's extensions region.
    */
-  notificationCount: PropTypes.number,
+  disclosureManager: DisclosureManager.disclosureManagerShape,
   /**
-   * The currently active breakpoint.
-   */
-  isHidden: PropTypes.bool,
-  /**
-   * The currently active breakpoint.
+   * The image to display for the associated extension action.
    */
   image: PropTypes.element,
   /**
-   * The content to be rendered in the ApplicationLayout's extensions region.
+   * Whether or not the extension is hidden by the rollup pattern.
    */
-  text: PropTypes.string,
+  isHidden: PropTypes.bool,
   /**
-   * Function callback for closing the drawer.
+   * The number of notifications to be displayed for the extension.
+   */
+  notificationCount: PropTypes.number,
+  /**
+   * Function callback for closing the disclsoure.
    */
   onRequestClose: PropTypes.func,
   /**
-   * The content to be rendered in the ApplicationLayout's extensions region.
+   * The text display for the extension, either the aira label or the inline text.
+   */
+  text: PropTypes.string,
+  /**
+   * TODO: Is this still needed.
    */
   uniqueKey: PropTypes.string,
-  /*
-   * The content to be rendered in the ApplicationLayout's extensions region.
-   */
-  disclosureManager: DisclosureManager.disclosureManagerShape,
 };
 
 const defaultProps = {
