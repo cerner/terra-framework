@@ -1,5 +1,6 @@
 import moment from 'moment-timezone';
 import DateUtil from 'terra-date-picker/lib/DateUtil';
+import TimeUtil from 'terra-time-input/lib/TimeUtil';
 
 class DateTimeUtils {
   static createSafeDate(date) {
@@ -116,20 +117,7 @@ class DateTimeUtils {
   }
 }
 
-// These formats are designed to be the possible props for the
-// variant prop of the TimeInput. They should not change.
-Object.defineProperty(DateTimeUtils, 'FORMAT_12_HOUR', {
-  value: '12-hour',
-  configurable: false,
-  enumerable: true,
-  writable: false,
-});
-
-Object.defineProperty(DateTimeUtils, 'FORMAT_24_HOUR', {
-  value: '24-hour',
-  configurable: false,
-  enumerable: true,
-  writable: false,
-});
+DateTimeUtils.FORMAT_12_HOUR = TimeUtil.FORMAT_12_HOUR;
+DateTimeUtils.FORMAT_24_HOUR = TimeUtil.FORMAT_24_HOUR;
 
 export default DateTimeUtils;
