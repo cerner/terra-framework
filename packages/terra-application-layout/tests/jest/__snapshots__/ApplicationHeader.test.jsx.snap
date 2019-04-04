@@ -80,3 +80,54 @@ exports[`ApplicationHeader should render props 1`] = `
   />
 </div>
 `;
+
+exports[`ApplicationHeader with icons should match the snapshot 1`] = `
+<div
+  className="application-navbar"
+>
+  <InjectIntl(ApplicationHeaderLayout)
+    extensions={null}
+    logo={null}
+    navigation={
+      <withRouter(ApplicationTabs)
+        links={
+          Array [
+            Object {
+              "icon": <IconFeatured
+                data-name="Layer 1"
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+              />,
+              "id": "123",
+              "path": "/something1",
+              "text": "item 1",
+            },
+            Object {
+              "icon": <IconFeatured
+                data-name="Layer 1"
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+              />,
+              "id": "234",
+              "path": "/something2",
+              "text": "item 2",
+            },
+            Object {
+              "icon": <IconFeatured
+                data-name="Layer 1"
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+              />,
+              "id": "345",
+              "path": "/something3",
+              "text": "item 3",
+            },
+          ]
+        }
+      />
+    }
+    toggle={null}
+    utilities={null}
+  />
+</div>
+`;
