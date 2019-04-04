@@ -4,6 +4,26 @@ Changelog
 Unreleased
 ----------
 
+2.5.0 - (March 26, 2019)
+------------------
+### Changed
+* Update react/react-dom peer-dependency to latest stable minor release
+* Updated `rootProp` default value from `[data-terra-base]` to `#root`
+
+### Removed
+* Removed peer dependency on terra-base
+* Removed baseStyles import from terra-base
+
+2.4.0 - (March 12, 2019)
+------------------
+### Changed
+* Replaced local keyCode values with keycode-js npm package
+
+2.3.0 - (March 5, 2019)
+------------------
+### Changed
+* escapeDeactivates option set on focus trap to prevent escape from breaking focus
+
 2.2.0 - (February 5, 2019)
 ------------------
 ### Changed

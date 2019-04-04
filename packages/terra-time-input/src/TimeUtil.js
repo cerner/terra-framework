@@ -187,15 +187,6 @@ TimeUtil.inputType = {
   MINUTE: 1,
 };
 
-TimeUtil.keyCodes = {
-  BACKSPACE: 8,
-  ARROWLEFT: 37,
-  ARROWUP: 38,
-  ARROWRIGHT: 39,
-  ARROWDOWN: 40,
-  DELETE: 46,
-};
-
 TimeUtil.isConsideredMobileDevice = () => window.matchMedia('(max-width: 1024px)').matches
   && (
     'ontouchstart' in window

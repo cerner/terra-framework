@@ -3,6 +3,33 @@
 exports[`should ignore invalid times properly 1`] = `
 <div
   className="time-input"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
   <input
     name="time-input"
@@ -10,7 +37,7 @@ exports[`should ignore invalid times properly 1`] = `
     value=""
   />
   <Input
-    aria-label="Hours"
+    aria-label="Terra.timeInput.hours"
     className="time-input-hour desktop"
     disabled={false}
     isInvalid={false}
@@ -21,7 +48,7 @@ exports[`should ignore invalid times properly 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="hh"
+    placeholder="Terra.timeInput.hh"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -34,7 +61,7 @@ exports[`should ignore invalid times properly 1`] = `
     :
   </span>
   <Input
-    aria-label="Minutes"
+    aria-label="Terra.timeInput.minutes"
     className="time-input-minute desktop"
     disabled={false}
     isInvalid={false}
@@ -45,7 +72,7 @@ exports[`should ignore invalid times properly 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="mm"
+    placeholder="Terra.timeInput.mm"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -56,7 +83,9 @@ exports[`should ignore invalid times properly 1`] = `
 `;
 
 exports[`should not have duplicate ids on the page when multiple date pickers are initialized 1`] = `
-<div>
+<div
+  intl="[object Object]"
+>
   <div
     class="mobile-time-picker"
   >
@@ -74,7 +103,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         maxlength="2"
         name="terra-time-hour-time-input"
         pattern="\\\\d*"
-        placeholder="hh"
+        placeholder="Terra.timeInput.hh"
         size="2"
         value=""
       />
@@ -82,7 +111,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         class="mobile-input-label"
         for="terra-time-hour-time-input"
       >
-        Hours
+        Terra.timeInput.hours
       </label>
     </div>
     <span
@@ -99,7 +128,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         maxlength="2"
         name="terra-time-minute-time-input"
         pattern="\\\\d*"
-        placeholder="mm"
+        placeholder="Terra.timeInput.mm"
         size="2"
         value=""
       />
@@ -107,7 +136,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         class="mobile-input-label"
         for="terra-time-minute-time-input"
       >
-        Minutes
+        Terra.timeInput.minutes
       </label>
     </div>
     <div
@@ -125,13 +154,12 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
           <span
             class=""
           >
-            a.m.
+            Terra.timeInput.am
           </span>
         </span>
       </button>
       <button
         aria-disabled="false"
-        aria-pressed="false"
         class="button neutral button-group-button meridiem-button"
         type="button"
       >
@@ -141,7 +169,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
           <span
             class=""
           >
-            p.m.
+            Terra.timeInput.pm
           </span>
         </span>
       </button>
@@ -164,7 +192,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         maxlength="2"
         name="terra-time-hour-time-input-2"
         pattern="\\\\d*"
-        placeholder="hh"
+        placeholder="Terra.timeInput.hh"
         size="2"
         value=""
       />
@@ -172,7 +200,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         class="mobile-input-label"
         for="terra-time-hour-time-input-2"
       >
-        Hours
+        Terra.timeInput.hours
       </label>
     </div>
     <span
@@ -189,7 +217,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         maxlength="2"
         name="terra-time-minute-time-input-2"
         pattern="\\\\d*"
-        placeholder="mm"
+        placeholder="Terra.timeInput.mm"
         size="2"
         value=""
       />
@@ -197,7 +225,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         class="mobile-input-label"
         for="terra-time-minute-time-input-2"
       >
-        Minutes
+        Terra.timeInput.minutes
       </label>
     </div>
     <div
@@ -215,13 +243,12 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
           <span
             class=""
           >
-            a.m.
+            Terra.timeInput.am
           </span>
         </span>
       </button>
       <button
         aria-disabled="false"
-        aria-pressed="false"
         class="button neutral button-group-button meridiem-button"
         type="button"
       >
@@ -231,7 +258,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
           <span
             class=""
           >
-            p.m.
+            Terra.timeInput.pm
           </span>
         </span>
       </button>
@@ -254,7 +281,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         maxlength="2"
         name="terra-time-hour-time-input-3"
         pattern="\\\\d*"
-        placeholder="hh"
+        placeholder="Terra.timeInput.hh"
         size="2"
         value=""
       />
@@ -262,7 +289,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         class="mobile-input-label"
         for="terra-time-hour-time-input-3"
       >
-        Hours
+        Terra.timeInput.hours
       </label>
     </div>
     <span
@@ -279,7 +306,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         maxlength="2"
         name="terra-time-minute-time-input-3"
         pattern="\\\\d*"
-        placeholder="mm"
+        placeholder="Terra.timeInput.mm"
         size="2"
         value=""
       />
@@ -287,7 +314,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         class="mobile-input-label"
         for="terra-time-minute-time-input-3"
       >
-        Minutes
+        Terra.timeInput.minutes
       </label>
     </div>
     <div
@@ -305,13 +332,12 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
           <span
             class=""
           >
-            a.m.
+            Terra.timeInput.am
           </span>
         </span>
       </button>
       <button
         aria-disabled="false"
-        aria-pressed="false"
         class="button neutral button-group-button meridiem-button"
         type="button"
       >
@@ -321,7 +347,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
           <span
             class=""
           >
-            p.m.
+            Terra.timeInput.pm
           </span>
         </span>
       </button>
@@ -333,6 +359,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
 exports[`should render a 12 hour timepicker meridiem with buttons when viewed on a mobile device 1`] = `
 <div
   class="mobile-time-picker"
+  intl="[object Object]"
 >
   <input
     name="time-input"
@@ -348,7 +375,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
       maxlength="2"
       name="terra-time-hour-time-input"
       pattern="\\\\d*"
-      placeholder="hh"
+      placeholder="Terra.timeInput.hh"
       size="2"
       value=""
     />
@@ -356,7 +383,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
       class="mobile-input-label"
       for="terra-time-hour-time-input"
     >
-      Hours
+      Terra.timeInput.hours
     </label>
   </div>
   <span
@@ -373,7 +400,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
       maxlength="2"
       name="terra-time-minute-time-input"
       pattern="\\\\d*"
-      placeholder="mm"
+      placeholder="Terra.timeInput.mm"
       size="2"
       value=""
     />
@@ -381,7 +408,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
       class="mobile-input-label"
       for="terra-time-minute-time-input"
     >
-      Minutes
+      Terra.timeInput.minutes
     </label>
   </div>
   <div
@@ -399,13 +426,12 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
         <span
           class=""
         >
-          a.m.
+          Terra.timeInput.am
         </span>
       </span>
     </button>
     <button
       aria-disabled="false"
-      aria-pressed="false"
       class="button neutral button-group-button meridiem-button"
       type="button"
     >
@@ -415,7 +441,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
         <span
           class=""
         >
-          p.m.
+          Terra.timeInput.pm
         </span>
       </span>
     </button>
@@ -426,6 +452,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
 exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
 <div
   class="mobile-time-picker"
+  intl="[object Object]"
 >
   <input
     name="time-input"
@@ -441,7 +468,7 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
       maxlength="2"
       name="terra-time-hour-time-input"
       pattern="\\\\d*"
-      placeholder="hh"
+      placeholder="Terra.timeInput.hh"
       size="2"
       value=""
     />
@@ -449,7 +476,7 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
       class="mobile-input-label"
       for="terra-time-hour-time-input"
     >
-      Hours
+      Terra.timeInput.hours
     </label>
   </div>
   <span
@@ -466,7 +493,7 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
       maxlength="2"
       name="terra-time-minute-time-input"
       pattern="\\\\d*"
-      placeholder="mm"
+      placeholder="Terra.timeInput.mm"
       size="2"
       value=""
     />
@@ -474,7 +501,7 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
       class="mobile-input-label"
       for="terra-time-minute-time-input"
     >
-      Minutes
+      Terra.timeInput.minutes
     </label>
   </div>
 </div>
@@ -483,6 +510,33 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
 exports[`should render a default time input 1`] = `
 <div
   className="time-input"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
   <input
     name="time-input"
@@ -490,7 +544,7 @@ exports[`should render a default time input 1`] = `
     value=""
   />
   <Input
-    aria-label="Hours"
+    aria-label="Terra.timeInput.hours"
     className="time-input-hour desktop"
     disabled={false}
     isInvalid={false}
@@ -501,7 +555,7 @@ exports[`should render a default time input 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="hh"
+    placeholder="Terra.timeInput.hh"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -514,7 +568,7 @@ exports[`should render a default time input 1`] = `
     :
   </span>
   <Input
-    aria-label="Minutes"
+    aria-label="Terra.timeInput.minutes"
     className="time-input-minute desktop"
     disabled={false}
     isInvalid={false}
@@ -525,7 +579,7 @@ exports[`should render a default time input 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="mm"
+    placeholder="Terra.timeInput.mm"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -538,6 +592,33 @@ exports[`should render a default time input 1`] = `
 exports[`should render a disabled time input 1`] = `
 <div
   className="disabled time-input"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
   <input
     name="time-input"
@@ -545,7 +626,7 @@ exports[`should render a disabled time input 1`] = `
     value=""
   />
   <Input
-    aria-label="Hours"
+    aria-label="Terra.timeInput.hours"
     className="time-input-hour desktop"
     disabled={true}
     isInvalid={false}
@@ -556,7 +637,7 @@ exports[`should render a disabled time input 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="hh"
+    placeholder="Terra.timeInput.hh"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -569,7 +650,7 @@ exports[`should render a disabled time input 1`] = `
     :
   </span>
   <Input
-    aria-label="Minutes"
+    aria-label="Terra.timeInput.minutes"
     className="time-input-minute desktop"
     disabled={true}
     isInvalid={false}
@@ -580,7 +661,7 @@ exports[`should render a disabled time input 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="mm"
+    placeholder="Terra.timeInput.mm"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -593,6 +674,33 @@ exports[`should render a disabled time input 1`] = `
 exports[`should render a time input with 12 hour clock set 1`] = `
 <div
   className="time-input"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
   <input
     name="time-input"
@@ -600,7 +708,7 @@ exports[`should render a time input with 12 hour clock set 1`] = `
     value=""
   />
   <Input
-    aria-label="Hours"
+    aria-label="Terra.timeInput.hours"
     className="time-input-hour desktop"
     disabled={false}
     isInvalid={false}
@@ -611,7 +719,7 @@ exports[`should render a time input with 12 hour clock set 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="hh"
+    placeholder="Terra.timeInput.hh"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -624,7 +732,7 @@ exports[`should render a time input with 12 hour clock set 1`] = `
     :
   </span>
   <Input
-    aria-label="Minutes"
+    aria-label="Terra.timeInput.minutes"
     className="time-input-minute desktop"
     disabled={false}
     isInvalid={false}
@@ -635,7 +743,7 @@ exports[`should render a time input with 12 hour clock set 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="mm"
+    placeholder="Terra.timeInput.mm"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -643,7 +751,7 @@ exports[`should render a time input with 12 hour clock set 1`] = `
     value=""
   />
   <Input
-    aria-label="Display Meridiem"
+    aria-label="Terra.timeInput.display.meridiem"
     aria-readonly={true}
     className="meridiem-display"
     disabled={false}
@@ -653,9 +761,9 @@ exports[`should render a time input with 12 hour clock set 1`] = `
     onFocus={[Function]}
     readOnly={true}
     required={false}
-    size={4}
+    size={18}
     tabIndex="-1"
-    value="a.m."
+    value="Terra.timeInput.am"
   />
   <div
     key="meridiem_select_box"
@@ -666,7 +774,7 @@ exports[`should render a time input with 12 hour clock set 1`] = `
     }
   >
     <select
-      aria-label="Select Meridiem"
+      aria-label="Terra.timeInput.select.meridiem"
       className="time-input-meridiem"
       name="terra-time-meridiem-time-input"
       onBlur={[Function]}
@@ -674,19 +782,19 @@ exports[`should render a time input with 12 hour clock set 1`] = `
       onFocus={[Function]}
       onKeyDown={[Function]}
       size="2"
-      value="a.m."
+      value="Terra.timeInput.am"
     >
       <option
         key="anteMeridiem"
-        value="a.m."
+        value="Terra.timeInput.am"
       >
-        a.m.
+        Terra.timeInput.am
       </option>
       <option
         key="postMeridiem"
-        value="p.m."
+        value="Terra.timeInput.pm"
       >
-        p.m.
+        Terra.timeInput.pm
       </option>
     </select>
   </div>
@@ -696,6 +804,33 @@ exports[`should render a time input with 12 hour clock set 1`] = `
 exports[`should render a time input with a default time 1`] = `
 <div
   className="time-input"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
   <input
     name="time-input"
@@ -703,7 +838,7 @@ exports[`should render a time input with a default time 1`] = `
     value="T10:45"
   />
   <Input
-    aria-label="Hours"
+    aria-label="Terra.timeInput.hours"
     className="time-input-hour desktop"
     disabled={false}
     isInvalid={false}
@@ -714,7 +849,7 @@ exports[`should render a time input with a default time 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="hh"
+    placeholder="Terra.timeInput.hh"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -727,7 +862,7 @@ exports[`should render a time input with a default time 1`] = `
     :
   </span>
   <Input
-    aria-label="Minutes"
+    aria-label="Terra.timeInput.minutes"
     className="time-input-minute desktop"
     disabled={false}
     isInvalid={false}
@@ -738,7 +873,7 @@ exports[`should render a time input with a default time 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="mm"
+    placeholder="Terra.timeInput.mm"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -751,6 +886,33 @@ exports[`should render a time input with a default time 1`] = `
 exports[`should render a time input with custom attributes 1`] = `
 <div
   className="time-input"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
   <input
     name="time-input"
@@ -758,7 +920,7 @@ exports[`should render a time input with custom attributes 1`] = `
     value=""
   />
   <Input
-    aria-label="Hours"
+    aria-label="Terra.timeInput.hours"
     className="time-input-hour desktop"
     disabled={false}
     id="terra-time-input"
@@ -770,7 +932,7 @@ exports[`should render a time input with custom attributes 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="hh"
+    placeholder="Terra.timeInput.hh"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -783,7 +945,7 @@ exports[`should render a time input with custom attributes 1`] = `
     :
   </span>
   <Input
-    aria-label="Minutes"
+    aria-label="Terra.timeInput.minutes"
     className="time-input-minute desktop"
     disabled={false}
     id="terra-time-input"
@@ -795,7 +957,7 @@ exports[`should render a time input with custom attributes 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="mm"
+    placeholder="Terra.timeInput.mm"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -808,6 +970,33 @@ exports[`should render a time input with custom attributes 1`] = `
 exports[`should render a time input with onBlur 1`] = `
 <div
   className="time-input"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
   <input
     name="time-input"
@@ -815,7 +1004,7 @@ exports[`should render a time input with onBlur 1`] = `
     value=""
   />
   <Input
-    aria-label="Hours"
+    aria-label="Terra.timeInput.hours"
     className="time-input-hour desktop"
     disabled={false}
     isInvalid={false}
@@ -826,7 +1015,7 @@ exports[`should render a time input with onBlur 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="hh"
+    placeholder="Terra.timeInput.hh"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -839,7 +1028,7 @@ exports[`should render a time input with onBlur 1`] = `
     :
   </span>
   <Input
-    aria-label="Minutes"
+    aria-label="Terra.timeInput.minutes"
     className="time-input-minute desktop"
     disabled={false}
     isInvalid={false}
@@ -850,7 +1039,7 @@ exports[`should render a time input with onBlur 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="mm"
+    placeholder="Terra.timeInput.mm"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -863,6 +1052,33 @@ exports[`should render a time input with onBlur 1`] = `
 exports[`should render a time input with onChange 1`] = `
 <div
   className="time-input"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
   <input
     name="time-input"
@@ -870,7 +1086,7 @@ exports[`should render a time input with onChange 1`] = `
     value=""
   />
   <Input
-    aria-label="Hours"
+    aria-label="Terra.timeInput.hours"
     className="time-input-hour desktop"
     disabled={false}
     isInvalid={false}
@@ -881,7 +1097,7 @@ exports[`should render a time input with onChange 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="hh"
+    placeholder="Terra.timeInput.hh"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -894,7 +1110,7 @@ exports[`should render a time input with onChange 1`] = `
     :
   </span>
   <Input
-    aria-label="Minutes"
+    aria-label="Terra.timeInput.minutes"
     className="time-input-minute desktop"
     disabled={false}
     isInvalid={false}
@@ -905,7 +1121,7 @@ exports[`should render a time input with onChange 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="mm"
+    placeholder="Terra.timeInput.mm"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -918,6 +1134,33 @@ exports[`should render a time input with onChange 1`] = `
 exports[`should render a time input with onInputFocus 1`] = `
 <div
   className="time-input"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
   <input
     name="time-input"
@@ -925,7 +1168,7 @@ exports[`should render a time input with onInputFocus 1`] = `
     value=""
   />
   <Input
-    aria-label="Hours"
+    aria-label="Terra.timeInput.hours"
     className="time-input-hour desktop"
     disabled={false}
     isInvalid={false}
@@ -936,7 +1179,7 @@ exports[`should render a time input with onInputFocus 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="hh"
+    placeholder="Terra.timeInput.hh"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -949,7 +1192,7 @@ exports[`should render a time input with onInputFocus 1`] = `
     :
   </span>
   <Input
-    aria-label="Minutes"
+    aria-label="Terra.timeInput.minutes"
     className="time-input-minute desktop"
     disabled={false}
     isInvalid={false}
@@ -960,7 +1203,7 @@ exports[`should render a time input with onInputFocus 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     pattern="\\\\d*"
-    placeholder="mm"
+    placeholder="Terra.timeInput.mm"
     refCallback={[Function]}
     required={false}
     size="2"
@@ -973,6 +1216,7 @@ exports[`should render a time input with onInputFocus 1`] = `
 exports[`should set the labels with the correct htmlFor a 24 hour timepicker properly on mobile devices 1`] = `
 <div
   class="mobile-time-picker"
+  intl="[object Object]"
 >
   <input
     name="time-input"
@@ -988,7 +1232,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       maxlength="2"
       name="terra-time-hour-time-input"
       pattern="\\\\d*"
-      placeholder="hh"
+      placeholder="Terra.timeInput.hh"
       size="2"
       value=""
     />
@@ -996,7 +1240,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       class="mobile-input-label"
       for="id-2"
     >
-      Hours
+      Terra.timeInput.hours
     </label>
   </div>
   <span
@@ -1013,7 +1257,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       maxlength="2"
       name="terra-time-minute-time-input"
       pattern="\\\\d*"
-      placeholder="mm"
+      placeholder="Terra.timeInput.mm"
       size="2"
       value=""
     />
@@ -1021,7 +1265,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       class="mobile-input-label"
       for="id-1"
     >
-      Minutes
+      Terra.timeInput.minutes
     </label>
   </div>
 </div>

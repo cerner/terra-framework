@@ -1,5 +1,6 @@
 import React from 'react';
-import { injectIntl, intlShape } from 'terra-base';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
 import List from 'terra-list';
 import IconLeft from 'terra-icon/lib/icon/IconLeft';
@@ -7,7 +8,7 @@ import ContentContainer from 'terra-content-container';
 import IconClose from 'terra-icon/lib/icon/IconClose';
 import Arrange from 'terra-arrange';
 import classNames from 'classnames/bind';
-import 'terra-base/lib/baseStyles';
+import KeyCode from 'keycode-js';
 import MenuUtils from './_MenuUtils';
 import styles from './Menu.module.scss';
 
@@ -128,19 +129,19 @@ class MenuContent extends React.Component {
   onKeyDown(event) {
     const focusableMenuItems = this.contentNode.querySelectorAll('li[tabindex="0"]');
 
-    if (event.nativeEvent.keyCode === MenuUtils.KEYCODES.UP_ARROW) {
+    if (event.nativeEvent.keyCode === KeyCode.KEY_UP) {
       // Shift focus to last focusable menu item
       focusableMenuItems[focusableMenuItems.length - 1].focus();
     }
 
-    if (event.nativeEvent.keyCode === MenuUtils.KEYCODES.DOWN_ARROW) {
+    if (event.nativeEvent.keyCode === KeyCode.KEY_DOWN) {
       // Shift focus to first focusable menu item
       focusableMenuItems[0].focus();
     }
   }
 
   onKeyDownBackButton(event) {
-    if (event.nativeEvent.keyCode === MenuUtils.KEYCODES.ENTER || event.nativeEvent.keyCode === MenuUtils.KEYCODES.SPACE || event.nativeEvent.keyCode === MenuUtils.KEYCODES.LEFT_ARROW) {
+    if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_LEFT) {
       event.preventDefault();
       this.props.onRequestBack();
     }
@@ -204,25 +205,25 @@ class MenuContent extends React.Component {
   wrapOnKeyDown(item, index) {
     const { onKeyDown } = item.props;
     return ((event) => {
-      const shiftTabClicked = (event.shiftKey && event.nativeEvent.keyCode === MenuUtils.KEYCODES.TAB);
-      const tabClicked = (event.nativeEvent.keyCode === MenuUtils.KEYCODES.TAB);
+      const shiftTabClicked = (event.shiftKey && event.nativeEvent.keyCode === KeyCode.KEY_TAB);
+      const tabClicked = (event.nativeEvent.keyCode === KeyCode.KEY_TAB);
       if (!(shiftTabClicked || tabClicked)) {
         event.preventDefault();
       }
 
-      if (event.nativeEvent.keyCode === MenuUtils.KEYCODES.ENTER || event.nativeEvent.keyCode === MenuUtils.KEYCODES.SPACE) {
+      if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
         if (item.props.subMenuItems && item.props.subMenuItems.length > 0) {
           this.props.onRequestNext(item);
         }
-      } else if (event.nativeEvent.keyCode === MenuUtils.KEYCODES.RIGHT_ARROW) {
+      } else if (event.nativeEvent.keyCode === KeyCode.KEY_RIGHT) {
         if (item.props.subMenuItems && item.props.subMenuItems.length > 0) {
           this.props.onRequestNext(item);
         }
-      } else if (event.nativeEvent.keyCode === MenuUtils.KEYCODES.LEFT_ARROW) {
+      } else if (event.nativeEvent.keyCode === KeyCode.KEY_LEFT) {
         this.props.onRequestBack();
-      } else if (event.nativeEvent.keyCode === MenuUtils.KEYCODES.UP_ARROW) {
+      } else if (event.nativeEvent.keyCode === KeyCode.KEY_UP) {
         this.setState({ focusIndex: index - 1 });
-      } else if (event.nativeEvent.keyCode === MenuUtils.KEYCODES.DOWN_ARROW) {
+      } else if (event.nativeEvent.keyCode === KeyCode.KEY_DOWN) {
         this.setState({ focusIndex: index + 1 });
       }
 
@@ -362,7 +363,6 @@ class MenuContent extends React.Component {
     );
   }
 }
-
 
 MenuContent.propTypes = propTypes;
 MenuContent.defaultProps = defaultProps;

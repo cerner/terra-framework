@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import 'terra-base/lib/baseStyles';
 import { matchPath } from 'react-router-dom';
-import TabUtils from './_TabUtils';
+import KeyCode from 'keycode-js';
 import styles from './ApplicationTabs.module.scss';
 
 const cx = classNames.bind(styles);
@@ -21,10 +20,6 @@ const propTypes = {
    */
   history: PropTypes.object.isRequired,
   /**
-   * Whether or not the tab is collapsed styled and present in the menu.
-   */
-  isCollapsed: PropTypes.bool,
-  /**
    * The location as provided by the `withRouter()` HOC.
    */
   location: PropTypes.object.isRequired,
@@ -40,9 +35,13 @@ const propTypes = {
    * The click callback of the tab.
    */
   onTabClick: PropTypes.func,
+  /**
+   * The display icon for the tab
+   */
+  icon: PropTypes.node,
 };
 
-class ApplicationTab extends React.Component {
+class ApplicationTab extends Component {
   constructor(props) {
     super(props);
     this.state = { active: false, focused: false };
@@ -59,12 +58,12 @@ class ApplicationTab extends React.Component {
 
   handleKeyDown(event) {
     // Add active state to FF browsers
-    if (event.nativeEvent.keyCode === TabUtils.KEYCODES.SPACE) {
+    if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
       this.setState({ active: true });
     }
 
     // Add focus styles for keyboard navigation
-    if (event.nativeEvent.keyCode === TabUtils.KEYCODES.SPACE || event.nativeEvent.keyCode === TabUtils.KEYCODES.ENTER) {
+    if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_RETURN) {
       this.setState({ focused: true });
 
       event.preventDefault();
@@ -74,12 +73,12 @@ class ApplicationTab extends React.Component {
 
   handleKeyUp(event) {
     // Remove active state from FF broswers
-    if (event.nativeEvent.keyCode === TabUtils.KEYCODES.SPACE) {
+    if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
       this.setState({ active: false });
     }
 
     // Apply focus styles for keyboard navigation
-    if (event.nativeEvent.keyCode === TabUtils.KEYCODES.TAB) {
+    if (event.nativeEvent.keyCode === KeyCode.KEY_TAB) {
       event.preventDefault();
       event.stopPropagation();
       this.setState({ focused: true });
@@ -110,35 +109,42 @@ class ApplicationTab extends React.Component {
     const {
       externalLink,
       history,
-      isCollapsed,
       location,
       onTabClick,
       path,
       text,
+      icon,
       ...customProps
     } = this.props;
 
+    const { active, focused } = this.state;
+
+    const isCollapsed = false;
+    const hasIcon = !!icon;
     const isCurrent = this.isCurrentPath();
+
     const tabClassNames = cx([
-      { tab: !isCollapsed },
-      { 'collapsed-tab': isCollapsed },
+      'tab',
+      { 'tab-with-icon': hasIcon },
       { 'is-disabled': isCurrent && !isCollapsed },
-      { 'is-active': this.state.active },
-      { 'is-focused': this.state.focused },
+      { 'is-active': active },
+      { 'is-focused': focused },
       customProps.className,
     ]);
     const tabAttr = { 'aria-current': isCurrent };
 
-    let ComponentClass = 'div';
-    if (!isCollapsed) {
-      tabAttr.role = 'link';
-      ComponentClass = 'button';
-    }
+    const childrenClassNames = cx([
+      'tab-inner',
+      { 'tab-inner-with-icon': hasIcon },
+    ]);
+    const ChildElement = hasIcon ? 'div' : 'span';
 
     return (
-      <ComponentClass
+      <button
         {...customProps}
         {...tabAttr}
+        role="link"
+        type="button"
         tabIndex="0"
         className={tabClassNames}
         onClick={this.handleOnClick}
@@ -146,10 +152,11 @@ class ApplicationTab extends React.Component {
         onKeyUp={this.handleKeyUp}
         onBlur={this.handleOnBlur}
       >
-        <span className={cx(['tab-inner'])}>
+        <ChildElement className={childrenClassNames}>
+          {hasIcon && <span className={cx(['tab-icon'])}>{icon}</span>}
           <span className={cx(['tab-label'])}>{text}</span>
-        </span>
-      </ComponentClass>
+        </ChildElement>
+      </button>
     );
   }
 }

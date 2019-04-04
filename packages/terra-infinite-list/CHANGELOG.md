@@ -4,6 +4,37 @@ Changelog
 Unreleased
 ----------
 
+3.2.0 - (April 2, 2019)
+------------------
+### Added
+* Documentation for including section headers and subsection headers to the infinite list.
+
+3.1.0 - (March 26, 2019)
+------------------
+### Changed
+* Update react/react-dom peer-dependency to latest stable minor release
+
+### Removed
+* Removed peer dependency on terra-base
+* Removed baseStyles import from terra-base
+
+3.0.0 - (February 13, 2019)
+------------------
+### Breaking Change
+* Update to terra-list v4
+* Update props to match List's new API, Guides:
+* https://github.com/cerner/terra-core/tree/master/packages/terra-list/docs/guides
+* Selection state now managed outside of the infinite list
+* Expose `SectionHeader` and `SubsectionHeader` for use within list
+* Removed `isSelectable` prop
+* Removed `selectedIndexes` prop
+* Removed `hasChevrons` prop
+* Removed ``disableUnselectedItems`` prop
+* Removed ``onChange`` prop
+* Replaced `isDivided` prop with `dividerStyle`
+* Added `paddingStyle` prop
+* Added `role` prop
+
 2.1.0 - (February 5, 2019)
 ------------------
 ### Changed

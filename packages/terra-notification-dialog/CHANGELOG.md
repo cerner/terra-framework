@@ -4,6 +4,48 @@ Changelog
 Unreleased
 ----------
 
+2.8.0 - (April 2, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+2.7.0 - (March 26, 2019)
+------------------
+### Changed
+* Update react/react-dom peer-dependency to latest stable minor release
+
+### Removed
+* Removed peer dependency on terra-base
+* Removed baseStyles import from terra-base
+
+2.6.0 - (March 20, 2019)
+------------------
+### Changed
+* Update Jest tests to use terra-enzyme-intl
+
+2.5.0 - (March 12, 2019)
+------------------
+### Added
+* Added missing nl-BE translation
+
+2.4.0 - (March 5, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+2.3.0 - (February 26, 2019)
+------------------
+### Added
+* Added en-AU translations
+
+### Changed
+* Update wdio spec to set the viewport at the top-level instead of in each test's before hook for faster execution
+
+2.2.0 - (February 13, 2019)
+------------------
+### Changed
+* Minor dependency update
+
 2.1.0 - (February 5, 2019)
 ------------------
 ### Fixed

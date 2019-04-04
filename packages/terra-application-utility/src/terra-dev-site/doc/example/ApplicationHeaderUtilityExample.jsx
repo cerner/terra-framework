@@ -20,13 +20,13 @@ class ApplicationHeaderUtilityExample extends React.Component {
   }
 
   render() {
-    const accessory = <Image src={FallbackAvatar} />;
+    const accessory = <Image alt="Fallback Avatar" src={FallbackAvatar} />;
     const title = 'User Name';
 
     return (
       <div style={{ paddingLeft: '4px' }}>
         <div style={{
-          height: '60px', position: 'relative', width: '150px', backgroundColor: '#2481ca',
+          height: '60px', position: 'relative', width: '150px', backgroundColor: '#0079BE',
         }}
         >
           <ApplicationHeaderUtility

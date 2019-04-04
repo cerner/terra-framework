@@ -1,7 +1,7 @@
 {
   "name": "terra-hookshot",
   "main": "lib/Hookshot.js",
-  "version": "5.1.0",
+  "version": "5.5.0",
   "description": "The Terra Hookshot component positions portaled content according to target and content attachments, ensuring they stay visually connected.",
   "repository": {
     "type": "git",
@@ -24,12 +24,12 @@
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "peerDependencies": {
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "terra-base": "^4.0.0"
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "keycode-js": "^1.0.4",
     "prop-types": "^15.5.8",
     "react-onclickoutside": "^6.7.1",
     "react-portal": "^4.1.2",

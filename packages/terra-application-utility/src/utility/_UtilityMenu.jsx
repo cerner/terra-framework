@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';
-import 'terra-base/lib/baseStyles';
 import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
 import IconClose from 'terra-icon/lib/icon/IconClose';
@@ -42,6 +41,11 @@ const propTypes = {
    */
   onRequestClose: PropTypes.func,
   /**
+   *
+   * The role attribute of Utility Menu.
+   */
+  menuRole: PropTypes.string,
+  /**
    * Sets the Utility variant. One of Utils.VARIANTS.HEADER, Utils.VARIANTS.MENU.
    */
   variant: PropTypes.oneOf([Utils.VARIANTS.HEADER, Utils.VARIANTS.MENU]),
@@ -56,6 +60,10 @@ const processMenuItems = (items) => {
     );
   });
   return map;
+};
+
+const defaultProps = {
+  menuRole: 'navigation',
 };
 
 const hasChevron = item => item.childKeys && item.childKeys.length > 0;
@@ -129,7 +137,7 @@ class UtilityMenu extends React.Component {
         hasChevron={chevron}
         leftInset={leftInset}
         rightInset={rightInset}
-        onChange={item.isReadOnly ? () => {} : this.handleOnChange}
+        onChange={item.isReadOnly ? () => { } : this.handleOnChange}
         onKeyDown={handleOnKeyDown}
         variant={this.props.variant}
       />
@@ -142,7 +150,7 @@ class UtilityMenu extends React.Component {
       const rightInset = this.childrenHasChevron(currentItem);
       let index = -1;
       return (
-        <ul className={cx('utility-menu-body')}>
+        <div className={cx('utility-menu-body')}>
           {currentItem.childKeys.map((key) => {
             if (this.getItem(key).contentLocation !== Utils.LOCATIONS.FOOTER) {
               index += 1;
@@ -152,7 +160,7 @@ class UtilityMenu extends React.Component {
             }
             return null;
           })}
-        </ul>
+        </div>
       );
     }
     return null;
@@ -240,6 +248,7 @@ class UtilityMenu extends React.Component {
       onChange,
       onRequestClose,
       variant,
+      menuRole,
       ...customProps
     } = this.props;
 
@@ -361,7 +370,7 @@ class UtilityMenu extends React.Component {
           footer={footer}
           fill={isHeightBounded}
           className={menuClassNames}
-          role="navigation"
+          role={menuRole}
           aria-label={menuText}
         >
           {this.buildListContent(currentItem)}
@@ -373,6 +382,7 @@ class UtilityMenu extends React.Component {
 }
 
 UtilityMenu.propTypes = propTypes;
+UtilityMenu.defaultProps = defaultProps;
 UtilityMenu.processMenuItems = processMenuItems;
 UtilityMenu.hasChevron = hasChevron;
 export default injectIntl(UtilityMenu);

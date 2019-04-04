@@ -208,26 +208,33 @@ class ApplicationLayout extends React.Component {
     } = this.props;
     const { applicationLayoutRoutingConfig } = this.state;
 
+    const headerHasAnyIcons = (navigationItems || []).some(({ icon }) => icon);
+    const links = (navigationItems
+      ? (navigationItems || []).map((route, index) => ({
+        id: `application-layout-tab-${index}`,
+        path: route.path,
+        text: route.text,
+        externalLink: route.externalLink,
+        icon: route.icon,
+      }))
+      : undefined
+    );
+
+    const header = (
+      <ApplicationHeader
+        nameConfig={nameConfig}
+        utilityConfig={utilityConfig}
+        extensions={extensions}
+        applicationLinks={{ alignment: navigationAlignment, links }}
+        hasIcons={headerHasAnyIcons}
+      />
+    );
+
     return (
       <ModalManager>
         <NavigationLayout
           config={applicationLayoutRoutingConfig}
-          header={(
-            <ApplicationHeader
-              nameConfig={nameConfig}
-              utilityConfig={utilityConfig}
-              extensions={extensions}
-              applicationLinks={{
-                alignment: navigationAlignment,
-                links: navigationItems ? navigationItems.map((route, index) => ({
-                  id: `application-layout-tab-${index}`,
-                  path: route.path,
-                  text: route.text,
-                  externalLink: route.externalLink,
-                })) : undefined,
-              }}
-            />
-          )}
+          header={header}
           indexPath={indexPath}
         />
       </ModalManager>

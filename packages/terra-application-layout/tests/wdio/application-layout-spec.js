@@ -110,7 +110,7 @@ describe('ApplicationLayout', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test' });
-    Terra.should.beAccessible({ context: '#application-layout-test' });
+    Terra.should.beAccessible({ context: '[role="dialog"]' });
   });
 
   describe('Presents utility menu from header and checks for closure on read-only item click', () => {
@@ -125,5 +125,14 @@ describe('ApplicationLayout', () => {
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test' });
     Terra.should.beAccessible({ context: '#application-layout-test' });
+  });
+
+  describe('Displays an application layout with nav icons', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout-with-icons');
+      browser.waitForVisible('#application-layout-test');
+    });
+
+    Terra.should.matchScreenshot({ selector: '#application-layout-test', viewports });
   });
 });

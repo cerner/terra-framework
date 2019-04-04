@@ -3,9 +3,9 @@ const testLinkConfig = [
   {
     id: 'test-button',
     path: '/test2',
-    text: 'test 2',
+    text: 'External Link Example',
     externalLink: {
-      path: 'http://test.brokenurl.terra-framework.com',
+      path: 'https://engineering.cerner.com/terra-ui/#/home/terra-ui/index',
       target: '_self',
     },
   },

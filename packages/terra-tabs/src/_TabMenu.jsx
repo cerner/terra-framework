@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Menu from 'terra-menu';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
+import KeyCode from 'keycode-js';
 import styles from './Tabs.module.scss';
-import TabUtils from './TabUtils';
 
 const cx = classNames.bind(styles);
 
@@ -69,7 +69,7 @@ class TabMenu extends React.Component {
   }
 
   handleOnKeyDown(event) {
-    if (event.nativeEvent.keyCode === TabUtils.KEYCODES.ENTER) {
+    if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN) {
       this.setState({ isOpen: true });
     }
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SelectableList from 'terra-list/lib/SelectableList';
+import List from '../../doc/common/placeholder-list/PlaceholderList';
+import Item from '../../doc/common/placeholder-list/PlaceholderListItem';
 import DisclosureComponent from './DisclosureComponent';
 
 class AggregatorItem extends React.Component {
@@ -10,16 +11,16 @@ class AggregatorItem extends React.Component {
     this.handleSelection = this.handleSelection.bind(this);
   }
 
-  handleSelection(event, index) {
+  handleSelection(event, key) {
     const { aggregatorDelegate, name } = this.props;
 
-    if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState.index === index) {
+    if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState.selectedKey === key) {
       aggregatorDelegate.releaseFocus();
       return;
     }
 
     aggregatorDelegate.requestFocus({
-      index,
+      selectedKey: key,
     })
       .then(({ disclose }) => {
         if (disclose) {
@@ -38,23 +39,21 @@ class AggregatorItem extends React.Component {
   render() {
     const { name, aggregatorDelegate, targetId } = this.props;
 
-    let selectedIndex;
-    if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState && aggregatorDelegate.itemState.index !== undefined) {
-      selectedIndex = aggregatorDelegate.itemState.index;
+    let key;
+    if (aggregatorDelegate.hasFocus && aggregatorDelegate.itemState && aggregatorDelegate.itemState.selectedKey !== undefined) {
+      key = aggregatorDelegate.itemState.selectedKey;
     }
 
     return (
-      <SelectableList
-        isDivided
-        selectedIndexes={selectedIndex !== undefined ? [selectedIndex] : []}
-        onChange={this.handleSelection}
-      >
-        <SelectableList.Item
-          content={
-            <div id={targetId}>{name}</div>
-          }
-        />
-      </SelectableList>
+      <List>
+        <Item
+          isSelected={key === 'test-key'}
+          onSelect={event => this.handleSelection(event, 'test-key')}
+          isPadded={false}
+        >
+          <div id={targetId}>{name}</div>
+        </Item>
+      </List>
     );
   }
 }

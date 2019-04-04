@@ -4,8 +4,36 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge cust
 <li>
   <List
     className="Testing"
-    isDivided={false}
-    onChange={[Function]}
+    dividerStyle="none"
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    paddingStyle="none"
+    role="listbox"
   >
     <CollapsibleMenuViewItem
       isIconOnly={false}
@@ -29,6 +57,33 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge cust
 <li>
   <MenuItemGroup
     className="Testing"
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
     onChange={[Function]}
   >
     <CollapsibleMenuViewItem
@@ -54,6 +109,33 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge cust
 exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render a menu item group when selectable 1`] = `
 <li>
   <MenuItemGroup
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
     onChange={[Function]}
   >
     <CollapsibleMenuViewItem
@@ -79,8 +161,36 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render a m
 exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render menu items when selectedKeys is not set 1`] = `
 <li>
   <List
-    isDivided={false}
-    onChange={[Function]}
+    dividerStyle="none"
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    paddingStyle="none"
+    role="listbox"
   >
     <CollapsibleMenuViewItem
       isIconOnly={false}
@@ -103,6 +213,33 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render men
 exports[`CollapsibleMenuViewItemGroup should merge custom props 1`] = `
 <ButtonGroup
   className="face-up-item Testing"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   isBlock={false}
   selectedKeys={Array []}
 >
@@ -126,6 +263,33 @@ exports[`CollapsibleMenuViewItemGroup should merge custom props 1`] = `
 exports[`CollapsibleMenuViewItemGroup should render a default component 1`] = `
 <ButtonGroup
   className="face-up-item"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   isBlock={false}
   selectedKeys={Array []}
 >
@@ -149,6 +313,33 @@ exports[`CollapsibleMenuViewItemGroup should render a default component 1`] = `
 exports[`CollapsibleMenuViewItemGroup should render a selectable button group 1`] = `
 <ButtonGroup
   className="face-up-item"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   isBlock={false}
   selectedKeys={
     Array [

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import 'terra-base/lib/baseStyles';
 import Button from 'terra-button';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
 import Input from 'terra-form-input';
