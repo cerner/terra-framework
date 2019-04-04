@@ -31,6 +31,10 @@ const propTypes = {
    */
   onClick: PropTypes.func,
   /**
+   * A callback function triggered when the date input receives focus. function(event)
+   */
+  onFocus: PropTypes.func,
+  /**
    * The onInputKeyDown callback function from react-datepicker to handle keyboard navigation.
    */
   onKeyDown: PropTypes.func,
@@ -62,6 +66,7 @@ const defaultProps = {
   onBlur: undefined,
   onChange: undefined,
   onClick: undefined,
+  onFocus: undefined,
   onKeyDown: undefined,
   placeholder: undefined,
   releaseFocus: undefined,
@@ -128,6 +133,7 @@ class DatePickerInput extends React.Component {
       onBlur,
       onChange,
       onClick,
+      onFocus,
       onKeyDown,
       placeholder,
       releaseFocus,
@@ -137,18 +143,12 @@ class DatePickerInput extends React.Component {
     } = this.props;
 
     this.onCalendarButtonClick = customProps.onCalendarButtonClick;
-    this.onInputFocus = customProps.onInputFocus;
     this.shouldShowPicker = customProps.shouldShowPicker;
 
     delete customProps.onCalendarButtonClick;
-    delete customProps.onInputFocus;
     delete customProps.shouldShowPicker;
 
     const additionalInputProps = Object.assign({}, customProps, inputAttributes);
-
-    // react-datepicker by default will show the picker when the input has focus.
-    // Since we want to show the picker only when the calendar button is clicked, we need to delete the onFocus handle that is passed in by react-datepicker.
-    delete additionalInputProps.onFocus;
 
     const dateValue = DateUtil.convertToISO8601(value, DateUtil.getFormatByLocale(this.context.intl.locale));
     const buttonText = this.context.intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
@@ -171,8 +171,8 @@ class DatePickerInput extends React.Component {
           value={value}
           onChange={onChange}
           placeholder={placeholder}
-          onFocus={this.onInputFocus}
-          onBlur={onBlur}
+          onFocus={onFocus}
+	  onBlur={onBlur}
         />
         <Button
           className={styles.button}

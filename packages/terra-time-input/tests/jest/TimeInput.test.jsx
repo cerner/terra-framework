@@ -10,12 +10,6 @@ const mockEvent = {
   preventDefault: jest.fn(),
 };
 
-const handleOnChange = () => {
-};
-
-const handleOnBlur = () => {
-};
-
 it('should render a default time input', () => {
   const timeInput = <TimeInput name="time-input" />;
   const wrapper = shallowWithIntl(timeInput);
@@ -35,19 +29,19 @@ it('should render a time input with a default time', () => {
 });
 
 it('should render a time input with onChange', () => {
-  const timeInput = <TimeInput name="time-input" onChange={handleOnChange} />;
+  const timeInput = <TimeInput name="time-input" onChange={() => {}} />;
   const wrapper = shallowWithIntl(timeInput);
   expect(wrapper).toMatchSnapshot();
 });
 
 it('should render a time input with onBlur', () => {
-  const timeInput = <TimeInput name="time-input" onBlur={handleOnBlur} />;
+  const timeInput = <TimeInput name="time-input" onBlur={() => {}} />;
   const wrapper = shallowWithIntl(timeInput);
   expect(wrapper).toMatchSnapshot();
 });
 
-it('should render a time input with onInputFocus', () => {
-  const timeInput = <TimeInput name="time-input" onBlur={() => {}} />;
+it('should render a time input with onFocus', () => {
+  const timeInput = <TimeInput name="time-input" onFocus={() => {}} />;
   const wrapper = shallowWithIntl(timeInput);
   expect(wrapper).toMatchSnapshot();
 });

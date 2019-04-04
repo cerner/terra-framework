@@ -99,9 +99,8 @@ it('should render a date picker with onCalendarButtonClick', () => {
   expect(datePicker).toMatchSnapshot();
 });
 
-it('should render a date picker with onInputFocus', () => {
-  const handleOnInputFocus = () => {};
-  const datePicker = shallowWithIntl(<DatePicker name="date-input" onInputFocus={handleOnInputFocus} utcOffset={0} />);
+it('should render a date picker with onFocus', () => {
+  const datePicker = shallowWithIntl(<DatePicker name="date-input" onFocus={() => {}} utcOffset={0} />);
   expect(datePicker).toMatchSnapshot();
 });
 

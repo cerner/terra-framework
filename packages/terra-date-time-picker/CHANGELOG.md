@@ -3,8 +3,14 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added 'onFocus' prop since 'preventOpenOnFocus' can be used to prevent picker from opening on focus.
+
 ### Changed
 * Change the onBlur event to get triggered only when the entire date time picker component loses focus.
+
+### Removed
+* Removed 'onInputFocus' prop in favor of the added 'onFocus' prop.
 
 3.12.0 - (April 2, 2019)
 ------------------

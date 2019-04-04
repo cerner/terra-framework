@@ -66,6 +66,10 @@ const propTypes = {
    */
   onClickOutside: PropTypes.func,
   /**
+   * A callback function triggered when the date input receives focus. function(event)
+   */
+  onFocus: PropTypes.func,
+  /**
    * A callback function to execute when a date is selected from within the picker.
    */
   onSelect: PropTypes.func,
@@ -100,6 +104,7 @@ const defaultProps = {
   onChange: undefined,
   onChangeRaw: undefined,
   onClickOutside: undefined,
+  onFocus: undefined,
   onSelect: undefined,
   releaseFocus: undefined,
   required: false,
@@ -213,8 +218,8 @@ class DatePicker extends React.Component {
   }
 
   handleOnInputFocus(event) {
-    if (this.onInputFocus) {
-      this.onInputFocus(event);
+    if (this.props.onFocus) {
+      this.props.onFocus(event);
     }
 
     if (!this.isDefaultDateAcceptable) {
@@ -265,6 +270,7 @@ class DatePicker extends React.Component {
       onChange,
       onChangeRaw,
       onClickOutside,
+      onFocus,
       onSelect,
       requestFocus,
       required,
@@ -274,10 +280,8 @@ class DatePicker extends React.Component {
     } = this.props;
 
     this.onCalendarButtonClick = customProps.onCalendarButtonClick;
-    this.onInputFocus = customProps.onInputFocus;
 
     delete customProps.onCalendarButtonClick;
-    delete customProps.onInputFocus;
 
     const { intl } = this.context;
     const todayString = intl.formatMessage({ id: 'Terra.datePicker.today' });
@@ -296,11 +300,11 @@ class DatePicker extends React.Component {
         onChange={this.handleChange}
         onChangeRaw={this.handleChangeRaw}
         onClickOutside={this.handleOnClickOutside}
+        onFocus={this.handleOnInputFocus}
         onSelect={this.handleOnSelect}
         required={required}
         customInput={(
           <DateInput
-            onInputFocus={this.handleOnInputFocus}
             onCalendarButtonClick={this.handleOnCalendarButtonClick}
             inputAttributes={inputAttributes}
             releaseFocus={releaseFocus}
@@ -323,6 +327,7 @@ class DatePicker extends React.Component {
         dropdownMode="select"
         showMonthDropdown
         showYearDropdown
+        preventOpenOnFocus
         name={name}
       />
     );
@@ -335,11 +340,11 @@ class DatePicker extends React.Component {
         onChange={this.handleChange}
         onChangeRaw={this.handleChangeRaw}
         onClickOutside={this.handleOnClickOutside}
+        onFocus={this.handleOnInputFocus}
         onSelect={this.handleOnSelect}
         required={required}
         customInput={(
           <DateInput
-            onInputFocus={this.handleOnInputFocus}
             onCalendarButtonClick={this.handleOnCalendarButtonClick}
             inputAttributes={inputAttributes}
             releaseFocus={releaseFocus}
@@ -370,6 +375,7 @@ class DatePicker extends React.Component {
         dropdownMode="select"
         showMonthDropdown
         showYearDropdown
+        preventOpenOnFocus
         name={name}
       />
     );
