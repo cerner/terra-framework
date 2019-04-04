@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Limited the characters that could be used in terra-date-picker to numeric, '.', and '/'.
 
 3.10.0 - (March 26, 2019)
 ------------------

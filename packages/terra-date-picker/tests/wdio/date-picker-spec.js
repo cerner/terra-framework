@@ -328,4 +328,18 @@ describe('Date Picker', () => {
     Terra.should.matchScreenshot();
     Terra.should.beAccessible({ rules: ignoredA11y });
   });
+
+  describe('Key Limitations', () => {
+    before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-key-limits'));
+
+    it('sets the date', () => {
+      browser.setValue('input[name="terra-date-date-input"]', '0');
+      browser.keys('a1.b2/;3');
+      // Ensures the mouse pointer doesn't appear in the screenshot
+      browser.click('h3');
+    });
+
+    Terra.should.matchScreenshot();
+    Terra.should.beAccessible({ rules: ignoredA11y });
+  });
 });
