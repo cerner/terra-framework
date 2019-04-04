@@ -126,5 +126,31 @@ viewports.forEach((viewport) => {
         expect(browser.url().value).to.equal('https://engineering.cerner.com/terra-ui/#/home/terra-ui/index');
       });
     });
+
+    describe('Displays an application tabs with icons', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/terra-application-links/application-links/application-tabs-with-icons');
+        browser.waitForVisible('#test-tabs [data-application-tabs-more]');
+        browser.moveToObject('#test-tabs [data-application-tabs-more]');
+      });
+
+      Terra.should.matchScreenshot();
+    });
+
+    describe('Displays collapsed application tabs with icons', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/terra-application-links/application-links/application-tabs-with-icons');
+        browser.waitForVisible('#test-tabs [data-application-tabs-more]');
+        browser.click('#test-tabs [data-application-tabs-more]');
+        browser.waitForVisible('[data-application-tab-menu-content]');
+        browser.click('[data-application-tab-menu-content] > *:first-child');
+        browser.pause(150);
+        browser.click('#test-tabs [data-application-tabs-more]');
+        browser.waitForVisible('[data-application-tab-menu-content]');
+        browser.moveToObject('[data-application-tab-menu-content] > *:first-child');
+      });
+
+      Terra.should.matchScreenshot({ selector: '[data-application-tab-menu-content]' });
+    });
   });
 });

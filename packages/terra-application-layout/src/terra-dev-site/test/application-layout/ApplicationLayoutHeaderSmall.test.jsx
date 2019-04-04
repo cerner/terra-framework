@@ -23,23 +23,25 @@ const ApplicationLayoutHeaderSmall = () => (
         ],
       }}
       extensions={<ExtensionsExample layoutConfig={{ size: 'large' }} />}
-      applicationLinks={[
-        {
-          id: '123',
-          path: '/something1',
-          text: 'item 1',
-        },
-        {
-          id: '234',
-          path: '/something2',
-          text: 'item 2',
-        },
-        {
-          id: '345',
-          path: '/something3',
-          text: 'item 3',
-        },
-      ]}
+      applicationLinks={{
+        links: [
+          {
+            id: '123',
+            path: '/something1',
+            text: 'item 1',
+          },
+          {
+            id: '234',
+            path: '/something2',
+            text: 'item 2',
+          },
+          {
+            id: '345',
+            path: '/something3',
+            text: 'item 3',
+          },
+        ],
+      }}
     />
   </MemoryRouter>
 );

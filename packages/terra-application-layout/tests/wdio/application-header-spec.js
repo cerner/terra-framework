@@ -64,4 +64,13 @@ describe('ApplicationHeader', () => {
     Terra.should.matchScreenshot('#test-header', { selector: '#test-header', viewports });
     Terra.should.matchScreenshot({ selector: '#site' });
   });
+
+  describe('Displays an application header with icons', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout-header-with-icons');
+      browser.waitForVisible('#test-header');
+    });
+
+    Terra.should.matchScreenshot('#test-header', { selector: '#test-header', viewports });
+  });
 });

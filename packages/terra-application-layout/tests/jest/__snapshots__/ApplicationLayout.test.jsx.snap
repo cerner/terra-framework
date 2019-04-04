@@ -240,12 +240,14 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with giv
             "links": Array [
               Object {
                 "externalLink": undefined,
+                "icon": undefined,
                 "id": "application-layout-tab-0",
                 "path": "/item_1",
                 "text": "Item 1",
               },
               Object {
                 "externalLink": undefined,
+                "icon": undefined,
                 "id": "application-layout-tab-1",
                 "path": "/item_2",
                 "text": "Item 2",
@@ -258,6 +260,7 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with giv
             Extensions
           </div>
         }
+        hasIcons={false}
         nameConfig={
           Object {
             "accessory": <div>
@@ -402,6 +405,170 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with onl
             "links": Array [],
           }
         }
+        hasIcons={false}
+      />
+    }
+    indexPath="/item_1"
+  />
+</ModalManager>
+`;
+
+exports[`ApplicationLayout Snapshot Tests when given nav items with icons matches the snapshot 1`] = `
+<ModalManager>
+  <withRouter(NavigationLayout)
+    config={
+      Object {
+        "content": Object {
+          "/item_1": Object {
+            "component": Object {
+              "default": Object {
+                "componentClass": [Function],
+                "props": Object {
+                  "test": "content props item 1",
+                },
+              },
+            },
+            "path": "/item_1",
+          },
+          "/item_2": Object {
+            "component": Object {
+              "default": Object {
+                "componentClass": [Function],
+                "props": Object {
+                  "test": "content props item 2",
+                },
+              },
+            },
+            "path": "/item_2",
+          },
+        },
+        "menu": Object {
+          "/": Object {
+            "component": Object {
+              "small": Object {
+                "componentClass": [Function],
+                "props": Object {
+                  "applicationMenuWrapperProps": Object {
+                    "contentComponentClass": [Function],
+                    "extensions": undefined,
+                    "nameConfig": undefined,
+                    "utilityConfig": undefined,
+                  },
+                  "menuItems": Array [
+                    Object {
+                      "externalLink": undefined,
+                      "hasSubMenu": true,
+                      "path": "/item_1",
+                      "text": "Item 1",
+                    },
+                    Object {
+                      "externalLink": undefined,
+                      "hasSubMenu": true,
+                      "path": "/item_2",
+                      "text": "Item 2",
+                    },
+                  ],
+                },
+                "refuseRoutingStackNavigation": false,
+              },
+              "tiny": Object {
+                "componentClass": [Function],
+                "props": Object {
+                  "applicationMenuWrapperProps": Object {
+                    "contentComponentClass": [Function],
+                    "extensions": undefined,
+                    "nameConfig": undefined,
+                    "utilityConfig": undefined,
+                  },
+                  "menuItems": Array [
+                    Object {
+                      "externalLink": undefined,
+                      "hasSubMenu": true,
+                      "path": "/item_1",
+                      "text": "Item 1",
+                    },
+                    Object {
+                      "externalLink": undefined,
+                      "hasSubMenu": true,
+                      "path": "/item_2",
+                      "text": "Item 2",
+                    },
+                  ],
+                },
+                "refuseRoutingStackNavigation": false,
+              },
+            },
+            "path": "/",
+          },
+          "/item_1": Object {
+            "component": Object {
+              "default": Object {
+                "componentClass": [Function],
+                "props": Object {
+                  "applicationMenuWrapperProps": Object {
+                    "contentComponentClass": [Function],
+                    "extensions": undefined,
+                    "nameConfig": undefined,
+                    "utilityConfig": undefined,
+                  },
+                  "test": "menu props item 1",
+                },
+              },
+            },
+            "path": "/item_1",
+          },
+          "/item_2": Object {
+            "component": Object {
+              "medium": Object {
+                "componentClass": [Function],
+                "props": Object {
+                  "applicationMenuWrapperProps": Object {
+                    "contentComponentClass": [Function],
+                    "extensions": undefined,
+                    "nameConfig": undefined,
+                    "utilityConfig": undefined,
+                  },
+                  "test": "content props item 2",
+                },
+              },
+            },
+            "path": "/item_2",
+          },
+        },
+      }
+    }
+    header={
+      <InjectIntl(withDisclosureManager(ApplicationHeader))
+        applicationLinks={
+          Object {
+            "alignment": undefined,
+            "links": Array [
+              Object {
+                "externalLink": undefined,
+                "icon": <IconFeatured
+                  data-name="Layer 1"
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg"
+                />,
+                "id": "application-layout-tab-0",
+                "path": "/item_1",
+                "text": "Item 1",
+              },
+              Object {
+                "externalLink": undefined,
+                "icon": <IconFeatured
+                  data-name="Layer 1"
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg"
+                />,
+                "id": "application-layout-tab-1",
+                "path": "/item_2",
+                "text": "Item 2",
+              },
+            ],
+          }
+        }
+        hasIcons={true}
       />
     }
     indexPath="/item_1"
