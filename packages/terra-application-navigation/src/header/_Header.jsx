@@ -12,7 +12,7 @@ import UtilityMenu from '../utility-menu/_UtilityMenu';
 import { shouldRenderCompactNavigation } from '../utils/helpers';
 import Count from './_ToggleCount';
 import {
-  userConfigPropType, navigationItemsPropType, navigationAlignmentPropType, utilityItemsPropType,
+  userConfigPropType, navigationItemsPropType, utilityItemsPropType,
 } from '../utils/propTypes';
 
 import styles from './Header.module.scss';
@@ -29,10 +29,6 @@ const propTypes = {
    * Array of navigation items to render within the Header.
    */
   navigationItems: navigationItemsPropType,
-  /**
-   * The string specifying the desired alignment for the navigation items.
-   */
-  navigationItemAlignment: navigationAlignmentPropType,
   /**
    * The string identifying the currently active navigation item.
    */
@@ -64,7 +60,6 @@ const propTypes = {
 
 const defaultProps = {
   navigationItems: [],
-  navigationItemAlignment: 'center',
 };
 
 class Header extends React.Component {
@@ -165,19 +160,17 @@ class Header extends React.Component {
     return null;
   }
 
-  renderNavigationTabs(headerHasAnyIcons) {
+  renderNavigationTabs() {
     const {
-      navigationItems, navigationItemAlignment, activeNavigationItemKey, onSelectNavigationItem,
+      navigationItems, activeNavigationItemKey, onSelectNavigationItem,
     } = this.props;
 
     if (navigationItems.length) {
       return (
         <Tabs
-          alignment={navigationItemAlignment}
           tabs={navigationItems}
           activeTabKey={activeNavigationItemKey}
           onTabSelect={onSelectNavigationItem}
-          hasIcons={headerHasAnyIcons}
         />
       );
     }
@@ -244,8 +237,6 @@ class Header extends React.Component {
       extensions,
       navigationItems,
     } = this.props;
-
-    const headerHasAnyIcons = navigationItems.some(({ icon }) => icon);
     const headerHasAnyCounts = navigationItems.some(({ notificationCount }) => notificationCount > 0);
 
     let headerLayout;
@@ -267,7 +258,7 @@ class Header extends React.Component {
       headerLayout = (
         <HeaderLayout
           logo={this.renderAppName()}
-          navigation={this.renderNavigationTabs(headerHasAnyIcons)}
+          navigation={this.renderNavigationTabs()}
           extensions={extensions}
           utilities={this.renderUtilities()}
           skipToContentSelector="[data-terra-application-layout-main]"
@@ -276,7 +267,7 @@ class Header extends React.Component {
     }
 
     return (
-      <div className={cx(['application-header', { 'has-icons': headerHasAnyIcons }])}>
+      <div className={cx(['application-header'])}>
         {headerLayout}
         {this.renderUtilitiesPopup()}
       </div>

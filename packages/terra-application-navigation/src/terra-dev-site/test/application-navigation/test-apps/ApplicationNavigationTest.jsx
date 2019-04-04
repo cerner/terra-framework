@@ -22,6 +22,21 @@ import profileImage from './henry.jpg';
 import heroImage from './hero.jpg';
 import heroCloseupImage from './heroCloseup.jpg';
 
+const myRenderFunction = () => (
+  <div style={{
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '0 10px',
+  }}
+  >
+    <IconVisualization />
+    <span style={{ marginTop: '3px' }}>Im Custom</span>
+  </div>
+);
+
 const navigationItems = [{
   key: '/page_1',
   text: 'Page 1',
@@ -38,7 +53,9 @@ const navigationItems = [{
   hasNotifications: true,
 }, {
   key: '/page_4',
-  text: 'Page 4',
+  text: 'Im Custom',
+  icon: <IconVisualization />,
+  renderFunction: myRenderFunction,
 }, {
   key: '/page_5',
   text: 'Page 5',

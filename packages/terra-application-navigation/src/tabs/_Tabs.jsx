@@ -31,6 +31,7 @@ const propTypes = {
      * Whether or not the tab has the potentional for a count.
      */
     hasNotifications: PropTypes.bool,
+    renderFunction: PropTypes.func,
   })),
   /**
    * A string identifying the currently active tab.
@@ -190,9 +191,9 @@ class Tabs extends React.Component {
         if (tab.notificationCount > 0) {
           showNotificationRollup = true;
         }
-        visibleChildren.push(<Tab {...tabProps} refCallback={ref => this.setChildRef(ref, index)} />);
+        visibleChildren.push(<Tab {...tabProps} render={tab.renderFunction} refCallback={ref => this.setChildRef(ref, index)} />);
       } else if (index < this.hiddenStartIndex) {
-        visibleChildren.push(<Tab {...tabProps} />);
+        visibleChildren.push(<Tab {...tabProps} render={tab.renderFunction} />);
       } else {
         if (tab.notificationCount > 0) {
           showNotificationRollup = true;
