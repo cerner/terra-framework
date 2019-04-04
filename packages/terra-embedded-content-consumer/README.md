@@ -12,7 +12,19 @@ The Embedded Content Consumer is the application component which is embedding we
 
 ## Getting Started
 
-- Install from [npmjs](https://www.npmjs.com): `npm install terra-embedded-content-consumer`
+- Install from [npmjs](https://www.npmjs.com):
+  - `npm install terra-embedded-content-consumer`
+
+- Install the [`xfc`](https://www.npmjs.com/package/xfc) peer dependency:
+  - `npm install xfc --save-dev`
+
+- Then, initalize the XFC Consumer to use the `terra-embedded-content-consumer`. This will create an app broker to manage embedded applications.
+
+```jsx
+import { Consumer } from 'xfc';
+
+Consumer.init();
+```
 
 ## LICENSE
 
