@@ -1,5 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
+import moment from 'moment';
 import PropTypes from 'prop-types';
 import Field from 'terra-form-field';
 import DateTimePicker from 'terra-date-time-picker/lib/DateTimePicker';
@@ -52,7 +53,7 @@ DateTimePickerExample.defualtProps = defaultProps;
 
 const DateTimePickerTimeAttributes = () => (
   <DateTimePickerExample
-    value="2017-08-08"
+    value={moment().format()}
     timeInputAttributes={{ id: 'time-input-example' }}
     timeVariant={DateTimeUtil.FORMAT_12_HOUR}
   />
