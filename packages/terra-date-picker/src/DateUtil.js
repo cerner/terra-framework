@@ -86,7 +86,7 @@ class DateUtil {
 
   /**
    * Determines if a provided date input value is valid.
-   * Valid inputs are either empty strings or contain only numeric and the `/` character.
+   * Valid inputs are either empty strings or contain only numeric, `/`, and '.' characters.
    * @param {String} value Value to validate
    * @return True if the value is valid, false otherwise.
    */
