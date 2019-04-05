@@ -9,9 +9,11 @@ import ApplicationLinkConfig from '../common/ApplicationLinkConfig';
 // Component Source
 import TabsSrc from '!raw-loader!../../../../src/tabs/ApplicationTabs.jsx';
 import TabExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ApplicationTabsExample.jsx';
+import TabWithIconsExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ApplicationTabsWithIconsExample.jsx';
 
 // Example Files
 import ApplicationTabsExample from '../example/ApplicationTabsExample';
+import ApplicationTabsWithIconsExample from '../example/ApplicationTabsWithIconsExample';
 /* eslint-enabled import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
@@ -28,6 +30,11 @@ const DocPage = () => (
           title: 'Tabs Example',
           example: <ApplicationTabsExample />,
           source: TabExampleSrc,
+        },
+        {
+          title: 'Tabs With Icons Example',
+          example: <ApplicationTabsWithIconsExample />,
+          source: TabWithIconsExampleSrc,
         },
       ]}
       propsTables={[

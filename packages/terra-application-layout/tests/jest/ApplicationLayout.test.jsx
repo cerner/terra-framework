@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from 'terra-icon/lib/icon/IconFeatured';
 import ApplicationLayout from '../../src/ApplicationLayout';
 import ApplicationMenuWrapper from '../../src/menu/_ApplicationMenuWrapper';
 import RoutingMenu from '../../src/menu/RoutingMenu';
@@ -489,6 +490,81 @@ describe('ApplicationLayout', () => {
       const result = shallow(applicationLayout);
 
       expect(result).toMatchSnapshot();
+    });
+
+    describe('when given nav items with icons', () => {
+      const testRoutingConfig = {
+        content: {
+          '/item_1': {
+            path: '/item_1',
+            component: {
+              default: {
+                componentClass: ContentComponent,
+                props: {
+                  test: 'content props item 1',
+                },
+              },
+            },
+          },
+          '/item_2': {
+            path: '/item_2',
+            component: {
+              default: {
+                componentClass: ContentComponent,
+                props: {
+                  test: 'content props item 2',
+                },
+              },
+            },
+          },
+        },
+        menu: {
+          '/item_1': {
+            path: '/item_1',
+            component: {
+              default: {
+                componentClass: MenuComponent,
+                props: {
+                  test: 'menu props item 1',
+                },
+              },
+            },
+          },
+          '/item_2': {
+            path: '/item_2',
+            component: {
+              medium: {
+                componentClass: MenuComponent,
+                props: {
+                  test: 'content props item 2',
+                },
+              },
+            },
+          },
+        },
+      };
+      const testNavigationItems = [{
+        text: 'Item 1',
+        path: '/item_1',
+        icon: <Icon />,
+      }, {
+        text: 'Item 2',
+        path: '/item_2',
+        icon: <Icon />,
+      }];
+
+      const subject = (
+        <ApplicationLayout
+          routingConfig={testRoutingConfig}
+          indexPath="/item_1"
+          navigationItems={testNavigationItems}
+        />
+      );
+      const wrapper = shallow(subject);
+
+      it('matches the snapshot', () => {
+        expect(wrapper).toMatchSnapshot();
+      });
     });
   });
 });

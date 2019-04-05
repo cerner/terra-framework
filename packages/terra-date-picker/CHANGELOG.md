@@ -6,6 +6,13 @@ Unreleased
 ### Changed
 * Limited the characters that could be used in terra-date-picker to numeric, '.', and '/'.
 
+3.11.0 - (April 2, 2019)
+------------------
+### Changed
+* Forked React Datepicker at version 0.64.0
+* Removed react-datepicker as dependency
+* Added react-popper and react-onclickoutside as dependencies
+
 3.10.0 - (March 26, 2019)
 ------------------
 ### Added
@@ -13,9 +20,6 @@ Unreleased
 
 ### Changed
 * Update react/react-dom peer-dependency to latest stable minor release
-* Forked React Datepicker at version 0.64.0
-* Removed react-datepicker as dependency
-* Added react-popper and react-onclickoutside as dependencies
 
 ### Removed
 * Removed peer dependency on terra-base
