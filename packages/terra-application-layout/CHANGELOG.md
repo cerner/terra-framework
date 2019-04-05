@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Updated RoutingMenu to correctly synchronize internal state with props provided after initial mount
 
 4.8.0 - (April 2, 2019)
 ------------------
