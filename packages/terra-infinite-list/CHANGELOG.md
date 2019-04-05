@@ -4,6 +4,20 @@ Changelog
 Unreleased
 ----------
 
+3.2.0 - (April 2, 2019)
+------------------
+### Added
+* Documentation for including section headers and subsection headers to the infinite list.
+
+3.1.0 - (March 26, 2019)
+------------------
+### Changed
+* Update react/react-dom peer-dependency to latest stable minor release
+
+### Removed
+* Removed peer dependency on terra-base
+* Removed baseStyles import from terra-base
+
 3.0.0 - (February 13, 2019)
 ------------------
 ### Breaking Change

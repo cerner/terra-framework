@@ -1,7 +1,7 @@
 {
   "name": "terra-application-menu-layout",
   "main": "lib/ApplicationMenuLayout.js",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "This component renders an application menu layout. To be used with a terra-layout or terra-navigation-layout.",
   "repository": {
     "type": "git",
@@ -24,9 +24,8 @@
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "peerDependencies": {
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "terra-base": "^4.0.0"
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
   },
   "dependencies": {
     "classnames": "^2.2.5",

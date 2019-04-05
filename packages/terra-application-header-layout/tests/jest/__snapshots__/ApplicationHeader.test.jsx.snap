@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ApplicationHeaderLayout should render with provided extensions 1`] = `
-<InjectIntl(ApplicationHeaderLayout)
+<ApplicationHeaderLayout
   extensions={
     <div
       id="test-extensions"
@@ -9,17 +9,71 @@ exports[`ApplicationHeaderLayout should render with provided extensions 1`] = `
       Extensions
     </div>
   }
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 />
 `;
 
 exports[`ApplicationHeaderLayout should render with provided extensions and navigation 1`] = `
-<InjectIntl(ApplicationHeaderLayout)
+<ApplicationHeaderLayout
   extensions={
     <div
       id="test-extensions"
     >
       Extensions
     </div>
+  }
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
   }
   navigation={
     <div
@@ -32,13 +86,40 @@ exports[`ApplicationHeaderLayout should render with provided extensions and navi
 `;
 
 exports[`ApplicationHeaderLayout should render with provided extensions, navigation, and logo 1`] = `
-<InjectIntl(ApplicationHeaderLayout)
+<ApplicationHeaderLayout
   extensions={
     <div
       id="test-extensions"
     >
       Extensions
     </div>
+  }
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
   }
   logo={
     <div
@@ -58,13 +139,40 @@ exports[`ApplicationHeaderLayout should render with provided extensions, navigat
 `;
 
 exports[`ApplicationHeaderLayout should render with provided extensions, navigation, logo, and toggle 1`] = `
-<InjectIntl(ApplicationHeaderLayout)
+<ApplicationHeaderLayout
   extensions={
     <div
       id="test-extensions"
     >
       Extensions
     </div>
+  }
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
   }
   logo={
     <div
@@ -91,13 +199,40 @@ exports[`ApplicationHeaderLayout should render with provided extensions, navigat
 `;
 
 exports[`ApplicationHeaderLayout should render with provided extensions, navigation, logo, toggle, and utilities 1`] = `
-<InjectIntl(ApplicationHeaderLayout)
+<ApplicationHeaderLayout
   extensions={
     <div
       id="test-extensions"
     >
       Extensions
     </div>
+  }
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
   }
   logo={
     <div
@@ -131,7 +266,34 @@ exports[`ApplicationHeaderLayout should render with provided extensions, navigat
 `;
 
 exports[`ApplicationHeaderLayout should render with provided logo 1`] = `
-<InjectIntl(ApplicationHeaderLayout)
+<ApplicationHeaderLayout
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   logo={
     <div
       id="test-logo"
@@ -143,7 +305,34 @@ exports[`ApplicationHeaderLayout should render with provided logo 1`] = `
 `;
 
 exports[`ApplicationHeaderLayout should render with provided logo, toggle, and utilities 1`] = `
-<InjectIntl(ApplicationHeaderLayout)
+<ApplicationHeaderLayout
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   logo={
     <div
       id="test-logo"
@@ -169,7 +358,34 @@ exports[`ApplicationHeaderLayout should render with provided logo, toggle, and u
 `;
 
 exports[`ApplicationHeaderLayout should render with provided navigation 1`] = `
-<InjectIntl(ApplicationHeaderLayout)
+<ApplicationHeaderLayout
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   navigation={
     <div
       id="test-navigation"
@@ -181,7 +397,34 @@ exports[`ApplicationHeaderLayout should render with provided navigation 1`] = `
 `;
 
 exports[`ApplicationHeaderLayout should render with provided navigation, logo, toggle, and utilities 1`] = `
-<InjectIntl(ApplicationHeaderLayout)
+<ApplicationHeaderLayout
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   logo={
     <div
       id="test-logo"
@@ -214,7 +457,34 @@ exports[`ApplicationHeaderLayout should render with provided navigation, logo, t
 `;
 
 exports[`ApplicationHeaderLayout should render with provided toggle 1`] = `
-<InjectIntl(ApplicationHeaderLayout)
+<ApplicationHeaderLayout
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   toggle={
     <div
       id="test-toggle"
@@ -226,7 +496,34 @@ exports[`ApplicationHeaderLayout should render with provided toggle 1`] = `
 `;
 
 exports[`ApplicationHeaderLayout should render with provided toggle and utilities 1`] = `
-<InjectIntl(ApplicationHeaderLayout)
+<ApplicationHeaderLayout
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   toggle={
     <div
       id="test-toggle"
@@ -245,7 +542,34 @@ exports[`ApplicationHeaderLayout should render with provided toggle and utilitie
 `;
 
 exports[`ApplicationHeaderLayout should render with provided utilities 1`] = `
-<InjectIntl(ApplicationHeaderLayout)
+<ApplicationHeaderLayout
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   utilities={
     <div
       id="test-utilities"
@@ -256,4 +580,34 @@ exports[`ApplicationHeaderLayout should render with provided utilities 1`] = `
 />
 `;
 
-exports[`ApplicationHeaderLayout should render without optional props 1`] = `<InjectIntl(ApplicationHeaderLayout) />`;
+exports[`ApplicationHeaderLayout should render without optional props 1`] = `
+<ApplicationHeaderLayout
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+/>
+`;

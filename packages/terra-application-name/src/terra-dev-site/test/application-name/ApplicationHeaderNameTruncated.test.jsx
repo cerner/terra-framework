@@ -1,9 +1,13 @@
 import React from 'react';
 import Image from 'terra-image';
+import classNames from 'classnames/bind';
 import ApplicationHeaderName from '../../../ApplicationHeaderName';
+import demoStyles from './demoStyles.scss';
+
+const cx = classNames.bind(demoStyles);
 
 export default () => (
-  <div style={{ backgroundColor: 'green', width: '150px' }}>
+  <div className={cx(['demo-background-color', 'demo-truncate-width'])}>
     <ApplicationHeaderName
       id="truncated"
       title="TitleTitleTitleTitleTitleTitleTitle"

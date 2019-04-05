@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Popup from 'terra-popup';
 import classNames from 'classnames/bind';
-import 'terra-base/lib/baseStyles';
 import MenuItem from './MenuItem';
 import MenuItemGroup from './MenuItemGroup';
 import MenuDivider from './MenuDivider';

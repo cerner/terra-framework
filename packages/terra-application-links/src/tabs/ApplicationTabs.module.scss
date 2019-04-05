@@ -73,6 +73,15 @@
     }
   }
 
+  .tab-menu-display-icon {
+    font-size: var(--terra-application-links-tabs-icon-font-size, 1.714285714rem);
+
+    svg {
+      font-size: var(--terra-application-links-tabs-icon-font-size, 1.714285714rem);
+      margin: 0;
+    }
+  }
+
   .tab,
   .tab-menu-display,
   .divider-after-last-tab {
@@ -138,6 +147,14 @@
       transition-property: background-size;
       transition-timing-function: var(--terra-application-links-tabs-tab-transition-timing-function, ease);
       width: calc(100% - var(--terra-application-links-tabs-tab-divider-before-width, 2px));
+    }
+
+    .tab-inner-with-icon {
+      flex-direction: column;
+    }
+
+    .tab-icon {
+      font-size: var(--terra-application-links-tabs-icon-font-size, 1.714285714rem);
     }
 
     .tab-label {
@@ -259,6 +276,12 @@
       box-shadow: var(--terra-application-links-tabs-collapsed-active-focus-box-shadow, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
       z-index: 5;
     }
+  }
+
+  .collapsed-tab-icon {
+    color: var(--terra-application-links-tabs-collapsed-icon-color, #4983d1);
+    font-size: var(--terra-application-links-tabs-collapsed-icon-font-size, 0.857142857rem);
+    padding-right: var(--terra-application-links-tabs-collapsed-icon-padding-right, 0.714285714rem);
   }
 
   .tab-menu-list[role='menu'] {

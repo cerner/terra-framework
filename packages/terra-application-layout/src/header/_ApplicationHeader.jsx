@@ -11,8 +11,6 @@ import IconMenu from 'terra-icon/lib/icon/IconMenu';
 import Popup from 'terra-popup';
 import { processedRoutesPropType } from 'terra-navigation-layout/lib/configurationPropTypes';
 
-import 'terra-base/lib/baseStyles';
-
 import ApplicationLayoutPropTypes from '../utils/propTypes';
 import Helpers from '../utils/helpers';
 
@@ -58,10 +56,15 @@ const propTypes = {
    * DisclosureManagerDelegate instance automatically provided by a DisclosureManagerProvider.
    */
   disclosureManager: disclosureManagerShape,
+  /**
+   * Whether or not the header contains icons
+   */
+  hasIcons: PropTypes.bool,
 };
 
 const defaultProps = {
   applicationLinks: {},
+  hasIcons: false,
 };
 
 class ApplicationHeader extends React.Component {
@@ -232,11 +235,13 @@ class ApplicationHeader extends React.Component {
       navigationLayoutRoutes,
       navigationLayoutSize,
       intl,
+      hasIcons,
       ...customProps
     } = this.props;
 
     const headerClassNames = cx([
       'application-navbar',
+      { 'application-navbar-with-icons': hasIcons },
       customProps.className,
     ]);
 

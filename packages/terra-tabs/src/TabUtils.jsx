@@ -1,10 +1,3 @@
-const KEYCODES = {
-  ENTER: 13,
-  SPACE: 32,
-  LEFT_ARROW: 37,
-  RIGHT_ARROW: 39,
-};
-
 /**
  * Returns true if the selected tab is not the currently selected index.
  */
@@ -24,7 +17,6 @@ const initialSelectedTabKey = (tabs, activeKey) => {
 };
 
 const TabUtils = {
-  KEYCODES,
   shouldHandleSelection,
   initialSelectedTabKey,
 };

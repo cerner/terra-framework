@@ -4,6 +4,40 @@ Changelog
 Unreleased
 ----------
 
+5.8.0 - (April 2, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+5.7.0 - (March 26, 2019)
+------------------
+### Changed
+* Update react/react-dom peer-dependency to latest stable minor release
+
+### Removed
+* Removed peer dependency on terra-base
+* Removed baseStyles import from terra-base
+
+5.6.0 - (March 20, 2019)
+------------------
+### Changed
+* Updated heading levels in doc site README.md to correct Section 508 errors
+* Update Jest tests to use terra-enzyme-intl
+
+5.5.0 - (March 12, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+5.4.0 - (March 5, 2019)
+------------------
+### Fixed
+* Remove Opts export, instead named export cornerSize
+
+### Changed
+* Remove need to use `injectIntl`, use `<FormattedMessage />` instead
+* Updated docs
+
 5.3.0 - (February 26, 2019)
 ------------------
 ### Added

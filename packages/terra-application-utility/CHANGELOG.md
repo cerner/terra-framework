@@ -4,6 +4,37 @@ Changelog
 Unreleased
 ----------
 
+2.7.0 - (April 2, 2019)
+------------------
+### Fixed
+* Fixed UL / LI accessibility violation issue on doc page.
+
+2.6.0 - (March 26, 2019)
+------------------
+### Changed
+* Update react/react-dom peer-dependency to latest stable minor release
+
+### Changed
+* Background color for header utility example changed to increase contrast ratio
+
+### Removed
+* Removed peer dependency on terra-base
+* Removed baseStyles import from terra-base
+
+2.5.0 - (March 20, 2019)
+------------------
+### Changed
+* Update Jest tests to use terra-enzyme-intl
+
+2.4.0 - (March 12, 2019)
+------------------
+### Added
+* menurole property added to Application Utility for Utility Menu
+* Jest test added for menurole property
+
+### Changed
+* Alt text added to fallback avatar images in doc site examples to correct Section 508 warnings
+
 2.3.0 - (February 26, 2019)
 ------------------
 ### Added

@@ -4,8 +4,6 @@ import classNames from 'classnames/bind';
 import AbstractModal from 'terra-abstract-modal';
 import SlideGroup from 'terra-slide-group';
 import DisclosureManager, { availableDisclosureSizes } from 'terra-disclosure-manager';
-
-import 'terra-base/lib/baseStyles';
 import styles from './ModalManager.module.scss';
 
 const disclosureType = 'modal';

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import 'terra-base/lib/baseStyles';
 import Utils from './Utils';
 import UtilityButton from './utility/_UtilityButton';
 
@@ -30,6 +29,14 @@ const propTypes = {
    * The accessory element to be displayed next to the title.
    */
   accessory: PropTypes.element,
+  /**
+   * The role attribute to set on the menu.
+   */
+  menuRole: PropTypes.string,
+};
+
+const defaultProps = {
+  menuRole: 'navigation',
 };
 
 const ApplicationHeaderUtility = ({
@@ -39,6 +46,7 @@ const ApplicationHeaderUtility = ({
   initialSelectedKey,
   title,
   accessory,
+  menuRole,
   ...customProps
 }) => (
   <UtilityButton
@@ -49,10 +57,12 @@ const ApplicationHeaderUtility = ({
     initialSelectedKey={initialSelectedKey}
     title={title}
     accessory={accessory}
+    menuRole={menuRole}
     variant={Utils.VARIANTS.HEADER}
   />
 );
 
 ApplicationHeaderUtility.propTypes = propTypes;
+ApplicationHeaderUtility.defaultProps = defaultProps;
 
 export default ApplicationHeaderUtility;

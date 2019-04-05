@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
 import CSSTransition from 'react-transition-group/CSSTransition';
-import 'terra-base/lib/baseStyles';
 import Slide from './Slide';
 import styles from './SlideGroup.module.scss';
 import transitions from './Slide.module.scss';

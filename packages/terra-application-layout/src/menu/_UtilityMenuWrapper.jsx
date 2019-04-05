@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 
-import 'terra-base/lib/baseStyles';
-
 const propTypes = {
   /**
    * DisclosureManagerDelegate instance automatically provided by a DisclosureManagerProvider.

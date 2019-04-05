@@ -67,4 +67,34 @@ describe('ApplicationMenuUtility', () => {
     />);
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render with a user specified role', () => {
+    const menuRole = 'menu';
+    const wrapper = shallow(<ApplicationMenuUtility
+      menuItems={[]}
+      onChange={mockOnChange}
+      onDisclose={mockOnDisclose}
+      onRequestClose={mockOnRequestClose}
+      initialSelectedKey={initialSelectedKey}
+      title={title}
+      menuRole={menuRole}
+    />);
+    expect(wrapper.prop('menuRole')).toBe(menuRole);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render with a default role when no role is specified', () => {
+    const defaultMenuRole = 'navigation';
+    const wrapper = shallow(<ApplicationMenuUtility
+      menuItems={[]}
+      onChange={mockOnChange}
+      onDisclose={mockOnDisclose}
+      onRequestClose={mockOnRequestClose}
+      initialSelectedKey={initialSelectedKey}
+      title={title}
+      menuRole={defaultMenuRole}
+    />);
+    expect(wrapper.prop('menuRole')).toBe(defaultMenuRole);
+    expect(wrapper).toMatchSnapshot();
+  });
 });

@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
-import 'terra-base/lib/baseStyles';
-import TabUtils from './TabUtils';
+import KeyCode from 'keycode-js';
 import Menu from './_TabMenu';
 import styles from './Tabs.module.scss';
 
@@ -186,13 +185,13 @@ class CollapsibleTabs extends React.Component {
       const isRTL = document.getElementsByTagName('html')[0].getAttribute('dir') === 'rtl';
       const visibleChildren = this.container.children;
 
-      if (event.nativeEvent.keyCode === TabUtils.KEYCODES.LEFT_ARROW) {
+      if (event.nativeEvent.keyCode === KeyCode.KEY_LEFT) {
         if (isRTL) {
           this.handleFocusRight(visibleChildren, event);
         } else {
           this.handleFocusLeft(visibleChildren, event);
         }
-      } else if (event.nativeEvent.keyCode === TabUtils.KEYCODES.RIGHT_ARROW) {
+      } else if (event.nativeEvent.keyCode === KeyCode.KEY_RIGHT) {
         if (isRTL) {
           this.handleFocusLeft(visibleChildren, event);
         } else {

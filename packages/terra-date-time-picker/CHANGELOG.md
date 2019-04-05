@@ -4,6 +4,36 @@ ChangeLog
 Unreleased
 ----------
 
+3.12.0 - (April 2, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+3.11.0 - (March 26, 2019)
+------------------
+### Changed
+* Updated prop onChange call logic with respect to ambiguous date-times.
+* Update react/react-dom peer-dependency to latest stable minor release
+
+### Removed
+* Removed peer dependency on terra-base
+* Removed baseStyles import from terra-base
+
+3.10.0 - (March 20, 2019)
+------------------
+### Changed
+* Update Jest tests to use terra-enzyme-intl
+
+3.9.0 - (March 12, 2019)
+------------------
+### Changed
+* Replaced local keyCode values with keycode-js npm package
+
+3.8.0 - (March 5, 2019)
+------------------
+### Changed
+* Minor dependency update
+
 3.7.0 - (February 26, 2019)
 ------------------
 ### Added

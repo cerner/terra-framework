@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';
-import 'terra-base/lib/baseStyles';
 import IconChevronDown from 'terra-icon/lib/icon/IconChevronDown';
 import IconChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 import UtilityMenu from './_UtilityMenu';
@@ -42,6 +41,10 @@ const propTypes = {
    */
   accessory: PropTypes.element,
   /**
+   * The role attribute to set on the menu.
+   */
+  menuRole: PropTypes.string,
+  /**
    * Sets the Utility variant.
    */
   variant: PropTypes.oneOf([Utils.VARIANTS.HEADER, Utils.VARIANTS.MENU]).isRequired,
@@ -51,7 +54,7 @@ const defaultProps = {
   title: '',
 };
 
-class ApplicationHeaderUtility extends React.Component {
+class UtilityButton extends React.Component {
   constructor(props) {
     super(props);
     this.handleOnClick = this.handleOnClick.bind(this);
@@ -72,6 +75,7 @@ class ApplicationHeaderUtility extends React.Component {
     return (
       <UtilityMenu
         initialSelectedKey={this.props.initialSelectedKey}
+        menuRole={this.props.menuRole}
         menuItems={this.props.menuItems}
         onChange={this.props.onChange}
         variant={this.props.variant}
@@ -94,6 +98,7 @@ class ApplicationHeaderUtility extends React.Component {
 
     this.onClick = customProps.onClick;
     delete customProps.onClick;
+    delete customProps.menuRole;
 
     const utilityClassNames = cx([
       { 'header-utility-button': variant === Utils.VARIANTS.HEADER },
@@ -135,7 +140,7 @@ class ApplicationHeaderUtility extends React.Component {
   }
 }
 
-ApplicationHeaderUtility.propTypes = propTypes;
-ApplicationHeaderUtility.defaultProps = defaultProps;
+UtilityButton.propTypes = propTypes;
+UtilityButton.defaultProps = defaultProps;
 
-export default injectIntl(ApplicationHeaderUtility);
+export default injectIntl(UtilityButton);

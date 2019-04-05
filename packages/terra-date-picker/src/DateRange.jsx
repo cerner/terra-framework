@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import 'terra-base/lib/baseStyles';
 import DatePicker from './DatePicker';
 
 const propTypes = {
