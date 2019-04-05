@@ -81,12 +81,11 @@ const Form = ({ title }) => {
           <button
             type="button"
             onClick={() => {
-              const customTitle = registeredPromptsRef.current.map(prompt => prompt.description).join(', ');
-              const customMessage = `There are unsubmitted changes in ${registeredPromptsRef.current.map(prompt => `${prompt.description} (${prompt.metaData.value})`).join(', ')}. Continue with Form reset?`;
+              const promptDescriptions = registeredPromptsRef.current.map(prompt => `${prompt.description} (${prompt.metaData.value})`).join(', ');
 
               inputCheckpointRef.current.resolvePrompts({
-                title: customTitle,
-                message: customMessage,
+                title: registeredPromptsRef.current.map(prompt => prompt.description).join(', '),
+                message: `There are unsubmitted changes in ${promptDescriptions}. Continue with Form reset?`,
                 rejectButtonText: 'Return',
                 acceptButtonText: 'Continue without Saving',
               }).then(() => {
