@@ -1,7 +1,7 @@
 {
   "name": "terra-modal-manager",
   "main": "lib/ModalManager.js",
-  "version": "5.7.0",
+  "version": "5.8.0",
   "description": "The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal.",
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
     "terra-action-header": "^2.0.0",
     "terra-button": "^3.3.0",
     "terra-content-container": "^3.0.0",
-    "terra-disclosure-manager": "^4.6.0",
+    "terra-disclosure-manager": "^4.7.0",
     "terra-doc-template": "^2.2.0",
     "terra-form-input": "^2.3.0",
     "terra-responsive-element": "^4.0.0",

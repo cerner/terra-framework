@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+5.8.0 - (April 2, 2019)
+------------------
+### Added
+* Support for icons in application links
+
 5.7.0 - (March 26, 2019)
 ------------------
 ### Changed
@@ -18,9 +23,6 @@ Unreleased
 ### Changed
 * Update Jest tests to use terra-enzyme-intl
 * Changed demo mock background colors to be themable
-
-### Added
-* Support for icons in application links
 
 5.5.0 - (March 12, 2019)
 ------------------

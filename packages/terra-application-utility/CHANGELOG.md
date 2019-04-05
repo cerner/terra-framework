@@ -4,6 +4,8 @@ Changelog
 Unreleased
 ----------
 
+2.7.0 - (April 2, 2019)
+------------------
 ### Fixed
 * Fixed UL / LI accessibility violation issue on doc page.
 
