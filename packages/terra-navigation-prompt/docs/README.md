@@ -67,7 +67,18 @@ The `onPromptChange` function prop is used to communicate NavigationPrompt regis
 
 #### `resolvePrompts`
 
-The `resolvePrompts` function be accessed from the ref to a NavigationPromptCheckpoint. Calling `resolvePrompts` results in a Promise being returned and a dialog being presented to the user with options to either confirm or cancel their action. If the user confirms the action, the dialog will close, and the returned Promise will be resolved. If the user cancels the action, the dialog will close, and the returned Promise will be rejected. If no NavigationPrompts are detected, no dialog is presented, and a resolved Promise is returned.
+The `resolvePrompts` function be accessed from the ref to a NavigationPromptCheckpoint. Calling `resolvePrompts` results in a Promise being returned and a NotificationDialog being presented to the user with options to either confirm or cancel their action. If the user confirms the action, the dialog will close, and the returned Promise will be resolved. If the user cancels the action, the dialog will close, and the returned Promise will be rejected. If no NavigationPrompts are detected, no dialog is presented, and a resolved Promise is returned.
+
+`resolvePrompts` accepts a single Object argument that should contain the text strings used to render the NotificationDialog. If these strings need to present information based on the currently registered NavigationPrompts, the `onPromptChange` prop can be used to receive that data and build those strings as needed.
+
+The supported keys in the resolvePropts argument include:
+
+|Key|Type|Description|
+|---|---|---|
+|`title`|String|The title of the NotificationDialog|
+|`message`|String|The message of the NotificationDialog|
+|`rejectButtonText`|String|The text to render within the NotificationDialog's primary action button|
+|`acceptButtonText`|String|The text to render within the NotificationDialog's secondary action button|
 
 ```jsx
 constructor() {
@@ -83,7 +94,12 @@ render() {
     <div>
       <button
         onClick={() => {
-          this.checkpointRef.current.resolvePrompts().then(() => {
+          this.checkpointRef.current.resolvePrompts({
+            title: 'Pending Changes',
+            message: 'Content data will be lost if this action is taken.',
+            rejectButtonText: `Return`,
+            acceptButtonText: 'Continue without Saving',
+          }).then(() => {
             // User decided to continue
             this.setState(state => ({ contentKey: !state.contentKey }));
           }).catch(() => {
@@ -101,22 +117,6 @@ render() {
     </div>
   );
 }
-```
-
-A title and/or message string can also be supplied to `resolvePrompts` to customize the dialog's contents. If these strings need to present information based on the currently registered NavigationPrompts, the `onPromptChange` prop can be used to receive that data and build those strings as needed.
-
-```diff
-      <button
-        onClick={() => {
--         this.checkpointRef.current.resolvePrompts().then(() => {
-+         this.checkpointRef.current.resolvePrompts('Custom Title', 'Custom Message').then(() => {
-            // User decided to continue
-            this.setState(state => ({ contentKey: !state.contentKey }));
-          }).catch(() => {
-            // User decided to cancel, so the state is not updated.
-          });
-        }}
-      >
 ```
 
 ## Component Features

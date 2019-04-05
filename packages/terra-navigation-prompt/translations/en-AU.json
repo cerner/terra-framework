@@ -1,6 +1,0 @@
-{
-  "Terra.navigationPromptCheckpoint.confirmPromptText": "Continue without Saving",
-  "Terra.navigationPromptCheckpoint.denyPromptText": "Return",
-  "Terra.navigationPromptCheckpoint.promptTitle": "Pending Actions",
-  "Terra.navigationPromptCheckpoint.promptMessage": "You will lose unsaved changes if you continue with this action while pending data exists. Do you want to return or continue without saving?"
-}

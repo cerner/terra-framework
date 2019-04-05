@@ -69,7 +69,7 @@ const Form = ({ title }) => {
       >
         <React.Fragment key={timeStamp}>
           <h3>{title}</h3>
-          <p>The Form renders a NavigationPromptCheckpoint around its child Input components. If NavigationPrompts are rendered by any child components, the Form will resolve those prompts (with a Form-defined title and message) before resetting the Input values.</p>
+          <p>The Form renders a NavigationPromptCheckpoint around its child Input components. If NavigationPrompts are rendered by any child components, the Form will resolve those prompts before resetting the Input values.</p>
           <p>
             Last Updated:
             {' '}
@@ -84,7 +84,12 @@ const Form = ({ title }) => {
               const customTitle = registeredPromptsRef.current.map(prompt => prompt.description).join(', ');
               const customMessage = `There are unsubmitted changes in ${registeredPromptsRef.current.map(prompt => `${prompt.description} (${prompt.metaData.value})`).join(', ')}. Continue with Form reset?`;
 
-              inputCheckpointRef.current.resolvePrompts(customTitle, customMessage).then(() => {
+              inputCheckpointRef.current.resolvePrompts({
+                title: customTitle,
+                message: customMessage,
+                rejectButtonText: 'Return',
+                acceptButtonText: 'Continue without Saving',
+              }).then(() => {
                 setTimeStamp(Date.now());
               }).catch(() => {
                 // User prevented navigation.
@@ -123,33 +128,34 @@ const FormSwitcher = () => {
   const [activeForm, setActiveForm] = useState('Form 1');
   const formCheckpointRef = useRef();
 
+  function onSwitchForm(formKey) {
+    formCheckpointRef.current.resolvePrompts({
+      title: 'Pending Changes',
+      message: 'Form data will be lost if this action is taken.',
+      rejectButtonText: `Return to ${activeForm}`,
+      acceptButtonText: 'Continue without Saving',
+    }).then(() => {
+      setActiveForm(formKey);
+    }).catch(() => {
+      // User prevented form switch.
+    });
+  }
+
   return (
     <div>
       <h2>Form Switcher</h2>
-      <p>The FormSwitcher renders a NavigationPromptCheckpoint around its child Form component. If NavigationPrompts are rendered by any child components, the FormSwitcher will resolve those prompts (with the default prompt messaging) before rendering a different Form.</p>
+      <p>The FormSwitcher renders a NavigationPromptCheckpoint around its child Form component. If NavigationPrompts are rendered by any child components, the FormSwitcher will resolve those prompts before rendering a different Form.</p>
       <button
         type="button"
         disabled={activeForm === 'Form 1'}
-        onClick={() => {
-          formCheckpointRef.current.resolvePrompts().then(() => {
-            setActiveForm('Form 1');
-          }).catch(() => {
-            // User prevented form switch.
-          });
-        }}
+        onClick={onSwitchForm.bind(null, 'Form 1')}
       >
         Switch to Form 1
       </button>
       <button
         type="button"
         disabled={activeForm === 'Form 2'}
-        onClick={() => {
-          formCheckpointRef.current.resolvePrompts().then(() => {
-            setActiveForm('Form 2');
-          }).catch(() => {
-            // User prevented form switch.
-          });
-        }}
+        onClick={onSwitchForm.bind(null, 'Form 2')}
       >
         Switch to Form 2
       </button>

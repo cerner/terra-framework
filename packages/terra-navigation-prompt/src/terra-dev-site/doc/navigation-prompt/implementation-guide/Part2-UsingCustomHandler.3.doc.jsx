@@ -14,7 +14,7 @@ const ImplementationGuidePage = () => (
     srcPath="https://github.com/cerner/terra-framework/tree/master/packages/terra-navigation-prompt"
     readme={ImplementationGuidePart2Doc}
     examples={[{
-      title: 'Part 2 - Using Custom Messages in NavigationPromptCheckpoint',
+      title: 'Part 2 - Implementing a Custom Prompt Handler',
       example: <ImplementationGuidePart2 />,
       source: ImplementationGuidePart2Src,
     }]}

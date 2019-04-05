@@ -1,27 +1,25 @@
 # Terra Navigation Prompt - Implementation Guide
 
-## Part 2 - Using Custom Messages in NavigationPromptCheckpoint
+## Part 3 - Implementing a Custom Prompt Solution
 
-The FormSwitcher's checkpoint renders a default message and title in its NotificationDialog. This may be sufficient for most use cases, but we want to render a custom title and message that give our users more context.
+At this point, we realize that we do not want to **ever** allow users to navigate away from a Form with unsaved state. We can do that by using the NavigationPromptCheckpoint's `onPromptChange` prop.
 
 ```diff
+- import React, { useState, useRef } from 'react';
++ import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import NavigationPrompt, { NavigationPromptCheckpoint } from '../../../../index';
+
 const Form = ({ title }) => {
   const [inputValue, setInputValue] = useState('');
-+  const promptMetaData = useRef({
-+    timeOfLastInput: undefined,
-+  });
 
   return (
     <div>
       <p>{title}</p>
--     {inputValue.length ? <NavigationPrompt description={title} /> : undefined}
-+     {inputValue.length ? <NavigationPrompt description={title} metaData={promptMetaData.current} /> : undefined}
+      {inputValue.length ? <NavigationPrompt description={title} /> : undefined}
       <input
         type="text"
         onChange={(event) => {
-+         promptMetaData.current = {
-+           timeOfLastInput: Date.now(),
-+         };
           setInputValue(event.target.value);
         }}
         value={inputValue}
@@ -37,46 +35,48 @@ const Form = ({ title }) => {
     </div>
   );
 };
-```
 
-We add some metaData to the Form's NavigationPrompt. For our (admittedly contrived) use case, we want to know the when the last input change ocurred, so we store that value and provide it to the NavigationPrompt as metaData.
-
-```diff
 const FormSwitcher = () => {
   const [activeForm, setActiveForm] = useState('Form 1');
-  const formCheckpointRef = useRef();
++ const [activePrompts, setActivePrompts] = useState([]);
+
+  function onSwitchForm(formKey) {
+-   formCheckpointRef.current.resolvePrompts({
+-     title: 'Pending Changes',
+-     message: 'Form data will be lost if this action is taken.',
+-     rejectButtonText: `Return to ${activeForm}`,
+-     acceptButtonText: 'Continue without Saving',
+-   }).then(() => {
+      setActiveForm(formKey);
+-   });
+  }
 
   return (
     <div>
       <h2>Form Switcher</h2>
--     <p>The user will be prompted with the standard messaging when Forms are switched with unsaved changes present.</p>
-+     <p>The user will be prompted with custom messaging when Forms are switched with unsaved changes present.</p>
+-     <p>The user will be prompted with the provided messaging when Forms are switched with unsaved changes present.</p>
++     <p>Custom logic has been implemented to prevent navigation altogether when NavigationPrompts are present.</p>
       <button
         type="button"
-        disabled={activeForm === 'Form 1'}
-        onClick={() => {
--         formCheckpointRef.current.resolvePrompts().then(() => {
-+         formCheckpointRef.current.resolvePrompts('Form Switcher', 'Switching forms will result in lost data.').then(() => {
-            setActiveForm('Form 1');
-          });
-        }}
+-       disabled={activeForm === 'Form 1'}
++       disabled={activeForm === 'Form 1' || activePrompts.length}
+        onClick={onSwitchForm.bind(null, 'Form 1')}
       >
         Switch to Form 1
       </button>
       <button
         type="button"
-        disabled={activeForm === 'Form 2'}
-        onClick={() => {
--          formCheckpointRef.current.resolvePrompts().then(() => {
-+          formCheckpointRef.current.resolvePrompts('Form Switcher', 'Switching forms will result in lost data.').then(() => {
-            setActiveForm('Form 2');
-          });
-        }}
+-       disabled={activeForm === 'Form 2'}
++       disabled={activeForm === 'Form 2' || activePrompts.length}
+        onClick={onSwitchForm.bind(null, 'Form 2')}
       >
         Switch to Form 2
       </button>
       <NavigationPromptCheckpoint
-        ref={formCheckpointRef}
+-       ref={formCheckpointRef}
++       onPromptChange={(prompts) => {
++         setActivePrompts(prompts);
++       }}
       >
         <Form title={activeForm} key={activeForm} />
       </NavigationPromptCheckpoint>
@@ -85,4 +85,4 @@ const FormSwitcher = () => {
 };
 ```
 
-When we call `resolvePrompts`, we provide custom title and message strings built with the navigation data returned by `onPromptChange`. This will give our users a better idea of where the unsaved changes are at and whether or not they care about them.
+We remove the `ref` from the NavigationPromptCheckpoint and instead implement `onPromptChange` to store the currently rendered NavigationPrompt's in the FormSwitcher's state. We disable the 'Switch to' buttons altogether if a NavigationPrompt is detected and render our own custom message within the FormSwitcher to notify our users. We could also use this state to control other navigation-capable components, like client-side routers.

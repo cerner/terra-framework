@@ -1,63 +1,54 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { injectIntl, intlShape } from 'react-intl';
 import NotificationDialog from 'terra-notification-dialog';
 
-const propTypes = {
-  /**
-   * A function executed when the Confirm primary action is selected within the NotificationDialog.
-   */
-  onConfirm: PropTypes.func,
-  /**
-   * A function executed when the Cancel primary action is selected within the NotificationDialog.
-   */
-  onCancel: PropTypes.func,
-  /**
-   * A string rendered as the title of the NotificationDialog. If not provided, a default string will be rendered.
-   */
-  customTitle: PropTypes.string,
-  /**
-   * A string rendered as the message of the NotificationDialog. If not provided, a default string will be rendered.
-   */
-  customMessage: PropTypes.string,
-  /**
-   * @private
-   * The intl object provided by injectIntl.
-   */
-  intl: intlShape,
-};
+class CheckpointNotificationDialog extends React.Component {
+  constructor() {
+    super();
 
-const CheckpointNotificationDialog = injectIntl(({
-  intl, onConfirm, onCancel, customTitle, customMessage,
-}) => {
-  let title = customTitle;
-  if (!title) {
-    title = intl.formatMessage({ id: 'Terra.navigationPromptCheckpoint.promptTitle' });
+    this.showDialog = this.showDialog.bind(this);
+    this.hideDialog = this.hideDialog.bind(this);
+
+    this.state = {
+      dialogProps: undefined,
+    };
   }
 
-  let message = customMessage;
-  if (!message) {
-    message = intl.formatMessage({ id: 'Terra.navigationPromptCheckpoint.promptMessage' });
+  showDialog(dialogProps) {
+    this.setState({
+      dialogProps,
+    });
   }
 
-  return (
-    <NotificationDialog
-      isOpen
-      title={title}
-      message={message}
-      primaryAction={{
-        text: intl.formatMessage({ id: 'Terra.navigationPromptCheckpoint.denyPromptText' }),
-        onClick: onCancel,
-      }}
-      secondaryAction={{
-        text: intl.formatMessage({ id: 'Terra.navigationPromptCheckpoint.confirmPromptText' }),
-        onClick: onConfirm,
-      }}
-      variant="warning"
-    />
-  );
-});
+  hideDialog(callback) {
+    this.setState({
+      dialogProps: undefined,
+    }, callback);
+  }
 
-CheckpointNotificationDialog.propTypes = propTypes;
+  render() {
+    const { dialogProps } = this.state;
+
+    if (!dialogProps) {
+      return null;
+    }
+
+    return (
+      <NotificationDialog
+        isOpen
+        title={dialogProps.title}
+        message={dialogProps.message}
+        primaryAction={{
+          text: dialogProps.rejectButtonText,
+          onClick: this.hideDialog.bind(null, dialogProps.onReject),
+        }}
+        secondaryAction={{
+          text: dialogProps.acceptButtonText,
+          onClick: this.hideDialog.bind(null, dialogProps.onAccept),
+        }}
+        variant="warning"
+      />
+    );
+  }
+}
 
 export default CheckpointNotificationDialog;

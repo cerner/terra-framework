@@ -56,6 +56,9 @@ class NavigationPrompt extends React.Component {
     const { description, metaData } = this.props;
     const ancestorCheckpoint = this.context;
 
+    /**
+     * The NavigationPrompt is unregistered and then re-registered with the mosts recent prop values.
+     */
     ancestorCheckpoint.deregisterPrompt(this.uuid);
     ancestorCheckpoint.registerPrompt(this.uuid, description, metaData);
   }

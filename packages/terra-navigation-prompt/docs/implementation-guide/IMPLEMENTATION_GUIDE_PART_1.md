@@ -48,32 +48,33 @@ const FormSwitcher = () => {
   const [activeForm, setActiveForm] = useState('Form 1');
 + const formCheckpointRef = useRef();
 
+  function onSwitchForm(formKey) {
++   formCheckpointRef.current.resolvePrompts({
++     title: 'Pending Changes',
++     message: 'Form data will be lost if this action is taken.',
++     rejectButtonText: `Return to ${activeForm}`,
++     acceptButtonText: 'Continue without Saving',
++   }).then(() => {
+      setActiveForm(formKey);
++   });
+  }
+
   return (
     <div>
       <h2>Form Switcher</h2>
 -     <p>The NavigationPrompt is not implemented, so no prompting occurs.</p>
-+     <p>The user will be prompted with the standard messaging when Forms are switched with unsaved changes present.</p>
++     <p>The user will be prompted with the provided messaging when Forms are switched with unsaved changes present.</p>
       <button
         type="button"
         disabled={activeForm === 'Form 1'}
-        onClick={() => {
--         setActiveForm('Form 1');
-+         formCheckpointRef.current.resolvePrompts().then(() => {
-+           setActiveForm('Form 1');
-+         });
-        }}
+        onClick={onSwitchForm.bind(null, 'Form 1')}
       >
         Switch to Form 1
       </button>
       <button
         type="button"
         disabled={activeForm === 'Form 2'}
-        onClick={() => {
--         setActiveForm('Form 2');
-+         formCheckpointRef.current.resolvePrompts().then(() => {
-+           setActiveForm('Form 2');
-+         });
-        }}
+        onClick={onSwitchForm.bind(null, 'Form 2')}
       >
         Switch to Form 2
       </button>
@@ -81,7 +82,7 @@ const FormSwitcher = () => {
 +       ref={formCheckpointRef}
 +     >
         <Form title={activeForm} key={activeForm} />
-+     </NavigationPromptCheckpoint>
++      </NavigationPromptCheckpoint>
     </div>
   );
 };
@@ -89,6 +90,6 @@ const FormSwitcher = () => {
 
 The FormSwitcher gets a ref to the NavigationPromptCheckpoint; this example uses the [useRef hook](https://reactjs.org/docs/hooks-reference.html#useref), but any of the supported ref retrieval methods would be sufficient. The FormSwitcher then uses this ref to call the `resolvePrompts` function when it wants to switch to a new Form.
 
-The `resolvePrompts` function is an instance function of the NavigationPromptCheckpoint. When `resolvePrompts` is called, the NavigationPromptCheckpoint will render a NotificationDialog and return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises). The Promise will be resolved immediately if no NavigationPrompts have been rendered below the checkpoint, so we don't need to check for the presence of any NavigationPrompts before we call it. The Promise will also resolve if a user presses the NotificationDialog's secondary action button. The Promise will be rejected if a user presses the NotificationDialog's primary action button. In our example, we only update the FormSwitcher's state when the Promise is resolved.
+The `resolvePrompts` function is an instance function of the NavigationPromptCheckpoint. When `resolvePrompts` is called, the NavigationPromptCheckpoint will render a NotificationDialog and return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises). The Promise will be resolved immediately if no NavigationPrompts have been rendered below the checkpoint, so we don't need to check for the presence of any NavigationPrompts before we call it. The Promise will also resolve if a user presses the NotificationDialog's secondary action button. The Promise will reject if a user presses the NotificationDialog's primary action button. In our example, we only update the FormSwitcher's state when the Promise is resolved.
 
 With those changes in place, the FormSwitcher will prompt the user for confirmation when they attempt to switch away from Forms with unsubmitted data. 

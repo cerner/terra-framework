@@ -33,6 +33,10 @@ Form.propTypes = {
 const FormSwitcher = () => {
   const [activeForm, setActiveForm] = useState('Form 1');
 
+  function onSwitchForm(formKey) {
+    setActiveForm(formKey);
+  }
+
   return (
     <div>
       <h2>Form Switcher</h2>
@@ -40,18 +44,15 @@ const FormSwitcher = () => {
       <button
         type="button"
         disabled={activeForm === 'Form 1'}
-        onClick={() => {
-          setActiveForm('Form 1');
-        }}
+        onClick={onSwitchForm.bind(null, 'Form 1')}
+
       >
         Switch to Form 1
       </button>
       <button
         type="button"
         disabled={activeForm === 'Form 2'}
-        onClick={() => {
-          setActiveForm('Form 2');
-        }}
+        onClick={onSwitchForm.bind(null, 'Form 2')}
       >
         Switch to Form 2
       </button>

@@ -45,10 +45,7 @@ class NavigationPromptCheckpoint extends React.Component {
       registerPrompt: this.registerPrompt,
       deregisterPrompt: this.deregisterPrompt,
     };
-
-    this.state = {
-      confirmationPrompt: undefined,
-    };
+    this.checkpointNotificationDialogRef = React.createRef();
   }
 
   componentWillUnmount() {
@@ -103,7 +100,7 @@ class NavigationPromptCheckpoint extends React.Component {
    * This function is part of the NavigationPromptCheckpoint's public API. Changes to this function name or overall functionality
    * will impact the package's version.
    */
-  resolvePrompts(title, message) {
+  resolvePrompts(dialogOptions) {
     if (!Object.keys(this.registeredPrompts).length) {
       /**
        * If no prompts are registered, then no prompts must be rendered.
@@ -112,42 +109,27 @@ class NavigationPromptCheckpoint extends React.Component {
     }
 
     /**
-     * Otherwise, the default prompt resolution handler is used.
+     * Otherwise, the CheckpointNotificationDialog is shown.
      */
     return new Promise((resolve, reject) => {
-      this.setState({
-        confirmationPrompt: {
-          resolve, reject, title, message,
-        },
+      this.checkpointNotificationDialogRef.current.showDialog({
+        title: dialogOptions.title,
+        message: dialogOptions.message,
+        acceptButtonText: dialogOptions.acceptButtonText,
+        rejectButtonText: dialogOptions.rejectButtonText,
+        onAccept: resolve,
+        onReject: reject,
       });
     });
   }
 
   render() {
     const { children } = this.props;
-    const { confirmationPrompt } = this.state;
 
     return (
       <PromptRegistrationContext.Provider value={this.promptProviderValue}>
         {children}
-        {confirmationPrompt ? (
-          <CheckpointNotificationDialog
-            customTitle={confirmationPrompt.title}
-            customMessage={confirmationPrompt.message}
-            onConfirm={() => {
-              confirmationPrompt.resolve();
-              this.setState({
-                confirmationPrompt: undefined,
-              });
-            }}
-            onCancel={() => {
-              confirmationPrompt.reject();
-              this.setState({
-                confirmationPrompt: undefined,
-              });
-            }}
-          />
-        ) : undefined}
+        <CheckpointNotificationDialog ref={this.checkpointNotificationDialogRef} />
       </PromptRegistrationContext.Provider>
     );
   }
