@@ -1,0 +1,66 @@
+:local {   
+  .selectclass {
+    appearance: none;
+    background: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path d="M48 12L24 36 0 12h48z"/></svg>');
+    background-color: #fff;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 25px 10px;
+    border: 1px solid #dedfe0;
+    cursor: pointer;
+    font-size: 1.143rem;
+    height: 28px;
+    outline: none;
+    position: relative;
+    text-indent: 0.12857rem;
+    width: 100%;
+
+    &::-ms-expand {
+      display: none; 
+    }
+  }
+
+  .ulclass {
+    background-color: #fff;
+    border: 1px solid #dedfe0;
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+    user-select: none;
+  }
+
+  .liclass {
+    border: 0;
+    color: #1c1f21;
+    cursor: pointer;
+    font-size: 1.143rem;
+    list-style-type: none;
+    width: 100%;
+
+    &:hover {
+      background-color: #ebf6fd;
+    } 
+
+    &:active {
+      background-color: #0079be;
+      color: #fff;
+    } 
+  }
+
+  .selected {
+    background-color: #0079be;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.143rem; 
+  }
+
+  .spanclass {
+    cursor: pointer;
+    display: inline-block;
+    flex: 1 1 auto;
+    text-indent: 0.42857rem;
+    width: 100%;
+  }
+}

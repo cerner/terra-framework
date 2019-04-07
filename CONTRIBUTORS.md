@@ -23,7 +23,7 @@ Cerner Corporation
 - Shetty Akarsh [@@ShettyAkarsh]
 - Alex Bezek [@alex-bezek]
 - Supreeth MR [@supreethmr]
-- Shetty Akarsh [@ShettyAkarsh]
+- Akarsh Shetty [@ShettyAkarsh]
 - Gabe Parra [@gabeparra01]
 - Naveen Kumar Ramamurthy [@nramamurth]
 
