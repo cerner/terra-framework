@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the provider test template 1`] = `
+<div
+  data-embedded-content-consumer-provider-test-template="true"
+>
+  <div>
+    Content to display
+  </div>
+</div>
+`;
+
+exports[`should render the provider test template with a custom class name 1`] = `
+<div
+  class="container"
+  data-embedded-content-consumer-provider-test-template="true"
+>
+  <div>
+    Content to display
+  </div>
+</div>
+`;

@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.3.0 - (April 2, 2019)
+------------------
 ### Fixed
 * Updated snapshots to account for Overlay's `rootProp` default value from `[data-terra-base]` to `#root`
 

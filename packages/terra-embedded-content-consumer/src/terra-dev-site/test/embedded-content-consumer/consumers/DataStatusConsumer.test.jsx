@@ -6,34 +6,36 @@ Consumer.init();
 
 const createListItem = (itemName) => {
   const listItem = document.createElement('li');
-  listItem.setAttribute('id', itemName);
   listItem.appendChild(document.createTextNode(itemName));
 
   return listItem;
 };
 
-const appendLifeCycleStatus = (itemName) => {
-  const frame = document.getElementsByTagName('iframe')[0];
-  const statusList = frame.contentWindow.document.getElementById('DataStatus-LifeCycleStatuses');
-  statusList.appendChild(createListItem(itemName));
+const appendLifeCycleStatuses = (statuses) => {
+  const frame = document.getElementById('data-embedded-consumer-data-status');
+  const frameContent = frame.contentWindow.document.getElementById('DataStatus-LifeCycleStatuses');
+  if (frameContent) {
+    statuses.forEach((status) => { frameContent.appendChild(createListItem(status)); });
+  }
 };
 
-const options = { secret: 'OAuth Secret' };
-const lifeCycleStatuses = [];
+const options = { secret: 'OAuth Secret', iframeAttrs: { title: 'Embedded application lifecycle example', id: 'data-embedded-consumer-data-status' } };
+
 const onMount = () => {
-  lifeCycleStatuses.push('Mounted');
+  setTimeout(() => { appendLifeCycleStatuses(['Mounted']); }, 2000);
 };
+
 const onLaunch = () => {
-  lifeCycleStatuses.push('Launched');
+  setTimeout(() => { appendLifeCycleStatuses(['Launched']); }, 3000);
 };
+
 const onAuthorize = () => {
-  lifeCycleStatuses.push('Authorized');
-  lifeCycleStatuses.forEach((status) => { appendLifeCycleStatus(status); });
+  setTimeout(() => { appendLifeCycleStatuses(['Authorized']); }, 4000);
 };
 
 const DataStatusConsumer = () => (
   <EmbeddedContentConsumer
-    src="#/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/providers/data-status-provider"
+    src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/data-status-provider"
     onMount={onMount}
     onLaunch={onLaunch}
     onAuthorize={onAuthorize}

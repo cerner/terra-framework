@@ -1,9 +1,6 @@
 import React from 'react';
-import { Consumer } from 'xfc';
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
+// eslint-disable-next-line import/no-unresolved
 import EmbeddedContentConsumer from 'terra-embedded-content-consumer/lib/EmbeddedContentConsumer';
-
-Consumer.init();
 
 const createListItem = (itemName) => {
   const listItem = document.createElement('li');
@@ -13,32 +10,30 @@ const createListItem = (itemName) => {
 };
 
 const appendLifeCycleStatuses = (statuses) => {
-  const frames = document.getElementsByTagName('iframe');
-  for (let frameIndex = 0; frameIndex < frames.length; frameIndex += 1) {
-    const frame = frames[frameIndex];
-    const statusList = frame.contentWindow.document.getElementById('DataStatus-LifeCycleStatuses');
-    if (statusList) {
-      statuses.forEach((status) => { statusList.appendChild(createListItem(status)); });
-    }
+  const frame = document.getElementById('data-embedded-consumer-data-status');
+  const frameContent = frame.contentWindow.document.getElementById('DataStatus-LifeCycleStatuses');
+  if (frameContent) {
+    statuses.forEach((status) => { frameContent.appendChild(createListItem(status)); });
   }
 };
 
-const options = { secret: 'OAuth Secret', iframeAttrs: { title: 'Embedded application lifecycle example' } };
-const lifeCycleStatuses = [];
+const options = { secret: 'OAuth Secret', iframeAttrs: { title: 'Embedded application lifecycle example', id: 'data-embedded-consumer-data-status' } };
+
 const onMount = () => {
-  lifeCycleStatuses.push('Mounted');
+  setTimeout(() => { appendLifeCycleStatuses(['Mounted']); }, 2000);
 };
+
 const onLaunch = () => {
-  lifeCycleStatuses.push('Launched');
+  setTimeout(() => { appendLifeCycleStatuses(['Launched']); }, 3000);
 };
+
 const onAuthorize = () => {
-  lifeCycleStatuses.push('Authorized');
-  appendLifeCycleStatuses(lifeCycleStatuses);
+  setTimeout(() => { appendLifeCycleStatuses(['Authorized']); }, 4000);
 };
 
 const DataStatusConsumer = () => (
   <EmbeddedContentConsumer
-    src="#/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/providers/data-status-provider"
+    src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/data-status-provider"
     onMount={onMount}
     onLaunch={onLaunch}
     onAuthorize={onAuthorize}

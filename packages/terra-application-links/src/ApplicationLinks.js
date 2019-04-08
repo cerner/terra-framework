@@ -22,6 +22,10 @@ const ApplicationLinksPropType = PropTypes.shape({
      * The display text for the link.
      */
     text: PropTypes.string.isRequired,
+    /**
+     * The display icon for the link
+     */
+    icon: PropTypes.node,
   })),
 });
 
