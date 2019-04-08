@@ -343,7 +343,6 @@ describe('Date Picker', () => {
       browser.keys('a1.b2/;3');
     });
 
-    Terra.should.matchScreenshot();
-    Terra.should.beAccessible({ rules: ignoredA11y });
+    Terra.should.validateElement('default', { axeRules: { rules: ignoredA11y } });
   });
 });
