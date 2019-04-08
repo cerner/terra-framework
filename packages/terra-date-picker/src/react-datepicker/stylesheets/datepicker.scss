@@ -1,6 +1,7 @@
 @import "variables.scss";
 @import "mixins.scss";
 
+// TODO: REVIEW IF THIS IS STILL NEEDED
 .react-datepicker-wrapper {
   display: inline-block;
 }
@@ -21,6 +22,7 @@
   left: 50px;
 }
 
+// TODO: REVIEW THESE STYLES
 .react-datepicker-popper {
   z-index: 1;
 

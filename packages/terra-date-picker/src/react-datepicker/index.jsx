@@ -1,7 +1,7 @@
 import Calendar from './calendar'
 import React from 'react'
 import PropTypes from 'prop-types'
-import PopperComponent, { popperPlacementPositions } from './popper_component'
+import Hookshot from 'terra-hookshot'
 import classnames from 'classnames'
 import {
   newDate,
@@ -89,10 +89,6 @@ export default class DatePicker extends React.Component {
     openToDate: PropTypes.object,
     peekNextMonth: PropTypes.bool,
     placeholderText: PropTypes.string,
-    popperContainer: PropTypes.func,
-    popperClassName: PropTypes.string, // <PopperComponent/> props
-    popperModifiers: PropTypes.object, // <PopperComponent/> props
-    popperPlacement: PropTypes.oneOf(popperPlacementPositions), // <PopperComponent/> props
     readOnly: PropTypes.bool,
     required: PropTypes.bool,
     scrollableYearDropdown: PropTypes.bool,
@@ -542,19 +538,28 @@ export default class DatePicker extends React.Component {
     }
 
     return (
-      <PopperComponent
-        className={this.props.popperClassName}
-        hidePopper={(!this.state.open || this.props.disabled)}
-        popperModifiers={this.props.popperModifiers}
-        targetComponent={
-          <div className="react-datepicker__input-container">
-            {this.renderDateInput()}
-            {this.renderClearButton()}
-          </div>
-        }
-        popperContainer={this.props.popperContainer}
-        popperComponent={calendar}
-        popperPlacement={this.props.popperPlacement}/>
+      <React.Fragment>
+        <div data-terra-date-picker-container className="react-datepicker__input-container">
+          {this.renderDateInput()}
+          {this.renderClearButton()}
+        </div>
+        <Hookshot
+          attachmentBehavior="flip"
+          contentAttachment={{ vertical: 'top', horizontal: 'center' }}
+          isEnabled={true}
+          isOpen={(this.state.isOpen | !this.props.disabled)}
+          targetAttachment={{ vertical: 'bottom', horizontal: 'center' }}
+          targetRef={() => document.querySelector('[data-terra-date-picker-container]')}
+        >
+          <Hookshot.Content
+            onEsc={this.handleRequestClose}
+            onOutsideClick={this.handleRequestClose}
+            onResize={this.handleRequestClose}
+          >
+            {calendar}
+          </Hookshot.Content>
+        </Hookshot>
+      </React.Fragment>
     )
   }
 }
