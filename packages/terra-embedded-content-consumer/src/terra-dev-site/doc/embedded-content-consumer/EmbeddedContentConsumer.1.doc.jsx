@@ -4,7 +4,7 @@ import { Consumer } from 'xfc';
 import ReadMe from '../../../../docs/README.md';
 import { name } from '../../../../package.json';
 
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
+/* eslint-disable import/no-webpack-loader-syntax, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
 import EmbeddedContentConsumerSrc from '!raw-loader!../../../../src/EmbeddedContentConsumer.jsx';
 
@@ -17,11 +17,7 @@ import CustomEventsConsumer from '../example/CustomEventsConsumer';
 import CustomEventsConsumerSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/CustomEventsConsumer';
 import DataStatusConsumer from '../example/DataStatusConsumer';
 import DataStatusConsumerSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DataStatusConsumer';
-import FillConsumer from '../example/FillConsumer';
-import FillConsumerSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/FillConsumer';
-import OnReadyConsumer from '../example/OnReadyConsumer';
-import OnReadyConsumerSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/OnReadyConsumer';
-/* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
+/* eslint-enable import/no-webpack-loader-syntax, import/extensions, import/no-duplicates */
 
 Consumer.init();
 
@@ -32,34 +28,24 @@ const DocPage = () => (
     srcPath={`https://github.com/cerner/terra-framework/tree/master/packages/${name}`}
     examples={[
       {
-        title: 'Basic Embedded Content',
+        title: 'Basic Embedded Content Consumer',
         example: <BasicConsumer />,
         source: BasicConsumerSrc,
       },
       {
-        title: 'Filled Embedded Content',
-        example: <FillConsumer />,
-        source: FillConsumerSrc,
-      },
-      {
-        title: 'Custom Event Embedded Content',
-        example: <CustomEventConsumer />,
-        source: CustomEventConsumerSrc,
-      },
-      {
-        title: 'Custom Events Embedded Content',
-        example: <CustomEventsConsumer />,
-        source: CustomEventsConsumerSrc,
-      },
-      {
-        title: 'Data Status Embedded Content',
+        title: 'Embedded Content Consumer Lifecycle Statuses',
         example: <DataStatusConsumer />,
         source: DataStatusConsumerSrc,
       },
       {
-        title: 'On Ready Embedded Content',
-        example: <OnReadyConsumer />,
-        source: OnReadyConsumerSrc,
+        title: 'Embedded Content Consumer that Listens for a Custom Event',
+        example: <CustomEventConsumer />,
+        source: CustomEventConsumerSrc,
+      },
+      {
+        title: 'Embedded Content Consumer with Seamless Communication',
+        example: <CustomEventsConsumer />,
+        source: CustomEventsConsumerSrc,
       },
     ]}
     propsTables={[
