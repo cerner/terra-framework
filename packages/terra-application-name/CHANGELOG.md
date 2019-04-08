@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Use demo mock background in doc examples.
 
 3.4.0 - (March 26, 2019)
 ------------------

@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Changed documentation placeholder example colors to meet color contrast ratio
 
 3.2.0 - (April 2, 2019)
 ------------------
