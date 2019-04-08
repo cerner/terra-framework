@@ -1,5 +1,5 @@
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
+// eslint-disable-next-line import/no-unresolved
 import EmbeddedContentConsumer from 'terra-embedded-content-consumer/lib/EmbeddedContentConsumer';
 
 const eventHandlers = [{
@@ -12,7 +12,7 @@ const eventHandlers = [{
 const CustomEventConsumer = () => (
   <div id="CustomEvent">
     <EmbeddedContentConsumer
-      src="#/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-event-provider"
+      src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-event-provider"
       options={{ iframeAttrs: { title: 'Custom Event Example' } }}
       eventHandlers={eventHandlers}
     />
