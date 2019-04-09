@@ -145,6 +145,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                       aria-disabled="false"
                       aria-label="Terra.popup.header.close"
                       class="button utility"
+                      title="Terra.popup.header.close"
                       type="button"
                     >
                       <span
@@ -268,6 +269,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                             aria-disabled="false"
                             aria-label="Terra.popup.header.close"
                             class="button utility"
+                            title="Terra.popup.header.close"
                             type="button"
                           >
                             <span
@@ -382,6 +384,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                               aria-disabled="false"
                               aria-label="Terra.popup.header.close"
                               class="button utility"
+                              title="Terra.popup.header.close"
                               type="button"
                             >
                               <span
@@ -521,6 +524,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                             onClick={[MockFunction]}
                             onKeyDown={[Function]}
                             onKeyUp={[Function]}
+                            title="Terra.popup.header.close"
                             type="button"
                           >
                             <span
