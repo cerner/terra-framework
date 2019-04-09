@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Replaced string "12-hour" with TimeUtil.FORMAT_12_HOUR in terra dev-site eamples
 
 3.6.0 - (March 26, 2019)
 ------------------
