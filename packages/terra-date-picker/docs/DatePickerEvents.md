@@ -23,5 +23,9 @@ terra-date-picker has several callback events that are slightly different in beh
 
 ## Event Trigger Order
 When these actions are taken, the events are triggered in the following order.
-* Manual date entry - onChangeRaw followed by onChange (if the date entry is a valid date).
-* Selection from picker - onChange followed by onSelect.
+* Manual date entry 
+    1. onChangeRaw
+    2. onChange (if the date entry is a valid date)
+* Selection from picker
+    1. onChange
+    2. onSelect

@@ -18,7 +18,7 @@ const propTypes = {
    */
   isOffsetButtonHidden: PropTypes.bool.isRequired,
   /**
-   * A callback function triggered when the timezone offset button loses focus. function(event)
+   * A callback function triggered when the timezone offset button loses focus.
    */
   onBlur: PropTypes.func,
   /**
@@ -26,7 +26,7 @@ const propTypes = {
    */
   onDaylightSavingButtonClick: PropTypes.func.isRequired,
   /**
-   * A callback function triggered when the timezone offset button gains focus. function(event)
+   * A callback function triggered when the timezone offset button gains focus.
    */
   onFocus: PropTypes.func,
   /**

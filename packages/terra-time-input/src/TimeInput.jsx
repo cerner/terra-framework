@@ -45,7 +45,7 @@ const propTypes = {
    */
   onChange: PropTypes.func,
   /**
-   * A callback function triggered when the hour input or minute input receives focus. function(event)
+   * A callback function triggered when the hour input or minute input receives focus.
    */
   onFocus: PropTypes.func,
   /**

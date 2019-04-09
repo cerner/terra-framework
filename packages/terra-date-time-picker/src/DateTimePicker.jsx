@@ -69,7 +69,7 @@ const propTypes = {
    */
   onChangeRaw: PropTypes.func,
   /**
-   * A callback function triggered when the date input, hour input, or minute input receives focus. function(event)
+   * A callback function triggered when the date input, hour input, or minute input receives focus.
    */
   onFocus: PropTypes.func,
   /**

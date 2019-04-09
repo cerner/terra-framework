@@ -19,7 +19,7 @@ const propTypes = {
    */
   name: PropTypes.string,
   /**
-   * A callback function triggered when the input or calendar button loses focus. function(event)
+   * A callback function triggered when the input or calendar button loses focus.
    */
   onBlur: PropTypes.func,
   /**
@@ -31,11 +31,11 @@ const propTypes = {
    */
   onClick: PropTypes.func,
   /**
-   * A callback function triggered when the date input receives focus. function(event)
+   * A callback function triggered when the date input receives focus.
    */
   onFocus: PropTypes.func,
   /**
-   * A callback function triggered when the calendar button receives focus. function(event)
+   * A callback function triggered when the calendar button receives focus.
    */
   onButtonFocus: PropTypes.func,
   /**
