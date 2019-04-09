@@ -18,6 +18,7 @@ exports[`should render a default date input 1`] = `
     aria-disabled="false"
     aria-label="Terra.datePicker.openCalendar"
     class="button neutral compact button"
+    title="Terra.datePicker.openCalendar"
     type="button"
   >
     <span
@@ -68,6 +69,7 @@ exports[`should render a default date input with all props 1`] = `
     aria-disabled="false"
     aria-label="Terra.datePicker.openCalendar"
     class="button neutral compact button"
+    title="Terra.datePicker.openCalendar"
     type="button"
   >
     <span
