@@ -302,9 +302,9 @@ describe('DateTimePicker', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-excluded');
       browser.click('[class*="button"]');
-    });
 
-    Terra.should.matchScreenshot({ viewports });
+      expect(browser.getText('#date-time-value')).to.equal('');
+    });
   });
 
   describe('Clears the default date and time on date input focus when default date is excluded', () => {

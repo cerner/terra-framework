@@ -503,7 +503,6 @@ class DateTimePicker extends React.Component {
             name="input"
             value={this.timeValue}
             disabled={disabled}
-            variant="12-hour"
           />
 
           {this.state.isAmbiguousTime ? this.renderTimeClarification() : null }
