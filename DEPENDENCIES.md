@@ -7,6 +7,7 @@
 | babel-core | ^6.24.1 | -- | Babel compiler core. |
 | babel-jest | ^23.0.1 | -- | Jest plugin to use babel for transformation. |
 | babel-plugin-transform-async-to-generator | ^6.24.1 | -- | Turn async functions into ES2015 generators |
+| babel-plugin-transform-class-properties | ^6.24.1 | -- | This plugin transforms static class properties as well as properties declared with the property initializer syntax |
 | babel-plugin-transform-object-assign | ^6.22.0 | -- | Replace Object.assign with an inline helper |
 | babel-plugin-transform-object-rest-spread | ^6.23.0 | -- | Compile object rest and spread to ES5 |
 | babel-preset-env | ^1.7.0 | -- | A Babel preset for each environment. |
@@ -34,7 +35,7 @@
 | react-test-renderer | ^16.4.2 | ^16.0.0 | React package for snapshot testing. |
 | stylelint | ^9.2.0 | -- | A mighty, modern CSS linter. |
 | stylelint-config-terra | ^2.0.0 | -- | Terra Stylelint Shared Config |
-| terra-dev-site | ^3.0.0 | ^16.4.2 | Dynamically builds a react-hash-routed site based on site configuration, navigation configuration and component configuration. |
+| terra-dev-site | ^3.0.0 | ^16.8.5 | Dynamically builds a react-hash-routed site based on site configuration, navigation configuration and component configuration. |
 | terra-enzyme-intl | ^3.0.0 | 16.x | Enzyme helpers for fortifying tests that depend on react-intl by decoupling the need for actual translations. |
 | terra-toolkit | ^4.16.0 | -- | Utilities to help when developing terra modules. |
 | xfc | ^1.2.1 | -- | A Cross Frame Container that handles securely embedding web content into a 3rd party domain |

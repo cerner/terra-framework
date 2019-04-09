@@ -100,6 +100,15 @@ describe('Slide panel', () => {
       browser.pause(150);
     });
 
+    it('Opens panel and focuses on panel', () => {
+      browser.hasFocus('#panel-content');
+    });
+
+    it('On Tab Press focuses on the button inside the panel', () => {
+      browser.keys(['Tab']);
+      browser.hasFocus('#focus-button');
+    });
+
     Terra.should.matchScreenshot({ selector: '#root' });
   });
 

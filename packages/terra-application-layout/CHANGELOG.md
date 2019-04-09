@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+4.9.0 - (April 9, 2019)
+------------------
+### Added
+* Added alt text to app logo image used in doc example with icons in nav
+
 4.8.0 - (April 2, 2019)
 ------------------
 ### Added
