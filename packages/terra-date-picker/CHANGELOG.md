@@ -12,6 +12,11 @@ Unreleased
 ### Removed
 * Removed 'onInputFocus' prop in favor of the added 'onFocus' prop.
 
+3.12.0 - (April 9, 2019)
+------------------
+### Changed
+* Replaced react-popper usage with terra-hookshot
+
 3.11.0 - (April 2, 2019)
 ------------------
 ### Changed

@@ -10,6 +10,7 @@ exports[`should render a date picker with disabled dates 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -90,6 +91,7 @@ exports[`should render a date picker with disabled dates 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -189,6 +191,7 @@ exports[`should render a date picker with filtered dates 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -270,6 +273,7 @@ exports[`should render a date picker with filtered dates 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -370,6 +374,7 @@ exports[`should render a date picker with included dates 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -450,6 +455,7 @@ exports[`should render a date picker with included dates 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -549,6 +555,7 @@ exports[`should render a date picker with min and max dates 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -629,6 +636,7 @@ exports[`should render a date picker with min and max dates 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -728,185 +736,7 @@ exports[`should render a date picker with onBlur 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
-            onCalendarButtonClick={[Function]}
-            onInputFocus={[Function]}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        disabledKeyboardNavigation={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        monthsShown={1}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onMonthChange={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        shouldCloseOnSelect={true}
-        showMonthDropdown={true}
-        showTimeSelect={false}
-        showYearDropdown={true}
-        timeIntervals={30}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-        withPortal={true}
-      />
-    }
-    responsiveTo="window"
-    small={
-      <DatePicker
-        allowSameDay={false}
-        customInput={
-          <DatePickerInput
-            onCalendarButtonClick={[Function]}
-            onInputFocus={[Function]}
-            shouldShowPicker={false}
-          />
-        }
-        dateFormat="MM/DD/YYYY"
-        dateFormatCalendar=" "
-        disabled={false}
-        disabledKeyboardNavigation={false}
-        dropdownMode="select"
-        excludeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        fixedHeight={true}
-        includeDates={
-          Array [
-            "2017-01-01T00:00:00.000Z",
-          ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
-        }
-        locale="en"
-        maxDate={"2017-01-01T00:00:00.000Z"}
-        minDate={"2017-01-01T00:00:00.000Z"}
-        monthsShown={1}
-        name="date-input"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onChangeRaw={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onMonthChange={[Function]}
-        onSelect={[Function]}
-        placeholderText="Terra.datePicker.dateFormat"
-        popoverAttachment="top center"
-        popoverTargetAttachment="bottom center"
-        popperContainer={[Function]}
-        popperModifiers={
-          Object {
-            "keepTogether": Object {
-              "enabled": true,
-            },
-          }
-        }
-        popperPlacement="bottom"
-        required={false}
-        selected={"2017-01-01T00:00:00.000Z"}
-        shouldCloseOnSelect={true}
-        showMonthDropdown={true}
-        showTimeSelect={false}
-        showYearDropdown={true}
-        timeIntervals={30}
-        todayButton="Terra.datePicker.today"
-        utcOffset={0}
-        withPortal={false}
-      />
-    }
-  />
-</div>
-`;
-
-exports[`should render a date picker with onCalendarButtonClick 1`] = `
-<div
-  className="date-picker"
->
-  <ResponsiveElement
-    defaultElement={
-      <DatePicker
-        allowSameDay={false}
-        customInput={
-          <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -987,6 +817,188 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
+            onCalendarButtonClick={[Function]}
+            shouldShowPicker={false}
+          />
+        }
+        dateFormat="MM/DD/YYYY"
+        dateFormatCalendar=" "
+        disabled={false}
+        disabledKeyboardNavigation={false}
+        dropdownMode="select"
+        excludeDates={
+          Array [
+            "2017-01-01T00:00:00.000Z",
+          ]
+        }
+        fixedHeight={true}
+        includeDates={
+          Array [
+            "2017-01-01T00:00:00.000Z",
+          ]
+        }
+        intl={
+          Object {
+            "defaultFormats": Object {},
+            "defaultLocale": "en",
+            "formatDate": [Function],
+            "formatHTMLMessage": [Function],
+            "formatMessage": [Function],
+            "formatNumber": [Function],
+            "formatPlural": [Function],
+            "formatRelative": [Function],
+            "formatTime": [Function],
+            "formats": Object {},
+            "formatters": Object {
+              "getDateTimeFormat": [Function],
+              "getMessageFormat": [Function],
+              "getNumberFormat": [Function],
+              "getPluralFormat": [Function],
+              "getRelativeFormat": [Function],
+            },
+            "locale": "en",
+            "messages": null,
+            "now": [Function],
+            "onError": [Function],
+            "textComponent": "span",
+            "timeZone": null,
+          }
+        }
+        locale="en"
+        maxDate={"2017-01-01T00:00:00.000Z"}
+        minDate={"2017-01-01T00:00:00.000Z"}
+        monthsShown={1}
+        name="date-input"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onChangeRaw={[Function]}
+        onClickOutside={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onMonthChange={[Function]}
+        onSelect={[Function]}
+        placeholderText="Terra.datePicker.dateFormat"
+        popoverAttachment="top center"
+        popoverTargetAttachment="bottom center"
+        popperContainer={[Function]}
+        popperModifiers={
+          Object {
+            "keepTogether": Object {
+              "enabled": true,
+            },
+          }
+        }
+        popperPlacement="bottom"
+        preventOpenOnFocus={true}
+        required={false}
+        selected={"2017-01-01T00:00:00.000Z"}
+        shouldCloseOnSelect={true}
+        showMonthDropdown={true}
+        showTimeSelect={false}
+        showYearDropdown={true}
+        timeIntervals={30}
+        todayButton="Terra.datePicker.today"
+        utcOffset={0}
+        withPortal={false}
+      />
+    }
+  />
+</div>
+`;
+
+exports[`should render a date picker with onCalendarButtonClick 1`] = `
+<div
+  className="date-picker"
+>
+  <ResponsiveElement
+    defaultElement={
+      <DatePicker
+        allowSameDay={false}
+        customInput={
+          <DatePickerInput
+            onButtonFocus={[Function]}
+            onCalendarButtonClick={[Function]}
+            shouldShowPicker={false}
+          />
+        }
+        dateFormat="MM/DD/YYYY"
+        dateFormatCalendar=" "
+        disabled={false}
+        disabledKeyboardNavigation={false}
+        dropdownMode="select"
+        excludeDates={
+          Array [
+            "2017-01-01T00:00:00.000Z",
+          ]
+        }
+        fixedHeight={true}
+        includeDates={
+          Array [
+            "2017-01-01T00:00:00.000Z",
+          ]
+        }
+        intl={
+          Object {
+            "defaultFormats": Object {},
+            "defaultLocale": "en",
+            "formatDate": [Function],
+            "formatHTMLMessage": [Function],
+            "formatMessage": [Function],
+            "formatNumber": [Function],
+            "formatPlural": [Function],
+            "formatRelative": [Function],
+            "formatTime": [Function],
+            "formats": Object {},
+            "formatters": Object {
+              "getDateTimeFormat": [Function],
+              "getMessageFormat": [Function],
+              "getNumberFormat": [Function],
+              "getPluralFormat": [Function],
+              "getRelativeFormat": [Function],
+            },
+            "locale": "en",
+            "messages": null,
+            "now": [Function],
+            "onError": [Function],
+            "textComponent": "span",
+            "timeZone": null,
+          }
+        }
+        locale="en"
+        maxDate={"2017-01-01T00:00:00.000Z"}
+        minDate={"2017-01-01T00:00:00.000Z"}
+        monthsShown={1}
+        name="date-input"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onChangeRaw={[Function]}
+        onClickOutside={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onMonthChange={[Function]}
+        onSelect={[Function]}
+        placeholderText="Terra.datePicker.dateFormat"
+        preventOpenOnFocus={true}
+        required={false}
+        selected={"2017-01-01T00:00:00.000Z"}
+        shouldCloseOnSelect={true}
+        showMonthDropdown={true}
+        showTimeSelect={false}
+        showYearDropdown={true}
+        timeIntervals={30}
+        todayButton="Terra.datePicker.today"
+        utcOffset={0}
+        withPortal={true}
+      />
+    }
+    responsiveTo="window"
+    small={
+      <DatePicker
+        allowSameDay={false}
+        customInput={
+          <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -1086,6 +1098,7 @@ exports[`should render a date picker with onChange 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -1166,6 +1179,7 @@ exports[`should render a date picker with onChange 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -1265,6 +1279,7 @@ exports[`should render a date picker with onChangeRaw 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -1345,6 +1360,7 @@ exports[`should render a date picker with onChangeRaw 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -1444,6 +1460,7 @@ exports[`should render a date picker with onFocus 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -1524,6 +1541,7 @@ exports[`should render a date picker with onFocus 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -1623,6 +1641,7 @@ exports[`should render a date picker with onSelect 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -1703,6 +1722,7 @@ exports[`should render a date picker with onSelect 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -1802,6 +1822,7 @@ exports[`should render a date picker with releaseFocus 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             releaseFocus={[Function]}
             shouldShowPicker={false}
@@ -1883,6 +1904,7 @@ exports[`should render a date picker with releaseFocus 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             releaseFocus={[Function]}
             shouldShowPicker={false}
@@ -1983,6 +2005,7 @@ exports[`should render a date picker with requestFocus 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             requestFocus={[Function]}
             shouldShowPicker={false}
@@ -2064,6 +2087,7 @@ exports[`should render a date picker with requestFocus 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             requestFocus={[Function]}
             shouldShowPicker={false}
@@ -2164,6 +2188,7 @@ exports[`should render a default date input and date picker 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -2244,6 +2269,7 @@ exports[`should render a default date input and date picker 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -2348,6 +2374,7 @@ exports[`should render a default date input with custom input attributes 1`] = `
                 "id": "terra-date-input",
               }
             }
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -2433,6 +2460,7 @@ exports[`should render a default date input with custom input attributes 1`] = `
                 "id": "terra-date-input",
               }
             }
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -2532,6 +2560,7 @@ exports[`should render a disabled date picker 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -2612,6 +2641,7 @@ exports[`should render a disabled date picker 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -2711,6 +2741,7 @@ exports[`should render a required date input and date picker 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />
@@ -2791,6 +2822,7 @@ exports[`should render a required date input and date picker 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
           />

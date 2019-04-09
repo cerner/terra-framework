@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.3.0 - (April 9, 2019)
+------------------
 ### Added
 * EmbeddedContentProviderTestTemplate for testing embedded applications
 
