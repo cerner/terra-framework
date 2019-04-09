@@ -6,6 +6,10 @@ Unreleased
 ### Fixed
 * Updated RoutingMenu to correctly synchronize internal state with props provided after initial mount
 
+### Added
+* Added alt text to app logo image used in doc example with icons in nav
+
+
 4.8.0 - (April 2, 2019)
 ------------------
 ### Added
