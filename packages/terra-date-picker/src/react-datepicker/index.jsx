@@ -33,6 +33,7 @@ import {
   safeDateFormat,
   getHightLightDaysMap
 } from './date_utils'
+import DatePositionUtils from '../DatePositionUtil'
 import onClickOutside from 'react-onclickoutside'
 
 const outsideClickIgnoreClass = 'react-datepicker-ignore-onclickoutside'
@@ -145,6 +146,7 @@ export default class DatePicker extends React.Component {
   constructor (props) {
     super(props)
     this.state = this.calcInitialState()
+    this.handleOnPosition = this.handleOnPosition.bind(this);
   }
 
   componentWillReceiveProps (nextProps) {
@@ -327,6 +329,24 @@ export default class DatePicker extends React.Component {
 
     this.props.onChange(changedDate)
     this.setOpen(false)
+  }
+
+  handleOnPosition(event, positions) {
+    this.setArrowPosition(positions.content, positions.target);
+  }
+
+  setArrowPosition(contentPosition, targetPosition) {
+    const arrowPosition = DatePositionUtils.getArrowPosition(contentPosition, targetPosition, 8, 3);
+
+    this.datePickerHookShotContainer.setAttribute('data-placement', arrowPosition);
+
+    // if (arrowPosition === 'top' || arrowPosition === 'bottom') {
+    //   this.arrowNode.style.left = PopupUtils.leftOffset(contentPosition, targetPosition, PopupArrow.Opts.arrowSize, cornerSize);
+    //   this.arrowNode.style.top = '';
+    // } else {
+    //   this.arrowNode.style.left = '';
+    //   this.arrowNode.style.top = PopupUtils.topOffset(contentPosition, targetPosition, PopupArrow.Opts.arrowSize, cornerSize);
+    // }
   }
 
   onInputClick = () => {
@@ -539,26 +559,30 @@ export default class DatePicker extends React.Component {
 
     return (
       <React.Fragment>
-        <div data-terra-date-picker-container className="react-datepicker__input-container">
+        <div ref={(container) => { this.datePickerContainer = container; }} className="react-datepicker__input-container">
           {this.renderDateInput()}
           {this.renderClearButton()}
         </div>
-        <Hookshot
+        {calendar && <Hookshot
           attachmentBehavior="flip"
           contentAttachment={{ vertical: 'top', horizontal: 'center' }}
           isEnabled={true}
-          isOpen={(this.state.isOpen | !this.props.disabled)}
+          isOpen={(this.state.open && !this.props.disabled)}
           targetAttachment={{ vertical: 'bottom', horizontal: 'center' }}
-          targetRef={() => document.querySelector('[data-terra-date-picker-container]')}
+          targetRef={() => this.datePickerContainer }
+          attachmentMargin={8}
+          onPosition={this.handleOnPosition}
         >
-          <Hookshot.Content
-            onEsc={this.handleRequestClose}
-            onOutsideClick={this.handleRequestClose}
-            onResize={this.handleRequestClose}
-          >
-            {calendar}
+          <Hookshot.Content>
+            <div
+              className="react-datepicker-hookshot"
+              data-placement
+              ref={(container) => { this.datePickerHookShotContainer = container; }}
+            >
+              {calendar}
+            </div>
           </Hookshot.Content>
-        </Hookshot>
+        </Hookshot>}
       </React.Fragment>
     )
   }

@@ -1,10 +1,6 @@
 @import "variables.scss";
 @import "mixins.scss";
 
-// TODO: REVIEW IF THIS IS STILL NEEDED
-.react-datepicker-wrapper {
-  display: inline-block;
-}
 
 .react-datepicker {
   font-family: $datepicker__font-family;
@@ -23,10 +19,9 @@
 }
 
 // TODO: REVIEW THESE STYLES
-.react-datepicker-popper {
-  z-index: 1;
+.react-datepicker-hookshot {
 
-  &[data-placement^="bottom"] {
+  &[data-placement^="top"] {
     margin-top: $datepicker__triangle-size + 2px;
 
     .react-datepicker__triangle {
@@ -34,29 +29,11 @@
     }
   }
 
-  &[data-placement^="top"] {
+  &[data-placement^="bottom"] {
     margin-bottom: $datepicker__triangle-size + 2px;
 
     .react-datepicker__triangle {
       @extend %triangle-arrow-down;
-    }
-  }
-
-  &[data-placement^="right"] {
-    margin-left: $datepicker__triangle-size;
-
-    .react-datepicker__triangle {
-      left: auto;
-      right: 42px;
-    }
-  }
-
-  &[data-placement^="left"] {
-    margin-right: $datepicker__triangle-size;
-
-    .react-datepicker__triangle {
-      left: 42px;
-      right: auto;
     }
   }
 }
