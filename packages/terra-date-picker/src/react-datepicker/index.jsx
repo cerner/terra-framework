@@ -336,7 +336,7 @@ export default class DatePicker extends React.Component {
   }
 
   setArrowPosition(contentPosition, targetPosition) {
-    const arrowPosition = DatePositionUtils.getArrowPosition(contentPosition, targetPosition, 8, 4);
+    const arrowPosition = DatePositionUtils.getArrowPosition(contentPosition, targetPosition, 8, 0);
 
     this.datePickerHookShotContainer.setAttribute('data-placement', arrowPosition);
   }
@@ -562,13 +562,12 @@ export default class DatePicker extends React.Component {
           isOpen={(this.state.open && !this.props.disabled)}
           targetAttachment={{ vertical: 'bottom', horizontal: 'center' }}
           targetRef={() => this.datePickerContainer }
-          attachmentMargin={8}
           onPosition={this.handleOnPosition}
         >
           <Hookshot.Content>
             <div
               className="react-datepicker-hookshot"
-              data-placement
+              data-placement="bottom"
               ref={(container) => { this.datePickerHookShotContainer = container; }}
             >
               {calendar}

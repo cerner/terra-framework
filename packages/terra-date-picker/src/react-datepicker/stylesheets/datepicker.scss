@@ -18,8 +18,10 @@
   left: 50px;
 }
 
-// TODO: REVIEW THESE STYLES
+
 .react-datepicker-hookshot {
+  margin-left: 5px;
+  margin-right: 5px;
 
   &[data-placement^="top"] {
     margin-top: $datepicker__triangle-size + 2px;
