@@ -147,6 +147,8 @@ export default class DatePicker extends React.Component {
     super(props)
     this.state = this.calcInitialState()
     this.handleOnPosition = this.handleOnPosition.bind(this);
+    this.datePickerContainer = React.createRef();
+    this.datePickerHookShotContainer = React.createRef();
   }
 
   componentWillReceiveProps (nextProps) {
@@ -338,7 +340,7 @@ export default class DatePicker extends React.Component {
   setArrowPosition(contentPosition, targetPosition) {
     const arrowPosition = DatePositionUtils.getArrowPosition(contentPosition, targetPosition, 8, 0);
 
-    this.datePickerHookShotContainer.setAttribute('data-placement', arrowPosition);
+    this.datePickerHookShotContainer.current.setAttribute('data-placement', arrowPosition);
   }
 
   onInputClick = () => {
@@ -551,7 +553,10 @@ export default class DatePicker extends React.Component {
 
     return (
       <React.Fragment>
-        <div ref={(container) => { this.datePickerContainer = container; }} className="react-datepicker__input-container">
+        <div
+         ref={this.datePickerContainer}
+         className="react-datepicker__input-container"
+        >
           {this.renderDateInput()}
           {this.renderClearButton()}
         </div>
@@ -561,14 +566,14 @@ export default class DatePicker extends React.Component {
           isEnabled={true}
           isOpen={(this.state.open && !this.props.disabled)}
           targetAttachment={{ vertical: 'bottom', horizontal: 'center' }}
-          targetRef={() => this.datePickerContainer }
+          targetRef={() => this.datePickerContainer.current }
           onPosition={this.handleOnPosition}
         >
           <Hookshot.Content>
             <div
               className="react-datepicker-hookshot"
               data-placement="bottom"
-              ref={(container) => { this.datePickerHookShotContainer = container; }}
+              ref={this.datePickerHookShotContainer}
             >
               {calendar}
             </div>
