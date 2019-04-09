@@ -50,6 +50,8 @@ const getArrowPosition = (contentPosition, targetPosition, arrowOffset, cornerOf
       return 'top';
     }
   }
+
+  return 'bottom';
 };
 
 const DatePositionUtils = {
