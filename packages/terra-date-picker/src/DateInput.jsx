@@ -35,6 +35,10 @@ const propTypes = {
    */
   onFocus: PropTypes.func,
   /**
+   * A callback function triggered when the calendar button receives focus. function(event)
+   */
+  onButtonFocus: PropTypes.func,
+  /**
    * The onInputKeyDown callback function from react-datepicker to handle keyboard navigation.
    */
   onKeyDown: PropTypes.func,
@@ -67,6 +71,7 @@ const defaultProps = {
   onChange: undefined,
   onClick: undefined,
   onFocus: undefined,
+  onButtonFocus: undefined,
   onKeyDown: undefined,
   placeholder: undefined,
   releaseFocus: undefined,
@@ -134,6 +139,7 @@ class DatePickerInput extends React.Component {
       onChange,
       onClick,
       onFocus,
+      onButtonFocus,
       onKeyDown,
       placeholder,
       releaseFocus,
@@ -172,7 +178,7 @@ class DatePickerInput extends React.Component {
           onChange={onChange}
           placeholder={placeholder}
           onFocus={onFocus}
-	  onBlur={onBlur}
+          onBlur={onBlur}
         />
         <Button
           className={styles.button}
@@ -184,6 +190,7 @@ class DatePickerInput extends React.Component {
           isCompact
           isDisabled={additionalInputProps.disabled}
           onBlur={onBlur}
+          onFocus={onButtonFocus}
         />
       </div>
     );

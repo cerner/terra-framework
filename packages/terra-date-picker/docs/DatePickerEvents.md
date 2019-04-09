@@ -15,6 +15,9 @@ terra-date-picker has several callback events that are slightly different in beh
 ### onClickOutside
 * The `onClickOutside` callback prop is triggered when clicking anywhere outside of the date picker to dismiss it.
 
+### onFocus
+* The `onFocus` callback prop is triggered when the component initially gains focus. If the focus is moved from the date input to the calendar button, the `onFocus` event will not be triggered since the focus is still within the date picker component. Like the `onBlur` event, the `onFocus` event does not get triggered when the focus is moved within child node of the Date Picker component to another child node of the same Date Picker component.
+
 ### onSelect
 * The `onSelect` callback prop is triggered when a date is selected from the date picker. Once a date is selected, the `onChange` event will be triggered first followed by the `onSelect` event.
 

@@ -142,9 +142,11 @@ class DateTimePicker extends React.Component {
     this.handleStandardTimeButtonClick = this.handleStandardTimeButtonClick.bind(this);
     this.handleOnDateInputFocus = this.handleOnDateInputFocus.bind(this);
     this.handleOnTimeInputFocus = this.handleOnTimeInputFocus.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
     this.handleOnCalendarButtonClick = this.handleOnCalendarButtonClick.bind(this);
     this.handleOffsetButtonClick = this.handleOffsetButtonClick.bind(this);
     this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
+    this.dateTimePickerContainer = React.createRef();
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -178,7 +180,7 @@ class DateTimePicker extends React.Component {
     const activeTarget = event.relatedTarget ? event.relatedTarget : document.activeElement;
 
     // Handle blur only if focus has moved out of the entire date time picker component.
-    if (!this.dateTimeNode.contains(activeTarget)) {
+    if (!this.dateTimePickerContainer.current.contains(activeTarget)) {
       const isDateTimeValid = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat);
       const enteredDateTime = isDateTimeValid ? this.state.dateTime : null;
 
@@ -196,7 +198,7 @@ class DateTimePicker extends React.Component {
     const activeTarget = event.relatedTarget ? event.relatedTarget : document.activeElement;
 
     // Handle blur only if focus has moved out of the entire date time picker component.
-    if (!this.dateTimeNode.contains(activeTarget)) {
+    if (!this.dateTimePickerContainer.current.contains(activeTarget)) {
       const isDateTimeValid = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat);
       let updatedDateTime;
 
@@ -318,15 +320,20 @@ class DateTimePicker extends React.Component {
   }
 
   handleOnInputFocus(event) {
-    if (this.props.onFocus) {
-      this.props.onFocus(event);
-    }
+    this.handleFocus(event);
 
     if (!this.isDefaultDateAcceptable) {
       this.dateValue = '';
       this.timeValue = '';
       this.handleChange(event, null);
       this.isDefaultDateAcceptable = true;
+    }
+  }
+
+  handleFocus(event) {
+    // Handle focus only if focus is gained from outside of the entire date time picker component.
+    if (this.props.onFocus && !this.dateTimePickerContainer.current.contains(event.relatedTarget)) {
+      this.props.onFocus(event);
     }
   }
 
@@ -422,6 +429,7 @@ class DateTimePicker extends React.Component {
         releaseFocus={this.props.releaseFocus}
         requestFocus={this.props.requestFocus}
         onBlur={this.handleOnTimeBlur}
+        onFocus={this.handleFocus}
       />
     );
   }
@@ -454,7 +462,7 @@ class DateTimePicker extends React.Component {
       <div
         {...customProps}
         className={cx('date-time-picker')}
-        ref={(node) => { this.dateTimeNode = node; }}
+        ref={this.dateTimePickerContainer}
       >
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
@@ -495,6 +503,7 @@ class DateTimePicker extends React.Component {
             name="input"
             value={this.timeValue}
             disabled={disabled}
+            variant="12-hour"
           />
 
           {this.state.isAmbiguousTime ? this.renderTimeClarification() : null }

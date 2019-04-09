@@ -97,6 +97,7 @@ class TimeInput extends React.Component {
       value = undefined;
     }
 
+    this.timeInputContainer = React.createRef();
     this.handleHourChange = this.handleHourChange.bind(this);
     this.handleMinuteChange = this.handleMinuteChange.bind(this);
     this.handleHourInputKeyDown = this.handleHourInputKeyDown.bind(this);
@@ -193,7 +194,7 @@ class TimeInput extends React.Component {
   }
 
   handleFocus(event) {
-    if (this.props.onFocus) {
+    if (this.props.onFocus && !this.timeInputContainer.current.contains(event.relatedTarget)) {
       this.props.onFocus(event);
     }
 
@@ -253,7 +254,7 @@ class TimeInput extends React.Component {
       const activeTarget = event.relatedTarget ? event.relatedTarget : document.activeElement;
 
       // Handle blur only if focus has moved out of the entire time input component.
-      if (!this.timeInputNode.contains(activeTarget)) {
+      if (!this.timeInputContainer.current.contains(activeTarget)) {
         this.props.onBlur(event);
       }
     }
@@ -342,15 +343,21 @@ class TimeInput extends React.Component {
     this.handleValueChange(event, TimeUtil.inputType.HOUR, this.state.hour.toString(), event.target.value);
   }
 
-  handleMeridiemInputFocus() {
+  handleMeridiemInputFocus(event) {
     // When clicked to put focus on the meridiem input, the focus would then need to be passed and set on the meridium select,
     // which would call handleMeridiemSelectFocus, to get the desired behavior and styles.
     this.meridiemSelect.focus();
+
+    if (this.props.onFocus && !this.timeInputContainer.current.contains(event.relatedTarget)) {
+      this.props.onFocus(event);
+    }
   }
 
-  handleMeridiemSelectFocus(event) {
-    this.handleFocus(event);
-    this.setState({ meridiemFocused: true });
+  handleMeridiemSelectFocus() {
+    this.setState({
+      isFocused: true,
+      meridiemFocused: true,
+    });
   }
 
   /**
@@ -566,7 +573,7 @@ class TimeInput extends React.Component {
       <div
         {...customProps}
         className={cx(['mobile-time-picker', customProps.className])}
-        ref={(node) => { this.timeInputNode = node; }}
+        ref={this.timeInputContainer}
       >
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
@@ -626,7 +633,7 @@ class TimeInput extends React.Component {
               key={this.anteMeridiem}
               className={cx('meridiem-button')}
               text={this.anteMeridiem}
-	      onBlur={this.handleMeridiemBlur}
+              onBlur={this.handleMeridiemBlur}
               onFocus={this.handleFocus}
               isDisabled={disabled}
             />
@@ -634,7 +641,7 @@ class TimeInput extends React.Component {
               key={this.postMeridiem}
               className={cx('meridiem-button')}
               text={this.postMeridiem}
-	      onBlur={this.handleMeridiemBlur}
+              onBlur={this.handleMeridiemBlur}
               onFocus={this.handleFocus}
               isDisabled={disabled}
             />
@@ -688,7 +695,7 @@ class TimeInput extends React.Component {
       <div
         {...customProps}
         className={timeInputClassNames}
-        ref={(node) => { this.timeInputNode = node; }}
+        ref={this.timeInputContainer}
       >
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.

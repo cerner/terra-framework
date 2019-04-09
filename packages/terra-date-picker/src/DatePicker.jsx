@@ -66,7 +66,8 @@ const propTypes = {
    */
   onClickOutside: PropTypes.func,
   /**
-   * A callback function triggered when the date input receives focus. function(event)
+   * A callback function triggered when the date picker component receives focus.
+   * This event does not get triggered when the focus is moved from the date input to the calendar button since the focus is still within the main date picker component.
    */
   onFocus: PropTypes.func,
   /**
@@ -130,6 +131,7 @@ class DatePicker extends React.Component {
       prevPropsSelectedDate: props.selectedDate,
     };
 
+    this.datePickerContainer = React.createRef();
     this.isDefaultDateAcceptable = false;
     this.handleBlur = this.handleBlur.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -137,6 +139,7 @@ class DatePicker extends React.Component {
     this.handleOnSelect = this.handleOnSelect.bind(this);
     this.handleOnClickOutside = this.handleOnClickOutside.bind(this);
     this.handleOnInputFocus = this.handleOnInputFocus.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
     this.handleOnCalendarButtonClick = this.handleOnCalendarButtonClick.bind(this);
   }
 
@@ -195,7 +198,7 @@ class DatePicker extends React.Component {
       const activeTarget = event.relatedTarget ? event.relatedTarget : document.activeElement;
 
       // Handle blur only if focus has moved out of the entire date picker component.
-      if (!this.dateNode.contains(activeTarget)) {
+      if (!this.datePickerContainer.current.contains(activeTarget)) {
         this.props.onBlur(event);
       }
     }
@@ -218,13 +221,18 @@ class DatePicker extends React.Component {
   }
 
   handleOnInputFocus(event) {
-    if (this.props.onFocus) {
-      this.props.onFocus(event);
-    }
+    this.handleFocus(event);
 
     if (!this.isDefaultDateAcceptable) {
       this.handleChange(null, event);
       this.isDefaultDateAcceptable = true;
+    }
+  }
+
+  handleFocus(event) {
+    // Handle focus only if focus is gained from outside of the entire date picker component.
+    if (this.props.onFocus && !this.datePickerContainer.current.contains(event.relatedTarget)) {
+      this.props.onFocus(event);
     }
   }
 
@@ -310,6 +318,7 @@ class DatePicker extends React.Component {
             releaseFocus={releaseFocus}
             requestFocus={requestFocus}
             shouldShowPicker={!this.isDefaultDateAcceptable && this.state.selectedDate === null}
+            onButtonFocus={this.handleFocus}
           />
 )}
         excludeDates={exludeMomentDates}
@@ -350,6 +359,7 @@ class DatePicker extends React.Component {
             releaseFocus={releaseFocus}
             requestFocus={requestFocus}
             shouldShowPicker={!this.isDefaultDateAcceptable && this.state.selectedDate === null}
+            onButtonFocus={this.handleFocus}
           />
 )}
         excludeDates={exludeMomentDates}
@@ -383,7 +393,7 @@ class DatePicker extends React.Component {
     return (
       <div
         className={styles['date-picker']}
-        ref={(node) => { this.dateNode = node; }}
+        ref={this.datePickerContainer}
       >
         <ResponsiveElement
           responsiveTo="window"

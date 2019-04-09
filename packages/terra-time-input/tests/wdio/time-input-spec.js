@@ -325,28 +325,32 @@ describe('Time Input onChange operations', () => {
 describe('Time Input onBlur operations', () => {
   describe('Time Input onBlur', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-blur');
+      browser.url('/#/raw/tests/terra-time-input/time-input/time-input/focus-blur');
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.execute(() => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
         document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-        expect(browser.getText('#blur-state')).to.equal('Blur not triggered');
+        expect(browser.getText('#blur-count')).to.equal('0');
+        expect(browser.getText('#focus-count')).to.equal('1');
       });
 
       it('tabs to the minute input and onBlur is not triggered', () => {
         browser.keys('Tab');
-        expect(browser.getText('#blur-state')).to.equal('Blur not triggered');
+        expect(browser.getText('#blur-count')).to.equal('0');
+        expect(browser.getText('#focus-count')).to.equal('1');
       });
 
       it('tabs to the meridiem and onBlur is not triggered', () => {
         browser.keys('Tab');
-        expect(browser.getText('#blur-state')).to.equal('Blur not triggered');
+        expect(browser.getText('#blur-count')).to.equal('0');
+        expect(browser.getText('#focus-count')).to.equal('1');
       });
 
       it('tabs out of the component and onBlur is triggered', () => {
         browser.keys('Tab');
-        expect(browser.getText('#blur-state')).to.equal('Blur triggered');
+        expect(browser.getText('#blur-count')).to.equal('1');
+        expect(browser.getText('#focus-count')).to.equal('1');
       });
     });
   });

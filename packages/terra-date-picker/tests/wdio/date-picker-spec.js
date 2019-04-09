@@ -233,7 +233,7 @@ describe('Date Picker', () => {
   });
 
   describe('On Blur', () => {
-    before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-on-blur'));
+    before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-focus-blur'));
 
     it('puts focus on the input', () => {
       browser.click('input[name="terra-date-date-input-onblur"]');
@@ -241,17 +241,20 @@ describe('Date Picker', () => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         document.querySelector('input').style.caretColor = 'transparent';
       });
-      expect(browser.getText('#blur-state')).to.equal('Blur not triggered');
+      expect(browser.getText('#blur-count')).to.equal('0');
+      expect(browser.getText('#focus-count')).to.equal('1');
     });
 
     it('tabs to the calendar button and onBlur is not triggered', () => {
       browser.keys('Tab');
-      expect(browser.getText('#blur-state')).to.equal('Blur not triggered');
+      expect(browser.getText('#blur-count')).to.equal('0');
+      expect(browser.getText('#focus-count')).to.equal('1');
     });
 
     it('tabs out of the component and onBlur is triggered', () => {
       browser.keys('Tab');
-      expect(browser.getText('#blur-state')).to.equal('Blur triggered');
+      expect(browser.getText('#blur-count')).to.equal('1');
+      expect(browser.getText('#focus-count')).to.equal('1');
     });
   });
 

@@ -6,23 +6,31 @@ class DatePickerEvents extends React.Component {
     super(props);
     this.state = {
       blurTriggerCount: 0,
+      focusTriggerCount: 0,
       changeValue: '',
       changeRawValue: '',
       selectValue: '',
       clickOutsideTriggerCount: 0,
     };
     this.handleBlur = this.handleBlur.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeRaw = this.handleChangeRaw.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
     this.handleOnClickOutside = this.handleOnClickOutside.bind(this);
     this.blurCount = 0;
+    this.focusCount = 0;
     this.clickOutsideCount = 0;
   }
 
   handleBlur() {
     this.blurCount = this.blurCount + 1;
     this.setState({ blurTriggerCount: this.blurCount });
+  }
+
+  handleFocus() {
+    this.focusCount = this.focusCount + 1;
+    this.setState({ focusTriggerCount: this.focusCount });
   }
 
   handleChange(event, value) {
@@ -50,6 +58,10 @@ class DatePickerEvents extends React.Component {
           <span id="blur-state">{this.state.blurTriggerCount}</span>
           <br />
           <br />
+          onFocus Trigger Count:
+          <span id="blur-state">{this.state.focusTriggerCount}</span>
+          <br />
+          <br />
           onClickOutside Trigger Count:
           <span id="blur-state">{this.state.clickOutsideTriggerCount}</span>
           <br />
@@ -68,6 +80,7 @@ class DatePickerEvents extends React.Component {
         <DatePicker
           name="date-picker-events"
           onBlur={this.handleBlur}
+          onFocus={this.handleFocus}
           onChange={this.handleChange}
           onChangeRaw={this.handleChangeRaw}
           onSelect={this.handleSelect}
