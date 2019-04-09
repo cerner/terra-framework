@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.12.0 - (April 9, 2019)
+------------------
 ### Changed
 * Replaced react-popper usage with terra-hookshot
 
