@@ -336,17 +336,9 @@ export default class DatePicker extends React.Component {
   }
 
   setArrowPosition(contentPosition, targetPosition) {
-    const arrowPosition = DatePositionUtils.getArrowPosition(contentPosition, targetPosition, 8, 3);
+    const arrowPosition = DatePositionUtils.getArrowPosition(contentPosition, targetPosition, 8, 4);
 
     this.datePickerHookShotContainer.setAttribute('data-placement', arrowPosition);
-
-    // if (arrowPosition === 'top' || arrowPosition === 'bottom') {
-    //   this.arrowNode.style.left = PopupUtils.leftOffset(contentPosition, targetPosition, PopupArrow.Opts.arrowSize, cornerSize);
-    //   this.arrowNode.style.top = '';
-    // } else {
-    //   this.arrowNode.style.left = '';
-    //   this.arrowNode.style.top = PopupUtils.topOffset(contentPosition, targetPosition, PopupArrow.Opts.arrowSize, cornerSize);
-    // }
   }
 
   onInputClick = () => {
