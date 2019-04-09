@@ -1,4 +1,4 @@
-# Terra Date Picker - Events
+# Terra Date Picker
 
 ## Events
 terra-date-picker has several callback events that are slightly different in behavior from the native counterparts.
