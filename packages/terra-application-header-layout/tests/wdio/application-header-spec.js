@@ -38,4 +38,14 @@ describe('Application Header Layout', () => {
 
     Terra.should.matchScreenshot('Not Visible', { viewports, selector: '#test-header' });
   });
+
+  describe('Displays a application header layout with logo and utilities only', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-application-header-layout/application-header-layout/application-header-with-logo-and-utilities-only');
+      browser.waitForVisible('#test-header');
+    });
+
+    Terra.should.matchScreenshot({ viewports, selector: '#test-header' });
+    Terra.should.beAccessible({ viewports, context: '#test-header' });
+  });
 });
