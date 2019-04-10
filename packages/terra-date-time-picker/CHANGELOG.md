@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Leverage createSafeDate from the DateUtil.
 
 3.13.0 - (April 9, 2019)
 ------------------

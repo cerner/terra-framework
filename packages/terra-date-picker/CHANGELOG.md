@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Fixed propType warning if selectedDate prop is an empty string.
 
 3.12.0 - (April 9, 2019)
 ------------------

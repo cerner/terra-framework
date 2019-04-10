@@ -332,4 +332,12 @@ describe('DateTimePicker', () => {
 
     Terra.should.matchScreenshot({ viewports });
   });
+
+  describe('Invalid dates are ignored', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-ignore-empty-value');
+    });
+
+    Terra.should.matchScreenshot({ viewports });
+  });
 });
