@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.3.0 - (April 9, 2019)
+------------------
 ### Fixed
 * Setting Focus to slide panel's panel content on open.
 
