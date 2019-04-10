@@ -8,7 +8,7 @@
 | terra-button | ^3.3.0 | ^16.8.5 | The terra-button component provides users a way to trigger actions in the UI. |
 | terra-doc-template | ^2.2.0 | ^16.8.5 | Provides an adjustable template for documentation pages. |
 | terra-icon | ^3.1.0 | ^16.8.5 | The terra-icon component is used to visually represent a literal or symbolic object intended to initiate an action, communicate a status, or navigate the workflow. |
-| terra-layout | ^3.2.0 | ^16.8.5 | Provides a responsive starting point for the positioning of application components. |
+| terra-layout | ^3.3.0 | ^16.8.5 | Provides a responsive starting point for the positioning of application components. |
 | terra-markdown | ^2.6.0 | ^16.8.5 | React component to display the content of markdown files. |
 | terra-responsive-element | ^4.0.0 | ^16.8.5 | The terra-responsive-element conditionally renders components based on viewport size |
 | terra-toggle-button | ^3.0.0 | ^16.8.5 | Toggle button component that transitions content in and out with the click on a button. |

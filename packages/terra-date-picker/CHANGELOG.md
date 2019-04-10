@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Limited the characters that could be used in terra-date-picker to numeric, '.', and '/'.
 
+3.12.0 - (April 9, 2019)
+------------------
+### Changed
+* Replaced react-popper usage with terra-hookshot
+
 3.11.0 - (April 2, 2019)
 ------------------
 ### Changed
