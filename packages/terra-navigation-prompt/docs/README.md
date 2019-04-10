@@ -123,7 +123,7 @@ render() {
 
 ### `PromptRegistrationContext`
 
-The PromptRegistrationContext defines the communication contract between NavigationPrompts and NavigationPromptCheckpoints. A PromptRegistrationContext.Provider should provide an Object value with the following attributes:
+The PromptRegistrationContext defines the communication contract between NavigationPrompts and NavigationPromptCheckpoints. A PromptRegistrationContext.Provider must provide an Object value with the following attributes:
 
 |Key|Type|Description|
 |---|---|---|
@@ -132,7 +132,7 @@ The PromptRegistrationContext defines the communication contract between Navigat
 
 ## Extending the NavigationPrompt
 
-The various APIs provided and consumed by the NavigationPrompt and NavigationPromptCheckpoint are purposefully broad and unrestrictive. If more defined or restrictive APIs are desirable for a application platform, these components can and should be wrapped by components that provide the necessary functionality.
+The various APIs provided and consumed by the NavigationPrompt and NavigationPromptCheckpoint are purposefully broad and unrestrictive. If more defined or restricted APIs are desirable for a application platform, these components can and should be wrapped by components that provide the necessary interfaces.
 
 ## Component Features
 * [Cross-Browser Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)

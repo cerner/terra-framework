@@ -27,11 +27,11 @@
     "react-dom": "^16.8.0"
   },
   "dependencies": {
-    "classnames": "^2.2.5",
+    "classnames": "^2.2.6",
     "prop-types": "^15.5.8",
     "uuid": "^3.3.2",
     "terra-doc-template": "^2.0.0",
-    "terra-notification-dialog": "^2.3.0"
+    "terra-notification-dialog": "^2.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
