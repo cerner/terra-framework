@@ -34,7 +34,8 @@
     "keycode-js": "^1.0.4",
     "prop-types": "^15.5.8",
     "react-portal": "^4.1.2",
-    "terra-doc-template": "^2.2.0"
+    "terra-doc-template": "^2.2.0",
+    "wicg-inert": "^2.1.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

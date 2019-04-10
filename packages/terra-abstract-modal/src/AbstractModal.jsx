@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
 import KeyCode from 'keycode-js';
+import 'wicg-inert';
 import ModalContent from './_ModalContent';
 
 const zIndexes = ['6000', '7000', '8000', '9000'];
@@ -42,7 +43,7 @@ const propTypes = {
     PropTypes.func,
   ]),
   /**
-   * If set to true, the modal will trap the focus and prevents any popup within the modal from gaining focus.
+   * If set to true, the modal will honor pressing Esc key to close the modal.
    */
   isFocused: PropTypes.bool,
   /**
@@ -118,6 +119,12 @@ class AbstractModal extends React.Component {
     const mainDocumentElement = document.querySelector(this.props.rootSelector);
 
     if (mainDocumentElement) {
+      if (hiddenValue === 'true') {
+        mainDocumentElement.setAttribute('inert', '');
+      } else {
+        mainDocumentElement.removeAttribute('inert');
+      }
+
       mainDocumentElement.setAttribute('aria-hidden', hiddenValue);
     }
   }
@@ -160,7 +167,6 @@ class AbstractModal extends React.Component {
           classNameOverlay={classNameOverlay}
           role={role}
           fallbackFocus={fallbackFocus}
-          isFocused={isFocused}
           isFullscreen={isFullscreen}
           onRequestClose={onRequestClose}
           zIndex={zIndex}

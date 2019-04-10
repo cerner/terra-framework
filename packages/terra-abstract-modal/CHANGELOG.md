@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Change
+* Replaced use of focus trap with setting inert on root app when modal is open
 
 2.5.0 - (March 26, 2019)
 ------------------

@@ -5,6 +5,7 @@ import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
 import Input from 'terra-form-input';
 import ActionHeader from 'terra-action-header';
+import SelectField from 'terra-form-select';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 
 import styles from './example-styles.scss';
@@ -74,6 +75,13 @@ class DisclosureComponent extends React.Component {
       >
         <div className={cx('content-wrapper')}>
           <h3>{name}</h3>
+          <SelectField label="T-shirt size" placeholder="Select a size" selectId="tshirt-size-field" required style={{ maxWidth: '300px' }}>
+            <SelectField.Option value="xSmall" display="Extra Small" />
+            <SelectField.Option value="small" display="Small" />
+            <SelectField.Option value="medium" display="Medium" />
+            <SelectField.Option value="large" display="Large" />
+            <SelectField.Option value="xLarge" display="Extra Large" />
+          </SelectField>
           <p>The disclosed component can disclose content within the same panel.</p>
           <p>It can also render a header (like above) that implements the various DisclosureManager control functions.</p>
           <Button
