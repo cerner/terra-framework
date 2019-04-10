@@ -29,7 +29,7 @@ When a component renders a NavigationPrompt, it is telling its parent components
 
 The NavigationPrompt can be rendered with two props: a `description` string that gives context to the NavigationPrompt, and a `metaData` object that can be used to provide additional data that may be relevant to the NavigationPrompt.
 
-The NavigationPrompt can be rendered like any other component, but prop consistency should be maintained between renders when possible. Creating a new object for the `metaData` prop within a render function will cause the NavigationPrompt to deregister and reregister itself during every update:
+The NavigationPrompt can be rendered like any other component, but prop consistency should be maintained between renders when possible. Creating a new object for the `metaData` prop within a render function will cause the NavigationPrompt to re-register itself during every update:
 
 ```jsx
 render() {
