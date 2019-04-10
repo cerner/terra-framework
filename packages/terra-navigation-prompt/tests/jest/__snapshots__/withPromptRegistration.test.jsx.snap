@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withPromptRegistration should wrap and render the provided component 1`] = `
+<withPromptRegistration(TestComponent)>
+  <TestComponent
+    promptRegistration={
+      Object {
+        "deregisterPrompt": [Function],
+        "isDefaultContextValue": true,
+        "registerPrompt": [Function],
+      }
+    }
+  >
+    <div>
+      I am a test component
+    </div>
+  </TestComponent>
+</withPromptRegistration(TestComponent)>
+`;

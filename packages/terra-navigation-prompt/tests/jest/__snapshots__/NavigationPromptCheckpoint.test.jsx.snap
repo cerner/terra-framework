@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationPrompt Snapshots should render with children 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "deregisterPrompt": [Function],
+      "registerPrompt": [Function],
+    }
+  }
+>
+  <withPromptRegistration(MockPromptBase) />
+  <CheckpointNotificationDialog />
+</ContextProvider>
+`;
+
+exports[`NavigationPrompt Snapshots should render with minimal props 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "deregisterPrompt": [Function],
+      "registerPrompt": [Function],
+    }
+  }
+>
+  <CheckpointNotificationDialog />
+</ContextProvider>
+`;

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import PromptRegistrationContext from './PromptRegistrationContext';
+import withPromptRegistration from './_withPromptRegistration';
 import CheckpointNotificationDialog from './_CheckpointNotificationDialog';
 
 const propTypes = {
@@ -26,6 +28,14 @@ const propTypes = {
    * }`
    */
   onPromptChange: PropTypes.func,
+  /**
+   * @private
+   * An object containing prompt registration APIs provided through the PromptRegistrationContext.
+   */
+  promptRegistration: PropTypes.shape({
+    registerPrompt: PropTypes.func.isRequired,
+    deregisterPrompt: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 class NavigationPromptCheckpoint extends React.Component {
@@ -60,8 +70,7 @@ class NavigationPromptCheckpoint extends React.Component {
   }
 
   registerPrompt(promptId, promptDescription, metaData) {
-    const { onPromptChange } = this.props;
-    const ancestorCheckpoint = this.context;
+    const { onPromptChange, promptRegistration } = this.props;
 
     if (!promptId) {
       return;
@@ -73,12 +82,11 @@ class NavigationPromptCheckpoint extends React.Component {
       onPromptChange(NavigationPromptCheckpoint.getPromptArray(this.registeredPrompts));
     }
 
-    ancestorCheckpoint.registerPrompt(promptId, promptDescription, metaData);
+    promptRegistration.registerPrompt(promptId, promptDescription, metaData);
   }
 
   deregisterPrompt(promptId) {
-    const { onPromptChange } = this.props;
-    const ancestorCheckpoint = this.context;
+    const { onPromptChange, promptRegistration } = this.props;
 
     if (!this.registeredPrompts[promptId]) {
       return;
@@ -90,7 +98,7 @@ class NavigationPromptCheckpoint extends React.Component {
       onPromptChange(NavigationPromptCheckpoint.getPromptArray(this.registeredPrompts));
     }
 
-    ancestorCheckpoint.deregisterPrompt(promptId);
+    promptRegistration.deregisterPrompt(promptId);
   }
 
   /**
@@ -136,6 +144,5 @@ class NavigationPromptCheckpoint extends React.Component {
 }
 
 NavigationPromptCheckpoint.propTypes = propTypes;
-NavigationPromptCheckpoint.contextType = PromptRegistrationContext;
 
-export default NavigationPromptCheckpoint;
+export default withPromptRegistration(NavigationPromptCheckpoint);

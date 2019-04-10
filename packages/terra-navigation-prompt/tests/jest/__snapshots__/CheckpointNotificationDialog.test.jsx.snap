@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckpointNotificationDialog render should render NotificationDialog when active 1`] = `
+<NotificationDialog
+  isOpen={true}
+  message="Test Message"
+  primaryAction={
+    Object {
+      "onClick": [Function],
+      "text": "Reject",
+    }
+  }
+  secondaryAction={
+    Object {
+      "onClick": [Function],
+      "text": "Accept",
+    }
+  }
+  title="Test Title"
+  variant="warning"
+/>
+`;
+
+exports[`CheckpointNotificationDialog render should render null when inactive 1`] = `""`;

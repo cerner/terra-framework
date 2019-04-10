@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import uuidv4 from 'uuid/v4';
 
-import PromptRegistrationContext from './PromptRegistrationContext';
+import withPromptRegistration from './_withPromptRegistration';
 
 const propTypes = {
   /**
@@ -13,6 +13,15 @@ const propTypes = {
    * An object containing any other pertinent information related to the NavigationPrompt.
    */
   metaData: PropTypes.object,
+  /**
+   * @private
+   * An object containing prompt registration APIs provided through the PromptRegistrationContext.
+   */
+  promptRegistration: PropTypes.shape({
+    isDefaultContextValue: PropTypes.bool,
+    registerPrompt: PropTypes.func.isRequired,
+    deregisterPrompt: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 class NavigationPrompt extends React.Component {
@@ -28,19 +37,20 @@ class NavigationPrompt extends React.Component {
   }
 
   componentDidMount() {
-    const { description, metaData } = this.props;
-    const ancestorCheckpoint = this.context;
+    const { description, metaData, promptRegistration } = this.props;
 
     /**
-     * If the ancestorCheckpoint value is the ProviderRegistrationContext's default value, then there is not a matching NavigationPromptCheckpoint in the hierarchy.
+     * If the promptRegistration value is the ProviderRegistrationContext's default value,
+     * then there is not a matching NavigationPromptCheckpoint above it in the hierarchy.
+     * This is possible but likely not intentional, so the component warns.
      */
-    if (ancestorCheckpoint.isDefaultContextValue && process.env.NODE_ENV !== 'production') {
+    if (promptRegistration.isDefaultContextValue && process.env.NODE_ENV !== 'production') {
       /* eslint-disable no-console */
       console.warn('A NavigationPrompt was not rendered within the context of a NavigationPromptCheckpoint. If this is unexpected, validate that the expected version of the terra-navigation-prompt package is installed.');
       /* eslint-enable no-console */
     }
 
-    ancestorCheckpoint.registerPrompt(this.uuid, description, metaData);
+    promptRegistration.registerPrompt(this.uuid, description, metaData);
   }
 
   shouldComponentUpdate(nextProps) {
@@ -53,18 +63,13 @@ class NavigationPrompt extends React.Component {
   }
 
   componentDidUpdate() {
-    const { description, metaData } = this.props;
-    const ancestorCheckpoint = this.context;
+    const { description, metaData, promptRegistration } = this.props;
 
-    /**
-     * The NavigationPrompt is unregistered and then re-registered with the mosts recent prop values.
-     */
-    ancestorCheckpoint.deregisterPrompt(this.uuid);
-    ancestorCheckpoint.registerPrompt(this.uuid, description, metaData);
+    promptRegistration.registerPrompt(this.uuid, description, metaData);
   }
 
   componentWillUnmount() {
-    this.context.deregisterPrompt(this.uuid);
+    this.props.promptRegistration.deregisterPrompt(this.uuid);
   }
 
   render() {
@@ -73,6 +78,5 @@ class NavigationPrompt extends React.Component {
 }
 
 NavigationPrompt.propTypes = propTypes;
-NavigationPrompt.contextType = PromptRegistrationContext;
 
-export default NavigationPrompt;
+export default withPromptRegistration(NavigationPrompt);

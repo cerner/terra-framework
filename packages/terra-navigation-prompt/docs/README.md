@@ -121,5 +121,18 @@ render() {
 }
 ```
 
+### `PromptRegistrationContext`
+
+The PromptRegistrationContext defines the communication contract between NavigationPrompts and NavigationPromptCheckpoints. A PromptRegistrationContext.Provider should provide an Object value with the following attributes:
+
+|Key|Type|Description|
+|---|---|---|
+|`registerPrompt(promptId, promptDescription, metaData)`|Function|A function which should be called when a NavigationPrompt is mounted.|
+|`deregisterPrompt(promptId)`|Function|A function which should be called when a NavigationPrompt is unmounted.|
+
+## Extending the NavigationPrompt
+
+The various APIs provided and consumed by the NavigationPrompt and NavigationPromptCheckpoint are purposefully broad and unrestrictive. If more defined or restrictive APIs are desirable for a application platform, these components can and should be wrapped by components that provide the necessary functionality.
+
 ## Component Features
 * [Cross-Browser Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
