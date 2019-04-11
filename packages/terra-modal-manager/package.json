@@ -37,6 +37,9 @@
     "terra-responsive-element": "^4.0.0",
     "terra-slide-group": "^3.2.0"
   },
+  "devDependencies": {
+    "terra-form-select": "^5.13.0"
+  },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
     "compile:clean": "rm -rf lib",
