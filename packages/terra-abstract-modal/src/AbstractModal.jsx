@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
 import KeyCode from 'keycode-js';
+import './_polyfills';
 import 'wicg-inert';
 import ModalContent from './_ModalContent';
 
