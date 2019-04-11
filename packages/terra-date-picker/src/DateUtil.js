@@ -22,7 +22,6 @@ class DateUtil {
    * @return {array|undefined} - The array of moment objects each representing the valid dates. Undefined if there are no valid dates.
    */
   static filterInvalidDates(dates) {
-    debugger;
     const validMomentDates = [];
 
     if (Array.isArray(dates)) {
