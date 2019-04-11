@@ -1,27 +1,25 @@
 # Terra Embedded Content Consumer
 
-The Embedded Content Consumer is the application component which is embedding web content within it.
+The Embedded Content Consumer is the managed application component which is embedding web content within an iframe. The Embedded Content Consumer is responsible for the communication between its embedded content to its framework, such that interaction with embedded content appears seemless.
+
+Under the hood, the embedded-content-consumer utilizes an [`XFC (Cross-Frame-Container)`](https://www.npmjs.com/package/xfc) Consumer to manage the iframe size and to listen for messages bridged out from the embedded content through an XFC provider. 
+
+The embedded-content-consumer will use the messages sent from the embedded content to determine if updates are neeed within itself. Otherwise if the embedded content needs to be updated, embedded-content-consumer should send a reply message to the embedded content provider. Then, the embedded content will update itself when it receives the embedded-content-consumer message.
 
 ## Getting Started
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-embedded-content-consumer`
-  - `yarn add terra-embedded-content-consumer`
 
-## Usage
+- Install the [`xfc`](https://www.npmjs.com/package/xfc) peer dependency:
+  - `npm install xfc --save-dev`
+
+- Then, initalize the XFC Consumer at the root of your application to use the `terra-embedded-content-consumer`. This will create an app broker to manage embedded applications.
 
 ```jsx
-import React from 'react';
-import EmbeddedContentConsumer from 'terra-embedded-content-consumer';
+import { Consumer } from 'xfc';
 
-<EmbeddedContentConsumer
-  src="https://google.com"
-  onMount={(frame) => { this.frame = frame; }}
-  onLaunch={() => { console.log('launched'); }}
-  onAuthorize={() => { console.log('Authorized'); }}
-  options={{ secret: 'SecretKey', resizeConfig: { scrolling: true }}}
-  eventHandlers=[{ key: 'customEvent', handler: () => { console.log('Custom event invoked.'); } }]
-/>
+Consumer.init();
 ```
 
 ## Component Features
