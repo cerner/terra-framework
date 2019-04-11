@@ -224,6 +224,8 @@ class Select extends React.Component {
       }
     }
 
+    delete otherProps.selectId;
+
     return (
       <Frame
         {...otherProps}
