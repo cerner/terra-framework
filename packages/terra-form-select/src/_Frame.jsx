@@ -377,6 +377,15 @@ class Frame extends React.Component {
     } else if (keyCode === KeyCode.KEY_BACK_SPACE && Util.allowsMultipleSelections(this.props) && !this.state.searchValue && value.length > 0) {
       this.props.onDeselect(value[value.length - 1]);
     } else if (keyCode === KeyCode.KEY_ESCAPE) {
+      console.log(event.target); // this is either ul or input depending on the variant
+      console.log('esc key has been pressed');
+      /*
+      If you click on default variant, the event target is:
+      <ul id="terra-select-menu" role="listbox" class="_Menu-module__menu___24BDI" aria-activedescendant="terra-select-option-blue" tabindex="0"><</ul>
+
+      If you click on other variants, the event target is:
+      <input placeholder="Select a color" aria-label="Search" aria-describedby="terra-select-screen-reader-description-280" aria-disabled="false" type="text" class="_Frame-module__search-input___igso2" value="">
+      */
       this.closeDropdown();
     }
   }
