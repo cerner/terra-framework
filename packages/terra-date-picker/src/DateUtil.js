@@ -3,12 +3,13 @@ import moment from 'moment';
 
 class DateUtil {
   /**
-   * Creates a moment object using the provided date string.
+   * Creates a moment object using the provided date string. Moment is unable to initialize a valid date if the date passed in is
+   * null, empty string, or alpha characters and undefined would be returned.
    * @param {string|undefined} date - The date to convert. Expect to be in ISO format.
    * @return {object|undefined} - The moment object. Undefined if unable to convert.
    */
   static createSafeDate(date) {
-    if (!date || (date && date.length === 0)) {
+    if (!date) {
       return undefined;
     }
 
@@ -38,7 +39,7 @@ class DateUtil {
   }
 
   /**
-   * Determines if a date if in the range of two given dates.
+   * Determines if a date is within the range of two given dates.
    * @param {object} sourceDate - The moment date to check if it is within range.
    * @param {object} minDate - The moment date that represents the minimum date of the range.
    * @param {object} maxDate - The moment date that represents the maximum date of the range.

@@ -328,4 +328,12 @@ describe('Date Picker', () => {
     Terra.should.matchScreenshot();
     Terra.should.beAccessible({ rules: ignoredA11y });
   });
+
+  describe('Invalid dates are ignored', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-ignore-invalid-selected-dates');
+    });
+
+    Terra.should.matchScreenshot();
+  });
 });
