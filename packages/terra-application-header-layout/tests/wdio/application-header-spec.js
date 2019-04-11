@@ -45,7 +45,6 @@ describe('Application Header Layout', () => {
       browser.waitForVisible('#test-header');
     });
 
-    Terra.should.matchScreenshot({ viewports, selector: '#test-header' });
-    Terra.should.beAccessible({ viewports, context: '#test-header' });
+    Terra.should.validateElement({ selector: '#test-header' });
   });
 });
