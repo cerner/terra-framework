@@ -5,7 +5,6 @@ const propTypes = {
   borderColor: PropTypes.string,
   height: PropTypes.string,
   text: PropTypes.string,
-  textColor: PropTypes.string,
   width: PropTypes.string,
 };
 
@@ -13,12 +12,11 @@ const defaultProps = {
   borderColor: 'lightgrey',
   height: '100%',
   text: 'PlaceHolder',
-  textColor: 'grey',
   width: '100%',
 };
 
 const Placeholder = ({
-  borderColor, height, text, textColor, width,
+  borderColor, height, text, width,
 }) => (
   <div style={{
     height, width, position: 'relative', padding: '5px',
@@ -29,7 +27,7 @@ const Placeholder = ({
     }}
     >
       <div style={{
-        position: 'absolute', top: '50%', left: '50%', color: textColor, transform: 'translate3d(-50%, -50%, 0)',
+        position: 'absolute', top: '50%', left: '50%', transform: 'translate3d(-50%, -50%, 0)',
       }}
       >
         <h3>{text}</h3>

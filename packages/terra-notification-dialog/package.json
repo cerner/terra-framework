@@ -1,7 +1,7 @@
 {
   "name": "terra-notification-dialog",
   "main": "lib/NotificationDialog.js",
-  "version": "2.7.0",
+  "version": "2.9.0",
   "description": "`terra-notification-dialog` is a notification dialog component built over the `terra-abstract-modal`. It has the highest z-index of 9001. It is a common component to be used for confirmation/acceptance criteria style dialogs.",
   "repository": {
     "type": "git",
@@ -30,12 +30,12 @@
     "prop-types": "^15.5.8",
     "terra-abstract-modal": "^2.5.0",
     "terra-button": "^3.3.0",
-    "terra-disclosure-manager": "^4.6.0",
+    "terra-disclosure-manager": "^4.7.0",
     "terra-doc-template": "^2.2.0",
     "terra-icon": "^3.1.0",
     "terra-mixins": "^1.0.0",
-    "terra-modal-manager": "^5.7.0",
-    "terra-popup": "^5.7.0"
+    "terra-modal-manager": "^5.8.0",
+    "terra-popup": "^5.9.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

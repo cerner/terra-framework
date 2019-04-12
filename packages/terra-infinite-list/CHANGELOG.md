@@ -3,8 +3,16 @@ Changelog
 
 Unreleased
 ----------
+
+3.3.0 - (April 9, 2019)
+------------------
+### Changed
+* Changed documentation placeholder example colors to meet color contrast ratio
+
+3.2.0 - (April 2, 2019)
+------------------
 ### Added
-* Documentation for including section headers and subsection headers to the infinite list. 
+* Documentation for including section headers and subsection headers to the infinite list.
 
 3.1.0 - (March 26, 2019)
 ------------------
