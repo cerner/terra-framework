@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
 import KeyCode from 'keycode-js';
+//import ally from 'ally.js';
+import Disabled from 'ally.js/maintain/disabled';
+// import disabled from 'ally.js/esm/maintain/disabled';
+
 import ModalContent from './_ModalContent';
 
 const zIndexes = ['6000', '7000', '8000', '9000'];
@@ -42,10 +46,6 @@ const propTypes = {
     PropTypes.func,
   ]),
   /**
-   * If set to true, the modal will trap the focus and prevents any popup within the modal from gaining focus.
-   */
-  isFocused: PropTypes.bool,
-  /**
    * If set to true, the modal will be fullscreen on all breakpoint sizes.
    */
   isFullscreen: PropTypes.bool,
@@ -76,7 +76,6 @@ const defaultProps = {
   classNameOverlay: null,
   closeOnEsc: true,
   closeOnOutsideClick: true,
-  isFocused: true,
   isFullscreen: false,
   role: 'dialog',
   rootSelector: '#root',
@@ -93,29 +92,29 @@ class AbstractModal extends React.Component {
     document.addEventListener('keydown', this.handleKeydown);
   }
 
-  componentDidUpdate(prevProps) {
-    // When the Modal is no longer in focus, it should no longer listen to the keydown event to handle the Escape key.
-    // Otherwise, the Modal would also get closed when the intention for pressing the Escape key is to close a popup inside the modal.
-    if (!this.props.isFocused && prevProps.isFocused) {
-      document.removeEventListener('keydown', this.handleKeydown);
-    } else if (this.props.isFocused && !prevProps.isFocused) {
-      document.addEventListener('keydown', this.handleKeydown);
-    }
-  }
-
   componentWillUnmount() {
     document.removeEventListener('keydown', this.handleKeydown);
     this.toggleVisuallyHiddenMainDocument('false');
   }
 
   handleKeydown(e) {
-    if (e.keyCode === KeyCode.KEY_ESCAPE && this.props.isOpen && this.props.closeOnEsc && this.props.isFocused) {
+    if (e.keyCode === KeyCode.KEY_ESCAPE && this.props.isOpen && this.props.closeOnEsc) {
       this.props.onRequestClose();
     }
   }
 
   toggleVisuallyHiddenMainDocument(hiddenValue) {
     const mainDocumentElement = document.querySelector(this.props.rootSelector);
+
+    if (hiddenValue === 'true') {
+      this.disabledHandle = Disabled({ context: mainDocumentElement });
+    }
+
+    if (hiddenValue === 'false') {
+      if (this.disabledHandle) {
+        this.disabledHandle.disengage();
+      }
+    }
 
     if (mainDocumentElement) {
       mainDocumentElement.setAttribute('aria-hidden', hiddenValue);
@@ -131,7 +130,6 @@ class AbstractModal extends React.Component {
       closeOnEsc,
       closeOnOutsideClick,
       fallbackFocus,
-      isFocused,
       isFullscreen,
       isOpen,
       role,
@@ -160,7 +158,6 @@ class AbstractModal extends React.Component {
           classNameOverlay={classNameOverlay}
           role={role}
           fallbackFocus={fallbackFocus}
-          isFocused={isFocused}
           isFullscreen={isFullscreen}
           onRequestClose={onRequestClose}
           zIndex={zIndex}

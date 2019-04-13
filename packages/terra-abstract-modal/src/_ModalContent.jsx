@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import FocusTrap from 'focus-trap-react';
 import ModalOverlay from './_ModalOverlay';
 import styles from './AbstractModal.module.scss';
 
@@ -45,10 +44,6 @@ const propTypes = {
     PropTypes.func,
   ]),
   /**
-   * If set to true, the modal will trap the focus and prevents any popup within the modal from gaining focus.
-   */
-  isFocused: PropTypes.bool,
-  /**
    * If set to true, the modal will be fullscreen on all breakpoint sizes.
    */
   isFullscreen: PropTypes.bool,
@@ -71,7 +66,6 @@ const defaultProps = {
   classNameOverlay: null,
   closeOnOutsideClick: true,
   fallbackFocus: undefined,
-  isFocused: true,
   isFullscreen: false,
   isScrollable: false,
   role: 'dialog',
@@ -80,6 +74,19 @@ const defaultProps = {
 
 /* eslint-disable react/prefer-stateless-function */
 class ModalContent extends React.Component {
+  constructor() {
+    super();
+    this.modalContentRef = React.createRef();
+  }
+
+  componentDidMount() {
+    if (this.props.fallbackFocus) {
+      this.props.fallbackFocus.focus();
+    } else {
+      this.modalContentRef.current.focus();
+    }
+  }
+
   render() {
     const {
       ariaLabel,
@@ -90,7 +97,6 @@ class ModalContent extends React.Component {
       onRequestClose,
       fallbackFocus,
       role,
-      isFocused,
       isFullscreen,
       isScrollable,
       zIndex,
@@ -122,13 +128,7 @@ class ModalContent extends React.Component {
     }
 
     return (
-      <FocusTrap
-        paused={!isFocused}
-        focusTrapOptions={{
-          escapeDeactivates: false,
-          fallbackFocus: this.fallbackFocus,
-        }}
-      >
+      <React.Fragment>
         <ModalOverlay
           onClick={closeOnOutsideClick ? onRequestClose : null}
           className={classNameOverlay}
@@ -150,7 +150,7 @@ class ModalContent extends React.Component {
           {children}
         </div>
         {/* eslint-enable jsx-a11y/no-noninteractive-tabindex */}
-      </FocusTrap>
+      </React.Fragment>
     );
   }
 }
