@@ -409,10 +409,10 @@ class DisclosureManager extends React.Component {
     return () => {
       const { disclosureComponentKeys } = this.state;
 
-      if (disclosureComponentKeys[disclosureComponentKeys.length - 1] !== key) {
+      if (!key || disclosureComponentKeys[disclosureComponentKeys.length - 1] !== key) {
         /**
          * If the top component key in the disclosure stack does not match
-         * the key used to generate this function, then the pop action is rejected.
+         * the key used to generate this function, or the key is undefined, then the pop action is rejected.
          */
         return Promise.reject();
       }
@@ -461,7 +461,7 @@ class DisclosureManager extends React.Component {
     }
 
     return render({
-      dismissPresentedComponent: (disclosureComponentKeys.length > 0) ? this.generatePopFunction(disclosureComponentKeys[disclosureComponentKeys.length - 1]) : () => {},
+      dismissPresentedComponent: this.generatePopFunction(disclosureComponentKeys ? disclosureComponentKeys[disclosureComponentKeys.length - 1] : undefined),
       closeDisclosure: this.safelyCloseDisclosure,
       children: {
         components: (
