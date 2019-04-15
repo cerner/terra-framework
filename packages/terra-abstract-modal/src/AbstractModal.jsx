@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
 import KeyCode from 'keycode-js';
-//import ally from 'ally.js';
 import Disabled from 'ally.js/maintain/disabled';
-// import disabled from 'ally.js/esm/maintain/disabled';
+
 
 import ModalContent from './_ModalContent';
 
