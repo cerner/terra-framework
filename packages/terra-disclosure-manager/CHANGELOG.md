@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added new width 560px to Disclosure Widths.
 
 4.7.0 - (April 2, 2019)
 ------------------

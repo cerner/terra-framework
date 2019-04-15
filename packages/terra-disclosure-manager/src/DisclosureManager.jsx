@@ -15,7 +15,7 @@ const availableDisclosureSizes = {
 
 const arrayReducer = (mappingObject, value) => Object.assign({ [`${value}`]: value }, mappingObject);
 const availableDisclosureHeights = [240, 420, 600, 690, 780, 870, 960, 1140].reduce(arrayReducer, {});
-const availableDisclosureWidths = [320, 480, 640, 800, 960, 1120, 1280, 1440, 1600, 1760, 1920].reduce(arrayReducer, {});
+const availableDisclosureWidths = [320, 480, 560, 640, 800, 960, 1120, 1280, 1440, 1600, 1760, 1920].reduce(arrayReducer, {});
 
 const defaultDimensions = { height: availableDisclosureHeights['690'], width: availableDisclosureWidths['1120'] };
 const defaultSize = availableDisclosureSizes.SMALL;
