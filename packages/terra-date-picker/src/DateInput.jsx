@@ -10,6 +10,10 @@ const Icon = <IconCalendar />;
 
 const propTypes = {
   /**
+   * Callback ref to pass into the calendar button dom element.
+   */
+  buttonRefCallback: PropTypes.func,
+  /**
    * Custom input attributes to apply to the date input.
    */
   // eslint-disable-next-line react/forbid-prop-types
@@ -65,6 +69,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  buttonRefCallback: undefined,
   inputAttributes: undefined,
   name: undefined,
   onBlur: undefined,
@@ -133,6 +138,7 @@ class DatePickerInput extends React.Component {
 
   render() {
     const {
+      buttonRefCallback,
       inputAttributes,
       name,
       onBlur,
@@ -191,6 +197,7 @@ class DatePickerInput extends React.Component {
           isDisabled={additionalInputProps.disabled}
           onBlur={onBlur}
           onFocus={onButtonFocus}
+          refCallback={buttonRefCallback}
         />
       </div>
     );

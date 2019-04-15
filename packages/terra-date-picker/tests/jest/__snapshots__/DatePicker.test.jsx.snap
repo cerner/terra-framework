@@ -10,6 +10,7 @@ exports[`should render a date picker with disabled dates 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -91,6 +92,7 @@ exports[`should render a date picker with disabled dates 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -180,6 +182,7 @@ exports[`should render a date picker with filtered dates 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -262,6 +265,7 @@ exports[`should render a date picker with filtered dates 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -352,6 +356,7 @@ exports[`should render a date picker with included dates 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -433,6 +438,7 @@ exports[`should render a date picker with included dates 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -522,6 +528,7 @@ exports[`should render a date picker with min and max dates 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -603,6 +610,7 @@ exports[`should render a date picker with min and max dates 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -692,6 +700,7 @@ exports[`should render a date picker with onBlur 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -773,6 +782,7 @@ exports[`should render a date picker with onBlur 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -862,6 +872,7 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -943,6 +954,7 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -1032,6 +1044,7 @@ exports[`should render a date picker with onChange 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -1113,6 +1126,7 @@ exports[`should render a date picker with onChange 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -1202,6 +1216,7 @@ exports[`should render a date picker with onChangeRaw 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -1283,6 +1298,7 @@ exports[`should render a date picker with onChangeRaw 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -1372,6 +1388,7 @@ exports[`should render a date picker with onFocus 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -1453,6 +1470,7 @@ exports[`should render a date picker with onFocus 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -1542,6 +1560,7 @@ exports[`should render a date picker with onSelect 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -1623,6 +1642,7 @@ exports[`should render a date picker with onSelect 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -1712,6 +1732,7 @@ exports[`should render a date picker with releaseFocus 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             releaseFocus={[Function]}
@@ -1794,6 +1815,7 @@ exports[`should render a date picker with releaseFocus 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             releaseFocus={[Function]}
@@ -1884,6 +1906,7 @@ exports[`should render a date picker with requestFocus 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             requestFocus={[Function]}
@@ -1966,6 +1989,7 @@ exports[`should render a date picker with requestFocus 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             requestFocus={[Function]}
@@ -2056,6 +2080,7 @@ exports[`should render a default date input and date picker 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -2137,6 +2162,7 @@ exports[`should render a default date input and date picker 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -2226,6 +2252,7 @@ exports[`should render a default date input with custom input attributes 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             inputAttributes={
               Object {
                 "id": "terra-date-input",
@@ -2312,6 +2339,7 @@ exports[`should render a default date input with custom input attributes 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             inputAttributes={
               Object {
                 "id": "terra-date-input",
@@ -2406,6 +2434,7 @@ exports[`should render a disabled date picker 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -2487,6 +2516,7 @@ exports[`should render a disabled date picker 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -2576,6 +2606,7 @@ exports[`should render a required date input and date picker 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -2657,6 +2688,7 @@ exports[`should render a required date input and date picker 1`] = `
         allowSameDay={false}
         customInput={
           <DatePickerInput
+            buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}

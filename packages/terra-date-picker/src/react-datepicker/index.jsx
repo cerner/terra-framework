@@ -289,6 +289,8 @@ export default class DatePicker extends React.Component {
       return
     }
 
+    let hasChanged = false;
+
     if (!isSameDay(this.props.selected, changedDate) || this.props.allowSameDay) {
       if (changedDate !== null) {
         if (this.props.selected) {
@@ -302,10 +304,14 @@ export default class DatePicker extends React.Component {
           preSelection: changedDate
         })
       }
-      this.props.onChange(changedDate, event)
+      hasChanged = true;
     }
 
     this.props.onSelect(changedDate, event)
+
+    if (hasChanged) {
+      this.props.onChange(changedDate, event)
+    }
 
     if (!keepInput) {
       this.setState({ inputValue: null })
@@ -356,7 +362,7 @@ export default class DatePicker extends React.Component {
   onInputKeyDown = (event) => {
     this.props.onKeyDown(event)
     const eventKey = event.key
-    if (!this.state.open && !this.props.inline && !this.props.preventOpenOnFocus) {
+    if (!this.state.open && !this.props.inline) {
       if (eventKey !== 'Enter' && eventKey !== 'Escape' && eventKey !== 'Tab') {
         this.onInputClick()
       }

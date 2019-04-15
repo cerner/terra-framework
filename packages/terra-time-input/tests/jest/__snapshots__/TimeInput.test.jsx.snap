@@ -356,6 +356,187 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
 </div>
 `;
 
+exports[`should pass in refCallback as the ref prop of the hour input element 1`] = `
+<TimeInput
+  disabled={false}
+  hourAttributes={Object {}}
+  inputAttributes={Object {}}
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  minuteAttributes={Object {}}
+  name="time-input"
+  onBlur={null}
+  onChange={null}
+  refCallback={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          <input
+            aria-label="Terra.timeInput.hours"
+            class="form-input time-input-hour desktop"
+            maxlength="2"
+            name="terra-time-hour-time-input"
+            pattern="\\\\d*"
+            placeholder="Terra.timeInput.hh"
+            size="2"
+            type="text"
+            value=""
+          />,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  variant="24-hour"
+>
+  <div
+    className="time-input"
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+  >
+    <input
+      name="time-input"
+      type="hidden"
+      value=""
+    />
+    <Input
+      aria-label="Terra.timeInput.hours"
+      className="time-input-hour desktop"
+      disabled={false}
+      isInvalid={false}
+      maxLength="2"
+      name="terra-time-hour-time-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      pattern="\\\\d*"
+      placeholder="Terra.timeInput.hh"
+      refCallback={[Function]}
+      required={false}
+      size="2"
+      type="text"
+      value=""
+    >
+      <input
+        aria-label="Terra.timeInput.hours"
+        className="form-input time-input-hour desktop"
+        disabled={false}
+        maxLength="2"
+        name="terra-time-hour-time-input"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        pattern="\\\\d*"
+        placeholder="Terra.timeInput.hh"
+        required={false}
+        size="2"
+        type="text"
+        value=""
+      />
+    </Input>
+    <span
+      className="time-spacer"
+    >
+      :
+    </span>
+    <Input
+      aria-label="Terra.timeInput.minutes"
+      className="time-input-minute desktop"
+      disabled={false}
+      isInvalid={false}
+      maxLength="2"
+      name="terra-time-minute-time-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      pattern="\\\\d*"
+      placeholder="Terra.timeInput.mm"
+      refCallback={[Function]}
+      required={false}
+      size="2"
+      type="text"
+      value=""
+    >
+      <input
+        aria-label="Terra.timeInput.minutes"
+        className="form-input time-input-minute desktop"
+        disabled={false}
+        maxLength="2"
+        name="terra-time-minute-time-input"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        pattern="\\\\d*"
+        placeholder="Terra.timeInput.mm"
+        required={false}
+        size="2"
+        type="text"
+        value=""
+      />
+    </Input>
+  </div>
+</TimeInput>
+`;
+
 exports[`should render a 12 hour timepicker meridiem with buttons when viewed on a mobile device 1`] = `
 <div
   class="mobile-time-picker"

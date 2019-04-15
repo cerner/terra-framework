@@ -69,9 +69,18 @@ const propTypes = {
    */
   onChangeRaw: PropTypes.func,
   /**
+   * A callback function to execute when clicking outside of the picker to dismiss it.
+   */
+  onClickOutside: PropTypes.func,
+  /**
    * A callback function triggered when the date input, hour input, or minute input receives focus.
    */
   onFocus: PropTypes.func,
+  /**
+   * A callback function to execute when a selection is made in the date picker.
+   * The first parameter is the event. The second parameter is the selected input value.
+   */
+  onSelect: PropTypes.func,
   /**
    * A callback function to let the containing component (e.g. modal) to regain focus.
    */
@@ -103,7 +112,9 @@ const defaultProps = {
   onBlur: undefined,
   onChange: undefined,
   onChangeRaw: undefined,
+  onClickOutside: undefined,
   onFocus: undefined,
+  onSelect: undefined,
   releaseFocus: undefined,
   requestFocus: undefined,
   timeInputAttributes: undefined,
@@ -172,6 +183,12 @@ class DateTimePicker extends React.Component {
     if (!previousDateTime || previousDateTime.format() !== updatedDateTime.format()) {
       this.checkAmbiguousTime(updatedDateTime);
     }
+
+    if (this.props.onSelect) {
+      this.props.onSelect(event, updatedDateTime.format());
+    }
+
+    this.hourInput.focus();
   }
 
   handleOnDateBlur(event) {
@@ -242,8 +259,9 @@ class DateTimePicker extends React.Component {
 
     let updatedDateTime;
     const formattedDate = DateTimeUtils.formatISODateTime(date, 'YYYY-MM-DD');
+    const isDateValid = DateTimeUtils.isValidDate(formattedDate, 'YYYY-MM-DD');
 
-    if (DateTimeUtils.isValidDate(formattedDate, 'YYYY-MM-DD')) {
+    if (isDateValid) {
       const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
       updatedDateTime = DateTimeUtils.syncDateTime(previousDateTime, date, this.timeValue);
 
@@ -253,6 +271,10 @@ class DateTimePicker extends React.Component {
     }
 
     this.handleChange(event, updatedDateTime);
+
+    if (isDateValid) {
+      this.hourInput.focus();
+    }
   }
 
   handleDateChangeRaw(event, date) {
@@ -444,7 +466,9 @@ class DateTimePicker extends React.Component {
       onBlur,
       onChange,
       onChangeRaw,
+      onClickOutside,
       onFocus,
+      onSelect,
       maxDateTime,
       minDateTime,
       name,
@@ -478,7 +502,7 @@ class DateTimePicker extends React.Component {
           onChange={this.handleDateChange}
           onChangeRaw={this.handleDateChangeRaw}
           onSelect={this.handleOnSelect}
-          onClickOutside={this.handleOnClickOutside}
+          onClickOutside={onClickOutside}
           onBlur={this.handleOnDateBlur}
           onFocus={this.handleOnDateInputFocus}
           excludeDates={excludeDates}
@@ -503,6 +527,7 @@ class DateTimePicker extends React.Component {
             name="input"
             value={this.timeValue}
             disabled={disabled}
+            refCallback={(inputRef) => { this.hourInput = inputRef; }}
           />
 
           {this.state.isAmbiguousTime ? this.renderTimeClarification() : null }

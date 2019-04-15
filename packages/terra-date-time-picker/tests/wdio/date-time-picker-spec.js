@@ -145,39 +145,50 @@ describe('DateTimePicker', () => {
   describe('OnBlur', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-focus-blur');
-
-      it('puts focus on the input', () => {
-        browser.click('input[name="terra-date-input"]');
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        browser.execute('document.querySelector(\'input[name="terra-date-input"]\').style.caretColor = "transparent";');
-        expect(browser.getText('#blur-count')).to.equal('0');
-        expect(browser.getText('#focus-count')).to.equal('1');
-      });
-
-      it('tabs to the calendar button and onBlur is not triggered', () => {
-        browser.keys('Tab');
-        expect(browser.getText('#blur-count')).to.equal('0');
-        expect(browser.getText('#focus-count')).to.equal('1');
-      });
-
-      it('tabs to the hour input and onBlur is not triggered', () => {
-        browser.keys('Tab');
-        expect(browser.getText('#blur-count')).to.equal('0');
-        expect(browser.getText('#focus-count')).to.equal('1');
-      });
-
-      it('tabs to the hour input and onBlur is not triggered', () => {
-        browser.setValue('input[name="terra-time-hour-input"]', '10');
-        expect(browser.getText('#blur-count')).to.equal('0');
-        expect(browser.getText('#focus-count')).to.equal('1');
-      });
-
-      it('tabs out of the component and onBlur is triggered', () => {
-        browser.keys('Tab');
-        expect(browser.getText('#blur-count')).to.equal('1');
-        expect(browser.getText('#focus-count')).to.equal('1');
-      });
     });
+
+    it('puts focus on the input', () => {
+      browser.click('input[name="terra-date-input"]');
+      // Removes the blinking cursor to prevent screenshot mismatches.
+      browser.execute('document.querySelector(\'input[name="terra-date-input"]\').style.caretColor = "transparent";');
+      expect(browser.getText('#blur-count')).to.equal('0');
+      expect(browser.getText('#focus-count')).to.equal('1');
+    });
+
+    it('tabs to the calendar button and onBlur is not triggered', () => {
+      browser.keys('Tab');
+      expect(browser.getText('#blur-count')).to.equal('0');
+      expect(browser.getText('#focus-count')).to.equal('1');
+    });
+
+    it('tabs to the hour input and onBlur is not triggered', () => {
+      browser.keys('Tab');
+      expect(browser.getText('#blur-count')).to.equal('0');
+      expect(browser.getText('#focus-count')).to.equal('1');
+    });
+
+    it('tabs to the hour input and onBlur is not triggered', () => {
+      browser.setValue('input[name="terra-time-hour-input"]', '10');
+      expect(browser.getText('#blur-count')).to.equal('0');
+      expect(browser.getText('#focus-count')).to.equal('1');
+    });
+
+    it('tabs out of the component and onBlur is triggered', () => {
+      browser.keys('Tab');
+      expect(browser.getText('#blur-count')).to.equal('1');
+      expect(browser.getText('#focus-count')).to.equal('1');
+    });
+  });
+
+  describe('Valid date entry moves focus to hour input', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-focus-blur');
+      // Removes the blinking cursor to prevent screenshot mismatches.
+      browser.execute('document.querySelector(\'input[name="terra-time-minute-input"]\').style.caretColor = "transparent";');
+      browser.setValue('input[name="terra-date-input"]', '04/15/2019');
+    });
+
+    Terra.should.matchScreenshot({ viewports });
   });
 
   describe('OnChange', () => {

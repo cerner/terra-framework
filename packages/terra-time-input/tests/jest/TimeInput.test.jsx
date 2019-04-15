@@ -137,3 +137,11 @@ it('should handle focusing on the meridiem input without error', () => {
   wrapper.instance().handleMinuteInputKeyDown(mockEvent);
   expect(mockEvent.preventDefault).toHaveBeenCalled();
 });
+
+it('should pass in refCallback as the ref prop of the hour input element', () => {
+  const refCallback = jest.fn();
+  const timeInput = <TimeInput name="time-input" refCallback={refCallback} />;
+  const wrapper = mountWithIntl(timeInput);
+  expect(refCallback).toBeCalled();
+  expect(wrapper).toMatchSnapshot();
+});

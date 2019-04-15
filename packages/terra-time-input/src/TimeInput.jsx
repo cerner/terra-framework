@@ -49,6 +49,10 @@ const propTypes = {
    */
   onFocus: PropTypes.func,
   /**
+   * Callback ref to pass into the input dom element.
+   */
+  refCallback: PropTypes.func,
+  /**
    * An ISO 8601 string representation of the time value in the input.
    */
   value: PropTypes.string,
@@ -66,6 +70,7 @@ const defaultProps = {
   onBlur: null,
   onChange: null,
   onFocus: undefined,
+  refCallback: undefined,
   value: undefined,
   variant: TimeUtil.FORMAT_24_HOUR,
 };
@@ -540,6 +545,7 @@ class TimeInput extends React.Component {
       onChange,
       onFocus,
       name,
+      refCallback,
       value,
       variant,
       ...customProps
@@ -586,7 +592,10 @@ class TimeInput extends React.Component {
           <Input
             {...inputAttributes}
             {...instanceHoursAttrs}
-            refCallback={(inputRef) => { this.hourInput = inputRef; }}
+            refCallback={(inputRef) => {
+              this.hourInput = inputRef;
+              if (refCallback) refCallback(inputRef);
+            }}
             className={cx('time-input-hour')}
             value={this.state.hour}
             name={'terra-time-hour-'.concat(name)}
@@ -665,6 +674,7 @@ class TimeInput extends React.Component {
       onChange,
       onFocus,
       name,
+      refCallback,
       value,
       variant,
       ...customProps
@@ -708,7 +718,10 @@ class TimeInput extends React.Component {
           {...inputAttributes}
           {...minuteAttributes}
           aria-label={this.context.intl.formatMessage({ id: 'Terra.timeInput.hours' })}
-          refCallback={(inputRef) => { this.hourInput = inputRef; }}
+          refCallback={(inputRef) => {
+            this.hourInput = inputRef;
+            if (refCallback) refCallback(inputRef);
+          }}
           className={cx('time-input-hour', 'desktop', { 'initial-focus': this.state.hourInitialFocused })}
           type="text"
           value={this.state.hour}

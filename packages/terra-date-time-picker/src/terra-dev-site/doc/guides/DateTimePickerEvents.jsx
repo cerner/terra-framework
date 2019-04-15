@@ -1,7 +1,7 @@
 import React from 'react';
-import DatePicker from '../../../DatePicker';
+import DateTimePicker from '../../../DateTimePicker';
 
-class DatePickerEvents extends React.Component {
+class DateTimePickerEvents extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -83,8 +83,8 @@ class DatePickerEvents extends React.Component {
           {' '}
           <span id="blur-state">{this.state.selectValue}</span>
         </p>
-        <DatePicker
-          name="date-picker-events"
+        <DateTimePicker
+          name="date-time-picker-events"
           onBlur={this.handleBlur}
           onFocus={this.handleFocus}
           onChange={this.handleChange}
@@ -92,9 +92,21 @@ class DatePickerEvents extends React.Component {
           onSelect={this.handleSelect}
           onClickOutside={this.handleOnClickOutside}
         />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
     );
   }
 }
 
-export default DatePickerEvents;
+export default DateTimePickerEvents;
