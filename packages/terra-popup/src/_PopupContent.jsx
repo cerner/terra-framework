@@ -75,10 +75,6 @@ const propTypes = {
    * The function returning the frame html reference.
    */
   refCallback: PropTypes.func,
-  /**
-   * A callback function to request focus from the containing component (e.g. modal).
-   */
-  requestFocus: PropTypes.func,
 };
 
 const defaultProps = {
@@ -128,9 +124,6 @@ class PopupContent extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.requestFocus) {
-      this.props.requestFocus();
-    }
     // Value used to verify horizontal resize.
     this.windowWidth = window.innerWidth;
   }
@@ -182,7 +175,6 @@ class PopupContent extends React.Component {
       onResize,
       onContentResize,
       refCallback,
-      requestFocus,
       ...customProps
     } = this.props;
 

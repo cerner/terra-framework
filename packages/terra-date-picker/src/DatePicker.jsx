@@ -64,10 +64,6 @@ const propTypes = {
    */
   onSelect: PropTypes.func,
   /**
-   * A callback function to request focus from the containing component (e.g. modal).
-   */
-  requestFocus: PropTypes.func,
-  /**
    * Whether or not the date is required.
    */
   required: PropTypes.bool,
@@ -91,7 +87,6 @@ const defaultProps = {
   onClickOutside: undefined,
   onSelect: undefined,
   required: false,
-  requestFocus: undefined,
   selectedDate: undefined,
 };
 
@@ -229,7 +224,6 @@ class DatePicker extends React.Component {
       onChangeRaw,
       onClickOutside,
       onSelect,
-      requestFocus,
       required,
       selectedDate,
       ...customProps
@@ -264,7 +258,6 @@ class DatePicker extends React.Component {
             onInputFocus={this.handleOnInputFocus}
             onCalendarButtonClick={this.handleOnCalendarButtonClick}
             inputAttributes={inputAttributes}
-            requestFocus={requestFocus}
             shouldShowPicker={!this.isDefaultDateAcceptable && this.state.selectedDate === null}
           />
 )}
@@ -301,7 +294,6 @@ class DatePicker extends React.Component {
             onInputFocus={this.handleOnInputFocus}
             onCalendarButtonClick={this.handleOnCalendarButtonClick}
             inputAttributes={inputAttributes}
-            requestFocus={requestFocus}
             shouldShowPicker={!this.isDefaultDateAcceptable && this.state.selectedDate === null}
           />
 )}

@@ -8,8 +8,7 @@ const ModalContent = (props) => {
 
   return (
     <div className="content-container" style={{ height: '100%', padding: '10px' }}>
-      {disclosureManager && disclosureManager.requestFocus ? <h4>Modal focus is trapped!</h4> : null }
-      <DatePicker name="date-picker-in-modal" requestFocus={disclosureManager.requestFocus} />
+      <DatePicker name="date-picker-in-modal" />
       <br />
       <br />
       <Button className="close-disclosure" text="Close Disclosure" onClick={disclosureManager.closeDisclosure} />

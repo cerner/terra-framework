@@ -48,7 +48,6 @@ class DialogModalWithFocus extends React.Component {
           onRequestClose={this.handleCloseModal}
           header={<ActionHeader title="Action Header used here" onClose={this.handleCloseModal} />}
           footer={<ActionFooter start="Action Footer used here" />}
-          requestFocus={this.props.disclosureManager.requestFocus}
         >
           <p>{paraOne}</p>
         </DialogModal>

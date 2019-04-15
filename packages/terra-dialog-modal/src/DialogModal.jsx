@@ -41,10 +41,6 @@ const propTypes = {
    */
   isOpen: PropTypes.bool,
   /**
-   * A callback function to request focus from the containing component (e.g. modal).
-   */
-  requestFocus: PropTypes.func,
-  /**
    * Width of the dialog modal. Allows one of `320`, `640`, `960`, `1120`, `1280`, or `1600`.
    *
    * _(Uses same sizes as terra-modal-manager: tiny:320, small:640, medium:960, default:1120, large:1280, huge:1600)_
@@ -55,70 +51,45 @@ const propTypes = {
 const defaultProps = {
   children: null,
   isOpen: false,
-  requestFocus: null,
   width: '1120',
 };
 
-class DialogModal extends React.Component {
-  componentDidMount() {
-    if (this.props.isOpen) {
-      // Test and see if focus is shifted into the modal
-      // this.props.requestFocus();
-    }
+const DialogModal = (props) => {
+  const {
+    header,
+    footer,
+    children,
+    onRequestClose,
+    isOpen,
+    ariaLabel,
+    width,
+    ...customProps
+  } = props;
+
+  if (!props.isOpen) {
+    return null;
   }
 
-  componentDidUpdate() {
-    if (this.props.isOpen) {
-      if (this.props.requestFocus) {
-        this.props.requestFocus();
-      }
-    }
+  const classArray = ['dialog-modal-wrapper'];
+
+  if (width in widthFromSize) {
+    classArray.push(`width-${widthFromSize[width]}`);
+  } else {
+    classArray.push('width-1120');
   }
 
-  render() {
-    const {
-      header,
-      footer,
-      children,
-      onRequestClose,
-      isOpen,
-      requestFocus,
-      ariaLabel,
-      width,
-      ...customProps
-    } = this.props;
-
-    if (!this.props.isOpen) {
-      return null;
-    }
-
-    const classArray = ['dialog-modal-wrapper'];
-    if (width in widthFromSize) {
-      classArray.push(`width-${widthFromSize[width]}`);
-    } else {
-      classArray.push('width-1120');
-    }
-
-    return (
-      <AbstractModal
-        ariaLabel={this.props.ariaLabel}
-        role="dialog"
-        classNameModal={cx(classArray)}
-        isOpen={this.props.isOpen}
-        onRequestClose={this.props.onRequestClose}
-        zIndex="8000"
-      >
-        <div {...customProps} className={cx('dialog-modal-inner-wrapper', customProps.className)}>
-          <div className={cx('dialog-modal-container')}>
-            <div>{header}</div>
-            <div className={cx('dialog-modal-body')}>{children}</div>
-            <div>{footer}</div>
-          </div>
+  return (
+    <AbstractModal ariaLabel={props.ariaLabel} role="dialog" classNameModal={cx(classArray)} isOpen={props.isOpen} onRequestClose={props.onRequestClose} zIndex="8000">
+      <div {...customProps} className={cx('dialog-modal-inner-wrapper', customProps.className)}>
+        <div className={cx('dialog-modal-container')}>
+          <div>{header}</div>
+          <div className={cx('dialog-modal-body')}>{children}</div>
+          <div>{footer}</div>
         </div>
-      </AbstractModal>
-    );
-  }
-}
+      </div>
+    </AbstractModal>
+  );
+};
 
 DialogModal.propTypes = propTypes;
 DialogModal.defaultProps = defaultProps;

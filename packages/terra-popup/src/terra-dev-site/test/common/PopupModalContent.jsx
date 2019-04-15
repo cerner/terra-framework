@@ -30,15 +30,12 @@ class ModalContent extends React.Component {
 
     return (
       <div id="test-popup-area" className="content-container" style={{ height: '100%', padding: '10px' }}>
-        {disclosureManager && disclosureManager.requestFocus ? <h4>Modal focus is trapped!</h4> : null }
-        <br />
         <Popup
           isArrowDisplayed
           classNameContent="test-content"
           isOpen={this.state.open}
           onRequestClose={this.handlePopupRequestClose}
           targetRef={() => document.getElementById('popup-in-modal')}
-          requestFocus={disclosureManager.requestFocus}
         >
           <p>This is popup content</p>
         </Popup>

@@ -12,7 +12,6 @@ it('should render a default date time picker', () => {
       onStandardTimeButtonClick={jest.fn()}
       onOffsetButtonClick={jest.fn()}
       onRequestClose={jest.fn()}
-      requestFocus={jest.fn()}
     />
   ));
   expect(datePicker).toMatchSnapshot();
@@ -27,7 +26,6 @@ it('should render a disabled time clarification', () => {
       onStandardTimeButtonClick={jest.fn()}
       onOffsetButtonClick={jest.fn()}
       onRequestClose={jest.fn()}
-      requestFocus={jest.fn()}
       disabled
     />
   ));

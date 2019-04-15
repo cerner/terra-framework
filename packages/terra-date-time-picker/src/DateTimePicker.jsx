@@ -64,10 +64,6 @@ const propTypes = {
    */
   onChangeRaw: PropTypes.func,
   /**
-   * A callback function to request focus from the containing component (e.g. modal).
-   */
-  requestFocus: PropTypes.func,
-  /**
    * Custom input attributes to apply to the time input. Use the name prop to set the name for the time input.
    * Do not set the name in inputAttribute as it will be ignored.
    */
@@ -89,7 +85,6 @@ const defaultProps = {
   minDateTime: undefined,
   onChange: undefined,
   onChangeRaw: undefined,
-  requestFocus: undefined,
   timeInputAttributes: undefined,
   value: undefined,
 };
@@ -377,7 +372,6 @@ class DateTimePicker extends React.Component {
         onStandardTimeButtonClick={this.handleStandardTimeButtonClick}
         onOffsetButtonClick={this.handleOffsetButtonClick}
         onRequestClose={this.handleOnRequestClose}
-        requestFocus={this.props.requestFocus}
       />
     );
   }
@@ -394,7 +388,6 @@ class DateTimePicker extends React.Component {
       maxDateTime,
       minDateTime,
       name,
-      requestFocus,
       timeInputAttributes,
       value,
       ...customProps
@@ -430,7 +423,6 @@ class DateTimePicker extends React.Component {
           minDate={minDateTime}
           selectedDate={dateValue}
           name="input"
-          requestFocus={requestFocus}
           disabled={disabled}
         />
 

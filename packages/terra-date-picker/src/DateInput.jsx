@@ -35,10 +35,6 @@ const propTypes = {
    */
   placeholder: PropTypes.string,
   /**
-   * A callback function to request focus from the containing component (e.g. modal).
-   */
-  requestFocus: PropTypes.func,
-  /**
    * @private Internal prop for showing date picker.
    */
   shouldShowPicker: PropTypes.bool,
@@ -55,7 +51,6 @@ const defaultProps = {
   onClick: undefined,
   onKeyDown: undefined,
   placeholder: undefined,
-  requestFocus: undefined,
   value: undefined,
 };
 
@@ -84,11 +79,6 @@ class DatePickerInput extends React.Component {
   }
 
   handleOnButtonClick(event) {
-    // The picker is about to display so request focus from the containing component (e.g. modal) if it has the focus trapped.
-    if (this.props.requestFocus) {
-      this.props.requestFocus();
-    }
-
     const attributes = Object.assign({}, this.props.inputAttributes);
 
     if (!attributes.readOnly && this.onCalendarButtonClick && this.props.onClick) {
@@ -110,7 +100,6 @@ class DatePickerInput extends React.Component {
       onClick,
       onKeyDown,
       placeholder,
-      requestFocus,
       value,
       ...customProps
     } = this.props;
