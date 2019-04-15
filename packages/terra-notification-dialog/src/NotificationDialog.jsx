@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AbstractModal from 'terra-abstract-modal';
+import tabFocus from 'ally.js/maintain/tab-focus';
+import KeyCode from 'keycode-js';
 import Button from 'terra-button';
 import classNames from 'classnames/bind';
 import styles from './NotificationDialog.module.scss';
@@ -63,14 +65,6 @@ const propTypes = {
    * Toggle to show notification-dialog or not.
    */
   isOpen: PropTypes.bool.isRequired,
-  /**
-   * A callback function to let the containing component (e.g. modal) to regain focus.
-   */
-  releaseFocus: PropTypes.func,
-  /**
-   * A callback function to request focus from the containing component (e.g. modal).
-   */
-  requestFocus: PropTypes.func,
 };
 
 const defaultProps = {
@@ -129,25 +123,49 @@ const contextTypes = {
 };
 
 class NotificationDialog extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleKeydown = this.handleKeydown.bind(this);
+    this.escapeKey = KeyCode.KEY_ESCAPE;
+  }
+
   componentDidMount() {
-    if (this.props.isOpen && this.props.requestFocus) {
-      this.props.requestFocus();
-    }
+    document.addEventListener('keydown', this.handleKeydown);
   }
 
   componentDidUpdate(prevProps) {
+    const notificationDialog = document.querySelector('[data-terra-notification-dialog]');
+
     if (this.props.isOpen) {
-      if (!prevProps.isOpen && this.props.requestFocus) {
-        this.props.requestFocus();
+      if (!prevProps.isOpen) {
+        this.tabFocusHandle = tabFocus({ context: notificationDialog });
       }
-    } else if (prevProps.isOpen && this.props.releaseFocus) {
-      this.props.releaseFocus();
+    } else if (prevProps.isOpen) {
+      if (this.tabFocusHandle) {
+        this.tabFocusHandle.disengage();
+      }
     }
   }
 
   componentWillUnmount() {
-    if (this.props.isOpen && this.props.releaseFocus) {
-      this.props.releaseFocus();
+    document.removeEventListener('keydown', this.handleKeydown);
+    if (this.props.isOpen) {
+      if (this.tabFocusHandle) {
+        this.tabFocusHandle.disengage();
+      }
+    }
+  }
+
+  handleKeydown(e) {
+    const notificationDialog = document.querySelector('[data-terra-notification-dialog]');
+
+    if (e.keyCode === this.escapeKey) {
+      if (notificationDialog) {
+        if (e.target === notificationDialog || notificationDialog.contains(e.target)) {
+          e.stopImmediatePropagation();
+        }
+      }
     }
   }
 
@@ -165,8 +183,6 @@ class NotificationDialog extends React.Component {
       variant,
       customIcon,
       isOpen,
-      releaseFocus,
-      requestFocus,
       ...customProps
     } = this.props;
 
@@ -187,6 +203,7 @@ class NotificationDialog extends React.Component {
         closeOnEsc={false}
         closeOnOutsideClick={false}
         zIndex="9000"
+        data-terra-notification-dialog
       >
         <div className={cx('notification-dialog-inner-wrapper')}>
           <div className={cx('notification-dialog-container')}>

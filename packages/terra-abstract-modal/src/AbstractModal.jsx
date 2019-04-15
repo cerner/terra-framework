@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
 import KeyCode from 'keycode-js';
 import Disabled from 'ally.js/maintain/disabled';
-
-
 import ModalContent from './_ModalContent';
 
 const zIndexes = ['6000', '7000', '8000', '9000'];
