@@ -31,7 +31,6 @@ class PopupDefaultExample extends React.Component {
           targetRef={this.getButtonNode}
           onRequestClose={this.handleRequestClose}
           requestFocus={() => {}}
-          releaseFocus={() => {}}
         >
           <p>this is popup content</p>
         </Popup>

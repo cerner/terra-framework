@@ -76,10 +76,6 @@ const propTypes = {
    */
   refCallback: PropTypes.func,
   /**
-   * A callback function to let the containing component (e.g. modal) to regain focus.
-   */
-  releaseFocus: PropTypes.func,
-  /**
    * A callback function to request focus from the containing component (e.g. modal).
    */
   requestFocus: PropTypes.func,
@@ -139,12 +135,6 @@ class PopupContent extends React.Component {
     this.windowWidth = window.innerWidth;
   }
 
-  componentWillUnmount() {
-    if (this.props.releaseFocus) {
-      this.props.releaseFocus();
-    }
-  }
-
   static getContentStyle(height, maxHeight, width, maxWidth, isHeightAutomatic, isWidthAutomatic) {
     const heightStyle = PopupContent.getDimensionStyle(height, maxHeight, isHeightAutomatic);
     const widthStyle = PopupContent.getDimensionStyle(width, maxWidth, isWidthAutomatic);
@@ -192,7 +182,6 @@ class PopupContent extends React.Component {
       onResize,
       onContentResize,
       refCallback,
-      releaseFocus,
       requestFocus,
       ...customProps
     } = this.props;

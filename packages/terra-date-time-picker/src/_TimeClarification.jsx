@@ -38,10 +38,6 @@ const propTypes = {
    */
   disabled: PropTypes.bool,
   /**
-   * Callback function to let the containing component (e.g. modal) to regain focus.
-   */
-  releaseFocus: PropTypes.func,
-  /**
    * Callback function to request focus from the containing component (e.g. modal).
    */
   requestFocus: PropTypes.func,
@@ -49,7 +45,6 @@ const propTypes = {
 
 const defaultProps = {
   disabled: false,
-  releaseFocus: undefined,
   requestFocus: undefined,
 };
 
@@ -85,14 +80,6 @@ class TimeClarification extends React.Component {
       if (this.props.requestFocus) {
         this.props.requestFocus();
       }
-    } else if (this.props.releaseFocus) {
-      this.props.releaseFocus();
-    }
-  }
-
-  componentWillUnmount() {
-    if (this.props.releaseFocus) {
-      this.props.releaseFocus();
     }
   }
 

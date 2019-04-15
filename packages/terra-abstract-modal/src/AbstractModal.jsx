@@ -89,34 +89,52 @@ class AbstractModal extends React.Component {
 
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeydown);
+    const mainDocumentElement = document.querySelector(this.props.rootSelector);
+
+    if (this.props.isOpen) {
+      if (mainDocumentElement) {
+        mainDocumentElement.setAttribute('aria-hidden', 'true');
+        this.disabledHandle = Disabled({ context: mainDocumentElement });
+      }
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    const mainDocumentElement = document.querySelector(this.props.rootSelector);
+
+    if (this.props.isOpen) {
+      if (!prevProps.isOpen) {
+        if (mainDocumentElement) {
+          mainDocumentElement.setAttribute('aria-hidden', 'true');
+          this.disabledHandle = Disabled({ context: mainDocumentElement });
+        }
+      }
+    } else if (prevProps.isOpen) {
+      if (mainDocumentElement) {
+        mainDocumentElement.setAttribute('aria-hidden', 'false');
+
+        if (this.disabledHandle) {
+          this.disabledHandle.disengage();
+        }
+      }
+    }
   }
 
   componentWillUnmount() {
     document.removeEventListener('keydown', this.handleKeydown);
-    this.toggleVisuallyHiddenMainDocument('false');
+    const mainDocumentElement = document.querySelector(this.props.rootSelector);
+
+    if (mainDocumentElement) {
+      mainDocumentElement.setAttribute('aria-hidden', 'false');
+      if (this.disabledHandle) {
+        this.disabledHandle.disengage();
+      }
+    }
   }
 
   handleKeydown(e) {
     if (e.keyCode === KeyCode.KEY_ESCAPE && this.props.isOpen && this.props.closeOnEsc) {
       this.props.onRequestClose();
-    }
-  }
-
-  toggleVisuallyHiddenMainDocument(hiddenValue) {
-    const mainDocumentElement = document.querySelector(this.props.rootSelector);
-
-    if (hiddenValue === 'true') {
-      this.disabledHandle = Disabled({ context: mainDocumentElement });
-    }
-
-    if (hiddenValue === 'false') {
-      if (this.disabledHandle) {
-        this.disabledHandle.disengage();
-      }
-    }
-
-    if (mainDocumentElement) {
-      mainDocumentElement.setAttribute('aria-hidden', hiddenValue);
     }
   }
 
@@ -139,11 +157,8 @@ class AbstractModal extends React.Component {
     } = this.props;
 
     if (!isOpen) {
-      this.toggleVisuallyHiddenMainDocument('false');
       return null;
     }
-    this.toggleVisuallyHiddenMainDocument('true');
-
 
     return (
       <Portal

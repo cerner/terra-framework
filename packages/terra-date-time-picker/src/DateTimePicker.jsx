@@ -64,10 +64,6 @@ const propTypes = {
    */
   onChangeRaw: PropTypes.func,
   /**
-   * A callback function to let the containing component (e.g. modal) to regain focus.
-   */
-  releaseFocus: PropTypes.func,
-  /**
    * A callback function to request focus from the containing component (e.g. modal).
    */
   requestFocus: PropTypes.func,
@@ -93,7 +89,6 @@ const defaultProps = {
   minDateTime: undefined,
   onChange: undefined,
   onChangeRaw: undefined,
-  releaseFocus: undefined,
   requestFocus: undefined,
   timeInputAttributes: undefined,
   value: undefined,
@@ -382,7 +377,6 @@ class DateTimePicker extends React.Component {
         onStandardTimeButtonClick={this.handleStandardTimeButtonClick}
         onOffsetButtonClick={this.handleOffsetButtonClick}
         onRequestClose={this.handleOnRequestClose}
-        releaseFocus={this.props.releaseFocus}
         requestFocus={this.props.requestFocus}
       />
     );
@@ -401,7 +395,6 @@ class DateTimePicker extends React.Component {
       minDateTime,
       name,
       requestFocus,
-      releaseFocus,
       timeInputAttributes,
       value,
       ...customProps
@@ -437,7 +430,6 @@ class DateTimePicker extends React.Component {
           minDate={minDateTime}
           selectedDate={dateValue}
           name="input"
-          releaseFocus={releaseFocus}
           requestFocus={requestFocus}
           disabled={disabled}
         />

@@ -11,14 +11,12 @@ const ModalContent = (props) => {
 
   return (
     <div className="content-container" style={{ height: '100%', padding: '10px' }}>
-      {disclosureManager && disclosureManager.releaseFocus ? <h4>Modal focus is released!</h4> : null }
       {disclosureManager && disclosureManager.requestFocus ? <h4>Modal focus is trapped!</h4> : null }
       <Field label="Enter Date/Time" htmlFor="modal-picker">
         <DateTimePicker
           value="06-26-2017"
           name="date-time-picker-in-modal"
           dateInputAttributes={{ id: 'modal-picker' }}
-          releaseFocus={disclosureManager.releaseFocus}
           requestFocus={disclosureManager.requestFocus}
         />
       </Field>

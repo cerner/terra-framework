@@ -35,10 +35,6 @@ const propTypes = {
    */
   placeholder: PropTypes.string,
   /**
-   * A callback function to let the containing component (e.g. modal) to regain focus.
-   */
-  releaseFocus: PropTypes.func,
-  /**
    * A callback function to request focus from the containing component (e.g. modal).
    */
   requestFocus: PropTypes.func,
@@ -59,7 +55,6 @@ const defaultProps = {
   onClick: undefined,
   onKeyDown: undefined,
   placeholder: undefined,
-  releaseFocus: undefined,
   requestFocus: undefined,
   value: undefined,
 };
@@ -102,15 +97,6 @@ class DatePickerInput extends React.Component {
   }
 
   handleOnKeyDown(event) {
-    // The picker will be dismissed if one of these keys is pressed and the focus will be released so release the focus to the containing component.
-    if (this.props.releaseFocus && (event.key === 'Enter' || event.key === 'Escape' || event.key === 'Tab')) {
-      this.props.releaseFocus();
-
-      if (event.key === 'Tab') {
-        event.preventDefault();
-      }
-    }
-
     if (this.props.onKeyDown) {
       this.props.onKeyDown(event);
     }
@@ -124,7 +110,6 @@ class DatePickerInput extends React.Component {
       onClick,
       onKeyDown,
       placeholder,
-      releaseFocus,
       requestFocus,
       value,
       ...customProps

@@ -42,12 +42,6 @@ it('should render a date time picker with min and max dates', () => {
   expect(datePicker).toMatchSnapshot();
 });
 
-it('should render a date time picker with releaseFocus', () => {
-  const releaseFocus = () => {};
-  const datePicker = shallowWithIntl(<DateTimePicker name="date-time-input" releaseFocus={releaseFocus} utcOffset={0} />);
-  expect(datePicker).toMatchSnapshot();
-});
-
 it('should render a date time picker with requestFocus', () => {
   const requestFocus = () => {};
   const datePicker = shallowWithIntl(<DateTimePicker name="date-time-input" requestFocus={requestFocus} utcOffset={0} />);
