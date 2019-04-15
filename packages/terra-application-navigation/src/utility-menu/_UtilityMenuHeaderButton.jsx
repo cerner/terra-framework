@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';
 import Avatar from 'terra-avatar';
-import IconChevronDown from 'terra-icon/lib/icon/IconChevronDown';
+import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import IconKnurling from 'terra-icon/lib/icon/IconKnurling';
 
 import styles from './UtilityMenuHeaderButton.module.scss';
@@ -41,14 +41,14 @@ const UtilityMenuHeaderButton = ({
       {userConfig ? (
         <React.Fragment>
           <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials} className={cx('avatar')} />
-          <span className={cx('title')}>{userConfig.name}</span>
-          <IconChevronDown className={cx('icon')} />
-          <span className={cx('im-tall')} ref={refCallback} />
+          <div className={cx('title')}>{userConfig.name}</div>
+          <IconCaretDown className={cx('icon')} />
+          <div className={cx('popup-anchor')} ref={refCallback} />
         </React.Fragment>
       ) : (
         <React.Fragment>
           <IconKnurling className={cx('icon')} />
-          <span className={cx('im-tall')} ref={refCallback} />
+          <span className={cx('popup-anchor')} ref={refCallback} />
         </React.Fragment>
       )}
     </span>

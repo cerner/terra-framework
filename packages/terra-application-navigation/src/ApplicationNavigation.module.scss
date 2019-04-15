@@ -33,6 +33,10 @@
     transition: transform 0.15s ease-out;
     width: 100%;
     z-index: 1;
+
+    > *:first-child {
+      flex: 0 0 auto;
+    }
   }
 
   [dir=ltr] .content-layout.drawer-menu-is-open {

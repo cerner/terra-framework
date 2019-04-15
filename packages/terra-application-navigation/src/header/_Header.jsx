@@ -236,35 +236,46 @@ class Header extends React.Component {
     const headerHasAnyCounts = navigationItems.some(({ notificationCount }) => notificationCount > 0);
 
     let headerLayout;
-    if (shouldRenderCompactNavigation(activeBreakpoint)) {
-      /**
-       * When compact, the navigation region of the header renders the application name component instead. At compact
-       * sizes, the logo region within the HeaderLayout is too small to use, so we instead render within
-       * the navigation region which renders with a larger width.
-       */
-      headerLayout = (
-        <HeaderLayout
-          toggle={this.renderToggle(headerHasAnyCounts)}
-          navigation={this.renderAppName()}
-          extensions={extensions}
-          skipToContentSelector="[data-terra-application-layout-main]"
-        />
-      );
-    } else {
-      headerLayout = (
-        <HeaderLayout
-          logo={this.renderAppName()}
-          navigation={this.renderNavigationTabs()}
-          extensions={extensions}
-          utilities={this.renderUtilities()}
-          skipToContentSelector="[data-terra-application-layout-main]"
-        />
-      );
-    }
+    // if (shouldRenderCompactNavigation(activeBreakpoint)) {
+    //   /**
+    //    * When compact, the navigation region of the header renders the application name component instead. At compact
+    //    * sizes, the logo region within the HeaderLayout is too small to use, so we instead render within
+    //    * the navigation region which renders with a larger width.
+    //    */
+    //   headerLayout = (
+    //     <HeaderLayout
+    //       toggle={this.renderToggle(headerHasAnyCounts)}
+    //       navigation={this.renderAppName()}
+    //       extensions={extensions}
+    //       skipToContentSelector="[data-terra-application-layout-main]"
+    //     />
+    //   );
+    // } else {
+    //   headerLayout = (
+    //     <HeaderLayout
+    //       logo={this.renderAppName()}
+    //       navigation={this.renderNavigationTabs()}
+    //       extensions={extensions}
+    //       utilities={this.renderUtilities()}
+    //       skipToContentSelector="[data-terra-application-layout-main]"
+    //     />
+    //   );
+    // }
 
     return (
       <div className={cx(['application-header'])}>
-        {headerLayout}
+        <div className={cx('title-container')}>
+          {this.renderAppName()}
+        </div>
+        <div className={cx('main-navigation-container')}>
+          {this.renderNavigationTabs()}
+        </div>
+        <div className={cx('extensions-container')}>
+          {extensions}
+        </div>
+        <div className={cx('utilities-container')}>
+          {this.renderUtilities()}
+        </div>
         {this.renderUtilitiesPopup()}
       </div>
     );
