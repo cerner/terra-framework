@@ -1,7 +1,7 @@
 import Calendar from './calendar'
 import React from 'react'
 import PropTypes from 'prop-types'
-import PopperComponent, { popperPlacementPositions } from './popper_component'
+import Hookshot from 'terra-hookshot'
 import classnames from 'classnames'
 import {
   newDate,
@@ -33,6 +33,7 @@ import {
   safeDateFormat,
   getHightLightDaysMap
 } from './date_utils'
+import DatePositionUtils from '../DatePositionUtil'
 import onClickOutside from 'react-onclickoutside'
 
 const outsideClickIgnoreClass = 'react-datepicker-ignore-onclickoutside'
@@ -89,10 +90,6 @@ export default class DatePicker extends React.Component {
     openToDate: PropTypes.object,
     peekNextMonth: PropTypes.bool,
     placeholderText: PropTypes.string,
-    popperContainer: PropTypes.func,
-    popperClassName: PropTypes.string, // <PopperComponent/> props
-    popperModifiers: PropTypes.object, // <PopperComponent/> props
-    popperPlacement: PropTypes.oneOf(popperPlacementPositions), // <PopperComponent/> props
     readOnly: PropTypes.bool,
     required: PropTypes.bool,
     scrollableYearDropdown: PropTypes.bool,
@@ -149,6 +146,9 @@ export default class DatePicker extends React.Component {
   constructor (props) {
     super(props)
     this.state = this.calcInitialState()
+    this.handleOnPosition = this.handleOnPosition.bind(this);
+    this.datePickerContainer = React.createRef();
+    this.datePickerHookShotContainer = React.createRef();
   }
 
   componentWillReceiveProps (nextProps) {
@@ -331,6 +331,16 @@ export default class DatePicker extends React.Component {
 
     this.props.onChange(changedDate)
     this.setOpen(false)
+  }
+
+  handleOnPosition(event, positions) {
+    this.setArrowPosition(positions.content, positions.target);
+  }
+
+  setArrowPosition(contentPosition, targetPosition) {
+    const arrowPosition = DatePositionUtils.getArrowPosition(contentPosition, targetPosition, 8, 0);
+
+    this.datePickerHookShotContainer.current.setAttribute('data-placement', arrowPosition);
   }
 
   onInputClick = () => {
@@ -542,19 +552,34 @@ export default class DatePicker extends React.Component {
     }
 
     return (
-      <PopperComponent
-        className={this.props.popperClassName}
-        hidePopper={(!this.state.open || this.props.disabled)}
-        popperModifiers={this.props.popperModifiers}
-        targetComponent={
-          <div className="react-datepicker__input-container">
-            {this.renderDateInput()}
-            {this.renderClearButton()}
-          </div>
-        }
-        popperContainer={this.props.popperContainer}
-        popperComponent={calendar}
-        popperPlacement={this.props.popperPlacement}/>
+      <React.Fragment>
+        <div
+         ref={this.datePickerContainer}
+         className="react-datepicker__input-container"
+        >
+          {this.renderDateInput()}
+          {this.renderClearButton()}
+        </div>
+        {calendar && <Hookshot
+          attachmentBehavior="flip"
+          contentAttachment={{ vertical: 'top', horizontal: 'center' }}
+          isEnabled={true}
+          isOpen={(this.state.open && !this.props.disabled)}
+          targetAttachment={{ vertical: 'bottom', horizontal: 'center' }}
+          targetRef={() => this.datePickerContainer.current }
+          onPosition={this.handleOnPosition}
+        >
+          <Hookshot.Content>
+            <div
+              className="react-datepicker-hookshot"
+              data-placement="bottom"
+              ref={this.datePickerHookShotContainer}
+            >
+              {calendar}
+            </div>
+          </Hookshot.Content>
+        </Hookshot>}
+      </React.Fragment>
     )
   }
 }

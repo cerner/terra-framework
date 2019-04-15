@@ -80,6 +80,8 @@ class RoutingMenu extends React.Component {
        * The selectedChildKey is re-evaluated when new props are received to keep the internal state consistent.
        */
       return {
+        prevPropsLocationPathName: nextProps.location.pathname,
+        prevPropsMenuItems: nextProps.menuItems,
         selectedChildKey: RoutingMenu.getSelectedChildKey(nextProps.location.pathname, nextProps.menuItems),
       };
     }
