@@ -4,6 +4,9 @@ Changelog
 Unreleased
 ----------
 
+### Fixed
+* Fixed alignment of the header content.
+
 3.4.0 - (March 26, 2019)
 ------------------
 ### Changed
