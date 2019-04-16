@@ -175,7 +175,7 @@ const navigationItems = [{
  * The indexPath will be given to the NavigationLayout to set up the appropriate redirects. If users attempt to navigate to a path unsupported
  * by the routingConfig, they will be redirected to this route. This path should therefore be present in the routingConfig.
  */
-const indexPath = '/page_1';
+const indexPath = '/page_1/item_0';
 
 /**
  * Any component type can be used for the userData photo; however, the Avatar is an appropriate choice.
