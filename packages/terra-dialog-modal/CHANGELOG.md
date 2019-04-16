@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added 
+* Added new width 560px
 
 2.8.0 - (April 2, 2019)
 ------------------
