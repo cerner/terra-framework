@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Breaking Changes
+* Removed `releaseFocus` prop
+* Removed `requestFocus` prop
 
 3.14.0 - (April 16, 2019)
 ------------------
