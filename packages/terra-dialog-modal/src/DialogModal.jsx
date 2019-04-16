@@ -79,7 +79,7 @@ const DialogModal = (props) => {
   }
 
   return (
-    <AbstractModal ariaLabel={props.ariaLabel} role="dialog" classNameModal={cx(classArray)} isOpen={props.isOpen} onRequestClose={props.onRequestClose} zIndex="8000">
+    <AbstractModal ariaLabel={props.ariaLabel} role="dialog" classNameModal={cx(classArray)} isOpen={props.isOpen} onRequestClose={props.onRequestClose} zIndex="7000">
       <div {...customProps} className={cx('dialog-modal-inner-wrapper', customProps.className)}>
         <div className={cx('dialog-modal-container')}>
           <div>{header}</div>
