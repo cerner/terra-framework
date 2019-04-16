@@ -460,7 +460,7 @@ class InfiniteList extends React.Component {
       }
     }
 
-    const attrSpread = { dividerStyle, paddingStyle};
+    const attrSpread = { dividerStyle, paddingStyle };
     if (role && role.length > 0 && role !== 'none') {
       attrSpread.role = role;
     }
@@ -484,7 +484,7 @@ class InfiniteList extends React.Component {
 
     return (
       <React.Fragment>
-        <div  {...customProps} className={cx(['infinite-list', customProps.className])}  ref={this.setContentNode}>
+        <div {...customProps} className={cx(['infinite-list', customProps.className])} ref={this.setContentNode}>
           {initialSpinner}
           {topSpacer}
           <List {...attrSpread}>
