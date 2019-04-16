@@ -38,6 +38,8 @@ class ModalContent extends React.Component {
           targetRef={() => document.getElementById('popup-in-modal')}
         >
           <p>This is popup content</p>
+          <button type="button">Test button 1</button>
+          <button type="button">Test button 2</button>
         </Popup>
         <Button id="popup-in-modal" style={{ position: 'absolute', left: '125px' }} text="Popup In Modal" onClick={this.handlePopupButtonClick} />
         <br />
