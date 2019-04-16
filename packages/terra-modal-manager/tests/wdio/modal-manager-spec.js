@@ -379,35 +379,4 @@ describe('ModalManager - Behaviors', () => {
 
     Terra.should.matchScreenshot({ selector });
   });
-
-  describe('Disclosure - RequestFocus', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
-
-      browser.click('#root-component .disclose-large');
-
-      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .requestFocus', 1000);
-      browser.click('[class*="slide-group"] #DemoContainer-1 .requestFocus');
-    });
-
-    Terra.should.matchScreenshot({ selector });
-  });
-
-  describe('Disclosure - ReleaseFocus', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
-
-      browser.click('#root-component .disclose-large');
-
-      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .requestFocus', 1000);
-      browser.click('[class*="slide-group"] #DemoContainer-1 .requestFocus');
-
-      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .releaseFocus', 1000);
-      browser.click('[class*="slide-group"] #DemoContainer-1 .releaseFocus');
-
-      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .requestFocus', 1000);
-    });
-
-    Terra.should.matchScreenshot({ selector });
-  });
 });
