@@ -215,12 +215,12 @@ describe('DateTimePicker', () => {
   describe('OnSelect', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-on-select');
-      browser.click('[class*="button"]');
     });
 
     Terra.should.matchScreenshot('0', { viewports });
 
     it('Dismissed the modal manager after a click', () => {
+      browser.click('[class*="button"]');
       browser.click('[aria-label="day-27"]');
     });
 

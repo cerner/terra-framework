@@ -65,7 +65,7 @@ const propTypes = {
   onChangeRaw: PropTypes.func,
   /**
    * A callback function to execute when a selection is made in the date picker.
-   * The first parameter is the event. The second parameter is the selected input value.
+   * The first parameter is the event. The second parameter is the selected input value in ISO format.
    */
   onSelect: PropTypes.func,
   /**
