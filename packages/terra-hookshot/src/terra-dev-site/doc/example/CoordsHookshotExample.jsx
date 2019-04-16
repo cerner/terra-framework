@@ -1,6 +1,5 @@
 import React from 'react';
 import InputField from 'terra-form-input/lib/InputField';
-import SelectField from 'terra-form-select/lib/SelectField';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import Hookshot from 'terra-hookshot/lib/Hookshot';
 
@@ -19,7 +18,7 @@ const ATTACHMENT_POSITIONS = [
 const generateOptions = values => (
   values.map((currentValue, index) => {
     const keyValue = index;
-    return <SelectField.Option key={keyValue} value={currentValue} display={currentValue} />;
+    return <option key={keyValue} value={currentValue}>{currentValue}</option>;
   })
 );
 
@@ -82,12 +81,12 @@ class HookshotStandard extends React.Component {
     this.setState({ isOpen: false });
   }
 
-  handleAttachementBehaviorChange(value) {
-    this.setState({ hookshotAttachmentBehavior: value });
+  handleAttachementBehaviorChange(event) {
+    this.setState({ hookshotAttachmentBehavior: event.target.value });
   }
 
-  handleContentAttachmentChange(value) {
-    this.setState({ hookshotContentAttachment: value });
+  handleContentAttachmentChange(event) {
+    this.setState({ hookshotContentAttachment: event.target.value });
   }
 
   handleInputChange(event) {
@@ -108,15 +107,20 @@ class HookshotStandard extends React.Component {
     return (
       /* eslint-disable jsx-a11y/no-static-element-interactions */
       <div>
-        <SelectField
-          label="Attachment Behavior"
-          selectId={getId('hookshotAttachmentBehavior')}
-          selectAttrs={{ name: 'hookshotAttachmentBehavior' }}
+        <div style={{ height: '25px' }}>
+          <label htmlFor={getId('hookshotAttachmentBehavior')} style={{ fontWeight: 'bold' }}>Attachment Behavior</label>
+        </div>
+        <select
+          id={getId('hookshotAttachmentBehavior')}
+          name="hookshotAttachmentBehavior"
           value={this.state.hookshotAttachmentBehavior}
           onChange={this.handleAttachementBehaviorChange}
+          style={{ width: '200px', height: '30px' }}
         >
           {generateOptions(Hookshot.attachmentBehaviors)}
-        </SelectField>
+        </select>
+        <br />
+        <br />
         <InputField
           label="Attachment Margin in Px"
           inputId={getId('hookshotAttachmentMargin')}
@@ -125,15 +129,20 @@ class HookshotStandard extends React.Component {
           style={{ width: '200px' }}
           onChange={this.handleInputChange}
         />
-        <SelectField
-          label="Content Attachment"
-          selectId={getId('hookshotContentAttachment')}
-          selectAttrs={{ name: 'hookshotContentAttachment' }}
+        <div style={{ height: '25px' }}>
+          <label htmlFor={getId('hookshotContentAttachment')} style={{ fontWeight: 'bold' }}>Content Attachment</label>
+        </div>
+        <select
+          id={getId('hookshotContentAttachment')}
+          name="hookshotContentAttachment"
           value={this.state.hookshotContentAttachment}
           onChange={this.handleContentAttachmentChange}
+          style={{ width: '200px', height: '30px' }}
         >
           {generateOptions(ATTACHMENT_POSITIONS)}
-        </SelectField>
+        </select>
+        <br />
+        <br />
         {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
         <div
           onClick={this.handleRegionClick}

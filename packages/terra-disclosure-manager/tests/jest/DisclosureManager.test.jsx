@@ -500,6 +500,51 @@ describe('DisclosureManager', () => {
       });
   });
 
+  it('should prevent components deep within the disclosure stack from dismissing out of turn', () => {
+    const wrapper = mountDisclosureManager(['test'], manager => (
+      <div id="wrapper">
+        {manager.children.components}
+        {manager.disclosure.components}
+      </div>
+    ));
+
+    return new Promise((resolve, reject) => {
+      const childDisclosureManager1 = wrapper.find('#child1').getElements()[1].props.disclosureManager;
+      childDisclosureManager1.disclose({
+        preferredType: 'test',
+        size: 'large',
+        content: {
+          key: 'DISCLOSE_KEY',
+          component: <TestChild id="disclosure-component" />,
+        },
+      }).then(resolve).catch(reject);
+    })
+      .then(() => new Promise((resolve, reject) => {
+        wrapper.update();
+
+        const disclosureContentApp = wrapper.find('#disclosure-component').getElements()[1].props.disclosureManager;
+
+        disclosureContentApp.disclose({
+          preferredType: 'not-test',
+          size: 'huge',
+          content: {
+            key: 'NESTED',
+            component: <TestChild id="nested-disclosure-component" />,
+          },
+        }).then(resolve).catch(reject);
+      }))
+      .then(() => {
+        wrapper.update();
+
+        expect(wrapper.state().disclosureComponentKeys).toEqual(['DISCLOSE_KEY', 'NESTED']);
+
+        const firstDisclosureComponentApp = wrapper.find('#disclosure-component').getElements()[1].props.disclosureManager;
+        expect(firstDisclosureComponentApp.dismiss).toBeDefined();
+
+        return expect(firstDisclosureComponentApp.dismiss()).rejects.toEqual(undefined);
+      });
+  });
+
   it('should provide the disclosure content with restricted nested disclose functionality if trapNestedDisclosureRequests is enabled', () => {
     const wrapper = mount((
       <DisclosureManager.WrappedComponent
