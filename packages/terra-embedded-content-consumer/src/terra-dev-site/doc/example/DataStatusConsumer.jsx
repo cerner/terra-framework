@@ -11,7 +11,7 @@ const createListItem = (itemName) => {
 
 const appendLifeCycleStatuses = (statuses) => {
   const frame = document.getElementById('data-embedded-consumer-data-status');
-  if(!frame){
+  if (!frame) {
     return;
   }
 
