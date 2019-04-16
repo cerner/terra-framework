@@ -83,6 +83,7 @@ class AbstractModal extends React.Component {
   constructor() {
     super();
     this.handleKeydown = this.handleKeydown.bind(this);
+    this.setAbstractModalRef = this.setAbstractModalRef.bind(this);
   }
 
   componentDidMount() {
@@ -130,9 +131,16 @@ class AbstractModal extends React.Component {
     }
   }
 
+  setAbstractModalRef(node) {
+    this.AbstractModalRef = node;
+  }
+
   handleKeydown(e) {
+    const body = document.querySelector('body');
     if (e.keyCode === KeyCode.KEY_ESCAPE && this.props.isOpen && this.props.closeOnEsc) {
-      this.props.onRequestClose();
+      if (e.target === this.AbstractModalRef || this.AbstractModalRef.contains(e.target) || e.target === body) {
+        this.props.onRequestClose();
+      }
     }
   }
 
@@ -174,6 +182,7 @@ class AbstractModal extends React.Component {
           onRequestClose={onRequestClose}
           zIndex={zIndex}
           aria-modal="true"
+          refCallback={this.setAbstractModalRef}
         >
           {children}
         </ModalContent>

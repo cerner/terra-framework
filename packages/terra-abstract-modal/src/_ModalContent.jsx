@@ -52,6 +52,10 @@ const propTypes = {
    */
   isScrollable: PropTypes.bool,
   /**
+   * Ref callback for abstract modal.
+   */
+  refCallback: PropTypes.func,
+  /**
    * Role attribute on the modal dialog.
    */
   role: PropTypes.string,
@@ -74,16 +78,11 @@ const defaultProps = {
 
 /* eslint-disable react/prefer-stateless-function */
 class ModalContent extends React.Component {
-  constructor() {
-    super();
-    this.modalContentRef = React.createRef();
-  }
-
   componentDidMount() {
     if (this.props.fallbackFocus) {
       this.props.fallbackFocus.focus();
     } else {
-      this.modalContentRef.current.focus();
+      this.modalContentRef.focus();
     }
   }
 
@@ -97,6 +96,7 @@ class ModalContent extends React.Component {
       onRequestClose,
       fallbackFocus,
       role,
+      refCallback,
       isFullscreen,
       isScrollable,
       zIndex,
@@ -144,7 +144,7 @@ class ModalContent extends React.Component {
           aria-label={ariaLabel}
           className={modalClassName}
           role={role}
-          ref={this.modalContentRef}
+          ref={(node) => { this.modalContentRef = node; this.props.refCallback(node); }}
           {...customProps}
         >
           {children}
