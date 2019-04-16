@@ -1,6 +1,6 @@
 # Terra Dialog Modal
 
-The Dialog Modal would allow for dynamic height modals. Dialog modal would be a limited use case, as dynamic heights breaks with more complicated DOM structures. If content is too complicated, the terra-modal-manager should be used. The components is placed at an 8000 z-index. The dialog supports release and request focus props similar to terra-popup and terra-date-picker, so it can be presented from another modal with focus.
+The Dialog Modal allows for disclosing accessible modals with dynamic heights. The components is placed at an 7000 z-index. The dialog modal should not be disclosed from the terra-modal-manager component. If you need to display another modal while using the modal manager, use the modal stacking functionality provided in terra-modal-manager or the terra-notification-dialog.
 
 
 ## Getting Started
