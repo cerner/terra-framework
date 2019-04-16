@@ -1,6 +1,8 @@
 import Calendar from './calendar'
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Portal } from 'react-portal';
+import KeyCode from 'keycode-js';
 import Hookshot from 'terra-hookshot'
 import classnames from 'classnames'
 import {
@@ -147,8 +149,27 @@ export default class DatePicker extends React.Component {
     super(props)
     this.state = this.calcInitialState()
     this.handleOnPosition = this.handleOnPosition.bind(this);
+    this.handleKeydown = this.handleKeydown.bind(this);
     this.datePickerContainer = React.createRef();
     this.datePickerHookShotContainer = React.createRef();
+    this.datePickerOverlayContainer = React.createRef();
+    this.escapeKey = KeyCode.KEY_ESCAPE;
+  }
+
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKeydown);
+  }
+
+  componentDidUpdate() {
+    // Shift focus into hookshot date-picker if it exists
+    if (this.datePickerHookShotContainer.current) {
+      this.datePickerHookShotContainer.current.focus();
+    }
+
+    // Shift focus into overlay date-picker if it exists
+    if (this.datePickerOverlayContainer.current) {
+      this.datePickerOverlayContainer.current.focus();
+    }
   }
 
   componentWillReceiveProps (nextProps) {
@@ -163,7 +184,26 @@ export default class DatePicker extends React.Component {
   }
 
   componentWillUnmount () {
+    document.removeEventListener('keydown', this.handleKeydown);
     this.clearPreventFocusTimeout()
+  }
+
+  handleKeydown(event) {
+    if (event.keyCode === this.escapeKey) {
+      // If date picker is open in Hookshot
+      if (this.datePickerHookShotContainer.current) {
+        if (event.target === this.datePickerHookShotContainer.current || this.datePickerHookShotContainer.current.contains(event.target)) {
+          this.setOpen(false);
+        }
+      }
+
+      // If date picker is open in overlay
+      if (this.datePickerOverlayContainer.current) {
+        if (event.target === this.datePickerOverlayContainer.current || this.datePickerOverlayContainer.current.contains(event.target)) {
+          this.setOpen(false);
+        }
+      }
+    }
   }
 
   getPreSelection = () => (
@@ -542,9 +582,14 @@ export default class DatePicker extends React.Component {
           }
           {
             this.state.open || this.props.inline
-              ? <div className="react-datepicker__portal">
-                {calendar}
-              </div>
+              ? (<Portal isOpened={true}>
+                    <div
+                    ref={this.datePickerOverlayContainer}
+                    className="react-datepicker__portal"
+                    tabIndex="-1">
+                    {calendar}
+                  </div>
+                </Portal>)
               : null
           }
         </div>
@@ -574,6 +619,7 @@ export default class DatePicker extends React.Component {
               className="react-datepicker-hookshot"
               data-placement="bottom"
               ref={this.datePickerHookShotContainer}
+              tabIndex="-1"
             >
               {calendar}
             </div>

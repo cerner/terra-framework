@@ -22,6 +22,7 @@
 .react-datepicker-hookshot {
   margin-left: 5px;
   margin-right: 5px;
+  outline: 0;
 
   &[data-placement^="top"] {
     margin-top: $datepicker__triangle-size + 2px;
@@ -440,6 +441,7 @@
   align-items: center;
   display: flex;
   z-index: 2147483647;
+  outline: 0;
 
   .react-datepicker__day-name,
   .react-datepicker__day, .react-datepicker__time-name {
