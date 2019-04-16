@@ -3,6 +3,15 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Changes
+* Removed `releaseFocus` prop
+* Removed `requestFocus` prop
+
+### Added
+* Component specific handling for pressing Escape key to close the Date Picker
+
+### Changed
+* The date picker now renders in a react portal on narrow screens
 
 3.13.0 - (April 16, 2019)
 ------------------

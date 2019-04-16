@@ -3,6 +3,21 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Changes
+* Updated z-index for dialog modal to `7000`
+* Removed `isFocused` prop
+* Removed `releaseFocus` prop
+* Removed `requestFocus` prop
+
+### Removed
+* Removed test dependency on terra-disclosure-manager
+* Removed test dependency on terra-modal-manager
+
+### Added
+* Added test dependency on terra-form-select and example using terra-form-select in dialog modal
+* Added test dependency on terra-date-picker and example using terra-date-picker in dialog modal
+* Added test dependency on terra-popup and example using terra-popup in dialog modal
+* Added test dependency on terra-notification-dialog and example using terra-notification-dialog in dialog modal
 
 2.9.0 - (April 16, 2019)
 ------------------

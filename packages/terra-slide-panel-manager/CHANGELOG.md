@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Removed usage of `requestFocus` and `releaseFocus` from Slide Panel Manager test files
 
 4.10.0 - (April 16, 2019)
 ------------------

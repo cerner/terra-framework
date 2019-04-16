@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added test dependency on terra-form-select and example using terra-form-select in modal manager
 
 5.9.0 - (April 16, 2019)
 ------------------
