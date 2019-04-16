@@ -148,4 +148,6 @@ const validateNumber = (value) => {
 };
 ```
 
-With this we compare the value given us to same value to a given precision. Which means if we are handed `45.4321`, we will compare it to `45.432`, which is not equal and will return the failure message. The quirk with this validation is that if you give it `23.023000` it will succeed because it will be compared to `23.023` and be found equal. 
+With this we compare the value given us to same value to a given precision. Which means if we are handed `45.4321`, we will compare it to `45.432`, which is not equal and will return the failure message. The quirk with this validation is that if you give it `23.023000` it will succeed because it will be compared to `23.023` and be found equal thus you probably will need to include something to shorten the String value in this case.
+
+With this we have a function that we can add to validate a number based by having a minimum, maximum, and a certain level of precision required.
