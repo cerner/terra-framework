@@ -5,7 +5,6 @@ import ResponsiveElement from 'terra-responsive-element';
 
 /* eslint-disable-next-line  */
 import ReactDatePicker from './react-datepicker';
-import PopperContainer from './_PopperContainer';
 import DateInput from './DateInput';
 import DateUtil from './DateUtil';
 import styles from './DatePicker.module.scss';
@@ -267,7 +266,7 @@ class DatePicker extends React.Component {
     const maxMomentDate = DateUtil.createSafeDate(maxDate);
     const minMomentDate = DateUtil.createSafeDate(minDate);
 
-    const portalPicker = (
+    const hookshotPicker = (
       <ReactDatePicker
         {...customProps}
         selected={this.state.selectedDate}
@@ -335,15 +334,6 @@ class DatePicker extends React.Component {
         fixedHeight
         locale={intl.locale}
         placeholderText={placeholderText}
-        popperContainer={PopperContainer}
-        popperPlacement="bottom"
-        popperModifiers={{
-          keepTogether: {
-            enabled: true,
-          },
-        }}
-        popoverAttachment="top center"
-        popoverTargetAttachment="bottom center"
         dropdownMode="select"
         showMonthDropdown
         showYearDropdown
@@ -355,7 +345,7 @@ class DatePicker extends React.Component {
       <div className={styles['date-picker']}>
         <ResponsiveElement
           responsiveTo="window"
-          defaultElement={portalPicker}
+          defaultElement={hookshotPicker}
           small={popupPicker}
         />
       </div>

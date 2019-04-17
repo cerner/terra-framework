@@ -4,6 +4,18 @@ ChangeLog
 Unreleased
 ----------
 
+3.3.0 - (April 9, 2019)
+------------------
+### Added
+* EmbeddedContentProviderTestTemplate for testing embedded applications
+
+### Changed
+* Updated existing provider examples to use the EmbeddedContentProviderTestTemplate
+* Changed Provider examples to use `.provider` extension to fix provider examples in terra-ui
+
+### Removed
+* Dead code tests / examples that tested XFC implementation
+
 3.2.0 - (March 26, 2019)
 ------------------
 ### Changed

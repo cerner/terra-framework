@@ -7,6 +7,16 @@ Unreleased
 * Added timeVariant prop to datetime picker to support 12-hour format.
 * Added example for time variant on terra-dev site
 
+3.14.0 - (April 16, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+3.13.0 - (April 9, 2019)
+------------------
+### Changed
+* Minor dependency update
+
 3.12.0 - (April 2, 2019)
 ------------------
 ### Changed

@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+5.6.0 - (April 16, 2019)
+------------------
+### Changed
+* Updated the terra-dev-site documentation examples to use native select and Removed Dependency on terra-form-select.
+
 5.5.0 - (March 26, 2019)
 ------------------
 ### Changed
