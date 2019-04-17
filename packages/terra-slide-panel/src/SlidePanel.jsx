@@ -58,53 +58,24 @@ class SlidePanel extends React.Component {
     super(props);
     this.setPanelNode = this.setPanelNode.bind(this);
     this.mainNode = React.createRef();
-    this.handleTransitionEnd = this.handleTransitionEnd.bind(this);
-    this.preparePanelForTransition = this.preparePanelForTransition.bind(this);
 
     this.isHidden = !props.isOpen;
   }
 
-  componentDidMount() {
-    if (this.panelNode) {
-      this.panelNode.addEventListener('transitionend', this.handleTransitionEnd);
-    }
-  }
-
-  componentDidUpdate() {
-    this.lastIsOpen = this.props.isOpen;
-  }
-
-  componentWillUnmount() {
-    if (this.panelNode) {
-      this.panelNode.removeEventListener('transitionend', this.handleTransitionEnd);
-    }
-  }
-
-  setPanelNode(node) {
-    this.panelNode = node;
-  }
-
-  handleTransitionEnd() {
-    if (!this.props.isOpen) {
+  componentDidUpdate(prevProps) {
+    if (this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
+      this.panelNode.setAttribute('aria-hidden', 'false');
+      this.isHidden = false;
+      this.panelNode.focus();
+    } else if (!this.props.isOpen) {
       this.panelNode.setAttribute('aria-hidden', 'true');
       this.isHidden = true;
       this.mainNode.current.focus();
     }
   }
 
-  preparePanelForTransition() {
-    // React 16.3 will be deprecating componentWillRecieveProps and componentWillUpdate, and removed in 17, so code execution prior to render becomes difficult.
-    // As a result of this change, we are executing the code in the render block.
-    if (this.panelNode) {
-      if (this.props.isOpen && !this.lastIsOpen) {
-        // If the panel is opening remove the hidden attribute so the animation performs correctly.
-        this.panelNode.setAttribute('aria-hidden', 'false');
-        this.isHidden = false;
-        this.panelNode.focus();
-      } else {
-        this.handleTransitionEnd();
-      }
-    }
+  setPanelNode(node) {
+    this.panelNode = node;
   }
 
   render() {
@@ -126,8 +97,6 @@ class SlidePanel extends React.Component {
       { fill },
       customProps.className,
     ]);
-
-    this.preparePanelForTransition();
 
     return (
       <div

@@ -3,6 +3,11 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Remove transition listener logic. Replace with componentDidUpdate comparison.
+
+### Fixed
+* Set outline to none on main + panel.
 
 3.3.0 - (April 9, 2019)
 ------------------
