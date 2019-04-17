@@ -87,8 +87,8 @@ class AbstractModal extends React.Component {
   }
 
   componentDidMount() {
-    document.addEventListener('keydown', this.handleKeydown);
     const mainDocumentElement = document.querySelector(this.props.rootSelector);
+    document.addEventListener('keydown', this.handleKeydown);
 
     if (this.props.isOpen) {
       if (mainDocumentElement) {
@@ -114,6 +114,11 @@ class AbstractModal extends React.Component {
 
         if (this.disabledHandle) {
           this.disabledHandle.disengage();
+        }
+
+        if (this.modalTrigger) {
+          // shift focus back to element that was last focused prior to opening the modal
+          this.modalTrigger.focus();
         }
       }
     }
@@ -165,6 +170,9 @@ class AbstractModal extends React.Component {
     if (!isOpen) {
       return null;
     }
+
+    // Store element that was last focused when modal was opened
+    this.modalTrigger = document.activeElement;
 
     return (
       <Portal
