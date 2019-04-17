@@ -67,7 +67,7 @@ class SlidePanel extends React.Component {
       this.panelNode.setAttribute('aria-hidden', 'false');
       this.isHidden = false;
       this.panelNode.focus();
-    } else if (!this.props.isOpen) {
+    } else if (!this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
       this.panelNode.setAttribute('aria-hidden', 'true');
       this.isHidden = true;
       this.mainNode.current.focus();
