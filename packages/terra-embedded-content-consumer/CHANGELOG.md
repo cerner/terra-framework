@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Within DataStatusConsumer example - add guard clause for iframe query
 
 3.3.0 - (April 9, 2019)
 ------------------
