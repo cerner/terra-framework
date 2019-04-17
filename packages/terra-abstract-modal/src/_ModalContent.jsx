@@ -79,8 +79,14 @@ const defaultProps = {
 /* eslint-disable react/prefer-stateless-function */
 class ModalContent extends React.Component {
   componentDidMount() {
-    if (this.props.fallbackFocus) {
-      this.props.fallbackFocus.focus();
+    if (typeof this.props.fallbackFocus) {
+      if (typeof this.props.fallbackFocus === 'function') {
+        this.props.fallbackFocus().focus();
+      }
+
+      if (typeof this.props.fallbackFocus === 'string') {
+        document.querySelector(this.props.fallbackFocus).focus();
+      }
     } else {
       this.modalContentRef.focus();
     }
