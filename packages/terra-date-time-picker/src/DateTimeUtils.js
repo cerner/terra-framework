@@ -48,10 +48,15 @@ class DateTimeUtils {
 
   static syncDateTime(momentDate, iOSdate, time) {
     const date = moment(iOSdate);
+
+    if (!date.isValid()) {
+      return momentDate;
+    }
+
     let newDate = momentDate ? momentDate.clone() : date;
 
     // If momentDate was null, a new moment date needs to be created and sync'd with the entered time.
-    if (momentDate === null && time && time.length === 5) {
+    if (time && time.length === 5) {
       newDate = DateTimeUtils.updateTime(newDate, time);
     }
 
