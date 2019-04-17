@@ -58,18 +58,14 @@ class SlidePanel extends React.Component {
     super(props);
     this.setPanelNode = this.setPanelNode.bind(this);
     this.mainNode = React.createRef();
-
-    this.isHidden = !props.isOpen;
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
       this.panelNode.setAttribute('aria-hidden', 'false');
-      this.isHidden = false;
       this.panelNode.focus();
     } else if (!this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
       this.panelNode.setAttribute('aria-hidden', 'true');
-      this.isHidden = true;
       this.mainNode.current.focus();
     }
   }
@@ -109,7 +105,7 @@ class SlidePanel extends React.Component {
         <div className={cx('main')} tabIndex="-1" ref={this.mainNode}>
           {mainContent}
         </div>
-        <div className={cx(['panel'])} tabIndex="-1" aria-hidden={this.isHidden ? 'true' : 'false'} ref={this.setPanelNode}>
+        <div className={cx(['panel'])} tabIndex="-1" aria-hidden={!isOpen ? 'true' : 'false'} ref={this.setPanelNode}>
           {panelContent}
         </div>
       </div>
