@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.4.0 - (April 18, 2019)
+------------------
 ### Changed
 * Remove transition listener logic. Replace with componentDidUpdate comparison.
 
