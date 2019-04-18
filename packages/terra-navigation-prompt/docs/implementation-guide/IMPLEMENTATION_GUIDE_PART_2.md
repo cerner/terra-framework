@@ -8,7 +8,7 @@ At this point, we realize that we do not want to **ever** allow users to navigat
 - import React, { useState, useRef } from 'react';
 + import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import NavigationPrompt, { NavigationPromptCheckpoint } from '../../../../index';
+import NavigationPrompt, { NavigationPromptCheckpoint } from 'terra-navigation-prompt';
 
 const Form = ({ title }) => {
   const [inputValue, setInputValue] = useState('');
@@ -85,4 +85,4 @@ const FormSwitcher = () => {
 };
 ```
 
-We remove the `ref` from the NavigationPromptCheckpoint and instead implement `onPromptChange` to store the currently rendered NavigationPrompt's in the FormSwitcher's state. We disable the 'Switch to' buttons altogether if a NavigationPrompt is detected and render our own custom message within the FormSwitcher to notify our users. We could also use this state to control other navigation-capable components, like client-side routers.
+We remove the `ref` from the NavigationPromptCheckpoint and instead implement `onPromptChange` to store the currently rendered NavigationPrompt's in the FormSwitcher's state. We disable the 'Switch to' buttons altogether if a NavigationPrompt is detected. We could also use this state to control other navigation-capable components, like client-side routers.

@@ -3,9 +3,15 @@
 Assume we have built a simple component, the FormSwitcher, that toggles between showing two different stateful components, Form 1 and Form 2. Users of the FormSwitcher have recently complained that they can switch between forms before submitting their in progress form, losing their data in the process. We want to implement the NavigationPrompt and NavigationPromptCheckpoint to give our users more control over the FormSwitcher's navigation.
 
 > Note: This implementation guide features examples and use cases for the various APIs provided by the NavigationPrompt and NavigationPromptCheckpoint.
-> Please review your individual requirements to see which APIs are necessary for your specific needs.
+> !! Please review your individual requirements to see which APIs are necessary for your specific needs.
 
 ## Part 0 - Reviewing the Initial FormSwitcher Implementation
+
+The FormSwitcher renders two buttons that allow users to toggle between showing Form 1 and Form 2. Form 1 and Form 2 are unique instances of the Form component. 
+
+The Form component renders a text input element and keeps the input's value in state. When the Submit button is pressed, the value is reset to simulate a mock submission.
+
+If we enter text into Form 1's input, switch to Form 2, and then switch back to Form 1, we will notice our previously entered value is gone. This is not good, because that data in Form 1 could be *very* important to our users.
 
 ```jsx
 import React, { useState } from 'react';
@@ -55,7 +61,6 @@ const FormSwitcher = () => {
         type="button"
         disabled={activeForm === 'Form 1'}
         onClick={onSwitchForm.bind(null, 'Form 1')}
-
       >
         Switch to Form 1
       </button>
@@ -73,9 +78,3 @@ const FormSwitcher = () => {
 
 export default FormSwitcher;
 ```
-
-The FormSwitcher renders two buttons that allow users to toggle between showing Form 1 and Form 2. Form 1 and Form 2 are unique instances of the Form component. 
-
-The Form component renders a text input element and keeps the input's value in state. When the Submit button is pressed, the value is reset to simulate a mock submission.
-
-If we enter text into Form 1's input, switch to Form 2, and then switch back to Form 1, we will notice our previously entered value is gone. This is not good, because that data in Form 1 could be *very* important to our users.

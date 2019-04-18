@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import uuidv4 from 'uuid/v4';
 
 import withPromptRegistration from './_withPromptRegistration';
+import { promptRegistrationContextValueShape } from './PromptRegistrationContext';
 
 const propTypes = {
   /**
@@ -17,11 +18,7 @@ const propTypes = {
    * @private
    * An object containing prompt registration APIs provided through the PromptRegistrationContext.
    */
-  promptRegistration: PropTypes.shape({
-    isDefaultContextValue: PropTypes.bool,
-    registerPrompt: PropTypes.func.isRequired,
-    deregisterPrompt: PropTypes.func.isRequired,
-  }).isRequired,
+  promptRegistration: promptRegistrationContextValueShape.isRequired,
 };
 
 class NavigationPrompt extends React.Component {

@@ -116,7 +116,7 @@ Form.propTypes = {
 };
 
 /**
- * The FormSwitcher toggles between to versions a Form to demonstrate the functionality of nested NavigationPromptCheckpoints.
+ * The FormSwitcher toggles between two versions a Form to demonstrate the functionality of nested NavigationPromptCheckpoints.
  * Any NavigationPrompt registered to the Form's checkpoint will also be registered to the FormSwitcher's checkpoint.
  *
  * Before the FormSwitcher changes the Form type, the FormSwitcher resolves the prompts below its checkpoint with the default prompt title and message.
