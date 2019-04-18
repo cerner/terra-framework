@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+4.10.0 - (April 16, 2019)
+------------------
+### Changed
+* Minor dependency update
+
 4.9.0 - (April 9, 2019)
 ------------------
 ### Changed
