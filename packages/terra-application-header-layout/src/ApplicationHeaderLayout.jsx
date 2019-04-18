@@ -73,15 +73,12 @@ const ApplicationHeaderLayout = ({
     headerToggle = <div className={cx('fit')}>{toggle}</div>;
   }
 
-  let headerInner;
-  if (navigationElement || extensionsElement) {
-    headerInner = (
-      <div className={cx(['fill', 'header-inner'])}>
-        {navigationElement}
-        {extensionsElement}
-      </div>
-    );
-  }
+  const headerInner = (
+    <div className={cx(['fill', 'header-inner'])}>
+      {navigationElement}
+      {extensionsElement}
+    </div>
+  );
 
   const skipToContent = () => {
     const mainContainer = document.querySelector(['[data-terra-layout-main]']);
