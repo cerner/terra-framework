@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
 import KeyCode from 'keycode-js';
-import Disabled from 'ally.js/maintain/disabled';
+import 'mutationobserver-shim';
+import './_matches-polyfill';
+import 'wicg-inert';
 import ModalContent from './_ModalContent';
 
 const zIndexes = ['6000', '7000', '8000', '9000'];
@@ -32,16 +34,6 @@ const propTypes = {
    * If set to true, the modal will close when a mouseclick is triggered outside the modal.
    */
   closeOnOutsideClick: PropTypes.bool,
-  /**
-   * Element to fallback focus on if the FocusTrap can not find any focusable elements. Valid values are a valid
-   * dom selector string that is passed into document.querySelector or a function
-   * that returns a dom element. If using a dom selector, ensure that the query works for all browsers with
-   * the document.querySelector method.
-   */
-  fallbackFocus: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-  ]),
   /**
    * If set to true, the modal will be fullscreen on all breakpoint sizes.
    */
@@ -84,60 +76,59 @@ class AbstractModal extends React.Component {
     super();
     this.handleKeydown = this.handleKeydown.bind(this);
     this.setAbstractModalRef = this.setAbstractModalRef.bind(this);
+    this.showModalDomUpdates = this.showModalDomUpdates.bind(this);
+    this.hideModalDomUpdates = this.hideModalDomUpdates.bind(this);
   }
 
   componentDidMount() {
-    const mainDocumentElement = document.querySelector(this.props.rootSelector);
     document.addEventListener('keydown', this.handleKeydown);
 
     if (this.props.isOpen) {
-      if (mainDocumentElement) {
-        mainDocumentElement.setAttribute('aria-hidden', 'true');
-        this.disabledHandle = Disabled({ context: mainDocumentElement });
-      }
+      this.showModalDomUpdates();
     }
   }
 
   componentDidUpdate(prevProps) {
-    const mainDocumentElement = document.querySelector(this.props.rootSelector);
-
     if (this.props.isOpen) {
       if (!prevProps.isOpen) {
-        if (mainDocumentElement) {
-          mainDocumentElement.setAttribute('aria-hidden', 'true');
-          this.disabledHandle = Disabled({ context: mainDocumentElement });
-        }
+        this.showModalDomUpdates();
       }
     } else if (prevProps.isOpen) {
-      if (mainDocumentElement) {
-        mainDocumentElement.setAttribute('aria-hidden', 'false');
-
-        if (this.disabledHandle) {
-          this.disabledHandle.disengage();
-        }
-
-        if (this.modalTrigger) {
-          // shift focus back to element that was last focused prior to opening the modal
-          this.modalTrigger.focus();
-        }
+      this.hideModalDomUpdates();
+      if (this.modalTrigger) {
+        // Shift focus back to element that was last focused prior to opening the modal
+        this.modalTrigger.focus();
       }
     }
   }
 
   componentWillUnmount() {
     document.removeEventListener('keydown', this.handleKeydown);
-    const mainDocumentElement = document.querySelector(this.props.rootSelector);
-
-    if (mainDocumentElement) {
-      mainDocumentElement.setAttribute('aria-hidden', 'false');
-      if (this.disabledHandle) {
-        this.disabledHandle.disengage();
-      }
-    }
+    this.hideModalDomUpdates();
   }
 
   setAbstractModalRef(node) {
     this.AbstractModalRef = node;
+  }
+
+  showModalDomUpdates() {
+    const mainDocumentElement = document.querySelector(this.props.rootSelector);
+
+    if (mainDocumentElement) {
+      mainDocumentElement.setAttribute('aria-hidden', 'true');
+      mainDocumentElement.setAttribute('inert', '');
+      // Shift focus to modal when opened
+      this.AbstractModalRef.focus();
+    }
+  }
+
+  hideModalDomUpdates() {
+    const mainDocumentElement = document.querySelector(this.props.rootSelector);
+
+    if (mainDocumentElement) {
+      mainDocumentElement.setAttribute('aria-hidden', 'false');
+      mainDocumentElement.removeAttribute('inert');
+    }
   }
 
   handleKeydown(e) {
@@ -157,7 +148,6 @@ class AbstractModal extends React.Component {
       classNameOverlay,
       closeOnEsc,
       closeOnOutsideClick,
-      fallbackFocus,
       isFullscreen,
       isOpen,
       role,
@@ -185,7 +175,6 @@ class AbstractModal extends React.Component {
           classNameModal={classNameModal}
           classNameOverlay={classNameOverlay}
           role={role}
-          fallbackFocus={fallbackFocus}
           isFullscreen={isFullscreen}
           onRequestClose={onRequestClose}
           zIndex={zIndex}
