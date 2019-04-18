@@ -53,9 +53,9 @@ class DateTimeUtils {
       return momentDate;
     }
 
-    let newDate = momentDate ? momentDate.clone() : date;
+    let newDate = momentDate && momentDate.isValid() ? momentDate.clone() : date;
 
-    // If momentDate was null, a new moment date needs to be created and sync'd with the entered time.
+    // Update the time if it is valid.
     if (time && time.length === 5) {
       newDate = DateTimeUtils.updateTime(newDate, time);
     }
