@@ -12,7 +12,7 @@
 | terra-form | ^2.10.0 | ^16.2.0 | Components for building forms |
 | terra-icon | ^3.1.0 | ^16.8.5 | The terra-icon component is used to visually represent a literal or symbolic object intended to initiate an action, communicate a status, or navigate the workflow. |
 | terra-list | ^4.0.0 | ^16.8.5 | The Terra List is a structural component to arrange content within list/listitems. |
-| terra-menu | ^5.7.0 | ^16.8.5 | The menu is a popup component that displays a list of items, item groups, and dividers. Menu Items can be actionable, have toggle-style selection, or have nested submenu items. Menu Item groups are a single-select grouping of menu items. The Menu will determine the height of the popup based on the number of items in the main menu. |
+| terra-menu | ^5.8.0 | ^16.8.5 | The menu is a popup component that displays a list of items, item groups, and dividers. Menu Items can be actionable, have toggle-style selection, or have nested submenu items. Menu Item groups are a single-select grouping of menu items. The Menu will determine the height of the popup based on the number of items in the main menu. |
 | terra-mixins | ^1.0.0 | -- | The terra-mixins component supplies global mixins for use throughout the Terra ecosystem. |
 
 ## peerDependencies
