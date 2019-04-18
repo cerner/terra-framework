@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Honor min/max range when only either minDate or maxDate is set.
 
+3.13.0 - (April 16, 2019)
+------------------
+### Changed
+* Minor dependency update
+
 3.12.0 - (April 9, 2019)
 ------------------
 ### Changed
