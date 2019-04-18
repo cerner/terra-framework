@@ -12,7 +12,7 @@
 | terra-doc-template | ^2.2.0 | ^16.8.5 | Provides an adjustable template for documentation pages. |
 | terra-form-input | ^2.3.0 | ^16.8.5 | Element for building out inputs in a form. |
 | terra-slide-group | ^3.2.0 | ^16.8.5 | A component that utilizes the `react-transition-group` library to present a stack of components in an animated fashion |
-| terra-slide-panel | ^3.3.0 | ^16.8.5 | The Terra SlidePanel component is a progressive disclosure mechanism that allows additional content to be shown and hidden in a variety of ways. |
+| terra-slide-panel | ^3.4.0 | ^16.8.5 | The Terra SlidePanel component is a progressive disclosure mechanism that allows additional content to be shown and hidden in a variety of ways. |
 
 ## peerDependencies
 | Dependency | Version | React Version | Description |
