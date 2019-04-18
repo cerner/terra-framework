@@ -11,6 +11,10 @@ const createListItem = (itemName) => {
 
 const appendLifeCycleStatuses = (statuses) => {
   const frame = document.getElementById('data-embedded-consumer-data-status');
+  if (!frame) {
+    return;
+  }
+
   const frameContent = frame.contentWindow.document.getElementById('DataStatus-LifeCycleStatuses');
   if (frameContent) {
     statuses.forEach((status) => { frameContent.appendChild(createListItem(status)); });
