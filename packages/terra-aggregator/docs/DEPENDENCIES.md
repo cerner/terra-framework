@@ -16,7 +16,7 @@
 | terra-modal-manager | ^5.9.0 | ^16.8.5 | The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal. |
 | terra-responsive-element | ^4.0.0 | ^16.8.5 | The terra-responsive-element conditionally renders components based on viewport size |
 | terra-section-header | ^2.0.0 | ^16.8.5 | Section Header component that contains text and can be optionally interacted with. |
-| terra-slide-panel-manager | ^4.10.0 | ^16.8.5 | A DisclosureManager implementation that presents disclosed content using a SlidePanel. |
+| terra-slide-panel-manager | ^4.11.0 | ^16.8.5 | A DisclosureManager implementation that presents disclosed content using a SlidePanel. |
 
 ## peerDependencies
 | Dependency | Version | React Version | Description |
