@@ -6,6 +6,11 @@ Unreleased
 ### Fixed
 * Fixed crash when selectedDate prop is set to a string or empty string that is not ISO compliant and unable to convert to a valid moment object.
 
+3.13.0 - (April 16, 2019)
+------------------
+### Changed
+* Minor dependency update
+
 3.12.0 - (April 9, 2019)
 ------------------
 ### Changed
