@@ -409,8 +409,6 @@ class DateTimePicker extends React.Component {
       ...customProps
     } = this.props;
 
-    debugger;
-
     const dateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
     const dateValue = DateTimeUtils.formatMomentDateTime(dateTime, 'YYYY-MM-DD');
 
