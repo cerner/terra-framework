@@ -4,7 +4,10 @@ ChangeLog
 Unreleased
 ----------
 ### Removed
-* Removed minDateTime and maxDateTime props in favor of using form validation to validate date ranges.
+* Remove minDateTime and maxDateTime props. These props are being renamed to minDate and maxDate.
+
+### Added
+* Add minDate and maxDate props. These props replace minDateTime and maxDateTime for the purpose of ignoring the time portion when determing the min/max range.
 
 3.14.0 - (April 16, 2019)
 ------------------

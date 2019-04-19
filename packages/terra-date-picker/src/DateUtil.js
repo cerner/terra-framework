@@ -39,19 +39,19 @@ class DateUtil {
   static isDateOutOfRange(sourceDate, minDate, maxDate) {
     if (sourceDate && sourceDate.isValid()) {
       if (minDate && minDate.isValid() && (!maxDate || !maxDate.isValid())) {
-        if (sourceDate.isBefore(minDate)) {
+        if (sourceDate.isBefore(minDate, 'day')) {
           return true;
         }
       }
 
       if ((!minDate || !minDate.isValid()) && maxDate && maxDate.isValid()) {
-        if (sourceDate.isAfter(maxDate)) {
+        if (sourceDate.isAfter(maxDate, 'day')) {
           return true;
         }
       }
 
       if (minDate && minDate.isValid() && maxDate && maxDate.isValid()) {
-        if (sourceDate.isBefore(minDate) || sourceDate.isAfter(maxDate)) {
+        if (sourceDate.isBefore(minDate, 'day') || sourceDate.isAfter(maxDate, 'day')) {
           return true;
         }
       }

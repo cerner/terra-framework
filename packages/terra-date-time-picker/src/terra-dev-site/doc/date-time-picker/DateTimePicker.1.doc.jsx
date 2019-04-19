@@ -20,6 +20,8 @@ import DateTimePickerIncludeDates from '../example/DateTimePickerIncludeDates';
 import DateTimePickerIncludeDatesSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DateTimePickerIncludeDates';
 import DateTimePickerFilterDates from '../example/DateTimePickerFilterDates';
 import DateTimePickerFilterDatesSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DateTimePickerFilterDates';
+import DateTimePickerMinMax from '../example/DateTimePickerMinMax';
+import DateTimePickerMinMaxSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DateTimePickerMinMax';
 import DateTimePickerDST from '../example/DateTimePickerDST';
 import DateTimePickerDSTSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DateTimePickerDST';
 import DateTimePickerInsideModal from '../example/DateTimePickerInsideModal';
@@ -61,6 +63,11 @@ const DocPage = () => (
         title: 'Filter Dates',
         example: <DateTimePickerFilterDates />,
         source: DateTimePickerFilterDatesSrc,
+      },
+      {
+        title: 'Min Max Selection Options',
+        example: <DateTimePickerMinMax />,
+        source: DateTimePickerMinMaxSrc,
       },
       {
         title: 'Daylight Saving',

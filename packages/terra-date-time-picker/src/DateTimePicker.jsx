@@ -42,6 +42,16 @@ const propTypes = {
    * */
   intl: intlShape.isRequired,
   /**
+   * An ISO 8601 string representation of the maximum date that can be selected in the date picker.
+   * The time portion in this value is ignored because this is strictly used in the date picker.
+   */
+  maxDate: PropTypes.string,
+  /**
+   * An ISO 8601 string representation of the minimum date that can be selected in the date picker.
+   * The time portion in this value is ignored because this is strictly used in the date picker.
+   */
+  minDate: PropTypes.string,
+  /**
    * Name of the date input. The name should be unique.
    */
   name: PropTypes.string.isRequired,
@@ -81,6 +91,8 @@ const defaultProps = {
   excludeDates: undefined,
   filterDate: undefined,
   includeDates: undefined,
+  maxDate: undefined,
+  minDate: undefined,
   onChange: undefined,
   onChangeRaw: undefined,
   releaseFocus: undefined,
@@ -298,7 +310,17 @@ class DateTimePicker extends React.Component {
   }
 
   isDateTimeAcceptable(newDateTime) {
-    return !DateUtil.isDateExcluded(newDateTime, this.props.excludeDates);
+    let isAcceptable = true;
+
+    if (DateUtil.isDateOutOfRange(newDateTime, DateUtil.createSafeDate(this.props.minDate), DateUtil.createSafeDate(this.props.maxDate))) {
+      isAcceptable = false;
+    }
+
+    if (DateUtil.isDateExcluded(newDateTime, this.props.excludeDates)) {
+      isAcceptable = false;
+    }
+
+    return isAcceptable;
   }
 
   handleDaylightSavingButtonClick(event) {
@@ -377,6 +399,8 @@ class DateTimePicker extends React.Component {
       includeDates,
       onChange,
       onChangeRaw,
+      maxDate,
+      minDate,
       name,
       requestFocus,
       releaseFocus,
@@ -384,6 +408,8 @@ class DateTimePicker extends React.Component {
       value,
       ...customProps
     } = this.props;
+
+    debugger;
 
     const dateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
     const dateValue = DateTimeUtils.formatMomentDateTime(dateTime, 'YYYY-MM-DD');
@@ -411,6 +437,8 @@ class DateTimePicker extends React.Component {
           filterDate={filterDate}
           includeDates={includeDates}
           inputAttributes={dateInputAttributes}
+          maxDate={maxDate}
+          minDate={minDate}
           selectedDate={dateValue}
           name="input"
           releaseFocus={releaseFocus}
