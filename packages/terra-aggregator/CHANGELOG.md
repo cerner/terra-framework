@@ -3,9 +3,6 @@ Changelog
 
 Unreleased
 ----------
-
-Unreleased
-----------
 ### Changed
 * Moved packages we use solely in doc examples and tests to devDependencies
 

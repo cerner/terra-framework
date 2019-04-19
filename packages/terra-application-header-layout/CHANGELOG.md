@@ -3,9 +3,6 @@ Changelog
 
 Unreleased
 ----------
-
-Unreleased
-----------
 ### Changed
 * Moved packages we use solely in doc examples and tests to devDependencies
 
@@ -29,7 +26,7 @@ Unreleased
 * Update Jest tests to use terra-enzyme-intl
 
 ### Fixed
-* Fixed styling of the header content in IE11. 
+* Fixed styling of the header content in IE11.
 
 
 3.2.0 - (February 26, 2019)
