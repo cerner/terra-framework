@@ -25,20 +25,20 @@
     "react": "^16.8.5",
     "react-dom": "^16.8.5"
   },
-  "devDependencies": {
-    "react-router-dom": "^4.2.2"
-  },
   "dependencies": {
     "classnames": "^2.2.5",
     "lodash.debounce": "^4.0.8",
     "prop-types": "^15.5.8",
     "tabbable": "^3.1.1",
-    "terra-button": "^3.3.0",
     "terra-content-container": "^3.0.0",
-    "terra-doc-template": "^2.2.0",
-    "terra-icon": "^3.1.0",
     "terra-overlay": "^3.0.0",
     "terra-responsive-element": "^4.0.0"
+  },
+  "devDependencies": {
+    "terra-button": "^3.3.0",
+    "terra-doc-template": "^2.2.0",
+    "terra-icon": "^3.1.0",
+    "react-router-dom": "^4.2.2"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

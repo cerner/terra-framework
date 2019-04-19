@@ -3,6 +3,11 @@ Changelog
 
 Unreleased
 ----------
+
+Unreleased
+----------
+### Changed
+* Moved packages we use solely in doc examples and tests to devDependencies
 ### Changed
 * Updated test application-links examples to use a themable background color
 * Test background color updated / made uniform to pass color contrast checks
