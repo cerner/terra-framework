@@ -74,7 +74,7 @@ class NavigationPromptCheckpoint extends React.Component {
     if (!promptId && process.env.NODE_ENV !== 'production') {
       /* eslint-disable no-console */
       console.warn('A NavigationPrompt cannot be registered without an identifier.');
-      /* eslint-enable no-console */      
+      /* eslint-enable no-console */
       return;
     }
 
