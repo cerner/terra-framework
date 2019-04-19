@@ -29,6 +29,7 @@
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
+    "classnames": "^2.2.5",
     "terra-action-header": "^2.0.0",
     "terra-arrange": "^3.0.0",
     "terra-button": "^3.3.0",

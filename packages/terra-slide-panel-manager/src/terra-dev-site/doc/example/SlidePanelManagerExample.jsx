@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+/* eslint-disable import/no-unresolved, import/extensions */
 import SlidePanelManager from 'terra-slide-panel-manager/lib/SlidePanelManager';
 import styles from 'terra-slide-panel-manager/lib/terra-dev-site/doc/example/example-styles.scss';
-/* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+/* eslint-enable import/no-unresolved, import/extensions */
 
 import ContentComponent from './ContentComponent';
 

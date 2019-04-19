@@ -1,9 +1,11 @@
 import React from 'react';
+/* eslint-disable import/no-extraneous-dependencies */
 import Button from 'terra-button';
 import PropTypes from 'prop-types';
 import ActionHeader from 'terra-action-header';
 import ActionFooter from 'terra-action-footer';
 import DialogModal from '../../src/DialogModal';
+/* eslint-enable import/no-extraneous-dependencies */
 
 const propTypes = {
   width: PropTypes.string,

@@ -1,6 +1,6 @@
 import React from 'react';
 
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
+// eslint-disable-next-line import/no-unresolved, import/extensions
 import BrandFooter from 'terra-brand-footer/lib/BrandFooter';
 
 export default () => (
