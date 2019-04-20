@@ -26,10 +26,10 @@
     "react-dom": "^16.8.5"
   },
   "dependencies": {
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.5.8",
+    "classnames": "^2.2.5"
   },
   "devDependencies": {
-    "classnames": "^2.2.5",
     "terra-action-header": "^2.0.0",
     "terra-arrange": "^3.0.0",
     "terra-button": "^3.3.0",
