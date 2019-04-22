@@ -1,6 +1,7 @@
 import Calendar from './calendar'
 import React from 'react'
 import PropTypes from 'prop-types'
+import FocusTrap from 'focus-trap-react';
 import { Portal } from 'react-portal';
 import KeyCode from 'keycode-js';
 import Hookshot from 'terra-hookshot'
@@ -615,14 +616,16 @@ export default class DatePicker extends React.Component {
           onPosition={this.handleOnPosition}
         >
           <Hookshot.Content>
-            <div
-              className="react-datepicker-hookshot"
-              data-placement="bottom"
-              ref={this.datePickerHookShotContainer}
-              tabIndex="-1"
-            >
-              {calendar}
-            </div>
+            <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: true }}>
+              <div
+                className="react-datepicker-hookshot"
+                data-placement="bottom"
+                ref={this.datePickerHookShotContainer}
+                tabIndex="-1"
+              >
+                {calendar}
+              </div>
+            </FocusTrap>
           </Hookshot.Content>
         </Hookshot>}
       </React.Fragment>

@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "focus-trap-react": "^4.0.1",
     "moment": "^2.21.0",
     "prop-types": "^15.5.8",
     "keycode-js": "^1.0.4",

@@ -9,6 +9,7 @@ Unreleased
 
 ### Added
 * Component specific handling for pressing Escape key to close the Date Picker
+* Added focus trap to date-picker
 
 ### Changed
 * The date picker now renders in a react portal on narrow screens
