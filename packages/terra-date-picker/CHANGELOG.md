@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Limited the characters that could be used in terra-date-picker to numeric, '.', and '/'.
+* Moved packages we use solely in doc examples and tests to devDependencies
 
 3.13.0 - (April 16, 2019)
 ------------------

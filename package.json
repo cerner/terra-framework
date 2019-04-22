@@ -27,7 +27,15 @@
   "eslintConfig": {
     "extends": "terra",
     "rules": {
-      "react/forbid-prop-types": "false"
+      "react/forbid-prop-types": "false",
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": [
+            "./packages/*/src/terra-dev-site/**/*.jsx"
+          ]
+        }
+      ]
     },
     "settings": {
       "polyfills": [
