@@ -29,12 +29,14 @@
     "keycode-js": "^1.0.4",
     "prop-types": "^15.5.8",
     "terra-arrange": "^3.0.0",
-    "terra-button": "^3.3.0",
     "terra-content-container": "^3.0.0",
-    "terra-doc-template": "^2.2.0",
     "terra-icon": "^3.1.0",
     "terra-list": "^4.0.0",
-    "terra-popup": "^5.10.0",
+    "terra-popup": "^5.10.0"
+  },
+  "devDependencies": {
+    "terra-button": "^3.3.0",
+    "terra-doc-template": "^2.2.0",
     "terra-slide-group": "^3.2.0"
   },
   "scripts": {
