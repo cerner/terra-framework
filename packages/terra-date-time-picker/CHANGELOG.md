@@ -4,6 +4,7 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
+* Moved packages we use solely in doc examples and tests to devDependencies
 * Leverage createSafeDate from the DateUtil.
 
 3.14.0 - (April 16, 2019)

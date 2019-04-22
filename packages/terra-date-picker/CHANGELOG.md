@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Moved packages we use solely in doc examples and tests to devDependencies
+
 ### Fixed
 * Fixed crash when selectedDate prop is set to a string or empty string that is not ISO compliant and unable to convert to a valid moment object.
 

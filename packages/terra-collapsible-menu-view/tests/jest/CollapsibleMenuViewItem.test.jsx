@@ -1,7 +1,8 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
+/* eslint-disable import/no-extraneous-dependencies, import/no-extraneous-dependencies */
 import { shallowWithIntl } from 'terra-enzyme-intl';
 import IconTrash from 'terra-icon/lib/icon/IconTrash';
+/* eslint-enable import/no-extraneous-dependencies, import/no-extraneous-dependencies */
 import CollapsibleMenuViewItem from '../../src/CollapsibleMenuViewItem';
 
 describe('CollapsibleMenuViewItem', () => {
