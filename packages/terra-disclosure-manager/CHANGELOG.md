@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Explicitly documented the required arguments for the disclose behavior
 
 4.8.0 - (April 16, 2019)
 ------------------
