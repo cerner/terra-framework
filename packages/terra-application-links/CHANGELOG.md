@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated test application-links examples to use a themable background color
+* Test background color updated / made uniform to pass color contrast checks
 
 5.10.0 - (April 16, 2019)
 ------------------
