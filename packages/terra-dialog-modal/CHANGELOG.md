@@ -19,6 +19,9 @@ Unreleased
 * Added test dependency on terra-popup and example using terra-popup in dialog modal
 * Added test dependency on terra-notification-dialog and example using terra-notification-dialog in dialog modal
 
+### Changed
+* Moved packages we use solely in doc examples and tests to devDependencies
+
 2.9.0 - (April 16, 2019)
 ------------------
 ### Changed

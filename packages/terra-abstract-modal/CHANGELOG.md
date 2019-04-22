@@ -12,6 +12,9 @@ Unreleased
 ### Added
 * Component specific handling for pressing Escape key to close the abstract modal
 
+### Changed
+* Moved packages we use solely in doc examples and tests to devDependencies
+
 2.5.0 - (March 26, 2019)
 ------------------
 ### Changed

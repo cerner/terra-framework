@@ -1,8 +1,8 @@
 import React from 'react';
-/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+/* eslint-disable import/no-unresolved, import/extensions */
 import InfiniteList, { Item } from 'terra-infinite-list/lib/index';
 import Placeholder from 'terra-doc-template/lib/Placeholder';
-/* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+/* eslint-enable import/no-unresolved, import/extensions */
 
 import MyProgressiveLoadingIndicator from '../common/MyProgressiveLoadingIndicator';
 import MyExampleContainer from '../common/MyExampleContainer';

@@ -21,9 +21,6 @@
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "devDependencies": {
-    "terra-icon": "^3.1.0"
-  },
   "peerDependencies": {
     "react": "^16.8.5",
     "react-dom": "^16.8.5"
@@ -33,9 +30,12 @@
     "keycode-js": "^1.0.4",
     "prop-types": "^15.5.8",
     "react-portal": "^4.1.2",
-    "terra-doc-template": "^2.2.0",
     "wicg-inert": "^2.1.0",
     "mutationobserver-shim": "0.3.3"
+  },
+  "devDependencies": {
+    "terra-icon": "^3.1.0",
+    "terra-doc-template": "^2.2.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

@@ -3,6 +3,10 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Moved packages we use solely in doc examples and tests to devDependencies
+* Explicitly documented the required arguments for the disclose behavior
+
 
 4.8.0 - (April 16, 2019)
 ------------------
@@ -13,7 +17,7 @@ Unreleased
 ------------------
 ### Changed
 * Doc Updates
-* Introduced safety checks for nested disclosure dismissals 
+* Introduced safety checks for nested disclosure dismissals
 
 4.6.0 - (March 26, 2019)
 ------------------

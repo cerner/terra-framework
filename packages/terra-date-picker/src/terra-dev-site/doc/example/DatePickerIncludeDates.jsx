@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import Field from 'terra-form-field';
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
+// eslint-disable-next-line import/no-unresolved, import/extensions
 import DatePicker from 'terra-date-picker/lib/DatePicker';
 
 const propTypes = {
