@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Moved packages we use solely in doc examples and tests to devDependencies
+
 ### Fixed
 * Changes made to the time is now preserved when the modification is made with an invalid date.
 
