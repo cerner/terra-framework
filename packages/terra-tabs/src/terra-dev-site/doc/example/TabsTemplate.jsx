@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
-/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+/* eslint-disable import/no-unresolved, import/extensions */
 import Tabs from 'terra-tabs/lib/Tabs';
 import TabContentTemplate from 'terra-tabs/lib/terra-dev-site/doc/example/TabContentTemplate';
-/* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+/* eslint-enable import/no-unresolved, import/extensions */
 
 const propTypes = {
   tabFill: PropTypes.bool,
