@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Moved packages we use solely in doc examples and tests to devDependencies
 * Changed the parameter in filterDate prop from a moment object to an ISO string.
 
 3.13.0 - (April 16, 2019)

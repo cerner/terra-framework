@@ -4,6 +4,7 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
+* Moved packages we use solely in doc examples and tests to devDependencies
 * Update the filterDate examples to handle an ISO string instead of a moment object.
 
 3.14.0 - (April 16, 2019)
