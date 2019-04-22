@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Moved packages we use solely in doc examples and tests to devDependencies
 * Honor min/max range when only either minDate or maxDate is set.
 
 3.13.0 - (April 16, 2019)
