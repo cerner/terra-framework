@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Limited the characters that could be used in terra-date-picker to numeric, '.', and '/'.
 * Moved packages we use solely in doc examples and tests to devDependencies
 * Change the onBlur event to get triggered only when the entire date picker component loses focus.
 
