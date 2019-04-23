@@ -83,6 +83,17 @@ class DateUtil {
 
     return undefined;
   }
+
+  /**
+   * Determines if a provided date input value is valid.
+   * Valid inputs are either empty strings or contain only numeric, `/`, and '.' characters.
+   * @param {String} value Value to validate
+   * @return True if the value is valid, false otherwise.
+   */
+  static validDateInput(value) {
+    /* eslint-disable-next-line no-useless-escape */
+    return value.length === 0 || /^[\d\/.]+$/.test(value);
+  }
 }
 
 export default DateUtil;
