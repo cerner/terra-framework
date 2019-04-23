@@ -12,7 +12,7 @@
 | terra-doc-template | ^2.2.0 | ^16.8.5 | Provides an adjustable template for documentation pages. |
 | terra-icon | ^3.1.0 | ^16.8.5 | The terra-icon component is used to visually represent a literal or symbolic object intended to initiate an action, communicate a status, or navigate the workflow. |
 | terra-list | ^4.0.0 | ^16.8.5 | The Terra List is a structural component to arrange content within list/listitems. |
-| terra-popup | ^5.9.0 | ^16.8.5 | The Terra Popup is higher order component that launches terra-hookshot positioned content with the ability to display a dynamic arrow. |
+| terra-popup | ^5.10.0 | ^16.8.5 | The Terra Popup is higher order component that launches terra-hookshot positioned content with the ability to display a dynamic arrow. |
 | terra-slide-group | ^3.2.0 | ^16.8.5 | A component that utilizes the `react-transition-group` library to present a stack of components in an animated fashion |
 
 ## peerDependencies

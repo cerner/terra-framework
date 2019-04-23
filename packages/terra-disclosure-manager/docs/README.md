@@ -163,10 +163,10 @@ disclosureManager.disclose({
 
 `content` Object API:
 
-|Key|Value|
-|---|---|
-|key|A String key uniquely identifying the component to the DisclosureManager. This key will be added to the component (as a `key` prop) when rendered.|
-|component|A React element that will be disclosed.|
+|Key|Is Required|Value|
+|---|---|---|
+|`key`|**required**|A String key identifying the component to the DisclosureManager. This key must be unique amongst the set of all actively disclosed component keys.|
+|`component`|**required**|A React element that will be disclosed.|
 
 #### Disclosure Content
 

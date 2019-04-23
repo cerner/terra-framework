@@ -3,7 +3,7 @@ import Button from 'terra-button';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import Field from 'terra-form-field';
 
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
+// eslint-disable-next-line import/no-unresolved, import/extensions
 import DatePicker from 'terra-date-picker/lib/DatePicker';
 
 const ModalContent = (props) => {

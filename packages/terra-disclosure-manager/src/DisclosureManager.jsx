@@ -409,7 +409,7 @@ class DisclosureManager extends React.Component {
     return () => {
       const { disclosureComponentKeys } = this.state;
 
-      if (!key || disclosureComponentKeys[disclosureComponentKeys.length - 1] !== key) {
+      if (disclosureComponentKeys[disclosureComponentKeys.length - 1] !== key) {
         /**
          * If the top component key in the disclosure stack does not match
          * the key used to generate this function, or the key is undefined, then the pop action is rejected.

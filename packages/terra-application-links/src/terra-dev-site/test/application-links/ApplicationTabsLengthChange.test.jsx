@@ -3,6 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import ApplicationTabs from '../../../tabs/ApplicationTabs';
 import testShortConfig from '../common/testShortConfig';
 import testLinkConfig from '../common/testLinkConfig';
+import demoStyles from './demoStyles.scss';
 
 export default class extends React.Component {
   constructor(props) {
@@ -24,10 +25,7 @@ export default class extends React.Component {
         initialIndex={0}
       >
         <div>
-          <div style={{
-            border: '1px solid lightGray', width: '100%', backgroundColor: 'green', height: '39px', position: 'relative',
-          }}
-          >
+          <div className={demoStyles['demo-header']}>
             <ApplicationTabs id="test-tabs" links={this.state.shortLinks ? testShortConfig : testLinkConfig} />
           </div>
           <button type="button" onClick={this.handleToggle}>Click to toggle link length</button>

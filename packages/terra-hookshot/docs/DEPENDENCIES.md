@@ -12,7 +12,6 @@
 | terra-button | ^3.3.0 | ^16.8.5 | The terra-button component provides users a way to trigger actions in the UI. |
 | terra-doc-template | ^2.2.0 | ^16.8.5 | Provides an adjustable template for documentation pages. |
 | terra-form-input | ^2.3.0 | ^16.8.5 | Element for building out inputs in a form. |
-| terra-form-select | ^5.0.0 | ^16.8.5 | Provides a drop down of selectable options. |
 
 ## peerDependencies
 | Dependency | Version | React Version | Description |
