@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added onSelect function prop that fires when selecting a date via date picker.
+
 ### Changed
 * Moved packages we use solely in doc examples and tests to devDependencies
 * Change the onBlur event to get triggered only when the entire date time picker component loses focus.

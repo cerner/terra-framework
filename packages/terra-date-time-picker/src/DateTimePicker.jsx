@@ -78,7 +78,7 @@ const propTypes = {
   onFocus: PropTypes.func,
   /**
    * A callback function to execute when a selection is made in the date picker.
-   * The first parameter is the event. The second parameter is the selected input value.
+   * The first parameter is the event. The second parameter is the selected input value in ISO format.
    */
   onSelect: PropTypes.func,
   /**
@@ -183,11 +183,11 @@ class DateTimePicker extends React.Component {
     if (!previousDateTime || previousDateTime.format() !== updatedDateTime.format()) {
       this.checkAmbiguousTime(updatedDateTime);
     }
-
+    
     if (this.props.onSelect) {
       this.props.onSelect(event, updatedDateTime.format());
     }
-
+    
     this.hourInput.focus();
   }
 
