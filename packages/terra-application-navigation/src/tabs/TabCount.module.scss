@@ -23,39 +23,28 @@
 :local {
   .count {
     background-color: #ffb200;
-    border-radius: 30px;
+    border-radius: 30px; // todo: rems
     color: #000;
     flex: 0 0 auto;
-    font-size: 10px;
+    font-size: 10px; // todo: rems
     font-weight: bold;
-    line-height: 17px;
     margin: 0;
+    padding: 0 6px; // todo: rems
   }
 
   .is-inline {
     background-color: rgba(255, 255, 255, 0.8);
     border: solid 1px rgba(17, 22, 25, 0.5);
     color: rgba(17, 22, 25, 0.7);
-    font-size: 12px;
+    font-size: 12px; // todo: rems
     font-weight: normal;
-    line-height: 12px;
-    padding: 4px 7px;
+    padding: 4px 7px; // todo: rems
     flex: 0 0 auto;
   }
 
-  .one {
-    width: 20px;
-  }
-  .two {
-    width: 25px;
-  }
-  .plus {
-    width: 30px;
-  }
-
   .is-rollup {
-    height: 8px;
+    height: 8px; // todo: rems
     padding: 0;
-    width: 8px;
+    width: 8px; // todo: rems
   }
 }

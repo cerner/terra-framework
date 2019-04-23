@@ -165,17 +165,13 @@ class Header extends React.Component {
       navigationItems, activeNavigationItemKey, onSelectNavigationItem,
     } = this.props;
 
-    if (navigationItems.length) {
-      return (
-        <Tabs
-          tabs={navigationItems}
-          activeTabKey={activeNavigationItemKey}
-          onTabSelect={onSelectNavigationItem}
-        />
-      );
-    }
-
-    return null;
+    return (
+      <Tabs
+        tabs={navigationItems}
+        activeTabKey={activeNavigationItemKey}
+        onTabSelect={onSelectNavigationItem}
+      />
+    );
   }
 
   renderUtilities() {

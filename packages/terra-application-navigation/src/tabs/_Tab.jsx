@@ -29,6 +29,10 @@ const propTypes = {
    */
   isActive: PropTypes.bool,
   /**
+   * Boolean indicating whether or not the tab is a placeholder for height calculation.
+   */
+  isPlaceholder: PropTypes.bool,
+  /**
    * Callback function for the tab node.
    */
   refCallback: PropTypes.func,
@@ -66,9 +70,10 @@ const getRenderTabClasses = isActive => cx([
   { 'is-disabled': isActive },
 ]);
 
-const getDefaultTabClasses = (isActive, countClass) => cx([
+const getDefaultTabClasses = (isActive, isPlaceholder, countClass) => cx([
   'tab',
   { 'is-disabled': isActive },
+  { 'is-placeholder': isPlaceholder },
   countClass,
 ]);
 
@@ -99,12 +104,13 @@ class Tab extends React.Component {
       hasCount,
       icon,
       isActive,
+      isPlaceholder,
       refCallback,
       render,
       notificationCount,
     } = this.props;
 
-    const tabAttr = { 'aria-current': isActive };
+    const tabAttr = { 'aria-current': isActive, 'aria-hidden': isPlaceholder };
     let tabClassNames;
     let tabContent;
 
@@ -122,7 +128,7 @@ class Tab extends React.Component {
       );
     } else {
       const countClass = getCountClass(hasCount, notificationCount);
-      tabClassNames = getDefaultTabClasses(isActive, countClass);
+      tabClassNames = getDefaultTabClasses(isActive, isPlaceholder, countClass);
 
       tabContent = (
         <span className={cx(['tab-inner'])}>

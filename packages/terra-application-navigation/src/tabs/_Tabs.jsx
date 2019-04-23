@@ -31,6 +31,9 @@ const propTypes = {
      * Whether or not the tab has the potentional for a count.
      */
     hasNotifications: PropTypes.bool,
+    /**
+     * Render function to allow for custom tabs.
+     */
     renderFunction: PropTypes.func,
   })),
   /**
@@ -41,11 +44,9 @@ const propTypes = {
    * A function to be executed upon selection of a tab.
    */
   onTabSelect: PropTypes.func,
-  hasIcons: PropTypes.bool,
 };
 
 const defaultProps = {
-  hasIcons: false,
   tabs: [],
 };
 
@@ -63,11 +64,8 @@ class Tabs extends React.Component {
 
   componentDidMount() {
     this.resizeObserver = new ResizeObserver((entries) => {
-      const widthDidChange = this.contentWidth !== entries[0].contentRect.width;
-      if (widthDidChange) {
-        this.contentWidth = entries[0].contentRect.width;
-      }
-      if (!this.isCalculating && widthDidChange) {
+      this.contentWidth = entries[0].contentRect.width;
+      if (!this.isCalculating) {
         this.animationFrameID = window.requestAnimationFrame(() => {
           // Resetting the calculations so that all elements will be rendered face-up for width calculations
           this.resetCalculations();
@@ -166,6 +164,14 @@ class Tabs extends React.Component {
       activeTabKey,
       onTabSelect,
     } = this.props;
+
+    if (!tabs.length) {
+      return (
+        <div className={cx(['tabs-wrapper'])} ref={this.setContainerNode}>
+          <Tab isPlaceholder text="W" tabKey="" aria-hidden="true" />
+        </div>
+      );
+    }
 
     let showNotificationRollup = false;
     const visibleChildren = [];

@@ -1,19 +1,18 @@
 :local {
-  .tab {
-    &.is-disabled {
-      cursor: default;
-    }
-    &::-moz-focus-inner {
-      border: 0;
-    }
+  .tab.is-disabled {
+    cursor: default;
   }
 
   .tab-menu-display {
+    max-width: 100%;
+    .tab-inner {
+      max-width: 100%;
+    }
+
     .tab-menu-display-label {
       align-items: center;
       display: inline-flex;
       max-width: 100%;
-      position: relative;
     }
 
     .tab-menu-display-text {
@@ -21,7 +20,6 @@
       flex: 0 0 auto;
       min-width: 0;
       overflow: hidden;
-      position: relative; // remove IE10 active click transformation
       text-overflow: ellipsis;
       white-space: nowrap;
       word-break: normal;
@@ -42,14 +40,6 @@
     overflow: hidden;
   }
 
-  .tab-menu-display {
-    max-width: 100%;
-    .tab-inner {
-      max-width: 100%;
-      line-height: normal;
-    }
-  }
-
   .tab,
   .tab-menu-display {
     background-color: transparent;
@@ -61,10 +51,12 @@
     flex: 0 0 auto;
     font-family: inherit;
     font-size: var(--terra-application-navigation-tabs-tab-font-size, 0.9285714rem);
-    height: 100%;
     margin: 0;
     outline: none;
-    padding: 0;
+    padding-bottom: 1.143rem; // new special padding
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 1.143rem; // new special padding
     position: relative;
     text-align: center;
     text-decoration: none;
@@ -97,7 +89,6 @@
       height: 100%;
       justify-content: space-between;
       left: var(--terra-application-navigation-tabs-tab-position-left, 2px);
-      // overflow: hidden;
       top: 0;
       transition-duration: var(--terra-application-navigation-tabs-tab-transition-duration, 0s);
       transition-property: background-size;
@@ -106,10 +97,8 @@
 
     .tab-label {
       display: block;
-      line-height: 17px;
       max-width: 100%;
       overflow: hidden;
-      position: relative; // remove IE10 active click transformation
       text-overflow: ellipsis;
       white-space: nowrap;
       word-break: normal;
@@ -149,41 +138,12 @@
     }
   }
 
-  .tab,
-  .tab-menu-display {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-  .tab-count {
-    position: absolute;
-    right: 30px;
-  }
-
-
-  .tab-menu-count {
-    position: absolute;
-    right: -2px;
-    top: -2px;
-  }
-
-  .has-count {
-    padding-left: 45px;
-    padding-right: 45px;
-  }
-
-  .has-one-digit {
-    padding-left: 40px;
-    padding-right: 57px;
-  }
-
-  .has-two-digit {
-    padding-left: 35px;
-    padding-right: 62px;
-  }
-
-  .has-plus-digit {
-    padding-right: 67px;
+  .is-placeholder {
+    overflow: hidden;
+    padding-left: 0;
+    padding-right: 0;
+    width: 0;
+    visibility: hidden;
   }
 
   .is-custom {

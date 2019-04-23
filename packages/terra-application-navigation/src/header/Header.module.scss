@@ -4,7 +4,6 @@
     background-image: var(--terra-application-layout-navbar-background-image);
     border: var(--terra-application-layout-navbar-border);
     box-shadow: var(--terra-application-layout-navbar-box-shadow);
-    height: var(--terra-application-layout-navbar-height, 3.5714285714rem);
     padding-left: var(--terra-application-layout-navbar-padding-left);
     padding-right: var(--terra-application-layout-navbar-padding-right);
     position: relative;
@@ -28,7 +27,6 @@
     box-shadow: var(--terra-application-layout-navbar-toggle-box-shadow, inset -1px 0 0 0 rgba(0, 0, 0, 0.17));
     box-sizing: border-box;
     display: flex;
-    height: 100%;
     overflow: visible;
     width: var(--terra-application-layout-navbar-toggle-width, 3.6428571429rem);
   }
@@ -40,9 +38,8 @@
     box-shadow: var(--terra-application-layout-toggle-button-box-shadow);
     color: var(--terra-application-layout-toggle-button-color, #fff);
     cursor: pointer;
-    height: var(--terra-application-layout-toggle-button-height, 100%);
     left: var(--terra-application-layout-toggle-button-left, 0);
-    padding: var(--terra-application-layout-toggle-button-padding, 1.2857142857rem);
+    padding: var(--terra-application-layout-toggle-button-padding, 1.2857142857rem); // todo: this is currently driving height
     position: relative;
     width: var(--terra-application-layout-toggle-button-width, 100%);
 
@@ -67,6 +64,10 @@
       color: var(--terra-application-layout-toggle-button-focus-color, #fff);
       outline: none;
     }
+
+    &::-moz-focus-inner {
+      border: 0;
+    }
   }
 
   .application-name-container {
@@ -77,9 +78,7 @@
     flex: 1 1 auto;
     font-family: inherit;
     font-size: var(--terra-application-name-header-font-size, 1.0714285714rem);
-    height: 100%;
     letter-spacing: var(--terra-application-name-header-letter-spacing);
-    line-height: var(--terra-application-name-header-line-height);
     max-width: 100%;
     padding-bottom: var(--terra-application-name-header-padding-bottom, 0.357143rem);
     padding-left: var(--terra-application-name-header-padding-left, 0.357143rem);
