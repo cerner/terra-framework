@@ -1,0 +1,116 @@
+:local {
+  .compact-application-header {
+    align-content: center;
+    align-items: center; // TODO THEME
+    background-color: var(--terra-application-layout-navbar-background-color, #0079be);
+    background-image: var(--terra-application-layout-navbar-background-image);
+    border: var(--terra-application-layout-navbar-border);
+    box-shadow: var(--terra-application-layout-navbar-box-shadow);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding-left: var(--terra-application-layout-navbar-padding-left, 0.3571rem);
+    padding-right: var(--terra-application-layout-navbar-padding-right, 0.3571rem);
+    position: relative;
+    z-index: 5001;
+
+    min-height: 40px;
+
+    &::before {
+      background-color: var(--terra-application-layout-navbar-before-background-color, transparent);
+      background-image: var(--terra-application-layout-navbar-before-background-image, none);
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  .toggle-button {
+    background-color: var(--terra-application-layout-toggle-button-background-color, transparent);
+    border: var(--terra-application-layout-toggle-button-border, 0);
+    border-radius: var(--terra-application-layout-toggle-button-border-radius);
+    box-shadow: var(--terra-application-layout-toggle-button-box-shadow);
+    color: var(--terra-application-layout-toggle-button-color, #fff);
+    cursor: pointer;
+    // height: var(--terra-application-layout-toggle-button-height, 100%);
+    // left: var(--terra-application-layout-toggle-button-left, 0);
+    // padding: var(--terra-application-layout-toggle-button-padding, 1.2857142857rem);
+    position: relative;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    flex: 0 0 auto;
+
+    > svg {
+      height: var(--terra-application-layout-toggle-button-icon-height, 1rem);
+      width: var(--terra-application-layout-toggle-button-icon-width, 1rem);
+    }
+
+    &:hover {
+      background-color: var(--terra-application-layout-toggle-button-hover-background-color, rgba(0, 0, 0, 0.15));
+      border-color: var(--terra-application-layout-toggle-button-hover-border-color);
+      border-radius: var(--terra-application-layout-toggle-button-hover-border-radius);
+      box-shadow: var(--terra-application-layout-toggle-button-hover-box-shadow);
+      color: var(--terra-application-layout-toggle-button-hover-color, #fff);
+    }
+
+    &:focus {
+      background-color: var(--terra-application-layout-toggle-button-focus-background-color, rgba(0, 0, 0, 0.15));
+      border-color: var(--terra-application-layout-toggle-button-focus-border-color);
+      border-radius: var(--terra-application-layout-toggle-button-focus-border-radius);
+      box-shadow: var(--terra-application-layout-toggle-button-focus-box-shadow);
+      color: var(--terra-application-layout-toggle-button-focus-color, #fff);
+      outline: none;
+    }
+  }
+
+  .title-container {
+    flex: 1 1 auto;
+    margin-left: 0.2143rem;
+  }
+
+  .extensions-container {
+    flex: 0 0 auto;
+    margin-left: 1.429rem;
+  }
+
+  .toggle-count {
+    position: absolute;
+    right: 14px;
+    top: calc(50% - 11px);
+  }
+
+  .skip-content {
+    background-color: var(--terra-application-header-layout-background-color, #0079be);
+    border: var(--terra-application-header-layout-border, 1px solid #fff);
+    border-radius: var(--terra-application-header-layout-border-radius, 0);
+    clip: rect(1px, 1px, 1px, 1px);
+    color: var(--terra-application-header-layout-color, #fff);
+    height: 1px;
+    margin: var(--terra-application-header-layout-margin, 0);
+    outline: none;
+    overflow: hidden;
+    padding: var(--terra-application-header-layout-padding, 1rem 2rem);
+    position: absolute;
+    width: 1px;
+
+    &:focus {
+      clip: auto;
+      height: auto;
+      left: 0;
+      top: 0;
+      width: auto;
+      z-index: 20;
+    }
+
+    // Remove the inner border and padding in Firefox.
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+  }
+}

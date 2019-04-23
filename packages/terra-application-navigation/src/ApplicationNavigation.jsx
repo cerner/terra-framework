@@ -7,6 +7,7 @@ import FocusTrap from 'focus-trap-react';
 
 import Extensions from './extensions/_Extensions';
 import Header from './header/_Header';
+import CompactHeader from './header/_CompactHeader';
 import DrawerMenu from './drawer-menu/_DrawerMenu';
 import { shouldRenderCompactNavigation } from './utils/helpers';
 import {
@@ -151,11 +152,14 @@ class ApplicationNavigation extends React.Component {
     this.handleTransitionEnd = this.handleTransitionEnd.bind(this);
     this.handleMenuToggle = this.handleMenuToggle.bind(this);
     this.handleDrawerMenuFocusTrapDeactivation = this.handleDrawerMenuFocusTrapDeactivation.bind(this);
+    this.handleSkipToContent = this.handleSkipToContent.bind(this);
+
     this.renderNavigationMenu = this.renderNavigationMenu.bind(this);
     this.renderHeader = this.renderHeader.bind(this);
 
     this.drawerMenuRef = React.createRef();
     this.contentLayoutRef = React.createRef();
+    this.mainContainerRef = React.createRef();
 
     /**
      * The popup utility menu and the drawer menu should both be dismissed upon the selection of any item
@@ -210,6 +214,12 @@ class ApplicationNavigation extends React.Component {
   handleDrawerMenuFocusTrapDeactivation() {
     if (this.state.drawerMenuIsOpen) {
       this.setState({ drawerMenuIsOpen: false });
+    }
+  }
+
+  handleSkipToContent() {
+    if (this.mainContainerRef.current) {
+      this.mainContainerRef.current.focus();
     }
   }
 
@@ -273,9 +283,19 @@ class ApplicationNavigation extends React.Component {
       utilityItems,
     } = this.props;
 
+    if (shouldRenderCompactNavigation(activeBreakpoint)) {
+      return (
+        <CompactHeader
+          title={title}
+          extensions={createExtensions(extensionConfig, activeBreakpoint)}
+          onSelectToggle={this.handleMenuToggle}
+          onSelectSkipToContent={this.handleSkipToContent}
+        />
+      );
+    }
+
     return (
       <Header
-        activeBreakpoint={activeBreakpoint}
         title={title}
         extensions={createExtensions(extensionConfig, activeBreakpoint)}
         navigationItems={navigationItems}
@@ -289,6 +309,7 @@ class ApplicationNavigation extends React.Component {
         onSelectLogout={onSelectLogout}
         utilityItems={utilityItems}
         onSelectUtilityItem={this.handleUtilityItemSelection}
+        onSelectSkipToContent={this.handleSkipToContent}
       />
     );
   }
@@ -321,7 +342,7 @@ class ApplicationNavigation extends React.Component {
           aria-hidden={drawerMenuIsOpen ? true : null}
         >
           {this.renderHeader()}
-          <main tabIndex="-1" className={cx('main-container')} data-terra-application-navigation-main>
+          <main tabIndex="-1" className={cx('main-container')} ref={this.mainContainerRef}>
             <Overlay
               isRelativeToContainer
               onRequestClose={event => event.stopPropagation()}
