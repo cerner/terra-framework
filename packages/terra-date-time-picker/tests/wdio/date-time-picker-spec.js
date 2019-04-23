@@ -212,6 +212,27 @@ describe('DateTimePicker', () => {
     Terra.should.matchScreenshot('1', { viewports });
   });
 
+  describe('OnSelect', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-on-select');
+    });
+
+    Terra.should.matchScreenshot('0', { viewports });
+
+    it('Dismissed the modal manager after a click', () => {
+      browser.click('[class*="button"]');
+      browser.click('[aria-label="day-27"]');
+    });
+
+    Terra.should.matchScreenshot('1', { viewports });
+
+    it('Trigger onChange', () => {
+      browser.setValue('input[name="terra-date-input"]', '07/12/2017');
+    });
+
+    Terra.should.matchScreenshot('2', { viewports });
+  });
+
   describe('Displays the date picker inside a modal manager and exits when Enter is pressed', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-inside-modal');

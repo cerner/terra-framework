@@ -64,6 +64,11 @@ const propTypes = {
    */
   onChangeRaw: PropTypes.func,
   /**
+   * A callback function to execute when a selection is made in the date picker.
+   * The first parameter is the event. The second parameter is the selected input value in ISO format.
+   */
+  onSelect: PropTypes.func,
+  /**
    * Custom input attributes to apply to the time input. Use the name prop to set the name for the time input.
    * Do not set the name in inputAttribute as it will be ignored.
    */
@@ -85,6 +90,7 @@ const defaultProps = {
   minDateTime: undefined,
   onChange: undefined,
   onChangeRaw: undefined,
+  onSelect: undefined,
   timeInputAttributes: undefined,
   value: undefined,
 };
@@ -148,6 +154,9 @@ class DateTimePicker extends React.Component {
 
     if (!previousDateTime || previousDateTime.format() !== updatedDateTime.format()) {
       this.checkAmbiguousTime(updatedDateTime);
+    }
+    if (this.props.onSelect) {
+      this.props.onSelect(event, updatedDateTime.format());
     }
   }
 
@@ -385,6 +394,7 @@ class DateTimePicker extends React.Component {
       includeDates,
       onChange,
       onChangeRaw,
+      onSelect,
       maxDateTime,
       minDateTime,
       name,
