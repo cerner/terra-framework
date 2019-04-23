@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AbstractModal from 'terra-abstract-modal';
-import tabFocus from 'ally.js/maintain/tab-focus';
+import FocusTrap from 'focus-trap-react';
 import KeyCode from 'keycode-js';
 import Button from 'terra-button';
 import classNames from 'classnames/bind';
@@ -134,27 +134,8 @@ class NotificationDialog extends React.Component {
     document.addEventListener('keydown', this.handleKeydown);
   }
 
-  componentDidUpdate(prevProps) {
-    const notificationDialog = document.querySelector('[data-terra-notification-dialog]');
-
-    if (this.props.isOpen) {
-      if (!prevProps.isOpen) {
-        this.tabFocusHandle = tabFocus({ context: notificationDialog });
-      }
-    } else if (prevProps.isOpen) {
-      if (this.tabFocusHandle) {
-        this.tabFocusHandle.disengage();
-      }
-    }
-  }
-
   componentWillUnmount() {
     document.removeEventListener('keydown', this.handleKeydown);
-    if (this.props.isOpen) {
-      if (this.tabFocusHandle) {
-        this.tabFocusHandle.disengage();
-      }
-    }
   }
 
   handleKeydown(e) {
@@ -205,25 +186,27 @@ class NotificationDialog extends React.Component {
         zIndex="9000"
         data-terra-notification-dialog
       >
-        <div className={cx('notification-dialog-inner-wrapper')}>
-          <div className={cx('notification-dialog-container')}>
-            <div id="notification-dialog-header" className={cx('header-body')}>{header || defaultHeader}</div>
-            <div className={cx('notification-dialog-body')}>
-              {variant
-                && <div className={cx('icon-container')}>{getIcon(intl, variant, customIcon)}</div>
-              }
-              <div>
-                {title
-                  && <div id="notification-dialog-title" className={cx('title')}>{title}</div>
+        <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: false }}>
+          <div className={cx('notification-dialog-inner-wrapper')}>
+            <div className={cx('notification-dialog-container')}>
+              <div id="notification-dialog-header" className={cx('header-body')}>{header || defaultHeader}</div>
+              <div className={cx('notification-dialog-body')}>
+                {variant
+                  && <div className={cx('icon-container')}>{getIcon(intl, variant, customIcon)}</div>
                 }
-                {message
-                  && <div className={cx('message')}>{message}</div>
-                }
+                <div>
+                  {title
+                    && <div id="notification-dialog-title" className={cx('title')}>{title}</div>
+                  }
+                  {message
+                    && <div className={cx('message')}>{message}</div>
+                  }
+                </div>
               </div>
+              <div className={cx('footer-body')}>{actionSection(primaryAction, secondaryAction)}</div>
             </div>
-            <div className={cx('footer-body')}>{actionSection(primaryAction, secondaryAction)}</div>
           </div>
-        </div>
+        </FocusTrap>
       </AbstractModal>
     );
   }

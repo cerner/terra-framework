@@ -26,9 +26,9 @@
     "react-dom": "^16.8.5"
   },
   "dependencies": {
-    "ally.js": "^1.4.1",
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
+    "focus-trap-react": "^4.0.1",
     "keycode-js": "^1.0.4",
     "terra-abstract-modal": "^2.5.0",
     "terra-button": "^3.3.0",
