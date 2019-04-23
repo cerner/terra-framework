@@ -31,6 +31,10 @@ const propTypes = {
    * Whether or not the notification should pulse animate.
    */
   isPulsed: PropTypes.bool,
+  /**
+   * Boolean indicating whether or not the Tab should account for count spacing.
+   */
+  hasCount: PropTypes.bool,
 };
 
 const contextTypes = {
@@ -122,6 +126,7 @@ class TabMenu extends React.Component {
 
     return (
       <TabMenuDisplay
+        hasCount={this.props.hasCount}
         isPulsed={this.props.isPulsed}
         onClick={this.handleOnClick}
         onKeyDown={this.handleOnKeyDown}

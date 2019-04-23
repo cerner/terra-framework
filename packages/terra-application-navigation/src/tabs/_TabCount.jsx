@@ -70,7 +70,7 @@ class TabCount extends React.Component {
 
     let validatedValue = value;
     if (isRollup) {
-      validatedValue = null;
+      validatedValue = 'New'; // todo: translate this
     } else if (value > 99) {
       validatedValue = '99+';
     }

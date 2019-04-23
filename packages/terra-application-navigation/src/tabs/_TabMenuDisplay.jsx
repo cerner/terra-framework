@@ -38,9 +38,14 @@ const propTypes = {
    * Whether or not the notification should pulse animate.
    */
   isPulsed: PropTypes.bool,
+  /**
+   * Boolean indicating whether or not the Tab should account for count spacing.
+   */
+  hasCount: PropTypes.bool,
 };
 
 const defaultProps = {
+  hasCount: false,
   isPulsed: false,
   isSelected: false,
   showNotificationRollup: false,
@@ -65,6 +70,7 @@ class TabMenuDisplay extends React.Component {
 
   render() {
     const {
+      hasCount,
       isSelected,
       onKeyDown,
       popup,
@@ -77,6 +83,7 @@ class TabMenuDisplay extends React.Component {
 
     const displayClassNames = cx([
       'tab-menu-display',
+      { 'has-count': hasCount },
       customProps.className,
     ]);
     const attributes = { 'aria-current': isSelected };
@@ -102,7 +109,7 @@ class TabMenuDisplay extends React.Component {
         <div className={cx(['tab-inner'])}>
           <div className={cx(['tab-menu-display-label'])}>
             <span className={cx(['tab-menu-display-text'])}>{text}</span>
-            {showNotificationRollup && <Count className={cx(['tab-menu-count'])} value={isPulsed ? 1 : 0} isRollup />}
+            {showNotificationRollup && <span className={cx('tab-count')}><Count value={isPulsed ? 1 : 0} isRollup /></span>}
             <IconCaretDown className={cx(['tab-menu-display-icon'])} />
           </div>
         </div>

@@ -50,19 +50,7 @@ const propTypes = {
   render: PropTypes.func,
 };
 
-const getCountClass = (hasCount, notificationCount) => {
-  let countClass = hasCount ? 'has-count' : null;
-  if (notificationCount > 0) {
-    if (notificationCount < 10) {
-      countClass = 'has-one-digit';
-    } else if (notificationCount < 100) {
-      countClass = 'has-two-digit';
-    } else {
-      countClass = 'has-plus-digit';
-    }
-  }
-  return countClass;
-};
+const getCountClass = hasCount => (hasCount ? 'has-count' : null);
 
 const getRenderTabClasses = isActive => cx([
   'tab',

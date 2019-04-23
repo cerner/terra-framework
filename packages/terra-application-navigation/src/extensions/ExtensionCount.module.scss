@@ -22,11 +22,13 @@
 
 :local {
   .count {
-    background-color: #ffb200;
+    background-image: linear-gradient(to bottom, #ffb200, #ff7e00);
+    border: solid 1px rgba(89, 159, 253, 0.4);
     border-radius: 30px;
-    color: #000;
+    box-shadow: 0 1px 1px 0 rgba(17, 22, 25, 0.3);
+    color: rgba(17, 22, 25, 1);
     flex: 0 0 auto;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: bold;
     line-height: 10px;
     margin-left: 5px;
@@ -34,12 +36,14 @@
   }
 
   .is-inline {
+    background-image: none;
     background-color: rgba(255, 255, 255, 0.8);
     border: solid 1px rgba(17, 22, 25, 0.5);
+    box-shadow: none;
     color: rgba(17, 22, 25, 0.7);
     font-size: 12px;
     font-weight: normal;
-    line-height: 12px;
+    line-height: normal;
     padding: 4px 7px;
     flex: 0 0 auto;
   }

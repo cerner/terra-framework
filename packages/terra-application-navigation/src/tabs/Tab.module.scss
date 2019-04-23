@@ -149,4 +149,16 @@
   .is-custom {
     padding: 0,
   }
+
+  .has-count {
+    padding-bottom: 20px;
+    padding-top: 12px;
+  }
+
+  .tab-count {
+    position: absolute;
+    right: 50%;
+    bottom: 5px;
+    transform: translate3d(50%, 0, 0);
+  }
 }
