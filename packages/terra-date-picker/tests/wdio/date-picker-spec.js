@@ -328,12 +328,29 @@ describe('Date Picker', () => {
     Terra.should.matchScreenshot();
     Terra.should.beAccessible({ rules: ignoredA11y });
   });
-
+  
   describe('Invalid dates are ignored', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-ignore-invalid-selected-dates');
     });
 
     Terra.should.matchScreenshot();
+  });
+
+  describe('Key Limitations', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default');
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('input[name="terra-date-date-input"]').style.caretColor = 'transparent';
+      });
+    });
+
+    it('sets the date', () => {
+      browser.setValue('input[name="terra-date-date-input"]', '0');
+      browser.keys('a1.b2/;3');
+    });
+
+    Terra.should.validateElement('default', { axeRules: { rules: ignoredA11y } });
   });
 });
