@@ -183,11 +183,11 @@ class DateTimePicker extends React.Component {
     if (!previousDateTime || previousDateTime.format() !== updatedDateTime.format()) {
       this.checkAmbiguousTime(updatedDateTime);
     }
-    
+
     if (this.props.onSelect) {
       this.props.onSelect(event, updatedDateTime.format());
     }
-    
+
     this.hourInput.focus();
   }
 
