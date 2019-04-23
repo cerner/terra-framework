@@ -5,7 +5,6 @@ import { injectIntl, intlShape } from 'react-intl';
 import IconMenu from 'terra-icon/lib/icon/IconMenu';
 import Popup from 'terra-popup';
 
-import HeaderLayout from './_HeaderLayout';
 import Tabs from '../tabs/_Tabs';
 import UtilityMenuHeaderButton from '../utility-menu/_UtilityMenuHeaderButton';
 import UtilityMenu from '../utility-menu/_UtilityMenu';

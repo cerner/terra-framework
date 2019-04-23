@@ -75,11 +75,12 @@
   // }
 
   .title-container {
+    flex: 0 0 auto;
+    max-width: 40%;
     // align-items: var(--terra-application-name-header-align-items, center);
     // box-sizing: border-box;
     // color: var(--terra-application-name-header-color, #fff);
     // display: flex;
-    flex: 0 0 auto;
     // font-family: inherit;
     // font-size: var(--terra-application-name-header-font-size, 1.0714285714rem);
     // letter-spacing: var(--terra-application-name-header-letter-spacing);
@@ -111,7 +112,6 @@
 
   .main-navigation-container {
     flex: 1 1 auto;
-    height: 100%;
     margin-left: 3.571rem;
     min-width: 0;
     overflow: hidden;
