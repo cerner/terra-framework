@@ -3,9 +3,15 @@ ChangeLog
 
 Unreleased
 ----------
-#Added
+### Added
 * Added timeVariant prop to datetime picker to support 12-hour format.
 * Added example for time variant on terra-dev site
+
+### Added
+* Added onSelect function prop that fires when selecting a date via date picker.
+
+### Changed
+* Moved packages we use solely in doc examples and tests to devDependencies
 
 3.14.0 - (April 16, 2019)
 ------------------

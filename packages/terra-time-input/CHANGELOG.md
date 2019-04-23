@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Replaced string "12-hour" with TimeUtil.FORMAT_12_HOUR in terra dev-site eamples
+* Moved packages we use solely in doc examples and tests to devDependencies
 
 3.6.0 - (March 26, 2019)
 ------------------

@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Moved packages we use solely in doc examples and tests to devDependencies
 
 3.2.0 - (March 26, 2019)
 ------------------
