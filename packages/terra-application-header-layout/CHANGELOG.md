@@ -3,7 +3,11 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Moved packages we use solely in doc examples and tests to devDependencies
 
+3.5.0 - (April 16, 2019)
+------------------
 ### Fixed
 * Fixed alignment of the header content.
 
@@ -22,7 +26,7 @@ Unreleased
 * Update Jest tests to use terra-enzyme-intl
 
 ### Fixed
-* Fixed styling of the header content in IE11. 
+* Fixed styling of the header content in IE11.
 
 
 3.2.0 - (February 26, 2019)
