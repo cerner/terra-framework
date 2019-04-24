@@ -112,6 +112,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
       }
       isInvalid={false}
       name="terra-date-undefined"
+      onChange={[Function]}
       required={false}
       type="text"
     >
@@ -146,6 +147,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
           }
         }
         name="terra-date-undefined"
+        onChange={[Function]}
         required={false}
         type="text"
       />
