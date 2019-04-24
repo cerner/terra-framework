@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.12.0 - (April 24, 2019)
+------------------
 ### Changed
 * Moved packages we use solely in doc examples and tests to devDependencies
 
