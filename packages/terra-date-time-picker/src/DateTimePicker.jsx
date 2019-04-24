@@ -158,6 +158,7 @@ class DateTimePicker extends React.Component {
     this.handleOffsetButtonClick = this.handleOffsetButtonClick.bind(this);
     this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.dateTimePickerContainer = React.createRef();
+    this.hasFocus = false;
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -206,6 +207,8 @@ class DateTimePicker extends React.Component {
       if (this.props.onBlur) {
         this.props.onBlur(event);
       }
+
+      this.hasFocus = false;
     }
   }
 
@@ -228,6 +231,8 @@ class DateTimePicker extends React.Component {
       if (this.props.onBlur) {
         this.props.onBlur(event);
       }
+
+      this.hasFocus = false;
     }
   }
 
@@ -354,8 +359,9 @@ class DateTimePicker extends React.Component {
 
   handleFocus(event) {
     // Handle focus only if focus is gained from outside of the entire date time picker component.
-    if (this.props.onFocus && !this.dateTimePickerContainer.current.contains(event.relatedTarget)) {
+    if (this.props.onFocus && !this.dateTimePickerContainer.current.contains(event.relatedTarget) && !this.hasFocus) {
       this.props.onFocus(event);
+      this.hasFocus = true;
     }
   }
 
