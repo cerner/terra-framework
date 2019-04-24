@@ -1,7 +1,7 @@
 {
   "name": "terra-navigation-side-menu",
   "main": "lib/NavigationSideMenu.js",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "description": "A structual component for nesting navigational items within the content section of the terra-menu-layout.",
   "repository": {
     "type": "git",
@@ -31,8 +31,10 @@
     "prop-types": "^15.5.8",
     "terra-action-header": "^2.0.0",
     "terra-content-container": "^3.0.0",
-    "terra-doc-template": "^2.2.0",
     "terra-icon": "^3.1.0"
+  },
+  "devDependencies": {
+    "terra-doc-template": "^2.2.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

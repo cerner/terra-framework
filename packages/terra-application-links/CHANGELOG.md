@@ -3,7 +3,11 @@ Changelog
 
 Unreleased
 ----------
+
+5.11.0 - (April 24, 2019)
+------------------
 ### Changed
+* Moved packages we use solely in doc examples and tests to devDependencies
 * Updated test application-links examples to use a themable background color
 * Test background color updated / made uniform to pass color contrast checks
 
