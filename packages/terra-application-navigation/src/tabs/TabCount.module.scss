@@ -24,14 +24,15 @@
   .count {
     background-image: linear-gradient(to bottom, #ffb200, #ff7e00);
     border: solid 1px rgba(89, 159, 253, 0.4);
-    border-radius: 30px; // todo: rems
+    border-radius: 2.143rem;
     box-shadow: 0 1px 1px 0 rgba(17, 22, 25, 0.3);
     color: rgba(17, 22, 25, 1);
     flex: 0 0 auto;
-    font-size: 10px; // todo: rems
+    font-size: 0.7143rem;
     line-height: 1rem; // todo: need to determine how to handle this.
+    line-height: 1.2rem;
     margin: 0;
-    padding: 0 6px; // todo: rems
+    padding: 0 0.4286rem;
   }
 
   .is-inline {
@@ -40,9 +41,9 @@
     border: solid 1px rgba(17, 22, 25, 0.5);
     box-shadow: none;
     color: rgba(17, 22, 25, 0.7);
-    font-size: 12px; // todo: rems
+    font-size: 0.8571rem;
     font-weight: normal;
-    padding: 4px 7px; // todo: rems
+    padding: 0.2857rem 0.5rem;
     flex: 0 0 auto;
   }
 }

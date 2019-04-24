@@ -11,14 +11,14 @@
     position: relative;
 
     .extension-inner {
-      padding: 8px;
+      padding: 0.5714rem;
       position: relative;
     }
   
     .extension-image {
-      height: 14px;
+      height: 1rem;
       overflow: hidden;
-      width: 14px;
+      width: 1rem;
   
       & > svg {
         position: absolute;
@@ -26,7 +26,7 @@
     }
   
     .extension-count {
-      margin-left: 10px;
+      margin-left: 0.7143rem;
       position: absolute;
       right: -1px;
       top: -2px;

@@ -24,15 +24,15 @@
   .count {
     background-image: linear-gradient(to bottom, #ffb200, #ff7e00);
     border: solid 1px rgba(89, 159, 253, 0.4);
-    border-radius: 30px;
+    border-radius: 2.143rem;
     box-shadow: 0 1px 1px 0 rgba(17, 22, 25, 0.3);
     color: rgba(17, 22, 25, 1);
     flex: 0 0 auto;
-    font-size: 9px;
+    font-size: 0.6429rem;
     font-weight: bold;
-    line-height: 10px;
-    margin-left: 5px;
-    padding: 1px 4px;
+    // line-height: 10px;
+    margin-left: 0.3571rem;
+    padding: 0 0.4286rem;
   }
 
   .is-inline {
@@ -41,16 +41,21 @@
     border: solid 1px rgba(17, 22, 25, 0.5);
     box-shadow: none;
     color: rgba(17, 22, 25, 0.7);
-    font-size: 12px;
+    font-size: 0.8571rem;
     font-weight: normal;
-    line-height: normal;
-    padding: 4px 7px;
+    // line-height: normal;
+    padding: 0.2857rem 0.5rem;
     flex: 0 0 auto;
   }
 
+  // line-height: 1.5rem; 1.5 of font size;
+  // letter-spacing: 0.12rem; 0.12 of font size;
+  // word-spacing: 0.16rem; 0.16 of font size;
+  // font-size: 2rem; 200% of font size
+
   .is-rollup {
-    height: 8px;
+    height: 0.5714rem;
     padding: 0;
-    width: 8px;
+    width: 0.5714rem;
   }
 }
