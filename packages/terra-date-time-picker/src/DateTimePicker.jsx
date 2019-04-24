@@ -158,7 +158,7 @@ class DateTimePicker extends React.Component {
     this.handleOffsetButtonClick = this.handleOffsetButtonClick.bind(this);
     this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.dateTimePickerContainer = React.createRef();
-    this.hasFocus = false;
+    this.containerHasFocus = false;
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -208,7 +208,7 @@ class DateTimePicker extends React.Component {
         this.props.onBlur(event);
       }
 
-      this.hasFocus = false;
+      this.containerHasFocus = false;
     }
   }
 
@@ -232,7 +232,7 @@ class DateTimePicker extends React.Component {
         this.props.onBlur(event);
       }
 
-      this.hasFocus = false;
+      this.containerHasFocus = false;
     }
   }
 
@@ -359,9 +359,11 @@ class DateTimePicker extends React.Component {
 
   handleFocus(event) {
     // Handle focus only if focus is gained from outside of the entire date time picker component.
-    if (this.props.onFocus && !this.dateTimePickerContainer.current.contains(event.relatedTarget) && !this.hasFocus) {
+    // For IE 10/11 we cannot rely on event.relatedTarget since it is always null. Need to check if containerHasFocus is false to
+    // determine if the date-time picker component did not have focus but will now gain focus.
+    if (this.props.onFocus && !this.containerHasFocus && !this.dateTimePickerContainer.current.contains(event.relatedTarget)) {
       this.props.onFocus(event);
-      this.hasFocus = true;
+      this.containerHasFocus = true;
     }
   }
 
