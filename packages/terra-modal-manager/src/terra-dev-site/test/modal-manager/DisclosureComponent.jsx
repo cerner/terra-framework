@@ -122,8 +122,6 @@ class DisclosureComponent extends React.Component {
           {' '}
           {identifier}
         </p>
-        {document.activeElement !== document.querySelector('[role="dialog"][aria-modal="true"]') ? <p>Modal has lost focus!</p> : null}
-        {document.activeElement === document.querySelector('[role="dialog"][aria-modal="true"]') ? <p>Modal has gained focus!</p> : null}
         <button type="button" className="disclose" onClick={this.disclose()}>Disclose</button>
         <button type="button" className="disclose-tiny" onClick={this.disclose('tiny')}>Disclose Tiny</button>
         <button type="button" className="disclose-small" onClick={this.disclose('small')}>Disclose Small</button>
