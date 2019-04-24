@@ -1,7 +1,7 @@
 {
   "name": "terra-brand-footer",
   "main": "lib/BrandFooter.js",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "description": "A standard footer for application layout which provides content areas to display options such as branding, copyright information, logo and navigation to related pages.",
   "repository": {
     "type": "git",
@@ -27,7 +27,9 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "prop-types": "^15.5.8",
+    "prop-types": "^15.5.8"
+  },
+  "devDependencies": {
     "terra-doc-template": "^2.2.0"
   },
   "scripts": {
