@@ -7,6 +7,8 @@ Unreleased
 * Removed `releaseFocus` prop
 * Removed `requestFocus` prop
 
+5.11.0 - (April 24, 2019)
+------------------
 ### Changed
 * Moved packages we use solely in doc examples and tests to devDependencies
 

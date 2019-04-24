@@ -11,6 +11,8 @@ Unreleased
 * Added component specific handler for Escape key usage with Notification Dialog
 * Added focus trap to Notification Dialog
 
+2.11.0 - (April 24, 2019)
+------------------
 ### Changed
 * Moved packages we use solely in doc examples and tests to devDependencies
 

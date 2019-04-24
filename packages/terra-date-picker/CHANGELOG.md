@@ -11,6 +11,8 @@ Unreleased
 * Component specific handling for pressing Escape key to close the Date Picker
 * Added focus trap to date-picker
 
+3.14.0 - (April 24, 2019)
+------------------
 ### Changed
 * Limited the characters that could be used in terra-date-picker to numeric, '.', and '/'.
 * The date picker now renders in a react portal on narrow screens

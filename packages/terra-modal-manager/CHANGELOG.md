@@ -6,6 +6,8 @@ Unreleased
 ### Added
 * Added test dependency on terra-form-select and example using terra-form-select in modal manager
 
+5.10.0 - (April 24, 2019)
+------------------
 ### Changed
 * Moved packages we use solely in doc examples and tests to devDependencies
 
