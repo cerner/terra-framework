@@ -12,6 +12,7 @@ Unreleased
 * Added focus trap to date-picker
 
 ### Changed
+* Limited the characters that could be used in terra-date-picker to numeric, '.', and '/'.
 * The date picker now renders in a react portal on narrow screens
 * Moved packages we use solely in doc examples and tests to devDependencies
 

@@ -69,6 +69,7 @@ class DatePickerInput extends React.Component {
     super(props);
 
     this.handleOnButtonClick = this.handleOnButtonClick.bind(this);
+    this.handleOnChange = this.handleOnChange.bind(this);
     this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
   }
 
@@ -83,6 +84,16 @@ class DatePickerInput extends React.Component {
 
     if (!attributes.readOnly && this.onCalendarButtonClick && this.props.onClick) {
       this.onCalendarButtonClick(event, this.props.onClick);
+    }
+  }
+
+  handleOnChange(event) {
+    if (!DateUtil.validDateInput(event.target.value)) {
+      return;
+    }
+
+    if (this.props.onChange) {
+      this.props.onChange(event);
     }
   }
 
@@ -137,7 +148,7 @@ class DatePickerInput extends React.Component {
           type="text"
           name={'terra-date-'.concat(name)}
           value={value}
-          onChange={onChange}
+          onChange={this.handleOnChange}
           placeholder={placeholder}
           onFocus={this.onInputFocus}
         />
