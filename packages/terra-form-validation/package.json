@@ -3,7 +3,6 @@
   "main": "docs/README.md",
   "version": "0.0.0",
   "description": "Form Validation Examples for Terra",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git"
@@ -49,6 +48,8 @@
     "compile:build": "babel src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
-    "lint:scss": "stylelint src/**/*.scss"
+    "lint:scss": "stylelint src/**/*.scss",
+    "test": "npm run test:jest",
+    "test:jest": "jest --config ../../jestconfig.js"
   }
 }

@@ -1,37 +1,79 @@
 /* eslint-disable no-underscore-dangle */
+/* eslint-disable no-restricted-globals */
 
 class FormValidationUtil {
-  static maxLength(value, x) {
-    return value.length <= x;
+  /* Checks given value's length against maximum. Returns true if value's length is less than the maximum.
+   * @value is the value string, @maximum is a nonnegative whole number. */
+  static maxLength(value, maximum) {
+    if (!(typeof value === 'string' || value instanceof String)
+    || !(typeof maximum === 'number' && isFinite(maximum))
+    || maximum < 0 || !Number.isInteger(maximum)) { return false; }
+    return value.length <= maximum;
   }
 
-  static minLength(value, x) {
-    return value.length >= x;
+  /* Checks given value's length against minimum. Returns true if value's length is greater than the minimum.
+   * @value is the value string, @minimum is a nonnegative whole number. */
+  static minLength(value, minimum) {
+    if (!(typeof value === 'string' || value instanceof String)
+    || !(typeof minimum === 'number' && isFinite(minimum))
+    || minimum < 0 || !Number.isInteger(minimum)) { return false; }
+    return value.length >= minimum;
   }
 
+  /* Checks given value for extraneous whitespace. return true if there is no whitespace.
+   * @value is the value string */
   static noWhitespace(value) {
+    if (!(typeof value === 'string' || value instanceof String)) { return false; }
     return value.trim() === value;
   }
 
+  /* Checks given value for any string in given array. return true if value does not contain any of them.
+   * @value is the value string, @chars is an array of strings  */
   static characterCheck(value, chars) {
-    return chars.some(substring => value.includes(substring));
+    if (!(typeof value === 'string' || value instanceof String)
+    || !(chars && typeof chars === 'object' && chars.constructor === Array)) { return false; }
+    for (let i = 0; i < chars.length; i += 1) {
+      if (value.includes(chars[i])) {
+        return false;
+      }
+    }
+    return true;
   }
 
-  static minValue(value, x) {
-    return value >= x;
+  /* Checks given value against a minimum value. Returns true if value is greater then or equal to the minimum
+   * @value is the value string, @minimum is the minimum numeric value  */
+  static minValue(value, minimum) {
+    if (!(typeof value === 'string' || value instanceof String)
+    || !(typeof minimum === 'number' && isFinite(minimum))) { return false; }
+    return value >= minimum;
   }
 
-  static maxValue(value, x) {
-    return value <= x;
+  /* Checks given value against a maximum value. Returns true if value is less then or equal to the maximum
+   * @value is the value string, @maximum maximum numeric value  */
+  static maxValue(value, maximum) {
+    if (!(typeof value === 'string' || value instanceof String)
+    || !(typeof maximum === 'number' && isFinite(maximum))) { return false; }
+    return value <= maximum;
   }
 
-  static precisionCheck(value, x) {
+  /* Checks given value for a specific level of precision. Returns true if value has less than or an equal amount of precision
+   * @value is the value string, @precision is a nonnegative whole number  */
+  static precisionCheck(value, precision) {
+    if (!(typeof value === 'string' || value instanceof String)
+    || !(typeof precision === 'number' && isFinite(precision))
+    || precision < 0 || !Number.isInteger(precision)) { return false; }
     const valueSplit = value.split('.');
-    return !(valueSplit.length === 2 && valueSplit[1].length > x);
+    if (valueSplit.length === 2 && valueSplit[1].length > precision) {
+      return false;
+    }
+    return true;
   }
 
+  /* Checks given value for if it is a negative value. Returns true if it is nonnegative.
+   * @value is the value string */
   static negativeCheck(value) {
-    return value < 0;
+    if (!(typeof value === 'string' || value instanceof String)) { return false; }
+    return parseFloat(value) >= 0;
   }
 }
 

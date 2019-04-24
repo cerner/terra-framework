@@ -219,4 +219,16 @@ renderForm({ handleSubmit }) {
 }
 ```
 
-And with that we have created an input that is required and has max length of 7 characters.
+And with that we have created an input that is required and has max length of 7 characters. This showed how to make the validate function by yourself, but if we wanted to we could shorten the code a bit more under the validateLength function through the use of `terra-form-validation`'s FormValidationUtil class like so.
+
+```javascript
+import FormValidationUtil from 'terra-form-validation';
+...
+const validateLength = (name) => {
+  if (!FormValidationUtil.maxLength(name, 8)) {
+    return 'Name needs to be less than 8 characters long';
+  }
+
+  return undefined;
+};
+```

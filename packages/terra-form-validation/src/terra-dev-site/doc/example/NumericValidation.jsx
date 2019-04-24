@@ -5,21 +5,16 @@ import { Form, Field } from 'react-final-form';
 import InputField from 'terra-form-input/lib/InputField';
 import Button from 'terra-button';
 import Spacer from 'terra-spacer';
+import FormValidationUtil from '../../../FormValidationUtil';
 
 const validateNumber = (value) => {
-  if (!value) { return undefined; }
-  if (value < 10) {
+  if (!FormValidationUtil.minValue(value, 10)) {
     return 'Value should not be less than 10.';
   }
-  if (value > 100) {
+  if (!FormValidationUtil.maxValue(value, 100)) {
     return 'Value should not be over 100.';
   }
-  const valueNum = Number(value);
-  if (valueNum.toFixed(3) != valueNum) {
-    return 'Value has more than 3 decimal points';
-  }
-  const valueSplit = value.split('.');
-  if (valueSplit.length === 2 && valueSplit[1].length > 3) {
+  if (!FormValidationUtil.precisionCheck(value, 3)) {
     return 'Value has more than 3 decimal points';
   }
 

@@ -5,9 +5,10 @@ import { Form, Field } from 'react-final-form';
 import InputField from 'terra-form-input/lib/InputField';
 import Button from 'terra-button';
 import Spacer from 'terra-spacer';
+import FormValidationUtil from '../../../FormValidationUtil';
 
 const validateLength = (name) => {
-  if (name && name.length > 7) {
+  if (!FormValidationUtil.maxLength(name, 8)) {
     return 'Name needs to be less than 8 characters long';
   }
 
