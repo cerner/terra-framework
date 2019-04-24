@@ -176,7 +176,6 @@ describe('DateTimePicker', () => {
     it('tabs out of the component and onBlur is triggered', () => {
       browser.keys('Tab');
       expect(browser.getText('#blur-count')).to.equal('1');
-      expect(browser.getText('#focus-count')).to.equal('1');
     });
   });
 
