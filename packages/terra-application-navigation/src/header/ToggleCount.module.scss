@@ -23,14 +23,14 @@
 :local {
   .count {
     background-color: #ffb200;
-    border-radius: 30px;
+    border-radius: 2.143rem;
     color: #000;
     flex: 0 0 auto;
-    font-size: 10px;
+    font-size: 0.7143rem;
     font-weight: bold;
-    height: 8px;
-    line-height: 11px;
+    height: 0.5714rem;
+    // line-height: 11px; // todo: investigate
     padding: 0;
-    width: 8px;
+    width: 0.5714rem;
   }
 }
