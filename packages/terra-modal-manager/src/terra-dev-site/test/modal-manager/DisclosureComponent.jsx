@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ContentContainer from 'terra-content-container';
-import SelectField from 'terra-form-select';
 import {
   availableDisclosureHeights, availableDisclosureWidths, withDisclosureManager, disclosureManagerShape,
 } from 'terra-disclosure-manager';
@@ -123,6 +122,8 @@ class DisclosureComponent extends React.Component {
           {' '}
           {identifier}
         </p>
+        {document.activeElement !== document.querySelector('[role="dialog"][aria-modal="true"]') ? <p>Modal has lost focus!</p> : null}
+        {document.activeElement === document.querySelector('[role="dialog"][aria-modal="true"]') ? <p>Modal has gained focus!</p> : null}
         <button type="button" className="disclose" onClick={this.disclose()}>Disclose</button>
         <button type="button" className="disclose-tiny" onClick={this.disclose('tiny')}>Disclose Tiny</button>
         <button type="button" className="disclose-small" onClick={this.disclose('small')}>Disclose Small</button>
@@ -134,19 +135,11 @@ class DisclosureComponent extends React.Component {
           {this.renderForm()}
           {this.renderFormButton()}
         </div>
-        <br />
-        <SelectField label="T-shirt size" placeholder="Select a size" selectId="tshirt-size-field" required style={{ maxWidth: '300px' }}>
-          <SelectField.Option value="xSmall" display="Extra Small" />
-          <SelectField.Option value="small" display="Small" />
-          <SelectField.Option value="medium" display="Medium" />
-          <SelectField.Option value="large" display="Large" />
-          <SelectField.Option value="xLarge" display="Extra Large" />
-        </SelectField>
-        {disclosureManager && disclosureManager.dismiss ? <button type="button" className="dismiss" onClick={this.dismiss}>Dismiss</button> : null }
-        {disclosureManager && disclosureManager.closeDisclosure ? <button type="button" className="close-disclosure" onClick={this.closeDisclosure}>Close Disclosure</button> : null }
-        {disclosureManager && disclosureManager.goBack ? <button type="button" className="go-back" onClick={this.goBack}>Go Back</button> : null }
-        {disclosureManager && disclosureManager.maximize ? <button type="button" className="maximize" onClick={this.maximize}>Maximize</button> : null }
-        {disclosureManager && disclosureManager.minimize ? <button type="button" className="minimize" onClick={this.minimize}>Minimize</button> : null }
+        {disclosureManager && disclosureManager.dismiss ? <button type="button" className="dismiss" onClick={this.dismiss}>Dismiss</button> : null}
+        {disclosureManager && disclosureManager.closeDisclosure ? <button type="button" className="close-disclosure" onClick={this.closeDisclosure}>Close Disclosure</button> : null}
+        {disclosureManager && disclosureManager.goBack ? <button type="button" className="go-back" onClick={this.goBack}>Go Back</button> : null}
+        {disclosureManager && disclosureManager.maximize ? <button type="button" className="maximize" onClick={this.maximize}>Maximize</button> : null}
+        {disclosureManager && disclosureManager.minimize ? <button type="button" className="minimize" onClick={this.minimize}>Minimize</button> : null}
       </ContentContainer>
     );
   }
