@@ -133,11 +133,6 @@ class AbstractModal extends React.Component {
       mainDocumentElement.removeAttribute('inert');
     }
 
-    if (this.modalTrigger) {
-      // Shift focus back to element that was last focused prior to opening the modal
-      this.modalTrigger.focus();
-    }
-
     setTimeout(() => {
       if (this.modalTrigger) {
         // Shift focus back to element that was last focused prior to opening the modal
