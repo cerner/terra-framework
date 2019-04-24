@@ -4,6 +4,24 @@ Changelog
 Unreleased
 ----------
 
+3.5.0 - (April 24, 2019)
+------------------
+### Changed
+* Moved packages we use solely in doc examples and tests to devDependencies
+
+3.4.0 - (April 18, 2019)
+------------------
+### Changed
+* Remove transition listener logic. Replace with componentDidUpdate comparison.
+
+### Fixed
+* Set outline to none on main + panel.
+
+3.3.0 - (April 9, 2019)
+------------------
+### Fixed
+* Setting Focus to slide panel's panel content on open.
+
 3.2.0 - (March 26, 2019)
 ------------------
 ### Changed

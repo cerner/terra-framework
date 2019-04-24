@@ -57,51 +57,19 @@ class SlidePanel extends React.Component {
   constructor(props) {
     super(props);
     this.setPanelNode = this.setPanelNode.bind(this);
-    this.handleTransitionEnd = this.handleTransitionEnd.bind(this);
-    this.preparePanelForTransition = this.preparePanelForTransition.bind(this);
-
-    this.isHidden = !props.isOpen;
+    this.mainNode = React.createRef();
   }
 
-  componentDidMount() {
-    if (this.panelNode) {
-      this.panelNode.addEventListener('transitionend', this.handleTransitionEnd);
-    }
-  }
-
-  componentDidUpdate() {
-    this.lastIsOpen = this.props.isOpen;
-  }
-
-  componentWillUnmount() {
-    if (this.panelNode) {
-      this.panelNode.removeEventListener('transitionend', this.handleTransitionEnd);
+  componentDidUpdate(prevProps) {
+    if (this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
+      this.panelNode.focus();
+    } else if (!this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
+      this.mainNode.current.focus();
     }
   }
 
   setPanelNode(node) {
     this.panelNode = node;
-  }
-
-  handleTransitionEnd() {
-    if (!this.props.isOpen) {
-      this.panelNode.setAttribute('aria-hidden', 'true');
-      this.isHidden = true;
-    }
-  }
-
-  preparePanelForTransition() {
-    // React 16.3 will be deprecating componentWillRecieveProps and componentWillUpdate, and removed in 17, so code execution prior to render becomes difficult.
-    // As a result of this change, we are executing the code in the render block.
-    if (this.panelNode) {
-      if (this.props.isOpen && !this.lastIsOpen) {
-        // If the panel is opening remove the hidden attribute so the animation performs correctly.
-        this.panelNode.setAttribute('aria-hidden', 'false');
-        this.isHidden = false;
-      } else {
-        this.handleTransitionEnd();
-      }
-    }
   }
 
   render() {
@@ -124,8 +92,6 @@ class SlidePanel extends React.Component {
       customProps.className,
     ]);
 
-    this.preparePanelForTransition();
-
     return (
       <div
         {...customProps}
@@ -134,10 +100,10 @@ class SlidePanel extends React.Component {
         data-slide-panel-panel-position={panelPosition}
         data-slide-panel-panel-size={panelSize}
       >
-        <div className={cx('main')}>
+        <div className={cx('main')} tabIndex="-1" ref={this.mainNode}>
           {mainContent}
         </div>
-        <div className={cx(['panel'])} aria-hidden={this.isHidden ? 'true' : 'false'} ref={this.setPanelNode}>
+        <div className={cx(['panel'])} tabIndex="-1" aria-hidden={!isOpen ? 'true' : 'false'} ref={this.setPanelNode}>
           {panelContent}
         </div>
       </div>

@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "terra-framework",
   "engines": {
-    "node": ">=8.9.2"
+    "node": ">=8.9.2 <12"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,15 @@
   "eslintConfig": {
     "extends": "terra",
     "rules": {
-      "react/forbid-prop-types": "false"
+      "react/forbid-prop-types": "false",
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": [
+            "./packages/*/src/terra-dev-site/**/*.jsx"
+          ]
+        }
+      ]
     },
     "settings": {
       "polyfills": [
@@ -104,7 +112,7 @@
     "react-test-renderer": "^16.4.2",
     "stylelint": "^9.2.0",
     "stylelint-config-terra": "^2.0.0",
-    "terra-dev-site": "^3.0.0",
+    "terra-dev-site": "^4.0.0",
     "terra-enzyme-intl": "^3.0.0",
     "terra-toolkit": "^4.16.0",
     "xfc": "^1.2.1"

@@ -4,6 +4,21 @@ Changelog
 Unreleased
 ----------
 
+3.7.0 - (April 24, 2019)
+------------------
+### Changed
+* Moved packages we use solely in doc examples and tests to devDependencies
+
+3.6.0 - (April 16, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+3.5.0 - (April 9, 2019)
+------------------
+### Changed
+* Use demo mock background in doc examples.
+
 3.4.0 - (March 26, 2019)
 ------------------
 ### Changed

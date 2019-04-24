@@ -4,6 +4,22 @@ Changelog
 Unreleased
 ----------
 
+4.11.0 - (April 24, 2019)
+------------------
+### Changed
+* Moved packages we use solely in doc examples and tests to devDependencies
+
+4.10.0 - (April 16, 2019)
+------------------
+### Fixed
+* Updated RoutingMenu to correctly synchronize internal state with props provided after initial mount
+
+4.9.0 - (April 9, 2019)
+------------------
+### Added
+* Added alt text to app logo image used in doc example with icons in nav
+
+
 4.8.0 - (April 2, 2019)
 ------------------
 ### Added

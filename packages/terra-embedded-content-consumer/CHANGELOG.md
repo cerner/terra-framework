@@ -3,6 +3,19 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.5.0 - (April 24, 2019)
+------------------
+### Changed
+* Moved packages we use solely in doc examples and tests to devDependencies
+
+3.4.0 - (April 18, 2019)
+------------------
+### Added
+* Within DataStatusConsumer example - add guard clause for iframe query
+
+3.3.0 - (April 9, 2019)
+------------------
 ### Added
 * EmbeddedContentProviderTestTemplate for testing embedded applications
 

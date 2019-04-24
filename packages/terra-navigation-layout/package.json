@@ -1,7 +1,7 @@
 {
   "name": "terra-navigation-layout",
   "main": "lib/NavigationLayout.js",
-  "version": "4.4.0",
+  "version": "4.5.0",
   "description": "The Terra Navigation Layout package includes a variety of components and utilities to provide configuration-based, react-router-driven navigation to Terra applications.",
   "repository": {
     "type": "git",
@@ -21,10 +21,6 @@
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "devDependencies": {
-    "react": "^16.8.5",
-    "react-router-dom": "^4.2.2"
-  },
   "peerDependencies": {
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
@@ -33,12 +29,15 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
+    "terra-layout": "^3.4.0",
+    "terra-responsive-element": "^4.0.0"
+  },
+  "devDependencies": {
+    "react-router-dom": "^4.2.2",
     "terra-button": "^3.3.0",
     "terra-doc-template": "^2.2.0",
     "terra-icon": "^3.1.0",
-    "terra-layout": "^3.3.0",
     "terra-markdown": "^2.6.0",
-    "terra-responsive-element": "^4.0.0",
     "terra-toggle-button": "^3.0.0"
   },
   "scripts": {

@@ -152,17 +152,6 @@ exports[`should render a date picker with disabled dates 1`] = `
         onMonthChange={[Function]}
         onSelect={[Function]}
         placeholderText="Terra.datePicker.dateFormat"
-        popoverAttachment="top center"
-        popoverTargetAttachment="bottom center"
-        popperContainer={[Function]}
-        popperModifiers={
-          Object {
-            "keepTogether": Object {
-              "enabled": true,
-            },
-          }
-        }
-        popperPlacement="bottom"
         required={false}
         selected={"2017-01-01T00:00:00.000Z"}
         shouldCloseOnSelect={true}
@@ -333,17 +322,6 @@ exports[`should render a date picker with filtered dates 1`] = `
         onMonthChange={[Function]}
         onSelect={[Function]}
         placeholderText="Terra.datePicker.dateFormat"
-        popoverAttachment="top center"
-        popoverTargetAttachment="bottom center"
-        popperContainer={[Function]}
-        popperModifiers={
-          Object {
-            "keepTogether": Object {
-              "enabled": true,
-            },
-          }
-        }
-        popperPlacement="bottom"
         required={false}
         selected={"2017-01-01T00:00:00.000Z"}
         shouldCloseOnSelect={true}
@@ -512,17 +490,6 @@ exports[`should render a date picker with included dates 1`] = `
         onMonthChange={[Function]}
         onSelect={[Function]}
         placeholderText="Terra.datePicker.dateFormat"
-        popoverAttachment="top center"
-        popoverTargetAttachment="bottom center"
-        popperContainer={[Function]}
-        popperModifiers={
-          Object {
-            "keepTogether": Object {
-              "enabled": true,
-            },
-          }
-        }
-        popperPlacement="bottom"
         required={false}
         selected={"2017-01-01T00:00:00.000Z"}
         shouldCloseOnSelect={true}
@@ -691,17 +658,6 @@ exports[`should render a date picker with min and max dates 1`] = `
         onMonthChange={[Function]}
         onSelect={[Function]}
         placeholderText="Terra.datePicker.dateFormat"
-        popoverAttachment="top center"
-        popoverTargetAttachment="bottom center"
-        popperContainer={[Function]}
-        popperModifiers={
-          Object {
-            "keepTogether": Object {
-              "enabled": true,
-            },
-          }
-        }
-        popperPlacement="bottom"
         required={false}
         selected={"2017-01-01T00:00:00.000Z"}
         shouldCloseOnSelect={true}
@@ -870,17 +826,6 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
         onMonthChange={[Function]}
         onSelect={[Function]}
         placeholderText="Terra.datePicker.dateFormat"
-        popoverAttachment="top center"
-        popoverTargetAttachment="bottom center"
-        popperContainer={[Function]}
-        popperModifiers={
-          Object {
-            "keepTogether": Object {
-              "enabled": true,
-            },
-          }
-        }
-        popperPlacement="bottom"
         required={false}
         selected={"2017-01-01T00:00:00.000Z"}
         shouldCloseOnSelect={true}
@@ -1049,17 +994,6 @@ exports[`should render a date picker with onChange 1`] = `
         onMonthChange={[Function]}
         onSelect={[Function]}
         placeholderText="Terra.datePicker.dateFormat"
-        popoverAttachment="top center"
-        popoverTargetAttachment="bottom center"
-        popperContainer={[Function]}
-        popperModifiers={
-          Object {
-            "keepTogether": Object {
-              "enabled": true,
-            },
-          }
-        }
-        popperPlacement="bottom"
         required={false}
         selected={"2017-01-01T00:00:00.000Z"}
         shouldCloseOnSelect={true}
@@ -1228,17 +1162,6 @@ exports[`should render a date picker with onChangeRaw 1`] = `
         onMonthChange={[Function]}
         onSelect={[Function]}
         placeholderText="Terra.datePicker.dateFormat"
-        popoverAttachment="top center"
-        popoverTargetAttachment="bottom center"
-        popperContainer={[Function]}
-        popperModifiers={
-          Object {
-            "keepTogether": Object {
-              "enabled": true,
-            },
-          }
-        }
-        popperPlacement="bottom"
         required={false}
         selected={"2017-01-01T00:00:00.000Z"}
         shouldCloseOnSelect={true}
@@ -1407,17 +1330,6 @@ exports[`should render a date picker with onInputFocus 1`] = `
         onMonthChange={[Function]}
         onSelect={[Function]}
         placeholderText="Terra.datePicker.dateFormat"
-        popoverAttachment="top center"
-        popoverTargetAttachment="bottom center"
-        popperContainer={[Function]}
-        popperModifiers={
-          Object {
-            "keepTogether": Object {
-              "enabled": true,
-            },
-          }
-        }
-        popperPlacement="bottom"
         required={false}
         selected={"2017-01-01T00:00:00.000Z"}
         shouldCloseOnSelect={true}
@@ -1586,17 +1498,6 @@ exports[`should render a date picker with onSelect 1`] = `
         onMonthChange={[Function]}
         onSelect={[Function]}
         placeholderText="Terra.datePicker.dateFormat"
-        popoverAttachment="top center"
-        popoverTargetAttachment="bottom center"
-        popperContainer={[Function]}
-        popperModifiers={
-          Object {
-            "keepTogether": Object {
-              "enabled": true,
-            },
-          }
-        }
-        popperPlacement="bottom"
         required={false}
         selected={"2017-01-01T00:00:00.000Z"}
         shouldCloseOnSelect={true}
@@ -1767,17 +1668,6 @@ exports[`should render a date picker with releaseFocus 1`] = `
         onMonthChange={[Function]}
         onSelect={[Function]}
         placeholderText="Terra.datePicker.dateFormat"
-        popoverAttachment="top center"
-        popoverTargetAttachment="bottom center"
-        popperContainer={[Function]}
-        popperModifiers={
-          Object {
-            "keepTogether": Object {
-              "enabled": true,
-            },
-          }
-        }
-        popperPlacement="bottom"
         required={false}
         selected={"2017-01-01T00:00:00.000Z"}
         shouldCloseOnSelect={true}
@@ -1948,17 +1838,6 @@ exports[`should render a date picker with requestFocus 1`] = `
         onMonthChange={[Function]}
         onSelect={[Function]}
         placeholderText="Terra.datePicker.dateFormat"
-        popoverAttachment="top center"
-        popoverTargetAttachment="bottom center"
-        popperContainer={[Function]}
-        popperModifiers={
-          Object {
-            "keepTogether": Object {
-              "enabled": true,
-            },
-          }
-        }
-        popperPlacement="bottom"
         required={false}
         selected={"2017-01-01T00:00:00.000Z"}
         shouldCloseOnSelect={true}
@@ -2127,17 +2006,6 @@ exports[`should render a default date input and date picker 1`] = `
         onMonthChange={[Function]}
         onSelect={[Function]}
         placeholderText="Terra.datePicker.dateFormat"
-        popoverAttachment="top center"
-        popoverTargetAttachment="bottom center"
-        popperContainer={[Function]}
-        popperModifiers={
-          Object {
-            "keepTogether": Object {
-              "enabled": true,
-            },
-          }
-        }
-        popperPlacement="bottom"
         required={false}
         selected={"2017-01-01T00:00:00.000Z"}
         shouldCloseOnSelect={true}
@@ -2316,17 +2184,6 @@ exports[`should render a default date input with custom input attributes 1`] = `
         onMonthChange={[Function]}
         onSelect={[Function]}
         placeholderText="Terra.datePicker.dateFormat"
-        popoverAttachment="top center"
-        popoverTargetAttachment="bottom center"
-        popperContainer={[Function]}
-        popperModifiers={
-          Object {
-            "keepTogether": Object {
-              "enabled": true,
-            },
-          }
-        }
-        popperPlacement="bottom"
         required={false}
         selected={"2017-01-01T00:00:00.000Z"}
         shouldCloseOnSelect={true}
@@ -2495,17 +2352,6 @@ exports[`should render a disabled date picker 1`] = `
         onMonthChange={[Function]}
         onSelect={[Function]}
         placeholderText="Terra.datePicker.dateFormat"
-        popoverAttachment="top center"
-        popoverTargetAttachment="bottom center"
-        popperContainer={[Function]}
-        popperModifiers={
-          Object {
-            "keepTogether": Object {
-              "enabled": true,
-            },
-          }
-        }
-        popperPlacement="bottom"
         required={false}
         selected={"2017-01-01T00:00:00.000Z"}
         shouldCloseOnSelect={true}
@@ -2674,17 +2520,6 @@ exports[`should render a required date input and date picker 1`] = `
         onMonthChange={[Function]}
         onSelect={[Function]}
         placeholderText="Terra.datePicker.dateFormat"
-        popoverAttachment="top center"
-        popoverTargetAttachment="bottom center"
-        popperContainer={[Function]}
-        popperModifiers={
-          Object {
-            "keepTogether": Object {
-              "enabled": true,
-            },
-          }
-        }
-        popperPlacement="bottom"
         required={true}
         selected={"2017-01-01T00:00:00.000Z"}
         shouldCloseOnSelect={true}
