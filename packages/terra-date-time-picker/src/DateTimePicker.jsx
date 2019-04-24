@@ -229,6 +229,7 @@ class DateTimePicker extends React.Component {
       }
     }
 
+    // onChange should only be triggered when both the date and time values are valid or both values are empty/cleared.
     if ((isDateValid && isTimeValid) || (this.dateValue === '' && this.timeValue === '')) {
       this.handleChange(event, updatedDateTime);
     } else {
