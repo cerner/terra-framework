@@ -4,8 +4,15 @@ import { Portal } from 'react-portal';
 import KeyCode from 'keycode-js';
 import 'mutationobserver-shim';
 import './_matches-polyfill';
-import 'wicg-inert';
 import ModalContent from './_ModalContent';
+
+// Importing WICG Inert polyfill causes Jest to crash
+// Issue logged to Jest repo: https://github.com/facebook/jest/issues/8373
+// This logic avoids importing the polyfill when running Jest tests
+if (process.env.NODE_ENV !== 'test') {
+  // eslint-disable-next-line global-require
+  require('wicg-inert');
+}
 
 const zIndexes = ['6000', '7000', '8000', '9000'];
 
