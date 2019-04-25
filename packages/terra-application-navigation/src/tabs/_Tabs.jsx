@@ -174,7 +174,7 @@ class Tabs extends React.Component {
     }
 
     let showNotificationRollup = false;
-    let hasNotifications = false;
+    const hasNotifications = tabs.some(tab => tab.hasNotifications);
     const visibleChildren = [];
     const hiddenChildren = [];
     const hiddenNotifications = [];
@@ -190,13 +190,9 @@ class Tabs extends React.Component {
         },
         isActive: tab.key === activeTabKey,
         notificationCount: tab.notificationCount,
-        hasCount: tab.hasNotifications,
+        hasCount: hasNotifications,
         icon: tab.icon,
       };
-
-      if (tab.hasNotifications) {
-        hasNotifications = true;
-      }
 
       if (this.hiddenStartIndex < 0) {
         if (tab.notificationCount > 0) {

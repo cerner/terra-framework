@@ -78,6 +78,7 @@ const navigationItems2 = [{
 }, {
   key: '/page_2',
   text: 'Page 2',
+  notificationCount: 1,
   hasNotifications: true,
 }, {
   key: '/page_3',
@@ -87,6 +88,7 @@ const navigationItems2 = [{
 }, {
   key: '/page_4',
   text: 'Page 4',
+  renderFunction: myRenderFunction,
 }, {
   key: '/page_5',
   text: 'Page 5',

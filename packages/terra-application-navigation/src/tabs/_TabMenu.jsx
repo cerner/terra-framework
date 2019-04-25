@@ -67,7 +67,7 @@ class TabMenu extends React.Component {
   }
 
   getTargetRef() {
-    return this.targetRef;
+    return this.targetRef.querySelector('[data-tab-menu-inner]');
   }
 
   setTargetRef(node) {

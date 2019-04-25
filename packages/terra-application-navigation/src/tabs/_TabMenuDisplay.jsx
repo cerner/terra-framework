@@ -106,7 +106,7 @@ class TabMenuDisplay extends React.Component {
           event.currentTarget.setAttribute('data-item-show-focus', 'false');
         }}
       >
-        <div className={cx(['tab-inner'])}>
+        <div className={cx(['tab-inner'])} data-tab-menu-inner>
           <div className={cx(['tab-menu-display-label'])}>
             <span className={cx(['tab-menu-display-text'])}>{text}</span>
             {showNotificationRollup && <span className={cx('tab-count')}><Count value={isPulsed ? 1 : 0} isRollup /></span>}
