@@ -76,7 +76,13 @@ class CompactHeader extends React.Component {
         className={cx('toggle-button')}
         aria-label={intl.formatMessage({ id: 'Terra.applicationLayout.applicationHeader.menuToggleLabel' })}
         onClick={onSelectToggle}
-        data-application-header-toggle
+        data-item-show-focus
+        onBlur={(event) => {
+          event.currentTarget.setAttribute('data-item-show-focus', 'true');
+        }}
+        onMouseDown={(event) => {
+          event.currentTarget.setAttribute('data-item-show-focus', 'false');
+        }}
       >
         <IconMenu />
         {headerHasAnyCounts && <ToggleCount value={isPulsed ? 1 : 0} />}
