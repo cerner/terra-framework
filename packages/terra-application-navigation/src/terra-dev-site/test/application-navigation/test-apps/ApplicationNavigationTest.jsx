@@ -21,6 +21,7 @@ import DisclosureComponent from './DisclosureComponent';
 import profileImage from './henry.jpg';
 import heroImage from './hero.jpg';
 import heroCloseupImage from './heroCloseup.jpg';
+import desktopTitleImage from './desktop-title-img.png';
 
 const myRenderFunction = () => (
   <div style={{
@@ -300,6 +301,7 @@ class ApplicationNavigationTest extends React.Component {
           title: 'Test Application',
           // headline: 'Test Headline',
           subline: 'Powered by Human Suffering™',
+          // element: <Image src={desktopTitleImage} style={{ height: 'auto', width: 'auto' }} />,
         }}
         extensionConfig={extensionConfig}
         userConfig={!hideUser ? userConfig : undefined}

@@ -55,7 +55,7 @@ class CompactHeader extends React.Component {
 
     if (titleConfig.element) {
       return (
-        <div aria-label={titleConfig.title}>
+        <div title={titleConfig.title}>
           {titleConfig.element}
         </div>
       );
