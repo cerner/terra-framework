@@ -7,7 +7,7 @@ exports[`should render a date picker with disabled dates 1`] = `
   <ResponsiveElement
     defaultElement={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -87,7 +87,7 @@ exports[`should render a date picker with disabled dates 1`] = `
     responsiveTo="window"
     small={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -175,7 +175,7 @@ exports[`should render a date picker with filtered dates 1`] = `
   <ResponsiveElement
     defaultElement={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -256,7 +256,7 @@ exports[`should render a date picker with filtered dates 1`] = `
     responsiveTo="window"
     small={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -345,7 +345,7 @@ exports[`should render a date picker with included dates 1`] = `
   <ResponsiveElement
     defaultElement={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -425,7 +425,7 @@ exports[`should render a date picker with included dates 1`] = `
     responsiveTo="window"
     small={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -513,7 +513,7 @@ exports[`should render a date picker with min and max dates 1`] = `
   <ResponsiveElement
     defaultElement={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -593,7 +593,7 @@ exports[`should render a date picker with min and max dates 1`] = `
     responsiveTo="window"
     small={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -681,7 +681,7 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
   <ResponsiveElement
     defaultElement={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -761,7 +761,7 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
     responsiveTo="window"
     small={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -849,7 +849,7 @@ exports[`should render a date picker with onChange 1`] = `
   <ResponsiveElement
     defaultElement={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -929,7 +929,7 @@ exports[`should render a date picker with onChange 1`] = `
     responsiveTo="window"
     small={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -1017,7 +1017,7 @@ exports[`should render a date picker with onChangeRaw 1`] = `
   <ResponsiveElement
     defaultElement={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -1097,7 +1097,7 @@ exports[`should render a date picker with onChangeRaw 1`] = `
     responsiveTo="window"
     small={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -1185,7 +1185,7 @@ exports[`should render a date picker with onInputFocus 1`] = `
   <ResponsiveElement
     defaultElement={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -1265,7 +1265,7 @@ exports[`should render a date picker with onInputFocus 1`] = `
     responsiveTo="window"
     small={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -1353,7 +1353,7 @@ exports[`should render a date picker with onSelect 1`] = `
   <ResponsiveElement
     defaultElement={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -1433,7 +1433,7 @@ exports[`should render a date picker with onSelect 1`] = `
     responsiveTo="window"
     small={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -1521,7 +1521,7 @@ exports[`should render a date picker with releaseFocus 1`] = `
   <ResponsiveElement
     defaultElement={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -1602,7 +1602,7 @@ exports[`should render a date picker with releaseFocus 1`] = `
     responsiveTo="window"
     small={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -1691,7 +1691,7 @@ exports[`should render a date picker with requestFocus 1`] = `
   <ResponsiveElement
     defaultElement={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -1772,7 +1772,7 @@ exports[`should render a date picker with requestFocus 1`] = `
     responsiveTo="window"
     small={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -1861,7 +1861,7 @@ exports[`should render a default date input and date picker 1`] = `
   <ResponsiveElement
     defaultElement={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -1941,7 +1941,7 @@ exports[`should render a default date input and date picker 1`] = `
     responsiveTo="window"
     small={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -2029,7 +2029,7 @@ exports[`should render a default date input with custom input attributes 1`] = `
   <ResponsiveElement
     defaultElement={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             inputAttributes={
@@ -2114,7 +2114,7 @@ exports[`should render a default date input with custom input attributes 1`] = `
     responsiveTo="window"
     small={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             inputAttributes={
@@ -2207,7 +2207,7 @@ exports[`should render a disabled date picker 1`] = `
   <ResponsiveElement
     defaultElement={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -2287,7 +2287,7 @@ exports[`should render a disabled date picker 1`] = `
     responsiveTo="window"
     small={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -2375,7 +2375,7 @@ exports[`should render a required date input and date picker 1`] = `
   <ResponsiveElement
     defaultElement={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
@@ -2455,7 +2455,7 @@ exports[`should render a required date input and date picker 1`] = `
     responsiveTo="window"
     small={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             onCalendarButtonClick={[Function]}
