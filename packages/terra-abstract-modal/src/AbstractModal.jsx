@@ -112,6 +112,8 @@ class AbstractModal extends React.Component {
 
   showModalDomUpdates() {
     const mainDocumentElement = document.querySelector(this.props.rootSelector);
+    // Store element that was last focused prior to modal opening
+    this.setState({ modalTrigger: document.activeElement });
 
     if (mainDocumentElement) {
       mainDocumentElement.setAttribute('aria-hidden', 'true');
@@ -130,9 +132,9 @@ class AbstractModal extends React.Component {
     }
 
     setTimeout(() => {
-      if (this.modalTrigger) {
+      if (this.state.modalTrigger) {
         // Shift focus back to element that was last focused prior to opening the modal
-        this.modalTrigger.focus();
+        this.state.modalTrigger.focus();
       }
     }, 100); // Allows inert processing to finish before shifting focus back
   }
@@ -166,9 +168,6 @@ class AbstractModal extends React.Component {
     if (!isOpen) {
       return null;
     }
-
-    // Store element that was last focused when modal was opened
-    this.modalTrigger = document.activeElement;
 
     return (
       <Portal
