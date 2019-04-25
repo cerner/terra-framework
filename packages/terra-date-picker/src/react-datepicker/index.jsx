@@ -155,6 +155,7 @@ export default class DatePicker extends React.Component {
     this.datePickerHookShotContainer = React.createRef();
     this.datePickerOverlayContainer = React.createRef();
     this.escapeKey = KeyCode.KEY_ESCAPE;
+    this.handleCalendarKeyDown = this.handleCalendarKeyDown.bind(this);
   }
 
   componentDidMount() {
@@ -390,15 +391,9 @@ export default class DatePicker extends React.Component {
     }
   }
 
-  onInputKeyDown = (event) => {
+  handleCalendarKeyDown = (event) => {
     this.props.onKeyDown(event)
     const eventKey = event.key
-    if (!this.state.open && !this.props.inline) {
-      if (eventKey !== 'Enter' && eventKey !== 'Escape' && eventKey !== 'Tab') {
-        this.onInputClick()
-      }
-      return
-    }
     const copy = newDate(this.state.preSelection)
     if (eventKey === 'Enter') {
       event.preventDefault()
@@ -410,8 +405,6 @@ export default class DatePicker extends React.Component {
       }
     } else if (eventKey === 'Escape') {
       event.preventDefault()
-      this.setOpen(false)
-    } else if (eventKey === 'Tab') {
       this.setOpen(false)
     } else if (!this.props.disabledKeyboardNavigation) {
       let newSelection
@@ -622,6 +615,7 @@ export default class DatePicker extends React.Component {
                 data-placement="bottom"
                 ref={this.datePickerHookShotContainer}
                 tabIndex="-1"
+                onKeyDown={this.handleCalendarKeyDown}
               >
                 {calendar}
               </div>

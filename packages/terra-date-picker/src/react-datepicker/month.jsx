@@ -124,7 +124,7 @@ export default class Month extends React.Component {
 
   render () {
     return (
-      <div className={this.getClassNames()} onMouseLeave={this.handleMouseLeave} role="listbox">
+      <div tabIndex="0" className={this.getClassNames()} onMouseLeave={this.handleMouseLeave} role="listbox">
         {this.renderWeeks()}
       </div>
     )
