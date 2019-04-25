@@ -81,6 +81,9 @@ const defaultProps = {
 class AbstractModal extends React.Component {
   constructor() {
     super();
+    this.state = {
+      modalTrigger: undefined,
+    };
     this.handleKeydown = this.handleKeydown.bind(this);
     this.showModalDomUpdates = this.showModalDomUpdates.bind(this);
     this.hideModalDomUpdates = this.hideModalDomUpdates.bind(this);
@@ -142,8 +145,10 @@ class AbstractModal extends React.Component {
   handleKeydown(e) {
     const body = document.querySelector('body');
     if (e.keyCode === KeyCode.KEY_ESCAPE && this.props.isOpen && this.props.closeOnEsc) {
-      if (e.target === this.modalElement.current || this.modalElement.current.contains(e.target) || e.target === body) {
-        this.props.onRequestClose();
+      if (this.modalElement.current) {
+        if (e.target === this.modalElement.current || this.modalElement.current.contains(e.target) || e.target === body) {
+          this.props.onRequestClose();
+        }
       }
     }
   }
