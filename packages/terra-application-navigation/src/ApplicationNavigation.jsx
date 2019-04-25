@@ -170,14 +170,13 @@ class ApplicationNavigation extends React.Component {
     this.handleUtilityItemSelection = ApplicationNavigation.generateMenuClosingCallback(this, 'onSelectUtilityItem');
 
     /**
-     * A instance property is held outside of state to manage drawer menu visibility during
+     * An instance property is held outside of state to manage drawer menu visibility during
      * its presentation/dismissal animations.
      */
     this.drawerMenuIsVisible = false;
 
     this.state = {
       drawerMenuIsOpen: false,
-      extensionIsOpen: false,
     };
   }
 
@@ -314,11 +313,11 @@ class ApplicationNavigation extends React.Component {
 
   render() {
     const { children } = this.props;
-    const { drawerMenuIsOpen, extensionIsOpen } = this.state;
+    const { drawerMenuIsOpen } = this.state;
 
     /**
      * The drawer menu display is reset to ensure drawer menu will be visible if the menu is being presented.
-     * If it's not being opened, the display will be immediately set to hidden when the drawer menu is rendered.
+     * If it's not being opened, the display will be immediately hidden when the drawer menu is rendered.
      */
     if (this.drawerMenuRef.current) {
       this.drawerMenuRef.current.style.display = '';
@@ -340,17 +339,18 @@ class ApplicationNavigation extends React.Component {
           aria-hidden={drawerMenuIsOpen ? true : null}
         >
           {this.renderHeader()}
-          <main tabIndex="-1" className={cx('main-container')} ref={this.mainContainerRef}>
-            <Overlay
-              isRelativeToContainer
-              onRequestClose={event => event.stopPropagation()}
-              isOpen={extensionIsOpen}
-              backgroundStyle="dark"
-              style={{ zIndex: '7000' }}
-            />
+          <main
+            ref={this.mainContainerRef}
+            tabIndex="-1"
+            className={cx('main-container')}
+          >
             {children}
           </main>
-          <Overlay isRelativeToContainer isOpen={drawerMenuIsOpen} backgroundStyle="clear" />
+          <Overlay
+            isOpen={drawerMenuIsOpen}
+            isRelativeToContainer
+            backgroundStyle="clear"
+          />
         </div>
       </div>
     );
