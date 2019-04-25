@@ -15,7 +15,7 @@ describe('Menu Item', () => {
       properties: {
         '--terra-menu-item-text-color': 'red',
         '--terra-menu-item-text-font-size': '20px',
-        '—-terra-menu-item-text-font-weight': 'lighter',
+        '--terra-menu-item-text-font-weight': 'bold',
       },
     });
   });
