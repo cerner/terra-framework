@@ -405,6 +405,8 @@ export default class DatePicker extends React.Component {
     } else if (eventKey === 'Escape') {
       event.preventDefault()
       this.setOpen(false)
+    } else if (eventKey === 'Tab') {
+      this.setOpen(false)
     } else if (!this.props.disabledKeyboardNavigation) {
       let newSelection
       switch (eventKey) {
