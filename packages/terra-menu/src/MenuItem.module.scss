@@ -1,6 +1,7 @@
 :local {
   .item {
     cursor: default;
+    font-weight: var(—terra-menu-item-font-weight, inherit);
     margin: var(--terra-menu-item-margin, 0);
     padding: var(--terra-menu-item-padding, 0.286rem 0);
 
