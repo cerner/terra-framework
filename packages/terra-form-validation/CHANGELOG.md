@@ -6,7 +6,7 @@ ChangeLog
 ### Added
 * Example of integration with terra-date-picker
 * Change logs to documentation on terra-dev-site
-* Maximum length and basic building a form that validates examples
+* New example that shows how to build a form that validates.
 * Numeric validation example that checks minimum value, maximum value, and the value for up to a certain level of precision.
 * FormValidationUtil which has some small quick validation checks such as minimum length and maximum length.
 
