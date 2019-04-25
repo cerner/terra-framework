@@ -31,17 +31,13 @@
 
   .toggle-button {
     background-color: var(--terra-application-layout-toggle-button-background-color, transparent);
-    border: var(--terra-application-layout-toggle-button-border, 0);
-    border-radius: var(--terra-application-layout-toggle-button-border-radius);
-    box-shadow: var(--terra-application-layout-toggle-button-box-shadow);
-    color: var(--terra-application-layout-toggle-button-color, #fff);
+    border: 0;  
+    color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
-    // height: var(--terra-application-layout-toggle-button-height, 100%);
-    // left: var(--terra-application-layout-toggle-button-left, 0);
-    // padding: var(--terra-application-layout-toggle-button-padding, 1.2857142857rem);
+    outline: none;
     position: relative;
-    width: 30px;
-    height: 30px;
+    width: 2.143rem;
+    height: 2.143rem;
     padding: 0;
     flex: 0 0 auto;
 
@@ -49,23 +45,26 @@
       height: var(--terra-application-layout-toggle-button-icon-height, 1rem);
       width: var(--terra-application-layout-toggle-button-icon-width, 1rem);
     }
-
+          
     &:hover {
-      background-color: var(--terra-application-layout-toggle-button-hover-background-color, rgba(0, 0, 0, 0.15));
-      border-color: var(--terra-application-layout-toggle-button-hover-border-color);
-      border-radius: var(--terra-application-layout-toggle-button-hover-border-radius);
-      box-shadow: var(--terra-application-layout-toggle-button-hover-box-shadow);
-      color: var(--terra-application-layout-toggle-button-hover-color, #fff);
+      color: rgba(255, 255, 255, 1);
     }
 
-    &:focus {
-      background-color: var(--terra-application-layout-toggle-button-focus-background-color, rgba(0, 0, 0, 0.15));
-      border-color: var(--terra-application-layout-toggle-button-focus-border-color);
-      border-radius: var(--terra-application-layout-toggle-button-focus-border-radius);
-      box-shadow: var(--terra-application-layout-toggle-button-focus-box-shadow);
-      color: var(--terra-application-layout-toggle-button-focus-color, #fff);
-      outline: none;
+    &:active {
+      color: rgba(255, 255, 255, 0.5);
     }
+
+    &:focus[data-item-show-focus='true'] {
+      background-color: rgba(89, 159, 253, 0.4);
+      color: rgba(255, 255, 255, 1);
+      border-radius: 50%;
+    }
+
+    // Remove the inner border and padding in Firefox.
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }    
   }
 
   .title-container {
@@ -105,7 +104,7 @@
     top: calc(50% - 11px);
   }
 
-  .skip-content {
+  .skip-content-button {
     background-color: var(--terra-application-header-layout-background-color, #0079be);
     border: var(--terra-application-header-layout-border, 1px solid #fff);
     border-radius: var(--terra-application-header-layout-border-radius, 0);

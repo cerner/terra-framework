@@ -79,8 +79,8 @@ class CompactHeader extends React.Component {
     } = this.props;
 
     return (
-      <div className={cx(['compact-application-header'])}>
-        <button type="button" onClick={onSelectSkipToContent} className={cx('skip-content')}>
+      <div className={cx('compact-application-header')}>
+        <button type="button" onClick={onSelectSkipToContent} className={cx('skip-content-button')}>
           {intl.formatMessage({ id: 'Terra.ApplicationHeaderLayout.SkipToContent' })}
         </button>
         <button
@@ -88,6 +88,13 @@ class CompactHeader extends React.Component {
           className={cx('toggle-button')}
           aria-label={intl.formatMessage({ id: 'Terra.applicationLayout.applicationHeader.menuToggleLabel' })}
           onClick={onSelectToggle}
+          data-item-show-focus
+          onBlur={(event) => {
+            event.currentTarget.setAttribute('data-item-show-focus', 'true');
+          }}
+          onMouseDown={(event) => {
+            event.currentTarget.setAttribute('data-item-show-focus', 'false');
+          }}
         >
           <IconMenu />
         </button>

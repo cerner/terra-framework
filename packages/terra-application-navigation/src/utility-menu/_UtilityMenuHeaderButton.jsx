@@ -14,14 +14,14 @@ const cx = classNames.bind(styles);
 const propTypes = {
   userConfig: userConfigPropType,
   onClick: PropTypes.func,
-  refCallback: PropTypes.func,
+  popupAnchorRef: PropTypes.shape({ current: PropTypes.element }),
   intl: intlShape,
 };
 
 const defaultProps = {};
 
 const UtilityMenuHeaderButton = ({
-  userConfig, onClick, refCallback, intl,
+  userConfig, onClick, popupAnchorRef, intl,
 }) => (
   <button
     type="button"
@@ -43,12 +43,12 @@ const UtilityMenuHeaderButton = ({
           <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials} className={cx('avatar')} />
           <div className={cx('title')}>{userConfig.name}</div>
           <IconCaretDown className={cx('icon')} />
-          <div className={cx('popup-anchor')} ref={refCallback} />
+          <div className={cx('popup-anchor')} ref={popupAnchorRef} />
         </React.Fragment>
       ) : (
         <React.Fragment>
           <IconKnurling className={cx('icon')} />
-          <span className={cx('popup-anchor')} ref={refCallback} />
+          <span className={cx('popup-anchor')} ref={popupAnchorRef} />
         </React.Fragment>
       )}
     </span>

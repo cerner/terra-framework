@@ -57,6 +57,8 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
 
+    this.utilityButtonPopupAnchorRef = React.createRef();
+
     this.handleUtilityPopupCloseRequest = this.handleUtilityPopupCloseRequest.bind(this);
     this.generatePopupClosingCallback = this.generatePopupClosingCallback.bind(this);
     this.renderAppName = this.renderAppName.bind(this);
@@ -157,9 +159,7 @@ class Header extends React.Component {
             utilityPopupIsOpen: true,
           });
         }}
-        refCallback={(ref) => {
-          this.utilityButtonRef = ref;
-        }}
+        popupAnchorRef={this.utilityButtonPopupAnchorRef}
       />
     );
   }
@@ -182,7 +182,7 @@ class Header extends React.Component {
           isOpen
           onRequestClose={this.handleUtilityPopupCloseRequest}
           targetAttachment="bottom center"
-          targetRef={() => (this.utilityButtonRef)}
+          targetRef={() => this.utilityButtonRef.current}
         >
           <UtilityMenu
             hero={hero}
@@ -208,8 +208,8 @@ class Header extends React.Component {
     } = this.props;
 
     return (
-      <div className={cx(['application-header'])}>
-        <button type="button" onClick={onSelectSkipToContent} className={cx('skip-content')}>
+      <div className={cx('application-header')}>
+        <button type="button" onClick={onSelectSkipToContent} className={cx('skip-content-button')}>
           {intl.formatMessage({ id: 'Terra.ApplicationHeaderLayout.SkipToContent' })}
         </button>
         <div className={cx('title-container')}>

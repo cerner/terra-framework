@@ -41,17 +41,17 @@ const myRenderFunction = () => (
 const navigationItems = [{
   key: '/page_1',
   text: 'Page 1',
-  notificationCount: 1000,
-  hasNotifications: true,
+  // notificationCount: 1000,
+  // hasNotifications: true,
 }, {
   key: '/page_2',
   text: 'Page 2',
-  hasNotifications: true,
+  // hasNotifications: true,
 }, {
   key: '/page_3',
   text: 'Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3',
-  notificationCount: 62,
-  hasNotifications: true,
+  // notificationCount: 62,
+  // hasNotifications: true,
 }, {
   key: '/page_4',
   text: 'Im Custom',
@@ -60,8 +60,8 @@ const navigationItems = [{
 }, {
   key: '/page_5',
   text: 'Page 5',
-  notificationCount: 5,
-  hasNotifications: true,
+  // notificationCount: 5,
+  // hasNotifications: true,
 }, {
   key: '/page_6',
   text: 'Page 6',
