@@ -154,7 +154,6 @@ export default class DatePicker extends React.Component {
     this.datePickerContainer = React.createRef();
     this.datePickerHookShotContainer = React.createRef();
     this.datePickerOverlayContainer = React.createRef();
-    this.escapeKey = KeyCode.KEY_ESCAPE;
     this.handleCalendarKeyDown = this.handleCalendarKeyDown.bind(this);
   }
 
@@ -191,7 +190,7 @@ export default class DatePicker extends React.Component {
   }
 
   handleKeydown(event) {
-    if (event.keyCode === this.escapeKey) {
+    if (event.keyCode === KeyCode.KEY_ESCAPE) {
       // If date picker is open in Hookshot
       if (this.datePickerHookShotContainer.current) {
         if (event.target === this.datePickerHookShotContainer.current || this.datePickerHookShotContainer.current.contains(event.target)) {

@@ -82,9 +82,9 @@ class AbstractModal extends React.Component {
   constructor() {
     super();
     this.handleKeydown = this.handleKeydown.bind(this);
-    this.setAbstractModalRef = this.setAbstractModalRef.bind(this);
     this.showModalDomUpdates = this.showModalDomUpdates.bind(this);
     this.hideModalDomUpdates = this.hideModalDomUpdates.bind(this);
+    this.modalElement = React.createRef();
   }
 
   componentDidMount() {
@@ -110,10 +110,6 @@ class AbstractModal extends React.Component {
     this.hideModalDomUpdates();
   }
 
-  setAbstractModalRef(node) {
-    this.AbstractModalRef = node;
-  }
-
   showModalDomUpdates() {
     const mainDocumentElement = document.querySelector(this.props.rootSelector);
 
@@ -121,7 +117,7 @@ class AbstractModal extends React.Component {
       mainDocumentElement.setAttribute('aria-hidden', 'true');
       mainDocumentElement.setAttribute('inert', '');
       // Shift focus to modal when opened
-      this.AbstractModalRef.focus();
+      this.modalElement.current.focus();
     }
   }
 
@@ -144,7 +140,7 @@ class AbstractModal extends React.Component {
   handleKeydown(e) {
     const body = document.querySelector('body');
     if (e.keyCode === KeyCode.KEY_ESCAPE && this.props.isOpen && this.props.closeOnEsc) {
-      if (e.target === this.AbstractModalRef || this.AbstractModalRef.contains(e.target) || e.target === body) {
+      if (e.target === this.modalElement.current || this.modalElement.current.contains(e.target) || e.target === body) {
         this.props.onRequestClose();
       }
     }
@@ -189,7 +185,7 @@ class AbstractModal extends React.Component {
           onRequestClose={onRequestClose}
           zIndex={zIndex}
           aria-modal="true"
-          refCallback={this.setAbstractModalRef}
+          ref={this.modalElement}
         >
           {children}
         </ModalContent>

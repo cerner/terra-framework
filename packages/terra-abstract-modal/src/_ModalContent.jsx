@@ -42,10 +42,6 @@ const propTypes = {
    */
   isScrollable: PropTypes.bool,
   /**
-   * Ref callback for abstract modal.
-   */
-  refCallback: PropTypes.func,
-  /**
    * Role attribute on the modal dialog.
    */
   role: PropTypes.string,
@@ -65,7 +61,7 @@ const defaultProps = {
   zIndex: '6000',
 };
 
-const ModalContent = (props) => {
+const ModalContent = React.forwardRef((props, ref) => {
   const {
     ariaLabel,
     children,
@@ -74,7 +70,6 @@ const ModalContent = (props) => {
     closeOnOutsideClick,
     onRequestClose,
     role,
-    refCallback,
     isFullscreen,
     isScrollable,
     zIndex,
@@ -111,13 +106,13 @@ const ModalContent = (props) => {
         aria-label={ariaLabel}
         className={modalClassName}
         role={role}
-        ref={(node) => { props.refCallback(node); }}
+        ref={ref}
       >
         {children}
       </div>
     </React.Fragment>
   );
-};
+});
 
 ModalContent.propTypes = propTypes;
 ModalContent.defaultProps = defaultProps;
