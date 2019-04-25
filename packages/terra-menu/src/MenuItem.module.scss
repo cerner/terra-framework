@@ -1,7 +1,6 @@
 :local {
   .item {
     cursor: default;
-    font-weight: var(—-terra-menu-item-font-weight, inherit);
     margin: var(--terra-menu-item-margin, 0);
     padding: var(--terra-menu-item-padding, 0.286rem 0);
 
@@ -60,6 +59,7 @@
   .text {
     color: var(--terra-menu-item-text-color, #1c1f21);
     font-size: var(--terra-menu-item-text-font-size, 13px);
+    font-weight: var(—-terra-menu-item-text-font-weight, inherit);
     line-height: 1.2;
     margin-left: var(--terra-menu-item-text-margin-left, 10px);
   }
