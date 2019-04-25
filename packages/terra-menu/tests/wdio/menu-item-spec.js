@@ -14,6 +14,7 @@ describe('Menu Item', () => {
       testName: 'themed',
       properties: {
         '--terra-menu-item-text-color': 'red',
+        '—-terra-menu-item-font-weight': 'bold',
         '--terra-menu-item-text-font-size': '20px',
       },
     });
