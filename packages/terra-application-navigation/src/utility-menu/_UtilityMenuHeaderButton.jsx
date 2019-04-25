@@ -14,7 +14,7 @@ const cx = classNames.bind(styles);
 const propTypes = {
   userConfig: userConfigPropType,
   onClick: PropTypes.func,
-  popupAnchorRef: PropTypes.shape({ current: PropTypes.element }),
+  popupAnchorRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
   intl: intlShape,
 };
 

@@ -319,7 +319,7 @@ class ApplicationNavigation extends React.Component {
      * The drawer menu display is reset to ensure drawer menu will be visible if the menu is being presented.
      * If it's not being opened, the display will be immediately hidden when the drawer menu is rendered.
      */
-    if (this.drawerMenuRef.current) {
+    if (this.drawerMenuRef.current && drawerMenuIsOpen) {
       this.drawerMenuRef.current.style.display = '';
     }
 

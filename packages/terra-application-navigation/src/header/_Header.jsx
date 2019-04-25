@@ -166,7 +166,7 @@ class Header extends React.Component {
           isOpen
           onRequestClose={this.handleUtilityPopupCloseRequest}
           targetAttachment="bottom center"
-          targetRef={() => this.utilityButtonRef.current}
+          targetRef={() => this.utilityButtonPopupAnchorRef.current}
         >
           <UtilityMenu
             hero={hero}
