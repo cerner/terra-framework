@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ContentContainer from 'terra-content-container';
 import ActionHeader from 'terra-action-header';
+import ActionFooter from 'terra-action-footer';
+
 import ExtensionHelper from './_ExtensionHelper';
 
 import styles from './ExtensionsPopupView.module.scss';
@@ -36,6 +38,7 @@ const ExtensionsPopupView = ({
 }) => (
   <ContentContainer
     header={<ActionHeader title="Extensions" />}
+    footer={<ActionFooter />}
     fill={isHeightBounded}
     className={cx('extensions-popup-view')}
   >

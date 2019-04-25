@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-
+import ActionHeader from 'terra-action-header';
+import ActionFooter from 'terra-action-footer';
+import ContentContainer from 'terra-content-container';
 import styles from './TabMenuList.module.scss';
 
 const cx = classNames.bind(styles);
@@ -16,10 +18,6 @@ const propTypes = {
    */
   isHeightBounded: PropTypes.bool,
   /**
-   * Prop from popup, determines if the menu width is bound by the screen.
-   */
-  isWidthBounded: PropTypes.bool,
-  /**
    * Ref callback used by the popup for do positioning.
    */
   refCallback: PropTypes.func,
@@ -28,21 +26,26 @@ const propTypes = {
 const TabMenuList = ({
   children,
   isHeightBounded,
-  isWidthBounded,
   refCallback,
   ...customProps
 }) => (
-  <ul
-    {...customProps}
-    data-application-tab-menu-content
-    className={cx(['tab-menu-list', { 'height-bounded': isHeightBounded }, { 'width-bounded': isWidthBounded }])}
-    role="menu"
-    ref={refCallback}
+  <ContentContainer
+    header={<ActionHeader title="Title TBD" />}
+    footer={<ActionFooter />}
+    fill={isHeightBounded}
   >
-    {React.Children.map(children, child => (
-      <li key={child.props.path} role="menuitem">{child}</li>
-    ))}
-  </ul>
+    <ul
+      {...customProps}
+      data-application-tab-menu-content
+      className={cx('tab-menu-list')}
+      role="menu"
+      ref={refCallback}
+    >
+      {React.Children.map(children, child => (
+        <li key={child.props.path} role="menuitem">{child}</li>
+      ))}
+    </ul>
+  </ContentContainer>
 );
 
 TabMenuList.propTypes = propTypes;
