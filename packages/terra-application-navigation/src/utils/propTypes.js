@@ -1,5 +1,13 @@
 import PropTypes from 'prop-types';
 
+const titleConfigPropType = PropTypes.shape({
+  title: PropTypes.string.isRequired,
+  headline: PropTypes.string,
+  subline: PropTypes.string,
+  element: PropTypes.element,
+  hideTitleWithinDrawerMenu: PropTypes.bool,
+});
+
 const userConfigPropType = PropTypes.shape({
   name: PropTypes.string.isRequired,
   detail: PropTypes.string,
@@ -49,9 +57,9 @@ const extensionConfigPropType = PropTypes.shape({
 });
 
 export default {
-  userConfigPropType, navigationItemsPropType, utilityItemsPropType, extensionConfigPropType,
+  titleConfigPropType, userConfigPropType, navigationItemsPropType, utilityItemsPropType, extensionConfigPropType,
 };
 
 export {
-  userConfigPropType, navigationItemsPropType, utilityItemsPropType, extensionConfigPropType,
+  titleConfigPropType, userConfigPropType, navigationItemsPropType, utilityItemsPropType, extensionConfigPropType,
 };

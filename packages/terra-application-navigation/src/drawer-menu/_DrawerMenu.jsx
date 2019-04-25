@@ -4,11 +4,12 @@ import classNames from 'classnames/bind';
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import IconUnknown from 'terra-icon/lib/icon/IconUnknown';
 
+import DrawerMenuTitle from './_DrawerMenuTitle';
 import DrawerMenuListItem from './_DrawerMenuListItem';
 import DrawerMenuUser from './_DrawerMenuUser';
 import DrawerMenuFooterButton from './_DrawerMenuFooterButton';
 import {
-  userConfigPropType, navigationItemsPropType, utilityItemsPropType,
+  titleConfigPropType, userConfigPropType, navigationItemsPropType, utilityItemsPropType,
 } from '../utils/propTypes';
 
 import styles from './DrawerMenu.module.scss';
@@ -16,6 +17,10 @@ import styles from './DrawerMenu.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * A configuration object with information pertaining to the application's title.
+   */
+  titleConfig: titleConfigPropType,
   /**
    * A configuration object with information pertaining to the application's user.
    */
@@ -73,8 +78,9 @@ const defaultProps = {
 };
 
 const DrawerMenu = ({
-  userConfig, hero, navigationItems, activeNavigationItemKey, onSelectNavigationItem, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem,
+  titleConfig, userConfig, hero, navigationItems, activeNavigationItemKey, onSelectNavigationItem, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem,
 }) => {
+  const titleComponent = titleConfig && !(titleConfig.element || titleConfig.hideTitleWithinDrawerMenu) ? <DrawerMenuTitle titleConfig={titleConfig} /> : undefined;
   const userComponent = userConfig ? <DrawerMenuUser userConfig={userConfig} variant={hero ? 'small' : 'large'} /> : undefined;
   const logoutButton = onSelectLogout ? <DrawerMenuFooterButton onClick={onSelectLogout} text="Logout" /> : undefined;
 
@@ -83,6 +89,7 @@ const DrawerMenu = ({
       <div className={cx('vertical-overflow-container')}>
         <div className={cx('header')}>
           <div className={cx('header-background-fill')}>
+            {titleComponent}
             {hero}
             {userComponent}
           </div>

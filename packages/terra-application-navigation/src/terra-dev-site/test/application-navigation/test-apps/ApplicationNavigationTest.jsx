@@ -38,20 +38,47 @@ const myRenderFunction = () => (
   </div>
 );
 
+const singleTitleConfig = {
+  title: 'Test Application',
+};
+
+const headlineTitleConfig = {
+  title: 'Test Application',
+  headline: 'Alfred Hitchcock Presents',
+};
+
+const sublineTitleConfig = {
+  title: 'Test Application',
+  subline: 'Powered by Human Suffering™',
+};
+
+const longTitleConfig = {
+  title: 'Now this is a story all about how my life got flipped-turned upside down and I\'d like to take a minute just sit right there I\'ll tell you how I became the prince of a town called Bel Air',
+  subline: 'In west Philadelphia born and raised on the playground was where I spent most of my days chillin\' out maxin\' relaxin\' all cool and all shootin some b-ball outside of the school',
+};
+
+const elementTitleConfig = {
+  title: 'I\'M ONLY A DINOSAUR',
+  element: <Image src={desktopTitleImage} style={{ height: 'auto', width: 'auto' }} />,
+};
+
+const titleConfigs = [
+  singleTitleConfig,
+  headlineTitleConfig,
+  sublineTitleConfig,
+  longTitleConfig,
+  elementTitleConfig,
+];
+
 const navigationItems = [{
   key: '/page_1',
   text: 'Page 1',
-  // notificationCount: 1000,
-  // hasNotifications: true,
 }, {
   key: '/page_2',
   text: 'Page 2',
-  // hasNotifications: true,
 }, {
   key: '/page_3',
   text: 'Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3',
-  // notificationCount: 62,
-  // hasNotifications: true,
 }, {
   key: '/page_4',
   text: 'Im Custom',
@@ -60,8 +87,6 @@ const navigationItems = [{
 }, {
   key: '/page_5',
   text: 'Page 5',
-  // notificationCount: 5,
-  // hasNotifications: true,
 }, {
   key: '/page_6',
   text: 'Page 6',
@@ -152,6 +177,7 @@ class ApplicationNavigationTest extends React.Component {
     this.state = {
       activeNavigationItemKey: undefined,
       useItems2: false,
+      titleConfigIndex: 0,
     };
   }
 
@@ -260,7 +286,11 @@ class ApplicationNavigationTest extends React.Component {
         {
           image: <IconPill />,
           metaData: { key: 'Pill' },
-          onSelect: this.handleExtensionSelect,
+          onSelect: () => {
+            this.setState(prevState => ({
+              titleConfigIndex: (prevState.titleConfigIndex + 1) % titleConfigs.length,
+            }));
+          },
           text: 'Pill',
           notificationCount: 100,
         },
@@ -299,12 +329,7 @@ class ApplicationNavigationTest extends React.Component {
 
     return (
       <ApplicationNavigation
-        titleConfig={{
-          title: 'Test Application',
-          // headline: 'Test Headline',
-          subline: 'Powered by Human Suffering™',
-          // element: <Image src={desktopTitleImage} style={{ height: 'auto', width: 'auto' }} />,
-        }}
+        titleConfig={titleConfigs[this.state.titleConfigIndex]}
         extensionConfig={extensionConfig}
         userConfig={!hideUser ? userConfig : undefined}
         drawerMenuHero={!hideHero ? drawerMenuHero : undefined}

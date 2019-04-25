@@ -11,7 +11,7 @@ import CompactHeader from './header/_CompactHeader';
 import DrawerMenu from './drawer-menu/_DrawerMenu';
 import { shouldRenderCompactNavigation } from './utils/helpers';
 import {
-  userConfigPropType, navigationItemsPropType, extensionConfigPropType, utilityItemsPropType,
+  titleConfigPropType, userConfigPropType, navigationItemsPropType, extensionConfigPropType, utilityItemsPropType,
 } from './utils/propTypes';
 
 import styles from './ApplicationNavigation.module.scss';
@@ -26,12 +26,7 @@ const createExtensions = (extensionConfig, activeBreakpoint) => (
 );
 
 const propTypes = {
-  titleConfig: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    headline: PropTypes.string,
-    subline: PropTypes.string,
-    element: PropTypes.element,
-  }),
+  titleConfig: titleConfigPropType,
   /**
    * A configuration object with information specifying the creation of the Extension buttons rendered within the
    * ApplicationNavigation header.
@@ -221,6 +216,7 @@ class ApplicationNavigation extends React.Component {
 
   renderNavigationMenu() {
     const {
+      titleConfig,
       userConfig,
       drawerMenuHero,
       navigationItems,
@@ -249,6 +245,7 @@ class ApplicationNavigation extends React.Component {
         className={cx('drawer-menu-focus-trap-container')}
       >
         <DrawerMenu
+          titleConfig={titleConfig}
           userConfig={userConfig}
           hero={drawerMenuHero}
           navigationItems={navigationItems}
