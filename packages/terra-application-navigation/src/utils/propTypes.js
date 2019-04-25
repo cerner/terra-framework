@@ -10,6 +10,10 @@ const userConfigPropType = PropTypes.shape({
 const navigationItemsPropType = PropTypes.arrayOf(PropTypes.shape({
   key: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  // notificationCount: PropTypes.number,
+  // hasNotifications: PropTypes.bool,
+  // renderFunction: PropTypes.func,
+  // icon: PropTypes.element,
 }));
 
 const utilityItemsPropType = PropTypes.arrayOf(PropTypes.shape({

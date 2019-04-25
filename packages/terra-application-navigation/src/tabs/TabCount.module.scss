@@ -1,22 +1,13 @@
 @keyframes pulse {
-  0%   {
-    transform: scale(1.0);
-  }
-  25%  {
-    transform: scale(1.1);
+  0%, 100%   {
+    transform: scale(1);
   }
   50%  {
     transform: scale(1.2);
   }
-  50%  {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1.0);
-  }
 }
 
-[data-count-pulse='true'] {
+[data-count-pulse="true"] {
   animation: pulse 0.5s 1;
 }
 
@@ -29,8 +20,7 @@
     color: rgba(17, 22, 25, 1);
     flex: 0 0 auto;
     font-size: 0.7143rem;
-    line-height: 1rem; // todo: need to determine how to handle this.
-    line-height: 1.2rem;
+    line-height: 1.4; // todo: need to determine how to handle this.
     margin: 0;
     padding: 0 0.4286rem;
   }

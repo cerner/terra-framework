@@ -36,19 +36,6 @@ const shouldShowNotifications = (extensionItems) => {
   return false;
 };
 
-const createRollupButton = (hiddenItems, onRollupSelect, refCallback) => {
-  if (!hiddenItems || !hiddenItems.length) {
-    return null;
-  }
-  return (
-    <ExtensionRollup
-      onSelect={onRollupSelect}
-      refCallback={refCallback}
-      hasChildNotifications={shouldShowNotifications(hiddenItems)}
-    />
-  );
-};
-
 class Extensions extends React.Component {
   constructor(props) {
     super(props);
@@ -57,8 +44,11 @@ class Extensions extends React.Component {
     this.getButtonNode = this.getButtonNode.bind(this);
     this.handleRequestClose = this.handleRequestClose.bind(this);
     this.handleRollupSelect = this.handleRollupSelect.bind(this);
+    this.shouldPulse = this.shouldPulse.bind(this);
+    this.createRollupButton = this.createRollupButton.bind(this);
 
     this.state = { isOpen: false };
+    this.previousNotifications = [];
   }
 
   setButtonNode(node) {
@@ -75,6 +65,43 @@ class Extensions extends React.Component {
 
   handleRollupSelect() {
     this.setState({ isOpen: true });
+  }
+
+  shouldPulse(navigationItems) {
+    let shouldPulse = false;
+
+    const newNotifications = navigationItems.reduce((acc, item) => {
+      if (item.notificationCount > 0) {
+        acc[item.key] = item.notificationCount;
+      }
+      return acc;
+    }, {});
+
+    const notificationKeys = Object.keys(newNotifications);
+    for (let i = 0; i < notificationKeys.length; i += 1) {
+      const previousCount = this.previousNotifications[notificationKeys];
+      if (previousCount === undefined || newNotifications[notificationKeys] > previousCount) {
+        shouldPulse = true;
+        break;
+      }
+    }
+
+    this.previousNotifications = newNotifications;
+    return shouldPulse;
+  }
+
+  createRollupButton(hiddenItems) {
+    if (!hiddenItems || !hiddenItems.length) {
+      return null;
+    }
+    return (
+      <ExtensionRollup
+        onSelect={this.handleRollupSelect}
+        refCallback={this.setButtonNode}
+        hasChildNotifications={shouldShowNotifications(hiddenItems)}
+        isPulsed={this.shouldPulse(hiddenItems)}
+      />
+    );
   }
 
   render() {
@@ -115,7 +142,7 @@ class Extensions extends React.Component {
         </Popup>
         <div className={cx('extensions-row')}>
           {ExtensionHelper(visibleItems, this.handleRequestClose, false)}
-          {createRollupButton(hiddenItems, this.handleRollupSelect, this.setButtonNode)}
+          {this.createRollupButton(hiddenItems)}
         </div>
       </React.Fragment>
     );

@@ -95,22 +95,6 @@ class Header extends React.Component {
     this.setState({ utilityPopupIsOpen: false });
   }
 
-  shouldPulse(navigationItems) {
-    let shouldPulse = false;
-
-    const newNotifications = navigationItems.map(item => item.notificationCount);
-    if (newNotifications.length === this.previousNotifications.length) {
-      for (let i = 0; i < newNotifications.length; i += 1) {
-        if (newNotifications[i] > this.previousNotifications[i]) {
-          shouldPulse = true;
-          break;
-        }
-      }
-    }
-    this.previousNotifications = newNotifications;
-    return shouldPulse;
-  }
-
   renderAppName() {
     const { titleConfig } = this.props;
 

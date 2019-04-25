@@ -285,6 +285,7 @@ class ApplicationNavigation extends React.Component {
         <CompactHeader
           titleConfig={titleConfig}
           extensions={createExtensions(extensionConfig, activeBreakpoint)}
+          navigationItems={navigationItems}
           onSelectToggle={this.handleMenuToggle}
           onSelectSkipToContent={this.handleSkipToContent}
         />

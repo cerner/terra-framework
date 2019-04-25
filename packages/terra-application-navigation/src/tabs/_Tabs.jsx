@@ -144,17 +144,26 @@ class Tabs extends React.Component {
     }
   }
 
-  shouldPulse(hiddenNotifications) {
+  shouldPulse(navigationItems) {
     let shouldPulse = false;
-    if (hiddenNotifications.length === this.previousNotifications.length) {
-      for (let i = 0; i < hiddenNotifications.length; i += 1) {
-        if (hiddenNotifications[i] > this.previousNotifications[i]) {
-          shouldPulse = true;
-          break;
-        }
+
+    const newNotifications = navigationItems.reduce((acc, item) => {
+      if (item.notificationCount > 0) {
+        acc[item.key] = item.notificationCount;
+      }
+      return acc;
+    }, {});
+
+    const notificationKeys = Object.keys(newNotifications);
+    for (let i = 0; i < notificationKeys.length; i += 1) {
+      const previousCount = this.previousNotifications[notificationKeys];
+      if (previousCount === undefined || newNotifications[notificationKeys] > previousCount) {
+        shouldPulse = true;
+        break;
       }
     }
-    this.previousNotifications = hiddenNotifications;
+
+    this.previousNotifications = newNotifications;
     return shouldPulse;
   }
 
@@ -177,7 +186,7 @@ class Tabs extends React.Component {
     const hasNotifications = tabs.some(tab => tab.hasNotifications);
     const visibleChildren = [];
     const hiddenChildren = [];
-    const hiddenNotifications = [];
+    const hiddenTabs = [];
     tabs.forEach((tab, index) => {
       const tabProps = {
         text: tab.text,
@@ -205,7 +214,7 @@ class Tabs extends React.Component {
         if (tab.notificationCount > 0) {
           showNotificationRollup = true;
         }
-        hiddenNotifications.push(tab.notificationCount);
+        hiddenTabs.push(tab);
         hiddenChildren.push(<CollapsedTab {...tabProps} />);
       }
     });
@@ -219,7 +228,7 @@ class Tabs extends React.Component {
           {visibleChildren}
           <TabMenu
             hasCount={hasNotifications}
-            isPulsed={this.shouldPulse(hiddenNotifications)}
+            isPulsed={this.shouldPulse(hiddenTabs)}
             isHidden={this.menuHidden}
             activeTabKey={activeTabKey}
             menuRefCallback={this.setMenuRef}
