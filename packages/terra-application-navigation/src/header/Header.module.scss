@@ -28,8 +28,28 @@
   }
 
   .title-container {
+    color: rgba(255, 255, 255, 0.9);
     flex: 0 0 auto;
     max-width: 40%;
+    position: relative;
+    user-select: none;
+
+    .headline,
+    .subline,
+    .title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .headline,
+    .subline {
+      font-size: 1rem;
+    }
+
+    .title {
+      font-size: 1.429rem;
+    }
   }
 
   .main-navigation-container {
@@ -37,17 +57,20 @@
     margin-left: 3.571rem;
     min-width: 0;
     overflow: hidden;
+    position: relative;
   }
 
   .extensions-container {
     flex: 0 0 auto;
     margin-left: 3.571rem;
+    position: relative;
   }
 
   .utilities-container {
     flex: 0 0 auto;
     margin-left: 2.143rem;
     max-width: 40%;
+    position: relative;
   }
 
   .toggle-count {

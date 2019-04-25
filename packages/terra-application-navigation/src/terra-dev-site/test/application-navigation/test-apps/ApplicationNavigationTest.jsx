@@ -296,7 +296,11 @@ class ApplicationNavigationTest extends React.Component {
 
     return (
       <ApplicationNavigation
-        title="Test Application"
+        titleConfig={{
+          title: 'Test Application',
+          // headline: 'Test Headline',
+          subline: 'Powered by Human Suffering™',
+        }}
         extensionConfig={extensionConfig}
         userConfig={!hideUser ? userConfig : undefined}
         drawerMenuHero={!hideHero ? drawerMenuHero : undefined}

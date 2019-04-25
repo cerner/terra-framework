@@ -26,15 +26,12 @@ const createExtensions = (extensionConfig, activeBreakpoint) => (
 );
 
 const propTypes = {
-  /**
-   * A string or element rendered within the ApplicationNavigation header to communicate the application's name
-   * or branding.
-   *
-   * Strings will be truncated if they exceed their allotted space. If an element is provided, the element will
-   * be allotted a space equivalent to the element's width. If that width is too large, other header controls may
-   * not be left with enough space to render appropriately.
-   */
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  titleConfig: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    headline: PropTypes.string,
+    subline: PropTypes.string,
+    element: PropTypes.element,
+  }),
   /**
    * A configuration object with information specifying the creation of the Extension buttons rendered within the
    * ApplicationNavigation header.
@@ -270,7 +267,7 @@ class ApplicationNavigation extends React.Component {
 
   renderHeader() {
     const {
-      title,
+      titleConfig,
       navigationItems,
       extensionConfig,
       activeBreakpoint,
@@ -286,7 +283,7 @@ class ApplicationNavigation extends React.Component {
     if (shouldRenderCompactNavigation(activeBreakpoint)) {
       return (
         <CompactHeader
-          title={title}
+          titleConfig={titleConfig}
           extensions={createExtensions(extensionConfig, activeBreakpoint)}
           onSelectToggle={this.handleMenuToggle}
           onSelectSkipToContent={this.handleSkipToContent}
@@ -296,7 +293,7 @@ class ApplicationNavigation extends React.Component {
 
     return (
       <Header
-        title={title}
+        titleConfig={titleConfig}
         extensions={createExtensions(extensionConfig, activeBreakpoint)}
         navigationItems={navigationItems}
         activeNavigationItemKey={activeNavigationItemKey}

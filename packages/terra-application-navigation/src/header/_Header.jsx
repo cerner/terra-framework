@@ -16,7 +16,12 @@ import styles from './Header.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  titleConfig: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    headline: PropTypes.string,
+    subline: PropTypes.string,
+    element: PropTypes.element,
+  }),
   /**
    * Array of navigation items to render within the Header.
    */
@@ -105,17 +110,27 @@ class Header extends React.Component {
   }
 
   renderAppName() {
-    const { title } = this.props;
+    const { titleConfig } = this.props;
 
-    if (title) {
+    if (!titleConfig) {
+      return null;
+    }
+
+    if (titleConfig.element) {
       return (
-        <div className={cx('application-name-container')}>
-          {typeof title === 'string' ? <div className={cx('application-name-title')}>{title}</div> : title}
+        <div aria-label={titleConfig.title}>
+          {titleConfig.element}
         </div>
       );
     }
 
-    return null;
+    return (
+      <React.Fragment>
+        {titleConfig.headline ? <div className={cx('headline')} title={titleConfig.headline}>{titleConfig.headline}</div> : null}
+        <div className={cx('title')} title={titleConfig.title}>{titleConfig.title}</div>
+        {titleConfig.subline ? <div className={cx('subline')} title={titleConfig.subline}>{titleConfig.subline}</div> : null}
+      </React.Fragment>
+    );
   }
 
   renderNavigationTabs() {
