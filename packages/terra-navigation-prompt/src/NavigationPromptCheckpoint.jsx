@@ -118,15 +118,17 @@ class NavigationPromptCheckpoint extends React.Component {
       return Promise.resolve();
     }
 
+    const registeredPromptArray = NavigationPromptCheckpoint.getPromptArray(this.registeredPrompts);
+
     /**
      * Otherwise, the CheckpointNotificationDialog is shown.
      */
     return new Promise((resolve, reject) => {
       this.checkpointNotificationDialogRef.current.showDialog({
-        title: dialogOptions.title,
-        message: dialogOptions.message,
-        acceptButtonText: dialogOptions.acceptButtonText,
-        rejectButtonText: dialogOptions.rejectButtonText,
+        title: typeof dialogOptions.title === 'function' ? dialogOptions.title(registeredPromptArray) : dialogOptions.title,
+        message: typeof dialogOptions.message === 'function' ? dialogOptions.message(registeredPromptArray) : dialogOptions.message,
+        acceptButtonText: typeof dialogOptions.acceptButtonText === 'function' ? dialogOptions.acceptButtonText(registeredPromptArray) : dialogOptions.acceptButtonText,
+        rejectButtonText: typeof dialogOptions.rejectButtonText === 'function' ? dialogOptions.rejectButtonText(registeredPromptArray) : dialogOptions.rejectButtonText,
         onAccept: resolve,
         onReject: reject,
       });

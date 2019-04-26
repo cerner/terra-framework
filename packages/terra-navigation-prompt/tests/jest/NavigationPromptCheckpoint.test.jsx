@@ -218,7 +218,7 @@ describe('NavigationPrompt', () => {
   });
 
   describe('resolvePrompts', () => {
-    it('should show checkpoint notification dialog when resolvePrompts is executed on resolve on acceptance', async () => {
+    it('should show checkpoint notification dialog when resolvePrompts is executed and resolve on acceptance', async () => {
       expect.assertions(7);
 
       const wrapper = mount((
@@ -254,6 +254,54 @@ describe('NavigationPrompt', () => {
         message: 'Test Message',
         acceptButtonText: 'Accept',
         rejectButtonText: 'Reject',
+      })).resolves.toEqual(undefined);
+    });
+
+    it('should show checkpoint notification dialog with function-provided values when resolvePrompts is executed and resolve on acceptance', async () => {
+      expect.assertions(7);
+
+      const wrapper = mount((
+        <NavigationPromptCheckpoint
+          promptRegistration={promptRegistrationDefault}
+        >
+          <MockPrompt />
+        </NavigationPromptCheckpoint>
+      ));
+
+      const mockPromptWrapper = wrapper.find(MockPromptBase);
+      mockPromptWrapper.props().promptRegistration.registerPrompt('mock_id', 'mock_description', { test: 'value' });
+      mockPromptWrapper.props().promptRegistration.registerPrompt('mock_id2', 'mock_description2', { test: 'value2' });
+
+      wrapper.instance().checkpointNotificationDialogRef = {
+        current: {
+          showDialog: (options) => {
+            expect(options.title).toEqual('Title: mock_description-value, mock_description2-value2');
+            expect(options.message).toEqual('Message: mock_description-value, mock_description2-value2');
+            expect(options.acceptButtonText).toEqual('Accept: mock_description-value, mock_description2-value2');
+            expect(options.rejectButtonText).toEqual('Reject: mock_description-value, mock_description2-value2');
+            expect(options.onAccept).toBeDefined();
+            expect(options.onReject).toBeDefined();
+
+            // We resolve the promise to simulate a accept button click
+            // and resolve the Promise.
+            return options.onAccept();
+          },
+        },
+      };
+
+      await expect(wrapper.instance().resolvePrompts({
+        title: prompts => (
+          `Title: ${prompts.map(prompt => `${prompt.description}-${prompt.metaData.test}`).join(', ')}`
+        ),
+        message: prompts => (
+          `Message: ${prompts.map(prompt => `${prompt.description}-${prompt.metaData.test}`).join(', ')}`
+        ),
+        acceptButtonText: prompts => (
+          `Accept: ${prompts.map(prompt => `${prompt.description}-${prompt.metaData.test}`).join(', ')}`
+        ),
+        rejectButtonText: prompts => (
+          `Reject: ${prompts.map(prompt => `${prompt.description}-${prompt.metaData.test}`).join(', ')}`
+        ),
       })).resolves.toEqual(undefined);
     });
 

@@ -9,6 +9,8 @@ The NavigationPrompt and NavigationPromptCheckpoint components allow for the det
 - Import the module
   - `import NavigationPrompt, { NavigationPromptCheckpoint } from 'terra-navigation-prompt';`
 
+This package uses React's Context for inter-component communication. A single instance of this package must be installed to ensure that communication occurs between all Context Providers and Consumers. To help ensure a single instance is installed, this package should be defined as a peer dependency in packages that are reusable libraries or otherwise consumed by other packages.
+
 ## Rationale
 
 A React component has complete control over its own rendering logic. It can render child components and unmount those child components as it sees fit. It follows that any individual component has no direct control over its own mounting and unmounting; it is rendered (or not) at the discretion of its parent. A component must rely on its lifecycle events to determine how it is being implemented.
@@ -85,10 +87,10 @@ The supported keys in the resolvePrompts argument include:
 
 |Key|Type|Description|
 |---|---|---|
-|`title`|String|The title of the NotificationDialog|
-|`message`|String|The message of the NotificationDialog|
-|`rejectButtonText`|String|The text to render within the NotificationDialog's primary action button|
-|`acceptButtonText`|String|The text to render within the NotificationDialog's secondary action button|
+|`title`|String or Function|Specifies the NotificationDialog's title. If a function is provided, the function's return value will be used as the title. The function will be provided an Array of actively registered NavigationPrompts as an argument.|
+|`message`|String or Function|Specifies the NotificationDialog's message. If a function is provided, the function's return value will be used as the message. The function will be provided an Array of actively registered NavigationPrompts as an argument.|
+|`rejectButtonText`|String or Function|Specifies the NotificationDialog's primary action button text. If a function is provided, the function's return value will be used as the button text. The function will be provided an Array of actively registered NavigationPrompts as an argument.|
+|`acceptButtonText`|String or Function|Specifies the NotificationDialog's secondary action button text. If a function is provided, the function's return value will be used as the button text. The function will be provided an Array of actively registered NavigationPrompts as an argument.|
 
 ```jsx
 constructor() {
@@ -106,7 +108,9 @@ render() {
         onClick={() => {
           this.checkpointRef.current.resolvePrompts({
             title: 'Pending Changes',
-            message: 'Content data will be lost if this action is taken.',
+            message: prompts => (
+              `Content data will be lost if this action is taken: ${prompts.map(prompt => prompt.description).join(', ')}`,
+            ),
             rejectButtonText: `Return`,
             acceptButtonText: 'Continue without Saving',
           }).then(() => {
