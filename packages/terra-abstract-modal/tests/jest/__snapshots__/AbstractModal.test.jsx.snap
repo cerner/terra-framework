@@ -48,7 +48,7 @@ exports[`should allow us to pass in a dom selector as a fallbackFocus 1`] = `
             </div>
           }
         >
-          <ModalContent
+          <ForwardRef
             aria-modal="true"
             ariaLabel="Terra Modal"
             classNameModal={null}
@@ -57,7 +57,6 @@ exports[`should allow us to pass in a dom selector as a fallbackFocus 1`] = `
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
-            refCallback={[Function]}
             role="dialog"
             zIndex="6000"
           >
@@ -90,7 +89,7 @@ exports[`should allow us to pass in a dom selector as a fallbackFocus 1`] = `
                 </button>
               </div>
             </div>
-          </ModalContent>
+          </ForwardRef>
         </Portal>
       </Portal>
     </AbstractModal>
@@ -152,7 +151,7 @@ exports[`should allow us to pass in a function as fallbackFocus 1`] = `
             </div>
           }
         >
-          <ModalContent
+          <ForwardRef
             aria-modal="true"
             ariaLabel="Terra Modal"
             classNameModal={null}
@@ -161,7 +160,6 @@ exports[`should allow us to pass in a function as fallbackFocus 1`] = `
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
-            refCallback={[Function]}
             role="dialog"
             zIndex="6000"
           >
@@ -194,7 +192,7 @@ exports[`should allow us to pass in a function as fallbackFocus 1`] = `
                 </button>
               </div>
             </div>
-          </ModalContent>
+          </ForwardRef>
         </Portal>
       </Portal>
     </AbstractModal>
@@ -254,7 +252,7 @@ exports[`should mount an open modal 1`] = `
             </div>
           }
         >
-          <ModalContent
+          <ForwardRef
             aria-modal="true"
             ariaLabel="Terra Modal"
             classNameModal={null}
@@ -263,7 +261,6 @@ exports[`should mount an open modal 1`] = `
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
-            refCallback={[Function]}
             role="dialog"
             zIndex="6000"
           >
@@ -296,7 +293,7 @@ exports[`should mount an open modal 1`] = `
                 </button>
               </div>
             </div>
-          </ModalContent>
+          </ForwardRef>
         </Portal>
       </Portal>
     </AbstractModal>
@@ -358,7 +355,7 @@ exports[`should mount an open modal 7000 z-index 1`] = `
             </div>
           }
         >
-          <ModalContent
+          <ForwardRef
             aria-modal="true"
             ariaLabel="Terra Modal"
             classNameModal={null}
@@ -367,7 +364,6 @@ exports[`should mount an open modal 7000 z-index 1`] = `
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
-            refCallback={[Function]}
             role="dialog"
             zIndex="7000"
           >
@@ -400,7 +396,7 @@ exports[`should mount an open modal 7000 z-index 1`] = `
                 </button>
               </div>
             </div>
-          </ModalContent>
+          </ForwardRef>
         </Portal>
       </Portal>
     </AbstractModal>
@@ -462,7 +458,7 @@ exports[`should mount an open modal 8000 z-index 1`] = `
             </div>
           }
         >
-          <ModalContent
+          <ForwardRef
             aria-modal="true"
             ariaLabel="Terra Modal"
             classNameModal={null}
@@ -471,7 +467,6 @@ exports[`should mount an open modal 8000 z-index 1`] = `
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
-            refCallback={[Function]}
             role="dialog"
             zIndex="8000"
           >
@@ -504,7 +499,7 @@ exports[`should mount an open modal 8000 z-index 1`] = `
                 </button>
               </div>
             </div>
-          </ModalContent>
+          </ForwardRef>
         </Portal>
       </Portal>
     </AbstractModal>
@@ -566,7 +561,7 @@ exports[`should mount an open modal 9000 z-index 1`] = `
             </div>
           }
         >
-          <ModalContent
+          <ForwardRef
             aria-modal="true"
             ariaLabel="Terra Modal"
             classNameModal={null}
@@ -575,7 +570,6 @@ exports[`should mount an open modal 9000 z-index 1`] = `
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
-            refCallback={[Function]}
             role="dialog"
             zIndex="9000"
           >
@@ -608,7 +602,7 @@ exports[`should mount an open modal 9000 z-index 1`] = `
                 </button>
               </div>
             </div>
-          </ModalContent>
+          </ForwardRef>
         </Portal>
       </Portal>
     </AbstractModal>
@@ -670,7 +664,7 @@ exports[`should mount an open modal set to fullscreen 1`] = `
             </div>
           }
         >
-          <ModalContent
+          <ForwardRef
             aria-modal="true"
             ariaLabel="Terra Modal"
             classNameModal={null}
@@ -679,7 +673,6 @@ exports[`should mount an open modal set to fullscreen 1`] = `
             isFullscreen={true}
             isScrollable={false}
             onRequestClose={[Function]}
-            refCallback={[Function]}
             role="dialog"
             zIndex="6000"
           >
@@ -712,7 +705,7 @@ exports[`should mount an open modal set to fullscreen 1`] = `
                 </button>
               </div>
             </div>
-          </ModalContent>
+          </ForwardRef>
         </Portal>
       </Portal>
     </AbstractModal>
@@ -772,7 +765,7 @@ exports[`should render the correct snapshot for iPads 1`] = `
             </div>
           }
         >
-          <ModalContent
+          <ForwardRef
             aria-modal="true"
             ariaLabel="Terra Modal"
             classNameModal={null}
@@ -781,7 +774,6 @@ exports[`should render the correct snapshot for iPads 1`] = `
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
-            refCallback={[Function]}
             role="dialog"
             zIndex="6000"
           >
@@ -814,7 +806,7 @@ exports[`should render the correct snapshot for iPads 1`] = `
                 </button>
               </div>
             </div>
-          </ModalContent>
+          </ForwardRef>
         </Portal>
       </Portal>
     </AbstractModal>
@@ -874,7 +866,7 @@ exports[`should render the correct snapshot for iPhones 1`] = `
             </div>
           }
         >
-          <ModalContent
+          <ForwardRef
             aria-modal="true"
             ariaLabel="Terra Modal"
             classNameModal={null}
@@ -883,7 +875,6 @@ exports[`should render the correct snapshot for iPhones 1`] = `
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
-            refCallback={[Function]}
             role="dialog"
             zIndex="6000"
           >
@@ -916,7 +907,7 @@ exports[`should render the correct snapshot for iPhones 1`] = `
                 </button>
               </div>
             </div>
-          </ModalContent>
+          </ForwardRef>
         </Portal>
       </Portal>
     </AbstractModal>
@@ -976,7 +967,7 @@ exports[`should render the correct snapshot for iPods 1`] = `
             </div>
           }
         >
-          <ModalContent
+          <ForwardRef
             aria-modal="true"
             ariaLabel="Terra Modal"
             classNameModal={null}
@@ -985,7 +976,6 @@ exports[`should render the correct snapshot for iPods 1`] = `
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
-            refCallback={[Function]}
             role="dialog"
             zIndex="6000"
           >
@@ -1018,7 +1008,7 @@ exports[`should render the correct snapshot for iPods 1`] = `
                 </button>
               </div>
             </div>
-          </ModalContent>
+          </ForwardRef>
         </Portal>
       </Portal>
     </AbstractModal>

@@ -91,7 +91,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                 </div>
               }
             >
-              <ModalContent
+              <ForwardRef
                 aria-modal="true"
                 ariaLabel="Modal"
                 classNameModal="modal-manager height-870 width-1280"
@@ -100,7 +100,6 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                 isFullscreen={false}
                 isScrollable={false}
                 onRequestClose={[Function]}
-                refCallback={[Function]}
                 role="dialog"
                 zIndex="6000"
               >
@@ -225,7 +224,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                     </TransitionGroup>
                   </SlideGroup>
                 </div>
-              </ModalContent>
+              </ForwardRef>
             </Portal>
           </Portal>
         </AbstractModal>
