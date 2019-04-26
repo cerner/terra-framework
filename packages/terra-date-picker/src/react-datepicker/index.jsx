@@ -578,12 +578,16 @@ export default class DatePicker extends React.Component {
           {
             this.state.open || this.props.inline
               ? (<Portal isOpened={true}>
+                  <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: true }}>
                     <div
-                    ref={this.datePickerOverlayContainer}
-                    className="react-datepicker__portal"
-                    tabIndex="-1">
-                    {calendar}
-                  </div>
+                      ref={this.datePickerOverlayContainer}
+                      className="react-datepicker__portal"
+                      tabIndex="-1"
+                      onKeyDown={this.handleCalendarKeyDown}
+                    >
+                      {calendar}
+                    </div>
+                  </FocusTrap>
                 </Portal>)
               : null
           }
