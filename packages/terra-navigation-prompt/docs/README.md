@@ -81,55 +81,72 @@ The `onPromptChange` function prop is used to communicate NavigationPrompt regis
 
 The `resolvePrompts` function can be accessed from the ref to a NavigationPromptCheckpoint. Calling `resolvePrompts` results in a Promise being returned and a NotificationDialog being presented to the user with options to either confirm or cancel their action. If the user confirms the action, the dialog will close, and the returned Promise will be resolved. If the user cancels the action, the dialog will close, and the returned Promise will be rejected. If no NavigationPrompts are detected, no dialog is presented, and the returned Promise will be resolved.
 
-`resolvePrompts` accepts a single Object argument that should contain the text strings used to render the NotificationDialog. If these strings need to present information based on the currently registered NavigationPrompts, the `onPromptChange` prop can be used to receive that data and build those strings as needed.
+`resolvePrompts` accepts either an Object or function argument. The Object should contain the text strings used to render the NotificationDialog. The function should return an Object containing the text strings used to render the NotificationDialog. Additionally, the function will receive an array of registered NavigationPrompts as an argument. The array of prompts can be used to create dynamic strings based on the currrent set of registered prompts.
 
-The supported keys in the resolvePrompts argument include:
+The keys expected in the resolvePrompts Object or return value include:
 
 |Key|Type|Description|
 |---|---|---|
-|`title`|String or Function|Specifies the NotificationDialog's title. If a function is provided, the function's return value will be used as the title. The function will be provided an Array of actively registered NavigationPrompts as an argument.|
-|`message`|String or Function|Specifies the NotificationDialog's message. If a function is provided, the function's return value will be used as the message. The function will be provided an Array of actively registered NavigationPrompts as an argument.|
-|`rejectButtonText`|String or Function|Specifies the NotificationDialog's primary action button text. If a function is provided, the function's return value will be used as the button text. The function will be provided an Array of actively registered NavigationPrompts as an argument.|
-|`acceptButtonText`|String or Function|Specifies the NotificationDialog's secondary action button text. If a function is provided, the function's return value will be used as the button text. The function will be provided an Array of actively registered NavigationPrompts as an argument.|
+|`title`|String|The title of the NotificationDialog|
+|`message`|String|The message of the NotificationDialog|
+|`rejectButtonText`|String|The text to render within the NotificationDialog's primary action button|
+|`acceptButtonText`|String|The text to render within the NotificationDialog's secondary action button|
 
 ```jsx
-constructor() {
-  this.checkpointRef = React.createRef();
-  this.state = {
-    contentKey: false,
-  }
-}
+const ResolvePromptExample = () => {
+  const [contentKey, setContentKey] = useState(false);
+  const checkpointRef = useRef();
 
-render() {
-  const { contentKey } = this.state;
+  /**
+   * This resolvePrompts implementation provides an Object directly.
+   */
+  const resetWithStaticText = () => {
+    checkpointRef.current.resolvePrompts({
+      title: 'Pending Changes',
+      message: 'Data will be lost if this action is taken',
+      rejectButtonText: `Return`,
+      acceptButtonText: 'Continue without Saving',
+    }).then(() => {
+      // User decided to continue
+      setContentKey({ contentKey: !state.contentKey });
+    }).catch(() => {
+      // User decided to cancel, so the state is not updated.
+    });
+  };
+
+  /**
+   * This resolvePrompts implementation provides a function that builds dynamic strings and return
+   * an Object.
+   */
+  const resetWithDynamicText = () => {
+    checkpointRef.current.resolvePrompts(prompts => ({
+      title: prompts.map(prompt => prompt.description).join(', '),
+      message: `Data will be lost in the following sections: ${prompts.map(prompt => prompt.description).join(', ')}`,
+      rejectButtonText: `Return`,
+      acceptButtonText: 'Continue without Saving',
+    })).then(() => {
+      // User decided to continue
+      setContentKey({ contentKey: !state.contentKey });
+    }).catch(() => {
+      // User decided to cancel, so the state is not updated.
+    });
+  }
+
   return (
     <div>
-      <button
-        onClick={() => {
-          this.checkpointRef.current.resolvePrompts({
-            title: 'Pending Changes',
-            message: prompts => (
-              `Content data will be lost if this action is taken: ${prompts.map(prompt => prompt.description).join(', ')}`,
-            ),
-            rejectButtonText: `Return`,
-            acceptButtonText: 'Continue without Saving',
-          }).then(() => {
-            // User decided to continue
-            this.setState(state => ({ contentKey: !state.contentKey }));
-          }).catch(() => {
-            // User decided to cancel, so the state is not updated.
-          });
-        }}
-      >
-        Reset Content
+      <button onClick={resetWithStaticText}>
+        Reset (Static Message)
+      </button>
+      <button onClick={resetWithDynamicText}>
+        Reset (Dynamic Message)
       </button>
       <NavigationPromptCheckpoint
-        ref={this.checkpointRef}
+        ref={checkpointRef}
       >
-        <Content key={contentKey} />
+        <Form key={contentKey} />
       </NavigationPromptCheckpoint>
     </div>
-  );
+  )
 }
 ```
 

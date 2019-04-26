@@ -289,20 +289,12 @@ describe('NavigationPrompt', () => {
         },
       };
 
-      await expect(wrapper.instance().resolvePrompts({
-        title: prompts => (
-          `Title: ${prompts.map(prompt => `${prompt.description}-${prompt.metaData.test}`).join(', ')}`
-        ),
-        message: prompts => (
-          `Message: ${prompts.map(prompt => `${prompt.description}-${prompt.metaData.test}`).join(', ')}`
-        ),
-        acceptButtonText: prompts => (
-          `Accept: ${prompts.map(prompt => `${prompt.description}-${prompt.metaData.test}`).join(', ')}`
-        ),
-        rejectButtonText: prompts => (
-          `Reject: ${prompts.map(prompt => `${prompt.description}-${prompt.metaData.test}`).join(', ')}`
-        ),
-      })).resolves.toEqual(undefined);
+      await expect(wrapper.instance().resolvePrompts(prompts => ({
+        title: `Title: ${prompts.map(prompt => `${prompt.description}-${prompt.metaData.test}`).join(', ')}`,
+        message: `Message: ${prompts.map(prompt => `${prompt.description}-${prompt.metaData.test}`).join(', ')}`,
+        acceptButtonText: `Accept: ${prompts.map(prompt => `${prompt.description}-${prompt.metaData.test}`).join(', ')}`,
+        rejectButtonText: `Reject: ${prompts.map(prompt => `${prompt.description}-${prompt.metaData.test}`).join(', ')}`,
+      }))).resolves.toEqual(undefined);
     });
 
     it('should show checkpoint notification dialog when resolvePrompts is executed and reject on cancelation', async () => {

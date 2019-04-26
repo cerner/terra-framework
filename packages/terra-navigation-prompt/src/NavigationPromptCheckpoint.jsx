@@ -110,7 +110,7 @@ class NavigationPromptCheckpoint extends React.Component {
    * This function is part of the NavigationPromptCheckpoint's public API. Changes to this function name or overall functionality
    * will impact the package's version.
    */
-  resolvePrompts(dialogOptions = {}) {
+  resolvePrompts(options = {}) {
     /**
       * If no prompts are registered, then no prompts must be rendered.
       */
@@ -118,17 +118,20 @@ class NavigationPromptCheckpoint extends React.Component {
       return Promise.resolve();
     }
 
-    const registeredPromptArray = NavigationPromptCheckpoint.getPromptArray(this.registeredPrompts);
+    let showDialogOptions = options;
+    if (typeof showDialogOptions === 'function') {
+      showDialogOptions = showDialogOptions(NavigationPromptCheckpoint.getPromptArray(this.registeredPrompts));
+    }
 
     /**
      * Otherwise, the CheckpointNotificationDialog is shown.
      */
     return new Promise((resolve, reject) => {
       this.checkpointNotificationDialogRef.current.showDialog({
-        title: typeof dialogOptions.title === 'function' ? dialogOptions.title(registeredPromptArray) : dialogOptions.title,
-        message: typeof dialogOptions.message === 'function' ? dialogOptions.message(registeredPromptArray) : dialogOptions.message,
-        acceptButtonText: typeof dialogOptions.acceptButtonText === 'function' ? dialogOptions.acceptButtonText(registeredPromptArray) : dialogOptions.acceptButtonText,
-        rejectButtonText: typeof dialogOptions.rejectButtonText === 'function' ? dialogOptions.rejectButtonText(registeredPromptArray) : dialogOptions.rejectButtonText,
+        title: showDialogOptions.title,
+        message: showDialogOptions.message,
+        acceptButtonText: showDialogOptions.acceptButtonText,
+        rejectButtonText: showDialogOptions.rejectButtonText,
         onAccept: resolve,
         onReject: reject,
       });

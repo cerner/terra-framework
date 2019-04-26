@@ -77,16 +77,12 @@ const Form = ({ title }) => {
           <button
             type="button"
             onClick={() => {
-              inputCheckpointRef.current.resolvePrompts({
-                title: prompts => (
-                  prompts.map(prompt => prompt.description).join(', ')
-                ),
-                message: prompts => (
-                  `There are unsubmitted changes in ${prompts.map(prompt => prompt.description).join(', ')}. Continue with Form reset?`
-                ),
+              inputCheckpointRef.current.resolvePrompts(prompts => ({
+                title: prompts.map(prompt => prompt.description).join(', '),
+                message: `There are unsubmitted changes in ${prompts.map(prompt => prompt.description).join(', ')}. Continue with Form reset?`,
                 rejectButtonText: 'Return',
                 acceptButtonText: 'Continue without Saving',
-              }).then(() => {
+              })).then(() => {
                 setTimeStamp(Date.now());
               }).catch(() => {
                 // User prevented navigation.

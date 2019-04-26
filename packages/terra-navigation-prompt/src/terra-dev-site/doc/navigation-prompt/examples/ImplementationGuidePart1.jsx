@@ -44,6 +44,7 @@ const FormSwitcher = () => {
       acceptButtonText: 'Continue without Saving',
     }).then(() => {
       setActiveForm(formKey);
+    }).catch(() => {
     });
   }
 
