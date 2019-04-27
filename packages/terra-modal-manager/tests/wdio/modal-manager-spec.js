@@ -380,3 +380,22 @@ describe('ModalManager - Behaviors', () => {
     Terra.should.matchScreenshot({ selector });
   });
 });
+
+describe('ModalManager - Component Integration', () => {
+  before(() => {
+    browser.setViewportSize(Terra.viewports('large')[0]);
+  });
+
+  describe('Select Field in Modal Manager', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-integration');
+
+      browser.click('#root-component .disclose-small');
+
+      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
+      browser.click('[role="dialog"] [data-terra-select]');
+    });
+
+    Terra.should.matchScreenshot({ selector });
+  });
+});
