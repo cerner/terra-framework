@@ -26,4 +26,9 @@
     flex: 0 0 auto;
     margin-right: 0.7143rem;
   }
+
+  .text {
+    hyphens: auto;
+    word-break: break-word;
+  }
 }

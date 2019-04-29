@@ -18,9 +18,11 @@
     }
 
     .extension-text {
+      hyphens: auto;
       color: rgba(17, 22, 25, 0.75);
       flex: 1 1 auto;
       font-size: 1rem;
+      word-break: break-word;
       width: 100%;
     }
 

@@ -128,7 +128,7 @@ const navigationItems2 = [{
 }];
 
 const userConfig = {
-  name: 'Test User',
+  name: 'Test UserTest UserTest UserTest UserTest UserTest User',
   detail: 'Super Cool Person',
   initials: 'TU',
   imageSrc: profileImage,
@@ -303,7 +303,7 @@ class ApplicationNavigationTest extends React.Component {
         {
           image: <IconLightbulb />,
           metaData: { key: 'Lightbulb' },
-          onSelect: this.handleExtensionSelect,
+          onSelect: (() => { document.documentElement.style.fontSize = '28px'; }),
           text: 'Lightbulb',
         },
         {

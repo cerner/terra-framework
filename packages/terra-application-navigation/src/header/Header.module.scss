@@ -30,7 +30,7 @@
   .title-container {
     color: rgba(255, 255, 255, 0.9);
     flex: 0 0 auto;
-    max-width: 40%;
+    max-width: 30%;
     position: relative;
     user-select: none;
 
@@ -54,22 +54,22 @@
 
   .main-navigation-container {
     flex: 1 1 auto;
-    margin-left: 3.571rem;
-    min-width: 0;
+    margin-left: 1.571rem;
+    min-width: 10%;
     overflow: hidden;
     position: relative;
   }
 
   .extensions-container {
-    flex: 0 0 auto;
-    margin-left: 3.571rem;
+    flex: 0 1 auto;
+    margin-left: 1.571rem;
     position: relative;
   }
 
   .utilities-container {
     flex: 0 0 auto;
-    margin-left: 2.143rem;
-    max-width: 40%;
+    margin-left: 1.143rem;
+    max-width: 30%;
     position: relative;
   }
 

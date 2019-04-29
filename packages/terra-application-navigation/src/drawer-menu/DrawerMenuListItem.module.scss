@@ -22,6 +22,8 @@
 
   .text {
     flex: 1 1 auto;
+    hyphens: auto;
+    word-break: break-word;
   }
 
   .item.is-selected {
