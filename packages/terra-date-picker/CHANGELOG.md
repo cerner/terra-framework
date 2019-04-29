@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added DatePickerField 
 
 3.14.0 - (April 24, 2019)
 ------------------
