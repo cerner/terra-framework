@@ -48,7 +48,7 @@ class Extensions extends React.Component {
     this.createRollupButton = this.createRollupButton.bind(this);
 
     this.state = { isOpen: false };
-    this.previousNotifications = [];
+    this.previousNotifications = null;
   }
 
   setButtonNode(node) {
@@ -67,22 +67,25 @@ class Extensions extends React.Component {
     this.setState({ isOpen: true });
   }
 
-  shouldPulse(navigationItems) {
+  shouldPulse(extensions) {
     let shouldPulse = false;
 
-    const newNotifications = navigationItems.reduce((acc, item) => {
+    const newNotifications = extensions.reduce((acc, item, index) => {
       if (item.notificationCount > 0) {
-        acc[item.key] = item.notificationCount;
+        acc[item.key] = { count: item.notificationCount, isHidden: index >= this.hiddenStartIndex };
       }
       return acc;
-    }, {});
+    }, []);
 
-    const notificationKeys = Object.keys(newNotifications);
-    for (let i = 0; i < notificationKeys.length; i += 1) {
-      const previousCount = this.previousNotifications[notificationKeys];
-      if (previousCount === undefined || newNotifications[notificationKeys] > previousCount) {
-        shouldPulse = true;
-        break;
+    if (this.previousNotifications) {
+      const notificationKeys = Object.keys(newNotifications);
+      for (let i = 0; i < notificationKeys.length; i += 1) {
+        const previousCount = this.previousNotifications[notificationKeys[i]];
+        const newCount = newNotifications[notificationKeys[i]];
+        if (newCount.isHidden && (!previousCount || newCount.count > previousCount.count)) {
+          shouldPulse = true;
+          break;
+        }
       }
     }
 
@@ -99,7 +102,7 @@ class Extensions extends React.Component {
         onSelect={this.handleRollupSelect}
         refCallback={this.setButtonNode}
         hasChildNotifications={shouldShowNotifications(hiddenItems)}
-        isPulsed={this.shouldPulse(hiddenItems)}
+        isPulsed={this.shouldPulse(this.props.extensionConfig.extensions)}
       />
     );
   }

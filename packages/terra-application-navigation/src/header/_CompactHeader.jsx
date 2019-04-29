@@ -36,7 +36,7 @@ class CompactHeader extends React.Component {
     this.renderAppName = this.renderAppName.bind(this);
     this.renderToggle = this.renderToggle.bind(this);
 
-    this.previousNotifications = [];
+    this.previousNotifications = null;
   }
 
   shouldPulse(navigationItems) {
@@ -47,14 +47,17 @@ class CompactHeader extends React.Component {
         acc[item.key] = item.notificationCount;
       }
       return acc;
-    }, {});
+    }, []);
 
-    const notificationKeys = Object.keys(newNotifications);
-    for (let i = 0; i < notificationKeys.length; i += 1) {
-      const previousCount = this.previousNotifications[notificationKeys];
-      if (previousCount === undefined || newNotifications[notificationKeys] > previousCount) {
-        shouldPulse = true;
-        break;
+    if (this.previousNotifications) {
+      const notificationKeys = Object.keys(newNotifications);
+      for (let i = 0; i < notificationKeys.length; i += 1) {
+        const previousCount = this.previousNotifications[notificationKeys[i]];
+        const newCount = newNotifications[notificationKeys[i]];
+        if (!previousCount || newCount > previousCount) {
+          shouldPulse = true;
+          break;
+        }
       }
     }
 

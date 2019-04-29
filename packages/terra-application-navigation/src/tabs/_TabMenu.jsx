@@ -76,6 +76,9 @@ class TabMenu extends React.Component {
 
   setTargetRef(node) {
     this.targetRef = node;
+    if (!this.props.isIconOnly && this.props.menuRefCallback) {
+      this.props.menuRefCallback(node);
+    }
   }
 
   handleOnRequestClose() {
@@ -136,7 +139,7 @@ class TabMenu extends React.Component {
         onClick={this.handleOnClick}
         onKeyDown={this.handleOnKeyDown}
         popup={popup}
-        refCallback={(node) => { this.setTargetRef(node); if (!this.props.isIconOnly) { this.props.menuRefCallback(node); } }}
+        refCallback={this.setTargetRef}
         text={moreText}
         isSelected={isSelected}
         key="application-tab-more"

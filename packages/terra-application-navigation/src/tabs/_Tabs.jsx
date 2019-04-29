@@ -59,7 +59,7 @@ class Tabs extends React.Component {
     this.setChildRef = this.setChildRef.bind(this);
     this.resetCalculations();
     this.childWidths = [];
-    this.previousNotifications = [];
+    this.previousNotifications = null;
   }
 
   componentDidMount() {
@@ -147,19 +147,22 @@ class Tabs extends React.Component {
   shouldPulse(navigationItems) {
     let shouldPulse = false;
 
-    const newNotifications = navigationItems.reduce((acc, item) => {
+    const newNotifications = navigationItems.reduce((acc, item, index) => {
       if (item.notificationCount > 0) {
-        acc[item.key] = item.notificationCount;
+        acc[item.key] = { count: item.notificationCount, isHidden: index >= this.hiddenStartIndex };
       }
       return acc;
-    }, {});
+    }, []);
 
-    const notificationKeys = Object.keys(newNotifications);
-    for (let i = 0; i < notificationKeys.length; i += 1) {
-      const previousCount = this.previousNotifications[notificationKeys];
-      if (previousCount === undefined || newNotifications[notificationKeys] > previousCount) {
-        shouldPulse = true;
-        break;
+    if (this.previousNotifications) {
+      const notificationKeys = Object.keys(newNotifications);
+      for (let i = 0; i < notificationKeys.length; i += 1) {
+        const previousCount = this.previousNotifications[notificationKeys[i]];
+        const newCount = newNotifications[notificationKeys[i]];
+        if (newCount.isHidden && (!previousCount || newCount.count > previousCount.count)) {
+          shouldPulse = true;
+          break;
+        }
       }
     }
 
@@ -229,7 +232,7 @@ class Tabs extends React.Component {
           <TabMenu
             isIconOnly={!this.isCalculating && this.contentWidth < this.moreWidth}
             hasCount={hasNotifications}
-            isPulsed={this.shouldPulse(hiddenTabs)}
+            isPulsed={!this.isCalculating && this.shouldPulse(tabs)}
             isHidden={this.menuHidden}
             activeTabKey={activeTabKey}
             menuRefCallback={this.setMenuRef}

@@ -22,14 +22,14 @@ class ToggleCount extends React.Component {
 
   componentDidMount() {
     if (this.props.value > 0 && this.countNode) {
-      // this.countNode.addEventListener('animationend', this.listener);
+      this.countNode.addEventListener('animationend', this.listener);
       this.countNode.setAttribute('data-count-pulse', 'true');
     }
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.value > prevProps.value && this.countNode) {
-      // this.countNode.addEventListener('animationend', this.listener);
+      this.countNode.addEventListener('animationend', this.listener);
       this.countNode.setAttribute('data-count-pulse', 'true');
     }
   }
