@@ -30,13 +30,25 @@ const createOnClick = (onRequestClose, onSelect, metaData) => (
 );
 
 const sliceIndexForBreakpoint = (activeBreakpoint, extensionConfig) => {
+  // const values = ['tiny', 'small', 'medium', 'large', 'huge', 'enormous'];
+  // let sliceIndex;
+  // if (activeBreakpoint === 'tiny' || activeBreakpoint === 'small') {
+  //   sliceIndex = EXTENSION_COUNT.SMALL;
+  // } else if (activeBreakpoint === 'medium') {
+  //   sliceIndex = extensionConfig.mediumCount || 3;
+  // } else {
+  //   sliceIndex = extensionConfig.largeCount || 5;
+  // }
+
   let sliceIndex;
-  if (activeBreakpoint === 'tiny' || activeBreakpoint === 'small') {
-    sliceIndex = EXTENSION_COUNT.SMALL;
-  } else if (activeBreakpoint === 'medium') {
-    sliceIndex = extensionConfig.mediumCount || 3;
+  if (activeBreakpoint === 'enormous') {
+    sliceIndex = 4;
+  } else if (activeBreakpoint === 'huge') {
+    sliceIndex = 3;
+  } else if (activeBreakpoint === 'large') {
+    sliceIndex = 2;
   } else {
-    sliceIndex = extensionConfig.largeCount || 5;
+    sliceIndex = EXTENSION_COUNT.SMALL;
   }
 
   if (extensionConfig.extensions.length <= sliceIndex + 1) {
