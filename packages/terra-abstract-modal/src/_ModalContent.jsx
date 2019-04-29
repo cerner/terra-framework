@@ -86,6 +86,8 @@ const ModalContent = React.forwardRef((props, ref) => {
   }, `layer-${zIndexLayer}`, classNameModal]); // Delete the closePortal prop that comes from react-portal.
 
   delete customProps.closePortal;
+  delete customProps.fallbackFocus;
+
   const platformIsiOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
   return (
     <React.Fragment>
