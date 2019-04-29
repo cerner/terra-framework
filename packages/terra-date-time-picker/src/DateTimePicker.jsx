@@ -359,7 +359,7 @@ class DateTimePicker extends React.Component {
 
   handleFocus(event) {
     // Handle focus only if focus is gained from outside of the entire date time picker component.
-    // For IE 10/11 we cannot rely on event.relatedTarget since it is always null. Need to check if containerHasFocus is false to
+    // For IE 10/11 we cannot rely on event.relatedTarget since it is always null. Need to also check if containerHasFocus is false to
     // determine if the date-time picker component did not have focus but will now gain focus.
     if (this.props.onFocus && !this.containerHasFocus && !this.dateTimePickerContainer.current.contains(event.relatedTarget)) {
       this.props.onFocus(event);

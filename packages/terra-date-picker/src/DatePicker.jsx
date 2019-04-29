@@ -132,6 +132,7 @@ class DatePicker extends React.Component {
 
     this.datePickerContainer = React.createRef();
     this.isDefaultDateAcceptable = false;
+    this.containerHasFocus = false;
     this.handleBlur = this.handleBlur.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeRaw = this.handleChangeRaw.bind(this);
@@ -194,15 +195,17 @@ class DatePicker extends React.Component {
   }
 
   handleBlur(event) {
-    if (this.props.onBlur) {
-      // Modern browsers support event.relatedTarget but event.relatedTarget returns null in IE 10 / IE 11.
-      // IE 11 sets document.activeElement to the next focused element before the blur event is called.
-      const activeTarget = event.relatedTarget ? event.relatedTarget : document.activeElement;
+    // Modern browsers support event.relatedTarget but event.relatedTarget returns null in IE 10 / IE 11.
+    // IE 11 sets document.activeElement to the next focused element before the blur event is called.
+    const activeTarget = event.relatedTarget ? event.relatedTarget : document.activeElement;
 
-      // Handle blur only if focus has moved out of the entire date picker component.
-      if (!this.datePickerContainer.current.contains(activeTarget)) {
+    // Handle blur only if focus has moved out of the entire date picker component.
+    if (!this.datePickerContainer.current.contains(activeTarget)) {
+      if (this.props.onBlur) {
         this.props.onBlur(event);
       }
+
+      this.containerHasFocus = false;
     }
   }
 
@@ -233,8 +236,11 @@ class DatePicker extends React.Component {
 
   handleFocus(event) {
     // Handle focus only if focus is gained from outside of the entire date picker component.
-    if (this.props.onFocus && !this.datePickerContainer.current.contains(event.relatedTarget)) {
+    // For IE 10/11 we cannot rely on event.relatedTarget since it is always null. Need to also check if containerHasFocus is false to
+    // determine if the date-picker component did not have focus but will now gain focus.
+    if (this.props.onFocus && !this.containerHasFocus && !this.datePickerContainer.current.contains(event.relatedTarget)) {
       this.props.onFocus(event);
+      this.containerHasFocus = true;
     }
   }
 
