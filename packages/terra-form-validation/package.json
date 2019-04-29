@@ -22,8 +22,10 @@
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "peerDependencies": {
+    "final-form": "^4.6.0",
     "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react-dom": "^16.8.5",
+    "react-final-form": "^3.3.1"
   },
   "devDependencies": {
     "final-form": "^4.6.0",
