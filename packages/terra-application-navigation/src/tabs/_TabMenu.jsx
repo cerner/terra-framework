@@ -126,12 +126,13 @@ class TabMenu extends React.Component {
 
     return (
       <TabMenuDisplay
+        isCrunched={this.props.isCrunched}
         hasCount={this.props.hasCount}
         isPulsed={this.props.isPulsed}
         onClick={this.handleOnClick}
         onKeyDown={this.handleOnKeyDown}
         popup={popup}
-        refCallback={(node) => { this.setTargetRef(node); this.props.menuRefCallback(node); }}
+        refCallback={(node) => { this.setTargetRef(node); if (!this.props.isCrunched) { this.props.menuRefCallback(node); } }}
         text={moreText}
         isSelected={isSelected}
         key="application-tab-more"
