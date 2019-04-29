@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Changes
+* Update react-router-dom dependency to latest stable major release
 
 4.11.0 - (April 24, 2019)
 ------------------
