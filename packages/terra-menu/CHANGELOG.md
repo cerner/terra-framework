@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Changes
+* Consume latest major version bump of terra-popup
 
 5.9.0 - (April 24, 2019)
 ------------------
