@@ -16,6 +16,10 @@ const propTypes = {
    */
   isHidden: PropTypes.bool,
   /**
+   * Should the menu be limited to icon only.
+   */
+  isIconOnly: PropTypes.bool,
+  /**
    * A string identifying the currently active tab.
    */
   activeTabKey: PropTypes.string,
@@ -126,13 +130,13 @@ class TabMenu extends React.Component {
 
     return (
       <TabMenuDisplay
-        isCrunched={this.props.isCrunched}
+        isIconOnly={this.props.isIconOnly}
         hasCount={this.props.hasCount}
         isPulsed={this.props.isPulsed}
         onClick={this.handleOnClick}
         onKeyDown={this.handleOnKeyDown}
         popup={popup}
-        refCallback={(node) => { this.setTargetRef(node); if (!this.props.isCrunched) { this.props.menuRefCallback(node); } }}
+        refCallback={(node) => { this.setTargetRef(node); if (!this.props.isIconOnly) { this.props.menuRefCallback(node); } }}
         text={moreText}
         isSelected={isSelected}
         key="application-tab-more"

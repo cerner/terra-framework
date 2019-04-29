@@ -227,7 +227,7 @@ class Tabs extends React.Component {
         >
           {visibleChildren}
           <TabMenu
-            isCrunched={!this.isCalculating && this.contentWidth < this.moreWidth}
+            isIconOnly={!this.isCalculating && this.contentWidth < this.moreWidth}
             hasCount={hasNotifications}
             isPulsed={this.shouldPulse(hiddenTabs)}
             isHidden={this.menuHidden}

@@ -11,6 +11,10 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * Should the menu be limited to icon only.
+   */
+  isIconOnly: PropTypes.bool,
+  /**
    * Whether or not the menu display should be animated with selection.
    */
   isSelected: PropTypes.bool,
@@ -78,7 +82,7 @@ class TabMenuDisplay extends React.Component {
       showNotificationRollup,
       text,
       isPulsed,
-      isCrunched,
+      isIconOnly,
       ...customProps
     } = this.props;
 
@@ -109,9 +113,9 @@ class TabMenuDisplay extends React.Component {
       >
         <div className={cx(['tab-inner'])} data-tab-menu-inner>
           <div className={cx(['tab-menu-display-label'])}>
-            {!isCrunched && <span className={cx(['tab-menu-display-text'])}>{text}</span>}
+            {!isIconOnly && <span className={cx(['tab-menu-display-text'])}>{text}</span>}
             {showNotificationRollup && <span className={cx('tab-count')}><Count value={isPulsed ? 1 : 0} isRollup /></span>}
-            <IconCaretDown className={cx(['tab-menu-display-icon', { 'is-crunched': isCrunched }])} />
+            <IconCaretDown className={cx(['tab-menu-display-icon', { 'is-icon-only': isIconOnly }])} />
           </div>
         </div>
         {popup}
