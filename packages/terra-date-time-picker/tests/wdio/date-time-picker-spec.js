@@ -238,6 +238,7 @@ describe('DateTimePicker', () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-inside-modal');
       browser.click('[class*="disclose"]');
       browser.click('[class*="custom-input"] > [class*="button"]');
+      expect(browser.hasFocus('.react-datepicker-hookshot')).to.be.equal(true);
     });
 
     Terra.should.matchScreenshot('0', { viewports, selector: '[class*="abstract-modal"]' });
@@ -254,6 +255,7 @@ describe('DateTimePicker', () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-inside-modal');
       browser.click('[class*="disclose"]');
       browser.click('[class*="custom-input"] > [class*="button"]');
+      expect(browser.hasFocus('.react-datepicker-hookshot')).to.be.equal(true);
     });
 
     Terra.should.matchScreenshot('0', { viewports, selector: '[class*="abstract-modal"]' });
@@ -270,6 +272,7 @@ describe('DateTimePicker', () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-inside-modal');
       browser.click('[class*="disclose"]');
       browser.click('[class*="custom-input"] > [class*="button"]');
+      expect(browser.hasFocus('.react-datepicker-hookshot')).to.be.equal(true);
     });
 
     Terra.should.matchScreenshot('0', { viewports, selector: '[class*="abstract-modal"]' });
