@@ -68,12 +68,9 @@ class Tabs extends React.Component {
   componentDidMount() {
     this.resizeObserver = new ResizeObserver((entries) => {
       this.contentWidth = entries[0].contentRect.width;
-      if (!this.isCalculating) {
-        this.updateSize();
-      }
+      this.updateSize();
     });
     this.resizeObserver.observe(this.container);
-    this.handleResize(this.contentWidth);
   }
 
   shouldComponentUpdate(nextProps) {
@@ -124,7 +121,6 @@ class Tabs extends React.Component {
   }
 
   resetCalculations() {
-    this.animationFrameID = null;
     this.hiddenStartIndex = -1;
     this.menuHidden = false;
     this.isCalculating = true;
