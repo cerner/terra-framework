@@ -149,6 +149,7 @@ describe('Date Picker', () => {
         browser.setValue('input[name="terra-date-date-picker-in-modal"]', '06/01/2017');
         browser.keys('Enter');
         browser.click('[class*="custom-input"] > [class*="button"]');
+        expect(browser.hasFocus('.react-datepicker-hookshot')).to.be.equal(true);
       });
       Terra.should.matchScreenshot('DatePicker open', { selector: 'div[class="content-container"]' });
 
@@ -169,6 +170,7 @@ describe('Date Picker', () => {
         browser.setValue('input[name="terra-date-date-picker-in-modal"]', '06/01/2017');
         browser.keys('Enter');
         browser.click('[class*="custom-input"] > [class*="button"]');
+        expect(browser.hasFocus('.react-datepicker-hookshot')).to.be.equal(true);
       });
       Terra.should.matchScreenshot('DatePicker open', { selector: 'div[class="content-container"]' });
 
@@ -188,6 +190,7 @@ describe('Date Picker', () => {
         browser.setValue('input[name="terra-date-date-picker-in-modal"]', '06/01/2017');
         browser.keys('Enter');
         browser.click('[class*="custom-input"] > [class*="button"]');
+        expect(browser.hasFocus('.react-datepicker-hookshot')).to.be.equal(true);
       });
       Terra.should.matchScreenshot('DatePicker open', { selector: 'div[class="content-container"]' });
 
@@ -212,6 +215,7 @@ describe('Date Picker', () => {
         browser.setValue('input[name="terra-date-date-picker-in-modal"]', '06/01/2017');
         browser.keys('Enter');
         browser.click('[class*="custom-input"] > [class*="button"]');
+        expect(browser.hasFocus('.react-datepicker-hookshot')).to.be.equal(true);
       });
       Terra.should.matchScreenshot('DatePicker open', { selector: 'div[class="content-container"]' });
 
