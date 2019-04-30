@@ -7,9 +7,8 @@ import Popup from 'terra-popup';
 
 import PopupMenu from '../common/_PopupMenu';
 import { extensionConfigPropType } from '../utils/propTypes';
-// import ExtensionsPopupView from './_ExtensionsPopupView';
 import ExtensionRollup from './_ExtensionRollup';
-import ExtensionHelper from './_ExtensionHelper';
+import Extension from './_Extension';
 import { sliceIndexForBreakpoint } from './_ExtensionUtils';
 import { shouldRenderCompactNavigation } from '../utils/helpers';
 import styles from './Extensions.module.scss';
@@ -160,7 +159,17 @@ class Extensions extends React.Component {
           />
         </Popup>
         <div className={cx('extensions-row')}>
-          {ExtensionHelper(visibleItems, this.handleRequestClose, false)}
+          {visibleItems.map(item => (
+            <Extension
+              notificationCount={item.notificationCount}
+              key={item.metaData.key}
+              image={item.image}
+              text={item.text}
+              metaData={item.metaData}
+              onSelect={item.onSelect}
+              onRequestClose={this.handleRequestClose}
+            />
+          ))}
           {this.createRollupButton(hiddenItems)}
         </div>
       </React.Fragment>

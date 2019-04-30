@@ -241,7 +241,7 @@ class Tabs extends React.Component {
           <TabMenu
             isIconOnly={!this.isCalculating && this.contentWidth <= this.getMoreWidth()}
             hasCount={hasNotifications}
-	    hiddenTabs={hiddenTabs}
+            hiddenTabs={hiddenTabs}
             onTabSelect={onTabSelect}
             isPulsed={showNotificationRollup && !this.isCalculating && this.shouldPulse(tabs)}
             isHidden={this.menuHidden}
