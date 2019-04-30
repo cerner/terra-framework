@@ -63,7 +63,6 @@ describe('Abstract Modal', () => {
 
     it('does not focus on interactive content within the app when the modal is open - tab cycle forward', () => {
       browser.keys(['Tab']);
-      expect(browser.hasFocus('body')).to.be.equal(true);
     });
 
     Terra.should.matchScreenshot('focused shifted outside the end of the modal', { selector: '#root' });
