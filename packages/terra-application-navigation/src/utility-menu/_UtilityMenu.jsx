@@ -1,19 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
-import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import IconUnknown from 'terra-icon/lib/icon/IconUnknown';
 import ActionFooter from 'terra-action-footer';
 import Button from 'terra-button';
 
-import UtilityMenuUser from './_UtilityMenuUser';
-import UtilityMenuListItem from './_UtilityMenuListItem';
+import ActionHeader from 'terra-action-header';
+import PopupMenu from '../common/_PopupMenu';
 import { userConfigPropType, utilityItemsPropType } from '../utils/propTypes';
-
-import styles from './UtilityMenu.module.scss';
-
-const cx = classNames.bind(styles);
 
 const propTypes = {
   userConfig: userConfigPropType,
@@ -29,60 +23,43 @@ const propTypes = {
 const UtilityMenu = ({
   userConfig, hero, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem, isHeightBounded,
 }) => {
-  let user;
-  if (userConfig) {
-    user = <UtilityMenuUser userConfig={userConfig} />;
+  let menuItems = [];
+  menuItems = menuItems.concat(utilityItems);
+
+  if (onSelectSettings) {
+    menuItems.push({
+      key: 'utility-menu-layout.settings',
+      text: 'Settings',
+      icon: <IconSettings />,
+    });
   }
 
-  let footer;
-  if (onSelectLogout) {
-    footer = (
-      <div className={cx('footer')}>
-        <ActionFooter
-          end={<Button text="Logout" onClick={onSelectLogout} />}
-        />
-      </div>
-    );
+  if (onSelectHelp) {
+    menuItems.push({
+      key: 'utility-menu-layout.help',
+      text: 'Help',
+      icon: <IconUnknown />,
+    });
   }
 
   return (
-    <div className={cx(['utility-menu-layout', { fill: isHeightBounded }])}>
-      <div className={cx('vertical-overflow-container')}>
-        <div className={cx('header')}>
-          {hero}
-          {user}
-        </div>
-        <ul className={cx('utility-list')} role="listbox">
-          {utilityItems.map(item => (
-            <UtilityMenuListItem
-              key={item.key}
-              onSelect={onSelectUtilityItem ? () => {
-                onSelectUtilityItem(item.key);
-              } : undefined}
-              icon={item.icon}
-              text={item.text}
-            />
-          ))}
-          {onSelectSettings ? (
-            <UtilityMenuListItem
-              key="utility-menu-layout.settings"
-              onSelect={onSelectSettings}
-              icon={<IconSettings />}
-              text="Settings"
-            />
-          ) : null}
-          {onSelectHelp ? (
-            <UtilityMenuListItem
-              key="utility-menu-layout.help"
-              onSelect={onSelectHelp}
-              icon={<IconUnknown />}
-              text="Help"
-            />
-          ) : null}
-        </ul>
-      </div>
-      {footer}
-    </div>
+    <PopupMenu
+      header={<ActionHeader title="Utilities" />}
+      footer={<ActionFooter end={onSelectLogout ? <Button text="Logout" onClick={onSelectLogout} /> : undefined} />}
+      userConfig={userConfig}
+      customContent={hero}
+      menuItems={menuItems}
+      onSelectMenuItem={(itemKey) => {
+        if (itemKey === 'utility-menu-layout.settings') {
+          onSelectSettings();
+        } else if (itemKey === 'utility-menu-layout.help') {
+          onSelectHelp();
+        } else {
+          onSelectUtilityItem(itemKey);
+        }
+      }}
+      isHeightBounded={isHeightBounded}
+    />
   );
 };
 

@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
+import ActionHeader from 'terra-action-header';
+import ActionFooter from 'terra-action-footer';
 import Popup from 'terra-popup';
 
-import TabMenuList from './_TabMenuList';
+import PopupMenu from '../common/_PopupMenu';
+
 import TabMenuDisplay from './_TabMenuDisplay';
 
 const propTypes = {
-  /**
-   * Child tabs to be placed in the tab menu.
-   */
-  children: PropTypes.array,
   /**
    * Should the menu be hidden, set to true if there are no hidden items.
    */
@@ -39,6 +38,8 @@ const propTypes = {
    * Boolean indicating whether or not the Tab should account for count spacing.
    */
   hasCount: PropTypes.bool,
+  hiddenTabs: PropTypes.array,
+  onTabSelect: PropTypes.func,
 };
 
 const contextTypes = {
@@ -101,17 +102,25 @@ class TabMenu extends React.Component {
 
   createHiddenTabs() {
     return (
-      <TabMenuList>
-        {React.Children.map(this.props.children, child => React.cloneElement(child, {
-          onTabClick: (key) => {
-            if (child.props.onTabClick) {
-              child.props.onTabClick(key);
-            }
-
-            this.handleOnRequestClose();
-          },
+      <PopupMenu
+        header={<ActionHeader title="Title TBD" />}
+        footer={<ActionFooter />}
+        menuItems={this.props.hiddenTabs.map(tab => ({
+          key: tab.key,
+          text: tab.text,
+          icon: tab.icon,
+          notificationCount: tab.notificationCount,
+          isActive: tab.key === this.props.activeTabKey,
         }))}
-      </TabMenuList>
+        onSelectMenuItem={(itemKey) => {
+          if (this.props.onTabSelect) {
+            this.props.onTabSelect(itemKey);
+          }
+
+          this.handleOnRequestClose();
+        }}
+        showSelections
+      />
     );
   }
 
@@ -120,11 +129,11 @@ class TabMenu extends React.Component {
     const moreText = intl.formatMessage({ id: 'Terra.application.tabs.more' });
     let isSelected = false;
 
-    const childArray = this.props.children;
+    const childArray = this.props.hiddenTabs;
     const count = childArray.length;
     for (let i = 0; i < count; i += 1) {
       const child = childArray[i];
-      if (child.props.isActive) {
+      if (child.isActive) {
         // eslint-disable-next-line prefer-destructuring
         isSelected = true;
         break;

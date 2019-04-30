@@ -183,7 +183,7 @@ class ApplicationNavigationTest extends React.Component {
     };
   }
 
-  handleExtensionSelect(event, metaData) {
+  handleExtensionSelect(metaData) {
     const { disclosureManager } = this.props;
 
     disclosureManager.disclose({
@@ -298,6 +298,7 @@ class ApplicationNavigationTest extends React.Component {
         },
         {
           image: <IconVisualization />,
+          metaData: { key: 'Visualization' },
           text: 'Visualization',
           type: 'popup',
           content: <div>Im a Popup</div>,

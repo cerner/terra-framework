@@ -199,7 +199,6 @@ class Tabs extends React.Component {
     let showNotificationRollup = false;
     const hasNotifications = tabs.some(tab => tab.hasNotifications);
     const visibleChildren = [];
-    const hiddenChildren = [];
     const hiddenTabs = [];
     tabs.forEach((tab, index) => {
       const tabProps = {
@@ -228,8 +227,7 @@ class Tabs extends React.Component {
         if (tab.notificationCount > 0) {
           showNotificationRollup = true;
         }
-        hiddenTabs.push(tab);
-        hiddenChildren.push(<CollapsedTab {...tabProps} />);
+        hiddenTabs.push(tabProps);
       }
     });
 
@@ -243,14 +241,14 @@ class Tabs extends React.Component {
           <TabMenu
             isIconOnly={!this.isCalculating && this.contentWidth <= this.getMoreWidth()}
             hasCount={hasNotifications}
+	    hiddenTabs={hiddenTabs}
+            onTabSelect={onTabSelect}
             isPulsed={showNotificationRollup && !this.isCalculating && this.shouldPulse(tabs)}
             isHidden={this.menuHidden}
             activeTabKey={activeTabKey}
             menuRefCallback={this.setMenuRef}
             showNotificationRollup={showNotificationRollup}
-          >
-            {hiddenChildren}
-          </TabMenu>
+          />
           <div className={cx(['divider-after-last-tab'])} />
         </div>
       </div>

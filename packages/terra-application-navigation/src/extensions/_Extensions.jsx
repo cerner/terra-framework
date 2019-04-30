@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import ActionHeader from 'terra-action-header';
+import ActionFooter from 'terra-action-footer';
 import Popup from 'terra-popup';
+
+import PopupMenu from '../common/_PopupMenu';
 import { extensionConfigPropType } from '../utils/propTypes';
-import ExtensionsPopupView from './_ExtensionsPopupView';
+// import ExtensionsPopupView from './_ExtensionsPopupView';
 import ExtensionRollup from './_ExtensionRollup';
 import ExtensionHelper from './_ExtensionHelper';
 import { sliceIndexForBreakpoint } from './_ExtensionUtils';
@@ -131,16 +135,28 @@ class Extensions extends React.Component {
         <Popup
           {...attachmentSpread}
           contentHeight="auto"
-          contentWidth="auto"
+          contentWidth="320"
           isArrowDisplayed
           isOpen={this.state.isOpen}
           targetRef={this.getButtonNode}
           onRequestClose={this.handleRequestClose}
         >
-          <ExtensionsPopupView
-            extensions={hiddenItems}
-            activeBreakpoint={activeBreakpoint}
-            onRequestClose={this.handleRequestClose}
+          <PopupMenu
+            header={<ActionHeader title="Extensions" />}
+            footer={<ActionFooter />}
+            menuItems={hiddenItems.map(item => ({
+              key: item.metaData.key,
+              icon: item.image,
+              text: item.text,
+              notificationCount: item.notificationCount,
+            }))}
+            onSelectMenuItem={(itemKey) => {
+              const selectedExtension = hiddenItems.find(item => item.metaData.key === itemKey);
+              if (selectedExtension.onSelect) {
+                selectedExtension.onSelect(selectedExtension.metaData);
+              }
+              this.handleRequestClose();
+            }}
           />
         </Popup>
         <div className={cx('extensions-row')}>

@@ -4,7 +4,7 @@ import Avatar from 'terra-avatar';
 
 import { userConfigPropType } from '../utils/propTypes';
 
-import styles from './UtilityMenuUser.module.scss';
+import styles from './PopupMenuUser.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -12,7 +12,7 @@ const propTypes = {
   userConfig: userConfigPropType,
 };
 
-const UtilityMenuUser = ({ userConfig }) => (
+const PopupMenuUser = ({ userConfig }) => (
   <div className={cx('utility-user-layout')}>
     <div className={cx('avatar-container')}>
       <div className={cx('avatar-outline')} />
@@ -25,6 +25,6 @@ const UtilityMenuUser = ({ userConfig }) => (
   </div>
 );
 
-UtilityMenuUser.propTypes = propTypes;
+PopupMenuUser.propTypes = propTypes;
 
-export default UtilityMenuUser;
+export default PopupMenuUser;

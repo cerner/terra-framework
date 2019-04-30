@@ -21,14 +21,25 @@
     background-color: rgba(89, 159, 253, 0.4);
   }
 
-  .icon {
+  .icon,
+  .selection-icon {
     color: #4983d1;
     flex: 0 0 auto;
     margin-right: 0.7143rem;
   }
 
+  .selection-icon {
+    width: 1rem;
+  }
+
   .text {
+    flex: 1 1 auto;
     hyphens: auto;
     word-break: break-word;
+  }
+
+  .extension-row-count {
+    flex: 0 0 auto;
+    margin-left: 0.5rem;
   }
 }
