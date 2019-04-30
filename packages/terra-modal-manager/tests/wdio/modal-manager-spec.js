@@ -399,3 +399,39 @@ describe('ModalManager - Component Integration', () => {
     Terra.should.matchScreenshot({ selector });
   });
 });
+
+describe('Focus Handling', () => {
+  before(() => {
+    browser.setViewportSize(Terra.viewports('large')[0]);
+  });
+
+  describe('Outside Focus Handling Before Modal', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-integration');
+
+      browser.click('#root-component .disclose-small');
+
+      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
+      browser.keys(['Shift', 'Tab']); // Shift tab focus backward outside of modal
+    });
+
+    Terra.should.matchScreenshot('focused shifted before modal', { selector });
+  });
+
+  describe('Outside Focus Handling After Modal', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-integration');
+
+      browser.click('#root-component .disclose-small');
+
+      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
+      browser.execute(() => {
+        document.querySelector('#DemoContainer-1 .maximize').focus();
+      });
+      browser.keys(['Shift']); // Release shift key
+      browser.keys(['Tab']); // Shift tab focus forward outside of modal
+    });
+
+    Terra.should.matchScreenshot('focused shifted after modal', { selector });
+  });
+});
