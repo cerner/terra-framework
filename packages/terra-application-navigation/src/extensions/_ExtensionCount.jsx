@@ -12,10 +12,6 @@ const propTypes = {
    */
   value: PropTypes.number,
   /**
-   * Whether or not the count is to be display in inline style.
-   */
-  isInline: PropTypes.bool,
-  /**
    * Whether or not the count represents rolled up counts.
    */
   isRollup: PropTypes.bool,
@@ -47,7 +43,6 @@ class ExtensionCount extends React.Component {
   render() {
     const {
       value,
-      isInline,
       isRollup,
       ...customProps
     } = this.props;
@@ -55,8 +50,6 @@ class ExtensionCount extends React.Component {
     let validatedValue = value;
     if (isRollup) {
       validatedValue = null;
-    } else if (isInline && value > 999) {
-      validatedValue = '999+';
     } else if (value > 99) {
       validatedValue = '99+';
     }
@@ -67,7 +60,6 @@ class ExtensionCount extends React.Component {
         ref={this.setCountNode}
         className={cx([
           'count',
-          { 'is-inline': isInline },
           { 'is-rollup': isRollup },
           customProps.className,
         ])}

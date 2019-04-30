@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 import IconCheckmark from 'terra-icon/lib/icon/IconCheckmark';
 
-import Count from '../extensions/_ExtensionCount';
+import PopupCount from './_PopupCount';
 
 import styles from './PopupMenuListItem.module.scss';
 
@@ -47,7 +47,7 @@ const PopupMenuListItem = ({
       ) : null}
     {icon ? <div className={cx('icon')}>{icon}</div> : null}
     <div className={cx('text')}>{text}</div>
-    {notificationCount > 0 && <Count value={notificationCount} isInline className={cx('extension-row-count')} />}
+    {notificationCount > 0 && <PopupCount value={notificationCount} isInline className={cx('extension-row-count')} />}
   </li>
 );
 

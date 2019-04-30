@@ -2,26 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
-import styles from './TabCount.module.scss';
+import styles from './PopupCount.module.scss';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The child tabs to be placed in the menu.
+   * The number of notifications to display..
    */
   value: PropTypes.number,
-  /**
-   * Whether or not the count represents rolled up counts.
-   */
-  isRollup: PropTypes.bool,
-  /**
-   * Callback function for the count node.
-   */
-  refCallback: PropTypes.func,
 };
 
-class TabCount extends React.Component {
+class PopupCount extends React.Component {
   constructor(props) {
     super(props);
     this.listener = this.listener.bind(this);
@@ -47,39 +39,17 @@ class TabCount extends React.Component {
   render() {
     const {
       value,
-      isRollup,
-      refCallback,
-      ...customProps
     } = this.props;
 
-    let digitClass = null;
-    if (value > 0) {
-      if (value < 10) {
-        digitClass = 'one';
-      } else if (value < 100) {
-        digitClass = 'two';
-      } else {
-        digitClass = 'plus';
-      }
-    }
-
     let validatedValue = value;
-    if (isRollup) {
-      validatedValue = 'New'; // todo: translate this
-    } else if (value > 99) {
-      validatedValue = '99+';
+    if (value > 999) {
+      validatedValue = '999+';
     }
 
     return (
       <div
-        {...customProps}
         ref={this.setCountNode}
-        className={cx([
-          'count',
-          { 'is-rollup': isRollup },
-          digitClass,
-          customProps.className,
-        ])}
+        className={cx('popup-count')}
       >
         {validatedValue}
       </div>
@@ -87,6 +57,6 @@ class TabCount extends React.Component {
   }
 }
 
-TabCount.propTypes = propTypes;
+PopupCount.propTypes = propTypes;
 
-export default TabCount;
+export default PopupCount;
