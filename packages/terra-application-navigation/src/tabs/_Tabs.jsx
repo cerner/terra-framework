@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
-
+import LodashDebounce from 'lodash.debounce';
 import Tab from './_Tab';
 import CollapsedTab from './_CollapsedTab';
 import TabMenu from './_TabMenu';
@@ -57,8 +57,11 @@ class Tabs extends React.Component {
     this.handleResize = this.handleResize.bind(this);
     this.setMenuRef = this.setMenuRef.bind(this);
     this.setChildRef = this.setChildRef.bind(this);
+    this.getMoreWidth = this.getMoreWidth.bind(this);
+    this.getChildWidth = this.getChildWidth.bind(this);
+    this.updateSize = LodashDebounce(this.updateSize.bind(this), 100);
     this.resetCalculations();
-    this.childWidths = [];
+    this.childRefs = [];
     this.previousNotifications = null;
   }
 
@@ -66,11 +69,7 @@ class Tabs extends React.Component {
     this.resizeObserver = new ResizeObserver((entries) => {
       this.contentWidth = entries[0].contentRect.width;
       if (!this.isCalculating) {
-        this.animationFrameID = window.requestAnimationFrame(() => {
-          // Resetting the calculations so that all elements will be rendered face-up for width calculations
-          this.resetCalculations();
-          this.forceUpdate();
-        });
+        this.updateSize();
       }
     });
     this.resizeObserver.observe(this.container);
@@ -92,7 +91,6 @@ class Tabs extends React.Component {
   }
 
   componentWillUnmount() {
-    window.cancelAnimationFrame(this.animationFrameID);
     this.resizeObserver.disconnect(this.container);
     this.container = null;
   }
@@ -104,12 +102,25 @@ class Tabs extends React.Component {
 
   setChildRef(ref, index) {
     if (!ref) { return; }
-    this.childWidths[index] = ref.getBoundingClientRect().width;
+    this.childRefs[index] = ref;
   }
 
   setMenuRef(ref) {
     if (!ref) { return; }
-    this.moreWidth = ref.getBoundingClientRect().width;
+    this.moreRef = ref;
+  }
+
+  getMoreWidth() {
+    return this.moreRef.getBoundingClientRect().width;
+  }
+
+  getChildWidth(index) {
+    return this.childRefs[index].getBoundingClientRect().width;
+  }
+
+  updateSize() {
+    this.resetCalculations();
+    this.forceUpdate();
   }
 
   resetCalculations() {
@@ -123,13 +134,13 @@ class Tabs extends React.Component {
     // Calculate hide index
     const { tabs } = this.props;
     const childrenCount = tabs.length;
-    const moreWidth = width - this.moreWidth;
+    const moreWidth = width - this.getMoreWidth();
     let newHideIndex = childrenCount;
     let isMenuHidden = true;
 
     let calcMinWidth = 0;
     for (let i = 0; i < childrenCount; i += 1) {
-      calcMinWidth += this.childWidths[i];
+      calcMinWidth += this.getChildWidth(i);
       if (calcMinWidth > moreWidth && !(i === childrenCount - 1 && calcMinWidth <= width)) {
         newHideIndex = i;
         isMenuHidden = false;
@@ -230,9 +241,9 @@ class Tabs extends React.Component {
         >
           {visibleChildren}
           <TabMenu
-            isIconOnly={!this.isCalculating && this.contentWidth < this.moreWidth}
+            isIconOnly={!this.isCalculating && this.contentWidth <= this.getMoreWidth()}
             hasCount={hasNotifications}
-            isPulsed={!this.isCalculating && this.shouldPulse(tabs)}
+            isPulsed={showNotificationRollup && !this.isCalculating && this.shouldPulse(tabs)}
             isHidden={this.menuHidden}
             activeTabKey={activeTabKey}
             menuRefCallback={this.setMenuRef}

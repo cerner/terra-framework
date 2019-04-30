@@ -87,8 +87,8 @@ const navigationItems = [{
 }, {
   key: '/page_5',
   text: 'Page 5',
-  notificationCount: 5,
-  hasNotifications: true,
+  // notificationCount: 5,
+  // hasNotifications: true,
 }, {
   key: '/page_6',
   text: 'Page 6',

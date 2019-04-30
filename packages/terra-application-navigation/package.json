@@ -35,6 +35,7 @@
     "prop-types": "^15.5.8",
     "focus-trap-react": "^4.0.1",
     "keycode-js": "^1.0.4",
+    "lodash.debounce": "^4.0.8",
     "react-onclickoutside": "^6.7.1",
     "resize-observer-polyfill": "^1.5.1",
     "terra-action-footer": "^2.5.0",
