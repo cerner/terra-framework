@@ -400,17 +400,77 @@ describe('ModalManager - Component Integration', () => {
   });
 });
 
+
+/*
+describe('Within Modal Focus Handling', () => {
+    before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-custom-props'));
+
+    it('focuses on the modal when opened', () => {
+      expect(browser.hasFocus('[aria-modal="true"][role="dialog"]')).to.be.equal(true);
+    });
+
+    Terra.should.matchScreenshot('modal is focused on open', { selector: '#root' });
+
+    it('focuses on interactive elements within the modal', () => {
+      browser.keys(['Tab']);
+      expect(browser.hasFocus('#focus-button')).to.be.equal(true);
+    });
+
+    Terra.should.matchScreenshot('modal button focused', { selector: '#root' });
+
+    it('does not focus on interactive content within the app when the modal is open - tab cycle forward', () => {
+      browser.keys(['Tab']);
+    });
+
+    Terra.should.matchScreenshot('focused shifted outside the end of the modal', { selector: '#root' });
+
+    it('shifts focus back onto interactive elements within the modal', () => {
+      browser.keys(['Shift', 'Tab']);
+      expect(browser.hasFocus('#focus-button')).to.be.equal(true);
+    });
+
+    Terra.should.matchScreenshot('modal button focused again', { selector: '#root' });
+  });
+*/
+
 describe('Focus Handling', () => {
   before(() => {
     browser.setViewportSize(Terra.viewports('large')[0]);
   });
 
+  describe('Modal Focus', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-integration');
+      browser.click('#root-component .disclose-small');
+      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
+    });
+
+    it('focuses on the modal when opened', () => {
+      expect(browser.hasFocus('[aria-modal="true"][role="dialog"]')).to.be.equal(true);
+    });
+
+    Terra.should.matchScreenshot('modal is focused', { selector });
+  });
+
+  describe('Modal Content Focus', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-integration');
+      browser.click('#root-component .disclose-small');
+      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
+      browser.keys(['Tab']); // Shift tab focus onto modal content
+    });
+
+    it('focuses on the modal content when focus is shifted into the modal', () => {
+      expect(browser.hasFocus('[class*="slide-group"] #DemoContainer-1 .disclose')).to.be.equal(true);
+    });
+
+    Terra.should.matchScreenshot('modal content is focused', { selector });
+  });
+
   describe('Outside Focus Handling Before Modal', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-integration');
-
       browser.click('#root-component .disclose-small');
-
       browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
       browser.keys(['Shift', 'Tab']); // Shift tab focus backward outside of modal
     });
@@ -421,9 +481,7 @@ describe('Focus Handling', () => {
   describe('Outside Focus Handling After Modal', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-integration');
-
       browser.click('#root-component .disclose-small');
-
       browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
       browser.execute(() => {
         document.querySelector('#DemoContainer-1 .maximize').focus();
