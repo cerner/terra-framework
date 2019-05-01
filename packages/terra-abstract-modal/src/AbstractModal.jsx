@@ -139,7 +139,7 @@ class AbstractModal extends React.Component {
         // Shift focus back to element that was last focused prior to opening the modal
         this.state.modalTrigger.focus();
       }
-    }, 100); // Allows inert processing to finish before shifting focus back
+    }, 0); // Allows inert processing to finish before shifting focus back
   }
 
   handleKeydown(e) {
