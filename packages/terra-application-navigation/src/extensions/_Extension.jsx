@@ -25,7 +25,7 @@ const propTypes = {
    */
   onRequestClose: PropTypes.func,
   /**
-   * Function callback for selection of the extension. Return (event, metaData).
+   * Function callback for selection of the extension. Return (metaData).
    */
   onSelect: PropTypes.func,
   /**

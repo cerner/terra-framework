@@ -13,19 +13,19 @@ const createKeyDown = (onRequestClose, onSelect, metaData) => (
     if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
       event.preventDefault();
       if (onRequestClose) {
-        onRequestClose(event);
+        onRequestClose();
       }
-      onSelect(event, metaData);
+      onSelect(metaData);
     }
   }
 );
 
 const createOnClick = (onRequestClose, onSelect, metaData) => (
-  (event) => {
+  () => {
     if (onRequestClose) {
-      onRequestClose(event);
+      onRequestClose();
     }
-    onSelect(event, metaData);
+    onSelect(metaData);
   }
 );
 
