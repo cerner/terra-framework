@@ -138,8 +138,8 @@ class DateTimePicker extends React.Component {
     // Unlike dateValue and timeValue, this.state.dateTime is the internal moment object representing both the date and time as one entity
     // It is used for date/time manipulation and used to calculate the missing/ambiguous hour.
     // The dateValue and timeValue are tracked outside of the react state to limit the number of renderings that occur.
-    this.dateValue = DateTimeUtils.formatMomentDateTime(this.state.dateTime, this.state.dateFormat);
-    this.timeValue = DateTimeUtils.hasTime(this.props.value) ? DateTimeUtils.formatISODateTime(this.props.value, 'HH:mm') : '';
+    this.dateValue = DateUtil.formatMomentDate(this.state.dateTime, this.state.dateFormat) || '';
+    this.timeValue = DateTimeUtils.hasTime(this.props.value) ? DateUtil.formatISODate(this.props.value, 'HH:mm') : '';
     this.isDefaultDateTimeAcceptable = true;
     this.wasOffsetButtonClicked = false;
 
@@ -149,6 +149,7 @@ class DateTimePicker extends React.Component {
     this.handleOnSelect = this.handleOnSelect.bind(this);
     this.handleOnDateBlur = this.handleOnDateBlur.bind(this);
     this.handleOnTimeBlur = this.handleOnTimeBlur.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
     this.handleDaylightSavingButtonClick = this.handleDaylightSavingButtonClick.bind(this);
     this.handleStandardTimeButtonClick = this.handleStandardTimeButtonClick.bind(this);
     this.handleOnDateInputFocus = this.handleOnDateInputFocus.bind(this);
@@ -177,7 +178,7 @@ class DateTimePicker extends React.Component {
   }
 
   handleOnSelect(event, selectedDate) {
-    this.dateValue = DateTimeUtils.formatISODateTime(selectedDate, this.state.dateFormat);
+    this.dateValue = DateUtil.formatISODate(selectedDate, this.state.dateFormat);
     const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
     const updatedDateTime = DateTimeUtils.syncDateTime(previousDateTime, selectedDate, this.timeValue);
 
@@ -203,12 +204,7 @@ class DateTimePicker extends React.Component {
       const enteredDateTime = isDateTimeValid ? this.state.dateTime : null;
 
       this.checkAmbiguousTime(enteredDateTime);
-
-      if (this.props.onBlur) {
-        this.props.onBlur(event);
-      }
-
-      this.containerHasFocus = false;
+      this.handleBlur(event, isDateTimeValid);
     }
   }
 
@@ -227,13 +223,48 @@ class DateTimePicker extends React.Component {
       }
 
       this.checkAmbiguousTime(updatedDateTime);
+      this.handleBlur(event, isDateTimeValid);
+    }
+  }
 
-      if (this.props.onBlur) {
-        this.props.onBlur(event);
+  handleBlur(event, isCompleteDateTime) {
+    if (this.props.onBlur) {
+      let value = '';
+      if (this.dateValue) {
+        value = this.dateValue.concat(' ');
       }
 
-      this.containerHasFocus = false;
+      if (this.timeValue) {
+        value = value.concat(this.timeValue);
+      }
+
+      value.trim();
+
+      let iSOString = '';
+      let momentDateTime;
+
+      if (isCompleteDateTime) {
+        momentDateTime = DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat);
+        iSOString = momentDateTime.format();
+      }
+
+      let isValid = false;
+
+      if (value === '' || (isCompleteDateTime && this.isDateTimeWithinRange(momentDateTime))) {
+        isValid = true;
+      }
+
+      const options = {
+        iSO: iSOString,
+        inputValue: value,
+        isCompleteValue: isCompleteDateTime,
+        isValidValue: isValid,
+      };
+
+      this.props.onBlur(event, options);
     }
+
+    this.containerHasFocus = false;
   }
 
   checkAmbiguousTime(dateTime) {
@@ -263,15 +294,15 @@ class DateTimePicker extends React.Component {
     }
 
     let updatedDateTime;
-    const formattedDate = DateTimeUtils.formatISODateTime(date, 'YYYY-MM-DD');
-    const isDateValid = DateTimeUtils.isValidDate(formattedDate, 'YYYY-MM-DD');
+    const formattedDate = DateUtil.formatISODate(date, 'YYYY-MM-DD');
+    const isDateValid = DateUtil.isValidDate(formattedDate, 'YYYY-MM-DD');
 
     if (isDateValid) {
       const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
       updatedDateTime = DateTimeUtils.syncDateTime(previousDateTime, date, this.timeValue);
 
       if (DateTimeUtils.isValidTime(this.timeValue)) {
-        this.timeValue = DateTimeUtils.formatISODateTime(updatedDateTime.format(), 'HH:mm');
+        this.timeValue = DateUtil.formatISODate(updatedDateTime.format(), 'HH:mm');
       }
     }
 
@@ -289,7 +320,7 @@ class DateTimePicker extends React.Component {
 
   handleTimeChange(event, time) {
     this.timeValue = time;
-    const validDate = DateTimeUtils.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeWithinRange(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat));
+    const validDate = DateUtil.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeWithinRange(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat));
     const validTime = DateTimeUtils.isValidTime(this.timeValue);
     const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
 
@@ -303,7 +334,7 @@ class DateTimePicker extends React.Component {
         updatedDateTime.subtract(1, 'hours');
       }
 
-      this.timeValue = DateTimeUtils.formatISODateTime(updatedDateTime.format(), 'HH:mm');
+      this.timeValue = DateUtil.formatISODate(updatedDateTime.format(), 'HH:mm');
       this.handleChangeRaw(event, this.timeValue);
       this.handleChange(event, updatedDateTime);
     } else {
@@ -488,7 +519,7 @@ class DateTimePicker extends React.Component {
     } = this.props;
 
     const dateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
-    const dateValue = DateTimeUtils.formatMomentDateTime(dateTime, 'YYYY-MM-DD');
+    const dateValue = DateUtil.formatMomentDate(dateTime, 'YYYY-MM-DD');
 
     return (
       <div

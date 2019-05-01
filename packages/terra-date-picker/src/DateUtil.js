@@ -85,6 +85,42 @@ class DateUtil {
   }
 
   /**
+   * Determines if the date is valid and conforms to the given format.
+   * @param {string} date - The date to validate.
+   * @param {string} format - The date format to use for the validation.
+   * @return {boolean} - True if the date is valid and conforms to the format.
+   */
+  static isValidDate(date, format) {
+    const dateMoment = moment(date, format, true);
+    return dateMoment.isValid();
+  }
+
+  /**
+   * Converts an ISO string to the given format.
+   * @param {string} iSODate - The ISO string to convert.
+   * @param {string} format - The desired date format for the conversion
+   * @return {string} - The formatted date string.
+   */
+  static formatISODate(iSODate, format) {
+    if (!iSODate || iSODate.length <= 0) {
+      return '';
+    }
+
+    const momentDate = moment(iSODate);
+    return DateUtil.formatMomentDate(momentDate, format);
+  }
+
+  /**
+   * Converts a moment object to the given format.
+   * @param {object} momentDate - The moment object to convert.
+   * @param {string} format - The desired date format for the conversion
+   * @return {string} - The formatted date string.
+   */
+  static formatMomentDate(momentDate, format) {
+    return momentDate && momentDate.isValid() ? momentDate.format(format) : undefined;
+  }
+
+  /**
    * Determines if a provided date input value is valid.
    * Valid inputs are either empty strings or contain only numeric, `/`, and '.' characters.
    * @param {String} value Value to validate

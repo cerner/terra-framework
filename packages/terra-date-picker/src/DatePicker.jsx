@@ -155,6 +155,7 @@ class DatePicker extends React.Component {
   }
 
   componentDidMount() {
+    this.dateValue = DateUtil.formatMomentDate(this.state.selectedDate, DateUtil.getFormatByLocale(this.context.intl.locale)) || '';
     this.isDefaultDateAcceptable = this.validateDefaultDate();
   }
 
@@ -168,6 +169,7 @@ class DatePicker extends React.Component {
       return;
     }
 
+    this.dateValue = DateUtil.formatISODate(selectedDate, DateUtil.getFormatByLocale(this.context.intl.locale));
     this.isDefaultDateAcceptable = true;
     this.releaseFocus();
     this.calendarButton.focus();
@@ -202,7 +204,23 @@ class DatePicker extends React.Component {
     // Handle blur only if focus has moved out of the entire date picker component.
     if (!this.datePickerContainer.current.contains(activeTarget)) {
       if (this.props.onBlur) {
-        this.props.onBlur(event);
+        const format = DateUtil.getFormatByLocale(this.context.intl.locale);
+        const isCompleteDate = DateUtil.isValidDate(this.dateValue, format);
+        const iSOString = isCompleteDate ? DateUtil.convertToISO8601(this.dateValue, format) : '';
+        let isValidDate = false;
+
+        if (this.dateValue === '' || (isCompleteDate && this.isDateWithinRange(DateUtil.createSafeDate(iSOString)))) {
+          isValidDate = true;
+        }
+
+        const options = {
+          iSO: iSOString,
+          inputValue: this.dateValue,
+          isCompleteValue: isCompleteDate,
+          isValidValue: isValidDate,
+        };
+
+        this.props.onBlur(event, options);
       }
 
       this.containerHasFocus = false;
@@ -210,6 +228,10 @@ class DatePicker extends React.Component {
   }
 
   handleChange(date, event) {
+    if (event.type === 'change') {
+      this.dateValue = event.target.value;
+    }
+
     this.setState({
       selectedDate: date,
     });
@@ -220,6 +242,8 @@ class DatePicker extends React.Component {
   }
 
   handleChangeRaw(event) {
+    this.dateValue = event.target.value;
+
     if (this.props.onChangeRaw) {
       this.props.onChangeRaw(event, event.target.value);
     }
@@ -229,6 +253,7 @@ class DatePicker extends React.Component {
     this.handleFocus(event);
 
     if (!this.isDefaultDateAcceptable) {
+      this.dateValue = '';
       this.handleChange(null, event);
       this.isDefaultDateAcceptable = true;
     }
@@ -250,6 +275,7 @@ class DatePicker extends React.Component {
     }
 
     if (!this.isDefaultDateAcceptable && !this.validateDefaultDate()) {
+      this.dateValue = '';
       this.handleChange(null, event);
     } else if (onClick) {
       // This onClick function is the onInputClick function coming from https://github.com/Hacker0x01/react-datepicker/blob/master/src/index.jsx#L326.
@@ -260,13 +286,17 @@ class DatePicker extends React.Component {
   }
 
   validateDefaultDate() {
+    return this.isDateWithinRange(this.state.selectedDate);
+  }
+
+  isDateWithinRange(date) {
     let isAcceptable = true;
 
-    if (DateUtil.isDateOutOfRange(this.state.selectedDate, DateUtil.createSafeDate(this.props.minDate), DateUtil.createSafeDate(this.props.maxDate))) {
+    if (DateUtil.isDateOutOfRange(date, DateUtil.createSafeDate(this.props.minDate), DateUtil.createSafeDate(this.props.maxDate))) {
       isAcceptable = false;
     }
 
-    if (DateUtil.isDateExcluded(this.state.selectedDate, this.props.excludeDates)) {
+    if (DateUtil.isDateExcluded(date, this.props.excludeDates)) {
       isAcceptable = false;
     }
 

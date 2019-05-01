@@ -153,29 +153,49 @@ describe('DateTimePicker', () => {
       browser.execute('document.querySelector(\'input[name="terra-date-input"]\').style.caretColor = "transparent";');
       expect(browser.getText('#blur-count')).to.equal('0');
       expect(browser.getText('#focus-count')).to.equal('1');
+      expect(browser.getText('#iso')).to.equal('');
+      expect(browser.getText('#input-value')).to.equal('');
+      expect(browser.getText('#complete-date')).to.equal('No');
+      expect(browser.getText('#valid-date')).to.equal('Yes');
     });
 
-    it('tabs to the calendar button and onBlur is not triggered', () => {
-      browser.keys('Tab');
+    it('enter a complete date to move focus to the hour input and onBlur is not triggered', () => {
+      browser.keys('05/01/2019');
       expect(browser.getText('#blur-count')).to.equal('0');
       expect(browser.getText('#focus-count')).to.equal('1');
+      expect(browser.getText('#iso')).to.equal('');
+      expect(browser.getText('#input-value')).to.equal('');
+      expect(browser.getText('#complete-date')).to.equal('No');
+      expect(browser.getText('#valid-date')).to.equal('Yes');
     });
 
-    it('tabs to the hour input and onBlur is not triggered', () => {
-      browser.keys('Tab');
-      expect(browser.getText('#blur-count')).to.equal('0');
-      expect(browser.getText('#focus-count')).to.equal('1');
-    });
-
-    it('tabs to the hour input and onBlur is not triggered', () => {
+    it('enter the hour to move focus to the minute input and onBlur is not triggered', () => {
       browser.setValue('input[name="terra-time-hour-input"]', '10');
       expect(browser.getText('#blur-count')).to.equal('0');
       expect(browser.getText('#focus-count')).to.equal('1');
+      expect(browser.getText('#iso')).to.equal('');
+      expect(browser.getText('#input-value')).to.equal('');
+      expect(browser.getText('#complete-date')).to.equal('No');
+      expect(browser.getText('#valid-date')).to.equal('Yes');
+    });
+
+    it('enter the minute and onBlur is not triggered', () => {
+      browser.setValue('input[name="terra-time-minute-input"]', '10');
+      expect(browser.getText('#blur-count')).to.equal('0');
+      expect(browser.getText('#focus-count')).to.equal('1');
+      expect(browser.getText('#iso')).to.equal('');
+      expect(browser.getText('#input-value')).to.equal('');
+      expect(browser.getText('#complete-date')).to.equal('No');
+      expect(browser.getText('#valid-date')).to.equal('Yes');
     });
 
     it('tabs out of the component and onBlur is triggered', () => {
       browser.keys('Tab');
       expect(browser.getText('#blur-count')).to.equal('1');
+      expect(browser.getText('#iso')).to.equal('2019-05-01T10:10:00-05:00');
+      expect(browser.getText('#input-value')).to.equal('05/01/2019 10:10');
+      expect(browser.getText('#complete-date')).to.equal('Yes');
+      expect(browser.getText('#valid-date')).to.equal('Yes');
     });
   });
 

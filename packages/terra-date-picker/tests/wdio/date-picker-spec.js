@@ -241,20 +241,33 @@ describe('Date Picker', () => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         document.querySelector('input').style.caretColor = 'transparent';
       });
+      browser.keys('05/01/2019');
       expect(browser.getText('#blur-count')).to.equal('0');
       expect(browser.getText('#focus-count')).to.equal('1');
+      expect(browser.getText('#iso')).to.equal('');
+      expect(browser.getText('#input-value')).to.equal('');
+      expect(browser.getText('#complete-date')).to.equal('No');
+      expect(browser.getText('#valid-date')).to.equal('Yes');
     });
 
     it('tabs to the calendar button and onBlur is not triggered', () => {
       browser.keys('Tab');
       expect(browser.getText('#blur-count')).to.equal('0');
       expect(browser.getText('#focus-count')).to.equal('1');
+      expect(browser.getText('#iso')).to.equal('');
+      expect(browser.getText('#input-value')).to.equal('');
+      expect(browser.getText('#complete-date')).to.equal('No');
+      expect(browser.getText('#valid-date')).to.equal('Yes');
     });
 
     it('tabs out of the component and onBlur is triggered', () => {
       browser.keys('Tab');
       expect(browser.getText('#blur-count')).to.equal('1');
       expect(browser.getText('#focus-count')).to.equal('1');
+      expect(browser.getText('#iso')).to.equal('2019-05-01');
+      expect(browser.getText('#input-value')).to.equal('05/01/2019');
+      expect(browser.getText('#complete-date')).to.equal('Yes');
+      expect(browser.getText('#valid-date')).to.equal('Yes');
     });
   });
 

@@ -33,19 +33,6 @@ class DateTimeUtils {
     return timePart.length > 0;
   }
 
-  static formatISODateTime(iSODate, format) {
-    if (!iSODate || iSODate.length <= 0) {
-      return '';
-    }
-
-    const momentDate = moment(iSODate);
-    return DateTimeUtils.formatMomentDateTime(momentDate, format);
-  }
-
-  static formatMomentDateTime(momentDate, format) {
-    return momentDate && momentDate.isValid() ? momentDate.format(format) : undefined;
-  }
-
   static syncDateTime(momentDate, iOSdate, time) {
     const date = moment(iOSdate);
     let newDate = momentDate ? momentDate.clone() : date;
@@ -70,12 +57,7 @@ class DateTimeUtils {
   }
 
   static isValidDateTime(date, time, format) {
-    return DateTimeUtils.isValidDate(date, format) && DateTimeUtils.isValidTime(time);
-  }
-
-  static isValidDate(date, format) {
-    const dateMoment = moment(date, format, true);
-    return dateMoment.isValid();
+    return DateUtil.isValidDate(date, format) && DateTimeUtils.isValidTime(time);
   }
 
   static isValidTime(time) {
