@@ -30,7 +30,7 @@
     "classnames": "^2.2.5",
     "lodash.debounce": "^4.0.8",
     "prop-types": "^15.5.8",
-    "tabbable": "^3.1.1",
+    "tabbable": "^4.0.0",
     "terra-content-container": "^3.0.0",
     "terra-overlay": "^3.0.0",
     "terra-responsive-element": "^4.0.0"
