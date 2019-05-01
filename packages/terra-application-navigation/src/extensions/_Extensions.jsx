@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ActionHeader from 'terra-action-header';
-import ActionFooter from 'terra-action-footer';
 import Popup from 'terra-popup';
 
 import PopupMenu from '../common/_PopupMenu';
@@ -142,7 +141,6 @@ class Extensions extends React.Component {
         >
           <PopupMenu
             header={<ActionHeader title="Extensions" />}
-            footer={<ActionFooter />}
             menuItems={hiddenItems.map(item => ({
               key: item.metaData.key,
               icon: item.image,

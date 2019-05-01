@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import ActionFooter from 'terra-action-footer';
 import ContentContainer from 'terra-content-container';
+
 import PopupMenuListItem from './_PopupMenuListItem';
 import { userConfigPropType } from '../utils/propTypes';
 
@@ -31,7 +33,7 @@ const PopupMenu = ({
 }) => (
   <ContentContainer
     header={header}
-    footer={footer}
+    footer={footer || <ActionFooter />}
     fill={isHeightBounded}
   >
     <div className={cx('container')}>

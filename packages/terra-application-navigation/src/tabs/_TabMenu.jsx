@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 import ActionHeader from 'terra-action-header';
-import ActionFooter from 'terra-action-footer';
 import Popup from 'terra-popup';
 
 import PopupMenu from '../common/_PopupMenu';
@@ -104,7 +103,6 @@ class TabMenu extends React.Component {
     return (
       <PopupMenu
         header={<ActionHeader title="Title TBD" />}
-        footer={<ActionFooter />}
         menuItems={this.props.hiddenTabs.map(tab => ({
           key: tab.key,
           text: tab.text,

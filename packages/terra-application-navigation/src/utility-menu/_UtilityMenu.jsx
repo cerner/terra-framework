@@ -20,6 +20,9 @@ const propTypes = {
   isHeightBounded: PropTypes.bool,
 };
 
+const utilityMenuSettingsKey = 'terra-application-navigation.utility-menu.settings';
+const utilityMenuHelpKey = 'terra-application-navigation.utility-menu.help';
+
 const UtilityMenu = ({
   userConfig, hero, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem, isHeightBounded,
 }) => {
@@ -28,7 +31,7 @@ const UtilityMenu = ({
 
   if (onSelectSettings) {
     menuItems.push({
-      key: 'utility-menu-layout.settings',
+      key: utilityMenuSettingsKey,
       text: 'Settings',
       icon: <IconSettings />,
     });
@@ -36,7 +39,7 @@ const UtilityMenu = ({
 
   if (onSelectHelp) {
     menuItems.push({
-      key: 'utility-menu-layout.help',
+      key: utilityMenuHelpKey,
       text: 'Help',
       icon: <IconUnknown />,
     });
@@ -50,9 +53,9 @@ const UtilityMenu = ({
       customContent={hero}
       menuItems={menuItems}
       onSelectMenuItem={(itemKey) => {
-        if (itemKey === 'utility-menu-layout.settings') {
+        if (itemKey === utilityMenuSettingsKey) {
           onSelectSettings();
-        } else if (itemKey === 'utility-menu-layout.help') {
+        } else if (itemKey === utilityMenuHelpKey) {
           onSelectHelp();
         } else {
           onSelectUtilityItem(itemKey);
