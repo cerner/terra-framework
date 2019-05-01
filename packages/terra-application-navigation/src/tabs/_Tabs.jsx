@@ -4,7 +4,6 @@ import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
 import LodashDebounce from 'lodash.debounce';
 import Tab from './_Tab';
-import CollapsedTab from './_CollapsedTab';
 import TabMenu from './_TabMenu';
 import styles from './Tabs.module.scss';
 

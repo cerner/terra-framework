@@ -52,17 +52,6 @@ class TabCount extends React.Component {
       ...customProps
     } = this.props;
 
-    let digitClass = null;
-    if (value > 0) {
-      if (value < 10) {
-        digitClass = 'one';
-      } else if (value < 100) {
-        digitClass = 'two';
-      } else {
-        digitClass = 'plus';
-      }
-    }
-
     let validatedValue = value;
     if (isRollup) {
       validatedValue = 'New'; // todo: translate this
@@ -77,7 +66,6 @@ class TabCount extends React.Component {
         className={cx([
           'count',
           { 'is-rollup': isRollup },
-          digitClass,
           customProps.className,
         ])}
       >

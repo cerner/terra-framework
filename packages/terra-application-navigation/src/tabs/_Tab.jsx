@@ -50,19 +50,17 @@ const propTypes = {
   render: PropTypes.func,
 };
 
-const getCountClass = hasCount => (hasCount ? 'has-count' : null);
-
 const getRenderTabClasses = isActive => cx([
   'tab',
   'is-custom',
   { 'is-disabled': isActive },
 ]);
 
-const getDefaultTabClasses = (isActive, isPlaceholder, countClass) => cx([
+const getDefaultTabClasses = (isActive, isPlaceholder, hasCount) => cx([
   'tab',
   { 'is-disabled': isActive },
   { 'is-placeholder': isPlaceholder },
-  countClass,
+  { 'has-count': hasCount },
 ]);
 
 class Tab extends React.Component {
@@ -115,8 +113,7 @@ class Tab extends React.Component {
         })
       );
     } else {
-      const countClass = getCountClass(hasCount, notificationCount);
-      tabClassNames = getDefaultTabClasses(isActive, isPlaceholder, countClass);
+      tabClassNames = getDefaultTabClasses(isActive, isPlaceholder, hasCount);
 
       tabContent = (
         <span className={cx(['tab-inner'])}>
