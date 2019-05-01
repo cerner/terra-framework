@@ -30,7 +30,7 @@
     "moment": "^2.21.0",
     "prop-types": "^15.5.8",
     "keycode-js": "^1.0.4",
-    "react-onclickoutside": "^6.6.3",
+    "react-onclickoutside": "^6.7.1",
     "react-portal": "^4.1.2",
     "terra-button": "^3.3.0",
     "terra-form-input": "^2.3.0",
