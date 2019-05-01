@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* The consumed terra-list is no longer styled for scrolling, it is added through a containing element
+
+3.4.0 - (April 24, 2019)
+------------------
+### Changed
 * Moved packages we use solely in doc examples and tests to devDependencies
 
 3.3.0 - (April 9, 2019)

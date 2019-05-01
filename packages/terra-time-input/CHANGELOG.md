@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.7.0 - (April 24, 2019)
+------------------
 ### Changed
 * Replaced string "12-hour" with TimeUtil.FORMAT_12_HOUR in terra dev-site eamples
 * Moved packages we use solely in doc examples and tests to devDependencies
