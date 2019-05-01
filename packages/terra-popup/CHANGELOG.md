@@ -6,6 +6,7 @@ Unreleased
 ### Breaking Changes
 * Removed `releaseFocus` prop
 * Removed `requestFocus` prop
+* Updated focus-trap-react dependency to ^6.0.0
 
 5.11.0 - (April 24, 2019)
 ------------------

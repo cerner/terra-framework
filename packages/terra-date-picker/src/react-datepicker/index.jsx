@@ -615,14 +615,16 @@ export default class DatePicker extends React.Component {
         >
           <Hookshot.Content>
             <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: true }}>
-              <div
-                className="react-datepicker-hookshot"
-                data-placement="bottom"
-                ref={this.datePickerHookShotContainer}
-                tabIndex="-1"
-                onKeyDown={this.handleCalendarKeyDown}
-              >
-                {calendar}
+              <div>
+                <div
+                  className="react-datepicker-hookshot"
+                  data-placement="bottom"
+                  ref={this.datePickerHookShotContainer}
+                  tabIndex="-1"
+                  onKeyDown={this.handleCalendarKeyDown}
+                >
+                  {calendar}
+                </div>
               </div>
             </FocusTrap>
           </Hookshot.Content>

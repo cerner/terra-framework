@@ -207,22 +207,24 @@ class PopupContent extends React.Component {
 
     return (
       <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: true }}>
-        <Hookshot.Content
-          {...customProps}
-          className={contentClassNames}
-          tabIndex={isFocusedDisabled ? null : '0'}
-          data-terra-popup-content
-          onContentResize={(isHeightAutomatic || isWidthAutomatic) ? onContentResize : undefined}
-          onEsc={onRequestClose}
-          onResize={this.handleOnResize}
-          refCallback={refCallback}
-          role="dialog"
-        >
-          {arrowContent}
-          <div {...heightData} {...widthData} className={innerClassNames} style={contentStyle}>
-            {content}
-          </div>
-        </Hookshot.Content>
+        <div>
+          <Hookshot.Content
+            {...customProps}
+            className={contentClassNames}
+            tabIndex={isFocusedDisabled ? null : '0'}
+            data-terra-popup-content
+            onContentResize={(isHeightAutomatic || isWidthAutomatic) ? onContentResize : undefined}
+            onEsc={onRequestClose}
+            onResize={this.handleOnResize}
+            refCallback={refCallback}
+            role="dialog"
+          >
+            {arrowContent}
+            <div {...heightData} {...widthData} className={innerClassNames} style={contentStyle}>
+              {content}
+            </div>
+          </Hookshot.Content>
+        </div>
       </FocusTrap>
     );
   }
