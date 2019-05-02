@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Updated jest snapshot to fix test failure
 
 2.10.0 - (April 24, 2019)
 ------------------
