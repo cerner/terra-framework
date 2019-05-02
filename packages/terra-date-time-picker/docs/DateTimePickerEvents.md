@@ -5,6 +5,11 @@ terra-date-time-picker has several callback events that are slightly different i
 
 ### onBlur
 * The `onBlur` callback prop is triggered only when the entire component loses focus. If the focus is moved from the date input to the time input, the `onBlur` event will not be triggered since the focus is still within the DateTime Picker component. The `onBlur` event would be triggered when the focus is moved to any element that is not a child node of the DateTime Picker.
+* There are two paramters in the `onBlur` callback prop. The first parameter is the `event` object representing the blur event. The second parameter is the `options` object that contains the following attributes to describe the current state of the input values at the time when the component loses focus.
+  * `iSO` - The date/time value in the ISO format. This attribute would be empty if the date/time value is either empty or is not a complete date time. That is, the ISO string is available only if the isCompleteValue attribute is true.
+  * `inputValue` - The face up value in the date and time inputs. If both the date and time have a value, these values will be separated by an white space.
+  * `isCompleteValue` - A boolean to indicate whether or not both the date and time values are filled out and conforms to the date/time format. If this boolean is false, the iSO attribute would be empty.
+  * `isValidValue` - A boolean to indicate whether or not the complete date/time value is within the range of the minDate and maxDate props and is not an excluded date.
 
 ### onChange
 * The `onChange` callback prop is triggered only when a valid date and time that conforms to the format is entered directly in the date and time inputs or selected from the date picker.
