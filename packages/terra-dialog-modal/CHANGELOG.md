@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Updated jest snapshot and wdio screenshots to fix test failures
 
 2.10.0 - (April 24, 2019)
 ------------------
