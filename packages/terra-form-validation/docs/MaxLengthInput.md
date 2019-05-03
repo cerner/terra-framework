@@ -30,7 +30,7 @@ export default class Example extends React.Component {
 }
 ```
 
-As it currently stands this render would render nothing so we need to start filling out the `<Form>` component with some props to render what we need, what we want to happen on submit, initial values for our field(if we want), and our validate function.
+Current we render nothing. Lets create a `<Form>` component that contains initial values, and functionality for submission and validation.
 
 We are going to add the `render` prop to `<Form>` first, but before we do that we need to define what we want the `<Form>` to render so we're going to define a `renderForm` function. All this function will do is return a `<form>` tag containing a `<Field>` component, terra's `<InputField>` component, and a `<Button>` to be used to submit the form.
 ```javascript
