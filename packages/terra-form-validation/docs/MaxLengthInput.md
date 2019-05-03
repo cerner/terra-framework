@@ -72,7 +72,7 @@ renderForm() {
 }
 ```
 
-With this, our component now renders a simple field marked as required with a label of Example, and a button that if we click on currently does nothing. So our next step is to make our submit button actually does something. For our example, we're just going to set up a state variable that gets assigned the submitted values.
+Let's attach functionality to the submit button. Create a `submitForm` function to save submittedValues into state.
 
 ```javascript
 submitForm(values) {
