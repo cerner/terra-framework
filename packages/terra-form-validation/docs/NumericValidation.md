@@ -90,17 +90,17 @@ export default class Example extends React.Component {
 }
 ```
 
-With this, we have a pretty simple number type input with a basic validation tied to the `<Form>` component that checks to see whether or not we have a value for the input.
+We have a simple number type input with validation, tied to the `<Form>` component, that checks whether we have a value for the input.
 
 We also have our `<Field>`'s validation function defined and ready to be added to, with it only having a basic check to see if there is a value.
 
-Because we have added to the `inputAttrs` prop  of `<InputField>` the value of `type: 'number'` this also means we have a bit of browser enforcement on the inputted value. Mainly that it has to be a number of some sort so it only accepts certain characters.
+We have added browser enforcement on the inputted value by passing `type: 'number'` into `<Inputfield>`'s `inputAttrs`.
 
-A thing of note is that even though we specified the input as a number type, it will still take some 'wrong' values and place them in the field but give them as `undefined`. Specifically the input will accept values such as `--1` or `2.0.32` but then when the validation functions run the value given to them will be `undefined`. With our code is currently setup that means we will just return a value of `Required` via the `<Form>`'s validation function.
+Note that specifying `type: 'number'` still allows negatives and decimal points, such as `--1` or `2.0.32`. These will be placed in the field as `undefined`. With our code, we will just return a value of `Required`, via the `<Form>`'s validation function, if values are undefined.
 
-The 2nd thing of note is that our validation function, `validateNumber`, will be given it's argument in the form of a string despite it being a number type input. This doesn't impact simple operators too much like `<` and `>` but it is information you should know for when your building custom validation functions.
+Second thing - our validation function, `validateNumber`, will be given a *string*, despite the input being of `type: 'number'`. This does not impact simple operators but is useful to know when building custom validation functions.
 
-With this in mind, we'll first start by giving a minimum and maximum to our value. For simplicity's sake lets go with a minimum of 10 and a maximum of 100.
+Let's start by giving a minimum and maximum to our value. For simplicity, set a minimum to 10 and a maximum to 100.
 
 ```javascript
 const validateNumber = (value) => {
@@ -116,9 +116,9 @@ const validateNumber = (value) => {
 };
 ```
 
-Now for the more complicated validation which is the level of precision we want in our input. For the example let us say that we want 3 decimals worth of precision and we don't want to accept more than that. There are multiple ways of validating this but since our value is a string, we'll use string functions to validate.
+Now, let's check for precision. For this example, lets validate to the thousandth place (three decimal places). Since our value is a string, we'll use string functions to validate.
 
-We will split the given string on its `.` character, and then check to make sure the 2nd string we get from doing this has a length of 3 or less.
+Use `.` as a delimiter and check for a length less than or equal to 3.
 
 ```javascript
 const validateNumber = (value) => {
@@ -134,7 +134,7 @@ const validateNumber = (value) => {
 
 This way of validating for precision has a few quirks with it, mainly that if we give it a value of `23.023000` it would fail the validation, because of the extra `0`s at the end despite this number effectively being the same as `23.023`.
 
-For the sake of the example lets try a different way of validating. Let us, instead of using string function to validate, convert the value given to us to a `Number` instead. With it being a number we can use the `Number` class function `toFixed` which allows us to automatically take a value to a given precision.
+Lets try a different way of validating. Convert the value a `Number` instead. This way we can use the `toFixed` function to automatically set precision, and use this as a comparison.
 
 ```javascript
 const validateNumber = (value) => {
