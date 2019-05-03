@@ -40,7 +40,7 @@ const extensionConfigPropType = PropTypes.shape({
     /**
      * Image to be rendered
      */
-    image: PropTypes.element.isRequired,
+    icon: PropTypes.element.isRequired,
     /**
      * Object to be returned in the onSelect
      */
@@ -53,6 +53,7 @@ const extensionConfigPropType = PropTypes.shape({
      * Text display and/or aria-label
      */
     text: PropTypes.string.isRequired,
+    notificationCount: PropTypes.number,
   })),
 });
 

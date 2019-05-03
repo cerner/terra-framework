@@ -177,11 +177,9 @@ class ApplicationNavigationDemo extends React.Component {
     }
 
     const extensionConfig = {
-      largeCount: 4,
-      mediumCount: 3,
       extensions: [
         {
-          image: <IconSearch />,
+          icon: <IconSearch />,
           metaData: { key: 'Search' },
           onSelect: () => {
             this.setState(prevState => ({
@@ -191,32 +189,32 @@ class ApplicationNavigationDemo extends React.Component {
           text: 'Search',
         },
         {
-          image: <IconPill />,
+          icon: <IconPill />,
           metaData: { key: 'Pill' },
           onSelect: this.handleExtensionSelect,
           text: 'Pill',
           notificationCount: 10,
         },
         {
-          image: <IconVisualization />,
+          icon: <IconVisualization />,
           text: 'Visualization',
           type: 'popup',
           content: <div>Im a Popup</div>,
         },
         {
-          image: <IconLightbulb />,
+          icon: <IconLightbulb />,
           metaData: { key: 'Lightbulb' },
           onSelect: this.handleExtensionSelect,
           text: 'Lightbulb',
         },
         {
-          image: <IconCalculator />,
+          icon: <IconCalculator />,
           metaData: { key: 'Calculator' },
           onSelect: this.handleExtensionSelect,
           text: 'Calculator',
         },
         {
-          image: <IconTrophy />,
+          icon: <IconTrophy />,
           metaData: { key: 'Trophy' },
           onSelect: this.handleExtensionSelect,
           text: 'Trophy',

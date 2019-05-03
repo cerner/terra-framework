@@ -11,7 +11,7 @@ const propTypes = {
   /**
    * The image to display for the associated extension action.
    */
-  image: PropTypes.element,
+  icon: PropTypes.element,
   /**
    * Meta data to be returned in the onSelect callback.
    */
@@ -45,7 +45,7 @@ const defaultProps = {
 
 const Extension = ({
   notificationCount,
-  image,
+  icon,
   text,
   metaData,
   onRequestClose,
@@ -74,7 +74,7 @@ const Extension = ({
     >
       <div className={cx('extension-inner')}>
         <div className={cx('extension-image')}>
-          {image}
+          {icon}
         </div>
         {notificationCount > 0 && <Count value={notificationCount} className={cx('extension-count')} />}
       </div>
