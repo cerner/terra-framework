@@ -10,7 +10,7 @@
 
     //The query checks whether the browser is IE or not.
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      max-width: 50%;
+      max-width: 49%;
     }
     @media screen and (max-width: 768px) {
       width: calc(100% - 2 * var(--terra-notification-dialog-small-horizontal-inset, 10px));
