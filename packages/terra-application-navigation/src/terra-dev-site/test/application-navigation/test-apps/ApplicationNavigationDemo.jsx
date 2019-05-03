@@ -18,24 +18,26 @@ import ApplicationNavigation from '../../../../ApplicationNavigation';
 import ContentComponent from './ContentComponent';
 import DisclosureComponent from './DisclosureComponent';
 
-const navigationItems = [{
-  key: '/page_1',
-  text: 'Page 1',
-}, {
-  key: '/page_2',
-  text: 'Page 2',
-}, {
-  key: '/page_3',
-  text: 'Page 3',
-  notificationCount: 2,
+const navigationConfig = {
   hasNotifications: true,
-}, {
-  key: '/page_4',
-  text: 'Page 4',
-}, {
-  key: '/page_5',
-  text: 'Page 5',
-}];
+  navigationItems: [{
+    key: '/page_1',
+    text: 'Page 1',
+  }, {
+    key: '/page_2',
+    text: 'Page 2',
+  }, {
+    key: '/page_3',
+    text: 'Page 3',
+    notificationCount: 2,
+  }, {
+    key: '/page_4',
+    text: 'Page 4',
+  }, {
+    key: '/page_5',
+    text: 'Page 5',
+  }],
+};
 
 const userConfig = {
   name: 'User, Test',
@@ -55,6 +57,7 @@ const utilityItems = [{
 
 class ApplicationNavigationDemo extends React.Component {
   static getActiveNavigationItem(location) {
+    const { navigationItems } = navigationConfig;
     for (let i = 0, numberOfNavigationItems = navigationItems.length; i < numberOfNavigationItems; i += 1) {
       if (matchPath(location.pathname, navigationItems[i].key)) {
         return navigationItems[i];
@@ -227,7 +230,7 @@ class ApplicationNavigationDemo extends React.Component {
         title="Test Application"
         extensionConfig={extensionConfig}
         userConfig={!hideUser ? userConfig : undefined}
-        navigationItems={!hideNavigationItems ? navigationItems : undefined}
+        navigationConfig={!hideNavigationItems ? navigationConfig : undefined}
         activeNavigationItemKey={activeNavigationItem.key}
         onSelectNavigationItem={!hideNavigationItems ? this.handleNavigationItemSelection : null}
         onSelectSettings={!hideSettings ? this.handleSettingsSelection : undefined}

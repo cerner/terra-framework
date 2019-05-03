@@ -70,64 +70,64 @@ const titleConfigs = [
   elementTitleConfig,
 ];
 
-const navigationItems = [{
-  key: '/page_1',
-  text: 'Page 1',
-}, {
-  key: '/page_2',
-  text: 'Page 2',
-}, {
-  key: '/page_3',
-  text: 'Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3',
-}, {
-  key: '/page_4',
-  text: 'Im Custom',
-  icon: <IconVisualization />,
-  renderFunction: myRenderFunction,
-}, {
-  key: '/page_5',
-  text: 'Page 5',
-  // notificationCount: 5,
-  // hasNotifications: true,
-}, {
-  key: '/page_6',
-  text: 'Page 6',
-}, {
-  key: '/page_7',
-  text: 'Page 7Page 7Page 7',
-}];
+const navigationConfig = {
+  navigationItems: [{
+    key: '/page_1',
+    text: 'Page 1',
+  }, {
+    key: '/page_2',
+    text: 'Page 2',
+  }, {
+    key: '/page_3',
+    text: 'Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3',
+  }, {
+    key: '/page_4',
+    text: 'Im Custom',
+    icon: <IconVisualization />,
+    renderFunction: myRenderFunction,
+  }, {
+    key: '/page_5',
+    text: 'Page 5',
+    // notificationCount: 5,
+  }, {
+    key: '/page_6',
+    text: 'Page 6',
+  }, {
+    key: '/page_7',
+    text: 'Page 7Page 7Page 7',
+  }],
+};
 
-const navigationItems2 = [{
-  key: '/page_1',
-  text: 'Page 1',
-  notificationCount: 1000,
+const navigationConfig2 = {
   hasNotifications: true,
-}, {
-  key: '/page_2',
-  text: 'Page 2',
-  notificationCount: 1,
-  hasNotifications: true,
-}, {
-  key: '/page_3',
-  text: 'Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3',
-  notificationCount: 65,
-  hasNotifications: true,
-}, {
-  key: '/page_4',
-  text: 'Page 4',
-  renderFunction: myRenderFunction,
-}, {
-  key: '/page_5',
-  text: 'Page 5',
-  notificationCount: 6,
-  hasNotifications: true,
-}, {
-  key: '/page_6',
-  text: 'Page 6',
-}, {
-  key: '/page_7',
-  text: 'Page 7Page 7Page 7',
-}];
+  navigationItems: [{
+    key: '/page_1',
+    text: 'Page 1',
+    notificationCount: 1000,
+  }, {
+    key: '/page_2',
+    text: 'Page 2',
+    notificationCount: 1,
+  }, {
+    key: '/page_3',
+    text: 'Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3',
+    notificationCount: 65,
+  }, {
+    key: '/page_4',
+    text: 'Page 4',
+    renderFunction: myRenderFunction,
+  }, {
+    key: '/page_5',
+    text: 'Page 5',
+    notificationCount: 6,
+  }, {
+    key: '/page_6',
+    text: 'Page 6',
+  }, {
+    key: '/page_7',
+    text: 'Page 7Page 7Page 7',
+  }],
+};
 
 const userConfig = {
   name: 'Test UserTest UserTest UserTest UserTest UserTest User',
@@ -151,6 +151,7 @@ const utilityItems = [{
 
 class ApplicationNavigationTest extends React.Component {
   static getActiveNavigationItem(location) {
+    const { navigationItems } = navigationConfig;
     for (let i = 0, numberOfNavigationItems = navigationItems.length; i < numberOfNavigationItems; i += 1) {
       if (matchPath(location.pathname, navigationItems[i].key)) {
         return navigationItems[i];
@@ -325,9 +326,9 @@ class ApplicationNavigationTest extends React.Component {
       ],
     };
 
-    let itemToUse = navigationItems;
+    let itemToUse = navigationConfig;
     if (this.state.useItems2) {
-      itemToUse = navigationItems2;
+      itemToUse = navigationConfig2;
     }
 
     return (
@@ -337,7 +338,7 @@ class ApplicationNavigationTest extends React.Component {
         userConfig={!hideUser ? userConfig : undefined}
         drawerMenuHero={!hideHero ? drawerMenuHero : undefined}
         utilityMenuHero={!hideHero ? utilityMenuHero : undefined}
-        navigationItems={!hideNavigationItems ? itemToUse : undefined}
+        navigationConfig={!hideNavigationItems ? itemToUse : undefined}
         activeNavigationItemKey={activeNavigationItem.key}
         onSelectNavigationItem={!hideNavigationItems ? this.handleNavigationItemSelection : null}
         onSelectSettings={!hideSettings ? this.handleSettingsSelection : undefined}

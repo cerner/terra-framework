@@ -15,14 +15,16 @@ const userConfigPropType = PropTypes.shape({
   imageSrc: PropTypes.string,
 });
 
-const navigationItemsPropType = PropTypes.arrayOf(PropTypes.shape({
-  key: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  // notificationCount: PropTypes.number,
-  // hasNotifications: PropTypes.bool,
-  // renderFunction: PropTypes.func,
-  // icon: PropTypes.element,
-}));
+const navigationConfigPropType = PropTypes.shape({
+  hasNotifications: PropTypes.bool,
+  navigationItems: PropTypes.arrayOf(PropTypes.shape({
+    key: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    notificationCount: PropTypes.number,
+    renderFunction: PropTypes.func,
+    icon: PropTypes.element,
+  })),
+});
 
 const utilityItemsPropType = PropTypes.arrayOf(PropTypes.shape({
   key: PropTypes.string.isRequired,
@@ -57,9 +59,9 @@ const extensionConfigPropType = PropTypes.shape({
 });
 
 export default {
-  titleConfigPropType, userConfigPropType, navigationItemsPropType, utilityItemsPropType, extensionConfigPropType,
+  titleConfigPropType, userConfigPropType, navigationConfigPropType, utilityItemsPropType, extensionConfigPropType,
 };
 
 export {
-  titleConfigPropType, userConfigPropType, navigationItemsPropType, utilityItemsPropType, extensionConfigPropType,
+  titleConfigPropType, userConfigPropType, navigationConfigPropType, utilityItemsPropType, extensionConfigPropType,
 };

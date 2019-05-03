@@ -6,6 +6,9 @@ import LodashDebounce from 'lodash.debounce';
 import Tab from './_Tab';
 import TabMenu from './_TabMenu';
 import styles from './Tabs.module.scss';
+import {
+  navigationConfigPropType,
+} from '../utils/propTypes';
 
 const cx = classNames.bind(styles);
 
@@ -13,28 +16,7 @@ const propTypes = {
   /**
    * Array of objects representing the tabs.
    */
-  tabs: PropTypes.arrayOf(PropTypes.shape({
-    /**
-     * The identifier for the tab.
-     */
-    key: PropTypes.string.isRequired,
-    /**
-     * The display text for the tab.
-     */
-    text: PropTypes.string.isRequired,
-    /**
-     * The value of the notification count.
-     */
-    noficationCount: PropTypes.number,
-    /**
-     * Whether or not the tab has the potentional for a count.
-     */
-    hasNotifications: PropTypes.bool,
-    /**
-     * Render function to allow for custom tabs.
-     */
-    renderFunction: PropTypes.func,
-  })),
+  navigationConfig: navigationConfigPropType,
   /**
    * A string identifying the currently active tab.
    */
@@ -43,10 +25,6 @@ const propTypes = {
    * A function to be executed upon selection of a tab.
    */
   onTabSelect: PropTypes.func,
-};
-
-const defaultProps = {
-  tabs: [],
 };
 
 class Tabs extends React.Component {
@@ -73,7 +51,7 @@ class Tabs extends React.Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    if (this.props.tabs.length !== nextProps.tabs.length || this.props.activeTabKey !== nextProps.activeTabKey) {
+    if (this.props.navigationConfig.navigationItems.length !== nextProps.navigationConfig.navigationItems.length || this.props.activeTabKey !== nextProps.activeTabKey) {
       this.resetCalculations();
     }
     return true;
@@ -127,8 +105,8 @@ class Tabs extends React.Component {
 
   handleResize(width) {
     // Calculate hide index
-    const { tabs } = this.props;
-    const childrenCount = tabs.length;
+    const { navigationItems } = this.props.navigationConfig;
+    const childrenCount = navigationItems.length;
     const moreWidth = width - this.getMoreWidth();
     let newHideIndex = childrenCount;
     let isMenuHidden = true;
@@ -178,12 +156,13 @@ class Tabs extends React.Component {
 
   render() {
     const {
-      tabs,
+      navigationConfig,
       activeTabKey,
       onTabSelect,
     } = this.props;
+    const { hasNotifications, navigationItems } = navigationConfig;
 
-    if (!tabs.length) {
+    if (!navigationItems.length) {
       return (
         <div className={cx(['tabs-wrapper'])} ref={this.setContainerNode}>
           <Tab isPlaceholder text="W" tabKey="" aria-hidden="true" />
@@ -192,10 +171,9 @@ class Tabs extends React.Component {
     }
 
     let showNotificationRollup = false;
-    const hasNotifications = tabs.some(tab => tab.hasNotifications);
     const visibleChildren = [];
     const hiddenTabs = [];
-    tabs.forEach((tab, index) => {
+    navigationItems.forEach((tab, index) => {
       const tabProps = {
         text: tab.text,
         key: tab.key,
@@ -238,7 +216,7 @@ class Tabs extends React.Component {
             hasCount={hasNotifications}
             hiddenTabs={hiddenTabs}
             onTabSelect={onTabSelect}
-            isPulsed={showNotificationRollup && !this.isCalculating && this.shouldPulse(tabs)}
+            isPulsed={showNotificationRollup && !this.isCalculating && this.shouldPulse(navigationItems)}
             isHidden={this.menuHidden}
             activeTabKey={activeTabKey}
             menuRefCallback={this.setMenuRef}
@@ -252,6 +230,5 @@ class Tabs extends React.Component {
 }
 
 Tabs.propTypes = propTypes;
-Tabs.defaultProps = defaultProps;
 
 export default Tabs;

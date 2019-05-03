@@ -11,7 +11,7 @@ import CompactHeader from './header/_CompactHeader';
 import DrawerMenu from './drawer-menu/_DrawerMenu';
 import { shouldRenderCompactNavigation } from './utils/helpers';
 import {
-  titleConfigPropType, userConfigPropType, navigationItemsPropType, extensionConfigPropType, utilityItemsPropType,
+  titleConfigPropType, userConfigPropType, navigationConfigPropType, extensionConfigPropType, utilityItemsPropType,
 } from './utils/propTypes';
 
 import styles from './ApplicationNavigation.module.scss';
@@ -48,7 +48,7 @@ const propTypes = {
    * An array of configuration objects with information specifying the creation of navigation items. These items
    * are rendered within the ApplicationNavigation header at larger breakpoints and within the drawer menu at smaller breakpoints.
    */
-  navigationItems: navigationItemsPropType,
+  navigationConfig: navigationConfigPropType,
   /**
    * A string key representing the currently active navigation item. This value should match one of the item keys provided in the
    * `navigationItems` array.
@@ -99,7 +99,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  navigationItems: [],
   utilityItems: [],
 };
 
@@ -219,7 +218,7 @@ class ApplicationNavigation extends React.Component {
       titleConfig,
       userConfig,
       drawerMenuHero,
-      navigationItems,
+      navigationConfig,
       activeNavigationItemKey,
       onSelectSettings,
       onSelectHelp,
@@ -248,7 +247,7 @@ class ApplicationNavigation extends React.Component {
           titleConfig={titleConfig}
           userConfig={userConfig}
           hero={drawerMenuHero}
-          navigationItems={navigationItems}
+          navigationItems={navigationConfig.navigationItems}
           activeNavigationItemKey={activeNavigationItemKey}
           onSelectNavigationItem={this.handleNavigationItemSelection}
           onSelectSettings={onSelectSettings ? this.handleSettingsSelection : undefined}
@@ -264,7 +263,7 @@ class ApplicationNavigation extends React.Component {
   renderHeader() {
     const {
       titleConfig,
-      navigationItems,
+      navigationConfig,
       extensionConfig,
       activeBreakpoint,
       activeNavigationItemKey,
@@ -281,7 +280,7 @@ class ApplicationNavigation extends React.Component {
         <CompactHeader
           titleConfig={titleConfig}
           extensions={createExtensions(extensionConfig, activeBreakpoint)}
-          navigationItems={navigationItems}
+          navigationConfig={navigationConfig}
           onSelectToggle={this.handleMenuToggle}
           onSelectSkipToContent={this.handleSkipToContent}
         />
@@ -292,7 +291,7 @@ class ApplicationNavigation extends React.Component {
       <Header
         titleConfig={titleConfig}
         extensions={createExtensions(extensionConfig, activeBreakpoint)}
-        navigationItems={navigationItems}
+        navigationConfig={navigationConfig}
         activeNavigationItemKey={activeNavigationItemKey}
         onSelectNavigationItem={this.handleNavigationItemSelection}
         onMenuToggle={this.handleMenuToggle}

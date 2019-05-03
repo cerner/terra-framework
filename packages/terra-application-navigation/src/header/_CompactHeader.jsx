@@ -5,7 +5,7 @@ import { injectIntl, intlShape } from 'react-intl';
 import IconMenu from 'terra-icon/lib/icon/IconMenu';
 import ToggleCount from './_ToggleCount';
 import {
-  navigationItemsPropType,
+  navigationConfigPropType,
 } from '../utils/propTypes';
 
 import styles from './CompactHeader.module.scss';
@@ -26,7 +26,7 @@ const propTypes = {
   /**
    * Array of navigation items to render within the Header.
    */
-  navigationItems: navigationItemsPropType,
+  navigationConfig: navigationConfigPropType,
 };
 
 class CompactHeader extends React.Component {
@@ -67,11 +67,11 @@ class CompactHeader extends React.Component {
 
   renderToggle() {
     const {
-      intl, navigationItems, onSelectToggle,
+      intl, navigationConfig, onSelectToggle,
     } = this.props;
 
-    const headerHasAnyCounts = navigationItems.some(({ notificationCount }) => notificationCount > 0);
-    const isPulsed = this.shouldPulse(navigationItems);
+    const headerHasAnyCounts = navigationConfig.navigationItems.some(({ notificationCount }) => notificationCount > 0);
+    const isPulsed = this.shouldPulse(navigationConfig.navigationItems);
 
     return (
       <button

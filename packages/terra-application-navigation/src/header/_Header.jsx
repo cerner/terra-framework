@@ -8,7 +8,7 @@ import Tabs from '../tabs/_Tabs';
 import UtilityMenuHeaderButton from '../utility-menu/_UtilityMenuHeaderButton';
 import UtilityMenu from '../utility-menu/_UtilityMenu';
 import {
-  userConfigPropType, navigationItemsPropType, utilityItemsPropType,
+  userConfigPropType, navigationConfigPropType, utilityItemsPropType,
 } from '../utils/propTypes';
 
 import styles from './Header.module.scss';
@@ -25,7 +25,7 @@ const propTypes = {
   /**
    * Array of navigation items to render within the Header.
    */
-  navigationItems: navigationItemsPropType,
+  navigationConfig: navigationConfigPropType,
   /**
    * The string identifying the currently active navigation item.
    */
@@ -47,10 +47,6 @@ const propTypes = {
   onSelectLogout: PropTypes.func,
   onSelectSkipToContent: PropTypes.func,
   intl: intlShape,
-};
-
-const defaultProps = {
-  navigationItems: [],
 };
 
 class Header extends React.Component {
@@ -121,12 +117,12 @@ class Header extends React.Component {
 
   renderNavigationTabs() {
     const {
-      navigationItems, activeNavigationItemKey, onSelectNavigationItem,
+      navigationConfig, activeNavigationItemKey, onSelectNavigationItem,
     } = this.props;
 
     return (
       <Tabs
-        tabs={navigationItems}
+        navigationConfig={navigationConfig}
         activeTabKey={activeNavigationItemKey}
         onTabSelect={onSelectNavigationItem}
       />
@@ -215,6 +211,5 @@ class Header extends React.Component {
 }
 
 Header.propTypes = propTypes;
-Header.defaultProps = defaultProps;
 
 export default injectIntl(Header);
