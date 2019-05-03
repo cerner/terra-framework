@@ -4,7 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Fixed
-* Updated notification-dialogue width in IE.
+* Updated notification-dialog max-width for IE.
 
 ### Fixed
 * Updated jest snapshot to fix test failures
