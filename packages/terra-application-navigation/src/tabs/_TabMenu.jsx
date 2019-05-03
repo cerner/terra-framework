@@ -114,7 +114,6 @@ class TabMenu extends React.Component {
           if (this.props.onTabSelect) {
             this.props.onTabSelect(itemKey);
           }
-
           this.handleOnRequestClose();
         }}
         showSelections

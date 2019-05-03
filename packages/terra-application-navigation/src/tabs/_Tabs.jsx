@@ -154,6 +154,27 @@ class Tabs extends React.Component {
     return shouldPulse;
   }
 
+  renderVisibleChildren(visibleTabs, hasNotifications, onTabSelect, activeTabKey) {
+    const visibleChildren = [];
+    visibleTabs.forEach((tab, index) => {
+      const tabProps = {
+        text: tab.text,
+        key: tab.key,
+        tabKey: tab.key,
+        onTabClick: () => { if (onTabSelect) { onTabSelect(tab.key); } },
+        isActive: tab.key === activeTabKey,
+        notificationCount: hasNotifications ? tab.notificationCount : 0,
+        hasCount: hasNotifications,
+        icon: tab.icon,
+      };
+      if (this.isCalculating) {
+        tabProps.refCallback = ref => this.setChildRef(ref, index);
+      }
+      visibleChildren.push(<Tab {...tabProps} render={tab.renderFunction} />);
+    });
+    return visibleChildren;
+  }
+
   render() {
     const {
       navigationConfig,
@@ -170,40 +191,17 @@ class Tabs extends React.Component {
       );
     }
 
-    let showNotificationRollup = false;
-    const visibleChildren = [];
-    const hiddenTabs = [];
-    navigationItems.forEach((tab, index) => {
-      const tabProps = {
-        text: tab.text,
-        key: tab.key,
-        tabKey: tab.key,
-        onTabClick: () => {
-          if (onTabSelect) {
-            onTabSelect(tab.key);
-          }
-        },
-        isActive: tab.key === activeTabKey,
-        notificationCount: tab.notificationCount,
-        hasCount: hasNotifications,
-        icon: tab.icon,
-      };
+    let visibleTabs = [];
+    let hiddenTabs = [];
+    if (this.hiddenStartIndex >= 0) {
+      visibleTabs = navigationItems.slice(0, this.hiddenStartIndex);
+      hiddenTabs = navigationItems.slice(this.hiddenStartIndex);
+    } else {
+      visibleTabs = navigationItems;
+    }
 
-      if (this.hiddenStartIndex < 0) {
-        if (tab.notificationCount > 0) {
-          showNotificationRollup = true;
-        }
-        visibleChildren.push(<Tab {...tabProps} render={tab.renderFunction} refCallback={ref => this.setChildRef(ref, index)} />);
-      } else if (index < this.hiddenStartIndex) {
-        visibleChildren.push(<Tab {...tabProps} render={tab.renderFunction} />);
-      } else {
-        if (tab.notificationCount > 0) {
-          showNotificationRollup = true;
-        }
-        hiddenTabs.push(tabProps);
-      }
-    });
-
+    const visibleChildren = this.renderVisibleChildren(visibleTabs, hasNotifications, onTabSelect, activeTabKey);
+    const showNotificationRollup = hasNotifications && hiddenTabs.some(tab => tab.notificationCount > 0);
     return (
       <div className={cx(['tabs-wrapper'])} ref={this.setContainerNode}>
         <div
