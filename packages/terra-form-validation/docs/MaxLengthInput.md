@@ -187,7 +187,7 @@ render() {
 
 Our `validate` function returns an object that has properties, with the property being our ID, and its value being a string we want displayed for when it fails to validate.
 
-The `<Field>` component's `validate` prop works in a similar way to `<Form>`'s. The main difference being that it only validate's it's value instead of all the values, so we'll begin by defining a simple function that takes a single argument that is the value of our `<Field>` and will return a string if that value is longer than 7 characters long. We will return `undefined` otherwise.
+The `<Field>` component's `validate` prop is similar to `<Form>`'s, with a main caveat; it only validate's it's value instead of all the values. Let's create a function that checks if the length is greater than 7. This function takes a single argument (value of our `<Field>`) and returns a string if this criteria is met.
 
 ```javascript
 const validateLength = (name) => {
@@ -199,7 +199,7 @@ const validateLength = (name) => {
 };
 ```
 
-And now all we have to do is go into our renderForm function and add the `validate` prop to `<Field>`.
+Finally, let's add pass the function as the `validate` prop to `<Field>` within our `renderForm` function..
 
 ```javascript
 renderForm({ handleSubmit }) {
@@ -219,7 +219,7 @@ renderForm({ handleSubmit }) {
 }
 ```
 
-And with that we have created an input that is required and has max length of 7 characters. This showed how to make the validate function by yourself, but if we wanted to we could shorten the code a bit more under the validateLength function through the use of `terra-form-validation`'s FormValidationUtil class like so.
+We have created an input that is required and has max length of 7 characters by creating our own validate function. For ease of use, Terra provides utils for common validation use cases. In this case, we can use the `validateLength` function.
 
 ```javascript
 import FormValidationUtil from 'terra-form-validation';
