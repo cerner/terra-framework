@@ -23,6 +23,7 @@ describe('InfiniteList', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-infinite-list/infinite-list/infinite-list-selection');
       browser.waitForVisible('#test-infinite-list');
+      browser.moveToObject('#root', 0, 900);
     });
 
     Terra.should.matchScreenshot({ selector: '#test-infinite-list', viewports });
