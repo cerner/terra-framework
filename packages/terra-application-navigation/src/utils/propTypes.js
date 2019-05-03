@@ -54,8 +54,6 @@ const extensionConfigPropType = PropTypes.shape({
      */
     text: PropTypes.string.isRequired,
   })),
-  largeCount: PropTypes.oneOf([1, 2, 3, 4, 4, 5, 6]),
-  mediumCount: PropTypes.oneOf([3, 4, 4, 5]),
 });
 
 export default {
