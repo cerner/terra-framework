@@ -37,6 +37,7 @@ class Tabs extends React.Component {
     this.getMoreWidth = this.getMoreWidth.bind(this);
     this.getChildWidth = this.getChildWidth.bind(this);
     this.updateSize = LodashDebounce(this.updateSize.bind(this), 100);
+    this.buildVisibleChildren = this.buildVisibleChildren.bind(this);
     this.resetCalculations();
     this.childRefs = [];
     this.previousNotifications = null;
@@ -154,9 +155,8 @@ class Tabs extends React.Component {
     return shouldPulse;
   }
 
-  renderVisibleChildren(visibleTabs, hasNotifications, onTabSelect, activeTabKey) {
-    const visibleChildren = [];
-    visibleTabs.forEach((tab, index) => {
+  buildVisibleChildren(visibleTabs, hasNotifications, onTabSelect, activeTabKey) {
+    return visibleTabs.map((tab, index) => {
       const tabProps = {
         text: tab.text,
         key: tab.key,
@@ -170,9 +170,21 @@ class Tabs extends React.Component {
       if (this.isCalculating) {
         tabProps.refCallback = ref => this.setChildRef(ref, index);
       }
-      visibleChildren.push(<Tab {...tabProps} render={tab.renderFunction} />);
+      return <Tab {...tabProps} render={tab.renderFunction} />;
     });
-    return visibleChildren;
+  }
+
+  sliceTabs(navigationItems) {
+    if (this.hiddenStartIndex >= 0) {
+      return {
+        visibleTabs: navigationItems.slice(0, this.hiddenStartIndex),
+        hiddenTabs: navigationItems.slice(this.hiddenStartIndex),
+      };
+    }
+    return {
+      visibleTabs: navigationItems,
+      hiddenTabs: [],
+    };
   }
 
   render() {
@@ -181,27 +193,12 @@ class Tabs extends React.Component {
       activeTabKey,
       onTabSelect,
     } = this.props;
+
     const { hasNotifications, navigationItems } = navigationConfig;
-
-    if (!navigationItems.length) {
-      return (
-        <div className={cx(['tabs-wrapper'])} ref={this.setContainerNode}>
-          <Tab isPlaceholder text="W" tabKey="" aria-hidden="true" />
-        </div>
-      );
-    }
-
-    let visibleTabs = [];
-    let hiddenTabs = [];
-    if (this.hiddenStartIndex >= 0) {
-      visibleTabs = navigationItems.slice(0, this.hiddenStartIndex);
-      hiddenTabs = navigationItems.slice(this.hiddenStartIndex);
-    } else {
-      visibleTabs = navigationItems;
-    }
-
-    const visibleChildren = this.renderVisibleChildren(visibleTabs, hasNotifications, onTabSelect, activeTabKey);
+    const { visibleTabs, hiddenTabs } = this.sliceTabs(navigationItems);
+    const visibleChildren = this.buildVisibleChildren(visibleTabs, hasNotifications, onTabSelect, activeTabKey);
     const showNotificationRollup = hasNotifications && hiddenTabs.some(tab => tab.notificationCount > 0);
+
     return (
       <div className={cx(['tabs-wrapper'])} ref={this.setContainerNode}>
         <div

@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import Popup from 'terra-popup';
 import { injectIntl, intlShape } from 'react-intl';
 
+import Tab from '../tabs/_Tab';
 import Tabs from '../tabs/_Tabs';
 import UtilityMenuHeaderButton from '../utility-menu/_UtilityMenuHeaderButton';
 import UtilityMenu from '../utility-menu/_UtilityMenu';
@@ -119,6 +120,10 @@ class Header extends React.Component {
     const {
       navigationConfig, activeNavigationItemKey, onSelectNavigationItem,
     } = this.props;
+
+    if (!navigationConfig || !navigationConfig.navigationItems || !navigationConfig.navigationItems.length) {
+      return <Tab isPlaceholder text="W" tabKey="" aria-hidden="true" />;
+    }
 
     return (
       <Tabs
