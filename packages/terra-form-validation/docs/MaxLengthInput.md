@@ -159,7 +159,7 @@ We don't need a specific initial value but our initial value is an empty string 
 
 Finally we need to validate our input field. This has two parts to it, a `validate` prop on our `<Form>` component and a `validate` prop on our `<Field>` component in our `renderForm` function.
 
-The `<Form>` component's `validate` prop is supposed to be 'A whole-record validation function that takes all the values of the form and returns any validation errors.' Since its a general validation we'll do a little more of a general validation here, in the form of just checking to see if the `example` field's value is defined. We do this by defining a function that takes a single argument, and then checks the various properties of that object based on ID.
+The `<Form>` component's `validate` prop takes a validation function that reads all form values and returns validation errors. Let's create a function that checks the existence of `example` field's values. On error, set the ID to `required`. This will be displayed if validation fails.
 
 ```javascript
 render() {
