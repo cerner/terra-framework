@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added 
+* Added new width 560px
+
 ### Fixed
 * Updated jest snapshot and wdio screenshots to fix test failures
 
