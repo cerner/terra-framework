@@ -247,7 +247,7 @@ class ApplicationNavigation extends React.Component {
           titleConfig={titleConfig}
           userConfig={userConfig}
           hero={drawerMenuHero}
-          navigationItems={navigationConfig.navigationItems}
+          navigationConfig={navigationConfig}
           activeNavigationItemKey={activeNavigationItemKey}
           onSelectNavigationItem={this.handleNavigationItemSelection}
           onSelectSettings={onSelectSettings ? this.handleSettingsSelection : undefined}

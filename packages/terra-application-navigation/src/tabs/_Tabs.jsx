@@ -66,6 +66,7 @@ class Tabs extends React.Component {
   }
 
   componentWillUnmount() {
+    this.updateSize.cancel();
     this.resizeObserver.disconnect(this.container);
     this.container = null;
   }

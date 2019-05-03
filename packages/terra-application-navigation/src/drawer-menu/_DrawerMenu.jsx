@@ -9,7 +9,7 @@ import DrawerMenuListItem from './_DrawerMenuListItem';
 import DrawerMenuUser from './_DrawerMenuUser';
 import DrawerMenuFooterButton from './_DrawerMenuFooterButton';
 import {
-  titleConfigPropType, userConfigPropType, navigationItemsPropType, utilityItemsPropType,
+  titleConfigPropType, userConfigPropType, navigationConfigPropType, utilityItemsPropType,
 } from '../utils/propTypes';
 
 import styles from './DrawerMenu.module.scss';
@@ -32,7 +32,7 @@ const propTypes = {
   /**
    * An array of configuration objects with information specifying the creation of navigation items.
    */
-  navigationItems: navigationItemsPropType,
+  navigationConfig: navigationConfigPropType,
   /**
    * A string key representing the currently active navigation item. This value should match one of the item keys provided in the
    * `navigationItems` array.
@@ -73,19 +73,20 @@ const propTypes = {
 };
 
 const defaultProps = {
-  navigationItems: [],
+  navigationConfig: {},
   utilityItems: [],
 };
 
 const DrawerMenu = ({
-  titleConfig, userConfig, hero, navigationItems, activeNavigationItemKey, onSelectNavigationItem, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem,
+  titleConfig, userConfig, hero, navigationConfig, activeNavigationItemKey, onSelectNavigationItem, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem,
 }) => {
   const titleComponent = titleConfig && !(titleConfig.element || titleConfig.hideTitleWithinDrawerMenu) ? <DrawerMenuTitle titleConfig={titleConfig} /> : undefined;
   const userComponent = userConfig ? <DrawerMenuUser userConfig={userConfig} variant={hero ? 'small' : 'large'} /> : undefined;
   const logoutButton = onSelectLogout ? <DrawerMenuFooterButton onClick={onSelectLogout} text="Logout" /> : undefined;
+  const navigationItems = !navigationConfig.navigationItems ? [] : navigationConfig.navigationItems;
 
   return (
-    <div className={cx('drawer-menu')} tabIndex="0">
+    <div className={cx('drawer-menu')} tabIndex="-1">
       <div className={cx('vertical-overflow-container')}>
         <div className={cx('header')}>
           <div className={cx('header-background-fill')}>
