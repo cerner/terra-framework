@@ -60,7 +60,7 @@ const defaultProps = {
  * @param {number} index - Index to use as part of the spacers key.
  */
 const createSpacer = (height, index) => (
-  <li
+  <div
     className={cx(['spacer'])}
     style={{ height }}
     key={`infinite-spacer-${index}`}
@@ -422,9 +422,11 @@ class InfiniteList extends React.Component {
   render() {
     const {
       children,
+      dividerStyle,
       initialLoadingIndicator,
       isFinishedLoading,
       onRequestItems,
+      paddingStyle,
       progressiveLoadingIndicator,
       role,
       ...customProps
@@ -434,44 +436,44 @@ class InfiniteList extends React.Component {
     const bottomSpacer = createSpacer(`${this.boundary.hiddenBottomHeight > 0 ? this.boundary.hiddenBottomHeight : 0}px`, 1);
 
     let loadingSpinner;
-    let visibleChildren;
-
+    let initialSpinner;
     if (!isFinishedLoading) {
       if (this.childCount > 0) {
         loadingSpinner = (
-          <li
+          <div
             className={cx('spacer')}
             key={`infinite-spinner-row-${this.loadingIndex}`}
           >
             {progressiveLoadingIndicator}
-          </li>
+          </div>
         );
       } else {
-        visibleChildren = (
-          <li
+        initialSpinner = (
+          <div
             className={cx('spacer')}
             key="infinite-spinner-full"
             style={{ height: '100%' }}
           >
             {initialLoadingIndicator}
-          </li>
+          </div>
         );
       }
     }
 
-    const attrSpread = {};
+    const attrSpread = { dividerStyle, paddingStyle };
     if (role && role.length > 0 && role !== 'none') {
       attrSpread.role = role;
     }
 
     let newChildren;
-    if (!visibleChildren) {
+    let visibleChildren;
+    if (!initialSpinner) {
       let upperChildIndex = this.lastChildIndex;
       if ((!this.scrollGroups.length && this.lastChildIndex <= 0) || !this.renderNewChildren) {
         upperChildIndex = this.childCount;
       } else {
         newChildren = (
-          <List {...customProps} {...attrSpread} className={cx(['infinite-hidden'])}>
+          <List {...attrSpread} className={cx(['infinite-hidden'])}>
             {InfiniteUtils.getNewChildren(this.lastChildIndex, this.childrenArray, this.wrapChild)}
           </List>
         );
@@ -482,12 +484,15 @@ class InfiniteList extends React.Component {
 
     return (
       <React.Fragment>
-        <List {...customProps} {...attrSpread} className={cx(['infinite-list', customProps.className])} refCallback={this.setContentNode}>
+        <div {...customProps} className={cx(['infinite-list', customProps.className])} ref={this.setContentNode}>
+          {initialSpinner}
           {topSpacer}
-          {visibleChildren}
+          <List {...attrSpread}>
+            {visibleChildren}
+          </List>
           {bottomSpacer}
           {loadingSpinner}
-        </List>
+        </div>
         {newChildren}
       </React.Fragment>
     );
