@@ -143,7 +143,7 @@ class Extensions extends React.Component {
             header={<ActionHeader title="Extensions" />}
             menuItems={hiddenItems.map(item => ({
               key: item.metaData.key,
-              icon: item.image,
+              icon: item.icon,
               text: item.text,
               notificationCount: item.notificationCount,
             }))}
@@ -161,7 +161,7 @@ class Extensions extends React.Component {
             <Extension
               notificationCount={item.notificationCount}
               key={item.metaData.key}
-              image={item.image}
+              icon={item.icon}
               text={item.text}
               metaData={item.metaData}
               onSelect={item.onSelect}

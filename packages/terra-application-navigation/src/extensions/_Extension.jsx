@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The image to display for the associated extension action.
+   * The icon to display for the associated extension action.
    */
   icon: PropTypes.element,
   /**
