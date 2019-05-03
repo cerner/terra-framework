@@ -82,7 +82,7 @@ submitForm(values) {
 }
 ```
 
-Now that we have our `submitForm` function, we need to incorporate it into our existing code. We need to bind our function, add it to our `<Form>` as it's `onSubmit` prop, and make sure our `renderForm` function passes the function properly to the `<form>` as it's `onSubmit` prop.
+Bind `onSubmit`, pass `onSubmit` as a prop to `<Form>`, pass `handleSubmit` to our render prop function, and pass `handleSubmit` to the native form's `onSubmit` prop.
 
 ```javascript
 constructor(props) {
