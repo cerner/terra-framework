@@ -26,6 +26,7 @@ Cerner Corporation
 - Akarsh Shetty [@ShettyAkarsh]
 - Gabe Parra [@gabeparra01]
 - Naveen Kumar Ramamurthy [@nramamurth]
+- Pranav Agarwal [@pranav300]
 
 
 [@tbiethman]: https://github.com/tbiethman
@@ -54,3 +55,4 @@ Cerner Corporation
 [@ShettyAkarsh]: https://github.com/ShettyAkarsh
 [@gabeparra01]: https://github.com/gabeparra01
 [@nramamurth]: https://github.com/nramamurth
+[@pranav300]: https://github.com/pranav300
