@@ -6,9 +6,12 @@
     border-radius: var(--terra-notification-dialog-border-radius, 5px);
     display: flex;
     flex-direction: column;
-    max-width: 49%; // For IE 11
     position: fixed;
 
+    //The query checks whether the browser is IE or not.
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      max-width: 50%;
+    }
     @media screen and (max-width: 768px) {
       width: calc(100% - 2 * var(--terra-notification-dialog-small-horizontal-inset, 10px));
     }
