@@ -11,6 +11,9 @@ Unreleased
 * Moved packages we use solely in doc examples and tests to devDependencies
 * Changed the parameter in filterDate prop from a moment object to an ISO string.
 
+### Fixed
+* Fixed crash when selectedDate prop is set to a string or empty string that is not ISO compliant and unable to convert to a valid moment object.
+
 3.13.0 - (April 16, 2019)
 ------------------
 ### Changed

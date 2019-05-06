@@ -63,7 +63,6 @@ exports[`should mount a complete notification-dialog 1`] = `
     >
       <button
         aria-disabled={false}
-        aria-label={null}
         className="button neutral"
         disabled={false}
         id="trigger-notification-dialog"
@@ -151,7 +150,6 @@ exports[`should mount a complete notification-dialog with long message 1`] = `
     >
       <button
         aria-disabled={false}
-        aria-label={null}
         className="button neutral"
         disabled={false}
         id="trigger-notification-dialog"
@@ -240,7 +238,6 @@ exports[`should mount a notification-dialog with no variant 1`] = `
     >
       <button
         aria-disabled={false}
-        aria-label={null}
         className="button neutral"
         disabled={false}
         id="trigger-notification-dialog"
