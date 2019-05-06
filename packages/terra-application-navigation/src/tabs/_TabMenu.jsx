@@ -109,11 +109,12 @@ class TabMenu extends React.Component {
           text: tab.text,
           icon: tab.icon,
           notificationCount: notifications[tab.key],
+          metaData: tab.metaData,
           isActive: tab.key === this.props.activeTabKey,
         }))}
-        onSelectMenuItem={(itemKey) => {
+        onSelectMenuItem={(itemKey, itemMetaData) => {
           if (this.props.onTabSelect) {
-            this.props.onTabSelect(itemKey);
+            this.props.onTabSelect(itemKey, itemMetaData);
           }
           this.handleOnRequestClose();
         }}

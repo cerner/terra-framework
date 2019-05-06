@@ -74,6 +74,9 @@ const navigationItems = [
   {
     key: '/page_1',
     text: 'Page 1',
+    metaData: {
+      test: 'data',
+    },
   }, {
     key: '/page_2',
     text: 'Page 2',
@@ -92,6 +95,9 @@ const navigationItems = [
   }, {
     key: '/page_7',
     text: 'Page 7Page 7Page 7',
+    metaData: {
+      test: 'data',
+    },
   },
 ];
 
@@ -217,9 +223,15 @@ class ApplicationNavigationTest extends React.Component {
     });
   }
 
-  handleNavigationItemSelection(navigationItemKey) {
+  handleNavigationItemSelection(navigationItemKey, metaData) {
     const { history } = this.props;
     const { activeNavigationItemKey } = this.state;
+
+    debugger;
+
+    if (metaData) {
+      console.log(metaData);
+    }
 
     if (activeNavigationItemKey !== navigationItemKey) {
       history.push(navigationItemKey);

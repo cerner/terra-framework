@@ -22,6 +22,7 @@ const propTypes = {
     icon: PropTypes.element,
     text: PropTypes.string,
     count: PropTypes.number,
+    metaData: PropTypes.object,
   })),
   onSelectMenuItem: PropTypes.func,
   isHeightBounded: PropTypes.bool,
@@ -49,7 +50,7 @@ const PopupMenu = ({
             <PopupMenuListItem
               key={item.key}
               onSelect={onSelectMenuItem ? () => {
-                onSelectMenuItem(item.key);
+                onSelectMenuItem(item.key, item.metaData);
               } : undefined}
               icon={item.icon}
               text={item.text}

@@ -58,7 +58,7 @@ const propTypes = {
   activeNavigationItemKey: PropTypes.string,
   /**
    * A function to be executed upon the selection of a navigation item.
-   * Ex: `onSelectNavigationItem(String selectedNavigationItemKey)`
+   * Ex: `onSelectNavigationItem(String selectedNavigationItemKey, Object metaData)`
    */
   onSelectNavigationItem: PropTypes.func, // eslint-disable-line react/no-unused-prop-types
   /**

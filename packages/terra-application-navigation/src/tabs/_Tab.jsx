@@ -74,7 +74,7 @@ class Tab extends React.Component {
     // Add focus styles for keyboard navigation
     if (event.nativeEvent.keyCode === KEY_SPACE || event.nativeEvent.keyCode === KEY_RETURN) {
       event.preventDefault();
-      this.handleOnClick(event);
+      this.handleOnClick();
     }
   }
 

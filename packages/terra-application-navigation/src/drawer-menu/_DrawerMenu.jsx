@@ -101,7 +101,7 @@ const DrawerMenu = ({
               key={item.key}
               text={item.text}
               notificationCount={notifications[item.key]}
-              onSelect={onSelectNavigationItem && onSelectNavigationItem.bind(null, item.key)}
+              onSelect={onSelectNavigationItem && onSelectNavigationItem.bind(null, item.key, item.metaData)}
               isSelected={item.key === activeNavigationItemKey}
               icon={item.icon}
             />

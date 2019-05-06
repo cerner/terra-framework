@@ -156,7 +156,7 @@ class Tabs extends React.Component {
         text: tab.text,
         key: tab.key,
         tabKey: tab.key,
-        onTabClick: () => { if (onTabSelect) { onTabSelect(tab.key); } },
+        onTabClick: () => { if (onTabSelect) { onTabSelect(tab.key, tab.metaData); } },
         isActive: tab.key === activeTabKey,
         notificationCount: hasNotifications ? notifications[tab.key] : 0,
         hasCount: hasNotifications,
