@@ -110,7 +110,7 @@ class DateTimePicker extends React.Component {
     super(props);
 
     this.state = {
-      dateTime: DateTimeUtils.createSafeDate(props.value),
+      dateTime: DateUtil.createSafeDate(props.value),
       isAmbiguousTime: false,
       isTimeClarificationOpen: false,
       dateFormat: DateUtil.getFormatByLocale(props.intl.locale),
@@ -145,7 +145,7 @@ class DateTimePicker extends React.Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.value !== prevState.prevPropsValue) {
       return {
-        dateTime: DateTimeUtils.createSafeDate(nextProps.value),
+        dateTime: DateUtil.createSafeDate(nextProps.value),
         prevPropsValue: nextProps.value,
       };
     }

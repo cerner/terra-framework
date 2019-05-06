@@ -11,6 +11,7 @@ Unreleased
 
 ### Changed
 * Moved packages we use solely in doc examples and tests to devDependencies
+* Leverage createSafeDate from the DateUtil.
 
 ### Fixed
 * Changes made to the time is now preserved when the modification is made with an invalid date.
