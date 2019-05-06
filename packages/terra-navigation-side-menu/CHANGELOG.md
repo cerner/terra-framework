@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Updated wdio screenshots to fix test failures
 
 2.5.0 - (April 24, 2019)
 ------------------
