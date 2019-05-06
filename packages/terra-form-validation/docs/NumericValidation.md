@@ -102,7 +102,7 @@ Second thing - our validation function, `validateNumber`, will be given a *strin
 
 Let's start by giving a minimum and maximum to our value. For simplicity, set a minimum to 10 and a maximum to 100.
 
-```javascript
+```diff
 const validateNumber = (value) => {
   if (!value) { return undefined; }
 + if (value < 10) {
@@ -120,7 +120,7 @@ Now, let's check for precision. For this example, lets validate to the thousandt
 
 Use `.` as a delimiter and check for a length less than or equal to 3.
 
-```javascript
+```diff
 const validateNumber = (value) => {
   ...
 + const valueSplit = value.split('.');
@@ -136,7 +136,7 @@ This validation has a quirk. If the input contains extra `0`s, like `23.0230000`
 
 Lets try a different way of validating. Convert the value a `Number` instead. This way we can use the `toFixed` function to automatically set precision, and use this as a comparison.
 
-```javascript
+```diff
 const validateNumber = (value) => {
   ...
 - const valueSplit = value.split('.');
@@ -154,7 +154,7 @@ This validation has the opposite quirk. If the input contains extra `0`s, like `
 
 With this we have a function that we can add to validate a number based by having a minimum, maximum, and a certain level of precision required. In the same vein as the 'Max Length Input' example, we can use the `FormValidationUtil` to help control and reduce some of workflow.
 
-```javascript
+```diff
 const validateNumber = (value) => {
 -  if (value < 10) {
 +  if (!FormValidationUtil.isOverMinValue(value, 10)) {

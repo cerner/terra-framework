@@ -33,7 +33,7 @@ export default class Example extends React.Component {
 Current we render nothing. Lets create a `<Form>` component that contains initial values, and functionality for submission and validation.
 
 Let's use the render props pattern to return our necessary components. Call this function `renderForm`.
-```javascript
+```diff
   render() {
     return (
       <Spacer marginBottom="small">
@@ -45,32 +45,32 @@ Let's use the render props pattern to return our necessary components. Call this
     );
   }
 
-  renderForm() {
-    return (
-      <form>
-        <Field
-          name="example"
-        >
-          {({ input, meta }) => (
-            <InputField
-              inputId="example"
-              label="Example"
-              error={meta.error}
-              isInvalid={meta.error !== undefined}
-              inputAttrs={{
-                placeholder: 'Example',
-                ...input,
-              }}
-              onChange={(e) => { input.onChange(e.target.value); }}
-              value={input.value}
-              required
-            />
-          )}
-        </Field>
-        <Button text="Submit" type={Button.Opts.Types.SUBMIT} />
-      </form>
-    );
-  }
++ renderForm() {
++   return (
++     <form>
++       <Field
++         name="example"
++       >
++         {({ input, meta }) => (
++           <InputField
++             inputId="example"
++             label="Example"
++             error={meta.error}
++             isInvalid={meta.error !== undefined}
++             inputAttrs={{
++               placeholder: 'Example',
++               ...input,
++             }}
++             onChange={(e) => { input.onChange(e.target.value); }}
++             value={input.value}
++             required
++           />
++         )}
++       </Field>
++       <Button text="Submit" type={Button.Opts.Types.SUBMIT} />
++     </form>
++   );
++ }
 ```
 
 Let's attach functionality to the submit button. Create a `submitForm` function to save submittedValues into state.
@@ -85,7 +85,7 @@ submitForm(values) {
 
 Bind `onSubmit`, pass `onSubmit` as a prop to `<Form>`, pass `handleSubmit` to our render prop function, and pass `handleSubmit` to the native form's `onSubmit` prop.
 
-```javascript
+```diff
 constructor(props) {
   super(props);
 
@@ -117,7 +117,7 @@ renderForm({ handleSubmit }) {
 
 Now our `Submit` button will actually submit things but it won't give us a visual confirmation of what has been submitted so lets modify our `render` function to show our `submittedValues`
 
-```javascript
+```diff
 render() {
   return (
     <Spacer marginBottom="small">
@@ -141,7 +141,7 @@ render() {
 Submit will now visually update with a JSON of our `submittedValues` state.
 
 We don't need a specific initial value but let's set an initial value that is an empty string so we have an easy place to redefine it if need be. We add an object to our `<Form>`. We define our object with the property being the inputID of our `<InputField>`, which in this case is `example`, and the property's value being the value of the `<InputField>`.
-```javascript
+```diff
 render() {
   return (
     <Spacer marginBottom="small">
@@ -160,7 +160,7 @@ Finally we need to validate our input field. This has two parts to it, a `valida
 
 The `<Form>` component's `validate` prop takes a validation function that reads all form values and returns validation errors. Let's create a function that checks the existence of `example` field's values. On error, set the ID to `required`. This will be displayed if validation fails.
 
-```javascript
+```diff
 render() {
   return (
     <Spacer marginBottom="small">
@@ -198,7 +198,7 @@ const validateLength = (name) => {
 
 Finally, let's add pass the function as the `validate` prop to `<Field>` within our `renderForm` function..
 
-```javascript
+```diff
 renderForm({ handleSubmit }) {
   return (
     <form
@@ -218,7 +218,7 @@ renderForm({ handleSubmit }) {
 
 We have created an input that is required and has max length of 7 characters by creating our own validate function. For ease of use, Terra provides utils for common validation use cases. In this case, we can use the `validateLength` function.
 
-```javascript
+```diff
 import FormValidationUtil from 'terra-form-validation';
 ...
 const validateLength = (name) => {
