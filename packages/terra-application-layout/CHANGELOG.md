@@ -6,6 +6,9 @@ Unreleased
 ### Breaking Changes
 * Update react-router-dom dependency to latest stable major release
 
+### Fixed
+* Updated wdio screenshots to fix test failures
+
 4.11.0 - (April 24, 2019)
 ------------------
 ### Changed
