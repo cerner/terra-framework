@@ -2,31 +2,40 @@
 import moment from 'moment';
 
 class DateUtil {
-  // Converts an ISO 8601 date into a moment object. If the date is invalid and unable to convert, the originally provided date is returned.
+  /**
+   * Creates a moment object using the provided date string. Moment is unable to initialize a valid date if the date passed in is
+   * null, empty string, or alpha characters and undefined would be returned.
+   * @param {string|undefined} date - The date to convert. Expect to be in ISO format.
+   * @return {object|undefined} - The moment object. Undefined if unable to convert.
+   */
   static createSafeDate(date) {
-    if (date) {
-      const momentDate = moment(date);
-      return momentDate.isValid() ? momentDate : date;
+    if (!date) {
+      return undefined;
     }
 
-    return date;
+    const momentDate = moment(date);
+    return momentDate.isValid() ? momentDate : undefined;
   }
 
-  // Filters out any invalid dates in the provided list of dates and returns a list of moment objects representation of the valid dates
+  /**
+   * Filters any invalid dates in the provided list of dates
+   * @param {array} date - The array of dates to filter.
+   * @return {array|undefined} - The array of moment objects each representing the valid dates. Undefined if there are no valid dates.
+   */
   static filterInvalidDates(dates) {
-    const momentDates = [];
+    const validMomentDates = [];
 
-    if (dates) {
+    if (Array.isArray(dates)) {
       let index = 0;
       for (index = 0; index < dates.length; index += 1) {
         const momentDate = moment(dates[index]);
         if (momentDate.isValid()) {
-          momentDates.push(momentDate);
+          validMomentDates.push(momentDate);
         }
       }
     }
 
-    return momentDates.length > 0 ? momentDates : dates;
+    return validMomentDates.length > 0 ? validMomentDates : undefined;
   }
 
   // Checks if a given date is out of the range between the start and end dates.
@@ -44,7 +53,12 @@ class DateUtil {
     return true;
   }
 
-  // Checks if a given date is one of the excluded dates.
+  /**
+   * Determines if a date matched the year, month, and day of any dates in the list.
+   * @param {object} sourceDate - The moment date to check for match.
+   * @param {array} excludedDates - An array of moment dates to check against.
+   * @return {boolean} - True if the sourceDate is found in the list. False, otherwise.
+   */
   static isDateExcluded(sourceDate, excludedDates) {
     if (!sourceDate || !sourceDate.isValid()) {
       return false;
@@ -63,7 +77,12 @@ class DateUtil {
     return false;
   }
 
-  // Converts date string to the ISO8601 format with only the date part. If the date string is invalid and unable to convert, the originally provided string is returned.
+  /**
+   * Converts a date string in the given format to the ISO format with only the date part.
+   * @param {string} date - The date string to convert.
+   * @param {string} format - The format of the date string.
+   * @return {string} - The converted ISO string.
+   */
   static convertToISO8601(date, format) {
     if (date && format) {
       const momentDate = moment(date, format, true);
@@ -73,7 +92,11 @@ class DateUtil {
     return date;
   }
 
-  // Gets the long date format based on the locale.
+  /**
+   * Gets the preferred date format (moment's long date format) given the locale.
+   * @param {string} locale - The locale to get the date format.
+   * @return {string} - The preferred date format for the given locale.
+   */
   static getFormatByLocale(locale) {
     if (locale) {
       const localMoment = moment();

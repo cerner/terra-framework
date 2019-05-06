@@ -3,6 +3,15 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Leverage createSafeDate from the DateUtil.
+* Change the onBlur event to get triggered only when the entire date time picker component loses focus.
+
+### Added
+* Added 'onFocus' prop since 'preventOpenOnFocus' can be used to prevent picker from opening on focus.
+
+### Removed
+* Removed 'onInputFocus' prop in favor of the added 'onFocus' prop.
 
 3.15.0 - (April 24, 2019)
 ------------------
@@ -11,13 +20,6 @@ Unreleased
 
 ### Changed
 * Moved packages we use solely in doc examples and tests to devDependencies
-* Change the onBlur event to get triggered only when the entire date time picker component loses focus.
-
-### Added
-* Added 'onFocus' prop since 'preventOpenOnFocus' can be used to prevent picker from opening on focus.
-
-### Removed
-* Removed 'onInputFocus' prop in favor of the added 'onFocus' prop.
 
 3.14.0 - (April 16, 2019)
 ------------------

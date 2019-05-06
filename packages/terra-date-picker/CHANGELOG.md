@@ -17,6 +17,9 @@ Unreleased
 ### Removed
 * Removed 'onInputFocus' prop in favor of the added 'onFocus' prop.
 
+### Fixed
+* Fixed crash when selectedDate prop is set to a string or empty string that is not ISO compliant and unable to convert to a valid moment object.
+
 3.13.0 - (April 16, 2019)
 ------------------
 ### Changed
