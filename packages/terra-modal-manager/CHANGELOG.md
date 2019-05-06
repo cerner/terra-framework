@@ -3,6 +3,11 @@ Changelog
 
 Unreleased
 ----------
+### Added 
+* Added new width 560px
+
+5.10.0 - (April 24, 2019)
+------------------
 ### Changed
 * Moved packages we use solely in doc examples and tests to devDependencies
 

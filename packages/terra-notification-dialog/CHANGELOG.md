@@ -3,6 +3,11 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Updated jest snapshot to fix test failures
+
+2.11.0 - (April 24, 2019)
+------------------
 ### Changed
 * Moved packages we use solely in doc examples and tests to devDependencies
 

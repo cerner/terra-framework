@@ -104,6 +104,19 @@ viewports.forEach((viewport) => {
       Terra.should.matchScreenshot({ selector: '#site' });
     });
 
+    describe('Disclose Width-560', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
+        browser.click('#disclosureDimensions-width-0');
+        browser.click('#width-560-0');
+        browser.click('#root-component #disclose-dimension-0');
+        browser.pause(300);
+        browser.moveToObject('#DemoContainer-1 .disclose');
+      });
+
+      Terra.should.matchScreenshot({ selector: '#site' });
+    });
+
     describe('Disclose Width-640', () => {
       beforeEach(() => {
         browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');

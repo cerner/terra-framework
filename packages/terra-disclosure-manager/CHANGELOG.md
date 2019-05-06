@@ -3,10 +3,14 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added new width 560px to Disclosure Widths.
+
+4.9.0 - (April 24, 2019)
+------------------
 ### Changed
 * Moved packages we use solely in doc examples and tests to devDependencies
 * Explicitly documented the required arguments for the disclose behavior
-
 
 4.8.0 - (April 16, 2019)
 ------------------
