@@ -25,7 +25,7 @@ const Input = ({ title }) => {
       </div>
       <input
         type="text"
-        style={{ width: '100%' }}
+        style={{ width: '100%', fontSize: '16px' }}
         onChange={(event) => {
           promptMetaData.current = {
             value: event.target.value,

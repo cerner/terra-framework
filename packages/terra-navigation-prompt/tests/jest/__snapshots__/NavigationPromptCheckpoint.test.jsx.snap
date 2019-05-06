@@ -10,7 +10,6 @@ exports[`NavigationPrompt Snapshots should render with children 1`] = `
   }
 >
   <withPromptRegistration(MockPromptBase) />
-  <CheckpointNotificationDialog />
 </ContextProvider>
 `;
 
@@ -22,7 +21,35 @@ exports[`NavigationPrompt Snapshots should render with minimal props 1`] = `
       "registerPrompt": [Function],
     }
   }
+/>
+`;
+
+exports[`NavigationPrompt Snapshots should render with minimal props 2`] = `
+<ContextProvider
+  value={
+    Object {
+      "deregisterPrompt": [Function],
+      "registerPrompt": [Function],
+    }
+  }
 >
-  <CheckpointNotificationDialog />
+  <NotificationDialog
+    isOpen={true}
+    message="Test Message"
+    primaryAction={
+      Object {
+        "onClick": [Function],
+        "text": "Reject",
+      }
+    }
+    secondaryAction={
+      Object {
+        "onClick": [Function],
+        "text": "Accept",
+      }
+    }
+    title="Test Title"
+    variant="warning"
+  />
 </ContextProvider>
 `;

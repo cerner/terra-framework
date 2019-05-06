@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import NotificationDialog from 'terra-notification-dialog';
 import PromptRegistrationContext, { promptRegistrationContextValueShape } from './PromptRegistrationContext';
 import withPromptRegistration from './_withPromptRegistration';
-import CheckpointNotificationDialog from './_CheckpointNotificationDialog';
 
 const propTypes = {
   /**
@@ -54,7 +53,10 @@ class NavigationPromptCheckpoint extends React.Component {
       registerPrompt: this.registerPrompt,
       deregisterPrompt: this.deregisterPrompt,
     };
-    this.checkpointNotificationDialogRef = React.createRef();
+
+    this.state = {
+      notificationDialogProps: undefined,
+    };
   }
 
   componentWillUnmount() {
@@ -124,27 +126,49 @@ class NavigationPromptCheckpoint extends React.Component {
     }
 
     /**
-     * Otherwise, the CheckpointNotificationDialog is shown.
+     * Otherwise, the NotificationDialog is shown.
      */
     return new Promise((resolve, reject) => {
-      this.checkpointNotificationDialogRef.current.showDialog({
-        title: showDialogOptions.title,
-        message: showDialogOptions.message,
-        acceptButtonText: showDialogOptions.acceptButtonText,
-        rejectButtonText: showDialogOptions.rejectButtonText,
-        onAccept: resolve,
-        onReject: reject,
+      this.setState({
+        notificationDialogProps: {
+          title: showDialogOptions.title,
+          message: showDialogOptions.message,
+          acceptButtonText: showDialogOptions.acceptButtonText,
+          rejectButtonText: showDialogOptions.rejectButtonText,
+          onAccept: resolve,
+          onReject: reject,
+        },
       });
     });
   }
 
   render() {
     const { children } = this.props;
+    const { notificationDialogProps } = this.state;
 
     return (
       <PromptRegistrationContext.Provider value={this.promptProviderValue}>
         {children}
-        <CheckpointNotificationDialog ref={this.checkpointNotificationDialogRef} />
+        {notificationDialogProps ? (
+          <NotificationDialog
+            isOpen
+            title={notificationDialogProps.title}
+            message={notificationDialogProps.message}
+            primaryAction={{
+              text: notificationDialogProps.rejectButtonText,
+              onClick: () => {
+                this.setState({ notificationDialogProps: undefined }, notificationDialogProps.onReject);
+              },
+            }}
+            secondaryAction={{
+              text: notificationDialogProps.acceptButtonText,
+              onClick: () => {
+                this.setState({ notificationDialogProps: undefined }, notificationDialogProps.onAccept);
+              },
+            }}
+            variant="warning"
+          />
+        ) : null}
       </PromptRegistrationContext.Provider>
     );
   }

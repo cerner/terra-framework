@@ -33,6 +33,28 @@ describe('NavigationPrompt', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
+    it('should render with minimal props', () => {
+      const wrapper = shallow((
+        <NavigationPromptCheckpoint
+          promptRegistration={promptRegistrationDefault}
+        />
+      ));
+
+      wrapper.setState({
+        notificationDialogProps: {
+          title: 'Test Title',
+          message: 'Test Message',
+          acceptButtonText: 'Accept',
+          rejectButtonText: 'Reject',
+          onAccept: () => {},
+          onReject: () => {},
+        },
+      });
+
+      expect(wrapper).toMatchSnapshot();
+    });
+
+
     it('should render with children', () => {
       const wrapper = shallow((
         <NavigationPromptCheckpoint
@@ -232,22 +254,21 @@ describe('NavigationPrompt', () => {
       const mockPromptWrapper = wrapper.find(MockPromptBase);
       mockPromptWrapper.props().promptRegistration.registerPrompt('mock_id', 'mock_description', { test: 'value' });
 
-      wrapper.instance().checkpointNotificationDialogRef = {
-        current: {
-          showDialog: (options) => {
-            expect(options.title).toEqual('Test Title');
-            expect(options.message).toEqual('Test Message');
-            expect(options.acceptButtonText).toEqual('Accept');
-            expect(options.rejectButtonText).toEqual('Reject');
-            expect(options.onAccept).toBeDefined();
-            expect(options.onReject).toBeDefined();
+      const mockSetState = jest.fn();
+      mockSetState.mockImplementation((newState) => {
+        expect(newState.notificationDialogProps.title).toEqual('Test Title');
+        expect(newState.notificationDialogProps.message).toEqual('Test Message');
+        expect(newState.notificationDialogProps.acceptButtonText).toEqual('Accept');
+        expect(newState.notificationDialogProps.rejectButtonText).toEqual('Reject');
+        expect(newState.notificationDialogProps.onAccept).toBeDefined();
+        expect(newState.notificationDialogProps.onReject).toBeDefined();
 
-            // We resolve the promise to simulate a accept button click
-            // and resolve the Promise.
-            return options.onAccept();
-          },
-        },
-      };
+        // We resolve the promise to simulate a accept button click
+        // and resolve the Promise.
+        return newState.notificationDialogProps.onAccept();
+      });
+
+      wrapper.instance().setState = mockSetState;
 
       await expect(wrapper.instance().resolvePrompts({
         title: 'Test Title',
@@ -272,22 +293,21 @@ describe('NavigationPrompt', () => {
       mockPromptWrapper.props().promptRegistration.registerPrompt('mock_id', 'mock_description', { test: 'value' });
       mockPromptWrapper.props().promptRegistration.registerPrompt('mock_id2', 'mock_description2', { test: 'value2' });
 
-      wrapper.instance().checkpointNotificationDialogRef = {
-        current: {
-          showDialog: (options) => {
-            expect(options.title).toEqual('Title: mock_description-value, mock_description2-value2');
-            expect(options.message).toEqual('Message: mock_description-value, mock_description2-value2');
-            expect(options.acceptButtonText).toEqual('Accept: mock_description-value, mock_description2-value2');
-            expect(options.rejectButtonText).toEqual('Reject: mock_description-value, mock_description2-value2');
-            expect(options.onAccept).toBeDefined();
-            expect(options.onReject).toBeDefined();
+      const mockSetState = jest.fn();
+      mockSetState.mockImplementation((newState) => {
+        expect(newState.notificationDialogProps.title).toEqual('Title: mock_description-value, mock_description2-value2');
+        expect(newState.notificationDialogProps.message).toEqual('Message: mock_description-value, mock_description2-value2');
+        expect(newState.notificationDialogProps.acceptButtonText).toEqual('Accept: mock_description-value, mock_description2-value2');
+        expect(newState.notificationDialogProps.rejectButtonText).toEqual('Reject: mock_description-value, mock_description2-value2');
+        expect(newState.notificationDialogProps.onAccept).toBeDefined();
+        expect(newState.notificationDialogProps.onReject).toBeDefined();
 
-            // We resolve the promise to simulate a accept button click
-            // and resolve the Promise.
-            return options.onAccept();
-          },
-        },
-      };
+        // We resolve the promise to simulate a accept button click
+        // and resolve the Promise.
+        return newState.notificationDialogProps.onAccept();
+      });
+
+      wrapper.instance().setState = mockSetState;
 
       await expect(wrapper.instance().resolvePrompts(prompts => ({
         title: `Title: ${prompts.map(prompt => `${prompt.description}-${prompt.metaData.test}`).join(', ')}`,
@@ -311,22 +331,21 @@ describe('NavigationPrompt', () => {
       const mockPromptWrapper = wrapper.find(MockPromptBase);
       mockPromptWrapper.props().promptRegistration.registerPrompt('mock_id', 'mock_description', { test: 'value' });
 
-      wrapper.instance().checkpointNotificationDialogRef = {
-        current: {
-          showDialog: (options) => {
-            expect(options.title).toEqual('Test Title');
-            expect(options.message).toEqual('Test Message');
-            expect(options.acceptButtonText).toEqual('Accept');
-            expect(options.rejectButtonText).toEqual('Reject');
-            expect(options.onAccept).toBeDefined();
-            expect(options.onReject).toBeDefined();
+      const mockSetState = jest.fn();
+      mockSetState.mockImplementation((newState) => {
+        expect(newState.notificationDialogProps.title).toEqual('Test Title');
+        expect(newState.notificationDialogProps.message).toEqual('Test Message');
+        expect(newState.notificationDialogProps.acceptButtonText).toEqual('Accept');
+        expect(newState.notificationDialogProps.rejectButtonText).toEqual('Reject');
+        expect(newState.notificationDialogProps.onAccept).toBeDefined();
+        expect(newState.notificationDialogProps.onReject).toBeDefined();
 
-            // We resolve the promise to simulate a reject button click
-            // and reject the Promise.
-            return options.onReject();
-          },
-        },
-      };
+        // We resolve the promise to simulate a reject button click
+        // and reject the Promise.
+        return newState.notificationDialogProps.onReject();
+      });
+
+      wrapper.instance().setState = mockSetState;
 
       await expect(wrapper.instance().resolvePrompts({
         title: 'Test Title',
@@ -345,13 +364,9 @@ describe('NavigationPrompt', () => {
         />
       ));
 
-      const mockShowDialog = jest.fn();
+      const mockSetState = jest.fn();
 
-      wrapper.instance().checkpointNotificationDialogRef = {
-        current: {
-          showDialog: mockShowDialog,
-        },
-      };
+      wrapper.instance().setState = mockSetState;
 
       await expect(wrapper.instance().resolvePrompts({
         title: 'Test Title',
@@ -360,7 +375,7 @@ describe('NavigationPrompt', () => {
         rejectButtonText: 'Reject',
       })).resolves.toEqual(undefined);
 
-      expect(mockShowDialog.mock.calls.length).toEqual(0);
+      expect(mockSetState.mock.calls.length).toEqual(0);
     });
   });
 });
