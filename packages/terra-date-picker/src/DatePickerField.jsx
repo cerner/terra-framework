@@ -39,13 +39,13 @@ const propTypes = {
    */
   hideRequired: PropTypes.bool,
   /**
-   * Whether or not the field is invalid.
-   */
-  isInvalid: PropTypes.bool,
-  /**
    * Whether or not the field is an inline field.
    */
   isInline: PropTypes.bool,
+  /**
+   * Whether or not the field is invalid.
+   */
+  isInvalid: PropTypes.bool,
   /**
    * Whether or not the label is visible. Use this props to hide a label while still creating it on the DOM for accessibility.
    */
@@ -100,14 +100,6 @@ const propTypes = {
    */
   onSelect: PropTypes.func,
   /**
-   * A callback function to let the containing component (e.g. modal) to regain focus.
-   */
-  releaseFocus: PropTypes.func,
-  /**
-   * A callback function to request focus from the containing component (e.g. modal).
-   */
-  requestFocus: PropTypes.func,
-  /**
    * Whether or not the date field is required.
    */
   required: PropTypes.bool,
@@ -129,29 +121,27 @@ const propTypes = {
 
 const defaultProps = {
   disabled: false,
+  error: null,
+  errorIcon: Field.defaultProps.errorIcon,
   excludeDates: undefined,
   filterDate: undefined,
+  help: null,
+  hideRequired: false,
   includeDates: undefined,
   inputAttributes: undefined,
+  isInline: false,
+  isInvalid: false,
+  isLabelHidden: false,
+  labelAttrs: {},
   maxDate: undefined,
+  maxWidth: undefined,
   minDate: undefined,
   onChange: undefined,
   onChangeRaw: undefined,
   onClickOutside: undefined,
   onSelect: undefined,
-  releaseFocus: undefined,
   required: false,
-  requestFocus: undefined,
   selectedDate: undefined,
-  error: null,
-  errorIcon: Field.defaultProps.errorIcon,
-  help: null,
-  hideRequired: false,
-  isInvalid: false,
-  isInline: false,
-  isLabelHidden: false,
-  labelAttrs: {},
-  maxWidth: undefined,
   showOptional: false,
 };
 
@@ -180,9 +170,7 @@ const DatePickerField = (props) => {
     onChangeRaw,
     onClickOutside,
     onSelect,
-    requestFocus,
     required,
-    releaseFocus,
     selectedDate,
     showOptional,
     ...customProps
@@ -232,9 +220,7 @@ const DatePickerField = (props) => {
         onChangeRaw={onChangeRaw}
         onClickOutside={onClickOutside}
         onSelect={onSelect}
-        requestFocus={requestFocus}
         required={required}
-        releaseFocus={releaseFocus}
         selectedDate={selectedDate}
         aria-describedby={ariaDescriptionIds}
       />

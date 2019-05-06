@@ -50,11 +50,9 @@ it('should render a DatePickerField with props', () => {
       maxDate="2017-04-10"
       maxWidth="25px"
       name="test-date-picker"
-      requestFocus={() => {}}
       required
       isInvalid
       disabled
-      releaseFocus={() => {}}
       selectedDate="2017-04-09"
     />
   );
@@ -91,10 +89,8 @@ it('should render a valid DatePickerField with props', () => {
       maxDate="2017-04-10"
       maxWidth="25px"
       name="test-date-picker"
-      requestFocus={() => {}}
       required
       disabled
-      releaseFocus={() => {}}
       selectedDate="2017-04-09"
     />
   );

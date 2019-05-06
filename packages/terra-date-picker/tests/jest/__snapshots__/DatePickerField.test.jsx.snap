@@ -47,8 +47,6 @@ exports[`should render a DatePickerField with props 1`] = `
     onChangeRaw={[Function]}
     onClickOutside={[Function]}
     onSelect={[Function]}
-    releaseFocus={[Function]}
-    requestFocus={[Function]}
     required={true}
     selectedDate="2017-04-09"
   />
@@ -131,8 +129,6 @@ exports[`should render a valid DatePickerField with props 1`] = `
     onChangeRaw={[Function]}
     onClickOutside={[Function]}
     onSelect={[Function]}
-    releaseFocus={[Function]}
-    requestFocus={[Function]}
     required={true}
     selectedDate="2017-04-09"
   />
