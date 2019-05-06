@@ -18,14 +18,16 @@ import styles from './ApplicationNavigation.module.scss';
 
 const cx = classNames.bind(styles);
 
-const createExtensions = (extensionConfig, activeBreakpoint) => (
+const createExtensions = (extensionConfig, activeBreakpoint, notifications) => (
   <Extensions
     extensionConfig={extensionConfig}
     activeBreakpoint={activeBreakpoint}
+    notifications={notifications}
   />
 );
 
 const propTypes = {
+  notifications: PropTypes.object,
   titleConfig: titleConfigPropType,
   /**
    * A configuration object with information specifying the creation of the Extension buttons rendered within the
@@ -100,6 +102,7 @@ const propTypes = {
 
 const defaultProps = {
   utilityItems: [],
+  notifications: {},
 };
 
 class ApplicationNavigation extends React.Component {
@@ -225,6 +228,7 @@ class ApplicationNavigation extends React.Component {
       onSelectLogout,
       utilityItems,
       activeBreakpoint,
+      notifications,
     } = this.props;
     const { drawerMenuIsOpen } = this.state;
 
@@ -255,6 +259,7 @@ class ApplicationNavigation extends React.Component {
           onSelectLogout={onSelectLogout ? this.handleLogoutSelection : undefined}
           utilityItems={utilityItems}
           onSelectUtilityItem={this.handleUtilityItemSelection}
+          notifications={notifications}
         />
       </FocusTrap>
     );
@@ -273,16 +278,18 @@ class ApplicationNavigation extends React.Component {
       onSelectHelp,
       onSelectLogout,
       utilityItems,
+      notifications,
     } = this.props;
 
     if (shouldRenderCompactNavigation(activeBreakpoint)) {
       return (
         <CompactHeader
           titleConfig={titleConfig}
-          extensions={createExtensions(extensionConfig, activeBreakpoint)}
+          extensions={createExtensions(extensionConfig, activeBreakpoint, notifications)}
           navigationConfig={navigationConfig}
           onSelectToggle={this.handleMenuToggle}
           onSelectSkipToContent={this.handleSkipToContent}
+          notifications={notifications}
         />
       );
     }
@@ -290,7 +297,7 @@ class ApplicationNavigation extends React.Component {
     return (
       <Header
         titleConfig={titleConfig}
-        extensions={createExtensions(extensionConfig, activeBreakpoint)}
+        extensions={createExtensions(extensionConfig, activeBreakpoint, notifications)}
         navigationConfig={navigationConfig}
         activeNavigationItemKey={activeNavigationItemKey}
         onSelectNavigationItem={this.handleNavigationItemSelection}
@@ -303,6 +310,7 @@ class ApplicationNavigation extends React.Component {
         utilityItems={utilityItems}
         onSelectUtilityItem={this.handleUtilityItemSelection}
         onSelectSkipToContent={this.handleSkipToContent}
+        notifications={notifications}
       />
     );
   }

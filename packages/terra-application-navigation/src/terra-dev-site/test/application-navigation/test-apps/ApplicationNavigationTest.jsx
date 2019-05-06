@@ -129,6 +129,17 @@ const navigationConfig2 = {
   }],
 };
 
+const notifications = {
+  '/page_3': 63,
+};
+
+const notifications2 = {
+  '/page_1': 1000,
+  '/page_2': 1,
+  '/page_3': 65,
+  '/page_5': 6,
+};
+
 const userConfig = {
   name: 'Test UserTest UserTest UserTest UserTest UserTest User',
   detail: 'Super Cool Person',
@@ -283,6 +294,7 @@ class ApplicationNavigationTest extends React.Component {
             }));
           },
           text: 'Search',
+          key: 'Search',
         },
         {
           icon: <IconPill />,
@@ -294,6 +306,7 @@ class ApplicationNavigationTest extends React.Component {
           },
           text: 'Pill',
           notificationCount: 100,
+          key: 'Pill',
         },
         {
           icon: <IconVisualization />,
@@ -301,18 +314,21 @@ class ApplicationNavigationTest extends React.Component {
           text: 'Visualization',
           type: 'popup',
           content: <div>Im a Popup</div>,
+          key: 'Visualization',
         },
         {
           icon: <IconLightbulb />,
           metaData: { key: 'Lightbulb' },
           onSelect: (() => { document.documentElement.style.fontSize = '28px'; }),
           text: 'Lightbulb',
+          key: 'Lightbulb',
         },
         {
           icon: <IconCalculator />,
           metaData: { key: 'Calculator' },
           onSelect: this.handleExtensionSelect,
           text: 'Calculator',
+          key: 'Calculator',
         },
         {
           icon: <IconTrophy />,
@@ -320,6 +336,7 @@ class ApplicationNavigationTest extends React.Component {
           onSelect: this.handleExtensionSelect,
           text: 'Trophy',
           notificationCount: 5,
+          key: 'Trophy',
         },
       ],
     };
@@ -327,6 +344,11 @@ class ApplicationNavigationTest extends React.Component {
     let itemToUse = navigationConfig;
     if (this.state.useItems2) {
       itemToUse = navigationConfig2;
+    }
+
+    let notificationsToUse = notifications;
+    if (this.state.useItems2) {
+      notificationsToUse = notifications2;
     }
 
     return (
@@ -344,6 +366,7 @@ class ApplicationNavigationTest extends React.Component {
         onSelectLogout={!hideLogout ? this.handleLogoutSelection : undefined}
         utilityItems={utilityItems}
         onSelectUtilityItem={this.handleCustomUtilitySelection}
+        notifications={notificationsToUse}
       >
         <Switch>
           <Route path="/page_1" render={() => <ContentComponent contentName="Page 1" numberOfParagraphs={1} />} />

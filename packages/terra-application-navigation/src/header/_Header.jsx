@@ -118,7 +118,7 @@ class Header extends React.Component {
 
   renderNavigationTabs() {
     const {
-      navigationConfig, activeNavigationItemKey, onSelectNavigationItem,
+      navigationConfig, activeNavigationItemKey, onSelectNavigationItem, notifications,
     } = this.props;
 
     if (!navigationConfig || !navigationConfig.navigationItems || !navigationConfig.navigationItems.length) {
@@ -130,6 +130,7 @@ class Header extends React.Component {
         navigationConfig={navigationConfig}
         activeTabKey={activeNavigationItemKey}
         onTabSelect={onSelectNavigationItem}
+        notifications={notifications}
       />
     );
   }

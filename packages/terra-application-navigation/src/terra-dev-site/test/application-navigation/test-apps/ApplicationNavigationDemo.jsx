@@ -187,6 +187,7 @@ class ApplicationNavigationDemo extends React.Component {
             }));
           },
           text: 'Search',
+          key: 'Search',
         },
         {
           icon: <IconPill />,
@@ -194,24 +195,29 @@ class ApplicationNavigationDemo extends React.Component {
           onSelect: this.handleExtensionSelect,
           text: 'Pill',
           notificationCount: 10,
+          key: 'Pill',
         },
         {
           icon: <IconVisualization />,
+          metaData: { key: 'Visualization' },
           text: 'Visualization',
           type: 'popup',
           content: <div>Im a Popup</div>,
+          key: 'Visualization',
         },
         {
           icon: <IconLightbulb />,
           metaData: { key: 'Lightbulb' },
           onSelect: this.handleExtensionSelect,
           text: 'Lightbulb',
+          key: 'Lightbulb',
         },
         {
           icon: <IconCalculator />,
           metaData: { key: 'Calculator' },
           onSelect: this.handleExtensionSelect,
           text: 'Calculator',
+          key: 'Calculator',
         },
         {
           icon: <IconTrophy />,
@@ -219,6 +225,7 @@ class ApplicationNavigationDemo extends React.Component {
           onSelect: this.handleExtensionSelect,
           text: 'Trophy',
           notificationCount: 5,
+          key: 'Trophy',
         },
       ],
     };

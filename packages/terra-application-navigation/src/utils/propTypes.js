@@ -37,6 +37,7 @@ const utilityItemsPropType = PropTypes.arrayOf(PropTypes.shape({
  */
 const extensionConfigPropType = PropTypes.shape({
   extensions: PropTypes.arrayOf(PropTypes.shape({
+    key: PropTypes.string.isRequired,
     /**
      * Image to be rendered
      */

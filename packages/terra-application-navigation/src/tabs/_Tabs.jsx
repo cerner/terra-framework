@@ -25,6 +25,7 @@ const propTypes = {
    * A function to be executed upon selection of a tab.
    */
   onTabSelect: PropTypes.func,
+  notifications: PropTypes.object,
 };
 
 class Tabs extends React.Component {
@@ -55,6 +56,7 @@ class Tabs extends React.Component {
     if (this.props.navigationConfig.navigationItems.length !== nextProps.navigationConfig.navigationItems.length || this.props.activeTabKey !== nextProps.activeTabKey) {
       this.resetCalculations();
     }
+    this.previousNotifications = this.props.notifications;
     return true;
   }
 
@@ -130,29 +132,21 @@ class Tabs extends React.Component {
     }
   }
 
-  shouldPulse(navigationItems) {
+  shouldPulse(navigationItems, notifications) {
     let shouldPulse = false;
 
-    const newNotifications = navigationItems.reduce((acc, item, index) => {
-      if (item.notificationCount > 0) {
-        acc[item.key] = { count: item.notificationCount, isHidden: index >= this.hiddenStartIndex };
-      }
-      return acc;
-    }, []);
-
     if (this.previousNotifications) {
-      const notificationKeys = Object.keys(newNotifications);
-      for (let i = 0; i < notificationKeys.length; i += 1) {
-        const previousCount = this.previousNotifications[notificationKeys[i]];
-        const newCount = newNotifications[notificationKeys[i]];
-        if (newCount.isHidden && (!previousCount || newCount.count > previousCount.count)) {
+      for (let i = 0; i < navigationItems.length; i += 1) {
+        const item = navigationItems[i];
+        const previousCount = this.previousNotifications[item.key];
+        const newCount = notifications[item.key];
+        if (newCount && (!previousCount || newCount > previousCount)) {
           shouldPulse = true;
           break;
         }
       }
     }
 
-    this.previousNotifications = newNotifications;
     return shouldPulse;
   }
 
@@ -193,12 +187,19 @@ class Tabs extends React.Component {
       navigationConfig,
       activeTabKey,
       onTabSelect,
+      notifications,
     } = this.props;
 
-    const { hasNotifications, navigationItems } = navigationConfig;
+    const { navigationItems } = navigationConfig;
     const { visibleTabs, hiddenTabs } = this.sliceTabs(navigationItems);
+
+    const hasVisibleNotification = visibleTabs.some(tab => !!notifications[tab.key]);
+    const hasHiddenNotification = hiddenTabs.some(tab => !!notifications[tab.key]);
+
+    const hasNotifications = hasVisibleNotification || hasHiddenNotification;
     const visibleChildren = this.buildVisibleChildren(visibleTabs, hasNotifications, onTabSelect, activeTabKey);
-    const showNotificationRollup = hasNotifications && hiddenTabs.some(tab => tab.notificationCount > 0);
+
+    // const showNotificationRollup = hasNotifications && hiddenTabs.some(tab => tab.notificationCount > 0);
 
     return (
       <div className={cx(['tabs-wrapper'])} ref={this.setContainerNode}>
@@ -212,11 +213,11 @@ class Tabs extends React.Component {
             hasCount={hasNotifications}
             hiddenTabs={hiddenTabs}
             onTabSelect={onTabSelect}
-            isPulsed={showNotificationRollup && !this.isCalculating && this.shouldPulse(navigationItems)}
+            isPulsed={hasHiddenNotification && !this.isCalculating && this.shouldPulse(hiddenTabs, notifications)}
             isHidden={this.menuHidden}
             activeTabKey={activeTabKey}
             menuRefCallback={this.setMenuRef}
-            showNotificationRollup={showNotificationRollup}
+            showNotificationRollup={hasHiddenNotification}
           />
           <div className={cx(['divider-after-last-tab'])} />
         </div>

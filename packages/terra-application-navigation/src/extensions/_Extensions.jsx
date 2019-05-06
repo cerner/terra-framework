@@ -142,13 +142,13 @@ class Extensions extends React.Component {
           <PopupMenu
             header={<ActionHeader title="Extensions" />}
             menuItems={hiddenItems.map(item => ({
-              key: item.metaData.key,
+              key: item.key,
               icon: item.icon,
               text: item.text,
               notificationCount: item.notificationCount,
             }))}
             onSelectMenuItem={(itemKey) => {
-              const selectedExtension = hiddenItems.find(item => item.metaData.key === itemKey);
+              const selectedExtension = hiddenItems.find(item => item.key === itemKey);
               if (selectedExtension.onSelect) {
                 selectedExtension.onSelect(selectedExtension.metaData);
               }
