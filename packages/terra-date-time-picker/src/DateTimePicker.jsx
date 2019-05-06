@@ -258,7 +258,7 @@ class DateTimePicker extends React.Component {
         updatedDateTime.subtract(1, 'hours');
       }
 
-      // If updatedDateTime is valid, update timeValue (value in the time input) to reflect updatedDateTime since 
+      // If updatedDateTime is valid, update timeValue (value in the time input) to reflect updatedDateTime since
       // it could have subtracted an hour from above to account for the missing hour.
       if (updatedDateTime) {
         this.timeValue = DateTimeUtils.formatISODateTime(updatedDateTime.format(), 'HH:mm');

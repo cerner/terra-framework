@@ -55,7 +55,7 @@ class DateTimeUtils {
 
   /**
    * Synchronize the date and time for a given the base moment object.
-   * Because a moment object must have the date portion, if the provided iSOdate is invalid, 
+   * Because a moment object must have the date portion, if the provided iSOdate is invalid,
    * The base moment object will not synchronize the time if the provided time is invalid.
    * @param {object} momentDate - The moment object to synchronize the date and time.
    * @param {string} iSOdate - The date string to synchronize with the moment object.
@@ -68,7 +68,7 @@ class DateTimeUtils {
     // If the base momentDate is valid, sync the date and time is they are valid.
     if (momentDate && momentDate.isValid()) {
       let tempDate = momentDate.clone();
-      
+
       if (date.isValid()) {
         tempDate.year(date.get('year')).month(date.get('month')).date(date.get('date'));
       }
