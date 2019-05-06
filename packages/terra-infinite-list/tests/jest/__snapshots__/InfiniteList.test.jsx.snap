@@ -2,23 +2,10 @@
 
 exports[`InfiniteList should render a default component 1`] = `
 <Fragment>
-  <List
+  <div
     className="infinite-list"
-    dividerStyle="none"
-    paddingStyle="none"
-    refCallback={[Function]}
-    role="none"
   >
-    <li
-      className="spacer"
-      key="infinite-spacer-0"
-      style={
-        Object {
-          "height": "0px",
-        }
-      }
-    />
-    <li
+    <div
       className="spacer"
       key="infinite-spinner-full"
       style={
@@ -27,7 +14,21 @@ exports[`InfiniteList should render a default component 1`] = `
         }
       }
     />
-    <li
+    <div
+      className="spacer"
+      key="infinite-spacer-0"
+      style={
+        Object {
+          "height": "0px",
+        }
+      }
+    />
+    <List
+      dividerStyle="none"
+      paddingStyle="none"
+      role="none"
+    />
+    <div
       className="spacer"
       key="infinite-spacer-1"
       style={
@@ -36,20 +37,16 @@ exports[`InfiniteList should render a default component 1`] = `
         }
       }
     />
-  </List>
+  </div>
 </Fragment>
 `;
 
 exports[`InfiniteList should render with initial children 1`] = `
 <Fragment>
-  <List
+  <div
     className="infinite-list"
-    dividerStyle="none"
-    paddingStyle="none"
-    refCallback={[Function]}
-    role="none"
   >
-    <li
+    <div
       className="spacer"
       key="infinite-spacer-0"
       style={
@@ -58,83 +55,89 @@ exports[`InfiniteList should render with initial children 1`] = `
         }
       }
     />
-    <ListItem
-      data-infinite-list-index={0}
-      hasChevron={false}
-      isSelectable={false}
-      isSelected={false}
-      key=".$item-1"
-      refCallback={[Function]}
+    <List
+      dividerStyle="none"
+      paddingStyle="none"
+      role="none"
     >
-      <div
-        style={
-          Object {
-            "height": "20px",
-            "width": "100%",
-          }
-        }
+      <ListItem
+        data-infinite-list-index={0}
+        hasChevron={false}
+        isSelectable={false}
+        isSelected={false}
+        key=".$item-1"
+        refCallback={[Function]}
       >
-        item 1
-      </div>
-    </ListItem>
-    <ListItem
-      data-infinite-list-index={1}
-      hasChevron={false}
-      isSelectable={false}
-      isSelected={false}
-      key=".$item-2"
-      refCallback={[Function]}
-    >
-      <div
-        style={
-          Object {
-            "height": "20px",
-            "width": "100%",
+        <div
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
           }
-        }
+        >
+          item 1
+        </div>
+      </ListItem>
+      <ListItem
+        data-infinite-list-index={1}
+        hasChevron={false}
+        isSelectable={false}
+        isSelected={false}
+        key=".$item-2"
+        refCallback={[Function]}
       >
-        item 2
-      </div>
-    </ListItem>
-    <ListItem
-      data-infinite-list-index={2}
-      hasChevron={false}
-      isSelectable={false}
-      isSelected={false}
-      key=".$item-3"
-      refCallback={[Function]}
-    >
-      <div
-        style={
-          Object {
-            "height": "20px",
-            "width": "100%",
+        <div
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
           }
-        }
+        >
+          item 2
+        </div>
+      </ListItem>
+      <ListItem
+        data-infinite-list-index={2}
+        hasChevron={false}
+        isSelectable={false}
+        isSelected={false}
+        key=".$item-3"
+        refCallback={[Function]}
       >
-        item 3
-      </div>
-    </ListItem>
-    <ListItem
-      data-infinite-list-index={3}
-      hasChevron={false}
-      isSelectable={false}
-      isSelected={false}
-      key=".$item-4"
-      refCallback={[Function]}
-    >
-      <div
-        style={
-          Object {
-            "height": "20px",
-            "width": "100%",
+        <div
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
           }
-        }
+        >
+          item 3
+        </div>
+      </ListItem>
+      <ListItem
+        data-infinite-list-index={3}
+        hasChevron={false}
+        isSelectable={false}
+        isSelected={false}
+        key=".$item-4"
+        refCallback={[Function]}
       >
-        item 4
-      </div>
-    </ListItem>
-    <li
+        <div
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
+          }
+        >
+          item 4
+        </div>
+      </ListItem>
+    </List>
+    <div
       className="spacer"
       key="infinite-spacer-1"
       style={
@@ -143,20 +146,16 @@ exports[`InfiniteList should render with initial children 1`] = `
         }
       }
     />
-  </List>
+  </div>
 </Fragment>
 `;
 
 exports[`InfiniteList should render with list props 1`] = `
 <Fragment>
-  <List
+  <div
     className="infinite-list"
-    dividerStyle="standard"
-    paddingStyle="standard"
-    refCallback={[Function]}
-    role="listbox"
   >
-    <li
+    <div
       className="spacer"
       key="infinite-spacer-0"
       style={
@@ -165,83 +164,89 @@ exports[`InfiniteList should render with list props 1`] = `
         }
       }
     />
-    <ListItem
-      data-infinite-list-index={0}
-      hasChevron={false}
-      isSelectable={true}
-      isSelected={false}
-      key=".$item-1"
-      refCallback={[Function]}
+    <List
+      dividerStyle="standard"
+      paddingStyle="standard"
+      role="listbox"
     >
-      <div
-        style={
-          Object {
-            "height": "20px",
-            "width": "100%",
-          }
-        }
+      <ListItem
+        data-infinite-list-index={0}
+        hasChevron={false}
+        isSelectable={true}
+        isSelected={false}
+        key=".$item-1"
+        refCallback={[Function]}
       >
-        item 1
-      </div>
-    </ListItem>
-    <ListItem
-      data-infinite-list-index={1}
-      hasChevron={false}
-      isSelectable={true}
-      isSelected={true}
-      key=".$item-2"
-      refCallback={[Function]}
-    >
-      <div
-        style={
-          Object {
-            "height": "20px",
-            "width": "100%",
+        <div
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
           }
-        }
+        >
+          item 1
+        </div>
+      </ListItem>
+      <ListItem
+        data-infinite-list-index={1}
+        hasChevron={false}
+        isSelectable={true}
+        isSelected={true}
+        key=".$item-2"
+        refCallback={[Function]}
       >
-        item 2
-      </div>
-    </ListItem>
-    <ListItem
-      data-infinite-list-index={2}
-      hasChevron={false}
-      isSelectable={true}
-      isSelected={false}
-      key=".$item-3"
-      refCallback={[Function]}
-    >
-      <div
-        style={
-          Object {
-            "height": "20px",
-            "width": "100%",
+        <div
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
           }
-        }
+        >
+          item 2
+        </div>
+      </ListItem>
+      <ListItem
+        data-infinite-list-index={2}
+        hasChevron={false}
+        isSelectable={true}
+        isSelected={false}
+        key=".$item-3"
+        refCallback={[Function]}
       >
-        item 3
-      </div>
-    </ListItem>
-    <ListItem
-      data-infinite-list-index={3}
-      hasChevron={false}
-      isSelectable={true}
-      isSelected={false}
-      key=".$item-4"
-      refCallback={[Function]}
-    >
-      <div
-        style={
-          Object {
-            "height": "20px",
-            "width": "100%",
+        <div
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
           }
-        }
+        >
+          item 3
+        </div>
+      </ListItem>
+      <ListItem
+        data-infinite-list-index={3}
+        hasChevron={false}
+        isSelectable={true}
+        isSelected={false}
+        key=".$item-4"
+        refCallback={[Function]}
       >
-        item 4
-      </div>
-    </ListItem>
-    <li
+        <div
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
+          }
+        >
+          item 4
+        </div>
+      </ListItem>
+    </List>
+    <div
       className="spacer"
       key="infinite-spacer-1"
       style={
@@ -250,121 +255,112 @@ exports[`InfiniteList should render with list props 1`] = `
         }
       }
     />
-  </List>
+  </div>
 </Fragment>
 `;
 
 exports[`InfiniteList should render with list with style props 1`] = `
-<ul
-  class="list padding-standard divider-standard infinite-list"
-  role="listbox"
+<div
+  class="infinite-list"
 >
-  <li
+  <div
     class="spacer"
     style="height:0px"
   />
-  <li
-    aria-selected="false"
-    class="list-item is-selectable"
-    data-infinite-list-index="0"
-    data-item-show-focus="true"
-    role="option"
-    style="background-color:pink"
-    tabindex="0"
+  <ul
+    class="list padding-standard divider-standard"
+    role="listbox"
   >
-    <div
-      class="item-fill"
+    <li
+      aria-selected="false"
+      class="list-item is-selectable"
+      data-infinite-list-index="0"
+      data-item-show-focus="true"
+      role="option"
+      style="background-color:pink"
+      tabindex="0"
     >
       <div
-        style="height:20px;width:100%"
+        class="item-fill"
       >
-        item 1
+        <div
+          style="height:20px;width:100%"
+        >
+          item 1
+        </div>
       </div>
-    </div>
-  </li>
-  <li
-    aria-selected="true"
-    class="list-item selected is-selectable"
-    data-infinite-list-index="1"
-    data-item-show-focus="true"
-    role="option"
-    style="background-color:red"
-    tabindex="0"
-  >
-    <div
-      class="item-fill"
+    </li>
+    <li
+      aria-selected="true"
+      class="list-item selected is-selectable"
+      data-infinite-list-index="1"
+      data-item-show-focus="true"
+      role="option"
+      style="background-color:red"
+      tabindex="0"
     >
       <div
-        style="height:20px;width:100%"
+        class="item-fill"
       >
-        item 2
+        <div
+          style="height:20px;width:100%"
+        >
+          item 2
+        </div>
       </div>
-    </div>
-  </li>
-  <li
-    aria-selected="false"
-    class="list-item is-selectable"
-    data-infinite-list-index="2"
-    data-item-show-focus="true"
-    role="option"
-    style="background-color:blue"
-    tabindex="0"
-  >
-    <div
-      class="item-fill"
+    </li>
+    <li
+      aria-selected="false"
+      class="list-item is-selectable"
+      data-infinite-list-index="2"
+      data-item-show-focus="true"
+      role="option"
+      style="background-color:blue"
+      tabindex="0"
     >
       <div
-        style="height:20px;width:100%"
+        class="item-fill"
       >
-        item 3
+        <div
+          style="height:20px;width:100%"
+        >
+          item 3
+        </div>
       </div>
-    </div>
-  </li>
-  <li
-    aria-selected="false"
-    class="list-item is-selectable"
-    data-infinite-list-index="3"
-    data-item-show-focus="true"
-    role="option"
-    style="background-color:yellow"
-    tabindex="0"
-  >
-    <div
-      class="item-fill"
+    </li>
+    <li
+      aria-selected="false"
+      class="list-item is-selectable"
+      data-infinite-list-index="3"
+      data-item-show-focus="true"
+      role="option"
+      style="background-color:yellow"
+      tabindex="0"
     >
       <div
-        style="height:20px;width:100%"
+        class="item-fill"
       >
-        item 4
+        <div
+          style="height:20px;width:100%"
+        >
+          item 4
+        </div>
       </div>
-    </div>
-  </li>
-  <li
+    </li>
+  </ul>
+  <div
     class="spacer"
     style="height:0px"
   />
-</ul>
+</div>
 `;
 
 exports[`InfiniteList should render with no children and loading 1`] = `
 <Fragment>
-  <List
+  <div
     className="infinite-list"
-    dividerStyle="none"
-    paddingStyle="none"
-    refCallback={[Function]}
-    role="none"
   >
-    <li
-      className="spacer"
-      key="infinite-spacer-0"
-      style={
-        Object {
-          "height": "0px",
-        }
-      }
-    />
-    <li
+    <div
       className="spacer"
       key="infinite-spinner-full"
       style={
@@ -382,8 +378,22 @@ exports[`InfiniteList should render with no children and loading 1`] = `
           }
         }
       />
-    </li>
-    <li
+    </div>
+    <div
+      className="spacer"
+      key="infinite-spacer-0"
+      style={
+        Object {
+          "height": "0px",
+        }
+      }
+    />
+    <List
+      dividerStyle="none"
+      paddingStyle="none"
+      role="none"
+    />
+    <div
       className="spacer"
       key="infinite-spacer-1"
       style={
@@ -392,6 +402,6 @@ exports[`InfiniteList should render with no children and loading 1`] = `
         }
       }
     />
-  </List>
+  </div>
 </Fragment>
 `;
