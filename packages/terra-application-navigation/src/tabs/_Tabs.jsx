@@ -150,7 +150,7 @@ class Tabs extends React.Component {
     return shouldPulse;
   }
 
-  buildVisibleChildren(visibleTabs, hasNotifications, onTabSelect, activeTabKey) {
+  buildVisibleChildren(visibleTabs, hasNotifications, onTabSelect, activeTabKey, notifications) {
     return visibleTabs.map((tab, index) => {
       const tabProps = {
         text: tab.text,
@@ -158,7 +158,7 @@ class Tabs extends React.Component {
         tabKey: tab.key,
         onTabClick: () => { if (onTabSelect) { onTabSelect(tab.key); } },
         isActive: tab.key === activeTabKey,
-        notificationCount: hasNotifications ? tab.notificationCount : 0,
+        notificationCount: hasNotifications ? notifications[tab.key] : 0,
         hasCount: hasNotifications,
         icon: tab.icon,
       };
@@ -197,7 +197,7 @@ class Tabs extends React.Component {
     const hasHiddenNotification = hiddenTabs.some(tab => !!notifications[tab.key]);
 
     const hasNotifications = hasVisibleNotification || hasHiddenNotification;
-    const visibleChildren = this.buildVisibleChildren(visibleTabs, hasNotifications, onTabSelect, activeTabKey);
+    const visibleChildren = this.buildVisibleChildren(visibleTabs, hasNotifications, onTabSelect, activeTabKey, notifications);
 
     // const showNotificationRollup = hasNotifications && hiddenTabs.some(tab => tab.notificationCount > 0);
 
@@ -218,6 +218,7 @@ class Tabs extends React.Component {
             activeTabKey={activeTabKey}
             menuRefCallback={this.setMenuRef}
             showNotificationRollup={hasHiddenNotification}
+            notifications={notifications}
           />
           <div className={cx(['divider-after-last-tab'])} />
         </div>

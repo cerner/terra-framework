@@ -130,7 +130,7 @@ const navigationConfig2 = {
 };
 
 const notifications = {
-  '/page_3': 63,
+  '/page_3': 61,
 };
 
 const notifications2 = {

@@ -39,6 +39,7 @@ const propTypes = {
   hasCount: PropTypes.bool,
   hiddenTabs: PropTypes.array,
   onTabSelect: PropTypes.func,
+  notifications: PropTypes.object,
 };
 
 const contextTypes = {
@@ -99,7 +100,7 @@ class TabMenu extends React.Component {
     }
   }
 
-  createHiddenTabs() {
+  createHiddenTabs(notifications) {
     return (
       <PopupMenu
         header={<ActionHeader title="Title TBD" />}
@@ -107,7 +108,7 @@ class TabMenu extends React.Component {
           key: tab.key,
           text: tab.text,
           icon: tab.icon,
-          notificationCount: tab.notificationCount,
+          notificationCount: notifications[tab.key],
           isActive: tab.key === this.props.activeTabKey,
         }))}
         onSelectMenuItem={(itemKey) => {
@@ -171,7 +172,7 @@ class TabMenu extends React.Component {
           isOpen={this.state.isOpen}
           isArrowDisplayed
         >
-          {this.createHiddenTabs()}
+          {this.createHiddenTabs(this.props.notifications)}
         </Popup>
       );
     }
