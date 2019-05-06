@@ -5,7 +5,7 @@ import ActionHeader from 'terra-action-header';
 import Popup from 'terra-popup';
 
 import PopupMenu from '../common/_PopupMenu';
-import { extensionConfigPropType } from '../utils/propTypes';
+import { extensionItemsPropType } from '../utils/propTypes';
 import ExtensionRollup from './_ExtensionRollup';
 import Extension from './_Extension';
 import { sliceIndexForBreakpoint } from './_ExtensionUtils';
@@ -22,21 +22,21 @@ const propTypes = {
   /**
    * The extension config for breakpoint display and items.
    */
-  extensionConfig: extensionConfigPropType,
+  extensionItems: extensionItemsPropType,
+  /**
+   * A function to be executed upon selection of a tab.
+   */
+  onSelect: PropTypes.func,
+  notifications: PropTypes.object,
 };
 
 const defaultProps = {
   activeBreakpoint: '',
+  extensionItems: [],
+  notifications: {},
 };
 
-const shouldShowNotifications = (extensionItems) => {
-  for (let i = 0; i < extensionItems.length; i += 1) {
-    if (extensionItems[i].notificationCount > 0) {
-      return true;
-    }
-  }
-  return false;
-};
+const shouldShowNotifications = (extensionItems, notifications) => extensionItems.some(item => !!notifications[item.key]);
 
 class Extensions extends React.Component {
   constructor(props) {
@@ -51,6 +51,11 @@ class Extensions extends React.Component {
 
     this.state = { isOpen: false };
     this.previousNotifications = null;
+  }
+
+  shouldComponentUpdate() {
+    this.previousNotifications = this.props.notifications;
+    return true;
   }
 
   setButtonNode(node) {
@@ -69,29 +74,21 @@ class Extensions extends React.Component {
     this.setState({ isOpen: true });
   }
 
-  shouldPulse(extensions) {
+  shouldPulse(extensionItems, notifications) {
     let shouldPulse = false;
 
-    const newNotifications = extensions.reduce((acc, item, index) => {
-      if (item.notificationCount > 0) {
-        acc[item.key] = { count: item.notificationCount, isHidden: index >= this.hiddenStartIndex };
-      }
-      return acc;
-    }, []);
-
     if (this.previousNotifications) {
-      const notificationKeys = Object.keys(newNotifications);
-      for (let i = 0; i < notificationKeys.length; i += 1) {
-        const previousCount = this.previousNotifications[notificationKeys[i]];
-        const newCount = newNotifications[notificationKeys[i]];
-        if (newCount.isHidden && (!previousCount || newCount.count > previousCount.count)) {
+      for (let i = 0; i < extensionItems.length; i += 1) {
+        const item = extensionItems[i];
+        const previousCount = this.previousNotifications[item.key];
+        const newCount = notifications[item.key];
+        if (newCount && (!previousCount || newCount > previousCount)) {
           shouldPulse = true;
           break;
         }
       }
     }
 
-    this.previousNotifications = newNotifications;
     return shouldPulse;
   }
 
@@ -99,12 +96,13 @@ class Extensions extends React.Component {
     if (!hiddenItems || !hiddenItems.length) {
       return null;
     }
+    const showNotifications = shouldShowNotifications(hiddenItems, this.props.notifications);
     return (
       <ExtensionRollup
         onSelect={this.handleRollupSelect}
         refCallback={this.setButtonNode}
-        hasChildNotifications={shouldShowNotifications(hiddenItems)}
-        isPulsed={this.shouldPulse(this.props.extensionConfig.extensions)}
+        hasChildNotifications={showNotifications}
+        isPulsed={showNotifications && this.shouldPulse(this.props.extensionItems, this.props.notifications)}
       />
     );
   }
@@ -112,21 +110,19 @@ class Extensions extends React.Component {
   render() {
     const {
       activeBreakpoint,
-      extensionConfig,
+      extensionItems,
+      notifications,
+      onSelect,
     } = this.props;
-
-    if (!extensionConfig) {
-      return null;
-    }
 
     let attachmentSpread;
     if (shouldRenderCompactNavigation(activeBreakpoint)) {
       attachmentSpread = { contentAttachment: 'top right', targetAttachment: 'bottom center' };
     }
 
-    const sliceIndex = sliceIndexForBreakpoint(activeBreakpoint, extensionConfig);
-    const visibleItems = extensionConfig.extensions.slice(0, sliceIndex);
-    const hiddenItems = extensionConfig.extensions.slice(sliceIndex);
+    const sliceIndex = sliceIndexForBreakpoint(activeBreakpoint, extensionItems);
+    const visibleItems = extensionItems.slice(0, sliceIndex);
+    const hiddenItems = extensionItems.slice(sliceIndex);
 
     return (
       <React.Fragment>
@@ -145,12 +141,12 @@ class Extensions extends React.Component {
               key: item.key,
               icon: item.icon,
               text: item.text,
-              notificationCount: item.notificationCount,
+              notificationCount: notifications[item.key],
             }))}
             onSelectMenuItem={(itemKey) => {
               const selectedExtension = hiddenItems.find(item => item.key === itemKey);
-              if (selectedExtension.onSelect) {
-                selectedExtension.onSelect(selectedExtension.metaData);
+              if (onSelect) {
+                onSelect(itemKey, selectedExtension.metaData);
               }
               this.handleRequestClose();
             }}
@@ -159,12 +155,13 @@ class Extensions extends React.Component {
         <div className={cx('extensions-row')}>
           {visibleItems.map(item => (
             <Extension
-              notificationCount={item.notificationCount}
-              key={item.metaData.key}
+              notificationCount={notifications[item.key]}
+              key={item.key}
+              extensionKey={item.key}
               icon={item.icon}
               text={item.text}
               metaData={item.metaData}
-              onSelect={item.onSelect}
+              onSelect={onSelect}
               onRequestClose={this.handleRequestClose}
             />
           ))}

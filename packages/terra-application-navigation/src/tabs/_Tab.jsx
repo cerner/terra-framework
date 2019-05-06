@@ -17,6 +17,10 @@ const propTypes = {
    */
   text: PropTypes.string.isRequired,
   /**
+   * Meta data to be returned in the onSelect callback.
+   */
+  metaData: PropTypes.object,
+  /**
    * The click callback of the tab.
    */
   onTabClick: PropTypes.func,
@@ -40,10 +44,6 @@ const propTypes = {
    * Boolean indicating whether or not the Tab should account for count spacing.
    */
   hasCount: PropTypes.bool,
-  /**
-   * An option icon for tab.
-   */
-  icon: PropTypes.element,
   /**
    * Render prop for dynamic tab contents.
    */
@@ -80,7 +80,7 @@ class Tab extends React.Component {
 
   handleOnClick() {
     if (this.props.onTabClick) {
-      this.props.onTabClick(this.props.tabKey);
+      this.props.onTabClick(this.props.tabKey, this.props.metaData);
     }
   }
 
@@ -88,7 +88,7 @@ class Tab extends React.Component {
     const {
       text,
       hasCount,
-      icon,
+      metaData,
       isActive,
       isPlaceholder,
       refCallback,
@@ -107,7 +107,7 @@ class Tab extends React.Component {
         render({
           text,
           hasCount,
-          icon,
+          metaData,
           isActive,
           notificationCount,
         })

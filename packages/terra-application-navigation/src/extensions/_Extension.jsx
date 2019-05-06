@@ -8,6 +8,7 @@ import Count from './_ExtensionCount';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  extensionKey: PropTypes.string,
   /**
    * The icon to display for the associated extension action.
    */
@@ -44,6 +45,7 @@ const defaultProps = {
 };
 
 const Extension = ({
+  extensionKey,
   notificationCount,
   icon,
   text,
@@ -52,8 +54,8 @@ const Extension = ({
   onSelect,
   refCallback,
 }) => {
-  const keyDown = createKeyDown(onRequestClose, onSelect, metaData);
-  const onClick = createOnClick(onRequestClose, onSelect, metaData);
+  const keyDown = createKeyDown(onRequestClose, onSelect, extensionKey, metaData);
+  const onClick = createOnClick(onRequestClose, onSelect, extensionKey, metaData);
 
   return (
     <div

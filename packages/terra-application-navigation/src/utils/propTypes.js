@@ -15,53 +15,66 @@ const userConfigPropType = PropTypes.shape({
   imageSrc: PropTypes.string,
 });
 
-const navigationConfigPropType = PropTypes.shape({
-  hasNotifications: PropTypes.bool,
-  navigationItems: PropTypes.arrayOf(PropTypes.shape({
-    key: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-    notificationCount: PropTypes.number,
-    renderFunction: PropTypes.func,
-    icon: PropTypes.element,
-  })),
-});
+const navigationItemsPropType = PropTypes.arrayOf(PropTypes.shape({
+  /**
+   * Key matching the notification key, used as react key, and returned in the onSelect
+   */
+  key: PropTypes.string.isRequired,
+  /**
+   * Object to be returned in the onSelect
+   */
+  metaData: PropTypes.object,
+  /**
+   * Text display and/or aria-label
+   */
+  text: PropTypes.string.isRequired,
+}));
 
 const utilityItemsPropType = PropTypes.arrayOf(PropTypes.shape({
-  key: PropTypes.string.isRequired,
+  /**
+   * Icon to be rendered
+   */
   icon: PropTypes.element,
+  /**
+   * Key used as react key, and returned in the onSelect
+   */
+  key: PropTypes.string.isRequired,
+  /**
+   * Object to be returned in the onSelect
+   */
+  metaData: PropTypes.object,
+  /**
+   * Text display and/or aria-label
+   */
   text: PropTypes.string.isRequired,
 }));
 
 /**
  * Shape for ApplicationLayout's 'extensionConfig' prop.
  */
-const extensionConfigPropType = PropTypes.shape({
-  extensions: PropTypes.arrayOf(PropTypes.shape({
-    key: PropTypes.string.isRequired,
-    /**
-     * Image to be rendered
-     */
-    icon: PropTypes.element.isRequired,
-    /**
-     * Object to be returned in the onSelect
-     */
-    metaData: PropTypes.object,
-    /**
-     * Selection callback to return onSelect(event, metaData)
-     */
-    onSelect: PropTypes.func,
-    /**
-     * Text display and/or aria-label
-     */
-    text: PropTypes.string.isRequired,
-    notificationCount: PropTypes.number,
-  })),
-});
+const extensionItemsPropType = PropTypes.arrayOf(PropTypes.shape({
+  /**
+   * Icon to be rendered
+   */
+  icon: PropTypes.element.isRequired,
+  /**
+   * Key matching the notification key, used as react key, and returned in the onSelect
+   */
+  key: PropTypes.string.isRequired,
+  /**
+   * Object to be returned in the onSelect
+   */
+  metaData: PropTypes.object,
+  /**
+   * Text display and/or aria-label
+   */
+  text: PropTypes.string.isRequired,
+}));
 
 export default {
-  titleConfigPropType, userConfigPropType, navigationConfigPropType, utilityItemsPropType, extensionConfigPropType,
+  titleConfigPropType, userConfigPropType, navigationItemsPropType, utilityItemsPropType, extensionItemsPropType,
 };
 
 export {
-  titleConfigPropType, userConfigPropType, navigationConfigPropType, utilityItemsPropType, extensionConfigPropType,
+  titleConfigPropType, userConfigPropType, navigationItemsPropType, utilityItemsPropType, extensionItemsPropType,
 };

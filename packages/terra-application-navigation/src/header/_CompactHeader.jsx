@@ -4,8 +4,10 @@ import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';
 import IconMenu from 'terra-icon/lib/icon/IconMenu';
 import ToggleCount from './_ToggleCount';
+import Extensions from '../extensions/_Extensions';
 import {
-  navigationConfigPropType,
+  navigationItemsPropType,
+  extensionItemsPropType,
 } from '../utils/propTypes';
 
 import styles from './CompactHeader.module.scss';
@@ -20,13 +22,20 @@ const propTypes = {
     subline: PropTypes.string,
     element: PropTypes.element,
   }),
-  extensions: PropTypes.element,
+  extensionItems: extensionItemsPropType,
+  onSelectExtensionItem: PropTypes.func,
   onSelectSkipToContent: PropTypes.func,
   intl: intlShape,
   /**
    * Array of navigation items to render within the Header.
    */
-  navigationConfig: navigationConfigPropType,
+  navigationItems: navigationItemsPropType,
+  notifications: PropTypes.object,
+  /**
+   * @private
+   * The currently active breakpoint.
+   */
+  activeBreakpoint: PropTypes.string,
 };
 
 class CompactHeader extends React.Component {
@@ -39,39 +48,36 @@ class CompactHeader extends React.Component {
     this.previousNotifications = null;
   }
 
-  shouldPulse(navigationItems) {
+  shouldComponentUpdate() {
+    this.previousNotifications = this.props.notifications;
+    return true;
+  }
+
+  shouldPulse(navigationItems, notifications) {
     let shouldPulse = false;
 
-    const newNotifications = navigationItems.reduce((acc, item) => {
-      if (item.notificationCount > 0) {
-        acc[item.key] = item.notificationCount;
-      }
-      return acc;
-    }, []);
-
     if (this.previousNotifications) {
-      const notificationKeys = Object.keys(newNotifications);
-      for (let i = 0; i < notificationKeys.length; i += 1) {
-        const previousCount = this.previousNotifications[notificationKeys[i]];
-        const newCount = newNotifications[notificationKeys[i]];
-        if (!previousCount || newCount > previousCount) {
+      for (let i = 0; i < navigationItems.length; i += 1) {
+        const item = navigationItems[i];
+        const previousCount = this.previousNotifications[item.key];
+        const newCount = notifications[item.key];
+        if (newCount && (!previousCount || newCount > previousCount)) {
           shouldPulse = true;
           break;
         }
       }
     }
 
-    this.previousNotifications = newNotifications;
     return shouldPulse;
   }
 
   renderToggle() {
     const {
-      intl, navigationConfig, onSelectToggle,
+      intl, navigationItems, onSelectToggle, notifications,
     } = this.props;
 
-    const headerHasAnyCounts = navigationConfig.navigationItems.some(({ notificationCount }) => notificationCount > 0);
-    const isPulsed = this.shouldPulse(navigationConfig.navigationItems);
+    const headerHasCounts = navigationItems.some(item => !!notifications[item.key]);
+    const isPulsed = headerHasCounts && this.shouldPulse(navigationItems, notifications);
 
     return (
       <button
@@ -88,7 +94,7 @@ class CompactHeader extends React.Component {
         }}
       >
         <IconMenu />
-        {headerHasAnyCounts && <ToggleCount value={isPulsed ? 1 : 0} />}
+        {headerHasCounts && <ToggleCount value={isPulsed ? 1 : 0} />}
       </button>
     );
   }
@@ -117,10 +123,28 @@ class CompactHeader extends React.Component {
     );
   }
 
+  renderExtensions() {
+    const {
+      extensionItems, activeBreakpoint, onSelectExtensionItem, notifications,
+    } = this.props;
+
+    if (!extensionItems || !extensionItems.length) {
+      return null;
+    }
+
+    return (
+      <Extensions
+        extensionItems={extensionItems}
+        activeBreakpoint={activeBreakpoint}
+        onSelect={onSelectExtensionItem}
+        notifications={notifications}
+      />
+    );
+  }
+
   render() {
     const {
       onSelectSkipToContent,
-      extensions,
       intl,
     } = this.props;
 
@@ -134,7 +158,7 @@ class CompactHeader extends React.Component {
           {this.renderAppName()}
         </div>
         <div className={cx('extensions-container')}>
-          {extensions}
+          {this.renderExtensions()}
         </div>
       </div>
     );

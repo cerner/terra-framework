@@ -9,7 +9,7 @@ import DrawerMenuListItem from './_DrawerMenuListItem';
 import DrawerMenuUser from './_DrawerMenuUser';
 import DrawerMenuFooterButton from './_DrawerMenuFooterButton';
 import {
-  titleConfigPropType, userConfigPropType, navigationConfigPropType, utilityItemsPropType,
+  titleConfigPropType, userConfigPropType, navigationItemsPropType, utilityItemsPropType,
 } from '../utils/propTypes';
 
 import styles from './DrawerMenu.module.scss';
@@ -32,7 +32,7 @@ const propTypes = {
   /**
    * An array of configuration objects with information specifying the creation of navigation items.
    */
-  navigationConfig: navigationConfigPropType,
+  navigationItems: navigationItemsPropType,
   /**
    * A string key representing the currently active navigation item. This value should match one of the item keys provided in the
    * `navigationItems` array.
@@ -70,23 +70,23 @@ const propTypes = {
    * Ex: `onSelectUtilityItem(String selectedUtilityItemKey)`
    */
   onSelectUtilityItem: PropTypes.func,
+  notifications: PropTypes.object,
 };
 
 const defaultProps = {
-  navigationConfig: {},
+  navigationItems: [],
   utilityItems: [],
 };
 
 const DrawerMenu = ({
-  titleConfig, userConfig, hero, navigationConfig, activeNavigationItemKey, onSelectNavigationItem, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem,
+  titleConfig, userConfig, hero, navigationItems, activeNavigationItemKey, onSelectNavigationItem, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem, notifications,
 }) => {
   const titleComponent = titleConfig && !(titleConfig.element || titleConfig.hideTitleWithinDrawerMenu) ? <DrawerMenuTitle titleConfig={titleConfig} /> : undefined;
   const userComponent = userConfig ? <DrawerMenuUser userConfig={userConfig} variant={hero ? 'small' : 'large'} /> : undefined;
   const logoutButton = onSelectLogout ? <DrawerMenuFooterButton onClick={onSelectLogout} text="Logout" /> : undefined;
-  const navigationItems = !navigationConfig.navigationItems ? [] : navigationConfig.navigationItems;
 
   return (
-    <div className={cx('drawer-menu')} tabIndex="-1">
+    <div className={cx('drawer-menu')} tabIndex="0">
       <div className={cx('vertical-overflow-container')}>
         <div className={cx('header')}>
           <div className={cx('header-background-fill')}>
@@ -100,7 +100,7 @@ const DrawerMenu = ({
             <DrawerMenuListItem
               key={item.key}
               text={item.text}
-              notificationCount={item.notificationCount}
+              notificationCount={notifications[item.key]}
               onSelect={onSelectNavigationItem && onSelectNavigationItem.bind(null, item.key)}
               isSelected={item.key === activeNavigationItemKey}
               icon={item.icon}

@@ -3,33 +3,28 @@ const KEYCODES = {
   SPACE: 32,
 };
 
-const EXTENSION_COUNT = {
-  LARGE: 3,
-  SMALL: 1,
-};
-
-const createKeyDown = (onRequestClose, onSelect, metaData) => (
+const createKeyDown = (onRequestClose, onSelect, extensionKey, metaData) => (
   (event) => {
     if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
       event.preventDefault();
       if (onRequestClose) {
         onRequestClose();
       }
-      onSelect(metaData);
+      onSelect(extensionKey, metaData);
     }
   }
 );
 
-const createOnClick = (onRequestClose, onSelect, metaData) => (
+const createOnClick = (onRequestClose, onSelect, extensionKey, metaData) => (
   () => {
     if (onRequestClose) {
       onRequestClose();
     }
-    onSelect(metaData);
+    onSelect(extensionKey, metaData);
   }
 );
 
-const sliceIndexForBreakpoint = (activeBreakpoint, extensionConfig) => {
+const sliceIndexForBreakpoint = (activeBreakpoint, extensionItems) => {
   let sliceIndex;
   if (activeBreakpoint === 'enormous') {
     sliceIndex = 4;
@@ -38,11 +33,11 @@ const sliceIndexForBreakpoint = (activeBreakpoint, extensionConfig) => {
   } else if (activeBreakpoint === 'large') {
     sliceIndex = 2;
   } else {
-    sliceIndex = EXTENSION_COUNT.SMALL;
+    sliceIndex = 1;
   }
 
-  if (extensionConfig.extensions.length <= sliceIndex + 1) {
-    sliceIndex = extensionConfig.extensions.length;
+  if (extensionItems.length <= sliceIndex + 1) {
+    sliceIndex = extensionItems.length;
   }
   return sliceIndex;
 };
@@ -51,5 +46,4 @@ export {
   createKeyDown,
   createOnClick,
   sliceIndexForBreakpoint,
-  EXTENSION_COUNT,
 };

@@ -23,20 +23,20 @@ import heroImage from './hero.jpg';
 import heroCloseupImage from './heroCloseup.jpg';
 import desktopTitleImage from './desktop-title-img.png';
 
-const myRenderFunction = () => (
-  <div style={{
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '0 10px',
-  }}
-  >
-    <IconVisualization />
-    <span style={{ marginTop: '3px' }}>Im Custom</span>
-  </div>
-);
+// const myRenderFunction = () => (
+//   <div style={{
+//     height: '100%',
+//     display: 'flex',
+//     flexDirection: 'column',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//     padding: '0 10px',
+//   }}
+//   >
+//     <IconVisualization />
+//     <span style={{ marginTop: '3px' }}>Im Custom</span>
+//   </div>
+// );
 
 const singleTitleConfig = {
   title: 'Test Application',
@@ -70,8 +70,8 @@ const titleConfigs = [
   elementTitleConfig,
 ];
 
-const navigationConfig = {
-  navigationItems: [{
+const navigationItems = [
+  {
     key: '/page_1',
     text: 'Page 1',
   }, {
@@ -83,54 +83,46 @@ const navigationConfig = {
   }, {
     key: '/page_4',
     text: 'Im Custom',
-    icon: <IconVisualization />,
-    renderFunction: myRenderFunction,
   }, {
     key: '/page_5',
     text: 'Page 5',
-    // notificationCount: 5,
   }, {
     key: '/page_6',
     text: 'Page 6',
   }, {
     key: '/page_7',
     text: 'Page 7Page 7Page 7',
-  }],
-};
+  },
+];
 
-const navigationConfig2 = {
-  hasNotifications: true,
-  navigationItems: [{
+const navigationItems2 = [
+  {
     key: '/page_1',
     text: 'Page 1',
-    notificationCount: 1000,
   }, {
     key: '/page_2',
     text: 'Page 2',
-    notificationCount: 1,
   }, {
     key: '/page_3',
     text: 'Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3',
-    notificationCount: 65,
   }, {
     key: '/page_4',
     text: 'Page 4',
-    renderFunction: myRenderFunction,
   }, {
     key: '/page_5',
     text: 'Page 5',
-    notificationCount: 6,
   }, {
     key: '/page_6',
     text: 'Page 6',
   }, {
     key: '/page_7',
     text: 'Page 7Page 7Page 7',
-  }],
-};
+  },
+];
 
 const notifications = {
   '/page_3': 61,
+  Pill: 1,
 };
 
 const notifications2 = {
@@ -138,6 +130,8 @@ const notifications2 = {
   '/page_2': 1,
   '/page_3': 65,
   '/page_5': 6,
+  Calculator: 2,
+  Pill: 3,
 };
 
 const userConfig = {
@@ -162,7 +156,6 @@ const utilityItems = [{
 
 class ApplicationNavigationTest extends React.Component {
   static getActiveNavigationItem(location) {
-    const { navigationItems } = navigationConfig;
     for (let i = 0, numberOfNavigationItems = navigationItems.length; i < numberOfNavigationItems; i += 1) {
       if (matchPath(location.pathname, navigationItems[i].key)) {
         return navigationItems[i];
@@ -195,9 +188,27 @@ class ApplicationNavigationTest extends React.Component {
     };
   }
 
-  handleExtensionSelect(metaData) {
-    const { disclosureManager } = this.props;
+  handleExtensionSelect(key, metaData) {
+    if (key === 'Search') {
+      this.setState(prevState => ({
+        useItems2: !prevState.useItems2,
+      }));
+      return;
+    }
 
+    if (key === 'Pill') {
+      this.setState(prevState => ({
+        titleConfigIndex: (prevState.titleConfigIndex + 1) % titleConfigs.length,
+      }));
+      return;
+    }
+
+    if (key === 'Lightbulb') {
+      document.documentElement.style.fontSize = '28px';
+      return;
+    }
+
+    const { disclosureManager } = this.props;
     disclosureManager.disclose({
       preferredType: 'modal',
       content: {
@@ -283,67 +294,48 @@ class ApplicationNavigationTest extends React.Component {
       return <Redirect to="/page_1" />;
     }
 
-    const extensionConfig = {
-      extensions: [
-        {
-          icon: <IconSearch />,
-          metaData: { key: 'Search' },
-          onSelect: () => {
-            this.setState(prevState => ({
-              useItems2: !prevState.useItems2,
-            }));
-          },
-          text: 'Search',
-          key: 'Search',
-        },
-        {
-          icon: <IconPill />,
-          metaData: { key: 'Pill' },
-          onSelect: () => {
-            this.setState(prevState => ({
-              titleConfigIndex: (prevState.titleConfigIndex + 1) % titleConfigs.length,
-            }));
-          },
-          text: 'Pill',
-          notificationCount: 100,
-          key: 'Pill',
-        },
-        {
-          icon: <IconVisualization />,
-          metaData: { key: 'Visualization' },
-          text: 'Visualization',
-          type: 'popup',
-          content: <div>Im a Popup</div>,
-          key: 'Visualization',
-        },
-        {
-          icon: <IconLightbulb />,
-          metaData: { key: 'Lightbulb' },
-          onSelect: (() => { document.documentElement.style.fontSize = '28px'; }),
-          text: 'Lightbulb',
-          key: 'Lightbulb',
-        },
-        {
-          icon: <IconCalculator />,
-          metaData: { key: 'Calculator' },
-          onSelect: this.handleExtensionSelect,
-          text: 'Calculator',
-          key: 'Calculator',
-        },
-        {
-          icon: <IconTrophy />,
-          metaData: { key: 'Trophy' },
-          onSelect: this.handleExtensionSelect,
-          text: 'Trophy',
-          notificationCount: 5,
-          key: 'Trophy',
-        },
-      ],
-    };
+    const extensionItems = [
+      {
+        icon: <IconSearch />,
+        metaData: { key: 'Search' },
+        text: 'Search',
+        key: 'Search',
+      },
+      {
+        icon: <IconPill />,
+        metaData: { key: 'Pill' },
+        text: 'Pill',
+        key: 'Pill',
+      },
+      {
+        icon: <IconVisualization />,
+        metaData: { key: 'Visualization' },
+        text: 'Visualization',
+        key: 'Visualization',
+      },
+      {
+        icon: <IconLightbulb />,
+        metaData: { key: 'Lightbulb' },
+        text: 'Lightbulb',
+        key: 'Lightbulb',
+      },
+      {
+        icon: <IconCalculator />,
+        metaData: { key: 'Calculator' },
+        text: 'Calculator',
+        key: 'Calculator',
+      },
+      {
+        icon: <IconTrophy />,
+        metaData: { key: 'Trophy' },
+        text: 'Trophy',
+        key: 'Trophy',
+      },
+    ];
 
-    let itemToUse = navigationConfig;
+    let itemToUse = navigationItems;
     if (this.state.useItems2) {
-      itemToUse = navigationConfig2;
+      itemToUse = navigationItems2;
     }
 
     let notificationsToUse = notifications;
@@ -354,11 +346,12 @@ class ApplicationNavigationTest extends React.Component {
     return (
       <ApplicationNavigation
         titleConfig={titleConfigs[this.state.titleConfigIndex]}
-        extensionConfig={extensionConfig}
+        extensionItems={extensionItems}
+        onSelectExtensionItem={this.handleExtensionSelect}
         userConfig={!hideUser ? userConfig : undefined}
         drawerMenuHero={!hideHero ? drawerMenuHero : undefined}
         utilityMenuHero={!hideHero ? utilityMenuHero : undefined}
-        navigationConfig={!hideNavigationItems ? itemToUse : undefined}
+        navigationItems={!hideNavigationItems ? itemToUse : undefined}
         activeNavigationItemKey={activeNavigationItem.key}
         onSelectNavigationItem={!hideNavigationItems ? this.handleNavigationItemSelection : null}
         onSelectSettings={!hideSettings ? this.handleSettingsSelection : undefined}

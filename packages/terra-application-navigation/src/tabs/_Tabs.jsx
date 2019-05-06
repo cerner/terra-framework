@@ -7,7 +7,7 @@ import Tab from './_Tab';
 import TabMenu from './_TabMenu';
 import styles from './Tabs.module.scss';
 import {
-  navigationConfigPropType,
+  navigationItemsPropType,
 } from '../utils/propTypes';
 
 const cx = classNames.bind(styles);
@@ -16,7 +16,8 @@ const propTypes = {
   /**
    * Array of objects representing the tabs.
    */
-  navigationConfig: navigationConfigPropType,
+  navigationItems: navigationItemsPropType,
+  navigationRenderFunction: PropTypes.func,
   /**
    * A string identifying the currently active tab.
    */
@@ -53,7 +54,7 @@ class Tabs extends React.Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    if (this.props.navigationConfig.navigationItems.length !== nextProps.navigationConfig.navigationItems.length || this.props.activeTabKey !== nextProps.activeTabKey) {
+    if (this.props.navigationItems.length !== nextProps.navigationItems.length || this.props.activeTabKey !== nextProps.activeTabKey) {
       this.resetCalculations();
     }
     this.previousNotifications = this.props.notifications;
@@ -109,8 +110,7 @@ class Tabs extends React.Component {
 
   handleResize(width) {
     // Calculate hide index
-    const { navigationItems } = this.props.navigationConfig;
-    const childrenCount = navigationItems.length;
+    const childrenCount = this.props.navigationItems.length;
     const moreWidth = width - this.getMoreWidth();
     let newHideIndex = childrenCount;
     let isMenuHidden = true;
@@ -160,12 +160,12 @@ class Tabs extends React.Component {
         isActive: tab.key === activeTabKey,
         notificationCount: hasNotifications ? notifications[tab.key] : 0,
         hasCount: hasNotifications,
-        icon: tab.icon,
+        metaData: tab.metaData,
       };
       if (this.isCalculating) {
         tabProps.refCallback = ref => this.setChildRef(ref, index);
       }
-      return <Tab {...tabProps} render={tab.renderFunction} />;
+      return <Tab {...tabProps} render={this.props.navigationRenderFunction} />;
     });
   }
 
@@ -184,13 +184,12 @@ class Tabs extends React.Component {
 
   render() {
     const {
-      navigationConfig,
+      navigationItems,
       activeTabKey,
       onTabSelect,
       notifications,
     } = this.props;
 
-    const { navigationItems } = navigationConfig;
     const { visibleTabs, hiddenTabs } = this.sliceTabs(navigationItems);
 
     const hasVisibleNotification = visibleTabs.some(tab => !!notifications[tab.key]);
@@ -198,8 +197,6 @@ class Tabs extends React.Component {
 
     const hasNotifications = hasVisibleNotification || hasHiddenNotification;
     const visibleChildren = this.buildVisibleChildren(visibleTabs, hasNotifications, onTabSelect, activeTabKey, notifications);
-
-    // const showNotificationRollup = hasNotifications && hiddenTabs.some(tab => tab.notificationCount > 0);
 
     return (
       <div className={cx(['tabs-wrapper'])} ref={this.setContainerNode}>

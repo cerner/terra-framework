@@ -5,26 +5,17 @@ import Overlay from 'terra-overlay';
 import { Breakpoints } from 'terra-application';
 import FocusTrap from 'focus-trap-react';
 
-import Extensions from './extensions/_Extensions';
 import Header from './header/_Header';
 import CompactHeader from './header/_CompactHeader';
 import DrawerMenu from './drawer-menu/_DrawerMenu';
 import { shouldRenderCompactNavigation } from './utils/helpers';
 import {
-  titleConfigPropType, userConfigPropType, navigationConfigPropType, extensionConfigPropType, utilityItemsPropType,
+  titleConfigPropType, userConfigPropType, navigationItemsPropType, extensionItemsPropType, utilityItemsPropType,
 } from './utils/propTypes';
 
 import styles from './ApplicationNavigation.module.scss';
 
 const cx = classNames.bind(styles);
-
-const createExtensions = (extensionConfig, activeBreakpoint, notifications) => (
-  <Extensions
-    extensionConfig={extensionConfig}
-    activeBreakpoint={activeBreakpoint}
-    notifications={notifications}
-  />
-);
 
 const propTypes = {
   notifications: PropTypes.object,
@@ -33,7 +24,12 @@ const propTypes = {
    * A configuration object with information specifying the creation of the Extension buttons rendered within the
    * ApplicationNavigation header.
    */
-  extensionConfig: extensionConfigPropType,
+  extensionItems: extensionItemsPropType,
+  /**
+   * A function to be executed upon the selection of an extensions item.
+   * Ex: `onSelectExtensionsItem(String selectedUtilityItemKey, Object metaData)`
+   */
+  onSelectExtensionItem: PropTypes.func, // eslint-disable-line react/no-unused-prop-types
   /**
    * A configuration object with information pertaining to the application's user.
    */
@@ -50,7 +46,11 @@ const propTypes = {
    * An array of configuration objects with information specifying the creation of navigation items. These items
    * are rendered within the ApplicationNavigation header at larger breakpoints and within the drawer menu at smaller breakpoints.
    */
-  navigationConfig: navigationConfigPropType,
+  navigationItems: navigationItemsPropType,
+  /**
+   * A function to be executed for the render of a navigation item.
+   */
+  navigationRenderFunction: PropTypes.func,
   /**
    * A string key representing the currently active navigation item. This value should match one of the item keys provided in the
    * `navigationItems` array.
@@ -221,7 +221,7 @@ class ApplicationNavigation extends React.Component {
       titleConfig,
       userConfig,
       drawerMenuHero,
-      navigationConfig,
+      navigationItems,
       activeNavigationItemKey,
       onSelectSettings,
       onSelectHelp,
@@ -251,7 +251,7 @@ class ApplicationNavigation extends React.Component {
           titleConfig={titleConfig}
           userConfig={userConfig}
           hero={drawerMenuHero}
-          navigationConfig={navigationConfig}
+          navigationItems={navigationItems}
           activeNavigationItemKey={activeNavigationItemKey}
           onSelectNavigationItem={this.handleNavigationItemSelection}
           onSelectSettings={onSelectSettings ? this.handleSettingsSelection : undefined}
@@ -268,8 +268,10 @@ class ApplicationNavigation extends React.Component {
   renderHeader() {
     const {
       titleConfig,
-      navigationConfig,
-      extensionConfig,
+      navigationItems,
+      navigationRenderFunction,
+      extensionItems,
+      onSelectExtensionItem,
       activeBreakpoint,
       activeNavigationItemKey,
       userConfig,
@@ -280,13 +282,14 @@ class ApplicationNavigation extends React.Component {
       utilityItems,
       notifications,
     } = this.props;
-
     if (shouldRenderCompactNavigation(activeBreakpoint)) {
       return (
         <CompactHeader
+          activeBreakpoint={activeBreakpoint}
           titleConfig={titleConfig}
-          extensions={createExtensions(extensionConfig, activeBreakpoint, notifications)}
-          navigationConfig={navigationConfig}
+          extensionItems={extensionItems}
+          onSelectExtensionItem={onSelectExtensionItem}
+          navigationItems={navigationItems}
           onSelectToggle={this.handleMenuToggle}
           onSelectSkipToContent={this.handleSkipToContent}
           notifications={notifications}
@@ -296,9 +299,12 @@ class ApplicationNavigation extends React.Component {
 
     return (
       <Header
+        activeBreakpoint={activeBreakpoint}
         titleConfig={titleConfig}
-        extensions={createExtensions(extensionConfig, activeBreakpoint, notifications)}
-        navigationConfig={navigationConfig}
+        extensionItems={extensionItems}
+        onSelectExtensionItem={onSelectExtensionItem}
+        navigationItems={navigationItems}
+        navigationRenderFunction={navigationRenderFunction}
         activeNavigationItemKey={activeNavigationItemKey}
         onSelectNavigationItem={this.handleNavigationItemSelection}
         onMenuToggle={this.handleMenuToggle}

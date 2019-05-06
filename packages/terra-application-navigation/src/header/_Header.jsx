@@ -6,10 +6,11 @@ import { injectIntl, intlShape } from 'react-intl';
 
 import Tab from '../tabs/_Tab';
 import Tabs from '../tabs/_Tabs';
+import Extensions from '../extensions/_Extensions';
 import UtilityMenuHeaderButton from '../utility-menu/_UtilityMenuHeaderButton';
 import UtilityMenu from '../utility-menu/_UtilityMenu';
 import {
-  userConfigPropType, navigationConfigPropType, utilityItemsPropType,
+  userConfigPropType, navigationItemsPropType, extensionItemsPropType, utilityItemsPropType,
 } from '../utils/propTypes';
 
 import styles from './Header.module.scss';
@@ -26,7 +27,8 @@ const propTypes = {
   /**
    * Array of navigation items to render within the Header.
    */
-  navigationConfig: navigationConfigPropType,
+  navigationItems: navigationItemsPropType,
+  navigationRenderFunction: PropTypes.func,
   /**
    * The string identifying the currently active navigation item.
    */
@@ -38,7 +40,8 @@ const propTypes = {
   /**
    * The element to be placed within the fit start area for extensions within the layout.
    */
-  extensions: PropTypes.element,
+  extensionItems: extensionItemsPropType,
+  onSelectExtensionItem: PropTypes.func,
   userConfig: userConfigPropType,
   hero: PropTypes.element,
   utilityItems: utilityItemsPropType,
@@ -48,6 +51,12 @@ const propTypes = {
   onSelectLogout: PropTypes.func,
   onSelectSkipToContent: PropTypes.func,
   intl: intlShape,
+  notifications: PropTypes.object,
+  /**
+   * @private
+   * The currently active breakpoint.
+   */
+  activeBreakpoint: PropTypes.string,
 };
 
 class Header extends React.Component {
@@ -118,18 +127,38 @@ class Header extends React.Component {
 
   renderNavigationTabs() {
     const {
-      navigationConfig, activeNavigationItemKey, onSelectNavigationItem, notifications,
+      navigationItems, navigationRenderFunction, activeNavigationItemKey, onSelectNavigationItem, notifications,
     } = this.props;
 
-    if (!navigationConfig || !navigationConfig.navigationItems || !navigationConfig.navigationItems.length) {
+    if (!navigationItems || !navigationItems.length) {
       return <Tab isPlaceholder text="W" tabKey="" aria-hidden="true" />;
     }
 
     return (
       <Tabs
-        navigationConfig={navigationConfig}
+        navigationItems={navigationItems}
         activeTabKey={activeNavigationItemKey}
         onTabSelect={onSelectNavigationItem}
+        notifications={notifications}
+        navigationRenderFunction={navigationRenderFunction}
+      />
+    );
+  }
+
+  renderExtensions() {
+    const {
+      extensionItems, activeBreakpoint, onSelectExtensionItem, notifications,
+    } = this.props;
+
+    if (!extensionItems || !extensionItems.length) {
+      return null;
+    }
+
+    return (
+      <Extensions
+        extensionItems={extensionItems}
+        activeBreakpoint={activeBreakpoint}
+        onSelect={onSelectExtensionItem}
         notifications={notifications}
       />
     );
@@ -189,7 +218,6 @@ class Header extends React.Component {
   render() {
     const {
       onSelectSkipToContent,
-      extensions,
       intl,
     } = this.props;
 
@@ -205,7 +233,7 @@ class Header extends React.Component {
           {this.renderNavigationTabs()}
         </div>
         <div className={cx('extensions-container')}>
-          {extensions}
+          {this.renderExtensions()}
         </div>
         <div className={cx('utilities-container')}>
           {this.renderUtilities()}

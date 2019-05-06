@@ -18,26 +18,22 @@ import ApplicationNavigation from '../../../../ApplicationNavigation';
 import ContentComponent from './ContentComponent';
 import DisclosureComponent from './DisclosureComponent';
 
-const navigationConfig = {
-  hasNotifications: true,
-  navigationItems: [{
-    key: '/page_1',
-    text: 'Page 1',
-  }, {
-    key: '/page_2',
-    text: 'Page 2',
-  }, {
-    key: '/page_3',
-    text: 'Page 3',
-    notificationCount: 2,
-  }, {
-    key: '/page_4',
-    text: 'Page 4',
-  }, {
-    key: '/page_5',
-    text: 'Page 5',
-  }],
-};
+const navigationItems = [{
+  key: '/page_1',
+  text: 'Page 1',
+}, {
+  key: '/page_2',
+  text: 'Page 2',
+}, {
+  key: '/page_3',
+  text: 'Page 3',
+}, {
+  key: '/page_4',
+  text: 'Page 4',
+}, {
+  key: '/page_5',
+  text: 'Page 5',
+}];
 
 const userConfig = {
   name: 'User, Test',
@@ -57,7 +53,6 @@ const utilityItems = [{
 
 class ApplicationNavigationDemo extends React.Component {
   static getActiveNavigationItem(location) {
-    const { navigationItems } = navigationConfig;
     for (let i = 0, numberOfNavigationItems = navigationItems.length; i < numberOfNavigationItems; i += 1) {
       if (matchPath(location.pathname, navigationItems[i].key)) {
         return navigationItems[i];
@@ -89,9 +84,15 @@ class ApplicationNavigationDemo extends React.Component {
     };
   }
 
-  handleExtensionSelect(event, metaData) {
-    const { disclosureManager } = this.props;
+  handleExtensionSelect(key, metaData) {
+    if (key === 'Search') {
+      this.setState(prevState => ({
+        useItems2: !prevState.useItems2,
+      }));
+      return;
+    }
 
+    const { disclosureManager } = this.props;
     disclosureManager.disclose({
       preferredType: 'modal',
       content: {
@@ -176,66 +177,52 @@ class ApplicationNavigationDemo extends React.Component {
       return <Redirect to="/page_1" />;
     }
 
-    const extensionConfig = {
-      extensions: [
-        {
-          icon: <IconSearch />,
-          metaData: { key: 'Search' },
-          onSelect: () => {
-            this.setState(prevState => ({
-              useItems2: !prevState.useItems2,
-            }));
-          },
-          text: 'Search',
-          key: 'Search',
-        },
-        {
-          icon: <IconPill />,
-          metaData: { key: 'Pill' },
-          onSelect: this.handleExtensionSelect,
-          text: 'Pill',
-          notificationCount: 10,
-          key: 'Pill',
-        },
-        {
-          icon: <IconVisualization />,
-          metaData: { key: 'Visualization' },
-          text: 'Visualization',
-          type: 'popup',
-          content: <div>Im a Popup</div>,
-          key: 'Visualization',
-        },
-        {
-          icon: <IconLightbulb />,
-          metaData: { key: 'Lightbulb' },
-          onSelect: this.handleExtensionSelect,
-          text: 'Lightbulb',
-          key: 'Lightbulb',
-        },
-        {
-          icon: <IconCalculator />,
-          metaData: { key: 'Calculator' },
-          onSelect: this.handleExtensionSelect,
-          text: 'Calculator',
-          key: 'Calculator',
-        },
-        {
-          icon: <IconTrophy />,
-          metaData: { key: 'Trophy' },
-          onSelect: this.handleExtensionSelect,
-          text: 'Trophy',
-          notificationCount: 5,
-          key: 'Trophy',
-        },
-      ],
-    };
+    const extensionItems = [
+      {
+        icon: <IconSearch />,
+        metaData: { key: 'Search' },
+        text: 'Search',
+        key: 'Search',
+      },
+      {
+        icon: <IconPill />,
+        metaData: { key: 'Pill' },
+        text: 'Pill',
+        key: 'Pill',
+      },
+      {
+        icon: <IconVisualization />,
+        metaData: { key: 'Visualization' },
+        text: 'Visualization',
+        key: 'Visualization',
+      },
+      {
+        icon: <IconLightbulb />,
+        metaData: { key: 'Lightbulb' },
+        text: 'Lightbulb',
+        key: 'Lightbulb',
+      },
+      {
+        icon: <IconCalculator />,
+        metaData: { key: 'Calculator' },
+        text: 'Calculator',
+        key: 'Calculator',
+      },
+      {
+        icon: <IconTrophy />,
+        metaData: { key: 'Trophy' },
+        text: 'Trophy',
+        key: 'Trophy',
+      },
+    ];
 
     return (
       <ApplicationNavigation
         title="Test Application"
-        extensionConfig={extensionConfig}
+        extensionItems={extensionItems}
+        onSelectExtensionItem={this.handleExtensionSelect}
         userConfig={!hideUser ? userConfig : undefined}
-        navigationConfig={!hideNavigationItems ? navigationConfig : undefined}
+        navigationItems={!hideNavigationItems ? navigationItems : undefined}
         activeNavigationItemKey={activeNavigationItem.key}
         onSelectNavigationItem={!hideNavigationItems ? this.handleNavigationItemSelection : null}
         onSelectSettings={!hideSettings ? this.handleSettingsSelection : undefined}
