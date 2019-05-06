@@ -105,12 +105,12 @@ Let's start by giving a minimum and maximum to our value. For simplicity, set a 
 ```javascript
 const validateNumber = (value) => {
   if (!value) { return undefined; }
-  if (value < 10) {
-    return 'Value should not be less than 10.';
-  }
-  if (value > 100) {
-    return 'Value should not be over 100.';
-  }
++ if (value < 10) {
++   return 'Value should not be less than 10.';
++ }
++ if (value > 100) {
++   return 'Value should not be over 100.';
++ }
 
   return undefined;
 };
@@ -123,24 +123,26 @@ Use `.` as a delimiter and check for a length less than or equal to 3.
 ```javascript
 const validateNumber = (value) => {
   ...
-  const valueSplit = value.split('.');
-  if (valueSplit.length === 2 && valueSplit[1].length > 3) {
-    return 'Value has more than 3 decimal points';
-  }
++ const valueSplit = value.split('.');
++ if (valueSplit.length === 2 && valueSplit[1].length > 3) {
++   return 'Value has more than 3 decimal points';
++ }
 
   return undefined;
 };
 ```
 
-This way of validating for precision has a few quirks with it, mainly that if we give it a value of `23.023000` it would fail the validation, because of the extra `0`s at the end despite this number effectively being the same as `23.023`.
+This validation has a quirk. If the input contains extra `0`s, like `23.0230000`, validation will fail.
 
 Lets try a different way of validating. Convert the value a `Number` instead. This way we can use the `toFixed` function to automatically set precision, and use this as a comparison.
 
 ```javascript
 const validateNumber = (value) => {
   ...
-  const valueNum = Number(value);
-  if (valueNum.toFixed(3) != valueNum) {
+- const valueSplit = value.split('.');
+- if (valueSplit.length === 2 && valueSplit[1].length > 3) {
++ const valueNum = Number(value);
++ if (valueNum.toFixed(3) != valueNum) {
     return 'Value has more than 3 decimal points';
   }
 
@@ -148,22 +150,28 @@ const validateNumber = (value) => {
 };
 ```
 
-With this we compare the value given us to same value to a given precision. Which means if we are handed `45.4321`, we will compare it to `45.432`, which is not equal and will return the failure message. The quirk with this validation is that if you give it `23.023000` it will succeed because it will be compared to `23.023` and be found equal thus you probably will need to include something to shorten the String value in this case.
+This validation has the opposite quirk. If the input contains extra `0`s, like `23.0230000`, validation will succeed.
 
 With this we have a function that we can add to validate a number based by having a minimum, maximum, and a certain level of precision required. In the same vein as the 'Max Length Input' example, we can use the `FormValidationUtil` to help control and reduce some of workflow.
 
 ```javascript
 const validateNumber = (value) => {
-  if (!FormValidationUtil.minValue(value, 10)) {
+-  if (value < 10) {
++  if (!FormValidationUtil.isOverMinValue(value, 10)) {
     return 'Value should not be less than 10.';
   }
-  if (!FormValidationUtil.maxValue(value, 100)) {
+-  if (value > 100) {
++  if (!FormValidationUtil.isUnderMaxValue(value, 100)) {
     return 'Value should not be over 100.';
   }
-  if (!FormValidationUtil.precisionCheck(value, 3)) {
+- const valueNum = Number(value);
+- if (valueNum.toFixed(3) != valueNum) {
++ if (!FormValidationUtil.isPrecise(value, 3)) {
     return 'Value has more than 3 decimal points';
   }
 
   return undefined;
 };
 ```
+
+Note: `FormValidationUtil.precisionCheck` uses the first method check precision.

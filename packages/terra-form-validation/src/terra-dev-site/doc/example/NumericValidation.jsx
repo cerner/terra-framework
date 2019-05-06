@@ -8,13 +8,13 @@ import Spacer from 'terra-spacer';
 import FormValidationUtil from '../../../FormValidationUtil';
 
 const validateNumber = (value) => {
-  if (!FormValidationUtil.minValue(value, 10)) {
+  if (!FormValidationUtil.isOverMinValue(value, 10)) {
     return 'Value should not be less than 10.';
   }
-  if (!FormValidationUtil.maxValue(value, 100)) {
+  if (!FormValidationUtil.isUnderMaxValue(value, 100)) {
     return 'Value should not be over 100.';
   }
-  if (!FormValidationUtil.precisionCheck(value, 3)) {
+  if (!FormValidationUtil.isPrecise(value, 3)) {
     return 'Value has more than 3 decimal points';
   }
 

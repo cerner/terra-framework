@@ -8,7 +8,7 @@ import Spacer from 'terra-spacer';
 import FormValidationUtil from '../../../FormValidationUtil';
 
 const validateLength = (name) => {
-  if (!FormValidationUtil.maxLength(name, 8)) {
+  if (!FormValidationUtil.isUnderMaxLength(name, 8)) {
     return 'Name needs to be less than 8 characters long';
   }
 

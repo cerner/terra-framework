@@ -34,42 +34,43 @@ Current we render nothing. Lets create a `<Form>` component that contains initia
 
 Let's use the render props pattern to return our necessary components. Call this function `renderForm`.
 ```javascript
-render() {
-  return (
-    <Spacer marginBottom="small">
-      <Form
-        render={this.renderForm} // added line
-      />
-    </Spacer>
-  );
-}
+  render() {
+    return (
+      <Spacer marginBottom="small">
+-        <Form/>
++        <Form
++          render={this.renderForm}
++        />
+      </Spacer>
+    );
+  }
 
-renderForm() {
-  return (
-    <form>
-      <Field
-        name="example"
-      >
-        {({ input, meta }) => (
-          <InputField
-            inputId="example"
-            label="Example"
-            error={meta.error}
-            isInvalid={meta.error !== undefined}
-            inputAttrs={{
-              placeholder: 'Example',
-              ...input,
-            }}
-            onChange={(e) => { input.onChange(e.target.value); }}
-            value={input.value}
-            required
-          />
-        )}
-      </Field>
-      <Button text="Submit" type={Button.Opts.Types.SUBMIT} />
-    </form>
-  );
-}
+  renderForm() {
+    return (
+      <form>
+        <Field
+          name="example"
+        >
+          {({ input, meta }) => (
+            <InputField
+              inputId="example"
+              label="Example"
+              error={meta.error}
+              isInvalid={meta.error !== undefined}
+              inputAttrs={{
+                placeholder: 'Example',
+                ...input,
+              }}
+              onChange={(e) => { input.onChange(e.target.value); }}
+              value={input.value}
+              required
+            />
+          )}
+        </Field>
+        <Button text="Submit" type={Button.Opts.Types.SUBMIT} />
+      </form>
+    );
+  }
 ```
 
 Let's attach functionality to the submit button. Create a `submitForm` function to save submittedValues into state.
@@ -89,14 +90,14 @@ constructor(props) {
   super(props);
 
   this.state = {};
-  this.submitForm = this.submitForm.bind(this); // added line
++ this.submitForm = this.submitForm.bind(this);
 }
 
 render() {
   return (
     <Spacer marginBottom="small">
       <Form
-        onSubmit={this.submitForm} // added line
++       onSubmit={this.submitForm}
         render={this.renderForm}
       />
     </Spacer>
@@ -106,7 +107,7 @@ render() {
 renderForm({ handleSubmit }) {
   return (
     <form
-      onSubmit={handleSubmit} //added line
++     onSubmit={handleSubmit}
     >
       ...
     </form>
@@ -124,14 +125,14 @@ render() {
         onSubmit={this.submitForm}
         render={this.renderForm}
       />
-      {this.state.submittedValues
-        && (
-        <div>
-          <p>Form Submitted Successfully With</p>
-          <pre>{JSON.stringify(this.state.submittedValues, 0, 2)}</pre>
-        </div>
-        )
-      }
++     {this.state.submittedValues
++       && (
++       <div>
++         <p>Form Submitted Successfully With</p>
++         <pre>{JSON.stringify(this.state.submittedValues, 0, 2)}</pre>
++       </div>
++       )
++     }
     </Spacer>
   );
 }
@@ -139,7 +140,7 @@ render() {
 
 Submit will now visually update with a JSON of our `submittedValues` state.
 
-Next is to set up an initial value for our field. This is fairly simple and just requires us to add a prop called `initialValues` to our `<Form>` component that has an object defining our values in properties with the property being the inputID of our `<InputField>`, which in this case is `example`, and the property's value being the value of the `<InputField>`.
+We don't need a specific initial value but let's set an initial value that is an empty string so we have an easy place to redefine it if need be. We add an object to our `<Form>`. We define our object with the property being the inputID of our `<InputField>`, which in this case is `example`, and the property's value being the value of the `<InputField>`.
 ```javascript
 render() {
   return (
@@ -147,15 +148,13 @@ render() {
       <Form
         onSubmit={this.submitForm}
         render={this.renderForm}
-        initialValues={{ example: '' }}
++       initialValues={{ example: '' }}
       />
       ...
     </Spacer>
   );
 }
 ```
-
-We don't need a specific initial value but our initial value is an empty string and has an easy place to be redefined if need be.
 
 Finally we need to validate our input field. This has two parts to it, a `validate` prop on our `<Form>` component and a `validate` prop on our `<Field>` component in our `renderForm` function.
 
@@ -169,15 +168,13 @@ render() {
         onSubmit={this.submitForm}
         render={this.renderForm}
         initialValues={{ example: '' }}
-        validate={(values) => {
-            const errors = {};
-
-            if (!values.example) {
-              errors.example = 'Required';
-            }
-
-            return errors;
-        }}
++       validate={(values) => {
++           const errors = {};
++           if (!values.example) {
++             errors.example = 'Required';
++           }
++           return errors;
++       }}
       />
       ...
     </Spacer>
@@ -209,7 +206,7 @@ renderForm({ handleSubmit }) {
     >
     <Field
       name="example"
-      validate={validateLength} //added line
++     validate={validateLength}
     >
       ...
     </Field>
@@ -225,7 +222,8 @@ We have created an input that is required and has max length of 7 characters by 
 import FormValidationUtil from 'terra-form-validation';
 ...
 const validateLength = (name) => {
-  if (!FormValidationUtil.maxLength(name, 8)) {
+- if (name && name.length > 7) {
++ if (!FormValidationUtil.isUnderMaxLength(name, 7)) {
     return 'Name needs to be less than 8 characters long';
   }
 
