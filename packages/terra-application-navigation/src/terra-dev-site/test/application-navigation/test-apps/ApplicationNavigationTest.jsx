@@ -23,20 +23,30 @@ import heroImage from './hero.jpg';
 import heroCloseupImage from './heroCloseup.jpg';
 import desktopTitleImage from './desktop-title-img.png';
 
-// const myRenderFunction = () => (
-//   <div style={{
-//     height: '100%',
-//     display: 'flex',
-//     flexDirection: 'column',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//     padding: '0 10px',
-//   }}
-//   >
-//     <IconVisualization />
-//     <span style={{ marginTop: '3px' }}>Im Custom</span>
-//   </div>
-// );
+// const myRenderFunction = (props) => {
+//   const {
+//     text,
+//     // hasCount,
+//     // metaData,
+//     // isActive,
+//     notificationCount,
+//   } = props;
+
+//   return (
+//     <div style={{
+//       height: '60px',
+//       display: 'flex',
+//       flexDirection: 'column',
+//       alignItems: 'center',
+//       justifyContent: 'center',
+//       padding: '0 10px',
+//     }}
+//     >
+//       <span style={{ marginTop: '3px' }}>{text}</span>
+//       <span>{notificationCount}</span>
+//     </div>
+//   );
+// };
 
 const singleTitleConfig = {
   title: 'Test Application',
@@ -85,7 +95,7 @@ const navigationItems = [
     text: 'Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3',
   }, {
     key: '/page_4',
-    text: 'Im Custom',
+    text: 'Page 4',
   }, {
     key: '/page_5',
     text: 'Page 5',
@@ -101,28 +111,42 @@ const navigationItems = [
   },
 ];
 
-const navigationItems2 = [
+const extensionItems = [
   {
-    key: '/page_1',
-    text: 'Page 1',
-  }, {
-    key: '/page_2',
-    text: 'Page 2',
-  }, {
-    key: '/page_3',
-    text: 'Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3Page 3',
-  }, {
-    key: '/page_4',
-    text: 'Page 4',
-  }, {
-    key: '/page_5',
-    text: 'Page 5',
-  }, {
-    key: '/page_6',
-    text: 'Page 6',
-  }, {
-    key: '/page_7',
-    text: 'Page 7Page 7Page 7',
+    icon: <IconSearch />,
+    metaData: { key: 'Search' },
+    text: 'Search',
+    key: 'Search',
+  },
+  {
+    icon: <IconPill />,
+    metaData: { key: 'Pill' },
+    text: 'Pill',
+    key: 'Pill',
+  },
+  {
+    icon: <IconVisualization />,
+    metaData: { key: 'Visualization' },
+    text: 'Visualization',
+    key: 'Visualization',
+  },
+  {
+    icon: <IconLightbulb />,
+    metaData: { key: 'Lightbulb' },
+    text: 'Lightbulb',
+    key: 'Lightbulb',
+  },
+  {
+    icon: <IconCalculator />,
+    metaData: { key: 'Calculator' },
+    text: 'Calculator',
+    key: 'Calculator',
+  },
+  {
+    icon: <IconTrophy />,
+    metaData: { key: 'Trophy' },
+    text: 'Trophy',
+    key: 'Trophy',
   },
 ];
 
@@ -300,50 +324,6 @@ class ApplicationNavigationTest extends React.Component {
       return <Redirect to="/page_1" />;
     }
 
-    const extensionItems = [
-      {
-        icon: <IconSearch />,
-        metaData: { key: 'Search' },
-        text: 'Search',
-        key: 'Search',
-      },
-      {
-        icon: <IconPill />,
-        metaData: { key: 'Pill' },
-        text: 'Pill',
-        key: 'Pill',
-      },
-      {
-        icon: <IconVisualization />,
-        metaData: { key: 'Visualization' },
-        text: 'Visualization',
-        key: 'Visualization',
-      },
-      {
-        icon: <IconLightbulb />,
-        metaData: { key: 'Lightbulb' },
-        text: 'Lightbulb',
-        key: 'Lightbulb',
-      },
-      {
-        icon: <IconCalculator />,
-        metaData: { key: 'Calculator' },
-        text: 'Calculator',
-        key: 'Calculator',
-      },
-      {
-        icon: <IconTrophy />,
-        metaData: { key: 'Trophy' },
-        text: 'Trophy',
-        key: 'Trophy',
-      },
-    ];
-
-    let itemToUse = navigationItems;
-    if (this.state.useItems2) {
-      itemToUse = navigationItems2;
-    }
-
     let notificationsToUse = notifications;
     if (this.state.useItems2) {
       notificationsToUse = notifications2;
@@ -351,13 +331,14 @@ class ApplicationNavigationTest extends React.Component {
 
     return (
       <ApplicationNavigation
+        // navigationRenderFunction={myRenderFunction}
         titleConfig={titleConfigs[this.state.titleConfigIndex]}
         extensionItems={extensionItems}
         onSelectExtensionItem={this.handleExtensionSelect}
         userConfig={!hideUser ? userConfig : undefined}
         drawerMenuHero={!hideHero ? drawerMenuHero : undefined}
         utilityMenuHero={!hideHero ? utilityMenuHero : undefined}
-        navigationItems={!hideNavigationItems ? itemToUse : undefined}
+        navigationItems={!hideNavigationItems ? navigationItems : undefined}
         activeNavigationItemKey={activeNavigationItem.key}
         onSelectNavigationItem={!hideNavigationItems ? this.handleNavigationItemSelection : null}
         onSelectSettings={!hideSettings ? this.handleSettingsSelection : undefined}
