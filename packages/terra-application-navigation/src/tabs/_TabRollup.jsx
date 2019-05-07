@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
-import Count from './_TabCount';
+import TabCount from './_TabCount';
 
 import styles from './Tab.module.scss';
 
@@ -55,7 +55,7 @@ const defaultProps = {
   showNotificationRollup: false,
 };
 
-class TabMenuDisplay extends React.Component {
+class TabRollup extends React.Component {
   constructor(props, context) {
     super(props, context);
 
@@ -87,7 +87,7 @@ class TabMenuDisplay extends React.Component {
     } = this.props;
 
     const displayClassNames = cx([
-      'tab-menu-display',
+      'tab-rollup',
       { 'has-count': hasCount },
       customProps.className,
     ]);
@@ -111,11 +111,11 @@ class TabMenuDisplay extends React.Component {
           event.currentTarget.setAttribute('data-item-show-focus', 'false');
         }}
       >
-        <div className={cx(['tab-inner'])} data-tab-menu-inner>
-          <div className={cx(['tab-menu-display-label'])}>
-            {!isIconOnly && <span className={cx(['tab-menu-display-text'])}>{text}</span>}
-            {showNotificationRollup && <span className={cx('tab-count')}><Count value={isPulsed ? 1 : 0} isRollup /></span>}
-            <IconCaretDown className={cx(['tab-menu-display-icon', { 'is-icon-only': isIconOnly }])} />
+        <div className={cx('tab-inner')} data-tab-menu-inner>
+          <div className={cx('tab-rollup-label')}>
+            {!isIconOnly && <span className={cx('tab-rollup-text')}>{text}</span>}
+            {showNotificationRollup && <span className={cx('tab-count')}><TabCount value={isPulsed ? 1 : 0} isRollup /></span>}
+            <IconCaretDown className={cx(['tab-rollup-icon', { 'is-icon-only': isIconOnly }])} />
           </div>
         </div>
         {popup}
@@ -125,7 +125,7 @@ class TabMenuDisplay extends React.Component {
   }
 }
 
-TabMenuDisplay.propTypes = propTypes;
-TabMenuDisplay.defaultProps = defaultProps;
+TabRollup.propTypes = propTypes;
+TabRollup.defaultProps = defaultProps;
 
-export default TabMenuDisplay;
+export default TabRollup;

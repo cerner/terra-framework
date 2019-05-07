@@ -92,7 +92,7 @@ const propTypes = {
   utilityItems: utilityItemsPropType,
   /**
    * A function to be executed upon the selection of a custom utility item.
-   * Ex: `onSelectUtilityItem(String selectedUtilityItemKey)`
+   * Ex: `onSelectUtilityItem(String selectedUtilityItemKey, Object metaData)`
    */
   onSelectUtilityItem: PropTypes.func, // eslint-disable-line react/no-unused-prop-types
   /**
