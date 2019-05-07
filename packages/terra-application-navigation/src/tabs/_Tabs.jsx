@@ -220,16 +220,7 @@ class Tabs extends React.Component {
 
   renderRollup(hiddenTabs, hasNotifications, hasHiddenNotification) {
     const { activeTabKey, notifications, intl } = this.props;
-
-    let tabRollupIsSelected;
-    for (let i = 0, numberOfHiddenTabs = hiddenTabs.length; i < numberOfHiddenTabs; i += 1) {
-      const child = hiddenTabs[i];
-      if (child.key === activeTabKey) {
-        // eslint-disable-next-line prefer-destructuring
-        tabRollupIsSelected = true;
-        break;
-      }
-    }
+    const tabRollupIsSelected = hiddenTabs.some(tab => tab.key === activeTabKey);
 
     return (
       <TabRollup
