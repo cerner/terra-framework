@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Honor min/max range when only either minDate or maxDate is set.
 
 3.15.0 - (May 7, 2019)
 ------------------
@@ -14,7 +16,6 @@ Unreleased
 ### Changed
 * Limited the characters that could be used in terra-date-picker to numeric, '.', and '/'.
 * Moved packages we use solely in doc examples and tests to devDependencies
-* Honor min/max range when only either minDate or maxDate is set.
 
 ### Fixed
 * Fixed crash when selectedDate prop is set to a string or empty string that is not ISO compliant and unable to convert to a valid moment object.
