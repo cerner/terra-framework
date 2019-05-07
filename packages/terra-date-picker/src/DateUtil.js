@@ -38,19 +38,35 @@ class DateUtil {
     return validMomentDates.length > 0 ? validMomentDates : undefined;
   }
 
-  // Checks if a given date is out of the range between the start and end dates.
-  static isDateOutOfRange(sourceDate, startDate, endDate) {
-    if (!sourceDate || !sourceDate.isValid()
-      || !startDate || !startDate.isValid()
-      || !endDate || !endDate.isValid()) {
-      return false;
+  /**
+   * Determines if a date is within the range of two given dates.
+   * @param {object} sourceDate - The moment date to check if it is within range.
+   * @param {object} minDate - The moment date that represents the minimum date of the range.
+   * @param {object} maxDate - The moment date that represents the maximum date of the range.
+   * @return {boolean} - True if the sourceDate is within range. False, otherwise.
+   */
+  static isDateOutOfRange(sourceDate, minDate, maxDate) {
+    if (sourceDate && sourceDate.isValid()) {
+      if (minDate && minDate.isValid() && (!maxDate || !maxDate.isValid())) {
+        if (sourceDate.isBefore(minDate, 'day')) {
+          return true;
+        }
+      }
+
+      if ((!minDate || !minDate.isValid()) && maxDate && maxDate.isValid()) {
+        if (sourceDate.isAfter(maxDate, 'day')) {
+          return true;
+        }
+      }
+
+      if (minDate && minDate.isValid() && maxDate && maxDate.isValid()) {
+        if (sourceDate.isBefore(minDate, 'day') || sourceDate.isAfter(maxDate, 'day')) {
+          return true;
+        }
+      }
     }
 
-    if (sourceDate.isSameOrAfter(startDate) && sourceDate.isSameOrBefore(endDate)) {
-      return false;
-    }
-
-    return true;
+    return false;
   }
 
   /**
