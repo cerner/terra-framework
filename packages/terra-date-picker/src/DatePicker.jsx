@@ -121,6 +121,7 @@ class DatePicker extends React.Component {
     this.isDefaultDateAcceptable = false;
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeRaw = this.handleChangeRaw.bind(this);
+    this.handleFilterDate = this.handleFilterDate.bind(this);
     this.handleOnSelect = this.handleOnSelect.bind(this);
     this.handleOnClickOutside = this.handleOnClickOutside.bind(this);
     this.handleOnInputFocus = this.handleOnInputFocus.bind(this);
@@ -140,6 +141,14 @@ class DatePicker extends React.Component {
 
   componentDidMount() {
     this.isDefaultDateAcceptable = this.validateDefaultDate();
+  }
+
+  handleFilterDate(date) {
+    if (this.props.filterDate) {
+      return this.props.filterDate(date && date.isValid() ? date.format() : '');
+    }
+
+    return true;
   }
 
   handleOnSelect(selectedDate, event) {
@@ -286,7 +295,7 @@ class DatePicker extends React.Component {
           />
 )}
         excludeDates={exludeMomentDates}
-        filterDate={filterDate}
+        filterDate={this.handleFilterDate}
         includeDates={includeMomentDates}
         maxDate={maxMomentDate}
         minDate={minMomentDate}
@@ -301,6 +310,7 @@ class DatePicker extends React.Component {
         showMonthDropdown
         showYearDropdown
         name={name}
+        allowSameDay
       />
     );
 
@@ -324,7 +334,7 @@ class DatePicker extends React.Component {
           />
 )}
         excludeDates={exludeMomentDates}
-        filterDate={filterDate}
+        filterDate={this.handleFilterDate}
         includeDates={includeMomentDates}
         maxDate={maxMomentDate}
         minDate={minMomentDate}
@@ -338,6 +348,7 @@ class DatePicker extends React.Component {
         showMonthDropdown
         showYearDropdown
         name={name}
+        allowSameDay
       />
     );
 
