@@ -122,10 +122,6 @@ class Tabs extends React.Component {
   }
 
   getMoreWidth() {
-    if (!this.moreRef) {
-      return 0;
-    }
-
     return this.moreRef.getBoundingClientRect().width;
   }
 
@@ -320,7 +316,7 @@ class Tabs extends React.Component {
           role="tablist"
         >
           {this.buildVisibleChildren(visibleTabs, hasNotifications, onTabSelect, activeTabKey, notifications)}
-          {hiddenTabs.length ? this.renderRollup(hiddenTabs, hasNotifications, hasHiddenNotification) : null}
+          {!this.menuHidden ? this.renderRollup(hiddenTabs, hasNotifications, hasHiddenNotification) : null}
           {popupIsOpen ? this.renderPopup(hiddenTabs) : null}
           <div className={cx(['divider-after-last-tab'])} />
         </div>
