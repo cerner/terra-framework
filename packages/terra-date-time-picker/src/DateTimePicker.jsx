@@ -252,7 +252,7 @@ class DateTimePicker extends React.Component {
 
       let isValid = false;
 
-      if (value === '' || (isCompleteDateTime && this.isDateTimeWithinRange(momentDateTime))) {
+      if (value === '' || (isCompleteDateTime && this.isDateTimeAcceptable(momentDateTime))) {
         isValid = true;
       }
 
