@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconTile from 'terra-icon/lib/icon/IconTile';
 import { createKeyDown, createOnClick } from './_ExtensionUtils';
-import Count from './_ExtensionCount';
+import ExtensionCount from './_ExtensionCount';
 
 import styles from './ExtensionRollup.module.scss';
 
@@ -33,7 +33,7 @@ const defaultProps = {
   isPulsed: false,
 };
 
-const Extension = ({
+const ExtensionRollup = ({
   hasChildNotifications,
   isPulsed,
   onSelect,
@@ -46,7 +46,7 @@ const Extension = ({
     <div
       aria-label="more button text"// TODO: fix this.
       onKeyDown={keyDown}
-      className={cx('extension')}
+      className={cx('extension-rollup')}
       role="button"
       tabIndex="0"
       onClick={onClick}
@@ -59,17 +59,17 @@ const Extension = ({
         event.currentTarget.setAttribute('data-item-show-focus', 'false');
       }}
     >
-      <div className={cx('extension-inner')}>
-        <div className={cx('extension-image')}>
+      <div className={cx('extension-rollup-inner')}>
+        <div className={cx('extension-rollup-image')}>
           <IconTile />
         </div>
-        {hasChildNotifications && <Count isRollup className={cx('extension-count')} value={isPulsed ? 1 : 0} />}
+        {hasChildNotifications && <ExtensionCount isRollup className={cx('extension-rollup-count')} value={isPulsed ? 1 : 0} />}
       </div>
     </div>
   );
 };
 
-Extension.propTypes = propTypes;
-Extension.defaultProps = defaultProps;
+ExtensionRollup.propTypes = propTypes;
+ExtensionRollup.defaultProps = defaultProps;
 
-export default Extension;
+export default ExtensionRollup;

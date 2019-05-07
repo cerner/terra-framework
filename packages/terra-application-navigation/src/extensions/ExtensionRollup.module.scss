@@ -1,6 +1,6 @@
 /* stylelint-disable selector-class-pattern */
 :local {
-  .extension {
+  .extension-rollup {
     align-items: center;
     color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
@@ -11,18 +11,18 @@
     position: relative;
 
     &:hover {
-      .extension-inner {
+      .extension-rollup-inner {
         color: #fff;
       }
     }
   }
 
-  .extension-inner {
+  .extension-rollup-inner {
     padding: 0.5714rem;
     position: relative;
   }
 
-  .extension-image {
+  .extension-rollup-image {
     height: 1rem;
     overflow: hidden;
     width: 1rem;
@@ -32,32 +32,32 @@
     }
   }
 
-  .extension-image,
-  .extension-row-count {
+  .extension-rollup-image,
+  .extension-rollup-row-count {
     flex: 0 0  auto;
   }
 
-  .extension-text {
+  .extension-rollup-text {
     flex: 1 1 auto;
     width: 100%;
   }
 
-  .extension-count {
+  .extension-rollup-count {
     margin-left: 0.7143rem;
     position: absolute;
     right: 0.2857rem;
     top: 0.2857rem;
   }
 
-  .extension[data-item-show-focus='true']:focus {
-    .extension-inner {
+  .extension-rollup[data-item-show-focus='true']:focus {
+    .extension-rollup-inner {
       background-color: rgba(0, 0, 0, 0.15);
       border-radius: 100%;
     }
   }
 
-  .extension:active {
-    .extension-inner {
+  .extension-rollup:active {
+    .extension-rollup-inner {
       color: rgba(255, 255, 255, 0.5);
     }
   }
