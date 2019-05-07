@@ -91,7 +91,7 @@ class DateTimeUtils {
       return tempDate;
     }
 
-    // Neither the base momentDate now the iSOdate is valid.
+    // Neither the base momentDate nor the iSOdate is valid.
     return momentDate;
   }
 
