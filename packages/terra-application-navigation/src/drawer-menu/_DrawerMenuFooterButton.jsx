@@ -7,7 +7,13 @@ import styles from './DrawerMenuFooterButton.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * Text display for the footer button.
+   */
   text: PropTypes.string,
+  /**
+   * Function callback for button selection.
+   */
   onClick: PropTypes.func,
 };
 

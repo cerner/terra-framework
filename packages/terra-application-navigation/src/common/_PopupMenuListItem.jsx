@@ -11,10 +11,30 @@ import styles from './PopupMenuListItem.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * Icon to be rendered
+   */
   icon: PropTypes.element,
+  /**
+   * Text display and/or aria-label
+   */
   text: PropTypes.string.isRequired,
+  /**
+   * The number value representing the notification count.
+   */
   notificationCount: PropTypes.number,
+  /**
+   * Function callback for item selection.
+   */
   onSelect: PropTypes.func.isRequired,
+  /**
+   * Whether or not this item is the active item.
+   */
+  isSelected: PropTypes.bool,
+  /**
+   * Whehther or not selected states should display on the menu item.
+   */
+  showSelections: PropTypes.bool,
 };
 
 const PopupMenuListItem = ({
@@ -36,6 +56,7 @@ const PopupMenuListItem = ({
     onMouseDown={(event) => {
       event.currentTarget.setAttribute('data-item-show-focus', 'false');
     }}
+    aria-selected={showSelections && isSelected}
     role="option"
     tabIndex="0"
   >

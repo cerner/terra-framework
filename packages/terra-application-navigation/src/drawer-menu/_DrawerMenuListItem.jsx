@@ -9,11 +9,26 @@ import styles from './DrawerMenuListItem.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * Icon to be rendered
+   */
   icon: PropTypes.element,
+  /**
+   * Text display and/or aria-label
+   */
   text: PropTypes.string.isRequired,
+  /**
+   * The number value representing the notification count.
+   */
   notificationCount: PropTypes.number,
-  isSelected: PropTypes.bool,
+  /**
+   * Function callback for item selection.
+   */
   onSelect: PropTypes.func.isRequired,
+  /**
+   * Whether or not this item is the active item.
+   */
+  isSelected: PropTypes.bool,
 };
 
 const DrawerMenuListItem = ({

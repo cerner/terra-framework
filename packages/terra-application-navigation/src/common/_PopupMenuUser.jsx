@@ -9,6 +9,9 @@ import styles from './PopupMenuUser.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * A configuration object with information pertaining to the application's user.
+   */
   userConfig: userConfigPropType,
 };
 

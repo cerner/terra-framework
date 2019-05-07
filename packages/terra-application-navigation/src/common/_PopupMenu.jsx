@@ -6,26 +6,66 @@ import ContentContainer from 'terra-content-container';
 
 import PopupMenuListItem from './_PopupMenuListItem';
 import { userConfigPropType } from '../utils/propTypes';
+import PopupMenuUser from './_PopupMenuUser';
 
 import styles from './PopupMenu.module.scss';
-import PopupMenuUser from './_PopupMenuUser';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * Header element fixed in place at the top of the menu.
+   */
   header: PropTypes.element,
+  /**
+   * Footer element fixed in place at the bottom of the menu.
+   */
   footer: PropTypes.element,
+  /**
+   * The custom content to be placed at the top of the content area.
+   */
   customContent: PropTypes.node,
+  /**
+   * A configuration object with information pertaining to the application's user.
+   */
   userConfig: userConfigPropType,
+  /**
+   * An array of selectable items to be displayed within the popup.
+   */
   menuItems: PropTypes.arrayOf(PropTypes.shape({
-    key: PropTypes.string.isRequired,
+    /**
+     * Icon to be rendered
+     */
     icon: PropTypes.element,
-    text: PropTypes.string,
-    count: PropTypes.number,
+    /**
+     * Key used as react key, and returned in the onSelect
+     */
+    key: PropTypes.string.isRequired,
+    /**
+     * Object to be returned in the onSelect
+     */
     metaData: PropTypes.object,
+    /**
+     * Text display and/or aria-label
+     */
+    text: PropTypes.string.isRequired,
+    /**
+     * Whether or not this item is the active item.
+     */
+    isActive: PropTypes.bool,
+    /**
+     * The number value representing the notification count.
+     */
+    notificationCount: PropTypes.number,
   })),
   onSelectMenuItem: PropTypes.func,
+  /**
+   * Whehther or not content is be constrained vertically.
+   */
   isHeightBounded: PropTypes.bool,
+  /**
+   * Whehther or not selected states should display on the menu item.
+   */
   showSelections: PropTypes.bool,
 };
 
