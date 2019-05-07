@@ -301,6 +301,7 @@ class DatePicker extends React.Component {
         showMonthDropdown
         showYearDropdown
         name={name}
+        allowSameDay
       />
     );
 
@@ -338,6 +339,7 @@ class DatePicker extends React.Component {
         showMonthDropdown
         showYearDropdown
         name={name}
+        allowSameDay
       />
     );
 

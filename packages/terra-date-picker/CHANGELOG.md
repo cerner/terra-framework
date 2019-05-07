@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Allow same day change to trigger onChange.
 
 3.14.0 - (April 24, 2019)
 ------------------
