@@ -136,6 +136,7 @@ class DatePicker extends React.Component {
     this.handleBlur = this.handleBlur.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeRaw = this.handleChangeRaw.bind(this);
+    this.handleFilterDate = this.handleFilterDate.bind(this);
     this.handleOnSelect = this.handleOnSelect.bind(this);
     this.handleOnClickOutside = this.handleOnClickOutside.bind(this);
     this.handleOnInputFocus = this.handleOnInputFocus.bind(this);
@@ -157,6 +158,14 @@ class DatePicker extends React.Component {
   componentDidMount() {
     this.dateValue = DateUtil.formatMomentDate(this.state.selectedDate, DateUtil.getFormatByLocale(this.context.intl.locale)) || '';
     this.isDefaultDateAcceptable = this.validateDefaultDate();
+  }
+
+  handleFilterDate(date) {
+    if (this.props.filterDate) {
+      return this.props.filterDate(date && date.isValid() ? date.format() : '');
+    }
+
+    return true;
   }
 
   handleOnSelect(selectedDate, event) {
@@ -361,7 +370,7 @@ class DatePicker extends React.Component {
           />
 )}
         excludeDates={exludeMomentDates}
-        filterDate={filterDate}
+        filterDate={this.handleFilterDate}
         includeDates={includeMomentDates}
         maxDate={maxMomentDate}
         minDate={minMomentDate}
@@ -404,7 +413,7 @@ class DatePicker extends React.Component {
           />
 )}
         excludeDates={exludeMomentDates}
-        filterDate={filterDate}
+        filterDate={this.handleFilterDate}
         includeDates={includeMomentDates}
         maxDate={maxMomentDate}
         minDate={minMomentDate}

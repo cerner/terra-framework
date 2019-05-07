@@ -4,6 +4,7 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
+* Update the filterDate examples to handle an ISO string instead of a moment object.
 * Leverage createSafeDate from the DateUtil.
 * Change the onBlur event to get triggered only when the entire date time picker component loses focus.
 

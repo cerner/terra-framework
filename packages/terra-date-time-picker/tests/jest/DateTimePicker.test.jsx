@@ -19,11 +19,7 @@ it('should render a default date time picker with custom time input attributes',
 });
 
 it('should render a date time picker with filtered dates', () => {
-  const isWeekday = (date) => {
-    const day = date.day();
-    return day !== 0 && day !== 6;
-  };
-  const datePicker = shallowWithIntl(<DateTimePicker filterDate={isWeekday} name="date-time-input" utcOffset={0} />);
+  const datePicker = shallowWithIntl(<DateTimePicker filterDate={() => {}} name="date-time-input" utcOffset={0} />);
   expect(datePicker).toMatchSnapshot();
 });
 

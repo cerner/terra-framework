@@ -12,11 +12,6 @@ DateUtil.filterInvalidDates = jest.fn();
 DateUtil.createSafeDate.mockImplementation(() => moment.utc('2017-01-01'));
 DateUtil.filterInvalidDates.mockImplementation(() => [moment.utc('2017-01-01')]);
 
-const isWeekday = (date) => {
-  const day = date.day();
-  return day !== 0 && day !== 6;
-};
-
 it('should render a default date input and date picker', () => {
   const datePicker = shallowWithIntl(<DatePicker name="date-input" utcOffset={0} />);
   expect(datePicker).toMatchSnapshot();
@@ -28,7 +23,7 @@ it('should render a default date input with custom input attributes', () => {
 });
 
 it('should render a date picker with filtered dates', () => {
-  const datePicker = shallowWithIntl(<DatePicker filterDate={isWeekday} name="date-input" utcOffset={0} />);
+  const datePicker = shallowWithIntl(<DatePicker filterDate={() => {}} name="date-input" utcOffset={0} />);
   expect(datePicker).toMatchSnapshot();
 });
 
