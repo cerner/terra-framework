@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.15.0 - (May 7, 2019)
+------------------
 ### Changed
 * Allow same day change to trigger onChange.
 

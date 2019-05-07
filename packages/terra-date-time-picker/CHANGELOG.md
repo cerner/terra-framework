@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.16.0 - (May 7, 2019)
+------------------
 ### Fixed
 * Changes made to the time is now preserved when the modification is made with an invalid date.
 
