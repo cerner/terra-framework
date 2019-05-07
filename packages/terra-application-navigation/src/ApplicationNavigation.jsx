@@ -18,6 +18,9 @@ import styles from './ApplicationNavigation.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * Key/Value pairs associating a string key entry to a numerical notification count.
+   */
   notifications: PropTypes.object,
   titleConfig: titleConfigPropType,
   /**
@@ -48,7 +51,7 @@ const propTypes = {
    */
   navigationItems: navigationItemsPropType,
   /**
-   * A function to be executed for the render of a navigation item.
+   * A function to be executed for the render of each navigation item.
    */
   navigationRenderFunction: PropTypes.func,
   /**

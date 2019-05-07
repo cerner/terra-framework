@@ -14,9 +14,12 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Array of objects representing the tabs.
+   * An array of configuration objects with information specifying the creation of navigation items.
    */
   navigationItems: navigationItemsPropType,
+  /**
+   * A function to be executed for the render of each navigation item.
+   */
   navigationRenderFunction: PropTypes.func,
   /**
    * A string identifying the currently active tab.
@@ -26,6 +29,9 @@ const propTypes = {
    * A function to be executed upon selection of a tab.
    */
   onTabSelect: PropTypes.func,
+  /**
+   * Key/Value pairs associating a string key entry to a numerical notification count.
+   */
   notifications: PropTypes.object,
 };
 

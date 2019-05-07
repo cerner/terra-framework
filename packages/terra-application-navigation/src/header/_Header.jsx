@@ -28,6 +28,9 @@ const propTypes = {
    * Array of navigation items to render within the Header.
    */
   navigationItems: navigationItemsPropType,
+  /**
+   * A function to be executed for the render of each navigation item.
+   */
   navigationRenderFunction: PropTypes.func,
   /**
    * The string identifying the currently active navigation item.
@@ -41,22 +44,58 @@ const propTypes = {
    * The element to be placed within the fit start area for extensions within the layout.
    */
   extensionItems: extensionItemsPropType,
+  /**
+   * A function to be executed upon the selection of an extensions item.
+   * Ex: `onSelectExtensionsItem(String selectedUtilityItemKey, Object metaData)`
+   */
   onSelectExtensionItem: PropTypes.func,
+  /**
+   * A configuration object with information pertaining to the application's user.
+   */
   userConfig: userConfigPropType,
   hero: PropTypes.element,
+  /**
+   * An array of configuration objects with information specifying the creation of additional utility menu items.
+   * These items are rendered within the popup utility menu at larger breakpoints and within the drawer menu at smaller breakpoints.
+   */
   utilityItems: utilityItemsPropType,
+  /**
+   * A function to be executed upon the selection of a custom utility item.
+   * Ex: `onSelectUtilityItem(String selectedUtilityItemKey)`
+   */
   onSelectUtilityItem: PropTypes.func,
+  /**
+   * A function to be executed upon the selection of the Settings utility item.
+   * If `onSelectSettings` is not provided, the Settings utility item will not be rendered.
+   * Ex: `onSelectSettings()`
+   */
   onSelectSettings: PropTypes.func,
+  /**
+   * A function to be executed upon the selection of the Help utility item.
+   * If `onSelectHelp` is not provided, the Help utility item will not be rendered.
+   * Ex: `onSelectLogout()`
+   */
   onSelectHelp: PropTypes.func,
+  /**
+   * A function to be executed upon the selection of the Logout action button.
+   * If `onSelectLogout` is not provided, the Logout action button will not be rendered.
+   * Ex: `onSelectLogout()`
+   */
   onSelectLogout: PropTypes.func,
   onSelectSkipToContent: PropTypes.func,
-  intl: intlShape,
+  /**
+   * Key/Value pairs associating a string key entry to a numerical notification count.
+   */
   notifications: PropTypes.object,
   /**
    * @private
    * The currently active breakpoint.
    */
   activeBreakpoint: PropTypes.string,
+  /**
+   * @private
+   */
+  intl: intlShape,
 };
 
 class Header extends React.Component {

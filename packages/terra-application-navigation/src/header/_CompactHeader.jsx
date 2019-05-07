@@ -22,20 +22,34 @@ const propTypes = {
     subline: PropTypes.string,
     element: PropTypes.element,
   }),
+  /**
+   * A configuration object with information specifying the creation of the Extension buttons rendered within the
+   * ApplicationNavigation header.
+   */
   extensionItems: extensionItemsPropType,
+  /**
+   * A function to be executed upon the selection of an extensions item.
+   * Ex: `onSelectExtensionsItem(String selectedUtilityItemKey, Object metaData)`
+   */
   onSelectExtensionItem: PropTypes.func,
   onSelectSkipToContent: PropTypes.func,
-  intl: intlShape,
   /**
    * Array of navigation items to render within the Header.
    */
   navigationItems: navigationItemsPropType,
+  /**
+   * Key/Value pairs associating a string key entry to a numerical notification count.
+   */
   notifications: PropTypes.object,
   /**
    * @private
    * The currently active breakpoint.
    */
   activeBreakpoint: PropTypes.string,
+  /**
+   * @private
+   */
+  intl: intlShape,
 };
 
 class CompactHeader extends React.Component {

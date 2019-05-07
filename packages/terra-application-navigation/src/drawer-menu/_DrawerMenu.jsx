@@ -70,6 +70,9 @@ const propTypes = {
    * Ex: `onSelectUtilityItem(String selectedUtilityItemKey)`
    */
   onSelectUtilityItem: PropTypes.func,
+  /**
+   * Key/Value pairs associating a string key entry to a numerical notification count.
+   */
   notifications: PropTypes.object,
 };
 

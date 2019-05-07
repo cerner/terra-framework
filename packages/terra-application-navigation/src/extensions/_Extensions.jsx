@@ -27,6 +27,9 @@ const propTypes = {
    * A function to be executed upon selection of a tab.
    */
   onSelect: PropTypes.func,
+  /**
+   * Key/Value pairs associating a string key entry to a numerical notification count.
+   */
   notifications: PropTypes.object,
 };
 

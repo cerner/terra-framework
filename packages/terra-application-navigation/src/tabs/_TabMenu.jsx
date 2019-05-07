@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 import ActionHeader from 'terra-action-header';
 import Popup from 'terra-popup';
-
 import PopupMenu from '../common/_PopupMenu';
-
 import TabMenuDisplay from './_TabMenuDisplay';
+import {
+  navigationItemsPropType,
+} from '../utils/propTypes';
 
 const propTypes = {
   /**
@@ -37,8 +38,17 @@ const propTypes = {
    * Boolean indicating whether or not the Tab should account for count spacing.
    */
   hasCount: PropTypes.bool,
-  hiddenTabs: PropTypes.array,
+  /**
+   * An array of configuration objects with information specifying the creation of navigation items.
+   */
+  hiddenTabs: navigationItemsPropType,
+  /**
+   * A function to be executed upon selection of a tab.
+   */
   onTabSelect: PropTypes.func,
+  /**
+   * Key/Value pairs associating a string key entry to a numerical notification count.
+   */
   notifications: PropTypes.object,
 };
 
