@@ -1,9 +1,16 @@
 import React from 'react';
+import moment from 'moment';
 import DatePicker from '../../../../lib/DatePicker';
 
 const isWeekday = (date) => {
-  const day = date.day();
-  return day !== 0 && day !== 6;
+  const momentDate = moment(date);
+
+  if (momentDate && momentDate.isValid()) {
+    const day = momentDate.day();
+    return day !== 0 && day !== 6;
+  }
+
+  return true;
 };
 
 const DatePickerFilterDates = () => (
