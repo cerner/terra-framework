@@ -4,6 +4,14 @@ Changelog
 Unreleased
 ----------
 
+2.11.0 - (May 7, 2019)
+------------------
+### Added
+* Added new width 560px
+
+### Fixed
+* Updated jest snapshot and WDIO screenshots
+
 2.10.0 - (April 24, 2019)
 ------------------
 ### Changed

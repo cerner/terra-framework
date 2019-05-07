@@ -6,6 +6,11 @@ Unreleased
 ### Added
 * Included documentation regarding consumption and dependency management
 
+4.10.0 - (May 7, 2019)
+------------------
+### Added
+* Added new width 560px to Disclosure Widths.
+
 4.9.0 - (April 24, 2019)
 ------------------
 ### Changed

@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+5.10.0 - (May 7, 2019)
+------------------
+### Changed
+* Added custom font-weight property for MenuItem component (defaults to 'inherit')
+
 5.9.0 - (April 24, 2019)
 ------------------
 ### Changed

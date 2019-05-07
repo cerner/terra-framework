@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+2.6.0 - (May 7, 2019)
+------------------
+### Fixed
+* Updated WDIO screenshots
+
 2.5.0 - (April 24, 2019)
 ------------------
 ### Changed
