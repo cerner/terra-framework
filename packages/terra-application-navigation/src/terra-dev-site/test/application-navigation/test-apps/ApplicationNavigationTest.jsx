@@ -223,15 +223,9 @@ class ApplicationNavigationTest extends React.Component {
     });
   }
 
-  handleNavigationItemSelection(navigationItemKey, metaData) {
+  handleNavigationItemSelection(navigationItemKey) {
     const { history } = this.props;
     const { activeNavigationItemKey } = this.state;
-
-    debugger;
-
-    if (metaData) {
-      console.log(metaData);
-    }
 
     if (activeNavigationItemKey !== navigationItemKey) {
       history.push(navigationItemKey);
