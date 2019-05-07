@@ -53,8 +53,8 @@ DateTimePickerExample.defualtProps = defaultProps;
 
 const DateTimePickerExampleMinMax = () => (
   <DateTimePickerExample
-    minDateTime={moment().format()}
-    maxDateTime={moment().add(6, 'days').format()}
+    minDate={moment().format()}
+    maxDate={moment().add(6, 'days').format()}
   />
 );
 

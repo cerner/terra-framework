@@ -34,7 +34,7 @@ it('should render a date time picker with included dates', () => {
 });
 
 it('should render a date time picker with min and max dates', () => {
-  const datePicker = shallowWithIntl(<DateTimePicker name="date-time-input" maxDateTime="2017-04-01" minDateTime="2017-04-10" utcOffset={0} />);
+  const datePicker = shallowWithIntl(<DateTimePicker name="date-time-input" maxDate="2017-04-01" minDate="2017-04-10" utcOffset={0} />);
   expect(datePicker).toMatchSnapshot();
 });
 
@@ -80,7 +80,7 @@ it('should render a disabled date time picker', () => {
 
 it('Should not throw any errors while date value is outside of the Min, Max range and new time value is being entered ', () => {
   const datePicker = mountWithIntl((
-    <DateTimePicker name="date-time-input" maxDateTime="2017-04-01T10:30" minDateTime="2017-04-10T10:30" />
+    <DateTimePicker name="date-time-input" maxDate="2017-04-01T10:30" minDate="2017-04-10T10:30" />
   ));
 
   const dateInput = datePicker.find({ name: 'terra-date-input', type: 'text' }).at(0);

@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Changed the parameter in filterDate prop from a moment object to an ISO string.
+* Honor min/max range when only either minDate or maxDate is set.
 * Change the onBlur event to get triggered only when the entire date picker component loses focus.
 
 ### Added

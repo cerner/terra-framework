@@ -14,6 +14,12 @@ Unreleased
 ### Removed
 * Removed 'onInputFocus' prop in favor of the added 'onFocus' prop.
 
+### Removed
+* Remove minDateTime and maxDateTime props. These props are being renamed to minDate and maxDate.
+
+### Added
+* Add minDate and maxDate props. These props replace minDateTime and maxDateTime for the purpose of ignoring the time portion when determing the min/max range.
+
 3.16.0 - (May 7, 2019)
 ------------------
 ### Fixed
@@ -26,6 +32,7 @@ Unreleased
 
 ### Changed
 * Moved packages we use solely in doc examples and tests to devDependencies
+
 
 3.14.0 - (April 16, 2019)
 ------------------
