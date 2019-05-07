@@ -29,7 +29,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "react-router-dom": "^4.2.2",
+    "react-router-dom": "^5.0.0",
     "terra-application-header-layout": "^3.6.0",
     "terra-application-links": "^5.12.0",
     "terra-application-menu-layout": "^3.3.0",
