@@ -24,7 +24,8 @@
   "peerDependencies": {
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-intl": "^2.8.0"
+    "react-intl": "^2.8.0",
+    "terra-disclosure-manager": "^4.9.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -36,7 +37,6 @@
     "terra-application-name": "^3.7.0",
     "terra-application-utility": "^2.9.0",
     "terra-breakpoints": "^2.3.0",
-    "terra-disclosure-manager": "^4.10.0",
     "terra-icon": "^3.1.0",
     "terra-modal-manager": "^5.11.0",
     "terra-navigation-layout": "^4.5.0",
