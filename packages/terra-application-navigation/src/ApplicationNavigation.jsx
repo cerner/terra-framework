@@ -22,6 +22,9 @@ const propTypes = {
    * Key/Value pairs associating a string key entry to a numerical notification count.
    */
   notifications: PropTypes.object,
+  /**
+   * A configuration object with information pertaining to the application's title.
+   */
   titleConfig: titleConfigPropType,
   /**
    * A configuration object with information specifying the creation of the Extension buttons rendered within the

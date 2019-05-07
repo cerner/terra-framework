@@ -8,6 +8,9 @@ import styles from './DrawerMenuTitle.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * A configuration object with information pertaining to the application's title.
+   */
   titleConfig: titleConfigPropType.isRequired,
 };
 

@@ -43,6 +43,9 @@ const propTypes = {
    * Ex: `onSelectUtilityItem(String selectedUtilityItemKey)`
    */
   onSelectUtilityItem: PropTypes.func,
+  /**
+   * Whehther or not content is be constrained vertically.
+   */
   isHeightBounded: PropTypes.bool,
 };
 

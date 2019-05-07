@@ -8,6 +8,7 @@ import Extensions from '../extensions/_Extensions';
 import {
   navigationItemsPropType,
   extensionItemsPropType,
+  titleConfigPropType,
 } from '../utils/propTypes';
 
 import styles from './CompactHeader.module.scss';
@@ -16,12 +17,10 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   onSelectToggle: PropTypes.func,
-  titleConfig: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    headline: PropTypes.string,
-    subline: PropTypes.string,
-    element: PropTypes.element,
-  }),
+  /**
+   * A configuration object with information pertaining to the application's title.
+   */
+  titleConfig: titleConfigPropType,
   /**
    * A configuration object with information specifying the creation of the Extension buttons rendered within the
    * ApplicationNavigation header.

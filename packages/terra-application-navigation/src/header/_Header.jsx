@@ -10,7 +10,7 @@ import Extensions from '../extensions/_Extensions';
 import UtilityMenuHeaderButton from '../utility-menu/_UtilityMenuHeaderButton';
 import UtilityMenu from '../utility-menu/_UtilityMenu';
 import {
-  userConfigPropType, navigationItemsPropType, extensionItemsPropType, utilityItemsPropType,
+  userConfigPropType, navigationItemsPropType, extensionItemsPropType, utilityItemsPropType, titleConfigPropType,
 } from '../utils/propTypes';
 
 import styles from './Header.module.scss';
@@ -18,12 +18,10 @@ import styles from './Header.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  titleConfig: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    headline: PropTypes.string,
-    subline: PropTypes.string,
-    element: PropTypes.element,
-  }),
+  /**
+   * A configuration object with information pertaining to the application's title.
+   */
+  titleConfig: titleConfigPropType,
   /**
    * Array of navigation items to render within the Header.
    */
