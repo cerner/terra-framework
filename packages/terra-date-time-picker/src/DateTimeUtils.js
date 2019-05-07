@@ -29,22 +29,45 @@ class DateTimeUtils {
   }
 
   /**
-   * Synchronize the date and time for a given moment object.
+   * Synchronize the date and time for a given the base moment object.
+   * Because a moment object must have the date portion, if the provided iSOdate is invalid,
+   * The base moment object will not synchronize the time if the provided time is invalid.
    * @param {object} momentDate - The moment object to synchronize the date and time.
-   * @param {string} iOSdate - The date string to synchronize with the moment object.
+   * @param {string} iSOdate - The date string to synchronize with the moment object.
    * @param {string} time - The time to synchronize with the moment object.
    * @return {object} - The synchronized moment object.
    */
-  static syncDateTime(momentDate, iOSdate, time) {
-    const date = moment(iOSdate);
-    let newDate = momentDate ? momentDate.clone() : date;
+  static syncDateTime(momentDate, iSOdate, time) {
+    const date = moment(iSOdate);
 
-    // If momentDate was null, a new moment date needs to be created and sync'd with the entered time.
-    if (momentDate === null && time && time.length === 5) {
-      newDate = DateTimeUtils.updateTime(newDate, time);
+    // If the base momentDate is valid, sync the date and time is they are valid.
+    if (momentDate && momentDate.isValid()) {
+      let tempDate = momentDate.clone();
+
+      if (date.isValid()) {
+        tempDate.year(date.get('year')).month(date.get('month')).date(date.get('date'));
+      }
+
+      if (time && time.length === 5) {
+        tempDate = DateTimeUtils.updateTime(tempDate, time);
+      }
+
+      return tempDate;
     }
 
-    return newDate.year(date.get('year')).month(date.get('month')).date(date.get('date'));
+    // If the base momentDate is invalid, use the iSOdate as the base and update the time if valid.
+    if (date.isValid()) {
+      let tempDate = date.clone();
+
+      if (time && time.length === 5) {
+        tempDate = DateTimeUtils.updateTime(tempDate, time);
+      }
+
+      return tempDate;
+    }
+
+    // Neither the base momentDate nor the iSOdate is valid.
+    return momentDate;
   }
 
   /**

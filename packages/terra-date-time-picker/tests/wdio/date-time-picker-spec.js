@@ -237,6 +237,41 @@ describe('DateTimePicker', () => {
     Terra.should.matchScreenshot({ viewports });
   });
 
+  describe('Sync Date Time', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-on-change');
+      // Removes the blinking cursor to prevent screenshot mismatches.
+      browser.execute('document.querySelector(\'input[name="terra-time-minute-input"]\').style.caretColor = "transparent";');
+    });
+
+    it('Entering valid date with empty time does not trigger onChange', () => {
+      browser.setValue('input[name="terra-date-input"]', '04/17/2019');
+    });
+
+    Terra.should.matchScreenshot('valid-date', { viewports });
+
+    it('Entering valid date and time triggers onChange', () => {
+      browser.setValue('input[name="terra-time-hour-input"]', '10');
+      browser.setValue('input[name="terra-time-minute-input"]', '30');
+    });
+
+    Terra.should.matchScreenshot('valid-time', { viewports });
+
+    it('Change date to invalid and modify time.', () => {
+      browser.setValue('input[name="terra-date-input"]', '04/17/20');
+      browser.setValue('input[name="terra-time-hour-input"]', '12');
+      browser.setValue('input[name="terra-time-minute-input"]', '45');
+    });
+
+    Terra.should.matchScreenshot('invalid-date', { viewports });
+
+    it('Time persists when date becomes valid', () => {
+      browser.setValue('input[name="terra-date-input"]', '04/18/2019');
+    });
+
+    Terra.should.matchScreenshot('modified-valid-time', { viewports });
+  });
+
   describe('Excluded Dates are Disabled', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-exclude-dates');

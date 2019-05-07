@@ -377,6 +377,7 @@ class DatePicker extends React.Component {
         showYearDropdown
         preventOpenOnFocus
         name={name}
+        allowSameDay
       />
     );
 
@@ -418,6 +419,7 @@ class DatePicker extends React.Component {
         showYearDropdown
         preventOpenOnFocus
         name={name}
+        allowSameDay
       />
     );
 

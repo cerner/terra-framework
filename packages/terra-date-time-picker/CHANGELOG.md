@@ -13,6 +13,11 @@ Unreleased
 ### Removed
 * Removed 'onInputFocus' prop in favor of the added 'onFocus' prop.
 
+3.16.0 - (May 7, 2019)
+------------------
+### Fixed
+* Changes made to the time is now preserved when the modification is made with an invalid date.
+
 3.15.0 - (April 24, 2019)
 ------------------
 ### Added

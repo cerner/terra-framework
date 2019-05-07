@@ -296,17 +296,24 @@ class DateTimePicker extends React.Component {
     let updatedDateTime;
     const formattedDate = DateUtil.formatISODate(date, 'YYYY-MM-DD');
     const isDateValid = DateUtil.isValidDate(formattedDate, 'YYYY-MM-DD');
+    const isTimeValid = DateTimeUtils.isValidTime(this.timeValue);
 
     if (isDateValid) {
-      const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
+      const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : DateUtil.createSafeDate(formattedDate);
       updatedDateTime = DateTimeUtils.syncDateTime(previousDateTime, date, this.timeValue);
 
-      if (DateTimeUtils.isValidTime(this.timeValue)) {
+      if (isTimeValid) {
+        // Update the timeValue in case the updatedDateTime falls in the missing hour and needs to bump the hour up.
         this.timeValue = DateUtil.formatISODate(updatedDateTime.format(), 'HH:mm');
       }
     }
 
-    this.handleChange(event, updatedDateTime);
+    // onChange should only be triggered when both the date and time values are valid or both values are empty/cleared.
+    if ((isDateValid && isTimeValid) || (this.dateValue === '' && this.timeValue === '')) {
+      this.handleChange(event, updatedDateTime);
+    } else {
+      this.setState({ dateTime: updatedDateTime });
+    }
 
     if (isDateValid) {
       this.hourInput.focus();
@@ -334,13 +341,20 @@ class DateTimePicker extends React.Component {
         updatedDateTime.subtract(1, 'hours');
       }
 
-      this.timeValue = DateUtil.formatISODate(updatedDateTime.format(), 'HH:mm');
+      // If updatedDateTime is valid, update timeValue (value in the time input) to reflect updatedDateTime since
+      // it could have subtracted an hour from above to account for the missing hour.
+      if (updatedDateTime) {
+        this.timeValue = DateUtil.formatISODate(updatedDateTime.format(), 'HH:mm');
+      }
+
       this.handleChangeRaw(event, this.timeValue);
       this.handleChange(event, updatedDateTime);
+    } else if (this.dateValue === '' && this.timeValue === '') {
+      this.handleChangeRaw(event, this.timeValue);
+      this.handleChange(event, null);
     } else {
-      // If the date is valid but the time is not, the time part in the dateTime state needs to be cleared to reflect the change.
-      if (validDate && !validTime) {
-        const updatedDateTime = DateTimeUtils.updateTime(previousDateTime, '00:00');
+      if (!validDate && validTime) {
+        const updatedDateTime = DateTimeUtils.updateTime(previousDateTime, time);
 
         this.setState({
           dateTime: updatedDateTime,
