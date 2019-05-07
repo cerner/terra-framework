@@ -1,7 +1,7 @@
 {
   "name": "terra-date-picker",
   "main": "lib/DatePicker.js",
-  "version": "3.14.0",
+  "version": "3.15.0",
   "description": "The terra-date-picker component provides users a way to enter or select a date from the date picker.",
   "repository": {
     "type": "git",
@@ -38,10 +38,10 @@
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "terra-disclosure-manager": "^4.9.0",
+    "terra-disclosure-manager": "^4.10.0",
     "terra-doc-template": "^2.2.0",
     "terra-form-field": "^3.1.0",
-    "terra-modal-manager": "^5.10.0"
+    "terra-modal-manager": "^5.11.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
