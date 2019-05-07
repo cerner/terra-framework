@@ -24,19 +24,19 @@
   "peerDependencies": {
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-intl": "^2.8.0"
+    "react-intl": "^2.8.0",
+    "terra-disclosure-manager": "^4.9.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "react-router-dom": "^4.2.2",
+    "react-router-dom": "^5.0.0",
     "terra-application-header-layout": "^3.6.0",
     "terra-application-links": "^5.12.0",
     "terra-application-menu-layout": "^3.3.0",
     "terra-application-name": "^3.7.0",
     "terra-application-utility": "^2.9.0",
     "terra-breakpoints": "^2.3.0",
-    "terra-disclosure-manager": "^4.10.0",
     "terra-icon": "^3.1.0",
     "terra-modal-manager": "^5.11.0",
     "terra-navigation-layout": "^4.5.0",
