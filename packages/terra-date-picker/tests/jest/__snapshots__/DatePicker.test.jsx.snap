@@ -697,7 +697,7 @@ exports[`should render a date picker with onBlur 1`] = `
   <ResponsiveElement
     defaultElement={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             buttonRefCallback={[Function]}
@@ -779,7 +779,7 @@ exports[`should render a date picker with onBlur 1`] = `
     responsiveTo="window"
     small={
       <DatePicker
-        allowSameDay={false}
+        allowSameDay={true}
         customInput={
           <DatePickerInput
             buttonRefCallback={[Function]}
