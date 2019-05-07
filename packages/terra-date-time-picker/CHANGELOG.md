@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Update the filterDate examples to handle an ISO string instead of a moment object.
 
 3.16.0 - (May 7, 2019)
 ------------------
