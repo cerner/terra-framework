@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Field from 'terra-form-field';
+import moment from 'moment';
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import DatePicker from 'terra-date-picker/lib/DatePicker';
 
@@ -50,8 +51,14 @@ DatePickerExample.propTypes = propTypes;
 DatePickerExample.defualtProps = defaultProps;
 
 const isWeekday = (date) => {
-  const day = date.day();
-  return day !== 0 && day !== 6;
+  const momentDate = moment(date);
+
+  if (momentDate && momentDate.isValid()) {
+    const day = momentDate.day();
+    return day !== 0 && day !== 6;
+  }
+
+  return true;
 };
 
 const DatePickerExampleFilterDates = () => (

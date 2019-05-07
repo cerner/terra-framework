@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Update the filterDate examples to handle an ISO string instead of a moment object.
+
 ### Removed
 * Remove minDateTime and maxDateTime props. These props are being renamed to minDate and maxDate.
 

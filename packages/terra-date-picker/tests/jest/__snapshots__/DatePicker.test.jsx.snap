@@ -25,6 +25,7 @@ exports[`should render a date picker with disabled dates 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -105,6 +106,7 @@ exports[`should render a date picker with disabled dates 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -363,6 +365,7 @@ exports[`should render a date picker with included dates 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -443,6 +446,7 @@ exports[`should render a date picker with included dates 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -531,6 +535,7 @@ exports[`should render a date picker with min and max dates 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -611,6 +616,7 @@ exports[`should render a date picker with min and max dates 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -699,6 +705,7 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -779,6 +786,7 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -867,6 +875,7 @@ exports[`should render a date picker with onChange 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -947,6 +956,7 @@ exports[`should render a date picker with onChange 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -1035,6 +1045,7 @@ exports[`should render a date picker with onChangeRaw 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -1115,6 +1126,7 @@ exports[`should render a date picker with onChangeRaw 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -1203,6 +1215,7 @@ exports[`should render a date picker with onInputFocus 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -1283,6 +1296,7 @@ exports[`should render a date picker with onInputFocus 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -1371,6 +1385,7 @@ exports[`should render a date picker with onSelect 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -1451,6 +1466,7 @@ exports[`should render a date picker with onSelect 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -1540,6 +1556,7 @@ exports[`should render a date picker with releaseFocus 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -1621,6 +1638,7 @@ exports[`should render a date picker with releaseFocus 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -1710,6 +1728,7 @@ exports[`should render a date picker with requestFocus 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -1791,6 +1810,7 @@ exports[`should render a date picker with requestFocus 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -1879,6 +1899,7 @@ exports[`should render a default date input and date picker 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -1959,6 +1980,7 @@ exports[`should render a default date input and date picker 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -2052,6 +2074,7 @@ exports[`should render a default date input with custom input attributes 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -2137,6 +2160,7 @@ exports[`should render a default date input with custom input attributes 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -2225,6 +2249,7 @@ exports[`should render a disabled date picker 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -2305,6 +2330,7 @@ exports[`should render a disabled date picker 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -2393,6 +2419,7 @@ exports[`should render a required date input and date picker 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
@@ -2473,6 +2500,7 @@ exports[`should render a required date input and date picker 1`] = `
             "2017-01-01T00:00:00.000Z",
           ]
         }
+        filterDate={[Function]}
         fixedHeight={true}
         includeDates={
           Array [
