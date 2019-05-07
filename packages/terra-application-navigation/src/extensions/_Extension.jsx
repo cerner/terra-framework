@@ -8,6 +8,9 @@ import Count from './_ExtensionCount';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * The identifier for the extensions.
+   */
   extensionKey: PropTypes.string,
   /**
    * The icon to display for the associated extension action.

@@ -12,9 +12,15 @@ import { userConfigPropType } from '../utils/propTypes';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * A configuration object with information pertaining to the application's user.
+   */
   userConfig: userConfigPropType,
   onClick: PropTypes.func,
   popupAnchorRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  /**
+   * @private
+   */
   intl: intlShape,
 };
 

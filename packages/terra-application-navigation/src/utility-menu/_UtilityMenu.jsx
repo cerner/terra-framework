@@ -10,12 +10,38 @@ import PopupMenu from '../common/_PopupMenu';
 import { userConfigPropType, utilityItemsPropType } from '../utils/propTypes';
 
 const propTypes = {
+  /**
+   * A configuration object with information pertaining to the application's user.
+   */
   userConfig: userConfigPropType,
   hero: PropTypes.element,
+  /**
+   * A function to be executed upon the selection of the Settings utility item.
+   * If `onSelectSettings` is not provided, the Settings utility item will not be rendered.
+   * Ex: `onSelectSettings()`
+   */
   onSelectSettings: PropTypes.func,
+  /**
+   * A function to be executed upon the selection of the Help utility item.
+   * If `onSelectHelp` is not provided, the Help utility item will not be rendered.
+   * Ex: `onSelectLogout()`
+   */
   onSelectHelp: PropTypes.func,
+  /**
+   * A function to be executed upon the selection of the Logout action button.
+   * If `onSelectLogout` is not provided, the Logout action button will not be rendered.
+   * Ex: `onSelectLogout()`
+   */
   onSelectLogout: PropTypes.func,
+  /**
+   * An array of configuration objects with information specifying the creation of additional utility menu items.
+   * These items are rendered within the popup utility menu at larger breakpoints and within the drawer menu at smaller breakpoints.
+   */
   utilityItems: utilityItemsPropType,
+  /**
+   * A function to be executed upon the selection of a custom utility item.
+   * Ex: `onSelectUtilityItem(String selectedUtilityItemKey)`
+   */
   onSelectUtilityItem: PropTypes.func,
   isHeightBounded: PropTypes.bool,
 };
