@@ -4,7 +4,6 @@ import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
 import LodashDebounce from 'lodash.debounce';
 import { injectIntl, intlShape } from 'react-intl';
-import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 import ActionHeader from 'terra-action-header';
 import Popup from 'terra-popup';
 
@@ -52,20 +51,20 @@ class Tabs extends React.Component {
   constructor(props) {
     super(props);
 
-    this.setContainerNode = this.setContainerNode.bind(this);
+    this.getRollupTabWidth = this.getRollupTabWidth.bind(this);
+    this.closePopup = this.closePopup.bind(this);
     this.handleResize = this.handleResize.bind(this);
-    this.setMenuRef = this.setMenuRef.bind(this);
-    this.setChildRef = this.setChildRef.bind(this);
-    this.getMoreWidth = this.getMoreWidth.bind(this);
-    this.getChildWidth = this.getChildWidth.bind(this);
     this.renderRollup = this.renderRollup.bind(this);
     this.renderPopup = this.renderPopup.bind(this);
-
-    this.updateSize = LodashDebounce(this.updateSize.bind(this), 100);
     this.buildVisibleChildren = this.buildVisibleChildren.bind(this);
-    this.resetCalculations();
+    this.updateSize = LodashDebounce(this.updateSize.bind(this), 100);
+
+    this.containerRef = React.createRef();
+    this.rollupTabRef = React.createRef();
     this.childRefs = [];
     this.previousNotifications = null;
+
+    this.resetCalculations();
 
     this.state = {
       popupIsOpen: false,
@@ -77,56 +76,49 @@ class Tabs extends React.Component {
       this.contentWidth = entries[0].contentRect.width;
       this.updateSize();
     });
-    this.resizeObserver.observe(this.container);
+    this.resizeObserver.observe(this.containerRef.current);
   }
 
   shouldComponentUpdate(nextProps) {
-    if (this.props.navigationItems.length !== nextProps.navigationItems.length || this.props.activeTabKey !== nextProps.activeTabKey) {
+    const { navigationItems, activeTabKey, notifications } = this.props;
+
+    if (navigationItems.length !== nextProps.navigationItems.length || activeTabKey !== nextProps.activeTabKey) {
       this.resetCalculations();
     }
-    this.previousNotifications = this.props.notifications;
+    this.previousNotifications = notifications;
+
     return true;
   }
 
   componentDidUpdate(prevProps) {
+    const { activeTabKey } = this.props;
+    const { popupIsOpen } = this.state;
+
     if (this.isCalculating) {
       this.isCalculating = false;
       this.handleResize(this.contentWidth);
     }
 
-    if (prevProps.activeTabKey !== this.props.activeTabKey) {
+    if (activeTabKey !== prevProps.activeTabKey && popupIsOpen) {
+      // If the active tab has changed between updates due to updates outside of Tabs, the popup is closed.
       // eslint-disable-next-line react/no-did-update-set-state
-      this.setState({ popupIsOpen: false });
+      this.closePopup();
     }
   }
 
   componentWillUnmount() {
     this.updateSize.cancel();
-    this.resizeObserver.disconnect(this.container);
-    this.container = null;
+    this.resizeObserver.disconnect(this.containerRef.current);
   }
 
-  setContainerNode(node) {
-    if (node === null) { return; } // Ref callbacks happen on mount and unmount, element will be null on unmount
-    this.container = node;
+  getRollupTabWidth() {
+    return this.rollupTabRef.current.getBoundingClientRect().width;
   }
 
-  setChildRef(ref, index) {
-    if (!ref) { return; }
-    this.childRefs[index] = ref;
-  }
-
-  setMenuRef(ref) {
-    if (!ref) { return; }
-    this.moreRef = ref;
-  }
-
-  getMoreWidth() {
-    return this.moreRef.getBoundingClientRect().width;
-  }
-
-  getChildWidth(index) {
-    return this.childRefs[index].getBoundingClientRect().width;
+  closePopup(callback) {
+    this.setState({
+      popupIsOpen: false,
+    }, callback);
   }
 
   updateSize() {
@@ -143,13 +135,13 @@ class Tabs extends React.Component {
   handleResize(width) {
     // Calculate hide index
     const childrenCount = this.props.navigationItems.length;
-    const moreWidth = width - this.getMoreWidth();
+    const moreWidth = width - this.getRollupTabWidth();
     let newHideIndex = childrenCount;
     let isMenuHidden = true;
 
     let calcMinWidth = 0;
     for (let i = 0; i < childrenCount; i += 1) {
-      calcMinWidth += this.getChildWidth(i);
+      calcMinWidth += this.childRefs[i].current.getBoundingClientRect().width;
       if (calcMinWidth > moreWidth && !(i === childrenCount - 1 && calcMinWidth <= width)) {
         newHideIndex = i;
         isMenuHidden = false;
@@ -188,7 +180,7 @@ class Tabs extends React.Component {
         text: tab.text,
         key: tab.key,
         tabKey: tab.key,
-        onTabClick: () => {
+        onTabSelect: () => {
           if (onTabSelect) {
             onTabSelect(tab.key, tab.metaData);
           }
@@ -199,7 +191,9 @@ class Tabs extends React.Component {
         metaData: tab.metaData,
       };
       if (this.isCalculating) {
-        tabProps.refCallback = ref => this.setChildRef(ref, index);
+        const tabRef = React.createRef();
+        this.childRefs[index] = tabRef;
+        tabProps.tabRef = tabRef;
       }
       return <Tab {...tabProps} render={this.props.navigationRenderFunction} />;
     });
@@ -220,28 +214,22 @@ class Tabs extends React.Component {
 
   renderRollup(hiddenTabs, hasNotifications, hasHiddenNotification) {
     const { activeTabKey, notifications, intl } = this.props;
+
     const tabRollupIsSelected = hiddenTabs.some(tab => tab.key === activeTabKey);
 
     return (
       <TabRollup
-        isIconOnly={!this.isCalculating && this.contentWidth <= this.getMoreWidth()}
+        isIconOnly={!this.isCalculating && this.contentWidth <= this.getRollupTabWidth()}
         hasCount={hasNotifications}
         isPulsed={hasHiddenNotification && !this.isCalculating && this.shouldPulse(hiddenTabs, notifications)}
-        onClick={() => {
-          this.setState({
-            popupIsOpen: true,
-          });
+        onTabSelect={() => {
+          this.setState({ popupIsOpen: true });
         }}
-        onKeyDown={(event) => {
-          if ((event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) && !this.state.popupIsOpen) {
-            this.setState({ popupIsOpen: true });
-          }
-        }}
-        refCallback={this.setMenuRef}
+        tabRef={this.rollupTabRef}
         text={intl.formatMessage({ id: 'Terra.application.tabs.more' })}
         isSelected={tabRollupIsSelected}
-        data-application-tabs-more
         showNotificationRollup={hasHiddenNotification}
+        data-application-tabs-more
       />
     );
   }
@@ -253,10 +241,8 @@ class Tabs extends React.Component {
       <Popup
         contentHeight="auto"
         contentWidth="240"
-        onRequestClose={() => {
-          this.setState({ popupIsOpen: false });
-        }}
-        targetRef={() => this.moreRef}
+        onRequestClose={this.closePopup}
+        targetRef={() => this.rollupTabRef.current}
         isOpen
         isArrowDisplayed
       >
@@ -271,11 +257,10 @@ class Tabs extends React.Component {
             isActive: tab.key === activeTabKey,
           }))}
           onSelectMenuItem={(itemKey, itemMetaData) => {
-            if (onTabSelect) {
-              onTabSelect(itemKey, itemMetaData);
-            }
-            this.setState({
-              popupIsOpen: false,
+            this.closePopup(() => {
+              if (onTabSelect) {
+                onTabSelect(itemKey, itemMetaData);
+              }
             });
           }}
           showSelections
@@ -301,7 +286,7 @@ class Tabs extends React.Component {
     const hasNotifications = hasVisibleNotification || hasHiddenNotification;
 
     return (
-      <div className={cx('tabs-wrapper')} ref={this.setContainerNode}>
+      <div className={cx('tabs-wrapper')} ref={this.containerRef}>
         <div
           className={cx(['tabs-container', { 'is-calculating': this.isCalculating }])}
           role="tablist"
@@ -309,7 +294,7 @@ class Tabs extends React.Component {
           {this.buildVisibleChildren(visibleTabs, hasNotifications, onTabSelect, activeTabKey, notifications)}
           {!this.menuHidden ? this.renderRollup(hiddenTabs, hasNotifications, hasHiddenNotification) : null}
           {popupIsOpen ? this.renderPopup(hiddenTabs) : null}
-          <div className={cx(['divider-after-last-tab'])} />
+          <div className={cx('divider-after-last-tab')} />
         </div>
       </div>
     );

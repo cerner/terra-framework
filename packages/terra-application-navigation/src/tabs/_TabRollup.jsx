@@ -19,21 +19,17 @@ const propTypes = {
    */
   isSelected: PropTypes.bool,
   /**
-   * Callback func for onKeyDown.
+   * The selection callback for the tab.
    */
-  onKeyDown: PropTypes.func,
+  onTabSelect: PropTypes.func,
   /**
-   * The terra-popup to attach to the menu display.
-   */
-  popup: PropTypes.node,
-  /**
-   * The display text for the display.
+   * The display text for the tab.
    */
   text: PropTypes.string,
   /**
-   * Ref callback for menu display.
+   * Ref object that will be updated with a reference to the TabRollup's root element.
    */
-  refCallback: PropTypes.func,
+  tabRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
   /**
    * Should the count notificaiton be displayed on the menu display.
    */
@@ -55,75 +51,59 @@ const defaultProps = {
   showNotificationRollup: false,
 };
 
-class TabRollup extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-
-    this.handleKeyDown = this.handleKeyDown.bind(this);
-  }
-
-  handleKeyDown(event) {
-    // Add focus styles for keyboard navigation
+const TabRollup = ({
+  hasCount,
+  isSelected,
+  onTabSelect,
+  tabRef,
+  showNotificationRollup,
+  text,
+  isPulsed,
+  isIconOnly,
+}) => {
+  function onKeyDown(event) {
     if (event.nativeEvent.keyCode === KEY_SPACE || event.nativeEvent.keyCode === KEY_RETURN) {
       event.preventDefault();
-      if (this.props.onKeyDown) {
-        this.props.onKeyDown(event);
+      if (onTabSelect) {
+        onTabSelect();
       }
     }
   }
 
-  render() {
-    const {
-      hasCount,
-      isSelected,
-      onKeyDown,
-      popup,
-      refCallback,
-      showNotificationRollup,
-      text,
-      isPulsed,
-      isIconOnly,
-      ...customProps
-    } = this.props;
-
-    const displayClassNames = cx([
-      'tab-rollup',
-      { 'has-count': hasCount },
-      customProps.className,
-    ]);
-    const attributes = { 'aria-current': isSelected };
-
-    return (
-      /* eslint-disable jsx-a11y/no-static-element-interactions */
-      <div
-        {...customProps}
-        {...attributes}
-        role="tab"
-        tabIndex="0"
-        className={displayClassNames}
-        ref={refCallback}
-        onKeyDown={this.handleKeyDown}
-        data-item-show-focus
-        onBlur={(event) => {
-          event.currentTarget.setAttribute('data-item-show-focus', 'true');
-        }}
-        onMouseDown={(event) => {
-          event.currentTarget.setAttribute('data-item-show-focus', 'false');
-        }}
-      >
-        <div className={cx('tab-inner')} data-tab-menu-inner>
-          <div className={cx('tab-rollup-label')}>
-            {!isIconOnly && <span className={cx('tab-rollup-text')}>{text}</span>}
-            {showNotificationRollup && <span className={cx('tab-count')}><TabCount value={isPulsed ? 1 : 0} isRollup /></span>}
-            <IconCaretDown className={cx(['tab-rollup-icon', { 'is-icon-only': isIconOnly }])} />
-          </div>
-        </div>
-        {popup}
-      </div>
-      /* eslint-enable jsx-ally/no-static-element-interactions */
-    );
+  function onBlur(event) {
+    event.currentTarget.setAttribute('data-item-show-focus', 'true');
   }
-}
+
+  function onMouseDown(event) {
+    event.currentTarget.setAttribute('data-item-show-focus', 'false');
+  }
+
+  return (
+    <div
+      role="tab"
+      tabIndex="0"
+      className={cx([
+        'tab-rollup',
+        { 'has-count': hasCount },
+      ])}
+      onClick={onTabSelect}
+      onKeyDown={onKeyDown}
+      onBlur={onBlur}
+      onMouseDown={onMouseDown}
+      ref={tabRef}
+      aria-current={isSelected}
+      data-item-show-focus
+    >
+      <div className={cx('tab-inner')} data-tab-menu-inner>
+        <div className={cx('tab-rollup-label')}>
+          {!isIconOnly && <span className={cx('tab-rollup-text')}>{text}</span>}
+          {showNotificationRollup && <span className={cx('tab-count')}><TabCount value={isPulsed ? 1 : 0} isRollup /></span>}
+          <IconCaretDown className={cx(['tab-rollup-icon', { 'is-icon-only': isIconOnly }])} />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 TabRollup.propTypes = propTypes;
 TabRollup.defaultProps = defaultProps;

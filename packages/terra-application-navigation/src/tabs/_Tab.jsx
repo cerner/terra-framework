@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
-import Count from './_TabCount';
+import TabCount from './_TabCount';
 import styles from './Tab.module.scss';
 
 const cx = classNames.bind(styles);
@@ -21,9 +21,9 @@ const propTypes = {
    */
   metaData: PropTypes.object,
   /**
-   * The click callback of the tab.
+   * The selection callback for the tab.
    */
-  onTabClick: PropTypes.func,
+  onTabSelect: PropTypes.func,
   /**
    * The number of notifications to be displayed for the tab.
    */
@@ -37,9 +37,9 @@ const propTypes = {
    */
   isPlaceholder: PropTypes.bool,
   /**
-   * Callback function for the tab node.
+   * Ref object that will be updated with a reference to the Tab's root element.
    */
-  refCallback: PropTypes.func,
+  tabRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
   /**
    * Boolean indicating whether or not the Tab should account for count spacing.
    */
@@ -50,102 +50,82 @@ const propTypes = {
   render: PropTypes.func,
 };
 
-const getRenderTabClasses = isActive => cx([
-  'tab',
-  'is-custom',
-  { 'is-disabled': isActive },
-]);
-
-const getDefaultTabClasses = (isActive, isPlaceholder, hasCount) => cx([
-  'tab',
-  { 'is-disabled': isActive },
-  { 'is-placeholder': isPlaceholder },
-  { 'has-count': hasCount },
-]);
-
-class Tab extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleOnClick = this.handleOnClick.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
+const Tab = ({
+  tabKey,
+  metaData,
+  text,
+  hasCount,
+  isActive,
+  isPlaceholder,
+  tabRef,
+  render,
+  notificationCount,
+  onTabSelect,
+}) => {
+  function onClick() {
+    if (onTabSelect) {
+      onTabSelect(tabKey, metaData);
+    }
   }
 
-  handleKeyDown(event) {
-    // Add focus styles for keyboard navigation
+  function onKeyDown(event) {
     if (event.nativeEvent.keyCode === KEY_SPACE || event.nativeEvent.keyCode === KEY_RETURN) {
       event.preventDefault();
-      this.handleOnClick();
+      onTabSelect();
     }
   }
 
-  handleOnClick() {
-    if (this.props.onTabClick) {
-      this.props.onTabClick(this.props.tabKey, this.props.metaData);
-    }
+  function onBlur(event) {
+    event.currentTarget.setAttribute('data-item-show-focus', 'true');
   }
 
-  render() {
-    const {
-      text,
-      hasCount,
-      metaData,
-      isActive,
-      isPlaceholder,
-      refCallback,
-      render,
-      notificationCount,
-    } = this.props;
+  function onMouseDown(event) {
+    event.currentTarget.setAttribute('data-item-show-focus', 'false');
+  }
 
-    const tabAttr = { 'aria-current': isActive, 'aria-hidden': isPlaceholder };
-    let tabClassNames;
-    let tabContent;
-
+  function renderTabContent() {
     if (render) {
-      tabClassNames = getRenderTabClasses(isActive);
-
-      tabContent = (
-        render({
-          text,
-          hasCount,
-          metaData,
-          isActive,
-          notificationCount,
-        })
-      );
-    } else {
-      tabClassNames = getDefaultTabClasses(isActive, isPlaceholder, hasCount);
-
-      tabContent = (
-        <span className={cx(['tab-inner'])}>
-          <span className={cx(['tab-label'])}>{text}</span>
-          {notificationCount > 0 && <span className={cx('tab-count')}><Count value={notificationCount} /></span>}
-        </span>
-      );
+      return render({
+        text,
+        hasCount,
+        metaData,
+        isActive,
+        notificationCount,
+      });
     }
 
     return (
-      <div
-        {...tabAttr}
-        type="button"
-        role="link"
-        tabIndex="0"
-        className={tabClassNames}
-        onClick={this.handleOnClick}
-        onKeyDown={this.handleKeyDown}
-        data-item-show-focus
-        onBlur={(event) => {
-          event.currentTarget.setAttribute('data-item-show-focus', 'true');
-        }}
-        onMouseDown={(event) => {
-          event.currentTarget.setAttribute('data-item-show-focus', 'false');
-        }}
-        ref={refCallback}
-      >
-        {tabContent}
-      </div>
+      <span className={cx('tab-inner')}>
+        <span className={cx('tab-label')}>{text}</span>
+        {notificationCount > 0 && <span className={cx('tab-count')}><TabCount value={notificationCount} /></span>}
+      </span>
     );
   }
-}
+
+  return (
+    <div
+      type="button"
+      role="link"
+      tabIndex="0"
+      className={cx([
+        'tab',
+        { 'is-disabled': isActive },
+        { 'is-placeholder': !render && isPlaceholder },
+        { 'has-count': !render && hasCount },
+      ])}
+      onClick={onClick}
+      onKeyDown={onKeyDown}
+      onBlur={onBlur}
+      onMouseDown={onMouseDown}
+      ref={tabRef}
+      data-item-show-focus
+      aria-current={isActive}
+      aria-hidden={isPlaceholder}
+    >
+      {renderTabContent()}
+    </div>
+  );
+};
 
 Tab.propTypes = propTypes;
 
