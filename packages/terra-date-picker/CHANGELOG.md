@@ -4,7 +4,19 @@ Changelog
 Unreleased
 ----------
 ### Added
-* Added DatePickerField 
+* Added DatePickerField
+
+### Changed
+* Changed the parameter in filterDate prop from a moment object to an ISO string.
+* Honor min/max range when only either minDate or maxDate is set.
+
+3.15.0 - (May 7, 2019)
+------------------
+### Changed
+* Allow same day change to trigger onChange.
+
+### Fixed
+* Fixed crash when selectedDate prop is set to a string or empty string that is not ISO compliant and unable to convert to a valid moment object.
 
 3.14.0 - (April 24, 2019)
 ------------------

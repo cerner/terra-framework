@@ -3,6 +3,19 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Update the filterDate examples to handle an ISO string instead of a moment object.
+
+### Removed
+* Remove minDateTime and maxDateTime props. These props are being renamed to minDate and maxDate.
+
+### Added
+* Add minDate and maxDate props. These props replace minDateTime and maxDateTime for the purpose of ignoring the time portion when determing the min/max range.
+
+3.16.0 - (May 7, 2019)
+------------------
+### Fixed
+* Changes made to the time is now preserved when the modification is made with an invalid date.
 
 3.15.0 - (April 24, 2019)
 ------------------
@@ -11,6 +24,8 @@ Unreleased
 
 ### Changed
 * Moved packages we use solely in doc examples and tests to devDependencies
+* Leverage createSafeDate from the DateUtil.
+
 
 3.14.0 - (April 16, 2019)
 ------------------
