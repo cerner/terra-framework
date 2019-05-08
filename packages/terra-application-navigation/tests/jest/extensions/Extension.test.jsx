@@ -5,7 +5,6 @@ describe('Extension', () => {
   it('should render with required prop data', () => {
     const shallowComponent = shallow(
       <Extension
-        extensionKey="testKey"
         icon={<span>my icon</span>}
         text="my text"
       />,
@@ -17,9 +16,7 @@ describe('Extension', () => {
   it('should render prop data', () => {
     const shallowComponent = shallow(
       <Extension
-        extensionKey="testKey"
         icon={<span>my icon</span>}
-        metaData={{ test: 'test-value' }}
         notificationCount={1}
         text="my text"
       />,
@@ -31,7 +28,6 @@ describe('Extension', () => {
   it('should render with function callbacks', () => {
     const shallowComponent = shallow(
       <Extension
-        extensionKey="testKey"
         icon={<span>my icon</span>}
         text="my text"
         onRequestClose={jest.fn()}
@@ -48,7 +44,6 @@ describe('Extension', () => {
 
     const shallowComponent = shallow(
       <Extension
-        extensionKey="testKey"
         icon={<span>my icon</span>}
         text="my text"
         onSelect={mockCallBack}

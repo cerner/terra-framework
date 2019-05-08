@@ -58,6 +58,9 @@ const propTypes = {
      */
     notificationCount: PropTypes.number,
   })),
+  /**
+   * Function callback for selection of the menu item. Returns (key, metaData).
+   */
   onSelectMenuItem: PropTypes.func,
   /**
    * Whehther or not content is be constrained vertically.
@@ -89,9 +92,7 @@ const PopupMenu = ({
           {menuItems.map(item => (
             <PopupMenuListItem
               key={item.key}
-              onSelect={onSelectMenuItem ? () => {
-                onSelectMenuItem(item.key, item.metaData);
-              } : undefined}
+              onSelect={onSelectMenuItem && onSelectMenuItem.bind(null, item.key, item.metaData)}
               icon={item.icon}
               text={item.text}
               notificationCount={item.notificationCount}

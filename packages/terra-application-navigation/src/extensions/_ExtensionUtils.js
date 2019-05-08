@@ -1,26 +1,23 @@
-const KEYCODES = {
-  ENTER: 13,
-  SPACE: 32,
-};
+import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 
-const createKeyDown = (onRequestClose, onSelect, extensionKey, metaData) => (
+const createKeyDown = (onRequestClose, onSelect) => (
   (event) => {
-    if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
+    if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
       event.preventDefault();
       if (onRequestClose) {
         onRequestClose();
       }
-      onSelect(extensionKey, metaData);
+      onSelect();
     }
   }
 );
 
-const createOnClick = (onRequestClose, onSelect, extensionKey, metaData) => (
+const createOnClick = (onRequestClose, onSelect) => (
   () => {
     if (onRequestClose) {
       onRequestClose();
     }
-    onSelect(extensionKey, metaData);
+    onSelect();
   }
 );
 

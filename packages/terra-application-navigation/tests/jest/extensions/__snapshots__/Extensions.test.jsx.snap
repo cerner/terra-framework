@@ -69,7 +69,6 @@ exports[`Extensions should render prop data 1`] = `
     className="extensions-row"
   >
     <Extension
-      extensionKey="my-test-key"
       icon={
         <span>
           my icon
@@ -78,7 +77,7 @@ exports[`Extensions should render prop data 1`] = `
       key="my-test-key"
       notificationCount={0}
       onRequestClose={[Function]}
-      onSelect={[MockFunction]}
+      onSelect={[Function]}
       text="test-text"
     />
   </div>

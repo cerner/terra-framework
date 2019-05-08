@@ -9,17 +9,9 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The identifier for the extensions.
-   */
-  extensionKey: PropTypes.string.isRequired,
-  /**
    * The icon to display for the associated extension action.
    */
   icon: PropTypes.element.isRequired,
-  /**
-   * Meta data to be returned in the onSelect callback.
-   */
-  metaData: PropTypes.object,
   /**
    * The number of notifications to be displayed for the extension.
    */
@@ -47,17 +39,15 @@ const defaultProps = {
 };
 
 const Extension = ({
-  extensionKey,
   notificationCount,
   icon,
   text,
-  metaData,
   onRequestClose,
   onSelect,
   refCallback,
 }) => {
-  const keyDown = createKeyDown(onRequestClose, onSelect, extensionKey, metaData);
-  const onClick = createOnClick(onRequestClose, onSelect, extensionKey, metaData);
+  const keyDown = createKeyDown(onRequestClose, onSelect);
+  const onClick = createOnClick(onRequestClose, onSelect);
 
   return (
     <div

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconTile from 'terra-icon/lib/icon/IconTile';
-import { createKeyDown, createOnClick } from './_ExtensionUtils';
+import { createKeyDown } from './_ExtensionUtils';
 import ExtensionCount from './_ExtensionCount';
 
 import styles from './ExtensionRollup.module.scss';
@@ -39,8 +39,7 @@ const ExtensionRollup = ({
   onSelect,
   refCallback,
 }) => {
-  const keyDown = createKeyDown(null, onSelect, null);
-  const onClick = createOnClick(null, onSelect, null);
+  const keyDown = createKeyDown(null, onSelect);
 
   return (
     <div
@@ -49,7 +48,7 @@ const ExtensionRollup = ({
       className={cx('extension-rollup')}
       role="button"
       tabIndex="0"
-      onClick={onClick}
+      onClick={onSelect}
       ref={refCallback}
       data-item-show-focus
       onBlur={(event) => {

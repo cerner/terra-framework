@@ -116,7 +116,7 @@ const DrawerMenu = ({
               key={item.key}
               text={item.text}
               icon={item.icon}
-              onSelect={onSelectUtilityItem && onSelectUtilityItem.bind(null, item.key)}
+              onSelect={onSelectUtilityItem && onSelectUtilityItem.bind(null, item.key, item.metaData)}
             />
           ))}
           {onSelectSettings ? (

@@ -145,11 +145,11 @@ class Extensions extends React.Component {
               icon: item.icon,
               text: item.text,
               notificationCount: notifications[item.key],
+              metaData: item.metaData,
             }))}
-            onSelectMenuItem={(itemKey) => {
-              const selectedExtension = hiddenItems.find(item => item.key === itemKey);
+            onSelectMenuItem={(itemKey, metaData) => {
               if (onSelect) {
-                onSelect(itemKey, selectedExtension.metaData);
+                onSelect(itemKey, metaData);
               }
               this.handleRequestClose();
             }}
@@ -160,11 +160,9 @@ class Extensions extends React.Component {
             <Extension
               notificationCount={notifications[item.key]}
               key={item.key}
-              extensionKey={item.key}
               icon={item.icon}
               text={item.text}
-              metaData={item.metaData}
-              onSelect={onSelect}
+              onSelect={onSelect && onSelect.bind(null, item.key, item.metaData)}
               onRequestClose={this.handleRequestClose}
             />
           ))}
