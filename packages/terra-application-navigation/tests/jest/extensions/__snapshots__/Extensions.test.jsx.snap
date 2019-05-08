@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ExtensionCount should render default element 1`] = `
+exports[`Extensions should render default element 1`] = `
 <Fragment>
   <Popup
     attachmentBehavior="auto"
@@ -35,7 +35,7 @@ exports[`ExtensionCount should render default element 1`] = `
 </Fragment>
 `;
 
-exports[`ExtensionCount should render prop data 1`] = `
+exports[`Extensions should render prop data 1`] = `
 <Fragment>
   <Popup
     attachmentBehavior="auto"

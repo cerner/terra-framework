@@ -1,7 +1,7 @@
 import React from 'react';
 import ExtensionRollup from '../../../src/extensions/_ExtensionRollup';
 
-describe('ExtensionCount', () => {
+describe('ExtensionRollup', () => {
   it('should render default element', () => {
     const shallowComponent = shallow(
       <ExtensionRollup />,

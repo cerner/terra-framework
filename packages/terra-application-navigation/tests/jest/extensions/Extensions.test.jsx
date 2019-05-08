@@ -1,7 +1,7 @@
 import React from 'react';
 import Extensions from '../../../src/extensions/_Extensions';
 
-describe('ExtensionCount', () => {
+describe('Extensions', () => {
   it('should render default element', () => {
     const shallowComponent = shallow(
       <Extensions />,
