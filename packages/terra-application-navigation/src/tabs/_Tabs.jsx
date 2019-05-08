@@ -241,7 +241,9 @@ class Tabs extends React.Component {
       <Popup
         contentHeight="auto"
         contentWidth="240"
-        onRequestClose={this.closePopup}
+        onRequestClose={() => {
+          this.closePopup();
+        }}
         targetRef={() => this.rollupTabRef.current}
         isOpen
         isArrowDisplayed
