@@ -3,24 +3,19 @@ import DateUtil from 'terra-date-picker/lib/DateUtil';
 import TimeUtil from 'terra-time-input/lib/TimeUtil';
 
 class DateTimeUtils {
-  static createSafeDate(date) {
-    if (!date || (date && date.length === 0)) {
-      return null;
-    }
-
-    const momentDate = moment(date);
-    return momentDate.isValid() ? momentDate : null;
-  }
-
-  // Check if the iSODate contains the time part.
-  // The time part in a valid ISO 8601 string is separated from the date part either by a space or 'T'.
+  /**
+   * Checks if the ISO string contains the time (hh:mm) part.
+   * @param {string} iSODate - The ISO string
+   * @return {boolean} - True if the ISO string contains the time. False, otherwise.
+   */
   static hasTime(iSODate) {
-    if (!DateTimeUtils.createSafeDate(iSODate)) {
+    if (!DateUtil.createSafeDate(iSODate)) {
       return false;
     }
 
     let timePart = '';
 
+    // The time part in a valid ISO 8601 string is separated from the date part either by a space or 'T'.
     if (iSODate.indexOf(' ') > 0) {
       // eslint-disable-next-line prefer-destructuring
       timePart = iSODate.split(' ')[1];
@@ -34,6 +29,12 @@ class DateTimeUtils {
     return timePart.length > 0;
   }
 
+  /**
+   * Converts an ISO string to the given format.
+   * @param {string} iSODate - The ISO string to convert.
+   * @param {string} format - The desired date/time format for the conversion
+   * @return {string} - The formatted date/time string.
+   */
   static formatISODateTime(iSODate, format) {
     if (!iSODate || iSODate.length <= 0) {
       return '';
@@ -43,22 +44,64 @@ class DateTimeUtils {
     return DateTimeUtils.formatMomentDateTime(momentDate, format);
   }
 
+  /**
+   * Converts a moment object to the given format.
+   * @param {object} momentDate - The moment object to convert.
+   * @param {string} format - The desired date/time format for the conversion
+   * @return {string} - The formatted date/time string.
+   */
   static formatMomentDateTime(momentDate, format) {
     return momentDate && momentDate.isValid() ? momentDate.format(format) : undefined;
   }
 
-  static syncDateTime(momentDate, iOSdate, time) {
-    const date = moment(iOSdate);
-    let newDate = momentDate ? momentDate.clone() : date;
+  /**
+   * Synchronize the date and time for a given the base moment object.
+   * Because a moment object must have the date portion, if the provided iSOdate is invalid,
+   * The base moment object will not synchronize the time if the provided time is invalid.
+   * @param {object} momentDate - The moment object to synchronize the date and time.
+   * @param {string} iSOdate - The date string to synchronize with the moment object.
+   * @param {string} time - The time to synchronize with the moment object.
+   * @return {object} - The synchronized moment object.
+   */
+  static syncDateTime(momentDate, iSOdate, time) {
+    const date = moment(iSOdate);
 
-    // If momentDate was null, a new moment date needs to be created and sync'd with the entered time.
-    if (momentDate === null && time && time.length === 5) {
-      newDate = DateTimeUtils.updateTime(newDate, time);
+    // If the base momentDate is valid, sync the date and time is they are valid.
+    if (momentDate && momentDate.isValid()) {
+      let tempDate = momentDate.clone();
+
+      if (date.isValid()) {
+        tempDate.year(date.get('year')).month(date.get('month')).date(date.get('date'));
+      }
+
+      if (time && time.length === 5) {
+        tempDate = DateTimeUtils.updateTime(tempDate, time);
+      }
+
+      return tempDate;
     }
 
-    return newDate.year(date.get('year')).month(date.get('month')).date(date.get('date'));
+    // If the base momentDate is invalid, use the iSOdate as the base and update the time if valid.
+    if (date.isValid()) {
+      let tempDate = date.clone();
+
+      if (time && time.length === 5) {
+        tempDate = DateTimeUtils.updateTime(tempDate, time);
+      }
+
+      return tempDate;
+    }
+
+    // Neither the base momentDate nor the iSOdate is valid.
+    return momentDate;
   }
 
+  /**
+   * Synchronize only the time for a given moment object.
+   * @param {object} momentDate - The moment object to synchronize the date and time.
+   * @param {string} time - The time to synchronize with the moment object.
+   * @return {object} - The synchronized moment object.
+   */
   static updateTime(momentDate, time) {
     if (!momentDate || !momentDate.isValid()) {
       return null;
@@ -70,20 +113,43 @@ class DateTimeUtils {
     return newDate.hour(date.get('hour')).minute(date.get('minute'));
   }
 
+  /**
+   * Determines if the date and time are valid and conform to the given format.
+   * @param {string} date - The date to validate.
+   * @param {string} time - The time to validate.
+   * @param {string} format - The date/time format to use for the validation.
+   * @return {boolean} - True if both the date and time are valid and conform to the format.
+   */
   static isValidDateTime(date, time, format) {
     return DateTimeUtils.isValidDate(date, format) && DateTimeUtils.isValidTime(time);
   }
 
+  /**
+   * Determines if the date is valid and conforms to the given format.
+   * @param {string} date - The date to validate.
+   * @param {string} format - The date format to use for the validation.
+   * @return {boolean} - True if the date is valid and conforms to the format.
+   */
   static isValidDate(date, format) {
     const dateMoment = moment(date, format, true);
     return dateMoment.isValid();
   }
 
+  /**
+   * Determines if the time is a valid time in the HH:mm format
+   * @param {string} time - The time to validate.
+   * @return {boolean} - True if the time is valid.
+   */
   static isValidTime(time) {
     const timeMoment = moment(time, 'HH:mm', true);
     return timeMoment.isValid();
   }
 
+  /**
+   * Determines if the given moment date object is in the ambiguous hour.
+   * @param {object} dateTime - The moment object to check for the ambiguous hour.
+   * @return {boolean} - True if the moment object is in the ambiguous hour.
+   */
   static checkAmbiguousTime(dateTime) {
     if (!dateTime || !dateTime.isValid()) {
       return false;
@@ -104,14 +170,29 @@ class DateTimeUtils {
     return isAmbiguousBeforeChange || isAmbiguousAfterChange;
   }
 
+  /**
+   * Gets the daylight savings time zone offset display. (e.g. CDT)
+   * @return {string} - The daylight savings time zone offset display.
+   */
   static getDaylightSavingTZDisplay() {
     return moment('2017-07-01').tz(moment.tz.guess()).format('z');
   }
 
+  /**
+   * Gets the standard time zone offset display. (e.g. CST)
+   * @return {string} - The standard time zone offset display.
+   */
   static getStandardTZDisplay() {
     return moment('2017-01-01').tz(moment.tz.guess()).format('z');
   }
 
+  /**
+   * Converts a date/time string in the given format to a moment object.
+   * @param {string} date - The date string for the conversion.
+   * @param {string} time - The time string for the conversion.
+   * @param {string} dateformat - The format of the date and time strings.
+   * @return {object} - The moment object representing the given date and time.
+   */
   static convertDateTimeStringToMomentObject(date, time, dateformat) {
     return DateTimeUtils.updateTime(DateUtil.createSafeDate(DateUtil.convertToISO8601(date, dateformat)), time);
   }

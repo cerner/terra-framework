@@ -42,13 +42,15 @@ const propTypes = {
    * */
   intl: intlShape.isRequired,
   /**
-   * An ISO 8601 string representation of the maximum date time.
+   * An ISO 8601 string representation of the maximum date that can be selected in the date picker.
+   * The time portion in this value is ignored because this is strictly used in the date picker.
    */
-  maxDateTime: PropTypes.string,
+  maxDate: PropTypes.string,
   /**
-   * An ISO 8601 string representation of the minimum date time.
+   * An ISO 8601 string representation of the minimum date that can be selected in the date picker.
+   * The time portion in this value is ignored because this is strictly used in the date picker.
    */
-  minDateTime: PropTypes.string,
+  minDate: PropTypes.string,
   /**
    * Name of the date input. The name should be unique.
    */
@@ -98,8 +100,8 @@ const defaultProps = {
   excludeDates: undefined,
   filterDate: undefined,
   includeDates: undefined,
-  maxDateTime: undefined,
-  minDateTime: undefined,
+  maxDate: undefined,
+  minDate: undefined,
   onChange: undefined,
   onChangeRaw: undefined,
   onSelect: undefined,
@@ -115,7 +117,7 @@ class DateTimePicker extends React.Component {
     super(props);
 
     this.state = {
-      dateTime: DateTimeUtils.createSafeDate(props.value),
+      dateTime: DateUtil.createSafeDate(props.value),
       isAmbiguousTime: false,
       isTimeClarificationOpen: false,
       dateFormat: DateUtil.getFormatByLocale(props.intl.locale),
@@ -150,7 +152,7 @@ class DateTimePicker extends React.Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.value !== prevState.prevPropsValue) {
       return {
-        dateTime: DateTimeUtils.createSafeDate(nextProps.value),
+        dateTime: DateUtil.createSafeDate(nextProps.value),
         prevPropsValue: nextProps.value,
       };
     }
@@ -221,17 +223,25 @@ class DateTimePicker extends React.Component {
 
     let updatedDateTime;
     const formattedDate = DateTimeUtils.formatISODateTime(date, 'YYYY-MM-DD');
+    const isDateValid = DateTimeUtils.isValidDate(formattedDate, 'YYYY-MM-DD');
+    const isTimeValid = DateTimeUtils.isValidTime(this.timeValue);
 
-    if (DateTimeUtils.isValidDate(formattedDate, 'YYYY-MM-DD')) {
-      const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
+    if (isDateValid) {
+      const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : DateUtil.createSafeDate(formattedDate);
       updatedDateTime = DateTimeUtils.syncDateTime(previousDateTime, date, this.timeValue);
 
-      if (DateTimeUtils.isValidTime(this.timeValue)) {
+      if (isTimeValid) {
+        // Update the timeValue in case the updatedDateTime falls in the missing hour and needs to bump the hour up.
         this.timeValue = DateTimeUtils.formatISODateTime(updatedDateTime.format(), 'HH:mm');
       }
     }
 
-    this.handleChange(event, updatedDateTime);
+    // onChange should only be triggered when both the date and time values are valid or both values are empty/cleared.
+    if ((isDateValid && isTimeValid) || (this.dateValue === '' && this.timeValue === '')) {
+      this.handleChange(event, updatedDateTime);
+    } else {
+      this.setState({ dateTime: updatedDateTime });
+    }
   }
 
   handleDateChangeRaw(event, date) {
@@ -241,7 +251,7 @@ class DateTimePicker extends React.Component {
 
   handleTimeChange(event, time) {
     this.timeValue = time;
-    const validDate = DateTimeUtils.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeWithinRange(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat));
+    const validDate = DateTimeUtils.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeAcceptable(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat));
     const validTime = DateTimeUtils.isValidTime(this.timeValue);
     const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
 
@@ -255,13 +265,20 @@ class DateTimePicker extends React.Component {
         updatedDateTime.subtract(1, 'hours');
       }
 
-      this.timeValue = DateTimeUtils.formatISODateTime(updatedDateTime.format(), 'HH:mm');
+      // If updatedDateTime is valid, update timeValue (value in the time input) to reflect updatedDateTime since
+      // it could have subtracted an hour from above to account for the missing hour.
+      if (updatedDateTime) {
+        this.timeValue = DateTimeUtils.formatISODateTime(updatedDateTime.format(), 'HH:mm');
+      }
+
       this.handleChangeRaw(event, this.timeValue);
       this.handleChange(event, updatedDateTime);
+    } else if (this.dateValue === '' && this.timeValue === '') {
+      this.handleChangeRaw(event, this.timeValue);
+      this.handleChange(event, null);
     } else {
-      // If the date is valid but the time is not, the time part in the dateTime state needs to be cleared to reflect the change.
-      if (validDate && !validTime) {
-        const updatedDateTime = DateTimeUtils.updateTime(previousDateTime, '00:00');
+      if (!validDate && validTime) {
+        const updatedDateTime = DateTimeUtils.updateTime(previousDateTime, time);
 
         this.setState({
           dateTime: updatedDateTime,
@@ -318,13 +335,13 @@ class DateTimePicker extends React.Component {
   }
 
   validateDefaultDate() {
-    return this.isDateTimeWithinRange(this.state.dateTime);
+    return this.isDateTimeAcceptable(this.state.dateTime);
   }
 
-  isDateTimeWithinRange(newDateTime) {
+  isDateTimeAcceptable(newDateTime) {
     let isAcceptable = true;
 
-    if (DateUtil.isDateOutOfRange(newDateTime, DateUtil.createSafeDate(this.props.minDateTime), DateUtil.createSafeDate(this.props.maxDateTime))) {
+    if (DateUtil.isDateOutOfRange(newDateTime, DateUtil.createSafeDate(this.props.minDate), DateUtil.createSafeDate(this.props.maxDate))) {
       isAcceptable = false;
     }
 
@@ -412,8 +429,8 @@ class DateTimePicker extends React.Component {
       onChange,
       onChangeRaw,
       onSelect,
-      maxDateTime,
-      minDateTime,
+      maxDate,
+      minDate,
       name,
       requestFocus,
       releaseFocus,
@@ -449,8 +466,8 @@ class DateTimePicker extends React.Component {
           filterDate={filterDate}
           includeDates={includeDates}
           inputAttributes={dateInputAttributes}
-          maxDate={maxDateTime}
-          minDate={minDateTime}
+          maxDate={maxDate}
+          minDate={minDate}
           selectedDate={dateValue}
           name="input"
           releaseFocus={releaseFocus}

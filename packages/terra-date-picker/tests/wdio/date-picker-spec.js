@@ -72,6 +72,18 @@ describe('Date Picker', () => {
       });
       Terra.should.matchScreenshot('default date cleared');
     });
+
+    describe('Clears default date value that is before the minDate and no maxDate', () => {
+      before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default-date-before-min-date-only'));
+
+      Terra.should.matchScreenshot('default date displayed');
+      it('clears the default date when focus is on the input', () => {
+        browser.click('input[name="terra-date-date-input"]');
+        // Ensures the mouse pointer doesn't appear in the screenshot
+        browser.click('h3');
+      });
+      Terra.should.matchScreenshot('default date cleared');
+    });
   });
 
   describe('Exclude Dates', () => {
@@ -327,6 +339,14 @@ describe('Date Picker', () => {
     });
     Terra.should.matchScreenshot();
     Terra.should.beAccessible({ rules: ignoredA11y });
+  });
+
+  describe('Invalid dates are ignored', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-ignore-invalid-selected-dates');
+    });
+
+    Terra.should.matchScreenshot();
   });
 
   describe('Key Limitations', () => {
