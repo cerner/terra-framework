@@ -299,22 +299,6 @@ describe('DateTimePicker', () => {
     Terra.should.matchScreenshot({ viewports });
   });
 
-  describe('Launches and Dismisses modal manager after date selection', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-inside-modal');
-      browser.click('[class*="disclose"]');
-      browser.click('[class*="custom-input"] > [class*="button"]');
-    });
-
-    Terra.should.matchScreenshot('0', { viewports });
-
-    it('Dismissed the modal manager after a click', () => {
-      browser.click('[aria-label="day-27"]');
-    });
-
-    Terra.should.matchScreenshot('1', { viewports });
-  });
-
   describe('OnSelect', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-on-select');
@@ -334,54 +318,6 @@ describe('DateTimePicker', () => {
     });
 
     Terra.should.matchScreenshot('2', { viewports });
-  });
-
-  describe('Displays the date picker inside a modal manager and exits when Enter is pressed', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-inside-modal');
-      browser.click('[class*="disclose"]');
-      browser.click('[class*="custom-input"] > [class*="button"]');
-    });
-
-    Terra.should.matchScreenshot('0', { viewports, selector: '[class*="abstract-modal"]' });
-
-    it('Dismissed the modal manager after a click', () => {
-      browser.keys(['Enter']);
-    });
-
-    Terra.should.matchScreenshot('1', { viewports });
-  });
-
-  describe('Displays the date picker inside a modal manager and exits when Escape is pressed', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-inside-modal');
-      browser.click('[class*="disclose"]');
-      browser.click('[class*="custom-input"] > [class*="button"]');
-    });
-
-    Terra.should.matchScreenshot('0', { viewports, selector: '[class*="abstract-modal"]' });
-
-    it('Dismissed the modal manager after a click', () => {
-      browser.keys(['Escape']);
-    });
-
-    Terra.should.matchScreenshot('1', { viewports });
-  });
-
-  describe('Displays the date picker inside a modal manager and exits when Tab is pressed', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-inside-modal');
-      browser.click('[class*="disclose"]');
-      browser.click('[class*="custom-input"] > [class*="button"]');
-    });
-
-    Terra.should.matchScreenshot('0', { viewports, selector: '[class*="abstract-modal"]' });
-
-    it('Dismissed the modal manager after a click', () => {
-      browser.keys(['Tab']);
-    });
-
-    Terra.should.matchScreenshot('1', { viewports });
   });
 
   describe('Clears the default date and time on the calendar button click when default date is excluded', () => {
