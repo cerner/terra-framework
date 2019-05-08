@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import DatePicker from '../../../../lib/DatePicker';
+import DatePicker from '../../../DatePicker';
 
 const isWeekday = (date) => {
   const momentDate = moment(date);

@@ -29,31 +29,6 @@ class DateTimeUtils {
   }
 
   /**
-   * Converts an ISO string to the given format.
-   * @param {string} iSODate - The ISO string to convert.
-   * @param {string} format - The desired date/time format for the conversion
-   * @return {string} - The formatted date/time string.
-   */
-  static formatISODateTime(iSODate, format) {
-    if (!iSODate || iSODate.length <= 0) {
-      return '';
-    }
-
-    const momentDate = moment(iSODate);
-    return DateTimeUtils.formatMomentDateTime(momentDate, format);
-  }
-
-  /**
-   * Converts a moment object to the given format.
-   * @param {object} momentDate - The moment object to convert.
-   * @param {string} format - The desired date/time format for the conversion
-   * @return {string} - The formatted date/time string.
-   */
-  static formatMomentDateTime(momentDate, format) {
-    return momentDate && momentDate.isValid() ? momentDate.format(format) : undefined;
-  }
-
-  /**
    * Synchronize the date and time for a given the base moment object.
    * Because a moment object must have the date portion, if the provided iSOdate is invalid,
    * The base moment object will not synchronize the time if the provided time is invalid.
@@ -120,18 +95,7 @@ class DateTimeUtils {
    * @return {boolean} - True if both the date and time are valid and conform to the format.
    */
   static isValidDateTime(date, time, format) {
-    return DateTimeUtils.isValidDate(date, format) && DateTimeUtils.isValidTime(time);
-  }
-
-  /**
-   * Determines if the date is valid and conforms to the given format.
-   * @param {string} date - The date to validate.
-   * @param {string} format - The date format to use for the validation.
-   * @return {boolean} - True if the date is valid and conforms to the format.
-   */
-  static isValidDate(date, format) {
-    const dateMoment = moment(date, format, true);
-    return dateMoment.isValid();
+    return DateUtil.isValidDate(date, format) && DateTimeUtils.isValidTime(time);
   }
 
   /**

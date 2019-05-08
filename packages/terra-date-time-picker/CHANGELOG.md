@@ -5,6 +5,14 @@ Unreleased
 ----------
 ### Changed
 * Update the filterDate examples to handle an ISO string instead of a moment object.
+* Leverage createSafeDate from the DateUtil.
+* Change the onBlur event to get triggered only when the entire date time picker component loses focus.
+
+### Added
+* Added 'onFocus' prop since 'preventOpenOnFocus' can be used to prevent picker from opening on focus.
+
+### Removed
+* Removed 'onInputFocus' prop in favor of the added 'onFocus' prop.
 
 ### Removed
 * Remove minDateTime and maxDateTime props. These props are being renamed to minDate and maxDate.
@@ -24,7 +32,6 @@ Unreleased
 
 ### Changed
 * Moved packages we use solely in doc examples and tests to devDependencies
-* Leverage createSafeDate from the DateUtil.
 
 
 3.14.0 - (April 16, 2019)
