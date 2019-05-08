@@ -11,11 +11,11 @@ const propTypes = {
   /**
    * The identifier for the extensions.
    */
-  extensionKey: PropTypes.string,
+  extensionKey: PropTypes.string.isRequired,
   /**
    * The icon to display for the associated extension action.
    */
-  icon: PropTypes.element,
+  icon: PropTypes.element.isRequired,
   /**
    * Meta data to be returned in the onSelect callback.
    */
@@ -39,12 +39,11 @@ const propTypes = {
   /**
    * The text display for the extension, either the aira label or the inline text.
    */
-  text: PropTypes.string,
+  text: PropTypes.string.isRequired,
 };
 
 const defaultProps = {
   notificationCount: 0,
-  text: '',
 };
 
 const Extension = ({
