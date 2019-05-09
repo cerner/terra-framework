@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
@@ -13,54 +13,37 @@ const propTypes = {
   value: PropTypes.number,
 };
 
-class ToggleCount extends React.Component {
-  constructor(props) {
-    super(props);
-    this.listener = this.listener.bind(this);
-    this.setCountNode = this.setCountNode.bind(this);
-  }
+const ToggleCount = ({ value, ...customProps }) => {
+  const countRef = useRef();
+  const previousValueRef = useRef(value);
 
-  componentDidMount() {
-    if (this.props.value > 0 && this.countNode) {
-      this.countNode.addEventListener('animationend', this.listener);
-      this.countNode.setAttribute('data-count-pulse', 'true');
+  function handleAnimation() {
+    if (countRef.current) {
+      countRef.current.setAttribute('data-count-pulse', 'false');
+      countRef.current.removeEventListener('animationend', handleAnimation);
     }
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.value > prevProps.value && this.countNode) {
-      this.countNode.addEventListener('animationend', this.listener);
-      this.countNode.setAttribute('data-count-pulse', 'true');
+  useLayoutEffect(() => {
+    if (value > previousValueRef.current && countRef.current) {
+      countRef.current.setAttribute('data-count-pulse', 'true');
+      countRef.current.addEventListener('animationend', handleAnimation);
     }
-  }
 
-  setCountNode(node) {
-    this.countNode = node;
-  }
+    previousValueRef.current = value;
+  }, [value]);
 
-  listener() {
-    this.countNode.setAttribute('data-count-pulse', 'false');
-    this.countNode.removeEventListener('animationend', this.listener);
-  }
-
-  render() {
-    const {
-      value,
-      ...customProps
-    } = this.props;
-
-    return (
-      <div
-        {...customProps}
-        ref={this.setCountNode}
-        className={cx([
-          'count',
-          customProps.className,
-        ])}
-      />
-    );
-  }
-}
+  return (
+    <div
+      {...customProps}
+      ref={countRef}
+      className={cx([
+        'count',
+        customProps.className,
+      ])}
+    />
+  );
+};
 
 ToggleCount.propTypes = propTypes;
 
