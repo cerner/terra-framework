@@ -76,12 +76,16 @@ const CompactHeader = ({
   });
 
   function renderMenuButton() {
-    const headerHasCounts = navigationItems.some(item => !!notifications[item.key]);
-    const isPulsed = previousNotificationsRef.current && navigationItems.some((item) => {
-      const previousCount = previousNotificationsRef.current[item.key];
-      const newCount = notifications[item.key];
-      return newCount && (!previousCount || newCount > previousCount);
-    });
+    let headerHasCounts = false;
+    let isPulsed = false;
+    if (navigationItems && notifications) {
+      headerHasCounts = navigationItems.some(item => !!notifications[item.key]);
+      isPulsed = previousNotificationsRef.current && navigationItems.some((item) => {
+        const previousCount = previousNotificationsRef.current[item.key];
+        const newCount = notifications[item.key];
+        return newCount && (!previousCount || newCount > previousCount);
+      });
+    }
 
     return (
       <button

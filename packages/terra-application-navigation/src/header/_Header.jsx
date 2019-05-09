@@ -169,10 +169,6 @@ const Header = (props) => {
   }
 
   function renderNavigationTabs() {
-    if (!navigationItems || !navigationItems.length) {
-      return <Tab isPlaceholder text="W" tabKey="" aria-hidden="true" />;
-    }
-
     return (
       <Tabs
         navigationItems={navigationItems}

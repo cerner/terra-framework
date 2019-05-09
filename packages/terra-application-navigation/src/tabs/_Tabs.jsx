@@ -47,6 +47,11 @@ const propTypes = {
   intl: intlShape.isRequired,
 };
 
+const defaultProps = {
+  navigationItems: [],
+  notifications: {},
+};
+
 class Tabs extends React.Component {
   constructor(props) {
     super(props);
@@ -272,11 +277,12 @@ class Tabs extends React.Component {
       onTabSelect,
       notifications,
     } = this.props;
+    if (!navigationItems || !navigationItems.length) {
+      return <Tab isPlaceholder text="W" tabKey="" aria-hidden="true" />;
+    }
 
     const { popupIsOpen } = this.state;
-
     const { visibleTabs, hiddenTabs } = this.sliceTabs(navigationItems);
-
     const hasVisibleNotification = visibleTabs.some(tab => !!notifications[tab.key]);
     const hasHiddenNotification = hiddenTabs.some(tab => !!notifications[tab.key]);
     const hasNotifications = hasVisibleNotification || hasHiddenNotification;
@@ -298,5 +304,6 @@ class Tabs extends React.Component {
 }
 
 Tabs.propTypes = propTypes;
+Tabs.defaultProps = defaultProps;
 
 export default injectIntl(Tabs);
