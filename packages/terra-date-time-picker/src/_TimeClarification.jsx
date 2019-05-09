@@ -18,9 +18,17 @@ const propTypes = {
    */
   isOffsetButtonHidden: PropTypes.bool.isRequired,
   /**
+   * A callback function triggered when the timezone offset button loses focus.
+   */
+  onBlur: PropTypes.func,
+  /**
    * Callback function indicating the before time change option was selected.
    */
   onDaylightSavingButtonClick: PropTypes.func.isRequired,
+  /**
+   * A callback function triggered when the timezone offset button gains focus.
+   */
+  onFocus: PropTypes.func,
   /**
    * Callback function indicating the after time change option was selected.
    */
@@ -164,6 +172,8 @@ class TimeClarification extends React.Component {
         </AbstractModal>
         <Button
           className={offsetButtonClassNames}
+          onBlur={this.props.onBlur}
+          onFocus={this.props.onFocus}
           onClick={this.props.onOffsetButtonClick}
           text={this.state.offsetDisplay}
           isCompact

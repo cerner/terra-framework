@@ -12,11 +12,6 @@ DateUtil.filterInvalidDates = jest.fn();
 DateUtil.createSafeDate.mockImplementation(() => moment.utc('2017-01-01'));
 DateUtil.filterInvalidDates.mockImplementation(() => [moment.utc('2017-01-01')]);
 
-const isWeekday = (date) => {
-  const day = date.day();
-  return day !== 0 && day !== 6;
-};
-
 it('should render a default date input and date picker', () => {
   const datePicker = shallowWithIntl(<DatePicker name="date-input" utcOffset={0} />);
   expect(datePicker).toMatchSnapshot();
@@ -28,7 +23,7 @@ it('should render a default date input with custom input attributes', () => {
 });
 
 it('should render a date picker with filtered dates', () => {
-  const datePicker = shallowWithIntl(<DatePicker filterDate={isWeekday} name="date-input" utcOffset={0} />);
+  const datePicker = shallowWithIntl(<DatePicker filterDate={() => {}} name="date-input" utcOffset={0} />);
   expect(datePicker).toMatchSnapshot();
 });
 
@@ -56,6 +51,12 @@ it('should render a date picker with releaseFocus', () => {
 it('should render a date picker with requestFocus', () => {
   const requestFocus = () => {};
   const datePicker = shallowWithIntl(<DatePicker name="date-input" requestFocus={requestFocus} utcOffset={0} />);
+  expect(datePicker).toMatchSnapshot();
+});
+
+it('should render a date picker with onBlur', () => {
+  const onBlur = () => {};
+  const datePicker = shallowWithIntl(<DatePicker name="date-input" onBlur={onBlur} utcOffset={0} />);
   expect(datePicker).toMatchSnapshot();
 });
 
@@ -93,9 +94,8 @@ it('should render a date picker with onCalendarButtonClick', () => {
   expect(datePicker).toMatchSnapshot();
 });
 
-it('should render a date picker with onInputFocus', () => {
-  const handleOnInputFocus = () => {};
-  const datePicker = shallowWithIntl(<DatePicker name="date-input" onInputFocus={handleOnInputFocus} utcOffset={0} />);
+it('should render a date picker with onFocus', () => {
+  const datePicker = shallowWithIntl(<DatePicker name="date-input" onFocus={() => {}} utcOffset={0} />);
   expect(datePicker).toMatchSnapshot();
 });
 
