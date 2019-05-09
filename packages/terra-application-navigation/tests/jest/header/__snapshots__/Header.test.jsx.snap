@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CompactHeader should render default element 1`] = `
+exports[`Header should render default element 1`] = `
 <InjectIntl(Header)
   intl={
     Object {
@@ -247,7 +247,7 @@ exports[`CompactHeader should render default element 1`] = `
 </InjectIntl(Header)>
 `;
 
-exports[`CompactHeader should render with function callbacks 1`] = `
+exports[`Header should render with function callbacks 1`] = `
 <InjectIntl(Header)
   activeNavigationItemKey="test-text"
   extensionItems={
@@ -1022,7 +1022,7 @@ exports[`CompactHeader should render with function callbacks 1`] = `
 </InjectIntl(Header)>
 `;
 
-exports[`CompactHeader should render with skip callback 1`] = `
+exports[`Header should render with skip callback 1`] = `
 <InjectIntl(Header)
   intl={
     Object {

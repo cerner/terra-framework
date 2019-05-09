@@ -16,7 +16,13 @@ const propTypes = {
    * A configuration object with information pertaining to the application's user.
    */
   userConfig: userConfigPropType,
+  /**
+   * Selection callback for the button.
+   */
   onClick: PropTypes.func,
+  /**
+   * Ref of the utility button's anchor point.
+   */
   popupAnchorRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
   /**
    * @private

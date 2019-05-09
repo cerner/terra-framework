@@ -59,6 +59,12 @@ const propTypes = {
   intl: intlShape,
 };
 
+const defaultProps = {
+  extensionItems: [],
+  navigationItems: [],
+  notifications: {},
+};
+
 const CompactHeader = ({
   onSelectMenuButton,
   titleConfig,
@@ -76,16 +82,12 @@ const CompactHeader = ({
   });
 
   function renderMenuButton() {
-    let headerHasCounts = false;
-    let isPulsed = false;
-    if (navigationItems && notifications) {
-      headerHasCounts = navigationItems.some(item => !!notifications[item.key]);
-      isPulsed = previousNotificationsRef.current && navigationItems.some((item) => {
-        const previousCount = previousNotificationsRef.current[item.key];
-        const newCount = notifications[item.key];
-        return newCount && (!previousCount || newCount > previousCount);
-      });
-    }
+    const headerHasCounts = navigationItems.some(item => !!notifications[item.key]);
+    const isPulsed = previousNotificationsRef.current && navigationItems.some((item) => {
+      const previousCount = previousNotificationsRef.current[item.key];
+      const newCount = notifications[item.key];
+      return newCount && (!previousCount || newCount > previousCount);
+    });
 
     return (
       <button
@@ -126,7 +128,7 @@ const CompactHeader = ({
   }
 
   function renderExtensions() {
-    if (!extensionItems || !extensionItems.length) {
+    if (!extensionItems.length) {
       return null;
     }
 
@@ -157,5 +159,6 @@ const CompactHeader = ({
 };
 
 CompactHeader.propTypes = propTypes;
+CompactHeader.defaultProps = defaultProps;
 
 export default injectIntl(CompactHeader);

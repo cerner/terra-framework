@@ -3,7 +3,7 @@ import React from 'react';
 import { mountWithIntl } from 'terra-enzyme-intl';
 import Header from '../../../src/header/_Header';
 
-describe('CompactHeader', () => {
+describe('Header', () => {
   it('should render default element', () => {
     const mountComponent = mountWithIntl(
       <Header />,

@@ -14,6 +14,9 @@ const propTypes = {
    * A configuration object with information pertaining to the application's user.
    */
   userConfig: userConfigPropType,
+  /**
+   * An element to render within the Header's utility menu.
+   */
   hero: PropTypes.element,
   /**
    * A function to be executed upon the selection of the Settings utility item.
@@ -47,6 +50,10 @@ const propTypes = {
    * Whehther or not content is be constrained vertically.
    */
   isHeightBounded: PropTypes.bool,
+};
+
+const defaultProps = {
+  utilityItems: [],
 };
 
 const utilityMenuSettingsKey = 'terra-application-navigation.utility-menu.settings';
@@ -96,5 +103,6 @@ const UtilityMenu = ({
 };
 
 UtilityMenu.propTypes = propTypes;
+UtilityMenu.defaultProps = defaultProps;
 
 export default UtilityMenu;

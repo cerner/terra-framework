@@ -31,6 +31,7 @@ exports[`CompactHeader should render default element 1`] = `
   }
 >
   <CompactHeader
+    extensionItems={Array []}
     intl={
       Object {
         "defaultFormats": Object {},
@@ -58,6 +59,8 @@ exports[`CompactHeader should render default element 1`] = `
         "timeZone": null,
       }
     }
+    navigationItems={Array []}
+    notifications={Object {}}
   >
     <div
       className="compact-header"
@@ -426,6 +429,7 @@ exports[`CompactHeader should render with menu callback 1`] = `
   onSelectMenuButton={[MockFunction]}
 >
   <CompactHeader
+    extensionItems={Array []}
     intl={
       Object {
         "defaultFormats": Object {},
@@ -453,6 +457,8 @@ exports[`CompactHeader should render with menu callback 1`] = `
         "timeZone": null,
       }
     }
+    navigationItems={Array []}
+    notifications={Object {}}
     onSelectMenuButton={[MockFunction]}
   >
     <div
@@ -549,6 +555,7 @@ exports[`CompactHeader should render with skip callback 1`] = `
   onSelectSkipToContent={[MockFunction]}
 >
   <CompactHeader
+    extensionItems={Array []}
     intl={
       Object {
         "defaultFormats": Object {},
@@ -576,6 +583,8 @@ exports[`CompactHeader should render with skip callback 1`] = `
         "timeZone": null,
       }
     }
+    navigationItems={Array []}
+    notifications={Object {}}
     onSelectSkipToContent={[MockFunction]}
   >
     <div
