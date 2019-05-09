@@ -179,16 +179,10 @@ class Tabs extends React.Component {
       const tabProps = {
         text: tab.text,
         key: tab.key,
-        tabKey: tab.key,
-        onTabSelect: () => {
-          if (onTabSelect) {
-            onTabSelect(tab.key, tab.metaData);
-          }
-        },
+        onTabSelect: onTabSelect ? onTabSelect.bind(null, tab.key, tab.metaData) : null,
         isActive: tab.key === activeTabKey,
         notificationCount: hasNotifications ? notifications[tab.key] : 0,
         hasCount: hasNotifications,
-        metaData: tab.metaData,
       };
       if (this.isCalculating) {
         const tabRef = React.createRef();
@@ -228,7 +222,7 @@ class Tabs extends React.Component {
         tabRef={this.rollupTabRef}
         text={intl.formatMessage({ id: 'Terra.application.tabs.more' })}
         isSelected={tabRollupIsSelected}
-        showNotificationRollup={hasHiddenNotification}
+        hasChildNotifications={hasHiddenNotification}
         data-application-tabs-more
       />
     );

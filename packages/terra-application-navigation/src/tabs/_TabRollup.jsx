@@ -33,7 +33,7 @@ const propTypes = {
   /**
    * Should the count notificaiton be displayed on the menu display.
    */
-  showNotificationRollup: PropTypes.bool,
+  hasChildNotifications: PropTypes.bool,
   /**
    * Whether or not the notification should pulse animate.
    */
@@ -48,7 +48,7 @@ const defaultProps = {
   hasCount: false,
   isPulsed: false,
   isSelected: false,
-  showNotificationRollup: false,
+  hasChildNotifications: false,
 };
 
 const TabRollup = ({
@@ -56,7 +56,7 @@ const TabRollup = ({
   isSelected,
   onTabSelect,
   tabRef,
-  showNotificationRollup,
+  hasChildNotifications,
   text,
   isPulsed,
   isIconOnly,
@@ -97,7 +97,7 @@ const TabRollup = ({
       <div className={cx('tab-inner')} data-tab-menu-inner>
         <div className={cx('tab-rollup-label')}>
           {!isIconOnly && <span className={cx('tab-rollup-text')}>{text}</span>}
-          {showNotificationRollup && <span className={cx('tab-count')}><TabCount value={isPulsed ? 1 : 0} isRollup /></span>}
+          {hasChildNotifications && <span className={cx('tab-count')}><TabCount value={isPulsed ? 1 : 0} isRollup /></span>}
           <IconCaretDown className={cx(['tab-rollup-icon', { 'is-icon-only': isIconOnly }])} />
         </div>
       </div>

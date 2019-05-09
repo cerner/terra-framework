@@ -9,17 +9,9 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The identifier for the tab.
-   */
-  tabKey: PropTypes.string.isRequired,
-  /**
    * The display text for the tab.
    */
   text: PropTypes.string.isRequired,
-  /**
-   * Meta data to be returned in the onSelect callback.
-   */
-  metaData: PropTypes.object,
   /**
    * The selection callback for the tab.
    */
@@ -51,8 +43,6 @@ const propTypes = {
 };
 
 const Tab = ({
-  tabKey,
-  metaData,
   text,
   hasCount,
   isActive,
@@ -62,12 +52,6 @@ const Tab = ({
   notificationCount,
   onTabSelect,
 }) => {
-  function onClick() {
-    if (onTabSelect) {
-      onTabSelect(tabKey, metaData);
-    }
-  }
-
   function onKeyDown(event) {
     if (event.nativeEvent.keyCode === KEY_SPACE || event.nativeEvent.keyCode === KEY_RETURN) {
       event.preventDefault();
@@ -88,7 +72,6 @@ const Tab = ({
       return render({
         text,
         hasCount,
-        metaData,
         isActive,
         notificationCount,
       });
@@ -113,8 +96,8 @@ const Tab = ({
         { 'is-placeholder': !render && isPlaceholder },
         { 'has-count': !render && hasCount },
       ])}
-      onClick={onClick}
-      onKeyDown={onKeyDown}
+      onClick={!isActive ? onTabSelect : null} // TODO: should be able to re-select
+      onKeyDown={!isActive ? onKeyDown : null} // TODO: should be able to re-select
       onBlur={onBlur}
       onMouseDown={onMouseDown}
       ref={tabRef}

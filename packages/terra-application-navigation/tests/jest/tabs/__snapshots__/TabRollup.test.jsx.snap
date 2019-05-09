@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabRollup should render default element 1`] = `
+<div
+  aria-current={false}
+  className="tab-rollup"
+  data-item-show-focus={true}
+  onBlur={[Function]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  role="tab"
+  tabIndex="0"
+>
+  <div
+    className="tab-inner"
+    data-tab-menu-inner={true}
+  >
+    <div
+      className="tab-rollup-label"
+    >
+      <span
+        className="tab-rollup-text"
+      />
+      <IconCaretDown
+        className="tab-rollup-icon"
+        isBidi={true}
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TabRollup should render prop data 1`] = `
+<div
+  aria-current={true}
+  className="tab-rollup has-count"
+  data-item-show-focus={true}
+  onBlur={[Function]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  role="tab"
+  tabIndex="0"
+>
+  <div
+    className="tab-inner"
+    data-tab-menu-inner={true}
+  >
+    <div
+      className="tab-rollup-label"
+    >
+      <span
+        className="tab-count"
+      >
+        <TabCount
+          isRollup={true}
+          value={1}
+        />
+      </span>
+      <IconCaretDown
+        className="tab-rollup-icon is-icon-only"
+        isBidi={true}
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TabRollup should render with function callbacks 1`] = `
+<div
+  aria-current={false}
+  className="tab-rollup"
+  data-item-show-focus={true}
+  onBlur={[Function]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  role="tab"
+  tabIndex="0"
+>
+  <div
+    className="tab-inner"
+    data-tab-menu-inner={true}
+  >
+    <div
+      className="tab-rollup-label"
+    >
+      <span
+        className="tab-rollup-text"
+      />
+      <IconCaretDown
+        className="tab-rollup-icon"
+        isBidi={true}
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TabRollup should render with selection callback 1`] = `
+<div
+  aria-current={false}
+  className="tab-rollup"
+  data-item-show-focus={true}
+  onBlur={[Function]}
+  onClick={[MockFunction]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  role="tab"
+  tabIndex="0"
+>
+  <div
+    className="tab-inner"
+    data-tab-menu-inner={true}
+  >
+    <div
+      className="tab-rollup-label"
+    >
+      <span
+        className="tab-rollup-text"
+      />
+      <IconCaretDown
+        className="tab-rollup-icon"
+        isBidi={true}
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
