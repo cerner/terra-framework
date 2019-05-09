@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
@@ -13,49 +13,42 @@ const propTypes = {
   value: PropTypes.number,
 };
 
-class PopupCount extends React.Component {
-  constructor(props) {
-    super(props);
-    this.listener = this.listener.bind(this);
-    this.setCountNode = this.setCountNode.bind(this);
-  }
+const PopupCount = ({ value }) => {
+  const countRef = useRef();
+  const previousValueRef = useRef(value);
 
-  componentDidUpdate(prevProps) {
-    if (this.props.value > prevProps.value && this.countNode) {
-      this.countNode.addEventListener('animationend', this.listener);
-      this.countNode.setAttribute('data-count-pulse', 'true');
+  function handleAnimation() {
+    if (countRef.current) {
+      countRef.current.setAttribute('data-count-pulse', 'false');
+      countRef.current.removeEventListener('animationend', handleAnimation);
     }
   }
 
-  setCountNode(node) {
-    this.countNode = node;
-  }
-
-  listener() {
-    this.countNode.setAttribute('data-count-pulse', 'false');
-    this.countNode.removeEventListener('animationend', this.listener);
-  }
-
-  render() {
-    const {
-      value,
-    } = this.props;
-
-    let validatedValue = value;
-    if (value > 999) {
-      validatedValue = '999+';
+  useLayoutEffect(() => {
+    if (value > previousValueRef.current && countRef.current) {
+      countRef.current.setAttribute('data-count-pulse', 'true');
+      countRef.current.addEventListener('animationend', handleAnimation);
     }
 
-    return (
-      <div
-        ref={this.setCountNode}
-        className={cx('popup-count')}
-      >
-        {validatedValue}
-      </div>
-    );
+    previousValueRef.current = value;
+  }, [value]);
+
+  let validatedValue = value;
+  if (value > 999) {
+    validatedValue = '999+';
   }
-}
+
+  return (
+    <div
+      ref={countRef}
+      className={cx([
+        'count',
+      ])}
+    >
+      {validatedValue}
+    </div>
+  );
+};
 
 PopupCount.propTypes = propTypes;
 
