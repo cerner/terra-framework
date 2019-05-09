@@ -5,6 +5,7 @@ import { injectIntl, intlShape } from 'react-intl';
 import IconMenu from 'terra-icon/lib/icon/IconMenu';
 import ToggleCount from './_ToggleCount';
 import Extensions from '../extensions/_Extensions';
+import { enableFocusStyles, disableFocusStyles } from '../utils/helpers';
 import {
   navigationItemsPropType,
   extensionItemsPropType,
@@ -16,7 +17,10 @@ import styles from './CompactHeader.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  onSelectToggle: PropTypes.func,
+  /**
+   * A function to be executed upon selection of the CompactHeader's menu button.
+   */
+  onSelectMenuButton: PropTypes.func,
   /**
    * A configuration object with information pertaining to the application's title.
    */
@@ -31,9 +35,12 @@ const propTypes = {
    * Ex: `onSelectExtensionsItem(String selectedUtilityItemKey, Object metaData)`
    */
   onSelectExtensionItem: PropTypes.func,
+  /**
+   * A function to be executed upon selection of the 'Skip to Content' button.
+   */
   onSelectSkipToContent: PropTypes.func,
   /**
-   * Array of navigation items to render within the Header.
+   * Array of navigation items used to determine whether or not the Menu button should render with notifications.
    */
   navigationItems: navigationItemsPropType,
   /**
@@ -47,64 +54,44 @@ const propTypes = {
   activeBreakpoint: PropTypes.string,
   /**
    * @private
+   * Object containing intl APIs.
    */
   intl: intlShape,
 };
 
-class CompactHeader extends React.Component {
-  constructor(props) {
-    super(props);
+const CompactHeader = ({
+  onSelectMenuButton,
+  titleConfig,
+  extensionItems,
+  onSelectExtensionItem,
+  onSelectSkipToContent,
+  navigationItems,
+  notifications,
+  activeBreakpoint,
+  intl,
+}) => {
+  const previousNotificationsRef = React.useRef();
+  React.useEffect(() => {
+    previousNotificationsRef.current = notifications;
+  });
 
-    this.renderAppName = this.renderAppName.bind(this);
-    this.renderToggle = this.renderToggle.bind(this);
-
-    this.previousNotifications = null;
-  }
-
-  shouldComponentUpdate() {
-    this.previousNotifications = this.props.notifications;
-    return true;
-  }
-
-  shouldPulse(navigationItems, notifications) {
-    let shouldPulse = false;
-
-    if (this.previousNotifications) {
-      for (let i = 0; i < navigationItems.length; i += 1) {
-        const item = navigationItems[i];
-        const previousCount = this.previousNotifications[item.key];
-        const newCount = notifications[item.key];
-        if (newCount && (!previousCount || newCount > previousCount)) {
-          shouldPulse = true;
-          break;
-        }
-      }
-    }
-
-    return shouldPulse;
-  }
-
-  renderToggle() {
-    const {
-      intl, navigationItems, onSelectToggle, notifications,
-    } = this.props;
-
+  function renderMenuButton() {
     const headerHasCounts = navigationItems.some(item => !!notifications[item.key]);
-    const isPulsed = headerHasCounts && this.shouldPulse(navigationItems, notifications);
+    const isPulsed = previousNotificationsRef.current && navigationItems.some((item) => {
+      const previousCount = previousNotificationsRef.current[item.key];
+      const newCount = notifications[item.key];
+      return newCount && (!previousCount || newCount > previousCount);
+    });
 
     return (
       <button
         type="button"
-        className={cx('toggle-button')}
+        className={cx('menu-button')}
         aria-label={intl.formatMessage({ id: 'Terra.applicationLayout.applicationHeader.menuToggleLabel' })}
-        onClick={onSelectToggle}
-        data-item-show-focus
-        onBlur={(event) => {
-          event.currentTarget.setAttribute('data-item-show-focus', 'true');
-        }}
-        onMouseDown={(event) => {
-          event.currentTarget.setAttribute('data-item-show-focus', 'false');
-        }}
+        onClick={onSelectMenuButton}
+        onBlur={enableFocusStyles}
+        onMouseDown={disableFocusStyles}
+        data-focus-styles-enabled
       >
         <IconMenu />
         {headerHasCounts && <ToggleCount value={isPulsed ? 1 : 0} />}
@@ -112,9 +99,7 @@ class CompactHeader extends React.Component {
     );
   }
 
-  renderAppName() {
-    const { titleConfig } = this.props;
-
+  function renderTitle() {
     if (!titleConfig) {
       return null;
     }
@@ -129,18 +114,14 @@ class CompactHeader extends React.Component {
 
     return (
       <React.Fragment>
-        {titleConfig.headline ? <div className={cx('headline')} title={titleConfig.headline}>{titleConfig.headline}</div> : null}
+        {titleConfig.headline && <div className={cx('headline')} title={titleConfig.headline}>{titleConfig.headline}</div>}
         <div className={cx('title')} title={titleConfig.title}>{titleConfig.title}</div>
-        {titleConfig.subline ? <div className={cx('subline')} title={titleConfig.subline}>{titleConfig.subline}</div> : null}
+        {titleConfig.subline && <div className={cx('subline')} title={titleConfig.subline}>{titleConfig.subline}</div>}
       </React.Fragment>
     );
   }
 
-  renderExtensions() {
-    const {
-      extensionItems, activeBreakpoint, onSelectExtensionItem, notifications,
-    } = this.props;
-
+  function renderExtensions() {
     if (!extensionItems || !extensionItems.length) {
       return null;
     }
@@ -155,28 +136,21 @@ class CompactHeader extends React.Component {
     );
   }
 
-  render() {
-    const {
-      onSelectSkipToContent,
-      intl,
-    } = this.props;
-
-    return (
-      <div className={cx(['compact-application-header'])}>
-        <button type="button" onClick={onSelectSkipToContent} className={cx('skip-content-button')}>
-          {intl.formatMessage({ id: 'Terra.ApplicationHeaderLayout.SkipToContent' })}
-        </button>
-        {this.renderToggle()}
-        <div className={cx('title-container')}>
-          {this.renderAppName()}
-        </div>
-        <div className={cx('extensions-container')}>
-          {this.renderExtensions()}
-        </div>
+  return (
+    <div className={cx('compact-header')}>
+      <button type="button" onClick={onSelectSkipToContent} className={cx('skip-content-button')}>
+        {intl.formatMessage({ id: 'Terra.ApplicationHeaderLayout.SkipToContent' })}
+      </button>
+      {renderMenuButton()}
+      <div className={cx('title-container')}>
+        {renderTitle()}
       </div>
-    );
-  }
-}
+      <div className={cx('extensions-container')}>
+        {renderExtensions()}
+      </div>
+    </div>
+  );
+};
 
 CompactHeader.propTypes = propTypes;
 

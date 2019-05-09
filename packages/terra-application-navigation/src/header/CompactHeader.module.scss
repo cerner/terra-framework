@@ -1,5 +1,5 @@
 :local {
-  .compact-application-header {
+  .compact-header {
     align-content: center;
     align-items: center; // TODO THEME
     background-color: var(--terra-application-layout-navbar-background-color, #0079be);
@@ -29,7 +29,7 @@
     }
   }
 
-  .toggle-button {
+  .menu-button {
     background-color: var(--terra-application-layout-toggle-button-background-color, transparent);
     border: 0;  
     color: rgba(255, 255, 255, 0.8);
@@ -54,7 +54,7 @@
       color: rgba(255, 255, 255, 0.5);
     }
 
-    &:focus[data-item-show-focus='true'] {
+    &:focus[data-focus-styles-enabled='true'] {
       background-color: rgba(89, 159, 253, 0.4);
       color: rgba(255, 255, 255, 1);
       border-radius: 50%;

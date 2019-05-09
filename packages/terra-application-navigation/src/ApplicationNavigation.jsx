@@ -296,7 +296,7 @@ class ApplicationNavigation extends React.Component {
           extensionItems={extensionItems}
           onSelectExtensionItem={onSelectExtensionItem}
           navigationItems={navigationItems}
-          onSelectToggle={this.handleMenuToggle}
+          onSelectMenuButton={this.handleMenuToggle}
           onSelectSkipToContent={this.handleSkipToContent}
           notifications={notifications}
         />

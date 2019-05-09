@@ -51,6 +51,9 @@ const propTypes = {
    * A configuration object with information pertaining to the application's user.
    */
   userConfig: userConfigPropType,
+  /**
+   * An element to render within the Header's utility menu.
+   */
   hero: PropTypes.element,
   /**
    * An array of configuration objects with information specifying the creation of additional utility menu items.
@@ -80,6 +83,9 @@ const propTypes = {
    * Ex: `onSelectLogout()`
    */
   onSelectLogout: PropTypes.func,
+  /**
+   * A function to be executed upon selection of the 'Skip to Content' button.
+   */
   onSelectSkipToContent: PropTypes.func,
   /**
    * Key/Value pairs associating a string key entry to a numerical notification count.
@@ -96,51 +102,51 @@ const propTypes = {
   intl: intlShape,
 };
 
-class Header extends React.Component {
-  constructor(props) {
-    super(props);
+const Header = (props) => {
+  const {
+    titleConfig,
+    navigationItems,
+    navigationRenderFunction,
+    activeNavigationItemKey,
+    onSelectNavigationItem,
+    notifications,
+    extensionItems,
+    activeBreakpoint,
+    onSelectExtensionItem,
+    userConfig,
+    hero,
+    onSelectSkipToContent,
+    intl,
+    onSelectLogout,
+    onSelectSettings,
+    onSelectHelp,
+    utilityItems,
+    onSelectUtilityItem,
+  } = props;
 
-    this.utilityButtonPopupAnchorRef = React.createRef();
+  const [utilityPopupIsOpen, setUtilityPopupIsOpen] = React.useState(false);
+  const utilityButtonPopupAnchorRef = React.useRef();
+  const closeMenuCallback = React.useRef();
 
-    this.handleUtilityPopupCloseRequest = this.handleUtilityPopupCloseRequest.bind(this);
-    this.generatePopupClosingCallback = this.generatePopupClosingCallback.bind(this);
-    this.renderAppName = this.renderAppName.bind(this);
-    this.renderNavigationTabs = this.renderNavigationTabs.bind(this);
-    this.renderUtilities = this.renderUtilities.bind(this);
-    this.renderUtilitiesPopup = this.renderUtilitiesPopup.bind(this);
+  React.useEffect(() => {
+    if (closeMenuCallback.current) {
+      closeMenuCallback.current();
+      closeMenuCallback.current = undefined;
+    }
+  });
 
-    this.handleSettingsSelection = this.generatePopupClosingCallback('onSelectSettings');
-    this.handleHelpSelection = this.generatePopupClosingCallback('onSelectHelp');
-    this.handleLogoutSelection = this.generatePopupClosingCallback('onSelectLogout');
-    this.handleUtilityItemSelection = this.generatePopupClosingCallback('onSelectUtilityItem');
-
-    this.state = { utilityPopupIsOpen: false };
-    this.previousNotifications = [];
-  }
-
-  generatePopupClosingCallback(wrappedFunctionName) {
+  function generatePopupClosingCallback(wrappedFunction) {
     return (...args) => {
-      const wrappedFunction = this.props[wrappedFunctionName];
-
       if (!wrappedFunction) {
         return;
       }
 
-      this.setState({
-        utilityPopupIsOpen: false,
-      }, () => {
-        wrappedFunction(...args);
-      });
+      closeMenuCallback.current = wrappedFunction.bind(undefined, ...args);
+      setUtilityPopupIsOpen(false);
     };
   }
 
-  handleUtilityPopupCloseRequest() {
-    this.setState({ utilityPopupIsOpen: false });
-  }
-
-  renderAppName() {
-    const { titleConfig } = this.props;
-
+  function renderTitle() {
     if (!titleConfig) {
       return null;
     }
@@ -155,18 +161,14 @@ class Header extends React.Component {
 
     return (
       <React.Fragment>
-        {titleConfig.headline ? <div className={cx('headline')} title={titleConfig.headline}>{titleConfig.headline}</div> : null}
+        {titleConfig.headline && <div className={cx('headline')} title={titleConfig.headline}>{titleConfig.headline}</div>}
         <div className={cx('title')} title={titleConfig.title}>{titleConfig.title}</div>
-        {titleConfig.subline ? <div className={cx('subline')} title={titleConfig.subline}>{titleConfig.subline}</div> : null}
+        {titleConfig.subline && <div className={cx('subline')} title={titleConfig.subline}>{titleConfig.subline}</div>}
       </React.Fragment>
     );
   }
 
-  renderNavigationTabs() {
-    const {
-      navigationItems, navigationRenderFunction, activeNavigationItemKey, onSelectNavigationItem, notifications,
-    } = this.props;
-
+  function renderNavigationTabs() {
     if (!navigationItems || !navigationItems.length) {
       return <Tab isPlaceholder text="W" tabKey="" aria-hidden="true" />;
     }
@@ -182,11 +184,7 @@ class Header extends React.Component {
     );
   }
 
-  renderExtensions() {
-    const {
-      extensionItems, activeBreakpoint, onSelectExtensionItem, notifications,
-    } = this.props;
-
+  function renderExtensions() {
     if (!extensionItems || !extensionItems.length) {
       return null;
     }
@@ -201,27 +199,19 @@ class Header extends React.Component {
     );
   }
 
-  renderUtilities() {
-    const { userConfig } = this.props;
+  function renderUtilities() {
     return (
       <UtilityMenuHeaderButton
         userConfig={userConfig}
         onClick={() => {
-          this.setState({
-            utilityPopupIsOpen: true,
-          });
+          setUtilityPopupIsOpen(true);
         }}
-        popupAnchorRef={this.utilityButtonPopupAnchorRef}
+        popupAnchorRef={utilityButtonPopupAnchorRef}
       />
     );
   }
 
-  renderUtilitiesPopup() {
-    const {
-      hero, userConfig, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem,
-    } = this.props;
-    const { utilityPopupIsOpen } = this.state;
-
+  function renderUtilitiesPopup() {
     if (utilityPopupIsOpen) {
       return (
         <Popup
@@ -232,18 +222,18 @@ class Header extends React.Component {
           isArrowDisplayed
           isHeaderDisabled
           isOpen
-          onRequestClose={this.handleUtilityPopupCloseRequest}
+          onRequestClose={() => setUtilityPopupIsOpen(false)}
           targetAttachment="bottom center"
-          targetRef={() => this.utilityButtonPopupAnchorRef.current}
+          targetRef={() => utilityButtonPopupAnchorRef.current}
         >
           <UtilityMenu
             hero={hero}
             userConfig={userConfig}
-            onSelectSettings={onSelectSettings ? this.handleSettingsSelection : undefined}
-            onSelectHelp={onSelectHelp ? this.handleHelpSelection : undefined}
-            onSelectLogout={onSelectLogout ? this.handleLogoutSelection : undefined}
+            onSelectSettings={onSelectSettings ? generatePopupClosingCallback(onSelectSettings) : undefined}
+            onSelectHelp={onSelectHelp ? generatePopupClosingCallback(onSelectHelp) : undefined}
+            onSelectLogout={onSelectLogout ? generatePopupClosingCallback(onSelectLogout) : undefined}
             utilityItems={utilityItems}
-            onSelectUtilityItem={onSelectUtilityItem ? this.handleUtilityItemSelection : undefined}
+            onSelectUtilityItem={onSelectUtilityItem ? generatePopupClosingCallback(onSelectUtilityItem) : undefined}
           />
         </Popup>
       );
@@ -252,34 +242,27 @@ class Header extends React.Component {
     return null;
   }
 
-  render() {
-    const {
-      onSelectSkipToContent,
-      intl,
-    } = this.props;
-
-    return (
-      <div className={cx('application-header')}>
-        <button type="button" onClick={onSelectSkipToContent} className={cx('skip-content-button')}>
-          {intl.formatMessage({ id: 'Terra.ApplicationHeaderLayout.SkipToContent' })}
-        </button>
-        <div className={cx('title-container')}>
-          {this.renderAppName()}
-        </div>
-        <div className={cx('main-navigation-container')}>
-          {this.renderNavigationTabs()}
-        </div>
-        <div className={cx('extensions-container')}>
-          {this.renderExtensions()}
-        </div>
-        <div className={cx('utilities-container')}>
-          {this.renderUtilities()}
-        </div>
-        {this.renderUtilitiesPopup()}
+  return (
+    <div className={cx('header')}>
+      <button type="button" onClick={onSelectSkipToContent} className={cx('skip-content-button')}>
+        {intl.formatMessage({ id: 'Terra.ApplicationHeaderLayout.SkipToContent' })}
+      </button>
+      <div className={cx('title-container')}>
+        {renderTitle()}
       </div>
-    );
-  }
-}
+      <div className={cx('main-navigation-container')}>
+        {renderNavigationTabs()}
+      </div>
+      <div className={cx('extensions-container')}>
+        {renderExtensions()}
+      </div>
+      <div className={cx('utilities-container')}>
+        {renderUtilities()}
+      </div>
+      {renderUtilitiesPopup()}
+    </div>
+  );
+};
 
 Header.propTypes = propTypes;
 
