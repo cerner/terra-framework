@@ -119,7 +119,6 @@ class AbstractModal extends React.Component {
     this.setState({ modalTrigger: document.activeElement });
 
     if (mainDocumentElement) {
-      mainDocumentElement.setAttribute('aria-hidden', 'true');
       mainDocumentElement.setAttribute('inert', '');
       // Shift focus to modal when opened
       this.modalElement.current.focus();
@@ -130,7 +129,6 @@ class AbstractModal extends React.Component {
     const mainDocumentElement = document.querySelector(this.props.rootSelector);
 
     if (mainDocumentElement) {
-      mainDocumentElement.setAttribute('aria-hidden', 'false');
       mainDocumentElement.removeAttribute('inert');
     }
 
