@@ -4,7 +4,6 @@ import classNames from 'classnames/bind';
 import Popup from 'terra-popup';
 import { injectIntl, intlShape } from 'react-intl';
 
-import Tab from '../tabs/_Tab';
 import Tabs from '../tabs/_Tabs';
 import Extensions from '../extensions/_Extensions';
 import UtilityMenuHeaderButton from '../utility-menu/_UtilityMenuHeaderButton';
