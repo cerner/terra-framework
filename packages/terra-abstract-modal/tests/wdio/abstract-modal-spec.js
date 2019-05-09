@@ -45,16 +45,50 @@ describe('Abstract Modal', () => {
     Terra.should.beAccessible();
   });
 
-  describe('Modal has focus trap applied', () => {
-    before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-disable-close-on-esc'));
+  describe('Within Modal Focus Handling', () => {
+    before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-custom-props'));
 
-    it('focuses on the first button', () => {
-      browser.keys(['Tab']);
-      browser.hasFocus('#focus-button');
+    it('focuses on the modal when opened', () => {
+      expect(browser.hasFocus('[aria-modal="true"][role="dialog"]')).to.be.equal(true);
     });
 
-    Terra.should.matchScreenshot({ selector: 'div[role="dialog"]' });
-    Terra.should.beAccessible();
+    Terra.should.matchScreenshot('modal is focused on open', { selector: '#root' });
+
+    it('focuses on interactive elements within the modal', () => {
+      browser.keys(['Tab']);
+      expect(browser.hasFocus('#focus-button')).to.be.equal(true);
+    });
+
+    Terra.should.matchScreenshot('modal button focused', { selector: '#root' });
+
+    it('does not focus on interactive content within the app when the modal is open - tab cycle forward', () => {
+      browser.keys(['Tab']);
+    });
+
+    Terra.should.matchScreenshot('focused shifted outside the end of the modal', { selector: '#root' });
+
+    it('shifts focus back onto interactive elements within the modal', () => {
+      browser.keys(['Shift', 'Tab']);
+      expect(browser.hasFocus('#focus-button')).to.be.equal(true);
+    });
+
+    Terra.should.matchScreenshot('modal button focused again', { selector: '#root' });
+  });
+
+  describe('Outside Modal Focus Handling', () => {
+    before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-custom-props'));
+
+    it('does not focus on interactive content within the app when modal is open and focus is shifted backwards from the modal dialog', () => {
+      browser.keys(['Shift', 'Shift', 'Tab']);
+    });
+
+    Terra.should.matchScreenshot('focused shifted outside the beginning of the modal', { selector: '#root' });
+
+    it('does not focus on interactive content within the app when modal is open and focus is shifted forwards from the modal dialog', () => {
+      browser.keys(['Tab', 'Tab']);
+    });
+
+    Terra.should.matchScreenshot('focused shifted outside the end of the modal', { selector: '#root' });
   });
 
   describe('Disable Close On Outside Click', () => {
@@ -113,34 +147,6 @@ describe('Abstract Modal', () => {
 
     Terra.should.matchScreenshot({ selector: 'div[role="dialog"]' });
     Terra.should.beAccessible();
-  });
-
-  describe('Custom Focusable Fallback Function', () => {
-    before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-fallback-focus-function'));
-
-    it('clicks to open modal', () => {
-      browser.click('button');
-    });
-
-    Terra.should.matchScreenshot({ selector: 'div[role="dialog"]' });
-
-    it('has the appropriate focus', () => {
-      browser.hasFocus('#focus-element');
-    });
-  });
-
-  describe('Custom Focusable Fallback Selector', () => {
-    before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-fallback-focus-selector'));
-
-    it('clicks to open modal', () => {
-      browser.click('button');
-    });
-
-    Terra.should.matchScreenshot({ selector: 'div[role="dialog"]' });
-
-    it('has the appropriate focus', () => {
-      browser.hasFocus('#focus-element');
-    });
   });
 
   describe('Override Role', () => {

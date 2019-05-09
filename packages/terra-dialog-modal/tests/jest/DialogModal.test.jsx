@@ -55,13 +55,3 @@ it('should mount an open dialogModal 1600 width', () => {
   const dialogModal = mount(<DialogModalExample width="1600" />);
   expect(dialogModal).toMatchSnapshot();
 });
-
-it('should mount an open dialogModal with focus requested', () => {
-  const dialogModal = mount(<DialogModalExample isFocused width="1600" />);
-  expect(dialogModal).toMatchSnapshot();
-});
-
-it('should mount an open dialogModal with focus released', () => {
-  const dialogModal = mount(<DialogModalExample isFocused={false} width="1600" />);
-  expect(dialogModal).toMatchSnapshot();
-});

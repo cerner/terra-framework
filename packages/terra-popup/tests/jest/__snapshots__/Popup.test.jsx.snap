@@ -16,8 +16,6 @@ exports[`should shallow a default component 1`] = `
     isHeaderDisabled={false}
     isOpen={true}
     onRequestClose={[Function]}
-    releaseFocus={[Function]}
-    requestFocus={[Function]}
     targetRef={[Function]}
   >
     <p>
@@ -51,8 +49,6 @@ exports[`should shallow render a component with push attachment behavior 1`] = `
     isHeaderDisabled={false}
     isOpen={true}
     onRequestClose={[Function]}
-    releaseFocus={[Function]}
-    requestFocus={[Function]}
     targetRef={[Function]}
   >
     <p>

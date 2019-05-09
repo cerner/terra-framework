@@ -64,7 +64,6 @@ class ModalManager extends React.Component {
       <div {...customProps} className={containerClassNames}>
         {manager.children.components}
         <AbstractModal
-          isFocused={manager.disclosure.isFocused}
           isOpen={manager.disclosure.isOpen}
           isFullscreen={isFullscreen}
           classNameModal={cx(classArray)}

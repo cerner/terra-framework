@@ -42,6 +42,7 @@ export default class YearDropdown extends React.Component {
 
   renderSelectMode = () => (
     <select
+      tabIndex="-1"
       value={this.props.year}
       className="react-datepicker__year-select"
       onChange={this.onSelectChange}>

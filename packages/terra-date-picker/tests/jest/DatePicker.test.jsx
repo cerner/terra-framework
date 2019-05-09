@@ -42,18 +42,6 @@ it('should render a date picker with min and max dates', () => {
   expect(datePicker).toMatchSnapshot();
 });
 
-it('should render a date picker with releaseFocus', () => {
-  const releaseFocus = () => {};
-  const datePicker = shallowWithIntl(<DatePicker name="date-input" releaseFocus={releaseFocus} utcOffset={0} />);
-  expect(datePicker).toMatchSnapshot();
-});
-
-it('should render a date picker with requestFocus', () => {
-  const requestFocus = () => {};
-  const datePicker = shallowWithIntl(<DatePicker name="date-input" requestFocus={requestFocus} utcOffset={0} />);
-  expect(datePicker).toMatchSnapshot();
-});
-
 it('should render a date picker with onBlur', () => {
   const onBlur = () => {};
   const datePicker = shallowWithIntl(<DatePicker name="date-input" onBlur={onBlur} utcOffset={0} />);

@@ -9,7 +9,35 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
       browser.click('#trigger-notification-dialog');
     });
 
+    it('focuses on the modal when opened', () => {
+      expect(browser.hasFocus('[class*="NotificationDialog-module__actions"] button:first-child')).to.be.equal(true);
+    });
+
     Terra.should.beAccessible({ selector });
+    Terra.should.matchScreenshot({ selector });
+  });
+
+  describe('Notification Dialog shifts focus into modal on tab', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
+      browser.click('#trigger-notification-dialog');
+      browser.keys('Tab');
+
+      it('focuses on the close button when tab is pressed', () => {
+        expect(browser.hasFocus('[class*="notification-dialog-inner-wrapper"] button:last-child')).to.be.equal(true);
+      });
+    });
+
+    Terra.should.matchScreenshot({ selector });
+  });
+
+  describe('Notification Dialog traps focus in modal', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
+      browser.click('#trigger-notification-dialog');
+      browser.keys('Tab', 'Tab', 'Tab', 'Tab');
+    });
+
     Terra.should.matchScreenshot({ selector });
   });
 

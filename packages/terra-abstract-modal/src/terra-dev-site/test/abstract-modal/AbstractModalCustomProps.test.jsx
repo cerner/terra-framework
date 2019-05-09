@@ -39,7 +39,7 @@ class ModalCustomProps extends React.Component {
             <hr />
             <p>The Terra Modal is appended to the document body.</p>
             <p>{'Modal is assigned a role of \'document\' for accessibility.'}</p>
-            <button type="button" onClick={this.handleCloseModal}>Close Modal</button>
+            <button type="button" id="focus-button" onClick={this.handleCloseModal}>Close Modal</button>
           </div>
         </AbstractModal>
         <button type="button" className="button-open-modal" onClick={this.handleOpenModal}>Open Modal</button>
