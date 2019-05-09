@@ -278,7 +278,7 @@ describe('DateTimePicker', () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.should.matchScreenshot({ viewports, selector: '[class="react-datepicker"]' });
   });
 
   describe('Filtered Dates are Disabled', () => {
@@ -287,7 +287,7 @@ describe('DateTimePicker', () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.should.matchScreenshot({ viewports, selector: '[class="react-datepicker"]' });
   });
 
   describe('Included Dates are Enabled', () => {
@@ -296,7 +296,7 @@ describe('DateTimePicker', () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.should.matchScreenshot({ viewports, selector: '[class="react-datepicker"]' });
   });
 
   describe('OnSelect', () => {

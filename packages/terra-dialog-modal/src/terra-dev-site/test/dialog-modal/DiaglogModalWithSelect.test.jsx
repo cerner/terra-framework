@@ -2,17 +2,12 @@ import React from 'react';
 import Button from 'terra-button';
 import ActionHeader from 'terra-action-header';
 import ActionFooter from 'terra-action-footer';
-import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
-
+import Select from 'terra-form-select';
 import DialogModal from '../../../DialogModal';
 
-const propTypes = {
-  disclosureManager: disclosureManagerShape,
-};
-
-class DialogModalWithFocus extends React.Component {
-  constructor(props) {
-    super(props);
+class DefaultDialogModal extends React.Component {
+  constructor() {
+    super();
 
     this.state = {
       isOpen: false,
@@ -31,7 +26,7 @@ class DialogModalWithFocus extends React.Component {
   }
 
   render() {
-    const paraOne = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+    const text = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
       'Maecenas molestie in lorem vel facilisis. Quisque ac enim nec lectus malesuada faucibus.',
       'Integer congue feugiat ultricies.',
       ' Nunc non mauris sed tellus cursus vestibulum nec quis ipsum.',
@@ -43,24 +38,26 @@ class DialogModalWithFocus extends React.Component {
     return (
       <div>
         <DialogModal
-          ariaLabel="Default Dialog Modal"
+          ariaLabel="Dialog Modal"
           isOpen={this.state.isOpen}
           onRequestClose={this.handleCloseModal}
           header={<ActionHeader title="Action Header used here" onClose={this.handleCloseModal} />}
-          footer={<ActionFooter start="Action Footer used here" />}
-          requestFocus={this.props.disclosureManager.requestFocus}
-          releaseFocus={this.props.disclosureManager.releaseFocus}
+          footer={<ActionFooter start="Footer Goes here" />}
         >
-          <p>{paraOne}</p>
+          <p>{text}</p>
+          <Select placeholder="Select a color" style={{ maxWidth: '300px' }}>
+            <Select.Option value="blue" display="Blue" />
+            <Select.Option value="green" display="Green" />
+            <Select.Option value="purple" display="Purple" />
+            <Select.Option value="red" display="Red" />
+            <Select.Option value="violet" display="Violet" />
+          </Select>
+          <p>{text}</p>
         </DialogModal>
-        <Button text="Trigger Dialog Modal" onClick={this.handleOpenModal} />
-        <br />
-        <br />
-        <Button text="Close Modal Manager" onClick={this.props.disclosureManager.closeDisclosure} />
+        <Button id="trigger-dialog-modal" text="Trigger Dialog Modal" onClick={this.handleOpenModal} />
       </div>
     );
   }
 }
 
-DialogModalWithFocus.propTypes = propTypes;
-export default withDisclosureManager(DialogModalWithFocus);
+export default DefaultDialogModal;
