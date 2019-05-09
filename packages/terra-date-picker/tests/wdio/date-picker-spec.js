@@ -150,90 +150,6 @@ describe('Date Picker', () => {
     Terra.should.matchScreenshot('clicked');
   });
 
-  describe('Inside Modal', () => {
-    describe('Inside Modal - Displays DatePicker inside Modal and dismisses after selecting date', () => {
-      before(() => {
-        browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-inside-modal');
-        browser.click('[class*="disclose"]');
-      });
-
-      it('opens DatePicker in modal', () => {
-        browser.setValue('input[name="terra-date-date-picker-in-modal"]', '06/01/2017');
-        browser.keys('Enter');
-        browser.click('[class*="custom-input"] > [class*="button"]');
-      });
-      Terra.should.matchScreenshot('DatePicker open', { selector: 'div[class="content-container"]' });
-
-      it('closes DatePicker in modal', () => {
-        browser.click('div[class*="selected"]');
-      });
-      Terra.should.matchScreenshot('DatePicker closed', { selector: 'div[class="content-container"]' });
-      Terra.should.beAccessible({ rules: ignoredA11y });
-    });
-
-    describe('Inside Modal - Displays DatePicker inside Modal and dismisses after hitting Enter', () => {
-      before(() => {
-        browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-inside-modal');
-        browser.click('[class*="disclose"]');
-      });
-
-      it('opens DatePicker in modal', () => {
-        browser.setValue('input[name="terra-date-date-picker-in-modal"]', '06/01/2017');
-        browser.keys('Enter');
-        browser.click('[class*="custom-input"] > [class*="button"]');
-      });
-      Terra.should.matchScreenshot('DatePicker open', { selector: 'div[class="content-container"]' });
-
-      it('closes DatePicker in modal', () => {
-        browser.keys('Enter');
-      });
-      Terra.should.matchScreenshot('DatePicker closed', { selector: 'div[class="content-container"]' });
-    });
-
-    describe('Inside Modal - Displays DatePicker inside Modal and dismisses after hitting Escape', () => {
-      before(() => {
-        browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-inside-modal');
-        browser.click('[class*="disclose"]');
-      });
-
-      it('opens DatePicker in modal', () => {
-        browser.setValue('input[name="terra-date-date-picker-in-modal"]', '06/01/2017');
-        browser.keys('Enter');
-        browser.click('[class*="custom-input"] > [class*="button"]');
-      });
-      Terra.should.matchScreenshot('DatePicker open', { selector: 'div[class="content-container"]' });
-
-      it('closes DatePicker in modal', () => {
-        browser.keys('Escape');
-      });
-      Terra.should.matchScreenshot('DatePicker closed', { selector: 'div[class="content-container"]' });
-
-      it('closes the modal', () => {
-        browser.keys('Escape');
-      });
-      Terra.should.matchScreenshot('Modal closed');
-    });
-
-    describe('Inside Modal - Displays DatePicker inside Modal and dismisses after hitting Tab', () => {
-      before(() => {
-        browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-inside-modal');
-        browser.click('[class*="disclose"]');
-      });
-
-      it('opens DatePicker in modal', () => {
-        browser.setValue('input[name="terra-date-date-picker-in-modal"]', '06/01/2017');
-        browser.keys('Enter');
-        browser.click('[class*="custom-input"] > [class*="button"]');
-      });
-      Terra.should.matchScreenshot('DatePicker open', { selector: 'div[class="content-container"]' });
-
-      it('closes DatePicker in modal', () => {
-        browser.keys('Tab');
-      });
-      Terra.should.matchScreenshot('DatePicker closed', { selector: 'div[class="content-container"]' });
-    });
-  });
-
   describe('Min Max', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-min-max');
@@ -242,6 +158,45 @@ describe('Date Picker', () => {
 
     Terra.should.matchScreenshot({ selector: '[class="react-datepicker"]' });
     Terra.should.beAccessible({ rules: ignoredA11y });
+  });
+
+  describe('On Blur', () => {
+    before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-focus-blur'));
+
+    it('puts focus on the input', () => {
+      browser.click('input[name="terra-date-date-input-onblur"]');
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('input').style.caretColor = 'transparent';
+      });
+      browser.keys('05/01/2019');
+      expect(browser.getText('#blur-count')).to.equal('0');
+      expect(browser.getText('#focus-count')).to.equal('1');
+      expect(browser.getText('#iso')).to.equal('');
+      expect(browser.getText('#input-value')).to.equal('');
+      expect(browser.getText('#complete-date')).to.equal('No');
+      expect(browser.getText('#valid-date')).to.equal('Yes');
+    });
+
+    it('tabs to the calendar button and onBlur is not triggered', () => {
+      browser.keys('Tab');
+      expect(browser.getText('#blur-count')).to.equal('0');
+      expect(browser.getText('#focus-count')).to.equal('1');
+      expect(browser.getText('#iso')).to.equal('');
+      expect(browser.getText('#input-value')).to.equal('');
+      expect(browser.getText('#complete-date')).to.equal('No');
+      expect(browser.getText('#valid-date')).to.equal('Yes');
+    });
+
+    it('tabs out of the component and onBlur is triggered', () => {
+      browser.keys('Tab');
+      expect(browser.getText('#blur-count')).to.equal('1');
+      expect(browser.getText('#focus-count')).to.equal('1');
+      expect(browser.getText('#iso')).to.equal('2019-05-01');
+      expect(browser.getText('#input-value')).to.equal('05/01/2019');
+      expect(browser.getText('#complete-date')).to.equal('Yes');
+      expect(browser.getText('#valid-date')).to.equal('Yes');
+    });
   });
 
   describe('On Change', () => {

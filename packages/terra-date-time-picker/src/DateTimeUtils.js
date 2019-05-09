@@ -1,5 +1,6 @@
 import moment from 'moment-timezone';
 import DateUtil from 'terra-date-picker/lib/DateUtil';
+import TimeUtil from 'terra-time-input/lib/TimeUtil';
 
 class DateTimeUtils {
   /**
@@ -26,31 +27,6 @@ class DateTimeUtils {
     }
 
     return timePart.length > 0;
-  }
-
-  /**
-   * Converts an ISO string to the given format.
-   * @param {string} iSODate - The ISO string to convert.
-   * @param {string} format - The desired date/time format for the conversion
-   * @return {string} - The formatted date/time string.
-   */
-  static formatISODateTime(iSODate, format) {
-    if (!iSODate || iSODate.length <= 0) {
-      return '';
-    }
-
-    const momentDate = moment(iSODate);
-    return DateTimeUtils.formatMomentDateTime(momentDate, format);
-  }
-
-  /**
-   * Converts a moment object to the given format.
-   * @param {object} momentDate - The moment object to convert.
-   * @param {string} format - The desired date/time format for the conversion
-   * @return {string} - The formatted date/time string.
-   */
-  static formatMomentDateTime(momentDate, format) {
-    return momentDate && momentDate.isValid() ? momentDate.format(format) : undefined;
   }
 
   /**
@@ -120,18 +96,7 @@ class DateTimeUtils {
    * @return {boolean} - True if both the date and time are valid and conform to the format.
    */
   static isValidDateTime(date, time, format) {
-    return DateTimeUtils.isValidDate(date, format) && DateTimeUtils.isValidTime(time);
-  }
-
-  /**
-   * Determines if the date is valid and conforms to the given format.
-   * @param {string} date - The date to validate.
-   * @param {string} format - The date format to use for the validation.
-   * @return {boolean} - True if the date is valid and conforms to the format.
-   */
-  static isValidDate(date, format) {
-    const dateMoment = moment(date, format, true);
-    return dateMoment.isValid();
+    return DateUtil.isValidDate(date, format) && DateTimeUtils.isValidTime(time);
   }
 
   /**
@@ -196,5 +161,8 @@ class DateTimeUtils {
     return DateTimeUtils.updateTime(DateUtil.createSafeDate(DateUtil.convertToISO8601(date, dateformat)), time);
   }
 }
+
+DateTimeUtils.FORMAT_12_HOUR = TimeUtil.FORMAT_12_HOUR;
+DateTimeUtils.FORMAT_24_HOUR = TimeUtil.FORMAT_24_HOUR;
 
 export default DateTimeUtils;
