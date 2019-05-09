@@ -93,6 +93,10 @@ const propTypes = {
    * An ISO 8601 string representation of the initial value to show in the date and time inputs.
    */
   value: PropTypes.string,
+  /**
+   * Type of time input to initialize. Must be '24-hour' or '12-hour'
+   */
+  timeVariant: PropTypes.oneOf([DateTimeUtils.FORMAT_12_HOUR, DateTimeUtils.FORMAT_24_HOUR]),
 };
 
 const defaultProps = {
@@ -111,6 +115,7 @@ const defaultProps = {
   onSelect: undefined,
   timeInputAttributes: undefined,
   value: undefined,
+  timeVariant: DateTimeUtils.FORMAT_24_HOUR,
 };
 
 class DateTimePicker extends React.Component {
@@ -517,6 +522,7 @@ class DateTimePicker extends React.Component {
       name,
       timeInputAttributes,
       value,
+      timeVariant,
       ...customProps
     } = this.props;
 
@@ -566,6 +572,7 @@ class DateTimePicker extends React.Component {
             name="input"
             value={this.timeValue}
             disabled={disabled}
+            variant={timeVariant}
             refCallback={(inputRef) => { this.hourInput = inputRef; }}
           />
 
