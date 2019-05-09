@@ -226,6 +226,7 @@ exports[`should render a date time picker with onBlur 1`] = `
   }
   name="date-time-input"
   onBlur={[Function]}
+  timeVariant="24-hour"
   utcOffset={0}
 />
 `;
