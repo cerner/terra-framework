@@ -38,7 +38,6 @@
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "terra-disclosure-manager": "^4.10.0",
     "terra-doc-template": "^2.2.0",
     "terra-form-field": "^3.1.0",
     "terra-modal-manager": "^5.11.0"

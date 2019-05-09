@@ -6,6 +6,13 @@ Unreleased
 ### Changed
 * Changed the parameter in filterDate prop from a moment object to an ISO string.
 * Honor min/max range when only either minDate or maxDate is set.
+* Change the onBlur event to get triggered only when the entire date picker component loses focus.
+
+### Added
+* Added 'onFocus' prop since 'preventOpenOnFocus' can be used to prevent picker from opening on focus.
+
+### Removed
+* Removed 'onInputFocus' prop in favor of the added 'onFocus' prop.
 
 3.15.0 - (May 7, 2019)
 ------------------
