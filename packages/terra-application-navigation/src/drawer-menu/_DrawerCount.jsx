@@ -36,8 +36,6 @@ const DrawerCount = ({ value }) => {
   let validatedValue = value;
   if (value > 999) {
     validatedValue = '999+';
-  } else if (value > 99) {
-    validatedValue = '99+';
   }
 
   return (
