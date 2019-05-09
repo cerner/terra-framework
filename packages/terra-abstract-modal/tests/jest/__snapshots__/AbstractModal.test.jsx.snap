@@ -1,249 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should allow us to pass in a dom selector as a fallbackFocus 1`] = `
-<ModalExample
-  fallbackFocus="#focusable-element"
->
-  <div>
-    <AbstractModal
-      ariaLabel="Terra Modal"
-      classNameModal={null}
-      classNameOverlay={null}
-      closeOnEsc={true}
-      closeOnOutsideClick={true}
-      isFocused={true}
-      isFullscreen={false}
-      isOpen={true}
-      onRequestClose={[Function]}
-      role="dialog"
-      rootSelector="#root"
-      zIndex="6000"
-    >
-      <Portal
-        isOpened={true}
-      >
-        <Portal
-          containerInfo={
-            <div>
-              <div>
-                <div
-                  class="overlay layer-6000"
-                />
-                <div
-                  aria-label="Terra Modal"
-                  aria-modal="true"
-                  class="abstract-modal layer-6000"
-                  role="dialog"
-                  tabindex="0"
-                >
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
-                    >
-                      Close Modal
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          }
-        >
-          <ModalContent
-            aria-modal="true"
-            ariaLabel="Terra Modal"
-            classNameModal={null}
-            classNameOverlay={null}
-            closeOnOutsideClick={true}
-            isFocused={true}
-            isFullscreen={false}
-            isScrollable={false}
-            onRequestClose={[Function]}
-            role="dialog"
-            zIndex="6000"
-          >
-            <FocusTrap
-              _createFocusTrap={[Function]}
-              active={true}
-              focusTrapOptions={
-                Object {
-                  "escapeDeactivates": false,
-                  "fallbackFocus": [Function],
-                }
-              }
-              paused={false}
-              tag="div"
-            >
-              <div>
-                <ModalOverlay
-                  className={null}
-                  onClick={[Function]}
-                  zIndex="6000"
-                >
-                  <div
-                    className="overlay layer-6000"
-                    onClick={[Function]}
-                  />
-                </ModalOverlay>
-                <div
-                  aria-label="Terra Modal"
-                  aria-modal="true"
-                  className="abstract-modal layer-6000"
-                  role="dialog"
-                  tabIndex="0"
-                >
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      Close Modal
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </FocusTrap>
-          </ModalContent>
-        </Portal>
-      </Portal>
-    </AbstractModal>
-    <button
-      onClick={[Function]}
-      type="button"
-    >
-      Open Modal
-    </button>
-  </div>
-</ModalExample>
-`;
-
-exports[`should allow us to pass in a function as fallbackFocus 1`] = `
-<ModalExample
-  fallbackFocus={[Function]}
->
-  <div>
-    <AbstractModal
-      ariaLabel="Terra Modal"
-      classNameModal={null}
-      classNameOverlay={null}
-      closeOnEsc={true}
-      closeOnOutsideClick={true}
-      isFocused={true}
-      isFullscreen={false}
-      isOpen={true}
-      onRequestClose={[Function]}
-      role="dialog"
-      rootSelector="#root"
-      zIndex="6000"
-    >
-      <Portal
-        isOpened={true}
-      >
-        <Portal
-          containerInfo={
-            <div>
-              <div>
-                <div
-                  class="overlay layer-6000"
-                />
-                <div
-                  aria-label="Terra Modal"
-                  aria-modal="true"
-                  class="abstract-modal layer-6000"
-                  role="dialog"
-                  tabindex="0"
-                >
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
-                    >
-                      Close Modal
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          }
-        >
-          <ModalContent
-            aria-modal="true"
-            ariaLabel="Terra Modal"
-            classNameModal={null}
-            classNameOverlay={null}
-            closeOnOutsideClick={true}
-            isFocused={true}
-            isFullscreen={false}
-            isScrollable={false}
-            onRequestClose={[Function]}
-            role="dialog"
-            zIndex="6000"
-          >
-            <FocusTrap
-              _createFocusTrap={[Function]}
-              active={true}
-              focusTrapOptions={
-                Object {
-                  "escapeDeactivates": false,
-                  "fallbackFocus": [Function],
-                }
-              }
-              paused={false}
-              tag="div"
-            >
-              <div>
-                <ModalOverlay
-                  className={null}
-                  onClick={[Function]}
-                  zIndex="6000"
-                >
-                  <div
-                    className="overlay layer-6000"
-                    onClick={[Function]}
-                  />
-                </ModalOverlay>
-                <div
-                  aria-label="Terra Modal"
-                  aria-modal="true"
-                  className="abstract-modal layer-6000"
-                  role="dialog"
-                  tabIndex="0"
-                >
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      Close Modal
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </FocusTrap>
-          </ModalContent>
-        </Portal>
-      </Portal>
-    </AbstractModal>
-    <button
-      onClick={[Function]}
-      type="button"
-    >
-      Open Modal
-    </button>
-  </div>
-</ModalExample>
-`;
-
 exports[`should mount an open modal 1`] = `
 <ModalExample>
   <div>
@@ -253,7 +9,6 @@ exports[`should mount an open modal 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
-      isFocused={true}
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -267,90 +22,72 @@ exports[`should mount an open modal 1`] = `
         <Portal
           containerInfo={
             <div>
-              <div>
-                <div
-                  class="overlay layer-6000"
-                />
-                <div
-                  aria-label="Terra Modal"
-                  aria-modal="true"
-                  class="abstract-modal layer-6000"
-                  role="dialog"
-                  tabindex="0"
-                >
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
-                    >
-                      Close Modal
-                    </button>
-                  </div>
+              <div
+                class="overlay layer-6000"
+              />
+              <div
+                aria-label="Terra Modal"
+                aria-modal="true"
+                class="abstract-modal layer-6000"
+                role="dialog"
+                tabindex="0"
+              >
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
                 </div>
               </div>
             </div>
           }
         >
-          <ModalContent
+          <ForwardRef
             aria-modal="true"
             ariaLabel="Terra Modal"
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
-            isFocused={true}
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
             role="dialog"
             zIndex="6000"
           >
-            <FocusTrap
-              _createFocusTrap={[Function]}
-              active={true}
-              focusTrapOptions={
-                Object {
-                  "escapeDeactivates": false,
-                  "fallbackFocus": [Function],
-                }
-              }
-              paused={false}
-              tag="div"
+            <ModalOverlay
+              className={null}
+              onClick={[Function]}
+              zIndex="6000"
+            >
+              <div
+                className="overlay layer-6000"
+                onClick={[Function]}
+              />
+            </ModalOverlay>
+            <div
+              aria-label="Terra Modal"
+              aria-modal="true"
+              className="abstract-modal layer-6000"
+              role="dialog"
+              tabIndex="0"
             >
               <div>
-                <ModalOverlay
-                  className={null}
+                <h1>
+                  Terra Modal
+                </h1>
+                <button
                   onClick={[Function]}
-                  zIndex="6000"
+                  type="button"
                 >
-                  <div
-                    className="overlay layer-6000"
-                    onClick={[Function]}
-                  />
-                </ModalOverlay>
-                <div
-                  aria-label="Terra Modal"
-                  aria-modal="true"
-                  className="abstract-modal layer-6000"
-                  role="dialog"
-                  tabIndex="0"
-                >
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      Close Modal
-                    </button>
-                  </div>
-                </div>
+                  Close Modal
+                </button>
               </div>
-            </FocusTrap>
-          </ModalContent>
+            </div>
+          </ForwardRef>
         </Portal>
       </Portal>
     </AbstractModal>
@@ -375,7 +112,6 @@ exports[`should mount an open modal 7000 z-index 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
-      isFocused={true}
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -389,90 +125,72 @@ exports[`should mount an open modal 7000 z-index 1`] = `
         <Portal
           containerInfo={
             <div>
-              <div>
-                <div
-                  class="overlay layer-7000"
-                />
-                <div
-                  aria-label="Terra Modal"
-                  aria-modal="true"
-                  class="abstract-modal layer-7000"
-                  role="dialog"
-                  tabindex="0"
-                >
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
-                    >
-                      Close Modal
-                    </button>
-                  </div>
+              <div
+                class="overlay layer-7000"
+              />
+              <div
+                aria-label="Terra Modal"
+                aria-modal="true"
+                class="abstract-modal layer-7000"
+                role="dialog"
+                tabindex="0"
+              >
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
                 </div>
               </div>
             </div>
           }
         >
-          <ModalContent
+          <ForwardRef
             aria-modal="true"
             ariaLabel="Terra Modal"
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
-            isFocused={true}
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
             role="dialog"
             zIndex="7000"
           >
-            <FocusTrap
-              _createFocusTrap={[Function]}
-              active={true}
-              focusTrapOptions={
-                Object {
-                  "escapeDeactivates": false,
-                  "fallbackFocus": [Function],
-                }
-              }
-              paused={false}
-              tag="div"
+            <ModalOverlay
+              className={null}
+              onClick={[Function]}
+              zIndex="7000"
+            >
+              <div
+                className="overlay layer-7000"
+                onClick={[Function]}
+              />
+            </ModalOverlay>
+            <div
+              aria-label="Terra Modal"
+              aria-modal="true"
+              className="abstract-modal layer-7000"
+              role="dialog"
+              tabIndex="0"
             >
               <div>
-                <ModalOverlay
-                  className={null}
+                <h1>
+                  Terra Modal
+                </h1>
+                <button
                   onClick={[Function]}
-                  zIndex="7000"
+                  type="button"
                 >
-                  <div
-                    className="overlay layer-7000"
-                    onClick={[Function]}
-                  />
-                </ModalOverlay>
-                <div
-                  aria-label="Terra Modal"
-                  aria-modal="true"
-                  className="abstract-modal layer-7000"
-                  role="dialog"
-                  tabIndex="0"
-                >
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      Close Modal
-                    </button>
-                  </div>
-                </div>
+                  Close Modal
+                </button>
               </div>
-            </FocusTrap>
-          </ModalContent>
+            </div>
+          </ForwardRef>
         </Portal>
       </Portal>
     </AbstractModal>
@@ -497,7 +215,6 @@ exports[`should mount an open modal 8000 z-index 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
-      isFocused={true}
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -511,90 +228,72 @@ exports[`should mount an open modal 8000 z-index 1`] = `
         <Portal
           containerInfo={
             <div>
-              <div>
-                <div
-                  class="overlay layer-8000"
-                />
-                <div
-                  aria-label="Terra Modal"
-                  aria-modal="true"
-                  class="abstract-modal layer-8000"
-                  role="dialog"
-                  tabindex="0"
-                >
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
-                    >
-                      Close Modal
-                    </button>
-                  </div>
+              <div
+                class="overlay layer-8000"
+              />
+              <div
+                aria-label="Terra Modal"
+                aria-modal="true"
+                class="abstract-modal layer-8000"
+                role="dialog"
+                tabindex="0"
+              >
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
                 </div>
               </div>
             </div>
           }
         >
-          <ModalContent
+          <ForwardRef
             aria-modal="true"
             ariaLabel="Terra Modal"
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
-            isFocused={true}
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
             role="dialog"
             zIndex="8000"
           >
-            <FocusTrap
-              _createFocusTrap={[Function]}
-              active={true}
-              focusTrapOptions={
-                Object {
-                  "escapeDeactivates": false,
-                  "fallbackFocus": [Function],
-                }
-              }
-              paused={false}
-              tag="div"
+            <ModalOverlay
+              className={null}
+              onClick={[Function]}
+              zIndex="8000"
+            >
+              <div
+                className="overlay layer-8000"
+                onClick={[Function]}
+              />
+            </ModalOverlay>
+            <div
+              aria-label="Terra Modal"
+              aria-modal="true"
+              className="abstract-modal layer-8000"
+              role="dialog"
+              tabIndex="0"
             >
               <div>
-                <ModalOverlay
-                  className={null}
+                <h1>
+                  Terra Modal
+                </h1>
+                <button
                   onClick={[Function]}
-                  zIndex="8000"
+                  type="button"
                 >
-                  <div
-                    className="overlay layer-8000"
-                    onClick={[Function]}
-                  />
-                </ModalOverlay>
-                <div
-                  aria-label="Terra Modal"
-                  aria-modal="true"
-                  className="abstract-modal layer-8000"
-                  role="dialog"
-                  tabIndex="0"
-                >
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      Close Modal
-                    </button>
-                  </div>
-                </div>
+                  Close Modal
+                </button>
               </div>
-            </FocusTrap>
-          </ModalContent>
+            </div>
+          </ForwardRef>
         </Portal>
       </Portal>
     </AbstractModal>
@@ -619,7 +318,6 @@ exports[`should mount an open modal 9000 z-index 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
-      isFocused={true}
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -633,90 +331,72 @@ exports[`should mount an open modal 9000 z-index 1`] = `
         <Portal
           containerInfo={
             <div>
-              <div>
-                <div
-                  class="overlay layer-9000"
-                />
-                <div
-                  aria-label="Terra Modal"
-                  aria-modal="true"
-                  class="abstract-modal layer-9000"
-                  role="dialog"
-                  tabindex="0"
-                >
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
-                    >
-                      Close Modal
-                    </button>
-                  </div>
+              <div
+                class="overlay layer-9000"
+              />
+              <div
+                aria-label="Terra Modal"
+                aria-modal="true"
+                class="abstract-modal layer-9000"
+                role="dialog"
+                tabindex="0"
+              >
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
                 </div>
               </div>
             </div>
           }
         >
-          <ModalContent
+          <ForwardRef
             aria-modal="true"
             ariaLabel="Terra Modal"
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
-            isFocused={true}
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
             role="dialog"
             zIndex="9000"
           >
-            <FocusTrap
-              _createFocusTrap={[Function]}
-              active={true}
-              focusTrapOptions={
-                Object {
-                  "escapeDeactivates": false,
-                  "fallbackFocus": [Function],
-                }
-              }
-              paused={false}
-              tag="div"
+            <ModalOverlay
+              className={null}
+              onClick={[Function]}
+              zIndex="9000"
+            >
+              <div
+                className="overlay layer-9000"
+                onClick={[Function]}
+              />
+            </ModalOverlay>
+            <div
+              aria-label="Terra Modal"
+              aria-modal="true"
+              className="abstract-modal layer-9000"
+              role="dialog"
+              tabIndex="0"
             >
               <div>
-                <ModalOverlay
-                  className={null}
+                <h1>
+                  Terra Modal
+                </h1>
+                <button
                   onClick={[Function]}
-                  zIndex="9000"
+                  type="button"
                 >
-                  <div
-                    className="overlay layer-9000"
-                    onClick={[Function]}
-                  />
-                </ModalOverlay>
-                <div
-                  aria-label="Terra Modal"
-                  aria-modal="true"
-                  className="abstract-modal layer-9000"
-                  role="dialog"
-                  tabIndex="0"
-                >
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      Close Modal
-                    </button>
-                  </div>
-                </div>
+                  Close Modal
+                </button>
               </div>
-            </FocusTrap>
-          </ModalContent>
+            </div>
+          </ForwardRef>
         </Portal>
       </Portal>
     </AbstractModal>
@@ -741,7 +421,6 @@ exports[`should mount an open modal set to fullscreen 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
-      isFocused={true}
       isFullscreen={true}
       isOpen={true}
       onRequestClose={[Function]}
@@ -755,90 +434,72 @@ exports[`should mount an open modal set to fullscreen 1`] = `
         <Portal
           containerInfo={
             <div>
-              <div>
-                <div
-                  class="overlay layer-6000"
-                />
-                <div
-                  aria-label="Terra Modal"
-                  aria-modal="true"
-                  class="abstract-modal is-fullscreen layer-6000"
-                  role="dialog"
-                  tabindex="0"
-                >
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
-                    >
-                      Close Modal
-                    </button>
-                  </div>
+              <div
+                class="overlay layer-6000"
+              />
+              <div
+                aria-label="Terra Modal"
+                aria-modal="true"
+                class="abstract-modal is-fullscreen layer-6000"
+                role="dialog"
+                tabindex="0"
+              >
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
                 </div>
               </div>
             </div>
           }
         >
-          <ModalContent
+          <ForwardRef
             aria-modal="true"
             ariaLabel="Terra Modal"
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
-            isFocused={true}
             isFullscreen={true}
             isScrollable={false}
             onRequestClose={[Function]}
             role="dialog"
             zIndex="6000"
           >
-            <FocusTrap
-              _createFocusTrap={[Function]}
-              active={true}
-              focusTrapOptions={
-                Object {
-                  "escapeDeactivates": false,
-                  "fallbackFocus": [Function],
-                }
-              }
-              paused={false}
-              tag="div"
+            <ModalOverlay
+              className={null}
+              onClick={[Function]}
+              zIndex="6000"
+            >
+              <div
+                className="overlay layer-6000"
+                onClick={[Function]}
+              />
+            </ModalOverlay>
+            <div
+              aria-label="Terra Modal"
+              aria-modal="true"
+              className="abstract-modal is-fullscreen layer-6000"
+              role="dialog"
+              tabIndex="0"
             >
               <div>
-                <ModalOverlay
-                  className={null}
+                <h1>
+                  Terra Modal
+                </h1>
+                <button
                   onClick={[Function]}
-                  zIndex="6000"
+                  type="button"
                 >
-                  <div
-                    className="overlay layer-6000"
-                    onClick={[Function]}
-                  />
-                </ModalOverlay>
-                <div
-                  aria-label="Terra Modal"
-                  aria-modal="true"
-                  className="abstract-modal is-fullscreen layer-6000"
-                  role="dialog"
-                  tabIndex="0"
-                >
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      Close Modal
-                    </button>
-                  </div>
-                </div>
+                  Close Modal
+                </button>
               </div>
-            </FocusTrap>
-          </ModalContent>
+            </div>
+          </ForwardRef>
         </Portal>
       </Portal>
     </AbstractModal>
@@ -861,7 +522,6 @@ exports[`should render the correct snapshot for iPads 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
-      isFocused={true}
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -875,90 +535,72 @@ exports[`should render the correct snapshot for iPads 1`] = `
         <Portal
           containerInfo={
             <div>
-              <div>
-                <div
-                  class="overlay layer-6000"
-                />
-                <div
-                  aria-label="Terra Modal"
-                  aria-modal="true"
-                  class="abstract-modal layer-6000"
-                  role="dialog"
-                  tabindex="-1"
-                >
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
-                    >
-                      Close Modal
-                    </button>
-                  </div>
+              <div
+                class="overlay layer-6000"
+              />
+              <div
+                aria-label="Terra Modal"
+                aria-modal="true"
+                class="abstract-modal layer-6000"
+                role="dialog"
+                tabindex="-1"
+              >
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
                 </div>
               </div>
             </div>
           }
         >
-          <ModalContent
+          <ForwardRef
             aria-modal="true"
             ariaLabel="Terra Modal"
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
-            isFocused={true}
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
             role="dialog"
             zIndex="6000"
           >
-            <FocusTrap
-              _createFocusTrap={[Function]}
-              active={true}
-              focusTrapOptions={
-                Object {
-                  "escapeDeactivates": false,
-                  "fallbackFocus": [Function],
-                }
-              }
-              paused={false}
-              tag="div"
+            <ModalOverlay
+              className={null}
+              onClick={[Function]}
+              zIndex="6000"
+            >
+              <div
+                className="overlay layer-6000"
+                onClick={[Function]}
+              />
+            </ModalOverlay>
+            <div
+              aria-label="Terra Modal"
+              aria-modal="true"
+              className="abstract-modal layer-6000"
+              role="dialog"
+              tabIndex="-1"
             >
               <div>
-                <ModalOverlay
-                  className={null}
+                <h1>
+                  Terra Modal
+                </h1>
+                <button
                   onClick={[Function]}
-                  zIndex="6000"
+                  type="button"
                 >
-                  <div
-                    className="overlay layer-6000"
-                    onClick={[Function]}
-                  />
-                </ModalOverlay>
-                <div
-                  aria-label="Terra Modal"
-                  aria-modal="true"
-                  className="abstract-modal layer-6000"
-                  role="dialog"
-                  tabIndex="-1"
-                >
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      Close Modal
-                    </button>
-                  </div>
-                </div>
+                  Close Modal
+                </button>
               </div>
-            </FocusTrap>
-          </ModalContent>
+            </div>
+          </ForwardRef>
         </Portal>
       </Portal>
     </AbstractModal>
@@ -981,7 +623,6 @@ exports[`should render the correct snapshot for iPhones 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
-      isFocused={true}
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -995,90 +636,72 @@ exports[`should render the correct snapshot for iPhones 1`] = `
         <Portal
           containerInfo={
             <div>
-              <div>
-                <div
-                  class="overlay layer-6000"
-                />
-                <div
-                  aria-label="Terra Modal"
-                  aria-modal="true"
-                  class="abstract-modal layer-6000"
-                  role="dialog"
-                  tabindex="-1"
-                >
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
-                    >
-                      Close Modal
-                    </button>
-                  </div>
+              <div
+                class="overlay layer-6000"
+              />
+              <div
+                aria-label="Terra Modal"
+                aria-modal="true"
+                class="abstract-modal layer-6000"
+                role="dialog"
+                tabindex="-1"
+              >
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
                 </div>
               </div>
             </div>
           }
         >
-          <ModalContent
+          <ForwardRef
             aria-modal="true"
             ariaLabel="Terra Modal"
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
-            isFocused={true}
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
             role="dialog"
             zIndex="6000"
           >
-            <FocusTrap
-              _createFocusTrap={[Function]}
-              active={true}
-              focusTrapOptions={
-                Object {
-                  "escapeDeactivates": false,
-                  "fallbackFocus": [Function],
-                }
-              }
-              paused={false}
-              tag="div"
+            <ModalOverlay
+              className={null}
+              onClick={[Function]}
+              zIndex="6000"
+            >
+              <div
+                className="overlay layer-6000"
+                onClick={[Function]}
+              />
+            </ModalOverlay>
+            <div
+              aria-label="Terra Modal"
+              aria-modal="true"
+              className="abstract-modal layer-6000"
+              role="dialog"
+              tabIndex="-1"
             >
               <div>
-                <ModalOverlay
-                  className={null}
+                <h1>
+                  Terra Modal
+                </h1>
+                <button
                   onClick={[Function]}
-                  zIndex="6000"
+                  type="button"
                 >
-                  <div
-                    className="overlay layer-6000"
-                    onClick={[Function]}
-                  />
-                </ModalOverlay>
-                <div
-                  aria-label="Terra Modal"
-                  aria-modal="true"
-                  className="abstract-modal layer-6000"
-                  role="dialog"
-                  tabIndex="-1"
-                >
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      Close Modal
-                    </button>
-                  </div>
-                </div>
+                  Close Modal
+                </button>
               </div>
-            </FocusTrap>
-          </ModalContent>
+            </div>
+          </ForwardRef>
         </Portal>
       </Portal>
     </AbstractModal>
@@ -1101,7 +724,6 @@ exports[`should render the correct snapshot for iPods 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
-      isFocused={true}
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -1115,90 +737,72 @@ exports[`should render the correct snapshot for iPods 1`] = `
         <Portal
           containerInfo={
             <div>
-              <div>
-                <div
-                  class="overlay layer-6000"
-                />
-                <div
-                  aria-label="Terra Modal"
-                  aria-modal="true"
-                  class="abstract-modal layer-6000"
-                  role="dialog"
-                  tabindex="-1"
-                >
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
-                    >
-                      Close Modal
-                    </button>
-                  </div>
+              <div
+                class="overlay layer-6000"
+              />
+              <div
+                aria-label="Terra Modal"
+                aria-modal="true"
+                class="abstract-modal layer-6000"
+                role="dialog"
+                tabindex="-1"
+              >
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
                 </div>
               </div>
             </div>
           }
         >
-          <ModalContent
+          <ForwardRef
             aria-modal="true"
             ariaLabel="Terra Modal"
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
-            isFocused={true}
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
             role="dialog"
             zIndex="6000"
           >
-            <FocusTrap
-              _createFocusTrap={[Function]}
-              active={true}
-              focusTrapOptions={
-                Object {
-                  "escapeDeactivates": false,
-                  "fallbackFocus": [Function],
-                }
-              }
-              paused={false}
-              tag="div"
+            <ModalOverlay
+              className={null}
+              onClick={[Function]}
+              zIndex="6000"
+            >
+              <div
+                className="overlay layer-6000"
+                onClick={[Function]}
+              />
+            </ModalOverlay>
+            <div
+              aria-label="Terra Modal"
+              aria-modal="true"
+              className="abstract-modal layer-6000"
+              role="dialog"
+              tabIndex="-1"
             >
               <div>
-                <ModalOverlay
-                  className={null}
+                <h1>
+                  Terra Modal
+                </h1>
+                <button
                   onClick={[Function]}
-                  zIndex="6000"
+                  type="button"
                 >
-                  <div
-                    className="overlay layer-6000"
-                    onClick={[Function]}
-                  />
-                </ModalOverlay>
-                <div
-                  aria-label="Terra Modal"
-                  aria-modal="true"
-                  className="abstract-modal layer-6000"
-                  role="dialog"
-                  tabIndex="-1"
-                >
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      Close Modal
-                    </button>
-                  </div>
-                </div>
+                  Close Modal
+                </button>
               </div>
-            </FocusTrap>
-          </ModalContent>
+            </div>
+          </ForwardRef>
         </Portal>
       </Portal>
     </AbstractModal>
@@ -1220,7 +824,6 @@ exports[`should shallow an open modal 1`] = `
     classNameOverlay={null}
     closeOnEsc={true}
     closeOnOutsideClick={true}
-    isFocused={true}
     isFullscreen={false}
     isOpen={true}
     onRequestClose={[Function]}
@@ -1257,7 +860,6 @@ exports[`should shallow an open modal 6000 z-index 1`] = `
     classNameOverlay={null}
     closeOnEsc={true}
     closeOnOutsideClick={true}
-    isFocused={true}
     isFullscreen={false}
     isOpen={true}
     onRequestClose={[Function]}
@@ -1294,7 +896,6 @@ exports[`should shallow an open modal 7000 z-index 1`] = `
     classNameOverlay={null}
     closeOnEsc={true}
     closeOnOutsideClick={true}
-    isFocused={true}
     isFullscreen={false}
     isOpen={true}
     onRequestClose={[Function]}
@@ -1331,7 +932,6 @@ exports[`should shallow an open modal 8000 z-index 1`] = `
     classNameOverlay={null}
     closeOnEsc={true}
     closeOnOutsideClick={true}
-    isFocused={true}
     isFullscreen={false}
     isOpen={true}
     onRequestClose={[Function]}
@@ -1368,7 +968,6 @@ exports[`should shallow an open modal 9000 z-index 1`] = `
     classNameOverlay={null}
     closeOnEsc={true}
     closeOnOutsideClick={true}
-    isFocused={true}
     isFullscreen={false}
     isOpen={true}
     onRequestClose={[Function]}

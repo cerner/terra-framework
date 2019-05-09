@@ -48,7 +48,6 @@ exports[`ModalManager should disclose content in Modal 1`] = `
           classNameOverlay={null}
           closeOnEsc={true}
           closeOnOutsideClick={false}
-          isFocused={true}
           isFullscreen={false}
           isOpen={true}
           onRequestClose={[Function]}
@@ -62,188 +61,170 @@ exports[`ModalManager should disclose content in Modal 1`] = `
             <Portal
               containerInfo={
                 <div>
-                  <div>
+                  <div
+                    class="overlay layer-6000"
+                  />
+                  <div
+                    aria-label="Modal"
+                    aria-modal="true"
+                    class="abstract-modal layer-6000 modal-manager height-870 width-1280"
+                    role="dialog"
+                    tabindex="0"
+                  >
                     <div
-                      class="overlay layer-6000"
-                    />
-                    <div
-                      aria-label="Modal"
-                      aria-modal="true"
-                      class="abstract-modal layer-6000 modal-manager height-870 width-1280"
-                      role="dialog"
-                      tabindex="0"
+                      class="slide-group"
                     >
                       <div
-                        class="slide-group"
+                        class="slide"
                       >
                         <div
-                          class="slide"
+                          class="slide-shadow"
+                        />
+                        <button
+                          type="button"
                         >
-                          <div
-                            class="slide-shadow"
-                          />
-                          <button
-                            type="button"
-                          >
-                            Hello World
-                          </button>
-                        </div>
+                          Hello World
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
               }
             >
-              <ModalContent
+              <ForwardRef
                 aria-modal="true"
                 ariaLabel="Modal"
                 classNameModal="modal-manager height-870 width-1280"
                 classNameOverlay={null}
                 closeOnOutsideClick={false}
-                isFocused={true}
                 isFullscreen={false}
                 isScrollable={false}
                 onRequestClose={[Function]}
                 role="dialog"
                 zIndex="6000"
               >
-                <FocusTrap
-                  _createFocusTrap={[Function]}
-                  active={true}
-                  focusTrapOptions={
-                    Object {
-                      "escapeDeactivates": false,
-                      "fallbackFocus": [Function],
-                    }
-                  }
-                  paused={false}
-                  tag="div"
+                <ModalOverlay
+                  className={null}
+                  onClick={null}
+                  zIndex="6000"
                 >
-                  <div>
-                    <ModalOverlay
-                      className={null}
-                      onClick={null}
-                      zIndex="6000"
+                  <div
+                    className="overlay layer-6000"
+                    onClick={null}
+                  />
+                </ModalOverlay>
+                <div
+                  aria-label="Modal"
+                  aria-modal="true"
+                  className="abstract-modal layer-6000 modal-manager height-870 width-1280"
+                  role="dialog"
+                  tabIndex="0"
+                >
+                  <SlideGroup
+                    isAnimated={true}
+                    items={
+                      Array [
+                        <Context.Provider
+                          value={
+                            DisclosureManagerDelegateInstance {
+                              "closeDisclosure": [Function],
+                              "disclose": [Function],
+                              "dismiss": [Function],
+                              "maximize": [Function],
+                              "registerDismissCheck": [Function],
+                              "requestFocus": [Function],
+                            }
+                          }
+                        >
+                          <withDisclosureManager(Component) />
+                        </Context.Provider>,
+                      ]
+                    }
+                  >
+                    <TransitionGroup
+                      childFactory={[Function]}
+                      className="slide-group"
+                      component="div"
+                      key="DISCLOSE_KEY"
                     >
                       <div
-                        className="overlay layer-6000"
-                        onClick={null}
-                      />
-                    </ModalOverlay>
-                    <div
-                      aria-label="Modal"
-                      aria-modal="true"
-                      className="abstract-modal layer-6000 modal-manager height-870 width-1280"
-                      role="dialog"
-                      tabIndex="0"
-                    >
-                      <SlideGroup
-                        isAnimated={true}
-                        items={
-                          Array [
-                            <Context.Provider
-                              value={
-                                DisclosureManagerDelegateInstance {
-                                  "closeDisclosure": [Function],
-                                  "disclose": [Function],
-                                  "dismiss": [Function],
-                                  "maximize": [Function],
-                                  "registerDismissCheck": [Function],
-                                  "requestFocus": [Function],
-                                }
-                              }
-                            >
-                              <withDisclosureManager(Component) />
-                            </Context.Provider>,
-                          ]
-                        }
+                        className="slide-group"
                       >
-                        <TransitionGroup
-                          childFactory={[Function]}
-                          className="slide-group"
-                          component="div"
-                          key="DISCLOSE_KEY"
+                        <CSSTransition
+                          classNames={
+                            Object {
+                              "enter": "enter",
+                              "enterActive": "enter-active",
+                              "exit": "exit",
+                              "exitActive": "exit-active",
+                            }
+                          }
+                          enter={true}
+                          exit={true}
+                          id="shmmoop"
+                          in={true}
+                          key=".$DISCLOSE_KEY"
+                          onEntered={[Function]}
+                          onExit={[Function]}
+                          onExited={[Function]}
+                          timeout={300}
                         >
-                          <div
-                            className="slide-group"
+                          <Transition
+                            appear={false}
+                            enter={true}
+                            exit={true}
+                            id="shmmoop"
+                            in={true}
+                            mountOnEnter={false}
+                            onEnter={[Function]}
+                            onEntered={[Function]}
+                            onEntering={[Function]}
+                            onExit={[Function]}
+                            onExited={[Function]}
+                            onExiting={[Function]}
+                            timeout={300}
+                            unmountOnExit={false}
                           >
-                            <CSSTransition
-                              classNames={
-                                Object {
-                                  "enter": "enter",
-                                  "enterActive": "enter-active",
-                                  "exit": "exit",
-                                  "exitActive": "exit-active",
-                                }
-                              }
-                              enter={true}
-                              exit={true}
+                            <Slide
                               id="shmmoop"
-                              in={true}
-                              key=".$DISCLOSE_KEY"
-                              onEntered={[Function]}
-                              onExit={[Function]}
-                              onExited={[Function]}
-                              timeout={300}
+                              isHidden={false}
                             >
-                              <Transition
-                                appear={false}
-                                enter={true}
-                                exit={true}
-                                id="shmmoop"
-                                in={true}
-                                mountOnEnter={false}
-                                onEnter={[Function]}
-                                onEntered={[Function]}
-                                onEntering={[Function]}
-                                onExit={[Function]}
-                                onExited={[Function]}
-                                onExiting={[Function]}
-                                timeout={300}
-                                unmountOnExit={false}
+                              <div
+                                aria-hidden={null}
+                                className="slide"
                               >
-                                <Slide
-                                  id="shmmoop"
-                                  isHidden={false}
-                                >
-                                  <div
-                                    aria-hidden={null}
-                                    className="slide"
+                                <div
+                                  className="slide-shadow"
+                                />
+                                <withDisclosureManager(Component)>
+                                  <Component
+                                    disclosureManager={
+                                      DisclosureManagerDelegateInstance {
+                                        "closeDisclosure": [Function],
+                                        "disclose": [Function],
+                                        "dismiss": [Function],
+                                        "maximize": [Function],
+                                        "registerDismissCheck": [Function],
+                                        "requestFocus": [Function],
+                                      }
+                                    }
                                   >
-                                    <div
-                                      className="slide-shadow"
-                                    />
-                                    <withDisclosureManager(Component)>
-                                      <Component
-                                        disclosureManager={
-                                          DisclosureManagerDelegateInstance {
-                                            "closeDisclosure": [Function],
-                                            "disclose": [Function],
-                                            "dismiss": [Function],
-                                            "maximize": [Function],
-                                            "registerDismissCheck": [Function],
-                                            "requestFocus": [Function],
-                                          }
-                                        }
-                                      >
-                                        <button
-                                          type="button"
-                                        >
-                                          Hello World
-                                        </button>
-                                      </Component>
-                                    </withDisclosureManager(Component)>
-                                  </div>
-                                </Slide>
-                              </Transition>
-                            </CSSTransition>
-                          </div>
-                        </TransitionGroup>
-                      </SlideGroup>
-                    </div>
-                  </div>
-                </FocusTrap>
-              </ModalContent>
+                                    <button
+                                      type="button"
+                                    >
+                                      Hello World
+                                    </button>
+                                  </Component>
+                                </withDisclosureManager(Component)>
+                              </div>
+                            </Slide>
+                          </Transition>
+                        </CSSTransition>
+                      </div>
+                    </TransitionGroup>
+                  </SlideGroup>
+                </div>
+              </ForwardRef>
             </Portal>
           </Portal>
         </AbstractModal>
@@ -301,7 +282,6 @@ exports[`ModalManager should render the ModalManager with custom props 1`] = `
           classNameOverlay={null}
           closeOnEsc={true}
           closeOnOutsideClick={false}
-          isFocused={false}
           isFullscreen={false}
           isOpen={false}
           onRequestClose={[Function]}
@@ -359,7 +339,6 @@ exports[`ModalManager should render the ModalManager with defaults 1`] = `
           classNameOverlay={null}
           closeOnEsc={true}
           closeOnOutsideClick={false}
-          isFocused={false}
           isFullscreen={false}
           isOpen={false}
           onRequestClose={[Function]}

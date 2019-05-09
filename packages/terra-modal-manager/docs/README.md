@@ -2,8 +2,6 @@
 
 The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal.
 
-ModalManager provides the ability to manage focus in order to enable the use of portal'd focus trap components terra-popup, terra-form-select, and terra-menu.
-
 ModalManager provides the ability to handle and navigate stacked disclosures.
 
 ## Getting Started

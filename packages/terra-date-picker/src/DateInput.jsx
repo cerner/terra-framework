@@ -51,14 +51,6 @@ const propTypes = {
    */
   placeholder: PropTypes.string,
   /**
-   * A callback function to let the containing component (e.g. modal) to regain focus.
-   */
-  releaseFocus: PropTypes.func,
-  /**
-   * A callback function to request focus from the containing component (e.g. modal).
-   */
-  requestFocus: PropTypes.func,
-  /**
    * @private Internal prop for showing date picker.
    */
   shouldShowPicker: PropTypes.bool,
@@ -79,8 +71,6 @@ const defaultProps = {
   onButtonFocus: undefined,
   onKeyDown: undefined,
   placeholder: undefined,
-  releaseFocus: undefined,
-  requestFocus: undefined,
   value: undefined,
 };
 
@@ -110,11 +100,6 @@ class DatePickerInput extends React.Component {
   }
 
   handleOnButtonClick(event) {
-    // The picker is about to display so request focus from the containing component (e.g. modal) if it has the focus trapped.
-    if (this.props.requestFocus) {
-      this.props.requestFocus();
-    }
-
     const attributes = Object.assign({}, this.props.inputAttributes);
 
     if (!attributes.readOnly && this.onCalendarButtonClick && this.props.onClick) {
@@ -133,15 +118,6 @@ class DatePickerInput extends React.Component {
   }
 
   handleOnKeyDown(event) {
-    // The picker will be dismissed if one of these keys is pressed and the focus will be released so release the focus to the containing component.
-    if (this.props.releaseFocus && (event.key === 'Enter' || event.key === 'Escape' || event.key === 'Tab')) {
-      this.props.releaseFocus();
-
-      if (event.key === 'Tab') {
-        event.preventDefault();
-      }
-    }
-
     if (this.props.onKeyDown) {
       this.props.onKeyDown(event);
     }
@@ -159,8 +135,6 @@ class DatePickerInput extends React.Component {
       onButtonFocus,
       onKeyDown,
       placeholder,
-      releaseFocus,
-      requestFocus,
       value,
       ...customProps
     } = this.props;

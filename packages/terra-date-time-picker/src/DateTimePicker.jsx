@@ -84,14 +84,6 @@ const propTypes = {
    */
   onSelect: PropTypes.func,
   /**
-   * A callback function to let the containing component (e.g. modal) to regain focus.
-   */
-  releaseFocus: PropTypes.func,
-  /**
-   * A callback function to request focus from the containing component (e.g. modal).
-   */
-  requestFocus: PropTypes.func,
-  /**
    * Custom input attributes to apply to the time input. Use the name prop to set the name for the time input.
    * Do not set the name in inputAttribute as it will be ignored.
    */
@@ -121,8 +113,6 @@ const defaultProps = {
   onClickOutside: undefined,
   onFocus: undefined,
   onSelect: undefined,
-  releaseFocus: undefined,
-  requestFocus: undefined,
   timeInputAttributes: undefined,
   value: undefined,
   timeVariant: DateTimeUtils.FORMAT_24_HOUR,
@@ -508,8 +498,6 @@ class DateTimePicker extends React.Component {
         onStandardTimeButtonClick={this.handleStandardTimeButtonClick}
         onOffsetButtonClick={this.handleOffsetButtonClick}
         onRequestClose={this.handleOnRequestClose}
-        releaseFocus={this.props.releaseFocus}
-        requestFocus={this.props.requestFocus}
         onBlur={this.handleOnTimeBlur}
         onFocus={this.handleFocus}
       />
@@ -532,8 +520,6 @@ class DateTimePicker extends React.Component {
       maxDate,
       minDate,
       name,
-      requestFocus,
-      releaseFocus,
       timeInputAttributes,
       value,
       timeVariant,
@@ -574,8 +560,6 @@ class DateTimePicker extends React.Component {
           minDate={minDate}
           selectedDate={dateValue}
           name="input"
-          releaseFocus={releaseFocus}
-          requestFocus={requestFocus}
           disabled={disabled}
         />
 
