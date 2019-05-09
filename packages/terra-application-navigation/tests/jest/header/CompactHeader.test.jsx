@@ -15,6 +15,9 @@ describe('CompactHeader', () => {
   it('should render with function callbacks', () => {
     const mountComponent = mountWithIntl(
       <CompactHeader
+        titleConfig={{
+          title: 'test-title',
+        }}
         userConfig={{
           name: 'user-name',
           detail: 'user-detail',

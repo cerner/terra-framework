@@ -15,6 +15,9 @@ describe('Header', () => {
   it('should render with function callbacks', () => {
     const mountComponent = mountWithIntl(
       <Header
+        titleConfig={{
+          title: 'test-title',
+        }}
         activeNavigationItemKey="test-text"
         hero={<div>my test hero</div>}
         userConfig={{

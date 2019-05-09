@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DrawerMenu should render default element 1`] = `
+<div
+  className="drawer-menu"
+  tabIndex="0"
+>
+  <div
+    className="vertical-overflow-container"
+  >
+    <div
+      className="header"
+    >
+      <div
+        className="header-background-fill"
+      />
+    </div>
+    <ul
+      className="navigation-item-list"
+      role="listbox"
+    />
+    <ul
+      className="utility-item-list"
+      role="listbox"
+    />
+  </div>
+  <div
+    className="footer"
+  />
+</div>
+`;
+
+exports[`DrawerMenu should render with function callbacks 1`] = `
+<div
+  className="drawer-menu"
+  tabIndex="0"
+>
+  <div
+    className="vertical-overflow-container"
+  >
+    <div
+      className="header"
+    >
+      <div
+        className="header-background-fill"
+      >
+        <DrawerMenuTitle
+          titleConfig={
+            Object {
+              "title": "test-title",
+            }
+          }
+        />
+        <div>
+          my test hero
+        </div>
+        <DrawerMenuUser
+          userConfig={
+            Object {
+              "detail": "user-detail",
+              "imageSrc": "user-src",
+              "initials": "user-initials",
+              "name": "user-name",
+            }
+          }
+          variant="small"
+        />
+      </div>
+    </div>
+    <ul
+      className="navigation-item-list"
+      role="listbox"
+    >
+      <DrawerMenuListItem
+        isSelected={false}
+        key="my-test-key"
+        onSelect={[Function]}
+        text="test-text"
+      />
+    </ul>
+    <ul
+      className="utility-item-list"
+      role="listbox"
+    >
+      <DrawerMenuListItem
+        icon={
+          <span>
+            my icon
+          </span>
+        }
+        key="my-test-key-2"
+        onSelect={[Function]}
+        text="test-text-2"
+      />
+      <DrawerMenuListItem
+        icon={
+          <IconSettings
+            data-name="Layer 1"
+            viewBox="0 0 48 48"
+            xmlns="http://www.w3.org/2000/svg"
+          />
+        }
+        onSelect={[MockFunction]}
+        text="Settings"
+      />
+      <DrawerMenuListItem
+        icon={
+          <IconUnknown
+            viewBox="0 0 48 48"
+            xmlns="http://www.w3.org/2000/svg"
+          />
+        }
+        onSelect={[MockFunction]}
+        text="Help"
+      />
+    </ul>
+  </div>
+  <div
+    className="footer"
+  >
+    <DrawerMenuFooterButton
+      onClick={[MockFunction]}
+      text="Logout"
+    />
+  </div>
+</div>
+`;

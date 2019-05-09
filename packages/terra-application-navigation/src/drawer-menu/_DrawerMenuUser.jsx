@@ -13,7 +13,7 @@ const propTypes = {
   /**
    * A configuration object with information pertaining to the application's user.
    */
-  userConfig: userConfigPropType,
+  userConfig: userConfigPropType.isRequired,
   /**
    * Size variant of the user. One of values [`small`, `large`].
    */

@@ -332,6 +332,11 @@ exports[`Header should render with function callbacks 1`] = `
   onSelectNavigationItem={[MockFunction]}
   onSelectSettings={[MockFunction]}
   onSelectUtilityItem={[MockFunction]}
+  titleConfig={
+    Object {
+      "title": "test-title",
+    }
+  }
   userConfig={
     Object {
       "detail": "user-detail",
@@ -436,6 +441,11 @@ exports[`Header should render with function callbacks 1`] = `
     onSelectNavigationItem={[MockFunction]}
     onSelectSettings={[MockFunction]}
     onSelectUtilityItem={[MockFunction]}
+    titleConfig={
+      Object {
+        "title": "test-title",
+      }
+    }
     userConfig={
       Object {
         "detail": "user-detail",
@@ -467,7 +477,14 @@ exports[`Header should render with function callbacks 1`] = `
       </button>
       <div
         className="title-container"
-      />
+      >
+        <div
+          className="title"
+          title="test-title"
+        >
+          test-title
+        </div>
+      </div>
       <div
         className="main-navigation-container"
       >

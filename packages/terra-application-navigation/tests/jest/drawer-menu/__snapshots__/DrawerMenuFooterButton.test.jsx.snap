@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DrawerMenuFooterButton should render default element 1`] = `
+<button
+  className="drawer-menu-footer-button"
+  data-button-show-focus={true}
+  onBlur={[Function]}
+  onMouseDown={[Function]}
+  type="button"
+/>
+`;
+
+exports[`DrawerMenuFooterButton should render with click callback 1`] = `
+<button
+  className="drawer-menu-footer-button"
+  data-button-show-focus={true}
+  onBlur={[Function]}
+  onClick={[MockFunction]}
+  onMouseDown={[Function]}
+  type="button"
+/>
+`;
+
+exports[`DrawerMenuFooterButton should render with data props 1`] = `
+<button
+  className="drawer-menu-footer-button"
+  data-button-show-focus={true}
+  onBlur={[Function]}
+  onMouseDown={[Function]}
+  type="button"
+>
+  test-text
+</button>
+`;
