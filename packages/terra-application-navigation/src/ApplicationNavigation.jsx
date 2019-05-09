@@ -41,13 +41,9 @@ const propTypes = {
    */
   userConfig: userConfigPropType,
   /**
-   * An element to render within the ApplicationNavigation popup utility menu at larger breakpoints.
+   * An element to render within the ApplicationNavigation menu, shifted to the drawer at the `medium` and below.
    */
-  drawerMenuHero: PropTypes.element,
-  /**
-   * An element to render within the ApplicationNavigation drawer menu at smaller breakpoints.
-   */
-  utilityMenuHero: PropTypes.element,
+  hero: PropTypes.element,
   /**
    * An array of configuration objects with information specifying the creation of navigation items. These items
    * are rendered within the ApplicationNavigation header at larger breakpoints and within the drawer menu at smaller breakpoints.
@@ -226,7 +222,7 @@ class ApplicationNavigation extends React.Component {
     const {
       titleConfig,
       userConfig,
-      drawerMenuHero,
+      hero,
       navigationItems,
       activeNavigationItemKey,
       onSelectSettings,
@@ -256,7 +252,7 @@ class ApplicationNavigation extends React.Component {
         <DrawerMenu
           titleConfig={titleConfig}
           userConfig={userConfig}
-          hero={drawerMenuHero}
+          hero={hero}
           navigationItems={navigationItems}
           activeNavigationItemKey={activeNavigationItemKey}
           onSelectNavigationItem={this.handleNavigationItemSelection}
@@ -281,7 +277,7 @@ class ApplicationNavigation extends React.Component {
       activeBreakpoint,
       activeNavigationItemKey,
       userConfig,
-      utilityMenuHero,
+      hero,
       onSelectSettings,
       onSelectHelp,
       onSelectLogout,
@@ -315,7 +311,7 @@ class ApplicationNavigation extends React.Component {
         onSelectNavigationItem={this.handleNavigationItemSelection}
         onMenuToggle={this.handleMenuToggle}
         userConfig={userConfig}
-        hero={utilityMenuHero}
+        hero={hero}
         onSelectSettings={onSelectSettings}
         onSelectHelp={onSelectHelp}
         onSelectLogout={onSelectLogout}

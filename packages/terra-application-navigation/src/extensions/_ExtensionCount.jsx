@@ -17,7 +17,7 @@ const propTypes = {
   isRollup: PropTypes.bool,
 };
 
-const ExtensionCount = ({ value, isRollup }) => {
+const ExtensionCount = ({ value, isRollup, ...customProps }) => {
   const countRef = useRef();
   const previousValueRef = useRef(value);
 
@@ -50,6 +50,7 @@ const ExtensionCount = ({ value, isRollup }) => {
       className={cx([
         'count',
         { 'is-rollup': isRollup },
+        customProps.className,
       ])}
     >
       {validatedValue}

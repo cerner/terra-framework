@@ -5,7 +5,7 @@ import {
   withRouter, Redirect, matchPath, Switch, Route,
 } from 'react-router-dom';
 import Image from 'terra-image';
-import { DisclosureManager } from 'terra-application';
+import { DisclosureManager, Breakpoints } from 'terra-application';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconPill from 'terra-icon/lib/icon/IconPill';
 import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
@@ -22,6 +22,7 @@ import profileImage from './henry.jpg';
 import heroImage from './hero.jpg';
 import heroCloseupImage from './heroCloseup.jpg';
 import desktopTitleImage from './desktop-title-img.png';
+import { shouldRenderCompactNavigation } from '../../../../utils/helpers';
 
 // const myRenderFunction = (props) => {
 //   const {
@@ -316,6 +317,7 @@ class ApplicationNavigationTest extends React.Component {
       hideNavigationItems,
       hideUser,
       hideHero,
+      activeBreakpoint,
     } = this.props;
 
     const { activeNavigationItem } = this.state;
@@ -329,6 +331,11 @@ class ApplicationNavigationTest extends React.Component {
       notificationsToUse = notifications2;
     }
 
+    let hero = utilityMenuHero;
+    if (shouldRenderCompactNavigation(activeBreakpoint)) {
+      hero = drawerMenuHero;
+    }
+
     return (
       <ApplicationNavigation
         // navigationRenderFunction={myRenderFunction}
@@ -336,8 +343,7 @@ class ApplicationNavigationTest extends React.Component {
         extensionItems={extensionItems}
         onSelectExtensionItem={this.handleExtensionSelect}
         userConfig={!hideUser ? userConfig : undefined}
-        drawerMenuHero={!hideHero ? drawerMenuHero : undefined}
-        utilityMenuHero={!hideHero ? utilityMenuHero : undefined}
+        hero={!hideHero ? hero : undefined}
         navigationItems={!hideNavigationItems ? navigationItems : undefined}
         activeNavigationItemKey={activeNavigationItem.key}
         onSelectNavigationItem={!hideNavigationItems ? this.handleNavigationItemSelection : null}
@@ -371,6 +377,7 @@ ApplicationNavigationTest.propTypes = {
   hideNavigationItems: PropTypes.bool,
   hideUser: PropTypes.bool,
   hideHero: PropTypes.bool,
+  activeBreakpoint: PropTypes.string,
 };
 
-export default DisclosureManager.withDisclosureManager(withRouter((ApplicationNavigationTest)));
+export default Breakpoints.withActiveBreakpoint(DisclosureManager.withDisclosureManager(withRouter((ApplicationNavigationTest))));
