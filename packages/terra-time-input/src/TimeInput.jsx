@@ -35,7 +35,8 @@ const propTypes = {
    */
   name: PropTypes.string.isRequired,
   /**
-   * A callback function to execute when either the hour or minute loses focus.
+   * A callback function to execute when the entire time input component loses focus.
+   * This event does not get triggered when the focus is moved from the hour input to the minute input or meridiem because the focus is still within the main time input component.
    */
   onBlur: PropTypes.func,
   /**
@@ -43,6 +44,14 @@ const propTypes = {
    * The first parameter is the event. The second parameter is the changed time value.
    */
   onChange: PropTypes.func,
+  /**
+   * A callback function triggered when the hour input or minute input receives focus.
+   */
+  onFocus: PropTypes.func,
+  /**
+   * Callback ref to pass into the input dom element.
+   */
+  refCallback: PropTypes.func,
   /**
    * An ISO 8601 string representation of the time value in the input.
    */
@@ -60,6 +69,8 @@ const defaultProps = {
   hourAttributes: {},
   onBlur: null,
   onChange: null,
+  onFocus: undefined,
+  refCallback: undefined,
   value: undefined,
   variant: TimeUtil.FORMAT_24_HOUR,
 };
@@ -91,6 +102,7 @@ class TimeInput extends React.Component {
       value = undefined;
     }
 
+    this.timeInputContainer = React.createRef();
     this.handleHourChange = this.handleHourChange.bind(this);
     this.handleMinuteChange = this.handleMinuteChange.bind(this);
     this.handleHourInputKeyDown = this.handleHourInputKeyDown.bind(this);
@@ -100,10 +112,11 @@ class TimeInput extends React.Component {
     this.handleMinuteFocus = this.handleMinuteFocus.bind(this);
     this.handleHourBlur = this.handleHourBlur.bind(this);
     this.handleMinuteBlur = this.handleMinuteBlur.bind(this);
+    this.handleMeridiemBlur = this.handleMeridiemBlur.bind(this);
     this.handleMeridiemChange = this.handleMeridiemChange.bind(this);
     this.handleMeridiemInputKeyDown = this.handleMeridiemInputKeyDown.bind(this);
-    this.meridiemFocus = this.meridiemFocus.bind(this);
-    this.meridiemBlur = this.meridiemBlur.bind(this);
+    this.handleMeridiemInputFocus = this.handleMeridiemInputFocus.bind(this);
+    this.handleMeridiemSelectFocus = this.handleMeridiemSelectFocus.bind(this);
     this.handleMeridiemButtonChange = this.handleMeridiemButtonChange.bind(this);
 
     let hour = TimeUtil.splitHour(value);
@@ -186,8 +199,8 @@ class TimeInput extends React.Component {
   }
 
   handleFocus(event) {
-    if (this.onInputFocus) {
-      this.onInputFocus(event);
+    if (this.props.onFocus && !this.timeInputContainer.current.contains(event.relatedTarget)) {
+      this.props.onFocus(event);
     }
 
     this.setState({ isFocused: true });
@@ -215,26 +228,40 @@ class TimeInput extends React.Component {
     this.setState({ minuteInitialFocused: false });
   }
 
+  handleMeridiemBlur(event) {
+    this.handleBlur(event, TimeUtil.inputType.MERIDIEM);
+    this.setState({ meridiemFocused: false });
+  }
+
   handleBlur(event, type) {
     this.setState({ isFocused: false });
 
-    let stateValue = event.target.value;
+    if (type === TimeUtil.inputType.HOUR || type === TimeUtil.inputType.MINUTE) {
+      let stateValue = event.target.value;
 
-    // Prepend a 0 to the value when losing focus and the value is single digit.
-    if (stateValue.length === 1) {
-      if (this.props.variant === TimeUtil.FORMAT_12_HOUR
-          && type === TimeUtil.inputType.HOUR
-          && stateValue === '0') {
-        stateValue = '12';
-      } else {
-        stateValue = '0'.concat(stateValue);
+      // Prepend a 0 to the value when losing focus and the value is single digit.
+      if (stateValue.length === 1) {
+        if (this.props.variant === TimeUtil.FORMAT_12_HOUR
+            && type === TimeUtil.inputType.HOUR
+            && stateValue === '0') {
+          stateValue = '12';
+        } else {
+          stateValue = '0'.concat(stateValue);
+        }
+
+        this.handleValueChange(event, type, stateValue, this.state.meridiem);
       }
-
-      this.handleValueChange(event, type, stateValue, this.state.meridiem);
     }
 
     if (this.props.onBlur) {
-      this.props.onBlur(event);
+      // Modern browsers support event.relatedTarget but event.relatedTarget returns null in IE 10 / IE 11.
+      // IE 11 sets document.activeElement to the next focused element before the blur event is called.
+      const activeTarget = event.relatedTarget ? event.relatedTarget : document.activeElement;
+
+      // Handle blur only if focus has moved out of the entire time input component.
+      if (!this.timeInputContainer.current.contains(activeTarget)) {
+        this.props.onBlur(event);
+      }
     }
   }
 
@@ -306,8 +333,8 @@ class TimeInput extends React.Component {
     }
 
     // Move focus to the merdiem for 12 hours times if the minute input has a valid and complete entry.
-    if (this.props.variant === TimeUtil.FORMAT_12_HOUR && inputValue.length === 2 && this.meridiemInput) {
-      this.meridiemInput.focus();
+    if (this.props.variant === TimeUtil.FORMAT_12_HOUR && inputValue.length === 2 && this.meridiemSelect) {
+      this.meridiemSelect.focus();
     }
 
     this.handleValueChange(event, TimeUtil.inputType.MINUTE, inputValue, this.state.meridiem);
@@ -321,19 +348,20 @@ class TimeInput extends React.Component {
     this.handleValueChange(event, TimeUtil.inputType.HOUR, this.state.hour.toString(), event.target.value);
   }
 
-  meridiemFocus() {
+  handleMeridiemInputFocus(event) {
+    // When clicked to put focus on the meridiem input, the focus would then need to be passed and set on the meridium select,
+    // which would call handleMeridiemSelectFocus, to get the desired behavior and styles.
+    this.meridiemSelect.focus();
+
+    if (this.props.onFocus && !this.timeInputContainer.current.contains(event.relatedTarget)) {
+      this.props.onFocus(event);
+    }
+  }
+
+  handleMeridiemSelectFocus() {
     this.setState({
       isFocused: true,
       meridiemFocused: true,
-    });
-
-    this.meridiemInput.focus();
-  }
-
-  meridiemBlur() {
-    this.setState({
-      isFocused: false,
-      meridiemFocused: false,
     });
   }
 
@@ -439,9 +467,9 @@ class TimeInput extends React.Component {
     // If the minute is empty or the cursor is after the value, move focus to the meridiem.
     if ((this.state.minute.length === 0
         || this.state.minute.length === this.minuteInput.selectionEnd)
-        && this.meridiemInput
+        && this.meridiemSelect
     ) {
-      this.meridiemInput.focus();
+      this.meridiemSelect.focus();
       event.preventDefault();
     }
   }
@@ -515,7 +543,9 @@ class TimeInput extends React.Component {
       hourAttributes,
       onBlur,
       onChange,
+      onFocus,
       name,
+      refCallback,
       value,
       variant,
       ...customProps
@@ -546,7 +576,11 @@ class TimeInput extends React.Component {
     }
 
     return (
-      <div {...customProps} className={cx(['mobile-time-picker', customProps.className])}>
+      <div
+        {...customProps}
+        className={cx(['mobile-time-picker', customProps.className])}
+        ref={this.timeInputContainer}
+      >
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
           // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
@@ -558,7 +592,10 @@ class TimeInput extends React.Component {
           <Input
             {...inputAttributes}
             {...instanceHoursAttrs}
-            refCallback={(inputRef) => { this.hourInput = inputRef; }}
+            refCallback={(inputRef) => {
+              this.hourInput = inputRef;
+              if (refCallback) refCallback(inputRef);
+            }}
             className={cx('time-input-hour')}
             value={this.state.hour}
             name={'terra-time-hour-'.concat(name)}
@@ -605,12 +642,16 @@ class TimeInput extends React.Component {
               key={this.anteMeridiem}
               className={cx('meridiem-button')}
               text={this.anteMeridiem}
+              onBlur={this.handleMeridiemBlur}
+              onFocus={this.handleFocus}
               isDisabled={disabled}
             />
             <ButtonGroup.Button
               key={this.postMeridiem}
               className={cx('meridiem-button')}
               text={this.postMeridiem}
+              onBlur={this.handleMeridiemBlur}
+              onFocus={this.handleFocus}
               isDisabled={disabled}
             />
           </ButtonGroup>
@@ -631,14 +672,13 @@ class TimeInput extends React.Component {
       hourAttributes,
       onBlur,
       onChange,
+      onFocus,
       name,
+      refCallback,
       value,
       variant,
       ...customProps
     } = this.props;
-
-    this.onInputFocus = customProps.onInputFocus;
-    delete customProps.onInputFocus;
 
     const timeInputClassNames = cx([
       { disabled },
@@ -662,7 +702,11 @@ class TimeInput extends React.Component {
 
     /* eslint-disable jsx-a11y/no-static-element-interactions */
     return (
-      <div {...customProps} className={timeInputClassNames}>
+      <div
+        {...customProps}
+        className={timeInputClassNames}
+        ref={this.timeInputContainer}
+      >
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
           // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
@@ -674,7 +718,10 @@ class TimeInput extends React.Component {
           {...inputAttributes}
           {...minuteAttributes}
           aria-label={this.context.intl.formatMessage({ id: 'Terra.timeInput.hours' })}
-          refCallback={(inputRef) => { this.hourInput = inputRef; }}
+          refCallback={(inputRef) => {
+            this.hourInput = inputRef;
+            if (refCallback) refCallback(inputRef);
+          }}
           className={cx('time-input-hour', 'desktop', { 'initial-focus': this.state.hourInitialFocused })}
           type="text"
           value={this.state.hour}
@@ -716,7 +763,7 @@ class TimeInput extends React.Component {
               aria-label={this.context.intl.formatMessage({ id: 'Terra.timeInput.display.meridiem' })} // value in translations set to 'Display Meridiem'
               aria-readonly
               className={cx(['meridiem-display', { focused: this.state.meridiemFocused }])}
-              onFocus={this.meridiemFocus}
+              onFocus={this.handleMeridiemInputFocus}
               key="meridiem_display"
               tabIndex="-1"
               value={this.state.meridiem}
@@ -730,9 +777,9 @@ class TimeInput extends React.Component {
             >
               <select
                 aria-label={this.context.intl.formatMessage({ id: 'Terra.timeInput.select.meridiem' })} // value in translations set to 'Select Meridiem'
-                ref={(input) => { this.meridiemInput = input; }}
-                onBlur={this.meridiemBlur}
-                onFocus={this.meridiemFocus}
+                ref={(select) => { this.meridiemSelect = select; }}
+                onBlur={this.handleMeridiemBlur}
+                onFocus={this.handleMeridiemSelectFocus}
                 name={'terra-time-meridiem-'.concat(name)}
                 value={this.state.meridiem}
                 className={cx('time-input-meridiem')}

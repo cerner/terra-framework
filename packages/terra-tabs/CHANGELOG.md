@@ -6,6 +6,11 @@ Unreleased
 ### Breaking Changes
 * Consume latest major version bump of terra-menu
 
+5.10.0 - (May 7, 2019)
+------------------
+### Changed
+* Minor dependency update
+
 5.9.0 - (April 24, 2019)
 ------------------
 ### Changed

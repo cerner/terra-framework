@@ -9,7 +9,6 @@ exports[`NavigationLayoutContent should render a NavigationLayoutContent with pr
     routes={Array []}
   >
     <Redirect
-      push={false}
       to="/"
     />
   </withRouter(RoutingStack)>

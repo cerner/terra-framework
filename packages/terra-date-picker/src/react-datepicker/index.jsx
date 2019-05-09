@@ -93,6 +93,7 @@ export default class DatePicker extends React.Component {
     openToDate: PropTypes.object,
     peekNextMonth: PropTypes.bool,
     placeholderText: PropTypes.string,
+    preventOpenOnFocus: PropTypes.bool,
     readOnly: PropTypes.bool,
     required: PropTypes.bool,
     scrollableYearDropdown: PropTypes.bool,
@@ -138,6 +139,7 @@ export default class DatePicker extends React.Component {
       onSelect () {},
       onClickOutside () {},
       onMonthChange () {},
+      preventOpenOnFocus: false,
       monthsShown: 1,
       withPortal: false,
       shouldCloseOnSelect: true,
@@ -254,7 +256,9 @@ export default class DatePicker extends React.Component {
   handleFocus = (event) => {
     if (!this.state.preventFocus) {
       this.props.onFocus(event)
-      this.setOpen(true)
+      if (!this.props.preventOpenOnFocus) {
+        this.setOpen(true)
+      }
     }
   }
 
@@ -326,6 +330,8 @@ export default class DatePicker extends React.Component {
       return
     }
 
+    let hasChanged = false;
+
     if (!isSameDay(this.props.selected, changedDate) || this.props.allowSameDay) {
       if (changedDate !== null) {
         if (this.props.selected) {
@@ -339,10 +345,14 @@ export default class DatePicker extends React.Component {
           preSelection: changedDate
         })
       }
-      this.props.onChange(changedDate, event)
+      hasChanged = true;
     }
 
     this.props.onSelect(changedDate, event)
+
+    if (hasChanged) {
+      this.props.onChange(changedDate, event)
+    }
 
     if (!keepInput) {
       this.setState({ inputValue: null })

@@ -11,6 +11,11 @@ Unreleased
 * Added component specific handler for Escape key usage with Notification Dialog
 * Added focus trap to Notification Dialog
 
+2.12.0 - (May 7, 2019)
+------------------
+### Fixed
+* Updated jest snapshot
+
 2.11.0 - (April 24, 2019)
 ------------------
 ### Changed

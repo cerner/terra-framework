@@ -99,6 +99,18 @@ viewports.forEach((viewport) => {
       Terra.should.matchScreenshot({ selector });
     });
 
+    describe('Disclose Width-560', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');
+        browser.click('#disclosureDimensions-width-0');
+        browser.click('#width-560-0');
+        browser.click('#root-component #disclose-dimension-0');
+        browser.moveToObject('#DemoContainer-1 .disclose');
+      });
+
+      Terra.should.matchScreenshot({ selector });
+    });
+
     describe('Disclose Width-640', () => {
       beforeEach(() => {
         browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default');

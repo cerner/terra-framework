@@ -10,31 +10,6 @@ This is a controlled component because it manages the state of the value in the 
   - `npm install terra-date-picker`
   - `yarn add terra-date-picker`
 
-## Usage
-
-```jsx
-import React from 'react';
-import Base from 'terra-base';
-import DatePicker from 'terra-date-picker';
-
-//Renders a date picker
-<Base locale='en'>
-  <DatePicker
-    minDate={'2017-04-01'}
-    maxDate={'2017-04-30'}
-    excludeDates={['2017-04-10', '2017-04-20']}
-    filterDate={isWeekday}
-    name="admission-date"
-  />
-</Base>
-
-
-const isWeekday = (date) => {
-  const day = date.day();
-  return day !== 0 && day !== 6;
-};
-
-```
 
 ## Implementation Notes:
 DatePicker is required to be composed inside the [Base][3] component with locale in order for it to load the correct date format and translation strings.

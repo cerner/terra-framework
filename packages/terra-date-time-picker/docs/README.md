@@ -12,22 +12,6 @@ Fall: If you enter a date and time that falls within the ambiguous hour during t
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-date-time-picker`
 
-## Usage
-
-```jsx
-import React from 'react';
-import Base from 'terra-base';
-import DateTimePicker from 'terra-date-time-picker';
-
-//Renders a date picker
-<Base locale='en'>
-  <DateTimePicker
-    name="admission-date"
-    value={'2017-08-15T10:30'}
-  />
-</Base>
-```
-
 ## Implementation Notes:
 DateTimePicker is required to be composed inside the [Base][3] component with locale in order for it to load the correct date format and translation strings.
 

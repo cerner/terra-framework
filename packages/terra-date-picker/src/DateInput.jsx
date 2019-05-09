@@ -10,6 +10,10 @@ const Icon = <IconCalendar />;
 
 const propTypes = {
   /**
+   * Callback ref to pass into the calendar button dom element.
+   */
+  buttonRefCallback: PropTypes.func,
+  /**
    * Custom input attributes to apply to the date input.
    */
   // eslint-disable-next-line react/forbid-prop-types
@@ -19,6 +23,10 @@ const propTypes = {
    */
   name: PropTypes.string,
   /**
+   * A callback function triggered when the input or calendar button loses focus.
+   */
+  onBlur: PropTypes.func,
+  /**
    * A callback function to execute when a valid date is selected or entered.
    */
   onChange: PropTypes.func,
@@ -26,6 +34,14 @@ const propTypes = {
    * The onInputClick callback function from react-datepicker to show the picker when clicked.
    */
   onClick: PropTypes.func,
+  /**
+   * A callback function triggered when the date input receives focus.
+   */
+  onFocus: PropTypes.func,
+  /**
+   * A callback function triggered when the calendar button receives focus.
+   */
+  onButtonFocus: PropTypes.func,
   /**
    * The onInputKeyDown callback function from react-datepicker to handle keyboard navigation.
    */
@@ -45,10 +61,14 @@ const propTypes = {
 };
 
 const defaultProps = {
+  buttonRefCallback: undefined,
   inputAttributes: undefined,
   name: undefined,
+  onBlur: undefined,
   onChange: undefined,
   onClick: undefined,
+  onFocus: undefined,
+  onButtonFocus: undefined,
   onKeyDown: undefined,
   placeholder: undefined,
   value: undefined,
@@ -105,10 +125,14 @@ class DatePickerInput extends React.Component {
 
   render() {
     const {
+      buttonRefCallback,
       inputAttributes,
       name,
+      onBlur,
       onChange,
       onClick,
+      onFocus,
+      onButtonFocus,
       onKeyDown,
       placeholder,
       value,
@@ -116,18 +140,12 @@ class DatePickerInput extends React.Component {
     } = this.props;
 
     this.onCalendarButtonClick = customProps.onCalendarButtonClick;
-    this.onInputFocus = customProps.onInputFocus;
     this.shouldShowPicker = customProps.shouldShowPicker;
 
     delete customProps.onCalendarButtonClick;
-    delete customProps.onInputFocus;
     delete customProps.shouldShowPicker;
 
     const additionalInputProps = Object.assign({}, customProps, inputAttributes);
-
-    // react-datepicker by default will show the picker when the input has focus.
-    // Since we want to show the picker only when the calendar button is clicked, we need to delete the onFocus handle that is passed in by react-datepicker.
-    delete additionalInputProps.onFocus;
 
     const dateValue = DateUtil.convertToISO8601(value, DateUtil.getFormatByLocale(this.context.intl.locale));
     const buttonText = this.context.intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
@@ -150,7 +168,8 @@ class DatePickerInput extends React.Component {
           value={value}
           onChange={this.handleOnChange}
           placeholder={placeholder}
-          onFocus={this.onInputFocus}
+          onFocus={onFocus}
+          onBlur={onBlur}
         />
         <Button
           className={styles.button}
@@ -161,6 +180,9 @@ class DatePickerInput extends React.Component {
           isIconOnly
           isCompact
           isDisabled={additionalInputProps.disabled}
+          onBlur={onBlur}
+          onFocus={onButtonFocus}
+          refCallback={buttonRefCallback}
         />
       </div>
     );

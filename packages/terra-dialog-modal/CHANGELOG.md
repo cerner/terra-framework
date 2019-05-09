@@ -19,6 +19,14 @@ Unreleased
 * Added test dependency on terra-popup and example using terra-popup in dialog modal
 * Added test dependency on terra-notification-dialog and example using terra-notification-dialog in dialog modal
 
+2.11.0 - (May 7, 2019)
+------------------
+### Added
+* Added new width 560px
+
+### Fixed
+* Updated jest snapshot and WDIO screenshots
+
 2.10.0 - (April 24, 2019)
 ------------------
 ### Changed
