@@ -1,5 +1,6 @@
 import React from 'react';
 import TimeInput from '../../../../TimeInput';
+import TimeUtil from '../../../../TimeUtil';
 
 const TimeInputDefault = () => (
   <div style={{ caretColor: 'transparent' }}>
@@ -7,7 +8,7 @@ const TimeInputDefault = () => (
       id="timeInput"
       name="time-input"
       value="09:22"
-      variant="12-hour"
+      variant={TimeUtil.FORMAT_12_HOUR}
     />
   </div>
 );

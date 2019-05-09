@@ -1,5 +1,6 @@
 import React from 'react';
 import TimeInput from '../../../../TimeInput';
+import TimeUtil from '../../../../TimeUtil';
 
 export default class TimeInputElement extends React.Component {
   constructor(props) {
@@ -36,7 +37,7 @@ export default class TimeInputElement extends React.Component {
         <TimeInput
           id="timeInput"
           name="time-input"
-          variant="12-hour"
+          variant={TimeUtil.FORMAT_12_HOUR}
         />
         <h3>(this picker is changeable)</h3>
         <div id="time-input-value">
@@ -50,7 +51,7 @@ Time Input with value provided - Current Value:
           name="time-input-value-provided"
           value={this.state.input}
           onChange={this.handleOnChange}
-          variant="12-hour"
+          variant={TimeUtil.FORMAT_12_HOUR}
         />
         <h3>Time Input with IDs Provided</h3>
         <TimeInput
@@ -59,13 +60,13 @@ Time Input with value provided - Current Value:
           value="09:23"
           hourAttributes={{ id: 'hours-testing' }}
           minuteAttributes={{ id: 'minutes-testing' }}
-          variant="12-hour"
+          variant={TimeUtil.FORMAT_12_HOUR}
         />
         <h3>Time Input with disabled input</h3>
         <TimeInput
           id="timeInputDisabled"
           name="time-input-disabled"
-          variant="12-hour"
+          variant={TimeUtil.FORMAT_12_HOUR}
           disabled
         />
       </div>

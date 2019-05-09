@@ -1,5 +1,6 @@
 import moment from 'moment-timezone';
 import DateUtil from 'terra-date-picker/lib/DateUtil';
+import TimeUtil from 'terra-time-input/lib/TimeUtil';
 
 class DateTimeUtils {
   /**
@@ -160,5 +161,8 @@ class DateTimeUtils {
     return DateTimeUtils.updateTime(DateUtil.createSafeDate(DateUtil.convertToISO8601(date, dateformat)), time);
   }
 }
+
+DateTimeUtils.FORMAT_12_HOUR = TimeUtil.FORMAT_12_HOUR;
+DateTimeUtils.FORMAT_24_HOUR = TimeUtil.FORMAT_24_HOUR;
 
 export default DateTimeUtils;
