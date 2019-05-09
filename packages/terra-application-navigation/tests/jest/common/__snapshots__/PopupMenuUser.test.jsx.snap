@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PopupMenuUser should render default element 1`] = `
+<div
+  className="utility-user-layout"
+>
+  <div
+    className="avatar-container"
+  >
+    <div
+      className="avatar-outline"
+    />
+    <Avatar
+      alt="user-name"
+      className="avatar"
+      color="auto"
+      image="user-src"
+      initials="user-initials"
+      isAriaHidden={false}
+      isDeceased={false}
+    />
+  </div>
+  <div
+    className="info-container"
+  >
+    <div
+      className="name"
+    >
+      user-name
+    </div>
+    <div
+      className="detail"
+    >
+      user-detail
+    </div>
+  </div>
+</div>
+`;

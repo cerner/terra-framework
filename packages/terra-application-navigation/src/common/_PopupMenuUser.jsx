@@ -12,7 +12,7 @@ const propTypes = {
   /**
    * A configuration object with information pertaining to the application's user.
    */
-  userConfig: userConfigPropType,
+  userConfig: userConfigPropType.isRequired,
 };
 
 const PopupMenuUser = ({ userConfig }) => (

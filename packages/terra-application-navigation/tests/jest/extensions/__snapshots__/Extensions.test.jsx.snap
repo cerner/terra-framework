@@ -25,8 +25,10 @@ exports[`Extensions should render default element 1`] = `
           title="Extensions"
         />
       }
+      isHeightBounded={false}
       menuItems={Array []}
       onSelectMenuItem={[Function]}
+      showSelections={false}
     />
   </Popup>
   <div
@@ -61,8 +63,10 @@ exports[`Extensions should render prop data 1`] = `
           title="Extensions"
         />
       }
+      isHeightBounded={false}
       menuItems={Array []}
       onSelectMenuItem={[Function]}
+      showSelections={false}
     />
   </Popup>
   <div

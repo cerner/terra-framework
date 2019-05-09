@@ -72,6 +72,12 @@ const propTypes = {
   showSelections: PropTypes.bool,
 };
 
+const defaultProps = {
+  menuItems: [],
+  isHeightBounded: false,
+  showSelections: false,
+};
+
 const PopupMenu = ({
   header, footer, onSelectMenuItem, customContent, userConfig, menuItems, isHeightBounded, showSelections,
 }) => (
@@ -107,5 +113,6 @@ const PopupMenu = ({
 );
 
 PopupMenu.propTypes = propTypes;
+PopupMenu.defaultProps = defaultProps;
 
 export default PopupMenu;
