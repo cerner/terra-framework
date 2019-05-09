@@ -18,8 +18,6 @@ class DisclosureComponent extends React.Component {
     this.goBack = this.goBack.bind(this);
     this.maximize = this.maximize.bind(this);
     this.minimize = this.minimize.bind(this);
-    this.requestFocus = this.requestFocus.bind(this);
-    this.releaseFocus = this.releaseFocus.bind(this);
 
     this.generateOptions = this.generateOptions.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
@@ -81,14 +79,6 @@ class DisclosureComponent extends React.Component {
     this.props.disclosureManager.minimize();
   }
 
-  requestFocus() {
-    this.props.disclosureManager.requestFocus();
-  }
-
-  releaseFocus() {
-    this.props.disclosureManager.releaseFocus();
-  }
-
   renderFormButton() {
     const name = `Disclose (${this.state.disclosureHeight}) x (${this.state.disclosureWidth})`;
 
@@ -132,8 +122,6 @@ class DisclosureComponent extends React.Component {
           {' '}
           {identifier}
         </p>
-        {disclosureManager && disclosureManager.releaseFocus ? <p>Modal has lost focus!</p> : null }
-        {disclosureManager && disclosureManager.requestFocus ? <p>Modal has gained focus!</p> : null }
         <button type="button" className="disclose" onClick={this.disclose()}>Disclose</button>
         <button type="button" className="disclose-tiny" onClick={this.disclose('tiny')}>Disclose Tiny</button>
         <button type="button" className="disclose-small" onClick={this.disclose('small')}>Disclose Small</button>
@@ -145,13 +133,11 @@ class DisclosureComponent extends React.Component {
           {this.renderForm()}
           {this.renderFormButton()}
         </div>
-        {disclosureManager && disclosureManager.dismiss ? <button type="button" className="dismiss" onClick={this.dismiss}>Dismiss</button> : null }
-        {disclosureManager && disclosureManager.closeDisclosure ? <button type="button" className="close-disclosure" onClick={this.closeDisclosure}>Close Disclosure</button> : null }
-        {disclosureManager && disclosureManager.goBack ? <button type="button" className="go-back" onClick={this.goBack}>Go Back</button> : null }
-        {disclosureManager && disclosureManager.maximize ? <button type="button" className="maximize" onClick={this.maximize}>Maximize</button> : null }
-        {disclosureManager && disclosureManager.minimize ? <button type="button" className="minimize" onClick={this.minimize}>Minimize</button> : null }
-        {disclosureManager && disclosureManager.requestFocus ? <button type="button" className="requestFocus" onClick={this.requestFocus}>Request Focus</button> : null }
-        {disclosureManager && disclosureManager.releaseFocus ? <button type="button" className="releaseFocus" onClick={this.releaseFocus}>Release Focus</button> : null }
+        {disclosureManager && disclosureManager.dismiss ? <button type="button" className="dismiss" onClick={this.dismiss}>Dismiss</button> : null}
+        {disclosureManager && disclosureManager.closeDisclosure ? <button type="button" className="close-disclosure" onClick={this.closeDisclosure}>Close Disclosure</button> : null}
+        {disclosureManager && disclosureManager.goBack ? <button type="button" className="go-back" onClick={this.goBack}>Go Back</button> : null}
+        {disclosureManager && disclosureManager.maximize ? <button type="button" className="maximize" onClick={this.maximize}>Maximize</button> : null}
+        {disclosureManager && disclosureManager.minimize ? <button type="button" className="minimize" onClick={this.minimize}>Minimize</button> : null}
       </ContentContainer>
     );
   }

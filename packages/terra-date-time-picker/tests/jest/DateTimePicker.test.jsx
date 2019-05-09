@@ -38,15 +38,9 @@ it('should render a date time picker with min and max dates', () => {
   expect(datePicker).toMatchSnapshot();
 });
 
-it('should render a date time picker with releaseFocus', () => {
-  const releaseFocus = () => {};
-  const datePicker = shallowWithIntl(<DateTimePicker name="date-time-input" releaseFocus={releaseFocus} utcOffset={0} />);
-  expect(datePicker).toMatchSnapshot();
-});
-
-it('should render a date time picker with requestFocus', () => {
-  const requestFocus = () => {};
-  const datePicker = shallowWithIntl(<DateTimePicker name="date-time-input" requestFocus={requestFocus} utcOffset={0} />);
+it('should render a date time picker with onBlur', () => {
+  const onBlur = () => {};
+  const datePicker = shallowWithIntl(<DateTimePicker name="date-time-input" onBlur={onBlur} utcOffset={0} />);
   expect(datePicker).toMatchSnapshot();
 });
 
@@ -64,6 +58,13 @@ it('should render a date time picker with onChangeRaw', () => {
 
 it('should render a date time picker with a default date and time', () => {
   const datePicker = shallowWithIntl(<DateTimePicker name="date-time-input" value="2017-04-01T10:30" utcOffset={0} />);
+  expect(datePicker).toMatchSnapshot();
+});
+
+it('should render with a default timeVariant if variant is not specified', () => {
+  const defaultTimeVariant = '24-hour';
+  const datePicker = shallowWithIntl(<DateTimePicker name="date-time-input" value="2017-04-01T10:30" utcOffset={0} />);
+  expect(datePicker.prop('timeVariant')).toBe(defaultTimeVariant);
   expect(datePicker).toMatchSnapshot();
 });
 
