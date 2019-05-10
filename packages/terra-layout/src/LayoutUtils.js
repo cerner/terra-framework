@@ -1,21 +1,21 @@
-import breakpoints from 'terra-responsive-element/lib/breakpoints.module.scss';
+import breakpoints from 'terra-breakpoints';
 
 const {
-  small, medium, large, huge,
+  medium, large, huge, enormous,
 } = breakpoints;
 
 const getBreakpointSize = (queryWidth) => {
   const width = queryWidth || window.innerWidth;
-  if (width >= huge) {
+  if (width >= enormous) {
+    return 'enormous';
+  } if (width >= huge) {
     return 'huge';
   } if (width >= large) {
     return 'large';
   } if (width >= medium) {
     return 'medium';
-  } if (width >= small) {
-    return 'small';
   }
-  return 'tiny';
+  return 'small';
 };
 
 const getCustomProps = (props, validPropTypes) => (

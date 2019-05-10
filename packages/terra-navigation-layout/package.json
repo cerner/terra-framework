@@ -30,7 +30,7 @@
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-layout": "^3.4.0",
-    "terra-responsive-element": "^4.0.0"
+    "terra-breakpoints": "^2.0.0"
   },
   "devDependencies": {
     "react-router-dom": "^5.0.0",

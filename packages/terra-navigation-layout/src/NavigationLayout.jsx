@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
 import Layout from 'terra-layout';
-import breakpoints from 'terra-responsive-element/lib/breakpoints.module.scss';
+import breakpoints from 'terra-breakpoints';
 
 import NavigationLayoutContent from './NavigationLayoutContent';
 import { navigationLayoutConfigPropType, supportedComponentBreakpoints } from './configurationPropTypes';
@@ -12,19 +12,19 @@ import { reduceRouteConfig, validateMatchExists } from './routingUtils';
 const getBreakpointSize = (queryWidth) => {
   const width = queryWidth || window.innerWidth;
   const {
-    small, medium, large, huge,
+    medium, large, huge, enormous,
   } = breakpoints;
 
-  if (width >= huge) {
+  if (width >= enormous) {
+    return 'enormous';
+  } if (width >= huge) {
     return 'huge';
   } if (width >= large) {
     return 'large';
   } if (width >= medium) {
     return 'medium';
-  } if (width >= small) {
-    return 'small';
   }
-  return 'tiny';
+  return 'small';
 };
 
 const propTypes = {

@@ -33,7 +33,7 @@
     "tabbable": "^4.0.0",
     "terra-content-container": "^3.0.0",
     "terra-overlay": "^3.0.0",
-    "terra-responsive-element": "^4.0.0"
+    "terra-breakpoints": "^2.0.0"
   },
   "devDependencies": {
     "react-router-dom": "^5.0.0",
