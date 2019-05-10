@@ -3,7 +3,7 @@
 exports[`DrawerMenuFooterButton should render default element 1`] = `
 <button
   className="drawer-menu-footer-button"
-  data-button-show-focus={true}
+  data-focus-styles-enabled={true}
   onBlur={[Function]}
   onMouseDown={[Function]}
   type="button"
@@ -13,7 +13,7 @@ exports[`DrawerMenuFooterButton should render default element 1`] = `
 exports[`DrawerMenuFooterButton should render with click callback 1`] = `
 <button
   className="drawer-menu-footer-button"
-  data-button-show-focus={true}
+  data-focus-styles-enabled={true}
   onBlur={[Function]}
   onClick={[MockFunction]}
   onMouseDown={[Function]}
@@ -24,7 +24,7 @@ exports[`DrawerMenuFooterButton should render with click callback 1`] = `
 exports[`DrawerMenuFooterButton should render with data props 1`] = `
 <button
   className="drawer-menu-footer-button"
-  data-button-show-focus={true}
+  data-focus-styles-enabled={true}
   onBlur={[Function]}
   onMouseDown={[Function]}
   type="button"

@@ -452,7 +452,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                       <li
                         aria-selected={false}
                         className="item"
-                        data-item-show-focus={true}
+                        data-focus-styles-enabled={true}
                         onBlur={[Function]}
                         onClick={[Function]}
                         onKeyDown={[Function]}
@@ -490,7 +490,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                       <li
                         aria-selected={false}
                         className="item"
-                        data-item-show-focus={true}
+                        data-focus-styles-enabled={true}
                         onBlur={[Function]}
                         onClick={[Function]}
                         onKeyDown={[Function]}
@@ -556,7 +556,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                       <li
                         aria-selected={false}
                         className="item"
-                        data-item-show-focus={true}
+                        data-focus-styles-enabled={true}
                         onBlur={[Function]}
                         onClick={[Function]}
                         onKeyDown={[Function]}

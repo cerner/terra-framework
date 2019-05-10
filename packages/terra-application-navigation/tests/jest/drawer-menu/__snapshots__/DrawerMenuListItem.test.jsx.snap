@@ -4,7 +4,7 @@ exports[`DrawerMenuListItem should render prop data 1`] = `
 <li
   aria-selected={true}
   className="item is-selected"
-  data-item-show-focus={true}
+  data-focus-styles-enabled={true}
   onBlur={[Function]}
   onClick={[MockFunction]}
   onKeyDown={[Function]}
@@ -33,7 +33,7 @@ exports[`DrawerMenuListItem should render prop data 1`] = `
 exports[`DrawerMenuListItem should render with required prop data 1`] = `
 <li
   className="item"
-  data-item-show-focus={true}
+  data-focus-styles-enabled={true}
   onBlur={[Function]}
   onClick={[MockFunction]}
   onKeyDown={[Function]}
@@ -52,7 +52,7 @@ exports[`DrawerMenuListItem should render with required prop data 1`] = `
 exports[`DrawerMenuListItem should render with selection callback 1`] = `
 <li
   className="item"
-  data-item-show-focus={true}
+  data-focus-styles-enabled={true}
   onBlur={[Function]}
   onClick={[MockFunction]}
   onKeyDown={[Function]}

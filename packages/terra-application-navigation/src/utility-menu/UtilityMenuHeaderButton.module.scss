@@ -38,10 +38,11 @@
     }
 
     .caret-icon {
-      flex: 0 0 auto;
       color: var(--terra-application-utility-header-icon-color);
+      flex: 0 0 auto;
+      height: var(--terra-application-utility-header-icon-height, 0.7143rem);
       margin-left: var(--terra-application-utility-header-title-margin-right, 0.2143rem);
-      width: var(--terra-application-utility-header-icon-width, 0.5714rem);
+      width: var(--terra-application-utility-header-icon-width, 0.7143rem);
     }
 
     .rollup-icon {

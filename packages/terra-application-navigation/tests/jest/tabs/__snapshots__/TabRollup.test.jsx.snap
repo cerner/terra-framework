@@ -4,7 +4,7 @@ exports[`TabRollup should render default element 1`] = `
 <div
   aria-current={false}
   className="tab-rollup"
-  data-item-show-focus={true}
+  data-focus-styles-enabled={true}
   onBlur={[Function]}
   onKeyDown={[Function]}
   onMouseDown={[Function]}
@@ -36,7 +36,7 @@ exports[`TabRollup should render prop data 1`] = `
 <div
   aria-current={true}
   className="tab-rollup has-count"
-  data-item-show-focus={true}
+  data-focus-styles-enabled={true}
   onBlur={[Function]}
   onKeyDown={[Function]}
   onMouseDown={[Function]}
@@ -73,7 +73,7 @@ exports[`TabRollup should render with function callbacks 1`] = `
 <div
   aria-current={false}
   className="tab-rollup"
-  data-item-show-focus={true}
+  data-focus-styles-enabled={true}
   onBlur={[Function]}
   onKeyDown={[Function]}
   onMouseDown={[Function]}
@@ -105,7 +105,7 @@ exports[`TabRollup should render with selection callback 1`] = `
 <div
   aria-current={false}
   className="tab-rollup"
-  data-item-show-focus={true}
+  data-focus-styles-enabled={true}
   onBlur={[Function]}
   onClick={[MockFunction]}
   onKeyDown={[Function]}

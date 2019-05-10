@@ -341,22 +341,6 @@ exports[`CompactHeader should render with function callbacks 1`] = `
           }
           onSelect={[MockFunction]}
         >
-          <Popup
-            attachmentBehavior="auto"
-            boundingRef={null}
-            classNameArrow={null}
-            classNameContent={null}
-            classNameOverlay={null}
-            contentAttachment="top center"
-            contentHeight="auto"
-            contentWidth="320"
-            isArrowDisplayed={true}
-            isContentFocusDisabled={false}
-            isHeaderDisabled={false}
-            isOpen={false}
-            onRequestClose={[Function]}
-            targetRef={[Function]}
-          />
           <div
             className="extensions-row"
           >
@@ -368,20 +352,20 @@ exports[`CompactHeader should render with function callbacks 1`] = `
               }
               key="my-test-key-1"
               notificationCount={3}
-              onRequestClose={[Function]}
               onSelect={[Function]}
               text="test-text-1"
             >
               <div
                 aria-label="test-text-1"
                 className="extension"
-                data-item-show-focus={true}
+                data-focus-styles-enabled={true}
                 onBlur={[Function]}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="button"
                 tabIndex="0"
+                title="test-text-1"
               >
                 <div
                   className="extension-inner"
@@ -407,6 +391,22 @@ exports[`CompactHeader should render with function callbacks 1`] = `
               </div>
             </Extension>
           </div>
+          <Popup
+            attachmentBehavior="auto"
+            boundingRef={null}
+            classNameArrow={null}
+            classNameContent={null}
+            classNameOverlay={null}
+            contentAttachment="top center"
+            contentHeight="auto"
+            contentWidth="320"
+            isArrowDisplayed={true}
+            isContentFocusDisabled={false}
+            isHeaderDisabled={false}
+            isOpen={false}
+            onRequestClose={[Function]}
+            targetRef={[Function]}
+          />
         </Extensions>
       </div>
     </div>

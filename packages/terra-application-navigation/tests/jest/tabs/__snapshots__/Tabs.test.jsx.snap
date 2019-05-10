@@ -70,7 +70,7 @@ exports[`Tabs should render default element 1`] = `
       <div
         aria-hidden={true}
         className="tab is-placeholder"
-        data-item-show-focus={true}
+        data-focus-styles-enabled={true}
         onBlur={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
@@ -260,7 +260,7 @@ exports[`Tabs should render prop data 1`] = `
               "current": <div
                 aria-current="true"
                 class="tab is-disabled"
-                data-item-show-focus="true"
+                data-focus-styles-enabled="true"
                 role="link"
                 tabindex="0"
                 type="button"
@@ -272,7 +272,7 @@ exports[`Tabs should render prop data 1`] = `
           <div
             aria-current={true}
             className="tab is-disabled"
-            data-item-show-focus={true}
+            data-focus-styles-enabled={true}
             onBlur={[Function]}
             onClick={null}
             onKeyDown={null}
@@ -295,7 +295,7 @@ exports[`Tabs should render prop data 1`] = `
               "current": <div
                 aria-current="false"
                 class="tab-rollup"
-                data-item-show-focus="true"
+                data-focus-styles-enabled="true"
                 role="tab"
                 tabindex="0"
               >
@@ -334,7 +334,7 @@ exports[`Tabs should render prop data 1`] = `
           <div
             aria-current={false}
             className="tab-rollup"
-            data-item-show-focus={true}
+            data-focus-styles-enabled={true}
             onBlur={[Function]}
             onClick={[Function]}
             onKeyDown={[Function]}

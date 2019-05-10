@@ -40,9 +40,9 @@ describe('DrawerMenuListItem', () => {
     );
 
     expect(shallowComponent).toMatchSnapshot();
-    shallowComponent.find('[data-item-show-focus]').simulate('click');
-    shallowComponent.find('[data-item-show-focus]').simulate('keydown', { nativeEvent: { keyCode: 13 }, preventDefault: mockCallBack2 });
-    shallowComponent.find('[data-item-show-focus]').simulate('keydown', { nativeEvent: { keyCode: 32 }, preventDefault: mockCallBack2 });
+    shallowComponent.find('.item').simulate('click');
+    shallowComponent.find('.item').simulate('keydown', { nativeEvent: { keyCode: 13 }, preventDefault: mockCallBack2 });
+    shallowComponent.find('.item').simulate('keydown', { nativeEvent: { keyCode: 32 }, preventDefault: mockCallBack2 });
     expect(mockCallBack.mock.calls.length).toEqual(3);
     expect(mockCallBack2.mock.calls.length).toEqual(2);
   });
