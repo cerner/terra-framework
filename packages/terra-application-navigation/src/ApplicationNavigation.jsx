@@ -4,10 +4,12 @@ import classNames from 'classnames/bind';
 import Overlay from 'terra-overlay';
 import { Breakpoints } from 'terra-application';
 import FocusTrap from 'focus-trap-react';
+import Popup from 'terra-popup';
 
 import Header from './header/_Header';
 import CompactHeader from './header/_CompactHeader';
 import DrawerMenu from './drawer-menu/_DrawerMenu';
+import UtilityMenu from './utility-menu/_UtilityMenu';
 import { shouldRenderCompactNavigation } from './utils/helpers';
 import {
   titleConfigPropType, userConfigPropType, navigationItemsPropType, extensionItemsPropType, utilityItemsPropType,
@@ -136,6 +138,7 @@ class ApplicationNavigation extends React.Component {
 
       componentInstance.setState({
         drawerMenuIsOpen: false,
+        utilityPopupIsOpen: false,
       }, () => {
         wrappedFunction(...args);
       });
@@ -151,11 +154,13 @@ class ApplicationNavigation extends React.Component {
     this.handleSkipToContent = this.handleSkipToContent.bind(this);
 
     this.renderNavigationMenu = this.renderNavigationMenu.bind(this);
+    this.renderUtilitiesPopup = this.renderUtilitiesPopup.bind(this);
     this.renderHeader = this.renderHeader.bind(this);
 
     this.drawerMenuRef = React.createRef();
     this.contentLayoutRef = React.createRef();
     this.mainContainerRef = React.createRef();
+    this.utilityButtonPopupAnchorRef = React.createRef();
 
     /**
      * The popup utility menu and the drawer menu should both be dismissed upon the selection of any item
@@ -176,6 +181,7 @@ class ApplicationNavigation extends React.Component {
 
     this.state = {
       drawerMenuIsOpen: false,
+      utilityPopupIsOpen: false,
     };
   }
 
@@ -267,6 +273,39 @@ class ApplicationNavigation extends React.Component {
     );
   }
 
+  renderUtilitiesPopup() {
+    const {
+      hero, userConfig, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem,
+    } = this.props;
+
+    const { utilityPopupIsOpen } = this.state;
+
+    return (
+      <Popup
+        attachmentBehavior="push"
+        contentAttachment="top right"
+        contentHeight="auto"
+        contentWidth="320"
+        isArrowDisplayed
+        isHeaderDisabled
+        isOpen={utilityPopupIsOpen}
+        onRequestClose={() => this.setState({ utilityPopupIsOpen: false })}
+        targetAttachment="bottom center"
+        targetRef={() => this.utilityButtonPopupAnchorRef.current}
+      >
+        <UtilityMenu
+          hero={hero}
+          userConfig={userConfig}
+          onSelectSettings={onSelectSettings ? ApplicationNavigation.generateMenuClosingCallback(this, 'onSelectSettings') : undefined}
+          onSelectHelp={onSelectHelp ? ApplicationNavigation.generateMenuClosingCallback(this, 'onSelectHelp') : undefined}
+          onSelectLogout={onSelectLogout ? ApplicationNavigation.generateMenuClosingCallback(this, 'onSelectLogout') : undefined}
+          utilityItems={utilityItems}
+          onSelectUtilityItem={onSelectUtilityItem ? ApplicationNavigation.generateMenuClosingCallback(this, 'onSelectUtilityItem') : undefined}
+        />
+      </Popup>
+    );
+  }
+
   renderHeader() {
     const {
       titleConfig,
@@ -277,11 +316,6 @@ class ApplicationNavigation extends React.Component {
       activeBreakpoint,
       activeNavigationItemKey,
       userConfig,
-      hero,
-      onSelectSettings,
-      onSelectHelp,
-      onSelectLogout,
-      utilityItems,
       notifications,
     } = this.props;
     if (shouldRenderCompactNavigation(activeBreakpoint)) {
@@ -311,14 +345,14 @@ class ApplicationNavigation extends React.Component {
         onSelectNavigationItem={this.handleNavigationItemSelection}
         onMenuToggle={this.handleMenuToggle}
         userConfig={userConfig}
-        hero={hero}
-        onSelectSettings={onSelectSettings}
-        onSelectHelp={onSelectHelp}
-        onSelectLogout={onSelectLogout}
-        utilityItems={utilityItems}
-        onSelectUtilityItem={this.handleUtilityItemSelection}
         onSelectSkipToContent={this.handleSkipToContent}
         notifications={notifications}
+        utilityButtonPopupAnchorRef={this.utilityButtonPopupAnchorRef}
+        onSelectUtilityButton={() => {
+          this.setState({
+            utilityPopupIsOpen: true,
+          });
+        }}
       />
     );
   }
@@ -364,6 +398,7 @@ class ApplicationNavigation extends React.Component {
             backgroundStyle="clear"
           />
         </div>
+        {this.renderUtilitiesPopup()}
       </div>
     );
   }

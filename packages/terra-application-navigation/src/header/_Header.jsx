@@ -1,15 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import Popup from 'terra-popup';
 import { injectIntl, intlShape } from 'react-intl';
 
 import Tabs from '../tabs/_Tabs';
 import Extensions from '../extensions/_Extensions';
 import UtilityMenuHeaderButton from '../utility-menu/_UtilityMenuHeaderButton';
-import UtilityMenu from '../utility-menu/_UtilityMenu';
 import {
-  userConfigPropType, navigationItemsPropType, extensionItemsPropType, utilityItemsPropType, titleConfigPropType,
+  userConfigPropType, navigationItemsPropType, extensionItemsPropType, titleConfigPropType,
 } from '../utils/propTypes';
 
 import styles from './Header.module.scss';
@@ -51,37 +49,13 @@ const propTypes = {
    */
   userConfig: userConfigPropType,
   /**
-   * An element to render within the Header's utility menu.
+   * A function to be executed upon selection of the Header's utility button.
    */
-  hero: PropTypes.element,
+  onSelectUtilityButton: PropTypes.func,
   /**
-   * An array of configuration objects with information specifying the creation of additional utility menu items.
-   * These items are rendered within the popup utility menu at larger breakpoints and within the drawer menu at smaller breakpoints.
+   * A ref Object that will be provided with a reference to the Header's utility button.
    */
-  utilityItems: utilityItemsPropType,
-  /**
-   * A function to be executed upon the selection of a custom utility item.
-   * Ex: `onSelectUtilityItem(String selectedUtilityItemKey)`
-   */
-  onSelectUtilityItem: PropTypes.func,
-  /**
-   * A function to be executed upon the selection of the Settings utility item.
-   * If `onSelectSettings` is not provided, the Settings utility item will not be rendered.
-   * Ex: `onSelectSettings()`
-   */
-  onSelectSettings: PropTypes.func,
-  /**
-   * A function to be executed upon the selection of the Help utility item.
-   * If `onSelectHelp` is not provided, the Help utility item will not be rendered.
-   * Ex: `onSelectLogout()`
-   */
-  onSelectHelp: PropTypes.func,
-  /**
-   * A function to be executed upon the selection of the Logout action button.
-   * If `onSelectLogout` is not provided, the Logout action button will not be rendered.
-   * Ex: `onSelectLogout()`
-   */
-  onSelectLogout: PropTypes.func,
+  utilityButtonPopupAnchorRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
   /**
    * A function to be executed upon selection of the 'Skip to Content' button.
    */
@@ -102,50 +76,22 @@ const propTypes = {
   intl: intlShape,
 };
 
-const Header = (props) => {
-  const {
-    titleConfig,
-    navigationItems,
-    navigationRenderFunction,
-    activeNavigationItemKey,
-    onSelectNavigationItem,
-    notifications,
-    extensionItems,
-    activeBreakpoint,
-    onSelectExtensionItem,
-    userConfig,
-    hero,
-    onSelectSkipToContent,
-    intl,
-    onSelectLogout,
-    onSelectSettings,
-    onSelectHelp,
-    utilityItems,
-    onSelectUtilityItem,
-  } = props;
-
-  const [utilityPopupIsOpen, setUtilityPopupIsOpen] = React.useState(false);
-  const utilityButtonPopupAnchorRef = React.useRef();
-  const closeMenuCallback = React.useRef();
-
-  React.useEffect(() => {
-    if (closeMenuCallback.current) {
-      closeMenuCallback.current();
-      closeMenuCallback.current = undefined;
-    }
-  });
-
-  function generatePopupClosingCallback(wrappedFunction) {
-    return (...args) => {
-      if (!wrappedFunction) {
-        return;
-      }
-
-      closeMenuCallback.current = wrappedFunction.bind(undefined, ...args);
-      setUtilityPopupIsOpen(false);
-    };
-  }
-
+const Header = ({
+  titleConfig,
+  navigationItems,
+  navigationRenderFunction,
+  activeNavigationItemKey,
+  onSelectNavigationItem,
+  notifications,
+  extensionItems,
+  activeBreakpoint,
+  onSelectExtensionItem,
+  userConfig,
+  onSelectSkipToContent,
+  intl,
+  onSelectUtilityButton,
+  utilityButtonPopupAnchorRef,
+}) => {
   function renderTitle() {
     if (!titleConfig) {
       return null;
@@ -199,43 +145,10 @@ const Header = (props) => {
     return (
       <UtilityMenuHeaderButton
         userConfig={userConfig}
-        onClick={() => {
-          setUtilityPopupIsOpen(true);
-        }}
+        onClick={onSelectUtilityButton}
         popupAnchorRef={utilityButtonPopupAnchorRef}
       />
     );
-  }
-
-  function renderUtilitiesPopup() {
-    if (utilityPopupIsOpen) {
-      return (
-        <Popup
-          attachmentBehavior="push"
-          contentAttachment="top right"
-          contentHeight="auto"
-          contentWidth="320"
-          isArrowDisplayed
-          isHeaderDisabled
-          isOpen
-          onRequestClose={() => setUtilityPopupIsOpen(false)}
-          targetAttachment="bottom center"
-          targetRef={() => utilityButtonPopupAnchorRef.current}
-        >
-          <UtilityMenu
-            hero={hero}
-            userConfig={userConfig}
-            onSelectSettings={onSelectSettings ? generatePopupClosingCallback(onSelectSettings) : undefined}
-            onSelectHelp={onSelectHelp ? generatePopupClosingCallback(onSelectHelp) : undefined}
-            onSelectLogout={onSelectLogout ? generatePopupClosingCallback(onSelectLogout) : undefined}
-            utilityItems={utilityItems}
-            onSelectUtilityItem={onSelectUtilityItem ? generatePopupClosingCallback(onSelectUtilityItem) : undefined}
-          />
-        </Popup>
-      );
-    }
-
-    return null;
   }
 
   return (
@@ -255,7 +168,6 @@ const Header = (props) => {
       <div className={cx('utilities-container')}>
         {renderUtilities()}
       </div>
-      {renderUtilitiesPopup()}
     </div>
   );
 };

@@ -143,34 +143,7 @@ exports[`Header should render default element 1`] = `
       <div
         className="utilities-container"
       >
-        <InjectIntl(UtilityMenuHeaderButton)
-          onClick={[Function]}
-          popupAnchorRef={
-            Object {
-              "current": <button
-                aria-label="Terra.application.utility.button"
-                class="utility-button"
-                data-application-header-utility="true"
-                data-focus-styles-enabled="true"
-                type="button"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="tui-Icon icon rollup-icon"
-                  focusable="false"
-                  height="1em"
-                  viewBox="0 0 48 48"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M18.6 24c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4-2.4 5.4-5.4 5.4c-3 0-5.4-2.4-5.4-5.4zm0-18.6C18.6 2.4 21 0 24 0c3 0 5.4 2.4 5.4 5.4 0 3-2.4 5.4-5.4 5.4-3 0-5.4-2.4-5.4-5.4zm0 37.2c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 3-2.4 5.4-5.4 5.4-3 0-5.4-2.4-5.4-5.4z"
-                  />
-                </svg>
-              </button>,
-            }
-          }
-        >
+        <InjectIntl(UtilityMenuHeaderButton)>
           <UtilityMenuHeaderButton
             intl={
               Object {
@@ -199,32 +172,6 @@ exports[`Header should render default element 1`] = `
                 "timeZone": null,
               }
             }
-            onClick={[Function]}
-            popupAnchorRef={
-              Object {
-                "current": <button
-                  aria-label="Terra.application.utility.button"
-                  class="utility-button"
-                  data-application-header-utility="true"
-                  data-focus-styles-enabled="true"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="tui-Icon icon rollup-icon"
-                    focusable="false"
-                    height="1em"
-                    viewBox="0 0 48 48"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M18.6 24c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4-2.4 5.4-5.4 5.4c-3 0-5.4-2.4-5.4-5.4zm0-18.6C18.6 2.4 21 0 24 0c3 0 5.4 2.4 5.4 5.4 0 3-2.4 5.4-5.4 5.4-3 0-5.4-2.4-5.4-5.4zm0 37.2c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 3-2.4 5.4-5.4 5.4-3 0-5.4-2.4-5.4-5.4z"
-                    />
-                  </svg>
-                </button>,
-              }
-            }
           >
             <button
               aria-label="Terra.application.utility.button"
@@ -232,7 +179,6 @@ exports[`Header should render default element 1`] = `
               data-application-header-utility={true}
               data-focus-styles-enabled={true}
               onBlur={[Function]}
-              onClick={[Function]}
               onMouseDown={[Function]}
               type="button"
             >
@@ -356,11 +302,8 @@ exports[`Header should render with function callbacks 1`] = `
     }
   }
   onSelectExtensionItem={[MockFunction]}
-  onSelectHelp={[MockFunction]}
-  onSelectLogout={[MockFunction]}
   onSelectNavigationItem={[MockFunction]}
-  onSelectSettings={[MockFunction]}
-  onSelectUtilityItem={[MockFunction]}
+  onSelectUtilityButton={[MockFunction]}
   titleConfig={
     Object {
       "title": "test-title",
@@ -374,16 +317,12 @@ exports[`Header should render with function callbacks 1`] = `
       "name": "user-name",
     }
   }
-  utilityItems={
-    Array [
-      Object {
-        "icon": <span>
-          my icon
-        </span>,
-        "key": "my-test-key-2",
-        "text": "test-text-2",
-      },
-    ]
+  utilityButtonPopupAnchorRef={
+    Object {
+      "current": <span
+        class="popup-anchor"
+      />,
+    }
   }
 >
   <Header
@@ -465,11 +404,8 @@ exports[`Header should render with function callbacks 1`] = `
       }
     }
     onSelectExtensionItem={[MockFunction]}
-    onSelectHelp={[MockFunction]}
-    onSelectLogout={[MockFunction]}
     onSelectNavigationItem={[MockFunction]}
-    onSelectSettings={[MockFunction]}
-    onSelectUtilityItem={[MockFunction]}
+    onSelectUtilityButton={[MockFunction]}
     titleConfig={
       Object {
         "title": "test-title",
@@ -483,16 +419,12 @@ exports[`Header should render with function callbacks 1`] = `
         "name": "user-name",
       }
     }
-    utilityItems={
-      Array [
-        Object {
-          "icon": <span>
-            my icon
-          </span>,
-          "key": "my-test-key-2",
-          "text": "test-text-2",
-        },
-      ]
+    utilityButtonPopupAnchorRef={
+      Object {
+        "current": <span
+          class="popup-anchor"
+        />,
+      }
     }
   >
     <div
@@ -889,7 +821,7 @@ exports[`Header should render with function callbacks 1`] = `
         className="utilities-container"
       >
         <InjectIntl(UtilityMenuHeaderButton)
-          onClick={[Function]}
+          onClick={[MockFunction]}
           popupAnchorRef={
             Object {
               "current": <span
@@ -934,7 +866,7 @@ exports[`Header should render with function callbacks 1`] = `
                 "timeZone": null,
               }
             }
-            onClick={[Function]}
+            onClick={[MockFunction]}
             popupAnchorRef={
               Object {
                 "current": <span
@@ -957,7 +889,7 @@ exports[`Header should render with function callbacks 1`] = `
               data-application-header-utility={true}
               data-focus-styles-enabled={true}
               onBlur={[Function]}
-              onClick={[Function]}
+              onClick={[MockFunction]}
               onMouseDown={[Function]}
               type="button"
             >
@@ -1210,34 +1142,7 @@ exports[`Header should render with skip callback 1`] = `
       <div
         className="utilities-container"
       >
-        <InjectIntl(UtilityMenuHeaderButton)
-          onClick={[Function]}
-          popupAnchorRef={
-            Object {
-              "current": <button
-                aria-label="Terra.application.utility.button"
-                class="utility-button"
-                data-application-header-utility="true"
-                data-focus-styles-enabled="true"
-                type="button"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="tui-Icon icon rollup-icon"
-                  focusable="false"
-                  height="1em"
-                  viewBox="0 0 48 48"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M18.6 24c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4-2.4 5.4-5.4 5.4c-3 0-5.4-2.4-5.4-5.4zm0-18.6C18.6 2.4 21 0 24 0c3 0 5.4 2.4 5.4 5.4 0 3-2.4 5.4-5.4 5.4-3 0-5.4-2.4-5.4-5.4zm0 37.2c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 3-2.4 5.4-5.4 5.4-3 0-5.4-2.4-5.4-5.4z"
-                  />
-                </svg>
-              </button>,
-            }
-          }
-        >
+        <InjectIntl(UtilityMenuHeaderButton)>
           <UtilityMenuHeaderButton
             intl={
               Object {
@@ -1266,32 +1171,6 @@ exports[`Header should render with skip callback 1`] = `
                 "timeZone": null,
               }
             }
-            onClick={[Function]}
-            popupAnchorRef={
-              Object {
-                "current": <button
-                  aria-label="Terra.application.utility.button"
-                  class="utility-button"
-                  data-application-header-utility="true"
-                  data-focus-styles-enabled="true"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="tui-Icon icon rollup-icon"
-                    focusable="false"
-                    height="1em"
-                    viewBox="0 0 48 48"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M18.6 24c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4-2.4 5.4-5.4 5.4c-3 0-5.4-2.4-5.4-5.4zm0-18.6C18.6 2.4 21 0 24 0c3 0 5.4 2.4 5.4 5.4 0 3-2.4 5.4-5.4 5.4-3 0-5.4-2.4-5.4-5.4zm0 37.2c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 3-2.4 5.4-5.4 5.4-3 0-5.4-2.4-5.4-5.4z"
-                    />
-                  </svg>
-                </button>,
-              }
-            }
           >
             <button
               aria-label="Terra.application.utility.button"
@@ -1299,7 +1178,6 @@ exports[`Header should render with skip callback 1`] = `
               data-application-header-utility={true}
               data-focus-styles-enabled={true}
               onBlur={[Function]}
-              onClick={[Function]}
               onMouseDown={[Function]}
               type="button"
             >
