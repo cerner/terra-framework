@@ -1,10 +1,10 @@
 import React from 'react';
 import ApplicationNavigation from '../../src/ApplicationNavigation';
 
-describe('Header', () => {
+describe('ApplicationNavigation', () => {
   it('should render default element', () => {
     const shallowComponent = shallow(
-      <ApplicationNavigation />,
+      <ApplicationNavigation.WrappedComponent />,
     );
 
     expect(shallowComponent).toMatchSnapshot();
@@ -12,7 +12,7 @@ describe('Header', () => {
 
   it('should render with prop data at large breakpoint', () => {
     const shallowComponent = shallow(
-      <ApplicationNavigation
+      <ApplicationNavigation.WrappedComponent
         activeBreakpoint="large"
         titleConfig={{
           title: 'test-title',
@@ -38,7 +38,7 @@ describe('Header', () => {
         onSelectLogout={jest.fn()}
       >
         <div>test child content</div>
-      </ApplicationNavigation>,
+      </ApplicationNavigation.WrappedComponent>,
     );
 
     expect(shallowComponent).toMatchSnapshot();
@@ -46,7 +46,7 @@ describe('Header', () => {
 
   it('should render with prop data at medium breakpoint', () => {
     const shallowComponent = shallow(
-      <ApplicationNavigation
+      <ApplicationNavigation.WrappedComponent
         activeBreakpoint="medium"
         titleConfig={{
           title: 'test-title',
@@ -72,7 +72,7 @@ describe('Header', () => {
         onSelectLogout={jest.fn()}
       >
         <div>test child content</div>
-      </ApplicationNavigation>,
+      </ApplicationNavigation.WrappedComponent>,
     );
 
     expect(shallowComponent).toMatchSnapshot();

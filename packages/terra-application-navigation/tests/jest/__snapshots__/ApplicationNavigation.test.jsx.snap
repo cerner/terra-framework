@@ -1,19 +1,391 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header should render default element 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+exports[`ApplicationNavigation should render default element 1`] = `
+<div
+  className="application-navigation"
+>
+  <div
+    aria-hidden={true}
+    className="drawer-menu-container"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  />
+  <div
+    aria-hidden={null}
+    className="content-layout"
+  >
+    <InjectIntl(Header)
+      notifications={Object {}}
+      onMenuToggle={[Function]}
+      onSelectNavigationItem={[Function]}
+      onSelectSkipToContent={[Function]}
+      onSelectUtilityButton={[Function]}
+      utilityButtonPopupAnchorRef={
+        Object {
+          "current": null,
+        }
+      }
+    />
+    <main
+      className="main-container"
+      tabIndex="-1"
+    />
+    <Overlay
+      backgroundStyle="clear"
+      isOpen={false}
+      isRelativeToContainer={true}
+      isScrollable={false}
+      rootSelector="#root"
+      zIndex="100"
+    />
+  </div>
+  <Popup
+    attachmentBehavior="push"
+    boundingRef={null}
+    classNameArrow={null}
+    classNameContent={null}
+    classNameOverlay={null}
+    contentAttachment="top right"
+    contentHeight="auto"
+    contentWidth="320"
+    isArrowDisplayed={true}
+    isContentFocusDisabled={false}
+    isHeaderDisabled={true}
+    isOpen={false}
+    onRequestClose={[Function]}
+    targetAttachment="bottom center"
+    targetRef={[Function]}
+  >
+    <UtilityMenu
+      utilityItems={Array []}
+    />
+  </Popup>
+</div>
 `;
 
-exports[`Header should render with prop data at large breakpoint 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+exports[`ApplicationNavigation should render with prop data at large breakpoint 1`] = `
+<div
+  className="application-navigation"
+>
+  <div
+    aria-hidden={true}
+    className="drawer-menu-container"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  />
+  <div
+    aria-hidden={null}
+    className="content-layout"
+  >
+    <InjectIntl(Header)
+      activeBreakpoint="large"
+      activeNavigationItemKey="test-text"
+      extensionItems={
+        Array [
+          Object {
+            "icon": <span>
+              my icon
+            </span>,
+            "key": "my-test-key-1",
+            "text": "test-text-1",
+          },
+        ]
+      }
+      navigationItems={
+        Array [
+          Object {
+            "key": "my-test-key",
+            "text": "test-text",
+          },
+        ]
+      }
+      navigationRenderFunction={[MockFunction]}
+      notifications={
+        Object {
+          "my-test-key-1": 3,
+        }
+      }
+      onMenuToggle={[Function]}
+      onSelectExtensionItem={[MockFunction]}
+      onSelectNavigationItem={[Function]}
+      onSelectSkipToContent={[Function]}
+      onSelectUtilityButton={[Function]}
+      titleConfig={
+        Object {
+          "title": "test-title",
+        }
+      }
+      userConfig={
+        Object {
+          "detail": "user-detail",
+          "imageSrc": "user-src",
+          "initials": "user-initials",
+          "name": "user-name",
+        }
+      }
+      utilityButtonPopupAnchorRef={
+        Object {
+          "current": null,
+        }
+      }
+    />
+    <main
+      className="main-container"
+      tabIndex="-1"
+    >
+      <div>
+        test child content
+      </div>
+    </main>
+    <Overlay
+      backgroundStyle="clear"
+      isOpen={false}
+      isRelativeToContainer={true}
+      isScrollable={false}
+      rootSelector="#root"
+      zIndex="100"
+    />
+  </div>
+  <Popup
+    attachmentBehavior="push"
+    boundingRef={null}
+    classNameArrow={null}
+    classNameContent={null}
+    classNameOverlay={null}
+    contentAttachment="top right"
+    contentHeight="auto"
+    contentWidth="320"
+    isArrowDisplayed={true}
+    isContentFocusDisabled={false}
+    isHeaderDisabled={true}
+    isOpen={false}
+    onRequestClose={[Function]}
+    targetAttachment="bottom center"
+    targetRef={[Function]}
+  >
+    <UtilityMenu
+      hero={
+        <div>
+          my test hero
+        </div>
+      }
+      onSelectHelp={[Function]}
+      onSelectLogout={[Function]}
+      onSelectSettings={[Function]}
+      onSelectUtilityItem={[Function]}
+      userConfig={
+        Object {
+          "detail": "user-detail",
+          "imageSrc": "user-src",
+          "initials": "user-initials",
+          "name": "user-name",
+        }
+      }
+      utilityItems={
+        Array [
+          Object {
+            "icon": <span>
+              my icon
+            </span>,
+            "key": "my-test-key-2",
+            "text": "test-text-2",
+          },
+        ]
+      }
+    />
+  </Popup>
+</div>
 `;
 
-exports[`Header should render with prop data at medium breakpoint 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+exports[`ApplicationNavigation should render with prop data at medium breakpoint 1`] = `
+<div
+  className="application-navigation"
+>
+  <div
+    aria-hidden={true}
+    className="drawer-menu-container"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <FocusTrap
+      _createFocusTrap={[Function]}
+      active={false}
+      className="drawer-menu-focus-trap-container"
+      focusTrapOptions={
+        Object {
+          "clickOutsideDeactivates": true,
+          "escapeDeactivates": true,
+          "onDeactivate": [Function],
+          "returnFocusOnDeactivate": true,
+        }
+      }
+      paused={false}
+      tag="div"
+    >
+      <DrawerMenu
+        activeNavigationItemKey="test-text"
+        hero={
+          <div>
+            my test hero
+          </div>
+        }
+        navigationItems={
+          Array [
+            Object {
+              "key": "my-test-key",
+              "text": "test-text",
+            },
+          ]
+        }
+        notifications={
+          Object {
+            "my-test-key-1": 3,
+          }
+        }
+        onSelectHelp={[Function]}
+        onSelectLogout={[Function]}
+        onSelectNavigationItem={[Function]}
+        onSelectSettings={[Function]}
+        onSelectUtilityItem={[Function]}
+        titleConfig={
+          Object {
+            "title": "test-title",
+          }
+        }
+        userConfig={
+          Object {
+            "detail": "user-detail",
+            "imageSrc": "user-src",
+            "initials": "user-initials",
+            "name": "user-name",
+          }
+        }
+        utilityItems={
+          Array [
+            Object {
+              "icon": <span>
+                my icon
+              </span>,
+              "key": "my-test-key-2",
+              "text": "test-text-2",
+            },
+          ]
+        }
+      />
+    </FocusTrap>
+  </div>
+  <div
+    aria-hidden={null}
+    className="content-layout"
+  >
+    <InjectIntl(CompactHeader)
+      activeBreakpoint="medium"
+      extensionItems={
+        Array [
+          Object {
+            "icon": <span>
+              my icon
+            </span>,
+            "key": "my-test-key-1",
+            "text": "test-text-1",
+          },
+        ]
+      }
+      navigationItems={
+        Array [
+          Object {
+            "key": "my-test-key",
+            "text": "test-text",
+          },
+        ]
+      }
+      notifications={
+        Object {
+          "my-test-key-1": 3,
+        }
+      }
+      onSelectExtensionItem={[MockFunction]}
+      onSelectMenuButton={[Function]}
+      onSelectSkipToContent={[Function]}
+      titleConfig={
+        Object {
+          "title": "test-title",
+        }
+      }
+    />
+    <main
+      className="main-container"
+      tabIndex="-1"
+    >
+      <div>
+        test child content
+      </div>
+    </main>
+    <Overlay
+      backgroundStyle="clear"
+      isOpen={false}
+      isRelativeToContainer={true}
+      isScrollable={false}
+      rootSelector="#root"
+      zIndex="100"
+    />
+  </div>
+  <Popup
+    attachmentBehavior="push"
+    boundingRef={null}
+    classNameArrow={null}
+    classNameContent={null}
+    classNameOverlay={null}
+    contentAttachment="top right"
+    contentHeight="auto"
+    contentWidth="320"
+    isArrowDisplayed={true}
+    isContentFocusDisabled={false}
+    isHeaderDisabled={true}
+    isOpen={false}
+    onRequestClose={[Function]}
+    targetAttachment="bottom center"
+    targetRef={[Function]}
+  >
+    <UtilityMenu
+      hero={
+        <div>
+          my test hero
+        </div>
+      }
+      onSelectHelp={[Function]}
+      onSelectLogout={[Function]}
+      onSelectSettings={[Function]}
+      onSelectUtilityItem={[Function]}
+      userConfig={
+        Object {
+          "detail": "user-detail",
+          "imageSrc": "user-src",
+          "initials": "user-initials",
+          "name": "user-name",
+        }
+      }
+      utilityItems={
+        Array [
+          Object {
+            "icon": <span>
+              my icon
+            </span>,
+            "key": "my-test-key-2",
+            "text": "test-text-2",
+          },
+        ]
+      }
+    />
+  </Popup>
+</div>
 `;
