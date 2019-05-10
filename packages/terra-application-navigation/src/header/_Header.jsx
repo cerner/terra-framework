@@ -97,6 +97,7 @@ const propTypes = {
   activeBreakpoint: PropTypes.string,
   /**
    * @private
+   * Object containing intl APIs.
    */
   intl: intlShape,
 };

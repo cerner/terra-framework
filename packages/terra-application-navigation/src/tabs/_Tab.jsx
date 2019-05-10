@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
+
 import TabCount from './_TabCount';
+import { enableFocusStyles, disableFocusStyles } from '../utils/helpers';
+
 import styles from './Tab.module.scss';
 
 const cx = classNames.bind(styles);
@@ -59,14 +62,6 @@ const Tab = ({
     }
   }
 
-  function onBlur(event) {
-    event.currentTarget.setAttribute('data-item-show-focus', 'true');
-  }
-
-  function onMouseDown(event) {
-    event.currentTarget.setAttribute('data-item-show-focus', 'false');
-  }
-
   function renderTabContent() {
     if (render) {
       return render({
@@ -98,12 +93,12 @@ const Tab = ({
       ])}
       onClick={!isActive ? onTabSelect : null} // TODO: should be able to re-select
       onKeyDown={!isActive ? onKeyDown : null} // TODO: should be able to re-select
-      onBlur={onBlur}
-      onMouseDown={onMouseDown}
+      onBlur={enableFocusStyles}
+      onMouseDown={disableFocusStyles}
       ref={tabRef}
-      data-item-show-focus
       aria-current={isActive}
       aria-hidden={isPlaceholder}
+      data-focus-styles-enabled
     >
       {renderTabContent()}
     </div>

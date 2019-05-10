@@ -49,7 +49,7 @@
     top: 0.2857rem;
   }
 
-  .extension-rollup[data-item-show-focus='true']:focus {
+  .extension-rollup[data-focus-styles-enabled='true']:focus {
     .extension-rollup-inner {
       background-color: rgba(0, 0, 0, 0.15);
       border-radius: 100%;

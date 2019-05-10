@@ -39,7 +39,7 @@
       }
     }
 
-    &[data-item-show-focus='true']:focus {
+    &[data-focus-styles-enabled='true']:focus {
       .extension-inner {
         background-color: rgba(0, 0, 0, 0.15);
         border-radius: 100%;

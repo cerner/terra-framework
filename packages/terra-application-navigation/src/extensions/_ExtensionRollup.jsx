@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconTile from 'terra-icon/lib/icon/IconTile';
+
 import { createKeyDown } from './_ExtensionUtils';
 import ExtensionCount from './_ExtensionCount';
+import { enableFocusStyles, disableFocusStyles } from '../utils/helpers';
 
 import styles from './ExtensionRollup.module.scss';
 
@@ -43,20 +45,17 @@ const ExtensionRollup = ({
 
   return (
     <div
-      aria-label="more button text"// TODO: fix this.
-      onKeyDown={keyDown}
-      className={cx('extension-rollup')}
       role="button"
       tabIndex="0"
+      className={cx('extension-rollup')}
       onClick={onSelect}
+      onKeyDown={keyDown}
       ref={refCallback}
-      data-item-show-focus
-      onBlur={(event) => {
-        event.currentTarget.setAttribute('data-item-show-focus', 'true');
-      }}
-      onMouseDown={(event) => {
-        event.currentTarget.setAttribute('data-item-show-focus', 'false');
-      }}
+      onBlur={enableFocusStyles}
+      onMouseDown={disableFocusStyles}
+      title="more button text"
+      aria-label="more button text"// TODO: fix this.
+      data-focus-styles-enabled
     >
       <div className={cx('extension-rollup-inner')}>
         <div className={cx('extension-rollup-image')}>

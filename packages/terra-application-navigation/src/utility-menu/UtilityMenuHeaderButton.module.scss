@@ -24,17 +24,11 @@
       border: 0;
     }
 
-    .focus-me {
-      align-items: center;
-      display: flex;
-      width: 100%;
-    }
-
     &:hover {
       background-color: var(--terra-application-utility-header-hover-background-color);
     }
 
-    &[data-item-show-focus='true']:focus {
+    &[data-focus-styles-enabled='true']:focus {
       background-color: rgba(89, 159, 253, 0.4);
       border-radius: 3px;
 
@@ -43,11 +37,15 @@
       }
     }
 
-    .icon {
+    .caret-icon {
       flex: 0 0 auto;
       color: var(--terra-application-utility-header-icon-color);
       margin-left: var(--terra-application-utility-header-title-margin-right, 0.2143rem);
       width: var(--terra-application-utility-header-icon-width, 0.5714rem);
+    }
+
+    .rollup-icon {
+      color: var(--terra-application-utility-header-icon-color);
     }
 
     .popup-anchor {

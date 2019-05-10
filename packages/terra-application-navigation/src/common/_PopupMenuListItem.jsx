@@ -5,6 +5,7 @@ import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 import IconCheckmark from 'terra-icon/lib/icon/IconCheckmark';
 
 import PopupCount from './_PopupCount';
+import { enableFocusStyles, disableFocusStyles } from '../utils/helpers';
 
 import styles from './PopupMenuListItem.module.scss';
 
@@ -41,8 +42,9 @@ const PopupMenuListItem = ({
   icon, text, notificationCount, onSelect, showSelections, isSelected,
 }) => (
   <li
+    role="option"
+    tabIndex="0"
     className={cx('item')}
-    data-item-show-focus
     onClick={onSelect}
     onKeyDown={(event) => {
       if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
@@ -50,15 +52,10 @@ const PopupMenuListItem = ({
         onSelect();
       }
     }}
-    onBlur={(event) => {
-      event.currentTarget.setAttribute('data-item-show-focus', 'true');
-    }}
-    onMouseDown={(event) => {
-      event.currentTarget.setAttribute('data-item-show-focus', 'false');
-    }}
+    onBlur={enableFocusStyles}
+    onMouseDown={disableFocusStyles}
     aria-selected={showSelections && isSelected}
-    role="option"
-    tabIndex="0"
+    data-focus-styles-enabled
   >
     {showSelections
       ? (

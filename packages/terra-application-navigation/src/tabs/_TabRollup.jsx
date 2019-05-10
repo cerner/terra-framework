@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
+
 import TabCount from './_TabCount';
+import { enableFocusStyles, disableFocusStyles } from '../utils/helpers';
 
 import styles from './Tab.module.scss';
 
@@ -70,14 +72,6 @@ const TabRollup = ({
     }
   }
 
-  function onBlur(event) {
-    event.currentTarget.setAttribute('data-item-show-focus', 'true');
-  }
-
-  function onMouseDown(event) {
-    event.currentTarget.setAttribute('data-item-show-focus', 'false');
-  }
-
   return (
     <div
       role="tab"
@@ -88,11 +82,11 @@ const TabRollup = ({
       ])}
       onClick={onTabSelect}
       onKeyDown={onKeyDown}
-      onBlur={onBlur}
-      onMouseDown={onMouseDown}
+      onBlur={enableFocusStyles}
+      onMouseDown={disableFocusStyles}
       ref={tabRef}
       aria-current={isSelected}
-      data-item-show-focus
+      data-focus-styles-enabled
     >
       <div className={cx('tab-inner')} data-tab-menu-inner>
         <div className={cx('tab-rollup-label')}>

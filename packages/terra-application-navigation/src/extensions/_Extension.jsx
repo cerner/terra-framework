@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import styles from './Extension.module.scss';
+
 import { createKeyDown, createOnClick } from './_ExtensionUtils';
-import Count from './_ExtensionCount';
+import ExtensionCount from './_ExtensionCount';
+import { enableFocusStyles, disableFocusStyles } from '../utils/helpers';
+
+import styles from './Extension.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -51,26 +54,23 @@ const Extension = ({
 
   return (
     <div
-      aria-label={text}
-      onKeyDown={keyDown}
-      className={cx('extension')}
       role="button"
       tabIndex="0"
+      className={cx('extension')}
       onClick={onClick}
+      onKeyDown={keyDown}
       ref={refCallback}
-      data-item-show-focus
-      onBlur={(event) => {
-        event.currentTarget.setAttribute('data-item-show-focus', 'true');
-      }}
-      onMouseDown={(event) => {
-        event.currentTarget.setAttribute('data-item-show-focus', 'false');
-      }}
+      onBlur={enableFocusStyles}
+      onMouseDown={disableFocusStyles}
+      aria-label={text}
+      title={text}
+      data-focus-styles-enabled
     >
       <div className={cx('extension-inner')}>
         <div className={cx('extension-image')}>
           {icon}
         </div>
-        {notificationCount > 0 && <Count value={notificationCount} className={cx('extension-count')} />}
+        {notificationCount > 0 && <ExtensionCount value={notificationCount} className={cx('extension-count')} />}
       </div>
     </div>
   );

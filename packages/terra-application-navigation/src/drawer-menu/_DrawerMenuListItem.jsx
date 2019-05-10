@@ -4,6 +4,8 @@ import classNames from 'classnames/bind';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 
 import Count from './_DrawerCount';
+import { enableFocusStyles, disableFocusStyles } from '../utils/helpers';
+
 import styles from './DrawerMenuListItem.module.scss';
 
 const cx = classNames.bind(styles);
@@ -35,9 +37,9 @@ const DrawerMenuListItem = ({
   icon, text, notificationCount, isSelected, onSelect,
 }) => (
   <li
+    role="option"
+    tabIndex="0"
     className={cx(['item', { 'is-selected': isSelected }])}
-    aria-selected={isSelected}
-    data-item-show-focus
     onClick={onSelect}
     onKeyDown={(event) => {
       if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
@@ -45,14 +47,10 @@ const DrawerMenuListItem = ({
         onSelect();
       }
     }}
-    onBlur={(event) => {
-      event.currentTarget.setAttribute('data-item-show-focus', 'true');
-    }}
-    onMouseDown={(event) => {
-      event.currentTarget.setAttribute('data-item-show-focus', 'false');
-    }}
-    role="option"
-    tabIndex="0"
+    onBlur={enableFocusStyles}
+    onMouseDown={disableFocusStyles}
+    aria-selected={isSelected}
+    data-focus-styles-enabled
   >
     {icon ? <div className={cx('icon')}>{icon}</div> : null}
     <div className={cx('text')}>{text}</div>
