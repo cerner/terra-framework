@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ActionHeader from 'terra-action-header';
@@ -39,139 +39,106 @@ const defaultProps = {
   notifications: {},
 };
 
-const shouldShowNotifications = (extensionItems, notifications) => extensionItems.some(item => !!notifications[item.key]);
+const Extensions = ({
+  activeBreakpoint,
+  extensionItems,
+  notifications,
+  onSelect,
+}) => {
+  const [popupIsOpen, setPopupIsOpen] = useState(false);
 
-class Extensions extends React.Component {
-  constructor(props) {
-    super(props);
+  const extensionRollupRef = useRef();
+  const popupSelectionCallbackRef = useRef();
+  const previousNotificationsRef = useRef();
 
-    this.setButtonNode = this.setButtonNode.bind(this);
-    this.getButtonNode = this.getButtonNode.bind(this);
-    this.handleRequestClose = this.handleRequestClose.bind(this);
-    this.handleRollupSelect = this.handleRollupSelect.bind(this);
-    this.shouldPulse = this.shouldPulse.bind(this);
-    this.createRollupButton = this.createRollupButton.bind(this);
+  useEffect(() => {
+    previousNotificationsRef.current = notifications;
 
-    this.state = { isOpen: false };
-    this.previousNotifications = null;
-  }
-
-  shouldComponentUpdate() {
-    this.previousNotifications = this.props.notifications;
-    return true;
-  }
-
-  setButtonNode(node) {
-    this.buttonNode = node;
-  }
-
-  getButtonNode() {
-    return this.buttonNode;
-  }
-
-  handleRequestClose() {
-    this.setState({ isOpen: false });
-  }
-
-  handleRollupSelect() {
-    this.setState({ isOpen: true });
-  }
-
-  shouldPulse(extensionItems, notifications) {
-    let shouldPulse = false;
-
-    if (this.previousNotifications) {
-      for (let i = 0; i < extensionItems.length; i += 1) {
-        const item = extensionItems[i];
-        const previousCount = this.previousNotifications[item.key];
-        const newCount = notifications[item.key];
-        if (newCount && (!previousCount || newCount > previousCount)) {
-          shouldPulse = true;
-          break;
-        }
-      }
+    if (popupSelectionCallbackRef.current) {
+      popupSelectionCallbackRef.current();
+      popupSelectionCallbackRef.current = undefined;
     }
+  });
 
-    return shouldPulse;
-  }
+  const sliceIndex = sliceIndexForBreakpoint(activeBreakpoint, extensionItems);
+  const visibleExtensions = extensionItems.slice(0, sliceIndex);
+  const hiddenExtensions = extensionItems.slice(sliceIndex);
 
-  createRollupButton(hiddenItems) {
-    if (!hiddenItems || !hiddenItems.length) {
+  function renderRollupButton() {
+    if (!hiddenExtensions || !hiddenExtensions.length) {
       return null;
     }
-    const showNotifications = shouldShowNotifications(hiddenItems, this.props.notifications);
+
+    const showNotifications = hiddenExtensions.some(extension => !!notifications[extension.key]);
+
+    const shouldPulse = previousNotificationsRef.current && hiddenExtensions.some((extension) => {
+      const previousCount = previousNotificationsRef.current[extension.key];
+      const newCount = notifications[extension.key];
+      return newCount && (!previousCount || newCount > previousCount);
+    });
+
     return (
       <ExtensionRollup
-        onSelect={this.handleRollupSelect}
-        refCallback={this.setButtonNode}
+        onSelect={() => setPopupIsOpen(true)}
+        extensionRef={extensionRollupRef}
         hasChildNotifications={showNotifications}
-        isPulsed={showNotifications && this.shouldPulse(this.props.extensionItems, this.props.notifications)}
+        isPulsed={showNotifications && shouldPulse}
       />
     );
   }
 
-  render() {
-    const {
-      activeBreakpoint,
-      extensionItems,
-      notifications,
-      onSelect,
-    } = this.props;
-
+  function renderPopup() {
     let attachmentSpread;
     if (shouldRenderCompactNavigation(activeBreakpoint)) {
       attachmentSpread = { contentAttachment: 'top right', targetAttachment: 'bottom center' };
     }
 
-    const sliceIndex = sliceIndexForBreakpoint(activeBreakpoint, extensionItems);
-    const visibleItems = extensionItems.slice(0, sliceIndex);
-    const hiddenItems = extensionItems.slice(sliceIndex);
-
     return (
-      <React.Fragment>
-        <Popup
-          {...attachmentSpread}
-          contentHeight="auto"
-          contentWidth="320"
-          isArrowDisplayed
-          isOpen={this.state.isOpen}
-          targetRef={this.getButtonNode}
-          onRequestClose={this.handleRequestClose}
-        >
-          <PopupMenu
-            header={<ActionHeader title="Extensions" />}
-            menuItems={hiddenItems.map(item => ({
-              key: item.key,
-              icon: item.icon,
-              text: item.text,
-              notificationCount: notifications[item.key],
-              metaData: item.metaData,
-            }))}
-            onSelectMenuItem={(itemKey, metaData) => {
-              if (onSelect) {
-                onSelect(itemKey, metaData);
-              }
-              this.handleRequestClose();
-            }}
-          />
-        </Popup>
-        <div className={cx('extensions-row')}>
-          {visibleItems.map(item => (
-            <Extension
-              notificationCount={notifications[item.key]}
-              key={item.key}
-              icon={item.icon}
-              text={item.text}
-              onSelect={onSelect && onSelect.bind(null, item.key, item.metaData)}
-              onRequestClose={this.handleRequestClose}
-            />
-          ))}
-          {this.createRollupButton(hiddenItems)}
-        </div>
-      </React.Fragment>
+      <Popup
+        {...attachmentSpread}
+        contentHeight="auto"
+        contentWidth="320"
+        isArrowDisplayed
+        isOpen={popupIsOpen}
+        targetRef={() => extensionRollupRef.current}
+        onRequestClose={() => setPopupIsOpen(false)}
+      >
+        <PopupMenu
+          header={<ActionHeader title="Extensions" />}
+          menuItems={hiddenExtensions.map(item => ({
+            key: item.key,
+            icon: item.icon,
+            text: item.text,
+            notificationCount: notifications[item.key],
+            metaData: item.metaData,
+          }))}
+          onSelectMenuItem={(itemKey, metaData) => {
+            popupSelectionCallbackRef.current = () => onSelect(itemKey, metaData);
+            setPopupIsOpen(false);
+          }}
+        />
+      </Popup>
     );
   }
-}
+
+  return (
+    <React.Fragment>
+      <div className={cx('extensions-row')}>
+        {visibleExtensions.map(extension => (
+          <Extension
+            notificationCount={notifications[extension.key]}
+            key={extension.key}
+            icon={extension.icon}
+            text={extension.text}
+            onSelect={onSelect && onSelect.bind(null, extension.key, extension.metaData)}
+          />
+        ))}
+        {renderRollupButton()}
+      </div>
+      {renderPopup()}
+    </React.Fragment>
+  );
+};
 
 Extensions.propTypes = propTypes;
 Extensions.defaultProps = defaultProps;

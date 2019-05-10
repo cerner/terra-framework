@@ -28,10 +28,6 @@ const propTypes = {
    */
   onSelect: PropTypes.func,
   /**
-   * Callback function for the extension node.
-   */
-  refCallback: PropTypes.func,
-  /**
    * The text display for the extension, either the aira label or the inline text.
    */
   text: PropTypes.string.isRequired,
@@ -47,7 +43,6 @@ const Extension = ({
   text,
   onRequestClose,
   onSelect,
-  refCallback,
 }) => {
   const keyDown = createKeyDown(onRequestClose, onSelect);
   const onClick = createOnClick(onRequestClose, onSelect);
@@ -59,7 +54,6 @@ const Extension = ({
       className={cx('extension')}
       onClick={onClick}
       onKeyDown={keyDown}
-      ref={refCallback}
       onBlur={enableFocusStyles}
       onMouseDown={disableFocusStyles}
       aria-label={text}

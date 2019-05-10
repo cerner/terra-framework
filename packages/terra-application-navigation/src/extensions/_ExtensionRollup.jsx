@@ -23,7 +23,7 @@ const propTypes = {
   /**
    * Callback function for the rollup node.
    */
-  refCallback: PropTypes.func,
+  extensionRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
   /**
    * Whether or not the notification count should pulse.
    */
@@ -39,7 +39,7 @@ const ExtensionRollup = ({
   hasChildNotifications,
   isPulsed,
   onSelect,
-  refCallback,
+  extensionRef,
 }) => {
   const keyDown = createKeyDown(null, onSelect);
 
@@ -50,7 +50,7 @@ const ExtensionRollup = ({
       className={cx('extension-rollup')}
       onClick={onSelect}
       onKeyDown={keyDown}
-      ref={refCallback}
+      ref={extensionRef}
       onBlur={enableFocusStyles}
       onMouseDown={disableFocusStyles}
       title="more button text"
