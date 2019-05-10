@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
+import { enableFocusStyles, disableFocusStyles } from '../utils/helpers';
+
 import styles from './DrawerMenuFooterButton.module.scss';
 
 const cx = classNames.bind(styles);
@@ -22,13 +24,9 @@ const DrawerMenuFooterButton = ({ text, onClick }) => (
     className={cx('drawer-menu-footer-button')}
     type="button"
     onClick={onClick}
-    data-button-show-focus
-    onBlur={(event) => {
-      event.currentTarget.setAttribute('data-button-show-focus', 'true');
-    }}
-    onMouseDown={(event) => {
-      event.currentTarget.setAttribute('data-button-show-focus', 'false');
-    }}
+    onBlur={enableFocusStyles}
+    onMouseDown={disableFocusStyles}
+    data-focus-styles-enabled
   >
     {text}
   </button>
