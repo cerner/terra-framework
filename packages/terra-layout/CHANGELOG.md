@@ -7,6 +7,9 @@ Unreleased
 * Update react-router-dom peerDependency to latest stable major release
 * Updated tabbable dependency to ^4.0.0
 
+# Changed
+* Update skip to content link handling to only temporary set tabindex to prevent keyboard page scroll bug
+
 3.4.0 - (April 24, 2019)
 ------------------
 ### Changed
