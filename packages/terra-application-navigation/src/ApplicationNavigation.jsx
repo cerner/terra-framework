@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {
+  useEffect, useLayoutEffect, useState, useRef, useContext,
+} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Overlay from 'terra-overlay';
@@ -97,11 +99,6 @@ const propTypes = {
    * A collection of child elements to render within the ApplicationNavigation body.
    */
   children: PropTypes.node,
-  /**
-   * @private
-   * The currently active breakpoint.
-   */
-  activeBreakpoint: PropTypes.string,
 };
 
 const defaultProps = {
@@ -109,137 +106,55 @@ const defaultProps = {
   notifications: {},
 };
 
-class ApplicationNavigation extends React.Component {
-  static getDerivedStateFromProps(props, state) {
-    /**
-     * If the drawer menu is visible and we are transitioning to a breakpoint in which the drawer menu
-     * should not be rendered, the drawer menu state is reset.
-     */
-    if (state.drawerMenuIsOpen && !shouldRenderCompactNavigation(props.activeBreakpoint)) {
-      return {
-        drawerMenuIsOpen: false,
-      };
-    }
+const ApplicationNavigation = ({
+  titleConfig,
+  userConfig,
+  hero,
+  navigationItems,
+  onSelectNavigationItem,
+  activeNavigationItemKey,
+  navigationRenderFunction,
+  extensionItems,
+  onSelectExtensionItem,
+  onSelectSettings,
+  onSelectHelp,
+  onSelectLogout,
+  utilityItems,
+  onSelectUtilityItem,
+  notifications,
+  children,
+}) => {
+  const drawerMenuRef = useRef();
+  const contentLayoutRef = useRef();
+  const mainContainerRef = useRef();
+  const utilityButtonPopupAnchorRef = useRef();
+  const drawerMenuIsVisibleRef = useRef(false);
+  const closeMenuCallbackRef = useRef();
 
-    return null;
-  }
+  const [drawerMenuIsOpen, setDrawerMenuIsOpen] = useState(false);
+  const [popupMenuIsOpen, setPopupMenuIsOpen] = useState(false);
 
-  static generateMenuClosingCallback(componentInstance, wrappedFunctionName) {
+  const activeBreakpoint = useContext(Breakpoints.ActiveBreakpointContext);
+
+  function generateMenuClosingCallback(wrappedFunction) {
     return (...args) => {
-      /**
-       * The functions are retrieved from props during each execution to ensure
-       * the most current value is used.
-       */
-      const wrappedFunction = componentInstance.props[wrappedFunctionName];
-
       if (!wrappedFunction) {
         return;
       }
 
-      componentInstance.setState({
-        drawerMenuIsOpen: false,
-        utilityPopupIsOpen: false,
-      }, () => {
-        wrappedFunction(...args);
-      });
+      closeMenuCallbackRef.current = () => { wrappedFunction(...args); };
+      setDrawerMenuIsOpen(false);
+      setPopupMenuIsOpen(false);
     };
   }
 
-  constructor(props) {
-    super(props);
-
-    this.handleTransitionEnd = this.handleTransitionEnd.bind(this);
-    this.handleMenuToggle = this.handleMenuToggle.bind(this);
-    this.handleDrawerMenuFocusTrapDeactivation = this.handleDrawerMenuFocusTrapDeactivation.bind(this);
-    this.handleSkipToContent = this.handleSkipToContent.bind(this);
-
-    this.renderNavigationMenu = this.renderNavigationMenu.bind(this);
-    this.renderUtilitiesPopup = this.renderUtilitiesPopup.bind(this);
-    this.renderHeader = this.renderHeader.bind(this);
-
-    this.drawerMenuRef = React.createRef();
-    this.contentLayoutRef = React.createRef();
-    this.mainContainerRef = React.createRef();
-    this.utilityButtonPopupAnchorRef = React.createRef();
-
-    /**
-     * The popup utility menu and the drawer menu should both be dismissed upon the selection of any item
-     * within them. Handlers are generated for each prop to ensure that the appropriate menu state is set
-     * upon item selection.
-     */
-    this.handleNavigationItemSelection = ApplicationNavigation.generateMenuClosingCallback(this, 'onSelectNavigationItem');
-    this.handleSettingsSelection = ApplicationNavigation.generateMenuClosingCallback(this, 'onSelectSettings');
-    this.handleHelpSelection = ApplicationNavigation.generateMenuClosingCallback(this, 'onSelectHelp');
-    this.handleLogoutSelection = ApplicationNavigation.generateMenuClosingCallback(this, 'onSelectLogout');
-    this.handleUtilityItemSelection = ApplicationNavigation.generateMenuClosingCallback(this, 'onSelectUtilityItem');
-
-    /**
-     * An instance property is held outside of state to manage drawer menu visibility during
-     * its presentation/dismissal animations.
-     */
-    this.drawerMenuIsVisible = false;
-
-    this.state = {
-      drawerMenuIsOpen: false,
-      utilityPopupIsOpen: false,
-    };
+  function focusMainContent() {
+    mainContainerRef.current.setAttribute('tabindex', '-1');
+    mainContainerRef.current.focus();
+    mainContainerRef.current.removeAttribute('tabindex');
   }
 
-  componentDidMount() {
-    if (this.contentLayoutRef.current) {
-      this.contentLayoutRef.current.addEventListener('transitionend', this.handleTransitionEnd);
-    }
-  }
-
-  componentWillUnmount() {
-    if (this.contentLayoutRef.current) {
-      this.contentLayoutRef.current.removeEventListener('transitionend', this.handleTransitionEnd);
-    }
-  }
-
-  handleMenuToggle() {
-    this.setState(state => ({
-      drawerMenuIsOpen: !state.drawerMenuIsOpen,
-    }));
-  }
-
-  handleTransitionEnd() {
-    if (!this.state.drawerMenuIsOpen) {
-      this.drawerMenuRef.current.style.display = 'none';
-      this.drawerMenuIsVisible = false;
-    } else {
-      this.drawerMenuIsVisible = true;
-    }
-  }
-
-  handleDrawerMenuFocusTrapDeactivation() {
-    if (this.state.drawerMenuIsOpen) {
-      this.setState({ drawerMenuIsOpen: false });
-    }
-  }
-
-  handleSkipToContent() {
-    if (this.mainContainerRef.current) {
-      this.mainContainerRef.current.focus();
-    }
-  }
-
-  renderNavigationMenu() {
-    const {
-      titleConfig,
-      userConfig,
-      hero,
-      navigationItems,
-      activeNavigationItemKey,
-      onSelectSettings,
-      onSelectHelp,
-      onSelectLogout,
-      utilityItems,
-      activeBreakpoint,
-      notifications,
-    } = this.props;
-    const { drawerMenuIsOpen } = this.state;
-
+  function renderDrawerMenu() {
     if (!shouldRenderCompactNavigation(activeBreakpoint)) {
       return null;
     }
@@ -251,7 +166,7 @@ class ApplicationNavigation extends React.Component {
           escapeDeactivates: true,
           clickOutsideDeactivates: true,
           returnFocusOnDeactivate: true,
-          onDeactivate: this.handleDrawerMenuFocusTrapDeactivation,
+          onDeactivate: () => setDrawerMenuIsOpen(false),
         }}
         className={cx('drawer-menu-focus-trap-container')}
       >
@@ -261,25 +176,19 @@ class ApplicationNavigation extends React.Component {
           hero={hero}
           navigationItems={navigationItems}
           activeNavigationItemKey={activeNavigationItemKey}
-          onSelectNavigationItem={this.handleNavigationItemSelection}
-          onSelectSettings={onSelectSettings ? this.handleSettingsSelection : undefined}
-          onSelectHelp={onSelectHelp ? this.handleHelpSelection : undefined}
-          onSelectLogout={onSelectLogout ? this.handleLogoutSelection : undefined}
+          onSelectNavigationItem={onSelectNavigationItem ? generateMenuClosingCallback(onSelectNavigationItem) : undefined}
+          onSelectSettings={onSelectSettings ? generateMenuClosingCallback(onSelectSettings) : undefined}
+          onSelectHelp={onSelectHelp ? generateMenuClosingCallback(onSelectHelp) : undefined}
+          onSelectLogout={onSelectLogout ? generateMenuClosingCallback(onSelectLogout) : undefined}
           utilityItems={utilityItems}
-          onSelectUtilityItem={this.handleUtilityItemSelection}
+          onSelectUtilityItem={onSelectUtilityItem ? generateMenuClosingCallback(onSelectUtilityItem) : undefined}
           notifications={notifications}
         />
       </FocusTrap>
     );
   }
 
-  renderUtilitiesPopup() {
-    const {
-      hero, userConfig, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem,
-    } = this.props;
-
-    const { utilityPopupIsOpen } = this.state;
-
+  function renderPopupMenu() {
     return (
       <Popup
         attachmentBehavior="push"
@@ -288,51 +197,40 @@ class ApplicationNavigation extends React.Component {
         contentWidth="320"
         isArrowDisplayed
         isHeaderDisabled
-        isOpen={utilityPopupIsOpen}
-        onRequestClose={() => this.setState({ utilityPopupIsOpen: false })}
+        isOpen={popupMenuIsOpen}
+        onRequestClose={() => setPopupMenuIsOpen(false)}
         targetAttachment="bottom center"
-        targetRef={() => this.utilityButtonPopupAnchorRef.current}
+        targetRef={() => utilityButtonPopupAnchorRef.current}
       >
         <UtilityMenu
           hero={hero}
           userConfig={userConfig}
-          onSelectSettings={onSelectSettings ? ApplicationNavigation.generateMenuClosingCallback(this, 'onSelectSettings') : undefined}
-          onSelectHelp={onSelectHelp ? ApplicationNavigation.generateMenuClosingCallback(this, 'onSelectHelp') : undefined}
-          onSelectLogout={onSelectLogout ? ApplicationNavigation.generateMenuClosingCallback(this, 'onSelectLogout') : undefined}
+          onSelectSettings={onSelectSettings ? generateMenuClosingCallback(onSelectSettings) : undefined}
+          onSelectHelp={onSelectHelp ? generateMenuClosingCallback(onSelectHelp) : undefined}
+          onSelectLogout={onSelectLogout ? generateMenuClosingCallback(onSelectLogout) : undefined}
           utilityItems={utilityItems}
-          onSelectUtilityItem={onSelectUtilityItem ? ApplicationNavigation.generateMenuClosingCallback(this, 'onSelectUtilityItem') : undefined}
+          onSelectUtilityItem={onSelectUtilityItem ? generateMenuClosingCallback(onSelectUtilityItem) : undefined}
         />
       </Popup>
     );
   }
 
-  renderHeader() {
-    const {
-      titleConfig,
-      navigationItems,
-      navigationRenderFunction,
-      extensionItems,
-      onSelectExtensionItem,
-      activeBreakpoint,
-      activeNavigationItemKey,
-      userConfig,
-      notifications,
-    } = this.props;
-    if (shouldRenderCompactNavigation(activeBreakpoint)) {
-      return (
-        <CompactHeader
-          activeBreakpoint={activeBreakpoint}
-          titleConfig={titleConfig}
-          extensionItems={extensionItems}
-          onSelectExtensionItem={onSelectExtensionItem}
-          navigationItems={navigationItems}
-          onSelectMenuButton={this.handleMenuToggle}
-          onSelectSkipToContent={this.handleSkipToContent}
-          notifications={notifications}
-        />
-      );
-    }
+  function renderCompactHeader() {
+    return (
+      <CompactHeader
+        activeBreakpoint={activeBreakpoint}
+        titleConfig={titleConfig}
+        extensionItems={extensionItems}
+        onSelectExtensionItem={onSelectExtensionItem}
+        navigationItems={navigationItems}
+        onSelectMenuButton={() => setDrawerMenuIsOpen(true)}
+        onSelectSkipToContent={focusMainContent}
+        notifications={notifications}
+      />
+    );
+  }
 
+  function renderHeader() {
     return (
       <Header
         activeBreakpoint={activeBreakpoint}
@@ -342,69 +240,109 @@ class ApplicationNavigation extends React.Component {
         navigationItems={navigationItems}
         navigationRenderFunction={navigationRenderFunction}
         activeNavigationItemKey={activeNavigationItemKey}
-        onSelectNavigationItem={this.handleNavigationItemSelection}
-        onMenuToggle={this.handleMenuToggle}
+        onSelectNavigationItem={onSelectNavigationItem}
         userConfig={userConfig}
-        onSelectSkipToContent={this.handleSkipToContent}
+        onSelectSkipToContent={focusMainContent}
         notifications={notifications}
-        utilityButtonPopupAnchorRef={this.utilityButtonPopupAnchorRef}
-        onSelectUtilityButton={() => {
-          this.setState({
-            utilityPopupIsOpen: true,
-          });
-        }}
+        utilityButtonPopupAnchorRef={utilityButtonPopupAnchorRef}
+        onSelectUtilityButton={() => setPopupMenuIsOpen(true)}
       />
     );
   }
 
-  render() {
-    const { children } = this.props;
-    const { drawerMenuIsOpen } = this.state;
+  /**
+   * This effect is used to execute callbacks from the drawer and popup
+   * menus after they are closed. This is similar to executing the callbacks
+   * in a setState callback for the menu state, but setState callbacks do not
+   * exist for the useState hook.
+   */
+  useEffect(() => {
+    if (closeMenuCallbackRef.current) {
+      closeMenuCallbackRef.current();
+      closeMenuCallbackRef.current = undefined;
+    }
+  });
 
-    /**
-     * The drawer menu display is reset to ensure drawer menu will be visible if the menu is being presented.
-     * If it's not being opened, the display will be immediately hidden when the drawer menu is rendered.
-     */
-    if (this.drawerMenuRef.current && drawerMenuIsOpen) {
-      this.drawerMenuRef.current.style.display = '';
+  /**
+   * This layout effect is used to manage the visibility of the drawer menu during
+   * its transition animation. The drawer menu should not be hidden until its transition to
+   * a closed state completes. drawerMenuIsVisibleRef is used keep track of this
+   * visibility state separate from the drawerMenuIsOpen state managed by the component during
+   * each render.
+   */
+  useLayoutEffect(() => {
+    if (!contentLayoutRef.current) {
+      return undefined;
     }
 
-    return (
-      <div className={cx('application-navigation')}>
-        <div
-          ref={this.drawerMenuRef}
-          className={cx('drawer-menu-container')}
-          aria-hidden={!drawerMenuIsOpen ? true : null}
-          style={this.drawerMenuIsVisible || drawerMenuIsOpen ? undefined : { display: 'none' }}
-        >
-          {this.renderNavigationMenu()}
-        </div>
-        <div
-          ref={this.contentLayoutRef}
-          className={cx('content-layout', { 'drawer-menu-is-open': drawerMenuIsOpen })}
-          aria-hidden={drawerMenuIsOpen ? true : null}
-        >
-          {this.renderHeader()}
-          <main
-            ref={this.mainContainerRef}
-            tabIndex="-1"
-            className={cx('main-container')}
-          >
-            {children}
-          </main>
-          <Overlay
-            isOpen={drawerMenuIsOpen}
-            isRelativeToContainer
-            backgroundStyle="clear"
-          />
-        </div>
-        {this.renderUtilitiesPopup()}
-      </div>
-    );
+    function cleanupContentTransition(event) {
+      if (event.currentTarget.classList.contains(cx('drawer-menu-is-open'))) {
+        drawerMenuIsVisibleRef.current = true;
+      } else {
+        drawerMenuRef.current.style.display = 'none';
+        drawerMenuIsVisibleRef.current = false;
+      }
+    }
+
+    contentLayoutRef.current.addEventListener('transitionend', cleanupContentTransition);
+
+    return () => {
+      contentLayoutRef.current.addEventListener('transitionend', cleanupContentTransition);
+    };
+  }, [contentLayoutRef.current]);
+
+  /**
+   * If the ApplicationNavigation is rendering at non-compact breakpoints, and the drawer menu is still
+   * open, then it is closed here. This will trigger an new render after this render completes.
+   */
+  if (drawerMenuIsOpen && !shouldRenderCompactNavigation(activeBreakpoint)) {
+    setDrawerMenuIsOpen(false);
   }
-}
+
+  /**
+   * The drawer menu's inline display style is reset to ensure the drawer menu will be visible if the drawer menu
+   * is animating into view. The drawerMenuRef's inline display style will be set below if the drawer menu is
+   * either closed or otherwise should not be visible.
+   */
+  if (drawerMenuRef.current && drawerMenuIsOpen) {
+    drawerMenuRef.current.style.display = '';
+  }
+
+  return (
+    <div className={cx('application-navigation')}>
+      <div
+        ref={drawerMenuRef}
+        className={cx('drawer-menu-container')}
+        aria-hidden={!drawerMenuIsOpen ? true : null}
+        style={!drawerMenuIsVisibleRef.current && !drawerMenuIsOpen ? { display: 'none' } : undefined}
+      >
+        {renderDrawerMenu()}
+      </div>
+      <div
+        ref={contentLayoutRef}
+        className={cx('content-layout', { 'drawer-menu-is-open': drawerMenuIsOpen })}
+        aria-hidden={drawerMenuIsOpen ? true : null}
+      >
+        {shouldRenderCompactNavigation(activeBreakpoint) ? renderCompactHeader() : renderHeader()}
+        <main
+          ref={mainContainerRef}
+          tabIndex="-1"
+          className={cx('main-container')}
+        >
+          {children}
+        </main>
+        <Overlay
+          isOpen={drawerMenuIsOpen}
+          isRelativeToContainer
+          backgroundStyle="clear"
+        />
+      </div>
+      {renderPopupMenu()}
+    </div>
+  );
+};
 
 ApplicationNavigation.propTypes = propTypes;
 ApplicationNavigation.defaultProps = defaultProps;
 
-export default Breakpoints.withActiveBreakpoint(ApplicationNavigation);
+export default ApplicationNavigation;
