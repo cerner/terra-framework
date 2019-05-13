@@ -4,7 +4,8 @@ Changelog
 Unreleased
 ----------
 ### Fixed
-* Updated notification-dialog max-width for IE.
+* Updated max-width to be `49%` for screen size greater than 768px.
+* Updated wdio snapshot to fix test failures.
 
 ### Fixed
 * Updated jest snapshot to fix test failures
