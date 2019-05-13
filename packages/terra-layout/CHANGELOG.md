@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.0.0 - (May 13, 2019)
+------------------
 ### Breaking Changes
 * Update react-router-dom peerDependency to latest stable major release
 * Updated tabbable dependency to ^4.0.0
