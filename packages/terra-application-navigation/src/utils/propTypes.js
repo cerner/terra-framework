@@ -21,32 +21,32 @@ const navigationItemsPropType = PropTypes.arrayOf(PropTypes.shape({
    */
   key: PropTypes.string.isRequired,
   /**
-   * Object to be returned in the onSelect
-   */
-  metaData: PropTypes.object,
-  /**
    * Text display and/or aria-label
    */
   text: PropTypes.string.isRequired,
+  /**
+   * Object to be returned in the onSelect
+   */
+  metaData: PropTypes.object,
 }));
 
 const utilityItemsPropType = PropTypes.arrayOf(PropTypes.shape({
-  /**
-   * Icon to be rendered
-   */
-  icon: PropTypes.element,
   /**
    * Key used as react key, and returned in the onSelect
    */
   key: PropTypes.string.isRequired,
   /**
-   * Object to be returned in the onSelect
+   * Icon to be rendered
    */
-  metaData: PropTypes.object,
+  icon: PropTypes.element,
   /**
    * Text display and/or aria-label
    */
   text: PropTypes.string.isRequired,
+  /**
+   * Object to be returned in the onSelect
+   */
+  metaData: PropTypes.object,
 }));
 
 /**
@@ -54,21 +54,21 @@ const utilityItemsPropType = PropTypes.arrayOf(PropTypes.shape({
  */
 const extensionItemsPropType = PropTypes.arrayOf(PropTypes.shape({
   /**
-   * Icon to be rendered
-   */
-  icon: PropTypes.element.isRequired,
-  /**
    * Key matching the notification key, used as react key, and returned in the onSelect
    */
   key: PropTypes.string.isRequired,
   /**
-   * Object to be returned in the onSelect
+   * Icon to be rendered
    */
-  metaData: PropTypes.object,
+  icon: PropTypes.element.isRequired,
   /**
    * Text display and/or aria-label
    */
   text: PropTypes.string.isRequired,
+  /**
+   * Object to be returned in the onSelect
+   */
+  metaData: PropTypes.object,
 }));
 
 export default {

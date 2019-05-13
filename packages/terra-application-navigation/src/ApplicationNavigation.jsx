@@ -39,7 +39,7 @@ const propTypes = {
    * A function to be executed upon the selection of an extensions item.
    * Ex: `onSelectExtensionsItem(String selectedUtilityItemKey, Object metaData)`
    */
-  onSelectExtensionItem: PropTypes.func, // eslint-disable-line react/no-unused-prop-types
+  onSelectExtensionItem: PropTypes.func,
   /**
    * A configuration object with information pertaining to the application's user.
    */
@@ -66,7 +66,7 @@ const propTypes = {
    * A function to be executed upon the selection of a navigation item.
    * Ex: `onSelectNavigationItem(String selectedNavigationItemKey, Object metaData)`
    */
-  onSelectNavigationItem: PropTypes.func, // eslint-disable-line react/no-unused-prop-types
+  onSelectNavigationItem: PropTypes.func,
   /**
    * A function to be executed upon the selection of the Settings utility item.
    * If `onSelectSettings` is not provided, the Settings utility item will not be rendered.
@@ -94,7 +94,7 @@ const propTypes = {
    * A function to be executed upon the selection of a custom utility item.
    * Ex: `onSelectUtilityItem(String selectedUtilityItemKey, Object metaData)`
    */
-  onSelectUtilityItem: PropTypes.func, // eslint-disable-line react/no-unused-prop-types
+  onSelectUtilityItem: PropTypes.func,
   /**
    * A collection of child elements to render within the ApplicationNavigation body.
    */
@@ -277,6 +277,7 @@ const ApplicationNavigation = ({
 
     function cleanupContentTransition(event) {
       if (event.currentTarget.classList.contains(cx('drawer-menu-is-open'))) {
+        drawerMenuRef.current.removeAttribute('style');
         drawerMenuIsVisibleRef.current = true;
       } else {
         drawerMenuRef.current.style.display = 'none';
@@ -287,7 +288,7 @@ const ApplicationNavigation = ({
     contentLayoutRef.current.addEventListener('transitionend', cleanupContentTransition);
 
     return () => {
-      contentLayoutRef.current.addEventListener('transitionend', cleanupContentTransition);
+      contentLayoutRef.current.removeEventListener('transitionend', cleanupContentTransition);
     };
   }, [contentLayoutRef.current]);
 
