@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.11.0 - (May 13, 2019)
+------------------
 ### Added
 * Included documentation regarding consumption and dependency management
 
