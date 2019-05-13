@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Field from 'terra-form-field';
 import DatePicker from './DatePicker';
 
-
 const propTypes = {
   /**
    * The DatePicker identifier. Links the htmlFor of the field to the select identifier.
@@ -190,6 +189,11 @@ const DatePickerField = (props) => {
     }
   }
 
+  let mergedInputAttrs = inputAttributes;
+  if (ariaDescriptionIds) {
+    mergedInputAttrs = Object.assign({ 'aria-describedby': ariaDescriptionIds }, inputAttributes);
+  }
+
   return (
     <Field
       {...customProps}
@@ -209,7 +213,7 @@ const DatePickerField = (props) => {
       <DatePicker
         disabled={disabled}
         id={datePickerId}
-        inputAttribute={inputAttributes}
+        inputAttribute={mergedInputAttrs}
         excludeDates={excludeDates}
         filterDate={filterDate}
         includeDates={includeDates}
@@ -222,7 +226,6 @@ const DatePickerField = (props) => {
         onSelect={onSelect}
         required={required}
         selectedDate={selectedDate}
-        aria-describedby={ariaDescriptionIds}
       />
     </Field>
   );

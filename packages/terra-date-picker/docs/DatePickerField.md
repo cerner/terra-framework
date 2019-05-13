@@ -9,7 +9,6 @@
   - `npm install terra-date-picker`
   - `yarn add terra-date-picker`
 
-
 ## Implementation Notes:
 DatePickerField is required to be composed inside the [Base](https://github.com/cerner/terra-core/tree/master/packages/terra-base/docs) component with locale in order for it to load the correct date format and translation strings.
 
