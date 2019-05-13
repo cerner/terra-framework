@@ -217,13 +217,10 @@ const ApplicationNavigation = ({
 
   function renderCompactHeader() {
     let navTitleConfig;
-    if (activeNavigationItemKey && navigationItems.length) {
-      for (let i = 0; i < navigationItems.length; i += 1) {
-        const item = navigationItems[i];
-        if (item.key === activeNavigationItemKey) {
-          navTitleConfig = { title: item.text };
-          break;
-        }
+    if (activeNavigationItemKey && navigationItems && navigationItems.length) {
+      const item = navigationItems.find(navItem => navItem.key === activeNavigationItemKey);
+      if (item) {
+        navTitleConfig = { title: item.text };
       }
     }
 
