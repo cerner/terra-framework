@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Corrected slide panel's dom ordering
 
 3.5.0 - (April 24, 2019)
 ------------------

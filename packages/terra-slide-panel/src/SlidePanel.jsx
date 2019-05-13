@@ -92,6 +92,26 @@ class SlidePanel extends React.Component {
       customProps.className,
     ]);
 
+    const content = (panelPosition === 'start') ? (
+      <React.Fragment>
+        <div className={cx(['panel'])} tabIndex="-1" aria-hidden={!isOpen ? 'true' : 'false'} ref={this.setPanelNode}>
+          {panelContent}
+        </div>
+        <div className={cx('main')} tabIndex="-1" ref={this.mainNode}>
+          {mainContent}
+        </div>
+      </React.Fragment>
+    ) : (
+      <React.Fragment>
+        <div className={cx('main')} tabIndex="-1" ref={this.mainNode}>
+          {mainContent}
+        </div>
+        <div className={cx(['panel'])} tabIndex="-1" aria-hidden={!isOpen ? 'true' : 'false'} ref={this.setPanelNode}>
+          {panelContent}
+        </div>
+      </React.Fragment>
+    );
+
     return (
       <div
         {...customProps}
@@ -100,12 +120,7 @@ class SlidePanel extends React.Component {
         data-slide-panel-panel-position={panelPosition}
         data-slide-panel-panel-size={panelSize}
       >
-        <div className={cx('main')} tabIndex="-1" ref={this.mainNode}>
-          {mainContent}
-        </div>
-        <div className={cx(['panel'])} tabIndex="-1" aria-hidden={!isOpen ? 'true' : 'false'} ref={this.setPanelNode}>
-          {panelContent}
-        </div>
+        {content}
       </div>
     );
   }
