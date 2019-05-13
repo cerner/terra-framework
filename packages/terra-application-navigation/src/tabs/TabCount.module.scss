@@ -22,9 +22,9 @@
     color: rgba(17, 22, 25, 1);
     flex: 0 0 auto;
     font-size: 0.7143rem;
-    line-height: 1.4; // todo: need to determine how to handle this.
+    line-height: 1.4;
     margin: 0;
-    padding: 0 0.4286rem;
+    padding: 0.1429rem 0.3571rem;
   }
 
   .is-inline {
@@ -35,7 +35,7 @@
     color: rgba(17, 22, 25, 0.7);
     font-size: 0.8571rem;
     font-weight: normal;
-    padding: 0.2857rem 0.5rem;
+    padding: 0.2143rem 0.4286rem;
     flex: 0 0 auto;
   }
 }
