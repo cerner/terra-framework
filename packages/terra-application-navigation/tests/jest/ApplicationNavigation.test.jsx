@@ -1,18 +1,42 @@
 import React from 'react';
+import { Breakpoints } from 'terra-application';
 import ApplicationNavigation from '../../src/ApplicationNavigation';
 
 describe('ApplicationNavigation', () => {
+  let reactUseContext;
+  let breakpointContextValue;
+
+  beforeAll(() => {
+    /**
+     * Until Enzyme is updated with full support for hooks, we need to
+     * mock out the useContext implementation.
+     */
+    reactUseContext = React.useContext;
+    React.useContext = (contextValue) => {
+      if (Breakpoints.ActiveBreakpointContext === contextValue) {
+        return breakpointContextValue;
+      }
+      return reactUseContext(contextValue);
+    };
+  });
+
+  afterAll(() => {
+    React.useContext = reactUseContext;
+  });
+
   it('should render default element', () => {
     const shallowComponent = shallow(
-      <ApplicationNavigation.WrappedComponent />,
+      <ApplicationNavigation />,
     );
 
     expect(shallowComponent).toMatchSnapshot();
   });
 
   it('should render with prop data at large breakpoint', () => {
+    breakpointContextValue = 'large';
+
     const shallowComponent = shallow(
-      <ApplicationNavigation.WrappedComponent
+      <ApplicationNavigation
         activeBreakpoint="large"
         titleConfig={{
           title: 'test-title',
@@ -38,16 +62,17 @@ describe('ApplicationNavigation', () => {
         onSelectLogout={jest.fn()}
       >
         <div>test child content</div>
-      </ApplicationNavigation.WrappedComponent>,
+      </ApplicationNavigation>,
     );
 
     expect(shallowComponent).toMatchSnapshot();
   });
 
   it('should render with prop data at medium breakpoint', () => {
-    const shallowComponent = shallow(
-      <ApplicationNavigation.WrappedComponent
-        activeBreakpoint="medium"
+    breakpointContextValue = 'medium';
+
+    const shallowComponent = shallow((
+      <ApplicationNavigation
         titleConfig={{
           title: 'test-title',
         }}
@@ -72,8 +97,8 @@ describe('ApplicationNavigation', () => {
         onSelectLogout={jest.fn()}
       >
         <div>test child content</div>
-      </ApplicationNavigation.WrappedComponent>,
-    );
+      </ApplicationNavigation>
+    ));
 
     expect(shallowComponent).toMatchSnapshot();
   });

@@ -6,12 +6,7 @@ exports[`ApplicationNavigation should render default element 1`] = `
 >
   <div
     aria-hidden={true}
-    className="drawer-menu-container"
-    style={
-      Object {
-        "display": "none",
-      }
-    }
+    className="drawer-menu-container is-hidden"
   />
   <div
     aria-hidden={null}
@@ -19,13 +14,11 @@ exports[`ApplicationNavigation should render default element 1`] = `
   >
     <InjectIntl(Header)
       notifications={Object {}}
-      onMenuToggle={[Function]}
-      onSelectNavigationItem={[Function]}
       onSelectSkipToContent={[Function]}
       onSelectUtilityButton={[Function]}
       utilityButtonPopupAnchorRef={
         Object {
-          "current": null,
+          "current": undefined,
         }
       }
     />
@@ -72,12 +65,7 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
 >
   <div
     aria-hidden={true}
-    className="drawer-menu-container"
-    style={
-      Object {
-        "display": "none",
-      }
-    }
+    className="drawer-menu-container is-hidden"
   />
   <div
     aria-hidden={null}
@@ -111,9 +99,8 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
           "my-test-key-1": 3,
         }
       }
-      onMenuToggle={[Function]}
       onSelectExtensionItem={[MockFunction]}
-      onSelectNavigationItem={[Function]}
+      onSelectNavigationItem={[MockFunction]}
       onSelectSkipToContent={[Function]}
       onSelectUtilityButton={[Function]}
       titleConfig={
@@ -131,7 +118,7 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
       }
       utilityButtonPopupAnchorRef={
         Object {
-          "current": null,
+          "current": undefined,
         }
       }
     />
@@ -209,12 +196,7 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
 >
   <div
     aria-hidden={true}
-    className="drawer-menu-container"
-    style={
-      Object {
-        "display": "none",
-      }
-    }
+    className="drawer-menu-container is-hidden"
   >
     <FocusTrap
       _createFocusTrap={[Function]}
