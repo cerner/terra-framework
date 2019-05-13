@@ -2,7 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
 import KeyCode from 'keycode-js';
+import 'mutationobserver-shim';
+import './_matches-polyfill';
 import ModalContent from './_ModalContent';
+
+// Importing WICG Inert polyfill causes Jest to crash
+// Issue logged to Jest repo: https://github.com/facebook/jest/issues/8373
+// This logic avoids importing the polyfill when running Jest tests
+if (process.env.NODE_ENV !== 'test') {
+  // eslint-disable-next-line global-require
+  require('wicg-inert');
+}
 
 const zIndexes = ['6000', '7000', '8000', '9000'];
 
@@ -31,20 +41,6 @@ const propTypes = {
    * If set to true, the modal will close when a mouseclick is triggered outside the modal.
    */
   closeOnOutsideClick: PropTypes.bool,
-  /**
-   * Element to fallback focus on if the FocusTrap can not find any focusable elements. Valid values are a valid
-   * dom selector string that is passed into document.querySelector or a function
-   * that returns a dom element. If using a dom selector, ensure that the query works for all browsers with
-   * the document.querySelector method.
-   */
-  fallbackFocus: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-  ]),
-  /**
-   * If set to true, the modal will trap the focus and prevents any popup within the modal from gaining focus.
-   */
-  isFocused: PropTypes.bool,
   /**
    * If set to true, the modal will be fullscreen on all breakpoint sizes.
    */
@@ -76,7 +72,6 @@ const defaultProps = {
   classNameOverlay: null,
   closeOnEsc: true,
   closeOnOutsideClick: true,
-  isFocused: true,
   isFullscreen: false,
   role: 'dialog',
   rootSelector: '#root',
@@ -86,39 +81,73 @@ const defaultProps = {
 class AbstractModal extends React.Component {
   constructor() {
     super();
+    this.state = {
+      modalTrigger: undefined,
+    };
     this.handleKeydown = this.handleKeydown.bind(this);
+    this.showModalDomUpdates = this.showModalDomUpdates.bind(this);
+    this.hideModalDomUpdates = this.hideModalDomUpdates.bind(this);
+    this.modalElement = React.createRef();
   }
 
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeydown);
+
+    if (this.props.isOpen) {
+      this.showModalDomUpdates();
+    }
   }
 
   componentDidUpdate(prevProps) {
-    // When the Modal is no longer in focus, it should no longer listen to the keydown event to handle the Escape key.
-    // Otherwise, the Modal would also get closed when the intention for pressing the Escape key is to close a popup inside the modal.
-    if (!this.props.isFocused && prevProps.isFocused) {
-      document.removeEventListener('keydown', this.handleKeydown);
-    } else if (this.props.isFocused && !prevProps.isFocused) {
-      document.addEventListener('keydown', this.handleKeydown);
+    if (this.props.isOpen) {
+      if (!prevProps.isOpen) {
+        this.showModalDomUpdates();
+      }
+    } else if (prevProps.isOpen) {
+      this.hideModalDomUpdates();
     }
   }
 
   componentWillUnmount() {
     document.removeEventListener('keydown', this.handleKeydown);
-    this.toggleVisuallyHiddenMainDocument('false');
+    this.hideModalDomUpdates();
   }
 
-  handleKeydown(e) {
-    if (e.keyCode === KeyCode.KEY_ESCAPE && this.props.isOpen && this.props.closeOnEsc && this.props.isFocused) {
-      this.props.onRequestClose();
+  showModalDomUpdates() {
+    const mainDocumentElement = document.querySelector(this.props.rootSelector);
+    // Store element that was last focused prior to modal opening
+    this.setState({ modalTrigger: document.activeElement });
+
+    if (mainDocumentElement) {
+      mainDocumentElement.setAttribute('inert', '');
+      // Shift focus to modal when opened
+      this.modalElement.current.focus();
     }
   }
 
-  toggleVisuallyHiddenMainDocument(hiddenValue) {
+  hideModalDomUpdates() {
     const mainDocumentElement = document.querySelector(this.props.rootSelector);
 
     if (mainDocumentElement) {
-      mainDocumentElement.setAttribute('aria-hidden', hiddenValue);
+      mainDocumentElement.removeAttribute('inert');
+    }
+
+    setTimeout(() => {
+      if (this.state.modalTrigger) {
+        // Shift focus back to element that was last focused prior to opening the modal
+        this.state.modalTrigger.focus();
+      }
+    }, 0); // Allows inert processing to finish before shifting focus back
+  }
+
+  handleKeydown(e) {
+    const body = document.querySelector('body');
+    if (e.keyCode === KeyCode.KEY_ESCAPE && this.props.isOpen && this.props.closeOnEsc) {
+      if (this.modalElement.current) {
+        if (e.target === this.modalElement.current || this.modalElement.current.contains(e.target) || e.target === body) {
+          this.props.onRequestClose();
+        }
+      }
     }
   }
 
@@ -130,8 +159,6 @@ class AbstractModal extends React.Component {
       classNameOverlay,
       closeOnEsc,
       closeOnOutsideClick,
-      fallbackFocus,
-      isFocused,
       isFullscreen,
       isOpen,
       role,
@@ -142,11 +169,8 @@ class AbstractModal extends React.Component {
     } = this.props;
 
     if (!isOpen) {
-      this.toggleVisuallyHiddenMainDocument('false');
       return null;
     }
-    this.toggleVisuallyHiddenMainDocument('true');
-
 
     return (
       <Portal
@@ -159,12 +183,11 @@ class AbstractModal extends React.Component {
           classNameModal={classNameModal}
           classNameOverlay={classNameOverlay}
           role={role}
-          fallbackFocus={fallbackFocus}
-          isFocused={isFocused}
           isFullscreen={isFullscreen}
           onRequestClose={onRequestClose}
           zIndex={zIndex}
           aria-modal="true"
+          ref={this.modalElement}
         >
           {children}
         </ModalContent>

@@ -45,20 +45,10 @@ const propTypes = {
    * Whether the clarification is disabled.
    */
   disabled: PropTypes.bool,
-  /**
-   * Callback function to let the containing component (e.g. modal) to regain focus.
-   */
-  releaseFocus: PropTypes.func,
-  /**
-   * Callback function to request focus from the containing component (e.g. modal).
-   */
-  requestFocus: PropTypes.func,
 };
 
 const defaultProps = {
   disabled: false,
-  releaseFocus: undefined,
-  requestFocus: undefined,
 };
 
 const contextTypes = {
@@ -80,28 +70,6 @@ class TimeClarification extends React.Component {
 
     this.handleDaylightSavingButtonClick = this.handleDaylightSavingButtonClick.bind(this);
     this.handleStandardTimeButtonClick = this.handleStandardTimeButtonClick.bind(this);
-  }
-
-  componentDidMount() {
-    if (this.props.isOpen && this.props.requestFocus) {
-      this.props.requestFocus();
-    }
-  }
-
-  componentDidUpdate() {
-    if (this.props.isOpen) {
-      if (this.props.requestFocus) {
-        this.props.requestFocus();
-      }
-    } else if (this.props.releaseFocus) {
-      this.props.releaseFocus();
-    }
-  }
-
-  componentWillUnmount() {
-    if (this.props.releaseFocus) {
-      this.props.releaseFocus();
-    }
   }
 
   handleDaylightSavingButtonClick(event) {

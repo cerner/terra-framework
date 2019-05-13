@@ -3,8 +3,10 @@ Changelog
 
 Unreleased
 ----------
-### Added
-* Added DatePickerField
+### Breaking Changes
+* Removed `releaseFocus` prop
+* Removed `requestFocus` prop
+* Removed `onInputFocus` prop in favor of the added `onFocus` prop.
 
 ### Changed
 * Changed the parameter in filterDate prop from a moment object to an ISO string.
@@ -12,10 +14,10 @@ Unreleased
 * Change the onBlur event to get triggered only when the entire date picker component loses focus.
 
 ### Added
+* Component specific handling for pressing Escape key to close the Date Picker
+* Added focus trap to date-picker
 * Added 'onFocus' prop since 'preventOpenOnFocus' can be used to prevent picker from opening on focus.
-
-### Removed
-* Removed 'onInputFocus' prop in favor of the added 'onFocus' prop.
+* Added DatePickerField
 
 3.15.0 - (May 7, 2019)
 ------------------
@@ -29,6 +31,7 @@ Unreleased
 ------------------
 ### Changed
 * Limited the characters that could be used in terra-date-picker to numeric, '.', and '/'.
+* The date picker now renders in a react portal on narrow screens
 * Moved packages we use solely in doc examples and tests to devDependencies
 
 3.13.0 - (April 16, 2019)

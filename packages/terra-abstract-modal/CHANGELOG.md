@@ -3,6 +3,14 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Changes
+* Removed focus-trap from abstract modal
+* Replaced with functionality that will disable focus on elements outside of the modal (not including content rendered from the modal in a portal)
+* Removed `isFocused` prop
+* Removed `fallbackFocus` prop. Focus now always shifts to modal container when opened.
+
+### Added
+* Component specific handling for pressing Escape key to close the abstract modal
 
 2.6.0 - (April 24, 2019)
 ------------------

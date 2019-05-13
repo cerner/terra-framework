@@ -74,14 +74,6 @@ const propTypes = {
    */
   onSelect: PropTypes.func,
   /**
-   * A callback function to let the containing component (e.g. modal) to regain focus.
-   */
-  releaseFocus: PropTypes.func,
-  /**
-   * A callback function to request focus from the containing component (e.g. modal).
-   */
-  requestFocus: PropTypes.func,
-  /**
    * Whether or not the date is required.
    */
   required: PropTypes.bool,
@@ -106,9 +98,7 @@ const defaultProps = {
   onClickOutside: undefined,
   onFocus: undefined,
   onSelect: undefined,
-  releaseFocus: undefined,
   required: false,
-  requestFocus: undefined,
   selectedDate: undefined,
 };
 
@@ -180,7 +170,6 @@ class DatePicker extends React.Component {
 
     this.dateValue = DateUtil.formatISODate(selectedDate, DateUtil.getFormatByLocale(this.context.intl.locale));
     this.isDefaultDateAcceptable = true;
-    this.releaseFocus();
     this.calendarButton.focus();
 
     if (this.props.onSelect) {
@@ -189,20 +178,11 @@ class DatePicker extends React.Component {
   }
 
   handleOnClickOutside(event) {
-    this.releaseFocus();
-
     if (this.props.onClickOutside) {
       this.props.onClickOutside(event);
     }
 
     this.calendarButton.focus();
-  }
-
-  releaseFocus() {
-    // The picker will be dismissed and the focus will be released so that the containing component (e.g. modal) can regain focus.
-    if (this.props.releaseFocus) {
-      this.props.releaseFocus();
-    }
   }
 
   handleBlur(event) {
@@ -327,9 +307,7 @@ class DatePicker extends React.Component {
       onClickOutside,
       onFocus,
       onSelect,
-      requestFocus,
       required,
-      releaseFocus,
       selectedDate,
       ...customProps
     } = this.props;
@@ -362,8 +340,6 @@ class DatePicker extends React.Component {
           <DateInput
             onCalendarButtonClick={this.handleOnCalendarButtonClick}
             inputAttributes={inputAttributes}
-            releaseFocus={releaseFocus}
-            requestFocus={requestFocus}
             shouldShowPicker={!this.isDefaultDateAcceptable && this.state.selectedDate === null}
             onButtonFocus={this.handleFocus}
             buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}
@@ -405,8 +381,6 @@ class DatePicker extends React.Component {
           <DateInput
             onCalendarButtonClick={this.handleOnCalendarButtonClick}
             inputAttributes={inputAttributes}
-            releaseFocus={releaseFocus}
-            requestFocus={requestFocus}
             shouldShowPicker={!this.isDefaultDateAcceptable && this.state.selectedDate === null}
             onButtonFocus={this.handleFocus}
             buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}

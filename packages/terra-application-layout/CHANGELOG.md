@@ -3,7 +3,8 @@ Changelog
 
 Unreleased
 ----------
-### Breaking Change
+### Breaking Changes
+* Consume latest major version bump of terra-popup
 * Removed terra-disclosure-manager dependency
 * Added terra-disclosure-manager peer-dependency
 * Update react-router-dom dependency to latest stable major release

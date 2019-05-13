@@ -26,9 +26,11 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "focus-trap-react": "^6.0.0",
     "moment": "^2.21.0",
     "prop-types": "^15.5.8",
-    "react-onclickoutside": "^6.6.3",
+    "keycode-js": "^1.0.4",
+    "react-onclickoutside": "^6.7.1",
     "react-portal": "^4.1.2",
     "terra-button": "^3.3.0",
     "terra-form-field": "^3.1.0",

@@ -60,8 +60,6 @@ class NotificationDialogWithFocus extends React.Component {
             text: 'Close',
             onClick: this.handleCloseModal,
           }}
-          requestFocus={this.props.disclosureManager.requestFocus}
-          releaseFocus={this.props.disclosureManager.releaseFocus}
         />
         <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} id="trigger-notification-dialog" />
         <Button text="Dismiss" onClick={this.props.disclosureManager.dismiss} id="dismiss-modal" />
@@ -70,8 +68,6 @@ class NotificationDialogWithFocus extends React.Component {
           isOpen={this.state.open}
           onRequestClose={this.handlePopupRequestClose}
           targetRef={() => document.getElementById('popup-in-modal')}
-          releaseFocus={this.props.disclosureManager.releaseFocus}
-          requestFocus={this.props.disclosureManager.requestFocus}
         >
           <Placeholder title="Popup Content" />
         </Popup>

@@ -25,7 +25,7 @@ export default class MonthDropdown extends React.Component {
     ))
 
   renderSelectMode = monthNames => (
-    <select value={this.props.month} className="react-datepicker__month-select" onChange={e => this.onChange(e.target.value)}>
+    <select tabIndex="-1" value={this.props.month} className="react-datepicker__month-select" onChange={e => this.onChange(e.target.value)}>
       {this.renderSelectOptions(monthNames)}
     </select>
   )

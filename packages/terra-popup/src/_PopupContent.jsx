@@ -75,14 +75,6 @@ const propTypes = {
    * The function returning the frame html reference.
    */
   refCallback: PropTypes.func,
-  /**
-   * A callback function to let the containing component (e.g. modal) to regain focus.
-   */
-  releaseFocus: PropTypes.func,
-  /**
-   * A callback function to request focus from the containing component (e.g. modal).
-   */
-  requestFocus: PropTypes.func,
 };
 
 const defaultProps = {
@@ -132,17 +124,8 @@ class PopupContent extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.requestFocus) {
-      this.props.requestFocus();
-    }
     // Value used to verify horizontal resize.
     this.windowWidth = window.innerWidth;
-  }
-
-  componentWillUnmount() {
-    if (this.props.releaseFocus) {
-      this.props.releaseFocus();
-    }
   }
 
   static getContentStyle(height, maxHeight, width, maxWidth, isHeightAutomatic, isWidthAutomatic) {
@@ -192,8 +175,6 @@ class PopupContent extends React.Component {
       onResize,
       onContentResize,
       refCallback,
-      releaseFocus,
-      requestFocus,
       ...customProps
     } = this.props;
 
@@ -226,22 +207,24 @@ class PopupContent extends React.Component {
 
     return (
       <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: true }}>
-        <Hookshot.Content
-          {...customProps}
-          className={contentClassNames}
-          tabIndex={isFocusedDisabled ? null : '0'}
-          data-terra-popup-content
-          onContentResize={(isHeightAutomatic || isWidthAutomatic) ? onContentResize : undefined}
-          onEsc={onRequestClose}
-          onResize={this.handleOnResize}
-          refCallback={refCallback}
-          role="dialog"
-        >
-          {arrowContent}
-          <div {...heightData} {...widthData} className={innerClassNames} style={contentStyle}>
-            {content}
-          </div>
-        </Hookshot.Content>
+        <div>
+          <Hookshot.Content
+            {...customProps}
+            className={contentClassNames}
+            tabIndex={isFocusedDisabled ? null : '0'}
+            data-terra-popup-content
+            onContentResize={(isHeightAutomatic || isWidthAutomatic) ? onContentResize : undefined}
+            onEsc={onRequestClose}
+            onResize={this.handleOnResize}
+            refCallback={refCallback}
+            role="dialog"
+          >
+            {arrowContent}
+            <div {...heightData} {...widthData} className={innerClassNames} style={contentStyle}>
+              {content}
+            </div>
+          </Hookshot.Content>
+        </div>
       </FocusTrap>
     );
   }
