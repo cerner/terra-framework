@@ -11,69 +11,70 @@ exports[`PopupContent Prop Tests with default props matches the snapshot 1`] = `
     }
   }
   paused={false}
-  tag="div"
 >
-  <OnClickOutside(HookshotContent)
-    className="content"
-    data-terra-popup-content={true}
-    eventTypes={
-      Array [
-        "mousedown",
-        "touchstart",
-      ]
-    }
-    excludeScrollbar={false}
-    intl={
-      Object {
-        "defaultFormats": Object {},
-        "defaultLocale": "en",
-        "formatDate": [Function],
-        "formatHTMLMessage": [Function],
-        "formatMessage": [Function],
-        "formatNumber": [Function],
-        "formatPlural": [Function],
-        "formatRelative": [Function],
-        "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
-          "getDateTimeFormat": [Function],
-          "getMessageFormat": [Function],
-          "getNumberFormat": [Function],
-          "getPluralFormat": [Function],
-          "getRelativeFormat": [Function],
-        },
-        "locale": "en",
-        "messages": null,
-        "now": [Function],
-        "onError": [Function],
-        "textComponent": "span",
-        "timeZone": null,
+  <div>
+    <OnClickOutside(HookshotContent)
+      className="content"
+      data-terra-popup-content={true}
+      eventTypes={
+        Array [
+          "mousedown",
+          "touchstart",
+        ]
       }
-    }
-    onEsc={[MockFunction]}
-    onResize={[Function]}
-    outsideClickIgnoreClass="ignore-react-onclickoutside"
-    preventDefault={false}
-    role="dialog"
-    stopPropagation={false}
-    tabIndex="0"
-  >
-    <div
-      className="inner"
-      style={
+      excludeScrollbar={false}
+      intl={
         Object {
-          "height": "640px",
-          "width": "640px",
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
         }
       }
+      onEsc={[MockFunction]}
+      onResize={[Function]}
+      outsideClickIgnoreClass="ignore-react-onclickoutside"
+      preventDefault={false}
+      role="dialog"
+      stopPropagation={false}
+      tabIndex="0"
     >
       <div
-        key=".0"
+        className="inner"
+        style={
+          Object {
+            "height": "640px",
+            "width": "640px",
+          }
+        }
       >
-        children node(s)
+        <div
+          key=".0"
+        >
+          children node(s)
+        </div>
       </div>
-    </div>
-  </OnClickOutside(HookshotContent)>
+    </OnClickOutside(HookshotContent)>
+  </div>
 </FocusTrap>
 `;
 
@@ -197,7 +198,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
       }
     }
     paused={false}
-    tag="div"
   >
     <div>
       <OnClickOutside(HookshotContent)
@@ -582,86 +582,87 @@ exports[`PopupContent Prop Tests with header matches the shallow snapshot 1`] = 
     }
   }
   paused={false}
-  tag="div"
 >
-  <OnClickOutside(HookshotContent)
-    className="content"
-    data-terra-popup-content={true}
-    eventTypes={
-      Array [
-        "mousedown",
-        "touchstart",
-      ]
-    }
-    excludeScrollbar={false}
-    intl={
-      Object {
-        "defaultFormats": Object {},
-        "defaultLocale": "en",
-        "formatDate": [Function],
-        "formatHTMLMessage": [Function],
-        "formatMessage": [Function],
-        "formatNumber": [Function],
-        "formatPlural": [Function],
-        "formatRelative": [Function],
-        "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
-          "getDateTimeFormat": [Function],
-          "getMessageFormat": [Function],
-          "getNumberFormat": [Function],
-          "getPluralFormat": [Function],
-          "getRelativeFormat": [Function],
-        },
-        "locale": "en",
-        "messages": null,
-        "now": [Function],
-        "onError": [Function],
-        "textComponent": "span",
-        "timeZone": null,
+  <div>
+    <OnClickOutside(HookshotContent)
+      className="content"
+      data-terra-popup-content={true}
+      eventTypes={
+        Array [
+          "mousedown",
+          "touchstart",
+        ]
       }
-    }
-    onEsc={[MockFunction]}
-    onResize={[Function]}
-    outsideClickIgnoreClass="ignore-react-onclickoutside"
-    preventDefault={false}
-    refCallback={[MockFunction]}
-    role="dialog"
-    stopPropagation={false}
-    tabIndex="0"
-  >
-    <div
-      className="inner is-full-screen"
-      style={
+      excludeScrollbar={false}
+      intl={
         Object {
-          "height": "640px",
-          "width": "640px",
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
         }
       }
+      onEsc={[MockFunction]}
+      onResize={[Function]}
+      outsideClickIgnoreClass="ignore-react-onclickoutside"
+      preventDefault={false}
+      refCallback={[MockFunction]}
+      role="dialog"
+      stopPropagation={false}
+      tabIndex="0"
     >
-      <ContentContainer
-        fill={true}
-        header={
-          <div
-            className="header"
-          >
-            <FormattedMessage
-              id="Terra.popup.header.close"
-              values={Object {}}
-            >
-              [Function]
-            </FormattedMessage>
-          </div>
+      <div
+        className="inner is-full-screen"
+        style={
+          Object {
+            "height": "640px",
+            "width": "640px",
+          }
         }
       >
-        <div
-          key=".0"
+        <ContentContainer
+          fill={true}
+          header={
+            <div
+              className="header"
+            >
+              <FormattedMessage
+                id="Terra.popup.header.close"
+                values={Object {}}
+              >
+                [Function]
+              </FormattedMessage>
+            </div>
+          }
         >
-          children node(s)
-        </div>
-      </ContentContainer>
-    </div>
-  </OnClickOutside(HookshotContent)>
+          <div
+            key=".0"
+          >
+            children node(s)
+          </div>
+        </ContentContainer>
+      </div>
+    </OnClickOutside(HookshotContent)>
+  </div>
 </FocusTrap>
 `;
 

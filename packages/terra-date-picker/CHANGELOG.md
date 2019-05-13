@@ -3,15 +3,33 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Changes
+* Removed `releaseFocus` prop
+* Removed `requestFocus` prop
+* Removed `onInputFocus` prop in favor of the added `onFocus` prop.
+* Changed the parameter in filterDate prop from a moment object to an ISO string.
+* Honor min/max range when only either minDate or maxDate is set.
+* Change the onBlur event to get triggered only when the entire date picker component loses focus.
+
+### Added
+* Component specific handling for pressing Escape key to close the Date Picker
+* Added focus trap to date-picker
+* Added 'onFocus' prop since 'preventOpenOnFocus' can be used to prevent picker from opening on focus.
+
+3.15.0 - (May 7, 2019)
+------------------
+### Changed
+* Allow same day change to trigger onChange.
+
+### Fixed
+* Fixed crash when selectedDate prop is set to a string or empty string that is not ISO compliant and unable to convert to a valid moment object.
 
 3.14.0 - (April 24, 2019)
 ------------------
 ### Changed
 * Limited the characters that could be used in terra-date-picker to numeric, '.', and '/'.
+* The date picker now renders in a react portal on narrow screens
 * Moved packages we use solely in doc examples and tests to devDependencies
-
-### Fixed
-* Fixed crash when selectedDate prop is set to a string or empty string that is not ISO compliant and unable to convert to a valid moment object.
 
 3.13.0 - (April 16, 2019)
 ------------------

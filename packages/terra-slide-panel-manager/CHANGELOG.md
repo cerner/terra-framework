@@ -3,10 +3,19 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Change
+* Removed terra-disclosure-manager dependency
+* Added terra-disclosure-manager peer-dependency
+
+4.13.0 - (May 7, 2019)
+------------------
+### Changed
+* Minor dependency update
 
 4.12.0 - (April 24, 2019)
 ------------------
 ### Changed
+* Removed usage of `requestFocus` and `releaseFocus` from Slide Panel Manager test files
 * Moved packages we use solely in doc examples and tests to devDependencies
 
 4.11.0 - (April 18, 2019)

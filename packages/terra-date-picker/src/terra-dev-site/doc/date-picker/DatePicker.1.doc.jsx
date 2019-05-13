@@ -20,8 +20,6 @@ import DatePickerMinMax from '../example/DatePickerMinMax';
 import DatePickerMinMaxSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DatePickerMinMax';
 import DatePickerDefaultDate from '../example/DatePickerDefaultDate';
 import DatePickerDefaultDateSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DatePickerDefaultDate';
-import DatePickerInsideModal from '../example/DatePickerInsideModal';
-import DatePickerInsideModalSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DatePickerInsideModal';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
@@ -59,11 +57,6 @@ const DocPage = () => (
         title: 'Default Date',
         example: <DatePickerDefaultDate />,
         source: DatePickerDefaultDateSrc,
-      },
-      {
-        title: 'Presented Inside Modal',
-        example: <DatePickerInsideModal />,
-        source: DatePickerInsideModalSrc,
       },
     ]}
     propsTables={[

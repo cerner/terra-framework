@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AbstractModal from 'terra-abstract-modal';
+import FocusTrap from 'focus-trap-react';
+import KeyCode from 'keycode-js';
 import Button from 'terra-button';
 import classNames from 'classnames/bind';
 import styles from './NotificationDialog.module.scss';
@@ -63,14 +65,6 @@ const propTypes = {
    * Toggle to show notification-dialog or not.
    */
   isOpen: PropTypes.bool.isRequired,
-  /**
-   * A callback function to let the containing component (e.g. modal) to regain focus.
-   */
-  releaseFocus: PropTypes.func,
-  /**
-   * A callback function to request focus from the containing component (e.g. modal).
-   */
-  requestFocus: PropTypes.func,
 };
 
 const defaultProps = {
@@ -129,25 +123,30 @@ const contextTypes = {
 };
 
 class NotificationDialog extends React.Component {
-  componentDidMount() {
-    if (this.props.isOpen && this.props.requestFocus) {
-      this.props.requestFocus();
-    }
+  constructor(props) {
+    super(props);
+
+    this.handleKeydown = this.handleKeydown.bind(this);
+    this.escapeKey = KeyCode.KEY_ESCAPE;
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.isOpen) {
-      if (!prevProps.isOpen && this.props.requestFocus) {
-        this.props.requestFocus();
-      }
-    } else if (prevProps.isOpen && this.props.releaseFocus) {
-      this.props.releaseFocus();
-    }
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKeydown);
   }
 
   componentWillUnmount() {
-    if (this.props.isOpen && this.props.releaseFocus) {
-      this.props.releaseFocus();
+    document.removeEventListener('keydown', this.handleKeydown);
+  }
+
+  handleKeydown(e) {
+    const notificationDialog = document.querySelector('[data-terra-notification-dialog]');
+
+    if (e.keyCode === this.escapeKey) {
+      if (notificationDialog) {
+        if (e.target === notificationDialog || notificationDialog.contains(e.target)) {
+          e.stopImmediatePropagation();
+        }
+      }
     }
   }
 
@@ -165,8 +164,6 @@ class NotificationDialog extends React.Component {
       variant,
       customIcon,
       isOpen,
-      releaseFocus,
-      requestFocus,
       ...customProps
     } = this.props;
 
@@ -187,26 +184,29 @@ class NotificationDialog extends React.Component {
         closeOnEsc={false}
         closeOnOutsideClick={false}
         zIndex="9000"
+        data-terra-notification-dialog
       >
-        <div className={cx('notification-dialog-inner-wrapper')}>
-          <div className={cx('notification-dialog-container')}>
-            <div id="notification-dialog-header" className={cx('header-body')}>{header || defaultHeader}</div>
-            <div className={cx('notification-dialog-body')}>
-              {variant
-                && <div className={cx('icon-container')}>{getIcon(intl, variant, customIcon)}</div>
-              }
-              <div>
-                {title
-                  && <div id="notification-dialog-title" className={cx('title')}>{title}</div>
+        <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: false }}>
+          <div className={cx('notification-dialog-inner-wrapper')}>
+            <div className={cx('notification-dialog-container')}>
+              <div id="notification-dialog-header" className={cx('header-body')}>{header || defaultHeader}</div>
+              <div className={cx('notification-dialog-body')}>
+                {variant
+                  && <div className={cx('icon-container')}>{getIcon(intl, variant, customIcon)}</div>
                 }
-                {message
-                  && <div className={cx('message')}>{message}</div>
-                }
+                <div>
+                  {title
+                    && <div id="notification-dialog-title" className={cx('title')}>{title}</div>
+                  }
+                  {message
+                    && <div className={cx('message')}>{message}</div>
+                  }
+                </div>
               </div>
+              <div className={cx('footer-body')}>{actionSection(primaryAction, secondaryAction)}</div>
             </div>
-            <div className={cx('footer-body')}>{actionSection(primaryAction, secondaryAction)}</div>
           </div>
-        </div>
+        </FocusTrap>
       </AbstractModal>
     );
   }

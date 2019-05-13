@@ -3,12 +3,24 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Changes
+* Removed `releaseFocus` prop
+* Removed `requestFocus` prop
+
+### Added
+* Added component specific handler for Escape key usage with Notification Dialog
+* Added focus trap to Notification Dialog
+
+2.12.0 - (May 7, 2019)
+------------------
 ### Fixed
 * Updated max-width to be `49%` for screen size greater than 768px.
-* Updated wdio snapshot to fix test failures.
+* Updated wdio snapshot
 
 ### Fixed
 * Updated jest snapshot to fix test failures
+* Updated jest snapshot
+
 
 2.11.0 - (April 24, 2019)
 ------------------

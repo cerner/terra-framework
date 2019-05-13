@@ -10,6 +10,10 @@ const Icon = <IconCalendar />;
 
 const propTypes = {
   /**
+   * Callback ref to pass into the calendar button dom element.
+   */
+  buttonRefCallback: PropTypes.func,
+  /**
    * Custom input attributes to apply to the date input.
    */
   // eslint-disable-next-line react/forbid-prop-types
@@ -19,6 +23,10 @@ const propTypes = {
    */
   name: PropTypes.string,
   /**
+   * A callback function triggered when the input or calendar button loses focus.
+   */
+  onBlur: PropTypes.func,
+  /**
    * A callback function to execute when a valid date is selected or entered.
    */
   onChange: PropTypes.func,
@@ -27,6 +35,14 @@ const propTypes = {
    */
   onClick: PropTypes.func,
   /**
+   * A callback function triggered when the date input receives focus.
+   */
+  onFocus: PropTypes.func,
+  /**
+   * A callback function triggered when the calendar button receives focus.
+   */
+  onButtonFocus: PropTypes.func,
+  /**
    * The onInputKeyDown callback function from react-datepicker to handle keyboard navigation.
    */
   onKeyDown: PropTypes.func,
@@ -34,14 +50,6 @@ const propTypes = {
    * The placeholder text to display in the date input.
    */
   placeholder: PropTypes.string,
-  /**
-   * A callback function to let the containing component (e.g. modal) to regain focus.
-   */
-  releaseFocus: PropTypes.func,
-  /**
-   * A callback function to request focus from the containing component (e.g. modal).
-   */
-  requestFocus: PropTypes.func,
   /**
    * @private Internal prop for showing date picker.
    */
@@ -53,14 +61,16 @@ const propTypes = {
 };
 
 const defaultProps = {
+  buttonRefCallback: undefined,
   inputAttributes: undefined,
   name: undefined,
+  onBlur: undefined,
   onChange: undefined,
   onClick: undefined,
+  onFocus: undefined,
+  onButtonFocus: undefined,
   onKeyDown: undefined,
   placeholder: undefined,
-  releaseFocus: undefined,
-  requestFocus: undefined,
   value: undefined,
 };
 
@@ -90,11 +100,6 @@ class DatePickerInput extends React.Component {
   }
 
   handleOnButtonClick(event) {
-    // The picker is about to display so request focus from the containing component (e.g. modal) if it has the focus trapped.
-    if (this.props.requestFocus) {
-      this.props.requestFocus();
-    }
-
     const attributes = Object.assign({}, this.props.inputAttributes);
 
     if (!attributes.readOnly && this.onCalendarButtonClick && this.props.onClick) {
@@ -113,15 +118,6 @@ class DatePickerInput extends React.Component {
   }
 
   handleOnKeyDown(event) {
-    // The picker will be dismissed if one of these keys is pressed and the focus will be released so release the focus to the containing component.
-    if (this.props.releaseFocus && (event.key === 'Enter' || event.key === 'Escape' || event.key === 'Tab')) {
-      this.props.releaseFocus();
-
-      if (event.key === 'Tab') {
-        event.preventDefault();
-      }
-    }
-
     if (this.props.onKeyDown) {
       this.props.onKeyDown(event);
     }
@@ -129,31 +125,27 @@ class DatePickerInput extends React.Component {
 
   render() {
     const {
+      buttonRefCallback,
       inputAttributes,
       name,
+      onBlur,
       onChange,
       onClick,
+      onFocus,
+      onButtonFocus,
       onKeyDown,
       placeholder,
-      releaseFocus,
-      requestFocus,
       value,
       ...customProps
     } = this.props;
 
     this.onCalendarButtonClick = customProps.onCalendarButtonClick;
-    this.onInputFocus = customProps.onInputFocus;
     this.shouldShowPicker = customProps.shouldShowPicker;
 
     delete customProps.onCalendarButtonClick;
-    delete customProps.onInputFocus;
     delete customProps.shouldShowPicker;
 
     const additionalInputProps = Object.assign({}, customProps, inputAttributes);
-
-    // react-datepicker by default will show the picker when the input has focus.
-    // Since we want to show the picker only when the calendar button is clicked, we need to delete the onFocus handle that is passed in by react-datepicker.
-    delete additionalInputProps.onFocus;
 
     const dateValue = DateUtil.convertToISO8601(value, DateUtil.getFormatByLocale(this.context.intl.locale));
     const buttonText = this.context.intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
@@ -176,7 +168,8 @@ class DatePickerInput extends React.Component {
           value={value}
           onChange={this.handleOnChange}
           placeholder={placeholder}
-          onFocus={this.onInputFocus}
+          onFocus={onFocus}
+          onBlur={onBlur}
         />
         <Button
           className={styles.button}
@@ -187,6 +180,9 @@ class DatePickerInput extends React.Component {
           isIconOnly
           isCompact
           isDisabled={additionalInputProps.disabled}
+          onBlur={onBlur}
+          onFocus={onButtonFocus}
+          refCallback={buttonRefCallback}
         />
       </div>
     );
