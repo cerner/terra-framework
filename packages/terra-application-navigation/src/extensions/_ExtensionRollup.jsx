@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import IconTile from 'terra-icon/lib/icon/IconTile';
+import IconThreeSquares from './_TempSVG';
 
 import { createKeyDown } from './_ExtensionUtils';
 import ExtensionCount from './_ExtensionCount';
@@ -59,7 +59,7 @@ const ExtensionRollup = ({
     >
       <div className={cx('extension-rollup-inner')}>
         <div className={cx('extension-rollup-image')}>
-          <IconTile />
+          <IconThreeSquares />
         </div>
         {hasChildNotifications && <ExtensionCount isRollup className={cx('extension-rollup-count')} value={isPulsed ? 1 : 0} />}
       </div>
