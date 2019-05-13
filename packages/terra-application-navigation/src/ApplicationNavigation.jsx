@@ -216,10 +216,21 @@ const ApplicationNavigation = ({
   }
 
   function renderCompactHeader() {
+    let navTitleConfig;
+    if (activeNavigationItemKey && navigationItems.length) {
+      for (let i = 0; i < navigationItems.length; i += 1) {
+        const item = navigationItems[i];
+        if (item.key === activeNavigationItemKey) {
+          navTitleConfig = { title: item.text };
+          break;
+        }
+      }
+    }
+
     return (
       <CompactHeader
         activeBreakpoint={activeBreakpoint}
-        titleConfig={titleConfig}
+        titleConfig={navTitleConfig || titleConfig}
         extensionItems={extensionItems}
         onSelectExtensionItem={onSelectExtensionItem}
         navigationItems={navigationItems}
