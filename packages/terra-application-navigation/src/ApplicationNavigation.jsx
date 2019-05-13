@@ -312,9 +312,8 @@ const ApplicationNavigation = ({
     <div className={cx('application-navigation')}>
       <div
         ref={drawerMenuRef}
-        className={cx('drawer-menu-container')}
+        className={cx(['drawer-menu-container', { 'is-hidden': !drawerMenuIsVisibleRef.current && !drawerMenuIsOpen }])}
         aria-hidden={!drawerMenuIsOpen ? true : null}
-        style={!drawerMenuIsVisibleRef.current && !drawerMenuIsOpen ? { display: 'none' } : undefined}
       >
         {renderDrawerMenu()}
       </div>
