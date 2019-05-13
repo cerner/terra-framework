@@ -3,8 +3,16 @@ Changelog
 
 Unreleased
 ----------
-### Fixed
-* Updated wdio screenshots to fix test failures
+### Breaking Changes
+* Consume latest major version bump of terra-popup
+* Removed terra-disclosure-manager dependency
+* Added terra-disclosure-manager peer-dependency
+* Update react-router-dom dependency to latest stable major release
+
+4.12.0 - (May 7, 2019)
+------------------
+### Changed
+* Updated WDIO screenshots
 
 4.11.0 - (April 24, 2019)
 ------------------

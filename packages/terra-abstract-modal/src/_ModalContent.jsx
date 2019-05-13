@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import FocusTrap from 'focus-trap-react';
 import ModalOverlay from './_ModalOverlay';
 import styles from './AbstractModal.module.scss';
 
@@ -35,20 +34,6 @@ const propTypes = {
    */
   onRequestClose: PropTypes.func.isRequired,
   /**
-   * Element to fallback focus on if the FocusTrap can not find any focusable elements. Valid values are a valid
-   * dom selector string that is passed into document.querySelector or a function
-   * that returns a dom element. If using a dom selector, ensure that the query works for all browsers with
-   * the document.querySelector method.
-   */
-  fallbackFocus: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-  ]),
-  /**
-   * If set to true, the modal will trap the focus and prevents any popup within the modal from gaining focus.
-   */
-  isFocused: PropTypes.bool,
-  /**
    * If set to true, the modal will be fullscreen on all breakpoint sizes.
    */
   isFullscreen: PropTypes.bool,
@@ -70,90 +55,66 @@ const defaultProps = {
   classNameModal: null,
   classNameOverlay: null,
   closeOnOutsideClick: true,
-  fallbackFocus: undefined,
-  isFocused: true,
   isFullscreen: false,
   isScrollable: false,
   role: 'dialog',
   zIndex: '6000',
 };
 
-/* eslint-disable react/prefer-stateless-function */
-class ModalContent extends React.Component {
-  render() {
-    const {
-      ariaLabel,
-      children,
-      classNameModal,
-      classNameOverlay,
-      closeOnOutsideClick,
-      onRequestClose,
-      fallbackFocus,
-      role,
-      isFocused,
-      isFullscreen,
-      isScrollable,
-      zIndex,
-      ...customProps
-    } = this.props;
+const ModalContent = React.forwardRef((props, ref) => {
+  const {
+    ariaLabel,
+    children,
+    classNameModal,
+    classNameOverlay,
+    closeOnOutsideClick,
+    onRequestClose,
+    role,
+    isFullscreen,
+    isScrollable,
+    zIndex,
+    ...customProps
+  } = props;
+  let zIndexLayer = '6000';
 
-    let zIndexLayer = '6000';
-    if (zIndexes.indexOf(zIndex) >= 0) {
-      zIndexLayer = zIndex;
-    }
-
-    const modalClassName = cx([
-      'abstract-modal',
-      { 'is-fullscreen': isFullscreen },
-      `layer-${zIndexLayer}`,
-      classNameModal,
-    ]);
-
-    // Delete the closePortal prop that comes from react-portal.
-    delete customProps.closePortal;
-    const platformIsiOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
-
-    this.modalContentRef = React.createRef();
-
-    if (fallbackFocus) {
-      this.fallbackFocus = fallbackFocus;
-    } else {
-      this.fallbackFocus = () => (this.modalContentRef.current);
-    }
-
-    return (
-      <FocusTrap
-        paused={!isFocused}
-        focusTrapOptions={{
-          escapeDeactivates: false,
-          fallbackFocus: this.fallbackFocus,
-        }}
-      >
-        <ModalOverlay
-          onClick={closeOnOutsideClick ? onRequestClose : null}
-          className={classNameOverlay}
-          zIndex={zIndex}
-        />
-        { /*
-            When an aria-label is set and tabIndex is set to 0, VoiceOver will read
-            the aria-label value when the modal is opened
-           */
-          /* eslint-disable jsx-a11y/no-noninteractive-tabindex */}
-        <div
-          tabIndex={platformIsiOS ? '-1' : '0'}
-          aria-label={ariaLabel}
-          className={modalClassName}
-          role={role}
-          ref={this.modalContentRef}
-          {...customProps}
-        >
-          {children}
-        </div>
-        {/* eslint-enable jsx-a11y/no-noninteractive-tabindex */}
-      </FocusTrap>
-    );
+  if (zIndexes.indexOf(zIndex) >= 0) {
+    zIndexLayer = zIndex;
   }
-}
+
+  const modalClassName = cx(['abstract-modal', {
+    'is-fullscreen': isFullscreen,
+  }, `layer-${zIndexLayer}`, classNameModal]); // Delete the closePortal prop that comes from react-portal.
+
+  delete customProps.closePortal;
+  delete customProps.fallbackFocus;
+
+  const platformIsiOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+  return (
+    <React.Fragment>
+      <ModalOverlay
+        onClick={closeOnOutsideClick ? onRequestClose : null}
+        className={classNameOverlay}
+        zIndex={zIndex}
+      />
+      {
+        /*
+          When an aria-label is set and tabIndex is set to 0, VoiceOver will read
+          the aria-label value when the modal is opened
+        */
+      }
+      <div
+        {...customProps}
+        tabIndex={platformIsiOS ? '-1' : '0'}
+        aria-label={ariaLabel}
+        className={modalClassName}
+        role={role}
+        ref={ref}
+      >
+        {children}
+      </div>
+    </React.Fragment>
+  );
+});
 
 ModalContent.propTypes = propTypes;
 ModalContent.defaultProps = defaultProps;
