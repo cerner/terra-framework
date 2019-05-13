@@ -3,6 +3,10 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Updated max-width to be `49%` for screen size greater than 768px.
+* Updated wdio snapshot
+
 ### Breaking Changes
 * Removed `releaseFocus` prop
 * Removed `requestFocus` prop
@@ -14,13 +18,7 @@ Unreleased
 2.12.0 - (May 7, 2019)
 ------------------
 ### Fixed
-* Updated max-width to be `49%` for screen size greater than 768px.
-* Updated wdio snapshot
-
-### Fixed
-* Updated jest snapshot to fix test failures
 * Updated jest snapshot
-
 
 2.11.0 - (April 24, 2019)
 ------------------
