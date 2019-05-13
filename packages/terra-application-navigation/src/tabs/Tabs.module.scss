@@ -32,18 +32,17 @@
     cursor: default;
     pointer-events: none;
     // repeats the styling from the :before psuedo selector above
-    width: var(--terra-application-navigation-tabs-tab-divider-before-width, 2px);
+    width: 2px;
 
     &::before {
-      background-color: var(--terra-application-navigation-tabs-tab-divider-before-background-color, #0079be);
-      background-image: var(--terra-application-navigation-tabs-tab-divider-before-background-image);
-      border-left: var(--terra-application-navigation-tabs-tab-divider-before-border-left, 1px solid rgba(0, 0, 0, 0.17));
-      border-right: var(--terra-application-navigation-tabs-tab-divider-before-border-right, 1px solid rgba(255, 255, 255, 0.17));
+      background-color:#0079be;
+      border-left: 1px solid rgba(0, 0, 0, 0.17);
+      border-right: 1px solid rgba(255, 255, 255, 0.17);
       content: '';
       display: block;
       height: 100%;
       overflow: hidden;
-      width: var(--terra-application-navigation-tabs-tab-divider-before-width, 2px);
+      width: 2px;
     }
   }
 }

@@ -2,24 +2,21 @@
   .compact-header {
     align-content: center;
     align-items: center; // TODO THEME
-    background-color: var(--terra-application-layout-navbar-background-color, #0079be);
-    background-image: var(--terra-application-layout-navbar-background-image);
-    border: var(--terra-application-layout-navbar-border);
-    box-shadow: var(--terra-application-layout-navbar-box-shadow);
+    background-color:#0079be;
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
     overflow: hidden;
-    padding-left: var(--terra-application-layout-navbar-padding-left, 0.3571rem);
-    padding-right: var(--terra-application-layout-navbar-padding-right, 0.3571rem);
+    padding-left: 0.3571rem;
+    padding-right: 0.3571rem;
     position: relative;
     z-index: 5001;
 
     min-height: 40px;
 
     &::before {
-      background-color: var(--terra-application-layout-navbar-before-background-color, transparent);
-      background-image: var(--terra-application-layout-navbar-before-background-image, none);
+      background-color: transparent;
+      background-image: none;
       content: '';
       height: 100%;
       left: 0;
@@ -30,7 +27,7 @@
   }
 
   .menu-button {
-    background-color: var(--terra-application-layout-toggle-button-background-color, transparent);
+    background-color: transparent;
     border: 0;  
     color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
@@ -42,8 +39,8 @@
     flex: 0 0 auto;
 
     > svg {
-      height: var(--terra-application-layout-toggle-button-icon-height, 1rem);
-      width: var(--terra-application-layout-toggle-button-icon-width, 1rem);
+      height: 1rem;
+      width: 1rem;
     }
           
     &:hover {
@@ -99,16 +96,16 @@
   }
 
   .skip-content-button {
-    background-color: var(--terra-application-header-layout-background-color, #0079be);
-    border: var(--terra-application-header-layout-border, 1px solid #fff);
-    border-radius: var(--terra-application-header-layout-border-radius, 0);
+    background-color:#0079be;
+    border: 1px solid #fff;
+    border-radius: 0;
     clip: rect(1px, 1px, 1px, 1px);
-    color: var(--terra-application-header-layout-color, #fff);
+    color: #fff;
     height: 1px;
-    margin: var(--terra-application-header-layout-margin, 0);
+    margin: 0;
     outline: none;
     overflow: hidden;
-    padding: var(--terra-application-header-layout-padding, 1rem 2rem);
+    padding: 1rem 2rem;
     position: absolute;
     width: 1px;
 
