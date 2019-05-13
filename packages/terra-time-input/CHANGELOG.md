@@ -4,7 +4,8 @@ Changelog
 Unreleased
 ----------
 ### Changed
-* Change the onBlur event to get triggered only when the entire time input component loses focus.
+* Changed the onBlur event to get triggered only when the entire time input component loses focus.
+* Updated upgrade guide.
 
 ### Added
 * Added 'onFocus' prop.

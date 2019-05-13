@@ -12,7 +12,11 @@ terra-date-time-picker has several callback events that are slightly different i
   * `isValidValue` - A boolean to indicate whether or not the complete date/time value is within the range of the minDate and maxDate props and is not an excluded date.
 
 ### onChange
-* The `onChange` callback prop is triggered only when a valid date and time that conforms to the format is entered directly in the date and time inputs or selected from the date picker.
+* The `onChange` callback prop is triggered only when both a valid date and time that conform to the format is entered directly in the date and time inputs or selected from the date picker. The `onChange` callback prop would not be triggered if the entered or selected date meets one of the following criteria.
+ - An exlcuded date in the `excludeDates` prop.
+ - A date that is filtered by the `filterDate` prop.
+ - Not an included date in the `includeDates` prop.
+ - Not within the range of the `minDate` and `maxDate` props.
 
 ### onChangeRaw
 * The `onChangeRaw` callback prop is triggered whenever any key is entered in the date input. If the entered value happens to be a valid date and time, both the `onChangeRaw` and `onChange` events will be triggered. The `onChangeRaw` event would be triggered first followed by the `onChange` event.
@@ -30,7 +34,7 @@ terra-date-time-picker has several callback events that are slightly different i
 When these actions are taken, the events are triggered in the following order.
 * Manual date entry 
     1. onChangeRaw
-    2. onChange (if the date entry is a valid date)
-* Selection from picker
+    2. onChange (if the entered date and time are valid.)
+* Selection from the picker
     1. onSelect
-    2. onChange (if the selected date if different from the previous date)
+    2. onChange (if the existing time is valid which now forms a complete date time value.)
