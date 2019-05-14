@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+# Removed
+* Removed tabindex on main element to prevent keyboard page scroll bug
 
 3.6.0 - (April 24, 2019)
 ------------------
