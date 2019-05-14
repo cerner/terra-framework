@@ -142,12 +142,22 @@ class DateTimeUtils {
     return moment('2017-07-01').tz(moment.tz.guess()).format('z');
   }
 
+  static getDaylightSavingExpandedTZDisplay() {
+    const timezone = moment('2017-07-01').tz(moment.tz.guess());
+    return moment.tz.zone(moment.tz.guess()).name + timezone.format(' z Z');
+  }
+
   /**
    * Gets the standard time zone offset display. (e.g. CST)
    * @return {string} - The standard time zone offset display.
    */
   static getStandardTZDisplay() {
     return moment('2017-01-01').tz(moment.tz.guess()).format('z');
+  }
+
+  static getStandardExpandedTZDisplay() {
+    const timezone = moment('2017-01-01').tz(moment.tz.guess());
+    return moment.tz.zone(moment.tz.guess()).name + timezone.format(' z Z');
   }
 
   /**
