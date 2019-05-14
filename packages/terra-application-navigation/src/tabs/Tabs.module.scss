@@ -1,22 +1,10 @@
 :local {
-  .tabs-wrapper {
-    display: flex;
-    flex: 1 1 auto;
-    flex-wrap: nowrap;
-    height: 100%;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-  }
-
   .tabs-container {
     display: flex;
     flex: 1 1 auto;
     flex-wrap: nowrap;
-    height: 100%;
     justify-content: center;
-    overflow: visible;
+    overflow: hidden;
     width: 100%;  
 
     &:focus {
