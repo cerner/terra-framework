@@ -13,6 +13,7 @@
 
 :local {
   .count {
+    background-clip: padding-box;
     background-image: linear-gradient(to bottom, #ffb200, #ff7e00);
     border: solid 1px rgba(89, 159, 253, 0.4);
     border-radius: 2.143rem;
@@ -22,9 +23,8 @@
     font-size: 0.6429rem;
     font-weight: bold;
     line-height: 1.5;
-    padding: 0 0.2143rem;
-    background-clip: padding-box;
     min-width: 1.65em;
+    padding: 0 0.2143rem;
     text-align: center;
   }
 
