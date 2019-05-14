@@ -6,7 +6,6 @@ exports[`TabRollup should render default element 1`] = `
   className="tab-rollup"
   data-focus-styles-enabled={true}
   onBlur={[Function]}
-  onKeyDown={[Function]}
   onMouseDown={[Function]}
   role="tab"
   tabIndex="0"
@@ -38,7 +37,6 @@ exports[`TabRollup should render prop data 1`] = `
   className="tab-rollup has-count"
   data-focus-styles-enabled={true}
   onBlur={[Function]}
-  onKeyDown={[Function]}
   onMouseDown={[Function]}
   role="tab"
   tabIndex="0"
@@ -51,6 +49,9 @@ exports[`TabRollup should render prop data 1`] = `
       className="tab-rollup-label"
     >
       <span
+        className="tab-rollup-text"
+      />
+      <span
         className="tab-count"
       >
         <TabCount
@@ -59,7 +60,7 @@ exports[`TabRollup should render prop data 1`] = `
         />
       </span>
       <IconCaretDown
-        className="tab-rollup-icon is-icon-only"
+        className="tab-rollup-icon"
         isBidi={true}
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +76,6 @@ exports[`TabRollup should render with function callbacks 1`] = `
   className="tab-rollup"
   data-focus-styles-enabled={true}
   onBlur={[Function]}
-  onKeyDown={[Function]}
   onMouseDown={[Function]}
   role="tab"
   tabIndex="0"

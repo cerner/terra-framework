@@ -117,7 +117,6 @@ exports[`Header should render default element 1`] = `
                 className="tab is-placeholder"
                 data-focus-styles-enabled={true}
                 onBlur={[Function]}
-                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="link"
                 tabIndex="0"
@@ -551,177 +550,172 @@ exports[`Header should render with function callbacks 1`] = `
             onTabSelect={[MockFunction]}
           >
             <div
-              className="tabs-wrapper"
+              className="tabs-container is-calculating"
+              role="tablist"
             >
-              <div
-                className="tabs-container is-calculating"
-                role="tablist"
-              >
-                <Tab
-                  hasCount={false}
-                  isActive={false}
-                  key="my-test-key"
-                  notificationCount={0}
-                  onTabSelect={[Function]}
-                  render={
-                    [MockFunction] {
-                      "calls": Array [
-                        Array [
-                          Object {
-                            "hasCount": false,
-                            "isActive": false,
-                            "notificationCount": 0,
-                            "text": "test-text",
-                          },
-                        ],
-                      ],
-                      "results": Array [
+              <Tab
+                hasCount={false}
+                isActive={false}
+                key="my-test-key"
+                notificationCount={0}
+                onTabSelect={[Function]}
+                render={
+                  [MockFunction] {
+                    "calls": Array [
+                      Array [
                         Object {
-                          "isThrow": false,
-                          "value": undefined,
+                          "hasCount": false,
+                          "isActive": false,
+                          "notificationCount": 0,
+                          "text": "test-text",
                         },
                       ],
-                    }
+                    ],
+                    "results": Array [
+                      Object {
+                        "isThrow": false,
+                        "value": undefined,
+                      },
+                    ],
                   }
-                  tabRef={
-                    Object {
-                      "current": <div
-                        aria-current="false"
-                        class="tab"
-                        data-focus-styles-enabled="true"
-                        role="link"
-                        tabindex="0"
-                        type="button"
-                      />,
-                    }
+                }
+                tabRef={
+                  Object {
+                    "current": <div
+                      aria-current="false"
+                      class="tab"
+                      data-focus-styles-enabled="true"
+                      role="link"
+                      tabindex="0"
+                      type="button"
+                    />,
                   }
-                  text="test-text"
-                >
-                  <div
-                    aria-current={false}
-                    className="tab"
-                    data-focus-styles-enabled={true}
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseDown={[Function]}
-                    role="link"
-                    tabIndex="0"
-                    type="button"
-                  />
-                </Tab>
-                <TabRollup
-                  data-application-tabs-more={true}
-                  hasChildNotifications={false}
-                  hasCount={false}
-                  isIconOnly={false}
-                  isPulsed={false}
-                  isSelected={false}
-                  onTabSelect={[Function]}
-                  tabRef={
-                    Object {
-                      "current": <div
-                        aria-current="false"
-                        class="tab-rollup"
-                        data-focus-styles-enabled="true"
-                        role="tab"
-                        tabindex="0"
-                      >
-                        <div
-                          class="tab-inner"
-                          data-tab-menu-inner="true"
-                        >
-                          <div
-                            class="tab-rollup-label"
-                          >
-                            <span
-                              class="tab-rollup-text"
-                            >
-                              Terra.application.tabs.more
-                            </span>
-                            <svg
-                              aria-hidden="true"
-                              class="tui-Icon icon is-bidi tab-rollup-icon"
-                              focusable="false"
-                              height="1em"
-                              viewBox="0 0 48 48"
-                              width="1em"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M48 12L24 36 0 12h48z"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </div>,
-                    }
-                  }
-                  text="Terra.application.tabs.more"
-                >
-                  <div
-                    aria-current={false}
-                    className="tab-rollup"
-                    data-focus-styles-enabled={true}
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseDown={[Function]}
-                    role="tab"
-                    tabIndex="0"
-                  >
-                    <div
-                      className="tab-inner"
-                      data-tab-menu-inner={true}
+                }
+                text="test-text"
+              >
+                <div
+                  aria-current={false}
+                  className="tab"
+                  data-focus-styles-enabled={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseDown={[Function]}
+                  role="link"
+                  tabIndex="0"
+                  type="button"
+                />
+              </Tab>
+              <TabRollup
+                data-application-tabs-more={true}
+                hasChildNotifications={false}
+                hasCount={false}
+                isPulsed={false}
+                isSelected={false}
+                onTabSelect={[Function]}
+                tabRef={
+                  Object {
+                    "current": <div
+                      aria-current="false"
+                      class="tab-rollup"
+                      data-focus-styles-enabled="true"
+                      role="tab"
+                      tabindex="0"
                     >
                       <div
-                        className="tab-rollup-label"
+                        class="tab-inner"
+                        data-tab-menu-inner="true"
                       >
-                        <span
-                          className="tab-rollup-text"
+                        <div
+                          class="tab-rollup-label"
                         >
-                          Terra.application.tabs.more
-                        </span>
-                        <IconCaretDown
-                          className="tab-rollup-icon"
-                          isBidi={true}
-                          viewBox="0 0 48 48"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <IconBase
-                            ariaLabel={null}
-                            className="tab-rollup-icon"
+                          <span
+                            class="tab-rollup-text"
+                          >
+                            Terra.application.tabs.more
+                          </span>
+                          <svg
+                            aria-hidden="true"
+                            class="tui-Icon icon is-bidi tab-rollup-icon"
                             focusable="false"
                             height="1em"
-                            isBidi={true}
-                            isSpin={false}
                             viewBox="0 0 48 48"
                             width="1em"
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              aria-hidden="true"
-                              className="tui-Icon icon is-bidi tab-rollup-icon"
-                              focusable="false"
-                              height="1em"
-                              viewBox="0 0 48 48"
-                              width="1em"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M48 12L24 36 0 12h48z"
-                              />
-                            </svg>
-                          </IconBase>
-                        </IconCaretDown>
+                            <path
+                              d="M48 12L24 36 0 12h48z"
+                            />
+                          </svg>
+                        </div>
                       </div>
+                    </div>,
+                  }
+                }
+                text="Terra.application.tabs.more"
+              >
+                <div
+                  aria-current={false}
+                  className="tab-rollup"
+                  data-focus-styles-enabled={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseDown={[Function]}
+                  role="tab"
+                  tabIndex="0"
+                >
+                  <div
+                    className="tab-inner"
+                    data-tab-menu-inner={true}
+                  >
+                    <div
+                      className="tab-rollup-label"
+                    >
+                      <span
+                        className="tab-rollup-text"
+                      >
+                        Terra.application.tabs.more
+                      </span>
+                      <IconCaretDown
+                        className="tab-rollup-icon"
+                        isBidi={true}
+                        viewBox="0 0 48 48"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <IconBase
+                          ariaLabel={null}
+                          className="tab-rollup-icon"
+                          focusable="false"
+                          height="1em"
+                          isBidi={true}
+                          isSpin={false}
+                          viewBox="0 0 48 48"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            className="tui-Icon icon is-bidi tab-rollup-icon"
+                            focusable="false"
+                            height="1em"
+                            viewBox="0 0 48 48"
+                            width="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M48 12L24 36 0 12h48z"
+                            />
+                          </svg>
+                        </IconBase>
+                      </IconCaretDown>
                     </div>
                   </div>
-                </TabRollup>
-                <div
-                  className="divider-after-last-tab"
-                />
-              </div>
+                </div>
+              </TabRollup>
+              <div
+                className="divider-after-last-tab"
+              />
             </div>
           </Tabs>
         </InjectIntl(Tabs)>
@@ -1116,7 +1110,6 @@ exports[`Header should render with skip callback 1`] = `
                 className="tab is-placeholder"
                 data-focus-styles-enabled={true}
                 onBlur={[Function]}
-                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="link"
                 tabIndex="0"
