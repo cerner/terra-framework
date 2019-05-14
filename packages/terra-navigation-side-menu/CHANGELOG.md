@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added custom font-weight property, `--terra-navigation-side-menu-item-font-weight`, for MenuItem component (defaults to 'inherit')
 
 2.6.0 - (May 7, 2019)
 ------------------
