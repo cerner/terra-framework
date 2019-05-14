@@ -238,7 +238,7 @@ class Tabs extends React.Component {
     return (
       <Popup
         contentHeight="auto"
-        contentWidth="240"
+        contentWidth="320"
         onRequestClose={() => {
           this.closePopup();
         }}
