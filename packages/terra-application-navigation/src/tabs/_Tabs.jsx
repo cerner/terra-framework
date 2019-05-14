@@ -218,7 +218,6 @@ class Tabs extends React.Component {
 
     return (
       <TabRollup
-        isIconOnly={!this.isCalculating && this.contentWidth <= this.getRollupTabWidth()}
         hasCount={hasNotifications}
         isPulsed={hasHiddenNotification && !this.isCalculating && this.shouldPulse(hiddenTabs, notifications)}
         onTabSelect={() => {
@@ -248,7 +247,7 @@ class Tabs extends React.Component {
         isArrowDisplayed
       >
         <PopupMenu
-          header={<ActionHeader title="Title TBD" />}
+          header={<ActionHeader title="Additional Sections" />} // TODO: i18n
           menuItems={hiddenTabs.map(tab => ({
             key: tab.key,
             text: tab.text,

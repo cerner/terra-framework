@@ -104,7 +104,7 @@ const Extensions = ({
         onRequestClose={() => setPopupIsOpen(false)}
       >
         <PopupMenu
-          header={<ActionHeader title="Extensions" />}
+          header={<ActionHeader title="Additional Items" />} // TODO: i18n
           menuItems={hiddenExtensions.map(item => ({
             key: item.key,
             icon: item.icon,

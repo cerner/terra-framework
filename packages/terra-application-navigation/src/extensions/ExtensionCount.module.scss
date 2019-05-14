@@ -21,13 +21,16 @@
     flex: 0 0 auto;
     font-size: 0.6429rem;
     font-weight: bold;
-    line-height: 1.4;
-    margin-left: 0.3571rem;
-    padding: 0.07143rem 0.2143rem;
+    line-height: 1.5;
+    padding: 0 0.2143rem;
+    background-clip: padding-box;
+    min-width: 1.65em;
+    text-align: center;
   }
 
   .is-rollup {
     height: 0.6429rem;
+    min-width: 0;
     padding: 0;
     width: 0.6429rem;
   }

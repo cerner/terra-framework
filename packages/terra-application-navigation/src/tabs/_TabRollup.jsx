@@ -12,10 +12,6 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Should the menu be limited to icon only.
-   */
-  isIconOnly: PropTypes.bool,
-  /**
    * Whether or not the menu display should be animated with selection.
    */
   isSelected: PropTypes.bool,
@@ -60,7 +56,6 @@ const TabRollup = ({
   hasChildNotifications,
   text,
   isPulsed,
-  isIconOnly,
 }) => (
   <div
     role="tab"
@@ -79,9 +74,9 @@ const TabRollup = ({
   >
     <div className={cx('tab-inner')} data-tab-menu-inner>
       <div className={cx('tab-rollup-label')}>
-        {!isIconOnly && <span className={cx('tab-rollup-text')}>{text}</span>}
+        {<span className={cx('tab-rollup-text')}>{text}</span>}
         {hasChildNotifications && <span className={cx('tab-count')}><TabCount value={isPulsed ? 1 : 0} isRollup /></span>}
-        <IconCaretDown className={cx(['tab-rollup-icon', { 'is-icon-only': isIconOnly }])} />
+        <IconCaretDown className={cx(['tab-rollup-icon'])} />
       </div>
     </div>
   </div>
