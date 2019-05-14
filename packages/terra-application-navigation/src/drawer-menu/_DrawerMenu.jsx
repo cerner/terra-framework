@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
-import IconUnknown from 'terra-icon/lib/icon/IconUnknown';
+import IconQuestionOutline from 'terra-icon/lib/icon/IconQuestionOutline';
+import { injectIntl, intlShape } from 'react-intl';
 
 import DrawerMenuTitle from './_DrawerMenuTitle';
 import DrawerMenuListItem from './_DrawerMenuListItem';
@@ -74,6 +75,11 @@ const propTypes = {
    * Key/Value pairs associating a string key entry to a numerical notification count.
    */
   notifications: PropTypes.object,
+  /**
+   * @private
+   * Object containing intl APIs
+   */
+  intl: intlShape,
 };
 
 const defaultProps = {
@@ -82,11 +88,16 @@ const defaultProps = {
 };
 
 const DrawerMenu = ({
-  titleConfig, userConfig, hero, navigationItems, activeNavigationItemKey, onSelectNavigationItem, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem, notifications,
+  titleConfig, userConfig, hero, navigationItems, activeNavigationItemKey, onSelectNavigationItem, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem, notifications, intl,
 }) => {
   const titleComponent = titleConfig && !(titleConfig.element || titleConfig.hideTitleWithinDrawerMenu) ? <DrawerMenuTitle titleConfig={titleConfig} /> : undefined;
   const userComponent = userConfig ? <DrawerMenuUser userConfig={userConfig} variant={hero ? 'small' : 'large'} /> : undefined;
-  const logoutButton = onSelectLogout ? <DrawerMenuFooterButton onClick={onSelectLogout} text="Logout" /> : undefined;
+  const logoutButton = onSelectLogout ? (
+    <DrawerMenuFooterButton
+      onClick={onSelectLogout}
+      text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.logout' })}
+    />
+  ) : undefined;
 
   return (
     <div className={cx('drawer-menu')} tabIndex="0">
@@ -121,15 +132,15 @@ const DrawerMenu = ({
           ))}
           {onSelectSettings ? (
             <DrawerMenuListItem
-              text="Settings" // TODO INTL
+              text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.settings' })}
               icon={<IconSettings />}
               onSelect={onSelectSettings}
             />
           ) : null}
           {onSelectHelp ? (
             <DrawerMenuListItem
-              text="Help" // TODO INTL
-              icon={<IconUnknown />}
+              text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.help' })}
+              icon={<IconQuestionOutline />}
               onSelect={onSelectSettings}
             />
           ) : null}
@@ -145,4 +156,4 @@ const DrawerMenu = ({
 DrawerMenu.propTypes = propTypes;
 DrawerMenu.defaultProps = defaultProps;
 
-export default DrawerMenu;
+export default injectIntl(DrawerMenu);

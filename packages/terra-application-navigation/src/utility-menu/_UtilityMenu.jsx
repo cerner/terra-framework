@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { injectIntl, intlShape } from 'react-intl';
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
-import IconUnknown from 'terra-icon/lib/icon/IconUnknown';
+import IconQuestionOutline from 'terra-icon/lib/icon/IconQuestionOutline';
 import ActionFooter from 'terra-action-footer';
 import Button from 'terra-button';
 
@@ -47,9 +48,14 @@ const propTypes = {
    */
   onSelectUtilityItem: PropTypes.func,
   /**
-   * Whehther or not content is be constrained vertically.
+   * Whether or not content is be constrained vertically.
    */
   isHeightBounded: PropTypes.bool,
+  /**
+   * @private
+   * Object containing intl APIs
+   */
+  intl: intlShape,
 };
 
 const defaultProps = {
@@ -60,7 +66,7 @@ const utilityMenuSettingsKey = 'terra-application-navigation.utility-menu.settin
 const utilityMenuHelpKey = 'terra-application-navigation.utility-menu.help';
 
 const UtilityMenu = ({
-  userConfig, hero, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem, isHeightBounded,
+  userConfig, hero, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem, isHeightBounded, intl,
 }) => {
   let menuItems = [];
   menuItems = menuItems.concat(utilityItems);
@@ -68,7 +74,7 @@ const UtilityMenu = ({
   if (onSelectSettings) {
     menuItems.push({
       key: utilityMenuSettingsKey,
-      text: 'Settings',
+      text: intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.settings' }),
       icon: <IconSettings />,
     });
   }
@@ -76,15 +82,15 @@ const UtilityMenu = ({
   if (onSelectHelp) {
     menuItems.push({
       key: utilityMenuHelpKey,
-      text: 'Help',
-      icon: <IconUnknown />,
+      text: intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.help' }),
+      icon: <IconQuestionOutline />,
     });
   }
 
   return (
     <PopupMenu
-      header={<ActionHeader title="Utilities" />}
-      footer={<ActionFooter end={onSelectLogout ? <Button text="Logout" onClick={onSelectLogout} /> : undefined} />}
+      header={<ActionHeader title={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.headerTitle' })} />}
+      footer={<ActionFooter end={onSelectLogout ? <Button text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.logout ' })} onClick={onSelectLogout} /> : undefined} />}
       userConfig={userConfig}
       customContent={hero}
       menuItems={menuItems}
@@ -105,4 +111,4 @@ const UtilityMenu = ({
 UtilityMenu.propTypes = propTypes;
 UtilityMenu.defaultProps = defaultProps;
 
-export default UtilityMenu;
+export default injectIntl(UtilityMenu);

@@ -250,7 +250,7 @@ class Tabs extends React.Component {
           this.setState({ popupIsOpen: true });
         }}
         tabRef={this.rollupTabRef}
-        text={intl.formatMessage({ id: 'Terra.application.tabs.more' })}
+        text={intl.formatMessage({ id: 'Terra.applicationNavigation.tabs.rollupButtonTitle' })}
         isSelected={tabRollupIsSelected}
         hasChildNotifications={hasHiddenNotification}
         data-application-tabs-more
@@ -259,7 +259,9 @@ class Tabs extends React.Component {
   }
 
   renderPopup(hiddenTabs) {
-    const { activeTabKey, onTabSelect, notifications } = this.props;
+    const {
+      activeTabKey, onTabSelect, notifications, intl,
+    } = this.props;
 
     return (
       <Popup
@@ -273,7 +275,7 @@ class Tabs extends React.Component {
         isArrowDisplayed
       >
         <PopupMenu
-          header={<ActionHeader title="Additional Sections" />} // TODO: i18n
+          header={<ActionHeader title={intl.formatMessage({ id: 'Terra.applicationNavigation.tabs.rollupMenuHeaderTitle' })} />}
           menuItems={hiddenTabs.map(tab => ({
             key: tab.key,
             text: tab.text,

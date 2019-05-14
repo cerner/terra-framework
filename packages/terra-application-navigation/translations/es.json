@@ -1,14 +1,14 @@
 {
-  "Terra.applicationLayout.applicationHeader.menuToggleLabel": "Menú de alternancia",
-  "Terra.applicationLayout.utilityDefaults.menu": "Menú",
-  "Terra.applicationLayout.utilityDefaults.userInformation": "Información de usuario",
-  "Terra.applicationLayout.utilityDefaults.changePhoto": "Cambiar foto",
-  "Terra.applicationLayout.utilityDefaults.settings": "Configuración",
-  "Terra.applicationLayout.utilityDefaults.appearance": "Apariencia",
-  "Terra.applicationLayout.utilityDefaults.security": "Seguridad",
-  "Terra.applicationLayout.utilityDefaults.help": "Ayuda",
-  "Terra.applicationLayout.utilityDefaults.gettingStarted": "Introducción",
-  "Terra.applicationLayout.utilityDefaults.about": "Acerca de",
-  "Terra.applicationLayout.utilityDefaults.termsOfUse": "Condiciones de uso",
-  "Terra.applicationLayout.utilityDefaults.logOut": "Cerrar sesión"
+  "Terra.applicationNavigation.utilityMenu.logout": "Logout",
+  "Terra.applicationNavigation.utilityMenu.settings": "Settings",
+  "Terra.applicationNavigation.utilityMenu.help": "Help",
+  "Terra.applicationNavigation.utilityMenu.headerTitle": "Utilities",
+  "Terra.applicationNavigation.extensions.rollupButtonDescription": "Additional Items",
+  "Terra.applicationNavigation.extensions.rollupMenuHeaderTitle": "Additional Items",
+  "Terra.applicationNavigation.tabs.rollupButtonTitle": "More",
+  "Terra.applicationNavigation.tabs.rollupMenuHeaderTitle": "Additional Sections",
+  "Terra.applicationNavigation.notifications.new": "New",
+  "Terra.applicationNavigation.header.skipToContentTitle": "Skip to Content",
+  "Terra.applicationNavigation.header.utilityButtonTitle": "Utility Button",
+  "Terra.applicationNavigation.header.menuButtonTitle": "Toggle Menu"
 }

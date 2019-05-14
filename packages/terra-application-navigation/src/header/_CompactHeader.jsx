@@ -93,7 +93,7 @@ const CompactHeader = ({
       <button
         type="button"
         className={cx('menu-button')}
-        aria-label={intl.formatMessage({ id: 'Terra.applicationLayout.applicationHeader.menuToggleLabel' })}
+        aria-label={intl.formatMessage({ id: 'Terra.applicationNavigation.header.menuButtonTitle' })}
         onClick={onSelectMenuButton}
         onBlur={enableFocusStyles}
         onMouseDown={disableFocusStyles}
@@ -145,7 +145,7 @@ const CompactHeader = ({
   return (
     <div className={cx('compact-header')}>
       <button type="button" onClick={onSelectSkipToContent} className={cx('skip-content-button')}>
-        {intl.formatMessage({ id: 'Terra.ApplicationHeaderLayout.SkipToContent' })}
+        {intl.formatMessage({ id: 'Terra.applicationNavigation.header.skipToContentTitle' })}
       </button>
       {renderMenuButton()}
       <div className={cx('title-container')}>

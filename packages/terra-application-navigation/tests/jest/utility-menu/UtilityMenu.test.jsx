@@ -3,48 +3,10 @@ import React from 'react';
 import { mountWithIntl } from 'terra-enzyme-intl';
 import UtilityMenu from '../../../src/utility-menu/_UtilityMenu';
 
-// userConfig: userConfigPropType,
-//   /**
-//    * An element to render within the Header's utility menu.
-//    */
-//   hero: PropTypes.element,
-//   /**
-//    * A function to be executed upon the selection of the Settings utility item.
-//    * If `onSelectSettings` is not provided, the Settings utility item will not be rendered.
-//    * Ex: `onSelectSettings()`
-//    */
-//   onSelectSettings: PropTypes.func,
-//   /**
-//    * A function to be executed upon the selection of the Help utility item.
-//    * If `onSelectHelp` is not provided, the Help utility item will not be rendered.
-//    * Ex: `onSelectLogout()`
-//    */
-//   onSelectHelp: PropTypes.func,
-//   /**
-//    * A function to be executed upon the selection of the Logout action button.
-//    * If `onSelectLogout` is not provided, the Logout action button will not be rendered.
-//    * Ex: `onSelectLogout()`
-//    */
-//   onSelectLogout: PropTypes.func,
-//   /**
-//    * An array of configuration objects with information specifying the creation of additional utility menu items.
-//    * These items are rendered within the popup utility menu at larger breakpoints and within the drawer menu at smaller breakpoints.
-//    */
-//   utilityItems: utilityItemsPropType,
-//   /**
-//    * A function to be executed upon the selection of a custom utility item.
-//    * Ex: `onSelectUtilityItem(String selectedUtilityItemKey)`
-//    */
-//   onSelectUtilityItem: PropTypes.func,
-//   /**
-//    * Whehther or not content is be constrained vertically.
-//    */
-//   isHeightBounded: PropTypes.bool,
-
 describe('UtilityMenu', () => {
   it('should render default element', () => {
     const mountComponent = mountWithIntl(
-      <UtilityMenu />,
+      <UtilityMenu.WrappedComponent />,
     );
 
     expect(mountComponent).toMatchSnapshot();
@@ -52,7 +14,7 @@ describe('UtilityMenu', () => {
 
   it('should render with function callbacks', () => {
     const mountComponent = mountWithIntl(
-      <UtilityMenu
+      <UtilityMenu.WrappedComponent
         hero={<div>my test hero</div>}
         userConfig={{
           name: 'user-name',
@@ -75,7 +37,7 @@ describe('UtilityMenu', () => {
     const mockCallBack = jest.fn();
 
     const mountComponent = mountWithIntl(
-      <UtilityMenu
+      <UtilityMenu.WrappedComponent
         onSelectLogout={mockCallBack}
       />,
     );

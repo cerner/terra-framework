@@ -4,7 +4,7 @@ import DrawerMenu from '../../../src/drawer-menu/_DrawerMenu';
 describe('DrawerMenu', () => {
   it('should render default element', () => {
     const shallowComponent = shallow(
-      <DrawerMenu />,
+      <DrawerMenu.WrappedComponent />,
     );
 
     expect(shallowComponent).toMatchSnapshot();
@@ -12,7 +12,7 @@ describe('DrawerMenu', () => {
 
   it('should render with function callbacks', () => {
     const shallowComponent = shallow(
-      <DrawerMenu
+      <DrawerMenu.WrappedComponent
         titleConfig={{
           title: 'test-title',
         }}

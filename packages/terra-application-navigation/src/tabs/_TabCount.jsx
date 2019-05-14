@@ -1,6 +1,7 @@
 import React, { useRef, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import { injectIntl, intlShape } from 'react-intl';
 
 import styles from './TabCount.module.scss';
 
@@ -15,9 +16,14 @@ const propTypes = {
    * Whether or not the count represents rolled up counts.
    */
   isRollup: PropTypes.bool,
+  /**
+   * @private
+   * Object containing intl APIs.
+   */
+  intl: intlShape,
 };
 
-const TabCount = ({ value, isRollup }) => {
+const TabCount = ({ value, isRollup, intl }) => {
   const countRef = useRef();
   const previousValueRef = useRef(value);
 
@@ -39,7 +45,7 @@ const TabCount = ({ value, isRollup }) => {
 
   let validatedValue = value;
   if (isRollup) {
-    validatedValue = 'New'; // todo: translate this
+    validatedValue = intl.formatMessage({ id: 'Terra.applicationNavigation.notifications.new' });
   } else if (value > 99) {
     validatedValue = '99+';
   }
@@ -59,4 +65,4 @@ const TabCount = ({ value, isRollup }) => {
 
 TabCount.propTypes = propTypes;
 
-export default TabCount;
+export default injectIntl(TabCount);

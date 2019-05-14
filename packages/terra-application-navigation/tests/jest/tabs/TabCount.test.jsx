@@ -4,7 +4,7 @@ import TabCount from '../../../src/tabs/_TabCount';
 describe('TabCount', () => {
   it('should render default element', () => {
     const shallowComponent = shallow(
-      <TabCount />,
+      <TabCount.WrappedComponent />,
     );
 
     expect(shallowComponent).toMatchSnapshot();
@@ -12,7 +12,7 @@ describe('TabCount', () => {
 
   it('should render prop data', () => {
     const shallowComponent = shallow(
-      <TabCount
+      <TabCount.WrappedComponent
         value={1}
         isRollup
       />,

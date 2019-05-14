@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import IconThreeSquares from './_TempSVG';
+import { injectIntl, intlShape } from 'react-intl';
 
+import IconThreeSquares from './_TempSVG';
 import ExtensionCount from './_ExtensionCount';
 import { enableFocusStyles, disableFocusStyles, generateKeyDownSelection } from '../utils/helpers';
 
@@ -27,6 +28,11 @@ const propTypes = {
    * Whether or not the notification count should pulse.
    */
   isPulsed: PropTypes.bool,
+  /**
+   * @private
+   * Object containing intl APIs
+   */
+  intl: intlShape,
 };
 
 const defaultProps = {
@@ -39,6 +45,7 @@ const ExtensionRollup = ({
   isPulsed,
   onSelect,
   extensionRef,
+  intl,
 }) => (
   <div
     role="button"
@@ -49,8 +56,8 @@ const ExtensionRollup = ({
     ref={extensionRef}
     onBlur={enableFocusStyles}
     onMouseDown={disableFocusStyles}
-    title="more button text"
-    aria-label="more button text"// TODO: fix this.
+    title={intl.formatMessage({ id: 'Terra.applicationNavigation.extensions.rollupButtonDescription' })}
+    aria-label={intl.formatMessage({ id: 'Terra.applicationNavigation.extensions.rollupButtonDescription' })}
     data-focus-styles-enabled
   >
     <div className={cx('extension-rollup-inner')}>
@@ -65,4 +72,4 @@ const ExtensionRollup = ({
 ExtensionRollup.propTypes = propTypes;
 ExtensionRollup.defaultProps = defaultProps;
 
-export default ExtensionRollup;
+export default injectIntl(ExtensionRollup);

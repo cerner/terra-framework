@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import { injectIntl, intlShape } from 'react-intl';
 import ActionHeader from 'terra-action-header';
 import Popup from 'terra-popup';
 
@@ -31,6 +32,11 @@ const propTypes = {
    * Key/Value pairs associating a string key entry to a numerical notification count.
    */
   notifications: PropTypes.object,
+  /**
+   * @private
+   * Object containing intl APIs
+   */
+  intl: intlShape,
 };
 
 const defaultProps = {
@@ -44,6 +50,7 @@ const Extensions = ({
   extensionItems,
   notifications,
   onSelect,
+  intl,
 }) => {
   const [popupIsOpen, setPopupIsOpen] = useState(false);
 
@@ -104,7 +111,7 @@ const Extensions = ({
         onRequestClose={() => setPopupIsOpen(false)}
       >
         <PopupMenu
-          header={<ActionHeader title="Additional Items" />} // TODO: i18n
+          header={<ActionHeader title={intl.formatMessage({ id: 'Terra.applicationNavigation.extensions.rollupMenuHeaderTitle' })} />}
           menuItems={hiddenExtensions.map(item => ({
             key: item.key,
             icon: item.icon,
@@ -143,4 +150,4 @@ const Extensions = ({
 Extensions.propTypes = propTypes;
 Extensions.defaultProps = defaultProps;
 
-export default Extensions;
+export default injectIntl(Extensions);
