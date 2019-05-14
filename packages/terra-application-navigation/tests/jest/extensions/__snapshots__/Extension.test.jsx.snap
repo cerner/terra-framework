@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Extension should render prop data 1`] = `
+<div
+  aria-label="my text"
+  className="extension"
+  data-focus-styles-enabled={true}
+  onBlur={[Function]}
+  onMouseDown={[Function]}
+  role="button"
+  tabIndex="0"
+  title="my text"
+>
+  <div
+    className="extension-inner"
+  >
+    <div
+      className="extension-image"
+    >
+      <span>
+        my icon
+      </span>
+    </div>
+    <ExtensionCount
+      className="extension-count"
+      value={1}
+    />
+  </div>
+</div>
+`;
+
+exports[`Extension should render with function callbacks 1`] = `
+<div
+  aria-label="my text"
+  className="extension"
+  data-focus-styles-enabled={true}
+  onBlur={[Function]}
+  onMouseDown={[Function]}
+  role="button"
+  tabIndex="0"
+  title="my text"
+>
+  <div
+    className="extension-inner"
+  >
+    <div
+      className="extension-image"
+    >
+      <span>
+        my icon
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Extension should render with required prop data 1`] = `
+<div
+  aria-label="my text"
+  className="extension"
+  data-focus-styles-enabled={true}
+  onBlur={[Function]}
+  onMouseDown={[Function]}
+  role="button"
+  tabIndex="0"
+  title="my text"
+>
+  <div
+    className="extension-inner"
+  >
+    <div
+      className="extension-image"
+    >
+      <span>
+        my icon
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Extension should render with selection callback 1`] = `
+<div
+  aria-label="my text"
+  className="extension"
+  data-focus-styles-enabled={true}
+  onBlur={[Function]}
+  onClick={[MockFunction]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  role="button"
+  tabIndex="0"
+  title="my text"
+>
+  <div
+    className="extension-inner"
+  >
+    <div
+      className="extension-image"
+    >
+      <span>
+        my icon
+      </span>
+    </div>
+  </div>
+</div>
+`;
