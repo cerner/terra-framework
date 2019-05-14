@@ -9,7 +9,7 @@ import FormValidationUtil from '../../../FormValidationUtil';
 
 const validateLength = (name) => {
   if (!FormValidationUtil.isUnderMaxLength(name, 8)) {
-    return 'Name needs to be less than 8 characters long';
+    return 'Name needs to be less than 9 characters long';
   }
 
   return undefined;

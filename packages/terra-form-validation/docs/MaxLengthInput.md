@@ -1,8 +1,10 @@
 # Making an Input With a Maximum Length
 
-This is a step-by-step guide to making a form with a single input that has a maximum length as its validations.
+This is a step-by-step guide to make a form with a single input that has a maximum length as its validations.
 
-First we start with out imports
+First we install react-final-form by running `npm install final-form react-final-form`.
+
+Next we start writing out actual component by starting with the imports.
 ```javascript
 import React from 'react';
 import { Form, Field } from 'react-final-form';
@@ -30,7 +32,7 @@ export default class Example extends React.Component {
 }
 ```
 
-Current we render nothing. Lets create a `<Form>` component that contains initial values, and functionality for submission and validation.
+Currently, this does not render anything. Let's create a `<Form>` component that contains initial values, and functionality for submission and validation.
 
 Let's use the render props pattern to return our necessary components. Call this function `renderForm`.
 ```diff
@@ -184,19 +186,19 @@ render() {
 
 Our `validate` function returns an object that has properties, with the property being our ID, and its value being a string we want displayed for when it fails to validate.
 
-The `<Field>` component's `validate` prop is similar to `<Form>`'s, with a main caveat; it only validate's it's value instead of all the values. Let's create a function that checks if the length is greater than 7. This function takes a single argument (value of our `<Field>`) and returns a string if this criteria is met.
+The `<Field>` component's `validate` prop is similar to `<Form>`'s, with a main caveat; it only validate's it's value instead of all the values. Let's create a function that checks if the length is greater than 8. This function takes a single argument (value of our `<Field>`) and returns a string if this criteria is met.
 
 ```javascript
 const validateLength = (name) => {
-  if (name && name.length > 7) {
-    return 'Name needs to be less than 8 characters long';
+  if (name && name.length > 8) {
+    return 'Name needs to be less than 9 characters long';
   }
 
   return undefined;
 };
 ```
 
-Finally, let's add pass the function as the `validate` prop to `<Field>` within our `renderForm` function..
+Finally, let's add the function as the `validate` prop to `<Field>` within our `renderForm` function.
 
 ```diff
 renderForm({ handleSubmit }) {
@@ -216,15 +218,15 @@ renderForm({ handleSubmit }) {
 }
 ```
 
-We have created an input that is required and has max length of 7 characters by creating our own validate function. For ease of use, Terra provides utils for common validation use cases. In this case, we can use the `validateLength` function.
+We have created an input that is required and has max length of 8 characters by creating our own validate function. For ease of use, Terra provides utils for common validation use cases. In this case, we can use the `validateLength` function.
 
 ```diff
 import FormValidationUtil from 'terra-form-validation';
 ...
 const validateLength = (name) => {
-- if (name && name.length > 7) {
-+ if (!FormValidationUtil.isUnderMaxLength(name, 7)) {
-    return 'Name needs to be less than 8 characters long';
+- if (name && name.length > 8) {
++ if (!FormValidationUtil.isUnderMaxLength(name, 8)) {
+    return 'Name needs to be less than 9 characters long';
   }
 
   return undefined;

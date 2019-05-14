@@ -66,14 +66,15 @@ describe('isOverMinLength', () => {
 });
 
 describe('hasNoWhitespace', () => {
-  it('should return true if given value has no whitesspace on either side', () => {
+  it('should return true if given value has no whitesspace', () => {
     expect(FormValidationUtil.hasNoWhitespace('Test')).toBe(true);
-    expect(FormValidationUtil.hasNoWhitespace('Test  Test')).toBe(true);
   });
 
-  it('should return false if given value has whitesspace on either side', () => {
+  it('should return false if given value has whitesspace', () => {
     expect(FormValidationUtil.hasNoWhitespace('Test     ')).toBe(false);
     expect(FormValidationUtil.hasNoWhitespace('    Test')).toBe(false);
+    expect(FormValidationUtil.hasNoWhitespace('Test Test')).toBe(false);
+    expect(FormValidationUtil.hasNoWhitespace('Test Test')).toBe(false);
   });
 
   it('should return false if given value is not a string', () => {
@@ -84,11 +85,11 @@ describe('hasNoWhitespace', () => {
 
 describe('containsCharacters', () => {
   it('should return false if given value contains any strings in the chars array', () => {
-    expect(FormValidationUtil.containsCharacters('Test', ['a', 'e'])).toBe(false);
+    expect(FormValidationUtil.containsCharacters('Test', ['a', 'e'])).toBe(true);
   });
 
   it('should return true if given value does not contain any strings in the chars array', () => {
-    expect(FormValidationUtil.containsCharacters('Test', ['a', 'b'])).toBe(true);
+    expect(FormValidationUtil.containsCharacters('Test', ['a', 'b'])).toBe(false);
   });
 
   it('should return false if given chars is not an array', () => {

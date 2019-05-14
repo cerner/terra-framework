@@ -105,10 +105,11 @@ Let's start by giving a minimum and maximum to our value. For simplicity, set a 
 ```diff
 const validateNumber = (value) => {
   if (!value) { return undefined; }
-+ if (value < 10) {
++ var numericValue = Number(value);  
++ if (numericValue < 10) {
 +   return 'Value should not be less than 10.';
 + }
-+ if (value > 100) {
++ if (numericValue > 100) {
 +   return 'Value should not be over 100.';
 + }
 
@@ -134,15 +135,16 @@ const validateNumber = (value) => {
 
 This validation has a quirk. If the input contains extra `0`s, like `23.0230000`, validation will fail.
 
-Lets try a different way of validating. Convert the value a `Number` instead. This way we can use the `toFixed` function to automatically set precision, and use this as a comparison.
+Let's try a different way of validating. Using the `Number` converted value instead, we can use the `toFixed` function to automatically set precision, and use this as a comparison.
 
 ```diff
 const validateNumber = (value) => {
+  if (!value) { return undefined; }
+  var numericValue = Number(value);  
   ...
 - const valueSplit = value.split('.');
 - if (valueSplit.length === 2 && valueSplit[1].length > 3) {
-+ const valueNum = Number(value);
-+ if (valueNum.toFixed(3) != valueNum) {
++ if (numericValue.toFixed(3) != numericValue) {
     return 'Value has more than 3 decimal points';
   }
 
@@ -156,16 +158,17 @@ With this we have a function that we can add to validate a number based by havin
 
 ```diff
 const validateNumber = (value) => {
--  if (value < 10) {
+   if (!value) { return undefined; }
+-  var numericValue = Number(value);
+-  if (numericValue < 10) {
 +  if (!FormValidationUtil.isOverMinValue(value, 10)) {
     return 'Value should not be less than 10.';
   }
--  if (value > 100) {
+-  if (numericValue > 100) {
 +  if (!FormValidationUtil.isUnderMaxValue(value, 100)) {
     return 'Value should not be over 100.';
   }
-- const valueNum = Number(value);
-- if (valueNum.toFixed(3) != valueNum) {
+- if (numericValue.toFixed(3) != numericValue) {
 + if (!FormValidationUtil.isPrecise(value, 3)) {
     return 'Value has more than 3 decimal points';
   }
@@ -174,4 +177,4 @@ const validateNumber = (value) => {
 };
 ```
 
-Note: `FormValidationUtil.precisionCheck` uses the first method check precision.
+Note: The `FormValidationUtil.precisionCheck` function uses the method where we split the `String` value to check precision.

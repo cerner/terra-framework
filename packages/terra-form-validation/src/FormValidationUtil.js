@@ -2,7 +2,7 @@
 /* eslint-disable no-restricted-globals */
 
 class FormValidationUtil {
-  /* Checks given value's length against maximum. Returns true if value's length is less than the maximum.
+  /* Checks given value's length against maximum. Returns true if value's length is less than or equal to the maximum.
    * @value is the value string, @maximum is a nonnegative whole number. */
   static isUnderMaxLength(value, maximum) {
     if (!(typeof value === 'string' || value instanceof String)
@@ -11,7 +11,7 @@ class FormValidationUtil {
     return value.length <= maximum;
   }
 
-  /* Checks given value's length against minimum. Returns true if value's length is greater than the minimum.
+  /* Checks given value's length against minimum. Returns true if value's length is greater than or equal to the minimum.
    * @value is the value string, @minimum is a nonnegative whole number. */
   static isOverMinLength(value, minimum) {
     if (!(typeof value === 'string' || value instanceof String)
@@ -24,7 +24,7 @@ class FormValidationUtil {
    * @value is the value string */
   static hasNoWhitespace(value) {
     if (!(typeof value === 'string' || value instanceof String)) { return false; }
-    return value.trim() === value;
+    return !(/\s/.test(value));
   }
 
   /* Checks given value for any string in given array. return true if value does not contain any of them.
@@ -34,10 +34,10 @@ class FormValidationUtil {
     || !(chars && typeof chars === 'object' && chars.constructor === Array)) { return false; }
     for (let i = 0; i < chars.length; i += 1) {
       if (value.includes(chars[i])) {
-        return false;
+        return true;
       }
     }
-    return true;
+    return false;
   }
 
   /* Checks given value against a minimum value. Returns true if value is greater then or equal to the minimum
