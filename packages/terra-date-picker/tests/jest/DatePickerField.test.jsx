@@ -11,11 +11,6 @@ DateUtil.filterInvalidDates = jest.fn();
 DateUtil.createSafeDate.mockImplementation(() => moment.utc('2017-01-01'));
 DateUtil.filterInvalidDates.mockImplementation(() => [moment.utc('2017-01-01')]);
 
-const isWeekday = (date) => {
-  const day = date.day();
-  return day !== 0 && day !== 6;
-};
-
 it('should render a default DatePickerField component', () => {
   const datePickerField = <DatePickerField datePickerId="test-date-picker" name="test-date-picker" label="Label" />;
   const wrapper = shallow(datePickerField);
@@ -45,7 +40,7 @@ it('should render a DatePickerField with props', () => {
       onClickOutside={() => {}}
       showOptional
       excludeDates={['2017-04-03']}
-      filterDate={isWeekday}
+      filterDate={() => {}}
       minDate="2017-04-01"
       maxDate="2017-04-10"
       maxWidth="25px"
@@ -84,7 +79,7 @@ it('should render a valid DatePickerField with props', () => {
       onClickOutside={() => {}}
       showOptional
       excludeDates={['2017-04-03']}
-      filterDate={isWeekday}
+      filterDate={() => {}}
       minDate="2017-04-01"
       maxDate="2017-04-10"
       maxWidth="25px"

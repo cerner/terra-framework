@@ -1,5 +1,5 @@
 import React from 'react';
-import DatePickerField from '../../../../lib/DatePickerField';
+import DatePickerField from '../../../DatePickerField';
 
 class DatePickerExample extends React.Component {
   constructor(props) {

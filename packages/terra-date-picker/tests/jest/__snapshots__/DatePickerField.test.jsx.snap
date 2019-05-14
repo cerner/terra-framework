@@ -26,7 +26,6 @@ exports[`should render a DatePickerField with props 1`] = `
   showOptional={true}
 >
   <DatePicker
-    aria-describedby="test-date-picker-error test-date-picker-help"
     disabled={true}
     excludeDates={
       Array [
@@ -37,6 +36,7 @@ exports[`should render a DatePickerField with props 1`] = `
     id="test-date-picker"
     inputAttribute={
       Object {
+        "aria-describedby": "test-date-picker-error test-date-picker-help",
         "name": "test",
       }
     }
@@ -108,7 +108,6 @@ exports[`should render a valid DatePickerField with props 1`] = `
   showOptional={true}
 >
   <DatePicker
-    aria-describedby="test-date-picker-help"
     disabled={true}
     excludeDates={
       Array [
@@ -119,6 +118,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
     id="test-date-picker"
     inputAttribute={
       Object {
+        "aria-describedby": "test-date-picker-help",
         "name": "test",
       }
     }
