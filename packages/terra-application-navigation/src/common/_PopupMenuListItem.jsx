@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 import IconCheckmark from 'terra-icon/lib/icon/IconCheckmark';
 
 import PopupCount from './_PopupCount';
-import { enableFocusStyles, disableFocusStyles } from '../utils/helpers';
+import { enableFocusStyles, disableFocusStyles, generateKeyDownSelection } from '../utils/helpers';
 
 import styles from './PopupMenuListItem.module.scss';
 
@@ -46,12 +45,7 @@ const PopupMenuListItem = ({
     tabIndex="0"
     className={cx('item')}
     onClick={onSelect}
-    onKeyDown={(event) => {
-      if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
-        event.preventDefault();
-        onSelect();
-      }
-    }}
+    onKeyDown={generateKeyDownSelection(onSelect)}
     onBlur={enableFocusStyles}
     onMouseDown={disableFocusStyles}
     aria-selected={showSelections && isSelected}

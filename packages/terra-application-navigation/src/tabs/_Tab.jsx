@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 
 import TabCount from './_TabCount';
-import { enableFocusStyles, disableFocusStyles } from '../utils/helpers';
+import { enableFocusStyles, disableFocusStyles, generateKeyDownSelection } from '../utils/helpers';
 
 import styles from './Tab.module.scss';
 
@@ -55,13 +54,6 @@ const Tab = ({
   notificationCount,
   onTabSelect,
 }) => {
-  function onKeyDown(event) {
-    if (event.nativeEvent.keyCode === KEY_SPACE || event.nativeEvent.keyCode === KEY_RETURN) {
-      event.preventDefault();
-      onTabSelect();
-    }
-  }
-
   function renderTabContent() {
     if (render) {
       return render({
@@ -91,8 +83,8 @@ const Tab = ({
         { 'is-placeholder': !render && isPlaceholder },
         { 'has-count': !render && hasCount },
       ])}
-      onClick={!isActive ? onTabSelect : null} // TODO: should be able to re-select
-      onKeyDown={!isActive ? onKeyDown : null} // TODO: should be able to re-select
+      onClick={!isActive ? onTabSelect : undefined}
+      onKeyDown={!isActive ? generateKeyDownSelection(onTabSelect) : undefined}
       onBlur={enableFocusStyles}
       onMouseDown={disableFocusStyles}
       ref={tabRef}

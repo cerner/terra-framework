@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
-import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 
 import TabCount from './_TabCount';
-import { enableFocusStyles, disableFocusStyles } from '../utils/helpers';
+import { enableFocusStyles, disableFocusStyles, generateKeyDownSelection } from '../utils/helpers';
 
 import styles from './Tab.module.scss';
 
@@ -62,42 +61,31 @@ const TabRollup = ({
   text,
   isPulsed,
   isIconOnly,
-}) => {
-  function onKeyDown(event) {
-    if (event.nativeEvent.keyCode === KEY_SPACE || event.nativeEvent.keyCode === KEY_RETURN) {
-      event.preventDefault();
-      if (onTabSelect) {
-        onTabSelect();
-      }
-    }
-  }
-
-  return (
-    <div
-      role="tab"
-      tabIndex="0"
-      className={cx([
-        'tab-rollup',
-        { 'has-count': hasCount },
-      ])}
-      onClick={onTabSelect}
-      onKeyDown={onKeyDown}
-      onBlur={enableFocusStyles}
-      onMouseDown={disableFocusStyles}
-      ref={tabRef}
-      aria-current={isSelected}
-      data-focus-styles-enabled
-    >
-      <div className={cx('tab-inner')} data-tab-menu-inner>
-        <div className={cx('tab-rollup-label')}>
-          {!isIconOnly && <span className={cx('tab-rollup-text')}>{text}</span>}
-          {hasChildNotifications && <span className={cx('tab-count')}><TabCount value={isPulsed ? 1 : 0} isRollup /></span>}
-          <IconCaretDown className={cx(['tab-rollup-icon', { 'is-icon-only': isIconOnly }])} />
-        </div>
+}) => (
+  <div
+    role="tab"
+    tabIndex="0"
+    className={cx([
+      'tab-rollup',
+      { 'has-count': hasCount },
+    ])}
+    onClick={onTabSelect}
+    onKeyDown={generateKeyDownSelection(onTabSelect)}
+    onBlur={enableFocusStyles}
+    onMouseDown={disableFocusStyles}
+    ref={tabRef}
+    aria-current={isSelected}
+    data-focus-styles-enabled
+  >
+    <div className={cx('tab-inner')} data-tab-menu-inner>
+      <div className={cx('tab-rollup-label')}>
+        {!isIconOnly && <span className={cx('tab-rollup-text')}>{text}</span>}
+        {hasChildNotifications && <span className={cx('tab-count')}><TabCount value={isPulsed ? 1 : 0} isRollup /></span>}
+        <IconCaretDown className={cx(['tab-rollup-icon', { 'is-icon-only': isIconOnly }])} />
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 TabRollup.propTypes = propTypes;
 TabRollup.defaultProps = defaultProps;

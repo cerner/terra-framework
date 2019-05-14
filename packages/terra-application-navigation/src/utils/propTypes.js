@@ -49,9 +49,6 @@ const utilityItemsPropType = PropTypes.arrayOf(PropTypes.shape({
   metaData: PropTypes.object,
 }));
 
-/**
- * Shape for ApplicationLayout's 'extensionConfig' prop.
- */
 const extensionItemsPropType = PropTypes.arrayOf(PropTypes.shape({
   /**
    * Key matching the notification key, used as react key, and returned in the onSelect

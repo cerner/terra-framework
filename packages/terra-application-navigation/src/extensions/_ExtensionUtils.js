@@ -1,26 +1,3 @@
-import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
-
-const createKeyDown = (onRequestClose, onSelect) => (
-  (event) => {
-    if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
-      event.preventDefault();
-      if (onRequestClose) {
-        onRequestClose();
-      }
-      onSelect();
-    }
-  }
-);
-
-const createOnClick = (onRequestClose, onSelect) => (
-  () => {
-    if (onRequestClose) {
-      onRequestClose();
-    }
-    onSelect();
-  }
-);
-
 const sliceIndexForBreakpoint = (activeBreakpoint, extensionItems) => {
   let sliceIndex;
   if (activeBreakpoint === 'enormous') {
@@ -39,8 +16,7 @@ const sliceIndexForBreakpoint = (activeBreakpoint, extensionItems) => {
   return sliceIndex;
 };
 
+export default sliceIndexForBreakpoint;
 export {
-  createKeyDown,
-  createOnClick,
   sliceIndexForBreakpoint,
 };

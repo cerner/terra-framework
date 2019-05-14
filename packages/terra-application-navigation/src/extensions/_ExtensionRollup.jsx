@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconThreeSquares from './_TempSVG';
 
-import { createKeyDown } from './_ExtensionUtils';
 import ExtensionCount from './_ExtensionCount';
-import { enableFocusStyles, disableFocusStyles } from '../utils/helpers';
+import { enableFocusStyles, disableFocusStyles, generateKeyDownSelection } from '../utils/helpers';
 
 import styles from './ExtensionRollup.module.scss';
 
@@ -40,32 +39,28 @@ const ExtensionRollup = ({
   isPulsed,
   onSelect,
   extensionRef,
-}) => {
-  const keyDown = createKeyDown(null, onSelect);
-
-  return (
-    <div
-      role="button"
-      tabIndex="0"
-      className={cx('extension-rollup')}
-      onClick={onSelect}
-      onKeyDown={keyDown}
-      ref={extensionRef}
-      onBlur={enableFocusStyles}
-      onMouseDown={disableFocusStyles}
-      title="more button text"
-      aria-label="more button text"// TODO: fix this.
-      data-focus-styles-enabled
-    >
-      <div className={cx('extension-rollup-inner')}>
-        <div className={cx('extension-rollup-image')}>
-          <IconThreeSquares />
-        </div>
-        {hasChildNotifications && <ExtensionCount isRollup className={cx('extension-rollup-count')} value={isPulsed ? 1 : 0} />}
+}) => (
+  <div
+    role="button"
+    tabIndex="0"
+    className={cx('extension-rollup')}
+    onClick={onSelect}
+    onKeyDown={generateKeyDownSelection(onSelect)}
+    ref={extensionRef}
+    onBlur={enableFocusStyles}
+    onMouseDown={disableFocusStyles}
+    title="more button text"
+    aria-label="more button text"// TODO: fix this.
+    data-focus-styles-enabled
+  >
+    <div className={cx('extension-rollup-inner')}>
+      <div className={cx('extension-rollup-image')}>
+        <IconThreeSquares />
       </div>
+      {hasChildNotifications && <ExtensionCount isRollup className={cx('extension-rollup-count')} value={isPulsed ? 1 : 0} />}
     </div>
-  );
-};
+  </div>
+);
 
 ExtensionRollup.propTypes = propTypes;
 ExtensionRollup.defaultProps = defaultProps;

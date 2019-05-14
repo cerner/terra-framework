@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 
 import Count from './_DrawerCount';
-import { enableFocusStyles, disableFocusStyles } from '../utils/helpers';
+import { enableFocusStyles, disableFocusStyles, generateKeyDownSelection } from '../utils/helpers';
 
 import styles from './DrawerMenuListItem.module.scss';
 
@@ -41,12 +40,7 @@ const DrawerMenuListItem = ({
     tabIndex="0"
     className={cx(['item', { 'is-selected': isSelected }])}
     onClick={onSelect}
-    onKeyDown={(event) => {
-      if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
-        event.preventDefault();
-        onSelect();
-      }
-    }}
+    onKeyDown={generateKeyDownSelection(onSelect)}
     onBlur={enableFocusStyles}
     onMouseDown={disableFocusStyles}
     aria-selected={isSelected}
