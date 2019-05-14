@@ -45,6 +45,8 @@
   .tab-rollup {
     background-color: transparent;
     border: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.17);
+    border-right: 1px solid rgba(0, 0, 0, 0.17);
     box-sizing: border-box;
     color: #fff;
     cursor: pointer;
@@ -65,20 +67,6 @@
     transition-duration: 0s;
     transition-property: background-size;
     transition-timing-function: ease;
-
-    &::before {
-      background-color: #0079be;
-      border-left: 1px solid rgba(0, 0, 0, 0.17);
-      border-right: 1px solid rgba(255, 255, 255, 0.17);
-      content: '';
-      display: block;
-      height: 100%;
-      left: 0;
-      overflow: hidden;
-      position: absolute;
-      top: 0;
-      width: 2px;
-    }
 
     .tab-inner {
       align-items: center;
@@ -111,13 +99,6 @@
 
     &[aria-current='true'] {
       text-shadow: none;
-
-      &::before {
-        background-color:#0079be;
-        border-left-color: rgba(255, 255, 255, 0.17);
-        border-right-color:  rgba(0, 0, 0, 0.17);
-      }
-
       background-color:rgba(0, 0, 0, 0.15);
       background-image: linear-gradient(to bottom, #5cc2f9, #5cc2f9);
       background-size: 100% 6px;
