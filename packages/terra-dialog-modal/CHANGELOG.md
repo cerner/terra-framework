@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.0.0 - (May 13, 2019)
+------------------
 ### Breaking Changes
 * Updated z-index for dialog modal to `7000`
 * Removed `isFocused` prop
