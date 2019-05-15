@@ -35,15 +35,13 @@
 
   .tab,
   .tab-rollup {
-    background-size: 0 5px;
-    background-position: top left;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    background-clip: border-box;
-    box-shadow: inset 1px 0 0 0 pink, inset 2px 0 0 0 red;
+    background-clip: content-box;
+    box-shadow: inset 1px 0 0 0 pink, inset 2px 0 0 0 red; // TODO: imitate clinical value @midnight40 & @midnight80
+    padding-left: 2px;
 
     &:last-of-type {
-      box-shadow: inset 1px 0 0 0 pink, inset 2px 0 0 0 red, inset -1px 0 0 0 red, inset -2px 0 0 0 pink;
+      box-shadow: inset 1px 0 0 0 pink, inset 2px 0 0 0 red, inset -1px 0 0 0 pink, inset -2px 0 0 0 red; // TODO: imitate clinical value @midnight40 & @midnight80
+      padding-right: 2px;
     }
   }
 
@@ -51,7 +49,6 @@
   .tab-rollup {
     background-color: transparent;
     border: 0;
-    box-sizing: border-box;
     color: #fff;
     cursor: pointer;
     display: flex;
@@ -60,24 +57,23 @@
     font-size: 0.9285714rem;
     margin: 0;
     outline: none;
-    padding-bottom: 1.143rem;
-    padding-left: 2.143rem;
-    padding-right: 2.143rem;
-    padding-top: 1.143rem;
     position: relative;
-    text-align: center;
-    text-decoration: none;
-    text-transform: none;
-    transition-duration: 0s;
-    transition-property: background-size;
-    transition-timing-function: ease;
 
     .tab-inner {
       align-items: center;
+      background-size: 0 5px;
+      background-position: top left;
+      background-repeat: no-repeat;
       box-sizing: border-box;
-      display: flex;
-      flex: 0 0 auto;
       justify-content: space-between;
+      overflow: hidden;
+      padding-bottom: 1.143rem;
+      padding-left: 2.143rem;
+      padding-right: 2.143rem;
+      padding-top: 1.143rem;
+      text-align: center;
+      text-decoration: none;
+      text-transform: none;
       transition-duration: 0s;
       transition-property: background-size;
       transition-timing-function: ease;
@@ -94,26 +90,32 @@
     }
 
     &:hover,
-    &.is-hovered {
-      background-color:rgba(0, 0, 0, 0.15);
+    &:active {
+      .tab-inner {
+        background-color: rgba(42, 75, 119, 0.9); // TODO: imitate clinical value @midnight90
+      }
     }
 
     &[aria-current='true'] {
-      background-color:rgba(0, 0, 0, 0.15);
-      background-image: linear-gradient(to bottom, #5cc2f9, #5cc2f9);
-      background-size: 100% 6px;
-      box-shadow: none;
-      text-shadow: none;
+      .tab-inner {
+        background-color: rgba(42, 75, 119, 0.8); // TODO: imitate clinical value @midnight80
+        background-image: linear-gradient(to left, #599ffd, #599ffd); // TODO: clinical value variable?
+        background-size: 100% 6px;
+        box-shadow: none;
+        text-shadow: none;
+      }
 
-      box-shadow: inset 1px 0 0 0 red, inset 2px 0 0 0 pink;
+      box-shadow: inset 1px 0 0 0 red, inset 2px 0 0 0 pink; // TODO: imitate clinical value @midnight40 & @midnight80
       &:last-of-type {
-        box-shadow: inset 1px 0 0 0 red, inset 2px 0 0 0 pink, inset -1px 0 0 0 red, inset -2px 0 0 0 pink;
+        box-shadow: inset 1px 0 0 0 pink, inset 2px 0 0 0 red, inset -1px 0 0 0 pink, inset -2px 0 0 0 red; // TODO: imitate clinical value @midnight40 & @midnight80
       }
     }
 
     &[data-focus-styles-enabled='true']:focus {
-      z-index: 5;
-      background-color: rgba(42, 75, 119, 0.9);
+      .tab-inner {
+        z-index: 5;
+        background-color: rgba(42, 75, 119, 0.9); // TODO: clinical value @midnight90
+      }
     }
   }
 
@@ -126,12 +128,18 @@
   }
 
   .is-custom {
-    padding: 0,
+    padding: 0;
+
+    .tab-inner {
+      padding: 0;
+    }
   }
 
   .has-count {
-    padding-bottom: 0.2857142857rem;
-    padding-top: 2rem;
+    .tab-inner {
+      padding-bottom: 0.2857142857rem;
+      padding-top: 2rem;
+    }
   }
 
   .tab-count {
