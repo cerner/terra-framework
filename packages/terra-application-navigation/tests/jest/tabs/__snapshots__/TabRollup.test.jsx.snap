@@ -54,7 +54,7 @@ exports[`TabRollup should render prop data 1`] = `
       <span
         className="tab-count"
       >
-        <TabCount
+        <InjectIntl(TabCount)
           isRollup={true}
           value={1}
         />

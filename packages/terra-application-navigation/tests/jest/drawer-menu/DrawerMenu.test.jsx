@@ -1,10 +1,11 @@
 import React from 'react';
 import DrawerMenu from '../../../src/drawer-menu/_DrawerMenu';
+import mockIntl from '../mockIntl';
 
 describe('DrawerMenu', () => {
   it('should render default element', () => {
     const shallowComponent = shallow(
-      <DrawerMenu.WrappedComponent />,
+      <DrawerMenu.WrappedComponent intl={mockIntl} />,
     );
 
     expect(shallowComponent).toMatchSnapshot();
@@ -13,6 +14,7 @@ describe('DrawerMenu', () => {
   it('should render with function callbacks', () => {
     const shallowComponent = shallow(
       <DrawerMenu.WrappedComponent
+        intl={mockIntl}
         titleConfig={{
           title: 'test-title',
         }}

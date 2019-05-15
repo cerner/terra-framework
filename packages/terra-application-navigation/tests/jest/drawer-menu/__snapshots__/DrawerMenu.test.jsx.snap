@@ -101,17 +101,17 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
           />
         }
         onSelect={[MockFunction]}
-        text="Settings"
+        text="Terra.applicationNavigation.utilityMenu.settings"
       />
       <DrawerMenuListItem
         icon={
-          <IconUnknown
+          <IconQuestionOutline
             viewBox="0 0 48 48"
             xmlns="http://www.w3.org/2000/svg"
           />
         }
         onSelect={[MockFunction]}
-        text="Help"
+        text="Terra.applicationNavigation.utilityMenu.help"
       />
     </ul>
   </div>
@@ -120,7 +120,7 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
   >
     <DrawerMenuFooterButton
       onClick={[MockFunction]}
-      text="Logout"
+      text="Terra.applicationNavigation.utilityMenu.logout"
     />
   </div>
 </div>

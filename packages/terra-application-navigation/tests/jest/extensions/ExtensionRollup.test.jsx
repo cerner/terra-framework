@@ -1,10 +1,11 @@
 import React from 'react';
 import ExtensionRollup from '../../../src/extensions/_ExtensionRollup';
+import mockIntl from '../mockIntl';
 
 describe('ExtensionRollup', () => {
   it('should render default element', () => {
     const shallowComponent = shallow(
-      <ExtensionRollup />,
+      <ExtensionRollup.WrappedComponent intl={mockIntl} />,
     );
 
     expect(shallowComponent).toMatchSnapshot();
@@ -12,7 +13,8 @@ describe('ExtensionRollup', () => {
 
   it('should render prop data', () => {
     const shallowComponent = shallow(
-      <ExtensionRollup
+      <ExtensionRollup.WrappedComponent
+        intl={mockIntl}
         hasChildNotifications
         isPulsed
       />,
@@ -21,10 +23,11 @@ describe('ExtensionRollup', () => {
     expect(shallowComponent).toMatchSnapshot();
   });
 
-  it('should render with function callbacks', () => {
+  it('should render with ref', () => {
     const shallowComponent = shallow(
-      <ExtensionRollup
-        refCallback={jest.fn()}
+      <ExtensionRollup.WrappedComponent
+        intl={mockIntl}
+        extensionRef={React.createRef()}
       />,
     );
 
@@ -36,7 +39,8 @@ describe('ExtensionRollup', () => {
     const mockCallBack2 = jest.fn();
 
     const shallowComponent = shallow(
-      <ExtensionRollup
+      <ExtensionRollup.WrappedComponent
+        intl={mockIntl}
         onSelect={mockCallBack}
       />,
     );

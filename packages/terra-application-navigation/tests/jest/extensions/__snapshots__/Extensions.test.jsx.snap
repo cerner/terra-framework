@@ -25,7 +25,7 @@ exports[`Extensions should render default element 1`] = `
       header={
         <ActionHeader
           level={1}
-          title="Additional Items"
+          title="Terra.applicationNavigation.extensions.rollupMenuHeaderTitle"
         />
       }
       isHeightBounded={false}
@@ -75,7 +75,7 @@ exports[`Extensions should render prop data 1`] = `
       header={
         <ActionHeader
           level={1}
-          title="Additional Items"
+          title="Terra.applicationNavigation.extensions.rollupMenuHeaderTitle"
         />
       }
       isHeightBounded={false}

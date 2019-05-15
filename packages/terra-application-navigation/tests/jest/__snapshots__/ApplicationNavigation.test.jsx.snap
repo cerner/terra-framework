@@ -6,7 +6,12 @@ exports[`ApplicationNavigation should render default element 1`] = `
 >
   <div
     aria-hidden={true}
-    className="drawer-menu-container is-hidden"
+    className="drawer-menu-container"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
   />
   <div
     aria-hidden={null}
@@ -52,7 +57,7 @@ exports[`ApplicationNavigation should render default element 1`] = `
     targetAttachment="bottom center"
     targetRef={[Function]}
   >
-    <UtilityMenu
+    <InjectIntl(UtilityMenu)
       utilityItems={Array []}
     />
   </Popup>
@@ -65,7 +70,12 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
 >
   <div
     aria-hidden={true}
-    className="drawer-menu-container is-hidden"
+    className="drawer-menu-container"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
   />
   <div
     aria-hidden={null}
@@ -156,7 +166,7 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
     targetAttachment="bottom center"
     targetRef={[Function]}
   >
-    <UtilityMenu
+    <InjectIntl(UtilityMenu)
       hero={
         <div>
           my test hero
@@ -196,7 +206,12 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
 >
   <div
     aria-hidden={true}
-    className="drawer-menu-container is-hidden"
+    className="drawer-menu-container"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
   >
     <FocusTrap
       _createFocusTrap={[Function]}
@@ -213,7 +228,7 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
       paused={false}
       tag="div"
     >
-      <DrawerMenu
+      <InjectIntl(DrawerMenu)
         activeNavigationItemKey="test-text"
         hero={
           <div>
@@ -338,7 +353,7 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
     targetAttachment="bottom center"
     targetRef={[Function]}
   >
-    <UtilityMenu
+    <InjectIntl(UtilityMenu)
       hero={
         <div>
           my test hero

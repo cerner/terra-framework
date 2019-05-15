@@ -2,14 +2,14 @@
 
 exports[`ExtensionRollup should render default element 1`] = `
 <div
-  aria-label="more button text"
+  aria-label="Terra.applicationNavigation.extensions.rollupButtonDescription"
   className="extension-rollup"
   data-focus-styles-enabled={true}
   onBlur={[Function]}
   onMouseDown={[Function]}
   role="button"
   tabIndex="0"
-  title="more button text"
+  title="Terra.applicationNavigation.extensions.rollupButtonDescription"
 >
   <div
     className="extension-rollup-inner"
@@ -30,14 +30,14 @@ exports[`ExtensionRollup should render default element 1`] = `
 
 exports[`ExtensionRollup should render prop data 1`] = `
 <div
-  aria-label="more button text"
+  aria-label="Terra.applicationNavigation.extensions.rollupButtonDescription"
   className="extension-rollup"
   data-focus-styles-enabled={true}
   onBlur={[Function]}
   onMouseDown={[Function]}
   role="button"
   tabIndex="0"
-  title="more button text"
+  title="Terra.applicationNavigation.extensions.rollupButtonDescription"
 >
   <div
     className="extension-rollup-inner"
@@ -61,16 +61,16 @@ exports[`ExtensionRollup should render prop data 1`] = `
 </div>
 `;
 
-exports[`ExtensionRollup should render with function callbacks 1`] = `
+exports[`ExtensionRollup should render with ref 1`] = `
 <div
-  aria-label="more button text"
+  aria-label="Terra.applicationNavigation.extensions.rollupButtonDescription"
   className="extension-rollup"
   data-focus-styles-enabled={true}
   onBlur={[Function]}
   onMouseDown={[Function]}
   role="button"
   tabIndex="0"
-  title="more button text"
+  title="Terra.applicationNavigation.extensions.rollupButtonDescription"
 >
   <div
     className="extension-rollup-inner"
@@ -91,7 +91,7 @@ exports[`ExtensionRollup should render with function callbacks 1`] = `
 
 exports[`ExtensionRollup should render with selection callback 1`] = `
 <div
-  aria-label="more button text"
+  aria-label="Terra.applicationNavigation.extensions.rollupButtonDescription"
   className="extension-rollup"
   data-focus-styles-enabled={true}
   onBlur={[Function]}
@@ -100,7 +100,7 @@ exports[`ExtensionRollup should render with selection callback 1`] = `
   onMouseDown={[Function]}
   role="button"
   tabIndex="0"
-  title="more button text"
+  title="Terra.applicationNavigation.extensions.rollupButtonDescription"
 >
   <div
     className="extension-rollup-inner"
