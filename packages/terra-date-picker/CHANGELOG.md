@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.1.0 - (March 15, 2019)
+------------------
 ### Changed
 * Resolved eslint error in example files
 
