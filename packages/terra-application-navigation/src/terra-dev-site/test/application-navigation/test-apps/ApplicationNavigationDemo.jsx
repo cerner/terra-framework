@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {
   withRouter, Redirect, matchPath, Switch, Route,
 } from 'react-router-dom';
-import { DisclosureManager } from 'terra-application';
+import { disclosureManagerShape, withDisclosureManager } from 'terra-application/lib/disclosure-manager';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconPill from 'terra-icon/lib/icon/IconPill';
 import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
@@ -244,7 +244,7 @@ class ApplicationNavigationDemo extends React.Component {
 }
 
 ApplicationNavigationDemo.propTypes = {
-  disclosureManager: DisclosureManager.disclosureManagerShape,
+  disclosureManager: disclosureManagerShape,
   history: PropTypes.object,
   hideLogout: PropTypes.bool,
   hideSettings: PropTypes.bool,
@@ -253,4 +253,4 @@ ApplicationNavigationDemo.propTypes = {
   hideUser: PropTypes.bool,
 };
 
-export default DisclosureManager.withDisclosureManager(withRouter((ApplicationNavigationDemo)));
+export default withDisclosureManager(withRouter((ApplicationNavigationDemo)));

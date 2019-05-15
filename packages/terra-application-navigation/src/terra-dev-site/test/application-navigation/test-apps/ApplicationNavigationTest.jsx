@@ -5,7 +5,8 @@ import {
   withRouter, Redirect, matchPath, Switch, Route,
 } from 'react-router-dom';
 import Image from 'terra-image';
-import { DisclosureManager, Breakpoints } from 'terra-application';
+import { withActiveBreakpoint } from 'terra-application/lib/breakpoints';
+import { withDisclosureManager, disclosureManagerShape } from 'terra-application/lib/disclosure-manager';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconPill from 'terra-icon/lib/icon/IconPill';
 import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
@@ -369,7 +370,7 @@ class ApplicationNavigationTest extends React.Component {
 }
 
 ApplicationNavigationTest.propTypes = {
-  disclosureManager: DisclosureManager.disclosureManagerShape,
+  disclosureManager: disclosureManagerShape,
   history: PropTypes.object,
   hideLogout: PropTypes.bool,
   hideSettings: PropTypes.bool,
@@ -380,4 +381,4 @@ ApplicationNavigationTest.propTypes = {
   activeBreakpoint: PropTypes.string,
 };
 
-export default Breakpoints.withActiveBreakpoint(DisclosureManager.withDisclosureManager(withRouter((ApplicationNavigationTest))));
+export default withActiveBreakpoint(withDisclosureManager(withRouter((ApplicationNavigationTest))));

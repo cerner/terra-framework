@@ -1,6 +1,6 @@
 {
   "name": "terra-application",
-  "main": "lib/index.js",
+  "main": "lib/Application.js",
   "version": "0.0.0",
   "description": "TODO",
   "repository": {
@@ -32,7 +32,6 @@
     "terra-base": "^4.0.0",
     "terra-breakpoints": "^2.0.0",
     "terra-disclosure-manager": "^4.0.0",
-    "terra-modal-manager": "^5.0.0",
     "terra-theme-provider": "^3.0.0"
   },
   "scripts": {

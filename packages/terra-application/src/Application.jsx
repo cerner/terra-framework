@@ -4,7 +4,6 @@ import classNames from 'classnames/bind';
 
 import Base from 'terra-base';
 import ThemeProvider from 'terra-theme-provider';
-import ModalManager from 'terra-modal-manager';
 import { ActiveBreakpointProvider } from 'terra-breakpoints';
 
 import styles from './Application.module.scss';
@@ -15,11 +14,11 @@ const propTypes = {
   /**
    * The components to render within the Application.
    */
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
   /**
    * The locale name to be used to load translated messages.
    */
-  locale: PropTypes.string,
+  locale: PropTypes.string.isRequired,
   /**
    * Custom translations for the current locale.
    */
@@ -31,6 +30,8 @@ const propTypes = {
     if (Object.keys(props[propName]).length !== 0 && props.locale === undefined) {
       return new Error(`Missing locale prop for ${propName} in ${componentName} props`);
     }
+
+    return null;
   },
   /**
    * The component to render while the translation files are being retrieved.
@@ -47,8 +48,8 @@ const propTypes = {
    */
   themeIsGlobal: PropTypes.bool,
   /**
-   * If provided, the Application will render with a height determined by its inner content and
-   * potentially overflow its parent container.
+   * By default, the elements rendered by Application are fit to the Application's parent using 100% height.
+   * If `fitToParentIsDisabled` is provided, the Application will render at a height determined by its intrinsic content height.
    */
   fitToParentIsDisabled: PropTypes.bool,
 };
@@ -57,20 +58,18 @@ const Application = ({
   locale, customTranslatedMessages, translationsLoadingPlaceholder, themeName, themeIsGlobal, fitToParentIsDisabled, children,
 }) => (
   <ThemeProvider
-    className={cx(['application-theme-provider', { fill: !fitToParentIsDisabled }])}
+    className={cx('application-theme-provider', { fill: !fitToParentIsDisabled })}
     themeName={themeName}
     isGlobalTheme={themeIsGlobal}
   >
     <Base
-      className={cx(['application-base', { fill: !fitToParentIsDisabled }])}
+      className={cx('application-base', { fill: !fitToParentIsDisabled })}
       customMessages={customTranslatedMessages}
       translationsLoadingPlaceholder={translationsLoadingPlaceholder}
       locale={locale}
     >
       <ActiveBreakpointProvider>
-        <ModalManager className={fitToParentIsDisabled ? cx('application-modal-manager-overflow') : undefined}>
-          {children}
-        </ModalManager>
+        {children}
       </ActiveBreakpointProvider>
     </Base>
   </ThemeProvider>

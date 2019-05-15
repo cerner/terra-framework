@@ -90,7 +90,7 @@ const UtilityMenu = ({
   return (
     <PopupMenu
       header={<ActionHeader title={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.headerTitle' })} />}
-      footer={<ActionFooter end={onSelectLogout ? <Button text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.logout ' })} onClick={onSelectLogout} /> : undefined} />}
+      footer={<ActionFooter end={onSelectLogout ? <Button text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.logout' })} onClick={onSelectLogout} /> : undefined} />}
       userConfig={userConfig}
       customContent={hero}
       menuItems={menuItems}

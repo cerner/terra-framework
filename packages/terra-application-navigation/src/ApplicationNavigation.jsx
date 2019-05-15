@@ -4,7 +4,7 @@ import React, {
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Overlay from 'terra-overlay';
-import { Breakpoints } from 'terra-application';
+import { ActiveBreakpointContext } from 'terra-application/lib/breakpoints';
 import FocusTrap from 'focus-trap-react';
 import Popup from 'terra-popup';
 
@@ -134,7 +134,7 @@ const ApplicationNavigation = ({
   const [drawerMenuIsOpen, setDrawerMenuIsOpen] = useState(false);
   const [popupMenuIsOpen, setPopupMenuIsOpen] = useState(false);
 
-  const activeBreakpoint = useContext(Breakpoints.ActiveBreakpointContext);
+  const activeBreakpoint = useContext(ActiveBreakpointContext);
 
   /**
    * Given a callback function, generateMenuClosingCallback will return a new function
