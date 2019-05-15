@@ -10,8 +10,7 @@ describe('Aggregator', () => {
       browser.click('#test-aggregator #section3');
     });
 
-    Terra.should.matchScreenshot();
-    Terra.should.beAccessible();
+    Terra.should.validateElement();
   });
 
   describe('With Disclosure - Open', () => {
@@ -21,8 +20,7 @@ describe('Aggregator', () => {
       browser.click('#test-aggregator #section1');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-aggregator' });
-    Terra.should.beAccessible();
+    Terra.should.validateElement({ selector: '#test-aggregator' });
   });
 
   describe('With Disclosure - Close from focus release', () => {
@@ -36,8 +34,7 @@ describe('Aggregator', () => {
       browser.click('#test-aggregator #section1');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-aggregator' });
-    Terra.should.beAccessible();
+    Terra.should.validateElement({ selector: '#test-aggregator' });
   });
 
   describe('With Disclosure - Close from explicit close', () => {
@@ -51,7 +48,6 @@ describe('Aggregator', () => {
       browser.click('[class*="slide-group"] .close-disclosure');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-aggregator' });
-    Terra.should.beAccessible();
+    Terra.should.validateElement({ selector: '#test-aggregator' });
   });
 });
