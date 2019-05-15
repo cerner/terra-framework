@@ -315,17 +315,14 @@ class Tabs extends React.Component {
     const hasNotifications = hasVisibleNotification || hasHiddenNotification;
 
     return (
-      <div className={cx('tabs-wrapper')} ref={this.containerRef}>
-        <div
-          className={cx(['tabs-container', { 'is-calculating': this.isCalculating }])}
-          role="tablist"
-          ref={this.containerRef}
-        >
-          {this.buildVisibleChildren(visibleTabs, hasNotifications, onTabSelect, activeTabKey, notifications)}
-          {!this.menuHidden ? this.renderRollup(hiddenTabs, hasNotifications, hasHiddenNotification) : null}
-          {popupIsOpen ? this.renderPopup(hiddenTabs) : null}
-          <div className={cx('divider-after-last-tab')} />
-        </div>
+      <div
+        className={cx(['tabs-container', { 'is-calculating': this.isCalculating }])}
+        role="tablist"
+        ref={this.containerRef}
+      >
+        {this.buildVisibleChildren(visibleTabs, hasNotifications, onTabSelect, activeTabKey, notifications)}
+        {!this.menuHidden ? this.renderRollup(hiddenTabs, hasNotifications, hasHiddenNotification) : null}
+        {popupIsOpen ? this.renderPopup(hiddenTabs) : null}
       </div>
     );
   }
