@@ -81,6 +81,11 @@ const propTypes = {
    */
   name: PropTypes.string.isRequired,
   /**
+   * A callback function triggered when the date picker component loses focus.
+   * This event does not get triggered when the focus is moved from the date input to the calendar button since the focus is still within the main date picker component.
+   */
+  onBlur: PropTypes.func,
+  /**
    * A callback function to execute when a valid date is selected or entered.
    * The first parameter is the event. The second parameter is the changed date value.
    */
@@ -94,6 +99,11 @@ const propTypes = {
    * A callback function to execute when clicking outside of the picker to dismiss it.
    */
   onClickOutside: PropTypes.func,
+  /**
+   * A callback function triggered when the date picker component receives focus.
+   * This event does not get triggered when the focus is moved from the date input to the calendar button since the focus is still within the main date picker component.
+   */
+  onFocus: PropTypes.func,
   /**
    * A callback function to execute when a date is selected from within the picker.
    */
@@ -135,9 +145,11 @@ const defaultProps = {
   maxDate: undefined,
   maxWidth: undefined,
   minDate: undefined,
+  onBlur: undefined,
   onChange: undefined,
   onChangeRaw: undefined,
   onClickOutside: undefined,
+  onFocus: undefined,
   onSelect: undefined,
   required: false,
   selectedDate: undefined,
@@ -165,9 +177,11 @@ const DatePickerField = (props) => {
     minDate,
     maxWidth,
     name,
+    onBlur,
     onChange,
     onChangeRaw,
     onClickOutside,
+    onFocus,
     onSelect,
     required,
     selectedDate,
@@ -220,9 +234,11 @@ const DatePickerField = (props) => {
         maxDate={maxDate}
         minDate={minDate}
         name={name}
+        onBlur={onBlur}
         onChange={onChange}
         onChangeRaw={onChangeRaw}
         onClickOutside={onClickOutside}
+        onFocus={onFocus}
         onSelect={onSelect}
         required={required}
         selectedDate={selectedDate}

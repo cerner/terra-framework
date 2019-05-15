@@ -34,8 +34,10 @@ it('should render a DatePickerField with props', () => {
       labelAttrs={{
         className: 'label',
       }}
+      onBlur={() => {}}
       onChange={() => {}}
       onChangeRaw={() => {}}
+      onFocus={() => {}}
       onSelect={() => {}}
       onClickOutside={() => {}}
       showOptional
@@ -75,8 +77,10 @@ it('should render a valid DatePickerField with props', () => {
       }}
       onChange={() => {}}
       onChangeRaw={() => {}}
+      onBlur={() => {}}
       onSelect={() => {}}
       onClickOutside={() => {}}
+      onFocus={() => {}}
       showOptional
       excludeDates={['2017-04-03']}
       filterDate={() => {}}
