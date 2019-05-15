@@ -1,13 +1,11 @@
 :local {    
   .footer {
-    background-image: var(--terra-application-layout-menu-header-background-image);
     flex: 0 0 auto;
     position: relative;
   }
 
   .container {
-    // background-color: rgba(255, 255, 255, 0.6);
-    background-color: #77b1fd; // TODO REMOVE
+    background-image: radial-gradient(48% 116%, rgba(255,255,255,0.97) 50%, rgba(233,243,249,0.97) 100%); // TODO: REMOVE
   }
 
   .content-header {
