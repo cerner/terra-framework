@@ -136,6 +136,11 @@ const ApplicationNavigation = ({
 
   const activeBreakpoint = useContext(Breakpoints.ActiveBreakpointContext);
 
+  /**
+   * Given a callback function, generateMenuClosingCallback will return a new function
+   * that will ensure that the various menu states are reset before the callback function
+   * is executed.
+   */
   function generateMenuClosingCallback(wrappedFunction) {
     return (...args) => {
       if (!wrappedFunction) {
@@ -255,6 +260,9 @@ const ApplicationNavigation = ({
    * menus after they are closed. This is similar to executing the callbacks
    * in a setState callback for the menu state, but setState callbacks do not
    * exist for the useState hook.
+   *
+   * The closeMenuCallbackRef value is set by the functions returned by
+   * generateMenuClosingCallback.
    */
   useEffect(() => {
     if (closeMenuCallbackRef.current) {
@@ -265,15 +273,15 @@ const ApplicationNavigation = ({
 
   /**
    * This layout effect is used to manage the visibility of the drawer menu during
-   * its transition animations. 
-   * 
+   * its transition animations.
+   *
    * When the drawer menu is closed, it is hidden using its display property to
-   * prevent users from tabbing to it and to limit expensive reflows of its content. However, while 
+   * prevent users from tabbing to it and to limit expensive reflows of its content. However, while
    * the drawerMenuIsOpen state indicates whether or not the menu is open or closed, the transitions
    * to the open/closed states are animated, leaving the component in a position where the menu must
-   * continue to be visible while the menu is animating closed. Therefore, we cannot rely on the 
+   * continue to be visible while the menu is animating closed. Therefore, we cannot rely on the
    * drawerMenuIsOpen state alone to determine when to hide the drawer menu content.
-   * 
+   *
    * In this layout effect, the proper styles are applied after the transition completes, and the
    * drawerMenuIsVisibleRef value is updated so that subsequent renders of the component are
    * accurate.
