@@ -216,18 +216,10 @@ const ApplicationNavigation = ({
   }
 
   function renderCompactHeader() {
-    let navTitleConfig;
-    if (activeNavigationItemKey && navigationItems && navigationItems.length) {
-      const item = navigationItems.find(navItem => navItem.key === activeNavigationItemKey);
-      if (item) {
-        navTitleConfig = { title: item.text };
-      }
-    }
-
     return (
       <CompactHeader
         activeBreakpoint={activeBreakpoint}
-        titleConfig={navTitleConfig || titleConfig}
+        titleConfig={titleConfig}
         extensionItems={extensionItems}
         onSelectExtensionItem={onSelectExtensionItem}
         navigationItems={navigationItems}
@@ -273,10 +265,18 @@ const ApplicationNavigation = ({
 
   /**
    * This layout effect is used to manage the visibility of the drawer menu during
-   * its transition animation. The drawer menu should not be hidden until its transition to
-   * a closed state completes. drawerMenuIsVisibleRef is used keep track of this
-   * visibility state separate from the drawerMenuIsOpen state managed by the component during
-   * each render.
+   * its transition animations. 
+   * 
+   * When the drawer menu is closed, it is hidden using its display property to
+   * prevent users from tabbing to it and to limit expensive reflows of its content. However, while 
+   * the drawerMenuIsOpen state indicates whether or not the menu is open or closed, the transitions
+   * to the open/closed states are animated, leaving the component in a position where the menu must
+   * continue to be visible while the menu is animating closed. Therefore, we cannot rely on the 
+   * drawerMenuIsOpen state alone to determine when to hide the drawer menu content.
+   * 
+   * In this layout effect, the proper styles are applied after the transition completes, and the
+   * drawerMenuIsVisibleRef value is updated so that subsequent renders of the component are
+   * accurate.
    */
   useLayoutEffect(() => {
     if (!contentLayoutRef.current) {
@@ -302,26 +302,28 @@ const ApplicationNavigation = ({
 
   /**
    * If the ApplicationNavigation is rendering at non-compact breakpoints, and the drawer menu is still
-   * open, then it is closed here. This will trigger an new render after this render completes.
+   * open, then it is closed here. This will trigger an new update immediately after the completion of
+   * the current render.
    */
   if (drawerMenuIsOpen && !shouldRenderCompactNavigation(activeBreakpoint)) {
     setDrawerMenuIsOpen(false);
   }
 
   /**
-   * The drawer menu's inline display style is reset to ensure the drawer menu will be visible if the drawer menu
-   * is animating into view. The drawerMenuRef's inline display style will be set below if the drawer menu is
-   * either closed or otherwise should not be visible.
+   * The inline display styles are removed from the drawerMenuRef with each render. This
+   * ensures that the menu is immediately visible if it is being opened. If the menu still
+   * needs to be hidden, the logic below will provide the appropriate display style.
    */
   if (drawerMenuRef.current && drawerMenuIsOpen) {
-    drawerMenuRef.current.style.display = '';
+    drawerMenuRef.current.removeAttribute('style');
   }
 
   return (
     <div className={cx('application-navigation')}>
       <div
         ref={drawerMenuRef}
-        className={cx(['drawer-menu-container', { 'is-hidden': !drawerMenuIsVisibleRef.current && !drawerMenuIsOpen }])}
+        className={cx('drawer-menu-container')}
+        style={!drawerMenuIsVisibleRef.current && !drawerMenuIsOpen ? { display: 'none' } : undefined}
         aria-hidden={!drawerMenuIsOpen ? true : null}
       >
         {renderDrawerMenu()}

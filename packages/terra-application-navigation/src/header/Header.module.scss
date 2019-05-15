@@ -46,12 +46,12 @@
 
     .headline {
       font-weight: 500;
-      margin-bottom: -4px;
+      margin-bottom: -0.2857rem;
     }
 
     .subline {
-      margin-bottom: 3px;
-      margin-top: -5px;
+      margin-bottom: 0.2143rem;
+      margin-top: -0.3571rem;
     }
         
     .title {
@@ -62,23 +62,23 @@
 
   .main-navigation-container {
     flex: 1 1 auto;
-    padding-left: 1.143rem;
     min-width: 20%;
     overflow: hidden;
+    padding-left: 1.143rem;
     position: relative;
   }
 
   .extensions-container {
     flex: 0 1 auto;
+    max-width: 25%;
     padding-left: 1.143rem;
     position: relative;
-    max-width: 25%;
   }
 
   .utilities-container {
     flex: 0 0 auto;
-    padding-left: 1.143rem;
     max-width: 25%;
+    padding-left: 1.143rem;
     position: relative;
   }
 
