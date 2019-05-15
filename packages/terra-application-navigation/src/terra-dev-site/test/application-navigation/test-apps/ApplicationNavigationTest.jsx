@@ -17,7 +17,6 @@ import IconSpinner from 'terra-icon/lib/icon/IconSpinner';
 
 import ApplicationNavigation from '../../../../ApplicationNavigation';
 import ContentComponent from './ContentComponent';
-import DisclosureComponent from './DisclosureComponent';
 import profileImage from './henry.jpg';
 import heroImage from './hero.jpg';
 import heroCloseupImage from './heroCloseup.jpg';
@@ -207,10 +206,6 @@ class ApplicationNavigationTest extends React.Component {
 
     this.handleExtensionSelect = this.handleExtensionSelect.bind(this);
     this.handleNavigationItemSelection = this.handleNavigationItemSelection.bind(this);
-    this.handleSettingsSelection = this.handleSettingsSelection.bind(this);
-    this.handleHelpSelection = this.handleHelpSelection.bind(this);
-    this.handleLogoutSelection = this.handleLogoutSelection.bind(this);
-    this.handleCustomUtilitySelection = this.handleCustomUtilitySelection.bind(this);
 
     this.state = {
       activeNavigationItemKey: undefined,

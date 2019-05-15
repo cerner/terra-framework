@@ -9,7 +9,7 @@ import ApplicationNavigationDemo from './test-apps/ApplicationNavigationDemo';
 
 const Demo = () => (
   <MemoryRouter>
-    <Application>
+    <Application locale="en-US">
       <ApplicationNavigationDemo />
     </Application>
   </MemoryRouter>

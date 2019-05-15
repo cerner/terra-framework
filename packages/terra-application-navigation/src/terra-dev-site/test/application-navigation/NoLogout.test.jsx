@@ -9,7 +9,7 @@ import ApplicationNavigationTest from './test-apps/ApplicationNavigationTest';
 
 const NoLogoutTest = () => (
   <MemoryRouter>
-    <Application>
+    <Application locale="en-US">
       <ApplicationNavigationTest hideLogout />
     </Application>
   </MemoryRouter>

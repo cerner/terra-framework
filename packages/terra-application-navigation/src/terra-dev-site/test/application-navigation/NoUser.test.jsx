@@ -9,7 +9,7 @@ import ApplicationNavigationTest from './test-apps/ApplicationNavigationTest';
 
 const NoUserTest = () => (
   <MemoryRouter>
-    <Application>
+    <Application locale="en-US">
       <ApplicationNavigationTest hideUser />
     </Application>
   </MemoryRouter>

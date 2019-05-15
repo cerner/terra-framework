@@ -15,7 +15,6 @@ import IconTable from 'terra-icon/lib/icon/IconTable';
 
 import ApplicationNavigation from '../../../../ApplicationNavigation';
 import ContentComponent from './ContentComponent';
-import DisclosureComponent from './DisclosureComponent';
 
 const navigationItems = [{
   key: '/page_1',
@@ -72,10 +71,6 @@ class ApplicationNavigationDemo extends React.Component {
 
     this.handleExtensionSelect = this.handleExtensionSelect.bind(this);
     this.handleNavigationItemSelection = this.handleNavigationItemSelection.bind(this);
-    this.handleSettingsSelection = this.handleSettingsSelection.bind(this);
-    this.handleHelpSelection = this.handleHelpSelection.bind(this);
-    this.handleLogoutSelection = this.handleLogoutSelection.bind(this);
-    this.handleCustomUtilitySelection = this.handleCustomUtilitySelection.bind(this);
 
     this.state = {
       activeNavigationItemKey: undefined,
@@ -91,13 +86,7 @@ class ApplicationNavigationDemo extends React.Component {
       return;
     }
 
-    const { disclosureManager } = this.props;
-    disclosureManager.disclose({
-      preferredType: 'modal',
-      content: {
-        component: <DisclosureComponent text={metaData.key} />,
-      },
-    });
+    alert(`${key}-${JSON.stringify(metaData)}`); // eslint-disable-line no-alert
   }
 
   handleNavigationItemSelection(navigationItemKey) {

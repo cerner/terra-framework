@@ -9,7 +9,7 @@ import ApplicationNavigationTest from './test-apps/ApplicationNavigationTest';
 
 const StandardApplicationNavigationTest = () => (
   <MemoryRouter>
-    <Application>
+    <Application locale="en-US">
       <ApplicationNavigationTest />
     </Application>
   </MemoryRouter>

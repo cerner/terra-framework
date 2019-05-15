@@ -9,7 +9,7 @@ import ApplicationNavigationTest from './test-apps/ApplicationNavigationTest';
 
 const NoSettingsOrHelpTest = () => (
   <MemoryRouter>
-    <Application>
+    <Application locale="en-US">
       <ApplicationNavigationTest hideNavigationItems />
     </Application>
   </MemoryRouter>
