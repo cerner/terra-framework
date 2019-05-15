@@ -12,7 +12,6 @@ viewports.forEach((viewport) => {
     describe('Displays a default application header utility', () => {
       Terra.should.validateElement({ selector: '#default' });
       if (browser.options.formFactor === 'medium') {
-
         Terra.should.themeCombinationOfCustomProperties({
           testName: 'themed',
           selector: '#default',
