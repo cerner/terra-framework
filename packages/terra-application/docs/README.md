@@ -7,6 +7,9 @@ The `terra-application` package provides a baseline of functionality for applica
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-application`
 
+## Rationale
+
+
 ## Usage
 
 The `terra-application` package has two main responsibilities:
@@ -106,7 +109,6 @@ const DisclosedContent = () => {
     </button>
   );
 }
-
 
 const ExampleContent = () => {
   const disclosureManager = React.useContext(DisclosureManagerContext);

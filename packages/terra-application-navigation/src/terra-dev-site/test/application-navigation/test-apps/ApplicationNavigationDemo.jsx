@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import {
   withRouter, Redirect, matchPath, Switch, Route,
 } from 'react-router-dom';
-import { disclosureManagerShape, withDisclosureManager } from 'terra-application/lib/disclosure-manager';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconPill from 'terra-icon/lib/icon/IconPill';
 import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
@@ -110,58 +109,6 @@ class ApplicationNavigationDemo extends React.Component {
     }
   }
 
-  handleSettingsSelection() {
-    const { disclosureManager } = this.props;
-
-    disclosureManager.disclose({
-      preferredType: 'modal',
-      size: 'small',
-      content: {
-        key: 'settings-component',
-        component: <DisclosureComponent text="Settings" />,
-      },
-    });
-  }
-
-  handleHelpSelection() {
-    const { disclosureManager } = this.props;
-
-    disclosureManager.disclose({
-      preferredType: 'modal',
-      size: 'small',
-      content: {
-        key: 'help-component',
-        component: <DisclosureComponent text="Help" />,
-      },
-    });
-  }
-
-  handleLogoutSelection() {
-    const { disclosureManager } = this.props;
-
-    disclosureManager.disclose({
-      preferredType: 'modal',
-      size: 'small',
-      content: {
-        key: 'logout-component',
-        component: <DisclosureComponent text="Logout" />,
-      },
-    });
-  }
-
-  handleCustomUtilitySelection(utilityItemKey) {
-    const { disclosureManager } = this.props;
-
-    disclosureManager.disclose({
-      preferredType: 'modal',
-      size: 'small',
-      content: {
-        key: utilityItemKey,
-        component: <DisclosureComponent text={utilityItemKey} />,
-      },
-    });
-  }
-
   render() {
     const {
       hideSettings,
@@ -218,18 +165,20 @@ class ApplicationNavigationDemo extends React.Component {
 
     return (
       <ApplicationNavigation
-        title="Test Application"
+        titleConfig={{
+          title: 'Test Application',
+        }}
         extensionItems={extensionItems}
         onSelectExtensionItem={this.handleExtensionSelect}
         userConfig={!hideUser ? userConfig : undefined}
         navigationItems={!hideNavigationItems ? navigationItems : undefined}
         activeNavigationItemKey={activeNavigationItem.key}
         onSelectNavigationItem={!hideNavigationItems ? this.handleNavigationItemSelection : null}
-        onSelectSettings={!hideSettings ? this.handleSettingsSelection : undefined}
-        onSelectHelp={!hideHelp ? this.handleHelpSelection : undefined}
-        onSelectLogout={!hideLogout ? this.handleLogoutSelection : undefined}
+        onSelectSettings={!hideSettings ? () => { alert('Settings Selected'); } : null} // eslint-disable-line no-alert
+        onSelectHelp={!hideHelp ? () => { alert('Help Selected'); } : null} // eslint-disable-line no-alert
+        onSelectLogout={!hideLogout ? () => { alert('Logout Selected'); } : null} // eslint-disable-line no-alert
         utilityItems={utilityItems}
-        onSelectUtilityItem={this.handleCustomUtilitySelection}
+        onSelectUtilityItem={(key, metaData) => { alert(`${key}-${JSON.stringify(metaData)} Selected`); }} // eslint-disable-line no-alert
       >
         <Switch>
           <Route path="/page_1" render={() => <ContentComponent contentName="Page 1" numberOfParagraphs={1} />} />
@@ -244,7 +193,6 @@ class ApplicationNavigationDemo extends React.Component {
 }
 
 ApplicationNavigationDemo.propTypes = {
-  disclosureManager: disclosureManagerShape,
   history: PropTypes.object,
   hideLogout: PropTypes.bool,
   hideSettings: PropTypes.bool,
@@ -253,4 +201,4 @@ ApplicationNavigationDemo.propTypes = {
   hideUser: PropTypes.bool,
 };
 
-export default withDisclosureManager(withRouter((ApplicationNavigationDemo)));
+export default withRouter((ApplicationNavigationDemo));

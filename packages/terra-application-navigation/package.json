@@ -25,8 +25,8 @@
     "terra-application": "^0.0.0"
   },
   "peerDependencies": {
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
     "react-intl": "^2.4.0",
     "terra-application": "^0.0.0"
   },
