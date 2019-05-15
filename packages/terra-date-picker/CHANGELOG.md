@@ -3,13 +3,22 @@ Changelog
 
 Unreleased
 ----------
+
+4.1.0 - (March 15, 2019)
+------------------
+### Changed
+* Resolved eslint error in example files
+
+4.0.0 - (May 13, 2019)
+------------------
 ### Breaking Changes
 * Removed `releaseFocus` prop
 * Removed `requestFocus` prop
 * Removed `onInputFocus` prop in favor of the added `onFocus` prop.
 * Changed the parameter in filterDate prop from a moment object to an ISO string.
 * Honor min/max range when only either minDate or maxDate is set.
-* Change the onBlur event to get triggered only when the entire date picker component loses focus.
+* Changed the onBlur event to get triggered only when the entire date picker component loses focus.
+* Updated upgrade guide.
 
 ### Added
 * Component specific handling for pressing Escape key to close the Date Picker

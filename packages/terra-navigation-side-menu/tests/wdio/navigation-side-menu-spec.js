@@ -16,6 +16,7 @@ describe('Default navigation side menu display', () => {
       '--terra-navigation-side-menu-list-item-border-top': '5px solid #f00',
       '--terra-navigation-side-menu-item-color': 'green',
       '--terra-navigation-side-menu-item-font-size': '0.5rem',
+      '--terra-navigation-side-menu-item-font-weight': '800',
       '--terra-navigation-side-menu-item-padding-top': '0',
       '--terra-navigation-side-menu-item-padding-right': '0',
       '--terra-navigation-side-menu-item-padding-bottom': '0',
