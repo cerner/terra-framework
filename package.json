@@ -75,7 +75,7 @@
     "postpublish": "npm run docs && npm run dependency-markdown && git add --all && git commit -m 'Updated DEPENDENCIES.md files'",
     "start": "tt-serve",
     "start-heroku": "tt-heroku-serve-static",
-    "start-static": "tt-serve-static",
+    "start-static": "npm run compile:prod && tt-serve-static --site ./build",
     "test": "npm run jest && npm run wdio",
     "wdio": "wdio node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   },
@@ -112,9 +112,9 @@
     "react-test-renderer": "^16.4.2",
     "stylelint": "^10.0.1",
     "stylelint-config-terra": "^3.0.0",
-    "terra-dev-site": "^4.0.0",
+    "terra-dev-site": "git://github.com/cerner/terra-dev-site.git#v5",
     "terra-enzyme-intl": "^3.0.0",
-    "terra-toolkit": "^4.16.0",
+    "terra-toolkit": "git://github.com/cerner/terra-toolkit.git#master",
     "xfc": "^1.2.1"
   }
 }
