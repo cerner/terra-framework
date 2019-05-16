@@ -13,33 +13,34 @@ viewports.forEach((viewport) => {
         browser.moveToObject('#test-tabs [data-application-tabs-more]');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible();
-      Terra.should.themeCombinationOfCustomProperties({
-        selector: '#test-tabs',
-        testName: 'themed',
-        properties: {
-          '--terra-application-links-tabs-tab-width': '9rem',
-          '--terra-application-links-tabs-tab-margin-next-to-icon': '1rem',
-          '--terra-application-links-tabs-menu-arrow-margin-left': '2rem',
-          '--terra-application-links-tabs-tab-background-image': 'linear-gradient(to bottom, red, orange)',
-          '--terra-application-links-tabs-tab-background-position': 'top',
-          '--terra-application-links-tabs-tab-background-size': '0 9px',
-          '--terra-application-links-tabs-tab-divider-before-border-left': '1px solid green',
-          '--terra-application-links-tabs-tab-divider-before-border-right': '1px solid pink',
-          '--terra-application-links-tabs-tab-color': '#000',
-          '--terra-application-links-tabs-tab-font-size': '1rem',
-          '--terra-application-links-tabs-tab-line-height': '1',
-          '--terra-application-links-tabs-tab-hover-background-color': 'rgba(0, 0, 0, 0.15)',
-          '--terra-application-links-tabs-tab-active-background-color': 'pink',
-          '--terra-application-links-tabs-tab-active-background-size': '100% 9px',
-          '--terra-application-links-tabs-tab-active-color': '#000',
-          '--terra-application-links-tabs-tab-hover-background-image': 'linear-gradient(to bottom, orange,red)',
-          '--terra-application-links-tabs-tab-hover-background-size': '100% 9px',
-          '--terra-application-links-tabs-tab-hover-color': 'gray',
-          '--terra-application-links-tabs-tab-text-transform': 'uppercase',
-        },
-      });
+      Terra.should.validateElement();
+      if (browser.options.formFactor === 'large') {
+        Terra.should.themeCombinationOfCustomProperties({
+          selector: '#test-tabs',
+          testName: 'themed',
+          properties: {
+            '--terra-application-links-tabs-tab-width': '9rem',
+            '--terra-application-links-tabs-tab-margin-next-to-icon': '1rem',
+            '--terra-application-links-tabs-menu-arrow-margin-left': '2rem',
+            '--terra-application-links-tabs-tab-background-image': 'linear-gradient(to bottom, red, orange)',
+            '--terra-application-links-tabs-tab-background-position': 'top',
+            '--terra-application-links-tabs-tab-background-size': '0 9px',
+            '--terra-application-links-tabs-tab-divider-before-border-left': '1px solid green',
+            '--terra-application-links-tabs-tab-divider-before-border-right': '1px solid pink',
+            '--terra-application-links-tabs-tab-color': '#000',
+            '--terra-application-links-tabs-tab-font-size': '1rem',
+            '--terra-application-links-tabs-tab-line-height': '1',
+            '--terra-application-links-tabs-tab-hover-background-color': 'rgba(0, 0, 0, 0.15)',
+            '--terra-application-links-tabs-tab-active-background-color': 'pink',
+            '--terra-application-links-tabs-tab-active-background-size': '100% 9px',
+            '--terra-application-links-tabs-tab-active-color': '#000',
+            '--terra-application-links-tabs-tab-hover-background-image': 'linear-gradient(to bottom, orange,red)',
+            '--terra-application-links-tabs-tab-hover-background-size': '100% 9px',
+            '--terra-application-links-tabs-tab-hover-color': 'gray',
+            '--terra-application-links-tabs-tab-text-transform': 'uppercase',
+          },
+        });
+      }
     });
 
     describe('Displays collapsed application tabs', () => {
@@ -55,23 +56,24 @@ viewports.forEach((viewport) => {
         browser.moveToObject('[data-application-tab-menu-content] > *:first-child');
       });
 
-      Terra.should.matchScreenshot({ selector: '[data-application-tab-menu-content]' });
-      Terra.should.beAccessible();
-      Terra.should.themeCombinationOfCustomProperties({
-        testName: 'themed',
-        selector: '[data-application-tab-menu-content]',
-        properties: {
-          '--terra-application-links-tabs-collapsed-color': 'blue',
-          '--terra-application-links-tabs-collapsed-hover-background': 'linear-gradient(-90deg, orange, red)',
-          '--terra-application-links-tabs-collapsed-selected-background-image': 'linear-gradient(-270deg, red, orange)',
-          '--terra-application-links-tabs-collapsed-selected-box-shadow': 'inset 1rem 0 0 0 purple',
-          '--terra-application-links-tabs-collapsed-padding-top': '0',
-          '--terra-application-links-tabs-collapsed-padding-right': '0',
-          '--terra-application-links-tabs-collapsed-padding-bottom': '0',
-          '--terra-application-links-tabs-collapsed-padding-left': '0',
-          '--terra-application-links-tabs-tab-text-transform': 'uppercase',
-        },
-      });
+      Terra.should.validateElement({ selector: '[data-application-tab-menu-content]' });
+      if (browser.options.formFactor === 'large') {
+        Terra.should.themeCombinationOfCustomProperties({
+          testName: 'themed',
+          selector: '[data-application-tab-menu-content]',
+          properties: {
+            '--terra-application-links-tabs-collapsed-color': 'blue',
+            '--terra-application-links-tabs-collapsed-hover-background': 'linear-gradient(-90deg, orange, red)',
+            '--terra-application-links-tabs-collapsed-selected-background-image': 'linear-gradient(-270deg, red, orange)',
+            '--terra-application-links-tabs-collapsed-selected-box-shadow': 'inset 1rem 0 0 0 purple',
+            '--terra-application-links-tabs-collapsed-padding-top': '0',
+            '--terra-application-links-tabs-collapsed-padding-right': '0',
+            '--terra-application-links-tabs-collapsed-padding-bottom': '0',
+            '--terra-application-links-tabs-collapsed-padding-left': '0',
+            '--terra-application-links-tabs-tab-text-transform': 'uppercase',
+          },
+        });
+      }
     });
 
     describe('Displays a hidden application tabs selection', () => {
@@ -84,7 +86,7 @@ viewports.forEach((viewport) => {
         browser.pause(50);
       });
 
-      Terra.should.matchScreenshot();
+      Terra.should.validateElement();
     });
 
     describe('Displays a application tabs start aligned', () => {
@@ -93,7 +95,7 @@ viewports.forEach((viewport) => {
         browser.pause(50);
       });
 
-      Terra.should.matchScreenshot();
+      Terra.should.validateElement();
     });
 
     describe('Displays a application tabs center aligned', () => {
@@ -102,7 +104,7 @@ viewports.forEach((viewport) => {
         browser.pause(50);
       });
 
-      Terra.should.matchScreenshot();
+      Terra.should.validateElement();
     });
 
     describe('Displays a application tabs end aligned', () => {
@@ -111,7 +113,7 @@ viewports.forEach((viewport) => {
         browser.pause(50);
       });
 
-      Terra.should.matchScreenshot();
+      Terra.should.validateElement();
     });
 
     describe('Navigates away from the site', () => {
@@ -134,7 +136,7 @@ viewports.forEach((viewport) => {
         browser.moveToObject('#test-tabs [data-application-tabs-more]');
       });
 
-      Terra.should.matchScreenshot();
+      Terra.should.validateElement();
     });
 
     describe('Displays collapsed application tabs with icons', () => {
@@ -150,7 +152,7 @@ viewports.forEach((viewport) => {
         browser.moveToObject('[data-application-tab-menu-content] > *:first-child');
       });
 
-      Terra.should.matchScreenshot({ selector: '[data-application-tab-menu-content]' });
+      Terra.should.validateElement({ selector: '[data-application-tab-menu-content]' });
     });
   });
 });
