@@ -134,7 +134,10 @@ describe('Date Picker', () => {
   });
 
   describe('Read Only', () => {
-    before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-read-only'));
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-read-only');
+      browser.moveToObject('#root', 0, 0);
+    });
 
     Terra.should.matchScreenshot('not clicked');
     Terra.should.beAccessible({ rules: ignoredA11y });
