@@ -4,6 +4,16 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Explicitly set menu item font weight value to normal.
+
+6.0.0 - (May 13, 2019)
+------------------
+### Breaking Changes
+* Consume latest major version bump of terra-popup
+
+5.10.0 - (May 7, 2019)
+------------------
+### Changed
 * Added custom font-weight property for MenuItem component (defaults to 'inherit')
 
 5.9.0 - (April 24, 2019)

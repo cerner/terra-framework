@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.5.0 - (May 7, 2019)
+------------------
 ### Changed
 * The consumed terra-list is no longer styled for scrolling, it is added through a containing element
 

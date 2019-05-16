@@ -42,17 +42,24 @@ const propTypes = {
    * */
   intl: intlShape.isRequired,
   /**
-   * An ISO 8601 string representation of the maximum date time.
+   * An ISO 8601 string representation of the maximum date that can be selected in the date picker.
+   * The time portion in this value is ignored because this is strictly used in the date picker.
    */
-  maxDateTime: PropTypes.string,
+  maxDate: PropTypes.string,
   /**
-   * An ISO 8601 string representation of the minimum date time.
+   * An ISO 8601 string representation of the minimum date that can be selected in the date picker.
+   * The time portion in this value is ignored because this is strictly used in the date picker.
    */
-  minDateTime: PropTypes.string,
+  minDate: PropTypes.string,
   /**
    * Name of the date input. The name should be unique.
    */
   name: PropTypes.string.isRequired,
+  /**
+   * A callback function triggered when the entire date time picker component loses focus.
+   * This event does not get triggered when the focus is moved from the date input to the time input because the focus is still within the main date time picker component.
+   */
+  onBlur: PropTypes.func,
   /**
    * A callback function to execute when a valid date is selected or entered.
    * The first parameter is the event. The second parameter is the changed input value.
@@ -64,18 +71,18 @@ const propTypes = {
    */
   onChangeRaw: PropTypes.func,
   /**
+   * A callback function to execute when clicking outside of the picker to dismiss it.
+   */
+  onClickOutside: PropTypes.func,
+  /**
+   * A callback function triggered when the date input, hour input, or minute input receives focus.
+   */
+  onFocus: PropTypes.func,
+  /**
    * A callback function to execute when a selection is made in the date picker.
    * The first parameter is the event. The second parameter is the selected input value in ISO format.
    */
   onSelect: PropTypes.func,
-  /**
-   * A callback function to let the containing component (e.g. modal) to regain focus.
-   */
-  releaseFocus: PropTypes.func,
-  /**
-   * A callback function to request focus from the containing component (e.g. modal).
-   */
-  requestFocus: PropTypes.func,
   /**
    * Custom input attributes to apply to the time input. Use the name prop to set the name for the time input.
    * Do not set the name in inputAttribute as it will be ignored.
@@ -86,6 +93,10 @@ const propTypes = {
    * An ISO 8601 string representation of the initial value to show in the date and time inputs.
    */
   value: PropTypes.string,
+  /**
+   * Type of time input to initialize. Must be '24-hour' or '12-hour'
+   */
+  timeVariant: PropTypes.oneOf([DateTimeUtils.FORMAT_12_HOUR, DateTimeUtils.FORMAT_24_HOUR]),
 };
 
 const defaultProps = {
@@ -94,15 +105,17 @@ const defaultProps = {
   excludeDates: undefined,
   filterDate: undefined,
   includeDates: undefined,
-  maxDateTime: undefined,
-  minDateTime: undefined,
+  maxDate: undefined,
+  minDate: undefined,
+  onBlur: undefined,
   onChange: undefined,
   onChangeRaw: undefined,
+  onClickOutside: undefined,
+  onFocus: undefined,
   onSelect: undefined,
-  releaseFocus: undefined,
-  requestFocus: undefined,
   timeInputAttributes: undefined,
   value: undefined,
+  timeVariant: DateTimeUtils.FORMAT_24_HOUR,
 };
 
 class DateTimePicker extends React.Component {
@@ -110,7 +123,7 @@ class DateTimePicker extends React.Component {
     super(props);
 
     this.state = {
-      dateTime: DateTimeUtils.createSafeDate(props.value),
+      dateTime: DateUtil.createSafeDate(props.value),
       isAmbiguousTime: false,
       isTimeClarificationOpen: false,
       dateFormat: DateUtil.getFormatByLocale(props.intl.locale),
@@ -122,8 +135,8 @@ class DateTimePicker extends React.Component {
     // Unlike dateValue and timeValue, this.state.dateTime is the internal moment object representing both the date and time as one entity
     // It is used for date/time manipulation and used to calculate the missing/ambiguous hour.
     // The dateValue and timeValue are tracked outside of the react state to limit the number of renderings that occur.
-    this.dateValue = DateTimeUtils.formatMomentDateTime(this.state.dateTime, this.state.dateFormat);
-    this.timeValue = DateTimeUtils.hasTime(this.props.value) ? DateTimeUtils.formatISODateTime(this.props.value, 'HH:mm') : '';
+    this.dateValue = DateUtil.formatMomentDate(this.state.dateTime, this.state.dateFormat) || '';
+    this.timeValue = DateTimeUtils.hasTime(this.props.value) ? DateUtil.formatISODate(this.props.value, 'HH:mm') : '';
     this.isDefaultDateTimeAcceptable = true;
     this.wasOffsetButtonClicked = false;
 
@@ -133,19 +146,23 @@ class DateTimePicker extends React.Component {
     this.handleOnSelect = this.handleOnSelect.bind(this);
     this.handleOnDateBlur = this.handleOnDateBlur.bind(this);
     this.handleOnTimeBlur = this.handleOnTimeBlur.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
     this.handleDaylightSavingButtonClick = this.handleDaylightSavingButtonClick.bind(this);
     this.handleStandardTimeButtonClick = this.handleStandardTimeButtonClick.bind(this);
     this.handleOnDateInputFocus = this.handleOnDateInputFocus.bind(this);
     this.handleOnTimeInputFocus = this.handleOnTimeInputFocus.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
     this.handleOnCalendarButtonClick = this.handleOnCalendarButtonClick.bind(this);
     this.handleOffsetButtonClick = this.handleOffsetButtonClick.bind(this);
     this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
+    this.dateTimePickerContainer = React.createRef();
+    this.containerHasFocus = false;
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.value !== prevState.prevPropsValue) {
       return {
-        dateTime: DateTimeUtils.createSafeDate(nextProps.value),
+        dateTime: DateUtil.createSafeDate(nextProps.value),
         prevPropsValue: nextProps.value,
       };
     }
@@ -158,34 +175,93 @@ class DateTimePicker extends React.Component {
   }
 
   handleOnSelect(event, selectedDate) {
-    this.dateValue = DateTimeUtils.formatISODateTime(selectedDate, this.state.dateFormat);
+    this.dateValue = DateUtil.formatISODate(selectedDate, this.state.dateFormat);
     const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
     const updatedDateTime = DateTimeUtils.syncDateTime(previousDateTime, selectedDate, this.timeValue);
 
     if (!previousDateTime || previousDateTime.format() !== updatedDateTime.format()) {
       this.checkAmbiguousTime(updatedDateTime);
     }
+
     if (this.props.onSelect) {
       this.props.onSelect(event, updatedDateTime.format());
     }
+
+    this.hourInput.focus();
   }
 
   handleOnDateBlur(event) {
-    const isDateTimeValid = DateTimeUtils.isValidDateTime(event.target.value, this.timeValue, this.state.dateFormat);
-    const enteredDateTime = isDateTimeValid ? this.state.dateTime : null;
+    // Modern browsers support event.relatedTarget but event.relatedTarget returns null in IE 10 / IE 11.
+    // IE 11 sets document.activeElement to the next focused element before the blur event is called.
+    const activeTarget = event.relatedTarget ? event.relatedTarget : document.activeElement;
 
-    this.checkAmbiguousTime(enteredDateTime);
+    // Handle blur only if focus has moved out of the entire date time picker component.
+    if (!this.dateTimePickerContainer.current.contains(activeTarget)) {
+      const isDateTimeValid = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat);
+      const enteredDateTime = isDateTimeValid ? this.state.dateTime : null;
+
+      this.checkAmbiguousTime(enteredDateTime);
+      this.handleBlur(event, isDateTimeValid);
+    }
   }
 
-  handleOnTimeBlur() {
-    const isDateTimeValid = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat);
-    let updatedDateTime;
+  handleOnTimeBlur(event) {
+    // Modern browsers support event.relatedTarget but event.relatedTarget returns null in IE 10 / IE 11.
+    // IE 11 sets document.activeElement to the next focused element before the blur event is called.
+    const activeTarget = event.relatedTarget ? event.relatedTarget : document.activeElement;
 
-    if (isDateTimeValid) {
-      updatedDateTime = DateTimeUtils.updateTime(this.state.dateTime, this.timeValue);
+    // Handle blur only if focus has moved out of the entire date time picker component.
+    if (!this.dateTimePickerContainer.current.contains(activeTarget)) {
+      const isDateTimeValid = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat);
+      let updatedDateTime;
+
+      if (isDateTimeValid) {
+        updatedDateTime = DateTimeUtils.updateTime(this.state.dateTime, this.timeValue);
+      }
+
+      this.checkAmbiguousTime(updatedDateTime);
+      this.handleBlur(event, isDateTimeValid);
+    }
+  }
+
+  handleBlur(event, isCompleteDateTime) {
+    if (this.props.onBlur) {
+      let value = '';
+      if (this.dateValue) {
+        value = this.dateValue.concat(' ');
+      }
+
+      if (this.timeValue) {
+        value = value.concat(this.timeValue);
+      }
+
+      value.trim();
+
+      let iSOString = '';
+      let momentDateTime;
+
+      if (isCompleteDateTime) {
+        momentDateTime = DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat);
+        iSOString = momentDateTime.format();
+      }
+
+      let isValid = false;
+
+      if (value === '' || (isCompleteDateTime && this.isDateTimeAcceptable(momentDateTime))) {
+        isValid = true;
+      }
+
+      const options = {
+        iSO: iSOString,
+        inputValue: value,
+        isCompleteValue: isCompleteDateTime,
+        isValidValue: isValid,
+      };
+
+      this.props.onBlur(event, options);
     }
 
-    this.checkAmbiguousTime(updatedDateTime);
+    this.containerHasFocus = false;
   }
 
   checkAmbiguousTime(dateTime) {
@@ -215,18 +291,30 @@ class DateTimePicker extends React.Component {
     }
 
     let updatedDateTime;
-    const formattedDate = DateTimeUtils.formatISODateTime(date, 'YYYY-MM-DD');
+    const formattedDate = DateUtil.formatISODate(date, 'YYYY-MM-DD');
+    const isDateValid = DateUtil.isValidDate(formattedDate, 'YYYY-MM-DD');
+    const isTimeValid = DateTimeUtils.isValidTime(this.timeValue);
 
-    if (DateTimeUtils.isValidDate(formattedDate, 'YYYY-MM-DD')) {
-      const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
+    if (isDateValid) {
+      const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : DateUtil.createSafeDate(formattedDate);
       updatedDateTime = DateTimeUtils.syncDateTime(previousDateTime, date, this.timeValue);
 
-      if (DateTimeUtils.isValidTime(this.timeValue)) {
-        this.timeValue = DateTimeUtils.formatISODateTime(updatedDateTime.format(), 'HH:mm');
+      if (isTimeValid) {
+        // Update the timeValue in case the updatedDateTime falls in the missing hour and needs to bump the hour up.
+        this.timeValue = DateUtil.formatISODate(updatedDateTime.format(), 'HH:mm');
       }
     }
 
-    this.handleChange(event, updatedDateTime);
+    // onChange should only be triggered when both the date and time values are valid or both values are empty/cleared.
+    if ((isDateValid && isTimeValid) || (this.dateValue === '' && this.timeValue === '')) {
+      this.handleChange(event, updatedDateTime);
+    } else {
+      this.setState({ dateTime: updatedDateTime });
+    }
+
+    if (isDateValid) {
+      this.hourInput.focus();
+    }
   }
 
   handleDateChangeRaw(event, date) {
@@ -236,7 +324,7 @@ class DateTimePicker extends React.Component {
 
   handleTimeChange(event, time) {
     this.timeValue = time;
-    const validDate = DateTimeUtils.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeWithinRange(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat));
+    const validDate = DateUtil.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeAcceptable(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat));
     const validTime = DateTimeUtils.isValidTime(this.timeValue);
     const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
 
@@ -250,13 +338,20 @@ class DateTimePicker extends React.Component {
         updatedDateTime.subtract(1, 'hours');
       }
 
-      this.timeValue = DateTimeUtils.formatISODateTime(updatedDateTime.format(), 'HH:mm');
+      // If updatedDateTime is valid, update timeValue (value in the time input) to reflect updatedDateTime since
+      // it could have subtracted an hour from above to account for the missing hour.
+      if (updatedDateTime) {
+        this.timeValue = DateUtil.formatISODate(updatedDateTime.format(), 'HH:mm');
+      }
+
       this.handleChangeRaw(event, this.timeValue);
       this.handleChange(event, updatedDateTime);
+    } else if (this.dateValue === '' && this.timeValue === '') {
+      this.handleChangeRaw(event, this.timeValue);
+      this.handleChange(event, null);
     } else {
-      // If the date is valid but the time is not, the time part in the dateTime state needs to be cleared to reflect the change.
-      if (validDate && !validTime) {
-        const updatedDateTime = DateTimeUtils.updateTime(previousDateTime, '00:00');
+      if (!validDate && validTime) {
+        const updatedDateTime = DateTimeUtils.updateTime(previousDateTime, time);
 
         this.setState({
           dateTime: updatedDateTime,
@@ -294,11 +389,23 @@ class DateTimePicker extends React.Component {
   }
 
   handleOnInputFocus(event) {
+    this.handleFocus(event);
+
     if (!this.isDefaultDateAcceptable) {
       this.dateValue = '';
       this.timeValue = '';
       this.handleChange(event, null);
       this.isDefaultDateAcceptable = true;
+    }
+  }
+
+  handleFocus(event) {
+    // Handle focus only if focus is gained from outside of the entire date time picker component.
+    // For IE 10/11 we cannot rely on event.relatedTarget since it is always null. Need to also check if containerHasFocus is false to
+    // determine if the date-time picker component did not have focus but will now gain focus.
+    if (this.props.onFocus && !this.containerHasFocus && !this.dateTimePickerContainer.current.contains(event.relatedTarget)) {
+      this.props.onFocus(event);
+      this.containerHasFocus = true;
     }
   }
 
@@ -313,13 +420,13 @@ class DateTimePicker extends React.Component {
   }
 
   validateDefaultDate() {
-    return this.isDateTimeWithinRange(this.state.dateTime);
+    return this.isDateTimeAcceptable(this.state.dateTime);
   }
 
-  isDateTimeWithinRange(newDateTime) {
+  isDateTimeAcceptable(newDateTime) {
     let isAcceptable = true;
 
-    if (DateUtil.isDateOutOfRange(newDateTime, DateUtil.createSafeDate(this.props.minDateTime), DateUtil.createSafeDate(this.props.maxDateTime))) {
+    if (DateUtil.isDateOutOfRange(newDateTime, DateUtil.createSafeDate(this.props.minDate), DateUtil.createSafeDate(this.props.maxDate))) {
       isAcceptable = false;
     }
 
@@ -391,8 +498,8 @@ class DateTimePicker extends React.Component {
         onStandardTimeButtonClick={this.handleStandardTimeButtonClick}
         onOffsetButtonClick={this.handleOffsetButtonClick}
         onRequestClose={this.handleOnRequestClose}
-        releaseFocus={this.props.releaseFocus}
-        requestFocus={this.props.requestFocus}
+        onBlur={this.handleOnTimeBlur}
+        onFocus={this.handleFocus}
       />
     );
   }
@@ -404,24 +511,30 @@ class DateTimePicker extends React.Component {
       excludeDates,
       filterDate,
       includeDates,
+      onBlur,
       onChange,
       onChangeRaw,
+      onClickOutside,
+      onFocus,
       onSelect,
-      maxDateTime,
-      minDateTime,
+      maxDate,
+      minDate,
       name,
-      requestFocus,
-      releaseFocus,
       timeInputAttributes,
       value,
+      timeVariant,
       ...customProps
     } = this.props;
 
     const dateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
-    const dateValue = DateTimeUtils.formatMomentDateTime(dateTime, 'YYYY-MM-DD');
+    const dateValue = DateUtil.formatMomentDate(dateTime, 'YYYY-MM-DD');
 
     return (
-      <div {...customProps} className={cx('date-time-picker')}>
+      <div
+        {...customProps}
+        className={cx('date-time-picker')}
+        ref={this.dateTimePickerContainer}
+      >
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
           // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
@@ -436,19 +549,17 @@ class DateTimePicker extends React.Component {
           onChange={this.handleDateChange}
           onChangeRaw={this.handleDateChangeRaw}
           onSelect={this.handleOnSelect}
-          onClickOutside={this.handleOnClickOutside}
+          onClickOutside={onClickOutside}
           onBlur={this.handleOnDateBlur}
-          onInputFocus={this.handleOnDateInputFocus}
+          onFocus={this.handleOnDateInputFocus}
           excludeDates={excludeDates}
           filterDate={filterDate}
           includeDates={includeDates}
           inputAttributes={dateInputAttributes}
-          maxDate={maxDateTime}
-          minDate={minDateTime}
+          maxDate={maxDate}
+          minDate={minDate}
           selectedDate={dateValue}
           name="input"
-          releaseFocus={releaseFocus}
-          requestFocus={requestFocus}
           disabled={disabled}
         />
 
@@ -456,11 +567,13 @@ class DateTimePicker extends React.Component {
           <TimeInput
             onBlur={this.handleOnTimeBlur}
             onChange={this.handleTimeChange}
-            onInputFocus={this.handleOnTimeInputFocus}
+            onFocus={this.handleOnTimeInputFocus}
             inputAttributes={timeInputAttributes}
             name="input"
             value={this.timeValue}
             disabled={disabled}
+            variant={timeVariant}
+            refCallback={(inputRef) => { this.hourInput = inputRef; }}
           />
 
           {this.state.isAmbiguousTime ? this.renderTimeClarification() : null }

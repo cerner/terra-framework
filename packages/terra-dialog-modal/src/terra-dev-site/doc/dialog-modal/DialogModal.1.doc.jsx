@@ -13,8 +13,6 @@ import DefaultDialogModal from '../example/DefaultDialogModal';
 import DefaultDialogModalSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DefaultDialogModal.jsx';
 import DialogModalWithLongText from '../example/DialogModalWithLongText';
 import DialogModalWithLongTextSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DialogModalWithLongText.jsx';
-import DialogModalOnModalManager from '../example/DialogModalOnModalManager';
-import DialogModalOnModalManagerSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DialogModalOnModalManager.jsx';
 import DialogModalWithCustomHeaderAndCustomFooter from '../example/DialogModalWithCustomHeaderAndCustomFooter';
 import DialogModalWithCustomHeaderAndCustomFooterSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DialogModalWithCustomHeaderAndCustomFooter.jsx';
 /* eslint-enabled import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
@@ -34,11 +32,6 @@ const DialogModalExamples = () => (
         title: 'Dialog Modal With Long Text',
         example: <DialogModalWithLongText />,
         source: DialogModalWithLongTextSrc,
-      },
-      {
-        title: 'Dialog Modal On Modal Manager',
-        example: <DialogModalOnModalManager />,
-        source: DialogModalOnModalManagerSrc,
       },
       {
         title: 'Dialog Modal With Custom Header and Custom Footer',

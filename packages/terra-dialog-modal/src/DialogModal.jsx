@@ -40,18 +40,6 @@ const propTypes = {
    * Toggle to show dialog modal or not.
    */
   isOpen: PropTypes.bool,
-  /*
-   * Toggle to focus on dialog modal or not.
-   */
-  isFocused: PropTypes.bool,
-  /**
-   * A callback function to let the containing component (e.g. modal) to regain focus.
-   */
-  releaseFocus: PropTypes.func,
-  /**
-   * A callback function to request focus from the containing component (e.g. modal).
-   */
-  requestFocus: PropTypes.func,
   /**
    * Width of the dialog modal. Allows one of `320`, `640`, `960`, `1120`, `1280`, or `1600`.
    *
@@ -63,81 +51,45 @@ const propTypes = {
 const defaultProps = {
   children: null,
   isOpen: false,
-  isFocused: false,
-  releaseFocus: null,
-  requestFocus: null,
   width: '1120',
 };
 
-class DialogModal extends React.Component {
-  componentDidMount() {
-    if (this.props.isFocused && this.props.isOpen && this.props.requestFocus) {
-      this.props.requestFocus();
-    }
+const DialogModal = (props) => {
+  const {
+    header,
+    footer,
+    children,
+    onRequestClose,
+    isOpen,
+    ariaLabel,
+    width,
+    ...customProps
+  } = props;
+
+  if (!isOpen) {
+    return null;
   }
 
-  componentDidUpdate() {
-    if (this.props.isOpen) {
-      if (this.props.requestFocus) {
-        this.props.requestFocus();
-      }
-    } else if (this.props.releaseFocus) {
-      this.props.releaseFocus();
-    }
+  const classArray = ['dialog-modal-wrapper'];
+
+  if (width in widthFromSize) {
+    classArray.push(`width-${widthFromSize[width]}`);
+  } else {
+    classArray.push('width-1120');
   }
 
-  componentWillUnmount() {
-    if (this.props.releaseFocus) {
-      this.props.releaseFocus();
-    }
-  }
-
-  render() {
-    const {
-      header,
-      footer,
-      children,
-      onRequestClose,
-      isOpen,
-      releaseFocus,
-      requestFocus,
-      ariaLabel,
-      isFocused,
-      width,
-      ...customProps
-    } = this.props;
-
-    if (!this.props.isOpen) {
-      return null;
-    }
-
-    const classArray = ['dialog-modal-wrapper'];
-    if (width in widthFromSize) {
-      classArray.push(`width-${widthFromSize[width]}`);
-    } else {
-      classArray.push('width-1120');
-    }
-
-    return (
-      <AbstractModal
-        ariaLabel={this.props.ariaLabel}
-        role="dialog"
-        classNameModal={cx(classArray)}
-        isOpen={this.props.isOpen}
-        onRequestClose={this.props.onRequestClose}
-        zIndex="8000"
-      >
-        <div {...customProps} className={cx('dialog-modal-inner-wrapper', customProps.className)}>
-          <div className={cx('dialog-modal-container')}>
-            <div>{header}</div>
-            <div className={cx('dialog-modal-body')}>{children}</div>
-            <div>{footer}</div>
-          </div>
+  return (
+    <AbstractModal ariaLabel={ariaLabel} role="dialog" classNameModal={cx(classArray)} isOpen={isOpen} onRequestClose={onRequestClose} zIndex="7000">
+      <div {...customProps} className={cx('dialog-modal-inner-wrapper', customProps.className)}>
+        <div className={cx('dialog-modal-container')}>
+          <div>{header}</div>
+          <div className={cx('dialog-modal-body')}>{children}</div>
+          <div>{footer}</div>
         </div>
-      </AbstractModal>
-    );
-  }
-}
+      </div>
+    </AbstractModal>
+  );
+};
 
 DialogModal.propTypes = propTypes;
 DialogModal.defaultProps = defaultProps;

@@ -3,14 +3,49 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Fixed js error in the filterDate example.
+
+4.1.0 - (March 15, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+4.0.0 - (May 13, 2019)
+------------------
+### Breaking Changes
+* Removed `releaseFocus` prop
+* Removed `requestFocus` prop
+* Update the filterDate examples to handle an ISO string instead of a moment object.
+* Leverage createSafeDate from the DateUtil.
+* Changed the onBlur event to get triggered only when the entire date time picker component loses focus.
+* Updated upgrade guide.
+
+### Removed
+* Removed 'onInputFocus' prop in favor of the added 'onFocus' prop.
+* Remove minDateTime and maxDateTime props. These props are being renamed to minDate and maxDate.
+
+### Added
+* Added 'onFocus' prop since 'preventOpenOnFocus' can be used to prevent picker from opening on focus.
+* Add minDate and maxDate props. These props replace minDateTime and maxDateTime for the purpose of ignoring the time portion when determing the min/max range.
+
+3.16.0 - (May 7, 2019)
+------------------
+### Fixed
+* Changes made to the time is now preserved when the modification is made with an invalid date.
 
 3.15.0 - (April 24, 2019)
 ------------------
+### Added
+* Added timeVariant prop to datetime picker to support 12-hour format.
+* Added example for time variant on terra-dev site
+
 ### Added
 * Added onSelect function prop that fires when selecting a date via date picker.
 
 ### Changed
 * Moved packages we use solely in doc examples and tests to devDependencies
+
 
 3.14.0 - (April 16, 2019)
 ------------------

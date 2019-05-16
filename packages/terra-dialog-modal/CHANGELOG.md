@@ -3,11 +3,37 @@ Changelog
 
 Unreleased
 ----------
-### Added 
+
+3.1.0 - (March 15, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+3.0.0 - (May 13, 2019)
+------------------
+### Breaking Changes
+* Updated z-index for dialog modal to `7000`
+* Removed `isFocused` prop
+* Removed `releaseFocus` prop
+* Removed `requestFocus` prop
+
+### Removed
+* Removed test dependency on terra-disclosure-manager
+* Removed test dependency on terra-modal-manager
+
+### Added
+* Added test dependency on terra-form-select and example using terra-form-select in dialog modal
+* Added test dependency on terra-date-picker and example using terra-date-picker in dialog modal
+* Added test dependency on terra-popup and example using terra-popup in dialog modal
+* Added test dependency on terra-notification-dialog and example using terra-notification-dialog in dialog modal
+
+2.11.0 - (May 7, 2019)
+------------------
+### Added
 * Added new width 560px
 
 ### Fixed
-* Updated jest snapshot and wdio screenshots to fix test failures
+* Updated jest snapshot and WDIO screenshots
 
 2.10.0 - (April 24, 2019)
 ------------------

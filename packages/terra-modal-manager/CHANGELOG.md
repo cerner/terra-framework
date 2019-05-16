@@ -3,7 +3,16 @@ Changelog
 
 Unreleased
 ----------
-### Added 
+
+6.0.0 - (May 13, 2019)
+------------------
+### Breaking Change
+* Removed terra-disclosure-manager dependency
+* Added terra-disclosure-manager peer-dependency
+
+5.11.0 - (May 7, 2019)
+------------------
+### Added
 * Added new width 560px
 
 5.10.0 - (April 24, 2019)

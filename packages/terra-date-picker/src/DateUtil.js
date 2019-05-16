@@ -2,49 +2,79 @@
 import moment from 'moment';
 
 class DateUtil {
-  // Converts an ISO 8601 date into a moment object. If the date is invalid and unable to convert, the originally provided date is returned.
+  /**
+   * Creates a moment object using the provided date string. Moment is unable to initialize a valid date if the date passed in is
+   * null, empty string, or alpha characters and undefined would be returned.
+   * @param {string|undefined} date - The date to convert. Expect to be in ISO format.
+   * @return {object|undefined} - The moment object. Undefined if unable to convert.
+   */
   static createSafeDate(date) {
-    if (date) {
-      const momentDate = moment(date);
-      return momentDate.isValid() ? momentDate : date;
+    if (!date) {
+      return undefined;
     }
 
-    return date;
+    const momentDate = moment(date);
+    return momentDate.isValid() ? momentDate : undefined;
   }
 
-  // Filters out any invalid dates in the provided list of dates and returns a list of moment objects representation of the valid dates
+  /**
+   * Filters any invalid dates in the provided list of dates
+   * @param {array} date - The array of dates to filter.
+   * @return {array|undefined} - The array of moment objects each representing the valid dates. Undefined if there are no valid dates.
+   */
   static filterInvalidDates(dates) {
-    const momentDates = [];
+    const validMomentDates = [];
 
-    if (dates) {
+    if (Array.isArray(dates)) {
       let index = 0;
       for (index = 0; index < dates.length; index += 1) {
         const momentDate = moment(dates[index]);
         if (momentDate.isValid()) {
-          momentDates.push(momentDate);
+          validMomentDates.push(momentDate);
         }
       }
     }
 
-    return momentDates.length > 0 ? momentDates : dates;
+    return validMomentDates.length > 0 ? validMomentDates : undefined;
   }
 
-  // Checks if a given date is out of the range between the start and end dates.
-  static isDateOutOfRange(sourceDate, startDate, endDate) {
-    if (!sourceDate || !sourceDate.isValid()
-      || !startDate || !startDate.isValid()
-      || !endDate || !endDate.isValid()) {
-      return false;
+  /**
+   * Determines if a date is within the range of two given dates.
+   * @param {object} sourceDate - The moment date to check if it is within range.
+   * @param {object} minDate - The moment date that represents the minimum date of the range.
+   * @param {object} maxDate - The moment date that represents the maximum date of the range.
+   * @return {boolean} - True if the sourceDate is within range. False, otherwise.
+   */
+  static isDateOutOfRange(sourceDate, minDate, maxDate) {
+    if (sourceDate && sourceDate.isValid()) {
+      if (minDate && minDate.isValid() && (!maxDate || !maxDate.isValid())) {
+        if (sourceDate.isBefore(minDate, 'day')) {
+          return true;
+        }
+      }
+
+      if ((!minDate || !minDate.isValid()) && maxDate && maxDate.isValid()) {
+        if (sourceDate.isAfter(maxDate, 'day')) {
+          return true;
+        }
+      }
+
+      if (minDate && minDate.isValid() && maxDate && maxDate.isValid()) {
+        if (sourceDate.isBefore(minDate, 'day') || sourceDate.isAfter(maxDate, 'day')) {
+          return true;
+        }
+      }
     }
 
-    if (sourceDate.isSameOrAfter(startDate) && sourceDate.isSameOrBefore(endDate)) {
-      return false;
-    }
-
-    return true;
+    return false;
   }
 
-  // Checks if a given date is one of the excluded dates.
+  /**
+   * Determines if a date matched the year, month, and day of any dates in the list.
+   * @param {object} sourceDate - The moment date to check for match.
+   * @param {array} excludedDates - An array of moment dates to check against.
+   * @return {boolean} - True if the sourceDate is found in the list. False, otherwise.
+   */
   static isDateExcluded(sourceDate, excludedDates) {
     if (!sourceDate || !sourceDate.isValid()) {
       return false;
@@ -63,7 +93,12 @@ class DateUtil {
     return false;
   }
 
-  // Converts date string to the ISO8601 format with only the date part. If the date string is invalid and unable to convert, the originally provided string is returned.
+  /**
+   * Converts a date string in the given format to the ISO format with only the date part.
+   * @param {string} date - The date string to convert.
+   * @param {string} format - The format of the date string.
+   * @return {string} - The converted ISO string.
+   */
   static convertToISO8601(date, format) {
     if (date && format) {
       const momentDate = moment(date, format, true);
@@ -73,7 +108,11 @@ class DateUtil {
     return date;
   }
 
-  // Gets the long date format based on the locale.
+  /**
+   * Gets the preferred date format (moment's long date format) given the locale.
+   * @param {string} locale - The locale to get the date format.
+   * @return {string} - The preferred date format for the given locale.
+   */
   static getFormatByLocale(locale) {
     if (locale) {
       const localMoment = moment();
@@ -82,6 +121,42 @@ class DateUtil {
     }
 
     return undefined;
+  }
+
+  /**
+   * Determines if the date is valid and conforms to the given format.
+   * @param {string} date - The date to validate.
+   * @param {string} format - The date format to use for the validation.
+   * @return {boolean} - True if the date is valid and conforms to the format.
+   */
+  static isValidDate(date, format) {
+    const dateMoment = moment(date, format, true);
+    return dateMoment.isValid();
+  }
+
+  /**
+   * Converts an ISO string to the given format.
+   * @param {string} iSODate - The ISO string to convert.
+   * @param {string} format - The desired date format for the conversion
+   * @return {string} - The formatted date string.
+   */
+  static formatISODate(iSODate, format) {
+    if (!iSODate || iSODate.length <= 0) {
+      return '';
+    }
+
+    const momentDate = moment(iSODate);
+    return DateUtil.formatMomentDate(momentDate, format);
+  }
+
+  /**
+   * Converts a moment object to the given format.
+   * @param {object} momentDate - The moment object to convert.
+   * @param {string} format - The desired date format for the conversion
+   * @return {string} - The formatted date string.
+   */
+  static formatMomentDate(momentDate, format) {
+    return momentDate && momentDate.isValid() ? momentDate.format(format) : undefined;
   }
 
   /**
