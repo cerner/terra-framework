@@ -36,11 +36,11 @@
   .tab,
   .tab-rollup {
     background-clip: content-box;
-    box-shadow: inset 1px 0 0 0 pink, inset 2px 0 0 0 red; // TODO: imitate clinical value @midnight40 & @midnight80
+    box-shadow: inset 1px 0 0 0 rgba(42, 75, 119, .6), inset 2px 0 0 0 rgba(89, 159, 253, .3); // UPDATED!
     padding-left: 2px;
 
     &:last-of-type {
-      box-shadow: inset 1px 0 0 0 pink, inset 2px 0 0 0 red, inset -1px 0 0 0 pink, inset -2px 0 0 0 red; // TODO: imitate clinical value @midnight40 & @midnight80
+      box-shadow: inset 1px 0 0 0 rgba(42, 75, 119, .6), inset 2px 0 0 0 rgba(89, 159, 253, .3), inset -1px 0 0 0 rgba(42, 75, 119, .6), inset -2px 0 0 0 rgba(89, 159, 253, .3); // UPDATED!
       padding-right: 2px;
     }
   }
@@ -89,32 +89,37 @@
       word-wrap: normal;
     }
 
-    &:hover,
+    &:hover {
+      .tab-inner {
+        background-color: rgba(42, 75, 119, .3); // UPDATED!
+      }
+    }
+
     &:active {
       .tab-inner {
-        background-color: rgba(42, 75, 119, 0.9); // TODO: imitate clinical value @midnight90
+        background-color: rgba(42, 75, 119, .8);
       }
     }
 
     &[aria-current='true'] {
       .tab-inner {
-        background-color: rgba(42, 75, 119, 0.8); // TODO: imitate clinical value @midnight80
-        background-image: linear-gradient(to left, #599ffd, #599ffd); // TODO: clinical value variable?
+        background-color: rgba(42, 75, 119, .6); // UPDATED!
+        background-image: linear-gradient(to left, rgba(89, 159, 253, .8), rgba(89, 159, 253, .8)); // UPDATED!
         background-size: 100% 6px;
         box-shadow: none;
         text-shadow: none;
       }
 
-      box-shadow: inset 1px 0 0 0 red, inset 2px 0 0 0 pink; // TODO: imitate clinical value @midnight40 & @midnight80
+      box-shadow: inset 1px 0 0 0 rgba(89, 159, 253, .3), inset 2px 0 0 0 rgba(42, 75, 119, .6); // UPDATED!
       &:last-of-type {
-        box-shadow: inset 1px 0 0 0 pink, inset 2px 0 0 0 red, inset -1px 0 0 0 pink, inset -2px 0 0 0 red; // TODO: imitate clinical value @midnight40 & @midnight80
+        box-shadow: inset 1px 0 0 0 rgba(42, 75, 119, .6), inset 2px 0 0 0 rgba(89, 159, 253, .3), inset -1px 0 0 0 rgba(42, 75, 119, .6), inset -2px 0 0 0 rgba(89, 159, 253, .3); // UPDATED!
       }
     }
 
     &[data-focus-styles-enabled='true']:focus {
       .tab-inner {
         z-index: 5;
-        background-color: rgba(42, 75, 119, 0.9); // TODO: clinical value @midnight90
+        background-color: rgba(89, 159, 253, .4); // UPDATED!
       }
     }
   }
