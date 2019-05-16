@@ -13,7 +13,7 @@ This package uses React's Context for inter-component communication. A single in
 
 ## Rationale
 
-A React component has complete control over its own rendering logic. It can render child components and unmount those child components as it sees fit. It follows that any individual component has no direct control over its own mounting and unmounting; it is rendered (or not) at the discretion of its parent. A component must rely on its lifecycle events to determine how it is being implemented.
+A React component has complete control over its own rendering logic. It can render child components and un-mount those child components as it sees fit. It follows that any individual component has no direct control over its own mounting and un-mounting; it is rendered (or not) at the discretion of its parent. A component must rely on its lifecycle events to determine how it is being implemented.
 
 However, a component's children can be stateful and responsible for important user input or interactions. If the user can navigate away from that child component, it may be necessary for that child component to notify the user that their workflow is incomplete or that some transient state has not yet been persisted. If the component has no control over its own unmounting, how can it communicate this state to the overall application before the component is already being unmounted?
 
@@ -81,16 +81,17 @@ The `onPromptChange` function prop is used to communicate NavigationPrompt regis
 
 The `resolvePrompts` function can be accessed from the ref to a NavigationPromptCheckpoint. Calling `resolvePrompts` results in a Promise being returned and a NotificationDialog being presented to the user with options to either confirm or cancel their action. If the user confirms the action, the dialog will close, and the returned Promise will be resolved. If the user cancels the action, the dialog will close, and the returned Promise will be rejected. If no NavigationPrompts are detected, no dialog is presented, and the returned Promise will be resolved.
 
-`resolvePrompts` accepts either an Object or function argument. The Object should contain the text strings used to render the NotificationDialog. The function should return an Object containing the text strings used to render the NotificationDialog. Additionally, the function will receive an array of registered NavigationPrompts as an argument. The array of prompts can be used to create dynamic strings based on the currrent set of registered prompts.
+`resolvePrompts` accepts either an Object or function argument. The Object should contain the text strings used to render the NotificationDialog. The function should return an Object containing the text strings used to render the NotificationDialog. Additionally, the function will receive an array of registered NavigationPrompts as an argument. The array of prompts can be used to create dynamic strings based on the current set of registered prompts.
 
 The keys expected in the resolvePrompts Object or return value include:
 
 |Key|Type|Description|
 |---|---|---|
-|`title`|String|The title of the NotificationDialog|
-|`message`|String|The message of the NotificationDialog|
-|`rejectButtonText`|String|The text to render within the NotificationDialog's primary action button|
-|`acceptButtonText`|String|The text to render within the NotificationDialog's secondary action button|
+|`title`|String|The title of the NotificationDialog.|
+|`message`|String|The message of the NotificationDialog.|
+|`rejectButtonText`|String|The text to render within the NotificationDialog's primary action button.|
+|`acceptButtonText`|String|The text to render within the NotificationDialog's secondary action button.|
+|`emphasizedAction`|String|A string indicating which action should be rendered as the NotificationDialog's primary action. Supported values include: `accept`, `reject`. Defaults to `accept`.|
 
 ```jsx
 const ResolvePromptExample = () => {
@@ -152,7 +153,8 @@ const ResolvePromptExample = () => {
 
 ## Extending the NavigationPrompt
 
-The various APIs provided and consumed by the NavigationPrompt and NavigationPromptCheckpoint are purposefully broad and unrestrictive. If more defined or restricted APIs are desirable for a application platform, these components can and should be wrapped by components that provide the necessary interfaces.
+The various APIs provided and consumed by the NavigationPrompt and NavigationPromptCheckpoint are purposefully broad and nonrestrictive. If more defined or restricted APIs are desirable for a application platform, these components can and should be wrapped by components that provide the necessary interfaces.
 
 ## Component Features
-* [Cross-Browser Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
+
+- [Cross-Browser Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)

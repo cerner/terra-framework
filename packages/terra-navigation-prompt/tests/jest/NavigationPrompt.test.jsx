@@ -11,7 +11,7 @@ describe('NavigationPrompt', () => {
         <NavigationPrompt
           promptRegistration={{
             registerPrompt: () => {},
-            deregisterPrompt: () => {},
+            unregisterPrompt: () => {},
           }}
         />
       ));
@@ -34,7 +34,7 @@ describe('NavigationPrompt', () => {
           metaData={testMetaData}
           promptRegistration={{
             registerPrompt: mockRegister,
-            deregisterPrompt: () => {},
+            unregisterPrompt: () => {},
           }}
         />
       ));
@@ -49,7 +49,7 @@ describe('NavigationPrompt', () => {
   describe('componentDidUpdate', () => {
     it('should re-register itself on update if props have changed', () => {
       const mockRegister = jest.fn();
-      const mockDeregister = jest.fn();
+      const mockUnregister = jest.fn();
 
       const testMetaData = {
         test: 'value',
@@ -64,12 +64,12 @@ describe('NavigationPrompt', () => {
           metaData={testMetaData}
           promptRegistration={{
             registerPrompt: mockRegister,
-            deregisterPrompt: mockDeregister,
+            unregisterPrompt: mockUnregister,
           }}
         />
       ));
 
-      expect(mockDeregister.mock.calls.length).toEqual(0);
+      expect(mockUnregister.mock.calls.length).toEqual(0);
       expect(mockRegister.mock.calls.length).toEqual(1);
       expect(mockRegister.mock.calls[0][0]).toEqual(wrapper.instance().uuid);
       expect(mockRegister.mock.calls[0][1]).toEqual('TEST PROMPT');
@@ -78,7 +78,7 @@ describe('NavigationPrompt', () => {
       wrapper.setProps({ description: 'A DIFFERENT DESCRIPTION' });
       wrapper.update();
 
-      expect(mockDeregister.mock.calls.length).toEqual(0);
+      expect(mockUnregister.mock.calls.length).toEqual(0);
       expect(mockRegister.mock.calls.length).toEqual(2);
       expect(mockRegister.mock.calls[1][0]).toEqual(wrapper.instance().uuid);
       expect(mockRegister.mock.calls[1][1]).toEqual('A DIFFERENT DESCRIPTION');
@@ -87,7 +87,7 @@ describe('NavigationPrompt', () => {
       wrapper.setProps({ metaData: testMetaData2 });
       wrapper.update();
 
-      expect(mockDeregister.mock.calls.length).toEqual(0);
+      expect(mockUnregister.mock.calls.length).toEqual(0);
       expect(mockRegister.mock.calls.length).toEqual(3);
       expect(mockRegister.mock.calls[2][0]).toEqual(wrapper.instance().uuid);
       expect(mockRegister.mock.calls[2][1]).toEqual('A DIFFERENT DESCRIPTION');
@@ -96,29 +96,29 @@ describe('NavigationPrompt', () => {
   });
 
   describe('componentWillUnmount', () => {
-    it('should deregister itself on unmount', () => {
+    it('should unregister itself on unmount', () => {
       const mockRegister = jest.fn();
-      const mockDeregister = jest.fn();
+      const mockUnregister = jest.fn();
 
       const wrapper = shallow((
         <NavigationPrompt
           description="TEST PROMPT"
           promptRegistration={{
             registerPrompt: mockRegister,
-            deregisterPrompt: mockDeregister,
+            unregisterPrompt: mockUnregister,
           }}
         />
       ));
 
-      expect(mockDeregister.mock.calls.length).toEqual(0);
+      expect(mockUnregister.mock.calls.length).toEqual(0);
       expect(mockRegister.mock.calls.length).toEqual(1);
 
       const componentUuid = wrapper.instance().uuid;
 
       wrapper.unmount();
 
-      expect(mockDeregister.mock.calls.length).toEqual(1);
-      expect(mockDeregister.mock.calls[0][0]).toEqual(componentUuid);
+      expect(mockUnregister.mock.calls.length).toEqual(1);
+      expect(mockUnregister.mock.calls[0][0]).toEqual(componentUuid);
     });
   });
 });

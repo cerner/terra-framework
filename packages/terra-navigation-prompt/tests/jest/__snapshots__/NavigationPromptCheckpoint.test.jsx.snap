@@ -1,35 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NavigationPrompt Snapshots should render with children 1`] = `
+exports[`NavigationPrompt Snapshots should render the NotificationDialog when state is present 1`] = `
 <ContextProvider
   value={
     Object {
-      "deregisterPrompt": [Function],
       "registerPrompt": [Function],
+      "unregisterPrompt": [Function],
     }
   }
 >
-  <withPromptRegistration(MockPromptBase) />
+  <NotificationDialog
+    isOpen={true}
+    message="Test Message"
+    primaryAction={
+      Object {
+        "onClick": [Function],
+        "text": "Accept",
+      }
+    }
+    secondaryAction={
+      Object {
+        "onClick": [Function],
+        "text": "Reject",
+      }
+    }
+    title="Test Title"
+    variant="warning"
+  />
 </ContextProvider>
 `;
 
-exports[`NavigationPrompt Snapshots should render with minimal props 1`] = `
+exports[`NavigationPrompt Snapshots should render the NotificationDialog with accept as the primary action 1`] = `
 <ContextProvider
   value={
     Object {
-      "deregisterPrompt": [Function],
       "registerPrompt": [Function],
+      "unregisterPrompt": [Function],
     }
   }
-/>
+>
+  <NotificationDialog
+    isOpen={true}
+    message="Test Message"
+    primaryAction={
+      Object {
+        "onClick": [Function],
+        "text": "Accept",
+      }
+    }
+    secondaryAction={
+      Object {
+        "onClick": [Function],
+        "text": "Reject",
+      }
+    }
+    title="Test Title"
+    variant="warning"
+  />
+</ContextProvider>
 `;
 
-exports[`NavigationPrompt Snapshots should render with minimal props 2`] = `
+exports[`NavigationPrompt Snapshots should render the NotificationDialog with reject as the primary action 1`] = `
 <ContextProvider
   value={
     Object {
-      "deregisterPrompt": [Function],
       "registerPrompt": [Function],
+      "unregisterPrompt": [Function],
     }
   }
 >
@@ -52,4 +88,28 @@ exports[`NavigationPrompt Snapshots should render with minimal props 2`] = `
     variant="warning"
   />
 </ContextProvider>
+`;
+
+exports[`NavigationPrompt Snapshots should render with children 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "registerPrompt": [Function],
+      "unregisterPrompt": [Function],
+    }
+  }
+>
+  <withPromptRegistration(MockPromptBase) />
+</ContextProvider>
+`;
+
+exports[`NavigationPrompt Snapshots should render with minimal props 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "registerPrompt": [Function],
+      "unregisterPrompt": [Function],
+    }
+  }
+/>
 `;

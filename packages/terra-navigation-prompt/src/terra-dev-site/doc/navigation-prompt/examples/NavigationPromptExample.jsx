@@ -2,6 +2,11 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import NavigationPrompt, { NavigationPromptCheckpoint } from '../../../../index';
 
+const exampleTitle = 'Descriptive Notification Prompt Title';
+const exampleMessage = 'A Notification Prompt usually has an introductory warning instructing the user that there are unsaved changes or that there is a similar situation that warrants capturing the user\'s attention and requires that they take action before continuing.\n\nIt is good practice to include details about the originating source (page name, side-panel title, modal header title, etc.) and location description (form name, title from the section of the page, general position, etc.) to provide the user a contextual reference as to where they have an area needing attention: e.g. where data is about to be lost, the window about to be closed, the section about to be removed. Following the initial details, it is helpful to include a detailed description educating the user about any danger or caution as to what will happen to the current items about to be lost (form data, page content, etc.) if the user chooses each of the two actions provided in the notification prompt message.';
+const exampleRejectButtonText = 'Descriptive Reject Button Action';
+const exampleAcceptButtonText = 'Descriptive Accept Button Action';
+
 /**
  * The Input is a stateful component that renders a NavigationPrompt based upon its current input element value.
  * It provides its NavigationPrompt with a description and a metaData object containing its current value.
@@ -77,12 +82,12 @@ const Form = ({ title }) => {
           <button
             type="button"
             onClick={() => {
-              inputCheckpointRef.current.resolvePrompts(prompts => ({
-                title: prompts.map(prompt => prompt.description).join(', '),
-                message: `There are unsubmitted changes in ${prompts.map(prompt => prompt.description).join(', ')}. Continue with Form reset?`,
-                rejectButtonText: 'Return',
-                acceptButtonText: 'Continue without Saving',
-              })).then(() => {
+              inputCheckpointRef.current.resolvePrompts({
+                title: exampleTitle,
+                message: exampleMessage,
+                rejectButtonText: exampleRejectButtonText,
+                acceptButtonText: exampleAcceptButtonText,
+              }).then(() => {
                 setTimeStamp(Date.now());
               }).catch(() => {
                 // User prevented navigation.
@@ -123,10 +128,10 @@ const FormSwitcher = () => {
 
   function onSwitchForm(formKey) {
     formCheckpointRef.current.resolvePrompts({
-      title: 'Pending Changes',
-      message: 'Form data will be lost if this action is taken.',
-      rejectButtonText: `Return to ${activeForm}`,
-      acceptButtonText: 'Continue without Saving',
+      title: exampleTitle,
+      message: exampleMessage,
+      rejectButtonText: exampleRejectButtonText,
+      acceptButtonText: exampleAcceptButtonText,
     }).then(() => {
       setActiveForm(formKey);
     }).catch(() => {
@@ -137,7 +142,7 @@ const FormSwitcher = () => {
   return (
     <div>
       <h2>Form Switcher</h2>
-      <p>The FormSwitcher renders a NavigationPromptCheckpoint around its child Form component. If NavigationPrompts are rendered by any child components, the FormSwitcher will resolve those prompts before rendering a different Form.</p>
+      <p>The FormSwitcher is an example component that uses the NavigationPrompt and NavigationPromptCheckpoint. If NavigationPrompts are rendered by any child components, the FormSwitcher will resolve those prompts before rendering a different Form.</p>
       <button
         type="button"
         disabled={activeForm === 'Form 1'}
@@ -164,7 +169,7 @@ const FormSwitcher = () => {
 /**
  * The NavigationPromptExample renders a NavigationPromptCheckpoint around the FormSwitcher to demonstrate the
  * functionality of the onPromptChange callback. onPromptChange receives the current set of prompts as its first argument,
- * and it executes whenever a NavigationPrompt registers or deregisters with a NavigationPromptCheckpoint.
+ * and it executes whenever a NavigationPrompt registers or unregisters with a NavigationPromptCheckpoint.
  */
 const NavigationPromptExample = () => {
   const [prompts, setPrompts] = useState([]);

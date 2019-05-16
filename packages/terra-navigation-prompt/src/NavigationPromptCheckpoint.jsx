@@ -11,7 +11,7 @@ const propTypes = {
    */
   children: PropTypes.node,
   /**
-   * A function that will be executed when NavigationPrompts are registered to or deregistered from the NavigationPromptCheckpoint instance.
+   * A function that will be executed when NavigationPrompts are registered to or unregistered from the NavigationPromptCheckpoint instance.
    * This can be used to track registered prompts outside of a NavigationPromptCheckpoint and handle prompt resolution directly, if necessary.
    * The function will be provided with an array of data objects representing the registered NavigationPrompts as the sole argument. An empty
    * Array will be provided when no prompts are registered.
@@ -45,13 +45,14 @@ class NavigationPromptCheckpoint extends React.Component {
     super(props);
 
     this.registerPrompt = this.registerPrompt.bind(this);
-    this.deregisterPrompt = this.deregisterPrompt.bind(this);
+    this.unregisterPrompt = this.unregisterPrompt.bind(this);
     this.resolvePrompts = this.resolvePrompts.bind(this);
+    this.renderNotificationDialog = this.renderNotificationDialog.bind(this);
 
     this.registeredPrompts = {};
     this.promptProviderValue = {
       registerPrompt: this.registerPrompt,
-      deregisterPrompt: this.deregisterPrompt,
+      unregisterPrompt: this.unregisterPrompt,
     };
 
     this.state = {
@@ -89,7 +90,7 @@ class NavigationPromptCheckpoint extends React.Component {
     promptRegistration.registerPrompt(promptId, description, metaData);
   }
 
-  deregisterPrompt(promptId) {
+  unregisterPrompt(promptId) {
     const { onPromptChange, promptRegistration } = this.props;
 
     if (!this.registeredPrompts[promptId]) {
@@ -102,7 +103,7 @@ class NavigationPromptCheckpoint extends React.Component {
       onPromptChange(NavigationPromptCheckpoint.getPromptArray(this.registeredPrompts));
     }
 
-    promptRegistration.deregisterPrompt(promptId);
+    promptRegistration.unregisterPrompt(promptId);
   }
 
   /**
@@ -135,11 +136,45 @@ class NavigationPromptCheckpoint extends React.Component {
           message: showDialogOptions.message,
           acceptButtonText: showDialogOptions.acceptButtonText,
           rejectButtonText: showDialogOptions.rejectButtonText,
+          emphasizedAction: showDialogOptions.emphasizedAction,
           onAccept: resolve,
           onReject: reject,
         },
       });
     });
+  }
+
+  renderNotificationDialog() {
+    const {
+      title, message, acceptButtonText, rejectButtonText, emphasizedAction, onAccept, onReject,
+    } = this.state.notificationDialogProps;
+
+    const acceptButton = {
+      text: acceptButtonText,
+      onClick: () => {
+        this.setState({ notificationDialogProps: undefined }, onAccept);
+      },
+    };
+
+    const rejectButton = {
+      text: rejectButtonText,
+      onClick: () => {
+        this.setState({ notificationDialogProps: undefined }, onReject);
+      },
+    };
+
+    const acceptActionIsEmphasized = !emphasizedAction || emphasizedAction === 'accept';
+
+    return (
+      <NotificationDialog
+        isOpen
+        title={title}
+        message={message}
+        primaryAction={acceptActionIsEmphasized ? acceptButton : rejectButton}
+        secondaryAction={acceptActionIsEmphasized ? rejectButton : acceptButton}
+        variant="warning"
+      />
+    );
   }
 
   render() {
@@ -149,26 +184,7 @@ class NavigationPromptCheckpoint extends React.Component {
     return (
       <PromptRegistrationContext.Provider value={this.promptProviderValue}>
         {children}
-        {notificationDialogProps ? (
-          <NotificationDialog
-            isOpen
-            title={notificationDialogProps.title}
-            message={notificationDialogProps.message}
-            primaryAction={{
-              text: notificationDialogProps.rejectButtonText,
-              onClick: () => {
-                this.setState({ notificationDialogProps: undefined }, notificationDialogProps.onReject);
-              },
-            }}
-            secondaryAction={{
-              text: notificationDialogProps.acceptButtonText,
-              onClick: () => {
-                this.setState({ notificationDialogProps: undefined }, notificationDialogProps.onAccept);
-              },
-            }}
-            variant="warning"
-          />
-        ) : null}
+        {notificationDialogProps ? this.renderNotificationDialog() : undefined}
       </PromptRegistrationContext.Provider>
     );
   }

@@ -38,10 +38,10 @@ const FormSwitcher = () => {
 
   function onSwitchForm(formKey) {
     formCheckpointRef.current.resolvePrompts({
-      title: 'Pending Changes',
-      message: 'Form data will be lost if this action is taken.',
-      rejectButtonText: `Return to ${activeForm}`,
-      acceptButtonText: 'Continue without Saving',
+      title: 'Descriptive Notification Prompt Title',
+      message: 'Descriptive Notification Prompt Message',
+      rejectButtonText: 'Descriptive Reject Button Action',
+      acceptButtonText: 'Descriptive Accept Button Action',
     }).then(() => {
       setActiveForm(formKey);
     }).catch(() => {

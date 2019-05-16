@@ -50,10 +50,10 @@ const FormSwitcher = () => {
 
   function onSwitchForm(formKey) {
 +   formCheckpointRef.current.resolvePrompts({
-+     title: 'Pending Changes',
-+     message: 'Form data will be lost if this action is taken.',
-+     rejectButtonText: `Return to ${activeForm}`,
-+     acceptButtonText: 'Continue without Saving',
++     title: 'Descriptive Notification Prompt Title',
++     message: 'Descriptive Notification Prompt Message',
++     rejectButtonText: `Descriptive Reject Button Action`,
++     acceptButtonText: 'Descriptive Accept Button Action',
 +   }).then(() => {
       setActiveForm(formKey);
 +   });
@@ -92,4 +92,4 @@ The FormSwitcher gets a ref to the NavigationPromptCheckpoint; this example uses
 
 The `resolvePrompts` function is an instance function of the NavigationPromptCheckpoint. When `resolvePrompts` is called, the NavigationPromptCheckpoint will render a NotificationDialog and return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises). The Promise will be resolved immediately if no NavigationPrompts have been rendered below the checkpoint, so we don't need to check for the presence of any NavigationPrompts before we call it. The Promise will also resolve if a user presses the NotificationDialog's accept action button. The Promise will reject if a user presses the NotificationDialog's reject action button. In our example, we only update the FormSwitcher's state when the Promise is resolved.
 
-With those changes in place, the FormSwitcher will prompt the user for confirmation when they attempt to switch away from Forms with unsubmitted data. 
+With those changes in place, the FormSwitcher will prompt the user for confirmation when they attempt to switch away from Forms with unsaved data.

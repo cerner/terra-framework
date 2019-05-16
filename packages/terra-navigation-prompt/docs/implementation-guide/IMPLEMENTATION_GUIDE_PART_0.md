@@ -7,7 +7,7 @@ Assume we have built a simple component, the FormSwitcher, that toggles between 
 
 ## Part 0 - Reviewing the Initial FormSwitcher Implementation
 
-The FormSwitcher renders two buttons that allow users to toggle between showing Form 1 and Form 2. Form 1 and Form 2 are unique instances of the Form component. 
+The FormSwitcher renders two buttons that allow users to toggle between showing Form 1 and Form 2. Form 1 and Form 2 are unique instances of the Form component.
 
 The Form component renders a text input element and keeps the input's value in state. When the Submit button is pressed, the value is reset to simulate a mock submission.
 

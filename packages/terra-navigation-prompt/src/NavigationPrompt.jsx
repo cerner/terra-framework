@@ -27,7 +27,7 @@ class NavigationPrompt extends React.Component {
 
     /**
      * A unique identifier is generated for each NavigationPrompt during construction. This will be used to
-     * uniquely register/deregister the prompt with ancestor checkpoints without requiring consumers to
+     * uniquely register/unregister the prompt with ancestor checkpoints without requiring consumers to
      * define unique identifiers themselves.
      */
     this.uuid = uuidv4();
@@ -66,7 +66,7 @@ class NavigationPrompt extends React.Component {
   }
 
   componentWillUnmount() {
-    this.props.promptRegistration.deregisterPrompt(this.uuid);
+    this.props.promptRegistration.unregisterPrompt(this.uuid);
   }
 
   render() {

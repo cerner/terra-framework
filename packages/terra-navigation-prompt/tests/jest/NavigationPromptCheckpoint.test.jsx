@@ -7,7 +7,7 @@ const NavigationPromptCheckpoint = NavigationPromptCheckpointHOC.WrappedComponen
 
 const promptRegistrationDefault = {
   registerPrompt: () => {},
-  deregisterPrompt: () => {},
+  unregisterPrompt: () => {},
 };
 
 // We need a class component here to be able to get access to the
@@ -33,7 +33,20 @@ describe('NavigationPrompt', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
-    it('should render with minimal props', () => {
+    it('should render with children', () => {
+      const wrapper = shallow((
+        <NavigationPromptCheckpoint
+          onPromptChange={() => {}}
+          promptRegistration={promptRegistrationDefault}
+        >
+          <MockPrompt />
+        </NavigationPromptCheckpoint>
+      ));
+
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render the NotificationDialog when state is present', () => {
       const wrapper = shallow((
         <NavigationPromptCheckpoint
           promptRegistration={promptRegistrationDefault}
@@ -54,16 +67,46 @@ describe('NavigationPrompt', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
-
-    it('should render with children', () => {
+    it('should render the NotificationDialog with accept as the primary action', () => {
       const wrapper = shallow((
         <NavigationPromptCheckpoint
-          onPromptChange={() => {}}
           promptRegistration={promptRegistrationDefault}
-        >
-          <MockPrompt />
-        </NavigationPromptCheckpoint>
+        />
       ));
+
+      wrapper.setState({
+        notificationDialogProps: {
+          title: 'Test Title',
+          message: 'Test Message',
+          acceptButtonText: 'Accept',
+          rejectButtonText: 'Reject',
+          emphasizedAction: 'accept',
+          onAccept: () => {},
+          onReject: () => {},
+        },
+      });
+
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render the NotificationDialog with reject as the primary action', () => {
+      const wrapper = shallow((
+        <NavigationPromptCheckpoint
+          promptRegistration={promptRegistrationDefault}
+        />
+      ));
+
+      wrapper.setState({
+        notificationDialogProps: {
+          title: 'Test Title',
+          message: 'Test Message',
+          acceptButtonText: 'Accept',
+          rejectButtonText: 'Reject',
+          emphasizedAction: 'reject',
+          onAccept: () => {},
+          onReject: () => {},
+        },
+      });
 
       expect(wrapper).toMatchSnapshot();
     });
@@ -102,7 +145,7 @@ describe('NavigationPrompt', () => {
   describe('registerPrompt', () => {
     it('should return if no id is provided', () => {
       const mockRegister = jest.fn();
-      const mockDeregister = jest.fn();
+      const mockunregister = jest.fn();
       const mockOnPromptChange = jest.fn();
 
       const wrapper = mount((
@@ -110,7 +153,7 @@ describe('NavigationPrompt', () => {
           onPromptChange={mockOnPromptChange}
           promptRegistration={{
             registerPrompt: mockRegister,
-            deregisterPrompt: mockDeregister,
+            unregisterPrompt: mockunregister,
           }}
         >
           <MockPrompt />
@@ -121,7 +164,7 @@ describe('NavigationPrompt', () => {
 
       expect(mockPromptWrapper.props().promptRegistration).toBeDefined();
       expect(mockPromptWrapper.props().promptRegistration.registerPrompt).toBeDefined();
-      expect(mockPromptWrapper.props().promptRegistration.deregisterPrompt).toBeDefined();
+      expect(mockPromptWrapper.props().promptRegistration.unregisterPrompt).toBeDefined();
 
       const promptMetaData = { test: 'value' };
       mockPromptWrapper.props().promptRegistration.registerPrompt(undefined, 'mock_description', promptMetaData);
@@ -132,7 +175,7 @@ describe('NavigationPrompt', () => {
 
     it('should notify ancestors when prompts are registered', () => {
       const mockRegister = jest.fn();
-      const mockDeregister = jest.fn();
+      const mockunregister = jest.fn();
       const mockOnPromptChange = jest.fn();
 
       const wrapper = mount((
@@ -140,7 +183,7 @@ describe('NavigationPrompt', () => {
           onPromptChange={mockOnPromptChange}
           promptRegistration={{
             registerPrompt: mockRegister,
-            deregisterPrompt: mockDeregister,
+            unregisterPrompt: mockunregister,
           }}
         >
           <MockPrompt />
@@ -151,7 +194,7 @@ describe('NavigationPrompt', () => {
 
       expect(mockPromptWrapper.props().promptRegistration).toBeDefined();
       expect(mockPromptWrapper.props().promptRegistration.registerPrompt).toBeDefined();
-      expect(mockPromptWrapper.props().promptRegistration.deregisterPrompt).toBeDefined();
+      expect(mockPromptWrapper.props().promptRegistration.unregisterPrompt).toBeDefined();
 
       const promptMetaData = { test: 'value' };
       mockPromptWrapper.props().promptRegistration.registerPrompt('mock_id', 'mock_description', promptMetaData);
@@ -169,10 +212,10 @@ describe('NavigationPrompt', () => {
     });
   });
 
-  describe('deregisterPrompt', () => {
+  describe('unregisterPrompt', () => {
     it('should return if no matching id is found', () => {
       const mockRegister = jest.fn();
-      const mockDeregister = jest.fn();
+      const mockunregister = jest.fn();
       const mockOnPromptChange = jest.fn();
 
       const wrapper = mount((
@@ -180,7 +223,7 @@ describe('NavigationPrompt', () => {
           onPromptChange={mockOnPromptChange}
           promptRegistration={{
             registerPrompt: mockRegister,
-            deregisterPrompt: mockDeregister,
+            unregisterPrompt: mockunregister,
           }}
         >
           <MockPrompt />
@@ -191,20 +234,20 @@ describe('NavigationPrompt', () => {
 
       expect(mockPromptWrapper.props().promptRegistration).toBeDefined();
       expect(mockPromptWrapper.props().promptRegistration.registerPrompt).toBeDefined();
-      expect(mockPromptWrapper.props().promptRegistration.deregisterPrompt).toBeDefined();
+      expect(mockPromptWrapper.props().promptRegistration.unregisterPrompt).toBeDefined();
 
       const promptMetaData = { test: 'value' };
       mockPromptWrapper.props().promptRegistration.registerPrompt('mock_id', 'mock_description', promptMetaData);
-      mockPromptWrapper.props().promptRegistration.deregisterPrompt('different_mock_id');
+      mockPromptWrapper.props().promptRegistration.unregisterPrompt('different_mock_id');
 
       expect(mockOnPromptChange.mock.calls.length).toEqual(1);
-      expect(mockDeregister.mock.calls.length).toEqual(0);
+      expect(mockunregister.mock.calls.length).toEqual(0);
       expect(wrapper.instance().registeredPrompts.mock_id).toBeDefined();
     });
 
-    it('should notify ancestors when prompts are deregistered', () => {
+    it('should notify ancestors when prompts are unregistered', () => {
       const mockRegister = jest.fn();
-      const mockDeregister = jest.fn();
+      const mockunregister = jest.fn();
       const mockOnPromptChange = jest.fn();
 
       const wrapper = mount((
@@ -212,7 +255,7 @@ describe('NavigationPrompt', () => {
           onPromptChange={mockOnPromptChange}
           promptRegistration={{
             registerPrompt: mockRegister,
-            deregisterPrompt: mockDeregister,
+            unregisterPrompt: mockunregister,
           }}
         >
           <MockPrompt />
@@ -223,17 +266,17 @@ describe('NavigationPrompt', () => {
 
       expect(mockPromptWrapper.props().promptRegistration).toBeDefined();
       expect(mockPromptWrapper.props().promptRegistration.registerPrompt).toBeDefined();
-      expect(mockPromptWrapper.props().promptRegistration.deregisterPrompt).toBeDefined();
+      expect(mockPromptWrapper.props().promptRegistration.unregisterPrompt).toBeDefined();
 
       const promptMetaData = { test: 'value' };
       mockPromptWrapper.props().promptRegistration.registerPrompt('mock_id', 'mock_description', promptMetaData);
-      mockPromptWrapper.props().promptRegistration.deregisterPrompt('mock_id');
+      mockPromptWrapper.props().promptRegistration.unregisterPrompt('mock_id');
 
       expect(mockOnPromptChange.mock.calls.length).toEqual(2);
       expect(mockOnPromptChange.mock.calls[1][0]).toEqual([]);
 
-      expect(mockDeregister.mock.calls.length).toEqual(1);
-      expect(mockDeregister.mock.calls[0][0]).toEqual('mock_id');
+      expect(mockunregister.mock.calls.length).toEqual(1);
+      expect(mockunregister.mock.calls[0][0]).toEqual('mock_id');
 
       expect(wrapper.instance().registeredPrompts.mock_id).toBeUndefined();
     });
@@ -241,7 +284,7 @@ describe('NavigationPrompt', () => {
 
   describe('resolvePrompts', () => {
     it('should show checkpoint notification dialog when resolvePrompts is executed and resolve on acceptance', async () => {
-      expect.assertions(7);
+      expect.assertions(8);
 
       const wrapper = mount((
         <NavigationPromptCheckpoint
@@ -260,6 +303,7 @@ describe('NavigationPrompt', () => {
         expect(newState.notificationDialogProps.message).toEqual('Test Message');
         expect(newState.notificationDialogProps.acceptButtonText).toEqual('Accept');
         expect(newState.notificationDialogProps.rejectButtonText).toEqual('Reject');
+        expect(newState.notificationDialogProps.emphasizedAction).toEqual('reject');
         expect(newState.notificationDialogProps.onAccept).toBeDefined();
         expect(newState.notificationDialogProps.onReject).toBeDefined();
 
@@ -275,11 +319,12 @@ describe('NavigationPrompt', () => {
         message: 'Test Message',
         acceptButtonText: 'Accept',
         rejectButtonText: 'Reject',
+        emphasizedAction: 'reject',
       })).resolves.toEqual(undefined);
     });
 
     it('should show checkpoint notification dialog with function-provided values when resolvePrompts is executed and resolve on acceptance', async () => {
-      expect.assertions(7);
+      expect.assertions(8);
 
       const wrapper = mount((
         <NavigationPromptCheckpoint
@@ -299,6 +344,7 @@ describe('NavigationPrompt', () => {
         expect(newState.notificationDialogProps.message).toEqual('Message: mock_description-value, mock_description2-value2');
         expect(newState.notificationDialogProps.acceptButtonText).toEqual('Accept: mock_description-value, mock_description2-value2');
         expect(newState.notificationDialogProps.rejectButtonText).toEqual('Reject: mock_description-value, mock_description2-value2');
+        expect(newState.notificationDialogProps.emphasizedAction).toEqual('reject');
         expect(newState.notificationDialogProps.onAccept).toBeDefined();
         expect(newState.notificationDialogProps.onReject).toBeDefined();
 
@@ -314,6 +360,7 @@ describe('NavigationPrompt', () => {
         message: `Message: ${prompts.map(prompt => `${prompt.description}-${prompt.metaData.test}`).join(', ')}`,
         acceptButtonText: `Accept: ${prompts.map(prompt => `${prompt.description}-${prompt.metaData.test}`).join(', ')}`,
         rejectButtonText: `Reject: ${prompts.map(prompt => `${prompt.description}-${prompt.metaData.test}`).join(', ')}`,
+        emphasizedAction: 'reject',
       }))).resolves.toEqual(undefined);
     });
 
