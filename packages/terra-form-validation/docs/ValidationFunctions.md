@@ -105,3 +105,86 @@ const normalizePhone = value => {
 ```
 
 Consult [react-final-form](https://github.com/final-form/react-final-form) for further functionality that can be used.
+
+## FormValidationUtil Class
+
+In order to make creating form validation functions easier, we have a FormValidationUtil class in the `terra-form-validation` package. It contains the following functions.
+
+#### isUnderMaxLength
+
+```javascript
+FormValidationUtil.isUnderMaxValue(value, maximum)
+```
+
+Checks given value's length against maximum. Returns true if value's length is less than the maximum.
+* `value` is the value string
+* `maximum` is a nonnegative whole number.
+
+
+#### isOverMinLength
+
+```javascript
+FormValidationUtil.isOverMinLength(value, minimum)
+```
+
+Checks given value's length against minimum. Returns true if value's length is greater than the minimum.
+* `value` is the value string
+* `minimum` is a nonnegative whole number.
+
+#### hasNoWhitespace
+
+```javascript
+FormValidationUtil.hasNoWhitespace(value)
+```
+
+Checks given value for extraneous whitespace. return true if there is no whitespace.
+* `value` is the value string
+
+#### containsCharacters
+
+```javascript
+FormValidationUtil.containsCharacters(value, chars)
+```
+
+Checks given value for any string in given array. return true if value does not contain any of them.
+* `value` is the value string
+* `chars` is an array of strings
+
+#### isOverMinValue
+
+```javascript
+FormValidationUtil.isOverMinValue(value, minimum)
+```
+
+Checks given value against a minimum value. Returns true if value is greater then or equal to the minimum
+* `value` is the value string
+* `minimum` is the minimum numeric value
+
+#### isUnderMaxValue
+
+```javascript
+FormValidationUtil.isUnderMaxValue(value, maximum)
+```
+
+Checks given value against a maximum value. Returns true if value is less then or equal to the maximum
+* `value` is the value string
+* `maximum` is the maximum numeric value
+
+#### isPrecise
+
+```javascript
+FormValidationUtil.isPrecise(value, precision)
+```
+
+Checks given value for a specific level of precision. Returns true if value has less than or an equal amount of precision
+* `value` is the value string
+* `precision` is a nonnegative whole number
+
+#### isNonnegative
+
+```javascript
+FormValidationUtil.isNonnegative(value)
+```
+
+Checks given value for if it is a negative value. Returns true if it is nonnegative.
+* `value` is the value string
