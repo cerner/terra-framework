@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Fixed js error in the filterDate example.
 
 4.1.0 - (March 15, 2019)
 ------------------
