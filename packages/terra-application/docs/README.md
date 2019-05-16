@@ -10,6 +10,7 @@ The `terra-application` package provides a baseline of functionality for applica
 ## Rationale
 
 
+
 ## Usage
 
 The `terra-application` package has two main responsibilities:
@@ -70,6 +71,20 @@ export default () => (
     <ExampleContent />
   </Application>
 )
+```
+
+A Sass partial containing media query mixins based on the defined breakpoints is also available.
+
+```scss
+@import '~terra-application/lib/breakpoints/media-queries';
+
+.example {
+  color: blue;
+
+  @include terra-mq-small-up {
+    color: red;
+  }
+}
 ```
 
 > The `terra-breakpoints` package should not be consumed directly. The functionality provided by `terra-breakpoints` should be consumed through `terra-application`.
