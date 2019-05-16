@@ -161,7 +161,7 @@ const notifications2 = {
   '/page_3': 65,
   '/page_5': 6,
   Calculator: 2,
-  Pill: 3,
+  Pill: 100,
 };
 
 const userConfig = {
