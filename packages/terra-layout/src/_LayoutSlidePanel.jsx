@@ -131,7 +131,8 @@ class LayoutSlidePanel extends React.Component {
 
     const isTiny = size === 'tiny';
     const isSmall = size === 'small';
-    const compactSize = isTiny || isSmall;
+    const isMedium = size === 'medium';
+    const compactSize = isTiny || isSmall || isMedium;
     const isOverlay = compactSize ? true : panelBehavior === 'overlay';
     const isOverlayOpen = isOpen && isOverlay;
     const overlayBackground = compactSize ? 'dark' : 'clear';

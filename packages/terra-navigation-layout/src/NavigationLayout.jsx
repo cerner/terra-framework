@@ -12,7 +12,7 @@ import { reduceRouteConfig, validateMatchExists } from './routingUtils';
 const getBreakpointSize = (queryWidth) => {
   const width = queryWidth || window.innerWidth;
   const {
-    medium, large, huge, enormous,
+    small, medium, large, huge, enormous,
   } = breakpoints;
 
   if (width >= enormous) {
@@ -23,8 +23,10 @@ const getBreakpointSize = (queryWidth) => {
     return 'large';
   } if (width >= medium) {
     return 'medium';
+  } if (width >= small) {
+    return 'small';
   }
-  return 'small';
+  return 'tiny';
 };
 
 const propTypes = {

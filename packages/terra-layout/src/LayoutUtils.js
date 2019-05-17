@@ -1,7 +1,7 @@
 import breakpoints from 'terra-breakpoints';
 
 const {
-  medium, large, huge, enormous,
+  small, medium, large, huge, enormous,
 } = breakpoints;
 
 const getBreakpointSize = (queryWidth) => {
@@ -14,8 +14,10 @@ const getBreakpointSize = (queryWidth) => {
     return 'large';
   } if (width >= medium) {
     return 'medium';
+  } if (width >= small) {
+    return 'small';
   }
-  return 'small';
+  return 'tiny';
 };
 
 const getCustomProps = (props, validPropTypes) => (
