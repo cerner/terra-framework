@@ -192,8 +192,6 @@ import SlidePanelManager from 'terra-application/lib/slide-panel-manager';
 
 ## Example
 
-Assume we have two packages, example-application and example-library. This example will demonstrate how terra-application should be consumed in both packages.
-
 ```json
 // example-application/package.json
 {
@@ -264,7 +262,6 @@ const Content = injectIntl(({ intl }) => {
 
 export default Content;
 ```
-
 
 ## Component Features
 
