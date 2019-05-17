@@ -16,7 +16,6 @@ For application packages:
 1. `terra-application` must be specified as a dependency.
 2. A single `<Application />` component must be rendered as high as possible in the component tree.
 3. Components provided by `terra-application` should be consumed solely through `terra-application` and not through their own separate packages.
-3. `terra-application` should be aliased within the package's webpack configuration to ensure that a single instance of the package is used. This will prevent duplication of the package when developing against local packages using file references or `npm link`. Note that if multiple versions of `terra-application` are installed, the application may not function as expected (or at all).
 
 For library packages:
 
