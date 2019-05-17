@@ -1,0 +1,8 @@
+@import './ApplicationUtilityTestCommon';
+
+:local {
+  .application-utility-test-menu-utility-content {
+    @extend %application-utility-test-application-content;
+    width: 300px;
+  }
+}

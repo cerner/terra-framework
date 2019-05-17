@@ -7,8 +7,12 @@ import Image from 'terra-image';
 import Avatar from 'terra-avatar';
 import ContentContainer from 'terra-content-container';
 import Button from 'terra-button';
+import classNames from 'classnames/bind';
+import styles from './ApplicationLayoutCommon.test.scss';
 
 import ApplicationLayout, { RoutingMenu, Utils } from '../../../ApplicationLayout';
+
+const cx = classNames.bind(styles);
 
 const PageContent = ({ contentName }) => (
   <div>
@@ -297,7 +301,7 @@ ApplicationLayoutTest.propTypes = {
 const WrappedApplication = withRouter(injectIntl((ApplicationLayoutTest)));
 
 const AppRouter = () => (
-  <div style={{ height: '100%' }}>
+  <div className={cx('application-layout-test-app-router')}>
     <MemoryRouter>
       <WrappedApplication />
     </MemoryRouter>

@@ -3,8 +3,12 @@ import PropTypes from 'prop-types';
 import RoutingStackDelegate from 'terra-navigation-layout/lib/RoutingStackDelegate';
 import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
+import classNames from 'classnames/bind';
+import styles from './ApplicationMenu.scss';
 
 import RoutingMenu from '../../../menu/RoutingMenu';
+
+const cx = classNames.bind(styles);
 
 class ApplicationMenu extends React.Component {
   constructor(props) {
@@ -46,7 +50,7 @@ class ApplicationMenu extends React.Component {
     return (
       <ContentContainer
         footer={(
-          <div style={{ padding: '10px', borderTop: '1px solid lightgrey' }}>
+          <div className={cx('application-layout-common-application-menu-content')}>
             <Button
               text="Custom Event 1"
               isBlock
@@ -59,7 +63,7 @@ class ApplicationMenu extends React.Component {
                   layoutConfig.toggleMenu();
                 }
               }}
-              style={{ marginBottom: '5px' }}
+              className={cx('application-layout-common-application-menu-custom-event')}
             />
             <Button
               text="Custom Event 2"

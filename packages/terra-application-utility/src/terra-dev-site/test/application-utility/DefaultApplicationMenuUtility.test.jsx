@@ -1,8 +1,12 @@
 import React from 'react';
 import Image from 'terra-image';
+import classNames from 'classnames/bind';
 import MockConfig from '../../doc/common/MockConfig';
 import FallbackAvatar from '../../doc/common/FallbackAvatar.svg';
 import { ApplicationMenuUtility, UtilityUtils } from '../../../ApplicationUtility';
+import styles from './DefaultApplicationMenuUtility.test.scss';
+
+const cx = classNames.bind(styles);
 
 class DefaultApplicationMenuUtility extends React.Component {
   constructor(props) {
@@ -24,7 +28,7 @@ class DefaultApplicationMenuUtility extends React.Component {
     const title = 'User Name';
 
     return (
-      <div style={{ height: '60px', width: '300px', position: 'relative' }}>
+      <div className={cx('application-utility-test-menu-utility-content')}>
         <ApplicationMenuUtility
           id="default"
           menuItems={MockConfig(accessory)}

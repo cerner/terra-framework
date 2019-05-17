@@ -1,0 +1,7 @@
+@import './ApplicationLayoutCommon';
+
+:local {
+  .application-layout-common-utility-option-content {
+    @extend %application-layout-common-container-content;
+  }
+}

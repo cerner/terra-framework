@@ -1,7 +1,8 @@
-@import 'AbstractModalCommon';
+@import './AbstractModalCommon';
 
 :local {
   .abstract-modal-example-content {
+    @extend %abstract-modal-example-content-common;
     background-color: #7fffd4;
   }
 }

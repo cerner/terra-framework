@@ -4,7 +4,11 @@ import Image from 'terra-image';
 import MockConfig from 'terra-application-utility/lib/terra-dev-site/doc/common/MockConfig';
 import FallbackAvatar from 'terra-application-utility/lib/terra-dev-site/doc/common/FallbackAvatar.svg';
 import { ApplicationMenuUtility, UtilityUtils } from 'terra-application-utility/lib/ApplicationUtility';
+import classNames from 'classnames/bind';
+import styles from './ApplicationMenuUtilityExample.scss';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+
+const cx = classNames.bind(styles);
 
 class ApplicationMenuUtilityExample extends React.Component {
   constructor(props) {
@@ -31,7 +35,7 @@ class ApplicationMenuUtilityExample extends React.Component {
 
     return (
       <div>
-        <div style={{ height: '60px', width: '300px', paddingLeft: '4px' }}>
+        <div className={cx('application-utility-menu-utility-example')}>
           <ApplicationMenuUtility
             menuItems={MockConfig(accessory)}
             onChange={this.handleOnChange}

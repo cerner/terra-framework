@@ -4,9 +4,13 @@ import Button from 'terra-button';
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
 import IconFeaturedOutline from 'terra-icon/lib/icon/IconFeaturedOutline';
+import classNames from 'classnames/bind';
+import styles from './ApplicationExtensions.scss';
 
 import ExtensionsDisclosure from './ExtensionsDisclosure';
 import { Utils } from '../../../ApplicationLayout';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   disclosureManager: disclosureManagerShape,
@@ -49,9 +53,9 @@ class ApplicationExtensions extends React.Component {
 
     return (
       <div {...containerProps}>
-        <Button icon={<IconSettings />} text="Settings" variant={variant} isIconOnly style={{ marginRight: '5px' }} onClick={() => this.discloseExtensionContent('Settings')} />
-        <Button icon={<IconCalendar />} text="Calendar" variant={variant} isIconOnly style={{ marginRight: '5px' }} onClick={() => this.discloseExtensionContent('Calendar')} />
-        <Button icon={<IconFeaturedOutline />} text="Favorites" variant={variant} isIconOnly style={{ marginRight: '5px' }} onClick={() => this.discloseExtensionContent('Favorites')} />
+        <Button icon={<IconSettings />} text="Settings" variant={variant} isIconOnly className={cx('application-layout-common-extensions-content')} onClick={() => this.discloseExtensionContent('Settings')} />
+        <Button icon={<IconCalendar />} text="Calendar" variant={variant} isIconOnly className={cx('application-layout-common-extensions-content')} onClick={() => this.discloseExtensionContent('Calendar')} />
+        <Button icon={<IconFeaturedOutline />} text="Favorites" variant={variant} isIconOnly className={cx('application-layout-common-extensions-content')} onClick={() => this.discloseExtensionContent('Favorites')} />
       </div>
     );
   }

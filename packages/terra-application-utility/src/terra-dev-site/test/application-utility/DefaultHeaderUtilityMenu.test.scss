@@ -1,0 +1,15 @@
+@import './ApplicationUtilityTestCommon';
+
+:local {
+  .application-utility-test-header-menu-custom-component {
+    @extend %application-utility-test-custom-component;
+  }
+
+  .application-utility-test-header-menu-avatar {
+    @extend %application-utility-test-avatar;
+  }
+
+  .application-utility-test-header-menu-content {
+    @extend %application-utility-test-content;
+  }
+}

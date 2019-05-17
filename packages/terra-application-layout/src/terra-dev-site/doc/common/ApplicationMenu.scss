@@ -1,0 +1,12 @@
+@import './ApplicationLayoutCommon';
+
+:local {
+  .application-layout-common-application-menu-content {
+    @extend %application-layout-common-container-content;
+    border-top: 1px solid #d3d3d3;
+  }
+
+  .application-layout-common-application-menu-custom-event {
+    margin-bottom: 5px;
+  }
+}
