@@ -1,0 +1,46 @@
+{
+  "name": "terra-navigation-prompt",
+  "main": "lib/index.js",
+  "version": "0.0.0",
+  "description": "The NavigationPrompt and NavigationPromptCheckpoint components allow for the detection and management of components with unsaved state.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cerner/terra-framework.git"
+  },
+  "keywords": [
+    "Cerner",
+    "Terra",
+    "Framework",
+    "terra-navigation-prompt",
+    "Navigation",
+    "Prompt",
+    "UI"
+  ],
+  "author": "Cerner Corporation",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cerner/terra-framework/issues"
+  },
+  "homepage": "https://github.com/cerner/terra-framework#readme",
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "prop-types": "^15.5.8",
+    "uuid": "^3.3.2",
+    "terra-doc-template": "^2.0.0",
+    "terra-notification-dialog": "^2.0.0"
+  },
+  "scripts": {
+    "compile": "npm run compile:clean && npm run compile:build",
+    "compile:clean": "rm -rf lib",
+    "compile:build": "babel src --out-dir lib --copy-files",
+    "lint": "npm run lint:js && npm run lint:scss",
+    "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
+    "lint:scss": "stylelint src/**/*.scss",
+    "test": "npm run test:jest && npm run test:wdio",
+    "test:jest": "jest --config ../../jestconfig.js"
+  }
+}
