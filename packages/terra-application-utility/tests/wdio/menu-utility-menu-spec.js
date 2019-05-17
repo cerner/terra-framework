@@ -5,8 +5,7 @@ describe('MenuUtilityMenu', () => {
   });
 
   describe('Displays a default menu utility menu', () => {
-    Terra.should.matchScreenshot({ selector: '#default' });
-    Terra.should.beAccessible({ context: '#default' });
+    Terra.should.validateElement({ selector: '#default' });
     Terra.should.themeCombinationOfCustomProperties({
       testName: 'themed',
       selector: '#default',
@@ -70,8 +69,7 @@ describe('MenuUtilityMenu', () => {
       browser.moveToObject('#test-item-2');
     });
 
-    Terra.should.matchScreenshot({ selector: '#default' });
-    Terra.should.beAccessible({ context: '#default' });
+    Terra.should.validateElement({ selector: '#default' });
     Terra.should.themeEachCustomProperty('#default', {
       '--terra-application-utility-menu-body-item-hover-background-color': 'blue',
     });
@@ -82,8 +80,7 @@ describe('MenuUtilityMenu', () => {
       browser.keys(['Tab', 'Tab', 'Tab']);
     });
 
-    Terra.should.matchScreenshot({ selector: '#default' });
-    Terra.should.beAccessible({ context: '#default' });
+    Terra.should.validateElement({ selector: '#default' });
     Terra.should.themeEachCustomProperty('#default', {
       '--terra-application-utility-menu-body-item-focus-box-shadow': '0 0 3px 3px rgba(50, 50, 233, 0.5), 0 0 4px 4px rgba(50, 50, 233, 0.35)',
     });
