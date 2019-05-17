@@ -16,7 +16,7 @@ For application packages:
 1. `terra-application` must be specified as a dependency.
 2. A single `<Application />` component must be rendered as high as possible in the component tree.
 3. Components provided by `terra-application` should be consumed solely through `terra-application` and not through their own separate packages.
-3. `terra-application` should be aliased within the package's webpack configuration to ensure that a single instance of the package is used. This will prevent duplication of the package when developing against local packages using file references or `npm link`. Note that if multiple versions of `terra-application` are installed, the application may not function as expected.
+3. `terra-application` should be aliased within the package's webpack configuration to ensure that a single instance of the package is used. This will prevent duplication of the package when developing against local packages using file references or `npm link`. Note that if multiple versions of `terra-application` are installed, the application may not function as expected (or at all).
 
 For library packages:
 
@@ -95,6 +95,7 @@ A Sass partial containing media query mixins based on the defined breakpoints is
 ```
 
 > The `terra-breakpoints` package should not be consumed directly. The functionality provided by `terra-breakpoints` should be consumed through `terra-application`.
+> An `ActiveBreakpointProvider` is rendered automatically by the `Application` component.
 
 ### Disclosure Manager
 
@@ -189,6 +190,21 @@ import SlidePanelManager from 'terra-application/lib/slide-panel-manager';
 ```
 
 > The `terra-slide-panel-manager` package should not be consumed directly. The functionality provided by `terra-slide-panel-manager` should be consumed through `terra-application`.
+
+### NavigationPrompt
+
+The `terra-navigation-prompt` package uses Context to communicate the presence of unsaved data between components.
+
+All of the exports from the `terra-navigation-prompt` package are exported from the `/lib/navigation-prompt` directory.
+
+```jsx
+import NavigationPrompt, { 
+  NavigationPromptCheckpoint, 
+  PromptRegistrationContext 
+} from 'terra-application/lib/navigation-prompt';
+```
+
+> The `terra-navigation-prompt` package should not be consumed directly. The functionality provided by `terra-navigation-prompt` should be consumed through `terra-application`.
 
 ## Example
 
