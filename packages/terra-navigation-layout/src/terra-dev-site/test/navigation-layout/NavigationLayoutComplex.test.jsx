@@ -26,19 +26,19 @@ const config = {
     '/page1': {
       path: '/page1',
       component: {
-        tiny: {
+        small: {
           componentClass: () => (
-            <div className="test-menu">Tiny Menu</div>
+            <div className="test-menu">Small Menu</div>
           ),
         },
-        medium: {
+        large: {
           componentClass: () => (
-            <div className="test-menu">Medium Menu</div>
+            <div className="test-menu">Large Menu</div>
           ),
         },
-        huge: {
+        enormous: {
           componentClass: () => (
-            <div className="test-menu">Huge Menu</div>
+            <div className="test-menu">Enormous Menu</div>
           ),
         },
       },
