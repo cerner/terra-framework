@@ -1,8 +1,10 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import DateTimePickerExampleTemplate from '../../common/DateTimePickerExampleTemplate';
 import DateTimeUtil from '../../../DateTimeUtils';
+import styles from './DateTimePicker12HourMobile.test.scss';
 
-const removeInputCursorForScreenshots = { caretColor: 'transparent' };
+const cx = classNames.bind(styles);
 
 export default class DateTimePicker12HourMobile extends React.Component {
   constructor(props) {
@@ -34,7 +36,7 @@ export default class DateTimePicker12HourMobile extends React.Component {
 
   render() {
     return (
-      <div style={removeInputCursorForScreenshots}>
+      <div className={cx('date-time-picker-input-cursor')}>
         <h3>Empty Date-Time-Picker</h3>
         <DateTimePickerExampleTemplate
           id="datetimeEmpty"
