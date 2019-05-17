@@ -94,13 +94,13 @@ const UtilityMenu = ({
       userConfig={userConfig}
       customContent={hero}
       menuItems={menuItems}
-      onSelectMenuItem={(itemKey) => {
+      onSelectMenuItem={(itemKey, metaData) => {
         if (itemKey === utilityMenuSettingsKey) {
           onSelectSettings();
         } else if (itemKey === utilityMenuHelpKey) {
           onSelectHelp();
         } else {
-          onSelectUtilityItem(itemKey);
+          onSelectUtilityItem(itemKey, metaData);
         }
       }}
       isHeightBounded={isHeightBounded}
