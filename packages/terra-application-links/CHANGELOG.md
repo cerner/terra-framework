@@ -3,6 +3,11 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update tests to use `Terra.should.validateElement()`
+
+6.0.0 - (May 13, 2019)
+------------------
 ### Breaking Changes
 * Consume latest major version bump of terra-popup
 * Update react-router-dom peerDependency to latest stable major release

@@ -3,6 +3,11 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update tests to use `Terra.should.validateElement()`
+
+3.0.0 - (May 13, 2019)
+------------------
 ### Breaking Changes
 * Removed focus-trap from abstract modal
 * Replaced with functionality that will disable focus on elements outside of the modal (not including content rendered from the modal in a portal)
