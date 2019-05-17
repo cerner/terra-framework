@@ -14,7 +14,7 @@ const DocPage = () => (
     srcPath={`https://github.com/cerner/terra-framework/tree/master/packages/${name}`}
     propsTables={[
       {
-        componentName: 'Application',
+        componentName: 'Application Props',
         componentSrc: ApplicationSrc,
       },
     ]}

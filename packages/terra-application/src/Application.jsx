@@ -49,7 +49,8 @@ const propTypes = {
   themeIsGlobal: PropTypes.bool,
   /**
    * By default, the elements rendered by Application are fit to the Application's parent using 100% height.
-   * If `fitToParentIsDisabled` is provided, the Application will render at a height determined by its intrinsic content height.
+   * If `fitToParentIsDisabled` is provided, the Application will render at its intrinsic content height and
+   * overflow potentially overflow its parent.
    */
   fitToParentIsDisabled: PropTypes.bool,
 };
