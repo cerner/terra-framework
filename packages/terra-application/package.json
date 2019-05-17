@@ -2,7 +2,7 @@
   "name": "terra-application",
   "main": "lib/Application.js",
   "version": "0.0.0",
-  "description": "TODO",
+  "description": "The terra-application package provides a baseline of functionality for applications built with Terra components.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git"
