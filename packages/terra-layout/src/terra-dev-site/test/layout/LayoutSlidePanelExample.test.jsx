@@ -27,7 +27,7 @@ class LayoutSlidePanelExample extends React.Component {
             </div>
 )}
           panelBehavior="overlay"
-          size="medium"
+          size="large"
           isOpen={this.state.isOpen}
           isToggleEnabled
           isAnimated

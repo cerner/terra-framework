@@ -4,12 +4,12 @@ const supportedComponentBreakpoints = ['tiny', 'small', 'medium', 'large', 'huge
 
 /**
  * PropType definition for component definitions in the NavigationLayout's configuration object.
- * It is an Object that is keyed by a String breakpoint value and has Object values that
+ * It is an Object that is keyed by a String breakpoint value (or `default`) and has Object values that
  * represent Components.
  *
  * Example:
  *   {
- *     tiny: {
+ *     default: {
  *       componentClass: DefaultComponent,
  *       props: {
  *         prop1: 'Value',
@@ -30,7 +30,7 @@ const supportedComponentBreakpoints = ['tiny', 'small', 'medium', 'large', 'huge
  *   }
  */
 const componentConfigPropType = PropTypes.objectOf((propValue, key, componentName, location, propFullName) => {
-  const validKey = supportedComponentBreakpoints.indexOf(key) >= 0;
+  const validKey = key === 'default' || supportedComponentBreakpoints.indexOf(key) >= 0;
 
   if (!validKey) {
     return new Error(`Invalid prop '${propFullName}' supplied to '${componentName}'. Validation failed.`);
