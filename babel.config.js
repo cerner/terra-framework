@@ -1,4 +1,4 @@
-module.exports = () => {
+module.exports = (api) => {
   api.cache(false);
   api.assertVersion('^7.4.4');
 
@@ -8,8 +8,9 @@ module.exports = () => {
   ];
 
   const plugins = [
-    '@babel/plugin-transform-object-assign',
+    '@babel/plugin-proposal-class-properties',
     '@babel/plugin-proposal-object-rest-spread',
+    '@babel/plugin-transform-object-assign',
   ];
 
   return {
