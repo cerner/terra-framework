@@ -27,10 +27,10 @@
     "react-dom": "^16.8.0"
   },
   "dependencies": {
-    "classnames": "^2.2.6",
+    "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "uuid": "^3.3.2",
-    "terra-doc-template": "^2.0.0",
+    "terra-doc-template": "^2.2.0",
     "terra-notification-dialog": "^2.0.0"
   },
   "scripts": {
@@ -39,7 +39,7 @@
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
     "precompile": "rm -rf lib",
-    "test": "npm run test:jest && npm run test:wdio",
+    "test": "npm run test:jest",
     "test:jest": "jest --config ../../jestconfig.js"
   }
 }
