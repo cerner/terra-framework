@@ -4,6 +4,9 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Removed all inline styles and implemented the same styles using external css.
+
+### Changed
 * Update tests to use `Terra.should.validateElement()`
 
 2.10.0 - (March 15, 2019)

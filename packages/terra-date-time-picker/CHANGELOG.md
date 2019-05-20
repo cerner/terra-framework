@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Removed all inline styles and implemented the same styles using external css.
+
 ### Fixed
 * Fixed js error in the filterDate example.
 
