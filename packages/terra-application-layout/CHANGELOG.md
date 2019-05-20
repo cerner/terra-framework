@@ -3,6 +3,14 @@ Changelog
 
 Unreleased
 ----------
+
+5.1.0 - (March 15, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+5.0.0 - (May 13, 2019)
+------------------
 ### Breaking Changes
 * Consume latest major version bump of terra-popup
 * Removed terra-disclosure-manager dependency

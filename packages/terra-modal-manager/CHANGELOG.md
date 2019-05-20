@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+6.0.0 - (May 13, 2019)
+------------------
 ### Breaking Change
 * Removed terra-disclosure-manager dependency
 * Added terra-disclosure-manager peer-dependency

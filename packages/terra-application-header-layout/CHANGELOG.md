@@ -3,6 +3,13 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update tests to use `Terra.should.validateElement()`
+
+3.7.0 - (May 15, 2019)
+------------------
+# Removed
+* Removed tabindex on main element to prevent keyboard page scroll bug
 
 3.6.0 - (April 24, 2019)
 ------------------
