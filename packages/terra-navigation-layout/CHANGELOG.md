@@ -3,6 +3,11 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Added hard-coded breakpoint values to NavigationLayout.jsx
+
+### Removed
+* Removed dependency on terra-responsive-element
 
 5.1.0 - (March 15, 2019)
 ------------------
