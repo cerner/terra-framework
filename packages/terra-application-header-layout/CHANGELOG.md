@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added ARIA landmark roles
 
 3.8.0 - (May 21, 2019)
 ------------------

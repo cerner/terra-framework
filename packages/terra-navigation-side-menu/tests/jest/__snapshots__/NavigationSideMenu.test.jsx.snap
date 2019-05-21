@@ -55,42 +55,46 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
     </React.Fragment>
   }
 >
-  <ul
-    className="side-menu-list"
-    role="listbox"
+  <nav
+    role="navigation"
   >
-    <MenuItem
-      data-menu-item="test1"
-      isSelected={false}
-      key="test1"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      text="Test Menu 1"
-    />
-    <MenuItem
-      data-menu-item="test2"
-      isSelected={false}
-      key="test2"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      text="Test Menu 2"
-    />
-    <MenuItem
-      data-menu-item="test3"
-      isSelected={false}
-      key="test3"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      text="Test Menu 3"
-    />
-    <MenuItem
-      data-menu-item="test4"
-      isSelected={false}
-      key="test4"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      text="Test Menu 4"
-    />
-  </ul>
+    <ul
+      className="side-menu-list"
+      role="listbox"
+    >
+      <MenuItem
+        data-menu-item="test1"
+        isSelected={false}
+        key="test1"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        text="Test Menu 1"
+      />
+      <MenuItem
+        data-menu-item="test2"
+        isSelected={false}
+        key="test2"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        text="Test Menu 2"
+      />
+      <MenuItem
+        data-menu-item="test3"
+        isSelected={false}
+        key="test3"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        text="Test Menu 3"
+      />
+      <MenuItem
+        data-menu-item="test4"
+        isSelected={false}
+        key="test4"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        text="Test Menu 4"
+      />
+    </ul>
+  </nav>
 </ContentContainer>
 `;
