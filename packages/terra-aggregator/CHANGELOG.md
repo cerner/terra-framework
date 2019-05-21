@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.15.0 - (May 21, 2019)
+------------------
 ### Changed
 * Update tests to use `Terra.should.validateElement()`
 
