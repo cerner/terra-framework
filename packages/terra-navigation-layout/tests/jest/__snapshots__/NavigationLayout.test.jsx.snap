@@ -17,7 +17,7 @@ exports[`NavigationLayout should render a NavigationLayout with defaulted compon
           },
         ]
       }
-      navigationLayoutSize="tiny"
+      navigationLayoutSize="medium"
     />
   }
   menu={
@@ -35,7 +35,7 @@ exports[`NavigationLayout should render a NavigationLayout with defaulted compon
           },
         ]
       }
-      navigationLayoutSize="tiny"
+      navigationLayoutSize="medium"
       stackNavigationIsEnabled={true}
     />
   }
@@ -54,7 +54,7 @@ exports[`NavigationLayout should render a NavigationLayout with defaulted compon
         },
       ]
     }
-    navigationLayoutSize="tiny"
+    navigationLayoutSize="medium"
     redirectPath="/"
   />
 </Layout>
@@ -65,19 +65,19 @@ exports[`NavigationLayout should render a NavigationLayout with provided compone
   header={
     <Header
       navigationLayoutRoutes={Array []}
-      navigationLayoutSize="tiny"
+      navigationLayoutSize="medium"
     />
   }
   menu={
     <Menu
       navigationLayoutRoutes={Array []}
-      navigationLayoutSize="tiny"
+      navigationLayoutSize="medium"
     />
   }
 >
   <Content
     navigationLayoutRoutes={Array []}
-    navigationLayoutSize="tiny"
+    navigationLayoutSize="medium"
   />
 </Layout>
 `;
@@ -99,7 +99,7 @@ exports[`NavigationLayout should render a NavigationLayout with provided compone
           },
         ]
       }
-      navigationLayoutSize="tiny"
+      navigationLayoutSize="medium"
     />
   }
   menu={
@@ -117,7 +117,7 @@ exports[`NavigationLayout should render a NavigationLayout with provided compone
           },
         ]
       }
-      navigationLayoutSize="tiny"
+      navigationLayoutSize="medium"
     />
   }
 >
@@ -135,7 +135,7 @@ exports[`NavigationLayout should render a NavigationLayout with provided compone
         },
       ]
     }
-    navigationLayoutSize="tiny"
+    navigationLayoutSize="medium"
   />
 </Layout>
 `;
@@ -145,7 +145,7 @@ exports[`NavigationLayout should render a NavigationLayout with provided menu te
   header={
     <NavigationLayoutContent
       navigationLayoutRoutes={Array []}
-      navigationLayoutSize="tiny"
+      navigationLayoutSize="medium"
     />
   }
   menu={null}
@@ -153,7 +153,7 @@ exports[`NavigationLayout should render a NavigationLayout with provided menu te
 >
   <NavigationLayoutContent
     navigationLayoutRoutes={Array []}
-    navigationLayoutSize="tiny"
+    navigationLayoutSize="medium"
   />
 </Layout>
 `;
@@ -175,7 +175,7 @@ exports[`NavigationLayout should render a NavigationLayout without menu if locat
           },
         ]
       }
-      navigationLayoutSize="tiny"
+      navigationLayoutSize="medium"
     />
   }
   menu={null}
@@ -194,7 +194,7 @@ exports[`NavigationLayout should render a NavigationLayout without menu if locat
         },
       ]
     }
-    navigationLayoutSize="tiny"
+    navigationLayoutSize="medium"
     redirectPath="/"
   />
 </Layout>
@@ -205,14 +205,14 @@ exports[`NavigationLayout should render a default NavigationLayout 1`] = `
   header={
     <NavigationLayoutContent
       navigationLayoutRoutes={Array []}
-      navigationLayoutSize="tiny"
+      navigationLayoutSize="medium"
     />
   }
   menu={null}
 >
   <NavigationLayoutContent
     navigationLayoutRoutes={Array []}
-    navigationLayoutSize="tiny"
+    navigationLayoutSize="medium"
   />
 </Layout>
 `;
