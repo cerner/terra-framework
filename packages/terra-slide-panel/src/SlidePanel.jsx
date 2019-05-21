@@ -5,6 +5,11 @@ import styles from './SlidePanel.module.scss';
 
 const cx = classNames.bind(styles);
 
+const position = {
+  start: 'start',
+  end: 'end',
+};
+
 const propTypes = {
   /**
    * The component to display in the main content area.
@@ -24,7 +29,7 @@ const propTypes = {
   /**
    * The position at which the panel will be displayed. This property honors the current direction setting. One of `start`, `end`.
    */
-  panelPosition: PropTypes.oneOf(['start', 'end']),
+  panelPosition: PropTypes.oneOf([position.start, position.end]),
 
   /**
    * The size at which the panel will be displayed. One of `small`, `large`.
@@ -92,23 +97,27 @@ class SlidePanel extends React.Component {
       customProps.className,
     ]);
 
-    const content = (panelPosition === 'start') ? (
+    const panelDiv = (
+      <div className={cx(['panel'])} tabIndex="-1" aria-hidden={!isOpen ? 'true' : 'false'} ref={this.setPanelNode}>
+        {panelContent}
+      </div>
+    );
+
+    const mainDiv = (
+      <div className={cx('main')} tabIndex="-1" ref={this.mainNode}>
+        {mainContent}
+      </div>
+    );
+
+    const content = (panelPosition === position.start) ? (
       <React.Fragment>
-        <div className={cx(['panel'])} tabIndex="-1" aria-hidden={!isOpen ? 'true' : 'false'} ref={this.setPanelNode}>
-          {panelContent}
-        </div>
-        <div className={cx('main')} tabIndex="-1" ref={this.mainNode}>
-          {mainContent}
-        </div>
+        {panelDiv}
+        {mainDiv}
       </React.Fragment>
     ) : (
       <React.Fragment>
-        <div className={cx('main')} tabIndex="-1" ref={this.mainNode}>
-          {mainContent}
-        </div>
-        <div className={cx(['panel'])} tabIndex="-1" aria-hidden={!isOpen ? 'true' : 'false'} ref={this.setPanelNode}>
-          {panelContent}
-        </div>
+        {mainDiv}
+        {panelDiv}
       </React.Fragment>
     );
 
@@ -129,5 +138,6 @@ class SlidePanel extends React.Component {
 
 SlidePanel.propTypes = propTypes;
 SlidePanel.defaultProps = defaultProps;
+SlidePanel.position = position;
 
 export default SlidePanel;

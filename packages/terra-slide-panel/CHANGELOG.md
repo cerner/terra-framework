@@ -4,7 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Fixed
-* Corrected slide panel's dom ordering
+* Corrected to allow Slide Panel's DOM order to flex based on the 'panelPosition' prop.
 
 3.5.0 - (April 24, 2019)
 ------------------
