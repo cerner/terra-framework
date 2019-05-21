@@ -2,7 +2,7 @@
 /* eslint-disable */
 import React from 'react';
 import Application from 'terra-application';
-import ApplicationNavigation from '../../../../ApplicationNavigation';
+import ApplicationNavigation from '../../../ApplicationNavigation';
 
 const titleConfig = {
   title: 'Test Title',
@@ -29,7 +29,7 @@ const titleConfigHideTitle = {
 };
 
 const TitleTest = () => (
-  <Application>
+  <Application locale="en-US">
     <div style={{ height: '70px' }}><ApplicationNavigation titleConfig={titleConfig} /></div>
     <div style={{ height: '70px' }}><ApplicationNavigation titleConfig={titleConfigHeadLine} /></div>
     <div style={{ height: '70px' }}><ApplicationNavigation titleConfig={titleConfigSubline} /></div>

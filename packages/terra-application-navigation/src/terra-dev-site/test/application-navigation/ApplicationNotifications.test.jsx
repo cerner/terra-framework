@@ -6,7 +6,7 @@ import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconPill from 'terra-icon/lib/icon/IconPill';
 import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
 import IconLightbulb from 'terra-icon/lib/icon/IconLightbulb';
-import ApplicationNavigation from '../../../../ApplicationNavigation';
+import ApplicationNavigation from '../../../ApplicationNavigation';
 
 const titleConfig = {
   title: 'Test Title',
@@ -146,7 +146,7 @@ const handleItemSelection = (key, metaData) => {
 /* eslint-enable no-alert */
 
 const TabsTest = () => (
-  <Application>
+  <Application locale="en-US">
     <ApplicationNavigation
       titleConfig={titleConfig}
       userConfig={userConfig}

@@ -59,6 +59,7 @@ const ExtensionRollup = ({
     title={intl.formatMessage({ id: 'Terra.applicationNavigation.extensions.rollupButtonDescription' })}
     aria-label={intl.formatMessage({ id: 'Terra.applicationNavigation.extensions.rollupButtonDescription' })}
     data-focus-styles-enabled
+    data-application-extension-rollup
   >
     <div className={cx('extension-rollup-inner')}>
       <div className={cx('extension-rollup-image')}>

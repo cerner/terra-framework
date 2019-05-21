@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from 'react';
 import Application from 'terra-application';
-import ApplicationNavigation from '../../../../ApplicationNavigation';
+import ApplicationNavigation from '../../../ApplicationNavigation';
 
 const userConfig = {
   name: 'Test Name',
@@ -23,7 +23,7 @@ const userConfigSrc = {
 };
 
 const TitleTest = () => (
-  <Application>
+  <Application locale="en-US">
     <div style={{ height: '100px' }}><ApplicationNavigation userConfig={userConfig} /></div>
     <div style={{ height: '100px' }}><ApplicationNavigation userConfig={userConfigDetail} /></div>
     <div style={{ height: '100px' }}><ApplicationNavigation userConfig={userConfigInitials} /></div>

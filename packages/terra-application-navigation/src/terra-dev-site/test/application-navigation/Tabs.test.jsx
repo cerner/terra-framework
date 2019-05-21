@@ -2,7 +2,7 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions  */
 import React from 'react';
 import Application from 'terra-application';
-import ApplicationNavigation from '../../../../ApplicationNavigation';
+import ApplicationNavigation from '../../../ApplicationNavigation';
 
 const navigationItems = [
   {
@@ -29,6 +29,36 @@ const navigationItems = [
     metaData: {
       test: '4',
     },
+  }, {
+    key: '/page_5',
+    text: 'Page 5',
+    metaData: {
+      test: '5',
+    },
+  }, {
+    key: '/page_6',
+    text: 'Page 6',
+    metaData: {
+      test: '6',
+    },
+  }, {
+    key: '/page_7',
+    text: 'Page 7',
+    metaData: {
+      test: '7',
+    },
+  }, {
+    key: '/page_8',
+    text: 'Page 8',
+    metaData: {
+      test: '8',
+    },
+  }, {
+    key: '/page_9',
+    text: 'Page 9',
+    metaData: {
+      test: '9',
+    },
   },
 ];
 
@@ -39,7 +69,7 @@ const handleItemSelection = (key, metaData) => {
 /* eslint-enable no-alert */
 
 const TabsTest = () => (
-  <Application>
+  <Application locale="en-US">
     <ApplicationNavigation
       navigationItems={navigationItems}
       activeNavigationItemKey="/page_1"
