@@ -36,11 +36,11 @@
   .tab,
   .tab-rollup {
     background-clip: content-box;
-    box-shadow: inset 1px 0 0 0 rgba(42, 75, 119, .6), inset 2px 0 0 0 rgba(89, 159, 253, .3); // UPDATED!
+    box-shadow: inset 1px 0 0 0 rgba(42, 75, 119, 0.6), inset 2px 0 0 0 rgba(89, 159, 253, 0.3);
     padding-left: 2px;
 
     &:last-of-type {
-      box-shadow: inset 1px 0 0 0 rgba(42, 75, 119, .6), inset 2px 0 0 0 rgba(89, 159, 253, .3), inset -1px 0 0 0 rgba(42, 75, 119, .6), inset -2px 0 0 0 rgba(89, 159, 253, .3); // UPDATED!
+      box-shadow: inset 1px 0 0 0 rgba(42, 75, 119, 0.6), inset 2px 0 0 0 rgba(89, 159, 253, 0.3), inset -1px 0 0 0 rgba(42, 75, 119, 0.6), inset -2px 0 0 0 rgba(89, 159, 253, 0.3);
       padding-right: 2px;
     }
   }
@@ -61,9 +61,9 @@
 
     .tab-inner {
       align-items: center;
-      background-size: 0 5px;
       background-position: top left;
       background-repeat: no-repeat;
+      background-size: 0 5px;
       box-sizing: border-box;
       justify-content: space-between;
       overflow: hidden;
@@ -91,35 +91,36 @@
 
     &:hover {
       .tab-inner {
-        background-color: rgba(42, 75, 119, .3); // UPDATED!
+        background-color: rgba(42, 75, 119, 0.3);
       }
     }
 
     &:active {
       .tab-inner {
-        background-color: rgba(42, 75, 119, .8);
+        background-color: rgba(42, 75, 119, 0.8);
       }
     }
 
     &[aria-current='true'] {
+      box-shadow: inset 1px 0 0 0 rgba(89, 159, 253, 0.3), inset 2px 0 0 0 rgba(42, 75, 119, 0.6);
+
       .tab-inner {
-        background-color: rgba(42, 75, 119, .6); // UPDATED!
-        background-image: linear-gradient(to left, rgba(89, 159, 253, .8), rgba(89, 159, 253, .8)); // UPDATED!
+        background-color: rgba(42, 75, 119, 0.6);
+        background-image: linear-gradient(to left, rgba(89, 159, 253, 0.8), rgba(89, 159, 253, 0.8));
         background-size: 100% 6px;
         box-shadow: none;
         text-shadow: none;
       }
 
-      box-shadow: inset 1px 0 0 0 rgba(89, 159, 253, .3), inset 2px 0 0 0 rgba(42, 75, 119, .6); // UPDATED!
       &:last-of-type {
-        box-shadow: inset 1px 0 0 0 rgba(42, 75, 119, .6), inset 2px 0 0 0 rgba(89, 159, 253, .3), inset -1px 0 0 0 rgba(42, 75, 119, .6), inset -2px 0 0 0 rgba(89, 159, 253, .3); // UPDATED!
+        box-shadow: inset 1px 0 0 0 rgba(42, 75, 119, 0.6), inset 2px 0 0 0 rgba(89, 159, 253, 0.3), inset -1px 0 0 0 rgba(42, 75, 119, 0.6), inset -2px 0 0 0 rgba(89, 159, 253, 0.3);
       }
     }
 
     &[data-focus-styles-enabled='true']:focus {
       .tab-inner {
+        background-color: rgba(89, 159, 253, 0.4);
         z-index: 5;
-        background-color: rgba(89, 159, 253, .4); // UPDATED!
       }
     }
   }
@@ -128,8 +129,8 @@
     overflow: hidden;
     padding-left: 0;
     padding-right: 0;
-    width: 0;
     visibility: hidden;
+    width: 0;
   }
 
   .is-custom {

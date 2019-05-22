@@ -3,7 +3,8 @@
     align-content: center;
     align-items: center; // TODO THEME
     background-color: rgb(02, 141, 229); // TODO: clinical value variable?
-    background-image: radial-gradient(100% 70% at 50% 0%, rgba(118, 192, 252, 0.7), rgba(118, 192, 252, 0)),
+    background-image: 
+      radial-gradient(100% 70% at 50% 0%, rgba(118, 192, 252, 0.7), rgba(118, 192, 252, 0)),
       radial-gradient(100% 100% at 0% 0%, rgba(0, 148, 239, 1), rgba(0, 148, 239, 0)),
       radial-gradient(100% 100% at 0% 100%, rgba(02, 141, 229, 1), rgba(02, 141, 229, 0)),
       radial-gradient(100% 100% at 100% 0%, rgba(176, 188, 255, 1), rgba(176, 188, 255, 0)),
@@ -20,7 +21,7 @@
     z-index: 5001;
 
     &::before {
-      background-color: rgba(42, 75, 119, .6); // TODO: imitate clinical value @midnight60
+      background-color: rgba(42, 75, 119, 0.6); // TODO: imitate clinical value @midnight60
       content: '';
       height: 100%;
       left: 0;

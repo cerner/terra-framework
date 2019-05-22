@@ -99,6 +99,7 @@ const DrawerMenu = ({
     />
   ) : undefined;
 
+  /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   return (
     <div className={cx('drawer-menu')} tabIndex="0">
       <div className={cx('vertical-overflow-container')}>

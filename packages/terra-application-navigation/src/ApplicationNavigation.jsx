@@ -331,7 +331,7 @@ const ApplicationNavigation = ({
       <div
         ref={drawerMenuRef}
         className={cx('drawer-menu-container')}
-        style={!drawerMenuIsVisibleRef.current && !drawerMenuIsOpen ? { display: 'none' } : undefined}
+        style={!drawerMenuIsVisibleRef.current && !drawerMenuIsOpen ? { display: 'none' } : undefined} // eslint-disable-line react/forbid-dom-props
         aria-hidden={!drawerMenuIsOpen ? true : null}
       >
         {renderDrawerMenu()}

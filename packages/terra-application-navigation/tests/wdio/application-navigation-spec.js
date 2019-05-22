@@ -1,7 +1,7 @@
-const viewports = Terra.viewports('large');
+// const viewports = Terra.viewports('large');
 
-describe('ApplicationNavigation', () => {
-  before(() => browser.setViewportSize(viewports[0]));
+describe('ApplicationNavigation - Large', () => {
+  before(() => browser.setViewportSize(Terra.viewports('large')[0]));
 
   describe('Extensions roll up properly', () => {
     beforeEach(() => {
@@ -52,19 +52,63 @@ describe('ApplicationNavigation', () => {
 
     Terra.should.validateElement();
   });
+});
 
-  // describe('Displays an infinite list same count and different content', () => {
-  //   before(() => {
-  //     browser.setViewportSize(Terra.viewports('small')[0]);
-  //     browser.url('/#/raw/tests/terra-infinite-list/infinite-list/infinite-list-same-count');
-  //     browser.waitForVisible('#test-infinite-list');
-  //     browser.pause(150);
-  //   });
-  //   Terra.should.matchScreenshot('before-update', { selector: '#test-infinite-list' });
-  //   it('update the child items', () => {
-  //     browser.click('#test-click');
-  //     browser.pause(50);
-  //   });
-  //   Terra.should.matchScreenshot('after-update', { selector: '#test-infinite-list' });
-  // });
+describe('ApplicationNavigation - Small', () => {
+  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
+
+  describe('Extensions roll up properly', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-application-navigation/application-navigation/extensions');
+      browser.click('[data-application-extension-rollup="true"]');
+      browser.waitForVisible('[data-terra-popup-content="true"]');
+      browser.pause(50);
+    });
+
+    Terra.should.validateElement('#root');
+  });
+
+  describe('Tabs enter the nav drawer', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-application-navigation/application-navigation/tabs');
+      browser.waitForVisible('[data-compact-header-toggle="true"]');
+      browser.click('[data-compact-header-toggle="true"]');
+      browser.pause(250);
+    });
+
+    Terra.should.validateElement('#root');
+  });
+
+  describe('Utilities enter the nav drawer', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-application-navigation/application-navigation/utilities');
+      browser.waitForVisible('[data-compact-header-toggle="true"]');
+      browser.click('[data-compact-header-toggle="true"]');
+      browser.pause(250);
+    });
+
+    Terra.should.validateElement('#root');
+  });
+
+  describe('ApplicationNavigation displays the nav drawer', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-navigation');
+      browser.waitForVisible('[data-compact-header-toggle="true"]');
+      browser.click('[data-compact-header-toggle="true"]');
+      browser.pause(250);
+    });
+
+    Terra.should.validateElement('#root');
+  });
+
+  describe('ApplicationNotifications displays the nav drawer', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-notifications');
+      browser.waitForVisible('[data-compact-header-toggle="true"]');
+      browser.click('[data-compact-header-toggle="true"]');
+      browser.pause(250);
+    });
+
+    Terra.should.validateElement('#root');
+  });
 });

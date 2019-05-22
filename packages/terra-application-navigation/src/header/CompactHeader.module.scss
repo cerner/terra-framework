@@ -2,7 +2,7 @@
   .compact-header {
     align-content: center;
     align-items: center; // TODO THEME
-    background-color:#0079be;
+    background-color: #0079be;
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
@@ -27,15 +27,15 @@
 
   .menu-button {
     background-color: transparent;
-    border: 0;  
+    border: 0;
     color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
+    flex: 0 0 auto;
+    height: 2.143rem;
     outline: none;
+    padding: 0;
     position: relative;
     width: 2.143rem;
-    height: 2.143rem;
-    padding: 0;
-    flex: 0 0 auto;
 
     > svg {
       height: 1rem;
@@ -52,8 +52,8 @@
 
     &:focus[data-focus-styles-enabled='true'] {
       background-color: rgba(89, 159, 253, 0.4);
-      color: rgba(255, 255, 255, 1);
       border-radius: 50%;
+      color: rgba(255, 255, 255, 1);
     }
 
     // Remove the inner border and padding in Firefox.
@@ -104,7 +104,7 @@
   }
 
   .skip-content-button {
-    background-color:#0079be;
+    background-color: #0079be;
     border: 1px solid #fff;
     border-radius: 0;
     clip: rect(1px, 1px, 1px, 1px);

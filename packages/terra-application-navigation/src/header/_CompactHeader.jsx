@@ -98,6 +98,7 @@ const CompactHeader = ({
         onBlur={enableFocusStyles}
         onMouseDown={disableFocusStyles}
         data-focus-styles-enabled
+        data-compact-header-toggle
       >
         <IconMenu />
         {headerHasCounts && <ToggleCount value={isPulsed ? 1 : 0} />}

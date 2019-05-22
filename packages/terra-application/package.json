@@ -33,7 +33,7 @@
     "terra-breakpoints": "^2.0.0",
     "terra-disclosure-manager": "^4.0.0",
     "terra-modal-manager": "^6.0.0",
-    "terra-navigation-prompt": "^0.0.0",
+    "terra-navigation-prompt": "^1.0.0",
     "terra-slide-panel-manager": "^5.0.0",
     "terra-theme-provider": "^3.0.0"
   },

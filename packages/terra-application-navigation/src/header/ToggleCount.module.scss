@@ -1,20 +1,7 @@
-@keyframes pulse {
-  0%, 100%   {
-    transform: scale(1);
-  }
-  50%  {
-    transform: scale(1.2);
-  }
-}
-
-[data-count-pulse="true"] {
-  animation: pulse 0.5s 1;
-}
-
 :local {
   .count {
-    background-image: linear-gradient(to bottom, #ffb200, #ff7e00);
     background-clip: padding-box;
+    background-image: linear-gradient(to bottom, #ffb200, #ff7e00);
     border: solid 1px rgba(89, 159, 253, 0.4);
     border-radius: 2.143rem;
     box-shadow: 0 1px 1px 0 rgba(17, 22, 25, 0.3);
