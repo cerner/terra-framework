@@ -74,6 +74,7 @@ exports[`CompactHeader should render default element 1`] = `
       <button
         aria-label="Terra.applicationNavigation.header.menuButtonTitle"
         className="menu-button"
+        data-compact-header-toggle={true}
         data-focus-styles-enabled={true}
         onBlur={[Function]}
         onMouseDown={[Function]}
@@ -270,6 +271,7 @@ exports[`CompactHeader should render with function callbacks 1`] = `
       <button
         aria-label="Terra.applicationNavigation.header.menuButtonTitle"
         className="menu-button"
+        data-compact-header-toggle={true}
         data-focus-styles-enabled={true}
         onBlur={[Function]}
         onMouseDown={[Function]}
@@ -537,6 +539,7 @@ exports[`CompactHeader should render with menu callback 1`] = `
       <button
         aria-label="Terra.applicationNavigation.header.menuButtonTitle"
         className="menu-button"
+        data-compact-header-toggle={true}
         data-focus-styles-enabled={true}
         onBlur={[Function]}
         onClick={[MockFunction]}
@@ -664,6 +667,7 @@ exports[`CompactHeader should render with skip callback 1`] = `
       <button
         aria-label="Terra.applicationNavigation.header.menuButtonTitle"
         className="menu-button"
+        data-compact-header-toggle={true}
         data-focus-styles-enabled={true}
         onBlur={[Function]}
         onMouseDown={[Function]}

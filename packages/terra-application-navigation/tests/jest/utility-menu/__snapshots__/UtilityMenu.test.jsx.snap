@@ -207,7 +207,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
             isIconOnly={false}
             isReversed={false}
             onClick={[MockFunction]}
-            text="Terra.applicationNavigation.utilityMenu.logout "
+            text="Terra.applicationNavigation.utilityMenu.logout"
             type="button"
             variant="neutral"
           />
@@ -272,7 +272,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
               isIconOnly={false}
               isReversed={false}
               onClick={[MockFunction]}
-              text="Terra.applicationNavigation.utilityMenu.logout "
+              text="Terra.applicationNavigation.utilityMenu.logout"
               type="button"
               variant="neutral"
             />
@@ -622,7 +622,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                 isIconOnly={false}
                 isReversed={false}
                 onClick={[MockFunction]}
-                text="Terra.applicationNavigation.utilityMenu.logout "
+                text="Terra.applicationNavigation.utilityMenu.logout"
                 type="button"
                 variant="neutral"
               />
@@ -644,7 +644,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                     isIconOnly={false}
                     isReversed={false}
                     onClick={[MockFunction]}
-                    text="Terra.applicationNavigation.utilityMenu.logout "
+                    text="Terra.applicationNavigation.utilityMenu.logout"
                     type="button"
                     variant="neutral"
                   >
@@ -664,7 +664,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                         <span
                           className=""
                         >
-                          Terra.applicationNavigation.utilityMenu.logout 
+                          Terra.applicationNavigation.utilityMenu.logout
                         </span>
                       </span>
                     </button>
@@ -723,7 +723,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
             isIconOnly={false}
             isReversed={false}
             onClick={[MockFunction]}
-            text="Terra.applicationNavigation.utilityMenu.logout "
+            text="Terra.applicationNavigation.utilityMenu.logout"
             type="button"
             variant="neutral"
           />
@@ -753,7 +753,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
               isIconOnly={false}
               isReversed={false}
               onClick={[MockFunction]}
-              text="Terra.applicationNavigation.utilityMenu.logout "
+              text="Terra.applicationNavigation.utilityMenu.logout"
               type="button"
               variant="neutral"
             />
@@ -839,7 +839,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
                 isIconOnly={false}
                 isReversed={false}
                 onClick={[MockFunction]}
-                text="Terra.applicationNavigation.utilityMenu.logout "
+                text="Terra.applicationNavigation.utilityMenu.logout"
                 type="button"
                 variant="neutral"
               />
@@ -861,7 +861,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
                     isIconOnly={false}
                     isReversed={false}
                     onClick={[MockFunction]}
-                    text="Terra.applicationNavigation.utilityMenu.logout "
+                    text="Terra.applicationNavigation.utilityMenu.logout"
                     type="button"
                     variant="neutral"
                   >
@@ -881,7 +881,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
                         <span
                           className=""
                         >
-                          Terra.applicationNavigation.utilityMenu.logout 
+                          Terra.applicationNavigation.utilityMenu.logout
                         </span>
                       </span>
                     </button>

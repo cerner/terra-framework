@@ -1,5 +1,5 @@
 import React from 'react';
-import { Breakpoints } from 'terra-application';
+import { ActiveBreakpointContext } from 'terra-application/lib/breakpoints';
 import ApplicationNavigation from '../../src/ApplicationNavigation';
 
 describe('ApplicationNavigation', () => {
@@ -13,7 +13,7 @@ describe('ApplicationNavigation', () => {
      */
     reactUseContext = React.useContext;
     React.useContext = (contextValue) => {
-      if (Breakpoints.ActiveBreakpointContext === contextValue) {
+      if (ActiveBreakpointContext === contextValue) {
         return breakpointContextValue;
       }
       return reactUseContext(contextValue);

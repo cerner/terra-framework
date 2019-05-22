@@ -65,7 +65,7 @@ describe('ApplicationNavigation - Small', () => {
       browser.pause(50);
     });
 
-    Terra.should.validateElement('#root');
+    Terra.should.validateElement();
   });
 
   describe('Tabs enter the nav drawer', () => {
@@ -73,10 +73,10 @@ describe('ApplicationNavigation - Small', () => {
       browser.url('/#/raw/tests/terra-application-navigation/application-navigation/tabs');
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
-      browser.pause(250);
+      browser.pause(500);
     });
 
-    Terra.should.validateElement('#root');
+    Terra.should.validateElement({ selector: '#root' });
   });
 
   describe('Utilities enter the nav drawer', () => {
@@ -84,10 +84,10 @@ describe('ApplicationNavigation - Small', () => {
       browser.url('/#/raw/tests/terra-application-navigation/application-navigation/utilities');
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
-      browser.pause(250);
+      browser.pause(500);
     });
 
-    Terra.should.validateElement('#root');
+    Terra.should.validateElement({ selector: '#root' });
   });
 
   describe('ApplicationNavigation displays the nav drawer', () => {
@@ -95,10 +95,10 @@ describe('ApplicationNavigation - Small', () => {
       browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-navigation');
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
-      browser.pause(250);
+      browser.pause(500);
     });
 
-    Terra.should.validateElement('#root');
+    Terra.should.validateElement({ selector: '#root' });
   });
 
   describe('ApplicationNotifications displays the nav drawer', () => {
@@ -106,9 +106,9 @@ describe('ApplicationNavigation - Small', () => {
       browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-notifications');
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
-      browser.pause(250);
+      browser.pause(500);
     });
 
-    Terra.should.validateElement('#root');
+    Terra.should.validateElement({ selector: '#root' });
   });
 });
