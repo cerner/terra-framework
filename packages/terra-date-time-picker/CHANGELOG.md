@@ -4,6 +4,19 @@ ChangeLog
 Unreleased
 ----------
 
+4.2.0 - (May 21, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+### Fixed
+* Fixed js error in the filterDate example.
+
+4.1.0 - (May 15, 2019)
+------------------
+### Changed
+* Minor dependency update
+
 4.0.0 - (May 13, 2019)
 ------------------
 ### Breaking Changes

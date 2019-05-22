@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+6.1.0 - (May 21, 2019)
+------------------
+### Changed
+* Explicitly set menu item font weight value to normal.
+
 6.0.0 - (May 13, 2019)
 ------------------
 ### Breaking Changes
