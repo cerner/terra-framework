@@ -63,6 +63,7 @@ exports[`should render a default date time picker 1`] = `
     </div>
   </AbstractModal>
   <Button
+    aria-label=""
     className="button-offset button-offset-hidden"
     isBlock={false}
     isCompact={true}
@@ -71,6 +72,7 @@ exports[`should render a default date time picker 1`] = `
     isReversed={false}
     onClick={[MockFunction]}
     text=""
+    title=""
     type="button"
     variant="neutral"
   />
@@ -140,6 +142,7 @@ exports[`should render a disabled time clarification 1`] = `
     </div>
   </AbstractModal>
   <Button
+    aria-label=""
     className="button-offset button-offset-hidden"
     isBlock={false}
     isCompact={true}
@@ -148,6 +151,7 @@ exports[`should render a disabled time clarification 1`] = `
     isReversed={false}
     onClick={[MockFunction]}
     text=""
+    title=""
     type="button"
     variant="neutral"
   />
