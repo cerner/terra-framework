@@ -1,4 +1,10 @@
 const viewports = Terra.viewports('small', 'large');
+// This issue should be resolved once the following axe-core issue is resolved:
+// https://github.com/dequelabs/axe-core/issues/1583
+const ignoredA11y = {
+  'landmark-banner-is-top-level': { enabled: false },
+  'landmark-main-is-top-level': { enabled: false },
+};
 
 describe('ApplicationLayout', () => {
   describe('Displays a default application layout', () => {
@@ -8,7 +14,7 @@ describe('ApplicationLayout', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test', viewports });
-    Terra.should.beAccessible({ viewports, context: '#application-layout-test' });
+    Terra.should.beAccessible({ viewports, context: '#application-layout-test', rules: ignoredA11y });
   });
 
   describe('Displays an application layout with top navigation tabs', () => {
@@ -18,7 +24,7 @@ describe('ApplicationLayout', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test', viewports });
-    Terra.should.beAccessible({ viewports, context: '#application-layout-test' });
+    Terra.should.beAccessible({ viewports, context: '#application-layout-test', rules: ignoredA11y });
   });
 
   describe('Displays an application layout with no header content', () => {
@@ -28,7 +34,7 @@ describe('ApplicationLayout', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test', viewports });
-    Terra.should.beAccessible({ viewports, context: '#application-layout-test' });
+    Terra.should.beAccessible({ viewports, context: '#application-layout-test', rules: ignoredA11y });
   });
 
   describe('Navigates with top navigation tabs', () => {
@@ -40,7 +46,7 @@ describe('ApplicationLayout', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test' });
-    Terra.should.beAccessible({ context: '#application-layout-test' });
+    Terra.should.beAccessible({ context: '#application-layout-test', rules: ignoredA11y });
   });
 
   describe('Toggles menu when small', () => {
@@ -53,7 +59,7 @@ describe('ApplicationLayout', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test' });
-    Terra.should.beAccessible({ context: '#application-layout-test' });
+    Terra.should.beAccessible({ context: '#application-layout-test', rules: ignoredA11y });
   });
 
   describe('Renders primary nav menu when small', () => {
@@ -68,7 +74,7 @@ describe('ApplicationLayout', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test' });
-    Terra.should.beAccessible({ context: '#application-layout-test' });
+    Terra.should.beAccessible({ context: '#application-layout-test', rules: ignoredA11y });
   });
 
   describe('Navigates from primary nav menu when small', () => {
@@ -84,7 +90,7 @@ describe('ApplicationLayout', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test' });
-    Terra.should.beAccessible({ context: '#application-layout-test' });
+    Terra.should.beAccessible({ context: '#application-layout-test', rules: ignoredA11y });
   });
 
   describe('Presents utility menu from header when large', () => {
@@ -96,7 +102,7 @@ describe('ApplicationLayout', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test' });
-    Terra.should.beAccessible({ context: '#application-layout-test' });
+    Terra.should.beAccessible({ context: '#application-layout-test', rules: ignoredA11y });
   });
 
   describe('Presents utility menu from menu when small', () => {
@@ -110,7 +116,7 @@ describe('ApplicationLayout', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test' });
-    Terra.should.beAccessible({ context: '[role="dialog"]' });
+    Terra.should.beAccessible({ context: '[role="dialog"]', rules: ignoredA11y });
   });
 
   describe('Presents utility menu from header and checks for closure on read-only item click', () => {
@@ -124,7 +130,7 @@ describe('ApplicationLayout', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test' });
-    Terra.should.beAccessible({ context: '#application-layout-test' });
+    Terra.should.beAccessible({ context: '#application-layout-test', rules: ignoredA11y });
   });
 
   describe('Displays an application layout with nav icons', () => {
