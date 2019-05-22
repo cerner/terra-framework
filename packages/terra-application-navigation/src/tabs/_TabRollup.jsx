@@ -58,7 +58,8 @@ const TabRollup = ({
   isPulsed,
 }) => (
   <div
-    role="tab"
+    type="button"
+    role="link"
     tabIndex="0"
     className={cx([
       'tab-rollup',

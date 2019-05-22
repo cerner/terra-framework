@@ -1,5 +1,3 @@
-// const viewports = Terra.viewports('large');
-
 describe('ApplicationNavigation - Large', () => {
   before(() => browser.setViewportSize(Terra.viewports('large')[0]));
 
@@ -73,7 +71,7 @@ describe('ApplicationNavigation - Small', () => {
       browser.url('/#/raw/tests/terra-application-navigation/application-navigation/tabs');
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
-      browser.pause(500);
+      browser.pause(250);
     });
 
     Terra.should.validateElement({ selector: '#root' });
@@ -84,7 +82,7 @@ describe('ApplicationNavigation - Small', () => {
       browser.url('/#/raw/tests/terra-application-navigation/application-navigation/utilities');
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
-      browser.pause(500);
+      browser.pause(250);
     });
 
     Terra.should.validateElement({ selector: '#root' });
@@ -95,7 +93,7 @@ describe('ApplicationNavigation - Small', () => {
       browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-navigation');
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
-      browser.pause(500);
+      browser.pause(250);
     });
 
     Terra.should.validateElement({ selector: '#root' });
@@ -110,5 +108,31 @@ describe('ApplicationNavigation - Small', () => {
     });
 
     Terra.should.validateElement({ selector: '#root' });
+  });
+});
+
+const viewports = Terra.viewports('small', 'medium', 'large', 'huge', 'enormous');
+
+viewports.forEach((viewport) => {
+  describe(`ApplicationNavigation Responsive - ${viewport.name}`, () => {
+    before(() => browser.setViewportSize(viewport));
+
+    describe('Standard displays responsively', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-navigation');
+        browser.pause(50);
+      });
+
+      Terra.should.validateElement({ selector: '#root' });
+    });
+
+    describe('Notifications displays responsively', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-notifications');
+        browser.pause(50);
+      });
+
+      Terra.should.validateElement({ selector: '#root' });
+    });
   });
 });

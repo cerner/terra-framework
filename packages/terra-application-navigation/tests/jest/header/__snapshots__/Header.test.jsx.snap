@@ -551,7 +551,6 @@ exports[`Header should render with function callbacks 1`] = `
           >
             <div
               className="tabs-container is-calculating"
-              role="tablist"
             >
               <Tab
                 hasCount={false}
@@ -619,8 +618,9 @@ exports[`Header should render with function callbacks 1`] = `
                       aria-current="false"
                       class="tab-rollup"
                       data-focus-styles-enabled="true"
-                      role="tab"
+                      role="link"
                       tabindex="0"
+                      type="button"
                     >
                       <div
                         class="tab-inner"
@@ -662,8 +662,9 @@ exports[`Header should render with function callbacks 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   onMouseDown={[Function]}
-                  role="tab"
+                  role="link"
                   tabIndex="0"
+                  type="button"
                 >
                   <div
                     className="tab-inner"
