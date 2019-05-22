@@ -4,7 +4,12 @@ Changelog
 Unreleased
 ----------
 
-4.1.0 - (March 15, 2019)
+4.2.0 - (May 21, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+4.1.0 - (May 15, 2019)
 ------------------
 ### Changed
 * Resolved eslint error in example files
