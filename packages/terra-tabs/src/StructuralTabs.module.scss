@@ -96,11 +96,13 @@
       border-radius: var(--terra-tabs-structural-border-radius, 0);
       border-style: solid;
       border-width: var(--terra-tabs-structural-border-width, 0 1px 0 0);
+      box-shadow: var(--terra-tabs-structural-box-shadow);
       color: var(--terra-tabs-structural-color, #007ee0);
       margin-left: var(--terra-tabs-structural-between-tabs-margin-left, 0);
       transition-duration: var(--terra-tabs-structural-transition-duration, 0);
       transition-property: background-size;
       transition-timing-function: var(--terra-tabs-structural-transition-timing-function, ease);
+      z-index: var(--terra-tabs-structural-z-index);
 
       &.is-active {
         background-color: var(--terra-tabs-structural-active-background-color, #fff);
