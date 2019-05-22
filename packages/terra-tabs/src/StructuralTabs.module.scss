@@ -102,7 +102,6 @@
       transition-duration: var(--terra-tabs-structural-transition-duration, 0);
       transition-property: background-size;
       transition-timing-function: var(--terra-tabs-structural-transition-timing-function, ease);
-      z-index: var(--terra-tabs-structural-z-index);
 
       &.is-active {
         background-color: var(--terra-tabs-structural-active-background-color, #fff);
