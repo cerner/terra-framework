@@ -110,6 +110,7 @@
         color: var(--terra-tabs-structural-active-color, #000);
         overflow: hidden; //forces :before background-image to honor border-radius clipping.
         position: relative;
+        z-index: var(--terra-tabs-structural-active-z-index);
 
         &::before {
           background-clip: content-box; // Make sure background fully extends
