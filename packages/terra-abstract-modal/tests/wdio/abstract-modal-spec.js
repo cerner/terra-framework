@@ -66,7 +66,9 @@ describe('Abstract Modal', () => {
       expect(browser.hasFocus('#focus-button')).to.be.equal(false);
     });
 
-    Terra.should.validateElement('focused shifted outside the end of the modal', { selector: '#root' });
+    // The following line was changed from validateElement to matchScreenshot to avoid an axe bug.
+    // Checking accessibility after shifting tab focus outside the modal prevented tab focus from being returned to the modal.
+    Terra.should.matchScreenshot('focused shifted outside the end of the modal', { selector: '#root' });
 
     it('shifts focus back onto interactive elements within the modal', () => {
       browser.keys(['Shift', 'Tab']);

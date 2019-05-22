@@ -30,3 +30,11 @@ services:
   term:
     <<: *dev
     command: "/bin/zsh"
+
+  test-ci:
+    build: ./
+    image: "${DOCKER_IMAGE}-test-standalone-chrome:${TAG:-latest}"
+    environment:
+      - CI=true
+    depends_on:
+      - standalone-chrome
