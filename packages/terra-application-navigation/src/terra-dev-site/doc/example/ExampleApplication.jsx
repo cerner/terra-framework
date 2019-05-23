@@ -6,7 +6,9 @@ import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconPill from 'terra-icon/lib/icon/IconPill';
 import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
 import IconLightbulb from 'terra-icon/lib/icon/IconLightbulb';
+import Placeholder from 'terra-doc-template/lib/Placeholder';
 import ApplicationNavigation from '../../../ApplicationNavigation';
+
 
 const titleConfig = {
   title: 'Test Title',
@@ -104,40 +106,34 @@ const navigationItems = [
 const utilityItems = [
   {
     icon: <IconSearch />,
-    key: 'item-e',
-    text: 'Item E',
+    key: 'item-a',
+    text: 'Item A',
     metaData: {
-      test: 'e',
+      test: 'a',
     },
   }, {
     icon: <IconPill />,
-    key: 'item-f',
-    text: 'Item F',
+    key: 'item-b',
+    text: 'Item B',
     metaData: {
-      test: 'f',
+      test: 'b',
     },
   }, {
     icon: <IconVisualization />,
-    key: 'item-g',
-    text: 'Item G',
+    key: 'item-c',
+    text: 'Item C',
     metaData: {
-      test: 'g',
+      test: 'c',
     },
   }, {
     icon: <IconLightbulb />,
-    key: 'item-h',
-    text: 'Item H',
+    key: 'item-d',
+    text: 'Item D',
     metaData: {
-      test: 'h',
+      test: 'd',
     },
   },
 ];
-
-const notifications = {
-  '/page_2': 5,
-  'item-b': 10,
-  '/page_8': 4,
-};
 
 /* eslint-disable no-alert */
 const handleItemSelection = (key, metaData) => {
@@ -145,12 +141,11 @@ const handleItemSelection = (key, metaData) => {
 };
 /* eslint-enable no-alert */
 
-const ApplicationNotificationsTest = () => (
+const ExampleApplication = () => (
   <Application locale="en-US">
     <ApplicationNavigation
       titleConfig={titleConfig}
       userConfig={userConfig}
-      notifications={notifications}
       extensionItems={extensionItems}
       onSelectExtensionItem={handleItemSelection}
       navigationItems={navigationItems}
@@ -161,8 +156,10 @@ const ApplicationNotificationsTest = () => (
       onSelectSettings={() => alert('Settings Selected')} // eslint-disable-line no-alert
       onSelectHelp={() => alert('Help Selected')} // eslint-disable-line no-alert
       onSelectLogout={() => alert('Logout Selected')} // eslint-disable-line no-alert
-    />
+    >
+      <Placeholder title="Example Content" />
+    </ApplicationNavigation>
   </Application>
 );
 
-export default ApplicationNotificationsTest;
+export default ExampleApplication;

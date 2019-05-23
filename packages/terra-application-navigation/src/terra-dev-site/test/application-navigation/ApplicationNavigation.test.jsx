@@ -139,7 +139,7 @@ const handleItemSelection = (key, metaData) => {
 };
 /* eslint-enable no-alert */
 
-const TabsTest = () => (
+const ApplicationNavigationTest = () => (
   <Application locale="en-US">
     <ApplicationNavigation
       titleConfig={titleConfig}
@@ -158,4 +158,4 @@ const TabsTest = () => (
   </Application>
 );
 
-export default TabsTest;
+export default ApplicationNavigationTest;

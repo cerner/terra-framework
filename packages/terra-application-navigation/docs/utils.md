@@ -1,4 +1,4 @@
-# Terra Application Layout
+# Terra Application Navigation
 
 In addition to the ApplicationLayout component, the package exports an `Utils` object that contains a variety of helper functions and prop type declarations. Included are:
 

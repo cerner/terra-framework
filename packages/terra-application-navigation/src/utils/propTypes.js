@@ -1,17 +1,44 @@
 import PropTypes from 'prop-types';
 
 const titleConfigPropType = PropTypes.shape({
+  /**
+   * Title to be displayed or set as the aria-label if a title element is passed.
+   */
   title: PropTypes.string.isRequired,
+  /**
+   * Super text to be display above the main title text.
+   */
   headline: PropTypes.string,
+  /**
+   * Sub text to be display below the main title text.
+   */
   subline: PropTypes.string,
+  /**
+   * Element to use in place of title text.
+   */
   element: PropTypes.element,
+  /**
+   * Whether or not the title should be hidden when at the compact breakpoint.
+   */
   hideTitleWithinDrawerMenu: PropTypes.bool,
 });
 
 const userConfigPropType = PropTypes.shape({
+  /**
+   * User name to be displayed.
+   */
   name: PropTypes.string.isRequired,
+  /**
+   * Additional user details.
+   */
   detail: PropTypes.string,
+  /**
+   * User initials to be displayed within the avatar if no image is present.
+   */
   initials: PropTypes.string,
+  /**
+   * Src to provide to the avatar component.
+   */
   imageSrc: PropTypes.string,
 });
 

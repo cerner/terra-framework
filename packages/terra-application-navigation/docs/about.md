@@ -1,16 +1,15 @@
-# Terra Application Layout
+# Terra Application Navigation
 
-The Terra Application Layout is a responsive, themeable layout for building applications.
+The Terra Application Navigation is a responsive, themeable layout for building applications.
 
-The Terra Application Layout provides:
-- A themeable, responsive application header, capable of rendering application-specific branding (provided by `terra-application-name`), tabular navigation (provided by `terra-application-links`), and user-centric utility controls (provided by `terra-utility`)
-- Responsive menu and content areas (provided by `terra-layout`)
-- `react-router`-based navigation and configuration (provided by `terra-navigation-layout`)
+The Terra Application Navigation provides:
+- A themeable, responsive application header, capable of rendering application-specific branding, tabular navigation, and user-centric utility controls
+- Responsive menu and content areas
 
 ## Getting Started
 
 - Install with [npmjs](https://www.npmjs.com):
-  - `npm install terra-application-layout`
+  - `npm install terra-application-navigation`
 
 ## Component Features
 

@@ -1,256 +1,208 @@
 ## Prerequisites
 
-- Like all Terra components, the ApplicationLayout requires the presence of a `Base` component (provided by `terra-base`) in its parent hierarchy.
-- Additionally, the ApplicationLayout requires the presence of any `Router` component (provided by `react-router-dom`) in its parent hierarchy.
+- The ApplicationNavigation requires the presence of a `Application` component (provided by `terra-applicaiton`) in its parent hierarchy. This provides essential utilities around i18n, context, and breakpoints.
 
 ```jsx
 import React from 'react';
-import { HashRouter } from 'react-router-dom'; // BrowserRouter (with additional server configuration) or MemoryRouter could also be used
-import Base from 'terra-base';
-import ApplicationLayout from 'terra-application-layout';
+import Application from 'terra-application';
+import ApplicationNavigation from 'terra-application-navigation';
 
 const MyApp = () => (
-  <HashRouter>
-    <Base locale="en-US">
-      <ApplicationLayout
-        nameConfig={nameConfig}
-        utilityConfig={utilityConfig}
-        routingConfig={routingConfig}
-        navigationItems={navigationItems}
-        extensions={<ApplicationExtensions />}
-        indexPath={indexPath}
-      />
-    </Base>
-  </HashRouter>
+  <Application locale="en-US">
+    <ApplicationNavigation
+      titleConfig={titleConfig}
+      utilityItems={utilityItems}
+      navigationItems={navigationItems}
+      extensionItems={extensionItems}
+      activeNavigationItemKey={activeKey}
+    >
+      {myContent}
+    </ApplicationNavigation>
+  </Application>
 );
 ```
-
 ## Props
 
-### `extensions`
+### `extensionItems`
 #### Is Required: `false`
 
-The `extensions` prop allows consumers to render an element within the ApplicationLayout's extensions region. The `extensions` content will be rendered in various ways depending on the current breakpoint. The `extensions` element will receive `app` and `layoutConfig` props from the ApplicationLayout, allowing it to interact with and respond to changes within the ApplicationLayout.
+The `extensionItems` prop allows consumers to render icons with an assocaited selection callback within the ApplicationNavigation's extensions region. The `extensionItems` will rollup in various ways depending on the current breakpoint. If `extensionItems` are passed as props the associated `onSelectExtensionItem` function callback should be passed as well.
 
-```jsx
-import ApplicationLayout, { Utils } from 'terra-application-layout';
-
-const MyExtensions = ({ app, layoutConfig }) => {
-  if (Utils.helpers.isSizeCompact(layoutConfig.size)) {
-    return (
-      <div>Extensions for ApplicationLayout menu!</div>
-    );
-  } else {
-    return (
-      <div>Extensions for ApplicationLayout header!</div>
-    );
-  }
-};
-```
-
-### `indexPath`
-#### Is Required: `true`
-
-The `indexPath` prop allows consumers to set the default path of the ApplicationLayout. The ApplicationLayout will redirect to this path should users of the consuming application attempt to route to a component not detailed in the `routingConfig` prop. Accordingly, the `indexPath` value must have an associated entry within the `routingConfig` specification.
-
-### `nameConfig`
-#### Is Required: `false`
-
-The `nameConfig` prop allows consuming applications to add their own branding to the ApplicationLayout. The ApplicationLayout will render this content in different ways based on the active responsive breakpoint.
+The value provided for `extensionItems` should be an array of objects with the following API:
 
 |Key Name|Type|Is Required|Description|
 |---|---|---|---|
-|`accessory`|Element|optional|A React element that will be presented beside the title. This is typically some sort of icon or visual branding.
-|`title`|String|optional|The title of the application. This text will be styled by the ApplicationLayout.|
+|`key`|String|**required**|A key rendered to be used as a unique react key as well as returned with the onSelectExtensionItem.|
+|`icon`|Element|**required**|A React element representing the themable icon for the extension.|
+|`text`|String|**required**|The text to either be set as an aria-label or display text.|
+|`metaData`|Object|optional|An object containing whatever additional identifying information to be returned with the onSelectExtensionItem.|
 
 ```jsx
-const myNameConfig = {
-  accessory: <MyApplicationLogo />,
-  title: 'My Application',
-}
+const extensionItems = [{
+  key: 'extension_1',
+  icon: <Icon1 >,
+  text: 'Extension 1',
+  metaData: { myValue: value1 }
+}, {
+  key: 'extension_2',
+  icon: <Icon2 >,
+  text: 'Extension 2',
+  metaData: { myValue: value2 }
+}];
 ```
+
+### `onSelectExtensionItem`
+#### Is Required: `false`
+
+The `onSelectExtensionItem` prop allows consumers to retrieve the information related to the extension that was clicked. The function callback will return the information in the format of `onSelectExtensionItem(key, metaData)`.
 
 ### `navigationItems`
 #### Is Required: `false`
 
-The `navigationItems` prop allows consumers to render high-level, primary navigation controls directly within the ApplicationLayout. The ApplicationLayout will render this content in different ways based on the active responsive breakpoint. If `navigationItems` are omitted, no primary navigation controls will be rendered.
-
-Each navigation item provided must be associated to a path that is present within the `routingConfig` specification. The navigation item, as rendered by the ApplicationLayout, will route to that path upon selection.
+The `navigationItems` prop allows consumers to render high-level, primary navigation controls directly within the ApplicationNavigation. The ApplicationNavigation will render this content in different ways based on the active responsive breakpoint. If `navigationItems` are passed as props the associated `onSelectNavigationItem` function callback should be passed as well.
 
 The value provided for `navigationItems` should be an array of objects with the following API:
 
 |Key Name|Type|Is Required|Description|
 |---|---|---|---|
-|`text`|String|**required**|A string rendered within the navigation item control.|
-|`path`|Element|**required**|A string path to route to upon navigation item selection. This path should be present within the `routingConfig` as well.|
+|`key`|String|**required**|A key rendered to be used as a unique react key as well as returned with the onSelectNavigationItem.|
+|`text`|String|**required**|The text to either be set as an aria-label or display text.|
+|`metaData`|Object|optional|An object containing whatever additional identifying information to be returned with the onSelectNavigationItem.|
 
 ```jsx
 const navigationItems = [{
-  path: '/page_1',
+  key: 'page_1',
   text: 'Page 1',
+  metaData: { myValue: value1 }
 }, {
-  path: '/page_2',
+  key: 'page_2',
   text: 'Page 2',
+  metaData: { myValue: value2 }
 }];
 ```
 
-### `routingConfig`
-#### Is Required: `true`
-
-The `routingConfig` prop allows consuming applications to render components within the ApplicationLayout's `content` and `menu` regions based upon the router location.
-
-The ApplicationLayout directly implements the `NavigationLayout` from `terra-navigation-layout`. However, while the `NavigationLayout` allows for the customization of the `header` region of the layout, the `ApplicationLayout` does not. Any `header` entries provided with the `routingConfig` prop will be ignored. Please review the `NavigationLayout` documentation for more information regarding its usage.
-
-> Note: Usage of the path `'/'` is restricted for `menu` components. The ApplicationLayout will dynamically inject configuration for the `'/'` path when necessary to properly render navigationItems at `compact` breakpoints.
-
-```jsx
-const routingConfig = {
-  /**
-   * Components defined under `content` will render within the ApplicationLayout's body.
-   */
-  content: {
-    /**
-     * Each entry must be keyed; typically, this key matches the path for the component.
-     */
-    '/page_1' : {
-      /**
-       * The `path` value will be validated against the router location with each location change. When the location
-       * matches this path, the component specified by the sibling `component` value will be rendered. If more than
-       * one component matches the current location, only the component with the closest match will be rendered.
-       */
-      path: '/page_1',
-      /**
-       * The `component` value specifies what component will be rendered. The value is an Object with support for the
-       * following keys: default, tiny, small, medium, large, and huge. These keys correspond to the responsive breakpoint
-       * of the ApplicationLayout. When the ApplicationLayout is small, the component under the small key will be rendered.
-       * When the application is large, the component under the large key will be rendered, and so on.
-       *
-       * The default key is different in that its component will render for all breakpoints unless that specific breakpoint is
-       * also defined. For example, if a component is defined for default and small, and the current responsive breakpoint is small,
-       * then the small component will be rendered. However, if the responsive breakpoint were to be huge, then the default component
-       * would be rendered (rather than no component at all).
-       */
-      component: {
-        default: {
-          /**
-           * The component specification for a given breakpoint must include a componentClass value. This is a React component
-           * function or class. It should not be an instantiated React element. For example, given a component named Page1Content,
-           * the componentClass value should be Page1Content, not `<Page1Content />`.
-           */
-          componentClass: Page1Content,
-          /**
-           * Props can also be defined for the component. These will be applied when the React element is created by the
-           * ApplicationLayout. If no props are desired, the `props` key can be omitted.
-           */
-          props: {
-            propFromConfig: 'Value from config',
-          }
-        },
-        small: {
-          /**
-           * The same component can be defined for multiple breakpoints. Here, the prop values just are changing for this specific
-           * size.
-           */
-          componentClass: Page1Content,
-          propFromConfig: 'My value is different only when small',
-        }
-        large: {
-          /**
-           * Or, a different component can be loaded altogether.
-           */
-          componentClass: LargePage1Content,
-        }
-      },
-    },
-    '/page_2' : {
-      path: '/page_2',
-      component: {
-        default: {
-          componentClass: Page2Content,
-        },
-      },
-    },
-  },
-  /**
-   * Components defined under `menu` will render within the ApplicationLayout's menu sidebar. All other aspects of the API
-   * match that of the content region described above.
-   *
-   * A content entry does not need to have an associated menu entry. In this example, because there is no menu defined for
-   * the path '/page_2', the ApplicationLayout will hide the menu sidebar when the '/page_2' content is rendered.
-   */
-  menu: {
-    'Page 1' : {
-      path: '/page_1',
-      component: {
-        default: {
-          componentClass: Page1Menu,
-        },
-      },
-    },
-  },
-};
-```
-
-### `utilityConfig`
+### `onSelectNavigationItem`
 #### Is Required: `false`
 
-The `utilityConfig` prop allows consuming applications to present an application-level menu directly from the ApplicationLayout. The ApplicationLayout will render this content in different ways based on the active responsive breakpoint.
+The `onSelectNavigationItem` prop allows consumers to retrieve the information related to the navigation item that was clicked. The function callback will return the information in the format of `onSelectNavigationItem(key, metaData)`.
 
-The API for the `utilityConfig` matches that of the `ApplicationHeaderUtility` and `ApplicationMenuUtility` components from `terra-application-utility`. Please see their respective documentation for more information regarding their full capabilities.
+### `activeNavigationItemKey`
+#### Is Required: `false`
+
+The `activeNavigationItemKey` prop allows consumers to set the currently selected navigation item. Accordingly, the `activeNavigationItemKey` value must have an associated entry within the `navigationItems` specification.
+
+### `utilityItems`
+#### Is Required: `false`
+
+The `utilityItems` prop allows consuming applications to present an application-level custom utility items directly from the ApplicationNavigation. The ApplicationNavigation will render this content in different ways based on the active responsive breakpoint. If `utilityItems` are passed as props the associated `onSelectUtilityItem` function callback should be passed as well.
+
+The value provided for `utilityItems` should be an array of objects with the following API:
 
 |Key Name|Type|Is Required|Description|
 |---|---|---|---|
-|`title`|String|optional|A string rendered within the utility menu's presentation target.|
-|`accessory`|Element|optional|A React element rendered next to the title.|
-|`menuItems`|Array|**required**|An array of objects specifying the utility menu options to present.|
-|`initialSelectedKey`|String|**required**|The string key of the initial menu item to present.|
-|`onChange`|Function|**required**|A function that will be called upon selection of a terminal utility item.|
+|`key`|String|**required**|A key rendered to be used as a unique react key as well as returned with the onSelectUtilityItem.|
+|`icon`|Element|**required**|A React element representing the themable icon for the utility item.|
+|`text`|String|**required**|The text to either be set as an aria-label or display text.|
+|`metaData`|Object|optional|An object containing whatever additional identifying information to be returned with the onSelectUtilityItem.|
 
 ```jsx
-import Avatar from 'terra-avatar';
-import ApplicationLayout, { Utils } from 'terra-application-layout';
+const utilityItems = [{
+  key: 'utility_1',
+  icon: <Icon1 >,
+  text: 'Utility 1',
+  metaData: { myValue: value1 }
+}, {
+  key: 'utiliyy_2',
+  icon: <Icon2 >,
+  text: 'Utility 2',
+  metaData: { myValue: value2 }
+}];
+```
 
-const myUtilityConfig = {
-  title: 'Doe, John',
-  accessory: <Avatar variant="user" ariaLabel="Doe, John" />,
-  menuItems: [{
-    key: 'menu',
-    title: 'Menu',
-    childKeys: ['item-1', 'item-2', 'item-3', 'item-4'],
-  }, {
-    key: 'item-1',
-    title: 'Item 1',
-  }, {
-    key: 'item-2',
-    title: 'Toggle Item - Checked',
-    isSelectable: true,
-    isSelected: true,
-  },  {
-    key: 'item-3',
-    title: 'Toggle Item - Not Checked',
-    isSelectable: true,
-    isSelected: false,
-  }, {
-    key: 'item-4',
-    contentLocation: Utils.utilityHelpers.locations.FOOTER,
-    title: 'Footer Item',
-  }],
-  initialSelectedKey: 'menu',
-  onChange: (event, itemData, disclose) => {
-    /**
-     * This function will be called when items are selected within the utility menu.
-     * The disclose parameter is provided for convenience, but any presentation method
-     * could be used to handle that menu content selection.
-     */
-  },
-};
+### `onSelectUtilityItem`
+#### Is Required: `false`
+
+The `onSelectUtilityItem` prop allows consumers to retrieve the information related to the navigation item that was clicked. The function callback will return the information in the format of `onSelectUtilityItem(key, metaData)`.
+
+### `onSelectSettings`
+#### Is Required: `false`
+
+The `onSelectSettings` prop allows consumers have first class support for a settings utility item. If the `onSelectSettings` prop is not set a settings utility item will not be displayed.
+
+### `onSelectHelp`
+#### Is Required: `false`
+
+The `onSelectHelp` prop allows consumers have first class support for a help utility item. If the `onSelectHelp` prop is not set a settings utility item will not be displayed.
+
+### `onSelectLogout`
+#### Is Required: `false`
+
+The `onSelectLogout` prop allows consumers have first class support for a logout utility button. If the `onSelectLogout` prop is not set a settings utility item will not be displayed.
+
+### `titleConfig`
+#### Is Required: `false`
+
+The `titleConfig` prop allows consuming applications to add their own branding to the ApplicationNavigation. The ApplicationNavigation will render this content in different ways based on the active responsive breakpoint.
+
+|Key Name|Type|Is Required|Description|
+|---|---|---|---|
+|`title`|String|**required**|Title to be displayed or set as the aria-label if a title element is passed.
+|`headline`|String|optional|Super text to be display above the main title text.|
+|`subline`|String|optional|Sub text to be display below the main title text.
+|`element`|Element|optional|Element to use in place of title text. Typically a logo for branding.
+|`hideTitleWithinDrawerMenu`|Boolean|optional|Whether or not the title should be hidden when at the compact breakpoint.|
+
+```jsx
+const myTitleConfig = {
+  title: 'My Application',
+  subline: 'My Subline',
+  hideTitleWithinDrawerMenu: false,
+}
+```
+
+### `userConfig`
+#### Is Required: `false`
+
+The `userConfig` prop allows consumers to set a user assocaited to the current application context. The ApplicationNavigation will render this content in different ways based on the active responsive breakpoint.
+
+|Key Name|Type|Is Required|Description|
+|---|---|---|---|
+|`name`|String|**required**|User name to be displayed for the user button and within utilities.
+|`detail`|String|optional|Additional user details string.|
+|`initials`|String|optional|User initials to be displayed within the avatar if no image is present.
+|`imageSrc`|String|optional|Src to provide to the avatar component.|
+
+```jsx
+const myUserConfig = {
+  name: 'Name, User',
+  detail: 'Is a User',
+  initials: 'UN',
+  imageSrc: 'imageSrc',
+}
+```
+
+### `hero`
+#### Is Required: `false`
+
+The `hero` prop allows consumers to add a hero element within the utility popup and/or navigation drawer. The ApplicationNavigation will render this content in different ways based on the active responsive breakpoint.
+
+### `notifications`
+#### Is Required: `false`
+
+The `notifications` prop allows consumers to display counts associated to navigationItems and extensionsItems. The props is made up of key/value pairs; the key is the associated entry within the `navigationItems` or `extensionItems` specification, and a numerical value.
+
+```jsx
+const myNotifications = {
+  key1: 3,
+  extension2: 10,
+}
 ```
 
 ## Responsive Design
 
-The ApplicationLayout has two rendering modes: `standard` and `compact`.
-  - The `standard` rendering occurs at `medium`, `large`, and `huge` breakpoints.
-  - The `compact` rendering occurs at `tiny` and `small` breakpoints.
+The ApplicationNavigation has two rendering modes: `standard` and `compact`.
+  - The `standard` rendering occurs at `large`, `huge`, and `enormous` breakpoints.
+  - The `compact` rendering occurs at `tiny`, `small`, `medium` breakpoints.
 
 |Prop|`standard` Rendering|`compact` Rendering|
 |---|---|---|
