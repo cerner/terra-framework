@@ -35,6 +35,17 @@ describe('ApplicationNavigation - Large', () => {
     Terra.should.validateElement();
   });
 
+  describe('Hero should display properly', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-application-navigation/application-navigation/hero');
+      browser.click('[data-application-header-utility="true"]');
+      browser.waitForVisible('[data-terra-popup-content="true"]');
+      browser.pause(50);
+    });
+
+    Terra.should.validateElement({ selector: '#root' });
+  });
+
   describe('UserName should display properly', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-application-navigation/application-navigation/user');
@@ -80,6 +91,17 @@ describe('ApplicationNavigation - Small', () => {
   describe('Utilities enter the nav drawer', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-application-navigation/application-navigation/utilities');
+      browser.waitForVisible('[data-compact-header-toggle="true"]');
+      browser.click('[data-compact-header-toggle="true"]');
+      browser.pause(250);
+    });
+
+    Terra.should.validateElement({ selector: '#root' });
+  });
+
+  describe('Hero enters the nav drawer', () => {
+    beforeEach(() => {
+      browser.url('/#/raw/tests/terra-application-navigation/application-navigation/hero-drawer');
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
       browser.pause(250);
