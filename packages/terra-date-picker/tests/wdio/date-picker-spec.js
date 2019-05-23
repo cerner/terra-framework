@@ -320,4 +320,31 @@ describe('Date Picker', () => {
 
     Terra.should.validateElement('default', { axeRules: { rules: ignoredA11y } });
   });
+
+  describe('DatePickerField', () => {
+    describe('Valid DatePickerField', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-field');
+      });
+
+      Terra.should.validateElement({ axeRules: { rules: ignoredA11y } });
+    });
+
+    describe('Invalid DatePickerField', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-field');
+        browser.click('#validity-toggle');
+      });
+
+      Terra.should.validateElement({ axeRules: { rules: ignoredA11y } });
+    });
+
+    describe('Disabled DatePickerField', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-date-picker/date-picker/disabled-date-picker-field');
+      });
+
+      Terra.should.validateElement({ axeRules: { rules: ignoredA11y } });
+    });
+  });
 });
