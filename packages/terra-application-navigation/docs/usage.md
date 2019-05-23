@@ -210,5 +210,5 @@ The ApplicationNavigation has two rendering modes: `standard` and `compact`.
 |`titleConfig`|Content is rendered within ApplicationNavigation's header.|Same as `standard`.|
 |`hero`|Content is rendered within ApplicationNavigation's utility popup (as provided by `terra-popup`).|Content is rendered within ApplicationNavigation's navigation drawer.|
 |`utilityItems`|Content is rendered within ApplicationNavigation's utility popup (as provided by `terra-popup`).|Content is rendered within ApplicationNavigation's navigation drawer.|
-|`navigationItems`|Content is rendered within the ApplicationLayout's header as tabs.|Content is rendered within ApplicationNavigation's navigation drawer.|
+|`navigationItems`|Content is rendered within the ApplicationNavigation's header as tabs.|Content is rendered within ApplicationNavigation's navigation drawer.|
 |`extensionItems`|Content is rendered within ApplicationNavigation's header.|Same as `standard`.|

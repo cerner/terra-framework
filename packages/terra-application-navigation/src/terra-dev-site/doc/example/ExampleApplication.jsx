@@ -1,6 +1,7 @@
 
-/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions  */
-import React from 'react';
+import React, {
+  useState,
+} from 'react';
 import Application from 'terra-application';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconPill from 'terra-icon/lib/icon/IconPill';
@@ -56,49 +57,49 @@ const navigationItems = [
     key: '/page_1',
     text: 'Page 1',
     metaData: {
-      test: '1',
+      display: 'Page 1',
     },
   }, {
     key: '/page_2',
     text: 'Page 2',
     metaData: {
-      test: '2',
+      display: 'Page 2',
     },
   }, {
     key: '/page_3',
     text: 'Page 3',
     metaData: {
-      test: '3',
+      display: 'Page 3',
     },
   }, {
     key: '/page_4',
     text: 'Page 4',
     metaData: {
-      test: '4',
+      display: 'Page 4',
     },
   }, {
     key: '/page_5',
     text: 'Page 5',
     metaData: {
-      test: '5',
+      display: 'Page 5',
     },
   }, {
     key: '/page_6',
     text: 'Page 6',
     metaData: {
-      test: '6',
+      display: 'Page 6',
     },
   }, {
     key: '/page_7',
     text: 'Page 7',
     metaData: {
-      test: '7',
+      display: 'Page 7',
     },
   }, {
     key: '/page_8',
     text: 'Page 8',
     metaData: {
-      test: '8',
+      display: 'Page 8',
     },
   },
 ];
@@ -141,25 +142,29 @@ const handleItemSelection = (key, metaData) => {
 };
 /* eslint-enable no-alert */
 
-const ExampleApplication = () => (
-  <Application locale="en-US">
-    <ApplicationNavigation
-      titleConfig={titleConfig}
-      userConfig={userConfig}
-      extensionItems={extensionItems}
-      onSelectExtensionItem={handleItemSelection}
-      navigationItems={navigationItems}
-      activeNavigationItemKey="/page_1"
-      onSelectNavigationItem={handleItemSelection}
-      utilityItems={utilityItems}
-      onSelectUtilityItem={handleItemSelection}
-      onSelectSettings={() => alert('Settings Selected')} // eslint-disable-line no-alert
-      onSelectHelp={() => alert('Help Selected')} // eslint-disable-line no-alert
-      onSelectLogout={() => alert('Logout Selected')} // eslint-disable-line no-alert
-    >
-      <Placeholder title="Example Content" />
-    </ApplicationNavigation>
-  </Application>
-);
+const ExampleApplication = () => {
+  const [activeKey, setActiveKey] = useState(navigationItems[0].key);
+
+  return (
+    <Application locale="en-US">
+      <ApplicationNavigation
+        titleConfig={titleConfig}
+        userConfig={userConfig}
+        extensionItems={extensionItems}
+        onSelectExtensionItem={handleItemSelection}
+        navigationItems={navigationItems}
+        activeNavigationItemKey={activeKey}
+        onSelectNavigationItem={key => setActiveKey(key)}
+        utilityItems={utilityItems}
+        onSelectUtilityItem={handleItemSelection}
+        onSelectSettings={() => alert('Settings Selected')} // eslint-disable-line no-alert
+        onSelectHelp={() => alert('Help Selected')} // eslint-disable-line no-alert
+        onSelectLogout={() => alert('Logout Selected')} // eslint-disable-line no-alert
+      >
+        <Placeholder title={activeKey} />
+      </ApplicationNavigation>
+    </Application>
+  );
+};
 
 export default ExampleApplication;
