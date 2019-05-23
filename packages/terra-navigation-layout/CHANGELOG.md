@@ -6,7 +6,15 @@ Unreleased
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 
-5.1.0 - (March 15, 2019)
+5.2.0 - (May 21, 2019)
+------------------
+### Added
+* Added hard-coded breakpoint values to NavigationLayout.jsx
+
+### Removed
+* Removed dependency on terra-responsive-element
+
+5.1.0 - (May 15, 2019)
 ------------------
 ### Changed
 * Minor dependency update
