@@ -26,7 +26,7 @@ const MyApp = () => (
 ### `extensionItems`
 #### Is Required: `false`
 
-The `extensionItems` prop allows consumers to render icons with an assocaited selection callback within the ApplicationNavigation's extensions region. The `extensionItems` will rollup in various ways depending on the current breakpoint. If `extensionItems` are passed as props the associated `onSelectExtensionItem` function callback should be passed as well.
+The `extensionItems` prop allows consumers to render icons with an assocaited selection callback within the ApplicationNavigation's extensions region. The expectations for `extensionItems` is that they are to provide click actions and disclosures for the application level context. The `extensionItems` will rollup in various counts depending on the current breakpoint. If `extensionItems` are passed as props the associated `onSelectExtensionItem` function callback should be passed as well.
 
 The value provided for `extensionItems` should be an array of objects with the following API:
 
@@ -59,7 +59,9 @@ The `onSelectExtensionItem` prop allows consumers to retrieve the information re
 ### `navigationItems`
 #### Is Required: `false`
 
-The `navigationItems` prop allows consumers to render high-level, primary navigation controls directly within the ApplicationNavigation. The ApplicationNavigation will render this content in different ways based on the active responsive breakpoint. If `navigationItems` are passed as props the associated `onSelectNavigationItem` function callback should be passed as well.
+The `navigationItems` prop allows consumers to render high-level, primary navigation controls directly within the ApplicationNavigation. The expectation of `navigationItems` is that items will not be added/removed, as this would be detrimental to the user experience. Once selected, a navigational item is no longer actionable and cannot be reselected. Navigation items at the application level should have equivalent context levels. Navigation from one tab to another should not be influenced by content, as each navigational item should be a sandboxed concept.
+
+The ApplicationNavigation will render this content in different ways based on the active responsive breakpoint. If `navigationItems` are passed as props the associated `onSelectNavigationItem` function callback should be passed as well.
 
 The value provided for `navigationItems` should be an array of objects with the following API:
 
@@ -189,7 +191,7 @@ The `hero` prop allows consumers to add a hero element within the utility popup 
 ### `notifications`
 #### Is Required: `false`
 
-The `notifications` prop allows consumers to display counts associated to navigationItems and extensionsItems. The props is made up of key/value pairs; the key is the associated entry within the `navigationItems` or `extensionItems` specification, and a numerical value.
+The `notifications` prop allows consumers to display notification counts associated to navigationItems and extensionsItems. The props is made up of key/value pairs; the key is the associated entry within the `navigationItems` or `extensionItems` specification, and a numerical value. Depending on locations within the navigational structure and breakpoint the number of digits displayed may be limited.
 
 ```jsx
 const myNotifications = {
