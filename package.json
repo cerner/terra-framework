@@ -74,6 +74,7 @@
     "postpublish": "npm run docs && npm run dependency-markdown && git add --all && git commit -m 'Updated DEPENDENCIES.md files'",
     "start": "tt-serve --config node_modules/terra-dev-site/config/webpack/webpack.config.js",
     "start-heroku": " npm run compile:prod && tt-serve-static --port $PORT --site './build' ",
+    "start-prod": "tt-serve --config node_modules/terra-dev-site/config/webpack/webpack.config.js --env.disableHotReloading -p",
     "start-static": "npm run compile:prod && tt-serve-static --site ./build",
     "test": "npm run jest && npm run wdio",
     "wdio": "wdio node_modules/terra-dev-site/config/wdio/wdio.conf.js"

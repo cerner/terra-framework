@@ -24,6 +24,7 @@ describe('Embedded Content Consumer', () => {
 
       browser.click('#EventA');
       browser.frameParent();
+      browser.moveToObject('#root', 0, 0);
     });
 
     Terra.should.matchScreenshot('EventA', { viewports });
@@ -44,11 +45,12 @@ describe('Embedded Content Consumer', () => {
 
       browser.click('#EventA');
       browser.frameParent();
+      browser.moveToObject('#root', 0, 0);
     });
 
     Terra.should.matchScreenshot('EventA', { viewports });
 
-    it('successfully replyed with EventA message', () => {
+    it('successfully replied with EventA message', () => {
       const myFrame = browser.element('iframe[src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]').value;
       browser.frame(myFrame);
 
@@ -62,11 +64,12 @@ describe('Embedded Content Consumer', () => {
 
       browser.click('#EventB');
       browser.frameParent();
+      browser.moveToObject('#root', 0, 0);
     });
 
     Terra.should.matchScreenshot('EventB', { viewports });
 
-    it('successfully replyed with EventB message', () => {
+    it('successfully replied with EventB message', () => {
       const myFrame = browser.element('iframe[src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]').value;
       browser.frame(myFrame);
 

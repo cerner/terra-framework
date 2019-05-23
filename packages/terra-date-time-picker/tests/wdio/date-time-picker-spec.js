@@ -135,6 +135,7 @@ describe('DateTimePicker', () => {
       browser.waitForVisible('[class*="time-clarification"]');
       browser.click('[class*="button-daylight"]');
       browser.click('#date-time-picker-toggler');
+      browser.moveToObject('#root', 0, 0);
     });
 
     const ignoredDisabledAlly = Object.assign({ 'color-contrast': { enabled: false } }, ignoredA11y);

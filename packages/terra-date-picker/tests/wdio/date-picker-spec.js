@@ -302,6 +302,7 @@ describe('Date Picker', () => {
   describe('Invalid dates are ignored', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-ignore-invalid-selected-dates');
+      browser.moveToObject('#root', 0, 0);
     });
 
     Terra.should.matchScreenshot();
