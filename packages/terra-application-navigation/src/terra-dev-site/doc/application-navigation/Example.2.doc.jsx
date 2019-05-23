@@ -15,7 +15,7 @@ const DocPage = () => (
     srcPath={`https://github.com/cerner/terra-framework/tree/master/packages/${name}`}
     examples={[
       {
-        example: <div style={{ height: '500px' }}><ExampleApplication /></div>,
+        example: <div style={{ height: '500px' }}><ExampleApplication /></div>, // eslint-disable-line react/forbid-dom-props
         source: ExampleApplicationSrc,
       },
     ]}
