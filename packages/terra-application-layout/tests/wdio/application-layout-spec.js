@@ -8,7 +8,7 @@ describe('ApplicationLayout', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test', viewports });
-    Terra.should.beAccessible({ viewports, context: '#application-layout-test' });
+    Terra.should.beAccessible({ viewports });
   });
 
   describe('Displays an application layout with top navigation tabs', () => {
@@ -18,7 +18,7 @@ describe('ApplicationLayout', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test', viewports });
-    Terra.should.beAccessible({ viewports, context: '#application-layout-test' });
+    Terra.should.beAccessible({ viewports });
   });
 
   describe('Displays an application layout with no header content', () => {
@@ -28,7 +28,7 @@ describe('ApplicationLayout', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test', viewports });
-    Terra.should.beAccessible({ viewports, context: '#application-layout-test' });
+    Terra.should.beAccessible({ viewports });
   });
 
   describe('Navigates with top navigation tabs', () => {
@@ -40,7 +40,7 @@ describe('ApplicationLayout', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test' });
-    Terra.should.beAccessible({ context: '#application-layout-test' });
+    Terra.should.beAccessible();
   });
 
   describe('Toggles menu when small', () => {
@@ -53,7 +53,7 @@ describe('ApplicationLayout', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test' });
-    Terra.should.beAccessible({ context: '#application-layout-test' });
+    Terra.should.beAccessible();
   });
 
   describe('Renders primary nav menu when small', () => {
@@ -68,7 +68,7 @@ describe('ApplicationLayout', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test' });
-    Terra.should.beAccessible({ context: '#application-layout-test' });
+    Terra.should.beAccessible();
   });
 
   describe('Navigates from primary nav menu when small', () => {
@@ -84,7 +84,7 @@ describe('ApplicationLayout', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test' });
-    Terra.should.beAccessible({ context: '#application-layout-test' });
+    Terra.should.beAccessible();
   });
 
   describe('Presents utility menu from header when large', () => {
@@ -96,7 +96,7 @@ describe('ApplicationLayout', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test' });
-    Terra.should.beAccessible({ context: '#application-layout-test' });
+    Terra.should.beAccessible();
   });
 
   describe('Presents utility menu from menu when small', () => {
@@ -110,7 +110,7 @@ describe('ApplicationLayout', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test' });
-    Terra.should.beAccessible({ context: '[role="dialog"]' });
+    Terra.should.beAccessible();
   });
 
   describe('Presents utility menu from header and checks for closure on read-only item click', () => {
@@ -124,7 +124,7 @@ describe('ApplicationLayout', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#application-layout-test' });
-    Terra.should.beAccessible({ context: '#application-layout-test' });
+    Terra.should.beAccessible();
   });
 
   describe('Displays an application layout with nav icons', () => {

@@ -82,14 +82,14 @@ describe('Abstract Modal', () => {
     before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-custom-props'));
 
     it('does not focus on interactive content within the app when modal is open and focus is shifted backwards from the modal dialog', () => {
-      browser.keys(['Shift', 'Shift', 'Tab']);
+      browser.keys(['Shift', 'Tab']);
       expect(browser.hasFocus('#focus-button')).to.be.equal(false);
     });
 
     Terra.should.matchScreenshot('focused shifted outside the beginning of the modal', { selector: '#root' });
 
     it('does not focus on interactive content within the app when modal is open and focus is shifted forwards from the modal dialog', () => {
-      browser.keys(['Tab', 'Tab']);
+      browser.keys(['Tab', 'Tab', 'Tab']);
       expect(browser.hasFocus('#focus-button')).to.be.equal(false);
     });
 

@@ -8,7 +8,7 @@ describe('ApplicationMenu', () => {
     });
 
     Terra.should.matchScreenshot('#test-menu', { selector: '#test-menu', viewports });
-    Terra.should.beAccessible({ viewports, context: '#test-menu' });
+    Terra.should.beAccessible({ viewports });
     Terra.should.themeCombinationOfCustomProperties({
       testName: 'themed',
       properties: {

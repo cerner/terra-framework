@@ -8,7 +8,7 @@ describe('ApplicationHeader', () => {
     });
 
     Terra.should.matchScreenshot('#test-header', { selector: '#test-header', viewports });
-    Terra.should.beAccessible({ viewports, context: '#test-header' });
+    Terra.should.beAccessible({ viewports });
     Terra.should.themeCombinationOfCustomProperties({
       testName: 'themed',
       properties: {

@@ -6,7 +6,7 @@ describe('Default navigation side menu display', () => {
   });
 
   Terra.should.matchScreenshot('#test-menu', { selector: '#test-menu' });
-  Terra.should.beAccessible({ context: '#test-menu' });
+  Terra.should.beAccessible();
   Terra.should.themeCombinationOfCustomProperties({
     testName: 'themed',
     properties: {
@@ -34,7 +34,7 @@ describe('Default navigation side menu display with toolbar', () => {
   });
 
   Terra.should.matchScreenshot('#test-menu', { selector: '#test-menu' });
-  Terra.should.beAccessible({ context: '#test-menu' });
+  Terra.should.beAccessible();
 });
 
 describe('Hover navigation side menu display', () => {
@@ -66,7 +66,7 @@ describe('Selected navigation side menu display', () => {
   });
 
   Terra.should.matchScreenshot('#test-menu', { selector: '#test-menu' });
-  Terra.should.beAccessible({ context: '#test-menu' });
+  Terra.should.beAccessible();
   Terra.should.themeCombinationOfCustomProperties({
     testName: 'themed',
     properties: {
