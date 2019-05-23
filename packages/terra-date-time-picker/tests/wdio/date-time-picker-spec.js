@@ -243,6 +243,8 @@ describe('DateTimePicker', () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-on-change');
       // Removes the blinking cursor to prevent screenshot mismatches.
       browser.execute('document.querySelector(\'input[name="terra-time-minute-input"]\').style.caretColor = "transparent";');
+      browser.execute('document.querySelector(\'input[name="terra-time-hour-input"]\').style.caretColor = "transparent";');
+      browser.execute('document.querySelector(\'input[name="terra-date-input"]\').style.caretColor = "transparent";');
     });
 
     it('Entering valid date with empty time does not trigger onChange', () => {
