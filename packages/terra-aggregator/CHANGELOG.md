@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.15.0 - (May 21, 2019)
+------------------
 ### Changed
 * Removed all inline styles and implemented the same styles using external css.
 
