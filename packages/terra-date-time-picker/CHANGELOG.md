@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated daylight savings time/standard time button to have aria-label and title with additional timezone info, to clarify it's meaning.
 
 4.2.0 - (May 21, 2019)
 ------------------
