@@ -5,8 +5,16 @@ Unreleased
 ----------
 ### Fixed
 * Updated max-width to be `49%` for screen size greater than 768px.
-* Updated wdio snapshot
 
+=======
+
+3.1.0 - (May 21, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+3.0.0 - (May 13, 2019)
+------------------
 ### Breaking Changes
 * Removed `releaseFocus` prop
 * Removed `requestFocus` prop

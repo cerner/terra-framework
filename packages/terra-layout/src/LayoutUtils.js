@@ -1,4 +1,10 @@
-import breakpoints from 'terra-responsive-element/lib/breakpoints.module.scss';
+const breakpoints = {
+  tiny: 544,
+  small: 768,
+  medium: 992,
+  large: 1216,
+  huge: 1440,
+};
 
 const {
   small, medium, large, huge,

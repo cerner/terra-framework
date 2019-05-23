@@ -1,5 +1,17 @@
 # Terra Time Input Upgrade Guide
+
+## Changes from version 3 to version 4
+
+### New props
+* Added `onFocus`
+* Added `refCallback`
+
+### Changes to onBlur and onFocus
+
+The `onFocus` prop previously could be passed down as a custom prop. This prop now becomes a first-class prop. The `onFocus` prop used to be triggered when focus is moved from the hour input to the minute input or any other elements in the same time-input component. The `onFocus` prop will still be triggered if the time-input component did not have focus and now just gained focus. However, if the focus is then moved from one time-input element to another time-input element, the `onFocus` callback now would not be triggered because the focus is still within the time-input container. The `onBlur` callback now behaves similar to the `onFocus` callback where `onBlur` would not be triggered when focus is transfered from one time-input element to another time-input element of the same time-input component. The `onBlur` callback would be triggered only when focus is lost from the entire time-input component.
+
 ## Changes from version 2 to version 3
+
 ### Changes to CSS Custom Properties
 
 #### Renamed

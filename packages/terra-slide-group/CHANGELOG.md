@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.0.0 - (May 13, 2019)
+------------------
 ### Breaking Change
 * Updated react-transition-group dependency to latest stable major release (^4.0.0)
 
