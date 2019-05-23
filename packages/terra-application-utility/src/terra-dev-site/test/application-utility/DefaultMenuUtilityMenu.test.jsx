@@ -17,10 +17,10 @@ class DefaultMenuUtilityMenu extends React.Component {
   }
 
   render() {
-    const customComponent = <div className={cx('application-utility-test-menu-custom-component')}><Image src={FallbackAvatar} className={cx('application-utility-test-menu-avatar')} alt="Fallback Avatar" /></div>;
+    const customComponent = <div className={cx('avatar-wrapper')}><Image src={FallbackAvatar} className={cx('avatar')} alt="Fallback Avatar" /></div>;
 
     return (
-      <div className={cx('application-utility-test-menu-content')}>
+      <div className={cx('content-wrapper')}>
         <UtilityMenu
           id="default"
           initialSelectedKey="menu"

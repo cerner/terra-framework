@@ -35,7 +35,7 @@ class ApplicationMenuUtilityExample extends React.Component {
 
     return (
       <div>
-        <div className={cx('application-utility-menu-utility-example')}>
+        <div className={cx('content-wrapper')}>
           <ApplicationMenuUtility
             menuItems={MockConfig(accessory)}
             onChange={this.handleOnChange}

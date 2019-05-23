@@ -28,7 +28,7 @@ class DefaultApplicationMenuUtility extends React.Component {
     const title = 'User Name';
 
     return (
-      <div className={cx('application-utility-test-menu-utility-content')}>
+      <div className={cx('content-wrapper')}>
         <ApplicationMenuUtility
           id="default"
           menuItems={MockConfig(accessory)}

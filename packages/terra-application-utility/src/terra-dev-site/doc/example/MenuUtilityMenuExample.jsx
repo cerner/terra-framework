@@ -31,10 +31,10 @@ class MenuUtilityMenuExample extends React.Component {
   }
 
   render() {
-    const customComponent = <Image alt="Fallback Avatar" src={FallbackAvatar} className={cx('application-utility-menu-example-custom-component')} />;
+    const customComponent = <Image alt="Fallback Avatar" src={FallbackAvatar} className={cx('avatar')} />;
     return (
       <div>
-        <div className={cx('application-utility-menu-example-content')}>
+        <div className={cx('content-wrapper')}>
           <UtilityMenu
             initialSelectedKey="menu"
             isHeightBounded

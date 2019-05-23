@@ -26,7 +26,7 @@ const UtilityOption = ({ name, disclosureManager }) => (
       />
    )}
   >
-    <div className={cx('application-layout-common-utility-option-content')}>
+    <div className={cx('content-wrapper')}>
 Content for utility key:
       {name}
     </div>

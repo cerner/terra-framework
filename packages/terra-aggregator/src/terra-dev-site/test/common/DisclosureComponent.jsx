@@ -130,7 +130,7 @@ class DisclosureComponent extends React.Component {
     const { disclosureManager, identifier } = this.props;
 
     return (
-      <ContentContainer id={identifier} className="nested-component" fill header={<h2 className={cx('aggregator-disclosure-component-content-container-header')}>Content Component</h2>}>
+      <ContentContainer id={identifier} className="nested-component" fill header={<h2 className={cx('header')}>Content Component</h2>}>
         <p>
           id:
           {' '}
@@ -145,7 +145,7 @@ class DisclosureComponent extends React.Component {
         <button type="button" className="disclose-large" onClick={this.disclose('large')}>Disclose Large</button>
         <button type="button" className="disclose-huge" onClick={this.disclose('huge')}>Disclose Huge</button>
         <button type="button" className="disclose-fullscreen" onClick={this.disclose('fullscreen')}>Disclose Fullscreen</button>
-        <div className={cx('aggregator-disclosure-component-content-container-child')}>
+        <div className={cx('content-form-wrapper')}>
           {this.renderForm()}
           {this.renderFormButton()}
         </div>

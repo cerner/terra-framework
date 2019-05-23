@@ -36,7 +36,7 @@ export default class DateTimePicker12HourMobile extends React.Component {
 
   render() {
     return (
-      <div className={cx('date-time-picker-input-cursor')}>
+      <div className={cx('content-wrapper')}>
         <h3>Empty Date-Time-Picker</h3>
         <DateTimePickerExampleTemplate
           id="datetimeEmpty"

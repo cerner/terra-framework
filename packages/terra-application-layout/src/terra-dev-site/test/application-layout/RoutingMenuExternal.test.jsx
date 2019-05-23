@@ -9,7 +9,7 @@ import { RoutingMenu } from '../../../ApplicationLayout';
 const cx = classNames.bind(styles);
 
 const AppRouter = () => (
-  <div className={cx('application-layout-test-app-router')} id="routing-menu-test">
+  <div className={cx('app-router')} id="routing-menu-test">
     <MemoryRouter>
       <RoutingMenu
         title="Test Routing Menu"

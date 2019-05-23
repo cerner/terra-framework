@@ -36,7 +36,7 @@ class DatePickerExample extends React.Component {
       <div>
         <p>
 Selected ISO Date:
-          <span className={cx('date-picker-example-content')}>{this.state.date}</span>
+          <span className={cx('date-wrapper')}>{this.state.date}</span>
         </p>
         <Field label="Enter Date" htmlFor="include-dates">
           <DatePicker

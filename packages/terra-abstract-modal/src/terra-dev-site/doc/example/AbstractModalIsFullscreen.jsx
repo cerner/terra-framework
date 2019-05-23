@@ -35,7 +35,7 @@ class AbstractModalIsFullscreen extends React.Component {
           isFullscreen
           onRequestClose={this.handleCloseModal}
         >
-          <div className={cx('abstract-modal-example-content')}>
+          <div className={cx('content-wrapper')}>
             <h1>Fullscreen Modal</h1>
             <br />
             <p>This modal will always take up the full screen.</p>

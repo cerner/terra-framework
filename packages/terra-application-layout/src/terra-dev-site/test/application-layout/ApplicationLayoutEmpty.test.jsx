@@ -98,7 +98,7 @@ const EmptyApplicationLayoutTest = () => (
 const WrappedApplication = withRouter((EmptyApplicationLayoutTest));
 
 const AppRouter = () => (
-  <div className={cx('application-layout-test-app-router')}>
+  <div className={cx('app-router')}>
     <MemoryRouter>
       <WrappedApplication />
     </MemoryRouter>

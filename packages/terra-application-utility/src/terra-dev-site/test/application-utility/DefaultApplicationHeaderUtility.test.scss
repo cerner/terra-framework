@@ -1,8 +1,8 @@
 @import './ApplicationUtilityTestCommon';
 
 :local {
-  .application-utility-test-header-utility-content {
-    @extend %application-utility-test-application-content;
+  .content-wrapper {
+    @extend %common-application-content-wrapper;
     width: 150px;
   }
 }

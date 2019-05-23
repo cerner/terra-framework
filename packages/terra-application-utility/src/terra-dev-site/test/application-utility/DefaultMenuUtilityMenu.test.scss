@@ -1,15 +1,15 @@
 @import './ApplicationUtilityTestCommon';
 
 :local {
-  .application-utility-test-menu-custom-component {
-    @extend %application-utility-test-custom-component;
+  .avatar-wrapper {
+    @extend %common-avatar-wrapper;
   }
 
-  .application-utility-test-menu-avatar {
-    @extend %application-utility-test-avatar;
+  .avatar {
+    @extend %common-avatar;
   }
 
-  .application-utility-test-menu-content {
-    @extend %application-utility-test-content;
+  .content-wrapper {
+    @extend %common-content-wrapper;
   }
 }

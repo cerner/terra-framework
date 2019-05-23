@@ -1,7 +1,7 @@
 @import './ApplicationLayoutCommon';
 
 :local {
-  .application-layout-common-extensions-disclosure-content {
-    @extend %application-layout-common-container-content;
+  .content-wrapper {
+    @extend %common-container-content;
   }
 }

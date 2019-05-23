@@ -36,7 +36,7 @@ class AbstractModalIsOpen extends React.Component {
           onRequestClose={this.handleCloseModal}
           classNameModal={styles['fixed-size']}
         >
-          <div className={cx('abstract-modal-example-content')}>
+          <div className={cx('content-wrapper')}>
             <h1>Default Modal</h1>
             <br />
             <p>You can close the modal by:</p>

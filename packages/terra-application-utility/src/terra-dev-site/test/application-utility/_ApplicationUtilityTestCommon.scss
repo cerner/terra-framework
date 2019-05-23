@@ -1,19 +1,19 @@
 :local {
-  %application-utility-test-custom-component {
+  %common-avatar-wrapper {
     display: grid;
   }
 
-  %application-utility-test-avatar {
+  %common-avatar {
     height: 1.857rem;
     width: 1.857rem;
   }
 
-  %application-utility-test-content {
+  %common-content-wrapper {
     height: 300px;
     width: 300px;
   }
 
-  %application-utility-test-application-content {
+  %common-application-content-wrapper {
     height: 60px;
     position: relative;
   }

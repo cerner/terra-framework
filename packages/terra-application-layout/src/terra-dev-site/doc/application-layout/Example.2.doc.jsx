@@ -21,11 +21,11 @@ const DocPage = () => (
     srcPath={`https://github.com/cerner/terra-framework/tree/master/packages/${name}`}
     examples={[
       {
-        example: <div className={cx('application-layout-doc-page-examples')}><ExampleApplication /></div>,
+        example: <div className={cx('example-content')}><ExampleApplication /></div>,
         source: ExampleApplicationSrc,
       },
       {
-        example: <div className={cx('application-layout-doc-page-examples')}><ExampleApplicationWithNavIcons /></div>,
+        example: <div className={cx('example-content')}><ExampleApplicationWithNavIcons /></div>,
         source: ExampleApplicationWithNavIconsSrc,
       },
     ]}

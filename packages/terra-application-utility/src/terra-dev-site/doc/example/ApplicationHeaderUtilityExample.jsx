@@ -28,8 +28,8 @@ class ApplicationHeaderUtilityExample extends React.Component {
     const title = 'User Name';
 
     return (
-      <div className={cx('application-utility-header-utility-example-container')}>
-        <div className={cx('application-utility-header-utility-example-content')}>
+      <div className={cx('container')}>
+        <div className={cx('content-wrapper')}>
           <ApplicationHeaderUtility
             menuItems={MockConfig(accessory)}
             onChange={() => {}}

@@ -50,7 +50,7 @@ class ApplicationMenu extends React.Component {
     return (
       <ContentContainer
         footer={(
-          <div className={cx('application-layout-common-application-menu-content')}>
+          <div className={cx('footer')}>
             <Button
               text="Custom Event 1"
               isBlock
@@ -63,7 +63,7 @@ class ApplicationMenu extends React.Component {
                   layoutConfig.toggleMenu();
                 }
               }}
-              className={cx('application-layout-common-application-menu-custom-event')}
+              className={cx('custom-event-button')}
             />
             <Button
               text="Custom Event 2"

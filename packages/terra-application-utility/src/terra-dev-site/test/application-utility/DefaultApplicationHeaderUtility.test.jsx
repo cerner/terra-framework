@@ -28,7 +28,7 @@ class DefaultApplicationHeaderUtility extends React.Component {
     const title = 'User Name';
 
     return (
-      <div className={cx('application-utility-test-header-utility-content')}>
+      <div className={cx('content-wrapper')}>
         <ApplicationHeaderUtility
           id="default"
           menuItems={MockConfig(accessory)}

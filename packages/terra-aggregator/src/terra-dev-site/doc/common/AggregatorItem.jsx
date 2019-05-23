@@ -24,7 +24,7 @@ const ReadonlyModal = withDisclosureManager(({ disclosureManager }) => (
       />
     )}
   >
-    <div className={cx('aggregator-item-readonly-modal-content')}>
+    <div className={cx('readonly-modal-content')}>
       <p>This modal was not presented through the Aggregator. The Aggregator state was maintained.</p>
     </div>
   </ContentContainer>
@@ -120,9 +120,9 @@ class AggregatorItem extends React.Component {
         {...customProps}
         header={(
           <Arrange
-            className={cx('aggregator-item-arrange')}
+            className={cx('header-arrange')}
             fitStart={(
-              <div className={cx('aggregator-item-arrange-content')}>
+              <div className={cx('header-arrange-content')}>
                 {customDisclose ? <Button text="Modal (Without Requesting Focus)" onClick={this.launchModal} /> : null}
               </div>
             )}

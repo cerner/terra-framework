@@ -53,9 +53,9 @@ class ApplicationExtensions extends React.Component {
 
     return (
       <div {...containerProps}>
-        <Button icon={<IconSettings />} text="Settings" variant={variant} isIconOnly className={cx('application-layout-common-extensions-content')} onClick={() => this.discloseExtensionContent('Settings')} />
-        <Button icon={<IconCalendar />} text="Calendar" variant={variant} isIconOnly className={cx('application-layout-common-extensions-content')} onClick={() => this.discloseExtensionContent('Calendar')} />
-        <Button icon={<IconFeaturedOutline />} text="Favorites" variant={variant} isIconOnly className={cx('application-layout-common-extensions-content')} onClick={() => this.discloseExtensionContent('Favorites')} />
+        <Button icon={<IconSettings />} text="Settings" variant={variant} isIconOnly className={cx('extension-button')} onClick={() => this.discloseExtensionContent('Settings')} />
+        <Button icon={<IconCalendar />} text="Calendar" variant={variant} isIconOnly className={cx('extension-button')} onClick={() => this.discloseExtensionContent('Calendar')} />
+        <Button icon={<IconFeaturedOutline />} text="Favorites" variant={variant} isIconOnly className={cx('extension-button')} onClick={() => this.discloseExtensionContent('Favorites')} />
       </div>
     );
   }

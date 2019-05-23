@@ -173,7 +173,7 @@ The ApplicationLayout includes ModalManager support by default. The ApplicationL
       <ContentContainer
         fill
       >
-        <div className={cx('application-layout-common-content')}>
+        <div className={cx('content-wrapper')}>
           <h1>{contentName}</h1>
           {bodyContent}
         </div>
