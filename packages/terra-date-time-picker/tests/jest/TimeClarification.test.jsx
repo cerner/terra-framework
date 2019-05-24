@@ -1,6 +1,7 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { shallowWithIntl } from 'terra-enzyme-intl';
+import moment from 'moment-timezone';
 import TimeClarification from '../../lib/_TimeClarification';
 
 it('should render a default date time picker', () => {
@@ -33,6 +34,7 @@ it('should render a disabled time clarification', () => {
 });
 
 it('should render offset button after daylight savings button clicked', () => {
+  moment.tz.guess = jest.fn(() => 'America/Chicago');
   const datePicker = shallowWithIntl((
     <TimeClarification
       isOpen
@@ -49,6 +51,7 @@ it('should render offset button after daylight savings button clicked', () => {
 });
 
 it('should render offset button after standard time button clicked', () => {
+  moment.tz.guess = jest.fn(() => 'America/Chicago');
   const datePicker = shallowWithIntl((
     <TimeClarification
       isOpen
