@@ -96,6 +96,7 @@
       border-radius: var(--terra-tabs-structural-border-radius, 0);
       border-style: solid;
       border-width: var(--terra-tabs-structural-border-width, 0 1px 0 0);
+      box-shadow: var(--terra-tabs-structural-box-shadow);
       color: var(--terra-tabs-structural-color, #007ee0);
       margin-left: var(--terra-tabs-structural-between-tabs-margin-left, 0);
       transition-duration: var(--terra-tabs-structural-transition-duration, 0);
@@ -110,6 +111,7 @@
         color: var(--terra-tabs-structural-active-color, #000);
         overflow: hidden; //forces :before background-image to honor border-radius clipping.
         position: relative;
+        z-index: var(--terra-tabs-structural-active-z-index);
 
         &::before {
           background-clip: content-box; // Make sure background fully extends
