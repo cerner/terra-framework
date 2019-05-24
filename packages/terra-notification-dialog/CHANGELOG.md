@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Pressing escape key no longer disables the focus trap in notification dialog, users must make a selection of one of the notification dialog buttons to dismiss the notification dialog
 
 3.1.0 - (May 21, 2019)
 ------------------
