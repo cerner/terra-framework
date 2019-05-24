@@ -1,0 +1,30 @@
+:local {
+  .content-left-anchor {
+    background-color: transparent;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .content-left-graphics {
+    border: 0;
+    height: 40px; // setting this explicity for IE11
+    vertical-align: middle;
+    width: 40px; // setting this explicity for IE11
+  }
+
+  .content-left-terratext {
+    letter-spacing: 1px;
+  }
+
+  .content-left-uitext {
+    font-weight: 100;
+    letter-spacing: 1px;
+  }
+
+  .content-right-graphics {
+    border: 0;
+    height: 40px;
+    vertical-align: top;
+    width: 90px;
+  }
+}
