@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Replaced classList shim with full polyfill to support d3
 
 5.7.0 - (April 24, 2019)
 ------------------
