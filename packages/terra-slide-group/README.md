@@ -2,7 +2,7 @@
 
 
 [![NPM version](https://badgen.net/npm/v/terra-slide-group)](https://www.npmjs.org/package/terra-slide-group)
-[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.org/cerner/terra-framework)
+[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
 The SlideGroup is a component that utilizes the `react-transition-group` library to present a stack of components in an
 animated fashion.

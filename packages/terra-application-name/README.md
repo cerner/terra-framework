@@ -2,7 +2,7 @@
 
 
 [![NPM version](https://badgen.net/npm/v/terra-application-name)](https://www.npmjs.org/package/terra-application-name)
-[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.org/cerner/terra-framework)
+[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
 Houses the title of the application, along with a logo. There are two versions - a header version and menu version. These should be used with the corresponding header and menu layouts.
 

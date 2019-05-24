@@ -2,7 +2,7 @@
 
 
 [![NPM version](https://badgen.net/npm/v/terra-form-validation)](https://www.npmjs.org/package/terra-form-validation)
-[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.org/cerner/terra-framework)
+[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
 Documentation on how to combine the form validation library [react-final-form](https://github.com/final-form/react-final-form) with UI Components that Terra provides.
 

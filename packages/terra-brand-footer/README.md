@@ -2,7 +2,7 @@
 
 
 [![NPM version](https://badgen.net/npm/v/terra-brand-footer)](https://www.npmjs.org/package/terra-brand-footer)
-[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.org/cerner/terra-framework)
+[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
 A standard footer for application layout which provides content areas to display options such as branding, copyright information, logo and navigation to related pages.
 
