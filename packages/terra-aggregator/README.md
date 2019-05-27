@@ -3,7 +3,7 @@
 The Aggregator provides focus-based mechanisms for managing actions across disparate components.
 
 [![NPM version](https://badgen.net/npm/v/terra-aggregator)](https://www.npmjs.org/package/terra-aggregator)
-[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.org/cerner/terra-framework)
+[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-aggregator/docs)

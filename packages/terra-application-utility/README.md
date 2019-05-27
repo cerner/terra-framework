@@ -1,7 +1,7 @@
 # Terra Application Utility
 
 [![NPM version](https://badgen.net/npm/v/terra-application-utility)](https://www.npmjs.org/package/terra-application-utility)
-[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.org/cerner/terra-framework)
+[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
 The Utility is used to disclose a utility menu. There are two versions - a header version and menu version. These should be used with the corresponding `terra-application-header-layout` and `terra-application-menu-layout` components.
 
