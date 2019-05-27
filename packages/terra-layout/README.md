@@ -3,7 +3,7 @@
 The Layout component provides a responsive starting point for the positioning of application components.
 
 [![NPM version](https://badgen.net/npm/v/terra-layout)](https://www.npmjs.org/package/terra-layout)
-[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.org/cerner/terra-framework)
+[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-layout/docs)

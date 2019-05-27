@@ -1,7 +1,7 @@
 # Terra Application Header Layout
 
 [![NPM version](https://badgen.net/npm/v/terra-application-header-layout)](https://www.npmjs.org/package/terra-application-header-layout)
-[![Build Status](https://badgen.net/travis/cerner/terra)](https://travis-ci.org/cerner/terra-framework)
+[![Build Status](https://badgen.net/travis/cerner/terra)](https://travis-ci.com/cerner/terra-framework)
 
 This component renders an application header layout. To be used with a terra-layout or terra-navigation-layout.
 
