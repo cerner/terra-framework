@@ -4,7 +4,7 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
-* Removed all inline styles and implemented the same styles using external css.
+* Removed all inline styles from Dev-site components and implemented the same styles using external css.
 
 ### Fixed
 * Fixed js error in the filterDate example.
