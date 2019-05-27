@@ -4,7 +4,15 @@ Changelog
 Unreleased
 ----------
 
-4.1.0 - (March 15, 2019)
+4.2.0 - (May 21, 2019)
+------------------
+### Added
+* Added hard-coded breakpoint values to LayoutUtils.js
+
+### Removed
+* Removed dependency on terra-responsive-element
+
+4.1.0 - (May 15, 2019)
 ------------------
 ### Changed
 * Minor dependency update
