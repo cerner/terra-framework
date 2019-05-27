@@ -8,7 +8,7 @@ const SlidePanelLarge = () => (
     mainContent={<SlidePanelMainContent />}
     panelContent={<SlidePanelPanelContent />}
     panelBehavior="overlay"
-    panelPosition="end"
+    panelPosition={SlidePanel.position.END}
     panelSize="large"
     isOpen
   />

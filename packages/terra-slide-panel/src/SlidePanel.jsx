@@ -6,8 +6,8 @@ import styles from './SlidePanel.module.scss';
 const cx = classNames.bind(styles);
 
 const position = {
-  start: 'start',
-  end: 'end',
+  START: 'start',
+  END: 'end',
 };
 
 const propTypes = {
@@ -29,7 +29,7 @@ const propTypes = {
   /**
    * The position at which the panel will be displayed. This property honors the current direction setting. One of `start`, `end`.
    */
-  panelPosition: PropTypes.oneOf([position.start, position.end]),
+  panelPosition: PropTypes.oneOf([position.START, position.END]),
 
   /**
    * The size at which the panel will be displayed. One of `small`, `large`.
@@ -54,7 +54,7 @@ const propTypes = {
 
 const defaultProps = {
   panelBehavior: 'overlay',
-  panelPosition: 'end',
+  panelPosition: position.END,
   panelSize: 'small',
 };
 
@@ -109,7 +109,7 @@ class SlidePanel extends React.Component {
       </div>
     );
 
-    const content = (panelPosition === position.start) ? (
+    const content = (panelPosition === position.START) ? (
       <React.Fragment>
         {panelDiv}
         {mainDiv}

@@ -9,7 +9,7 @@ const SlidePanelNoFill = () => (
       mainContent={<SlidePanelMainContent />}
       panelContent={<SlidePanelPanelContent />}
       panelBehavior="squish"
-      panelPosition="end"
+      panelPosition={SlidePanel.position.END}
       panelSize="small"
       isOpen
     />
