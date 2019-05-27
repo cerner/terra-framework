@@ -1,0 +1,11 @@
+@import './ModalManagerCommon';
+
+:local {
+  .header {
+    @extend %common-header;
+  }
+
+  .content-form {
+    @extend %common-content-form;
+  }
+}

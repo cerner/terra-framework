@@ -1,9 +1,13 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import DisclosureComponent from './DisclosureComponent';
 import ModalManager from '../../../ModalManager';
+import styles from './ModalManagerDefault.test.scss';
+
+const cx = classNames.bind(styles);
 
 const ModalManagerDefault = () => (
-  <div role="main" style={{ height: '100%' }}>
+  <div role="main" className={cx('content-wrapper')}>
     <ModalManager>
       <DisclosureComponent identifier="root-component" disclosureType="modal" />
     </ModalManager>
