@@ -1,12 +1,9 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import SlideGroup from '../../../SlideGroup';
+import styles from './AnimatedNonAnimatedSlideGroup.test.scss';
 
-const containerStyles = {
-  height: '200px',
-  width: '400px',
-  overflow: 'hidden',
-  position: 'relative',
-};
+const cx = classNames.bind(styles);
 
 class SlideGroupExample extends React.Component {
   constructor(props) {
@@ -36,14 +33,14 @@ class SlideGroupExample extends React.Component {
             {i}
           </h2>
           <br />
-          {i !== 4 ? <button type="button" id={`increment-${i}`} style={{ backgroundColor: 'lightgrey' }} onClick={this.increment}>Increment</button> : null}
-          {i !== 1 ? <button type="button" id={`decrement-${i}`} style={{ backgroundColor: 'lightgrey' }} onClick={this.decrement}>Decrement</button> : null}
+          {i !== 4 ? <button type="button" id={`increment-${i}`} className={cx('button-color')} onClick={this.increment}>Increment</button> : null}
+          {i !== 1 ? <button type="button" id={`decrement-${i}`} className={cx('button-color')} onClick={this.decrement}>Decrement</button> : null}
         </div>
       ));
     }
 
     return (
-      <div style={containerStyles}>
+      <div className={cx('container-style')}>
         <SlideGroup items={slides} id="SlideGroup" />
       </div>
     );

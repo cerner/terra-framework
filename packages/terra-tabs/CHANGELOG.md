@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Removed all inline styles and implemented the same styles using external css.
+
 ### Added
 * box-shadow theme variable for in-active tab: --terra-tabs-structural-box-shadow
 * z-index theme variable for active tab: --terra-tabs-structural-active-z-index

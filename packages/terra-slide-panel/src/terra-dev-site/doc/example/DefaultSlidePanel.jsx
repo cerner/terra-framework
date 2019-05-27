@@ -2,14 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import SlidePanel from 'terra-slide-panel/lib/SlidePanel';
+import classNames from 'classnames/bind';
+import styles from './DefaultSlidePanel.scss';
+
+const cx = classNames.bind(styles);
 
 const mainContentForSlidePanel = togglePanelHandler => (
   <div>
-    <header style={{ backgroundColor: 'lightgrey' }}>
-      <h3 style={{ margin: '0px', padding: '5px', display: 'inline-block' }}>Main Content</h3>
-      <button id="mainToggleBtn" type="button" onClick={togglePanelHandler} style={{ display: 'inline-block' }}>Main Toggle Panel</button>
+    <header className={cx('header-content')}>
+      <h3 className={cx('heading')}>Main Content</h3>
+      <button id="mainToggleBtn" type="button" onClick={togglePanelHandler} className={cx('extension-button')}>Main Toggle Panel</button>
     </header>
-    <div style={{ margin: '5px' }}>
+    <div className={cx('content-wrapper')}>
       <p>
         This is the main content area of the slide panel.
         The overall height of the SlidePanel is determined by
@@ -36,12 +40,12 @@ const mainContentForSlidePanel = togglePanelHandler => (
 
 const panelContentForSlidePanel = (togglePanelHandler, toggleFullscreenHandler) => (
   <div>
-    <header style={{ backgroundColor: 'lightgrey' }}>
-      <h3 style={{ margin: '0px', padding: '5px', display: 'inline-block' }}>Panel Content</h3>
-      <button id="panelToggleBtn" type="button" onClick={togglePanelHandler} style={{ display: 'inline-block' }}>Panel Toggle Panel</button>
-      <button type="button" onClick={toggleFullscreenHandler} style={{ display: 'inline-block' }}>Toggle Fullscreen</button>
+    <header className={cx('header-content')}>
+      <h3 className={cx('heading')}>Panel Content</h3>
+      <button id="panelToggleBtn" type="button" onClick={togglePanelHandler} className={cx('extension-button')}>Panel Toggle Panel</button>
+      <button type="button" onClick={toggleFullscreenHandler} className={cx('extension-button')}>Toggle Fullscreen</button>
     </header>
-    <div style={{ margin: '5px' }}>
+    <div className={cx('content-wrapper')}>
       <p>This is the panel content area of the slide panel.</p>
       <p>
         {'Focus is moved to the toggle button in the main container when the panel is closed via the componentDidUpdate lifecycle hook in '}
@@ -108,13 +112,9 @@ class DefaultSlidePanel extends React.Component {
   }
 
   render() {
-    const containerAttributes = {
-      style: { border: '1px lightgrey solid' },
-    };
-
     return (
-      <div style={{ padding: '5px' }}>
-        <div {...containerAttributes}>
+      <div className={cx('container')}>
+        <div className={cx('container-attributes')}>
           <SlidePanel
             mainContent={mainContentForSlidePanel(this.handlePanelToggle)}
             panelContent={panelContentForSlidePanel(this.handlePanelToggle, this.handleFullscreenToggle)}

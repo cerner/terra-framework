@@ -1,21 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import classNames from 'classnames/bind';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import SlideGroup from 'terra-slide-group/lib/SlideGroup';
+import styles from './SlideGroupDemo.scss';
 
-const containerStyles = {
-  height: '250px',
-  width: '400px',
-  overflow: 'hidden',
-  position: 'relative',
-};
-
-const slideStyles = {
-  backgroundColor: 'lightblue',
-  height: '100%',
-  padding: '5px',
-};
+const cx = classNames.bind(styles);
 
 class SlideGroupDemo extends React.Component {
   constructor(props) {
@@ -47,7 +37,7 @@ class SlideGroupDemo extends React.Component {
       slides.push((
         <div
           key={`Slide ${i}`}
-          style={slideStyles}
+          className={cx('slide-style')}
         >
           <h2>
 Slide
@@ -61,7 +51,7 @@ Slide
     }
 
     return (
-      <div style={containerStyles}>
+      <div className={cx('container-style')}>
         <SlideGroup items={slides} isAnimated={this.props.isAnimated} />
       </div>
     );
