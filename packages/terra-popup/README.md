@@ -2,7 +2,7 @@
 
 
 [![NPM version](https://badgen.net/npm/v/terra-popup)](https://www.npmjs.org/package/terra-popup)
-[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.org/cerner/terra-framework)
+[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
 The Terra Popup is higher order component that launches terra-hookshot positioned content with the ability to display a dynamic arrow.
 
