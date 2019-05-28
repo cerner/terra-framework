@@ -1,0 +1,17 @@
+@import './PopupTestCommon';
+
+:local {
+  .test-popup-area {
+    @include popup-area-common(200px, 200px, relative);
+  }
+
+  .popup-text {
+    @extend %popup-text-common;
+  }
+
+  .popup-button {
+    @include popup-button-common(10px, 10px);
+    bottom: 0;
+    right: 10px;
+  }
+}

@@ -1,5 +1,9 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import Popup from '../../../Popup';
+import styles from './ArrowPopupCommon.test.scss';
+
+const cx = classNames.bind(styles);
 
 class ArrowPopup extends React.Component {
   constructor(props) {
@@ -33,7 +37,7 @@ class ArrowPopup extends React.Component {
 
   render() {
     return (
-      <div id="test-popup-area" style={{ height: '100px', width: '350px', background: 'aliceblue' }}>
+      <div id="test-popup-area" className={cx('test-popup-area')}>
         <Popup
           classNameArrow="test-arrow"
           classNameContent="test-content"
@@ -45,7 +49,7 @@ class ArrowPopup extends React.Component {
         >
           <p>this is popup content</p>
         </Popup>
-        <button type="button" id="arrow-button" style={{ marginTop: '40px', float: 'right' }} onClick={this.handleButtonClick} ref={this.setButtonNode}>
+        <button type="button" id="arrow-button" className={cx('arrow-button')} onClick={this.handleButtonClick} ref={this.setButtonNode}>
           Arrow Popup
         </button>
       </div>
