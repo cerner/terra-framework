@@ -70,7 +70,7 @@ exports[`UtilityMenu should render default element 1`] = `
               startContent={null}
               title="Terra.applicationNavigation.utilityMenu.headerTitle"
             >
-              <header
+              <div
                 className="flex-header"
               >
                 <div
@@ -86,7 +86,7 @@ exports[`UtilityMenu should render default element 1`] = `
                     </h1>
                   </div>
                 </div>
-              </header>
+              </div>
             </ActionHeaderContainer>
           </ActionHeader>
         </div>
@@ -302,7 +302,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
               startContent={null}
               title="Terra.applicationNavigation.utilityMenu.headerTitle"
             >
-              <header
+              <div
                 className="flex-header"
               >
                 <div
@@ -318,7 +318,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                     </h1>
                   </div>
                 </div>
-              </header>
+              </div>
             </ActionHeaderContainer>
           </ActionHeader>
         </div>
@@ -783,7 +783,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
               startContent={null}
               title="Terra.applicationNavigation.utilityMenu.headerTitle"
             >
-              <header
+              <div
                 className="flex-header"
               >
                 <div
@@ -799,7 +799,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
                     </h1>
                   </div>
                 </div>
-              </header>
+              </div>
             </ActionHeaderContainer>
           </ActionHeader>
         </div>
