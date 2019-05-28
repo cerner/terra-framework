@@ -20,6 +20,7 @@ describe('HeaderUtilityMenu', () => {
   describe('Focus-header utility menu', () => {
     beforeEach(() => {
       browser.keys(['Tab', 'Tab', 'Tab']);
+      browser.moveToObject('#root', 0, 0);
     });
 
     Terra.it.validatesElement({ selector: '#default' });
