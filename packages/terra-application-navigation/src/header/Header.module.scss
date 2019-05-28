@@ -2,15 +2,15 @@
   .header {
     align-content: center;
     align-items: center; // TODO THEME
-    background-color: rgb(02, 141, 229); // TODO: clinical value variable?
-    background-image: 
-      radial-gradient(100% 70% at 50% 0%, rgba(118, 192, 252, 0.7), rgba(118, 192, 252, 0)),
-      radial-gradient(100% 100% at 0% 0%, rgba(0, 148, 239, 1), rgba(0, 148, 239, 0)),
-      radial-gradient(100% 100% at 0% 100%, rgba(02, 141, 229, 1), rgba(02, 141, 229, 0)),
-      radial-gradient(100% 100% at 100% 0%, rgba(176, 188, 255, 1), rgba(176, 188, 255, 0)),
-      radial-gradient(100% 100% at 100% 100%, rgba(87, 97, 194, 1), rgba(165, 167, 244, 0)),
-      radial-gradient(100% 70% at 50% 100%, rgba(125, 192, 252, 1), rgba(125, 192, 252, 0)),
-      linear-gradient(rgba(02, 141, 229, 1), rgba(02, 141, 229, 1)); // TODO: clinical value variable?
+    background-color: var(--terra-application-navigation-header-background-color, rgb(25, 104, 166));
+    background-image: var(--terra-application-navigation-header-background-image,
+    radial-gradient(100% 70% at 50% 0%, rgba(70, 121, 171, 0.7), rgba(70, 121, 171, 0)),
+    radial-gradient(100% 100% at 0% 0%, rgba(25, 104, 166, 1), rgba(25, 104, 166, 0)),
+    radial-gradient(100% 100% at 0% 100%, rgba(29, 95, 153, 1), rgba(29, 95, 153, 0)),
+    radial-gradient(100% 100% at 100% 0%, rgba(95, 119, 172, 1), rgba(95, 119, 172, 0)),
+    radial-gradient(100% 600% at 100% 100%, rgba(81, 94, 160, 1), rgba(81, 94, 160, 0)),
+    radial-gradient(100% 70% at 50% 100%, rgba(81, 121, 172, 1), rgba(81, 121, 172, 0)),
+    linear-gradient(rgba(25, 104, 166, 1), rgba(25, 104, 166, 1)));
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
@@ -19,20 +19,10 @@
     padding-right: 1.429rem;
     position: relative;
     z-index: 5001;
-
-    &::before {
-      background-color: rgba(42, 75, 119, 0.6); // TODO: imitate clinical value @midnight60
-      content: '';
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-    }
   }
 
   .title-container {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--terra-application-navigation-header-title-color, rgba(255, 255, 255, 0.9));
     flex: 0 0 auto;
     max-width: 30%;
     position: relative;
@@ -90,11 +80,11 @@
   }
 
   .skip-content-button {
-    background-color: #0079be;
-    border: 1px solid #fff;
+    background-color: var(--terra-application-navigation-header-skip-background-color, #0079be);
+    border: var(--terra-application-navigation-header-skip-border, 1px solid #fff);
     border-radius: 0;
     clip: rect(1px, 1px, 1px, 1px);
-    color: #fff;
+    color: var(--terra-application-navigation-header-skip-color, #fff);
     height: 1px;
     margin: 0;
     outline: none;

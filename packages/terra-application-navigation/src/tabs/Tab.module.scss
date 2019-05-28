@@ -36,11 +36,11 @@
   .tab,
   .tab-rollup {
     background-clip: content-box;
-    box-shadow: inset 1px 0 0 0 rgba(42, 75, 119, 0.6), inset 2px 0 0 0 rgba(89, 159, 253, 0.3);
+    box-shadow: var(--terra-application-navigation-tab-box-shadow, inset 1px 0 0 0 #3a6194, inset 2px 0 0 0 #5483c1);
     padding-left: 2px;
 
     &:last-of-type {
-      box-shadow: inset 1px 0 0 0 rgba(42, 75, 119, 0.6), inset 2px 0 0 0 rgba(89, 159, 253, 0.3), inset -1px 0 0 0 rgba(42, 75, 119, 0.6), inset -2px 0 0 0 rgba(89, 159, 253, 0.3);
+      box-shadow: var(--terra-application-navigation-tab-last-box-shadow, inset 1px 0 0 0 #3a6194, inset 2px 0 0 0 #5483c1, inset -1px 0 0 0 #5483c1, inset -2px 0 0 0 #3a6194);
       padding-right: 2px;
     }
   }
@@ -49,7 +49,7 @@
   .tab-rollup {
     background-color: transparent;
     border: 0;
-    color: #fff;
+    color: var(--terra-application-navigation-tab-color, #fff);
     cursor: pointer;
     display: flex;
     flex: 0 0 auto;
@@ -91,21 +91,21 @@
 
     &:hover {
       .tab-inner {
-        background-color: rgba(42, 75, 119, 0.3);
+        background-color: var(--terra-application-navigation-tab-hover-background-color, rgba(42, 75, 119, 0.3));
       }
     }
 
     &:active {
       .tab-inner {
-        background-color: rgba(42, 75, 119, 0.8);
+        background-color: var(--terra-application-navigation-tab-active-background-color, rgba(42, 75, 119, 0.8));
       }
     }
 
     &[aria-current='true'] {
-      box-shadow: inset 1px 0 0 0 rgba(89, 159, 253, 0.3), inset 2px 0 0 0 rgba(42, 75, 119, 0.6);
+      box-shadow: var(--terra-application-navigation-tab-current-box-shadow, inset 1px 0 0 0 #5483c1, inset 2px 0 0 0 #3a6194);
 
       .tab-inner {
-        background-color: rgba(42, 75, 119, 0.6);
+        background-color: #3a6194;
         background-image: linear-gradient(to left, rgba(89, 159, 253, 0.8), rgba(89, 159, 253, 0.8));
         background-size: 100% 6px;
         box-shadow: none;
@@ -113,13 +113,13 @@
       }
 
       &:last-of-type {
-        box-shadow: inset 1px 0 0 0 rgba(42, 75, 119, 0.6), inset 2px 0 0 0 rgba(89, 159, 253, 0.3), inset -1px 0 0 0 rgba(42, 75, 119, 0.6), inset -2px 0 0 0 rgba(89, 159, 253, 0.3);
+        box-shadow: var(--terra-application-navigation-tab-current-last-box-shadow, inset 1px 0 0 0 #3a6194, inset 2px 0 0 0 #5483c1, inset -1px 0 0 0 #5483c1, inset -2px 0 0 0 #3a6194);
       }
     }
 
     &[data-focus-styles-enabled='true']:focus {
       .tab-inner {
-        background-color: rgba(89, 159, 253, 0.4);
+        background-color: var(--terra-application-navigation-tab-focus-background-color, rgba(89, 159, 253, 0.4));
         z-index: 5;
       }
     }

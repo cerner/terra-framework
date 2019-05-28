@@ -2,7 +2,7 @@
 :local {
   .extension-rollup {
     align-items: center;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--terra-application-navigation-extension-rollup-color, rgba(255, 255, 255, 0.8));
     cursor: pointer;
     display: flex;
     height: 100%;
@@ -12,21 +12,21 @@
 
     &:hover {
       .extension-rollup-inner {
-        color: #fff;
+        color: var(--terra-application-navigation-extension-rollup-hover-color, #fff);
       }
     }
 
     &[data-focus-styles-enabled='true']:focus {
       .extension-rollup-inner {
-        background-color: rgba(89, 159, 253, 0.4);
+        background-color: var(--terra-application-navigation-extension-rollup-focus-background-color, rgba(73, 149, 250, 0.4));
         border-radius: 100%;
-        color: #fff;
+        color: var(--terra-application-navigation-extension-rollup-focus-color, #fff);
       }
     }
   
     &:active {
       .extension-rollup-inner {
-        color: rgba(255, 255, 255, 0.5);
+        color: var(--terra-application-navigation-extension-rollup-active-color, rgba(255, 255, 255, 0.5));
       }
     }
   }

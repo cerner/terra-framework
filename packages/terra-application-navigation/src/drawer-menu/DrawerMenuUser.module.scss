@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    padding: 1.857rem 1.4285714286rem 2rem; // TODO THEME
+    padding: 1.857rem 1.4285714286rem 2rem;
 
     .name,
     .detail {
@@ -16,13 +16,13 @@
       display: flex;
       height: 5.714rem;
       justify-content: center;
-      margin-bottom: 1.143rem; // TODO THEME
+      margin-bottom: 1.143rem;
       position: relative;
       width: 5.714rem;
     }
   
     .avatar-outline {
-      border: 0.1429rem solid rgba(255, 255, 255, 0.1);
+      border: var(--terra-application-navigation-drawer-menu-avatar-outline-border, rgba(255, 255, 255, 0.1));
       border-radius: 50%;
       height: 100%;
       position: absolute;
@@ -35,7 +35,7 @@
     }
 
     .name {
-      color: #fff;
+      color: var(--terra-application-navigation-drawer-menu-user-large-name-color, #fff);
       font-size: 1.2857142857rem;
       font-weight: 500;
       overflow-wrap: break-word;
@@ -46,7 +46,7 @@
     }
   
     .detail {
-      color: rgba(255, 255, 255, 0.7);
+      color: var(--terra-application-navigation-drawer-menu-user-large-detail-color, rgba(255, 255, 255, 0.7));
       font-size: 1rem;
       margin-top: 0.2142857143rem;
       overflow-wrap: break-word;
@@ -61,18 +61,18 @@
     align-items: top;
     display: flex;
     justify-content: flex-start;
-    padding: 0.7142857143rem 1.4285714286rem; // TODO THEME
+    padding: 0.7142857143rem 1.4285714286rem;
 
     .avatar-container {
       flex: 0 0 auto;
-      height: 2.143rem; // TODO THEME
-      margin-right: 0.5rem; // TODO THEME
-      width: 2.143rem; // TODO THEME
+      height: 2.143rem;
+      margin-right: 0.5rem;
+      width: 2.143rem;
     }
 
     .avatar {
-      height: 2.143rem; // TODO THEME
-      width: 2.143rem;  // TODO THEME
+      height: 2.143rem;
+      width: 2.143rem;
     }
   
     .info-container {
@@ -84,9 +84,9 @@
     }
   
     .name {
-      color: rgba(255, 255, 255, 1); // TODO THEME
-      font-size: 1rem; // TODO THEME
-      font-weight: 500; // TODO THEME
+      color: var(--terra-application-navigation-drawer-menu-user-small-name-color, rgba(255, 255, 255, 1));
+      font-size: 1rem;
+      font-weight: 500;
       overflow-wrap: break-word;
       white-space: normal;
       word-break: break-word;
@@ -94,8 +94,8 @@
     }
   
     .detail {
-      color: rgba(255, 255, 255, 0.7); // TODO THEME
-      font-size: 0.8571428571rem; // TODO THEME
+      color: var(--terra-application-navigation-drawer-menu-user-small-detail-color, rgba(255, 255, 255, 0.7));
+      font-size: 0.8571428571rem;
       overflow-wrap: break-word;
       padding-top: 0.2142857143rem;
       white-space: normal;

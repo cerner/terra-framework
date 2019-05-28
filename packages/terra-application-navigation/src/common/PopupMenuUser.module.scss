@@ -4,18 +4,18 @@
     border-bottom: 1px solid #96c2fe;
     display: flex;
     justify-content: flex-start;
-    padding: 0.8571428571rem 0.7142857143rem 0.8571428571rem 1.0714285714rem; // TODO THEME
+    padding: 0.8571428571rem 0.7142857143rem 0.8571428571rem 1.0714285714rem;
 
     .avatar-container {
       flex: 0 0 auto;
-      height: 54px; // TODO THEME
-      margin-right: 0.7142857143rem; // TODO THEME
-      width: 54px; // TODO THEME
+      height: 3.8571rem;
+      margin-right: 0.7142857143rem;
+      width: 3.8571rem;
     }
 
     .avatar {
-      height: 54px; // TODO THEME
-      width: 54px;  // TODO THEME
+      height: 3.8571rem;
+      width: 3.8571rem;
     }
   
     .info-container {
@@ -27,10 +27,9 @@
     }
   
     .name {
-      color: rgba(17, 22, 25, 0.85); // TODO THEME
-      font-size: 1.143rem; // TODO THEME
-      font-weight: 500; // TODO THEME
-      // line-height: 1rem; // TODO THEME
+      color: var(--terra-application-navigation-user-layout-name-color, rgba(17, 22, 25, 0.85));
+      font-size: 1.143rem;
+      font-weight: 500;
       overflow-wrap: break-word;
       white-space: normal;
       word-break: break-word;
@@ -38,9 +37,8 @@
     }
   
     .detail {
-      color: rgba(17, 22, 25, 0.75); // TODO THEME
-      font-size: 1rem; // TODO THEME
-      // line-height: 0.8571428571rem; // TODO THEME
+      color: var(--terra-application-navigation-user-layout-detail-color, rgba(17, 22, 25, 0.75));
+      font-size: 1rem;
       overflow-wrap: break-word;
       padding-top: 0.2142857143rem;
       white-space: normal;

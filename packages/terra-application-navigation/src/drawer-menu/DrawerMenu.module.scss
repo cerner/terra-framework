@@ -1,6 +1,6 @@
 :local {
   .drawer-menu {
-    background-color: #2a4b77; // TODO: THEME
+    background-color: var(--terra-application-navigation-drawer-menu-background-color, #2a4b77);
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -11,16 +11,16 @@
   }
 
   .footer {
-    background-color: rgba(17, 22, 25, 0.2); // TODO: THEME
-    border-top: 1px solid rgba(255, 255, 255, 0.2); // TODO: THEME
-    box-shadow: 0 -10px 10px 5px #1a2f4b; // TODO: THEME
+    background-color: var(--terra-application-navigation-drawer-menu-footer-background-color, rgba(17, 22, 25, 0.2));
+    border-top: var(--terra-application-navigation-drawer-menu-footer-border-top, 1px solid rgba(255, 255, 255, 0.2));
+    box-shadow: var(--terra-application-navigation-drawer-menu-footer-box-shadow, 0 -10px 10px 5px #1a2f4b);
     flex: 0 0 auto;
-    padding: 0.7142857143rem; // TODO: THEME
+    padding: 0.7142857143rem;
     position: relative;
   }
 
   .vertical-overflow-container {
-    background-color: #1a2f4b; // TODO: THEME
+    background-color: var(--terra-application-navigation-drawer-menu-overflow-background-color, #1a2f4b);
     flex: 1 1 auto;
     height: 100%;
     min-height: 0;
@@ -28,29 +28,29 @@
   }
 
   .header {
-    background-color: #2a4b77; // TODO THEME (SAME AS drawer-menu background-color);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--terra-application-navigation-drawer-menu-header-background-color, #2a4b77);
+    border-bottom: var(--terra-application-navigation-drawer-menu-header-border-bottom, 1px solid rgba(255, 255, 255, 0.1));
   }
 
   .header-background-fill {
-    background-color: rgba(17, 22, 25, 0.3); // TODO THEME
+    background-color: var(--terra-application-navigation-drawer-menu-header-fill-background-color, rgba(17, 22, 25, 0.3));
   }
 
   .navigation-item-list,
   .utility-item-list {
-    background-color: #2a4b77; // TODO THEME, SAME AS drawer-menu background
+    background-color: var(--terra-application-navigation-drawer-menu-list-background-color, #2a4b77);
     list-style: none;
     margin: 0;
     padding: 0;  
   }
 
   .navigation-item-list > * {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); // TODO THEME
+    border-bottom: var(--terra-application-navigation-drawer-menu-navigation-list-border-bottom, 1px solid rgba(255, 255, 255, 0.1));
   }
 
   .utility-item-list { 
-    margin-bottom: 0.7142857143rem; // TODO THEME
-    margin-top: 0.7142857143rem; // TODO THEME
+    margin-bottom: 0.7142857143rem;
+    margin-top: 0.7142857143rem;
   }
 }
 

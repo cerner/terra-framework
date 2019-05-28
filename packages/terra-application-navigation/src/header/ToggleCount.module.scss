@@ -1,11 +1,11 @@
 :local {
   .count {
     background-clip: padding-box;
-    background-image: linear-gradient(to bottom, #ffb200, #ff7e00);
-    border: solid 1px rgba(89, 159, 253, 0.4);
+    background-image: var(--terra-application-navigation-toggle-count-background-image, linear-gradient(to bottom, #ffb200, #ff7e00));
+    border: var(--terra-application-navigation-toggle-count-border, solid 1px rgba(89, 159, 253, 0.4));
     border-radius: 2.143rem;
-    box-shadow: 0 1px 1px 0 rgba(17, 22, 25, 0.3);
-    color: #000;
+    box-shadow: var(--terra-application-navigation-toggle-count-box-shadow, 0 1px 1px 0 rgba(17, 22, 25, 0.3));
+    color: var(--terra-application-navigation-toggle-count-color, #000);
     flex: 0 0 auto;
     height: 0.7857rem;
     padding: 0;

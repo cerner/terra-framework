@@ -25,21 +25,21 @@
   }
 
   .drawer-menu-container {
-    background-color: var(--terra-application-layout-menu-panel-panel-background-color, rgba(17, 22, 25, 0.3));
+    background-color: var(--terra-application-navigation-drawer-background-color, rgba(17, 22, 25, 0.3));
     height: 100%;
     position: relative;
     top: 0;
-    width: var(--terra-application-layout-menu-panel-panel-width-default, calc(100% - 3.571rem));
+    width: var(--terra-application-navigation-drawer-width-default, calc(100% - 3.571rem));
     z-index: 0;
     
     @include terra-mq-small-up {
-      width: var(--terra-application-layout-menu-panel-panel-width-medium, 20rem);
+      width: var(--terra-application-navigation-drawer-width-medium, 20rem);
     }
   }
 
   .content-layout {
-    background-color: #fff;
-    box-shadow: -10px 0 15px 0 rgba(17, 22, 25, 0.63);
+    background-color: var(--terra-application-navigation-content-layout-background-color,  #fff);
+    box-shadow:  var(--terra-application-navigation-content-layout-box-shadow, -10px 0 15px 0 rgba(17, 22, 25, 0.63));
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -55,18 +55,18 @@
   }
 
   [dir=ltr] .content-layout.drawer-menu-is-open {
-    transform: translate3d(var(--terra-application-layout-menu-panel-panel-width-default, calc(100% - 3.571rem)), 0, 0);
+    transform: translate3d(var(--terra-application-navigation-content-layout-width-default, calc(100% - 3.571rem)), 0, 0);
 
     @include terra-mq-small-up {
-      transform: translate3d(var(--terra-application-layout-menu-panel-panel-width-medium, 20rem), 0, 0);
+      transform: translate3d(var(--terra-application-navigation-content-layout-width-medium, 20rem), 0, 0);
     } 
   }
 
   [dir=rtl] .content-layout.drawer-menu-is-open {
-    transform: translate3d(calc(-1 * var(--terra-application-layout-menu-panel-panel-width-default, calc(100% - 3.571rem))), 0, 0);
+    transform: translate3d(calc(-1 * var(--terra-application-navigation-content-layout-width-default, calc(100% - 3.571rem))), 0, 0);
 
     @include terra-mq-small-up {
-      transform: translate3d(calc(-1 * var(--terra-application-layout-menu-panel-panel-width-medium, 20rem)), 0, 0);
+      transform: translate3d(calc(-1 * var(--terra-application-navigation-content-layout-width-medium, 20rem)), 0, 0);
     } 
   }
 

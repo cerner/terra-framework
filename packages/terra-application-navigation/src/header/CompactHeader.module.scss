@@ -2,7 +2,15 @@
   .compact-header {
     align-content: center;
     align-items: center; // TODO THEME
-    background-color: #0079be;
+    background-color: var(--terra-application-navigation-compact-header-background-color, rgb(25, 104, 166));
+    background-image: var(--terra-application-navigation-compact-header-background-image,
+    radial-gradient(100% 70% at 50% 0%, rgba(70, 121, 171, 0.7), rgba(70, 121, 171, 0)),
+    radial-gradient(100% 100% at 0% 0%, rgba(25, 104, 166, 1), rgba(25, 104, 166, 0)),
+    radial-gradient(100% 100% at 0% 100%, rgba(29, 95, 153, 1), rgba(29, 95, 153, 0)),
+    radial-gradient(100% 100% at 100% 0%, rgba(95, 119, 172, 1), rgba(95, 119, 172, 0)),
+    radial-gradient(100% 600% at 100% 100%, rgba(81, 94, 160, 1), rgba(81, 94, 160, 0)),
+    radial-gradient(100% 70% at 50% 100%, rgba(81, 121, 172, 1), rgba(81, 121, 172, 0)),
+    linear-gradient(rgba(25, 104, 166, 1), rgba(25, 104, 166, 1)));
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
@@ -12,17 +20,6 @@
     padding-right: 0.3571rem;
     position: relative;
     z-index: 5001;
-    
-    &::before {
-      background-color: transparent;
-      background-image: none;
-      content: '';
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-    }
   }
 
   .menu-button {
