@@ -22,7 +22,7 @@ const ApplicationMenuNameStandard = () => (
       />
     )}
     extensions={<Placeholder text="Extensions" type="menu-extensions" />}
-    content={<Placeholder text="Content" type="content" />}
+    content={<Placeholder text="Content" type="default" />}
     footer={<Placeholder text="Footer" type="footer" />}
   />
 );

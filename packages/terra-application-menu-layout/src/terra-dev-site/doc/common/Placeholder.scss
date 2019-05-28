@@ -5,22 +5,8 @@
     position: relative;
     width: 100%;
   }
-  
-  .wrapper1-header-extensions {
-    height: 100%;
-    padding: 5px;
-    position: relative;
-    width: 100px;
-  }
 
-  .wrapper1-utiltities {
-    height: 100%;
-    padding: 5px;
-    position: relative;
-    width: 100px;
-  }
-
-  .wrapper1-menu-extensions {
+  .wrapper1-header {
     height: 50px;
     padding: 5px;
     position: relative;
@@ -28,6 +14,13 @@
   }
 
   .wrapper1-footer {
+    height: 50px;
+    padding: 5px;
+    position: relative;
+    width: 100%;
+  }
+
+  .wrapper1-extensions {
     height: 50px;
     padding: 5px;
     position: relative;
@@ -42,6 +35,7 @@
   }
 
   .wrapper3 {
+    color: #808080;
     left: 50%;
     position: absolute;
     top: 50%;

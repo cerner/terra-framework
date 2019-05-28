@@ -1,15 +1,19 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import ApplicationMenuLayout from 'terra-application-menu-layout/lib/ApplicationMenuLayout';
 import PlaceHolder from 'terra-application-menu-layout/lib/terra-dev-site/doc/common/Placeholder';
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+import styles from './MenuWireframe.scss';
+
+const cx = classNames.bind(styles);
 
 const Menu = () => (
-  <div style={{ height: '450px', width: '300px' }}>
+  <div className={cx('content-wrapper')}>
     <ApplicationMenuLayout
-      header={<PlaceHolder text="Header" height="50px" />}
-      footer={<PlaceHolder text="Footer" height="50px" />}
-      extensions={<PlaceHolder text="Extensions" height="50px" />}
+      header={<PlaceHolder text="Header" type="header" />}
+      footer={<PlaceHolder text="Footer" type="footer" />}
+      extensions={<PlaceHolder text="Extensions" type="extensions" />}
       content={<PlaceHolder text="Content" />}
     />
   </div>
