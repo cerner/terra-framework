@@ -8,7 +8,7 @@ describe('Hookshot', () => {
       browser.waitForVisible('#testDefaultContent');
     });
 
-    Terra.should.matchScreenshot({ selector: '#default-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#default-bounds' });
   });
 
   // none position behavior
@@ -20,7 +20,7 @@ describe('Hookshot', () => {
       browser.waitForVisible('#attachment-behavior-none-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#attachment-behavior-none-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#attachment-behavior-none-bounds' });
   });
 
   describe('Displays in primary position when there is not enough room in primary position with no attachment behavior', () => {
@@ -31,7 +31,7 @@ describe('Hookshot', () => {
       browser.waitForVisible('#attachment-behavior-none-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#attachment-behavior-none-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#attachment-behavior-none-bounds' });
   });
 
   // push position behavior
@@ -43,7 +43,7 @@ describe('Hookshot', () => {
       browser.waitForVisible('#attachment-behavior-push-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#attachment-behavior-push-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#attachment-behavior-push-bounds' });
   });
 
   // flip position behavior
@@ -55,7 +55,7 @@ describe('Hookshot', () => {
       browser.waitForVisible('#attachment-behavior-flip-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#attachment-behavior-flip-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#attachment-behavior-flip-bounds' });
   });
 
   describe('Displays with position flipped when there is not enough room in primary position with flip attachment behavior', () => {
@@ -66,7 +66,7 @@ describe('Hookshot', () => {
       browser.waitForVisible('#attachment-behavior-flip-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#attachment-behavior-flip-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#attachment-behavior-flip-bounds' });
   });
 
   describe('Displays with position pushed when there is not enough room in primary or flipped position with flip attachment behavior', () => {
@@ -77,7 +77,7 @@ describe('Hookshot', () => {
       browser.waitForVisible('#attachment-behavior-flip-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#attachment-behavior-flip-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#attachment-behavior-flip-bounds' });
   });
 
   // auto position behavior
@@ -89,7 +89,7 @@ describe('Hookshot', () => {
       browser.waitForVisible('#attachment-behavior-auto-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#attachment-behavior-auto-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#attachment-behavior-auto-bounds' });
   });
 
   describe('Displays with position flipped when there is not enough room in primary position with auto attachment behavior', () => {
@@ -100,7 +100,7 @@ describe('Hookshot', () => {
       browser.waitForVisible('#attachment-behavior-auto-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#attachment-behavior-auto-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#attachment-behavior-auto-bounds' });
   });
 
   describe('Displays with position rotated 90 degrees when there is not enough room in primary or flipped positions with auto attachment behavior', () => {
@@ -111,7 +111,7 @@ describe('Hookshot', () => {
       browser.waitForVisible('#attachment-behavior-auto-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#attachment-behavior-auto-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#attachment-behavior-auto-bounds' });
   });
 
   describe('Displays with position rotated -90 degrees when there is not enough room in primary, flipped, or 90 degree positions with auto attachment behavior', () => {
@@ -122,7 +122,7 @@ describe('Hookshot', () => {
       browser.waitForVisible('#attachment-behavior-auto-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#attachment-behavior-auto-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#attachment-behavior-auto-bounds' });
   });
 
   describe('Displays with position pushed when there is not enough room in primary, flipped, 90 degree, or -90 degree positions with auto attachment', () => {
@@ -133,7 +133,7 @@ describe('Hookshot', () => {
       browser.waitForVisible('#attachment-behavior-auto-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#attachment-behavior-auto-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#attachment-behavior-auto-bounds' });
   });
 
   // attachmentMargin: validate number set adjusts positioning by so much.
@@ -144,55 +144,55 @@ describe('Hookshot', () => {
       browser.click('#attach-TS');
       browser.waitForVisible('#attachment-margin-content');
     });
-    Terra.should.matchScreenshot('Top Start', { selector: '#attachment-margin-bounds' });
+    Terra.it.matchesScreenshot('Top Start', { selector: '#attachment-margin-bounds' });
 
     it('Top Center Content Attachment', () => {
       browser.click('#attach-TC');
       browser.waitForVisible('#attachment-margin-content');
     });
-    Terra.should.matchScreenshot('Top Center', { selector: '#attachment-margin-bounds' });
+    Terra.it.matchesScreenshot('Top Center', { selector: '#attachment-margin-bounds' });
 
     it('Top End Content Attachment', () => {
       browser.click('#attach-TE');
       browser.waitForVisible('#attachment-margin-content');
     });
-    Terra.should.matchScreenshot('Top End', { selector: '#attachment-margin-bounds' });
+    Terra.it.matchesScreenshot('Top End', { selector: '#attachment-margin-bounds' });
 
     it('Middle Start Content Attachment', () => {
       browser.click('#attach-MS');
       browser.waitForVisible('#attachment-margin-content');
     });
-    Terra.should.matchScreenshot('Middle Start', { selector: '#attachment-margin-bounds' });
+    Terra.it.matchesScreenshot('Middle Start', { selector: '#attachment-margin-bounds' });
 
     it('Middle Center Content Attachment', () => {
       browser.click('#attach-MC');
       browser.waitForVisible('#attachment-margin-content');
     });
-    Terra.should.matchScreenshot('Middle Center', { selector: '#attachment-margin-bounds' });
+    Terra.it.matchesScreenshot('Middle Center', { selector: '#attachment-margin-bounds' });
 
     it('Middle End Content Attachment', () => {
       browser.click('#attach-ME');
       browser.waitForVisible('#attachment-margin-content');
     });
-    Terra.should.matchScreenshot('Middle End', { selector: '#attachment-margin-bounds' });
+    Terra.it.matchesScreenshot('Middle End', { selector: '#attachment-margin-bounds' });
 
     it('Bottom Start Content Attachment', () => {
       browser.click('#attach-BS');
       browser.waitForVisible('#attachment-margin-content');
     });
-    Terra.should.matchScreenshot('Bottom Start', { selector: '#attachment-margin-bounds' });
+    Terra.it.matchesScreenshot('Bottom Start', { selector: '#attachment-margin-bounds' });
 
     it('Bottom Center Content Attachment', () => {
       browser.click('#attach-BC');
       browser.waitForVisible('#attachment-margin-content');
     });
-    Terra.should.matchScreenshot('Bottom Center', { selector: '#attachment-margin-bounds' });
+    Terra.it.matchesScreenshot('Bottom Center', { selector: '#attachment-margin-bounds' });
 
     it('Bottom End Content Attachment', () => {
       browser.click('#attach-BE');
       browser.waitForVisible('#attachment-margin-content');
     });
-    Terra.should.matchScreenshot('Bottom End', { selector: '#attachment-margin-bounds' });
+    Terra.it.matchesScreenshot('Bottom End', { selector: '#attachment-margin-bounds' });
   });
 
 
@@ -205,28 +205,28 @@ describe('Hookshot', () => {
       browser.click('#trigger-bounding-container');
       browser.waitForVisible('#bounding-container-content');
     });
-    Terra.should.matchScreenshot('Push Left', { selector: '#bounding-container-bounds' });
+    Terra.it.matchesScreenshot('Push Left', { selector: '#bounding-container-bounds' });
 
     it('Push Right', () => {
       browser.click('#push-right');
       browser.click('#trigger-bounding-container');
       browser.waitForVisible('#bounding-container-content');
     });
-    Terra.should.matchScreenshot('Push Right', { selector: '#bounding-container-bounds' });
+    Terra.it.matchesScreenshot('Push Right', { selector: '#bounding-container-bounds' });
 
     it('Push Down', () => {
       browser.click('#push-down');
       browser.click('#trigger-bounding-container');
       browser.waitForVisible('#bounding-container-content');
     });
-    Terra.should.matchScreenshot('Push Down', { selector: '#bounding-container-bounds' });
+    Terra.it.matchesScreenshot('Push Down', { selector: '#bounding-container-bounds' });
 
     it('Push Up', () => {
       browser.click('#push-up');
       browser.click('#trigger-bounding-container');
       browser.waitForVisible('#bounding-container-content');
     });
-    Terra.should.matchScreenshot('Push Up', { selector: '#bounding-container-bounds' });
+    Terra.it.matchesScreenshot('Push Up', { selector: '#bounding-container-bounds' });
   });
 
   // Verify Content Offset Positioning
@@ -237,7 +237,7 @@ describe('Hookshot', () => {
       browser.waitForVisible('#ContentOffset-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#ContentOffset-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#ContentOffset-bounds' });
   });
 
   describe('Displays the content offset correctly for dir=rtl', () => {
@@ -252,7 +252,7 @@ describe('Hookshot', () => {
       browser.click('#ltr-ContentOffset');
     });
 
-    Terra.should.matchScreenshot({ selector: '#root' });
+    Terra.it.matchesScreenshot({ selector: '#root' });
   });
 
   // Verify Target Offset Positioning
@@ -262,7 +262,7 @@ describe('Hookshot', () => {
       browser.waitForVisible('#TargetOffset-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#TargetOffset-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#TargetOffset-bounds' });
   });
 
   describe('Displays the target offset correctly for dir=rtl', () => {
@@ -277,7 +277,7 @@ describe('Hookshot', () => {
       browser.click('#ltr-TargetOffset');
     });
 
-    Terra.should.matchScreenshot({ selector: '#root' });
+    Terra.it.matchesScreenshot({ selector: '#root' });
   });
 
   // Verify Enabled Behaviors
@@ -288,7 +288,7 @@ describe('Hookshot', () => {
       browser.waitForVisible('#NotEnabled-bounds');
     });
 
-    Terra.should.matchScreenshot({ selector: '#EnabledBehaviors-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#EnabledBehaviors-bounds' });
   });
 
 
@@ -301,7 +301,7 @@ describe('Hookshot', () => {
       browser.keys('ESCAPE');
     });
 
-    Terra.should.matchScreenshot({ selector: '#AllBehavior-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#AllBehavior-bounds' });
   });
 
   describe('Closes the hookshot content on outside click when all close behavior is present', () => {
@@ -314,7 +314,7 @@ describe('Hookshot', () => {
         .leftClick();
     });
 
-    Terra.should.matchScreenshot({ selector: '#AllBehavior-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#AllBehavior-bounds' });
   });
 
   describe('Closes the hookshot content on resize when all close behavior is present', () => {
@@ -327,7 +327,7 @@ describe('Hookshot', () => {
     });
     after(() => browser.setViewportSize(Terra.viewports('medium')[0]));
 
-    Terra.should.matchScreenshot({ selector: '#AllBehavior-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#AllBehavior-bounds' });
   });
 
   // Verify Close Behaviors - ESCAPE
@@ -339,7 +339,7 @@ describe('Hookshot', () => {
       browser.keys('ESCAPE');
     });
 
-    Terra.should.matchScreenshot({ selector: '#EscBehavior-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#EscBehavior-bounds' });
   });
 
   // Verify Close Behaviors - CLICK
@@ -353,7 +353,7 @@ describe('Hookshot', () => {
         .leftClick();
     });
 
-    Terra.should.matchScreenshot({ selector: '#OutsideClickBehavior-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#OutsideClickBehavior-bounds' });
   });
 
   // Verify Close Behaviors - CLICK on SVG
@@ -368,7 +368,7 @@ describe('Hookshot', () => {
         .leftClick();
     });
 
-    Terra.should.matchScreenshot({ selector: '#OutsideClickBehaviorWithSvgs-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#OutsideClickBehaviorWithSvgs-bounds' });
   });
 
   // Verify Close Behaviors - RESIZE
@@ -383,7 +383,7 @@ describe('Hookshot', () => {
     });
     after(() => browser.setViewportSize(Terra.viewports('medium')[0]));
 
-    Terra.should.matchScreenshot({ selector: '#ResizeBehavior-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#ResizeBehavior-bounds' });
   });
 
   // Verify Close Behaviors - NONE
@@ -396,7 +396,7 @@ describe('Hookshot', () => {
       browser.keys('ESCAPE');
     });
 
-    Terra.should.matchScreenshot({ selector: '#NoCloseBehavior-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#NoCloseBehavior-bounds' });
   });
 
   describe('Closes the hookshot content on outside click when no close behavior is present', () => {
@@ -410,7 +410,7 @@ describe('Hookshot', () => {
         .leftClick();
     });
 
-    Terra.should.matchScreenshot({ selector: '#NoCloseBehavior-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#NoCloseBehavior-bounds' });
   });
 
   describe('Closes the hookshot content on resize when no close behavior is present', () => {
@@ -424,7 +424,7 @@ describe('Hookshot', () => {
     });
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
 
-    Terra.should.matchScreenshot({ selector: '#NoCloseBehavior-bounds' });
+    Terra.it.matchesScreenshot({ selector: '#NoCloseBehavior-bounds' });
   });
 
   describe('Displays hookshot positioned by target coordinates', () => {
@@ -434,6 +434,6 @@ describe('Hookshot', () => {
       browser.waitForVisible('#test-coords-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#coords-test' });
+    Terra.it.matchesScreenshot({ selector: '#coords-test' });
   });
 });

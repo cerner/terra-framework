@@ -7,8 +7,8 @@ describe('RoutingMenu', () => {
       browser.waitForVisible('#routing-menu-test');
     });
 
-    Terra.should.matchScreenshot({ selector: '#routing-menu-test', viewports });
-    Terra.should.beAccessible({ viewports });
+    Terra.it.matchesScreenshot({ selector: '#routing-menu-test', viewports });
+    Terra.it.isAccessible({ viewports });
   });
 
   describe('Displays a routing menu without header', () => {
@@ -17,8 +17,8 @@ describe('RoutingMenu', () => {
       browser.waitForVisible('#routing-menu-test');
     });
 
-    Terra.should.matchScreenshot({ selector: '#routing-menu-test', viewports });
-    Terra.should.beAccessible({ viewports });
+    Terra.it.matchesScreenshot({ selector: '#routing-menu-test', viewports });
+    Terra.it.isAccessible({ viewports });
   });
 
   describe('Navigates away from the site', () => {

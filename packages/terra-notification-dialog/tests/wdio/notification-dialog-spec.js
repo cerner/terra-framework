@@ -13,8 +13,8 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
       expect(browser.hasFocus('[class*="NotificationDialog-module__actions"] button:first-child')).to.be.equal(true);
     });
 
-    Terra.should.beAccessible({ selector });
-    Terra.should.matchScreenshot({ selector });
+    Terra.it.isAccessible({ selector });
+    Terra.it.matchesScreenshot({ selector });
   });
 
   describe('Notification Dialog shifts focus into modal on tab', () => {
@@ -28,7 +28,7 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
       });
     });
 
-    Terra.should.matchScreenshot({ selector });
+    Terra.it.matchesScreenshot({ selector });
   });
 
   describe('Notification Dialog traps focus in modal', () => {
@@ -38,7 +38,7 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
       browser.keys('Tab', 'Tab', 'Tab', 'Tab');
     });
 
-    Terra.should.matchScreenshot({ selector });
+    Terra.it.matchesScreenshot({ selector });
   });
 
   describe('Success Variant notification-dialog', () => {
@@ -47,8 +47,8 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
       browser.click('#trigger-notification-dialog');
     });
 
-    Terra.should.beAccessible({ selector });
-    Terra.should.matchScreenshot({ selector });
+    Terra.it.isAccessible({ selector });
+    Terra.it.matchesScreenshot({ selector });
   });
 
   describe('Info Variant notification-dialog', () => {
@@ -57,8 +57,8 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
       browser.click('#trigger-notification-dialog');
     });
 
-    Terra.should.beAccessible({ selector });
-    Terra.should.matchScreenshot({ selector });
+    Terra.it.isAccessible({ selector });
+    Terra.it.matchesScreenshot({ selector });
   });
 
   describe('Error Variant notification-dialog', () => {
@@ -67,8 +67,8 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
       browser.click('#trigger-notification-dialog');
     });
 
-    Terra.should.beAccessible({ selector });
-    Terra.should.matchScreenshot({ selector });
+    Terra.it.isAccessible({ selector });
+    Terra.it.matchesScreenshot({ selector });
   });
 
   describe('Warning Variant notification-dialog', () => {
@@ -77,8 +77,8 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
       browser.click('#trigger-notification-dialog');
     });
 
-    Terra.should.beAccessible({ selector });
-    Terra.should.matchScreenshot({ selector });
+    Terra.it.isAccessible({ selector });
+    Terra.it.matchesScreenshot({ selector });
   });
 
   describe('Complete notification-dialog with a long message', () => {
@@ -87,8 +87,8 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
       browser.click('#trigger-notification-dialog');
     });
 
-    Terra.should.beAccessible({ selector });
-    Terra.should.matchScreenshot({ selector });
+    Terra.it.isAccessible({ selector });
+    Terra.it.matchesScreenshot({ selector });
   });
 
   describe('No Variant notification-dialog', () => {
@@ -97,8 +97,8 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
       browser.click('#trigger-notification-dialog');
     });
 
-    Terra.should.beAccessible({ selector });
-    Terra.should.matchScreenshot({ selector });
+    Terra.it.isAccessible({ selector });
+    Terra.it.matchesScreenshot({ selector });
   });
 
   describe('Notification-dialog with minimal props', () => {
@@ -107,8 +107,8 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
       browser.click('#trigger-notification-dialog');
     });
 
-    Terra.should.beAccessible({ selector });
-    Terra.should.matchScreenshot({ selector });
+    Terra.it.isAccessible({ selector });
+    Terra.it.matchesScreenshot({ selector });
   });
 
   describe('Notification-dialog with No Title', () => {
@@ -117,8 +117,8 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
       browser.click('#trigger-notification-dialog');
     });
 
-    Terra.should.beAccessible({ selector });
-    Terra.should.matchScreenshot({ selector });
+    Terra.it.isAccessible({ selector });
+    Terra.it.matchesScreenshot({ selector });
   });
 
   describe('Notification-dialog with No Message', () => {
@@ -127,68 +127,8 @@ Terra.viewports('tiny', 'medium', 'large').forEach((viewport) => {
       browser.click('#trigger-notification-dialog');
     });
 
-    Terra.should.beAccessible({ selector });
-    Terra.should.matchScreenshot({ selector });
-  });
-
-  describe('Complete notification-dialog with themeable properties', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
-      browser.click('#trigger-notification-dialog');
-    });
-
-    Terra.should.themeCombinationOfCustomProperties({
-      testName: 'themed',
-      selector: '#root',
-      properties: {
-        '--terra-notification-dialog-background': '#FFFF33',
-        '--terra-notification-dialog-body-font-size': '0.15rem',
-        '--terra-notification-dialog-body-padding': '2.5rem',
-        '--terra-notification-dialog-body-width': '45rem',
-        '--terra-notification-dialog-title-color': '#c00',
-        '--terra-notification-dialog-title-font-size': '3rem',
-        '--terra-notification-dialog-message-color': '#c00',
-        '--terra-notification-dialog-message-font-size': '2rem',
-        '--terra-notification-dialog-message-padding-top': '1rem',
-        '--terra-notification-dialog-message-text-align': 'left',
-      },
-    });
-  });
-
-  describe('Complete notification-dialog with themeable icons', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
-      browser.click('#trigger-notification-dialog');
-    });
-
-    Terra.should.themeCombinationOfCustomProperties({
-      testName: 'themed',
-      selector: '#root',
-      properties: {
-        '--terra-notification-dialog-alert-icon-background': '#000',
-      },
-    });
-  });
-
-  describe('Complete notification-dialog with themeable actions', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
-      browser.click('#trigger-notification-dialog');
-    });
-
-    Terra.should.themeCombinationOfCustomProperties({
-      testName: 'themed',
-      selector: '#root',
-      properties: {
-        '--terra-notification-dialog-actions-flex-direction': 'row-reverse',
-        '--terra-notification-dialog-footer-padding': '0',
-        '--terra-notification-dialog-actions-button-flex': '1',
-        '--terra-notification-dialog-actions-button-margin-bottom': '0rem',
-        '--terra-notification-dialog-actions-button-margin-left': '0rem',
-        '--terra-notification-dialog-actions-button-margin-right': '0rem',
-        '--terra-notification-dialog-actions-button-margin-top': '0rem',
-      },
-    });
+    Terra.it.isAccessible({ selector });
+    Terra.it.matchesScreenshot({ selector });
   });
 });
 
@@ -203,7 +143,7 @@ describe('NotificationDialog with additional focus trap sources within a modal m
     browser.click('#popup-in-modal');
   });
 
-  Terra.should.matchScreenshot('Open popup', { selector: '[class*="abstract-modal"]' });
+  Terra.it.matchesScreenshot('Open popup', { selector: '[class*="abstract-modal"]' });
 
   it('dismisses popup', () => {
     browser
@@ -211,17 +151,17 @@ describe('NotificationDialog with additional focus trap sources within a modal m
       .leftClick();
   });
 
-  Terra.should.matchScreenshot('Close popup', { selector: '[class*="abstract-modal"]' });
+  Terra.it.matchesScreenshot('Close popup', { selector: '[class*="abstract-modal"]' });
 
   it('opens notification dialog', () => {
     browser.click('#trigger-notification-dialog');
   });
 
-  Terra.should.matchScreenshot('Open notification dialog', { selector: '[class*="abstract-modal"]' });
+  Terra.it.matchesScreenshot('Open notification dialog', { selector: '[class*="abstract-modal"]' });
 
   it('dismiss notification dialog', () => {
     browser.click('[class*="notification-dialog-inner-wrapper"] button:last-child');
   });
 
-  Terra.should.matchScreenshot('Close notification dialog', { selector: '[class*="abstract-modal"]' });
+  Terra.it.matchesScreenshot('Close notification dialog', { selector: '[class*="abstract-modal"]' });
 });

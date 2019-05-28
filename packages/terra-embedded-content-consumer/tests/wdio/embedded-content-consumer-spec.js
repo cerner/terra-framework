@@ -6,7 +6,7 @@ describe('Embedded Content Consumer', () => {
       browser.url('#/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/consumers/basic-consumer');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.it.matchesScreenshot({ viewports });
   });
 
   describe('custom-event', () => {
@@ -15,7 +15,7 @@ describe('Embedded Content Consumer', () => {
       browser.waitForExist('#CustomEvent');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.it.matchesScreenshot({ viewports });
 
 
     it('Provider triggers EventA message', () => {
@@ -27,7 +27,7 @@ describe('Embedded Content Consumer', () => {
       browser.moveToObject('#root', 0, 0);
     });
 
-    Terra.should.matchScreenshot('EventA', { viewports });
+    Terra.it.matchesScreenshot('EventA', { viewports });
   });
 
   describe('custom-events', () => {
@@ -36,7 +36,7 @@ describe('Embedded Content Consumer', () => {
       browser.waitForExist('#CustomEvents');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.it.matchesScreenshot({ viewports });
 
 
     it('Provider triggers EventA message', () => {
@@ -48,7 +48,7 @@ describe('Embedded Content Consumer', () => {
       browser.moveToObject('#root', 0, 0);
     });
 
-    Terra.should.matchScreenshot('EventA', { viewports });
+    Terra.it.matchesScreenshot('EventA', { viewports });
 
     it('successfully replied with EventA message', () => {
       const myFrame = browser.element('iframe[src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]').value;
@@ -67,7 +67,7 @@ describe('Embedded Content Consumer', () => {
       browser.moveToObject('#root', 0, 0);
     });
 
-    Terra.should.matchScreenshot('EventB', { viewports });
+    Terra.it.matchesScreenshot('EventB', { viewports });
 
     it('successfully replied with EventB message', () => {
       const myFrame = browser.element('iframe[src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]').value;

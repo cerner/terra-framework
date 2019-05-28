@@ -7,7 +7,7 @@ describe('InfiniteList', () => {
       browser.waitForVisible('#test-infinite-list');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-infinite-list', viewports });
+    Terra.it.matchesScreenshot({ selector: '#test-infinite-list', viewports });
   });
 
   describe('Displays an infinite list with updating indicator', () => {
@@ -16,7 +16,7 @@ describe('InfiniteList', () => {
       browser.waitForVisible('#test-infinite-list');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-infinite-list', viewports });
+    Terra.it.matchesScreenshot({ selector: '#test-infinite-list', viewports });
   });
 
   describe('Displays an infinite list with selection', () => {
@@ -26,7 +26,7 @@ describe('InfiniteList', () => {
       browser.moveToObject('#root', 0, 900);
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-infinite-list', viewports });
+    Terra.it.matchesScreenshot({ selector: '#test-infinite-list', viewports });
   });
 
   describe('Displays an infinite list with virtual dom from top', () => {
@@ -36,7 +36,7 @@ describe('InfiniteList', () => {
       browser.pause(150);
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-infinite-list', viewports });
+    Terra.it.matchesScreenshot({ selector: '#test-infinite-list', viewports });
   });
 
   describe('Displays an infinite list with virtual dom from bottom', () => {
@@ -50,7 +50,7 @@ describe('InfiniteList', () => {
       browser.pause(50);
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-infinite-list' });
+    Terra.it.matchesScreenshot({ selector: '#test-infinite-list' });
   });
 
   describe('Displays an infinite list same count and different content', () => {
@@ -60,11 +60,11 @@ describe('InfiniteList', () => {
       browser.waitForVisible('#test-infinite-list');
       browser.pause(150);
     });
-    Terra.should.matchScreenshot('before-update', { selector: '#test-infinite-list' });
+    Terra.it.matchesScreenshot('before-update', { selector: '#test-infinite-list' });
     it('update the child items', () => {
       browser.click('#test-click');
       browser.pause(50);
     });
-    Terra.should.matchScreenshot('after-update', { selector: '#test-infinite-list' });
+    Terra.it.matchesScreenshot('after-update', { selector: '#test-infinite-list' });
   });
 });

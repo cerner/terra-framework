@@ -7,8 +7,8 @@ describe('ApplicationLayout', () => {
       browser.waitForVisible('#application-layout-test');
     });
 
-    Terra.should.matchScreenshot({ selector: '#application-layout-test', viewports });
-    Terra.should.beAccessible({ viewports });
+    Terra.it.matchesScreenshot({ selector: '#application-layout-test', viewports });
+    Terra.it.isAccessible({ viewports });
   });
 
   describe('Displays an application layout with top navigation tabs', () => {
@@ -17,8 +17,8 @@ describe('ApplicationLayout', () => {
       browser.waitForVisible('#application-layout-test');
     });
 
-    Terra.should.matchScreenshot({ selector: '#application-layout-test', viewports });
-    Terra.should.beAccessible({ viewports });
+    Terra.it.matchesScreenshot({ selector: '#application-layout-test', viewports });
+    Terra.it.isAccessible({ viewports });
   });
 
   describe('Displays an application layout with no header content', () => {
@@ -27,8 +27,8 @@ describe('ApplicationLayout', () => {
       browser.waitForVisible('#application-layout-test');
     });
 
-    Terra.should.matchScreenshot({ selector: '#application-layout-test', viewports });
-    Terra.should.beAccessible({ viewports });
+    Terra.it.matchesScreenshot({ selector: '#application-layout-test', viewports });
+    Terra.it.isAccessible({ viewports });
   });
 
   describe('Navigates with top navigation tabs', () => {
@@ -39,27 +39,29 @@ describe('ApplicationLayout', () => {
       browser.click('#application-layout-tab-1');
     });
 
-    Terra.should.matchScreenshot({ selector: '#application-layout-test' });
-    Terra.should.beAccessible();
+    Terra.it.matchesScreenshot({ selector: '#application-layout-test' });
+    Terra.it.isAccessible();
   });
 
   describe('Toggles menu when small', () => {
-    beforeEach(() => {
+    before(() => {
       browser.setViewportSize(Terra.viewports('small')[0]);
       browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout');
+      browser.refresh();
       browser.waitForVisible('#application-layout-test');
       browser.click('[data-application-header-toggle]');
       browser.waitForVisible('[data-routing-menu]');
     });
 
-    Terra.should.matchScreenshot({ selector: '#application-layout-test' });
-    Terra.should.beAccessible();
+    Terra.it.matchesScreenshot({ selector: '#application-layout-test' });
+    Terra.it.isAccessible();
   });
 
   describe('Renders primary nav menu when small', () => {
     beforeEach(() => {
       browser.setViewportSize(Terra.viewports('small')[0]);
       browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout');
+      browser.refresh();
       browser.waitForVisible('#application-layout-test');
       browser.click('[data-application-header-toggle]');
       browser.waitForVisible('[data-routing-menu] [data-navigation-side-menu-action-header] button');
@@ -67,8 +69,8 @@ describe('ApplicationLayout', () => {
       browser.waitForVisible('[data-routing-menu]');
     });
 
-    Terra.should.matchScreenshot({ selector: '#application-layout-test' });
-    Terra.should.beAccessible();
+    Terra.it.matchesScreenshot({ selector: '#application-layout-test' });
+    Terra.it.isAccessible();
   });
 
   describe('Navigates from primary nav menu when small', () => {
@@ -83,8 +85,8 @@ describe('ApplicationLayout', () => {
       browser.click('[data-routing-menu] [data-menu-item="/page_2"]');
     });
 
-    Terra.should.matchScreenshot({ selector: '#application-layout-test' });
-    Terra.should.beAccessible();
+    Terra.it.matchesScreenshot({ selector: '#application-layout-test' });
+    Terra.it.isAccessible();
   });
 
   describe('Presents utility menu from header when large', () => {
@@ -95,8 +97,8 @@ describe('ApplicationLayout', () => {
       browser.click('[data-application-header-utility]');
     });
 
-    Terra.should.matchScreenshot({ selector: '#application-layout-test' });
-    Terra.should.beAccessible();
+    Terra.it.matchesScreenshot({ selector: '#application-layout-test' });
+    Terra.it.isAccessible();
   });
 
   describe('Presents utility menu from menu when small', () => {
@@ -109,8 +111,8 @@ describe('ApplicationLayout', () => {
       browser.click('[data-application-menu-utility]');
     });
 
-    Terra.should.matchScreenshot({ selector: '#application-layout-test' });
-    Terra.should.beAccessible();
+    Terra.it.matchesScreenshot({ selector: '#application-layout-test' });
+    Terra.it.isAccessible();
   });
 
   describe('Presents utility menu from header and checks for closure on read-only item click', () => {
@@ -123,8 +125,8 @@ describe('ApplicationLayout', () => {
       browser.click('#readonly');
     });
 
-    Terra.should.matchScreenshot({ selector: '#application-layout-test' });
-    Terra.should.beAccessible();
+    Terra.it.matchesScreenshot({ selector: '#application-layout-test' });
+    Terra.it.isAccessible();
   });
 
   describe('Displays an application layout with nav icons', () => {
@@ -133,6 +135,6 @@ describe('ApplicationLayout', () => {
       browser.waitForVisible('#application-layout-test');
     });
 
-    Terra.should.matchScreenshot({ selector: '#application-layout-test', viewports });
+    Terra.it.matchesScreenshot({ selector: '#application-layout-test', viewports });
   });
 });

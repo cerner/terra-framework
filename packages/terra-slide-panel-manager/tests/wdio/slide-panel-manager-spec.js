@@ -12,8 +12,8 @@ viewports.forEach((viewport) => {
         browser.click('#root-component .disclose');
       });
 
-      Terra.should.matchScreenshot({ selector: '#site' });
-      Terra.should.beAccessible();
+      Terra.it.matchesScreenshot({ selector: '#site' });
+      Terra.it.isAccessible();
     });
 
     describe('Disclose Tiny', () => {
@@ -22,7 +22,7 @@ viewports.forEach((viewport) => {
         browser.click('#root-component .disclose-tiny');
       });
 
-      Terra.should.matchScreenshot({ selector: '#site' });
+      Terra.it.matchesScreenshot({ selector: '#site' });
     });
 
     describe('Disclose Small', () => {
@@ -31,7 +31,7 @@ viewports.forEach((viewport) => {
         browser.click('#root-component .disclose-small');
       });
 
-      Terra.should.matchScreenshot({ selector: '#site' });
+      Terra.it.matchesScreenshot({ selector: '#site' });
     });
 
     describe('Disclose Medium', () => {
@@ -40,7 +40,7 @@ viewports.forEach((viewport) => {
         browser.click('#root-component .disclose-medium');
       });
 
-      Terra.should.matchScreenshot({ selector: '#site' });
+      Terra.it.matchesScreenshot({ selector: '#site' });
     });
 
     describe('Disclose Large', () => {
@@ -49,7 +49,7 @@ viewports.forEach((viewport) => {
         browser.click('#root-component .disclose-large');
       });
 
-      Terra.should.matchScreenshot({ selector: '#site' });
+      Terra.it.matchesScreenshot({ selector: '#site' });
     });
 
     describe('Disclose Huge', () => {
@@ -58,7 +58,7 @@ viewports.forEach((viewport) => {
         browser.click('#root-component .disclose-huge');
       });
 
-      Terra.should.matchScreenshot({ selector: '#site' });
+      Terra.it.matchesScreenshot({ selector: '#site' });
     });
 
     describe('Disclose Fullscreen', () => {
@@ -67,7 +67,7 @@ viewports.forEach((viewport) => {
         browser.click('#root-component .disclose-fullscreen');
       });
 
-      Terra.should.matchScreenshot({ selector: '#site' });
+      Terra.it.matchesScreenshot({ selector: '#site' });
     });
   });
 });
@@ -88,7 +88,7 @@ viewports.forEach((viewport) => {
         browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
-      Terra.should.matchScreenshot({ selector: '#site' });
+      Terra.it.matchesScreenshot({ selector: '#site' });
     });
 
     describe('Disclose Width-480', () => {
@@ -101,7 +101,7 @@ viewports.forEach((viewport) => {
         browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
-      Terra.should.matchScreenshot({ selector: '#site' });
+      Terra.it.matchesScreenshot({ selector: '#site' });
     });
 
     describe('Disclose Width-560', () => {
@@ -114,7 +114,7 @@ viewports.forEach((viewport) => {
         browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
-      Terra.should.matchScreenshot({ selector: '#site' });
+      Terra.it.matchesScreenshot({ selector: '#site' });
     });
 
     describe('Disclose Width-640', () => {
@@ -127,7 +127,7 @@ viewports.forEach((viewport) => {
         browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
-      Terra.should.matchScreenshot({ selector: '#site' });
+      Terra.it.matchesScreenshot({ selector: '#site' });
     });
 
     describe('Disclose Height-240', () => {
@@ -140,7 +140,7 @@ viewports.forEach((viewport) => {
         browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
-      Terra.should.matchScreenshot({ selector: '#site' });
+      Terra.it.matchesScreenshot({ selector: '#site' });
     });
 
     describe('Disclose Height-420', () => {
@@ -153,7 +153,7 @@ viewports.forEach((viewport) => {
         browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
-      Terra.should.matchScreenshot({ selector: '#site' });
+      Terra.it.matchesScreenshot({ selector: '#site' });
     });
 
     describe('Disclose Height-600', () => {
@@ -166,7 +166,7 @@ viewports.forEach((viewport) => {
         browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
-      Terra.should.matchScreenshot({ selector: '#site' });
+      Terra.it.matchesScreenshot({ selector: '#site' });
     });
 
     describe('Disclose Height-690', () => {
@@ -179,7 +179,7 @@ viewports.forEach((viewport) => {
         browser.moveToObject('#DemoContainer-1 .disclose');
       });
 
-      Terra.should.matchScreenshot({ selector: '#site' });
+      Terra.it.matchesScreenshot({ selector: '#site' });
     });
   });
 });
@@ -199,7 +199,7 @@ describe('SlidePanelManager- Behaviors', () => {
       browser.click('[class*="slide-group"] #DemoContainer-1 .disclose-tiny');
     });
 
-    Terra.should.matchScreenshot({ selector: '#site' });
+    Terra.it.matchesScreenshot({ selector: '#site' });
   });
 
   describe('Disclosure - Dismiss', () => {
@@ -212,7 +212,7 @@ describe('SlidePanelManager- Behaviors', () => {
       browser.click('[class*="slide-group"] #DemoContainer-1 .dismiss');
     });
 
-    Terra.should.matchScreenshot({ selector: '#site' });
+    Terra.it.matchesScreenshot({ selector: '#site' });
   });
 
   describe('Disclosure - Close Disclosure', () => {
@@ -225,7 +225,7 @@ describe('SlidePanelManager- Behaviors', () => {
       browser.click('[class*="slide-group"] #DemoContainer-1 .close-disclosure');
     });
 
-    Terra.should.matchScreenshot({ selector: '#site' });
+    Terra.it.matchesScreenshot({ selector: '#site' });
   });
 
   describe('Disclosure - Maximize', () => {
@@ -238,7 +238,7 @@ describe('SlidePanelManager- Behaviors', () => {
       browser.click('[class*="slide-group"] #DemoContainer-1 .maximize');
     });
 
-    Terra.should.matchScreenshot({ selector: '#site' });
+    Terra.it.matchesScreenshot({ selector: '#site' });
   });
 
   describe('Disclosure - Minimize', () => {
@@ -257,6 +257,6 @@ describe('SlidePanelManager- Behaviors', () => {
       browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
     });
 
-    Terra.should.matchScreenshot({ selector: '#site' });
+    Terra.it.matchesScreenshot({ selector: '#site' });
   });
 });
