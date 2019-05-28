@@ -6,39 +6,11 @@
     width: 100px;
   }
 
-  .wrapper2-header-extensions {
-    border: 3px dashed #d3d3d3;
-    height: 100%;
-    position: relative;
-    width: 100%;
-  }
-
-  .wrapper3-header-extensions {
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate3d(-50%, -50%, 0);
-  }
-
   .wrapper1-navigation {
     height: 100%;
     padding: 5px;
     position: relative;
     width: 100%;
-  }
-
-  .wrapper2-navigation {
-    border: 3px dashed #d3d3d3;
-    height: 100%;
-    position: relative;
-    width: 100%;
-  }
-
-  .wrapper3-navigation {
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate3d(-50%, -50%, 0);
   }
 
   .wrapper1-utiltities {
@@ -48,39 +20,11 @@
     width: 100px;
   }
 
-  .wrapper2-utiltities {
-    border: 3px dashed #d3d3d3;
-    height: 100%;
-    position: relative;
-    width: 100%;
-  }
-
-  .wrapper3-utiltities {
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate3d(-50%, -50%, 0);
-  }
-
   .wrapper1-menu-extensions {
     height: 50px;
     padding: 5px;
     position: relative;
     width: 100%;
-  }
-
-  .wrapper2-menu-extensions {
-    border: 3px dashed #d3d3d3;
-    height: 100%;
-    position: relative;
-    width: 100%;
-  }
-
-  .wrapper3-menu-extensions {
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate3d(-50%, -50%, 0);
   }
 
   .wrapper1-content {
@@ -90,20 +34,6 @@
     width: 100%;
   }
 
-  .wrapper2-content {
-    border: 3px dashed #d3d3d3;
-    height: 100%;
-    position: relative;
-    width: 100%;
-  }
-
-  .wrapper3-content {
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate3d(-50%, -50%, 0);
-  }
-
   .wrapper1-footer {
     height: 50px;
     padding: 5px;
@@ -111,14 +41,14 @@
     width: 100%;
   }
 
-  .wrapper2-footer {
+  .wrapper2 {
     border: 3px dashed #d3d3d3;
     height: 100%;
     position: relative;
     width: 100%;
   }
 
-  .wrapper3-footer {
+  .wrapper3 {
     left: 50%;
     position: absolute;
     top: 50%;

@@ -19,8 +19,8 @@ const Placeholder = ({
   text, size,
 }) => (
   <div className={cx(`wrapper1-${size}`)}>
-    <div className={cx(`wrapper2-${size}`)}>
-      <div className={cx(`wrapper3-${size}`)}>
+    <div className={cx('wrapper2')}>
+      <div className={cx('wrapper3')}>
         <h3>{text}</h3>
       </div>
     </div>
