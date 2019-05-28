@@ -37,7 +37,7 @@ describe('Date Picker', () => {
     });
 
     describe('Default Date Excluded - Clears input focusing on input box', () => {
-      before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default-date-excluded'));
+      before(() => browser.refresh());
 
       Terra.it.matchesScreenshot('default date displayed');
       it('clears the default date and time after focusing on input box', () => {
@@ -62,7 +62,7 @@ describe('Date Picker', () => {
     });
 
     describe('Default Date Out Of Range - Clears input focusing on input box', () => {
-      before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default-date-out-of-range'));
+      before(() => browser.refresh());
 
       Terra.it.matchesScreenshot('default date displayed');
       it('clears the default date and time after focusing on input box', () => {
