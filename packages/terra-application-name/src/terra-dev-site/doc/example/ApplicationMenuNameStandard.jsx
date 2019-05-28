@@ -7,22 +7,23 @@ import Placeholder from 'terra-application-name/lib/terra-dev-site/doc/common/Pl
 import ApplicationMenuName from 'terra-application-name/lib/ApplicationMenuName';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import demoColors from '../../test/application-name/demoStyles.scss';
+import styles from './ApplicationMenuNameStandard.scss';
 
 const cx = classNames.bind(demoColors);
-const demosize = { height: '450px', width: '300px' };
+const cy = classNames.bind(styles);
 const ApplicationMenuNameStandard = () => (
   <Menu
-    style={demosize}
+    className={cy('demo-size')}
     header={(
       <ApplicationMenuName
         title="App-Name"
-        accessory={<Image alt="Terra Logo" variant="rounded" src="https://github.com/cerner/terra-framework/raw/master/terra.png" height="26px" width="26px" isFluid />}
+        accessory={<Image alt="Terra Logo" variant="rounded" src="https://github.com/cerner/terra-framework/raw/master/terra.png" className={cx('demo-image-container')} isFluid />}
         className={cx(['demo-background-color'])}
       />
     )}
-    extensions={<Placeholder text="Extensions" height="50px" />}
-    content={<Placeholder text="Content" />}
-    footer={<Placeholder text="Footer" height="50px" />}
+    extensions={<Placeholder text="Extensions" type="menu-extensions" />}
+    content={<Placeholder text="Content" type="content" />}
+    footer={<Placeholder text="Footer" type="footer" />}
   />
 );
 
