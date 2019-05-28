@@ -1,5 +1,9 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import NavigationSideMenu from '../../../NavigationSideMenu';
+import styles from './NavigationSideMenuDocCommon.scss';
+
+const cx = classNames.bind(styles);
 
 class NavigationSideMenuDefault extends React.Component {
   constructor(props) {
@@ -28,10 +32,7 @@ class NavigationSideMenuDefault extends React.Component {
     let content;
     if (this.state.selectedMenuKey === 'fake-parent') {
       content = (
-        <div style={{
-          height: '100%', width: '100%', position: 'relative', backgroundColor: 'pink',
-        }}
-        >
+        <div className={cx('content')}>
           <button type="button" onClick={this.resetMenuState}>
             Child Route
           </button>
@@ -58,13 +59,13 @@ class NavigationSideMenuDefault extends React.Component {
           routingStackBack={this.fakeRoutingBack}
           selectedMenuKey={this.state.selectedMenuKey}
           selectedChildKey={this.state.selectedChildKey}
-          toolbar={<div style={{ padding: '8px', color: '#fff', background: '#303030' }}>Toolbar here</div>}
+          toolbar={<div className={cx('toolbar')}>Toolbar here</div>}
         />
       );
     }
 
     return (
-      <div style={{ height: '768px', width: '300px', position: 'relative' }}>
+      <div className={cx('content-wrapper')}>
         {content}
       </div>
     );
