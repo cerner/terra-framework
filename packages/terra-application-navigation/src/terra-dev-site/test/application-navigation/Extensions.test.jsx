@@ -46,8 +46,9 @@ const handleItemSelection = (key, metaData) => {
 };
 /* eslint-enable no-alert */
 
+// TODO: remove terra-application after it is incorporated into dev-site
 const TabsTest = () => (
-  <Application locale="en-US">
+  <Application locale="en">
     <ApplicationNavigation
       extensionItems={extensionItems}
       onSelectExtensionItem={handleItemSelection}

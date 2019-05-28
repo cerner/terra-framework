@@ -28,8 +28,9 @@ const titleConfigHideTitle = {
   hideTitleWithinDrawerMenu: true,
 };
 
+// TODO: remove terra-application after it is incorporated into dev-site
 const TitleTest = () => (
-  <Application locale="en-US">
+  <Application locale="en">
     <div style={{ height: '70px' }}><ApplicationNavigation titleConfig={titleConfig} /></div>
     <div style={{ height: '70px' }}><ApplicationNavigation titleConfig={titleConfigHeadLine} /></div>
     <div style={{ height: '70px' }}><ApplicationNavigation titleConfig={titleConfigSubline} /></div>

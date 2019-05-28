@@ -22,8 +22,9 @@ const userConfigSrc = {
   imageSrc: 'test-src',
 };
 
+// TODO: remove terra-application after it is incorporated into dev-site
 const TitleTest = () => (
-  <Application locale="en-US">
+  <Application locale="en">
     <div style={{ height: '100px' }}><ApplicationNavigation userConfig={userConfig} /></div>
     <div style={{ height: '100px' }}><ApplicationNavigation userConfig={userConfigDetail} /></div>
     <div style={{ height: '100px' }}><ApplicationNavigation userConfig={userConfigInitials} /></div>

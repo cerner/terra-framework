@@ -20,9 +20,9 @@
       position: relative;
       width: 5.714rem;
     }
-  
+
     .avatar-outline {
-      border: var(--terra-application-navigation-drawer-menu-avatar-outline-border, rgba(255, 255, 255, 0.1));
+      border: var(--terra-application-navigation-drawer-menu-avatar-outline-border,  0.1429rem solid rgba(255, 255, 255, 0.1));
       border-radius: 50%;
       height: 100%;
       position: absolute;

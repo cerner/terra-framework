@@ -7,8 +7,9 @@ import Placeholder from 'terra-doc-template/lib/Placeholder';
 
 const hero = <Placeholder title="Test Hero" variant="light" />;
 
+// TODO: remove terra-application after it is incorporated into dev-site
 const TitleTest = () => (
-  <Application locale="en-US">
+  <Application locale="en">
     <ApplicationNavigation hero={hero} />
   </Application>
 );
