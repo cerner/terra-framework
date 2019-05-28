@@ -37,6 +37,7 @@ describe('Collapsible Menu View', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/collapsible-menu-view-single-item');
         browser.setViewportSize(viewport);
+        browser.moveToObject('#root', 0, 0);
       });
 
       Terra.it.matchesScreenshot({ selector: '#root' });

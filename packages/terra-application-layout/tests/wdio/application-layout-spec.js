@@ -108,7 +108,6 @@ describe('ApplicationLayout', () => {
 
   describe('Navigates from primary nav menu when small', () => {
     it('Navigates from primary nav menu when small', () => {
-      // browser.waitForVisible('[data-application-header-toggle');
       browser.click('[data-application-header-toggle]');
       browser.waitForVisible('[data-routing-menu] [data-navigation-side-menu-action-header] button');
       browser.click('[data-routing-menu] [data-navigation-side-menu-action-header] button');
