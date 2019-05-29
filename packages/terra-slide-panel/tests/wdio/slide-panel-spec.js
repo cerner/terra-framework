@@ -93,22 +93,18 @@ describe('Slide panel', () => {
   });
 
   describe('Toggle the slide panel click', () => {
-    beforeEach(() => {
+    it('Opens panel and focuses on panel', () => {
       browser.url('/#/raw/tests/terra-slide-panel/slide-panel/slide-panel-toggle');
       browser.click('#test-toggle');
       browser.waitForExist('#test-slide [aria-hidden="false"]');
       browser.pause(150);
-    });
-
-    it('Opens panel and focuses on panel', () => {
       browser.hasFocus('#panel-content');
-    });
 
-    it('On Tab Press focuses on the button inside the panel', () => {
+      // On Tab Press focuses on the button inside the panel
       browser.keys(['Tab']);
       browser.hasFocus('#focus-button');
-    });
 
-    Terra.it.matchesScreenshot({ selector: '#root' });
+      Terra.validates.screenshot({ selector: '#root' });
+    });
   });
 });
