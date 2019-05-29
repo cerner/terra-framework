@@ -1,16 +1,12 @@
 /* eslint-disable no-unused-expressions */
 const moment = require('moment-timezone');
-
-const timeZones = ['America/Chicago', 'America/Denver', 'America/Detroit', 'America/Indianapolis',
-  'America/Los_Angeles', 'America/New_York', 'America/Phoenix'];
-const includesTZ = timeZones.includes(moment.tz.guess());
-
 const viewports = Terra.viewports('tiny', 'large');
 
 const ignoredA11y = {
   label: { enabled: false },
 };
 
+moment.tz.setDefault('America/Chicago');
 describe('DateTimePicker', () => {
   describe('Default', () => {
     before(() => {
@@ -90,41 +86,37 @@ describe('DateTimePicker', () => {
   });
 
   describe('Displays Offset button are clicking daylight button', () => {
-    if (includesTZ) {
-      before(() => {
-        browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-dst');
-        browser.click('input[name="terra-time-minute-input"]');
-        browser.keys('Tab');
-        browser.waitForVisible('[class*="time-clarification"]');
-      });
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-dst');
+      browser.click('input[name="terra-time-minute-input"]');
+      browser.keys('Tab');
+      browser.waitForVisible('[class*="time-clarification"]');
+    });
 
-      Terra.should.matchScreenshot('0', { viewports, selector: '[class*="abstract-modal"]' });
+    Terra.should.matchScreenshot('0', { viewports, selector: '[class*="abstract-modal"]' });
 
-      it('hides the offset button', () => {
-        browser.click('[class*="button-daylight"]');
-      });
+    it('hides the offset button', () => {
+      browser.click('[class*="button-daylight"]');
+    });
 
-      Terra.should.matchScreenshot('1', { viewports });
-    }
+    Terra.should.matchScreenshot('1', { viewports });
   });
 
   describe('Displays Offset button are clicking the standard time button', () => {
-    if (includesTZ) {
-      before(() => {
-        browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-dst');
-        browser.click('input[name="terra-time-minute-input"]');
-        browser.keys('Tab');
-        browser.waitForVisible('[class*="time-clarification"]');
-      });
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-dst');
+      browser.click('input[name="terra-time-minute-input"]');
+      browser.keys('Tab');
+      browser.waitForVisible('[class*="time-clarification"]');
+    });
 
-      Terra.should.matchScreenshot('0', { viewports, selector: '[class*="abstract-modal"]' });
+    Terra.should.matchScreenshot('0', { viewports, selector: '[class*="abstract-modal"]' });
 
-      it('hides the offset button', () => {
-        browser.click('[class*="button-daylight"]');
-      });
+    it('hides the offset button', () => {
+      browser.click('[class*="button-daylight"]');
+    });
 
-      Terra.should.matchScreenshot('1', { viewports });
-    }
+    Terra.should.matchScreenshot('1', { viewports });
   });
 
   describe('Time Clarification Dialog Disabled', () => {
