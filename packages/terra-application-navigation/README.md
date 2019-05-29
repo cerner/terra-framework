@@ -1,6 +1,6 @@
 # Terra Application Navigation
 
-TODO
+The Terra Application Navigation is a responsive, themeable layout for building applications. ApplicationNavigation is comprised of selectable navigation and utility elements with selection callbacks allowing for versatile implementations of state and routing.
 
 [![NPM version](https://badgen.net/npm/v/terra-application-navigation)](https://www.npmjs.org/package/terra-application-navigation)
 [![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.org/cerner/terra-framework)
