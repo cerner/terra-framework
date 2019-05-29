@@ -2,7 +2,7 @@
   "name": "terra-application-navigation",
   "main": "lib/ApplicationNavigation.js",
   "version": "0.0.0",
-  "description": "TODO",
+  "description": "The Terra Application Navigation is a responsive, themeable layout for building applications. ApplicationNavigation is comprised of selectable navigation and utility elements with selection callbacks.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git"
