@@ -52,13 +52,6 @@ describe('DateTimePicker', () => {
   });
 
   describe('Time Clarification Dialog Dismissal', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-dst');
-      browser.click('input[name="terra-time-minute-input"]');
-      browser.keys('Tab');
-      browser.waitForVisible('[class*="time-clarification"]');
-    });
-
     Terra.it.matchesScreenshot('0', { viewports, selector: '[class*="abstract-modal"]' });
 
     it('closes the dialog', () => {
@@ -181,7 +174,7 @@ describe('DateTimePicker', () => {
 
   describe('Valid date entry moves focus to hour input', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-focus-blur');
+      browser.refresh();
       // Removes the blinking cursor to prevent screenshot mismatches.
       browser.execute('document.querySelector(\'input[name="terra-time-minute-input"]\').style.caretColor = "transparent";');
       browser.setValue('input[name="terra-date-input"]', '04/15/2019');
@@ -205,7 +198,7 @@ describe('DateTimePicker', () => {
 
   describe('OnChange Raw', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-on-change');
+      browser.refresh();
       // Removes the blinking cursor to prevent screenshot mismatches.
       browser.execute('document.querySelector(\'input[name="terra-date-input"]\').style.caretColor = "transparent";');
       browser.setValue('input[name="terra-date-input"]', '07/12');
@@ -219,7 +212,7 @@ describe('DateTimePicker', () => {
 
   describe('Sync Date Time', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-on-change');
+      browser.refresh();
       // Removes the blinking cursor to prevent screenshot mismatches.
       browser.execute('document.querySelector(\'input[name="terra-time-minute-input"]\').style.caretColor = "transparent";');
       browser.execute('document.querySelector(\'input[name="terra-time-hour-input"]\').style.caretColor = "transparent";');
