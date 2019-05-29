@@ -107,65 +107,63 @@ describe('Menu', () => {
   });
 
   describe('Menu with a submenu', () => {
-    before(() => {
+    it('Menu with a submenu', () => {
       browser.url('/#/raw/tests/terra-menu/menu/menu/sub-menu');
       browser.click('#sub-menu-button');
       browser.hasFocus('[class*="content"][aria-modal="true"][role="dialog"]');
-    });
+      Terra.validates.element('main menu', { selector: '#root' });
 
-    Terra.it.matchesScreenshot('main menu', { selector: '#root' });
-    Terra.it.isAccessible();
-
-    it('displays the submenu', () => {
       browser.click('.TestNestedMenu');
       browser.hasFocus('[role="button"][aria-label="Back"]');
+      Terra.validates.element('submenu', { selector: '#root' });
+      browser.keys('Escape');
     });
-    Terra.it.matchesScreenshot('submenu', { selector: '#root' });
   });
 
   describe('Menu Keyboard Navigation-Arrow Keys', () => {
-    before(() => {
+    it('Menu Keyboard Navigation-Arrow Keys', () => {
       browser.url('/#/raw/tests/terra-menu/menu/menu/sub-menu');
       browser.click('#sub-menu-button');
       browser.hasFocus('[class*="content"][aria-modal="true"][role="dialog"]');
-    });
 
-    it('does not do anything when left arrow is pressed on the first layer', () => {
+      // it does not do anything when left arrow is pressed on the first layer
       browser.keys(['Tab', 'ArrowLeft']);
       browser.hasFocus('li:first-child[class*="item"][role="menuitem"]');
-    });
-    Terra.it.matchesScreenshot('main menu remains open', { selector: '#root' });
 
-    it('displays the submenu on right arrow', () => {
+      Terra.validates.element('main menu remains open', { selector: '#root' });
+
+      // it displays the submenu on right arrow
       browser.keys(['ArrowDown', 'ArrowRight']);
       browser.hasFocus('[role="button"][aria-label="Back"]');
-    });
-    Terra.it.matchesScreenshot('navigated to submenu', { selector: '#root' });
 
-    it('returns to the main menu on left arrow', () => {
+      Terra.validates.element('navigated to submenu', { selector: '#root' });
+
+      // it returns to the main menu on left arrow
       browser.keys(['ArrowLeft']);
       browser.hasFocus('[class*="content"][aria-modal="true"][role="dialog"]');
+
+      Terra.validates.element('returned to main menu', { selector: '#root' });
+      browser.keys('Escape');
     });
-    Terra.it.matchesScreenshot('returned to main menu', { selector: '#root' });
   });
 
   describe('Menu Keyboard Navigation-Enter Key', () => {
-    before(() => {
+    it('Menu Keyboard Navigation-Enter Key', () => {
       browser.url('/#/raw/tests/terra-menu/menu/menu/sub-menu');
       browser.click('#sub-menu-button');
       browser.hasFocus('[class*="content"][aria-modal="true"][role="dialog"]');
-    });
 
-    it('displays the submenu on enter', () => {
+      // it displays the submenu on enter
       browser.keys(['Tab', 'ArrowDown', 'Enter']);
       browser.hasFocus('[role="button"][aria-label="Back"]');
-    });
-    Terra.it.matchesScreenshot('navigated to submenu', { selector: '#root' });
 
-    it('returns to the main menu on enter', () => {
+      Terra.validates.element('navigated to submenu', { selector: '#root' });
+
+      // it returns to the main menu on enter
       browser.keys(['Enter']);
       browser.hasFocus('[class*="content"][aria-modal="true"][role="dialog"]');
+
+      Terra.validates.element('returned to main menu', { selector: '#root' });
     });
-    Terra.it.matchesScreenshot('returned to main menu', { selector: '#root' });
   });
 });
