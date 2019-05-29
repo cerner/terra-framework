@@ -1,4 +1,5 @@
 describe('Popup', () => {
+  afterEach(() => browser.keys('Escape'));
   describe('Arrow Popup', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => browser.url('/#/raw/tests/terra-popup/popup/arrow-popup'));
@@ -57,6 +58,7 @@ describe('Popup', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-popup/popup/default-popup');
+      browser.click('#default-button');
       browser.waitForVisible('.test-content');
       browser.setViewportSize({ width: browser.getViewportSize('width'), height: 600 });
     });
@@ -68,6 +70,7 @@ describe('Popup', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-popup/popup/default-popup');
+      browser.click('#default-button');
       browser.waitForVisible('.test-content');
       browser.keys('ESCAPE');
     });
@@ -79,6 +82,7 @@ describe('Popup', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-popup/popup/default-popup');
+      browser.click('#default-button');
       browser.waitForVisible('.test-content');
       browser
         .moveToObject('#root', 300, 300)
@@ -92,6 +96,7 @@ describe('Popup', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-popup/popup/default-popup');
+      browser.click('#default-button');
       browser.waitForVisible('.test-content');
     });
 
@@ -170,48 +175,48 @@ describe('Popup', () => {
 
   describe('Displays a popup inside a modal & closes on width resize', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
-    beforeEach(() => {
+    it('Displays a popup inside a modal & closes on width resize', () => {
       browser.url('/#/raw/tests/terra-popup/popup/popup-inside-modal');
       browser.click('.disclose');
       browser.waitForVisible('#test-popup-area');
       browser.click('#popup-in-modal');
       browser.waitForVisible('.test-content');
       browser.setViewportSize(Terra.viewports('small')[0]);
+      Terra.validates.element({ selector: '#test-popup-area' });
+      browser.keys('Escape');
     });
-
-    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a popup inside a modal & remains open on height resize', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
-    beforeEach(() => {
+    it('Displays a popup inside a modal & remains open on height resize', () => {
       browser.url('/#/raw/tests/terra-popup/popup/popup-inside-modal');
       browser.click('.disclose');
       browser.waitForVisible('#test-popup-area');
       browser.click('#popup-in-modal');
       browser.waitForVisible('.test-content');
       browser.setViewportSize({ width: browser.getViewportSize('width'), height: 600 });
+      Terra.validates.element({ selector: '#test-popup-area' });
+      browser.keys('Escape');
     });
-
-    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a popup inside modal & closes on ESC', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
-    beforeEach(() => {
+    it('Displays a popup inside modal & closes on ESC', () => {
       browser.url('/#/raw/tests/terra-popup/popup/popup-inside-modal');
       browser.click('.disclose');
       browser.waitForVisible('#test-popup-area');
       browser.click('#popup-in-modal');
       browser.waitForVisible('.test-content');
+      Terra.validates.element({ selector: '#test-popup-area' });
+      browser.keys('Escape');
     });
-
-    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a popup inside modal & closes on outside click', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
-    beforeEach(() => {
+    it('Displays a popup inside modal & closes on outside click', () => {
       browser.url('/#/raw/tests/terra-popup/popup/popup-inside-modal');
       browser.click('.disclose');
       browser.waitForVisible('#test-popup-area');
@@ -220,9 +225,8 @@ describe('Popup', () => {
       browser
         .moveToObject('#root', 300, 300)
         .leftClick();
+      Terra.validates.element({ selector: '#test-popup-area' });
     });
-
-    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Positions the arrow for vertical-left attachment', () => {
@@ -407,6 +411,7 @@ describe('Popup', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-popup/popup/automatic-height-popup');
+      browser.click('#default-button');
       browser.waitForVisible('.test-content');
       browser.setViewportSize(Terra.viewports('small')[0]);
     });
@@ -418,6 +423,7 @@ describe('Popup', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-popup/popup/automatic-height-popup');
+      browser.click('#default-button');
       browser.waitForVisible('.test-content');
       browser.setViewportSize({ width: browser.getViewportSize('width'), height: 600 });
     });
@@ -449,6 +455,7 @@ describe('Popup', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-popup/popup/automatic-width-popup');
+      browser.click('#default-button');
       browser.waitForVisible('.test-content');
       browser.setViewportSize(Terra.viewports('small')[0]);
     });
@@ -460,6 +467,7 @@ describe('Popup', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-popup/popup/automatic-width-popup');
+      browser.click('#default-button');
       browser.waitForVisible('.test-content');
       browser.setViewportSize({ width: browser.getViewportSize('width'), height: 600 });
     });
