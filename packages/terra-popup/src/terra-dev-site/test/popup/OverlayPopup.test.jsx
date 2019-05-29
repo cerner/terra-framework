@@ -1,5 +1,9 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import Popup from '../../../Popup';
+import styles from './PopupTypeCommon.test.scss';
+
+const cx = classNames.bind(styles);
 
 class DefaultPopup extends React.Component {
   constructor(props) {
@@ -41,7 +45,7 @@ class DefaultPopup extends React.Component {
 
   render() {
     return (
-      <div id="test-popup-area" style={{ height: '150px', width: '350px', background: 'aliceblue' }}>
+      <div id="test-popup-area" className={cx('test-popup-area')}>
         <Popup
           classNameArrow="test-arrow"
           classNameContent="test-content"
@@ -51,7 +55,7 @@ class DefaultPopup extends React.Component {
         >
           <p>this is popup content</p>
         </Popup>
-        <button type="button" id="overlay-button" style={{ position: 'absolute', left: '125px' }} onClick={this.handleButtonClick} ref={this.setButtonNode}>
+        <button type="button" id="overlay-button" className={cx('popup-button')} onClick={this.handleButtonClick} ref={this.setButtonNode}>
           Default Popup
         </button>
       </div>
