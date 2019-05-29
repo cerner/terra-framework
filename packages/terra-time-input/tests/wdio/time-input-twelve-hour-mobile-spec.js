@@ -35,6 +35,7 @@ describe('Time Input Twelve Hour Mobile', () => {
   describe('Twelve Hour Mobile - Focus Hour Styles', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/mobile');
+      browser.refresh();
       browser.execute(() => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
@@ -51,6 +52,7 @@ describe('Time Input Twelve Hour Mobile', () => {
   describe('Twelve Hour Mobile - Focus Minute Styles', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/mobile');
+      browser.refresh();
       browser.execute(() => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';

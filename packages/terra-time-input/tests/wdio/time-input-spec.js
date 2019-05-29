@@ -1,27 +1,24 @@
 const viewports = Terra.viewports('medium');
 
 describe('Time Input', () => {
-  before(() => browser.setViewportSize(Terra.viewports('tiny')[0]));
+  before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
 
   describe('Default with no time provided', () => {
     before(() => browser.url('/#/raw/tests/terra-time-input/time-input/time-input/default'));
 
-    Terra.it.isAccessible({ viewports });
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.validatesElement();
   });
 
   describe('Default with time provided', () => {
     before(() => browser.url('/#/raw/tests/terra-time-input/time-input/time-input/default-time'));
 
-    Terra.it.isAccessible({ viewports });
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.validatesElement();
   });
 
   describe('Invalid time provided', () => {
     before(() => browser.url('/#/raw/tests/terra-time-input/time-input/time-input/invalid-time'));
 
-    Terra.it.isAccessible({ viewports });
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.validatesElement();
   });
 
   describe('Focus Hour Styles', () => {
@@ -30,18 +27,17 @@ describe('Time Input', () => {
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
     });
 
-    Terra.it.isAccessible({ viewports });
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.validatesElement();
   });
 
   describe('Focus Minute Styles', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/default-time');
+      browser.refresh();
       browser.click('#timeInput input[name="terra-time-minute-time-input"]');
     });
 
-    Terra.it.isAccessible({ viewports });
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.validatesElement();
   });
 });
 
@@ -65,6 +61,7 @@ describe('Time Input onChange operations', () => {
   describe('Time Input prepends 0 on single digit hour', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
+      browser.refresh();
       browser.execute(() => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
@@ -82,6 +79,7 @@ describe('Time Input onChange operations', () => {
   describe('Time Input prepends 0 on hour input of 3 or more', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
+      browser.refresh();
       browser.execute(() => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
@@ -98,6 +96,7 @@ describe('Time Input onChange operations', () => {
   describe('Time Input does prepend 0 on hour input less than 3', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
+      browser.refresh();
       browser.execute(() => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
@@ -114,6 +113,7 @@ describe('Time Input onChange operations', () => {
   describe('Time Input does not accept hour input greater than 23', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
+      browser.refresh();
       browser.execute(() => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
@@ -130,6 +130,7 @@ describe('Time Input onChange operations', () => {
   describe('Time Input prepends 0 on single digit minute', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
+      browser.refresh();
       browser.execute(() => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
@@ -147,6 +148,7 @@ describe('Time Input onChange operations', () => {
   describe('Time Input prepends 0 on minute input of 6 or more', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
+      browser.refresh();
       browser.execute(() => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
@@ -163,6 +165,7 @@ describe('Time Input onChange operations', () => {
   describe('Time Input does not prepend 0 on minute input less than 6', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
+      browser.refresh();
       browser.execute(() => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
@@ -179,6 +182,7 @@ describe('Time Input onChange operations', () => {
   describe('Time Input does not accept minute input greater than 59', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
+      browser.refresh();
       browser.execute(() => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
@@ -195,6 +199,7 @@ describe('Time Input onChange operations', () => {
   describe('Pressing DELETE in minute with no value focuses to hour', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
+      browser.refresh();
       browser.execute(() => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
@@ -211,6 +216,7 @@ describe('Time Input onChange operations', () => {
   describe('Triggers an onChange for onBlur on the minute input', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
+      browser.refresh();
       browser.execute(() => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
@@ -227,6 +233,7 @@ describe('Time Input onChange operations', () => {
   describe('Does not trigger onChange for an hour with just one digit', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
+      browser.refresh();
       browser.execute(() => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
@@ -244,6 +251,7 @@ describe('Time Input onChange operations', () => {
   describe('Does not trigger onChange for a minute with just one digit', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
+      browser.refresh();
       browser.execute(() => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
@@ -299,6 +307,7 @@ describe('Time Input up and down arrow operations', () => {
   describe('DOWN_ARROW decrements hour by 1', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
+      browser.refresh();
       browser.execute(() => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
@@ -316,6 +325,7 @@ describe('Time Input up and down arrow operations', () => {
   describe('DOWN_ARROW is ignored when the hour has reached 00', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
+      browser.refresh();
       browser.execute(() => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
@@ -333,6 +343,7 @@ describe('Time Input up and down arrow operations', () => {
   describe('UP_ARROW increments hour by 1', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
+      browser.refresh();
       browser.execute(() => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
@@ -348,6 +359,7 @@ describe('Time Input up and down arrow operations', () => {
   describe('UP_ARROW is ignored when the hour has reached 23', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
+      browser.refresh();
       browser.execute(() => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
