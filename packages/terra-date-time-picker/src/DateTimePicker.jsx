@@ -186,8 +186,6 @@ class DateTimePicker extends React.Component {
     if (this.props.onSelect) {
       this.props.onSelect(event, updatedDateTime.format());
     }
-
-    this.hourInput.focus();
   }
 
   handleOnDateBlur(event) {
@@ -211,7 +209,7 @@ class DateTimePicker extends React.Component {
     const activeTarget = event.relatedTarget ? event.relatedTarget : document.activeElement;
 
     // Handle blur only if focus has moved out of the entire date time picker component.
-    if (!this.dateTimePickerContainer.current.contains(activeTarget)) {
+    if (activeTarget.className !== 'react-datepicker__month' && !this.dateTimePickerContainer.current.contains(activeTarget)) {
       const isDateTimeValid = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat);
       let updatedDateTime;
 
@@ -313,7 +311,9 @@ class DateTimePicker extends React.Component {
     }
 
     if (isDateValid) {
-      this.hourInput.focus();
+      setTimeout(() => {
+        this.hourInput.focus();
+      }, 0.5);
     }
   }
 
@@ -561,6 +561,7 @@ class DateTimePicker extends React.Component {
           selectedDate={dateValue}
           name="input"
           disabled={disabled}
+          returnFocusOnClose={false}
         />
 
         <div className={cx('time-facade')}>

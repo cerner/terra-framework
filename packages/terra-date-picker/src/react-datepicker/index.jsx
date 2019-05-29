@@ -588,7 +588,7 @@ export default class DatePicker extends React.Component {
           {
             this.state.open || this.props.inline
               ? (<Portal isOpened={true}>
-                  <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: true }}>
+                  <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: false, clickOutsideDeactivates: true }}>
                     <div
                       ref={this.datePickerOverlayContainer}
                       className="react-datepicker__portal"
@@ -624,7 +624,7 @@ export default class DatePicker extends React.Component {
           onPosition={this.handleOnPosition}
         >
           <Hookshot.Content>
-            <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: true }}>
+            <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: false, clickOutsideDeactivates: true }}>
               <div>
                 <div
                   className="react-datepicker-hookshot"

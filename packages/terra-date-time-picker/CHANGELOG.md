@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Moves focus to the hour input after a date is selected from the picker.
 
 4.2.0 - (May 21, 2019)
 ------------------

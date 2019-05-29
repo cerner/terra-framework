@@ -78,6 +78,10 @@ const propTypes = {
    */
   required: PropTypes.bool,
   /**
+   * @private Whether or not to return focus to the calendar button when the calendar picker dismisses.
+   */
+  returnFocusOnClose: PropTypes.bool,
+  /**
    * An ISO 8601 string representation of the initial value to show in the date input.
    * This prop name is derived from react-datepicker but is analogous to value in a form input field.
    */
@@ -99,6 +103,7 @@ const defaultProps = {
   onFocus: undefined,
   onSelect: undefined,
   required: false,
+  returnFocusOnClose: true,
   selectedDate: undefined,
 };
 
@@ -170,10 +175,15 @@ class DatePicker extends React.Component {
 
     this.dateValue = DateUtil.formatISODate(selectedDate, DateUtil.getFormatByLocale(this.context.intl.locale));
     this.isDefaultDateAcceptable = true;
-    this.calendarButton.focus();
 
     if (this.props.onSelect) {
       this.props.onSelect(event, selectedDate.format());
+    }
+
+    if (this.props.returnFocusOnClose) {
+      setTimeout(() => {
+        this.calendarButton.focus();
+      }, 0.5);
     }
   }
 
@@ -181,8 +191,6 @@ class DatePicker extends React.Component {
     if (this.props.onClickOutside) {
       this.props.onClickOutside(event);
     }
-
-    this.calendarButton.focus();
   }
 
   handleBlur(event) {
@@ -308,6 +316,7 @@ class DatePicker extends React.Component {
       onFocus,
       onSelect,
       required,
+      returnFocusOnClose,
       selectedDate,
       ...customProps
     } = this.props;
