@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import SlidePanel from '../../../SlidePanel';
-import styles from './SlidePanelToggle.test.scss';
+import styles from './SlidePanelDocCommon.test.scss';
 
 const cx = classNames.bind(styles);
 
@@ -19,7 +19,7 @@ class SlidePanelDemo extends React.Component {
 
   render() {
     return (
-      <div className={cx('content-wrapper')}>
+      <div className={cx('content-wrapper-toggle')}>
         <SlidePanel
           id="test-slide"
           mainContent={<div className={cx('main-content')}><button type="button" id="test-toggle" className={cx('button')} onClick={this.handlePanelToggle}>toggle</button></div>}

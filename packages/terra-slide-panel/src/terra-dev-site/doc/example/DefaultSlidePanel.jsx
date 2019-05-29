@@ -10,8 +10,8 @@ const cx = classNames.bind(styles);
 const mainContentForSlidePanel = togglePanelHandler => (
   <div>
     <header className={cx('header-content')}>
-      <h3 className={cx('heading')}>Main Content</h3>
-      <button id="mainToggleBtn" type="button" onClick={togglePanelHandler} className={cx('extension-button')}>Main Toggle Panel</button>
+      <h3>Main Content</h3>
+      <button id="mainToggleBtn" type="button" onClick={togglePanelHandler} className={cx('custom-button')}>Main Toggle Panel</button>
     </header>
     <div className={cx('content-wrapper')}>
       <p>

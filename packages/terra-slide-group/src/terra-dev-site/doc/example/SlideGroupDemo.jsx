@@ -37,10 +37,10 @@ class SlideGroupDemo extends React.Component {
       slides.push((
         <div
           key={`Slide ${i}`}
-          className={cx('slide-style')}
+          className={cx('slide')}
         >
           <h2>
-Slide
+            Slide
             {i}
           </h2>
           <br />
@@ -51,7 +51,7 @@ Slide
     }
 
     return (
-      <div className={cx('container-style')}>
+      <div className={cx('container')}>
         <SlideGroup items={slides} isAnimated={this.props.isAnimated} />
       </div>
     );

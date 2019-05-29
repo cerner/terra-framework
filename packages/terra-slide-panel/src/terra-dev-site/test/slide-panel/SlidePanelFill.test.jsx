@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import SlidePanel from '../../../SlidePanel';
 import SlidePanelMainContent from '../common/SlidePanelMainContent';
 import SlidePanelPanelContent from '../common/SlidePanelPanelContent';
-import styles from './SlidePanelFillCommon.test.scss';
+import styles from './SlidePanelDocCommon.test.scss';
 
 const cx = classNames.bind(styles);
 

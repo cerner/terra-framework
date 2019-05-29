@@ -1,12 +1,12 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import SlidePanel from '../../../SlidePanel';
-import styles from './SlidePanelSquishLarge.test.scss';
+import styles from './SlidePanelDocCommon.test.scss';
 
 const cx = classNames.bind(styles);
 
 const SlidePanelSquishLarge = () => (
-  <div className={cx('content-wrapper')}>
+  <div className={cx('content-wrapper-large')}>
     <SlidePanel
       mainContent={<div className={cx('main-content')} />}
       panelContent={<div className={cx('panel-content')} />}
