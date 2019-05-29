@@ -1,34 +1,35 @@
 const selector = '#root';
-const viewports = Terra.viewports('tiny', 'medium', 'large');
 
-describe('Dialog Modal', () => {
+Terra.describeViewports('Dialog Modal', ['tiny', 'medium', 'large'], () => {
   describe('Default Dialog Modal', () => {
-    beforeEach(() => {
+    it('Default Dialog Modal', () => {
       browser.url('/#/raw/tests/terra-dialog-modal/dialog-modal/default-dialog-modal');
       browser.click('#trigger-dialog-modal');
+
+      Terra.validates.element({ selector });
     });
-    Terra.it.isAccessible({ viewports, selector });
-    Terra.it.matchesScreenshot({ viewports, selector });
   });
 
   describe('Dialog Modal With Long text', () => {
-    beforeEach(() => {
+    it('Dialog Modal With Long text', () => {
       browser.url('/#/raw/tests/terra-dialog-modal/dialog-modal/dialog-modal-with-long-text');
       browser.click('#trigger-dialog-modal');
+
+      Terra.validates.element({ selector });
     });
-    Terra.it.isAccessible({ viewports, selector });
-    Terra.it.matchesScreenshot({ viewports, selector });
   });
 
   describe('Dialog Modal With Custom Header and Custom Footer', () => {
-    beforeEach(() => {
+    it('Dialog Modal With Custom Header and Custom Footer', () => {
       browser.url('/#/raw/tests/terra-dialog-modal/dialog-modal/dialog-modal-with-custom-header-and-custom-footer');
       browser.click('#trigger-dialog-modal');
-    });
-    Terra.it.isAccessible({ viewports, selector });
-    Terra.it.matchesScreenshot({ viewports, selector });
-  });
 
+      Terra.validates.element({ selector });
+    });
+  });
+});
+
+describe('Dialog Modal', () => {
   describe('Within Modal Focus Handling', () => {
     before(() => browser.url('/#/raw/tests/terra-dialog-modal/dialog-modal/default-dialog-modal'));
 
@@ -61,17 +62,14 @@ describe('Dialog Modal', () => {
   });
 
   describe('Outside Modal Focus Handling', () => {
-    before(() => browser.url('/#/raw/tests/terra-dialog-modal/dialog-modal/default-dialog-modal'));
-
     it('does not focus on interactive content within the app when modal is open and focus is shifted backwards from the modal dialog', () => {
-      browser.click('#trigger-dialog-modal');
-      browser.keys(['Shift', 'Shift', 'Tab']);
+      browser.keys(['Shift', 'Tab']);
     });
 
     Terra.it.matchesScreenshot('focused shifted outside the beginning of the modal', { selector: '#root' });
 
     it('does not focus on interactive content within the app when modal is open and focus is shifted forwards from the modal dialog', () => {
-      browser.keys(['Tab', 'Tab']);
+      browser.keys(['Tab', 'Tab', 'Tab']);
     });
 
     Terra.it.matchesScreenshot('focused shifted outside the end of the modal', { selector: '#root' });
