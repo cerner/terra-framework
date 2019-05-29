@@ -1,250 +1,176 @@
-const viewports = Terra.viewports('tiny', 'large');
-
-viewports.forEach((viewport) => {
-  describe('SlidePanelManager- Sizes', () => {
-    before(() => {
-      browser.setViewportSize(viewport);
-    });
-
+Terra.describeViewports('SlidePanelManager', ['tiny', 'large'], () => {
+  before(() => browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default')
+    .refresh());
+  afterEach(() => {
+    Terra.validates.element({ selector: '#site' });
+    browser.click('[class*="slide-group"] #DemoContainer-1 .dismiss');
+  });
+  describe('Sizes', () => {
     describe('Disclose Default', () => {
-      beforeEach(() => {
-        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
-        browser.click('#root-component .disclose');
-      });
-
-      Terra.it.matchesScreenshot({ selector: '#site' });
-      Terra.it.isAccessible();
+      it('Disclose Default', () => browser.click('#root-component .disclose'));
     });
 
     describe('Disclose Tiny', () => {
-      beforeEach(() => {
-        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
-        browser.click('#root-component .disclose-tiny');
-      });
-
-      Terra.it.matchesScreenshot({ selector: '#site' });
+      it('Disclose Tiny', () => browser.click('#root-component .disclose-tiny'));
     });
 
     describe('Disclose Small', () => {
-      beforeEach(() => {
-        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
-        browser.click('#root-component .disclose-small');
-      });
-
-      Terra.it.matchesScreenshot({ selector: '#site' });
+      it('Disclose Small', () => browser.click('#root-component .disclose-small'));
     });
 
     describe('Disclose Medium', () => {
-      beforeEach(() => {
-        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
-        browser.click('#root-component .disclose-medium');
-      });
-
-      Terra.it.matchesScreenshot({ selector: '#site' });
+      it('Disclose Medium', () => browser.click('#root-component .disclose-medium'));
     });
 
     describe('Disclose Large', () => {
-      beforeEach(() => {
-        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
-        browser.click('#root-component .disclose-large');
-      });
-
-      Terra.it.matchesScreenshot({ selector: '#site' });
+      it('Disclose Large', () => browser.click('#root-component .disclose-large'));
     });
 
     describe('Disclose Huge', () => {
-      beforeEach(() => {
-        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
-        browser.click('#root-component .disclose-huge');
-      });
-
-      Terra.it.matchesScreenshot({ selector: '#site' });
+      it('Disclose Huge', () => browser.click('#root-component .disclose-huge'));
     });
 
     describe('Disclose Fullscreen', () => {
-      beforeEach(() => {
-        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
-        browser.click('#root-component .disclose-fullscreen');
-      });
-
-      Terra.it.matchesScreenshot({ selector: '#site' });
+      it('Disclose Fullscreen', () => browser.click('#root-component .disclose-fullscreen'));
     });
   });
-});
 
-viewports.forEach((viewport) => {
-  describe('SlidePanelManager- Dimensions', () => {
-    before(() => {
-      browser.setViewportSize(viewport);
-    });
-
+  describe('Dimensions', () => {
     describe('Disclose Width-320', () => {
-      beforeEach(() => {
-        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
+      it('Disclose Width-320', () => {
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-320-0');
         browser.click('#root-component #disclose-dimension-0');
         browser.pause(300);
         browser.moveToObject('#DemoContainer-1 .disclose');
       });
-
-      Terra.it.matchesScreenshot({ selector: '#site' });
     });
 
     describe('Disclose Width-480', () => {
-      beforeEach(() => {
-        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
+      it('Disclose Width-480', () => {
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-480-0');
         browser.click('#root-component #disclose-dimension-0');
         browser.pause(300);
         browser.moveToObject('#DemoContainer-1 .disclose');
       });
-
-      Terra.it.matchesScreenshot({ selector: '#site' });
     });
 
     describe('Disclose Width-560', () => {
-      beforeEach(() => {
-        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
+      it('Disclose Width-560', () => {
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-560-0');
         browser.click('#root-component #disclose-dimension-0');
         browser.pause(300);
         browser.moveToObject('#DemoContainer-1 .disclose');
       });
-
-      Terra.it.matchesScreenshot({ selector: '#site' });
     });
 
     describe('Disclose Width-640', () => {
-      beforeEach(() => {
-        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
+      it('Disclose Width-640', () => {
         browser.click('#disclosureDimensions-width-0');
         browser.click('#width-640-0');
         browser.click('#root-component #disclose-dimension-0');
         browser.pause(300);
         browser.moveToObject('#DemoContainer-1 .disclose');
       });
-
-      Terra.it.matchesScreenshot({ selector: '#site' });
     });
 
     describe('Disclose Height-240', () => {
-      beforeEach(() => {
-        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
+      it('Disclose Height-240', () => {
+        browser.click('#disclosureDimensions-width-0');
+        browser.click('#width-320-0');
+
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-240-0');
         browser.click('#root-component #disclose-dimension-0');
         browser.pause(300);
         browser.moveToObject('#DemoContainer-1 .disclose');
       });
-
-      Terra.it.matchesScreenshot({ selector: '#site' });
     });
 
     describe('Disclose Height-420', () => {
-      beforeEach(() => {
-        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
+      it('Disclose Height-420', () => {
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-420-0');
         browser.click('#root-component #disclose-dimension-0');
         browser.pause(300);
         browser.moveToObject('#DemoContainer-1 .disclose');
       });
-
-      Terra.it.matchesScreenshot({ selector: '#site' });
     });
 
     describe('Disclose Height-600', () => {
-      beforeEach(() => {
-        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
+      it('Disclose Height-600', () => {
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-600-0');
         browser.click('#root-component #disclose-dimension-0');
         browser.pause(300);
         browser.moveToObject('#DemoContainer-1 .disclose');
       });
-
-      Terra.it.matchesScreenshot({ selector: '#site' });
     });
 
     describe('Disclose Height-690', () => {
-      beforeEach(() => {
-        browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
+      it('Disclose Height-690', () => {
         browser.click('#disclosureDimensions-height-0');
         browser.click('#height-690-0');
         browser.click('#root-component #disclose-dimension-0');
         browser.pause(300);
         browser.moveToObject('#DemoContainer-1 .disclose');
       });
-
-      Terra.it.matchesScreenshot({ selector: '#site' });
     });
   });
 });
 
-describe('SlidePanelManager- Behaviors', () => {
-  before(() => {
-    browser.setViewportSize(Terra.viewports('large')[0]);
-  });
+Terra.describeViewports('SlidePanelManager- Behaviors', ['large'], () => {
+  before(() => browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default')
+    .refresh());
 
   describe('Nested Disclose', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
-
+    it('Nested Disclose', () => {
       browser.click('#root-component .disclose-large');
 
       browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .disclose-tiny', 1000);
       browser.click('[class*="slide-group"] #DemoContainer-1 .disclose-tiny');
-    });
 
-    Terra.it.matchesScreenshot({ selector: '#site' });
+      Terra.validates.element({ selector: '#site' });
+      browser.click('[class*="slide-group"] #DemoContainer-2 .close-disclosure');
+    });
   });
 
   describe('Disclosure - Dismiss', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
-
+    it('Disclosure - Dismiss', () => {
       browser.click('#root-component .disclose-large');
 
       browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .dismiss', 1000);
       browser.click('[class*="slide-group"] #DemoContainer-1 .dismiss');
+      Terra.validates.element({ selector: '#site' });
     });
-
-    Terra.it.matchesScreenshot({ selector: '#site' });
   });
 
   describe('Disclosure - Close Disclosure', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
-
+    it('Disclosure - Close Disclosure', () => {
       browser.click('#root-component .disclose-large');
 
       browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .close-disclosure', 1000);
       browser.click('[class*="slide-group"] #DemoContainer-1 .close-disclosure');
+      Terra.validates.element({ selector: '#site' });
     });
-
-    Terra.it.matchesScreenshot({ selector: '#site' });
   });
 
   describe('Disclosure - Maximize', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
-
+    it('Disclosure - Maximize', () => {
       browser.click('#root-component .disclose-large');
 
       browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
       browser.click('[class*="slide-group"] #DemoContainer-1 .maximize');
-    });
 
-    Terra.it.matchesScreenshot({ selector: '#site' });
+      Terra.validates.element({ selector: '#site' });
+      browser.click('[class*="slide-group"] #DemoContainer-1 .dismiss');
+    });
   });
 
   describe('Disclosure - Minimize', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-default');
-
+    it('Disclosure - Minimize', () => {
       browser.click('#root-component .disclose-large');
 
       browser.pause(500);
@@ -255,8 +181,8 @@ describe('SlidePanelManager- Behaviors', () => {
       browser.click('[class*="slide-group"] #DemoContainer-1 .minimize');
 
       browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
+      Terra.validates.element({ selector: '#site' });
+      browser.click('[class*="slide-group"] #DemoContainer-1 .dismiss');
     });
-
-    Terra.it.matchesScreenshot({ selector: '#site' });
   });
 });
