@@ -29,11 +29,11 @@
     height: 100%;
     position: relative;
     top: 0;
-    width: var(--terra-application-navigation-drawer-width-default, calc(100% - 3.571rem));
+    width: var(--terra-application-navigation-drawer-default-width, calc(100% - 3.571rem));
     z-index: 0;
     
     @include terra-mq-small-up {
-      width: var(--terra-application-navigation-drawer-width-medium, 20rem);
+      width: var(--terra-application-navigation-drawer-medium-width, 20rem);
     }
   }
 
