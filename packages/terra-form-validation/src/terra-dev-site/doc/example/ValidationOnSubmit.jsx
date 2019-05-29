@@ -126,7 +126,7 @@ export default class MainEntry extends React.Component {
               <Select
                 id="airliner"
                 name={input.name}
-                onChange={(e, value) => { input.onChange(value); }}
+                onChange={(value) => { input.onChange(value); }}
                 defaultValue={input.value}
                 placeholder="Select an Airline"
               >
