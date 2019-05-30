@@ -143,8 +143,9 @@ class DateTimeUtils {
   }
 
   static getDaylightSavingExpandedTZDisplay() {
-    const timezone = moment('2017-07-01').tz(moment.tz.guess());
-    return moment.tz.zone(moment.tz.guess()).name + timezone.format(' z Z');
+    const timezone = moment.tz.guess();
+    const momentWithTimeZone = moment('2017-07-01').tz(timezone);
+    return moment.tz.zone(timezone).name + momentWithTimeZone.format(' z Z');
   }
 
   /**
@@ -156,8 +157,9 @@ class DateTimeUtils {
   }
 
   static getStandardExpandedTZDisplay() {
-    const timezone = moment('2017-01-01').tz(moment.tz.guess());
-    return moment.tz.zone(moment.tz.guess()).name + timezone.format(' z Z');
+    const timezone = moment.tz.guess();
+    const momentWithTimeZone = moment('2017-01-01').tz(timezone);
+    return moment.tz.zone(timezone).name + momentWithTimeZone.format(' z Z');
   }
 
   /**
