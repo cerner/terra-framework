@@ -1,4 +1,11 @@
+// stylelint-disable scss/at-mixin-pattern
+
 :local {
+  @mixin content-wrapper($height) {
+    height: $height;
+    outline: none;
+  }
+
   .utility-menu {
     font-family: inherit;
     width: 100%;
@@ -129,5 +136,13 @@
     flex-direction: column;
     flex-shrink: 0;
     margin-bottom: var(--terra-application-utility-menu-margin-bottom);
+  }
+
+  .content-wrapper-auto {
+    @include content-wrapper(auto);
+  }
+
+  .content-wrapper-100 {
+    @include content-wrapper(100%);
   }
 }
