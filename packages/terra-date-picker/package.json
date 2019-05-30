@@ -40,9 +40,11 @@
     "terra-responsive-element": "^4.0.0"
   },
   "devDependencies": {
+    "terra-disclosure-manager": "^4.9.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "terra-doc-template": "^2.2.0",
-    "terra-modal-manager": "^6.1.0"
+    "terra-modal-manager": "^5.10.0",
+    "terra-dialog": "^2.12.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
