@@ -209,7 +209,7 @@ class DateTimePicker extends React.Component {
     const activeTarget = event.relatedTarget ? event.relatedTarget : document.activeElement;
 
     // Handle blur only if focus has moved out of the entire date time picker component.
-    if (activeTarget.className !== 'react-datepicker__month' && !this.dateTimePickerContainer.current.contains(activeTarget)) {
+    if (!this.dateTimePickerContainer.current.contains(activeTarget)) {
       const isDateTimeValid = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat);
       let updatedDateTime;
 
