@@ -181,9 +181,10 @@ class DatePicker extends React.Component {
     }
 
     if (this.props.returnFocusOnClose) {
+      // Allows time for focus-trap to release focus on the picker before returning focus to the calendar button.
       setTimeout(() => {
         this.calendarButton.focus();
-      }, 0.5);
+      }, 100);
     }
   }
 

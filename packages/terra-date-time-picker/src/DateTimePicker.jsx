@@ -311,9 +311,10 @@ class DateTimePicker extends React.Component {
     }
 
     if (isDateValid) {
+      // Allows time for focus-trap to release focus on the picker before shifting focus to the hour input.
       setTimeout(() => {
         this.hourInput.focus();
-      }, 0.5);
+      }, 100);
     }
   }
 
