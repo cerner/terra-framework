@@ -1,5 +1,9 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import Popup from '../../src/Popup';
+import styles from './PopupDefaultExample.scss';
+
+const cx = classNames.bind(styles);
 
 class PopupDefaultExample extends React.Component {
   constructor(props) {
@@ -33,7 +37,7 @@ class PopupDefaultExample extends React.Component {
         >
           <p>this is popup content</p>
         </Popup>
-        <div style={{ height: '20px', width: '20px' }} ref={this.setButtonNode} />
+        <div className={cx('popup-button')} ref={this.setButtonNode} />
       </div>
     );
   }

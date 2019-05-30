@@ -13,7 +13,7 @@ class PopupExample extends React.Component {
     this.handleRequestClose = this.handleRequestClose.bind(this);
     this.setButtonNode = this.setButtonNode.bind(this);
     this.getButtonNode = this.getButtonNode.bind(this);
-    this.state = { open: true, size: { height: '40px', width: '100px' } };
+    this.state = { open: true, size: 'small' };
   }
 
   componentDidMount() {
@@ -49,7 +49,7 @@ class PopupExample extends React.Component {
           targetRef={this.getButtonNode}
           onRequestClose={this.handleRequestClose}
         >
-          <TestPopupContent size={this.state.size} onClick={() => this.setState({ size: { height: '80px', width: '200px' } })} />
+          <TestPopupContent size={this.state.size} onClick={() => this.setState({ size: 'large' })} />
         </Popup>
         <button type="button" className={cx('popup-button')} id="default-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
           Default Popup

@@ -1,6 +1,9 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import Popup from '../../../Popup';
-import './ClassNamePopup.scss';
+import styles from './ClassNamePopup.scss';
+
+const cx = classNames.bind(styles);
 
 class ClassNamePopup extends React.Component {
   constructor(props) {
@@ -34,7 +37,7 @@ class ClassNamePopup extends React.Component {
 
   render() {
     return (
-      <div id="test-popup-area" style={{ height: '150px', width: '350px', background: 'aliceblue' }}>
+      <div id="test-popup-area" className={cx('test-popup-area')}>
         <Popup
           classNameArrow="terra-test-class-arrow"
           classNameContent="terra-test-class-content"
@@ -45,9 +48,9 @@ class ClassNamePopup extends React.Component {
           onRequestClose={this.handleRequestClose}
           targetRef={this.getButtonNode}
         >
-          <p style={{ padding: '5px' }}>The arrow and content have classes.</p>
+          <p className={cx('popup-text')}>The arrow and content have classes.</p>
         </Popup>
-        <button type="button" id="class-name-button" style={{ position: 'absolute', left: '125px' }} onClick={this.handleButtonClick} ref={this.setButtonNode}>
+        <button type="button" id="class-name-button" className={cx('popup-button')} onClick={this.handleButtonClick} ref={this.setButtonNode}>
           Class Name Popup
         </button>
       </div>

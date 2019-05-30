@@ -23,12 +23,7 @@ exports[`should shallow a default component 1`] = `
     </p>
   </Popup>
   <div
-    style={
-      Object {
-        "height": "20px",
-        "width": "20px",
-      }
-    }
+    className="popup-button"
   />
 </div>
 `;
@@ -56,12 +51,7 @@ exports[`should shallow render a component with push attachment behavior 1`] = `
     </p>
   </Popup>
   <div
-    style={
-      Object {
-        "height": "20px",
-        "width": "20px",
-      }
-    }
+    className="popup-button"
   />
 </div>
 `;
