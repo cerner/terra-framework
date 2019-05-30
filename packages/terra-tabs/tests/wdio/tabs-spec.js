@@ -12,7 +12,7 @@ describe('Tabs - Responsive', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-tabs/tabs/tabs/default-tabs');
         browser.setViewportSize(viewport);
-        browser.moveToObject('.tabContent');
+        browser.moveToObject('[class*="tab-content"]');
       });
       Terra.should.matchScreenshot();
       Terra.should.beAccessible();
@@ -21,7 +21,7 @@ describe('Tabs - Responsive', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-tabs/tabs/tabs/extended-tabs');
         browser.setViewportSize(viewport);
-        browser.moveToObject('.tabContent');
+        browser.moveToObject('[class*="tab-content"]');
       });
       Terra.should.matchScreenshot();
       Terra.should.beAccessible();
@@ -30,7 +30,7 @@ describe('Tabs - Responsive', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-tabs/tabs/tabs/icon-only-tabs');
         browser.setViewportSize(viewport);
-        browser.moveToObject('.tabContent');
+        browser.moveToObject('[class*="tab-content"]');
       });
       Terra.should.matchScreenshot();
       Terra.should.beAccessible();
@@ -86,7 +86,7 @@ describe('Tabs - Responsive', () => {
     describe('Default', () => {
       beforeEach(() => {
         browser.url('/#/raw/tests/terra-tabs/tabs/tabs/default-tabs');
-        browser.moveToObject('.tabContent');
+        browser.moveToObject('[class*="tab-content"]');
       });
 
       Terra.should.themeCombinationOfCustomProperties({
@@ -161,7 +161,7 @@ describe('Tabs - Responsive', () => {
     describe('Fill Parent Tabs', () => {
       beforeEach(() => {
         browser.url('/#/raw/tests/terra-tabs/tabs/tabs/fill-parent-tabs');
-        browser.moveToObject('.tabContent');
+        browser.moveToObject('[class*="tab-content"]');
       });
 
       Terra.should.matchScreenshot();
