@@ -256,7 +256,7 @@ describe('Date Picker', () => {
     it('dismisses the datepicker after clicking outside', () => {
       browser.click('[class*="PopupOverlay"]');
     });
-    browser.waitForExist('[class="react-datepiker"]', undefined, false);
+
     Terra.should.matchScreenshot('date picker closed');
     Terra.should.beAccessible({ rules: ignoredA11y });
   });

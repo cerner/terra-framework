@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated wdio screenshots for date-picker changes.
 
 4.2.0 - (May 21, 2019)
 ------------------
