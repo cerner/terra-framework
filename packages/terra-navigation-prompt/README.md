@@ -1,7 +1,7 @@
 # Terra Navigation Prompt
 
 [![NPM version](https://badgen.net/npm/v/terra-navigation-prompt)](https://www.npmjs.org/package/terra-navigation-prompt)
-[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.org/cerner/terra-framework)
+[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-navigation-prompt/docs)
