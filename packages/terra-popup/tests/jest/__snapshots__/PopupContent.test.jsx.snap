@@ -181,7 +181,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
       ],
       "results": Array [
         Object {
-          "isThrow": false,
+          "type": "return",
           "value": undefined,
         },
       ],
@@ -304,7 +304,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
             ],
             "results": Array [
               Object {
-                "isThrow": false,
+                "type": "return",
                 "value": undefined,
               },
             ],
@@ -419,7 +419,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
               ],
               "results": Array [
                 Object {
-                  "isThrow": false,
+                  "type": "return",
                   "value": undefined,
                 },
               ],
