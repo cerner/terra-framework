@@ -1,20 +1,12 @@
 describe('Popup', () => {
+  afterEach(() => browser.keys('Escape'));
   describe('Arrow Popup', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => browser.url('/#/raw/tests/terra-popup/popup/arrow-popup'));
 
     const rules = { 'landmark-one-main': { enabled: false } };
 
-    Terra.should.beAccessible({ selector: '.test-content', rules });
-    Terra.should.themeCombinationOfCustomProperties({
-      testName: 'themed',
-      properties: {
-        '--terra-popup-content-inner-box-shadow': '10px 10px 36px blue',
-        '--terra-popup-content-inner-background-color': 'yellow',
-        '--terra-popup-content-inner-border': '10px dashed black',
-        '--terra-popup-right-align-arrow-after-border-left-color': 'red',
-      },
-    });
+    Terra.it.isAccessible({ selector: '.test-content', rules });
   });
 
   describe('Bounded Popup', () => {
@@ -24,14 +16,7 @@ describe('Popup', () => {
     // Remove when #1353 is resolved
     const rules = { 'button-name': { enabled: false }, 'landmark-one-main': { enabled: false } };
 
-    Terra.should.beAccessible({ selector: '.test-content', rules });
-    Terra.should.themeCombinationOfCustomProperties({
-      testName: 'themed',
-      properties: {
-        '--terra-popup-content-header-border-bottom': '15px double red',
-        '--terra-popup-content-close-icon-background': 'green',
-      },
-    });
+    Terra.it.isAccessible({ selector: '.test-content', rules });
   });
 
   Terra.viewports('tiny', 'medium').forEach((viewport) => {
@@ -42,7 +27,7 @@ describe('Popup', () => {
         browser.click('#arrow-button');
       });
 
-      Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+      Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
     });
   });
 
@@ -54,7 +39,7 @@ describe('Popup', () => {
         browser.click('#bounded-button');
       });
 
-      Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+      Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
     });
   });
 
@@ -66,52 +51,56 @@ describe('Popup', () => {
       browser.setViewportSize(Terra.viewports('small')[0]);
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a default popup & remains open on height resize', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-popup/popup/default-popup');
+      browser.click('#default-button');
       browser.waitForVisible('.test-content');
       browser.setViewportSize({ width: browser.getViewportSize('width'), height: 600 });
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a default popup & closes on ESC', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-popup/popup/default-popup');
+      browser.click('#default-button');
       browser.waitForVisible('.test-content');
       browser.keys('ESCAPE');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a default popup & closes on outside click', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-popup/popup/default-popup');
+      browser.click('#default-button');
       browser.waitForVisible('.test-content');
       browser
         .moveToObject('#root', 300, 300)
         .leftClick();
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a default popup without an arrow', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-popup/popup/default-popup');
+      browser.click('#default-button');
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a popup with an arrow', () => {
@@ -121,7 +110,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a bounded popup with a header', () => {
@@ -131,7 +120,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a bounded popup without a header', () => {
@@ -141,7 +130,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a popup bounded by height', () => {
@@ -151,7 +140,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a popup bounded by width', () => {
@@ -161,7 +150,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a popup bounded by width and height with no header', () => {
@@ -171,7 +160,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Verifies content and arrow classnames are applied', () => {
@@ -181,53 +170,53 @@ describe('Popup', () => {
       browser.waitForVisible('.terra-test-class-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a popup inside a modal & closes on width resize', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
-    beforeEach(() => {
+    it('Displays a popup inside a modal & closes on width resize', () => {
       browser.url('/#/raw/tests/terra-popup/popup/popup-inside-modal');
       browser.click('.disclose');
       browser.waitForVisible('#test-popup-area');
       browser.click('#popup-in-modal');
       browser.waitForVisible('.test-content');
       browser.setViewportSize(Terra.viewports('small')[0]);
+      Terra.validates.element({ selector: '#test-popup-area' });
+      browser.keys('Escape');
     });
-
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a popup inside a modal & remains open on height resize', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
-    beforeEach(() => {
+    it('Displays a popup inside a modal & remains open on height resize', () => {
       browser.url('/#/raw/tests/terra-popup/popup/popup-inside-modal');
       browser.click('.disclose');
       browser.waitForVisible('#test-popup-area');
       browser.click('#popup-in-modal');
       browser.waitForVisible('.test-content');
       browser.setViewportSize({ width: browser.getViewportSize('width'), height: 600 });
+      Terra.validates.element({ selector: '#test-popup-area' });
+      browser.keys('Escape');
     });
-
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a popup inside modal & closes on ESC', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
-    beforeEach(() => {
+    it('Displays a popup inside modal & closes on ESC', () => {
       browser.url('/#/raw/tests/terra-popup/popup/popup-inside-modal');
       browser.click('.disclose');
       browser.waitForVisible('#test-popup-area');
       browser.click('#popup-in-modal');
       browser.waitForVisible('.test-content');
+      Terra.validates.element({ selector: '#test-popup-area' });
+      browser.keys('Escape');
     });
-
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a popup inside modal & closes on outside click', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
-    beforeEach(() => {
+    it('Displays a popup inside modal & closes on outside click', () => {
       browser.url('/#/raw/tests/terra-popup/popup/popup-inside-modal');
       browser.click('.disclose');
       browser.waitForVisible('#test-popup-area');
@@ -236,9 +225,8 @@ describe('Popup', () => {
       browser
         .moveToObject('#root', 300, 300)
         .leftClick();
+      Terra.validates.element({ selector: '#test-popup-area' });
     });
-
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Positions the arrow for vertical-left attachment', () => {
@@ -249,7 +237,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Positions the arrow for vertical-center attachment', () => {
@@ -260,7 +248,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Positions the arrow for vertical-right attachment', () => {
@@ -271,7 +259,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Adjusts the arrow for vertical-left attachment when arrow would be offscreen', () => {
@@ -281,7 +269,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Adjusts the arrow for vertical-right attachment when arrow would be offscreen', () => {
@@ -291,7 +279,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Applies content offset when target has vertial-right when content vertial-left attachment', () => {
@@ -302,7 +290,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Applies content offset when target has vertial-left when content vertial-right attachment', () => {
@@ -313,7 +301,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Applies content offset when target is smaller than the arrow for vertial-left attachment', () => {
@@ -323,7 +311,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Applies content offset when target is smaller than the arrow for vertial-right attachment', () => {
@@ -333,7 +321,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Positions the arrow for horizontal-top attachment', () => {
@@ -344,7 +332,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Positions the arrow for horizontal-middle attachment', () => {
@@ -355,7 +343,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Positions the arrow for horizontal-bottom attachment', () => {
@@ -366,7 +354,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a small-sized popup correctly', () => {
@@ -376,7 +364,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a medium-sized popup correctly', () => {
@@ -386,7 +374,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a large-sized popup correctly', () => {
@@ -396,7 +384,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a fallback-sized popup correctly when invalid sizes are provided', () => {
@@ -406,7 +394,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a popup with automatic height correctly', () => {
@@ -416,29 +404,31 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a popup with automatic height & closes on width resize', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-popup/popup/automatic-height-popup');
+      browser.click('#default-button');
       browser.waitForVisible('.test-content');
       browser.setViewportSize(Terra.viewports('small')[0]);
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a popup with automatic height & remains open on height resize', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-popup/popup/automatic-height-popup');
+      browser.click('#default-button');
       browser.waitForVisible('.test-content');
       browser.setViewportSize({ width: browser.getViewportSize('width'), height: 600 });
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a popup with automatic height correctly when bounded by height', () => {
@@ -448,7 +438,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a popup with automatic width correctly', () => {
@@ -458,29 +448,31 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a popup with automatic width & closes on width resize', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-popup/popup/automatic-width-popup');
+      browser.click('#default-button');
       browser.waitForVisible('.test-content');
       browser.setViewportSize(Terra.viewports('small')[0]);
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a popup with automatic width & remains open on height resize', () => {
     before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-popup/popup/automatic-width-popup');
+      browser.click('#default-button');
       browser.waitForVisible('.test-content');
       browser.setViewportSize({ width: browser.getViewportSize('width'), height: 600 });
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a popup with automatic width correctly when bounded by width', () => {
@@ -490,7 +482,7 @@ describe('Popup', () => {
       browser.waitForVisible('.test-content');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 
   describe('Displays a popup with automatic dimensions resizing', () => {
@@ -502,6 +494,6 @@ describe('Popup', () => {
       browser.pause(100);
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-popup-area' });
+    Terra.it.matchesScreenshot({ selector: '#test-popup-area' });
   });
 });
