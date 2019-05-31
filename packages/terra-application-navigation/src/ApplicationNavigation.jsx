@@ -1,5 +1,5 @@
 import React, {
-  useEffect, useLayoutEffect, useState, useRef, useContext,
+  useEffect, useLayoutEffect, useState, useRef,
 } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
@@ -134,7 +134,8 @@ const ApplicationNavigation = ({
   const [drawerMenuIsOpen, setDrawerMenuIsOpen] = useState(false);
   const [popupMenuIsOpen, setPopupMenuIsOpen] = useState(false);
 
-  const activeBreakpoint = useContext(ActiveBreakpointContext);
+  // Use dot notation temporarily until hooks + enzyme support for userContext
+  const activeBreakpoint = React.useContext(ActiveBreakpointContext);
 
   /**
    * Given a callback function, generateMenuClosingCallback will return a new function
