@@ -13,14 +13,12 @@ class HookshotAttachmentBehaviorFlip extends React.Component {
   }
 
   render() {
-    let buttonMarginLeft;
-    let boundingWidth;
+    let type = 'primary';
 
     if (this.state.position === 'flipped') {
-      buttonMarginLeft = '50px';
+      type = 'flip-flipped';
     } else if (this.state.position === 'pushed') {
-      buttonMarginLeft = '60px';
-      boundingWidth = '220px';
+      type = 'flip-pushed';
     }
     return (
       <div>
@@ -28,8 +26,7 @@ class HookshotAttachmentBehaviorFlip extends React.Component {
           attachmentBehavior="flip"
           id="attachment-behavior-flip"
           isOpen={false}
-          buttonMarginLeft={buttonMarginLeft}
-          boundingWidth={boundingWidth}
+          type={type}
         />
         <p> Choose the positioning behavior </p>
         <p> Primary position is on the middle right</p>

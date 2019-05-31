@@ -14,9 +14,9 @@ class HookshotAttachmentBehaviorPush extends React.Component {
   }
 
   render() {
-    let margin;
+    let type = 'primary';
     if (this.state.position === 'pushed') {
-      margin = '50px';
+      type = 'push-pushed';
     }
 
     return (
@@ -25,7 +25,7 @@ class HookshotAttachmentBehaviorPush extends React.Component {
           attachmentBehavior="push"
           id="attachment-behavior-push"
           isOpen={false}
-          buttonMarginLeft={margin}
+          type={type}
         />
         <p>Choose the positioning behavior</p>
         <p>Primary position is on the middle right</p>

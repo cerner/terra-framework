@@ -1,7 +1,11 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import InputField from 'terra-form-input/lib/InputField';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import Hookshot from 'terra-hookshot/lib/Hookshot';
+import styles from './HookshotDocCommon.scss';
+
+const cx = classNames.bind(styles);
 
 const ATTACHMENT_POSITIONS = [
   'top start',
@@ -100,22 +104,22 @@ class HookshotStandard extends React.Component {
         onOutsideClick={this.handleRequestClose}
         onResize={this.handleRequestClose}
       >
-        <div style={{ height: '40px', width: '200px', backgroundColor: 'red' }}>Hookshot</div>
+        <div className={cx('content-wrapper')}>Hookshot</div>
       </Hookshot.Content>
     );
 
     return (
       /* eslint-disable jsx-a11y/no-static-element-interactions */
       <div>
-        <div style={{ height: '25px' }}>
-          <label htmlFor={getId('hookshotAttachmentBehavior')} style={{ fontWeight: 'bold' }}>Attachment Behavior</label>
+        <div className={cx('heading-wrapper')}>
+          <label htmlFor={getId('hookshotAttachmentBehavior')}>Attachment Behavior</label>
         </div>
         <select
           id={getId('hookshotAttachmentBehavior')}
           name="hookshotAttachmentBehavior"
           value={this.state.hookshotAttachmentBehavior}
           onChange={this.handleAttachementBehaviorChange}
-          style={{ width: '200px', height: '30px' }}
+          className={cx('select-wrapper')}
         >
           {generateOptions(Hookshot.attachmentBehaviors)}
         </select>
@@ -126,18 +130,18 @@ class HookshotStandard extends React.Component {
           inputId={getId('hookshotAttachmentMargin')}
           inputAttrs={{ name: 'hookshotAttachmentMargin', type: 'number' }}
           defaultValue={this.state.hookshotAttachmentMargin}
-          style={{ width: '200px' }}
+          className={cx('input-wrapper')}
           onChange={this.handleInputChange}
         />
-        <div style={{ height: '25px' }}>
-          <label htmlFor={getId('hookshotContentAttachment')} style={{ fontWeight: 'bold' }}>Content Attachment</label>
+        <div className={cx('heading-wrapper')}>
+          <label htmlFor={getId('hookshotContentAttachment')}>Content Attachment</label>
         </div>
         <select
           id={getId('hookshotContentAttachment')}
           name="hookshotContentAttachment"
           value={this.state.hookshotContentAttachment}
           onChange={this.handleContentAttachmentChange}
-          style={{ width: '200px', height: '30px' }}
+          className={cx('select-wrapper')}
         >
           {generateOptions(ATTACHMENT_POSITIONS)}
         </select>
@@ -146,9 +150,7 @@ class HookshotStandard extends React.Component {
         {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
         <div
           onClick={this.handleRegionClick}
-          style={{
-            border: '1px dashed black', backgroundColor: 'aliceblue', height: '300px', width: '100%',
-          }}
+          className={cx('coords-parent-node-wrapper')}
           ref={this.setParentNode}
         >
           Click Inside

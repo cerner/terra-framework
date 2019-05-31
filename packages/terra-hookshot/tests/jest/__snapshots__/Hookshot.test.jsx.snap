@@ -50,13 +50,7 @@ exports[`should shallow a default component 1`] = `
       stopPropagation={false}
     >
       <div
-        style={
-          Object {
-            "backgroundColor": "red",
-            "height": "40px",
-            "width": "200px",
-          }
-        }
+        className="hookshot-wrapper"
       >
         Hookshot
       </div>
