@@ -1,8 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
-// import NavigationSideMenu from 'terra-navigation-side-menu/lib/NavigationSideMenu';
-import NavigationSideMenu from '../../../NavigationSideMenu';
+import NavigationSideMenu from 'terra-navigation-side-menu/lib/NavigationSideMenu';
 
 import styles from './NavigationSideMenuExample.scss';
 
