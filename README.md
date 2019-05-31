@@ -10,7 +10,7 @@
 
 [![Cerner OSS](https://badgen.net/badge/Cerner/OSS/blue)](http://engineering.cerner.com/2014/01/cerner-and-open-source/)
 [![License](https://badgen.net/github/license/cerner/terra-framework)](https://github.com/cerner/terra-framework/blob/master/LICENSE)
-[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.org/cerner/terra-framework)
+[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 [![devDependencies status](https://badgen.net/david/dev/cerner/terra-framework)](https://david-dm.org/cerner/terra-framework?type=dev)
 [![lerna](https://badgen.net/badge/maintained%20with/lerna/cc00ff)](https://lernajs.io/)
 
