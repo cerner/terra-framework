@@ -1,11 +1,6 @@
-:local {
-  .content {
-    background-color: #ffc0cb;
-    height: 100%;
-    position: relative;
-    width: 100%;
-  }
+@import '../../test/navigation-side-menu/NavigationSideMenuDocCommon';
 
+:local {
   .content-wrapper {
     border: 1px solid #d3d3d3;
     height: 450px;
