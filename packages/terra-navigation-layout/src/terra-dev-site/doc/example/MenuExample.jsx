@@ -1,25 +1,18 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
+import styles from './NavigationLayoutDocCommon.scss';
 
-const inlineButtonStyle = {
-  display: 'inline', marginLeft: '5px', height: '25px', border: '1px dashed lightgrey',
-};
+const cx = classNames.bind(styles);
 
 const MenuExample = ({ layoutConfig }) => (
-  <div style={{
-    height: 'calc(100% - 10px)', width: 'calc(100% - 10px)', border: '4px dashed lightgrey', margin: '5px', position: 'relative',
-  }}
-  >
-    <div style={{
-      position: 'absolute', top: '50%', left: '50%', color: 'grey', transform: 'translate3d(-50%, -50%, 0)',
-    }}
-    >
+  <div className={cx('content-wrapper1')}>
+    <div className={cx('content-wrapper2')}>
       {layoutConfig.toggleMenu
         && (
         <button
           type="button"
-          style={inlineButtonStyle}
           onClick={layoutConfig.toggleMenu}
         >
 Toggle Menu
@@ -29,7 +22,6 @@ Toggle Menu
         && (
         <button
           type="button"
-          style={inlineButtonStyle}
           onClick={layoutConfig.togglePin}
         >
 Pin
@@ -39,13 +31,12 @@ Pin
         && (
         <button
           type="button"
-          style={inlineButtonStyle}
           onClick={layoutConfig.togglePin}
         >
 Unpin
         </button>
         )}
-      <h2 style={{ margin: '0' }}>Menu</h2>
+      <h2>Menu</h2>
       <br />
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <Link to="/page1">Page 1</Link>
