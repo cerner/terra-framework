@@ -10,7 +10,7 @@ viewports.forEach((viewport) => {
         browser.waitForVisible('#test-menu');
       });
 
-      Terra.should.validateElement({ selector: '#test-menu' });
+      Terra.it.validatesElement({ selector: '#test-menu' });
     });
   });
 });

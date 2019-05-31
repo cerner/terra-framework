@@ -4,15 +4,15 @@ describe('Slide Group', () => {
   describe('Default', () => {
     before(() => browser.url('/#/raw/tests/terra-slide-group/slide-group/default-slide-group'));
 
-    Terra.should.matchScreenshot({ selector: '#SlideGroup' });
-    Terra.should.beAccessible();
+    Terra.it.matchesScreenshot({ selector: '#SlideGroup' });
+    Terra.it.isAccessible();
   });
 
   describe('One Item', () => {
     before(() => browser.url('/#/raw/tests/terra-slide-group/slide-group/one-item-slide-group'));
 
-    Terra.should.matchScreenshot({ selector: '#SlideGroup' });
-    Terra.should.beAccessible();
+    Terra.it.matchesScreenshot({ selector: '#SlideGroup' });
+    Terra.it.isAccessible();
   });
 
   describe('Non Animated', () => {
@@ -22,14 +22,14 @@ describe('Slide Group', () => {
       browser.click('#increment-1');
     });
 
-    Terra.should.matchScreenshot('slide 2');
+    Terra.it.matchesScreenshot('slide 2');
 
     it('should go back a slide', () => {
       browser.click('#decrement-2');
     });
 
-    Terra.should.matchScreenshot('slide 1');
-    Terra.should.beAccessible();
+    Terra.it.matchesScreenshot('slide 1');
+    Terra.it.isAccessible();
   });
 
   describe('Animated', () => {
@@ -41,7 +41,7 @@ describe('Slide Group', () => {
       browser.pause(350);
     });
 
-    Terra.should.matchScreenshot('slide 2');
+    Terra.it.matchesScreenshot('slide 2');
 
     it('should go back a slide', () => {
       browser.click('#decrement-2');
@@ -49,7 +49,7 @@ describe('Slide Group', () => {
       browser.pause(350);
     });
 
-    Terra.should.matchScreenshot('slide 1');
-    Terra.should.beAccessible();
+    Terra.it.matchesScreenshot('slide 1');
+    Terra.it.isAccessible();
   });
 });
