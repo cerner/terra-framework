@@ -7,6 +7,7 @@ Unreleased
 6.1.0 - (May 21, 2019)
 ------------------
 ### Changed
+* Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 * Explicitly set menu item font weight value to normal.
 
 6.0.0 - (May 13, 2019)
