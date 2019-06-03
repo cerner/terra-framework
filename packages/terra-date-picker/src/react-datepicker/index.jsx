@@ -509,7 +509,8 @@ export default class DatePicker extends React.Component {
         maxTime={this.props.maxTime}
         excludeTimes={this.props.excludeTimes}
         className={this.props.calendarClassName}
-        yearDropdownItemNumber={this.props.yearDropdownItemNumber}>
+        yearDropdownItemNumber={this.props.yearDropdownItemNumber}
+      >
         {this.props.children}
       </WrappedCalendar>
     }
