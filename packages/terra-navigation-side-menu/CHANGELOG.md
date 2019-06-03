@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Default --terra-navigation-side-menu-item-font-weight to normal.
 
 2.8.0 - (May 21, 2019)
 ------------------
