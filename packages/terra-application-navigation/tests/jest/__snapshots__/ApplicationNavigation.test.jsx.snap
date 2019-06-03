@@ -226,7 +226,6 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
         }
       }
       paused={false}
-      tag="div"
     >
       <InjectIntl(DrawerMenu)
         activeNavigationItemKey="test-text"
