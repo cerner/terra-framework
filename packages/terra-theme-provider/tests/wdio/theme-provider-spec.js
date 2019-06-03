@@ -7,7 +7,7 @@ describe('Theme Provider', () => {
       browser.url('/#/raw/tests/terra-theme-provider/theme-provider/default-theme-provider');
     });
 
-    Terra.should.matchScreenshot({ viewports, selector });
+    Terra.it.matchesScreenshot({ viewports, selector });
   });
 
   describe('Displays a globally themed component', () => {
@@ -15,7 +15,7 @@ describe('Theme Provider', () => {
       browser.url('#/raw/tests/terra-theme-provider/theme-provider/global-theme-provider');
     });
 
-    Terra.should.matchScreenshot({ viewports, selector });
+    Terra.it.matchesScreenshot({ viewports, selector });
   });
 
   describe('Displays an updated themed component', () => {
@@ -23,7 +23,7 @@ describe('Theme Provider', () => {
       browser.url('/#/raw/tests/terra-theme-provider/theme-provider/switch-themes');
     });
 
-    Terra.should.matchScreenshot({ viewports, selector });
+    Terra.it.matchesScreenshot({ viewports, selector });
   });
 
   describe('Displays an updated themed component - After Click', () => {
@@ -32,7 +32,7 @@ describe('Theme Provider', () => {
       browser.selectByAttribute('#theme', 'value', 'cerner-mock-theme');
     });
 
-    Terra.should.matchScreenshot({ viewports, selector });
+    Terra.it.matchesScreenshot({ viewports, selector });
   });
 
   describe('Displays an updated globally themed component', () => {
@@ -40,7 +40,7 @@ describe('Theme Provider', () => {
       browser.url('/#/raw/tests/terra-theme-provider/theme-provider/global-switch-themes');
     });
 
-    Terra.should.matchScreenshot({ viewports, selector });
+    Terra.it.matchesScreenshot({ viewports, selector });
   });
 
   describe('Displays an updated globally themed component -  After Click', () => {
@@ -49,7 +49,7 @@ describe('Theme Provider', () => {
       browser.selectByAttribute('#theme', 'value', 'cerner-mock-theme');
     });
 
-    Terra.should.matchScreenshot({ viewports, selector });
+    Terra.it.matchesScreenshot({ viewports, selector });
   });
 
   describe('Displays a themed provider without a themeName provided', () => {
@@ -57,6 +57,6 @@ describe('Theme Provider', () => {
       browser.url('/#/raw/tests/terra-theme-provider/theme-provider/theme-provider-no-theme');
     });
 
-    Terra.should.matchScreenshot({ viewports, selector });
+    Terra.it.matchesScreenshot({ viewports, selector });
   });
 });
