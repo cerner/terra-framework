@@ -13,8 +13,8 @@ describe('Menu', () => {
       browser.hasFocus('[class*="content"][aria-modal="true"][role="dialog"]');
     });
 
-    Terra.should.matchScreenshot({ selector: '#root' });
-    Terra.should.beAccessible();
+    Terra.it.matchesScreenshot({ selector: '#root' });
+    Terra.it.isAccessible();
   });
 
   describe('Menu-Bounded', () => {
@@ -24,15 +24,15 @@ describe('Menu', () => {
       browser.hasFocus('[class*="content"][aria-modal="true"][role="dialog"]');
     });
 
-    Terra.should.matchScreenshot();
-    Terra.should.beAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot();
+    Terra.it.isAccessible({ rules: ignoredA11y });
 
     it('opens submenu', () => {
       browser.click('.TestNestedMenu');
       browser.hasFocus('[role="button"][aria-label="Back"]');
     });
-    Terra.should.matchScreenshot('submenu', { selector: '#root' });
-    Terra.should.beAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot('submenu', { selector: '#root' });
+    Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
   describe('Menu-Small Height', () => {
@@ -41,8 +41,8 @@ describe('Menu', () => {
       browser.click('#small-menu-button');
     });
 
-    Terra.should.matchScreenshot({ selector: '#root' });
-    Terra.should.beAccessible();
+    Terra.it.matchesScreenshot({ selector: '#root' });
+    Terra.it.isAccessible();
   });
 
   describe('Menu-Medium Height', () => {
@@ -51,8 +51,8 @@ describe('Menu', () => {
       browser.click('#medium-menu-button');
     });
 
-    Terra.should.matchScreenshot({ selector: '#root' });
-    Terra.should.beAccessible();
+    Terra.it.matchesScreenshot({ selector: '#root' });
+    Terra.it.isAccessible();
   });
 
   describe('Menu-Large Height', () => {
@@ -61,8 +61,8 @@ describe('Menu', () => {
       browser.click('#large-menu-button');
     });
 
-    Terra.should.matchScreenshot({ selector: '#root' });
-    Terra.should.beAccessible();
+    Terra.it.matchesScreenshot({ selector: '#root' });
+    Terra.it.isAccessible();
   });
 
   describe('Menu-Non-Selectable', () => {
@@ -71,8 +71,8 @@ describe('Menu', () => {
       browser.click('#non-selectable-menu-button');
     });
 
-    Terra.should.matchScreenshot({ selector: '#root' });
-    Terra.should.beAccessible();
+    Terra.it.matchesScreenshot({ selector: '#root' });
+    Terra.it.isAccessible();
   });
 
   describe('Menu-Selectable', () => {
@@ -84,8 +84,8 @@ describe('Menu', () => {
       browser.hasFocus('li:last-child[aria-checked="true"][role="menuitemradio"]');
     });
 
-    Terra.should.matchScreenshot({ selector: '#root' });
-    Terra.should.beAccessible();
+    Terra.it.matchesScreenshot({ selector: '#root' });
+    Terra.it.isAccessible();
   });
 
   describe('Menu-Selectable with Varying Items', () => {
@@ -94,8 +94,8 @@ describe('Menu', () => {
       browser.click('#default-button');
     });
 
-    Terra.should.matchScreenshot({ selector: '#root' });
-    Terra.should.beAccessible();
+    Terra.it.matchesScreenshot({ selector: '#root' });
+    Terra.it.isAccessible();
 
     it('selects an item and maintains selection after menu has been reopened', () => {
       browser.click('.TestSelectableItem');
@@ -103,69 +103,67 @@ describe('Menu', () => {
       browser.click('#default-button');
       browser.hasFocus('[class*="content"][aria-modal="true"][role="dialog"]');
     });
-    Terra.should.matchScreenshot('maintained selection after reopen', { selector: '#root' });
+    Terra.it.matchesScreenshot('maintained selection after reopen', { selector: '#root' });
   });
 
   describe('Menu with a submenu', () => {
-    before(() => {
+    it('Menu with a submenu', () => {
       browser.url('/#/raw/tests/terra-menu/menu/menu/sub-menu');
       browser.click('#sub-menu-button');
       browser.hasFocus('[class*="content"][aria-modal="true"][role="dialog"]');
-    });
+      Terra.validates.element('main menu', { selector: '#root' });
 
-    Terra.should.matchScreenshot('main menu', { selector: '#root' });
-    Terra.should.beAccessible();
-
-    it('displays the submenu', () => {
       browser.click('.TestNestedMenu');
       browser.hasFocus('[role="button"][aria-label="Back"]');
+      Terra.validates.element('submenu', { selector: '#root' });
+      browser.keys('Escape');
     });
-    Terra.should.matchScreenshot('submenu', { selector: '#root' });
   });
 
   describe('Menu Keyboard Navigation-Arrow Keys', () => {
-    before(() => {
+    it('Menu Keyboard Navigation-Arrow Keys', () => {
       browser.url('/#/raw/tests/terra-menu/menu/menu/sub-menu');
       browser.click('#sub-menu-button');
       browser.hasFocus('[class*="content"][aria-modal="true"][role="dialog"]');
-    });
 
-    it('does not do anything when left arrow is pressed on the first layer', () => {
+      // it does not do anything when left arrow is pressed on the first layer
       browser.keys(['Tab', 'ArrowLeft']);
       browser.hasFocus('li:first-child[class*="item"][role="menuitem"]');
-    });
-    Terra.should.matchScreenshot('main menu remains open', { selector: '#root' });
 
-    it('displays the submenu on right arrow', () => {
+      Terra.validates.element('main menu remains open', { selector: '#root' });
+
+      // it displays the submenu on right arrow
       browser.keys(['ArrowDown', 'ArrowRight']);
       browser.hasFocus('[role="button"][aria-label="Back"]');
-    });
-    Terra.should.matchScreenshot('navigated to submenu', { selector: '#root' });
 
-    it('returns to the main menu on left arrow', () => {
+      Terra.validates.element('navigated to submenu', { selector: '#root' });
+
+      // it returns to the main menu on left arrow
       browser.keys(['ArrowLeft']);
       browser.hasFocus('[class*="content"][aria-modal="true"][role="dialog"]');
+
+      Terra.validates.element('returned to main menu', { selector: '#root' });
+      browser.keys('Escape');
     });
-    Terra.should.matchScreenshot('returned to main menu', { selector: '#root' });
   });
 
   describe('Menu Keyboard Navigation-Enter Key', () => {
-    before(() => {
+    it('Menu Keyboard Navigation-Enter Key', () => {
       browser.url('/#/raw/tests/terra-menu/menu/menu/sub-menu');
       browser.click('#sub-menu-button');
       browser.hasFocus('[class*="content"][aria-modal="true"][role="dialog"]');
-    });
 
-    it('displays the submenu on enter', () => {
+      // it displays the submenu on enter
       browser.keys(['Tab', 'ArrowDown', 'Enter']);
       browser.hasFocus('[role="button"][aria-label="Back"]');
-    });
-    Terra.should.matchScreenshot('navigated to submenu', { selector: '#root' });
 
-    it('returns to the main menu on enter', () => {
+      Terra.validates.element('navigated to submenu', { selector: '#root' });
+
+      // it returns to the main menu on enter
       browser.keys(['Enter']);
       browser.hasFocus('[class*="content"][aria-modal="true"][role="dialog"]');
+
+      Terra.validates.element('returned to main menu', { selector: '#root' });
     });
-    Terra.should.matchScreenshot('returned to main menu', { selector: '#root' });
   });
 });

@@ -4,6 +4,7 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
+* Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 * Updated wdio screenshots for date-picker changes.
 
 4.2.0 - (May 21, 2019)
