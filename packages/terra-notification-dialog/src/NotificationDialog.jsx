@@ -186,7 +186,7 @@ class NotificationDialog extends React.Component {
         zIndex="9000"
         data-terra-notification-dialog
       >
-        <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: false }}>
+        <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: false, escapeDeactivates: false }}>
           <div className={cx('notification-dialog-inner-wrapper')}>
             <div className={cx('notification-dialog-container')}>
               <div id="notification-dialog-header" className={cx('header-body')}>{header || defaultHeader}</div>

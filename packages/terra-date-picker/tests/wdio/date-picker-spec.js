@@ -20,32 +20,32 @@ describe('Date Picker', () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.should.matchScreenshot({ selector: '[class="react-datepicker"]' });
-    Terra.should.beAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot({ selector: '[class="react-datepicker"]' });
+    Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
   describe('Default Date Exlcuded', () => {
     describe('Default Date Excluded - Clears input using calendar icon', () => {
       before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default-date-excluded'));
 
-      Terra.should.matchScreenshot('default date displayed');
+      Terra.it.matchesScreenshot('default date displayed');
       it('clears the default date and time after clicking on calendar button', () => {
         browser.click('[class*="button"]');
       });
-      Terra.should.matchScreenshot('default date cleared');
-      Terra.should.beAccessible({ rules: ignoredA11y });
+      Terra.it.matchesScreenshot('default date cleared');
+      Terra.it.isAccessible({ rules: ignoredA11y });
     });
 
     describe('Default Date Excluded - Clears input focusing on input box', () => {
-      before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default-date-excluded'));
+      before(() => browser.refresh());
 
-      Terra.should.matchScreenshot('default date displayed');
+      Terra.it.matchesScreenshot('default date displayed');
       it('clears the default date and time after focusing on input box', () => {
         browser.click('input[name="terra-date-date-input"]');
         // Ensures the mouse pointer doesn't appear in the screenshot
         browser.click('h3');
       });
-      Terra.should.matchScreenshot('default date cleared');
+      Terra.it.matchesScreenshot('default date cleared');
     });
   });
 
@@ -53,36 +53,36 @@ describe('Date Picker', () => {
     describe('Default Date Out Of Range - Clears input using calendar icon', () => {
       before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default-date-out-of-range'));
 
-      Terra.should.matchScreenshot('default date displayed');
+      Terra.it.matchesScreenshot('default date displayed');
       it('clears the default date and time after clicking on calendar button', () => {
         browser.click('[class*="button"]');
       });
-      Terra.should.matchScreenshot('default date cleared');
-      Terra.should.beAccessible({ rules: ignoredA11y });
+      Terra.it.matchesScreenshot('default date cleared');
+      Terra.it.isAccessible({ rules: ignoredA11y });
     });
 
     describe('Default Date Out Of Range - Clears input focusing on input box', () => {
-      before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default-date-out-of-range'));
+      before(() => browser.refresh());
 
-      Terra.should.matchScreenshot('default date displayed');
+      Terra.it.matchesScreenshot('default date displayed');
       it('clears the default date and time after focusing on input box', () => {
         browser.click('input[name="terra-date-date-input"]');
         // Ensures the mouse pointer doesn't appear in the screenshot
         browser.click('h3');
       });
-      Terra.should.matchScreenshot('default date cleared');
+      Terra.it.matchesScreenshot('default date cleared');
     });
 
     describe('Clears default date value that is before the minDate and no maxDate', () => {
       before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default-date-before-min-date-only'));
 
-      Terra.should.matchScreenshot('default date displayed');
+      Terra.it.matchesScreenshot('default date displayed');
       it('clears the default date when focus is on the input', () => {
         browser.click('input[name="terra-date-date-input"]');
         // Ensures the mouse pointer doesn't appear in the screenshot
         browser.click('h3');
       });
-      Terra.should.matchScreenshot('default date cleared');
+      Terra.it.matchesScreenshot('default date cleared');
     });
   });
 
@@ -92,8 +92,8 @@ describe('Date Picker', () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.should.matchScreenshot({ selector: '[class="react-datepicker"]' });
-    Terra.should.beAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot({ selector: '[class="react-datepicker"]' });
+    Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
   describe('Filter Dates', () => {
@@ -104,8 +104,8 @@ describe('Date Picker', () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.should.matchScreenshot({ selector: '[class="react-datepicker"]' });
-    Terra.should.beAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot({ selector: '[class="react-datepicker"]' });
+    Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
   describe('Include Dates', () => {
@@ -114,15 +114,15 @@ describe('Date Picker', () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.should.matchScreenshot({ selector: '[class="react-datepicker"]' });
-    Terra.should.beAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot({ selector: '[class="react-datepicker"]' });
+    Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
   describe('Disabled', () => {
     before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-disabled'));
 
-    Terra.should.matchScreenshot();
-    Terra.should.beAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot();
+    Terra.it.isAccessible({ rules: ignoredA11y });
 
     it('should not accept keyboard input', () => {
       expect(browser.setValue.bind(browser, 'input[name="terra-date-date-input"]', '06/01/2017')).to.throw(Error);
@@ -134,10 +134,13 @@ describe('Date Picker', () => {
   });
 
   describe('Read Only', () => {
-    before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-read-only'));
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-read-only');
+      browser.moveToObject('#root', 0, 0);
+    });
 
-    Terra.should.matchScreenshot('not clicked');
-    Terra.should.beAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot('not clicked');
+    Terra.it.isAccessible({ rules: ignoredA11y });
 
     it('should not accept keyboard input', () => {
       expect(browser.setValue.bind(browser, 'input[name="terra-date-date-input"]', '06/01/2017')).to.throw(Error);
@@ -147,7 +150,7 @@ describe('Date Picker', () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.should.matchScreenshot('clicked');
+    Terra.it.matchesScreenshot('clicked');
   });
 
   describe('Min Max', () => {
@@ -156,8 +159,8 @@ describe('Date Picker', () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.should.matchScreenshot({ selector: '[class="react-datepicker"]' });
-    Terra.should.beAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot({ selector: '[class="react-datepicker"]' });
+    Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
   describe('On Blur', () => {
@@ -208,7 +211,7 @@ describe('Date Picker', () => {
       // Ensures the mouse pointer doesn't appear in the screenshot
       browser.click('h3');
     });
-    Terra.should.matchScreenshot('date set');
+    Terra.it.matchesScreenshot('date set');
 
     it('clears the date', () => {
       browser.click('input[name="terra-date-date-input-onchange"]');
@@ -224,8 +227,8 @@ describe('Date Picker', () => {
       // Ensures the mouse pointer doesn't appear in the screenshot
       browser.click('h3');
     });
-    Terra.should.matchScreenshot('no date set');
-    Terra.should.beAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot('no date set');
+    Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
   describe('On Change Raw', () => {
@@ -236,15 +239,15 @@ describe('Date Picker', () => {
       // Ensures the mouse pointer doesn't appear in the screenshot
       browser.click('h3');
     });
-    Terra.should.matchScreenshot('date set to 06-01');
+    Terra.it.matchesScreenshot('date set to 06-01');
 
     it('finishes setting the date', () => {
       browser.addValue('input[name="terra-date-date-input-onchangeraw"]', '/2017');
       // Ensures the mouse pointer doesn't appear in the screenshot
       browser.click('h3');
     });
-    Terra.should.matchScreenshot('date set to 06-01-2017');
-    Terra.should.beAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot('date set to 06-01-2017');
+    Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
   describe('On Click Outside', () => {
@@ -259,8 +262,8 @@ describe('Date Picker', () => {
       browser.click('input[name="terra-date-date-input-onclickoutside"]');
     });
 
-    Terra.should.matchScreenshot('date picker closed with dismissal message');
-    Terra.should.beAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot('date picker closed with dismissal message');
+    Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
   describe('On Select', () => {
@@ -273,14 +276,14 @@ describe('Date Picker', () => {
       // Ensures the mouse pointer doesn't appear in the screenshot
       browser.click('h3');
     });
-    Terra.should.matchScreenshot('Selected date not displayed');
+    Terra.it.matchesScreenshot('Selected date not displayed');
 
     it('selects a date through date picker', () => {
       browser.click('[class*="button"]');
       browser.click('div[class*="selected"]');
     });
-    Terra.should.matchScreenshot('Selected date displayed');
-    Terra.should.beAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot('Selected date displayed');
+    Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
   describe('Start Date', () => {
@@ -292,16 +295,17 @@ describe('Date Picker', () => {
       expect(browser.getAttribute('[data-terra-date-input-hidden]', 'name')).to.equal('date-input');
       expect(browser.getAttribute('[data-terra-date-input-hidden]', 'value')).to.equal('2017-04-01');
     });
-    Terra.should.matchScreenshot();
-    Terra.should.beAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot();
+    Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
   describe('Invalid dates are ignored', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-ignore-invalid-selected-dates');
+      browser.moveToObject('#root', 0, 0);
     });
 
-    Terra.should.matchScreenshot();
+    Terra.it.matchesScreenshot();
   });
 
   describe('Key Limitations', () => {
@@ -318,6 +322,33 @@ describe('Date Picker', () => {
       browser.keys('a1.b2/;3');
     });
 
-    Terra.should.validateElement('default', { axeRules: { rules: ignoredA11y } });
+    Terra.it.validatesElement('default', { axeRules: { rules: ignoredA11y } });
+  });
+
+  describe('DatePickerField', () => {
+    describe('Valid DatePickerField', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-field');
+      });
+
+      Terra.it.validatesElement({ axeRules: { rules: ignoredA11y } });
+    });
+
+    describe('Invalid DatePickerField', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-field');
+        browser.click('#validity-toggle');
+      });
+
+      Terra.it.validatesElement({ axeRules: { rules: ignoredA11y } });
+    });
+
+    describe('Disabled DatePickerField', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-date-picker/date-picker/disabled-date-picker-field');
+      });
+
+      Terra.it.validatesElement({ axeRules: { rules: ignoredA11y } });
+    });
   });
 });

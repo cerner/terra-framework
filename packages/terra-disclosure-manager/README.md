@@ -1,7 +1,7 @@
 # Terra Disclosure Manager
 
 [![NPM version](https://badgen.net/npm/v/terra-disclosure-manager)](https://www.npmjs.org/package/terra-disclosure-manager)
-[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.org/cerner/terra-framework)
+[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
 The DisclosureManager is a stateful component used to manage disclosure presentation.
 
