@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Default --terra-navigation-side-menu-item-font-weight to normal.
+* Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 
 2.8.0 - (May 21, 2019)
 ------------------
