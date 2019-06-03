@@ -137,18 +137,58 @@ class TimeUtil {
     return '00';
   }
 
+  /**
+   * Increments a second to it's next value
+   * @param {String} second Second to increment
+   * @return {String} Returns a string representation of the value of the passed in second after it's incremented
+   */
+  static incrementSecond(second) {
+    if (second) {
+      let numericSecond = Number(second);
+
+      if (numericSecond < 59) {
+        numericSecond += 1;
+        return numericSecond < 10 ? '0'.concat(numericSecond.toString()) : numericSecond.toString();
+      }
+
+      return second;
+    }
+
+    return '00';
+  }
+
+  /**
+   * Decrements a second to it's next value
+   * @param {String} second Second to decrement
+   * @return {String} Returns a string representation of the value of the passed in second after it's decremented
+   */
+  static decrementSecond(second) {
+    if (second) {
+      let numericSecond = Number(second);
+
+      if (numericSecond > 0) {
+        numericSecond -= 1;
+        return numericSecond < 10 ? '0'.concat(numericSecond.toString()) : numericSecond.toString();
+      }
+
+      return second;
+    }
+
+    return '00';
+  }
+
   static splitHour(time) {
     if (typeof (time) === 'string') {
-      const hourAndMinute = time.split(':');
+      const hourMinuteAndSecond = time.split(':');
 
-      if (hourAndMinute.length) {
-        const hour = Number(hourAndMinute[0]);
+      if (hourMinuteAndSecond.length) {
+        const hour = Number(hourMinuteAndSecond[0]);
         if (hour >= 0 && hour < 24) {
-          if (hourAndMinute[0].length === 1) {
-            return '0'.concat(hourAndMinute[0]);
+          if (hourMinuteAndSecond[0].length === 1) {
+            return '0'.concat(hourMinuteAndSecond[0]);
           }
 
-          return hourAndMinute[0];
+          return hourMinuteAndSecond[0];
         }
       }
 
@@ -160,16 +200,37 @@ class TimeUtil {
 
   static splitMinute(time) {
     if (typeof (time) === 'string') {
-      const hourAndMinute = time.split(':');
+      const hourMinuteAndSecond = time.split(':');
 
-      if (hourAndMinute.length > 1) {
-        const minute = Number(hourAndMinute[1]);
+      if (hourMinuteAndSecond.length > 1) {
+        const minute = Number(hourMinuteAndSecond[1]);
         if (minute >= 0 && minute < 60) {
-          if (hourAndMinute[1].length === 1) {
-            return '0'.concat(hourAndMinute[1]);
+          if (hourMinuteAndSecond[1].length === 1) {
+            return '0'.concat(hourMinuteAndSecond[1]);
           }
 
-          return hourAndMinute[1];
+          return hourMinuteAndSecond[1];
+        }
+      }
+
+      return '';
+    }
+
+    return '';
+  }
+
+  static splitSecond(time) {
+    if (typeof (time) === 'string') {
+      const hourMinuteAndSecond = time.split(':');
+
+      if (hourMinuteAndSecond.length > 2) {
+        const second = Number(hourMinuteAndSecond[2]);
+        if (second >= 0 && second < 60) {
+          if (hourMinuteAndSecond[2].length === 1) {
+            return '0'.concat(hourMinuteAndSecond[2]);
+          }
+
+          return hourMinuteAndSecond[2];
         }
       }
 
@@ -180,12 +241,14 @@ class TimeUtil {
   }
 }
 
-TimeUtil.validateTime = new RegExp('^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$');
+// Makes including seconds or not optional, need to talk to UX
+TimeUtil.validateTime = new RegExp('^(0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9]){1,2}$');
 
 TimeUtil.inputType = {
   HOUR: 0,
   MINUTE: 1,
   MERIDIEM: 2,
+  SECOND: 3,
 };
 
 TimeUtil.isConsideredMobileDevice = () => window.matchMedia('(max-width: 1024px)').matches
