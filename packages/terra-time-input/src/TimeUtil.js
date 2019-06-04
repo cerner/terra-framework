@@ -239,10 +239,16 @@ class TimeUtil {
 
     return '';
   }
-}
 
-// Makes including seconds or not optional, need to talk to UX
-TimeUtil.validateTime = new RegExp('^(0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9]){1,2}$');
+  static validateTime(value, showSecond) {
+    // Including seconds in the value is required if seconds are shown
+    if (showSecond) {
+      return /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/.test(value);
+    }
+    
+    return /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(value);
+  }
+}
 
 TimeUtil.inputType = {
   HOUR: 0,

@@ -100,8 +100,9 @@ class TimeInput extends React.Component {
     super(props);
 
     let { value } = this.props;
+    const { showSecond } = this.props;
 
-    if (value && !TimeUtil.validateTime.test(value)) {
+    if (value && !TimeUtil.validateTime(value, showSecond)) {
       if (process.env !== 'production') {
         // eslint-disable-next-line
         console.warn(
@@ -513,7 +514,11 @@ class TimeInput extends React.Component {
     }
 
     if (event.keyCode === KeyCode.KEY_RIGHT) {
-      this.focusMeridiemFromMinute(event);
+      if (this.props.showSecond) {
+        this.focusSecondFromMinute(event);
+      } else {
+        this.focusMeridiemFromMinute(event);
+      }
     }
   }
 
@@ -541,7 +546,7 @@ class TimeInput extends React.Component {
     }
   }
 
-  focusSecond(event) {
+  focusSecondFromMinute(event) {
     // If the minute is empty or the cursor is after the value, move focus to the meridiem.
     if ((this.state.minute.length === 0
         || this.state.minute.length === this.minuteInput.selectionEnd)
@@ -549,16 +554,16 @@ class TimeInput extends React.Component {
     ) {
       this.secondInput.focus();
       if (this.state.second) {
-        this.secondInput.setSelectionRange(this.state.second.length, this.state.second.length);
+        this.secondInput.setSelectionRange(0, 0);
         event.preventDefault();
       }
     }
   }
 
   /**
-   * Takes a key input from the minute input, and processes it based on the value of the keycode.
-   * If the key is an up or down arrow, it increments/decrements the minute. If the left arrow
-   * is pressed, it shifts focus to the hour input. If the right arrow is pressed, it shifts
+   * Takes a key input from the second input, and processes it based on the value of the keycode.
+   * If the key is an up or down arrow, it increments/decrements the second. If the left arrow
+   * is pressed, it shifts focus to the minute input. If the right arrow is pressed, it shifts
    * focus to the merdiem input.
    * @param {Object} event Event object generated from the event delegation.
    */
@@ -581,11 +586,11 @@ class TimeInput extends React.Component {
     if (event.keyCode === KeyCode.KEY_LEFT
         || event.keyCode === KeyCode.KEY_DELETE
         || event.keyCode === KeyCode.KEY_BACK_SPACE) {
-      this.focusMinute(event);
+      this.focusMinuteFromSecond(event);
     }
 
     if (event.keyCode === KeyCode.KEY_RIGHT) {
-      this.focusMeridiem(event);
+      this.focusMeridiemFromSecond(event);
     }
   }
 
@@ -632,7 +637,6 @@ class TimeInput extends React.Component {
       });
     }
 
-    // TODO: figure this out
     // Input values of length 1 indicate incomplete time, which means we cannot get a
     // reliable time so onChange isn't triggered.
     if (this.props.onChange && timeValue.length !== 1) {
@@ -640,10 +644,10 @@ class TimeInput extends React.Component {
       const minute = type === TimeUtil.inputType.MINUTE ? timeValue : this.state.minute;
       const second = type === TimeUtil.inputType.SECOND ? timeValue : this.state.second;
 
-      if (hour === '' && minute === '') {
+      if (hour === '' && minute === '' && second === '') {
         this.props.onChange(event, '');
       } else {
-        this.props.onChange(event, this.formatHour(hour, meridiem).concat(':', minute));
+        this.props.onChange(event, this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSecond ? ':'.concat(second) : ''));
       }
     }
   }
@@ -676,8 +680,26 @@ class TimeInput extends React.Component {
     if (event.keyCode === KeyCode.KEY_LEFT
         || event.keyCode === KeyCode.KEY_DELETE
         || event.keyCode === KeyCode.KEY_BACK_SPACE) {
-      this.minuteInput.focus();
+      if (this.props.showSecond) {
+        this.focusSecondFromMeridiem(event);
+      } else {
+        this.minuteInput.focus(event);
+      }
       event.preventDefault();
+    }
+  }
+
+  focusSecondFromMeridiem(event) {
+    // If the minute is empty or the cursor is after the value, move focus to the meridiem.
+    if ((this.state.minute.length === 0
+        || this.state.minute.length === this.minuteInput.selectionEnd)
+        && this.secondInput
+    ) {
+      this.secondInput.focus();
+      if (this.state.second) {
+        this.secondInput.setSelectionRange(this.state.second.length, this.state.second.length);
+        event.preventDefault();
+      }
     }
   }
 
@@ -790,28 +812,31 @@ class TimeInput extends React.Component {
           </label>
         </div>
         {showSecond && (
-          <div className={cx('time-input-group')}>
-            <Input
-              {...inputAttributes}
-              {...instanceSecondAttrs}
-              refCallback={(inputRef) => { this.secondInput = inputRef; }}
-              className={cx('time-input-second')}
-              value={this.state.second}
-              name={'terra-time-second-'.concat(name)}
-              placeholder={this.context.intl.formatMessage({ id: 'Terra.timeInput.ss' })}
-              maxLength="2"
-              onChange={this.handleSecondChange}
-              onKeyDown={this.handleSecondInputKeyDown}
-              onFocus={this.handleFocus}
-              onBlur={this.handleSecondBlur}
-              size="2"
-              pattern="\d*"
-              disabled={disabled}
-            />
-            <label htmlFor={instanceMinuteAttrs.id} className={cx('mobile-input-label')}>
-              {this.context.intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
-            </label>
-          </div>
+          <React.Fragment>
+            <span className={cx('time-spacer')}>:</span>
+            <div className={cx('time-input-group')}>
+              <Input
+                {...inputAttributes}
+                {...instanceSecondAttrs}
+                refCallback={(inputRef) => { this.secondInput = inputRef; }}
+                className={cx('time-input-second')}
+                value={this.state.second}
+                name={'terra-time-second-'.concat(name)}
+                placeholder={this.context.intl.formatMessage({ id: 'Terra.timeInput.ss' })}
+                maxLength="2"
+                onChange={this.handleSecondChange}
+                onKeyDown={this.handleSecondInputKeyDown}
+                onFocus={this.handleFocus}
+                onBlur={this.handleSecondBlur}
+                size="2"
+                pattern="\d*"
+                disabled={disabled}
+              />
+              <label htmlFor={instanceMinuteAttrs.id} className={cx('mobile-input-label')}>
+                {this.context.intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
+              </label>
+            </div>
+          </React.Fragment>
         )}
         {this.props.variant === TimeUtil.FORMAT_12_HOUR && (
           <ButtonGroup selectedKeys={[this.state.meridiem]} onChange={this.handleMeridiemButtonChange} className={cx('meridiem-button-group')}>
@@ -869,7 +894,7 @@ class TimeInput extends React.Component {
     // Using the state of hour and minute create a time in UTC represented in ISO 8601 format.
     let timeValue = '';
 
-    if (this.state.hour.length > 0 || this.state.minute.length > 0) {
+    if (this.state.hour.length > 0 || this.state.minute.length > 0 || (this.state.second.length > 0 && showSecond)) {
       let hour = parseInt(this.state.hour, 10);
 
       if (this.props.variant === TimeUtil.FORMAT_12_HOUR && this.state.meridiem === this.postMeridiem) {
@@ -877,6 +902,10 @@ class TimeInput extends React.Component {
       }
 
       timeValue = 'T'.concat(hour, ':', this.state.minute);
+
+      if (showSecond) {
+        timeValue = timeValue.concat(':', this.state.second);
+      }
     }
 
     /* eslint-disable jsx-a11y/no-static-element-interactions */
@@ -889,7 +918,7 @@ class TimeInput extends React.Component {
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
           // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
-          type="hidden"
+          //type="hidden"
           name={name}
           // TODO: include seconds in this always?
           value={timeValue}
