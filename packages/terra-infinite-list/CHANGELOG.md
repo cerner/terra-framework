@@ -6,6 +6,9 @@ Unreleased
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 
+### Changed
+* Removed all inline styles from Dev-site components and implemented the same styles using external css.
+
 3.5.0 - (May 7, 2019)
 ------------------
 ### Changed
