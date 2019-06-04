@@ -2,7 +2,7 @@
 
 
 [![NPM version](https://badgen.net/npm/v/terra-navigation-side-menu)](https://www.npmjs.org/package/terra-navigation-side-menu)
-[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.org/cerner/terra-framework)
+[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
 A structual component for nesting navigational items within the content section of the terra-menu-layout.
 

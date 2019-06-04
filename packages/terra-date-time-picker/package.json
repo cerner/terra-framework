@@ -1,7 +1,7 @@
 {
   "name": "terra-date-time-picker",
   "main": "lib/DateTimePicker.js",
-  "version": "3.16.0",
+  "version": "4.2.0",
   "description": "The DateTimePicker component has a date picker for selecting date and a time input for entering time",
   "repository": {
     "type": "git",
@@ -31,23 +31,22 @@
     "moment": "^2.21.0",
     "moment-timezone": "^0.5.13",
     "prop-types": "^15.5.8",
-    "terra-abstract-modal": "^2.6.0",
+    "terra-abstract-modal": "^3.1.0",
     "terra-button": "^3.3.0",
-    "terra-date-picker": "^3.15.0",
-    "terra-time-input": "^3.7.0"
+    "terra-date-picker": "^4.2.0",
+    "terra-time-input": "^4.0.0"
   },
   "devDependencies": {
     "terra-doc-template": "^2.2.0",
     "terra-form-field": "^3.1.0",
-    "terra-modal-manager": "^5.11.0"
+    "terra-modal-manager": "^6.1.0"
   },
   "scripts": {
-    "compile": "npm run compile:clean && npm run compile:build",
-    "compile:clean": "rm -rf lib",
-    "compile:build": "babel src --out-dir lib --copy-files",
+    "compile": "babel --root-mode upward src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
+    "precompile": "rm -rf lib",
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest --config ../../jestconfig.js",
     "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"

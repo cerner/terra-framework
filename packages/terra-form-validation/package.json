@@ -1,9 +1,8 @@
 {
   "name": "terra-form-validation",
   "main": "docs/README.md",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Form Validation Examples for Terra",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git"
@@ -23,16 +22,18 @@
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "peerDependencies": {
+    "final-form": "^4.6.0",
     "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react-dom": "^16.8.5",
+    "react-final-form": "^5.0.2"
   },
   "devDependencies": {
     "final-form": "^4.6.0",
     "prop-types": "^15.5.8",
-    "react-final-form": "^3.3.1",
+    "react-final-form": "^5.0.2",
     "terra-button": "^3.3.0",
-    "terra-doc-template": "^2.2.0",
     "terra-date-picker": "^3.0.0",
+    "terra-doc-template": "^2.2.0",
     "terra-form-checkbox": "^3.0.0",
     "terra-form-field": "^3.1.0",
     "terra-form-input": "^2.3.0",
@@ -43,11 +44,12 @@
     "terra-spacer": "^3.0.0"
   },
   "scripts": {
-    "compile": "npm run compile:clean && npm run compile:build",
-    "compile:clean": "rm -rf lib",
-    "compile:build": "babel src --out-dir lib --copy-files",
+    "compile": "babel --root-mode upward src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
-    "lint:scss": "stylelint src/**/*.scss"
+    "lint:scss": "stylelint src/**/*.scss",
+    "precompile": "rm -rf lib",
+    "test": "npm run test:jest",
+    "test:jest": "jest --config ../../jestconfig.js"
   }
 }

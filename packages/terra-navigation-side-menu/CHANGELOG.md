@@ -3,6 +3,20 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+### Fixed
+* Default --terra-navigation-side-menu-item-font-weight to normal. Fixes bug in Edge.
+
+2.8.0 - (May 21, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+2.7.0 - (May 15, 2019)
+------------------
+### Added
+* Added custom font-weight property, `--terra-navigation-side-menu-item-font-weight`, for MenuItem component (defaults to 'inherit')
 
 2.6.0 - (May 7, 2019)
 ------------------

@@ -3,6 +3,21 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+
+3.2.0 - (May 21, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+3.1.0 - (May 15, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+3.0.0 - (May 13, 2019)
+------------------
 ### Breaking Changes
 * Updated z-index for dialog modal to `7000`
 * Removed `isFocused` prop

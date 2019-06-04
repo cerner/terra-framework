@@ -2,7 +2,7 @@
 
 
 [![NPM version](https://badgen.net/npm/v/terra-slide-panel)](https://www.npmjs.org/package/terra-slide-panel)
-[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.org/cerner/terra-framework)
+[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
 The Terra SlidePanel component is a progressive disclosure mechanism that allows additional content to be shown and hidden in a variety of ways.
 

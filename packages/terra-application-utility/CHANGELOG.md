@@ -4,6 +4,17 @@ Changelog
 Unreleased
 ----------
 
+2.11.0 - (May 21, 2019)
+------------------
+### Changed
+* Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+* Update tests to use `Terra.should.validateElement()`
+
+2.10.0 - (May 15, 2019)
+------------------
+### Changed
+* Minor dependency update
+
 2.9.0 - (April 24, 2019)
 ------------------
 ### Changed

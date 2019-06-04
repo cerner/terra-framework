@@ -2,7 +2,7 @@ describe('Aggregator', () => {
   before(() => browser.setViewportSize(Terra.viewports('large')[0]));
 
   describe('Standalone', () => {
-    beforeEach(() => {
+    before(() => {
       browser.url('/#/raw/tests/terra-aggregator/aggregator/aggregator-standalone');
 
       browser.click('#test-aggregator #section1');
@@ -10,48 +10,37 @@ describe('Aggregator', () => {
       browser.click('#test-aggregator #section3');
     });
 
-    Terra.should.matchScreenshot();
-    Terra.should.beAccessible();
+    Terra.it.validatesElement();
   });
 
   describe('With Disclosure - Open', () => {
-    beforeEach(() => {
+    before(() => {
       browser.url('/#/raw/tests/terra-aggregator/aggregator/aggregator-with-disclosure');
-
       browser.click('#test-aggregator #section1');
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-aggregator' });
-    Terra.should.beAccessible();
-  });
+    Terra.it.validatesElement({ selector: '#test-aggregator' });
 
-  describe('With Disclosure - Close from focus release', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-aggregator/aggregator/aggregator-with-disclosure');
+    describe('With Disclosure - Close from focus release', () => {
+      before(() => {
+        browser.waitForVisible('[class*="slide-group"] .close-disclosure');
 
-      browser.click('#test-aggregator #section1');
+        browser.click('#test-aggregator #section1');
+      });
 
-      browser.waitForVisible('[class*="slide-group"] .close-disclosure');
-
-      browser.click('#test-aggregator #section1');
+      Terra.it.validatesElement({ selector: '#test-aggregator' });
     });
 
-    Terra.should.matchScreenshot({ selector: '#test-aggregator' });
-    Terra.should.beAccessible();
-  });
+    describe('With Disclosure - Close from explicit close', () => {
+      before(() => {
+        browser.click('#test-aggregator #section1');
 
-  describe('With Disclosure - Close from explicit close', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-aggregator/aggregator/aggregator-with-disclosure');
+        browser.waitForVisible('[class*="slide-group"] .close-disclosure');
 
-      browser.click('#test-aggregator #section1');
+        browser.click('[class*="slide-group"] .close-disclosure');
+      });
 
-      browser.waitForVisible('[class*="slide-group"] .close-disclosure');
-
-      browser.click('[class*="slide-group"] .close-disclosure');
+      Terra.it.validatesElement({ selector: '#test-aggregator' });
     });
-
-    Terra.should.matchScreenshot({ selector: '#test-aggregator' });
-    Terra.should.beAccessible();
   });
 });

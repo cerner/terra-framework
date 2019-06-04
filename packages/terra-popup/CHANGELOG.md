@@ -3,6 +3,16 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+
+6.1.0 - (May 21, 2019)
+------------------
+### Changed
+* Minor dependency update
+
+6.0.0 - (May 13, 2019)
+------------------
 ### Breaking Changes
 * Removed `releaseFocus` prop
 * Removed `requestFocus` prop
