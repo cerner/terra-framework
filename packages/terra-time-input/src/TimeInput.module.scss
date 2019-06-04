@@ -41,8 +41,7 @@
       color: var(--terra-time-input-hover-color, #1c1f21);
 
       .time-input-hour,
-      .time-input-minute-without-second,
-      .time-input-minute-with-second,
+      .time-input-minute,
       .time-input-second {
         color: var(--terra-time-input-hover-color, #1c1f21);
       }
@@ -68,8 +67,7 @@
       }
 
       .time-input-hour,
-      .time-input-minute-without-second,
-      .time-input-minute-with-second,
+      .time-input-minute,
       .time-input-second {
         color: var(--terra-time-input-focus-color, #1c1f21);
       }
@@ -89,8 +87,7 @@
     }
 
     .time-input-hour[disabled],
-    .time-input-minute-without-second[disabled],
-    .time-input-minute-with-second[disabled],
+    .time-input-minute[disabled],
     .time-input-second[disabled],
     .meridiem-display[disabled] {
       opacity: 1;
@@ -110,8 +107,7 @@
   }
 
   .time-input-hour,
-  .time-input-minute-without-second,
-  .time-input-minute-with-second,
+  .time-input-minute,
   .time-input-second {
     background-color: var(--terra-time-input-background-color, #fff);
     background-image: var(--terra-time-input-background-image, none);
@@ -197,14 +193,14 @@
     width: 1.7em;
   }
 
-  .time-input-minute-without-second.desktop {
+  .time-input-minute.without-second.desktop {
     min-width: 1.8em;
     text-align: left;
     width: 1.8em;
   }
 
   // TODO: UX input on how wide this should be (what is wide enough for mm is way too wide for numbers)
-  .time-input-minute-with-second.desktop {
+  .time-input-minute.with-second.desktop {
     min-width: 1.8em;
     text-align: left;
     width: 1.8em;

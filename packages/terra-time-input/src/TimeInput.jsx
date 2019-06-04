@@ -104,10 +104,11 @@ class TimeInput extends React.Component {
 
     if (value && !TimeUtil.validateTime(value, showSecond)) {
       if (process.env !== 'production') {
-        // eslint-disable-next-line
+        // eslint-disable-next-line no-console
         console.warn(
-          `An invalid time value, ${value}, has been passed to the terra-time-picker.`
-          + 'This value has been ignored and will not be rendered. Time values must be in hh:mm format.',
+          `An invalid time value, ${value}, has been passed to the terra-time-picker. `
+          + 'This value has been ignored and will not be rendered. '
+          + `Time values must be in ${showSecond ? 'hh:mm:ss' : 'hh:mm'} format because showSecond is ${showSecond}.`,
         );
       }
 
@@ -794,7 +795,7 @@ class TimeInput extends React.Component {
             {...inputAttributes}
             {...instanceMinuteAttrs}
             refCallback={(inputRef) => { this.minuteInput = inputRef; }}
-            className={cx('time-input-minute')}
+            className={cx('time-input-minute', showSecond ? 'with-second' : 'without-second')}
             value={this.state.minute}
             name={'terra-time-minute-'.concat(name)}
             placeholder={this.context.intl.formatMessage({ id: 'Terra.timeInput.mm' })}
@@ -918,7 +919,7 @@ class TimeInput extends React.Component {
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
           // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
-          //type="hidden"
+          type="hidden"
           name={name}
           // TODO: include seconds in this always?
           value={timeValue}
@@ -951,7 +952,7 @@ class TimeInput extends React.Component {
           {...minuteAttributes}
           refCallback={(inputRef) => { this.minuteInput = inputRef; }}
           aria-label={this.context.intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
-          className={cx(showSecond ? 'time-input-minute-with-second' : 'time-input-minute-without-second', 'desktop', { 'initial-focus': this.state.minuteInitialFocused })}
+          className={cx('time-input-minute', showSecond ? 'with-second' : 'without-second', 'desktop', { 'initial-focus': this.state.minuteInitialFocused })}
           type="text"
           value={this.state.minute}
           name={'terra-time-minute-'.concat(name)}
