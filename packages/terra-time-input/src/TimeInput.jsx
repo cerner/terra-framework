@@ -135,7 +135,6 @@ class TimeInput extends React.Component {
         this.anteMeridiem = context.intl.formatMessage({ id: 'Terra.timeInput.am' });
         this.postMeridiem = context.intl.formatMessage({ id: 'Terra.timeInput.pm' });
       }
-:P
       if (hour) {
         const parsedHour = TimeUtil.parseTwelveHourTime(hour, this.anteMeridiem, this.postMeridiem);
         hour = parsedHour.hourString;
@@ -756,6 +755,7 @@ class TimeInput extends React.Component {
           pattern="\d*"
           disabled={disabled}
         />
+        <p>:P</p>
         {this.props.variant === TimeUtil.FORMAT_12_HOUR && (
           [
             <Input
