@@ -38,7 +38,6 @@ export default class TimeInputElement extends React.Component {
           id="timeInput"
           name="time-input"
           variant={TimeUtil.FORMAT_12_HOUR}
-          showSecond
         />
         <h3>(this picker is changeable)</h3>
         <div id="time-input-value">
@@ -69,6 +68,13 @@ Time Input with value provided - Current Value:
           name="time-input-disabled"
           variant={TimeUtil.FORMAT_12_HOUR}
           disabled
+        />
+        <h3>Input with Second</h3>
+        <TimeInput
+          id="timeInputSecond"
+          name="time-input-second"
+          variant={TimeUtil.FORMAT_12_HOUR}
+          showSecond
         />
       </div>
     );

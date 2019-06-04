@@ -65,4 +65,33 @@ describe('Time Input Twelve Hour Mobile', () => {
     Terra.it.isAccessible({ viewports, rules: ignoredA11y });
     Terra.it.matchesScreenshot({ viewports });
   });
+
+  describe('Twelve Hour Mobile - Focus Second Styles', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/mobile');
+      browser.refresh();
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInputSecond input[name="terra-time-second-time-input-second"]').style.caretColor = 'transparent';
+      });
+
+      browser.click('#timeInputSecond input[name="terra-time-second-time-input-second"]');
+    });
+
+    Terra.it.isAccessible({ viewports, rules: ignoredA11y });
+    Terra.it.matchesScreenshot({ viewports });
+  });
+
+  describe('Twelve Hour Mobile - Auto focues meridiem wien filling out whole thing', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/mobile');
+      browser.refresh();
+
+      browser.click('#timeInputSecond input[name="terra-time-hour-time-input-second"]');
+      browser.keys('123456');
+    });
+
+    Terra.it.isAccessible({ viewports, rules: ignoredA11y });
+    Terra.it.matchesScreenshot({ viewports });
+  });
 });

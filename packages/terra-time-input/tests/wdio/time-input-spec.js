@@ -15,6 +15,18 @@ describe('Time Input', () => {
     Terra.it.validatesElement();
   });
 
+  describe('Second with no time provided', () => {
+    before(() => browser.url('/#/raw/tests/terra-time-input/time-input/time-input/second'));
+
+    Terra.it.validatesElement();
+  });
+
+  describe('Second with time provided', () => {
+    before(() => browser.url('/#/raw/tests/terra-time-input/time-input/time-input/second-time'));
+
+    Terra.it.validatesElement();
+  });
+
   describe('Invalid time provided', () => {
     before(() => browser.url('/#/raw/tests/terra-time-input/time-input/time-input/invalid-time'));
 
@@ -39,6 +51,16 @@ describe('Time Input', () => {
 
     Terra.it.validatesElement();
   });
+
+  describe('Focus Second Styles', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-time-input/time-input/time-input/second-time');
+      browser.refresh();
+      browser.click('#timeInput input[name="terra-time-second-time-input"]');
+    });
+
+    Terra.it.validatesElement();
+  });
 });
 
 describe('Time Input onChange operations', () => {
@@ -52,7 +74,7 @@ describe('Time Input onChange operations', () => {
       });
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
-      browser.keys('1234');
+      browser.keys('123456');
     });
 
     Terra.it.matchesScreenshot({ viewports });
@@ -207,6 +229,92 @@ describe('Time Input onChange operations', () => {
       });
 
       browser.click('#timeInput input[name="terra-time-minute-time-input"]');
+      browser.keys(['Delete']);
+    });
+
+    Terra.it.matchesScreenshot({ viewports });
+  });
+
+  describe('Time Input prepends 0 on single digit second', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
+      browser.refresh();
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-second-time-input"]').style.caretColor = 'transparent';
+      });
+
+      browser.click('#timeInput input[name="terra-time-second-time-input"]');
+      browser.keys('2');
+      browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+    });
+
+    Terra.it.matchesScreenshot({ viewports });
+  });
+
+  describe('Time Input prepends 0 on second input of 6 or more', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
+      browser.refresh();
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-second-time-input"]').style.caretColor = 'transparent';
+      });
+
+      browser.click('#timeInput input[name="terra-time-second-time-input"]');
+      browser.keys('6');
+    });
+
+    Terra.it.matchesScreenshot({ viewports });
+  });
+
+  describe('Time Input does not prepend 0 on second input less than 6', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
+      browser.refresh();
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-second-time-input"]').style.caretColor = 'transparent';
+      });
+
+      browser.click('#timeInput input[name="terra-time-second-time-input"]');
+      browser.keys('5');
+    });
+
+    Terra.it.matchesScreenshot({ viewports });
+  });
+
+  describe('Time Input does not accept second input greater than 59', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
+      browser.refresh();
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-second-time-input"]').style.caretColor = 'transparent';
+      });
+
+      browser.click('#timeInput input[name="terra-time-second-time-input"]');
+      browser.keys('66');
+    });
+
+    Terra.it.matchesScreenshot({ viewports });
+  });
+
+  describe('Pressing DELETE in second with no value focuses to minute', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
+      browser.refresh();
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-second-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
+      });
+
+      browser.click('#timeInput input[name="terra-time-second-time-input"]');
       browser.keys(['Delete']);
     });
 

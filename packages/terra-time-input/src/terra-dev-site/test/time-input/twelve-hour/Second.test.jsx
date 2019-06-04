@@ -1,5 +1,6 @@
 import React from 'react';
 import TimeInput from '../../../../TimeInput';
+import TimeUtil from '../../../../TimeUtil';
 
 class TimeInputDefault extends React.Component {
   constructor(props) {
@@ -26,6 +27,7 @@ Time Input:
             id="timeInput"
             name="time-input"
             onChange={this.handleOnChange}
+            variant={TimeUtil.FORMAT_12_HOUR}
             showSecond
           />
         </div>
