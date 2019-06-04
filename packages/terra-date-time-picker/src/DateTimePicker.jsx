@@ -562,7 +562,7 @@ class DateTimePicker extends React.Component {
           selectedDate={dateValue}
           name="input"
           disabled={disabled}
-          returnFocusOnClose={false}
+          disableButtonFocusOnClose={true}
         />
 
         <div className={cx('time-facade')}>

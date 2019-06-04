@@ -26,6 +26,7 @@ exports[`should render a DatePickerField with props 1`] = `
   showOptional={true}
 >
   <DatePicker
+    disableButtonFocusOnClose={false}
     disabled={true}
     excludeDates={
       Array [
@@ -50,7 +51,6 @@ exports[`should render a DatePickerField with props 1`] = `
     onFocus={[Function]}
     onSelect={[Function]}
     required={true}
-    returnFocusOnClose={true}
     selectedDate="2017-04-09"
   />
 </Field>
@@ -77,11 +77,11 @@ exports[`should render a default DatePickerField component 1`] = `
   showOptional={false}
 >
   <DatePicker
+    disableButtonFocusOnClose={false}
     disabled={false}
     id="test-date-picker"
     name="test-date-picker"
     required={false}
-    returnFocusOnClose={true}
   />
 </Field>
 `;
@@ -112,6 +112,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
   showOptional={true}
 >
   <DatePicker
+    disableButtonFocusOnClose={false}
     disabled={true}
     excludeDates={
       Array [
@@ -136,7 +137,6 @@ exports[`should render a valid DatePickerField with props 1`] = `
     onFocus={[Function]}
     onSelect={[Function]}
     required={true}
-    returnFocusOnClose={true}
     selectedDate="2017-04-09"
   />
 </Field>
