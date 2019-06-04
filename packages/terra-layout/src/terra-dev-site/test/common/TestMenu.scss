@@ -1,0 +1,19 @@
+@import './LayoutTestCommon';
+
+:local {
+  .content-wrapper1 {
+    @include content-wrapper1-common(calc(100% - 10px));
+  }
+
+  .content-wrapper2 {
+    @include content-wrapper2-common(50%);
+  }
+
+  .content-text {
+    @extend %content-text-common;
+  }
+
+  .test-menu-toggle {
+    @extend %test-toggle-common;
+  }
+}

@@ -1,0 +1,21 @@
+@import './LayoutTestCommon';
+
+:local {
+  .content-wrapper1 {
+    @include content-wrapper1-common(60px);
+    display: flex;
+  }
+
+  .content-wrapper2 {
+    @include content-wrapper2-common(15px);
+  }
+
+  .content-text {
+    @extend %content-text-common;
+    display: inline;
+  }
+
+  .test-header-toggle {
+    @extend %test-toggle-common;
+  }
+}

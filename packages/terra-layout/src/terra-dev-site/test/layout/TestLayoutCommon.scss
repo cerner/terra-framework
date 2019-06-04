@@ -1,0 +1,28 @@
+// stylelint-disable scss/at-mixin-pattern
+
+:local {
+  @mixin content-common($background) {
+    background-color: $background;
+    height: 100%;
+    position: relative;
+    width: 100%;
+  }
+
+  .layout-test {
+    height: 768px;
+  }
+
+  .content-wrapper {
+    height: 768px;
+    position: relative;
+    width: 100%;
+  }
+
+  .panel-content {
+    @include content-common(#f00);
+  }
+
+  .layout-slide-panel-content {
+    @include content-common(#00f);
+  }
+}
