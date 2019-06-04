@@ -1,0 +1,11 @@
+// stylelint-disable scss/at-mixin-pattern
+
+@mixin content-common($height, $background-color: null) {
+
+  @if $background-color {
+    background-color: $background-color;
+  }
+
+  height: $height;
+  width: 100%;
+}

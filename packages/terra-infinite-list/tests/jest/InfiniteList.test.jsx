@@ -1,5 +1,9 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import InfiniteList, { Item } from '../../src/index';
+import styles from './InfiniteList.test.scss';
+
+const cx = classNames.bind(styles);
 
 describe('InfiniteList', () => {
   it('should render a default component', () => {
@@ -10,8 +14,8 @@ describe('InfiniteList', () => {
   it('should render with no children and loading', () => {
     const infiniteProps = {
       isFinishedLoading: false,
-      initialLoadingIndicator: <div style={{ height: '100%', width: '100%', position: 'relative' }} />,
-      progressiveLoadingIndicator: <div style={{ height: '40px', width: '100%' }} />,
+      initialLoadingIndicator: <div className={cx('initial-loading-indicator')} />,
+      progressiveLoadingIndicator: <div className={cx('progressive-loading-indicator')} />,
     };
 
     const component = <InfiniteList {...infiniteProps} />;
@@ -25,16 +29,16 @@ describe('InfiniteList', () => {
         isFinishedLoading
       >
         <Item key={`item-${1}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 1</div>
+          <div className={cx('item-content')}>item 1</div>
         </Item>
         <Item key={`item-${2}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 2</div>
+          <div className={cx('item-content')}>item 2</div>
         </Item>
         <Item key={`item-${3}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 3</div>
+          <div className={cx('item-content')}>item 3</div>
         </Item>
         <Item key={`item-${4}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 4</div>
+          <div className={cx('item-content')}>item 4</div>
         </Item>
       </InfiniteList>
     );
@@ -51,16 +55,16 @@ describe('InfiniteList', () => {
         role="listbox"
       >
         <Item isSelectable key={`item-${1}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 1</div>
+          <div className={cx('item-content')}>item 1</div>
         </Item>
         <Item isSelectable isSelected key={`item-${2}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 2</div>
+          <div className={cx('item-content')}>item 2</div>
         </Item>
         <Item isSelectable key={`item-${3}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 3</div>
+          <div className={cx('item-content')}>item 3</div>
         </Item>
         <Item isSelectable key={`item-${4}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 4</div>
+          <div className={cx('item-content')}>item 4</div>
         </Item>
       </InfiniteList>
     );
@@ -76,17 +80,17 @@ describe('InfiniteList', () => {
         paddingStyle="standard"
         role="listbox"
       >
-        <Item isSelectable style={{ backgroundColor: 'pink' }} key={`item-${1}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 1</div>
+        <Item isSelectable className={cx('item1')} key={`item-${1}`}>
+          <div className={cx('item-content')}>item 1</div>
         </Item>
-        <Item isSelectable isSelected style={{ backgroundColor: 'red' }} key={`item-${2}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 2</div>
+        <Item isSelectable isSelected className={cx('item2')} key={`item-${2}`}>
+          <div className={cx('item-content')}>item 2</div>
         </Item>
-        <Item isSelectable style={{ backgroundColor: 'blue' }} key={`item-${3}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 3</div>
+        <Item isSelectable className={cx('item3')} key={`item-${3}`}>
+          <div className={cx('item-content')}>item 3</div>
         </Item>
-        <Item isSelectable style={{ backgroundColor: 'yellow' }} key={`item-${4}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 4</div>
+        <Item isSelectable className={cx('item4')} key={`item-${4}`}>
+          <div className={cx('item-content')}>item 4</div>
         </Item>
       </InfiniteList>
     );

@@ -1,0 +1,11 @@
+@import './InfiniteListTestCommon';
+
+:local {
+  .item-content {
+    @include content-common(100px);
+  }
+
+  .infinite-list-wrapper {
+    height: 380px;
+  }
+}
