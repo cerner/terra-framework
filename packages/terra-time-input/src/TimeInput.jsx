@@ -756,6 +756,7 @@ class TimeInput extends React.Component {
           pattern="\d*"
           disabled={disabled}
         />
+        <p>:P</p>
         {this.props.variant === TimeUtil.FORMAT_12_HOUR && (
           [
             <Input
