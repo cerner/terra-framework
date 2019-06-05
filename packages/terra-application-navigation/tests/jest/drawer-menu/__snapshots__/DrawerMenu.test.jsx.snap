@@ -2,128 +2,136 @@
 
 exports[`DrawerMenu should render default element 1`] = `
 <div
-  className="drawer-menu"
-  data-navigation-drawer-menu={true}
-  tabIndex="0"
+  className="drawer-container"
 >
   <div
-    className="vertical-overflow-container"
+    className="drawer-menu"
+    data-navigation-drawer-menu={true}
+    tabIndex={0}
   >
     <div
-      className="header"
+      className="vertical-overflow-container"
     >
       <div
-        className="header-background-fill"
+        className="header"
+      >
+        <div
+          className="header-background-fill"
+        />
+      </div>
+      <ul
+        className="navigation-item-list"
+        role="listbox"
+      />
+      <ul
+        className="utility-item-list"
+        role="listbox"
       />
     </div>
-    <ul
-      className="navigation-item-list"
-      role="listbox"
-    />
-    <ul
-      className="utility-item-list"
-      role="listbox"
+    <div
+      className="footer"
     />
   </div>
-  <div
-    className="footer"
-  />
 </div>
 `;
 
 exports[`DrawerMenu should render with function callbacks 1`] = `
 <div
-  className="drawer-menu"
-  data-navigation-drawer-menu={true}
-  tabIndex="0"
+  className="drawer-container"
 >
   <div
-    className="vertical-overflow-container"
+    className="drawer-menu"
+    data-navigation-drawer-menu={true}
+    tabIndex={0}
   >
     <div
-      className="header"
+      className="vertical-overflow-container"
     >
       <div
-        className="header-background-fill"
+        className="header"
       >
-        <DrawerMenuTitle
-          titleConfig={
-            Object {
-              "title": "test-title",
+        <div
+          className="header-background-fill"
+        >
+          <DrawerMenuTitle
+            titleConfig={
+              Object {
+                "title": "test-title",
+              }
             }
-          }
-        />
-        <div>
-          my test hero
+          />
+          <div>
+            my test hero
+          </div>
+          <DrawerMenuUser
+            userConfig={
+              Object {
+                "detail": "user-detail",
+                "imageSrc": "user-src",
+                "initials": "user-initials",
+                "name": "user-name",
+              }
+            }
+            variant="small"
+          />
         </div>
-        <DrawerMenuUser
-          userConfig={
-            Object {
-              "detail": "user-detail",
-              "imageSrc": "user-src",
-              "initials": "user-initials",
-              "name": "user-name",
-            }
-          }
-          variant="small"
-        />
       </div>
+      <ul
+        className="navigation-item-list"
+        role="listbox"
+      >
+        <DrawerMenuListItem
+          isSelected={false}
+          key="my-test-key"
+          onSelect={[Function]}
+          text="test-text"
+        />
+      </ul>
+      <ul
+        className="utility-item-list"
+        role="listbox"
+      >
+        <DrawerMenuListItem
+          icon={
+            <span>
+              my icon
+            </span>
+          }
+          key="my-test-key-2"
+          onSelect={[Function]}
+          text="test-text-2"
+        />
+        <DrawerMenuListItem
+          icon={
+            <IconSettings
+              data-name="Layer 1"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            />
+          }
+          onSelect={[MockFunction]}
+          text="Terra.applicationNavigation.utilityMenu.settings"
+        />
+        <DrawerMenuListItem
+          icon={
+            <IconQuestionOutline
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            />
+          }
+          onSelect={[MockFunction]}
+          text="Terra.applicationNavigation.utilityMenu.help"
+        />
+      </ul>
     </div>
-    <ul
-      className="navigation-item-list"
-      role="listbox"
+    <div
+      className="footer"
     >
-      <DrawerMenuListItem
-        isSelected={false}
-        key="my-test-key"
-        onSelect={[Function]}
-        text="test-text"
+      <DrawerMenuFooterButton
+        onClick={[MockFunction]}
+        text="Terra.applicationNavigation.utilityMenu.logout"
       />
-    </ul>
-    <ul
-      className="utility-item-list"
-      role="listbox"
-    >
-      <DrawerMenuListItem
-        icon={
-          <span>
-            my icon
-          </span>
-        }
-        key="my-test-key-2"
-        onSelect={[Function]}
-        text="test-text-2"
-      />
-      <DrawerMenuListItem
-        icon={
-          <IconSettings
-            data-name="Layer 1"
-            viewBox="0 0 48 48"
-            xmlns="http://www.w3.org/2000/svg"
-          />
-        }
-        onSelect={[MockFunction]}
-        text="Terra.applicationNavigation.utilityMenu.settings"
-      />
-      <DrawerMenuListItem
-        icon={
-          <IconQuestionOutline
-            viewBox="0 0 48 48"
-            xmlns="http://www.w3.org/2000/svg"
-          />
-        }
-        onSelect={[MockFunction]}
-        text="Terra.applicationNavigation.utilityMenu.help"
-      />
-    </ul>
-  </div>
-  <div
-    className="footer"
-  >
-    <DrawerMenuFooterButton
-      onClick={[MockFunction]}
-      text="Terra.applicationNavigation.utilityMenu.logout"
-    />
+    </div>
   </div>
 </div>
 `;

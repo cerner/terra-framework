@@ -101,54 +101,56 @@ const DrawerMenu = ({
 
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   return (
-    <div className={cx('drawer-menu')} tabIndex="0" data-navigation-drawer-menu>
-      <div className={cx('vertical-overflow-container')}>
-        <div className={cx('header')}>
-          <div className={cx('header-background-fill')}>
-            {titleComponent}
-            {hero}
-            {userComponent}
+    <div className={cx('drawer-container')}>
+      <div className={cx('drawer-menu')} tabIndex={0} data-navigation-drawer-menu>
+        <div className={cx('vertical-overflow-container')}>
+          <div className={cx('header')}>
+            <div className={cx('header-background-fill')}>
+              {titleComponent}
+              {hero}
+              {userComponent}
+            </div>
           </div>
+          <ul className={cx('navigation-item-list')} role="listbox">
+            {navigationItems.map(item => (
+              <DrawerMenuListItem
+                key={item.key}
+                text={item.text}
+                notificationCount={notifications[item.key]}
+                onSelect={onSelectNavigationItem && onSelectNavigationItem.bind(null, item.key, item.metaData)}
+                isSelected={item.key === activeNavigationItemKey}
+                icon={item.icon}
+              />
+            ))}
+          </ul>
+          <ul className={cx('utility-item-list')} role="listbox">
+            {utilityItems.map(item => (
+              <DrawerMenuListItem
+                key={item.key}
+                text={item.text}
+                icon={item.icon}
+                onSelect={onSelectUtilityItem && onSelectUtilityItem.bind(null, item.key, item.metaData)}
+              />
+            ))}
+            {onSelectSettings ? (
+              <DrawerMenuListItem
+                text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.settings' })}
+                icon={<IconSettings />}
+                onSelect={onSelectSettings}
+              />
+            ) : null}
+            {onSelectHelp ? (
+              <DrawerMenuListItem
+                text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.help' })}
+                icon={<IconQuestionOutline />}
+                onSelect={onSelectSettings}
+              />
+            ) : null}
+          </ul>
         </div>
-        <ul className={cx('navigation-item-list')} role="listbox">
-          {navigationItems.map(item => (
-            <DrawerMenuListItem
-              key={item.key}
-              text={item.text}
-              notificationCount={notifications[item.key]}
-              onSelect={onSelectNavigationItem && onSelectNavigationItem.bind(null, item.key, item.metaData)}
-              isSelected={item.key === activeNavigationItemKey}
-              icon={item.icon}
-            />
-          ))}
-        </ul>
-        <ul className={cx('utility-item-list')} role="listbox">
-          {utilityItems.map(item => (
-            <DrawerMenuListItem
-              key={item.key}
-              text={item.text}
-              icon={item.icon}
-              onSelect={onSelectUtilityItem && onSelectUtilityItem.bind(null, item.key, item.metaData)}
-            />
-          ))}
-          {onSelectSettings ? (
-            <DrawerMenuListItem
-              text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.settings' })}
-              icon={<IconSettings />}
-              onSelect={onSelectSettings}
-            />
-          ) : null}
-          {onSelectHelp ? (
-            <DrawerMenuListItem
-              text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.help' })}
-              icon={<IconQuestionOutline />}
-              onSelect={onSelectSettings}
-            />
-          ) : null}
-        </ul>
-      </div>
-      <div className={cx('footer')}>
-        {logoutButton}
+        <div className={cx('footer')}>
+          {logoutButton}
+        </div>
       </div>
     </div>
   );

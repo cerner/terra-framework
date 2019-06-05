@@ -1,4 +1,9 @@
 :local {
+  .drawer-container {
+    height: 100%;
+    overflow: hidden;
+  }
+
   .drawer-menu {
     background-color: var(--terra-application-navigation-drawer-menu-background-color, #2a4b77);
     display: flex;
