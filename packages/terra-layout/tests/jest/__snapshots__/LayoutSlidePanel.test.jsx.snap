@@ -28,6 +28,7 @@ exports[`LayoutSlidePanel should render when small 1`] = `
     <main
       className="main-container"
       data-terra-layout-main={true}
+      role="main"
     >
       <div>
         Child
@@ -65,6 +66,7 @@ exports[`LayoutSlidePanel should render when tiny 1`] = `
     <main
       className="main-container"
       data-terra-layout-main={true}
+      role="main"
     >
       <div>
         Child
@@ -102,6 +104,7 @@ exports[`LayoutSlidePanel should render with provided props 1`] = `
     <main
       className="main-container"
       data-terra-layout-main={true}
+      role="main"
     >
       <div>
         Child
@@ -134,6 +137,7 @@ exports[`LayoutSlidePanel should render without optional props 1`] = `
     <main
       className="main-container"
       data-terra-layout-main={true}
+      role="main"
     />
   </OverlayContainer>
 </div>
