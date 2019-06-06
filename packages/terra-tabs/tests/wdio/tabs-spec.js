@@ -9,21 +9,21 @@ Terra.describeViewports('Tabs - Responsive', ['tiny', 'small', 'medium', 'large'
   describe('Default', () => {
     it('Default', () => {
       browser.url('/#/raw/tests/terra-tabs/tabs/tabs/default-tabs');
-      browser.moveToObject('.tabContent');
+      browser.moveToObject('[class*="tab-content"]');
       Terra.validates.element();
     });
   });
   describe('Extended', () => {
     it('Extended', () => {
       browser.url('/#/raw/tests/terra-tabs/tabs/tabs/extended-tabs');
-      browser.moveToObject('.tabContent');
+      browser.moveToObject('[class*="tab-content"]');
       Terra.validates.element();
     });
   });
   describe('Icon Only Tabs', () => {
     it('Icon Only Tabs', () => {
       browser.url('/#/raw/tests/terra-tabs/tabs/tabs/icon-only-tabs');
-      browser.moveToObject('.tabContent');
+      browser.moveToObject('[class*="tab-content"]');
       Terra.validates.element();
     });
   });
@@ -53,7 +53,7 @@ Terra.describeViewports('Tabs - Large screen', ['large'], () => {
     it('Default', () => {
       browser.url('/#/raw/tests/terra-tabs/tabs/tabs/default-tabs');
       browser.refresh();
-      browser.moveToObject('.tabContent');
+      browser.moveToObject('[class*="tab-content"]');
     });
 
     describe('Collapsible hover', () => {
@@ -76,7 +76,7 @@ Terra.describeViewports('Tabs - Large screen', ['large'], () => {
   describe('Fill Parent Tabs', () => {
     it('Fill Parent Tabs', () => {
       browser.url('/#/raw/tests/terra-tabs/tabs/tabs/fill-parent-tabs');
-      browser.moveToObject('.tabContent');
+      browser.moveToObject('[class*="tab-content"]');
       Terra.validates.element();
     });
   });
