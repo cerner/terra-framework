@@ -22,7 +22,7 @@ const ApplicationHeaderNameStandard = () => (
     )}
     extensions={<Placeholder text="Extensions" width="100px" />}
     navigation={<Placeholder text="Content" />}
-    utilities={<Placeholder text="Utiltities" width="100px" />}
+    utilities={<Placeholder text="Utilities" width="100px" />}
   />
 );
 
