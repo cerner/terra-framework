@@ -10,55 +10,55 @@ describe('Hookshot targetAttachment and contentAttachment combinations', () => {
       browser.click('#attach-TS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=top center', () => {
       browser.click('#attach-TC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=top end', () => {
       browser.click('#attach-TE');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top end', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle start', () => {
       browser.click('#attach-MS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle center', () => {
       browser.click('#attach-MC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle end', () => {
       browser.click('#attach-ME');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle end', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom start', () => {
       browser.click('#attach-BS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom center', () => {
       browser.click('#attach-BC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom end', () => {
       browser.click('#attach-BE');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom end', { selector: '#attachment-bounds' });
   });
 
   // Content Attachment: Top Center
@@ -69,55 +69,55 @@ describe('Hookshot targetAttachment and contentAttachment combinations', () => {
       browser.click('#attach-TS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=top center', () => {
       browser.click('#attach-TC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=top end', () => {
       browser.click('#attach-TE');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top end', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle start', () => {
       browser.click('#attach-MS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle center', () => {
       browser.click('#attach-MC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle end', () => {
       browser.click('#attach-ME');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle end', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom start', () => {
       browser.click('#attach-BS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom center', () => {
       browser.click('#attach-BC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom end', () => {
       browser.click('#attach-BE');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom end', { selector: '#attachment-bounds' });
   });
 
   // Content Attachment: Top End
@@ -128,55 +128,55 @@ describe('Hookshot targetAttachment and contentAttachment combinations', () => {
       browser.click('#attach-TS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=top center', () => {
       browser.click('#attach-TC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=top end', () => {
       browser.click('#attach-TE');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top end', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle start', () => {
       browser.click('#attach-MS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle center', () => {
       browser.click('#attach-MC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle end', () => {
       browser.click('#attach-ME');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle end', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom start', () => {
       browser.click('#attach-BS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom center', () => {
       browser.click('#attach-BC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom end', () => {
       browser.click('#attach-BE');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom end', { selector: '#attachment-bounds' });
   });
 
   // Content Attachment: Middle Start
@@ -187,55 +187,55 @@ describe('Hookshot targetAttachment and contentAttachment combinations', () => {
       browser.click('#attach-TS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=top center', () => {
       browser.click('#attach-TC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=top end', () => {
       browser.click('#attach-TE');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top end', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle start', () => {
       browser.click('#attach-MS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle center', () => {
       browser.click('#attach-MC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle end', () => {
       browser.click('#attach-ME');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle end', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom start', () => {
       browser.click('#attach-BS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom center', () => {
       browser.click('#attach-BC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom end', () => {
       browser.click('#attach-BE');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom end', { selector: '#attachment-bounds' });
   });
 
   // Content Attachment: Middle Center
@@ -246,55 +246,55 @@ describe('Hookshot targetAttachment and contentAttachment combinations', () => {
       browser.click('#attach-TS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=top center', () => {
       browser.click('#attach-TC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=top end', () => {
       browser.click('#attach-TE');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top end', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle start', () => {
       browser.click('#attach-MS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle center', () => {
       browser.click('#attach-MC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle end', () => {
       browser.click('#attach-ME');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle end', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom start', () => {
       browser.click('#attach-BS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom center', () => {
       browser.click('#attach-BC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom end', () => {
       browser.click('#attach-BE');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom end', { selector: '#attachment-bounds' });
   });
 
   // Content Attachment: Middle End
@@ -305,55 +305,55 @@ describe('Hookshot targetAttachment and contentAttachment combinations', () => {
       browser.click('#attach-TS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=top center', () => {
       browser.click('#attach-TC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=top end', () => {
       browser.click('#attach-TE');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top end', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle start', () => {
       browser.click('#attach-MS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle center', () => {
       browser.click('#attach-MC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle end', () => {
       browser.click('#attach-ME');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle end', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom start', () => {
       browser.click('#attach-BS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom center', () => {
       browser.click('#attach-BC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom end', () => {
       browser.click('#attach-BE');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom end', { selector: '#attachment-bounds' });
   });
 
   // Content Attachment: Bottom Start
@@ -364,55 +364,55 @@ describe('Hookshot targetAttachment and contentAttachment combinations', () => {
       browser.click('#attach-TS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=top center', () => {
       browser.click('#attach-TC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=top end', () => {
       browser.click('#attach-TE');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top end', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle start', () => {
       browser.click('#attach-MS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle center', () => {
       browser.click('#attach-MC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle end', () => {
       browser.click('#attach-ME');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle end', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom start', () => {
       browser.click('#attach-BS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom center', () => {
       browser.click('#attach-BC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom end', () => {
       browser.click('#attach-BE');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom end', { selector: '#attachment-bounds' });
   });
 
   // Content Attachment: Bottom Center
@@ -423,55 +423,55 @@ describe('Hookshot targetAttachment and contentAttachment combinations', () => {
       browser.click('#attach-TS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=top center', () => {
       browser.click('#attach-TC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=top end', () => {
       browser.click('#attach-TE');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top end', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle start', () => {
       browser.click('#attach-MS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle center', () => {
       browser.click('#attach-MC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle end', () => {
       browser.click('#attach-ME');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle end', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom start', () => {
       browser.click('#attach-BS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom center', () => {
       browser.click('#attach-BC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom end', () => {
       browser.click('#attach-BE');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom end', { selector: '#attachment-bounds' });
   });
 
   // Content Attachment: Bottom End
@@ -482,54 +482,54 @@ describe('Hookshot targetAttachment and contentAttachment combinations', () => {
       browser.click('#attach-TS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=top center', () => {
       browser.click('#attach-TC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=top end', () => {
       browser.click('#attach-TE');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=top end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=top end', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle start', () => {
       browser.click('#attach-MS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle center', () => {
       browser.click('#attach-MC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=middle end', () => {
       browser.click('#attach-ME');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=middle end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=middle end', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom start', () => {
       browser.click('#attach-BS');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom start', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom start', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom center', () => {
       browser.click('#attach-BC');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom center', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom center', { selector: '#attachment-bounds' });
 
     it('targetAttachment=bottom end', () => {
       browser.click('#attach-BE');
       browser.waitForVisible('#attachment-content');
     });
-    Terra.should.matchScreenshot('targetAttachment=bottom end', { selector: '#attachment-bounds' });
+    Terra.it.matchesScreenshot('targetAttachment=bottom end', { selector: '#attachment-bounds' });
   });
 });

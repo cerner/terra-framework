@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Removed all inline styles from Dev-site components and implemented the same styles using external css.
+* Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 
 4.2.0 - (May 21, 2019)
 ------------------
@@ -16,12 +17,17 @@ Unreleased
 ### Changed
 * Resolved eslint error in example files
 
+### Added
+* Added DatePickerField
+
 4.0.0 - (May 13, 2019)
 ------------------
 ### Breaking Changes
 * Removed `releaseFocus` prop
 * Removed `requestFocus` prop
 * Removed `onInputFocus` prop in favor of the added `onFocus` prop.
+
+### Changed
 * Changed the parameter in filterDate prop from a moment object to an ISO string.
 * Honor min/max range when only either minDate or maxDate is set.
 * Changed the onBlur event to get triggered only when the entire date picker component loses focus.

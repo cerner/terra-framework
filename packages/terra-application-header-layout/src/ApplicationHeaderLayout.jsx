@@ -55,7 +55,7 @@ const ApplicationHeaderLayout = ({
 
   let navigationElement;
   if (navigation) {
-    navigationElement = <div className={cx('fill')}>{navigation}</div>;
+    navigationElement = <nav role="navigation" className={cx('fill')}>{navigation}</nav>;
   }
 
   let extensionsElement;

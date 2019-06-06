@@ -10,10 +10,7 @@ viewports.forEach((viewport) => {
         browser.waitForVisible('#test-header');
       });
 
-      Terra.should.matchScreenshot({ selector: '#test-header' });
-      Terra.should.themeEachCustomProperty('#test-header', {
-        '--terra-application-header-layout-logo-min-width': '5rem',
-      });
+      Terra.it.matchesScreenshot({ selector: '#test-header' });
     });
 
     describe('Displays the Skip to Content when focused onto', () => {
@@ -23,13 +20,13 @@ viewports.forEach((viewport) => {
         browser.keys(['Tab']);
       });
 
-      Terra.should.validateElement('Visible', { selector: '#test-header' });
+      Terra.it.validatesElement('Visible', { selector: '#test-header' });
 
       it('should hide the button after a tab', () => {
         browser.keys(['Tab', 'Tab']);
       });
 
-      Terra.should.validateElement('Not Visible', { selector: '#test-header' });
+      Terra.it.validatesElement('Not Visible', { selector: '#test-header' });
     });
 
     describe('Displays a application header layout with logo and utilities only', () => {
@@ -38,7 +35,7 @@ viewports.forEach((viewport) => {
         browser.waitForVisible('#test-header');
       });
 
-      Terra.should.validateElement({ selector: '#test-header' });
+      Terra.it.validatesElement({ selector: '#test-header' });
     });
   });
 });
