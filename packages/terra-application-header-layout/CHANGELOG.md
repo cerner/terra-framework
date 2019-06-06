@@ -6,6 +6,9 @@ Unreleased
 ### Changed
 * Removed all inline styles from Dev-site components and implemented the same styles using external css.
 
+### Added
+* Added ARIA landmark roles
+
 3.8.0 - (May 21, 2019)
 ------------------
 ### Changed
