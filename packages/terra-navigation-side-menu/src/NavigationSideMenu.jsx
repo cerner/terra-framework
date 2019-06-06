@@ -177,7 +177,7 @@ class NavigationSideMenu extends Component {
 
   buildListContent(currentItem) {
     if (currentItem && currentItem.childKeys && currentItem.childKeys.length) {
-      return <ul role="listbox" className={cx(['side-menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</ul>;
+      return <nav role="navigation"><ul role="listbox" className={cx(['side-menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</ul></nav>;
     }
     return null;
   }
