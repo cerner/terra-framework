@@ -248,7 +248,7 @@ class ApplicationHeader extends React.Component {
     const isCompact = Helpers.isSizeCompact(layoutConfig.size);
 
     return (
-      <div {...customProps} className={headerClassNames} ref={this.setContentNode}>
+      <header role="banner" {...customProps} className={headerClassNames} ref={this.setContentNode}>
         <ApplicationHeaderLayout
           toggle={this.renderToggle()}
           logo={!isCompact ? this.renderAppName() : null}
@@ -257,7 +257,7 @@ class ApplicationHeader extends React.Component {
           utilities={this.renderUtilities(isCompact)}
         />
         {this.renderUtilitiesPopup()}
-      </div>
+      </header>
     );
   }
 }
