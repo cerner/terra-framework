@@ -87,3 +87,8 @@ it('Should not throw any errors while date value is outside of the Min, Max rang
     minuteInput.simulate('change', { target: { value: '30' } });
   }).not.toThrowError();
 });
+
+it('should render a date time picker with the seconds field enabled', () => {
+  const datePicker = shallowWithIntl(<DateTimePicker name="date-time-input" utcOffset={0} showSecond />);
+  expect(datePicker).toMatchSnapshot();
+});
