@@ -27,6 +27,7 @@ Cerner Corporation
 - Gabe Parra [@gabeparra01]
 - Naveen Kumar Ramamurthy [@nramamurth]
 - Ben Cai [@benbcai]
+- Pranav Agarwal [@pranav300]
 
 
 [@tbiethman]: https://github.com/tbiethman
@@ -56,3 +57,4 @@ Cerner Corporation
 [@gabeparra01]: https://github.com/gabeparra01
 [@nramamurth]: https://github.com/nramamurth
 [@benbcai]: https://github.com/benbcai
+[@pranav300]: https://github.com/pranav300
