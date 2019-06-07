@@ -71,8 +71,8 @@ Time Input with value provided - Current Value:
         />
         <h3>Input with Second</h3>
         <TimeInput
-          id="timeInputSecond"
-          name="time-input-second"
+          id="timeInputWithSecond"
+          name="time-input-with-second"
           variant={TimeUtil.FORMAT_12_HOUR}
           showSecond
         />

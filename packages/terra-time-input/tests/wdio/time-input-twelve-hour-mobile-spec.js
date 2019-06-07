@@ -72,22 +72,27 @@ describe('Time Input Twelve Hour Mobile', () => {
       browser.refresh();
       browser.execute(() => {
         // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInputSecond input[name="terra-time-second-time-input-second"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInputWithSecond input[name="terra-time-second-time-input-with-second"]').style.caretColor = 'transparent';
       });
 
-      browser.click('#timeInputSecond input[name="terra-time-second-time-input-second"]');
+      browser.click('#timeInputWithSecond input[name="terra-time-second-time-input-with-second"]');
     });
 
     Terra.it.isAccessible({ viewports, rules: ignoredA11y });
     Terra.it.matchesScreenshot({ viewports });
   });
 
-  describe('Twelve Hour Mobile - Auto focues meridiem wien filling out whole thing', () => {
+  describe('Twelve Hour Mobile - Auto focues next input when filling out whole thing', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/mobile');
       browser.refresh();
 
-      browser.click('#timeInputSecond input[name="terra-time-hour-time-input-second"]');
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInputWithSecond input[name="terra-time-second-time-input-with-second"]').style.caretColor = 'transparent';
+      });
+
+      browser.click('#timeInputWithSecond input[name="terra-time-second-time-input-with-second"]');
       browser.keys('123456');
     });
 

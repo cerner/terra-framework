@@ -833,7 +833,7 @@ class TimeInput extends React.Component {
                 pattern="\d*"
                 disabled={disabled}
               />
-              <label htmlFor={instanceMinuteAttrs.id} className={cx('mobile-input-label')}>
+              <label htmlFor={instanceSecondAttrs.id} className={cx('mobile-input-label')}>
                 {this.context.intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
               </label>
             </div>
