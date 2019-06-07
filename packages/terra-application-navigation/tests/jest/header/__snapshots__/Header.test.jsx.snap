@@ -173,7 +173,7 @@ exports[`Header should render default element 1`] = `
             }
           >
             <button
-              aria-label="Terra.application.utility.button"
+              aria-label="Terra.applicationNavigation.header.utilityButtonTitle"
               className="utility-button"
               data-application-header-utility={true}
               data-focus-styles-enabled={true}
@@ -923,7 +923,7 @@ exports[`Header should render with function callbacks 1`] = `
             }
           >
             <button
-              aria-label="Terra.application.utility.button"
+              aria-label="Terra.applicationNavigation.header.utilityButtonTitle"
               className="utility-button"
               data-application-header-utility={true}
               data-focus-styles-enabled={true}
@@ -1211,7 +1211,7 @@ exports[`Header should render with skip callback 1`] = `
             }
           >
             <button
-              aria-label="Terra.application.utility.button"
+              aria-label="Terra.applicationNavigation.header.utilityButtonTitle"
               className="utility-button"
               data-application-header-utility={true}
               data-focus-styles-enabled={true}

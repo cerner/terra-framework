@@ -43,7 +43,7 @@ const UtilityMenuHeaderButton = ({
     onBlur={enableFocusStyles}
     onMouseDown={disableFocusStyles}
     ref={!userConfig ? popupAnchorRef : undefined}
-    aria-label={intl.formatMessage({ id: 'Terra.application.utility.button' })}
+    aria-label={intl.formatMessage({ id: 'Terra.applicationNavigation.header.utilityButtonTitle' })}
     data-focus-styles-enabled
     data-application-header-utility
   >
