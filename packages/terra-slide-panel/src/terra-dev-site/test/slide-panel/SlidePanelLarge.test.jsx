@@ -1,5 +1,5 @@
 import React from 'react';
-import SlidePanel from '../../../SlidePanel';
+import SlidePanel, { SlidePanelPositions } from '../../../SlidePanel';
 import SlidePanelMainContent from '../common/SlidePanelMainContent';
 import SlidePanelPanelContent from '../common/SlidePanelPanelContent';
 
@@ -8,7 +8,7 @@ const SlidePanelLarge = () => (
     mainContent={<SlidePanelMainContent />}
     panelContent={<SlidePanelPanelContent />}
     panelBehavior="overlay"
-    panelPosition={SlidePanel.position.END}
+    panelPosition={SlidePanelPositions.END}
     panelSize="large"
     isOpen
   />

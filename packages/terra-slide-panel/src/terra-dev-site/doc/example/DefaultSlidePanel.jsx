@@ -133,7 +133,7 @@ class DefaultSlidePanel extends React.Component {
 
 DefaultSlidePanel.propTypes = {
   panelBehavior: PropTypes.oneOf(['overlay', 'squish']),
-  panelPosition: PropTypes.oneOf([SlidePanel.position.START, SlidePanel.position.END]),
+  panelPosition: PropTypes.oneOf(['start', 'end']),
   panelSize: PropTypes.oneOf(['small', 'large']),
   isFullscreen: PropTypes.bool,
   isOpen: PropTypes.bool,
