@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added the ability to have an input field for seconds.
+
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 
@@ -21,7 +24,7 @@ Unreleased
 3.7.0 - (April 24, 2019)
 ------------------
 ### Changed
-* Replaced string "12-hour" with TimeUtil.FORMAT_12_HOUR in terra dev-site eamples
+* Replaced string "12-hour" with TimeUtil.FORMAT_12_HOUR in terra dev-site examples
 * Moved packages we use solely in doc examples and tests to devDependencies
 
 3.6.0 - (March 26, 2019)

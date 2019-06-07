@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added the ability for the user to enter seconds in the time input
+
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 
