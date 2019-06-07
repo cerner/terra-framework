@@ -874,7 +874,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
     />
     <label
       class="mobile-input-label"
-      for="terra-time-minute-time-input"
+      for="terra-time-second-time-input"
     >
       Terra.timeInput.seconds
     </label>
@@ -1143,7 +1143,7 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
     />
     <label
       class="mobile-input-label"
-      for="terra-time-minute-time-input"
+      for="terra-time-second-time-input"
     >
       Terra.timeInput.seconds
     </label>
@@ -2311,7 +2311,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
     />
     <label
       class="mobile-input-label"
-      for="id-1"
+      for="id-0"
     >
       Terra.timeInput.seconds
     </label>

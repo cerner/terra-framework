@@ -10,6 +10,10 @@ const mockEvent = {
   preventDefault: jest.fn(),
 };
 
+beforeEach(() => {
+  mockEvent.preventDefault.mockClear();
+});
+
 it('should render a default time input', () => {
   const timeInput = <TimeInput name="time-input" />;
   const wrapper = shallowWithIntl(timeInput);
