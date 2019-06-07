@@ -14,18 +14,8 @@ describe('DateTimePicker', () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
     });
 
-    Terra.should.beAccessible({ rules: ignoredA11y });
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.themeCombinationOfCustomProperties({
-      testName: 'themed',
-      properties: {
-        '--terra-date-time-picker-clarification-modal-background-color': '#e2e2e2',
-        '--terra-date-time-picker-clarification-modal-border': '#f2a1c0 dashed 2px',
-        '--terra-date-time-picker-clarification-modal-border-radius': '1.5rem',
-        '--terra-date-time-picker-clarification-modal-box-shadow': '0 3px 7px rgba(50, 50, 50, 0.4)',
-        '--terra-date-time-picker-clarification-modal-color': '#ef12bc',
-      },
-    });
+    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot({ viewports });
   });
 
   describe('Default with Date', () => {
@@ -33,8 +23,8 @@ describe('DateTimePicker', () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-only');
     });
 
-    Terra.should.beAccessible({ rules: ignoredA11y });
-    Terra.should.matchScreenshot({ viewports });
+    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot({ viewports });
   });
 
   describe('Default with Date and Time', () => {
@@ -42,8 +32,8 @@ describe('DateTimePicker', () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-time');
     });
 
-    Terra.should.beAccessible({ rules: ignoredA11y });
-    Terra.should.matchScreenshot({ viewports });
+    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot({ viewports });
   });
 
   describe('Time Clarification Dialog', () => {
@@ -54,36 +44,18 @@ describe('DateTimePicker', () => {
       browser.waitForVisible('[class*="time-clarification"]');
     });
 
-    Terra.should.beAccessible({ rules: ignoredA11y });
-    Terra.should.matchScreenshot('0', { viewports, selector: '[class*="abstract-modal"]' });
-    Terra.should.themeCombinationOfCustomProperties({
-      testName: 'themed',
-      selector: '[class*="abstract-modal"]',
-      properties: {
-        '--terra-date-time-picker-clarification-modal-background-color': '#e2e2e2',
-        '--terra-date-time-picker-clarification-modal-border': '#f2a1c0 dashed 2px',
-        '--terra-date-time-picker-clarification-modal-border-radius': '1.5rem',
-        '--terra-date-time-picker-clarification-modal-box-shadow': '0 3px 7px rgba(50, 50, 50, 0.4)',
-        '--terra-date-time-picker-clarification-modal-color': '#ef12bc',
-      },
-    });
+    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot('0', { viewports, selector: '[class*="abstract-modal"]' });
   });
 
   describe('Time Clarification Dialog Dismissal', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-dst');
-      browser.click('input[name="terra-time-minute-input"]');
-      browser.keys('Tab');
-      browser.waitForVisible('[class*="time-clarification"]');
-    });
-
-    Terra.should.matchScreenshot('0', { viewports, selector: '[class*="abstract-modal"]' });
+    Terra.it.matchesScreenshot('0', { viewports, selector: '[class*="abstract-modal"]' });
 
     it('closes the dialog', () => {
       browser.click('[class*="button-daylight"]');
     });
 
-    Terra.should.matchScreenshot('1', { viewports });
+    Terra.it.matchesScreenshot('1', { viewports });
   });
 
   describe('Displays Offset button are clicking daylight button', () => {
@@ -94,13 +66,13 @@ describe('DateTimePicker', () => {
       browser.waitForVisible('[class*="time-clarification"]');
     });
 
-    Terra.should.matchScreenshot('0', { viewports, selector: '[class*="abstract-modal"]' });
+    Terra.it.matchesScreenshot('0', { viewports, selector: '[class*="abstract-modal"]' });
 
     it('hides the offset button', () => {
       browser.click('[class*="button-daylight"]');
     });
 
-    Terra.should.matchScreenshot('1', { viewports });
+    Terra.it.matchesScreenshot('1', { viewports });
   });
 
   describe('Displays Offset button are clicking the standard time button', () => {
@@ -111,13 +83,13 @@ describe('DateTimePicker', () => {
       browser.waitForVisible('[class*="time-clarification"]');
     });
 
-    Terra.should.matchScreenshot('0', { viewports, selector: '[class*="abstract-modal"]' });
+    Terra.it.matchesScreenshot('0', { viewports, selector: '[class*="abstract-modal"]' });
 
     it('hides the offset button', () => {
       browser.click('[class*="button-daylight"]');
     });
 
-    Terra.should.matchScreenshot('1', { viewports });
+    Terra.it.matchesScreenshot('1', { viewports });
   });
 
   describe('Time Clarification Dialog Disabled', () => {
@@ -128,11 +100,12 @@ describe('DateTimePicker', () => {
       browser.waitForVisible('[class*="time-clarification"]');
       browser.click('[class*="button-daylight"]');
       browser.click('#date-time-picker-toggler');
+      browser.moveToObject('#root', 0, 0);
     });
 
     const ignoredDisabledAlly = Object.assign({ 'color-contrast': { enabled: false } }, ignoredA11y);
-    Terra.should.beAccessible({ rules: ignoredDisabledAlly });
-    Terra.should.matchScreenshot({ viewports });
+    Terra.it.isAccessible({ rules: ignoredDisabledAlly });
+    Terra.it.matchesScreenshot({ viewports });
   });
 
   describe('OnBlur', () => {
@@ -194,13 +167,13 @@ describe('DateTimePicker', () => {
 
   describe('Valid date entry moves focus to hour input', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-focus-blur');
+      browser.refresh();
       // Removes the blinking cursor to prevent screenshot mismatches.
       browser.execute('document.querySelector(\'input[name="terra-time-minute-input"]\').style.caretColor = "transparent";');
       browser.setValue('input[name="terra-date-input"]', '04/15/2019');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.it.matchesScreenshot({ viewports });
   });
 
   describe('OnChange', () => {
@@ -213,12 +186,12 @@ describe('DateTimePicker', () => {
       browser.setValue('input[name="terra-time-minute-input"]', '30');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.it.matchesScreenshot({ viewports });
   });
 
   describe('OnChange Raw', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-on-change');
+      browser.refresh();
       // Removes the blinking cursor to prevent screenshot mismatches.
       browser.execute('document.querySelector(\'input[name="terra-date-input"]\').style.caretColor = "transparent";');
       browser.setValue('input[name="terra-date-input"]', '07/12');
@@ -227,28 +200,30 @@ describe('DateTimePicker', () => {
       browser.setValue('input[name="terra-date-input"]', '/2017');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.it.matchesScreenshot({ viewports });
   });
 
   describe('Sync Date Time', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-on-change');
+      browser.refresh();
       // Removes the blinking cursor to prevent screenshot mismatches.
       browser.execute('document.querySelector(\'input[name="terra-time-minute-input"]\').style.caretColor = "transparent";');
+      browser.execute('document.querySelector(\'input[name="terra-time-hour-input"]\').style.caretColor = "transparent";');
+      browser.execute('document.querySelector(\'input[name="terra-date-input"]\').style.caretColor = "transparent";');
     });
 
     it('Entering valid date with empty time does not trigger onChange', () => {
       browser.setValue('input[name="terra-date-input"]', '04/17/2019');
     });
 
-    Terra.should.matchScreenshot('valid-date', { viewports });
+    Terra.it.matchesScreenshot('valid-date', { viewports });
 
     it('Entering valid date and time triggers onChange', () => {
       browser.setValue('input[name="terra-time-hour-input"]', '10');
       browser.setValue('input[name="terra-time-minute-input"]', '30');
     });
 
-    Terra.should.matchScreenshot('valid-time', { viewports });
+    Terra.it.matchesScreenshot('valid-time', { viewports });
 
     it('Change date to invalid and modify time.', () => {
       browser.setValue('input[name="terra-date-input"]', '04/17/20');
@@ -256,13 +231,13 @@ describe('DateTimePicker', () => {
       browser.setValue('input[name="terra-time-minute-input"]', '45');
     });
 
-    Terra.should.matchScreenshot('invalid-date', { viewports });
+    Terra.it.matchesScreenshot('invalid-date', { viewports });
 
     it('Time persists when date becomes valid', () => {
       browser.setValue('input[name="terra-date-input"]', '04/18/2019');
     });
 
-    Terra.should.matchScreenshot('modified-valid-time', { viewports });
+    Terra.it.matchesScreenshot('modified-valid-time', { viewports });
   });
 
   describe('Excluded Dates are Disabled', () => {
@@ -271,7 +246,7 @@ describe('DateTimePicker', () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.should.matchScreenshot({ viewports, selector: '[class="react-datepicker"]' });
+    Terra.it.matchesScreenshot({ viewports, selector: '[class="react-datepicker"]' });
   });
 
   describe('Filtered Dates are Disabled', () => {
@@ -280,7 +255,7 @@ describe('DateTimePicker', () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.should.matchScreenshot({ viewports, selector: '[class="react-datepicker"]' });
+    Terra.it.matchesScreenshot({ viewports, selector: '[class="react-datepicker"]' });
   });
 
   describe('Included Dates are Enabled', () => {
@@ -289,7 +264,7 @@ describe('DateTimePicker', () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.should.matchScreenshot({ viewports, selector: '[class="react-datepicker"]' });
+    Terra.it.matchesScreenshot({ viewports, selector: '[class="react-datepicker"]' });
   });
 
   describe('OnSelect', () => {
@@ -297,20 +272,20 @@ describe('DateTimePicker', () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-on-select');
     });
 
-    Terra.should.matchScreenshot('0', { viewports });
+    Terra.it.matchesScreenshot('0', { viewports });
 
     it('Dismissed the modal manager after a click', () => {
       browser.click('[class*="button"]');
       browser.click('[aria-label="day-27"]');
     });
 
-    Terra.should.matchScreenshot('1', { viewports });
+    Terra.it.matchesScreenshot('1', { viewports });
 
     it('Trigger onChange', () => {
       browser.setValue('input[name="terra-date-input"]', '07/12/2017');
     });
 
-    Terra.should.matchScreenshot('2', { viewports });
+    Terra.it.matchesScreenshot('2', { viewports });
   });
 
   describe('Clears the default date and time on the calendar button click when default date is excluded', () => {
@@ -328,7 +303,7 @@ describe('DateTimePicker', () => {
       browser.click('input[name="terra-date-input"]');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.it.matchesScreenshot({ viewports });
   });
 
   describe('Clears the default date and time on hour input focus when default date is excluded', () => {
@@ -339,7 +314,7 @@ describe('DateTimePicker', () => {
       browser.click('input[name="terra-time-hour-input"]');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.it.matchesScreenshot({ viewports });
   });
 
   describe('Clears the default date and time on minute input focus when default date is excluded', () => {
@@ -350,7 +325,7 @@ describe('DateTimePicker', () => {
       browser.click('input[name="terra-time-minute-input"]');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.it.matchesScreenshot({ viewports });
   });
 
   describe('Clears the default date and time on date input focus when default date is out of range', () => {
@@ -361,7 +336,7 @@ describe('DateTimePicker', () => {
       browser.click('input[name="terra-date-input"]');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.it.matchesScreenshot({ viewports });
   });
 
   describe('Clears the default date and time on hour input focus when default date is out of range', () => {
@@ -372,7 +347,7 @@ describe('DateTimePicker', () => {
       browser.click('input[name="terra-time-hour-input"]');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.it.matchesScreenshot({ viewports });
   });
 
   describe('Clears the default date and time on minute input focus when default date is out of range', () => {
@@ -383,7 +358,7 @@ describe('DateTimePicker', () => {
       browser.click('input[name="terra-time-minute-input"]');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.it.matchesScreenshot({ viewports });
   });
 
   describe('Time Input displays Twelve Hour format when timeVariant is specified', () => {
@@ -391,6 +366,6 @@ describe('DateTimePicker', () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-time-input-attributes');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.it.matchesScreenshot({ viewports });
   });
 });

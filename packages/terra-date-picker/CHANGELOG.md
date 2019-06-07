@@ -3,9 +3,11 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+
 ### Fixed
 * Do not always force to return focus to the calendar button after the picker closes.
-
 
 4.2.0 - (May 21, 2019)
 ------------------

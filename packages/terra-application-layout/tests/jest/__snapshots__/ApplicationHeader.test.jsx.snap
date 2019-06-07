@@ -1,8 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ApplicationHeader should render default component 1`] = `
-<div
+<header
   className="application-navbar"
+  role="banner"
 >
   <InjectIntl(ApplicationHeaderLayout)
     extensions={null}
@@ -11,13 +12,14 @@ exports[`ApplicationHeader should render default component 1`] = `
     toggle={null}
     utilities={null}
   />
-</div>
+</header>
 `;
 
 exports[`ApplicationHeader should render props 1`] = `
-<div
+<header
   className="application-navbar"
   id="test-header"
+  role="banner"
 >
   <InjectIntl(ApplicationHeaderLayout)
     extensions={
@@ -78,12 +80,13 @@ exports[`ApplicationHeader should render props 1`] = `
       />
     }
   />
-</div>
+</header>
 `;
 
 exports[`ApplicationHeader with icons should match the snapshot 1`] = `
-<div
+<header
   className="application-navbar"
+  role="banner"
 >
   <InjectIntl(ApplicationHeaderLayout)
     extensions={null}
@@ -129,5 +132,5 @@ exports[`ApplicationHeader with icons should match the snapshot 1`] = `
     toggle={null}
     utilities={null}
   />
-</div>
+</header>
 `;
