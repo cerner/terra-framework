@@ -84,6 +84,10 @@ const propTypes = {
    */
   onSelect: PropTypes.func,
   /**
+   * Whether an input field for seconds should be shown
+   */
+  showSecond: PropTypes.bool,
+  /**
    * Custom input attributes to apply to the time input. Use the name prop to set the name for the time input.
    * Do not set the name in inputAttribute as it will be ignored.
    */
@@ -113,6 +117,7 @@ const defaultProps = {
   onClickOutside: undefined,
   onFocus: undefined,
   onSelect: undefined,
+  showSecond: false,
   timeInputAttributes: undefined,
   value: undefined,
   timeVariant: DateTimeUtils.FORMAT_24_HOUR,
@@ -136,7 +141,7 @@ class DateTimePicker extends React.Component {
     // It is used for date/time manipulation and used to calculate the missing/ambiguous hour.
     // The dateValue and timeValue are tracked outside of the react state to limit the number of renderings that occur.
     this.dateValue = DateUtil.formatMomentDate(this.state.dateTime, this.state.dateFormat) || '';
-    this.timeValue = DateTimeUtils.hasTime(this.props.value) ? DateUtil.formatISODate(this.props.value, 'HH:mm') : '';
+    this.timeValue = DateTimeUtils.hasTime(this.props.value) ? DateTimeUtils.getTime(this.props.value, this.props.showSecond) : '';
     this.isDefaultDateTimeAcceptable = true;
     this.wasOffsetButtonClicked = false;
 
@@ -216,7 +221,7 @@ class DateTimePicker extends React.Component {
       let updatedDateTime;
 
       if (isDateTimeValid) {
-        updatedDateTime = DateTimeUtils.updateTime(this.state.dateTime, this.timeValue);
+        updatedDateTime = DateTimeUtils.updateTime(this.state.dateTime, this.timeValue, this.props.showSecond);
       }
 
       this.checkAmbiguousTime(updatedDateTime);
@@ -293,7 +298,7 @@ class DateTimePicker extends React.Component {
     let updatedDateTime;
     const formattedDate = DateUtil.formatISODate(date, 'YYYY-MM-DD');
     const isDateValid = DateUtil.isValidDate(formattedDate, 'YYYY-MM-DD');
-    const isTimeValid = DateTimeUtils.isValidTime(this.timeValue);
+    const isTimeValid = DateTimeUtils.isValidTime(this.timeValue, this.props.showSecond);
 
     if (isDateValid) {
       const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : DateUtil.createSafeDate(formattedDate);
@@ -301,7 +306,7 @@ class DateTimePicker extends React.Component {
 
       if (isTimeValid) {
         // Update the timeValue in case the updatedDateTime falls in the missing hour and needs to bump the hour up.
-        this.timeValue = DateUtil.formatISODate(updatedDateTime.format(), 'HH:mm');
+        this.timeValue = DateTimeUtils.getTime(updatedDateTime.format(), this.props.showSecond);
       }
     }
 
@@ -325,13 +330,13 @@ class DateTimePicker extends React.Component {
   handleTimeChange(event, time) {
     this.timeValue = time;
     const validDate = DateUtil.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeAcceptable(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat));
-    const validTime = DateTimeUtils.isValidTime(this.timeValue);
+    const validTime = DateTimeUtils.isValidTime(this.timeValue, this.props.showSecond);
     const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
 
     // If both date and time are valid, check if the time is the missing hour and invoke onChange.
     // If the date is valid but time is invalid, the time in the dateTime state needs to be cleared and render.
     if (validDate && validTime) {
-      const updatedDateTime = DateTimeUtils.updateTime(previousDateTime, time);
+      const updatedDateTime = DateTimeUtils.updateTime(previousDateTime, time, this.props.showSecond);
 
       if (event.keyCode === KeyCode.KEY_DOWN
         && previousDateTime && updatedDateTime && previousDateTime.format() === updatedDateTime.format()) {
@@ -341,7 +346,7 @@ class DateTimePicker extends React.Component {
       // If updatedDateTime is valid, update timeValue (value in the time input) to reflect updatedDateTime since
       // it could have subtracted an hour from above to account for the missing hour.
       if (updatedDateTime) {
-        this.timeValue = DateUtil.formatISODate(updatedDateTime.format(), 'HH:mm');
+        this.timeValue = DateTimeUtils.getTime(updatedDateTime.format(), this.props.showSecond);
       }
 
       this.handleChangeRaw(event, this.timeValue);
@@ -351,7 +356,7 @@ class DateTimePicker extends React.Component {
       this.handleChange(event, null);
     } else {
       if (!validDate && validTime) {
-        const updatedDateTime = DateTimeUtils.updateTime(previousDateTime, time);
+        const updatedDateTime = DateTimeUtils.updateTime(previousDateTime, time, this.props.showSecond);
 
         this.setState({
           dateTime: updatedDateTime,
@@ -520,6 +525,7 @@ class DateTimePicker extends React.Component {
       maxDate,
       minDate,
       name,
+      showSecond,
       timeInputAttributes,
       value,
       timeVariant,
@@ -574,6 +580,7 @@ class DateTimePicker extends React.Component {
             disabled={disabled}
             variant={timeVariant}
             refCallback={(inputRef) => { this.hourInput = inputRef; }}
+            showSecond={showSecond}
           />
 
           {this.state.isAmbiguousTime ? this.renderTimeClarification() : null }
