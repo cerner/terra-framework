@@ -165,7 +165,7 @@ const myTitleConfig = {
 ### `userConfig`
 #### Is Required: `false`
 
-The `userConfig` prop allows consumers to set a user assocaited to the current application context. The ApplicationNavigation will render this content in different ways based on the active responsive breakpoint.
+The `userConfig` prop allows consumers to set a user associated to the current application context. The ApplicationNavigation will render this content in different ways based on the active responsive breakpoint.
 
 |Key Name|Type|Is Required|Description|
 |---|---|---|---|
