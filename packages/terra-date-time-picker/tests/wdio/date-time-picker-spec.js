@@ -60,7 +60,7 @@ describe('DateTimePicker', () => {
 
   describe('Displays Offset button are clicking daylight button', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-dst');
+      browser.refresh();
       browser.click('input[name="terra-time-minute-input"]');
       browser.keys('Tab');
       browser.waitForVisible('[class*="time-clarification"]');
@@ -77,7 +77,7 @@ describe('DateTimePicker', () => {
 
   describe('Displays Offset button are clicking the standard time button', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-dst');
+      browser.refresh();
       browser.click('input[name="terra-time-minute-input"]');
       browser.keys('Tab');
       browser.waitForVisible('[class*="time-clarification"]');
