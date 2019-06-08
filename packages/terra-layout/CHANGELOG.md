@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added ARIA landmark roles
+
+### Changed
+* Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+
 
 4.2.0 - (May 21, 2019)
 ------------------
