@@ -1,151 +1,144 @@
-describe('Abstract Modal', () => {
-  before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
+const selector = '#root';
 
-  describe('Append Class', () => {
-    before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-append-class'));
+Terra.describeViewports('Abstract Modal', ['medium'], () => {
+  describe('Default Modal', () => {
+    before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/default-abstract-modal'));
 
-    Terra.it.validatesElement({ selector: 'div[role="dialog"]' });
-  });
-
-  describe('Content Overflow', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-content-overflow');
-      browser.setViewportSize({ height: 1684, width: 1870 });
+    it('clicks to open modal', () => {
+      browser.click('button');
+      Terra.validates.element('open', { selector });
     });
 
-    after(() => browser.setViewportSize(Terra.viewports('medium')[0]));
+    it('clicks outside to close modal', () => {
+      browser.moveToObject('[class*="ModalOverlay"]', 235, 5)
+        .leftClick();
+      Terra.validates.element('closed');
+      expect(browser.hasFocus('[class=button-open-modal]')).to.be.true;
+    });
 
-    Terra.it.validatesElement({ selector: 'div[role="dialog"]' });
-  });
+    it('reopens the modal', () => {
+      browser.keys('Enter');
+    });
 
-  describe('Custom Props', () => {
-    before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-custom-props'));
-    it('checks for custom id prop', () => {
-      expect(browser.getAttribute('div[role="dialog"]', 'id')).to.equal('custom-props');
+    it('closes modal on ESC', () => {
+      browser.keys('Escape');
+      expect(browser.hasFocus('[class=button-open-modal]')).to.be.true;
     });
   });
 
-  describe('Disable Close On Esc', () => {
+  describe('Fullscreen Modal', () => {
+    before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/fullscreen-abstract-modal'));
+
+    Terra.it.validatesElement('open', { selector });
+
+    it('clicks outside to close modal', () => {
+      browser.moveToObject('[class*="ModalOverlay"]', 235, 5)
+        .leftClick();
+      Terra.validates.element('closed');
+      expect(browser.hasFocus('[class=button-open-modal]')).to.be.true;
+    });
+
+    it('reopens the modal', () => {
+      browser.keys('enter');
+    });
+
+    it('closes modal on ESC', () => {
+      browser.keys('Escape');
+      expect(browser.hasFocus('[class=button-open-modal]')).to.be.true;
+    });
+  });
+
+  describe('Disabled Close On Esc', () => {
     before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-disable-close-on-esc'));
 
-    Terra.it.validatesElement('modal present', { selector: 'div[role="dialog"]' });
+    Terra.it.validatesElement('open', { selector });
 
     it('attempts to close modal with ESC', () => {
       browser.keys('Escape');
     });
 
-    Terra.it.validatesElement('modal present', { selector: 'div[role="dialog"]' });
+    it('validates close on escape is disabled and the modal was not removed', () => {
+      expect(browser.isExisting('div[role="dialog"]')).to.be.true;
+    });
   });
 
-  describe('Within Modal Focus Handling', () => {
-    before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-custom-props'));
-
-    it('focuses on the modal when opened', () => {
-      expect(browser.hasFocus('[aria-modal="true"][role="dialog"]')).to.be.equal(true);
-    });
-
-    Terra.it.validatesElement('modal is focused on open', { selector: '#root' });
-
-    it('focuses on interactive elements within the modal', () => {
-      browser.keys(['Tab']);
-      expect(browser.hasFocus('#focus-button')).to.be.equal(true);
-    });
-
-    Terra.it.validatesElement('modal button focused', { selector: '#root' });
-
-    it('does not focus on interactive content within the app when the modal is open - tab cycle forward', () => {
-      browser.keys(['Tab']);
-      expect(browser.hasFocus('#focus-button')).to.be.equal(false);
-    });
-
-    // The following line was changed from validateElement to matchScreenshot to avoid an axe bug.
-    // Checking accessibility after shifting tab focus outside the modal prevented tab focus from being returned to the modal.
-    Terra.it.matchesScreenshot('focused shifted outside the end of the modal', { selector: '#root' });
-
-    it('shifts focus back onto interactive elements within the modal', () => {
-      browser.keys(['Shift', 'Tab']);
-      expect(browser.hasFocus('#focus-button')).to.be.equal(true);
-    });
-
-    Terra.it.validatesElement('modal button focused again', { selector: '#root' });
-  });
-
-  describe('Outside Modal Focus Handling', () => {
-    before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-custom-props'));
-
-    it('does not focus on interactive content within the app when modal is open and focus is shifted backwards from the modal dialog', () => {
-      browser.keys(['Shift', 'Tab']);
-      expect(browser.hasFocus('#focus-button')).to.be.equal(false);
-    });
-
-    Terra.it.matchesScreenshot('focused shifted outside the beginning of the modal', { selector: '#root' });
-
-    it('does not focus on interactive content within the app when modal is open and focus is shifted forwards from the modal dialog', () => {
-      browser.keys(['Tab', 'Tab', 'Tab']);
-      expect(browser.hasFocus('#focus-button')).to.be.equal(false);
-    });
-
-    Terra.it.matchesScreenshot('focused shifted outside the end of the modal', { selector: '#root' });
-  });
-
-  describe('Disable Close On Outside Click', () => {
+  describe('Disabled Close On Outside Click', () => {
     before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-disable-close-on-outside-click'));
 
-    Terra.it.validatesElement('modal present', { selector: 'div[role="dialog"]' });
+    Terra.it.validatesElement('open', { selector });
 
     it('attempts to close modal with outside click', () => {
-      browser.leftClick('button');
-    });
-    Terra.it.validatesElement('modal present', { selector: 'div[role="dialog"]' });
-  });
-
-  describe('Is Fullscreen', () => {
-    before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-is-fullscreen'));
-
-    Terra.it.validatesElement('modal present', { selector: 'div[role="dialog"]' });
-
-    it('clicks outside to close modal', () => {
       browser.moveToObject('[class*="ModalOverlay"]', 235, 5)
         .leftClick();
     });
-    Terra.it.validatesElement('modal closed');
 
-    it('opens the modal', () => {
-      browser.click('button');
+    it('validates close on outside click is disabled and the modal was not removed', () => {
+      expect(browser.isExisting('div[role="dialog"]')).to.be.true;
     });
-    Terra.it.validatesElement('modal present', { selector: 'div[role="dialog"]' });
-
-    it('closes modal on ESC', () => {
-      browser.keys('Escape');
-    });
-    Terra.it.validatesElement('modal closed, with focus');
   });
 
-  describe('Is Open', () => {
-    before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-is-open'));
+  describe('Modal Focus Handling', () => {
+    describe('Focusable Content', () => {
+      before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/default-abstract-modal'));
 
-    Terra.it.validatesElement('modal closed');
+      it('clicks to open modal', () => {
+        browser.click('button');
+      });
 
-    it('clicks to open modal', () => {
-      browser.click('button');
+      it('focuses on the modal when opened', () => {
+        expect(browser.hasFocus('[aria-modal="true"][role="dialog"]')).to.be.true;
+        Terra.validates.element('modal focused', { selector });
+      });
+
+      it('focuses on interactive elements within the modal', () => {
+        browser.keys(['Tab']);
+        expect(browser.hasFocus('#modal-button')).to.be.true;
+        Terra.validates.element('modal button focused', { selector });
+      });
+
+      it('shifts focus forward away from the modal dialog', () => {
+        browser.keys(['Tab']);
+        expect(browser.hasFocus('#modal-button')).to.be.false;
+        expect(browser.hasFocus('[class=button-open-modal]')).to.be.false;
+        expect(browser.hasFocus('[aria-modal="true"][role="dialog"]')).to.be.true;
+        Terra.validates.screenshot('focused shifted outside the end of the modal', { selector });
+      });
+
+      it('shifts focus back onto interactive elements within the modal', () => {
+        browser.keys(['Shift', 'Tab']);
+        expect(browser.hasFocus('#modal-button')).to.be.true;
+        Terra.validates.screenshot('modal button focused again', { selector });
+      });
+
+      it('shifts focus backwards away from the modal dialog', () => {
+        browser.keys(['Shift', 'Tab']);
+        expect(browser.hasFocus('#modal-button')).to.be.false;
+        expect(browser.hasFocus('[class=button-open-modal]')).to.be.false;
+        expect(browser.hasFocus('[aria-modal="true"][role="dialog"]')).to.be.true;
+        Terra.validates.screenshot('focused shifted outside the beginning of the modal', { selector });
+      });
+
+      it('shifts focus back onto interactive elements within the modal', () => {
+        browser.keys(['Shift', 'Tab']);
+        expect(browser.hasFocus('#modal-button')).to.be.true;
+      });
     });
-    Terra.it.validatesElement({ selector: 'div[role="dialog"]' });
 
-    it('closes the modal on ESC', () => {
-      browser.keys('Escape');
+    describe('No Focusable Content', () => {
+      before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-no-focusable-content'));
+
+      it('does not focus on the modal when opened', () => {
+        expect(browser.hasFocus('[aria-modal="true"][role="dialog"]')).to.be.false;
+        Terra.validates.element({ selector });
+      });
     });
-    Terra.it.validatesElement('modal closed, with focus');
   });
+});
 
-  describe('No Focusable Content', () => {
-    before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-no-focusable-content'));
+Terra.describeViewports('Abstract Modal', ['enormous'], () => {
+  describe('Content Overflow', () => {
+    before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-content-overflow'));
 
-    Terra.it.validatesElement({ selector: 'div[role="dialog"]' });
-  });
-
-  describe('Override Role', () => {
-    before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-override-role'));
-
-    Terra.it.validatesElement({ selector: 'div[role="alertdialog"]' });
+    Terra.it.validatesElement({ selector });
   });
 });
