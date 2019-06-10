@@ -682,25 +682,14 @@ class TimeInput extends React.Component {
         || event.keyCode === KeyCode.KEY_DELETE
         || event.keyCode === KeyCode.KEY_BACK_SPACE) {
       if (this.props.showSecond) {
-        this.focusSecondFromMeridiem(event);
+        this.secondInput.focus();
+        if (this.state.second) {
+          this.secondInput.setSelectionRange(this.state.second.length, this.state.second.length);
+        }
       } else {
-        this.minuteInput.focus(event);
+        this.minuteInput.focus();
       }
       event.preventDefault();
-    }
-  }
-
-  focusSecondFromMeridiem(event) {
-    // If the minute is empty or the cursor is after the value, move focus to the meridiem.
-    if ((this.state.minute.length === 0
-        || this.state.minute.length === this.minuteInput.selectionEnd)
-        && this.secondInput
-    ) {
-      this.secondInput.focus();
-      if (this.state.second) {
-        this.secondInput.setSelectionRange(this.state.second.length, this.state.second.length);
-        event.preventDefault();
-      }
     }
   }
 
