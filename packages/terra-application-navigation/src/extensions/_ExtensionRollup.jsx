@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';
 
-import IconThreeSquares from './_TempSVG';
+import IconThreeSquares from './_IconThreeSquares';
 import ExtensionCount from './_ExtensionCount';
 import { enableFocusStyles, disableFocusStyles, generateKeyDownSelection } from '../utils/helpers';
 
