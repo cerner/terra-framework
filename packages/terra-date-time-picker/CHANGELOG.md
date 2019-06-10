@@ -9,6 +9,9 @@ Unreleased
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 
+### Fixed
+* Fixed wdio tests by calling browser.refresh() on subsequent loads instead of loading the url directly.
+
 4.2.0 - (May 21, 2019)
 ------------------
 ### Changed
