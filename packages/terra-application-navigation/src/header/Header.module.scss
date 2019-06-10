@@ -1,7 +1,7 @@
 :local {
   .header {
     align-content: center;
-    align-items: center; // TODO THEME
+    align-items: center;
     background-color: var(--terra-application-navigation-header-background-color, rgb(25, 104, 166));
     background-image: var(--terra-application-navigation-header-background-image,
     radial-gradient(100% 70% at 50% 0%, rgba(70, 121, 171, 0.7), rgba(70, 121, 171, 0)),
