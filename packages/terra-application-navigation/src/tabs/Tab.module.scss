@@ -105,9 +105,9 @@
       box-shadow: var(--terra-application-navigation-tab-current-box-shadow, inset 1px 0 0 0 #5483c1, inset 2px 0 0 0 #3a6194);
 
       .tab-inner {
-        background-color: #3a6194;
+        background-color: var(--terra-application-navigation-tab-current-inner-background-color, #3a6194);
         background-image: var(--terra-application-navigation-tab-current-inner-background-image, linear-gradient(to left, rgba(89, 159, 253, 0.8), rgba(89, 159, 253, 0.8)));
-        background-size: 100% 6px;
+        background-size: var(--terra-application-navigation-tab-current-inner-background-size, 100% 5px);
         box-shadow: none;
         text-shadow: none;
       }
