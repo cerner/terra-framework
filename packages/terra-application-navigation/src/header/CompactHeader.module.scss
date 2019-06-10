@@ -25,7 +25,7 @@
   .menu-button {
     background-color: transparent;
     border: 0;
-    color: var(--terra-application-navigation-compact-header-menu-button-color,rgba(255, 255, 255, 0.8));
+    color: var(--terra-application-navigation-compact-header-menu-button-color, rgba(255, 255, 255, 0.8));
     cursor: pointer;
     flex: 0 0 auto;
     height: 2.143rem;
@@ -44,7 +44,7 @@
     }
 
     &:active {
-      color: var(--terra-application-navigation-compact-header-menu-button-active-color,rgba(255, 255, 255, 0.5));
+      color: var(--terra-application-navigation-compact-header-menu-button-active-color, rgba(255, 255, 255, 0.5));
     }
 
     &:focus[data-focus-styles-enabled='true'] {
@@ -61,7 +61,7 @@
   }
 
   .title-container {
-    color: var(--terra-application-navigation-compact-header-title-color,rgba(255, 255, 255, 1));
+    color: var(--terra-application-navigation-compact-header-title-color, rgba(255, 255, 255, 1));
     flex: 1 1 auto;
     margin-left: 0.3571rem;
     overflow: hidden;
