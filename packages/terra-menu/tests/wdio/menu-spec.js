@@ -3,9 +3,7 @@ const ignoredA11y = {
   'button-name': { enabled: false },
 };
 
-describe('Menu', () => {
-  before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
-
+describe('Menu', ['medium'], () => {
   describe('Menu-Default', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-menu/menu/menu/default-menu');

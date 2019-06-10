@@ -3,9 +3,8 @@ const ignoredA11y = {
   'color-contrast': { enabled: false },
 };
 
-describe('Date Time Picker Twelve Hour Mobile', () => {
+Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
   before(() => {
-    browser.setViewportSize(Terra.viewports('tiny')[0]);
     browser.execute('if (!window.ontouchstart) { window.ontouchstart = "true"; }');
   });
 

@@ -1,6 +1,4 @@
-describe('Abstract Modal', () => {
-  before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
-
+Terra.describeViewports('Abstract Modal', ['medium'], () => {
   describe('Append Class', () => {
     before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-append-class'));
 

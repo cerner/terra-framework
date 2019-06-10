@@ -3,9 +3,7 @@ const ignoredA11y = {
   label: { enabled: false },
 };
 
-describe('Date Picker', () => {
-  before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
-
+Terra.describeViewports('Date Picker', ['medium'], () => {
   describe('Default', () => {
     before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default'));
 
