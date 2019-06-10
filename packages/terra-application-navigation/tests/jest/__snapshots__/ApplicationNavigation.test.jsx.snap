@@ -29,7 +29,7 @@ exports[`ApplicationNavigation should render default element 1`] = `
     />
     <main
       className="main-container"
-      tabIndex="-1"
+      role="main"
     />
     <Overlay
       backgroundStyle="clear"
@@ -134,7 +134,7 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
     />
     <main
       className="main-container"
-      tabIndex="-1"
+      role="main"
     >
       <div>
         test child content
@@ -320,7 +320,7 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
     />
     <main
       className="main-container"
-      tabIndex="-1"
+      role="main"
     >
       <div>
         test child content
