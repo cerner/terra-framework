@@ -62,8 +62,9 @@ exports[`CompactHeader should render default element 1`] = `
     navigationItems={Array []}
     notifications={Object {}}
   >
-    <div
+    <header
       className="compact-header"
+      role="banner"
     >
       <button
         className="skip-content-button"
@@ -119,7 +120,7 @@ exports[`CompactHeader should render default element 1`] = `
       <div
         className="extensions-container"
       />
-    </div>
+    </header>
   </CompactHeader>
 </InjectIntl(CompactHeader)>
 `;
@@ -259,8 +260,9 @@ exports[`CompactHeader should render with function callbacks 1`] = `
       }
     }
   >
-    <div
+    <header
       className="compact-header"
+      role="banner"
     >
       <button
         className="skip-content-button"
@@ -458,7 +460,7 @@ exports[`CompactHeader should render with function callbacks 1`] = `
           </Extensions>
         </InjectIntl(Extensions)>
       </div>
-    </div>
+    </header>
   </CompactHeader>
 </InjectIntl(CompactHeader)>
 `;
@@ -527,8 +529,9 @@ exports[`CompactHeader should render with menu callback 1`] = `
     notifications={Object {}}
     onSelectMenuButton={[MockFunction]}
   >
-    <div
+    <header
       className="compact-header"
+      role="banner"
     >
       <button
         className="skip-content-button"
@@ -585,7 +588,7 @@ exports[`CompactHeader should render with menu callback 1`] = `
       <div
         className="extensions-container"
       />
-    </div>
+    </header>
   </CompactHeader>
 </InjectIntl(CompactHeader)>
 `;
@@ -654,8 +657,9 @@ exports[`CompactHeader should render with skip callback 1`] = `
     notifications={Object {}}
     onSelectSkipToContent={[MockFunction]}
   >
-    <div
+    <header
       className="compact-header"
+      role="banner"
     >
       <button
         className="skip-content-button"
@@ -712,7 +716,7 @@ exports[`CompactHeader should render with skip callback 1`] = `
       <div
         className="extensions-container"
       />
-    </div>
+    </header>
   </CompactHeader>
 </InjectIntl(CompactHeader)>
 `;

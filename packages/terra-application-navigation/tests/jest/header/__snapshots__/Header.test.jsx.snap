@@ -59,8 +59,9 @@ exports[`Header should render default element 1`] = `
       }
     }
   >
-    <div
+    <header
       className="header"
+      role="banner"
     >
       <button
         className="skip-content-button"
@@ -216,7 +217,7 @@ exports[`Header should render default element 1`] = `
           </UtilityMenuHeaderButton>
         </InjectIntl(UtilityMenuHeaderButton)>
       </div>
-    </div>
+    </header>
   </Header>
 </InjectIntl(Header)>
 `;
@@ -426,8 +427,9 @@ exports[`Header should render with function callbacks 1`] = `
       }
     }
   >
-    <div
+    <header
       className="header"
+      role="banner"
     >
       <button
         className="skip-content-button"
@@ -1030,7 +1032,7 @@ exports[`Header should render with function callbacks 1`] = `
           </UtilityMenuHeaderButton>
         </InjectIntl(UtilityMenuHeaderButton)>
       </div>
-    </div>
+    </header>
   </Header>
 </InjectIntl(Header)>
 `;
@@ -1096,8 +1098,9 @@ exports[`Header should render with skip callback 1`] = `
     }
     onSelectSkipToContent={[MockFunction]}
   >
-    <div
+    <header
       className="header"
+      role="banner"
     >
       <button
         className="skip-content-button"
@@ -1254,7 +1257,7 @@ exports[`Header should render with skip callback 1`] = `
           </UtilityMenuHeaderButton>
         </InjectIntl(UtilityMenuHeaderButton)>
       </div>
-    </div>
+    </header>
   </Header>
 </InjectIntl(Header)>
 `;

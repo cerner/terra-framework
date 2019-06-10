@@ -33,7 +33,8 @@
   .text {
     flex: 1 1 auto;
     hyphens: auto;
-    word-break: break-word;
+    overflow-wrap: break-word; /* Modern browsers */
+    word-wrap: break-word; /* For IE 10 and IE 11 */
   }
 
   .extension-row-count {

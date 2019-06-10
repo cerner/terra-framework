@@ -25,7 +25,7 @@
   .menu-button {
     background-color: transparent;
     border: 0;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--terra-application-navigation-compact-header-menu-button-color,rgba(255, 255, 255, 0.8));
     cursor: pointer;
     flex: 0 0 auto;
     height: 2.143rem;
@@ -40,17 +40,17 @@
     }
           
     &:hover {
-      color: rgba(255, 255, 255, 1);
+      color: var(--terra-application-navigation-compact-header-menu-button-hover-color, rgba(255, 255, 255, 1));
     }
 
     &:active {
-      color: rgba(255, 255, 255, 0.5);
+      color: var(--terra-application-navigation-compact-header-menu-button-active-color,rgba(255, 255, 255, 0.5));
     }
 
     &:focus[data-focus-styles-enabled='true'] {
-      background-color: rgba(89, 159, 253, 0.4);
+      background-color: var(--terra-application-navigation-compact-header-menu-button-focus-background-color, rgba(89, 159, 253, 0.4));
       border-radius: 50%;
-      color: rgba(255, 255, 255, 1);
+      color: var(--terra-application-navigation-compact-header-menu-button-focus-color, rgba(255, 255, 255, 1));
     }
 
     // Remove the inner border and padding in Firefox.
@@ -61,7 +61,7 @@
   }
 
   .title-container {
-    color: rgba(255, 255, 255, 1);
+    color: var(--terra-application-navigation-compact-header-title-color,rgba(255, 255, 255, 1));
     flex: 1 1 auto;
     margin-left: 0.3571rem;
     overflow: hidden;
@@ -101,11 +101,11 @@
   }
 
   .skip-content-button {
-    background-color: #0079be;
-    border: 1px solid #fff;
+    background-color: var(--terra-application-navigation-compact-header-skip-background-color, #0079be);
+    border: var(--terra-application-navigation-compact-header-skip-border, 1px solid #fff);
     border-radius: 0;
     clip: rect(1px, 1px, 1px, 1px);
-    color: #fff;
+    color: var(--terra-application-navigation-compact-header-skip-color, #fff);
     height: 1px;
     margin: 0;
     outline: none;

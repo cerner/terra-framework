@@ -152,7 +152,7 @@ const Header = ({
   }
 
   return (
-    <div className={cx('header')}>
+    <header role="banner" className={cx('header')}>
       <button type="button" onClick={onSelectSkipToContent} className={cx('skip-content-button')}>
         {intl.formatMessage({ id: 'Terra.applicationNavigation.header.skipToContentTitle' })}
       </button>
@@ -168,7 +168,7 @@ const Header = ({
       <div className={cx('utilities-container')}>
         {renderUtilities()}
       </div>
-    </div>
+    </header>
   );
 };
 
