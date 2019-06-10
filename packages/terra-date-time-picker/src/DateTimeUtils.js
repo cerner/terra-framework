@@ -97,7 +97,7 @@ class DateTimeUtils {
   /**
    * Gets the time from a date and time
    * @param {string} time An ISO 8601 string to get the time of
-   * @param {boolean} hasSeconds Whether or not seconds are enabled
+   * @param {boolean} hasSeconds Whether or not seconds should be retrieved
    * @return {string} The time from the date and time string
    */
   static getTime(time, hasSeconds) {
@@ -110,6 +110,7 @@ class DateTimeUtils {
    * @param {string} date - The date to validate.
    * @param {string} time - The time to validate.
    * @param {string} format - The date/time format to use for the validation.
+   * @param {boolean} hasSeconds Whether or not the time should consider having seconds valid
    * @return {boolean} - True if both the date and time are valid and conform to the format.
    */
   static isValidDateTime(date, time, format, hasSeconds) {
@@ -117,8 +118,10 @@ class DateTimeUtils {
   }
 
   /**
-   * Determines if the time is a valid time in the HH:mm format
+   * Determines if the time is a valid time in the HH:mm (where hasSeconds is false) or
+   * HH:mm:ss (where hasSeconds is true) formats
    * @param {string} time - The time to validate.
+   * @param {boolean} hasSeconds Whether or not the time should consider having seconds valid
    * @return {boolean} - True if the time is valid.
    */
   static isValidTime(time, hasSeconds) {

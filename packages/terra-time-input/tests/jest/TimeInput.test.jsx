@@ -1,10 +1,11 @@
 /* globals spyOn jest */
 
 import React from 'react';
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl, mountWithIntl, renderWithIntl } from 'terra-enzyme-intl';
 import KeyCode from 'keycode-js';
-import TimeInput from '../../src/TimeInput';
+import TimeInput from '../../lib/TimeInput';
+import TimeUtil from '../../lib/TimeUtil';
 
 const mockEvent = {
   preventDefault: jest.fn(),
@@ -229,4 +230,88 @@ it('should ignore invalid times with seconds properly', () => {
   expect(wrapper.instance().state.hour).toEqual('');
   expect(wrapper.instance().state.minute).toEqual('');
   expect(wrapper.instance().state.second).toEqual('');
+});
+
+it('should validate the incrementHour helper method', () => {
+  expect(TimeUtil.incrementHour('11', TimeUtil.FORMAT_12_HOUR)).toEqual('12');
+  expect(TimeUtil.incrementHour('12', TimeUtil.FORMAT_12_HOUR)).toEqual('01');
+  expect(TimeUtil.incrementHour('0', TimeUtil.FORMAT_12_HOUR)).toEqual('01');
+  expect(TimeUtil.incrementHour('11', TimeUtil.FORMAT_24_HOUR)).toEqual('12');
+  expect(TimeUtil.incrementHour('12', TimeUtil.FORMAT_24_HOUR)).toEqual('13');
+  expect(TimeUtil.incrementHour('23', TimeUtil.FORMAT_24_HOUR)).toEqual('23');
+  expect(TimeUtil.incrementHour(undefined, TimeUtil.FORMAT_12_HOUR)).toEqual('12');
+  expect(TimeUtil.incrementHour(undefined, TimeUtil.FORMAT_24_HOUR)).toEqual('00');
+});
+
+it('should validate the decrementHour helper method', () => {
+  expect(TimeUtil.decrementHour('11', TimeUtil.FORMAT_12_HOUR)).toEqual('10');
+  expect(TimeUtil.decrementHour('10', TimeUtil.FORMAT_12_HOUR)).toEqual('09');
+  expect(TimeUtil.decrementHour('1', TimeUtil.FORMAT_12_HOUR)).toEqual('12');
+  expect(TimeUtil.decrementHour('11', TimeUtil.FORMAT_24_HOUR)).toEqual('10');
+  expect(TimeUtil.decrementHour('1', TimeUtil.FORMAT_24_HOUR)).toEqual('00');
+  expect(TimeUtil.decrementHour('0', TimeUtil.FORMAT_24_HOUR)).toEqual('0');
+  expect(TimeUtil.decrementHour(undefined, TimeUtil.FORMAT_12_HOUR)).toEqual('12');
+  expect(TimeUtil.decrementHour(undefined, TimeUtil.FORMAT_24_HOUR)).toEqual('00');
+});
+
+it('should validate the incrementMinute helper method', () => {
+  expect(TimeUtil.incrementMinute('11')).toEqual('12');
+  expect(TimeUtil.incrementMinute('0')).toEqual('01');
+  expect(TimeUtil.incrementMinute(undefined)).toEqual('00');
+});
+
+it('should validate the decrementMinute helper method', () => {
+  expect(TimeUtil.decrementMinute('11')).toEqual('10');
+  expect(TimeUtil.decrementMinute('10')).toEqual('09');
+  expect(TimeUtil.decrementMinute('0')).toEqual('0');
+  expect(TimeUtil.decrementMinute(undefined)).toEqual('00');
+});
+
+it('should validate the incrementSecond helper method', () => {
+  expect(TimeUtil.incrementSecond('11')).toEqual('12');
+  expect(TimeUtil.incrementSecond('0')).toEqual('01');
+  expect(TimeUtil.incrementSecond(undefined)).toEqual('00');
+});
+
+it('should validate the decrementSecond helper method', () => {
+  expect(TimeUtil.decrementSecond('11')).toEqual('10');
+  expect(TimeUtil.decrementSecond('10')).toEqual('09');
+  expect(TimeUtil.decrementSecond('0')).toEqual('0');
+  expect(TimeUtil.decrementSecond(undefined)).toEqual('00');
+});
+
+it('should validate the splitHour helper method', () => {
+  expect(TimeUtil.splitHour('23:32')).toEqual('23');
+  expect(TimeUtil.splitHour('7:7')).toEqual('07');
+  expect(TimeUtil.splitHour('27:70')).toEqual('');
+  expect(TimeUtil.splitHour({ apple: true })).toEqual('');
+});
+
+it('should validate the splitMinute helper method', () => {
+  expect(TimeUtil.splitMinute('23:32')).toEqual('32');
+  expect(TimeUtil.splitMinute('23:7')).toEqual('07');
+  expect(TimeUtil.splitMinute('23:70')).toEqual('');
+  expect(TimeUtil.splitMinute('23')).toEqual('');
+  expect(TimeUtil.splitMinute({ apple: true })).toEqual('');
+});
+
+it('should validate the splitSecond helper method', () => {
+  expect(TimeUtil.splitSecond('23:47:32')).toEqual('32');
+  expect(TimeUtil.splitSecond('23:47:7')).toEqual('07');
+  expect(TimeUtil.splitSecond('23:47:70')).toEqual('');
+  expect(TimeUtil.splitSecond('23:47')).toEqual('');
+  expect(TimeUtil.splitSecond({ apple: true })).toEqual('');
+});
+
+it('should validate the validateTime helper method', () => {
+  expect(TimeUtil.validateTime('23:47', false)).toBe(true);
+  expect(TimeUtil.validateTime('25:47', false)).toBe(false);
+  expect(TimeUtil.validateTime('23:67', false)).toBe(false);
+  expect(TimeUtil.validateTime('23:471', false)).toBe(false);
+  expect(TimeUtil.validateTime('23:47:32', false)).toBe(false);
+  expect(TimeUtil.validateTime('23', false)).toBe(false);
+
+  expect(TimeUtil.validateTime('23:47:09', true)).toBe(true);
+  expect(TimeUtil.validateTime('23:47', true)).toBe(false);
+  expect(TimeUtil.validateTime('23:47:60', true)).toBe(false);
 });

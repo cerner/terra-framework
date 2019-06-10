@@ -1,6 +1,6 @@
 import React from 'react';
-/* eslint-disable import/no-extraneous-dependencies */
 import moment from 'moment-timezone';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
 import DateTimePicker from '../../lib/DateTimePicker';
 import DateTimeUtils from '../../lib/DateTimeUtils';
@@ -93,4 +93,33 @@ it('Should not throw any errors while date value is outside of the Min, Max rang
 it('should render a date time picker with the seconds field enabled', () => {
   const datePicker = shallowWithIntl(<DateTimePicker name="date-time-input" utcOffset={0} showSeconds />);
   expect(datePicker).toMatchSnapshot();
+});
+
+it('should validate the hasTime helper', () => {
+  expect(DateTimeUtils.hasTime('2019-06-10T16:00:01-05:00')).toBe(true);
+  expect(DateTimeUtils.hasTime('2019-06-10')).toBe(false);
+});
+
+it('should validate the updateTime helper', () => {
+  const updatedHM = DateTimeUtils.updateTime(moment('2019-06-10T10:30:54-05:00'), '16:00', false);
+  // Directly comparing the moment objects fails due to differences in the parsedDateParts property
+  expect(updatedHM.format()).toEqual(moment('2019-06-10T16:00:54-05:00').format());
+
+  const updatedHMS = DateTimeUtils.updateTime(moment('2019-06-10T10:30:54-05:00'), '16:00:01', true);
+  // Directly comparing the moment objects fails due to differences in the parsedDateParts property
+  expect(updatedHMS.format()).toEqual(moment('2019-06-10T16:00:01-05:00').format());
+});
+
+it('should validate the getTime helper', () => {
+  expect(DateTimeUtils.getTime('2019-06-10T16:00:01-05:00', false)).toEqual('16:00');
+
+  expect(DateTimeUtils.getTime('2019-06-10T16:00:01-05:00', true)).toEqual('16:00:01');
+});
+
+it('should validate the isValidTime helper', () => {
+  expect(DateTimeUtils.isValidTime('16:00', false)).toBe(true);
+  expect(DateTimeUtils.isValidTime('16:00:01', false)).toBe(false);
+
+  expect(DateTimeUtils.isValidTime('16:00', true)).toBe(false);
+  expect(DateTimeUtils.isValidTime('16:00:01', true)).toBe(true);
 });

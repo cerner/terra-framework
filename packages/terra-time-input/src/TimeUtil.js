@@ -56,11 +56,11 @@ class TimeUtil {
 
     // Increment the value by 1 when arrow up is pressed.
     if (hour) {
-      let numericMinute = Number(hour);
+      let numericHour = Number(hour);
 
-      if (numericMinute < maxValue) {
-        numericMinute += 1;
-        return numericMinute < 10 ? '0'.concat(numericMinute.toString()) : numericMinute.toString();
+      if (numericHour < maxValue) {
+        numericHour += 1;
+        return numericHour < 10 ? '0'.concat(numericHour.toString()) : numericHour.toString();
       } if (timeVariant === this.FORMAT_12_HOUR) {
         return '01';
       }
@@ -82,11 +82,11 @@ class TimeUtil {
     const minValue = timeVariant === this.FORMAT_12_HOUR ? 1 : 0;
 
     if (hour) {
-      let numericMinute = Number(hour);
+      let numericHour = Number(hour);
 
-      if (numericMinute > minValue) {
-        numericMinute -= 1;
-        return numericMinute < 10 ? '0'.concat(numericMinute.toString()) : numericMinute.toString();
+      if (numericHour > minValue) {
+        numericHour -= 1;
+        return numericHour < 10 ? '0'.concat(numericHour.toString()) : numericHour.toString();
       } if (timeVariant === this.FORMAT_12_HOUR) {
         return '12';
       }
@@ -240,9 +240,14 @@ class TimeUtil {
     return '';
   }
 
-  static validateTime(value, showSeconds) {
+  /**
+   * Ensures the passed in value is a valid time in the HH:mm format or HH:mm:ss format if hasSeconds is true
+   * @param {string} value The time to validate
+   * @param {boolean} hasSeconds The time will be required to have seconds if this is true
+   */
+  static validateTime(value, hasSeconds) {
     // Including seconds in the value is required if seconds are shown
-    if (showSeconds) {
+    if (hasSeconds) {
       return /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/.test(value);
     }
 
