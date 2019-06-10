@@ -62,7 +62,7 @@ export default class DateTimePicker12HourMobile extends React.Component {
         <h3 id="titleWithDateTimeValue">Date-Time-Picker with Seconds</h3>
         <DateTimePickerExampleTemplate
           id="disabledDatetimeValueProvided"
-          showSecond
+          showSeconds
           value={this.state.datetime}
           timeVariant={DateTimeUtil.FORMAT_12_HOUR}
         />

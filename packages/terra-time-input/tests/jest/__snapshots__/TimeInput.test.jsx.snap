@@ -524,7 +524,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
     }
   }
   secondAttributes={Object {}}
-  showSecond={false}
+  showSeconds={false}
   variant="24-hour"
 >
   <div

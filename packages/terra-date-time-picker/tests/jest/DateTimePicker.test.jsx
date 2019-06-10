@@ -1,7 +1,9 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
+import moment from 'moment-timezone';
 import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
 import DateTimePicker from '../../lib/DateTimePicker';
+import DateTimeUtils from '../../lib/DateTimeUtils';
 
 it('should render a default date time picker', () => {
   const datePicker = shallowWithIntl(<DateTimePicker name="date-time-input" utcOffset={0} />);
@@ -89,6 +91,6 @@ it('Should not throw any errors while date value is outside of the Min, Max rang
 });
 
 it('should render a date time picker with the seconds field enabled', () => {
-  const datePicker = shallowWithIntl(<DateTimePicker name="date-time-input" utcOffset={0} showSecond />);
+  const datePicker = shallowWithIntl(<DateTimePicker name="date-time-input" utcOffset={0} showSeconds />);
   expect(datePicker).toMatchSnapshot();
 });

@@ -25,7 +25,7 @@ class timeInput extends React.Component {
           name="time-input-value"
           value={this.state.time}
           onChange={this.handleTimeChange}
-          showSecond
+          showSeconds
           variant={TimeUtil.FORMAT_12_HOUR}
         />
       </div>

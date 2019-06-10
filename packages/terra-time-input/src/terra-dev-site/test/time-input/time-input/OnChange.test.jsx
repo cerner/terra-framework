@@ -26,7 +26,7 @@ Time Input:
             id="timeInput"
             name="time-input"
             onChange={this.handleOnChange}
-            showSecond
+            showSeconds
           />
         </div>
       </div>

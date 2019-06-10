@@ -53,7 +53,7 @@ DateTimePickerExample.defualtProps = defaultProps;
 const DateTimePickerExampleDefaultDateTime = () => (
   <DateTimePickerExample
     value={moment().format()}
-    showSecond
+    showSeconds
   />
 );
 

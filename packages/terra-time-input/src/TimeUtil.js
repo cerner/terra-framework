@@ -240,9 +240,9 @@ class TimeUtil {
     return '';
   }
 
-  static validateTime(value, showSecond) {
+  static validateTime(value, showSeconds) {
     // Including seconds in the value is required if seconds are shown
-    if (showSecond) {
+    if (showSeconds) {
       return /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/.test(value);
     }
 

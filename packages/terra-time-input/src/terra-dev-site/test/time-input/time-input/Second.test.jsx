@@ -6,7 +6,7 @@ const TimeInputDefault = () => (
     <TimeInput
       id="timeInput"
       name="time-input"
-      showSecond
+      showSeconds
     />
   </div>
 );

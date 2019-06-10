@@ -75,18 +75,19 @@ class DateTimeUtils {
    * Synchronize only the time for a given moment object.
    * @param {object} momentDate - The moment object to synchronize the date and time.
    * @param {string} time - The time to synchronize with the moment object.
-   * @param {boolean} seconds - If true seconds will be processed
+   * @param {boolean} hasSeconds - If true seconds will be processed
    * @return {object} - The synchronized moment object.
    */
-  static updateTime(momentDate, time, seconds) {
+  static updateTime(momentDate, time, hasSeconds) {
     if (!momentDate || !momentDate.isValid()) {
       return null;
     }
 
     const newDate = momentDate.clone();
-    const date = moment(time, seconds ? 'HH:mm:ss' : 'HH:mm', true);
+    const timeFormat = hasSeconds ? 'HH:mm:ss' : 'HH:mm';
+    const date = moment(time, timeFormat, true);
 
-    if (seconds) {
+    if (hasSeconds) {
       return newDate.hour(date.get('hour')).minute(date.get('minute')).second(date.get('second'));
     }
 
@@ -96,11 +97,12 @@ class DateTimeUtils {
   /**
    * Gets the time from a date and time
    * @param {string} time An ISO 8601 string to get the time of
-   * @param {boolean} second Whether or not seconds are enabled
+   * @param {boolean} hasSeconds Whether or not seconds are enabled
    * @return {string} The time from the date and time string
    */
-  static getTime(time, second) {
-    return DateUtil.formatISODate(time, second ? 'HH:mm:ss' : 'HH:mm');
+  static getTime(time, hasSeconds) {
+    const timeFormat = hasSeconds ? 'HH:mm:ss' : 'HH:mm';
+    return DateUtil.formatISODate(time, timeFormat);
   }
 
   /**
@@ -110,8 +112,8 @@ class DateTimeUtils {
    * @param {string} format - The date/time format to use for the validation.
    * @return {boolean} - True if both the date and time are valid and conform to the format.
    */
-  static isValidDateTime(date, time, format, second) {
-    return DateUtil.isValidDate(date, format) && DateTimeUtils.isValidTime(time, second);
+  static isValidDateTime(date, time, format, hasSeconds) {
+    return DateUtil.isValidDate(date, format) && DateTimeUtils.isValidTime(time, hasSeconds);
   }
 
   /**
@@ -119,8 +121,9 @@ class DateTimeUtils {
    * @param {string} time - The time to validate.
    * @return {boolean} - True if the time is valid.
    */
-  static isValidTime(time, second) {
-    const timeMoment = moment(time, second ? 'HH:mm:ss' : 'HH:mm', true);
+  static isValidTime(time, hasSeconds) {
+    const timeFormat = hasSeconds ? 'HH:mm:ss' : 'HH:mm';
+    const timeMoment = moment(time, timeFormat, true);
     return timeMoment.isValid();
   }
 

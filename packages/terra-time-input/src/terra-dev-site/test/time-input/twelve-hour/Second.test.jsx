@@ -28,7 +28,7 @@ Time Input:
             name="time-input"
             onChange={this.handleOnChange}
             variant={TimeUtil.FORMAT_12_HOUR}
-            showSecond
+            showSeconds
           />
         </div>
       </div>

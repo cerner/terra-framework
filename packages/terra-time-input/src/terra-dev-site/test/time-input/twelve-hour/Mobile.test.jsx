@@ -74,7 +74,7 @@ Time Input with value provided - Current Value:
           id="timeInputWithSecond"
           name="time-input-with-second"
           variant={TimeUtil.FORMAT_12_HOUR}
-          showSecond
+          showSeconds
         />
       </div>
     );

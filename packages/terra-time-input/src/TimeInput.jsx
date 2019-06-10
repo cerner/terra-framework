@@ -60,7 +60,7 @@ const propTypes = {
   /**
    * Whether the input for seconds should be displayed or not
    */
-  showSecond: PropTypes.bool,
+  showSeconds: PropTypes.bool,
   /**
    * An ISO 8601 string representation of the time value in the input.
    */
@@ -81,7 +81,7 @@ const defaultProps = {
   onFocus: undefined,
   refCallback: undefined,
   secondAttributes: {},
-  showSecond: false,
+  showSeconds: false,
   value: undefined,
   variant: TimeUtil.FORMAT_24_HOUR,
 };
@@ -100,15 +100,15 @@ class TimeInput extends React.Component {
     super(props);
 
     let { value } = this.props;
-    const { showSecond } = this.props;
+    const { showSeconds } = this.props;
 
-    if (value && !TimeUtil.validateTime(value, showSecond)) {
+    if (value && !TimeUtil.validateTime(value, showSeconds)) {
       if (process.env !== 'production') {
         // eslint-disable-next-line no-console
         console.warn(
           `An invalid time value, ${value}, has been passed to the terra-time-picker. `
           + 'This value has been ignored and will not be rendered. '
-          + `Time values must be in ${showSecond ? 'hh:mm:ss' : 'hh:mm'} format because showSecond is ${showSecond}.`,
+          + `Time values must be in ${showSeconds ? 'hh:mm:ss' : 'hh:mm'} format because showSeconds is ${showSeconds}.`,
         );
       }
 
@@ -363,7 +363,7 @@ class TimeInput extends React.Component {
       }
     }
 
-    if (this.props.showSecond) {
+    if (this.props.showSeconds) {
       // Move focus to second if second is shown and minute input has a valid and complete entry
       if (inputValue.length === 2) {
         this.secondInput.focus();
@@ -515,7 +515,7 @@ class TimeInput extends React.Component {
     }
 
     if (event.keyCode === KeyCode.KEY_RIGHT) {
-      if (this.props.showSecond) {
+      if (this.props.showSeconds) {
         this.focusSecondFromMinute(event);
       } else {
         this.focusMeridiemFromMinute(event);
@@ -648,7 +648,7 @@ class TimeInput extends React.Component {
       if (hour === '' && minute === '' && second === '') {
         this.props.onChange(event, '');
       } else {
-        this.props.onChange(event, this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSecond ? ':'.concat(second) : ''));
+        this.props.onChange(event, this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : ''));
       }
     }
   }
@@ -681,7 +681,7 @@ class TimeInput extends React.Component {
     if (event.keyCode === KeyCode.KEY_LEFT
         || event.keyCode === KeyCode.KEY_DELETE
         || event.keyCode === KeyCode.KEY_BACK_SPACE) {
-      if (this.props.showSecond) {
+      if (this.props.showSeconds) {
         this.secondInput.focus();
         if (this.state.second) {
           this.secondInput.setSelectionRange(this.state.second.length, this.state.second.length);
@@ -705,7 +705,7 @@ class TimeInput extends React.Component {
       name,
       refCallback,
       secondAttributes,
-      showSecond,
+      showSeconds,
       value,
       variant,
       ...customProps
@@ -725,7 +725,7 @@ class TimeInput extends React.Component {
         hour += 12;
       }
 
-      timeValue = 'T'.concat(hour, ':', this.state.minute).concat(showSecond ? ':'.concat(this.state.second) : '');
+      timeValue = 'T'.concat(hour, ':', this.state.minute).concat(showSeconds ? ':'.concat(this.state.second) : '');
     }
 
     if (!instanceHoursAttrs.id) {
@@ -784,7 +784,7 @@ class TimeInput extends React.Component {
             {...inputAttributes}
             {...instanceMinuteAttrs}
             refCallback={(inputRef) => { this.minuteInput = inputRef; }}
-            className={cx('time-input-minute', showSecond ? 'with-second' : 'without-second')}
+            className={cx('time-input-minute', showSeconds ? 'with-second' : 'without-second')}
             value={this.state.minute}
             name={'terra-time-minute-'.concat(name)}
             placeholder={this.context.intl.formatMessage({ id: 'Terra.timeInput.mm' })}
@@ -801,7 +801,7 @@ class TimeInput extends React.Component {
             {this.context.intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
           </label>
         </div>
-        {showSecond && (
+        {showSeconds && (
           <React.Fragment>
             <span className={cx('time-spacer')}>:</span>
             <div className={cx('time-input-group')}>
@@ -868,7 +868,7 @@ class TimeInput extends React.Component {
       name,
       refCallback,
       secondAttributes,
-      showSecond,
+      showSeconds,
       value,
       variant,
       ...customProps
@@ -884,7 +884,7 @@ class TimeInput extends React.Component {
     // Using the state of hour and minute create a time in UTC represented in ISO 8601 format.
     let timeValue = '';
 
-    if (this.state.hour.length > 0 || this.state.minute.length > 0 || (this.state.second.length > 0 && showSecond)) {
+    if (this.state.hour.length > 0 || this.state.minute.length > 0 || (this.state.second.length > 0 && showSeconds)) {
       let hour = parseInt(this.state.hour, 10);
 
       if (this.props.variant === TimeUtil.FORMAT_12_HOUR && this.state.meridiem === this.postMeridiem) {
@@ -893,7 +893,7 @@ class TimeInput extends React.Component {
 
       timeValue = 'T'.concat(hour, ':', this.state.minute);
 
-      if (showSecond) {
+      if (showSeconds) {
         timeValue = timeValue.concat(':', this.state.second);
       }
     }
@@ -940,7 +940,7 @@ class TimeInput extends React.Component {
           {...minuteAttributes}
           refCallback={(inputRef) => { this.minuteInput = inputRef; }}
           aria-label={this.context.intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
-          className={cx('time-input-minute', showSecond ? 'with-second' : 'without-second', 'desktop', { 'initial-focus': this.state.minuteInitialFocused })}
+          className={cx('time-input-minute', showSeconds ? 'with-second' : 'without-second', 'desktop', { 'initial-focus': this.state.minuteInitialFocused })}
           type="text"
           value={this.state.minute}
           name={'terra-time-minute-'.concat(name)}
@@ -954,7 +954,7 @@ class TimeInput extends React.Component {
           pattern="\d*"
           disabled={disabled}
         />
-        {showSecond && (
+        {showSeconds && (
           <React.Fragment>
             <span className={cx('time-spacer')}>:</span>
             <Input

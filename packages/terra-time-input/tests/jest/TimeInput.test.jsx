@@ -151,26 +151,26 @@ it('should pass in refCallback as the ref prop of the hour input element', () =>
 });
 
 it('should render a time input with seconds input', () => {
-  const timeInput = <TimeInput name="time-input" showSecond />;
+  const timeInput = <TimeInput name="time-input" showSeconds />;
   const wrapper = shallowWithIntl(timeInput);
   expect(wrapper).toMatchSnapshot();
 });
 
 it('should render a time input with seconds input and a value', () => {
-  const timeInput = <TimeInput name="time-input" showSecond value="12:12:12" />;
+  const timeInput = <TimeInput name="time-input" showSeconds value="12:12:12" />;
   const wrapper = shallowWithIntl(timeInput);
   expect(wrapper).toMatchSnapshot();
 });
 
 it('should render a time input with seconds input and custom attributes', () => {
-  const timeInput = <TimeInput name="time-input" showSecond inputAttributes={{ id: 'terra-time-input' }} secondAttributes={{ id: 'id-0' }} />;
+  const timeInput = <TimeInput name="time-input" showSeconds inputAttributes={{ id: 'terra-time-input' }} secondAttributes={{ id: 'id-0' }} />;
   const wrapper = shallowWithIntl(timeInput);
   expect(wrapper).toMatchSnapshot();
 });
 
 it('should handle focusing on the seconds input without error', () => {
   mockEvent.keyCode = KeyCode.KEY_LEFT;
-  const timeInput = <TimeInput name="time-input" disabled showSecond />;
+  const timeInput = <TimeInput name="time-input" disabled showSeconds />;
   const wrapper = mountWithIntl(timeInput);
   wrapper.instance().setState({ hour: 2, minute: 15 });
   wrapper.instance().handleMinuteInputKeyDown(mockEvent);
@@ -178,14 +178,14 @@ it('should handle focusing on the seconds input without error', () => {
 });
 
 it('should render a 12 hour clock time input with seconds input', () => {
-  const timeInput = <TimeInput name="time-input" variant="12-hour" showSecond />;
+  const timeInput = <TimeInput name="time-input" variant="12-hour" showSeconds />;
   const wrapper = shallowWithIntl(timeInput);
   expect(wrapper).toMatchSnapshot();
 });
 
 it('should handle focusing on the meridiem input from seconds input without error', () => {
   mockEvent.keyCode = KeyCode.KEY_RIGHT;
-  const timeInput = <TimeInput name="time-input" variant="12-hour" showSecond />;
+  const timeInput = <TimeInput name="time-input" variant="12-hour" showSeconds />;
   const wrapper = mountWithIntl(timeInput);
   wrapper.instance().handleSecondInputKeyDown(mockEvent);
   expect(mockEvent.preventDefault).toHaveBeenCalled();
@@ -195,7 +195,7 @@ it('should render a 24 hour timepicker with seconds properly on mobile devices',
   spyOn(window, 'matchMedia').and.returnValue({ matches: true });
   window.ontouchstart = 'true';
 
-  const timeInput = <TimeInput name="time-input" showSecond />;
+  const timeInput = <TimeInput name="time-input" showSeconds />;
   const wrapper = renderWithIntl(timeInput);
   expect(wrapper).toMatchSnapshot();
   delete window.ontouchstart;
@@ -205,7 +205,7 @@ it('should set the labels with the correct htmlFor a 24 hour timepicker properly
   spyOn(window, 'matchMedia').and.returnValue({ matches: true });
   window.ontouchstart = 'true';
 
-  const timeInput = <TimeInput name="time-input" showSecond secondAttributes={{ id: 'id-0' }} minuteAttributes={{ id: 'id-1' }} hourAttributes={{ id: 'id-2' }} />;
+  const timeInput = <TimeInput name="time-input" showSeconds secondAttributes={{ id: 'id-0' }} minuteAttributes={{ id: 'id-1' }} hourAttributes={{ id: 'id-2' }} />;
   const wrapper = renderWithIntl(timeInput);
   expect(wrapper).toMatchSnapshot();
   delete window.ontouchstart;
@@ -215,14 +215,14 @@ it('should render a 12 hour timepicker meridiem with buttons and seconds input w
   spyOn(window, 'matchMedia').and.returnValue({ matches: true });
   window.ontouchstart = 'true';
 
-  const timeInput = <TimeInput name="time-input" variant="12-hour" showSecond />;
+  const timeInput = <TimeInput name="time-input" variant="12-hour" showSeconds />;
   const wrapper = renderWithIntl(timeInput);
   expect(wrapper).toMatchSnapshot();
   delete window.ontouchstart;
 });
 
 it('should ignore invalid times with seconds properly', () => {
-  const timeInput = <TimeInput name="time-input" value="11:25:4" showSecond />;
+  const timeInput = <TimeInput name="time-input" value="11:25:4" showSeconds />;
   const wrapper = shallowWithIntl(timeInput);
   expect(wrapper).toMatchSnapshot();
 

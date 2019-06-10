@@ -3,7 +3,7 @@ import DateTimePickerExampleTemplate from '../../common/DateTimePickerExampleTem
 import DateTimeUtil from '../../../DateTimeUtils';
 
 const DateTimePickerExample = () => (
-  <DateTimePickerExampleTemplate showSecond timeVariant={DateTimeUtil.FORMAT_12_HOUR} />
+  <DateTimePickerExampleTemplate showSeconds timeVariant={DateTimeUtil.FORMAT_12_HOUR} />
 );
 
 export default DateTimePickerExample;

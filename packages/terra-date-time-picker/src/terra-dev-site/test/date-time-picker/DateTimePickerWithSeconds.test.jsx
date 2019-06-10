@@ -2,7 +2,7 @@ import React from 'react';
 import DateTimePickerExampleTemplate from '../../common/DateTimePickerExampleTemplate';
 
 const DateTimePickerExample = () => (
-  <DateTimePickerExampleTemplate showSecond />
+  <DateTimePickerExampleTemplate showSeconds />
 );
 
 export default DateTimePickerExample;
