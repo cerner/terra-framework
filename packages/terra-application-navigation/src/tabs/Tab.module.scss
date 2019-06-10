@@ -47,7 +47,7 @@
 
   .tab,
   .tab-rollup {
-    background-color: transparent;
+    background-color: var(--terra-application-navigation-tab-background-color, transparent);
     border: 0;
     color: var(--terra-application-navigation-tab-color, #fff);
     cursor: pointer;
@@ -63,7 +63,7 @@
       align-items: center;
       background-position: top left;
       background-repeat: no-repeat;
-      background-size: 0 5px;
+      background-size: var(--terra-application-navigation-tab-inner-background-size, 0 5px);
       box-sizing: border-box;
       justify-content: space-between;
       overflow: hidden;
@@ -106,7 +106,7 @@
 
       .tab-inner {
         background-color: #3a6194;
-        background-image: linear-gradient(to left, rgba(89, 159, 253, 0.8), rgba(89, 159, 253, 0.8));
+        background-image: var(--terra-application-navigation-tab-current-inner-background-image, linear-gradient(to left, rgba(89, 159, 253, 0.8), rgba(89, 159, 253, 0.8)));
         background-size: 100% 6px;
         box-shadow: none;
         text-shadow: none;
