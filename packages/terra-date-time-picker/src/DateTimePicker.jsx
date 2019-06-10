@@ -84,7 +84,7 @@ const propTypes = {
    */
   onSelect: PropTypes.func,
   /**
-   * Whether an input field for seconds should be shown
+   * Whether an input field for seconds should be shown or not
    */
   showSecond: PropTypes.bool,
   /**

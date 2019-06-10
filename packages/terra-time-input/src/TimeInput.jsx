@@ -58,7 +58,7 @@ const propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   secondAttributes: PropTypes.object,
   /**
-   * Whether the input for seconds should be displayed
+   * Whether the input for seconds should be displayed or not
    */
   showSecond: PropTypes.bool,
   /**
@@ -921,7 +921,6 @@ class TimeInput extends React.Component {
           // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
           type="hidden"
           name={name}
-          // TODO: include seconds in this always?
           value={timeValue}
         />
         <Input
