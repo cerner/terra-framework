@@ -1,6 +1,7 @@
 import React from 'react';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { mockIntl } from 'terra-enzyme-intl';
 import DrawerMenu from '../../../src/drawer-menu/_DrawerMenu';
-import mockIntl from '../mockIntl';
 
 describe('DrawerMenu', () => {
   it('should render default element', () => {

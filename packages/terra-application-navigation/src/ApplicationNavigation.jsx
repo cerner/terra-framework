@@ -345,7 +345,7 @@ const ApplicationNavigation = ({
         {shouldRenderCompactNavigation(activeBreakpoint) ? renderCompactHeader() : renderHeader()}
         <main
           ref={mainContainerRef}
-          tabIndex="-1"
+          role="main"
           className={cx('main-container')}
         >
           {children}

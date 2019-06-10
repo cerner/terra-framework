@@ -1,6 +1,7 @@
 import React from 'react';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { mockIntl } from 'terra-enzyme-intl';
 import Extensions from '../../../src/extensions/_Extensions';
-import mockIntl from '../mockIntl';
 
 describe('Extensions', () => {
   it('should render default element', () => {
