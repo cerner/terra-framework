@@ -63,11 +63,11 @@ const propTypes = {
    */
   onSelectMenuItem: PropTypes.func,
   /**
-   * Whehther or not content is be constrained vertically.
+   * Whether or not content is be constrained vertically.
    */
   isHeightBounded: PropTypes.bool,
   /**
-   * Whehther or not selected states should display on the menu item.
+   * Whether or not selected states should display on the menu item.
    */
   showSelections: PropTypes.bool,
 };

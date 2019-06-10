@@ -32,7 +32,7 @@ const propTypes = {
    */
   isSelected: PropTypes.bool,
   /**
-   * Whehther or not selected states should display on the menu item.
+   * Whether or not selected states should display on the menu item.
    */
   showSelections: PropTypes.bool,
 };

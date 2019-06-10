@@ -1,6 +1,6 @@
 ## Prerequisites
 
-- The ApplicationNavigation requires the presence of a `Application` component (provided by `terra-applicaiton`) in its parent hierarchy. This provides essential utilities around i18n, context, and breakpoints.
+- The ApplicationNavigation requires the presence of a `Application` component (provided by `terra-application`) in its parent hierarchy. This provides essential utilities around i18n, context, and breakpoints.
 
 ```jsx
 import React from 'react';
@@ -114,7 +114,7 @@ const utilityItems = [{
   text: 'Utility 1',
   metaData: { myValue: value1 }
 }, {
-  key: 'utiliyy_2',
+  key: 'utility_2',
   icon: <Icon2 >,
   text: 'Utility 2',
   metaData: { myValue: value2 }
