@@ -63,7 +63,7 @@ const propTypes = {
    */
   onSelectMenuItem: PropTypes.func,
   /**
-   * Whether or not content is be constrained vertically.
+   * Whether or not content is constrained vertically.
    */
   isHeightBounded: PropTypes.bool,
   /**
