@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Cleaned up Jest/WDIO tests
 
 3.1.0 - (May 21, 2019)
 ------------------
