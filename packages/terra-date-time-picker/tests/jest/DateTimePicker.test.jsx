@@ -96,24 +96,24 @@ it('should render a date time picker with the seconds field enabled', () => {
 });
 
 it('should validate the hasTime helper', () => {
-  expect(DateTimeUtils.hasTime('2019-06-10T16:00:01-05:00')).toBe(true);
+  expect(DateTimeUtils.hasTime('2019-06-10T16:00:01')).toBe(true);
   expect(DateTimeUtils.hasTime('2019-06-10')).toBe(false);
 });
 
 it('should validate the updateTime helper', () => {
-  const updatedHM = DateTimeUtils.updateTime(moment('2019-06-10T10:30:54-05:00'), '16:00', false);
+  const updatedHM = DateTimeUtils.updateTime(moment('2019-06-10T10:30:54'), '16:00', false);
   // Directly comparing the moment objects fails due to differences in the parsedDateParts property
-  expect(updatedHM.format()).toEqual(moment('2019-06-10T16:00:54-05:00').format());
+  expect(updatedHM.format()).toEqual(moment('2019-06-10T16:00:54').format());
 
-  const updatedHMS = DateTimeUtils.updateTime(moment('2019-06-10T10:30:54-05:00'), '16:00:01', true);
+  const updatedHMS = DateTimeUtils.updateTime(moment('2019-06-10T10:30:54'), '16:00:01', true);
   // Directly comparing the moment objects fails due to differences in the parsedDateParts property
-  expect(updatedHMS.format()).toEqual(moment('2019-06-10T16:00:01-05:00').format());
+  expect(updatedHMS.format()).toEqual(moment('2019-06-10T16:00:01').format());
 });
 
 it('should validate the getTime helper', () => {
-  expect(DateTimeUtils.getTime('2019-06-10T16:00:01-05:00', false)).toEqual('16:00');
+  expect(DateTimeUtils.getTime('2019-06-10T16:00:01', false)).toEqual('16:00');
 
-  expect(DateTimeUtils.getTime('2019-06-10T16:00:01-05:00', true)).toEqual('16:00:01');
+  expect(DateTimeUtils.getTime('2019-06-10T16:00:01', true)).toEqual('16:00:01');
 });
 
 it('should validate the isValidTime helper', () => {
