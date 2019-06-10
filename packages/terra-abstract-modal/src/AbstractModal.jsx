@@ -7,7 +7,7 @@ import './_matches-polyfill';
 import ModalContent from './_ModalContent';
 
 // Importing WICG Inert polyfill causes Jest to crash
-// Issue logged to Jest repo:   
+// Issue logged to Jest repo: https://github.com/facebook/jest/issues/8373
 // This logic avoids importing the polyfill when running Jest tests
 if (process.env.NODE_ENV !== 'test') {
   // eslint-disable-next-line global-require

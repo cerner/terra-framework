@@ -40,7 +40,7 @@ class ModalIsOpen extends React.Component {
             <button id="modal-button" type="button" onClick={this.handleCloseModal}>Close Modal</button>
           </div>
         </AbstractModal>
-        <button type="button" className="button-open-modal" onClick={this.handleOpenModal}>Open Modal</button>
+        <button type="button" id="modal-open-button" onClick={this.handleOpenModal}>Open Modal</button>
       </div>
     );
   }

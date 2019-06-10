@@ -7,7 +7,7 @@ class ModalIsFullscreen extends React.Component {
     super();
 
     this.state = {
-      isOpen: true,
+      isOpen: false,
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -41,7 +41,7 @@ class ModalIsFullscreen extends React.Component {
             <button type="button" onClick={this.handleCloseModal}>Close Modal</button>
           </div>
         </AbstractModal>
-        <button type="button" className="button-open-modal" onClick={this.handleOpenModal}>Open isOpen modal</button>
+        <button type="button" id="modal-open-button" onClick={this.handleOpenModal}>Open isOpen modal</button>
       </div>
     );
   }
