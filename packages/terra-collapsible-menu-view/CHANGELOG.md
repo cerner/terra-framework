@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Updated
+* Removed `large` viewport from terra-collapsible-menu-view 
+
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 
