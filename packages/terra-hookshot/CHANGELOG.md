@@ -3,8 +3,12 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Replaced classList shim with full polyfill to support d3
+
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+
 
 5.7.0 - (April 24, 2019)
 ------------------
