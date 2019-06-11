@@ -58,7 +58,8 @@ const propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   secondAttributes: PropTypes.object,
   /**
-   * Whether the input for seconds should be displayed or not
+   * Whether the input for seconds should be displayed or not. If true then the second field must have a valid
+   * number for the overall time to be considered valid.
    */
   showSeconds: PropTypes.bool,
   /**
