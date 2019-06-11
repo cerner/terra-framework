@@ -45,7 +45,7 @@
     "terra-doc-template": "^2.9.0",
     "terra-popup": "^6.1.0",
     "terra-icon": "^3.9.0",
-    "terra-overlay": "3.13.0",
+    "terra-overlay": "^3.15.0",
     "terra-image": "^3.8.0",
     "terra-content-container": "^3.8.0"
   },
