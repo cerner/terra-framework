@@ -12,7 +12,7 @@ describe('Collapsible Menu View', () => {
   });
 
   // Only test viewports that have collapsed menu items
-  Terra.viewports('tiny', 'small', 'medium', 'large').forEach((viewport) => {
+  Terra.viewports('tiny', 'small', 'medium').forEach((viewport) => {
     describe('Responsive Hidden Open', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/default-collapsible-menu-view');
