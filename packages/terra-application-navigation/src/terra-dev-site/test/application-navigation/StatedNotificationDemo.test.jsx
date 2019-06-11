@@ -147,7 +147,7 @@ const notifications = [
     'item-pill': 12,
     '/page_8': 999,
     'item-lightbulb': 1,
-  }
+  },
 ];
 
 const StatedNotificationDemo = () => {
