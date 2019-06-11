@@ -60,14 +60,16 @@
 
     .avatar-container {
       flex: 0 0 auto;
-      height: 2.143rem;
+      height: 1.715rem;
       margin-right: 0.5rem;
-      width: 2.143rem;
-    }
+      overflow: hidden;
+      position: relative;
+      width: 1.715rem;
 
-    .avatar {
-      height: 2.143rem;
-      width: 2.143rem;
+      & > * {
+        max-height: 100%;
+        max-width: 100%;
+      }
     }
   
     .info-container {

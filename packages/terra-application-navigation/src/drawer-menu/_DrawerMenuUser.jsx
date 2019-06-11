@@ -28,7 +28,7 @@ const DrawerMenuUser = ({ userConfig, variant }) => (
   <div className={variant === 'small' ? cx('small-user-layout') : cx('large-user-layout')}>
     <div className={cx('avatar-container')}>
       <div className={cx('avatar-outline')} />
-      <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials} size="1.714rem" />
+      <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials} size={variant === 'small' ? '0.5218rem' : '1.6088rem'} />
     </div>
     <div className={cx('info-container')}>
       <div className={cx('name')}>{userConfig.name}</div>
