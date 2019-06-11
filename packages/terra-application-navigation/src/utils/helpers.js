@@ -1,3 +1,4 @@
+import { useRef, useLayoutEffect } from 'react';
 import { KEY_SPACE, KEY_RETURN } from 'keycode-js';
 
 /**
@@ -32,11 +33,36 @@ const generateKeyDownSelection = onSelect => (
   } : undefined
 );
 
+/**
+ * A custom hook that manages the attributes on the given countRef to control
+ * the elements animation states.
+ */
+const useAnimatedCount = (countRef, countValue) => {
+  const previousValueRef = useRef(countValue);
+
+  function handleAnimation() {
+    if (countRef.current) {
+      countRef.current.setAttribute('data-count-pulse', 'false');
+      countRef.current.removeEventListener('animationend', handleAnimation);
+    }
+  }
+
+  useLayoutEffect(() => {
+    if (countValue > previousValueRef.current && countRef.current) {
+      countRef.current.setAttribute('data-count-pulse', 'true');
+      countRef.current.addEventListener('animationend', handleAnimation);
+    }
+
+    previousValueRef.current = countValue;
+  }, [countValue]);
+};
+
 export default {
   shouldRenderCompactNavigation,
   enableFocusStyles,
   disableFocusStyles,
   generateKeyDownSelection,
+  useAnimatedCount,
 };
 
 export {
@@ -44,4 +70,5 @@ export {
   enableFocusStyles,
   disableFocusStyles,
   generateKeyDownSelection,
+  useAnimatedCount,
 };

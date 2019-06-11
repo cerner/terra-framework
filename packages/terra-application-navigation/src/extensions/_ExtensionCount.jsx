@@ -1,6 +1,7 @@
-import React, { useRef, useLayoutEffect } from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import { useAnimatedCount } from '../utils/helpers';
 
 import styles from './ExtensionCount.module.scss';
 
@@ -8,7 +9,7 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The number of notifications to display..
+   * The number of notifications to display.
    */
   value: PropTypes.number,
   /**
@@ -19,23 +20,8 @@ const propTypes = {
 
 const ExtensionCount = ({ value, isRollup, ...customProps }) => {
   const countRef = useRef();
-  const previousValueRef = useRef(value);
 
-  function handleAnimation() {
-    if (countRef.current) {
-      countRef.current.setAttribute('data-count-pulse', 'false');
-      countRef.current.removeEventListener('animationend', handleAnimation);
-    }
-  }
-
-  useLayoutEffect(() => {
-    if (value > previousValueRef.current && countRef.current) {
-      countRef.current.setAttribute('data-count-pulse', 'true');
-      countRef.current.addEventListener('animationend', handleAnimation);
-    }
-
-    previousValueRef.current = value;
-  }, [value]);
+  useAnimatedCount(countRef, value);
 
   let validatedValue = value;
   if (isRollup) {
