@@ -28,6 +28,7 @@
     "react-dom": "^16.8.5"
   },
   "dependencies": {
+    "classlist-polyfill": "^1.2.0",
     "classnames": "^2.2.5",
     "keycode-js": "^1.0.4",
     "prop-types": "^15.5.8",
