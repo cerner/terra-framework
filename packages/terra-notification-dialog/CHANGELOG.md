@@ -5,6 +5,8 @@ Unreleased
 ----------
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+* Update wdio spec to use Terra.describeViewports
+
 ### Fixed
 * Pressing escape key no longer disables the focus trap in notification dialog, users must make a selection of one of the notification dialog buttons to dismiss the notification dialog
 

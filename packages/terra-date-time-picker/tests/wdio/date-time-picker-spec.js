@@ -305,6 +305,8 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('Clears the default date and time on date input focus when default date is excluded', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-excluded');
+      // Removes the blinking cursor to prevent screenshot mismatches.
+      browser.execute('document.querySelector(\'input[name="terra-time-minute-input"]\').style.caretColor = "transparent";');
       browser.click('input[name="terra-date-input"]');
     });
 

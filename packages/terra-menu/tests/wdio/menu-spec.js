@@ -3,7 +3,7 @@ const ignoredA11y = {
   'button-name': { enabled: false },
 };
 
-describe('Menu', ['medium'], () => {
+Terra.describeViewports('Menu', ['medium'], () => {
   describe('Menu-Default', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-menu/menu/menu/default-menu');

@@ -166,10 +166,9 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
 
     it('puts focus on the input', () => {
       browser.click('input[name="terra-date-date-input-onblur"]');
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('input').style.caretColor = 'transparent';
-      });
+      // Removes the blinking cursor to prevent screenshot mismatches.
+      browser.execute('document.querySelector(\'input\').style.caretColor = \'transparent\';');
+
       browser.keys('05/01/2019');
       expect(browser.getText('#blur-count')).to.equal('0');
       expect(browser.getText('#focus-count')).to.equal('1');
@@ -258,6 +257,8 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
 
     it('dismisses the datepicker after clicking outside', () => {
       browser.click('input[name="terra-date-date-input-onclickoutside"]');
+      // Removes the blinking cursor to prevent screenshot mismatches.
+      browser.execute('document.querySelector(\'input\').style.caretColor = \'transparent\';');
     });
 
     Terra.it.matchesScreenshot('date picker closed with dismissal message');
@@ -309,10 +310,8 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
   describe('Key Limitations', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default');
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('input[name="terra-date-date-input"]').style.caretColor = 'transparent';
-      });
+      // Removes the blinking cursor to prevent screenshot mismatches.
+      browser.execute('document.querySelector(\'input[name="terra-date-date-input"]\').style.caretColor = \'transparent\';');
     });
 
     it('sets the date', () => {

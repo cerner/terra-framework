@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added ARIA landmark roles
 
+### Changed
+* Update wdio spec to use Terra.describeViewports
+
 3.8.0 - (May 21, 2019)
 ------------------
 ### Changed

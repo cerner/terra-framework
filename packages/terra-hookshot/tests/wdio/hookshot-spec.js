@@ -380,22 +380,15 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
     });
 
     Terra.it.matchesScreenshot({ selector: '#NoCloseBehavior-bounds' });
-  });
 
-  describe('Displays hookshot positioned by target coordinates', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-hookshot/hookshot/hookshot-coordinates');
-      browser.click('#coords-button');
-      browser.waitForVisible('#test-coords-content');
-    });
-
-    Terra.it.matchesScreenshot({ selector: '#coords-test' });
+    after(() => browser.moveToObject('#root', 0, 0).leftClick());
   });
 });
 
 Terra.describeViewports('Hookshot', ['small'], () => {
   describe('Closes the hookshot content on resize when all close behavior is present', () => {
     before(() => {
+      browser.refresh();
       browser.url('/#/raw/tests/terra-hookshot/hookshot/hookshot-close-behaviors');
       browser.click('#trigger-AllBehavior');
       browser.waitForVisible('#AllBehavior-content');
@@ -419,7 +412,7 @@ Terra.describeViewports('Hookshot', ['small'], () => {
   });
 
   describe('Closes the hookshot content on resize when no close behavior is present', () => {
-    beforeEach(() => {
+    before(() => {
       browser.url('/#/raw/tests/terra-hookshot/hookshot/hookshot-close-behaviors');
       browser.click('#scroll-bounds');
       browser.click('#trigger-NoCloseBehavior');
@@ -428,5 +421,15 @@ Terra.describeViewports('Hookshot', ['small'], () => {
     });
 
     Terra.it.matchesScreenshot({ selector: '#NoCloseBehavior-bounds' });
+  });
+
+  describe('Displays hookshot positioned by target coordinates', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-hookshot/hookshot/hookshot-coordinates');
+      browser.click('#coords-button');
+      browser.waitForVisible('#test-coords-content');
+    });
+
+    Terra.it.matchesScreenshot({ selector: '#coords-test' });
   });
 });

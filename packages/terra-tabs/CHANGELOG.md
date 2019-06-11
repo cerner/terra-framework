@@ -3,11 +3,13 @@ ChangeLog
 
 Unreleased
 ----------
-### Changed
-* Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 ### Added
 * box-shadow theme variable for in-active tab: --terra-tabs-structural-box-shadow
 * z-index theme variable for active tab: --terra-tabs-structural-active-z-index
+
+### Changed
+* Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+* Update wdio specs to use Terra.describeViewports
 
 
 6.1.0 - (May 21, 2019)
