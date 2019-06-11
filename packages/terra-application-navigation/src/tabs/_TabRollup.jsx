@@ -61,10 +61,10 @@ const TabRollup = ({
     type="button"
     role="link"
     tabIndex="0"
-    className={cx([
+    className={cx(
       'tab-rollup',
       { 'has-count': hasCount },
-    ])}
+    )}
     onClick={onTabSelect}
     onKeyDown={generateKeyDownSelection(onTabSelect)}
     onBlur={enableFocusStyles}
@@ -77,7 +77,7 @@ const TabRollup = ({
       <div className={cx('tab-rollup-label')}>
         {<span className={cx('tab-rollup-text')}>{text}</span>}
         {hasChildNotifications && <span className={cx('tab-count')}><TabCount value={isPulsed ? 1 : 0} isRollup /></span>}
-        <IconCaretDown className={cx(['tab-rollup-icon'])} />
+        <IconCaretDown className={cx('tab-rollup-icon')} />
       </div>
     </div>
   </div>

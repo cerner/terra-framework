@@ -37,10 +37,10 @@ const ToggleCount = ({ value, ...customProps }) => {
     <div
       {...customProps}
       ref={countRef}
-      className={cx([
+      className={cx(
         'count',
         customProps.className,
-      ])}
+      )}
     />
   );
 };

@@ -38,7 +38,7 @@ const DrawerMenuListItem = ({
   <li
     role="option"
     tabIndex="0"
-    className={cx(['item', { 'is-selected': isSelected }])}
+    className={cx('item', { 'is-selected': isSelected })}
     onClick={onSelect}
     onKeyDown={generateKeyDownSelection(onSelect)}
     onBlur={enableFocusStyles}

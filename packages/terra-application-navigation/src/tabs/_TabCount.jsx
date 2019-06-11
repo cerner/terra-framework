@@ -53,10 +53,10 @@ const TabCount = ({ value, isRollup, intl }) => {
   return (
     <div
       ref={countRef}
-      className={cx([
+      className={cx(
         'count',
         { 'is-rollup': isRollup },
-      ])}
+      )}
     >
       {validatedValue}
     </div>

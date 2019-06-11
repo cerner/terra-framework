@@ -41,9 +41,7 @@ const DrawerCount = ({ value }) => {
   return (
     <div
       ref={countRef}
-      className={cx([
-        'count',
-      ])}
+      className={cx('count')}
     >
       {validatedValue}
     </div>

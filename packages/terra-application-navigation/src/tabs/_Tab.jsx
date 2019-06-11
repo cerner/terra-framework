@@ -77,12 +77,12 @@ const Tab = ({
       type="button"
       role="link"
       tabIndex="0"
-      className={cx([
+      className={cx(
         'tab',
         { 'is-disabled': isActive },
         { 'is-placeholder': !render && isPlaceholder },
         { 'has-count': !render && hasCount },
-      ])}
+      )}
       onClick={!isActive ? onTabSelect : undefined}
       onKeyDown={!isActive ? generateKeyDownSelection(onTabSelect) : undefined}
       onBlur={enableFocusStyles}

@@ -47,11 +47,11 @@ const ExtensionCount = ({ value, isRollup, ...customProps }) => {
   return (
     <div
       ref={countRef}
-      className={cx([
+      className={cx(
         'count',
         { 'is-rollup': isRollup },
         customProps.className,
-      ])}
+      )}
     >
       {validatedValue}
     </div>

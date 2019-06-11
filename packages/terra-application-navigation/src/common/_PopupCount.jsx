@@ -41,9 +41,7 @@ const PopupCount = ({ value }) => {
   return (
     <div
       ref={countRef}
-      className={cx([
-        'popup-count',
-      ])}
+      className={cx('popup-count')}
     >
       {validatedValue}
     </div>

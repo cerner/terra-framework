@@ -316,7 +316,7 @@ class Tabs extends React.Component {
 
     return (
       <div
-        className={cx(['tabs-container', { 'is-calculating': this.isCalculating }])}
+        className={cx('tabs-container', { 'is-calculating': this.isCalculating })}
         ref={this.containerRef}
       >
         {this.buildVisibleChildren(visibleTabs, hasNotifications, onTabSelect, activeTabKey, notifications)}
