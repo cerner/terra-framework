@@ -51,6 +51,7 @@ class CollapsibleMenuViewDemo extends React.Component {
           shouldCloseOnClick={false}
           onChange={this.handleToggleTwoOnChange}
           isSelected={this.state.toggle2Selection}
+          isSelectable
         />
         <CollapsibleMenuView.Divider key="Divider1" />
         <CollapsibleMenuView.Item

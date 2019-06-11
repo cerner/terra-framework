@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import Control from 'terra-form/lib/Control';
+import Control from 'terra-form-checkbox';
 import Menu from './_CollapsibleMenu';
 import styles from './CollapsibleMenuView.module.scss';
 
@@ -70,7 +70,6 @@ class CollapsibleMenuViewToggle extends React.Component {
     } = this.props;
 
     const { isCollapsibleMenuItem } = this.context;
-
     const controllClassName = cx([
       'control',
       { 'is-disabled': isDisabled || !isSelectable },
@@ -99,7 +98,7 @@ class CollapsibleMenuViewToggle extends React.Component {
           labelText={text}
           defaultChecked={isSelected}
           onChange={this.wrappedOnChange}
-          inputAttrs={{ disabled: isDisabled || !isSelectable }}
+          disabled={isDisabled || !isSelectable}
         />
       </div>
     );
