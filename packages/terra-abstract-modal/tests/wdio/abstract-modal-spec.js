@@ -18,6 +18,8 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
 
     it('reopens the modal', () => {
       browser.keys('Enter');
+      browser.waitForVisible('[aria-modal="true"][role="dialog"]');
+      expect(browser.hasFocus('[aria-modal="true"][role="dialog"]')).to.be.true;
     });
 
     it('closes modal on ESC', () => {
@@ -42,7 +44,9 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
     });
 
     it('reopens the modal', () => {
-      browser.keys('enter');
+      browser.keys('Enter');
+      browser.waitForVisible('[role="dialog"]');
+      expect(browser.hasFocus('[role="dialog"]')).to.be.true;
     });
 
     it('closes modal on ESC', () => {
