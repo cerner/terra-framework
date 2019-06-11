@@ -136,28 +136,40 @@ const utilityItems = [
   },
 ];
 
-const notifications = {
-  '/page_2': 5,
-  'item-pill': 10,
-  '/page_8': 4,
-};
-
-
-/* eslint-disable no-alert */
-const handleItemSelection = (key, metaData) => {
-  alert(`itemKey: ${key}, metaData: ${metaData.test}`);
-};
-/* eslint-enable no-alert */
+const notifications = [
+  {
+    '/page_2': 5,
+    'item-pill': 10,
+    '/page_8': 4,
+  },
+  {
+    '/page_2': 8,
+    'item-pill': 12,
+    '/page_8': 999,
+    'item-lightbulb': 1,
+  }
+];
 
 const StatedNotificationDemo = () => {
   const [activeKey, setActiveKey] = useState(navigationItems[0].key);
+  const [notificationIndex, setNotificationIndex] = useState(0);
+
+  /* eslint-disable no-alert */
+  function handleItemSelection(key, metaData) {
+    if (key === 'item-search') {
+      setNotificationIndex(notificationIndex ? 0 : 1);
+      return;
+    }
+    alert(`itemKey: ${key}, metaData: ${metaData.test}`);
+  }
+  /* eslint-enable no-alert */
 
   return (
     <Application locale="en-US">
       <ApplicationNavigation
         titleConfig={titleConfig}
         userConfig={userConfig}
-        notifications={notifications}
+        notifications={notifications[notificationIndex]}
         extensionItems={extensionItems}
         onSelectExtensionItem={handleItemSelection}
         navigationItems={navigationItems}
