@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import { injectIntl, intlShape } from 'react-intl';
 import ResizeObserver from 'resize-observer-polyfill';
 import List from 'terra-list';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import InfiniteUtils from './_InfiniteUtils';
 import styles from './InfiniteList.module.scss';
 
@@ -23,6 +25,11 @@ const propTypes = {
    * An indicator to be displayed when no children are yet present.
    */
   initialLoadingIndicator: PropTypes.element,
+  /**
+   * @private
+   * Internationalization object with translation APIs. Provided by `injectIntl`.
+   */
+  intl: intlShape,
   /**
    * Determines whether or not the loading indicator is visible and if callbacks are triggered.
    */
@@ -82,6 +89,8 @@ class InfiniteList extends React.Component {
     this.handleResize = this.resizeDebounce(this.handleResize.bind(this));
     this.resetTimeout = this.resetTimeout.bind(this);
     this.wrapChild = this.wrapChild.bind(this);
+    this.ariaLiveStatus = '';
+    this.updateAriaLiveLoadingStatus = this.updateAriaLiveLoadingStatus.bind(this);
 
     this.initializeItemCache(props);
   }
@@ -140,7 +149,16 @@ class InfiniteList extends React.Component {
     if (!this.props.isFinishedLoading && !this.hasRequestedItems && !this.isRenderingNew && this.props.onRequestItems) {
       this.hasRequestedItems = true;
       this.props.onRequestItems();
+      this.updateAriaLiveLoadingStatus();
     }
+  }
+
+  updateAriaLiveLoadingStatus() {
+    this.ariaLiveStatus = this.props.intl.formatMessage({ id: 'Terra.InfiniteList.loading' });
+    // Clears status so aria live announces correctly next time more items are loaded
+    setTimeout(() => {
+      this.ariaLiveStatus = '';
+    }, 1000);
   }
 
   /**
@@ -494,6 +512,7 @@ class InfiniteList extends React.Component {
           {loadingSpinner}
         </div>
         {newChildren}
+        <VisuallyHiddenText aria-atomic="true" aria-live="assertive" text={this.ariaLiveStatus} />
       </React.Fragment>
     );
   }
@@ -502,4 +521,4 @@ class InfiniteList extends React.Component {
 InfiniteList.propTypes = propTypes;
 InfiniteList.defaultProps = defaultProps;
 
-export default InfiniteList;
+export default injectIntl(InfiniteList);
