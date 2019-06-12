@@ -1,6 +1,6 @@
 # Terra Application
 
-The `terra-application` package provides a baseline of functionality for applications built with Terra components.
+The `terra-application` package contains the components that comprise Terra's application platform.
 
 ## Getting Started
 
@@ -9,37 +9,35 @@ The `terra-application` package provides a baseline of functionality for applica
 
 ## Usage
 
-The `terra-application` package should be used both by applications and libraries to define a baseline of expected features and functionality for their components.
+The `terra-application` package should be used both by application and library (i.e. reusable) packages to provide consistent functionality for their applications/components.
 
-For application packages:
+An application and its dependencies must all depend upon the same version of `terra-application`. This necessitates a degree of orchestration between application and library developers, but `terra-application` allows that orchestration to focus on a single package instead of Terra's entire suite of framework components.
 
-1. `terra-application` must be specified as a dependency.
-2. A single `<Application />` component must be rendered as high as possible in the component tree.
-3. Components provided by `terra-application` should be consumed solely through `terra-application` and not through their own separate packages.
+Application packages must specify `terra-application` as a **dependency**.  Library packages must specify `terra-application` as a **peerDependency** (and a **devDependency** to resolve dependencies during development). These guidelines are intended to prevent the duplication of `terra-application` in webpack bundles. Bundling multiple versions of `terra-application`, or even multiple instances of the *same* version, will result in undefined and undesired behavior. Under these guidelines, if an application attempts to consume a library package that has a dependency on a different version of `terra-application`, an unmet peer dependency warning will be emitted during npm package installation. While only a warning, this warning indicates a major problem and will result in a non-functional application.
 
-For library packages:
+> Note: Packages of the same version can be duplicated when using `npm link` or local `file:..` references during development. In these scenarios, an alias can be defined in the webpack configuration to force a single package instance to be used by the application. Alternatively, installing a development package using a `git:` reference should not duplicate the package.
 
-1. `terra-application` must be specified as a peerDependency and devDependency.
-2. Components within the library should be implemented with the assumption that they will be rendered within an `<Application />` and thus able to access its i18n, theme, and breakpoint APIs.
-3. Components provided by `terra-application` should be consumed solely through `terra-application` and not through their own separate packages.
+## Features
 
-### Application
+### ApplicationBase
 
-The `<Application />` component itself is an aggregate of a few different components, namely `terra-base`, `terra-theme-provider`, and `terra-breakpoints`. When a component is wrapped in an `Application`, it is being wrapped by `Base`, `ThemeProvider`, and `ActiveBreakpointProvider`.
+The `<ApplicationBase />` component provides the baseline functionality an application and its contents expect and require. When a component is rendered within `<ApplicationBase />`, the component gets access to the i18n, theme, and breakpoint information it needs to render appropriately.
+
+Applications should render `<ApplicationBase />` at or near the root of their component tree. Conversely, libraries should develop their components with the assumption that those components will be rendered within a`<ApplicatioBase />` component by an application. Libraries should not (outside of tests) render an `<ApplicationBase />` component.
 
 ```jsx
-import Application from 'terra-application';
+import ApplicationBase from 'terra-application/lib/application-base';
 
 const Example = () => (
-  <Application
+  <ApplicationBase
     locale="en-US"
   >
     <ExampleContent />
-  </Application>
+  </ApplicationBase>
 )
 ```
 
-Only a single `<Application />` component should be rendered within a given application. All Terra components should be rendered within the `<Application />` component to ensure they have access to the framework features.
+Only a single `<ApplicationBase />` component should be rendered within a given application. All Terra components should be rendered within the `<ApplicationBase />` component to ensure they have access to the framework features.
 
 ### Breakpoints
 

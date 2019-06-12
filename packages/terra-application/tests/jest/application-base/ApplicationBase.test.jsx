@@ -1,20 +1,20 @@
 import React from 'react';
 
-import Application from '../../src/Application';
+import ApplicationBase from '../../../src/application-base/ApplicationBase';
 
 describe('Application', () => {
   it('should render with minimal props', () => {
     const wrapper = shallow((
-      <Application locale="en">
+      <ApplicationBase locale="en">
         <div>content</div>
-      </Application>
+      </ApplicationBase>
     ));
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render with all props', () => {
     const wrapper = shallow((
-      <Application
+      <ApplicationBase
         locale="en"
         customTranslatedMessages={{ custom: 'messages' }}
         translationsLoadingPlaceholder={<div>placeholder</div>}
@@ -23,7 +23,7 @@ describe('Application', () => {
         fitToParentIsDisabled
       >
         <div>content</div>
-      </Application>
+      </ApplicationBase>
     ));
     expect(wrapper).toMatchSnapshot();
   });
