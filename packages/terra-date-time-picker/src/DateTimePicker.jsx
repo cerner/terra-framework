@@ -203,7 +203,7 @@ class DateTimePicker extends React.Component {
 
     // Handle blur only if focus has moved out of the entire date time picker component.
     if (!this.dateTimePickerContainer.current.contains(activeTarget)) {
-      const isDateTimeValid = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat);
+      const isDateTimeValid = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
       const enteredDateTime = isDateTimeValid ? this.state.dateTime : null;
 
       this.checkAmbiguousTime(enteredDateTime);
@@ -218,7 +218,7 @@ class DateTimePicker extends React.Component {
 
     // Handle blur only if focus has moved out of the entire date time picker component.
     if (!this.dateTimePickerContainer.current.contains(activeTarget)) {
-      const isDateTimeValid = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat);
+      const isDateTimeValid = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
       let updatedDateTime;
 
       if (isDateTimeValid) {
