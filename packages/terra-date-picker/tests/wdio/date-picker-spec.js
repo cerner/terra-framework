@@ -29,7 +29,7 @@ describe('Date Picker', () => {
       before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default-date-excluded'));
 
       Terra.it.matchesScreenshot('default date displayed');
-      it('clears the default date and time after clicking on calendar button', () => {
+      it('clears the default date after clicking on calendar button', () => {
         browser.click('[class*="button"]');
       });
       Terra.it.matchesScreenshot('default date cleared');
@@ -252,17 +252,15 @@ describe('Date Picker', () => {
 
   describe('On Click Outside', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-on-click-outside');
+      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default');
       browser.click('[class*="button"]');
-      // Ensures the mouse pointer doesn't appear in the screenshot
-      browser.click('h3');
     });
 
     it('dismisses the datepicker after clicking outside', () => {
-      browser.click('input[name="terra-date-date-input-onclickoutside"]');
+      browser.click('[class*="PopupOverlay"]');
     });
 
-    Terra.it.matchesScreenshot('date picker closed with dismissal message');
+    Terra.it.matchesScreenshot('date picker closed');
     Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
