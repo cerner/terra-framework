@@ -52,8 +52,7 @@ DateTimePickerExample.defualtProps = defaultProps;
 
 const DateTimePickerExampleDefaultDateTime = () => (
   <DateTimePickerExample
-    // value={moment().format()}
-    value="2017-08-08T23:45"
+    value={moment().format()}
     showSeconds
   />
 );
