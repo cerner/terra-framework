@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Removed
 * Removed '-ms-overflow-style' style
+* Removed node_modules from .npmignore
 
 3.4.0 - (May 21, 2019)
 ------------------
