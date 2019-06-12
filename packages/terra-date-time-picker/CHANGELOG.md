@@ -8,6 +8,7 @@ Unreleased
 
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+* Updated wdio screenshots for date-picker changes.
 * Updated daylight savings time/standard time button to have aria-label and title with additional timezone info, to clarify its meaning.
 
 ### Fixed
