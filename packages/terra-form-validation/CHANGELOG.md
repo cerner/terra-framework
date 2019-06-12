@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Removed
+* Removed node_modules from .npmignore
+
 ### Fixed
 * onSubmit example is now submitting.
 

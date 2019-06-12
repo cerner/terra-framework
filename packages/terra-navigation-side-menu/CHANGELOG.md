@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Removed
+* Removed node_modules from .npmignore
+
 ### Added
 * Added ARIA landmark roles
 
