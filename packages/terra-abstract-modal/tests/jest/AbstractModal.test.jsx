@@ -51,6 +51,26 @@ it('should mount an open modal set to fullscreen', () => {
   expect(modal).toMatchSnapshot();
 });
 
+it('should mount an open modal with overlay class name', () => {
+  const modal = mount(<AbstractModalExample classNameOverlay="overlay-custom-class" />);
+  expect(modal).toMatchSnapshot();
+});
+
+it('should mount an open modal with modal class name', () => {
+  const modal = mount(<AbstractModalExample classNameModal="modal-custom-class" />);
+  expect(modal).toMatchSnapshot();
+});
+
+it('should mount an open modal with role', () => {
+  const modal = mount(<AbstractModalExample role="alertdialog" />);
+  expect(modal).toMatchSnapshot();
+});
+
+it('should mount an open modal with custom props', () => {
+  const modal = mount(<AbstractModalExample id="custom-props" />);
+  expect(modal).toMatchSnapshot();
+});
+
 it('should render the correct snapshot for iPhones', () => {
   Object.defineProperty(global.navigator, 'platform', { value: 'iPhone', writable: 'true' });
 

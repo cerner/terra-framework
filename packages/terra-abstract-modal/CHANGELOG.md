@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Cleaned up Jest/WDIO tests
+
 ### Removed
 * Removed node_modules from .npmignore
 
