@@ -12,6 +12,9 @@ Unreleased
 ### Fixed
 * Fixed wdio tests by calling browser.refresh() on subsequent loads instead of loading the url directly.
 
+### Removed
+* Removed node_modules from .npmignore
+
 4.2.0 - (May 21, 2019)
 ------------------
 ### Changed
