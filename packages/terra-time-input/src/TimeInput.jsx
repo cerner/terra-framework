@@ -689,6 +689,9 @@ class TimeInput extends React.Component {
         }
       } else {
         this.minuteInput.focus();
+        if (this.state.minute) {
+          this.minuteInput.setSelectionRange(this.state.minute.length, this.state.minute.length);
+        }
       }
       event.preventDefault();
     }
