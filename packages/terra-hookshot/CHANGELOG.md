@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Removed
+* Removed node_modules from .npmignore
+
 ### Fixed
 * Replaced classList shim with full polyfill to support d3
 
