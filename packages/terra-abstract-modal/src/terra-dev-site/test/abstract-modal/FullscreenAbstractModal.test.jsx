@@ -2,18 +2,17 @@ import React from 'react';
 import AbstractModal from '../../../AbstractModal';
 import './AbstractModalTestStyles.module.scss';
 
-class ModalCustomProps extends React.Component {
+class ModalIsFullscreen extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      isOpen: true,
+      isOpen: false,
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
-
 
   handleOpenModal() {
     this.setState({ isOpen: true });
@@ -27,9 +26,9 @@ class ModalCustomProps extends React.Component {
     return (
       <div>
         <AbstractModal
-          id="custom-props"
           ariaLabel="Terra Modal"
           isOpen={this.state.isOpen}
+          isFullscreen
           onRequestClose={this.handleCloseModal}
           classNameModal="test-background-class"
         >
@@ -39,13 +38,14 @@ class ModalCustomProps extends React.Component {
             <hr />
             <p>The Terra Modal is appended to the document body.</p>
             <p>{'Modal is assigned a role of \'document\' for accessibility.'}</p>
-            <button type="button" id="focus-button" onClick={this.handleCloseModal}>Close Modal</button>
+            <button type="button" onClick={this.handleCloseModal}>Close Modal</button>
           </div>
         </AbstractModal>
-        <button type="button" className="button-open-modal" onClick={this.handleOpenModal}>Open Modal</button>
+        <button type="button" id="modal-open-button" onClick={this.handleOpenModal}>Open isOpen modal</button>
       </div>
     );
   }
 }
 
-export default ModalCustomProps;
+
+export default ModalIsFullscreen;
