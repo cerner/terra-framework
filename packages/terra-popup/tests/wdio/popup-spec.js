@@ -1,4 +1,6 @@
 const selector = '#test-popup-area';
+const mediumViewport = Terra.viewports('medium')[0];
+
 Terra.describeViewports('Popup', ['medium'], () => {
   describe('Default popup', () => {
     it('validates popup does not have an arrow', () => {
@@ -29,16 +31,16 @@ Terra.describeViewports('Popup', ['medium'], () => {
     });
 
     it('remains open on height resize', () => {
-      browser.setViewportSize({ width: browser.getViewportSize('width'), height: 600 });
-      Terra.validates.screenshot('height resize', { selector });
+      browser.setViewportSize({ width: mediumViewport.width, height: 600 });
+      Terra.validates.screenshot('height resize-remains open', { selector });
     });
 
     it('closes on width resize', () => {
-      browser.setViewportSize(Terra.viewports('small')[0]);
-      Terra.validates.screenshot('width resize', { selector });
+      browser.setViewportSize({ width: mediumViewport.width - 50, height: mediumViewport.height });
+      Terra.validates.screenshot('width resize-closes', { selector });
     });
 
-    after(() => browser.setViewportSize(Terra.viewports('medium')[0]));
+    after(() => browser.setViewportSize(mediumViewport));
   });
 
   describe('Arrow popup', () => {
@@ -117,16 +119,16 @@ Terra.describeViewports('Popup', ['medium'], () => {
     });
 
     it('remains open on height resize', () => {
-      browser.setViewportSize({ width: browser.getViewportSize('width'), height: 600 });
-      Terra.validates.screenshot('height resize', { selector });
+      browser.setViewportSize({ width: mediumViewport.width, height: 600 });
+      Terra.validates.screenshot('height resize-remains open', { selector });
     });
 
     it('closes on width resize', () => {
-      browser.setViewportSize(Terra.viewports('small')[0]);
-      Terra.validates.screenshot('width resize', { selector });
+      browser.setViewportSize({ width: mediumViewport.width - 50, height: mediumViewport.height });
+      Terra.validates.screenshot('width resize-closes', { selector });
     });
 
-    after(() => browser.setViewportSize(Terra.viewports('medium')[0]));
+    after(() => browser.setViewportSize(mediumViewport));
   });
 
   describe('Vertical Attachments', () => {
@@ -176,7 +178,7 @@ Terra.describeViewports('Popup', ['medium'], () => {
       browser.keys('Escape');
     });
 
-    it('applies content offset when target has vertial-left when content vertial-right attachment', () => {
+    it('applies content offset when target has vertical-left when content vertical-right attachment', () => {
       browser.click('#attach-Right');
       browser.waitForVisible('.test-content');
       Terra.validates.screenshot('target:vertical-left & content:vertical-right', { selector });
@@ -261,16 +263,16 @@ Terra.describeViewports('Popup', ['medium'], () => {
     });
 
     it('remains open on height resize', () => {
-      browser.setViewportSize({ width: browser.getViewportSize('width'), height: 600 });
-      Terra.validates.screenshot('height resize', { selector });
+      browser.setViewportSize({ width: mediumViewport.width, height: 600 });
+      Terra.validates.screenshot('height resize-remains open', { selector });
     });
 
     it('closes on width resize', () => {
-      browser.setViewportSize(Terra.viewports('small')[0]);
-      Terra.validates.screenshot('width resize', { selector });
+      browser.setViewportSize({ width: mediumViewport.width - 50, height: mediumViewport.height });
+      Terra.validates.screenshot('width resize-closes', { selector });
     });
 
-    after(() => browser.setViewportSize(Terra.viewports('medium')[0]));
+    after(() => browser.setViewportSize(mediumViewport));
   });
 
   describe('Bounded Automatic Height Popup', () => {
@@ -291,16 +293,16 @@ Terra.describeViewports('Popup', ['medium'], () => {
     });
 
     it('remains open on height resize', () => {
-      browser.setViewportSize({ width: browser.getViewportSize('width'), height: 600 });
-      Terra.validates.screenshot('closes on width resize', { selector });
+      browser.setViewportSize({ width: mediumViewport.width, height: 600 });
+      Terra.validates.screenshot('height resize-remains open', { selector });
     });
 
     it('closes on width resize', () => {
-      browser.setViewportSize(Terra.viewports('small')[0]);
-      Terra.validates.screenshot('closes on width resize', { selector });
+      browser.setViewportSize({ width: mediumViewport.width - 50, height: mediumViewport.height });
+      Terra.validates.screenshot('width resize-closes', { selector });
     });
 
-    after(() => browser.setViewportSize(Terra.viewports('medium')[0]));
+    after(() => browser.setViewportSize(mediumViewport));
   });
 
   describe('Bounded Automatic Width Popup', () => {
