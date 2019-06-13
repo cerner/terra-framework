@@ -66,6 +66,7 @@ class TimeClarification extends React.Component {
 
     this.state = {
       offsetDisplay: '',
+      offsetLongDisplay: '',
     };
 
     this.handleDaylightSavingButtonClick = this.handleDaylightSavingButtonClick.bind(this);
@@ -73,7 +74,10 @@ class TimeClarification extends React.Component {
   }
 
   handleDaylightSavingButtonClick(event) {
-    this.setState({ offsetDisplay: DateTimeUtils.getDaylightSavingTZDisplay() });
+    this.setState({
+      offsetDisplay: DateTimeUtils.getDaylightSavingTZDisplay(),
+      offsetLongDisplay: DateTimeUtils.getDaylightSavingExpandedTZDisplay(),
+    });
 
     if (this.props.onDaylightSavingButtonClick) {
       this.props.onDaylightSavingButtonClick(event);
@@ -81,7 +85,10 @@ class TimeClarification extends React.Component {
   }
 
   handleStandardTimeButtonClick(event) {
-    this.setState({ offsetDisplay: DateTimeUtils.getStandardTZDisplay() });
+    this.setState({
+      offsetDisplay: DateTimeUtils.getStandardTZDisplay(),
+      offsetLongDisplay: DateTimeUtils.getStandardExpandedTZDisplay(),
+    });
 
     if (this.props.onStandardTimeButtonClick) {
       this.props.onStandardTimeButtonClick(event);
@@ -139,6 +146,8 @@ class TimeClarification extends React.Component {
           </div>
         </AbstractModal>
         <Button
+          title={this.state.offsetLongDisplay}
+          aria-label={this.state.offsetLongDisplay}
           className={offsetButtonClassNames}
           onBlur={this.props.onBlur}
           onFocus={this.props.onFocus}
