@@ -6,6 +6,14 @@ Unreleased
 ### Added
 * Added check to only load inert polyfill if it is not already defined on the Element prototype
 
+3.2.0 - (June 12, 2019)
+------------------
+### Changed
+* Cleaned up Jest/WDIO tests
+
+### Removed
+* Removed node_modules from .npmignore
+
 3.1.0 - (May 21, 2019)
 ------------------
 ### Changed

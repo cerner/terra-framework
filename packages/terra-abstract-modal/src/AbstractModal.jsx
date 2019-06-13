@@ -40,7 +40,7 @@ const propTypes = {
    */
   closeOnEsc: PropTypes.bool,
   /**
-   * If set to true, the modal will close when a mouseclick is triggered outside the modal.
+   * If set to true, the modal will close when a mouse click is triggered outside the modal.
    */
   closeOnOutsideClick: PropTypes.bool,
   /**
