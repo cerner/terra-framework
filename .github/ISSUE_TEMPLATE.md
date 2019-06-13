@@ -12,4 +12,4 @@
 <!-- A clear and concise description of what the issue is. -->
 
 ## Additional Context / Screenshots
-<!-- Add any other context about the issue here. If applicable, add screenshots to help explain. -->
+<!-- Add any other context about the issue here. If applicable, add screenshots to help explain the issue. -->
