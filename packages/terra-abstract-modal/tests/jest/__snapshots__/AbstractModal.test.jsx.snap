@@ -513,6 +513,422 @@ exports[`should mount an open modal set to fullscreen 1`] = `
 </ModalExample>
 `;
 
+exports[`should mount an open modal with custom props 1`] = `
+<ModalExample
+  id="custom-props"
+>
+  <div>
+    <AbstractModal
+      ariaLabel="Terra Modal"
+      classNameModal={null}
+      classNameOverlay={null}
+      closeOnEsc={true}
+      closeOnOutsideClick={true}
+      id="custom-props"
+      isFullscreen={false}
+      isOpen={true}
+      onRequestClose={[Function]}
+      role="dialog"
+      rootSelector="#root"
+      zIndex="6000"
+    >
+      <Portal
+        isOpened={true}
+      >
+        <Portal
+          containerInfo={
+            <div>
+              <div
+                class="overlay layer-6000"
+              />
+              <div
+                aria-label="Terra Modal"
+                aria-modal="true"
+                class="abstract-modal layer-6000"
+                id="custom-props"
+                role="dialog"
+                tabindex="0"
+              >
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
+                </div>
+              </div>
+            </div>
+          }
+        >
+          <ForwardRef
+            aria-modal="true"
+            ariaLabel="Terra Modal"
+            classNameModal={null}
+            classNameOverlay={null}
+            closeOnOutsideClick={true}
+            id="custom-props"
+            isFullscreen={false}
+            isScrollable={false}
+            onRequestClose={[Function]}
+            role="dialog"
+            zIndex="6000"
+          >
+            <ModalOverlay
+              className={null}
+              onClick={[Function]}
+              zIndex="6000"
+            >
+              <div
+                className="overlay layer-6000"
+                onClick={[Function]}
+              />
+            </ModalOverlay>
+            <div
+              aria-label="Terra Modal"
+              aria-modal="true"
+              className="abstract-modal layer-6000"
+              id="custom-props"
+              role="dialog"
+              tabIndex="0"
+            >
+              <div>
+                <h1>
+                  Terra Modal
+                </h1>
+                <button
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Close Modal
+                </button>
+              </div>
+            </div>
+          </ForwardRef>
+        </Portal>
+      </Portal>
+    </AbstractModal>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Open Modal
+    </button>
+  </div>
+</ModalExample>
+`;
+
+exports[`should mount an open modal with modal class name 1`] = `
+<ModalExample
+  classNameModal="modal-custom-class"
+>
+  <div>
+    <AbstractModal
+      ariaLabel="Terra Modal"
+      classNameModal="modal-custom-class"
+      classNameOverlay={null}
+      closeOnEsc={true}
+      closeOnOutsideClick={true}
+      isFullscreen={false}
+      isOpen={true}
+      onRequestClose={[Function]}
+      role="dialog"
+      rootSelector="#root"
+      zIndex="6000"
+    >
+      <Portal
+        isOpened={true}
+      >
+        <Portal
+          containerInfo={
+            <div>
+              <div
+                class="overlay layer-6000"
+              />
+              <div
+                aria-label="Terra Modal"
+                aria-modal="true"
+                class="abstract-modal layer-6000 modal-custom-class"
+                role="dialog"
+                tabindex="0"
+              >
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
+                </div>
+              </div>
+            </div>
+          }
+        >
+          <ForwardRef
+            aria-modal="true"
+            ariaLabel="Terra Modal"
+            classNameModal="modal-custom-class"
+            classNameOverlay={null}
+            closeOnOutsideClick={true}
+            isFullscreen={false}
+            isScrollable={false}
+            onRequestClose={[Function]}
+            role="dialog"
+            zIndex="6000"
+          >
+            <ModalOverlay
+              className={null}
+              onClick={[Function]}
+              zIndex="6000"
+            >
+              <div
+                className="overlay layer-6000"
+                onClick={[Function]}
+              />
+            </ModalOverlay>
+            <div
+              aria-label="Terra Modal"
+              aria-modal="true"
+              className="abstract-modal layer-6000 modal-custom-class"
+              role="dialog"
+              tabIndex="0"
+            >
+              <div>
+                <h1>
+                  Terra Modal
+                </h1>
+                <button
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Close Modal
+                </button>
+              </div>
+            </div>
+          </ForwardRef>
+        </Portal>
+      </Portal>
+    </AbstractModal>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Open Modal
+    </button>
+  </div>
+</ModalExample>
+`;
+
+exports[`should mount an open modal with overlay class name 1`] = `
+<ModalExample
+  classNameOverlay="overlay-custom-class"
+>
+  <div>
+    <AbstractModal
+      ariaLabel="Terra Modal"
+      classNameModal={null}
+      classNameOverlay="overlay-custom-class"
+      closeOnEsc={true}
+      closeOnOutsideClick={true}
+      isFullscreen={false}
+      isOpen={true}
+      onRequestClose={[Function]}
+      role="dialog"
+      rootSelector="#root"
+      zIndex="6000"
+    >
+      <Portal
+        isOpened={true}
+      >
+        <Portal
+          containerInfo={
+            <div>
+              <div
+                class="overlay layer-6000 overlay-custom-class"
+              />
+              <div
+                aria-label="Terra Modal"
+                aria-modal="true"
+                class="abstract-modal layer-6000"
+                role="dialog"
+                tabindex="0"
+              >
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
+                </div>
+              </div>
+            </div>
+          }
+        >
+          <ForwardRef
+            aria-modal="true"
+            ariaLabel="Terra Modal"
+            classNameModal={null}
+            classNameOverlay="overlay-custom-class"
+            closeOnOutsideClick={true}
+            isFullscreen={false}
+            isScrollable={false}
+            onRequestClose={[Function]}
+            role="dialog"
+            zIndex="6000"
+          >
+            <ModalOverlay
+              className="overlay-custom-class"
+              onClick={[Function]}
+              zIndex="6000"
+            >
+              <div
+                className="overlay layer-6000 overlay-custom-class"
+                onClick={[Function]}
+              />
+            </ModalOverlay>
+            <div
+              aria-label="Terra Modal"
+              aria-modal="true"
+              className="abstract-modal layer-6000"
+              role="dialog"
+              tabIndex="0"
+            >
+              <div>
+                <h1>
+                  Terra Modal
+                </h1>
+                <button
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Close Modal
+                </button>
+              </div>
+            </div>
+          </ForwardRef>
+        </Portal>
+      </Portal>
+    </AbstractModal>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Open Modal
+    </button>
+  </div>
+</ModalExample>
+`;
+
+exports[`should mount an open modal with role 1`] = `
+<ModalExample
+  role="alertdialog"
+>
+  <div>
+    <AbstractModal
+      ariaLabel="Terra Modal"
+      classNameModal={null}
+      classNameOverlay={null}
+      closeOnEsc={true}
+      closeOnOutsideClick={true}
+      isFullscreen={false}
+      isOpen={true}
+      onRequestClose={[Function]}
+      role="alertdialog"
+      rootSelector="#root"
+      zIndex="6000"
+    >
+      <Portal
+        isOpened={true}
+      >
+        <Portal
+          containerInfo={
+            <div>
+              <div
+                class="overlay layer-6000"
+              />
+              <div
+                aria-label="Terra Modal"
+                aria-modal="true"
+                class="abstract-modal layer-6000"
+                role="alertdialog"
+                tabindex="0"
+              >
+                <div>
+                  <h1>
+                    Terra Modal
+                  </h1>
+                  <button
+                    type="button"
+                  >
+                    Close Modal
+                  </button>
+                </div>
+              </div>
+            </div>
+          }
+        >
+          <ForwardRef
+            aria-modal="true"
+            ariaLabel="Terra Modal"
+            classNameModal={null}
+            classNameOverlay={null}
+            closeOnOutsideClick={true}
+            isFullscreen={false}
+            isScrollable={false}
+            onRequestClose={[Function]}
+            role="alertdialog"
+            zIndex="6000"
+          >
+            <ModalOverlay
+              className={null}
+              onClick={[Function]}
+              zIndex="6000"
+            >
+              <div
+                className="overlay layer-6000"
+                onClick={[Function]}
+              />
+            </ModalOverlay>
+            <div
+              aria-label="Terra Modal"
+              aria-modal="true"
+              className="abstract-modal layer-6000"
+              role="alertdialog"
+              tabIndex="0"
+            >
+              <div>
+                <h1>
+                  Terra Modal
+                </h1>
+                <button
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Close Modal
+                </button>
+              </div>
+            </div>
+          </ForwardRef>
+        </Portal>
+      </Portal>
+    </AbstractModal>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Open Modal
+    </button>
+  </div>
+</ModalExample>
+`;
+
 exports[`should render the correct snapshot for iPads 1`] = `
 <ModalExample>
   <div>
