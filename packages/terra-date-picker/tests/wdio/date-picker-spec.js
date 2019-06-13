@@ -22,7 +22,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
-  describe('Default Date Exlcuded', () => {
+  describe('Default Date Excluded', () => {
     describe('Default Date Excluded - Clears input using calendar icon', () => {
       before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default-date-excluded'));
 
