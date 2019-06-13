@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Removed 
+* Removed React.Fragment from MenuContent to improve the accessibility
 
 6.2.0 - (June 12, 2019)
 ------------------
