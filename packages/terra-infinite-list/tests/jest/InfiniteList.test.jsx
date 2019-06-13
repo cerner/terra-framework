@@ -1,9 +1,11 @@
 import React from 'react';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
 import InfiniteList, { Item } from '../../src/index';
 
 describe('InfiniteList', () => {
   it('should render a default component', () => {
-    const wrapper = shallow(<InfiniteList />);
+    const wrapper = shallowWithIntl(<InfiniteList />);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -15,7 +17,7 @@ describe('InfiniteList', () => {
     };
 
     const component = <InfiniteList {...infiniteProps} />;
-    const wrapper = shallow(component);
+    const wrapper = shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -38,7 +40,7 @@ describe('InfiniteList', () => {
         </Item>
       </InfiniteList>
     );
-    const wrapper = shallow(component);
+    const wrapper = shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -49,6 +51,7 @@ describe('InfiniteList', () => {
         dividerStyle="standard"
         paddingStyle="standard"
         role="listbox"
+        progressiveLoadingMessage="Loading allergies..."
       >
         <Item isSelectable key={`item-${1}`}>
           <div style={{ height: '20px', width: '100%' }}>item 1</div>
@@ -64,7 +67,7 @@ describe('InfiniteList', () => {
         </Item>
       </InfiniteList>
     );
-    const wrapper = shallow(component);
+    const wrapper = shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -90,7 +93,7 @@ describe('InfiniteList', () => {
         </Item>
       </InfiniteList>
     );
-    const wrapper = render(component);
+    const wrapper = shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
 });

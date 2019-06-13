@@ -48,6 +48,10 @@ const propTypes = {
    */
   progressiveLoadingIndicator: PropTypes.element,
   /**
+   * A message to be provided to screen readers as new items are progressively loaded in
+   */
+  progressiveLoadingMessage: PropTypes.string,
+  /**
    * Accessibility role of the list, defaults to 'none'. If creating a list with selectable items, pass 'listbox'.
    */
   role: PropTypes.string,
@@ -58,6 +62,7 @@ const defaultProps = {
   dividerStyle: 'none',
   isFinishedLoading: false,
   paddingStyle: 'none',
+  progressiveLoadingMessage: undefined,
   role: 'none',
 };
 
@@ -154,7 +159,7 @@ class InfiniteList extends React.Component {
   }
 
   updateAriaLiveLoadingStatus() {
-    this.ariaLiveStatus = this.props.intl.formatMessage({ id: 'Terra.InfiniteList.loading' });
+    this.ariaLiveStatus = this.props.progressiveLoadingMessage ? this.props.progressiveLoadingMessage : this.props.intl.formatMessage({ id: 'Terra.InfiniteList.loading' });
     // Clears status so aria live announces correctly next time more items are loaded
     setTimeout(() => {
       this.ariaLiveStatus = '';
