@@ -342,24 +342,22 @@ class MenuContent extends React.Component {
     const contentWidth = this.props.isWidthBounded ? undefined : this.props.fixedWidth;
 
     return (
-      <React.Fragment>
-        {/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */}
-        <div
-          ref={this.handleContainerRef}
-          className={contentClass}
-          style={{ height: contentHeight, width: contentWidth, position: contentPosition }}
-          tabIndex="-1"
-          aria-modal="true"
-          role="dialog"
-          onKeyDown={this.onKeyDown}
-        >
-          <ContentContainer header={header} fill={this.props.isHeightBounded || this.props.index > 0}>
-            <List className={cx(['list'])} role="menu">
-              {items}
-            </List>
-          </ContentContainer>
-        </div>
-      </React.Fragment>
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+      <div
+        ref={this.handleContainerRef}
+        className={contentClass}
+        style={{ height: contentHeight, width: contentWidth, position: contentPosition }}
+        tabIndex="-1"
+        aria-modal="true"
+        role="dialog"
+        onKeyDown={this.onKeyDown}
+      >
+        <ContentContainer header={header} fill={this.props.isHeightBounded || this.props.index > 0}>
+          <List className={cx(['list'])} role="menu">
+            {items}
+          </List>
+        </ContentContainer>
+      </div>
     );
   }
 }
