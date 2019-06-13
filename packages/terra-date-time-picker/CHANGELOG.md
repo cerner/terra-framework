@@ -6,6 +6,8 @@ Unreleased
 ### Added
 * Added the ability for the user to enter seconds in the time input
 
+4.3.0 - (June 12, 2019)
+------------------
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 * Updated wdio screenshots for date-picker changes.
