@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+3.9.0 - (June 12, 2019)
+------------------
+### Removed
+* Removed node_modules from .npmignore
+
 ### Added
 * Added ARIA landmark roles
 

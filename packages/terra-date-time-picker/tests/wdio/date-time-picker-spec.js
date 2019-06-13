@@ -59,10 +59,13 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     Terra.it.matchesScreenshot('1');
   });
 
-  describe('Displays Offset button are clicking daylight button', () => {
+  describe('Displays Offset button after clicking daylight button', () => {
     if (includesTZ) {
       before(() => {
         browser.refresh();
+      });
+
+      it('displays time clarification modal', () => {
         browser.click('input[name="terra-time-minute-input"]');
         browser.keys('Tab');
         browser.waitForVisible('[class*="time-clarification"]');
@@ -78,10 +81,13 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     }
   });
 
-  describe('Displays Offset button are clicking the standard time button', () => {
+  describe('Displays Offset button after clicking the standard time button', () => {
     if (includesTZ) {
       before(() => {
         browser.refresh();
+      });
+
+      it('displays time clarification modal', () => {
         browser.click('input[name="terra-time-minute-input"]');
         browser.keys('Tab');
         browser.waitForVisible('[class*="time-clarification"]');

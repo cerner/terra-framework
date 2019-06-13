@@ -3,13 +3,21 @@ ChangeLog
 
 Unreleased
 ----------
+
+### Changed
+* Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+
+6.2.0 - (June 12, 2019)
+------------------
 ### Added
 * box-shadow theme variable for in-active tab: --terra-tabs-structural-box-shadow
 * z-index theme variable for active tab: --terra-tabs-structural-active-z-index
 
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
-* Update wdio specs to use Terra.describeViewports
+
+### Removed
+* Removed node_modules from .npmignore
 
 
 6.1.0 - (May 21, 2019)
