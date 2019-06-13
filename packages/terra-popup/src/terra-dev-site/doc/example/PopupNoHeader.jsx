@@ -8,16 +8,15 @@ import Placeholder from 'terra-doc-template/lib/Placeholder';
 
 /* eslint-disable */
 const PopupContent = ({ closeButtonRequired, handleRequestClose}) => {
-  
-  return (<div style={{/* height: '450px', width: '250px', */ background: 'red'}}>
-    <Button text="Hi" />
-    <p>Long 
-    Long Long Long Long 
-    Long Long Long Long Long Long Long Long 
-    Long Long Long Long Long Long Long Long Long Long Long Long 
-    </p>
-    <p>Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long </p>
-  </div>);
+  const placeHolder = <Placeholder title="Popup Content" />;
+  if (closeButtonRequired) {
+    return (
+      <ContentContainer header={<Button text="My Custom Close Button" isBlock onClick={handleRequestClose} />} fill>
+        {placeHolder}
+      </ContentContainer>
+    );
+  }
+  return placeHolder;
 };
 /* eslint-enable */
 
@@ -49,37 +48,25 @@ class PopupNoHeader extends React.Component {
 
   render() {
     return (
-      <div>
-        <div
-          style={{
-            height: '300px',
-            width: '359px',
-            background: 'aliceblue',
-            overflow: 'hidden',
-            position: 'relative',
-          }}
-          ref={this.setParentNode}
+      <div
+        style={{
+          height: '200px', width: '200px', background: 'aliceblue', overflow: 'hidden',
+        }}
+        ref={this.setParentNode}
+      >
+        <Popup
+          boundingRef={this.getParentNode}
+          contentHeight="240"
+          contentWidth="320"
+          isHeaderDisabled
+          isOpen={this.state.open}
+          onRequestClose={this.handleRequestClose}
+          targetRef={() => document.getElementById('popup-no-header')}
+          isContentFocusDisabled
         >
-          <Popup
-            boundingRef={this.getParentNode}
-            contentHeight="auto"
-            contentWidth="auto"
-            isHeaderDisabled
-            isOpen={this.state.open}
-            onRequestClose={this.handleRequestClose}
-            targetRef={() => document.getElementById('popup-no-header')}
-            isContentFocusDisabled
-          >
-            <PopupContent title="Popup Content" handleRequestClose={this.handleRequestClose} />
-          </Popup>
-        </div>
-        <div style={{ margin: '15px'}}/* style={{ position: 'absolute', bottom: '0', right: '0'}} */>
-          <Button
-            id="popup-no-header"
-            text="No Header Popup"
-            onClick={this.handleButtonClick}
-          />
-        </div>
+          <PopupContent title="Popup Content" handleRequestClose={this.handleRequestClose} />
+        </Popup>
+        <Button id="popup-no-header" text="No Header Popup" onClick={this.handleButtonClick} />
       </div>
     );
   }
