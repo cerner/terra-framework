@@ -1,11 +1,12 @@
-import Calendar from './calendar'
-import React from 'react'
-import PropTypes from 'prop-types'
+import Calendar from './calendar';
+import React from 'react';
+import PropTypes from 'prop-types';
 import FocusTrap from 'focus-trap-react';
 import { Portal } from 'react-portal';
 import KeyCode from 'keycode-js';
-import Hookshot from 'terra-hookshot'
-import classnames from 'classnames'
+import Popup from 'terra-popup';
+import classnames from 'classnames';
+import PopupContainer from './PopupContainer';
 import {
   newDate,
   now,
@@ -36,7 +37,6 @@ import {
   safeDateFormat,
   getHightLightDaysMap
 } from './date_utils'
-import DatePositionUtils from '../DatePositionUtil'
 import onClickOutside from 'react-onclickoutside'
 
 const outsideClickIgnoreClass = 'react-datepicker-ignore-onclickoutside'
@@ -150,13 +150,13 @@ export default class DatePicker extends React.Component {
 
   constructor (props) {
     super(props)
-    this.state = this.calcInitialState()
-    this.handleOnPosition = this.handleOnPosition.bind(this);
+    this.state = this.calcInitialState();
     this.handleKeydown = this.handleKeydown.bind(this);
     this.datePickerContainer = React.createRef();
-    this.datePickerHookShotContainer = React.createRef();
+    this.datePickerPopupContainer = React.createRef();
     this.datePickerOverlayContainer = React.createRef();
     this.handleCalendarKeyDown = this.handleCalendarKeyDown.bind(this);
+    this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
   }
 
   componentDidMount() {
@@ -164,9 +164,9 @@ export default class DatePicker extends React.Component {
   }
 
   componentDidUpdate() {
-    // Shift focus into hookshot date-picker if it exists
-    if (this.datePickerHookShotContainer.current) {
-      this.datePickerHookShotContainer.current.focus();
+    // Shift focus into popup date-picker if it exists
+    if (this.datePickerPopupContainer.current) {
+      this.datePickerPopupContainer.current.focus();
     }
 
     // Shift focus into overlay date-picker if it exists
@@ -193,13 +193,6 @@ export default class DatePicker extends React.Component {
 
   handleKeydown(event) {
     if (event.keyCode === KeyCode.KEY_ESCAPE) {
-      // If date picker is open in Hookshot
-      if (this.datePickerHookShotContainer.current) {
-        if (event.target === this.datePickerHookShotContainer.current || this.datePickerHookShotContainer.current.contains(event.target)) {
-          this.setOpen(false);
-        }
-      }
-
       // If date picker is open in overlay
       if (this.datePickerOverlayContainer.current) {
         if (event.target === this.datePickerOverlayContainer.current || this.datePickerOverlayContainer.current.contains(event.target)) {
@@ -207,6 +200,10 @@ export default class DatePicker extends React.Component {
         }
       }
     }
+  }
+
+  handleOnRequestClose() {
+    this.setOpen(false);
   }
 
   getPreSelection = () => (
@@ -384,16 +381,6 @@ export default class DatePicker extends React.Component {
     this.setOpen(false)
   }
 
-  handleOnPosition(event, positions) {
-    this.setArrowPosition(positions.content, positions.target);
-  }
-
-  setArrowPosition(contentPosition, targetPosition) {
-    const arrowPosition = DatePositionUtils.getArrowPosition(contentPosition, targetPosition, 8, 0);
-
-    this.datePickerHookShotContainer.current.setAttribute('data-placement', arrowPosition);
-  }
-
   onInputClick = () => {
     if (!this.props.disabled) {
       this.setOpen(true)
@@ -470,59 +457,118 @@ export default class DatePicker extends React.Component {
     if (!this.props.inline && (!this.state.open || this.props.disabled)) {
       return null
     }
-    return <WrappedCalendar
-      ref={(elem) => { this.calendar = elem }}
-      locale={this.props.locale}
-      adjustDateOnChange={this.props.adjustDateOnChange}
-      setOpen={this.setOpen}
-      dateFormat={this.props.dateFormatCalendar}
-      useWeekdaysShort={this.props.useWeekdaysShort}
-      dropdownMode={this.props.dropdownMode}
-      selected={this.props.selected}
-      preSelection={this.state.preSelection}
-      onSelect={this.handleSelect}
-      onWeekSelect={this.props.onWeekSelect}
-      openToDate={this.props.openToDate}
-      minDate={this.props.minDate}
-      maxDate={this.props.maxDate}
-      selectsStart={this.props.selectsStart}
-      selectsEnd={this.props.selectsEnd}
-      startDate={this.props.startDate}
-      endDate={this.props.endDate}
-      excludeDates={this.props.excludeDates}
-      filterDate={this.props.filterDate}
-      onClickOutside={this.handleCalendarClickOutside}
-      formatWeekNumber={this.props.formatWeekNumber}
-      highlightDates={this.state.highlightDates}
-      includeDates={this.props.includeDates}
-      inline={this.props.inline}
-      peekNextMonth={this.props.peekNextMonth}
-      showMonthDropdown={this.props.showMonthDropdown}
-      showWeekNumbers={this.props.showWeekNumbers}
-      showYearDropdown={this.props.showYearDropdown}
-      withPortal={this.props.withPortal}
-      forceShowMonthNavigation={this.props.forceShowMonthNavigation}
-      scrollableYearDropdown={this.props.scrollableYearDropdown}
-      todayButton={this.props.todayButton}
-      weekLabel={this.props.weekLabel}
-      utcOffset={this.props.utcOffset}
-      outsideClickIgnoreClass={outsideClickIgnoreClass}
-      fixedHeight={this.props.fixedHeight}
-      monthsShown={this.props.monthsShown}
-      onDropdownFocus={this.handleDropdownFocus}
-      onMonthChange={this.props.onMonthChange}
-      dayClassName={this.props.dayClassName}
-      showTimeSelect={this.props.showTimeSelect}
-      onTimeChange={this.handleTimeChange}
-      timeFormat={this.props.timeFormat}
-      timeIntervals={this.props.timeIntervals}
-      minTime={this.props.minTime}
-      maxTime={this.props.maxTime}
-      excludeTimes={this.props.excludeTimes}
-      className={this.props.calendarClassName}
-      yearDropdownItemNumber={this.props.yearDropdownItemNumber}>
-      {this.props.children}
-    </WrappedCalendar>
+
+    if (this.props.withPortal) {
+      return <WrappedCalendar
+        ref={(elem) => { this.calendar = elem }}
+        locale={this.props.locale}
+        adjustDateOnChange={this.props.adjustDateOnChange}
+        setOpen={this.setOpen}
+        dateFormat={this.props.dateFormatCalendar}
+        useWeekdaysShort={this.props.useWeekdaysShort}
+        dropdownMode={this.props.dropdownMode}
+        selected={this.props.selected}
+        preSelection={this.state.preSelection}
+        onSelect={this.handleSelect}
+        onWeekSelect={this.props.onWeekSelect}
+        openToDate={this.props.openToDate}
+        minDate={this.props.minDate}
+        maxDate={this.props.maxDate}
+        selectsStart={this.props.selectsStart}
+        selectsEnd={this.props.selectsEnd}
+        startDate={this.props.startDate}
+        endDate={this.props.endDate}
+        excludeDates={this.props.excludeDates}
+        filterDate={this.props.filterDate}
+        onClickOutside={this.handleCalendarClickOutside}
+        formatWeekNumber={this.props.formatWeekNumber}
+        highlightDates={this.state.highlightDates}
+        includeDates={this.props.includeDates}
+        inline={this.props.inline}
+        peekNextMonth={this.props.peekNextMonth}
+        showMonthDropdown={this.props.showMonthDropdown}
+        showWeekNumbers={this.props.showWeekNumbers}
+        showYearDropdown={this.props.showYearDropdown}
+        withPortal={this.props.withPortal}
+        forceShowMonthNavigation={this.props.forceShowMonthNavigation}
+        scrollableYearDropdown={this.props.scrollableYearDropdown}
+        todayButton={this.props.todayButton}
+        weekLabel={this.props.weekLabel}
+        utcOffset={this.props.utcOffset}
+        outsideClickIgnoreClass={outsideClickIgnoreClass}
+        fixedHeight={this.props.fixedHeight}
+        monthsShown={this.props.monthsShown}
+        onDropdownFocus={this.handleDropdownFocus}
+        onMonthChange={this.props.onMonthChange}
+        dayClassName={this.props.dayClassName}
+        showTimeSelect={this.props.showTimeSelect}
+        onTimeChange={this.handleTimeChange}
+        timeFormat={this.props.timeFormat}
+        timeIntervals={this.props.timeIntervals}
+        minTime={this.props.minTime}
+        maxTime={this.props.maxTime}
+        excludeTimes={this.props.excludeTimes}
+        className={this.props.calendarClassName}
+        yearDropdownItemNumber={this.props.yearDropdownItemNumber}
+      >
+        {this.props.children}
+      </WrappedCalendar>
+    }
+
+    return (
+      <Calendar
+        ref={(elem) => { this.calendar = elem }}
+        locale={this.props.locale}
+        adjustDateOnChange={this.props.adjustDateOnChange}
+        setOpen={this.setOpen}
+        dateFormat={this.props.dateFormatCalendar}
+        useWeekdaysShort={this.props.useWeekdaysShort}
+        dropdownMode={this.props.dropdownMode}
+        selected={this.props.selected}
+        preSelection={this.state.preSelection}
+        onSelect={this.handleSelect}
+        onWeekSelect={this.props.onWeekSelect}
+        openToDate={this.props.openToDate}
+        minDate={this.props.minDate}
+        maxDate={this.props.maxDate}
+        selectsStart={this.props.selectsStart}
+        selectsEnd={this.props.selectsEnd}
+        startDate={this.props.startDate}
+        endDate={this.props.endDate}
+        excludeDates={this.props.excludeDates}
+        filterDate={this.props.filterDate}
+        formatWeekNumber={this.props.formatWeekNumber}
+        highlightDates={this.state.highlightDates}
+        includeDates={this.props.includeDates}
+        inline={this.props.inline}
+        peekNextMonth={this.props.peekNextMonth}
+        showMonthDropdown={this.props.showMonthDropdown}
+        showWeekNumbers={this.props.showWeekNumbers}
+        showYearDropdown={this.props.showYearDropdown}
+        withPortal={this.props.withPortal}
+        forceShowMonthNavigation={this.props.forceShowMonthNavigation}
+        scrollableYearDropdown={this.props.scrollableYearDropdown}
+        todayButton={this.props.todayButton}
+        weekLabel={this.props.weekLabel}
+        utcOffset={this.props.utcOffset}
+        fixedHeight={this.props.fixedHeight}
+        monthsShown={this.props.monthsShown}
+        onDropdownFocus={this.handleDropdownFocus}
+        onMonthChange={this.props.onMonthChange}
+        dayClassName={this.props.dayClassName}
+        showTimeSelect={this.props.showTimeSelect}
+        onTimeChange={this.handleTimeChange}
+        timeFormat={this.props.timeFormat}
+        timeIntervals={this.props.timeIntervals}
+        minTime={this.props.minTime}
+        maxTime={this.props.maxTime}
+        excludeTimes={this.props.excludeTimes}
+        className={this.props.calendarClassName}
+        yearDropdownItemNumber={this.props.yearDropdownItemNumber}
+      >
+        {this.props.children}
+      </Calendar>
+    );
   }
 
   renderDateInput = () => {
@@ -614,31 +660,28 @@ export default class DatePicker extends React.Component {
           {this.renderDateInput()}
           {this.renderClearButton()}
         </div>
-        {calendar && <Hookshot
+        {calendar && <Popup
           attachmentBehavior="flip"
-          contentAttachment={{ vertical: 'top', horizontal: 'center' }}
-          isEnabled={true}
+          contentAttachment="top center"
           isOpen={(this.state.open && !this.props.disabled)}
-          targetAttachment={{ vertical: 'bottom', horizontal: 'center' }}
+          targetAttachment="bottom center"
           targetRef={() => this.datePickerContainer.current }
           onPosition={this.handleOnPosition}
+          onRequestClose={this.handleOnRequestClose}
+          classNameArrow={classnames('react-datepicker__arrow')}
+          contentWidth="auto"
+          contentHeight="auto"
+          isArrowDisplayed
+          isHeaderDisabled
+          isContentFocusDisabled
         >
-          <Hookshot.Content>
-            <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: false, clickOutsideDeactivates: true }}>
-              <div>
-                <div
-                  className="react-datepicker-hookshot"
-                  data-placement="bottom"
-                  ref={this.datePickerHookShotContainer}
-                  tabIndex="-1"
-                  onKeyDown={this.handleCalendarKeyDown}
-                >
-                  {calendar}
-                </div>
-              </div>
-            </FocusTrap>
-          </Hookshot.Content>
-        </Hookshot>}
+          <PopupContainer
+            ref={this.datePickerPopupContainer}
+            onKeyDown={this.handleCalendarKeyDown}
+          >
+            {calendar}
+          </PopupContainer>
+        </Popup>}
       </React.Fragment>
     )
   }

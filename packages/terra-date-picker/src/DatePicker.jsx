@@ -335,7 +335,7 @@ class DatePicker extends React.Component {
     const maxMomentDate = DateUtil.createSafeDate(maxDate);
     const minMomentDate = DateUtil.createSafeDate(minDate);
 
-    const hookshotPicker = (
+    const portalPicker = (
       <ReactDatePicker
         {...customProps}
         selected={this.state.selectedDate}
@@ -423,7 +423,7 @@ class DatePicker extends React.Component {
       >
         <ResponsiveElement
           responsiveTo="window"
-          defaultElement={hookshotPicker}
+          defaultElement={portalPicker}
           small={popupPicker}
         />
       </div>
