@@ -1,7 +1,7 @@
 {
   "name": "terra-navigation-prompt",
   "main": "lib/index.js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "The NavigationPrompt and NavigationPromptCheckpoint components allow for the detection and management of components with unsaved state.",
   "repository": {
     "type": "git",
