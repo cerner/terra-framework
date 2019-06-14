@@ -1,12 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PopupMenu should render default element 1`] = `
-<ContentContainer
-  fill={false}
-  footer={<ActionFooter />}
+<div
+  className="container"
+  onKeyDown={[Function]}
+  role="presentation"
+  tabIndex="0"
 >
-  <div
-    className="container"
+  <ContentContainer
+    fill={false}
+    footer={<ActionFooter />}
+    header={
+      <ActionHeader
+        level={1}
+      />
+    }
   >
     <div
       className="content-header"
@@ -16,26 +24,44 @@ exports[`PopupMenu should render default element 1`] = `
         role="listbox"
       />
     </div>
-  </div>
-</ContentContainer>
+  </ContentContainer>
+</div>
 `;
 
 exports[`PopupMenu should render prop data 1`] = `
-<ContentContainer
-  fill={false}
-  footer={
-    <div>
-      my-footer
-    </div>
-  }
-  header={
-    <div>
-      my-header
-    </div>
-  }
+<div
+  className="container"
+  onKeyDown={[Function]}
+  role="presentation"
+  tabIndex="0"
 >
-  <div
-    className="container"
+  <ContentContainer
+    fill={false}
+    footer={
+      <ActionFooter
+        end={
+          <Button
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isIconOnly={false}
+            isReversed={false}
+            onClick={[MockFunction]}
+            onKeyDown={[Function]}
+            refCallback={[Function]}
+            text="my-footer"
+            type="button"
+            variant="neutral"
+          />
+        }
+      />
+    }
+    header={
+      <ActionHeader
+        level={1}
+        title="my-header"
+      />
+    }
   >
     <div
       className="content-header"
@@ -69,6 +95,7 @@ exports[`PopupMenu should render prop data 1`] = `
           }
           isSelected={true}
           key="my-test-key"
+          loopFocus={[Function]}
           notificationCount={2}
           onSelect={[Function]}
           showSelections={true}
@@ -76,26 +103,26 @@ exports[`PopupMenu should render prop data 1`] = `
         />
       </ul>
     </div>
-  </div>
-</ContentContainer>
+  </ContentContainer>
+</div>
 `;
 
 exports[`PopupMenu should render with height bounded 1`] = `
-<ContentContainer
-  fill={true}
-  footer={
-    <div>
-      my-footer
-    </div>
-  }
-  header={
-    <div>
-      my-header
-    </div>
-  }
+<div
+  className="container is-fill"
+  onKeyDown={[Function]}
+  role="presentation"
+  tabIndex="0"
 >
-  <div
-    className="container"
+  <ContentContainer
+    fill={true}
+    footer={<ActionFooter />}
+    header={
+      <ActionHeader
+        level={1}
+        title="my-header"
+      />
+    }
   >
     <div
       className="content-header"
@@ -105,6 +132,6 @@ exports[`PopupMenu should render with height bounded 1`] = `
         role="listbox"
       />
     </div>
-  </div>
-</ContentContainer>
+  </ContentContainer>
+</div>
 `;

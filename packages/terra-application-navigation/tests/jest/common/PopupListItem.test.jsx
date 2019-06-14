@@ -55,6 +55,7 @@ describe('PopupMenuListItem', () => {
   it('should render with selection callback', () => {
     const mockCallBack = jest.fn();
     const mockCallBack2 = jest.fn();
+    const mockCallBack3 = jest.fn();
 
     const shallowComponent = shallow(
       <PopupMenuListItem
@@ -65,9 +66,10 @@ describe('PopupMenuListItem', () => {
 
     expect(shallowComponent).toMatchSnapshot();
     shallowComponent.find('.item').simulate('click');
-    shallowComponent.find('.item').simulate('keydown', { nativeEvent: { keyCode: 13 }, preventDefault: mockCallBack2 });
-    shallowComponent.find('.item').simulate('keydown', { nativeEvent: { keyCode: 32 }, preventDefault: mockCallBack2 });
+    shallowComponent.find('.item').simulate('keydown', { nativeEvent: { keyCode: 13 }, preventDefault: mockCallBack2, stopPropagation: mockCallBack3 });
+    shallowComponent.find('.item').simulate('keydown', { nativeEvent: { keyCode: 32 }, preventDefault: mockCallBack2, stopPropagation: mockCallBack3 });
     expect(mockCallBack.mock.calls.length).toEqual(3);
     expect(mockCallBack2.mock.calls.length).toEqual(2);
+    expect(mockCallBack3.mock.calls.length).toEqual(2);
   });
 });

@@ -123,7 +123,7 @@ exports[`Header should render default element 1`] = `
                 tabIndex="0"
                 type="button"
               >
-                <span
+                <div
                   className="tab-inner"
                 >
                   <span
@@ -131,7 +131,7 @@ exports[`Header should render default element 1`] = `
                   >
                     W
                   </span>
-                </span>
+                </div>
               </div>
             </Tab>
           </Tabs>
@@ -849,7 +849,7 @@ exports[`Header should render with function callbacks 1`] = `
               contentHeight="auto"
               contentWidth="320"
               isArrowDisplayed={true}
-              isContentFocusDisabled={false}
+              isContentFocusDisabled={true}
               isHeaderDisabled={false}
               isOpen={false}
               onRequestClose={[Function]}
@@ -942,9 +942,15 @@ exports[`Header should render with function callbacks 1`] = `
                 initials="user-initials"
                 isAriaHidden={false}
                 isDeceased={false}
+                size="0.5217rem"
               >
                 <div
                   className="avatar three image avatar"
+                  style={
+                    Object {
+                      "fontSize": "0.5217rem",
+                    }
+                  }
                 >
                   <Image
                     alt="user-name"
@@ -1163,7 +1169,7 @@ exports[`Header should render with skip callback 1`] = `
                 tabIndex="0"
                 type="button"
               >
-                <span
+                <div
                   className="tab-inner"
                 >
                   <span
@@ -1171,7 +1177,7 @@ exports[`Header should render with skip callback 1`] = `
                   >
                     W
                   </span>
-                </span>
+                </div>
               </div>
             </Tab>
           </Tabs>

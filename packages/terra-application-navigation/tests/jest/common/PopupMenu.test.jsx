@@ -13,8 +13,8 @@ describe('PopupMenu', () => {
   it('should render prop data', () => {
     const shallowComponent = shallow(
       <PopupMenu
-        header={<div>my-header</div>}
-        footer={<div>my-footer</div>}
+        title="my-header"
+        footerText="my-footer"
         customContent={<div>my-custom-content</div>}
         userConfig={{
           name: 'user-name',
@@ -33,6 +33,7 @@ describe('PopupMenu', () => {
           },
         ]}
         onSelectMenuItem={jest.fn()}
+        onSelectFooterItem={jest.fn()}
         showSelections
       />,
     );
@@ -43,8 +44,8 @@ describe('PopupMenu', () => {
   it('should render with height bounded', () => {
     const shallowComponent = shallow(
       <PopupMenu
-        header={<div>my-header</div>}
-        footer={<div>my-footer</div>}
+        title="my-header"
+        footerText="my-footer"
         isHeightBounded
       />,
     );

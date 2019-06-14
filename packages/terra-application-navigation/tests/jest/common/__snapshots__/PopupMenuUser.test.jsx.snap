@@ -12,12 +12,12 @@ exports[`PopupMenuUser should render default element 1`] = `
     />
     <Avatar
       alt="user-name"
-      className="avatar"
       color="auto"
       image="user-src"
       initials="user-initials"
       isAriaHidden={false}
       isDeceased={false}
+      size="1.174rem"
     />
   </div>
   <div

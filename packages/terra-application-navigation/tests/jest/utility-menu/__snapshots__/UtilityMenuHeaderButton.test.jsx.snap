@@ -317,9 +317,15 @@ exports[`UtilityMenuHeaderButton should render with function callbacks 1`] = `
         initials="user-initials"
         isAriaHidden={false}
         isDeceased={false}
+        size="0.5217rem"
       >
         <div
           className="avatar three image avatar"
+          style={
+            Object {
+              "fontSize": "0.5217rem",
+            }
+          }
         >
           <Image
             alt="user-name"

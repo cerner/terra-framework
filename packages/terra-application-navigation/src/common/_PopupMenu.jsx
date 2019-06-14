@@ -7,7 +7,12 @@ import ActionFooter from 'terra-action-footer';
 import ContentContainer from 'terra-content-container';
 import Button from 'terra-button';
 import ActionHeader from 'terra-action-header';
-import { KEY_SPACE, KEY_RETURN, KEY_UP, KEY_DOWN } from 'keycode-js';
+import {
+  KEY_SPACE,
+  KEY_RETURN,
+  KEY_UP,
+  KEY_DOWN,
+} from 'keycode-js';
 
 import PopupMenuListItem from './_PopupMenuListItem';
 import { userConfigPropType } from '../utils/propTypes';
@@ -18,8 +23,17 @@ import styles from './PopupMenu.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * Title to be placed within the popup header.
+   */
   title: PropTypes.string,
+  /**
+   * The text to be assigned to the button in the footer.
+   */
   footerText: PropTypes.string,
+  /**
+   * Callback for when the footer item is selected.
+   */
   onSelectFooterItem: PropTypes.func,
   /**
    * The custom content to be placed at the top of the content area.
@@ -85,6 +99,10 @@ const PopupMenu = ({
   const listRef = useRef();
   const buttonRef = useRef();
 
+  function setButtonRef(node) {
+    buttonRef.current = node;
+  }
+
   function handleDown(event) {
     if (listRef.current.hasChildNodes()) {
       const sibling = listRef.current.firstChild;
@@ -139,7 +157,14 @@ const PopupMenu = ({
   if (onSelectFooterItem) {
     footer = (
       <ActionFooter
-        end={<Button text={footerText} onClick={onSelectFooterItem} onKeyDown={myButtonKeyDown} refCallback={buttonRef} />}
+        end={(
+          <Button
+            text={footerText}
+            onClick={onSelectFooterItem}
+            onKeyDown={myButtonKeyDown}
+            refCallback={setButtonRef}
+          />
+        )}
       />
     );
   }

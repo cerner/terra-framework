@@ -4,6 +4,12 @@ import React, {
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconCheckmark from 'terra-icon/lib/icon/IconCheckmark';
+import {
+  KEY_SPACE,
+  KEY_RETURN,
+  KEY_UP,
+  KEY_DOWN,
+} from 'keycode-js';
 
 import PopupCount from './_PopupCount';
 import { enableFocusStyles, disableFocusStyles } from '../utils/helpers';
@@ -37,6 +43,9 @@ const propTypes = {
    * Whether or not selected states should display on the menu item.
    */
   showSelections: PropTypes.bool,
+  /**
+   * Function callback for item when no sibling is present.
+   */
   loopFocus: PropTypes.func,
 };
 
@@ -47,17 +56,17 @@ const PopupMenuListItem = ({
 
   function myKeyDown(event) {
     let sibling;
-    if (event.nativeEvent.keyCode === 13 || event.nativeEvent.keyCode === 32) {
+    if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
       event.preventDefault();
       event.stopPropagation();
       onSelect();
       return;
     }
-    if (event.nativeEvent.keyCode === 40) { // down
+    if (event.nativeEvent.keyCode === KEY_DOWN) {
       event.preventDefault();
       event.stopPropagation();
       sibling = itemRef.current.nextSibling;
-    } else if (event.nativeEvent.keyCode === 38) { // up
+    } else if (event.nativeEvent.keyCode === KEY_UP) {
       event.preventDefault();
       event.stopPropagation();
       sibling = itemRef.current.previousSibling;

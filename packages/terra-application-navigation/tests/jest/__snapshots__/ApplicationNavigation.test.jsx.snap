@@ -50,7 +50,7 @@ exports[`ApplicationNavigation should render default element 1`] = `
     contentHeight="auto"
     contentWidth="320"
     isArrowDisplayed={true}
-    isContentFocusDisabled={false}
+    isContentFocusDisabled={true}
     isHeaderDisabled={true}
     isOpen={false}
     onRequestClose={[Function]}
@@ -159,7 +159,7 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
     contentHeight="auto"
     contentWidth="320"
     isArrowDisplayed={true}
-    isContentFocusDisabled={false}
+    isContentFocusDisabled={true}
     isHeaderDisabled={true}
     isOpen={false}
     onRequestClose={[Function]}
@@ -345,7 +345,7 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
     contentHeight="auto"
     contentWidth="320"
     isArrowDisplayed={true}
-    isContentFocusDisabled={false}
+    isContentFocusDisabled={true}
     isHeaderDisabled={true}
     isOpen={false}
     onRequestClose={[Function]}

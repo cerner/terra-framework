@@ -12,7 +12,7 @@ exports[`Tab should render prop data 1`] = `
   tabIndex="0"
   type="button"
 >
-  <span
+  <div
     className="tab-inner"
   >
     <span
@@ -27,7 +27,7 @@ exports[`Tab should render prop data 1`] = `
         value={1}
       />
     </span>
-  </span>
+  </div>
 </div>
 `;
 
@@ -59,7 +59,7 @@ exports[`Tab should render with required prop data 1`] = `
   tabIndex="0"
   type="button"
 >
-  <span
+  <div
     className="tab-inner"
   >
     <span
@@ -67,7 +67,7 @@ exports[`Tab should render with required prop data 1`] = `
     >
       my text
     </span>
-  </span>
+  </div>
 </div>
 `;
 
@@ -83,7 +83,7 @@ exports[`Tab should render with selection callback 1`] = `
   tabIndex="0"
   type="button"
 >
-  <span
+  <div
     className="tab-inner"
   >
     <span
@@ -91,6 +91,6 @@ exports[`Tab should render with selection callback 1`] = `
     >
       my text
     </span>
-  </span>
+  </div>
 </div>
 `;

@@ -15,23 +15,18 @@ exports[`Extensions should render default element 1`] = `
     contentHeight="auto"
     contentWidth="320"
     isArrowDisplayed={true}
-    isContentFocusDisabled={false}
+    isContentFocusDisabled={true}
     isHeaderDisabled={false}
     isOpen={false}
     onRequestClose={[Function]}
     targetRef={[Function]}
   >
     <PopupMenu
-      header={
-        <ActionHeader
-          level={1}
-          title="Terra.applicationNavigation.extensions.rollupMenuHeaderTitle"
-        />
-      }
       isHeightBounded={false}
       menuItems={Array []}
       onSelectMenuItem={[Function]}
       showSelections={false}
+      title="Terra.applicationNavigation.extensions.rollupMenuHeaderTitle"
     />
   </Popup>
 </Fragment>
@@ -64,7 +59,7 @@ exports[`Extensions should render prop data 1`] = `
     contentHeight="auto"
     contentWidth="320"
     isArrowDisplayed={true}
-    isContentFocusDisabled={false}
+    isContentFocusDisabled={true}
     isHeaderDisabled={false}
     isOpen={false}
     onRequestClose={[Function]}
@@ -72,16 +67,11 @@ exports[`Extensions should render prop data 1`] = `
     targetRef={[Function]}
   >
     <PopupMenu
-      header={
-        <ActionHeader
-          level={1}
-          title="Terra.applicationNavigation.extensions.rollupMenuHeaderTitle"
-        />
-      }
       isHeightBounded={false}
       menuItems={Array []}
       onSelectMenuItem={[Function]}
       showSelections={false}
+      title="Terra.applicationNavigation.extensions.rollupMenuHeaderTitle"
     />
   </Popup>
 </Fragment>

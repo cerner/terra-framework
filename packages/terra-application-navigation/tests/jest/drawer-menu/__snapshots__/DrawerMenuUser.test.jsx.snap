@@ -12,12 +12,12 @@ exports[`DrawerMenuUser should render default element 1`] = `
     />
     <Avatar
       alt="user-name"
-      className="avatar"
       color="auto"
       image="user-src"
       initials="user-initials"
       isAriaHidden={false}
       isDeceased={false}
+      size="0.561rem"
     />
   </div>
   <div
@@ -49,12 +49,12 @@ exports[`DrawerMenuUser should render with large variant 1`] = `
     />
     <Avatar
       alt="user-name"
-      className="avatar"
       color="auto"
       image="user-src"
       initials="user-initials"
       isAriaHidden={false}
       isDeceased={false}
+      size="1.6521rem"
     />
   </div>
   <div
@@ -86,12 +86,12 @@ exports[`DrawerMenuUser should render with small variant 1`] = `
     />
     <Avatar
       alt="user-name"
-      className="avatar"
       color="auto"
       image="user-src"
       initials="user-initials"
       isAriaHidden={false}
       isDeceased={false}
+      size="0.561rem"
     />
   </div>
   <div
