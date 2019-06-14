@@ -1,5 +1,5 @@
 import React from 'react';
-import SlidePanel from '../../../SlidePanel';
+import SlidePanel, { SlidePanelPositions } from '../../../SlidePanel';
 import SlidePanelMainContent from '../common/SlidePanelMainContent';
 import SlidePanelPanelContent from '../common/SlidePanelPanelContent';
 
@@ -9,7 +9,7 @@ const SlidePanelNoFill = () => (
       mainContent={<SlidePanelMainContent />}
       panelContent={<SlidePanelPanelContent />}
       panelBehavior="squish"
-      panelPosition="end"
+      panelPosition={SlidePanelPositions.END}
       panelSize="small"
       isOpen
     />
