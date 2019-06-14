@@ -4,6 +4,17 @@ Changelog
 Unreleased
 ----------
 
+5.8.0 - (June 12, 2019)
+------------------
+### Removed
+* Removed node_modules from .npmignore
+
+### Fixed
+* Replaced classList shim with full polyfill to support d3
+
+### Changed
+* Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+
 5.7.0 - (April 24, 2019)
 ------------------
 ### Changed

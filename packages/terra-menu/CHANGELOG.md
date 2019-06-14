@@ -3,10 +3,18 @@ Changelog
 
 Unreleased
 ----------
+### Removed 
+* Removed React.Fragment from MenuContent to improve the accessibility
+
+6.2.0 - (June 12, 2019)
+------------------
+### Removed
+* Removed node_modules from .npmignore
 
 6.1.0 - (May 21, 2019)
 ------------------
 ### Changed
+* Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 * Explicitly set menu item font weight value to normal.
 
 6.0.0 - (May 13, 2019)
