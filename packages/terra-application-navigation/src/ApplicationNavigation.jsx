@@ -172,7 +172,14 @@ const ApplicationNavigation = ({
           escapeDeactivates: true,
           clickOutsideDeactivates: true,
           returnFocusOnDeactivate: true,
-          onDeactivate: () => setDrawerMenuIsOpen(false),
+          onDeactivate: () => {
+            setDrawerMenuIsOpen(false);
+            // Currently a bug within react-focus-trap with on deactivation and active.
+            const toggle = document.querySelector('[data-compact-header-toggle="true"]');
+            if (toggle) {
+              toggle.focus();
+            }
+          },
         }}
         className={cx('drawer-menu-focus-trap-container')}
       >
