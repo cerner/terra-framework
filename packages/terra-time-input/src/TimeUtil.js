@@ -18,7 +18,7 @@ class TimeUtil {
    *   Hour will be in 2 digit format.
    */
   static parseTwelveHourTime(hour, anteMeridiem, postMeridiem) {
-    const parsedHour = { hourString: hour };
+    const parsedHour = {hourString: hour};
     let numericHour = parseInt(hour, 10);
 
     if (numericHour >= 12) {
@@ -61,7 +61,8 @@ class TimeUtil {
       if (numericMinute < maxValue) {
         numericMinute += 1;
         return numericMinute < 10 ? '0'.concat(numericMinute.toString()) : numericMinute.toString();
-      } if (timeVariant === this.FORMAT_12_HOUR) {
+      }
+      if (timeVariant === this.FORMAT_12_HOUR) {
         return '01';
       }
 
@@ -87,7 +88,8 @@ class TimeUtil {
       if (numericMinute > minValue) {
         numericMinute -= 1;
         return numericMinute < 10 ? '0'.concat(numericMinute.toString()) : numericMinute.toString();
-      } if (timeVariant === this.FORMAT_12_HOUR) {
+      }
+      if (timeVariant === this.FORMAT_12_HOUR) {
         return '12';
       }
 
@@ -137,18 +139,58 @@ class TimeUtil {
     return '00';
   }
 
+  /**
+   * Increments a second to it's next value
+   * @param {String} second Second to increment
+   * @return {String} Returns a string representation of the value of the passed in second after it's incremented
+   */
+  static incrementSecond(second) {
+    if (second) {
+      let numericSecond = Number(second);
+
+      if (numericSecond < 59) {
+        numericSecond += 1;
+        return numericSecond < 10 ? '0'.concat(numericSecond.toString()) : numericSecond.toString();
+      }
+
+      return second;
+    }
+
+    return '00';
+  }
+
+  /**
+   * Decrements a second to it's next value
+   * @param {String} second Second to decrement
+   * @return {String} Returns a string representation of the value of the passed in second after it's decremented
+   */
+  static decrementSecond(second) {
+    if (second) {
+      let numericSecond = Number(second);
+
+      if (numericSecond > 0) {
+        numericSecond -= 1;
+        return numericSecond < 10 ? '0'.concat(numericSecond.toString()) : numericSecond.toString();
+      }
+
+      return second;
+    }
+
+    return '00';
+  }
+
   static splitHour(time) {
     if (typeof (time) === 'string') {
-      const hourAndMinute = time.split(':');
+      const hourMinuteSecond = time.split(':');
 
-      if (hourAndMinute.length) {
-        const hour = Number(hourAndMinute[0]);
+      if (hourMinuteSecond.length) {
+        const hour = Number(hourMinuteSecond[0]);
         if (hour >= 0 && hour < 24) {
-          if (hourAndMinute[0].length === 1) {
-            return '0'.concat(hourAndMinute[0]);
+          if (hourMinuteSecond[0].length === 1) {
+            return '0'.concat(hourMinuteSecond[0]);
           }
 
-          return hourAndMinute[0];
+          return hourMinuteSecond[0];
         }
       }
 
@@ -160,16 +202,38 @@ class TimeUtil {
 
   static splitMinute(time) {
     if (typeof (time) === 'string') {
-      const hourAndMinute = time.split(':');
+      const hourMinuteSecond = time.split(':');
 
-      if (hourAndMinute.length > 1) {
-        const minute = Number(hourAndMinute[1]);
+      if (hourMinuteSecond.length > 1) {
+        const minute = Number(hourMinuteSecond[1]);
         if (minute >= 0 && minute < 60) {
-          if (hourAndMinute[1].length === 1) {
-            return '0'.concat(hourAndMinute[1]);
+          if (hourMinuteSecond[1].length === 1) {
+            return '0'.concat(hourMinuteSecond[1]);
           }
 
-          return hourAndMinute[1];
+          return hourMinuteSecond[1];
+        }
+      }
+
+      return '';
+    }
+
+    return '';
+  }
+
+
+  static splitSecond(time) {
+    if (typeof (time) === 'string') {
+      const hourMinuteSecond = time.split(':');
+
+      if (hourMinuteSecond.length > 2) {
+        const second = Number(hourMinuteSecond[2]);
+        if (second >= 0 && second < 60) {
+          if (hourMinuteSecond[2].length === 1) {
+            return '0'.concat(hourMinuteSecond[2]);
+          }
+
+          return hourMinuteSecond[2];
         }
       }
 
@@ -180,12 +244,13 @@ class TimeUtil {
   }
 }
 
-TimeUtil.validateTime = new RegExp('^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$');
+TimeUtil.validateTime = new RegExp('^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$');
 
 TimeUtil.inputType = {
   HOUR: 0,
   MINUTE: 1,
   MERIDIEM: 2,
+  SECOND: 3,
 };
 
 TimeUtil.isConsideredMobileDevice = () => window.matchMedia('(max-width: 1024px)').matches

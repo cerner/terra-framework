@@ -95,7 +95,7 @@ class TimeInput extends React.Component {
         // eslint-disable-next-line
         console.warn(
           `An invalid time value, ${value}, has been passed to the terra-time-picker.`
-          + 'This value has been ignored and will not be rendered. Time values must be in hh:mm format.',
+          + 'This value has been ignored and will not be rendered. Time values must be in hh:mm:ss format.',
         );
       }
 
@@ -149,6 +149,7 @@ class TimeInput extends React.Component {
     this.state = {
       hour,
       minute: TimeUtil.splitMinute(value),
+      second: TimeUtil.splitSecond(value),
       isFocused: false,
       meridiem,
       hourInitialFocused: false,
@@ -194,6 +195,7 @@ class TimeInput extends React.Component {
     this.setState({
       hour,
       minute: TimeUtil.splitMinute(this.props.value),
+      second: TimeUtil.splitSecond(this.props.value),
       meridiem,
     });
   }
@@ -212,6 +214,12 @@ class TimeInput extends React.Component {
     this.minuteInput.setSelectionRange(0, this.minuteInput.value.length);
   }
 
+  handleSecondFocus(event) {
+    this.handleFocus(event);
+    this.setState({ secondInitialFocused: true });
+    this.secondInput.setSelectionRange(0, this.secondInput.value.length);
+  }
+
   handleHourFocus(event) {
     this.handleFocus(event);
     this.setState({ hourInitialFocused: true });
@@ -228,6 +236,11 @@ class TimeInput extends React.Component {
     this.setState({ minuteInitialFocused: false });
   }
 
+  handleSecondBlur(event) {
+    this.handleBlur(event, TimeUtil.inputType.SECOND);
+    this.setState({ secondInitialFocused: false });
+  }
+
   handleMeridiemBlur(event) {
     this.handleBlur(event, TimeUtil.inputType.MERIDIEM);
     this.setState({ meridiemFocused: false });
@@ -236,7 +249,7 @@ class TimeInput extends React.Component {
   handleBlur(event, type) {
     this.setState({ isFocused: false });
 
-    if (type === TimeUtil.inputType.HOUR || type === TimeUtil.inputType.MINUTE) {
+    if (type === TimeUtil.inputType.HOUR || type === TimeUtil.inputType.MINUTE || type === TimeUtil.inputType.SECOND) {
       let stateValue = event.target.value;
 
       // Prepend a 0 to the value when losing focus and the value is single digit.
@@ -340,6 +353,39 @@ class TimeInput extends React.Component {
     this.handleValueChange(event, TimeUtil.inputType.MINUTE, inputValue, this.state.meridiem);
   }
 
+  handleSecondChange(event) {
+    if (!TimeUtil.validNumericInput(event.target.value)) {
+      return;
+    }
+
+    let inputValue = event.target.value;
+    const stateValue = this.state.minute;
+    const maxValue = 59;
+
+    // Ignore the entry if the value did not change or it is invalid.
+    // When 'Predictive text' is enabled on Android the maxLength attribute on the input is ignored so we have
+    // to check the length of inputValue to make sure that it is less then 2.
+    if (inputValue === stateValue || inputValue.length > 2 || Number(inputValue) > maxValue) {
+      return;
+    }
+
+    // If the change made was not a deletion of a digit, then prepend '0'
+    // if the input value is a single digit value between 6 and 9.
+    if (inputValue.length >= stateValue.length) {
+      const digitsToPrependZero = ['6', '7', '8', '9'];
+      if (digitsToPrependZero.indexOf(inputValue) > -1) {
+        inputValue = '0'.concat(inputValue);
+      }
+    }
+
+    // Move focus to the merdiem for 12 hours times if the minute input has a valid and complete entry.
+    if (this.props.variant === TimeUtil.FORMAT_12_HOUR && inputValue.length === 2 && this.meridiemSelect) {
+      this.meridiemSelect.focus();
+    }
+
+    this.handleValueChange(event, TimeUtil.inputType.SECOND, inputValue, this.state.meridiem);
+  }
+
   handleMeridiemChange(event) {
     this.setState({
       meridiem: event.target.value,
@@ -416,11 +462,20 @@ class TimeInput extends React.Component {
     }
   }
 
+  focusSecond(event) {
+    // If the hour is empty or the cursor is after the value, move focus to the minute input when the right arrow is pressed.
+    if (this.state.minute.length === 0 || this.state.minute.length === this.minuteInput.selectionEnd) {
+      this.secondInput.focus();
+      this.secondInput.setSelectionRange(0, 0);
+      event.preventDefault();
+    }
+  }
+
   /**
    * Takes a key input from the minute input, and processes it based on the value of the keycode.
    * If the key is an up or down arrow, it increments/decrements the minute. If the left arrow
    * is pressed, it shifts focus to the hour input. If the right arrow is pressed, it shifts
-   * focus to the merdiem input.
+   * focus to the second input.
    * @param {Object} event Event object generated from the event delegation.
    */
   handleMinuteInputKeyDown(event) {
@@ -443,6 +498,40 @@ class TimeInput extends React.Component {
         || event.keyCode === KeyCode.KEY_DELETE
         || event.keyCode === KeyCode.KEY_BACK_SPACE) {
       this.focusHour(event);
+    }
+
+    if (event.keyCode === KeyCode.KEY_RIGHT) {
+      this.focusSecond(event);
+    }
+  }
+
+  /**
+   * Takes a key input from the second input, and processes it based on the value of the keycode.
+   * If the key is an up or down arrow, it increments/decrements the second. If the left arrow
+   * is pressed, it shifts focus to the minute input. If the right arrow is pressed, it shifts
+   * focus to the merdiem input.
+   * @param {Object} event Event object generated from the event delegation.
+   */
+  handleSecondInputKeyDown(event) {
+    let stateValue = this.state.second;
+    const previousStateValue = stateValue;
+
+    if (event.keyCode === KeyCode.KEY_UP) {
+      stateValue = TimeUtil.incrementSecond(stateValue);
+    }
+
+    if (event.keyCode === KeyCode.KEY_DOWN) {
+      stateValue = TimeUtil.decrementSecond(stateValue);
+    }
+
+    if (previousStateValue !== stateValue) {
+      this.handleValueChange(event, TimeUtil.inputType.SECOND, stateValue, this.state.meridiem);
+    }
+
+    if (event.keyCode === KeyCode.KEY_LEFT
+        || event.keyCode === KeyCode.KEY_DELETE
+        || event.keyCode === KeyCode.KEY_BACK_SPACE) {
+      this.focusMinute(event);
     }
 
     if (event.keyCode === KeyCode.KEY_RIGHT) {
@@ -481,10 +570,15 @@ class TimeInput extends React.Component {
         meridiem,
         hourInitialFocused: false,
       });
-    } else {
+    } else if (type === TimeUtil.inputType.MINUTE) {
       this.setState({
         minute: timeValue,
         minuteInitialFocused: false,
+      });
+    } else {
+      this.setState({
+        second: timeValue,
+        secondInitialFocused: false,
       });
     }
 
@@ -493,11 +587,12 @@ class TimeInput extends React.Component {
     if (this.props.onChange && timeValue.length !== 1) {
       const hour = type === TimeUtil.inputType.HOUR ? timeValue : this.state.hour;
       const minute = type === TimeUtil.inputType.MINUTE ? timeValue : this.state.minute;
+      const second = type === TimeUtil.inputType.SECOND ? timeValue : this.state.second;
 
-      if (hour === '' && minute === '') {
+      if (hour === '' && minute === '' && second === '') {
         this.props.onChange(event, '');
       } else {
-        this.props.onChange(event, this.formatHour(hour, meridiem).concat(':', minute));
+        this.props.onChange(event, this.formatHour(hour, meridiem).concat(':', minute).concat(':', second));
       }
     }
   }
@@ -752,6 +847,25 @@ class TimeInput extends React.Component {
           onKeyDown={this.handleMinuteInputKeyDown}
           onFocus={this.handleMinuteFocus}
           onBlur={this.handleMinuteBlur}
+          size="2"
+          pattern="\d*"
+          disabled={disabled}
+        />
+        <Input
+          {...inputAttributes}
+          {...minuteAttributes}
+          refCallback={(inputRef) => { this.secondInput = inputRef; }}
+          aria-label={this.context.intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
+          className={cx('time-input-seconds', 'desktop', { 'initial-focus': this.state.secondInitialFocused })}
+          type="text"
+          value={this.state.second}
+          name={'terra-time-second-'.concat(name)}
+          placeholder={this.context.intl.formatMessage({ id: 'Terra.timeInput.mm' })}
+          maxLength="2"
+          onChange={this.handleSecondChange}
+          onKeyDown={this.handleSecondInputKeyDown}
+          onFocus={this.handleSecondFocus}
+          onBlur={this.handleSecondBlur}
           size="2"
           pattern="\d*"
           disabled={disabled}
