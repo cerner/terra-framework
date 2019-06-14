@@ -111,13 +111,17 @@ class TimeInput extends React.Component {
     this.timeInputContainer = React.createRef();
     this.handleHourChange = this.handleHourChange.bind(this);
     this.handleMinuteChange = this.handleMinuteChange.bind(this);
+    this.handleSecondChange = this.handleSecondChange.bind(this);
     this.handleHourInputKeyDown = this.handleHourInputKeyDown.bind(this);
     this.handleMinuteInputKeyDown = this.handleMinuteInputKeyDown.bind(this);
+    this.handleSecondInputKeyDown = this.handleSecondInputKeyDown.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.handleHourFocus = this.handleHourFocus.bind(this);
     this.handleMinuteFocus = this.handleMinuteFocus.bind(this);
+    this.handleSecondFocus = this.handleSecondFocus.bind(this);
     this.handleHourBlur = this.handleHourBlur.bind(this);
     this.handleMinuteBlur = this.handleMinuteBlur.bind(this);
+    this.handleSecondBlur = this.handleSecondBlur.bind(this);
     this.handleMeridiemBlur = this.handleMeridiemBlur.bind(this);
     this.handleMeridiemChange = this.handleMeridiemChange.bind(this);
     this.handleMeridiemInputKeyDown = this.handleMeridiemInputKeyDown.bind(this);
@@ -351,6 +355,10 @@ class TimeInput extends React.Component {
       }
     }
 
+    if (inputValue.length === 2) {
+      this.secondInput.focus();
+    }
+
     // Move focus to the merdiem for 12 hours times if the minute input has a valid and complete entry.
     if (this.props.variant === TimeUtil.FORMAT_12_HOUR && inputValue.length === 2 && this.meridiemSelect) {
       this.meridiemSelect.focus();
@@ -360,9 +368,9 @@ class TimeInput extends React.Component {
   }
 
   handleSecondChange(event) {
-    if (!TimeUtil.validNumericInput(event.target.value)) {
-      return;
-    }
+    // if (!TimeUtil.validNumericInput(event.target.value)) {
+    //   return;
+    // }
 
     let inputValue = event.target.value;
     const stateValue = this.state.minute;
@@ -581,7 +589,7 @@ class TimeInput extends React.Component {
         minute: timeValue,
         minuteInitialFocused: false,
       });
-    } else {
+    } else if (type === TimeUtil.inputType.SECOND) {
       this.setState({
         second: timeValue,
         secondInitialFocused: false,
@@ -598,7 +606,7 @@ class TimeInput extends React.Component {
       if (hour === '' && minute === '' && second === '') {
         this.props.onChange(event, '');
       } else {
-        this.props.onChange(event, this.formatHour(hour, meridiem).concat(':', minute).concat(':', second));
+        this.props.onChange(event, this.formatHour(hour, meridiem).concat(':', minute, ':', second));
       }
     }
   }
@@ -667,7 +675,7 @@ class TimeInput extends React.Component {
         hour += 12;
       }
 
-      timeValue = 'T'.concat(hour, ':', this.state.minute);
+      timeValue = 'T'.concat(hour, ':', this.state.minute, ':', this.state.second);
     }
 
     if (!instanceHoursAttrs.id) {
@@ -797,21 +805,21 @@ class TimeInput extends React.Component {
     // Using the state of hour and minute create a time in UTC represented in ISO 8601 format.
     let timeValue = '';
 
-    if (this.state.hour.length > 0 || this.state.minute.length > 0) {
+    if (this.state.hour.length > 0 || this.state.minute.length > 0 || this.state.second.length > 0) {
       let hour = parseInt(this.state.hour, 10);
 
       if (this.props.variant === TimeUtil.FORMAT_12_HOUR && this.state.meridiem === this.postMeridiem) {
         hour += 12;
       }
 
-      timeValue = 'T'.concat(hour, ':', this.state.minute);
+      timeValue = 'T'.concat(hour, ':', this.state.minute, ':', this.state.second);
     }
 
     /* eslint-disable jsx-a11y/no-static-element-interactions */
     return (
       <div
         {...customProps}
-        // className={timeInputClassNames}
+        className={timeInputClassNames}
         ref={this.timeInputContainer}
       >
         <input
@@ -829,7 +837,7 @@ class TimeInput extends React.Component {
             this.hourInput = inputRef;
             if (refCallback) refCallback(inputRef);
           }}
-          // className={cx('time-input-hour', 'desktop', { 'initial-focus': this.state.hourInitialFocused })}
+          className={cx('time-input-hour', 'desktop', { 'initial-focus': this.state.hourInitialFocused })}
           type="text"
           value={this.state.hour}
           name={'terra-time-hour-'.concat(name)}
@@ -849,7 +857,7 @@ class TimeInput extends React.Component {
           {...minuteAttributes}
           refCallback={(inputRef) => { this.minuteInput = inputRef; }}
           aria-label={this.context.intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
-          // className={cx('time-input-minute', 'desktop', { 'initial-focus': this.state.minuteInitialFocused })}
+          className={cx('time-input-minute', 'desktop', { 'initial-focus': this.state.minuteInitialFocused })}
           type="text"
           value={this.state.minute}
           name={'terra-time-minute-'.concat(name)}
@@ -869,7 +877,7 @@ class TimeInput extends React.Component {
           {...secondAttributes}
           refCallback={(inputRef) => { this.secondInput = inputRef; }}
           aria-label={this.context.intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
-          // className={cx('time-input-seconds', 'desktop', { 'initial-focus': this.state.secondInitialFocused })}
+          className={cx('time-input-second', 'desktop', { 'initial-focus': this.state.secondInitialFocused })}
           type="text"
           value={this.state.second}
           name={'terra-time-second-'.concat(name)}
@@ -889,7 +897,7 @@ class TimeInput extends React.Component {
               {...inputAttributes}
               aria-label={this.context.intl.formatMessage({ id: 'Terra.timeInput.display.meridiem' })} // value in translations set to 'Display Meridiem'
               aria-readonly
-              // className={cx(['meridiem-display', { focused: this.state.meridiemFocused }])}
+              className={cx(['meridiem-display', { focused: this.state.meridiemFocused }])}
               onFocus={this.handleMeridiemInputFocus}
               key="meridiem_display"
               tabIndex="-1"
@@ -909,7 +917,7 @@ class TimeInput extends React.Component {
                 onFocus={this.handleMeridiemSelectFocus}
                 name={'terra-time-meridiem-'.concat(name)}
                 value={this.state.meridiem}
-                // className={cx('time-input-meridiem')}
+                className={cx('time-input-meridiem')}
                 onChange={this.handleMeridiemChange}
                 onKeyDown={this.handleMeridiemInputKeyDown}
                 size="2"
