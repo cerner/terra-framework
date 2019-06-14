@@ -1,8 +1,8 @@
 # Terra Date Picker
 
-DatePicker is a controlled input component that provides users a way to enter or select a date from the date picker. DatePicker is essentially a wrapper for [react-datepicker][1] and leverages many of its props. One important difference between DatePicker and [react-datepicker][1] is that all of the date props in [react-datepicker][1] must be a [moment][2] object whereas the date props in DatePicker are ISO 8601 representation of the date.
+DatePicker is an uncontrolled input component that provides users a way to enter or select a date from the date picker. DatePicker is essentially a wrapper for [react-datepicker][1] and leverages many of its props. One important difference between DatePicker and [react-datepicker][1] is that all of the date props in [react-datepicker][1] must be a [moment][2] object whereas the date props in DatePicker are ISO 8601 representation of the date.
 
-This is a controlled component because it manages the state of the value in the input. Because this is a controlled input component, it cannot accept the defaultValue prop as it always uses the value prop. React does not allow having both the defaultValue and value props.
+This is an uncontrolled component because it manages the state of the value in the input. Because this is a controlled input component, it cannot accept the defaultValue prop as it always uses the value prop. React does not allow having both the defaultValue and value props.
 
 ## Getting Started
 
