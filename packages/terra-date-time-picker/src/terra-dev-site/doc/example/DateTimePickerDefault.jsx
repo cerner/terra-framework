@@ -18,7 +18,7 @@ const defaultProps = {
 class DateTimePickerExample extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { dateTime: this.props.value };
+    this.state = { dateTime: this.props.value, hasSeconds: true };
     this.handleDateTimeChange = this.handleDateTimeChange.bind(this);
   }
 
@@ -38,6 +38,7 @@ Selected ISO Date Time:
             name="date-time-picker-example"
             dateInputAttributes={{ id: 'default' }}
             onChange={this.handleDateTimeChange}
+            hasSeconds={this.state.hasSeconds}
             {...this.props}
           />
         </Field>

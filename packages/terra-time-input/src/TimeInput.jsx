@@ -36,6 +36,10 @@ const propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   secondAttributes: PropTypes.object,
   /**
+   * Boolean to hide of show seconds field
+   */
+  hasSeconds: PropTypes.bool,
+  /**
    * Name of the time input. The name should be unique.
    */
   name: PropTypes.string.isRequired,
@@ -73,6 +77,7 @@ const defaultProps = {
   secondAttributes: {},
   minuteAttributes: {},
   hourAttributes: {},
+  hasSeconds: false,
   onBlur: null,
   onChange: null,
   onFocus: undefined,
@@ -355,13 +360,13 @@ class TimeInput extends React.Component {
       }
     }
 
-    if (inputValue.length === 2) {
-      this.secondInput.focus();
-    }
-
     // Move focus to the merdiem for 12 hours times if the minute input has a valid and complete entry.
-    if (this.props.variant === TimeUtil.FORMAT_12_HOUR && inputValue.length === 2 && this.meridiemSelect) {
-      this.meridiemSelect.focus();
+    if (inputValue.length === 2) {
+      if (this.props.variant === TimeUtil.FORMAT_12_HOUR && this.meridiemSelect) {
+        this.meridiemSelect.focus();
+      } else if (this.props.hasSeconds) {
+        this.secondInput.focus();
+      }
     }
 
     this.handleValueChange(event, TimeUtil.inputType.MINUTE, inputValue, this.state.meridiem);
@@ -468,7 +473,7 @@ class TimeInput extends React.Component {
   }
 
   focusMinute(event) {
-    // If the hour is empty or the cursor is after the value, move focus to the minute input when the right arrow is pressed.
+    // If the hour is empty or the cursor is after the value, move focus to the second input when the right arrow is pressed.
     if (this.state.hour.length === 0 || this.state.hour.length === this.hourInput.selectionEnd) {
       this.minuteInput.focus();
       this.minuteInput.setSelectionRange(0, 0);
@@ -477,7 +482,7 @@ class TimeInput extends React.Component {
   }
 
   focusSecond(event) {
-    // If the hour is empty or the cursor is after the value, move focus to the minute input when the right arrow is pressed.
+    // If the minute is empty or the cursor is after the value, move focus to the meridiem input when the right arrow is pressed.
     if (this.state.minute.length === 0 || this.state.minute.length === this.minuteInput.selectionEnd) {
       this.secondInput.focus();
       this.secondInput.setSelectionRange(0, 0);
@@ -665,7 +670,7 @@ class TimeInput extends React.Component {
     const instanceMinuteAttrs = Object.assign({}, minuteAttributes);
     const instanceSecondAttrs = Object.assign({}, secondAttributes);
 
-    // Using the state of hour and minute create a time in UTC represented in ISO 8601 format.
+    // Using the state of hour, minute, and second create a time in UTC represented in ISO 8601 format.
     let timeValue = '';
 
     if (this.state.hour.length > 0 || this.state.minute.length > 0) {
@@ -746,6 +751,29 @@ class TimeInput extends React.Component {
             pattern="\d*"
             disabled={disabled}
           />
+          {this.props.hasSeconds && (
+            [
+              <span className={cx('time-spacer')}>:</span>,
+              <Input
+                {...inputAttributes}
+                {...secondAttributes}
+                refCallback={(inputRef) => { this.secondInput = inputRef; }}
+                className={cx('time-input-second')}
+                type="text"
+                value={this.state.second}
+                name={'terra-time-second-'.concat(name)}
+                placeholder={this.context.intl.formatMessage({ id: 'Terra.timeInput.ss' })}
+                maxLength="2"
+                onChange={this.handleSecondChange}
+                onKeyDown={this.handleSecondInputKeyDown}
+                onFocus={this.handleSecondFocus}
+                onBlur={this.handleSecondBlur}
+                size="2"
+                pattern="\d*"
+                disabled={disabled}
+              />,
+            ])
+          }
           <label htmlFor={instanceMinuteAttrs.id} className={cx('mobile-input-label')}>
             {this.context.intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
           </label>
@@ -871,26 +899,30 @@ class TimeInput extends React.Component {
           pattern="\d*"
           disabled={disabled}
         />
-        <span className={cx('time-spacer')}>:</span>
-        <Input
-          {...inputAttributes}
-          {...secondAttributes}
-          refCallback={(inputRef) => { this.secondInput = inputRef; }}
-          aria-label={this.context.intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
-          className={cx('time-input-second', 'desktop', { 'initial-focus': this.state.secondInitialFocused })}
-          type="text"
-          value={this.state.second}
-          name={'terra-time-second-'.concat(name)}
-          placeholder="ss"
-          maxLength="2"
-          onChange={this.handleSecondChange}
-          onKeyDown={this.handleSecondInputKeyDown}
-          onFocus={this.handleSecondFocus}
-          onBlur={this.handleSecondBlur}
-          size="2"
-          pattern="\d*"
-          disabled={disabled}
-        />
+        {this.props.hasSeconds && (
+          [
+            <span className={cx('time-spacer')}>:</span>,
+            <Input
+              {...inputAttributes}
+              {...secondAttributes}
+              refCallback={(inputRef) => { this.secondInput = inputRef; }}
+              aria-label={this.context.intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
+              className={cx('time-input-second', 'desktop', { 'initial-focus': this.state.secondInitialFocused })}
+              type="text"
+              value={this.state.second}
+              name={'terra-time-second-'.concat(name)}
+              placeholder="ss"
+              maxLength="2"
+              onChange={this.handleSecondChange}
+              onKeyDown={this.handleSecondInputKeyDown}
+              onFocus={this.handleSecondFocus}
+              onBlur={this.handleSecondBlur}
+              size="2"
+              pattern="\d*"
+              disabled={disabled}
+            />,
+          ])
+        }
         {this.props.variant === TimeUtil.FORMAT_12_HOUR && (
           [
             <Input

@@ -56,6 +56,10 @@ const propTypes = {
    */
   name: PropTypes.string.isRequired,
   /**
+   * Boolean to hide of show seconds field
+   */
+  hasSeconds: PropTypes.bool,
+  /**
    * A callback function triggered when the entire date time picker component loses focus.
    * This event does not get triggered when the focus is moved from the date input to the time input because the focus is still within the main date time picker component.
    */
@@ -107,6 +111,7 @@ const defaultProps = {
   includeDates: undefined,
   maxDate: undefined,
   minDate: undefined,
+  hasSeconds: false,
   onBlur: undefined,
   onChange: undefined,
   onChangeRaw: undefined,
@@ -576,6 +581,7 @@ class DateTimePicker extends React.Component {
             disabled={disabled}
             variant={timeVariant}
             refCallback={(inputRef) => { this.hourInput = inputRef; }}
+            hasSeconds={this.props.hasSeconds}
           />
 
           {this.state.isAmbiguousTime ? this.renderTimeClarification() : null }
