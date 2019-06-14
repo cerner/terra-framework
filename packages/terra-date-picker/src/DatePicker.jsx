@@ -11,6 +11,10 @@ import styles from './DatePicker.module.scss';
 
 const propTypes = {
   /**
+   * @private Whether or not to disable focus on the calendar button when the calendar picker dismisses.
+   */
+  disableButtonFocusOnClose: PropTypes.bool,
+  /**
    * Whether the date input should be disabled.
    */
   disabled: PropTypes.bool,
@@ -99,6 +103,7 @@ const defaultProps = {
   onFocus: undefined,
   onSelect: undefined,
   required: false,
+  disableButtonFocusOnClose: false,
   selectedDate: undefined,
 };
 
@@ -170,10 +175,16 @@ class DatePicker extends React.Component {
 
     this.dateValue = DateUtil.formatISODate(selectedDate, DateUtil.getFormatByLocale(this.context.intl.locale));
     this.isDefaultDateAcceptable = true;
-    this.calendarButton.focus();
 
     if (this.props.onSelect) {
       this.props.onSelect(event, selectedDate.format());
+    }
+
+    if (!this.props.disableButtonFocusOnClose) {
+      // Allows time for focus-trap to release focus on the picker before returning focus to the calendar button.
+      setTimeout(() => {
+        this.calendarButton.focus();
+      }, 100);
     }
   }
 
@@ -181,8 +192,6 @@ class DatePicker extends React.Component {
     if (this.props.onClickOutside) {
       this.props.onClickOutside(event);
     }
-
-    this.calendarButton.focus();
   }
 
   handleBlur(event) {
@@ -294,6 +303,7 @@ class DatePicker extends React.Component {
 
   render() {
     const {
+      disableButtonFocusOnClose,
       inputAttributes,
       excludeDates,
       filterDate,

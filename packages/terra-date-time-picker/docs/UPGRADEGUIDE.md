@@ -5,6 +5,8 @@
 ### Removed props
 * Removed `minDateTime`
 * Removed `maxDateTime`
+* Removed `releaseFocus`
+* Removed `requestFocus`
 
 ### New props
 * Added `minDate`
