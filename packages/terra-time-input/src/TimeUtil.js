@@ -18,7 +18,7 @@ class TimeUtil {
    *   Hour will be in 2 digit format.
    */
   static parseTwelveHourTime(hour, anteMeridiem, postMeridiem) {
-    const parsedHour = {hourString: hour};
+    const parsedHour = { hourString: hour };
     let numericHour = parseInt(hour, 10);
 
     if (numericHour >= 12) {
