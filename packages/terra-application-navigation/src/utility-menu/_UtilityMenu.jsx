@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 import { injectIntl, intlShape } from 'react-intl';
 import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import IconQuestionOutline from 'terra-icon/lib/icon/IconQuestionOutline';
-import ActionFooter from 'terra-action-footer';
-import Button from 'terra-button';
-
-import ActionHeader from 'terra-action-header';
 import PopupMenu from '../common/_PopupMenu';
 import { userConfigPropType, utilityItemsPropType } from '../utils/propTypes';
 
@@ -89,8 +85,9 @@ const UtilityMenu = ({
 
   return (
     <PopupMenu
-      header={<ActionHeader title={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.headerTitle' })} />}
-      footer={<ActionFooter end={onSelectLogout ? <Button text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.logout' })} onClick={onSelectLogout} /> : undefined} />}
+      title={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.headerTitle' })}
+      footerText={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.logout' })}
+      onSelectFooterItem={onSelectLogout}
       userConfig={userConfig}
       customContent={hero}
       menuItems={menuItems}

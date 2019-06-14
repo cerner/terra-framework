@@ -4,7 +4,6 @@ import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
 import LodashDebounce from 'lodash.debounce';
 import { injectIntl, intlShape } from 'react-intl';
-import ActionHeader from 'terra-action-header';
 import Popup from 'terra-popup';
 
 import Tab from './_Tab';
@@ -273,9 +272,10 @@ class Tabs extends React.Component {
         targetRef={() => this.rollupTabRef.current}
         isOpen
         isArrowDisplayed
+        isContentFocusDisabled
       >
         <PopupMenu
-          header={<ActionHeader title={intl.formatMessage({ id: 'Terra.applicationNavigation.tabs.rollupMenuHeaderTitle' })} />}
+          title={intl.formatMessage({ id: 'Terra.applicationNavigation.tabs.rollupMenuHeaderTitle' })}
           menuItems={hiddenTabs.map(tab => ({
             key: tab.key,
             text: tab.text,

@@ -65,10 +65,10 @@ const Tab = ({
     }
 
     return (
-      <span className={cx('tab-inner')}>
+      <div className={cx('tab-inner')}>
         <span className={cx('tab-label')}>{text}</span>
         {notificationCount > 0 && <span className={cx('tab-count')}><TabCount value={notificationCount} /></span>}
-      </span>
+      </div>
     );
   }
 

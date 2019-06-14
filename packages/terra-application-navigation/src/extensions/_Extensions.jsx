@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';
-import ActionHeader from 'terra-action-header';
 import Popup from 'terra-popup';
 
 import PopupMenu from '../common/_PopupMenu';
@@ -109,9 +108,10 @@ const Extensions = ({
         isOpen={popupIsOpen}
         targetRef={() => extensionRollupRef.current}
         onRequestClose={() => setPopupIsOpen(false)}
+        isContentFocusDisabled
       >
         <PopupMenu
-          header={<ActionHeader title={intl.formatMessage({ id: 'Terra.applicationNavigation.extensions.rollupMenuHeaderTitle' })} />}
+          title={intl.formatMessage({ id: 'Terra.applicationNavigation.extensions.rollupMenuHeaderTitle' })}
           menuItems={hiddenExtensions.map(item => ({
             key: item.key,
             icon: item.icon,

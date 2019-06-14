@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {
+  useRef,
+} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ActionFooter from 'terra-action-footer';
 import ContentContainer from 'terra-content-container';
+import Button from 'terra-button';
+import ActionHeader from 'terra-action-header';
+import { KEY_SPACE, KEY_RETURN, KEY_UP, KEY_DOWN } from 'keycode-js';
 
 import PopupMenuListItem from './_PopupMenuListItem';
 import { userConfigPropType } from '../utils/propTypes';
@@ -13,14 +18,9 @@ import styles from './PopupMenu.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  /**
-   * Header element fixed in place at the top of the menu.
-   */
-  header: PropTypes.element,
-  /**
-   * Footer element fixed in place at the bottom of the menu.
-   */
-  footer: PropTypes.element,
+  title: PropTypes.string,
+  footerText: PropTypes.string,
+  onSelectFooterItem: PropTypes.func,
   /**
    * The custom content to be placed at the top of the content area.
    */
@@ -79,38 +79,105 @@ const defaultProps = {
 };
 
 const PopupMenu = ({
-  header, footer, onSelectMenuItem, customContent, userConfig, menuItems, isHeightBounded, showSelections,
-}) => (
-  <ContentContainer
-    header={header}
-    footer={footer || <ActionFooter />}
-    fill={isHeightBounded}
-  >
-    <div className={cx('container')}>
-      <div className={cx('content-header')}>
-        {customContent ? (
-          <div className={cx('custom-content-container')}>
-            {customContent}
-          </div>
-        ) : undefined}
-        {userConfig ? <PopupMenuUser userConfig={userConfig} /> : null}
-        <ul className={cx('utility-list')} role="listbox">
-          {menuItems.map(item => (
-            <PopupMenuListItem
-              key={item.key}
-              onSelect={onSelectMenuItem && onSelectMenuItem.bind(null, item.key, item.metaData)}
-              icon={item.icon}
-              text={item.text}
-              notificationCount={item.notificationCount}
-              showSelections={showSelections}
-              isSelected={item.isActive}
-            />
-          ))}
-        </ul>
-      </div>
+  title, footerText, onSelectFooterItem, onSelectMenuItem, customContent, userConfig, menuItems, isHeightBounded, showSelections,
+}) => {
+  const containerRef = useRef();
+  const listRef = useRef();
+  const buttonRef = useRef();
+
+  function handleDown(event) {
+    if (listRef.current.hasChildNodes()) {
+      const sibling = listRef.current.firstChild;
+      if (sibling) {
+        event.preventDefault();
+        sibling.focus();
+      }
+    }
+  }
+
+  function handleUp(event) {
+    if (listRef.current.hasChildNodes()) {
+      const sibling = listRef.current.lastChild;
+      if (sibling) {
+        event.preventDefault();
+        sibling.focus();
+      }
+    }
+  }
+
+  function loopFocus(event) {
+    if (buttonRef.current) {
+      buttonRef.current.focus();
+    } else if (event.nativeEvent.keyCode === KEY_UP) {
+      handleUp(event);
+    } else if (event.nativeEvent.keyCode === KEY_DOWN) {
+      handleDown(event);
+    }
+  }
+
+  function myKeyDown(event) {
+    if (event.nativeEvent.keyCode === KEY_DOWN) {
+      handleDown(event);
+    }
+  }
+
+  function myButtonKeyDown(event) {
+    if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
+      event.preventDefault();
+      event.stopPropagation();
+      onSelectFooterItem();
+      return;
+    }
+    if (event.nativeEvent.keyCode === KEY_UP) {
+      handleUp(event);
+    } else if (event.nativeEvent.keyCode === KEY_DOWN) {
+      handleDown(event);
+    }
+  }
+
+  let footer;
+  if (onSelectFooterItem) {
+    footer = (
+      <ActionFooter
+        end={<Button text={footerText} onClick={onSelectFooterItem} onKeyDown={myButtonKeyDown} refCallback={buttonRef} />}
+      />
+    );
+  }
+
+  /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+  return (
+    <div className={cx('container', { 'is-fill': isHeightBounded })} role="presentation" onKeyDown={myKeyDown} tabIndex="0" ref={containerRef}>
+      <ContentContainer
+        header={<ActionHeader title={title} />}
+        footer={footer || <ActionFooter />}
+        fill={isHeightBounded}
+      >
+        <div className={cx('content-header')}>
+          {customContent ? (
+            <div className={cx('custom-content-container')}>
+              {customContent}
+            </div>
+          ) : undefined}
+          {userConfig ? <PopupMenuUser userConfig={userConfig} /> : null}
+          <ul className={cx('utility-list')} role="listbox" ref={listRef}>
+            {menuItems.map(item => (
+              <PopupMenuListItem
+                key={item.key}
+                onSelect={onSelectMenuItem && onSelectMenuItem.bind(null, item.key, item.metaData)}
+                icon={item.icon}
+                text={item.text}
+                notificationCount={item.notificationCount}
+                showSelections={showSelections}
+                isSelected={item.isActive}
+                loopFocus={loopFocus}
+              />
+            ))}
+          </ul>
+        </div>
+      </ContentContainer>
     </div>
-  </ContentContainer>
-);
+  );
+};
 
 PopupMenu.propTypes = propTypes;
 PopupMenu.defaultProps = defaultProps;

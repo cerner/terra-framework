@@ -207,6 +207,7 @@ const ApplicationNavigation = ({
         onRequestClose={() => setPopupMenuIsOpen(false)}
         targetAttachment="bottom center"
         targetRef={() => utilityButtonPopupAnchorRef.current}
+        isContentFocusDisabled
       >
         <UtilityMenu
           hero={hero}
