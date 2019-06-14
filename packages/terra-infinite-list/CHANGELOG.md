@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Removed
+* Removed '-ms-overflow-style' style
 
 3.6.0 - (June 12, 2019)
 ------------------
@@ -11,9 +13,6 @@ Unreleased
 
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
-
-### Removed
-* Removed '-ms-overflow-style' style
 
 3.5.0 - (May 7, 2019)
 ------------------
