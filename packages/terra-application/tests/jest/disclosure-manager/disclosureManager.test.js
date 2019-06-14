@@ -3,9 +3,9 @@ import DisclosureManager, {
   disclosureManagerShape, // eslint-disable-line import/named
   DisclosureManagerContext, // eslint-disable-line import/named
   DisclosureManagerDelegate, // eslint-disable-line import/named
-} from '../../src/disclosure-manager';
+} from '../../../src/disclosure-manager';
 
-describe('disclosureManager', () => {
+describe('disclosure-manager/index', () => {
   it('should export DisclosureManager', () => {
     expect(DisclosureManager).toBeDefined();
   });

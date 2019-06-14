@@ -1,6 +1,6 @@
-import NavigationPrompt, { NavigationPromptCheckpoint, PromptRegistrationContext } from '../../src/navigation-prompt'; // eslint-disable-line import/named
+import NavigationPrompt, { NavigationPromptCheckpoint, PromptRegistrationContext } from '../../../src/navigation-prompt'; // eslint-disable-line import/named
 
-describe('navigationPrompt', () => {
+describe('navigation-prompt/index', () => {
   it('should export NavigationPrompt', () => {
     expect(NavigationPrompt).toBeDefined();
   });

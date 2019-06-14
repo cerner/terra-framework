@@ -1,6 +1,6 @@
 import ApplicationBase from '../../../src/application-base';
 
-describe('applicationBase', () => {
+describe('application-base/index', () => {
   it('should export ApplicationBase', () => {
     expect(ApplicationBase).toBeDefined();
   });

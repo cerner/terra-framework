@@ -4,9 +4,9 @@ import breakpoints, {
   ActiveBreakpointContext, // eslint-disable-line import/named
   ActiveBreakpointProvider, // eslint-disable-line import/named
   withActiveBreakpoint, // eslint-disable-line import/named
-} from '../../src/breakpoints';
+} from '../../../src/breakpoints';
 
-describe('breakpoints', () => {
+describe('breakpoints/index', () => {
   it('should export breakpoints', () => {
     expect(breakpoints).toBeDefined();
   });

@@ -28,7 +28,6 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "react-intl": "^2.9.0",
     "terra-doc-template": "^2.0.0",
     "terra-base": "^5.0.0",
     "terra-breakpoints": "^2.0.0",
