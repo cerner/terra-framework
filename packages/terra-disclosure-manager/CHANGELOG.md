@@ -6,6 +6,11 @@ Unreleased
 ### Fixed
 * Fixed bug where afterdismiss promise was getting resolved prior to dismissing.
 
+4.12.0 - (June 12, 2019)
+------------------s
+### Removed
+* Removed node_modules from .npmignore
+
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 

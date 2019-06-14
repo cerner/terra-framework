@@ -65,7 +65,7 @@ export default class Calendar extends React.Component {
     maxDate: PropTypes.object,
     minDate: PropTypes.object,
     monthsShown: PropTypes.number,
-    onClickOutside: PropTypes.func.isRequired,
+    onClickOutside: PropTypes.func,
     onMonthChange: PropTypes.func,
     forceShowMonthNavigation: PropTypes.bool,
     onDropdownFocus: PropTypes.func,
@@ -401,7 +401,6 @@ export default class Calendar extends React.Component {
   render () {
     return (
       <div className={classnames('react-datepicker', this.props.className)}>
-        <div className="react-datepicker__triangle" />
         {this.renderPreviousMonthButton()}
         {this.renderNextMonthButton()}
         {this.renderMonths()}

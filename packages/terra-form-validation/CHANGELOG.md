@@ -3,6 +3,12 @@ ChangeLog
 
 Unreleased
 ----------
+
+1.1.0 - (June 12, 2019)
+------------------
+### Removed
+* Removed node_modules from .npmignore
+
 ### Fixed
 * onSubmit example is now submitting.
 
