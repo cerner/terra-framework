@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Fixed Collapsible issue for single item group
+
 ### Changed
 * Added more buttons to support wdio tests for other themes (ex:mpages theme)
 

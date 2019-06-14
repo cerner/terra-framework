@@ -44,4 +44,29 @@ describe('Collapsible Menu View', () => {
       Terra.it.isAccessible();
     });
   });
+
+  Terra.viewports('enormous', 'huge').forEach((viewport) => {
+    describe('Single Item Group', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/single-item-group');
+        browser.setViewportSize(viewport);
+      });
+
+      Terra.it.matchesScreenshot();
+      Terra.it.isAccessible();
+    });
+  });
+
+  Terra.viewports('tiny', 'small', 'medium', 'large').forEach((viewport) => {
+    describe('Single Item Group Hidden Open', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/single-item-group');
+        browser.setViewportSize(viewport);
+        browser.click('[data-collapsible-menu-toggle]');
+      });
+
+      Terra.it.matchesScreenshot({ selector: '#root' });
+      Terra.it.isAccessible();
+    });
+  });
 });
