@@ -876,7 +876,7 @@ class TimeInput extends React.Component {
           {...inputAttributes}
           {...secondAttributes}
           refCallback={(inputRef) => { this.secondInput = inputRef; }}
-          aria-label={this.context.intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
+          aria-label={this.context.intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
           className={cx('time-input-second', 'desktop', { 'initial-focus': this.state.secondInitialFocused })}
           type="text"
           value={this.state.second}

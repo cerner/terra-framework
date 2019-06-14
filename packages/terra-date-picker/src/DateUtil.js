@@ -144,7 +144,6 @@ class DateUtil {
     if (!iSODate || iSODate.length <= 0) {
       return '';
     }
-
     const momentDate = moment(iSODate);
     return DateUtil.formatMomentDate(momentDate, format);
   }

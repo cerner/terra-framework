@@ -49,7 +49,7 @@ class DateTimeUtils {
         tempDate.year(date.get('year')).month(date.get('month')).date(date.get('date'));
       }
 
-      if (time && time.length === 5) {
+      if (time && time.length === 8) {
         tempDate = DateTimeUtils.updateTime(tempDate, time);
       }
 
@@ -60,7 +60,7 @@ class DateTimeUtils {
     if (date.isValid()) {
       let tempDate = date.clone();
 
-      if (time && time.length === 5) {
+      if (time && time.length === 8) {
         tempDate = DateTimeUtils.updateTime(tempDate, time);
       }
 
@@ -83,9 +83,9 @@ class DateTimeUtils {
     }
 
     const newDate = momentDate.clone();
-    const date = moment(time, 'HH:mm', true);
+    const date = moment(time, 'HH:mm:ss', true);
 
-    return newDate.hour(date.get('hour')).minute(date.get('minute'));
+    return newDate.hour(date.get('hour')).minute(date.get('minute')).second(date.get('second'));
   }
 
   /**
@@ -105,7 +105,7 @@ class DateTimeUtils {
    * @return {boolean} - True if the time is valid.
    */
   static isValidTime(time) {
-    const timeMoment = moment(time, 'HH:mm', true);
+    const timeMoment = moment(time, 'HH:mm:ss', true);
     return timeMoment.isValid();
   }
 

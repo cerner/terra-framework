@@ -136,7 +136,7 @@ class DateTimePicker extends React.Component {
     // It is used for date/time manipulation and used to calculate the missing/ambiguous hour.
     // The dateValue and timeValue are tracked outside of the react state to limit the number of renderings that occur.
     this.dateValue = DateUtil.formatMomentDate(this.state.dateTime, this.state.dateFormat) || '';
-    this.timeValue = DateTimeUtils.hasTime(this.props.value) ? DateUtil.formatISODate(this.props.value, 'HH:mm') : '';
+    this.timeValue = DateTimeUtils.hasTime(this.props.value) ? DateUtil.formatISODate(this.props.value, 'HH:mm:ss') : '';
     this.isDefaultDateTimeAcceptable = true;
     this.wasOffsetButtonClicked = false;
 
@@ -342,7 +342,7 @@ class DateTimePicker extends React.Component {
       // If updatedDateTime is valid, update timeValue (value in the time input) to reflect updatedDateTime since
       // it could have subtracted an hour from above to account for the missing hour.
       if (updatedDateTime) {
-        this.timeValue = DateUtil.formatISODate(updatedDateTime.format(), 'HH:mm');
+        this.timeValue = DateUtil.formatISODate(updatedDateTime.format(), 'HH:mm:ss');
       }
 
       this.handleChangeRaw(event, this.timeValue);
