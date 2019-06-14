@@ -188,12 +188,12 @@ exports[`should render a SlidePanel with panelPosition = start 1`] = `
   data-slide-panel-panel-size="small"
 >
   <div
-    class="main"
+    aria-hidden="true"
+    class="panel"
     tabindex="-1"
   />
   <div
-    aria-hidden="true"
-    class="panel"
+    class="main"
     tabindex="-1"
   />
 </div>

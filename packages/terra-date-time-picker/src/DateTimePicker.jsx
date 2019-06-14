@@ -192,8 +192,6 @@ class DateTimePicker extends React.Component {
     if (this.props.onSelect) {
       this.props.onSelect(event, updatedDateTime.format());
     }
-
-    this.hourInput.focus();
   }
 
   handleOnDateBlur(event) {
@@ -319,7 +317,10 @@ class DateTimePicker extends React.Component {
     }
 
     if (isDateValid) {
-      this.hourInput.focus();
+      // Allows time for focus-trap to release focus on the picker before shifting focus to the hour input.
+      setTimeout(() => {
+        this.hourInput.focus();
+      }, 100);
     }
   }
 
@@ -568,6 +569,7 @@ class DateTimePicker extends React.Component {
           selectedDate={dateValue}
           name="input"
           disabled={disabled}
+          disableButtonFocusOnClose
         />
 
         <div className={cx('time-facade')}>

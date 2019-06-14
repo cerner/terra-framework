@@ -15,6 +15,7 @@ Unreleased
 
 ### Fixed
 * Fixed wdio tests by calling browser.refresh() on subsequent loads instead of loading the url directly.
+* Focus now automatically moves to the hour input after a date is selected from the picker.
 
 ### Removed
 * Removed node_modules from .npmignore
