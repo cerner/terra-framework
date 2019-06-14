@@ -59,6 +59,12 @@ const ExampleApplication = () => (
 )
 ```
 
+### I18n
+
+Terra components leverage the [react-intl](https://www.npmjs.com/package/react-intl) project to load and render translated strings. Please see the terra-base and react-intl [documentation](https://github.com/formatjs/react-intl/tree/master/docs) for more information.
+
+> Remember: `ApplicationBase` configures and renders react-intl's `IntlProvider` internally (through `<Base />`). An `IntlProvider` should not be rendered directly.
+
 ### Breakpoints
 
 `terra-application` includes components that determine and communicate an application's responsive breakpoint state. 
@@ -307,12 +313,6 @@ import NavigationPrompt, {
 ```
 
 > Remember: `terra-application` repackages the contents of the `terra-navigation-prompt` package to help maintain version/instance consistency. The `terra-navigation-prompt` package should not be consumed directly if `terra-application` is also being consumed.
-
-### I18n
-
-Terra components leverage the [react-intl](https://www.npmjs.com/package/react-intl) project to load and render translated strings. Please see the terra-base and react-intl [documentation](https://github.com/formatjs/react-intl/tree/master/docs) for more information.
-
-> Remember: `ApplicationBase` configures and renders react-intl's `IntlProvider` internally (through `<Base />`). An `IntlProvider` should not be rendered directly.
 
 ## Component Features
 
