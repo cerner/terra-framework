@@ -53,15 +53,16 @@ const DocPage = () => (
         source: TimeInputDefaultTwelveHourSrc,
       },
       {
-        title: 'With Default Time - Seconds',
-        example: <TimeInputDefaultSeconds />,
-        source: TimeInputDefaultSecondsSrc,
-      },
-      {
         title: 'Without Default Time - Seconds',
         example: <TimeInputNoDefaultSeconds />,
         source: TimeInputNoDefaultSecondsSrc,
       },
+      {
+        title: 'With Default Time - Seconds',
+        example: <TimeInputDefaultSeconds />,
+        source: TimeInputDefaultSecondsSrc,
+      },
+
       {
         title: 'Without Default Time - 12 Hour - Seconds',
         example: <TimeInputNoDefaultTwelveHourSeconds />,

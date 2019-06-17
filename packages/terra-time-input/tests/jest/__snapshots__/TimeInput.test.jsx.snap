@@ -359,6 +359,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
 exports[`should pass in refCallback as the ref prop of the hour input element 1`] = `
 <TimeInput
   disabled={false}
+  hasSeconds={false}
   hourAttributes={Object {}}
   inputAttributes={Object {}}
   intl={
@@ -417,6 +418,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
       ],
     }
   }
+  secondAttributes={Object {}}
   variant="24-hour"
 >
   <div

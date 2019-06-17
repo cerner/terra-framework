@@ -101,15 +101,14 @@ class TimeInput extends React.Component {
 
     let { value } = this.props;
 
-    if (value && !TimeUtil.validateTime.test(value)) {
+    if (value && !(TimeUtil.validateTime.test(value) || TimeUtil.validateTimeSeconds.test(value))) {
       if (process.env !== 'production') {
         // eslint-disable-next-line
         console.warn(
           `An invalid time value, ${value}, has been passed to the terra-time-picker.`
-          + 'This value has been ignored and will not be rendered. Time values must be in hh:mm:ss format.',
+          + 'This value has been ignored and will not be rendered. Time values must be in hh:mm or hh:mm:ss format.',
         );
       }
-
       value = undefined;
     }
 
@@ -521,7 +520,7 @@ class TimeInput extends React.Component {
     }
 
     if (event.keyCode === KeyCode.KEY_RIGHT) {
-      if (this.props.hasSeconds){
+      if (this.props.hasSeconds) {
         this.focusSecond(event);
       } else {
         this.focusMeridiem();
@@ -583,7 +582,7 @@ class TimeInput extends React.Component {
         && this.meridiemSelect
     ) {
       this.meridiemSelect.focus();
-      event.preventDefault();
+      // event.preventDefault();
     }
   }
 
@@ -663,6 +662,7 @@ class TimeInput extends React.Component {
   mobileInput() {
     const {
       disabled,
+      hasSeconds,
       inputAttributes,
       minuteAttributes,
       secondAttributes,
@@ -765,6 +765,9 @@ class TimeInput extends React.Component {
             pattern="\d*"
             disabled={disabled}
           />
+          <label htmlFor={instanceMinuteAttrs.id} className={cx('mobile-input-label')}>
+            {this.context.intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
+          </label>
           {this.props.hasSeconds && (
             [
               <span className={cx('time-spacer')}>:</span>,
@@ -786,11 +789,11 @@ class TimeInput extends React.Component {
                 pattern="\d*"
                 disabled={disabled}
               />,
+              <label htmlFor={instanceSecondAttrs.id} className={cx('mobile-input-label')}>
+                {this.context.intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
+              </label>,
             ])
           }
-          <label htmlFor={instanceMinuteAttrs.id} className={cx('mobile-input-label')}>
-            {this.context.intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
-          </label>
         </div>
         {this.props.variant === TimeUtil.FORMAT_12_HOUR && (
           <ButtonGroup selectedKeys={[this.state.meridiem]} onChange={this.handleMeridiemButtonChange} className={cx('meridiem-button-group')}>
@@ -823,6 +826,7 @@ class TimeInput extends React.Component {
   desktopInput() {
     const {
       disabled,
+      hasSeconds,
       inputAttributes,
       secondAttributes,
       minuteAttributes,

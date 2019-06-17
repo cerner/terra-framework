@@ -529,6 +529,7 @@ class DateTimePicker extends React.Component {
       timeInputAttributes,
       value,
       timeVariant,
+      hasSeconds,
       ...customProps
     } = this.props;
 
