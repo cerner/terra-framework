@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Removed
+* Removed '-ms-overflow-style' style
+
 ### Changed
 * Removed all inline styles from Dev-site components and implemented the same styles using external css.
 
