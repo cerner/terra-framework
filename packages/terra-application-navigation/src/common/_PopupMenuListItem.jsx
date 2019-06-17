@@ -54,8 +54,15 @@ const PopupMenuListItem = ({
 }) => {
   const itemRef = useRef();
 
-  function myKeyDown(event) {
-    let sibling;
+  function nextFocus(event, sibling) {
+    if (sibling) {
+      sibling.focus();
+    } else {
+      loopFocus(event);
+    }
+  }
+
+  function handleKeyDown(event) {
     if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
       event.preventDefault();
       event.stopPropagation();
@@ -65,16 +72,11 @@ const PopupMenuListItem = ({
     if (event.nativeEvent.keyCode === KEY_DOWN) {
       event.preventDefault();
       event.stopPropagation();
-      sibling = itemRef.current.nextSibling;
+      nextFocus(event, itemRef.current.nextSibling);
     } else if (event.nativeEvent.keyCode === KEY_UP) {
       event.preventDefault();
       event.stopPropagation();
-      sibling = itemRef.current.previousSibling;
-    }
-    if (sibling) {
-      sibling.focus();
-    } else {
-      loopFocus(event);
+      nextFocus(event, itemRef.current.previousSibling);
     }
   }
 
@@ -84,7 +86,7 @@ const PopupMenuListItem = ({
       tabIndex="0"
       className={cx('item')}
       onClick={onSelect}
-      onKeyDown={myKeyDown}
+      onKeyDown={handleKeyDown}
       onBlur={enableFocusStyles}
       onMouseDown={disableFocusStyles}
       aria-selected={showSelections && isSelected}

@@ -132,13 +132,13 @@ const PopupMenu = ({
     }
   }
 
-  function myKeyDown(event) {
+  function handleKeyDown(event) {
     if (event.nativeEvent.keyCode === KEY_DOWN) {
       handleDown(event);
     }
   }
 
-  function myButtonKeyDown(event) {
+  function handleButtonKeyDown(event) {
     if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
       event.preventDefault();
       event.stopPropagation();
@@ -160,7 +160,7 @@ const PopupMenu = ({
           <Button
             text={footerText}
             onClick={onSelectFooterItem}
-            onKeyDown={myButtonKeyDown}
+            onKeyDown={handleButtonKeyDown}
             refCallback={setButtonRef}
           />
         )}
@@ -183,7 +183,7 @@ const PopupMenu = ({
             </div>
           ) : undefined}
           {userConfig ? <PopupMenuUser userConfig={userConfig} /> : null}
-          <ul className={cx('utility-list')} ref={listRef} role="menu" onKeyDown={myKeyDown} tabIndex="0">
+          <ul className={cx('utility-list')} ref={listRef} role="menu" onKeyDown={handleKeyDown} tabIndex="0">
             {menuItems.map(item => (
               <PopupMenuListItem
                 key={item.key}
