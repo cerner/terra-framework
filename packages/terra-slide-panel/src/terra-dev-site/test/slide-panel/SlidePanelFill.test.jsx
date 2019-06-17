@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import SlidePanel from '../../../SlidePanel';
 import SlidePanel, { SlidePanelPositions } from '../../../SlidePanel';
 import SlidePanelMainContent from '../common/SlidePanelMainContent';
 import SlidePanelPanelContent from '../common/SlidePanelPanelContent';
