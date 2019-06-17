@@ -71,6 +71,7 @@ const TabRollup = ({
     onMouseDown={disableFocusStyles}
     ref={tabRef}
     aria-current={isSelected}
+    aria-haspopup
     data-focus-styles-enabled
   >
     <div className={cx('tab-inner')} data-tab-menu-inner>

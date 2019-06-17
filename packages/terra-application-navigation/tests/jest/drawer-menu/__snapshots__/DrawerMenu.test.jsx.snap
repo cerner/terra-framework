@@ -7,6 +7,7 @@ exports[`DrawerMenu should render default element 1`] = `
   <div
     className="drawer-menu"
     data-navigation-drawer-menu={true}
+    role="menu"
     tabIndex={0}
   >
     <div
@@ -42,6 +43,7 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
   <div
     className="drawer-menu"
     data-navigation-drawer-menu={true}
+    role="menu"
     tabIndex={0}
   >
     <div

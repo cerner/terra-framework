@@ -171,7 +171,7 @@ const PopupMenu = ({
 
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   return (
-    <div className={cx('container', { 'is-fill': isHeightBounded })} role="presentation" onKeyDown={myKeyDown} tabIndex="0" ref={containerRef}>
+    <div className={cx('container', { 'is-fill': isHeightBounded })} role="menu" onKeyDown={myKeyDown} tabIndex="0" ref={containerRef}>
       <ContentContainer
         header={<ActionHeader title={title} />}
         footer={footer || <ActionFooter />}

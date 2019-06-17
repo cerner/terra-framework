@@ -42,7 +42,7 @@ exports[`UtilityMenu should render default element 1`] = `
     <div
       className="container"
       onKeyDown={[Function]}
-      role="presentation"
+      role="menu"
       tabIndex="0"
     >
       <ContentContainer
@@ -241,7 +241,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
     <div
       className="container"
       onKeyDown={[Function]}
-      role="presentation"
+      role="menu"
       tabIndex="0"
     >
       <ContentContainer
@@ -719,7 +719,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
     <div
       className="container"
       onKeyDown={[Function]}
-      role="presentation"
+      role="menu"
       tabIndex="0"
     >
       <ContentContainer

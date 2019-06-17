@@ -60,6 +60,7 @@ exports[`UtilityMenuHeaderButton should render default element 1`] = `
     }
   >
     <button
+      aria-haspopup={true}
       aria-label="Terra.applicationNavigation.header.utilityButtonTitle"
       className="utility-button"
       data-application-header-utility={true}
@@ -166,6 +167,7 @@ exports[`UtilityMenuHeaderButton should render with click callback 1`] = `
     onClick={[MockFunction]}
   >
     <button
+      aria-haspopup={true}
       aria-label="Terra.applicationNavigation.header.utilityButtonTitle"
       className="utility-button"
       data-application-header-utility={true}
@@ -301,6 +303,7 @@ exports[`UtilityMenuHeaderButton should render with function callbacks 1`] = `
     }
   >
     <button
+      aria-haspopup={true}
       aria-label="Terra.applicationNavigation.header.utilityButtonTitle"
       className="utility-button"
       data-application-header-utility={true}

@@ -2,6 +2,7 @@
 
 exports[`ExtensionRollup should render default element 1`] = `
 <div
+  aria-haspopup={true}
   aria-label="Terra.applicationNavigation.extensions.rollupButtonDescription"
   className="extension-rollup"
   data-application-extension-rollup={true}
@@ -31,6 +32,7 @@ exports[`ExtensionRollup should render default element 1`] = `
 
 exports[`ExtensionRollup should render prop data 1`] = `
 <div
+  aria-haspopup={true}
   aria-label="Terra.applicationNavigation.extensions.rollupButtonDescription"
   className="extension-rollup"
   data-application-extension-rollup={true}
@@ -65,6 +67,7 @@ exports[`ExtensionRollup should render prop data 1`] = `
 
 exports[`ExtensionRollup should render with ref 1`] = `
 <div
+  aria-haspopup={true}
   aria-label="Terra.applicationNavigation.extensions.rollupButtonDescription"
   className="extension-rollup"
   data-application-extension-rollup={true}
@@ -94,6 +97,7 @@ exports[`ExtensionRollup should render with ref 1`] = `
 
 exports[`ExtensionRollup should render with selection callback 1`] = `
 <div
+  aria-haspopup={true}
   aria-label="Terra.applicationNavigation.extensions.rollupButtonDescription"
   className="extension-rollup"
   data-application-extension-rollup={true}

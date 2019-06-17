@@ -58,6 +58,7 @@ const ExtensionRollup = ({
     onMouseDown={disableFocusStyles}
     title={intl.formatMessage({ id: 'Terra.applicationNavigation.extensions.rollupButtonDescription' })}
     aria-label={intl.formatMessage({ id: 'Terra.applicationNavigation.extensions.rollupButtonDescription' })}
+    aria-haspopup
     data-focus-styles-enabled
     data-application-extension-rollup
   >

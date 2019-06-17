@@ -102,7 +102,7 @@ const DrawerMenu = ({
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   return (
     <div className={cx('drawer-container')}>
-      <div className={cx('drawer-menu')} tabIndex={0} data-navigation-drawer-menu>
+      <div className={cx('drawer-menu')} role="menu" tabIndex={0} data-navigation-drawer-menu>
         <div className={cx('vertical-overflow-container')}>
           <div className={cx('header')}>
             <div className={cx('header-background-fill')}>
