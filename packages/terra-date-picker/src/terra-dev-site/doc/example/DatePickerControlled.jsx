@@ -19,7 +19,7 @@ const defaultProps = {
 class DatePickerExample extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { date: this.props.selectedDate };
+    this.state = { date: this.props.value };
     this.handleDateChange = this.handleDateChange.bind(this);
     this.handleDateChangeRaw = this.handleDateChangeRaw.bind(this);
   }
@@ -41,11 +41,11 @@ Selected ISO Date:
         </p>
         <Field label="Enter Date" htmlFor="controlled-dates">
           <DatePicker
-            name="date-input"
+            name="controlled-input"
             id="controlled-dates"
             onChange={this.handleDateChange}
             onChangeRaw={this.handleDateChangeRaw}
-            value={this.props.value}
+            value={this.state.date}
           />
         </Field>
       </div>

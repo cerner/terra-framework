@@ -144,7 +144,7 @@ class DatePicker extends React.Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const selectedDate = nextProps.value || nextProps.selectedDate
+    const selectedDate = nextProps.value || nextProps.selectedDate;
     if (selectedDate !== prevState.prevPropsSelectedDate) {
       const newDate = DateUtil.createSafeDate(selectedDate);
 
@@ -363,12 +363,12 @@ class DatePicker extends React.Component {
 
       // If value is not a value date, keep the previous selected date in the picker.
       if (selectedDateInPicker === undefined) {
-        selectedDateInPicker = this.state.selectedDate
+        selectedDateInPicker = this.state.selectedDate;
       }
     } else {
-      selectedDateInPicker = this.state.selectedDate
+      selectedDateInPicker = this.state.selectedDate;
     }
-    
+
     const portalPicker = (
       <ReactDatePicker
         {...customProps}

@@ -20,8 +20,8 @@ import DatePickerMinMax from '../example/DatePickerMinMax';
 import DatePickerMinMaxSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DatePickerMinMax';
 import DatePickerDefaultDate from '../example/DatePickerDefaultDate';
 import DatePickerDefaultDateSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DatePickerDefaultDate';
-import DatePickerDefaultControlled from '../example/DatePickerControlled';
-import DatePickerDefaultControlledSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DatePickerControlled';
+import DatePickerControlled from '../example/DatePickerControlled';
+import DatePickerControlledSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DatePickerControlled';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (

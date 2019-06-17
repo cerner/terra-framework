@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Allow terra-date-picker to be a controlled component.
 
 4.3.0 - (June 12, 2019)
 ------------------

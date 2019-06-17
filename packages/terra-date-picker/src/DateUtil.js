@@ -17,7 +17,7 @@ class DateUtil {
     return momentDate.isValid() ? momentDate : undefined;
   }
 
-    /**
+  /**
    * Determines the default value of the select.
    * @param {Object} props - The component props.
    * @return {array|number|string|null} - The default value. Returns null for controlled components.
@@ -27,7 +27,7 @@ class DateUtil {
 
     if (value !== undefined) {
       return DateUtil.createSafeDate(value);
-    } 
+    }
 
     return DateUtil.createSafeDate(selectedDate);
   }
@@ -185,7 +185,7 @@ class DateUtil {
     return value.length === 0 || /^[\d\/.]+$/.test(value);
   }
 
-    /**
+  /**
    * Converts an ISO string to the given format.
    * @param {string} iSODate - The ISO string to convert.
    * @param {string} format - The desired date format for the conversion

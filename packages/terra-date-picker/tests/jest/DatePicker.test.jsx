@@ -96,3 +96,8 @@ it('should render a required date input and date picker', () => {
   const datePicker = shallowWithIntl(<DatePicker name="date-input" utcOffset={0} required />);
   expect(datePicker).toMatchSnapshot();
 });
+
+it('should render a controlled date picker', () => {
+  const datePicker = shallowWithIntl(<DatePicker name="date-input" value="2019-06-15" utcOffset={0} />);
+  expect(datePicker).toMatchSnapshot();
+});
