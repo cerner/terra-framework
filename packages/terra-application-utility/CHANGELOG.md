@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Removed all inline styles from Dev-site components and implemented the same styles using external css.
 
+2.12.0 - (June 12, 2019)
+------------------
+### Removed
+* Removed node_modules from .npmignore
+
 2.11.0 - (May 21, 2019)
 ------------------
 ### Changed

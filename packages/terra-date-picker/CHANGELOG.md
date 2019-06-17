@@ -3,9 +3,19 @@ Changelog
 
 Unreleased
 ----------
+
+4.3.0 - (June 12, 2019)
+------------------
+### Removed
+* Removed node_modules from .npmignore
+
 ### Changed
 * Removed all inline styles from Dev-site components and implemented the same styles using external css.
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+* Replaced terra-hookshot with terra-popup
+
+### Fixed
+* Do not always force to return focus to the calendar button after the picker closes.
 
 4.2.0 - (May 21, 2019)
 ------------------
@@ -32,6 +42,7 @@ Unreleased
 * Honor min/max range when only either minDate or maxDate is set.
 * Changed the onBlur event to get triggered only when the entire date picker component loses focus.
 * Updated upgrade guide.
+* The date picker now renders in a react portal on narrow screens
 
 ### Added
 * Component specific handling for pressing Escape key to close the Date Picker
@@ -50,7 +61,6 @@ Unreleased
 ------------------
 ### Changed
 * Limited the characters that could be used in terra-date-picker to numeric, '.', and '/'.
-* The date picker now renders in a react portal on narrow screens
 * Moved packages we use solely in doc examples and tests to devDependencies
 
 3.13.0 - (April 16, 2019)
