@@ -4,10 +4,9 @@ import classNames from 'classnames/bind';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import Slide from './Slide';
-import styles from './SlideGroup.module.scss';
 import transitions from './Slide.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNames.bind(transitions);
 
 const propTypes = {
   /**

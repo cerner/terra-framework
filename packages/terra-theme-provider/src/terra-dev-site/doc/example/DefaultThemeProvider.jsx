@@ -1,8 +1,12 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import ThemeProvider from 'terra-theme-provider/lib/ThemeProvider';
 import MockThemeComponent from 'terra-theme-provider/lib/terra-dev-site/doc/example/MockThemeComponent';
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+import styles from './DefaultThemeProvider.scss';
+
+const cx = classNames.bind(styles);
 
 class DefaultThemeProvider extends React.Component {
   constructor(props) {
@@ -26,7 +30,7 @@ class DefaultThemeProvider extends React.Component {
 
     if (supportsCSSVars()) {
       themeSwitcher = (
-        <div style={{ marginBottom: '1rem' }}>
+        <div className={cx('theme-switcher-wrapper')}>
           <label htmlFor="theme"> Theme: </label>
           <select id="theme" value={this.state.theme} onChange={this.handleThemeChange}>
             <option value="">Default</option>
