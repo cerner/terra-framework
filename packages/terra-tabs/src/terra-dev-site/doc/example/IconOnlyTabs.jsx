@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconBookmark from 'terra-icon/lib/icon/IconBookmark';
@@ -7,6 +8,9 @@ import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
 import Tabs from 'terra-tabs/lib/Tabs';
 import TabContent from 'terra-tabs/lib/terra-dev-site/doc/example/TabContentTemplate';
 /* eslint-enable import/no-unresolved, import/extensions */
+import styles from './common/TabExample.scss';
+
+const cx = classNames.bind(styles);
 
 const IconOnlyTabs = () => {
   const searchTab = (
@@ -34,7 +38,7 @@ const IconOnlyTabs = () => {
   );
 
   return (
-    <div style={{ padding: '10px' }}>
+    <div className={cx('content-wrapper')}>
       <Tabs>
         {searchTab}
         {briefcaseTab}
