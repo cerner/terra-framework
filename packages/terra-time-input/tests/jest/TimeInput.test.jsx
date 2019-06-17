@@ -145,3 +145,31 @@ it('should pass in refCallback as the ref prop of the hour input element', () =>
   expect(refCallback).toBeCalled();
   expect(wrapper).toMatchSnapshot();
 });
+
+it('should render a default time input with seconds', () => {
+  const showSeconds = true;
+  const timeInput = <TimeInput name="time-input" hasSeconds={showSeconds} />;
+  const wrapper = mountWithIntl(timeInput);
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should ignore invalid times properly', () => {
+  const showSeconds = true;
+  const timeInput = <TimeInput name="time-input" value="11:20:3" hasSeconds={showSeconds} />;
+  const wrapper = shallowWithIntl(timeInput);
+  expect(wrapper).toMatchSnapshot();
+
+  expect(wrapper.instance().state.hour).toEqual('');
+  expect(wrapper.instance().state.minute).toEqual('');
+});
+
+it('should render a timepicker with seconds properly on mobile devices', () => {
+  spyOn(window, 'matchMedia').and.returnValue({ matches: true });
+  window.ontouchstart = 'true';
+
+  const showSeconds = true;
+  const timeInput = <TimeInput name="time-input" hasSeconds={showSeconds} />;
+  const wrapper = renderWithIntl(timeInput);
+  expect(wrapper).toMatchSnapshot();
+  delete window.ontouchstart;
+});

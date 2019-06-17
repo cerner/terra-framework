@@ -770,7 +770,7 @@ class TimeInput extends React.Component {
           </label>
           {this.props.hasSeconds && (
             [
-              <span className={cx('time-spacer')}>:</span>,
+              <span className={cx('time-spacer')} key="colon-span">:</span>,
               <Input
                 {...inputAttributes}
                 {...secondAttributes}
@@ -788,8 +788,9 @@ class TimeInput extends React.Component {
                 size="2"
                 pattern="\d*"
                 disabled={disabled}
+                key="seconds-input"
               />,
-              <label htmlFor={instanceSecondAttrs.id} className={cx('mobile-input-label')}>
+              <label htmlFor={instanceSecondAttrs.id} className={cx('mobile-input-label')} key="seconds-label">
                 {this.context.intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
               </label>,
             ])
@@ -922,7 +923,7 @@ class TimeInput extends React.Component {
         />
         {this.props.hasSeconds && (
           [
-            <span className={cx('time-spacer')}>:</span>,
+            <span className={cx('time-spacer')} key="colon-span">:</span>,
             <Input
               {...inputAttributes}
               {...secondAttributes}
@@ -941,6 +942,7 @@ class TimeInput extends React.Component {
               size="2"
               pattern="\d*"
               disabled={disabled}
+              key="seconds-input"
             />,
           ])
         }
