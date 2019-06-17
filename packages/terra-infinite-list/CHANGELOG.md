@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Removed
+* Removed '-ms-overflow-style' style
 
 3.6.0 - (June 12, 2019)
 ------------------
