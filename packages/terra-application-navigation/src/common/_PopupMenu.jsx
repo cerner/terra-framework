@@ -152,18 +152,14 @@ const PopupMenu = ({
     }
   }
 
-  let footer;
+  let endContent;
   if (onSelectFooterItem) {
-    footer = (
-      <ActionFooter
-        end={(
-          <Button
-            text={footerText}
-            onClick={onSelectFooterItem}
-            onKeyDown={handleButtonKeyDown}
-            refCallback={setButtonRef}
-          />
-        )}
+    endContent = (
+      <Button
+        text={footerText}
+        onClick={onSelectFooterItem}
+        onKeyDown={handleButtonKeyDown}
+        refCallback={setButtonRef}
       />
     );
   }
@@ -173,7 +169,7 @@ const PopupMenu = ({
     <div className={cx('container', { 'is-fill': isHeightBounded })}>
       <ContentContainer
         header={<ActionHeader title={title} />}
-        footer={footer || <ActionFooter />}
+        footer={<ActionFooter end={endContent} />}
         fill={isHeightBounded}
       >
         <div className={cx('content-header')}>
