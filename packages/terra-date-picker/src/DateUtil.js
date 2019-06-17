@@ -18,9 +18,9 @@ class DateUtil {
   }
 
   /**
-   * Determines the default value of the select.
+   * Determines the default value for the date picker.
    * @param {Object} props - The component props.
-   * @return {array|number|string|null} - The default value. Returns null for controlled components.
+   * @return {object|undefined} - The default date value.
    */
   static defaultValue(props) {
     const { selectedDate, value } = props;

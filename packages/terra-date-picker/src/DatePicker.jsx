@@ -125,7 +125,7 @@ class DatePicker extends React.Component {
     super(props);
 
     this.state = {
-      selectedDate: DateUtil.defaultValue(props), // DateUtil.createSafeDate(props.selectedDate),
+      selectedDate: DateUtil.defaultValue(props),
       prevPropsSelectedDate: props.value || props.selectedDate,
     };
 
@@ -373,8 +373,6 @@ class DatePicker extends React.Component {
       <ReactDatePicker
         {...customProps}
         selected={selectedDateInPicker}
-        // selected={value === undefined ? this.state.selectedDate : DateUtil.createSafeDate(value)}
-        // value={this.state.selectedDate ? DateUtil.formatISODate(this.state.selectedDate.format(), DateUtil.getFormatByLocale(this.context.intl.locale)) : undefined}
         value={formattedValue}
         onBlur={this.handleBlur}
         onChange={this.handleChange}
@@ -417,9 +415,6 @@ class DatePicker extends React.Component {
       <ReactDatePicker
         {...customProps}
         selected={selectedDateInPicker}
-        // selected={this.state.selectedDate}
-        // selected={value === undefined ? this.state.selectedDate : DateUtil.createSafeDate(value)}
-        // value={this.state.selectedDate ? DateUtil.formatISODate(this.state.selectedDate.format(), DateUtil.getFormatByLocale(this.context.intl.locale)) : undefined}
         value={formattedValue}
         onBlur={this.handleBlur}
         onChange={this.handleChange}
