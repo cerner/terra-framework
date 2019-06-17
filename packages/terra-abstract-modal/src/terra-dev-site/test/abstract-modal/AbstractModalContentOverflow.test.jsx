@@ -26,7 +26,7 @@ class ModalContentOverflow extends React.Component {
     return (
       <div id="modal-overflow">
         <AbstractModal
-          ariaLabel="Terra Modal Brett"
+          ariaLabel="Terra Modal"
           isOpen={this.state.isOpen}
           onRequestClose={this.handleCloseModal}
           classNameModal="test-background-class"

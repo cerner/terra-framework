@@ -3,6 +3,15 @@ Changelog
 
 Unreleased
 ----------
+
+5.8.0 - (June 12, 2019)
+------------------
+### Removed
+* Removed node_modules from .npmignore
+
+### Fixed
+* Replaced classList shim with full polyfill to support d3
+
 ### Changed
 * Removed all inline styles from Dev-site components and implemented the same styles using external css.
 
