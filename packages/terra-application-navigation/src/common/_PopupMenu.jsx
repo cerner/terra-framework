@@ -95,7 +95,6 @@ const defaultProps = {
 const PopupMenu = ({
   title, footerText, onSelectFooterItem, onSelectMenuItem, customContent, userConfig, menuItems, isHeightBounded, showSelections,
 }) => {
-  const containerRef = useRef();
   const listRef = useRef();
   const buttonRef = useRef();
 
@@ -171,7 +170,7 @@ const PopupMenu = ({
 
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   return (
-    <div className={cx('container', { 'is-fill': isHeightBounded })} role="menu" onKeyDown={myKeyDown} tabIndex="0" ref={containerRef}>
+    <div className={cx('container', { 'is-fill': isHeightBounded })}>
       <ContentContainer
         header={<ActionHeader title={title} />}
         footer={footer || <ActionFooter />}
@@ -184,7 +183,7 @@ const PopupMenu = ({
             </div>
           ) : undefined}
           {userConfig ? <PopupMenuUser userConfig={userConfig} /> : null}
-          <ul className={cx('utility-list')} role="listbox" ref={listRef}>
+          <ul className={cx('utility-list')} ref={listRef} role="menu" onKeyDown={myKeyDown} tabIndex="0">
             {menuItems.map(item => (
               <PopupMenuListItem
                 key={item.key}
