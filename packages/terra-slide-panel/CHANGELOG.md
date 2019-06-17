@@ -3,6 +3,14 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Corrected to allow Slide Panel's DOM order to flex based on the 'panelPosition' prop.
+
+3.6.0 - (June 12, 2019)
+------------------
+### Removed
+* Removed node_modules from .npmignore
+
 ### Changed
 * Removed all inline styles and implemented the same styles using external css.
 

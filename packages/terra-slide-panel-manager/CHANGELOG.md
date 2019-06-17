@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+5.1.0 - (June 12, 2019)
+------------------
+### Removed
+* Removed node_modules from .npmignore
+
 ### Changed
 * Removed all inline styles and implemented the same styles using external css.
 

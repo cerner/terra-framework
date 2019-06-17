@@ -5,6 +5,7 @@ import KeyCode from 'keycode-js';
 import onClickOutside from 'react-onclickoutside';
 import ResizeObserver from 'resize-observer-polyfill';
 import styles from './HookshotContent.module.scss';
+import 'classlist-polyfill'; // Full polyfill for browsers with no classList support
 
 const cx = classNames.bind(styles);
 
@@ -34,19 +35,6 @@ const propTypes = {
    */
   refCallback: PropTypes.func,
 };
-
-
-// shim for SVGElement classList for IE 10 / IE 11
-// More info: https://github.com/Pomax/react-onclickoutside#ie-does-not-support-classlist-for-svg-elements
-if (typeof SVGElement !== 'undefined' && !('classList' in SVGElement.prototype)) {
-  Object.defineProperty(SVGElement.prototype, 'classList', {
-    get() {
-      return {
-        contains: className => this.className.baseVal.split(' ').indexOf(className) !== -1,
-      };
-    },
-  });
-}
 
 class HookshotContent extends React.Component {
   constructor(props) {

@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import SlidePanel from '../../../SlidePanel';
+import SlidePanel, { SlidePanelPositions } from '../../../SlidePanel';
 import SlidePanelMainContent from '../common/SlidePanelMainContent';
 import SlidePanelPanelContent from '../common/SlidePanelPanelContent';
 import styles from './SlidePanelDocCommon.test.scss';
@@ -13,7 +14,7 @@ const SlidePanelFill = () => (
       mainContent={<SlidePanelMainContent />}
       panelContent={<SlidePanelPanelContent />}
       panelBehavior="squish"
-      panelPosition="end"
+      panelPosition={SlidePanelPositions.END}
       panelSize="small"
       isOpen
       fill
