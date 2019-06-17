@@ -102,7 +102,7 @@ const PopupMenu = ({
     buttonRef.current = node;
   }
 
-  function handleDown(event) {
+  function handleArrowDown(event) {
     if (listRef.current.hasChildNodes()) {
       const sibling = listRef.current.firstChild;
       if (sibling) {
@@ -112,7 +112,7 @@ const PopupMenu = ({
     }
   }
 
-  function handleUp(event) {
+  function handleArrowUp(event) {
     if (listRef.current.hasChildNodes()) {
       const sibling = listRef.current.lastChild;
       if (sibling) {
@@ -126,15 +126,15 @@ const PopupMenu = ({
     if (buttonRef.current) {
       buttonRef.current.focus();
     } else if (event.nativeEvent.keyCode === KEY_UP) {
-      handleUp(event);
+      handleArrowUp(event);
     } else if (event.nativeEvent.keyCode === KEY_DOWN) {
-      handleDown(event);
+      handleArrowDown(event);
     }
   }
 
   function handleKeyDown(event) {
     if (event.nativeEvent.keyCode === KEY_DOWN) {
-      handleDown(event);
+      handleArrowDown(event);
     }
   }
 
@@ -146,9 +146,9 @@ const PopupMenu = ({
       return;
     }
     if (event.nativeEvent.keyCode === KEY_UP) {
-      handleUp(event);
+      handleArrowUp(event);
     } else if (event.nativeEvent.keyCode === KEY_DOWN) {
-      handleDown(event);
+      handleArrowDown(event);
     }
   }
 
