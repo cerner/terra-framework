@@ -2,7 +2,7 @@ import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import AbstractModal from 'terra-abstract-modal/lib/AbstractModal';
 import classNames from 'classnames/bind';
-import styles from './AbstractModalIsFullscreen.scss';
+import styles from './AbstractModalDocCommon.scss';
 
 const cx = classNames.bind(styles);
 

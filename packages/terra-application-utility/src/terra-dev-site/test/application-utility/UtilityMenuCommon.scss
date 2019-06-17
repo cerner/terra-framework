@@ -1,15 +1,15 @@
-@import './ApplicationUtilityTestCommon';
-
 :local {
   .avatar-wrapper {
-    @extend %common-avatar-wrapper;
+    display: grid;
   }
 
   .avatar {
-    @extend %common-avatar;
+    height: 1.857rem;
+    width: 1.857rem;
   }
 
   .content-wrapper {
-    @extend %common-content-wrapper;
+    height: 300px;
+    width: 300px;
   }
 }

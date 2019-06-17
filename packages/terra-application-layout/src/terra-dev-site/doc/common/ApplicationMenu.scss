@@ -1,9 +1,7 @@
-@import './ApplicationLayoutDocCommon';
-
 :local {
   .footer {
-    @extend %common-container-content;
     border-top: 1px solid #d3d3d3;
+    padding: 10px;
   }
 
   .custom-event-button {

@@ -4,7 +4,7 @@ import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-
 import ContentContainer from 'terra-content-container';
 import ActionHeader from 'terra-action-header';
 import classNames from 'classnames/bind';
-import styles from './UtilityOption.scss';
+import styles from './ApplicationLayoutDocCommon.scss';
 
 const cx = classNames.bind(styles);
 

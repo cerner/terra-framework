@@ -1,8 +1,0 @@
-@import './ApplicationUtilityTestCommon';
-
-:local {
-  .content-wrapper {
-    @extend %common-application-content-wrapper;
-    width: 150px;
-  }
-}

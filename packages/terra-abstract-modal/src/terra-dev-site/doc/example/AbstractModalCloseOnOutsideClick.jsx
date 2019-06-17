@@ -3,7 +3,7 @@ import React from 'react';
 import AbstractModal from 'terra-abstract-modal/lib/AbstractModal';
 import classNames from 'classnames/bind';
 import styles from './ExampleAbstractSize.module.scss';
-import generalStyles from './AbstractModalCloseOnOutsideClick.scss';
+import generalStyles from './AbstractModalDocCommon.scss';
 
 const cx = classNames.bind(generalStyles);
 

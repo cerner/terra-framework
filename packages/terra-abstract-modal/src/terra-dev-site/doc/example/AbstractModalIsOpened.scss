@@ -1,8 +1,0 @@
-@import './AbstractModalCommon';
-
-:local {
-  .content-wrapper {
-    @extend %common-content-wrapper;
-    background-color: #faebd7;
-  }
-}
