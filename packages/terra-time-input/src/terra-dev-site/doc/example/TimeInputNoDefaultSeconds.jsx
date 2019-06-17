@@ -1,12 +1,11 @@
-/* eslint-disable import/no-unresolved */
 import React from 'react';
+// eslint-disable-next-line import/no-unresolved, import/extensions
 import TimeInput from 'terra-time-input/lib/TimeInput';
-import TimeUtil from 'terra-time-input/lib/TimeUtil';
 
 class timeInput extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { time: '21:24' };
+    this.state = { time: '', hasSeconds: true };
     this.handleTimeChange = this.handleTimeChange.bind(this);
   }
 
@@ -22,10 +21,9 @@ Time Provided:
           <span style={{ display: 'inline-block' }}>{this.state.time}</span>
         </p>
         <TimeInput
-          name="time-input-value"
-          value={this.state.time}
+          name="time-input-default"
           onChange={this.handleTimeChange}
-          variant={TimeUtil.FORMAT_12_HOUR}
+          hasSeconds={this.state.hasSeconds}
         />
       </div>
     );

@@ -16,6 +16,14 @@ import TimeInputNoDefaultTime from '../example/TimeInputNoDefaultTime';
 import TimeInputNoDefaultTimeSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TimeInputNoDefaultTime';
 import TimeInputNoDefaultTwelveHour from '../example/TimeInputNoDefaultTwelveHour';
 import TimeInputNoDefaultTwelveHourSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TimeInputNoDefaultTwelveHour';
+import TimeInputNoDefaultSeconds from '../example/TimeInputNoDefaultSeconds';
+import TimeInputNoDefaultSecondsSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TimeInputNoDefaultSeconds';
+import TimeInputDefaultSeconds from '../example/TimeInputDefaultSeconds';
+import TimeInputDefaultSecondsSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TimeInputDefaultSeconds';
+import TimeInputDefaultTwelveHourSeconds from '../example/TimeInputDefaultTwelveHourSeconds';
+import TimeInputDefaultTwelveHourSecondsSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TimeInputDefaultTwelveHourSeconds';
+import TimeInputNoDefaultTwelveHourSeconds from '../example/TimeInputNoDefaultTwelveHourSeconds';
+import TimeInputNoDefaultTwelveHourSecondsSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TimeInputNoDefaultTwelveHourSeconds';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
@@ -43,6 +51,26 @@ const DocPage = () => (
         title: 'With Default Time - 12 Hour',
         example: <TimeInputDefaultTwelveHour />,
         source: TimeInputDefaultTwelveHourSrc,
+      },
+      {
+        title: 'With Default Time - Seconds',
+        example: <TimeInputDefaultSeconds />,
+        source: TimeInputDefaultSecondsSrc,
+      },
+      {
+        title: 'Without Default Time - Seconds',
+        example: <TimeInputNoDefaultSeconds />,
+        source: TimeInputNoDefaultSecondsSrc,
+      },
+      {
+        title: 'Without Default Time - 12 Hour - Seconds',
+        example: <TimeInputNoDefaultTwelveHourSeconds />,
+        source: TimeInputNoDefaultTwelveHourSecondsSrc,
+      },
+      {
+        title: 'With Default Time - 12 Hour - Seconds',
+        example: <TimeInputDefaultTwelveHourSeconds />,
+        source: TimeInputDefaultTwelveHourSecondsSrc,
       },
     ]}
     propsTables={[

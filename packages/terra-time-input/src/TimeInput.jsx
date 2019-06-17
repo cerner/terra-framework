@@ -361,11 +361,12 @@ class TimeInput extends React.Component {
     }
 
     // Move focus to the merdiem for 12 hours times if the minute input has a valid and complete entry.
+    // Move focus to the seconds if hasSeconds is true and minute input has a valid and complete entry.
     if (inputValue.length === 2) {
-      if (this.props.variant === TimeUtil.FORMAT_12_HOUR && this.meridiemSelect) {
-        this.meridiemSelect.focus();
-      } else if (this.props.hasSeconds) {
+      if (this.props.hasSeconds) {
         this.secondInput.focus();
+      } else if (this.props.variant === TimeUtil.FORMAT_12_HOUR && this.meridiemSelect) {
+        this.meridiemSelect.focus();
       }
     }
 
@@ -373,12 +374,12 @@ class TimeInput extends React.Component {
   }
 
   handleSecondChange(event) {
-    // if (!TimeUtil.validNumericInput(event.target.value)) {
-    //   return;
-    // }
+    if (!TimeUtil.validNumericInput(event.target.value)) {
+      return;
+    }
 
     let inputValue = event.target.value;
-    const stateValue = this.state.minute;
+    const stateValue = this.state.second;
     const maxValue = 59;
 
     // Ignore the entry if the value did not change or it is invalid.
@@ -397,7 +398,7 @@ class TimeInput extends React.Component {
       }
     }
 
-    // Move focus to the merdiem for 12 hours times if the minute input has a valid and complete entry.
+    // Move focus to the merdiem for 12 hours times if the second input has a valid and complete entry.
     if (this.props.variant === TimeUtil.FORMAT_12_HOUR && inputValue.length === 2 && this.meridiemSelect) {
       this.meridiemSelect.focus();
     }
@@ -520,7 +521,11 @@ class TimeInput extends React.Component {
     }
 
     if (event.keyCode === KeyCode.KEY_RIGHT) {
-      this.focusSecond(event);
+      if (this.props.hasSeconds){
+        this.focusSecond(event);
+      } else {
+        this.focusMeridiem();
+      }
     }
   }
 
@@ -549,7 +554,7 @@ class TimeInput extends React.Component {
 
     if (event.keyCode === KeyCode.KEY_LEFT
         || event.keyCode === KeyCode.KEY_DELETE
-        || event.keyCode === KeyCode.KEY_BACK_SPACE) {
+        || event.keyCode === KeyCode.KEY_BACKSPACE) {
       this.focusMinute(event);
     }
 
@@ -610,8 +615,10 @@ class TimeInput extends React.Component {
 
       if (hour === '' && minute === '' && second === '') {
         this.props.onChange(event, '');
-      } else {
+      } else if (this.state.second) {
         this.props.onChange(event, this.formatHour(hour, meridiem).concat(':', minute, ':', second));
+      } else {
+        this.props.onChange(event, this.formatHour(hour, meridiem).concat(':', minute));
       }
     }
   }
@@ -644,7 +651,11 @@ class TimeInput extends React.Component {
     if (event.keyCode === KeyCode.KEY_LEFT
         || event.keyCode === KeyCode.KEY_DELETE
         || event.keyCode === KeyCode.KEY_BACK_SPACE) {
-      this.minuteInput.focus();
+      if (this.props.hasSeconds) {
+        this.secondInput.focus();
+      } else {
+        this.minuteInput.focus();
+      }
       event.preventDefault();
     }
   }
@@ -679,8 +690,11 @@ class TimeInput extends React.Component {
       if (this.props.variant === TimeUtil.FORMAT_12_HOUR && this.state.meridiem === this.postMeridiem && hour > 12) {
         hour += 12;
       }
-
-      timeValue = 'T'.concat(hour, ':', this.state.minute, ':', this.state.second);
+      if (this.props.hasSeconds) {
+        timeValue = 'T'.concat(hour, ':', this.state.minute, ':', this.state.second);
+      } else {
+        timeValue = 'T'.concat(hour, ':', this.state.minute);
+      }
     }
 
     if (!instanceHoursAttrs.id) {
@@ -839,8 +853,11 @@ class TimeInput extends React.Component {
       if (this.props.variant === TimeUtil.FORMAT_12_HOUR && this.state.meridiem === this.postMeridiem) {
         hour += 12;
       }
-
-      timeValue = 'T'.concat(hour, ':', this.state.minute, ':', this.state.second);
+      if (this.props.hasSeconds) {
+        timeValue = 'T'.concat(hour, ':', this.state.minute, ':', this.state.second);
+      } else {
+        timeValue = 'T'.concat(hour, ':', this.state.minute);
+      }
     }
 
     /* eslint-disable jsx-a11y/no-static-element-interactions */

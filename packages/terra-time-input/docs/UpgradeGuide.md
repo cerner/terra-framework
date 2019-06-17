@@ -1,5 +1,13 @@
 # Terra Time Input Upgrade Guide
 
+## Changes from version 4 to version 5
+
+### New prop
+* Added `hasSeconds`
+
+### Changes
+The `hasSeconds` prop allows implementation of the component with and optional seconds field. The `hasSeconds` prop is a boolean that defaults to false, so the seconds field has to be explicitly specified when the component is intstantiated. Defaulting `hasSeconds` to false prevents the changes from breaking previous functionality of the component in use.
+
 ## Changes from version 3 to version 4
 
 ### New props
