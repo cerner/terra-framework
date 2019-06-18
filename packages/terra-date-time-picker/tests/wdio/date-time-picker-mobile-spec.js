@@ -15,7 +15,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
   describe('Date Time Picker Twelve Hour Mobile - Default with no time', () => {
     before(() => browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-12-hour-mobile'));
 
-    Terra.it.validatesElement('default', { axeRules: { rules: ignoredA11y } });
+    Terra.it.validatesElement({ axeRules: { rules: ignoredA11y } });
   });
 
   describe('Date Time Picker Twelve Hour Mobile - Clicking Meridiem updates the time', () => {
@@ -23,7 +23,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-12-hour-mobile');
 
       browser.click('//*[@id="datetimeValueProvided"]/div[2]/div/div[3]/button[1]');
-      Terra.validates.element('default', { axeRules: { rules: ignoredA11y } });
+      Terra.validates.element({ axeRules: { rules: ignoredA11y } });
 
       browser.click('//*[@id="datetimeValueProvided"]/div[2]/div/div[3]/button[2]');
     });
@@ -36,7 +36,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
       browser.click('//*[@id="terra-time-hour-input"]');
     });
 
-    Terra.it.validatesElement('default', { axeRules: { rules: ignoredA11y } });
+    Terra.it.validatesElement({ axeRules: { rules: ignoredA11y } });
   });
 
   describe('Date Time Picker Twelve Hour Mobile - Focus Minute Styles', () => {
@@ -46,6 +46,6 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
       browser.click('//*[@id="terra-time-minute-input"]');
     });
 
-    Terra.it.validatesElement('default', { axeRules: { rules: ignoredA11y } });
+    Terra.it.validatesElement({ axeRules: { rules: ignoredA11y } });
   });
 });
