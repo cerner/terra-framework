@@ -8,7 +8,7 @@ const cx = classNames.bind(demoStyles);
 const ApplicationHeaderDefault = ({ ...customProps }) => {
   if (customProps.layoutConfig.size !== 'large') {
     return (
-      <div style={{ width: '100%', height: '50px' }}>
+      <div className={cx('demo-extensions-small')}>
         Test Extensions Small
       </div>
     );

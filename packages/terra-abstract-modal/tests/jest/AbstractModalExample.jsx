@@ -29,6 +29,7 @@ class ModalExample extends React.Component {
   }
 
   render() {
+    const { zIndex, isFullscreen, ...otherPropsToTest } = this.props;
     return (
       <div>
         <AbstractModal
@@ -37,6 +38,7 @@ class ModalExample extends React.Component {
           onRequestClose={this.handleCloseModal}
           zIndex={this.props.zIndex}
           isFullscreen={this.props.isFullscreen}
+          {...otherPropsToTest}
         >
           <div>
             <h1>Terra Modal</h1>

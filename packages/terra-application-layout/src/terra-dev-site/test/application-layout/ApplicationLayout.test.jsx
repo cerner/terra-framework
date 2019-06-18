@@ -7,8 +7,12 @@ import Image from 'terra-image';
 import Avatar from 'terra-avatar';
 import ContentContainer from 'terra-content-container';
 import Button from 'terra-button';
+import classNames from 'classnames/bind';
+import styles from './ApplicationLayoutCommon.test.scss';
 
 import ApplicationLayout, { RoutingMenu, Utils } from '../../../ApplicationLayout';
+
+const cx = classNames.bind(styles);
 
 const PageContent = ({ contentName }) => (
   <div>
@@ -205,7 +209,7 @@ const userData = {
  */
 const nameConfig = Object.freeze({
   title: 'Test Application',
-  accessory: <Image variant="rounded" src="https://github.com/cerner/terra-framework/raw/master/terra.png" height="26px" width="26px" />,
+  accessory: <Image variant="rounded" src="https://github.com/cerner/terra-framework/raw/master/terra.png" alt="App logo" height="26px" width="26px" />,
 });
 
 class ApplicationLayoutTest extends React.Component {
@@ -297,7 +301,7 @@ ApplicationLayoutTest.propTypes = {
 const WrappedApplication = withRouter(injectIntl((ApplicationLayoutTest)));
 
 const AppRouter = () => (
-  <div style={{ height: '100%' }}>
+  <div className={cx('app-router')}>
     <MemoryRouter>
       <WrappedApplication />
     </MemoryRouter>

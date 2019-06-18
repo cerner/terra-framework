@@ -9,7 +9,9 @@ import ModalContent from './_ModalContent';
 // Importing WICG Inert polyfill causes Jest to crash
 // Issue logged to Jest repo: https://github.com/facebook/jest/issues/8373
 // This logic avoids importing the polyfill when running Jest tests
-if (process.env.NODE_ENV !== 'test') {
+// It also checks to make sure not to load the inert polyfill if it has already been defined
+// eslint-disable-next-line no-prototype-builtins
+if (process.env.NODE_ENV !== 'test' && !Element.prototype.hasOwnProperty('inert')) {
   // eslint-disable-next-line global-require
   require('wicg-inert');
 }
@@ -38,7 +40,7 @@ const propTypes = {
    */
   closeOnEsc: PropTypes.bool,
   /**
-   * If set to true, the modal will close when a mouseclick is triggered outside the modal.
+   * If set to true, the modal will close when a mouse click is triggered outside the modal.
    */
   closeOnOutsideClick: PropTypes.bool,
   /**
