@@ -1,7 +1,11 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import Tabs from '../../../../Tabs';
 import TabContent from './TabContentTemplate';
+import styles from './TabsTemplate.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   fill: PropTypes.bool,
@@ -15,7 +19,7 @@ const defaultProps = {
 };
 
 const TabsTemplate = props => (
-  <div style={{ height: props.containerHeight }}>
+  <div className={cx(props.containerHeight === 'auto' ? 'content-wrapper' : 'content-wrapper-400')}>
     <Tabs
       tabFill={props.tabFill}
       fill={props.fill}

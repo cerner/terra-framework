@@ -1,0 +1,21 @@
+:local {
+  .content-wrapper {
+    padding: 10px;
+  }
+
+  .tab-content-template {
+    height: 100%;
+    padding: 10px;
+  }
+
+  .custom-display {
+    color: #f00;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .content-container {
+    height: 400px;
+    padding: 10px;
+  }
+}

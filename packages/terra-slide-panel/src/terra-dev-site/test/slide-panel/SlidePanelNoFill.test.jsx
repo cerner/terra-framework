@@ -1,15 +1,19 @@
 import React from 'react';
-import SlidePanel from '../../../SlidePanel';
+import classNames from 'classnames/bind';
+import SlidePanel, { SlidePanelPositions } from '../../../SlidePanel';
 import SlidePanelMainContent from '../common/SlidePanelMainContent';
 import SlidePanelPanelContent from '../common/SlidePanelPanelContent';
+import styles from './SlidePanelDocCommon.test.scss';
+
+const cx = classNames.bind(styles);
 
 const SlidePanelNoFill = () => (
-  <div style={{ height: '200px', overflow: 'auto' }}>
+  <div className={cx('content-wrapper')}>
     <SlidePanel
       mainContent={<SlidePanelMainContent />}
       panelContent={<SlidePanelPanelContent />}
       panelBehavior="squish"
-      panelPosition="end"
+      panelPosition={SlidePanelPositions.END}
       panelSize="small"
       isOpen
     />
