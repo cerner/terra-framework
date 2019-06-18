@@ -7,46 +7,22 @@
   font-size: $datepicker__font-size;
   background-color: #fff;
   color: $datepicker__text-color;
-  border: 1px solid $datepicker__border-color;
-  border-radius: $datepicker__border-radius;
   display: inline-block;
   position: relative;
 }
 
-.react-datepicker__triangle {
-  position: absolute;
-  left: 50px;
+.react-datepicker__arrow[data-align-arrow='top']::after {
+  border-bottom-color: $datepicker__background-color;
 }
 
-
-.react-datepicker-hookshot {
-  margin-left: 5px;
-  margin-right: 5px;
-  outline: 0;
-
-  &[data-placement^="top"] {
-    margin-top: $datepicker__triangle-size + 2px;
-
-    .react-datepicker__triangle {
-      @extend %triangle-arrow-up;
-    }
-  }
-
-  &[data-placement^="bottom"] {
-    margin-bottom: $datepicker__triangle-size + 2px;
-
-    .react-datepicker__triangle {
-      @extend %triangle-arrow-down;
-    }
-  }
+.react-datepicker__arrow[data-align-arrow='bottom']::after {
+  border-top-color: $datepicker__background-color;
 }
 
 .react-datepicker__header {
   text-align: center;
   background-color: $datepicker__background-color;
   border-bottom: 1px solid $datepicker__border-color;
-  border-top-left-radius: $datepicker__border-radius;
-  border-top-right-radius: $datepicker__border-radius;
   padding-top: 8px;
   position: relative;
 
@@ -443,6 +419,16 @@
   display: flex;
   z-index: 2147483647;
   outline: 0;
+
+  .react-datepicker {
+    border: 1px solid $datepicker__border-color;
+    border-radius: $datepicker__border-radius;
+  }
+
+  .react-datepicker__header {
+    border-top-left-radius: $datepicker__border-radius;
+    border-top-right-radius: $datepicker__border-radius;
+  }
 
   .react-datepicker__day-name,
   .react-datepicker__day, .react-datepicker__time-name {

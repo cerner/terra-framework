@@ -3,6 +3,19 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added check to only load inert polyfill if it is not already defined on the Element prototype
+
+### Changed
+* Removed all inline styles from Dev-site components and implemented the same styles using external css.
+
+3.2.0 - (June 12, 2019)
+------------------
+### Changed
+* Cleaned up Jest/WDIO tests
+
+### Removed
+* Removed node_modules from .npmignore
 
 3.1.0 - (May 21, 2019)
 ------------------
