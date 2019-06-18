@@ -177,7 +177,9 @@ const ApplicationNavigation = ({
             // Currently a bug within react-focus-trap with on deactivation and active.
             const toggle = document.querySelector('[data-compact-header-toggle="true"]');
             if (toggle) {
-              toggle.focus();
+              window.requestAnimationFrame(() => {
+                toggle.focus();
+              });
             }
           },
         }}
