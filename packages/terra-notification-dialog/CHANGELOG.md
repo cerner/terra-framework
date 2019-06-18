@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update wdio spec to use Terra.describeViewports
 
 3.2.0 - (June 12, 2019)
 ------------------
@@ -11,10 +13,6 @@ Unreleased
 
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
-<<<<<<< HEAD
-* Update wdio spec to use Terra.describeViewports
-=======
->>>>>>> master
 
 ### Fixed
 * Pressing escape key no longer disables the focus trap in notification dialog, users must make a selection of one of the notification dialog buttons to dismiss the notification dialog
