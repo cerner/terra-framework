@@ -1,19 +1,13 @@
-const viewports = Terra.viewports('tiny', 'medium');
+Terra.describeViewports('ApplicationMenuName', ['tiny', 'medium'], () => {
+  describe('Displays a default application menu name', () => {
+    before(() => browser.url('/#/raw/tests/terra-application-name/application-name/application-menu-name-default'));
 
-viewports.forEach((viewport) => {
-  describe(`ApplicationMenuName - ${viewport}`, () => {
-    before(() => browser.setViewportSize(viewport));
+    Terra.it.validatesElement({ selector: '#default' });
+  });
 
-    describe('Displays a default application menu name', () => {
-      before(() => browser.url('/#/raw/tests/terra-application-name/application-name/application-menu-name-default'));
+  describe('Displays a wrapping application menu name', () => {
+    before(() => browser.url('/#/raw/tests/terra-application-name/application-name/application-menu-name-wrapping'));
 
-      Terra.it.validatesElement({ selector: '#default' });
-    });
-
-    describe('Displays a wrapping application menu name', () => {
-      before(() => browser.url('/#/raw/tests/terra-application-name/application-name/application-menu-name-wrapping'));
-
-      Terra.it.validatesElement({ selector: '#wrapping' });
-    });
+    Terra.it.validatesElement({ selector: '#wrapping' });
   });
 });
