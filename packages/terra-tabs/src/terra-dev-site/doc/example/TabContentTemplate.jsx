@@ -1,5 +1,9 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
+import styles from './common/TabExample.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   isLabelHidden: PropTypes.bool,
@@ -9,13 +13,13 @@ const propTypes = {
 
 
 const TabContentTemplate = ({ isLabelHidden, label, children }) => (
-  <div style={{ padding: '10px', height: '100%' }}>
+  <div className={cx('tab-content-template')}>
     {isLabelHidden ? <h3>{label}</h3> : null}
     {children || (
-    <div>
-Content for
-      <i>{label}</i>
-    </div>
+      <div>
+        Content for
+        <i>{label}</i>
+      </div>
     )}
   </div>
 );

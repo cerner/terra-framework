@@ -1,6 +1,11 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import NavigationSideMenu from 'terra-navigation-side-menu/lib/NavigationSideMenu';
+
+import styles from './NavigationSideMenuExample.scss';
+
+const cx = classNames.bind(styles);
 
 class NavigationSideMenuDefault extends React.Component {
   constructor(props) {
@@ -29,10 +34,7 @@ class NavigationSideMenuDefault extends React.Component {
     let content;
     if (this.state.selectedMenuKey === 'fake-parent') {
       content = (
-        <div style={{
-          height: '100%', width: '100%', position: 'relative', backgroundColor: 'pink',
-        }}
-        >
+        <div className={cx('content')}>
           <button type="button" onClick={this.resetMenuState}>
             Child Route
           </button>
@@ -64,10 +66,7 @@ class NavigationSideMenuDefault extends React.Component {
     }
 
     return (
-      <div style={{
-        height: '450px', width: '300px', position: 'relative', border: '1px solid lightgrey',
-      }}
-      >
+      <div className={cx('content-wrapper')}>
         {content}
       </div>
     );

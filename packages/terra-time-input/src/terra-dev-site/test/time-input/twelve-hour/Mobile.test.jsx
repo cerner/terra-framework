@@ -1,6 +1,10 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import TimeInput from '../../../../TimeInput';
 import TimeUtil from '../../../../TimeUtil';
+import styles from '../time-input/time-input.test.common.scss';
+
+const cx = classNames.bind(styles);
 
 export default class TimeInputElement extends React.Component {
   constructor(props) {
@@ -32,7 +36,7 @@ export default class TimeInputElement extends React.Component {
 
   render() {
     return (
-      <div style={{ caretColor: 'transparent' }}>
+      <div className={cx('content-wrapper')}>
         <h3>Empty Time Input</h3>
         <TimeInput
           id="timeInput"
@@ -42,7 +46,7 @@ export default class TimeInputElement extends React.Component {
         <h3>(this picker is changeable)</h3>
         <div id="time-input-value">
           <h3>
-Time Input with value provided - Current Value:
+            Time Input with value provided - Current Value:
             {this.state.input}
           </h3>
         </div>

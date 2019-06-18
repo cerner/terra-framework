@@ -274,8 +274,8 @@ class TimeInput extends React.Component {
       // Prepend a 0 to the value when losing focus and the value is single digit.
       if (stateValue.length === 1) {
         if (this.props.variant === TimeUtil.FORMAT_12_HOUR
-            && type === TimeUtil.inputType.HOUR
-            && stateValue === '0') {
+          && type === TimeUtil.inputType.HOUR
+          && stateValue === '0') {
           stateValue = '12';
         } else {
           stateValue = '0'.concat(stateValue);
@@ -510,8 +510,8 @@ class TimeInput extends React.Component {
     }
 
     if (event.keyCode === KeyCode.KEY_LEFT
-        || event.keyCode === KeyCode.KEY_DELETE
-        || event.keyCode === KeyCode.KEY_BACK_SPACE) {
+      || event.keyCode === KeyCode.KEY_DELETE
+      || event.keyCode === KeyCode.KEY_BACK_SPACE) {
       this.focusHour(event);
     }
 
@@ -540,8 +540,8 @@ class TimeInput extends React.Component {
   focusMeridiemFromMinute(event) {
     // If the minute is empty or the cursor is after the value, move focus to the meridiem.
     if ((this.state.minute.length === 0
-        || this.state.minute.length === this.minuteInput.selectionEnd)
-        && this.meridiemSelect
+      || this.state.minute.length === this.minuteInput.selectionEnd)
+      && this.meridiemSelect
     ) {
       this.meridiemSelect.focus();
       event.preventDefault();
@@ -998,7 +998,7 @@ class TimeInput extends React.Component {
               disabled={disabled}
             />,
             <div
-              style={{ position: 'relative' }}
+              className={cx('meridiem-select-wrapper')}
               key="meridiem_select_box"
             >
               <select
