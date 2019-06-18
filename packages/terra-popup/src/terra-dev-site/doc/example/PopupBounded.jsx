@@ -5,7 +5,7 @@ import Popup from 'terra-popup/lib/Popup';
 import Placeholder from 'terra-doc-template/lib/Placeholder';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import classNames from 'classnames/bind';
-import styles from './PopupBounded.scss';
+import styles from './PopupDocCommon.scss';
 
 const cx = classNames.bind(styles);
 

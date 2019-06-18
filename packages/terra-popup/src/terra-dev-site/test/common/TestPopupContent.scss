@@ -1,17 +1,13 @@
-// stylelint-disable scss/at-mixin-pattern
-
 :local {
-  @mixin popup-content($height, $width) {
-    background-color: #f00;
-    height: $height;
-    width: $width;
-  }
-
   .popup-content-small {
-    @include popup-content(40px, 100px);
+    background-color: #f00;
+    height: 40px;
+    width: 100px;
   }
 
   .popup-content-large {
-    @include popup-content(80px, 200px);
+    background-color: #f00;
+    height: 80px;
+    width: 200px;
   }
 }
