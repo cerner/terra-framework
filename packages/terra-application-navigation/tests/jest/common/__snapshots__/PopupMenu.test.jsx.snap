@@ -3,9 +3,6 @@
 exports[`PopupMenu should render default element 1`] = `
 <div
   className="container"
-  onKeyDown={[Function]}
-  role="menu"
-  tabIndex="0"
 >
   <ContentContainer
     fill={false}
@@ -21,7 +18,9 @@ exports[`PopupMenu should render default element 1`] = `
     >
       <ul
         className="utility-list"
-        role="listbox"
+        onKeyDown={[Function]}
+        role="menu"
+        tabIndex="0"
       />
     </div>
   </ContentContainer>
@@ -31,9 +30,6 @@ exports[`PopupMenu should render default element 1`] = `
 exports[`PopupMenu should render prop data 1`] = `
 <div
   className="container"
-  onKeyDown={[Function]}
-  role="menu"
-  tabIndex="0"
 >
   <ContentContainer
     fill={false}
@@ -85,7 +81,9 @@ exports[`PopupMenu should render prop data 1`] = `
       />
       <ul
         className="utility-list"
-        role="listbox"
+        onKeyDown={[Function]}
+        role="menu"
+        tabIndex="0"
       >
         <PopupMenuListItem
           icon={
@@ -110,9 +108,6 @@ exports[`PopupMenu should render prop data 1`] = `
 exports[`PopupMenu should render with height bounded 1`] = `
 <div
   className="container is-fill"
-  onKeyDown={[Function]}
-  role="menu"
-  tabIndex="0"
 >
   <ContentContainer
     fill={true}
@@ -129,7 +124,9 @@ exports[`PopupMenu should render with height bounded 1`] = `
     >
       <ul
         className="utility-list"
-        role="listbox"
+        onKeyDown={[Function]}
+        role="menu"
+        tabIndex="0"
       />
     </div>
   </ContentContainer>
