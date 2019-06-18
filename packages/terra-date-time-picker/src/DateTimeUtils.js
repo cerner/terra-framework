@@ -36,9 +36,10 @@ class DateTimeUtils {
    * @param {object} momentDate - The moment object to synchronize the date and time.
    * @param {string} iSOdate - The date string to synchronize with the moment object.
    * @param {string} time - The time to synchronize with the moment object.
+   * @param {boolean} hasSeconds - If true seconds will be synchronized as well
    * @return {object} - The synchronized moment object.
    */
-  static syncDateTime(momentDate, iSOdate, time) {
+  static syncDateTime(momentDate, iSOdate, time, hasSeconds) {
     const date = moment(iSOdate);
 
     // If the base momentDate is valid, sync the date and time is they are valid.
@@ -49,8 +50,8 @@ class DateTimeUtils {
         tempDate.year(date.get('year')).month(date.get('month')).date(date.get('date'));
       }
 
-      if (time && time.length === 5) {
-        tempDate = DateTimeUtils.updateTime(tempDate, time);
+      if (time && ((!hasSeconds && time.length === 5) || (hasSeconds && time.length === 8))) {
+        tempDate = DateTimeUtils.updateTime(tempDate, time, hasSeconds);
       }
 
       return tempDate;
@@ -60,8 +61,8 @@ class DateTimeUtils {
     if (date.isValid()) {
       let tempDate = date.clone();
 
-      if (time && time.length === 5) {
-        tempDate = DateTimeUtils.updateTime(tempDate, time);
+      if (time && ((!hasSeconds && time.length === 5) || (hasSeconds && time.length === 8))) {
+        tempDate = DateTimeUtils.updateTime(tempDate, time, hasSeconds);
       }
 
       return tempDate;
@@ -188,10 +189,11 @@ class DateTimeUtils {
    * @param {string} date - The date string for the conversion.
    * @param {string} time - The time string for the conversion.
    * @param {string} dateformat - The format of the date and time strings.
+   * @param {boolean} hasSeconds - If true seconds will be converted
    * @return {object} - The moment object representing the given date and time.
    */
-  static convertDateTimeStringToMomentObject(date, time, dateformat) {
-    return DateTimeUtils.updateTime(DateUtil.createSafeDate(DateUtil.convertToISO8601(date, dateformat)), time);
+  static convertDateTimeStringToMomentObject(date, time, dateformat, hasSeconds) {
+    return DateTimeUtils.updateTime(DateUtil.createSafeDate(DateUtil.convertToISO8601(date, dateformat)), time, hasSeconds);
   }
 }
 

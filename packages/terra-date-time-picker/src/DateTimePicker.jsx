@@ -183,7 +183,7 @@ class DateTimePicker extends React.Component {
   handleOnSelect(event, selectedDate) {
     this.dateValue = DateUtil.formatISODate(selectedDate, this.state.dateFormat);
     const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
-    const updatedDateTime = DateTimeUtils.syncDateTime(previousDateTime, selectedDate, this.timeValue);
+    const updatedDateTime = DateTimeUtils.syncDateTime(previousDateTime, selectedDate, this.timeValue, this.props.showSeconds);
 
     if (!previousDateTime || previousDateTime.format() !== updatedDateTime.format()) {
       this.checkAmbiguousTime(updatedDateTime);
@@ -245,7 +245,7 @@ class DateTimePicker extends React.Component {
       let momentDateTime;
 
       if (isCompleteDateTime) {
-        momentDateTime = DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat);
+        momentDateTime = DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
         iSOString = momentDateTime.format();
       }
 
@@ -301,7 +301,7 @@ class DateTimePicker extends React.Component {
 
     if (isDateValid) {
       const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : DateUtil.createSafeDate(formattedDate);
-      updatedDateTime = DateTimeUtils.syncDateTime(previousDateTime, date, this.timeValue);
+      updatedDateTime = DateTimeUtils.syncDateTime(previousDateTime, date, this.timeValue, this.props.showSeconds);
 
       if (isTimeValid) {
         // Update the timeValue in case the updatedDateTime falls in the missing hour and needs to bump the hour up.
@@ -331,7 +331,7 @@ class DateTimePicker extends React.Component {
 
   handleTimeChange(event, time) {
     this.timeValue = time;
-    const validDate = DateUtil.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeAcceptable(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat));
+    const validDate = DateUtil.isValidDate(this.dateValue, this.state.dateFormat) && this.isDateTimeAcceptable(DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds));
     const validTime = DateTimeUtils.isValidTime(this.timeValue, this.props.showSeconds);
     const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
 
