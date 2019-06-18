@@ -15,6 +15,7 @@ const Page2Menu = ({ layoutConfig, routingStackDelegate }) => (
           <button
             type="button"
             onClick={routingStackDelegate.showParent}
+            className={cx('button')}
           >
             Go Back
           </button>
@@ -24,6 +25,7 @@ const Page2Menu = ({ layoutConfig, routingStackDelegate }) => (
           <button
             type="button"
             onClick={layoutConfig.toggleMenu}
+            className={cx('button')}
           >
             Toggle Menu
           </button>
@@ -33,6 +35,7 @@ const Page2Menu = ({ layoutConfig, routingStackDelegate }) => (
           <button
             type="button"
             onClick={layoutConfig.togglePin}
+            className={cx('button')}
           >
             Pin
           </button>
@@ -42,6 +45,7 @@ const Page2Menu = ({ layoutConfig, routingStackDelegate }) => (
           <button
             type="button"
             onClick={layoutConfig.togglePin}
+            className={cx('button')}
           >
             Unpin
           </button>

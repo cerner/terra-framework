@@ -14,6 +14,7 @@ const MenuExample = ({ layoutConfig }) => (
           <button
             type="button"
             onClick={layoutConfig.toggleMenu}
+            className={cx('button')}
           >
             Toggle Menu
           </button>
@@ -23,6 +24,7 @@ const MenuExample = ({ layoutConfig }) => (
           <button
             type="button"
             onClick={layoutConfig.togglePin}
+            className={cx('button')}
           >
             Pin
           </button>
@@ -32,6 +34,7 @@ const MenuExample = ({ layoutConfig }) => (
           <button
             type="button"
             onClick={layoutConfig.togglePin}
+            className={cx('button')}
           >
             Unpin
           </button>

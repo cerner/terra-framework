@@ -15,6 +15,7 @@ const Page1Content = ({ layoutConfig }) => (
           <button
             type="button"
             onClick={layoutConfig.toggleMenu}
+            className={cx('button')}
           >
             Toggle Menu
           </button>
