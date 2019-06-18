@@ -38,7 +38,7 @@ class ControlledTabs extends React.Component {
       <div>
         <div id="current-selection">
           <p>
-Last Triggered Tab:
+            Last Triggered Tab:
             {this.state.activeKey}
           </p>
         </div>

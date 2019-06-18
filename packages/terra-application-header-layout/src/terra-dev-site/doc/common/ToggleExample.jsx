@@ -8,16 +8,13 @@ const propTypes = {
 
 const ExtensionsExample = ({ size }) => {
   let text = 'Toggle';
-  let width = '150px';
   if (size === 'tiny') {
     text = 'T';
-    width = '50px';
   } else if (size === 'small') {
     text = 'Tog';
-    width = '100px';
   }
   return (
-    <PlaceHolder text={text} width={width} />
+    <PlaceHolder text={text} size={size} />
   );
 };
 

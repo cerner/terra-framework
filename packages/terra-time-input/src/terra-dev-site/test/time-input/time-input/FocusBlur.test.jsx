@@ -1,5 +1,9 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import TimeInput from '../../../../TimeInput';
+import styles from './time-input.test.common.scss';
+
+const cx = classNames.bind(styles);
 
 class TimeInputOnBlur extends React.Component {
   constructor(props) {
@@ -34,7 +38,7 @@ class TimeInputOnBlur extends React.Component {
             <span id="focus-count">{this.state.focusTriggerCount}</span>
           </h3>
         </div>
-        <div style={{ caretColor: 'transparent' }}>
+        <div className={cx('content-wrapper')}>
           <TimeInput
             id="timeInput"
             name="time-input"
