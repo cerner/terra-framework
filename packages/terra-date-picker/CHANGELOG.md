@@ -10,12 +10,16 @@ Unreleased
 * Removed node_modules from .npmignore
 
 ### Changed
+* Removed all inline styles from Dev-site components and implemented the same styles using external css.
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 <<<<<<< HEAD
 * Update wdio spec to use Terra.describeViewports
 =======
 * Replaced terra-hookshot with terra-popup
 >>>>>>> master
+
+### Fixed
+* Do not always force to return focus to the calendar button after the picker closes.
 
 4.2.0 - (May 21, 2019)
 ------------------

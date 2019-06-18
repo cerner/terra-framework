@@ -1,8 +1,12 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 /* eslint-disable import/no-unresolved, import/extensions */
 import Tabs from 'terra-tabs/lib/Tabs';
 import TabContent from 'terra-tabs/lib/terra-dev-site/doc/example/TabContentTemplate';
 /* eslint-enable import/no-unresolved, import/extensions */
+import styles from './common/TabExample.scss';
+
+const cx = classNames.bind(styles);
 
 const TabsWithFilledContent = () => {
   const tab1 = (
@@ -40,7 +44,7 @@ const TabsWithFilledContent = () => {
   );
 
   return (
-    <div style={{ padding: '10px', height: '400px' }}>
+    <div className={cx('content-container')}>
       <Tabs fill>
         {tab1}
         {tab2}

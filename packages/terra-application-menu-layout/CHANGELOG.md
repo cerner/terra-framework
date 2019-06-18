@@ -4,7 +4,11 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Removed all inline styles from Dev-site components and implemented the same styles using external css.
 * Update wdio spec to use Terra.describeViewports
+
+### Removed
+* Removed '-ms-overflow-style' style
 
 3.5.0 - (June 12, 2019)
 ------------------

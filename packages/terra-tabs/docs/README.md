@@ -19,7 +19,11 @@ The tabs component will apply the prop `isLabelHidden` to all components passed 
 ```jsx
 
 import React from 'react';
+import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
+import styles from '../../../Tabs.module.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   isLabelHidden: PropTypes.bool,
@@ -29,7 +33,7 @@ const propTypes = {
 
 
 const TabContent = ({ isLabelHidden, label, children }) => (
-  <div style={{ height: '200px', padding: '10px' }}>
+  <div className={cx('content-wrapper')}>
     {isLabelHidden ? <h3>{label}</h3> : null}
     {children}
   </div>

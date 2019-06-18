@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Removed all inline styles from Dev-site components and implemented the same styles using external css.
 * Update wdios specs to use Terra.describeViewports
 
 3.10.0 - (June 12, 2019)

@@ -14,9 +14,11 @@ class CollapsibleMenuViewDemo extends React.Component {
     this.handleDisplayTypeChange = this.handleDisplayTypeChange.bind(this);
     this.handleToggleOneOnChange = this.handleToggleOneOnChange.bind(this);
     this.handleToggleTwoOnChange = this.handleToggleTwoOnChange.bind(this);
+    this.handleToggleThreeOnChange = this.handleToggleThreeOnChange.bind(this);
     this.state = {
       toggle1Selection: false,
       toggle2Selection: false,
+      toggle3Selection: false,
       displayType: 'tableView',
     };
   }
@@ -27,6 +29,10 @@ class CollapsibleMenuViewDemo extends React.Component {
 
   handleToggleTwoOnChange(event, isSelected) {
     this.setState({ toggle2Selection: isSelected });
+  }
+
+  handleToggleThreeOnChange(event, isSelected) {
+    this.setState({ toggle3Selection: isSelected });
   }
 
   handleDisplayTypeChange(event, selectedKey) {
@@ -52,6 +58,14 @@ class CollapsibleMenuViewDemo extends React.Component {
           onChange={this.handleToggleTwoOnChange}
           isSelected={this.state.toggle2Selection}
         />
+        <CollapsibleMenuView.Toggle
+          text="Toggle Item 3"
+          className="ToggleItem3"
+          key="toggle3"
+          shouldCloseOnClick={false}
+          onChange={this.handleToggleThreeOnChange}
+          isSelected={this.state.toggle3Selection}
+        />
         <CollapsibleMenuView.Divider key="Divider1" />
         <CollapsibleMenuView.Item
           text="Menu Button 1"
@@ -64,9 +78,19 @@ class CollapsibleMenuViewDemo extends React.Component {
           ]}
         />
         <CollapsibleMenuView.Item
-          text="MenuButton2"
+          text="MenuButton 2"
           key="MenuButton2"
           className="MenuButton2"
+          shouldCloseOnClick={false}
+          subMenuItems={[
+            <CollapsibleMenuView.Item text="Default Item 1" key="defaultItem1" />,
+            <CollapsibleMenuView.Item text="Default Item 2" key="defaultItem2" />,
+          ]}
+        />
+        <CollapsibleMenuView.Item
+          text="MenuButton 3"
+          key="MenuButton3"
+          className="MenuButton3"
           shouldCloseOnClick={false}
           subMenuItems={[
             <CollapsibleMenuView.Item text="Default Item 1" key="defaultItem1" />,
@@ -115,6 +139,10 @@ class CollapsibleMenuViewDemo extends React.Component {
         <CollapsibleMenuView.Item text="Button 2" className="Button2" key="button2" />
         <CollapsibleMenuView.Item text="Button 3" className="Button3" key="button3" />
         <CollapsibleMenuView.Item text="Button 4" className="Button4" key="button4" />
+        <CollapsibleMenuView.Item text="Button 5" className="Button5" key="button5" />
+        <CollapsibleMenuView.Item text="Button 6" className="Button6" key="button6" />
+        <CollapsibleMenuView.Item text="Button 7" className="Button7" key="button7" />
+        <CollapsibleMenuView.Item text="Button 8" className="Button8" key="button8" />
       </CollapsibleMenuView>
     );
   }

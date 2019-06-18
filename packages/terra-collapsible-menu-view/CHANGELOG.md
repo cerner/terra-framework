@@ -3,11 +3,14 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Added more buttons to support wdio tests for other themes (ex:mpages theme)
 
 6.2.0 - (June 12, 2019)
 ------------------
 ### Removed
 * Removed node_modules from .npmignore
+
 
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes

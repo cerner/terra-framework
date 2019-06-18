@@ -4,6 +4,10 @@ import Field from 'terra-form-field';
 import moment from 'moment';
 // eslint-disable-next-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 import DatePicker from 'terra-date-picker/lib/DatePicker';
+import classNames from 'classnames/bind';
+import styles from './DatePickerExampleCommon.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -32,7 +36,7 @@ class DatePickerExample extends React.Component {
       <div>
         <p>
 Selected ISO Date:
-          <span style={{ display: 'inline-block' }}>{this.state.date}</span>
+          <span className={cx('date-wrapper')}>{this.state.date}</span>
         </p>
         <Field label="Enter Date" htmlFor="filter-dates">
           <DatePicker

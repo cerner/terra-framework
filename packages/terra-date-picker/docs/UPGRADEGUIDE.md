@@ -2,6 +2,10 @@
 
 ## Changes from version 3 to version 4
 
+### Removed props
+* Removed `releaseFocus`
+* Removed `requestFocus`
+
 ### New props
 * Added `onBlur`
 * Added `onFocus`
