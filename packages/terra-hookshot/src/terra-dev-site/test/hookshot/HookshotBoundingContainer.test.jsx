@@ -13,31 +13,26 @@ class HookshotBoundingContainer extends React.Component {
   }
 
   render() {
-    let buttonMarginLeft;
-    let buttonMarginRight;
-    let buttonMarginTop;
+    let type = 'up';
     let targetAttachment;
     let contentAttachment;
 
     if (this.state.position === 'up') {
-      buttonMarginTop = '100px';
+      type = 'container-up';
     } else if (this.state.position === 'down') {
-      buttonMarginTop = '20px';
+      type = 'container-down';
     } else if (this.state.position === 'left') {
-      buttonMarginLeft = '300px';
-      buttonMarginRight = '140px';
+      type = 'container-left';
       targetAttachment = 'middle end';
       contentAttachment = 'middle start';
     } else if (this.state.position === 'right') {
-      buttonMarginLeft = '50px';
+      type = 'container-right';
     }
     return (
       <div>
         <HookshotTemplate
           isOpen={false}
-          buttonMarginTop={buttonMarginTop}
-          buttonMarginLeft={buttonMarginLeft}
-          buttonMarginRight={buttonMarginRight}
+          type={type}
           targetAttachment={targetAttachment}
           contentAttachment={contentAttachment}
           id="bounding-container"

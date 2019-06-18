@@ -13,23 +13,15 @@ class HookshotAttachmentBehaviorAuto extends React.Component {
   }
 
   render() {
-    let buttonMarginLeft;
-    let boundingWidth;
-    let buttonMarginTop;
-
+    let type = 'primary';
     if (this.state.position === 'flipped') {
-      buttonMarginLeft = '50px';
+      type = 'auto-flipped';
     } else if (this.state.position === '90') {
-      boundingWidth = '220px';
-      buttonMarginLeft = '60px';
+      type = 'auto-90';
     } else if (this.state.position === '-90') {
-      boundingWidth = '220px';
-      buttonMarginTop = '100px';
-      buttonMarginLeft = '60px';
+      type = 'auto--90';
     } else if (this.state.position === 'pushed') {
-      boundingWidth = '220px';
-      buttonMarginTop = '100px';
-      buttonMarginLeft = '110px';
+      type = 'auto-pushed';
     }
     return (
       <div>
@@ -37,9 +29,7 @@ class HookshotAttachmentBehaviorAuto extends React.Component {
           attachmentBehavior="auto"
           id="attachment-behavior-auto"
           isOpen={false}
-          buttonMarginLeft={buttonMarginLeft}
-          buttonMarginTop={buttonMarginTop}
-          boundingWidth={boundingWidth}
+          type={type}
         />
         <p> Choose the positioning behavior </p>
         <p> Primary position is on the middle right</p>

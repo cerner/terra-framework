@@ -6,6 +6,7 @@ const TargetOffset = () => (
     id="TargetOffset"
     contentAttachment="bottom start"
     targetAttachment="top start"
+    type="primary"
     targetOffset={{ vertical: -10, horizontal: -20 }}
     isOpen
   />

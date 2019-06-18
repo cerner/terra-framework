@@ -19,6 +19,7 @@ class HookshotExample extends React.Component {
           id="attachment"
           hookshotContentProps={{ closeOnEsc: false, closeOnOutsideClick: false, closeOnResize: false }}
           contentAttachment="top start"
+          type="primary"
           targetAttachment={this.state.attachment}
           isOpen
         />
