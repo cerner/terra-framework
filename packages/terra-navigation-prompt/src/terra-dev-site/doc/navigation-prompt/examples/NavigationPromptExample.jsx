@@ -1,6 +1,10 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 import NavigationPrompt, { NavigationPromptCheckpoint } from '../../../../index';
+import styles from './NavigationPromptExample.scss';
+
+const cx = classNames.bind(styles);
 
 const exampleTitle = 'Descriptive Notification Prompt Title';
 const exampleMessage = 'A Notification Prompt usually has an introductory warning instructing the user that there are unsaved changes or that there is a similar situation that warrants capturing the user\'s attention and requires that they take action before continuing.\n\nIt is good practice to include details about the originating source (page name, side-panel title, modal header title, etc.) and location description (form name, title from the section of the page, general position, etc.) to provide the user a contextual reference as to where they have an area needing attention: e.g. where data is about to be lost, the window about to be closed, the section about to be removed. Following the initial details, it is helpful to include a detailed description educating the user about any danger or caution as to what will happen to the current items about to be lost (form data, page content, etc.) if the user chooses each of the two actions provided in the notification prompt message.';
@@ -22,15 +26,15 @@ const Input = ({ title }) => {
    * state.
    */
   return (
-    <div style={{ paddingBottom: '10px' }}>
+    <div className={cx('input-content-wrapper')}>
       {inputValue && inputValue.length ? <NavigationPrompt description={title} metaData={promptMetaData.current} /> : null}
-      <div style={{ paddingBottom: '10px' }}>
-        <span style={{ fontWeight: 'bold' }}>{title}</span>
-        {inputValue && inputValue.length ? <span style={{ paddingLeft: '5px', fontStyle: 'italic' }}>(Unsaved value is present and NavigationPrompt is rendered)</span> : null}
+      <div className={cx('content-wrapper')}>
+        <span className={cx('title')}>{title}</span>
+        {inputValue && inputValue.length ? <span className={cx('prompt-text-wrapper')}>(Unsaved value is present and NavigationPrompt is rendered)</span> : null}
       </div>
       <input
         type="text"
-        style={{ width: '100%', fontSize: '16px' }}
+        className={cx('input-text-box')}
         onChange={(event) => {
           promptMetaData.current = {
             value: event.target.value,
@@ -64,7 +68,7 @@ const Form = ({ title }) => {
   const inputCheckpointRef = useRef();
 
   return (
-    <div style={{ padding: '10px', border: '1px solid lightgrey' }}>
+    <div className={cx('form-content-wrapper')}>
       <NavigationPromptCheckpoint
         ref={inputCheckpointRef}
       >
@@ -175,8 +179,8 @@ const NavigationPromptExample = () => {
   const [prompts, setPrompts] = useState([]);
 
   return (
-    <div style={{ padding: '10px' }}>
-      <span style={{ fontWeight: 'bold' }}>Registered Prompts: </span>
+    <div className={cx('example-content-wrapper')}>
+      <span className={cx('title')}>Registered Prompts: </span>
       {prompts.length ? <span>{prompts.map(prompt => `${prompt.description} (${prompt.metaData.value})`).join(', ')}</span> : null}
       <br />
       <hr />
