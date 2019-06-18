@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Update dependency range on react-final-form to include v5 and v6 versions of react-final-form
 
 1.1.0 - (June 12, 2019)
 ------------------
