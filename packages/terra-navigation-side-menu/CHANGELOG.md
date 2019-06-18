@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Removed all inline styles and implemented the same styles using external css.
 
 2.9.0 - (June 12, 2019)
 ------------------

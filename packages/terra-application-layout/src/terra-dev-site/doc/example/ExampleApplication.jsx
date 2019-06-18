@@ -5,6 +5,7 @@ import { injectIntl, intlShape } from 'react-intl';
 import Image from 'terra-image';
 import Avatar from 'terra-avatar';
 import ContentContainer from 'terra-content-container';
+import classNames from 'classnames/bind';
 
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import ApplicationLayout, { Utils } from 'terra-application-layout/lib/ApplicationLayout';
@@ -13,7 +14,10 @@ import ApplicationMenu from 'terra-application-layout/lib/terra-dev-site/doc/com
 import UtilityOption from 'terra-application-layout/lib/terra-dev-site/doc/common/UtilityOption';
 import ApplicationExtensions from 'terra-application-layout/lib/terra-dev-site/doc/common/ApplicationExtensions';
 import ProfilePicture from 'terra-application-layout/lib/terra-dev-site/doc/common/henry.jpg';
+import styles from './ApplicationLayoutExampleCommon.scss';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+
+const cx = classNames.bind(styles);
 
 /**
  * The routingConfig API matches that of the NavigationLayout. Routing specifications for the
@@ -328,7 +332,7 @@ ExampleApplication.propTypes = {
 const WrappedApplication = withRouter(injectIntl((ExampleApplication)));
 
 const AppRouter = () => (
-  <div style={{ height: '100%' }}>
+  <div className={cx('app-router')}>
     <MemoryRouter>
       <WrappedApplication />
     </MemoryRouter>
