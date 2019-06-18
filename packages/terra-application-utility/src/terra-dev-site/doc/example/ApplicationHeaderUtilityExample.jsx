@@ -4,7 +4,11 @@ import Image from 'terra-image';
 import MockConfig from 'terra-application-utility/lib/terra-dev-site/doc/common/MockConfig';
 import FallbackAvatar from 'terra-application-utility/lib/terra-dev-site/doc/common/FallbackAvatar.svg';
 import { ApplicationHeaderUtility, UtilityUtils } from 'terra-application-utility/lib/ApplicationUtility';
+import classNames from 'classnames/bind';
+import styles from './ApplicationHeaderUtilityExample.scss';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+
+const cx = classNames.bind(styles);
 
 class ApplicationHeaderUtilityExample extends React.Component {
   constructor(props) {
@@ -24,11 +28,8 @@ class ApplicationHeaderUtilityExample extends React.Component {
     const title = 'User Name';
 
     return (
-      <div style={{ paddingLeft: '4px' }}>
-        <div style={{
-          height: '60px', position: 'relative', width: '150px', backgroundColor: '#0079BE',
-        }}
-        >
+      <div className={cx('container')}>
+        <div className={cx('content-wrapper')}>
           <ApplicationHeaderUtility
             menuItems={MockConfig(accessory)}
             onChange={() => {}}
