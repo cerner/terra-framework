@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Removed
+* Removed '-ms-overflow-style' style
+
 ### Fixed
 * Corrected to allow Slide Panel's DOM order to flex based on the 'panelPosition' prop.
 
