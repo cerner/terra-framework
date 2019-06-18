@@ -1,21 +1,30 @@
-@import './LayoutDocCommon';
-
 :local {
   .content-wrapper1 {
-    @include content-wrapper1-common(60px);
+    border: 4px dashed #d3d3d3;
     display: flex;
+    height: 60px;
+    margin: 5px;
+    position: relative;
+    width: calc(100% - 10px);
   }
 
   .content-wrapper2 {
-    @include content-wrapper2-common(15px);
+    color: #808080;
+    left: 50%;
+    position: absolute;
+    top: 15px;
+    transform: translateX(-50%);
   }
 
   .content-text {
-    @extend %content-text-common;
     display: inline;
+    margin: 0;
   }
 
   .button {
-    @extend %button-common;
+    border: 1px dashed #d3d3d3;
+    display: inline;
+    height: 25px;
+    margin-left: 5px;
   }
 }

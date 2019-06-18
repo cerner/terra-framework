@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import styles from './DocExampleCommon.scss';
+import styles from './LayoutDocCommon.scss';
 
 const cx = classNames.bind(styles);
 

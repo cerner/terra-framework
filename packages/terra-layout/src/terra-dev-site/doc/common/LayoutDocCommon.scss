@@ -1,8 +1,7 @@
 :local {
   .content-wrapper1 {
     border: 4px dashed #d3d3d3;
-    display: flex;
-    height: 60px;
+    height: calc(100% - 10px);
     margin: 5px;
     position: relative;
     width: calc(100% - 10px);
@@ -12,16 +11,15 @@
     color: #808080;
     left: 50%;
     position: absolute;
-    top: 15px;
+    top: 50%;
     transform: translateX(-50%);
   }
 
   .content-text {
-    display: inline;
     margin: 0;
   }
 
-  .test-header-toggle {
+  .button {
     border: 1px dashed #d3d3d3;
     display: inline;
     height: 25px;

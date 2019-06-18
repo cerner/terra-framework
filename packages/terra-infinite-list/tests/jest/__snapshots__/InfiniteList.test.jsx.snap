@@ -69,7 +69,12 @@ exports[`InfiniteList should render with initial children 1`] = `
         refCallback={[Function]}
       >
         <div
-          className="item-content"
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
+          }
         >
           item 1
         </div>
@@ -83,7 +88,12 @@ exports[`InfiniteList should render with initial children 1`] = `
         refCallback={[Function]}
       >
         <div
-          className="item-content"
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
+          }
         >
           item 2
         </div>
@@ -97,7 +107,12 @@ exports[`InfiniteList should render with initial children 1`] = `
         refCallback={[Function]}
       >
         <div
-          className="item-content"
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
+          }
         >
           item 3
         </div>
@@ -111,7 +126,12 @@ exports[`InfiniteList should render with initial children 1`] = `
         refCallback={[Function]}
       >
         <div
-          className="item-content"
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
+          }
         >
           item 4
         </div>
@@ -158,7 +178,12 @@ exports[`InfiniteList should render with list props 1`] = `
         refCallback={[Function]}
       >
         <div
-          className="item-content"
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
+          }
         >
           item 1
         </div>
@@ -172,7 +197,12 @@ exports[`InfiniteList should render with list props 1`] = `
         refCallback={[Function]}
       >
         <div
-          className="item-content"
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
+          }
         >
           item 2
         </div>
@@ -186,7 +216,12 @@ exports[`InfiniteList should render with list props 1`] = `
         refCallback={[Function]}
       >
         <div
-          className="item-content"
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
+          }
         >
           item 3
         </div>
@@ -200,7 +235,12 @@ exports[`InfiniteList should render with list props 1`] = `
         refCallback={[Function]}
       >
         <div
-          className="item-content"
+          style={
+            Object {
+              "height": "20px",
+              "width": "100%",
+            }
+          }
         >
           item 4
         </div>
@@ -233,17 +273,18 @@ exports[`InfiniteList should render with list with style props 1`] = `
   >
     <li
       aria-selected="false"
-      class="list-item is-selectable item1"
+      class="list-item is-selectable"
       data-infinite-list-index="0"
       data-item-show-focus="true"
       role="option"
+      style="background-color:pink"
       tabindex="0"
     >
       <div
         class="item-fill"
       >
         <div
-          class="item-content"
+          style="height:20px;width:100%"
         >
           item 1
         </div>
@@ -251,17 +292,18 @@ exports[`InfiniteList should render with list with style props 1`] = `
     </li>
     <li
       aria-selected="true"
-      class="list-item selected is-selectable item2"
+      class="list-item selected is-selectable"
       data-infinite-list-index="1"
       data-item-show-focus="true"
       role="option"
+      style="background-color:red"
       tabindex="0"
     >
       <div
         class="item-fill"
       >
         <div
-          class="item-content"
+          style="height:20px;width:100%"
         >
           item 2
         </div>
@@ -269,17 +311,18 @@ exports[`InfiniteList should render with list with style props 1`] = `
     </li>
     <li
       aria-selected="false"
-      class="list-item is-selectable item3"
+      class="list-item is-selectable"
       data-infinite-list-index="2"
       data-item-show-focus="true"
       role="option"
+      style="background-color:blue"
       tabindex="0"
     >
       <div
         class="item-fill"
       >
         <div
-          class="item-content"
+          style="height:20px;width:100%"
         >
           item 3
         </div>
@@ -287,17 +330,18 @@ exports[`InfiniteList should render with list with style props 1`] = `
     </li>
     <li
       aria-selected="false"
-      class="list-item is-selectable item4"
+      class="list-item is-selectable"
       data-infinite-list-index="3"
       data-item-show-focus="true"
       role="option"
+      style="background-color:yellow"
       tabindex="0"
     >
       <div
         class="item-fill"
       >
         <div
-          class="item-content"
+          style="height:20px;width:100%"
         >
           item 4
         </div>
@@ -326,7 +370,13 @@ exports[`InfiniteList should render with no children and loading 1`] = `
       }
     >
       <div
-        className="initial-loading-indicator"
+        style={
+          Object {
+            "height": "100%",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
       />
     </div>
     <div
