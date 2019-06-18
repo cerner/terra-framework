@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added functionality to announce loading state to screen readers as progressive list loads more items
+
 ### Removed
 * Removed '-ms-overflow-style' style
 
