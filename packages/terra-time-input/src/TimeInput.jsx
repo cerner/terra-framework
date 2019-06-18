@@ -364,14 +364,14 @@ class TimeInput extends React.Component {
       }
     }
 
-    if (this.props.showSeconds) {
-      // Move focus to second if second is shown and minute input has a valid and complete entry
-      if (inputValue.length === 2) {
+    if (inputValue.length === 2) {
+      if (this.props.showSeconds) {
+        // Move focus to second if second is shown and minute input has a valid and complete entry
         this.secondInput.focus();
+      } else if (this.props.variant === TimeUtil.FORMAT_12_HOUR && this.meridiemSelect) {
+        // Else move focus to the merdiem for 12 hours times if the minute input has a valid and complete entry.
+        this.meridiemSelect.focus();
       }
-      // Else move focus to the merdiem for 12 hours times if the minute input has a valid and complete entry.
-    } else if (this.props.variant === TimeUtil.FORMAT_12_HOUR && inputValue.length === 2 && this.meridiemSelect) {
-      this.meridiemSelect.focus();
     }
 
     this.handleValueChange(event, TimeUtil.inputType.MINUTE, inputValue, this.state.meridiem);
@@ -719,7 +719,7 @@ class TimeInput extends React.Component {
     const instanceMinuteAttrs = Object.assign({}, minuteAttributes);
     const instanceSecondAttrs = Object.assign({}, secondAttributes);
 
-    // Using the state of hour and minute create a time in UTC represented in ISO 8601 format.
+    // Using the state of hour, minute, and second (if shown) create a time in UTC represented in ISO 8601 format.
     let timeValue = '';
 
     if (this.state.hour.length > 0 || this.state.minute.length > 0 || this.state.second.length > 0) {

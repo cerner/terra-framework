@@ -10,8 +10,6 @@ Unreleased
 ------------------
 ### Changed
 * Removed all inline styles and implemented the same styles using external css.
-
-### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 
 ### Removed

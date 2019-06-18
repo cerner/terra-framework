@@ -104,6 +104,11 @@
       margin-left: var(--terra-time-input-time-input-group-minute-margin-left, 0.14285714rem);
       margin-right: 0;
     }
+
+    &:nth-of-type(3) {
+      margin-left: var(--terra-time-input-time-input-group-second-margin-left, 0.14285714rem);
+      margin-right: 0;
+    }
   }
 
   .time-input-hour,
