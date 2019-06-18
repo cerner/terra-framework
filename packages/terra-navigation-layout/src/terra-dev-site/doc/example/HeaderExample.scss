@@ -1,0 +1,16 @@
+@import './NavigationLayoutDocCommon';
+
+:local {
+  .content-wrapper1 {
+    display: flex;
+    height: 60px;
+  }
+
+  .content-wrapper2 h2 {
+    display: inline;
+  }
+
+  .link {
+    padding: 5px;
+  }  
+}
