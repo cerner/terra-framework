@@ -18,7 +18,12 @@ exports[`Menu should render a default component 1`] = `
     />
   </Menu>
   <div
-    className="menu-button"
+    style={
+      Object {
+        "height": "20px",
+        "width": "20px",
+      }
+    }
   />
 </div>
 `;

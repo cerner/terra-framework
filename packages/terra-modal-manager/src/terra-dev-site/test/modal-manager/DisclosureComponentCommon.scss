@@ -1,14 +1,14 @@
 :local {
-  %common-header {
+  .header {
     border-bottom: 1px solid #000;
     margin: 0;
   }
 
-  %common-content-form {
+  .content-form {
     padding: 0.7rem;
   }
 
-  %common-content-wrapper {
-    height: 100%;
+  .select-field {
+    max-width: 300px;
   }
 }

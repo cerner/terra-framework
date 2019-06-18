@@ -1,9 +1,5 @@
 import React from 'react';
-import classNames from 'classnames/bind';
 import Menu from '../../src/Menu';
-import styles from './DefaultMenuExample.scss';
-
-const cx = classNames.bind(styles);
 
 class MenuDefaultExample extends React.Component {
   constructor(props) {
@@ -36,7 +32,7 @@ class MenuDefaultExample extends React.Component {
         >
           <Menu.Item text="testing" />
         </Menu>
-        <div className={cx('menu-button')} ref={this.setButtonNode} />
+        <div style={{ height: '20px', width: '20px' }} ref={this.setButtonNode} />
       </div>
     );
   }
