@@ -25,7 +25,7 @@
     "final-form": "^4.6.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-final-form": ">=5.0.2"
+    "react-final-form": ">=5.0.2 <7.0.0"
   },
   "devDependencies": {
     "final-form": "^4.6.0",
