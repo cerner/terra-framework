@@ -49,7 +49,6 @@ class AggregatorItem extends React.Component {
         <Item
           isSelected={key === 'test-key'}
           onSelect={event => this.handleSelection(event, 'test-key')}
-          isPadded={false}
         >
           <div id={targetId}>{name}</div>
         </Item>

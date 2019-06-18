@@ -411,7 +411,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
       ],
       "results": Array [
         Object {
-          "isThrow": false,
+          "type": "return",
           "value": undefined,
         },
       ],
@@ -947,12 +947,8 @@ exports[`should render a time input with 12 hour clock set 1`] = `
     value="Terra.timeInput.am"
   />
   <div
+    className="meridiem-select-wrapper"
     key="meridiem_select_box"
-    style={
-      Object {
-        "position": "relative",
-      }
-    }
   >
     <select
       aria-label="Terra.timeInput.select.meridiem"

@@ -3,10 +3,18 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Removed all inline styles from Dev-site components and implemented the same styles using external css.
+
+2.12.0 - (June 12, 2019)
+------------------
+### Removed
+* Removed node_modules from .npmignore
 
 2.11.0 - (May 21, 2019)
 ------------------
 ### Changed
+* Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 * Update tests to use `Terra.should.validateElement()`
 
 2.10.0 - (May 15, 2019)

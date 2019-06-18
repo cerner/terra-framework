@@ -3,10 +3,21 @@ Changelog
 
 Unreleased
 ----------
+### Removed
+* Removed '-ms-overflow-style' style
+
+### Changed
+* Removed all inline styles from Dev-site components and implemented the same styles using external css.
+
+3.5.0 - (June 12, 2019)
+------------------
+### Removed
+* Removed node_modules from .npmignore
 
 3.4.0 - (May 21, 2019)
 ------------------
 ### Changed
+* Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 * Update tests to use `Terra.should.validateElement()`
 
 3.3.0 - (April 24, 2019)

@@ -7,7 +7,7 @@ describe('Navigation Layout', () => {
       browser.url('/#/raw/tests/terra-navigation-layout/navigation-layout/navigation-layout-basic');
     });
 
-    Terra.should.matchScreenshot({ viewports, selector });
+    Terra.it.matchesScreenshot({ viewports, selector });
   });
 
   describe('Displays a complex NavigationLayout - page 1', () => {
@@ -16,7 +16,7 @@ describe('Navigation Layout', () => {
       browser.click('#test-root .page-1-link');
     });
 
-    Terra.should.matchScreenshot({ viewports, selector });
+    Terra.it.matchesScreenshot({ viewports, selector });
   });
 
   describe('Displays a complex NavigationLayout - page 2', () => {
@@ -25,7 +25,7 @@ describe('Navigation Layout', () => {
       browser.click('#test-root .page-2-link');
     });
 
-    Terra.should.matchScreenshot({ viewports, selector });
+    Terra.it.matchesScreenshot({ viewports, selector });
   });
 
   describe('Displays a complex NavigationLayout - page 3', () => {
@@ -34,6 +34,6 @@ describe('Navigation Layout', () => {
       browser.click('#test-root .page-3-link');
     });
 
-    Terra.should.matchScreenshot({ viewports, selector });
+    Terra.it.matchesScreenshot({ viewports, selector });
   });
 });

@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a DatePickerField with props 1`] = `
+<Field
+  error="Text"
+  errorIcon={
+    <IconError
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+  }
+  help="Help"
+  hideRequired={true}
+  htmlFor="test-date-picker"
+  isInline={true}
+  isInvalid={true}
+  isLabelHidden={true}
+  label="Label Test"
+  labelAttrs={
+    Object {
+      "className": "label",
+    }
+  }
+  maxWidth="25px"
+  required={true}
+  showOptional={true}
+>
+  <DatePicker
+    disableButtonFocusOnClose={false}
+    disabled={true}
+    excludeDates={
+      Array [
+        "2017-04-03",
+      ]
+    }
+    filterDate={[Function]}
+    id="test-date-picker"
+    inputAttribute={
+      Object {
+        "aria-describedby": "test-date-picker-error test-date-picker-help",
+        "name": "test",
+      }
+    }
+    maxDate="2017-04-10"
+    minDate="2017-04-01"
+    name="test-date-picker"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onChangeRaw={[Function]}
+    onClickOutside={[Function]}
+    onFocus={[Function]}
+    onSelect={[Function]}
+    required={true}
+    selectedDate="2017-04-09"
+  />
+</Field>
+`;
+
+exports[`should render a default DatePickerField component 1`] = `
+<Field
+  error={null}
+  errorIcon={
+    <IconError
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+  }
+  help={null}
+  hideRequired={false}
+  htmlFor="test-date-picker"
+  isInline={false}
+  isInvalid={false}
+  isLabelHidden={false}
+  label="Label"
+  labelAttrs={Object {}}
+  required={false}
+  showOptional={false}
+>
+  <DatePicker
+    disableButtonFocusOnClose={false}
+    disabled={false}
+    id="test-date-picker"
+    name="test-date-picker"
+    required={false}
+  />
+</Field>
+`;
+
+exports[`should render a valid DatePickerField with props 1`] = `
+<Field
+  error="Text"
+  errorIcon={
+    <IconError
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+  }
+  help="Help"
+  hideRequired={true}
+  htmlFor="test-date-picker"
+  isInline={true}
+  isInvalid={false}
+  isLabelHidden={true}
+  label="Label Test"
+  labelAttrs={
+    Object {
+      "className": "label",
+    }
+  }
+  maxWidth="25px"
+  required={true}
+  showOptional={true}
+>
+  <DatePicker
+    disableButtonFocusOnClose={false}
+    disabled={true}
+    excludeDates={
+      Array [
+        "2017-04-03",
+      ]
+    }
+    filterDate={[Function]}
+    id="test-date-picker"
+    inputAttribute={
+      Object {
+        "aria-describedby": "test-date-picker-help",
+        "name": "test",
+      }
+    }
+    maxDate="2017-04-10"
+    minDate="2017-04-01"
+    name="test-date-picker"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onChangeRaw={[Function]}
+    onClickOutside={[Function]}
+    onFocus={[Function]}
+    onSelect={[Function]}
+    required={true}
+    selectedDate="2017-04-09"
+  />
+</Field>
+`;
