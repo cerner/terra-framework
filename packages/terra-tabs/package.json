@@ -33,7 +33,7 @@
     "terra-content-container": "^3.0.0",
     "terra-icon": "^3.1.0",
     "terra-menu": "^6.2.0",
-    "terra-responsive-element": "^4.0.0"
+    "terra-responsive-element": "^5.0.0"
   },
   "devDependencies": {
     "terra-doc-template": "^2.2.0"

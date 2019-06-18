@@ -48,10 +48,10 @@ const HeaderWireframe = () => {
     <div className={cx('content-wrapper')}>
       <div className={cx('responsive-element-wrapper')}>
         <ResponsiveElement
-          defaultElement={tinyHeader}
           tiny={tinyHeader}
-          small={smallHeader}
-          medium={mediumHeader}
+          small={tinyHeader}
+          medium={smallHeader}
+          large={mediumHeader}
         />
       </div>
     </div>

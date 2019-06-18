@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "terra-doc-template": "^2.2.0",
-    "terra-responsive-element": "^4.0.0"
+    "terra-responsive-element": "^5.0.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

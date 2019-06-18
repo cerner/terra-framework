@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Removed
+* Removed devDependency on terra-responsive-element
+
 ### Changed
 * Removed all inline styles from Dev-site components and implemented the same styles using external css.
 
