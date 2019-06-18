@@ -14,7 +14,7 @@ const ExtensionsExample = ({ size }) => {
     text = 'Nav';
   }
   return (
-    <PlaceHolder text={text} />
+    <PlaceHolder text={text} size="default" />
   );
 };
 
