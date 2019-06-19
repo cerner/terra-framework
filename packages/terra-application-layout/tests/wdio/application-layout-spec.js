@@ -44,11 +44,10 @@ Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
   });
 });
 
-describe('ApplicationLayout', () => {
+describe('ApplicationLayout', ['huge'], () => {
   describe('Navigates with top navigation tabs', () => {
     it('Navigates with top navigation tabs', () => {
       browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout');
-      browser.setViewportSize(Terra.viewports('huge')[0]);
       browser.waitForVisible('#application-layout-tab-1');
       browser.click('#application-layout-tab-1');
 
@@ -56,10 +55,11 @@ describe('ApplicationLayout', () => {
       browser.click('#application-layout-tab-0');
     });
   });
+});
 
+describe('ApplicationLayout', ['large'], () => {
   describe('Presents utility menu from header when large', () => {
     it('Presents utility menu from header when large', () => {
-      browser.setViewportSize(Terra.viewports('large')[0]);
       browser.waitForVisible('[data-application-header-utility]');
       browser.click('[data-application-header-utility]');
 
@@ -70,7 +70,6 @@ describe('ApplicationLayout', () => {
 
   describe('Presents utility menu from header and checks for closure on read-only item click', () => {
     it('Presents utility menu from header and checks for closure on read-only item click', () => {
-      browser.setViewportSize(Terra.viewports('large')[0]);
       browser.waitForVisible('[data-application-header-utility]');
       browser.click('[data-application-header-utility]');
       browser.waitForVisible('#readonly');
@@ -80,10 +79,12 @@ describe('ApplicationLayout', () => {
       browser.keys('Escape');
     });
   });
+});
 
+
+describe('ApplicationLayout', ['small'], () => {
   describe('Toggles menu when small', () => {
     it('Toggles menu when small', () => {
-      browser.setViewportSize(Terra.viewports('small')[0]);
       browser.waitForVisible('[data-application-header-toggle');
       browser.click('[data-application-header-toggle]');
       browser.waitForVisible('[data-routing-menu]');

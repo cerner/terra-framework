@@ -2,9 +2,7 @@ const ignoredA11y = {
   'aria-required-parent': { enabled: false },
 };
 
-describe('Menu Item', () => {
-  before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
-
+Terra.describeViewports('Menu Item', ['medium'], () => {
   describe('Menu Item-Default', () => {
     before(() => browser.url('/#/raw/tests/terra-menu/menu/menu-item/menu-item-default'));
 
