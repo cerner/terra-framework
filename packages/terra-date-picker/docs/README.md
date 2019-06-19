@@ -12,7 +12,7 @@ An uncontrolled date picker is the default mode. In the uncontrolled mode, a def
 
 ### Controlled Date Picker
 
-In a controlled date picker, the consumer is responsible for managing the state of the date value. The date picker does not manage any of state internally. This mode give the consumer the flexibility to update the date value as needed. A controlled date picker can be composed by setting the `value` prop with a ISO date value. A handler is needed for both `onChange` and `onChangeRaw` to be notified when date selection and input change are made so the state can be updated. If both `value` and `selectedDate` are set, then `selectedDate` will have no effect. See the Default Component example below for implementation details.
+In a controlled date picker, the consumer is responsible for managing the state of the date value. The date picker does not manage any of state internally. This mode gives the consumer the flexibility to update the date value as needed. A controlled date picker can be composed by setting the `value` prop with an ISO date value. A handler is needed for both `onChange` and `onChangeRaw` to be notified when date selection or input change is made so the state can be updated. If both `value` and `selectedDate` are set, then `selectedDate` will have no effect. See the Default Component example below for implementation details.
 
 ## Getting Started
 
