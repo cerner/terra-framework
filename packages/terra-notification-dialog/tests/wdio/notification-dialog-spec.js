@@ -105,10 +105,9 @@ Terra.describeViewports('notification-dialog', ['tiny', 'medium', 'large'], () =
   });
 });
 
-describe('NotificationDialog with additional focus trap sources within a modal manager', () => {
+Terra.describeViewports('NotificationDialog with additional focus trap sources within a modal manager', ['medium'], () => {
   it('opens popup', () => {
     browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-on-modal-manager');
-    browser.setViewportSize(Terra.viewports('medium')[0]);
     browser.click('#disclose-modal');
     browser.click('#popup-in-modal');
 

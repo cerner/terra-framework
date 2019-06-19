@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added functionality to announce loading state to screen readers as progressive list loads more items
+
 ### Changed
 * Removed all inline styles from Dev-site components and implemented the same styles using external css.
 
@@ -13,6 +16,7 @@ Unreleased
 ------------------
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+* Update wdio spec to use Terra.describeViewports
 
 ### Removed
 * Removed node_modules from .npmignore
