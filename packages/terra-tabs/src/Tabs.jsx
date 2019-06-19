@@ -195,8 +195,8 @@ class Tabs extends React.Component {
         fill={fill}
         header={(
           <ResponsiveElement
-            defaultElement={collapsedTabs}
-            tiny={collapsibleTabs}
+            tiny={collapsedTabs}
+            small={collapsibleTabs}
           />
         )}
       >

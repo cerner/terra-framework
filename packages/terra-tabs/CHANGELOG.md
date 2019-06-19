@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated to use terra-responsive-element v5
 
 ### Changed
 * Removed all inline styles and implemented the same styles using external css.

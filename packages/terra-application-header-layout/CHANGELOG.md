@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Updated to use terra-responsive-element v5
 * Removed all inline styles from Dev-site components and implemented the same styles using external css.
 
 3.9.0 - (June 12, 2019)
