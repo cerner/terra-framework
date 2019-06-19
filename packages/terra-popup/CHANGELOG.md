@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+6.3.0 - (June 19, 2019)
+------------------
 ### Changed
 * Removed all inline styles from Dev-site components and implemented the same styles using external css.
 

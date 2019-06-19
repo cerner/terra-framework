@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.7.0 - (June 19, 2019)
+------------------
 ### Added
 * Added functionality to announce loading state to screen readers as progressive list loads more items
 
