@@ -2,9 +2,8 @@ const ignoredA11y = {
   'aria-required-parent': { enabled: false },
 };
 
-describe('Menu Item Group', () => {
+Terra.describeViewports('Menu Item Group', ['medium'], () => {
   before(() => {
-    browser.setViewportSize(Terra.viewports('medium')[0]);
     browser.url('/#/raw/tests/terra-menu/menu/menu-item-group/menu-item-group-default');
   });
 

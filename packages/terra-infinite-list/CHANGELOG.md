@@ -6,16 +6,20 @@ Unreleased
 ### Added
 * Added functionality to announce loading state to screen readers as progressive list loads more items
 
+### Changed
+* Removed all inline styles from Dev-site components and implemented the same styles using external css.
+
 ### Removed
 * Removed '-ms-overflow-style' style
 
 3.6.0 - (June 12, 2019)
 ------------------
-### Removed
-* Removed node_modules from .npmignore
-
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+* Update wdio spec to use Terra.describeViewports
+
+### Removed
+* Removed node_modules from .npmignore
 
 3.5.0 - (May 7, 2019)
 ------------------
