@@ -1,6 +1,4 @@
-describe('TabPane', () => {
-  before(() => browser.setViewportSize(Terra.viewports('tiny')[0]));
-
+Terra.describeViewports('TabPane', ['tiny'], () => {
   describe('Text Only', () => {
     before(() => browser.url('/#/raw/tests/terra-tabs/tabs/tab-pane/text-only-tab-pane'));
     Terra.it.matchesScreenshot();

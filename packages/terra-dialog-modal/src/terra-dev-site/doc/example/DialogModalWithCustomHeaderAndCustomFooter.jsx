@@ -1,14 +1,10 @@
 import React from 'react';
 import Button from 'terra-button';
+import classNames from 'classnames/bind';
 import DialogModal from '../../../DialogModal';
+import styles from './DialogModalWithCustomHeaderAndCustomFooter.scss';
 
-const CustomHeaderFooterStyles = {
-  border: '2px dashed #4e832b',
-  color: '#4e832b',
-  height: '38px',
-  lineHeight: '2',
-  padding: '2px 2px 2px 5px',
-};
+const cx = classNames.bind(styles);
 
 class DialogModalWithCustomHeaderAndCustomFooter extends React.Component {
   constructor() {
@@ -47,12 +43,12 @@ class DialogModalWithCustomHeaderAndCustomFooter extends React.Component {
           isOpen={this.state.isOpen}
           onRequestClose={this.handleCloseModal}
           header={(
-            <div style={CustomHeaderFooterStyles}>
+            <div className={cx('header')}>
 Custom Header
-              <Button id="close-dialog-modal" text="Close" style={{ marginLeft: '10px', float: 'right' }} onClick={this.handleCloseModal} />
+              <Button id="close-dialog-modal" text="Close" className={cx('close-button')} onClick={this.handleCloseModal} />
             </div>
 )}
-          footer={<div style={CustomHeaderFooterStyles}>Custom Footer</div>}
+          footer={<div className={cx('footer')}>Custom Footer</div>}
         >
           <p>{text}</p>
         </DialogModal>

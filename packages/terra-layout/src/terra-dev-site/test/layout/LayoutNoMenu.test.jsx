@@ -1,11 +1,15 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import Layout from '../../../Layout';
 import TestHeader from '../common/TestHeader';
 import TestContent from '../common/TestContent';
+import styles from './TestLayoutCommon.scss';
+
+const cx = classNames.bind(styles);
 
 const LayoutNoMenu = () => (
   <Layout
-    style={{ height: '768px' }}
+    className={cx('layout-test')}
     key="layout-no-menu"
     header={<TestHeader />}
     id="test-root"

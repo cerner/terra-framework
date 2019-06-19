@@ -1,8 +1,12 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import Menu from '../../../../Menu';
+import styles from './MenuItemCommon.scss';
+
+const cx = classNames.bind(styles);
 
 const MenuItemSubMenu = () => (
-  <ul style={{ height: '34px', width: '240px' }}>
+  <ul className={cx('unordered-list')}>
     <Menu.Item
       className="TestSubMenuItem"
       text="MenuItem - Submenu"
