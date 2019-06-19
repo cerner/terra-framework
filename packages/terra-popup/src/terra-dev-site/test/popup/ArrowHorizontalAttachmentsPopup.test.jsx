@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import Popup from '../../../Popup';
-import styles from './ArrowHorizontalPopupCommon.test.scss';
+import styles from './ArrowHorizontalAttachmentsPopup.test.scss';
 
 const cx = classNames.bind(styles);
 

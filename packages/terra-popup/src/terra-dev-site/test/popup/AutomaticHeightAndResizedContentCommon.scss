@@ -1,12 +1,16 @@
 :local {
   .test-popup-area {
     background: #f0f8ff;
-    height: 150px;
-    width: 350px;
+    height: 300px;
+    width: 500px;
+  }
+
+  .popup-text {
+    height: 400px;
   }
 
   .popup-button {
-    left: 125px;
+    left: 200px;
     position: absolute;
   }
 }

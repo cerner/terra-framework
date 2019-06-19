@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import Popup from '../../../Popup';
-import styles from './SizeInvalidPopup.test.scss';
+import styles from './SizePopupCommon.scss';
 
 const cx = classNames.bind(styles);
 
@@ -48,7 +48,7 @@ class DimensionPopup extends React.Component {
   render() {
     return (
       <div className={cx('content-wrapper')}>
-        <div id="test-popup-area" className={cx('test-popup-area')} ref={this.setParentNode}>
+        <div id="test-popup-area" className={cx('popup-area-invalid')} ref={this.setParentNode}>
           <Popup
             boundingRef={this.getParentNode}
             classNameArrow="test-arrow"

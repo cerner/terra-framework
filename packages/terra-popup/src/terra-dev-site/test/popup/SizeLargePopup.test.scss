@@ -1,11 +1,14 @@
-@import './PopupTestCommon';
-
 :local {
   .test-popup-area {
-    @include popup-area-common(300px, 1000px);
+    background: #f0f8ff;
+    height: 300px;
+    width: 1000px;
   }
 
   .content-wrapper {
-    @include content-wrapper-common(scroll);
+    height: 100%;
+    overflow: scroll;
+    position: relative;
+    width: 100%;
   }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import Popup from '../../../Popup';
 import TestPopupContent from '../common/TestPopupContent';
-import styles from './ResizedContentPopup.test.scss';
+import styles from './AutomaticHeightAndResizedContentCommon.scss';
 
 const cx = classNames.bind(styles);
 

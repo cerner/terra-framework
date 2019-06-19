@@ -1,8 +1,8 @@
-@import './PopupTestCommon';
-
 :local {
   .test-popup-area {
-    @include popup-area-common(100px, 350px);
+    background: #f0f8ff;
+    height: 100px;
+    width: 350px;
   }
 
   .arrow-button {
