@@ -1,12 +1,16 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import Layout from '../../../Layout';
 import TestHeader from '../common/TestHeader';
 import TestMenu from '../common/TestMenu';
 import TestContent from '../common/TestContent';
+import styles from './TestLayoutCommon.scss';
+
+const cx = classNames.bind(styles);
 
 const LayoutDefault = () => (
   <Layout
-    style={{ height: '768px' }}
+    className={cx('layout-test')}
     key="layout-default"
     header={<TestHeader />}
     menu={<TestMenu />}

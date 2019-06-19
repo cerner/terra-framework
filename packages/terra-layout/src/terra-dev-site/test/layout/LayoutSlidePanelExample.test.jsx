@@ -1,5 +1,9 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import LayoutSlidePanel from '../../../_LayoutSlidePanel';
+import styles from './TestLayoutCommon.scss';
+
+const cx = classNames.bind(styles);
 
 class LayoutSlidePanelExample extends React.Component {
   constructor(props) {
@@ -16,13 +20,10 @@ class LayoutSlidePanelExample extends React.Component {
 
   render() {
     return (
-      <div style={{ height: '768px', width: '100%', position: 'relative' }}>
+      <div className={cx('content-wrapper')}>
         <LayoutSlidePanel
           panelContent={(
-            <div style={{
-              height: '100%', width: '100%', position: 'relative', backgroundColor: 'red',
-            }}
-            >
+            <div className={cx('panel-content')}>
               <button type="button" id="test-toggle-2" onClick={this.toggleMenu}>toggle</button>
             </div>
 )}
@@ -34,10 +35,7 @@ class LayoutSlidePanelExample extends React.Component {
           onToggle={() => {}}
           toggleText="toggle text"
         >
-          <div style={{
-            height: '100%', width: '100%', position: 'relative', backgroundColor: 'blue',
-          }}
-          >
+          <div className={cx('layout-slide-panel-content')}>
             <button type="button" id="test-toggle-1" onClick={this.toggleMenu}>
               toggle
             </button>
