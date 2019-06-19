@@ -3,9 +3,7 @@ const ignoredA11y = {
   label: { enabled: false },
 };
 
-describe('Date Picker', () => {
-  before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
-
+Terra.describeViewports('Date Picker', ['medium'], () => {
   describe('Default', () => {
     before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default'));
 
@@ -24,7 +22,7 @@ describe('Date Picker', () => {
     Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
-  describe('Default Date Exlcuded', () => {
+  describe('Default Date Excluded', () => {
     describe('Default Date Excluded - Clears input using calendar icon', () => {
       before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default-date-excluded'));
 
@@ -168,10 +166,9 @@ describe('Date Picker', () => {
 
     it('puts focus on the input', () => {
       browser.click('input[name="terra-date-date-input-onblur"]');
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('input').style.caretColor = 'transparent';
-      });
+      // Removes the blinking cursor to prevent screenshot mismatches.
+      browser.execute('document.querySelector(\'input\').style.caretColor = \'transparent\';');
+
       browser.keys('05/01/2019');
       expect(browser.getText('#blur-count')).to.equal('0');
       expect(browser.getText('#focus-count')).to.equal('1');
@@ -258,6 +255,8 @@ describe('Date Picker', () => {
 
     it('dismisses the datepicker after clicking outside', () => {
       browser.click('[class*="PopupOverlay"]');
+      // Removes the blinking cursor to prevent screenshot mismatches.
+      browser.execute('document.querySelector(\'input\').style.caretColor = \'transparent\';');
     });
 
     Terra.it.matchesScreenshot('date picker closed');
@@ -309,10 +308,8 @@ describe('Date Picker', () => {
   describe('Key Limitations', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default');
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('input[name="terra-date-date-input"]').style.caretColor = 'transparent';
-      });
+      // Removes the blinking cursor to prevent screenshot mismatches.
+      browser.execute('document.querySelector(\'input[name="terra-date-date-input"]\').style.caretColor = \'transparent\';');
     });
 
     it('sets the date', () => {

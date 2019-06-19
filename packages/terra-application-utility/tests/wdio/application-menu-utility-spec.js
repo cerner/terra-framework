@@ -1,26 +1,20 @@
-const viewports = Terra.viewports('tiny', 'medium');
+Terra.describeViewports('ApplicationMenuUtility', ['tiny', 'medium'], () => {
+  before(() => {
+    browser.url('/#/raw/tests/terra-application-utility/application-utility/default-application-menu-utility');
+    browser.waitForVisible('#default');
+  });
 
-viewports.forEach((viewport) => {
-  describe(`ApplicationMenuUtility - ${viewport}`, () => {
-    before(() => browser.setViewportSize(viewport));
+  describe('Displays a default application menu utility', () => {
+    Terra.it.validatesElement({ selector: '#default' });
+  });
 
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-application-utility/application-utility/default-application-menu-utility');
-      browser.waitForVisible('#default');
-    });
+  describe('Hover-application menu utility', () => {
+    before(() => { browser.moveToObject('#default'); });
+    Terra.it.validatesElement({ selector: '#default' });
+  });
 
-    describe('Displays a default application menu utility', () => {
-      Terra.it.validatesElement({ selector: '#default' });
-    });
-
-    describe('Hover-application menu utility', () => {
-      beforeEach(() => { browser.moveToObject('#default'); });
-      Terra.it.validatesElement({ selector: '#default' });
-    });
-
-    describe('Focus-application menu utility', () => {
-      beforeEach(() => { browser.keys('Tab'); });
-      Terra.it.validatesElement({ selector: '#default' });
-    });
+  describe('Focus-application menu utility', () => {
+    before(() => { browser.keys('Tab'); });
+    Terra.it.validatesElement({ selector: '#default' });
   });
 });
