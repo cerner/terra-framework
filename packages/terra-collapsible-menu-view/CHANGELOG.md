@@ -6,6 +6,8 @@ Unreleased
 ### Fixed
 * Fixed issue with accessibility roles in list view in popup menu
 
+6.3.0 - (June 19, 2019)
+------------------
 ### Changed
 * Added more buttons to support wdio tests for other themes (ex:mpages theme)
 

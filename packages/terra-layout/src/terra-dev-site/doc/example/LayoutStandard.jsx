@@ -4,6 +4,10 @@ import Layout from 'terra-layout/lib/Layout';
 import ContentExample from 'terra-layout/lib/terra-dev-site/doc/common/ContentExample';
 import MenuExample from 'terra-layout/lib/terra-dev-site/doc/common/MenuExample';
 import ToolbarExample from 'terra-layout/lib/terra-dev-site/doc/common/ToolbarExample';
+import classNames from 'classnames/bind';
+import styles from './LayoutDocExampleCommon.scss';
+
+const cx = classNames.bind(styles);
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 const layout = () => (
@@ -11,7 +15,7 @@ const layout = () => (
     header={<ToolbarExample />}
     menu={<MenuExample />}
     menuText="Menu"
-    style={{ height: '400px', width: '100%' }}
+    className={cx('layout-example')}
   >
     <ContentExample />
   </Layout>
