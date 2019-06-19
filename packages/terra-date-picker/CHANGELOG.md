@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Updated to use terra-responsive-element v5
 * Update wdio spec to use Terra.describeViewports
 
 4.3.0 - (June 12, 2019)
