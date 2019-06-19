@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.7.0 - (June 19, 2019)
+------------------
 ### Removed
 * Removed '-ms-overflow-style' style
 
@@ -19,6 +22,7 @@ Unreleased
 
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+* Update wdio specs to use Terra.describeViewports
 
 3.5.0 - (April 24, 2019)
 ------------------

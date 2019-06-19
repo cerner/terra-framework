@@ -1,4 +1,4 @@
-describe('MenuUtilityMenu', () => {
+Terra.describeViewports('MenuUtilityMenu', ['huge'], () => {
   beforeEach(() => {
     browser.url('/#/raw/tests/terra-application-utility/application-utility/default-menu-utility-menu');
     browser.waitForVisible('#default');

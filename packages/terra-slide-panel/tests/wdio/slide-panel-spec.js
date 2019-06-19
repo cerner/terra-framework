@@ -1,8 +1,6 @@
 const context = '[data-terra-dev-site-content] *:first-child';
 
-describe('Slide panel', () => {
-  before(() => browser.setViewportSize(Terra.viewports('large')[0]));
-
+Terra.describeViewports('Slide panel', ['large'], () => {
   describe('Slide panel end', () => {
     beforeEach(() => browser.url('/#/raw/tests/terra-slide-panel/slide-panel/slide-panel-end'));
     Terra.it.isAccessible({ context });
