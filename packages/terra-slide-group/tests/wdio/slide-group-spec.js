@@ -1,6 +1,4 @@
-describe('Slide Group', () => {
-  before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
-
+Terra.describeViewports('Slide Group', ['medium'], () => {
   describe('Default', () => {
     before(() => browser.url('/#/raw/tests/terra-slide-group/slide-group/default-slide-group'));
 

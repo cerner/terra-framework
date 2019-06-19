@@ -28,6 +28,7 @@ Cerner Corporation
 - Naveen Kumar Ramamurthy [@nramamurth]
 - Ben Cai [@benbcai]
 - Pranav Agarwal [@pranav300]
+- Avinash Gupta [@avinashg1994]
 - Lokesh P [@lokesh-0813]
 
 [@tbiethman]: https://github.com/tbiethman
@@ -58,4 +59,5 @@ Cerner Corporation
 [@nramamurth]: https://github.com/nramamurth
 [@benbcai]: https://github.com/benbcai
 [@pranav300]: https://github.com/pranav300
+[@avinashg1994]: https://github.com/avinashg1994
 [@lokesh-0813]: https://github.com/lokesh-0813

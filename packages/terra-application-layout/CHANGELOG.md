@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update wdio specs to use Terra.describeViewports
 
 5.3.0 - (June 12, 2019)
 ------------------
@@ -13,6 +15,7 @@ Unreleased
 * Added ARIA landmark roles
 
 ### Changed
+* Removed all inline styles from Dev-site components and implemented the same styles using external css.
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 
 5.2.0 - (May 21, 2019)
