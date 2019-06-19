@@ -1,8 +1,7 @@
-@import './InfiniteListTestCommon';
-
 :local {
   .item-content {
-    @include content-common(100px);
+    height: 100px;
+    width: 100%;
   }
 
   .infinite-list-wrapper {

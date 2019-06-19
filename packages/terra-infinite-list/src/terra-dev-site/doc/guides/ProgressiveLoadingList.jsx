@@ -11,7 +11,7 @@ import MyProgressiveLoadingIndicator from '../common/MyProgressiveLoadingIndicat
 import MyExampleContainer from '../common/MyExampleContainer';
 
 import mockRequest from './mock-data/mock-progressive';
-import styles from './InfiniteListDocGuidesCommon.scss';
+import styles from '../example/InfiniteListDocExampleCommon.scss';
 
 const cx = classNames.bind(styles);
 

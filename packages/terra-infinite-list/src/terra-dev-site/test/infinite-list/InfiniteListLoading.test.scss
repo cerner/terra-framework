@@ -1,8 +1,0 @@
-@import './InfiniteListTestCommon';
-
-:local {
-  .content-wrapper {
-    @include content-common(100%, #f0f8ff);
-    position: relative;
-  }
-}

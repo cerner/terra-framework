@@ -7,7 +7,7 @@ import classNames from 'classnames/bind';
 
 import mockData from './mock-data/mock-section';
 import MyExampleContainer from '../common/MyExampleContainer';
-import styles from './InfiniteListDocGuidesCommon.scss';
+import styles from '../example/InfiniteListDocExampleCommon.scss';
 
 const cx = classNames.bind(styles);
 

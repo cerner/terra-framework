@@ -1,7 +1,0 @@
-@import './InfiniteListTestCommon';
-
-:local {
-  .item-content {
-    @include content-common(50px);
-  }
-}

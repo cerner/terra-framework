@@ -1,28 +1,23 @@
-// stylelint-disable scss/at-mixin-pattern
-
 :local {
-  @mixin content-common($background) {
-    background-color: $background;
-    height: 100%;
-    position: relative;
-    width: 100%;
-  }
-
-  .layout-test {
-    height: 768px;
-  }
-
+  .panel-content,
+  .layout-slide-panel-content,
   .content-wrapper {
-    height: 768px;
     position: relative;
     width: 100%;
   }
 
   .panel-content {
-    @include content-common(#f00);
+    background-color: #f00;
+    height: 100%;
   }
 
   .layout-slide-panel-content {
-    @include content-common(#00f);
+    background-color: #00f;
+    height: 100%;
+  }
+
+  .layout-test,
+  .content-wrapper {
+    height: 768px;
   }
 }
