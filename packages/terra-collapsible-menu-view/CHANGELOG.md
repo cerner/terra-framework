@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Fixed issue with accessibility roles in list view in popup menu
+
 ### Changed
 * Added more buttons to support wdio tests for other themes (ex:mpages theme)
 
