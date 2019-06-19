@@ -1,5 +1,9 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import Popup from '../../../Popup';
+import styles from './AutomaticWidthPopup.test.scss';
+
+const cx = classNames.bind(styles);
 
 class PopupExample extends React.Component {
   constructor(props) {
@@ -33,7 +37,7 @@ class PopupExample extends React.Component {
 
   render() {
     return (
-      <div id="test-popup-area" style={{ height: '200px', width: '300px', background: 'aliceblue' }}>
+      <div id="test-popup-area" className={cx('test-popup-area')}>
         <Popup
           classNameArrow="test-arrow"
           classNameContent="test-content"
@@ -42,7 +46,7 @@ class PopupExample extends React.Component {
           targetRef={this.getButtonNode}
           onRequestClose={this.handleRequestClose}
         >
-          <p style={{ width: '400px' }}>This is popup content with a automatic width of 400px.</p>
+          <p className={cx('popup-text')}>This is popup content with a automatic width of 400px.</p>
         </Popup>
         <button type="button" id="default-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
           Default Popup
