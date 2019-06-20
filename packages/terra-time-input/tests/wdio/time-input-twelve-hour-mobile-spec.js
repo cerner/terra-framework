@@ -75,8 +75,8 @@ Terra.describeViewports('Time Input Twelve Hour Mobile', ['medium'], () => {
       browser.click('#timeInputWithSecond input[name="terra-time-second-time-input-with-second"]');
     });
 
-    Terra.it.isAccessible({ viewports, rules: ignoredA11y });
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot();
   });
 
   describe('Twelve Hour Mobile - Auto focues next input when filling out whole thing', () => {
@@ -93,7 +93,7 @@ Terra.describeViewports('Time Input Twelve Hour Mobile', ['medium'], () => {
       browser.keys('123456');
     });
 
-    Terra.it.isAccessible({ viewports, rules: ignoredA11y });
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot();
   });
 });
