@@ -6,6 +6,8 @@ import { Portal } from 'react-portal';
 import KeyCode from 'keycode-js';
 import Popup from 'terra-popup';
 import classnames from 'classnames';
+import { injectIntl, intlShape } from 'react-intl';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import PopupContainer from './PopupContainer';
 import {
   newDate,
@@ -35,7 +37,8 @@ import {
   getEffectiveMaxDate,
   parseDate,
   safeDateFormat,
-  getHightLightDaysMap
+  getHightLightDaysMap,
+  localizeDate
 } from './date_utils'
 import onClickOutside from 'react-onclickoutside'
 
@@ -121,7 +124,12 @@ export default class DatePicker extends React.Component {
     timeIntervals: PropTypes.number,
     minTime: PropTypes.object,
     maxTime: PropTypes.object,
-    excludeTimes: PropTypes.array
+    excludeTimes: PropTypes.array,
+    /**
+     * @private
+     * Internationalization object with translation APIs. Provided by `injectIntl`.
+     */
+    intl: intlShape,
   }
 
   static get defaultProps () {
@@ -148,6 +156,15 @@ export default class DatePicker extends React.Component {
     }
   }
 
+  static contextTypes = {
+    /* eslint-disable consistent-return */
+    intl: (context) => {
+      if (context.intl === undefined) {
+        return new Error('Component is internationalized, and must be wrapped in terra-base');
+      }
+    },
+  };
+
   constructor (props) {
     super(props)
     this.state = this.calcInitialState();
@@ -157,6 +174,8 @@ export default class DatePicker extends React.Component {
     this.datePickerOverlayContainer = React.createRef();
     this.handleCalendarKeyDown = this.handleCalendarKeyDown.bind(this);
     this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
+    this.updateAriaLiveStatus = this.updateAriaLiveStatus.bind(this);
+    this.ariaLiveStatus = '';
   }
 
   componentDidMount() {
@@ -363,7 +382,28 @@ export default class DatePicker extends React.Component {
       this.setState({
         preSelection: date
       })
+
+      let ariaLiveMessage = '';
+      if (date) {
+        const localizedDate = localizeDate(date, this.props.locale);
+        ariaLiveMessage = localizedDate.format('LL');
+
+        if (isDayDisabled(date, this.props)) {
+          ariaLiveMessage = ariaLiveMessage.concat(' ', this.context.intl.formatMessage({ id: 'Terra.datePicker.disabled' }));
+        } 
+      }
+
+      this.updateAriaLiveStatus(ariaLiveMessage);
     }
+  }
+
+  updateAriaLiveStatus(message) {
+    this.ariaLiveStatus = message;
+
+    // Clears status so aria live announces correctly next time a date is preselected.
+    setTimeout(() => {
+      this.ariaLiveStatus = '';
+    }, 1000);
   }
 
   handleTimeChange = (time) => {
@@ -512,6 +552,7 @@ export default class DatePicker extends React.Component {
         yearDropdownItemNumber={this.props.yearDropdownItemNumber}
       >
         {this.props.children}
+        <VisuallyHiddenText aria-atomic="true" aria-live="assertive" text={this.ariaLiveStatus} />
       </WrappedCalendar>
     }
 
@@ -567,6 +608,7 @@ export default class DatePicker extends React.Component {
         yearDropdownItemNumber={this.props.yearDropdownItemNumber}
       >
         {this.props.children}
+        <VisuallyHiddenText aria-atomic="true" aria-live="assertive" text={this.ariaLiveStatus} />
       </Calendar>
     );
   }
