@@ -24,11 +24,11 @@ Application packages must specify `terra-application` as a **dependency**. Libra
 The `ApplicationBase` component provides the baseline functionality that an application and its contents require. It renders the following components:
 
 - `<Base />` (from `terra-base`)
-  - The `Base` component provides global style resets and itself renders an `IntlProvider` component. The `IntlProvider` component exposes its children to translated strings for the currently defined locale. Please see the documentation for the `terra-base` component for more information.
+  - The `Base` component provides global style resets and renders an `IntlProvider` component. The `IntlProvider` component exposes its children to translated strings for the declared locale. Please see the documentation for the `terra-base` component for more information.
 - `<ThemeProvider />` (from `terra-theme-provider`)
   - The `ThemeProvider` component provides themed styles to the components rendered within it.
 - `<ActiveBreakpointProvider />` (from `terra-breakpoints`)
-  - The `ActiveBreakpointProvider` component exposes its children to the currently breakpoint value attributed to the current viewport size. See the `Breakpoints` section below for more information.
+  - The `ActiveBreakpointProvider` component exposes its children to the breakpoint value attributed to the current viewport size. See the `Breakpoints` section below for more information.
 
 Applications should render `ApplicationBase` at the root of their component tree and around all application contents. Conversely, libraries should not (outside of tests) render an `ApplicationBase` component. Libraries should instead develop their components with the assumption that those components will be rendered within a`ApplicationBase` component by an application.
 
@@ -155,6 +155,8 @@ In addition to the JS utilities, a Sass partial containing media query mixins ba
 }
 ```
 
+Please see the documentation for the `terra-breakpoints` package for more information.
+
 ### Progressive Disclosure
 
 `terra-application` provides components that manage progressively disclosed application content.
@@ -263,7 +265,7 @@ export default () => (
 
 #### `NavigationPrompt`/`NavigationPromptCheckpoint`
 
-The `NavigationPrompt` and `NavigationPromptCheckpoint` components define a registration pipeline between components that have transient state and components that navigate between them.
+The `NavigationPrompt` and `NavigationPromptCheckpoint` components define a registration pipeline between components that have transient state and the components that render them.
 
 Please see the documentation for the `terra-navigation-prompt` package for detailed API information. All of the exports from the `terra-navigation-prompt` package are exported from the `terra-application/lib/navigation-prompt` directory.
 
