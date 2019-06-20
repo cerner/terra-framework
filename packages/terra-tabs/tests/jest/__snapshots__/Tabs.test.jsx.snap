@@ -6,23 +6,8 @@ exports[`Tabs Variants should render modular-centered tabs 1`] = `
   fill={false}
   header={
     <ResponsiveElement
-      defaultElement={
-        <CollapsedTabs
-          activeKey="default"
-          onTruncationChange={[Function]}
-        >
-          <TabPane
-            aria-selected={true}
-            className="is-active"
-            isDisabled={false}
-            isIconOnly={false}
-            label="Default"
-            onClick={[Function]}
-          />
-        </CollapsedTabs>
-      }
       responsiveTo="parent"
-      tiny={
+      small={
         <CollapsibleTabs
           activeIndex={0}
           activeKey="default"
@@ -39,6 +24,21 @@ exports[`Tabs Variants should render modular-centered tabs 1`] = `
             onClick={[Function]}
           />
         </CollapsibleTabs>
+      }
+      tiny={
+        <CollapsedTabs
+          activeKey="default"
+          onTruncationChange={[Function]}
+        >
+          <TabPane
+            aria-selected={true}
+            className="is-active"
+            isDisabled={false}
+            isIconOnly={false}
+            label="Default"
+            onClick={[Function]}
+          />
+        </CollapsedTabs>
       }
     />
   }
@@ -84,23 +84,8 @@ exports[`Tabs Variants should render modular-left-aligned tabs 1`] = `
   fill={false}
   header={
     <ResponsiveElement
-      defaultElement={
-        <CollapsedTabs
-          activeKey="default"
-          onTruncationChange={[Function]}
-        >
-          <TabPane
-            aria-selected={true}
-            className="is-active"
-            isDisabled={false}
-            isIconOnly={false}
-            label="Default"
-            onClick={[Function]}
-          />
-        </CollapsedTabs>
-      }
       responsiveTo="parent"
-      tiny={
+      small={
         <CollapsibleTabs
           activeIndex={0}
           activeKey="default"
@@ -117,6 +102,21 @@ exports[`Tabs Variants should render modular-left-aligned tabs 1`] = `
             onClick={[Function]}
           />
         </CollapsibleTabs>
+      }
+      tiny={
+        <CollapsedTabs
+          activeKey="default"
+          onTruncationChange={[Function]}
+        >
+          <TabPane
+            aria-selected={true}
+            className="is-active"
+            isDisabled={false}
+            isIconOnly={false}
+            label="Default"
+            onClick={[Function]}
+          />
+        </CollapsedTabs>
       }
     />
   }
@@ -162,23 +162,8 @@ exports[`Tabs Variants should render structural tabs 1`] = `
   fill={false}
   header={
     <ResponsiveElement
-      defaultElement={
-        <CollapsedTabs
-          activeKey="default"
-          onTruncationChange={[Function]}
-        >
-          <TabPane
-            aria-selected={true}
-            className="is-active"
-            isDisabled={false}
-            isIconOnly={false}
-            label="Default"
-            onClick={[Function]}
-          />
-        </CollapsedTabs>
-      }
       responsiveTo="parent"
-      tiny={
+      small={
         <CollapsibleTabs
           activeIndex={0}
           activeKey="default"
@@ -195,6 +180,21 @@ exports[`Tabs Variants should render structural tabs 1`] = `
             onClick={[Function]}
           />
         </CollapsibleTabs>
+      }
+      tiny={
+        <CollapsedTabs
+          activeKey="default"
+          onTruncationChange={[Function]}
+        >
+          <TabPane
+            aria-selected={true}
+            className="is-active"
+            isDisabled={false}
+            isIconOnly={false}
+            label="Default"
+            onClick={[Function]}
+          />
+        </CollapsedTabs>
       }
     />
   }
@@ -240,23 +240,8 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
   fill={false}
   header={
     <ResponsiveElement
-      defaultElement={
-        <CollapsedTabs
-          activeKey="default"
-          onTruncationChange={[Function]}
-        >
-          <TabPane
-            aria-selected={true}
-            className="is-active"
-            isDisabled={false}
-            isIconOnly={false}
-            label="Default"
-            onClick={[Function]}
-          />
-        </CollapsedTabs>
-      }
       responsiveTo="parent"
-      tiny={
+      small={
         <CollapsibleTabs
           activeIndex={0}
           activeKey="default"
@@ -273,6 +258,21 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
             onClick={[Function]}
           />
         </CollapsibleTabs>
+      }
+      tiny={
+        <CollapsedTabs
+          activeKey="default"
+          onTruncationChange={[Function]}
+        >
+          <TabPane
+            aria-selected={true}
+            className="is-active"
+            isDisabled={false}
+            isIconOnly={false}
+            label="Default"
+            onClick={[Function]}
+          />
+        </CollapsedTabs>
       }
     />
   }
@@ -317,23 +317,8 @@ exports[`Tabs should render a default component 1`] = `
   fill={false}
   header={
     <ResponsiveElement
-      defaultElement={
-        <CollapsedTabs
-          activeKey="default"
-          onTruncationChange={[Function]}
-        >
-          <TabPane
-            aria-selected={true}
-            className="is-active"
-            isDisabled={false}
-            isIconOnly={false}
-            label="Default"
-            onClick={[Function]}
-          />
-        </CollapsedTabs>
-      }
       responsiveTo="parent"
-      tiny={
+      small={
         <CollapsibleTabs
           activeIndex={0}
           activeKey="default"
@@ -350,6 +335,21 @@ exports[`Tabs should render a default component 1`] = `
             onClick={[Function]}
           />
         </CollapsibleTabs>
+      }
+      tiny={
+        <CollapsedTabs
+          activeKey="default"
+          onTruncationChange={[Function]}
+        >
+          <TabPane
+            aria-selected={true}
+            className="is-active"
+            isDisabled={false}
+            isIconOnly={false}
+            label="Default"
+            onClick={[Function]}
+          />
+        </CollapsedTabs>
       }
     />
   }
@@ -395,23 +395,8 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
   fill={false}
   header={
     <ResponsiveElement
-      defaultElement={
-        <CollapsedTabs
-          activeKey="default"
-          onTruncationChange={[Function]}
-        >
-          <TabPane
-            aria-selected={true}
-            className="is-active"
-            isDisabled={false}
-            isIconOnly={false}
-            label="Default"
-            onClick={[Function]}
-          />
-        </CollapsedTabs>
-      }
       responsiveTo="parent"
-      tiny={
+      small={
         <CollapsibleTabs
           activeIndex={0}
           activeKey="default"
@@ -428,6 +413,21 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
             onClick={[Function]}
           />
         </CollapsibleTabs>
+      }
+      tiny={
+        <CollapsedTabs
+          activeKey="default"
+          onTruncationChange={[Function]}
+        >
+          <TabPane
+            aria-selected={true}
+            className="is-active"
+            isDisabled={false}
+            isIconOnly={false}
+            label="Default"
+            onClick={[Function]}
+          />
+        </CollapsedTabs>
       }
     />
   }
@@ -472,23 +472,8 @@ exports[`Tabs should render with content filled when indicated 1`] = `
   fill={true}
   header={
     <ResponsiveElement
-      defaultElement={
-        <CollapsedTabs
-          activeKey="default"
-          onTruncationChange={[Function]}
-        >
-          <TabPane
-            aria-selected={true}
-            className="is-active"
-            isDisabled={false}
-            isIconOnly={false}
-            label="Default"
-            onClick={[Function]}
-          />
-        </CollapsedTabs>
-      }
       responsiveTo="parent"
-      tiny={
+      small={
         <CollapsibleTabs
           activeIndex={0}
           activeKey="default"
@@ -505,6 +490,21 @@ exports[`Tabs should render with content filled when indicated 1`] = `
             onClick={[Function]}
           />
         </CollapsibleTabs>
+      }
+      tiny={
+        <CollapsedTabs
+          activeKey="default"
+          onTruncationChange={[Function]}
+        >
+          <TabPane
+            aria-selected={true}
+            className="is-active"
+            isDisabled={false}
+            isIconOnly={false}
+            label="Default"
+            onClick={[Function]}
+          />
+        </CollapsedTabs>
       }
     />
   }
@@ -549,23 +549,8 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
   fill={false}
   header={
     <ResponsiveElement
-      defaultElement={
-        <CollapsedTabs
-          activeKey="default"
-          onTruncationChange={[Function]}
-        >
-          <TabPane
-            aria-selected={true}
-            className="is-active"
-            isDisabled={false}
-            isIconOnly={false}
-            label="Default"
-            onClick={[Function]}
-          />
-        </CollapsedTabs>
-      }
       responsiveTo="parent"
-      tiny={
+      small={
         <CollapsibleTabs
           activeIndex={0}
           activeKey="default"
@@ -582,6 +567,21 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
             onClick={[Function]}
           />
         </CollapsibleTabs>
+      }
+      tiny={
+        <CollapsedTabs
+          activeKey="default"
+          onTruncationChange={[Function]}
+        >
+          <TabPane
+            aria-selected={true}
+            className="is-active"
+            isDisabled={false}
+            isIconOnly={false}
+            label="Default"
+            onClick={[Function]}
+          />
+        </CollapsedTabs>
       }
     />
   }
@@ -627,23 +627,8 @@ exports[`Tabs should set custom props 1`] = `
   fill={false}
   header={
     <ResponsiveElement
-      defaultElement={
-        <CollapsedTabs
-          activeKey="default"
-          onTruncationChange={[Function]}
-        >
-          <TabPane
-            aria-selected={true}
-            className="is-active"
-            isDisabled={false}
-            isIconOnly={false}
-            label="Default"
-            onClick={[Function]}
-          />
-        </CollapsedTabs>
-      }
       responsiveTo="parent"
-      tiny={
+      small={
         <CollapsibleTabs
           activeIndex={0}
           activeKey="default"
@@ -660,6 +645,21 @@ exports[`Tabs should set custom props 1`] = `
             onClick={[Function]}
           />
         </CollapsibleTabs>
+      }
+      tiny={
+        <CollapsedTabs
+          activeKey="default"
+          onTruncationChange={[Function]}
+        >
+          <TabPane
+            aria-selected={true}
+            className="is-active"
+            isDisabled={false}
+            isIconOnly={false}
+            label="Default"
+            onClick={[Function]}
+          />
+        </CollapsedTabs>
       }
     />
   }
@@ -704,23 +704,8 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
   fill={false}
   header={
     <ResponsiveElement
-      defaultElement={
-        <CollapsedTabs
-          activeKey="default"
-          onTruncationChange={[Function]}
-        >
-          <TabPane
-            aria-selected={true}
-            className="is-active customClass"
-            isDisabled={false}
-            isIconOnly={false}
-            label="Default"
-            onClick={[Function]}
-          />
-        </CollapsedTabs>
-      }
       responsiveTo="parent"
-      tiny={
+      small={
         <CollapsibleTabs
           activeIndex={0}
           activeKey="default"
@@ -737,6 +722,21 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
             onClick={[Function]}
           />
         </CollapsibleTabs>
+      }
+      tiny={
+        <CollapsedTabs
+          activeKey="default"
+          onTruncationChange={[Function]}
+        >
+          <TabPane
+            aria-selected={true}
+            className="is-active customClass"
+            isDisabled={false}
+            isIconOnly={false}
+            label="Default"
+            onClick={[Function]}
+          />
+        </CollapsedTabs>
       }
     />
   }

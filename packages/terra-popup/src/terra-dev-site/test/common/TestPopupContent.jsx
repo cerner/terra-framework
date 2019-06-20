@@ -1,19 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
+import styles from './TestPopupContent.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   onClick: PropTypes.func,
-  size: PropTypes.shape({
-    height: PropTypes.string,
-    width: PropTypes.string,
-  }),
+  size: PropTypes.oneOf(['small', 'large']),
 };
 
 const TestPopupContent = ({
   onClick,
   size,
 }) => (
-  <div style={{ height: size.height, width: size.width, backgroundColor: 'red' }}>
+  <div className={cx(`popup-content-${size}`)}>
     <button type="button" id="resize-content" onClick={onClick}>
       Resize
     </button>

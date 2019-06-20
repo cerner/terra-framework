@@ -1,8 +1,4 @@
-const viewports = Terra.viewports('medium');
-
-describe('Time Input', () => {
-  before(() => browser.setViewportSize(Terra.viewports('medium')[0]));
-
+Terra.describeViewports('Time Input', ['medium'], () => {
   describe('Default with no time provided', () => {
     before(() => browser.url('/#/raw/tests/terra-time-input/time-input/time-input/default'));
 
@@ -63,7 +59,7 @@ describe('Time Input', () => {
   });
 });
 
-describe('Time Input onChange operations', () => {
+Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
   describe('Time Input OnChange', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
@@ -77,7 +73,7 @@ describe('Time Input onChange operations', () => {
       browser.keys('123456');
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('Time Input prepends 0 on single digit hour', () => {
@@ -95,7 +91,7 @@ describe('Time Input onChange operations', () => {
       browser.click('#timeInput input[name="terra-time-minute-time-input"]');
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('Time Input prepends 0 on hour input of 3 or more', () => {
@@ -112,7 +108,7 @@ describe('Time Input onChange operations', () => {
       browser.keys('3');
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('Time Input does prepend 0 on hour input less than 3', () => {
@@ -129,7 +125,7 @@ describe('Time Input onChange operations', () => {
       browser.keys('2');
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('Time Input does not accept hour input greater than 23', () => {
@@ -146,7 +142,7 @@ describe('Time Input onChange operations', () => {
       browser.keys('24');
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('Time Input prepends 0 on single digit minute', () => {
@@ -164,7 +160,7 @@ describe('Time Input onChange operations', () => {
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('Time Input prepends 0 on minute input of 6 or more', () => {
@@ -181,7 +177,7 @@ describe('Time Input onChange operations', () => {
       browser.keys('6');
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('Time Input does not prepend 0 on minute input less than 6', () => {
@@ -198,7 +194,7 @@ describe('Time Input onChange operations', () => {
       browser.keys('5');
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('Time Input does not accept minute input greater than 59', () => {
@@ -215,7 +211,7 @@ describe('Time Input onChange operations', () => {
       browser.keys('66');
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('Pressing DELETE in minute with no value focuses to hour', () => {
@@ -232,7 +228,7 @@ describe('Time Input onChange operations', () => {
       browser.keys(['Delete']);
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('Time Input prepends 0 on single digit second', () => {
@@ -335,7 +331,7 @@ describe('Time Input onChange operations', () => {
       browser.keys('747');
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('Does not trigger onChange for an hour with just one digit', () => {
@@ -353,7 +349,7 @@ describe('Time Input onChange operations', () => {
       browser.keys(['ArrowLeft', 'ArrowRight', 'Delete']);
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('Does not trigger onChange for a minute with just one digit', () => {
@@ -373,7 +369,7 @@ describe('Time Input onChange operations', () => {
       browser.keys(['ArrowLeft', 'ArrowRight', 'Delete']);
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 });
 
@@ -427,7 +423,7 @@ describe('Time Input up and down arrow operations', () => {
       browser.keys(['ArrowDown']);
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('DOWN_ARROW is ignored when the hour has reached 00', () => {
@@ -445,7 +441,7 @@ describe('Time Input up and down arrow operations', () => {
       browser.keys(['ArrowDown']);
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('UP_ARROW increments hour by 1', () => {
@@ -461,7 +457,7 @@ describe('Time Input up and down arrow operations', () => {
       browser.keys(['ArrowUp', 'ArrowUp']);
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('UP_ARROW is ignored when the hour has reached 23', () => {
@@ -479,6 +475,6 @@ describe('Time Input up and down arrow operations', () => {
       browser.keys(['ArrowUp']);
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 });

@@ -1,7 +1,5 @@
 // 81 Attachment Variants Combinin Target and Content Attachements
-describe('Hookshot targetAttachment and contentAttachment combinations', () => {
-  before(() => browser.setViewportSize(Terra.viewports('small')[0]));
-
+Terra.describeViewports('Hookshot targetAttachment and contentAttachment combinations', ['small'], () => {
   // Content Attachment: Top Start
   describe('contentAttachment=top start', () => {
     before(() => browser.url('/#/raw/tests/terra-hookshot/hookshot/hookshot-content-attachment-ts'));

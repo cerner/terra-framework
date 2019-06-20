@@ -6,11 +6,17 @@ Unreleased
 ### Added
 * Added the ability to have an input field for seconds.
 
+4.2.0 - (June 19, 2019)
+------------------
+### Changed
+* Minor dependency version bump
+
 4.1.0 - (June 12, 2019)
 ------------------
 ### Changed
 * Removed all inline styles and implemented the same styles using external css.
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+* Update wdio specs to use Terra.describeViewports
 
 ### Removed
 * Removed node_modules from .npmignore

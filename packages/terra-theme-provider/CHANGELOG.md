@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+3.5.0 - (June 19, 2019)
+------------------
+### Changed
+* Minor dependency version bump
+
 3.4.0 - (June 12, 2019)
 ------------------
 ### Removed
@@ -14,6 +19,7 @@ Unreleased
 
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+* Update wdio spec to use Terra.describeViewports
 
 3.3.0 - (April 24, 2019)
 ------------------
