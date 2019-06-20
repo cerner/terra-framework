@@ -1,7 +1,7 @@
 {
   "name": "terra-menu",
   "main": "lib/Menu.js",
-  "version": "6.2.0",
+  "version": "6.3.0",
   "description": "The menu is a popup component that displays a list of items, item groups, and dividers. Menu Items can be actionable, have toggle-style selection, or have nested submenu items. Menu Item groups are a single-select grouping of menu items. The Menu will determine the height of the popup based on the number of items in the main menu.",
   "repository": {
     "type": "git",
@@ -32,12 +32,12 @@
     "terra-content-container": "^3.0.0",
     "terra-icon": "^3.1.0",
     "terra-list": "^4.0.0",
-    "terra-popup": "^6.2.0"
+    "terra-popup": "^6.3.0"
   },
   "devDependencies": {
     "terra-button": "^3.3.0",
     "terra-doc-template": "^2.2.0",
-    "terra-slide-group": "^4.1.0"
+    "terra-slide-group": "^4.2.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

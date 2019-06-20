@@ -423,8 +423,8 @@ class DatePicker extends React.Component {
       >
         <ResponsiveElement
           responsiveTo="window"
-          defaultElement={portalPicker}
-          small={popupPicker}
+          tiny={portalPicker}
+          medium={popupPicker}
         />
       </div>
     );
