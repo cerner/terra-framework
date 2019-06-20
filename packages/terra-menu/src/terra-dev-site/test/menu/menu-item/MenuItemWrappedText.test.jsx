@@ -6,7 +6,7 @@ import styles from './MenuItemCommon.scss';
 const cx = classNames.bind(styles);
 
 const WrappedTextMenuItem = () => (
-  <ul className={cx('unordered-list')}>
+  <ul className={cx('unordered-list')} role="menu">
     <Menu.Item text="This menu item has a really long text that should wrap." className="testWrappedItem" />
   </ul>
 );

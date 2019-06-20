@@ -9,6 +9,7 @@ Unreleased
 ### Changed
 * Removed all inline styles from Dev-site components and implemented the same styles using external css.
 * Update wdio specs to use Terra.describeViewports
+* Update examples to ensure correct aria roles are set
 
 ### Removed
 * Removed React.Fragment from MenuContent to improve the accessibility

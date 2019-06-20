@@ -30,7 +30,7 @@ Item is selected:
             {this.state.isSelected ? 'yes' : 'no'}
           </h3>
         </div>
-        <ul>
+        <ul role="menu">
           <Menu.Item text="Selectable Menu Item" key="1" className="TestSelectableItem" isSelectable onChange={this.handleSelection} />
         </ul>
       </div>

@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Fixed bug where afterdismiss promise was getting resolved prior to dismissing.
 
 4.13.0 - (June 19, 2019)
 ------------------
