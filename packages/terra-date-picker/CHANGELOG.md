@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Allow terra-date-picker to be a controlled component.
 
+### Changed
+* Removed extra inline styles.
+
 4.4.0 - (June 19, 2019)
 ------------------
 ### Changed

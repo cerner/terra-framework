@@ -295,16 +295,23 @@ class DisclosureManager extends React.Component {
     this.setState(newState);
   }
 
-  popDisclosure() {
-    const newState = DisclosureManager.cloneDisclosureState(this.state);
+  popDisclosure(callbackfunction) {
+    /**
+     * If there is only one disclosed component, the disclosure is closed and all state is reset.
+     */
+    if (this.state.disclosureComponentKeys.length === 1) {
+      this.closeDisclosure(callbackfunction);
+    } else {
+      const newState = DisclosureManager.cloneDisclosureState(this.state);
 
-    newState.disclosureComponentData[newState.disclosureComponentKeys.pop()] = undefined;
-    newState.disclosureComponentDelegates.pop();
+      newState.disclosureComponentData[newState.disclosureComponentKeys.pop()] = undefined;
+      newState.disclosureComponentDelegates.pop();
 
-    this.setState(newState);
+      this.setState(newState, callbackfunction);
+    }
   }
 
-  closeDisclosure() {
+  closeDisclosure(callbackfunction) {
     this.setState({
       disclosureIsOpen: false,
       disclosureIsFocused: false,
@@ -314,7 +321,7 @@ class DisclosureManager extends React.Component {
       disclosureComponentKeys: [],
       disclosureComponentData: {},
       disclosureComponentDelegates: [],
-    });
+    }, callbackfunction);
   }
 
   requestDisclosureFocus() {
@@ -424,20 +431,14 @@ class DisclosureManager extends React.Component {
         promiseRoot = dismissCheck();
       }
 
+      const callbackfunction = () => {
+        this.dismissChecks[key] = undefined;
+        this.resolveDismissPromise(key);
+      };
+
       return promiseRoot
         .then(() => {
-          this.dismissChecks[key] = undefined;
-          this.resolveDismissPromise(key);
-        })
-        .then(() => {
-          if (disclosureComponentKeys.length === 1) {
-            /**
-             * If there is only one disclosed component, the disclosure is closed and all state is reset.
-             */
-            this.closeDisclosure();
-          } else {
-            this.popDisclosure();
-          }
+          this.popDisclosure(callbackfunction);
         });
     };
   }

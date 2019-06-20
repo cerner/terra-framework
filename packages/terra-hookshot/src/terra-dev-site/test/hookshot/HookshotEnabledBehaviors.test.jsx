@@ -5,6 +5,7 @@ const Enabled = () => (
   <HookshotTemplate
     id="Enabled"
     isOpen
+    type="primary"
     isEnabled
   />
 );
@@ -13,6 +14,7 @@ const NotEnabled = () => (
   <HookshotTemplate
     id="NotEnabled"
     isOpen
+    type="primary"
     isEnabled={false}
   />
 );

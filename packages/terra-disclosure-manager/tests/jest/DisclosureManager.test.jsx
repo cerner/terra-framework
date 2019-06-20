@@ -672,4 +672,84 @@ describe('DisclosureManager', () => {
         expect(secondRenderPayload.disclosure.components.length).toEqual(1);
       });
   });
+
+  it('should provide afterDismiss promise to resolve after dismissing', async () => {
+    let dismissDisclosureInstance;
+    let afterDismissPromise;
+    let childApp2DisclosureManager;
+
+    const wrapper = mountDisclosureManager(['test'], manager => (
+      <div id="wrapper">
+        {manager.children.components}
+        {manager.disclosure.components}
+      </div>
+    ));
+
+    validateInitialState(wrapper);
+    validateChildDelegate(wrapper);
+
+    await new Promise((resolve, reject) => {
+      const childApp1DisclosureManager = wrapper.find('#child1').getElements()[1].props.disclosureManager;
+      childApp1DisclosureManager.disclose({
+        preferredType: 'test',
+        size: 'large',
+        content: {
+          key: 'DISCLOSE_KEY',
+          component: <TestChild id="component-B" />,
+        },
+      }).then(resolve).catch(reject);
+    });
+
+    wrapper.update();
+
+    await new Promise((resolve, reject) => {
+      childApp2DisclosureManager = wrapper.find('#component-B').getElements()[1].props.disclosureManager;
+      childApp2DisclosureManager.disclose({
+        preferredType: 'test',
+        size: 'large',
+        content: {
+          key: 'Nested',
+          component: <TestChild id="component-C" />,
+        },
+      }).then(({ dismissDisclosure, afterDismiss }) => {
+        dismissDisclosureInstance = dismissDisclosure;
+        afterDismissPromise = afterDismiss;
+        resolve();
+      }).catch(reject);
+    });
+
+    wrapper.update();
+
+    expect(wrapper.state().disclosureIsOpen).toBeTruthy();
+    expect(wrapper.state().disclosureIsFocused).toBeTruthy();
+    expect(wrapper.state().disclosureIsMaximized).toBeFalsy();
+    expect(wrapper.state().disclosureSize).toBe('large');
+    expect(wrapper.state().disclosureComponentKeys).toEqual(['DISCLOSE_KEY', 'Nested']);
+    expect(wrapper.state().disclosureComponentData.Nested.key).toEqual('Nested');
+    expect(wrapper.state().disclosureComponentData.Nested.component.props.id).toEqual('component-C');
+    expect(wrapper.state().disclosureComponentDelegates.length).toEqual(2);
+
+    /**
+     * Due to the asynchronous execution of the afterDismiss promise, failed expectations
+     * within the promise handler cannot actually fail the test. Instead, we use a flag to
+     * and write expectations around the flag after awaiting the promise below.
+     */
+    let afterDismissResolvedAfterStateUpdate = false;
+    afterDismissPromise.then(() => {
+      if (wrapper.state().disclosureComponentKeys.indexOf('Nested') === -1) {
+        afterDismissResolvedAfterStateUpdate = true;
+      }
+    });
+
+    await dismissDisclosureInstance();
+    await expect(afterDismissPromise).resolves.toBe(undefined);
+
+    expect(afterDismissResolvedAfterStateUpdate).toBeTruthy();
+
+    await childApp2DisclosureManager.closeDisclosure();
+
+    wrapper.update();
+
+    expect(wrapper.state().disclosureIsOpen).toBeFalsy();
+  });
 });
