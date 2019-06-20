@@ -1,21 +1,19 @@
-// stylelint-disable scss/at-mixin-pattern
-
-@mixin hookshot-common-wrapper() {
-  border: 1px dashed #808080;
-  height: 145px;
-  width: 540px;
-}
-
-@mixin hookshot-common-content() {
-  background-color: #d3d3d3;
-  height: 36px;
-  margin-left: 220px;
-  margin-right: 220px;
-  margin-top: 55px;
-  width: 100px;
-}
-
 :local {
+  .wrapper {
+    border: 1px dashed #808080;
+    height: 145px;
+    width: 540px;
+  }
+
+  .content {
+    background-color: #d3d3d3;
+    height: 36px;
+    margin-left: 220px;
+    margin-right: 220px;
+    margin-top: 55px;
+    width: 100px;
+  }
+
   .default-hookshot-wrapper {
     height: 40px;
     width: 200px;
@@ -46,126 +44,52 @@
     width: 200px;
   }
 
-  .hookshot-primary {
-    @include hookshot-common-content();
-  }
-
   .hookshot-auto-flipped {
-    @include hookshot-common-content();
     margin-left: 50px;
   }
 
-  .hookshot-auto-90 {
-    @include hookshot-common-content();
+  .hookshot-auto-90,
+  .hookshot-flip-pushed {
     margin-left: 60px;
   }
 
-  .hookshot-auto--90 {
-    @include hookshot-common-content();
+  .hookshot-auto-neg-90 {
     margin-left: 60px;
     margin-top: 100px;
   }
 
   .hookshot-auto-pushed {
-    @include hookshot-common-content();
     margin-left: 110px;
     margin-top: 100px;
   }
 
-  .hookshot-wrapper-primary {
-    @include hookshot-common-wrapper();
-  }
-
-  .hookshot-wrapper-auto-flipped {
-    @include hookshot-common-wrapper();
-  }
-
-  .hookshot-wrapper-auto-90 {
-    @include hookshot-common-wrapper();
-    width: 220px;
-  }
-
-  .hookshot-wrapper-auto--90 {
-    @include hookshot-common-wrapper();
-    width: 220px;
-  }
-
-  .hookshot-wrapper-auto-pushed {
-    @include hookshot-common-wrapper();
+  .hookshot-wrapper-auto-90,
+  .hookshot-wrapper-auto-neg-90,
+  .hookshot-wrapper-auto-pushed,
+  .hookshot-wrapper-flip-pushed {
     width: 220px;
   }
 
   .hookshot-flip-flipped {
-    @include hookshot-common-content();
     margin-left: 50px;
   }
 
-  .hookshot-flip-pushed {
-    @include hookshot-common-content();
-    margin-left: 60px;
-  }
-
-  .hookshot-wrapper-flip-flipped {
-    @include hookshot-common-wrapper();
-  }
-
-  .hookshot-wrapper-flip-pushed {
-    @include hookshot-common-wrapper();
-    width: 220px;
-  }
-
-  .hookshot-none-offset {
-    @include hookshot-common-content();
+  .hookshot-none-offset,
+  .hookshot-push-pushed,
+  .hookshot-container-right {
     margin-left: 50px;
-  }
-
-  .hookshot-wrapper-none-offset {
-    @include hookshot-common-wrapper();
-  }
-
-  .hookshot-push-pushed {
-    @include hookshot-common-content();
-    margin-left: 50px;
-  }
-
-  .hookshot-wrapper-push-pushed {
-    @include hookshot-common-wrapper();
   }
 
   .hookshot-container-up {
-    @include hookshot-common-content();
     margin-top: 100px;
   }
 
   .hookshot-container-down {
-    @include hookshot-common-content();
     margin-top: 20px;
   }
 
   .hookshot-container-left {
-    @include hookshot-common-content();
     margin-left: 300px;
     margin-right: 140px;
-  }
-
-  .hookshot-container-right {
-    @include hookshot-common-content();
-    margin-left: 50px;
-  }
-
-  .hookshot-wrapper-container-up {
-    @include hookshot-common-wrapper();
-  }
-
-  .hookshot-wrapper-container-down {
-    @include hookshot-common-wrapper();
-  }
-
-  .hookshot-wrapper-container-left {
-    @include hookshot-common-wrapper();
-  }
-
-  .hookshot-wrapper-container-right {
-    @include hookshot-common-wrapper();
   }
 }

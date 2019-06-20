@@ -104,7 +104,7 @@ class HookshotTemplate extends React.Component {
 
 
     return (
-      <div id={`${id}-bounds`} className={cx(`hookshot-wrapper-${type}`)}>
+      <div id={`${id}-bounds`} className={cx(['wrapper', `hookshot-wrapper-${type}`])}>
         <Hookshot
           id={id}
           contentAttachment={attachmentValues(contentAttachment)}
@@ -126,7 +126,7 @@ class HookshotTemplate extends React.Component {
         <button
           type="button"
           id={`trigger-${id}`}
-          className={cx(`hookshot-${type}`)}
+          className={cx(['content', `hookshot-${type}`])}
           onClick={this.triggerHookshot}
         >
           Trigger Hookshot

@@ -19,7 +19,7 @@ class HookshotAttachmentBehaviorAuto extends React.Component {
     } else if (this.state.position === '90') {
       type = 'auto-90';
     } else if (this.state.position === '-90') {
-      type = 'auto--90';
+      type = 'auto-neg-90';
     } else if (this.state.position === 'pushed') {
       type = 'auto-pushed';
     }
