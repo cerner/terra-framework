@@ -171,6 +171,9 @@ const PopupMenu = ({
         header={<ActionHeader title={title} />}
         footer={<ActionFooter end={endContent} />}
         fill={isHeightBounded}
+        onKeyDown={handleKeyDown}
+        tabIndex="0"
+        role="list"
       >
         <div className={cx('content-header')}>
           {customContent ? (
@@ -179,7 +182,7 @@ const PopupMenu = ({
             </div>
           ) : undefined}
           {userConfig ? <PopupMenuUser userConfig={userConfig} /> : null}
-          <ul className={cx('utility-list')} ref={listRef} role="menu" onKeyDown={handleKeyDown} tabIndex="0">
+          <ul className={cx('utility-list')} ref={listRef} role="listbox">
             {menuItems.map(item => (
               <PopupMenuListItem
                 key={item.key}

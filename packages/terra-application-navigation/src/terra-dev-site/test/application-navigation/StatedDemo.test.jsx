@@ -4,134 +4,137 @@ import React, {
 } from 'react';
 import Application from 'terra-application';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
-import IconPill from 'terra-icon/lib/icon/IconPill';
+import IconManufacturer from 'terra-icon/lib/icon/IconManufacturer';
 import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
-import IconLightbulb from 'terra-icon/lib/icon/IconLightbulb';
-import Placeholder from 'terra-doc-template/lib/Placeholder';
+import IconScratchPad from 'terra-icon/lib/icon/IconScratchPad';
+import IconSave from 'terra-icon/lib/icon/IconSave';
+import IconPrinter from 'terra-icon/lib/icon/IconPrinter';
+import IconBookmark from 'terra-icon/lib/icon/IconBookmark';
+import IconAttachment from 'terra-icon/lib/icon/IconAttachment';
+import PageContent from '../common/PageContent';
 import ApplicationNavigation from '../../../ApplicationNavigation';
 
-
 const titleConfig = {
-  title: 'Test Title',
+  title: 'My Application',
 };
 
 const userConfig = {
-  name: 'Test Name',
-  initials: 'TN',
+  name: 'My Name',
+  initials: 'MN',
 };
 
 const extensionItems = [
   {
     icon: <IconSearch />,
     key: 'item-search',
-    text: 'Item Search',
+    text: 'Search',
     metaData: {
       test: 'search',
     },
   }, {
-    icon: <IconPill />,
-    key: 'item-pill',
-    text: 'Item Pill',
+    icon: <IconManufacturer />,
+    key: 'item-medication',
+    text: 'View Manufacturers',
     metaData: {
-      test: 'pill',
+      test: 'manufacturers',
     },
   }, {
     icon: <IconVisualization />,
-    key: 'item-lisualization',
-    text: 'Item Visualization',
+    key: 'item-trends',
+    text: 'View Trends',
     metaData: {
-      test: 'visualization',
+      test: 'trends',
     },
   }, {
-    icon: <IconLightbulb />,
-    key: 'item-lightbulb',
-    text: 'Item Lightbulb',
+    icon: <IconScratchPad />,
+    key: 'item-inbox',
+    text: 'View Inbox',
     metaData: {
-      test: 'lightbulb',
+      test: 'inbox',
     },
   },
 ];
 
 const navigationItems = [
   {
-    key: '/page_1',
-    text: 'Page 1',
+    key: '/home',
+    text: 'Home',
     metaData: {
-      display: 'Page 1',
+      display: 'Home',
     },
   }, {
-    key: '/page_2',
-    text: 'Page 2',
+    key: '/products',
+    text: 'Products',
     metaData: {
-      display: 'Page 2',
+      display: 'Products',
     },
   }, {
-    key: '/page_3',
-    text: 'Page 3',
+    key: '/management',
+    text: 'Management',
     metaData: {
-      display: 'Page 3',
+      display: 'Management',
     },
   }, {
-    key: '/page_4',
-    text: 'Page 4',
+    key: '/documentation',
+    text: 'Documentation',
     metaData: {
-      display: 'Page 4',
+      display: 'Documentation',
     },
   }, {
-    key: '/page_5',
-    text: 'Page 5',
+    key: '/continuing_education',
+    text: 'Continuing Education',
     metaData: {
-      display: 'Page 5',
+      display: 'Continuing Education',
     },
   }, {
-    key: '/page_6',
-    text: 'Page 6',
+    key: '/support',
+    text: 'Support',
     metaData: {
-      display: 'Page 6',
+      display: 'Support',
     },
   }, {
-    key: '/page_7',
-    text: 'Page 7',
+    key: '/resources',
+    text: 'Resources',
     metaData: {
-      display: 'Page 7',
+      display: 'Resources',
     },
   }, {
-    key: '/page_8',
-    text: 'Page 8',
+    key: '/archives',
+    text: 'Archives',
     metaData: {
-      display: 'Page 8',
+      display: 'Archives',
     },
   },
 ];
 
 const utilityItems = [
   {
-    icon: <IconSearch />,
-    key: 'item-a',
-    text: 'Item A',
+    icon: <IconSave />,
+    key: 'item-save',
+    text: 'Save',
     metaData: {
-      test: 'a',
+      test: 'save',
     },
   }, {
-    icon: <IconPill />,
-    key: 'item-b',
-    text: 'Item B',
+    icon: <IconPrinter />,
+    key: 'item-print',
+    text: 'Print',
     metaData: {
-      test: 'b',
+      test: 'print',
     },
   }, {
-    icon: <IconVisualization />,
-    key: 'item-c',
-    text: 'Item C',
+    icon: <IconBookmark />,
+    key: 'item-bookmark',
+    text: 'Bookmark',
     metaData: {
-      test: 'c',
+      test: 'bookmark',
     },
   }, {
-    icon: <IconLightbulb />,
-    key: 'item-d',
-    text: 'Item D',
+    icon: <IconAttachment />,
+    key: 'item-attachment',
+    text: 'Add Attachment',
     metaData: {
-      test: 'd',
+      test: 'attachment',
     },
   },
 ];
@@ -161,7 +164,7 @@ const StatedDemo = () => {
         onSelectHelp={() => alert('Help Selected')} // eslint-disable-line no-alert
         onSelectLogout={() => alert('Logout Selected')} // eslint-disable-line no-alert
       >
-        <Placeholder title={activeKey} />
+        <PageContent title={activeKey} />
       </ApplicationNavigation>
     </Application>
   );

@@ -1,0 +1,26 @@
+:local {
+  .outer,
+  .inner {
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%;
+  }
+
+  .outer {
+    padding: 1rem;
+  }
+
+  .inner {
+    border: 5px dashed grey;
+  }
+
+  .button {
+    font-size: 2rem;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+}
