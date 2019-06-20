@@ -1,5 +1,9 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import Popup from '../../../Popup';
+import styles from './ArrowVerticalLeftAdjustmentPopup.test.scss';
+
+const cx = classNames.bind(styles);
 
 // This tests verifies the PopupUtils.leftOffset methed when (offset < (2 * arrowOffset) + cornerOffset)
 class AlignmentPopup extends React.Component {
@@ -46,9 +50,7 @@ class AlignmentPopup extends React.Component {
     return (
       <div
         id="test-popup-area"
-        style={{
-          position: 'relative', height: '200px', width: '200px', background: 'aliceblue',
-        }}
+        className={cx('test-popup-area')}
         ref={this.setParentNode}
       >
         <Popup
@@ -63,14 +65,12 @@ class AlignmentPopup extends React.Component {
           onRequestClose={this.handleRequestClose}
           targetRef={this.getButtonNode}
         >
-          <p style={{ padding: '5px' }}>This popup arrow has verital-left attachment, but was adjusted to be on the screen.</p>
+          <p className={cx('popup-text')}>This popup arrow has verital-left attachment, but was adjusted to be on the screen.</p>
         </Popup>
         <button
           type="button"
           id="alignment-button"
-          style={{
-            position: 'absolute', top: '0px', height: '20px', width: '20px', backgroundColor: '#c00',
-          }}
+          className={cx('popup-button')}
           onClick={this.handleButtonClick}
           ref={this.setButtonNode}
         />

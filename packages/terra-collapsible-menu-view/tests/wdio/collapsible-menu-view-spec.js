@@ -1,48 +1,34 @@
-describe('Collapsible Menu View', () => {
-  Terra.viewports().forEach((viewport) => {
-    describe('Responsive', () => {
-      before(() => {
-        browser.url('/#/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/default-collapsible-menu-view');
-        browser.setViewportSize(viewport);
-      });
-
-      Terra.it.matchesScreenshot();
-      Terra.it.isAccessible();
-    });
+Terra.describeViewports('Responsive', ['tiny', 'small', 'medium', 'huge', 'large', 'enormous'], () => {
+  before(() => {
+    browser.url('/#/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/default-collapsible-menu-view');
   });
 
-  // Only test viewports that have collapsed menu items
-  Terra.viewports('tiny', 'small', 'medium', 'large').forEach((viewport) => {
-    describe('Responsive Hidden Open', () => {
-      before(() => {
-        browser.url('/#/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/default-collapsible-menu-view');
-        browser.setViewportSize(viewport);
-        browser.click('[data-collapsible-menu-toggle]');
-      });
+  Terra.it.matchesScreenshot();
+  Terra.it.isAccessible();
+});
 
-      Terra.it.matchesScreenshot({ selector: '#root' });
-      Terra.it.isAccessible();
-    });
+// Only test viewports that have collapsed menu items
+Terra.describeViewports('Responsive Hidden Open', ['tiny', 'small', 'medium', 'large'], () => {
+  before(() => {
+    browser.url('/#/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/default-collapsible-menu-view');
+    browser.click('[data-collapsible-menu-toggle]');
   });
 
-  describe('First hidden item visible when isIconOnly', () => {
-    const viewports = Terra.viewports('medium');
-    before(() => browser.url('/#/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/first-hidden-item-is-icon'));
-    Terra.it.matchesScreenshot({ viewports });
-    Terra.it.isAccessible({ viewports });
-  });
+  Terra.it.matchesScreenshot({ selector: '#root' });
+  Terra.it.isAccessible();
+});
 
-  Terra.viewports('tiny', 'large').forEach((viewport) => {
-    describe('Responsive Single Item', () => {
-      before(() => {
-        browser.url('/#/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/collapsible-menu-view-single-item');
-        browser.setViewportSize(viewport);
-        browser.moveToObject('#root', 0, 0);
-      });
+Terra.describeViewports('First hidden item visible when isIconOnly', ['medium'], () => {
+  before(() => browser.url('/#/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/first-hidden-item-is-icon'));
 
-      Terra.it.matchesScreenshot({ selector: '#root' });
-      Terra.it.isAccessible();
-    });
+  Terra.it.matchesScreenshot();
+  Terra.it.isAccessible();
+});
+
+Terra.describeViewports('Responsive Single Item', ['tiny', 'large'], () => {
+  before(() => {
+    browser.url('/#/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/collapsible-menu-view-single-item');
+    browser.moveToObject('#root', 0, 0);
   });
 
   Terra.viewports('enormous', 'huge').forEach((viewport) => {
@@ -69,4 +55,6 @@ describe('Collapsible Menu View', () => {
       Terra.it.isAccessible();
     });
   });
+  Terra.it.matchesScreenshot({ selector: '#root' });
+  Terra.it.isAccessible();
 });

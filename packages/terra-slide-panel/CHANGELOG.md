@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+3.7.0 - (June 19, 2019)
+------------------
+### Removed
+* Removed '-ms-overflow-style' style
+
 ### Fixed
 * Corrected to allow Slide Panel's DOM order to flex based on the 'panelPosition' prop.
 
@@ -12,7 +18,11 @@ Unreleased
 * Removed node_modules from .npmignore
 
 ### Changed
+* Removed all inline styles and implemented the same styles using external css.
+
+### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+* Update wdio specs to use Terra.describeViewports
 
 3.5.0 - (April 24, 2019)
 ------------------

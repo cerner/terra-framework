@@ -1,12 +1,10 @@
-const viewports = Terra.viewports('tiny', 'large');
-
-describe('Embedded Content Consumer', () => {
+Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
   describe('default', () => {
     before(() => {
       browser.url('#/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/consumers/basic-consumer');
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('custom-event', () => {
@@ -15,7 +13,7 @@ describe('Embedded Content Consumer', () => {
       browser.waitForExist('#CustomEvent');
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
 
 
     it('Provider triggers EventA message', () => {
@@ -27,7 +25,7 @@ describe('Embedded Content Consumer', () => {
       browser.moveToObject('#root', 0, 0);
     });
 
-    Terra.it.matchesScreenshot('EventA', { viewports });
+    Terra.it.matchesScreenshot('EventA');
   });
 
   describe('custom-events', () => {
@@ -36,7 +34,7 @@ describe('Embedded Content Consumer', () => {
       browser.waitForExist('#CustomEvents');
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
 
 
     it('Provider triggers EventA message', () => {
@@ -48,7 +46,7 @@ describe('Embedded Content Consumer', () => {
       browser.moveToObject('#root', 0, 0);
     });
 
-    Terra.it.matchesScreenshot('EventA', { viewports });
+    Terra.it.matchesScreenshot('EventA');
 
     it('successfully replied with EventA message', () => {
       const myFrame = browser.element('iframe[src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]').value;
@@ -67,7 +65,7 @@ describe('Embedded Content Consumer', () => {
       browser.moveToObject('#root', 0, 0);
     });
 
-    Terra.it.matchesScreenshot('EventB', { viewports });
+    Terra.it.matchesScreenshot('EventB');
 
     it('successfully replied with EventB message', () => {
       const myFrame = browser.element('iframe[src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]').value;

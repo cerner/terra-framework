@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import ResponsiveElement from 'terra-responsive-element/lib/ResponsiveElement';
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import ApplicationHeaderLayout from 'terra-application-header-layout/lib/ApplicationHeaderLayout';
@@ -8,6 +9,9 @@ import NavigationExample from 'terra-application-header-layout/lib/terra-dev-sit
 import ToggleExample from 'terra-application-header-layout/lib/terra-dev-site/doc/common/ToggleExample';
 import UtilitiesExample from 'terra-application-header-layout/lib/terra-dev-site/doc/common/UtilitiesExample';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+import styles from './HeaderWireframe.scss';
+
+const cx = classNames.bind(styles);
 
 const HeaderWireframe = () => {
   const tinyHeader = (
@@ -20,7 +24,7 @@ const HeaderWireframe = () => {
     />
   );
 
-  const smallHeader = (
+  const mediumHeader = (
     <ApplicationHeaderLayout
       logo={<LogoExample size="small" />}
       utilities={<UtilitiesExample size="small" />}
@@ -30,7 +34,7 @@ const HeaderWireframe = () => {
     />
   );
 
-  const mediumHeader = (
+  const largeHeader = (
     <ApplicationHeaderLayout
       logo={<LogoExample size="medium" />}
       utilities={<UtilitiesExample size="medium" />}
@@ -41,13 +45,12 @@ const HeaderWireframe = () => {
   );
 
   return (
-    <div style={{ height: '60px', position: 'relative', width: '100%' }}>
-      <div style={{ height: '100%' }}>
+    <div className={cx('content-wrapper')}>
+      <div className={cx('responsive-element-wrapper')}>
         <ResponsiveElement
-          defaultElement={tinyHeader}
           tiny={tinyHeader}
-          small={smallHeader}
           medium={mediumHeader}
+          large={largeHeader}
         />
       </div>
     </div>
