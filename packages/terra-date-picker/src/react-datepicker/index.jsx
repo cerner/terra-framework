@@ -49,7 +49,7 @@ const WrappedCalendar = onClickOutside(Calendar)
  * General datepicker component.
  */
 
-export default class DatePicker extends React.Component {
+class DatePicker extends React.Component {
   static propTypes = {
     adjustDateOnChange: PropTypes.bool,
     allowSameDay: PropTypes.bool,
@@ -155,15 +155,6 @@ export default class DatePicker extends React.Component {
       timeIntervals: 30
     }
   }
-
-  static contextTypes = {
-    /* eslint-disable consistent-return */
-    intl: (context) => {
-      if (context.intl === undefined) {
-        return new Error('Component is internationalized, and must be wrapped in terra-base');
-      }
-    },
-  };
 
   constructor (props) {
     super(props)
@@ -389,7 +380,7 @@ export default class DatePicker extends React.Component {
         ariaLiveMessage = localizedDate.format('LL');
 
         if (isDayDisabled(date, this.props)) {
-          ariaLiveMessage = ariaLiveMessage.concat(' ', this.context.intl.formatMessage({ id: 'Terra.datePicker.disabled' }));
+          ariaLiveMessage = ariaLiveMessage.concat(' ', this.props.intl.formatMessage({ id: 'Terra.datePicker.disabled' }));
         } 
       }
 
@@ -728,3 +719,5 @@ export default class DatePicker extends React.Component {
     )
   }
 }
+
+export default injectIntl(DatePicker);
