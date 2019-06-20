@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+6.3.0 - (June 19, 2019)
+------------------
 ### Removed
 * Removed devDependency on terra-responsive-element
 
