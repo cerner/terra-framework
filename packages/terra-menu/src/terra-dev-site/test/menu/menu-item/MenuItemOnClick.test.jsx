@@ -23,7 +23,7 @@ Item has been clicked
 times
           </h3>
         </div>
-        <ul>
+        <ul role="menu">
           <Menu.Item text="OnClick Menu Item" key="1" className="TestOnClickItem" onClick={this.handleSelection} />
         </ul>
       </div>
