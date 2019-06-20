@@ -66,7 +66,7 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
       browser.execute(() => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-second-time-input"]').style.caretColor = 'transparent';
       });
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
