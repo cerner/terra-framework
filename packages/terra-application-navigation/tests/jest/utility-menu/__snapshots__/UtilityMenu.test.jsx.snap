@@ -41,6 +41,9 @@ exports[`UtilityMenu should render default element 1`] = `
   >
     <div
       className="container"
+      onKeyDown={[Function]}
+      role="list"
+      tabIndex="0"
     >
       <ContentContainer
         fill={false}
@@ -102,9 +105,7 @@ exports[`UtilityMenu should render default element 1`] = `
                 >
                   <ul
                     className="utility-list"
-                    onKeyDown={[Function]}
-                    role="menu"
-                    tabIndex="0"
+                    role="listbox"
                   />
                 </div>
               </div>
@@ -239,6 +240,9 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
   >
     <div
       className="container"
+      onKeyDown={[Function]}
+      role="list"
+      tabIndex="0"
     >
       <ContentContainer
         fill={false}
@@ -420,9 +424,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                   </PopupMenuUser>
                   <ul
                     className="utility-list"
-                    onKeyDown={[Function]}
-                    role="menu"
-                    tabIndex="0"
+                    role="listbox"
                   >
                     <PopupMenuListItem
                       icon={
@@ -716,6 +718,9 @@ exports[`UtilityMenu should render with skip callback 1`] = `
   >
     <div
       className="container"
+      onKeyDown={[Function]}
+      role="list"
+      tabIndex="0"
     >
       <ContentContainer
         fill={false}
@@ -795,9 +800,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
                 >
                   <ul
                     className="utility-list"
-                    onKeyDown={[Function]}
-                    role="menu"
-                    tabIndex="0"
+                    role="listbox"
                   />
                 </div>
               </div>

@@ -67,6 +67,7 @@ class Tabs extends React.Component {
 
     this.containerRef = React.createRef();
     this.rollupTabRef = React.createRef();
+    this.rollupInnerRef = React.createRef();
     this.childRefs = [];
     this.previousNotifications = null;
     this.resizeListenerAdded = false;
@@ -249,6 +250,7 @@ class Tabs extends React.Component {
           this.setState({ popupIsOpen: true });
         }}
         tabRef={this.rollupTabRef}
+        innerRef={this.rollupInnerRef}
         text={intl.formatMessage({ id: 'Terra.applicationNavigation.tabs.rollupButtonTitle' })}
         isSelected={tabRollupIsSelected}
         hasChildNotifications={hasHiddenNotification}
@@ -269,7 +271,7 @@ class Tabs extends React.Component {
         onRequestClose={() => {
           this.closePopup();
         }}
-        targetRef={() => this.rollupTabRef.current}
+        targetRef={() => this.rollupInnerRef.current}
         isOpen
         isArrowDisplayed
         isContentFocusDisabled

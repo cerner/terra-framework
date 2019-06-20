@@ -24,6 +24,10 @@ const propTypes = {
    */
   text: PropTypes.string,
   /**
+   * Ref object that will be updated with a reference to the TabRollup's inner element.
+   */
+  innerRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  /**
    * Ref object that will be updated with a reference to the TabRollup's root element.
    */
   tabRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
@@ -52,6 +56,7 @@ const TabRollup = ({
   hasCount,
   isSelected,
   onTabSelect,
+  innerRef,
   tabRef,
   hasChildNotifications,
   text,
@@ -75,7 +80,7 @@ const TabRollup = ({
     data-focus-styles-enabled
   >
     <div className={cx('tab-inner')} data-tab-menu-inner>
-      <div className={cx('tab-rollup-label')}>
+      <div className={cx('tab-rollup-label')} ref={innerRef}>
         {<span className={cx('tab-rollup-text')}>{text}</span>}
         {hasChildNotifications && <span className={cx('tab-count')}><TabCount value={isPulsed ? 1 : 0} isRollup /></span>}
         <IconCaretDown className={cx('tab-rollup-icon')} />

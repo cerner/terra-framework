@@ -279,6 +279,32 @@ exports[`Tabs should render prop data 1`] = `
         data-application-tabs-more={true}
         hasChildNotifications={false}
         hasCount={false}
+        innerRef={
+          Object {
+            "current": <div
+              class="tab-rollup-label"
+            >
+              <span
+                class="tab-rollup-text"
+              >
+                Terra.applicationNavigation.tabs.rollupButtonTitle
+              </span>
+              <svg
+                aria-hidden="true"
+                class="tui-Icon icon is-bidi tab-rollup-icon"
+                focusable="false"
+                height="1em"
+                viewBox="0 0 48 48"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M48 12L24 36 0 12h48z"
+                />
+              </svg>
+            </div>,
+          }
+        }
         isPulsed={false}
         isSelected={false}
         onTabSelect={[Function]}

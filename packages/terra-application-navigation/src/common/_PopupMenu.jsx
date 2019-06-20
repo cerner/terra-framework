@@ -165,15 +165,18 @@ const PopupMenu = ({
   }
 
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+  /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
   return (
-    <div className={cx('container', { 'is-fill': isHeightBounded })}>
+    <div
+      className={cx('container', { 'is-fill': isHeightBounded })}
+      onKeyDown={handleKeyDown}
+      tabIndex="0"
+      role="list"
+    >
       <ContentContainer
         header={<ActionHeader title={title} />}
         footer={<ActionFooter end={endContent} />}
         fill={isHeightBounded}
-        onKeyDown={handleKeyDown}
-        tabIndex="0"
-        role="list"
       >
         <div className={cx('content-header')}>
           {customContent ? (
