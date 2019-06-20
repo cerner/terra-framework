@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Removed extra inline styles.
 
 3.7.0 - (June 19, 2019)
 ------------------
