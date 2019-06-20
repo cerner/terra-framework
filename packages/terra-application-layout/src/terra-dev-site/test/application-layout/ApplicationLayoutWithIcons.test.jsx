@@ -15,7 +15,7 @@ import Icon5 from 'terra-icon/lib/icon/IconAllergy';
 import Icon6 from 'terra-icon/lib/icon/IconPadlock';
 import Icon7 from 'terra-icon/lib/icon/IconFeatured';
 import classNames from 'classnames/bind';
-import styles from './ApplicationLayoutCommon.test.scss';
+import styles from './ApplicationLayoutCommon.test.module.scss';
 
 import ApplicationLayout, { RoutingMenu, Utils } from '../../../ApplicationLayout';
 

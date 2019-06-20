@@ -15,7 +15,7 @@ import Page3Content from 'terra-navigation-layout/lib/terra-dev-site/doc/example
 import Page1Menu from 'terra-navigation-layout/lib/terra-dev-site/doc/example/Page1Menu';
 import Page2Menu from 'terra-navigation-layout/lib/terra-dev-site/doc/example/Page2Menu';
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
-import styles from './NavigationLayoutDocCommon.scss';
+import styles from './NavigationLayoutDocCommon.module.scss';
 
 const cx = classNames.bind(styles);
 

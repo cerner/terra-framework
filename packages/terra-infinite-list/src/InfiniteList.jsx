@@ -71,6 +71,7 @@ const defaultProps = {
  * @param {number} height - Height to set on the ListItem.
  * @param {number} index - Index to use as part of the spacers key.
  */
+/* eslint-disable react/forbid-dom-props */
 const createSpacer = (height, index) => (
   <div
     className={cx(['spacer'])}
@@ -78,6 +79,7 @@ const createSpacer = (height, index) => (
     key={`infinite-spacer-${index}`}
   />
 );
+/* eslint-enable react/forbid-dom-props */
 
 class InfiniteList extends React.Component {
   constructor(props) {
@@ -471,6 +473,7 @@ class InfiniteList extends React.Component {
           </div>
         );
       } else {
+        /* eslint-disable react/forbid-dom-props */
         initialSpinner = (
           <div
             className={cx('spacer')}
@@ -480,6 +483,7 @@ class InfiniteList extends React.Component {
             {initialLoadingIndicator}
           </div>
         );
+        /* eslint-enable react/forbid-dom-props */
       }
     }
 

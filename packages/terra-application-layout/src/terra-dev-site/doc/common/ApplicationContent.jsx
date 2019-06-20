@@ -6,7 +6,7 @@ import Button from 'terra-button';
 import classNames from 'classnames/bind';
 
 import ContentContainer from 'terra-content-container';
-import styles from './ApplicationContent.scss';
+import styles from './ApplicationContent.module.scss';
 
 const cx = classNames.bind(styles);
 

@@ -6,8 +6,8 @@ import classNames from 'classnames/bind';
 import Placeholder from 'terra-application-name/lib/terra-dev-site/doc/common/Placeholder';
 import ApplicationMenuName from 'terra-application-name/lib/ApplicationMenuName';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
-import demoColors from '../../test/application-name/demoStyles.scss';
-import styles from './ApplicationMenuNameStandard.scss';
+import demoColors from '../../test/application-name/demoStyles.module.scss';
+import styles from './ApplicationMenuNameStandard.module.scss';
 
 const cx = classNames.bind(demoColors);
 const cy = classNames.bind(styles);

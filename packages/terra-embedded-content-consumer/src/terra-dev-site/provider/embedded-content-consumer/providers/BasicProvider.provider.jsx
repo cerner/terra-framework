@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import ProviderTestTemplate from '../../../../EmbeddedContentProviderTestTemplate';
-import styles from './EmbeddedContentConsumerCommon.scss';
+import styles from './EmbeddedContentConsumerCommon.module.scss';
 
 const cx = classNames.bind(styles);
 

@@ -3,7 +3,7 @@ import React from 'react';
 import PopupCommonExample from 'terra-popup/lib/terra-dev-site/doc/common/PopupCommonExample';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import classNames from 'classnames/bind';
-import styles from './PopupAttachmentBehavior.scss';
+import styles from './PopupAttachmentBehavior.module.scss';
 
 const cx = classNames.bind(styles);
 
