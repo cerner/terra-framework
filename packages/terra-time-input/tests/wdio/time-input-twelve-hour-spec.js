@@ -292,7 +292,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
   describe('Twelve Hour Default with second and no time provided', () => {
     before(() => browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/second'));
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('Twelve Hour Meridiem - Auto focuses on meridiem when filling out whole time with second', () => {
@@ -308,7 +308,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       browser.keys('123456p');
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('Twelve Hour Meridiem - Auto focuses on meridiem when filling out second', () => {
@@ -325,7 +325,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       browser.keys('34p');
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('Twelve Hour - Focuses to second when left is pressed from meridiem', () => {
@@ -342,7 +342,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       browser.keys(['ArrowLeft']);
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('Twelve Hour - Focuses to second when delete is pressed from meridiem', () => {
@@ -359,6 +359,6 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       browser.keys(['Delete']);
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 });

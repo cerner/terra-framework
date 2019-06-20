@@ -246,7 +246,7 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('Time Input prepends 0 on second input of 6 or more', () => {
@@ -263,7 +263,7 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
       browser.keys('6');
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('Time Input does not prepend 0 on second input less than 6', () => {
@@ -280,7 +280,7 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
       browser.keys('5');
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('Time Input does not accept second input greater than 59', () => {
@@ -297,7 +297,7 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
       browser.keys('66');
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('Pressing DELETE in second with no value focuses to minute', () => {
@@ -314,7 +314,7 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
       browser.keys(['Delete']);
     });
 
-    Terra.it.matchesScreenshot({ viewports });
+    Terra.it.matchesScreenshot();
   });
 
   describe('Triggers an onChange for onBlur on the minute input', () => {
