@@ -9,19 +9,19 @@ The `terra-application` package contains the components that comprise Terra's ap
 
 ## Usage
 
-The `terra-application` package should be used both by React-based application and library packages to provide consistent functionality for their applications/components.
+The `terra-application` package can be used by React-based application and library packages to provide a consistent set of features for their applications/components.
 
-An application and its dependencies must all depend upon the same version of `terra-application`. This necessitates a degree of orchestration between application and library developers, but `terra-application` allows that orchestration to focus on a single package instead of Terra's entire suite of framework components.
+An application and its dependencies must all depend upon the same version of `terra-application`. This requires a level of orchestration between application and library owners, but `terra-application` allows that effort to focus on a single package instead of Terra's entire suite of framework components.
 
-Application packages must specify `terra-application` as a **dependency**. Library packages must specify `terra-application` as a **peerDependency** (and a **devDependency** to resolve dependencies during development). These guidelines are intended to prevent the duplication of `terra-application` in webpack bundles. Bundling multiple versions of `terra-application`, or even multiple instances of the *same* version, will result in undefined and undesired behavior. Under these guidelines, if an application attempts to consume a library package that has a dependency on a different version of `terra-application`, an unmet peer dependency warning will be emitted during npm package installation. While only a warning, this warning indicates a major problem and will result in a non-functional application.
+Application packages must specify `terra-application` as a **dependency**. Library packages must specify `terra-application` as a **peerDependency** (and a **devDependency** to resolve dependencies during development). These guidelines are intended to prevent the duplication of `terra-application` assets in webpack bundles. Bundling multiple versions of `terra-application`, or even multiple instances of the *same* version, will result in undefined and undesired behavior. Under these guidelines, if an application attempts to consume a library package that has a dependency on a different version of `terra-application`, an unmet peer dependency warning will be emitted during npm package installation. While only a warning, this warning indicates a major problem and will result in a non-functional application.
 
-> Note: Packages of the same version can be duplicated when using `npm link` or local `file:..` references during development. In these scenarios, an alias can be defined in the webpack configuration to force a single package instance to be used by the application. Alternatively, installing a development package using a `git:` reference should not duplicate the package.
+> Note: Packages of the same version may inadvertently be duplicated when using `npm link` or local `file:..` references during development. In these scenarios, an alias can be defined in the webpack configuration to force a single package instance to be used by the application. Alternatively, installing a development package using a `git:` reference should not duplicate the package.
 
 ## Features
 
 ### ApplicationBase
 
-The `ApplicationBase` component provides the baseline functionality an application and its contents require to properly function. It renders the following components:
+The `ApplicationBase` component provides the baseline functionality that an application and its contents require. It renders the following components:
 
 - `<Base />` (from `terra-base`)
   - The `Base` component provides global style resets and itself renders an `IntlProvider` component. The `IntlProvider` component exposes its children to translated strings for the currently defined locale. Please see the documentation for the `terra-base` component for more information.
@@ -30,9 +30,9 @@ The `ApplicationBase` component provides the baseline functionality an applicati
 - `<ActiveBreakpointProvider />` (from `terra-breakpoints`)
   - The `ActiveBreakpointProvider` component exposes its children to the currently breakpoint value attributed to the current viewport size. See the `Breakpoints` section below for more information.
 
-Applications should render `ApplicationBase` at the root of their component tree and around all application contents. Conversely, libraries should not (outside of tests) render an `ApplicationBase` component. Libraries should instead develop their components with the assumption that those components will be rendered within a`ApplicationBase` component by an application. 
+Applications should render `ApplicationBase` at the root of their component tree and around all application contents. Conversely, libraries should not (outside of tests) render an `ApplicationBase` component. Libraries should instead develop their components with the assumption that those components will be rendered within a`ApplicationBase` component by an application.
 
-Only a single `ApplicationBase` component should be rendered within a given application. All Terra components should be rendered within a`ApplicationBase` component to ensure they have access to necessary platform features.
+Only a single `ApplicationBase` component should be rendered within a given application. All Terra components should be rendered within a `ApplicationBase` component to ensure that they have access to necessary platform features.
 
 ```jsx
 import React, { useContext } from 'react';
@@ -69,7 +69,7 @@ Terra components leverage the [react-intl](https://www.npmjs.com/package/react-i
 
 ### Breakpoints
 
-`terra-application` includes components that determine and communicate an application's responsive breakpoint state. 
+`terra-application` includes components that determine and broadcast an application's responsive breakpoint state.
 
 Breakpoints within Terra are defined as follows:
 
@@ -99,46 +99,6 @@ console.log(breakpoints.huge);     // Output: 1216
 console.log(breakpoints.enormous); // Output: 1440
 ```
 
-#### `activeBreakpointForSize(widthValue)`
-
-`activeBreakpointForSize` will return the closest active breakpoint that matches the given width value.
-
-```jsx
-import { activeBreakpointForSize } from 'terra-application/lib/breakpoints';
-
-console.log(activeBreakpointForSize(300));  // Output: 'tiny'
-console.log(activeBreakpointForSize(544));  // Output: 'small'
-console.log(activeBreakpointForSize(800));  // Output: 'medium'
-console.log(activeBreakpointForSize(1000)); // Output: 'large'
-console.log(activeBreakpointForSize(1300)); // Output: 'huge'
-console.log(activeBreakpointForSize(1500)); // Output: 'enormous'
-```
-
-#### `isBreakpointActiveForSize(breakpointName, widthValue)`
-
-`isBreakpointActiveForSize` will return a boolean value indicating whether or not the given breakpoint name is active for the width value.
-
-> Note that since the breakpoints are defined as minimum values, a breakpoint will be determined to be active if the width value is larger than the defined minimum, even if the width value is included in a higher breakpoint's range.
-
-```jsx
-import { isBreakpointActiveForSize } from 'terra-application/lib/breakpoints';
-
-console.log(isBreakpointActiveForSize('tiny', 300));      // Output: true
-console.log(isBreakpointActiveForSize('tiny', 544));      // Output: true
-console.log(isBreakpointActiveForSize('tiny', 800));      // Output: true
-console.log(isBreakpointActiveForSize('tiny', 1000));     // Output: true
-
-console.log(isBreakpointActiveForSize('medium', 300));    // Output: false
-console.log(isBreakpointActiveForSize('medium', 544));    // Output: false
-console.log(isBreakpointActiveForSize('medium', 800));    // Output: true
-console.log(isBreakpointActiveForSize('medium', 1500));   // Output: true
-
-console.log(isBreakpointActiveForSize('enormous', 300));  // Output: false
-console.log(isBreakpointActiveForSize('enormous', 544));  // Output: false
-console.log(isBreakpointActiveForSize('enormous', 800));  // Output: false
-console.log(isBreakpointActiveForSize('enormous', 1500)); // Output: true
-```
- 
 #### `ActiveBreakpointProvider`/`ActiveBreakpointContext`
 
 The `ActiveBreakpointProvider` determines the currently active breakpoint and communicates it to its children using the `ActiveBreakpointContext`.
@@ -303,7 +263,7 @@ export default () => (
 
 #### `NavigationPrompt`/`NavigationPromptCheckpoint`
 
-The `NavigationPrompt` and `NavigationPromptCheckpoint` components define a registration pipeline between components that have transient state and components that navigation between them.
+The `NavigationPrompt` and `NavigationPromptCheckpoint` components define a registration pipeline between components that have transient state and components that navigate between them.
 
 Please see the documentation for the `terra-navigation-prompt` package for detailed API information. All of the exports from the `terra-navigation-prompt` package are exported from the `terra-application/lib/navigation-prompt` directory.
 
