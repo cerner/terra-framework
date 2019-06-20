@@ -1,6 +1,10 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import Hookshot from '../../../Hookshot';
 import HookshotContent from '../common/HookshotContentTestTemplate';
+import styles from '../common/HookshotTestDocCommon.scss';
+
+const cx = classNames.bind(styles);
 
 class HookshotTemplate extends React.Component {
   constructor(props) {
@@ -20,7 +24,7 @@ class HookshotTemplate extends React.Component {
 
   render() {
     return (
-      <div id="coords-test" style={{ border: '1px dashed grey', height: '300px', width: '300px' }}>
+      <div id="coords-test" className={cx('hookshot-wrapper')}>
         <Hookshot
           contentAttachment={{ vertical: 'top', horizontal: 'start' }}
           targetCoordinates={{ x: 50, y: 132 }}
