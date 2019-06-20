@@ -351,15 +351,11 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-controlled');
       // Removes the blinking cursor to prevent screenshot mismatches.
-      browser.execute('document.querySelector("input").style.caretColor = "transparent";');
-      browser.click('[class*="button"]');
+      browser.execute('document.querySelector("input:last-of-type").style.caretColor = "transparent";');
     });
 
-    Terra.it.matchesScreenshot('date picker opens', { selector: '[class="react-datepicker"]' });
-
     it('Enters date value', () => {
-      browser.click('[class*="PopupOverlay"]');
-      browser.setValue('input[name="terra-date-controlled-date-picker"]', '07/01/2019');
+      browser.setValue('input[name="terra-date-controlled-date-picker"]', '03/07/2019');
     });
 
     Terra.it.matchesScreenshot('date input manually updated');

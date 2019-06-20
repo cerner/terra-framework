@@ -10,7 +10,7 @@ class DatePickerDefault extends React.Component {
     this.handleDateChange = this.handleDateChange.bind(this);
     this.handleDateChangeRaw = this.handleDateChangeRaw.bind(this);
     this.state = {
-      date: '2019-06-15',
+      date: '2019-03-07',
     };
   }
 
@@ -23,7 +23,7 @@ class DatePickerDefault extends React.Component {
   }
 
   handleSelectedDateUpdate() {
-    this.setState({ date: '2020-01-01' });
+    this.setState({ date: '2019-01-01' });
   }
 
   render() {
@@ -38,7 +38,7 @@ class DatePickerDefault extends React.Component {
         {'  '}
         <Button
           id="reset-button"
-          text="Set to 01/01/2020"
+          text="Set to 01/01/2019"
           onClick={this.handleSelectedDateUpdate}
         />
       </div>
