@@ -1,15 +1,19 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import Placeholder from 'terra-doc-template/lib/Placeholder';
 
 /* eslint-disable import/no-unresolved, import/extensions */
 import InfiniteList, { Item } from 'terra-infinite-list/lib/index';
 /* eslint-enable import/no-unresolved, import/extensions */
+import styles from './InfiniteListTestCommon.scss';
 
 import MyInitialLoadingIndicator from '../../doc/common/MyInitialLoadingIndicator';
 import MyProgressiveLoadingIndicator from '../../doc/common/MyProgressiveLoadingIndicator';
 import MyExampleContainer from '../../doc/common/MyExampleContainer';
 
 import mockRequest from '../../doc/guides/mock-data/mock-progressive';
+
+const cx = classNames.bind(styles);
 
 class ProgressiveLoadingList extends React.Component {
   constructor(props) {
@@ -31,7 +35,7 @@ class ProgressiveLoadingList extends React.Component {
   createItems() {
     return this.state.items.map(item => (
       <Item key={item.key}>
-        <Placeholder title={item.title} style={{ height: '50px' }} />
+        <Placeholder title={item.title} className={cx('item-placeholder')} />
       </Item>
     ));
   }

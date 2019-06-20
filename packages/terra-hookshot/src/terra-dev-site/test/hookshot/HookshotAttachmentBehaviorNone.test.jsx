@@ -13,10 +13,10 @@ class HookshotAttachmentBehaviorNone extends React.Component {
   }
 
   render() {
-    let margin;
+    let type = 'primary';
 
     if (this.state.position === 'offset') {
-      margin = '50px';
+      type = 'none-offset';
     }
     return (
       <div>
@@ -24,7 +24,7 @@ class HookshotAttachmentBehaviorNone extends React.Component {
           attachmentBehavior="none"
           id="attachment-behavior-none"
           isOpen={false}
-          buttonMarginLeft={margin}
+          type={type}
         />
         <p> Choose the positioning behavior </p>
         <p> Primary position is on the middle right</p>
