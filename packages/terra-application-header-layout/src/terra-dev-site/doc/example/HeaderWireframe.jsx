@@ -24,7 +24,7 @@ const HeaderWireframe = () => {
     />
   );
 
-  const smallHeader = (
+  const mediumHeader = (
     <ApplicationHeaderLayout
       logo={<LogoExample size="small" />}
       utilities={<UtilitiesExample size="small" />}
@@ -34,7 +34,7 @@ const HeaderWireframe = () => {
     />
   );
 
-  const mediumHeader = (
+  const largeHeader = (
     <ApplicationHeaderLayout
       logo={<LogoExample size="medium" />}
       utilities={<UtilitiesExample size="medium" />}
@@ -48,10 +48,9 @@ const HeaderWireframe = () => {
     <div className={cx('content-wrapper')}>
       <div className={cx('responsive-element-wrapper')}>
         <ResponsiveElement
-          defaultElement={tinyHeader}
           tiny={tinyHeader}
-          small={smallHeader}
           medium={mediumHeader}
+          large={largeHeader}
         />
       </div>
     </div>

@@ -4,6 +4,11 @@ ChangeLog
 Unreleased
 ----------
 
+6.3.0 - (June 19, 2019)
+------------------
+### Changed
+* Updated to use terra-responsive-element v5
+
 ### Changed
 * Removed all inline styles and implemented the same styles using external css.
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes

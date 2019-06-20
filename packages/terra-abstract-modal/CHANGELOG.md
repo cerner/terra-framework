@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.3.0 - (June 19, 2019)
+------------------
 ### Added
 * Added check to only load inert polyfill if it is not already defined on the Element prototype
 
