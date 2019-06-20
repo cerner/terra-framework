@@ -204,11 +204,16 @@
     width: 1.8em;
   }
 
-  // TODO: UX input on how wide this should be (what is wide enough for mm is way too wide for numbers)
   .time-input-minute.with-second.desktop {
-    min-width: 1.8em;
+    min-width: 1.1em;
     text-align: left;
-    width: 1.8em;
+    width: 1.1em;
+
+    &[value=''] {
+      min-width: 1.8em;
+      text-align: left;
+      width: 1.8em;
+    }
   }
 
   .time-input-second.desktop {
