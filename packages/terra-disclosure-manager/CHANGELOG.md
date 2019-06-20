@@ -6,6 +6,9 @@ Unreleased
 ### Fixed
 * Fixed bug where afterdismiss promise was getting resolved prior to dismissing.
 
+### Changed
+* Export context and delegate
+
 4.13.0 - (June 19, 2019)
 ------------------
 ### Changed
@@ -17,7 +20,6 @@ Unreleased
 * Removed node_modules from .npmignore
 
 ### Changed
-* Export context and delegate
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 
 4.11.0 - (May 13, 2019)
