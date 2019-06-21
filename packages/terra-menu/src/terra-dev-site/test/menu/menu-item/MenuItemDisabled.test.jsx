@@ -18,7 +18,7 @@ class MenuItemDisabled extends React.Component {
         <div id="isSelected">
           <p>The item is disabled. The selection state should not change with any user interaction.</p>
         </div>
-        <List>
+        <List role="menu">
           <Menu.Item
             text="Disabled Menu Item"
             key="1"
