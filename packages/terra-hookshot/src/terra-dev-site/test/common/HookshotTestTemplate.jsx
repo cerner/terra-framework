@@ -1,7 +1,11 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import Hookshot from '../../../Hookshot';
 import HookshotContent from './HookshotContentTestTemplate';
+import styles from './HookshotTestDocCommon.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -14,24 +18,17 @@ const propTypes = {
   includeSvgs: PropTypes.bool,
   contentAttachment: PropTypes.string,
   targetAttachment: PropTypes.string,
-  buttonMarginLeft: PropTypes.string,
-  buttonMarginRight: PropTypes.string,
-  buttonMarginTop: PropTypes.string,
-  boundingWidth: PropTypes.string,
+  type: PropTypes.string,
   attachmentMargin: PropTypes.number,
 };
 
 const defaultProps = {
-  hookshotContentProps: { },
+  hookshotContentProps: {},
   id: 'hookshot',
   isOpen: false,
   includeSvgs: false,
   contentAttachment: 'middle end',
   targetAttachment: 'middle start',
-  buttonMarginTop: '55px',
-  buttonMarginLeft: '220px',
-  buttonMarginRight: '220px',
-  boundingWidth: '540px',
 };
 
 const attachmentValues = (attachment) => {
@@ -78,12 +75,9 @@ class HookshotTemplate extends React.Component {
       isOpen,
       contentAttachment,
       targetAttachment,
-      buttonMarginLeft,
-      buttonMarginRight,
-      buttonMarginTop,
-      boundingWidth,
       attachmentMargin,
       includeSvgs,
+      type,
       ...hookshotProps
     } = this.props;
 
@@ -110,7 +104,7 @@ class HookshotTemplate extends React.Component {
 
 
     return (
-      <div id={`${id}-bounds`} style={{ border: '1px dashed grey', height: '145px', width: boundingWidth }}>
+      <div id={`${id}-bounds`} className={cx(['wrapper', `hookshot-wrapper-${type}`])}>
         <Hookshot
           id={id}
           contentAttachment={attachmentValues(contentAttachment)}
@@ -132,9 +126,7 @@ class HookshotTemplate extends React.Component {
         <button
           type="button"
           id={`trigger-${id}`}
-          style={{
-            width: '100px', height: '36px', backgroundColor: 'lightGrey', marginLeft: buttonMarginLeft, marginRight: buttonMarginRight, marginTop: buttonMarginTop,
-          }}
+          className={cx(['content', `hookshot-${type}`])}
           onClick={this.triggerHookshot}
         >
           Trigger Hookshot

@@ -1,62 +1,56 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 import RoutingStackDelegate from '../../../RoutingStackDelegate';
+import styles from './NavigationLayoutDocCommon.scss';
 
-const inlineButtonStyle = {
-  display: 'inline', marginLeft: '5px', height: '25px', border: '1px dashed lightgrey',
-};
+const cx = classNames.bind(styles);
 
 const Page1Menu = ({ layoutConfig, routingStackDelegate }) => (
-  <div style={{
-    height: 'calc(100% - 10px)', width: 'calc(100% - 10px)', border: '4px dashed lightgrey', margin: '5px', position: 'relative',
-  }}
-  >
-    <div style={{
-      position: 'absolute', top: '50%', left: '50%', color: 'grey', transform: 'translate3d(-50%, -50%, 0)',
-    }}
-    >
+  <div className={cx('content-wrapper1')}>
+    <div className={cx('content-wrapper2')}>
       {routingStackDelegate && routingStackDelegate.showParent
         && (
-        <button
-          type="button"
-          style={inlineButtonStyle}
-          onClick={routingStackDelegate.showParent}
-        >
-Go Back
-        </button>
+          <button
+            type="button"
+            onClick={routingStackDelegate.showParent}
+            className={cx('button')}
+          >
+            Go Back
+          </button>
         )}
       {layoutConfig.toggleMenu
         && (
-        <button
-          type="button"
-          style={inlineButtonStyle}
-          onClick={layoutConfig.toggleMenu}
-        >
-Toggle Menu
-        </button>
+          <button
+            type="button"
+            onClick={layoutConfig.toggleMenu}
+            className={cx('button')}
+          >
+            Toggle Menu
+          </button>
         )}
       {layoutConfig.togglePin && !layoutConfig.menuIsPinned
         && (
-        <button
-          type="button"
-          style={inlineButtonStyle}
-          onClick={layoutConfig.togglePin}
-        >
-Pin
-        </button>
+          <button
+            type="button"
+            onClick={layoutConfig.togglePin}
+            className={cx('button')}
+          >
+            Pin
+          </button>
         )}
       {layoutConfig.togglePin && layoutConfig.menuIsPinned
         && (
-        <button
-          type="button"
-          style={inlineButtonStyle}
-          onClick={layoutConfig.togglePin}
-        >
-Unpin
-        </button>
+          <button
+            type="button"
+            onClick={layoutConfig.togglePin}
+            className={cx('button')}
+          >
+            Unpin
+          </button>
         )}
-      <h2 style={{ margin: '0' }}>Page 1 Menu</h2>
+      <h2>Page 1 Menu</h2>
       <br />
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <Link to="/page1/item1">Item 1</Link>
