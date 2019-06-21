@@ -83,11 +83,13 @@ const propTypes = {
   required: PropTypes.bool,
   /**
    * An ISO 8601 string representation of the default value to show in the date input.
-   * This prop name is derived from react-datepicker but is analogous to defaultvalue in a form input field.
+   * This is analogous to defaultvalue in a form input field.
    */
   selectedDate: PropTypes.string,
   /**
-   * The date value.
+   * The date value. This prop should only be used for a controlled date picker.
+   * When this prop is set a handler is needed for both the `onChange` and `onChangeRaw` props to manage the date value.
+   * If both `selectedDate` and this prop are set, then `selectedDate` will have no effect.
    */
   value: PropTypes.string,
 };
@@ -357,11 +359,11 @@ class DatePicker extends React.Component {
 
     let selectedDateInPicker;
 
-    // If using this as a controlled components
+    // If using this as a controlled component.
     if (value !== undefined) {
       selectedDateInPicker = DateUtil.createSafeDate(value);
 
-      // If value is not a value date, keep the previous selected date in the picker.
+      // If value is not a valid date, keep the previous selected date in the picker.
       if (selectedDateInPicker === undefined) {
         selectedDateInPicker = this.state.selectedDate;
       }
