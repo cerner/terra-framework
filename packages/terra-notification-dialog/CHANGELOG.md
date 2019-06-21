@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update the modal manager test example to not test accessibility for elements behind an overlay
 
 3.3.0 - (June 19, 2019)
 ------------------
