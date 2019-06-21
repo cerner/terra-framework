@@ -1,8 +1,7 @@
-
 import React, {
   useState,
 } from 'react';
-import Application from 'terra-application';
+import ApplicationBase from 'terra-application/lib/application-base';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconManufacturer from 'terra-icon/lib/icon/IconManufacturer';
 import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
@@ -149,7 +148,7 @@ const StatedDemo = () => {
   const [activeKey, setActiveKey] = useState(navigationItems[0].key);
 
   return (
-    <Application locale="en-US">
+    <ApplicationBase locale="en-US">
       <ApplicationNavigation
         titleConfig={titleConfig}
         userConfig={userConfig}
@@ -166,7 +165,7 @@ const StatedDemo = () => {
       >
         <PageContent title={activeKey} />
       </ApplicationNavigation>
-    </Application>
+    </ApplicationBase>
   );
 };
 

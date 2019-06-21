@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from 'react';
-import Application from 'terra-application';
+import ApplicationBase from 'terra-application/lib/application-base';
 import ApplicationNavigation from '../../../ApplicationNavigation';
 
 const userConfig = {
@@ -24,12 +24,12 @@ const userConfigSrc = {
 
 // TODO: remove terra-application after it is incorporated into dev-site
 const TitleTest = () => (
-  <Application locale="en">
+  <ApplicationBase locale="en">
     <div style={{ height: '100px' }}><ApplicationNavigation userConfig={userConfig} /></div>
     <div style={{ height: '100px' }}><ApplicationNavigation userConfig={userConfigDetail} /></div>
     <div style={{ height: '100px' }}><ApplicationNavigation userConfig={userConfigInitials} /></div>
     <div style={{ height: '100px' }}><ApplicationNavigation userConfig={userConfigSrc} /></div>
-  </Application>
+  </ApplicationBase>
 );
 
 export default TitleTest;

@@ -1,7 +1,6 @@
-
 /* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions  */
 import React from 'react';
-import Application from 'terra-application';
+import ApplicationBase from 'terra-application/lib/application-base';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconPill from 'terra-icon/lib/icon/IconPill';
 import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
@@ -147,7 +146,7 @@ const handleItemSelection = (key, metaData) => {
 
 // TODO: remove terra-application after it is incorporated into dev-site
 const ApplicationNotificationsTest = () => (
-  <Application locale="en">
+  <ApplicationBase locale="en">
     <ApplicationNavigation
       titleConfig={titleConfig}
       userConfig={userConfig}
@@ -163,7 +162,7 @@ const ApplicationNotificationsTest = () => (
       onSelectHelp={() => alert('Help Selected')} // eslint-disable-line no-alert
       onSelectLogout={() => alert('Logout Selected')} // eslint-disable-line no-alert
     />
-  </Application>
+  </ApplicationBase>
 );
 
 export default ApplicationNotificationsTest;

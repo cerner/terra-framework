@@ -1,7 +1,6 @@
-
 /* eslint-disable */
 import React from 'react';
-import Application from 'terra-application';
+import ApplicationBase from 'terra-application/lib/application-base';
 import ApplicationNavigation from '../../../ApplicationNavigation';
 
 const titleConfig = {
@@ -30,13 +29,13 @@ const titleConfigHideTitle = {
 
 // TODO: remove terra-application after it is incorporated into dev-site
 const TitleTest = () => (
-  <Application locale="en">
+  <ApplicationBase locale="en">
     <div style={{ height: '70px' }}><ApplicationNavigation titleConfig={titleConfig} /></div>
     <div style={{ height: '70px' }}><ApplicationNavigation titleConfig={titleConfigHeadLine} /></div>
     <div style={{ height: '70px' }}><ApplicationNavigation titleConfig={titleConfigSubline} /></div>
     <div style={{ height: '70px' }}><ApplicationNavigation titleConfig={titleConfigElement} /></div>
     <div style={{ height: '70px' }}><ApplicationNavigation titleConfig={titleConfigHideTitle} /></div>
-  </Application>
+  </ApplicationBase>
 );
 
 export default TitleTest;

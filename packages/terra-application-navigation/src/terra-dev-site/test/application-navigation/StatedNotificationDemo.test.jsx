@@ -1,8 +1,7 @@
-
 import React, {
   useState,
 } from 'react';
-import Application from 'terra-application';
+import ApplicationBase from 'terra-application/lib/application-base';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconPill from 'terra-icon/lib/icon/IconPill';
 import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
@@ -165,7 +164,7 @@ const StatedNotificationDemo = () => {
   /* eslint-enable no-alert */
 
   return (
-    <Application locale="en-US">
+    <ApplicationBase locale="en-US">
       <ApplicationNavigation
         titleConfig={titleConfig}
         userConfig={userConfig}
@@ -183,7 +182,7 @@ const StatedNotificationDemo = () => {
       >
         <Placeholder title={activeKey} />
       </ApplicationNavigation>
-    </Application>
+    </ApplicationBase>
   );
 };
 
