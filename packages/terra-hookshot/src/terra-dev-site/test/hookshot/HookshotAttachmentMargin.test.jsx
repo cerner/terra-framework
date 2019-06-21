@@ -14,6 +14,7 @@ class HookshotAttachmentMargin extends React.Component {
 
   render() {
     let targetAttachment;
+    const type = 'primary';
 
     if (this.state.attachment === 'middle start') {
       targetAttachment = 'middle end';
@@ -41,6 +42,7 @@ class HookshotAttachmentMargin extends React.Component {
           attachmentMargin={10}
           targetAttachment={targetAttachment}
           contentAttachment={this.state.attachment}
+          type={type}
           isOpen
         />
         <p> Shoulp apply attachment margin appropriately for all attachment points </p>
