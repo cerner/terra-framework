@@ -1,6 +1,6 @@
 # Terra Application
 
-The `terra-application` package provides a baseline of functionality for applications built with Terra components.
+The `terra-application` package contains the components that comprise Terra's application platform.
 
 ## Getting Started
 
@@ -9,77 +9,123 @@ The `terra-application` package provides a baseline of functionality for applica
 
 ## Usage
 
-The `terra-application` package should be used both by applications and libraries to define a baseline of expected features and functionality for their components.
+The `terra-application` package can be used by React-based application and library packages to provide a consistent set of features for their applications/components.
 
-For application packages:
+An application and its dependencies must all depend upon the same version of `terra-application`. This requires a level of orchestration between application and library owners, but `terra-application` allows that effort to focus on a single package instead of Terra's entire suite of framework components.
 
-1. `terra-application` must be specified as a dependency.
-2. A single `<Application />` component must be rendered as high as possible in the component tree.
-3. Components provided by `terra-application` should be consumed solely through `terra-application` and not through their own separate packages.
+Application packages must specify `terra-application` as a **dependency**. Library packages must specify `terra-application` as a **peerDependency** (and a **devDependency** to resolve dependencies during development). These guidelines are intended to prevent the duplication of `terra-application` assets in webpack bundles. Bundling multiple versions of `terra-application`, or even multiple instances of the *same* version, will result in undefined and undesired behavior. Under these guidelines, if an application attempts to consume a library package that has a dependency on a different version of `terra-application`, an unmet peer dependency warning will be emitted during npm package installation. While only a warning, this warning indicates a major problem and will result in a non-functional application.
 
-For library packages:
+> Note: Packages of the same version may inadvertently be duplicated when using `npm link` or local `file:..` references during development. In these scenarios, an alias can be defined in the webpack configuration to force a single package instance to be used by the application. Alternatively, installing a development package using a `git:` reference should not duplicate the package.
 
-1. `terra-application` must be specified as a peerDependency and devDependency.
-2. Components within the library should be implemented with the assumption that they will be rendered within an `<Application />` and thus able to access its i18n, theme, and breakpoint APIs.
-3. Components provided by `terra-application` should be consumed solely through `terra-application` and not through their own separate packages.
+## Features
 
-### Application
+### ApplicationBase
 
-The `<Application />` component itself is an aggregate of a few different components, namely `terra-base`, `terra-theme-provider`, and `terra-breakpoints`. When a component is wrapped in an `Application`, it is being wrapped by `Base`, `ThemeProvider`, and `ActiveBreakpointProvider`.
+The `ApplicationBase` component provides the baseline functionality that an application and its contents require. It renders the following components:
+
+- `<Base />` (from `terra-base`)
+  - The `Base` component provides global style resets and renders an `IntlProvider` component. The `IntlProvider` component exposes its children to translated strings for the declared locale. Please see the documentation for the `terra-base` component for more information.
+- `<ThemeProvider />` (from `terra-theme-provider`)
+  - The `ThemeProvider` component provides themed styles to the components rendered within it.
+- `<ActiveBreakpointProvider />` (from `terra-breakpoints`)
+  - The `ActiveBreakpointProvider` component exposes its children to the breakpoint value attributed to the current viewport size. See the `Breakpoints` section below for more information.
+
+Applications should render `ApplicationBase` at the root of their component tree and around all application contents. Conversely, libraries should not (outside of tests) render an `ApplicationBase` component. Libraries should instead develop their components with the assumption that those components will be rendered within a`ApplicationBase` component by an application.
+
+Only a single `ApplicationBase` component should be rendered within a given application. All Terra components should be rendered within a `ApplicationBase` component to ensure that they have access to necessary platform features.
 
 ```jsx
-import Application from 'terra-application';
+import React, { useContext } from 'react';
+import ApplicationBase from 'terra-application/lib/application-base';
+import { ActiveBreakpointContext } from 'terra-application/lib/breakpoints';
+import { injectIntl } from 'react-intl';
 
-const Example = () => (
-  <Application
+const ExampleContent = injectIntl(({ intl }) => {
+  const activeBreakpoint = useContext(ActiveBreakpointContext);
+
+  return (
+    <div>
+      <p>The active breakpoint is {activeBreakpoint}.</p>
+      <p>Translated message: {intl.formatMessage({ id: 'example.string' })}</p>
+    </div>
+  );
+});
+
+const ExampleApplication = () => (
+  <ApplicationBase
     locale="en-US"
+    themeName="example-theme"
   >
     <ExampleContent />
-  </Application>
+  </ApplicationBase>
 )
 ```
 
-Only a single `<Application />` component should be rendered within a given application. All Terra components should be rendered within the `<Application />` component to ensure they have access to the framework features.
+### I18n
+
+Terra components leverage the [react-intl](https://www.npmjs.com/package/react-intl) project to load and render translated strings. Please see the terra-base and react-intl [documentation](https://github.com/formatjs/react-intl/tree/master/docs) for more information.
+
+> Remember: `ApplicationBase` configures and renders react-intl's `IntlProvider` internally (through `<Base />`). An `IntlProvider` should not be rendered directly.
 
 ### Breakpoints
 
-The `terra-breakpoints` package uses Context to broadcast information about the currently active window breakpoint. The `terra-breakpoints` functionality is exported from `terra-application` to limit the potential for version clashes across components that would result in a communication breakdown.
+`terra-application` includes components that determine and broadcast an application's responsive breakpoint state.
 
-All of the exports from the `terra-breakpoints` package are exported from the `/lib/breakpoints` directory.
+Breakpoints within Terra are defined as follows:
+
+|Breakpoint Name|Minimum Value|Equivalent Media Query|Description|
+|---|---|---|---|
+|`tiny`|0px|`@media screen and (min-width: 0px)`|Active from viewport width 0px and up |
+|`small`|544px|`@media screen and (min-width: 544px)`|Active from viewport width 544px and up|
+|`medium`|768px|`@media screen and (min-width: 768px)`|Active from viewport width 768px and up|
+|`large`|992px|`@media screen and (min-width: 992px)`|Active from viewport width 992px and up|
+|`huge`|1216px|`@media screen and (min-width: 1216px)`|Active from viewport width 1216 and up|
+|`enormous`|1440px|`@media screen and (min-width: 1440px)`|Active from viewport width 1440px and up|
+
+The following exports can be imported from the `terra-application/lib/breakpoints` package directory:
+
+#### `breakpoints`
+
+An Object containing minimum applied value for the named breakpoints.
 
 ```jsx
-import breakpoints, 
-{ 
-  activeBreakpointForSize,
-  breakpointIsActiveForSize,
-  ActiveBreakpointContext,
-  ActiveBreakpointProvider,
-  withActiveBreakpoint,
-} from 'terra-application/lib/breakpoints';
+import breakpoints from 'terra-application/lib/breakpoints';
+
+console.log(breakpoints.tiny);     // Output: 0
+console.log(breakpoints.small);    // Output: 544
+console.log(breakpoints.medium);   // Output: 768
+console.log(breakpoints.large);    // Output: 992
+console.log(breakpoints.huge);     // Output: 1216
+console.log(breakpoints.enormous); // Output: 1440
 ```
 
-Any component rendered within an `<Application />` can get access to the currently active breakpoint by using the ActiveBreakpointContext.
+#### `ActiveBreakpointProvider`/`ActiveBreakpointContext`
+
+The `ActiveBreakpointProvider` determines the currently active breakpoint and communicates it to its children using the `ActiveBreakpointContext`.
+
+> Remember: An `ActiveBreakpointProvider` is rendered internally by the `ApplicationBase` component. The `ActiveBreakpointProvider` component should not be rendered directly.
 
 ```jsx
-import Application from 'terra-application';
+import { useContext } from 'react';
+import ApplicationBase from 'terra-application/lib/application-base';
 import { ActiveBreakpointContext } from 'terra-application/lib/breakpoints';
 
 const ExampleContent = () => {
-  const activeBreakpoint = React.useContext(ActiveBreakpointContext);
+  const activeBreakpoint = useContext(ActiveBreakpointContext);
 
   return <p>The active breakpoint is: {activeBreakpoint}</p>;
 }
 
 export default () => (
-  <Application
+  <ApplicationBase
     locale="en-US"
   >
     <ExampleContent />
-  </Application>
+  </ApplicationBase>
 )
 ```
 
-A Sass partial containing media query mixins based on the defined breakpoints is also available.
+In addition to the JS utilities, a Sass partial containing media query mixins based on the defined breakpoints is also available.
 
 ```scss
 @import '~terra-application/lib/breakpoints/media-queries';
@@ -90,36 +136,85 @@ A Sass partial containing media query mixins based on the defined breakpoints is
   @include terra-mq-small-up {
     color: red;
   }
+  
+  @include terra-mq-medium-up {
+    color: purple;
+  }
+
+  @include terra-mq-large-up {
+    color: green;
+  }
+
+  @include terra-mq-huge-up {
+    color: yellow;
+  }
+
+  @include terra-mq-enormous-up {
+    color: orange;
+  }
 }
 ```
 
-> The `terra-breakpoints` package should not be consumed directly. The functionality provided by `terra-breakpoints` should be consumed through `terra-application`.
-> An `ActiveBreakpointProvider` is rendered automatically by the `Application` component.
+Please see the documentation for the `terra-breakpoints` package for more information.
 
-### Disclosure Manager
+### Progressive Disclosure
 
-The `terra-disclosure-manager` package uses Context to provide its progressive disclosure APIs to its children. The `terra-disclosure-manager` functionality is exported from `terra-application` to limit the potential for version clashes across components that would result in a communication breakdown.
+`terra-application` provides components that manage progressively disclosed application content.
 
-All of the exports from the `terra-disclosure-manager` package are exported from the `/lib/disclosure-manager` directory.
+#### `DisclosureManager`
+
+The `DisclosureManager` defines a generalized API for managing progressively disclosed application content.
+
+Please see the documentation for the `terra-disclosure-manager` package for detailed API information. All of the exports from the `terra-disclosure-manager` package are exported from the `terra-application/lib/disclosure-manager` directory.
 
 ```jsx
-import DisclosureManager, 
+import DisclosureManager,
 { 
-  withDisclosureManager, 
-  disclosureManagerShape, 
-  DisclosureManagerContext, 
+  withDisclosureManager,
+  disclosureManagerShape,
+  DisclosureManagerContext,
   DisclosureManagerDelegate,
 } from 'terra-application/lib/disclosure-manager';
 ```
 
-The `<Application />` component does not provide a default DisclosureManager implementation to handle progressive disclosure. However, any components that need to consume `terra-disclosure-manager` should do so through `terra-application`.
+> Remember: `terra-application` repackages the contents of the `terra-disclosure-manager` package to help maintain version/instance consistency. The `terra-disclosure-manager` package should not be consumed directly if `terra-application` is also being consumed.
+
+#### `ModalManager`
+
+The `ModalManager` is an implementation of the `DisclosureManager` that renders progressively disclosed content within a modal.
+
+Please see the documentation for the `terra-modal-manager` package for detailed API information. All of the exports from the `terra-modal-manager` package are exported from the `terra-application/lib/modal-manager` directory.
+ 
+```jsx
+import ModalManager from 'terra-application/lib/modal-manager';
+```
+
+> Remember: `terra-application` repackages the contents of the `terra-modal-manager` package to help maintain version/instance consistency. The `terra-modal-manager` package should not be consumed directly if `terra-application` is also being consumed.
+
+#### `SlidePanelManager`
+
+The `SlidePanelManager` is an implementation of the `DisclosureManager` that renders progressively disclosed content within a SlidePanel (as provided by `terra-slide-panel`).
+
+Please see the documentation for the `terra-slide-panel-manager` package for detailed API information. All of the exports from the `terra-slide-panel-manager` package are exported from the `terra-application/lib/slide-panel-manager` directory.
+ 
+```jsx
+import SlidePanelManager from 'terra-application/lib/slide-panel-manager';
+```
+
+> Remember: `terra-application` repackages the contents of the `terra-slide-panel-manager` package to help maintain version/instance consistency. The `terra-slide-panel-manager` package should not be consumed directly if `terra-application` is also being consumed.
+
+#### Example Usage
+
+The `ApplicationBase` component does not provide a default DisclosureManager implementation to handle progressive disclosure. The below example shows a possible implementation using the ModalManager.
 
 ```jsx
-import Application from 'terra-application';
+import { useContext } from 'react';
+import ApplicationBase from 'terra-application/lib/application-base';
 import { DisclosureManagerContext } from 'terra-application/lib/disclosure-manager';
+import ModalManager from 'terra-application/lib/modal-manager';
 
 const DisclosedContent = () => {
-  const disclosureManager = React.useContext(DisclosureManagerContext);
+  const disclosureManager = useContext(DisclosureManagerContext);
 
   return (
     <button
@@ -133,7 +228,7 @@ const DisclosedContent = () => {
 }
 
 const ExampleContent = () => {
-  const disclosureManager = React.useContext(DisclosureManagerContext);
+  const disclosureManager = useContext(DisclosureManagerContext);
 
   return (
     <button
@@ -154,129 +249,34 @@ const ExampleContent = () => {
 }
 
 export default () => (
-  <Application
+  <ApplicationBase
     locale="en-US"
   >
     <ModalManager>
       <ExampleContent />
     </ModalManager>
-  </Application>
+  </ApplicationBase>
 )
 ```
 
-> The `terra-disclosure-manager` package should not be consumed directly. The functionality provided by `terra-disclosure-manager` should be consumed through `terra-application`.
+### User Prompting
 
-### ModalManager
+`terra-application` includes components that allow components to warn and prompt users prior to destructive navigation events.
 
-The `terra-modal-manager` package uses `terra-disclosure-manager` to manage the disclosure of a modal.
+#### `NavigationPrompt`/`NavigationPromptCheckpoint`
 
-All of the exports from the `terra-modal-manager` package are exported from the `/lib/modal-manager` directory.
+The `NavigationPrompt` and `NavigationPromptCheckpoint` components define a registration pipeline between components that have transient state and the components that render them.
 
-```jsx
-import ModalManager from 'terra-application/lib/modal-manager';
-```
-
-> The `terra-modal-manager` package should not be consumed directly. The functionality provided by `terra-modal-manager` should be consumed through `terra-application`.
-
-### SlidePanelManager
-
-The `terra-slide-panel-manager` package uses `terra-disclosure-manager` to manage the disclosure of a slide panel.
-
-All of the exports from the `terra-slide-panel-manager` package are exported from the `/lib/slide-panel-manager` directory.
+Please see the documentation for the `terra-navigation-prompt` package for detailed API information. All of the exports from the `terra-navigation-prompt` package are exported from the `terra-application/lib/navigation-prompt` directory.
 
 ```jsx
-import SlidePanelManager from 'terra-application/lib/slide-panel-manager';
-```
-
-> The `terra-slide-panel-manager` package should not be consumed directly. The functionality provided by `terra-slide-panel-manager` should be consumed through `terra-application`.
-
-### NavigationPrompt
-
-The `terra-navigation-prompt` package uses Context to communicate the presence of unsaved data between components.
-
-All of the exports from the `terra-navigation-prompt` package are exported from the `/lib/navigation-prompt` directory.
-
-```jsx
-import NavigationPrompt, { 
-  NavigationPromptCheckpoint, 
-  PromptRegistrationContext 
+import NavigationPrompt, {
+  NavigationPromptCheckpoint,
+  PromptRegistrationContext
 } from 'terra-application/lib/navigation-prompt';
 ```
 
-> The `terra-navigation-prompt` package should not be consumed directly. The functionality provided by `terra-navigation-prompt` should be consumed through `terra-application`.
-
-## Example
-
-```json
-// example-application/package.json
-{
-  "name": "example-application",
-  "dependencies": {
-    "terra-application": "^1.0.0",
-    "example-library": "^1.0.0",
-  }
-}
-```
-
-```jsx
-// example-application/src/index.jsx
-import Application from 'terra-application';
-import ModalManager from 'terra-application/lib/modal-manager';
-import Content from 'example-library';
-
-const ExampleApplication = () => (
-  <Application
-    locale="en"
-  >
-    <ModalManager>
-      <Content />
-    </ModalManager>
-  </Application>
-);
-
-export default ExampleApplication;
-```
-
-```json
-// example-library/package.json
-{
-  "name": "example-library",
-  "peerDependencies": {
-    "terra-application": "^1.0.0"
-  },
-  "devDependencies": {
-    "terra-application": "^1.0.0"
-  }
-}
-```
-
-```jsx
-// example-library/src/index.jsx
-import { ActiveBreakpointContext } from 'terra-application/lib/breakpoints';
-import { DisclosureManagerContext } from 'terra-application/lib/disclosure-manager';
-import { injectIntl } from 'react-intl';
-
-const Content = injectIntl(({ intl }) => {
-  const activeBreakpoint = React.useContext(ActiveBreakpointContext);
-  const disclosureManager = React.useContext(DisclosureManagerContext);
-
-  return (
-    <div>
-      <p>The active breakpoint is {activeBreakpoint}.</p>
-      <p>Translated message: {intl.formatMessage({ id: 'example.string' })}</p>
-      <button
-        onClick={() => {
-          disclosureManager.disclose({...});
-        }}
-      >
-        Open Modal
-      </button>
-    </div>
-  );
-});
-
-export default Content;
-```
+> Remember: `terra-application` repackages the contents of the `terra-navigation-prompt` package to help maintain version/instance consistency. The `terra-navigation-prompt` package should not be consumed directly if `terra-application` is also being consumed.
 
 ## Component Features
 
