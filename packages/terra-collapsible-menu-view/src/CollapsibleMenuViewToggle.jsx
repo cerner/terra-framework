@@ -94,7 +94,6 @@ class CollapsibleMenuViewToggle extends React.Component {
         <Control
           {...customProps}
           className={controllClassName}
-          type="checkbox"
           labelText={text}
           defaultChecked={isSelected}
           onChange={this.wrappedOnChange}

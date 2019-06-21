@@ -194,7 +194,6 @@ exports[`CollapsibleMenuViewToggle should disable checkbox when isSelectable is 
     labelTextAttrs={Object {}}
     name={null}
     onChange={[Function]}
-    type="checkbox"
   />
 </div>
 `;
@@ -241,7 +240,6 @@ exports[`CollapsibleMenuViewToggle should merge custom props 1`] = `
     labelTextAttrs={Object {}}
     name={null}
     onChange={[Function]}
-    type="checkbox"
   />
 </div>
 `;
@@ -288,7 +286,6 @@ exports[`CollapsibleMenuViewToggle should render a default component 1`] = `
     labelTextAttrs={Object {}}
     name={null}
     onChange={[Function]}
-    type="checkbox"
   />
 </div>
 `;
@@ -335,7 +332,6 @@ exports[`CollapsibleMenuViewToggle should set defaultChecked prop 1`] = `
     labelTextAttrs={Object {}}
     name={null}
     onChange={[Function]}
-    type="checkbox"
   />
 </div>
 `;
@@ -382,7 +378,6 @@ exports[`CollapsibleMenuViewToggle should set isDisabled prop 1`] = `
     labelTextAttrs={Object {}}
     name={null}
     onChange={[Function]}
-    type="checkbox"
   />
 </div>
 `;
