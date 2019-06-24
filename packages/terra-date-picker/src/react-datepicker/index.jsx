@@ -129,7 +129,7 @@ class DatePicker extends React.Component {
     timeIntervals: PropTypes.number,
     minTime: PropTypes.object,
     maxTime: PropTypes.object,
-    excludeTimes: PropTypes.array,
+    excludeTimes: PropTypes.array
   }
 
   static get defaultProps () {
