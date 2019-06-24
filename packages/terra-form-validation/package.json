@@ -1,7 +1,7 @@
 {
   "name": "terra-form-validation",
   "main": "docs/README.md",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Form Validation Examples for Terra",
   "repository": {
     "type": "git",
@@ -25,12 +25,12 @@
     "final-form": "^4.6.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-final-form": "^5.0.2"
+    "react-final-form": ">=5.0.2 <7.0.0"
   },
   "devDependencies": {
     "final-form": "^4.6.0",
     "prop-types": "^15.5.8",
-    "react-final-form": "^5.0.2",
+    "react-final-form": ">=5.0.2 <7.0.0",
     "terra-button": "^3.3.0",
     "terra-date-picker": "^3.0.0",
     "terra-doc-template": "^2.2.0",

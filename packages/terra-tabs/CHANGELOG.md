@@ -4,20 +4,23 @@ ChangeLog
 Unreleased
 ----------
 
-6.2.0 - (June 12, 2019)
+6.3.0 - (June 19, 2019)
 ------------------
-### Removed
-* Removed node_modules from .npmignore
+### Changed
+* Updated to use terra-responsive-element v5
 
 ### Changed
 * Removed all inline styles and implemented the same styles using external css.
-
-### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 
+6.2.0 - (June 12, 2019)
+------------------
 ### Added
 * box-shadow theme variable for in-active tab: --terra-tabs-structural-box-shadow
 * z-index theme variable for active tab: --terra-tabs-structural-active-z-index
+
+### Removed
+* Removed node_modules from .npmignore
 
 6.1.0 - (May 21, 2019)
 ------------------

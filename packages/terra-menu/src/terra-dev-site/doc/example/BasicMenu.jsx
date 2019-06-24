@@ -3,6 +3,10 @@ import Button from 'terra-button';
 import PropTypes from 'prop-types';
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import Menu from 'terra-menu';
+import classNames from 'classnames/bind';
+import styles from './BasicMenu.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   isArrowDisplayed: PropTypes.bool,
@@ -75,7 +79,7 @@ class BasicMenu extends React.Component {
   render() {
     return (
       <div>
-        <div style={{ display: 'inline-block' }} ref={this.setButtonNode}>
+        <div className={cx('menu-wrapper')} ref={this.setButtonNode}>
           <Menu
             isOpen={this.state.open}
             targetRef={this.getButtonNode}

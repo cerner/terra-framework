@@ -1,5 +1,9 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import Hookshot from '../../../Hookshot';
+import styles from '../common/HookshotTestDocCommon.scss';
+
+const cx = classNames.bind(styles);
 
 class HookshotStandard extends React.Component {
   constructor(props) {
@@ -25,17 +29,12 @@ class HookshotStandard extends React.Component {
         onResize={this.handleRequestClose}
         id="testDefaultContent"
       >
-        <div style={{ height: '40px', width: '200px' }}>Hookshot</div>
+        <div className={cx('default-hookshot-wrapper')}>Hookshot</div>
       </Hookshot.Content>
     );
 
     return (
-      <div
-        id="default-bounds"
-        style={{
-          border: '1px dashed grey', height: '145px', width: '500px', position: 'relative',
-        }}
-      >
+      <div id="default-bounds" className={cx('content-wrapper')}>
         <Hookshot
           contentAttachment={{ vertical: 'bottom', horizontal: 'center' }}
           isEnabled
@@ -44,7 +43,7 @@ class HookshotStandard extends React.Component {
         >
           {hookshotContent}
         </Hookshot>
-        <button type="button" style={{ position: 'absolute', left: '210px', top: '50%' }} id="hookshot-standard-button" onClick={this.handleButtonClick}>Default Hookshot</button>
+        <button type="button" id="hookshot-standard-button" onClick={this.handleButtonClick}>Default Hookshot</button>
       </div>
     );
   }

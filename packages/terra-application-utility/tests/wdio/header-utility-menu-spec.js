@@ -1,5 +1,5 @@
-describe('HeaderUtilityMenu', () => {
-  beforeEach(() => {
+Terra.describeViewports('HeaderUtilityMenu', ['huge'], () => {
+  before(() => {
     browser.url('/#/raw/tests/terra-application-utility/application-utility/default-header-utility-menu');
     browser.waitForVisible('#default');
   });
@@ -9,7 +9,7 @@ describe('HeaderUtilityMenu', () => {
   });
 
   describe('Hover-header utility menu', () => {
-    beforeEach(() => {
+    before(() => {
       browser.waitForVisible('#test-item-2');
       browser.moveToObject('#test-item-2');
     });
@@ -18,7 +18,7 @@ describe('HeaderUtilityMenu', () => {
   });
 
   describe('Focus-header utility menu', () => {
-    beforeEach(() => {
+    before(() => {
       browser.keys(['Tab', 'Tab', 'Tab']);
       browser.moveToObject('#root', 0, 0);
     });

@@ -3,6 +3,11 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Fixed issue with accessibility roles in list view in popup menu
+
+6.3.0 - (June 19, 2019)
+------------------
 ### Changed
 * Added more buttons to support wdio tests for other themes (ex:mpages theme)
 
@@ -14,6 +19,7 @@ Unreleased
 
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+* Update wdio spec to use Terra.describeViewports
 
 6.1.0 - (May 21, 2019)
 ------------------

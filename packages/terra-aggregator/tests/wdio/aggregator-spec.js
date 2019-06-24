@@ -1,6 +1,4 @@
-describe('Aggregator', () => {
-  before(() => browser.setViewportSize(Terra.viewports('large')[0]));
-
+Terra.describeViewports('Aggregator', ['large'], () => {
   describe('Standalone', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-aggregator/aggregator/aggregator-standalone');

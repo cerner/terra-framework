@@ -1,5 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
+import styles from './LayoutTestCommon.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   layoutConfig: PropTypes.object,
@@ -8,23 +12,15 @@ const propTypes = {
 const TestContent = ({ layoutConfig }) => (
   <div
     id="test-content"
-    style={{
-      height: 'calc(100% - 10px)', width: 'calc(100% - 10px)', border: '4px dashed lightgrey', margin: '5px', position: 'relative',
-    }}
+    className={cx('content-wrapper1')}
   >
-    <div style={{
-      position: 'absolute', top: '50%', left: '50%', color: 'grey', transform: 'translateX(-50%)',
-    }}
-    >
-      <h2 style={{ margin: '0' }}>Content</h2>
+    <div className={cx('content-wrapper2')}>
+      <h2 className={cx('content-text')}>Content</h2>
       {layoutConfig.toggleMenu
         && (
         <button
           type="button"
-          className="test-content-toggle"
-          style={{
-            display: 'inline', marginLeft: '5px', height: '25px', border: '1px dashed lightgrey',
-          }}
+          className={cx('test-content-toggle')}
           onClick={layoutConfig.toggleMenu}
         >
 Toggle Menu
