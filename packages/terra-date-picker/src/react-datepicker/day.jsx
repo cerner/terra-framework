@@ -11,7 +11,7 @@ import {
   isDayDisabled,
   isDayInRange,
   getDayOfWeekCode,
-  localizeDate
+  getLocalizedDateForScreenReader
 } from './date_utils'
 
 class Day extends React.Component {
@@ -169,23 +169,13 @@ class Day extends React.Component {
 
   render () {
     const { day } = this.props;
-    let ariaLabel = '';
-    
-    if (day && day.isValid()) {
-      const localizedDate = localizeDate(day, this.props.locale);
-      ariaLabel = localizedDate.format('LL');
-
-      if (this.isDisabled()) {
-        ariaLabel = ariaLabel.concat(' ', this.props.intl.formatMessage({ id: 'Terra.datePicker.disabled' }));
-      } 
-    }
 
     return (
       <div
         className={this.getClassNames(day)}
         onClick={this.handleClick}
         onMouseEnter={this.handleMouseEnter}
-        aria-label={ariaLabel}
+        aria-label={getLocalizedDateForScreenReader(day, this.props)}
         role="option">
         {getDate(day)}
       </div>

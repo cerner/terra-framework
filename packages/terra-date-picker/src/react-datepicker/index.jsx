@@ -38,7 +38,7 @@ import {
   parseDate,
   safeDateFormat,
   getHightLightDaysMap,
-  localizeDate
+  getLocalizedDateForScreenReader
 } from './date_utils'
 import onClickOutside from 'react-onclickoutside'
 
@@ -374,17 +374,7 @@ class DatePicker extends React.Component {
         preSelection: date
       })
 
-      let ariaLiveMessage = '';
-      if (date) {
-        const localizedDate = localizeDate(date, this.props.locale);
-        ariaLiveMessage = localizedDate.format('LL');
-
-        if (isDayDisabled(date, this.props)) {
-          ariaLiveMessage = ariaLiveMessage.concat(' ', this.props.intl.formatMessage({ id: 'Terra.datePicker.disabled' }));
-        } 
-      }
-
-      this.updateAriaLiveStatus(ariaLiveMessage);
+      this.updateAriaLiveStatus(getLocalizedDateForScreenReader(date, this.props));
     }
   }
 
