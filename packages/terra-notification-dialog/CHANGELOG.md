@@ -6,8 +6,6 @@ Unreleased
 ### Fixed
 * Updated max-width to be `49%` for screen size greater than 768px.
 
-=======
-
 3.3.0 - (June 19, 2019)
 ------------------
 ### Changed

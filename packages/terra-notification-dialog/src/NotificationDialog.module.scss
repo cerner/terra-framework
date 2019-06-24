@@ -128,4 +128,10 @@
       margin-top: var(--terra-notification-dialog-actions-button-margin-top, 0.4rem);
     }
   }
+
+  .content-container {
+    display: block;
+    flex-shrink: 1;
+    max-width: 100%;
+  }
 }
