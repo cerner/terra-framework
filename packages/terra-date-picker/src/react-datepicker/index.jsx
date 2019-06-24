@@ -78,6 +78,11 @@ class DatePicker extends React.Component {
     id: PropTypes.string,
     includeDates: PropTypes.array,
     inline: PropTypes.bool,
+    /**
+     * @private
+     * Internationalization object with translation APIs. Provided by `injectIntl`.
+     */
+    intl: intlShape,
     isClearable: PropTypes.bool,
     locale: PropTypes.string,
     maxDate: PropTypes.object,
@@ -125,11 +130,6 @@ class DatePicker extends React.Component {
     minTime: PropTypes.object,
     maxTime: PropTypes.object,
     excludeTimes: PropTypes.array,
-    /**
-     * @private
-     * Internationalization object with translation APIs. Provided by `injectIntl`.
-     */
-    intl: intlShape,
   }
 
   static get defaultProps () {

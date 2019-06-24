@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
+import { injectIntl, intlShape } from 'react-intl';
 import {
   getDay,
   getMonth,
@@ -9,16 +10,22 @@ import {
   isSameDay,
   isDayDisabled,
   isDayInRange,
-  getDayOfWeekCode
+  getDayOfWeekCode,
+  localizeDate
 } from './date_utils'
 
-export default class Day extends React.Component {
+class Day extends React.Component {
   static propTypes = {
     day: PropTypes.object.isRequired,
     dayClassName: PropTypes.func,
     endDate: PropTypes.object,
     highlightDates: PropTypes.instanceOf(Map),
     inline: PropTypes.bool,
+    /**
+     * @private
+     * Internationalization object with translation APIs. Provided by `injectIntl`.
+     */
+    intl: intlShape,
     month: PropTypes.number,
     onClick: PropTypes.func,
     onMouseEnter: PropTypes.func,
@@ -161,15 +168,29 @@ export default class Day extends React.Component {
   }
 
   render () {
+    const { day } = this.props;
+    let ariaLabel = '';
+    
+    if (day && day.isValid()) {
+      const localizedDate = localizeDate(day, this.props.locale);
+      ariaLabel = localizedDate.format('LL');
+
+      if (this.isDisabled()) {
+        ariaLabel = ariaLabel.concat(' ', this.props.intl.formatMessage({ id: 'Terra.datePicker.disabled' }));
+      } 
+    }
+
     return (
       <div
-        className={this.getClassNames(this.props.day)}
+        className={this.getClassNames(day)}
         onClick={this.handleClick}
         onMouseEnter={this.handleMouseEnter}
-        aria-label={`day-${getDate(this.props.day)}`}
+        aria-label={ariaLabel}
         role="option">
-        {getDate(this.props.day)}
+        {getDate(day)}
       </div>
     )
   }
 }
+
+export default injectIntl(Day);
