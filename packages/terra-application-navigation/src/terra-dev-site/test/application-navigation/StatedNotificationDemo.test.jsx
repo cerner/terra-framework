@@ -3,165 +3,166 @@ import React, {
 } from 'react';
 import ApplicationBase from 'terra-application/lib/application-base';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
-import IconPill from 'terra-icon/lib/icon/IconPill';
+import IconManufacturer from 'terra-icon/lib/icon/IconManufacturer';
 import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
-import IconLightbulb from 'terra-icon/lib/icon/IconLightbulb';
-import Placeholder from 'terra-doc-template/lib/Placeholder';
+import IconScratchPad from 'terra-icon/lib/icon/IconScratchPad';
+import IconSave from 'terra-icon/lib/icon/IconSave';
+import IconPrinter from 'terra-icon/lib/icon/IconPrinter';
+import IconBookmark from 'terra-icon/lib/icon/IconBookmark';
+import IconAttachment from 'terra-icon/lib/icon/IconAttachment';
+import PageContent from '../common/PageContent';
 import ApplicationNavigation from '../../../ApplicationNavigation';
 
-
 const titleConfig = {
-  title: 'Test Title',
+  title: 'My Application',
 };
 
 const userConfig = {
-  name: 'Test Name',
-  initials: 'TN',
+  name: 'My Name',
+  initials: 'MN',
 };
 
 const extensionItems = [
   {
     icon: <IconSearch />,
-    key: 'item-search',
-    text: 'Item Search',
+    key: 'search',
+    text: 'Search',
     metaData: {
       test: 'search',
     },
   }, {
-    icon: <IconPill />,
-    key: 'item-pill',
-    text: 'Item Pill',
+    icon: <IconManufacturer />,
+    key: 'manufacturer',
+    text: 'View Manufacturers',
     metaData: {
-      test: 'pill',
+      test: 'manufacturers',
     },
   }, {
     icon: <IconVisualization />,
-    key: 'item-lisualization',
-    text: 'Item Visualization',
+    key: 'trends',
+    text: 'View Trends',
     metaData: {
-      test: 'visualization',
+      test: 'trends',
     },
   }, {
-    icon: <IconLightbulb />,
-    key: 'item-lightbulb',
-    text: 'Item Lightbulb',
+    icon: <IconScratchPad />,
+    key: 'inbox',
+    text: 'View Inbox',
     metaData: {
-      test: 'lightbulb',
+      test: 'inbox',
     },
   },
 ];
 
 const navigationItems = [
   {
-    key: '/page_1',
-    text: 'Page 1',
+    key: '/home',
+    text: 'Home',
     metaData: {
-      display: 'Page 1',
+      display: 'Home',
     },
   }, {
-    key: '/page_2',
-    text: 'Page 2',
+    key: '/products',
+    text: 'Products',
     metaData: {
-      display: 'Page 2',
+      display: 'Products',
     },
   }, {
-    key: '/page_3',
-    text: 'Page 3',
+    key: '/management',
+    text: 'Management',
     metaData: {
-      display: 'Page 3',
+      display: 'Management',
     },
   }, {
-    key: '/page_4',
-    text: 'Page 4',
+    key: '/documentation',
+    text: 'Documentation',
     metaData: {
-      display: 'Page 4',
+      display: 'Documentation',
     },
   }, {
-    key: '/page_5',
-    text: 'Page 5',
+    key: '/continuing_education',
+    text: 'Continuing Education',
     metaData: {
-      display: 'Page 5',
+      display: 'Continuing Education',
     },
   }, {
-    key: '/page_6',
-    text: 'Page 6',
+    key: '/support',
+    text: 'Support',
     metaData: {
-      display: 'Page 6',
+      display: 'Support',
     },
   }, {
-    key: '/page_7',
-    text: 'Page 7',
+    key: '/resources',
+    text: 'Resources',
     metaData: {
-      display: 'Page 7',
+      display: 'Resources',
     },
   }, {
-    key: '/page_8',
-    text: 'Page 8',
+    key: '/archives',
+    text: 'Archives',
     metaData: {
-      display: 'Page 8',
+      display: 'Archives',
     },
   },
 ];
 
 const utilityItems = [
   {
-    icon: <IconSearch />,
-    key: 'item-a',
-    text: 'Item A',
+    icon: <IconSave />,
+    key: 'save',
+    text: 'Save',
     metaData: {
-      test: 'a',
+      test: 'save',
     },
   }, {
-    icon: <IconPill />,
-    key: 'item-b',
-    text: 'Item B',
+    icon: <IconPrinter />,
+    key: 'print',
+    text: 'Print',
     metaData: {
-      test: 'b',
+      test: 'print',
     },
   }, {
-    icon: <IconVisualization />,
-    key: 'item-c',
-    text: 'Item C',
+    icon: <IconBookmark />,
+    key: 'bookmark',
+    text: 'Bookmark',
     metaData: {
-      test: 'c',
+      test: 'bookmark',
     },
   }, {
-    icon: <IconLightbulb />,
-    key: 'item-d',
-    text: 'Item D',
+    icon: <IconAttachment />,
+    key: 'attachment',
+    text: 'Add Attachment',
     metaData: {
-      test: 'd',
+      test: 'attachment',
     },
   },
 ];
 
 const notifications = [
   {
-    '/page_2': 5,
-    'item-pill': 10,
-    '/page_8': 4,
+    '/products': 5,
+    manufacturer: 10,
+    '/archives': 4,
   },
   {
-    '/page_2': 8,
-    'item-pill': 12,
-    '/page_8': 999,
-    'item-lightbulb': 1,
+    '/products': 8,
+    manufacturer: 12,
+    '/archives': 999,
+    inbox: 1,
   },
 ];
 
 const StatedNotificationDemo = () => {
   const [activeKey, setActiveKey] = useState(navigationItems[0].key);
   const [notificationIndex, setNotificationIndex] = useState(0);
+  const [lastActionKey, setLastActionKey] = useState(null);
 
-  /* eslint-disable no-alert */
-  function handleItemSelection(key, metaData) {
-    if (key === 'item-search') {
+  function handleItemSelection(key) {
+    if (key === 'search') {
       setNotificationIndex(notificationIndex ? 0 : 1);
-      return;
     }
-    alert(`itemKey: ${key}, metaData: ${metaData.test}`);
+    setLastActionKey(`Current Action: ${key}`);
   }
-  /* eslint-enable no-alert */
 
   return (
     <ApplicationBase locale="en-US">
@@ -176,11 +177,11 @@ const StatedNotificationDemo = () => {
         onSelectNavigationItem={key => setActiveKey(key)}
         utilityItems={utilityItems}
         onSelectUtilityItem={handleItemSelection}
-        onSelectSettings={() => alert('Settings Selected')} // eslint-disable-line no-alert
-        onSelectHelp={() => alert('Help Selected')} // eslint-disable-line no-alert
-        onSelectLogout={() => alert('Logout Selected')} // eslint-disable-line no-alert
+        onSelectSettings={() => handleItemSelection('settings')}
+        onSelectHelp={() => handleItemSelection('help')}
+        onSelectLogout={() => handleItemSelection('logout')}
       >
-        <Placeholder title={activeKey} />
+        <PageContent title={activeKey} subtitle={lastActionKey} />
       </ApplicationNavigation>
     </ApplicationBase>
   );

@@ -16,11 +16,17 @@
     border: 5px dashed rgb(128, 128, 128);
   }
 
-  .button {
-    font-size: 2rem;
+  .center {
     left: 50%;
     position: absolute;
     top: 50%;
     transform: translate3d(-50%, -50%, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button {
+    font-size: 2rem;
   }
 }

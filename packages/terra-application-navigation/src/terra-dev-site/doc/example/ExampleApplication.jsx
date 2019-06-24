@@ -1,4 +1,5 @@
 
+/* eslint-disable */
 import React, {
   useState,
 } from 'react';
@@ -136,13 +137,7 @@ const utilityItems = [
   },
 ];
 
-/* eslint-disable no-alert */
-const handleItemSelection = (key, metaData) => {
-  alert(`itemKey: ${key}, metaData: ${metaData.test}`);
-};
-/* eslint-enable no-alert */
-
-const ExampleApplication = () => {
+const ExampleApplication = ({ onAction }) => {
   const [activeKey, setActiveKey] = useState(navigationItems[0].key);
 
   return (
@@ -151,15 +146,15 @@ const ExampleApplication = () => {
         titleConfig={titleConfig}
         userConfig={userConfig}
         extensionItems={extensionItems}
-        onSelectExtensionItem={handleItemSelection}
+        onSelectExtensionItem={onAction}
         navigationItems={navigationItems}
         activeNavigationItemKey={activeKey}
         onSelectNavigationItem={key => setActiveKey(key)}
         utilityItems={utilityItems}
-        onSelectUtilityItem={handleItemSelection}
-        onSelectSettings={() => alert('Settings Selected')} // eslint-disable-line no-alert
-        onSelectHelp={() => alert('Help Selected')} // eslint-disable-line no-alert
-        onSelectLogout={() => alert('Logout Selected')} // eslint-disable-line no-alert
+        onSelectUtilityItem={onAction}
+        onSelectSettings={() => onAction('settings')} // eslint-disable-line no-alert
+        onSelectHelp={() => onAction('help')} // eslint-disable-line no-alert
+        onSelectLogout={() => onAction('logout')} // eslint-disable-line no-alert
       >
         <Placeholder title={activeKey} />
       </ApplicationNavigation>

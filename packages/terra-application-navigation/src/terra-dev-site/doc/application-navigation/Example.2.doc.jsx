@@ -6,6 +6,7 @@ import ExampleDoc from '../../../../docs/example.md';
 /* eslint-disable import/no-webpack-loader-syntax, import/first,  import/no-unresolved, import/extensions, , import/no-duplicates */
 import ExampleApplication from '../example/ExampleApplication';
 import ExampleApplicationSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ExampleApplication';
+import ExampleWrapper from '../example/ExampleWrapper';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
@@ -15,7 +16,7 @@ const DocPage = () => (
     srcPath={`https://github.com/cerner/terra-framework/tree/master/packages/${name}`}
     examples={[
       {
-        example: <div style={{ height: '500px' }}><ExampleApplication /></div>, // eslint-disable-line react/forbid-dom-props
+        example: <ExampleWrapper><ExampleApplication /></ExampleWrapper>,
         source: ExampleApplicationSrc,
       },
     ]}

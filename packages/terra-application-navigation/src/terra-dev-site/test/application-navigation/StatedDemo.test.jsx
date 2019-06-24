@@ -25,28 +25,28 @@ const userConfig = {
 const extensionItems = [
   {
     icon: <IconSearch />,
-    key: 'item-search',
+    key: 'search',
     text: 'Search',
     metaData: {
       test: 'search',
     },
   }, {
     icon: <IconManufacturer />,
-    key: 'item-medication',
+    key: 'manufacturer',
     text: 'View Manufacturers',
     metaData: {
       test: 'manufacturers',
     },
   }, {
     icon: <IconVisualization />,
-    key: 'item-trends',
+    key: 'trends',
     text: 'View Trends',
     metaData: {
       test: 'trends',
     },
   }, {
     icon: <IconScratchPad />,
-    key: 'item-inbox',
+    key: 'inbox',
     text: 'View Inbox',
     metaData: {
       test: 'inbox',
@@ -109,28 +109,28 @@ const navigationItems = [
 const utilityItems = [
   {
     icon: <IconSave />,
-    key: 'item-save',
+    key: 'save',
     text: 'Save',
     metaData: {
       test: 'save',
     },
   }, {
     icon: <IconPrinter />,
-    key: 'item-print',
+    key: 'print',
     text: 'Print',
     metaData: {
       test: 'print',
     },
   }, {
     icon: <IconBookmark />,
-    key: 'item-bookmark',
+    key: 'bookmark',
     text: 'Bookmark',
     metaData: {
       test: 'bookmark',
     },
   }, {
     icon: <IconAttachment />,
-    key: 'item-attachment',
+    key: 'attachment',
     text: 'Add Attachment',
     metaData: {
       test: 'attachment',
@@ -138,14 +138,13 @@ const utilityItems = [
   },
 ];
 
-/* eslint-disable no-alert */
-const handleItemSelection = (key, metaData) => {
-  alert(`itemKey: ${key}, metaData: ${metaData.test}`);
-};
-/* eslint-enable no-alert */
-
 const StatedDemo = () => {
   const [activeKey, setActiveKey] = useState(navigationItems[0].key);
+  const [lastActionKey, setLastActionKey] = useState(null);
+
+  function handleItemSelection(key) {
+    setLastActionKey(`Current Action: ${key}`);
+  }
 
   return (
     <ApplicationBase locale="en-US">
@@ -159,11 +158,11 @@ const StatedDemo = () => {
         onSelectNavigationItem={key => setActiveKey(key)}
         utilityItems={utilityItems}
         onSelectUtilityItem={handleItemSelection}
-        onSelectSettings={() => alert('Settings Selected')} // eslint-disable-line no-alert
-        onSelectHelp={() => alert('Help Selected')} // eslint-disable-line no-alert
-        onSelectLogout={() => alert('Logout Selected')} // eslint-disable-line no-alert
+        onSelectSettings={() => handleItemSelection('settings')}
+        onSelectHelp={() => handleItemSelection('help')}
+        onSelectLogout={() => handleItemSelection('logout')}
       >
-        <PageContent title={activeKey} />
+        <PageContent title={activeKey} subtitle={lastActionKey} />
       </ApplicationNavigation>
     </ApplicationBase>
   );

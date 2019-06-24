@@ -4,10 +4,13 @@ import classNames from 'classnames/bind';
 import styles from './PageContent.module.scss';
 const cx = classNames.bind(styles);
 
-const PageContent = ({ title }) => (
+const PageContent = ({ title, subtitle }) => (
   <div className={cx('outer')}>
     <div className={cx('inner')}>
-      <button className={cx('button')}>{title}</button>
+      <div className={cx('center')}>
+        <button className={cx('button')}>{title}</button>
+        <div>{subtitle}</div>
+      </div>
     </div>
   </div>
 );
