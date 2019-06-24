@@ -120,7 +120,8 @@ class AbstractModal extends React.Component {
     // Store element that was last focused prior to modal opening
     this.setState({ modalTrigger: document.activeElement });
 
-    if (mainDocumentElement) {
+    if (mainDocumentElement && !mainDocumentElement.hasAttribute('data-overlay-open')) {
+      mainDocumentElement.setAttribute('data-modal-open', '');
       mainDocumentElement.setAttribute('inert', '');
       // Shift focus to modal when opened
       this.modalElement.current.focus();
@@ -130,7 +131,8 @@ class AbstractModal extends React.Component {
   hideModalDomUpdates() {
     const mainDocumentElement = document.querySelector(this.props.rootSelector);
 
-    if (mainDocumentElement) {
+    if (mainDocumentElement && !mainDocumentElement.hasAttribute('data-overlay-open')) {
+      mainDocumentElement.removeAttribute('data-modal-open');
       mainDocumentElement.removeAttribute('inert');
     }
 
