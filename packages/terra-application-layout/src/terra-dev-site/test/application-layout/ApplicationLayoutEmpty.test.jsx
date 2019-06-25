@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { MemoryRouter, withRouter } from 'react-router-dom';
 import ContentContainer from 'terra-content-container';
 import classNames from 'classnames/bind';
-import styles from './ApplicationLayoutCommon.test.scss';
+import styles from './ApplicationLayoutCommon.test.module.scss';
 
 import ApplicationLayout, { RoutingMenu } from '../../../ApplicationLayout';
 

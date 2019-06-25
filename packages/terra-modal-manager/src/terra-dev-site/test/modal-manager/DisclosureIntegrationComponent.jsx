@@ -6,7 +6,7 @@ import {
   availableDisclosureHeights, availableDisclosureWidths, withDisclosureManager, disclosureManagerShape,
 } from 'terra-disclosure-manager';
 import classNames from 'classnames/bind';
-import styles from './DisclosureComponentCommon.scss';
+import styles from './DisclosureComponentCommon.test.module.scss';
 
 const cx = classNames.bind(styles);
 

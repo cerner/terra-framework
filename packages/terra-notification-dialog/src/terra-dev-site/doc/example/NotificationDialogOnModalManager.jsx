@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import ModalManager from 'terra-modal-manager';
 import NotificationDialogModalContainer from './NotificationDialogModalContainer';
 
-import styles from './example-styles.scss';
+import styles from './example-styles.module.scss';
 
 const cx = classNames.bind(styles);
 

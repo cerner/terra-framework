@@ -9,7 +9,7 @@ import NavigationExample from 'terra-application-header-layout/lib/terra-dev-sit
 import ToggleExample from 'terra-application-header-layout/lib/terra-dev-site/doc/common/ToggleExample';
 import UtilitiesExample from 'terra-application-header-layout/lib/terra-dev-site/doc/common/UtilitiesExample';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
-import styles from './HeaderWireframe.scss';
+import styles from './HeaderWireframe.module.scss';
 
 const cx = classNames.bind(styles);
 
