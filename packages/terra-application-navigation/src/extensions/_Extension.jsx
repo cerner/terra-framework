@@ -23,7 +23,7 @@ const propTypes = {
    */
   onSelect: PropTypes.func,
   /**
-   * The text display for the extension, either the aira label or the inline text.
+   * The text display for the extension, either the aria label or the inline text.
    */
   text: PropTypes.string.isRequired,
 };

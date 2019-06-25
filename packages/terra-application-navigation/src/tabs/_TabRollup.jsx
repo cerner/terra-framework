@@ -32,7 +32,7 @@ const propTypes = {
    */
   tabRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
   /**
-   * Should the count notificaiton be displayed on the menu display.
+   * Should the count notification be displayed on the menu display.
    */
   hasChildNotifications: PropTypes.bool,
   /**
