@@ -5,7 +5,7 @@ import ActionFooter from 'terra-action-footer';
 import Popup from 'terra-popup';
 import classNames from 'classnames/bind';
 import DialogModal from '../../../DialogModal';
-import styles from './DialogModalWithPopup.test.scss';
+import styles from './DialogModalWithPopup.test.module.scss';
 
 const cx = classNames.bind(styles);
 

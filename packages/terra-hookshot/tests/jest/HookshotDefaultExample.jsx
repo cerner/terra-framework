@@ -1,5 +1,6 @@
 import React from 'react';
 import Hookshot from '../../src/Hookshot';
+import styles from './Hookshot.test.module.scss';
 
 class HookshotDefaultExample extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class HookshotDefaultExample extends React.Component {
   render() {
     const hookshotContent = (
       <Hookshot.Content onRequestClose={this.handleRequestClose}>
-        <div style={{ height: '40px', width: '200px', backgroundColor: 'red' }}>Hookshot</div>
+        <div className={styles.content}>Hookshot</div>
       </Hookshot.Content>
     );
 

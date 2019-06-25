@@ -4,6 +4,7 @@ import List from '../../doc/common/placeholder-list/PlaceholderList';
 import Item from '../../doc/common/placeholder-list/PlaceholderListItem';
 import DisclosureComponent from './DisclosureComponent';
 
+/* eslint-disable react/prop-types */
 class AggregatorItem extends React.Component {
   constructor(props) {
     super(props);
@@ -62,5 +63,6 @@ AggregatorItem.propTypes = {
   aggregatorDelegate: PropTypes.shape({}),
   targetId: PropTypes.string,
 };
+/* eslint-enable react/prop-types */
 
 export default AggregatorItem;

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './ProviderIframe.module.scss';
-import './ProviderTestTemplate.scss';
+import './ProviderTestTemplate.module.scss';
 
 const propTypes = {
   /**

@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import classNames from 'classnames/bind';
-import demoStyles from './demoStyles.scss';
+import demoStyles from './demoStyles.module.scss';
 
 const cx = classNames.bind(demoStyles);
 

@@ -361,7 +361,7 @@ class UtilityMenu extends React.Component {
     }
 
     const menuText = intl.formatMessage({ id: 'Terra.application.utility.menu' });
-    /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+    /* eslint-disable jsx-a11y/no-noninteractive-tabindex, react/forbid-dom-props */
     return (
       <div ref={this.setMenuNode} style={{ height: isHeightBounded ? '100%' : 'auto', outline: 'none' }} tabIndex="0">
         <ContentContainer
@@ -377,7 +377,7 @@ class UtilityMenu extends React.Component {
         </ContentContainer>
       </div>
     );
-    /* eslint-enable jsx-a11y/no-noninteractive-tabindex */
+    /* eslint-enable jsx-a11y/no-noninteractive-tabindex, react/forbid-dom-props */
   }
 }
 

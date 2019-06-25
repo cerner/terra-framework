@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 
 import BrandFooter from '../../../BrandFooter';
-import styles from './BrandFooterTestCommon.scss';
+import styles from './BrandFooterTestCommon.module.scss';
 
 const cx = classNames.bind(styles);
 

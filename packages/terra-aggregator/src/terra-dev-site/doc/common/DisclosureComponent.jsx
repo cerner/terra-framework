@@ -7,7 +7,7 @@ import Input from 'terra-form-input';
 import ActionHeader from 'terra-action-header';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 
-import styles from './example-styles.scss';
+import styles from './example-styles.module.scss';
 
 const cx = classNames.bind(styles);
 
