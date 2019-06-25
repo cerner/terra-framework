@@ -2,7 +2,7 @@ const navConfig = require('./navigation.config');
 
 module.exports = {
   navConfig,
-  filterSideMenu: true,
+  includeTestEvidence: false,
   sideEffectImports: [
     './initalizeXFC.js',
   ],
