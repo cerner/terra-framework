@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import KeyCode from 'keycode-js';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import ChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 
 import styles from './MenuItem.module.scss';
@@ -111,6 +112,7 @@ class MenuItem extends React.Component {
             {text}
           </div>
           {hasChevron && <span className={cx('chevron')}><ChevronRight /></span>}
+          <VisuallyHiddenText text={isSelected ? "selected" : "unselected"} />
         </div>
       </li>
     );
