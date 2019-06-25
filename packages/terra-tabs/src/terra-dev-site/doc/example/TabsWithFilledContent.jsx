@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import Tabs from 'terra-tabs/lib/Tabs';
 import TabContent from 'terra-tabs/lib/terra-dev-site/doc/example/TabContentTemplate';
 /* eslint-enable import/no-unresolved, import/extensions */
-import styles from './common/TabExample.scss';
+import styles from './common/TabExample.module.scss';
 
 const cx = classNames.bind(styles);
 

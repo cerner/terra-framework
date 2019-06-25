@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 
 import InfiniteList, { Item } from '../../../index';
-import styles from './InfiniteListTestCommon.scss';
+import styles from './InfiniteListTestCommon.module.scss';
 
 const cx = classNames.bind(styles);
 

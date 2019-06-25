@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 /* eslint-disable import/no-unresolved, import/extensions */
 import SlidePanelManager from 'terra-slide-panel-manager/lib/SlidePanelManager';
-import styles from 'terra-slide-panel-manager/lib/terra-dev-site/doc/example/example-styles.scss';
+import styles from 'terra-slide-panel-manager/lib/terra-dev-site/doc/example/SlidePanelManager.module.scss';
 /* eslint-enable import/no-unresolved, import/extensions */
 
 import ContentComponent from './ContentComponent';

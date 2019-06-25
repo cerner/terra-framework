@@ -4,7 +4,7 @@ import RoutingStackDelegate from 'terra-navigation-layout/lib/RoutingStackDelega
 import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
 import classNames from 'classnames/bind';
-import styles from './ApplicationMenu.scss';
+import styles from './ApplicationMenu.module.scss';
 
 import RoutingMenu from '../../../menu/RoutingMenu';
 
