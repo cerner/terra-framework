@@ -13,7 +13,7 @@
 
     // This will ensure that above the medium breakpoint, a max-width is enforced
     @include terra-mq-medium-up {
-      max-width: 49%;
+      max-width: 800px;
     }
   }
 
