@@ -10,6 +10,7 @@ const propTypes = {
   layoutConfig: PropTypes.shape({}),
 };
 
+/* eslint-disable react/prop-types */
 const HeaderExample = ({ layoutConfig }) => (
   <div className={cx('content-wrapper1')}>
     <div className={cx('content-wrapper2')}>
@@ -34,5 +35,6 @@ const HeaderExample = ({ layoutConfig }) => (
   </div>
 );
 HeaderExample.propTypes = propTypes;
+/* eslint-enable react/prop-types */
 
 export default withRouter(HeaderExample);
