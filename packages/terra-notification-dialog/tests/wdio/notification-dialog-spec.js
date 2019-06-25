@@ -124,7 +124,7 @@ Terra.describeViewports('NotificationDialog with additional focus trap sources w
     const ignoredA11y = {
       'color-contrast': {
         enabled: false,
-        selector: '[class*="abstract-modal"]',
+        selector: '[class*="overlay"]',
       },
     };
 
