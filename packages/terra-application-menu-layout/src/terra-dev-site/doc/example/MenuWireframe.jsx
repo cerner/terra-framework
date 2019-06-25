@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import ApplicationMenuLayout from 'terra-application-menu-layout/lib/ApplicationMenuLayout';
 import PlaceHolder from 'terra-application-menu-layout/lib/terra-dev-site/doc/common/Placeholder';
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
-import styles from './MenuWireframe.scss';
+import styles from './MenuWireframe.module.scss';
 
 const cx = classNames.bind(styles);
 

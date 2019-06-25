@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import ApplicationHeaderLayout from '../../../ApplicationHeaderLayout';
-import styles from './ApplicationHeaderDefault.test.scss';
+import styles from './ApplicationHeaderDefault.test.module.scss';
 
 const cx = classNames.bind(styles);
 

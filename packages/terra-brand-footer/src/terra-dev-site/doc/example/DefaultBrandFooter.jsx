@@ -3,7 +3,7 @@ import React from 'react';
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import BrandFooter from 'terra-brand-footer/lib/BrandFooter';
 import classNames from 'classnames/bind';
-import styles from './BrandFooterExampleCommon.scss';
+import styles from './BrandFooterExampleCommon.module.scss';
 
 const cx = classNames.bind(styles);
 

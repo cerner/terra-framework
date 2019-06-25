@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import SlideGroup from '../../../SlideGroup';
-import styles from '../../doc/example/SlideGroupDemo.scss';
+import styles from '../../doc/example/SlideGroupDemo.module.scss';
 
 const cx = classNames.bind(styles);
 

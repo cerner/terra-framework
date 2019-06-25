@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import Hookshot from '../../../Hookshot';
 import HookshotContent from './HookshotContentTestTemplate';
-import styles from './HookshotTestDocCommon.scss';
+import styles from './HookshotTestDocCommon.module.scss';
 
 const cx = classNames.bind(styles);
 

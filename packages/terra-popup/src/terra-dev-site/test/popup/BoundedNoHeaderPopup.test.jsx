@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import Popup from '../../../Popup';
 import BoundedNoHeaderContent from '../common/BoundedNoHeaderContent';
-import styles from './BoundedPopupCommon.test.scss';
+import styles from './BoundedPopupCommon.test.module.scss';
 
 const cx = classNames.bind(styles);
 

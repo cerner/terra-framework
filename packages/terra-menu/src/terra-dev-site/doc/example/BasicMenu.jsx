@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import Menu from 'terra-menu';
 import classNames from 'classnames/bind';
-import styles from './BasicMenu.scss';
+import styles from './BasicMenu.module.scss';
 
 const cx = classNames.bind(styles);
 

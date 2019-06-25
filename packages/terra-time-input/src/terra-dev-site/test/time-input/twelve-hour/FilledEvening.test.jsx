@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import TimeInput from '../../../../TimeInput';
 import TimeUtil from '../../../../TimeUtil';
-import styles from '../time-input/time-input.test.common.scss';
+import styles from '../time-input/time-input.test.module.scss';
 
 const cx = classNames.bind(styles);
 

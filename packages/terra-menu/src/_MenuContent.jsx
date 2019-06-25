@@ -340,9 +340,8 @@ class MenuContent extends React.Component {
     const contentHeight = this.props.isHeightBounded ? '100%' : this.props.fixedHeight;
     const contentPosition = this.props.isHeightBounded ? 'relative' : 'static';
     const contentWidth = this.props.isWidthBounded ? undefined : this.props.fixedWidth;
-
+    /* eslint-disable jsx-a11y/no-noninteractive-element-interactions, react/forbid-dom-props */
     return (
-      // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
       <div
         ref={this.handleContainerRef}
         className={contentClass}
@@ -359,6 +358,7 @@ class MenuContent extends React.Component {
         </ContentContainer>
       </div>
     );
+    /* eslint-enable jsx-a11y/no-noninteractive-element-interactions, react/forbid-dom-props */
   }
 }
 
