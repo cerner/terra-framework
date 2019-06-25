@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added the ability for the user to enter seconds in the time input
 
+### Changed
+* Renamed test and example SCSS files to end with `.module.scss` extension
+
 4.4.0 - (June 19, 2019)
 ------------------
 ### Changed

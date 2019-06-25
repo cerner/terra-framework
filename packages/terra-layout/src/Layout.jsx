@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 import ContentContainer from 'terra-content-container';
 import LodashDebounce from 'lodash.debounce';
 
+import styles from './LayoutSlidePanel.module.scss';
 import LayoutSlidePanel from './_LayoutSlidePanel';
 import {
   getBreakpointSize,
   getCustomProps,
 } from './LayoutUtils';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -155,7 +159,7 @@ class Layout extends React.Component {
       <ContentContainer
         fill
         header={isToggleMenu && this.renderHeader()}
-        style={{ outline: 'none' }}
+        className={cx('content-container')}
       >
         {children
           ? React.cloneElement(children, {

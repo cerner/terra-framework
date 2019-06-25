@@ -4,6 +4,7 @@ import HookshotTemplate from '../common/HookshotTestTemplate';
 const NoCloseBehavior = () => (
   <HookshotTemplate
     id="NoCloseBehavior"
+    type="primary"
     hookshotContentProps={{ closeOnEsc: false, closeOnOutsideClick: false, closeOnResize: false }}
   />
 );
@@ -11,6 +12,7 @@ const NoCloseBehavior = () => (
 const EscBehavior = () => (
   <HookshotTemplate
     id="EscBehavior"
+    type="primary"
     hookshotContentProps={{ closeOnEsc: true, closeOnOutsideClick: false, closeOnResize: false }}
   />
 );
@@ -18,6 +20,7 @@ const EscBehavior = () => (
 const OutsideClickBehavior = () => (
   <HookshotTemplate
     id="OutsideClickBehavior"
+    type="primary"
     hookshotContentProps={{ closeOnEsc: false, closeOnOutsideClick: true, closeOnResize: false }}
   />
 );
@@ -25,6 +28,7 @@ const OutsideClickBehavior = () => (
 const OutsideClickBehaviorWithSvgs = () => (
   <HookshotTemplate
     id="OutsideClickBehaviorWithSvgs"
+    type="primary"
     includeSvgs
     hookshotContentProps={{ closeOnEsc: false, closeOnOutsideClick: true, closeOnResize: false }}
   />
@@ -33,6 +37,7 @@ const OutsideClickBehaviorWithSvgs = () => (
 const ResizeBehavior = () => (
   <HookshotTemplate
     id="ResizeBehavior"
+    type="primary"
     hookshotContentProps={{ closeOnEsc: false, closeOnOutsideClick: false, closeOnResize: true }}
   />
 );
@@ -40,6 +45,7 @@ const ResizeBehavior = () => (
 const AllBehavior = () => (
   <HookshotTemplate
     id="AllBehavior"
+    type="primary"
     hookshotContentProps={{ closeOnEsc: true, closeOnOutsideClick: true, closeOnResize: true }}
   />
 );

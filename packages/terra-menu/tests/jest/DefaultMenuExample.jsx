@@ -1,5 +1,6 @@
 import React from 'react';
 import Menu from '../../src/Menu';
+import styles from './Menu.test.module.scss';
 
 class MenuDefaultExample extends React.Component {
   constructor(props) {
@@ -32,7 +33,7 @@ class MenuDefaultExample extends React.Component {
         >
           <Menu.Item text="testing" />
         </Menu>
-        <div style={{ height: '20px', width: '20px' }} ref={this.setButtonNode} />
+        <div className={styles.container} ref={this.setButtonNode} />
       </div>
     );
   }

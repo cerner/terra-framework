@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added the ability to have an input field for seconds.
 
+### Changed
+* Renamed test and example SCSS files to end with `.module.scss` extension
+
 4.2.0 - (June 19, 2019)
 ------------------
 ### Changed

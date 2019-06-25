@@ -3,7 +3,7 @@ import Button from 'terra-button';
 import classNames from 'classnames/bind';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import Popup from '../../../Popup';
-import styles from './PopupModalContent.scss';
+import styles from './PopupModalContent.module.scss';
 
 const cx = classNames.bind(styles);
 

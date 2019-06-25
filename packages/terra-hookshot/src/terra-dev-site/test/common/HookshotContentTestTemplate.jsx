@@ -1,11 +1,15 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import Hookshot from '../../../Hookshot';
+import styles from './HookshotTestDocCommon.module.scss';
+
+const cx = classNames.bind(styles);
 
 const HookshotContent = props => (
   <Hookshot.Content
     {...props}
   >
-    <div style={{ backgroundColor: 'powderblue', height: '36px', width: '200px' }}>Hookshot</div>
+    <div className={cx('hookshot-content-wrapper')}>Hookshot</div>
   </Hookshot.Content>
 );
 

@@ -8,7 +8,7 @@ import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-
 import classNames from 'classnames/bind';
 import List from './placeholder-list/PlaceholderList';
 import Item from './placeholder-list/PlaceholderListItem';
-import styles from './AggregatorItem.scss';
+import styles from './AggregatorItem.module.scss';
 
 import DisclosureComponent from './DisclosureComponent';
 

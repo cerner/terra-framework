@@ -18,12 +18,7 @@ exports[`Menu should render a default component 1`] = `
     />
   </Menu>
   <div
-    style={
-      Object {
-        "height": "20px",
-        "width": "20px",
-      }
-    }
+    className="container"
   />
 </div>
 `;

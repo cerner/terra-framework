@@ -1,5 +1,5 @@
 import React from 'react';
-import './PlaceholderList.scss';
+import './PlaceholderList.module.scss';
 
 /* eslint-disable */
 const PlaceholderListItem = ({
@@ -18,7 +18,7 @@ const PlaceholderListItem = ({
   const classNames = isSelected ? 'placeholder-list-item is-selected' : 'placeholder-list-item ';
   return (
     <li
-      {...customProps} 
+      {...customProps}
       aria-selected={isSelected}
       tabIndex="0"
       className={classNames}

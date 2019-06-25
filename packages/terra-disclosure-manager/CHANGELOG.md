@@ -3,6 +3,11 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Fixed bug where afterdismiss promise was getting resolved prior to dismissing.
+
+### Changed
+* Export context and delegate
 
 4.13.0 - (June 19, 2019)
 ------------------
