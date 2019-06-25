@@ -5,7 +5,7 @@ import Placeholder from 'terra-doc-template/lib/Placeholder';
 /* eslint-disable import/no-unresolved, import/extensions */
 import InfiniteList, { Item } from 'terra-infinite-list/lib/index';
 /* eslint-enable import/no-unresolved, import/extensions */
-import styles from './InfiniteListTestCommon.scss';
+import styles from './InfiniteListTestCommon.module.scss';
 
 import MyInitialLoadingIndicator from '../../doc/common/MyInitialLoadingIndicator';
 import MyProgressiveLoadingIndicator from '../../doc/common/MyProgressiveLoadingIndicator';

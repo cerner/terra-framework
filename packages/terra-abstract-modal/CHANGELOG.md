@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Renamed test and example SCSS files to end with `.module.scss` extension
 
 3.3.0 - (June 19, 2019)
 ------------------

@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import Layout from '../../../Layout';
 import TestMenu from '../common/TestMenu';
 import TestContent from '../common/TestContent';
-import styles from './TestLayoutCommon.scss';
+import styles from './TestLayoutCommon.module.scss';
 
 const cx = classNames.bind(styles);
 

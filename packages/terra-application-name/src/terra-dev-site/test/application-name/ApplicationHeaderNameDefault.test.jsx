@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'terra-image';
 import classNames from 'classnames/bind';
 import ApplicationHeaderName from '../../../ApplicationHeaderName';
-import demoStyles from './demoStyles.scss';
+import demoStyles from './demoStyles.module.scss';
 
 const cx = classNames.bind(demoStyles);
 

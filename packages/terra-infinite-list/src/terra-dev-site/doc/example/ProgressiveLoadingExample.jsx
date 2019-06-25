@@ -7,7 +7,7 @@ import classNames from 'classnames/bind';
 
 import MyProgressiveLoadingIndicator from '../common/MyProgressiveLoadingIndicator';
 import MyExampleContainer from '../common/MyExampleContainer';
-import styles from './InfiniteListDocExampleCommon.scss';
+import styles from './InfiniteListDocExampleCommon.module.scss';
 
 const cx = classNames.bind(styles);
 

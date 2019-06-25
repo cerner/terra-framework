@@ -4,7 +4,7 @@ import Field from 'terra-form-field';
 // eslint-disable-next-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 import DatePicker from 'terra-date-picker/lib/DatePicker';
 import classNames from 'classnames/bind';
-import styles from './DatePickerExampleCommon.scss';
+import styles from './DatePickerExampleCommon.module.scss';
 
 const cx = classNames.bind(styles);
 
