@@ -77,12 +77,7 @@ exports[`InfiniteList should render with initial children 1`] = `
     key="item-1"
   >
     <div
-      style={
-        Object {
-          "height": "20px",
-          "width": "100%",
-        }
-      }
+      className="item"
     >
       item 1
     </div>
@@ -94,12 +89,7 @@ exports[`InfiniteList should render with initial children 1`] = `
     key="item-2"
   >
     <div
-      style={
-        Object {
-          "height": "20px",
-          "width": "100%",
-        }
-      }
+      className="item"
     >
       item 2
     </div>
@@ -111,12 +101,7 @@ exports[`InfiniteList should render with initial children 1`] = `
     key="item-3"
   >
     <div
-      style={
-        Object {
-          "height": "20px",
-          "width": "100%",
-        }
-      }
+      className="item"
     >
       item 3
     </div>
@@ -128,12 +113,7 @@ exports[`InfiniteList should render with initial children 1`] = `
     key="item-4"
   >
     <div
-      style={
-        Object {
-          "height": "20px",
-          "width": "100%",
-        }
-      }
+      className="item"
     >
       item 4
     </div>
@@ -183,12 +163,7 @@ exports[`InfiniteList should render with list props 1`] = `
     key="item-1"
   >
     <div
-      style={
-        Object {
-          "height": "20px",
-          "width": "100%",
-        }
-      }
+      className="item"
     >
       item 1
     </div>
@@ -200,12 +175,7 @@ exports[`InfiniteList should render with list props 1`] = `
     key="item-2"
   >
     <div
-      style={
-        Object {
-          "height": "20px",
-          "width": "100%",
-        }
-      }
+      className="item"
     >
       item 2
     </div>
@@ -217,12 +187,7 @@ exports[`InfiniteList should render with list props 1`] = `
     key="item-3"
   >
     <div
-      style={
-        Object {
-          "height": "20px",
-          "width": "100%",
-        }
-      }
+      className="item"
     >
       item 3
     </div>
@@ -234,12 +199,7 @@ exports[`InfiniteList should render with list props 1`] = `
     key="item-4"
   >
     <div
-      style={
-        Object {
-          "height": "20px",
-          "width": "100%",
-        }
-      }
+      className="item"
     >
       item 4
     </div>
@@ -282,89 +242,53 @@ exports[`InfiniteList should render with list with style props 1`] = `
   role="listbox"
 >
   <ListItem
+    className="item1"
     hasChevron={false}
     isSelectable={true}
     isSelected={false}
     key="item-1"
-    style={
-      Object {
-        "backgroundColor": "pink",
-      }
-    }
   >
     <div
-      style={
-        Object {
-          "height": "20px",
-          "width": "100%",
-        }
-      }
+      className="item"
     >
       item 1
     </div>
   </ListItem>
   <ListItem
+    className="item2"
     hasChevron={false}
     isSelectable={true}
     isSelected={true}
     key="item-2"
-    style={
-      Object {
-        "backgroundColor": "red",
-      }
-    }
   >
     <div
-      style={
-        Object {
-          "height": "20px",
-          "width": "100%",
-        }
-      }
+      className="item"
     >
       item 2
     </div>
   </ListItem>
   <ListItem
+    className="item3"
     hasChevron={false}
     isSelectable={true}
     isSelected={false}
     key="item-3"
-    style={
-      Object {
-        "backgroundColor": "blue",
-      }
-    }
   >
     <div
-      style={
-        Object {
-          "height": "20px",
-          "width": "100%",
-        }
-      }
+      className="item"
     >
       item 3
     </div>
   </ListItem>
   <ListItem
+    className="item4"
     hasChevron={false}
     isSelectable={true}
     isSelected={false}
     key="item-4"
-    style={
-      Object {
-        "backgroundColor": "yellow",
-      }
-    }
   >
     <div
-      style={
-        Object {
-          "height": "20px",
-          "width": "100%",
-        }
-      }
+      className="item"
     >
       item 4
     </div>
@@ -377,13 +301,7 @@ exports[`InfiniteList should render with no children and loading 1`] = `
   dividerStyle="none"
   initialLoadingIndicator={
     <div
-      style={
-        Object {
-          "height": "100%",
-          "position": "relative",
-          "width": "100%",
-        }
-      }
+      className="initialLoadingIndicator"
     />
   }
   intl={
@@ -417,12 +335,7 @@ exports[`InfiniteList should render with no children and loading 1`] = `
   paddingStyle="none"
   progressiveLoadingIndicator={
     <div
-      style={
-        Object {
-          "height": "40px",
-          "width": "100%",
-        }
-      }
+      className="progressiveLoadingIndicator"
     />
   }
   role="none"

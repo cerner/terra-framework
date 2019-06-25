@@ -220,6 +220,7 @@ class PopupContent extends React.Component {
             role="dialog"
           >
             {arrowContent}
+            {/* eslint-disable-next-line react/forbid-dom-props */}
             <div {...heightData} {...widthData} className={innerClassNames} style={contentStyle}>
               {content}
             </div>

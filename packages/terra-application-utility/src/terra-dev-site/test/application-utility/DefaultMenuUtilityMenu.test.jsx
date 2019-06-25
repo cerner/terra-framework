@@ -5,7 +5,7 @@ import MockConfig from '../../doc/common/MockConfig';
 import FallbackAvatar from '../../doc/common/FallbackAvatar.svg';
 import { UtilityUtils } from '../../../ApplicationUtility';
 import UtilityMenu from '../../../utility/_UtilityMenu';
-import styles from './UtilityMenuCommon.scss';
+import styles from './UtilityMenuCommon.module.scss';
 
 const cx = classNames.bind(styles);
 
