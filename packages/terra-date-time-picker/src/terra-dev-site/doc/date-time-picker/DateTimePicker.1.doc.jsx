@@ -142,7 +142,7 @@ to see the starting and ending dates of daylight saving time for the current yea
         source: DateTimePickerWithSecondsSrc,
       },
       {
-        title: 'With Seconds Field in  12-hour Time format',
+        title: 'With Seconds Field in 12-hour Time format',
         example: <DateTimePickerWithSecondsAndTimeVariant />,
         source: DateTimePickerWithSecondsAndTimeVariantSrc,
       },
