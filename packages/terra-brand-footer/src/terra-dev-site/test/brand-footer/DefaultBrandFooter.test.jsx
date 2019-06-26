@@ -1,6 +1,10 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 
 import BrandFooter from '../../../BrandFooter';
+import styles from './BrandFooterTestCommon.module.scss';
+
+const cx = classNames.bind(styles);
 
 export default () => (
   <div id="wrapper">
@@ -20,12 +24,7 @@ export default () => (
           aria-label="link"
         >
           <svg
-            style={{
-              border: '0',
-              height: '40px',
-              width: '92px',
-              verticalAlign: 'top',
-            }}
+            className={cx('content-left-graphics')}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 92 40"
           >
@@ -50,12 +49,7 @@ export default () => (
 )}
       contentRight={(
         <svg
-          style={{
-            border: '0',
-            height: '40px',
-            width: '147px',
-            verticalAlign: 'top',
-          }}
+          className={cx('content-right-graphics')}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 147 40"
         >

@@ -2,7 +2,7 @@ import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import ApplicationTabs from '../../../tabs/ApplicationTabs';
 import testExternalConfig from '../common/testExternalConfig';
-import demoStyles from './demoStyles.scss';
+import demoStyles from './demoStyles.module.scss';
 
 export default () => (
   <MemoryRouter

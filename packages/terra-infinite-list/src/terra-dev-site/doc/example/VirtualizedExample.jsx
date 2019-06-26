@@ -2,14 +2,18 @@ import React from 'react';
 /* eslint-disable import/no-unresolved, import/extensions */
 import InfiniteList, { Item } from 'terra-infinite-list/lib/index';
 import Placeholder from 'terra-doc-template/lib/Placeholder';
+import classNames from 'classnames/bind';
 /* eslint-enable import/no-unresolved, import/extensions */
 
 import mockData from './mock-data/virtualizedData';
 import MyExampleContainer from '../common/MyExampleContainer';
+import styles from './InfiniteListDocExampleCommon.module.scss';
+
+const cx = classNames.bind(styles);
 
 const createListItem = itemData => (
   <Item key={itemData.key}>
-    <Placeholder title={itemData.title} style={{ height: '50px' }} />
+    <Placeholder title={itemData.title} className={cx('placeholder')} />
   </Item>
 );
 

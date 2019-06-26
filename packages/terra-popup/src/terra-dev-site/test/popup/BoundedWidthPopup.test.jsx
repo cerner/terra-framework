@@ -1,5 +1,9 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import Popup from '../../../Popup';
+import styles from './BoundedWidthPopup.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 class BoundedPopup extends React.Component {
   constructor(props) {
@@ -43,7 +47,7 @@ class BoundedPopup extends React.Component {
 
   render() {
     return (
-      <div id="test-popup-area" style={{ height: '275px', width: '350px', background: 'aliceblue' }} ref={this.setParentNode}>
+      <div id="test-popup-area" className={cx('test-popup-area')} ref={this.setParentNode}>
         <Popup
           boundingRef={this.getParentNode}
           classNameArrow="test-arrow"
@@ -54,7 +58,7 @@ class BoundedPopup extends React.Component {
           onRequestClose={this.handleRequestClose}
           targetRef={this.getButtonNode}
         >
-          <p style={{ height: '200px', width: '200px' }}>This popup is bounded by width.</p>
+          <p className={cx('popup-text')}>This popup is bounded by width.</p>
         </Popup>
         <button type="button" id="bounded-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
           Bounded Width

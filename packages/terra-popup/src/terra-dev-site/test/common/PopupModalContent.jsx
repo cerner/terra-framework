@@ -1,7 +1,11 @@
 import React from 'react';
 import Button from 'terra-button';
+import classNames from 'classnames/bind';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import Popup from '../../../Popup';
+import styles from './PopupModalContent.module.scss';
+
+const cx = classNames.bind(styles);
 
 class ModalContent extends React.Component {
   constructor(props) {
@@ -29,7 +33,7 @@ class ModalContent extends React.Component {
     const { disclosureManager } = this.props;
 
     return (
-      <div id="test-popup-area" className="content-container" style={{ height: '100%', padding: '10px' }}>
+      <div id="test-popup-area" className={cx('content-container')}>
         <Popup
           isArrowDisplayed
           classNameContent="test-content"
@@ -41,7 +45,7 @@ class ModalContent extends React.Component {
           <button type="button">Test button 1</button>
           <button type="button">Test button 2</button>
         </Popup>
-        <Button id="popup-in-modal" style={{ position: 'absolute', left: '125px' }} text="Popup In Modal" onClick={this.handlePopupButtonClick} />
+        <Button id="popup-in-modal" className={cx('popup-button')} text="Popup In Modal" onClick={this.handlePopupButtonClick} />
         <br />
         <br />
         <Button className="close-disclosure" text="Close Disclosure" onClick={disclosureManager.closeDisclosure} />

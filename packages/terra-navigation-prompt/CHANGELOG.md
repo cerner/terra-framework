@@ -3,6 +3,13 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Renamed test and example SCSS files to end with `.module.scss` extension
+
+1.2.0 - (June 19, 2019)
+------------------
+### Changed
+* Removed all inline styles from Dev-site components and implemented the same styles using external css.
 
 1.1.0 - (June 12, 2019)
 ------------------

@@ -1,40 +1,26 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
+import styles from './Placeholder.module.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
-  borderColor: PropTypes.string,
-  height: PropTypes.string,
   text: PropTypes.string,
-  textColor: PropTypes.string,
-  width: PropTypes.string,
+  size: PropTypes.string,
 };
 
 const defaultProps = {
-  borderColor: 'lightgrey',
-  height: '100%',
   text: 'PlaceHolder',
-  textColor: 'grey',
-  width: '100%',
+  size: 'tiny',
 };
 
 const Placeholder = ({
-  borderColor, height, text, textColor, width,
+  text, size,
 }) => (
-  <div
-    style={{
-      height, width, position: 'relative', padding: '5px',
-    }}
-  >
-    <div
-      style={{
-        height: '100%', width: '100%', position: 'relative', border: `3px dashed ${borderColor}`,
-      }}
-    >
-      <div
-        style={{
-          position: 'absolute', top: '50%', left: '50%', color: textColor, transform: 'translate3d(-50%, -50%, 0)',
-        }}
-      >
+  <div className={cx(`wrapper1-${size}`)}>
+    <div className={cx('wrapper2')}>
+      <div className={cx('wrapper3')}>
         <h3>{text}</h3>
       </div>
     </div>

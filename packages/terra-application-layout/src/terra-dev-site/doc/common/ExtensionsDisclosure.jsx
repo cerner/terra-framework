@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import ContentContainer from 'terra-content-container';
 import ActionHeader from 'terra-action-header';
+import classNames from 'classnames/bind';
+import styles from './ApplicationLayoutDocCommon.module.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   name: PropTypes.string,
@@ -22,7 +26,7 @@ const ExtensionsDisclosure = ({ name, disclosureManager }) => (
       />
    )}
   >
-    <div style={{ padding: '10px' }}>
+    <div className={cx('content-wrapper')}>
 Content for extension:
       {name}
     </div>

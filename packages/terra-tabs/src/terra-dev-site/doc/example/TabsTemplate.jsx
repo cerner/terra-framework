@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
@@ -6,6 +7,9 @@ import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import Tabs from 'terra-tabs/lib/Tabs';
 import TabContentTemplate from 'terra-tabs/lib/terra-dev-site/doc/example/TabContentTemplate';
 /* eslint-enable import/no-unresolved, import/extensions */
+import styles from './common/TabExample.module.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   tabFill: PropTypes.bool,
@@ -27,13 +31,7 @@ const TabsTemplate = (props) => {
   const customTab = (
     <Tabs.Pane
       customDisplay={(
-        <div
-          style={{
-            color: 'red',
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-          }}
-        >
+        <div className={cx('custom-display')}>
           Custom display
         </div>
       )}
@@ -64,7 +62,7 @@ const TabsTemplate = (props) => {
   );
 
   return (
-    <div style={{ padding: '10px' }}>
+    <div className={cx('content-wrapper')}>
       <Tabs defaultActiveKey="LabelTab" tabFill={props.tabFill}>
         {labelTab}
         {iconTab}

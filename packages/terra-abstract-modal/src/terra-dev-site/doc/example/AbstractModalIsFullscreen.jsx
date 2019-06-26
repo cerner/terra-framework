@@ -1,6 +1,10 @@
 import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import AbstractModal from 'terra-abstract-modal/lib/AbstractModal';
+import classNames from 'classnames/bind';
+import styles from './AbstractModalDocCommon.module.scss';
+
+const cx = classNames.bind(styles);
 
 class AbstractModalIsFullscreen extends React.Component {
   constructor() {
@@ -31,10 +35,7 @@ class AbstractModalIsFullscreen extends React.Component {
           isFullscreen
           onRequestClose={this.handleCloseModal}
         >
-          <div style={{
-            height: '100%', width: '100%', overflow: 'hidden', backgroundColor: 'aquamarine',
-          }}
-          >
+          <div className={cx('content-wrapper')}>
             <h1>Fullscreen Modal</h1>
             <br />
             <p>This modal will always take up the full screen.</p>

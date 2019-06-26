@@ -1,14 +1,12 @@
-const viewports = Terra.viewports('small');
-
-describe('RoutingMenu', () => {
+Terra.describeViewports('RoutingMenu', ['small'], () => {
   describe('Displays a default routing menu', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-application-layout/application-layout/routing-menu');
       browser.waitForVisible('#routing-menu-test');
     });
 
-    Terra.it.matchesScreenshot({ selector: '#routing-menu-test', viewports });
-    Terra.it.isAccessible({ viewports });
+    Terra.it.matchesScreenshot({ selector: '#routing-menu-test' });
+    Terra.it.isAccessible();
   });
 
   describe('Displays a routing menu without header', () => {
@@ -17,8 +15,8 @@ describe('RoutingMenu', () => {
       browser.waitForVisible('#routing-menu-test');
     });
 
-    Terra.it.matchesScreenshot({ selector: '#routing-menu-test', viewports });
-    Terra.it.isAccessible({ viewports });
+    Terra.it.matchesScreenshot({ selector: '#routing-menu-test' });
+    Terra.it.isAccessible();
   });
 
   describe('Navigates away from the site', () => {

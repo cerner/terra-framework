@@ -5,6 +5,10 @@ import ContentContainer from 'terra-content-container';
 import Popup from 'terra-popup/lib/Popup';
 import Placeholder from 'terra-doc-template/lib/Placeholder';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+import classNames from 'classnames/bind';
+import styles from './PopupDocCommon.module.scss';
+
+const cx = classNames.bind(styles);
 
 /* eslint-disable */
 const PopupContent = ({ closeButtonRequired, handleRequestClose}) => {
@@ -49,9 +53,7 @@ class PopupNoHeader extends React.Component {
   render() {
     return (
       <div
-        style={{
-          height: '200px', width: '200px', background: 'aliceblue', overflow: 'hidden',
-        }}
+        className={cx('content-wrapper')}
         ref={this.setParentNode}
       >
         <Popup

@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge custom props 1`] = `
-<li>
+<li
+  role="none"
+>
   <List
     className="Testing"
     dividerStyle="none"
@@ -54,7 +56,9 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge cust
 `;
 
 exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge custom props when selectable 1`] = `
-<li>
+<li
+  role="none"
+>
   <MenuItemGroup
     className="Testing"
     intl={
@@ -107,7 +111,9 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge cust
 `;
 
 exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render a menu item group when selectable 1`] = `
-<li>
+<li
+  role="none"
+>
   <MenuItemGroup
     intl={
       Object {
@@ -159,7 +165,9 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render a m
 `;
 
 exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render menu items when selectedKeys is not set 1`] = `
-<li>
+<li
+  role="none"
+>
   <List
     dividerStyle="none"
     intl={

@@ -1,5 +1,9 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import Popup from '../../../Popup';
+import styles from './ArrowVerticalAttachmentsPopup.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 class AlignmentPopup extends React.Component {
   constructor(props) {
@@ -47,9 +51,7 @@ class AlignmentPopup extends React.Component {
       <div>
         <div
           id="test-popup-area"
-          style={{
-            position: 'relative', height: '200px', width: '200px', background: 'aliceblue',
-          }}
+          className={cx('test-popup-area')}
           ref={this.setParentNode}
         >
           <Popup
@@ -64,14 +66,12 @@ class AlignmentPopup extends React.Component {
             onRequestClose={this.handleRequestClose}
             targetRef={this.getButtonNode}
           >
-            <p style={{ padding: '5px' }}>This popup arrow has vertical attachment.</p>
+            <p className={cx('popup-text')}>This popup arrow has vertical attachment.</p>
           </Popup>
           <button
             type="button"
             id="alignment-button"
-            style={{
-              position: 'absolute', left: 'calc(50% - 10px)', top: 'calc(50% - 10px)', height: '20px', width: '20px', backgroundColor: '#c00',
-            }}
+            className={cx('popup-button')}
             onClick={this.handleButtonClick}
             ref={this.setButtonNode}
           />

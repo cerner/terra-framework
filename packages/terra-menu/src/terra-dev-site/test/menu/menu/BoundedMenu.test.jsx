@@ -1,5 +1,9 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import Menu from '../../../../Menu';
+import styles from './BoundedMenu.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 class BoundedMenu extends React.Component {
   constructor(props) {
@@ -44,9 +48,7 @@ class BoundedMenu extends React.Component {
   render() {
     return (
       <div
-        style={{
-          height: '200px', width: '200px', background: 'aliceblue', overflow: 'hidden',
-        }}
+        className={cx('content-wrapper')}
         ref={this.setParentNode}
       >
         <Menu

@@ -1,9 +1,13 @@
 import React from 'react';
 import Image from 'terra-image';
+import classNames from 'classnames/bind';
 import MockConfig from '../../doc/common/MockConfig';
 import FallbackAvatar from '../../doc/common/FallbackAvatar.svg';
 import { UtilityUtils } from '../../../ApplicationUtility';
 import UtilityMenu from '../../../utility/_UtilityMenu';
+import styles from './UtilityMenuCommon.module.scss';
+
+const cx = classNames.bind(styles);
 
 class DefaultMenuUtilityMenu extends React.Component {
   constructor(props) {
@@ -13,10 +17,10 @@ class DefaultMenuUtilityMenu extends React.Component {
   }
 
   render() {
-    const customComponent = <div style={{ display: 'grid' }}><Image src={FallbackAvatar} style={{ width: '1.857rem', height: '1.857rem' }} alt="Fallback Avatar" /></div>;
+    const customComponent = <div className={cx('avatar-wrapper')}><Image src={FallbackAvatar} className={cx('avatar')} alt="Fallback Avatar" /></div>;
 
     return (
-      <div style={{ height: '300px', width: '300px' }}>
+      <div className={cx('content-wrapper')}>
         <UtilityMenu
           id="default"
           initialSelectedKey="menu"

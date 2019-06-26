@@ -3,8 +3,12 @@ import PropTypes from 'prop-types';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import { Route } from 'react-router-dom';
 import Button from 'terra-button';
+import classNames from 'classnames/bind';
 
 import ContentContainer from 'terra-content-container';
+import styles from './ApplicationContent.module.scss';
+
+const cx = classNames.bind(styles);
 
 const DisclosureComponent = withDisclosureManager(({ disclosureManager }) => (
   <ContentContainer
@@ -169,7 +173,7 @@ The ApplicationLayout includes ModalManager support by default. The ApplicationL
       <ContentContainer
         fill
       >
-        <div style={{ padding: '15px' }}>
+        <div className={cx('content-wrapper')}>
           <h1>{contentName}</h1>
           {bodyContent}
         </div>

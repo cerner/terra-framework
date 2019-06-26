@@ -1,6 +1,10 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import Popup from '../../../Popup';
 import BoundedNoHeaderContent from '../common/BoundedNoHeaderContent';
+import styles from './BoundedPopupCommon.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 class BoundedPopup extends React.Component {
   constructor(props) {
@@ -44,7 +48,7 @@ class BoundedPopup extends React.Component {
 
   render() {
     return (
-      <div id="test-popup-area" style={{ height: '200px', width: '200px', background: 'aliceblue' }} ref={this.setParentNode}>
+      <div id="test-popup-area" className={cx('test-popup-area')} ref={this.setParentNode}>
         <Popup
           boundingRef={this.getParentNode}
           classNameArrow="test-arrow"

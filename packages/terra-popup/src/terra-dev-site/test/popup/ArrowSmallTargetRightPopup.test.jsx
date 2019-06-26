@@ -1,5 +1,9 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import Popup from '../../../Popup';
+import styles from './ArrowSmallTargetRightPopup.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 // This tests verifies the PopupUtils.getContentOffset methed when (targetNode.clientWidth < segment) & attachment is right
 class OffsetPopup extends React.Component {
@@ -46,9 +50,7 @@ class OffsetPopup extends React.Component {
     return (
       <div
         id="test-popup-area"
-        style={{
-          position: 'relative', height: '200px', width: '200px', background: 'aliceblue',
-        }}
+        className={cx('test-popup-area')}
         ref={this.setParentNode}
       >
         <Popup
@@ -63,14 +65,12 @@ class OffsetPopup extends React.Component {
           onRequestClose={this.handleRequestClose}
           targetRef={this.getButtonNode}
         >
-          <p style={{ padding: '5px' }}>This popup was adjusted because the target was smaller than the arrow position allowed.</p>
+          <p className={cx('popup-text')}>This popup was adjusted because the target was smaller than the arrow position allowed.</p>
         </Popup>
         <button
           type="button"
           id="offset-button"
-          style={{
-            position: 'absolute', right: '10px', bottom: '0px', height: '10px', width: '10px', backgroundColor: '#c00',
-          }}
+          className={cx('popup-button')}
           onClick={this.handleButtonClick}
           ref={this.setButtonNode}
         />

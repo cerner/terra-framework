@@ -2,6 +2,10 @@ import React from 'react';
 
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import BrandFooter from 'terra-brand-footer/lib/BrandFooter';
+import classNames from 'classnames/bind';
+import styles from './BrandFooterExampleCommon.module.scss';
+
+const cx = classNames.bind(styles);
 
 export default () => (
   <BrandFooter
@@ -26,19 +30,10 @@ export default () => (
       <a
         href="http://terra-ui.com/"
         aria-label="Terra UI Home"
-        style={{
-          backgroundColor: 'transparent',
-          color: '#fff',
-          textDecoration: 'none',
-        }}
+        className={cx('content-left-anchor')}
       >
         <svg
-          style={{
-            border: '0',
-            height: '40px', // setting this explicity for IE11
-            width: '40px', // setting this explicity for IE11
-            verticalAlign: 'middle',
-          }}
+          className={cx('content-left-graphics')}
           viewBox="0 0 40 40"
         >
           <path fill="#80c7ee" d="M33.07,10,18.77,1.78a2,2,0,0,0-1-.26,2.06,2.06,0,0,0-1,.26L2.51,10a2,2,0,0,0-1,1.7V28.26a2,2,0,0,0,1,1.7L16.8,38.22a2.06,2.06,0,0,0,1,.26,2,2,0,0,0,1-.26L33.07,30a2,2,0,0,0,1-1.7V11.74A2,2,0,0,0,33.07,10Z" />
@@ -51,18 +46,13 @@ export default () => (
           <path fill="#047cc0" d="M26.56,10a2.76,2.76,0,0,0-1.43,5.12l0,.07c-.18.29-.38.6-.59.91a8,8,0,0,0-2.65-2.6,6.42,6.42,0,0,0-.68-.37A8.06,8.06,0,0,0,10.43,23.87a1.14,1.14,0,0,0,.1.19c-1.82,2.61-2.61,4.69-1.89,5.41a1.07,1.07,0,0,0,.77.26c1,0,2.67-.79,4.63-2.15l.19.09a8,8,0,0,0,3.47.79,8.07,8.07,0,0,0,8.05-8.06A7.87,7.87,0,0,0,25,16.93l-.09-.18c.32-.47.62-.92.87-1.35A2.76,2.76,0,1,0,26.56,10ZM10.4,20.4a7.31,7.31,0,0,1,7.3-7.3,7.22,7.22,0,0,1,3.14.71c.22.11.42.22.62.34A7.24,7.24,0,0,1,24,16.64a.64.64,0,0,1,.08.14,45.05,45.05,0,0,1-4.61,5.35,45.6,45.6,0,0,1-5.35,4.61l-.14-.08a7.5,7.5,0,0,1-2.49-2.49c-.12-.2-.23-.41-.33-.62A7.26,7.26,0,0,1,10.4,20.4Zm-1,8.66a.5.5,0,0,1-.3-.06c-.14-.14-.22-1.07,1.2-3.39.18-.3.37-.6.58-.91a8.12,8.12,0,0,0,2.51,2.51h0C10.93,28.88,9.78,29.06,9.41,29.06ZM25,20.4a7.31,7.31,0,0,1-10.26,6.68,46.62,46.62,0,0,0,5.15-4.48,45.62,45.62,0,0,0,4.48-5.16A7.35,7.35,0,0,1,25,20.4Zm1.56-5.63a2,2,0,0,1-.43,0,10.73,10.73,0,0,0,.67-1.49.69.69,0,0,0-.63-.2,9.19,9.19,0,0,1-.66,1.43,2,2,0,1,1,1,.3Z" />
           <path fill="#f1f1f2" d="M17.79,1.52a2,2,0,0,1,1,.26L33.07,10a2,2,0,0,1,1,1.7V28.26a2,2,0,0,1-1,1.7l-14.3,8.26a2,2,0,0,1-1,.26,2.06,2.06,0,0,1-1-.26L2.5,30a2,2,0,0,1-1-1.7V11.74a2,2,0,0,1,1-1.7L16.8,1.78a2.06,2.06,0,0,1,1-.26m0-1.52A3.48,3.48,0,0,0,16,.47L1.74,8.72a3.51,3.51,0,0,0-1.74,3V28.26a3.51,3.51,0,0,0,1.74,3L16,39.53a3.48,3.48,0,0,0,1.75.47,3.44,3.44,0,0,0,1.74-.47l14.3-8.25a3.49,3.49,0,0,0,1.75-3V11.74a3.49,3.49,0,0,0-1.75-3L19.53.47A3.44,3.44,0,0,0,17.79,0Z" />
         </svg>
-        <span style={{ letterSpacing: '1px' }}>Terra </span>
-        <span style={{ fontWeight: '100', letterSpacing: '1px' }}>UI</span>
+        <span className={cx('content-left-text')}>Terra </span>
+        <span className={cx(['content-left-text', 'weighted-text'])}>UI</span>
       </a>
 )}
     contentRight={(
       <svg
-        style={{
-          border: '0',
-          height: '40px',
-          width: '90px',
-          verticalAlign: 'top',
-        }}
+        className={cx('content-right-graphics')}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 90 40"
       >

@@ -1,6 +1,10 @@
 import React from 'react';
 import { Provider } from 'xfc';
+import classNames from 'classnames/bind';
 import ProviderTestTemplate from '../../../../EmbeddedContentProviderTestTemplate';
+import styles from './EmbeddedContentConsumerCommon.module.scss';
+
+const cx = classNames.bind(styles);
 
 class EmbeddedContent extends React.Component {
   constructor(props) {
@@ -31,7 +35,7 @@ class EmbeddedContent extends React.Component {
 
   render() {
     return (
-      <div style={{ padding: '1.25rem' }}>
+      <div className={cx('content-wrapper')}>
         <h1>Communication Between the Consumer and Embedded Content</h1>
         <p>Multiple custom events can be registered with the consumer and intiated by the provider to enable seamless communication. Thus the embedded-content-consumer will listen for an event message, handle it and send a reply to the provider.</p>
         <p>This example demonstrates that both custom events `EventA` and `EventB` has been registered and received by the embedded-content-container and that communication occurs between the consumer and embbedded content.</p>

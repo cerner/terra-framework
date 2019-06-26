@@ -1,407 +1,343 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`InfiniteList should render a default component 1`] = `
-<Fragment>
-  <div
-    className="infinite-list"
-  >
-    <div
-      className="spacer"
-      key="infinite-spinner-full"
-      style={
-        Object {
-          "height": "100%",
-        }
-      }
-    />
-    <div
-      className="spacer"
-      key="infinite-spacer-0"
-      style={
-        Object {
-          "height": "0px",
-        }
-      }
-    />
-    <List
-      dividerStyle="none"
-      paddingStyle="none"
-      role="none"
-    />
-    <div
-      className="spacer"
-      key="infinite-spacer-1"
-      style={
-        Object {
-          "height": "0px",
-        }
-      }
-    />
-  </div>
-</Fragment>
+<InfiniteList
+  dividerStyle="none"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isFinishedLoading={false}
+  paddingStyle="none"
+  role="none"
+/>
 `;
 
 exports[`InfiniteList should render with initial children 1`] = `
-<Fragment>
-  <div
-    className="infinite-list"
+<InfiniteList
+  dividerStyle="none"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isFinishedLoading={true}
+  paddingStyle="none"
+  role="none"
+>
+  <ListItem
+    hasChevron={false}
+    isSelectable={false}
+    isSelected={false}
+    key="item-1"
   >
     <div
-      className="spacer"
-      key="infinite-spacer-0"
-      style={
-        Object {
-          "height": "0px",
-        }
-      }
-    />
-    <List
-      dividerStyle="none"
-      paddingStyle="none"
-      role="none"
+      className="item"
     >
-      <ListItem
-        data-infinite-list-index={0}
-        hasChevron={false}
-        isSelectable={false}
-        isSelected={false}
-        key=".$item-1"
-        refCallback={[Function]}
-      >
-        <div
-          style={
-            Object {
-              "height": "20px",
-              "width": "100%",
-            }
-          }
-        >
-          item 1
-        </div>
-      </ListItem>
-      <ListItem
-        data-infinite-list-index={1}
-        hasChevron={false}
-        isSelectable={false}
-        isSelected={false}
-        key=".$item-2"
-        refCallback={[Function]}
-      >
-        <div
-          style={
-            Object {
-              "height": "20px",
-              "width": "100%",
-            }
-          }
-        >
-          item 2
-        </div>
-      </ListItem>
-      <ListItem
-        data-infinite-list-index={2}
-        hasChevron={false}
-        isSelectable={false}
-        isSelected={false}
-        key=".$item-3"
-        refCallback={[Function]}
-      >
-        <div
-          style={
-            Object {
-              "height": "20px",
-              "width": "100%",
-            }
-          }
-        >
-          item 3
-        </div>
-      </ListItem>
-      <ListItem
-        data-infinite-list-index={3}
-        hasChevron={false}
-        isSelectable={false}
-        isSelected={false}
-        key=".$item-4"
-        refCallback={[Function]}
-      >
-        <div
-          style={
-            Object {
-              "height": "20px",
-              "width": "100%",
-            }
-          }
-        >
-          item 4
-        </div>
-      </ListItem>
-    </List>
+      item 1
+    </div>
+  </ListItem>
+  <ListItem
+    hasChevron={false}
+    isSelectable={false}
+    isSelected={false}
+    key="item-2"
+  >
     <div
-      className="spacer"
-      key="infinite-spacer-1"
-      style={
-        Object {
-          "height": "0px",
-        }
-      }
-    />
-  </div>
-</Fragment>
+      className="item"
+    >
+      item 2
+    </div>
+  </ListItem>
+  <ListItem
+    hasChevron={false}
+    isSelectable={false}
+    isSelected={false}
+    key="item-3"
+  >
+    <div
+      className="item"
+    >
+      item 3
+    </div>
+  </ListItem>
+  <ListItem
+    hasChevron={false}
+    isSelectable={false}
+    isSelected={false}
+    key="item-4"
+  >
+    <div
+      className="item"
+    >
+      item 4
+    </div>
+  </ListItem>
+</InfiniteList>
 `;
 
 exports[`InfiniteList should render with list props 1`] = `
-<Fragment>
-  <div
-    className="infinite-list"
+<InfiniteList
+  dividerStyle="standard"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isFinishedLoading={true}
+  paddingStyle="standard"
+  progressiveLoadingMessage="Loading allergies..."
+  role="listbox"
+>
+  <ListItem
+    hasChevron={false}
+    isSelectable={true}
+    isSelected={false}
+    key="item-1"
   >
     <div
-      className="spacer"
-      key="infinite-spacer-0"
-      style={
-        Object {
-          "height": "0px",
-        }
-      }
-    />
-    <List
-      dividerStyle="standard"
-      paddingStyle="standard"
-      role="listbox"
+      className="item"
     >
-      <ListItem
-        data-infinite-list-index={0}
-        hasChevron={false}
-        isSelectable={true}
-        isSelected={false}
-        key=".$item-1"
-        refCallback={[Function]}
-      >
-        <div
-          style={
-            Object {
-              "height": "20px",
-              "width": "100%",
-            }
-          }
-        >
-          item 1
-        </div>
-      </ListItem>
-      <ListItem
-        data-infinite-list-index={1}
-        hasChevron={false}
-        isSelectable={true}
-        isSelected={true}
-        key=".$item-2"
-        refCallback={[Function]}
-      >
-        <div
-          style={
-            Object {
-              "height": "20px",
-              "width": "100%",
-            }
-          }
-        >
-          item 2
-        </div>
-      </ListItem>
-      <ListItem
-        data-infinite-list-index={2}
-        hasChevron={false}
-        isSelectable={true}
-        isSelected={false}
-        key=".$item-3"
-        refCallback={[Function]}
-      >
-        <div
-          style={
-            Object {
-              "height": "20px",
-              "width": "100%",
-            }
-          }
-        >
-          item 3
-        </div>
-      </ListItem>
-      <ListItem
-        data-infinite-list-index={3}
-        hasChevron={false}
-        isSelectable={true}
-        isSelected={false}
-        key=".$item-4"
-        refCallback={[Function]}
-      >
-        <div
-          style={
-            Object {
-              "height": "20px",
-              "width": "100%",
-            }
-          }
-        >
-          item 4
-        </div>
-      </ListItem>
-    </List>
+      item 1
+    </div>
+  </ListItem>
+  <ListItem
+    hasChevron={false}
+    isSelectable={true}
+    isSelected={true}
+    key="item-2"
+  >
     <div
-      className="spacer"
-      key="infinite-spacer-1"
-      style={
-        Object {
-          "height": "0px",
-        }
-      }
-    />
-  </div>
-</Fragment>
+      className="item"
+    >
+      item 2
+    </div>
+  </ListItem>
+  <ListItem
+    hasChevron={false}
+    isSelectable={true}
+    isSelected={false}
+    key="item-3"
+  >
+    <div
+      className="item"
+    >
+      item 3
+    </div>
+  </ListItem>
+  <ListItem
+    hasChevron={false}
+    isSelectable={true}
+    isSelected={false}
+    key="item-4"
+  >
+    <div
+      className="item"
+    >
+      item 4
+    </div>
+  </ListItem>
+</InfiniteList>
 `;
 
 exports[`InfiniteList should render with list with style props 1`] = `
-<div
-  class="infinite-list"
+<InfiniteList
+  dividerStyle="standard"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isFinishedLoading={true}
+  paddingStyle="standard"
+  role="listbox"
 >
-  <div
-    class="spacer"
-    style="height:0px"
-  />
-  <ul
-    class="list padding-standard divider-standard"
-    role="listbox"
+  <ListItem
+    className="item1"
+    hasChevron={false}
+    isSelectable={true}
+    isSelected={false}
+    key="item-1"
   >
-    <li
-      aria-selected="false"
-      class="list-item is-selectable"
-      data-infinite-list-index="0"
-      data-item-show-focus="true"
-      role="option"
-      style="background-color:pink"
-      tabindex="0"
+    <div
+      className="item"
     >
-      <div
-        class="item-fill"
-      >
-        <div
-          style="height:20px;width:100%"
-        >
-          item 1
-        </div>
-      </div>
-    </li>
-    <li
-      aria-selected="true"
-      class="list-item selected is-selectable"
-      data-infinite-list-index="1"
-      data-item-show-focus="true"
-      role="option"
-      style="background-color:red"
-      tabindex="0"
+      item 1
+    </div>
+  </ListItem>
+  <ListItem
+    className="item2"
+    hasChevron={false}
+    isSelectable={true}
+    isSelected={true}
+    key="item-2"
+  >
+    <div
+      className="item"
     >
-      <div
-        class="item-fill"
-      >
-        <div
-          style="height:20px;width:100%"
-        >
-          item 2
-        </div>
-      </div>
-    </li>
-    <li
-      aria-selected="false"
-      class="list-item is-selectable"
-      data-infinite-list-index="2"
-      data-item-show-focus="true"
-      role="option"
-      style="background-color:blue"
-      tabindex="0"
+      item 2
+    </div>
+  </ListItem>
+  <ListItem
+    className="item3"
+    hasChevron={false}
+    isSelectable={true}
+    isSelected={false}
+    key="item-3"
+  >
+    <div
+      className="item"
     >
-      <div
-        class="item-fill"
-      >
-        <div
-          style="height:20px;width:100%"
-        >
-          item 3
-        </div>
-      </div>
-    </li>
-    <li
-      aria-selected="false"
-      class="list-item is-selectable"
-      data-infinite-list-index="3"
-      data-item-show-focus="true"
-      role="option"
-      style="background-color:yellow"
-      tabindex="0"
+      item 3
+    </div>
+  </ListItem>
+  <ListItem
+    className="item4"
+    hasChevron={false}
+    isSelectable={true}
+    isSelected={false}
+    key="item-4"
+  >
+    <div
+      className="item"
     >
-      <div
-        class="item-fill"
-      >
-        <div
-          style="height:20px;width:100%"
-        >
-          item 4
-        </div>
-      </div>
-    </li>
-  </ul>
-  <div
-    class="spacer"
-    style="height:0px"
-  />
-</div>
+      item 4
+    </div>
+  </ListItem>
+</InfiniteList>
 `;
 
 exports[`InfiniteList should render with no children and loading 1`] = `
-<Fragment>
-  <div
-    className="infinite-list"
-  >
+<InfiniteList
+  dividerStyle="none"
+  initialLoadingIndicator={
     <div
-      className="spacer"
-      key="infinite-spinner-full"
-      style={
-        Object {
-          "height": "100%",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "height": "100%",
-            "position": "relative",
-            "width": "100%",
-          }
-        }
-      />
-    </div>
+      className="initialLoadingIndicator"
+    />
+  }
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isFinishedLoading={false}
+  paddingStyle="none"
+  progressiveLoadingIndicator={
     <div
-      className="spacer"
-      key="infinite-spacer-0"
-      style={
-        Object {
-          "height": "0px",
-        }
-      }
+      className="progressiveLoadingIndicator"
     />
-    <List
-      dividerStyle="none"
-      paddingStyle="none"
-      role="none"
-    />
-    <div
-      className="spacer"
-      key="infinite-spacer-1"
-      style={
-        Object {
-          "height": "0px",
-        }
-      }
-    />
-  </div>
-</Fragment>
+  }
+  role="none"
+/>
 `;

@@ -4,6 +4,10 @@ import ContentContainer from 'terra-content-container';
 import {
   availableDisclosureHeights, availableDisclosureWidths, withDisclosureManager, disclosureManagerShape,
 } from 'terra-disclosure-manager';
+import classNames from 'classnames/bind';
+import styles from './DisclosureComponentCommon.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 const HEIGHT_KEYS = Object.keys(availableDisclosureHeights);
 const WIDTH_KEYS = Object.keys(availableDisclosureWidths);
@@ -116,7 +120,7 @@ class DisclosureComponent extends React.Component {
     const { disclosureManager, identifier } = this.props;
 
     return (
-      <ContentContainer id={identifier} className="nested-component" fill header={<h2 style={{ margin: '0', borderBottom: '1px solid black' }}>Content Component</h2>}>
+      <ContentContainer id={identifier} className="nested-component" fill header={<h2 className={cx('header')}>Content Component</h2>}>
         <p>
           id:
           {' '}
@@ -129,7 +133,7 @@ class DisclosureComponent extends React.Component {
         <button type="button" className="disclose-large" onClick={this.disclose('large')}>Disclose Large</button>
         <button type="button" className="disclose-huge" onClick={this.disclose('huge')}>Disclose Huge</button>
         <button type="button" className="disclose-fullscreen" onClick={this.disclose('fullscreen')}>Disclose Fullscreen</button>
-        <div style={{ padding: '0.7rem' }}>
+        <div className={cx('content-form')}>
           {this.renderForm()}
           {this.renderFormButton()}
         </div>

@@ -3,7 +3,11 @@ import Button from 'terra-button';
 import ActionHeader from 'terra-action-header';
 import ActionFooter from 'terra-action-footer';
 import Select from 'terra-form-select';
+import classNames from 'classnames/bind';
 import DialogModal from '../../../DialogModal';
+import styles from './DiaglogModalWithSelect.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 class DefaultDialogModal extends React.Component {
   constructor() {
@@ -45,7 +49,7 @@ class DefaultDialogModal extends React.Component {
           footer={<ActionFooter start="Footer Goes here" />}
         >
           <p>{text}</p>
-          <Select placeholder="Select a color" style={{ maxWidth: '300px' }}>
+          <Select placeholder="Select a color" className={cx('selection-list')}>
             <Select.Option value="blue" display="Blue" />
             <Select.Option value="green" display="Green" />
             <Select.Option value="purple" display="Purple" />

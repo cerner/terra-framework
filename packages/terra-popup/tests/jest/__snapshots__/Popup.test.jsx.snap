@@ -1,5 +1,89 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should renders with custom arrow class name 1`] = `
+<div>
+  <Popup
+    attachmentBehavior="auto"
+    boundingRef={null}
+    classNameArrow="terra-test-class-arrow"
+    classNameContent={null}
+    classNameOverlay={null}
+    contentAttachment="top center"
+    contentHeight="80"
+    contentWidth="240"
+    isArrowDisplayed={false}
+    isContentFocusDisabled={false}
+    isHeaderDisabled={false}
+    isOpen={true}
+    onRequestClose={[Function]}
+    targetRef={[Function]}
+  >
+    <p>
+      this is popup content
+    </p>
+  </Popup>
+  <div
+    className="container"
+  />
+</div>
+`;
+
+exports[`should renders with custom content class name 1`] = `
+<div>
+  <Popup
+    attachmentBehavior="auto"
+    boundingRef={null}
+    classNameArrow={null}
+    classNameContent="terra-test-class-content"
+    classNameOverlay={null}
+    contentAttachment="top center"
+    contentHeight="80"
+    contentWidth="240"
+    isArrowDisplayed={false}
+    isContentFocusDisabled={false}
+    isHeaderDisabled={false}
+    isOpen={true}
+    onRequestClose={[Function]}
+    targetRef={[Function]}
+  >
+    <p>
+      this is popup content
+    </p>
+  </Popup>
+  <div
+    className="container"
+  />
+</div>
+`;
+
+exports[`should renders with custom overlay class name 1`] = `
+<div>
+  <Popup
+    attachmentBehavior="auto"
+    boundingRef={null}
+    classNameArrow={null}
+    classNameContent={null}
+    classNameOverlay="terra-test-class-overlay"
+    contentAttachment="top center"
+    contentHeight="80"
+    contentWidth="240"
+    isArrowDisplayed={false}
+    isContentFocusDisabled={false}
+    isHeaderDisabled={false}
+    isOpen={true}
+    onRequestClose={[Function]}
+    targetRef={[Function]}
+  >
+    <p>
+      this is popup content
+    </p>
+  </Popup>
+  <div
+    className="container"
+  />
+</div>
+`;
+
 exports[`should shallow a default component 1`] = `
 <div>
   <Popup
@@ -23,12 +107,7 @@ exports[`should shallow a default component 1`] = `
     </p>
   </Popup>
   <div
-    style={
-      Object {
-        "height": "20px",
-        "width": "20px",
-      }
-    }
+    className="container"
   />
 </div>
 `;
@@ -56,12 +135,7 @@ exports[`should shallow render a component with push attachment behavior 1`] = `
     </p>
   </Popup>
   <div
-    style={
-      Object {
-        "height": "20px",
-        "width": "20px",
-      }
-    }
+    className="container"
   />
 </div>
 `;

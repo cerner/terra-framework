@@ -1,7 +1,11 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DatePickerField from 'terra-date-picker/lib/DatePickerField';
+import styles from './DatePickerExampleCommon.module.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -30,7 +34,7 @@ class DatePickerExample extends React.Component {
       <div>
         <p>
 Selected ISO Date:
-          <span style={{ display: 'inline-block' }}>{this.state.date}</span>
+          <span className={cx('date-wrapper')}>{this.state.date}</span>
         </p>
         <DatePickerField
           label="Enter Date"

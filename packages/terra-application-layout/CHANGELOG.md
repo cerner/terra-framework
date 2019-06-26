@@ -3,6 +3,13 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Renamed test and example SCSS files to end with `.module.scss` extension
+
+5.4.0 - (June 19, 2019)
+------------------
+### Changed
+* Update wdio specs to use Terra.describeViewports
 
 5.3.0 - (June 12, 2019)
 ------------------
@@ -13,6 +20,7 @@ Unreleased
 * Added ARIA landmark roles
 
 ### Changed
+* Removed all inline styles from Dev-site components and implemented the same styles using external css.
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 
 5.2.0 - (May 21, 2019)

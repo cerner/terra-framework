@@ -1,7 +1,7 @@
 {
   "name": "terra-application-layout",
   "main": "lib/ApplicationLayout.js",
-  "version": "5.3.0",
+  "version": "5.4.0",
   "description": "The Terra Application Layout is a responsive, themeable layout for building applications.",
   "repository": {
     "type": "git",
@@ -31,17 +31,17 @@
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "react-router-dom": "^5.0.0",
-    "terra-application-header-layout": "^3.9.0",
-    "terra-application-links": "^6.2.0",
-    "terra-application-menu-layout": "^3.5.0",
-    "terra-application-name": "^3.10.0",
-    "terra-application-utility": "^2.12.0",
+    "terra-application-header-layout": "^3.10.0",
+    "terra-application-links": "^6.3.0",
+    "terra-application-menu-layout": "^3.6.0",
+    "terra-application-name": "^3.11.0",
+    "terra-application-utility": "^2.13.0",
     "terra-breakpoints": "^2.3.0",
     "terra-icon": "^3.1.0",
-    "terra-modal-manager": "^6.2.0",
-    "terra-navigation-layout": "^5.3.0",
-    "terra-navigation-side-menu": "^2.9.0",
-    "terra-popup": "^6.2.0"
+    "terra-modal-manager": "^6.3.0",
+    "terra-navigation-layout": "^5.4.0",
+    "terra-navigation-side-menu": "^2.10.0",
+    "terra-popup": "^6.3.0"
   },
   "devDependencies": {
     "terra-action-header": "^2.0.0",

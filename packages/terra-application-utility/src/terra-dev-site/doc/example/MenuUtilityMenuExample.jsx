@@ -5,7 +5,11 @@ import MockConfig from 'terra-application-utility/lib/terra-dev-site/doc/common/
 import FallbackAvatar from 'terra-application-utility/lib/terra-dev-site/doc/common/FallbackAvatar.svg';
 import { UtilityUtils } from 'terra-application-utility/lib/ApplicationUtility';
 import UtilityMenu from 'terra-application-utility/lib/utility/_UtilityMenu';
+import classNames from 'classnames/bind';
+import styles from './MenuUtilityMenuExample.module.scss';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+
+const cx = classNames.bind(styles);
 
 class MenuUtilityMenuExample extends React.Component {
   constructor(props) {
@@ -27,10 +31,10 @@ class MenuUtilityMenuExample extends React.Component {
   }
 
   render() {
-    const customComponent = <Image alt="Fallback Avatar" src={FallbackAvatar} style={{ width: '1.857rem', height: '1.857rem' }} />;
+    const customComponent = <Image alt="Fallback Avatar" src={FallbackAvatar} className={cx('avatar')} />;
     return (
       <div>
-        <div style={{ height: '300px', width: '300px' }}>
+        <div className={cx('content-wrapper')}>
           <UtilityMenu
             initialSelectedKey="menu"
             isHeightBounded

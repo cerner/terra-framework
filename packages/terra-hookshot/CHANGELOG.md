@@ -3,6 +3,14 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Removed all inline styles from Dev-site components and implemented the same styles using external css.
+* Renamed test and example SCSS files to end with `.module.scss` extension
+
+5.9.0 - (June 19, 2019)
+------------------
+### Changed
+* Minor dependency version bump
 
 5.8.0 - (June 12, 2019)
 ------------------
@@ -14,6 +22,7 @@ Unreleased
 
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+* Update wdio specs to use Terra.describeViewports
 
 5.7.0 - (April 24, 2019)
 ------------------

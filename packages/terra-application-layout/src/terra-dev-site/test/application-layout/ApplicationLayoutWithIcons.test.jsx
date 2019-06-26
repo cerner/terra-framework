@@ -14,8 +14,12 @@ import Icon4 from 'terra-icon/lib/icon/IconPrinter';
 import Icon5 from 'terra-icon/lib/icon/IconAllergy';
 import Icon6 from 'terra-icon/lib/icon/IconPadlock';
 import Icon7 from 'terra-icon/lib/icon/IconFeatured';
+import classNames from 'classnames/bind';
+import styles from './ApplicationLayoutCommon.test.module.scss';
 
 import ApplicationLayout, { RoutingMenu, Utils } from '../../../ApplicationLayout';
+
+const cx = classNames.bind(styles);
 
 const PageContent = ({ contentName }) => (
   <div>
@@ -311,7 +315,7 @@ ApplicationLayoutTest.propTypes = {
 const WrappedApplication = withRouter(injectIntl((ApplicationLayoutTest)));
 
 const AppRouter = () => (
-  <div style={{ height: '100%' }}>
+  <div className={cx('app-router')}>
     <MemoryRouter>
       <WrappedApplication />
     </MemoryRouter>

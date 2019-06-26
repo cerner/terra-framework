@@ -2,6 +2,10 @@ import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import PopupCommonExample from 'terra-popup/lib/terra-dev-site/doc/common/PopupCommonExample';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+import classNames from 'classnames/bind';
+import styles from './PopupAttachmentBehavior.module.scss';
+
+const cx = classNames.bind(styles);
 
 class PopupAttachmentBehavior extends React.Component {
   constructor(props) {
@@ -19,7 +23,7 @@ class PopupAttachmentBehavior extends React.Component {
     return (
       <div>
         <label htmlFor="popup-behavior">Attachment Behavior</label>
-        <select id="popup-behavior" onChange={this.handleChange} value={this.state.behavior} style={{ margin: '5px' }}>
+        <select id="popup-behavior" onChange={this.handleChange} value={this.state.behavior} className={cx('selection-list')}>
           <option value="auto">Auto</option>
           <option value="flip">Flip</option>
           <option value="push">Push</option>

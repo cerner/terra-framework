@@ -3,7 +3,11 @@ import Button from 'terra-button';
 import ActionHeader from 'terra-action-header';
 import ActionFooter from 'terra-action-footer';
 import Popup from 'terra-popup';
+import classNames from 'classnames/bind';
 import DialogModal from '../../../DialogModal';
+import styles from './DialogModalWithPopup.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 class DefaultDialogModal extends React.Component {
   constructor() {
@@ -71,7 +75,7 @@ class DefaultDialogModal extends React.Component {
             targetRef={this.getButtonNode}
             onRequestClose={this.handleRequestClose}
           >
-            <div style={{ paddingLeft: '1rem', paddingRight: '1rem' }}>
+            <div className={cx('popup-content')}>
               <p>{text}</p>
               <button type="button">Test Button</button>
               <p>{text}</p>

@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import ApplicationTabs from '../../../tabs/ApplicationTabs';
 import testShortConfig from '../common/testShortConfig';
 import testLinkConfig from '../common/testLinkConfig';
-import demoStyles from './demoStyles.scss';
+import demoStyles from './demoStyles.module.scss';
 
 export default class extends React.Component {
   constructor(props) {

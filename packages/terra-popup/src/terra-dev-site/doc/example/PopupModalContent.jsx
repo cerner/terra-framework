@@ -5,6 +5,10 @@ import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-
 import Popup from 'terra-popup/lib/Popup';
 import Placeholder from 'terra-doc-template/lib/Placeholder';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+import classNames from 'classnames/bind';
+import styles from './PopupModalContent.module.scss';
+
+const cx = classNames.bind(styles);
 
 class ModalContainer extends React.Component {
   constructor(props) {
@@ -27,7 +31,7 @@ class ModalContainer extends React.Component {
     const { disclosureManager } = this.props;
 
     return (
-      <div className="content-container" style={{ height: '100%', padding: '10px' }}>
+      <div className={cx('content-container')}>
         <Popup
           isArrowDisplayed
           isOpen={this.state.open}

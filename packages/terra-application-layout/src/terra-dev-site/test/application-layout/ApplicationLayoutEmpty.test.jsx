@@ -3,8 +3,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { MemoryRouter, withRouter } from 'react-router-dom';
 import ContentContainer from 'terra-content-container';
+import classNames from 'classnames/bind';
+import styles from './ApplicationLayoutCommon.test.module.scss';
 
 import ApplicationLayout, { RoutingMenu } from '../../../ApplicationLayout';
+
+const cx = classNames.bind(styles);
 
 const PageContent = ({ contentName }) => (
   <div>
@@ -94,7 +98,7 @@ const EmptyApplicationLayoutTest = () => (
 const WrappedApplication = withRouter((EmptyApplicationLayoutTest));
 
 const AppRouter = () => (
-  <div style={{ height: '100%' }}>
+  <div className={cx('app-router')}>
     <MemoryRouter>
       <WrappedApplication />
     </MemoryRouter>

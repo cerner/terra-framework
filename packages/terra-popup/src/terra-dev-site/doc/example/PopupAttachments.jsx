@@ -2,7 +2,7 @@ import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import PopupCommonExample from 'terra-popup/lib/terra-dev-site/doc/common/PopupCommonExample';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
-import './PopupAttachments.scss';
+import './PopupAttachments.module.scss';
 
 const PopupAttachements = () => (
   <React.Fragment>

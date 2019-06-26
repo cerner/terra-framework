@@ -1,21 +1,24 @@
 import React from 'react';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { shallowWithIntl } from 'terra-enzyme-intl';
 import InfiniteList, { Item } from '../../src/index';
+import styles from './InfiniteList.test.module.scss';
 
 describe('InfiniteList', () => {
   it('should render a default component', () => {
-    const wrapper = shallow(<InfiniteList />);
+    const wrapper = shallowWithIntl(<InfiniteList />);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render with no children and loading', () => {
     const infiniteProps = {
       isFinishedLoading: false,
-      initialLoadingIndicator: <div style={{ height: '100%', width: '100%', position: 'relative' }} />,
-      progressiveLoadingIndicator: <div style={{ height: '40px', width: '100%' }} />,
+      initialLoadingIndicator: <div className={styles.initialLoadingIndicator} />,
+      progressiveLoadingIndicator: <div className={styles.progressiveLoadingIndicator} />,
     };
 
     const component = <InfiniteList {...infiniteProps} />;
-    const wrapper = shallow(component);
+    const wrapper = shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -25,20 +28,20 @@ describe('InfiniteList', () => {
         isFinishedLoading
       >
         <Item key={`item-${1}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 1</div>
+          <div className={styles.item}>item 1</div>
         </Item>
         <Item key={`item-${2}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 2</div>
+          <div className={styles.item}>item 2</div>
         </Item>
         <Item key={`item-${3}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 3</div>
+          <div className={styles.item}>item 3</div>
         </Item>
         <Item key={`item-${4}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 4</div>
+          <div className={styles.item}>item 4</div>
         </Item>
       </InfiniteList>
     );
-    const wrapper = shallow(component);
+    const wrapper = shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -49,22 +52,23 @@ describe('InfiniteList', () => {
         dividerStyle="standard"
         paddingStyle="standard"
         role="listbox"
+        progressiveLoadingMessage="Loading allergies..."
       >
         <Item isSelectable key={`item-${1}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 1</div>
+          <div className={styles.item}>item 1</div>
         </Item>
         <Item isSelectable isSelected key={`item-${2}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 2</div>
+          <div className={styles.item}>item 2</div>
         </Item>
         <Item isSelectable key={`item-${3}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 3</div>
+          <div className={styles.item}>item 3</div>
         </Item>
         <Item isSelectable key={`item-${4}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 4</div>
+          <div className={styles.item}>item 4</div>
         </Item>
       </InfiniteList>
     );
-    const wrapper = shallow(component);
+    const wrapper = shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -76,21 +80,21 @@ describe('InfiniteList', () => {
         paddingStyle="standard"
         role="listbox"
       >
-        <Item isSelectable style={{ backgroundColor: 'pink' }} key={`item-${1}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 1</div>
+        <Item isSelectable className={styles.item1} key={`item-${1}`}>
+          <div className={styles.item}>item 1</div>
         </Item>
-        <Item isSelectable isSelected style={{ backgroundColor: 'red' }} key={`item-${2}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 2</div>
+        <Item isSelectable isSelected className={styles.item2} key={`item-${2}`}>
+          <div className={styles.item}>item 2</div>
         </Item>
-        <Item isSelectable style={{ backgroundColor: 'blue' }} key={`item-${3}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 3</div>
+        <Item isSelectable className={styles.item3} key={`item-${3}`}>
+          <div className={styles.item}>item 3</div>
         </Item>
-        <Item isSelectable style={{ backgroundColor: 'yellow' }} key={`item-${4}`}>
-          <div style={{ height: '20px', width: '100%' }}>item 4</div>
+        <Item isSelectable className={styles.item4} key={`item-${4}`}>
+          <div className={styles.item}>item 4</div>
         </Item>
       </InfiniteList>
     );
-    const wrapper = render(component);
+    const wrapper = shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
 });

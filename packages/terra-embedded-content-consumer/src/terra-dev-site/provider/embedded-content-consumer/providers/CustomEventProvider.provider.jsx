@@ -1,6 +1,10 @@
 import React from 'react';
 import { Provider } from 'xfc';
+import classNames from 'classnames/bind';
 import ProviderTestTemplate from '../../../../EmbeddedContentProviderTestTemplate';
+import styles from './EmbeddedContentConsumerCommon.module.scss';
+
+const cx = classNames.bind(styles);
 
 class EmbeddedContent extends React.Component {
   constructor(props) {
@@ -15,7 +19,7 @@ class EmbeddedContent extends React.Component {
 
   render() {
     return (
-      <div style={{ padding: '1.25rem' }}>
+      <div className={cx('content-wrapper')}>
         <h1>Listening to Custom Event</h1>
         <p>A custom event can be registered with the consumer and intiated by the provider. What this means is that the embedded-content-consumer will listen for an event message that will be sent by the embedded web content. When it receives that message, the embedded-content-consumer is then responsible for handling the message for the corresponding iframe. </p>
         <p>This example demonstrates that the custom event `EventA` has been registered and received by the embedded-content-container that has been registered with the XFC Consumer app broker.</p>

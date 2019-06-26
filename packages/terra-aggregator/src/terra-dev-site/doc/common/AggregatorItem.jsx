@@ -5,10 +5,14 @@ import ContentContainer from 'terra-content-container';
 import Arrange from 'terra-arrange';
 import ActionHeader from 'terra-action-header';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
+import classNames from 'classnames/bind';
 import List from './placeholder-list/PlaceholderList';
 import Item from './placeholder-list/PlaceholderListItem';
+import styles from './AggregatorItem.module.scss';
 
 import DisclosureComponent from './DisclosureComponent';
+
+const cx = classNames.bind(styles);
 
 const ReadonlyModal = withDisclosureManager(({ disclosureManager }) => (
   <ContentContainer
@@ -20,7 +24,7 @@ const ReadonlyModal = withDisclosureManager(({ disclosureManager }) => (
       />
     )}
   >
-    <div style={{ padding: '15px' }}>
+    <div className={cx('readonly-modal-content')}>
       <p>This modal was not presented through the Aggregator. The Aggregator state was maintained.</p>
     </div>
   </ContentContainer>
@@ -116,9 +120,9 @@ class AggregatorItem extends React.Component {
         {...customProps}
         header={(
           <Arrange
-            style={{ background: '#f4f4f4', padding: '0.71429rem 0.5rem', fontSize: '1.285rem' }}
+            className={cx('header-arrange')}
             fitStart={(
-              <div style={{ marginRight: '.7rem' }}>
+              <div className={cx('header-arrange-content')}>
                 {customDisclose ? <Button text="Modal (Without Requesting Focus)" onClick={this.launchModal} /> : null}
               </div>
             )}

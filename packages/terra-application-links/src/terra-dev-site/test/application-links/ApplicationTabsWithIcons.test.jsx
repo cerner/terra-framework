@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import ApplicationTabs from '../../../tabs/ApplicationTabs';
 import testLinksWithIconsConfig from '../common/testLinksWithIconsConfig';
-import styles from './demoStyles.scss';
+import styles from './demoStyles.module.scss';
 
 const cx = classNames.bind(styles);
 

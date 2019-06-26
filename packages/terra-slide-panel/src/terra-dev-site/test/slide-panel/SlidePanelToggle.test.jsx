@@ -1,5 +1,9 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import SlidePanel from '../../../SlidePanel';
+import styles from './SlidePanelDocCommon.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 class SlidePanelDemo extends React.Component {
   constructor(props) {
@@ -15,16 +19,13 @@ class SlidePanelDemo extends React.Component {
 
   render() {
     return (
-      <div style={{
-        border: '1px lightgrey solid', height: '768px', width: '100%', position: 'relative',
-      }}
-      >
+      <div className={cx('content-wrapper-toggle')}>
         <SlidePanel
           id="test-slide"
-          mainContent={<div style={{ height: '100%', width: '100%', backgroundColor: 'red' }}><button type="button" id="test-toggle" style={{ backgroundColor: 'green' }} onClick={this.handlePanelToggle}>toggle</button></div>}
+          mainContent={<div className={cx('main-content')}><button type="button" id="test-toggle" className={cx('button')} onClick={this.handlePanelToggle}>toggle</button></div>}
           panelContent={(
-            <div id="panel-content" style={{ height: '100%', width: '100%', backgroundColor: 'blue' }}>
-              <button id="focus-button" type="button" style={{ backgroundColor: 'green' }} onClick={this.handlePanelToggle}>Close panel</button>
+            <div id="panel-content" className={cx('panel-content')}>
+              <button id="focus-button" type="button" className={cx('button')} onClick={this.handlePanelToggle}>Close panel</button>
             </div>
           )}
           panelSize="small"
