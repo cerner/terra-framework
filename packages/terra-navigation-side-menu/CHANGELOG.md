@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Renamed test and example SCSS files to end with `.module.scss` extension
+* Utilize terra-visual-hidden component to announce if a menu item has been selected
 
 2.10.0 - (June 19, 2019)
 ------------------
