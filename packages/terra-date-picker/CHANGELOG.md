@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Added
 * Allow terra-date-picker to be a controlled component.
+* Added functionality to announce the pre-selected date to screen readers when navigating within the date picker.
 
 ### Changed
 * Removed extra inline styles.
