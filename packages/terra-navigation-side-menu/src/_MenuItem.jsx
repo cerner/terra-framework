@@ -99,12 +99,6 @@ class MenuItem extends React.Component {
         className={cx('list-item')}
         aria-selected={isSelected}
         role="option"
-        // {...customProps}
-        // tabIndex="0"
-        // className={itemClassNames}
-        // onKeyDown={this.handleKeyDown}
-        // onKeyUp={this.handleKeyUp}
-        // onBlur={this.handleOnBlur}
       >
         <div
           {...customProps}
