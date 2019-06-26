@@ -6,7 +6,7 @@ exports[`should render a controlled date picker 1`] = `
 >
   <ResponsiveElement
     medium={
-      <DatePicker
+      <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
           <DatePickerInput
@@ -19,7 +19,6 @@ exports[`should render a controlled date picker 1`] = `
         dateFormat="MM/DD/YYYY"
         dateFormatCalendar=" "
         disabled={false}
-        disabledKeyboardNavigation={false}
         dropdownMode="select"
         excludeDates={
           Array [
@@ -63,34 +62,27 @@ exports[`should render a controlled date picker 1`] = `
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
         minDate={"2017-01-01T00:00:00.000Z"}
-        monthsShown={1}
         name="date-input"
         onBlur={[Function]}
         onChange={[Function]}
         onChangeRaw={[Function]}
         onClickOutside={[Function]}
         onFocus={[Function]}
-        onKeyDown={[Function]}
-        onMonthChange={[Function]}
         onSelect={[Function]}
         placeholderText="Terra.datePicker.dateFormat"
         preventOpenOnFocus={true}
         required={false}
         selected={"2017-01-01T00:00:00.000Z"}
-        shouldCloseOnSelect={true}
         showMonthDropdown={true}
-        showTimeSelect={false}
         showYearDropdown={true}
-        timeIntervals={30}
         todayButton="Terra.datePicker.today"
         utcOffset={0}
         value="06/15/2019"
-        withPortal={false}
       />
     }
     responsiveTo="window"
     tiny={
-      <DatePicker
+      <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
           <DatePickerInput
@@ -103,7 +95,6 @@ exports[`should render a controlled date picker 1`] = `
         dateFormat="MM/DD/YYYY"
         dateFormatCalendar=" "
         disabled={false}
-        disabledKeyboardNavigation={false}
         dropdownMode="select"
         excludeDates={
           Array [
@@ -147,25 +138,19 @@ exports[`should render a controlled date picker 1`] = `
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
         minDate={"2017-01-01T00:00:00.000Z"}
-        monthsShown={1}
         name="date-input"
         onBlur={[Function]}
         onChange={[Function]}
         onChangeRaw={[Function]}
         onClickOutside={[Function]}
         onFocus={[Function]}
-        onKeyDown={[Function]}
-        onMonthChange={[Function]}
         onSelect={[Function]}
         placeholderText="Terra.datePicker.dateFormat"
         preventOpenOnFocus={true}
         required={false}
         selected={"2017-01-01T00:00:00.000Z"}
-        shouldCloseOnSelect={true}
         showMonthDropdown={true}
-        showTimeSelect={false}
         showYearDropdown={true}
-        timeIntervals={30}
         todayButton="Terra.datePicker.today"
         utcOffset={0}
         value="06/15/2019"
