@@ -279,9 +279,9 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
 
     Terra.it.matchesScreenshot('0');
 
-    it('Dismissed the modal manager after a click', () => {
+    it('Select a date from the picker', () => {
       browser.click('[class*="button"]');
-      browser.click('[aria-label="day-27"]');
+      browser.click('.react-datepicker__week > *:nth-child(2)');
     });
 
     Terra.it.matchesScreenshot('1');
