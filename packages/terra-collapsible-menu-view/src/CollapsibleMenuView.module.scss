@@ -58,4 +58,14 @@
   .is-calculating {
     visibility: hidden;
   }
+
+  .control { /* temporary overrides until standalone (no additional spacing included) version of 
+    checkbox is added */
+      margin-bottom: 0;
+      margin-top: 0;
+  
+      label:first-child {
+        padding-bottom: 0;
+      }
+    }
 }
