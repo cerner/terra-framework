@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import NavigationSideMenu from '../../../NavigationSideMenu';
-import styles from './NavigationSideMenuDocCommon.scss';
+import styles from './NavigationSideMenuDocCommon.module.scss';
 
 const cx = classNames.bind(styles);
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import ApplicationMenuLayout from '../../../ApplicationMenuLayout';
-import styles from './ApplicationMenuDefault.test.scss';
+import styles from './ApplicationMenuDefault.test.module.scss';
 
 const cx = classNames.bind(styles);
 

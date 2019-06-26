@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
-import styles from './HeaderExample.scss';
+import styles from './HeaderExample.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -10,6 +10,7 @@ const propTypes = {
   layoutConfig: PropTypes.shape({}),
 };
 
+/* eslint-disable react/prop-types */
 const HeaderExample = ({ layoutConfig }) => (
   <div className={cx('content-wrapper1')}>
     <div className={cx('content-wrapper2')}>
@@ -34,5 +35,6 @@ const HeaderExample = ({ layoutConfig }) => (
   </div>
 );
 HeaderExample.propTypes = propTypes;
+/* eslint-enable react/prop-types */
 
 export default withRouter(HeaderExample);

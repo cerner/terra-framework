@@ -6,6 +6,8 @@ Unreleased
 ### Fixed
 * Added `data-modal-open` attribute to root document when modal is opened
 * Added check for `data-overlay-open` attribute on root document to prevent removal of `inert` attribute if an overlay is also open
+### Changed
+* Renamed test and example SCSS files to end with `.module.scss` extension
 
 3.3.0 - (June 19, 2019)
 ------------------
