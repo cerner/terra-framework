@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
-import styles from './Placeholder.scss';
+import styles from './Placeholder.module.scss';
 
 const cx = classNames.bind(styles);
 

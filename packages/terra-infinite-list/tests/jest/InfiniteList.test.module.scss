@@ -1,0 +1,35 @@
+:local {
+  // stylelint-disable selector-class-pattern
+  .initialLoadingIndicator {
+    height: 100%;
+    position: relative;
+    width: 100%;
+  }
+
+  .progressiveLoadingIndicator {
+    height: 40px;
+    width: 100%;
+  }
+  // stylelint-enable selector-class-pattern
+
+  .item {
+    height: 20px;
+    width: 100%;
+  }
+
+  .item1 {
+    background-color: #ffc0cb;
+  }
+
+  .item2 {
+    background-color: #f00;
+  }
+
+  .item3 {
+    background-color: #0ff;
+  }
+
+  .item4 {
+    background-color: #ff0;
+  }
+}

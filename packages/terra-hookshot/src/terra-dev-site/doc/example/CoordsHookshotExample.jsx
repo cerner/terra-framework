@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import InputField from 'terra-form-input/lib/InputField';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import Hookshot from 'terra-hookshot/lib/Hookshot';
-import styles from './HookshotDocCommon.scss';
+import styles from './HookshotDocCommon.module.scss';
 
 const cx = classNames.bind(styles);
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import SlidePanel from '../../../SlidePanel';
-import styles from './SlidePanelDocCommon.test.scss';
+import styles from './SlidePanelDocCommon.test.module.scss';
 
 const cx = classNames.bind(styles);
 

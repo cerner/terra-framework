@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import styles from './TestHeader.scss';
+import styles from './TestHeader.module.scss';
 
 const cx = classNames.bind(styles);
 

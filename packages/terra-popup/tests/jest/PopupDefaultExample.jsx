@@ -1,5 +1,6 @@
 import React from 'react';
 import Popup from '../../src/Popup';
+import styles from './Popup.test.module.scss';
 
 class PopupDefaultExample extends React.Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class PopupDefaultExample extends React.Component {
         >
           <p>this is popup content</p>
         </Popup>
-        <div style={{ height: '20px', width: '20px' }} ref={this.setButtonNode} />
+        <div className={styles.container} ref={this.setButtonNode} />
       </div>
     );
   }
