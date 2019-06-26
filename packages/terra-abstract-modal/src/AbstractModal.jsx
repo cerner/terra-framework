@@ -117,7 +117,7 @@ class AbstractModal extends React.Component {
 
   showModalDomUpdates() {
     const mainDocumentElement = document.querySelector(this.props.rootSelector);
-    const inert = Number(mainDocumentElement.dataset.overlayCount);
+    const inert = +mainDocumentElement.dataset.overlayCount;
     // Store element that was last focused prior to modal opening
     this.setState({ modalTrigger: document.activeElement });
 
@@ -134,7 +134,7 @@ class AbstractModal extends React.Component {
 
   hideModalDomUpdates() {
     const mainDocumentElement = document.querySelector(this.props.rootSelector);
-    const inert = Number(mainDocumentElement.dataset.overlayCount);
+    const inert = +mainDocumentElement.dataset.overlayCount;
 
     if (mainDocumentElement && inert === 1) {
       mainDocumentElement.removeAttribute('data-overlay-count');
