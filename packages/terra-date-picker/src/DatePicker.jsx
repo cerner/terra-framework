@@ -146,19 +146,26 @@ class DatePicker extends React.Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const selectedDate = nextProps.value || nextProps.selectedDate;
-    if (selectedDate !== prevState.prevPropsSelectedDate) {
-      const newDate = DateUtil.createSafeDate(selectedDate);
+    const { selectedDate, value } = nextProps;
+    let nextDateValue = selectedDate;
 
-      if (newDate) {
+    // Use the value for a controlled component if one is provided.
+    if (value !== undefined && value !== null) {
+      nextDateValue = value;
+    }
+
+    if (nextDateValue !== prevState.prevPropsSelectedDate) {
+      const nextSelectedDate = DateUtil.createSafeDate(nextDateValue);
+
+      if (nextSelectedDate) {
         return {
-          selectedDate: newDate,
-          prevPropsSelectedDate: selectedDate,
+          selectedDate: nextSelectedDate,
+          prevPropsSelectedDate: nextDateValue,
         };
       }
 
       return {
-        prevPropsSelectedDate: selectedDate,
+        prevPropsSelectedDate: nextDateValue,
       };
     }
 
