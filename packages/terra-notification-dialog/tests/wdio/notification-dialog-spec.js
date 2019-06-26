@@ -120,11 +120,11 @@ Terra.describeViewports('NotificationDialog with additional focus trap sources w
 
     Terra.validates.element('Close popup', { selector: '[class*="abstract-modal"]' });
 
-    // Skip color contrast check for elements behind the notification dialog's
+    // Skip color contrast check for elements behind the notification dialog's overlay
     const ignoredA11y = {
       'color-contrast': {
-        selector: '[class*="abstract-modal]',
         enabled: false,
+        selector: '[class*="overlay"]',
       },
     };
 

@@ -5,7 +5,7 @@ import ContentExample from 'terra-layout/lib/terra-dev-site/doc/common/ContentEx
 import MenuExample from 'terra-layout/lib/terra-dev-site/doc/common/MenuExample';
 import ToolbarExample from 'terra-layout/lib/terra-dev-site/doc/common/ToolbarExample';
 import classNames from 'classnames/bind';
-import styles from './LayoutDocExampleCommon.scss';
+import styles from './LayoutDocExampleCommon.module.scss';
 
 const cx = classNames.bind(styles);
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */

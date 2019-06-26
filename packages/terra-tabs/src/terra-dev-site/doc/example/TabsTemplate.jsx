@@ -7,7 +7,7 @@ import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import Tabs from 'terra-tabs/lib/Tabs';
 import TabContentTemplate from 'terra-tabs/lib/terra-dev-site/doc/example/TabContentTemplate';
 /* eslint-enable import/no-unresolved, import/extensions */
-import styles from './common/TabExample.scss';
+import styles from './common/TabExample.module.scss';
 
 const cx = classNames.bind(styles);
 

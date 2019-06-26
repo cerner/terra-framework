@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import DisclosureComponent from './DisclosureComponent';
 import SlidePanelManager from '../../../SlidePanelManager';
-import styles from './SlidePanelManagerDefault.test.scss';
+import styles from './SlidePanelManagerDefault.test.module.scss';
 
 const cx = classNames.bind(styles);
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import BasicMenu from './BasicMenu';
-import styles from './MenuBounded.scss';
+import styles from './MenuBounded.module.scss';
 
 const cx = classNames.bind(styles);
 

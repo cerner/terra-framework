@@ -8,7 +8,7 @@ import Avatar from 'terra-avatar';
 import ContentContainer from 'terra-content-container';
 import Button from 'terra-button';
 import classNames from 'classnames/bind';
-import styles from './ApplicationLayoutCommon.test.scss';
+import styles from './ApplicationLayoutCommon.test.module.scss';
 
 import ApplicationLayout, { RoutingMenu, Utils } from '../../../ApplicationLayout';
 

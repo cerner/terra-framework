@@ -3,6 +3,12 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added themeable variable --terra-tabs-font-weight
+* Added themeable variable --terra-tabs-structural-active-font-weight
+
+### Changed
+* Renamed test and example SCSS files to end with `.module.scss` extension
 
 6.3.0 - (June 19, 2019)
 ------------------

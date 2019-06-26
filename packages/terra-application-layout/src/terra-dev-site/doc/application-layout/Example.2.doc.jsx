@@ -1,9 +1,10 @@
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
+import classNames from 'classnames/bind';
+
 import { name } from '../../../../package.json';
 import ExampleDoc from '../../../../docs/example.md';
-import classNames from 'classnames/bind';
-import styles from './Example.2.doc.scss';
+import styles from './Example.2.doc.module.scss';
 
 /* eslint-disable import/no-webpack-loader-syntax, import/first,  import/no-unresolved, import/extensions, , import/no-duplicates */
 import ExampleApplication from '../example/ExampleApplication';

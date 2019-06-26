@@ -6,7 +6,7 @@ import FallbackAvatar from 'terra-application-utility/lib/terra-dev-site/doc/com
 import { UtilityUtils } from 'terra-application-utility/lib/ApplicationUtility';
 import UtilityMenu from 'terra-application-utility/lib/utility/_UtilityMenu';
 import classNames from 'classnames/bind';
-import styles from './MenuUtilityMenuExample.scss';
+import styles from './MenuUtilityMenuExample.module.scss';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 const cx = classNames.bind(styles);

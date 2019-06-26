@@ -2,7 +2,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import classNames from 'classnames/bind';
-import styles from './ApplicationLayoutCommon.test.scss';
+import styles from './ApplicationLayoutCommon.test.module.scss';
 
 import { RoutingMenu } from '../../../ApplicationLayout';
 

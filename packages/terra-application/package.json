@@ -1,6 +1,6 @@
 {
   "name": "terra-application",
-  "main": "lib/Application.js",
+  "main": "lib/application-base/ApplicationBase.js",
   "version": "0.0.0",
   "description": "The terra-application package provides a baseline of functionality for applications built with Terra components.",
   "repository": {
