@@ -281,7 +281,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
 
     it('Dismissed the modal manager after a click', () => {
       browser.click('[class*="button"]');
-      browser.click('[aria-label="day-27"]');
+      browser.click('[aria-label="March 27, 2017"]');
     });
 
     Terra.it.matchesScreenshot('1');
