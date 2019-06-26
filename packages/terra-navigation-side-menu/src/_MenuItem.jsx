@@ -99,6 +99,12 @@ class MenuItem extends React.Component {
         className={cx('list-item')}
         aria-selected={isSelected}
         role="option"
+        // {...customProps}
+        // tabIndex="0"
+        // className={itemClassNames}
+        // onKeyDown={this.handleKeyDown}
+        // onKeyUp={this.handleKeyUp}
+        // onBlur={this.handleOnBlur}
       >
         <div
           {...customProps}
@@ -112,7 +118,7 @@ class MenuItem extends React.Component {
             {text}
           </div>
           {hasChevron && <span className={cx('chevron')}><ChevronRight /></span>}
-          <VisuallyHiddenText text={isSelected ? "selected" : "unselected"} />
+          <VisuallyHiddenText aria-atomic aria-live="assertive" text={isSelected ? 'selected' : ''} />
         </div>
       </li>
     );
