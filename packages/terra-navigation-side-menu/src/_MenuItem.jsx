@@ -108,11 +108,11 @@ class MenuItem extends React.Component {
           onKeyUp={this.handleKeyUp}
           onBlur={this.handleOnBlur}
         >
+          <VisuallyHiddenText aria-atomic aria-live="assertive" text={isSelected ? 'Selected' : ''} />
           <div className={cx('title')}>
             {text}
           </div>
           {hasChevron && <span className={cx('chevron')}><ChevronRight /></span>}
-          <VisuallyHiddenText aria-atomic aria-live="assertive" text={isSelected ? 'selected' : ''} />
         </div>
       </li>
     );
