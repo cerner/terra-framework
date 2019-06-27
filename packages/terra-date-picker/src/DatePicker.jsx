@@ -82,10 +82,16 @@ const propTypes = {
    */
   required: PropTypes.bool,
   /**
-   * An ISO 8601 string representation of the initial value to show in the date input.
-   * This prop name is derived from react-datepicker but is analogous to value in a form input field.
+   * An ISO 8601 string representation of the default value to show in the date input.
+   * This is analogous to defaultvalue in a form input field.
    */
   selectedDate: PropTypes.string,
+  /**
+   * The date value. This prop should only be used for a controlled date picker.
+   * When this prop is set a handler is needed for both the `onChange` and `onChangeRaw` props to manage the date value.
+   * If both `selectedDate` and this prop are set, then `selectedDate` will have no effect.
+   */
+  value: PropTypes.string,
 };
 
 const defaultProps = {
@@ -121,8 +127,8 @@ class DatePicker extends React.Component {
     super(props);
 
     this.state = {
-      selectedDate: DateUtil.createSafeDate(props.selectedDate),
-      prevPropsSelectedDate: props.selectedDate,
+      selectedDate: DateUtil.defaultValue(props),
+      prevPropsSelectedDate: props.value || props.selectedDate,
     };
 
     this.datePickerContainer = React.createRef();
@@ -140,10 +146,26 @@ class DatePicker extends React.Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.selectedDate !== prevState.prevPropsSelectedDate) {
+    const { selectedDate, value } = nextProps;
+    let nextDateValue = selectedDate;
+
+    // Use the value for a controlled component if one is provided.
+    if (value !== undefined && value !== null) {
+      nextDateValue = value;
+    }
+
+    if (nextDateValue !== prevState.prevPropsSelectedDate) {
+      const nextSelectedDate = DateUtil.createSafeDate(nextDateValue);
+
+      if (nextSelectedDate) {
+        return {
+          selectedDate: nextSelectedDate,
+          prevPropsSelectedDate: nextDateValue,
+        };
+      }
+
       return {
-        selectedDate: DateUtil.createSafeDate(nextProps.selectedDate),
-        prevPropsSelectedDate: nextProps.selectedDate,
+        prevPropsSelectedDate: nextDateValue,
       };
     }
 
@@ -319,6 +341,7 @@ class DatePicker extends React.Component {
       onSelect,
       required,
       selectedDate,
+      value,
       ...customProps
     } = this.props;
 
@@ -330,15 +353,36 @@ class DatePicker extends React.Component {
     const todayString = intl.formatMessage({ id: 'Terra.datePicker.today' });
     const dateFormat = DateUtil.getFormatByLocale(intl.locale);
     const placeholderText = intl.formatMessage({ id: 'Terra.datePicker.dateFormat' });
-    const exludeMomentDates = DateUtil.filterInvalidDates(excludeDates);
+    const excludeMomentDates = DateUtil.filterInvalidDates(excludeDates);
     const includeMomentDates = DateUtil.filterInvalidDates(includeDates);
     const maxMomentDate = DateUtil.createSafeDate(maxDate);
     const minMomentDate = DateUtil.createSafeDate(minDate);
 
+    let formattedValue = DateUtil.strictFormatISODate(value, dateFormat);
+
+    if (!formattedValue) {
+      formattedValue = value;
+    }
+
+    let selectedDateInPicker;
+
+    // If using this as a controlled component.
+    if (value !== undefined) {
+      selectedDateInPicker = DateUtil.createSafeDate(value);
+
+      // If value is not a valid date, keep the previous selected date in the picker.
+      if (selectedDateInPicker === undefined) {
+        selectedDateInPicker = this.state.selectedDate;
+      }
+    } else {
+      selectedDateInPicker = this.state.selectedDate;
+    }
+
     const portalPicker = (
       <ReactDatePicker
         {...customProps}
-        selected={this.state.selectedDate}
+        selected={selectedDateInPicker}
+        value={formattedValue}
         onBlur={this.handleBlur}
         onChange={this.handleChange}
         onChangeRaw={this.handleChangeRaw}
@@ -355,7 +399,7 @@ class DatePicker extends React.Component {
             buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}
           />
 )}
-        excludeDates={exludeMomentDates}
+        excludeDates={excludeMomentDates}
         filterDate={this.handleFilterDate}
         includeDates={includeMomentDates}
         maxDate={maxMomentDate}
@@ -379,7 +423,8 @@ class DatePicker extends React.Component {
     const popupPicker = (
       <ReactDatePicker
         {...customProps}
-        selected={this.state.selectedDate}
+        selected={selectedDateInPicker}
+        value={formattedValue}
         onBlur={this.handleBlur}
         onChange={this.handleChange}
         onChangeRaw={this.handleChangeRaw}
@@ -396,7 +441,7 @@ class DatePicker extends React.Component {
             buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}
           />
 )}
-        excludeDates={exludeMomentDates}
+        excludeDates={excludeMomentDates}
         filterDate={this.handleFilterDate}
         includeDates={includeMomentDates}
         maxDate={maxMomentDate}
