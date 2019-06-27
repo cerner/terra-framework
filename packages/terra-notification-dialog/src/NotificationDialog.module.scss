@@ -130,6 +130,6 @@
   }
 
   .text-wrapper {
-    flex-shrink: 1;
+    flex-shrink: 1; //This will ensure that the text-wrapper doesn't overflow in IE10.
   }
 }
