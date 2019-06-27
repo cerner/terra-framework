@@ -48,49 +48,49 @@ const navigationItemsPropType = PropTypes.arrayOf(PropTypes.shape({
    */
   key: PropTypes.string.isRequired,
   /**
-   * Text display and/or aria-label
+   * Text display and/or aria-label.
    */
   text: PropTypes.string.isRequired,
   /**
-   * Object to be returned in the onSelect
+   * Object to be returned in the onSelect.
    */
   metaData: PropTypes.object,
 }));
 
 const utilityItemsPropType = PropTypes.arrayOf(PropTypes.shape({
   /**
-   * Key used as react key, and returned in the onSelect
+   * Key used as react key, and returned in the onSelect.
    */
   key: PropTypes.string.isRequired,
   /**
-   * Icon to be rendered
+   * Icon to be rendered.
    */
   icon: PropTypes.element,
   /**
-   * Text display and/or aria-label
+   * Text display and/or aria-label.
    */
   text: PropTypes.string.isRequired,
   /**
-   * Object to be returned in the onSelect
+   * Object to be returned in the onSelect.
    */
   metaData: PropTypes.object,
 }));
 
 const extensionItemsPropType = PropTypes.arrayOf(PropTypes.shape({
   /**
-   * Key matching the notification key, used as react key, and returned in the onSelect
+   * Key matching the notification key, used as react key, and returned in the onSelect.
    */
   key: PropTypes.string.isRequired,
   /**
-   * Icon to be rendered
+   * Icon to be rendered.
    */
   icon: PropTypes.element.isRequired,
   /**
-   * Text display and/or aria-label
+   * Text display and/or aria-label.
    */
   text: PropTypes.string.isRequired,
   /**
-   * Object to be returned in the onSelect
+   * Object to be returned in the onSelect.
    */
   metaData: PropTypes.object,
 }));
