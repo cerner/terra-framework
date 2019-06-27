@@ -13,8 +13,23 @@ class DateUtil {
       return undefined;
     }
 
-    const momentDate = moment(date);
+    const momentDate = moment(date, moment.ISO_8601);
     return momentDate.isValid() ? momentDate : undefined;
+  }
+
+  /**
+   * Determines the default value for the date picker.
+   * @param {Object} props - The component props.
+   * @return {object|undefined} - The default date value.
+   */
+  static defaultValue(props) {
+    const { selectedDate, value } = props;
+
+    if (value !== undefined) {
+      return DateUtil.createSafeDate(value);
+    }
+
+    return DateUtil.createSafeDate(selectedDate);
   }
 
   /**
@@ -156,7 +171,7 @@ class DateUtil {
    * @return {string} - The formatted date string.
    */
   static formatMomentDate(momentDate, format) {
-    return momentDate && momentDate.isValid() ? momentDate.format(format) : undefined;
+    return momentDate && momentDate.isValid() ? momentDate.format(format, true) : undefined;
   }
 
   /**
@@ -168,6 +183,21 @@ class DateUtil {
   static validDateInput(value) {
     /* eslint-disable-next-line no-useless-escape */
     return value.length === 0 || /^[\d\/.]+$/.test(value);
+  }
+
+  /**
+   * Converts an ISO string to the given format.
+   * @param {string} iSODate - The ISO string to convert.
+   * @param {string} format - The desired date format for the conversion
+   * @return {string} - The formatted date string.
+   */
+  static strictFormatISODate(iSODate, format) {
+    if (!iSODate || iSODate.length <= 0) {
+      return undefined;
+    }
+
+    const momentDate = moment(iSODate, moment.ISO_8601);
+    return DateUtil.formatMomentDate(momentDate, format);
   }
 }
 
