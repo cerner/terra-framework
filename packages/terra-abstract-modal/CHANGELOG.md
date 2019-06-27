@@ -4,8 +4,10 @@ Changelog
 Unreleased
 ----------
 ### Fixed
-* Added `data-modal-open` attribute to root document when modal is opened
-* Added check for `data-overlay-open` attribute on root document to prevent removal of `inert` attribute if an overlay is also open
+* Added `data-overlay-count` attribute to root document when overlay is opened
+* Added check for `data-modal-count` attribute on root document to track opening and closing of overlays and modals,
+  to prevent the removal of the `inert` attribute from the root element if another overlay or abstract modal exists.
+
 ### Changed
 * Renamed test and example SCSS files to end with `.module.scss` extension
 
