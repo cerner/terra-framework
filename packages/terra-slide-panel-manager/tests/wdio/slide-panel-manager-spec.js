@@ -134,6 +134,7 @@ Terra.describeViewports('SlidePanelManager- Behaviors', ['large'], () => {
 
       Terra.validates.element({ selector: '#site' });
       browser.click('[class*="slide-group"] #DemoContainer-2 .close-disclosure');
+      browser.click('[class*="slide-group"] #DemoContainer-1 .close-disclosure');
     });
   });
 

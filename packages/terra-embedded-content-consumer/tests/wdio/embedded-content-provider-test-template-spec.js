@@ -1,6 +1,6 @@
 Terra.describeViewports('Embedded Content Provider Test Template', ['huge'], () => {
   before(() => {
-    browser.url('#/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/basic-provider');
+    browser.url('/#/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/basic-provider');
   });
 
   it('has mounted and overriden the body height of 100%', () => {
