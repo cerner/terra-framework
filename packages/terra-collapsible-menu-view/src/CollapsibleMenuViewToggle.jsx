@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import Control from 'terra-form-checkbox';
+import Checkbox from 'terra-form-checkbox';
 import Menu from './_CollapsibleMenu';
 import styles from './CollapsibleMenuView.module.scss';
 
@@ -91,7 +91,7 @@ class CollapsibleMenuViewToggle extends React.Component {
 
     return (
       <div className={cx(['face-up-item'])}>
-        <Control
+        <Checkbox
           {...customProps}
           className={controllClassName}
           labelText={text}
