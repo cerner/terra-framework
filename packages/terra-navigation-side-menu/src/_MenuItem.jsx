@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';
 import KeyCode from 'keycode-js';
-import VisuallyHiddenText from 'terra-visually-hidden-text';
 import ChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 
 import styles from './MenuItem.module.scss';
+
+const isSafari = (navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1);
 
 const cx = classNames.bind(styles);
 
@@ -106,10 +107,12 @@ class MenuItem extends React.Component {
     return (
       <li
         className={cx('list-item')}
-        aria-selected={isSelected}
-        role="option"
+        role="presentation"
       >
         <div
+          aria-selected={isSafari ? false : isSelected} // Mobile safari detects both aria-selected & aria-label. Desktop does not. This stops mobile from announcing selected twice.
+          role="option"
+          aria-label={isSelected ? `${selected} ${text}` : text}
           {...customProps}
           tabIndex="0"
           className={itemClassNames}
@@ -117,8 +120,7 @@ class MenuItem extends React.Component {
           onKeyUp={this.handleKeyUp}
           onBlur={this.handleOnBlur}
         >
-          <VisuallyHiddenText aria-atomic aria-live="assertive" text={isSelected ? selected : ''} />
-          <div className={cx('title')}>
+          <div aria-hidden className={cx('title')}>
             {text}
           </div>
           {hasChevron && <span className={cx('chevron')}><ChevronRight /></span>}
