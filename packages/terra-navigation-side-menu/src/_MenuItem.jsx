@@ -7,6 +7,12 @@ import ChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 
 import styles from './MenuItem.module.scss';
 
+/** Warning! The below logic should be used for edge cases only.
+ * This user agent detection exists to fix an issue with Voiceover on mobile Safari vs desktop Safari.
+ * Mobile Safari detects aria-selected, while desktop Safari does not. In order to support a11y standards
+ * This allows us to conditionally toggle aria-selected on a menu item, and use aria-label to announce the selection state.
+ * Fixes https://github.com/cerner/terra-framework/issues/284
+ * */
 const isSafari = (navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1);
 
 const cx = classNames.bind(styles);
