@@ -2,6 +2,8 @@
 import React from 'react';
 import ApplicationBase from 'terra-application/lib/application-base';
 import ApplicationNavigation from '../../../ApplicationNavigation';
+import FixedHeight from '../common/FixedHeight';
+import Logo from '../common/Logo';
 
 const titleConfig = {
   title: 'Test Title',
@@ -19,7 +21,7 @@ const titleConfigSubline = {
 
 const titleConfigElement = {
   title: 'Test Title',
-  element: <div style={{ height: '30px', width: '30px', backgroundColor: 'yellow' }} />,
+  element: <Logo />,
 };
 
 const titleConfigHideTitle = {
@@ -30,11 +32,11 @@ const titleConfigHideTitle = {
 // TODO: remove terra-application after it is incorporated into dev-site
 const TitleTest = () => (
   <ApplicationBase locale="en">
-    <div style={{ height: '70px' }}><ApplicationNavigation titleConfig={titleConfig} /></div>
-    <div style={{ height: '70px' }}><ApplicationNavigation titleConfig={titleConfigHeadLine} /></div>
-    <div style={{ height: '70px' }}><ApplicationNavigation titleConfig={titleConfigSubline} /></div>
-    <div style={{ height: '70px' }}><ApplicationNavigation titleConfig={titleConfigElement} /></div>
-    <div style={{ height: '70px' }}><ApplicationNavigation titleConfig={titleConfigHideTitle} /></div>
+    <FixedHeight><ApplicationNavigation titleConfig={titleConfig} /></FixedHeight>
+    <FixedHeight><ApplicationNavigation titleConfig={titleConfigHeadLine} /></FixedHeight>
+    <FixedHeight><ApplicationNavigation titleConfig={titleConfigSubline} /></FixedHeight>
+    <FixedHeight><ApplicationNavigation titleConfig={titleConfigElement} /></FixedHeight>
+    <FixedHeight><ApplicationNavigation titleConfig={titleConfigHideTitle} /></FixedHeight>
   </ApplicationBase>
 );
 

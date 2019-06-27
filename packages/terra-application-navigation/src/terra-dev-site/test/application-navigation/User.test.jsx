@@ -2,6 +2,7 @@
 import React from 'react';
 import ApplicationBase from 'terra-application/lib/application-base';
 import ApplicationNavigation from '../../../ApplicationNavigation';
+import FixedHeight from '../common/FixedHeight';
 
 const userConfig = {
   name: 'Test Name',
@@ -25,10 +26,10 @@ const userConfigSrc = {
 // TODO: remove terra-application after it is incorporated into dev-site
 const TitleTest = () => (
   <ApplicationBase locale="en">
-    <div style={{ height: '100px' }}><ApplicationNavigation userConfig={userConfig} /></div>
-    <div style={{ height: '100px' }}><ApplicationNavigation userConfig={userConfigDetail} /></div>
-    <div style={{ height: '100px' }}><ApplicationNavigation userConfig={userConfigInitials} /></div>
-    <div style={{ height: '100px' }}><ApplicationNavigation userConfig={userConfigSrc} /></div>
+    <FixedHeight><ApplicationNavigation userConfig={userConfig} /></FixedHeight>
+    <FixedHeight><ApplicationNavigation userConfig={userConfigDetail} /></FixedHeight>
+    <FixedHeight><ApplicationNavigation userConfig={userConfigInitials} /></FixedHeight>
+    <FixedHeight><ApplicationNavigation userConfig={userConfigSrc} /></FixedHeight>
   </ApplicationBase>
 );
 
