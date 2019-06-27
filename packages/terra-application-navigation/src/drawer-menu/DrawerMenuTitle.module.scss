@@ -24,6 +24,9 @@
     .title {
       font-size: 1.2857142857rem;
       font-weight: 300;
+      hyphens: auto;
+      overflow-wrap: break-word; /* Modern browsers */
+      word-wrap: break-word; /* For IE 10 and IE 11 */
     }
   }
 }

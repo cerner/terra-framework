@@ -19,6 +19,14 @@
     background-color: var(--terra-application-navigation-popup-item-active-background-color, rgba(89, 159, 253, 0.4));
   }
 
+  .item[aria-selected='true']::before {
+    content: '✓';
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+  }
+
   .icon,
   .selection-icon {
     color: var(--terra-application-navigation-popup-item-icon-color, #4983d1);
