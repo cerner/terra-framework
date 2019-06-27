@@ -62,7 +62,7 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
       className="side-menu-list"
       role="listbox"
     >
-      <MenuItem
+      <InjectIntl(MenuItem)
         data-menu-item="test1"
         isSelected={false}
         key="test1"
@@ -70,7 +70,7 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
         onKeyDown={[Function]}
         text="Test Menu 1"
       />
-      <MenuItem
+      <InjectIntl(MenuItem)
         data-menu-item="test2"
         isSelected={false}
         key="test2"
@@ -78,7 +78,7 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
         onKeyDown={[Function]}
         text="Test Menu 2"
       />
-      <MenuItem
+      <InjectIntl(MenuItem)
         data-menu-item="test3"
         isSelected={false}
         key="test3"
@@ -86,7 +86,7 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
         onKeyDown={[Function]}
         text="Test Menu 3"
       />
-      <MenuItem
+      <InjectIntl(MenuItem)
         data-menu-item="test4"
         isSelected={false}
         key="test4"
