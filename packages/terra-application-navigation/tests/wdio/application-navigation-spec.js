@@ -1,7 +1,8 @@
 Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
   describe('Extensions roll up properly', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-application-navigation/application-navigation/extensions');
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/extensions'));
+
+    it('launch popup', () => {
       browser.click('[data-application-extension-rollup="true"]');
       browser.waitForVisible('[data-terra-popup-content="true"]');
       browser.pause(50);
@@ -11,8 +12,9 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
   });
 
   describe('Tabs roll up properly', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-application-navigation/application-navigation/tabs');
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/tabs'));
+
+    it('launch popup', () => {
       browser.waitForVisible('[data-tab-menu-inner="true"]');
       browser.click('[data-tab-menu-inner="true"]');
       browser.waitForVisible('[data-terra-popup-content="true"]');
@@ -23,8 +25,9 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
   });
 
   describe('Utilities should display properly', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-application-navigation/application-navigation/utilities');
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/utilities'));
+
+    it('launch popup', () => {
       browser.click('[data-application-header-utility="true"]');
       browser.waitForVisible('[data-terra-popup-content="true"]');
       browser.pause(50);
@@ -34,8 +37,9 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
   });
 
   describe('Hero should display properly', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-application-navigation/application-navigation/hero');
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/hero'));
+
+    it('launch popup', () => {
       browser.click('[data-application-header-utility="true"]');
       browser.waitForVisible('[data-terra-popup-content="true"]');
       browser.pause(50);
@@ -45,17 +49,13 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
   });
 
   describe('UserName should display properly', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-application-navigation/application-navigation/user');
-    });
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/user'));
 
     Terra.it.validatesElement();
   });
 
   describe('Title should display properly', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-application-navigation/application-navigation/title');
-    });
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/title'));
 
     Terra.it.validatesElement();
   });
@@ -63,8 +63,9 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
 
 Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
   describe('Extensions roll up properly', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-application-navigation/application-navigation/extensions');
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/extensions'));
+
+    it('launch popup', () => {
       browser.click('[data-application-extension-rollup="true"]');
       browser.waitForVisible('[data-terra-popup-content="true"]');
       browser.pause(50);
@@ -74,8 +75,9 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
   });
 
   describe('Tabs enter the nav drawer', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-application-navigation/application-navigation/tabs');
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/tabs'));
+
+    it('open drawer', () => {
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
       browser.pause(250);
@@ -85,8 +87,9 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
   });
 
   describe('Utilities enter the nav drawer', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-application-navigation/application-navigation/utilities');
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/utilities'));
+
+    it('open drawer', () => {
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
       browser.pause(250);
@@ -96,8 +99,9 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
   });
 
   describe('Hero enters the nav drawer', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-application-navigation/application-navigation/hero-drawer');
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/hero-drawer'));
+
+    it('open drawer', () => {
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
       browser.pause(250);
@@ -107,8 +111,9 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
   });
 
   describe('ApplicationNavigation displays the nav drawer', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-navigation');
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-navigation'));
+
+    it('open drawer', () => {
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
       browser.pause(250);
@@ -118,8 +123,9 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
   });
 
   describe('ApplicationNotifications displays the nav drawer', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-notifications');
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-notifications'));
+
+    it('open drawer', () => {
       browser.waitForVisible('[data-compact-header-toggle="true"]');
       browser.click('[data-compact-header-toggle="true"]');
       browser.pause(500);
