@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DisclosureManagerDelegate from './DisclosureManagerDelegate';
 import DisclosureManagerContext from './DisclosureManagerContext';
+import DisclosureManagerHeaderContext from './DisclosureManagerHeaderContext';
+
 import withDisclosureManager from './withDisclosureManager';
 
 const availableDisclosureSizes = {
@@ -74,6 +76,7 @@ class DisclosureManager extends React.Component {
 
     this.generateChildComponentDelegate = this.generateChildComponentDelegate.bind(this);
     this.generateDisclosureComponentDelegate = this.generateDisclosureComponentDelegate.bind(this);
+    this.buildPublicDisclosureComponentObject = this.buildPublicDisclosureComponentObject.bind(this);
 
     this.resolveDismissPromise = this.resolveDismissPromise.bind(this);
     this.resolveDismissChecksInSequence = this.resolveDismissChecksInSequence.bind(this);
@@ -105,6 +108,21 @@ class DisclosureManager extends React.Component {
       disclosureComponentKeys: [],
       disclosureComponentData: {},
       disclosureComponentDelegates: [],
+    };
+  }
+
+  generateHeaderContextValue(key) {
+    return ({ title, actions, blockNavigation }) => {
+      this.setState(state => ({
+        disclosureComponentData: {
+          ...state.disclosureComponentData,
+          ...{
+            [key]: Object.assign({}, state.disclosureComponentData[key], {
+              headerAdapterData: { title, actions, blockNavigation },
+            }),
+          },
+        },
+      }));
     };
   }
 
@@ -272,6 +290,7 @@ class DisclosureManager extends React.Component {
           name: data.content.name,
           props: data.content.props,
           component: data.content.component,
+          headerAdapterContextValue: this.generateHeaderContextValue.bind(this, data.content.key),
         },
       },
     };
@@ -289,6 +308,7 @@ class DisclosureManager extends React.Component {
       name: data.content.name,
       props: data.content.props,
       component: data.content.component,
+      headerAdapterContextValue: this.generateHeaderContextValue.bind(this, data.content.key),
     };
     newState.disclosureComponentDelegates = newState.disclosureComponentDelegates.concat(this.generateDisclosureComponentDelegate(data.content.key, newState));
 
@@ -443,6 +463,31 @@ class DisclosureManager extends React.Component {
     };
   }
 
+  buildPublicDisclosureComponentObject() {
+    const {
+      disclosureComponentKeys,
+      disclosureComponentData,
+      disclosureComponentDelegates,
+    } = this.state;
+
+    return disclosureComponentKeys.reduce((accumulator, key, index) => {
+      const componentData = {};
+      debugger;
+      componentData.component = (
+        <DisclosureManagerHeaderContext.Provider value={disclosureComponentData[key].headerAdapterContextValue} key={key}>
+          <DisclosureManagerContext.Provider value={disclosureComponentDelegates[index]}>
+            {disclosureComponentData[key].component}
+          </DisclosureManagerContext.Provider>
+        </DisclosureManagerHeaderContext.Provider>
+      );
+
+      componentData.headerAdapterData = disclosureComponentData[key].headerAdapterData;
+
+      accumulator[key] = componentData;
+      return accumulator;
+    }, {});
+  }
+
   render() {
     const { render, children } = this.props;
     const {
@@ -454,16 +499,21 @@ class DisclosureManager extends React.Component {
       disclosureDimensions,
       disclosureComponentKeys,
       disclosureComponentData,
-      disclosureComponentDelegates,
     } = this.state;
 
     if (!render) {
       return null;
     }
 
+    const publicDisclosureComponentMapping = this.buildPublicDisclosureComponentObject();
+
+    debugger;
+
     return render({
       dismissPresentedComponent: this.generatePopFunction(disclosureComponentKeys ? disclosureComponentKeys[disclosureComponentKeys.length - 1] : undefined),
       closeDisclosure: this.safelyCloseDisclosure,
+      disclosureComponentKeys,
+      disclosureComponentData: publicDisclosureComponentMapping,
       children: {
         components: (
           <DisclosureManagerContext.Provider value={childComponentDelegate}>
@@ -477,11 +527,7 @@ class DisclosureManager extends React.Component {
         isMaximized: disclosureIsMaximized,
         size: disclosureSize,
         dimensions: disclosureDimensions,
-        components: disclosureComponentKeys.map((key, index) => (
-          <DisclosureManagerContext.Provider value={disclosureComponentDelegates[index]} key={key}>
-            {disclosureComponentData[key].component}
-          </DisclosureManagerContext.Provider>
-        )),
+        components: disclosureComponentKeys.map(key => disclosureComponentData[key].component),
       },
     });
   }
