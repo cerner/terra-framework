@@ -223,6 +223,7 @@ exports[`Tabs should render prop data 1`] = `
   >
     <div
       className="tabs-container is-calculating"
+      role="navigation"
     >
       <Tab
         hasCount={false}

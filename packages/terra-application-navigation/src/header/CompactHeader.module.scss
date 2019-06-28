@@ -23,12 +23,15 @@
   }
 
   .menu-button {
+    align-items: center;
     background-color: transparent;
     border: 0;
     color: var(--terra-application-navigation-compact-header-menu-button-color, rgba(255, 255, 255, 0.8));
     cursor: pointer;
+    display: flex;
     flex: 0 0 auto;
     height: 2.143rem;
+    justify-content: center;
     outline: none;
     padding: 0;
     position: relative;

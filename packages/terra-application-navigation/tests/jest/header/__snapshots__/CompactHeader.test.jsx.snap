@@ -59,6 +59,7 @@ exports[`CompactHeader should render default element 1`] = `
         "timeZone": null,
       }
     }
+    isDrawerMenuOpen={false}
     navigationItems={Array []}
     notifications={Object {}}
   >
@@ -68,18 +69,21 @@ exports[`CompactHeader should render default element 1`] = `
     >
       <button
         className="skip-content-button"
+        role="link"
         type="button"
       >
         Terra.applicationNavigation.header.skipToContentTitle
       </button>
-      <button
+      <div
+        aria-expanded={false}
         aria-label="Terra.applicationNavigation.header.menuButtonTitle"
         className="menu-button"
         data-compact-header-toggle={true}
         data-focus-styles-enabled={true}
         onBlur={[Function]}
         onMouseDown={[Function]}
-        type="button"
+        role="button"
+        tabIndex="0"
       >
         <IconMenu
           data-name="Layer 1"
@@ -113,7 +117,7 @@ exports[`CompactHeader should render default element 1`] = `
             </svg>
           </IconBase>
         </IconMenu>
-      </button>
+      </div>
       <div
         className="title-container"
       />
@@ -232,6 +236,7 @@ exports[`CompactHeader should render with function callbacks 1`] = `
         "timeZone": null,
       }
     }
+    isDrawerMenuOpen={false}
     navigationItems={
       Array [
         Object {
@@ -266,18 +271,21 @@ exports[`CompactHeader should render with function callbacks 1`] = `
     >
       <button
         className="skip-content-button"
+        role="link"
         type="button"
       >
         Terra.applicationNavigation.header.skipToContentTitle
       </button>
-      <button
+      <div
+        aria-expanded={false}
         aria-label="Terra.applicationNavigation.header.menuButtonTitle"
         className="menu-button"
         data-compact-header-toggle={true}
         data-focus-styles-enabled={true}
         onBlur={[Function]}
         onMouseDown={[Function]}
-        type="button"
+        role="button"
+        tabIndex="0"
       >
         <IconMenu
           data-name="Layer 1"
@@ -311,7 +319,7 @@ exports[`CompactHeader should render with function callbacks 1`] = `
             </svg>
           </IconBase>
         </IconMenu>
-      </button>
+      </div>
       <div
         className="title-container"
       >
@@ -525,6 +533,7 @@ exports[`CompactHeader should render with menu callback 1`] = `
         "timeZone": null,
       }
     }
+    isDrawerMenuOpen={false}
     navigationItems={Array []}
     notifications={Object {}}
     onSelectMenuButton={[MockFunction]}
@@ -535,19 +544,23 @@ exports[`CompactHeader should render with menu callback 1`] = `
     >
       <button
         className="skip-content-button"
+        role="link"
         type="button"
       >
         Terra.applicationNavigation.header.skipToContentTitle
       </button>
-      <button
+      <div
+        aria-expanded={false}
         aria-label="Terra.applicationNavigation.header.menuButtonTitle"
         className="menu-button"
         data-compact-header-toggle={true}
         data-focus-styles-enabled={true}
         onBlur={[Function]}
         onClick={[MockFunction]}
+        onKeyDown={[Function]}
         onMouseDown={[Function]}
-        type="button"
+        role="button"
+        tabIndex="0"
       >
         <IconMenu
           data-name="Layer 1"
@@ -581,7 +594,7 @@ exports[`CompactHeader should render with menu callback 1`] = `
             </svg>
           </IconBase>
         </IconMenu>
-      </button>
+      </div>
       <div
         className="title-container"
       />
@@ -653,6 +666,7 @@ exports[`CompactHeader should render with skip callback 1`] = `
         "timeZone": null,
       }
     }
+    isDrawerMenuOpen={false}
     navigationItems={Array []}
     notifications={Object {}}
     onSelectSkipToContent={[MockFunction]}
@@ -664,18 +678,21 @@ exports[`CompactHeader should render with skip callback 1`] = `
       <button
         className="skip-content-button"
         onClick={[MockFunction]}
+        role="link"
         type="button"
       >
         Terra.applicationNavigation.header.skipToContentTitle
       </button>
-      <button
+      <div
+        aria-expanded={false}
         aria-label="Terra.applicationNavigation.header.menuButtonTitle"
         className="menu-button"
         data-compact-header-toggle={true}
         data-focus-styles-enabled={true}
         onBlur={[Function]}
         onMouseDown={[Function]}
-        type="button"
+        role="button"
+        tabIndex="0"
       >
         <IconMenu
           data-name="Layer 1"
@@ -709,7 +726,7 @@ exports[`CompactHeader should render with skip callback 1`] = `
             </svg>
           </IconBase>
         </IconMenu>
-      </button>
+      </div>
       <div
         className="title-container"
       />

@@ -320,6 +320,7 @@ class Tabs extends React.Component {
       <div
         className={cx('tabs-container', { 'is-calculating': this.isCalculating })}
         ref={this.containerRef}
+        role="navigation"
       >
         {this.buildVisibleChildren(visibleTabs, hasNotifications, onTabSelect, activeTabKey, notifications)}
         {!this.menuHidden ? this.renderRollup(hiddenTabs, hasNotifications, hasHiddenNotification) : null}

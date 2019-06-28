@@ -65,6 +65,7 @@ exports[`Header should render default element 1`] = `
     >
       <button
         className="skip-content-button"
+        role="link"
         type="button"
       >
         Terra.applicationNavigation.header.skipToContentTitle
@@ -434,6 +435,7 @@ exports[`Header should render with function callbacks 1`] = `
     >
       <button
         className="skip-content-button"
+        role="link"
         type="button"
       >
         Terra.applicationNavigation.header.skipToContentTitle
@@ -554,6 +556,7 @@ exports[`Header should render with function callbacks 1`] = `
           >
             <div
               className="tabs-container is-calculating"
+              role="navigation"
             >
               <Tab
                 hasCount={false}
@@ -1141,6 +1144,7 @@ exports[`Header should render with skip callback 1`] = `
       <button
         className="skip-content-button"
         onClick={[MockFunction]}
+        role="link"
         type="button"
       >
         Terra.applicationNavigation.header.skipToContentTitle

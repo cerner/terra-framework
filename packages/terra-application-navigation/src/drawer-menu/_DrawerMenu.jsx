@@ -111,7 +111,7 @@ const DrawerMenu = ({
               {userComponent}
             </div>
           </div>
-          <ul className={cx('navigation-item-list')} role="listbox">
+          <ul className={cx('navigation-item-list')} role="navigation">
             {navigationItems.map(item => (
               <DrawerMenuListItem
                 key={item.key}
@@ -120,6 +120,7 @@ const DrawerMenu = ({
                 onSelect={onSelectNavigationItem && onSelectNavigationItem.bind(null, item.key, item.metaData)}
                 isSelected={item.key === activeNavigationItemKey}
                 icon={item.icon}
+                role="link"
               />
             ))}
           </ul>

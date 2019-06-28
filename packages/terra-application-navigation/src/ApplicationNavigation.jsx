@@ -242,6 +242,7 @@ const ApplicationNavigation = ({
         onSelectMenuButton={() => setDrawerMenuIsOpen(true)}
         onSelectSkipToContent={focusMainContent}
         notifications={notifications}
+        isDrawerMenuOpen={drawerMenuIsOpen}
       />
     );
   }

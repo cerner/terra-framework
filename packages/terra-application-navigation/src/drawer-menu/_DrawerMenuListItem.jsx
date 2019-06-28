@@ -30,28 +30,49 @@ const propTypes = {
    * Whether or not this item is the active item.
    */
   isSelected: PropTypes.bool,
+  /**
+   * Whether or not this item is the navigation item.
+   */
+  isNavigation: PropTypes.bool,
+};
+
+const defaultProps = {
+  isNavigation: false,
 };
 
 const DrawerMenuListItem = ({
-  icon, text, notificationCount, isSelected, onSelect,
-}) => (
-  <li
-    role="option"
-    tabIndex="0"
-    className={cx('item', { 'is-selected': isSelected })}
-    onClick={onSelect}
-    onKeyDown={generateKeyDownSelection(onSelect)}
-    onBlur={enableFocusStyles}
-    onMouseDown={disableFocusStyles}
-    aria-selected={isSelected}
-    data-focus-styles-enabled
-  >
-    {icon ? <div className={cx('icon')}>{icon}</div> : null}
-    <div className={cx('text')}>{text}</div>
-    {notificationCount > 0 && <Count value={notificationCount} />}
-  </li>
-);
+  icon, text, notificationCount, isSelected, onSelect, isNavigation,
+}) => {
+  const ariaSpread = {};
+  if (isNavigation) {
+    ariaSpread.role = 'link';
+    ariaSpread['aria-current'] = isSelected;
+  } else {
+    ariaSpread.role = 'option';
+    ariaSpread['aria-selected'] = isSelected;
+  }
+
+  /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+  /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+  return (
+    <li
+      {...ariaSpread}
+      tabIndex="0"
+      className={cx('item', { 'is-selected': isSelected })}
+      onClick={onSelect}
+      onKeyDown={generateKeyDownSelection(onSelect)}
+      onBlur={enableFocusStyles}
+      onMouseDown={disableFocusStyles}
+      data-focus-styles-enabled
+    >
+      {icon ? <div className={cx('icon')}>{icon}</div> : null}
+      <div className={cx('text')}>{text}</div>
+      {notificationCount > 0 && <Count value={notificationCount} />}
+    </li>
+  );
+};
 
 DrawerMenuListItem.propTypes = propTypes;
+DrawerMenuListItem.defaultProps = defaultProps;
 
 export default DrawerMenuListItem;

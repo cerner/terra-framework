@@ -167,41 +167,34 @@ const PopupMenu = ({
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
   return (
-    <div
-      className={cx('container', { 'is-fill': isHeightBounded })}
-      onKeyDown={handleKeyDown}
-      tabIndex="0"
-      role="list"
+    <ContentContainer
+      header={<ActionHeader title={title} />}
+      footer={<ActionFooter end={endContent} />}
+      fill={isHeightBounded}
     >
-      <ContentContainer
-        header={<ActionHeader title={title} />}
-        footer={<ActionFooter end={endContent} />}
-        fill={isHeightBounded}
-      >
-        <div className={cx('content-header')}>
-          {customContent ? (
-            <div className={cx('custom-content-container')}>
-              {customContent}
-            </div>
-          ) : undefined}
-          {userConfig ? <PopupMenuUser userConfig={userConfig} /> : null}
-          <ul className={cx('utility-list')} ref={listRef} role="listbox">
-            {menuItems.map(item => (
-              <PopupMenuListItem
-                key={item.key}
-                onSelect={onSelectMenuItem && onSelectMenuItem.bind(null, item.key, item.metaData)}
-                icon={item.icon}
-                text={item.text}
-                notificationCount={item.notificationCount}
-                showSelections={showSelections}
-                isSelected={item.isActive}
-                loopFocus={loopFocus}
-              />
-            ))}
-          </ul>
-        </div>
-      </ContentContainer>
-    </div>
+      <div className={cx('content-header')}>
+        {customContent ? (
+          <div className={cx('custom-content-container')}>
+            {customContent}
+          </div>
+        ) : undefined}
+        {userConfig ? <PopupMenuUser userConfig={userConfig} /> : null}
+        <ul className={cx('utility-list')} ref={listRef} role="menu" tabIndex="0" onKeyDown={handleKeyDown}>
+          {menuItems.map(item => (
+            <PopupMenuListItem
+              key={item.key}
+              onSelect={onSelectMenuItem && onSelectMenuItem.bind(null, item.key, item.metaData)}
+              icon={item.icon}
+              text={item.text}
+              notificationCount={item.notificationCount}
+              showSelections={showSelections}
+              isSelected={item.isActive}
+              loopFocus={loopFocus}
+            />
+          ))}
+        </ul>
+      </div>
+    </ContentContainer>
   );
 };
 

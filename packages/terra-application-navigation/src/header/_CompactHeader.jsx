@@ -5,7 +5,7 @@ import { injectIntl, intlShape } from 'react-intl';
 import IconMenu from 'terra-icon/lib/icon/IconMenu';
 import ToggleCount from './_ToggleCount';
 import Extensions from '../extensions/_Extensions';
-import { enableFocusStyles, disableFocusStyles } from '../utils/helpers';
+import { enableFocusStyles, disableFocusStyles, generateKeyDownSelection } from '../utils/helpers';
 import {
   navigationItemsPropType,
   extensionItemsPropType,
@@ -17,6 +17,10 @@ import styles from './CompactHeader.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * Whether or not drawer menu is open.
+   */
+  isDrawerMenuOpen: PropTypes.bool,
   /**
    * A function to be executed upon selection of the CompactHeader's menu button.
    */
@@ -61,11 +65,13 @@ const propTypes = {
 
 const defaultProps = {
   extensionItems: [],
+  isDrawerMenuOpen: false,
   navigationItems: [],
   notifications: {},
 };
 
 const CompactHeader = ({
+  isDrawerMenuOpen,
   onSelectMenuButton,
   titleConfig,
   extensionItems,
@@ -90,19 +96,22 @@ const CompactHeader = ({
     });
 
     return (
-      <button
-        type="button"
+      <div
+        role="button"
         className={cx('menu-button')}
         aria-label={intl.formatMessage({ id: 'Terra.applicationNavigation.header.menuButtonTitle' })}
         onClick={onSelectMenuButton}
         onBlur={enableFocusStyles}
+        onKeyDown={generateKeyDownSelection(onSelectMenuButton)}
         onMouseDown={disableFocusStyles}
         data-focus-styles-enabled
         data-compact-header-toggle
+        aria-expanded={isDrawerMenuOpen}
+        tabIndex="0"
       >
         <IconMenu />
         {headerHasCounts && <ToggleCount value={isPulsed ? 1 : 0} />}
-      </button>
+      </div>
     );
   }
 
@@ -145,7 +154,7 @@ const CompactHeader = ({
 
   return (
     <header role="banner" className={cx('compact-header')}>
-      <button type="button" onClick={onSelectSkipToContent} className={cx('skip-content-button')}>
+      <button type="button" role="link" onClick={onSelectSkipToContent} className={cx('skip-content-button')}>
         {intl.formatMessage({ id: 'Terra.applicationNavigation.header.skipToContentTitle' })}
       </button>
       {renderMenuButton()}

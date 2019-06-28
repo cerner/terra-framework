@@ -80,16 +80,19 @@ const PopupMenuListItem = ({
     }
   }
 
+  /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+  /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+  /* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
   return (
     <li
-      role="option"
+      role={showSelections ? 'menuitemradio' : 'menuitem'}
       tabIndex="0"
       className={cx('item')}
       onClick={onSelect}
       onKeyDown={handleKeyDown}
       onBlur={enableFocusStyles}
       onMouseDown={disableFocusStyles}
-      aria-selected={showSelections && isSelected}
+      aria-checked={showSelections && isSelected}
       data-focus-styles-enabled
       ref={itemRef}
     >
