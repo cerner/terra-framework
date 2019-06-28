@@ -430,7 +430,6 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                     text="test-text-2"
                   >
                     <li
-                      aria-checked={false}
                       className="item"
                       data-focus-styles-enabled={true}
                       onBlur={[Function]}
@@ -469,7 +468,6 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                     text="Terra.applicationNavigation.utilityMenu.settings"
                   >
                     <li
-                      aria-checked={false}
                       className="item"
                       data-focus-styles-enabled={true}
                       onBlur={[Function]}
@@ -536,7 +534,6 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                     text="Terra.applicationNavigation.utilityMenu.help"
                   >
                     <li
-                      aria-checked={false}
                       className="item"
                       data-focus-styles-enabled={true}
                       onBlur={[Function]}
