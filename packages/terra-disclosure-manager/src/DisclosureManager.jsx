@@ -527,7 +527,7 @@ class DisclosureManager extends React.Component {
         isMaximized: disclosureIsMaximized,
         size: disclosureSize,
         dimensions: disclosureDimensions,
-        components: disclosureComponentKeys.map(key => disclosureComponentData[key].component),
+        components: disclosureComponentKeys.map(key => publicDisclosureComponentMapping[key].component),
       },
     });
   }
