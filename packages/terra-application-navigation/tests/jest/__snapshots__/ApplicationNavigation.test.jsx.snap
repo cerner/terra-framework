@@ -14,7 +14,6 @@ exports[`ApplicationNavigation should render default element 1`] = `
     }
   />
   <div
-    aria-hidden={null}
     className="content-layout"
   >
     <InjectIntl(Header)
@@ -78,7 +77,6 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
     }
   />
   <div
-    aria-hidden={null}
     className="content-layout"
   >
     <InjectIntl(Header)
@@ -280,7 +278,6 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
     </FocusTrap>
   </div>
   <div
-    aria-hidden={null}
     className="content-layout"
   >
     <InjectIntl(CompactHeader)

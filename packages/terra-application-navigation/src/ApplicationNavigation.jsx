@@ -351,7 +351,6 @@ const ApplicationNavigation = ({
       <div
         ref={contentLayoutRef}
         className={cx('content-layout', { 'drawer-menu-is-open': drawerMenuIsOpen })}
-        aria-hidden={drawerMenuIsOpen ? true : null}
       >
         {shouldRenderCompactNavigation(activeBreakpoint) ? renderCompactHeader() : renderHeader()}
         <main
