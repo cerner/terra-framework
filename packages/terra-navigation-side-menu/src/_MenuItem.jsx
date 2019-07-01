@@ -3,17 +3,10 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';
 import KeyCode from 'keycode-js';
+import VisuallyHidden from 'terra-visually-hidden-text';
 import ChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 
 import styles from './MenuItem.module.scss';
-
-/** Warning! The below logic should be used for edge cases only.
- * This user agent detection exists to fix an issue with Voiceover on mobile Safari vs desktop Safari.
- * Mobile Safari detects aria-selected, while desktop Safari does not. In order to support a11y standards
- * This allows us to conditionally toggle aria-selected on a menu item, and use aria-label to announce the selection state.
- * Fixes https://github.com/cerner/terra-framework/issues/284
- * */
-const isSafari = (navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1);
 
 const cx = classNames.bind(styles);
 
@@ -112,13 +105,11 @@ class MenuItem extends React.Component {
     /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */
     return (
       <li
+        aria-live="assertive"
         className={cx('list-item')}
-        role="presentation"
       >
         <div
-          aria-selected={isSafari ? false : isSelected} // Mobile safari detects both aria-selected & aria-label. Desktop does not. This stops mobile from announcing selected twice.
-          role="option"
-          aria-label={isSelected ? `${selected} ${text}` : text}
+          role="link"
           {...customProps}
           tabIndex="0"
           className={itemClassNames}
@@ -126,7 +117,8 @@ class MenuItem extends React.Component {
           onKeyUp={this.handleKeyUp}
           onBlur={this.handleOnBlur}
         >
-          <div aria-hidden className={cx('title')}>
+          <VisuallyHidden text={isSelected ? `${selected}` : ''} />
+          <div className={cx('title')}>
             {text}
           </div>
           {hasChevron && <span className={cx('chevron')}><ChevronRight /></span>}
