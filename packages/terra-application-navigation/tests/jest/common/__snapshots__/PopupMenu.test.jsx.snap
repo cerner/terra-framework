@@ -6,6 +6,7 @@ exports[`PopupMenu should render default element 1`] = `
   footer={<ActionFooter />}
   header={
     <ActionHeader
+      aria-hidden={true}
       level={1}
     />
   }
@@ -16,7 +17,7 @@ exports[`PopupMenu should render default element 1`] = `
     <ul
       className="utility-list"
       onKeyDown={[Function]}
-      role="menu"
+      role="listbox"
       tabIndex="0"
     />
   </div>
@@ -47,6 +48,7 @@ exports[`PopupMenu should render prop data 1`] = `
   }
   header={
     <ActionHeader
+      aria-hidden={true}
       level={1}
       title="my-header"
     />
@@ -75,7 +77,7 @@ exports[`PopupMenu should render prop data 1`] = `
     <ul
       className="utility-list"
       onKeyDown={[Function]}
-      role="menu"
+      role="listbox"
       tabIndex="0"
     >
       <PopupMenuListItem
@@ -89,6 +91,7 @@ exports[`PopupMenu should render prop data 1`] = `
         loopFocus={[Function]}
         notificationCount={2}
         onSelect={[Function]}
+        parentRole="listbox"
         showSelections={true}
         text="test-text"
       />
@@ -103,6 +106,7 @@ exports[`PopupMenu should render with height bounded 1`] = `
   footer={<ActionFooter />}
   header={
     <ActionHeader
+      aria-hidden={true}
       level={1}
       title="my-header"
     />
@@ -114,7 +118,7 @@ exports[`PopupMenu should render with height bounded 1`] = `
     <ul
       className="utility-list"
       onKeyDown={[Function]}
-      role="menu"
+      role="listbox"
       tabIndex="0"
     />
   </div>

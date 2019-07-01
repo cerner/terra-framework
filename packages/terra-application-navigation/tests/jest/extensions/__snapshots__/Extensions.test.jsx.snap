@@ -25,6 +25,7 @@ exports[`Extensions should render default element 1`] = `
       isHeightBounded={false}
       menuItems={Array []}
       onSelectMenuItem={[Function]}
+      role="menu"
       showSelections={false}
       title="Terra.applicationNavigation.extensions.rollupMenuHeaderTitle"
     />
@@ -70,6 +71,7 @@ exports[`Extensions should render prop data 1`] = `
       isHeightBounded={false}
       menuItems={Array []}
       onSelectMenuItem={[Function]}
+      role="menu"
       showSelections={false}
       title="Terra.applicationNavigation.extensions.rollupMenuHeaderTitle"
     />

@@ -116,6 +116,7 @@ exports[`Header should render default element 1`] = `
             >
               <div
                 aria-hidden={true}
+                aria-label="W"
                 className="tab is-placeholder"
                 data-focus-styles-enabled={true}
                 onBlur={[Function]}
@@ -128,6 +129,7 @@ exports[`Header should render default element 1`] = `
                   className="tab-inner"
                 >
                   <span
+                    aria-hidden={true}
                     className="tab-label"
                   >
                     W
@@ -554,9 +556,8 @@ exports[`Header should render with function callbacks 1`] = `
             }
             onTabSelect={[MockFunction]}
           >
-            <div
+            <nav
               className="tabs-container is-calculating"
-              role="navigation"
             >
               <Tab
                 hasCount={false}
@@ -588,6 +589,7 @@ exports[`Header should render with function callbacks 1`] = `
                   Object {
                     "current": <div
                       aria-current="false"
+                      aria-label="test-text"
                       class="tab"
                       data-focus-styles-enabled="true"
                       role="link"
@@ -600,6 +602,7 @@ exports[`Header should render with function callbacks 1`] = `
               >
                 <div
                   aria-current={false}
+                  aria-label="test-text"
                   className="tab"
                   data-focus-styles-enabled={true}
                   onBlur={[Function]}
@@ -621,6 +624,7 @@ exports[`Header should render with function callbacks 1`] = `
                       class="tab-rollup-label"
                     >
                       <span
+                        aria-hidden="true"
                         class="tab-rollup-text"
                       >
                         Terra.applicationNavigation.tabs.rollupButtonTitle
@@ -649,6 +653,7 @@ exports[`Header should render with function callbacks 1`] = `
                     "current": <div
                       aria-current="false"
                       aria-haspopup="true"
+                      aria-label="Terra.applicationNavigation.tabs.rollupButtonTitle"
                       class="tab-rollup"
                       data-focus-styles-enabled="true"
                       role="link"
@@ -663,6 +668,7 @@ exports[`Header should render with function callbacks 1`] = `
                           class="tab-rollup-label"
                         >
                           <span
+                            aria-hidden="true"
                             class="tab-rollup-text"
                           >
                             Terra.applicationNavigation.tabs.rollupButtonTitle
@@ -690,6 +696,7 @@ exports[`Header should render with function callbacks 1`] = `
                 <div
                   aria-current={false}
                   aria-haspopup={true}
+                  aria-label="Terra.applicationNavigation.tabs.rollupButtonTitle"
                   className="tab-rollup"
                   data-focus-styles-enabled={true}
                   onBlur={[Function]}
@@ -708,6 +715,7 @@ exports[`Header should render with function callbacks 1`] = `
                       className="tab-rollup-label"
                     >
                       <span
+                        aria-hidden={true}
                         className="tab-rollup-text"
                       >
                         Terra.applicationNavigation.tabs.rollupButtonTitle
@@ -748,7 +756,7 @@ exports[`Header should render with function callbacks 1`] = `
                   </div>
                 </div>
               </TabRollup>
-            </div>
+            </nav>
           </Tabs>
         </InjectIntl(Tabs)>
       </div>
@@ -1195,6 +1203,7 @@ exports[`Header should render with skip callback 1`] = `
             >
               <div
                 aria-hidden={true}
+                aria-label="W"
                 className="tab is-placeholder"
                 data-focus-styles-enabled={true}
                 onBlur={[Function]}
@@ -1207,6 +1216,7 @@ exports[`Header should render with skip callback 1`] = `
                   className="tab-inner"
                 >
                   <span
+                    aria-hidden={true}
                     className="tab-label"
                   >
                     W

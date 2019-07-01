@@ -36,6 +36,7 @@ exports[`UtilityMenu should render default element 1`] = `
     isHeightBounded={false}
     menuItems={Array []}
     onSelectMenuItem={[Function]}
+    role="listbox"
     showSelections={false}
     title="Terra.applicationNavigation.utilityMenu.headerTitle"
   >
@@ -44,6 +45,7 @@ exports[`UtilityMenu should render default element 1`] = `
       footer={<ActionFooter />}
       header={
         <ActionHeader
+          aria-hidden={true}
           level={1}
           title="Terra.applicationNavigation.utilityMenu.headerTitle"
         />
@@ -56,16 +58,19 @@ exports[`UtilityMenu should render default element 1`] = `
           className="header"
         >
           <ActionHeader
+            aria-hidden={true}
             level={1}
             title="Terra.applicationNavigation.utilityMenu.headerTitle"
           >
             <ActionHeaderContainer
+              aria-hidden={true}
               endContent={null}
               level={1}
               startContent={null}
               title="Terra.applicationNavigation.utilityMenu.headerTitle"
             >
               <div
+                aria-hidden={true}
                 className="flex-header"
               >
                 <div
@@ -100,7 +105,7 @@ exports[`UtilityMenu should render default element 1`] = `
                 <ul
                   className="utility-list"
                   onKeyDown={[Function]}
-                  role="menu"
+                  role="listbox"
                   tabIndex="0"
                 />
               </div>
@@ -222,6 +227,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
     }
     onSelectFooterItem={[MockFunction]}
     onSelectMenuItem={[Function]}
+    role="listbox"
     showSelections={false}
     title="Terra.applicationNavigation.utilityMenu.headerTitle"
     userConfig={
@@ -256,6 +262,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
       }
       header={
         <ActionHeader
+          aria-hidden={true}
           level={1}
           title="Terra.applicationNavigation.utilityMenu.headerTitle"
         />
@@ -268,16 +275,19 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
           className="header"
         >
           <ActionHeader
+            aria-hidden={true}
             level={1}
             title="Terra.applicationNavigation.utilityMenu.headerTitle"
           >
             <ActionHeaderContainer
+              aria-hidden={true}
               endContent={null}
               level={1}
               startContent={null}
               title="Terra.applicationNavigation.utilityMenu.headerTitle"
             >
               <div
+                aria-hidden={true}
                 className="flex-header"
               >
                 <div
@@ -414,7 +424,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                 <ul
                   className="utility-list"
                   onKeyDown={[Function]}
-                  role="menu"
+                  role="listbox"
                   tabIndex="0"
                 >
                   <PopupMenuListItem
@@ -426,6 +436,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                     key="my-test-key-2"
                     loopFocus={[Function]}
                     onSelect={[Function]}
+                    parentRole="listbox"
                     showSelections={false}
                     text="test-text-2"
                   >
@@ -436,7 +447,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
-                      role="menuitem"
+                      role="option"
                       tabIndex="0"
                     >
                       <div
@@ -464,6 +475,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                     key="terra-application-navigation.utility-menu.settings"
                     loopFocus={[Function]}
                     onSelect={[Function]}
+                    parentRole="listbox"
                     showSelections={false}
                     text="Terra.applicationNavigation.utilityMenu.settings"
                   >
@@ -474,7 +486,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
-                      role="menuitem"
+                      role="option"
                       tabIndex="0"
                     >
                       <div
@@ -530,6 +542,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                     key="terra-application-navigation.utility-menu.help"
                     loopFocus={[Function]}
                     onSelect={[Function]}
+                    parentRole="listbox"
                     showSelections={false}
                     text="Terra.applicationNavigation.utilityMenu.help"
                   >
@@ -540,7 +553,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
-                      role="menuitem"
+                      role="option"
                       tabIndex="0"
                     >
                       <div
@@ -700,6 +713,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
     menuItems={Array []}
     onSelectFooterItem={[MockFunction]}
     onSelectMenuItem={[Function]}
+    role="listbox"
     showSelections={false}
     title="Terra.applicationNavigation.utilityMenu.headerTitle"
   >
@@ -726,6 +740,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
       }
       header={
         <ActionHeader
+          aria-hidden={true}
           level={1}
           title="Terra.applicationNavigation.utilityMenu.headerTitle"
         />
@@ -738,16 +753,19 @@ exports[`UtilityMenu should render with skip callback 1`] = `
           className="header"
         >
           <ActionHeader
+            aria-hidden={true}
             level={1}
             title="Terra.applicationNavigation.utilityMenu.headerTitle"
           >
             <ActionHeaderContainer
+              aria-hidden={true}
               endContent={null}
               level={1}
               startContent={null}
               title="Terra.applicationNavigation.utilityMenu.headerTitle"
             >
               <div
+                aria-hidden={true}
                 className="flex-header"
               >
                 <div
@@ -782,7 +800,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
                 <ul
                   className="utility-list"
                   onKeyDown={[Function]}
-                  role="menu"
+                  role="listbox"
                   tabIndex="0"
                 />
               </div>

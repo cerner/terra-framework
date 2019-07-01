@@ -83,11 +83,10 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
         role="navigation"
       >
         <DrawerMenuListItem
-          isNavigation={false}
+          isNavigation={true}
           isSelected={false}
           key="my-test-key"
           onSelect={[Function]}
-          role="link"
           text="test-text"
         />
       </ul>
