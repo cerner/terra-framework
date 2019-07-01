@@ -47,10 +47,11 @@ const propTypes = {
    * Function callback for item when no sibling is present.
    */
   loopFocus: PropTypes.func,
+  parentRole: PropTypes.oneOf(['menu', 'listbox']),
 };
 
 const PopupMenuListItem = ({
-  icon, text, notificationCount, onSelect, showSelections, isSelected, loopFocus,
+  icon, text, notificationCount, onSelect, showSelections, isSelected, loopFocus, parentRole,
 }) => {
   const itemRef = useRef();
 
@@ -81,11 +82,13 @@ const PopupMenuListItem = ({
   }
 
   const ariaSpread = {};
-  if (showSelections) {
-    ariaSpread.role = 'menuitemradio';
-    ariaSpread['aria-checked'] = isSelected;
+  if (parentRole === 'list') {
+    ariaSpread.role = 'link';
+    ariaSpread['aria-current'] = showSelections && isSelected;
+  } else if (parentRole === 'listbox') {
+    ariaSpread.role = 'option';
   } else {
-    ariaSpread.role = 'menuitem';
+    ariaSpread.role = 'menuitemcheckbox';
   }
 
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */

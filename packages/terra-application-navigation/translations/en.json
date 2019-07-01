@@ -6,9 +6,9 @@
   "Terra.applicationNavigation.extensions.rollupButtonDescription": "Additional Items",
   "Terra.applicationNavigation.extensions.rollupMenuHeaderTitle": "Additional Items",
   "Terra.applicationNavigation.tabs.rollupButtonTitle": "More",
-  "Terra.applicationNavigation.tabs.rollupMenuHeaderTitle": "More Sections",
+  "Terra.applicationNavigation.tabs.rollupMenuHeaderTitle": "Additional Sections",
   "Terra.applicationNavigation.notifications.new": "New",
   "Terra.applicationNavigation.header.skipToContentTitle": "Skip to Content",
   "Terra.applicationNavigation.header.utilityButtonTitle": "Utility Button",
-  "Terra.applicationNavigation.header.menuButtonTitle": "Toggle Menu"
+  "Terra.applicationNavigation.header.menuButtonTitle": "Menu"
 }

@@ -120,7 +120,7 @@ const DrawerMenu = ({
                 onSelect={onSelectNavigationItem && onSelectNavigationItem.bind(null, item.key, item.metaData)}
                 isSelected={item.key === activeNavigationItemKey}
                 icon={item.icon}
-                role="link"
+                isNavigation
               />
             ))}
           </ul>

@@ -66,7 +66,7 @@ const Tab = ({
 
     return (
       <div className={cx('tab-inner')}>
-        <span className={cx('tab-label')}>{text}</span>
+        <span className={cx('tab-label')} aria-hidden>{text}</span>
         {notificationCount > 0 && <span className={cx('tab-count')}><TabCount value={notificationCount} /></span>}
       </div>
     );
@@ -91,6 +91,7 @@ const Tab = ({
       aria-current={isActive}
       aria-hidden={isPlaceholder}
       data-focus-styles-enabled
+      aria-label={text}
     >
       {renderTabContent()}
     </div>

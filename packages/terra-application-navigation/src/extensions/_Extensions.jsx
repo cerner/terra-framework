@@ -112,6 +112,7 @@ const Extensions = ({
       >
         <PopupMenu
           title={intl.formatMessage({ id: 'Terra.applicationNavigation.extensions.rollupMenuHeaderTitle' })}
+          role="menu"
           menuItems={hiddenExtensions.map(item => ({
             key: item.key,
             icon: item.icon,

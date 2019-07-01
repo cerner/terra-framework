@@ -84,16 +84,18 @@ const propTypes = {
    * Whether or not selected states should display on the menu item.
    */
   showSelections: PropTypes.bool,
+  role: PropTypes.oneOf(['list', 'menu', 'listbox']),
 };
 
 const defaultProps = {
   menuItems: [],
   isHeightBounded: false,
   showSelections: false,
+  role: 'listbox',
 };
 
 const PopupMenu = ({
-  title, footerText, onSelectFooterItem, onSelectMenuItem, customContent, userConfig, menuItems, isHeightBounded, showSelections,
+  title, footerText, onSelectFooterItem, onSelectMenuItem, customContent, userConfig, menuItems, isHeightBounded, showSelections, role,
 }) => {
   const listRef = useRef();
   const buttonRef = useRef();
@@ -168,7 +170,7 @@ const PopupMenu = ({
   /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
   return (
     <ContentContainer
-      header={<ActionHeader title={title} />}
+      header={<ActionHeader aria-hidden title={title} />}
       footer={<ActionFooter end={endContent} />}
       fill={isHeightBounded}
     >
@@ -179,7 +181,7 @@ const PopupMenu = ({
           </div>
         ) : undefined}
         {userConfig ? <PopupMenuUser userConfig={userConfig} /> : null}
-        <ul className={cx('utility-list')} ref={listRef} role="menu" tabIndex="0" onKeyDown={handleKeyDown}>
+        <ul className={cx('utility-list')} ref={listRef} role={role} tabIndex="0" onKeyDown={handleKeyDown}>
           {menuItems.map(item => (
             <PopupMenuListItem
               key={item.key}
@@ -190,6 +192,7 @@ const PopupMenu = ({
               showSelections={showSelections}
               isSelected={item.isActive}
               loopFocus={loopFocus}
+              parentRole={role}
             />
           ))}
         </ul>

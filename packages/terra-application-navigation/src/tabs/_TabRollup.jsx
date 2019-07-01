@@ -78,10 +78,11 @@ const TabRollup = ({
     aria-current={isSelected}
     aria-haspopup
     data-focus-styles-enabled
+    aria-label={text}
   >
     <div className={cx('tab-inner')} data-tab-menu-inner>
       <div className={cx('tab-rollup-label')} ref={innerRef}>
-        {<span className={cx('tab-rollup-text')}>{text}</span>}
+        {<span className={cx('tab-rollup-text')} aria-hidden>{text}</span>}
         {hasChildNotifications && <span className={cx('tab-count')}><TabCount value={isPulsed ? 1 : 0} isRollup /></span>}
         <IconCaretDown className={cx('tab-rollup-icon')} />
       </div>

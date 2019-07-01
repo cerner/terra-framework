@@ -85,6 +85,7 @@ const UtilityMenu = ({
 
   return (
     <PopupMenu
+      role="listbox"
       title={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.headerTitle' })}
       footerText={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.logout' })}
       onSelectFooterItem={onSelectLogout}

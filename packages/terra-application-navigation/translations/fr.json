@@ -1,14 +1,14 @@
 {
-  "Terra.applicationNavigation.utilityMenu.logout": "Logout",
-  "Terra.applicationNavigation.utilityMenu.settings": "Settings",
-  "Terra.applicationNavigation.utilityMenu.help": "Help",
-  "Terra.applicationNavigation.utilityMenu.headerTitle": "Utilities",
-  "Terra.applicationNavigation.extensions.rollupButtonDescription": "Additional Items",
-  "Terra.applicationNavigation.extensions.rollupMenuHeaderTitle": "Additional Items",
-  "Terra.applicationNavigation.tabs.rollupButtonTitle": "More",
-  "Terra.applicationNavigation.tabs.rollupMenuHeaderTitle": "More Sections",
-  "Terra.applicationNavigation.notifications.new": "New",
-  "Terra.applicationNavigation.header.skipToContentTitle": "Skip to Content",
-  "Terra.applicationNavigation.header.utilityButtonTitle": "Utility Button",
-  "Terra.applicationNavigation.header.menuButtonTitle": "Toggle Menu"
+  "Terra.applicationNavigation.utilityMenu.logout": "Déconnexion",
+  "Terra.applicationNavigation.utilityMenu.settings": "Paramètres",
+  "Terra.applicationNavigation.utilityMenu.help": "Aide",
+  "Terra.applicationNavigation.utilityMenu.headerTitle": "Utilitaires",
+  "Terra.applicationNavigation.extensions.rollupButtonDescription": "Éléments supplémentaires",
+  "Terra.applicationNavigation.extensions.rollupMenuHeaderTitle": "Éléments supplémentaires",
+  "Terra.applicationNavigation.tabs.rollupButtonTitle": "Plus",
+  "Terra.applicationNavigation.tabs.rollupMenuHeaderTitle": "Sections supplémentaires",
+  "Terra.applicationNavigation.notifications.new": "Nouveau",
+  "Terra.applicationNavigation.header.skipToContentTitle": "Accéder au contenu",
+  "Terra.applicationNavigation.header.utilityButtonTitle": "Bouton Utilitaire",
+  "Terra.applicationNavigation.header.menuButtonTitle": "Menu"
 }

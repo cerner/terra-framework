@@ -23,6 +23,7 @@
     margin: 0;
     outline: none;
     padding: 0;
+    width: 100%;
 
     > * {
       border-bottom: var(--terra-application-navigation-popup-list-child-border-bottom, 1px solid rgba(255, 255, 255, 0.5));

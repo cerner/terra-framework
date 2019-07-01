@@ -278,6 +278,7 @@ class Tabs extends React.Component {
       >
         <PopupMenu
           title={intl.formatMessage({ id: 'Terra.applicationNavigation.tabs.rollupMenuHeaderTitle' })}
+          role="list"
           menuItems={hiddenTabs.map(tab => ({
             key: tab.key,
             text: tab.text,
@@ -317,15 +318,14 @@ class Tabs extends React.Component {
     const hasNotifications = hasVisibleNotification || hasHiddenNotification;
 
     return (
-      <div
+      <nav
         className={cx('tabs-container', { 'is-calculating': this.isCalculating })}
         ref={this.containerRef}
-        role="navigation"
       >
         {this.buildVisibleChildren(visibleTabs, hasNotifications, onTabSelect, activeTabKey, notifications)}
         {!this.menuHidden ? this.renderRollup(hiddenTabs, hasNotifications, hasHiddenNotification) : null}
         {popupIsOpen ? this.renderPopup(hiddenTabs) : null}
-      </div>
+      </nav>
     );
   }
 }
