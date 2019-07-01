@@ -7,7 +7,7 @@ exports[`DrawerMenu should render default element 1`] = `
   <div
     className="drawer-menu"
     data-navigation-drawer-menu={true}
-    role="list"
+    role={null}
     tabIndex={0}
   >
     <div
