@@ -23,7 +23,8 @@
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "peerDependencies": {
     "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react-dom": "^16.8.5",
+    "react-intl": "^2.8.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -31,7 +32,8 @@
     "prop-types": "^15.5.8",
     "terra-action-header": "^2.0.0",
     "terra-content-container": "^3.0.0",
-    "terra-icon": "^3.1.0"
+    "terra-icon": "^3.1.0",
+    "terra-visually-hidden-text": "^2.9.0"
   },
   "devDependencies": {
     "terra-doc-template": "^2.2.0"
