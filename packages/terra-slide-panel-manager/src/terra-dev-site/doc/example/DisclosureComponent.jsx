@@ -2,10 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Button from 'terra-button';
-import ContentContainer from 'terra-content-container';
 import Input from 'terra-form-input';
-import ActionHeader from 'terra-action-header';
-import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
+import { withDisclosureManager, disclosureManagerShape, DisclosureManagerHeaderAdapter } from 'terra-disclosure-manager';
 
 import styles from './SlidePanelManager.module.scss';
 
@@ -60,18 +58,8 @@ class DisclosureComponent extends React.Component {
     const { disclosureManager, name, disclosureType } = this.props;
 
     return (
-      <ContentContainer
-        fill
-        header={(
-          <ActionHeader
-            title={`Disclosure - ${name}`}
-            onClose={disclosureManager.closeDisclosure}
-            onBack={disclosureManager.goBack}
-            onMaximize={disclosureManager.maximize}
-            onMinimize={disclosureManager.minimize}
-          />
-        )}
-      >
+      <React.Fragment>
+        <DisclosureManagerHeaderAdapter title={`Disclosure - ${name}`} />
         <div className={cx('content-wrapper')}>
           <h3>{name}</h3>
           <p>The disclosed component can disclose content within the same panel.</p>
@@ -111,7 +99,7 @@ class DisclosureComponent extends React.Component {
           />
           {this.state.text && this.state.text.length ? <p>Component has unsaved changes!</p> : null}
         </div>
-      </ContentContainer>
+      </React.Fragment>
     );
   }
 }

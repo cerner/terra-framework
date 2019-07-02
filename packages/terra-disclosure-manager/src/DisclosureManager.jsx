@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import DisclosureManagerDelegate from './DisclosureManagerDelegate';
 import DisclosureManagerContext from './DisclosureManagerContext';
 import DisclosureManagerHeaderContext from './DisclosureManagerHeaderContext';
+import DisclosureManagerHeaderAdapter from './DisclosureManagerHeaderAdapter';
 
 import withDisclosureManager from './withDisclosureManager';
 
@@ -76,6 +77,7 @@ class DisclosureManager extends React.Component {
 
     this.generateChildComponentDelegate = this.generateChildComponentDelegate.bind(this);
     this.generateDisclosureComponentDelegate = this.generateDisclosureComponentDelegate.bind(this);
+    this.generateHeaderContextValue = this.generateHeaderContextValue.bind(this);
     this.buildPublicDisclosureComponentObject = this.buildPublicDisclosureComponentObject.bind(this);
 
     this.resolveDismissPromise = this.resolveDismissPromise.bind(this);
@@ -290,7 +292,7 @@ class DisclosureManager extends React.Component {
           name: data.content.name,
           props: data.content.props,
           component: data.content.component,
-          headerAdapterContextValue: this.generateHeaderContextValue.bind(this, data.content.key),
+          headerAdapterContextValue: this.generateHeaderContextValue(data.content.key),
         },
       },
     };
@@ -308,7 +310,7 @@ class DisclosureManager extends React.Component {
       name: data.content.name,
       props: data.content.props,
       component: data.content.component,
-      headerAdapterContextValue: this.generateHeaderContextValue.bind(this, data.content.key),
+      headerAdapterContextValue: this.generateHeaderContextValue(data.content.key),
     };
     newState.disclosureComponentDelegates = newState.disclosureComponentDelegates.concat(this.generateDisclosureComponentDelegate(data.content.key, newState));
 
@@ -471,19 +473,19 @@ class DisclosureManager extends React.Component {
     } = this.state;
 
     return disclosureComponentKeys.reduce((accumulator, key, index) => {
-      const componentData = {};
-      debugger;
-      componentData.component = (
-        <DisclosureManagerHeaderContext.Provider value={disclosureComponentData[key].headerAdapterContextValue} key={key}>
-          <DisclosureManagerContext.Provider value={disclosureComponentDelegates[index]}>
-            {disclosureComponentData[key].component}
-          </DisclosureManagerContext.Provider>
-        </DisclosureManagerHeaderContext.Provider>
-      );
+      const componentData = disclosureComponentData[key];
 
-      componentData.headerAdapterData = disclosureComponentData[key].headerAdapterData;
+      accumulator[key] = {
+        component: (
+          <DisclosureManagerHeaderContext.Provider value={componentData.headerAdapterContextValue} key={key}>
+            <DisclosureManagerContext.Provider value={disclosureComponentDelegates[index]}>
+              {componentData.component}
+            </DisclosureManagerContext.Provider>
+          </DisclosureManagerHeaderContext.Provider>
+        ),
+        headerAdapterData: componentData.headerAdapterData,
+      };
 
-      accumulator[key] = componentData;
       return accumulator;
     }, {});
   }
@@ -498,7 +500,6 @@ class DisclosureManager extends React.Component {
       disclosureSize,
       disclosureDimensions,
       disclosureComponentKeys,
-      disclosureComponentData,
     } = this.state;
 
     if (!render) {
@@ -507,11 +508,11 @@ class DisclosureManager extends React.Component {
 
     const publicDisclosureComponentMapping = this.buildPublicDisclosureComponentObject();
 
-    debugger;
-
     return render({
       dismissPresentedComponent: this.generatePopFunction(disclosureComponentKeys ? disclosureComponentKeys[disclosureComponentKeys.length - 1] : undefined),
       closeDisclosure: this.safelyCloseDisclosure,
+      maximizeDisclosure: (disclosureSize !== availableDisclosureSizes.FULLSCREEN && !disclosureIsMaximized) ? () => Promise.resolve().then(this.maximizeDisclosure) : undefined,
+      minimizeDisclosure: (disclosureSize !== availableDisclosureSizes.FULLSCREEN && disclosureIsMaximized) ? () => Promise.resolve().then(this.minimizeDisclosure) : undefined,
       disclosureComponentKeys,
       disclosureComponentData: publicDisclosureComponentMapping,
       children: {
@@ -540,5 +541,5 @@ const disclosureManagerShape = DisclosureManagerDelegate.propType;
 
 export default withDisclosureManager(DisclosureManager);
 export {
-  withDisclosureManager, disclosureManagerShape, DisclosureManagerContext, DisclosureManagerDelegate,
+  withDisclosureManager, disclosureManagerShape, DisclosureManagerContext, DisclosureManagerDelegate, DisclosureManagerHeaderContext, DisclosureManagerHeaderAdapter,
 };

@@ -1,6 +1,6 @@
 import { useLayoutEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
-import DisclosureHeaderContext from './DisclosureManagerHeaderContext';
+import DisclosureManagerHeaderContext from './DisclosureManagerHeaderContext';
 
 const propTypes = {
   /**
@@ -21,7 +21,7 @@ const propTypes = {
  * A component used to register header data with the DisclosureManager.
  */
 const DisclosureManagerHeaderAdapter = ({ title, actions, blockNavigation }) => {
-  const registerHeaderData = useContext(DisclosureHeaderContext);
+  const registerHeaderData = useContext(DisclosureManagerHeaderContext);
 
   useLayoutEffect(() => {
     registerHeaderData({ title, actions, blockNavigation });
