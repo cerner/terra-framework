@@ -47,6 +47,9 @@ const propTypes = {
    * Function callback for item when no sibling is present.
    */
   loopFocus: PropTypes.func,
+  /**
+   * Role of the parent ul that the child item should match.
+   */
   parentRole: PropTypes.oneOf(['menu', 'listbox']),
 };
 
