@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames/bind';
 import ActionHeader from 'terra-action-header';
 import ContentContainer from 'terra-content-container';
@@ -7,11 +8,15 @@ import KeyCode from 'keycode-js';
 import MenuItem from './_MenuItem';
 
 import styles from './NavigationSideMenu.module.scss';
-import VisuallyHiddenText from 'terra-visually-hidden-text';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * @private
+   * Internationalization object with translation APIs. Provided by `injectIntl`.
+   */
+  intl: intlShape.isRequired,
   /**
    * An array of configuration for each menu item.
    */
@@ -187,22 +192,20 @@ class NavigationSideMenu extends Component {
   }
 
   updateAriaLiveContent(childKey) {
-    if (this.liveRegionTimeOut) {
-      clearTimeout(this.liveRegionTimeOut);
+    const { intl } = this.props;
+
+    // Guard against race condition with the ref being established and updating the ref's innerText
+    if (!this.visuallyHiddenComponent || !this.visuallyHiddenComponent.current) {
+      return;
     }
 
-    this.liveRegionTimeOut = setTimeout(() => {
-      // Race condition can occur between calling timeout and unmounting this component.
-      if (!this.visuallyHiddenComponent || !this.visuallyHiddenComponent.current) {
-        return;
-      }
+    const selected = intl.formatMessage({ id: 'Terra.navigation.side.menu.selected' });
 
-      if (this.state.items[childKey] && this.state.items[childKey].text) {
-        this.visuallyHiddenComponent.current.innerText = `${this.state.items[childKey].text} Selected`;
-      } else {
-        this.visuallyHiddenComponent.current.innerText = '';
-      }
-    }, 500);
+    if (this.state.items[childKey] && this.state.items[childKey].text) {
+      this.visuallyHiddenComponent.current.innerText = `${this.state.items[childKey].text} ${selected}`;
+    } else {
+      this.visuallyHiddenComponent.current.innerText = '';
+    }
   }
 
   render() {
@@ -246,11 +249,12 @@ class NavigationSideMenu extends Component {
     }
 
     return (
-      <React.Fragment>
+      <Fragment>
         <span
           aria-atomic="true"
           aria-live="assertive"
           aria-relevant="additions text"
+          className={cx('visually-hidden-text')}
           ref={this.visuallyHiddenComponent}
         >
           {this.updateAriaLiveContent(selectedChildKey)}
@@ -258,7 +262,7 @@ class NavigationSideMenu extends Component {
         <ContentContainer {...customProps} header={header} fill className={sideMenuContentContainerClassNames}>
           {this.buildListContent(currentItem)}
         </ContentContainer>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }
@@ -266,4 +270,4 @@ class NavigationSideMenu extends Component {
 NavigationSideMenu.propTypes = propTypes;
 NavigationSideMenu.defaultProps = defaultProps;
 
-export default NavigationSideMenu;
+export default injectIntl(NavigationSideMenu);

@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { injectIntl, intlShape } from 'react-intl';
 import KeyCode from 'keycode-js';
-import VisuallyHidden from 'terra-visually-hidden-text';
 import ChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 
 import styles from './MenuItem.module.scss';
@@ -15,11 +13,6 @@ const propTypes = {
    * Whether or not the menu item should display a disclosure idicator.
    * */
   hasChevron: PropTypes.bool,
-  /**
-   * @private
-   * Internationalization object with translation APIs. Provided by `injectIntl`.
-   */
-  intl: intlShape.isRequired,
   /**
    * Whether or not the menu item is selection.
    * */
@@ -86,7 +79,6 @@ class MenuItem extends React.Component {
   render() {
     const {
       hasChevron,
-      intl,
       isSelected,
       text,
       ...customProps
@@ -99,8 +91,6 @@ class MenuItem extends React.Component {
       { 'is-focused': this.state.focused },
       customProps.className,
     ]);
-
-    const selected = intl.formatMessage({ id: 'Terra.navigation.side.menu.selected' });
 
     /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */
     return (
@@ -129,4 +119,4 @@ class MenuItem extends React.Component {
 
 MenuItem.propTypes = propTypes;
 
-export default injectIntl(MenuItem);
+export default MenuItem;
