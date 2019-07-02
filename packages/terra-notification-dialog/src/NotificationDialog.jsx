@@ -194,7 +194,7 @@ class NotificationDialog extends React.Component {
                 {variant
                   && <div className={cx('icon-container')}>{getIcon(intl, variant, customIcon)}</div>
                 }
-                <div>
+                <div className={cx('text-wrapper')}>
                   {title
                     && <div id="notification-dialog-title" className={cx('title')}>{title}</div>
                   }
