@@ -7,6 +7,7 @@ import KeyCode from 'keycode-js';
 import MenuItem from './_MenuItem';
 
 import styles from './NavigationSideMenu.module.scss';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 
 const cx = classNames.bind(styles);
 
@@ -99,6 +100,7 @@ class NavigationSideMenu extends Component {
 
     this.handleBackClick = this.handleBackClick.bind(this);
     this.handleItemClick = this.handleItemClick.bind(this);
+    this.updateAriaLiveContent = this.updateAriaLiveContent.bind(this);
 
     const { items, parents } = processMenuItems(props.menuItems);
     this.state = {
@@ -106,6 +108,8 @@ class NavigationSideMenu extends Component {
       parents,
       prevPropsMenuItem: props.menuItems,
     };
+
+    this.visuallyHiddenComponent = React.createRef();
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -182,6 +186,25 @@ class NavigationSideMenu extends Component {
     return null;
   }
 
+  updateAriaLiveContent(childKey) {
+    if (this.liveRegionTimeOut) {
+      clearTimeout(this.liveRegionTimeOut);
+    }
+
+    this.liveRegionTimeOut = setTimeout(() => {
+      // Race condition can occur between calling timeout and unmounting this component.
+      if (!this.visuallyHiddenComponent || !this.visuallyHiddenComponent.current) {
+        return;
+      }
+
+      if (this.state.items[childKey] && this.state.items[childKey].text) {
+        this.visuallyHiddenComponent.current.innerText = `${this.state.items[childKey].text} Selected`;
+      } else {
+        this.visuallyHiddenComponent.current.innerText = '';
+      }
+    }, 500);
+  }
+
   render() {
     const {
       menuItems,
@@ -223,9 +246,19 @@ class NavigationSideMenu extends Component {
     }
 
     return (
-      <ContentContainer {...customProps} header={header} fill className={sideMenuContentContainerClassNames}>
-        {this.buildListContent(currentItem)}
-      </ContentContainer>
+      <React.Fragment>
+        <span
+          aria-atomic="true"
+          aria-live="assertive"
+          aria-relevant="additions text"
+          ref={this.visuallyHiddenComponent}
+        >
+          {this.updateAriaLiveContent(selectedChildKey)}
+        </span>
+        <ContentContainer {...customProps} header={header} fill className={sideMenuContentContainerClassNames}>
+          {this.buildListContent(currentItem)}
+        </ContentContainer>
+      </React.Fragment>
     );
   }
 }

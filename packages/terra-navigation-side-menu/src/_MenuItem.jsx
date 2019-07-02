@@ -105,7 +105,6 @@ class MenuItem extends React.Component {
     /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */
     return (
       <li
-        aria-live="assertive"
         className={cx('list-item')}
       >
         <div
@@ -117,7 +116,6 @@ class MenuItem extends React.Component {
           onKeyUp={this.handleKeyUp}
           onBlur={this.handleOnBlur}
         >
-          <VisuallyHidden text={isSelected ? `${selected}` : ''} />
           <div className={cx('title')}>
             {text}
           </div>
