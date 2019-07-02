@@ -140,6 +140,11 @@ class NavigationSideMenu extends Component {
 
   handleItemClick(event, key) {
     const selectedItem = this.state.items[key];
+
+    if (this.state.items[key] && this.state.items[key].text) {
+      this.updateAriaLiveContent(this.state.items[key].text);
+    }
+
     if (selectedItem.childKeys && selectedItem.childKeys.length) {
       this.props.onChange(
         event,
@@ -191,21 +196,16 @@ class NavigationSideMenu extends Component {
     return null;
   }
 
-  updateAriaLiveContent(childKey) {
+  updateAriaLiveContent(item) {
     const { intl } = this.props;
+    const selected = intl.formatMessage({ id: 'Terra.navigation.side.menu.selected' });
 
     // Guard against race condition with the ref being established and updating the ref's innerText
     if (!this.visuallyHiddenComponent || !this.visuallyHiddenComponent.current) {
       return;
     }
 
-    const selected = intl.formatMessage({ id: 'Terra.navigation.side.menu.selected' });
-
-    if (this.state.items[childKey] && this.state.items[childKey].text) {
-      this.visuallyHiddenComponent.current.innerText = `${this.state.items[childKey].text} ${selected}`;
-    } else {
-      this.visuallyHiddenComponent.current.innerText = '';
-    }
+    this.visuallyHiddenComponent.current.innerText = item ? `${item} ${selected}` : '';
   }
 
   render() {
@@ -256,9 +256,7 @@ class NavigationSideMenu extends Component {
           aria-relevant="additions text"
           className={cx('visually-hidden-text')}
           ref={this.visuallyHiddenComponent}
-        >
-          {this.updateAriaLiveContent(selectedChildKey)}
-        </span>
+        />
         <ContentContainer {...customProps} header={header} fill className={sideMenuContentContainerClassNames}>
           {this.buildListContent(currentItem)}
         </ContentContainer>
