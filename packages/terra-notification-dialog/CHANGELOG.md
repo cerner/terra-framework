@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.4.0 - (July 2, 2019)
+------------------
 ### Fixed
 * Updated max-width to be `800px` for screen size greater than 768px.
 

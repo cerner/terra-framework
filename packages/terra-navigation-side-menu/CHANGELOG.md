@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+2.11.0 - (July 2, 2019)
+------------------
 ### Changed
 * Renamed test and example SCSS files to end with `.module.scss` extension
 * Support JAWS and Voiceover on menu item selection.
