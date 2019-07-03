@@ -5,8 +5,6 @@ Unreleased
 ----------
 ### Changed
 * Removed Ignore Accessibility condition from wdio tests.
-
-### Changed
 * Changed help text color to match required contrast ratio.
 
 4.3.0 - (July 2, 2019)
