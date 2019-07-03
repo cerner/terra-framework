@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+6.4.0 - (July 2, 2019)
+------------------
 ### Added
 * Added themeable variable --terra-tabs-font-weight
 * Added themeable variable --terra-tabs-structural-active-font-weight
