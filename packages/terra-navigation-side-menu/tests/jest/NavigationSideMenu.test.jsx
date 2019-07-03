@@ -1,10 +1,12 @@
 import React from 'react';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { shallowWithIntl } from 'terra-enzyme-intl';
 
 import NavigationSideMenu from '../../src/NavigationSideMenu';
 
 describe('Layout', () => {
   it('should render a NavigationSideMenu with default props', () => {
-    const result = shallow((
+    const result = shallowWithIntl((
       <NavigationSideMenu
         onChange={() => {}}
         routingStackBack={() => {}}
@@ -15,7 +17,7 @@ describe('Layout', () => {
   });
 
   it('should render a NavigationSideMenu with a toolbar', () => {
-    const result = shallow((
+    const result = shallowWithIntl((
       <NavigationSideMenu
         onChange={jest.fn()}
         routingStackBack={jest.fn()}
@@ -27,7 +29,7 @@ describe('Layout', () => {
   });
 
   it('should render a NavigationSideMenu with selectedKey', () => {
-    const result = shallow((
+    const result = shallowWithIntl((
       <NavigationSideMenu
         menuItems={[
           { key: 'menu', text: 'Test Menu', childKeys: ['test1', 'test2', 'test3', 'test4'] },
