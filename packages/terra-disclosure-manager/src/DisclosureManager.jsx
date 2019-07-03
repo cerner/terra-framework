@@ -114,13 +114,13 @@ class DisclosureManager extends React.Component {
   }
 
   generateHeaderContextValue(key) {
-    return ({ title, actions, blockNavigation }) => {
+    return ({ title, collapsibleMenuView }) => {
       this.setState(state => ({
         disclosureComponentData: {
           ...state.disclosureComponentData,
           ...{
             [key]: Object.assign({}, state.disclosureComponentData[key], {
-              headerAdapterData: { title, actions, blockNavigation },
+              headerAdapterData: { title, collapsibleMenuView },
             }),
           },
         },

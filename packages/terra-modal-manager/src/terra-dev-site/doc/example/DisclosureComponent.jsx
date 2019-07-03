@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Button from 'terra-button';
+import ContentContainer from 'terra-content-container';
+import CollapsibleMenuView from 'terra-collapsible-menu-view';
 import Input from 'terra-form-input';
 import { withDisclosureManager, disclosureManagerShape, DisclosureManagerHeaderAdapter } from 'terra-disclosure-manager';
 
@@ -58,8 +60,32 @@ class DisclosureComponent extends React.Component {
     const { disclosureManager, name, disclosureType } = this.props;
 
     return (
-      <React.Fragment>
-        <DisclosureManagerHeaderAdapter title={`Disclosure - ${name}`} />
+      <ContentContainer fill>
+        <DisclosureManagerHeaderAdapter
+          title={`Disclosure - ${name}`}
+          collapsibleMenuView={(
+            <CollapsibleMenuView>
+              <CollapsibleMenuView.Item
+                text="Header Button 1"
+                key="button_1"
+                onClick={() => {
+                  this.setState({
+                    selectedHeaderAction: 'Header Button 1',
+                  });
+                }}
+              />
+              <CollapsibleMenuView.Item
+                text="Header Button 2"
+                key="button_2"
+                onClick={() => {
+                  this.setState({
+                    selectedHeaderAction: 'Header Button 2',
+                  });
+                }}
+              />
+            </CollapsibleMenuView>
+          )}
+        />
         <div className={cx('content-wrapper')}>
           <h3>{name}</h3>
           <p>The disclosed component can disclose content within the same panel.</p>
@@ -98,8 +124,15 @@ class DisclosureComponent extends React.Component {
             }}
           />
           {this.state.text && this.state.text.length ? <p>Component has unsaved changes!</p> : null}
+          <br />
+          <br />
+          <p>
+            Selected Header Action:
+            {' '}
+            <b>{this.state.selectedHeaderAction}</b>
+          </p>
         </div>
-      </React.Fragment>
+      </ContentContainer>
     );
   }
 }

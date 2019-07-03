@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import AbstractModal from 'terra-abstract-modal';
 import ActionHeader from 'terra-action-header';
+import CollapsibleMenuView from 'terra-collapsible-menu-view';
 import SlideGroup from 'terra-slide-group';
 import DisclosureManager, { availableDisclosureSizes } from 'terra-disclosure-manager';
 import ContentContainer from 'terra-content-container';
@@ -91,12 +92,12 @@ class ModalManager extends React.Component {
                 {headerDataForPresentedComponent ? (
                   <ActionHeader
                     title={headerDataForPresentedComponent.title}
-                    onClose={!headerDataForPresentedComponent.blockNavigation ? manager.closeDisclosure : undefined}
-                    onBack={manager.disclosureComponentKeys.length > 1 && !headerDataForPresentedComponent.blockNavigation ? manager.dismissPresentedComponent : undefined}
+                    onClose={manager.closeDisclosure}
+                    onBack={manager.disclosureComponentKeys.length > 1 ? manager.dismissPresentedComponent : undefined}
                     onMaximize={manager.maximizeDisclosure}
                     onMinimize={manager.minimizeDisclosure}
                   >
-                    {headerDataForPresentedComponent.actions}
+                    {headerDataForPresentedComponent.collapsibleMenuView}
                   </ActionHeader>
                 ) : undefined}
                 {disclosureAccessory}

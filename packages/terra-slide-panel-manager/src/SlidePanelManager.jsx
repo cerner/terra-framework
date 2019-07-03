@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ActionHeader from 'terra-action-header';
+import CollapsibleMenuView from 'terra-collapsible-menu-view';
 import ContentContainer from 'terra-content-container';
 import DisclosureManager, { availableDisclosureSizes } from 'terra-disclosure-manager';
 import SlideGroup from 'terra-slide-group';
@@ -97,7 +98,7 @@ class SlidePanelManager extends React.Component {
                     onMaximize={manager.maximizeDisclosure}
                     onMinimize={manager.minimizeDisclosure}
                   >
-                    {headerDataForPresentedComponent.actions}
+                    {headerDataForPresentedComponent.collapsibleMenuView}
                   </ActionHeader>
                 ) : undefined}
                 {disclosureAccessory}

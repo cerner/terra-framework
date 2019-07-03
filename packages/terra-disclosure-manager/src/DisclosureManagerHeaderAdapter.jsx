@@ -8,24 +8,20 @@ const propTypes = {
    */
   title: PropTypes.string,
   /**
-   * An element to render within the DisclosureManager's header.
+   * An array of CollapsibleMenuView Items, Dividers, or Toggles to render within the DisclosureManager's header.
    */
-  actions: PropTypes.node,
-  /**
-   * A boolean indicating whether or not the header's navigation controls should be disabled.
-   */
-  blockNavigation: PropTypes.bool,
+  collapsibleMenuItems: PropTypes.array,
 };
 
 /**
  * A component used to register header data with the DisclosureManager.
  */
-const DisclosureManagerHeaderAdapter = ({ title, actions, blockNavigation }) => {
+const DisclosureManagerHeaderAdapter = ({ title, collapsibleMenuView }) => {
   const registerHeaderData = useContext(DisclosureManagerHeaderContext);
 
   useLayoutEffect(() => {
-    registerHeaderData({ title, actions, blockNavigation });
-  }, [title, actions, blockNavigation]);
+    registerHeaderData({ title, collapsibleMenuView });
+  }, [title, collapsibleMenuView]);
 
   return null;
 };
