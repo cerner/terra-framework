@@ -171,7 +171,7 @@ class DatePickerInput extends React.Component {
           onFocus={onFocus}
           onBlur={onBlur}
           id="Date-Input"
-          aria-label={this.context.intl.formatMessage({ id: 'Terra.dateInput.date' })}
+          aria-label={this.context.intl.formatMessage({ id: 'Terra.datePicker.date' })}
         />
         <Button
           className={styles.button}
