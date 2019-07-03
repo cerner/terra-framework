@@ -10,7 +10,7 @@ const propTypes = {
   /**
    * An array of CollapsibleMenuView Items, Dividers, or Toggles to render within the DisclosureManager's header.
    */
-  collapsibleMenuItems: PropTypes.array,
+  collapsibleMenuItems: PropTypes.element,
 };
 
 /**
