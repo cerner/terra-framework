@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import AbstractModal from 'terra-abstract-modal';
 import Button from 'terra-button';
+import { injectIntl, intlShape } from 'react-intl';
 import DateTimeUtils from './DateTimeUtils';
 import styles from './_TimeClarification.module.scss';
 
@@ -45,19 +46,14 @@ const propTypes = {
    * Whether the clarification is disabled.
    */
   disabled: PropTypes.bool,
+  /**
+   * intl object programmatically imported through injectIntl from react-intl.
+   * */
+  intl: intlShape.isRequired,
 };
 
 const defaultProps = {
   disabled: false,
-};
-
-const contextTypes = {
-  /* eslint-disable consistent-return */
-  intl: (context) => {
-    if (context.intl === undefined) {
-      return new Error('Component is internationalized, and must be wrapped in terra-base');
-    }
-  },
 };
 
 class TimeClarification extends React.Component {
@@ -105,7 +101,7 @@ class TimeClarification extends React.Component {
       { 'button-offset-hidden': this.props.isOffsetButtonHidden || !this.state.offsetDisplay },
     ]);
 
-    const { intl } = this.context;
+    const { intl } = this.props;
     const title = intl.formatMessage({ id: 'Terra.dateTimePicker.timeClarification.title' });
     const message = intl.formatMessage({ id: 'Terra.dateTimePicker.timeClarification.message' });
     const daylightSavingButtonLabel = intl.formatMessage({ id: 'Terra.dateTimePicker.timeClarification.button.daylightSaving' });
@@ -163,6 +159,5 @@ class TimeClarification extends React.Component {
 
 TimeClarification.propTypes = propTypes;
 TimeClarification.defaultProps = defaultProps;
-TimeClarification.contextTypes = contextTypes;
 
-export default TimeClarification;
+export default injectIntl(TimeClarification);

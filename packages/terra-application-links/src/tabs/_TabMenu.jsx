@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Popup from 'terra-popup';
 import { matchPath } from 'react-router-dom';
 import KeyCode from 'keycode-js';
+import { injectIntl, intlShape } from 'react-intl';
 import TabMenuList from './_TabMenuList';
 import TabMenuDisplay from './_TabMenuDisplay';
 
@@ -19,20 +20,15 @@ const propTypes = {
    * The location as provided by the `withRouter()` HOC.
    */
   location: PropTypes.object.isRequired,
-};
-
-const contextTypes = {
-  /* eslint-disable consistent-return */
-  intl: (context) => {
-    if (context.intl === undefined) {
-      return new Error('Please add locale prop to Base component to load translations');
-    }
-  },
+  /**
+   * intl object programmatically imported through injectIntl from react-intl.
+   * */
+  intl: intlShape.isRequired,
 };
 
 class TabMenu extends React.Component {
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
     this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.handleOnClick = this.handleOnClick.bind(this);
     this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
@@ -86,7 +82,7 @@ class TabMenu extends React.Component {
 
   createDisplay(popup) {
     const { location } = this.props;
-    const { intl } = this.context;
+    const { intl } = this.props;
     let text = intl.formatMessage({ id: 'Terra.application.tabs.more' });
     let icon;
     let isSelected = false;
@@ -146,7 +142,6 @@ class TabMenu extends React.Component {
   }
 }
 
-TabMenu.contextTypes = contextTypes;
 TabMenu.propTypes = propTypes;
 
-export default TabMenu;
+export default injectIntl(TabMenu);
