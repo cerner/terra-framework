@@ -3,8 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+3.4.0 - (July 2, 2019)
+------------------
 ### Changed
 * Renamed test and example SCSS files to end with `.module.scss` extension
+* Removed conditional logic required to import wicg-inert polyfill
 
 3.3.0 - (June 19, 2019)
 ------------------

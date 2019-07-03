@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.5.0 - (July 2, 2019)
+------------------
 ### Added
 * Aria-Label and ID added to input to fix accesssibility issue of Date-Time-Picker.
 
