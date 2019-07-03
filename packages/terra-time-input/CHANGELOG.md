@@ -4,6 +4,9 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Removed Ignore Accessibility condition from wdio tests.
+
+### Changed
 * Changed help text color to match required contrast ratio.
 
 ### Changed

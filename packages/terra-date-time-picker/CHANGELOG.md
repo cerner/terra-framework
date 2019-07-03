@@ -4,6 +4,9 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
+* Fixed all the accessibility issues and updated the tests and screenshots accordingly.
+
+### Changed
 * Screenshots updated for mobile view.
 * Update wdio test to work with changes in terra-date-picker
 
