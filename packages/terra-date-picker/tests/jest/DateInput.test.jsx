@@ -19,6 +19,7 @@ it('should render a default date input with all props', () => {
       onChange={() => {}}
       onClick={() => {}}
       onKeyDown={() => {}}
+      aria-label="Terra.datePicker.date"
     />
   ));
 
