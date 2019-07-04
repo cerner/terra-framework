@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated to interface with react-intl's Intl context rather than old React Context API
+
 ### Fixed
 * Fixed issue with accessibility roles in list view in popup menu
 

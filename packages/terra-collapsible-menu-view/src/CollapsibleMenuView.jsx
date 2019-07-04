@@ -19,6 +19,11 @@ const propTypes = {
   children: PropTypes.node.isRequired,
 
   /**
+   * intl object programmatically imported through injectIntl from react-intl.
+   * */
+  intl: intlShape.isRequired,
+
+  /**
    * A string representation of the width in px, limited to:
    * 160, 240, 320, 640, 960, 1280, 1760, or auto
    */
@@ -28,11 +33,6 @@ const propTypes = {
    * Bounding container for the menu, will use window if no value provided.
    */
   boundingRef: PropTypes.func,
-
-  /**
-   * intl object programmatically imported through injectIntl from react-intl.
-   * */
-  intl: intlShape.isRequired,
 };
 
 class CollapsibleMenuView extends React.Component {
@@ -123,7 +123,7 @@ class CollapsibleMenuView extends React.Component {
 
   render() {
     const {
-      children, boundingRef, menuWidth, intl, ...customProps
+      children, boundingRef, intl, menuWidth, ...customProps
     } = this.props;
     const ellipsesText = intl.formatMessage({ id: 'Terra.collapsibleMenuView.more' });
     const visibleChildren = React.Children.toArray(children);

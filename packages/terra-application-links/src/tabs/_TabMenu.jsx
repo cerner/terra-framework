@@ -13,6 +13,10 @@ const propTypes = {
    */
   children: PropTypes.array,
   /**
+   * intl object programmatically imported through injectIntl from react-intl.
+   * */
+  intl: intlShape.isRequired,
+  /**
    * Should the menu be hidden, set to true if there are no hidden items.
    */
   isHidden: PropTypes.bool,
@@ -20,10 +24,6 @@ const propTypes = {
    * The location as provided by the `withRouter()` HOC.
    */
   location: PropTypes.object.isRequired,
-  /**
-   * intl object programmatically imported through injectIntl from react-intl.
-   * */
-  intl: intlShape.isRequired,
 };
 
 class TabMenu extends React.Component {
