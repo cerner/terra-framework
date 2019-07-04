@@ -10,6 +10,7 @@ Unreleased
 ### Changed
 * Removed extra inline styles.
 * Renamed test and example SCSS files to end with `.module.scss` extension
+* Updated to interface with react-intl's Intl context rather than old React Context API
 
 4.4.0 - (June 19, 2019)
 ------------------

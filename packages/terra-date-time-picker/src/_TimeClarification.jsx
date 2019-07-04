@@ -11,6 +11,10 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * intl object programmatically imported through injectIntl from react-intl.
+   * */
+  intl: intlShape.isRequired,
+  /**
    * If set to true, the modal will rendered as opened
    */
   isOpen: PropTypes.bool.isRequired,
@@ -46,10 +50,6 @@ const propTypes = {
    * Whether the clarification is disabled.
    */
   disabled: PropTypes.bool,
-  /**
-   * intl object programmatically imported through injectIntl from react-intl.
-   * */
-  intl: intlShape.isRequired,
 };
 
 const defaultProps = {

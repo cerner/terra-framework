@@ -5,9 +5,8 @@ Unreleased
 ----------
 ### Changed
 * Changed help text color to match required contrast ratio.
-
-### Changed
 * Renamed test and example SCSS files to end with `.module.scss` extension
+* Updated to interface with react-intl's Intl context rather than old React Context API
 
 4.2.0 - (June 19, 2019)
 ------------------

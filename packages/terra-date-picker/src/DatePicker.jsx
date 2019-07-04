@@ -39,6 +39,10 @@ const propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   inputAttributes: PropTypes.object,
   /**
+   * intl object programmatically imported through injectIntl from react-intl.
+   * */
+  intl: intlShape.isRequired,
+  /**
    * An ISO 8601 string representation of the maximum date that can be selected.
    */
   maxDate: PropTypes.string,
@@ -93,10 +97,6 @@ const propTypes = {
    * If both `selectedDate` and this prop are set, then `selectedDate` will have no effect.
    */
   value: PropTypes.string,
-  /**
-   * intl object programmatically imported through injectIntl from react-intl.
-   * */
-  intl: intlShape.isRequired,
 };
 
 const defaultProps = {
@@ -326,6 +326,7 @@ class DatePicker extends React.Component {
       excludeDates,
       filterDate,
       includeDates,
+      intl,
       maxDate,
       minDate,
       name,
@@ -338,7 +339,6 @@ class DatePicker extends React.Component {
       required,
       selectedDate,
       value,
-      intl,
       ...customProps
     } = this.props;
 

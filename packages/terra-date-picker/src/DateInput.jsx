@@ -20,6 +20,10 @@ const propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   inputAttributes: PropTypes.object,
   /**
+   * intl object programmatically imported through injectIntl from react-intl.
+   * */
+  intl: intlShape.isRequired,
+  /**
    * Name of the date input.
    */
   name: PropTypes.string,
@@ -59,10 +63,6 @@ const propTypes = {
    * The selected or entered date value to display in the date input.
    */
   value: PropTypes.string,
-  /**
-   * intl object programmatically imported through injectIntl from react-intl.
-   * */
-  intl: intlShape.isRequired,
 };
 
 const defaultProps = {
@@ -123,6 +123,7 @@ class DatePickerInput extends React.Component {
     const {
       buttonRefCallback,
       inputAttributes,
+      intl,
       name,
       onBlur,
       onChange,
@@ -132,7 +133,6 @@ class DatePickerInput extends React.Component {
       onKeyDown,
       placeholder,
       value,
-      intl,
       ...customProps
     } = this.props;
 
