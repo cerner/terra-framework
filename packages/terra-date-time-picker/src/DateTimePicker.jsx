@@ -204,8 +204,14 @@ class DateTimePicker extends React.Component {
       const isDateTimeValid = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
       const enteredDateTime = isDateTimeValid ? this.state.dateTime : null;
 
-      this.checkAmbiguousTime(enteredDateTime);
-      this.handleBlur(event, isDateTimeValid);
+      this.checkAmbiguousTime(enteredDateTime, () => {
+
+        // If the entered time is ambiguous then do not handle blur just yet. It should be handled _after_
+        // the Time Clarification dialog is dismissed.
+        if (!(this.state.isAmbiguousTime && this.state.isTimeClarificationOpen)) {
+          this.handleBlur(event, enteredDateTime);
+        }
+      });
     }
   }
 
@@ -223,13 +229,20 @@ class DateTimePicker extends React.Component {
         updatedDateTime = DateTimeUtils.updateTime(this.state.dateTime, this.timeValue, this.props.showSeconds);
       }
 
-      this.checkAmbiguousTime(updatedDateTime);
-      this.handleBlur(event, isDateTimeValid);
+      this.checkAmbiguousTime(updatedDateTime, () => {
+
+        // If the entered time is ambiguous then do not handle blur just yet. It should be handled _after_
+        // the Time Clarification dialog is dismissed.
+        if (!(this.state.isAmbiguousTime && this.state.isTimeClarificationOpen)) {
+          this.handleBlur(event, updatedDateTime);
+        }
+      });
     }
   }
 
-  handleBlur(event, isCompleteDateTime) {
+  handleBlur(event, momentDateTime) {
     if (this.props.onBlur) {
+      const isCompleteDateTime = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat);
       let value = '';
       if (this.dateValue) {
         value = this.dateValue.concat(' ');
@@ -242,10 +255,8 @@ class DateTimePicker extends React.Component {
       value.trim();
 
       let iSOString = '';
-      let momentDateTime;
 
       if (isCompleteDateTime) {
-        momentDateTime = DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
         iSOString = momentDateTime.format();
       }
 
@@ -268,7 +279,7 @@ class DateTimePicker extends React.Component {
     this.containerHasFocus = false;
   }
 
-  checkAmbiguousTime(dateTime) {
+  checkAmbiguousTime(dateTime, callback) {
     // To prevent multiple time clarification dialogs from rendering, ensure that it is not open before checking for the ambiguous hour.
     // One situation is when using the right arrow key to move focus from the hour input to the minute input, it will invoke onBlur and check for ambiguous hour.
     // If the hour is ambiguous, the dialog would display and steal focus from the minute input, which again will invoke onBlur and check for ambiguous hour.
@@ -286,7 +297,7 @@ class DateTimePicker extends React.Component {
     this.setState({
       isAmbiguousTime: isDateTimeAmbiguous,
       isTimeClarificationOpen: isDateTimeAmbiguous && !isOldTimeAmbiguous,
-    });
+    }, callback);
   }
 
   handleDateChange(event, date) {
@@ -462,6 +473,10 @@ class DateTimePicker extends React.Component {
       // again (unless they change the DateTime).
       this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '');
     }
+
+    // Handle blur with the new selection upon dismiss of the Time Clarification dialog.
+    this.handleBlur(event, newDateTime);
+
     this.wasOffsetButtonClicked = false;
   }
 
@@ -483,6 +498,10 @@ class DateTimePicker extends React.Component {
       // again (unless they change the DateTime).
       this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '');
     }
+
+    // Handle blur with the new selection upon dismiss of the Time Clarification dialog.
+    this.handleBlur(event, newDateTime);
+
     this.wasOffsetButtonClicked = false;
   }
 
@@ -586,7 +605,7 @@ class DateTimePicker extends React.Component {
             showSeconds={showSeconds}
           />
 
-          {this.state.isAmbiguousTime ? this.renderTimeClarification() : null }
+          {this.state.isAmbiguousTime ? this.renderTimeClarification() : null}
         </div>
       </div>
     );
