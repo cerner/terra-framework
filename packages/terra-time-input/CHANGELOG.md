@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Fixed Meridiem resets on left keyboard in firefox.
 
 4.3.0 - (July 2, 2019)
 ------------------

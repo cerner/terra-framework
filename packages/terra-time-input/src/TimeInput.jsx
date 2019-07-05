@@ -341,11 +341,13 @@ class TimeInput extends React.Component {
   }
 
   handleMeridiemChange(event) {
-    this.setState({
-      meridiem: event.target.value,
-    });
+    if (this.state.meridiemFocused) {
+      this.setState({
+        meridiem: event.target.value,
+      });
 
-    this.handleValueChange(event, TimeUtil.inputType.HOUR, this.state.hour.toString(), event.target.value);
+      this.handleValueChange(event, TimeUtil.inputType.HOUR, this.state.hour.toString(), event.target.value);
+    }
   }
 
   handleMeridiemInputFocus(event) {
