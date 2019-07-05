@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
 import KeyCode from 'keycode-js';
+import tabbable from 'tabbable';
 import 'mutationobserver-shim';
 import './_matches-polyfill';
 import 'wicg-inert';
@@ -117,11 +118,15 @@ class AbstractModal extends React.Component {
       if (!mainDocumentElement.hasAttribute('data-overlay-count')) {
         mainDocumentElement.setAttribute('data-overlay-count', '1');
         mainDocumentElement.setAttribute('inert', '');
-        // Shift focus to modal when opened
-        this.modalElement.current.focus();
       } else if (mainDocumentElement && mainDocumentElement.hasAttribute('data-overlay-count')) {
         mainDocumentElement.setAttribute('data-overlay-count', `${inert + 1}`);
-        this.modalElement.current.focus();
+      }
+      // Shift focus to first tabbable element in modal
+      if (tabbable(this.modalElement.current)[0]) {
+        tabbable(this.modalElement.current)[0].focus();
+      } else {
+        // If no focusable elements are withing the modal, shift to modal dialog begin help text
+        this.modalElement.current.querySelector('[data-terra-abstract-modal-begin]').focus();
       }
     }
   }
