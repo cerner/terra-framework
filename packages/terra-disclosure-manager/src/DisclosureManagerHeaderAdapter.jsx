@@ -1,6 +1,6 @@
 import { useLayoutEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
-import DisclosureManagerHeaderContext from './DisclosureManagerHeaderContext';
+import DisclosureManagerHeaderAdapterContext from './DisclosureManagerHeaderAdapterContext';
 
 const propTypes = {
   /**
@@ -17,10 +17,10 @@ const propTypes = {
  * A component used to register header data with the DisclosureManager.
  */
 const DisclosureManagerHeaderAdapter = ({ title, collapsibleMenuView }) => {
-  const registerHeaderData = useContext(DisclosureManagerHeaderContext);
+  const adapterContext = useContext(DisclosureManagerHeaderAdapterContext);
 
   useLayoutEffect(() => {
-    registerHeaderData({ title, collapsibleMenuView });
+    adapterContext.register({ title, collapsibleMenuView });
   }, [title, collapsibleMenuView]);
 
   return null;

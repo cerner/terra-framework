@@ -23,7 +23,9 @@ describe('DisclosureManagerHeaderAdapter', () => {
 
   it('registers the headerData upon mount and upon prop changes', () => {
     const mockRegister = jest.fn();
-    mockUseContext.mockReturnValue(mockRegister);
+    mockUseContext.mockReturnValue({
+      register: mockRegister,
+    });
 
     const testMenu1 = <div>Test 1</div>;
     let wrapper;

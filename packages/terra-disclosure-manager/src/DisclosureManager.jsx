@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DisclosureManagerDelegate from './DisclosureManagerDelegate';
 import DisclosureManagerContext from './DisclosureManagerContext';
-import DisclosureManagerHeaderContext from './DisclosureManagerHeaderContext';
+import DisclosureManagerHeaderAdapterContext from './DisclosureManagerHeaderAdapterContext';
 import DisclosureManagerHeaderAdapter from './DisclosureManagerHeaderAdapter';
 
 import withDisclosureManager from './withDisclosureManager';
@@ -45,7 +45,7 @@ const propTypes = {
   supportedDisclosureTypes: PropTypes.array,
   /**
    * A boolean indicating whether or not the DisclosureManager should handle all nested disclosure requests. When enabled, the DisclosureManager will handle all
-   * disclose requests coming from disclosured components, regardless of the preferred disclosure type.
+   * disclose requests coming from disclosed components, regardless of the preferred disclosure type.
    */
   trapNestedDisclosureRequests: PropTypes.bool,
   /**
@@ -114,17 +114,19 @@ class DisclosureManager extends React.Component {
   }
 
   generateHeaderContextValue(key) {
-    return ({ title, collapsibleMenuView }) => {
-      this.setState(state => ({
-        disclosureComponentData: {
-          ...state.disclosureComponentData,
-          ...{
-            [key]: Object.assign({}, state.disclosureComponentData[key], {
-              headerAdapterData: { title, collapsibleMenuView },
-            }),
+    return {
+      register: ({ title, collapsibleMenuView }) => {
+        this.setState(state => ({
+          disclosureComponentData: {
+            ...state.disclosureComponentData,
+            ...{
+              [key]: Object.assign({}, state.disclosureComponentData[key], {
+                headerAdapterData: { title, collapsibleMenuView },
+              }),
+            },
           },
-        },
-      }));
+        }));
+      },
     };
   }
 
@@ -477,11 +479,11 @@ class DisclosureManager extends React.Component {
 
       accumulator[key] = {
         component: (
-          <DisclosureManagerHeaderContext.Provider value={componentData.headerAdapterContextValue} key={key}>
+          <DisclosureManagerHeaderAdapterContext.Provider value={componentData.headerAdapterContextValue} key={key}>
             <DisclosureManagerContext.Provider value={disclosureComponentDelegates[index]}>
               {componentData.component}
             </DisclosureManagerContext.Provider>
-          </DisclosureManagerHeaderContext.Provider>
+          </DisclosureManagerHeaderAdapterContext.Provider>
         ),
         headerAdapterData: componentData.headerAdapterData,
       };
@@ -541,5 +543,5 @@ const disclosureManagerShape = DisclosureManagerDelegate.propType;
 
 export default withDisclosureManager(DisclosureManager);
 export {
-  withDisclosureManager, disclosureManagerShape, DisclosureManagerContext, DisclosureManagerDelegate, DisclosureManagerHeaderContext, DisclosureManagerHeaderAdapter,
+  withDisclosureManager, disclosureManagerShape, DisclosureManagerContext, DisclosureManagerDelegate, DisclosureManagerHeaderAdapterContext, DisclosureManagerHeaderAdapter,
 };

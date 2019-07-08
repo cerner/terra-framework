@@ -23,6 +23,16 @@ The DisclosureManager does not implement a traditional render function. A `rende
 |`disclosure`|An Object containing data relative to the components in the disclosure stack.|
 |`dismissPresentedComponent`|A function that pops the currently disclosed component off the disclosure stack.|
 |`closeDisclosure`|A function that closes the disclosure and removes all components from the disclosure stack.|
+|`maximizeDisclosure`|A function that will maximize the disclosure size. If the disclosure cannot be maximized, or if it is already maximized, the function is not provided.|
+|`minimizeDisclosure`|A function that will minimize the disclosure size. If the disclosure cannot be minimized, or if it is already minimized, the function is not provided.|
+|`disclosureComponentKeys`|An array of keys representing the components in the disclosure stack.|
+|`disclosureComponentData`|An Object containing components and associated data representing the state of disclosure stack.|
+
+`disclosureComponentData` Object API:
+|Key|Value|
+|---|---|
+|`component`|A component that has been wrapped with the DisclosureManager-provided contexts.|
+|`headerAdapterData`|An Object containing the header data for the associated component.|
 
 `children` Object API:
 
@@ -40,8 +50,11 @@ The DisclosureManager does not implement a traditional render function. A `rende
 |`isMaximized`|A boolean indicating the current maximize state of the DisclosureManager.|
 |`size`|The String size of the disclosure.|
 
+> Note: The `isFocused` value has little relevance now that Terra's AbstractModal and other components directly manage their own focus state. `isFocused` will be removed from the DisclosureManager API in a future major release.
+
 Example (using the Modal and SlideGroup):
-```javascript
+
+```jsx
 <DisclosureManager
   supportedDisclosureTypes={['modal']}
   render={(manager) => (
@@ -70,6 +83,56 @@ Example (using the Modal and SlideGroup):
 ### Interacting with the Disclosure Manager
 
 The DisclosureManager wraps its contents in a context provider that exposes an instance of a DisclosureManagerDelegate, an object containing DisclosureManager APIs, to components based upon their presented location. 
+
+#### DisclosureManagerContext
+
+The DisclosureManagerContext can be used directly to access the available DisclosureManager APIs.
+
+```jsx
+import Base from 'terra-base';
+import ModalManager from 'terra-modal-manager'; 
+import { DisclosureManagerContext } from 'terra-disclosure-manager';
+
+const MyDisclosureComponent = () => {
+  const disclosureManager = React.useContext(DisclosureManagerContext);
+
+  return (
+    <Button
+      text="Close Modal"
+      onClick={() => { 
+        disclosureManager.closeDisclosure();
+      }}
+    />
+  );
+};
+
+const MyComponent = () => {
+  const disclosureManager = React.useContext(DisclosureManagerContext);
+
+  return (
+    <Button
+      text="Launch Modal"
+      onClick={() => { 
+        disclosureManager.disclose({
+          preferredType: 'modal',
+          content: {
+            key: 'MY-MODAL-DISCLOSURE',
+            component: <MyDisclosureComponent />,
+          }
+        });
+      }}
+    />
+  );
+};
+
+const MyApp = () => (
+  <Base locale="en">
+    <ModalManager>
+      <MyComponent />
+    </ModalManager>
+  </Base>
+)
+```
 
 #### withDisclosureManager
 
@@ -117,6 +180,43 @@ const MyApp = () => (
     </ModalManager>
   </Base>
 )
+```
+
+#### DisclosureManagerHeaderAdapter
+
+All implementations of the DisclosureManager should render a header containing controls for the various disclosure management actions (close, back, maximize/minimize, etc.). The DisclosureManagerHeaderAdapter can be rendered by the disclosed content to inject their own component-specific contents into that header.
+
+If a DisclosureManagerHeaderAdapter is **not** rendered by the disclosed component, the disclosed component should render its own header. In this scenario, the disclosed component would be responsible for rendering the appropriate actions. The ActionHeader component is recommended for this purpose.
+
+`DisclosureManagerHeaderAdapter` Props:
+
+|Prop|Is Required|Description|
+|---|---|---|
+|`title`|optional|A string to render as the header's title.|
+|`collapsibleMenuView`|optional|A CollapsibleMenuView component to render within the header.|
+
+```jsx
+import { DisclosureManagerContext, DisclosureManagerHeaderAdapter } from 'terra-disclosure-manager';
+import CollapsibleMenuView from 'terra-collapsible-menu-view';
+
+const MyDisclosureComponent = () => {
+  const disclosureManager = React.useContext(DisclosureManagerContext);
+
+  return (
+    <React.Fragment>
+      <DisclosureManagerHeaderAdapter
+        title="My Disclosure Component"
+        collapsibleMenuView={<CollapsibleMenuView ... />}
+      />
+      <Button
+        text="Close Modal"
+        onClick={() => { 
+          disclosureManager.closeDisclosure();
+        }}
+      />
+    </React.Fragment>
+  );
+};
 ```
 
 #### Children
