@@ -22,13 +22,13 @@
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "devDependencies": {
-    "terra-application": "^0.0.0"
+    "terra-application": "^1.0.0"
   },
   "peerDependencies": {
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-intl": "^2.4.0",
-    "terra-application": "^0.0.0"
+    "terra-application": "^1.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
