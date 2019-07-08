@@ -289,13 +289,19 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
 
   describe('Component Integration', () => {
     before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-integration'));
+    // Disable rule until the following issue is resolved in terra-core:
+    // https://github.com/cerner/terra-core/issues/2505
+    const ignoredA11y = {
+      'aria-input-field-name': { enabled: false },
+    };
+
     describe('Select Field in Modal Manager', () => {
       it('Select Field in Modal Manager', () => {
         browser.click('#root-component .disclose-small');
 
         browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
         browser.click('[role="dialog"] [data-terra-select]');
-        Terra.validates.element({ selector });
+        Terra.validates.element({ selector, axeRules: { rules: ignoredA11y }});
         browser.keys(['Escape', 'Escape']);
       });
     });

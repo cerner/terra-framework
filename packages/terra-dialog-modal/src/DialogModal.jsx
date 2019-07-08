@@ -83,7 +83,9 @@ const DialogModal = (props) => {
       <div {...customProps} className={cx('dialog-modal-inner-wrapper', customProps.className)}>
         <div className={cx('dialog-modal-container')}>
           <div>{header}</div>
-          <div className={cx('dialog-modal-body')}>{children}</div>
+          {// Usage of tabIndex="0" to allow users to focus on potentially scrollable content
+           /* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
+          <div className={cx('dialog-modal-body')} tabIndex="0">{children}</div>
           <div>{footer}</div>
         </div>
       </div>

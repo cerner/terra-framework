@@ -55,15 +55,20 @@ class PopupOverlay extends React.Component {
 
     return (
       <React.Fragment>
-        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+        {
+          // Usage of tabIndex="0" to allow users to focus on potentially scrollable content
+          /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */
+        }
         <div
           onClick={this.handleOnClick}
           {...customProps}
           className={cx(['popup-overlay', customProps.className])}
+          tabIndex="0"
         >
           <div className={cx('inner')} />
           {children}
         </div>
+        {/* eslint-enable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */}
       </React.Fragment>
     );
   }

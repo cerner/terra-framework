@@ -96,18 +96,20 @@ class SlidePanel extends React.Component {
       { fill },
       customProps.className,
     ]);
-
+    // Usage of tabIndex="0" to allow users to focus on potentially scrollable content
+    /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
     const panelDiv = (
-      <div className={cx(['panel'])} tabIndex="-1" aria-hidden={!isOpen ? 'true' : 'false'} ref={this.setPanelNode}>
+      <div className={cx(['panel'])} tabIndex="0" aria-hidden={!isOpen ? 'true' : 'false'} ref={this.setPanelNode}>
         {panelContent}
       </div>
     );
 
     const mainDiv = (
-      <div className={cx('main')} tabIndex="-1" ref={this.mainNode}>
+      <div className={cx('main')} tabIndex="0" ref={this.mainNode}>
         {mainContent}
       </div>
     );
+    /* eslint-enable jsx-a11y/no-noninteractive-tabindex */
 
     const content = (panelPosition === SlidePanelPositions.START) ? (
       <React.Fragment>
