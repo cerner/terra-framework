@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.18.0 - (July 2, 2019)
+------------------
 ### Changed
 * Renamed test and example SCSS files to end with `.module.scss` extension
 

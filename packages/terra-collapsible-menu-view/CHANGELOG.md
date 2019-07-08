@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+6.4.0 - (July 2, 2019)
+------------------
 ### Fixed
 * Fixed issue with accessibility roles in list view in popup menu
 

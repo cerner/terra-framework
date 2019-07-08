@@ -8,12 +8,16 @@
 | resize-observer-polyfill | ^1.4.1 | -- | A polyfill for the Resize Observer API |
 | terra-button | ^3.3.0 | ^16.8.5 | The terra-button component provides users a way to trigger actions in the UI. |
 | terra-button-group | ^3.0.0 | ^16.8.5 | The Terra Button Group component groups buttons and can maintain a toggle selection state. |
-| terra-doc-template | ^2.2.0 | ^16.8.5 | Provides an adjustable template for documentation pages. |
 | terra-form | ^2.10.0 | ^16.2.0 | Components for building forms |
-| terra-icon | ^3.1.0 | ^16.8.5 | The terra-icon component is used to visually represent a literal or symbolic object intended to initiate an action, communicate a status, or navigate the workflow. |
 | terra-list | ^4.0.0 | ^16.8.5 | The Terra List is a structural component to arrange content within list/listitems. |
-| terra-menu | ^5.8.0 | ^16.8.5 | The menu is a popup component that displays a list of items, item groups, and dividers. Menu Items can be actionable, have toggle-style selection, or have nested submenu items. Menu Item groups are a single-select grouping of menu items. The Menu will determine the height of the popup based on the number of items in the main menu. |
+| terra-menu | ^6.4.0 | ^16.8.5 | The menu is a popup component that displays a list of items, item groups, and dividers. Menu Items can be actionable, have toggle-style selection, or have nested submenu items. Menu Item groups are a single-select grouping of menu items. The Menu will determine the height of the popup based on the number of items in the main menu. |
 | terra-mixins | ^1.0.0 | -- | The terra-mixins component supplies global mixins for use throughout the Terra ecosystem. |
+
+## devDependencies
+| Dependency | Version | React Version | Description |
+|-|-|-|-|
+| terra-doc-template | ^2.2.0 | ^16.8.5 | Provides an adjustable template for documentation pages. |
+| terra-icon | ^3.1.0 | ^16.8.5 | The terra-icon component is used to visually represent a literal or symbolic object intended to initiate an action, communicate a status, or navigate the workflow. |
 
 ## peerDependencies
 | Dependency | Version | React Version | Description |

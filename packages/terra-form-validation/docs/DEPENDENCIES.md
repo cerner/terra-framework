@@ -1,12 +1,11 @@
 # Dependency Information
 
-## dependencies
+## devDependencies
 | Dependency | Version | React Version | Description |
 |-|-|-|-|
-| classnames | ^2.2.5 | -- | A simple utility for conditionally joining classNames together |
 | final-form | ^4.6.0 | -- | 🏁 Framework agnostic, high performance, subscription-based form state management |
 | prop-types | ^15.5.8 | -- | Runtime type checking for React props and similar objects. |
-| react-final-form | ^3.3.1 | ^15.3.0 \|\| ^16.0.0-0 | 🏁 High performance subscription-based form state management for React |
+| react-final-form | >=5.0.2 <7.0.0 | ^16.8.0 | 🏁 High performance subscription-based form state management for React |
 | terra-button | ^3.3.0 | ^16.8.5 | The terra-button component provides users a way to trigger actions in the UI. |
 | terra-date-picker | ^3.0.0 | ^16.8.5 | The terra-date-picker component provides users a way to enter or select a date from the date picker. |
 | terra-doc-template | ^2.2.0 | ^16.8.5 | Provides an adjustable template for documentation pages. |
@@ -22,5 +21,7 @@
 ## peerDependencies
 | Dependency | Version | React Version | Description |
 |-|-|-|-|
+| final-form | ^4.6.0 | -- | 🏁 Framework agnostic, high performance, subscription-based form state management |
 | react | ^16.8.5 | -- | React is a JavaScript library for building user interfaces. |
 | react-dom | ^16.8.5 | ^16.0.0 | React package for working with the DOM. |
+| react-final-form | >=5.0.2 <7.0.0 | ^16.8.0 | 🏁 High performance subscription-based form state management for React |
