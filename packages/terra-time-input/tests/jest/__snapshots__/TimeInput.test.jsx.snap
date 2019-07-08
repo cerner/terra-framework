@@ -3,33 +3,6 @@
 exports[`should ignore invalid times properly 1`] = `
 <div
   className="time-input"
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
 >
   <input
     name="time-input"
@@ -357,10 +330,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
 `;
 
 exports[`should pass in refCallback as the ref prop of the hour input element 1`] = `
-<TimeInput
-  disabled={false}
-  hourAttributes={Object {}}
-  inputAttributes={Object {}}
+<InjectIntl(TimeInput)
   intl={
     Object {
       "defaultFormats": Object {},
@@ -388,10 +358,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
       "timeZone": null,
     }
   }
-  minuteAttributes={Object {}}
   name="time-input"
-  onBlur={null}
-  onChange={null}
   refCallback={
     [MockFunction] {
       "calls": Array [
@@ -417,10 +384,11 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
       ],
     }
   }
-  variant="24-hour"
 >
-  <div
-    className="time-input"
+  <TimeInput
+    disabled={false}
+    hourAttributes={Object {}}
+    inputAttributes={Object {}}
     intl={
       Object {
         "defaultFormats": Object {},
@@ -448,35 +416,50 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
         "timeZone": null,
       }
     }
+    minuteAttributes={Object {}}
+    name="time-input"
+    onBlur={null}
+    onChange={null}
+    refCallback={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            <input
+              aria-label="Terra.timeInput.hours"
+              class="form-input time-input-hour desktop"
+              maxlength="2"
+              name="terra-time-hour-time-input"
+              pattern="\\\\d*"
+              placeholder="Terra.timeInput.hh"
+              size="2"
+              type="text"
+              value=""
+            />,
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+    variant="24-hour"
   >
-    <input
-      name="time-input"
-      type="hidden"
-      value=""
-    />
-    <Input
-      aria-label="Terra.timeInput.hours"
-      className="time-input-hour desktop"
-      disabled={false}
-      isInvalid={false}
-      maxLength="2"
-      name="terra-time-hour-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      placeholder="Terra.timeInput.hh"
-      refCallback={[Function]}
-      required={false}
-      size="2"
-      type="text"
-      value=""
+    <div
+      className="time-input"
     >
       <input
+        name="time-input"
+        type="hidden"
+        value=""
+      />
+      <Input
         aria-label="Terra.timeInput.hours"
-        className="form-input time-input-hour desktop"
+        className="time-input-hour desktop"
         disabled={false}
+        isInvalid={false}
         maxLength="2"
         name="terra-time-hour-time-input"
         onBlur={[Function]}
@@ -485,40 +468,40 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
         onKeyDown={[Function]}
         pattern="\\\\d*"
         placeholder="Terra.timeInput.hh"
+        refCallback={[Function]}
         required={false}
         size="2"
         type="text"
         value=""
-      />
-    </Input>
-    <span
-      className="time-spacer"
-    >
-      :
-    </span>
-    <Input
-      aria-label="Terra.timeInput.minutes"
-      className="time-input-minute desktop"
-      disabled={false}
-      isInvalid={false}
-      maxLength="2"
-      name="terra-time-minute-time-input"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      pattern="\\\\d*"
-      placeholder="Terra.timeInput.mm"
-      refCallback={[Function]}
-      required={false}
-      size="2"
-      type="text"
-      value=""
-    >
-      <input
+      >
+        <input
+          aria-label="Terra.timeInput.hours"
+          className="form-input time-input-hour desktop"
+          disabled={false}
+          maxLength="2"
+          name="terra-time-hour-time-input"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          pattern="\\\\d*"
+          placeholder="Terra.timeInput.hh"
+          required={false}
+          size="2"
+          type="text"
+          value=""
+        />
+      </Input>
+      <span
+        className="time-spacer"
+      >
+        :
+      </span>
+      <Input
         aria-label="Terra.timeInput.minutes"
-        className="form-input time-input-minute desktop"
+        className="time-input-minute desktop"
         disabled={false}
+        isInvalid={false}
         maxLength="2"
         name="terra-time-minute-time-input"
         onBlur={[Function]}
@@ -527,20 +510,38 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
         onKeyDown={[Function]}
         pattern="\\\\d*"
         placeholder="Terra.timeInput.mm"
+        refCallback={[Function]}
         required={false}
         size="2"
         type="text"
         value=""
-      />
-    </Input>
-  </div>
-</TimeInput>
+      >
+        <input
+          aria-label="Terra.timeInput.minutes"
+          className="form-input time-input-minute desktop"
+          disabled={false}
+          maxLength="2"
+          name="terra-time-minute-time-input"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          pattern="\\\\d*"
+          placeholder="Terra.timeInput.mm"
+          required={false}
+          size="2"
+          type="text"
+          value=""
+        />
+      </Input>
+    </div>
+  </TimeInput>
+</InjectIntl(TimeInput)>
 `;
 
 exports[`should render a 12 hour timepicker meridiem with buttons when viewed on a mobile device 1`] = `
 <div
   class="mobile-time-picker"
-  intl="[object Object]"
 >
   <input
     name="time-input"
@@ -633,7 +634,6 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
 exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
 <div
   class="mobile-time-picker"
-  intl="[object Object]"
 >
   <input
     name="time-input"
@@ -691,33 +691,6 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
 exports[`should render a default time input 1`] = `
 <div
   className="time-input"
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
 >
   <input
     name="time-input"
@@ -773,33 +746,6 @@ exports[`should render a default time input 1`] = `
 exports[`should render a disabled time input 1`] = `
 <div
   className="disabled time-input"
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
 >
   <input
     name="time-input"
@@ -855,33 +801,6 @@ exports[`should render a disabled time input 1`] = `
 exports[`should render a time input with 12 hour clock set 1`] = `
 <div
   className="time-input"
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
 >
   <input
     name="time-input"
@@ -981,33 +900,6 @@ exports[`should render a time input with 12 hour clock set 1`] = `
 exports[`should render a time input with a default time 1`] = `
 <div
   className="time-input"
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
 >
   <input
     name="time-input"
@@ -1063,33 +955,6 @@ exports[`should render a time input with a default time 1`] = `
 exports[`should render a time input with custom attributes 1`] = `
 <div
   className="time-input"
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
 >
   <input
     name="time-input"
@@ -1147,33 +1012,6 @@ exports[`should render a time input with custom attributes 1`] = `
 exports[`should render a time input with onBlur 1`] = `
 <div
   className="time-input"
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
 >
   <input
     name="time-input"
@@ -1229,33 +1067,6 @@ exports[`should render a time input with onBlur 1`] = `
 exports[`should render a time input with onChange 1`] = `
 <div
   className="time-input"
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
 >
   <input
     name="time-input"
@@ -1311,33 +1122,6 @@ exports[`should render a time input with onChange 1`] = `
 exports[`should render a time input with onFocus 1`] = `
 <div
   className="time-input"
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
 >
   <input
     name="time-input"
@@ -1393,7 +1177,6 @@ exports[`should render a time input with onFocus 1`] = `
 exports[`should set the labels with the correct htmlFor a 24 hour timepicker properly on mobile devices 1`] = `
 <div
   class="mobile-time-picker"
-  intl="[object Object]"
 >
   <input
     name="time-input"
