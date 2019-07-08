@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import ThemeProvider from 'terra-theme-provider/lib/ThemeProvider';
 import MockThemeComponent from 'terra-theme-provider/lib/terra-dev-site/doc/example/MockThemeComponent';
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
-import styles from './DefaultThemeProvider.scss';
+import styles from './DefaultThemeProvider.module.scss';
 
 const cx = classNames.bind(styles);
 

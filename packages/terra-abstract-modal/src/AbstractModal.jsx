@@ -4,17 +4,8 @@ import { Portal } from 'react-portal';
 import KeyCode from 'keycode-js';
 import 'mutationobserver-shim';
 import './_matches-polyfill';
+import 'wicg-inert';
 import ModalContent from './_ModalContent';
-
-// Importing WICG Inert polyfill causes Jest to crash
-// Issue logged to Jest repo: https://github.com/facebook/jest/issues/8373
-// This logic avoids importing the polyfill when running Jest tests
-// It also checks to make sure not to load the inert polyfill if it has already been defined
-// eslint-disable-next-line no-prototype-builtins
-if (process.env.NODE_ENV !== 'test' && !Element.prototype.hasOwnProperty('inert')) {
-  // eslint-disable-next-line global-require
-  require('wicg-inert');
-}
 
 const zIndexes = ['6000', '7000', '8000', '9000'];
 
@@ -121,9 +112,17 @@ class AbstractModal extends React.Component {
     this.setState({ modalTrigger: document.activeElement });
 
     if (mainDocumentElement) {
-      mainDocumentElement.setAttribute('inert', '');
-      // Shift focus to modal when opened
-      this.modalElement.current.focus();
+      const inert = +mainDocumentElement.dataset.overlayCount;
+
+      if (!mainDocumentElement.hasAttribute('data-overlay-count')) {
+        mainDocumentElement.setAttribute('data-overlay-count', '1');
+        mainDocumentElement.setAttribute('inert', '');
+        // Shift focus to modal when opened
+        this.modalElement.current.focus();
+      } else if (mainDocumentElement && mainDocumentElement.hasAttribute('data-overlay-count')) {
+        mainDocumentElement.setAttribute('data-overlay-count', `${inert + 1}`);
+        this.modalElement.current.focus();
+      }
     }
   }
 
@@ -131,7 +130,14 @@ class AbstractModal extends React.Component {
     const mainDocumentElement = document.querySelector(this.props.rootSelector);
 
     if (mainDocumentElement) {
-      mainDocumentElement.removeAttribute('inert');
+      const inert = +mainDocumentElement.dataset.overlayCount;
+
+      if (inert === 1) {
+        mainDocumentElement.removeAttribute('data-overlay-count');
+        mainDocumentElement.removeAttribute('inert');
+      } else if (inert && inert > 1) {
+        mainDocumentElement.setAttribute('data-overlay-count', `${inert - 1}`);
+      }
     }
 
     setTimeout(() => {

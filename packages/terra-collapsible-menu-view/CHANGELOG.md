@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+6.4.0 - (July 2, 2019)
+------------------
 ### Fixed
 * Fixed Collapsible issue for single item group
 

@@ -4,6 +4,13 @@ ChangeLog
 Unreleased
 ----------
 
+4.5.0 - (July 2, 2019)
+------------------
+### Changed
+* Screenshots updated for mobile view.
+* Update wdio test to work with changes in terra-date-picker
+* Renamed test and example SCSS files to end with `.module.scss` extension
+
 4.4.0 - (June 19, 2019)
 ------------------
 ### Changed

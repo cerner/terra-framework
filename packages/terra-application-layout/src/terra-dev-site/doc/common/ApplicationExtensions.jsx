@@ -5,7 +5,7 @@ import IconSettings from 'terra-icon/lib/icon/IconSettings';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
 import IconFeaturedOutline from 'terra-icon/lib/icon/IconFeaturedOutline';
 import classNames from 'classnames/bind';
-import styles from './ApplicationExtensions.scss';
+import styles from './ApplicationExtensions.module.scss';
 
 import ExtensionsDisclosure from './ExtensionsDisclosure';
 import { Utils } from '../../../ApplicationLayout';

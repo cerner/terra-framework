@@ -4,6 +4,13 @@ Changelog
 Unreleased
 ----------
 
+2.11.0 - (July 2, 2019)
+------------------
+### Changed
+* Renamed test and example SCSS files to end with `.module.scss` extension
+* Support JAWS and Voiceover on menu item selection.
+* Add translations for "selected" string announced by screenreaders
+
 2.10.0 - (June 19, 2019)
 ------------------
 ### Changed

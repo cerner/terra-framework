@@ -3,8 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+5.5.0 - (July 2, 2019)
+------------------
 ### Changed
 * Removed all inline styles from Dev-site components and implemented the same styles using external css.
+* Renamed test and example SCSS files to end with `.module.scss` extension
 
 5.4.0 - (June 19, 2019)
 ------------------

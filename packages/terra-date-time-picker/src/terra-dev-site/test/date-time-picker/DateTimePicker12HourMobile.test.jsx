@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import DateTimePickerExampleTemplate from '../../common/DateTimePickerExampleTemplate';
 import DateTimeUtil from '../../../DateTimeUtils';
-import styles from './DateTimePicker12HourMobile.test.scss';
+import styles from './DateTimePicker12HourMobile.test.module.scss';
 
 const cx = classNames.bind(styles);
 

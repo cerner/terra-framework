@@ -1,100 +1,143 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Layout should render a NavigationSideMenu with a toolbar 1`] = `
-<ContentContainer
-  className="side-menu-content-container"
-  fill={true}
-  header={
-    <React.Fragment>
-      <ActionHeader
-        className="side-menu-action-header"
-        data-navigation-side-menu-action-header={true}
-        level={1}
-        onBack={[MockFunction]}
-        title={null}
-      />
-      <div>
-        Toolbar
-      </div>
-    </React.Fragment>
+<NavigationSideMenu
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  menuItems={Array []}
+  onChange={[MockFunction]}
+  routingStackBack={[MockFunction]}
+  selectedMenuKey=""
+  toolbar={
+    <div>
+      Toolbar
+    </div>
   }
 />
 `;
 
 exports[`Layout should render a NavigationSideMenu with default props 1`] = `
-<ContentContainer
-  className="side-menu-content-container"
-  fill={true}
-  header={
-    <React.Fragment>
-      <ActionHeader
-        className="side-menu-action-header"
-        data-navigation-side-menu-action-header={true}
-        level={1}
-        onBack={[Function]}
-        title={null}
-      />
-    </React.Fragment>
+<NavigationSideMenu
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
   }
+  menuItems={Array []}
+  onChange={[Function]}
+  routingStackBack={[Function]}
+  selectedMenuKey=""
 />
 `;
 
 exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
-<ContentContainer
-  className="side-menu-content-container"
-  fill={true}
-  header={
-    <React.Fragment>
-      <ActionHeader
-        className="side-menu-action-header"
-        data-navigation-side-menu-action-header={true}
-        level={1}
-        onBack={[Function]}
-        title="Test Menu"
-      />
-    </React.Fragment>
+<NavigationSideMenu
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
   }
->
-  <nav
-    role="navigation"
-  >
-    <ul
-      className="side-menu-list"
-      role="listbox"
-    >
-      <MenuItem
-        data-menu-item="test1"
-        isSelected={false}
-        key="test1"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        text="Test Menu 1"
-      />
-      <MenuItem
-        data-menu-item="test2"
-        isSelected={false}
-        key="test2"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        text="Test Menu 2"
-      />
-      <MenuItem
-        data-menu-item="test3"
-        isSelected={false}
-        key="test3"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        text="Test Menu 3"
-      />
-      <MenuItem
-        data-menu-item="test4"
-        isSelected={false}
-        key="test4"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        text="Test Menu 4"
-      />
-    </ul>
-  </nav>
-</ContentContainer>
+  menuItems={
+    Array [
+      Object {
+        "childKeys": Array [
+          "test1",
+          "test2",
+          "test3",
+          "test4",
+        ],
+        "key": "menu",
+        "text": "Test Menu",
+      },
+      Object {
+        "key": "test1",
+        "text": "Test Menu 1",
+      },
+      Object {
+        "key": "test2",
+        "text": "Test Menu 2",
+      },
+      Object {
+        "key": "test3",
+        "text": "Test Menu 3",
+      },
+      Object {
+        "key": "test4",
+        "text": "Test Menu 4",
+      },
+    ]
+  }
+  onChange={[Function]}
+  routingStackBack={[Function]}
+  selectedMenuKey="menu"
+/>
 `;

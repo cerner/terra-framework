@@ -410,3 +410,26 @@ export function getHightLightDaysMap (
 
   return dateClasses
 }
+
+/**
+ * Gets the localized date in the long month/day/year format (i.e; January 15, 2019). 
+ * If the date is disabled, the translated string for Disabled is appended to the date string.
+ * @param {Moment} date - The moment date to get the localized string.
+ * @param {Object} props - The date props.
+ * @return {string} - The localized date string. The string is empty if date is null or invalid.
+ */
+export function getLocalizedDateForScreenReader (date, props) {
+  const { intl, locale } = props;
+  let localizedDateLabel = '';
+  
+  if (date && date.isValid()) {
+    const localizedDate = localizeDate(date, locale);
+    localizedDateLabel = localizedDate.format('LL');
+
+    if (intl && isDayDisabled(date, props)) {
+      localizedDateLabel = localizedDateLabel.concat(' ', intl.formatMessage({ id: 'Terra.datePicker.disabled' }));
+    } 
+  }
+
+  return localizedDateLabel;
+}

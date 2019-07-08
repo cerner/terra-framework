@@ -4,6 +4,12 @@ Changelog
 Unreleased
 ----------
 
+4.3.0 - (July 2, 2019)
+------------------
+### Changed
+* Changed help text color to match required contrast ratio.
+* Renamed test and example SCSS files to end with `.module.scss` extension
+
 4.2.0 - (June 19, 2019)
 ------------------
 ### Changed
