@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.5.0 - (July 2, 2019)
+------------------
 ### Changed
 * Screenshots updated for mobile view.
 * Update wdio test to work with changes in terra-date-picker
