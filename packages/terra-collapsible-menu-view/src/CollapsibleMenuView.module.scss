@@ -39,6 +39,7 @@
 
     .control {
       margin: 0;
+      margin-left: var(--terra-collapsible-menu-view-control-margin-left, 0.10141rem);
     }
 
     .is-disabled {
