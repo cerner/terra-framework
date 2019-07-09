@@ -3,10 +3,17 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added visually hidden text to better indicate beginning and ending of modal dialog
+* Added translations for visually hidden text that indicates beginning and end of modal dialog
+
 ### Fixed
 * Added `data-overlay-count` attribute to root document when overlay is opened
 * Added check for `data-modal-count` attribute on root document to track opening and closing of overlays and modals,
   to prevent the removal of the `inert` attribute from the root element if another overlay or abstract modal exists.
+
+### Changed
+* When the abstract modal is open, it will now focus on the first interactive DOM element within it. This enables focus to be shifted into the modal correctly when using VoiceOver on iOS.
 
 3.4.0 - (July 2, 2019)
 ------------------

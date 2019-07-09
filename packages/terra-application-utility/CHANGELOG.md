@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Fixed issue where on compact viewports, the virtual indicator displayed when using VoiceOver on iOS was not shifting into the application utility menu modal when it opened
 
 2.14.0 - (July 2, 2019)
 ------------------
