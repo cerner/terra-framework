@@ -14,7 +14,7 @@ import ApplicationMenu from 'terra-application-layout/lib/terra-dev-site/doc/com
 import UtilityOption from 'terra-application-layout/lib/terra-dev-site/doc/common/UtilityOption';
 import ApplicationExtensions from 'terra-application-layout/lib/terra-dev-site/doc/common/ApplicationExtensions';
 import ProfilePicture from 'terra-application-layout/lib/terra-dev-site/doc/common/henry.jpg';
-import styles from './ApplicationLayoutExampleCommon.scss';
+import styles from './ApplicationLayoutExampleCommon.module.scss';
 /* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 const cx = classNames.bind(styles);

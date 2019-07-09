@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import Tabs from '../../../../Tabs';
 import TabContent from './TabContentTemplate';
-import styles from './TabsTemplate.scss';
+import styles from './TabsTemplate.module.scss';
 
 const cx = classNames.bind(styles);
 

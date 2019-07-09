@@ -10,7 +10,7 @@ import {
 } from 'terra-disclosure-manager';
 import DisclosureComponent from './DisclosureComponent';
 
-import styles from './example-styles.scss';
+import styles from './example-styles.module.scss';
 
 const cx = classNames.bind(styles);
 

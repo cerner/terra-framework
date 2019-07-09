@@ -3,6 +3,16 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Added `data-overlay-count` attribute to root document when overlay is opened
+* Added check for `data-modal-count` attribute on root document to track opening and closing of overlays and modals,
+  to prevent the removal of the `inert` attribute from the root element if another overlay or abstract modal exists.
+
+3.4.0 - (July 2, 2019)
+------------------
+### Changed
+* Renamed test and example SCSS files to end with `.module.scss` extension
+* Removed conditional logic required to import wicg-inert polyfill
 
 3.3.0 - (June 19, 2019)
 ------------------

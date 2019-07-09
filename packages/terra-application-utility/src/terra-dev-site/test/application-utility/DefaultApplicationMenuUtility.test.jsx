@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import MockConfig from '../../doc/common/MockConfig';
 import FallbackAvatar from '../../doc/common/FallbackAvatar.svg';
 import { ApplicationMenuUtility, UtilityUtils } from '../../../ApplicationUtility';
-import styles from './ApplicationUtilityTestCommon.scss';
+import styles from './ApplicationUtilityTestCommon.module.scss';
 
 const cx = classNames.bind(styles);
 

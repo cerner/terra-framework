@@ -3,8 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+3.8.0 - (July 2, 2019)
+------------------
 ### Changed
 * Removed extra inline styles.
+* Renamed test and example SCSS files to end with `.module.scss` extension
 
 3.7.0 - (June 19, 2019)
 ------------------

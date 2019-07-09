@@ -4,6 +4,15 @@ Changelog
 Unreleased
 ----------
 
+3.4.0 - (July 2, 2019)
+------------------
+### Fixed
+* Updated max-width to be `800px` for screen size greater than 768px.
+
+### Changed
+* Update the modal manager test example to not test accessibility for elements behind an overlay
+* Renamed test and example SCSS files to end with `.module.scss` extension
+
 3.3.0 - (June 19, 2019)
 ------------------
 ### Changed

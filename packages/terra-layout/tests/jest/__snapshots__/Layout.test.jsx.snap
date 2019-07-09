@@ -27,13 +27,9 @@ exports[`Layout Menu Disabled should render a Layout when huge 1`] = `
     size="huge"
   >
     <ContentContainer
+      className="content-container"
       fill={true}
       header={false}
-      style={
-        Object {
-          "outline": "none",
-        }
-      }
     >
       <div
         layoutConfig={
@@ -78,13 +74,9 @@ exports[`Layout Menu Disabled should render a Layout when large 1`] = `
     size="large"
   >
     <ContentContainer
+      className="content-container"
       fill={true}
       header={false}
-      style={
-        Object {
-          "outline": "none",
-        }
-      }
     >
       <div
         layoutConfig={
@@ -129,13 +121,9 @@ exports[`Layout Menu Disabled should render a Layout when medium 1`] = `
     size="medium"
   >
     <ContentContainer
+      className="content-container"
       fill={true}
       header={false}
-      style={
-        Object {
-          "outline": "none",
-        }
-      }
     >
       <div
         layoutConfig={
@@ -168,6 +156,7 @@ exports[`Layout Menu Disabled should render a Layout when small 1`] = `
     size="small"
   >
     <ContentContainer
+      className="content-container"
       fill={true}
       header={
         <div
@@ -181,11 +170,6 @@ exports[`Layout Menu Disabled should render a Layout when small 1`] = `
         >
           Test Header
         </div>
-      }
-      style={
-        Object {
-          "outline": "none",
-        }
       }
     >
       <div
@@ -219,6 +203,7 @@ exports[`Layout Menu Disabled should render a Layout when tiny 1`] = `
     size="tiny"
   >
     <ContentContainer
+      className="content-container"
       fill={true}
       header={
         <div
@@ -232,11 +217,6 @@ exports[`Layout Menu Disabled should render a Layout when tiny 1`] = `
         >
           Test Header
         </div>
-      }
-      style={
-        Object {
-          "outline": "none",
-        }
       }
     >
       <div
@@ -296,13 +276,9 @@ exports[`Layout Menu Enabled should render a Layout when huge 1`] = `
     toggleText="Menu Text"
   >
     <ContentContainer
+      className="content-container"
       fill={true}
       header={false}
-      style={
-        Object {
-          "outline": "none",
-        }
-      }
     >
       <div
         layoutConfig={
@@ -361,13 +337,9 @@ exports[`Layout Menu Enabled should render a Layout when large 1`] = `
     toggleText="Menu Text"
   >
     <ContentContainer
+      className="content-container"
       fill={true}
       header={false}
-      style={
-        Object {
-          "outline": "none",
-        }
-      }
     >
       <div
         layoutConfig={
@@ -426,13 +398,9 @@ exports[`Layout Menu Enabled should render a Layout when medium 1`] = `
     toggleText="Menu Text"
   >
     <ContentContainer
+      className="content-container"
       fill={true}
       header={false}
-      style={
-        Object {
-          "outline": "none",
-        }
-      }
     >
       <div
         layoutConfig={
@@ -479,6 +447,7 @@ exports[`Layout Menu Enabled should render a Layout when small 1`] = `
     toggleText="Menu Text"
   >
     <ContentContainer
+      className="content-container"
       fill={true}
       header={
         <div
@@ -492,11 +461,6 @@ exports[`Layout Menu Enabled should render a Layout when small 1`] = `
         >
           Test Header
         </div>
-      }
-      style={
-        Object {
-          "outline": "none",
-        }
       }
     >
       <div
@@ -544,6 +508,7 @@ exports[`Layout Menu Enabled should render a Layout when tiny 1`] = `
     toggleText="Menu Text"
   >
     <ContentContainer
+      className="content-container"
       fill={true}
       header={
         <div
@@ -557,11 +522,6 @@ exports[`Layout Menu Enabled should render a Layout when tiny 1`] = `
         >
           Test Header
         </div>
-      }
-      style={
-        Object {
-          "outline": "none",
-        }
       }
     >
       <div
@@ -596,13 +556,9 @@ exports[`Layout should render a Layout with custom props 1`] = `
     size="tiny"
   >
     <ContentContainer
+      className="content-container"
       fill={true}
       header={null}
-      style={
-        Object {
-          "outline": "none",
-        }
-      }
     />
   </LayoutSlidePanel>
 </ContentContainer>
@@ -623,13 +579,9 @@ exports[`Layout should render a Layout without optional props 1`] = `
     size="tiny"
   >
     <ContentContainer
+      className="content-container"
       fill={true}
       header={null}
-      style={
-        Object {
-          "outline": "none",
-        }
-      }
     />
   </LayoutSlidePanel>
 </ContentContainer>

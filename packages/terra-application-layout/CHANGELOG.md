@@ -4,6 +4,12 @@ Changelog
 Unreleased
 ----------
 
+5.5.0 - (July 2, 2019)
+------------------
+### Changed
+* Renamed test and example SCSS files to end with `.module.scss` extension
+* Updated jest snapshot that contains side-nav a11y changes
+
 5.4.0 - (June 19, 2019)
 ------------------
 ### Changed

@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames/bind';
 import ActionHeader from 'terra-action-header';
 import ContentContainer from 'terra-content-container';
@@ -11,6 +12,11 @@ import styles from './NavigationSideMenu.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * @private
+   * Internationalization object with translation APIs. Provided by `injectIntl`.
+   */
+  intl: intlShape.isRequired,
   /**
    * An array of configuration for each menu item.
    */
@@ -99,6 +105,7 @@ class NavigationSideMenu extends Component {
 
     this.handleBackClick = this.handleBackClick.bind(this);
     this.handleItemClick = this.handleItemClick.bind(this);
+    this.updateAriaLiveContent = this.updateAriaLiveContent.bind(this);
 
     const { items, parents } = processMenuItems(props.menuItems);
     this.state = {
@@ -106,6 +113,8 @@ class NavigationSideMenu extends Component {
       parents,
       prevPropsMenuItem: props.menuItems,
     };
+
+    this.visuallyHiddenComponent = React.createRef();
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -131,6 +140,11 @@ class NavigationSideMenu extends Component {
 
   handleItemClick(event, key) {
     const selectedItem = this.state.items[key];
+
+    if (this.state.items[key] && this.state.items[key].text) {
+      this.updateAriaLiveContent(this.state.items[key].text);
+    }
+
     if (selectedItem.childKeys && selectedItem.childKeys.length) {
       this.props.onChange(
         event,
@@ -177,9 +191,21 @@ class NavigationSideMenu extends Component {
 
   buildListContent(currentItem) {
     if (currentItem && currentItem.childKeys && currentItem.childKeys.length) {
-      return <nav role="navigation"><ul role="listbox" className={cx(['side-menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</ul></nav>;
+      return <nav role="navigation"><ul className={cx(['side-menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</ul></nav>;
     }
     return null;
+  }
+
+  updateAriaLiveContent(item) {
+    const { intl } = this.props;
+    const selected = intl.formatMessage({ id: 'Terra.navigation.side.menu.selected' });
+
+    // Guard against race condition with the ref being established and updating the ref's innerText
+    if (!this.visuallyHiddenComponent || !this.visuallyHiddenComponent.current) {
+      return;
+    }
+
+    this.visuallyHiddenComponent.current.innerText = item ? `${item} ${selected}` : '';
   }
 
   render() {
@@ -223,9 +249,18 @@ class NavigationSideMenu extends Component {
     }
 
     return (
-      <ContentContainer {...customProps} header={header} fill className={sideMenuContentContainerClassNames}>
-        {this.buildListContent(currentItem)}
-      </ContentContainer>
+      <Fragment>
+        <span
+          aria-atomic="true"
+          aria-live="assertive"
+          aria-relevant="additions text"
+          className={cx('visually-hidden-text')}
+          ref={this.visuallyHiddenComponent}
+        />
+        <ContentContainer {...customProps} header={header} fill className={sideMenuContentContainerClassNames}>
+          {this.buildListContent(currentItem)}
+        </ContentContainer>
+      </Fragment>
     );
   }
 }
@@ -233,4 +268,4 @@ class NavigationSideMenu extends Component {
 NavigationSideMenu.propTypes = propTypes;
 NavigationSideMenu.defaultProps = defaultProps;
 
-export default NavigationSideMenu;
+export default injectIntl(NavigationSideMenu);
