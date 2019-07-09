@@ -296,6 +296,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('Clears the default date and time on the calendar button click when default date is excluded', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-excluded');
+      browser.refresh();
       browser.click('[class*="button"]');
 
       expect(browser.getText('#date-time-value')).to.equal('');
@@ -305,6 +306,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('Clears the default date and time on date input focus when default date is excluded', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-excluded');
+      browser.refresh();
       // Removes the blinking cursor to prevent screenshot mismatches.
       browser.execute('document.querySelector(\'input[name="terra-date-input"]\').style.caretColor = "transparent";');
       browser.click('input[name="terra-date-input"]');
@@ -316,6 +318,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('Clears the default date and time on hour input focus when default date is excluded', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-excluded');
+      browser.refresh();
       // Removes the blinking cursor to prevent screenshot mismatches.
       browser.execute('document.querySelector(\'input[name="terra-time-hour-input"]\').style.caretColor = "transparent";');
       browser.click('input[name="terra-time-hour-input"]');
@@ -327,6 +330,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('Clears the default date and time on minute input focus when default date is excluded', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-excluded');
+      browser.refresh();
       // Removes the blinking cursor to prevent screenshot mismatches.
       browser.execute('document.querySelector(\'input[name="terra-time-minute-input"]\').style.caretColor = "transparent";');
       browser.click('input[name="terra-time-minute-input"]');
@@ -338,6 +342,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('Clears the default date and time on date input focus when default date is out of range', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-out-of-range');
+      browser.refresh();
       // Removes the blinking cursor to prevent screenshot mismatches.
       browser.execute('document.querySelector(\'input[name="terra-date-input"]\').style.caretColor = "transparent";');
       browser.click('input[name="terra-date-input"]');
@@ -349,6 +354,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('Clears the default date and time on hour input focus when default date is out of range', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-out-of-range');
+      browser.refresh();
       // Removes the blinking cursor to prevent screenshot mismatches.
       browser.execute('document.querySelector(\'input[name="terra-time-hour-input"]\').style.caretColor = "transparent";');
       browser.click('input[name="terra-time-hour-input"]');
@@ -360,6 +366,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('Clears the default date and time on minute input focus when default date is out of range', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-out-of-range');
+      browser.refresh();
       // Removes the blinking cursor to prevent screenshot mismatches.
       browser.execute('document.querySelector(\'input[name="terra-time-minute-input"]\').style.caretColor = "transparent";');
       browser.click('input[name="terra-time-minute-input"]');
