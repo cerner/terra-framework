@@ -75,6 +75,7 @@ exports[`PopupMenu should render prop data 1`] = `
       }
     />
     <ul
+      aria-label="my-header"
       className="utility-list"
       onKeyDown={[Function]}
       role="listbox"
@@ -116,6 +117,7 @@ exports[`PopupMenu should render with height bounded 1`] = `
     className="content-header"
   >
     <ul
+      aria-label="my-header"
       className="utility-list"
       onKeyDown={[Function]}
       role="listbox"

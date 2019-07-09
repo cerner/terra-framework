@@ -10,5 +10,7 @@
   "Terra.applicationNavigation.notifications.new": "New",
   "Terra.applicationNavigation.header.skipToContentTitle": "Skip to Content",
   "Terra.applicationNavigation.header.utilityButtonTitle": "Utility Button",
-  "Terra.applicationNavigation.header.menuButtonTitle": "Toggle Menu"
+  "Terra.applicationNavigation.header.menuButtonTitle": "Toggle Menu",
+  "Terra.applicationNavigation.drawerMenu.navigation": "Navigation Items",
+  "Terra.applicationNavigation.drawerMenu.utilities": "Utility Items"
 }

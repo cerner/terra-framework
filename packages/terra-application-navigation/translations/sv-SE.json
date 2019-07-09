@@ -10,5 +10,7 @@
   "Terra.applicationNavigation.notifications.new": "Nytt",
   "Terra.applicationNavigation.header.skipToContentTitle": "Gå till Innehåll",
   "Terra.applicationNavigation.header.utilityButtonTitle": "Knappen Hjälpmedel",
-  "Terra.applicationNavigation.header.menuButtonTitle": "Växla meny"
+  "Terra.applicationNavigation.header.menuButtonTitle": "Växla meny",
+  "Terra.applicationNavigation.drawerMenu.navigation": "Navigation Items",
+  "Terra.applicationNavigation.drawerMenu.utilities": "Utility Items"
 }

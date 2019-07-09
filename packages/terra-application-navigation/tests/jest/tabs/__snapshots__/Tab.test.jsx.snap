@@ -4,7 +4,7 @@ exports[`Tab should render prop data 1`] = `
 <div
   aria-current={true}
   aria-hidden={true}
-  aria-label="my text"
+  aria-label="my text 1"
   className="tab is-disabled is-placeholder has-count"
   data-focus-styles-enabled={true}
   onBlur={[Function]}
@@ -14,6 +14,7 @@ exports[`Tab should render prop data 1`] = `
   type="button"
 >
   <div
+    aria-hidden={true}
     className="tab-inner"
   >
     <span
@@ -37,7 +38,7 @@ exports[`Tab should render with render function block 1`] = `
 <div
   aria-current={true}
   aria-hidden={true}
-  aria-label="my text"
+  aria-label="my text 1"
   className="tab is-disabled"
   data-focus-styles-enabled={true}
   onBlur={[Function]}
@@ -64,6 +65,7 @@ exports[`Tab should render with required prop data 1`] = `
   type="button"
 >
   <div
+    aria-hidden={true}
     className="tab-inner"
   >
     <span
@@ -90,6 +92,7 @@ exports[`Tab should render with selection callback 1`] = `
   type="button"
 >
   <div
+    aria-hidden={true}
     className="tab-inner"
   >
     <span

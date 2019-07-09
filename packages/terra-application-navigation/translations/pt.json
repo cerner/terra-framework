@@ -10,5 +10,7 @@
   "Terra.applicationNavigation.notifications.new": "Novo",
   "Terra.applicationNavigation.header.skipToContentTitle": "Pular para conteúdo",
   "Terra.applicationNavigation.header.utilityButtonTitle": "Botão do utilitário",
-  "Terra.applicationNavigation.header.menuButtonTitle": "Alternar menu"
+  "Terra.applicationNavigation.header.menuButtonTitle": "Alternar menu",
+  "Terra.applicationNavigation.drawerMenu.navigation": "Navigation Items",
+  "Terra.applicationNavigation.drawerMenu.utilities": "Utility Items"
 }

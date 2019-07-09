@@ -65,11 +65,16 @@ const Tab = ({
     }
 
     return (
-      <div className={cx('tab-inner')}>
-        <span className={cx('tab-label')} aria-hidden>{text}</span>
+      <div aria-hidden className={cx('tab-inner')}>
+        <span aria-hidden className={cx('tab-label')}>{text}</span>
         {notificationCount > 0 && <span className={cx('tab-count')}><TabCount value={notificationCount} /></span>}
       </div>
     );
+  }
+
+  let validatedValue = notificationCount;
+  if (validatedValue > 99) {
+    validatedValue = '99+';
   }
 
   return (
@@ -91,7 +96,7 @@ const Tab = ({
       aria-current={isActive}
       aria-hidden={isPlaceholder}
       data-focus-styles-enabled
-      aria-label={text}
+      aria-label={validatedValue ? `${text} ${validatedValue}` : text}
     >
       {renderTabContent()}
     </div>

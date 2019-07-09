@@ -20,14 +20,6 @@ exports[`DrawerMenu should render default element 1`] = `
           className="header-background-fill"
         />
       </div>
-      <ul
-        className="navigation-item-list"
-        role="navigation"
-      />
-      <ul
-        className="utility-item-list"
-        role="listbox"
-      />
     </div>
     <div
       className="footer"
@@ -78,19 +70,23 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
           />
         </div>
       </div>
-      <ul
-        className="navigation-item-list"
+      <div
         role="navigation"
       >
-        <DrawerMenuListItem
-          isNavigation={true}
-          isSelected={false}
-          key="my-test-key"
-          onSelect={[Function]}
-          text="test-text"
-        />
-      </ul>
+        <ul
+          aria-label="Terra.applicationNavigation.drawerMenu.navigation"
+          className="navigation-item-list"
+        >
+          <DrawerMenuLinkItem
+            isSelected={false}
+            key="my-test-key"
+            onSelect={[Function]}
+            text="test-text"
+          />
+        </ul>
+      </div>
       <ul
+        aria-label="Terra.applicationNavigation.drawerMenu.utility"
         className="utility-item-list"
         role="listbox"
       >
@@ -100,7 +96,6 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
               my icon
             </span>
           }
-          isNavigation={false}
           key="my-test-key-2"
           onSelect={[Function]}
           text="test-text-2"
@@ -113,7 +108,6 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
               xmlns="http://www.w3.org/2000/svg"
             />
           }
-          isNavigation={false}
           onSelect={[MockFunction]}
           text="Terra.applicationNavigation.utilityMenu.settings"
         />
@@ -124,7 +118,6 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
               xmlns="http://www.w3.org/2000/svg"
             />
           }
-          isNavigation={false}
           onSelect={[MockFunction]}
           text="Terra.applicationNavigation.utilityMenu.help"
         />

@@ -38,6 +38,7 @@ const ExtensionCount = ({ value, isRollup, ...customProps }) => {
         { 'is-rollup': isRollup },
         customProps.className,
       )}
+      aria-label={validatedValue}
     >
       {validatedValue}
     </div>

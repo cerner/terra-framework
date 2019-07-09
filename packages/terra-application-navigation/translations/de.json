@@ -10,5 +10,7 @@
   "Terra.applicationNavigation.notifications.new": "Neu",
   "Terra.applicationNavigation.header.skipToContentTitle": "Zum Inhalt",
   "Terra.applicationNavigation.header.utilityButtonTitle": "Schaltfläche 'Dienstprogramm'",
-  "Terra.applicationNavigation.header.menuButtonTitle": "Menü ein-/ausblenden"
+  "Terra.applicationNavigation.header.menuButtonTitle": "Menü ein-/ausblenden",
+  "Terra.applicationNavigation.drawerMenu.navigation": "Navigation Items",
+  "Terra.applicationNavigation.drawerMenu.utilities": "Utility Items"
 }

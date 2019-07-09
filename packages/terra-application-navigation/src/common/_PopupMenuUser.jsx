@@ -22,7 +22,7 @@ const PopupMenuUser = ({ userConfig }) => (
       <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials} size="1.174rem" />
     </div>
     <div className={cx('info-container')}>
-      <div className={cx('name')}>{userConfig.name}</div>
+      <div aria-hidden className={cx('name')}>{userConfig.name}</div>
       {userConfig.detail ? <div className={cx('detail')}>{userConfig.detail}</div> : null}
     </div>
   </div>

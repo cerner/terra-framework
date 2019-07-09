@@ -31,7 +31,7 @@ const DrawerMenuUser = ({ userConfig, variant }) => (
       <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials} size={variant === 'small' ? '0.561rem' : '1.6521rem'} />
     </div>
     <div className={cx('info-container')}>
-      <div className={cx('name')}>{userConfig.name}</div>
+      <div aria-hidden className={cx('name')}>{userConfig.name}</div>
       {userConfig.detail ? <div className={cx('detail')}>{userConfig.detail}</div> : null}
     </div>
   </div>

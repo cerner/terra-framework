@@ -181,7 +181,7 @@ const PopupMenu = ({
           </div>
         ) : undefined}
         {userConfig ? <PopupMenuUser userConfig={userConfig} /> : null}
-        <ul className={cx('utility-list')} ref={listRef} role={role} tabIndex="0" onKeyDown={handleKeyDown}>
+        <ul className={cx('utility-list')} aria-label={title} ref={listRef} role={role} tabIndex="0" onKeyDown={handleKeyDown}>
           {menuItems.map(item => (
             <PopupMenuListItem
               key={item.key}

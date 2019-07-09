@@ -24,6 +24,7 @@ exports[`DrawerMenuUser should render default element 1`] = `
     className="info-container"
   >
     <div
+      aria-hidden={true}
       className="name"
     >
       user-name
@@ -61,6 +62,7 @@ exports[`DrawerMenuUser should render with large variant 1`] = `
     className="info-container"
   >
     <div
+      aria-hidden={true}
       className="name"
     >
       user-name
@@ -98,6 +100,7 @@ exports[`DrawerMenuUser should render with small variant 1`] = `
     className="info-container"
   >
     <div
+      aria-hidden={true}
       className="name"
     >
       user-name

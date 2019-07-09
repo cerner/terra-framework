@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
+import { injectIntl, intlShape } from 'react-intl';
 
 import TabCount from './_TabCount';
 import { enableFocusStyles, disableFocusStyles, generateKeyDownSelection } from '../utils/helpers';
@@ -43,6 +44,11 @@ const propTypes = {
    * Boolean indicating whether or not the Tab should account for count spacing.
    */
   hasCount: PropTypes.bool,
+  /**
+   * @private
+   * Object containing intl APIs.
+   */
+  intl: intlShape,
 };
 
 const defaultProps = {
@@ -61,6 +67,7 @@ const TabRollup = ({
   hasChildNotifications,
   text,
   isPulsed,
+  intl,
 }) => (
   <div
     type="button"
@@ -78,11 +85,11 @@ const TabRollup = ({
     aria-current={isSelected}
     aria-haspopup
     data-focus-styles-enabled
-    aria-label={text}
+    aria-label={`${text} ${intl.formatMessage({ id: 'Terra.applicationNavigation.notifications.new' })}`}
   >
-    <div className={cx('tab-inner')} data-tab-menu-inner>
-      <div className={cx('tab-rollup-label')} ref={innerRef}>
-        {<span className={cx('tab-rollup-text')} aria-hidden>{text}</span>}
+    <div aria-hidden className={cx('tab-inner')} data-tab-menu-inner>
+      <div id={`terra-navigation-link-${text}`} className={cx('tab-rollup-label')} ref={innerRef}>
+        {<span className={cx('tab-rollup-text')}>{text}</span>}
         {hasChildNotifications && <span className={cx('tab-count')}><TabCount value={isPulsed ? 1 : 0} isRollup /></span>}
         <IconCaretDown className={cx('tab-rollup-icon')} />
       </div>
@@ -93,4 +100,4 @@ const TabRollup = ({
 TabRollup.propTypes = propTypes;
 TabRollup.defaultProps = defaultProps;
 
-export default TabRollup;
+export default injectIntl(TabRollup);

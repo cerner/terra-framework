@@ -4,6 +4,7 @@ exports[`TabRollup should render default element 1`] = `
 <div
   aria-current={false}
   aria-haspopup={true}
+  aria-label="undefined Terra.applicationNavigation.notifications.new"
   className="tab-rollup"
   data-focus-styles-enabled={true}
   onBlur={[Function]}
@@ -13,14 +14,15 @@ exports[`TabRollup should render default element 1`] = `
   type="button"
 >
   <div
+    aria-hidden={true}
     className="tab-inner"
     data-tab-menu-inner={true}
   >
     <div
       className="tab-rollup-label"
+      id="terra-navigation-link-undefined"
     >
       <span
-        aria-hidden={true}
         className="tab-rollup-text"
       />
       <IconCaretDown
@@ -38,6 +40,7 @@ exports[`TabRollup should render prop data 1`] = `
 <div
   aria-current={true}
   aria-haspopup={true}
+  aria-label="test text Terra.applicationNavigation.notifications.new"
   className="tab-rollup has-count"
   data-focus-styles-enabled={true}
   onBlur={[Function]}
@@ -47,16 +50,19 @@ exports[`TabRollup should render prop data 1`] = `
   type="button"
 >
   <div
+    aria-hidden={true}
     className="tab-inner"
     data-tab-menu-inner={true}
   >
     <div
       className="tab-rollup-label"
+      id="terra-navigation-link-test text"
     >
       <span
-        aria-hidden={true}
         className="tab-rollup-text"
-      />
+      >
+        test text
+      </span>
       <span
         className="tab-count"
       >
@@ -80,6 +86,7 @@ exports[`TabRollup should render with function callbacks 1`] = `
 <div
   aria-current={false}
   aria-haspopup={true}
+  aria-label="undefined Terra.applicationNavigation.notifications.new"
   className="tab-rollup"
   data-focus-styles-enabled={true}
   onBlur={[Function]}
@@ -89,14 +96,15 @@ exports[`TabRollup should render with function callbacks 1`] = `
   type="button"
 >
   <div
+    aria-hidden={true}
     className="tab-inner"
     data-tab-menu-inner={true}
   >
     <div
       className="tab-rollup-label"
+      id="terra-navigation-link-undefined"
     >
       <span
-        aria-hidden={true}
         className="tab-rollup-text"
       />
       <IconCaretDown
@@ -114,6 +122,7 @@ exports[`TabRollup should render with selection callback 1`] = `
 <div
   aria-current={false}
   aria-haspopup={true}
+  aria-label="undefined Terra.applicationNavigation.notifications.new"
   className="tab-rollup"
   data-focus-styles-enabled={true}
   onBlur={[Function]}
@@ -125,14 +134,15 @@ exports[`TabRollup should render with selection callback 1`] = `
   type="button"
 >
   <div
+    aria-hidden={true}
     className="tab-inner"
     data-tab-menu-inner={true}
   >
     <div
       className="tab-rollup-label"
+      id="terra-navigation-link-undefined"
     >
       <span
-        aria-hidden={true}
         className="tab-rollup-text"
       />
       <IconCaretDown

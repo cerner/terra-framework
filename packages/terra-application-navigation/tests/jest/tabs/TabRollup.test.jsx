@@ -1,10 +1,13 @@
 import React from 'react';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { mockIntl } from 'terra-enzyme-intl';
+
 import TabRollup from '../../../src/tabs/_TabRollup';
 
 describe('TabRollup', () => {
   it('should render default element', () => {
     const shallowComponent = shallow(
-      <TabRollup />,
+      <TabRollup.WrappedComponent intl={mockIntl} />,
     );
 
     expect(shallowComponent).toMatchSnapshot();
@@ -12,12 +15,14 @@ describe('TabRollup', () => {
 
   it('should render prop data', () => {
     const shallowComponent = shallow(
-      <TabRollup
+      <TabRollup.WrappedComponent
+        text="test text"
         isIconOnly
         hasChildNotifications
         isPulsed
         isSelected
         hasCount
+        intl={mockIntl}
       />,
     );
 
@@ -26,8 +31,9 @@ describe('TabRollup', () => {
 
   it('should render with function callbacks', () => {
     const shallowComponent = shallow(
-      <TabRollup
+      <TabRollup.WrappedComponent
         tabRef={React.createRef()}
+        intl={mockIntl}
       />,
     );
 
@@ -39,8 +45,9 @@ describe('TabRollup', () => {
     const mockCallBack2 = jest.fn();
 
     const shallowComponent = shallow(
-      <TabRollup
+      <TabRollup.WrappedComponent
         onTabSelect={mockCallBack}
+        intl={mockIntl}
       />,
     );
 

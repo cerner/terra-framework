@@ -103,6 +103,7 @@ exports[`UtilityMenu should render default element 1`] = `
                 className="content-header"
               >
                 <ul
+                  aria-label="Terra.applicationNavigation.utilityMenu.headerTitle"
                   className="utility-list"
                   onKeyDown={[Function]}
                   role="listbox"
@@ -409,6 +410,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                       className="info-container"
                     >
                       <div
+                        aria-hidden={true}
                         className="name"
                       >
                         user-name
@@ -422,6 +424,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                   </div>
                 </PopupMenuUser>
                 <ul
+                  aria-label="Terra.applicationNavigation.utilityMenu.headerTitle"
                   className="utility-list"
                   onKeyDown={[Function]}
                   role="listbox"
@@ -798,6 +801,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
                 className="content-header"
               >
                 <ul
+                  aria-label="Terra.applicationNavigation.utilityMenu.headerTitle"
                   className="utility-list"
                   onKeyDown={[Function]}
                   role="listbox"

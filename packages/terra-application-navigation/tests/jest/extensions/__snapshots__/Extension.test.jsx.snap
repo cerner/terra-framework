@@ -2,20 +2,21 @@
 
 exports[`Extension should render prop data 1`] = `
 <div
-  aria-label="my text"
+  aria-label="my text 1"
   className="extension"
   data-focus-styles-enabled={true}
   onBlur={[Function]}
   onMouseDown={[Function]}
   role="button"
   tabIndex="0"
-  title="my text"
 >
   <div
+    aria-hidden={true}
     className="extension-inner"
   >
     <div
       className="extension-image"
+      title="my text"
     >
       <span>
         my icon
@@ -38,13 +39,14 @@ exports[`Extension should render with function callbacks 1`] = `
   onMouseDown={[Function]}
   role="button"
   tabIndex="0"
-  title="my text"
 >
   <div
+    aria-hidden={true}
     className="extension-inner"
   >
     <div
       className="extension-image"
+      title="my text"
     >
       <span>
         my icon
@@ -63,13 +65,14 @@ exports[`Extension should render with required prop data 1`] = `
   onMouseDown={[Function]}
   role="button"
   tabIndex="0"
-  title="my text"
 >
   <div
+    aria-hidden={true}
     className="extension-inner"
   >
     <div
       className="extension-image"
+      title="my text"
     >
       <span>
         my icon
@@ -90,13 +93,14 @@ exports[`Extension should render with selection callback 1`] = `
   onMouseDown={[Function]}
   role="button"
   tabIndex="0"
-  title="my text"
 >
   <div
+    aria-hidden={true}
     className="extension-inner"
   >
     <div
       className="extension-image"
+      title="my text"
     >
       <span>
         my icon

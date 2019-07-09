@@ -37,27 +37,36 @@ const Extension = ({
   icon,
   text,
   onSelect,
-}) => (
-  <div
-    role="button"
-    tabIndex="0"
-    className={cx('extension')}
-    onClick={onSelect}
-    onKeyDown={generateKeyDownSelection(onSelect)}
-    onBlur={enableFocusStyles}
-    onMouseDown={disableFocusStyles}
-    aria-label={text}
-    title={text}
-    data-focus-styles-enabled
-  >
-    <div className={cx('extension-inner')}>
-      <div className={cx('extension-image')}>
-        {icon}
+}) => {
+  let validatedValue = notificationCount;
+  if (notificationCount > 99) {
+    validatedValue = '99+';
+  }
+
+  return (
+    <div
+      role="button"
+      tabIndex="0"
+      className={cx('extension')}
+      onClick={onSelect}
+      onKeyDown={generateKeyDownSelection(onSelect)}
+      onBlur={enableFocusStyles}
+      onMouseDown={disableFocusStyles}
+      data-focus-styles-enabled
+      aria-label={validatedValue ? `${text} ${validatedValue}` : text}
+    >
+      <div aria-hidden className={cx('extension-inner')}>
+        <div
+          className={cx('extension-image')}
+          title={text}
+        >
+          {icon}
+        </div>
+        {notificationCount > 0 && <ExtensionCount value={notificationCount} className={cx('extension-count')} />}
       </div>
-      {notificationCount > 0 && <ExtensionCount value={notificationCount} className={cx('extension-count')} />}
     </div>
-  </div>
-);
+  );
+};
 
 Extension.propTypes = propTypes;
 Extension.defaultProps = defaultProps;

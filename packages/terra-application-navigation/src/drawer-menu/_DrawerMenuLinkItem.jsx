@@ -32,26 +32,28 @@ const propTypes = {
   isSelected: PropTypes.bool,
 };
 
-const DrawerMenuListItem = ({
+const DrawerMenuLinkItem = ({
   icon, text, notificationCount, isSelected, onSelect,
 }) => (
-  <li
-    role="option"
-    aria-selected={isSelected}
-    tabIndex="0"
-    className={cx('item', { 'is-selected': isSelected })}
-    onClick={onSelect}
-    onKeyDown={generateKeyDownSelection(onSelect)}
-    onBlur={enableFocusStyles}
-    onMouseDown={disableFocusStyles}
-    data-focus-styles-enabled
-  >
-    {icon ? <div className={cx('icon')}>{icon}</div> : null}
-    <div className={cx('text')}>{text}</div>
-    {notificationCount > 0 && <Count value={notificationCount} />}
+  <li>
+    <div
+      role="link"
+      aria-current={isSelected}
+      tabIndex="0"
+      className={cx('item', { 'is-selected': isSelected }, 'has-border')}
+      onClick={onSelect}
+      onKeyDown={generateKeyDownSelection(onSelect)}
+      onBlur={enableFocusStyles}
+      onMouseDown={disableFocusStyles}
+      data-focus-styles-enabled
+    >
+      {icon ? <div className={cx('icon')}>{icon}</div> : null}
+      <div className={cx('text')}>{text}</div>
+      {notificationCount > 0 && <Count value={notificationCount} />}
+    </div>
   </li>
 );
 
-DrawerMenuListItem.propTypes = propTypes;
+DrawerMenuLinkItem.propTypes = propTypes;
 
-export default DrawerMenuListItem;
+export default DrawerMenuLinkItem;

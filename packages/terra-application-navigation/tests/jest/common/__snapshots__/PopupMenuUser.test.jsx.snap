@@ -24,6 +24,7 @@ exports[`PopupMenuUser should render default element 1`] = `
     className="info-container"
   >
     <div
+      aria-hidden={true}
       className="name"
     >
       user-name
