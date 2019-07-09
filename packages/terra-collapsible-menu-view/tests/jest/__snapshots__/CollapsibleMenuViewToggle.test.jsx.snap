@@ -156,14 +156,11 @@ exports[`CollapsibleMenuViewToggle should disable checkbox when isSelectable is 
 <div
   className="face-up-item"
 >
-  <Control
+  <Checkbox
     className="control is-disabled"
     defaultChecked={false}
-    inputAttrs={
-      Object {
-        "disabled": true,
-      }
-    }
+    disabled={true}
+    inputAttrs={Object {}}
     intl={
       Object {
         "defaultFormats": Object {},
@@ -192,11 +189,11 @@ exports[`CollapsibleMenuViewToggle should disable checkbox when isSelectable is 
       }
     }
     isInline={false}
+    isLabelHidden={false}
     labelText="Testing"
     labelTextAttrs={Object {}}
     name={null}
     onChange={[Function]}
-    type="checkbox"
   />
 </div>
 `;
@@ -205,14 +202,11 @@ exports[`CollapsibleMenuViewToggle should merge custom props 1`] = `
 <div
   className="face-up-item"
 >
-  <Control
+  <Checkbox
     className="control Testing"
     defaultChecked={false}
-    inputAttrs={
-      Object {
-        "disabled": false,
-      }
-    }
+    disabled={false}
+    inputAttrs={Object {}}
     intl={
       Object {
         "defaultFormats": Object {},
@@ -241,11 +235,11 @@ exports[`CollapsibleMenuViewToggle should merge custom props 1`] = `
       }
     }
     isInline={false}
+    isLabelHidden={false}
     labelText="Testing"
     labelTextAttrs={Object {}}
     name={null}
     onChange={[Function]}
-    type="checkbox"
   />
 </div>
 `;
@@ -254,14 +248,11 @@ exports[`CollapsibleMenuViewToggle should render a default component 1`] = `
 <div
   className="face-up-item"
 >
-  <Control
+  <Checkbox
     className="control"
     defaultChecked={false}
-    inputAttrs={
-      Object {
-        "disabled": false,
-      }
-    }
+    disabled={false}
+    inputAttrs={Object {}}
     intl={
       Object {
         "defaultFormats": Object {},
@@ -290,11 +281,11 @@ exports[`CollapsibleMenuViewToggle should render a default component 1`] = `
       }
     }
     isInline={false}
+    isLabelHidden={false}
     labelText="Testing"
     labelTextAttrs={Object {}}
     name={null}
     onChange={[Function]}
-    type="checkbox"
   />
 </div>
 `;
@@ -303,14 +294,11 @@ exports[`CollapsibleMenuViewToggle should set defaultChecked prop 1`] = `
 <div
   className="face-up-item"
 >
-  <Control
+  <Checkbox
     className="control"
     defaultChecked={true}
-    inputAttrs={
-      Object {
-        "disabled": false,
-      }
-    }
+    disabled={false}
+    inputAttrs={Object {}}
     intl={
       Object {
         "defaultFormats": Object {},
@@ -339,11 +327,11 @@ exports[`CollapsibleMenuViewToggle should set defaultChecked prop 1`] = `
       }
     }
     isInline={false}
+    isLabelHidden={false}
     labelText="Testing"
     labelTextAttrs={Object {}}
     name={null}
     onChange={[Function]}
-    type="checkbox"
   />
 </div>
 `;
@@ -352,14 +340,11 @@ exports[`CollapsibleMenuViewToggle should set isDisabled prop 1`] = `
 <div
   className="face-up-item"
 >
-  <Control
+  <Checkbox
     className="control is-disabled"
     defaultChecked={false}
-    inputAttrs={
-      Object {
-        "disabled": true,
-      }
-    }
+    disabled={true}
+    inputAttrs={Object {}}
     intl={
       Object {
         "defaultFormats": Object {},
@@ -388,11 +373,11 @@ exports[`CollapsibleMenuViewToggle should set isDisabled prop 1`] = `
       }
     }
     isInline={false}
+    isLabelHidden={false}
     labelText="Testing"
     labelTextAttrs={Object {}}
     name={null}
     onChange={[Function]}
-    type="checkbox"
   />
 </div>
 `;
