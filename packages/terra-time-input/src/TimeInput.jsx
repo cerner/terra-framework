@@ -530,11 +530,12 @@ class TimeInput extends React.Component {
 
   handleMeridiemInputKeyDown(event) {
     if (event.keyCode === KeyCode.KEY_LEFT
-      || event.keyCode === KeyCode.KEY_RIGHT
       || event.keyCode === KeyCode.KEY_DELETE
       || event.keyCode === KeyCode.KEY_BACK_SPACE) {
       this.minuteInput.focus();
       event.preventDefault();
+    } else if (event.keyCode === KeyCode.KEY_RIGHT) {
+      this.setState({ meridiemFocused: false });
     }
   }
 
