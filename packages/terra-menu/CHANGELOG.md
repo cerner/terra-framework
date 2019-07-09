@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated the line-height of plain text Menu Items to be consistent with Menu Items with icons.
 
 6.4.0 - (July 2, 2019)
 ------------------
