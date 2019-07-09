@@ -130,6 +130,7 @@ class MenuItem extends React.Component {
           onKeyDown={this.handleKeyDown}
           onKeyUp={this.handleKeyUp}
           onBlur={this.handleOnBlur}
+          aria-haspopup={hasChevron}
         >
           <div className={cx('title')}>
             {this.textRender()}
