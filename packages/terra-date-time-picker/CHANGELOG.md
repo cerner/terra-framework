@@ -3,6 +3,11 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.6.0 - (July 10, 2019)
+------------------
+### Changed
+* Minor dependency version bump
 ### Changed
 * Fixed tests to appropriately reset before beginning next test.
 
