@@ -6,6 +6,8 @@ import { Portal } from 'react-portal';
 import KeyCode from 'keycode-js';
 import Popup from 'terra-popup';
 import classnames from 'classnames';
+import { injectIntl, intlShape } from 'react-intl';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import PopupContainer from './PopupContainer';
 import {
   newDate,
@@ -35,7 +37,8 @@ import {
   getEffectiveMaxDate,
   parseDate,
   safeDateFormat,
-  getHightLightDaysMap
+  getHightLightDaysMap,
+  getLocalizedDateForScreenReader
 } from './date_utils'
 import onClickOutside from 'react-onclickoutside'
 
@@ -46,7 +49,7 @@ const WrappedCalendar = onClickOutside(Calendar)
  * General datepicker component.
  */
 
-export default class DatePicker extends React.Component {
+class DatePicker extends React.Component {
   static propTypes = {
     adjustDateOnChange: PropTypes.bool,
     allowSameDay: PropTypes.bool,
@@ -75,6 +78,11 @@ export default class DatePicker extends React.Component {
     id: PropTypes.string,
     includeDates: PropTypes.array,
     inline: PropTypes.bool,
+    /**
+     * @private
+     * Internationalization object with translation APIs. Provided by `injectIntl`.
+     */
+    intl: intlShape,
     isClearable: PropTypes.bool,
     locale: PropTypes.string,
     maxDate: PropTypes.object,
@@ -157,6 +165,8 @@ export default class DatePicker extends React.Component {
     this.datePickerOverlayContainer = React.createRef();
     this.handleCalendarKeyDown = this.handleCalendarKeyDown.bind(this);
     this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
+    this.updateAriaLiveStatus = this.updateAriaLiveStatus.bind(this);
+    this.ariaLiveStatus = '';
   }
 
   componentDidMount() {
@@ -363,7 +373,18 @@ export default class DatePicker extends React.Component {
       this.setState({
         preSelection: date
       })
+
+      this.updateAriaLiveStatus(getLocalizedDateForScreenReader(date, this.props));
     }
+  }
+
+  updateAriaLiveStatus(message) {
+    this.ariaLiveStatus = message;
+
+    // Clears status so aria live announces correctly next time a date is preselected.
+    setTimeout(() => {
+      this.ariaLiveStatus = '';
+    }, 1000);
   }
 
   handleTimeChange = (time) => {
@@ -512,6 +533,7 @@ export default class DatePicker extends React.Component {
         yearDropdownItemNumber={this.props.yearDropdownItemNumber}
       >
         {this.props.children}
+        <VisuallyHiddenText aria-atomic="true" aria-live="assertive" text={this.ariaLiveStatus} />
       </WrappedCalendar>
     }
 
@@ -567,6 +589,7 @@ export default class DatePicker extends React.Component {
         yearDropdownItemNumber={this.props.yearDropdownItemNumber}
       >
         {this.props.children}
+        <VisuallyHiddenText aria-atomic="true" aria-live="assertive" text={this.ariaLiveStatus} />
       </Calendar>
     );
   }
@@ -686,3 +709,5 @@ export default class DatePicker extends React.Component {
     )
   }
 }
+
+export default injectIntl(DatePicker);

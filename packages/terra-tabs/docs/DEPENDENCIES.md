@@ -8,10 +8,14 @@
 | prop-types | ^15.5.8 | -- | Runtime type checking for React props and similar objects. |
 | resize-observer-polyfill | ^1.4.1 | -- | A polyfill for the Resize Observer API |
 | terra-content-container | ^3.0.0 | ^16.8.5 | The Terra ContentContainer is a structural component for the purpose of arranging content with a header. |
-| terra-doc-template | ^2.2.0 | ^16.8.5 | Provides an adjustable template for documentation pages. |
 | terra-icon | ^3.1.0 | ^16.8.5 | The terra-icon component is used to visually represent a literal or symbolic object intended to initiate an action, communicate a status, or navigate the workflow. |
-| terra-menu | ^5.8.0 | ^16.8.5 | The menu is a popup component that displays a list of items, item groups, and dividers. Menu Items can be actionable, have toggle-style selection, or have nested submenu items. Menu Item groups are a single-select grouping of menu items. The Menu will determine the height of the popup based on the number of items in the main menu. |
-| terra-responsive-element | ^4.0.0 | ^16.8.5 | The terra-responsive-element conditionally renders components based on viewport size |
+| terra-menu | ^6.4.0 | ^16.8.5 | The menu is a popup component that displays a list of items, item groups, and dividers. Menu Items can be actionable, have toggle-style selection, or have nested submenu items. Menu Item groups are a single-select grouping of menu items. The Menu will determine the height of the popup based on the number of items in the main menu. |
+| terra-responsive-element | ^5.0.0 | ^16.8.5 | The terra-responsive-element conditionally renders components based on viewport size |
+
+## devDependencies
+| Dependency | Version | React Version | Description |
+|-|-|-|-|
+| terra-doc-template | ^2.2.0 | ^16.8.5 | Provides an adjustable template for documentation pages. |
 
 ## peerDependencies
 | Dependency | Version | React Version | Description |

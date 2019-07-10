@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames/bind';
 import KeyCode from 'keycode-js';
 import ChevronRight from 'terra-icon/lib/icon/IconChevronRight';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 
 import styles from './MenuItem.module.scss';
 
@@ -10,9 +12,14 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Whether or not the menu item should display a disclosure idicator.
+   * Whether or not the menu item should display a disclosure indicator.
    * */
   hasChevron: PropTypes.bool,
+  /**
+   * @private
+   * Internationalization object with translation APIs. Provided by `injectIntl`.
+   */
+  intl: intlShape.isRequired,
   /**
    * Whether or not the menu item is selection.
    * */
@@ -38,6 +45,7 @@ class MenuItem extends React.Component {
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleKeyUp = this.handleKeyUp.bind(this);
     this.handleOnBlur = this.handleOnBlur.bind(this);
+    this.textRender = this.textRender.bind(this);
   }
 
   handleOnBlur() {
@@ -76,9 +84,26 @@ class MenuItem extends React.Component {
     }
   }
 
+  textRender() {
+    const { intl, isSelected, text } = this.props;
+    const selected = intl.formatMessage({ id: 'Terra.navigation.side.menu.selected' });
+
+    if (isSelected) {
+      return (
+        <Fragment>
+          {text}
+          <VisuallyHiddenText text={selected} />
+        </Fragment>
+      );
+    }
+
+    return text;
+  }
+
   render() {
     const {
       hasChevron,
+      intl,
       isSelected,
       text,
       ...customProps
@@ -96,19 +121,19 @@ class MenuItem extends React.Component {
     return (
       <li
         className={cx('list-item')}
-        aria-selected={isSelected}
-        role="option"
       >
         <div
+          role="link"
           {...customProps}
           tabIndex="0"
           className={itemClassNames}
           onKeyDown={this.handleKeyDown}
           onKeyUp={this.handleKeyUp}
           onBlur={this.handleOnBlur}
+          aria-haspopup={hasChevron}
         >
           <div className={cx('title')}>
-            {text}
+            {this.textRender()}
           </div>
           {hasChevron && <span className={cx('chevron')}><ChevronRight /></span>}
         </div>
@@ -120,4 +145,4 @@ class MenuItem extends React.Component {
 
 MenuItem.propTypes = propTypes;
 
-export default MenuItem;
+export default injectIntl(MenuItem);

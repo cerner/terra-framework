@@ -346,4 +346,44 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       Terra.it.validatesElement({ axeRules: { rules: ignoredA11y } });
     });
   });
+
+  describe('Controlled DatePicker', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-controlled');
+      // Removes the blinking cursor to prevent screenshot mismatches.
+      browser.execute('document.querySelector("input:last-of-type").style.caretColor = "transparent";');
+    });
+
+    it('Enters date value', () => {
+      browser.setValue('input[name="terra-date-controlled-date-picker"]', '03/07/2019');
+    });
+
+    Terra.it.matchesScreenshot('date input manually updated');
+
+    it('Open the date picker', () => {
+      browser.click('[class*="button"]');
+    });
+
+    Terra.it.matchesScreenshot('date picker updated', { selector: '[class="react-datepicker"]' });
+
+    it('Click button to reset date', () => {
+      browser.click('[class*="PopupOverlay"]');
+      browser.click('#reset-button');
+    });
+
+    Terra.it.matchesScreenshot('date input reset');
+
+    it('Open the date picker', () => {
+      browser.click('[class*="button"]');
+    });
+
+    Terra.it.matchesScreenshot('date picker reset', { selector: '[class="react-datepicker"]' });
+
+    it('Select date', () => {
+      browser.keys('ArrowDown');
+      browser.keys('Enter');
+    });
+
+    Terra.it.matchesScreenshot('date selected');
+  });
 });

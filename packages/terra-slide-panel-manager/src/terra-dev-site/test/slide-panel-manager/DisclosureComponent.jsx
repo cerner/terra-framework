@@ -57,7 +57,7 @@ class DisclosureComponent extends React.Component {
         dimensions,
         content: {
           key: `DemoContainer-${newIndex}`,
-          component: <WrappedDisclosureComponent identifier={`DemoContainer-${newIndex}`} nestedIndex={newIndex} />,
+          component: <WrappedDisclosureComponent identifier={`DemoContainer-${newIndex}`} nestedIndex={newIndex} disclosureType={disclosureType} />,
         },
       });
     };

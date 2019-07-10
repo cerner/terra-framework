@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Fixed test route.
+
+3.6.0 - (July 2, 2019)
+------------------
+### Changed
 * Renamed test and example SCSS files to end with `.module.scss` extension
 
 3.5.0 - (June 19, 2019)

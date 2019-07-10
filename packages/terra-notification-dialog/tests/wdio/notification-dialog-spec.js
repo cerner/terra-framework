@@ -111,7 +111,15 @@ Terra.describeViewports('NotificationDialog with additional focus trap sources w
     browser.click('#disclose-modal');
     browser.click('#popup-in-modal');
 
-    Terra.validates.element('Open popup', { selector: '[class*="abstract-modal"]' });
+    // Skip color contrast check for elements behind an overlay
+    const ignoredA11y = {
+      'color-contrast': {
+        enabled: false,
+        selector: '[class*="overlay"]',
+      },
+    };
+
+    Terra.validates.element('Open popup', { selector: '[class*="abstract-modal"]', axeRules: ignoredA11y });
 
     // it dismisses popup
     browser
@@ -122,7 +130,7 @@ Terra.describeViewports('NotificationDialog with additional focus trap sources w
 
     // it opens notification dialog
     browser.click('#trigger-notification-dialog');
-    Terra.validates.element('Open notification dialog', { selector: '[class*="abstract-modal"]' });
+    Terra.validates.element('Open notification dialog', { selector: '[class*="abstract-modal"]', axeRules: ignoredA11y });
 
     // it dismiss notification dialog
     browser.click('[class*="notification-dialog-inner-wrapper"] button:last-child');

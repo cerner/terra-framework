@@ -7,8 +7,12 @@
 | keycode-js | ^1.0.4 | -- | A JavaScript package with Key Code constants |
 | prop-types | ^15.5.8 | -- | Runtime type checking for React props and similar objects. |
 | terra-button-group | ^3.0.0 | ^16.8.5 | The Terra Button Group component groups buttons and can maintain a toggle selection state. |
-| terra-doc-template | ^2.2.0 | ^16.8.5 | Provides an adjustable template for documentation pages. |
 | terra-form-input | ^2.3.0 | ^16.8.5 | Element for building out inputs in a form. |
+
+## devDependencies
+| Dependency | Version | React Version | Description |
+|-|-|-|-|
+| terra-doc-template | ^2.2.0 | ^16.8.5 | Provides an adjustable template for documentation pages. |
 
 ## peerDependencies
 | Dependency | Version | React Version | Description |
