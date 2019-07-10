@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Fixed test routes.
 
 3.8.0 - (July 2, 2019)
 ------------------
