@@ -6,7 +6,10 @@ Unreleased
 ### Added
 * Added the ability for the user to enter seconds in the time input
 
+4.6.0 - (July 10, 2019)
+------------------
 ### Changed
+* Minor dependency version bump
 * Fixed tests to appropriately reset before beginning next test.
 
 4.5.0 - (July 2, 2019)
