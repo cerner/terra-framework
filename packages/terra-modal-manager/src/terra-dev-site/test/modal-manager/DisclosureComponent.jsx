@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CollapsibleMenuView from 'terra-collapsible-menu-view';
 import ContentContainer from 'terra-content-container';
 import {
-  availableDisclosureHeights, availableDisclosureWidths, withDisclosureManager, disclosureManagerShape,
+  availableDisclosureHeights, availableDisclosureWidths, withDisclosureManager, disclosureManagerShape, DisclosureManagerHeaderAdapter,
 } from 'terra-disclosure-manager';
 import classNames from 'classnames/bind';
 import styles from './DisclosureComponentCommon.test.module.scss';
@@ -47,7 +48,7 @@ class DisclosureComponent extends React.Component {
   }
 
   disclose(size, dimensions) {
-    const { disclosureType, nestedIndex } = this.props;
+    const { disclosureType, nestedIndex, renderHeaderAdapter } = this.props;
 
     const newIndex = nestedIndex + 1;
     return () => {
@@ -57,7 +58,7 @@ class DisclosureComponent extends React.Component {
         dimensions,
         content: {
           key: `DemoContainer-${newIndex}`,
-          component: <WrappedDisclosureComponent identifier={`DemoContainer-${newIndex}`} nestedIndex={newIndex} />,
+          component: <WrappedDisclosureComponent identifier={`DemoContainer-${newIndex}`} nestedIndex={newIndex} renderHeaderAdapter={renderHeaderAdapter} />,
         },
       });
     };
@@ -117,10 +118,27 @@ class DisclosureComponent extends React.Component {
   }
 
   render() {
-    const { disclosureManager, identifier } = this.props;
+    const { disclosureManager, identifier, renderHeaderAdapter } = this.props;
 
     return (
       <ContentContainer id={identifier} className="nested-component" fill header={<h2 className={cx('header')}>Content Component</h2>}>
+        {renderHeaderAdapter ? (
+          <DisclosureManagerHeaderAdapter
+            title={`Disclosure - ${identifier}`}
+            collapsibleMenuView={(
+              <CollapsibleMenuView>
+                <CollapsibleMenuView.Item
+                  text="Header Button 1"
+                  key="button_1"
+                />
+                <CollapsibleMenuView.Item
+                  text="Header Button 2"
+                  key="button_2"
+                />
+              </CollapsibleMenuView>
+            )}
+          />
+        ) : undefined}
         <p>
           id:
           {' '}
@@ -152,6 +170,7 @@ DisclosureComponent.propTypes = {
   identifier: PropTypes.string,
   disclosureType: PropTypes.string,
   nestedIndex: PropTypes.number,
+  renderHeaderAdapter: PropTypes.bool,
 };
 
 DisclosureComponent.defaultProps = {
