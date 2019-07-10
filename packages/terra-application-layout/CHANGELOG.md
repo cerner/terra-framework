@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Re-enable missing tests.
 
 5.5.0 - (July 2, 2019)
 ------------------

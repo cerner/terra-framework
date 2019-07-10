@@ -11,7 +11,7 @@ Terra.describeViewports('Theme Provider', ['tiny', 'medium'], () => {
 
   describe('Displays a globally themed component', () => {
     before(() => {
-      browser.url('#/raw/tests/terra-theme-provider/theme-provider/global-theme-provider');
+      browser.url('/#/raw/tests/terra-theme-provider/theme-provider/global-theme-provider');
     });
 
     Terra.it.matchesScreenshot({ selector });
