@@ -3,14 +3,14 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Fixed Collapsible issue for single item group
+
 ### Changed
 * Replaced Terra-Form with Terra-Form-Checkbox in CollapsibleMenuViewToggle
 
 6.4.0 - (July 2, 2019)
 ------------------
-### Fixed
-* Fixed Collapsible issue for single item group
-
 ### Fixed
 * Fixed issue with accessibility roles in list view in popup menu
 

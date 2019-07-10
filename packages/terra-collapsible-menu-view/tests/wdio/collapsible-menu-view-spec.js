@@ -31,29 +31,23 @@ Terra.describeViewports('Responsive Single Item', ['tiny', 'large'], () => {
     browser.moveToObject('#root', 0, 0);
   });
 
-  Terra.viewports('enormous', 'huge').forEach((viewport) => {
-    describe('Single Item Group', () => {
-      before(() => {
-        browser.url('/#/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/single-item-group');
-        browser.setViewportSize(viewport);
-      });
-
-      Terra.it.matchesScreenshot();
-      Terra.it.isAccessible();
+  Terra.describeViewports('Single Item Group', ['enormous', 'large', 'huge', 'medium'], () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/single-item-group');
     });
+
+    Terra.it.matchesScreenshot();
+    Terra.it.isAccessible();
   });
 
-  Terra.viewports('tiny', 'small', 'medium', 'large').forEach((viewport) => {
-    describe('Single Item Group Hidden Open', () => {
-      before(() => {
-        browser.url('/#/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/single-item-group');
-        browser.setViewportSize(viewport);
-        browser.click('[data-collapsible-menu-toggle]');
-      });
-
-      Terra.it.matchesScreenshot({ selector: '#root' });
-      Terra.it.isAccessible();
+  Terra.describeViewports('Single Item Group Hidden Open', ['tiny', 'small'], () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/single-item-group');
+      browser.click('[data-collapsible-menu-toggle]');
     });
+
+    Terra.it.matchesScreenshot({ selector: '#root' });
+    Terra.it.isAccessible();
   });
   Terra.it.matchesScreenshot({ selector: '#root' });
   Terra.it.isAccessible();
