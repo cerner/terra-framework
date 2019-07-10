@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Fixed tests to appropriately reset before beginning next test.
 
 4.5.0 - (July 2, 2019)
 ------------------
