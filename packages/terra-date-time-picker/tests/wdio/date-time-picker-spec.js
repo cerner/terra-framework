@@ -296,7 +296,6 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('Clears the default date and time on the calendar button click when default date is excluded', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-excluded');
-      browser.refresh();
       browser.click('[class*="button"]');
 
       expect(browser.getText('#date-time-value')).to.equal('');
