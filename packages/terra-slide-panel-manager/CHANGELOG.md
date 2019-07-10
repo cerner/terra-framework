@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Ensure the disclosure discloses as a panel even if a modal manager is present.
 
 5.3.0 - (July 2, 2019)
 ------------------

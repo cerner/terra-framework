@@ -1,6 +1,10 @@
 import React from 'react';
 import { Consumer } from 'xfc';
+import classNames from 'classnames/bind';
 import EmbeddedContentConsumer from '../../../../EmbeddedContentConsumer';
+import styles from './Consumer.module.scss';
+
+const cx = classNames.bind(styles);
 
 Consumer.init();
 
@@ -39,7 +43,8 @@ const onAuthorize = () => {
 
 const DataStatusConsumer = () => (
   <EmbeddedContentConsumer
-    src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/data-status-provider"
+    className={cx('iframe')}
+    src="/#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/data-status-provider"
     onMount={onMount}
     onLaunch={onLaunch}
     onAuthorize={onAuthorize}
