@@ -6,10 +6,6 @@ import styles from './Consumer.module.scss';
 
 const cx = classNames.bind(styles);
 
-import styles from './Consumer.module.scss';
-
-const cx = classNames.bind(styles);
-
 Consumer.init();
 
 const BasicConsumer = () => (
