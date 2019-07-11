@@ -37,7 +37,7 @@ Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
   });
 });
 
-describe('ApplicationLayout', ['huge'], () => {
+Terra.describeViewports('ApplicationLayout', ['huge'], () => {
   describe('Navigates with top navigation tabs', () => {
     it('Navigates with top navigation tabs', () => {
       browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout');
@@ -50,7 +50,7 @@ describe('ApplicationLayout', ['huge'], () => {
   });
 });
 
-describe('ApplicationLayout', ['large'], () => {
+Terra.describeViewports('ApplicationLayout', ['large'], () => {
   describe('Presents utility menu from header when large', () => {
     it('Presents utility menu from header when large', () => {
       browser.waitForVisible('[data-application-header-utility]');
@@ -75,7 +75,7 @@ describe('ApplicationLayout', ['large'], () => {
 });
 
 
-describe('ApplicationLayout', ['small'], () => {
+Terra.describeViewports('ApplicationLayout', ['small'], () => {
   describe('Toggles menu when small', () => {
     it('Toggles menu when small', () => {
       browser.waitForVisible('[data-application-header-toggle');
