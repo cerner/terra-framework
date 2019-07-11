@@ -1,5 +1,3 @@
-// This issue should be resolved once the following axe-core issue is resolved:
-// https://github.com/dequelabs/axe-core/issues/1583
 Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
   describe('Displays a default application layout', () => {
     it('Displays a default application layout', () => {
