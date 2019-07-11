@@ -8,6 +8,11 @@ Unreleased
 * Added support for DisclosureManagerHeaderAdapter integration
 * Added `disclosureAccessory` prop
 
+5.4.0 - (July 10, 2019)
+------------------
+### Changed
+* Ensure the disclosure discloses as a panel even if a modal manager is present.
+
 5.3.0 - (July 2, 2019)
 ------------------
 ### Changed
