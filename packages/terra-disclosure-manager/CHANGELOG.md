@@ -4,6 +4,10 @@ ChangeLog
 Unreleased
 ----------
 
+### Added
+* Added DisclosureManagerHeaderAdapter and DisclosureManagerHeaderAdapterContext
+* Adding properties to render function parameter to facilitate DisclosureManagerHeaderAdapter support
+
 4.14.0 - (July 2, 2019)
 ------------------
 ### Fixed

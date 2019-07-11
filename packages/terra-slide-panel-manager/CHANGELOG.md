@@ -4,6 +4,10 @@ Changelog
 Unreleased
 ----------
 
+### Added
+* Added support for DisclosureManagerHeaderAdapter integration
+* Added `disclosureAccessory` prop
+
 5.3.0 - (July 2, 2019)
 ------------------
 ### Changed

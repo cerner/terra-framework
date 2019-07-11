@@ -453,8 +453,6 @@ Terra.describeViewports('ModalManager - Managed Header', ['large'], () => {
 });
 
 Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => {
-  const selector = '#root-component';
-
   before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-disclosure-accessory').refresh());
 
   describe('Disclosure Accessory', () => {

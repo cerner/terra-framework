@@ -261,7 +261,7 @@ class ContentComponent extends React.Component {
           {this.renderButton('fullscreen')}
           <br />
           <p>The child components can disclose content in the panel at various sizes.</p>
-          <p>The SlidePanelManager's available sizes are limited to those of the SlidePanel. The specified size/dimensions will be mapped to the nearest available size.</p>
+          <p>The sizes available are limited to those of the SlidePanel. The specified size/dimensions will be mapped to the nearest available size.</p>
         </div>
         <div className={cx('content-wrapper')}>
           {this.renderForm()}
