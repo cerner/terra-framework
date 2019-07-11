@@ -111,7 +111,8 @@ class CollapsibleMenuView extends React.Component {
           break;
         }
 
-        if (this.props.children.length !== undefined && this.props.children[i].type === CollapsibleMenuViewDivider) {
+        // If divider is the last element to be hidden on collapse menu, leave it face up
+        if (React.Children.count(this.props.children) > 1 && this.props.children[i].type === CollapsibleMenuViewDivider) {
           hiddenStartIndex = i - 1;
         } else {
           hiddenStartIndex = i;
