@@ -111,7 +111,11 @@ class CollapsibleMenuView extends React.Component {
           break;
         }
 
-        hiddenStartIndex = i;
+        if (this.props.children.length !== undefined && this.props.children[i].type === CollapsibleMenuViewDivider) {
+          hiddenStartIndex = i - 1;
+        } else {
+          hiddenStartIndex = i;
+        }
         menuHidden = false;
         break;
       }
