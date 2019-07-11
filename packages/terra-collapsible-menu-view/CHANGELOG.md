@@ -5,8 +5,6 @@ Unreleased
 ----------
 ### Fixed
 * Fixed divider transition between normal and in-menu view.
-
-### Fixed
 * Fixed Collapsible issue for single item group
 
 6.5.0 - (July 10, 2019)
