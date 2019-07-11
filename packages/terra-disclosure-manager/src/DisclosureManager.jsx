@@ -49,6 +49,7 @@ const propTypes = {
    */
   trapNestedDisclosureRequests: PropTypes.bool,
   /**
+   * @private
    * A DisclosureManagerDelegate instance provided by a parent DisclosureManager. This prop is automatically provided by `withDisclosureManager` and should not
    * be explicitly given to the component.
    */
@@ -78,7 +79,7 @@ class DisclosureManager extends React.Component {
     this.generateChildComponentDelegate = this.generateChildComponentDelegate.bind(this);
     this.generateDisclosureComponentDelegate = this.generateDisclosureComponentDelegate.bind(this);
     this.generateHeaderContextValue = this.generateHeaderContextValue.bind(this);
-    this.buildPublicDisclosureComponentObject = this.buildPublicDisclosureComponentObject.bind(this);
+    this.generateDisclosureComponentMappingForRender = this.generateDisclosureComponentMappingForRender.bind(this);
 
     this.resolveDismissPromise = this.resolveDismissPromise.bind(this);
     this.resolveDismissChecksInSequence = this.resolveDismissChecksInSequence.bind(this);
@@ -467,7 +468,7 @@ class DisclosureManager extends React.Component {
     };
   }
 
-  buildPublicDisclosureComponentObject() {
+  generateDisclosureComponentMappingForRender() {
     const {
       disclosureComponentKeys,
       disclosureComponentData,
@@ -508,7 +509,7 @@ class DisclosureManager extends React.Component {
       return null;
     }
 
-    const publicDisclosureComponentMapping = this.buildPublicDisclosureComponentObject();
+    const disclosureComponentMappingForRender = this.generateDisclosureComponentMappingForRender();
 
     return render({
       dismissPresentedComponent: this.generatePopFunction(disclosureComponentKeys ? disclosureComponentKeys[disclosureComponentKeys.length - 1] : undefined),
@@ -528,7 +529,7 @@ class DisclosureManager extends React.Component {
         isMaximized: disclosureIsMaximized,
         size: disclosureSize,
         dimensions: disclosureDimensions,
-        components: disclosureComponentKeys.map(key => publicDisclosureComponentMapping[key].component),
+        components: disclosureComponentKeys.map(key => disclosureComponentMappingForRender[key].component),
       },
       /**
        * The below values were added to give DisclosureManager implementations more control over the rendering of the disclosed components.
@@ -536,7 +537,7 @@ class DisclosureManager extends React.Component {
        * In a future major release, this render object will be restructured and simplified. Until then, either can be used as needed.
        */
       disclosureComponentKeys,
-      disclosureComponentData: publicDisclosureComponentMapping,
+      disclosureComponentData: disclosureComponentMappingForRender,
     });
   }
 }

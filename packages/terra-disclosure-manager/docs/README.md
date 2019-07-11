@@ -184,9 +184,7 @@ const MyApp = () => (
 
 #### DisclosureManagerHeaderAdapter
 
-All implementations of the DisclosureManager should render a header containing controls for the various disclosure management actions (close, back, maximize/minimize, etc.). The DisclosureManagerHeaderAdapter can be rendered by the disclosed content to inject their own component-specific contents into that header.
-
-If a DisclosureManagerHeaderAdapter is **not** rendered by the disclosed component, the disclosed component should render its own header. In this scenario, the disclosed component would be responsible for rendering the appropriate actions. The ActionHeader component is recommended for this purpose.
+Implementations of the DisclosureManager must render a header containing controls for the various disclosure management actions (close, back, maximize/minimize, etc.). The DisclosureManagerHeaderAdapter can be rendered by the disclosed content to inject their own component-specific contents into that header.
 
 `DisclosureManagerHeaderAdapter` Props:
 
@@ -210,7 +208,7 @@ const MyDisclosureComponent = () => {
       />
       <Button
         text="Close Modal"
-        onClick={() => { 
+        onClick={() => {
           disclosureManager.closeDisclosure();
         }}
       />
@@ -226,7 +224,7 @@ The DisclosureManagerDelegate provided to the child components contains a `discl
 If the type is supported, the DisclosureManager will check the currently disclosed component's state to ensure it can be replaced. If the disclosure is denied, then `disclose` returns a rejected Promise. If the disclosure is allowed, then a resolved Promise is returned. This Promise will be resolved with an Object containing functions and Promises that can be used to manipulate the disclosure, if necessary. Included are `dismissDisclosure`, a function that will dismiss the disclosed content, and `afterDismiss`, a deferred Promise that will be resolved when the disclosed content is dismissed by any means. Alternatively, if the additional logic isn't needed, the returned Promise can be completely ignored.
 
 Example:
-```javascript
+```jsx
 disclosureManager.disclose({
   preferredType: 'disclosure-type',
   size: 'large',
@@ -293,7 +291,7 @@ Each of these functions returns a Promise that can be used for chaining, if nece
 The function given to registerDismissCheck must return a resolved or rejected Promise. If the Promise is resolved, the component is guaranteed to be dismissed. If cleanup logic needs to execute before the component is dismissed, it is a good idea to execute before returning the resolved Promise. If a rejected Promise is returned, the component will not be dismissed. Components can render a prompt or confirmation window to give users control over the dismissal, if desired.
 
 Example:
-```javascript
+```jsx
 // MyDisclosedComponent.jsx
 
 componentDidMount() {
@@ -355,6 +353,7 @@ import CustomDisclosure from './my/custom/disclosure';
 ```
 
 ## Component Features
-* [Cross-Browser Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
-* [Responsive Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#responsive-support)
-* [Mobile Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#mobile-support)
+
+- [Cross-Browser Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
+- [Responsive Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#responsive-support)
+- [Mobile Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#mobile-support)
