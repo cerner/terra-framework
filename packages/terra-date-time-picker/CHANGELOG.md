@@ -6,6 +6,13 @@ Unreleased
 ### Changed
 * When the date-time picker time clarification modal is open, it will now focus on the first interactive DOM element within it. This enables focus to be shifted into the modal correctly when using VoiceOver on iOS.
 
+4.6.0 - (July 10, 2019)
+------------------
+### Changed
+* Minor dependency version bump
+### Changed
+* Fixed tests to appropriately reset before beginning next test.
+
 4.5.0 - (July 2, 2019)
 ------------------
 ### Changed

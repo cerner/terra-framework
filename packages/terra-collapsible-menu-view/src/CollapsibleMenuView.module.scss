@@ -33,12 +33,12 @@
 
   .face-up-item {
     flex: 0 0 auto;
-    max-width: 100%;
     padding-left: var(--terra-collapsible-menu-view-item-padding-left, 0.714rem);
     position: relative;
 
     .control {
       margin: 0;
+      margin-left: var(--terra-collapsible-menu-view-control-margin-left, 0.10141rem);
     }
 
     .is-disabled {
@@ -57,5 +57,14 @@
 
   .is-calculating {
     visibility: hidden;
+  }
+
+  .control { /* temporary overrides until standalone (no additional spacing included) version of checkbox is added */
+    margin-bottom: 0;
+    margin-top: 0;
+  
+    label:first-child {
+      padding-bottom: 0;
+    }
   }
 }
