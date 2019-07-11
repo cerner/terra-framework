@@ -35,31 +35,41 @@ const propTypes = {
 
 const UtilityMenuHeaderButton = ({
   userConfig, onClick, popupAnchorRef, intl,
-}) => (
-  <button
-    type="button"
-    className={cx('utility-button')}
-    onClick={onClick}
-    onBlur={enableFocusStyles}
-    onMouseDown={disableFocusStyles}
-    ref={!userConfig ? popupAnchorRef : undefined}
-    aria-label={intl.formatMessage({ id: 'Terra.applicationNavigation.header.utilityButtonTitle' })}
-    aria-haspopup
-    data-focus-styles-enabled
-    data-application-header-utility
-  >
-    {userConfig ? (
+}) => {
+  let ariaLabel;
+  let content;
+  if (userConfig) {
+    ariaLabel = intl.formatMessage({ id: 'Terra.applicationNavigation.header.utilityButtonTitleUser' });
+    content = (
       <React.Fragment>
         <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials} className={cx('avatar')} size="0.5217rem" />
         <div className={cx('title')}>{userConfig.name}</div>
         <IconCaretDown className={cx('caret-icon')} />
         <span className={cx('popup-anchor')} ref={popupAnchorRef} />
       </React.Fragment>
-    ) : (
-      <IconRollup className={cx('rollup-icon')} />
-    )}
-  </button>
-);
+    );
+  } else {
+    ariaLabel = intl.formatMessage({ id: 'Terra.applicationNavigation.header.utilityButtonTitleNoUser' });
+    content = <IconRollup className={cx('rollup-icon')} />;
+  }
+
+  return (
+    <button
+      type="button"
+      className={cx('utility-button')}
+      onClick={onClick}
+      onBlur={enableFocusStyles}
+      onMouseDown={disableFocusStyles}
+      ref={!userConfig ? popupAnchorRef : undefined}
+      aria-label={ariaLabel}
+      aria-haspopup
+      data-focus-styles-enabled
+      data-application-header-utility
+    >
+      {content}
+    </button>
+  );
+};
 
 UtilityMenuHeaderButton.propTypes = propTypes;
 

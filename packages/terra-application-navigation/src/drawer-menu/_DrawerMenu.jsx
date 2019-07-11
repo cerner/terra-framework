@@ -133,7 +133,7 @@ const DrawerMenu = ({
       <ul
         className={cx('utility-item-list')}
         role="listbox"
-        aria-label={intl.formatMessage({ id: 'Terra.applicationNavigation.drawerMenu.utility' })}
+        aria-label={intl.formatMessage({ id: 'Terra.applicationNavigation.drawerMenu.utilities' })}
       >
         {utilityItems.map(item => (
           <DrawerMenuListItem
@@ -164,7 +164,7 @@ const DrawerMenu = ({
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   return (
     <div className={cx('drawer-container')}>
-      <div className={cx('drawer-menu')} role={hasItems ? 'list' : null} tabIndex={0} data-navigation-drawer-menu>
+      <div className={cx('drawer-menu')} role={hasItems ? 'dialog' : null} tabIndex={0} data-navigation-drawer-menu>
         <div className={cx('vertical-overflow-container')}>
           <div className={cx('header')}>
             <div className={cx('header-background-fill')}>

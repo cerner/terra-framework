@@ -68,34 +68,41 @@ const TabRollup = ({
   text,
   isPulsed,
   intl,
-}) => (
-  <div
-    type="button"
-    role="link"
-    tabIndex="0"
-    className={cx(
-      'tab-rollup',
-      { 'has-count': hasCount },
-    )}
-    onClick={onTabSelect}
-    onKeyDown={generateKeyDownSelection(onTabSelect)}
-    onBlur={enableFocusStyles}
-    onMouseDown={disableFocusStyles}
-    ref={tabRef}
-    aria-current={isSelected}
-    aria-haspopup
-    data-focus-styles-enabled
-    aria-label={`${text} ${intl.formatMessage({ id: 'Terra.applicationNavigation.notifications.new' })}`}
-  >
-    <div aria-hidden className={cx('tab-inner')} data-tab-menu-inner>
-      <div id={`terra-navigation-link-${text}`} className={cx('tab-rollup-label')} ref={innerRef}>
-        {<span className={cx('tab-rollup-text')}>{text}</span>}
-        {hasChildNotifications && <span className={cx('tab-count')}><TabCount value={isPulsed ? 1 : 0} isRollup /></span>}
-        <IconCaretDown className={cx('tab-rollup-icon')} />
+}) => {
+  let ariaLabel = intl.formatMessage({ id: 'Terra.applicationNavigation.tabs.rollupButtonDescription' });
+  if (hasChildNotifications) {
+    ariaLabel = `${ariaLabel} ${intl.formatMessage({ id: 'Terra.applicationNavigation.notifications.new' })}`;
+  }
+
+  return (
+    <div
+      type="button"
+      role="link"
+      tabIndex="0"
+      className={cx(
+        'tab-rollup',
+        { 'has-count': hasCount },
+      )}
+      onClick={onTabSelect}
+      onKeyDown={generateKeyDownSelection(onTabSelect)}
+      onBlur={enableFocusStyles}
+      onMouseDown={disableFocusStyles}
+      ref={tabRef}
+      aria-current={isSelected}
+      aria-haspopup
+      data-focus-styles-enabled
+      aria-label={ariaLabel}
+    >
+      <div aria-hidden className={cx('tab-inner')} data-tab-menu-inner>
+        <div id={`terra-navigation-link-${text}`} className={cx('tab-rollup-label')} ref={innerRef}>
+          {<span className={cx('tab-rollup-text')}>{text}</span>}
+          {hasChildNotifications && <span className={cx('tab-count')}><TabCount value={isPulsed ? 1 : 0} isRollup /></span>}
+          <IconCaretDown className={cx('tab-rollup-icon')} />
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 TabRollup.propTypes = propTypes;
 TabRollup.defaultProps = defaultProps;

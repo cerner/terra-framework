@@ -179,7 +179,7 @@ exports[`Header should render default element 1`] = `
           >
             <button
               aria-haspopup={true}
-              aria-label="Terra.applicationNavigation.header.utilityButtonTitle"
+              aria-label="Terra.applicationNavigation.header.utilityButtonTitleNoUser"
               className="utility-button"
               data-application-header-utility={true}
               data-focus-styles-enabled={true}
@@ -654,7 +654,7 @@ exports[`Header should render with function callbacks 1`] = `
                     "current": <div
                       aria-current="false"
                       aria-haspopup="true"
-                      aria-label="Terra.applicationNavigation.tabs.rollupButtonTitle Terra.applicationNavigation.notifications.new"
+                      aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
                       class="tab-rollup"
                       data-focus-styles-enabled="true"
                       role="link"
@@ -761,7 +761,7 @@ exports[`Header should render with function callbacks 1`] = `
                       "current": <div
                         aria-current="false"
                         aria-haspopup="true"
-                        aria-label="Terra.applicationNavigation.tabs.rollupButtonTitle Terra.applicationNavigation.notifications.new"
+                        aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
                         class="tab-rollup"
                         data-focus-styles-enabled="true"
                         role="link"
@@ -805,7 +805,7 @@ exports[`Header should render with function callbacks 1`] = `
                   <div
                     aria-current={false}
                     aria-haspopup={true}
-                    aria-label="Terra.applicationNavigation.tabs.rollupButtonTitle Terra.applicationNavigation.notifications.new"
+                    aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
                     className="tab-rollup"
                     data-focus-styles-enabled={true}
                     onBlur={[Function]}
@@ -1079,7 +1079,7 @@ exports[`Header should render with function callbacks 1`] = `
           >
             <button
               aria-haspopup={true}
-              aria-label="Terra.applicationNavigation.header.utilityButtonTitle"
+              aria-label="Terra.applicationNavigation.header.utilityButtonTitleUser"
               className="utility-button"
               data-application-header-utility={true}
               data-focus-styles-enabled={true}
@@ -1379,7 +1379,7 @@ exports[`Header should render with skip callback 1`] = `
           >
             <button
               aria-haspopup={true}
-              aria-label="Terra.applicationNavigation.header.utilityButtonTitle"
+              aria-label="Terra.applicationNavigation.header.utilityButtonTitleNoUser"
               className="utility-button"
               data-application-header-utility={true}
               data-focus-styles-enabled={true}

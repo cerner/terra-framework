@@ -4,7 +4,7 @@ exports[`TabRollup should render default element 1`] = `
 <div
   aria-current={false}
   aria-haspopup={true}
-  aria-label="undefined Terra.applicationNavigation.notifications.new"
+  aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
   className="tab-rollup"
   data-focus-styles-enabled={true}
   onBlur={[Function]}
@@ -40,7 +40,7 @@ exports[`TabRollup should render prop data 1`] = `
 <div
   aria-current={true}
   aria-haspopup={true}
-  aria-label="test text Terra.applicationNavigation.notifications.new"
+  aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription Terra.applicationNavigation.notifications.new"
   className="tab-rollup has-count"
   data-focus-styles-enabled={true}
   onBlur={[Function]}
@@ -86,7 +86,7 @@ exports[`TabRollup should render with function callbacks 1`] = `
 <div
   aria-current={false}
   aria-haspopup={true}
-  aria-label="undefined Terra.applicationNavigation.notifications.new"
+  aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
   className="tab-rollup"
   data-focus-styles-enabled={true}
   onBlur={[Function]}
@@ -122,7 +122,7 @@ exports[`TabRollup should render with selection callback 1`] = `
 <div
   aria-current={false}
   aria-haspopup={true}
-  aria-label="undefined Terra.applicationNavigation.notifications.new"
+  aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
   className="tab-rollup"
   data-focus-styles-enabled={true}
   onBlur={[Function]}
