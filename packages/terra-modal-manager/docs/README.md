@@ -25,6 +25,10 @@ If the disclosed component does **not** render a `DisclosureManagerHeaderAdapter
 s
 > Note: The DisclosureManagerHeaderAdapter is the preferred way to present a header within the ModalManager. In a future major release, the ModalManager will **always** render the header and navigation controls, regardless of the presence of a DisclosureManagerHeaderAdapter.
 
+### Disclosure Accessory
+
+The `disclosureAccessory` prop allows users of the ModalManager to render content within the modal above the disclosed content. The provided component will rendered below the standard ActionHeader and above the disclosed content. This can be used to easily provide additional context to disclosed components. This component is provided once to the ModalManager instance, not on a per-disclosure basis, and each component in the disclosure stack will be decorated with the same accessory component.
+
 ### Example
 
 ```jsx
