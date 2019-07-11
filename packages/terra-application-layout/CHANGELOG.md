@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changes
+* Removed Ignore Axe Rules from wdio tests.
 
 5.6.0 - (July 10, 2019)
 ------------------
