@@ -17,11 +17,11 @@ The SlidePanelManager responds to `"panel"` disclosure type requests. Components
 
 ### DisclosureManagerHeaderAdapter Support
 
-If component disclosed within the SlidePanelManager renders a `DisclosureManagerHeaderAdapter`, the ModalManager will render a header and provide the standard disclosure navigation controls (close, go back, maximize/minimize, etc.) within it. The disclosed component can use the `DisclosureManagerHeaderAdapter` to inject its own title and CollapsibleButtonView into the header.
+If a component disclosed within the SlidePanelManager renders a `DisclosureManagerHeaderAdapter`, the SlidePanelManager will render an ActionHeader and provide the standard disclosure navigation controls (close, go back, maximize/minimize, etc.) within it. The disclosed component can use the `DisclosureManagerHeaderAdapter` to inject its own title and CollapsibleButtonView into the ActionHeader.
 
-If the disclosed component does **not** render a `DisclosureManagerHeaderAdapter`, the SlidePanelManager does not render a header, as it is assumed that the disclosed component is rendering its own. In this case, the disclosed component is responsible for providing the appropriate controls to navigate the disclosure stack.
+If the disclosed component does **not** render a `DisclosureManagerHeaderAdapter`, the SlidePanelManager will **not** render an ActionHeader itself. It is assumed that the disclosed component is rendering its own header. The disclosed component is responsible for providing the appropriate controls to navigate the disclosure stack.
 
-> Note: The DisclosureManagerHeaderAdapter is the preferred way to present a header within the SlidePanelManager. In a future major release, the SlidePanelManager will **always** render the header and navigation controls.
+> Note: The DisclosureManagerHeaderAdapter is the preferred way to present a header within the SlidePanelManager. In a future major release, the SlidePanelManager will **always** render the header and navigation controls, regardless of the presence of a DisclosureManagerHeaderAdapter.
 
 ### Example
 
@@ -29,18 +29,39 @@ If the disclosed component does **not** render a `DisclosureManagerHeaderAdapter
 import React from 'react';
 import Button from 'terra-button';
 import SlidePanelManager, { disclosureType } from 'terra-slide-panel-manager';
-import { withDisclosureManager, DisclosureManagerContext } from 'terra-disclosure-manager';
+import { withDisclosureManager, DisclosureManagerContext, DisclosureManagerHeaderAdapter } from 'terra-disclosure-manager';
+import CollapsibleMenuView from 'terra-collapsible-menu-view';
 
-const MyPanelComponent = () => {
+const PanelComponentB = () => (
+  <React.Fragment>
+    <DisclosureManagerHeaderAdapter
+      title="Panel Component B"
+    />
+    <p>I am PanelComponentB!</p>
+  </React.Fragment>
+);
+
+const PanelComponentA = () => {
   const disclosureManager = React.useContext(DisclosureManagerContext);
 
   return (
     <div>
-      <p>I am in the panel!</p>
+      <DisclosureManagerHeaderAdapter
+        title="Panel Component A"
+        collapsibleMenuView={<CollapsibleMenuView />}
+      />
+      <p>I am PanelComponentA!</p>
       <Button
-        text="Dismiss"
+        text="Disclose PanelComponentB"
         onClick={() => {
-          disclosureManager.dismiss();
+          disclosureManager.disclose({
+            preferredType: 'panel',
+            size: 'large',
+            content: {
+              key: 'panel-component-b-instance',
+              component: <PanelComponentB />
+            }
+          });
         }}
       />
     </div>
@@ -49,16 +70,16 @@ const MyPanelComponent = () => {
 
 const MyContentComponent = withDisclosureManager(({ disclosureManager }) => (
   <div>
-    <p>I am in the body!</p>
+    <p>I am MyContentComponent!</p>
     <Button
-      text="Open Panel"
+      text="Disclose PanelComponentA"
       onClick={() => {
         disclosureManager.disclose({
-          preferredType: disclosureType,
+          preferredType: 'panel',
           size: 'large',
           content: {
-            key: 'my-panel-component-instance',
-            component: <MyPanelComponent />
+            key: 'panel-component-a-instance',
+            component: <PanelComponentA />
           }
         });
       }}

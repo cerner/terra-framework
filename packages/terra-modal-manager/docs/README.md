@@ -19,11 +19,11 @@ The ModalManager responds to `"modal"` disclosure type requests. Components that
 
 ### DisclosureManagerHeaderAdapter Support
 
-If component disclosed within the ModalManager renders a `DisclosureManagerHeaderAdapter`, the ModalManager will render a header and provide the standard disclosure navigation controls (close, go back, maximize/minimize, etc.) within it. The disclosed component can use the `DisclosureManagerHeaderAdapter` to inject its own title and CollapsibleButtonView into the header.
+If a component disclosed within the ModalManager renders a `DisclosureManagerHeaderAdapter`, the ModalManager will render an ActionHeader and provide the standard disclosure navigation controls (close, go back, maximize/minimize, etc.) within it. The disclosed component can use the `DisclosureManagerHeaderAdapter` to inject its own title and CollapsibleButtonView into the ActionHeader.
 
-If the disclosed component does **not** render a `DisclosureManagerHeaderAdapter`, the ModalManager does not render a header, as it is assumed that the disclosed component is rendering its own. In this case, the disclosed component is responsible for providing the appropriate controls to navigate the disclosure stack.
-
-> Note: The DisclosureManagerHeaderAdapter is the preferred way to present a header within the ModalManager. In a future major release, the ModalManager will **always** render the header and navigation controls.
+If the disclosed component does **not** render a `DisclosureManagerHeaderAdapter`, the ModalManager will **not** render an ActionHeader itself. It is assumed that the disclosed component is rendering its own header. The disclosed component is responsible for providing the appropriate controls to navigate the disclosure stack.
+s
+> Note: The DisclosureManagerHeaderAdapter is the preferred way to present a header within the ModalManager. In a future major release, the ModalManager will **always** render the header and navigation controls, regardless of the presence of a DisclosureManagerHeaderAdapter.
 
 ### Example
 
@@ -31,18 +31,39 @@ If the disclosed component does **not** render a `DisclosureManagerHeaderAdapter
 import React from 'react';
 import Button from 'terra-button';
 import ModalManager, { disclosureType } from 'terra-modal-manager';
-import { withDisclosureManager, DisclosureManagerContext } from 'terra-disclosure-manager';
+import { withDisclosureManager, DisclosureManagerContext, DisclosureManagerHeaderAdapter } from 'terra-disclosure-manager';
+import CollapsibleMenuView from 'terra-collapsible-menu-view';
 
-const MyModalComponent = () => {
+const ModalComponentB = () => (
+  <React.Fragment>
+    <DisclosureManagerHeaderAdapter
+      title="Modal Component B"
+    />
+    <p>I am ModalComponentB!</p>
+  </React.Fragment>
+);
+
+const ModalComponentA = () => {
   const disclosureManager = React.useContext(DisclosureManagerContext);
 
   return (
     <div>
-      <p>I am in the modal!</p>
+      <DisclosureManagerHeaderAdapter
+        title="Modal Component A"
+        collapsibleMenuView={<CollapsibleMenuView />}
+      />
+      <p>I am ModalComponentA!</p>
       <Button
-        text="Dismiss"
+        text="Disclose ModalComponentB"
         onClick={() => {
-          disclosureManager.dismiss();
+          disclosureManager.disclose({
+            preferredType: 'modal',
+            size: 'large',
+            content: {
+              key: 'modal-component-b-instance',
+              component: <ModalComponentB />
+            }
+          });
         }}
       />
     </div>
@@ -51,16 +72,16 @@ const MyModalComponent = () => {
 
 const MyContentComponent = withDisclosureManager(({ disclosureManager }) => (
   <div>
-    <p>I am in the body!</p>
+    <p>I am MyContentComponent!</p>
     <Button
-      text="Open Modal"
+      text="Disclose ModalComponentA"
       onClick={() => {
         disclosureManager.disclose({
-          preferredType: disclosureType,
+          preferredType: 'modal',
           size: 'large',
           content: {
-            key: 'my-modal-component-instance',
-            component: <MyModalComponent />
+            key: 'modal-component-a-instance',
+            component: <ModalComponentA />
           }
         });
       }}
@@ -81,9 +102,10 @@ let MyModalManagerComponent = () => (
 ```
 
 ## Component Features
-* [Cross-Browser Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
-* [Responsive Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#responsive-support)
-* [Mobile Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#mobile-support)
+
+- [Cross-Browser Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
+- [Responsive Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#responsive-support)
+- [Mobile Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#mobile-support)
 
 [1]: https://github.com/cerner/terra-core/tree/master/packages/terra-content-container/docs
 [2]: https://github.com/cerner/terra-core/tree/master/packages/terra-dialog/docs
