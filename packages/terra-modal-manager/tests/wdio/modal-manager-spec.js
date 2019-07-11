@@ -451,3 +451,28 @@ Terra.describeViewports('ModalManager - Managed Header', ['large'], () => {
     });
   });
 });
+
+Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => {
+  const selector = '#root-component';
+
+  before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-disclosure-accessory').refresh());
+
+  describe('Disclosure Accessory', () => {
+    it('renders the disclosure accessory', () => {
+      browser.click('#root-component .disclose-large');
+
+      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .disclose-tiny', 1000);
+      Terra.validates.element({ selector });
+      browser.click('[class*="slide-group"] #DemoContainer-1 .close-disclosure');
+    });
+
+    it('renders the disclosure accessory for each disclosed component', () => {
+      browser.click('#root-component .disclose-large');
+      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .disclose-tiny', 1000);
+      browser.click('[class*="slide-group"] #DemoContainer-1 .disclose-tiny');
+
+      Terra.validates.element('nested disclosure', { selector });
+      browser.click('[class*="slide-group"] #DemoContainer-2 .close-disclosure');
+    });
+  });
+});

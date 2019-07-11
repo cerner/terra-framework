@@ -515,8 +515,6 @@ class DisclosureManager extends React.Component {
       closeDisclosure: this.safelyCloseDisclosure,
       maximizeDisclosure: (disclosureSize !== availableDisclosureSizes.FULLSCREEN && !disclosureIsMaximized) ? () => Promise.resolve().then(this.maximizeDisclosure) : undefined,
       minimizeDisclosure: (disclosureSize !== availableDisclosureSizes.FULLSCREEN && disclosureIsMaximized) ? () => Promise.resolve().then(this.minimizeDisclosure) : undefined,
-      disclosureComponentKeys,
-      disclosureComponentData: publicDisclosureComponentMapping,
       children: {
         components: (
           <DisclosureManagerContext.Provider value={childComponentDelegate}>
@@ -532,6 +530,13 @@ class DisclosureManager extends React.Component {
         dimensions: disclosureDimensions,
         components: disclosureComponentKeys.map(key => publicDisclosureComponentMapping[key].component),
       },
+      /**
+       * The below values were added to give DisclosureManager implementations more control over the rendering of the disclosed components.
+       * Some of the data provided by these keys is duplicated by the data provided in the above `disclose` value.
+       * In a future major release, this render object will be restructured and simplified. Until then, either can be used as needed.
+       */
+      disclosureComponentKeys,
+      disclosureComponentData: publicDisclosureComponentMapping,
     });
   }
 }

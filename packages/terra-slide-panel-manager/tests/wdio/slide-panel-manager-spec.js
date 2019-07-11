@@ -187,7 +187,6 @@ Terra.describeViewports('SlidePanelManager- Behaviors', ['large'], () => {
   });
 });
 
-
 Terra.describeViewports('SlidePanelManager - Managed Header', ['large'], () => {
   const selector = '#root-component';
 
@@ -283,6 +282,31 @@ Terra.describeViewports('SlidePanelManager - Managed Header', ['large'], () => {
       browser.click('[class*="left-buttons"] > *:first-child');
       browser.click('[class*="left-buttons"] > *:first-child');
       Terra.validates.element('after selecting minimize', { selector });
+    });
+  });
+});
+
+Terra.describeViewports('SlidePanelManager - Disclosure Accessory', ['large'], () => {
+  const selector = '#root-component';
+
+  before(() => browser.url('/#/raw/tests/terra-slide-panel-manager/slide-panel-manager/slide-panel-manager-with-disclosure-accessory').refresh());
+
+  describe('Disclosure Accessory', () => {
+    it('renders the disclosure accessory', () => {
+      browser.click('#root-component .disclose-large');
+
+      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .disclose-tiny', 1000);
+      Terra.validates.element({ selector });
+      browser.click('[class*="slide-group"] #DemoContainer-1 .close-disclosure');
+    });
+
+    it('renders the disclosure accessory for each disclosed component', () => {
+      browser.click('#root-component .disclose-large');
+      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .disclose-tiny', 1000);
+      browser.click('[class*="slide-group"] #DemoContainer-1 .disclose-tiny');
+
+      Terra.validates.element('nested disclosure', { selector });
+      browser.click('[class*="slide-group"] #DemoContainer-2 .close-disclosure');
     });
   });
 });
