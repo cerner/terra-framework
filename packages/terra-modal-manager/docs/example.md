@@ -1,1 +1,0 @@
-# Terra Modal Manager - Example

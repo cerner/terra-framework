@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import AbstractModal from 'terra-abstract-modal';
 import ActionHeader from 'terra-action-header';
-import CollapsibleMenuView from 'terra-collapsible-menu-view';
 import SlideGroup from 'terra-slide-group';
 import DisclosureManager, { availableDisclosureSizes } from 'terra-disclosure-manager';
 import ContentContainer from 'terra-content-container';
@@ -21,7 +20,7 @@ const propTypes = {
    */
   children: PropTypes.node,
   /**
-   * The component to render within the Modal alongside the other disclosed content.
+   * The component to render within the Modal above the disclosed content.
    */
   disclosureAccessory: PropTypes.element,
 };

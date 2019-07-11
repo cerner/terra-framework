@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ActionHeader from 'terra-action-header';
-import CollapsibleMenuView from 'terra-collapsible-menu-view';
 import ContentContainer from 'terra-content-container';
 import DisclosureManager, { availableDisclosureSizes } from 'terra-disclosure-manager';
 import SlideGroup from 'terra-slide-group';
@@ -21,7 +20,7 @@ const propTypes = {
    */
   panelBehavior: PropTypes.oneOf(['overlay', 'squish']),
   /**
-   * The component to render within the Modal alongside the other disclosed content.
+   * The component to render within the panel above the disclosed content.
    */
   disclosureAccessory: PropTypes.element,
 };
@@ -93,8 +92,8 @@ class SlidePanelManager extends React.Component {
                 {headerDataForPresentedComponent ? (
                   <ActionHeader
                     title={headerDataForPresentedComponent.title}
-                    onClose={!headerDataForPresentedComponent.blockNavigation ? manager.closeDisclosure : undefined}
-                    onBack={manager.disclosureComponentKeys.length > 1 && !headerDataForPresentedComponent.blockNavigation ? manager.dismissPresentedComponent : undefined}
+                    onClose={manager.closeDisclosure}
+                    onBack={manager.disclosureComponentKeys.length > 1 ? manager.dismissPresentedComponent : undefined}
                     onMaximize={manager.maximizeDisclosure}
                     onMinimize={manager.minimizeDisclosure}
                   >

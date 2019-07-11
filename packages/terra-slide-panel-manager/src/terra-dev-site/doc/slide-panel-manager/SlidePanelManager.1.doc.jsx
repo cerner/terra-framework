@@ -28,6 +28,11 @@ const DocPage = () => (
         example: <SlidePanelManagerExample behavior="squish" />,
         source: SlidePanelManagerExampleSrc,
       },
+      {
+        title: 'Disclosure Accessory Example',
+        example: <SlidePanelManagerExample behavior="squish" showAccessory />,
+        source: SlidePanelManagerExampleSrc,
+      },
     ]}
     propsTables={[
       {
