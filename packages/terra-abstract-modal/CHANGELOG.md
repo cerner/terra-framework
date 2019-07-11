@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.5.0 - (July 10, 2019)
+------------------
 ### Fixed
 * Added `data-overlay-count` attribute to root document when overlay is opened
 * Added check for `data-modal-count` attribute on root document to track opening and closing of overlays and modals,
