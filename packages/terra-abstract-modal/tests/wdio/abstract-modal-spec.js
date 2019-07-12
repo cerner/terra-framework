@@ -146,6 +146,10 @@ Terra.describeViewports('Abstract Modal', ['enormous'], () => {
   describe('Content Overflow', () => {
     before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-content-overflow'));
 
+    it('focuses on modal close button', () => {
+      expect(browser.hasFocus('#modal-close-button')).to.be.true;
+    });
+
     Terra.it.validatesElement({ selector });
   });
 });
