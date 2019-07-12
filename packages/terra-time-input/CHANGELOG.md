@@ -6,9 +6,6 @@ Unreleased
 ### Added
 * Added the ability to have an input field for seconds.
 
-### Changed
-* Changed help text color to match required contrast ratio.
-
 4.4.0 - (July 10, 2019)
 ------------------
 ### Changed
