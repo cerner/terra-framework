@@ -33,8 +33,8 @@ import {
 } from './date_utils'
 
 const DROPDOWN_FOCUS_CLASSNAMES = [
-  'react-datepicker__year-select',
-  'react-datepicker__month-select'
+  'react-datepicker-year-select',
+  'react-datepicker-month-select'
 ]
 
 const isDropdownSelect = (element = {}) => {
@@ -218,7 +218,7 @@ export default class Calendar extends React.Component {
     const dayNames = []
     if (this.props.showWeekNumbers) {
       dayNames.push(
-        <div key="W" className="react-datepicker__day-name">
+        <div key="W" className="react-datepicker-day-name">
           {this.props.weekLabel || '#'}
         </div>
       )
@@ -230,7 +230,7 @@ export default class Calendar extends React.Component {
         ? getWeekdayShortInLocale(localeData, day)
         : getWeekdayMinInLocale(localeData, day)
       return (
-        <div key={offset} className="react-datepicker__day-name">
+        <div key={offset} className="react-datepicker-day-name">
           {weekDayName}
         </div>
       )
@@ -242,7 +242,7 @@ export default class Calendar extends React.Component {
       return
     }
     return <a
-      className="react-datepicker__navigation react-datepicker__navigation--previous"
+      className="react-datepicker-navigation react-datepicker-navigation--previous"
       onClick={this.decreaseMonth} />
   }
 
@@ -251,12 +251,12 @@ export default class Calendar extends React.Component {
       return
     }
 
-    let classes = ['react-datepicker__navigation', 'react-datepicker__navigation--next']
+    let classes = ['react-datepicker-navigation', 'react-datepicker-navigation--next']
     if (this.props.showTimeSelect) {
-      classes.push('react-datepicker__navigation--next--with-time')
+      classes.push('react-datepicker-navigation--next--with-time')
     }
     if (this.props.todayButton) {
-      classes.push('react-datepicker__navigation--next--with-today-button')
+      classes.push('react-datepicker-navigation--next--with-today-button')
     }
 
     return <a
@@ -265,13 +265,13 @@ export default class Calendar extends React.Component {
   }
 
   renderCurrentMonth = (date = this.state.date) => {
-    const classes = ['react-datepicker__current-month']
+    const classes = ['react-datepicker-current-month']
 
     if (this.props.showYearDropdown) {
-      classes.push('react-datepicker__current-month--hasYearDropdown')
+      classes.push('react-datepicker-current-month--hasYearDropdown')
     }
     if (this.props.showMonthDropdown) {
-      classes.push('react-datepicker__current-month--hasMonthDropdown')
+      classes.push('react-datepicker-current-month--hasMonthDropdown')
     }
     return (
       <div className={classes.join(' ')}>
@@ -320,7 +320,7 @@ export default class Calendar extends React.Component {
     }
     return (
       <div
-        className="react-datepicker__today-button"
+        className="react-datepicker-today-button"
         onClick={e => this.props.onSelect(getStartOfDate(now(this.props.utcOffset)), e)}>
         {this.props.todayButton}
       </div>
@@ -333,16 +333,16 @@ export default class Calendar extends React.Component {
       var monthDate = addMonths(cloneDate(this.state.date), i)
       var monthKey = `month-${i}`
       monthList.push(
-        <div key={monthKey} ref={div => { this.monthContainer = div }} className="react-datepicker__month-container">
-          <div className="react-datepicker__header">
+        <div key={monthKey} ref={div => { this.monthContainer = div }} className="react-datepicker-month-container">
+          <div className="react-datepicker-header">
             {this.renderCurrentMonth(monthDate)}
             <div
-              className={`react-datepicker__header__dropdown react-datepicker__header__dropdown--${this.props.dropdownMode}`}
+              className={`react-datepicker-header__dropdown react-datepicker-header__dropdown--${this.props.dropdownMode}`}
               onFocus={this.handleDropdownFocus}>
               {this.renderMonthDropdown(i !== 0)}
               {this.renderYearDropdown(i !== 0)}
             </div>
-            <div className="react-datepicker__day-names">
+            <div className="react-datepicker-day-names">
               {this.header(monthDate)}
             </div>
           </div>

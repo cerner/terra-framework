@@ -630,7 +630,7 @@ class DatePicker extends React.Component {
 
   renderClearButton = () => {
     if (this.props.isClearable && this.props.selected != null) {
-      return <a className="react-datepicker__close-icon" href="#" onClick={this.onClearClick} />
+      return <a className="react-datepicker-close-icon" href="#" onClick={this.onClearClick} />
     } else {
       return null
     }
@@ -648,7 +648,7 @@ class DatePicker extends React.Component {
         <div>
           {
             !this.props.inline
-              ? <div className="react-datepicker__input-container">
+              ? <div className="react-datepicker-input-container">
                 {this.renderDateInput()}
                 {this.renderClearButton()}
               </div>
@@ -660,7 +660,7 @@ class DatePicker extends React.Component {
                   <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: false, clickOutsideDeactivates: true }}>
                     <div
                       ref={this.datePickerOverlayContainer}
-                      className="react-datepicker__portal"
+                      className="react-datepicker-portal"
                       tabIndex="-1"
                       onKeyDown={this.handleCalendarKeyDown}
                     >
@@ -678,7 +678,7 @@ class DatePicker extends React.Component {
       <React.Fragment>
         <div
          ref={this.datePickerContainer}
-         className="react-datepicker__input-container"
+         className="react-datepicker-input-container"
         >
           {this.renderDateInput()}
           {this.renderClearButton()}
@@ -691,7 +691,7 @@ class DatePicker extends React.Component {
           targetRef={() => this.datePickerContainer.current }
           onPosition={this.handleOnPosition}
           onRequestClose={this.handleOnRequestClose}
-          classNameArrow={classnames('react-datepicker__arrow')}
+          classNameArrow={classnames('react-datepicker-arrow')}
           contentWidth="auto"
           contentHeight="auto"
           isArrowDisplayed

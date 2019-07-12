@@ -16,8 +16,8 @@ export default class WeekNumber extends React.Component {
 
   render () {
     const weekNumberClasses = {
-      'react-datepicker__week-number': true,
-      'react-datepicker__week-number--clickable': !!this.props.onClick
+      'react-datepicker-week-number': true,
+      'react-datepicker-week-number--clickable': !!this.props.onClick
     }
     return (
       <div

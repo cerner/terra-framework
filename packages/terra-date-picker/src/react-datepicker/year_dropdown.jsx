@@ -44,16 +44,16 @@ export default class YearDropdown extends React.Component {
     <select
       tabIndex="-1"
       value={this.props.year}
-      className="react-datepicker__year-select"
+      className="react-datepicker-year-select"
       onChange={this.onSelectChange}>
       {this.renderSelectOptions()}
     </select>
   )
 
   renderReadView = (visible) => (
-    <div key="read" style={{visibility: visible ? 'visible' : 'hidden'}} className="react-datepicker__year-read-view" onClick={(event) => this.toggleDropdown(event)}>
-      <span className="react-datepicker__year-read-view--down-arrow" />
-      <span className="react-datepicker__year-read-view--selected-year">{this.props.year}</span>
+    <div key="read" style={{visibility: visible ? 'visible' : 'hidden'}} className="react-datepicker-year-read-view" onClick={(event) => this.toggleDropdown(event)}>
+      <span className="react-datepicker-year-read-view--down-arrow" />
+      <span className="react-datepicker-year-read-view--selected-year">{this.props.year}</span>
     </div>
   )
 
@@ -125,7 +125,7 @@ export default class YearDropdown extends React.Component {
 
     return (
       <div
-        className={`react-datepicker__year-dropdown-container react-datepicker__year-dropdown-container--${this.props.dropdownMode}`}>
+        className={`react-datepicker-year-dropdown-container react-datepicker-year-dropdown-container--${this.props.dropdownMode}`}>
         {renderedDropdown}
       </div>
     )

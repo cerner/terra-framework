@@ -50,13 +50,13 @@ export default class Time extends React.Component {
   }
 
   liClasses = (time, currH, currM) => {
-    let classes = ['react-datepicker__time-list-item']
+    let classes = ['react-datepicker-time-list-item']
 
     if ((currH === getHour(time)) && (currM === getMinute(time))) {
-      classes.push('react-datepicker__time-list-item--selected')
+      classes.push('react-datepicker-time-list-item--selected')
     }
     if (((this.props.minTime || this.props.maxTime) && isTimeInDisabledRange(time, this.props)) || (this.props.excludeTimes && isTimeDisabled(time, this.props.excludeTimes))) {
-      classes.push('react-datepicker__time-list-item--disabled')
+      classes.push('react-datepicker-time-list-item--disabled')
     }
 
     return classes.join(' ')
@@ -89,13 +89,13 @@ export default class Time extends React.Component {
     }
 
     return (
-      <div className={`react-datepicker__time-container ${(this.props.todayButton) ? 'react-datepicker__time-container--with-today-button' : ''}`}>
-        <div className="react-datepicker__header react-datepicker__header--time">
-          <div className="react-datepicker-time__header">Time</div>
+      <div className={`react-datepicker-time-container ${(this.props.todayButton) ? 'react-datepicker-time-container--with-today-button' : ''}`}>
+        <div className="react-datepicker-header react-datepicker-header--time">
+          <div className="react-datepicker-time-header">Time</div>
         </div>
-        <div className="react-datepicker__time">
-          <div className="react-datepicker__time-box">
-            <ul className="react-datepicker__time-list" ref={list => { this.list = list }} style={height ? {height} : {}}>
+        <div className="react-datepicker-time">
+          <div className="react-datepicker-time-box">
+            <ul className="react-datepicker-time-list" ref={list => { this.list = list }} style={height ? {height} : {}}>
               {this.renderTimes.bind(this)()}
             </ul>
           </div>
