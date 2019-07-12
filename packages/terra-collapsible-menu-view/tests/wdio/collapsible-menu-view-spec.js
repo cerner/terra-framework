@@ -18,6 +18,16 @@ Terra.describeViewports('Responsive Hidden Open', ['tiny', 'small', 'medium', 'l
   Terra.it.isAccessible();
 });
 
+Terra.describeViewports('Collapsible Menu With Item Before Divider', ['tiny', 'small', 'medium', 'large'], () => {
+  before(() => {
+    browser.url('/#/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/default-collapsible-menu-view');
+    browser.click('[data-collapsible-menu-toggle]');
+  });
+
+  Terra.it.matchesScreenshot({ selector: '[data-terra-popup-content]' });
+  Terra.it.isAccessible();
+});
+
 Terra.describeViewports('First hidden item visible when isIconOnly', ['medium'], () => {
   before(() => browser.url('/#/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/first-hidden-item-is-icon'));
 
