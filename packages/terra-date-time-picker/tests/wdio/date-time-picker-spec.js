@@ -281,7 +281,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
 
     it('Select a date from the picker', () => {
       browser.click('[class*="button"]');
-      browser.click('.react-datepicker__week > *:nth-child(2)');
+      browser.click('.react-datepicker-week > *:nth-child(2)');
     });
 
     Terra.it.matchesScreenshot('1');

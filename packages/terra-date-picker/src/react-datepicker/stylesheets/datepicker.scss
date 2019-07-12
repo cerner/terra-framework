@@ -344,7 +344,7 @@
 .react-datepicker-year-option,
 .react-datepicker-month-option {
   display: block;
-  line-height: 20;
+  line-height: 20px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -445,7 +445,7 @@
   .react-datepicker-day-name,
   .react-datepicker-day,
   .react-datepicker-time-name {
-    line-height: 3;
+    line-height: 3rem;
     width: 3rem;
   }
 
@@ -454,7 +454,7 @@
     .react-datepicker-day-name,
     .react-datepicker-day,
     .react-datepicker-time-name {
-      line-height: 2;
+      line-height: 2rem;
       width: 2rem;
     }
   }
