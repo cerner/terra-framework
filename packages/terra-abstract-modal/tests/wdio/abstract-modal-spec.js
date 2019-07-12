@@ -130,6 +130,10 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
     describe('No Focusable Content', () => {
       before(() => browser.url('/#/raw/tests/terra-abstract-modal/abstract-modal/abstract-modal-no-focusable-content'));
 
+      it('clicks to open modal', () => {
+        browser.click('button');
+      });
+
       it('does focus in the modal when opened', () => {
         expect(browser.hasFocus('[data-terra-abstract-modal-begin]')).to.be.true;
         Terra.validates.element({ selector });
