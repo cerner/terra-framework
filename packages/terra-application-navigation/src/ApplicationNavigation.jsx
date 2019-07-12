@@ -374,4 +374,11 @@ const ApplicationNavigation = ({
 ApplicationNavigation.propTypes = propTypes;
 ApplicationNavigation.defaultProps = defaultProps;
 
+/**
+ * The <main> tag rendered by ApplicationNavigation is not officially supported by legacy Internet Explorer browsers.
+ * React will log warnings if we attempt to render it. However, by creating a main element here prior to rendering the component,
+ * Internet Explorer is tricked into recognizing the <main> tag, and React does not warn.
+ */
+document.createElement('main');
+
 export default ApplicationNavigation;
