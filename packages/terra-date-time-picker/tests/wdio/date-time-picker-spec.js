@@ -418,7 +418,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.click('[class*="button-offset"]');
       browser.waitForVisible('[class*="time-clarification"]');
       browser.click('[class*="button-standard"]');
-    })
+    });
 
     Terra.it.matchesScreenshot('after offset change', { selector: '#root' });
   });
