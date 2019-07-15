@@ -21,7 +21,7 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
       browser.pause(50);
     });
 
-    Terra.it.validatesElement();
+    Terra.it.validatesElement({ selector: '#root' });
   });
 
   describe('Utilities should display properly', () => {
