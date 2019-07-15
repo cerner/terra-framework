@@ -27,25 +27,25 @@
     display: flex;
     flex: 0 0 auto;
     flex-direction: column;
-    overflow: hidden;
     height: 0;
-    padding: 0;
     margin: 0;
+    overflow: hidden;
+    padding: 0;
     position: absolute;
     width: 0;
 
     &.is-open {
-      background-color: #0079be;
-      border: 1px solid #fff;
-      left: 0;
+      background-color: var(--terra-application-navigation-compact-header-hidden-background-color, #0079be);
+      border: var(--terra-application-navigation-compact-header-hidden-border, 1px solid #fff);
       height: auto;
+      left: 0;
       max-height: 100%;
-      overflow: visible;
+      overflow: auto;
       padding: 1rem;
       position: fixed;
       top: 0;
-      z-index: 6001;
       width: 100%;
+      z-index: 6001;
     }
   }
 
@@ -53,13 +53,16 @@
   .hidden-utils {
     list-style: none;
     margin: 0;
-    padding: 0;  
+    padding: 0;
   }
 
-  .hidden-nav.is-open .hidden-item,
-  .hidden-utils.is-open {
-    color: #fff;
+  .is-open .hidden-item {
+    color: var(--terra-application-navigation-compact-header-hidden-item-text-color, #fff);
     cursor: pointer;
+    hyphens: auto;
+    overflow-wrap: break-word; /* Modern browsers */
+    width: 100%;
+    word-wrap: break-word; /* For IE 10 and IE 11 */
   }
 
   .menu-button {

@@ -115,6 +115,7 @@ function buildUtilityItem(text, key, onSelect, isUtilityOpen) {
   return (
     <li
       key={key}
+      className={cx('hidden-item')}
       tabIndex={isUtilityOpen ? '0' : '-1'}
       role="option"
       aria-selected="false"
