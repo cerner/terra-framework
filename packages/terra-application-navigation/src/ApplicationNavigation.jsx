@@ -363,7 +363,7 @@ const ApplicationNavigation = ({
   }
 
   let hiddenMainTitle;
-  if (navigationItems) {
+  if (navigationItems && activeNavigationItemKey) {
     hiddenMainTitle = (
       <VisuallyHiddenText
         id="main-inner-title"
@@ -393,7 +393,7 @@ const ApplicationNavigation = ({
           tabIndex="-1"
           role="main"
           className={cx('main-container')}
-          aria-labelledby="main-inner-title"
+          aria-labelledby={hiddenMainTitle ? 'main-inner-title' : null}
         >
           {hiddenMainTitle}
           {children}
