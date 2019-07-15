@@ -1,6 +1,10 @@
 import React from 'react';
 import { Consumer } from 'xfc';
+import classNames from 'classnames/bind';
 import EmbeddedContentConsumer from '../../../../EmbeddedContentConsumer';
+import styles from './Consumer.module.scss';
+
+const cx = classNames.bind(styles);
 
 Consumer.init();
 
@@ -14,7 +18,8 @@ const eventHandlers = [{
 const CustomEventConsumer = () => (
   <div id="CustomEvent">
     <EmbeddedContentConsumer
-      src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-event-provider"
+      className={cx('iframe')}
+      src="/#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-event-provider"
       eventHandlers={eventHandlers}
     />
   </div>

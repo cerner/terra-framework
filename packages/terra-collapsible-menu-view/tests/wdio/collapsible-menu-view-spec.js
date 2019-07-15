@@ -31,6 +31,24 @@ Terra.describeViewports('Responsive Single Item', ['tiny', 'large'], () => {
     browser.moveToObject('#root', 0, 0);
   });
 
+  Terra.describeViewports('Single Item Group', ['enormous', 'large', 'huge', 'medium'], () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/single-item-group');
+    });
+
+    Terra.it.matchesScreenshot();
+    Terra.it.isAccessible();
+  });
+
+  Terra.describeViewports('Single Item Group Hidden Open', ['tiny', 'small'], () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/single-item-group');
+      browser.click('[data-collapsible-menu-toggle]');
+    });
+
+    Terra.it.matchesScreenshot({ selector: '#root' });
+    Terra.it.isAccessible();
+  });
   Terra.it.matchesScreenshot({ selector: '#root' });
   Terra.it.isAccessible();
 });

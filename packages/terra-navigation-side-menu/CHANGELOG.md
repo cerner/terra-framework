@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+2.12.0 - (July 10, 2019)
+------------------
 ### Added
 * Added `aria-haspopup` attribute to menu items that contain sub-navigation
 

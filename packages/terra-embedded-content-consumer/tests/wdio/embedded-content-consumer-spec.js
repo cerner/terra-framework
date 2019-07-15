@@ -1,7 +1,7 @@
 Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
   describe('default', () => {
     before(() => {
-      browser.url('#/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/consumers/basic-consumer');
+      browser.url('/#/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/consumers/basic-consumer');
     });
 
     Terra.it.matchesScreenshot();
@@ -9,7 +9,7 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
 
   describe('custom-event', () => {
     before(() => {
-      browser.url('#/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/consumers/custom-event-consumer');
+      browser.url('/#/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/consumers/custom-event-consumer');
       browser.waitForExist('#CustomEvent');
     });
 
@@ -17,7 +17,7 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
 
 
     it('Provider triggers EventA message', () => {
-      const myFrame = browser.element('iframe[src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-event-provider"]').value;
+      const myFrame = browser.element('iframe[src="/#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-event-provider"]').value;
       browser.frame(myFrame);
 
       browser.click('#EventA');
@@ -30,7 +30,7 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
 
   describe('custom-events', () => {
     before(() => {
-      browser.url('#/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/consumers/custom-events-consumer');
+      browser.url('/#/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/consumers/custom-events-consumer');
       browser.waitForExist('#CustomEvents');
     });
 
@@ -38,7 +38,7 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
 
 
     it('Provider triggers EventA message', () => {
-      const myFrame = browser.element('iframe[src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]').value;
+      const myFrame = browser.element('iframe[src="/#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]').value;
       browser.frame(myFrame);
 
       browser.click('#EventA');
@@ -49,7 +49,7 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
     Terra.it.matchesScreenshot('EventA');
 
     it('successfully replied with EventA message', () => {
-      const myFrame = browser.element('iframe[src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]').value;
+      const myFrame = browser.element('iframe[src="/#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]').value;
       browser.frame(myFrame);
 
       expect(browser.getText('#embedded-content-consumer-reply')).to.have.string('eventA');
@@ -57,7 +57,7 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
     });
 
     it('Provider triggers EventB message', () => {
-      const myFrame = browser.element('iframe[src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]').value;
+      const myFrame = browser.element('iframe[src="/#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]').value;
       browser.frame(myFrame);
 
       browser.click('#EventB');
@@ -68,7 +68,7 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
     Terra.it.matchesScreenshot('EventB');
 
     it('successfully replied with EventB message', () => {
-      const myFrame = browser.element('iframe[src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]').value;
+      const myFrame = browser.element('iframe[src="/#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]').value;
       browser.frame(myFrame);
 
       expect(browser.getText('#embedded-content-consumer-reply')).to.have.string('eventB');
@@ -77,14 +77,14 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
 
   describe('data-status', () => {
     before(() => {
-      browser.url('#/tests/terra-embedded-content-consumer/embedded-content-consumer/consumers/data-status-consumer');
+      browser.url('/#/raw/tests/terra-embedded-content-consumer/embedded-content-consumer/consumers/data-status-consumer');
     });
 
     it('has mounted, launched, and authorized elements', () => {
       const timeout = browser.options.waitforTimeout + 5000;
-      browser.waitForExist('iframe[src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/data-status-provider"]', timeout);
+      browser.waitForExist('iframe[src="/#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/data-status-provider"]', timeout);
 
-      const myFrame = browser.element('iframe[src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/data-status-provider"]').value;
+      const myFrame = browser.element('iframe[src="/#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/data-status-provider"]').value;
       browser.frame(myFrame);
 
       expect(browser.isExisting('#Mounted'));
