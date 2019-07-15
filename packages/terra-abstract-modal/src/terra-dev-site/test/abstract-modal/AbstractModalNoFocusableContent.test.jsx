@@ -7,7 +7,7 @@ class ModalNoFocusableContent extends React.Component {
     super();
 
     this.state = {
-      isOpen: false,
+      isOpen: true,
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
