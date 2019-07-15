@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added the ability for the user to enter seconds in the time input
 
+### Fixed
+* Allow blur to be handled after the date time ambiguity is resolved.
+
 4.6.0 - (July 10, 2019)
 ------------------
 ### Changed

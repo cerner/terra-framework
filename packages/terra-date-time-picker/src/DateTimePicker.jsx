@@ -207,7 +207,7 @@ class DateTimePicker extends React.Component {
       this.checkAmbiguousTime(enteredDateTime, () => {
 
         // If the entered time is ambiguous then do not handle blur just yet. It should be handled _after_
-        // the Time Clarification dialog is dismissed.
+        // the ambiguity is resolved (i.e., after dismissing the Time Clarification dialog).
         if (!(this.state.isAmbiguousTime && this.state.isTimeClarificationOpen)) {
           this.handleBlur(event, enteredDateTime);
         }
@@ -232,7 +232,7 @@ class DateTimePicker extends React.Component {
       this.checkAmbiguousTime(updatedDateTime, () => {
 
         // If the entered time is ambiguous then do not handle blur just yet. It should be handled _after_
-        // the Time Clarification dialog is dismissed.
+        // the ambiguity is resolved (i.e., after dismissing the Time Clarification dialog).
         if (!(this.state.isAmbiguousTime && this.state.isTimeClarificationOpen)) {
           this.handleBlur(event, updatedDateTime);
         }
@@ -279,7 +279,7 @@ class DateTimePicker extends React.Component {
     this.containerHasFocus = false;
   }
 
-  checkAmbiguousTime(dateTime, callback) {
+  checkAmbiguousTime(dateTime, onCheckCallback) {
     // To prevent multiple time clarification dialogs from rendering, ensure that it is not open before checking for the ambiguous hour.
     // One situation is when using the right arrow key to move focus from the hour input to the minute input, it will invoke onBlur and check for ambiguous hour.
     // If the hour is ambiguous, the dialog would display and steal focus from the minute input, which again will invoke onBlur and check for ambiguous hour.
@@ -297,7 +297,7 @@ class DateTimePicker extends React.Component {
     this.setState({
       isAmbiguousTime: isDateTimeAmbiguous,
       isTimeClarificationOpen: isDateTimeAmbiguous && !isOldTimeAmbiguous,
-    }, callback);
+    }, onCheckCallback);
   }
 
   handleDateChange(event, date) {

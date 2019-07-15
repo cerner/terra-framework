@@ -91,7 +91,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     Terra.it.matchesScreenshot('0', { selector: '[class*="abstract-modal"]' });
 
     it('hides the offset button', () => {
-      browser.click('[class*="button-daylight"]');
+      browser.click('[class*="button-standard"]');
     });
 
     Terra.it.matchesScreenshot('1');
@@ -396,5 +396,30 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     });
 
     Terra.it.matchesScreenshot();
+  });
+
+  describe('onBlur', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-dst-blur');
+      browser.click('input[name="terra-time-minute-input"]');
+      browser.keys('Tab');
+      browser.waitForVisible('[class*="time-clarification"]');
+    });
+
+    Terra.it.matchesScreenshot('before DST resolution', { selector: '#root' });
+
+    it('handles blur after date-time ambiguity is resolved', () => {
+      browser.click('[class*="button-daylight"]');
+    });
+
+    Terra.it.matchesScreenshot('after DST resolution', { selector: '#root' });
+
+    it('updates the underlying date-time upon changing the offset', () => {
+      browser.click('[class*="button-offset"]');
+      browser.waitForVisible('[class*="time-clarification"]');
+      browser.click('[class*="button-standard"]');
+    })
+
+    Terra.it.matchesScreenshot('after offset change', { selector: '#root' });
   });
 });
