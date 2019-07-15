@@ -7,6 +7,23 @@ The `terra-application` package contains the components that comprise Terra's ap
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-application`
 
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+<details>
+<summary>View information on this component's peer dependencies.</summary>
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+
+
+</details>
+<!-- AUTO-GENERATED-CONTENT:END -->
+
 ## Usage
 
 The `terra-application` package can be used by React-based application and library packages to provide a consistent set of features for their applications/components.
@@ -136,7 +153,7 @@ In addition to the JS utilities, a Sass partial containing media query mixins ba
   @include terra-mq-small-up {
     color: red;
   }
-  
+
   @include terra-mq-medium-up {
     color: purple;
   }
@@ -169,7 +186,7 @@ Please see the documentation for the `terra-disclosure-manager` package for deta
 
 ```jsx
 import DisclosureManager,
-{ 
+{
   withDisclosureManager,
   disclosureManagerShape,
   DisclosureManagerContext,
@@ -184,7 +201,7 @@ import DisclosureManager,
 The `ModalManager` is an implementation of the `DisclosureManager` that renders progressively disclosed content within a modal.
 
 Please see the documentation for the `terra-modal-manager` package for detailed API information. All of the exports from the `terra-modal-manager` package are exported from the `terra-application/lib/modal-manager` directory.
- 
+
 ```jsx
 import ModalManager from 'terra-application/lib/modal-manager';
 ```
@@ -196,7 +213,7 @@ import ModalManager from 'terra-application/lib/modal-manager';
 The `SlidePanelManager` is an implementation of the `DisclosureManager` that renders progressively disclosed content within a SlidePanel (as provided by `terra-slide-panel`).
 
 Please see the documentation for the `terra-slide-panel-manager` package for detailed API information. All of the exports from the `terra-slide-panel-manager` package are exported from the `terra-application/lib/slide-panel-manager` directory.
- 
+
 ```jsx
 import SlidePanelManager from 'terra-application/lib/slide-panel-manager';
 ```

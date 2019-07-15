@@ -7,6 +7,23 @@ The DisclosureManager is a stateful component used to manage disclosure presenta
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-disclosure-manager`
 
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+<details>
+<summary>View information on this component's peer dependencies.</summary>
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+
+
+</details>
+<!-- AUTO-GENERATED-CONTENT:END -->
+
 This package uses React's Context for inter-component communication. A single instance of this package must be installed to ensure that communication occurs between all Context Providers and Consumers. To help ensure a single instance is installed, this package should be defined as a peer dependency in packages that are reusable libraries or otherwise consumed by other packages.
 
 ## Usage
@@ -69,7 +86,7 @@ Example (using the Modal and SlideGroup):
 
 ### Interacting with the Disclosure Manager
 
-The DisclosureManager wraps its contents in a context provider that exposes an instance of a DisclosureManagerDelegate, an object containing DisclosureManager APIs, to components based upon their presented location. 
+The DisclosureManager wraps its contents in a context provider that exposes an instance of a DisclosureManagerDelegate, an object containing DisclosureManager APIs, to components based upon their presented location.
 
 #### withDisclosureManager
 
@@ -77,13 +94,13 @@ Components can use the higher order component generator `withDisclosureManager()
 
 ```jsx
 import Base from 'terra-base';
-import ModalManager from 'terra-modal-manager'; 
+import ModalManager from 'terra-modal-manager';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 
 const MyDisclosureComponent = withDisclosureManager(({ disclosureManager }) => (
   <Button
     text="Close Modal"
-    onClick={() => { 
+    onClick={() => {
       disclosureManager.closeDisclosure();
     }}
   />
@@ -95,7 +112,7 @@ MyDisclosureComponent.propTypes = {
 const MyComponent = withDisclosureManager({ disclosureManager }) => (
   <Button
     text="Launch Modal"
-    onClick={() => { 
+    onClick={() => {
       disclosureManager.disclose({
         preferredType: 'modal',
         content: {
