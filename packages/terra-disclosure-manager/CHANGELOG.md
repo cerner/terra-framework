@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added documentation on required peerDependencies
 
 ### Added
 * Added DisclosureManagerHeaderAdapter and DisclosureManagerHeaderAdapterContext
