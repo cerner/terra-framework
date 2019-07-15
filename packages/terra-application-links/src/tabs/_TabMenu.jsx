@@ -81,8 +81,7 @@ class TabMenu extends React.Component {
   }
 
   createDisplay(popup) {
-    const { location } = this.props;
-    const { intl } = this.props;
+    const { location, intl } = this.props;
     let text = intl.formatMessage({ id: 'Terra.application.tabs.more' });
     let icon;
     let isSelected = false;
