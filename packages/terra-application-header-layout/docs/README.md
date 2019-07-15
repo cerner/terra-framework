@@ -7,6 +7,19 @@ This component renders an application header layout. To be used with a terra-lay
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-application-header-layout`
 
+## Features
+
+### Skip to Content Button
+
+To improve accessibility of our UI for users using a keyboard to navigate, we have implement a 'Skip to Content' button that focuses on the main content node.
+
+To use it, just tab onto the page, and you will see it as the first item and 
+- Press the Enter key to skip to the main content node, or
+- Press the Tab key to ignore the 'Skip to Content' button.
+
+#### Note: 
+This feature is enabled by default and cannot be disabled.
+
 ## Component Features
 * [Cross-Browser Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
 * [Responsive Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#responsive-support)

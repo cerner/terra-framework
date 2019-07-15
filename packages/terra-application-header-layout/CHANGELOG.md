@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added documentation for 'Skip to Content' button.
 
 3.12.0 - (July 10, 2019)
 ------------------
