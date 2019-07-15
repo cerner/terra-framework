@@ -121,12 +121,19 @@ class AbstractModal extends React.Component {
       } else if (mainDocumentElement && mainDocumentElement.hasAttribute('data-overlay-count')) {
         mainDocumentElement.setAttribute('data-overlay-count', `${inert + 1}`);
       }
-      // Shift focus to first tabbable element in modal
-      if (tabbable(this.modalElement.current)[0]) {
-        tabbable(this.modalElement.current)[0].focus();
+
+      // Handle focus shift
+      if ('ontouchstart' in window) {
+        // Shift focus to first tabbable element in modal
+        if (tabbable(this.modalElement.current)[0]) {
+          tabbable(this.modalElement.current)[0].focus();
+        } else {
+          // If no focusable elements are withing the modal, shift to modal dialog begin help text
+          this.modalElement.current.querySelector('[data-terra-abstract-modal-begin]').focus();
+        }
       } else {
-        // If no focusable elements are withing the modal, shift to modal dialog begin help text
-        this.modalElement.current.querySelector('[data-terra-abstract-modal-begin]').focus();
+        // Shift focus to modal dialog
+        this.modalElement.current.focus();
       }
     }
   }

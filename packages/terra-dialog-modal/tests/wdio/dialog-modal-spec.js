@@ -33,12 +33,19 @@ describe('Dialog Modal', () => {
   describe('Within Modal Focus Handling', () => {
     before(() => browser.url('/#/raw/tests/terra-dialog-modal/dialog-modal/default-dialog-modal'));
 
-    it('focuses on interactive elements within the modal when opened', () => {
+    it('focuses on the modal when opened', () => {
       browser.click('#trigger-dialog-modal');
+      expect(browser.hasFocus('[aria-modal="true"][role="dialog"]')).to.be.equal(true);
+    });
+
+    Terra.it.matchesScreenshot('modal is focused on open', { selector: '#root' });
+
+    it('focuses on interactive elements within the modal', () => {
+      browser.keys(['Tab']);
       expect(browser.hasFocus('[type="button"][aria-label="Close"]')).to.be.equal(true);
     });
 
-    Terra.it.matchesScreenshot('modal close button is focused on open', { selector: '#root' });
+    Terra.it.matchesScreenshot('modal button focused', { selector: '#root' });
 
     it('does not focus on interactive content within the app when the modal is open - tab cycle forward', () => {
       browser.keys(['Tab']);
