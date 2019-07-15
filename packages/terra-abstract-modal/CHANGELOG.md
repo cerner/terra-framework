@@ -15,7 +15,7 @@ Unreleased
   to prevent the removal of the `inert` attribute from the root element if another overlay or abstract modal exists.
 
 ### Changed
-* When the abstract modal is open, it will now focus on the first interactive DOM element within it. This enables focus to be shifted into the modal correctly when using VoiceOver on iOS.
+* When the abstract modal is open on touch devices, it will now focus on the first interactive DOM element within it. This enables focus to be shifted into the modal correctly when using VoiceOver on iOS.
 
 3.4.0 - (July 2, 2019)
 ------------------
