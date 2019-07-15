@@ -84,6 +84,9 @@ const propTypes = {
    * Whether or not selected states should display on the menu item.
    */
   showSelections: PropTypes.bool,
+  /**
+   * Role of the parent ul that child items should match.
+   */
   role: PropTypes.oneOf(['list', 'menu', 'listbox']),
 };
 

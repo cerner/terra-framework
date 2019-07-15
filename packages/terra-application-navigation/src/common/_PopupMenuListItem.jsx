@@ -50,7 +50,7 @@ const propTypes = {
   /**
    * Role of the parent ul that the child item should match.
    */
-  parentRole: PropTypes.oneOf(['menu', 'listbox']),
+  parentRole: PropTypes.oneOf(['list', 'menu', 'listbox']),
 };
 
 const PopupMenuListItem = ({
