@@ -51,84 +51,297 @@ const WrappedCalendar = onClickOutside(Calendar)
 
 class DatePicker extends React.Component {
   static propTypes = {
+    /**
+   * Prop to change date when a valid date is selected.
+   */
     adjustDateOnChange: PropTypes.bool,
+    /**
+   * Prop to check for same dates.
+   */
     allowSameDay: PropTypes.bool,
+    /**
+   * Prop to auto complete date.
+   */
     autoComplete: PropTypes.string,
+    /**
+   * Prop to auto focus on date picker.
+   */
     autoFocus: PropTypes.bool,
+    /**
+   * Classname for styling calendar.
+   */
     calendarClassName: PropTypes.string,
+    /**
+   * Component to render within date picker.
+   */
     children: PropTypes.node,
+    /**
+   * Classname for styling date picker.
+   */
     className: PropTypes.string,
+    /**
+   * Prop for custom input in date picker.
+   */
     customInput: PropTypes.element,
+    /**
+   * Prop for custom input reference in date picker.
+   */
     customInputRef: PropTypes.string,
+    /**
+   * Format of the date selected.
+   */
     dateFormat: PropTypes.oneOfType([ // eslint-disable-line react/no-unused-prop-types
       PropTypes.string,
       PropTypes.array
     ]),
+    /**
+   * Date format displayed on calendar header.
+   */
     dateFormatCalendar: PropTypes.string,
+    /**
+   * A callback function for custom day class names.
+   */
     dayClassName: PropTypes.func,
+    /**
+   * Prop to disable dates on calendar.
+   */
     disabled: PropTypes.bool,
+    /**
+   * Prop to disable keyboard navigation.
+   */
     disabledKeyboardNavigation: PropTypes.bool,
+    /**
+   * Prop to select a dropdown mode for the year dropdown.
+   */
     dropdownMode: PropTypes.oneOf(['scroll', 'select']).isRequired,
+    /**
+   * Maximum Date value for a date range.
+   */
     endDate: PropTypes.object,
+    /**
+   * Array to store values of date that are disabled to pick .
+   */
     excludeDates: PropTypes.array,
+    /**
+   * Filter specific dates that can be selected only .
+   */
     filterDate: PropTypes.func,
+    /**
+   * Prop to allow variable or fixed height of calendar .
+   */
     fixedHeight: PropTypes.bool,
+    /**
+   * A callback function to format week number .
+   */
     formatWeekNumber: PropTypes.func,
+    /**
+   * Highlight range of dates with custom classes.
+   */
     highlightDates: PropTypes.array,
+    /**
+   * Value of custom input id.
+   */
     id: PropTypes.string,
+    /**
+   * Show dates only in the given array.
+   */
     includeDates: PropTypes.array,
+    /**
+   * Boolean Prop for Inline version of datepicker componnet.
+   */
     inline: PropTypes.bool,
     /**
      * @private
      * Internationalization object with translation APIs. Provided by `injectIntl`.
      */
     intl: intlShape,
+    /**
+   * Boolean Prop for clearing selected date.
+   */
     isClearable: PropTypes.bool,
+    /**
+   * Name of locale data for different international formatting.
+   */
     locale: PropTypes.string,
+    /**
+   * Maximum Value of date that can be selected by user.
+   */
     maxDate: PropTypes.object,
+    /**
+   * Minimum Value of date that can be selected by user.
+   */
     minDate: PropTypes.object,
+    /**
+   * Prop to show multiple months on date picker.
+   */
     monthsShown: PropTypes.number,
+    /**
+   * Value for name of custom input.
+   */
     name: PropTypes.string,
+    /**
+   * A callback function to execute when object loses focus.
+   */
     onBlur: PropTypes.func,
+    /**
+   * A callback function to execute when date is selected.
+   */
     onChange: PropTypes.func.isRequired,
+    /**
+   * A callback function to execute when value is selected from dropdown.
+   */
     onSelect: PropTypes.func,
+    /**
+   * A callback function to execute when week is selected.
+   */
     onWeekSelect: PropTypes.func,
+    /**
+   * A callback function to execute when nothing is selected.
+   */
     onClickOutside: PropTypes.func,
+    /**
+   * A callback function to execute when date is entered.
+   */
     onChangeRaw: PropTypes.func,
+    /**
+   * A callback function to execute when object is in focus.
+   */
     onFocus: PropTypes.func,
+    /**
+   * A callback function to execute when a key is pressed.
+   */
     onKeyDown: PropTypes.func,
+    /**
+   * A callback function to execute when month is selected.
+   */
     onMonthChange: PropTypes.func,
+    /**
+   * Prop to openn calendar on a particular date.
+   */
     openToDate: PropTypes.object,
+    /**
+   * A prop to check next month dates.
+   */
     peekNextMonth: PropTypes.bool,
+    /**
+   * Value for placeholder of date picker.
+   */
     placeholderText: PropTypes.string,
+    /**
+   * Prop to prevent date picker from opening on click.
+   */
     preventOpenOnFocus: PropTypes.bool,
+    /**
+   * Prop to make date picker as read only.
+   */
     readOnly: PropTypes.bool,
+    /**
+   * Prop to allow as required field.
+   */
     required: PropTypes.bool,
+    /**
+   * Prop to allow scrollable year dropdown.
+   */
     scrollableYearDropdown: PropTypes.bool,
+    /**
+   * Selected Date Value.
+   */
     selected: PropTypes.object,
+    /**
+   * Prop to select end date on a date picker.
+   */
     selectsEnd: PropTypes.bool,
+    /**
+   * Prop to select start date on a date picker.
+   */
     selectsStart: PropTypes.bool,
+    /**
+   * Prop to show month drop down in calendar.
+   */
     showMonthDropdown: PropTypes.bool,
+    /**
+   * Prop to show week numbers .
+   */
     showWeekNumbers: PropTypes.bool,
+     /**
+   * Prop to show a dropsown to select year in date picker calendar .
+   */
     showYearDropdown: PropTypes.bool,
+     /**
+   * Prop to show a month navigation in date picker .
+   */
     forceShowMonthNavigation: PropTypes.bool,
+    /**
+   * Date selected by user .
+   */
     startDate: PropTypes.object,
+    /**
+   * Prop to open calendar dropdown .
+   */
     startOpen: PropTypes.bool,
+    /**
+   * Prop to specify tabbing order of elements .
+   */
     tabIndex: PropTypes.number,
+    /**
+   * Prop to specify title attribute for date picker .
+   */
     title: PropTypes.string,
+    /**
+   * Name of button to select current date .
+   */
     todayButton: PropTypes.string,
+    /**
+   * Prop to show short names for weekdays on calendar .
+   */
     useWeekdaysShort: PropTypes.bool,
+    /**
+   * Difference between utc and local time.
+   */
     utcOffset: PropTypes.number,
+    /**
+   * Value of the date picked by user .
+   */
     value: PropTypes.string,
+    /**
+   * Label value for weeks on date picker.
+   */
     weekLabel: PropTypes.string,
+    /**
+   * Prop to show a separate portal version for date picker.
+   */
     withPortal: PropTypes.bool,
+    /**
+   * Year Values to show on dropdown +/- the given value.
+   */
     yearDropdownItemNumber: PropTypes.number,
+    /**
+   * Prop to close calendar dropdown after date is selected.
+   */
     shouldCloseOnSelect: PropTypes.bool,
+    /**
+   * Prop to show selected date and time.
+   */
     showTimeSelect: PropTypes.bool,
+    /**
+   * Format of the selected time.
+   */
     timeFormat: PropTypes.string,
+    /**
+   * Interval between 2 consecutive times on the time picker.
+   */
     timeIntervals: PropTypes.number,
+    /**
+   * Minimum value of time that can be selected .
+   */
     minTime: PropTypes.object,
+    /**
+   * Maximum value of time that can be selected .
+   */
     maxTime: PropTypes.object,
+    /**
+   * Array to store values of time that are disabled to pick .
+   */
     excludeTimes: PropTypes.array
   }
 

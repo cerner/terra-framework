@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Added props description for the forked react-datepicker component.
 
 4.5.0 - (July 2, 2019)
 ------------------

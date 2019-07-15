@@ -26,12 +26,33 @@ function generateYears (year, noOfYear, minDate, maxDate) {
 
 export default class YearDropdownOptions extends React.Component {
   static propTypes = {
+    /**
+   * Minimum Value of date can be selected.
+   */
     minDate: PropTypes.object,
+    /**
+   * Maximum Value of date can be selected.
+   */
     maxDate: PropTypes.object,
+    /**
+   * A callback function to execute when user clicks outside.
+   */
     onCancel: PropTypes.func.isRequired,
+    /**
+   * A callback function to execute when a valid date is selected .
+   */
     onChange: PropTypes.func.isRequired,
+    /**
+   * Prop to identify scrollable year dropdown.
+   */
     scrollableYearDropdown: PropTypes.bool,
+    /**
+   * The selected or entered year to show in date input.
+   */
     year: PropTypes.number.isRequired,
+    /**
+   * Number of years to show in the dropdown.
+   */
     yearDropdownItemNumber: PropTypes.number
   }
 
