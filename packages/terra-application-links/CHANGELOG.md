@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+6.4.0 - (July 2, 2019)
+------------------
 ### Changed
 * Renamed test and example SCSS files to end with `.module.scss` extension
 * Updated to interface with react-intl's Intl context rather than old React Context API
