@@ -28,7 +28,7 @@ exports[`ApplicationNavigation should render default element 1`] = `
       }
     />
     <main
-      aria-labelledby="main-inner-title"
+      aria-labelledby={null}
       className="main-container"
       role="main"
       tabIndex="-1"
