@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DisclosureManagerHeaderAdapter registers the headerData upon mount and upon prop changes 1`] = `
+<DisclosureManagerHeaderAdapter
+  collapsibleMenuView={
+    <div>
+      Test 1
+    </div>
+  }
+  title="Test Title"
+/>
+`;
+
+exports[`DisclosureManagerHeaderAdapter registers the headerData upon mount and upon prop changes 2`] = `
+<DisclosureManagerHeaderAdapter
+  collapsibleMenuView={
+    <div>
+      Test 1
+    </div>
+  }
+  title="New Title"
+/>
+`;
+
+exports[`DisclosureManagerHeaderAdapter renders null 1`] = `""`;
