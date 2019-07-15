@@ -4,7 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
-* When the modal manager is open, it will now focus on the first interactive DOM element within it. This enables focus to be shifted into the modal correctly when using VoiceOver on iOS.
+* When the modal manager is open on touch devices, it will now focus on the first interactive DOM element within it. This enables focus to be shifted into the modal correctly when using VoiceOver on iOS.
 
 6.5.0 - (July 10, 2019)
 ------------------
