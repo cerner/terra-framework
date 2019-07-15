@@ -6,6 +6,15 @@ Unreleased
 ### Changed
 * Updated to interface with react-intl's Intl context rather than old React Context API
 
+### Fixed
+* Fixed Collapsible issue for single item group
+
+6.5.0 - (July 10, 2019)
+------------------
+### Changed
+* Minor dependency version bump
+* Replaced Terra-Form with Terra-Form-Checkbox in CollapsibleMenuViewToggle
+
 6.4.0 - (July 2, 2019)
 ------------------
 ### Fixed
@@ -20,7 +29,6 @@ Unreleased
 ------------------
 ### Removed
 * Removed node_modules from .npmignore
-
 
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
