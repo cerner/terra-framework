@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added the ability for the user to enter seconds in the time input
 
+### Changed
+* Updated to interface with react-intl's Intl context rather than old React Context API
+
 4.6.0 - (July 10, 2019)
 ------------------
 ### Changed
@@ -18,7 +21,6 @@ Unreleased
 * Screenshots updated for mobile view.
 * Update wdio test to work with changes in terra-date-picker
 * Renamed test and example SCSS files to end with `.module.scss` extension
-* Updated to interface with react-intl's Intl context rather than old React Context API
 
 4.4.0 - (June 19, 2019)
 ------------------

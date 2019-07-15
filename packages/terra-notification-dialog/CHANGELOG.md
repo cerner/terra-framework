@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated to interface with react-intl's Intl context rather than old React Context API
 
 3.5.0 - (July 10, 2019)
 ------------------
@@ -17,7 +19,6 @@ Unreleased
 ### Changed
 * Update pop up and modal manager tests to not test accessibility for elements behind the overlay
 * Renamed test and example SCSS files to end with `.module.scss` extension
-* Updated to interface with react-intl's Intl context rather than old React Context API
 
 3.3.0 - (June 19, 2019)
 ------------------

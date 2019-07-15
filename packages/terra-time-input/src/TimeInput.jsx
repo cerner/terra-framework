@@ -813,7 +813,7 @@ class TimeInput extends React.Component {
                 className={cx('time-input-second')}
                 value={this.state.second}
                 name={'terra-time-second-'.concat(name)}
-                placeholder={this.context.intl.formatMessage({ id: 'Terra.timeInput.ss' })}
+                placeholder={intl.formatMessage({ id: 'Terra.timeInput.ss' })}
                 maxLength="2"
                 onChange={this.handleSecondChange}
                 onKeyDown={this.handleSecondInputKeyDown}
@@ -824,7 +824,7 @@ class TimeInput extends React.Component {
                 disabled={disabled}
               />
               <label htmlFor={instanceSecondAttrs.id} className={cx('mobile-input-label')}>
-                {this.context.intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
+                {intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
               </label>
             </div>
           </React.Fragment>
@@ -963,12 +963,12 @@ class TimeInput extends React.Component {
               {...inputAttributes}
               {...secondAttributes}
               refCallback={(inputRef) => { this.secondInput = inputRef; }}
-              aria-label={this.context.intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
+              aria-label={intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
               className={cx('time-input-second', 'desktop', { 'initial-focus': this.state.secondInitialFocused })}
               type="text"
               value={this.state.second}
               name={'terra-time-second-'.concat(name)}
-              placeholder={this.context.intl.formatMessage({ id: 'Terra.timeInput.ss' })}
+              placeholder={intl.formatMessage({ id: 'Terra.timeInput.ss' })}
               maxLength="2"
               onChange={this.handleSecondChange}
               onKeyDown={this.handleSecondInputKeyDown}
