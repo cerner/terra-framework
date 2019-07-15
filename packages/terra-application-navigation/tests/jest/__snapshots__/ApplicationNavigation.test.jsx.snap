@@ -18,6 +18,7 @@ exports[`ApplicationNavigation should render default element 1`] = `
   >
     <InjectIntl(Header)
       notifications={Object {}}
+      onSelectNavigationItem={[Function]}
       onSelectSkipToContent={[Function]}
       onSelectUtilityButton={[Function]}
       utilityButtonPopupAnchorRef={
@@ -27,8 +28,10 @@ exports[`ApplicationNavigation should render default element 1`] = `
       }
     />
     <main
+      aria-labelledby="main-inner-title"
       className="main-container"
       role="main"
+      tabIndex="-1"
     />
     <Overlay
       backgroundStyle="clear"
@@ -81,7 +84,7 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
   >
     <InjectIntl(Header)
       activeBreakpoint="large"
-      activeNavigationItemKey="test-text"
+      activeNavigationItemKey="my-test-key"
       extensionItems={
         Array [
           Object {
@@ -108,7 +111,7 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
         }
       }
       onSelectExtensionItem={[MockFunction]}
-      onSelectNavigationItem={[MockFunction]}
+      onSelectNavigationItem={[Function]}
       onSelectSkipToContent={[Function]}
       onSelectUtilityButton={[Function]}
       titleConfig={
@@ -131,9 +134,16 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
       }
     />
     <main
+      aria-labelledby="main-inner-title"
       className="main-container"
       role="main"
+      tabIndex="-1"
     >
+      <VisuallyHiddenText
+        aria-hidden={true}
+        id="main-inner-title"
+        text="test-text"
+      />
       <div>
         test child content
       </div>
@@ -220,13 +230,13 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
           "clickOutsideDeactivates": true,
           "escapeDeactivates": true,
           "onDeactivate": [Function],
-          "returnFocusOnDeactivate": true,
+          "returnFocusOnDeactivate": false,
         }
       }
       paused={false}
     >
       <InjectIntl(DrawerMenu)
-        activeNavigationItemKey="test-text"
+        activeNavigationItemKey="my-test-key"
         hero={
           <div>
             my test hero
@@ -282,6 +292,7 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
   >
     <InjectIntl(CompactHeader)
       activeBreakpoint="medium"
+      activeNavigationItemKey="my-test-key"
       extensionItems={
         Array [
           Object {
@@ -308,18 +319,41 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
         }
       }
       onSelectExtensionItem={[MockFunction]}
+      onSelectHelp={[MockFunction]}
+      onSelectLogout={[MockFunction]}
       onSelectMenuButton={[Function]}
+      onSelectNavigationItem={[Function]}
+      onSelectSettings={[MockFunction]}
       onSelectSkipToContent={[Function]}
+      onSelectUtilityItem={[MockFunction]}
       titleConfig={
         Object {
           "title": "test-title",
         }
       }
+      utilityItems={
+        Array [
+          Object {
+            "icon": <span>
+              my icon
+            </span>,
+            "key": "my-test-key-2",
+            "text": "test-text-2",
+          },
+        ]
+      }
     />
     <main
+      aria-labelledby="main-inner-title"
       className="main-container"
       role="main"
+      tabIndex="-1"
     >
+      <VisuallyHiddenText
+        aria-hidden={true}
+        id="main-inner-title"
+        text="test-text"
+      />
       <div>
         test child content
       </div>

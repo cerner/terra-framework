@@ -41,7 +41,7 @@ describe('ApplicationNavigation', () => {
         titleConfig={{
           title: 'test-title',
         }}
-        activeNavigationItemKey="test-text"
+        activeNavigationItemKey="my-test-key"
         hero={<div>my test hero</div>}
         userConfig={{
           name: 'user-name',
@@ -76,7 +76,7 @@ describe('ApplicationNavigation', () => {
         titleConfig={{
           title: 'test-title',
         }}
-        activeNavigationItemKey="test-text"
+        activeNavigationItemKey="my-test-key"
         hero={<div>my test hero</div>}
         userConfig={{
           name: 'user-name',

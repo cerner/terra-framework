@@ -121,6 +121,16 @@ exports[`CompactHeader should render default element 1`] = `
       <div
         className="title-container"
       />
+      <nav
+        className="hidden-nav"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        tabIndex="-1"
+      >
+        <ul
+          className="nav-inner"
+        />
+      </nav>
       <div
         className="extensions-container"
       />
@@ -330,6 +340,29 @@ exports[`CompactHeader should render with function callbacks 1`] = `
           test-title
         </div>
       </div>
+      <nav
+        className="hidden-nav"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        tabIndex="-1"
+      >
+        <ul
+          className="nav-inner"
+        >
+          <li
+            key="my-test-key"
+          >
+            <div
+              aria-current={false}
+              className="hidden-item"
+              role="link"
+              tabIndex="-1"
+            >
+              test-text
+            </div>
+          </li>
+        </ul>
+      </nav>
       <div
         className="extensions-container"
       >
@@ -600,6 +633,16 @@ exports[`CompactHeader should render with menu callback 1`] = `
       <div
         className="title-container"
       />
+      <nav
+        className="hidden-nav"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        tabIndex="-1"
+      >
+        <ul
+          className="nav-inner"
+        />
+      </nav>
       <div
         className="extensions-container"
       />
@@ -732,6 +775,16 @@ exports[`CompactHeader should render with skip callback 1`] = `
       <div
         className="title-container"
       />
+      <nav
+        className="hidden-nav"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        tabIndex="-1"
+      >
+        <ul
+          className="nav-inner"
+        />
+      </nav>
       <div
         className="extensions-container"
       />

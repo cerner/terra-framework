@@ -362,6 +362,17 @@ const ApplicationNavigation = ({
     drawerMenuRef.current.removeAttribute('style');
   }
 
+  let hiddenMainTitle;
+  if (navigationItems) {
+    hiddenMainTitle = (
+      <VisuallyHiddenText
+        id="main-inner-title"
+        aria-hidden
+        text={navigationItems.filter((item => item.key === activeNavigationItemKey))[0].text}
+      />
+    );
+  }
+
   return (
     <div className={cx('application-navigation')}>
       <div
@@ -384,7 +395,7 @@ const ApplicationNavigation = ({
           className={cx('main-container')}
           aria-labelledby="main-inner-title"
         >
-          <VisuallyHiddenText id="main-inner-title" aria-hidden text={navigationItems.filter((item => item.key === activeNavigationItemKey))[0].text} />
+          {hiddenMainTitle}
           {children}
         </main>
         <Overlay
