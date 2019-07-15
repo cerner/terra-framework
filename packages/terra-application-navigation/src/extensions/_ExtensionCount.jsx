@@ -26,7 +26,7 @@ const ExtensionCount = ({ value, isRollup, ...customProps }) => {
   let validatedValue = value;
   if (isRollup) {
     validatedValue = null;
-  } else if (value > 99) {
+  } else if (value >= 99) {
     validatedValue = '99+';
   }
 

@@ -20,7 +20,7 @@ const PopupCount = ({ value }) => {
   useAnimatedCount(countRef, value);
 
   let validatedValue = value;
-  if (value > 999) {
+  if (value >= 999) {
     validatedValue = '999+';
   }
 

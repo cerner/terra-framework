@@ -129,7 +129,9 @@ const ApplicationNavigation = ({
   const contentLayoutRef = useRef();
   const mainContainerRef = useRef();
   const utilityButtonPopupAnchorRef = useRef();
+  // Need to capture the animation life-cycle as opposed to the open/close state.
   const drawerMenuIsVisibleRef = useRef(false);
+  // FocusTrap captures the initial value of the onDeactivate callback, so need a persistent ref to the isOpen value.
   const drawerMenuIsOpenRef = useRef(false);
   const closeMenuCallbackRef = useRef();
 
