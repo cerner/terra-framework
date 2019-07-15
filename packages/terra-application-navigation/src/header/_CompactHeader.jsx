@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {
+  useState,
+} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';
@@ -10,6 +12,7 @@ import {
   navigationItemsPropType,
   extensionItemsPropType,
   titleConfigPropType,
+  utilityItemsPropType,
 } from '../utils/propTypes';
 
 import styles from './CompactHeader.module.scss';
@@ -17,6 +20,11 @@ import styles from './CompactHeader.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * A string key representing the currently active navigation item. This value should match one of the item keys provided in the
+   * `navigationItems` array.
+   */
+  activeNavigationItemKey: PropTypes.string,
   /**
    * Whether or not drawer menu is open.
    */
@@ -52,6 +60,39 @@ const propTypes = {
    */
   notifications: PropTypes.object,
   /**
+   * An array of configuration objects with information specifying the creation of additional utility menu items.
+   * These items are rendered within the popup utility menu at larger breakpoints and within the drawer menu at smaller breakpoints.
+   */
+  utilityItems: utilityItemsPropType,
+  /**
+   * A function to be executed upon the selection of a navigation item.
+   * Ex: `onSelectNavigationItem(String selectedNavigationItemKey)`
+   */
+  onSelectNavigationItem: PropTypes.func,
+  /**
+   * A function to be executed upon the selection of a custom utility item.
+   * Ex: `onSelectUtilityItem(String selectedUtilityItemKey)`
+   */
+  onSelectUtilityItem: PropTypes.func,
+  /**
+   * A function to be executed upon the selection of the Settings utility item.
+   * If `onSelectSettings` is not provided, the Settings utility item will not be rendered.
+   * Ex: `onSelectSettings()`
+   */
+  onSelectSettings: PropTypes.func,
+  /**
+   * A function to be executed upon the selection of the Help utility item.
+   * If `onSelectHelp` is not provided, the Help utility item will not be rendered.
+   * Ex: `onSelectLogout()`
+   */
+  onSelectHelp: PropTypes.func,
+  /**
+   * A function to be executed upon the selection of the Logout action button.
+   * If `onSelectLogout` is not provided, the Logout action button will not be rendered.
+   * Ex: `onSelectLogout()`
+   */
+  onSelectLogout: PropTypes.func,
+  /**
    * @private
    * The currently active breakpoint.
    */
@@ -70,6 +111,21 @@ const defaultProps = {
   notifications: {},
 };
 
+function buildUtilityItem(text, key, onSelect, isUtilityOpen) {
+  return (
+    <li
+      key={key}
+      tabIndex={isUtilityOpen ? '0' : '-1'}
+      role="option"
+      aria-selected="false"
+      onClick={onSelect}
+      onKeyDown={generateKeyDownSelection(onSelect)}
+    >
+      {text}
+    </li>
+  );
+}
+
 const CompactHeader = ({
   isDrawerMenuOpen,
   onSelectMenuButton,
@@ -80,8 +136,17 @@ const CompactHeader = ({
   navigationItems,
   notifications,
   activeBreakpoint,
+  utilityItems,
+  activeNavigationItemKey,
+  onSelectNavigationItem,
+  onSelectUtilityItem,
+  onSelectSettings,
+  onSelectHelp,
+  onSelectLogout,
   intl,
 }) => {
+  const [navigationIsOpen, setNavigationIsOpen] = useState(false);
+  const [utilitiesIsOpen, setUtilitiesIsOpen] = useState(false);
   const previousNotificationsRef = React.useRef();
   React.useEffect(() => {
     previousNotificationsRef.current = notifications;
@@ -152,6 +217,88 @@ const CompactHeader = ({
     );
   }
 
+  function generateCloseNavFunc(onSelect) {
+    return () => {
+      setNavigationIsOpen(false);
+      onSelect();
+    };
+  }
+
+  function buildNavigationItems() {
+    if (isDrawerMenuOpen || !navigationItems) {
+      return null;
+    }
+
+    return (
+      <nav
+        className={cx('hidden-nav', { 'is-open': navigationIsOpen })}
+        tabIndex="-1"
+        onFocus={() => setNavigationIsOpen(true)}
+        onBlur={() => setNavigationIsOpen(false)}
+      >
+        <ul className={cx('nav-inner')}>
+          {
+            navigationItems.map((item) => {
+              const onSelect = onSelectNavigationItem && generateCloseNavFunc(onSelectNavigationItem.bind(null, item.key, item.metaData));
+              return (
+                <li key={item.key}>
+                  <div
+                    role="link"
+                    className={cx('hidden-item')}
+                    tabIndex={navigationIsOpen ? '0' : '-1'}
+                    aria-current={activeNavigationItemKey === item.key}
+                    onClick={onSelect}
+                    onKeyDown={generateKeyDownSelection(onSelect)}
+                  >
+                    {item.text}
+                  </div>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </nav>
+    );
+  }
+
+  function generateCloseUtilsFunc(onSelect) {
+    return () => {
+      setUtilitiesIsOpen(false);
+      onSelect();
+    };
+  }
+
+  function buildUtilityItems() {
+    if (isDrawerMenuOpen || !utilityItems) {
+      return null;
+    }
+
+    return (
+      <ul
+        role="listbox"
+        aria-label={intl.formatMessage({ id: 'Terra.applicationNavigation.drawerMenu.utilities' })}
+        className={cx('hidden-utils', { 'is-open': utilitiesIsOpen })}
+        tabIndex="-1"
+        onFocus={() => setUtilitiesIsOpen(true)}
+        onBlur={() => setUtilitiesIsOpen(false)}
+      >
+        {utilityItems.map((item) => {
+          const onSelect = onSelectUtilityItem && generateCloseUtilsFunc(onSelectUtilityItem.bind(null, item.key, item.metaData));
+          return buildUtilityItem(item.text, item.key, onSelect, utilitiesIsOpen);
+        })}
+        {onSelectSettings ? (
+          buildUtilityItem(intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.settings' }), 'app-menu-settings', generateCloseUtilsFunc(onSelectSettings), utilitiesIsOpen)
+        ) : null}
+        {onSelectHelp ? (
+          buildUtilityItem(intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.help' }), 'app-menu-help', generateCloseUtilsFunc(onSelectHelp), utilitiesIsOpen)
+        ) : null}
+        {onSelectLogout ? (
+          buildUtilityItem(intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.logout' }), 'app-menu-logout', generateCloseUtilsFunc(onSelectLogout), utilitiesIsOpen)
+        ) : null}
+      </ul>
+    );
+  }
+
   return (
     <header role="banner" className={cx('compact-header')}>
       <button type="button" role="link" onClick={onSelectSkipToContent} className={cx('skip-content-button')}>
@@ -161,9 +308,11 @@ const CompactHeader = ({
       <div className={cx('title-container')}>
         {renderTitle()}
       </div>
+      {buildNavigationItems()}
       <div className={cx('extensions-container')}>
         {renderExtensions()}
       </div>
+      {buildUtilityItems()}
     </header>
   );
 };

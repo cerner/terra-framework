@@ -7,6 +7,7 @@ import Overlay from 'terra-overlay';
 import { ActiveBreakpointContext } from 'terra-application/lib/breakpoints';
 import FocusTrap from 'focus-trap-react';
 import Popup from 'terra-popup';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 
 import Header from './header/_Header';
 import CompactHeader from './header/_CompactHeader';
@@ -129,6 +130,7 @@ const ApplicationNavigation = ({
   const mainContainerRef = useRef();
   const utilityButtonPopupAnchorRef = useRef();
   const drawerMenuIsVisibleRef = useRef(false);
+  const drawerMenuIsOpenRef = useRef(false);
   const closeMenuCallbackRef = useRef();
 
   const [drawerMenuIsOpen, setDrawerMenuIsOpen] = useState(false);
@@ -136,6 +138,11 @@ const ApplicationNavigation = ({
 
   // Use dot notation temporarily until hooks + enzyme support for userContext
   const activeBreakpoint = React.useContext(ActiveBreakpointContext);
+
+  function updateDrawerIsOpen(value) {
+    drawerMenuIsOpenRef.current = value;
+    setDrawerMenuIsOpen(value);
+  }
 
   /**
    * Given a callback function, generateMenuClosingCallback will return a new function
@@ -149,15 +156,22 @@ const ApplicationNavigation = ({
       }
 
       closeMenuCallbackRef.current = () => { wrappedFunction(...args); };
-      setDrawerMenuIsOpen(false);
+      updateDrawerIsOpen(false);
       setPopupMenuIsOpen(false);
     };
   }
 
   function focusMainContent() {
-    mainContainerRef.current.setAttribute('tabindex', '-1');
     mainContainerRef.current.focus();
-    mainContainerRef.current.removeAttribute('tabindex');
+  }
+
+  function generateFocusMain(onSelect) {
+    return (...args) => {
+      onSelect(...args);
+      window.requestAnimationFrame(() => {
+        focusMainContent();
+      });
+    };
   }
 
   function renderDrawerMenu() {
@@ -171,15 +185,16 @@ const ApplicationNavigation = ({
         focusTrapOptions={{
           escapeDeactivates: true,
           clickOutsideDeactivates: true,
-          returnFocusOnDeactivate: true,
+          returnFocusOnDeactivate: false,
           onDeactivate: () => {
-            setDrawerMenuIsOpen(false);
-            // Currently a bug within react-focus-trap with on deactivation and active.
-            const toggle = document.querySelector('[data-compact-header-toggle="true"]');
-            if (toggle) {
-              window.requestAnimationFrame(() => {
-                toggle.focus();
-              });
+            if (drawerMenuIsOpenRef.current) {
+              const toggle = document.querySelector('[data-compact-header-toggle="true"]');
+              if (toggle) {
+                window.requestAnimationFrame(() => {
+                  toggle.focus();
+                });
+              }
+              updateDrawerIsOpen(false);
             }
           },
         }}
@@ -191,7 +206,7 @@ const ApplicationNavigation = ({
           hero={hero}
           navigationItems={navigationItems}
           activeNavigationItemKey={activeNavigationItemKey}
-          onSelectNavigationItem={onSelectNavigationItem ? generateMenuClosingCallback(onSelectNavigationItem) : undefined}
+          onSelectNavigationItem={onSelectNavigationItem ? generateFocusMain(generateMenuClosingCallback(onSelectNavigationItem)) : undefined}
           onSelectSettings={onSelectSettings ? generateMenuClosingCallback(onSelectSettings) : undefined}
           onSelectHelp={onSelectHelp ? generateMenuClosingCallback(onSelectHelp) : undefined}
           onSelectLogout={onSelectLogout ? generateMenuClosingCallback(onSelectLogout) : undefined}
@@ -239,10 +254,17 @@ const ApplicationNavigation = ({
         extensionItems={extensionItems}
         onSelectExtensionItem={onSelectExtensionItem}
         navigationItems={navigationItems}
-        onSelectMenuButton={() => setDrawerMenuIsOpen(true)}
+        onSelectMenuButton={() => updateDrawerIsOpen(true)}
         onSelectSkipToContent={focusMainContent}
         notifications={notifications}
         isDrawerMenuOpen={drawerMenuIsOpen}
+        utilityItems={utilityItems}
+        activeNavigationItemKey={activeNavigationItemKey}
+        onSelectNavigationItem={generateFocusMain(onSelectNavigationItem)}
+        onSelectUtilityItem={onSelectUtilityItem}
+        onSelectSettings={onSelectSettings}
+        onSelectHelp={onSelectHelp}
+        onSelectLogout={onSelectLogout}
       />
     );
   }
@@ -257,7 +279,7 @@ const ApplicationNavigation = ({
         navigationItems={navigationItems}
         navigationRenderFunction={navigationRenderFunction}
         activeNavigationItemKey={activeNavigationItemKey}
-        onSelectNavigationItem={onSelectNavigationItem}
+        onSelectNavigationItem={generateFocusMain(onSelectNavigationItem)}
         userConfig={userConfig}
         onSelectSkipToContent={focusMainContent}
         notifications={notifications}
@@ -326,7 +348,7 @@ const ApplicationNavigation = ({
    * the current render.
    */
   if (drawerMenuIsOpen && !shouldRenderCompactNavigation(activeBreakpoint)) {
-    setDrawerMenuIsOpen(false);
+    updateDrawerIsOpen(false);
   }
 
   /**
@@ -355,9 +377,12 @@ const ApplicationNavigation = ({
         {shouldRenderCompactNavigation(activeBreakpoint) ? renderCompactHeader() : renderHeader()}
         <main
           ref={mainContainerRef}
+          tabIndex="-1"
           role="main"
           className={cx('main-container')}
+          aria-labelledby="main-inner-title"
         >
+          <VisuallyHiddenText id="main-inner-title" aria-hidden text={navigationItems.filter((item => item.key === activeNavigationItemKey))[0].text} />
           {children}
         </main>
         <Overlay
