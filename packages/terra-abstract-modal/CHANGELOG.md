@@ -6,6 +6,8 @@ Unreleased
 ### Added
 * Added visually hidden text to better indicate beginning and ending of modal dialog
 * Added translations for visually hidden text that indicates beginning and end of modal dialog
+* Added documentation on required peerDependencies
+
 
 3.5.0 - (July 10, 2019)
 ------------------
