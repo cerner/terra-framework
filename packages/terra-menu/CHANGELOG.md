@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added documentation on required peerDependencies
+
 ### Changed
 * Updated the line-height of plain text Menu Items to be consistent with Menu Items with icons.
 

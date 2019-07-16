@@ -10,6 +10,23 @@ Our recommendation for HOC is the [terra-modal-manager][1], as it provides sizin
   - `npm install terra-abstract-modal`
   - `yarn add terra-abstract-modal`
 
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+<details>
+<summary>View information on this component's peer dependencies.</summary>
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+
+
+</details>
+<!-- AUTO-GENERATED-CONTENT:END -->
+
 [1]: https://github.com/cerner/terra-framework/tree/master/packages/terra-modal-manager/docs
 
 ## Component Features

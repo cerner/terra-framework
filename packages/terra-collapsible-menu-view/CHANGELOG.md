@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added documentation on required peerDependencies
 ### Fixed
 * Fixed Collapsible issue for single item group
 

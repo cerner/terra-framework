@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added documentation on required peerDependencies
 ### Changes
 * Removed Ignore Axe Rules from wdio tests.
 
