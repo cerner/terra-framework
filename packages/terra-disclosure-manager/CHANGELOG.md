@@ -3,10 +3,11 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.16.0 - (July 16, 2019)
+------------------
 ### Added
 * Added documentation on required peerDependencies
-
-### Added
 * Added DisclosureManagerHeaderAdapter and DisclosureManagerHeaderAdapterContext
 * Adding properties to render-function parameter to facilitate DisclosureManagerHeaderAdapter support
 

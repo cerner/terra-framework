@@ -3,8 +3,12 @@ ChangeLog
 
 Unreleased
 ----------
+
+6.6.0 - (July 16, 2019)
+------------------
 ### Added
 * Added documentation on required peerDependencies
+
 ### Fixed
 * Fixed Collapsible issue for single item group
 
