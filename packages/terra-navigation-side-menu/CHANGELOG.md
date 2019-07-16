@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 ### Added
+* Added documentation on required peerDependencies
+
+2.12.0 - (July 10, 2019)
+------------------
+### Added
 * Added `aria-haspopup` attribute to menu items that contain sub-navigation
 
 2.11.0 - (July 2, 2019)
