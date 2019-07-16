@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Added
 * Added documentation for 'Skip to Content' button.
+* Added documentation on required peerDependencies
 
 3.12.0 - (July 10, 2019)
 ------------------
