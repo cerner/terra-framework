@@ -1,7 +1,7 @@
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { name } from '../../../../package.json';
-import AboutDoc from '../../../../docs/about.md';
+import AboutDoc from '../../../../docs/README.md';
 import UsageDoc from '../../../../docs/usage.md';
 
 const DocPage = () => (

@@ -13,6 +13,9 @@ The Terra Application Navigation is a responsive, themeable layout for building 
 
 - Install from [npmjs](https://www.npmjs.com): `npm install terra-application-navigation`
 
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+<!-- AUTO-GENERATED-CONTENT:END -->
+
 ## LICENSE
 
 Copyright 2018 - 2019 Cerner Innovation, Inc.
