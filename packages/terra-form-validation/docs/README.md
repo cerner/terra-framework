@@ -9,6 +9,30 @@ Terra recommends using [react-final-form](https://github.com/final-form/react-fi
 
 For other functionality that is provided, consult [react-final-form documentation](https://github.com/final-form/react-final-form).
 
+
+## Getting Started
+
+- Install from [npmjs](https://www.npmjs.com): `npm install terra-form-validation`
+
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+<details>
+<summary>View information on this component's peer dependencies.</summary>
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| final-form | ^4.6.0 |
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+| react-final-form | >=5.0.2 <7.0.0 |
+
+
+</details>
+<!-- AUTO-GENERATED-CONTENT:END -->
+
 ## Integration with Terra
 
 To easily integrate react-final-form with Terra form elements, we have created individual Field components inside of terra-form-input (InputField), terra-form-textarea (TextareaField), terra-form-radio (RadioField) and terra-form-checkbox (CheckboxField). For integrating with terra-form-select components, a Select element can be combined with a terra-form-field component. There are future enhancements to add a Field component to terra-form-select.
