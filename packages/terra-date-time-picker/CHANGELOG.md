@@ -4,6 +4,8 @@ ChangeLog
 Unreleased
 ----------
 ### Added
+* Added documentation on required peerDependencies
+### Added
 * Added the ability for the user to enter seconds in the time input
 
 ### Changed

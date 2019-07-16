@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added documentation on required peerDependencies
+
 ### Changed
 * Updated to interface with react-intl's Intl context rather than old React Context API
 

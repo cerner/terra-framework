@@ -4,6 +4,8 @@ Changelog
 Unreleased
 ----------
 ### Added
+* Added documentation on required peerDependencies
+### Added
 * Added the ability to have an input field for seconds.
 
 ### Changed
