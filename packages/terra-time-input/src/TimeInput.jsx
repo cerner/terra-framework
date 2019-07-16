@@ -27,6 +27,7 @@ const propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   hourAttributes: PropTypes.object,
   /**
+   * @private
    * intl object programmatically imported through injectIntl from react-intl.
    * */
   intl: intlShape.isRequired,

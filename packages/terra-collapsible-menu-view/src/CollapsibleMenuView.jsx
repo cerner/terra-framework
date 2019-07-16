@@ -19,6 +19,7 @@ const propTypes = {
   children: PropTypes.node.isRequired,
 
   /**
+   * @private
    * intl object programmatically imported through injectIntl from react-intl.
    * */
   intl: intlShape.isRequired,
