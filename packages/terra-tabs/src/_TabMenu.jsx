@@ -4,7 +4,6 @@ import classNames from 'classnames/bind';
 import Menu from 'terra-menu';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import KeyCode from 'keycode-js';
-import { injectIntl, intlShape } from 'react-intl';
 import styles from './Tabs.module.scss';
 
 const cx = classNames.bind(styles);
@@ -21,20 +20,23 @@ const propTypes = {
   children: PropTypes.node,
 
   /**
-   * @private
-   * intl object programmatically imported through injectIntl from react-intl.
-   * */
-  intl: intlShape.isRequired,
-
-  /**
    * Ref callback for menu toggle.
    */
   refCallback: PropTypes.func,
 };
 
+const contextTypes = {
+  /* eslint-disable consistent-return */
+  intl: (context) => {
+    if (context.intl === undefined) {
+      return new Error('Component is internationalized, and must be wrapped in terra-base');
+    }
+  },
+};
+
 class TabMenu extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.handleOnClick = this.handleOnClick.bind(this);
     this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
@@ -85,8 +87,9 @@ class TabMenu extends React.Component {
   }
 
   render() {
+    const { intl } = this.context;
     const menuItems = [];
-    let menuToggleText = this.props.intl.formatMessage({ id: 'Terra.tabs.more' });
+    let menuToggleText = intl.formatMessage({ id: 'Terra.tabs.more' });
     let menuActive = false;
 
     React.Children.forEach(this.props.children, (child) => {
@@ -138,6 +141,7 @@ class TabMenu extends React.Component {
   }
 }
 
+TabMenu.contextTypes = contextTypes;
 TabMenu.propTypes = propTypes;
 
-export default injectIntl(TabMenu);
+export default TabMenu;

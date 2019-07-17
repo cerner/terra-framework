@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should pass in refCallback as the ref prop of the calendar button 1`] = `
-<InjectIntl(DatePickerInput)
+<DatePickerInput
   buttonRefCallback={
     [MockFunction] {
       "calls": Array [
@@ -73,221 +73,202 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
     }
   }
 >
-  <DatePickerInput
-    buttonRefCallback={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            <button
-              aria-disabled="false"
-              aria-label="Terra.datePicker.openCalendar"
-              class="button neutral compact button"
-              title="Terra.datePicker.openCalendar"
-              type="button"
-            >
-              <span
-                class="button-label icon-only"
-              >
-                <span
-                  class="icon"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="tui-Icon icon icon-svg"
-                    focusable="false"
-                    height="1em"
-                    viewBox="0 0 48 48"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M43 6h-4V2.2C39 1 38 0 36.8 0h-1.7C33.9.1 33 1 33 2.2V6H15V2.2C15 1 14 0 12.8 0h-1.7C9.9.1 9 1 9 2.2V6H5c-1.1 0-2 .9-2 2v38c0 1.1.9 2 2 2h24c1.3-.1 2.5-.6 3.4-1.4l11.2-11.1c.8-.9 1.3-2.1 1.4-3.4V8c0-1.1-.9-2-2-2zM6 21h36v10H30c-1.1 0-2 .9-2 2v12H6V21zm25 22.8V34h9.8L31 43.8z"
-                    />
-                  </svg>
-                </span>
-              </span>
-            </button>,
-          ],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": undefined,
-          },
-        ],
-      }
-    }
-    intl={
-      Object {
-        "defaultFormats": Object {},
-        "defaultLocale": "en",
-        "formatDate": [Function],
-        "formatHTMLMessage": [Function],
-        "formatMessage": [Function],
-        "formatNumber": [Function],
-        "formatPlural": [Function],
-        "formatRelative": [Function],
-        "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
-          "getDateTimeFormat": [Function],
-          "getMessageFormat": [Function],
-          "getNumberFormat": [Function],
-          "getPluralFormat": [Function],
-          "getRelativeFormat": [Function],
-        },
-        "locale": "en",
-        "messages": null,
-        "now": [Function],
-        "onError": [Function],
-        "textComponent": "span",
-        "timeZone": null,
-      }
-    }
+  <div
+    className="custom-input"
   >
-    <div
-      className="custom-input"
+    <input
+      data-terra-date-input-hidden={true}
+      type="hidden"
+    />
+    <Input
+      className="input"
+      disabled={false}
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
+      isInvalid={false}
+      name="terra-date-undefined"
+      onChange={[Function]}
+      required={false}
+      type="text"
     >
       <input
-        data-terra-date-input-hidden={true}
-        type="hidden"
-      />
-      <Input
-        className="input"
+        className="form-input input"
         disabled={false}
-        isInvalid={false}
+        intl={
+          Object {
+            "defaultFormats": Object {},
+            "defaultLocale": "en",
+            "formatDate": [Function],
+            "formatHTMLMessage": [Function],
+            "formatMessage": [Function],
+            "formatNumber": [Function],
+            "formatPlural": [Function],
+            "formatRelative": [Function],
+            "formatTime": [Function],
+            "formats": Object {},
+            "formatters": Object {
+              "getDateTimeFormat": [Function],
+              "getMessageFormat": [Function],
+              "getNumberFormat": [Function],
+              "getPluralFormat": [Function],
+              "getRelativeFormat": [Function],
+            },
+            "locale": "en",
+            "messages": null,
+            "now": [Function],
+            "onError": [Function],
+            "textComponent": "span",
+            "timeZone": null,
+          }
+        }
         name="terra-date-undefined"
         onChange={[Function]}
         required={false}
         type="text"
-      >
-        <input
-          className="form-input input"
-          disabled={false}
-          name="terra-date-undefined"
-          onChange={[Function]}
-          required={false}
-          type="text"
+      />
+    </Input>
+    <Button
+      className="button"
+      icon={
+        <IconCalendar
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
         />
-      </Input>
-      <Button
-        className="button"
-        icon={
-          <IconCalendar
-            viewBox="0 0 48 48"
-            xmlns="http://www.w3.org/2000/svg"
-          />
-        }
-        isBlock={false}
-        isCompact={true}
-        isDisabled={false}
-        isIconOnly={true}
-        isReversed={false}
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        refCallback={
-          [MockFunction] {
-            "calls": Array [
-              Array [
-                <button
-                  aria-disabled="false"
-                  aria-label="Terra.datePicker.openCalendar"
-                  class="button neutral compact button"
-                  title="Terra.datePicker.openCalendar"
-                  type="button"
+      }
+      isBlock={false}
+      isCompact={true}
+      isDisabled={false}
+      isIconOnly={true}
+      isReversed={false}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      refCallback={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              <button
+                aria-disabled="false"
+                aria-label="Terra.datePicker.openCalendar"
+                class="button neutral compact button"
+                title="Terra.datePicker.openCalendar"
+                type="button"
+              >
+                <span
+                  class="button-label icon-only"
                 >
                   <span
-                    class="button-label icon-only"
+                    class="icon"
                   >
-                    <span
-                      class="icon"
+                    <svg
+                      aria-hidden="true"
+                      class="tui-Icon icon icon-svg"
+                      focusable="false"
+                      height="1em"
+                      viewBox="0 0 48 48"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        aria-hidden="true"
-                        class="tui-Icon icon icon-svg"
-                        focusable="false"
-                        height="1em"
-                        viewBox="0 0 48 48"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M43 6h-4V2.2C39 1 38 0 36.8 0h-1.7C33.9.1 33 1 33 2.2V6H15V2.2C15 1 14 0 12.8 0h-1.7C9.9.1 9 1 9 2.2V6H5c-1.1 0-2 .9-2 2v38c0 1.1.9 2 2 2h24c1.3-.1 2.5-.6 3.4-1.4l11.2-11.1c.8-.9 1.3-2.1 1.4-3.4V8c0-1.1-.9-2-2-2zM6 21h36v10H30c-1.1 0-2 .9-2 2v12H6V21zm25 22.8V34h9.8L31 43.8z"
-                        />
-                      </svg>
-                    </span>
+                      <path
+                        d="M43 6h-4V2.2C39 1 38 0 36.8 0h-1.7C33.9.1 33 1 33 2.2V6H15V2.2C15 1 14 0 12.8 0h-1.7C9.9.1 9 1 9 2.2V6H5c-1.1 0-2 .9-2 2v38c0 1.1.9 2 2 2h24c1.3-.1 2.5-.6 3.4-1.4l11.2-11.1c.8-.9 1.3-2.1 1.4-3.4V8c0-1.1-.9-2-2-2zM6 21h36v10H30c-1.1 0-2 .9-2 2v12H6V21zm25 22.8V34h9.8L31 43.8z"
+                      />
+                    </svg>
                   </span>
-                </button>,
-              ],
+                </span>
+              </button>,
             ],
-            "results": Array [
-              Object {
-                "type": "return",
-                "value": undefined,
-              },
-            ],
-          }
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
         }
-        text="Terra.datePicker.openCalendar"
+      }
+      text="Terra.datePicker.openCalendar"
+      type="button"
+      variant="neutral"
+    >
+      <button
+        aria-disabled={false}
+        aria-label="Terra.datePicker.openCalendar"
+        className="button neutral compact button"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        title="Terra.datePicker.openCalendar"
         type="button"
-        variant="neutral"
       >
-        <button
-          aria-disabled={false}
-          aria-label="Terra.datePicker.openCalendar"
-          className="button neutral compact button"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          title="Terra.datePicker.openCalendar"
-          type="button"
+        <span
+          className="button-label icon-only"
         >
           <span
-            className="button-label icon-only"
+            className="icon"
           >
-            <span
-              className="icon"
+            <IconCalendar
+              className="icon-svg"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <IconCalendar
+              <IconBase
+                ariaLabel={null}
                 className="icon-svg"
+                focusable="false"
+                height="1em"
+                isBidi={false}
+                isSpin={false}
                 viewBox="0 0 48 48"
+                width="1em"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <IconBase
-                  ariaLabel={null}
-                  className="icon-svg"
+                <svg
+                  aria-hidden="true"
+                  className="tui-Icon icon icon-svg"
                   focusable="false"
                   height="1em"
-                  isBidi={false}
-                  isSpin={false}
                   viewBox="0 0 48 48"
                   width="1em"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    aria-hidden="true"
-                    className="tui-Icon icon icon-svg"
-                    focusable="false"
-                    height="1em"
-                    viewBox="0 0 48 48"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M43 6h-4V2.2C39 1 38 0 36.8 0h-1.7C33.9.1 33 1 33 2.2V6H15V2.2C15 1 14 0 12.8 0h-1.7C9.9.1 9 1 9 2.2V6H5c-1.1 0-2 .9-2 2v38c0 1.1.9 2 2 2h24c1.3-.1 2.5-.6 3.4-1.4l11.2-11.1c.8-.9 1.3-2.1 1.4-3.4V8c0-1.1-.9-2-2-2zM6 21h36v10H30c-1.1 0-2 .9-2 2v12H6V21zm25 22.8V34h9.8L31 43.8z"
-                    />
-                  </svg>
-                </IconBase>
-              </IconCalendar>
-            </span>
+                  <path
+                    d="M43 6h-4V2.2C39 1 38 0 36.8 0h-1.7C33.9.1 33 1 33 2.2V6H15V2.2C15 1 14 0 12.8 0h-1.7C9.9.1 9 1 9 2.2V6H5c-1.1 0-2 .9-2 2v38c0 1.1.9 2 2 2h24c1.3-.1 2.5-.6 3.4-1.4l11.2-11.1c.8-.9 1.3-2.1 1.4-3.4V8c0-1.1-.9-2-2-2zM6 21h36v10H30c-1.1 0-2 .9-2 2v12H6V21zm25 22.8V34h9.8L31 43.8z"
+                  />
+                </svg>
+              </IconBase>
+            </IconCalendar>
           </span>
-        </button>
-      </Button>
-    </div>
-  </DatePickerInput>
-</InjectIntl(DatePickerInput)>
+        </span>
+      </button>
+    </Button>
+  </div>
+</DatePickerInput>
 `;
 
 exports[`should render a default date input 1`] = `
@@ -300,6 +281,7 @@ exports[`should render a default date input 1`] = `
   />
   <input
     class="form-input input"
+    intl="[object Object]"
     name="terra-date-undefined"
     type="text"
   />
@@ -348,6 +330,7 @@ exports[`should render a default date input with all props 1`] = `
   <input
     class="form-input input"
     id="terra-date-input"
+    intl="[object Object]"
     name="terra-date-date-input"
     placeholder="MM/DD/YYYY"
     type="text"
