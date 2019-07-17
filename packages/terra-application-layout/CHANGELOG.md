@@ -3,8 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+5.7.0 - (July 16, 2019)
+------------------
 ### Added
 * Added documentation on required peerDependencies
+
 ### Changes
 * Removed Ignore Axe Rules from wdio tests.
 
