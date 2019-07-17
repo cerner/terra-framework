@@ -6,6 +6,8 @@ Unreleased
 ### Changed
 * When the modal manager is open on touch devices, it will now focus on the first interactive DOM element within it. This enables focus to be shifted into the modal correctly when using VoiceOver on iOS.
 
+6.6.0 - (July 16, 2019)
+------------------
 ### Added
 * Added documentation on required peerDependencies
 

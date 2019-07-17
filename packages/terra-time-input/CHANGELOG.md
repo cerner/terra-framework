@@ -3,10 +3,15 @@ Changelog
 
 Unreleased
 ----------
+
+4.5.0 - (July 16, 2019)
+------------------
 ### Added
 * Added documentation on required peerDependencies
-### Added
 * Added the ability to have an input field for seconds.
+
+### Changed
+* Updated to interface with react-intl's Intl context rather than old React Context API
 
 4.4.0 - (July 10, 2019)
 ------------------

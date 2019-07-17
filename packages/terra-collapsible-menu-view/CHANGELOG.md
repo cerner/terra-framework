@@ -3,8 +3,14 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated to interface with react-intl's Intl context rather than old React Context API
+
+6.6.0 - (July 16, 2019)
+------------------
 ### Added
 * Added documentation on required peerDependencies
+
 ### Fixed
 * Fixed Collapsible issue for single item group
 

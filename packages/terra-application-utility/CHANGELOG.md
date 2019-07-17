@@ -6,6 +6,8 @@ Unreleased
 ### Fixed
 * Fixed issue where on compact viewports, the virtual indicator displayed when using VoiceOver on iOS was not shifting into the application utility menu modal when it opened
 
+2.16.0 - (July 16, 2019)
+------------------
 ### Added
 * Added documentation on required peerDependencies
 

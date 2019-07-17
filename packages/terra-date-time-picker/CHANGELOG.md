@@ -6,10 +6,14 @@ Unreleased
 ### Changed
 * When the date-time picker time clarification modal is open on touch devices, it will now focus on the first interactive DOM element within it. This enables focus to be shifted into the modal correctly when using VoiceOver on iOS.
 
+4.7.0 - (July 16, 2019)
+------------------
 ### Added
 * Added documentation on required peerDependencies
-### Added
 * Added the ability for the user to enter seconds in the time input
+
+### Changed
+* Updated to interface with react-intl's Intl context rather than old React Context API
 
 4.6.0 - (July 10, 2019)
 ------------------

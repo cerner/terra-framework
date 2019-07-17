@@ -3,8 +3,16 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated to interface with react-intl's Intl context rather than old React Context API
+
+6.6.0 - (July 16, 2019)
+------------------
 ### Added
 * Added documentation on required peerDependencies
+
+### Changed
+* Updated wdio screenshots
 
 6.5.0 - (July 10, 2019)
 ------------------

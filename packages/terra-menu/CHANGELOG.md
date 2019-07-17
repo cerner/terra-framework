@@ -3,8 +3,14 @@ Changelog
 
 Unreleased
 ----------
+
+6.6.0 - (July 16, 2019)
+------------------
 ### Added
 * Added documentation on required peerDependencies
+
+### Changed
+* Updated the line-height of plain text Menu Items to be consistent with Menu Items with icons.
 
 6.5.0 - (July 10, 2019)
 ------------------

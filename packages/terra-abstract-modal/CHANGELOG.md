@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.6.0 - (July 16, 2019)
+------------------
 ### Added
 * Added visually hidden text to better indicate beginning and ending of modal dialog
 * Added translations for visually hidden text that indicates beginning and end of modal dialog
