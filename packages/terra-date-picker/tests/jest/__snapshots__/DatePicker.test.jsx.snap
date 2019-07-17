@@ -9,7 +9,7 @@ exports[`should render a controlled date picker 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -31,33 +31,6 @@ exports[`should render a controlled date picker 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -85,7 +58,7 @@ exports[`should render a controlled date picker 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -107,33 +80,6 @@ exports[`should render a controlled date picker 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -170,7 +116,7 @@ exports[`should render a date picker with disabled dates 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -192,33 +138,6 @@ exports[`should render a date picker with disabled dates 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -245,7 +164,7 @@ exports[`should render a date picker with disabled dates 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -267,33 +186,6 @@ exports[`should render a date picker with disabled dates 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -329,7 +221,7 @@ exports[`should render a date picker with filtered dates 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -351,33 +243,6 @@ exports[`should render a date picker with filtered dates 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -404,7 +269,7 @@ exports[`should render a date picker with filtered dates 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -426,33 +291,6 @@ exports[`should render a date picker with filtered dates 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -488,7 +326,7 @@ exports[`should render a date picker with included dates 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -510,33 +348,6 @@ exports[`should render a date picker with included dates 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -563,7 +374,7 @@ exports[`should render a date picker with included dates 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -585,33 +396,6 @@ exports[`should render a date picker with included dates 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -647,7 +431,7 @@ exports[`should render a date picker with min and max dates 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -669,33 +453,6 @@ exports[`should render a date picker with min and max dates 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -722,7 +479,7 @@ exports[`should render a date picker with min and max dates 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -744,33 +501,6 @@ exports[`should render a date picker with min and max dates 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -806,7 +536,7 @@ exports[`should render a date picker with onBlur 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -828,33 +558,6 @@ exports[`should render a date picker with onBlur 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -881,7 +584,7 @@ exports[`should render a date picker with onBlur 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -903,33 +606,6 @@ exports[`should render a date picker with onBlur 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -965,7 +641,7 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -987,33 +663,6 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -1040,7 +689,7 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -1062,33 +711,6 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -1124,7 +746,7 @@ exports[`should render a date picker with onChange 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -1146,33 +768,6 @@ exports[`should render a date picker with onChange 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -1199,7 +794,7 @@ exports[`should render a date picker with onChange 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -1221,33 +816,6 @@ exports[`should render a date picker with onChange 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -1283,7 +851,7 @@ exports[`should render a date picker with onChangeRaw 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -1305,33 +873,6 @@ exports[`should render a date picker with onChangeRaw 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -1358,7 +899,7 @@ exports[`should render a date picker with onChangeRaw 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -1380,33 +921,6 @@ exports[`should render a date picker with onChangeRaw 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -1442,7 +956,7 @@ exports[`should render a date picker with onFocus 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -1464,33 +978,6 @@ exports[`should render a date picker with onFocus 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -1517,7 +1004,7 @@ exports[`should render a date picker with onFocus 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -1539,33 +1026,6 @@ exports[`should render a date picker with onFocus 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -1601,7 +1061,7 @@ exports[`should render a date picker with onSelect 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -1623,33 +1083,6 @@ exports[`should render a date picker with onSelect 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -1676,7 +1109,7 @@ exports[`should render a date picker with onSelect 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -1698,33 +1131,6 @@ exports[`should render a date picker with onSelect 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -1760,7 +1166,7 @@ exports[`should render a default date input and date picker 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -1782,33 +1188,6 @@ exports[`should render a default date input and date picker 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -1835,7 +1214,7 @@ exports[`should render a default date input and date picker 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -1857,33 +1236,6 @@ exports[`should render a default date input and date picker 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -1919,7 +1271,7 @@ exports[`should render a default date input with custom input attributes 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             inputAttributes={
               Object {
@@ -1946,33 +1298,6 @@ exports[`should render a default date input with custom input attributes 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -1999,7 +1324,7 @@ exports[`should render a default date input with custom input attributes 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             inputAttributes={
               Object {
@@ -2026,33 +1351,6 @@ exports[`should render a default date input with custom input attributes 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -2088,7 +1386,7 @@ exports[`should render a disabled date picker 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -2110,33 +1408,6 @@ exports[`should render a disabled date picker 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -2163,7 +1434,7 @@ exports[`should render a disabled date picker 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -2185,33 +1456,6 @@ exports[`should render a disabled date picker 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -2247,7 +1491,7 @@ exports[`should render a required date input and date picker 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -2269,33 +1513,6 @@ exports[`should render a required date input and date picker 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
@@ -2322,7 +1539,7 @@ exports[`should render a required date input and date picker 1`] = `
       <InjectIntl(DatePicker)
         allowSameDay={true}
         customInput={
-          <DatePickerInput
+          <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
@@ -2344,33 +1561,6 @@ exports[`should render a required date input and date picker 1`] = `
           Array [
             "2017-01-01T00:00:00.000Z",
           ]
-        }
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
         }
         locale="en"
         maxDate={"2017-01-01T00:00:00.000Z"}
