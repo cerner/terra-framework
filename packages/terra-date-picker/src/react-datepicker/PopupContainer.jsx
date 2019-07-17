@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 const propTypes = {
   /**
-   * Boolean prop for bounded height of container.
+   * Prop to determine whether or not the container height is bounded.
    */
   isHeightBounded: PropTypes.bool,
   /**
-   * Boolean prop for bounded width of container.
+   * Prop to determine whether or not the container width is bounded.
    */
   isWidthBounded: PropTypes.bool,
   /**

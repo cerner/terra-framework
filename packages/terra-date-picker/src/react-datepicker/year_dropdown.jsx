@@ -9,48 +9,48 @@ var WrappedYearDropdownOptions = onClickOutside(YearDropdownOptions)
 export default class YearDropdown extends React.Component {
   static propTypes = {
     /**
-   * Prop to change date when a valid date is selected.
-   */
+     * Prop to change date when a valid date is selected.
+     */
     adjustDateOnChange: PropTypes.bool,
    /**
-   * Prop to select a dropdown mode for the year dropdown.
-   */
+     * Prop to select a dropdown mode for the year dropdown.
+     */
     dropdownMode: PropTypes.oneOf(['scroll', 'select']).isRequired,
     /**
-   * Maximum Value of date that can be entered or selected.
-   */
+     * Maximum Value of date that can be entered or selected.
+     */
     maxDate: PropTypes.object,
     /**
-   * Minimum Value of date that can be entered or selected.
-   */
+     * Minimum Value of date that can be entered or selected.
+     */
     minDate: PropTypes.object,
     /**
-   * A callback function to execute when a valid date is entered.
-   */
+     * A callback function to execute when a valid date is entered.
+     */
     onChange: PropTypes.func.isRequired,
     /**
-   * Prop to allow scrollable year dropdown.
-   */
+     * Prop to allow scrollable year dropdown.
+     */
     scrollableYearDropdown: PropTypes.bool,
     /**
-   * The selected or entered year to show in date input.
-   */
+     * The selected or entered year to show in date input.
+     */
     year: PropTypes.number.isRequired,
     /**
-   * Number of years to show in the dropdown.
-   */
+     * Number of years to show in the dropdown.
+     */
     yearDropdownItemNumber: PropTypes.number,
     /**
-   * The selected or entered valid date value.
-   */
+     * The selected or entered valid date value.
+     */
     date: PropTypes.object,
     /**
-   * A callback function to execute when a valid year is selected.
-   */
+     * A callback function to execute when a valid year is selected.
+     */
     onSelect: PropTypes.func,
     /**
-   * A callback function to execute when a valid year is selected.
-   */
+     * A callback function to execute when a valid year is selected.
+     */
     setOpen: PropTypes.func
   }
 

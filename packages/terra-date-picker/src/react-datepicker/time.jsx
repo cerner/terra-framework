@@ -16,40 +16,40 @@ import {
 export default class Time extends React.Component {
   static propTypes = {
     /**
-   * Format of the selected time.
-   */
+     * Format of the selected time.
+     */
     format: PropTypes.string,
     /**
-   * Interval between 2 consecutive times on the time picker.
-   */
+     * Interval between 2 consecutive times on the time picker.
+     */
     intervals: PropTypes.number,
     /**
-   * Selected value of time.
-   */
+     * Selected value of time.
+     */
     selected: PropTypes.object,
     /**
-   * A callback function to execute when time is picked.
-   */
+     * A callback function to execute when time is picked.
+     */
     onChange: PropTypes.func,
     /**
-   * A button to select current time.
-   */
+     * A button to select current time.
+     */
     todayButton: PropTypes.string,
     /**
-   * Minimum value of time that can be selected .
-   */
+     * Minimum value of time that can be selected .
+     */
     minTime: PropTypes.object,
     /**
-   * Maximum value of time that can be selected .
-   */
+     * Maximum value of time that can be selected .
+     */
     maxTime: PropTypes.object,
     /**
-   * Array to store values of time that are disabled to pick .
-   */
+     * Array to store values of time that are disabled to pick .
+     */
     excludeTimes: PropTypes.array,
     /**
-   * Prop to store month reference object. .
-   */
+     * Prop to store month reference object. .
+     */
     monthRef: PropTypes.object
   }
 

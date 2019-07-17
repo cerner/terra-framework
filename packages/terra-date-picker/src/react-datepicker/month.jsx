@@ -9,104 +9,104 @@ const FIXED_HEIGHT_STANDARD_WEEK_COUNT = 6
 export default class Month extends React.Component {
   static propTypes = {
     /**
-   * Date Value Entered.
-   */
+     * Date Value Entered.
+     */
     day: PropTypes.object.isRequired,
     /**
-   * A callback function for custom day class names.
-   */
+     * A callback function for custom day class names.
+     */
     dayClassName: PropTypes.func,
     /**
-   * Maximum Date value for a date range.
-   */
+     * Maximum Date value for a date range.
+     */
     endDate: PropTypes.object,
     /**
-   * Array to store values of date that are disabled to pick .
-   */
+     * Array to store values of date that are disabled to pick .
+     */
     excludeDates: PropTypes.array,
     /**
-   * Filter specific dates that can be selected only .
-   */
+     * Filter specific dates that can be selected only .
+     */
     filterDate: PropTypes.func,
    /**
-   * Prop to allow variable or fixed height of calendar .
-   */
+     * Prop to allow variable or fixed height of calendar .
+     */
     fixedHeight: PropTypes.bool,
     /**
-   * A callback function to format week number .
-   */
+     * A callback function to format week number .
+     */
     formatWeekNumber: PropTypes.func,
     /**
-   * Highlight range of dates with custom classes.
-   */
+     * Highlight range of dates with custom classes.
+     */
     highlightDates: PropTypes.instanceOf(Map),
     /**
-   * Show dates only in the given array.
-   */
+     * Show dates only in the given array.
+     */
     includeDates: PropTypes.array,
     /**
-   * Prop to show inline version of date picker component.
-   */
+     * Prop to show inline version of date picker component.
+     */
     inline: PropTypes.bool,
     /**
-   * Maximum Value of date that can be selected by user.
-   */
+     * Maximum Value of date that can be selected by user.
+     */
     maxDate: PropTypes.object,
     /**
-   * Minimum Value of date that can be selected by user.
-   */
+     * Minimum Value of date that can be selected by user.
+     */
     minDate: PropTypes.object,
     /**
-   * A callback function to execute when a date is selected.
-   */
+     * A callback function to execute when a date is selected.
+     */
     onDayClick: PropTypes.func,
     /**
-   * A callback function to execute when day is clicked by mouse.
-   */
+     * A callback function to execute when day is clicked by mouse.
+     */
     onDayMouseEnter: PropTypes.func,
     /**
-   * A callback function to execute when nothing is selected.
-   */
+     * A callback function to execute when nothing is selected.
+     */
     onMouseLeave: PropTypes.func,
     /**
-   * A callback function to execute when a week is selected.
-   */
+     * A callback function to execute when a week is selected.
+     */
     onWeekSelect: PropTypes.func,
     /**
-   * A prop to check next month dates.
-   */
+     * A prop to check next month dates.
+     */
     peekNextMonth: PropTypes.bool,
     /**
-   * Prop to store previous selection value.
-   */
+     * Prop to store previous selection value.
+     */
     preSelection: PropTypes.object,
     /**
-   * Prop to store current selection value.
-   */
+     * Prop to store current selection value.
+     */
     selected: PropTypes.object,
     /**
-   * Prop to store value while selecting date. .
-   */
+     * Prop to store value while selecting date. .
+     */
     selectingDate: PropTypes.object,
     /**
-   * Mark date picker  to select end of range .
-   */
+     * Mark date picker  to select end of range .
+     */
     selectsEnd: PropTypes.bool,
     /**
-   * Mark date picker  to select start of range .
-   */
+     * Mark date picker  to select start of range .
+     */
     selectsStart: PropTypes.bool,
     /**
-   * Prop to show week numbers .
-   */
+     * Prop to show week numbers .
+     */
     showWeekNumbers: PropTypes.bool,
     /**
-   * Date selected by user .
-   */
+     * Date selected by user .
+     */
     startDate: PropTypes.object,
     /**
-   * Difference between utc and local time.
-   */
+     * Difference between utc and local time.
+     */
     utcOffset: PropTypes.number
   }
 

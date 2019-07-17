@@ -17,24 +17,24 @@ import {
 class Day extends React.Component {
   static propTypes = {
     /**
-   * Date Value Entered.
-   */
+     * Date Value Entered.
+     */
     day: PropTypes.object.isRequired,
     /**
-   * A callback function for custom day class names.
-   */
+     * A callback function for custom day class names.
+     */
     dayClassName: PropTypes.func,
     /**
-   * Maximum Date value for a date range.
-   */
+     * Maximum Date value for a date range.
+     */
     endDate: PropTypes.object,
     /**
-   * Highlight range of dates with custom classes.
-   */
+     * Highlight range of dates with custom classes.
+     */
     highlightDates: PropTypes.instanceOf(Map),
     /**
-   * Boolean Prop for Inline version of datepicker componnet.
-   */
+     * Prop to render Inline version of date picker component.
+     */
     inline: PropTypes.bool,
     /**
      * @private
@@ -42,44 +42,44 @@ class Day extends React.Component {
      */
     intl: intlShape,
     /**
-   * Month value for the date entered.
-   */
+     * Month value for the date entered.
+     */
     month: PropTypes.number,
     /**
-   * A callback function to execute when a valid date is selected.
-   */
+     * A callback function to execute when a valid date is selected.
+     */
     onClick: PropTypes.func,
     /**
-   * A callback function to execute when mouse is clicked to select date.
-   */
+     * A callback function to execute when mouse is clicked to select date.
+     */
     onMouseEnter: PropTypes.func,
     /**
-   * Previous Date Value  selected .
-   */
+     * Previous Date Value  selected .
+     */
     preSelection: PropTypes.object,
     /**
-   * Selected Date Value.
-   */
+     * Selected Date Value.
+     */
     selected: PropTypes.object,
     /**
-   * Date selected to check if in range.
-   */
+     * Date selected to check if in range.
+     */
     selectingDate: PropTypes.object,
     /**
-   * Prop to select end date on a date picker.
-   */
+     * Prop to select end date on a date picker.
+     */
     selectsEnd: PropTypes.bool,
     /**
-   * Prop to select start date on a date picker.
-   */
+     * Prop to select start date on a date picker.
+     */
     selectsStart: PropTypes.bool,
     /**
-   * Date selected by user .
-   */
+     * Date selected by user .
+     */
     startDate: PropTypes.object,
     /**
-   * Difference between utc and local time.
-   */
+     * Difference between utc and local time.
+     */
     utcOffset: PropTypes.number
   }
 
