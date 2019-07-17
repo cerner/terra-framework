@@ -10,6 +10,9 @@ Unreleased
 * Added documentation on required peerDependencies
 * Added the ability for the user to enter seconds in the time input
 
+### Changed
+* Updated to interface with react-intl's Intl context rather than old React Context API
+
 4.6.0 - (July 10, 2019)
 ------------------
 ### Changed
