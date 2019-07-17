@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Replaced visually-hidden-text styles with terra-visually-hidden-text component
 
 2.13.0 - (July 16, 2019)
 ------------------
