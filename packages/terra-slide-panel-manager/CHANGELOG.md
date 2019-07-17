@@ -3,6 +3,13 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added documentation on required peerDependencies
+
+5.4.0 - (July 10, 2019)
+------------------
+### Changed
+* Ensure the disclosure discloses as a panel even if a modal manager is present.
 
 5.3.0 - (July 2, 2019)
 ------------------

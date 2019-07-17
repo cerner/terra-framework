@@ -1,6 +1,13 @@
 import React from 'react';
+import classNames from 'classnames/bind';
+import { Consumer } from 'xfc';
 // eslint-disable-next-line import/no-unresolved
 import EmbeddedContentConsumer from 'terra-embedded-content-consumer/lib/EmbeddedContentConsumer';
+import styles from './Consumer.module.scss';
+
+const cx = classNames.bind(styles);
+
+Consumer.init();
 
 class CustomEventsConsumer extends React.Component {
   constructor(props) {
@@ -40,7 +47,8 @@ class CustomEventsConsumer extends React.Component {
     return (
       <div id="CustomEvents">
         <EmbeddedContentConsumer
-          src="#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"
+          className={cx('iframe')}
+          src="/#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"
           options={{ iframeAttrs: { title: 'Custom events example' } }}
           onMount={this.onMount}
           eventHandlers={eventHandlers}

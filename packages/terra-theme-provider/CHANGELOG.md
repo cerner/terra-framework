@@ -3,6 +3,13 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added documentation on required peerDependencies
+
+3.7.0 - (July 10, 2019)
+------------------
+### Changed
+* Fixed test route.
 
 3.6.0 - (July 2, 2019)
 ------------------

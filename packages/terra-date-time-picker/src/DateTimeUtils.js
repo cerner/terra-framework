@@ -36,9 +36,10 @@ class DateTimeUtils {
    * @param {object} momentDate - The moment object to synchronize the date and time.
    * @param {string} iSOdate - The date string to synchronize with the moment object.
    * @param {string} time - The time to synchronize with the moment object.
+   * @param {boolean} hasSeconds - If true seconds will be synchronized as well
    * @return {object} - The synchronized moment object.
    */
-  static syncDateTime(momentDate, iSOdate, time) {
+  static syncDateTime(momentDate, iSOdate, time, hasSeconds) {
     const date = moment(iSOdate);
 
     // If the base momentDate is valid, sync the date and time is they are valid.
@@ -49,8 +50,8 @@ class DateTimeUtils {
         tempDate.year(date.get('year')).month(date.get('month')).date(date.get('date'));
       }
 
-      if (time && time.length === 5) {
-        tempDate = DateTimeUtils.updateTime(tempDate, time);
+      if (time && ((!hasSeconds && time.length === 5) || (hasSeconds && time.length === 8))) {
+        tempDate = DateTimeUtils.updateTime(tempDate, time, hasSeconds);
       }
 
       return tempDate;
@@ -60,8 +61,8 @@ class DateTimeUtils {
     if (date.isValid()) {
       let tempDate = date.clone();
 
-      if (time && time.length === 5) {
-        tempDate = DateTimeUtils.updateTime(tempDate, time);
+      if (time && ((!hasSeconds && time.length === 5) || (hasSeconds && time.length === 8))) {
+        tempDate = DateTimeUtils.updateTime(tempDate, time, hasSeconds);
       }
 
       return tempDate;
@@ -75,17 +76,34 @@ class DateTimeUtils {
    * Synchronize only the time for a given moment object.
    * @param {object} momentDate - The moment object to synchronize the date and time.
    * @param {string} time - The time to synchronize with the moment object.
+   * @param {boolean} hasSeconds - If true seconds will be processed
    * @return {object} - The synchronized moment object.
    */
-  static updateTime(momentDate, time) {
+  static updateTime(momentDate, time, hasSeconds) {
     if (!momentDate || !momentDate.isValid()) {
       return null;
     }
 
     const newDate = momentDate.clone();
-    const date = moment(time, 'HH:mm', true);
+    const timeFormat = hasSeconds ? 'HH:mm:ss' : 'HH:mm';
+    const date = moment(time, timeFormat, true);
+
+    if (hasSeconds) {
+      return newDate.hour(date.get('hour')).minute(date.get('minute')).second(date.get('second'));
+    }
 
     return newDate.hour(date.get('hour')).minute(date.get('minute'));
+  }
+
+  /**
+   * Gets the time from a date and time
+   * @param {string} time An ISO 8601 string to get the time of
+   * @param {boolean} hasSeconds Whether or not seconds should be retrieved
+   * @return {string} The time from the date and time string
+   */
+  static getTime(time, hasSeconds) {
+    const timeFormat = hasSeconds ? 'HH:mm:ss' : 'HH:mm';
+    return DateUtil.formatISODate(time, timeFormat);
   }
 
   /**
@@ -93,19 +111,23 @@ class DateTimeUtils {
    * @param {string} date - The date to validate.
    * @param {string} time - The time to validate.
    * @param {string} format - The date/time format to use for the validation.
+   * @param {boolean} hasSeconds Whether or not the time should consider having seconds valid
    * @return {boolean} - True if both the date and time are valid and conform to the format.
    */
-  static isValidDateTime(date, time, format) {
-    return DateUtil.isValidDate(date, format) && DateTimeUtils.isValidTime(time);
+  static isValidDateTime(date, time, format, hasSeconds) {
+    return DateUtil.isValidDate(date, format) && DateTimeUtils.isValidTime(time, hasSeconds);
   }
 
   /**
-   * Determines if the time is a valid time in the HH:mm format
+   * Determines if the time is a valid time in the HH:mm (where hasSeconds is false) or
+   * HH:mm:ss (where hasSeconds is true) formats
    * @param {string} time - The time to validate.
+   * @param {boolean} hasSeconds Whether or not the time should consider having seconds valid
    * @return {boolean} - True if the time is valid.
    */
-  static isValidTime(time) {
-    const timeMoment = moment(time, 'HH:mm', true);
+  static isValidTime(time, hasSeconds) {
+    const timeFormat = hasSeconds ? 'HH:mm:ss' : 'HH:mm';
+    const timeMoment = moment(time, timeFormat, true);
     return timeMoment.isValid();
   }
 
@@ -167,10 +189,11 @@ class DateTimeUtils {
    * @param {string} date - The date string for the conversion.
    * @param {string} time - The time string for the conversion.
    * @param {string} dateformat - The format of the date and time strings.
+   * @param {boolean} hasSeconds - If true seconds will be converted
    * @return {object} - The moment object representing the given date and time.
    */
-  static convertDateTimeStringToMomentObject(date, time, dateformat) {
-    return DateTimeUtils.updateTime(DateUtil.createSafeDate(DateUtil.convertToISO8601(date, dateformat)), time);
+  static convertDateTimeStringToMomentObject(date, time, dateformat, hasSeconds) {
+    return DateTimeUtils.updateTime(DateUtil.createSafeDate(DateUtil.convertToISO8601(date, dateformat)), time, hasSeconds);
   }
 }
 
