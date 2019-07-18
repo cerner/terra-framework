@@ -151,56 +151,6 @@ const MyApp = () => (
 )
 ```
 
-#### DisclosureManagerContext
-
-The DisclosureManagerContext can be used directly to access the available DisclosureManager APIs.
-
-```jsx
-import Base from 'terra-base';
-import ModalManager from 'terra-modal-manager'; 
-import { DisclosureManagerContext } from 'terra-disclosure-manager';
-
-const MyDisclosureComponent = () => {
-  const disclosureManager = React.useContext(DisclosureManagerContext);
-
-  return (
-    <Button
-      text="Close Modal"
-      onClick={() => { 
-        disclosureManager.closeDisclosure();
-      }}
-    />
-  );
-};
-
-const MyComponent = () => {
-  const disclosureManager = React.useContext(DisclosureManagerContext);
-
-  return (
-    <Button
-      text="Launch Modal"
-      onClick={() => { 
-        disclosureManager.disclose({
-          preferredType: 'modal',
-          content: {
-            key: 'MY-MODAL-DISCLOSURE',
-            component: <MyDisclosureComponent />,
-          }
-        });
-      }}
-    />
-  );
-};
-
-const MyApp = () => (
-  <Base locale="en">
-    <ModalManager>
-      <MyComponent />
-    </ModalManager>
-  </Base>
-)
-```
-
 #### withDisclosureManager
 
 Components can use the higher order component generator `withDisclosureManager()` to wrap themselves automatically in a context consumer and receive a prop named `disclosureManager` containing a DisclosureManagerDelegate instance.
