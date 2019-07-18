@@ -18,60 +18,52 @@ beforeEach(() => {
 it('should render a default time input', () => {
   const timeInput = <TimeInput name="time-input" />;
   const wrapper = shallowWithIntl(timeInput);
-  const testComponent = wrapper.dive();
-  expect(testComponent).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('should render a time input with custom attributes', () => {
   const timeInput = <TimeInput name="time-input" inputAttributes={{ id: 'terra-time-input' }} />;
   const wrapper = shallowWithIntl(timeInput);
-  const testComponent = wrapper.dive();
-  expect(testComponent).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('should render a time input with a default time', () => {
   const timeInput = <TimeInput name="time-input" value="10:45" />;
   const wrapper = shallowWithIntl(timeInput);
-  const testComponent = wrapper.dive();
-  expect(testComponent).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('should render a time input with onChange', () => {
   const timeInput = <TimeInput name="time-input" onChange={() => {}} />;
   const wrapper = shallowWithIntl(timeInput);
-  const testComponent = wrapper.dive();
-  expect(testComponent).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('should render a time input with onBlur', () => {
   const timeInput = <TimeInput name="time-input" onBlur={() => {}} />;
   const wrapper = shallowWithIntl(timeInput);
-  const testComponent = wrapper.dive();
-  expect(testComponent).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('should render a time input with onFocus', () => {
   const timeInput = <TimeInput name="time-input" onFocus={() => {}} />;
   const wrapper = shallowWithIntl(timeInput);
-  const testComponent = wrapper.dive();
-  expect(testComponent).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('should render a time input with 12 hour clock set', () => {
   const timeInput = <TimeInput name="time-input" variant="12-hour" />;
   const wrapper = shallowWithIntl(timeInput);
-  const testComponent = wrapper.dive();
-  expect(testComponent).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('should ignore invalid times properly', () => {
   const timeInput = <TimeInput name="time-input" value="11:2" />;
   const wrapper = shallowWithIntl(timeInput);
-  const testComponent = wrapper.dive();
-  expect(testComponent).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 
-  expect(testComponent.instance().state.hour).toEqual('');
-  expect(testComponent.instance().state.minute).toEqual('');
+  expect(wrapper.instance().state.hour).toEqual('');
+  expect(wrapper.instance().state.minute).toEqual('');
 });
 
 it('should render a 24 hour timepicker properly on mobile devices', () => {
@@ -123,16 +115,14 @@ it('should not have duplicate ids on the page when multiple date pickers are ini
 it('should render a disabled time input', () => {
   const timeInput = <TimeInput name="time-input" disabled />;
   const wrapper = shallowWithIntl(timeInput);
-  const testComponent = wrapper.dive();
-  expect(testComponent).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('should handle focusing on the hour input without error', () => {
   mockEvent.keyCode = KeyCode.KEY_RIGHT;
   const timeInput = <TimeInput name="time-input" disabled />;
   const wrapper = mountWithIntl(timeInput);
-  const testComponent = wrapper.children();
-  testComponent.instance().handleHourInputKeyDown(mockEvent);
+  wrapper.instance().handleHourInputKeyDown(mockEvent);
   expect(mockEvent.preventDefault).toHaveBeenCalled();
 });
 
@@ -140,9 +130,8 @@ it('should handle focusing on the minute input without error', () => {
   mockEvent.keyCode = KeyCode.KEY_LEFT;
   const timeInput = <TimeInput name="time-input" disabled />;
   const wrapper = mountWithIntl(timeInput);
-  const testComponent = wrapper.children();
-  testComponent.instance().setState({ hour: 2 });
-  testComponent.instance().handleMinuteInputKeyDown(mockEvent);
+  wrapper.instance().setState({ hour: 2 });
+  wrapper.instance().handleMinuteInputKeyDown(mockEvent);
   expect(mockEvent.preventDefault).toHaveBeenCalled();
 });
 
@@ -150,8 +139,7 @@ it('should handle focusing on the meridiem input from minute without error', () 
   mockEvent.keyCode = KeyCode.KEY_RIGHT;
   const timeInput = <TimeInput name="time-input" variant="12-hour" />;
   const wrapper = mountWithIntl(timeInput);
-  const testComponent = wrapper.children();
-  testComponent.instance().handleMinuteInputKeyDown(mockEvent);
+  wrapper.instance().handleMinuteInputKeyDown(mockEvent);
   expect(mockEvent.preventDefault).toHaveBeenCalled();
 });
 
@@ -159,55 +147,48 @@ it('should pass in refCallback as the ref prop of the hour input element', () =>
   const refCallback = jest.fn();
   const timeInput = <TimeInput name="time-input" refCallback={refCallback} />;
   const wrapper = mountWithIntl(timeInput);
-  const testComponent = wrapper.children();
   expect(refCallback).toBeCalled();
-  expect(testComponent).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('should render a time input with seconds input', () => {
   const timeInput = <TimeInput name="time-input" showSeconds />;
   const wrapper = shallowWithIntl(timeInput);
-  const testComponent = wrapper.dive();
-  expect(testComponent).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('should render a time input with seconds input and a value', () => {
   const timeInput = <TimeInput name="time-input" showSeconds value="12:12:12" />;
   const wrapper = shallowWithIntl(timeInput);
-  const testComponent = wrapper.dive();
-  expect(testComponent).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('should render a time input with seconds input and custom attributes', () => {
   const timeInput = <TimeInput name="time-input" showSeconds inputAttributes={{ id: 'terra-time-input' }} secondAttributes={{ id: 'id-0' }} />;
   const wrapper = shallowWithIntl(timeInput);
-  const testComponent = wrapper.dive();
-  expect(testComponent).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('should handle focusing on the seconds input without error', () => {
   mockEvent.keyCode = KeyCode.KEY_LEFT;
   const timeInput = <TimeInput name="time-input" disabled showSeconds />;
   const wrapper = mountWithIntl(timeInput);
-  const testComponent = wrapper.children();
-  testComponent.instance().setState({ hour: 2, minute: 15 });
-  testComponent.instance().handleMinuteInputKeyDown(mockEvent);
+  wrapper.instance().setState({ hour: 2, minute: 15 });
+  wrapper.instance().handleMinuteInputKeyDown(mockEvent);
   expect(mockEvent.preventDefault).toHaveBeenCalled();
 });
 
 it('should render a 12 hour clock time input with seconds input', () => {
   const timeInput = <TimeInput name="time-input" variant="12-hour" showSeconds />;
   const wrapper = shallowWithIntl(timeInput);
-  const testComponent = wrapper.dive();
-  expect(testComponent).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('should handle focusing on the meridiem input from seconds input without error', () => {
   mockEvent.keyCode = KeyCode.KEY_RIGHT;
   const timeInput = <TimeInput name="time-input" variant="12-hour" showSeconds />;
   const wrapper = mountWithIntl(timeInput);
-  const testComponent = wrapper.children();
-  testComponent.instance().handleSecondInputKeyDown(mockEvent);
+  wrapper.instance().handleSecondInputKeyDown(mockEvent);
   expect(mockEvent.preventDefault).toHaveBeenCalled();
 });
 
@@ -244,12 +225,11 @@ it('should render a 12 hour timepicker meridiem with buttons and seconds input w
 it('should ignore invalid times with seconds properly', () => {
   const timeInput = <TimeInput name="time-input" value="11:25:4" showSeconds />;
   const wrapper = shallowWithIntl(timeInput);
-  const testComponent = wrapper.dive();
-  expect(testComponent).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 
-  expect(testComponent.instance().state.hour).toEqual('');
-  expect(testComponent.instance().state.minute).toEqual('');
-  expect(testComponent.instance().state.second).toEqual('');
+  expect(wrapper.instance().state.hour).toEqual('');
+  expect(wrapper.instance().state.minute).toEqual('');
+  expect(wrapper.instance().state.second).toEqual('');
 });
 
 it('should validate the incrementHour helper method', () => {
