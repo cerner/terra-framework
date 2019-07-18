@@ -25,6 +25,16 @@ it('should render a default date input with all props', () => {
   expect(dateInput).toMatchSnapshot();
 });
 
+it('throws error on missing locale prop in Base', () => {
+  global.console = { error: jest.fn() };
+
+  expect(() => {
+    render(<DateInput name="date-input" />);
+  }).toThrowError();
+  // eslint-disable-next-line no-console
+  expect(console.error).toBeCalledWith(expect.stringContaining('Component is internationalized, and must be wrapped in terra-base'));
+});
+
 it('should pass in refCallback as the ref prop of the calendar button', () => {
   const refCallback = jest.fn();
   const dateInput = mountWithIntl(<DateInput buttonRefCallback={refCallback} />);
