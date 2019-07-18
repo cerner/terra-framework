@@ -25,7 +25,8 @@ exports[`should render a DatePickerField with props 1`] = `
   required={true}
   showOptional={true}
 >
-  <InjectIntl(DatePicker)
+  <DatePicker
+    disableButtonFocusOnClose={false}
     disabled={true}
     excludeDates={
       Array [
@@ -75,7 +76,8 @@ exports[`should render a default DatePickerField component 1`] = `
   required={false}
   showOptional={false}
 >
-  <InjectIntl(DatePicker)
+  <DatePicker
+    disableButtonFocusOnClose={false}
     disabled={false}
     id="test-date-picker"
     name="test-date-picker"
@@ -109,7 +111,8 @@ exports[`should render a valid DatePickerField with props 1`] = `
   required={true}
   showOptional={true}
 >
-  <InjectIntl(DatePicker)
+  <DatePicker
+    disableButtonFocusOnClose={false}
     disabled={true}
     excludeDates={
       Array [
