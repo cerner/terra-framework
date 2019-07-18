@@ -37,15 +37,15 @@ The ModalManager responds to `"modal"` disclosure type requests. Components that
 
 ### DisclosureManagerHeaderAdapter Support
 
-If a component disclosed within the ModalManager renders a `DisclosureManagerHeaderAdapter`, the ModalManager will render an ActionHeader and provide the standard disclosure navigation controls (close, go back, maximize/minimize, etc.) within it. The disclosed component can use the `DisclosureManagerHeaderAdapter` to inject its own title and CollapsibleButtonView into the ActionHeader.
+If a component disclosed by the ModalManager renders a `DisclosureManagerHeaderAdapter`, the ModalManager will render an ActionHeader and provide the standard disclosure navigation controls (close, go back, maximize/minimize, etc.) within it. The disclosed component can use the `DisclosureManagerHeaderAdapter` to inject its own title and CollapsibleButtonView into the ActionHeader.
 
-If the disclosed component does **not** render a `DisclosureManagerHeaderAdapter`, the ModalManager will **not** render an ActionHeader itself. It is assumed that the disclosed component is rendering its own header. The disclosed component is responsible for providing the appropriate controls to navigate the disclosure stack.
+If the disclosed component does **not** render a `DisclosureManagerHeaderAdapter`, the ModalManager will **not** render an ActionHeader itself. In this case, it is assumed that the disclosed component is rendering its own header. The disclosed component is responsible for rendering the appropriate controls to navigate the disclosure stack.
 s
 > Note: The DisclosureManagerHeaderAdapter is the preferred way to present a header within the ModalManager. In a future major release, the ModalManager will **always** render the header and navigation controls, regardless of the presence of a DisclosureManagerHeaderAdapter.
 
 ### Disclosure Accessory
 
-The `disclosureAccessory` prop allows consumers of the ModalManager to render content within the modal above the disclosed content. The provided component will be rendered below the standard ActionHeader and above the disclosed content. This can be used to easily provide additional context to every disclosed component. This component is provided once to the ModalManager instance, not on a per-disclosure basis, and each component in the disclosure stack will be decorated with the same accessory component.
+The `disclosureAccessory` prop allows consumers of the ModalManager to render a static component above the disclosed modal content. The provided component will be rendered below the standard ActionHeader and above the disclosed content. This can be used to easily provide additional context to every disclosed component. This component is provided once to the ModalManager instance, not on a per-disclosure basis, and each component in the disclosure stack will be decorated with the same accessory component.
 
 ### Example
 
@@ -116,11 +116,12 @@ MyContentComponent.propTypes = {
 }
 
 let MyModalManagerComponent = () => (
-  <ModalManager>
+  <ModalManager
+    disclosureAccessory={<div>Disclosure Accessory</div>}
+  >
     <MyContentComponent />
   </ModalManager>
 );
-
 ```
 
 ## Component Features
