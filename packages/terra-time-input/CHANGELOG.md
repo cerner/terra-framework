@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Fixed onChange callback triggering twice for values prepended with zero.
+* Fixed inline style lint warnings of newly added example and tests of seconds field.
 
 4.5.0 - (July 16, 2019)
 ------------------
