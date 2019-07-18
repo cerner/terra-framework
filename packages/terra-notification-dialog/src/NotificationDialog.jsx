@@ -5,7 +5,6 @@ import FocusTrap from 'focus-trap-react';
 import KeyCode from 'keycode-js';
 import Button from 'terra-button';
 import classNames from 'classnames/bind';
-import { FormattedMessage } from 'react-intl';
 import styles from './NotificationDialog.module.scss';
 
 const cx = classNames.bind(styles);
@@ -95,7 +94,7 @@ const actionSection = (primaryAction, secondaryAction) => {
   );
 };
 
-const getIcon = (variant, customIcon = null) => {
+const getIcon = (intl, variant, customIcon = null) => {
   switch (variant) {
     case variants.ALERT:
       return (<span className={cx(['icon', 'alert'])} />);
@@ -112,6 +111,15 @@ const getIcon = (variant, customIcon = null) => {
     default:
       return null;
   }
+};
+
+const contextTypes = {
+  /* eslint-disable consistent-return */
+  intl: (context) => {
+    if (context.intl === undefined) {
+      return new Error('Please add locale prop to Base component to load translations');
+    }
+  },
 };
 
 class NotificationDialog extends React.Component {
@@ -159,7 +167,9 @@ class NotificationDialog extends React.Component {
       ...customProps
     } = this.props;
 
-    const defaultHeader = variant === variants.CUSTOM ? '' : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
+    const { intl } = this.context;
+
+    const defaultHeader = variant === variants.CUSTOM ? '' : intl.formatMessage({ id: `Terra.notification.dialog.${variant}` });
     const notificationDialogClassNames = cx('notification-dialog', customProps.className);
 
     return (
@@ -182,7 +192,7 @@ class NotificationDialog extends React.Component {
               <div id="notification-dialog-header" className={cx('header-body')}>{header || defaultHeader}</div>
               <div className={cx('notification-dialog-body')}>
                 {variant
-                  && <div className={cx('icon-container')}>{getIcon(variant, customIcon)}</div>
+                  && <div className={cx('icon-container')}>{getIcon(intl, variant, customIcon)}</div>
                 }
                 <div className={cx('text-wrapper')}>
                   {title
@@ -204,6 +214,7 @@ class NotificationDialog extends React.Component {
 
 NotificationDialog.propTypes = propTypes;
 NotificationDialog.defaultProps = defaultProps;
+NotificationDialog.contextTypes = contextTypes;
 
 export { variants as NotificationDialogVariants };
 export default NotificationDialog;
