@@ -57,24 +57,24 @@ class DisclosureComponent extends React.Component {
     return (
       <ContentContainer fill>
         <DisclosureManagerHeaderAdapter
-          title={`Disclosure - ${name}`}
+          title={name}
           collapsibleMenuView={(
             <CollapsibleMenuView>
               <CollapsibleMenuView.Item
-                text="Header Button 1"
+                text="Button 1"
                 key="button_1"
                 onClick={() => {
                   this.setState({
-                    selectedHeaderAction: 'Header Button 1',
+                    selectedHeaderAction: 'Button 1',
                   });
                 }}
               />
               <CollapsibleMenuView.Item
-                text="Header Button 2"
+                text="Button 2"
                 key="button_2"
                 onClick={() => {
                   this.setState({
-                    selectedHeaderAction: 'Header Button 2',
+                    selectedHeaderAction: 'Button 2',
                   });
                 }}
               />

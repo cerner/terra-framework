@@ -43,7 +43,7 @@ If the disclosed component does **not** render a `DisclosureManagerHeaderAdapter
 
 ### Disclosure Accessory
 
-The `disclosureAccessory` prop allows users of the ModalManager to render content within the modal above the disclosed content. The provided component will rendered below the standard ActionHeader and above the disclosed content. This can be used to easily provide additional context to disclosed components. This component is provided once to the ModalManager instance, not on a per-disclosure basis, and each component in the disclosure stack will be decorated with the same accessory component.
+The `disclosureAccessory` prop allows consumers of the SlidePanelManager to render content within the panel above the disclosed content. The provided component will be rendered below the standard ActionHeader and above the disclosed content. This can be used to easily provide additional context to every disclosed component. This component is provided once to the SlidePanelManager instance, not on a per-disclosure basis, and each component in the disclosure stack will be decorated with the same accessory component.
 
 ### Example
 
