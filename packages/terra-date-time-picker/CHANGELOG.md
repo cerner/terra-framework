@@ -3,15 +3,14 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Allow blur to be handled after the date time ambiguity is resolved.
 
 4.7.0 - (July 16, 2019)
 ------------------
 ### Added
 * Added documentation on required peerDependencies
 * Added the ability for the user to enter seconds in the time input
-
-### Fixed
-* Allow blur to be handled after the date time ambiguity is resolved.
 
 4.6.0 - (July 10, 2019)
 ------------------
