@@ -84,7 +84,7 @@ export default class Calendar extends React.Component {
      */
     filterDate: PropTypes.func,
     /**
-     * Prop Keep the height of calendar dom fixed or variable
+     * Specifies whether the height of calendar dom fixed or variable.
      */
     fixedHeight: PropTypes.bool,
     /**
@@ -192,7 +192,7 @@ export default class Calendar extends React.Component {
      */
     selected: PropTypes.object,
     /**
-     * Mark date picker  to select end of range .
+     * Mark date picker to select end of range .
      */
     selectsEnd: PropTypes.bool,
     /**

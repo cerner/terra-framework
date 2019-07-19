@@ -32,7 +32,7 @@ export default class Time extends React.Component {
      */
     onChange: PropTypes.func,
     /**
-     * A button to select current time.
+     * Name of button to select current time.
      */
     todayButton: PropTypes.string,
     /**
@@ -48,7 +48,7 @@ export default class Time extends React.Component {
      */
     excludeTimes: PropTypes.array,
     /**
-     * Prop to store month reference object. .
+     * Prop to store month reference object.
      */
     monthRef: PropTypes.object
   }

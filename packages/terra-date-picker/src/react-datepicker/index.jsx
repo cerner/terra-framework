@@ -127,7 +127,7 @@ class DatePicker extends React.Component {
      */
     filterDate: PropTypes.func,
     /**
-     * Prop to allow variable or fixed height of calendar .
+     * Specifies whether the height of calendar dom fixed or variable.
      */
     fixedHeight: PropTypes.bool,
     /**
