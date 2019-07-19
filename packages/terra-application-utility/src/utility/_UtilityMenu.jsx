@@ -339,7 +339,7 @@ class UtilityMenu extends React.Component {
         <span className={contentContainerClassNames}>
           <span className={leftContentContainer}>
             {!firstPage && backButton}
-            <span id="utility-menu-header" className={headerTextClassName}>{headerText}</span>
+            <span id="utility-menu-header" role="heading" className={headerTextClassName}>{headerText}</span>
           </span>
           <span className={cx('utility-menu-right-content-container')}>
             {closeButton}
