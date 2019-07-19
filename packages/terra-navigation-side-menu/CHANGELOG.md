@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Replaced visually-hidden-text styles with terra-visually-hidden-text component
+* Normalized terra-visually-hidden-text dependency version to match other terra-framework packages
 
 2.13.0 - (July 16, 2019)
 ------------------
