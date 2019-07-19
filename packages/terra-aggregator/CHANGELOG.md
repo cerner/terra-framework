@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated terra-grid devDependency to v6
 
 4.20.0 - (July 16, 2019)
 ------------------
