@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added Node.contains polyfill to better support IE 10 / IE 11
 
 3.6.0 - (July 16, 2019)
 ------------------
