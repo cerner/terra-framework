@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added Node.contains polyfill to better support IE 10 / IE 11
+
 ### Fixed
 * Fixed issue in IE 10 when trying to pull value from data attribute
 
