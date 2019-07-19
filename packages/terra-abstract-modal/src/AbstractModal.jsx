@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
 import KeyCode from 'keycode-js';
-import tabbable from 'tabbable';
 import 'mutationobserver-shim';
 import './_matches-polyfill';
 import 'wicg-inert';
