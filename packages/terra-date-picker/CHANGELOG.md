@@ -4,7 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
-* Updated terra-date-picker to use css modules.
+* Updated react-date-picker to use css modules.
 
 4.6.0 - (July 10, 2019)
 ------------------

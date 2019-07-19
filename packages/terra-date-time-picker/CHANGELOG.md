@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated wdio test to work with changes in terra-date-picker
 
 4.6.0 - (July 10, 2019)
 ------------------
