@@ -31,7 +31,7 @@
     "terra-base": "^5.0.0",
     "terra-breakpoints": "^2.0.0",
     "terra-disclosure-manager": "^4.16.0",
-    "terra-doc-template": "^2.0.0",
+    "terra-doc-template": "^2.2.0",
     "terra-modal-manager": "^6.6.0",
     "terra-navigation-prompt": "^1.5.0",
     "terra-slide-panel-manager": "^5.5.0",

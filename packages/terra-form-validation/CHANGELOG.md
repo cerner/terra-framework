@@ -3,6 +3,11 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated terra-date-picker devDependency to v4.7.0
+
+### Removed
+* Removed dev dependency on terra-i18n
 
 1.3.0 - (July 16, 2019)
 ------------------
