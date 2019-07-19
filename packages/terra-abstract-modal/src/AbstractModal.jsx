@@ -113,7 +113,7 @@ class AbstractModal extends React.Component {
     this.setState({ modalTrigger: document.activeElement });
 
     if (mainDocumentElement) {
-      const inert = +mainDocumentElement.dataset.overlayCount;
+      const inert = +mainDocumentElement.getAttribute('data-overlay-count');
 
       if (!mainDocumentElement.hasAttribute('data-overlay-count')) {
         mainDocumentElement.setAttribute('data-overlay-count', '1');
@@ -131,7 +131,7 @@ class AbstractModal extends React.Component {
     const mainDocumentElement = document.querySelector(this.props.rootSelector);
 
     if (mainDocumentElement) {
-      const inert = +mainDocumentElement.dataset.overlayCount;
+      const inert = +mainDocumentElement.getAttribute('data-overlay-count');
 
       if (inert === 1) {
         mainDocumentElement.removeAttribute('data-overlay-count');
