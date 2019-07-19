@@ -7,7 +7,7 @@ import * as utils from './date_utils'
 export default class Week extends React.Component {
   static propTypes = {
     /**
-     * Date Value Entered.
+     * Day Value Entered.
      */
     day: PropTypes.object.isRequired,
     /**
@@ -19,7 +19,7 @@ export default class Week extends React.Component {
      */
     endDate: PropTypes.object,
     /**
-     * Array to store values of time that are disabled to pick .
+     * Array to store values of date that are disabled to pick .
      */
     excludeDates: PropTypes.array,
     /**
@@ -55,11 +55,11 @@ export default class Week extends React.Component {
      */
     month: PropTypes.number,
     /**
-     * A callback function to execute when a date is selected.
+     * A callback function to execute when day is selected.
      */
     onDayClick: PropTypes.func,
     /**
-     * A callback function to execute when day is clicked by mouse.
+     * A callback function to execute when the mouse cursor hovers over the day..
      */
     onDayMouseEnter: PropTypes.func,
     /**
@@ -75,15 +75,15 @@ export default class Week extends React.Component {
      */
     selected: PropTypes.object,
     /**
-     * Prop to store value while selecting date. .
+     * Prop to store value while selecting date.
      */
     selectingDate: PropTypes.object,
     /**
-     * Mark date picker  to select end of range .
+     * Mark date picker to select end of range .
      */
     selectsEnd: PropTypes.bool,
     /**
-     * Mark date picker  to select start of range .
+     * Mark date picker to select start of range .
      */
     selectsStart: PropTypes.bool,
     /**

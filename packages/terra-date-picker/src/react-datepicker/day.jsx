@@ -17,7 +17,7 @@ import {
 class Day extends React.Component {
   static propTypes = {
     /**
-     * Date Value Entered.
+     * Day Value Entered.
      */
     day: PropTypes.object.isRequired,
     /**

@@ -9,7 +9,7 @@ const FIXED_HEIGHT_STANDARD_WEEK_COUNT = 6
 export default class Month extends React.Component {
   static propTypes = {
     /**
-     * Date Value Entered.
+     * day Value Entered.
      */
     day: PropTypes.object.isRequired,
     /**
@@ -57,15 +57,15 @@ export default class Month extends React.Component {
      */
     minDate: PropTypes.object,
     /**
-     * A callback function to execute when a date is selected.
+     * A callback function to execute when a day is selected.
      */
     onDayClick: PropTypes.func,
     /**
-     * A callback function to execute when day is clicked by mouse.
+     * A callback function to execute when the mouse cursor hovers over the day..
      */
     onDayMouseEnter: PropTypes.func,
     /**
-     * A callback function to execute when nothing is selected.
+     * A callback function to execute when the mouse cursor leaves the element.
      */
     onMouseLeave: PropTypes.func,
     /**
@@ -85,15 +85,15 @@ export default class Month extends React.Component {
      */
     selected: PropTypes.object,
     /**
-     * Prop to store value while selecting date. .
+     * Prop to store value while selecting date.
      */
     selectingDate: PropTypes.object,
     /**
-     * Mark date picker  to select end of range .
+     * Mark date picker to select end of range .
      */
     selectsEnd: PropTypes.bool,
     /**
-     * Mark date picker  to select start of range .
+     * Mark date picker to select start of range .
      */
     selectsStart: PropTypes.bool,
     /**

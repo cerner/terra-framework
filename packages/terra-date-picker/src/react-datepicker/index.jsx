@@ -64,8 +64,8 @@ class DatePicker extends React.Component {
      */
     autoComplete: PropTypes.string,
     /**
-   * Prop to auto focus on date picker.
-   */
+     * Whether or not to auto focus on date picker.
+     */
     autoFocus: PropTypes.bool,
     /**
      * Classname for styling calendar.
@@ -196,7 +196,7 @@ class DatePicker extends React.Component {
      */
     onWeekSelect: PropTypes.func,
     /**
-     * A callback function to execute when nothing is selected.
+     * A callback function to execute when the mouse cursor leaves the element.
      */
     onClickOutside: PropTypes.func,
     /**
@@ -228,7 +228,7 @@ class DatePicker extends React.Component {
      */
     placeholderText: PropTypes.string,
     /**
-     * Prop to prevent date picker from opening on click.
+     * Prop to prevent date picker from opening on focus.
      */
     preventOpenOnFocus: PropTypes.bool,
     /**
@@ -236,7 +236,7 @@ class DatePicker extends React.Component {
      */
     readOnly: PropTypes.bool,
     /**
-     * Prop to allow as required field.
+     *Prop to make the date picker as a required field.
      */
     required: PropTypes.bool,
     /**

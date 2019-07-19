@@ -196,7 +196,7 @@ export default class Calendar extends React.Component {
      */
     selectsEnd: PropTypes.bool,
     /**
-     * Mark date picker  to select start of range .
+     * Mark date picker to select start of range .
      */
     selectsStart: PropTypes.bool,
     /**
