@@ -4,6 +4,12 @@ Changelog
 Unreleased
 ----------
 
+3.13.0 - (July 16, 2019)
+------------------
+### Added
+* Added documentation for 'Skip to Content' button.
+* Added documentation on required peerDependencies
+
 3.12.0 - (July 10, 2019)
 ------------------
 ### Changed

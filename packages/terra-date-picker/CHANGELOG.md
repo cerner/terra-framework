@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Updated react-date-picker to use css modules.
 
+4.7.0 - (July 16, 2019)
+------------------
+### Added
+* Added documentation on required peerDependencies
+
 4.6.0 - (July 10, 2019)
 ------------------
 ### Changed

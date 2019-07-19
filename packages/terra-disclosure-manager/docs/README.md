@@ -7,6 +7,23 @@ The DisclosureManager is a stateful component used to manage disclosure presenta
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-disclosure-manager`
 
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+<details>
+<summary>View information on this component's peer dependencies.</summary>
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+
+
+</details>
+<!-- AUTO-GENERATED-CONTENT:END -->
+
 This package uses React's Context for inter-component communication. A single instance of this package must be installed to ensure that communication occurs between all Context Providers and Consumers. To help ensure a single instance is installed, this package should be defined as a peer dependency in packages that are reusable libraries or otherwise consumed by other packages.
 
 ## Usage
@@ -23,6 +40,16 @@ The DisclosureManager does not implement a traditional render function. A `rende
 |`disclosure`|An Object containing data relative to the components in the disclosure stack.|
 |`dismissPresentedComponent`|A function that pops the currently disclosed component off the disclosure stack.|
 |`closeDisclosure`|A function that closes the disclosure and removes all components from the disclosure stack.|
+|`maximizeDisclosure`|A function that will maximize the disclosure size. If the disclosure cannot be maximized, or if it is already maximized, the function is not provided.|
+|`minimizeDisclosure`|A function that will minimize the disclosure size. If the disclosure cannot be minimized, or if it is already minimized, the function is not provided.|
+|`disclosureComponentKeys`|An array of keys representing the components in the disclosure stack.|
+|`disclosureComponentData`|An Object containing components and associated data representing the state of disclosure stack.|
+
+`disclosureComponentData` Object API:
+|Key|Value|
+|---|---|
+|`component`|A component that has been wrapped with the DisclosureManager-provided contexts.|
+|`headerAdapterData`|An Object containing the header data for the associated component.|
 
 `children` Object API:
 
@@ -40,8 +67,11 @@ The DisclosureManager does not implement a traditional render function. A `rende
 |`isMaximized`|A boolean indicating the current maximize state of the DisclosureManager.|
 |`size`|The String size of the disclosure.|
 
+> Note: The `isFocused` value has little relevance now that Terra's AbstractModal and other components directly manage their own focus state. `isFocused` will be removed from the DisclosureManager API in a future major release.
+
 Example (using the Modal and SlideGroup):
-```javascript
+
+```jsx
 <DisclosureManager
   supportedDisclosureTypes={['modal']}
   render={(manager) => (
@@ -69,7 +99,57 @@ Example (using the Modal and SlideGroup):
 
 ### Interacting with the Disclosure Manager
 
-The DisclosureManager wraps its contents in a context provider that exposes an instance of a DisclosureManagerDelegate, an object containing DisclosureManager APIs, to components based upon their presented location. 
+The DisclosureManager wraps its contents in a context provider that exposes an instance of a DisclosureManagerDelegate, an object containing DisclosureManager APIs, to components based upon their presented location.
+
+#### DisclosureManagerContext
+
+The DisclosureManagerContext can be used directly to access the available DisclosureManager APIs.
+
+```jsx
+import Base from 'terra-base';
+import ModalManager from 'terra-modal-manager'; 
+import { DisclosureManagerContext } from 'terra-disclosure-manager';
+
+const MyDisclosureComponent = () => {
+  const disclosureManager = React.useContext(DisclosureManagerContext);
+
+  return (
+    <Button
+      text="Close Modal"
+      onClick={() => { 
+        disclosureManager.closeDisclosure();
+      }}
+    />
+  );
+};
+
+const MyComponent = () => {
+  const disclosureManager = React.useContext(DisclosureManagerContext);
+
+  return (
+    <Button
+      text="Launch Modal"
+      onClick={() => { 
+        disclosureManager.disclose({
+          preferredType: 'modal',
+          content: {
+            key: 'MY-MODAL-DISCLOSURE',
+            component: <MyDisclosureComponent />,
+          }
+        });
+      }}
+    />
+  );
+};
+
+const MyApp = () => (
+  <Base locale="en">
+    <ModalManager>
+      <MyComponent />
+    </ModalManager>
+  </Base>
+)
+```
 
 #### withDisclosureManager
 
@@ -77,13 +157,13 @@ Components can use the higher order component generator `withDisclosureManager()
 
 ```jsx
 import Base from 'terra-base';
-import ModalManager from 'terra-modal-manager'; 
+import ModalManager from 'terra-modal-manager';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 
 const MyDisclosureComponent = withDisclosureManager(({ disclosureManager }) => (
   <Button
     text="Close Modal"
-    onClick={() => { 
+    onClick={() => {
       disclosureManager.closeDisclosure();
     }}
   />
@@ -95,7 +175,7 @@ MyDisclosureComponent.propTypes = {
 const MyComponent = withDisclosureManager({ disclosureManager }) => (
   <Button
     text="Launch Modal"
-    onClick={() => { 
+    onClick={() => {
       disclosureManager.disclose({
         preferredType: 'modal',
         content: {
@@ -119,6 +199,41 @@ const MyApp = () => (
 )
 ```
 
+#### DisclosureManagerHeaderAdapter
+
+Implementations of the DisclosureManager must render a header containing controls for the various disclosure management actions (close, back, maximize/minimize, etc.). The DisclosureManagerHeaderAdapter can be rendered by the disclosed content to inject their own component-specific contents into that header.
+
+`DisclosureManagerHeaderAdapter` Props:
+
+|Prop|Is Required|Description|
+|---|---|---|
+|`title`|optional|A string to render as the header's title.|
+|`collapsibleMenuView`|optional|A CollapsibleMenuView component to render within the header.|
+
+```jsx
+import { DisclosureManagerContext, DisclosureManagerHeaderAdapter } from 'terra-disclosure-manager';
+import CollapsibleMenuView from 'terra-collapsible-menu-view';
+
+const MyDisclosureComponent = () => {
+  const disclosureManager = React.useContext(DisclosureManagerContext);
+
+  return (
+    <React.Fragment>
+      <DisclosureManagerHeaderAdapter
+        title="My Disclosure Component"
+        collapsibleMenuView={<CollapsibleMenuView ... />}
+      />
+      <Button
+        text="Close Modal"
+        onClick={() => {
+          disclosureManager.closeDisclosure();
+        }}
+      />
+    </React.Fragment>
+  );
+};
+```
+
 #### Children
 
 The DisclosureManagerDelegate provided to the child components contains a `disclose` function. This `disclose` function validates the disclosure type with which it is provided against the set of supported disclosure types given to the DisclosureManager as a prop. If the provided type is not supported, and if the DisclosureManager detects another DisclosureManager higher in the component hierarchy, the DisclosureManager will call the disclose function provided by that parent DisclosureManager instance.
@@ -126,7 +241,7 @@ The DisclosureManagerDelegate provided to the child components contains a `discl
 If the type is supported, the DisclosureManager will check the currently disclosed component's state to ensure it can be replaced. If the disclosure is denied, then `disclose` returns a rejected Promise. If the disclosure is allowed, then a resolved Promise is returned. This Promise will be resolved with an Object containing functions and Promises that can be used to manipulate the disclosure, if necessary. Included are `dismissDisclosure`, a function that will dismiss the disclosed content, and `afterDismiss`, a deferred Promise that will be resolved when the disclosed content is dismissed by any means. Alternatively, if the additional logic isn't needed, the returned Promise can be completely ignored.
 
 Example:
-```javascript
+```jsx
 disclosureManager.disclose({
   preferredType: 'disclosure-type',
   size: 'large',
@@ -193,7 +308,7 @@ Each of these functions returns a Promise that can be used for chaining, if nece
 The function given to registerDismissCheck must return a resolved or rejected Promise. If the Promise is resolved, the component is guaranteed to be dismissed. If cleanup logic needs to execute before the component is dismissed, it is a good idea to execute before returning the resolved Promise. If a rejected Promise is returned, the component will not be dismissed. Components can render a prompt or confirmation window to give users control over the dismissal, if desired.
 
 Example:
-```javascript
+```jsx
 // MyDisclosedComponent.jsx
 
 componentDidMount() {
@@ -255,6 +370,7 @@ import CustomDisclosure from './my/custom/disclosure';
 ```
 
 ## Component Features
-* [Cross-Browser Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
-* [Responsive Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#responsive-support)
-* [Mobile Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#mobile-support)
+
+- [Cross-Browser Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
+- [Responsive Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#responsive-support)
+- [Mobile Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#mobile-support)

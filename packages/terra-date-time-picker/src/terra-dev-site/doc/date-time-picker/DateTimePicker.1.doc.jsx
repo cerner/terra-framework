@@ -26,6 +26,10 @@ import DateTimePickerDST from '../example/DateTimePickerDST';
 import DateTimePickerDSTSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DateTimePickerDST';
 import DateTimePickerTimeVariant from '../example/DateTimePickerTimeVariant';
 import DateTimePickerTimeVariantSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DateTimePickerTimeVariant';
+import DateTimePickerWithSeconds from '../example/DateTimePickerWithSeconds';
+import DateTimePickerWithSecondsSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DateTimePickerWithSeconds';
+import DateTimePickerWithSecondsAndTimeVariant from '../example/DateTimePickerWithSecondsAndTimeVariant';
+import DateTimePickerWithSecondsAndTimeVariantSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DateTimePickerWithSecondsAndTimeVariant';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
@@ -131,6 +135,16 @@ to see the starting and ending dates of daylight saving time for the current yea
         title: 'Time Variant with 12-hour Time format',
         example: <DateTimePickerTimeVariant />,
         source: DateTimePickerTimeVariantSrc,
+      },
+      {
+        title: 'With Seconds Field',
+        example: <DateTimePickerWithSeconds />,
+        source: DateTimePickerWithSecondsSrc,
+      },
+      {
+        title: 'With Seconds Field in 12-hour Time format',
+        example: <DateTimePickerWithSecondsAndTimeVariant />,
+        source: DateTimePickerWithSecondsAndTimeVariantSrc,
       },
     ]}
     propsTables={[
