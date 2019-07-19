@@ -3,10 +3,11 @@ Changelog
 
 Unreleased
 ----------
-
 ### Changed
 * Added props description for the forked react-datepicker component
 
+4.7.0 - (July 16, 2019)
+------------------
 ### Added
 * Added documentation on required peerDependencies
 

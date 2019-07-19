@@ -3,9 +3,11 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.7.0 - (July 16, 2019)
+------------------
 ### Added
 * Added documentation on required peerDependencies
-### Added
 * Added the ability for the user to enter seconds in the time input
 
 4.6.0 - (July 10, 2019)
