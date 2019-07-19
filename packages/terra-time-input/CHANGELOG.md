@@ -6,7 +6,10 @@ Unreleased
 ### Fixed
 * Fixed Meridiem resets on left keyboard in firefox.
 
+4.5.0 - (July 16, 2019)
+------------------
 ### Added
+* Added documentation on required peerDependencies
 * Added the ability to have an input field for seconds.
 
 4.4.0 - (July 10, 2019)

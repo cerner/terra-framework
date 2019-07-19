@@ -12,6 +12,24 @@ Fall: If you enter a date and time that falls within the ambiguous hour during t
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-date-time-picker`
 
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+<details>
+<summary>View information on this component's peer dependencies.</summary>
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+| react-intl | ^2.8.0 |
+
+
+</details>
+<!-- AUTO-GENERATED-CONTENT:END -->
+
 ## Implementation Notes:
 DateTimePicker is required to be composed inside the [Base][3] component with locale in order for it to load the correct date format and translation strings.
 
