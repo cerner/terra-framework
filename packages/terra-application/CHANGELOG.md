@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Normalized terra-doc-template dev dependency version to match other terra-framework packages
 
 1.2.0 - (July 16, 2019)
 ------------------
