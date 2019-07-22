@@ -3,13 +3,15 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Normalized terra-breakpoints dependency version to match other terra-framework packages
 
 5.7.0 - (July 16, 2019)
 ------------------
 ### Added
 * Added documentation on required peerDependencies
 
-### Changes
+### Changed
 * Removed Ignore Axe Rules from wdio tests.
 * Add wait to spec tests to pass.
 
