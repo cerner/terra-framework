@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames/bind'
 import {
   getHour,
   getMinute,
@@ -12,6 +13,9 @@ import {
   isTimeInDisabledRange,
   isTimeDisabled
 } from './date_utils'
+import styles from './stylesheets/datepicker.scss'
+
+const cx = classNames.bind(styles);
 
 export default class Time extends React.Component {
   static propTypes = {
@@ -76,7 +80,7 @@ export default class Time extends React.Component {
     }
 
     return times.map((time, i) =>
-      <li key={i} onClick={this.handleClick.bind(this, time)} className={this.liClasses(time, currH, currM)}>
+      <li key={i} onClick={this.handleClick.bind(this, time)} className={cx(this.liClasses(time, currH, currM))}>
         {formatDate(time, format)}
       </li>
     )
@@ -89,13 +93,13 @@ export default class Time extends React.Component {
     }
 
     return (
-      <div className={`react-datepicker-time-container ${(this.props.todayButton) ? 'react-datepicker-time-container--with-today-button' : ''}`}>
-        <div className="react-datepicker-header react-datepicker-header--time">
-          <div className="react-datepicker-time-header">Time</div>
+      <div className={cx(['react-datepicker-time-container', `${(this.props.todayButton) ? 'react-datepicker-time-container--with-today-button' : ''}`])}>
+        <div className={cx('react-datepicker-header react-datepicker-header--time')}>
+          <div className={cx('react-datepicker-time-header')}>Time</div>
         </div>
-        <div className="react-datepicker-time">
-          <div className="react-datepicker-time-box">
-            <ul className="react-datepicker-time-list" ref={list => { this.list = list }} style={height ? {height} : {}}>
+        <div className={cx('react-datepicker-time')}>
+          <div className={cx('react-datepicker-time-box')}>
+            <ul className={cx('react-datepicker-time-list')} ref={list => { this.list = list }} style={height ? {height} : {}}>
               {this.renderTimes.bind(this)()}
             </ul>
           </div>

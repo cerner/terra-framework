@@ -1,6 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import classNames from 'classnames/bind'
+import styles from './stylesheets/datepicker.scss'
+
+const cx = classNames.bind(styles);
 
 export default class WeekNumber extends React.Component {
   static propTypes = {
@@ -21,7 +24,7 @@ export default class WeekNumber extends React.Component {
     }
     return (
       <div
-        className={classnames(weekNumberClasses)}
+        className={cx(weekNumberClasses)}
         aria-label={`week-${this.props.weekNumber}`}
         onClick={this.handleClick}>
         {this.props.weekNumber}

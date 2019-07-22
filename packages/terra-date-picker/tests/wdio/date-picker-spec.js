@@ -18,7 +18,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot({ selector: '[class="react-datepicker"]' });
+    Terra.it.matchesScreenshot({ selector: '#calendar' });
     Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
@@ -90,7 +90,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot({ selector: '[class="react-datepicker"]' });
+    Terra.it.matchesScreenshot({ selector: '#calendar' });
     Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
@@ -102,7 +102,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot({ selector: '[class="react-datepicker"]' });
+    Terra.it.matchesScreenshot({ selector: '#calendar' });
     Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
@@ -112,7 +112,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot({ selector: '[class="react-datepicker"]' });
+    Terra.it.matchesScreenshot({ selector: '#calendar' });
     Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
@@ -157,7 +157,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot({ selector: '[class="react-datepicker"]' });
+    Terra.it.matchesScreenshot({ selector: '#calendar' });
     Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
@@ -364,7 +364,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot('date picker updated', { selector: '[class="react-datepicker"]' });
+    Terra.it.matchesScreenshot('date picker updated', { selector: '#calendar' });
 
     it('Click button to reset date', () => {
       browser.click('[class*="PopupOverlay"]');
@@ -377,7 +377,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot('date picker reset', { selector: '[class="react-datepicker"]' });
+    Terra.it.matchesScreenshot('date picker reset', { selector: '#calendar' });
 
     it('Select date', () => {
       browser.keys('ArrowDown');

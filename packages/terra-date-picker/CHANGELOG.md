@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Removed lint errors for css.
 * Updated react-date-picker to use css modules.
 
 4.6.0 - (July 10, 2019)

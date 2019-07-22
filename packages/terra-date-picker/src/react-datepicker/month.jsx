@@ -1,8 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import classnames from 'classnames';
+import classNames from 'classnames/bind'
 import Week from './week'
 import * as utils from './date_utils'
+import styles from './stylesheets/datepicker.scss'
+
+const cx = classNames.bind(styles);
 
 const FIXED_HEIGHT_STANDARD_WEEK_COUNT = 6
 
@@ -124,7 +128,7 @@ export default class Month extends React.Component {
 
   render () {
     return (
-      <div tabIndex="0" className={this.getClassNames()} onMouseLeave={this.handleMouseLeave} role="listbox">
+      <div tabIndex="0" className={cx(this.getClassNames())} onMouseLeave={this.handleMouseLeave} role="listbox">
         {this.renderWeeks()}
       </div>
     )
