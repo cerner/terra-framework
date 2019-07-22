@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Normalized terra-form-checkbox dependency version to match other terra-framework packages
 
 6.6.0 - (July 16, 2019)
 ------------------

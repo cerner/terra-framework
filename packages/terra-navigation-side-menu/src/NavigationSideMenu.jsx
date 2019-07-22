@@ -4,6 +4,7 @@ import { injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames/bind';
 import ActionHeader from 'terra-action-header';
 import ContentContainer from 'terra-content-container';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import KeyCode from 'keycode-js';
 import MenuItem from './_MenuItem';
 
@@ -106,6 +107,7 @@ class NavigationSideMenu extends Component {
     this.handleBackClick = this.handleBackClick.bind(this);
     this.handleItemClick = this.handleItemClick.bind(this);
     this.updateAriaLiveContent = this.updateAriaLiveContent.bind(this);
+    this.setVisuallyHiddenComponent = this.setVisuallyHiddenComponent.bind(this);
 
     const { items, parents } = processMenuItems(props.menuItems);
     this.state = {
@@ -113,8 +115,6 @@ class NavigationSideMenu extends Component {
       parents,
       prevPropsMenuItem: props.menuItems,
     };
-
-    this.visuallyHiddenComponent = React.createRef();
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -122,6 +122,10 @@ class NavigationSideMenu extends Component {
       return processMenuItems(nextProps.menuItems);
     }
     return null;
+  }
+
+  setVisuallyHiddenComponent(node) {
+    this.visuallyHiddenComponent = node;
   }
 
   handleBackClick(event) {
@@ -201,11 +205,11 @@ class NavigationSideMenu extends Component {
     const selected = intl.formatMessage({ id: 'Terra.navigation.side.menu.selected' });
 
     // Guard against race condition with the ref being established and updating the ref's innerText
-    if (!this.visuallyHiddenComponent || !this.visuallyHiddenComponent.current) {
+    if (!this.visuallyHiddenComponent) {
       return;
     }
 
-    this.visuallyHiddenComponent.current.innerText = item ? `${item} ${selected}` : '';
+    this.visuallyHiddenComponent.innerText = item ? `${item} ${selected}` : '';
   }
 
   render() {
@@ -250,12 +254,11 @@ class NavigationSideMenu extends Component {
 
     return (
       <Fragment>
-        <span
+        <VisuallyHiddenText
           aria-atomic="true"
           aria-live="assertive"
           aria-relevant="additions text"
-          className={cx('visually-hidden-text')}
-          ref={this.visuallyHiddenComponent}
+          refCallback={this.setVisuallyHiddenComponent}
         />
         <ContentContainer {...customProps} header={header} fill className={sideMenuContentContainerClassNames}>
           {this.buildListContent(currentItem)}
