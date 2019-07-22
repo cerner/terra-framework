@@ -14,6 +14,23 @@ The abstract modal is a structural component that provides the ability to displa
 
 - Install from [npmjs](https://www.npmjs.com): `npm install terra-abstract-modal`
 
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+<details>
+<summary>View information on this component's peer dependencies.</summary>
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+
+
+</details>
+<!-- AUTO-GENERATED-CONTENT:END -->
+
 ## Documentation
 
 Documentation for this component is spilt into individual files.
