@@ -6,6 +6,7 @@ Unreleased
 ### Changed
 * Removed lint errors for css.
 * Updated react-date-picker to use css modules.
+* Normalized terra-visually-hidden-text dependency version to match other terra-framework packages
 
 4.7.0 - (July 16, 2019)
 ------------------
