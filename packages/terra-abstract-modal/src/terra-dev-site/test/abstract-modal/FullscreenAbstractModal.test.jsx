@@ -38,7 +38,7 @@ class ModalIsFullscreen extends React.Component {
             <hr />
             <p>The Terra Modal is appended to the document body.</p>
             <p>{'Modal is assigned a role of \'document\' for accessibility.'}</p>
-            <button type="button" onClick={this.handleCloseModal}>Close Modal</button>
+            <button type="button" id="modal-button" onClick={this.handleCloseModal}>Close Modal</button>
           </div>
         </AbstractModal>
         <button type="button" id="modal-open-button" onClick={this.handleOpenModal}>Open isOpen modal</button>

@@ -1,7 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ModalManager should disclose content in Modal 1`] = `
-<ModalManager>
+<ModalManager
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
   <withDisclosureManager(DisclosureManager)
     render={[Function]}
     supportedDisclosureTypes={
@@ -22,6 +50,33 @@ exports[`ModalManager should disclose content in Modal 1`] = `
     >
       <div
         className="container"
+        intl={
+          Object {
+            "defaultFormats": Object {},
+            "defaultLocale": "en",
+            "formatDate": [Function],
+            "formatHTMLMessage": [Function],
+            "formatMessage": [Function],
+            "formatNumber": [Function],
+            "formatPlural": [Function],
+            "formatRelative": [Function],
+            "formatTime": [Function],
+            "formats": Object {},
+            "formatters": Object {
+              "getDateTimeFormat": [Function],
+              "getMessageFormat": [Function],
+              "getNumberFormat": [Function],
+              "getPluralFormat": [Function],
+              "getRelativeFormat": [Function],
+            },
+            "locale": "en",
+            "messages": null,
+            "now": [Function],
+            "onError": [Function],
+            "textComponent": "span",
+            "timeZone": null,
+          }
+        }
       >
         <withDisclosureManager(Component)
           id="test"
@@ -71,6 +126,13 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                     role="dialog"
                     tabindex="0"
                   >
+                    <span
+                      class="visually-hidden-text"
+                      data-terra-abstract-modal-begin="true"
+                      tabindex="-1"
+                    >
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
                     <div
                       class="slide-group"
                     >
@@ -87,6 +149,11 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                         </button>
                       </div>
                     </div>
+                    <span
+                      class="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
                   </div>
                 </div>
               }
@@ -120,6 +187,24 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                   role="dialog"
                   tabIndex="0"
                 >
+                  <FormattedMessage
+                    id="Terra.AbstractModal.BeginModalDialog"
+                    values={Object {}}
+                  >
+                    <VisuallyHiddenText
+                      data-terra-abstract-modal-begin={true}
+                      tabIndex="-1"
+                      text="Terra.AbstractModal.BeginModalDialog"
+                    >
+                      <span
+                        className="visually-hidden-text"
+                        data-terra-abstract-modal-begin={true}
+                        tabIndex="-1"
+                      >
+                        Terra.AbstractModal.BeginModalDialog
+                      </span>
+                    </VisuallyHiddenText>
+                  </FormattedMessage>
                   <SlideGroup
                     isAnimated={true}
                     items={
@@ -231,6 +316,20 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                       </div>
                     </TransitionGroup>
                   </SlideGroup>
+                  <FormattedMessage
+                    id="Terra.AbstractModal.EndModalDialog"
+                    values={Object {}}
+                  >
+                    <VisuallyHiddenText
+                      text="Terra.AbstractModal.EndModalDialog"
+                    >
+                      <span
+                        className="visually-hidden-text"
+                      >
+                        Terra.AbstractModal.EndModalDialog
+                      </span>
+                    </VisuallyHiddenText>
+                  </FormattedMessage>
                 </div>
               </ForwardRef>
             </Portal>
@@ -246,6 +345,33 @@ exports[`ModalManager should render the ModalManager with custom props 1`] = `
 <ModalManager
   className="test"
   id="my-modal-manager"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
   <withDisclosureManager(DisclosureManager)
     render={[Function]}
@@ -268,6 +394,33 @@ exports[`ModalManager should render the ModalManager with custom props 1`] = `
       <div
         className="container test"
         id="my-modal-manager"
+        intl={
+          Object {
+            "defaultFormats": Object {},
+            "defaultLocale": "en",
+            "formatDate": [Function],
+            "formatHTMLMessage": [Function],
+            "formatMessage": [Function],
+            "formatNumber": [Function],
+            "formatPlural": [Function],
+            "formatRelative": [Function],
+            "formatTime": [Function],
+            "formats": Object {},
+            "formatters": Object {
+              "getDateTimeFormat": [Function],
+              "getMessageFormat": [Function],
+              "getNumberFormat": [Function],
+              "getPluralFormat": [Function],
+              "getRelativeFormat": [Function],
+            },
+            "locale": "en",
+            "messages": null,
+            "now": [Function],
+            "onError": [Function],
+            "textComponent": "span",
+            "timeZone": null,
+          }
+        }
       >
         <withDisclosureManager(Component)>
           <Component
@@ -304,7 +457,35 @@ exports[`ModalManager should render the ModalManager with custom props 1`] = `
 `;
 
 exports[`ModalManager should render the ModalManager with defaults 1`] = `
-<ModalManager>
+<ModalManager
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
   <withDisclosureManager(DisclosureManager)
     render={[Function]}
     supportedDisclosureTypes={
@@ -325,6 +506,33 @@ exports[`ModalManager should render the ModalManager with defaults 1`] = `
     >
       <div
         className="container"
+        intl={
+          Object {
+            "defaultFormats": Object {},
+            "defaultLocale": "en",
+            "formatDate": [Function],
+            "formatHTMLMessage": [Function],
+            "formatMessage": [Function],
+            "formatNumber": [Function],
+            "formatPlural": [Function],
+            "formatRelative": [Function],
+            "formatTime": [Function],
+            "formats": Object {},
+            "formatters": Object {
+              "getDateTimeFormat": [Function],
+              "getMessageFormat": [Function],
+              "getNumberFormat": [Function],
+              "getPluralFormat": [Function],
+              "getRelativeFormat": [Function],
+            },
+            "locale": "en",
+            "messages": null,
+            "now": [Function],
+            "onError": [Function],
+            "textComponent": "span",
+            "timeZone": null,
+          }
+        }
       >
         <withDisclosureManager(Component)>
           <Component
