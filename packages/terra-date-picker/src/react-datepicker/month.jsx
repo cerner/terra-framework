@@ -94,7 +94,7 @@ export default class Month extends React.Component {
         startDate={this.props.startDate}
         endDate={this.props.endDate}
         dayClassName={this.props.dayClassName}
-        utcOffset={this.props.utcOffset}/>)
+        utcOffset={this.props.utcOffset} />)
 
       if (breakAfterNextPush) break
 
@@ -118,16 +118,13 @@ export default class Month extends React.Component {
     return weeks
   }
 
-  getClassNames = () => {
-    const { selectingDate, selectsStart, selectsEnd } = this.props
-    return cx('react-datepicker-month', {
-      'react-datepicker-month--selecting-range': selectingDate && (selectsStart || selectsEnd)
-    })
-  }
-
-  render () {
+  render() {
+    const getClassNames = cx({
+      'react-datepicker-month': true,
+      'react-datepicker-month--selecting-range': this.props.selectingDate && (this.props.selectsStart || this.props.selectsEnd)
+    });
     return (
-      <div tabIndex="0" className={this.getClassNames()} onMouseLeave={this.handleMouseLeave} role="listbox">
+      <div tabIndex="0" className={getClassNames} onMouseLeave={this.handleMouseLeave} role="listbox">
         {this.renderWeeks()}
       </div>
     )

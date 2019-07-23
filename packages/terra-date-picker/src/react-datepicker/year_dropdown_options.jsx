@@ -115,7 +115,7 @@ export default class YearDropdownOptions extends React.Component {
   }
 
   render () {
-    let dropdownClass = cx({
+    const dropdownClass = cx({
       'react-datepicker-year-dropdown': true,
       'react-datepicker-year-dropdown--scrollable': this.props.scrollableYearDropdown
     })
