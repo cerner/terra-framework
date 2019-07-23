@@ -8,7 +8,7 @@
 | prop-types | ^15.5.8 | -- | Runtime type checking for React props and similar objects. |
 | resize-observer-polyfill | ^1.4.1 | -- | A polyfill for the Resize Observer API |
 | terra-icon | ^3.1.0 | ^16.8.5 | The terra-icon component is used to visually represent a literal or symbolic object intended to initiate an action, communicate a status, or navigate the workflow. |
-| terra-popup | ^6.4.0 | ^16.8.5 | The Terra Popup is higher order component that launches terra-hookshot positioned content with the ability to display a dynamic arrow. |
+| terra-popup | ^6.7.0 | ^16.8.5 | The Terra Popup is higher order component that launches terra-hookshot positioned content with the ability to display a dynamic arrow. |
 
 ## devDependencies
 | Dependency | Version | React Version | Description |

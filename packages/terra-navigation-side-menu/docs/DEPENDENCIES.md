@@ -9,7 +9,7 @@
 | terra-action-header | ^2.0.0 | ^16.8.5 | The terra-action-header component is a header bar containing a title and optional actionable items such as links and buttons. |
 | terra-content-container | ^3.0.0 | ^16.8.5 | The Terra ContentContainer is a structural component for the purpose of arranging content with a header. |
 | terra-icon | ^3.1.0 | ^16.8.5 | The terra-icon component is used to visually represent a literal or symbolic object intended to initiate an action, communicate a status, or navigate the workflow. |
-| terra-visually-hidden-text | ^2.9.0 | ^16.8.5 | Text that is designed to only be read by a screen reader. |
+| terra-visually-hidden-text | ^2.0.0 | ^16.8.5 | Text that is designed to only be read by a screen reader. |
 
 ## devDependencies
 | Dependency | Version | React Version | Description |
