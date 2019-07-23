@@ -94,10 +94,12 @@ const DrawerMenu = ({
   const titleComponent = titleConfig && !(titleConfig.element || titleConfig.hideTitleWithinDrawerMenu) ? <DrawerMenuTitle titleConfig={titleConfig} /> : undefined;
   const userComponent = userConfig ? <DrawerMenuUser userConfig={userConfig} variant={hero ? 'small' : 'large'} /> : undefined;
   const logoutButton = onSelectLogout ? (
-    <DrawerMenuFooterButton
-      onClick={onSelectLogout}
-      text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.logout' })}
-    />
+    <div className={cx('footer')}>
+      <DrawerMenuFooterButton
+        onClick={onSelectLogout}
+        text={intl.formatMessage({ id: 'Terra.applicationNavigation.utilityMenu.logout' })}
+      />
+    </div>
   ) : undefined;
 
   const hasNavItems = navigationItems.length;
@@ -176,9 +178,7 @@ const DrawerMenu = ({
           {navItems}
           {utilities}
         </div>
-        <div className={cx('footer')}>
-          {logoutButton}
-        </div>
+        {logoutButton}
       </div>
     </div>
   );

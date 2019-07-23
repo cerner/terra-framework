@@ -21,9 +21,6 @@ exports[`DrawerMenu should render default element 1`] = `
         />
       </div>
     </div>
-    <div
-      className="footer"
-    />
   </div>
 </div>
 `;
