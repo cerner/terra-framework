@@ -12,7 +12,7 @@ exports[`PopupMenu should render default element 1`] = `
   }
 >
   <div
-    className="content-header"
+    className="content"
   >
     <ul
       className="utility-list"
@@ -55,7 +55,7 @@ exports[`PopupMenu should render prop data 1`] = `
   }
 >
   <div
-    className="content-header"
+    className="content"
   >
     <div
       className="custom-content-container"
@@ -114,7 +114,7 @@ exports[`PopupMenu should render with height bounded 1`] = `
   }
 >
   <div
-    className="content-header"
+    className="content"
   >
     <ul
       aria-label="my-header"

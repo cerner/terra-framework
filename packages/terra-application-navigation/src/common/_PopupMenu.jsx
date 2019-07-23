@@ -177,7 +177,7 @@ const PopupMenu = ({
       footer={<ActionFooter end={endContent} />}
       fill={isHeightBounded}
     >
-      <div className={cx('content-header')}>
+      <div className={cx('content')}>
         {customContent ? (
           <div className={cx('custom-content-container')}>
             {customContent}

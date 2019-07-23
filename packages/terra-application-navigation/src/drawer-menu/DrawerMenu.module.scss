@@ -5,7 +5,8 @@
   }
 
   .drawer-menu {
-    background-color: var(--terra-application-navigation-drawer-menu-background-color, #2a4b77);
+    background-color: var(--terra-application-navigation-drawer-menu-background-color, #0a5488);
+    background-image: var(--terra-application-navigation-drawer-menu-background-image, linear-gradient(216deg, #2a99d1 5%, #3074b0 33%, #0a5488 58%, #043147 86%)); 
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -16,16 +17,16 @@
   }
 
   .footer {
-    background-color: var(--terra-application-navigation-drawer-menu-footer-background-color, rgba(17, 22, 25, 0.2));
-    border-top: var(--terra-application-navigation-drawer-menu-footer-border-top, 1px solid rgba(255, 255, 255, 0.2));
-    box-shadow: var(--terra-application-navigation-drawer-menu-footer-box-shadow, 0 -10px 10px 5px #1a2f4b);
+    background-color: var(--terra-application-navigation-drawer-menu-footer-background-color, #f2f3f4);
+    border-top: var(--terra-application-navigation-drawer-menu-footer-border-top, 1px solid #d3d4d5);
+    box-shadow: var(--terra-application-navigation-drawer-menu-footer-box-shadow, 0 0 20px 10px rgba(3, 37, 53, 0.8), 0 -5px 3px 0 rgba(0, 0, 0, 0.4));
     flex: 0 0 auto;
     padding: 0.7142857143rem;
     position: relative;
   }
 
   .vertical-overflow-container {
-    background-color: var(--terra-application-navigation-drawer-menu-overflow-background-color, #1a2f4b);
+    background-color: var(--terra-application-navigation-drawer-menu-overflow-background-color, transparent);
     flex: 1 1 auto;
     height: 100%;
     min-height: 0;
@@ -33,25 +34,25 @@
   }
 
   .header {
-    background-color: var(--terra-application-navigation-drawer-menu-header-background-color, #2a4b77);
-    border-bottom: var(--terra-application-navigation-drawer-menu-header-border-bottom, 1px solid rgba(255, 255, 255, 0.1));
+    background-color: var(--terra-application-navigation-drawer-menu-header-background-color, transparent);
+    border-bottom: var(--terra-application-navigation-drawer-menu-header-border-bottom, 1px solid rgba(255, 255, 255, 0.2));
   }
 
   .header-background-fill {
-    background-color: var(--terra-application-navigation-drawer-menu-header-fill-background-color, rgba(17, 22, 25, 0.3));
+    background-color: var(--terra-application-navigation-drawer-menu-header-fill-background-color, transparent);
   }
 
   .navigation-item-list,
   .utility-item-list {
-    background-color: var(--terra-application-navigation-drawer-menu-list-background-color, #2a4b77);
+    background-color: var(--terra-application-navigation-drawer-menu-list-background-color, rgba(8, 72, 114, 0.2));
     list-style: none;
     margin: 0;
     padding: 0;  
   }
 
   .utility-item-list { 
-    margin-bottom: 0.7142857143rem;
-    margin-top: 0.7142857143rem;
+    padding-bottom: 0.7142857143rem;
+    padding-top: 0.7142857143rem;
   }
 }
 

@@ -100,7 +100,7 @@ exports[`UtilityMenu should render default element 1`] = `
               className="scroll normalizer"
             >
               <div
-                className="content-header"
+                className="content"
               >
                 <ul
                   aria-label="Terra.applicationNavigation.utilityMenu.headerTitle"
@@ -318,7 +318,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
               className="scroll normalizer"
             >
               <div
-                className="content-header"
+                className="content"
               >
                 <div
                   className="custom-content-container"
@@ -798,7 +798,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
               className="scroll normalizer"
             >
               <div
-                className="content-header"
+                className="content"
               >
                 <ul
                   aria-label="Terra.applicationNavigation.utilityMenu.headerTitle"

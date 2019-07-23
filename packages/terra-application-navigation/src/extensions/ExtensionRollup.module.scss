@@ -18,9 +18,11 @@
 
     &[data-focus-styles-enabled='true']:focus {
       .extension-rollup-inner {
-        background-color: var(--terra-application-navigation-extension-rollup-focus-background-color, rgba(73, 149, 250, 0.4));
+        background-color: var(--terra-application-navigation-extension-rollup-focus-background-color, transparent);
         border-radius: 100%;
-        color: var(--terra-application-navigation-extension-rollup-focus-color, #fff);
+        color: var(--terra-application-navigation-extension-rollup-focus-color, rgba(255, 255, 255, 0.8));
+        outline: var(--terra-application-navigation-extension-rollup-focus-outline, 2px dashed #fff);
+        outline-offset: var(--terra-application-navigation-extension-rollup-focus-outline-offset, -2px);
       }
     }
   

@@ -13,9 +13,8 @@
     }
   }
 
-  .content-header {
-    background-color: var(--terra-application-navigation-popup-content-header-background-color, rgba(255, 255, 255, 0.7));
-    border-bottom: var(--terra-application-navigation-popup-content-header-border-bottom, 1px solid #96c2fe);
+  .content {
+    background-color: var(--terra-application-navigation-popup-content-background-color, #fff);
   }
 
   .utility-list {
@@ -26,7 +25,11 @@
     width: 100%;
 
     > * {
-      border-bottom: var(--terra-application-navigation-popup-list-child-border-bottom, 1px solid rgba(255, 255, 255, 0.5));
+      border-bottom: var(--terra-application-navigation-popup-list-child-border-bottom, 1px solid #dedfe0);
+
+      &:last-of-type {
+        border-bottom: none;
+      }
     }
   }
 }
