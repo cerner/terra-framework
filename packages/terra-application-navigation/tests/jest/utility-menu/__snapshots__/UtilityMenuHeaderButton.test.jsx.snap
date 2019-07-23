@@ -1,0 +1,418 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UtilityMenuHeaderButton should render default element 1`] = `
+<InjectIntl(UtilityMenuHeaderButton)
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
+  <UtilityMenuHeaderButton
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+  >
+    <button
+      aria-haspopup={true}
+      aria-label="Terra.applicationNavigation.header.utilityButtonTitleNoUser"
+      className="utility-button"
+      data-application-header-utility={true}
+      data-focus-styles-enabled={true}
+      onBlur={[Function]}
+      onMouseDown={[Function]}
+      type="button"
+    >
+      <IconRollup
+        className="rollup-icon"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <IconBase
+          ariaLabel={null}
+          className="rollup-icon"
+          focusable="false"
+          height="1em"
+          isBidi={false}
+          isSpin={false}
+          viewBox="0 0 48 48"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            aria-hidden="true"
+            className="tui-Icon icon rollup-icon"
+            focusable="false"
+            height="1em"
+            viewBox="0 0 48 48"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18.6 24c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4-2.4 5.4-5.4 5.4c-3 0-5.4-2.4-5.4-5.4zm0-18.6C18.6 2.4 21 0 24 0c3 0 5.4 2.4 5.4 5.4 0 3-2.4 5.4-5.4 5.4-3 0-5.4-2.4-5.4-5.4zm0 37.2c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 3-2.4 5.4-5.4 5.4-3 0-5.4-2.4-5.4-5.4z"
+            />
+          </svg>
+        </IconBase>
+      </IconRollup>
+    </button>
+  </UtilityMenuHeaderButton>
+</InjectIntl(UtilityMenuHeaderButton)>
+`;
+
+exports[`UtilityMenuHeaderButton should render with click callback 1`] = `
+<InjectIntl(UtilityMenuHeaderButton)
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  onClick={[MockFunction]}
+>
+  <UtilityMenuHeaderButton
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    onClick={[MockFunction]}
+  >
+    <button
+      aria-haspopup={true}
+      aria-label="Terra.applicationNavigation.header.utilityButtonTitleNoUser"
+      className="utility-button"
+      data-application-header-utility={true}
+      data-focus-styles-enabled={true}
+      onBlur={[Function]}
+      onClick={[MockFunction]}
+      onMouseDown={[Function]}
+      type="button"
+    >
+      <IconRollup
+        className="rollup-icon"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <IconBase
+          ariaLabel={null}
+          className="rollup-icon"
+          focusable="false"
+          height="1em"
+          isBidi={false}
+          isSpin={false}
+          viewBox="0 0 48 48"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            aria-hidden="true"
+            className="tui-Icon icon rollup-icon"
+            focusable="false"
+            height="1em"
+            viewBox="0 0 48 48"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18.6 24c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4-2.4 5.4-5.4 5.4c-3 0-5.4-2.4-5.4-5.4zm0-18.6C18.6 2.4 21 0 24 0c3 0 5.4 2.4 5.4 5.4 0 3-2.4 5.4-5.4 5.4-3 0-5.4-2.4-5.4-5.4zm0 37.2c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 3-2.4 5.4-5.4 5.4-3 0-5.4-2.4-5.4-5.4z"
+            />
+          </svg>
+        </IconBase>
+      </IconRollup>
+    </button>
+  </UtilityMenuHeaderButton>
+</InjectIntl(UtilityMenuHeaderButton)>
+`;
+
+exports[`UtilityMenuHeaderButton should render with function callbacks 1`] = `
+<InjectIntl(UtilityMenuHeaderButton)
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  popupAnchorRef={
+    Object {
+      "current": <span
+        class="popup-anchor"
+      />,
+    }
+  }
+  userConfig={
+    Object {
+      "detail": "user-detail",
+      "imageSrc": "user-src",
+      "initials": "user-initials",
+      "name": "user-name",
+    }
+  }
+>
+  <UtilityMenuHeaderButton
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    popupAnchorRef={
+      Object {
+        "current": <span
+          class="popup-anchor"
+        />,
+      }
+    }
+    userConfig={
+      Object {
+        "detail": "user-detail",
+        "imageSrc": "user-src",
+        "initials": "user-initials",
+        "name": "user-name",
+      }
+    }
+  >
+    <button
+      aria-haspopup={true}
+      aria-label="Terra.applicationNavigation.header.utilityButtonTitleUser"
+      className="utility-button"
+      data-application-header-utility={true}
+      data-focus-styles-enabled={true}
+      onBlur={[Function]}
+      onMouseDown={[Function]}
+      type="button"
+    >
+      <Avatar
+        alt="user-name"
+        className="avatar"
+        color="auto"
+        image="user-src"
+        initials="user-initials"
+        isAriaHidden={false}
+        isDeceased={false}
+        size="0.5217rem"
+      >
+        <div
+          className="avatar three image avatar"
+          style={
+            Object {
+              "fontSize": "0.5217rem",
+            }
+          }
+        >
+          <Image
+            alt="user-name"
+            className="image"
+            isFluid={false}
+            onError={[Function]}
+            placeholder={
+              <span
+                alt="user-name"
+                aria-hidden={false}
+                aria-label="user-name"
+                className="icon user"
+                role="img"
+              />
+            }
+            src="user-src"
+            variant="default"
+          >
+            <div>
+              <div
+                className="hidden"
+              >
+                <img
+                  alt="user-name"
+                  className="image default image"
+                  onError={[Function]}
+                  onLoad={[Function]}
+                  src="user-src"
+                />
+              </div>
+              <div>
+                <span
+                  alt="user-name"
+                  aria-hidden={false}
+                  aria-label="user-name"
+                  className="icon user"
+                  role="img"
+                />
+              </div>
+            </div>
+          </Image>
+        </div>
+      </Avatar>
+      <div
+        className="title"
+      >
+        user-name
+      </div>
+      <IconCaretDown
+        className="caret-icon"
+        isBidi={true}
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <IconBase
+          ariaLabel={null}
+          className="caret-icon"
+          focusable="false"
+          height="1em"
+          isBidi={true}
+          isSpin={false}
+          viewBox="0 0 48 48"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            aria-hidden="true"
+            className="tui-Icon icon is-bidi caret-icon"
+            focusable="false"
+            height="1em"
+            viewBox="0 0 48 48"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M48 12L24 36 0 12h48z"
+            />
+          </svg>
+        </IconBase>
+      </IconCaretDown>
+      <span
+        className="popup-anchor"
+      />
+    </button>
+  </UtilityMenuHeaderButton>
+</InjectIntl(UtilityMenuHeaderButton)>
+`;

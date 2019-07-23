@@ -1,0 +1,46 @@
+:local {
+  .drawer-menu-footer-button {
+    background-color: var(--terra-application-navigation-drawer-menu-footer-button-background-color, rgba(0, 0, 0, 0.08));
+    border: var(--terra-application-navigation-drawer-menu-footer-button-border, 1px solid #898c90);
+    border-radius: var(--terra-application-navigation-drawer-menu-footer-button-border-radius, 3px);
+    color: var(--terra-application-navigation-drawer-menu-footer-button-color, #222a2e);
+    font-size: 1rem;
+    outline: none;
+    overflow-wrap: break-word; /* Modern browsers */
+    padding: 8px 0.7142857143rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    touch-action: manipulation; // Enable fast tap interaction in webkit browsers; see https://webkit.org/blog/5610/more-responsive-tapping-on-ios/
+    user-select: none; // Prevent text selection on buttons on mobile devices
+    white-space: normal;
+    width: 100%;
+    word-wrap: break-word; /* For IE 10 and IE 11 */
+
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+
+    &:hover {
+      background-color: var(--terra-application-navigation-drawer-menu-footer-button-hover-background-color, rgba(0, 0, 0, 0.13));
+      color: var(--terra-application-navigation-drawer-menu-footer-button-hover-color, #000);
+    }
+
+    &[data-focus-styles-enabled='true']:focus {
+      background-color: var(--terra-application-navigation-drawer-menu-footer-button-focus-background-color, rgba(0, 0, 0, 0.08));
+      border: var(--terra-application-navigation-drawer-menu-footer-button-focus-border, 1px solid #898c90);
+      box-shadow: var(--terra-application-navigation-drawer-menu-footer-button-focus-box-shadow, none);
+      color: var(--terra-application-navigation-drawer-menu-footer-button-focus-color, #222a2e);
+      outline: var(--terra-application-navigation-drawer-menu-footer-button-focus-outline, 2px dashed #000);
+      outline-offset: var(--terra-application-navigation-drawer-menu-footer-button-focus-outline-offset, 1px);
+    }
+
+    &:active {
+      background-color: var(--terra-application-navigation-drawer-menu-footer-button-active-background-color, #014979);
+      border-color: var(--terra-application-navigation-drawer-menu-footer-button-active-border-color, #014979);
+      color: var(--terra-application-navigation-drawer-menu-footer-button-active-color, #fff);
+    }
+  }
+}
+

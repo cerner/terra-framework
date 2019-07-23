@@ -13,6 +13,7 @@ Unreleased
 
 ### Changed
 * Removed Ignore Axe Rules from wdio tests.
+* Add wait to spec tests to pass.
 
 5.6.0 - (July 10, 2019)
 ------------------

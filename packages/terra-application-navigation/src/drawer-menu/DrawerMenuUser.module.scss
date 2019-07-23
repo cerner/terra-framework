@@ -1,0 +1,105 @@
+/* stylelint-disable selector-max-compound-selectors */
+:local {
+  .large-user-layout {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 1.857rem 1.4285714286rem 2rem;
+
+    .name,
+    .detail {
+      flex: 1 1 auto;
+    }
+  
+    .avatar-container {
+      align-items: center;
+      display: flex;
+      height: 5.7143rem;
+      justify-content: center;
+      margin-bottom: 1.143rem;
+      position: relative;
+      width: 5.7143rem;
+    }
+
+    .avatar-outline {
+      border: var(--terra-application-navigation-drawer-menu-avatar-outline-border, 0.1429rem solid rgba(255, 255, 255, 0.1));
+      border-radius: 50%;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }
+
+    .name {
+      color: var(--terra-application-navigation-drawer-menu-user-large-name-color, #fff);
+      font-size: 1.2857142857rem;
+      font-weight: 500;
+      overflow-wrap: break-word;
+      text-align: center;
+      white-space: normal;
+      word-break: break-word;
+      word-wrap: break-word;
+    }
+  
+    .detail {
+      color: var(--terra-application-navigation-drawer-menu-user-large-detail-color, rgba(255, 255, 255, 0.7));
+      font-size: 1rem;
+      margin-top: 0.2142857143rem;
+      overflow-wrap: break-word;
+      text-align: center;
+      white-space: normal;
+      word-break: break-word;
+      word-wrap: break-word;
+    }  
+  }
+
+  .small-user-layout {
+    align-items: top;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0.7142857143rem 1.4285714286rem;
+
+    .avatar-container {
+      flex: 0 0 auto;
+      height: 1.7143rem;
+      margin-right: 0.5rem;
+      overflow: hidden;
+      position: relative;
+      width: 1.7143rem;
+    }
+
+    .avatar-container > * {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  
+    .info-container {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 100%;
+    }
+  
+    .name {
+      color: var(--terra-application-navigation-drawer-menu-user-small-name-color, rgba(255, 255, 255, 1));
+      font-size: 1rem;
+      font-weight: 500;
+      overflow-wrap: break-word;
+      white-space: normal;
+      word-break: break-word;
+      word-wrap: break-word;
+    }
+  
+    .detail {
+      color: var(--terra-application-navigation-drawer-menu-user-small-detail-color, rgba(255, 255, 255, 0.7));
+      font-size: 0.8571428571rem;
+      overflow-wrap: break-word;
+      padding-top: 0.2142857143rem;
+      white-space: normal;
+      word-break: break-word;
+      word-wrap: break-word;
+    }  
+  }
+}
+/* stylelint-enable selector-max-compound-selectors */
