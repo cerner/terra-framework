@@ -6,13 +6,14 @@
   "Terra.applicationNavigation.extensions.rollupButtonDescription": "Additional Tools",
   "Terra.applicationNavigation.extensions.rollupMenuHeaderTitle": "Additional Tools",
   "Terra.applicationNavigation.tabs.rollupButtonTitle": "Mer",
-  "Terra.applicationNavigation.tabs.rollupButtonDescription": "More Navigation",
-  "Terra.applicationNavigation.tabs.rollupMenuHeaderTitle": "More Navigation",
   "Terra.applicationNavigation.notifications.new": "Nytt",
   "Terra.applicationNavigation.header.skipToContentTitle": "Gå till Innehåll",
-  "Terra.applicationNavigation.header.utilityButtonTitleUser": "User Settings",
-  "Terra.applicationNavigation.header.utilityButtonTitleNoUser": "Options",
   "Terra.applicationNavigation.header.menuButtonTitle": "Meny",
-  "Terra.applicationNavigation.drawerMenu.navigation": "Navigation Items",
-  "Terra.applicationNavigation.drawerMenu.utilities": "Utility Items"
+  "Terra.applicationNavigation.tabs.rollupButtonDescription": "Fler navigeringslänkar",
+  "Terra.applicationNavigation.tabs.rollupMenuHeaderTitle": "Fler navigeringslänkar",
+  "Terra.applicationNavigation.header.utilityButtonTitleUser": "Användarinställningar",
+  "Terra.applicationNavigation.header.utilityButtonTitleNoUser": "Alternativ",
+  "Terra.applicationNavigation.drawerMenu.navigation": "Navigeringsobjekt",
+  "Terra.applicationNavigation.drawerMenu.utilities": "Verktygsobjekt"
+
 }
