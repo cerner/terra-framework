@@ -19,7 +19,7 @@ export default class MonthDropdownOptions extends React.Component {
         key={month}
         ref={month}
         onClick={this.onChange.bind(this, i)}>
-        {this.props.month === i ? <span className={('react-datepicker-month-option--selected')}>✓</span> : ''}
+        {this.props.month === i ? <span className={cx('react-datepicker-month-option--selected')}>✓</span> : ''}
         {month}
       </div>
     )

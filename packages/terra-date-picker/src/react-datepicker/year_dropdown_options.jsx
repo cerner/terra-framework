@@ -55,7 +55,7 @@ export default class YearDropdownOptions extends React.Component {
         key={year}
         ref={year}
         onClick={this.onChange.bind(this, year)}>
-        {selectedYear === year ? <span className="react-datepicker-year-option--selected">✓</span> : ''}
+        {selectedYear === year ? <span className={cx('react-datepicker-year-option--selected')}>✓</span> : ''}
         {year}
       </div>
     )
@@ -115,13 +115,13 @@ export default class YearDropdownOptions extends React.Component {
   }
 
   render () {
-    let dropdownClass = classNames({
+    let dropdownClass = cx({
       'react-datepicker-year-dropdown': true,
       'react-datepicker-year-dropdown--scrollable': this.props.scrollableYearDropdown
     })
 
     return (
-      <div className={cx(dropdownClass)}>
+      <div className={dropdownClass}>
         {this.renderOptions()}
       </div>
     )
