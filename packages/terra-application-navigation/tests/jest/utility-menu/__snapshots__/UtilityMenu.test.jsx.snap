@@ -41,6 +41,7 @@ exports[`UtilityMenu should render default element 1`] = `
     title="Terra.applicationNavigation.utilityMenu.headerTitle"
   >
     <ContentContainer
+      className="container"
       fill={false}
       footer={<ActionFooter />}
       header={
@@ -52,7 +53,7 @@ exports[`UtilityMenu should render default element 1`] = `
       }
     >
       <div
-        className="content-container-static"
+        className="content-container-static container"
       >
         <div
           className="header"
@@ -241,6 +242,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
     }
   >
     <ContentContainer
+      className="container"
       fill={false}
       footer={
         <ActionFooter
@@ -270,7 +272,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
       }
     >
       <div
-        className="content-container-static"
+        className="content-container-static container"
       >
         <div
           className="header"
@@ -721,6 +723,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
     title="Terra.applicationNavigation.utilityMenu.headerTitle"
   >
     <ContentContainer
+      className="container"
       fill={false}
       footer={
         <ActionFooter
@@ -750,7 +753,7 @@ exports[`UtilityMenu should render with skip callback 1`] = `
       }
     >
       <div
-        className="content-container-static"
+        className="content-container-static container"
       >
         <div
           className="header"

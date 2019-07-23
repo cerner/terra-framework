@@ -176,6 +176,7 @@ const PopupMenu = ({
       header={<ActionHeader aria-hidden title={title} />}
       footer={<ActionFooter end={endContent} />}
       fill={isHeightBounded}
+      className={cx('container')}
     >
       <div className={cx('content')}>
         {customContent ? (

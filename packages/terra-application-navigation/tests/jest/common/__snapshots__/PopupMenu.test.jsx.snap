@@ -2,6 +2,7 @@
 
 exports[`PopupMenu should render default element 1`] = `
 <ContentContainer
+  className="container"
   fill={false}
   footer={<ActionFooter />}
   header={
@@ -26,6 +27,7 @@ exports[`PopupMenu should render default element 1`] = `
 
 exports[`PopupMenu should render prop data 1`] = `
 <ContentContainer
+  className="container"
   fill={false}
   footer={
     <ActionFooter
@@ -103,6 +105,7 @@ exports[`PopupMenu should render prop data 1`] = `
 
 exports[`PopupMenu should render with height bounded 1`] = `
 <ContentContainer
+  className="container"
   fill={true}
   footer={<ActionFooter />}
   header={

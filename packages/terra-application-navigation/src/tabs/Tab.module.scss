@@ -96,7 +96,7 @@
       }
     }
 
-    &:active {
+    &[aria-current='false']:active {
       .tab-inner {
         background-color: var(--terra-application-navigation-tab-active-background-color, rgba(3, 43, 70, 0.4));
         color: var(--terra-application-navigation-tab-active-background-color, rgba(255, 255, 255, 0.5));

@@ -38,7 +38,7 @@
 
     &:active {
       background-color: var(--terra-application-navigation-drawer-menu-footer-button-active-background-color, #014979);
-      border-color: var(--terra-application-navigation-drawer-menu-footer-button-active-border,#014979);
+      border-color: var(--terra-application-navigation-drawer-menu-footer-button-active-border-color, #014979);
       color: var(--terra-application-navigation-drawer-menu-footer-button-active-color, #fff);
     }
   }

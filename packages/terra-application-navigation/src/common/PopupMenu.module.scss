@@ -5,12 +5,7 @@
   }
 
   .container {
-    outline: none;
-    width: 100%;
-
-    &.is-fill {
-      height: 100%;
-    }
+    user-select: none;
   }
 
   .content {
@@ -28,7 +23,7 @@
       border-bottom: var(--terra-application-navigation-popup-list-child-border-bottom, 1px solid #dedfe0);
 
       &:last-of-type {
-        border-bottom: none;
+        border-bottom: 0;
       }
     }
   }
