@@ -354,11 +354,16 @@ exports[`CompactHeader should render with function callbacks 1`] = `
           >
             <div
               aria-current={false}
+              aria-label="test-text"
               className="hidden-item"
               role="link"
               tabIndex="-1"
             >
-              test-text
+              <span
+                aria-hidden={true}
+              >
+                test-text
+              </span>
             </div>
           </li>
         </ul>

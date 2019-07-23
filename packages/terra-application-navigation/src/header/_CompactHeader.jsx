@@ -250,8 +250,11 @@ const CompactHeader = ({
                     aria-current={activeNavigationItemKey === item.key}
                     onClick={onSelect}
                     onKeyDown={generateKeyDownSelection(onSelect)}
+                    aria-label={item.text}
                   >
-                    {item.text}
+                    <span aria-hidden>
+                      {item.text}
+                    </span>
                   </div>
                 </li>
               );
