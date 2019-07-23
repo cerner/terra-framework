@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+1.4.0 - (July 23, 2019)
+------------------
 ### Changed
 * Updated terra-date-picker devDependency to v4.7.0
 

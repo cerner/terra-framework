@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.11.0 - (July 23, 2019)
+------------------
 ### Changed
 * Normalized terra-visually-hidden-text dependency version to match other terra-framework packages
 
