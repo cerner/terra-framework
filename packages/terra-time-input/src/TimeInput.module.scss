@@ -41,7 +41,8 @@
       color: var(--terra-time-input-hover-color, #1c1f21);
 
       .time-input-hour,
-      .time-input-minute {
+      .time-input-minute,
+      .time-input-second {
         color: var(--terra-time-input-hover-color, #1c1f21);
       }
 
@@ -66,7 +67,8 @@
       }
 
       .time-input-hour,
-      .time-input-minute {
+      .time-input-minute,
+      .time-input-second {
         color: var(--terra-time-input-focus-color, #1c1f21);
       }
 
@@ -86,6 +88,7 @@
 
     .time-input-hour[disabled],
     .time-input-minute[disabled],
+    .time-input-second[disabled],
     .meridiem-display[disabled] {
       opacity: 1;
     }
@@ -101,10 +104,16 @@
       margin-left: var(--terra-time-input-time-input-group-minute-margin-left, 0.14285714rem);
       margin-right: 0;
     }
+
+    &:nth-of-type(3) {
+      margin-left: var(--terra-time-input-time-input-group-second-margin-left, 0.14285714rem);
+      margin-right: 0;
+    }
   }
 
   .time-input-hour,
-  .time-input-minute {
+  .time-input-minute,
+  .time-input-second {
     background-color: var(--terra-time-input-background-color, #fff);
     background-image: var(--terra-time-input-background-image, none);
     background-position: 0 100%;
@@ -189,7 +198,25 @@
     width: 1.7em;
   }
 
-  .time-input-minute.desktop {
+  .time-input-minute.without-second.desktop {
+    min-width: 1.8em;
+    text-align: left;
+    width: 1.8em;
+  }
+
+  .time-input-minute.with-second.desktop {
+    min-width: 1.1em;
+    text-align: left;
+    width: 1.1em;
+
+    &[value=''] {
+      min-width: 1.8em;
+      text-align: left;
+      width: 1.8em;
+    }
+  }
+
+  .time-input-second.desktop {
     min-width: 1.8em;
     text-align: left;
     width: 1.8em;

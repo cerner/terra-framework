@@ -31,6 +31,7 @@ exports[`should render a date time picker with a default date and time 1`] = `
     }
   }
   name="date-time-input"
+  showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}
   value="2017-04-01T10:30"
@@ -73,6 +74,7 @@ exports[`should render a date time picker with disabled dates 1`] = `
     }
   }
   name="date-time-input"
+  showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}
 />
@@ -110,6 +112,7 @@ exports[`should render a date time picker with filtered dates 1`] = `
     }
   }
   name="date-time-input"
+  showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}
 />
@@ -151,6 +154,7 @@ exports[`should render a date time picker with included dates 1`] = `
     }
   }
   name="date-time-input"
+  showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}
 />
@@ -189,6 +193,7 @@ exports[`should render a date time picker with min and max dates 1`] = `
   maxDate="2017-04-01"
   minDate="2017-04-10"
   name="date-time-input"
+  showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}
 />
@@ -226,6 +231,7 @@ exports[`should render a date time picker with onBlur 1`] = `
   }
   name="date-time-input"
   onBlur={[Function]}
+  showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}
 />
@@ -263,6 +269,7 @@ exports[`should render a date time picker with onChange 1`] = `
   }
   name="date-time-input"
   onChange={[Function]}
+  showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}
 />
@@ -300,6 +307,44 @@ exports[`should render a date time picker with onChangeRaw 1`] = `
   }
   name="date-time-input"
   onChangeRaw={[Function]}
+  showSeconds={false}
+  timeVariant="24-hour"
+  utcOffset={0}
+/>
+`;
+
+exports[`should render a date time picker with the seconds field enabled 1`] = `
+<DateTimePicker
+  disabled={false}
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  name="date-time-input"
+  showSeconds={true}
   timeVariant="24-hour"
   utcOffset={0}
 />
@@ -336,6 +381,7 @@ exports[`should render a default date time picker 1`] = `
     }
   }
   name="date-time-input"
+  showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}
 />
@@ -377,6 +423,7 @@ exports[`should render a default date time picker with custom date input attribu
     }
   }
   name="date-time-input"
+  showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}
 />
@@ -413,6 +460,7 @@ exports[`should render a default date time picker with custom time input attribu
     }
   }
   name="date-time-input"
+  showSeconds={false}
   timeInputAttributes={
     Object {
       "id": "terra-time-input",
@@ -454,6 +502,7 @@ exports[`should render a disabled date time picker 1`] = `
     }
   }
   name="date-time-input"
+  showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}
 />
@@ -490,6 +539,7 @@ exports[`should render with a default timeVariant if variant is not specified 1`
     }
   }
   name="date-time-input"
+  showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}
   value="2017-04-01T10:30"

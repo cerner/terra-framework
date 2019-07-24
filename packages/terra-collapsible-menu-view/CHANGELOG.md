@@ -3,7 +3,28 @@ ChangeLog
 
 Unreleased
 ----------
+
+6.7.1 - (July 23, 2019)
+------------------
+* a completely unremarkable update because lerna be lerna
+
+6.7.0 - (July 23, 2019)
+------------------
 ### Changed
+* Normalized terra-form-checkbox dependency version to match other terra-framework packages
+
+6.6.0 - (July 16, 2019)
+------------------
+### Added
+* Added documentation on required peerDependencies
+
+### Fixed
+* Fixed Collapsible issue for single item group
+
+6.5.0 - (July 10, 2019)
+------------------
+### Changed
+* Minor dependency version bump
 * Replaced Terra-Form with Terra-Form-Checkbox in CollapsibleMenuViewToggle
 
 6.4.0 - (July 2, 2019)
