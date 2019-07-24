@@ -4,6 +4,7 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
+* Updated to interface with react-intl's `FormattedMessage` rather than old React Context API.
 * Normalized terra-form-checkbox dependency version to match other terra-framework packages
 
 6.6.0 - (July 16, 2019)

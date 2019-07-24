@@ -22,7 +22,8 @@
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "peerDependencies": {
     "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react-dom": "^16.8.5",
+    "react-intl": "^2.8.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -40,7 +41,7 @@
     "terra-icon": "^3.1.0"
   },
   "scripts": {
-    "compile": "babel --root-mode upward --out-dir lib --copy-files",
+    "compile": "babel --root-mode upward src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",

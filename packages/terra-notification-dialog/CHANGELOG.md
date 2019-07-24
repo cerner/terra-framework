@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated to interface with react-intl's `FormattedMessage` rather than old React Context API.
 
 3.6.0 - (July 16, 2019)
 ------------------
