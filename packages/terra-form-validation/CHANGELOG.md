@@ -4,6 +4,10 @@ ChangeLog
 Unreleased
 ----------
 
+1.4.1 - (July 23, 2019)
+------------------
+* a completely unremarkable update because lerna be lerna
+
 1.4.0 - (July 23, 2019)
 ------------------
 ### Changed

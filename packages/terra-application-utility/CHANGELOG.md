@@ -4,6 +4,10 @@ Changelog
 Unreleased
 ----------
 
+2.17.1 - (July 23, 2019)
+------------------
+* a completely unremarkable update because lerna be lerna
+
 2.17.0 - (July 23, 2019)
 ------------------
 ### Fixed
