@@ -1,0 +1,18 @@
+{
+  "Terra.applicationNavigation.tabs.rollupButtonDescription": "Meer navigatie",
+  "Terra.applicationNavigation.tabs.rollupMenuHeaderTitle": "Meer navigatie",
+  "Terra.applicationNavigation.header.utilityButtonTitleUser": "Gebruikersinstellingen",
+  "Terra.applicationNavigation.header.utilityButtonTitleNoUser": "Opties",
+  "Terra.applicationNavigation.drawerMenu.navigation": "Navigatie-items",
+  "Terra.applicationNavigation.drawerMenu.utilities": "Hulp-items",
+  "Terra.applicationNavigation.utilityMenu.logout": "Afmelden",
+  "Terra.applicationNavigation.utilityMenu.settings": "Instellingen",
+  "Terra.applicationNavigation.utilityMenu.help": "Help",
+  "Terra.applicationNavigation.utilityMenu.headerTitle": "Hulpprogramma's",
+  "Terra.applicationNavigation.extensions.rollupButtonDescription": "Additional Tools",
+  "Terra.applicationNavigation.extensions.rollupMenuHeaderTitle": "Additional Tools",
+  "Terra.applicationNavigation.tabs.rollupButtonTitle": "Meer",
+  "Terra.applicationNavigation.notifications.new": "Nieuw",
+  "Terra.applicationNavigation.header.skipToContentTitle": "Doorgaan naar content",
+  "Terra.applicationNavigation.header.menuButtonTitle": "Menu"
+}

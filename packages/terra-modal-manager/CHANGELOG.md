@@ -4,6 +4,25 @@ Changelog
 Unreleased
 ----------
 
+6.7.1 - (July 23, 2019)
+------------------
+* a completely unremarkable update because lerna be lerna
+
+6.7.0 - (July 23, 2019)
+------------------
+### Changed
+* When the modal manager is open on touch devices, it will now focus on the first interactive DOM element within it. This enables focus to be shifted into the modal correctly when using VoiceOver on iOS.
+
+6.6.0 - (July 16, 2019)
+------------------
+### Added
+* Added documentation on required peerDependencies
+
+6.5.0 - (July 10, 2019)
+------------------
+### Changed
+* Minor dependency version bump
+
 6.4.0 - (July 2, 2019)
 ------------------
 ### Changed

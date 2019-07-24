@@ -4,6 +4,16 @@ Changelog
 Unreleased
 ----------
 
+2.10.0 - (July 16, 2019)
+------------------
+### Added
+* Added documentation on required peerDependencies
+
+2.9.0 - (July 10, 2019)
+------------------
+### Changed
+* Minor dependency version bump
+
 2.8.0 - (July 2, 2019)
 ------------------
 ### Changed

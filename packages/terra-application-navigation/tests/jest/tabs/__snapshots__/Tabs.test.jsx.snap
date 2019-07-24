@@ -1,0 +1,538 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs should render default element 1`] = `
+<InjectIntl(Tabs)
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
+  <Tabs
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    navigationItems={Array []}
+    notifications={Object {}}
+  >
+    <Tab
+      aria-hidden="true"
+      isPlaceholder={true}
+      tabKey=""
+      text="W"
+    >
+      <div
+        aria-hidden={true}
+        aria-label="W"
+        className="tab is-placeholder"
+        data-focus-styles-enabled={true}
+        onBlur={[Function]}
+        onMouseDown={[Function]}
+        role="link"
+        tabIndex="0"
+        type="button"
+      >
+        <div
+          aria-hidden={true}
+          className="tab-inner"
+        >
+          <span
+            aria-hidden={true}
+            className="tab-label"
+          >
+            W
+          </span>
+        </div>
+      </div>
+    </Tab>
+  </Tabs>
+</InjectIntl(Tabs)>
+`;
+
+exports[`Tabs should render prop data 1`] = `
+<InjectIntl(Tabs)
+  activeTabKey="my-test-key"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  navigationItems={
+    Array [
+      Object {
+        "key": "my-test-key",
+        "text": "test-text",
+      },
+    ]
+  }
+  navigationRenderFunction={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "hasCount": false,
+            "isActive": true,
+            "notificationCount": 0,
+            "text": "test-text",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  notifications={
+    Object {
+      "myComponent": 3,
+    }
+  }
+  onTabSelect={[MockFunction]}
+>
+  <Tabs
+    activeTabKey="my-test-key"
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    navigationItems={
+      Array [
+        Object {
+          "key": "my-test-key",
+          "text": "test-text",
+        },
+      ]
+    }
+    navigationRenderFunction={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "hasCount": false,
+              "isActive": true,
+              "notificationCount": 0,
+              "text": "test-text",
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+    notifications={
+      Object {
+        "myComponent": 3,
+      }
+    }
+    onTabSelect={[MockFunction]}
+  >
+    <nav
+      className="tabs-container is-calculating"
+    >
+      <Tab
+        hasCount={false}
+        isActive={true}
+        key="my-test-key"
+        notificationCount={0}
+        onTabSelect={[Function]}
+        render={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "hasCount": false,
+                  "isActive": true,
+                  "notificationCount": 0,
+                  "text": "test-text",
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
+        tabRef={
+          Object {
+            "current": <div
+              aria-current="true"
+              aria-label="test-text"
+              class="tab is-disabled"
+              data-focus-styles-enabled="true"
+              role="link"
+              tabindex="0"
+              type="button"
+            />,
+          }
+        }
+        text="test-text"
+      >
+        <div
+          aria-current={true}
+          aria-label="test-text"
+          className="tab is-disabled"
+          data-focus-styles-enabled={true}
+          onBlur={[Function]}
+          onMouseDown={[Function]}
+          role="link"
+          tabIndex="0"
+          type="button"
+        />
+      </Tab>
+      <InjectIntl(TabRollup)
+        data-application-tabs-more={true}
+        hasChildNotifications={false}
+        hasCount={false}
+        innerRef={
+          Object {
+            "current": <div
+              class="tab-rollup-label"
+              id="terra-navigation-link-Terra.applicationNavigation.tabs.rollupButtonTitle"
+            >
+              <span
+                class="tab-rollup-text"
+              >
+                Terra.applicationNavigation.tabs.rollupButtonTitle
+              </span>
+              <svg
+                aria-hidden="true"
+                class="tui-Icon icon is-bidi tab-rollup-icon"
+                focusable="false"
+                height="1em"
+                viewBox="0 0 48 48"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M48 12L24 36 0 12h48z"
+                />
+              </svg>
+            </div>,
+          }
+        }
+        isPulsed={false}
+        isSelected={false}
+        onTabSelect={[Function]}
+        tabRef={
+          Object {
+            "current": <div
+              aria-current="false"
+              aria-haspopup="true"
+              aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
+              class="tab-rollup"
+              data-focus-styles-enabled="true"
+              role="link"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                aria-hidden="true"
+                class="tab-inner"
+                data-tab-menu-inner="true"
+              >
+                <div
+                  class="tab-rollup-label"
+                  id="terra-navigation-link-Terra.applicationNavigation.tabs.rollupButtonTitle"
+                >
+                  <span
+                    class="tab-rollup-text"
+                  >
+                    Terra.applicationNavigation.tabs.rollupButtonTitle
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    class="tui-Icon icon is-bidi tab-rollup-icon"
+                    focusable="false"
+                    height="1em"
+                    viewBox="0 0 48 48"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M48 12L24 36 0 12h48z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>,
+          }
+        }
+        text="Terra.applicationNavigation.tabs.rollupButtonTitle"
+      >
+        <TabRollup
+          data-application-tabs-more={true}
+          hasChildNotifications={false}
+          hasCount={false}
+          innerRef={
+            Object {
+              "current": <div
+                class="tab-rollup-label"
+                id="terra-navigation-link-Terra.applicationNavigation.tabs.rollupButtonTitle"
+              >
+                <span
+                  class="tab-rollup-text"
+                >
+                  Terra.applicationNavigation.tabs.rollupButtonTitle
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="tui-Icon icon is-bidi tab-rollup-icon"
+                  focusable="false"
+                  height="1em"
+                  viewBox="0 0 48 48"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M48 12L24 36 0 12h48z"
+                  />
+                </svg>
+              </div>,
+            }
+          }
+          intl={
+            Object {
+              "defaultFormats": Object {},
+              "defaultLocale": "en",
+              "formatDate": [Function],
+              "formatHTMLMessage": [Function],
+              "formatMessage": [Function],
+              "formatNumber": [Function],
+              "formatPlural": [Function],
+              "formatRelative": [Function],
+              "formatTime": [Function],
+              "formats": Object {},
+              "formatters": Object {
+                "getDateTimeFormat": [Function],
+                "getMessageFormat": [Function],
+                "getNumberFormat": [Function],
+                "getPluralFormat": [Function],
+                "getRelativeFormat": [Function],
+              },
+              "locale": "en",
+              "messages": null,
+              "now": [Function],
+              "onError": [Function],
+              "textComponent": "span",
+              "timeZone": null,
+            }
+          }
+          isPulsed={false}
+          isSelected={false}
+          onTabSelect={[Function]}
+          tabRef={
+            Object {
+              "current": <div
+                aria-current="false"
+                aria-haspopup="true"
+                aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
+                class="tab-rollup"
+                data-focus-styles-enabled="true"
+                role="link"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  aria-hidden="true"
+                  class="tab-inner"
+                  data-tab-menu-inner="true"
+                >
+                  <div
+                    class="tab-rollup-label"
+                    id="terra-navigation-link-Terra.applicationNavigation.tabs.rollupButtonTitle"
+                  >
+                    <span
+                      class="tab-rollup-text"
+                    >
+                      Terra.applicationNavigation.tabs.rollupButtonTitle
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      class="tui-Icon icon is-bidi tab-rollup-icon"
+                      focusable="false"
+                      height="1em"
+                      viewBox="0 0 48 48"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M48 12L24 36 0 12h48z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>,
+            }
+          }
+          text="Terra.applicationNavigation.tabs.rollupButtonTitle"
+        >
+          <div
+            aria-current={false}
+            aria-haspopup={true}
+            aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
+            className="tab-rollup"
+            data-focus-styles-enabled={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            role="link"
+            tabIndex="0"
+            type="button"
+          >
+            <div
+              aria-hidden={true}
+              className="tab-inner"
+              data-tab-menu-inner={true}
+            >
+              <div
+                className="tab-rollup-label"
+                id="terra-navigation-link-Terra.applicationNavigation.tabs.rollupButtonTitle"
+              >
+                <span
+                  className="tab-rollup-text"
+                >
+                  Terra.applicationNavigation.tabs.rollupButtonTitle
+                </span>
+                <IconCaretDown
+                  className="tab-rollup-icon"
+                  isBidi={true}
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <IconBase
+                    ariaLabel={null}
+                    className="tab-rollup-icon"
+                    focusable="false"
+                    height="1em"
+                    isBidi={true}
+                    isSpin={false}
+                    viewBox="0 0 48 48"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="tui-Icon icon is-bidi tab-rollup-icon"
+                      focusable="false"
+                      height="1em"
+                      viewBox="0 0 48 48"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M48 12L24 36 0 12h48z"
+                      />
+                    </svg>
+                  </IconBase>
+                </IconCaretDown>
+              </div>
+            </div>
+          </div>
+        </TabRollup>
+      </InjectIntl(TabRollup)>
+    </nav>
+  </Tabs>
+</InjectIntl(Tabs)>
+`;

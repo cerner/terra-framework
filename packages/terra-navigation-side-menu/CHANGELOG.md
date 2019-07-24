@@ -3,6 +3,24 @@ Changelog
 
 Unreleased
 ----------
+
+2.14.1 - (July 23, 2019)
+------------------
+* a completely unremarkable update because lerna be lerna
+
+2.14.0 - (July 23, 2019)
+------------------
+### Changed
+* Replaced visually-hidden-text styles with terra-visually-hidden-text component
+* Normalized terra-visually-hidden-text dependency version to match other terra-framework packages
+
+2.13.0 - (July 16, 2019)
+------------------
+### Added
+* Added documentation on required peerDependencies
+
+2.12.0 - (July 10, 2019)
+------------------
 ### Added
 * Added `aria-haspopup` attribute to menu items that contain sub-navigation
 
