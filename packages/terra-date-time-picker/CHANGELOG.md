@@ -5,7 +5,19 @@ Unreleased
 ----------
 ### Changed
 * Fixed all the accessibility issues and updated the tests and screenshots accordingly.
+* Added documentation on required peerDependencies
 
+4.8.1 - (July 23, 2019)
+------------------
+* a completely unremarkable update because lerna be lerna
+
+4.8.0 - (July 23, 2019)
+------------------
+### Changed
+* When the date-time picker time clarification modal is open on touch devices, it will now focus on the first interactive DOM element within it. This enables focus to be shifted into the modal correctly when using VoiceOver on iOS.
+
+4.7.0 - (July 16, 2019)
+------------------
 ### Added
 * Added documentation on required peerDependencies
 * Added the ability for the user to enter seconds in the time input

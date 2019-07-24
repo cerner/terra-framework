@@ -5,8 +5,8 @@
 |-|-|-|-|
 | classnames | ^2.2.5 | -- | A simple utility for conditionally joining classNames together |
 | prop-types | ^15.5.8 | -- | Runtime type checking for React props and similar objects. |
-| terra-abstract-modal | ^3.4.0 | ^16.8.5 | The abstract modal is a structural component that provides the ability to display portal'd content in a layer above the app. |
-| terra-slide-group | ^4.3.0 | ^16.8.5 | A component that utilizes the `react-transition-group` library to present a stack of components in an animated fashion |
+| terra-abstract-modal | ^3.7.0 | ^16.8.5 | The abstract modal is a structural component that provides the ability to display portal'd content in a layer above the app. |
+| terra-slide-group | ^4.5.0 | ^16.8.5 | A component that utilizes the `react-transition-group` library to present a stack of components in an animated fashion |
 
 ## devDependencies
 | Dependency | Version | React Version | Description |

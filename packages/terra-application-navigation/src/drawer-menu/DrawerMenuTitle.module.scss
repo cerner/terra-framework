@@ -1,0 +1,32 @@
+:local {
+  .title-container {
+    color: var(--terra-application-navigation-drawer-title-color, rgba(255, 255, 255, 0.9));
+    overflow: hidden;
+    padding: 0.7142857143rem 1.4285714286rem;
+    position: relative;
+    user-select: none;
+    
+    .headline,
+    .subline {
+      font-size: 1rem;
+    }
+
+    .headline {
+      font-weight: 500;
+      margin-bottom: -0.2857rem;
+    }
+
+    .subline {
+      margin-bottom: 0.2143rem;
+      margin-top: -0.2857rem;
+    }
+
+    .title {
+      font-size: 1.2857142857rem;
+      font-weight: 300;
+      hyphens: auto;
+      overflow-wrap: break-word; /* Modern browsers */
+      word-wrap: break-word; /* For IE 10 and IE 11 */
+    }
+  }
+}

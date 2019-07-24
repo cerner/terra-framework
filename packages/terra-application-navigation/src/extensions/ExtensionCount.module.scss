@@ -1,0 +1,24 @@
+:local {
+  .count {
+    background-clip: padding-box;
+    background-image: var(--terra-application-navigation-extension-count-background-image, linear-gradient(#ffb20b, #ffc20a));
+    border: var(--terra-application-navigation-extension-count-border, none);
+    border-radius: 2.143rem;
+    box-shadow: var(--terra-application-navigation-extension-count-box-shadow, 0 1px 0 0 rgba(3, 43, 70, 0.8), -2px 4px 5px 1px rgba(0, 0, 0, 0.33));
+    color: var(--terra-application-navigation-extension-count-color, #000);
+    flex: 0 0 auto;
+    font-size: 0.6429rem;
+    font-weight: bold;
+    line-height: 1.44444;
+    min-width: 1.65em;
+    padding: 0 0.2857rem;
+    text-align: center;
+  }
+
+  .is-rollup {
+    height: 0.7857rem;
+    min-width: 0;
+    padding: 0;
+    width: 0.7857rem;
+  }
+}

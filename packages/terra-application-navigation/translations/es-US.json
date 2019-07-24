@@ -1,0 +1,18 @@
+{
+  "Terra.applicationNavigation.tabs.rollupButtonDescription": "Más opciones de navegación",
+  "Terra.applicationNavigation.tabs.rollupMenuHeaderTitle": "Más opciones de navegación",
+  "Terra.applicationNavigation.header.utilityButtonTitleUser": "Configuración de usuario",
+  "Terra.applicationNavigation.header.utilityButtonTitleNoUser": "Opciones",
+  "Terra.applicationNavigation.drawerMenu.navigation": "Elementos de navegación",
+  "Terra.applicationNavigation.drawerMenu.utilities": "Elementos de utilidades",
+  "Terra.applicationNavigation.utilityMenu.logout": "Cerrar sesión",
+  "Terra.applicationNavigation.utilityMenu.settings": "Configuración",
+  "Terra.applicationNavigation.utilityMenu.help": "Ayuda",
+  "Terra.applicationNavigation.utilityMenu.headerTitle": "Utilidades",
+  "Terra.applicationNavigation.extensions.rollupButtonDescription": "Elementos adicionales",
+  "Terra.applicationNavigation.extensions.rollupMenuHeaderTitle": "Elementos adicionales",
+  "Terra.applicationNavigation.tabs.rollupButtonTitle": "Más",
+  "Terra.applicationNavigation.notifications.new": "Nuevo",
+  "Terra.applicationNavigation.header.skipToContentTitle": "Saltar al contenido",
+  "Terra.applicationNavigation.header.menuButtonTitle": "Menú"
+}

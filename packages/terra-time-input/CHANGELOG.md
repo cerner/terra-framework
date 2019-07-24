@@ -6,7 +6,10 @@ Unreleased
 ### Changed
 * Removed Ignore Accessibility condition from wdio tests.
 * Changed help text color to match required contrast ratio.
+* Added documentation on required peerDependencies
 
+4.5.0 - (July 16, 2019)
+------------------
 ### Added
 * Added documentation on required peerDependencies
 * Added the ability to have an input field for seconds.

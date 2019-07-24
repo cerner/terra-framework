@@ -6,17 +6,17 @@
 | classnames | ^2.2.5 | -- | A simple utility for conditionally joining classNames together |
 | prop-types | ^15.5.8 | -- | Runtime type checking for React props and similar objects. |
 | react-router-dom | ^5.0.0 | >=15 | DOM bindings for React Router |
-| terra-application-header-layout | ^3.11.0 | ^16.8.5 | This component renders an application header layout. To be used with a layout. |
-| terra-application-links | ^6.4.0 | ^16.8.5 | This packages contains a list and tab form of ApplicationLinks, to be used in horizontal and vertical display styles. Selection is managed by react-router. |
-| terra-application-menu-layout | ^3.7.0 | ^16.8.5 | This component renders an application menu layout. To be used with a terra-layout or terra-navigation-layout. |
-| terra-application-name | ^3.12.0 | ^16.8.5 | Houses the title of the application, along with a logo. There are two versions - a header version and menu version. These should be used with the corresponding header and menu layouts. |
-| terra-application-utility | ^2.14.0 | ^16.8.5 | The Utility is used to disclose a utility menu. There are two versions - a header version and menu version. These should be used with the corresponding `terra-application-header-layout` and `terra-application-menu-layout` components. |
-| terra-breakpoints | ^2.3.0 | ^16.8.5 | Contains components and utilities related to Terra's supported responsive breakpoints |
+| terra-application-header-layout | ^3.13.0 | ^16.8.5 | This component renders an application header layout. To be used with a layout. |
+| terra-application-links | ^6.7.0 | ^16.8.5 | This packages contains a list and tab form of ApplicationLinks, to be used in horizontal and vertical display styles. Selection is managed by react-router. |
+| terra-application-menu-layout | ^3.9.0 | ^16.8.5 | This component renders an application menu layout. To be used with a terra-layout or terra-navigation-layout. |
+| terra-application-name | ^3.14.0 | ^16.8.5 | Houses the title of the application, along with a logo. There are two versions - a header version and menu version. These should be used with the corresponding header and menu layouts. |
+| terra-application-utility | ^2.17.0 | ^16.8.5 | The Utility is used to disclose a utility menu. There are two versions - a header version and menu version. These should be used with the corresponding `terra-application-header-layout` and `terra-application-menu-layout` components. |
+| terra-breakpoints | ^2.0.0 | ^16.8.5 | Contains components and utilities related to Terra's supported responsive breakpoints |
 | terra-icon | ^3.1.0 | ^16.8.5 | The terra-icon component is used to visually represent a literal or symbolic object intended to initiate an action, communicate a status, or navigate the workflow. |
-| terra-modal-manager | ^6.4.0 | ^16.8.5 | The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal. |
-| terra-navigation-layout | ^5.5.0 | ^16.8.5 | The Terra Navigation Layout package includes a variety of components and utilities to provide configuration-based, react-router-driven navigation to Terra applications. |
-| terra-navigation-side-menu | ^2.11.0 | ^16.8.5 | A structual component for nesting navigational items within the content section of the terra-menu-layout. |
-| terra-popup | ^6.4.0 | ^16.8.5 | The Terra Popup is higher order component that launches terra-hookshot positioned content with the ability to display a dynamic arrow. |
+| terra-modal-manager | ^6.7.0 | ^16.8.5 | The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal. |
+| terra-navigation-layout | ^5.7.0 | ^16.8.5 | The Terra Navigation Layout package includes a variety of components and utilities to provide configuration-based, react-router-driven navigation to Terra applications. |
+| terra-navigation-side-menu | ^2.14.0 | ^16.8.5 | A structual component for nesting navigational items within the content section of the terra-menu-layout. |
+| terra-popup | ^6.7.0 | ^16.8.5 | The Terra Popup is higher order component that launches terra-hookshot positioned content with the ability to display a dynamic arrow. |
 
 ## devDependencies
 | Dependency | Version | React Version | Description |
