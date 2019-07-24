@@ -3,6 +3,13 @@ Changelog
 
 Unreleased
 ----------
+
+3.11.1 - (July 23, 2019)
+------------------
+* a completely unremarkable update because lerna be lerna
+
+3.11.0 - (July 23, 2019)
+------------------
 ### Changed
 * Normalized terra-visually-hidden-text dependency version to match other terra-framework packages
 

@@ -9,15 +9,15 @@
 | react-portal | ^4.1.2 | ^15.0.0-0 \|\| ^16.0.0-0 \|\| ^17.0.0-0 | To make your life with React Portals easier. |
 | terra-button | ^3.3.0 | ^16.8.5 | The terra-button component provides users a way to trigger actions in the UI. |
 | terra-content-container | ^3.0.0 | ^16.8.5 | The Terra ContentContainer is a structural component for the purpose of arranging content with a header. |
-| terra-hookshot | ^5.10.0 | ^16.8.5 | The Terra Hookshot component positions portaled content according to target and content attachments, ensuring they stay visually connected. |
+| terra-hookshot | ^5.12.0 | ^16.8.5 | The Terra Hookshot component positions portaled content according to target and content attachments, ensuring they stay visually connected. |
 | terra-mixins | ^1.0.0 | -- | The terra-mixins component supplies global mixins for use throughout the Terra ecosystem. |
 
 ## devDependencies
 | Dependency | Version | React Version | Description |
 |-|-|-|-|
-| terra-disclosure-manager | ^4.14.0 | ^16.8.5 | A stateful component used to manage disclosure presentation. |
+| terra-disclosure-manager | ^4.16.0 | ^16.8.5 | A stateful component used to manage disclosure presentation. |
 | terra-doc-template | ^2.2.0 | ^16.8.5 | Provides an adjustable template for documentation pages. |
-| terra-modal-manager | ^6.4.0 | ^16.8.5 | The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal. |
+| terra-modal-manager | ^6.7.0 | ^16.8.5 | The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal. |
 
 ## peerDependencies
 | Dependency | Version | React Version | Description |

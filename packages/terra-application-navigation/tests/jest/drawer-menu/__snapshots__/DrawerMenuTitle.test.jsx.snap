@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DrawerMenuTitle should render default element 1`] = `
+<div
+  className="title-container"
+>
+  <div
+    className="title"
+    title="test-title"
+  >
+    test-title
+  </div>
+</div>
+`;

@@ -13,8 +13,8 @@
 ## devDependencies
 | Dependency | Version | React Version | Description |
 |-|-|-|-|
-| terra-application-header-layout | ^3.11.0 | ^16.8.5 | This component renders an application header layout. To be used with a layout. |
-| terra-application-menu-layout | ^3.7.0 | ^16.8.5 | This component renders an application menu layout. To be used with a terra-layout or terra-navigation-layout. |
+| terra-application-header-layout | ^3.13.0 | ^16.8.5 | This component renders an application header layout. To be used with a layout. |
+| terra-application-menu-layout | ^3.9.0 | ^16.8.5 | This component renders an application menu layout. To be used with a terra-layout or terra-navigation-layout. |
 | terra-doc-template | ^2.2.0 | ^16.8.5 | Provides an adjustable template for documentation pages. |
 | terra-image | ^3.0.0 | ^16.8.5 | The terra-image component provides styling for visual imagery. |
 

@@ -1,0 +1,799 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CompactHeader should render default element 1`] = `
+<InjectIntl(CompactHeader)
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
+  <CompactHeader
+    extensionItems={Array []}
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    isDrawerMenuOpen={false}
+    navigationItems={Array []}
+    notifications={Object {}}
+  >
+    <header
+      className="compact-header"
+      role="banner"
+    >
+      <button
+        className="skip-content-button"
+        role="link"
+        type="button"
+      >
+        Terra.applicationNavigation.header.skipToContentTitle
+      </button>
+      <div
+        aria-expanded={false}
+        aria-label="Terra.applicationNavigation.header.menuButtonTitle"
+        className="menu-button"
+        data-compact-header-toggle={true}
+        data-focus-styles-enabled={true}
+        onBlur={[Function]}
+        onMouseDown={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        <IconMenu
+          data-name="Layer 1"
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <IconBase
+            ariaLabel={null}
+            data-name="Layer 1"
+            focusable="false"
+            height="1em"
+            isBidi={false}
+            isSpin={false}
+            viewBox="0 0 48 48"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <svg
+              aria-hidden="true"
+              className="tui-Icon icon"
+              data-name="Layer 1"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 48 48"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 21h48v6H0zM0 4h48v6H0zm0 34h48v6H0z"
+              />
+            </svg>
+          </IconBase>
+        </IconMenu>
+      </div>
+      <div
+        className="title-container"
+      />
+      <nav
+        className="hidden-nav"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        tabIndex="-1"
+      >
+        <ul
+          className="nav-inner"
+        />
+      </nav>
+      <div
+        className="extensions-container"
+      />
+    </header>
+  </CompactHeader>
+</InjectIntl(CompactHeader)>
+`;
+
+exports[`CompactHeader should render with function callbacks 1`] = `
+<InjectIntl(CompactHeader)
+  extensionItems={
+    Array [
+      Object {
+        "icon": <span>
+          my icon
+        </span>,
+        "key": "my-test-key-1",
+        "text": "test-text-1",
+      },
+    ]
+  }
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  navigationItems={
+    Array [
+      Object {
+        "key": "my-test-key",
+        "text": "test-text",
+      },
+    ]
+  }
+  notifications={
+    Object {
+      "my-test-key-1": 3,
+    }
+  }
+  onSelectExtensionItem={[MockFunction]}
+  titleConfig={
+    Object {
+      "title": "test-title",
+    }
+  }
+  userConfig={
+    Object {
+      "detail": "user-detail",
+      "imageSrc": "user-src",
+      "initials": "user-initials",
+      "name": "user-name",
+    }
+  }
+>
+  <CompactHeader
+    extensionItems={
+      Array [
+        Object {
+          "icon": <span>
+            my icon
+          </span>,
+          "key": "my-test-key-1",
+          "text": "test-text-1",
+        },
+      ]
+    }
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    isDrawerMenuOpen={false}
+    navigationItems={
+      Array [
+        Object {
+          "key": "my-test-key",
+          "text": "test-text",
+        },
+      ]
+    }
+    notifications={
+      Object {
+        "my-test-key-1": 3,
+      }
+    }
+    onSelectExtensionItem={[MockFunction]}
+    titleConfig={
+      Object {
+        "title": "test-title",
+      }
+    }
+    userConfig={
+      Object {
+        "detail": "user-detail",
+        "imageSrc": "user-src",
+        "initials": "user-initials",
+        "name": "user-name",
+      }
+    }
+  >
+    <header
+      className="compact-header"
+      role="banner"
+    >
+      <button
+        className="skip-content-button"
+        role="link"
+        type="button"
+      >
+        Terra.applicationNavigation.header.skipToContentTitle
+      </button>
+      <div
+        aria-expanded={false}
+        aria-label="Terra.applicationNavigation.header.menuButtonTitle"
+        className="menu-button"
+        data-compact-header-toggle={true}
+        data-focus-styles-enabled={true}
+        onBlur={[Function]}
+        onMouseDown={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        <IconMenu
+          data-name="Layer 1"
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <IconBase
+            ariaLabel={null}
+            data-name="Layer 1"
+            focusable="false"
+            height="1em"
+            isBidi={false}
+            isSpin={false}
+            viewBox="0 0 48 48"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <svg
+              aria-hidden="true"
+              className="tui-Icon icon"
+              data-name="Layer 1"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 48 48"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 21h48v6H0zM0 4h48v6H0zm0 34h48v6H0z"
+              />
+            </svg>
+          </IconBase>
+        </IconMenu>
+      </div>
+      <div
+        className="title-container"
+      >
+        <div
+          className="title"
+          title="test-title"
+        >
+          test-title
+        </div>
+      </div>
+      <nav
+        className="hidden-nav"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        tabIndex="-1"
+      >
+        <ul
+          className="nav-inner"
+        >
+          <li
+            key="my-test-key"
+          >
+            <div
+              aria-current={false}
+              aria-label="test-text"
+              className="hidden-item"
+              role="link"
+              tabIndex="-1"
+            >
+              <span
+                aria-hidden={true}
+              >
+                test-text
+              </span>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <div
+        className="extensions-container"
+      >
+        <InjectIntl(Extensions)
+          extensionItems={
+            Array [
+              Object {
+                "icon": <span>
+                  my icon
+                </span>,
+                "key": "my-test-key-1",
+                "text": "test-text-1",
+              },
+            ]
+          }
+          notifications={
+            Object {
+              "my-test-key-1": 3,
+            }
+          }
+          onSelect={[MockFunction]}
+        >
+          <Extensions
+            activeBreakpoint=""
+            extensionItems={
+              Array [
+                Object {
+                  "icon": <span>
+                    my icon
+                  </span>,
+                  "key": "my-test-key-1",
+                  "text": "test-text-1",
+                },
+              ]
+            }
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            notifications={
+              Object {
+                "my-test-key-1": 3,
+              }
+            }
+            onSelect={[MockFunction]}
+          >
+            <div
+              className="extensions-row"
+            >
+              <Extension
+                icon={
+                  <span>
+                    my icon
+                  </span>
+                }
+                key="my-test-key-1"
+                notificationCount={3}
+                onSelect={[Function]}
+                text="test-text-1"
+              >
+                <div
+                  aria-label="test-text-1 3"
+                  className="extension"
+                  data-focus-styles-enabled={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseDown={[Function]}
+                  role="button"
+                  tabIndex="0"
+                >
+                  <div
+                    aria-hidden={true}
+                    className="extension-inner"
+                  >
+                    <div
+                      className="extension-image"
+                      title="test-text-1"
+                    >
+                      <span>
+                        my icon
+                      </span>
+                    </div>
+                    <ExtensionCount
+                      className="extension-count"
+                      value={3}
+                    >
+                      <div
+                        aria-label={3}
+                        className="count extension-count"
+                      >
+                        3
+                      </div>
+                    </ExtensionCount>
+                  </div>
+                </div>
+              </Extension>
+            </div>
+            <Popup
+              attachmentBehavior="auto"
+              boundingRef={null}
+              classNameArrow={null}
+              classNameContent={null}
+              classNameOverlay={null}
+              contentAttachment="top center"
+              contentHeight="auto"
+              contentWidth="320"
+              isArrowDisplayed={true}
+              isContentFocusDisabled={true}
+              isHeaderDisabled={false}
+              isOpen={false}
+              onRequestClose={[Function]}
+              targetRef={[Function]}
+            />
+          </Extensions>
+        </InjectIntl(Extensions)>
+      </div>
+    </header>
+  </CompactHeader>
+</InjectIntl(CompactHeader)>
+`;
+
+exports[`CompactHeader should render with menu callback 1`] = `
+<InjectIntl(CompactHeader)
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  onSelectMenuButton={[MockFunction]}
+>
+  <CompactHeader
+    extensionItems={Array []}
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    isDrawerMenuOpen={false}
+    navigationItems={Array []}
+    notifications={Object {}}
+    onSelectMenuButton={[MockFunction]}
+  >
+    <header
+      className="compact-header"
+      role="banner"
+    >
+      <button
+        className="skip-content-button"
+        role="link"
+        type="button"
+      >
+        Terra.applicationNavigation.header.skipToContentTitle
+      </button>
+      <div
+        aria-expanded={false}
+        aria-label="Terra.applicationNavigation.header.menuButtonTitle"
+        className="menu-button"
+        data-compact-header-toggle={true}
+        data-focus-styles-enabled={true}
+        onBlur={[Function]}
+        onClick={[MockFunction]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        <IconMenu
+          data-name="Layer 1"
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <IconBase
+            ariaLabel={null}
+            data-name="Layer 1"
+            focusable="false"
+            height="1em"
+            isBidi={false}
+            isSpin={false}
+            viewBox="0 0 48 48"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <svg
+              aria-hidden="true"
+              className="tui-Icon icon"
+              data-name="Layer 1"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 48 48"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 21h48v6H0zM0 4h48v6H0zm0 34h48v6H0z"
+              />
+            </svg>
+          </IconBase>
+        </IconMenu>
+      </div>
+      <div
+        className="title-container"
+      />
+      <nav
+        className="hidden-nav"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        tabIndex="-1"
+      >
+        <ul
+          className="nav-inner"
+        />
+      </nav>
+      <div
+        className="extensions-container"
+      />
+    </header>
+  </CompactHeader>
+</InjectIntl(CompactHeader)>
+`;
+
+exports[`CompactHeader should render with skip callback 1`] = `
+<InjectIntl(CompactHeader)
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  onSelectSkipToContent={[MockFunction]}
+>
+  <CompactHeader
+    extensionItems={Array []}
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    isDrawerMenuOpen={false}
+    navigationItems={Array []}
+    notifications={Object {}}
+    onSelectSkipToContent={[MockFunction]}
+  >
+    <header
+      className="compact-header"
+      role="banner"
+    >
+      <button
+        className="skip-content-button"
+        onClick={[MockFunction]}
+        role="link"
+        type="button"
+      >
+        Terra.applicationNavigation.header.skipToContentTitle
+      </button>
+      <div
+        aria-expanded={false}
+        aria-label="Terra.applicationNavigation.header.menuButtonTitle"
+        className="menu-button"
+        data-compact-header-toggle={true}
+        data-focus-styles-enabled={true}
+        onBlur={[Function]}
+        onMouseDown={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        <IconMenu
+          data-name="Layer 1"
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <IconBase
+            ariaLabel={null}
+            data-name="Layer 1"
+            focusable="false"
+            height="1em"
+            isBidi={false}
+            isSpin={false}
+            viewBox="0 0 48 48"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <svg
+              aria-hidden="true"
+              className="tui-Icon icon"
+              data-name="Layer 1"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 48 48"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 21h48v6H0zM0 4h48v6H0zm0 34h48v6H0z"
+              />
+            </svg>
+          </IconBase>
+        </IconMenu>
+      </div>
+      <div
+        className="title-container"
+      />
+      <nav
+        className="hidden-nav"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        tabIndex="-1"
+      >
+        <ul
+          className="nav-inner"
+        />
+      </nav>
+      <div
+        className="extensions-container"
+      />
+    </header>
+  </CompactHeader>
+</InjectIntl(CompactHeader)>
+`;

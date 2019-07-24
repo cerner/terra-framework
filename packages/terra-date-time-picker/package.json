@@ -1,7 +1,7 @@
 {
   "name": "terra-date-time-picker",
   "main": "lib/DateTimePicker.js",
-  "version": "4.7.0",
+  "version": "4.8.1",
   "description": "The DateTimePicker component has a date picker for selecting date and a time input for entering time",
   "repository": {
     "type": "git",
@@ -31,15 +31,15 @@
     "moment": "^2.21.0",
     "moment-timezone": "^0.5.13",
     "prop-types": "^15.5.8",
-    "terra-abstract-modal": "^3.6.0",
+    "terra-abstract-modal": "^3.7.1",
     "terra-button": "^3.3.0",
-    "terra-date-picker": "^4.7.0",
+    "terra-date-picker": "^4.8.1",
     "terra-time-input": "^4.5.0"
   },
   "devDependencies": {
     "terra-doc-template": "^2.2.0",
     "terra-form-field": "^3.1.0",
-    "terra-modal-manager": "^6.6.0"
+    "terra-modal-manager": "^6.7.1"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
@@ -50,5 +50,6 @@
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest --config ../../jestconfig.js",
     "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"
-  }
+  },
+  "gitHead": "7981071c6f84a0cfdfbd21b81b36cd00ee0756c0"
 }
