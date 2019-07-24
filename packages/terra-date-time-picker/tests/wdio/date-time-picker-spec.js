@@ -11,6 +11,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('Default', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
+      browser.refresh();
     });
 
     Terra.it.isAccessible({ rules: ignoredA11y });
@@ -20,6 +21,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('Default with Date', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-only');
+      browser.refresh();
     });
 
     Terra.it.isAccessible({ rules: ignoredA11y });
@@ -29,6 +31,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('Default with Date and Time', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-time');
+      browser.refresh();
     });
 
     Terra.it.isAccessible({ rules: ignoredA11y });
