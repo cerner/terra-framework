@@ -4,6 +4,9 @@ Changelog
 Unreleased
 ----------
 
+### Changed
+* Fixed linter issue in doc
+
 6.7.1 - (July 23, 2019)
 ------------------
 * a completely unremarkable update because lerna be lerna

@@ -6,5 +6,4 @@ module.exports = {
   sideEffectImports: [
     './initalizeXFC.js',
   ],
-  includeTestEvidence: false,
 };
