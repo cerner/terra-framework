@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tab should render prop data 1`] = `
+<div
+  aria-current={true}
+  aria-hidden={true}
+  aria-label="my text 1"
+  className="tab is-disabled is-placeholder has-count"
+  data-focus-styles-enabled={true}
+  onBlur={[Function]}
+  onMouseDown={[Function]}
+  role="link"
+  tabIndex="0"
+  type="button"
+>
+  <div
+    aria-hidden={true}
+    className="tab-inner"
+  >
+    <span
+      aria-hidden={true}
+      className="tab-label"
+    >
+      my text
+    </span>
+    <span
+      className="tab-count"
+    >
+      <InjectIntl(TabCount)
+        value={1}
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Tab should render with render function block 1`] = `
+<div
+  aria-current={true}
+  aria-hidden={true}
+  aria-label="my text 1"
+  className="tab is-disabled"
+  data-focus-styles-enabled={true}
+  onBlur={[Function]}
+  onMouseDown={[Function]}
+  role="link"
+  tabIndex="0"
+  type="button"
+>
+  <div>
+    text=my text hasCount=true isActive=true notificationCount=1
+  </div>
+</div>
+`;
+
+exports[`Tab should render with required prop data 1`] = `
+<div
+  aria-label="my text"
+  className="tab"
+  data-focus-styles-enabled={true}
+  onBlur={[Function]}
+  onMouseDown={[Function]}
+  role="link"
+  tabIndex="0"
+  type="button"
+>
+  <div
+    aria-hidden={true}
+    className="tab-inner"
+  >
+    <span
+      aria-hidden={true}
+      className="tab-label"
+    >
+      my text
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Tab should render with selection callback 1`] = `
+<div
+  aria-label="my text"
+  className="tab"
+  data-focus-styles-enabled={true}
+  onBlur={[Function]}
+  onClick={[MockFunction]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  role="link"
+  tabIndex="0"
+  type="button"
+>
+  <div
+    aria-hidden={true}
+    className="tab-inner"
+  >
+    <span
+      aria-hidden={true}
+      className="tab-label"
+    >
+      my text
+    </span>
+  </div>
+</div>
+`;

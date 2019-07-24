@@ -1,0 +1,31 @@
+:local {
+  .footer {
+    flex: 0 0 auto;
+    position: relative;
+  }
+
+  .container {
+    user-select: none;
+  }
+
+  .content {
+    background-color: var(--terra-application-navigation-popup-content-background-color, #fff);
+  }
+
+  .utility-list {
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    width: 100%;
+
+    > * {
+      border-bottom: var(--terra-application-navigation-popup-list-child-border-bottom, 1px solid #dedfe0);
+
+      &:last-of-type {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+

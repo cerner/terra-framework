@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabRollup should render default element 1`] = `
+<div
+  aria-current={false}
+  aria-haspopup={true}
+  aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
+  className="tab-rollup"
+  data-focus-styles-enabled={true}
+  onBlur={[Function]}
+  onMouseDown={[Function]}
+  role="link"
+  tabIndex="0"
+  type="button"
+>
+  <div
+    aria-hidden={true}
+    className="tab-inner"
+    data-tab-menu-inner={true}
+  >
+    <div
+      className="tab-rollup-label"
+      id="terra-navigation-link-undefined"
+    >
+      <span
+        className="tab-rollup-text"
+      />
+      <IconCaretDown
+        className="tab-rollup-icon"
+        isBidi={true}
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TabRollup should render prop data 1`] = `
+<div
+  aria-current={true}
+  aria-haspopup={true}
+  aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription Terra.applicationNavigation.notifications.new"
+  className="tab-rollup has-count"
+  data-focus-styles-enabled={true}
+  onBlur={[Function]}
+  onMouseDown={[Function]}
+  role="link"
+  tabIndex="0"
+  type="button"
+>
+  <div
+    aria-hidden={true}
+    className="tab-inner"
+    data-tab-menu-inner={true}
+  >
+    <div
+      className="tab-rollup-label"
+      id="terra-navigation-link-test text"
+    >
+      <span
+        className="tab-rollup-text"
+      >
+        test text
+      </span>
+      <span
+        className="tab-count"
+      >
+        <InjectIntl(TabCount)
+          isRollup={true}
+          value={1}
+        />
+      </span>
+      <IconCaretDown
+        className="tab-rollup-icon"
+        isBidi={true}
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TabRollup should render with function callbacks 1`] = `
+<div
+  aria-current={false}
+  aria-haspopup={true}
+  aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
+  className="tab-rollup"
+  data-focus-styles-enabled={true}
+  onBlur={[Function]}
+  onMouseDown={[Function]}
+  role="link"
+  tabIndex="0"
+  type="button"
+>
+  <div
+    aria-hidden={true}
+    className="tab-inner"
+    data-tab-menu-inner={true}
+  >
+    <div
+      className="tab-rollup-label"
+      id="terra-navigation-link-undefined"
+    >
+      <span
+        className="tab-rollup-text"
+      />
+      <IconCaretDown
+        className="tab-rollup-icon"
+        isBidi={true}
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TabRollup should render with selection callback 1`] = `
+<div
+  aria-current={false}
+  aria-haspopup={true}
+  aria-label="Terra.applicationNavigation.tabs.rollupButtonDescription"
+  className="tab-rollup"
+  data-focus-styles-enabled={true}
+  onBlur={[Function]}
+  onClick={[MockFunction]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  role="link"
+  tabIndex="0"
+  type="button"
+>
+  <div
+    aria-hidden={true}
+    className="tab-inner"
+    data-tab-menu-inner={true}
+  >
+    <div
+      className="tab-rollup-label"
+      id="terra-navigation-link-undefined"
+    >
+      <span
+        className="tab-rollup-text"
+      />
+      <IconCaretDown
+        className="tab-rollup-icon"
+        isBidi={true}
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
