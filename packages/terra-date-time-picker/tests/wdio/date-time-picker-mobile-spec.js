@@ -1,4 +1,3 @@
-// Color contrast will be resolved in https://github.com/cerner/terra-core/issues/1670
 Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
   before(() => {
     browser.execute('if (!window.ontouchstart) { window.ontouchstart = "true"; }');
@@ -45,7 +44,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
     Terra.it.validatesElement();
   });
 
-  describe('Date Time Picker Twelve Hour Disabled Mobile - Focus Hour Styles', () => {
+  describe('Date Time Picker Twelve Hour Disabled Mobile - Disabled Hour Styles', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-disabled-12-hour-mobile');
     });
@@ -73,7 +72,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
     Terra.it.validatesElement();
   });
 
-  describe('Date Time Picker Twelve Hour Disabled Mobile - Focus Minute Styles', () => {
+  describe('Date Time Picker Twelve Hour Disabled Mobile - Disabled Minute Styles', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-disabled-12-hour-mobile');
     });

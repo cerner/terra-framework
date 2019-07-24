@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Added
 * Added documentation on required peerDependencies
+* Aria-Label added to input to fix accesssibility issue of Date-Time-Picker.
 
 4.6.0 - (July 10, 2019)
 ------------------
@@ -13,9 +14,6 @@ Unreleased
 
 4.5.0 - (July 2, 2019)
 ------------------
-### Added
-* Aria-Label added to input to fix accesssibility issue of Date-Time-Picker.
-
 ### Added
 * Allow terra-date-picker to be a controlled component.
 * Added functionality to announce the pre-selected date to screen readers when navigating within the date picker.

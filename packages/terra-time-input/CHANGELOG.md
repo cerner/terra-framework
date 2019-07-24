@@ -9,8 +9,6 @@ Unreleased
 
 ### Added
 * Added documentation on required peerDependencies
-
-### Added
 * Added the ability to have an input field for seconds.
 
 4.4.0 - (July 10, 2019)

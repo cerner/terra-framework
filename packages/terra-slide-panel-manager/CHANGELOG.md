@@ -5,7 +5,7 @@ Unreleased
 ----------
 ### Added
 * Added documentation on required peerDependencies
-
+* Resolved Merge Conflicts.
 5.4.0 - (July 10, 2019)
 ------------------
 ### Changed

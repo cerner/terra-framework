@@ -1,4 +1,3 @@
-// Color contrast will be resolved in https://github.com/cerner/terra-core/issues/1670
 Terra.describeViewports('Time Input Twelve Hour Mobile', ['medium'], () => {
   before(() => {
     browser.execute('if (!window.ontouchstart) { window.ontouchstart = "true"; }');
@@ -68,8 +67,7 @@ Terra.describeViewports('Time Input Twelve Hour Mobile', ['medium'], () => {
       browser.click('#timeInputWithSecond input[name="terra-time-second-time-input-with-second"]');
     });
 
-    Terra.it.isAccessible();
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 
   describe('Twelve Hour Mobile - Auto focues next input when filling out whole thing', () => {
@@ -86,7 +84,6 @@ Terra.describeViewports('Time Input Twelve Hour Mobile', ['medium'], () => {
       browser.keys('123456');
     });
 
-    Terra.it.isAccessible();
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 });

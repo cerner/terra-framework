@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Added
 * Added documentation on required peerDependencies
+* Resolved Merge Conflicts.
 
 6.5.0 - (July 10, 2019)
 ------------------
