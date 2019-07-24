@@ -1,7 +1,7 @@
 {
   "name": "terra-navigation-side-menu",
   "main": "lib/NavigationSideMenu.js",
-  "version": "2.13.0",
+  "version": "2.14.1",
   "description": "A structual component for nesting navigational items within the content section of the terra-menu-layout.",
   "repository": {
     "type": "git",
@@ -33,7 +33,7 @@
     "terra-action-header": "^2.0.0",
     "terra-content-container": "^3.0.0",
     "terra-icon": "^3.1.0",
-    "terra-visually-hidden-text": "^2.9.0"
+    "terra-visually-hidden-text": "^2.0.0"
   },
   "devDependencies": {
     "terra-doc-template": "^2.2.0"
@@ -47,5 +47,6 @@
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest --config ../../jestconfig.js",
     "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"
-  }
+  },
+  "gitHead": "7981071c6f84a0cfdfbd21b81b36cd00ee0756c0"
 }

@@ -1,7 +1,7 @@
 {
   "name": "terra-abstract-modal",
   "main": "lib/AbstractModal.js",
-  "version": "3.6.0",
+  "version": "3.7.1",
   "description": "The abstract modal is a structural component that provides the ability to display portal'd content in a layer above the app.",
   "repository": {
     "type": "git",
@@ -23,7 +23,8 @@
   "homepage": "https://github.com/cerner/terra-framework#readme",
   "peerDependencies": {
     "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react-dom": "^16.8.5",
+    "react-intl": "^2.9.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -31,6 +32,7 @@
     "mutationobserver-shim": "0.3.3",
     "prop-types": "^15.5.8",
     "react-portal": "^4.1.2",
+    "terra-visually-hidden-text": "^2.9.0",
     "wicg-inert": "^2.1.1"
   },
   "devDependencies": {
@@ -46,5 +48,6 @@
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest --config ../../jestconfig.js",
     "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"
-  }
+  },
+  "gitHead": "7981071c6f84a0cfdfbd21b81b36cd00ee0756c0"
 }

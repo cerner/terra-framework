@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DrawerMenuListItem should render prop data 1`] = `
+<li
+  aria-selected={true}
+  className="item is-selected"
+  data-focus-styles-enabled={true}
+  onBlur={[Function]}
+  onClick={[MockFunction]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  role="option"
+  tabIndex="0"
+>
+  <div
+    className="icon"
+  >
+    <span>
+      test-icon
+    </span>
+  </div>
+  <div
+    className="text"
+  >
+    my text
+  </div>
+  <DrawerCount
+    value={1}
+  />
+</li>
+`;
+
+exports[`DrawerMenuListItem should render with required prop data 1`] = `
+<li
+  className="item"
+  data-focus-styles-enabled={true}
+  onBlur={[Function]}
+  onClick={[MockFunction]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  role="option"
+  tabIndex="0"
+>
+  <div
+    className="text"
+  >
+    my text
+  </div>
+</li>
+`;
+
+exports[`DrawerMenuListItem should render with selection callback 1`] = `
+<li
+  className="item"
+  data-focus-styles-enabled={true}
+  onBlur={[Function]}
+  onClick={[MockFunction]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  role="option"
+  tabIndex="0"
+>
+  <div
+    className="text"
+  >
+    my text
+  </div>
+</li>
+`;

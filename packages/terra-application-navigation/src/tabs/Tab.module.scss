@@ -1,0 +1,162 @@
+:local {
+  .tab.is-disabled {
+    cursor: default;
+  }
+
+  .tab-rollup {
+    .tab-inner {
+      max-width: 100%;
+    }
+
+    .tab-rollup-label {
+      align-items: center;
+      display: inline-flex;
+      max-width: 100%;
+    }
+
+    .tab-rollup-text {
+      display: block;
+      flex: 0 0 auto;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-break: normal;
+      word-wrap: normal;
+    }
+
+    .tab-rollup-icon {
+      flex: 0 0 auto;
+      height: 0.7143rem;
+      margin-left: 0.2857rem;
+      width: 0.7143rem;
+    }
+  }
+
+  .tab,
+  .tab-rollup {
+    background-clip: content-box;
+    box-shadow: var(--terra-application-navigation-tab-box-shadow, inset 1px 0 0 0 #032b46, inset 2px 0 0 0 #116ba3);
+    padding-left: 2px;
+
+    &:last-of-type {
+      box-shadow: var(--terra-application-navigation-tab-last-box-shadow, inset 1px 0 0 0 #032b46, inset 2px 0 0 0 #116ba3, inset -1px 0 0 0 #116ba3, inset -2px 0 0 0 #032b46);
+      padding-right: 2px;
+    }
+  }
+
+  .tab,
+  .tab-rollup {
+    background-color: var(--terra-application-navigation-tab-background-color, transparent);
+    border: 0;
+    color: var(--terra-application-navigation-tab-color, rgba(255, 255, 255, 0.8));
+    cursor: pointer;
+    display: flex;
+    flex: 0 0 auto;
+    font-family: inherit;
+    font-size: 0.9285714rem;
+    margin: 0;
+    outline: none;
+    position: relative;
+
+    .tab-inner {
+      align-items: center;
+      background-position: top left;
+      background-repeat: no-repeat;
+      background-size: var(--terra-application-navigation-tab-inner-background-size, 0 5px);
+      box-sizing: border-box;
+      justify-content: space-between;
+      overflow: hidden;
+      padding-bottom: 1.143rem;
+      padding-left: 2.143rem;
+      padding-right: 2.143rem;
+      padding-top: 1.143rem;
+      text-align: center;
+      text-decoration: none;
+      text-transform: none;
+      transition-duration: 0s;
+      transition-property: background-size;
+      transition-timing-function: ease;
+    }
+
+    .tab-label {
+      display: block;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-break: normal;
+      word-wrap: normal;
+    }
+
+    &:hover {
+      .tab-inner {
+        background-color: var(--terra-application-navigation-tab-hover-background-color, rgba(3, 43, 70, 0.2));
+        color: var(--terra-application-navigation-tab-hover-color, #fff);
+      }
+    }
+
+    &[aria-current='false']:active {
+      .tab-inner {
+        background-color: var(--terra-application-navigation-tab-active-background-color, rgba(3, 43, 70, 0.4));
+        color: var(--terra-application-navigation-tab-active-color, rgba(255, 255, 255, 0.5));
+      }
+    }
+
+    &[aria-current='true'] {
+      box-shadow: var(--terra-application-navigation-tab-current-box-shadow, inset 1px 0 0 0 #116ba3, inset 2px 0 0 0 #032b46);
+      color: var(--terra-application-navigation-tab-current-color, #fff);
+
+      .tab-inner {
+        background-color: var(--terra-application-navigation-tab-current-inner-background-color, rgba(3, 43, 70, 0.2));
+        background-image: var(--terra-application-navigation-tab-current-inner-background-image, linear-gradient(to right, #0e6ea7 0%, #1889ca 18%, #3797d0 50%, #1889ca 82%, #0e6ea7 100%));
+        background-size: var(--terra-application-navigation-tab-current-inner-background-size, 100% 5px);
+        box-shadow: none;
+        text-shadow: none;
+      }
+
+      &:last-of-type {
+        box-shadow: var(--terra-application-navigation-tab-current-last-box-shadow, inset 1px 0 0 0 #032b46, inset 2px 0 0 0 #116ba3, inset -1px 0 0 0 #116ba3, inset -2px 0 0 0 #032b46);
+      }
+    }
+
+    &[data-focus-styles-enabled='true']:focus {
+      .tab-inner {
+        background-color: var(--terra-application-navigation-tab-focus-background-color, transparent);
+        outline: var(--terra-application-navigation-tab-focus-outline, 2px dashed #fff);
+        outline-offset: var(--terra-application-navigation-tab-focus-outline-offset, -5px);
+        z-index: 5;
+      }
+    }
+  }
+
+  .is-placeholder {
+    overflow: hidden;
+    padding-left: 0;
+    padding-right: 0;
+    visibility: hidden;
+    width: 0;
+  }
+
+  .is-custom {
+    padding: 0;
+
+    .tab-inner {
+      padding: 0;
+    }
+  }
+
+  .has-count {
+    .tab-inner {
+      padding-bottom: 0.2857142857rem;
+      padding-top: 2rem;
+    }
+  }
+
+  .tab-count {
+    position: absolute;
+    right: 50%;
+    top: 0.7143rem;
+    transform: translate3d(50%, 0, 0);
+  }
+}

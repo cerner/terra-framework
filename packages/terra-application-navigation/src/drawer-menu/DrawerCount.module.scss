@@ -1,0 +1,13 @@
+:local {
+  .count {
+    background-color: var(--terra-application-navigation-drawer-count-background-color, #ffda6c);
+    border: var(--terra-application-navigation-drawer-count-border, 1px solid #ffb20b);
+    border-radius: 2.143rem;
+    color: var(--terra-application-navigation-drawer-count-color, #000);
+    flex: 0 0 auto;
+    font-size: 0.8571rem;
+    font-weight: normal;
+    margin-left: 0.3571rem;
+    padding: 0 0.4286rem;
+  }
+}

@@ -4,13 +4,23 @@ Changelog
 Unreleased
 ----------
 
+5.8.1 - (July 23, 2019)
+------------------
+* a completely unremarkable update because lerna be lerna
+
+5.8.0 - (July 23, 2019)
+------------------
+### Changed
+* Normalized terra-breakpoints dependency version to match other terra-framework packages
+
 5.7.0 - (July 16, 2019)
 ------------------
 ### Added
 * Added documentation on required peerDependencies
 
-### Changes
+### Changed
 * Removed Ignore Axe Rules from wdio tests.
+* Add wait to spec tests to pass.
 
 5.6.0 - (July 10, 2019)
 ------------------

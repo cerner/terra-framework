@@ -16,7 +16,8 @@
 | browserslist-config-terra | ^1.0.0 | -- | Terra Browserslist Shared Config |
 | check-installed-dependencies | ^1.0.0 | -- | Check if the currently installed packages match package.json |
 | core-js | ^3.1.3 | -- | Standard library |
-| danger | ^7.0.0 | -- | Unit tests for Team Culture |
+| cross-env | ^5.2.0 | | |
+| danger | ^9.1.0 | -- | Unit tests for Team Culture |
 | enzyme | ^3.3.0 | -- | JavaScript Testing utilities for React |
 | enzyme-adapter-react-16 | ^1.1.1 | ^16.0.0-0 | JavaScript Testing utilities for React |
 | enzyme-to-json | ^3.2.2 | -- | convert enzyme wrapper to a format compatible with Jest snapshot |

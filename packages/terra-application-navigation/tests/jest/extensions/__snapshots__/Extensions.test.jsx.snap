@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Extensions should render default element 1`] = `
+<Fragment>
+  <div
+    className="extensions-row"
+  />
+  <Popup
+    attachmentBehavior="auto"
+    boundingRef={null}
+    classNameArrow={null}
+    classNameContent={null}
+    classNameOverlay={null}
+    contentAttachment="top center"
+    contentHeight="auto"
+    contentWidth="320"
+    isArrowDisplayed={true}
+    isContentFocusDisabled={true}
+    isHeaderDisabled={false}
+    isOpen={false}
+    onRequestClose={[Function]}
+    targetRef={[Function]}
+  >
+    <PopupMenu
+      isHeightBounded={false}
+      menuItems={Array []}
+      onSelectMenuItem={[Function]}
+      role="menu"
+      showSelections={false}
+      title="Terra.applicationNavigation.extensions.rollupMenuHeaderTitle"
+    />
+  </Popup>
+</Fragment>
+`;
+
+exports[`Extensions should render prop data 1`] = `
+<Fragment>
+  <div
+    className="extensions-row"
+  >
+    <Extension
+      icon={
+        <span>
+          my icon
+        </span>
+      }
+      key="my-test-key"
+      notificationCount={0}
+      onSelect={[Function]}
+      text="test-text"
+    />
+  </div>
+  <Popup
+    attachmentBehavior="auto"
+    boundingRef={null}
+    classNameArrow={null}
+    classNameContent={null}
+    classNameOverlay={null}
+    contentAttachment="top right"
+    contentHeight="auto"
+    contentWidth="320"
+    isArrowDisplayed={true}
+    isContentFocusDisabled={true}
+    isHeaderDisabled={false}
+    isOpen={false}
+    onRequestClose={[Function]}
+    targetAttachment="bottom center"
+    targetRef={[Function]}
+  >
+    <PopupMenu
+      isHeightBounded={false}
+      menuItems={Array []}
+      onSelectMenuItem={[Function]}
+      role="menu"
+      showSelections={false}
+      title="Terra.applicationNavigation.extensions.rollupMenuHeaderTitle"
+    />
+  </Popup>
+</Fragment>
+`;
