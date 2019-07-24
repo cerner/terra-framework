@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Update main key in package.json to point to `lib/FormValidationUtil.js`
 
 1.4.1 - (July 23, 2019)
 ------------------
