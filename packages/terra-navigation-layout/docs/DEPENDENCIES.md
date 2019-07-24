@@ -5,7 +5,7 @@
 |-|-|-|-|
 | classnames | ^2.2.5 | -- | A simple utility for conditionally joining classNames together |
 | prop-types | ^15.5.8 | -- | Runtime type checking for React props and similar objects. |
-| terra-layout | ^4.5.0 | ^16.8.5 | Provides a responsive starting point for the positioning of application components. |
+| terra-layout | ^4.7.0 | ^16.8.5 | Provides a responsive starting point for the positioning of application components. |
 
 ## devDependencies
 | Dependency | Version | React Version | Description |

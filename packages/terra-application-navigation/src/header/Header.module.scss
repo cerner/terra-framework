@@ -1,0 +1,118 @@
+:local {
+  .header {
+    align-content: center;
+    align-items: center;
+    background-color: var(--terra-application-navigation-header-background-color, #014979);
+    background-image: var(--terra-application-navigation-header-background-image, none);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding-left: 1.429rem;
+    padding-right: 1.429rem;
+    position: relative;
+    user-select: none;
+    z-index: 5001;
+  }
+
+  .title-container {
+    color: var(--terra-application-navigation-header-title-color, rgba(255, 255, 255, 0.9));
+    flex: 0 0 auto;
+    max-width: 30%;
+    position: relative;
+    user-select: none;
+
+    .headline,
+    .subline,
+    .title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .headline,
+    .subline {
+      font-size: 1rem;
+    }
+
+    .headline {
+      font-weight: 500;
+      margin-bottom: -0.2857rem;
+    }
+
+    .subline {
+      margin-bottom: 0.2143rem;
+      margin-top: -0.3571rem;
+    }
+        
+    .title {
+      font-size: 1.429rem;
+      font-weight: 300;
+    }
+  }
+
+  .main-navigation-container {
+    flex: 1 1 auto;
+    min-width: 20%;
+    overflow: hidden;
+    padding-left: 1.143rem;
+    position: relative;
+  }
+
+  .extensions-container {
+    flex: 0 1 auto;
+    max-width: 25%;
+    padding-left: 1.143rem;
+    position: relative;
+  }
+
+  .utilities-container {
+    flex: 0 0 auto;
+    max-width: 25%;
+    padding-left: 1.143rem;
+    position: relative;
+  }
+
+  .skip-content-button {
+    clip: rect(0, 0, 0, 0);
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 0;
+
+    &:focus {
+      background-color: var(--terra-application-navigation-header-skip-focus-background-color, #383f42);
+      border: var(--terra-application-navigation-header-skip-focus-border, 2px solid #000);
+      box-shadow: var(--terra-application-navigation-header-skip-focus-box-shadow, 0 0 20px -5px #000, inset 0 0 0 1px rgba(255, 255, 255, 0.5));
+      box-sizing: border-box;
+      clip: auto;
+      color: var(--terra-application-navigation-header-skip-focus-color, #fff);
+      font-family: inherit;
+      font-size: 1rem;
+      height: auto;
+      left: 0;
+      line-height: 1.28571;
+      max-height: 100%;
+      outline: var(--terra-application-navigation-header-skip-focus-outline, 2px dashed #fff);
+      outline-offset: var(--terra-application-navigation-header-skip-focus-outline-offset, -0.71428rem);
+      overflow: auto;
+      padding: 1rem 1.5rem;
+      position: fixed;
+      text-decoration: var(--terra-application-navigation-header-skip-focus-text-decoration, underline);
+      top: 0;
+      width: var(--terra-application-navigation-header-skip-focus-width, 100%);
+      z-index: 20;
+    }
+
+    // Remove the inner border and padding in Firefox.
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+  }
+}

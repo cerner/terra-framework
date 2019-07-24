@@ -1,7 +1,7 @@
 {
   "name": "terra-application-utility",
   "main": "lib/ApplicationUtility.js",
-  "version": "2.16.0",
+  "version": "2.17.1",
   "description": "The Utility is used to disclose a utility menu. There are two versions - a header version and menu version. These should be used with the corresponding `terra-application-header-layout` and `terra-application-menu-layout` components.",
   "repository": {
     "type": "git",
@@ -49,5 +49,6 @@
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest --config ../../jestconfig.js",
     "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"
-  }
+  },
+  "gitHead": "7981071c6f84a0cfdfbd21b81b36cd00ee0756c0"
 }

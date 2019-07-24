@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DrawerCount should render default element 1`] = `
+<div
+  className="count"
+/>
+`;
+
+exports[`DrawerCount should render prop data 1`] = `
+<div
+  className="count"
+>
+  1
+</div>
+`;

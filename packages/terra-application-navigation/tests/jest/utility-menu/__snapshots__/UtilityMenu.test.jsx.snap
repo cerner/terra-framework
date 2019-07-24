@@ -1,0 +1,889 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UtilityMenu should render default element 1`] = `
+<UtilityMenu
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  utilityItems={Array []}
+>
+  <PopupMenu
+    footerText="Terra.applicationNavigation.utilityMenu.logout"
+    isHeightBounded={false}
+    menuItems={Array []}
+    onSelectMenuItem={[Function]}
+    role="listbox"
+    showSelections={false}
+    title="Terra.applicationNavigation.utilityMenu.headerTitle"
+  >
+    <ContentContainer
+      className="container"
+      fill={false}
+      footer={<ActionFooter />}
+      header={
+        <ActionHeader
+          aria-hidden={true}
+          level={1}
+          title="Terra.applicationNavigation.utilityMenu.headerTitle"
+        />
+      }
+    >
+      <div
+        className="content-container-static container"
+      >
+        <div
+          className="header"
+        >
+          <ActionHeader
+            aria-hidden={true}
+            level={1}
+            title="Terra.applicationNavigation.utilityMenu.headerTitle"
+          >
+            <ActionHeaderContainer
+              aria-hidden={true}
+              endContent={null}
+              level={1}
+              startContent={null}
+              title="Terra.applicationNavigation.utilityMenu.headerTitle"
+            >
+              <div
+                aria-hidden={true}
+                className="flex-header"
+              >
+                <div
+                  className="flex-fill"
+                >
+                  <div
+                    className="title-container"
+                  >
+                    <h1
+                      className="title"
+                    >
+                      Terra.applicationNavigation.utilityMenu.headerTitle
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </ActionHeaderContainer>
+          </ActionHeader>
+        </div>
+        <div
+          className="main"
+        >
+          <Scroll
+            className="normalizer"
+          >
+            <div
+              className="scroll normalizer"
+            >
+              <div
+                className="content"
+              >
+                <ul
+                  aria-label="Terra.applicationNavigation.utilityMenu.headerTitle"
+                  className="utility-list"
+                  onKeyDown={[Function]}
+                  role="listbox"
+                  tabIndex="0"
+                />
+              </div>
+            </div>
+          </Scroll>
+        </div>
+        <div
+          className="footer"
+        >
+          <ActionFooter>
+            <BlockActionFooter
+              className="action-footer-end"
+            >
+              <div
+                className="block-action-footer action-footer-end"
+              />
+            </BlockActionFooter>
+          </ActionFooter>
+        </div>
+      </div>
+    </ContentContainer>
+  </PopupMenu>
+</UtilityMenu>
+`;
+
+exports[`UtilityMenu should render with function callbacks 1`] = `
+<UtilityMenu
+  hero={
+    <div>
+      my test hero
+    </div>
+  }
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  onSelectHelp={[MockFunction]}
+  onSelectLogout={[MockFunction]}
+  onSelectSettings={[MockFunction]}
+  onSelectUtilityItem={[MockFunction]}
+  userConfig={
+    Object {
+      "detail": "user-detail",
+      "imageSrc": "user-src",
+      "initials": "user-initials",
+      "name": "user-name",
+    }
+  }
+  utilityItems={
+    Array [
+      Object {
+        "icon": <span>
+          my icon
+        </span>,
+        "key": "my-test-key-2",
+        "text": "test-text-2",
+      },
+    ]
+  }
+>
+  <PopupMenu
+    customContent={
+      <div>
+        my test hero
+      </div>
+    }
+    footerText="Terra.applicationNavigation.utilityMenu.logout"
+    isHeightBounded={false}
+    menuItems={
+      Array [
+        Object {
+          "icon": <span>
+            my icon
+          </span>,
+          "key": "my-test-key-2",
+          "text": "test-text-2",
+        },
+        Object {
+          "icon": <IconSettings
+            data-name="Layer 1"
+            viewBox="0 0 48 48"
+            xmlns="http://www.w3.org/2000/svg"
+          />,
+          "key": "terra-application-navigation.utility-menu.settings",
+          "text": "Terra.applicationNavigation.utilityMenu.settings",
+        },
+        Object {
+          "icon": <IconQuestionOutline
+            viewBox="0 0 48 48"
+            xmlns="http://www.w3.org/2000/svg"
+          />,
+          "key": "terra-application-navigation.utility-menu.help",
+          "text": "Terra.applicationNavigation.utilityMenu.help",
+        },
+      ]
+    }
+    onSelectFooterItem={[MockFunction]}
+    onSelectMenuItem={[Function]}
+    role="listbox"
+    showSelections={false}
+    title="Terra.applicationNavigation.utilityMenu.headerTitle"
+    userConfig={
+      Object {
+        "detail": "user-detail",
+        "imageSrc": "user-src",
+        "initials": "user-initials",
+        "name": "user-name",
+      }
+    }
+  >
+    <ContentContainer
+      className="container"
+      fill={false}
+      footer={
+        <ActionFooter
+          end={
+            <Button
+              isBlock={false}
+              isCompact={false}
+              isDisabled={false}
+              isIconOnly={false}
+              isReversed={false}
+              onClick={[MockFunction]}
+              onKeyDown={[Function]}
+              refCallback={[Function]}
+              text="Terra.applicationNavigation.utilityMenu.logout"
+              type="button"
+              variant="neutral"
+            />
+          }
+        />
+      }
+      header={
+        <ActionHeader
+          aria-hidden={true}
+          level={1}
+          title="Terra.applicationNavigation.utilityMenu.headerTitle"
+        />
+      }
+    >
+      <div
+        className="content-container-static container"
+      >
+        <div
+          className="header"
+        >
+          <ActionHeader
+            aria-hidden={true}
+            level={1}
+            title="Terra.applicationNavigation.utilityMenu.headerTitle"
+          >
+            <ActionHeaderContainer
+              aria-hidden={true}
+              endContent={null}
+              level={1}
+              startContent={null}
+              title="Terra.applicationNavigation.utilityMenu.headerTitle"
+            >
+              <div
+                aria-hidden={true}
+                className="flex-header"
+              >
+                <div
+                  className="flex-fill"
+                >
+                  <div
+                    className="title-container"
+                  >
+                    <h1
+                      className="title"
+                    >
+                      Terra.applicationNavigation.utilityMenu.headerTitle
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </ActionHeaderContainer>
+          </ActionHeader>
+        </div>
+        <div
+          className="main"
+        >
+          <Scroll
+            className="normalizer"
+          >
+            <div
+              className="scroll normalizer"
+            >
+              <div
+                className="content"
+              >
+                <div
+                  className="custom-content-container"
+                >
+                  <div>
+                    my test hero
+                  </div>
+                </div>
+                <PopupMenuUser
+                  userConfig={
+                    Object {
+                      "detail": "user-detail",
+                      "imageSrc": "user-src",
+                      "initials": "user-initials",
+                      "name": "user-name",
+                    }
+                  }
+                >
+                  <div
+                    className="utility-user-layout"
+                  >
+                    <div
+                      className="avatar-container"
+                    >
+                      <div
+                        className="avatar-outline"
+                      />
+                      <Avatar
+                        alt="user-name"
+                        color="auto"
+                        image="user-src"
+                        initials="user-initials"
+                        isAriaHidden={false}
+                        isDeceased={false}
+                        size="1.174rem"
+                      >
+                        <div
+                          className="avatar three image"
+                          style={
+                            Object {
+                              "fontSize": "1.174rem",
+                            }
+                          }
+                        >
+                          <Image
+                            alt="user-name"
+                            className="image"
+                            isFluid={false}
+                            onError={[Function]}
+                            placeholder={
+                              <span
+                                alt="user-name"
+                                aria-hidden={false}
+                                aria-label="user-name"
+                                className="icon user"
+                                role="img"
+                              />
+                            }
+                            src="user-src"
+                            variant="default"
+                          >
+                            <div>
+                              <div
+                                className="hidden"
+                              >
+                                <img
+                                  alt="user-name"
+                                  className="image default image"
+                                  onError={[Function]}
+                                  onLoad={[Function]}
+                                  src="user-src"
+                                />
+                              </div>
+                              <div>
+                                <span
+                                  alt="user-name"
+                                  aria-hidden={false}
+                                  aria-label="user-name"
+                                  className="icon user"
+                                  role="img"
+                                />
+                              </div>
+                            </div>
+                          </Image>
+                        </div>
+                      </Avatar>
+                    </div>
+                    <div
+                      className="info-container"
+                    >
+                      <div
+                        aria-hidden={true}
+                        className="name"
+                      >
+                        user-name
+                      </div>
+                      <div
+                        className="detail"
+                      >
+                        user-detail
+                      </div>
+                    </div>
+                  </div>
+                </PopupMenuUser>
+                <ul
+                  aria-label="Terra.applicationNavigation.utilityMenu.headerTitle"
+                  className="utility-list"
+                  onKeyDown={[Function]}
+                  role="listbox"
+                  tabIndex="0"
+                >
+                  <PopupMenuListItem
+                    icon={
+                      <span>
+                        my icon
+                      </span>
+                    }
+                    key="my-test-key-2"
+                    loopFocus={[Function]}
+                    onSelect={[Function]}
+                    parentRole="listbox"
+                    showSelections={false}
+                    text="test-text-2"
+                  >
+                    <li
+                      className="item"
+                      data-focus-styles-enabled={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseDown={[Function]}
+                      role="option"
+                      tabIndex="0"
+                    >
+                      <div
+                        className="icon"
+                      >
+                        <span>
+                          my icon
+                        </span>
+                      </div>
+                      <div
+                        className="text"
+                      >
+                        test-text-2
+                      </div>
+                    </li>
+                  </PopupMenuListItem>
+                  <PopupMenuListItem
+                    icon={
+                      <IconSettings
+                        data-name="Layer 1"
+                        viewBox="0 0 48 48"
+                        xmlns="http://www.w3.org/2000/svg"
+                      />
+                    }
+                    key="terra-application-navigation.utility-menu.settings"
+                    loopFocus={[Function]}
+                    onSelect={[Function]}
+                    parentRole="listbox"
+                    showSelections={false}
+                    text="Terra.applicationNavigation.utilityMenu.settings"
+                  >
+                    <li
+                      className="item"
+                      data-focus-styles-enabled={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseDown={[Function]}
+                      role="option"
+                      tabIndex="0"
+                    >
+                      <div
+                        className="icon"
+                      >
+                        <IconSettings
+                          data-name="Layer 1"
+                          viewBox="0 0 48 48"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <IconBase
+                            ariaLabel={null}
+                            data-name="Layer 1"
+                            focusable="false"
+                            height="1em"
+                            isBidi={false}
+                            isSpin={false}
+                            viewBox="0 0 48 48"
+                            width="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              className="tui-Icon icon"
+                              data-name="Layer 1"
+                              focusable="false"
+                              height="1em"
+                              viewBox="0 0 48 48"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M48 27v-6h-7.2a16.37 16.37 0 00-2.8-6.8l5-5L38.8 5l-5 5A18 18 0 0027 7.1V0h-6v7.1a16.37 16.37 0 00-6.8 2.8l-5-5-4.3 4.3 5 5A17.82 17.82 0 007.1 21H0v6h7.2a16.37 16.37 0 002.8 6.8l-5.1 5.1 4.2 4.2 5.1-5.1a17.82 17.82 0 006.8 2.8V48h6v-7.2a16.37 16.37 0 006.8-2.8l5.1 5.1 4.2-4.2-5.1-5.1a16.37 16.37 0 002.8-6.8zm-35.1-3.1A11.1 11.1 0 1124 35a11.14 11.14 0 01-11.1-11.1z"
+                              />
+                            </svg>
+                          </IconBase>
+                        </IconSettings>
+                      </div>
+                      <div
+                        className="text"
+                      >
+                        Terra.applicationNavigation.utilityMenu.settings
+                      </div>
+                    </li>
+                  </PopupMenuListItem>
+                  <PopupMenuListItem
+                    icon={
+                      <IconQuestionOutline
+                        viewBox="0 0 48 48"
+                        xmlns="http://www.w3.org/2000/svg"
+                      />
+                    }
+                    key="terra-application-navigation.utility-menu.help"
+                    loopFocus={[Function]}
+                    onSelect={[Function]}
+                    parentRole="listbox"
+                    showSelections={false}
+                    text="Terra.applicationNavigation.utilityMenu.help"
+                  >
+                    <li
+                      className="item"
+                      data-focus-styles-enabled={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseDown={[Function]}
+                      role="option"
+                      tabIndex="0"
+                    >
+                      <div
+                        className="icon"
+                      >
+                        <IconQuestionOutline
+                          viewBox="0 0 48 48"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <IconBase
+                            ariaLabel={null}
+                            focusable="false"
+                            height="1em"
+                            isBidi={false}
+                            isSpin={false}
+                            viewBox="0 0 48 48"
+                            width="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              className="tui-Icon icon"
+                              focusable="false"
+                              height="1em"
+                              viewBox="0 0 48 48"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M26 36h-4v-4h4v4zm4.6-12.8c-.6.7-1.4 1.4-2.2 1.9-1.2.8-2.4 1-2.4 1.8V28h-4v-.8c0-1.8.9-3.5 2.4-4.5.6-.3 1.1-.6 1.6-.9 1.6-.8 2.2-2.7 1.4-4.3-.6-1.1-1.7-1.7-2.9-1.7H24c-1.6 0-3 1.3-3.2 2.9v.3h-4c-.1-3.1 2.1-5.9 5.1-6.6.9-.3 1.9-.4 2.8-.4h.2c3.8-.2 7 2.8 7.2 6.6.1 1.7-.5 3.3-1.5 4.6zM24 2c12.1 0 22 9.9 22 22s-9.9 22-22 22S2 36.1 2 24 11.9 2 24 2m0-2C10.7 0 0 10.7 0 24s10.7 24 24 24 24-10.7 24-24S37.3 0 24 0z"
+                              />
+                            </svg>
+                          </IconBase>
+                        </IconQuestionOutline>
+                      </div>
+                      <div
+                        className="text"
+                      >
+                        Terra.applicationNavigation.utilityMenu.help
+                      </div>
+                    </li>
+                  </PopupMenuListItem>
+                </ul>
+              </div>
+            </div>
+          </Scroll>
+        </div>
+        <div
+          className="footer"
+        >
+          <ActionFooter
+            end={
+              <Button
+                isBlock={false}
+                isCompact={false}
+                isDisabled={false}
+                isIconOnly={false}
+                isReversed={false}
+                onClick={[MockFunction]}
+                onKeyDown={[Function]}
+                refCallback={[Function]}
+                text="Terra.applicationNavigation.utilityMenu.logout"
+                type="button"
+                variant="neutral"
+              />
+            }
+          >
+            <BlockActionFooter
+              className="action-footer-end"
+            >
+              <div
+                className="block-action-footer with-actions action-footer-end"
+              >
+                <div
+                  className="end-actions"
+                >
+                  <Button
+                    isBlock={false}
+                    isCompact={false}
+                    isDisabled={false}
+                    isIconOnly={false}
+                    isReversed={false}
+                    onClick={[MockFunction]}
+                    onKeyDown={[Function]}
+                    refCallback={[Function]}
+                    text="Terra.applicationNavigation.utilityMenu.logout"
+                    type="button"
+                    variant="neutral"
+                  >
+                    <button
+                      aria-disabled={false}
+                      className="button neutral"
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[MockFunction]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      type="button"
+                    >
+                      <span
+                        className="button-label text-only"
+                      >
+                        <span
+                          className=""
+                        >
+                          Terra.applicationNavigation.utilityMenu.logout
+                        </span>
+                      </span>
+                    </button>
+                  </Button>
+                </div>
+              </div>
+            </BlockActionFooter>
+          </ActionFooter>
+        </div>
+      </div>
+    </ContentContainer>
+  </PopupMenu>
+</UtilityMenu>
+`;
+
+exports[`UtilityMenu should render with skip callback 1`] = `
+<UtilityMenu
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  onSelectLogout={[MockFunction]}
+  utilityItems={Array []}
+>
+  <PopupMenu
+    footerText="Terra.applicationNavigation.utilityMenu.logout"
+    isHeightBounded={false}
+    menuItems={Array []}
+    onSelectFooterItem={[MockFunction]}
+    onSelectMenuItem={[Function]}
+    role="listbox"
+    showSelections={false}
+    title="Terra.applicationNavigation.utilityMenu.headerTitle"
+  >
+    <ContentContainer
+      className="container"
+      fill={false}
+      footer={
+        <ActionFooter
+          end={
+            <Button
+              isBlock={false}
+              isCompact={false}
+              isDisabled={false}
+              isIconOnly={false}
+              isReversed={false}
+              onClick={[MockFunction]}
+              onKeyDown={[Function]}
+              refCallback={[Function]}
+              text="Terra.applicationNavigation.utilityMenu.logout"
+              type="button"
+              variant="neutral"
+            />
+          }
+        />
+      }
+      header={
+        <ActionHeader
+          aria-hidden={true}
+          level={1}
+          title="Terra.applicationNavigation.utilityMenu.headerTitle"
+        />
+      }
+    >
+      <div
+        className="content-container-static container"
+      >
+        <div
+          className="header"
+        >
+          <ActionHeader
+            aria-hidden={true}
+            level={1}
+            title="Terra.applicationNavigation.utilityMenu.headerTitle"
+          >
+            <ActionHeaderContainer
+              aria-hidden={true}
+              endContent={null}
+              level={1}
+              startContent={null}
+              title="Terra.applicationNavigation.utilityMenu.headerTitle"
+            >
+              <div
+                aria-hidden={true}
+                className="flex-header"
+              >
+                <div
+                  className="flex-fill"
+                >
+                  <div
+                    className="title-container"
+                  >
+                    <h1
+                      className="title"
+                    >
+                      Terra.applicationNavigation.utilityMenu.headerTitle
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </ActionHeaderContainer>
+          </ActionHeader>
+        </div>
+        <div
+          className="main"
+        >
+          <Scroll
+            className="normalizer"
+          >
+            <div
+              className="scroll normalizer"
+            >
+              <div
+                className="content"
+              >
+                <ul
+                  aria-label="Terra.applicationNavigation.utilityMenu.headerTitle"
+                  className="utility-list"
+                  onKeyDown={[Function]}
+                  role="listbox"
+                  tabIndex="0"
+                />
+              </div>
+            </div>
+          </Scroll>
+        </div>
+        <div
+          className="footer"
+        >
+          <ActionFooter
+            end={
+              <Button
+                isBlock={false}
+                isCompact={false}
+                isDisabled={false}
+                isIconOnly={false}
+                isReversed={false}
+                onClick={[MockFunction]}
+                onKeyDown={[Function]}
+                refCallback={[Function]}
+                text="Terra.applicationNavigation.utilityMenu.logout"
+                type="button"
+                variant="neutral"
+              />
+            }
+          >
+            <BlockActionFooter
+              className="action-footer-end"
+            >
+              <div
+                className="block-action-footer with-actions action-footer-end"
+              >
+                <div
+                  className="end-actions"
+                >
+                  <Button
+                    isBlock={false}
+                    isCompact={false}
+                    isDisabled={false}
+                    isIconOnly={false}
+                    isReversed={false}
+                    onClick={[MockFunction]}
+                    onKeyDown={[Function]}
+                    refCallback={[Function]}
+                    text="Terra.applicationNavigation.utilityMenu.logout"
+                    type="button"
+                    variant="neutral"
+                  >
+                    <button
+                      aria-disabled={false}
+                      className="button neutral"
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[MockFunction]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      type="button"
+                    >
+                      <span
+                        className="button-label text-only"
+                      >
+                        <span
+                          className=""
+                        >
+                          Terra.applicationNavigation.utilityMenu.logout
+                        </span>
+                      </span>
+                    </button>
+                  </Button>
+                </div>
+              </div>
+            </BlockActionFooter>
+          </ActionFooter>
+        </div>
+      </div>
+    </ContentContainer>
+  </PopupMenu>
+</UtilityMenu>
+`;

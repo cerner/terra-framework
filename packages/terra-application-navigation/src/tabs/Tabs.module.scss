@@ -1,0 +1,18 @@
+:local {
+  .tabs-container {
+    display: flex;
+    flex: 0 0 auto;
+    flex-wrap: nowrap;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .tabs-container.is-calculating {
+    visibility: hidden;
+  }
+}
