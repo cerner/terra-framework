@@ -250,7 +250,7 @@ class DateTimePicker extends React.Component {
         value = value.concat(this.timeValue);
       }
 
-      value.trim();
+      value = value.trim();
 
       let iSOString = '';
 
