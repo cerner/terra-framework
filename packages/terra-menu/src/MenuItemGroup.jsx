@@ -58,8 +58,8 @@ class MenuItemGroup extends React.Component {
       return React.cloneElement(child, {
         isSelectable,
         isSelected: this.state.selectedIndex === index,
-        onClick: Utils.wrappedOnClickForItem(child.props.onKeyDown, this.handleItemSelection, { index }),
-        onKeyDown: Utils.wrappedOnKeyDownForItem(child.props.onClick, this.handleItemSelection, { index }),
+        onClick: Utils.wrappedOnClickForItem(child.props.onClick, this.handleItemSelection, { index }),
+        onKeyDown: Utils.wrappedOnKeyDownForItem(child.props.onKeyDown, this.handleItemSelection, { index }),
       });
     });
   }
