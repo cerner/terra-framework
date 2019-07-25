@@ -1,6 +1,6 @@
 {
   "name": "terra-form-validation",
-  "main": "docs/README.md",
+  "main": "lib/FormValidationUtil.js",
   "version": "1.4.1",
   "description": "Form Validation Examples for Terra",
   "repository": {
