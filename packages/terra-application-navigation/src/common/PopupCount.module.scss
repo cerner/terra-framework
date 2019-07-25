@@ -1,0 +1,14 @@
+:local {
+  .popup-count {
+    background-color: var(--terra-application-navigation-popup-count-background-color, #fff3ce);
+    border: var(--terra-application-navigation-popup-count-border, 1px solid #ffb20b);
+    border-radius: 2.143rem;
+    color: var(--terra-application-navigation-popup-count-color, #000);
+    flex: 0 0 auto;
+    font-size: 0.8571rem;
+    font-weight: normal;
+    line-height: 1.4;
+    margin-left: 0.3571rem;
+    padding: 0.2857rem 0.5rem;
+  }
+}

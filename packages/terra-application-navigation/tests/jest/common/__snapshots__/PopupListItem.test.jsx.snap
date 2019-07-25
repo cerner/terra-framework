@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PopupMenuListItem should render prop data 1`] = `
+<li
+  className="item"
+  data-focus-styles-enabled={true}
+  onBlur={[Function]}
+  onClick={[MockFunction]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  role="menuitemcheckbox"
+  tabIndex="0"
+>
+  <div
+    className="icon"
+  >
+    <div>
+      test
+    </div>
+  </div>
+  <div
+    className="text"
+  >
+    my text
+  </div>
+  <PopupCount
+    className="extension-row-count"
+    isInline={true}
+    value={1}
+  />
+</li>
+`;
+
+exports[`PopupMenuListItem should render with required prop data 1`] = `
+<li
+  className="item"
+  data-focus-styles-enabled={true}
+  onBlur={[Function]}
+  onClick={[MockFunction]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  role="menuitemcheckbox"
+  tabIndex="0"
+>
+  <div
+    className="text"
+  >
+    my text
+  </div>
+</li>
+`;
+
+exports[`PopupMenuListItem should render with selection callback 1`] = `
+<li
+  className="item"
+  data-focus-styles-enabled={true}
+  onBlur={[Function]}
+  onClick={[MockFunction]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  role="menuitemcheckbox"
+  tabIndex="0"
+>
+  <div
+    className="text"
+  >
+    my text
+  </div>
+</li>
+`;
+
+exports[`PopupMenuListItem should render with showSelections 1`] = `
+<li
+  className="item"
+  data-focus-styles-enabled={true}
+  onBlur={[Function]}
+  onClick={[MockFunction]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  role="menuitemcheckbox"
+  tabIndex="0"
+>
+  <div
+    className="selection-icon"
+  >
+    <IconCheckmark
+      data-name="Layer 1"
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+  </div>
+  <div
+    className="text"
+  >
+    my text
+  </div>
+</li>
+`;
+
+exports[`PopupMenuListItem should render without showSelections 1`] = `
+<li
+  className="item"
+  data-focus-styles-enabled={true}
+  onBlur={[Function]}
+  onClick={[MockFunction]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  role="menuitemcheckbox"
+  tabIndex="0"
+>
+  <div
+    className="text"
+  >
+    my text
+  </div>
+</li>
+`;

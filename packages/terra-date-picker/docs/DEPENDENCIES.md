@@ -14,9 +14,9 @@
 | terra-form-field | ^3.1.0 | ^16.8.5 | The Form Field component handles the layout of the label, help text and error text associated with a form element. |
 | terra-form-input | ^2.3.0 | ^16.8.5 | Element for building out inputs in a form. |
 | terra-icon | ^3.1.0 | ^16.8.5 | The terra-icon component is used to visually represent a literal or symbolic object intended to initiate an action, communicate a status, or navigate the workflow. |
-| terra-popup | ^6.4.0 | ^16.8.5 | The Terra Popup is higher order component that launches terra-hookshot positioned content with the ability to display a dynamic arrow. |
+| terra-popup | ^6.7.0 | ^16.8.5 | The Terra Popup is higher order component that launches terra-hookshot positioned content with the ability to display a dynamic arrow. |
 | terra-responsive-element | ^5.0.0 | ^16.8.5 | The terra-responsive-element conditionally renders components based on viewport size |
-| terra-visually-hidden-text | ^2.8.0 | ^16.8.5 | Text that is designed to only be read by a screen reader. |
+| terra-visually-hidden-text | ^2.0.0 | ^16.8.5 | Text that is designed to only be read by a screen reader. |
 
 ## devDependencies
 | Dependency | Version | React Version | Description |

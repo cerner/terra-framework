@@ -3,6 +3,13 @@ Changelog
 
 Unreleased
 ----------
+
+4.8.1 - (July 23, 2019)
+------------------
+* a completely unremarkable update because lerna be lerna
+
+4.8.0 - (July 23, 2019)
+------------------
 ### Changed
 * Removed lint errors for css.
 * Updated react-date-picker to use css modules.
