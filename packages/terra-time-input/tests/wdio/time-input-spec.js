@@ -33,7 +33,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/default-time');
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
-      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      // Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
     });
 
     Terra.it.validatesElement();
@@ -44,7 +44,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/default-time');
       browser.refresh();
       browser.click('#timeInput input[name="terra-time-minute-time-input"]');
-      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name=\'terra-time-minute-time-input\']');
     });
 
     Terra.it.validatesElement();
