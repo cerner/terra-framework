@@ -44,7 +44,18 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
     Terra.it.validatesElement();
   });
 
-  describe('Date Time Picker Twelve Hour Disabled Mobile - Disabled Hour Styles', () => {
+  describe('Date Time Picker Twelve Hour Seconds Mobile - Focus Hour Styles', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-seconds-12-hour-mobile');
+
+      browser.click('//*[@id="terra-time-hour-input"]');
+    });
+
+    Terra.it.validatesElement();
+  });
+
+
+  describe('Date Time Picker Twelve Hour Disabled Mobile - Disabled Styles', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-disabled-12-hour-mobile');
     });
@@ -72,9 +83,21 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
     Terra.it.validatesElement();
   });
 
-  describe('Date Time Picker Twelve Hour Disabled Mobile - Disabled Minute Styles', () => {
+  describe('Date Time Picker Twelve Hour Seconds Mobile - Focus Minute Styles', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-disabled-12-hour-mobile');
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-seconds-12-hour-mobile');
+
+      browser.click('//*[@id="terra-time-minute-input"]');
+    });
+
+    Terra.it.validatesElement();
+  });
+
+  describe('Date Time Picker Twelve Hour Seconds Mobile - Focus Second Styles', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-seconds-12-hour-mobile');
+
+      browser.click('//*[@id="terra-time-second-input"]');
     });
 
     Terra.it.validatesElement();
