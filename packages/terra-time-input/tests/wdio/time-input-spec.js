@@ -33,6 +33,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/default-time');
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
     });
 
     Terra.it.validatesElement();
@@ -43,6 +44,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/default-time');
       browser.refresh();
       browser.click('#timeInput input[name="terra-time-minute-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
     });
 
     Terra.it.validatesElement();
@@ -53,6 +55,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/second-time');
       browser.refresh();
       browser.click('#timeInput input[name="terra-time-second-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
     });
 
     Terra.it.validatesElement();
@@ -63,11 +66,8 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
   describe('Time Input OnChange', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-        document.querySelector('#timeInput input[name="terra-time-second-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('123456');
@@ -80,11 +80,8 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('2');
@@ -98,11 +95,8 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('3');
@@ -115,11 +109,8 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('2');
@@ -132,11 +123,8 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('24');
@@ -149,11 +137,8 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-minute-time-input"]');
       browser.keys('2');
@@ -167,11 +152,8 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-minute-time-input"]');
       browser.keys('6');
@@ -184,11 +166,8 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-minute-time-input"]');
       browser.keys('5');
@@ -201,11 +180,8 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-minute-time-input"]');
       browser.keys('66');
@@ -218,11 +194,8 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-minute-time-input"]');
       browser.keys(['Delete']);
@@ -235,11 +208,8 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-        document.querySelector('#timeInput input[name="terra-time-second-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-second-time-input"]');
       browser.keys('2');
@@ -253,11 +223,8 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-        document.querySelector('#timeInput input[name="terra-time-second-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-second-time-input"]');
       browser.keys('6');
@@ -270,11 +237,8 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-        document.querySelector('#timeInput input[name="terra-time-second-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-second-time-input"]');
       browser.keys('5');
@@ -287,11 +251,8 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-        document.querySelector('#timeInput input[name="terra-time-second-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-second-time-input"]');
       browser.keys('66');
@@ -304,11 +265,8 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-second-time-input"]').style.caretColor = 'transparent';
-        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-second-time-input"]');
       browser.keys(['Delete']);
@@ -321,11 +279,8 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('747');
@@ -338,10 +293,7 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('1223');
@@ -356,11 +308,8 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('1223');
@@ -377,32 +326,32 @@ describe('Time Input onBlur operations', () => {
   describe('Time Input onBlur', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/focus-blur');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+    });
+
+    it('clicks the hour input and onBlur is not triggered', () => {
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-        expect(browser.getText('#blur-count')).to.equal('0');
-        expect(browser.getText('#focus-count')).to.equal('1');
-      });
+      expect(browser.getText('#blur-count')).to.equal('0');
+      expect(browser.getText('#focus-count')).to.equal('1');
+    });
 
-      it('tabs to the minute input and onBlur is not triggered', () => {
-        browser.keys('Tab');
-        expect(browser.getText('#blur-count')).to.equal('0');
-        expect(browser.getText('#focus-count')).to.equal('1');
-      });
+    it('tabs to the minute input and onBlur is not triggered', () => {
+      browser.keys('Tab');
+      expect(browser.getText('#blur-count')).to.equal('0');
+      expect(browser.getText('#focus-count')).to.equal('1');
+    });
 
-      it('tabs to the meridiem and onBlur is not triggered', () => {
-        browser.keys('Tab');
-        expect(browser.getText('#blur-count')).to.equal('0');
-        expect(browser.getText('#focus-count')).to.equal('1');
-      });
+    it('tabs to the meridiem and onBlur is not triggered', () => {
+      browser.keys('Tab');
+      expect(browser.getText('#blur-count')).to.equal('0');
+      expect(browser.getText('#focus-count')).to.equal('1');
+    });
 
-      it('tabs out of the component and onBlur is triggered', () => {
-        browser.keys('Tab');
-        expect(browser.getText('#blur-count')).to.equal('1');
-        expect(browser.getText('#focus-count')).to.equal('1');
-      });
+    it('tabs out of the component and onBlur is triggered', () => {
+      browser.keys('Tab');
+      expect(browser.getText('#blur-count')).to.equal('1');
+      expect(browser.getText('#focus-count')).to.equal('1');
     });
   });
 });
@@ -412,10 +361,7 @@ describe('Time Input up and down arrow operations', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('23');
@@ -430,10 +376,7 @@ describe('Time Input up and down arrow operations', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('00');
@@ -448,10 +391,7 @@ describe('Time Input up and down arrow operations', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys(['ArrowUp', 'ArrowUp']);
@@ -464,10 +404,7 @@ describe('Time Input up and down arrow operations', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('23');

@@ -33,11 +33,8 @@ Terra.describeViewports('Time Input Twelve Hour Mobile', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/mobile');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
     });
@@ -50,11 +47,8 @@ Terra.describeViewports('Time Input Twelve Hour Mobile', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/mobile');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-minute-time-input"]');
     });
@@ -67,10 +61,7 @@ Terra.describeViewports('Time Input Twelve Hour Mobile', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/mobile');
       browser.refresh();
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInputWithSecond input[name="terra-time-second-time-input-with-second"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInputWithSecond input[name="terra-time-second-time-input-with-second"]');
 
       browser.click('#timeInputWithSecond input[name="terra-time-second-time-input-with-second"]');
     });
@@ -83,11 +74,7 @@ Terra.describeViewports('Time Input Twelve Hour Mobile', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/mobile');
       browser.refresh();
-
-      browser.execute(() => {
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        document.querySelector('#timeInputWithSecond input[name="terra-time-second-time-input-with-second"]').style.caretColor = 'transparent';
-      });
+      Terra.hideInputCaret('#timeInputWithSecond input[name="terra-time-second-time-input-with-second"]');
 
       browser.click('#timeInputWithSecond input[name="terra-time-second-time-input-with-second"]');
       browser.keys('123456');

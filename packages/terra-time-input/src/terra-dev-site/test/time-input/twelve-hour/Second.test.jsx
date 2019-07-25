@@ -22,15 +22,13 @@ Time Input:
             {this.state.input}
           </h3>
         </div>
-        <div style={{ caretColor: 'transparent' }}>
-          <TimeInput
-            id="timeInput"
-            name="time-input"
-            onChange={this.handleOnChange}
-            variant={TimeUtil.FORMAT_12_HOUR}
-            showSeconds
-          />
-        </div>
+        <TimeInput
+          id="timeInput"
+          name="time-input"
+          onChange={this.handleOnChange}
+          variant={TimeUtil.FORMAT_12_HOUR}
+          showSeconds
+        />
       </div>
     );
   }
