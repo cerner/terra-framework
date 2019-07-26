@@ -1,12 +1,5 @@
 {
   "lerna": "2.1.2",
   "version": "independent",
-  "commands": {
-    "publish": {
-      "ignore": [
-        "*.tgz"
-      ]
-    }
-  },
   "packages": ["packages/*"]
-  }
+}
