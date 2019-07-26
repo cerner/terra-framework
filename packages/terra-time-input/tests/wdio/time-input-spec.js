@@ -33,7 +33,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/default-time');
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
-      // Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
     });
 
     Terra.it.validatesElement();
@@ -66,7 +66,6 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
   describe('Time Input OnChange', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
-      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
       Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
@@ -80,7 +79,6 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
       Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
@@ -95,7 +93,6 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
       Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
@@ -110,7 +107,6 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
       Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('2');
@@ -124,7 +120,6 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
       Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('24');
@@ -138,7 +133,6 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
       Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-minute-time-input"]');
       browser.keys('2');
@@ -152,8 +146,7 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-minute-time-input"]');
       browser.keys('6');
@@ -166,7 +159,6 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
       Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-minute-time-input"]');
@@ -180,8 +172,7 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-minute-time-input"]');
       browser.keys('66');
@@ -209,7 +200,6 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
       Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-      Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-second-time-input"]');
       browser.keys('2');
@@ -223,7 +213,6 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
       Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-second-time-input"]');
@@ -237,7 +226,6 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
       Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-second-time-input"]');
@@ -251,7 +239,6 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
       Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-second-time-input"]');
@@ -265,7 +252,6 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
       Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-second-time-input"]');
@@ -279,8 +265,7 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('747');
@@ -308,12 +293,10 @@ Terra.describeViewports('Time Input onChange operations', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/on-change');
       browser.refresh();
-      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
       Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.keys('1223');
-      browser.click('#timeInput input[name="terra-time-hour-time-input"]');
       browser.click('#timeInput input[name="terra-time-minute-time-input"]');
       browser.keys(['ArrowLeft', 'ArrowRight', 'Delete']);
     });
@@ -326,8 +309,6 @@ describe('Time Input onBlur operations', () => {
   describe('Time Input onBlur', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/focus-blur');
-      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
     });
 
     it('clicks the hour input and onBlur is not triggered', () => {

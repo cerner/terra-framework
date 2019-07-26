@@ -34,7 +34,6 @@ Terra.describeViewports('Time Input Twelve Hour Mobile', ['medium'], () => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/mobile');
       browser.refresh();
       Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
     });
@@ -47,7 +46,6 @@ Terra.describeViewports('Time Input Twelve Hour Mobile', ['medium'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/mobile');
       browser.refresh();
-      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
       Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       browser.click('#timeInput input[name="terra-time-minute-time-input"]');
