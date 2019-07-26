@@ -1,10 +1,6 @@
 import React from 'react';
-import classNames from 'classnames/bind';
 import DateTimePickerExampleTemplate from '../../common/DateTimePickerExampleTemplate';
 import DateTimeUtil from '../../../DateTimeUtils';
-import styles from './DateTimePicker12HourMobile.test.module.scss';
-
-const cx = classNames.bind(styles);
 
 export default class DateTimePicker12HourMobile extends React.Component {
   constructor(props) {
@@ -36,7 +32,7 @@ export default class DateTimePicker12HourMobile extends React.Component {
 
   render() {
     return (
-      <div className={cx('content-wrapper')}>
+      <>
         <h3>Empty Date-Time-Picker</h3>
         <DateTimePickerExampleTemplate
           id="datetimeEmpty"
@@ -68,7 +64,7 @@ export default class DateTimePicker12HourMobile extends React.Component {
           value={this.state.datetime}
           timeVariant={DateTimeUtil.FORMAT_12_HOUR}
         />
-      </div>
+      </>
     );
   }
 }

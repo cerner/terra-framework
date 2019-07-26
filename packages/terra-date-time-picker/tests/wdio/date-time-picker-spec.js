@@ -195,6 +195,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('OnChange Raw', () => {
     before(() => {
       browser.refresh();
+      Terra.hideInputCaret('input[name="terra-date-input"]');
       browser.setValue('input[name="terra-date-input"]', '07/12');
       browser.setValue('input[name="terra-time-hour-input"]', '10');
       browser.setValue('input[name="terra-time-minute-input"]', '30');
