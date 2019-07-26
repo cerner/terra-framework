@@ -4,7 +4,6 @@
   "commands": {
     "publish": {
       "ignore": [
-        "DEPENDENCIES.md",
         "*.tgz"
       ]
     }
