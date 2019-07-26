@@ -1,7 +1,7 @@
 {
   "name": "terra-form-validation",
-  "main": "docs/README.md",
-  "version": "1.3.0",
+  "main": "lib/FormValidationUtil.js",
+  "version": "1.4.1",
   "description": "Form Validation Examples for Terra",
   "repository": {
     "type": "git",
@@ -32,7 +32,7 @@
     "prop-types": "^15.5.8",
     "react-final-form": ">=5.0.2 <7.0.0",
     "terra-button": "^3.3.0",
-    "terra-date-picker": "^3.0.0",
+    "terra-date-picker": "^4.8.1",
     "terra-doc-template": "^2.2.0",
     "terra-form-checkbox": "^3.0.0",
     "terra-form-field": "^3.1.0",
@@ -40,7 +40,6 @@
     "terra-form-radio": "^3.0.0",
     "terra-form-select": "^5.0.0",
     "terra-form-textarea": "^3.0.0",
-    "terra-i18n": "^3.0.0",
     "terra-spacer": "^3.0.0"
   },
   "scripts": {
@@ -51,5 +50,6 @@
     "precompile": "rm -rf lib",
     "test": "npm run test:jest",
     "test:jest": "jest --config ../../jestconfig.js"
-  }
+  },
+  "gitHead": "7981071c6f84a0cfdfbd21b81b36cd00ee0756c0"
 }

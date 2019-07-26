@@ -3,6 +3,20 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Update main key in package.json to point to `lib/FormValidationUtil.js`
+
+1.4.1 - (July 23, 2019)
+------------------
+* a completely unremarkable update because lerna be lerna
+
+1.4.0 - (July 23, 2019)
+------------------
+### Changed
+* Updated terra-date-picker devDependency to v4.7.0
+
+### Removed
+* Removed dev dependency on terra-i18n
 
 1.3.0 - (July 16, 2019)
 ------------------

@@ -7,7 +7,7 @@
 | prop-types | ^15.5.8 | -- | Runtime type checking for React props and similar objects. |
 | resize-observer-polyfill | ^1.4.1 | -- | A polyfill for the Resize Observer API |
 | terra-list | ^4.0.0 | ^16.8.5 | The Terra List is a structural component to arrange content within list/listitems. |
-| terra-visually-hidden-text | ^2.8.0 | ^16.8.5 | Text that is designed to only be read by a screen reader. |
+| terra-visually-hidden-text | ^2.0.0 | ^16.8.5 | Text that is designed to only be read by a screen reader. |
 
 ## devDependencies
 | Dependency | Version | React Version | Description |

@@ -113,6 +113,7 @@ Terra.describeViewports('ApplicationLayout', ['small'], () => {
       browser.click('[data-routing-menu] [data-navigation-side-menu-action-header] button');
       browser.waitForVisible('[data-routing-menu] [data-menu-item="/page_2"]');
       browser.click('[data-routing-menu] [data-menu-item="/page_2"]');
+      browser.pause(150);
 
       Terra.validates.element({ selector: '#application-layout-test' });
     });

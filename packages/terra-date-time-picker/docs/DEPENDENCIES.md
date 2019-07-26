@@ -8,17 +8,17 @@
 | moment | ^2.21.0 | -- | Parse, validate, manipulate, and display dates |
 | moment-timezone | ^0.5.13 | -- | Parse and display moments in any timezone. |
 | prop-types | ^15.5.8 | -- | Runtime type checking for React props and similar objects. |
-| terra-abstract-modal | ^3.4.0 | ^16.8.5 | The abstract modal is a structural component that provides the ability to display portal'd content in a layer above the app. |
+| terra-abstract-modal | ^3.7.0 | ^16.8.5 | The abstract modal is a structural component that provides the ability to display portal'd content in a layer above the app. |
 | terra-button | ^3.3.0 | ^16.8.5 | The terra-button component provides users a way to trigger actions in the UI. |
-| terra-date-picker | ^4.5.0 | ^16.8.5 | The terra-date-picker component provides users a way to enter or select a date from the date picker. |
-| terra-time-input | ^4.3.0 | ^16.8.5 | A controlled input component for entering time. |
+| terra-date-picker | ^4.8.0 | ^16.8.5 | The terra-date-picker component provides users a way to enter or select a date from the date picker. |
+| terra-time-input | ^4.5.0 | ^16.8.5 | A controlled input component for entering time. |
 
 ## devDependencies
 | Dependency | Version | React Version | Description |
 |-|-|-|-|
 | terra-doc-template | ^2.2.0 | ^16.8.5 | Provides an adjustable template for documentation pages. |
 | terra-form-field | ^3.1.0 | ^16.8.5 | The Form Field component handles the layout of the label, help text and error text associated with a form element. |
-| terra-modal-manager | ^6.4.0 | ^16.8.5 | The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal. |
+| terra-modal-manager | ^6.7.0 | ^16.8.5 | The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal. |
 
 ## peerDependencies
 | Dependency | Version | React Version | Description |

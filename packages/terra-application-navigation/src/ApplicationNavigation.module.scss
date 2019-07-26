@@ -1,0 +1,79 @@
+@import '~terra-application/lib/breakpoints/media-queries';
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+[data-count-pulse='true'] {
+  animation: pulse 0.5s 1;
+}
+
+:local {
+  .application-navigation,
+  .drawer-menu-focus-trap-container {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .drawer-menu-container {
+    background-color: var(--terra-application-navigation-drawer-background-color, #f2f3f4);
+    height: 100%;
+    position: relative;
+    top: 0;
+    width: var(--terra-application-navigation-drawer-default-width, calc(100% - 3.571rem));
+    z-index: 0;
+    
+    @include terra-mq-small-up {
+      width: var(--terra-application-navigation-drawer-medium-width, 20rem);
+    }
+  }
+
+  .content-layout {
+    background-color: var(--terra-application-navigation-content-layout-background-color, #fff);
+    box-shadow: var(--terra-application-navigation-content-layout-box-shadow, 7px 0 7px 10px rgba(0, 0, 0, 0.4));
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: transform 0.15s ease-out;
+    width: 100%;
+    z-index: 1;
+
+    > *:first-child {
+      flex: 0 0 auto;
+    }
+  }
+
+  [dir=ltr] .content-layout.drawer-menu-is-open {
+    transform: translate3d(var(--terra-application-navigation-content-layout-default-width, calc(100% - 3.571rem)), 0, 0);
+
+    @include terra-mq-small-up {
+      transform: translate3d(var(--terra-application-navigation-content-layout-medium-width, 20rem), 0, 0);
+    } 
+  }
+
+  [dir=rtl] .content-layout.drawer-menu-is-open {
+    transform: translate3d(calc(-1 * var(--terra-application-navigation-content-layout-default-width, calc(100% - 3.571rem))), 0, 0);
+
+    @include terra-mq-small-up {
+      transform: translate3d(calc(-1 * var(--terra-application-navigation-content-layout-medium-width, 20rem)), 0, 0);
+    } 
+  }
+
+  .main-container {
+    display: block;
+    flex: 1 1 auto;
+    height: 100%;
+    overflow: auto;
+  }
+}

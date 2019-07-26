@@ -1,7 +1,7 @@
 {
   "name": "terra-dialog-modal",
   "main": "lib/DialogModal.js",
-  "version": "3.7.0",
+  "version": "3.8.1",
   "description": "The Dialog Modal allows dynamic height modals. It's limited use case, as dynamic heights break with more complicated DOM structures. If content is too complicated, the terra-modal-manager should be used. The components is placed at an 8000 z-index. The dialog supports release and request focus props similar to terra-popup and terra-date-picker, so it can be presented from another modal with focus.",
   "repository": {
     "type": "git",
@@ -28,18 +28,18 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-abstract-modal": "^3.6.0"
+    "terra-abstract-modal": "^3.7.1"
   },
   "devDependencies": {
     "terra-action-footer": "^2.0.0",
     "terra-action-header": "^2.0.0",
     "terra-button": "^3.3.0",
-    "terra-date-picker": "^4.7.0",
+    "terra-date-picker": "^4.8.1",
     "terra-doc-template": "^2.2.0",
     "terra-form-select": "^5.0.0",
-    "terra-modal-manager": "^6.6.0",
-    "terra-notification-dialog": "^3.6.0",
-    "terra-popup": "^6.6.0"
+    "terra-modal-manager": "^6.7.1",
+    "terra-notification-dialog": "^3.7.1",
+    "terra-popup": "^6.7.1"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
@@ -50,5 +50,6 @@
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest --config ../../jestconfig.js",
     "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"
-  }
+  },
+  "gitHead": "7981071c6f84a0cfdfbd21b81b36cd00ee0756c0"
 }

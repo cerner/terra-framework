@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PopupMenu should render default element 1`] = `
+<ContentContainer
+  className="container"
+  fill={false}
+  footer={<ActionFooter />}
+  header={
+    <ActionHeader
+      aria-hidden={true}
+      level={1}
+    />
+  }
+>
+  <div
+    className="content"
+  >
+    <ul
+      className="utility-list"
+      onKeyDown={[Function]}
+      role="listbox"
+      tabIndex="0"
+    />
+  </div>
+</ContentContainer>
+`;
+
+exports[`PopupMenu should render prop data 1`] = `
+<ContentContainer
+  className="container"
+  fill={false}
+  footer={
+    <ActionFooter
+      end={
+        <Button
+          isBlock={false}
+          isCompact={false}
+          isDisabled={false}
+          isIconOnly={false}
+          isReversed={false}
+          onClick={[MockFunction]}
+          onKeyDown={[Function]}
+          refCallback={[Function]}
+          text="my-footer"
+          type="button"
+          variant="neutral"
+        />
+      }
+    />
+  }
+  header={
+    <ActionHeader
+      aria-hidden={true}
+      level={1}
+      title="my-header"
+    />
+  }
+>
+  <div
+    className="content"
+  >
+    <div
+      className="custom-content-container"
+    >
+      <div>
+        my-custom-content
+      </div>
+    </div>
+    <PopupMenuUser
+      userConfig={
+        Object {
+          "detail": "user-detail",
+          "imageSrc": "user-src",
+          "initials": "user-initials",
+          "name": "user-name",
+        }
+      }
+    />
+    <ul
+      aria-label="my-header"
+      className="utility-list"
+      onKeyDown={[Function]}
+      role="listbox"
+      tabIndex="0"
+    >
+      <PopupMenuListItem
+        icon={
+          <span>
+            my icon
+          </span>
+        }
+        isSelected={true}
+        key="my-test-key"
+        loopFocus={[Function]}
+        notificationCount={2}
+        onSelect={[Function]}
+        parentRole="listbox"
+        showSelections={true}
+        text="test-text"
+      />
+    </ul>
+  </div>
+</ContentContainer>
+`;
+
+exports[`PopupMenu should render with height bounded 1`] = `
+<ContentContainer
+  className="container"
+  fill={true}
+  footer={<ActionFooter />}
+  header={
+    <ActionHeader
+      aria-hidden={true}
+      level={1}
+      title="my-header"
+    />
+  }
+>
+  <div
+    className="content"
+  >
+    <ul
+      aria-label="my-header"
+      className="utility-list"
+      onKeyDown={[Function]}
+      role="listbox"
+      tabIndex="0"
+    />
+  </div>
+</ContentContainer>
+`;
