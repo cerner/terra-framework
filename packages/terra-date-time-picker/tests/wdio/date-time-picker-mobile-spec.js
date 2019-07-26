@@ -18,7 +18,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-value-12-hour-mobile');
 
       browser.click('//*[@id="datetimeValueProvided"]/div[2]/div/div[3]/button[1]');
-      Terra.it.validatesElement();
+      Terra.validates.element();
 
       browser.click('//*[@id="datetimeValueProvided"]/div[2]/div/div[3]/button[2]');
     });
@@ -27,6 +27,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
   describe('Date Time Picker Twelve Hour Value Mobile - Focus Hour Styles', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-value-12-hour-mobile');
+      Terra.hideInputCaret('input[name="terra-time-hour-input"]');
 
       browser.click('//*[@id="terra-time-hour-input"]');
     });
@@ -37,6 +38,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
   describe('Date Time Picker Twelve Hour Empty Mobile - Focus Hour Styles', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-empty-12-hour-mobile');
+      Terra.hideInputCaret('input[name="terra-time-hour-input"]');
 
       browser.click('//*[@id="terra-time-hour-input"]');
     });
@@ -47,6 +49,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
   describe('Date Time Picker Twelve Hour Seconds Mobile - Focus Hour Styles', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-seconds-12-hour-mobile');
+      Terra.hideInputCaret('input[name="terra-time-hour-input"]');
 
       browser.click('//*[@id="terra-time-hour-input"]');
     });
@@ -66,6 +69,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
   describe('Date Time Picker Twelve Hour Value Mobile - Focus Minute Styles', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-value-12-hour-mobile');
+      Terra.hideInputCaret('input[name="terra-time-minute-input"]');
 
       browser.click('//*[@id="terra-time-minute-input"]');
     });
@@ -76,8 +80,17 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
   describe('Date Time Picker Twelve Hour Empty Mobile - Focus Minute Styles', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-empty-12-hour-mobile');
+      Terra.hideInputCaret('input[name="terra-time-minute-input"]');
 
       browser.click('//*[@id="terra-time-minute-input"]');
+    });
+
+    Terra.it.validatesElement();
+  });
+
+  describe('Date Time Picker Twelve Hour Seconds Mobile - Default', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-seconds-12-hour-mobile');
     });
 
     Terra.it.validatesElement();
@@ -86,6 +99,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
   describe('Date Time Picker Twelve Hour Seconds Mobile - Focus Minute Styles', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-seconds-12-hour-mobile');
+      Terra.hideInputCaret('input[name="terra-time-minute-input"]');
 
       browser.click('//*[@id="terra-time-minute-input"]');
     });
@@ -96,6 +110,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
   describe('Date Time Picker Twelve Hour Seconds Mobile - Focus Second Styles', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-seconds-12-hour-mobile');
+      Terra.hideInputCaret('input[name="terra-time-second-input"]');
 
       browser.click('//*[@id="terra-time-second-input"]');
     });
