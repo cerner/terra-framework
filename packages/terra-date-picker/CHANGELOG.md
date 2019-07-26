@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Update tests for dev-site v6
+* Explicitly pull in Error icon from terra-icon instead of pulling from terra-form-field
 
 4.8.1 - (July 23, 2019)
 ------------------
