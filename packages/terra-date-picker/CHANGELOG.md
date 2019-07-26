@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Removed
+* Removed unneeded calls to hide the caret in inputs because `terra-toolkit` now does so automatically.
 
 4.8.1 - (July 23, 2019)
 ------------------
