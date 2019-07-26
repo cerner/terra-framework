@@ -89,7 +89,19 @@ const defaultProps = {
 };
 
 const DrawerMenu = ({
-  titleConfig, userConfig, hero, navigationItems, activeNavigationItemKey, onSelectNavigationItem, onSelectSettings, onSelectHelp, onSelectLogout, utilityItems, onSelectUtilityItem, notifications, intl,
+  titleConfig,
+  userConfig,
+  hero,
+  navigationItems,
+  activeNavigationItemKey,
+  onSelectNavigationItem,
+  onSelectSettings,
+  onSelectHelp,
+  onSelectLogout,
+  utilityItems,
+  onSelectUtilityItem,
+  notifications,
+  intl,
 }) => {
   const titleComponent = titleConfig && !(titleConfig.element || titleConfig.hideTitleWithinDrawerMenu) ? <DrawerMenuTitle titleConfig={titleConfig} /> : undefined;
   const userComponent = userConfig ? <DrawerMenuUser userConfig={userConfig} variant={hero ? 'small' : 'large'} /> : undefined;
