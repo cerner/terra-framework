@@ -120,7 +120,7 @@ class CollapsibleTabs extends React.Component {
       const tab = this.container.children[i];
       const tabMarginLeft = parseInt(window.getComputedStyle(this.menuRef, null).getPropertyValue('margin-left'), 10);
       const tabMarginRight = parseInt(window.getComputedStyle(this.menuRef, null).getPropertyValue('margin-right'), 10);
-      const minWidth = parseInt(window.getComputedStyle(tab, null).getPropertyValue('min-width'), 10);
+      const minWidth = parseFloat(window.getComputedStyle(tab, null).getPropertyValue('min-width'));
       calcMinWidth += (minWidth + tabMarginLeft + tabMarginRight);
       if (calcMinWidth > availableWidth && !(i === childrenCount - 1 && calcMinWidth <= width)) {
         newHideIndex = i;

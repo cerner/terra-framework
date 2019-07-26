@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Fixed tabs overflowing issue.
 
 6.8.0 - (July 30, 2019)
 ------------------
