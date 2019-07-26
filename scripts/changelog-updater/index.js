@@ -52,8 +52,6 @@ packagePaths.forEach((packagePath) => {
 
         const changelogDoc = `Unreleased
 ----------
-### Removed
-* Removed DEPENDENCIES.md file
 
 ${newVersion} - (${releaseDate})
 ------------------`;
