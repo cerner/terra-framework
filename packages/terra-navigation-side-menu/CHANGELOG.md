@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Removed
+* Removed DEPENDENCIES.md file
 
 2.14.1 - (July 23, 2019)
 ------------------

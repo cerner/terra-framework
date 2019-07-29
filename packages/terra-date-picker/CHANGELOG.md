@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Removed
+* Removed DEPENDENCIES.md file
 ### Changed
 * Explicitly pull in Error icon from terra-icon instead of pulling from terra-form-field
 
