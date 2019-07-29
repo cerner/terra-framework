@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Removed
+* Removed DEPENDENCIES.md file
 
 ### Changed
 * Re-generate screenshots with different mouseover positioning.
