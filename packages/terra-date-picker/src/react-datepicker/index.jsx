@@ -56,7 +56,7 @@ class DatePicker extends React.Component {
      */
     adjustDateOnChange: PropTypes.bool,
     /**
-     * Prop to check for same dates.
+     * Whether or not to allow same days to be selected.
      */
     allowSameDay: PropTypes.bool,
     /**
@@ -72,7 +72,7 @@ class DatePicker extends React.Component {
      */
     calendarClassName: PropTypes.string,
     /**
-     * Component to render within date picker.
+     * Components to render within date picker.
      */
     children: PropTypes.node,
     /**
@@ -204,7 +204,7 @@ class DatePicker extends React.Component {
      */
     onChangeRaw: PropTypes.func,
     /**
-     * A callback function to execute when object is in focus.
+     * A callback function to execute when object focused.
      */
     onFocus: PropTypes.func,
     /**
@@ -264,7 +264,7 @@ class DatePicker extends React.Component {
      */
     showWeekNumbers: PropTypes.bool,
     /**
-     * Prop to show a dropsown to select year in date picker calendar .
+     * Prop to show a dropdown to select year in date picker calendar .
      */
     showYearDropdown: PropTypes.bool,
     /**

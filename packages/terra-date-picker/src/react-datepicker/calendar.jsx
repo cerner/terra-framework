@@ -53,7 +53,7 @@ export default class Calendar extends React.Component {
      */
     className: PropTypes.string,
     /**
-     * Component to render within date picker.
+     * Components to render within date picker.
      */
     children: PropTypes.node,
     /**

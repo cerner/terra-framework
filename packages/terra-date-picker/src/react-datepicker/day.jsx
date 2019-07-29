@@ -54,7 +54,7 @@ class Day extends React.Component {
      */
     onMouseEnter: PropTypes.func,
     /**
-     * Previous Date Value  selected .
+     * Previous Date Value selected .
      */
     preSelection: PropTypes.object,
     /**

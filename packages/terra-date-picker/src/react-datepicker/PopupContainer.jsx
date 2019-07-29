@@ -15,7 +15,7 @@ const propTypes = {
    */
   onKeyDown: PropTypes.func,
   /**
-   * A component to be included in the popup container.
+   * Components to be included in the popup container.
    */
   children: PropTypes.node,
 }

@@ -49,7 +49,7 @@ export default class YearDropdown extends React.Component {
      */
     onSelect: PropTypes.func,
     /**
-     * A callback function to execute when a valid year is selected.
+     * A callback function to execute when the year dropdown is open.
      */
     setOpen: PropTypes.func
   }
