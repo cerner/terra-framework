@@ -4,10 +4,25 @@ Changelog
 Unreleased
 ----------
 
+3.7.1 - (July 23, 2019)
+------------------
+* a completely unremarkable update because lerna be lerna
+
+3.7.0 - (July 23, 2019)
+------------------
+### Added
+* Added Node.contains polyfill to better support IE 10 / IE 11
+
+### Fixed
+* Fixed issue in IE 10 when trying to pull value from data attribute
+
 3.6.0 - (July 16, 2019)
 ------------------
 ### Added
+* Added visually hidden text to better indicate beginning and ending of modal dialog
+* Added translations for visually hidden text that indicates beginning and end of modal dialog
 * Added documentation on required peerDependencies
+
 
 3.5.0 - (July 10, 2019)
 ------------------
@@ -15,6 +30,9 @@ Unreleased
 * Added `data-overlay-count` attribute to root document when overlay is opened
 * Added check for `data-modal-count` attribute on root document to track opening and closing of overlays and modals,
   to prevent the removal of the `inert` attribute from the root element if another overlay or abstract modal exists.
+
+### Changed
+* When the abstract modal is open on touch devices, it will now focus on the first interactive DOM element within it. This enables focus to be shifted into the modal correctly when using VoiceOver on iOS.
 
 3.4.0 - (July 2, 2019)
 ------------------

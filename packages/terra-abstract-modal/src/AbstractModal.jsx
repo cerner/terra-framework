@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
 import KeyCode from 'keycode-js';
 import 'mutationobserver-shim';
+import './_contains-polyfill';
 import './_matches-polyfill';
 import 'wicg-inert';
 import ModalContent from './_ModalContent';
@@ -112,15 +113,20 @@ class AbstractModal extends React.Component {
     this.setState({ modalTrigger: document.activeElement });
 
     if (mainDocumentElement) {
-      const inert = +mainDocumentElement.dataset.overlayCount;
+      const inert = +mainDocumentElement.getAttribute('data-overlay-count');
 
       if (!mainDocumentElement.hasAttribute('data-overlay-count')) {
         mainDocumentElement.setAttribute('data-overlay-count', '1');
         mainDocumentElement.setAttribute('inert', '');
-        // Shift focus to modal when opened
-        this.modalElement.current.focus();
       } else if (mainDocumentElement && mainDocumentElement.hasAttribute('data-overlay-count')) {
         mainDocumentElement.setAttribute('data-overlay-count', `${inert + 1}`);
+      }
+
+      // Handle focus shift for VoiceOver on iOS
+      if ('ontouchstart' in window) {
+        this.modalElement.current.querySelector('[data-terra-abstract-modal-begin]').focus();
+      } else {
+        // Shift focus to modal dialog
         this.modalElement.current.focus();
       }
     }
@@ -130,7 +136,7 @@ class AbstractModal extends React.Component {
     const mainDocumentElement = document.querySelector(this.props.rootSelector);
 
     if (mainDocumentElement) {
-      const inert = +mainDocumentElement.dataset.overlayCount;
+      const inert = +mainDocumentElement.getAttribute('data-overlay-count');
 
       if (inert === 1) {
         mainDocumentElement.removeAttribute('data-overlay-count');

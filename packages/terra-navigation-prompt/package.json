@@ -1,7 +1,7 @@
 {
   "name": "terra-navigation-prompt",
   "main": "lib/index.js",
-  "version": "1.5.0",
+  "version": "1.6.1",
   "description": "The NavigationPrompt and NavigationPromptCheckpoint components allow for the detection and management of components with unsaved state.",
   "repository": {
     "type": "git",
@@ -30,7 +30,7 @@
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-doc-template": "^2.2.0",
-    "terra-notification-dialog": "^3.6.0",
+    "terra-notification-dialog": "^3.7.1",
     "uuid": "^3.3.2"
   },
   "scripts": {
@@ -41,5 +41,6 @@
     "precompile": "rm -rf lib",
     "test": "npm run test:jest",
     "test:jest": "jest --config ../../jestconfig.js"
-  }
+  },
+  "gitHead": "7981071c6f84a0cfdfbd21b81b36cd00ee0756c0"
 }

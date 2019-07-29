@@ -78,7 +78,7 @@
     "start-prod": "tt-serve --config node_modules/terra-dev-site/config/webpack/webpack.config.js --env.disableHotReloading -p",
     "start-static": "npm run compile:prod && tt-serve-static --site ./build",
     "test": "npm run jest && npm run wdio",
-    "wdio": "wdio node_modules/terra-dev-site/config/wdio/wdio.conf.js"
+    "wdio": "cross-env NODE_OPTIONS=--max-old-space-size=8192 wdio node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -94,6 +94,7 @@
     "browserslist-config-terra": "^1.0.0",
     "check-installed-dependencies": "^1.0.0",
     "core-js": "^3.1.3",
+    "cross-env": "^5.2.0",
     "danger": "^9.1.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.2.2",

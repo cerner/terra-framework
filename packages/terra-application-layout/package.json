@@ -1,7 +1,7 @@
 {
   "name": "terra-application-layout",
   "main": "lib/ApplicationLayout.js",
-  "version": "5.7.0",
+  "version": "5.8.1",
   "description": "The Terra Application Layout is a responsive, themeable layout for building applications.",
   "repository": {
     "type": "git",
@@ -32,16 +32,16 @@
     "prop-types": "^15.5.8",
     "react-router-dom": "^5.0.0",
     "terra-application-header-layout": "^3.13.0",
-    "terra-application-links": "^6.6.0",
+    "terra-application-links": "^6.7.1",
     "terra-application-menu-layout": "^3.9.0",
     "terra-application-name": "^3.14.0",
-    "terra-application-utility": "^2.16.0",
-    "terra-breakpoints": "^2.3.0",
+    "terra-application-utility": "^2.17.1",
+    "terra-breakpoints": "^2.0.0",
     "terra-icon": "^3.1.0",
-    "terra-modal-manager": "^6.6.0",
+    "terra-modal-manager": "^6.7.1",
     "terra-navigation-layout": "^5.7.0",
-    "terra-navigation-side-menu": "^2.13.0",
-    "terra-popup": "^6.6.0"
+    "terra-navigation-side-menu": "^2.14.1",
+    "terra-popup": "^6.7.1"
   },
   "devDependencies": {
     "terra-action-header": "^2.0.0",
@@ -60,5 +60,6 @@
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest --config ../../jestconfig.js",
     "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"
-  }
+  },
+  "gitHead": "7981071c6f84a0cfdfbd21b81b36cd00ee0756c0"
 }

@@ -1,0 +1,42 @@
+:local {
+  .utility-user-layout {
+    align-items: top;
+    border-bottom: var(--terra-application-navigation-user-layout-border-bottom, 1px solid #dedfe0);
+    display: flex;
+    justify-content: flex-start;
+    padding: 0.8571428571rem 0.7142857143rem 0.8571428571rem 1.0714285714rem;
+
+    .avatar-container {
+      flex: 0 0 auto;
+      margin-right: 0.7142857143rem;
+    }
+  
+    .info-container {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+    }
+  
+    .name {
+      color: var(--terra-application-navigation-user-layout-name-color, #383f42);
+      font-size: 1.143rem;
+      font-weight: 500;
+      overflow-wrap: break-word;
+      white-space: normal;
+      word-break: break-word;
+      word-wrap: break-word;
+    }
+  
+    .detail {
+      color: var(--terra-application-navigation-user-layout-detail-color, rgba(28, 31, 33, 0.65));
+      font-size: 1rem;
+      overflow-wrap: break-word;
+      padding-top: 0.2142857143rem;
+      white-space: normal;
+      word-break: break-word;
+      word-wrap: break-word;
+    }  
+  }
+}

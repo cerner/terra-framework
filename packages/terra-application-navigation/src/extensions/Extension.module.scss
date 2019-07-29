@@ -1,0 +1,58 @@
+/* stylelint-disable selector-class-pattern */
+:local {
+  .extension {
+    align-items: center;
+    color: var(--terra-application-navigation-extension-color, rgba(255, 255, 255, 0.8));
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    outline: none;
+    position: relative;
+
+    &:hover {
+      .extension-inner {
+        color: var(--terra-application-navigation-extension-hover-color, #fff);
+      }
+    }
+
+    &[data-focus-styles-enabled='true']:focus {
+      .extension-inner {
+        background-color: var(--terra-application-navigation-extension-focus-background-color, transparent);
+        border-radius: 100%;
+        color: var(--terra-application-navigation-extension-focus-color, rgba(255, 255, 255, 0.8));
+        outline: var(--terra-application-navigation-extension-focus-outline, 2px dashed #fff);
+        outline-offset: var(--terra-application-navigation-extension-focus-outline-offset, -2px);
+      }
+    }
+  
+    &:active {
+      .extension-inner {
+        color: var(--terra-application-navigation-extension-active-color, rgba(255, 255, 255, 0.5));
+      }
+    }
+  }
+
+  .extension-inner {
+    line-height: 0;
+    padding: 0.5714rem;
+    position: relative;
+  }
+
+  .extension-image {
+    height: 1rem;
+    overflow: hidden;
+    width: 1rem;
+  }
+
+  .extension-image > svg {
+    position: absolute;
+  }
+
+  .extension-count {
+    position: absolute;
+    right: 0.07143rem;
+    top: 0.07143rem;
+  }
+}
+/* stylelint-enable selector-class-pattern */

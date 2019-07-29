@@ -5,8 +5,8 @@
 |-|-|-|-|
 | classnames | ^2.2.5 | -- | A simple utility for conditionally joining classNames together |
 | prop-types | ^15.5.8 | -- | Runtime type checking for React props and similar objects. |
-| terra-slide-group | ^4.3.0 | ^16.8.5 | A component that utilizes the `react-transition-group` library to present a stack of components in an animated fashion |
-| terra-slide-panel | ^3.8.0 | ^16.8.5 | The Terra SlidePanel component is a progressive disclosure mechanism that allows additional content to be shown and hidden in a variety of ways. |
+| terra-slide-group | ^4.5.0 | ^16.8.5 | A component that utilizes the `react-transition-group` library to present a stack of components in an animated fashion |
+| terra-slide-panel | ^3.10.0 | ^16.8.5 | The Terra SlidePanel component is a progressive disclosure mechanism that allows additional content to be shown and hidden in a variety of ways. |
 
 ## devDependencies
 | Dependency | Version | React Version | Description |
