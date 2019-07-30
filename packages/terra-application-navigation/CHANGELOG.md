@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Prevent outside clicks from passing through to content when drawer open.
+
 ### Removed
 * Removed DEPENDENCIES.md file
 
