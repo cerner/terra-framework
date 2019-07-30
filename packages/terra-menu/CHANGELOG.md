@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added Instructions-For-Use (eIFU) Icon to Menu-Item.
+
 ### Removed
 * Removed DEPENDENCIES.md file
 

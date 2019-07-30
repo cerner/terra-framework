@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Arrange from 'terra-arrange';
 import CheckIcon from 'terra-icon/lib/icon/IconCheckmark';
 import ChevronIcon from 'terra-icon/lib/icon/IconChevronRight';
+import InstructionsForUseIcon from 'terra-icon/lib/icon/IconConsultInstructionsForUse';
 import classNames from 'classnames/bind';
 import KeyCode from 'keycode-js';
 import styles from './MenuItem.module.scss';
@@ -36,6 +37,11 @@ const propTypes = {
   isSelectable: PropTypes.bool,
 
   /**
+   * Displays the  eIFU (electronic information for use) icon for menu item if set to true. (This icon is used to indicate Help content that is the equivalent of an instruction manual)
+   */
+  isInstructionsForUse: PropTypes.bool,
+
+  /**
    * List of Menu.Items to display in a submenu when this item is selected.
    */
   subMenuItems: PropTypes.arrayOf(PropTypes.element),
@@ -59,6 +65,7 @@ const propTypes = {
 const defaultProps = {
   text: '',
   isSelected: false,
+  isInstructionsForUse: false,
   isActive: false,
   isSelectable: undefined,
   isDisabled: false,
@@ -152,6 +159,7 @@ class MenuItem extends React.Component {
       text,
       isDisabled,
       isSelected,
+      isInstructionsForUse,
       isSelectable,
       subMenuItems,
       isActive,
@@ -190,10 +198,17 @@ class MenuItem extends React.Component {
     const textContainer = <div className={cx(['text'])}>{text}</div>;
     const hasChevron = subMenuItems.length > 0;
     let content = textContainer;
-    if (hasChevron || isSelectableMenu) {
+    if (hasChevron || isSelectableMenu || isInstructionsForUse) {
+      let fitStartIcon = null;
+      if (isInstructionsForUse) {
+        fitStartIcon = <InstructionsForUseIcon className={cx(['instructionsforuse'])} />;
+      } else if (isSelectableMenu) {
+        fitStartIcon = <CheckIcon className={cx(['checkmark'])} />;
+      }
+
       content = (
         <Arrange
-          fitStart={isSelectableMenu ? <CheckIcon className={cx(['checkmark'])} /> : null}
+          fitStart={fitStartIcon}
           fill={textContainer}
           fitEnd={hasChevron ? <ChevronIcon className={cx(['chevron'])} /> : null}
           align="center"

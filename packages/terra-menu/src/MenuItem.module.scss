@@ -54,6 +54,10 @@
     .chevron {
       color: var(--terra-menu-item-disabled-chevron-icon-color, #9b9fa1);
     }
+
+    .instructionsforuse {
+      color: #9b9fa1;
+    }
   }
 
   .text {
@@ -83,5 +87,11 @@
     font-size: var(--terra-menu-item-chevron-icon-font-size, 10px);
     margin-left: var(--terra-menu-item-chevron-icon-margin-left, 10px);
     margin-right: var(--terra-menu-item-chevron-icon-margin-right, 10px);
+  }
+
+  .instructionsforuse {
+    color: #1c1f21;
+    font-size: 12px;
+    margin-left: 10px;
   }
 }

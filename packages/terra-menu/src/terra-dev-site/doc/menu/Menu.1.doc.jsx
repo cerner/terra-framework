@@ -16,6 +16,9 @@ import MenuBounded from '../example/MenuBounded';
 import MenuBoundedSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/MenuBounded';
 import MenuWidths from '../example/MenuWidths';
 import MenuWidthsSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/MenuWidths';
+import MenuWithInstructionsForUse from '../example/MenuWithInstructionsForUse';
+import MenuWithInstructionsForUseSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/MenuWithInstructionsForUse';
+
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
@@ -43,6 +46,11 @@ const DocPage = () => (
         title: 'Menu Widths',
         example: <MenuWidths />,
         source: MenuWidthsSrc,
+      },
+      {
+        title: 'Menu With Instructions For Use Icon',
+        example: <MenuWithInstructionsForUse />,
+        source: MenuWithInstructionsForUseSrc,
       },
     ]}
     propsTables={[
