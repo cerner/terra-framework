@@ -3,12 +3,16 @@ Changelog
 
 Unreleased
 ----------
+
+2.18.0 - (July 30, 2019)
+------------------
 ### Removed
 * Removed DEPENDENCIES.md file
 
 2.17.1 - (July 23, 2019)
 ------------------
-* a completely unremarkable update because lerna be lerna
+### Changed
+* Updated DEPENDENCIES.md doc
 
 2.17.0 - (July 23, 2019)
 ------------------
