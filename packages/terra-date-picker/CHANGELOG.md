@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Updated to interface with react-intl's `FormattedMessage` rather than old React Context API.
 * Normalized terra-visually-hidden-text dependency version to match other terra-framework packages
 
 4.7.0 - (July 16, 2019)
