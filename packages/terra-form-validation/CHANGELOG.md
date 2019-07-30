@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Removed
+* Removed DEPENDENCIES.md file
 ### Changed
 * Update main key in package.json to point to `lib/FormValidationUtil.js`
 

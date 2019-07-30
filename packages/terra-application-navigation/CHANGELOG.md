@@ -3,7 +3,11 @@ Changelog
 
 Unreleased
 ----------
+### Changed
 * Prevent outside clicks from passing through to content when drawer open.
+
+### Removed
+* Removed DEPENDENCIES.md file
 
 1.0.1 - (July 23, 2019)
 ------------------
