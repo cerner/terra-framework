@@ -6,6 +6,18 @@ Unreleased
 ### Changed
 * Updated to interface with react-intl's `FormattedMessage` rather than old React Context API.
 
+### Removed
+* Removed DEPENDENCIES.md file
+
+3.7.1 - (July 23, 2019)
+------------------
+* a completely unremarkable update because lerna be lerna
+
+6.7.0 - (July 23, 2019)
+------------------
+### Changed
+* Minor dependency version bump
+
 6.6.0 - (July 16, 2019)
 ------------------
 ### Added

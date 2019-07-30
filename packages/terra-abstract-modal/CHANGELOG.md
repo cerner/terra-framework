@@ -3,6 +3,15 @@ Changelog
 
 Unreleased
 ----------
+### Removed
+* Removed DEPENDENCIES.md file
+
+3.7.1 - (July 23, 2019)
+------------------
+* a completely unremarkable update because lerna be lerna
+
+3.7.0 - (July 23, 2019)
+------------------
 ### Added
 * Added Node.contains polyfill to better support IE 10 / IE 11
 

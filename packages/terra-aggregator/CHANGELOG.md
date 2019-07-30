@@ -3,6 +3,15 @@ Changelog
 
 Unreleased
 ----------
+### Removed
+* Removed DEPENDENCIES.md file
+
+4.21.1 - (July 23, 2019)
+------------------
+* a completely unremarkable update because lerna be lerna
+
+4.21.0 - (July 23, 2019)
+------------------
 ### Changed
 * Updated terra-grid devDependency to v6
 

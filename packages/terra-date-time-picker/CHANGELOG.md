@@ -3,6 +3,15 @@ ChangeLog
 
 Unreleased
 ----------
+### Removed
+* Removed DEPENDENCIES.md file
+
+4.8.1 - (July 23, 2019)
+------------------
+* a completely unremarkable update because lerna be lerna
+
+4.8.0 - (July 23, 2019)
+------------------
 ### Changed
 * Updated to interface with react-intl's `FormattedMessage` rather than old React Context API.
 * When the date-time picker time clarification modal is open on touch devices, it will now focus on the first interactive DOM element within it. This enables focus to be shifted into the modal correctly when using VoiceOver on iOS.

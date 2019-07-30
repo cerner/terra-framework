@@ -3,6 +3,17 @@ Changelog
 
 Unreleased
 ----------
+### Removed
+* Removed DEPENDENCIES.md file
+### Changed
+* Explicitly pull in Error icon from terra-icon instead of pulling from terra-form-field
+
+4.8.1 - (July 23, 2019)
+------------------
+* a completely unremarkable update because lerna be lerna
+
+4.8.0 - (July 23, 2019)
+------------------
 ### Changed
 * Updated to interface with react-intl's `FormattedMessage` rather than old React Context API.
 * Normalized terra-visually-hidden-text dependency version to match other terra-framework packages

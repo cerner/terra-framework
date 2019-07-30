@@ -1,0 +1,18 @@
+{
+  "Terra.applicationNavigation.tabs.rollupButtonDescription": "Liens de navigation supplémentaires",
+  "Terra.applicationNavigation.tabs.rollupMenuHeaderTitle": "Liens de navigation supplémentaires",
+  "Terra.applicationNavigation.header.utilityButtonTitleUser": "Paramètres utilisateur",
+  "Terra.applicationNavigation.header.utilityButtonTitleNoUser": "Options",
+  "Terra.applicationNavigation.drawerMenu.navigation": "Éléments de navigation",
+  "Terra.applicationNavigation.drawerMenu.utilities": "Éléments de l'utilitaire",
+  "Terra.applicationNavigation.utilityMenu.logout": "Déconnexion",
+  "Terra.applicationNavigation.utilityMenu.settings": "Paramètres",
+  "Terra.applicationNavigation.utilityMenu.help": "Aide",
+  "Terra.applicationNavigation.utilityMenu.headerTitle": "Utilitaires",
+  "Terra.applicationNavigation.extensions.rollupButtonDescription": "Additional Tools",
+  "Terra.applicationNavigation.extensions.rollupMenuHeaderTitle": "Additional Tools",
+  "Terra.applicationNavigation.tabs.rollupButtonTitle": "Plus",
+  "Terra.applicationNavigation.notifications.new": "Nouveau",
+  "Terra.applicationNavigation.header.skipToContentTitle": "Accéder au contenu",
+  "Terra.applicationNavigation.header.menuButtonTitle": "Menu"
+}

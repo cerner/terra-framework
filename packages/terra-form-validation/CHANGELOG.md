@@ -3,6 +3,17 @@ ChangeLog
 
 Unreleased
 ----------
+### Removed
+* Removed DEPENDENCIES.md file
+### Changed
+* Update main key in package.json to point to `lib/FormValidationUtil.js`
+
+1.4.1 - (July 23, 2019)
+------------------
+* a completely unremarkable update because lerna be lerna
+
+1.4.0 - (July 23, 2019)
+------------------
 ### Changed
 * Updated terra-date-picker devDependency to v4.7.0
 

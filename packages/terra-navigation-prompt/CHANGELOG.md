@@ -3,6 +3,17 @@ Changelog
 
 Unreleased
 ----------
+### Removed
+* Removed DEPENDENCIES.md file
+
+1.6.1 - (July 23, 2019)
+------------------
+* a completely unremarkable update because lerna be lerna
+
+1.6.0 - (July 23, 2019)
+------------------
+### Changed
+* Minor dependency version bump
 
 1.5.0 - (July 16, 2019)
 ------------------

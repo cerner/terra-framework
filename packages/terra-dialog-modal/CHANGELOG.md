@@ -3,6 +3,15 @@ Changelog
 
 Unreleased
 ----------
+### Removed
+* Removed DEPENDENCIES.md file
+
+3.8.1 - (July 23, 2019)
+------------------
+* a completely unremarkable update because lerna be lerna
+
+3.8.0 - (July 23, 2019)
+------------------
 ### Changed
 * When the dialog modal is open on touch devices, it will now focus on the first interactive DOM element within it. This enables focus to be shifted into the modal correctly when using VoiceOver on iOS.
 
