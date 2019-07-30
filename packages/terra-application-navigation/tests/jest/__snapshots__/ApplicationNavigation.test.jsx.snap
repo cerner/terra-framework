@@ -38,8 +38,9 @@ exports[`ApplicationNavigation should render default element 1`] = `
       isOpen={false}
       isRelativeToContainer={true}
       isScrollable={false}
+      onRequestClose={[Function]}
       rootSelector="#root"
-      zIndex="100"
+      zIndex="6000"
     />
   </div>
   <Popup
@@ -153,8 +154,9 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
       isOpen={false}
       isRelativeToContainer={true}
       isScrollable={false}
+      onRequestClose={[Function]}
       rootSelector="#root"
-      zIndex="100"
+      zIndex="6000"
     />
   </div>
   <Popup
@@ -229,7 +231,6 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
         Object {
           "clickOutsideDeactivates": true,
           "escapeDeactivates": true,
-          "onDeactivate": [Function],
           "returnFocusOnDeactivate": false,
         }
       }
@@ -363,8 +364,9 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
       isOpen={false}
       isRelativeToContainer={true}
       isScrollable={false}
+      onRequestClose={[Function]}
       rootSelector="#root"
-      zIndex="100"
+      zIndex="6000"
     />
   </div>
   <Popup

@@ -4,9 +4,12 @@ Changelog
 Unreleased
 ----------
 
+
 ### Changed
 * Update tests for dev-site v6
 
+3.15.0 - (July 30, 2019)
+------------------
 ### Removed
 * Removed DEPENDENCIES.md file
 
