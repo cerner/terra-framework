@@ -4,8 +4,10 @@ Changelog
 Unreleased
 ----------
 ### Changed
-* Updated to interface with react-intl's `FormattedMessage` rather than old React Context API.
+* Updated to interface with react-intl's context rather than old React Context API.
 
+4.6.0 - (July 30, 2019)
+------------------
 ### Removed
 * Removed DEPENDENCIES.md file
 
