@@ -7,9 +7,18 @@ Unreleased
 * Removed extra calls to hide the caret in inputs (some are still needed because `terra-time-input` explicitly sets a `caret-color`).
 * Removed styles hiding carets on test pages when not running within WDIO
 
+### Changed
+* updated package.json test scripts
+
+4.9.0 - (July 30, 2019)
+------------------
+### Removed
+* Removed DEPENDENCIES.md file
+
 4.8.1 - (July 23, 2019)
 ------------------
-* a completely unremarkable update because lerna be lerna
+### Changed
+* Updated DEPENDENCIES.md doc
 
 4.8.0 - (July 23, 2019)
 ------------------

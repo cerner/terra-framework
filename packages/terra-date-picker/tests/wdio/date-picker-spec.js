@@ -318,6 +318,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     describe('Valid DatePickerField', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-field');
+        browser.moveToObject('#root', 0, 0);
       });
 
       Terra.it.validatesElement({ axeRules: { rules: ignoredA11y } });

@@ -3,10 +3,19 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update tests for dev-site v6
+* updated package.json test scripts
+
+5.9.0 - (July 30, 2019)
+------------------
+### Removed
+* Removed DEPENDENCIES.md file
 
 5.8.1 - (July 23, 2019)
 ------------------
-* a completely unremarkable update because lerna be lerna
+### Changed
+* Updated DEPENDENCIES.md doc
 
 5.8.0 - (July 23, 2019)
 ------------------

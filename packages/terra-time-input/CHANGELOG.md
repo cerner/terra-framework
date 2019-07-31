@@ -7,6 +7,14 @@ Unreleased
 * Removed extra calls to hide the caret in inputs (some are still needed because `time-input` explicitly sets a `caret-color`).
 * Removed styles hiding carets on test pages when not running within WDIO
 
+### Changed
+* updated package.json test scripts
+
+4.6.0 - (July 30, 2019)
+------------------
+### Removed
+* Removed DEPENDENCIES.md file
+
 4.5.0 - (July 16, 2019)
 ------------------
 ### Added
