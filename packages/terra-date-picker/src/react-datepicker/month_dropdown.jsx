@@ -9,7 +9,7 @@ const WrappedMonthDropdownOptions = onClickOutside(MonthDropdownOptions)
 export default class MonthDropdown extends React.Component {
   static propTypes = {
     /**
-     * Prop to select a dropdown mode for the month dropdown.
+     * Whether the month dropdowns should be in the scroll or select mode..
      */
     dropdownMode: PropTypes.oneOf(['scroll', 'select']).isRequired,
     /**

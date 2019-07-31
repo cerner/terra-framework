@@ -25,7 +25,7 @@ export default class Month extends React.Component {
      */
     excludeDates: PropTypes.array,
     /**
-     * Filter specific dates that can be selected only .
+     * A callback function to be executed to determine if a given date should be filtered.
      */
     filterDate: PropTypes.func,
    /**
@@ -49,11 +49,11 @@ export default class Month extends React.Component {
      */
     inline: PropTypes.bool,
     /**
-     * Maximum Value of date that can be selected by user.
+     * Maximum value of date that can be selected by user.
      */
     maxDate: PropTypes.object,
     /**
-     * Minimum Value of date that can be selected by user.
+     * Minimum value of date that can be selected by user.
      */
     minDate: PropTypes.object,
     /**

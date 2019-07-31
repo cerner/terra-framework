@@ -111,7 +111,7 @@ class DatePicker extends React.Component {
      */
     disabledKeyboardNavigation: PropTypes.bool,
     /**
-     * Prop to select a dropdown mode for the year dropdown.
+     * Whether the year and month dropdowns should be in the scroll or select mode.
      */
     dropdownMode: PropTypes.oneOf(['scroll', 'select']).isRequired,
     /**
@@ -123,7 +123,7 @@ class DatePicker extends React.Component {
      */
     excludeDates: PropTypes.array,
     /**
-     * Filter specific dates that can be selected only .
+     * A callback function to be executed to determine if a given date should be filtered.
      */
     filterDate: PropTypes.func,
     /**
@@ -164,11 +164,11 @@ class DatePicker extends React.Component {
      */
     locale: PropTypes.string,
     /**
-     * Maximum Value of date that can be selected by user.
+     * Maximum value of date that can be selected by user.
      */
     maxDate: PropTypes.object,
     /**
-     * Minimum Value of date that can be selected by user.
+     * Minimum value of date that can be selected by user.
      */
     minDate: PropTypes.object,
     /**

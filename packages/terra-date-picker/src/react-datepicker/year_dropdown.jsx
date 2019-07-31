@@ -13,15 +13,15 @@ export default class YearDropdown extends React.Component {
      */
     adjustDateOnChange: PropTypes.bool,
    /**
-     * Prop to select a dropdown mode for the year dropdown.
+     * Whether the year dropdowns should be in the scroll or select mode..
      */
     dropdownMode: PropTypes.oneOf(['scroll', 'select']).isRequired,
     /**
-     * Maximum Value of date that can be entered or selected.
+     * Maximum value of date that can be entered or selected.
      */
     maxDate: PropTypes.object,
     /**
-     * Minimum Value of date that can be entered or selected.
+     * Minimum value of date that can be entered or selected.
      */
     minDate: PropTypes.object,
     /**

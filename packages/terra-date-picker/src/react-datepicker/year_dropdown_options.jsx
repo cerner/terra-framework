@@ -27,11 +27,11 @@ function generateYears (year, noOfYear, minDate, maxDate) {
 export default class YearDropdownOptions extends React.Component {
   static propTypes = {
     /**
-     * Minimum Value of date that can be selected.
+     * Minimum value of date that can be selected.
      */
     minDate: PropTypes.object,
     /**
-     * Maximum Value of date that can be selected.
+     * Maximum value of date that can be selected.
      */
     maxDate: PropTypes.object,
     /**
