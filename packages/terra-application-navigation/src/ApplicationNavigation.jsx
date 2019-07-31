@@ -164,12 +164,30 @@ const ApplicationNavigation = ({
   }
 
   function focusMainContent() {
-    mainContainerRef.current.focus();
+    if (mainContainerRef.current) {
+      mainContainerRef.current.focus();
+    }
   }
 
-  function generateFocusMain(onSelect) {
+  function focusToggle() {
+    const toggle = document.querySelector('[data-compact-header-toggle="true"]');
+    if (toggle) {
+      toggle.focus();
+    }
+  }
+
+  function generateFocusToggle(wrappedFunction) {
     return (...args) => {
-      onSelect(...args);
+      wrappedFunction(...args);
+      window.requestAnimationFrame(() => {
+        focusToggle();
+      });
+    };
+  }
+
+  function generateFocusMain(wrappedFunction) {
+    return (...args) => {
+      wrappedFunction(...args);
       window.requestAnimationFrame(() => {
         focusMainContent();
       });
@@ -188,17 +206,6 @@ const ApplicationNavigation = ({
           escapeDeactivates: true,
           clickOutsideDeactivates: true,
           returnFocusOnDeactivate: false,
-          onDeactivate: () => {
-            if (drawerMenuIsOpenRef.current) {
-              const toggle = document.querySelector('[data-compact-header-toggle="true"]');
-              if (toggle) {
-                window.requestAnimationFrame(() => {
-                  toggle.focus();
-                });
-              }
-              updateDrawerIsOpen(false);
-            }
-          },
         }}
         className={cx('drawer-menu-focus-trap-container')}
       >
@@ -373,6 +380,12 @@ const ApplicationNavigation = ({
     );
   }
 
+  const handleRequestClose = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    updateDrawerIsOpen(false);
+  };
+
   return (
     <div className={cx('application-navigation')}>
       <div
@@ -402,6 +415,8 @@ const ApplicationNavigation = ({
           isOpen={drawerMenuIsOpen}
           isRelativeToContainer
           backgroundStyle="clear"
+          zIndex="6000"
+          onRequestClose={generateFocusToggle(handleRequestClose)}
         />
       </div>
       {renderPopupMenu()}
