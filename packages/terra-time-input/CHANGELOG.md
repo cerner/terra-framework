@@ -6,6 +6,8 @@ Unreleased
 ### Changed
 * Removed inline styles from dev site components.
 
+4.6.0 - (July 30, 2019)
+------------------
 ### Removed
 * Removed DEPENDENCIES.md file
 
