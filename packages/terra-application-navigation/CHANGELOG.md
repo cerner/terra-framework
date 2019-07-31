@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+1.1.0 - (July 30, 2019)
+------------------
 ### Changed
 * Prevent outside clicks from passing through to content when drawer open.
 
