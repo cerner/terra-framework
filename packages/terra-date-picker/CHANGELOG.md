@@ -6,6 +6,9 @@ Unreleased
 ### Changed
 * Explicitly pull in Error icon from terra-icon instead of pulling from terra-form-field
 
+### Added
+* Aria-Label and translations added to input to fix accessibility issue of Date-Time-Picker.
+
 4.8.1 - (July 23, 2019)
 ------------------
 * a completely unremarkable update because lerna be lerna
@@ -19,7 +22,6 @@ Unreleased
 ------------------
 ### Added
 * Added documentation on required peerDependencies
-* Aria-Label added to input to fix accesssibility issue of Date-Time-Picker.
 
 4.6.0 - (July 10, 2019)
 ------------------
