@@ -10,7 +10,7 @@ const MenuItemWithInstructionsForUse = () => (
     <p>Below is a Menu Item with eIFU Icon</p>
     <br />
     <ul className={cx('unordered-list')} role="menu">
-      <Menu.Item text="Instructions" isSelected isInstructionsForUse className="TestMenuItem" />
+      <Menu.Item text="Help" isSelected isInstructionsForUse className="TestMenuItem" />
     </ul>
   </div>
 );

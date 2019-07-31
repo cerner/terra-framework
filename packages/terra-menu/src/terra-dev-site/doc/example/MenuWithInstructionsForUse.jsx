@@ -106,7 +106,7 @@ class MenuWithInstructionsForUse extends React.Component {
             />
             <Menu.Divider key="Divider1" />
             <Menu.Item
-              text="Instructions"
+              text="Help"
               isInstructionsForUse
               key="Nested1"
               subMenuItems={[
