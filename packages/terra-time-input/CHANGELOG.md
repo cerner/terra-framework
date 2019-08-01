@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Removed inline styles from dev site components.
+* updated package.json test scripts
 
 4.6.0 - (July 30, 2019)
 ------------------
