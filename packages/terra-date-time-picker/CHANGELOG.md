@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * updated package.json test scripts
+* Updated to interface with react-intl's context rather than old React Context API.
 
 4.9.0 - (July 30, 2019)
 ------------------
@@ -19,7 +20,6 @@ Unreleased
 4.8.0 - (July 23, 2019)
 ------------------
 ### Changed
-* Updated to interface with react-intl's `FormattedMessage` rather than old React Context API.
 * When the date-time picker time clarification modal is open on touch devices, it will now focus on the first interactive DOM element within it. This enables focus to be shifted into the modal correctly when using VoiceOver on iOS.
 
 4.7.0 - (July 16, 2019)

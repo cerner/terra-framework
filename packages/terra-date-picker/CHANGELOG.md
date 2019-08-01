@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * updated package.json test scripts
+* Updated to interface with react-intl's context rather than old React Context API.
 
 4.9.0 - (July 30, 2019)
 ------------------
@@ -23,7 +24,6 @@ Unreleased
 4.8.0 - (July 23, 2019)
 ------------------
 ### Changed
-* Updated to interface with react-intl's `FormattedMessage` rather than old React Context API.
 * Normalized terra-visually-hidden-text dependency version to match other terra-framework packages
 
 4.7.0 - (July 16, 2019)

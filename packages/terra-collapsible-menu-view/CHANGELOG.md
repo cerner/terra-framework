@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * updated package.json test scripts
+* Updated to interface with react-intl's `FormattedMessage` rather than old React Context API.
 
 6.8.0 - (July 30, 2019)
 ------------------
@@ -19,7 +20,6 @@ Unreleased
 6.7.0 - (July 23, 2019)
 ------------------
 ### Changed
-* Updated to interface with react-intl's `FormattedMessage` rather than old React Context API.
 * Normalized terra-form-checkbox dependency version to match other terra-framework packages
 
 6.6.0 - (July 16, 2019)
