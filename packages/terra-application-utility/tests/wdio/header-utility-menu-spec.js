@@ -19,7 +19,7 @@ Terra.describeViewports('HeaderUtilityMenu', ['huge'], () => {
 
   describe('Focus-header utility menu', () => {
     before(() => {
-      browser.keys(['Tab', 'Tab', 'Tab']);
+      browser.keys(['Tab', 'Tab']);
       browser.moveToObject('#root', 0, 0);
     });
 

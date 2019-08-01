@@ -3,8 +3,10 @@
   "Terra.timeInput.pm": "",
   "Terra.timeInput.hours": "Stunden",
   "Terra.timeInput.minutes": "Minuten",
+  "Terra.timeInput.seconds": "Sekunden",
   "Terra.timeInput.hh": "hh",
   "Terra.timeInput.mm": "mm",
+  "Terra.timeInput.ss": "Sek.",
   "Terra.timeInput.display.meridiem": "",
   "Terra.timeInput.select.meridiem": ""
 }

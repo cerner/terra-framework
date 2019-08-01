@@ -1,17 +1,11 @@
-// This issue should be resolved once the following axe-core issue is resolved:
-// https://github.com/dequelabs/axe-core/issues/1583
-const ignoredA11y = {
-  'landmark-banner-is-top-level': { enabled: false },
-  'landmark-main-is-top-level': { enabled: false },
-};
-
 Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
   describe('Displays a default application layout', () => {
     it('Displays a default application layout', () => {
       browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout');
       browser.waitForVisible('#application-layout-test');
 
-      Terra.validates.element({ selector: '#application-layout-test', axeRules: { rules: ignoredA11y } });
+      browser.pause(3000);// to display image
+      Terra.validates.element({ selector: '#application-layout-test' });
     });
   });
 
@@ -19,8 +13,8 @@ Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
     it('Displays an application layout with top navigation tabs', () => {
       browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout-no-top-nav');
       browser.waitForVisible('#application-layout-test');
-
-      Terra.validates.element({ selector: '#application-layout-test', axeRules: { rules: ignoredA11y } });
+      browser.moveToObject('#root', 0, 0);
+      Terra.validates.element({ selector: '#application-layout-test' });
     });
   });
 
@@ -28,8 +22,8 @@ Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
     it('Displays an application layout with no header content', () => {
       browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout-empty');
       browser.waitForVisible('#application-layout-test');
-
-      Terra.validates.element({ selector: '#application-layout-test', axeRules: { rules: ignoredA11y } });
+      browser.moveToObject('#root', 0, 0);
+      Terra.validates.element({ selector: '#application-layout-test' });
     });
   });
 
@@ -39,7 +33,7 @@ Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
       browser.moveToObject('#root', 0, 0);
       browser.waitForVisible('#application-layout-test');
 
-      Terra.validates.element({ selector: '#application-layout-test', axeRules: { rules: ignoredA11y } });
+      Terra.validates.element({ selector: '#application-layout-test' });
     });
   });
 });
@@ -51,7 +45,7 @@ Terra.describeViewports('ApplicationLayout', ['huge'], () => {
       browser.waitForVisible('#application-layout-tab-1');
       browser.click('#application-layout-tab-1');
 
-      Terra.validates.element({ selector: '#application-layout-test', axeRules: { rules: ignoredA11y } });
+      Terra.validates.element({ selector: '#application-layout-test' });
       browser.click('#application-layout-tab-0');
     });
   });
@@ -63,7 +57,7 @@ Terra.describeViewports('ApplicationLayout', ['large'], () => {
       browser.waitForVisible('[data-application-header-utility]');
       browser.click('[data-application-header-utility]');
 
-      Terra.validates.element({ selector: '#application-layout-test', axeRules: { rules: ignoredA11y } });
+      Terra.validates.element({ selector: '#application-layout-test' });
       browser.keys('Escape');
     });
   });
@@ -75,7 +69,7 @@ Terra.describeViewports('ApplicationLayout', ['large'], () => {
       browser.waitForVisible('#readonly');
       browser.click('#readonly');
 
-      Terra.validates.element({ selector: '#application-layout-test', axeRules: { rules: ignoredA11y } });
+      Terra.validates.element({ selector: '#application-layout-test' });
       browser.keys('Escape');
     });
   });
@@ -89,7 +83,7 @@ Terra.describeViewports('ApplicationLayout', ['small'], () => {
       browser.click('[data-application-header-toggle]');
       browser.waitForVisible('[data-routing-menu]');
 
-      Terra.validates.element({ selector: '#application-layout-test', axeRules: { rules: ignoredA11y } });
+      Terra.validates.element({ selector: '#application-layout-test' });
     });
   });
 
@@ -99,7 +93,7 @@ Terra.describeViewports('ApplicationLayout', ['small'], () => {
       browser.click('[data-routing-menu] [data-navigation-side-menu-action-header] button');
       browser.waitForVisible('[data-routing-menu]');
 
-      Terra.validates.element({ selector: '#application-layout-test', axeRules: { rules: ignoredA11y } });
+      Terra.validates.element({ selector: '#application-layout-test' });
     });
   });
 
@@ -108,7 +102,7 @@ Terra.describeViewports('ApplicationLayout', ['small'], () => {
       browser.waitForVisible('[data-application-menu-utility]');
       browser.click('[data-application-menu-utility]');
 
-      Terra.validates.element({ selector: '#application-layout-test', axeRules: { rules: ignoredA11y } });
+      Terra.validates.element({ selector: '#application-layout-test' });
       browser.keys('Escape');
     });
   });
@@ -120,8 +114,9 @@ Terra.describeViewports('ApplicationLayout', ['small'], () => {
       browser.click('[data-routing-menu] [data-navigation-side-menu-action-header] button');
       browser.waitForVisible('[data-routing-menu] [data-menu-item="/page_2"]');
       browser.click('[data-routing-menu] [data-menu-item="/page_2"]');
+      browser.pause(150);
 
-      Terra.validates.element({ selector: '#application-layout-test', axeRules: { rules: ignoredA11y } });
+      Terra.validates.element({ selector: '#application-layout-test' });
     });
   });
 });

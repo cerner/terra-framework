@@ -1,4 +1,6 @@
 import React from 'react';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { mountWithIntl } from 'terra-enzyme-intl';
 import { withDisclosureManager } from 'terra-disclosure-manager';
 import ModalManager from '../../src/ModalManager';
 
@@ -14,7 +16,7 @@ describe('ModalManager', () => {
       </ModalManager>
     );
 
-    const result = mount(modalManager);
+    const result = mountWithIntl(modalManager);
     expect(result).toMatchSnapshot();
   });
 
@@ -25,7 +27,7 @@ describe('ModalManager', () => {
       </ModalManager>
     );
 
-    const result = mount(modalManager);
+    const result = mountWithIntl(modalManager);
     expect(result).toMatchSnapshot();
   });
 
@@ -36,7 +38,7 @@ describe('ModalManager', () => {
       </ModalManager>
     );
 
-    const wrapper = mount(modalManager);
+    const wrapper = mountWithIntl(modalManager);
 
     return new Promise((resolve, reject) => {
       const childDisclosureManager = wrapper.find('#test').getElements()[1].props.disclosureManager;

@@ -3,6 +3,31 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* updated package.json test scripts
+
+6.8.0 - (July 30, 2019)
+------------------
+### Removed
+* Removed DEPENDENCIES.md file
+
+3.7.1 - (July 23, 2019)
+------------------
+### Changed
+* Updated DEPENDENCIES.md doc
+
+6.7.0 - (July 23, 2019)
+------------------
+### Changed
+* Minor dependency version bump
+
+6.6.0 - (July 16, 2019)
+------------------
+### Added
+* Added documentation on required peerDependencies
+
+### Changed
+* Updated wdio screenshots
 
 6.5.0 - (July 10, 2019)
 ------------------

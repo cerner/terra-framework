@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DisclosureManagerDelegate from './DisclosureManagerDelegate';
 import DisclosureManagerContext from './DisclosureManagerContext';
+import DisclosureManagerHeaderAdapterContext from './DisclosureManagerHeaderAdapterContext';
+import DisclosureManagerHeaderAdapter from './DisclosureManagerHeaderAdapter';
+
 import withDisclosureManager from './withDisclosureManager';
 
 const availableDisclosureSizes = {
@@ -42,10 +45,11 @@ const propTypes = {
   supportedDisclosureTypes: PropTypes.array,
   /**
    * A boolean indicating whether or not the DisclosureManager should handle all nested disclosure requests. When enabled, the DisclosureManager will handle all
-   * disclose requests coming from disclosured components, regardless of the preferred disclosure type.
+   * disclose requests coming from disclosed components, regardless of the preferred disclosure type.
    */
   trapNestedDisclosureRequests: PropTypes.bool,
   /**
+   * @private
    * A DisclosureManagerDelegate instance provided by a parent DisclosureManager. This prop is automatically provided by `withDisclosureManager` and should not
    * be explicitly given to the component.
    */
@@ -74,6 +78,8 @@ class DisclosureManager extends React.Component {
 
     this.generateChildComponentDelegate = this.generateChildComponentDelegate.bind(this);
     this.generateDisclosureComponentDelegate = this.generateDisclosureComponentDelegate.bind(this);
+    this.generateHeaderContextValue = this.generateHeaderContextValue.bind(this);
+    this.generateDisclosureComponentMappingForRender = this.generateDisclosureComponentMappingForRender.bind(this);
 
     this.resolveDismissPromise = this.resolveDismissPromise.bind(this);
     this.resolveDismissChecksInSequence = this.resolveDismissChecksInSequence.bind(this);
@@ -105,6 +111,23 @@ class DisclosureManager extends React.Component {
       disclosureComponentKeys: [],
       disclosureComponentData: {},
       disclosureComponentDelegates: [],
+    };
+  }
+
+  generateHeaderContextValue(key) {
+    return {
+      register: ({ title, collapsibleMenuView }) => {
+        this.setState(state => ({
+          disclosureComponentData: {
+            ...state.disclosureComponentData,
+            ...{
+              [key]: Object.assign({}, state.disclosureComponentData[key], {
+                headerAdapterData: { title, collapsibleMenuView },
+              }),
+            },
+          },
+        }));
+      },
     };
   }
 
@@ -272,6 +295,7 @@ class DisclosureManager extends React.Component {
           name: data.content.name,
           props: data.content.props,
           component: data.content.component,
+          headerAdapterContextValue: this.generateHeaderContextValue(data.content.key),
         },
       },
     };
@@ -289,6 +313,7 @@ class DisclosureManager extends React.Component {
       name: data.content.name,
       props: data.content.props,
       component: data.content.component,
+      headerAdapterContextValue: this.generateHeaderContextValue(data.content.key),
     };
     newState.disclosureComponentDelegates = newState.disclosureComponentDelegates.concat(this.generateDisclosureComponentDelegate(data.content.key, newState));
 
@@ -443,6 +468,31 @@ class DisclosureManager extends React.Component {
     };
   }
 
+  generateDisclosureComponentMappingForRender() {
+    const {
+      disclosureComponentKeys,
+      disclosureComponentData,
+      disclosureComponentDelegates,
+    } = this.state;
+
+    return disclosureComponentKeys.reduce((accumulator, key, index) => {
+      const componentData = disclosureComponentData[key];
+
+      accumulator[key] = {
+        component: (
+          <DisclosureManagerHeaderAdapterContext.Provider value={componentData.headerAdapterContextValue} key={key}>
+            <DisclosureManagerContext.Provider value={disclosureComponentDelegates[index]}>
+              {componentData.component}
+            </DisclosureManagerContext.Provider>
+          </DisclosureManagerHeaderAdapterContext.Provider>
+        ),
+        headerAdapterData: componentData.headerAdapterData,
+      };
+
+      return accumulator;
+    }, {});
+  }
+
   render() {
     const { render, children } = this.props;
     const {
@@ -453,17 +503,19 @@ class DisclosureManager extends React.Component {
       disclosureSize,
       disclosureDimensions,
       disclosureComponentKeys,
-      disclosureComponentData,
-      disclosureComponentDelegates,
     } = this.state;
 
     if (!render) {
       return null;
     }
 
+    const disclosureComponentMappingForRender = this.generateDisclosureComponentMappingForRender();
+
     return render({
       dismissPresentedComponent: this.generatePopFunction(disclosureComponentKeys ? disclosureComponentKeys[disclosureComponentKeys.length - 1] : undefined),
       closeDisclosure: this.safelyCloseDisclosure,
+      maximizeDisclosure: (disclosureSize !== availableDisclosureSizes.FULLSCREEN && !disclosureIsMaximized) ? () => Promise.resolve().then(this.maximizeDisclosure) : undefined,
+      minimizeDisclosure: (disclosureSize !== availableDisclosureSizes.FULLSCREEN && disclosureIsMaximized) ? () => Promise.resolve().then(this.minimizeDisclosure) : undefined,
       children: {
         components: (
           <DisclosureManagerContext.Provider value={childComponentDelegate}>
@@ -477,12 +529,15 @@ class DisclosureManager extends React.Component {
         isMaximized: disclosureIsMaximized,
         size: disclosureSize,
         dimensions: disclosureDimensions,
-        components: disclosureComponentKeys.map((key, index) => (
-          <DisclosureManagerContext.Provider value={disclosureComponentDelegates[index]} key={key}>
-            {disclosureComponentData[key].component}
-          </DisclosureManagerContext.Provider>
-        )),
+        components: disclosureComponentKeys.map(key => disclosureComponentMappingForRender[key].component),
       },
+      /**
+       * The below values were added to give DisclosureManager implementations more control over the rendering of the disclosed components.
+       * Some of the data provided by these keys is duplicated by the data provided in the above `disclose` value.
+       * In a future major release, this render object will be restructured and simplified. Until then, either can be used as needed.
+       */
+      disclosureComponentKeys,
+      disclosureComponentData: disclosureComponentMappingForRender,
     });
   }
 }
@@ -494,5 +549,5 @@ const disclosureManagerShape = DisclosureManagerDelegate.propType;
 
 export default withDisclosureManager(DisclosureManager);
 export {
-  withDisclosureManager, disclosureManagerShape, DisclosureManagerContext, DisclosureManagerDelegate,
+  withDisclosureManager, disclosureManagerShape, DisclosureManagerContext, DisclosureManagerDelegate, DisclosureManagerHeaderAdapterContext, DisclosureManagerHeaderAdapter,
 };

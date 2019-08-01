@@ -3,6 +3,28 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* updated package.json test scripts
+
+4.22.0 - (July 30, 2019)
+------------------
+### Removed
+* Removed DEPENDENCIES.md file
+
+4.21.1 - (July 23, 2019)
+------------------
+### Changed
+* Updated DEPENDENCIES.md doc
+
+4.21.0 - (July 23, 2019)
+------------------
+### Changed
+* Updated terra-grid devDependency to v6
+
+4.20.0 - (July 16, 2019)
+------------------
+### Added
+* Added documentation on required peerDependencies
 
 4.19.0 - (July 10, 2019)
 ------------------

@@ -3,12 +3,34 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* updated package.json test scripts
+
+4.9.0 - (July 30, 2019)
+------------------
+### Removed
+* Removed DEPENDENCIES.md file
+
+4.8.1 - (July 23, 2019)
+------------------
+### Changed
+* Updated DEPENDENCIES.md doc
+
+4.8.0 - (July 23, 2019)
+------------------
+### Changed
+* When the date-time picker time clarification modal is open on touch devices, it will now focus on the first interactive DOM element within it. This enables focus to be shifted into the modal correctly when using VoiceOver on iOS.
+
+4.7.0 - (July 16, 2019)
+------------------
+### Added
+* Added documentation on required peerDependencies
+* Added the ability for the user to enter seconds in the time input
 
 4.6.0 - (July 10, 2019)
 ------------------
 ### Changed
 * Minor dependency version bump
-### Changed
 * Fixed tests to appropriately reset before beginning next test.
 
 4.5.0 - (July 2, 2019)
@@ -25,9 +47,6 @@ Unreleased
 
 4.3.0 - (June 12, 2019)
 ------------------
-### Removed
-* Removed node_modules from .npmignore
-
 ### Changed
 * Removed all inline styles from Dev-site components and implemented the same styles using external css.
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
@@ -37,6 +56,9 @@ Unreleased
 ### Fixed
 * Fixed wdio tests by calling browser.refresh() on subsequent loads instead of loading the url directly.
 * Focus now automatically moves to the hour input after a date is selected from the picker.
+
+### Removed
+* Removed node_modules from .npmignore
 
 4.2.0 - (May 21, 2019)
 ------------------

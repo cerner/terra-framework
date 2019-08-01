@@ -2,7 +2,7 @@
 
 The Embedded Content Consumer is the managed application component which is embedding web content within an iframe. The Embedded Content Consumer is responsible for the communication between its embedded content to its framework, such that interaction with embedded content appears seemless.
 
-Under the hood, the embedded-content-consumer utilizes an [`XFC (Cross-Frame-Container)`](https://www.npmjs.com/package/xfc) Consumer to manage the iframe size and to listen for messages bridged out from the embedded content through an XFC provider. 
+Under the hood, the embedded-content-consumer utilizes an [`XFC (Cross-Frame-Container)`](https://www.npmjs.com/package/xfc) Consumer to manage the iframe size and to listen for messages bridged out from the embedded content through an XFC provider.
 
 The embedded-content-consumer will use the messages sent from the embedded content to determine if updates are neeed within itself. Otherwise if the embedded content needs to be updated, embedded-content-consumer should send a reply message to the embedded content provider. Then, the embedded content will update itself when it receives the embedded-content-consumer message.
 
@@ -15,6 +15,24 @@ The embedded-content-consumer will use the messages sent from the embedded conte
   - `npm install xfc --save-dev`
 
 - Then, initalize the XFC Consumer at the root of your application to use the `terra-embedded-content-consumer`. This will create an app broker to manage embedded applications.
+
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+<details>
+<summary>View information on this component's peer dependencies.</summary>
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+| xfc | ^1.2.1 |
+
+
+</details>
+<!-- AUTO-GENERATED-CONTENT:END -->
 
 ```jsx
 import { Consumer } from 'xfc';

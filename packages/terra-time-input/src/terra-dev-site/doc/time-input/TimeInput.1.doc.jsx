@@ -16,6 +16,12 @@ import TimeInputNoDefaultTime from '../example/TimeInputNoDefaultTime';
 import TimeInputNoDefaultTimeSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TimeInputNoDefaultTime';
 import TimeInputNoDefaultTwelveHour from '../example/TimeInputNoDefaultTwelveHour';
 import TimeInputNoDefaultTwelveHourSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TimeInputNoDefaultTwelveHour';
+import TimeInputSeconds from '../example/TimeInputSeconds';
+import TimeInputSecondsSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TimeInputSeconds';
+import TimeInputSecondsWithDefault from '../example/TimeInputSecondsWithDefault';
+import TimeInputSecondsWithDefaultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TimeInputSecondsWithDefault';
+import TimeInputSecondsTwelveHour from '../example/TimeInputSecondsTwelveHour';
+import TimeInputSecondsTwelveHourSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TimeInputSecondsTwelveHour';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
@@ -43,6 +49,21 @@ const DocPage = () => (
         title: 'With Default Time - 12 Hour',
         example: <TimeInputDefaultTwelveHour />,
         source: TimeInputDefaultTwelveHourSrc,
+      },
+      {
+        title: 'Seconds Displayed Without Default Time',
+        example: <TimeInputSeconds />,
+        source: TimeInputSecondsSrc,
+      },
+      {
+        title: 'Seconds Displayed With Default Time',
+        example: <TimeInputSecondsWithDefault />,
+        source: TimeInputSecondsWithDefaultSrc,
+      },
+      {
+        title: 'Seconds Displayed Without Default Time - 12 Hour',
+        example: <TimeInputSecondsTwelveHour />,
+        source: TimeInputSecondsTwelveHourSrc,
       },
     ]}
     propsTables={[

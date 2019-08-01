@@ -73,6 +73,13 @@ export default class TimeInputElement extends React.Component {
           variant={TimeUtil.FORMAT_12_HOUR}
           disabled
         />
+        <h3>Input with Second</h3>
+        <TimeInput
+          id="timeInputWithSecond"
+          name="time-input-with-second"
+          variant={TimeUtil.FORMAT_12_HOUR}
+          showSeconds
+        />
       </div>
     );
   }

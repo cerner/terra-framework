@@ -288,4 +288,77 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
 
     Terra.it.matchesScreenshot();
   });
+
+  describe('Twelve Hour Default with second and no time provided', () => {
+    before(() => browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/second'));
+
+    Terra.it.matchesScreenshot();
+  });
+
+  describe('Twelve Hour Meridiem - Auto focuses on meridiem when filling out whole time with second', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/second');
+      browser.refresh();
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+      });
+
+      browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+      browser.keys('123456p');
+    });
+
+    Terra.it.matchesScreenshot();
+  });
+
+  describe('Twelve Hour Meridiem - Auto focuses on meridiem when filling out second', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/second');
+      browser.refresh();
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
+      });
+
+      browser.click('#timeInput input[name="terra-time-second-time-input"]');
+      browser.keys('34p');
+    });
+
+    Terra.it.matchesScreenshot();
+  });
+
+  describe('Twelve Hour - Focuses to second when left is pressed from meridiem', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/second');
+      browser.refresh();
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-second-time-input"]').style.caretColor = 'transparent';
+      });
+
+      browser.click('#timeInput input[value="a.m."]');
+      browser.keys(['ArrowLeft']);
+    });
+
+    Terra.it.matchesScreenshot();
+  });
+
+  describe('Twelve Hour - Focuses to second when delete is pressed from meridiem', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/second');
+      browser.refresh();
+      browser.execute(() => {
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+        document.querySelector('#timeInput input[name="terra-time-second-time-input"]').style.caretColor = 'transparent';
+      });
+
+      browser.click('#timeInput input[value="a.m."]');
+      browser.keys(['Delete']);
+    });
+
+    Terra.it.matchesScreenshot();
+  });
 });

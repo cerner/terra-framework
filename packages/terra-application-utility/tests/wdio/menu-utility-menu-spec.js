@@ -1,5 +1,5 @@
 Terra.describeViewports('MenuUtilityMenu', ['huge'], () => {
-  beforeEach(() => {
+  before(() => {
     browser.url('/#/raw/tests/terra-application-utility/application-utility/default-menu-utility-menu');
     browser.waitForVisible('#default');
   });
@@ -19,7 +19,7 @@ Terra.describeViewports('MenuUtilityMenu', ['huge'], () => {
 
   describe('Focus-menu utility menu', () => {
     beforeEach(() => {
-      browser.keys(['Tab', 'Tab', 'Tab']);
+      browser.keys(['Tab', 'Tab']);
       browser.moveToObject('#root', 0, 0);
     });
 

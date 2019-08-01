@@ -323,6 +323,7 @@ class UtilityMenu extends React.Component {
         icon={<IconClose className={iconCloseClassNames} />}
         isCompact
         isIconOnly
+        aria-describedby="utility-menu-header"
         text={closeText}
         variant={Button.Opts.Variants.UTILITY}
         className={closeButtonClassNames}
@@ -338,7 +339,7 @@ class UtilityMenu extends React.Component {
         <span className={contentContainerClassNames}>
           <span className={leftContentContainer}>
             {!firstPage && backButton}
-            <span className={headerTextClassName}>{headerText}</span>
+            <span id="utility-menu-header" role="heading" aria-level="2" className={headerTextClassName}>{headerText}</span>
           </span>
           <span className={cx('utility-menu-right-content-container')}>
             {closeButton}
@@ -363,7 +364,7 @@ class UtilityMenu extends React.Component {
     const menuText = intl.formatMessage({ id: 'Terra.application.utility.menu' });
     /* eslint-disable jsx-a11y/no-noninteractive-tabindex, react/forbid-dom-props */
     return (
-      <div ref={this.setMenuNode} style={{ height: isHeightBounded ? '100%' : 'auto', outline: 'none' }} tabIndex="0">
+      <div ref={this.setMenuNode} style={{ height: isHeightBounded ? '100%' : 'auto', outline: 'none' }} tabIndex="-1">
         <ContentContainer
           {...customProps}
           header={header}

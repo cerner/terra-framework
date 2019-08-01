@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Field from 'terra-form-field';
+import IconError from 'terra-icon/lib/icon/IconError';
 import DatePicker from './DatePicker';
 
 const propTypes = {
@@ -131,7 +132,7 @@ const propTypes = {
 const defaultProps = {
   disabled: false,
   error: null,
-  errorIcon: Field.defaultProps.errorIcon,
+  errorIcon: <IconError />,
   excludeDates: undefined,
   filterDate: undefined,
   help: null,

@@ -635,6 +635,7 @@ describe('DisclosureManager', () => {
           testkey: {
             key: 'content-key',
             component: <div id="disclosure-comp" />,
+            headerAdapterData: {},
           },
         },
         disclosureComponents: [<div id="disclosure-comp" />],
@@ -648,6 +649,12 @@ describe('DisclosureManager', () => {
         const firstRenderPayload = mockRender.mock.calls[0][0];
         expect(firstRenderPayload.dismissPresentedComponent).toBeDefined();
         expect(firstRenderPayload.closeDisclosure).toBeDefined();
+        expect(firstRenderPayload.disclosureComponentKeys).toEqual([]);
+        expect(firstRenderPayload.disclosureComponentData).toEqual({});
+        expect(firstRenderPayload.closeDisclosure).toBeDefined();
+        expect(firstRenderPayload.maximizeDisclosure).toBeDefined();
+        expect(firstRenderPayload.minimizeDisclosure).toBeUndefined();
+
         expect(firstRenderPayload.children).toBeDefined();
         expect(firstRenderPayload.children.components.props.children.length).toEqual(2);
 
@@ -661,6 +668,13 @@ describe('DisclosureManager', () => {
         const secondRenderPayload = mockRender.mock.calls[1][0];
         expect(secondRenderPayload.dismissPresentedComponent).toBeDefined();
         expect(secondRenderPayload.closeDisclosure).toBeDefined();
+        expect(secondRenderPayload.disclosureComponentKeys).toEqual(['testkey']);
+        expect(secondRenderPayload.disclosureComponentData).toBeDefined();
+        expect(secondRenderPayload.disclosureComponentData.testkey.component).toBeDefined();
+        expect(secondRenderPayload.disclosureComponentData.testkey.headerAdapterData).toBeDefined();
+        expect(secondRenderPayload.maximizeDisclosure).toBeUndefined();
+        expect(secondRenderPayload.minimizeDisclosure).toBeDefined();
+
         expect(secondRenderPayload.children).toBeDefined();
         expect(secondRenderPayload.children.components.props.children.length).toEqual(2);
 

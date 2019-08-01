@@ -30,6 +30,7 @@ Time Input:
             id="timeInput"
             name="time-input"
             onChange={this.handleOnChange}
+            showSeconds
           />
         </div>
       </div>

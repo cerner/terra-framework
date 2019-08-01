@@ -3,6 +3,20 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* updated package.json test scripts
+
+4.17.0 - (July 30, 2019)
+------------------
+### Removed
+* Removed DEPENDENCIES.md file
+
+4.16.0 - (July 16, 2019)
+------------------
+### Added
+* Added documentation on required peerDependencies
+* Added DisclosureManagerHeaderAdapter and DisclosureManagerHeaderAdapterContext
+* Adding properties to render-function parameter to facilitate DisclosureManagerHeaderAdapter support
 
 4.15.0 - (July 10, 2019)
 ------------------

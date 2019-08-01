@@ -1,0 +1,16 @@
+:local {
+  .count {
+    background-clip: padding-box;
+    background-image: var(--terra-application-navigation-tab-count-background-image, linear-gradient(#ffb20b, #ffc20a));
+    border: var(--terra-application-navigation-tab-count-border, none);
+    border-radius: 2.143rem;
+    box-shadow: var(--terra-application-navigation-tab-count-box-shadow, 0 2px 0 0 rgba(3, 43, 70, 0.8), 0 3px 5px 1px rgba(0, 0, 0, 0.26));
+    color: var(--terra-application-navigation-tab-count-color, #000);
+    flex: 0 0 auto;
+    font-size: 0.7143rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0 0.3571rem;
+  }
+}

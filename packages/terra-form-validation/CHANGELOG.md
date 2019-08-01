@@ -3,6 +3,34 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* updated package.json test scripts
+
+1.5.0 - (July 30, 2019)
+------------------
+### Removed
+* Removed DEPENDENCIES.md file
+
+### Changed
+* Update main key in package.json to point to `lib/FormValidationUtil.js`
+
+1.4.1 - (July 23, 2019)
+------------------
+### Changed
+* Updated DEPENDENCIES.md doc
+
+1.4.0 - (July 23, 2019)
+------------------
+### Changed
+* Updated terra-date-picker devDependency to v4.7.0
+
+### Removed
+* Removed dev dependency on terra-i18n
+
+1.3.0 - (July 16, 2019)
+------------------
+### Added
+* Added documentation on required peerDependencies
 
 1.2.0 - (June 19, 2019)
 ------------------

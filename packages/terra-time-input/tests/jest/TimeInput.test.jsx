@@ -1,14 +1,19 @@
 /* globals spyOn jest */
 
 import React from 'react';
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl, mountWithIntl, renderWithIntl } from 'terra-enzyme-intl';
 import KeyCode from 'keycode-js';
-import TimeInput from '../../src/TimeInput';
+import TimeInput from '../../lib/TimeInput';
+import TimeUtil from '../../lib/TimeUtil';
 
 const mockEvent = {
   preventDefault: jest.fn(),
 };
+
+beforeEach(() => {
+  mockEvent.preventDefault.mockClear();
+});
 
 it('should render a default time input', () => {
   const timeInput = <TimeInput name="time-input" />;
@@ -130,7 +135,7 @@ it('should handle focusing on the minute input without error', () => {
   expect(mockEvent.preventDefault).toHaveBeenCalled();
 });
 
-it('should handle focusing on the meridiem input without error', () => {
+it('should handle focusing on the meridiem input from minute without error', () => {
   mockEvent.keyCode = KeyCode.KEY_RIGHT;
   const timeInput = <TimeInput name="time-input" variant="12-hour" />;
   const wrapper = mountWithIntl(timeInput);
@@ -144,4 +149,169 @@ it('should pass in refCallback as the ref prop of the hour input element', () =>
   const wrapper = mountWithIntl(timeInput);
   expect(refCallback).toBeCalled();
   expect(wrapper).toMatchSnapshot();
+});
+
+it('should render a time input with seconds input', () => {
+  const timeInput = <TimeInput name="time-input" showSeconds />;
+  const wrapper = shallowWithIntl(timeInput);
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should render a time input with seconds input and a value', () => {
+  const timeInput = <TimeInput name="time-input" showSeconds value="12:12:12" />;
+  const wrapper = shallowWithIntl(timeInput);
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should render a time input with seconds input and custom attributes', () => {
+  const timeInput = <TimeInput name="time-input" showSeconds inputAttributes={{ id: 'terra-time-input' }} secondAttributes={{ id: 'id-0' }} />;
+  const wrapper = shallowWithIntl(timeInput);
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should handle focusing on the seconds input without error', () => {
+  mockEvent.keyCode = KeyCode.KEY_LEFT;
+  const timeInput = <TimeInput name="time-input" disabled showSeconds />;
+  const wrapper = mountWithIntl(timeInput);
+  wrapper.instance().setState({ hour: 2, minute: 15 });
+  wrapper.instance().handleMinuteInputKeyDown(mockEvent);
+  expect(mockEvent.preventDefault).toHaveBeenCalled();
+});
+
+it('should render a 12 hour clock time input with seconds input', () => {
+  const timeInput = <TimeInput name="time-input" variant="12-hour" showSeconds />;
+  const wrapper = shallowWithIntl(timeInput);
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should handle focusing on the meridiem input from seconds input without error', () => {
+  mockEvent.keyCode = KeyCode.KEY_RIGHT;
+  const timeInput = <TimeInput name="time-input" variant="12-hour" showSeconds />;
+  const wrapper = mountWithIntl(timeInput);
+  wrapper.instance().handleSecondInputKeyDown(mockEvent);
+  expect(mockEvent.preventDefault).toHaveBeenCalled();
+});
+
+it('should render a 24 hour timepicker with seconds properly on mobile devices', () => {
+  spyOn(window, 'matchMedia').and.returnValue({ matches: true });
+  window.ontouchstart = 'true';
+
+  const timeInput = <TimeInput name="time-input" showSeconds />;
+  const wrapper = renderWithIntl(timeInput);
+  expect(wrapper).toMatchSnapshot();
+  delete window.ontouchstart;
+});
+
+it('should set the labels with the correct htmlFor a 24 hour timepicker properly on mobile devices', () => {
+  spyOn(window, 'matchMedia').and.returnValue({ matches: true });
+  window.ontouchstart = 'true';
+
+  const timeInput = <TimeInput name="time-input" showSeconds secondAttributes={{ id: 'id-0' }} minuteAttributes={{ id: 'id-1' }} hourAttributes={{ id: 'id-2' }} />;
+  const wrapper = renderWithIntl(timeInput);
+  expect(wrapper).toMatchSnapshot();
+  delete window.ontouchstart;
+});
+
+it('should render a 12 hour timepicker meridiem with buttons and seconds input when viewed on a mobile device', () => {
+  spyOn(window, 'matchMedia').and.returnValue({ matches: true });
+  window.ontouchstart = 'true';
+
+  const timeInput = <TimeInput name="time-input" variant="12-hour" showSeconds />;
+  const wrapper = renderWithIntl(timeInput);
+  expect(wrapper).toMatchSnapshot();
+  delete window.ontouchstart;
+});
+
+it('should ignore invalid times with seconds properly', () => {
+  const timeInput = <TimeInput name="time-input" value="11:25:4" showSeconds />;
+  const wrapper = shallowWithIntl(timeInput);
+  expect(wrapper).toMatchSnapshot();
+
+  expect(wrapper.instance().state.hour).toEqual('');
+  expect(wrapper.instance().state.minute).toEqual('');
+  expect(wrapper.instance().state.second).toEqual('');
+});
+
+it('should validate the incrementHour helper method', () => {
+  expect(TimeUtil.incrementHour('11', TimeUtil.FORMAT_12_HOUR)).toEqual('12');
+  expect(TimeUtil.incrementHour('12', TimeUtil.FORMAT_12_HOUR)).toEqual('01');
+  expect(TimeUtil.incrementHour('0', TimeUtil.FORMAT_12_HOUR)).toEqual('01');
+  expect(TimeUtil.incrementHour('11', TimeUtil.FORMAT_24_HOUR)).toEqual('12');
+  expect(TimeUtil.incrementHour('12', TimeUtil.FORMAT_24_HOUR)).toEqual('13');
+  expect(TimeUtil.incrementHour('23', TimeUtil.FORMAT_24_HOUR)).toEqual('23');
+  expect(TimeUtil.incrementHour(undefined, TimeUtil.FORMAT_12_HOUR)).toEqual('12');
+  expect(TimeUtil.incrementHour(undefined, TimeUtil.FORMAT_24_HOUR)).toEqual('00');
+});
+
+it('should validate the decrementHour helper method', () => {
+  expect(TimeUtil.decrementHour('11', TimeUtil.FORMAT_12_HOUR)).toEqual('10');
+  expect(TimeUtil.decrementHour('10', TimeUtil.FORMAT_12_HOUR)).toEqual('09');
+  expect(TimeUtil.decrementHour('1', TimeUtil.FORMAT_12_HOUR)).toEqual('12');
+  expect(TimeUtil.decrementHour('11', TimeUtil.FORMAT_24_HOUR)).toEqual('10');
+  expect(TimeUtil.decrementHour('1', TimeUtil.FORMAT_24_HOUR)).toEqual('00');
+  expect(TimeUtil.decrementHour('0', TimeUtil.FORMAT_24_HOUR)).toEqual('0');
+  expect(TimeUtil.decrementHour(undefined, TimeUtil.FORMAT_12_HOUR)).toEqual('12');
+  expect(TimeUtil.decrementHour(undefined, TimeUtil.FORMAT_24_HOUR)).toEqual('00');
+});
+
+it('should validate the incrementMinute helper method', () => {
+  expect(TimeUtil.incrementMinute('11')).toEqual('12');
+  expect(TimeUtil.incrementMinute('0')).toEqual('01');
+  expect(TimeUtil.incrementMinute(undefined)).toEqual('00');
+});
+
+it('should validate the decrementMinute helper method', () => {
+  expect(TimeUtil.decrementMinute('11')).toEqual('10');
+  expect(TimeUtil.decrementMinute('10')).toEqual('09');
+  expect(TimeUtil.decrementMinute('0')).toEqual('0');
+  expect(TimeUtil.decrementMinute(undefined)).toEqual('00');
+});
+
+it('should validate the incrementSecond helper method', () => {
+  expect(TimeUtil.incrementSecond('11')).toEqual('12');
+  expect(TimeUtil.incrementSecond('0')).toEqual('01');
+  expect(TimeUtil.incrementSecond(undefined)).toEqual('00');
+});
+
+it('should validate the decrementSecond helper method', () => {
+  expect(TimeUtil.decrementSecond('11')).toEqual('10');
+  expect(TimeUtil.decrementSecond('10')).toEqual('09');
+  expect(TimeUtil.decrementSecond('0')).toEqual('0');
+  expect(TimeUtil.decrementSecond(undefined)).toEqual('00');
+});
+
+it('should validate the splitHour helper method', () => {
+  expect(TimeUtil.splitHour('23:32')).toEqual('23');
+  expect(TimeUtil.splitHour('7:7')).toEqual('07');
+  expect(TimeUtil.splitHour('27:70')).toEqual('');
+  expect(TimeUtil.splitHour({ apple: true })).toEqual('');
+});
+
+it('should validate the splitMinute helper method', () => {
+  expect(TimeUtil.splitMinute('23:32')).toEqual('32');
+  expect(TimeUtil.splitMinute('23:7')).toEqual('07');
+  expect(TimeUtil.splitMinute('23:70')).toEqual('');
+  expect(TimeUtil.splitMinute('23')).toEqual('');
+  expect(TimeUtil.splitMinute({ apple: true })).toEqual('');
+});
+
+it('should validate the splitSecond helper method', () => {
+  expect(TimeUtil.splitSecond('23:47:32')).toEqual('32');
+  expect(TimeUtil.splitSecond('23:47:7')).toEqual('07');
+  expect(TimeUtil.splitSecond('23:47:70')).toEqual('');
+  expect(TimeUtil.splitSecond('23:47')).toEqual('');
+  expect(TimeUtil.splitSecond({ apple: true })).toEqual('');
+});
+
+it('should validate the validateTime helper method', () => {
+  expect(TimeUtil.validateTime('23:47', false)).toBe(true);
+  expect(TimeUtil.validateTime('25:47', false)).toBe(false);
+  expect(TimeUtil.validateTime('23:67', false)).toBe(false);
+  expect(TimeUtil.validateTime('23:471', false)).toBe(false);
+  expect(TimeUtil.validateTime('23:47:32', false)).toBe(false);
+  expect(TimeUtil.validateTime('23', false)).toBe(false);
+
+  expect(TimeUtil.validateTime('23:47:09', true)).toBe(true);
+  expect(TimeUtil.validateTime('23:47', true)).toBe(false);
+  expect(TimeUtil.validateTime('23:47:60', true)).toBe(false);
 });

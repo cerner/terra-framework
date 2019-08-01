@@ -11,6 +11,23 @@ The NavigationPrompt and NavigationPromptCheckpoint components allow for the det
 
 This package uses React's Context for inter-component communication. A single instance of this package must be installed to ensure that communication occurs between all Context Providers and Consumers. To help ensure a single instance is installed, this package should be defined as a peer dependency in packages that are reusable libraries or otherwise consumed by other packages.
 
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+<details>
+<summary>View information on this component's peer dependencies.</summary>
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.0 |
+| react-dom | ^16.8.0 |
+
+
+</details>
+<!-- AUTO-GENERATED-CONTENT:END -->
+
 ## Rationale
 
 A React component has complete control over its own rendering logic. It can render child components and un-mount those child components as it sees fit. It follows that any individual component has no direct control over its own mounting and un-mounting; it is rendered (or not) at the discretion of its parent. A component must rely on its lifecycle events to determine how it is being implemented.
@@ -36,9 +53,9 @@ The NavigationPrompt can be rendered like any other component, but prop consiste
 ```jsx
 render() {
   return (
-    <NavigationPrompt 
-      description="This prompt will register and notify every time the component renders" 
-      metaData={{ important: 'info' }} 
+    <NavigationPrompt
+      description="This prompt will register and notify every time the component renders"
+      metaData={{ important: 'info' }}
     />
   );
 }

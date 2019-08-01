@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames/bind';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import ModalOverlay from './_ModalOverlay';
 import styles from './AbstractModal.module.scss';
 
@@ -110,7 +112,17 @@ const ModalContent = React.forwardRef((props, ref) => {
         role={role}
         ref={ref}
       >
+        <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
+          {text => (
+            <VisuallyHiddenText data-terra-abstract-modal-begin tabIndex="-1" text={text} />
+          )}
+        </FormattedMessage>
         {children}
+        <FormattedMessage id="Terra.AbstractModal.EndModalDialog">
+          {text => (
+            <VisuallyHiddenText text={text} />
+          )}
+        </FormattedMessage>
       </div>
     </React.Fragment>
   );

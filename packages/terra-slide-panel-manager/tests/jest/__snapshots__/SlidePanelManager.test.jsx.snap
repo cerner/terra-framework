@@ -44,17 +44,25 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
               Array [
                 <Context.Provider
                   value={
-                    DisclosureManagerDelegateInstance {
-                      "closeDisclosure": [Function],
-                      "disclose": [Function],
-                      "dismiss": [Function],
-                      "maximize": [Function],
-                      "registerDismissCheck": [Function],
-                      "requestFocus": [Function],
+                    Object {
+                      "register": [Function],
                     }
                   }
                 >
-                  <withDisclosureManager(Component) />
+                  <Context.Provider
+                    value={
+                      DisclosureManagerDelegateInstance {
+                        "closeDisclosure": [Function],
+                        "disclose": [Function],
+                        "dismiss": [Function],
+                        "maximize": [Function],
+                        "registerDismissCheck": [Function],
+                        "requestFocus": [Function],
+                      }
+                    }
+                  >
+                    <withDisclosureManager(Component) />
+                  </Context.Provider>
                 </Context.Provider>,
               ]
             }
@@ -103,17 +111,25 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                 Array [
                   <Context.Provider
                     value={
-                      DisclosureManagerDelegateInstance {
-                        "closeDisclosure": [Function],
-                        "disclose": [Function],
-                        "dismiss": [Function],
-                        "maximize": [Function],
-                        "registerDismissCheck": [Function],
-                        "requestFocus": [Function],
+                      Object {
+                        "register": [Function],
                       }
                     }
                   >
-                    <withDisclosureManager(Component) />
+                    <Context.Provider
+                      value={
+                        DisclosureManagerDelegateInstance {
+                          "closeDisclosure": [Function],
+                          "disclose": [Function],
+                          "dismiss": [Function],
+                          "maximize": [Function],
+                          "registerDismissCheck": [Function],
+                          "requestFocus": [Function],
+                        }
+                      }
+                    >
+                      <withDisclosureManager(Component) />
+                    </Context.Provider>
                   </Context.Provider>,
                 ]
               }

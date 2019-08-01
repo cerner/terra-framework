@@ -381,4 +381,20 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
 
     Terra.it.matchesScreenshot();
   });
+
+  describe('Time Input displays with seconds field', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-with-seconds');
+    });
+
+    Terra.it.matchesScreenshot();
+  });
+
+  describe('Time Input displays with seconds field and twelve hour format', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-seconds-twelve-hour');
+    });
+
+    Terra.it.matchesScreenshot();
+  });
 });

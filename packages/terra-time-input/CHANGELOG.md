@@ -3,6 +3,19 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* updated package.json test scripts
+
+4.6.0 - (July 30, 2019)
+------------------
+### Removed
+* Removed DEPENDENCIES.md file
+
+4.5.0 - (July 16, 2019)
+------------------
+### Added
+* Added documentation on required peerDependencies
+* Added the ability to have an input field for seconds.
 
 4.4.0 - (July 10, 2019)
 ------------------
@@ -22,15 +35,13 @@ Unreleased
 
 4.1.0 - (June 12, 2019)
 ------------------
-### Removed
-* Removed node_modules from .npmignore
-
 ### Changed
 * Removed all inline styles and implemented the same styles using external css.
-
-### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 * Update wdio specs to use Terra.describeViewports
+
+### Removed
+* Removed node_modules from .npmignore
 
 4.0.0 - (May 13, 2019)
 ------------------
@@ -47,7 +58,7 @@ Unreleased
 3.7.0 - (April 24, 2019)
 ------------------
 ### Changed
-* Replaced string "12-hour" with TimeUtil.FORMAT_12_HOUR in terra dev-site eamples
+* Replaced string "12-hour" with TimeUtil.FORMAT_12_HOUR in terra dev-site examples
 * Moved packages we use solely in doc examples and tests to devDependencies
 
 3.6.0 - (March 26, 2019)
