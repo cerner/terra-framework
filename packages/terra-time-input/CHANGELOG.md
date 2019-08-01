@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Updated to interface with react-intl's context rather than old React Context API.
+* updated package.json test scripts
 
 4.6.0 - (July 30, 2019)
 ------------------
