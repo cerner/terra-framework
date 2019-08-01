@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* updated package.json test scripts
 
 4.9.0 - (July 30, 2019)
 ------------------
@@ -10,6 +12,7 @@ Unreleased
 * Removed DEPENDENCIES.md file
 
 ### Changed
+* Update tests for dev-site v6
 * Explicitly pull in Error icon from terra-icon instead of pulling from terra-form-field
 
 ### Added

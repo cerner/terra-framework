@@ -3,11 +3,16 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* updated package.json test scripts
 
 5.7.0 - (July 30, 2019)
 ------------------
 ### Removed
 * Removed DEPENDENCIES.md file
+
+### Changed
+* Fixed linter issue in doc
 
 5.6.1 - (July 23, 2019)
 ------------------
