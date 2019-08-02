@@ -38,6 +38,7 @@ export default class Example extends React.Component {
   renderForm({ handleSubmit }) {
     return (
       <form
+        noValidate
         onSubmit={handleSubmit}
       >
         <Field
