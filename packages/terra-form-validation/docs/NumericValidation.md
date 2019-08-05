@@ -32,6 +32,7 @@ export default class Example extends React.Component {
   renderForm({ handleSubmit }) {
     return (
       <form
+        noValidate
         onSubmit={handleSubmit}
       >
         <Field
@@ -105,7 +106,7 @@ Let's start by giving a minimum and maximum to our value. For simplicity, set a 
 ```diff
 const validateNumber = (value) => {
   if (!value) { return undefined; }
-+ var numericValue = Number(value);  
++ var numericValue = Number(value);
 + if (numericValue < 10) {
 +   return 'Value should not be less than 10.';
 + }
@@ -140,7 +141,7 @@ Let's try a different way of validating. Using the `Number` converted value inst
 ```diff
 const validateNumber = (value) => {
   if (!value) { return undefined; }
-  var numericValue = Number(value);  
+  var numericValue = Number(value);
   ...
 - const valueSplit = value.split('.');
 - if (valueSplit.length === 2 && valueSplit[1].length > 3) {
