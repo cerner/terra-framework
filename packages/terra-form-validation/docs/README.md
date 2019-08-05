@@ -47,6 +47,12 @@ To start, you need to import the Form component from react-final-form, and set t
 
 When rendering individual fields inside the form, there are a few things that need to be done. The first is to create a Field component using the Field object from react-final-form, and setting the name, initial value, and validate props. Then inside the Field children, render a function with the arguments input and meta. The input prop contains information specific to the event such as value and name, and meta includes information related to field errors, submission state, validity status. You can view more of the provided attributes [here](https://github.com/final-form/react-final-form#fieldrenderprops). For immediate use, make sure that the function returns a form element with the onChange, value, and other input attributes set appropriately.
 
+**NOTE:** When using [react-final-form](https://github.com/final-form/react-final-form) for validation, we recommend disabling HTML5 form validation by adding the [`noValidate` boolean attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-novalidate) to your form element.
+
+```html
+<form noValidate>
+```
+
 To get a visual on what the implementation looks like, see below:
 
 ```jsx
@@ -88,6 +94,7 @@ export default class MainEntry extends React.Component {
   renderForm({ handleSubmit, pristine, invalid }) {
     return (
       <form
+        noValidate
         onSubmit={handleSubmit}
       >
         <Field
