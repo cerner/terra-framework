@@ -91,7 +91,7 @@ export default class Week extends React.Component {
      */
     showWeekNumber: PropTypes.bool,
     /**
-     * Date selected by user .
+     * Minimum date for a given range.
      */
     startDate: PropTypes.object,
     /**

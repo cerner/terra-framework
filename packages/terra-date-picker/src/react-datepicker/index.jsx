@@ -272,7 +272,7 @@ class DatePicker extends React.Component {
      */
     forceShowMonthNavigation: PropTypes.bool,
     /**
-     * Date selected by user .
+     * Minimum date for a given range .
      */
     startDate: PropTypes.object,
     /**

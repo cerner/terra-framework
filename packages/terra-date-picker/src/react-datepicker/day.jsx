@@ -74,7 +74,7 @@ class Day extends React.Component {
      */
     selectsStart: PropTypes.bool,
     /**
-     * Date selected by user .
+     * Minimum date for a given range .
      */
     startDate: PropTypes.object,
     /**

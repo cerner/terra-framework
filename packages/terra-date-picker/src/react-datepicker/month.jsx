@@ -101,7 +101,7 @@ export default class Month extends React.Component {
      */
     showWeekNumbers: PropTypes.bool,
     /**
-     * Date selected by user .
+     * Minimum date for a given range .
      */
     startDate: PropTypes.object,
     /**

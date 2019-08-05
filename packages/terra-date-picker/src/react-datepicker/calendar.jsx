@@ -212,7 +212,7 @@ export default class Calendar extends React.Component {
      */
     showYearDropdown: PropTypes.bool,
     /**
-     * Date selected by user .
+     * Minimum date for a given range .
      */
     startDate: PropTypes.object,
     /**
