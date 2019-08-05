@@ -3,6 +3,10 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* updated package.json test scripts
+* Added `noValidate` attribute to all `<form />` elements in the examples
+* Added documentation on recommend usage of `noValidate` prop
 
 1.5.0 - (July 30, 2019)
 ------------------
