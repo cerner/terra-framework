@@ -94,7 +94,7 @@ export default class Time extends React.Component {
 
     return (
       <div className={cx(['react-datepicker-time-container', `${(this.props.todayButton) ? 'react-datepicker-time-container--with-today-button' : ''}`])}>
-        <div className={cx('react-datepicker-header react-datepicker-header--time')}>
+        <div className={cx(['react-datepicker-header', 'react-datepicker-header--time'])}>
           <div className={cx('react-datepicker-time-header')}>Time</div>
         </div>
         <div className={cx('react-datepicker-time')}>

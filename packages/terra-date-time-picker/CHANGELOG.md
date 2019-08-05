@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated wdio test to work with changes in terra-date-picker.
 
 4.8.1 - (July 23, 2019)
 ------------------
@@ -11,7 +13,6 @@ Unreleased
 4.8.0 - (July 23, 2019)
 ------------------
 ### Changed
-* Updated wdio test to work with changes in terra-date-picker.
 * When the date-time picker time clarification modal is open on touch devices, it will now focus on the first interactive DOM element within it. This enables focus to be shifted into the modal correctly when using VoiceOver on iOS.
 
 4.7.0 - (July 16, 2019)

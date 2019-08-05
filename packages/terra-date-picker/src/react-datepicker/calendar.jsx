@@ -277,7 +277,7 @@ export default class Calendar extends React.Component {
       classes.push('react-datepicker-current-month--hasMonthDropdown')
     }
     return (
-      <div className={cx(classes.join(' '))}>
+      <div className={cx(classes)}>
         {formatDate(date, this.props.dateFormat)}
       </div>
     )
@@ -336,11 +336,11 @@ export default class Calendar extends React.Component {
       var monthDate = addMonths(cloneDate(this.state.date), i)
       var monthKey = `month-${i}`
       monthList.push(
-        <div key={monthKey} ref={div => { this.monthContainer = div }} className='react-datepicker-month-container'>
+        <div key={monthKey} ref={div => { this.monthContainer = div }} className={cx('react-datepicker-month-container')}>
           <div className={cx('react-datepicker-header')}>
             {this.renderCurrentMonth(monthDate)}
             <div
-              className={cx(['react-datepicker-header__dropdown', `react-datepicker-header__dropdown--${this.props.dropdownMode}`])}
+              className={cx(['react-datepicker-header-dropdown', `react-datepicker-header-dropdown--${this.props.dropdownMode}`])}
               onFocus={this.handleDropdownFocus}>
               {this.renderMonthDropdown(i !== 0)}
               {this.renderYearDropdown(i !== 0)}

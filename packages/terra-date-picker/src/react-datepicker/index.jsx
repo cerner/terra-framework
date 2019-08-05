@@ -5,7 +5,6 @@ import FocusTrap from 'focus-trap-react';
 import { Portal } from 'react-portal';
 import KeyCode from 'keycode-js';
 import Popup from 'terra-popup';
-import classnames from 'classnames';
 import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
@@ -599,7 +598,7 @@ class DatePicker extends React.Component {
   }
 
   renderDateInput = () => {
-    var classNameList = classnames(this.props.className, {
+    var classNameList = cx(this.props.className, {
       [outsideClickIgnoreClass]: this.state.open
     })
 
@@ -624,7 +623,7 @@ class DatePicker extends React.Component {
       placeholder: this.props.placeholderText,
       disabled: this.props.disabled,
       autoComplete: this.props.autoComplete,
-      className: cx(classNameList),
+      className: classNameList,
       title: this.props.title,
       readOnly: this.props.readOnly,
       required: this.props.required,
@@ -695,7 +694,7 @@ class DatePicker extends React.Component {
           targetRef={() => this.datePickerContainer.current }
           onPosition={this.handleOnPosition}
           onRequestClose={this.handleOnRequestClose}
-          classNameArrow={classnames('react-datepicker-arrow')}
+          classNameArrow={cx('react-datepicker-arrow')}
           contentWidth="auto"
           contentHeight="auto"
           isArrowDisplayed

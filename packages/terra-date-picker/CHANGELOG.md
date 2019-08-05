@@ -4,7 +4,9 @@ Changelog
 Unreleased
 ----------
 ### Changed
-* Explicitly pull in Error icon from terra-icon instead of pulling from terra-form-field
+* Explicitly pull in Error icon from terra-icon instead of pulling from terra-form-field### Changed
+* Removed lint errors for css.
+* Updated react-date-picker to use css modules.
 
 4.8.1 - (July 23, 2019)
 ------------------
@@ -13,8 +15,6 @@ Unreleased
 4.8.0 - (July 23, 2019)
 ------------------
 ### Changed
-* Removed lint errors for css.
-* Updated react-date-picker to use css modules.
 * Normalized terra-visually-hidden-text dependency version to match other terra-framework packages
 
 4.7.0 - (July 16, 2019)
