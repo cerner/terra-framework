@@ -4,6 +4,25 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* updated package.json test scripts
+
+4.9.0 - (July 30, 2019)
+------------------
+### Removed
+* Removed DEPENDENCIES.md file
+
+### Changed
+* Update tests for dev-site v6
+* Explicitly pull in Error icon from terra-icon instead of pulling from terra-form-field
+
+4.8.1 - (July 23, 2019)
+------------------
+### Changed
+* Updated DEPENDENCIES.md doc
+
+4.8.0 - (July 23, 2019)
+------------------
+### Changed
 * Normalized terra-visually-hidden-text dependency version to match other terra-framework packages
 
 4.7.0 - (July 16, 2019)

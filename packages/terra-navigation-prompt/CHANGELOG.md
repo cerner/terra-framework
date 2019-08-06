@@ -3,6 +3,23 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* updated package.json test scripts
+
+1.7.0 - (July 30, 2019)
+------------------
+### Removed
+* Removed DEPENDENCIES.md file
+
+1.6.1 - (July 23, 2019)
+------------------
+### Changed
+* Updated DEPENDENCIES.md doc
+
+1.6.0 - (July 23, 2019)
+------------------
+### Changed
+* Minor dependency version bump
 
 1.5.0 - (July 16, 2019)
 ------------------

@@ -1,0 +1,60 @@
+:local {
+  .item {
+    align-items: center;
+    background-color: var(--terra-application-navigation-drawer-menu-item-background-color, transparent);
+    color: var(--terra-application-navigation-drawer-menu-item-color, rgba(255, 255, 255, 0.8));
+    cursor: pointer;
+    display: flex;
+    font-size: 1.1428571429rem;
+    font-weight: 400;
+    justify-content: flex-start;
+    line-height: 1.429;
+    outline: none;
+    overflow: hidden;
+    padding: 0.8571428571rem 1.4285714286rem;
+    position: relative;
+  }
+  
+  .icon {
+    flex: 0 0 auto;
+    margin-right: 0.7142857143rem;
+  }
+
+  .text {
+    flex: 1 1 auto;
+    hyphens: auto;
+    word-break: break-word;
+  }
+
+  .item.is-selected {
+    box-shadow: var(--terra-application-navigation-drawer-menu-item-selected-box-shadow, inset 0.35714rem 0 0 0 rgba(40, 154, 214, 0.8));
+    color: var(--terra-application-navigation-drawer-menu-item-selected-color, rgba(255, 255, 255, 1));
+    font-weight: 500;
+  }
+
+  .item.is-selected[data-focus-styles-enabled='true']:focus {
+    box-shadow: var(--terra-application-navigation-drawer-menu-item-selected-focus-box-shadow, inset 0.35714rem 0 0 0 rgba(40, 154, 214, 0.8));
+    outline: var(--terra-application-navigation-drawer-menu-item-selected-focus-outline, 2px dashed #fff);
+    outline-offset: var(--terra-application-navigation-drawer-menu-item-selected-focus-outline-offset, -5px);
+  }
+
+  .item:hover {
+    background-color: var(--terra-application-navigation-drawer-menu-item-hover-background-color, rgba(30, 163, 244, 0.13));
+    color: var(--terra-application-navigation-drawer-menu-item-hover-color, rgba(255, 255, 255, 1));
+  }
+
+  .item:focus[data-focus-styles-enabled='true'] {
+    box-shadow: var(--terra-application-navigation-drawer-menu-item-focus-box-shadow, none);
+    outline: var(--terra-application-navigation-drawer-menu-item-focus-outline, 2px dashed #fff);
+    outline-offset: var(--terra-application-navigation-drawer-menu-item-focus-outline-offset, -5px);
+  }
+
+  .item:active {
+    background-color: var(--terra-application-navigation-drawer-menu-item-active-background-color, rgba(3, 43, 70, 0.2));
+    color: var(--terra-application-navigation-drawer-menu-item-active-color, rgba(255, 255, 255, 0.5));
+  }
+
+  .has-border {
+    border-bottom: var(--terra-application-navigation-drawer-menu-navigation-list-border-bottom, 1px solid rgba(255, 255, 255, 0.1));
+  }
+}

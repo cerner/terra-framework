@@ -8,10 +8,10 @@ import {
   availableDisclosureHeights, availableDisclosureWidths, DisclosureManagerHeaderAdapter, DisclosureManagerContext,
 } from 'terra-disclosure-manager';
 
-/* eslint-disable import/no-unresolved, import/extensions */
+/* eslint-disable import/no-unresolved, import/extensions, import/no-extraneous-dependencies */
 import SlidePanelManager from 'terra-slide-panel-manager/lib/SlidePanelManager';
 import styles from 'terra-slide-panel-manager/lib/terra-dev-site/doc/example/SlidePanelManager.module.scss';
-/* eslint-enable import/no-unresolved, import/extensions */
+/* eslint-enable import/no-unresolved, import/extensions, import/no-extraneous-dependencies */
 
 const cx = classNames.bind(styles);
 

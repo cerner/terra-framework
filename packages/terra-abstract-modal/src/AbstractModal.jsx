@@ -118,10 +118,15 @@ class AbstractModal extends React.Component {
       if (!mainDocumentElement.hasAttribute('data-overlay-count')) {
         mainDocumentElement.setAttribute('data-overlay-count', '1');
         mainDocumentElement.setAttribute('inert', '');
-        // Shift focus to modal when opened
-        this.modalElement.current.focus();
       } else if (mainDocumentElement && mainDocumentElement.hasAttribute('data-overlay-count')) {
         mainDocumentElement.setAttribute('data-overlay-count', `${inert + 1}`);
+      }
+
+      // Handle focus shift for VoiceOver on iOS
+      if ('ontouchstart' in window) {
+        this.modalElement.current.querySelector('[data-terra-abstract-modal-begin]').focus();
+      } else {
+        // Shift focus to modal dialog
         this.modalElement.current.focus();
       }
     }

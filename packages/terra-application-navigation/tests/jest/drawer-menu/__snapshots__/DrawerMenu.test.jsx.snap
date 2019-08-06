@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DrawerMenu should render default element 1`] = `
+<div
+  className="drawer-container"
+>
+  <div
+    className="drawer-menu"
+    data-navigation-drawer-menu={true}
+    role={null}
+    tabIndex={0}
+  >
+    <div
+      className="vertical-overflow-container"
+    >
+      <div
+        className="header"
+      >
+        <div
+          className="header-background-fill"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DrawerMenu should render with function callbacks 1`] = `
+<div
+  className="drawer-container"
+>
+  <div
+    className="drawer-menu"
+    data-navigation-drawer-menu={true}
+    role="dialog"
+    tabIndex={0}
+  >
+    <div
+      className="vertical-overflow-container"
+    >
+      <div
+        className="header"
+      >
+        <div
+          className="header-background-fill"
+        >
+          <DrawerMenuTitle
+            titleConfig={
+              Object {
+                "title": "test-title",
+              }
+            }
+          />
+          <div>
+            my test hero
+          </div>
+          <DrawerMenuUser
+            userConfig={
+              Object {
+                "detail": "user-detail",
+                "imageSrc": "user-src",
+                "initials": "user-initials",
+                "name": "user-name",
+              }
+            }
+            variant="small"
+          />
+        </div>
+      </div>
+      <div
+        role="navigation"
+      >
+        <ul
+          aria-label="Terra.applicationNavigation.drawerMenu.navigation"
+          className="navigation-item-list"
+        >
+          <DrawerMenuLinkItem
+            isSelected={false}
+            key="my-test-key"
+            onSelect={[Function]}
+            text="test-text"
+          />
+        </ul>
+      </div>
+      <ul
+        aria-label="Terra.applicationNavigation.drawerMenu.utilities"
+        className="utility-item-list"
+        role="listbox"
+      >
+        <DrawerMenuListItem
+          icon={
+            <span>
+              my icon
+            </span>
+          }
+          key="my-test-key-2"
+          onSelect={[Function]}
+          text="test-text-2"
+        />
+        <DrawerMenuListItem
+          icon={
+            <IconSettings
+              data-name="Layer 1"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            />
+          }
+          onSelect={[MockFunction]}
+          text="Terra.applicationNavigation.utilityMenu.settings"
+        />
+        <DrawerMenuListItem
+          icon={
+            <IconQuestionOutline
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            />
+          }
+          onSelect={[MockFunction]}
+          text="Terra.applicationNavigation.utilityMenu.help"
+        />
+      </ul>
+    </div>
+    <div
+      className="footer"
+    >
+      <DrawerMenuFooterButton
+        onClick={[MockFunction]}
+        text="Terra.applicationNavigation.utilityMenu.logout"
+      />
+    </div>
+  </div>
+</div>
+`;

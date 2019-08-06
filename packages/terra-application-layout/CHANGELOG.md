@@ -4,6 +4,22 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Update tests for dev-site v6
+* updated package.json test scripts
+
+5.9.0 - (July 30, 2019)
+------------------
+### Removed
+* Removed DEPENDENCIES.md file
+
+5.8.1 - (July 23, 2019)
+------------------
+### Changed
+* Updated DEPENDENCIES.md doc
+
+5.8.0 - (July 23, 2019)
+------------------
+### Changed
 * Normalized terra-breakpoints dependency version to match other terra-framework packages
 
 5.7.0 - (July 16, 2019)
@@ -13,6 +29,7 @@ Unreleased
 
 ### Changed
 * Removed Ignore Axe Rules from wdio tests.
+* Add wait to spec tests to pass.
 
 5.6.0 - (July 10, 2019)
 ------------------

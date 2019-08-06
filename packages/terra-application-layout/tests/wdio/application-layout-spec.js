@@ -4,6 +4,7 @@ Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
       browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout');
       browser.waitForVisible('#application-layout-test');
 
+      browser.pause(3000);// to display image
       Terra.validates.element({ selector: '#application-layout-test' });
     });
   });
@@ -12,7 +13,7 @@ Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
     it('Displays an application layout with top navigation tabs', () => {
       browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout-no-top-nav');
       browser.waitForVisible('#application-layout-test');
-
+      browser.moveToObject('#root', 0, 0);
       Terra.validates.element({ selector: '#application-layout-test' });
     });
   });
@@ -21,7 +22,7 @@ Terra.describeViewports('ApplicationLayout', ['small', 'large'], () => {
     it('Displays an application layout with no header content', () => {
       browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout-empty');
       browser.waitForVisible('#application-layout-test');
-
+      browser.moveToObject('#root', 0, 0);
       Terra.validates.element({ selector: '#application-layout-test' });
     });
   });
@@ -113,6 +114,7 @@ Terra.describeViewports('ApplicationLayout', ['small'], () => {
       browser.click('[data-routing-menu] [data-navigation-side-menu-action-header] button');
       browser.waitForVisible('[data-routing-menu] [data-menu-item="/page_2"]');
       browser.click('[data-routing-menu] [data-menu-item="/page_2"]');
+      browser.pause(150);
 
       Terra.validates.element({ selector: '#application-layout-test' });
     });

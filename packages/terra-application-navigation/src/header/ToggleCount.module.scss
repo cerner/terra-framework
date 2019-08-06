@@ -1,0 +1,17 @@
+:local {
+  .count {
+    background-clip: padding-box;
+    background-image: var(--terra-application-navigation-toggle-count-background-image, linear-gradient(#ffb20b, #ffc20a));
+    border: var(--terra-application-navigation-toggle-count-border, none);
+    border-radius: 2.143rem;
+    box-shadow: var(--terra-application-navigation-toggle-count-box-shadow, 0 1px 0 0 rgba(3, 43, 70, 0.8), -2px 4px 5px 1px rgba(0, 0, 0, 0.33));
+    color: var(--terra-application-navigation-toggle-count-color, #000);
+    flex: 0 0 auto;
+    height: 0.7857rem;
+    padding: 0;
+    position: absolute;
+    right: 0.07143rem;
+    top: 0.07143rem;
+    width: 0.7857rem;
+  }
+}

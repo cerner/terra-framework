@@ -1,7 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should mount an open modal 1`] = `
-<ModalExample>
+<ModalExample
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
   <div>
     <AbstractModal
       ariaLabel="Terra Modal"
@@ -9,6 +37,33 @@ exports[`should mount an open modal 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -29,9 +84,17 @@ exports[`should mount an open modal 1`] = `
                 aria-label="Terra Modal"
                 aria-modal="true"
                 class="abstract-modal layer-6000"
+                intl="[object Object]"
                 role="dialog"
                 tabindex="0"
               >
+                <span
+                  class="visually-hidden-text"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                >
+                  Terra.AbstractModal.BeginModalDialog
+                </span>
                 <div>
                   <h1>
                     Terra Modal
@@ -42,6 +105,11 @@ exports[`should mount an open modal 1`] = `
                     Close Modal
                   </button>
                 </div>
+                <span
+                  class="visually-hidden-text"
+                >
+                  Terra.AbstractModal.EndModalDialog
+                </span>
               </div>
             </div>
           }
@@ -52,6 +120,33 @@ exports[`should mount an open modal 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
@@ -72,9 +167,54 @@ exports[`should mount an open modal 1`] = `
               aria-label="Terra Modal"
               aria-modal="true"
               className="abstract-modal layer-6000"
+              intl={
+                Object {
+                  "defaultFormats": Object {},
+                  "defaultLocale": "en",
+                  "formatDate": [Function],
+                  "formatHTMLMessage": [Function],
+                  "formatMessage": [Function],
+                  "formatNumber": [Function],
+                  "formatPlural": [Function],
+                  "formatRelative": [Function],
+                  "formatTime": [Function],
+                  "formats": Object {},
+                  "formatters": Object {
+                    "getDateTimeFormat": [Function],
+                    "getMessageFormat": [Function],
+                    "getNumberFormat": [Function],
+                    "getPluralFormat": [Function],
+                    "getRelativeFormat": [Function],
+                  },
+                  "locale": "en",
+                  "messages": null,
+                  "now": [Function],
+                  "onError": [Function],
+                  "textComponent": "span",
+                  "timeZone": null,
+                }
+              }
               role="dialog"
               tabIndex="0"
             >
+              <FormattedMessage
+                id="Terra.AbstractModal.BeginModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  data-terra-abstract-modal-begin={true}
+                  tabIndex="-1"
+                  text="Terra.AbstractModal.BeginModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
+                  >
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
               <div>
                 <h1>
                   Terra Modal
@@ -86,6 +226,20 @@ exports[`should mount an open modal 1`] = `
                   Close Modal
                 </button>
               </div>
+              <FormattedMessage
+                id="Terra.AbstractModal.EndModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  text="Terra.AbstractModal.EndModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
             </div>
           </ForwardRef>
         </Portal>
@@ -103,6 +257,33 @@ exports[`should mount an open modal 1`] = `
 
 exports[`should mount an open modal 7000 z-index 1`] = `
 <ModalExample
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   zIndex="7000"
 >
   <div>
@@ -112,6 +293,33 @@ exports[`should mount an open modal 7000 z-index 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -132,9 +340,17 @@ exports[`should mount an open modal 7000 z-index 1`] = `
                 aria-label="Terra Modal"
                 aria-modal="true"
                 class="abstract-modal layer-7000"
+                intl="[object Object]"
                 role="dialog"
                 tabindex="0"
               >
+                <span
+                  class="visually-hidden-text"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                >
+                  Terra.AbstractModal.BeginModalDialog
+                </span>
                 <div>
                   <h1>
                     Terra Modal
@@ -145,6 +361,11 @@ exports[`should mount an open modal 7000 z-index 1`] = `
                     Close Modal
                   </button>
                 </div>
+                <span
+                  class="visually-hidden-text"
+                >
+                  Terra.AbstractModal.EndModalDialog
+                </span>
               </div>
             </div>
           }
@@ -155,6 +376,33 @@ exports[`should mount an open modal 7000 z-index 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
@@ -175,9 +423,54 @@ exports[`should mount an open modal 7000 z-index 1`] = `
               aria-label="Terra Modal"
               aria-modal="true"
               className="abstract-modal layer-7000"
+              intl={
+                Object {
+                  "defaultFormats": Object {},
+                  "defaultLocale": "en",
+                  "formatDate": [Function],
+                  "formatHTMLMessage": [Function],
+                  "formatMessage": [Function],
+                  "formatNumber": [Function],
+                  "formatPlural": [Function],
+                  "formatRelative": [Function],
+                  "formatTime": [Function],
+                  "formats": Object {},
+                  "formatters": Object {
+                    "getDateTimeFormat": [Function],
+                    "getMessageFormat": [Function],
+                    "getNumberFormat": [Function],
+                    "getPluralFormat": [Function],
+                    "getRelativeFormat": [Function],
+                  },
+                  "locale": "en",
+                  "messages": null,
+                  "now": [Function],
+                  "onError": [Function],
+                  "textComponent": "span",
+                  "timeZone": null,
+                }
+              }
               role="dialog"
               tabIndex="0"
             >
+              <FormattedMessage
+                id="Terra.AbstractModal.BeginModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  data-terra-abstract-modal-begin={true}
+                  tabIndex="-1"
+                  text="Terra.AbstractModal.BeginModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
+                  >
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
               <div>
                 <h1>
                   Terra Modal
@@ -189,6 +482,20 @@ exports[`should mount an open modal 7000 z-index 1`] = `
                   Close Modal
                 </button>
               </div>
+              <FormattedMessage
+                id="Terra.AbstractModal.EndModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  text="Terra.AbstractModal.EndModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
             </div>
           </ForwardRef>
         </Portal>
@@ -206,6 +513,33 @@ exports[`should mount an open modal 7000 z-index 1`] = `
 
 exports[`should mount an open modal 8000 z-index 1`] = `
 <ModalExample
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   zIndex="8000"
 >
   <div>
@@ -215,6 +549,33 @@ exports[`should mount an open modal 8000 z-index 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -235,9 +596,17 @@ exports[`should mount an open modal 8000 z-index 1`] = `
                 aria-label="Terra Modal"
                 aria-modal="true"
                 class="abstract-modal layer-8000"
+                intl="[object Object]"
                 role="dialog"
                 tabindex="0"
               >
+                <span
+                  class="visually-hidden-text"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                >
+                  Terra.AbstractModal.BeginModalDialog
+                </span>
                 <div>
                   <h1>
                     Terra Modal
@@ -248,6 +617,11 @@ exports[`should mount an open modal 8000 z-index 1`] = `
                     Close Modal
                   </button>
                 </div>
+                <span
+                  class="visually-hidden-text"
+                >
+                  Terra.AbstractModal.EndModalDialog
+                </span>
               </div>
             </div>
           }
@@ -258,6 +632,33 @@ exports[`should mount an open modal 8000 z-index 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
@@ -278,9 +679,54 @@ exports[`should mount an open modal 8000 z-index 1`] = `
               aria-label="Terra Modal"
               aria-modal="true"
               className="abstract-modal layer-8000"
+              intl={
+                Object {
+                  "defaultFormats": Object {},
+                  "defaultLocale": "en",
+                  "formatDate": [Function],
+                  "formatHTMLMessage": [Function],
+                  "formatMessage": [Function],
+                  "formatNumber": [Function],
+                  "formatPlural": [Function],
+                  "formatRelative": [Function],
+                  "formatTime": [Function],
+                  "formats": Object {},
+                  "formatters": Object {
+                    "getDateTimeFormat": [Function],
+                    "getMessageFormat": [Function],
+                    "getNumberFormat": [Function],
+                    "getPluralFormat": [Function],
+                    "getRelativeFormat": [Function],
+                  },
+                  "locale": "en",
+                  "messages": null,
+                  "now": [Function],
+                  "onError": [Function],
+                  "textComponent": "span",
+                  "timeZone": null,
+                }
+              }
               role="dialog"
               tabIndex="0"
             >
+              <FormattedMessage
+                id="Terra.AbstractModal.BeginModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  data-terra-abstract-modal-begin={true}
+                  tabIndex="-1"
+                  text="Terra.AbstractModal.BeginModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
+                  >
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
               <div>
                 <h1>
                   Terra Modal
@@ -292,6 +738,20 @@ exports[`should mount an open modal 8000 z-index 1`] = `
                   Close Modal
                 </button>
               </div>
+              <FormattedMessage
+                id="Terra.AbstractModal.EndModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  text="Terra.AbstractModal.EndModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
             </div>
           </ForwardRef>
         </Portal>
@@ -309,6 +769,33 @@ exports[`should mount an open modal 8000 z-index 1`] = `
 
 exports[`should mount an open modal 9000 z-index 1`] = `
 <ModalExample
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   zIndex="9000"
 >
   <div>
@@ -318,6 +805,33 @@ exports[`should mount an open modal 9000 z-index 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -338,9 +852,17 @@ exports[`should mount an open modal 9000 z-index 1`] = `
                 aria-label="Terra Modal"
                 aria-modal="true"
                 class="abstract-modal layer-9000"
+                intl="[object Object]"
                 role="dialog"
                 tabindex="0"
               >
+                <span
+                  class="visually-hidden-text"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                >
+                  Terra.AbstractModal.BeginModalDialog
+                </span>
                 <div>
                   <h1>
                     Terra Modal
@@ -351,6 +873,11 @@ exports[`should mount an open modal 9000 z-index 1`] = `
                     Close Modal
                   </button>
                 </div>
+                <span
+                  class="visually-hidden-text"
+                >
+                  Terra.AbstractModal.EndModalDialog
+                </span>
               </div>
             </div>
           }
@@ -361,6 +888,33 @@ exports[`should mount an open modal 9000 z-index 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
@@ -381,9 +935,54 @@ exports[`should mount an open modal 9000 z-index 1`] = `
               aria-label="Terra Modal"
               aria-modal="true"
               className="abstract-modal layer-9000"
+              intl={
+                Object {
+                  "defaultFormats": Object {},
+                  "defaultLocale": "en",
+                  "formatDate": [Function],
+                  "formatHTMLMessage": [Function],
+                  "formatMessage": [Function],
+                  "formatNumber": [Function],
+                  "formatPlural": [Function],
+                  "formatRelative": [Function],
+                  "formatTime": [Function],
+                  "formats": Object {},
+                  "formatters": Object {
+                    "getDateTimeFormat": [Function],
+                    "getMessageFormat": [Function],
+                    "getNumberFormat": [Function],
+                    "getPluralFormat": [Function],
+                    "getRelativeFormat": [Function],
+                  },
+                  "locale": "en",
+                  "messages": null,
+                  "now": [Function],
+                  "onError": [Function],
+                  "textComponent": "span",
+                  "timeZone": null,
+                }
+              }
               role="dialog"
               tabIndex="0"
             >
+              <FormattedMessage
+                id="Terra.AbstractModal.BeginModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  data-terra-abstract-modal-begin={true}
+                  tabIndex="-1"
+                  text="Terra.AbstractModal.BeginModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
+                  >
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
               <div>
                 <h1>
                   Terra Modal
@@ -395,6 +994,20 @@ exports[`should mount an open modal 9000 z-index 1`] = `
                   Close Modal
                 </button>
               </div>
+              <FormattedMessage
+                id="Terra.AbstractModal.EndModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  text="Terra.AbstractModal.EndModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
             </div>
           </ForwardRef>
         </Portal>
@@ -412,6 +1025,33 @@ exports[`should mount an open modal 9000 z-index 1`] = `
 
 exports[`should mount an open modal set to fullscreen 1`] = `
 <ModalExample
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   isFullscreen={true}
 >
   <div>
@@ -421,6 +1061,33 @@ exports[`should mount an open modal set to fullscreen 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
       isFullscreen={true}
       isOpen={true}
       onRequestClose={[Function]}
@@ -441,9 +1108,17 @@ exports[`should mount an open modal set to fullscreen 1`] = `
                 aria-label="Terra Modal"
                 aria-modal="true"
                 class="abstract-modal is-fullscreen layer-6000"
+                intl="[object Object]"
                 role="dialog"
                 tabindex="0"
               >
+                <span
+                  class="visually-hidden-text"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                >
+                  Terra.AbstractModal.BeginModalDialog
+                </span>
                 <div>
                   <h1>
                     Terra Modal
@@ -454,6 +1129,11 @@ exports[`should mount an open modal set to fullscreen 1`] = `
                     Close Modal
                   </button>
                 </div>
+                <span
+                  class="visually-hidden-text"
+                >
+                  Terra.AbstractModal.EndModalDialog
+                </span>
               </div>
             </div>
           }
@@ -464,6 +1144,33 @@ exports[`should mount an open modal set to fullscreen 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isFullscreen={true}
             isScrollable={false}
             onRequestClose={[Function]}
@@ -484,9 +1191,54 @@ exports[`should mount an open modal set to fullscreen 1`] = `
               aria-label="Terra Modal"
               aria-modal="true"
               className="abstract-modal is-fullscreen layer-6000"
+              intl={
+                Object {
+                  "defaultFormats": Object {},
+                  "defaultLocale": "en",
+                  "formatDate": [Function],
+                  "formatHTMLMessage": [Function],
+                  "formatMessage": [Function],
+                  "formatNumber": [Function],
+                  "formatPlural": [Function],
+                  "formatRelative": [Function],
+                  "formatTime": [Function],
+                  "formats": Object {},
+                  "formatters": Object {
+                    "getDateTimeFormat": [Function],
+                    "getMessageFormat": [Function],
+                    "getNumberFormat": [Function],
+                    "getPluralFormat": [Function],
+                    "getRelativeFormat": [Function],
+                  },
+                  "locale": "en",
+                  "messages": null,
+                  "now": [Function],
+                  "onError": [Function],
+                  "textComponent": "span",
+                  "timeZone": null,
+                }
+              }
               role="dialog"
               tabIndex="0"
             >
+              <FormattedMessage
+                id="Terra.AbstractModal.BeginModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  data-terra-abstract-modal-begin={true}
+                  tabIndex="-1"
+                  text="Terra.AbstractModal.BeginModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
+                  >
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
               <div>
                 <h1>
                   Terra Modal
@@ -498,6 +1250,20 @@ exports[`should mount an open modal set to fullscreen 1`] = `
                   Close Modal
                 </button>
               </div>
+              <FormattedMessage
+                id="Terra.AbstractModal.EndModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  text="Terra.AbstractModal.EndModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
             </div>
           </ForwardRef>
         </Portal>
@@ -516,6 +1282,33 @@ exports[`should mount an open modal set to fullscreen 1`] = `
 exports[`should mount an open modal with custom props 1`] = `
 <ModalExample
   id="custom-props"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
   <div>
     <AbstractModal
@@ -525,6 +1318,33 @@ exports[`should mount an open modal with custom props 1`] = `
       closeOnEsc={true}
       closeOnOutsideClick={true}
       id="custom-props"
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -546,9 +1366,17 @@ exports[`should mount an open modal with custom props 1`] = `
                 aria-modal="true"
                 class="abstract-modal layer-6000"
                 id="custom-props"
+                intl="[object Object]"
                 role="dialog"
                 tabindex="0"
               >
+                <span
+                  class="visually-hidden-text"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                >
+                  Terra.AbstractModal.BeginModalDialog
+                </span>
                 <div>
                   <h1>
                     Terra Modal
@@ -559,6 +1387,11 @@ exports[`should mount an open modal with custom props 1`] = `
                     Close Modal
                   </button>
                 </div>
+                <span
+                  class="visually-hidden-text"
+                >
+                  Terra.AbstractModal.EndModalDialog
+                </span>
               </div>
             </div>
           }
@@ -570,6 +1403,33 @@ exports[`should mount an open modal with custom props 1`] = `
             classNameOverlay={null}
             closeOnOutsideClick={true}
             id="custom-props"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
@@ -591,9 +1451,54 @@ exports[`should mount an open modal with custom props 1`] = `
               aria-modal="true"
               className="abstract-modal layer-6000"
               id="custom-props"
+              intl={
+                Object {
+                  "defaultFormats": Object {},
+                  "defaultLocale": "en",
+                  "formatDate": [Function],
+                  "formatHTMLMessage": [Function],
+                  "formatMessage": [Function],
+                  "formatNumber": [Function],
+                  "formatPlural": [Function],
+                  "formatRelative": [Function],
+                  "formatTime": [Function],
+                  "formats": Object {},
+                  "formatters": Object {
+                    "getDateTimeFormat": [Function],
+                    "getMessageFormat": [Function],
+                    "getNumberFormat": [Function],
+                    "getPluralFormat": [Function],
+                    "getRelativeFormat": [Function],
+                  },
+                  "locale": "en",
+                  "messages": null,
+                  "now": [Function],
+                  "onError": [Function],
+                  "textComponent": "span",
+                  "timeZone": null,
+                }
+              }
               role="dialog"
               tabIndex="0"
             >
+              <FormattedMessage
+                id="Terra.AbstractModal.BeginModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  data-terra-abstract-modal-begin={true}
+                  tabIndex="-1"
+                  text="Terra.AbstractModal.BeginModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
+                  >
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
               <div>
                 <h1>
                   Terra Modal
@@ -605,6 +1510,20 @@ exports[`should mount an open modal with custom props 1`] = `
                   Close Modal
                 </button>
               </div>
+              <FormattedMessage
+                id="Terra.AbstractModal.EndModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  text="Terra.AbstractModal.EndModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
             </div>
           </ForwardRef>
         </Portal>
@@ -623,6 +1542,33 @@ exports[`should mount an open modal with custom props 1`] = `
 exports[`should mount an open modal with modal class name 1`] = `
 <ModalExample
   classNameModal="modal-custom-class"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
   <div>
     <AbstractModal
@@ -631,6 +1577,33 @@ exports[`should mount an open modal with modal class name 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -651,9 +1624,17 @@ exports[`should mount an open modal with modal class name 1`] = `
                 aria-label="Terra Modal"
                 aria-modal="true"
                 class="abstract-modal layer-6000 modal-custom-class"
+                intl="[object Object]"
                 role="dialog"
                 tabindex="0"
               >
+                <span
+                  class="visually-hidden-text"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                >
+                  Terra.AbstractModal.BeginModalDialog
+                </span>
                 <div>
                   <h1>
                     Terra Modal
@@ -664,6 +1645,11 @@ exports[`should mount an open modal with modal class name 1`] = `
                     Close Modal
                   </button>
                 </div>
+                <span
+                  class="visually-hidden-text"
+                >
+                  Terra.AbstractModal.EndModalDialog
+                </span>
               </div>
             </div>
           }
@@ -674,6 +1660,33 @@ exports[`should mount an open modal with modal class name 1`] = `
             classNameModal="modal-custom-class"
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
@@ -694,9 +1707,54 @@ exports[`should mount an open modal with modal class name 1`] = `
               aria-label="Terra Modal"
               aria-modal="true"
               className="abstract-modal layer-6000 modal-custom-class"
+              intl={
+                Object {
+                  "defaultFormats": Object {},
+                  "defaultLocale": "en",
+                  "formatDate": [Function],
+                  "formatHTMLMessage": [Function],
+                  "formatMessage": [Function],
+                  "formatNumber": [Function],
+                  "formatPlural": [Function],
+                  "formatRelative": [Function],
+                  "formatTime": [Function],
+                  "formats": Object {},
+                  "formatters": Object {
+                    "getDateTimeFormat": [Function],
+                    "getMessageFormat": [Function],
+                    "getNumberFormat": [Function],
+                    "getPluralFormat": [Function],
+                    "getRelativeFormat": [Function],
+                  },
+                  "locale": "en",
+                  "messages": null,
+                  "now": [Function],
+                  "onError": [Function],
+                  "textComponent": "span",
+                  "timeZone": null,
+                }
+              }
               role="dialog"
               tabIndex="0"
             >
+              <FormattedMessage
+                id="Terra.AbstractModal.BeginModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  data-terra-abstract-modal-begin={true}
+                  tabIndex="-1"
+                  text="Terra.AbstractModal.BeginModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
+                  >
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
               <div>
                 <h1>
                   Terra Modal
@@ -708,6 +1766,20 @@ exports[`should mount an open modal with modal class name 1`] = `
                   Close Modal
                 </button>
               </div>
+              <FormattedMessage
+                id="Terra.AbstractModal.EndModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  text="Terra.AbstractModal.EndModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
             </div>
           </ForwardRef>
         </Portal>
@@ -726,6 +1798,33 @@ exports[`should mount an open modal with modal class name 1`] = `
 exports[`should mount an open modal with overlay class name 1`] = `
 <ModalExample
   classNameOverlay="overlay-custom-class"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
   <div>
     <AbstractModal
@@ -734,6 +1833,33 @@ exports[`should mount an open modal with overlay class name 1`] = `
       classNameOverlay="overlay-custom-class"
       closeOnEsc={true}
       closeOnOutsideClick={true}
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -754,9 +1880,17 @@ exports[`should mount an open modal with overlay class name 1`] = `
                 aria-label="Terra Modal"
                 aria-modal="true"
                 class="abstract-modal layer-6000"
+                intl="[object Object]"
                 role="dialog"
                 tabindex="0"
               >
+                <span
+                  class="visually-hidden-text"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                >
+                  Terra.AbstractModal.BeginModalDialog
+                </span>
                 <div>
                   <h1>
                     Terra Modal
@@ -767,6 +1901,11 @@ exports[`should mount an open modal with overlay class name 1`] = `
                     Close Modal
                   </button>
                 </div>
+                <span
+                  class="visually-hidden-text"
+                >
+                  Terra.AbstractModal.EndModalDialog
+                </span>
               </div>
             </div>
           }
@@ -777,6 +1916,33 @@ exports[`should mount an open modal with overlay class name 1`] = `
             classNameModal={null}
             classNameOverlay="overlay-custom-class"
             closeOnOutsideClick={true}
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
@@ -797,9 +1963,54 @@ exports[`should mount an open modal with overlay class name 1`] = `
               aria-label="Terra Modal"
               aria-modal="true"
               className="abstract-modal layer-6000"
+              intl={
+                Object {
+                  "defaultFormats": Object {},
+                  "defaultLocale": "en",
+                  "formatDate": [Function],
+                  "formatHTMLMessage": [Function],
+                  "formatMessage": [Function],
+                  "formatNumber": [Function],
+                  "formatPlural": [Function],
+                  "formatRelative": [Function],
+                  "formatTime": [Function],
+                  "formats": Object {},
+                  "formatters": Object {
+                    "getDateTimeFormat": [Function],
+                    "getMessageFormat": [Function],
+                    "getNumberFormat": [Function],
+                    "getPluralFormat": [Function],
+                    "getRelativeFormat": [Function],
+                  },
+                  "locale": "en",
+                  "messages": null,
+                  "now": [Function],
+                  "onError": [Function],
+                  "textComponent": "span",
+                  "timeZone": null,
+                }
+              }
               role="dialog"
               tabIndex="0"
             >
+              <FormattedMessage
+                id="Terra.AbstractModal.BeginModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  data-terra-abstract-modal-begin={true}
+                  tabIndex="-1"
+                  text="Terra.AbstractModal.BeginModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
+                  >
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
               <div>
                 <h1>
                   Terra Modal
@@ -811,6 +2022,20 @@ exports[`should mount an open modal with overlay class name 1`] = `
                   Close Modal
                 </button>
               </div>
+              <FormattedMessage
+                id="Terra.AbstractModal.EndModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  text="Terra.AbstractModal.EndModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
             </div>
           </ForwardRef>
         </Portal>
@@ -828,6 +2053,33 @@ exports[`should mount an open modal with overlay class name 1`] = `
 
 exports[`should mount an open modal with role 1`] = `
 <ModalExample
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   role="alertdialog"
 >
   <div>
@@ -837,6 +2089,33 @@ exports[`should mount an open modal with role 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -857,9 +2136,17 @@ exports[`should mount an open modal with role 1`] = `
                 aria-label="Terra Modal"
                 aria-modal="true"
                 class="abstract-modal layer-6000"
+                intl="[object Object]"
                 role="alertdialog"
                 tabindex="0"
               >
+                <span
+                  class="visually-hidden-text"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                >
+                  Terra.AbstractModal.BeginModalDialog
+                </span>
                 <div>
                   <h1>
                     Terra Modal
@@ -870,6 +2157,11 @@ exports[`should mount an open modal with role 1`] = `
                     Close Modal
                   </button>
                 </div>
+                <span
+                  class="visually-hidden-text"
+                >
+                  Terra.AbstractModal.EndModalDialog
+                </span>
               </div>
             </div>
           }
@@ -880,6 +2172,33 @@ exports[`should mount an open modal with role 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
@@ -900,9 +2219,54 @@ exports[`should mount an open modal with role 1`] = `
               aria-label="Terra Modal"
               aria-modal="true"
               className="abstract-modal layer-6000"
+              intl={
+                Object {
+                  "defaultFormats": Object {},
+                  "defaultLocale": "en",
+                  "formatDate": [Function],
+                  "formatHTMLMessage": [Function],
+                  "formatMessage": [Function],
+                  "formatNumber": [Function],
+                  "formatPlural": [Function],
+                  "formatRelative": [Function],
+                  "formatTime": [Function],
+                  "formats": Object {},
+                  "formatters": Object {
+                    "getDateTimeFormat": [Function],
+                    "getMessageFormat": [Function],
+                    "getNumberFormat": [Function],
+                    "getPluralFormat": [Function],
+                    "getRelativeFormat": [Function],
+                  },
+                  "locale": "en",
+                  "messages": null,
+                  "now": [Function],
+                  "onError": [Function],
+                  "textComponent": "span",
+                  "timeZone": null,
+                }
+              }
               role="alertdialog"
               tabIndex="0"
             >
+              <FormattedMessage
+                id="Terra.AbstractModal.BeginModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  data-terra-abstract-modal-begin={true}
+                  tabIndex="-1"
+                  text="Terra.AbstractModal.BeginModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
+                  >
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
               <div>
                 <h1>
                   Terra Modal
@@ -914,6 +2278,20 @@ exports[`should mount an open modal with role 1`] = `
                   Close Modal
                 </button>
               </div>
+              <FormattedMessage
+                id="Terra.AbstractModal.EndModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  text="Terra.AbstractModal.EndModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
             </div>
           </ForwardRef>
         </Portal>
@@ -930,7 +2308,35 @@ exports[`should mount an open modal with role 1`] = `
 `;
 
 exports[`should render the correct snapshot for iPads 1`] = `
-<ModalExample>
+<ModalExample
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
   <div>
     <AbstractModal
       ariaLabel="Terra Modal"
@@ -938,6 +2344,33 @@ exports[`should render the correct snapshot for iPads 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -958,9 +2391,17 @@ exports[`should render the correct snapshot for iPads 1`] = `
                 aria-label="Terra Modal"
                 aria-modal="true"
                 class="abstract-modal layer-6000"
+                intl="[object Object]"
                 role="dialog"
                 tabindex="-1"
               >
+                <span
+                  class="visually-hidden-text"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                >
+                  Terra.AbstractModal.BeginModalDialog
+                </span>
                 <div>
                   <h1>
                     Terra Modal
@@ -971,6 +2412,11 @@ exports[`should render the correct snapshot for iPads 1`] = `
                     Close Modal
                   </button>
                 </div>
+                <span
+                  class="visually-hidden-text"
+                >
+                  Terra.AbstractModal.EndModalDialog
+                </span>
               </div>
             </div>
           }
@@ -981,6 +2427,33 @@ exports[`should render the correct snapshot for iPads 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
@@ -1001,9 +2474,54 @@ exports[`should render the correct snapshot for iPads 1`] = `
               aria-label="Terra Modal"
               aria-modal="true"
               className="abstract-modal layer-6000"
+              intl={
+                Object {
+                  "defaultFormats": Object {},
+                  "defaultLocale": "en",
+                  "formatDate": [Function],
+                  "formatHTMLMessage": [Function],
+                  "formatMessage": [Function],
+                  "formatNumber": [Function],
+                  "formatPlural": [Function],
+                  "formatRelative": [Function],
+                  "formatTime": [Function],
+                  "formats": Object {},
+                  "formatters": Object {
+                    "getDateTimeFormat": [Function],
+                    "getMessageFormat": [Function],
+                    "getNumberFormat": [Function],
+                    "getPluralFormat": [Function],
+                    "getRelativeFormat": [Function],
+                  },
+                  "locale": "en",
+                  "messages": null,
+                  "now": [Function],
+                  "onError": [Function],
+                  "textComponent": "span",
+                  "timeZone": null,
+                }
+              }
               role="dialog"
               tabIndex="-1"
             >
+              <FormattedMessage
+                id="Terra.AbstractModal.BeginModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  data-terra-abstract-modal-begin={true}
+                  tabIndex="-1"
+                  text="Terra.AbstractModal.BeginModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
+                  >
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
               <div>
                 <h1>
                   Terra Modal
@@ -1015,6 +2533,20 @@ exports[`should render the correct snapshot for iPads 1`] = `
                   Close Modal
                 </button>
               </div>
+              <FormattedMessage
+                id="Terra.AbstractModal.EndModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  text="Terra.AbstractModal.EndModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
             </div>
           </ForwardRef>
         </Portal>
@@ -1031,7 +2563,35 @@ exports[`should render the correct snapshot for iPads 1`] = `
 `;
 
 exports[`should render the correct snapshot for iPhones 1`] = `
-<ModalExample>
+<ModalExample
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
   <div>
     <AbstractModal
       ariaLabel="Terra Modal"
@@ -1039,6 +2599,33 @@ exports[`should render the correct snapshot for iPhones 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -1059,9 +2646,17 @@ exports[`should render the correct snapshot for iPhones 1`] = `
                 aria-label="Terra Modal"
                 aria-modal="true"
                 class="abstract-modal layer-6000"
+                intl="[object Object]"
                 role="dialog"
                 tabindex="-1"
               >
+                <span
+                  class="visually-hidden-text"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                >
+                  Terra.AbstractModal.BeginModalDialog
+                </span>
                 <div>
                   <h1>
                     Terra Modal
@@ -1072,6 +2667,11 @@ exports[`should render the correct snapshot for iPhones 1`] = `
                     Close Modal
                   </button>
                 </div>
+                <span
+                  class="visually-hidden-text"
+                >
+                  Terra.AbstractModal.EndModalDialog
+                </span>
               </div>
             </div>
           }
@@ -1082,6 +2682,33 @@ exports[`should render the correct snapshot for iPhones 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
@@ -1102,9 +2729,54 @@ exports[`should render the correct snapshot for iPhones 1`] = `
               aria-label="Terra Modal"
               aria-modal="true"
               className="abstract-modal layer-6000"
+              intl={
+                Object {
+                  "defaultFormats": Object {},
+                  "defaultLocale": "en",
+                  "formatDate": [Function],
+                  "formatHTMLMessage": [Function],
+                  "formatMessage": [Function],
+                  "formatNumber": [Function],
+                  "formatPlural": [Function],
+                  "formatRelative": [Function],
+                  "formatTime": [Function],
+                  "formats": Object {},
+                  "formatters": Object {
+                    "getDateTimeFormat": [Function],
+                    "getMessageFormat": [Function],
+                    "getNumberFormat": [Function],
+                    "getPluralFormat": [Function],
+                    "getRelativeFormat": [Function],
+                  },
+                  "locale": "en",
+                  "messages": null,
+                  "now": [Function],
+                  "onError": [Function],
+                  "textComponent": "span",
+                  "timeZone": null,
+                }
+              }
               role="dialog"
               tabIndex="-1"
             >
+              <FormattedMessage
+                id="Terra.AbstractModal.BeginModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  data-terra-abstract-modal-begin={true}
+                  tabIndex="-1"
+                  text="Terra.AbstractModal.BeginModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
+                  >
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
               <div>
                 <h1>
                   Terra Modal
@@ -1116,6 +2788,20 @@ exports[`should render the correct snapshot for iPhones 1`] = `
                   Close Modal
                 </button>
               </div>
+              <FormattedMessage
+                id="Terra.AbstractModal.EndModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  text="Terra.AbstractModal.EndModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
             </div>
           </ForwardRef>
         </Portal>
@@ -1132,7 +2818,35 @@ exports[`should render the correct snapshot for iPhones 1`] = `
 `;
 
 exports[`should render the correct snapshot for iPods 1`] = `
-<ModalExample>
+<ModalExample
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
   <div>
     <AbstractModal
       ariaLabel="Terra Modal"
@@ -1140,6 +2854,33 @@ exports[`should render the correct snapshot for iPods 1`] = `
       classNameOverlay={null}
       closeOnEsc={true}
       closeOnOutsideClick={true}
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -1160,9 +2901,17 @@ exports[`should render the correct snapshot for iPods 1`] = `
                 aria-label="Terra Modal"
                 aria-modal="true"
                 class="abstract-modal layer-6000"
+                intl="[object Object]"
                 role="dialog"
                 tabindex="-1"
               >
+                <span
+                  class="visually-hidden-text"
+                  data-terra-abstract-modal-begin="true"
+                  tabindex="-1"
+                >
+                  Terra.AbstractModal.BeginModalDialog
+                </span>
                 <div>
                   <h1>
                     Terra Modal
@@ -1173,6 +2922,11 @@ exports[`should render the correct snapshot for iPods 1`] = `
                     Close Modal
                   </button>
                 </div>
+                <span
+                  class="visually-hidden-text"
+                >
+                  Terra.AbstractModal.EndModalDialog
+                </span>
               </div>
             </div>
           }
@@ -1183,6 +2937,33 @@ exports[`should render the correct snapshot for iPods 1`] = `
             classNameModal={null}
             classNameOverlay={null}
             closeOnOutsideClick={true}
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isFullscreen={false}
             isScrollable={false}
             onRequestClose={[Function]}
@@ -1203,9 +2984,54 @@ exports[`should render the correct snapshot for iPods 1`] = `
               aria-label="Terra Modal"
               aria-modal="true"
               className="abstract-modal layer-6000"
+              intl={
+                Object {
+                  "defaultFormats": Object {},
+                  "defaultLocale": "en",
+                  "formatDate": [Function],
+                  "formatHTMLMessage": [Function],
+                  "formatMessage": [Function],
+                  "formatNumber": [Function],
+                  "formatPlural": [Function],
+                  "formatRelative": [Function],
+                  "formatTime": [Function],
+                  "formats": Object {},
+                  "formatters": Object {
+                    "getDateTimeFormat": [Function],
+                    "getMessageFormat": [Function],
+                    "getNumberFormat": [Function],
+                    "getPluralFormat": [Function],
+                    "getRelativeFormat": [Function],
+                  },
+                  "locale": "en",
+                  "messages": null,
+                  "now": [Function],
+                  "onError": [Function],
+                  "textComponent": "span",
+                  "timeZone": null,
+                }
+              }
               role="dialog"
               tabIndex="-1"
             >
+              <FormattedMessage
+                id="Terra.AbstractModal.BeginModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  data-terra-abstract-modal-begin={true}
+                  tabIndex="-1"
+                  text="Terra.AbstractModal.BeginModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
+                  >
+                    Terra.AbstractModal.BeginModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
               <div>
                 <h1>
                   Terra Modal
@@ -1217,6 +3043,20 @@ exports[`should render the correct snapshot for iPods 1`] = `
                   Close Modal
                 </button>
               </div>
+              <FormattedMessage
+                id="Terra.AbstractModal.EndModalDialog"
+                values={Object {}}
+              >
+                <VisuallyHiddenText
+                  text="Terra.AbstractModal.EndModalDialog"
+                >
+                  <span
+                    className="visually-hidden-text"
+                  >
+                    Terra.AbstractModal.EndModalDialog
+                  </span>
+                </VisuallyHiddenText>
+              </FormattedMessage>
             </div>
           </ForwardRef>
         </Portal>
@@ -1240,6 +3080,33 @@ exports[`should shallow an open modal 1`] = `
     classNameOverlay={null}
     closeOnEsc={true}
     closeOnOutsideClick={true}
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
     isFullscreen={false}
     isOpen={true}
     onRequestClose={[Function]}
@@ -1276,6 +3143,33 @@ exports[`should shallow an open modal 6000 z-index 1`] = `
     classNameOverlay={null}
     closeOnEsc={true}
     closeOnOutsideClick={true}
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
     isFullscreen={false}
     isOpen={true}
     onRequestClose={[Function]}
@@ -1312,6 +3206,33 @@ exports[`should shallow an open modal 7000 z-index 1`] = `
     classNameOverlay={null}
     closeOnEsc={true}
     closeOnOutsideClick={true}
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
     isFullscreen={false}
     isOpen={true}
     onRequestClose={[Function]}
@@ -1348,6 +3269,33 @@ exports[`should shallow an open modal 8000 z-index 1`] = `
     classNameOverlay={null}
     closeOnEsc={true}
     closeOnOutsideClick={true}
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
     isFullscreen={false}
     isOpen={true}
     onRequestClose={[Function]}
@@ -1384,6 +3332,33 @@ exports[`should shallow an open modal 9000 z-index 1`] = `
     classNameOverlay={null}
     closeOnEsc={true}
     closeOnOutsideClick={true}
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
     isFullscreen={false}
     isOpen={true}
     onRequestClose={[Function]}

@@ -4,6 +4,21 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* updated package.json test scripts
+
+2.15.0 - (July 30, 2019)
+------------------
+### Removed
+* Removed DEPENDENCIES.md file
+
+2.14.1 - (July 23, 2019)
+------------------
+### Changed
+* Updated DEPENDENCIES.md doc
+
+2.14.0 - (July 23, 2019)
+------------------
+### Changed
 * Replaced visually-hidden-text styles with terra-visually-hidden-text component
 * Normalized terra-visually-hidden-text dependency version to match other terra-framework packages
 
