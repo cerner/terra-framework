@@ -5,7 +5,14 @@ Unreleased
 ----------
 ### Fixed
 * Fixed onChange callback triggering twice for values prepended with zero.
-* Fixed inline style lint warnings of newly added example and tests of seconds field.
+
+### Changed
+* updated package.json test scripts
+
+4.6.0 - (July 30, 2019)
+------------------
+### Removed
+* Removed DEPENDENCIES.md file
 
 4.5.0 - (July 16, 2019)
 ------------------
