@@ -208,7 +208,7 @@ class DateTimePicker extends React.Component {
         // If the entered time is ambiguous then do not handle blur just yet. It should be handled _after_
         // the ambiguity is resolved (i.e., after dismissing the Time Clarification dialog).
         if (!(this.state.isAmbiguousTime && this.state.isTimeClarificationOpen)) {
-          this.handleBlur(event, enteredDateTime);
+          this.handleBlur(event);
         }
       });
     }
@@ -232,15 +232,15 @@ class DateTimePicker extends React.Component {
         // If the entered time is ambiguous then do not handle blur just yet. It should be handled _after_
         // the ambiguity is resolved (i.e., after dismissing the Time Clarification dialog).
         if (!(this.state.isAmbiguousTime && this.state.isTimeClarificationOpen)) {
-          this.handleBlur(event, updatedDateTime);
+          this.handleBlur(event);
         }
       });
     }
   }
 
-  handleBlur(event, momentDateTime) {
+  handleBlur(event) {
     if (this.props.onBlur) {
-      const isCompleteDateTime = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat);
+      const isCompleteDateTime = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
       let value = '';
       if (this.dateValue) {
         value = this.dateValue.concat(' ');
@@ -252,15 +252,16 @@ class DateTimePicker extends React.Component {
 
       value = value.trim();
 
+      const tempDateTime = this.state.dateTime.clone();
       let iSOString = '';
 
       if (isCompleteDateTime) {
-        iSOString = momentDateTime.format();
+        iSOString = tempDateTime.format();
       }
 
       let isValid = false;
 
-      if (value === '' || (isCompleteDateTime && this.isDateTimeAcceptable(momentDateTime))) {
+      if (value === '' || (isCompleteDateTime && this.isDateTimeAcceptable(tempDateTime))) {
         isValid = true;
       }
 
@@ -472,8 +473,11 @@ class DateTimePicker extends React.Component {
       this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '');
     }
 
-    // Handle blur with the new selection upon dismiss of the Time Clarification dialog.
-    this.handleBlur(event, newDateTime);
+    // When the Time Clarification dialog was launched _without_ using the Offset button, 'blur' event
+    // needs to be handled appropriately upon dismissal of the dialog (i.e. after DST resolution).
+    if (!this.wasOffsetButtonClicked) {
+      this.handleBlur(event);
+    }
 
     this.wasOffsetButtonClicked = false;
   }
@@ -497,8 +501,11 @@ class DateTimePicker extends React.Component {
       this.props.onChange(event, newDateTime && newDateTime.isValid() ? newDateTime.format() : '');
     }
 
-    // Handle blur with the new selection upon dismiss of the Time Clarification dialog.
-    this.handleBlur(event, newDateTime);
+    // When the Time Clarification dialog was launched _without_ using the Offset button, 'blur' event
+    // needs to be handled appropriately upon dismissal of the dialog (i.e. after DST resolution).
+    if (!this.wasOffsetButtonClicked) {
+      this.handleBlur(event);
+    }
 
     this.wasOffsetButtonClicked = false;
   }

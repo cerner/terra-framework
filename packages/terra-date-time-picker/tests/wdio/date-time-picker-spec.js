@@ -421,6 +421,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.click('[class*="button-offset"]');
       browser.waitForVisible('[class*="time-clarification"]');
       browser.click('[class*="button-standard"]');
+      browser.keys('Tab'); // This is _needed_ to remove focus from the offset button.
     });
 
     Terra.it.matchesScreenshot('after offset change', { selector: '#root' });
