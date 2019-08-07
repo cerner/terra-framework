@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ActionHeader from 'terra-action-header';
+import ContentContainer from 'terra-content-container';
 import DisclosureManager, { availableDisclosureSizes } from 'terra-disclosure-manager';
 import SlideGroup from 'terra-slide-group';
 import SlidePanel from 'terra-slide-panel';
@@ -17,6 +19,10 @@ const propTypes = {
    * The desired panel behavior. Either 'squish' or 'overlay'.
    */
   panelBehavior: PropTypes.oneOf(['overlay', 'squish']),
+  /**
+   * The component to render within the panel above the disclosed content.
+   */
+  disclosureAccessory: PropTypes.element,
 };
 
 const defaultProps = {
@@ -51,7 +57,7 @@ class SlidePanelManager extends React.Component {
 
   renderSlidePanel(manager) {
     const {
-      children, panelBehavior, ...customProps
+      children, panelBehavior, disclosureAccessory, ...customProps
     } = this.props;
 
     let isFullscreen;
@@ -66,6 +72,10 @@ class SlidePanelManager extends React.Component {
       panelSize = disclosureSizeToPanelSize[manager.disclosure.size];
     }
 
+    const presentedDisclosureComponentKey = manager.disclosureComponentKeys[manager.disclosureComponentKeys.length - 1];
+    const presentedDisclosureComponentData = manager.disclosureComponentData[presentedDisclosureComponentKey] || {};
+    const headerDataForPresentedComponent = presentedDisclosureComponentData.headerAdapterData;
+
     return (
       <SlidePanel
         {...customProps}
@@ -75,7 +85,27 @@ class SlidePanelManager extends React.Component {
         panelSize={panelSize}
         isOpen={manager.disclosure.isOpen}
         panelContent={(
-          <SlideGroup items={manager.disclosure.components} isAnimated />
+          <ContentContainer
+            fill
+            header={(
+              <React.Fragment>
+                {headerDataForPresentedComponent ? (
+                  <ActionHeader
+                    title={headerDataForPresentedComponent.title}
+                    onClose={manager.closeDisclosure}
+                    onBack={manager.disclosureComponentKeys.length > 1 ? manager.dismissPresentedComponent : undefined}
+                    onMaximize={manager.maximizeDisclosure}
+                    onMinimize={manager.minimizeDisclosure}
+                  >
+                    {headerDataForPresentedComponent.collapsibleMenuView}
+                  </ActionHeader>
+                ) : undefined}
+                {disclosureAccessory}
+              </React.Fragment>
+          )}
+          >
+            <SlideGroup items={manager.disclosure.components} isAnimated />
+          </ContentContainer>
         )}
         mainContent={manager.children.components}
       />
