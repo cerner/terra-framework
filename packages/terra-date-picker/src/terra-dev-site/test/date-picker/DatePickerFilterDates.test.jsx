@@ -7,7 +7,7 @@ const isWeekday = (date) => {
 
   if (momentDate && momentDate.isValid()) {
     const day = momentDate.day();
-    return day !== 1 && day !== 2;
+    return day !== 0 && day !== 6;
   }
 
   return true;
