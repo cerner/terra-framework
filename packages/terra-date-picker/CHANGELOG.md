@@ -6,6 +6,9 @@ Unreleased
 ### Changed
 * updated package.json test scripts
 
+### Added
+* Aria-Label and translations added to input to fix accessibility issue of Date-Time-Picker.
+
 4.9.0 - (July 30, 2019)
 ------------------
 ### Removed
@@ -14,9 +17,6 @@ Unreleased
 ### Changed
 * Update tests for dev-site v6
 * Explicitly pull in Error icon from terra-icon instead of pulling from terra-form-field
-
-### Added
-* Aria-Label and translations added to input to fix accessibility issue of Date-Time-Picker.
 
 4.8.1 - (July 23, 2019)
 ------------------
