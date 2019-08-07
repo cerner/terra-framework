@@ -6,6 +6,9 @@ Unreleased
 ### Changed
 * updated package.json test scripts
 
+### Fixed
+* Removed the time substring from the date value returned in all callbacks.
+
 4.9.0 - (July 30, 2019)
 ------------------
 ### Removed

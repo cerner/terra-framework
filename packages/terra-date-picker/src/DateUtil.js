@@ -2,7 +2,6 @@
 import moment from 'moment';
 
 class DateUtil {
-
   /**
    * Creates a moment object using the provided date string. Moment is unable to initialize a valid date if the date passed in is
    * null, empty string, or alpha characters and undefined would be returned.
