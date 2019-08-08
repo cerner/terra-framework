@@ -31,6 +31,7 @@ export default class MainEntry extends React.Component {
   renderForm({ handleSubmit, errors, submitFailed }) {
     return (
       <form
+        noValidate
         onSubmit={handleSubmit}
       >
         <Field

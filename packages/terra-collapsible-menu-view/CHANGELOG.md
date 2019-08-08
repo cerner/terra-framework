@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Updated Jest Snapshots for new icon-prop added in menu-item.
+* updated package.json test scripts
 
 6.8.0 - (July 30, 2019)
 ------------------
