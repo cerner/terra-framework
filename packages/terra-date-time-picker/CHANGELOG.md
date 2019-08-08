@@ -4,7 +4,8 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
-* updated package.json test scripts
+* Updated package.json test scripts
+* Corrected Typos.
 
 4.9.0 - (July 30, 2019)
 ------------------
