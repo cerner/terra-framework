@@ -9,17 +9,15 @@ Terra.describeViewports('Tabs - Responsive', ['tiny', 'small', 'medium', 'large'
   describe('Default', () => {
     it('Default', () => {
       browser.url('/#/raw/tests/terra-tabs/tabs/tabs/default-tabs');
-      browser.waitForVisible('[class*="tab-content"]');
       browser.moveToObject('[class*="tab-content"]');
-      Terra.validates.element();
+      Terra.validates.element({ rules: ignoredA11y, selector: '#root' });
     });
   });
   describe('Extended', () => {
     it('Extended', () => {
       browser.url('/#/raw/tests/terra-tabs/tabs/tabs/extended-tabs');
-      browser.waitForVisible('[class*="tab-content"]');
       browser.moveToObject('[class*="tab-content"]');
-      Terra.validates.element();
+      Terra.validates.element({ rules: ignoredA11y, selector: '#root' });
     });
   });
   describe('Icon Only Tabs', () => {
