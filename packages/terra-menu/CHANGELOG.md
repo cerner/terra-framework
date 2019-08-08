@@ -6,10 +6,17 @@ Unreleased
 ### Added
 * Added Instructions-For-Use (eIFU) Icon to Menu-Item.
 
+### Changed
+* updated package.json test scripts
+
+
 6.8.0 - (July 30, 2019)
 ------------------
 ### Removed
 * Removed DEPENDENCIES.md file
+
+### Changed
+* Fixed linter issue in doc
 
 6.7.1 - (July 23, 2019)
 ------------------
