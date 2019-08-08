@@ -24,6 +24,10 @@ Unreleased
 ### Added
 * Added documentation on required peerDependencies
 
+### Added
+* Added support for DisclosureManagerHeaderAdapter integration
+* Added `disclosureAccessory` prop
+
 5.5.0 - (July 16, 2019)
 ------------------
 ### Added
