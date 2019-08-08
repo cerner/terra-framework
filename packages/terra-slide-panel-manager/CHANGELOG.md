@@ -3,15 +3,30 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* updated package.json test scripts
+
+5.7.0 - (July 30, 2019)
+------------------
+### Removed
+* Removed DEPENDENCIES.md file
+
+### Changed
+* Fixed linter issue in doc
 
 5.6.1 - (July 23, 2019)
 ------------------
-* a completely unremarkable update because lerna be lerna
+### Changed
+* Updated DEPENDENCIES.md doc
 
 5.6.0 - (July 23, 2019)
 ------------------
 ### Added
 * Added documentation on required peerDependencies
+
+### Added
+* Added support for DisclosureManagerHeaderAdapter integration
+* Added `disclosureAccessory` prop
 
 5.5.0 - (July 16, 2019)
 ------------------

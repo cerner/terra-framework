@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import AbstractModal from 'terra-abstract-modal';
+import ActionHeader from 'terra-action-header';
 import SlideGroup from 'terra-slide-group';
 import DisclosureManager, { availableDisclosureSizes } from 'terra-disclosure-manager';
+import ContentContainer from 'terra-content-container';
 import styles from './ModalManager.module.scss';
 
 const disclosureType = 'modal';
@@ -17,6 +19,10 @@ const propTypes = {
    * disclosure capabilities through the DisclosureManger's context API.
    */
   children: PropTypes.node,
+  /**
+   * The component to render within the Modal above the disclosed content.
+   */
+  disclosureAccessory: PropTypes.element,
 };
 
 const heightFromSize = {
@@ -43,7 +49,7 @@ class ModalManager extends React.Component {
   }
 
   renderModal(manager) {
-    const { children, ...customProps } = this.props;
+    const { children, disclosureAccessory, ...customProps } = this.props;
 
     const containerClassNames = cx([
       'container',
@@ -60,6 +66,10 @@ class ModalManager extends React.Component {
       }
     }
 
+    const presentedDisclosureComponentKey = manager.disclosureComponentKeys[manager.disclosureComponentKeys.length - 1];
+    const presentedDisclosureComponentData = manager.disclosureComponentData[presentedDisclosureComponentKey] || {};
+    const headerDataForPresentedComponent = presentedDisclosureComponentData.headerAdapterData;
+
     return (
       <div {...customProps} className={containerClassNames}>
         {manager.children.components}
@@ -74,7 +84,27 @@ class ModalManager extends React.Component {
           closeOnOutsideClick={false}
           ariaLabel="Modal"
         >
-          <SlideGroup items={manager.disclosure.components} isAnimated={!isFullscreen} />
+          <ContentContainer
+            fill
+            header={(
+              <React.Fragment>
+                {headerDataForPresentedComponent ? (
+                  <ActionHeader
+                    title={headerDataForPresentedComponent.title}
+                    onClose={manager.closeDisclosure}
+                    onBack={manager.disclosureComponentKeys.length > 1 ? manager.dismissPresentedComponent : undefined}
+                    onMaximize={manager.maximizeDisclosure}
+                    onMinimize={manager.minimizeDisclosure}
+                  >
+                    {headerDataForPresentedComponent.collapsibleMenuView}
+                  </ActionHeader>
+                ) : undefined}
+                {disclosureAccessory}
+              </React.Fragment>
+            )}
+          >
+            <SlideGroup items={manager.disclosure.components} isAnimated={!isFullscreen} />
+          </ContentContainer>
         </AbstractModal>
       </div>
     );

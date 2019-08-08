@@ -3,10 +3,23 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* updated package.json test scripts
+* Added `noValidate` attribute to all `<form />` elements in the examples
+* Added documentation on recommend usage of `noValidate` prop
+
+1.5.0 - (July 30, 2019)
+------------------
+### Removed
+* Removed DEPENDENCIES.md file
+
+### Changed
+* Update main key in package.json to point to `lib/FormValidationUtil.js`
 
 1.4.1 - (July 23, 2019)
 ------------------
-* a completely unremarkable update because lerna be lerna
+### Changed
+* Updated DEPENDENCIES.md doc
 
 1.4.0 - (July 23, 2019)
 ------------------

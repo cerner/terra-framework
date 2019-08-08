@@ -3,10 +3,21 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Fixed tabs overflowing issue.
+
+### Changed
+* updated package.json test scripts
+
+6.8.0 - (July 30, 2019)
+------------------
+### Removed
+* Removed DEPENDENCIES.md file
 
 3.7.1 - (July 23, 2019)
 ------------------
-* a completely unremarkable update because lerna be lerna
+### Changed
+* Updated DEPENDENCIES.md doc
 
 6.7.0 - (July 23, 2019)
 ------------------
