@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'terra-button';
 import PropTypes from 'prop-types';
-// eslint-disable-next-line import/no-unresolved, import/extensions
+// eslint-disable-next-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 import Menu from 'terra-menu';
 import classNames from 'classnames/bind';
 import styles from './BasicMenu.module.scss';
@@ -97,7 +97,7 @@ class MenuWithInstructionsForUse extends React.Component {
               isSelectable
             />
             <Menu.Item
-              text="Disabled Item 1"
+              text="Help 1"
               key="Disabled1"
               isSelected={this.state.toggle1Selected}
               onClick={this.handleToggle1OnClick}

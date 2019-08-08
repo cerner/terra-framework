@@ -69,10 +69,6 @@
   }
 
   .checkmark {
-    color: var(--terra-menu-item-checkmark-icon-color, #1c1f21);
-    font-size: var(--terra-menu-item-checkmark-icon-font-size, 12px);
-    margin-left: var(--terra-menu-item-checkmark-icon-margin-left, 10px);
-    margin-right: var(--terra-menu-item-checkmark-icon-margin-right);
     visibility: hidden;
   }
 
@@ -89,9 +85,10 @@
     margin-right: var(--terra-menu-item-chevron-icon-margin-right, 10px);
   }
 
-  .instructionsforuse {
-    color: #1c1f21;
-    font-size: 12px;
-    margin-left: 10px;
+  .start-icon {
+    color: var(--terra-menu-item-start-icon-color, #1c1f21);
+    font-size: var(--terra-menu-item-start-icon-font-size, 0.85714rem);
+    margin-left: var(--terra-menu-item-start-icon-margin-left, 0.71428rem);
+    margin-right: var(--terra-menu-item-start-icon-margin-right);
   }
 }

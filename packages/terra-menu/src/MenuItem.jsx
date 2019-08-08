@@ -201,9 +201,9 @@ class MenuItem extends React.Component {
     if (hasChevron || isSelectableMenu || isInstructionsForUse) {
       let fitStartIcon = null;
       if (isInstructionsForUse) {
-        fitStartIcon = <InstructionsForUseIcon className={cx(['instructionsforuse'])} />;
+        fitStartIcon = <InstructionsForUseIcon className={cx(['instructionsforuse', 'start-icon'])} />;
       } else if (isSelectableMenu) {
-        fitStartIcon = <CheckIcon className={cx(['checkmark'])} />;
+        fitStartIcon = <CheckIcon className={cx(['checkmark', 'start-icon'])} />;
       }
 
       content = (
