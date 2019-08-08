@@ -6,6 +6,9 @@ Unreleased
 ### Changed
 * updated package.json test scripts
 
+### Removed
+* Removed themeable variable for z-index, short not be based upon theme
+
 6.8.0 - (July 30, 2019)
 ------------------
 ### Removed
