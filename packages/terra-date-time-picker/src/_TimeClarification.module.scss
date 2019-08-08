@@ -55,7 +55,6 @@
   .button-offset {
     background-color: var(--terra-date-time-picker-clarification-button-offset-background-color, #fff);
     height: var(--terra-date-time-picker-clarification-button-offset-height, 2.142857rem);
-    margin-left: 0.429em;
 
     &:focus {
       outline: none;
@@ -64,5 +63,9 @@
 
   .button-offset-hidden {
     display: none;
+  }
+
+  .offset-button-container {
+    display: inline-block;
   }
 }

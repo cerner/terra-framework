@@ -112,7 +112,7 @@ class TimeClarification extends React.Component {
     const standardTimeButtonLabel = intl.formatMessage({ id: 'Terra.dateTimePicker.timeClarification.button.standardTime' });
 
     return (
-      <div>
+      <React.Fragment>
         <AbstractModal
           classNameModal={cx('time-clarification')}
           ariaLabel="Time Clarification"
@@ -145,18 +145,20 @@ class TimeClarification extends React.Component {
             </div>
           </div>
         </AbstractModal>
-        <Button
-          title={this.state.offsetLongDisplay}
-          aria-label={this.state.offsetLongDisplay}
-          className={offsetButtonClassNames}
-          onBlur={this.props.onBlur}
-          onFocus={this.props.onFocus}
-          onClick={this.props.onOffsetButtonClick}
-          text={this.state.offsetDisplay}
-          isCompact
-          isDisabled={this.props.disabled}
-        />
-      </div>
+        <div className={cx('offset-button-container')}>
+          <Button
+            title={this.state.offsetLongDisplay}
+            aria-label={this.state.offsetLongDisplay}
+            className={offsetButtonClassNames}
+            onBlur={this.props.onBlur}
+            onFocus={this.props.onFocus}
+            onClick={this.props.onOffsetButtonClick}
+            text={this.state.offsetDisplay}
+            isCompact
+            isDisabled={this.props.disabled}
+          />
+        </div>
+      </React.Fragment>
     );
   }
 }

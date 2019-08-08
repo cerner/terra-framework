@@ -10,6 +10,10 @@
     outline: none;
   }
 
+  .time-input-container {
+    display: inline-block;
+  }
+
   .time-input {
     background-color: var(--terra-time-input-background-color, #fff);
     background-image: var(--terra-time-input-background-image, none);
@@ -26,7 +30,7 @@
     display: inline-block;
     font-size: var(--terra-time-input-font-size, 1.14286rem);
     line-height: var(--terra-time-input-line-height, 1.375);
-    margin: 0;
+    margin: 0 0.5rem 0.5rem 0;
     padding-bottom: var(--terra-time-input-padding-bottom, 0.2142857143rem);
     padding-left: var(--terra-time-input-padding-left, 0.2142857143rem);
     padding-right: var(--terra-time-input-padding-right, 0.2142857143rem);
@@ -43,11 +47,7 @@
       .time-input-hour,
       .time-input-minute,
       .time-input-second {
-        color: var(--terra-time-input-hover-color, #1c1f21);
-      }
-
-      .meridiem-display {
-        color: var(--terra-time-input-hover-color, #1c1f21);
+        color: var(--terra-time-input-time-component-hover-color, #1c1f21);
       }
     }
 
@@ -56,7 +56,6 @@
       background-color: var(--terra-time-input-focus-background-color, #fff);
       background-size: var(--terra-time-input-focus-background-size, 0 0);
       color: var(--terra-time-input-focus-color, #1c1f21);
-
 
       [dir=ltr] & {
         box-shadow: var(--terra-time-input-focus-ltr-box-shadow, 0 0 8px #a6d9f4);
@@ -69,11 +68,7 @@
       .time-input-hour,
       .time-input-minute,
       .time-input-second {
-        color: var(--terra-time-input-focus-color, #1c1f21);
-      }
-
-      .meridiem-display {
-        color: var(--terra-time-input-focus-color, #1c1f21);
+        color: var(--terra-time-input-time-component-focus-color, #1c1f21);
       }
     }
 
@@ -88,123 +83,87 @@
 
     .time-input-hour[disabled],
     .time-input-minute[disabled],
-    .time-input-second[disabled],
-    .meridiem-display[disabled] {
+    .time-input-second[disabled] {
+      background-color: transparent;
+      border: 0;
       opacity: 1;
-    }
-  }
-
-  .time-input-group {
-    &:first-of-type {
-      margin-left: 0;
-      margin-right: var(--terra-time-input-time-input-group-hour-margin-right, 0.14285714rem);
-    }
-
-    &:nth-of-type(2) {
-      margin-left: var(--terra-time-input-time-input-group-minute-margin-left, 0.14285714rem);
-      margin-right: 0;
-    }
-
-    &:nth-of-type(3) {
-      margin-left: var(--terra-time-input-time-input-group-second-margin-left, 0.14285714rem);
-      margin-right: 0;
     }
   }
 
   .time-input-hour,
   .time-input-minute,
   .time-input-second {
-    background-color: var(--terra-time-input-background-color, #fff);
-    background-image: var(--terra-time-input-background-image, none);
+    background-color: var(--terra-time-input-time-component-background-color, #fff);
+    background-image: var(--terra-time-input-time-component-background-image, none);
     background-position: 0 100%;
     background-repeat: no-repeat;
-    background-size: var(--terra-time-input-background-size, 0 0);
-    border-color: var(--terra-time-input-border-color, #dedfe0);
-    border-radius: var(--terra-time-input-border-radius, 3px);
-    border-style: var(--terra-time-input-border-style, solid);
-    border-width: var(--terra-time-input-border-width, 1px);
+    background-size: var(--terra-time-input-time-component-background-size, 0 0);
+    border-color: var(--terra-time-input-time-component-border-color);
+    border-radius: var(--terra-time-input-time-component-border-radius, 2px);
+    border-style: var(--terra-time-input-time-component-border-style);
+    border-width: var(--terra-time-input-time-component-border-width);
     box-sizing: border-box;
-    caret-color: var(--terra-time-input-caret-color, #1c1f21);
-    color: var(--terra-time-input-color, #1c1f21);
-    display: table;
-    height: var(--terra-time-input-mobile-height, 2.1428571429rem);
-    line-height: var(--terra-time-input-mobile-line-height, 1.429);
-    min-width: var(--terra-time-input-mobile-min-width, 4rem);
-    padding-bottom: var(--terra-time-input-mobile-padding-bottom, 0.2857142857rem);
-    padding-left: var(--terra-time-input-mobile-padding-left, 0.2857142857rem);
-    padding-right: var(--terra-time-input-mobile-padding-right, 0.2857142857rem);
-    padding-top: var(--terra-time-input-mobile-padding-top, 0.2857142857rem);
-    transition-duration: var(--terra-time-input-transition-duration, 0.2s);
+    caret-color: var(--terra-time-input-time-component-caret-color, #1c1f21);
+    color: var(--terra-time-input-time-component-color, #1c1f21);
+    display: inline-block;
+    height: var(--terra-time-input-time-component-height, 1.5714285714rem);
+    line-height: var(--terra-time-input-time-component-line-height, 1.375);
+    min-width: var(--terra-time-input-time-component-min-width, 4rem);
+    padding-bottom: var(--terra-time-input-time-component-padding-bottom, 0);
+    padding-left: var(--terra-time-input-time-component-padding-left, 0);
+    padding-right: var(--terra-time-input-time-component-padding-right, 0);
+    padding-top: var(--terra-time-input-time-component-padding-top, 0);
+    transition-duration: var(--terra-time-input-time-component-transition-duration, 0.2s);
     transition-property: background-size;
-    transition-timing-function: var(--terra-time-input-transition-timing-function, ease);
+    transition-timing-function: var(--terra-time-input-time-component-transition-timing-function, ease);
     width: 100%;
 
     &:hover {
-      background-color: var(--terra-time-input-hover-background-color, #fff);
-      border: var(--terra-time-input-hover-border, 1px solid #dedfe0);
-      color: var(--terra-time-input-hover-color, #1c1f21);
+      background-color: var(--terra-time-input-time-component-hover-background-color, #fff);
+      border: var(--terra-time-input-time-component-hover-border);
+      color: var(--terra-time-input-time-component-hover-color, #1c1f21);
     }
 
     &:focus {
       @include focus-styles;
-      background-size: var(--terra-time-input-focus-background-size, 0 0);
+      background-size: var(--terra-time-input-time-component-focus-background-size, 0 0);
+      border-color: transparent;
 
       [dir=ltr] & {
-        box-shadow: var(--terra-time-input-focus-ltr-box-shadow, 0 0 8px #a6d9f4);
+        box-shadow: var(--terra-time-input-time-component-focus-ltr-box-shadow, none);
       }
 
       [dir=rtl] & {
-        box-shadow: var(--terra-time-input-focus-rtl-box-shadow, 0 0 8px #a6d9f4);
+        box-shadow: var(--terra-time-input-time-component-focus-rtl-box-shadow, none);
       }
     }
 
-    &.desktop {
+    &::selection {
       background-color: transparent;
+    }
+
+    &.initial-focus {
+      background-color: var(--terra-time-input-time-component-focused-input-background-color, rgba(139, 194, 249, 0.3));
       background-size: 0 0;
-      border: 0;
-      border-radius: var(--terra-time-input-desktop-input-border-radius, 2px);
-      display: inline-block;
-      height: var(--terra-time-input-desktop-input-height, 1.5714285714rem);
-      line-height: var(--terra-time-input-line-height, 1.375);
-      padding: 0;
-
-      &:hover {
-        background-color: var(--terra-time-input-hover-background-color, #fff);
-        color: var(--terra-time-input-hover-color, #1c1f21);
-      }
-
-      &:focus {
-        border-color: transparent;
-        box-shadow: none;
-      }
-
-      &::selection {
-        background-color: transparent;
-      }
-
-      &.initial-focus {
-        background-color: var(--terra-time-input-desktop-focused-input-background-color, rgba(139, 194, 249, 0.3));
-        background-size: 0 0;
-        border-color: transparent;
-        box-shadow: none;
-        color: var(--terra-time-input-focus-color, #1c1f21);
-      }
+      border-color: transparent;
+      box-shadow: none;
+      color: var(--terra-time-input-time-component-focus-color, #1c1f21);
     }
   }
 
-  .time-input-hour.desktop {
+  .time-input-hour {
     min-width: 1.7em;
     text-align: right;
     width: 1.7em;
   }
 
-  .time-input-minute.without-second.desktop {
+  .time-input-minute.without-second {
     min-width: 1.8em;
     text-align: left;
     width: 1.8em;
   }
 
-  .time-input-minute.with-second.desktop {
+  .time-input-minute.with-second {
     min-width: 1.1em;
     text-align: left;
     width: 1.1em;
@@ -216,76 +175,32 @@
     }
   }
 
-  .time-input-second.desktop {
+  .time-input-second {
     min-width: 1.8em;
     text-align: left;
     width: 1.8em;
   }
 
   .time-spacer {
-    line-height: var(--terra-time-input-line-height, 1.375);
+    line-height: var(--terra-time-input-time-spacer-line-height, 1.375);
     margin-bottom: var(--terra-time-input-time-spacer-margin-bottom, 0.3571428571rem);
     margin-left: var(--terra-time-input-time-spacer-margin-left, 0.14285714rem);
     margin-right: var(--terra-time-input-time-spacer-margin-right, 0.14285714rem);
     margin-top: var(--terra-time-input-time-spacer-margin-top, 0.3571428571rem);
   }
 
-  .mobile-time-picker {
-    display: flex;
-
-    .time-spacer {
-      line-height: var(--terra-time-input-mobile-line-height, 1.429);
-      margin-top: var(--terra-time-input-time-mobile-spacer-margin-top, 0.3571428571rem);
-    }
-  }
-
   .meridiem-button-group {
-    margin-left: var(--terra-time-input-meridiem-button-group-margin-left, 0.857rem);
-  }
-
-  .mobile-input-label {
-    color: var(--terra-time-input-mobile-label-color, rgba(28, 31, 33, 0.63));
-    font-size: var(--terra-time-input-mobile-label-font-size, 0.857rem);
-  }
-
-  .meridiem-display {
-    background-color: var(--terra-time-input-desktop-background-color, transparent);
-    border: 0;
-    border-radius: var(--terra-time-input-desktop-input-border-radius, 2px);
-    box-sizing: border-box;
-    color: var(--terra-time-input-color, #1c1f21);
-    display: inline-block;
-    height: var(--terra-time-input-desktop-input-height, 1.5714285714rem);
-    margin-left: var(--terra-time-input-meridiem-display-margin-left, 0.1428571429rem);
-    padding-bottom: var(--terra-time-input-meridiem-padding-bottom, 0);
-    padding-left: var(--terra-time-input-meridiem-padding-left, 0);
-    padding-right: var(--terra-time-input-meridiem-padding-right, 0);
-    padding-top: var(--terra-time-input-meridiem-padding-top, 0);
-    text-align: center;
-    width: auto;
-
-    &:hover {
-      border: 0;
-    }
-
-    &.focused {
-      background-color: var(--terra-time-input-desktop-focused-input-background-color, rgba(139, 194, 249, 0.3));
-      border: 0;
-    }
-
-    &[disabled] {
-      background-color: transparent;
-      border: 0;
-    }
+    margin-bottom: var(--terra-time-input-meridiem-button-group-margin-bottom, 0.5rem);
+    margin-right: var(--terra-time-input-meridiem-button-group-margin-right, 0.5rem);
   }
 
   .meridiem-button {
-    background-color: var(--terra-time-input-meridiem-button-background-color, #dedfe0);
+    background-color: var(--terra-time-input-meridiem-button-background-color, transparent);
     border-color: var(--terra-time-input-meridiem-button-border-color, #c8cacb);
     color: var(--terra-time-input-meridiem-button-color, #1c1f21);
     font-size: var(--terra-time-input-meridiem-button-font-size, 1rem);
-    height: var(--terra-time-input-mobile-height, 2.1428571429rem);
-    line-height: var(--terra-time-input-mobile-line-height, 1.429);
+    height: var(--terra-time-input-meridiem-button-height, 2.1428571429rem);
+    line-height: var(--terra-time-input-meridiem-button-line-height, 1.67412);
     outline: none;
     padding-bottom: var(--terra-time-input-meridiem-button-padding-bottom, 0.286rem);
     padding-top: var(--terra-time-input-meridiem-button-padding-top, 0.286rem);
@@ -307,21 +222,5 @@
       border-color: var(--terra-time-input-meridiem-button-selected-hover-border-color, #40474a);
       color: var(--terra-time-input-meridiem-button-selected-hover-color, #fff);
     }
-  }
-
-  /* The select box for the meridiem is hidden. */
-  .time-input-meridiem {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
-
-  .meridiem-select-wrapper {
-    position: relative;
   }
 }
