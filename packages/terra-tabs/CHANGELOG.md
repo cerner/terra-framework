@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Fixed tabs overflowing issue.
+
 ### Changed
 * updated package.json test scripts
 
