@@ -6,28 +6,97 @@ import * as utils from './date_utils'
 
 export default class Week extends React.Component {
   static propTypes = {
+    /**
+     * Day Value Entered.
+     */
     day: PropTypes.object.isRequired,
+    /**
+     * A callback function for custom day class names.
+     */
     dayClassName: PropTypes.func,
+    /**
+     * Maximum Date value for a date range.
+     */
     endDate: PropTypes.object,
+    /**
+     * Array to store values of date that are disabled to pick .
+     */
     excludeDates: PropTypes.array,
+    /**
+     * A callback function to be executed to determine if a given date should be filtered.
+     */
     filterDate: PropTypes.func,
+    /**
+     * A callback function to format week number .
+     */
     formatWeekNumber: PropTypes.func,
+    /**
+     * Highlight range of dates with custom classes.
+     */
     highlightDates: PropTypes.instanceOf(Map),
+    /**
+     * Show dates only in the given array.
+     */
     includeDates: PropTypes.array,
+    /**
+     * Prop to show inline version of date picker component.
+     */
     inline: PropTypes.bool,
+    /**
+     * Maximum value of date that can be selected by user.
+     */
     maxDate: PropTypes.object,
+    /**
+     * Minimum value of date that can be selected by user.
+     */
     minDate: PropTypes.object,
+    /**
+     * Month value picked by user.
+     */
     month: PropTypes.number,
+    /**
+     * A callback function to execute when day is selected.
+     */
     onDayClick: PropTypes.func,
+    /**
+     * A callback function to execute when the mouse cursor hovers over the day..
+     */
     onDayMouseEnter: PropTypes.func,
+    /**
+     * A callback function to execute when a week is selected.
+     */
     onWeekSelect: PropTypes.func,
+    /**
+     * Prop to store previous selection value.
+     */
     preSelection: PropTypes.object,
+    /**
+     * Prop to store current selection value.
+     */
     selected: PropTypes.object,
+    /**
+     * Prop to store value while selecting date.
+     */
     selectingDate: PropTypes.object,
+    /**
+     * Mark date picker to select end of range .
+     */
     selectsEnd: PropTypes.bool,
+    /**
+     * Mark date picker to select start of range .
+     */
     selectsStart: PropTypes.bool,
+    /**
+     * Prop to show week numbers .
+     */
     showWeekNumber: PropTypes.bool,
+    /**
+     * Minimum date for a given range.
+     */
     startDate: PropTypes.object,
+    /**
+     * Difference between utc and local time.
+     */
     utcOffset: PropTypes.number
   }
 
