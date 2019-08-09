@@ -21,7 +21,7 @@ it('should render a default date time picker with custom time input attributes',
 });
 
 it('should render a date time picker with filtered dates', () => {
-  const datePicker = shallowWithIntl(<DateTimePicker filterDate={() => {}} name="date-time-input" utcOffset={0} />);
+  const datePicker = shallowWithIntl(<DateTimePicker filterDate={() => { }} name="date-time-input" utcOffset={0} />);
   expect(datePicker).toMatchSnapshot();
 });
 
@@ -41,19 +41,19 @@ it('should render a date time picker with min and max dates', () => {
 });
 
 it('should render a date time picker with onBlur', () => {
-  const onBlur = () => {};
+  const onBlur = () => { };
   const datePicker = shallowWithIntl(<DateTimePicker name="date-time-input" onBlur={onBlur} utcOffset={0} />);
   expect(datePicker).toMatchSnapshot();
 });
 
 it('should render a date time picker with onChange', () => {
-  const onChange = () => {};
+  const onChange = () => { };
   const datePicker = shallowWithIntl(<DateTimePicker name="date-time-input" onChange={onChange} utcOffset={0} />);
   expect(datePicker).toMatchSnapshot();
 });
 
 it('should render a date time picker with onChangeRaw', () => {
-  const onChangeRaw = () => {};
+  const onChangeRaw = () => { };
   const datePicker = shallowWithIntl(<DateTimePicker name="date-time-input" onChangeRaw={onChangeRaw} utcOffset={0} />);
   expect(datePicker).toMatchSnapshot();
 });

@@ -30,7 +30,7 @@ class DatePickerExample extends React.Component {
     return (
       <div>
         <p>
-Selected ISO Date Time:
+          Selected ISO Date Time:
           <span id="date-time-value">{this.state.dateTime}</span>
         </p>
         <DateTimePicker
@@ -44,6 +44,6 @@ Selected ISO Date Time:
 }
 
 DatePickerExample.propTypes = propTypes;
-DatePickerExample.defualtProps = defaultProps;
+DatePickerExample.defaultProps = defaultProps;
 
 export default DatePickerExample;

@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Allow blur to be handled after the date time ambiguity is resolved.
+
 ### Changed
 
 * Fixed all the accessibility issues and updated the tests and screenshots accordingly.
