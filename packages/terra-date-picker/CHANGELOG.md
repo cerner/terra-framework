@@ -6,6 +6,9 @@ Unreleased
 ### Changed
 * updated package.json test scripts
 
+### Added
+* Aria-Label and translations added to input to fix accessibility issue of Date-Time-Picker.
+
 4.9.0 - (July 30, 2019)
 ------------------
 ### Removed
