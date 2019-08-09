@@ -49,7 +49,7 @@ Let's use the render props pattern to return our necessary components. Call this
 
 + renderForm() {
 +   return (
-+     <form>
++     <form noValidate>
 +       <Field
 +         name="example"
 +       >
@@ -109,6 +109,7 @@ render() {
 renderForm({ handleSubmit }) {
   return (
     <form
+      noValidate
 +     onSubmit={handleSubmit}
     >
       ...
@@ -204,6 +205,7 @@ Finally, let's add the function as the `validate` prop to `<Field>` within our `
 renderForm({ handleSubmit }) {
   return (
     <form
+      noValidate
       onSubmit={handleSubmit}
     >
     <Field

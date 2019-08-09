@@ -1,12 +1,13 @@
 const selector = '#root';
 
 Terra.describeViewports('ModalManager', ['tiny', 'large'], () => {
-  before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default')
-    .refresh());
+  before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-default').refresh());
+
   afterEach(() => {
     Terra.validates.element({ selector });
     browser.keys('Escape');
   });
+
   describe('Size Props', () => {
     describe('Disclose Default', () => {
       it('Disclose Default', () => browser.click('#root-component .disclose'));
@@ -343,6 +344,133 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
         Terra.validates.element('focused shifted after modal', { selector });
         browser.keys('Escape');
       });
+    });
+  });
+});
+
+Terra.describeViewports('ModalManager - Managed Header', ['large'], () => {
+  describe('Disclosure - Header Close', () => {
+    before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-header-adapter')
+      .refresh());
+
+    afterEach(() => {
+      browser.keys('Escape');
+    });
+
+    it('presents the close button within the managed header', () => {
+      browser.click('#root-component .disclose-large');
+
+      browser.waitForVisible('[class*="right-buttons"] > *:first-child', 500);
+      Terra.validates.element({ selector });
+    });
+
+    it('closes the disclosure when the close button is pressed', () => {
+      browser.click('#root-component .disclose-large');
+
+      browser.waitForVisible('[class*="right-buttons"] > *:first-child', 500);
+      browser.click('[class*="right-buttons"] > *:first-child');
+      Terra.validates.element('after selecting close', { selector });
+    });
+  });
+
+  describe('Disclosure - Header Back', () => {
+    before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-header-adapter')
+      .refresh());
+
+    afterEach(() => {
+      browser.keys('Escape');
+    });
+
+    it('presents the back button within the managed header', () => {
+      browser.click('#root-component .disclose-large');
+      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .disclose-large', 1000);
+      browser.click('[class*="slide-group"] #DemoContainer-1 .disclose-large', 1000);
+
+      browser.waitForVisible('[class*="left-buttons"] > *:first-child', 500);
+      Terra.validates.element({ selector });
+    });
+
+    it('navigates back when the back button is pressed', () => {
+      browser.click('#root-component .disclose-large');
+      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .disclose-large', 1000);
+      browser.click('[class*="slide-group"] #DemoContainer-1 .disclose-large', 1000);
+
+      browser.waitForVisible('[class*="left-buttons"] > *:first-child', 500);
+      browser.click('[class*="left-buttons"] > *:first-child', 500);
+      Terra.validates.element('after selecting back', { selector });
+    });
+  });
+
+  describe('Disclosure - Header Maximize', () => {
+    before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-header-adapter')
+      .refresh());
+
+    afterEach(() => {
+      browser.keys('Escape');
+    });
+
+    it('presents the maximize button within the managed header', () => {
+      browser.click('#root-component .disclose-large');
+
+      browser.waitForVisible('[class*="left-buttons"] > *:first-child', 500);
+      Terra.validates.element({ selector });
+    });
+
+    it('maximizes the disclosure when the maximize button is pressed', () => {
+      browser.click('#root-component .disclose-large');
+
+      browser.waitForVisible('[class*="left-buttons"] > *:first-child', 500);
+      browser.click('[class*="left-buttons"] > *:first-child');
+      Terra.validates.element('after selecting maximize', { selector });
+    });
+  });
+
+  describe('Disclosure - Header Minimize', () => {
+    before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-header-adapter')
+      .refresh());
+
+    afterEach(() => {
+      browser.keys('Escape');
+    });
+
+    it('presents the minimize button within the managed header', () => {
+      browser.click('#root-component .disclose-large');
+
+      browser.waitForVisible('[class*="left-buttons"] > *:first-child', 500);
+      browser.click('[class*="left-buttons"] > *:first-child');
+      Terra.validates.element({ selector });
+    });
+
+    it('maximizes the disclosure when the minimize button is pressed', () => {
+      browser.click('#root-component .disclose-large');
+
+      browser.waitForVisible('[class*="left-buttons"] > *:first-child', 500);
+      browser.click('[class*="left-buttons"] > *:first-child');
+      browser.click('[class*="left-buttons"] > *:first-child');
+      Terra.validates.element('after selecting minimize', { selector });
+    });
+  });
+});
+
+Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => {
+  before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-disclosure-accessory').refresh());
+
+  describe('Disclosure Accessory', () => {
+    it('renders the disclosure accessory', () => {
+      browser.click('#root-component .disclose-large');
+
+      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .disclose-tiny', 1000);
+      Terra.validates.element({ selector });
+      browser.click('[class*="slide-group"] #DemoContainer-1 .close-disclosure');
+    });
+
+    it('renders the disclosure accessory for each disclosed component', () => {
+      browser.click('#root-component .disclose-large');
+      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .disclose-tiny', 1000);
+      browser.click('[class*="slide-group"] #DemoContainer-1 .disclose-tiny');
+
+      Terra.validates.element('nested disclosure', { selector });
+      browser.click('[class*="slide-group"] #DemoContainer-2 .close-disclosure');
     });
   });
 });
