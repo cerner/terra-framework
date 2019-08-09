@@ -1,8 +1,3 @@
-// Color contrast will be resolved in https://github.com/cerner/terra-core/issues/1670
-const ignoredA11y = {
-  'color-contrast': { enabled: false },
-};
-
 Terra.describeViewports('Time Input Twelve Hour Mobile', ['medium'], () => {
   before(() => {
     browser.execute('if (!window.ontouchstart) { window.ontouchstart = "true"; }');
@@ -15,8 +10,7 @@ Terra.describeViewports('Time Input Twelve Hour Mobile', ['medium'], () => {
   describe('Twelve Hour Mobile - Default with no time', () => {
     before(() => browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/mobile'));
 
-    Terra.it.matchesScreenshot();
-    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.validatesElement();
   });
 
   describe('Twelve Hour Mobile - Clicking Meridiem updates the time', () => {
@@ -42,8 +36,7 @@ Terra.describeViewports('Time Input Twelve Hour Mobile', ['medium'], () => {
       browser.click('#timeInput input[name="terra-time-hour-time-input"]');
     });
 
-    Terra.it.isAccessible({ rules: ignoredA11y });
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 
   describe('Twelve Hour Mobile - Focus Minute Styles', () => {
@@ -59,8 +52,7 @@ Terra.describeViewports('Time Input Twelve Hour Mobile', ['medium'], () => {
       browser.click('#timeInput input[name="terra-time-minute-time-input"]');
     });
 
-    Terra.it.isAccessible({ rules: ignoredA11y });
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 
   describe('Twelve Hour Mobile - Focus Second Styles', () => {
@@ -75,8 +67,7 @@ Terra.describeViewports('Time Input Twelve Hour Mobile', ['medium'], () => {
       browser.click('#timeInputWithSecond input[name="terra-time-second-time-input-with-second"]');
     });
 
-    Terra.it.isAccessible({ rules: ignoredA11y });
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 
   describe('Twelve Hour Mobile - Auto focues next input when filling out whole thing', () => {
@@ -93,7 +84,6 @@ Terra.describeViewports('Time Input Twelve Hour Mobile', ['medium'], () => {
       browser.keys('123456');
     });
 
-    Terra.it.isAccessible({ rules: ignoredA11y });
-    Terra.it.matchesScreenshot();
+    Terra.it.validatesElement();
   });
 });

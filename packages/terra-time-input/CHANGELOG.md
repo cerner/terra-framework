@@ -4,6 +4,10 @@ Changelog
 Unreleased
 ----------
 ### Changed
+
+* Removed Ignore Accessibility condition from wdio tests.
+* Changed help text color to match required contrast ratio.
+* Added documentation on required peerDependencies
 * updated package.json test scripts
 
 4.6.0 - (July 30, 2019)
