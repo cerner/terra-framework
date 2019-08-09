@@ -4,6 +4,9 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
+
+* Fixed all the accessibility issues and updated the tests and screenshots accordingly.
+* Added documentation on required peerDependencies
 * updated package.json test scripts
 * Updated to interface with react-intl's context rather than old React Context API.
 

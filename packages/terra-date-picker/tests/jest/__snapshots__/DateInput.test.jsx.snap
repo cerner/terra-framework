@@ -81,6 +81,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
       type="hidden"
     />
     <Input
+      aria-label="Terra.datePicker.date"
       className="input"
       disabled={false}
       isInvalid={false}
@@ -90,6 +91,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
       type="text"
     >
       <input
+        aria-label="Terra.datePicker.date"
         className="form-input input"
         disabled={false}
         name="terra-date-undefined"
@@ -226,6 +228,7 @@ exports[`should render a default date input 1`] = `
     type="hidden"
   />
   <input
+    aria-label="Terra.datePicker.date"
     class="form-input input"
     name="terra-date-undefined"
     type="text"
@@ -273,6 +276,7 @@ exports[`should render a default date input with all props 1`] = `
     value="2017-01-01"
   />
   <input
+    aria-label="Terra.datePicker.date"
     class="form-input input"
     id="terra-date-input"
     name="terra-date-date-input"

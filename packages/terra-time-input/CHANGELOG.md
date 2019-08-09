@@ -5,6 +5,9 @@ Unreleased
 ----------
 ### Changed
 * Updated to interface with react-intl's context rather than old React Context API.
+* Removed Ignore Accessibility condition from wdio tests.
+* Changed help text color to match required contrast ratio.
+* Added documentation on required peerDependencies
 * updated package.json test scripts
 
 4.6.0 - (July 30, 2019)

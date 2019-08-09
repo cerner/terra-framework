@@ -7,6 +7,9 @@ Unreleased
 * updated package.json test scripts
 * Updated to interface with react-intl's context rather than old React Context API.
 
+### Added
+* Aria-Label and translations added to input to fix accessibility issue of Date-Time-Picker.
+
 4.9.0 - (July 30, 2019)
 ------------------
 ### Removed
@@ -24,6 +27,7 @@ Unreleased
 4.8.0 - (July 23, 2019)
 ------------------
 ### Changed
+* Added props description for the forked react-datepicker component
 * Normalized terra-visually-hidden-text dependency version to match other terra-framework packages
 
 4.7.0 - (July 16, 2019)

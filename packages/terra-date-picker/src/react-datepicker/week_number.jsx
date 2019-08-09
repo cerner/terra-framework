@@ -4,7 +4,13 @@ import classnames from 'classnames'
 
 export default class WeekNumber extends React.Component {
   static propTypes = {
+    /**
+     * Value of the week number of the year.
+     */
     weekNumber: PropTypes.number.isRequired,
+    /**
+     * A callback function to execute when a valid date is selected.
+     */
     onClick: PropTypes.func
   }
 

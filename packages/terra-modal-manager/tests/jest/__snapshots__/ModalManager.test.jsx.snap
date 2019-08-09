@@ -134,19 +134,34 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                       Terra.AbstractModal.BeginModalDialog
                     </span>
                     <div
-                      class="slide-group"
+                      class="content-container-fill"
                     >
                       <div
-                        class="slide"
+                        class="header"
+                      />
+                      <div
+                        class="main"
                       >
                         <div
-                          class="slide-shadow"
-                        />
-                        <button
-                          type="button"
+                          class="scroll normalizer"
                         >
-                          Hello World
-                        </button>
+                          <div
+                            class="slide-group"
+                          >
+                            <div
+                              class="slide"
+                            >
+                              <div
+                                class="slide-shadow"
+                              />
+                              <button
+                                type="button"
+                              >
+                                Hello World
+                              </button>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <span
@@ -205,117 +220,141 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                       </span>
                     </VisuallyHiddenText>
                   </FormattedMessage>
-                  <SlideGroup
-                    isAnimated={true}
-                    items={
-                      Array [
-                        <Context.Provider
-                          value={
-                            Object {
-                              "register": [Function],
-                            }
-                          }
-                        >
-                          <Context.Provider
-                            value={
-                              DisclosureManagerDelegateInstance {
-                                "closeDisclosure": [Function],
-                                "disclose": [Function],
-                                "dismiss": [Function],
-                                "maximize": [Function],
-                                "registerDismissCheck": [Function],
-                                "requestFocus": [Function],
-                              }
-                            }
-                          >
-                            <withDisclosureManager(Component) />
-                          </Context.Provider>
-                        </Context.Provider>,
-                      ]
-                    }
+                  <ContentContainer
+                    fill={true}
+                    header={<React.Fragment />}
                   >
-                    <TransitionGroup
-                      childFactory={[Function]}
-                      className="slide-group"
-                      component="div"
-                      key="DISCLOSE_KEY"
+                    <div
+                      className="content-container-fill"
                     >
                       <div
-                        className="slide-group"
+                        className="header"
+                      />
+                      <div
+                        className="main"
                       >
-                        <CSSTransition
-                          classNames={
-                            Object {
-                              "enter": "enter",
-                              "enterActive": "enter-active",
-                              "exit": "exit",
-                              "exitActive": "exit-active",
-                            }
-                          }
-                          enter={true}
-                          exit={true}
-                          id="shmmoop"
-                          in={true}
-                          key=".$DISCLOSE_KEY"
-                          onEntered={[Function]}
-                          onExit={[Function]}
-                          onExited={[Function]}
-                          timeout={300}
+                        <Scroll
+                          className="normalizer"
                         >
-                          <Transition
-                            appear={false}
-                            enter={true}
-                            exit={true}
-                            id="shmmoop"
-                            in={true}
-                            mountOnEnter={false}
-                            onEnter={[Function]}
-                            onEntered={[Function]}
-                            onEntering={[Function]}
-                            onExit={[Function]}
-                            onExited={[Function]}
-                            onExiting={[Function]}
-                            timeout={300}
-                            unmountOnExit={false}
+                          <div
+                            className="scroll normalizer"
                           >
-                            <Slide
-                              id="shmmoop"
-                              isHidden={false}
-                            >
-                              <div
-                                aria-hidden={null}
-                                className="slide"
-                              >
-                                <div
-                                  className="slide-shadow"
-                                />
-                                <withDisclosureManager(Component)>
-                                  <Component
-                                    disclosureManager={
-                                      DisclosureManagerDelegateInstance {
-                                        "closeDisclosure": [Function],
-                                        "disclose": [Function],
-                                        "dismiss": [Function],
-                                        "maximize": [Function],
-                                        "registerDismissCheck": [Function],
-                                        "requestFocus": [Function],
+                            <SlideGroup
+                              isAnimated={true}
+                              items={
+                                Array [
+                                  <Context.Provider
+                                    value={
+                                      Object {
+                                        "register": [Function],
                                       }
                                     }
                                   >
-                                    <button
-                                      type="button"
+                                    <Context.Provider
+                                      value={
+                                        DisclosureManagerDelegateInstance {
+                                          "closeDisclosure": [Function],
+                                          "disclose": [Function],
+                                          "dismiss": [Function],
+                                          "maximize": [Function],
+                                          "registerDismissCheck": [Function],
+                                          "requestFocus": [Function],
+                                        }
+                                      }
                                     >
-                                      Hello World
-                                    </button>
-                                  </Component>
-                                </withDisclosureManager(Component)>
-                              </div>
-                            </Slide>
-                          </Transition>
-                        </CSSTransition>
+                                      <withDisclosureManager(Component) />
+                                    </Context.Provider>
+                                  </Context.Provider>,
+                                ]
+                              }
+                            >
+                              <TransitionGroup
+                                childFactory={[Function]}
+                                className="slide-group"
+                                component="div"
+                                key="DISCLOSE_KEY"
+                              >
+                                <div
+                                  className="slide-group"
+                                >
+                                  <CSSTransition
+                                    classNames={
+                                      Object {
+                                        "enter": "enter",
+                                        "enterActive": "enter-active",
+                                        "exit": "exit",
+                                        "exitActive": "exit-active",
+                                      }
+                                    }
+                                    enter={true}
+                                    exit={true}
+                                    id="shmmoop"
+                                    in={true}
+                                    key=".$DISCLOSE_KEY"
+                                    onEntered={[Function]}
+                                    onExit={[Function]}
+                                    onExited={[Function]}
+                                    timeout={300}
+                                  >
+                                    <Transition
+                                      appear={false}
+                                      enter={true}
+                                      exit={true}
+                                      id="shmmoop"
+                                      in={true}
+                                      mountOnEnter={false}
+                                      onEnter={[Function]}
+                                      onEntered={[Function]}
+                                      onEntering={[Function]}
+                                      onExit={[Function]}
+                                      onExited={[Function]}
+                                      onExiting={[Function]}
+                                      timeout={300}
+                                      unmountOnExit={false}
+                                    >
+                                      <Slide
+                                        id="shmmoop"
+                                        isHidden={false}
+                                      >
+                                        <div
+                                          aria-hidden={null}
+                                          className="slide"
+                                        >
+                                          <div
+                                            className="slide-shadow"
+                                          />
+                                          <withDisclosureManager(Component)>
+                                            <Component
+                                              disclosureManager={
+                                                DisclosureManagerDelegateInstance {
+                                                  "closeDisclosure": [Function],
+                                                  "disclose": [Function],
+                                                  "dismiss": [Function],
+                                                  "maximize": [Function],
+                                                  "registerDismissCheck": [Function],
+                                                  "requestFocus": [Function],
+                                                }
+                                              }
+                                            >
+                                              <button
+                                                type="button"
+                                              >
+                                                Hello World
+                                              </button>
+                                            </Component>
+                                          </withDisclosureManager(Component)>
+                                        </div>
+                                      </Slide>
+                                    </Transition>
+                                  </CSSTransition>
+                                </div>
+                              </TransitionGroup>
+                            </SlideGroup>
+                          </div>
+                        </Scroll>
                       </div>
-                    </TransitionGroup>
-                  </SlideGroup>
+                    </div>
+                  </ContentContainer>
                   <FormattedMessage
                     id="Terra.AbstractModal.EndModalDialog"
                     values={Object {}}
