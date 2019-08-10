@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Fixed onChange callback triggering twice for values prepended with zero.
+
 ### Changed
 
 * Removed Ignore Accessibility condition from wdio tests.
