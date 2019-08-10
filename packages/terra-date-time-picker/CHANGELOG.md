@@ -3,7 +3,13 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Allow blur to be handled after the date time ambiguity is resolved.
+
 ### Changed
+
+* Fixed all the accessibility issues and updated the tests and screenshots accordingly.
+* Added documentation on required peerDependencies
 * updated package.json test scripts
 
 4.9.0 - (July 30, 2019)
