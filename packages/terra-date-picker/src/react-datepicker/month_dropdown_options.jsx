@@ -7,9 +7,21 @@ const cx = classNames.bind(styles);
 
 export default class MonthDropdownOptions extends React.Component {
   static propTypes = {
+    /**
+     * A callback function to execute when user clicks outside month dropdown.
+     */
     onCancel: PropTypes.func.isRequired,
+    /**
+     * A callback function to execute when user selects a month.
+     */
     onChange: PropTypes.func.isRequired,
+    /**
+     * Month value picked by user.
+     */
     month: PropTypes.number.isRequired,
+    /**
+     * Array containing names of months to pick from dropdown.
+     */
     monthNames: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired
   }
 

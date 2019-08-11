@@ -21,6 +21,10 @@ Unreleased
 ### Changed
 * When the modal manager is open on touch devices, it will now focus on the first interactive DOM element within it. This enables focus to be shifted into the modal correctly when using VoiceOver on iOS.
 
+### Added
+* Added support for DisclosureManagerHeaderAdapter integration
+* Added `disclosureAccessory` prop
+
 6.6.0 - (July 16, 2019)
 ------------------
 ### Added
