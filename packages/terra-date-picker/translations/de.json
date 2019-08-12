@@ -2,5 +2,6 @@
   "Terra.datePicker.dateFormat": "TT.MM.JJJJ",
   "Terra.datePicker.disabled": "Deaktiviert",
   "Terra.datePicker.openCalendar": "Kalender öffnen",
-  "Terra.datePicker.today": "Heute"
+  "Terra.datePicker.today": "Heute",
+  "Terra.datePicker.date": "Datum"
 }

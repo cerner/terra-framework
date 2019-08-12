@@ -16,25 +16,70 @@ import {
 
 class Day extends React.Component {
   static propTypes = {
+    /**
+     * Day Value Entered.
+     */
     day: PropTypes.object.isRequired,
+    /**
+     * A callback function for custom day class names.
+     */
     dayClassName: PropTypes.func,
+    /**
+     * Maximum Date value for a date range.
+     */
     endDate: PropTypes.object,
+    /**
+     * Highlight range of dates with custom classes.
+     */
     highlightDates: PropTypes.instanceOf(Map),
+    /**
+     * Prop to render Inline version of date picker component.
+     */
     inline: PropTypes.bool,
     /**
      * @private
      * Internationalization object with translation APIs. Provided by `injectIntl`.
      */
     intl: intlShape,
+    /**
+     * Month value for the date entered.
+     */
     month: PropTypes.number,
+    /**
+     * A callback function to execute when a valid date is selected.
+     */
     onClick: PropTypes.func,
+    /**
+     * A callback function to execute when mouse is clicked to select date.
+     */
     onMouseEnter: PropTypes.func,
+    /**
+     * Previous Date Value selected .
+     */
     preSelection: PropTypes.object,
+    /**
+     * Selected Date Value.
+     */
     selected: PropTypes.object,
+    /**
+     * Date selected to check if in range.
+     */
     selectingDate: PropTypes.object,
+    /**
+     * Prop to select end date on a date picker.
+     */
     selectsEnd: PropTypes.bool,
+    /**
+     * Prop to select start date on a date picker.
+     */
     selectsStart: PropTypes.bool,
+    /**
+     * Minimum date for a given range .
+     */
     startDate: PropTypes.object,
+    /**
+     * Difference between utc and local time.
+     */
     utcOffset: PropTypes.number
   }
 
