@@ -18,7 +18,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot({ selector: '#calendar' });
+    Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
     Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
@@ -90,7 +90,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot({ selector: '#calendar' });
+    Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
     Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
@@ -102,7 +102,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot({ selector: '#calendar' });
+    Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
     Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
@@ -112,7 +112,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot({ selector: '#calendar' });
+    Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
     Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
@@ -157,7 +157,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot({ selector: '#calendar' });
+    Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
     Terra.it.isAccessible({ rules: ignoredA11y });
   });
 
@@ -365,7 +365,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot('date picker updated', { selector: '#calendar' });
+    Terra.it.matchesScreenshot('date picker updated', { selector: '[data-terra-date-picker-calendar]' });
 
     it('Click button to reset date', () => {
       browser.click('[class*="PopupOverlay"]');
@@ -378,7 +378,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot('date picker reset', { selector: '#calendar' });
+    Terra.it.matchesScreenshot('date picker reset', { selector: '[data-terra-date-picker-calendar]' });
 
     it('Select date', () => {
       browser.keys('ArrowDown');

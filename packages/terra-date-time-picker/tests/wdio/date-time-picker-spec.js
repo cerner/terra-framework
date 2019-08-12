@@ -254,7 +254,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot({ selector: '#calendar' });
+    Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
   });
 
   describe('Filtered Dates are Disabled', () => {
@@ -263,7 +263,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot({ selector: '#calendar' });
+    Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
   });
 
   describe('Included Dates are Enabled', () => {
@@ -272,7 +272,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot({ selector: '#calendar' });
+    Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
   });
 
   describe('OnSelect', () => {

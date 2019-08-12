@@ -550,7 +550,7 @@ export default class Calendar extends React.Component {
 
   render () {
     return (
-      <div id='calendar' className={cx(['react-datepicker', this.props.className])}>
+      <div className={cx(['react-datepicker', this.props.className])} data-terra-date-picker-calendar>
         {this.renderPreviousMonthButton()}
         {this.renderNextMonthButton()}
         {this.renderMonths()}

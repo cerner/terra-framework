@@ -745,7 +745,7 @@ class DatePicker extends React.Component {
         minTime={this.props.minTime}
         maxTime={this.props.maxTime}
         excludeTimes={this.props.excludeTimes}
-        className={cx(this.props.calendarClassName)}
+        className={this.props.calendarClassName}
         yearDropdownItemNumber={this.props.yearDropdownItemNumber}
       >
         {this.props.children}
@@ -801,7 +801,7 @@ class DatePicker extends React.Component {
         minTime={this.props.minTime}
         maxTime={this.props.maxTime}
         excludeTimes={this.props.excludeTimes}
-        className={cx(this.props.calendarClassName)}
+        className={this.props.calendarClassName}
         yearDropdownItemNumber={this.props.yearDropdownItemNumber}
       >
         {this.props.children}
