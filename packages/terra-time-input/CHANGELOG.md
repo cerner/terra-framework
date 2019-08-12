@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Fixed onChange callback triggering twice for values prepended with zero.
+
 ### Changed
 * Updated to interface with react-intl's context rather than old React Context API.
 * Removed Ignore Accessibility condition from wdio tests.

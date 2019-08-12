@@ -328,12 +328,14 @@ class TimeInput extends React.Component {
       inputValue = '12';
     }
 
-    // // Move focus to the minute input if the hour input has a valid and complete entry.
-    if (inputValue.length === 2) {
-      this.minuteInput.focus();
-    }
+    // Move focus to the minute input if the hour input has a valid and complete entry.
+    const moveFocusOnChange = () => {
+      if (inputValue.length === 2) {
+        this.minuteInput.focus();
+      }
+    };
 
-    this.handleValueChange(event, TimeUtil.inputType.HOUR, inputValue, this.state.meridiem);
+    this.handleValueChange(event, TimeUtil.inputType.HOUR, inputValue, this.state.meridiem, moveFocusOnChange);
   }
 
   handleMinuteChange(event) {
@@ -361,17 +363,19 @@ class TimeInput extends React.Component {
       }
     }
 
-    if (inputValue.length === 2) {
-      if (this.props.showSeconds) {
-        // Move focus to second if second is shown and minute input has a valid and complete entry
-        this.secondInput.focus();
-      } else if (this.props.variant === TimeUtil.FORMAT_12_HOUR && this.meridiemSelect) {
-        // Else move focus to the merdiem for 12 hours times if the minute input has a valid and complete entry.
-        this.meridiemSelect.focus();
+    const moveFocusOnChange = () => {
+      if (inputValue.length === 2) {
+        if (this.props.showSeconds) {
+          // Move focus to second if second is shown and minute input has a valid and complete entry
+          this.secondInput.focus();
+        } else if (this.props.variant === TimeUtil.FORMAT_12_HOUR && this.meridiemSelect) {
+          // Else move focus to the merdiem for 12 hours times if the minute input has a valid and complete entry.
+          this.meridiemSelect.focus();
+        }
       }
-    }
+    };
 
-    this.handleValueChange(event, TimeUtil.inputType.MINUTE, inputValue, this.state.meridiem);
+    this.handleValueChange(event, TimeUtil.inputType.MINUTE, inputValue, this.state.meridiem, moveFocusOnChange);
   }
 
   handleSecondChange(event) {
@@ -399,12 +403,14 @@ class TimeInput extends React.Component {
       }
     }
 
-    // Move focus to the merdiem for 12 hours times if the second input has a valid and complete entry.
-    if (this.props.variant === TimeUtil.FORMAT_12_HOUR && inputValue.length === 2 && this.meridiemSelect) {
-      this.meridiemSelect.focus();
-    }
+    const moveFocusOnChange = () => {
+      // Move focus to the merdiem for 12 hours times if the second input has a valid and complete entry.
+      if (this.props.variant === TimeUtil.FORMAT_12_HOUR && inputValue.length === 2 && this.meridiemSelect) {
+        this.meridiemSelect.focus();
+      }
+    };
 
-    this.handleValueChange(event, TimeUtil.inputType.SECOND, inputValue, this.state.meridiem);
+    this.handleValueChange(event, TimeUtil.inputType.SECOND, inputValue, this.state.meridiem, moveFocusOnChange);
   }
 
   handleMeridiemChange(event) {
@@ -617,23 +623,23 @@ class TimeInput extends React.Component {
     }
   }
 
-  handleValueChange(event, type, timeValue, meridiem) {
+  handleValueChange(event, type, timeValue, meridiem, moveFocusOnChange) {
     if (type === TimeUtil.inputType.HOUR) {
       this.setState({
         hour: timeValue,
         meridiem,
         hourInitialFocused: false,
-      });
+      }, moveFocusOnChange);
     } else if (type === TimeUtil.inputType.MINUTE) {
       this.setState({
         minute: timeValue,
         minuteInitialFocused: false,
-      });
+      }, moveFocusOnChange);
     } else {
       this.setState({
         second: timeValue,
         secondInitialFocused: false,
-      });
+      }, moveFocusOnChange);
     }
 
     // Input values of length 1 indicate incomplete time, which means we cannot get a
