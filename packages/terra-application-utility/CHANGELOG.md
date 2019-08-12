@@ -6,6 +6,7 @@ Unreleased
 ### Changed
 * Update tests for dev-site v6
 * updated package.json test scripts
+* Updated translations for utility button labelling
 
 2.18.0 - (July 30, 2019)
 ------------------
