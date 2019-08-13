@@ -3,15 +3,15 @@ Changelog
 
 Unreleased
 ----------
-### Fixed
-* Fixed onChange callback triggering twice for values prepended with zero.
-
 ### Changed
-
+* Removed inline styles from dev site components.
 * Removed Ignore Accessibility condition from wdio tests.
 * Changed help text color to match required contrast ratio.
 * Added documentation on required peerDependencies
 * updated package.json test scripts
+
+### Fixed
+* Fixed onChange callback triggering twice for values prepended with zero.
 
 4.6.0 - (July 30, 2019)
 ------------------
