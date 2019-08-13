@@ -22,7 +22,7 @@ class dateInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: '2000-07-04', // d.toISOString().split('T')[0],
+      date: '', //'2000-07-04', // d.toISOString().split('T')[0],
       isValidDate: '',
     };
 
@@ -132,24 +132,6 @@ class dateInput extends React.Component {
             initialValues={{ "date-example": this.state.value }}
           /> */}
         </section>
-        {/* <Markdown src={markdown} /> */}
-        {/*
-        <li>
-          daysInMonth
-            0: 31,
-          1: 28,
-          2: 31,
-          3: 30,
-          4: 31,
-          5: 30,
-          6: 31,
-          7: 31,
-          8: 30,
-          9: 31,
-          10: 30,
-          11: 31
-        </li>
-        */}
       </div>
     );
   }

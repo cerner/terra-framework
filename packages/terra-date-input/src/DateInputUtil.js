@@ -43,8 +43,8 @@ class DateInputUtil {
     if (day) {
       let numericDay = Number(day);
 
-      // Loop back to 31 if decrementing day from "01"
-      if (numericDay === 1) {
+      // Loop back to 31. Accounts for day being 1 or 0 (result of empty string)
+      if (numericDay < 2) {
         return '31';
       }
 
@@ -93,8 +93,8 @@ class DateInputUtil {
     if (year) {
       let numericYear = Number(year);
 
-      // Loop back to 9999 if decrementing year from "1"
-      if (numericYear === 1) {
+      // Loop back to 9999. Accounts for day being 1 or 0 (result of empty string)
+      if (numericYear < 2) {
         return '9999';
       }
 
@@ -111,7 +111,8 @@ class DateInputUtil {
 
 
   /**
-   * TODO
+   * @param {String} value String to split month value from
+   * @return {String} Month value generated from input value
    */
   static splitMonth(value) {
     if (typeof (value) === 'string') {
@@ -139,7 +140,8 @@ class DateInputUtil {
   }
 
   /**
-   * TODO
+   * @param {String} value String to split day value from
+   * @return {String} Day value generated from input value
    */
   static splitDay(value) {
     if (typeof (value) === 'string') {
@@ -164,7 +166,8 @@ class DateInputUtil {
   }
 
   /**
-   * TODO
+   * @param {String} value String to split year value from
+   * @return {String} Year value generated from input value
    */
   static splitYear(value) {
     if (typeof (value) === 'string') {

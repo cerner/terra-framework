@@ -276,13 +276,11 @@ class DateInput extends React.Component {
     }
 
     const inputValue = event.target.value;
-    const stateValue = this.state.day;
     const maxValue = 9999;
 
-    // Ignore the entry if the value did not change or it is invalid.
     // When 'Predictive text' is enabled on Android the maxLength attribute on the input is ignored so we have
-    // to check the length of inputValue to make sure that it is less then 2.
-    if (inputValue === stateValue || inputValue.length > 5 || Number(inputValue) > maxValue) {
+    // to check the length of inputValue to make sure that it is less then 4.
+    if (inputValue.length > 5 || Number(inputValue) > maxValue) {
       return;
     }
 
@@ -356,7 +354,7 @@ class DateInput extends React.Component {
    * @param {Object} event Event object generated from the event delegation.
    */
   handleDayInputKeyDown(event) {
-    let stateValue = this.state.day;
+    let stateValue = this.state.day || '0';
     const previousStateValue = stateValue;
     const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
 
@@ -407,7 +405,7 @@ class DateInput extends React.Component {
    * @param {Object} event Event object generated from the event delegation.
    */
   handleYearInputKeyDown(event) {
-    let stateValue = this.state.year;
+    let stateValue = this.state.year || '0';
     const previousStateValue = stateValue;
     const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
 
@@ -465,9 +463,7 @@ class DateInput extends React.Component {
       }, moveFocusOnChange);
     }
 
-    // Input values of length 1 indicate incomplete date, which means we cannot get a
-    // reliable time so onChange isn't triggered.
-    if (this.props.onChange && value.length !== 1) {
+    if (this.props.onChange) {
       const month = type === DateInputUtil.inputType.MONTH ? value : this.state.month;
       const day = type === DateInputUtil.inputType.DAY ? value : this.state.day;
       const year = type === DateInputUtil.inputType.YEAR ? value : this.state.year;
@@ -551,6 +547,7 @@ class DateInput extends React.Component {
         onBlur={this.handleDayBlur}
         size="2"
         pattern="\d*"
+        inputmode="numeric"
         disabled={this.props.disabled}
       />
     );
@@ -577,6 +574,7 @@ class DateInput extends React.Component {
         onBlur={this.handleYearBlur}
         size="4"
         pattern="\d*"
+        inputmode="numeric"
         disabled={this.props.disabled}
       />
     );
