@@ -1,15 +1,6 @@
 <details>
 <summary>Features</summary>
 
-1. Fix issue with input values like 2000-3-04 in value prop being rendered as correct month, single digit month value should not render month
-1. ### 0 handling
-  1. Try entering 0 into day field
-  1. 0000-00
-  1. 0000-0
-  1. 0000-00-00
-  1. 0000-00-0
-  1. 0000-0-00
-
 1. ### Fieldset
   1. Make custom fieldset and move help text below
   1. Make field and non field format
@@ -96,6 +87,14 @@
   1. ✅ Day, Month, Year placeholders
   1. ✅ Hard code month translations into select to interface with react-intl
   1. ✅ make display based of locale
+1. ### ✅ 0 handling
+  1. ✅ Try entering 0 into day field, it should display 0
+    1. ✅ Try entering another 0, so "00", into the day field, it should clear the value
+  1. ✅ 0000-00
+  1. ✅ 0000-0
+  1. ✅ 0000-00-00
+  1. ✅ 0000-00-0
+  1. ✅ 0000-0-00
 1. ### ✅ Misc.
   1. ✅ Figure out weirdness with year field. Enter 0000 then press backspace 4 times.
   1. ✅ handle people entering space (empty string in day and year fields)
@@ -107,6 +106,7 @@
     1. ✅ If user presses tab instead of 4, it should update to 01 and shift focus to next field
   1. ✅ Update onChange args to (event, changedValue, isInvalid)
   1. ✅ look into hidden field pattern similar to time input
+  1. ✅ Fix issue with input values like 2000-3-04 in value prop being rendered as correct month, single digit month value should not render month
   1. ⚠️onChange is not called when value prop is updated, only when inputs are updated.
     1. ⚠️This is how the time input works as well. Planning to leave as is.
 </details>

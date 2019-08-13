@@ -118,18 +118,12 @@ class DateInputUtil {
     if (typeof (value) === 'string') {
       const splitValue = value.split('-');
 
-      if (splitValue.length) {
-        const month = Number(splitValue[1]);
-        if (month >= 1 && month < 13) {
-          // TODO - Review this. Causes value input to not match onChange(value) output
-          if (splitValue[1].length === 1) {
-            return '0'.concat(splitValue[1]);
+      if (splitValue[1]) {
+        if (splitValue[1].length === 2) {
+          const month = Number(splitValue[1]);
+          if (month >= 1 && month < 13) {
+            return splitValue[1];
           }
-          // if (splitValue[1].length === 1) {
-          //   return splitValue[1];
-          // }
-
-          return splitValue[1];
         }
       }
 
@@ -147,14 +141,18 @@ class DateInputUtil {
     if (typeof (value) === 'string') {
       const splitValue = value.split('-');
 
-      if (splitValue.length) {
+      if (splitValue[2]) {
         const day = Number(splitValue[2]);
         // If day is valid month day
         if (day >= 1 && day < 32) {
-          // if (splitValue[2].length === 1) {
-          //   return '0'.concat(splitValue[2]);
-          // }
-
+          return splitValue[2];
+        }
+        // Zero handling, accounts for typing 0, followed by positive number
+        if (splitValue[2] === '0') {
+          return splitValue[2];
+        }
+        // Allow "00" to pass through
+        if (splitValue[2] === '00') {
           return splitValue[2];
         }
       }
