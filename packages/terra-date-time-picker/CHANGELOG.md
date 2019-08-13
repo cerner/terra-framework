@@ -7,6 +7,8 @@ Unreleased
 * Allow blur to be handled after the date time ambiguity is resolved.
 
 ### Changed
+* Updated package.json test scripts
+* Corrected Typos.
 * Updated wdio test to work with changes in terra-date-picker.
 * Fixed all the accessibility issues and updated the tests and screenshots accordingly.
 * Added documentation on required peerDependencies

@@ -12,6 +12,9 @@ Unreleased
 ### Added
 * Aria-Label and translations added to input to fix accessibility issue of Date-Time-Picker.
 
+### Fixed
+* Removed the time substring from the date value returned in all callbacks.
+
 4.9.0 - (July 30, 2019)
 ------------------
 ### Removed

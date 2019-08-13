@@ -179,7 +179,7 @@ class DatePicker extends React.Component {
 
   handleFilterDate(date) {
     if (this.props.filterDate) {
-      return this.props.filterDate(date && date.isValid() ? date.format() : '');
+      return this.props.filterDate(date && date.isValid() ? date.format(DateUtil.ISO_EXTENDED_DATE_FORMAT) : '');
     }
 
     return true;
@@ -199,7 +199,7 @@ class DatePicker extends React.Component {
     this.isDefaultDateAcceptable = true;
 
     if (this.props.onSelect) {
-      this.props.onSelect(event, selectedDate.format());
+      this.props.onSelect(event, selectedDate.format(DateUtil.ISO_EXTENDED_DATE_FORMAT));
     }
 
     if (!this.props.disableButtonFocusOnClose) {
@@ -257,7 +257,7 @@ class DatePicker extends React.Component {
     });
 
     if (this.props.onChange) {
-      this.props.onChange(event, date && date.isValid() ? date.format() : '');
+      this.props.onChange(event, date && date.isValid() ? date.format(DateUtil.ISO_EXTENDED_DATE_FORMAT) : '');
     }
   }
 
@@ -440,7 +440,7 @@ class DatePicker extends React.Component {
             onButtonFocus={this.handleFocus}
             buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}
           />
-)}
+        )}
         excludeDates={excludeMomentDates}
         filterDate={this.handleFilterDate}
         includeDates={includeMomentDates}
