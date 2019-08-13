@@ -15,7 +15,8 @@ it('should render a default date time picker', () => {
       onRequestClose={jest.fn()}
     />
   ));
-  expect(datePicker).toMatchSnapshot();
+  const wrapper = datePicker.dive();
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('should render a disabled time clarification', () => {
@@ -30,7 +31,8 @@ it('should render a disabled time clarification', () => {
       disabled
     />
   ));
-  expect(datePicker).toMatchSnapshot();
+  const wrapper = datePicker.dive();
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('should render offset button after daylight savings button clicked', () => {
@@ -46,8 +48,9 @@ it('should render offset button after daylight savings button clicked', () => {
       disabled
     />
   ));
-  datePicker.find('.button-daylight').simulate('click');
-  expect(datePicker).toMatchSnapshot();
+  const wrapper = datePicker.dive();
+  wrapper.find('.button-daylight').simulate('click');
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('should render offset button after standard time button clicked', () => {
@@ -63,6 +66,7 @@ it('should render offset button after standard time button clicked', () => {
       disabled
     />
   ));
-  datePicker.find('.button-standard').simulate('click');
-  expect(datePicker).toMatchSnapshot();
+  const wrapper = datePicker.dive();
+  wrapper.find('.button-standard').simulate('click');
+  expect(wrapper).toMatchSnapshot();
 });

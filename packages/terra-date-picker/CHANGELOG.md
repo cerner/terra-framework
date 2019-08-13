@@ -7,6 +7,7 @@ Unreleased
 * Removed lint errors for css.
 * Updated react-date-picker to use css modules.
 * updated package.json test scripts
+* Updated to interface with react-intl's context rather than old React Context API.
 
 ### Added
 * Aria-Label and translations added to input to fix accessibility issue of Date-Time-Picker.

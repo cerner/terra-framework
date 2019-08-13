@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ResponsiveElement from 'terra-responsive-element';
+import { injectIntl, intlShape } from 'react-intl';
 
 /* eslint-disable-next-line  */
 import ReactDatePicker from './react-datepicker';
@@ -40,6 +41,11 @@ const propTypes = {
    */
   // eslint-disable-next-line react/forbid-prop-types
   inputAttributes: PropTypes.object,
+  /**
+   * @private
+   * intl object programmatically imported through injectIntl from react-intl.
+   * */
+  intl: intlShape.isRequired,
   /**
    * An ISO 8601 string representation of the maximum date that can be selected.
    */
@@ -116,15 +122,6 @@ const defaultProps = {
   selectedDate: undefined,
 };
 
-const contextTypes = {
-  /* eslint-disable consistent-return */
-  intl: (context) => {
-    if (context.intl === undefined) {
-      return new Error('Component is internationalized, and must be wrapped in terra-base');
-    }
-  },
-};
-
 class DatePicker extends React.Component {
   constructor(props) {
     super(props);
@@ -176,7 +173,7 @@ class DatePicker extends React.Component {
   }
 
   componentDidMount() {
-    this.dateValue = DateUtil.formatMomentDate(this.state.selectedDate, DateUtil.getFormatByLocale(this.context.intl.locale)) || '';
+    this.dateValue = DateUtil.formatMomentDate(this.state.selectedDate, DateUtil.getFormatByLocale(this.props.intl.locale)) || '';
     this.isDefaultDateAcceptable = this.validateDefaultDate();
   }
 
@@ -198,7 +195,7 @@ class DatePicker extends React.Component {
       return;
     }
 
-    this.dateValue = DateUtil.formatISODate(selectedDate, DateUtil.getFormatByLocale(this.context.intl.locale));
+    this.dateValue = DateUtil.formatISODate(selectedDate, DateUtil.getFormatByLocale(this.props.intl.locale));
     this.isDefaultDateAcceptable = true;
 
     if (this.props.onSelect) {
@@ -227,7 +224,7 @@ class DatePicker extends React.Component {
     // Handle blur only if focus has moved out of the entire date picker component.
     if (!this.datePickerContainer.current.contains(activeTarget)) {
       if (this.props.onBlur) {
-        const format = DateUtil.getFormatByLocale(this.context.intl.locale);
+        const format = DateUtil.getFormatByLocale(this.props.intl.locale);
         const isCompleteDate = DateUtil.isValidDate(this.dateValue, format);
         const iSOString = isCompleteDate ? DateUtil.convertToISO8601(this.dateValue, format) : '';
         let isValidDate = false;
@@ -333,6 +330,7 @@ class DatePicker extends React.Component {
       excludeDates,
       filterDate,
       includeDates,
+      intl,
       maxDate,
       minDate,
       name,
@@ -352,7 +350,6 @@ class DatePicker extends React.Component {
 
     delete customProps.onCalendarButtonClick;
 
-    const { intl } = this.context;
     const todayString = intl.formatMessage({ id: 'Terra.datePicker.today' });
     const dateFormat = DateUtil.getFormatByLocale(intl.locale);
     const placeholderText = intl.formatMessage({ id: 'Terra.datePicker.dateFormat' });
@@ -401,7 +398,7 @@ class DatePicker extends React.Component {
             onButtonFocus={this.handleFocus}
             buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}
           />
-)}
+        )}
         excludeDates={excludeMomentDates}
         filterDate={this.handleFilterDate}
         includeDates={includeMomentDates}
@@ -481,6 +478,5 @@ class DatePicker extends React.Component {
 
 DatePicker.propTypes = propTypes;
 DatePicker.defaultProps = defaultProps;
-DatePicker.contextTypes = contextTypes;
 
-export default DatePicker;
+export default injectIntl(DatePicker);

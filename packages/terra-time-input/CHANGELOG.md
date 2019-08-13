@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Updated to interface with react-intl's context rather than old React Context API.
 * Removed inline styles from dev site components.
 * Removed Ignore Accessibility condition from wdio tests.
 * Changed help text color to match required contrast ratio.
