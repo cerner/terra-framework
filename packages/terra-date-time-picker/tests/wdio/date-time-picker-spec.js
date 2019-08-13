@@ -254,7 +254,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot({ selector: '[class="react-datepicker"]' });
+    Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
   });
 
   describe('Filtered Dates are Disabled', () => {
@@ -263,7 +263,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot({ selector: '[class="react-datepicker"]' });
+    Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
   });
 
   describe('Included Dates are Enabled', () => {
@@ -272,7 +272,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot({ selector: '[class="react-datepicker"]' });
+    Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
   });
 
   describe('OnSelect', () => {
@@ -284,7 +284,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
 
     it('Select a date from the picker', () => {
       browser.click('[class*="button"]');
-      browser.click('.react-datepicker__week > *:nth-child(2)');
+      browser.click('[class*="react-datepicker-week"] > *:nth-child(2)');
     });
 
     Terra.it.matchesScreenshot('1');

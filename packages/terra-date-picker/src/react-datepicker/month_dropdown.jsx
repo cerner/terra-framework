@@ -1,8 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames/bind'
 import MonthDropdownOptions from './month_dropdown_options'
 import onClickOutside from 'react-onclickoutside'
 import * as utils from './date_utils'
+import styles from './stylesheets/datepicker.scss'
+
+const cx = classNames.bind(styles);
 
 const WrappedMonthDropdownOptions = onClickOutside(MonthDropdownOptions)
 
@@ -40,15 +44,15 @@ export default class MonthDropdown extends React.Component {
     ))
 
   renderSelectMode = monthNames => (
-    <select tabIndex="-1" value={this.props.month} className="react-datepicker__month-select" onChange={e => this.onChange(e.target.value)}>
+    <select tabIndex="-1" value={this.props.month} className={cx('react-datepicker-month-select"')}onChange={e => this.onChange(e.target.value)}>
       {this.renderSelectOptions(monthNames)}
     </select>
   )
 
   renderReadView = (visible, monthNames) => (
-    <div key="read" style={{visibility: visible ? 'visible' : 'hidden'}} className="react-datepicker__month-read-view" onClick={this.toggleDropdown}>
-      <span className="react-datepicker__month-read-view--down-arrow" />
-      <span className="react-datepicker__month-read-view--selected-month">{monthNames[this.props.month]}</span>
+    <div key="read" style={{visibility: visible ? 'visible' : 'hidden'}} className={cx('react-datepicker-month-read-view')} onClick={this.toggleDropdown}>
+      <span className={cx('react-datepicker-month-read-view--down-arrow')} />
+      <span className={cx('react-datepicker-month-read-view--selected-month')}>{monthNames[this.props.month]}</span>
     </div>
   )
 
@@ -100,7 +104,7 @@ export default class MonthDropdown extends React.Component {
 
     return (
       <div
-        className={`react-datepicker__month-dropdown-container react-datepicker__month-dropdown-container--${this.props.dropdownMode}`}>
+        className={cx(['react-datepicker-month-dropdown-container', `react-datepicker-month-dropdown-container--${this.props.dropdownMode}`])}>
         {renderedDropdown}
       </div>
     )

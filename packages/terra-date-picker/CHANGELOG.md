@@ -4,6 +4,8 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Removed lint errors for css.
+* Updated react-date-picker to use css modules.
 * updated package.json test scripts
 
 ### Added
