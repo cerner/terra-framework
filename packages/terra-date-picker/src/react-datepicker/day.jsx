@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import classNames from 'classnames/bind'
 import { injectIntl, intlShape } from 'react-intl';
 import {
   getDay,
@@ -13,6 +13,9 @@ import {
   getDayOfWeekCode,
   getLocalizedDateForScreenReader
 } from './date_utils'
+import styles from './stylesheets/datepicker.scss'
+
+const cx = classNames.bind(styles);
 
 class Day extends React.Component {
   static propTypes = {
@@ -196,20 +199,20 @@ class Day extends React.Component {
 
   getClassNames = (date) => {
     const dayClassName = (this.props.dayClassName ? this.props.dayClassName(date) : undefined)
-    return classnames('react-datepicker__day', dayClassName, 'react-datepicker__day--' + getDayOfWeekCode(this.props.day), {
-      'react-datepicker__day--disabled': this.isDisabled(),
-      'react-datepicker__day--selected': this.isSameDay(this.props.selected),
-      'react-datepicker__day--keyboard-selected': this.isKeyboardSelected(),
-      'react-datepicker__day--range-start': this.isRangeStart(),
-      'react-datepicker__day--range-end': this.isRangeEnd(),
-      'react-datepicker__day--in-range': this.isInRange(),
-      'react-datepicker__day--in-selecting-range': this.isInSelectingRange(),
-      'react-datepicker__day--selecting-range-start': this.isSelectingRangeStart(),
-      'react-datepicker__day--selecting-range-end': this.isSelectingRangeEnd(),
-      'react-datepicker__day--today': this.isSameDay(now(this.props.utcOffset)),
-      'react-datepicker__day--weekend': this.isWeekend(),
-      'react-datepicker__day--outside-month': this.isOutsideMonth()
-    }, this.getHighLightedClass('react-datepicker__day--highlighted'))
+    return ['react-datepicker-day', dayClassName, 'react-datepicker-day--' + getDayOfWeekCode(this.props.day), {
+      'react-datepicker-day--disabled': this.isDisabled(),
+      'react-datepicker-day--selected': this.isSameDay(this.props.selected),
+      'react-datepicker-day--keyboard-selected': this.isKeyboardSelected(),
+      'react-datepicker-day--range-start': this.isRangeStart(),
+      'react-datepicker-day--range-end': this.isRangeEnd(),
+      'react-datepicker-day--in-range': this.isInRange(),
+      'react-datepicker-day--in-selecting-range': this.isInSelectingRange(),
+      'react-datepicker-day--selecting-range-start': this.isSelectingRangeStart(),
+      'react-datepicker-day--selecting-range-end': this.isSelectingRangeEnd(),
+      'react-datepicker-day--today': this.isSameDay(now(this.props.utcOffset)),
+      'react-datepicker-day--weekend': this.isWeekend(),
+      'react-datepicker-day--outside-month': this.isOutsideMonth()
+    }, this.getHighLightedClass('react-datepicker-day--highlighted')]
   }
 
   render () {
@@ -217,7 +220,7 @@ class Day extends React.Component {
 
     return (
       <div
-        className={this.getClassNames(day)}
+        className={cx(this.getClassNames(day))}
         onClick={this.handleClick}
         onMouseEnter={this.handleMouseEnter}
         aria-label={getLocalizedDateForScreenReader(day, this.props)}

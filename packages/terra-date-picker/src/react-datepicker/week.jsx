@@ -1,8 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames/bind'
 import Day from './day'
 import WeekNumber from './week_number'
 import * as utils from './date_utils'
+import styles from './stylesheets/datepicker.scss'
+
+const cx = classNames.bind(styles);
 
 export default class Week extends React.Component {
   static propTypes = {
@@ -166,7 +170,7 @@ export default class Week extends React.Component {
 
   render () {
     return (
-      <div className="react-datepicker__week">
+      <div className={cx('react-datepicker-week')}>
         {this.renderDays()}
       </div>
     )

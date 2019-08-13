@@ -1,5 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames/bind'
+import styles from './stylesheets/datepicker.scss'
+
+const cx = classNames.bind(styles);
 
 export default class MonthDropdownOptions extends React.Component {
   static propTypes = {
@@ -23,11 +27,11 @@ export default class MonthDropdownOptions extends React.Component {
 
   renderOptions = () => {
     return this.props.monthNames.map((month, i) =>
-      <div className="react-datepicker__month-option"
+      <div className={cx('react-datepicker-month-option')}
         key={month}
         ref={month}
         onClick={this.onChange.bind(this, i)}>
-        {this.props.month === i ? <span className="react-datepicker__month-option--selected">✓</span> : ''}
+        {this.props.month === i ? <span className={cx('react-datepicker-month-option--selected')}>✓</span> : ''}
         {month}
       </div>
     )
@@ -39,7 +43,7 @@ export default class MonthDropdownOptions extends React.Component {
 
   render () {
     return (
-      <div className="react-datepicker__month-dropdown">
+      <div className={cx('react-datepicker-month-dropdown')}>
         {this.renderOptions()}
       </div>
     )
