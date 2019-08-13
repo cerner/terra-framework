@@ -1,21 +1,21 @@
 import React from 'react';
 
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
-import FormDate from 'terra-form-date/lib/FormDate';
+import DateInput from 'terra-date-input/lib/DateInput';
 
 const d = new Date();
 
-const formatDate = date => {
-  // formats a JS date to 'yyyy-mm-dd'
-  var d = new Date(date),
-    month = "" + (d.getMonth() + 1),
-    day = "" + d.getUTCDate(),
-    year = d.getFullYear();
+// formats a JS date to 'yyyy-mm-dd'
+const formatDate = (date) => {
+  const newD = new Date(date);
+  let month = (newD.getMonth() + 1).toString();
+  let day = newD.getUTCDate().toString();
+  const year = newD.getFullYear().toString();
 
-  if (month.length < 2) month = "0" + month;
-  if (day.length < 2) day = "0" + day;
+  if (month.length < 2) month = `0${month}`;
+  if (day.length < 2) day = `0${day}`;
 
-  return [year, month, day].join("-");
+  return [year, month, day].join('-');
 };
 
 class dateInput extends React.Component {
@@ -99,7 +99,7 @@ class dateInput extends React.Component {
           </button>
         </section>
         <section style={{ 'marginBottom': '15px' }}>
-          <FormDate
+          <DateInput
             name="date-input-value"
             value={this.state.date}
             onChange={this.handleDateChange}
@@ -108,7 +108,7 @@ class dateInput extends React.Component {
         </section>
         <section style={{ 'marginBottom': '15px' }}>
           <p>displayFormat="day-month-year"</p>
-          <FormDate
+          <DateInput
             name="date-input-value"
             value={this.state.date}
             onChange={this.handleDateChange}
@@ -118,7 +118,7 @@ class dateInput extends React.Component {
         </section>
         <section style={{ 'marginBottom': '15px' }}>
           <p>displayFormat="month-day-year"</p>
-          <FormDate
+          <DateInput
             name="date-input-value"
             value={this.state.date}
             onChange={this.handleDateChange}
