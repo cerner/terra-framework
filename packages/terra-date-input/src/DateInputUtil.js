@@ -189,29 +189,6 @@ class DateInputUtil {
   }
 
   /**
-   * Ensures the passed in value is a valid date
-   * @param {string} value The date to validate
-   */
-  static isValidDate(value) {
-    if (!this.acceptedDateValue(value)) {
-      return false;
-    }
-
-    const splitValue = value.split('-');
-    const formattedDay = Number(splitValue[2]);
-    const formattedMonth = Number(splitValue[1]) - 1; // Account for 0-indexed month
-    const formattedYear = Number(splitValue[0]);
-
-    const d = new Date(formattedYear, formattedMonth, formattedDay);
-
-    const yearMatches = d.getUTCFullYear() === formattedYear;
-    const monthMatches = d.getUTCMonth() === formattedMonth;
-    const dayMatches = d.getUTCDate() === formattedDay;
-
-    return yearMatches && monthMatches && dayMatches;
-  }
-
-  /**
    * Computes the display format based of of the displayFormat prop and the current locale
    * Defaults to 'day-month-year'
    * @param {string} displayFormat The displayFormat prop

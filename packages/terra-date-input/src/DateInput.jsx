@@ -469,10 +469,10 @@ class DateInput extends React.Component {
       const year = type === DateInputUtil.inputType.YEAR ? value : this.state.year;
 
       if (month === '' && day === '' && year === '') {
-        this.handleOnChange(event, '', false);
+        this.handleOnChange(event, '');
       } else {
         const dateString = `${year}-${month}-${day}`;
-        this.handleOnChange(event, dateString, DateInputUtil.isValidDate(dateString));
+        this.handleOnChange(event, dateString);
       }
     }
   }
@@ -481,11 +481,10 @@ class DateInput extends React.Component {
    * Calls onChange callback prop if it exists
    * @param {Object} event Event object generated from the event delegation.
    * @param {String} dateString Returns the dateString from the component
-   * @param {Boolean} isValidDate Returns true if dateString is a valid date
    */
-  handleOnChange(event, dateString, isValidDate) {
+  handleOnChange(event, dateString) {
     if (this.props.onChange) {
-      this.props.onChange(event, dateString, isValidDate);
+      this.props.onChange(event, dateString);
     }
   }
 
@@ -547,7 +546,7 @@ class DateInput extends React.Component {
         onBlur={this.handleDayBlur}
         size="2"
         pattern="\d*"
-        inputmode="numeric"
+        inputMode="numeric"
         disabled={this.props.disabled}
       />
     );
@@ -574,7 +573,7 @@ class DateInput extends React.Component {
         onBlur={this.handleYearBlur}
         size="4"
         pattern="\d*"
-        inputmode="numeric"
+        inputMode="numeric"
         disabled={this.props.disabled}
       />
     );

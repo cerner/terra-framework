@@ -18,12 +18,35 @@ const formatDate = (date) => {
   return [year, month, day].join('-');
 };
 
+
+/**
+ * Ensures the passed in value is a valid date
+ * @param {string} value The date to validate
+ */
+const isValidDate = (value) => {
+  if (value && value.length === 10) {
+    const splitValue = value.split('-');
+    const formattedDay = Number(splitValue[2]);
+    const formattedMonth = Number(splitValue[1]) - 1; // Account for 0-indexed month
+    const formattedYear = Number(splitValue[0]);
+
+    const d2 = new Date(formattedYear, formattedMonth, formattedDay);
+
+    const yearMatches = d2.getUTCFullYear() === formattedYear;
+    const monthMatches = d2.getUTCMonth() === formattedMonth;
+    const dayMatches = d2.getUTCDate() === formattedDay;
+
+    return yearMatches && monthMatches && dayMatches;
+  }
+  return false;
+};
+
 class dateInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       date: '', //'2000-07-04', // d.toISOString().split('T')[0],
-      isValidDate: '',
+      validDate: false,
     };
 
     this.submitForm = this.submitForm.bind(this);
@@ -33,13 +56,20 @@ class dateInput extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  handleDateChange(event, date, isValidDate) {
-    this.setState({ date, isValidDate });
+  handleDateChange(event, date) {
+    const validDate = isValidDate(date);
+    this.setState({
+      date,
+      validDate,
+    });
   }
 
   handleInputChange(e) {
+    const validDate = isValidDate(e.target.value);
+    console.log(validDate);
     this.setState({
       date: e.target.value,
+      validDate,
     });
   }
 
@@ -74,7 +104,7 @@ class dateInput extends React.Component {
           <p>
             <b>Is Valid Date:</b>
             {' '}
-            {this.state.isValidDate.toString()}
+            {this.state.validDate.toString()}
           </p>
         </section>
         <section style={{ 'marginBottom': '15px' }}>
