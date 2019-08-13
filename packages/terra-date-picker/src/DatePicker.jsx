@@ -1,6 +1,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 import ResponsiveElement from 'terra-responsive-element';
 import { injectIntl, intlShape } from 'react-intl';
 
@@ -9,6 +10,8 @@ import ReactDatePicker from './react-datepicker';
 import DateInput from './DateInput';
 import DateUtil from './DateUtil';
 import styles from './DatePicker.module.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -460,7 +463,7 @@ class DatePicker extends React.Component {
 
     return (
       <div
-        className={styles['date-picker']}
+        className={cx('date-picker')}
         ref={this.datePickerContainer}
       >
         <ResponsiveElement

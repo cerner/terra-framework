@@ -5,7 +5,7 @@ import FocusTrap from 'focus-trap-react';
 import { Portal } from 'react-portal';
 import KeyCode from 'keycode-js';
 import Popup from 'terra-popup';
-import classnames from 'classnames';
+import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import PopupContainer from './PopupContainer';
@@ -41,6 +41,9 @@ import {
   getLocalizedDateForScreenReader
 } from './date_utils'
 import onClickOutside from 'react-onclickoutside'
+import styles from './stylesheets/datepicker.scss'
+
+const cx = classNames.bind(styles);
 
 const outsideClickIgnoreClass = 'react-datepicker-ignore-onclickoutside'
 const WrappedCalendar = onClickOutside(Calendar)
@@ -808,7 +811,7 @@ class DatePicker extends React.Component {
   }
 
   renderDateInput = () => {
-    var className = classnames(this.props.className, {
+    var classNameList = cx(this.props.className, {
       [outsideClickIgnoreClass]: this.state.open
     })
 
@@ -833,7 +836,7 @@ class DatePicker extends React.Component {
       placeholder: this.props.placeholderText,
       disabled: this.props.disabled,
       autoComplete: this.props.autoComplete,
-      className: className,
+      className: classNameList,
       title: this.props.title,
       readOnly: this.props.readOnly,
       required: this.props.required,
@@ -843,7 +846,7 @@ class DatePicker extends React.Component {
 
   renderClearButton = () => {
     if (this.props.isClearable && this.props.selected != null) {
-      return <a className="react-datepicker__close-icon" href="#" onClick={this.onClearClick} />
+      return <a className={cx('react-datepicker-close-icon')} href="#" onClick={this.onClearClick} />
     } else {
       return null
     }
@@ -861,7 +864,7 @@ class DatePicker extends React.Component {
         <div>
           {
             !this.props.inline
-              ? <div className="react-datepicker__input-container">
+              ? <div className={cx('react-datepicker-input-container')}>
                 {this.renderDateInput()}
                 {this.renderClearButton()}
               </div>
@@ -873,7 +876,7 @@ class DatePicker extends React.Component {
                   <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: false, clickOutsideDeactivates: true }}>
                     <div
                       ref={this.datePickerOverlayContainer}
-                      className="react-datepicker__portal"
+                      className={cx('react-datepicker-portal')}
                       tabIndex="-1"
                       onKeyDown={this.handleCalendarKeyDown}
                     >
@@ -891,7 +894,7 @@ class DatePicker extends React.Component {
       <React.Fragment>
         <div
          ref={this.datePickerContainer}
-         className="react-datepicker__input-container"
+         className={cx('react-datepicker-input-container')}
         >
           {this.renderDateInput()}
           {this.renderClearButton()}
@@ -904,7 +907,7 @@ class DatePicker extends React.Component {
           targetRef={() => this.datePickerContainer.current }
           onPosition={this.handleOnPosition}
           onRequestClose={this.handleOnRequestClose}
-          classNameArrow={classnames('react-datepicker__arrow')}
+          classNameArrow={cx('react-datepicker-arrow')}
           contentWidth="auto"
           contentHeight="auto"
           isArrowDisplayed
