@@ -2,5 +2,6 @@
   "Terra.datePicker.dateFormat": "DD.MM.YYYY",
   "Terra.datePicker.disabled": "Liikuntarajoitteinen",
   "Terra.datePicker.openCalendar": "Avaa Kalenteri",
-  "Terra.datePicker.today": "Tänään"
+  "Terra.datePicker.today": "Tänään",
+  "Terra.datePicker.date": "Ðâté"
 }
