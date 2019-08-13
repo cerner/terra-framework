@@ -98,10 +98,10 @@
     background-position: 0 100%;
     background-repeat: no-repeat;
     background-size: var(--terra-time-input-time-component-background-size, 0 0);
-    border-color: var(--terra-time-input-time-component-border-color);
+    border-color: var(--terra-time-input-time-component-border-color, transparent);
     border-radius: var(--terra-time-input-time-component-border-radius, 2px);
-    border-style: var(--terra-time-input-time-component-border-style);
-    border-width: var(--terra-time-input-time-component-border-width);
+    border-style: var(--terra-time-input-time-component-border-style, none);
+    border-width: var(--terra-time-input-time-component-border-width, 0);
     box-sizing: border-box;
     caret-color: var(--terra-time-input-time-component-caret-color, #1c1f21);
     color: var(--terra-time-input-time-component-color, #1c1f21);
@@ -120,7 +120,7 @@
 
     &:hover {
       background-color: var(--terra-time-input-time-component-hover-background-color, #fff);
-      border: var(--terra-time-input-time-component-hover-border);
+      border: var(--terra-time-input-time-component-hover-border, 0 none transparent);
       color: var(--terra-time-input-time-component-hover-color, #1c1f21);
     }
 
