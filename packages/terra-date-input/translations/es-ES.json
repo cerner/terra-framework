@@ -1,0 +1,21 @@
+{
+  "Terra.form.date.monthLabel": "Mes",
+  "Terra.form.date.monthPlaceholder": "Mes",
+  "Terra.form.date.yearLabel": "Año",
+  "Terra.form.date.yearPlaceholder": "AAAA",
+  "Terra.form.date.dayLabel": "Fecha",
+  "Terra.form.date.dayPlaceholder": "DD",
+  "Terra.form.date.legend": "Fecha",
+  "Terra.form.date.january": "Enero",
+  "Terra.form.date.february": "Febrero",
+  "Terra.form.date.march": "Marzo",
+  "Terra.form.date.april": "Abril",
+  "Terra.form.date.may": "Mayo",
+  "Terra.form.date.june": "Junio",
+  "Terra.form.date.july": "Julio",
+  "Terra.form.date.august": "Agosto",
+  "Terra.form.date.september": "Septiembre",
+  "Terra.form.date.october": "Octubre",
+  "Terra.form.date.november": "Noviembre",
+  "Terra.form.date.december": "Diciembre"
+}

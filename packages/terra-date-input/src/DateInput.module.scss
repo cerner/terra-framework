@@ -1,5 +1,57 @@
 :local {
   .date-input {
-    /* TODO: Add styles */
+    display: flex;
+  }
+
+  .date-input-month-wrapper {
+    background: #fff;
+    /* Caret icon styles */
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%20class%3D%22is-bidi%22%3E%3Cpath%20d%3D%22M48%2012L24%2036%200%2012h48z%22%2F%3E%3C%2Fsvg%3E");
+    background-position: right 0.7em top 50%, 0 0;
+    background-repeat: no-repeat, repeat;
+    background-size: 0.65em auto, 100%;
+    display: flex;
+
+    select {
+      background: transparent;
+      border: 1px solid #dedfe0;
+      border-radius: 3px;
+      font-size: 1.143rem; // 16px allows correct zoom on iOS
+      height: 2.143rem; // 30px
+      padding: 0.3571rem 2rem 0.3571rem 0.3571rem;
+      width: 100%;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+
+      &:focus {
+        border: 1px solid #4cb2e9;
+        outline: none;
+      }
+    }
+  }
+
+  .date-input-month,
+  .date-input-day,
+  .date-input-year {
+    margin-bottom: 0;
+  }
+
+  .date-input-month {
+    max-width: 24rem;
+  }
+
+  .date-input-day {
+    max-width: 2.4rem;
+  }
+
+  .date-input-year {
+    max-width: 3.7rem;
+  }
+
+  // Gutters
+  .date-input-day ~ .date-input-month-wrapper,
+  .date-input-month-wrapper ~ .date-input-day,
+  .date-input-year {
+    margin-left: 0.3571rem;
   }
 }
