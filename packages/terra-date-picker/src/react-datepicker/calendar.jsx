@@ -4,7 +4,8 @@ import Month from './month'
 import Time from './time'
 import React from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import classNames from 'classnames/bind'
+import styles from './stylesheets/datepicker.scss'
 import {
   now,
   setMonth,
@@ -32,69 +33,218 @@ import {
   getEffectiveMaxDate
 } from './date_utils'
 
+const cx = classNames.bind(styles);
+
 const DROPDOWN_FOCUS_CLASSNAMES = [
-  'react-datepicker__year-select',
-  'react-datepicker__month-select'
+  'react-datepicker-year-select',
+  'react-datepicker-month-select'
 ]
 
 const isDropdownSelect = (element = {}) => {
-  const classNames = (element.className || '').split(/\s+/)
-  return DROPDOWN_FOCUS_CLASSNAMES.some(testClassname => classNames.indexOf(testClassname) >= 0)
+  const classNamesList = (element.className || '').split(/\s+/)
+  return DROPDOWN_FOCUS_CLASSNAMES.some(testClassname => classNamesList.indexOf(testClassname) >= 0)
 }
 
 export default class Calendar extends React.Component {
   static propTypes = {
+    /**
+     * Prop to change date when a valid date is selected.
+     */
     adjustDateOnChange: PropTypes.bool,
+    /**
+     * Class name to style the date picker.
+     */
     className: PropTypes.string,
+    /**
+     * Components to render within date picker.
+     */
     children: PropTypes.node,
+    /**
+     * Format of the date selected.
+     */
     dateFormat: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.array
     ]).isRequired,
+    /**
+     * Prop to style individual days on calendar.
+     */
     dayClassName: PropTypes.func,
+    /**
+     * Whether the year and month dropdowns should be in the scroll or select mode.
+     */
     dropdownMode: PropTypes.oneOf(['scroll', 'select']).isRequired,
+    /**
+     * Maximum Date for a given range.
+     */
     endDate: PropTypes.object,
+    /**
+     * Array to exclude certain dates.
+     */
     excludeDates: PropTypes.array,
+    /**
+     * A callback function to be executed to determine if a given date should be filtered.
+     */
     filterDate: PropTypes.func,
+    /**
+     * Specifies whether the height of calendar dom fixed or variable.
+     */
     fixedHeight: PropTypes.bool,
+    /**
+     * A callback function to be executed to format week number .
+     */
     formatWeekNumber: PropTypes.func,
+    /**
+     * Highlight range of dates with custom classes.
+     */
     highlightDates: PropTypes.instanceOf(Map),
+    /**
+     * Show dates only in the given array.
+     */
     includeDates: PropTypes.array,
+    /**
+     * Prop to show inline version of date picker component.
+     */
     inline: PropTypes.bool,
+    /**
+     * Name of locale data for different international formatting.
+     */
     locale: PropTypes.string,
+    /**
+     * Maximum value of date that can be selected by user.
+     */
     maxDate: PropTypes.object,
+    /**
+     * Minimum value of date that can be selected by user.
+     */
     minDate: PropTypes.object,
+    /**
+     * Prop to show multiple months on date picker.
+     */
     monthsShown: PropTypes.number,
+    /**
+     * A callback function that is executed when user clicks outside the datepicker.
+     */
     onClickOutside: PropTypes.func,
+    /**
+     * A callback function that is executed when month is selected.
+     */
     onMonthChange: PropTypes.func,
+    /**
+     * Prop to show month navigation.
+     */
     forceShowMonthNavigation: PropTypes.bool,
+    /**
+     * A callback function that is executed when date picker is clicked for dropdown.
+     */
     onDropdownFocus: PropTypes.func,
+    /**
+     * A callback function that is executed when a valid date is selected.
+     */
     onSelect: PropTypes.func.isRequired,
+    /**
+     * A callback function that is executed when a Week number is selected.
+     */
     onWeekSelect: PropTypes.func,
+    /**
+     * Prop to determine whether or not to show the time picker.
+     */
     showTimeSelect: PropTypes.bool,
+    /**
+     * Prop to choose format of time selected.
+     */
     timeFormat: PropTypes.string,
+    /**
+     * Interval between 2 consecutive times on time picker in minutes.
+     */
     timeIntervals: PropTypes.number,
+    /**
+     * A callback function to execute when a valid time is selected.
+     */
     onTimeChange: PropTypes.func,
+    /**
+     * Minimum Value of time that can be selected by user.
+     */
     minTime: PropTypes.object,
+    /**
+     * Maximum Value of time that can be selected by user.
+     */
     maxTime: PropTypes.object,
+    /**
+     * Array to store time values disabled for selection.
+     */
     excludeTimes: PropTypes.array,
+    /**
+     * Prop to open calendar on the given date.
+     */
     openToDate: PropTypes.object,
+    /**
+     * Prop to show dates of next month also.
+     */
     peekNextMonth: PropTypes.bool,
+    /**
+     * Prop to show a scrollable dropdown to choose year on the date picker.
+     */
     scrollableYearDropdown: PropTypes.bool,
+    /**
+     * Prop to store previous selection.
+     */
     preSelection: PropTypes.object,
+    /**
+     * Selected Date Value.
+     */
     selected: PropTypes.object,
+    /**
+     * Mark date picker to select end of range .
+     */
     selectsEnd: PropTypes.bool,
+    /**
+     * Mark date picker to select start of range .
+     */
     selectsStart: PropTypes.bool,
+    /**
+     * Prop to show a dropdown to select month in date picker .
+     */
     showMonthDropdown: PropTypes.bool,
+    /**
+     * Prop to show week numbers .
+     */
     showWeekNumbers: PropTypes.bool,
+    /**
+     * Prop to show a dropdown to select year in date picker .
+     */
     showYearDropdown: PropTypes.bool,
+    /**
+     * Minimum date for a given range .
+     */
     startDate: PropTypes.object,
+    /**
+     * Name of button to select current date .
+     */
     todayButton: PropTypes.string,
+    /**
+     * Prop to show short names of weekdays .
+     */
     useWeekdaysShort: PropTypes.bool,
+    /**
+     * Prop to open a separate portal version of date picker .
+     */
     withPortal: PropTypes.bool,
+    /**
+     * Difference between utc and local time.
+     */
     utcOffset: PropTypes.number,
+    /**
+     * Label value for weeks on date picker.
+     */
     weekLabel: PropTypes.string,
+    /**
+     * Year Values to show on dropdown +/- the given value.
+      */
     yearDropdownItemNumber: PropTypes.number,
+    /**
+     * A callback function to execute when a date picker is open.
+     */
     setOpen: PropTypes.func
   }
 
@@ -218,7 +368,7 @@ export default class Calendar extends React.Component {
     const dayNames = []
     if (this.props.showWeekNumbers) {
       dayNames.push(
-        <div key="W" className="react-datepicker__day-name">
+        <div key="W" className={cx('react-datepicker-day-name')}>
           {this.props.weekLabel || '#'}
         </div>
       )
@@ -230,7 +380,7 @@ export default class Calendar extends React.Component {
         ? getWeekdayShortInLocale(localeData, day)
         : getWeekdayMinInLocale(localeData, day)
       return (
-        <div key={offset} className="react-datepicker__day-name">
+        <div key={offset} className={cx('react-datepicker-day-name')}>
           {weekDayName}
         </div>
       )
@@ -242,7 +392,7 @@ export default class Calendar extends React.Component {
       return
     }
     return <a
-      className="react-datepicker__navigation react-datepicker__navigation--previous"
+      className={cx(['react-datepicker-navigation', 'react-datepicker-navigation--previous'])}
       onClick={this.decreaseMonth} />
   }
 
@@ -251,30 +401,30 @@ export default class Calendar extends React.Component {
       return
     }
 
-    let classes = ['react-datepicker__navigation', 'react-datepicker__navigation--next']
+    let classes = ['react-datepicker-navigation', 'react-datepicker-navigation--next']
     if (this.props.showTimeSelect) {
-      classes.push('react-datepicker__navigation--next--with-time')
+      classes.push('react-datepicker-navigation--next--with-time')
     }
     if (this.props.todayButton) {
-      classes.push('react-datepicker__navigation--next--with-today-button')
+      classes.push('react-datepicker-navigation--next--with-today-button')
     }
 
     return <a
-      className={classes.join(' ')}
+      className={cx(classes)}
       onClick={this.increaseMonth} />
   }
 
   renderCurrentMonth = (date = this.state.date) => {
-    const classes = ['react-datepicker__current-month']
+    const classes = ['react-datepicker-current-month']
 
     if (this.props.showYearDropdown) {
-      classes.push('react-datepicker__current-month--hasYearDropdown')
+      classes.push('react-datepicker-current-month--hasYearDropdown')
     }
     if (this.props.showMonthDropdown) {
-      classes.push('react-datepicker__current-month--hasMonthDropdown')
+      classes.push('react-datepicker-current-month--hasMonthDropdown')
     }
     return (
-      <div className={classes.join(' ')}>
+      <div className={cx(classes)}>
         {formatDate(date, this.props.dateFormat)}
       </div>
     )
@@ -320,7 +470,7 @@ export default class Calendar extends React.Component {
     }
     return (
       <div
-        className="react-datepicker__today-button"
+        className={cx('react-datepicker-today-button')}
         onClick={e => this.props.onSelect(getStartOfDate(now(this.props.utcOffset)), e)}>
         {this.props.todayButton}
       </div>
@@ -333,16 +483,16 @@ export default class Calendar extends React.Component {
       var monthDate = addMonths(cloneDate(this.state.date), i)
       var monthKey = `month-${i}`
       monthList.push(
-        <div key={monthKey} ref={div => { this.monthContainer = div }} className="react-datepicker__month-container">
-          <div className="react-datepicker__header">
+        <div key={monthKey} ref={div => { this.monthContainer = div }} className={cx('react-datepicker-month-container')}>
+          <div className={cx('react-datepicker-header')}>
             {this.renderCurrentMonth(monthDate)}
             <div
-              className={`react-datepicker__header__dropdown react-datepicker__header__dropdown--${this.props.dropdownMode}`}
+              className={cx(['react-datepicker-header-dropdown', `react-datepicker-header-dropdown--${this.props.dropdownMode}`])}
               onFocus={this.handleDropdownFocus}>
               {this.renderMonthDropdown(i !== 0)}
               {this.renderYearDropdown(i !== 0)}
             </div>
-            <div className="react-datepicker__day-names">
+            <div className={cx('react-datepicker-day-names')}>
               {this.header(monthDate)}
             </div>
           </div>
@@ -400,7 +550,7 @@ export default class Calendar extends React.Component {
 
   render () {
     return (
-      <div className={classnames('react-datepicker', this.props.className)}>
+      <div className={cx(['react-datepicker', this.props.className])} data-terra-date-picker-calendar>
         {this.renderPreviousMonthButton()}
         {this.renderNextMonthButton()}
         {this.renderMonths()}

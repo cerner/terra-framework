@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 import Button from 'terra-button';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
 import Input from 'terra-form-input';
+import classNames from 'classnames/bind';
 import DateUtil from './DateUtil';
 import styles from './DatePicker.module.scss';
+
+const cx = classNames.bind(styles);
 
 const Icon = <IconCalendar />;
 
@@ -151,7 +154,7 @@ class DatePickerInput extends React.Component {
     const buttonText = this.context.intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
 
     return (
-      <div className={styles['custom-input']}>
+      <div className={cx('custom-input')}>
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
           // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
@@ -162,7 +165,7 @@ class DatePickerInput extends React.Component {
         />
         <Input
           {...additionalInputProps}
-          className={styles.input}
+          className={cx('input')}
           type="text"
           name={'terra-date-'.concat(name)}
           value={value}
@@ -170,9 +173,10 @@ class DatePickerInput extends React.Component {
           placeholder={placeholder}
           onFocus={onFocus}
           onBlur={onBlur}
+          aria-label={this.context.intl.formatMessage({ id: 'Terra.datePicker.date' })}
         />
         <Button
-          className={styles.button}
+          className={cx('button')}
           text={buttonText}
           onClick={this.handleOnButtonClick}
           onKeyDown={this.handleOnKeyDown}
