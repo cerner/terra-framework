@@ -7,11 +7,11 @@ Unreleased
 * Fixed onChange callback triggering twice for values prepended with zero.
 
 ### Changed
-
 * Removed Ignore Accessibility condition from wdio tests.
 * Changed help text color to match required contrast ratio.
 * Added documentation on required peerDependencies
-* updated package.json test scripts
+* Updated package.json test scripts
+* Changed 12-hour format appearance for mobile and desktop.
 
 4.6.0 - (July 30, 2019)
 ------------------

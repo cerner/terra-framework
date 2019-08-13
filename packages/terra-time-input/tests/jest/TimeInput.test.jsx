@@ -135,14 +135,6 @@ it('should handle focusing on the minute input without error', () => {
   expect(mockEvent.preventDefault).toHaveBeenCalled();
 });
 
-it('should handle focusing on the meridiem input from minute without error', () => {
-  mockEvent.keyCode = KeyCode.KEY_RIGHT;
-  const timeInput = <TimeInput name="time-input" variant="12-hour" />;
-  const wrapper = mountWithIntl(timeInput);
-  wrapper.instance().handleMinuteInputKeyDown(mockEvent);
-  expect(mockEvent.preventDefault).toHaveBeenCalled();
-});
-
 it('should pass in refCallback as the ref prop of the hour input element', () => {
   const refCallback = jest.fn();
   const timeInput = <TimeInput name="time-input" refCallback={refCallback} />;
@@ -182,14 +174,6 @@ it('should render a 12 hour clock time input with seconds input', () => {
   const timeInput = <TimeInput name="time-input" variant="12-hour" showSeconds />;
   const wrapper = shallowWithIntl(timeInput);
   expect(wrapper).toMatchSnapshot();
-});
-
-it('should handle focusing on the meridiem input from seconds input without error', () => {
-  mockEvent.keyCode = KeyCode.KEY_RIGHT;
-  const timeInput = <TimeInput name="time-input" variant="12-hour" showSeconds />;
-  const wrapper = mountWithIntl(timeInput);
-  wrapper.instance().handleSecondInputKeyDown(mockEvent);
-  expect(mockEvent.preventDefault).toHaveBeenCalled();
 });
 
 it('should render a 24 hour timepicker with seconds properly on mobile devices', () => {

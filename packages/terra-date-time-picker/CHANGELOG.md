@@ -7,10 +7,10 @@ Unreleased
 * Allow blur to be handled after the date time ambiguity is resolved.
 
 ### Changed
-
 * Fixed all the accessibility issues and updated the tests and screenshots accordingly.
 * Added documentation on required peerDependencies
-* updated package.json test scripts
+* Updated package.json test scripts
+* Changed 12-hour format appearance for mobile and desktop.
 
 4.9.0 - (July 30, 2019)
 ------------------
