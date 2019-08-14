@@ -12,6 +12,15 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * Name of the date input. This name should be unique.
+   */
+  name: PropTypes.string.isRequired,
+  /**
+   * Custom input attributes to apply to the day input
+   */
+  // eslint-disable-next-line react/forbid-prop-types
+  dayAttributes: PropTypes.object,
+  /**
    * Whether the date input should be disabled.
    */
   disabled: PropTypes.bool,
@@ -20,11 +29,6 @@ const propTypes = {
    * Overrides default locale display format.
    */
   displayFormat: PropTypes.string,
-  /**
-   * Custom input attributes to apply to the day input
-   */
-  // eslint-disable-next-line react/forbid-prop-types
-  dayAttributes: PropTypes.object,
   /**
    * @private
    * Intl object injected from injectIntl
@@ -35,15 +39,6 @@ const propTypes = {
    */
   // eslint-disable-next-line react/forbid-prop-types
   monthAttributes: PropTypes.object,
-  /**
-   * Custom input attributes to apply to the year input
-   */
-  // eslint-disable-next-line react/forbid-prop-types
-  yearAttributes: PropTypes.object,
-  /**
-   * Name of the date input. This name should be unique.
-   */
-  name: PropTypes.string.isRequired,
   /**
    * A callback function to execute when the entire date input component loses focus.
    * This event does not get triggered when the focus is moved from one input to another within the date input component because the focus is still within the main date input component.
@@ -59,9 +54,14 @@ const propTypes = {
    */
   onFocus: PropTypes.func,
   /**
-   * An ISO 8601 string representation of the date value in the input.
+   * An date string representation of the date value in the input. This should be in ISO 8601 format: YYYY-MM-DD.
    */
   value: PropTypes.string,
+  /**
+   * Custom input attributes to apply to the year input
+   */
+  // eslint-disable-next-line react/forbid-prop-types
+  yearAttributes: PropTypes.object,
 };
 
 const defaultProps = {
@@ -496,7 +496,7 @@ class DateInput extends React.Component {
       <div className={cx('date-input-month-wrapper')}>
         <select
           {...this.props.monthAttributes}
-          aria-label={this.props.intl.formatMessage({ id: 'Terra.form.date.monthLabel' })}
+          aria-label={this.props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' })}
           ref={this.monthRef}
           className={cx('date-input-month', { 'initial-focus': this.state.monthInitialFocused })}
           value={this.state.month}
@@ -507,19 +507,19 @@ class DateInput extends React.Component {
           onBlur={this.handleMonthBlur}
           disabled={this.props.disabled}
         >
-          <option value="" disabled>{this.props.intl.formatMessage({ id: 'Terra.form.date.monthPlaceholder' })}</option>
-          <option key={this.props.intl.formatMessage({ id: 'Terra.form.date.january' })} value="01">{this.props.intl.formatMessage({ id: 'Terra.form.date.january' })}</option>
-          <option key={this.props.intl.formatMessage({ id: 'Terra.form.date.february' })} value="02">{this.props.intl.formatMessage({ id: 'Terra.form.date.february' })}</option>
-          <option key={this.props.intl.formatMessage({ id: 'Terra.form.date.march' })} value="03">{this.props.intl.formatMessage({ id: 'Terra.form.date.march' })}</option>
-          <option key={this.props.intl.formatMessage({ id: 'Terra.form.date.april' })} value="04">{this.props.intl.formatMessage({ id: 'Terra.form.date.april' })}</option>
-          <option key={this.props.intl.formatMessage({ id: 'Terra.form.date.may' })} value="05">{this.props.intl.formatMessage({ id: 'Terra.form.date.may' })}</option>
-          <option key={this.props.intl.formatMessage({ id: 'Terra.form.date.june' })} value="06">{this.props.intl.formatMessage({ id: 'Terra.form.date.june' })}</option>
-          <option key={this.props.intl.formatMessage({ id: 'Terra.form.date.july' })} value="07">{this.props.intl.formatMessage({ id: 'Terra.form.date.july' })}</option>
-          <option key={this.props.intl.formatMessage({ id: 'Terra.form.date.august' })} value="08">{this.props.intl.formatMessage({ id: 'Terra.form.date.august' })}</option>
-          <option key={this.props.intl.formatMessage({ id: 'Terra.form.date.september' })} value="09">{this.props.intl.formatMessage({ id: 'Terra.form.date.september' })}</option>
-          <option key={this.props.intl.formatMessage({ id: 'Terra.form.date.october' })} value="10">{this.props.intl.formatMessage({ id: 'Terra.form.date.october' })}</option>
-          <option key={this.props.intl.formatMessage({ id: 'Terra.form.date.november' })} value="11">{this.props.intl.formatMessage({ id: 'Terra.form.date.november' })}</option>
-          <option key={this.props.intl.formatMessage({ id: 'Terra.form.date.december' })} value="12">{this.props.intl.formatMessage({ id: 'Terra.form.date.december' })}</option>
+          <option value="" disabled>{this.props.intl.formatMessage({ id: 'Terra.date.input.monthPlaceholder' })}</option>
+          <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.january' })} value="01">{this.props.intl.formatMessage({ id: 'Terra.date.input.january' })}</option>
+          <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.february' })} value="02">{this.props.intl.formatMessage({ id: 'Terra.date.input.february' })}</option>
+          <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.march' })} value="03">{this.props.intl.formatMessage({ id: 'Terra.date.input.march' })}</option>
+          <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.april' })} value="04">{this.props.intl.formatMessage({ id: 'Terra.date.input.april' })}</option>
+          <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.may' })} value="05">{this.props.intl.formatMessage({ id: 'Terra.date.input.may' })}</option>
+          <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.june' })} value="06">{this.props.intl.formatMessage({ id: 'Terra.date.input.june' })}</option>
+          <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.july' })} value="07">{this.props.intl.formatMessage({ id: 'Terra.date.input.july' })}</option>
+          <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.august' })} value="08">{this.props.intl.formatMessage({ id: 'Terra.date.input.august' })}</option>
+          <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.september' })} value="09">{this.props.intl.formatMessage({ id: 'Terra.date.input.september' })}</option>
+          <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.october' })} value="10">{this.props.intl.formatMessage({ id: 'Terra.date.input.october' })}</option>
+          <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.november' })} value="11">{this.props.intl.formatMessage({ id: 'Terra.date.input.november' })}</option>
+          <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.december' })} value="12">{this.props.intl.formatMessage({ id: 'Terra.date.input.december' })}</option>
         </select>
       </div>
     );
@@ -533,12 +533,12 @@ class DateInput extends React.Component {
       <Input
         {...this.props.dayAttributes}
         refCallback={(inputRef) => { this.dayRef = inputRef; }}
-        aria-label={this.props.intl.formatMessage({ id: 'Terra.form.date.dayLabel' })}
+        aria-label={this.props.intl.formatMessage({ id: 'Terra.date.input.dayLabel' })}
         className={cx('date-input-day', { 'initial-focus': this.state.dayInitialFocused })}
         type="text"
         value={this.state.day}
         name={'terra-date-day-'.concat(this.props.name)}
-        placeholder={this.props.intl.formatMessage({ id: 'Terra.form.date.dayPlaceholder' })}
+        placeholder={this.props.intl.formatMessage({ id: 'Terra.date.input.dayPlaceholder' })}
         maxLength="2"
         onChange={this.handleDayChange}
         onKeyDown={this.handleDayInputKeyDown}
@@ -560,12 +560,12 @@ class DateInput extends React.Component {
       <Input
         {...this.props.yearAttributes}
         refCallback={(inputRef) => { this.yearRef = inputRef; }}
-        aria-label={this.props.intl.formatMessage({ id: 'Terra.form.date.yearLabel' })}
+        aria-label={this.props.intl.formatMessage({ id: 'Terra.date.input.yearLabel' })}
         className={cx('date-input-year', { 'initial-focus': this.state.yearInitialFocused })}
         type="text"
         value={this.state.year}
         name={'terra-date-year-'.concat(this.props.name)}
-        placeholder={this.props.intl.formatMessage({ id: 'Terra.form.date.yearPlaceholder' })}
+        placeholder={this.props.intl.formatMessage({ id: 'Terra.date.input.yearPlaceholder' })}
         maxLength="4"
         onChange={this.handleYearChange}
         onKeyDown={this.handleYearInputKeyDown}
