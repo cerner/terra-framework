@@ -172,7 +172,8 @@ const DateInputField = (props) => {
   const legendAriaDescriptionId = `terra-date-input-field-description-${uniqueid()}`;
   const helpAriaDescriptionId = help ? `terra-date-input-field-description-help-${uniqueid()}` : '';
   const errorAriaDescriptionId = isInvalid && error ? `terra-date-input-field-description-error-${uniqueid()}` : '';
-  const ariaDescriptionIds = `${legendAriaDescriptionId} ${errorAriaDescriptionId} ${helpAriaDescriptionId}`;
+  // const ariaDescriptionIds = `${legendAriaDescriptionId} ${errorAriaDescriptionId} ${helpAriaDescriptionId}`;
+  const ariaDescriptionIds = `${errorAriaDescriptionId} ${helpAriaDescriptionId}`;
 
   const customMonthAriaDescribedById = monthAttributes['aria-describedby'] ? monthAttributes['aria-describedby'] : '';
   const monthAriaDesciptionIds = `${ariaDescriptionIds} ${customMonthAriaDescribedById}`;
