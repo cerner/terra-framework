@@ -7,6 +7,7 @@ Unreleased
 5.10.0 - (August 14, 2019)
 ------------------
 ### Changed
+* Update wdio snapshots with new button focus outline styles
 * Update tests for dev-site v6
 * updated package.json test scripts
 
