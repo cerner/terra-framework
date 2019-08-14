@@ -20,7 +20,7 @@ const Example = () => {
         help="Help message"
         isInvalid={isInvalid}
       />
-      <p>{`DateField Value: ${value}`}</p>
+      <p>{`DateInputField Value: ${value}`}</p>
       <button type="button" onClick={() => setIsInvalid(invalid => !invalid)}>Toggle isInvalid</button>
     </React.Fragment>
   );

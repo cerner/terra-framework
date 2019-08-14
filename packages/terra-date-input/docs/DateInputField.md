@@ -1,6 +1,6 @@
 # Terra Date Input Field
 
-DateInputField is a component of terra-date-input that provides a container for rendering the related inputs. DateInputField include displays for help text, error text, required or optional indication, and invalid states.
+DateInputField is a component of terra-date-input that provides a container for rendering the related date inputs. DateInputField includes displays for help text, error text, required or optional indication, and invalid states.
 
 ## Component Features
 

@@ -2,16 +2,12 @@
 <summary>Features</summary>
 
 
-1. ### Test form validation
-  1. Required field
-  1. Date before set date
-  1. Valid date
-  1. Syncs with app state
+
 1. ### Style control
   1. Add custom select style
-  1. Add fieldset
+  1. ✅ Add fieldset
   1. Style for locale difference
-  1. If field is in error, make all borders red
+  1. ⚠️ If field is in error, make all borders red - Check with Neil on this
   1. theme select
   1. ✅ terra-form-select and terra-form-input have different focus outlining styles (talked with Neil about this)
 1. ### Accessibility
@@ -23,6 +19,11 @@
   1. Test with iOS VoiceOVer
 
 
+
+1. ### Form validation
+  1. ✅ Required field
+  1. ✅ Date before set date
+  1. ✅ Valid date
 1. ### ⚠️ Focus Handling
   1. ⚠️(Check this on mobile, iOS select didnt seem to shift focus from month select to input)
   1. ⚠️iOS seems to be buggy, not sure if there is a good fix for this, seems to be a known bug with iOS and programmatic focus shift

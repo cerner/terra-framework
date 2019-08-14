@@ -31,8 +31,8 @@ const Example = () => {
         error="Error message"
         help="Help message"
       />
-      <p>{`First DateField Value: ${dateFieldValue1}`}</p>
-      <p>{`Second DateField Value: ${dateFieldValue2}`}</p>
+      <p>{`First DateInputField Value: ${dateFieldValue1}`}</p>
+      <p>{`Second DateInputField Value: ${dateFieldValue2}`}</p>
       <button type="button" onClick={() => setIsInline(inline => !inline)}>Toggle isInline</button>
       <button type="button" onClick={() => setIsInvalid(invalid => !invalid)}>Toggle isInvalid</button>
     </React.Fragment>

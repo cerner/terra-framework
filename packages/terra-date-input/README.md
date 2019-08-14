@@ -3,7 +3,7 @@
 [![NPM version](https://badgen.net/npm/v/terra-date-input)](https://www.npmjs.com/package/terra-date-input)
 [![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
-{insert description}
+The DateInput allows for easy data entry of known dates like birthdays, anniversaries, etc. The display of the DateInput is localized based on the locale but can be customized via the `displayFormat` prop. The DateInput uses the ISO 8601 format for date values (YYYY-MM-DD).
 
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-date-input/docs)
@@ -14,6 +14,21 @@
 - Install from [npmjs](https://www.npmjs.com): `npm install terra-date-input`
 
 <!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+<details>
+<summary>View information on this component's peer dependencies.</summary>
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+| react-intl | ^2.8.0 |
+
+
+</details>
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## LICENSE

@@ -2,7 +2,7 @@
   "name": "terra-date-input",
   "main": "lib/DateInput.js",
   "version": "0.0.0",
-  "description": "{insert description}",
+  "description": "The DateInput allows for easy data entry of known dates like birthdays, anniversaries, etc. The display of the DateInput is localized based on the locale but can be customized via the `displayFormat` prop. The DateInput uses the ISO 8601 format for date values (YYYY-MM-DD).",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git"

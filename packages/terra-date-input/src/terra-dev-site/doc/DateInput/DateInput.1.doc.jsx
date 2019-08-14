@@ -10,6 +10,10 @@ import DateInputSrc from '!raw-loader!../../../../src/DateInput';
 // Example Files
 import DefaultDateInput from '../example/DefaultDateInput';
 import DefaultDateInputSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DefaultDateInput.jsx';
+import MonthDayYearDateInput from '../example/MonthDayYearDateInput';
+import MonthDayYearDateInputSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/MonthDayYearDateInput.jsx';
+import DayMonthYearDateInput from '../example/DayMonthYearDateInput';
+import DayMonthYearDateInputSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DayMonthYearDateInput.jsx';
 
 const DocPage = () => (
   <DocTemplate
@@ -21,6 +25,16 @@ const DocPage = () => (
         title: 'Default DateInput',
         example: <DefaultDateInput />,
         source: DefaultDateInputSrc,
+      },
+      {
+        title: 'Month Day Year Display Format DateInput',
+        example: <MonthDayYearDateInput />,
+        source: MonthDayYearDateInputSrc,
+      },
+      {
+        title: 'Day Month Year Display Format DateInput',
+        example: <DayMonthYearDateInput />,
+        source: DayMonthYearDateInputSrc,
       },
     ]}
     propsTables={[

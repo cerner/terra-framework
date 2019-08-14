@@ -18,6 +18,10 @@ import RequiredDateInputField from '../example/RequiredDateInputField';
 import RequiredDateInputFieldSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/RequiredDateInputField.jsx';
 import HideRequiredDateInputField from '../example/HideRequiredDateInputField';
 import HideRequiredDateInputFieldSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/HideRequiredDateInputField.jsx';
+import DayMonthYearDateInputField from '../example/DayMonthYearDateInputField';
+import DayMonthYearDateInputFieldSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DayMonthYearDateInputField.jsx';
+import MonthDayYearDateInputField from '../example/MonthDayYearDateInputField';
+import MonthDayYearDateInputFieldSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/MonthDayYearDateInputField.jsx';
 
 const DocPage = () => (
   <DocTemplate
@@ -49,6 +53,16 @@ const DocPage = () => (
         title: 'Optional DateInputField',
         example: <OptionalDateInputField />,
         source: OptionalDateInputFieldSrc,
+      },
+      {
+        title: 'Month Day Year Display Format DateInputField',
+        example: <MonthDayYearDateInputField />,
+        source: MonthDayYearDateInputFieldSrc,
+      },
+      {
+        title: 'Day Month Year Display Format DateInputField',
+        example: <DayMonthYearDateInputField />,
+        source: DayMonthYearDateInputFieldSrc,
       },
     ]}
     propsTables={[

@@ -218,7 +218,11 @@ const DateInputField = (props) => {
       <DateInput
         name={name}
         onChange={onChange}
+        onBlur={onBlur}
+        onFocus={onFocus}
         value={value}
+        displayFormat={displayFormat}
+        disabled={disabled}
         monthAttributes={{ ...monthAttributes, ...{ 'aria-describedby': monthAriaDesciptionIds } }}
         dayAttributes={{ ...dayAttributes, ...{ 'aria-describedby': dayAriaDesciptionIds } }}
         yearAttributes={{ ...yearAttributes, ...{ 'aria-describedby': yearAriaDesciptionIds } }}
