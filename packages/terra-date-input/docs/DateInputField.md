@@ -1,14 +1,6 @@
-# Terra Date Input
+# Terra Date Input Field
 
-{insert description}
-
-## Getting Started
-
-- Install with [npmjs](https://www.npmjs.com):
-  - `npm install terra-date-input`
-
-<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
-<!-- AUTO-GENERATED-CONTENT:END -->
+DateInputField is a component of terra-date-input that provides a container for rendering the related inputs. DateInputField include displays for help text, error text, required or optional indication, and invalid states.
 
 ## Component Features
 

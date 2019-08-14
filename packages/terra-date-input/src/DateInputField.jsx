@@ -14,7 +14,11 @@ const propTypes = {
   /**
    * The DateInput identifier. Links the htmlFor of the field to the select identifier.
    */
-  dateInputId: PropTypes.string.isRequired,
+  // dateInputId: PropTypes.string.isRequired,
+  /**
+   * The legend of the form control children.
+   */
+  legend: PropTypes.string.isRequired,
   /**
    * Name of the date input. The name should be unique.
    */
@@ -57,10 +61,6 @@ const propTypes = {
    * Whether or not the label is visible. Use this props to hide a label while still creating it on the DOM for accessibility.
    */
   isLegendHidden: PropTypes.bool,
-  /**
-   * The legend of the form control children.
-   */
-  legend: PropTypes.string,
   /**
    * Attributes to attach to the legend.
    */
@@ -113,16 +113,16 @@ const propTypes = {
 const defaultProps = {
   dayAttributes: {},
   disabled: false,
+  displayFormat: undefined,
   error: null,
   help: null,
   hideRequired: false,
   isInline: false,
   isInvalid: false,
   isLegendHidden: false,
-  legend: ,
   legendAttributes: {},
   monthAttributes: {},
-  maxWidth: PropTypes.string,
+  maxWidth: undefined,
   onBlur: undefined,
   onChange: undefined,
   onFocus: undefined,
@@ -136,6 +136,7 @@ const DateInputField = (props) => {
   const {
     dayAttributes,
     disabled,
+    displayFormat,
     error,
     help,
     hideRequired,
@@ -146,6 +147,7 @@ const DateInputField = (props) => {
     legendAttributes,
     monthAttributes,
     maxWidth,
+    name,
     onBlur,
     onChange,
     onFocus,
@@ -205,6 +207,7 @@ const DateInputField = (props) => {
     <fieldset {...customProps} className={dateInputFieldClasses}>
       {legendGroup}
       <DateInput
+        name={name}
         onChange={onChange}
         value={value}
         monthAttributes={{ 'aria-describedby': ariaDescriptionIds }}
