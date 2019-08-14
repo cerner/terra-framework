@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Input from 'terra-form-input';
 import ButtonGroup from 'terra-button-group';
+import { injectIntl, intlShape } from 'react-intl';
 
 import KeyCode from 'keycode-js';
 import TimeUtil from './TimeUtil';
@@ -25,6 +26,11 @@ const propTypes = {
    */
   // eslint-disable-next-line react/forbid-prop-types
   hourAttributes: PropTypes.object,
+  /**
+  * @private
+  * intl object programmatically imported through injectIntl from react-intl.
+  * */
+  intl: intlShape.isRequired,
   /**
    * Custom input attributes to apply to the minutes input
    */
@@ -87,17 +93,8 @@ const defaultProps = {
   variant: TimeUtil.FORMAT_24_HOUR,
 };
 
-const contextTypes = {
-  /* eslint-disable consistent-return */
-  intl: (context) => {
-    if (context.intl === undefined) {
-      return new Error('Component is internationalized, and must be wrapped in terra-base');
-    }
-  },
-};
-
 class TimeInput extends React.Component {
-  constructor(props, context) {
+  constructor(props) {
     super(props);
 
     let { value } = this.props;
@@ -138,7 +135,7 @@ class TimeInput extends React.Component {
     let meridiem;
 
     if (props.variant === TimeUtil.FORMAT_12_HOUR) {
-      if (!context.intl.messages['Terra.timeInput.am'] || !context.intl.messages['Terra.timeInput.pm']) {
+      if (!this.props.intl.messages['Terra.timeInput.am'] || !this.props.intl.messages['Terra.timeInput.pm']) {
         if (process.env !== 'production') {
           // eslint-disable-next-line no-console
           console.warn('This locale only uses 24 hour clock. The ante meridiem and post meridiem will not be displayed');
@@ -147,8 +144,8 @@ class TimeInput extends React.Component {
         this.anteMeridiem = '';
         this.postMeridiem = '';
       } else {
-        this.anteMeridiem = context.intl.formatMessage({ id: 'Terra.timeInput.am' });
-        this.postMeridiem = context.intl.formatMessage({ id: 'Terra.timeInput.pm' });
+        this.anteMeridiem = this.props.intl.formatMessage({ id: 'Terra.timeInput.am' });
+        this.postMeridiem = this.props.intl.formatMessage({ id: 'Terra.timeInput.pm' });
       }
 
       if (hour) {
@@ -185,7 +182,7 @@ class TimeInput extends React.Component {
     let { meridiem } = this.state;
 
     if (this.props.variant === TimeUtil.FORMAT_12_HOUR) {
-      if (!this.context.intl.messages['Terra.timeInput.am'] || !this.context.intl.messages['Terra.timeInput.pm']) {
+      if (!this.props.intl.messages['Terra.timeInput.am'] || !this.props.intl.messages['Terra.timeInput.pm']) {
         if (process.env !== 'production') {
           // eslint-disable-next-line no-console
           console.warn('This locale only uses 24 hour clock. The ante meridiem and post meridiem will not be displayed');
@@ -194,8 +191,8 @@ class TimeInput extends React.Component {
         this.anteMeridiem = '';
         this.postMeridiem = '';
       } else {
-        this.anteMeridiem = this.context.intl.formatMessage({ id: 'Terra.timeInput.am' });
-        this.postMeridiem = this.context.intl.formatMessage({ id: 'Terra.timeInput.pm' });
+        this.anteMeridiem = this.props.intl.formatMessage({ id: 'Terra.timeInput.am' });
+        this.postMeridiem = this.props.intl.formatMessage({ id: 'Terra.timeInput.pm' });
       }
 
       if (hour) {
@@ -634,6 +631,7 @@ class TimeInput extends React.Component {
       inputAttributes,
       minuteAttributes,
       hourAttributes,
+      intl,
       onBlur,
       onChange,
       onFocus,
@@ -688,7 +686,7 @@ class TimeInput extends React.Component {
           <Input
             {...inputAttributes}
             {...minuteAttributes}
-            aria-label={this.context.intl.formatMessage({ id: 'Terra.timeInput.hours' })}
+            aria-label={intl.formatMessage({ id: 'Terra.timeInput.hours' })}
             refCallback={(inputRef) => {
               this.hourInput = inputRef;
               if (refCallback) refCallback(inputRef);
@@ -697,7 +695,7 @@ class TimeInput extends React.Component {
             type="text"
             value={this.state.hour}
             name={'terra-time-hour-'.concat(name)}
-            placeholder={this.context.intl.formatMessage({ id: 'Terra.timeInput.hh' })}
+            placeholder={intl.formatMessage({ id: 'Terra.timeInput.hh' })}
             maxLength="2"
             onChange={this.handleHourChange}
             onKeyDown={this.handleHourInputKeyDown}
@@ -712,12 +710,12 @@ class TimeInput extends React.Component {
             {...inputAttributes}
             {...minuteAttributes}
             refCallback={(inputRef) => { this.minuteInput = inputRef; }}
-            aria-label={this.context.intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
+            aria-label={intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
             className={cx('time-input-minute', showSeconds ? 'with-second' : 'without-second', { 'initial-focus': this.state.minuteInitialFocused })}
             type="text"
             value={this.state.minute}
             name={'terra-time-minute-'.concat(name)}
-            placeholder={this.context.intl.formatMessage({ id: 'Terra.timeInput.mm' })}
+            placeholder={intl.formatMessage({ id: 'Terra.timeInput.mm' })}
             maxLength="2"
             onChange={this.handleMinuteChange}
             onKeyDown={this.handleMinuteInputKeyDown}
@@ -734,12 +732,12 @@ class TimeInput extends React.Component {
                 {...inputAttributes}
                 {...secondAttributes}
                 refCallback={(inputRef) => { this.secondInput = inputRef; }}
-                aria-label={this.context.intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
+                aria-label={intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
                 className={cx('time-input-second', { 'initial-focus': this.state.secondInitialFocused })}
                 type="text"
                 value={this.state.second}
                 name={'terra-time-second-'.concat(name)}
-                placeholder={this.context.intl.formatMessage({ id: 'Terra.timeInput.ss' })}
+                placeholder={intl.formatMessage({ id: 'Terra.timeInput.ss' })}
                 maxLength="2"
                 onChange={this.handleSecondChange}
                 onKeyDown={this.handleSecondInputKeyDown}
@@ -780,6 +778,5 @@ class TimeInput extends React.Component {
 
 TimeInput.propTypes = propTypes;
 TimeInput.defaultProps = defaultProps;
-TimeInput.contextTypes = contextTypes;
 
-export default TimeInput;
+export default injectIntl(TimeInput);

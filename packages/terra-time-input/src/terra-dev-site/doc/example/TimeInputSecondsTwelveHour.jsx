@@ -2,6 +2,10 @@
 import React from 'react';
 import TimeInput from 'terra-time-input/lib/TimeInput';
 import TimeUtil from 'terra-time-input/lib/TimeUtil';
+import classNames from 'classnames/bind';
+import styles from './TimeInputDocCommon.module.scss';
+
+const cx = classNames.bind(styles);
 
 class timeInput extends React.Component {
   constructor(props) {
@@ -19,7 +23,7 @@ class timeInput extends React.Component {
       <div>
         <p>
           Time Provided:
-          <span style={{ display: 'inline-block' }}>{this.state.time}</span>
+          <span className={cx('time-wrapper')}>{this.state.time}</span>
         </p>
         <TimeInput
           name="time-input-value"

@@ -3,15 +3,17 @@ Changelog
 
 Unreleased
 ----------
-### Fixed
-* Fixed onChange callback triggering twice for values prepended with zero.
-
 ### Changed
+* Updated to interface with react-intl's context rather than old React Context API.
+* Removed inline styles from dev site components.
 * Removed Ignore Accessibility condition from wdio tests.
 * Changed help text color to match required contrast ratio.
 * Added documentation on required peerDependencies
 * Updated package.json test scripts
 * Changed 12-hour format appearance for mobile and desktop.
+
+### Fixed
+* Fixed onChange callback triggering twice for values prepended with zero.
 
 4.6.0 - (July 30, 2019)
 ------------------

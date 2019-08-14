@@ -201,4 +201,6 @@ class DateUtil {
   }
 }
 
+DateUtil.ISO_EXTENDED_DATE_FORMAT = 'YYYY-MM-DD';
+
 export default DateUtil;

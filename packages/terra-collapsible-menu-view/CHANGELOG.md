@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * updated package.json test scripts
+* Updated to interface with react-intl's `FormattedMessage` rather than old React Context API.
 
 6.8.0 - (July 30, 2019)
 ------------------

@@ -40,7 +40,7 @@ class DatePickerExample extends React.Component {
     return (
       <div>
         <p>
-Selected ISO Date:
+          Selected ISO Date:
           <span className={cx('date-wrapper')}>{this.state.date}</span>
         </p>
         <Field label="Enter Date" htmlFor="controlled-dates">
@@ -58,11 +58,11 @@ Selected ISO Date:
 }
 
 DatePickerExample.propTypes = propTypes;
-DatePickerExample.defualtProps = defaultProps;
+DatePickerExample.defaultProps = defaultProps;
 
 const DatePickerExampleControlled = () => (
   <DatePickerExample
-    value={moment().format()}
+    value={moment().format('YYYY-MM-DD')}
   />
 );
 

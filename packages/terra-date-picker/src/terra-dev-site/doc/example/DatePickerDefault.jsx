@@ -34,7 +34,7 @@ class DatePickerExample extends React.Component {
     return (
       <div>
         <p>
-Selected ISO Date:
+          Selected ISO Date:
           <span className={cx('date-wrapper')}>{this.state.date}</span>
         </p>
         <Field label="Enter Date" htmlFor="default">
@@ -51,6 +51,6 @@ Selected ISO Date:
 }
 
 DatePickerExample.propTypes = propTypes;
-DatePickerExample.defualtProps = defaultProps;
+DatePickerExample.defaultProps = defaultProps;
 
 export default DatePickerExample;
