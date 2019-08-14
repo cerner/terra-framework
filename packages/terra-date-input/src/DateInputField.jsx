@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The legend of the form control children.
+   * The legend of the Date Input fieldset
    */
   legend: PropTypes.string.isRequired,
   /**
@@ -34,11 +34,11 @@ const propTypes = {
    */
   displayFormat: PropTypes.string,
   /**
-   * Error message for when the input is invalid. This will only be displayed if isInvalid is true.
+   * Error message for when the field is invalid. This will only be displayed if isInvalid is true.
    */
   error: PropTypes.node,
   /**
-   * Help element to display with the input.
+   * Help element to display with the field.
    */
   help: PropTypes.node,
   /**
@@ -54,7 +54,7 @@ const propTypes = {
    */
   isInvalid: PropTypes.bool,
   /**
-   * Whether or not the label is visible. Use this props to hide a label while still creating it on the DOM for accessibility.
+   * Whether or not the legend is visible. Use this props to hide a legend while still creating it on the DOM for accessibility.
    */
   isLegendHidden: PropTypes.bool,
   /**
@@ -63,7 +63,7 @@ const propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   legendAttributes: PropTypes.object,
   /**
-   * Custom input attributes to apply to the month select
+   * Custom select attributes to apply to the month select
    */
   // eslint-disable-next-line react/forbid-prop-types
   monthAttributes: PropTypes.object,
@@ -78,7 +78,7 @@ const propTypes = {
    */
   onBlur: PropTypes.func,
   /**
-   * A callback function to execute when a valid date is selected or entered.
+   * A callback function to execute when a date is entered.
    * The first parameter is the event. The second parameter is the changed date value.
    */
   onChange: PropTypes.func,
@@ -88,7 +88,7 @@ const propTypes = {
    */
   onFocus: PropTypes.func,
   /**
-   * Whether or not the date field is required.
+   * Whether or not the date input field is required.
    */
   required: PropTypes.bool,
   /**
@@ -96,7 +96,7 @@ const propTypes = {
    */
   showOptional: PropTypes.bool,
   /**
-   * An date string representation of the date value in the input. This should be in ISO 8601 format: YYYY-MM-DD.
+   * An date string representation of the date value used for the component. This should be in ISO 8601 format: YYYY-MM-DD.
    */
   value: PropTypes.string,
   /**

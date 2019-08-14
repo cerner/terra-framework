@@ -2,8 +2,7 @@
 
 import React from 'react';
 import { Form, Field } from 'react-final-form';
-import DateInput from 'terra-date-input';
-import TerraField from 'terra-form-field';
+import DateInputField from 'terra-date-input/lib/DateInputField';
 import Button from 'terra-button';
 import Spacer from 'terra-spacer';
 
@@ -40,7 +39,7 @@ const validateDate = (value) => {
   }
 
   const splitValue = value.split('-');
-  if (splitValue[0] < 2020) {
+  if (splitValue[0] < 2021) {
     return 'Must be after before the year 2020';
   }
 
@@ -72,18 +71,15 @@ export default class MainEntry extends React.Component {
           validate={validateDate}
         >
           {({ input, meta }) => (
-            <TerraField
-              label="Enter your birthday"
+            <DateInputField
+              name="user_date"
+              legend="Enter your birthday"
+              value={input.value}
+              onChange={(event, date) => { input.onChange(date); }}
               error={meta.error}
               isInvalid={meta.submitFailed && meta.error !== undefined}
               required
-            >
-              <DateInput
-                name="user_date"
-                value={input.value}
-                onChange={(event, date) => { input.onChange(date); }}
-              />
-            </TerraField>
+            />
           )}
         </Field>
         <Button text="Submit" type={Button.Opts.Types.SUBMIT} />

@@ -45,7 +45,7 @@ const propTypes = {
    */
   onBlur: PropTypes.func,
   /**
-   * A callback function to execute when either the day, month, or year value has been changed.
+   * A callback function to execute when a date is entered.
    * The first parameter is the event. The second parameter is the changed date value.
    */
   onChange: PropTypes.func,
@@ -54,7 +54,7 @@ const propTypes = {
    */
   onFocus: PropTypes.func,
   /**
-   * An date string representation of the date value in the input. This should be in ISO 8601 format: YYYY-MM-DD.
+   * An date string representation of the date value used for the component. This should be in ISO 8601 format: YYYY-MM-DD.
    */
   value: PropTypes.string,
   /**

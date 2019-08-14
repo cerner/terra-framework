@@ -86,7 +86,7 @@ class DateInputUtil {
 
   /**
    * Decrements a year to it's next value
-   * @param {String} year Day to decrement
+   * @param {String} year Year to decrement
    * @return {String} Returns a string representation of the value of the passed in year after it's decremented
    */
   static decrementYear(year) {
