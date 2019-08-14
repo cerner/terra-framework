@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+6.9.0 - (August 14, 2019)
+------------------
 ### Fixed
 * Fixed keyboard and mouse-click navigation amongst the Menu Items within a Group.
 

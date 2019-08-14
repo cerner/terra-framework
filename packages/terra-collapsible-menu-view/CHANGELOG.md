@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+6.9.0 - (August 14, 2019)
+------------------
 ### Changed
 * updated package.json test scripts
 * Updated to interface with react-intl's `FormattedMessage` rather than old React Context API.
