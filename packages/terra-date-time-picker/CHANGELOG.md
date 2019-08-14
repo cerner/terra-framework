@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.10.0 - (August 14, 2019)
+------------------
 ### Fixed
 * Allow blur to be handled after the date time ambiguity is resolved.
 

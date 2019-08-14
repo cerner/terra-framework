@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+1.6.0 - (August 14, 2019)
+------------------
 ### Changed
 * updated package.json test scripts
 * Added `noValidate` attribute to all `<form />` elements in the examples

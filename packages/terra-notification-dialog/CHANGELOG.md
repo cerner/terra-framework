@@ -3,7 +3,11 @@ Changelog
 
 Unreleased
 ----------
+
+3.9.0 - (August 14, 2019)
+------------------
 ### Changed
+* Update wdio snapshots with new button focus outline styles
 * Updated to interface with react-intl's `FormattedMessage` rather than old React Context API.
 * updated package.json test scripts
 

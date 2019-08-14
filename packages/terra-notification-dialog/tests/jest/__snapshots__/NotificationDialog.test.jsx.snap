@@ -68,8 +68,10 @@ exports[`should mount a complete notification-dialog 1`] = `
         id="trigger-notification-dialog"
         onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
+        onMouseDown={[Function]}
         type="button"
       >
         <span
@@ -155,8 +157,10 @@ exports[`should mount a complete notification-dialog with long message 1`] = `
         id="trigger-notification-dialog"
         onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
+        onMouseDown={[Function]}
         type="button"
       >
         <span
@@ -243,8 +247,10 @@ exports[`should mount a notification-dialog with no variant 1`] = `
         id="trigger-notification-dialog"
         onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
+        onMouseDown={[Function]}
         type="button"
       >
         <span
