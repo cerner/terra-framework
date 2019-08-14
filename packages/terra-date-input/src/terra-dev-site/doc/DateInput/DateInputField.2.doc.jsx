@@ -10,6 +10,14 @@ import DateInputFieldSrc from '!raw-loader!../../../../src/DateInputField';
 // Example Files
 import DefaultDateInputField from '../example/DefaultDateInputField';
 import DefaultDateInputFieldSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DefaultDateInputField.jsx';
+import InlineDateInputField from '../example/InlineDateInputField';
+import InlineDateInputFieldSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/InlineDateInputField.jsx';
+import OptionalDateInputField from '../example/OptionalDateInputField';
+import OptionalDateInputFieldSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/OptionalDateInputField.jsx';
+import RequiredDateInputField from '../example/RequiredDateInputField';
+import RequiredDateInputFieldSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/RequiredDateInputField.jsx';
+import HideRequiredDateInputField from '../example/HideRequiredDateInputField';
+import HideRequiredDateInputFieldSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/HideRequiredDateInputField.jsx';
 
 const DocPage = () => (
   <DocTemplate
@@ -21,6 +29,26 @@ const DocPage = () => (
         title: 'Default DateInputField',
         example: <DefaultDateInputField />,
         source: DefaultDateInputFieldSrc,
+      },
+      {
+        title: 'Required DateInputField',
+        example: <RequiredDateInputField />,
+        source: RequiredDateInputFieldSrc,
+      },
+      {
+        title: 'Hide Required DateInputField',
+        example: <HideRequiredDateInputField />,
+        source: HideRequiredDateInputFieldSrc,
+      },
+      {
+        title: 'Inline DateInputField',
+        example: <InlineDateInputField />,
+        source: InlineDateInputFieldSrc,
+      },
+      {
+        title: 'Optional DateInputField',
+        example: <OptionalDateInputField />,
+        source: OptionalDateInputFieldSrc,
       },
     ]}
     propsTables={[

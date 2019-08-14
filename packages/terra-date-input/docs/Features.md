@@ -1,10 +1,7 @@
 <details>
 <summary>Features</summary>
 
-1. ### Fieldset
-  1. Make custom fieldset and move help text below
-  1. Make field and non field format
-  1. Should we provide a default legend of (Date) or make that prop required?
+
 1. ### Test form validation
   1. Required field
   1. Date before set date
@@ -38,6 +35,10 @@
     1. ✅ Focus shifts from day to month in day-month-year format
   1. ✅ Look at how the time picker hour input works when you enter the number 1. This is how it should work in the day input if you enter 1, 2, or 3.
       1. ✅ On blur, pad these values if the length is equal to 1
+1. ### ✅ Fieldset
+  1. ✅ Make custom fieldset and move help text below
+  1. ✅ Make field and non field format
+  1. ✅ Make legend required.
 1. ### ✅ Month Keyboard Navigation
   1. ✅ Up arrow cycles value up, ends when the first month is reached
   1. ✅ Down arrow cycles value down, ends with the last month is reached

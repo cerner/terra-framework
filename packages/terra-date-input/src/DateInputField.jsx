@@ -12,10 +12,6 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The DateInput identifier. Links the htmlFor of the field to the select identifier.
-   */
-  // dateInputId: PropTypes.string.isRequired,
-  /**
    * The legend of the form control children.
    */
   legend: PropTypes.string.isRequired,
@@ -169,10 +165,23 @@ const DateInputField = (props) => {
     legendAttributes.className,
   ]);
 
+  /**
+   * aria-describedby ids
+   * Used to map legend, help text, and error messages with input/select elements
+   */
   const legendAriaDescriptionId = `terra-date-input-field-description-${uniqueid()}`;
   const helpAriaDescriptionId = help ? `terra-date-input-field-description-help-${uniqueid()}` : '';
-  const errorAriaDescriptionId = error ? `terra-date-input-field-description-error-${uniqueid()}` : '';
+  const errorAriaDescriptionId = isInvalid && error ? `terra-date-input-field-description-error-${uniqueid()}` : '';
   const ariaDescriptionIds = `${legendAriaDescriptionId} ${errorAriaDescriptionId} ${helpAriaDescriptionId}`;
+
+  const customMonthAriaDescribedById = monthAttributes['aria-describedby'] ? monthAttributes['aria-describedby'] : '';
+  const monthAriaDesciptionIds = `${ariaDescriptionIds} ${customMonthAriaDescribedById}`;
+
+  const customDayAriaDescribedById = dayAttributes['aria-describedby'] ? dayAttributes['aria-describedby'] : '';
+  const dayAriaDesciptionIds = `${ariaDescriptionIds} ${customDayAriaDescribedById}`;
+
+  const customYearAriaDescribedById = yearAttributes['aria-describedby'] ? yearAttributes['aria-describedby'] : '';
+  const yearAriaDesciptionIds = `${ariaDescriptionIds} ${customYearAriaDescribedById}`;
 
   const legendGroup = (
     <legend id={legendAriaDescriptionId} className={cx(['legend-group', { 'legend-group-hidden': isLegendHidden }])}>
@@ -192,7 +201,7 @@ const DateInputField = (props) => {
         {required && !isInvalid && hideRequired && <span className={cx('required-hidden')}>*</span>}
         {showOptional && !required
           && (
-          <FormattedMessage id="Terra.date.input.optional">
+            <FormattedMessage id="Terra.date.input.optional">
               {optionalText => (
                 <span className={cx('optional')}>{optionalText}</span>
               )}
@@ -210,9 +219,9 @@ const DateInputField = (props) => {
         name={name}
         onChange={onChange}
         value={value}
-        monthAttributes={{ 'aria-describedby': ariaDescriptionIds }}
-        dayAttributes={{ 'aria-describedby': ariaDescriptionIds }}
-        yearAttributes={{ 'aria-describedby': ariaDescriptionIds }}
+        monthAttributes={{ ...monthAttributes, ...{ 'aria-describedby': monthAriaDesciptionIds } }}
+        dayAttributes={{ ...dayAttributes, ...{ 'aria-describedby': dayAriaDesciptionIds } }}
+        yearAttributes={{ ...yearAttributes, ...{ 'aria-describedby': yearAriaDesciptionIds } }}
       />
       {isInvalid && error && <div id={errorAriaDescriptionId} className={cx('error-text')}>{error}</div>}
       {help && <div id={helpAriaDescriptionId} className={cx('help-text')}>{help}</div>}
