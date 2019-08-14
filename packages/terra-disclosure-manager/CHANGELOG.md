@@ -37,7 +37,7 @@ Unreleased
 * Minor dependency version bump
 
 4.12.0 - (June 12, 2019)
-------------------s
+------------------
 ### Removed
 * Removed node_modules from .npmignore
 
