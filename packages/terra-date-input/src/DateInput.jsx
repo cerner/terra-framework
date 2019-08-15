@@ -163,13 +163,11 @@ class DateInput extends React.Component {
   handleDayFocus(event) {
     this.handleFocus(event);
     this.setState({ dayInitialFocused: true });
-    this.dayRef.setSelectionRange(0, this.dayRef.value.length);
   }
 
   handleYearFocus(event) {
     this.handleFocus(event);
     this.setState({ yearInitialFocused: true });
-    this.yearRef.setSelectionRange(0, this.yearRef.value.length);
   }
 
   handleMonthBlur(event) {
@@ -227,16 +225,7 @@ class DateInput extends React.Component {
       return;
     }
 
-    // Move focus to the next input
-    const moveFocusOnChange = () => {
-      if (DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale) === 'month-day-year') {
-        return this.dayRef.focus();
-      }
-
-      return this.yearRef.focus();
-    };
-
-    this.handleValueChange(event, DateInputUtil.inputType.MONTH, inputValue, moveFocusOnChange);
+    this.handleValueChange(event, DateInputUtil.inputType.MONTH, inputValue);
   }
 
   handleDayChange(event) {
@@ -255,19 +244,7 @@ class DateInput extends React.Component {
       return;
     }
 
-    const moveFocusOnChange = () => {
-      if (inputValue.length === 2 || Number(inputValue) > 3) {
-        if (DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale) === 'month-day-year') {
-          return this.yearRef.focus();
-        }
-
-        return this.monthRef.current.focus();
-      }
-
-      return null;
-    };
-
-    this.handleValueChange(event, DateInputUtil.inputType.DAY, inputValue, moveFocusOnChange);
+    this.handleValueChange(event, DateInputUtil.inputType.DAY, inputValue);
   }
 
   handleYearChange(event) {
@@ -284,10 +261,7 @@ class DateInput extends React.Component {
       return;
     }
 
-    const moveFocusOnChange = () => {
-    };
-
-    this.handleValueChange(event, DateInputUtil.inputType.YEAR, inputValue, moveFocusOnChange);
+    this.handleValueChange(event, DateInputUtil.inputType.YEAR, inputValue);
   }
 
   /**
@@ -445,22 +419,22 @@ class DateInput extends React.Component {
     }
   }
 
-  handleValueChange(event, type, value, moveFocusOnChange) {
+  handleValueChange(event, type, value) {
     if (type === DateInputUtil.inputType.MONTH) {
       this.setState({
         month: value,
         monthInitialFocused: false,
-      }, moveFocusOnChange);
+      });
     } else if (type === DateInputUtil.inputType.DAY) {
       this.setState({
         day: value,
         dayInitialFocused: false,
-      }, moveFocusOnChange);
+      });
     } else if (type === DateInputUtil.inputType.YEAR) {
       this.setState({
         year: value,
         yearInitialFocused: false,
-      }, moveFocusOnChange);
+      });
     }
 
     if (this.props.onChange) {
@@ -547,6 +521,7 @@ class DateInput extends React.Component {
         size="2"
         pattern="\d*"
         inputMode="numeric"
+        autoComplete="off"
         disabled={this.props.disabled}
       />
     );
@@ -574,6 +549,7 @@ class DateInput extends React.Component {
         size="4"
         pattern="\d*"
         inputMode="numeric"
+        autocomplete="off"
         disabled={this.props.disabled}
       />
     );
