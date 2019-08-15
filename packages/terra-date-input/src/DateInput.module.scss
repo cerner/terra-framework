@@ -1,39 +1,63 @@
+@import '~terra-mixins/lib/Mixins';
+
 :local {
   .date-input {
     display: flex;
   }
 
   .date-input-month-wrapper {
-    background: #fff;
-    /* Caret icon styles */
-    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%20class%3D%22is-bidi%22%3E%3Cpath%20d%3D%22M48%2012L24%2036%200%2012h48z%22%2F%3E%3C%2Fsvg%3E");
-    background-position: right 0.7em top 50%, 0 0;
-    background-repeat: no-repeat, repeat;
-    background-size: 0.65em auto, 100%;
-    display: flex;
+    background-color: #fff;
+    display: inline-block;
+    position: relative;
+
+    &::after {
+      background: inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path d="M48 12L24 36 0 12h48z"/></svg>');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+      display: inline-block; // IE 10
+      height: 0.715rem;
+      margin-top: -0.3rem;
+      pointer-events: none;
+      position: absolute;
+      right: 0.7em;
+      top: 50%;
+      width: 1rem;
+    }
 
     select {
-      background: transparent;
+      appearance: none;
+      background: rgba(0, 0, 0, 0);
       border: 1px solid #dedfe0;
       border-radius: 3px;
+      cursor: pointer;
       font-size: 1.143rem; // 16px allows correct zoom on iOS
       height: 2.143rem; // 30px
-      padding: 0.3571rem 2rem 0.3571rem 0.3571rem;
+      margin: 0 2rem 0 0;
+      outline: 0;
+      padding: 0 0.3571rem;
       width: 100%;
-      -moz-appearance: none;
-      -webkit-appearance: none;
 
-      &:focus {
+      // Undo the Firefox inner focus ring
+      &:focus:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 #000;
+      }
+
+      // .is-focused needed for Safari Mobile
+      /* stylelint-disable selector-no-qualifying-type */
+      &:focus,
+      &.is-focused {
         border: 1px solid #4cb2e9;
-        outline: none;
+      }
+      /* stylelint-enable selector-no-qualifying-type */
+
+      // Hide the arrow in IE 10 and IE 11
+      &::-ms-expand {
+        display: none;
       }
     }
-  }
-
-  .date-input-month,
-  .date-input-day,
-  .date-input-year {
-    margin-bottom: 0;
   }
 
   .date-input-month {
@@ -41,11 +65,11 @@
   }
 
   .date-input-day {
-    max-width: 2.4rem;
+    max-width: 2.5rem;
   }
 
   .date-input-year {
-    max-width: 3.7rem;
+    max-width: 3.8rem;
   }
 
   // Gutters

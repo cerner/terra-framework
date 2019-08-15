@@ -128,9 +128,9 @@ class DateInput extends React.Component {
       day: DateInputUtil.splitDay(value),
       year: DateInputUtil.splitYear(value),
       isFocused: false,
-      monthInitialFocused: false,
-      dayInitialFocused: false,
-      yearInitialFocused: false,
+      monthIsFocused: false,
+      dayIsFocused: false,
+      yearIsFocused: false,
     };
   }
 
@@ -157,32 +157,32 @@ class DateInput extends React.Component {
 
   handleMonthFocus(event) {
     this.handleFocus(event);
-    this.setState({ monthInitialFocused: true });
+    this.setState({ monthIsFocused: true });
   }
 
   handleDayFocus(event) {
     this.handleFocus(event);
-    this.setState({ dayInitialFocused: true });
+    this.setState({ dayIsFocused: true });
   }
 
   handleYearFocus(event) {
     this.handleFocus(event);
-    this.setState({ yearInitialFocused: true });
+    this.setState({ yearIsFocused: true });
   }
 
   handleMonthBlur(event) {
     this.handleBlur(event, DateInputUtil.inputType.MONTH);
-    this.setState({ monthInitialFocused: false });
+    this.setState({ monthIsFocused: false });
   }
 
   handleDayBlur(event) {
     this.handleBlur(event, DateInputUtil.inputType.DAY);
-    this.setState({ dayInitialFocused: false });
+    this.setState({ dayIsFocused: false });
   }
 
   handleYearBlur(event) {
     this.handleBlur(event, DateInputUtil.inputType.YEAR);
-    this.setState({ yearInitialFocused: false });
+    this.setState({ yearIsFocused: false });
   }
 
   handleBlur(event, type) {
@@ -423,17 +423,17 @@ class DateInput extends React.Component {
     if (type === DateInputUtil.inputType.MONTH) {
       this.setState({
         month: value,
-        monthInitialFocused: false,
+        monthIsFocused: false,
       });
     } else if (type === DateInputUtil.inputType.DAY) {
       this.setState({
         day: value,
-        dayInitialFocused: false,
+        dayIsFocused: false,
       });
     } else if (type === DateInputUtil.inputType.YEAR) {
       this.setState({
         year: value,
-        yearInitialFocused: false,
+        yearIsFocused: false,
       });
     }
 
@@ -472,7 +472,7 @@ class DateInput extends React.Component {
           {...this.props.monthAttributes}
           aria-label={this.props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' })}
           ref={this.monthRef}
-          className={cx('date-input-month', { 'initial-focus': this.state.monthInitialFocused })}
+          className={cx('date-input-month', { 'is-focused': this.state.monthIsFocused })}
           value={this.state.month}
           name={'terra-date-month-'.concat(this.props.name)}
           onChange={this.handleMonthChange}
@@ -508,7 +508,7 @@ class DateInput extends React.Component {
         {...this.props.dayAttributes}
         refCallback={(inputRef) => { this.dayRef = inputRef; }}
         aria-label={this.props.intl.formatMessage({ id: 'Terra.date.input.dayLabel' })}
-        className={cx('date-input-day', { 'initial-focus': this.state.dayInitialFocused })}
+        className={cx('date-input-day', { 'is-focused': this.state.dayIsFocused })}
         type="text"
         value={this.state.day}
         name={'terra-date-day-'.concat(this.props.name)}
@@ -536,7 +536,7 @@ class DateInput extends React.Component {
         {...this.props.yearAttributes}
         refCallback={(inputRef) => { this.yearRef = inputRef; }}
         aria-label={this.props.intl.formatMessage({ id: 'Terra.date.input.yearLabel' })}
-        className={cx('date-input-year', { 'initial-focus': this.state.yearInitialFocused })}
+        className={cx('date-input-year', { 'is-focused': this.state.yearIsFocused })}
         type="text"
         value={this.state.year}
         name={'terra-date-year-'.concat(this.props.name)}
@@ -549,7 +549,7 @@ class DateInput extends React.Component {
         size="4"
         pattern="\d*"
         inputMode="numeric"
-        autocomplete="off"
+        autoComplete="off"
         disabled={this.props.disabled}
       />
     );
