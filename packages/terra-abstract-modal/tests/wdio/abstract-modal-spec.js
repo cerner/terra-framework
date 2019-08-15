@@ -6,6 +6,8 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
 
     it('clicks to open modal', () => {
       browser.click('button');
+      expect(browser.getAttribute('#root', 'inert')).to.equal('true');
+      expect(browser.getAttribute('#root', 'aria-hidden')).to.equal('true');
       Terra.validates.element('open', { selector });
     });
 
@@ -13,17 +15,23 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
       browser.moveToObject('[class*="ModalOverlay"]', 235, 5)
         .leftClick();
       Terra.validates.element('closed');
+      expect(browser.getAttribute('#root', 'inert')).to.equal('false');
+      expect(browser.getAttribute('#root', 'aria-hidden')).to.equal(null);
       expect(browser.hasFocus('#modal-open-button')).to.be.true;
     });
 
     it('reopens the modal', () => {
       browser.keys('Enter');
       browser.waitForVisible('[aria-modal="true"][role="dialog"]');
+      expect(browser.getAttribute('#root', 'inert')).to.equal('true');
+      expect(browser.getAttribute('#root', 'aria-hidden')).to.equal('true');
       expect(browser.hasFocus('[aria-modal="true"][role="dialog"]')).to.be.true;
     });
 
     it('closes modal on ESC', () => {
       browser.keys('Escape');
+      expect(browser.getAttribute('#root', 'inert')).to.equal('false');
+      expect(browser.getAttribute('#root', 'aria-hidden')).to.equal(null);
       expect(browser.hasFocus('#modal-open-button')).to.be.true;
     });
   });
@@ -33,6 +41,8 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
 
     it('clicks to open modal', () => {
       browser.click('button');
+      expect(browser.getAttribute('#root', 'inert')).to.equal('true');
+      expect(browser.getAttribute('#root', 'aria-hidden')).to.equal('true');
       Terra.validates.element('open', { selector });
     });
 
@@ -40,17 +50,23 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
       browser.moveToObject('[class*="ModalOverlay"]', 235, 5)
         .leftClick();
       Terra.validates.element('closed');
+      expect(browser.getAttribute('#root', 'inert')).to.equal('false');
+      expect(browser.getAttribute('#root', 'aria-hidden')).to.equal(null);
       expect(browser.hasFocus('#modal-open-button')).to.be.true;
     });
 
     it('reopens the modal', () => {
       browser.keys('Enter');
       browser.waitForVisible('[role="dialog"]');
+      expect(browser.getAttribute('#root', 'inert')).to.equal('true');
+      expect(browser.getAttribute('#root', 'aria-hidden')).to.equal('true');
       expect(browser.hasFocus('[role="dialog"]')).to.be.true;
     });
 
     it('closes modal on ESC', () => {
       browser.keys('Escape');
+      expect(browser.getAttribute('#root', 'inert')).to.equal('false');
+      expect(browser.getAttribute('#root', 'aria-hidden')).to.equal(null);
       expect(browser.hasFocus('#modal-open-button')).to.be.true;
     });
   });
