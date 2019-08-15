@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Ensure aria-hidden attribute on root node is properly removed when modal is closed
 
 3.9.0 - (August 14, 2019)
 ------------------
