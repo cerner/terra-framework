@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Fixed ambiguous hour that occurs in the southern hemisphere.
 
 4.10.0 - (August 14, 2019)
 ------------------
