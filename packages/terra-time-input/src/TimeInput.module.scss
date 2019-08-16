@@ -126,6 +126,7 @@
 
     &:focus {
       @include focus-styles;
+      background-color: var(--terra-time-input-time-component-focus-background-color, #fff);
       background-size: var(--terra-time-input-time-component-focus-background-size, 0 0);
       border-color: transparent;
 
