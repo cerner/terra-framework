@@ -2,6 +2,7 @@ import React from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import { FormattedMessage } from 'react-intl';
 import CollapsibleMenuViewItem from './CollapsibleMenuViewItem';
 import CollapsibleMenuViewItemGroup from './CollapsibleMenuViewItemGroup';
 import CollapsibleMenuViewToggle from './CollapsibleMenuViewToggle';
@@ -27,15 +28,6 @@ const propTypes = {
    * Bounding container for the menu, will use window if no value provided.
    */
   boundingRef: PropTypes.func,
-};
-
-const contextTypes = {
-  /* eslint-disable consistent-return */
-  intl: (context) => {
-    if (context.intl === undefined) {
-      return new Error('Component is internationalized, and must be wrapped in terra-base');
-    }
-  },
 };
 
 class CollapsibleMenuView extends React.Component {
@@ -133,8 +125,6 @@ class CollapsibleMenuView extends React.Component {
     const {
       children, boundingRef, menuWidth, ...customProps
     } = this.props;
-    const { intl } = this.context;
-    const ellipsesText = intl.formatMessage({ id: 'Terra.collapsibleMenuView.more' });
     const visibleChildren = React.Children.toArray(children);
 
     let hiddenChildren = null;
@@ -156,15 +146,19 @@ class CollapsibleMenuView extends React.Component {
       <div {...customProps} className={collapsibleMenuViewClassName} ref={this.setContainer}>
         {visibleChildren}
         <div className={menuButtonClassName} ref={this.setMenuButton}>
-          <CollapsibleMenuViewItem
-            data-collapsible-menu-toggle
-            icon={<span className={cx('menu-button-icon')} />}
-            subMenuItems={hiddenChildren}
-            boundingRef={boundingRef}
-            menuWidth={menuWidth}
-            isIconOnly
-            text={ellipsesText}
-          />
+          <FormattedMessage id="Terra.collapsibleMenuView.more">
+            {ellipsesText => (
+              <CollapsibleMenuViewItem
+                data-collapsible-menu-toggle
+                icon={<span className={cx('menu-button-icon')} />}
+                subMenuItems={hiddenChildren}
+                boundingRef={boundingRef}
+                menuWidth={menuWidth}
+                isIconOnly
+                text={ellipsesText}
+              />
+            )}
+          </FormattedMessage>
         </div>
       </div>
     );
@@ -177,6 +171,5 @@ CollapsibleMenuView.Toggle = CollapsibleMenuViewToggle;
 CollapsibleMenuView.Divider = CollapsibleMenuViewDivider;
 
 CollapsibleMenuView.propTypes = propTypes;
-CollapsibleMenuView.contextTypes = contextTypes;
 
 export default CollapsibleMenuView;

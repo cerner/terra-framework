@@ -1,23 +1,60 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames/bind'
 import YearDropdownOptions from './year_dropdown_options'
 import onClickOutside from 'react-onclickoutside'
 import { getYear } from './date_utils'
+import styles from './stylesheets/datepicker.scss'
+
+const cx = classNames.bind(styles);
 
 var WrappedYearDropdownOptions = onClickOutside(YearDropdownOptions)
 
 export default class YearDropdown extends React.Component {
   static propTypes = {
+    /**
+     * Prop to change date when a valid date is selected.
+     */
     adjustDateOnChange: PropTypes.bool,
+   /**
+     * Whether the year dropdowns should be in the scroll or select mode..
+     */
     dropdownMode: PropTypes.oneOf(['scroll', 'select']).isRequired,
+    /**
+     * Maximum value of date that can be entered or selected.
+     */
     maxDate: PropTypes.object,
+    /**
+     * Minimum value of date that can be entered or selected.
+     */
     minDate: PropTypes.object,
+    /**
+     * A callback function to execute when a valid date is entered.
+     */
     onChange: PropTypes.func.isRequired,
+    /**
+     * Prop to allow scrollable year dropdown.
+     */
     scrollableYearDropdown: PropTypes.bool,
+    /**
+     * The selected or entered year to show in date input.
+     */
     year: PropTypes.number.isRequired,
+    /**
+     * Number of years to show in the dropdown.
+     */
     yearDropdownItemNumber: PropTypes.number,
+    /**
+     * The selected or entered valid date value.
+     */
     date: PropTypes.object,
+    /**
+     * A callback function to execute when a valid year is selected.
+     */
     onSelect: PropTypes.func,
+    /**
+     * A callback function to execute when the year dropdown is open.
+     */
     setOpen: PropTypes.func
   }
 
@@ -44,16 +81,16 @@ export default class YearDropdown extends React.Component {
     <select
       tabIndex="-1"
       value={this.props.year}
-      className="react-datepicker__year-select"
+      className={cx('react-datepicker-year-select')}
       onChange={this.onSelectChange}>
       {this.renderSelectOptions()}
     </select>
   )
 
   renderReadView = (visible) => (
-    <div key="read" style={{visibility: visible ? 'visible' : 'hidden'}} className="react-datepicker__year-read-view" onClick={(event) => this.toggleDropdown(event)}>
-      <span className="react-datepicker__year-read-view--down-arrow" />
-      <span className="react-datepicker__year-read-view--selected-year">{this.props.year}</span>
+    <div key="read" style={{visibility: visible ? 'visible' : 'hidden'}} className={cx('react-datepicker-year-read-view')} onClick={(event) => this.toggleDropdown(event)}>
+      <span className={cx('react-datepicker-year-read-view--down-arrow')} />
+      <span className={cx('react-datepicker-year-read-view--selected-year')}>{this.props.year}</span>
     </div>
   )
 
@@ -125,7 +162,7 @@ export default class YearDropdown extends React.Component {
 
     return (
       <div
-        className={`react-datepicker__year-dropdown-container react-datepicker__year-dropdown-container--${this.props.dropdownMode}`}>
+        className={cx(['react-datepicker-year-dropdown-container', `react-datepicker-year-dropdown-container--${this.props.dropdownMode}`])}>
         {renderedDropdown}
       </div>
     )

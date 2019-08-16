@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Popup from 'terra-popup';
 import { matchPath } from 'react-router-dom';
 import KeyCode from 'keycode-js';
+import { FormattedMessage } from 'react-intl';
 import TabMenuList from './_TabMenuList';
 import TabMenuDisplay from './_TabMenuDisplay';
 
@@ -21,18 +22,9 @@ const propTypes = {
   location: PropTypes.object.isRequired,
 };
 
-const contextTypes = {
-  /* eslint-disable consistent-return */
-  intl: (context) => {
-    if (context.intl === undefined) {
-      return new Error('Please add locale prop to Base component to load translations');
-    }
-  },
-};
-
 class TabMenu extends React.Component {
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
     this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.handleOnClick = this.handleOnClick.bind(this);
     this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
@@ -86,17 +78,16 @@ class TabMenu extends React.Component {
 
   createDisplay(popup) {
     const { location } = this.props;
-    const { intl } = this.context;
-    let text = intl.formatMessage({ id: 'Terra.application.tabs.more' });
     let icon;
     let isSelected = false;
+    let childText;
 
     const childArray = this.props.children;
     const count = childArray.length;
     for (let i = 0; i < count; i += 1) {
       const child = childArray[i];
       if (matchPath(location.pathname, { path: child.props.path })) {
-        text = child.props.text; // eslint-disable-line prefer-destructuring
+        childText = child.props.text; // eslint-disable-line prefer-destructuring
         icon = child.props.icon; // eslint-disable-line prefer-destructuring
         isSelected = true;
         break;
@@ -104,18 +95,22 @@ class TabMenu extends React.Component {
     }
 
     return (
-      <TabMenuDisplay
-        onClick={this.handleOnClick}
-        onKeyDown={this.handleOnKeyDown}
-        popup={popup}
-        refCallback={this.setTargetRef}
-        isHidden={this.props.isHidden}
-        text={text}
-        isSelected={isSelected}
-        icon={icon}
-        key="application-tab-more"
-        data-application-tabs-more
-      />
+      <FormattedMessage id="Terra.application.tabs.more">
+        {text => (
+          <TabMenuDisplay
+            onClick={this.handleOnClick}
+            onKeyDown={this.handleOnKeyDown}
+            popup={popup}
+            refCallback={this.setTargetRef}
+            isHidden={this.props.isHidden}
+            text={childText || text}
+            isSelected={isSelected}
+            icon={icon}
+            key="application-tab-more"
+            data-application-tabs-more
+          />
+        )}
+      </FormattedMessage>
     );
   }
 
@@ -146,7 +141,6 @@ class TabMenu extends React.Component {
   }
 }
 
-TabMenu.contextTypes = contextTypes;
 TabMenu.propTypes = propTypes;
 
 export default TabMenu;

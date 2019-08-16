@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+5.8.0 - (August 14, 2019)
+------------------
 ### Changed
 * updated package.json test scripts
 
@@ -23,6 +26,10 @@ Unreleased
 ------------------
 ### Added
 * Added documentation on required peerDependencies
+
+### Added
+* Added support for DisclosureManagerHeaderAdapter integration
+* Added `disclosureAccessory` prop
 
 5.5.0 - (July 16, 2019)
 ------------------

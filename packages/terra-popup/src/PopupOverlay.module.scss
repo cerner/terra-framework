@@ -14,7 +14,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      z-index: var(--terra-popup-overlay-z-index, 7000);
+      z-index: 7000;
 
       &::-webkit-scrollbar {
         display: none;

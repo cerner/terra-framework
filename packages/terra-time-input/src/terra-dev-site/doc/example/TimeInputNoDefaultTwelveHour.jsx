@@ -3,7 +3,7 @@ import React from 'react';
 import TimeInput from 'terra-time-input/lib/TimeInput';
 import TimeUtil from 'terra-time-input/lib/TimeUtil';
 import classNames from 'classnames/bind';
-import styles from './TimeInput.module.scss';
+import styles from './TimeInputDocCommon.module.scss';
 
 const cx = classNames.bind(styles);
 

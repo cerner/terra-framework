@@ -3,7 +3,14 @@ ChangeLog
 
 Unreleased
 ----------
+
+6.9.0 - (August 14, 2019)
+------------------
+### Fixed
+* Fixed tabs overflowing issue.
+
 ### Changed
+* Updated to interface with react-intl's `FormattedMessage` rather than old React Context API.
 * updated package.json test scripts
 
 6.8.0 - (July 30, 2019)

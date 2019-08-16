@@ -84,6 +84,7 @@ import Button from 'terra-button';
   renderForm({ handleSubmit, reset, submitting, pristine, values, invalid }) {
     return (
       <form
+        noValidate
         onSubmit={handleSubmit}
       >
         <h1>Hello People!</h1>

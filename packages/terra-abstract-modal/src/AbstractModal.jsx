@@ -141,6 +141,8 @@ class AbstractModal extends React.Component {
       if (inert === 1) {
         mainDocumentElement.removeAttribute('data-overlay-count');
         mainDocumentElement.removeAttribute('inert');
+        // Ensures aria-hidden is properly cleaned up
+        setTimeout(() => mainDocumentElement.removeAttribute('aria-hidden'), 0);
       } else if (inert && inert > 1) {
         mainDocumentElement.setAttribute('data-overlay-count', `${inert - 1}`);
       }
