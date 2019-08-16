@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Changed 12-hour format appearance for mobile and desktop.
 
 4.7.0 - (August 14, 2019)
 ------------------
@@ -13,7 +15,6 @@ Unreleased
 * Changed help text color to match required contrast ratio.
 * Added documentation on required peerDependencies
 * Updated package.json test scripts
-* Changed 12-hour format appearance for mobile and desktop.
 
 ### Fixed
 * Fixed onChange callback triggering twice for values prepended with zero.
