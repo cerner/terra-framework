@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.18.0 - (August 14, 2019)
+------------------
 ### Changed
 * updated package.json test scripts
 
@@ -37,7 +40,7 @@ Unreleased
 * Minor dependency version bump
 
 4.12.0 - (June 12, 2019)
-------------------s
+------------------
 ### Removed
 * Removed node_modules from .npmignore
 

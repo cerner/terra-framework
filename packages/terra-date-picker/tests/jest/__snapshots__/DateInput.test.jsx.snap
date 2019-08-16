@@ -169,8 +169,10 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
+        onMouseDown={[Function]}
         title="Terra.datePicker.openCalendar"
         type="button"
       >

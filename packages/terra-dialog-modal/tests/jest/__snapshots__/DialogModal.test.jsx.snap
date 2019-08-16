@@ -38,8 +38,10 @@ exports[`should mount an open dialogModal 1`] = `
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
+        onMouseDown={[Function]}
         type="button"
       >
         <span
@@ -97,8 +99,10 @@ exports[`should mount an open dialogModal 320 width 1`] = `
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
+        onMouseDown={[Function]}
         type="button"
       >
         <span
@@ -156,8 +160,10 @@ exports[`should mount an open dialogModal 960 width 1`] = `
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
+        onMouseDown={[Function]}
         type="button"
       >
         <span
@@ -215,8 +221,10 @@ exports[`should mount an open dialogModal 1280 width 1`] = `
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
+        onMouseDown={[Function]}
         type="button"
       >
         <span
@@ -274,8 +282,10 @@ exports[`should mount an open dialogModal 1600 width 1`] = `
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
+        onMouseDown={[Function]}
         type="button"
       >
         <span
@@ -333,8 +343,10 @@ exports[`should mount an open dialogModal 1600 width 2`] = `
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
+        onMouseDown={[Function]}
         type="button"
       >
         <span

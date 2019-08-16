@@ -368,6 +368,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                           <Image
                             alt="user-name"
                             className="image"
+                            fit="cover"
                             isFluid={false}
                             onError={[Function]}
                             placeholder={
@@ -388,7 +389,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                               >
                                 <img
                                   alt="user-name"
-                                  className="image default image"
+                                  className="image cover default image"
                                   onError={[Function]}
                                   onLoad={[Function]}
                                   src="user-src"
@@ -654,8 +655,10 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                       disabled={false}
                       onBlur={[Function]}
                       onClick={[MockFunction]}
+                      onFocus={[Function]}
                       onKeyDown={[Function]}
                       onKeyUp={[Function]}
+                      onMouseDown={[Function]}
                       type="button"
                     >
                       <span
@@ -862,8 +865,10 @@ exports[`UtilityMenu should render with skip callback 1`] = `
                       disabled={false}
                       onBlur={[Function]}
                       onClick={[MockFunction]}
+                      onFocus={[Function]}
                       onKeyDown={[Function]}
                       onKeyUp={[Function]}
+                      onMouseDown={[Function]}
                       type="button"
                     >
                       <span

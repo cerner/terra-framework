@@ -46,6 +46,7 @@ The DisclosureManager does not implement a traditional render function. A `rende
 |`disclosureComponentData`|An Object containing components and associated data representing the state of disclosure stack.|
 
 `disclosureComponentData` Object API:
+
 |Key|Value|
 |---|---|
 |`component`|A component that has been wrapped with the DisclosureManager-provided contexts.|
