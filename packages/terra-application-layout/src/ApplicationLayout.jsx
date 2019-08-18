@@ -121,9 +121,9 @@ class ApplicationLayout extends React.Component {
 
     const config = {};
     Object.keys(originalMenuConfig).forEach((menuKey) => {
-      const menuConfig = Object.assign({}, originalMenuConfig[menuKey]);
+      const menuConfig = { ...originalMenuConfig[menuKey] };
 
-      const menuComponentConfig = Object.assign({}, menuConfig.component);
+      const menuComponentConfig = { ...menuConfig.component };
 
       /**
        * Every supplied menu component is wrapped with an ApplicationMenuWrapper.
@@ -133,8 +133,8 @@ class ApplicationLayout extends React.Component {
           return;
         }
 
-        const componentConfig = Object.assign({}, menuComponentConfig[size]);
-        const componentProps = Object.assign({}, componentConfig.props);
+        const componentConfig = { ...menuComponentConfig[size] };
+        const componentProps = { ...componentConfig.props };
 
         /**
          * ApplicationMenuWrapper-specific props are injected into the props object with a prop
@@ -166,9 +166,7 @@ class ApplicationLayout extends React.Component {
   static buildRoutingConfig(props) {
     const { routingConfig } = props;
 
-    const updatedConfig = Object.assign({}, routingConfig, {
-      menu: ApplicationLayout.buildApplicationMenus(props, Object.assign({}, routingConfig.menu, ApplicationLayout.buildNavigationMenuConfig(props))),
-    });
+    const updatedConfig = { ...routingConfig, menu: ApplicationLayout.buildApplicationMenus(props, { ...routingConfig.menu, ...ApplicationLayout.buildNavigationMenuConfig(props) }) };
 
     return updatedConfig;
   }

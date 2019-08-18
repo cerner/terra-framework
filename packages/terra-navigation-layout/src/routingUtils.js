@@ -84,9 +84,7 @@ const reduceRouteConfig = (routeConfig, size) => {
       ))
         .map(parentRoute => parentRoute.path);
 
-      return Object.assign({}, route, {
-        parentPaths: matchedParentPaths.reverse(),
-      });
+      return { ...route, parentPaths: matchedParentPaths.reverse() };
     });
 };
 

@@ -27,7 +27,7 @@
   "eslintConfig": {
     "extends": "terra",
     "rules": {
-      "react/forbid-prop-types": "false",
+      "react/forbid-prop-types": "off",
       "import/no-extraneous-dependencies": [
         "error",
         {
@@ -39,7 +39,8 @@
     },
     "settings": {
       "polyfills": [
-        "promises"
+        "Promise",
+        "Map"
       ]
     }
   },
@@ -101,8 +102,8 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.2.2",
-    "eslint": "^5.0.0",
-    "eslint-config-terra": "^2.0.0",
+    "eslint": "^6.1.0",
+    "eslint-config-terra": "cerner/eslint-config-terra#update-dependencies",
     "gh-pages": "^2.0.1",
     "glob": "^7.1.1",
     "identity-obj-proxy": "^3.0.0",

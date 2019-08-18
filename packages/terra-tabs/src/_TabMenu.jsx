@@ -107,7 +107,6 @@ class TabMenu extends React.Component {
     });
 
     return (
-      /* eslint-disable jsx-a11y/no-static-element-interactions */
       <div
         role="button"
         tabIndex="0"
@@ -131,7 +130,6 @@ class TabMenu extends React.Component {
           {menuItems}
         </Menu>
       </div>
-      /* eslint-enable jsx-ally/no-static-element-interactions */
     );
   }
 }
