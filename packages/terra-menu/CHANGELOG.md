@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Replaced Object.assign syntax with Object spread syntax
 
 6.9.0 - (August 14, 2019)
 ------------------
