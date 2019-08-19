@@ -1,5 +1,4 @@
 Terra.describeViewports('Date Input', ['medium'], () => {
-  /*
   describe('Default with no date provide', () => {
     before(() => browser.url('/raw/tests/terra-date-input/date-input/default-date-input'));
 
@@ -141,10 +140,8 @@ Terra.describeViewports('Date Input', ['medium'], () => {
       Terra.it.matchesScreenshot();
     });
   });
-  */
 
   describe('Date Input day keyboard operations', () => {
-    /*
     describe('UP_ARROW increments day by 1 when day value is filled in', () => {
       before(() => {
         browser.url('/raw/tests/terra-date-input/date-input/populated-date-input');
@@ -234,7 +231,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
 
       Terra.it.matchesScreenshot();
     });
-    */
+
     describe('LEFT_ARROW shifts focus from day to month in month-day-year format if day value is empty', () => {
       before(() => {
         browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
@@ -345,31 +342,30 @@ Terra.describeViewports('Date Input', ['medium'], () => {
       Terra.it.matchesScreenshot();
     });
 
-    /*
     describe('Pressing DELETE in day input with value clears the character', () => {
       before(() => {
-        browser.url('/raw/tests/terra-time-input/time-input/time-input/on-change');
+        browser.url('/raw/tests/terra-date-input/date-input/populated-date-input');
         browser.refresh();
         // Removes the blinking cursor to prevent screenshot mismatches.
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('#timeInput input[name="terra-time-minute-time-input"]');
+        browser.click('input[name="terra-date-day-date-input"]');
         browser.keys(['Delete']);
       });
 
       Terra.it.matchesScreenshot();
     });
 
-    describe('Pressing DELETE in day input with no value shifts focus to month in m-d-y format', () => {
+    describe('Pressing DELETE in day input with no value shifts focus day to month in m-d-y format', () => {
       before(() => {
-        browser.url('/raw/tests/terra-time-input/time-input/time-input/on-change');
+        browser.url('/raw/tests/terra-date-input/date-input/month-day-year-date-input');
         browser.refresh();
         // Removes the blinking cursor to prevent screenshot mismatches.
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('#timeInput input[name="terra-time-minute-time-input"]');
+        browser.click('input[name="terra-date-day-date-input"]');
         browser.keys(['Delete']);
       });
 
@@ -378,18 +374,17 @@ Terra.describeViewports('Date Input', ['medium'], () => {
 
     describe('Pressing DELETE in day input with no value does not shift focus in d-m-y format', () => {
       before(() => {
-        browser.url('/raw/tests/terra-time-input/time-input/time-input/on-change');
+        browser.url('/raw/tests/terra-date-input/date-input/day-month-year-date-input');
         browser.refresh();
         // Removes the blinking cursor to prevent screenshot mismatches.
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
-        browser.click('#timeInput input[name="terra-time-minute-time-input"]');
+        browser.click('input[name="terra-date-day-date-input"]');
         browser.keys(['Delete']);
       });
 
       Terra.it.matchesScreenshot();
     });
-      */
   });
 });
