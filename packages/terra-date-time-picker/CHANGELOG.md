@@ -8,6 +8,11 @@ Unreleased
 * Removed styles hiding carets on test pages when not running within WDIO
 
 ### Fixed
+* Fix JS error when losing focus from an empty date input. 
+
+4.10.0 - (August 14, 2019)
+------------------
+### Fixed
 * Allow blur to be handled after the date time ambiguity is resolved.
 
 ### Changed

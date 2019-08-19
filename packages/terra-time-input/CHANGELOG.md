@@ -7,6 +7,8 @@ Unreleased
 * Removed extra calls to hide the caret in inputs (some are still needed because `time-input` explicitly sets a `caret-color`).
 * Removed styles hiding carets on test pages when not running within WDIO
 
+4.7.0 - (August 14, 2019)
+------------------
 ### Changed
 * Updated to interface with react-intl's context rather than old React Context API.
 * Removed inline styles from dev site components.

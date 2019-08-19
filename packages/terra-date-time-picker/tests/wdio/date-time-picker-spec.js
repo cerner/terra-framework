@@ -171,6 +171,23 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     });
   });
 
+  describe('OnBlur with empty date-time', () => {
+    before(() => {
+      browser.refresh();
+    });
+
+    it('is triggered ', () => {
+      browser.click('input[name="terra-time-minute-input"]');
+      browser.keys('Tab');
+      expect(browser.getText('#blur-count')).to.equal('1');
+      expect(browser.getText('#focus-count')).to.equal('1');
+      expect(browser.getText('#iso')).to.equal('');
+      expect(browser.getText('#input-value')).to.equal('');
+      expect(browser.getText('#complete-date')).to.equal('No');
+      expect(browser.getText('#valid-date')).to.equal('Yes');
+    });
+  });
+
   describe('Valid date entry moves focus to hour input', () => {
     before(() => {
       browser.refresh();

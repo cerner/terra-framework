@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+6.9.0 - (August 14, 2019)
+------------------
 ### Changed
 * updated package.json test scripts
 * Updated to interface with react-intl's `FormattedMessage` rather than old React Context API.
@@ -28,10 +31,11 @@ Unreleased
 * Added documentation on required peerDependencies
 
 ### Fixed
+* Fixed divider transition between normal and in-menu view.
 * Fixed Collapsible issue for single item group
 
 6.5.0 - (July 10, 2019)
-------------------
+------------------ 
 ### Changed
 * Minor dependency version bump
 * Replaced Terra-Form with Terra-Form-Checkbox in CollapsibleMenuViewToggle
