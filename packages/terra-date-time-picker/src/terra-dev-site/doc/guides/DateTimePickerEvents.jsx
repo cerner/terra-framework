@@ -1,5 +1,6 @@
 import React from 'react';
 import DateTimePicker from '../../../DateTimePicker';
+import DateTimeUtils from '../../../DateTimeUtils';
 
 class DateTimePickerEvents extends React.Component {
   constructor(props) {
@@ -91,6 +92,8 @@ class DateTimePickerEvents extends React.Component {
           onChangeRaw={this.handleChangeRaw}
           onSelect={this.handleSelect}
           onClickOutside={this.handleOnClickOutside}
+          timeVariant={DateTimeUtils.FORMAT_12_HOUR}
+          showSeconds
         />
         <br />
         <br />
