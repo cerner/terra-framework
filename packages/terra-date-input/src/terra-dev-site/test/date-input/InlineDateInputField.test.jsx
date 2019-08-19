@@ -13,7 +13,7 @@ const Example = () => {
     <React.Fragment>
       <DateInputField
         legend="Legend text"
-        name="date-input-value"
+        name="date-input"
         value={dateFieldValue1}
         onChange={(event, dateString) => setDateFieldValue1(dateString)}
         isInline={isInline}

@@ -11,7 +11,7 @@ const Example = () => {
     <React.Fragment>
       <DateInputField
         legend="Legend text"
-        name="date-input-value"
+        name="date-input"
         value={value}
         onChange={(event, dateString) => setValue(dateString)}
         required

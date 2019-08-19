@@ -9,7 +9,7 @@ const Example = () => {
   return (
     <React.Fragment>
       <DateInput
-        name="date-input-value"
+        name="date-input"
         value={value}
         onChange={(event, dateString) => setValue(dateString)}
         displayFormat="day-month-year"

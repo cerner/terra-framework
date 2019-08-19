@@ -4,15 +4,15 @@ import React, { useState } from 'react';
 import DateInput from 'terra-date-input';
 
 const Example = () => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState('2000-07-04');
 
   return (
     <React.Fragment>
       <DateInput
+        id="dateInput"
         name="date-input"
         value={value}
         onChange={(event, dateString) => setValue(dateString)}
-        displayFormat="month-day-year"
       />
       <p>{`DateInput Value: ${value}`}</p>
     </React.Fragment>
