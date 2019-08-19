@@ -32,7 +32,7 @@
     "mutationobserver-shim": "0.3.3",
     "prop-types": "^15.5.8",
     "react-portal": "^4.1.2",
-    "terra-visually-hidden-text": "^2.9.0",
+    "terra-visually-hidden-text": "^2.0.0",
     "wicg-inert": "^2.1.1"
   },
   "devDependencies": {
