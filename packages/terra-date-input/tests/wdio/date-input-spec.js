@@ -11,6 +11,33 @@ Terra.describeViewports('Date Input', ['medium'], () => {
     Terra.it.validatesElement();
   });
 
+  describe('Focus Month Styles', () => {
+    before(() => {
+      browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+      browser.click('select[name="terra-date-month-date-input"]');
+    });
+
+    Terra.it.validatesElement();
+  });
+
+  describe('Focus Day Styles', () => {
+    before(() => {
+      browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+      browser.click('input[name="terra-date-day-date-input"]');
+    });
+
+    Terra.it.validatesElement();
+  });
+
+  describe('Focus Year Styles', () => {
+    before(() => {
+      browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+      browser.click('input[name="terra-date-year-date-input"]');
+    });
+
+    Terra.it.validatesElement();
+  });
+
   describe('Date Input month keyboard operations', () => {
     describe('UP_ARROW increments month by 1', () => {
       before(() => {
