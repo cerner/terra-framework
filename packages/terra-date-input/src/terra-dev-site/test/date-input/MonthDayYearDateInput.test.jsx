@@ -12,6 +12,7 @@ const Example = () => {
         name="date-input-value"
         value={value}
         onChange={(event, dateString) => setValue(dateString)}
+        displayFormat="month-day-year"
       />
       <p>{`DateInput Value: ${value}`}</p>
     </React.Fragment>
