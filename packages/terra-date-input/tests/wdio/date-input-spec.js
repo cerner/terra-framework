@@ -1,17 +1,17 @@
 Terra.describeViewports('Date Input', ['medium'], () => {
-  describe('Default with no date provide', () => {
+  describe('Date Input no date provide', () => {
     before(() => browser.url('/raw/tests/terra-date-input/date-input/default-date-input'));
 
     Terra.it.validatesElement();
   });
 
-  describe('Default with full date provide', () => {
+  describe('Date Input full date provide', () => {
     before(() => browser.url('/raw/tests/terra-date-input/date-input/populated-date-input'));
 
     Terra.it.validatesElement();
   });
 
-  describe('Default with invalid date provide', () => {
+  describe('Date Input invalid date provide', () => {
     before(() => browser.url('/raw/tests/terra-date-input/date-input/invalid-date-input'));
 
     Terra.it.validatesElement();
