@@ -654,178 +654,87 @@ Terra.describeViewports('Date Input', ['medium'], () => {
     });
   });
 
+  describe('Date Input OnChange Valid Date', () => {
+    before(() => {
+      browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+      browser.refresh();
+      // Removes the blinking cursor to prevent screenshot mismatches.
+      Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+      Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+      browser.click('select[name="terra-date-month-date-input"]');
+      browser.keys(['ArrowDown']);
+
+      browser.click('input[name="terra-date-day-date-input"]');
+      browser.keys('30');
+
+      browser.click('input[name="terra-date-year-date-input"]');
+      browser.keys('1990');
+    });
+
+    Terra.it.matchesScreenshot();
+  });
+
+  describe('Date Input OnChange Invalid Date', () => {
+    before(() => {
+      browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+      browser.refresh();
+      // Removes the blinking cursor to prevent screenshot mismatches.
+      Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+      Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+      browser.click('select[name="terra-date-month-date-input"]');
+      browser.keys(['ArrowDown']);
+
+      browser.click('input[name="terra-date-day-date-input"]');
+      browser.keys('ab');
+
+      browser.click('input[name="terra-date-year-date-input"]');
+      browser.keys('cdef');
+    });
+
+    Terra.it.matchesScreenshot();
+  });
+
+  describe('Date Input prepends 0 on single digit day', () => {
+    before(() => {
+      browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+      browser.refresh();
+      // Removes the blinking cursor to prevent screenshot mismatches.
+      Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+      Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+      browser.click('input[name="terra-date-day-date-input"]');
+      browser.keys('1');
+      browser.click('input[name="terra-date-year-date-input"]');
+    });
+
+    Terra.it.matchesScreenshot();
+  });
+
+
+
 /*
-Terra.describeViewports('Date Input onChange operations', ['medium'], () => {
-describe('Date Input OnChange', () => {
+describe('Does not trigger onChange for an day with just one digit', () => {
   before(() => {
     browser.url('/raw/tests/terra-time-input/time-input/time-input/on-change');
+    browser.refresh();
     browser.execute(() => {
       // Removes the blinking cursor to prevent screenshot mismatches.
-      document.querySelector('#dateInput input[name="terra-date-hour-date-input"]').style.caretColor = 'transparent';
-      document.querySelector('#dateInput input[name="terra-date-second-date-input"]').style.caretColor = 'transparent';
+      document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
     });
 
     browser.click('#timeInput input[name="terra-time-hour-time-input"]');
-    browser.keys('123456');
-  });
-
-  Terra.it.matchesScreenshot();
-});
-
-describe('Date Input prepends 0 on single digit day', () => {
-  before(() => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/on-change');
-    browser.refresh();
-    browser.execute(() => {
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-      document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-    });
-
+    browser.keys('1223');
     browser.click('#timeInput input[name="terra-time-hour-time-input"]');
-    browser.keys('2');
-    browser.click('#timeInput input[name="terra-time-minute-time-input"]');
+    browser.keys(['ArrowLeft', 'ArrowRight', 'Delete']);
   });
 
   Terra.it.matchesScreenshot();
 });
-
-describe('Date Input prepends 0 on day input of 4 or more', () => {
-  before(() => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/on-change');
-    browser.refresh();
-    browser.execute(() => {
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-      document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-    });
-
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
-    browser.keys('4');
-  });
-
-  Terra.it.matchesScreenshot();
 });
 
-describe('Date Input does prepend 0 on day input less than 4', () => {
-  before(() => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/on-change');
-    browser.refresh();
-    browser.execute(() => {
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-      document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-    });
-
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
-    browser.keys('3');
-  });
-
-  Terra.it.matchesScreenshot();
-});
-
-describe('Date Input does not render month input greater than 12', () => {
-  before(() => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/on-change');
-    browser.refresh();
-    browser.execute(() => {
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-      document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-    });
-
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
-    browser.keys('32');
-  });
-
-  Terra.it.matchesScreenshot();
-});
-
-describe('Date Input does not render day input greater than 31', () => {
-  before(() => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/on-change');
-    browser.refresh();
-    browser.execute(() => {
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-      document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-    });
-
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
-    browser.keys('32');
-  });
-
-  Terra.it.matchesScreenshot();
-});
-
-describe('Date Input does not render year input greater than 9999', () => {
-  before(() => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/on-change');
-    browser.refresh();
-    browser.execute(() => {
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-      document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-    });
-
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
-    browser.keys('32');
-  });
-
-  Terra.it.matchesScreenshot();
-});
-
-describe('Pressing DELETE in year with no value focuses to day in m-d-y format', () => {
-  before(() => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/on-change');
-    browser.refresh();
-    browser.execute(() => {
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-      document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-    });
-
-    browser.click('#timeInput input[name="terra-time-minute-time-input"]');
-    browser.keys(['Delete']);
-  });
-
-  Terra.it.matchesScreenshot();
-});
-
-describe('Pressing DELETE in year with no value focuses to month in d-m-y format', () => {
-  before(() => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/on-change');
-    browser.refresh();
-    browser.execute(() => {
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-      document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-    });
-
-    browser.click('#timeInput input[name="terra-time-minute-time-input"]');
-    browser.keys(['Delete']);
-  });
-
-  Terra.it.matchesScreenshot();
-});
-
-describe('Pressing DELETE in day with no value focuses to month in m-d-y format', () => {
-  before(() => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/on-change');
-    browser.refresh();
-    browser.execute(() => {
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-      document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-    });
-
-    browser.click('#timeInput input[name="terra-time-minute-time-input"]');
-    browser.keys(['Delete']);
-  });
-
-  Terra.it.matchesScreenshot();
-});
-
+describe('Date Input onBlur operations', () => {
 describe('Triggers an onChange for onBlur on the month select', () => {
   before(() => {
     browser.url('/raw/tests/terra-time-input/time-input/time-input/on-change');
@@ -877,26 +786,6 @@ describe('Triggers an onChange for onBlur on the year input', () => {
   Terra.it.matchesScreenshot();
 });
 
-describe('Does not trigger onChange for an day with just one digit', () => {
-  before(() => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/on-change');
-    browser.refresh();
-    browser.execute(() => {
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-    });
-
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
-    browser.keys('1223');
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
-    browser.keys(['ArrowLeft', 'ArrowRight', 'Delete']);
-  });
-
-  Terra.it.matchesScreenshot();
-});
-});
-
-describe('Date Input onBlur operations', () => {
 describe('Date Input onBlur', () => {
   before(() => {
     browser.url('/raw/tests/terra-time-input/time-input/time-input/focus-blur');
