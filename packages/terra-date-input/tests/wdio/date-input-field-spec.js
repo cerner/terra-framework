@@ -436,6 +436,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
     });
   });
 
+/*
   describe('Date Input Field Year input keyboard operations', () => {
     describe('Year Input UP_ARROW increments year by 1 when year value is filled in', () => {
       before(() => {
@@ -451,7 +452,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
 
       Terra.it.matchesScreenshot();
     });
-/*
+
     describe('Year Input UP_ARROW increments year by 1 when year value is empty', () => {
       before(() => {
         browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
