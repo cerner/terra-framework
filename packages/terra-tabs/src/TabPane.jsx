@@ -51,7 +51,7 @@ const TabPane = ({
   isIconOnly,
   ...customProps
 }) => {
-  const attributes = Object.assign({}, customProps);
+  const attributes = { ...customProps };
   const paneClassNames = cx([
     'tab',
     { 'is-disabled': isDisabled },
