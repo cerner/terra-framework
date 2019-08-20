@@ -195,6 +195,22 @@ class DateTimeUtils {
   static convertDateTimeStringToMomentObject(date, time, dateformat, hasSeconds) {
     return DateTimeUtils.updateTime(DateUtil.createSafeDate(DateUtil.convertToISO8601(date, dateformat)), time, hasSeconds);
   }
+
+  /**
+   * Creates a moment object using the provided date string. Moment is unable to initialize a valid date if the date passed in is
+   * null, empty string, or alpha characters and undefined would be returned.
+   * @param {string|undefined} date - The date to convert. Expect to be in ISO format.
+   * @return {object|undefined} - The moment object. Undefined if unable to convert.
+   */
+  static createSafeDate(date) {
+    if (!date) {
+      return undefined;
+    }
+
+    const momentDate = moment(date);
+
+    return momentDate.isValid() ? momentDate : undefined;
+  }
 }
 
 DateTimeUtils.FORMAT_12_HOUR = TimeUtil.FORMAT_12_HOUR;

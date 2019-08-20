@@ -129,7 +129,7 @@ class DateTimePicker extends React.Component {
     super(props);
 
     this.state = {
-      dateTime: DateUtil.createSafeDate(props.value),
+      dateTime: DateTimeUtils.createSafeDate(props.value),
       isAmbiguousTime: false,
       isTimeClarificationOpen: false,
       dateFormat: DateUtil.getFormatByLocale(props.intl.locale),
@@ -168,7 +168,7 @@ class DateTimePicker extends React.Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.value !== prevState.prevPropsValue) {
       return {
-        dateTime: DateUtil.createSafeDate(nextProps.value),
+        dateTime: DateTimeUtils.createSafeDate(nextProps.value),
         prevPropsValue: nextProps.value,
       };
     }
@@ -310,7 +310,7 @@ class DateTimePicker extends React.Component {
     const isTimeValid = DateTimeUtils.isValidTime(this.timeValue, this.props.showSeconds);
 
     if (isDateValid) {
-      const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : DateUtil.createSafeDate(formattedDate);
+      const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : DateTimeUtils.createSafeDate(formattedDate);
       updatedDateTime = DateTimeUtils.syncDateTime(previousDateTime, date, this.timeValue, this.props.showSeconds);
 
       if (isTimeValid) {
@@ -443,7 +443,7 @@ class DateTimePicker extends React.Component {
   isDateTimeAcceptable(newDateTime) {
     let isAcceptable = true;
 
-    if (DateUtil.isDateOutOfRange(newDateTime, DateUtil.createSafeDate(this.props.minDate), DateUtil.createSafeDate(this.props.maxDate))) {
+    if (DateUtil.isDateOutOfRange(newDateTime, DateTimeUtils.createSafeDate(this.props.minDate), DateTimeUtils.createSafeDate(this.props.maxDate))) {
       isAcceptable = false;
     }
 
