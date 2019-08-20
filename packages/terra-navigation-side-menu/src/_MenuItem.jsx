@@ -117,7 +117,6 @@ class MenuItem extends React.Component {
       customProps.className,
     ]);
 
-    /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */
     return (
       <li
         className={cx('list-item')}
@@ -139,7 +138,6 @@ class MenuItem extends React.Component {
         </div>
       </li>
     );
-    /* eslint-enable jsx-ally/no-static-element-interactions */
   }
 }
 

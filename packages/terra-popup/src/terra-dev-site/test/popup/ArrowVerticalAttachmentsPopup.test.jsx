@@ -74,7 +74,9 @@ class AlignmentPopup extends React.Component {
             className={cx('popup-button')}
             onClick={this.handleButtonClick}
             ref={this.setButtonNode}
-          />
+          >
+            {''}
+          </button>
         </div>
         <p>Choose Content Attachment:</p>
         <button type="button" id="attach-Left" value="bottom left" onClick={this.handleAttachment}>Attach Bottom Left</button>

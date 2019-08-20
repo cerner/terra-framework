@@ -101,7 +101,7 @@ class DatePickerInput extends React.Component {
   }
 
   handleOnButtonClick(event) {
-    const attributes = Object.assign({}, this.props.inputAttributes);
+    const attributes = { ...this.props.inputAttributes };
 
     if (!attributes.readOnly && this.onCalendarButtonClick && this.props.onClick) {
       this.onCalendarButtonClick(event, this.props.onClick);
@@ -147,7 +147,7 @@ class DatePickerInput extends React.Component {
     delete customProps.onCalendarButtonClick;
     delete customProps.shouldShowPicker;
 
-    const additionalInputProps = Object.assign({}, customProps, inputAttributes);
+    const additionalInputProps = { ...customProps, ...inputAttributes };
 
     const dateValue = DateUtil.convertToISO8601(value, DateUtil.getFormatByLocale(intl.locale));
     const buttonText = intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });

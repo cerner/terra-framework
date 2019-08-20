@@ -160,7 +160,7 @@ class MenuItem extends React.Component {
 
     const { isGroupItem, isSelectableMenu } = this.context;
 
-    const attributes = Object.assign({}, customProps);
+    const attributes = { ...customProps };
     attributes.tabIndex = isDisabled ? '-1' : '0';
     attributes['aria-disabled'] = isDisabled;
 

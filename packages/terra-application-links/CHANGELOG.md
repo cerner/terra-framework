@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Removed unnecessary eslint disable comments
 
 6.9.0 - (August 14, 2019)
 ------------------
