@@ -436,11 +436,10 @@ Terra.describeViewports('Date Input', ['medium'], () => {
     });
   });
 
-/*
   describe('Date Input Field Year input keyboard operations', () => {
     describe('Year Input UP_ARROW increments year by 1 when year value is filled in', () => {
       before(() => {
-        browser.url('/raw/tests/terra-date-input/date-input/populated-date-input');
+        browser.url('/raw/tests/terra-date-input/date-input/populated-date-input-field');
         browser.refresh();
         // Removes the blinking cursor to prevent screenshot mismatches.
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
@@ -455,7 +454,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
 
     describe('Year Input UP_ARROW increments year by 1 when year value is empty', () => {
       before(() => {
-        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.url('/raw/tests/terra-date-input/date-input/default-date-input-field');
         browser.refresh();
         // Removes the blinking cursor to prevent screenshot mismatches.
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
@@ -470,7 +469,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
 
     describe('Year Input UP_ARROW is cycles to 1 when the year has reached 9999', () => {
       before(() => {
-        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.url('/raw/tests/terra-date-input/date-input/default-date-input-field');
         browser.refresh();
         // Removes the blinking cursor to prevent screenshot mismatches.
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
@@ -485,7 +484,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
 
     describe('Year Input DOWN_ARROW decrements year by 1 when year value is filled in', () => {
       before(() => {
-        browser.url('/raw/tests/terra-date-input/date-input/populated-date-input');
+        browser.url('/raw/tests/terra-date-input/date-input/populated-date-input-field');
         browser.refresh();
         // Removes the blinking cursor to prevent screenshot mismatches.
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
@@ -500,7 +499,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
 
     describe('Year Input DOWN_ARROW decrements year to 9999 when year value is empty', () => {
       before(() => {
-        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.url('/raw/tests/terra-date-input/date-input/default-date-input-field');
         browser.refresh();
         // Removes the blinking cursor to prevent screenshot mismatches.
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
@@ -515,7 +514,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
 
     describe('Year Input DOWN_ARROW cycles to 9999 when the year has reached 1', () => {
       before(() => {
-        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.url('/raw/tests/terra-date-input/date-input/default-date-input-field');
         browser.refresh();
         // Removes the blinking cursor to prevent screenshot mismatches.
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
@@ -530,7 +529,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
 
     describe('Year Input LEFT_ARROW shifts focus from year to day in month-day-year format if year value is empty', () => {
       before(() => {
-        browser.url('/raw/tests/terra-date-input/date-input/month-day-year-date-input');
+        browser.url('/raw/tests/terra-date-input/date-input/month-day-year-date-input-field');
         browser.refresh();
         // Removes the blinking cursor to prevent screenshot mismatches.
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
@@ -545,7 +544,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
 
     describe('Year Input LEFT_ARROW shifts focus from year to day in month-day-year format if cursor is in left most position in day input', () => {
       before(() => {
-        browser.url('/raw/tests/terra-date-input/date-input/month-day-year-date-input');
+        browser.url('/raw/tests/terra-date-input/date-input/month-day-year-date-input-field');
         browser.refresh();
         // Removes the blinking cursor to prevent screenshot mismatches.
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
@@ -563,7 +562,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
 
     describe('Year Input LEFT_ARROW shifts focus from year to month in day-month-year format if year value is empty', () => {
       before(() => {
-        browser.url('/raw/tests/terra-date-input/date-input/day-month-year-date-input');
+        browser.url('/raw/tests/terra-date-input/date-input/day-month-year-date-input-field');
         browser.refresh();
         // Removes the blinking cursor to prevent screenshot mismatches.
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
@@ -578,7 +577,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
 
     describe('Year Input LEFT_ARROW shifts focus from year to month in day-month-year format if cursor is in left most position in year input', () => {
       before(() => {
-        browser.url('/raw/tests/terra-date-input/date-input/day-month-year-date-input');
+        browser.url('/raw/tests/terra-date-input/date-input/day-month-year-date-input-field');
         browser.refresh();
         // Removes the blinking cursor to prevent screenshot mismatches.
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
@@ -596,7 +595,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
 
     describe('Year Input RIGHT_ARROW does not shift focus in month-day-year format', () => {
       before(() => {
-        browser.url('/raw/tests/terra-date-input/date-input/month-day-year-date-input');
+        browser.url('/raw/tests/terra-date-input/date-input/month-day-year-date-input-field');
         browser.refresh();
         // Removes the blinking cursor to prevent screenshot mismatches.
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
@@ -611,7 +610,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
 
     describe('Year Input RIGHT_ARROW does not shift focus in day-month-year format', () => {
       before(() => {
-        browser.url('/raw/tests/terra-date-input/date-input/day-month-year-date-input');
+        browser.url('/raw/tests/terra-date-input/date-input/day-month-year-date-input-field');
         browser.refresh();
         // Removes the blinking cursor to prevent screenshot mismatches.
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
@@ -626,7 +625,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
 
     describe('Year Input Pressing DELETE in year input with value clears the character', () => {
       before(() => {
-        browser.url('/raw/tests/terra-date-input/date-input/populated-date-input');
+        browser.url('/raw/tests/terra-date-input/date-input/populated-date-input-field');
         browser.refresh();
         // Removes the blinking cursor to prevent screenshot mismatches.
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
@@ -641,7 +640,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
 
     describe('Year Input Pressing DELETE in year input with no value shifts focus year to day in m-d-y format', () => {
       before(() => {
-        browser.url('/raw/tests/terra-date-input/date-input/month-day-year-date-input');
+        browser.url('/raw/tests/terra-date-input/date-input/month-day-year-date-input-field');
         browser.refresh();
         // Removes the blinking cursor to prevent screenshot mismatches.
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
@@ -656,7 +655,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
 
     describe('Year Input Pressing DELETE in year input with no value shifts focus year to month in d-m-y format', () => {
       before(() => {
-        browser.url('/raw/tests/terra-date-input/date-input/day-month-year-date-input');
+        browser.url('/raw/tests/terra-date-input/date-input/day-month-year-date-input-field');
         browser.refresh();
         // Removes the blinking cursor to prevent screenshot mismatches.
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
@@ -669,9 +668,6 @@ Terra.describeViewports('Date Input', ['medium'], () => {
       Terra.it.matchesScreenshot();
     });
   });
-
-
-  */
 
   describe('Date Input onBlur', () => {
     before(() => {
