@@ -4,7 +4,10 @@ ChangeLog
 Unreleased
 ----------
 ### Fixed
-* Fix JS error when losing focus from an empty date input. 
+* Fix JS error when losing focus from an empty date input.
+
+### Added
+* Added a function to DateTimeUtil.
 
 4.10.0 - (August 14, 2019)
 ------------------
