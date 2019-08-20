@@ -26,6 +26,10 @@
       width: 1rem;
     }
 
+    &.disabled {
+      opacity: 0.4;
+    }
+
     select {
       appearance: none;
       background: rgba(0, 0, 0, 0);
@@ -56,6 +60,11 @@
       // Hide the arrow in IE 10 and IE 11
       &::-ms-expand {
         display: none;
+      }
+
+      &:disabled {
+        background-color: rgba(111, 116, 119, 0.2);
+        border-color: #dedfe0;
       }
     }
   }
