@@ -732,7 +732,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
     Terra.it.matchesScreenshot();
   });
 
-  describe('Date Input prepends 0 on single digit day', () => {
+  describe('Date Input prepends 0 on single digit day onBlur', () => {
     before(() => {
       browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
       browser.refresh();
@@ -748,83 +748,34 @@ Terra.describeViewports('Date Input', ['medium'], () => {
     Terra.it.matchesScreenshot();
   });
 
-  describe('Date Input onBlur operations', () => {
-    describe('Triggers an onChange for onBlur on the month select', () => {
-      before(() => {
-        before(() => {
-          browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
-          browser.refresh();
-          // Removes the blinking cursor to prevent screenshot mismatches.
-          Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
-          Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
-
-          browser.click('select[name="terra-date-month-date-input"]');
-          browser.keys(['ArrowDown']);
-        });
-      });
-
-      Terra.it.matchesScreenshot();
-    });
-
-    describe('Triggers an onChange for onBlur on the day input', () => {
-      before(() => {
-        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
-        browser.refresh();
+  describe('Date Input onBlur', () => {
+    before(() => {
+      browser.url('/raw/tests/terra-date-input/date-input/focus-blur-date-input');
+      browser.click('select[name="terra-date-month-date-input"]');
+      browser.execute(() => {
         // Removes the blinking cursor to prevent screenshot mismatches.
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
-
-        browser.click('input[name="terra-date-day-date-input"]');
-        browser.keys('31');
+        expect(browser.getText('#blur-count')).to.equal('0');
+        expect(browser.getText('#focus-count')).to.equal('1');
       });
 
-      Terra.it.matchesScreenshot();
-    });
-
-    describe('Triggers an onChange for onBlur on the year input', () => {
-      before(() => {
-        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
-        browser.refresh();
-        // Removes the blinking cursor to prevent screenshot mismatches.
-        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
-        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
-
-        browser.click('input[name="terra-date-year-date-input"]');
-        browser.keys('1980');
+      it('tabs to the day input and onBlur is not triggered', () => {
+        browser.keys('Tab');
+        expect(browser.getText('#blur-count')).to.equal('0');
+        expect(browser.getText('#focus-count')).to.equal('1');
       });
 
-      Terra.it.matchesScreenshot();
-    });
+      it('tabs to the year and onBlur is not triggered', () => {
+        browser.keys('Tab');
+        expect(browser.getText('#blur-count')).to.equal('0');
+        expect(browser.getText('#focus-count')).to.equal('1');
+      });
 
-    describe('Date Input onBlur', () => {
-      before(() => {
-        browser.url('/raw/tests/terra-date-input/date-input/focus-blur-date-input');
-        browser.click('select[name="terra-date-month-date-input"]');
-        browser.execute(() => {
-          // Removes the blinking cursor to prevent screenshot mismatches.
-          Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
-          Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
-          expect(browser.getText('#blur-count')).to.equal('0');
-          expect(browser.getText('#focus-count')).to.equal('1');
-        });
-
-        it('tabs to the day input and onBlur is not triggered', () => {
-          browser.keys('Tab');
-          expect(browser.getText('#blur-count')).to.equal('0');
-          expect(browser.getText('#focus-count')).to.equal('1');
-        });
-
-        it('tabs to the year and onBlur is not triggered', () => {
-          browser.keys('Tab');
-          expect(browser.getText('#blur-count')).to.equal('0');
-          expect(browser.getText('#focus-count')).to.equal('1');
-        });
-
-        it('tabs out of the component and onBlur is triggered', () => {
-          browser.keys('Tab');
-          expect(browser.getText('#blur-count')).to.equal('1');
-          expect(browser.getText('#focus-count')).to.equal('1');
-        });
+      it('tabs out of the component and onBlur is triggered', () => {
+        browser.keys('Tab');
+        expect(browser.getText('#blur-count')).to.equal('1');
+        expect(browser.getText('#focus-count')).to.equal('1');
       });
     });
   });
