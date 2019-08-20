@@ -8,7 +8,7 @@ const Example = () => {
   const [isInvalid, setIsInvalid] = useState(false);
 
   return (
-    <React.Fragment>
+    <div>
       <DateInputField
         legend="Legend text"
         name="date-input"
@@ -21,7 +21,7 @@ const Example = () => {
       />
       <p>{`DateInputField Value: ${value}`}</p>
       <button type="button" onClick={() => setIsInvalid(invalid => !invalid)}>Toggle isInvalid</button>
-    </React.Fragment>
+    </div>
   );
 };
 

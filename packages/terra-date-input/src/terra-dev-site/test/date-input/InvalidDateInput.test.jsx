@@ -7,7 +7,7 @@ const Example = () => {
   const [value, setValue] = useState('oiug-kh-bg');
 
   return (
-    <React.Fragment>
+    <div>
       <DateInput
         id="dateInput"
         name="date-input"
@@ -15,7 +15,7 @@ const Example = () => {
         onChange={(event, dateString) => setValue(dateString)}
       />
       <p>{`DateInput Value: ${value}`}</p>
-    </React.Fragment>
+    </div>
   );
 };
 

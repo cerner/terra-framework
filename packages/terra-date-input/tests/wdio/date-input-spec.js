@@ -712,111 +712,86 @@ Terra.describeViewports('Date Input', ['medium'], () => {
     Terra.it.matchesScreenshot();
   });
 
+  describe('Date Input onBlur operations', () => {
+    describe('Triggers an onChange for onBlur on the month select', () => {
+      before(() => {
+        before(() => {
+          browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+          browser.refresh();
+          // Removes the blinking cursor to prevent screenshot mismatches.
+          Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+          Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
+          browser.click('select[name="terra-date-month-date-input"]');
+          browser.keys(['ArrowDown']);
+        });
+      });
 
-/*
-describe('Does not trigger onChange for an day with just one digit', () => {
-  before(() => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/on-change');
-    browser.refresh();
-    browser.execute(() => {
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+      Terra.it.matchesScreenshot();
     });
 
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
-    browser.keys('1223');
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
-    browser.keys(['ArrowLeft', 'ArrowRight', 'Delete']);
+    describe('Triggers an onChange for onBlur on the day input', () => {
+      before(() => {
+        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        browser.click('input[name="terra-date-day-date-input"]');
+        browser.keys('31');
+      });
+
+      Terra.it.matchesScreenshot();
+    });
+
+    describe('Triggers an onChange for onBlur on the year input', () => {
+      before(() => {
+        browser.url('/raw/tests/terra-date-input/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        browser.click('input[name="terra-date-year-date-input"]');
+        browser.keys('1980');
+      });
+
+      Terra.it.matchesScreenshot();
+    });
+
+    /*
+    describe('Date Input onBlur', () => {
+      before(() => {
+        browser.url('/raw/tests/terra-time-input/time-input/time-input/focus-blur');
+        browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+        browser.execute(() => {
+          // Removes the blinking cursor to prevent screenshot mismatches.
+          document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
+          document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
+          expect(browser.getText('#blur-count')).to.equal('0');
+          expect(browser.getText('#focus-count')).to.equal('1');
+        });
+
+        it('tabs to the minute input and onBlur is not triggered', () => {
+          browser.keys('Tab');
+          expect(browser.getText('#blur-count')).to.equal('0');
+          expect(browser.getText('#focus-count')).to.equal('1');
+        });
+
+        it('tabs to the meridiem and onBlur is not triggered', () => {
+          browser.keys('Tab');
+          expect(browser.getText('#blur-count')).to.equal('0');
+          expect(browser.getText('#focus-count')).to.equal('1');
+        });
+
+        it('tabs out of the component and onBlur is triggered', () => {
+          browser.keys('Tab');
+          expect(browser.getText('#blur-count')).to.equal('1');
+          expect(browser.getText('#focus-count')).to.equal('1');
+        });
+      });
+    });
+    */
   });
-
-  Terra.it.matchesScreenshot();
-});
-});
-
-describe('Date Input onBlur operations', () => {
-describe('Triggers an onChange for onBlur on the month select', () => {
-  before(() => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/on-change');
-    browser.refresh();
-    browser.execute(() => {
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-      document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-    });
-
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
-    browser.keys('747');
-  });
-
-  Terra.it.matchesScreenshot();
-});
-
-describe('Triggers an onChange for onBlur on the day input', () => {
-  before(() => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/on-change');
-    browser.refresh();
-    browser.execute(() => {
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-      document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-    });
-
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
-    browser.keys('747');
-  });
-
-  Terra.it.matchesScreenshot();
-});
-
-describe('Triggers an onChange for onBlur on the year input', () => {
-  before(() => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/on-change');
-    browser.refresh();
-    browser.execute(() => {
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-      document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-    });
-
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
-    browser.keys('747');
-  });
-
-  Terra.it.matchesScreenshot();
-});
-
-describe('Date Input onBlur', () => {
-  before(() => {
-    browser.url('/raw/tests/terra-time-input/time-input/time-input/focus-blur');
-    browser.click('#timeInput input[name="terra-time-hour-time-input"]');
-    browser.execute(() => {
-      // Removes the blinking cursor to prevent screenshot mismatches.
-      document.querySelector('#timeInput input[name="terra-time-hour-time-input"]').style.caretColor = 'transparent';
-      document.querySelector('#timeInput input[name="terra-time-minute-time-input"]').style.caretColor = 'transparent';
-      expect(browser.getText('#blur-count')).to.equal('0');
-      expect(browser.getText('#focus-count')).to.equal('1');
-    });
-
-    it('tabs to the minute input and onBlur is not triggered', () => {
-      browser.keys('Tab');
-      expect(browser.getText('#blur-count')).to.equal('0');
-      expect(browser.getText('#focus-count')).to.equal('1');
-    });
-
-    it('tabs to the meridiem and onBlur is not triggered', () => {
-      browser.keys('Tab');
-      expect(browser.getText('#blur-count')).to.equal('0');
-      expect(browser.getText('#focus-count')).to.equal('1');
-    });
-
-    it('tabs out of the component and onBlur is triggered', () => {
-      browser.keys('Tab');
-      expect(browser.getText('#blur-count')).to.equal('1');
-      expect(browser.getText('#focus-count')).to.equal('1');
-    });
-  });
-});
-});
-*/
 });
