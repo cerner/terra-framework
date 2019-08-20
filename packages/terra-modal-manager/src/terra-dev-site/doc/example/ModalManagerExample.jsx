@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
@@ -295,3 +296,4 @@ ModalManagerExample.propTypes = {
 };
 
 export default ModalManagerExample;
+/* eslint-enable max-classes-per-file */

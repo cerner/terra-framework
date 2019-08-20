@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Replaced Object.assign syntax with Object spread syntax
+
 ### Fixed
 * Fix JS error when losing focus from an empty date input. 
 
