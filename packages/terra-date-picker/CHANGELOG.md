@@ -3,11 +3,9 @@ Changelog
 
 Unreleased
 ----------
-### Breaking Changes
-* Now requires users to enter separators themselves such as '/' or '-' depending on format.
-
 ### Changed
 * Replaced Object.assign syntax with Object spread syntax
+* Now requires users to enter separators themselves such as '/' or '-' depending on format.
 
 4.10.0 - (August 14, 2019)
 ------------------
