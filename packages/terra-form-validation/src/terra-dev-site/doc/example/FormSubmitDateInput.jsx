@@ -40,7 +40,7 @@ const validateDate = (value) => {
 
   const splitValue = value.split('-');
   if (splitValue[0] < 2021) {
-    return 'Must be after before the year 2020';
+    return 'Year must be after the year 2020';
   }
 
   return undefined;
