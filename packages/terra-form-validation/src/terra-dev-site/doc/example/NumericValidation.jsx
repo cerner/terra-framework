@@ -89,8 +89,7 @@ export default class Example extends React.Component {
             <p>Form Submitted Successfully With</p>
             <pre>{JSON.stringify(this.state.submittedValues, 0, 2)}</pre>
           </div>
-          )
-        }
+          )}
       </Spacer>
     );
   }
