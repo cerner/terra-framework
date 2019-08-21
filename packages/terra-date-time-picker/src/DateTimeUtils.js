@@ -9,7 +9,7 @@ class DateTimeUtils {
    * @return {boolean} - True if the ISO string contains the time. False, otherwise.
    */
   static hasTime(iSODate) {
-    if (!DateUtil.createSafeDate(iSODate)) {
+    if (!DateTimeUtils.createSafeDate(iSODate)) {
       return false;
     }
 
@@ -193,7 +193,7 @@ class DateTimeUtils {
    * @return {object} - The moment object representing the given date and time.
    */
   static convertDateTimeStringToMomentObject(date, time, dateformat, hasSeconds) {
-    return DateTimeUtils.updateTime(DateUtil.createSafeDate(DateUtil.convertToISO8601(date, dateformat)), time, hasSeconds);
+    return DateTimeUtils.updateTime(DateTimeUtils.createSafeDate(DateUtil.convertToISO8601(date, dateformat)), time, hasSeconds);
   }
 
   /**
