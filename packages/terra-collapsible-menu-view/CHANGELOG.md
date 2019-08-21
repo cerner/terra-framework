@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Replaced Object.assign syntax with Object spread syntax
 
 6.9.0 - (August 14, 2019)
 ------------------
@@ -31,6 +33,7 @@ Unreleased
 * Added documentation on required peerDependencies
 
 ### Fixed
+* Fixed divider transition between normal and in-menu view.
 * Fixed Collapsible issue for single item group
 
 6.5.0 - (July 10, 2019)

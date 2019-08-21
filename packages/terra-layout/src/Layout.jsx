@@ -39,13 +39,14 @@ class Layout extends React.Component {
 
     const menuIsPresent = !!props.menu;
 
-    return Object.assign({}, currentState || {}, {
+    return {
+      ...currentState || {},
       isFixedMenu,
       isToggleMenu,
       menuIsPresent,
       menuIsOpen: menuIsPresent && (currentState.menuIsOpen || isFixedMenu),
       menuIsPinned: menuIsPresent && currentState.menuIsPinned,
-    });
+    };
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -168,8 +169,7 @@ class Layout extends React.Component {
               toggleMenu: shouldAllowMenuToggle ? this.toggleMenu : undefined,
               menuIsOpen,
             },
-          }) : null
-        }
+          }) : null}
       </ContentContainer>
     );
   }

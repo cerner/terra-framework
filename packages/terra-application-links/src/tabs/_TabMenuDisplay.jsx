@@ -116,7 +116,6 @@ class TabMenuDisplay extends React.Component {
     ]);
 
     return (
-      /* eslint-disable jsx-a11y/no-static-element-interactions */
       <div
         {...customProps}
         {...attributes}
@@ -137,7 +136,6 @@ class TabMenuDisplay extends React.Component {
         </div>
         {popup}
       </div>
-      /* eslint-enable jsx-ally/no-static-element-interactions */
     );
   }
 }

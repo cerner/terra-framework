@@ -252,16 +252,16 @@ class DateTimePicker extends React.Component {
 
       value = value.trim();
 
-      const tempDateTime = this.state.dateTime.clone();
+      const tempDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
       let iSOString = '';
 
-      if (isCompleteDateTime) {
+      if (isCompleteDateTime && tempDateTime) {
         iSOString = tempDateTime.format();
       }
 
       let isValid = false;
 
-      if (value === '' || (isCompleteDateTime && this.isDateTimeAcceptable(tempDateTime))) {
+      if (value === '' || (isCompleteDateTime && tempDateTime && this.isDateTimeAcceptable(tempDateTime))) {
         isValid = true;
       }
 
