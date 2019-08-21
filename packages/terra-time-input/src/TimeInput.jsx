@@ -719,9 +719,9 @@ class TimeInput extends React.Component {
       ...customProps
     } = this.props;
 
-    const instanceHoursAttrs = Object.assign({}, hourAttributes);
-    const instanceMinuteAttrs = Object.assign({}, minuteAttributes);
-    const instanceSecondAttrs = Object.assign({}, secondAttributes);
+    const instanceHoursAttrs = { ...hourAttributes };
+    const instanceMinuteAttrs = { ...minuteAttributes };
+    const instanceSecondAttrs = { ...secondAttributes };
 
     // Using the state of hour, minute, and second (if shown) create a time in UTC represented in ISO 8601 format.
     let timeValue = '';

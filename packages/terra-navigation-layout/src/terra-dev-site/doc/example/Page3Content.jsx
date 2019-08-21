@@ -18,8 +18,7 @@ const Page3Content = ({ layoutConfig }) => (
           >
             Toggle Menu
           </button>
-        )
-      }
+        )}
     </div>
   </div>
 );
