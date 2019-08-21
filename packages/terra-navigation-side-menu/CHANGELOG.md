@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+2.17.0 - (August 21, 2019)
+------------------
 ### Changed
 * Cleaned up ESLint comments
 
