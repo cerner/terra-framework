@@ -50,6 +50,5 @@
     "test": "npm run jest && npm run wdio",
     "jest": "jest --config ../../jestconfig.js",
     "wdio": "cd ../.. && npx wdio ./packages/$npm_package_name/wdio.conf.js"
-  },
-  "gitHead": "7981071c6f84a0cfdfbd21b81b36cd00ee0756c0"
+  }
 }

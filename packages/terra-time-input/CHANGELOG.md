@@ -7,6 +7,11 @@ Unreleased
 * Removed extra calls to hide the caret in inputs (some are still needed because `time-input` explicitly sets a `caret-color`).
 * Removed styles hiding carets on test pages when not running within WDIO
 
+4.8.0 - (August 21, 2019)
+------------------
+### Changed
+* Replaced Object.assign syntax with Object spread syntax
+
 4.7.0 - (August 14, 2019)
 ------------------
 ### Changed

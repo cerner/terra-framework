@@ -111,7 +111,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.moveToObject('#root', 0, 0);
     });
 
-    const ignoredDisabledAlly = Object.assign({ 'color-contrast': { enabled: false } }, ignoredA11y);
+    const ignoredDisabledAlly = { 'color-contrast': { enabled: false }, ...ignoredA11y };
     Terra.it.isAccessible({ rules: ignoredDisabledAlly });
     Terra.it.matchesScreenshot();
   });

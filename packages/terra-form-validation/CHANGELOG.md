@@ -4,6 +4,11 @@ ChangeLog
 Unreleased
 ----------
 
+1.7.0 - (August 21, 2019)
+------------------
+### Changed
+* Updated bracket formatting in test files to match eslint 6 rules.
+
 1.6.0 - (August 14, 2019)
 ------------------
 ### Changed
