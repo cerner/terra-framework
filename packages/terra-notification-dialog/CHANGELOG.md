@@ -3,7 +3,17 @@ Changelog
 
 Unreleased
 ----------
+
+3.10.0 - (August 21, 2019)
+------------------
 ### Changed
+* Updated bracket formatting in test files to match eslint 6 rules.
+
+3.9.0 - (August 14, 2019)
+------------------
+### Changed
+* Update wdio snapshots with new button focus outline styles
+* Updated to interface with react-intl's `FormattedMessage` rather than old React Context API.
 * updated package.json test scripts
 
 3.8.0 - (July 30, 2019)

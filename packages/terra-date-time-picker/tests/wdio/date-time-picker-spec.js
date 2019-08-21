@@ -111,7 +111,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.moveToObject('#root', 0, 0);
     });
 
-    const ignoredDisabledAlly = Object.assign({ 'color-contrast': { enabled: false } }, ignoredA11y);
+    const ignoredDisabledAlly = { 'color-contrast': { enabled: false }, ...ignoredA11y };
     Terra.it.isAccessible({ rules: ignoredDisabledAlly });
     Terra.it.matchesScreenshot();
   });
@@ -169,6 +169,23 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       expect(browser.getText('#iso')).to.equal('2019-05-01T10:10:00-05:00');
       expect(browser.getText('#input-value')).to.equal('05/01/2019 10:10');
       expect(browser.getText('#complete-date')).to.equal('Yes');
+      expect(browser.getText('#valid-date')).to.equal('Yes');
+    });
+  });
+
+  describe('OnBlur with empty date-time', () => {
+    before(() => {
+      browser.refresh();
+    });
+
+    it('is triggered ', () => {
+      browser.click('input[name="terra-time-minute-input"]');
+      browser.keys('Tab');
+      expect(browser.getText('#blur-count')).to.equal('1');
+      expect(browser.getText('#focus-count')).to.equal('1');
+      expect(browser.getText('#iso')).to.equal('');
+      expect(browser.getText('#input-value')).to.equal('');
+      expect(browser.getText('#complete-date')).to.equal('No');
       expect(browser.getText('#valid-date')).to.equal('Yes');
     });
   });
@@ -254,7 +271,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot({ selector: '[class="react-datepicker"]' });
+    Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
   });
 
   describe('Filtered Dates are Disabled', () => {
@@ -263,7 +280,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot({ selector: '[class="react-datepicker"]' });
+    Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
   });
 
   describe('Included Dates are Enabled', () => {
@@ -272,7 +289,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot({ selector: '[class="react-datepicker"]' });
+    Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
   });
 
   describe('OnSelect', () => {
@@ -284,7 +301,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
 
     it('Select a date from the picker', () => {
       browser.click('[class*="button"]');
-      browser.click('.react-datepicker__week > *:nth-child(2)');
+      browser.click('[class*="react-datepicker-week"] > *:nth-child(2)');
     });
 
     Terra.it.matchesScreenshot('1');

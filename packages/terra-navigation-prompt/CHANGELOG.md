@@ -3,6 +3,14 @@ Changelog
 
 Unreleased
 ----------
+
+1.9.0 - (August 21, 2019)
+------------------
+### Changed
+* Minor dependency version bump
+
+1.8.0 - (August 14, 2019)
+------------------
 ### Changed
 * updated package.json test scripts
 

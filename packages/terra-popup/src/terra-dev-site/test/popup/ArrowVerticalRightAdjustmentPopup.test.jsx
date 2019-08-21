@@ -73,7 +73,9 @@ class AlignmentPopup extends React.Component {
           className={cx('popup-button')}
           onClick={this.handleButtonClick}
           ref={this.setButtonNode}
-        />
+        >
+          {''}
+        </button>
       </div>
     );
   }

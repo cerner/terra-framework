@@ -109,7 +109,7 @@ class CollapsibleMenuViewItem extends React.Component {
     } = this.props;
 
     const { isCollapsibleGroupItem, isCollapsibleMenuItem } = this.context;
-    const attributes = Object.assign({}, customProps);
+    const attributes = { ...customProps };
     let item;
 
     if (isCollapsibleMenuItem) {

@@ -1,8 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import classNames from 'classnames/bind'
 import Week from './week'
 import * as utils from './date_utils'
+import styles from './stylesheets/datepicker.scss'
+
+const cx = classNames.bind(styles);
 
 const FIXED_HEIGHT_STANDARD_WEEK_COUNT = 6
 
@@ -166,7 +169,7 @@ export default class Month extends React.Component {
         startDate={this.props.startDate}
         endDate={this.props.endDate}
         dayClassName={this.props.dayClassName}
-        utcOffset={this.props.utcOffset}/>)
+        utcOffset={this.props.utcOffset} />)
 
       if (breakAfterNextPush) break
 
@@ -190,16 +193,13 @@ export default class Month extends React.Component {
     return weeks
   }
 
-  getClassNames = () => {
-    const { selectingDate, selectsStart, selectsEnd } = this.props
-    return classnames('react-datepicker__month', {
-      'react-datepicker__month--selecting-range': selectingDate && (selectsStart || selectsEnd)
-    })
-  }
-
-  render () {
+  render() {
+    const getClassNames = cx({
+      'react-datepicker-month': true,
+      'react-datepicker-month--selecting-range': this.props.selectingDate && (this.props.selectsStart || this.props.selectsEnd)
+    });
     return (
-      <div tabIndex="0" className={this.getClassNames()} onMouseLeave={this.handleMouseLeave} role="listbox">
+      <div tabIndex="0" className={getClassNames} onMouseLeave={this.handleMouseLeave} role="listbox">
         {this.renderWeeks()}
       </div>
     )

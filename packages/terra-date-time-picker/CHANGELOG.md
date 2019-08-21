@@ -3,14 +3,28 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.11.0 - (August 21, 2019)
+------------------
+### Changed
+* Replaced Object.assign syntax with Object spread syntax
+
+### Fixed
+* Fix JS error when losing focus from an empty date input. 
+
+4.10.0 - (August 14, 2019)
+------------------
 ### Fixed
 * Allow blur to be handled after the date time ambiguity is resolved.
 
 ### Changed
-
+* Updated package.json test scripts
+* Corrected Typos.
+* Updated wdio test to work with changes in terra-date-picker.
 * Fixed all the accessibility issues and updated the tests and screenshots accordingly.
 * Added documentation on required peerDependencies
 * updated package.json test scripts
+* Updated to interface with react-intl's context rather than old React Context API.
 
 4.9.0 - (July 30, 2019)
 ------------------

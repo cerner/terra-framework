@@ -37,8 +37,7 @@ const SimpleAggregatorItem = ({ name, aggregatorDelegate, ...customProps }) => (
         >
         Get Focus
         </button>
-      )
-    }
+      )}
     {aggregatorDelegate.hasFocus ? <h4>Section has focus!</h4> : null}
   </ContentContainer>
 );

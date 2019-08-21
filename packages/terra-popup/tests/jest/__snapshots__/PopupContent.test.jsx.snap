@@ -522,8 +522,10 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                             disabled={false}
                             onBlur={[Function]}
                             onClick={[MockFunction]}
+                            onFocus={[Function]}
                             onKeyDown={[Function]}
                             onKeyUp={[Function]}
+                            onMouseDown={[Function]}
                             title="Terra.popup.header.close"
                             type="button"
                           >

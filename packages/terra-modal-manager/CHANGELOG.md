@@ -3,6 +3,14 @@ Changelog
 
 Unreleased
 ----------
+
+6.10.0 - (August 21, 2019)
+------------------
+### Changed
+* Disabled max-classes-per-file eslint rule in doc example
+
+6.9.0 - (August 14, 2019)
+------------------
 ### Changed
 * updated package.json test scripts
 
