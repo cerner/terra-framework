@@ -6,6 +6,8 @@ Unreleased
 ### Fixed
 * Now requires users to enter separators themselves such as '/' or '-' depending on format.
 
+4.11.0 - (August 21, 2019)
+------------------
 ### Changed
 * Replaced Object.assign syntax with Object spread syntax
 

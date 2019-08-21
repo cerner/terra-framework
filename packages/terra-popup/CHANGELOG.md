@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+6.10.0 - (August 21, 2019)
+------------------
 ### Changed
 * Cleaned up lint in test files
 
