@@ -15,6 +15,11 @@ class DateInputUtil {
    * @return {String} Returns a string representation of the value of the passed in day after it's incremented
    */
   static incrementDay(day) {
+    // Handle empty input value
+    if (day === '') {
+      return '01';
+    }
+
     if (day) {
       let numericDay = Number(day);
 
@@ -40,6 +45,11 @@ class DateInputUtil {
    * @return {String} Returns a string representation of the value of the passed in day after it's decremented
    */
   static decrementDay(day) {
+    // Handle empty input value
+    if (day === '') {
+      return '31';
+    }
+
     if (day) {
       let numericDay = Number(day);
 
@@ -65,6 +75,11 @@ class DateInputUtil {
    * @return {String} Returns a string representation of the value of the passed in day after it's incremented
    */
   static incrementYear(year) {
+    // Handle empty input value
+    if (year === '') {
+      return '1';
+    }
+
     if (year) {
       let numericYear = Number(year);
 
@@ -90,6 +105,11 @@ class DateInputUtil {
    * @return {String} Returns a string representation of the value of the passed in year after it's decremented
    */
   static decrementYear(year) {
+    // Handle empty input value
+    if (year === '') {
+      return '9999';
+    }
+
     if (year) {
       let numericYear = Number(year);
 
@@ -170,7 +190,7 @@ class DateInputUtil {
   static splitYear(value) {
     if (typeof (value) === 'string') {
       const splitValue = value.split('-');
-      if (splitValue.length) {
+      if (splitValue.length && !Number.isNaN(parseFloat(splitValue[0]))) {
         return splitValue[0];
       }
 
