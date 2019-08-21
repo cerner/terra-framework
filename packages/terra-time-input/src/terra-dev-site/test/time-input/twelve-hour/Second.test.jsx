@@ -3,8 +3,6 @@ import classNames from 'classnames/bind';
 import TimeInput from '../../../../TimeInput';
 import TimeUtil from '../../../../TimeUtil';
 
-const cx = classNames.bind(styles);
-
 class TimeInputDefault extends React.Component {
   constructor(props) {
     super(props);
