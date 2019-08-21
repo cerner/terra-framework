@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import TimeInput from '../../../../TimeInput';
 import TimeUtil from '../../../../TimeUtil';
-import styles from '../time-input/time-input.test.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -26,15 +25,13 @@ Time Input:
             {this.state.input}
           </h3>
         </div>
-        <div className={cx(['content-wrapper'])}>
-          <TimeInput
-            id="timeInput"
-            name="time-input"
-            onChange={this.handleOnChange}
-            variant={TimeUtil.FORMAT_12_HOUR}
-            showSeconds
-          />
-        </div>
+        <TimeInput
+          id="timeInput"
+          name="time-input"
+          onChange={this.handleOnChange}
+          variant={TimeUtil.FORMAT_12_HOUR}
+          showSeconds
+        />
       </div>
     );
   }
