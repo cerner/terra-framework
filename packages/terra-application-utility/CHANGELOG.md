@@ -14,6 +14,7 @@ Unreleased
 ### Changed
 * Update tests for dev-site v6
 * updated package.json test scripts
+* Updated utility button text
 
 2.18.0 - (July 30, 2019)
 ------------------
