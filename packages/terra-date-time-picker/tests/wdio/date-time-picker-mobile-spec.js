@@ -117,15 +117,4 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
 
     Terra.it.validatesElement();
   });
-
-  describe('Date Time Picker Twelve Hour Mobile - Focus Second Styles', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-12-hour-mobile');
-      Terra.hideInputCaret('input[name="terra-time-second-input"]');
-
-      browser.click('input[name="terra-time-second-input"]');
-    });
-
-    Terra.it.validatesElement();
-  });
 });
