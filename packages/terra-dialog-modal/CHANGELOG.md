@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+#Fixed
+* Fixed missing documentation for props
 
 3.11.0 - (August 21, 2019)
 ------------------
