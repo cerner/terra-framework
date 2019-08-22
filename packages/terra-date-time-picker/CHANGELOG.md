@@ -15,6 +15,10 @@ Unreleased
 ### Added
 * Added a function to DateTimeUtil.
 
+### Removed
+* Removed extra calls to hide the caret in inputs (some are still needed because `terra-time-input` explicitly sets a `caret-color`).
+* Removed styles hiding carets on test pages when not running within WDIO
+
 4.10.0 - (August 14, 2019)
 ------------------
 ### Fixed
