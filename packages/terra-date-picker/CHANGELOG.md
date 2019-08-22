@@ -32,6 +32,9 @@ Unreleased
 * Update tests for dev-site v6
 * Explicitly pull in Error icon from terra-icon instead of pulling from terra-form-field
 
+### Removed
+* Removed unneeded calls to hide the caret in inputs because `terra-toolkit` now does so automatically.
+
 4.8.1 - (July 23, 2019)
 ------------------
 ### Changed
