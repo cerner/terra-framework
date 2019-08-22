@@ -3,9 +3,6 @@ ChangeLog
 
 Unreleased
 ----------
-### Removed
-* Removed extra calls to hide the caret in inputs (some are still needed because `terra-time-input` explicitly sets a `caret-color`).
-* Removed styles hiding carets on test pages when not running within WDIO
 
 4.11.0 - (August 21, 2019)
 ------------------
@@ -14,6 +11,10 @@ Unreleased
 
 ### Fixed
 * Fix JS error when losing focus from an empty date input. 
+
+### Removed
+* Removed extra calls to hide the caret in inputs (some are still needed because `terra-time-input` explicitly sets a `caret-color`).
+* Removed styles hiding carets on test pages when not running within WDIO
 
 4.10.0 - (August 14, 2019)
 ------------------
