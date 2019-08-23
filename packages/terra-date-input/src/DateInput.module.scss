@@ -6,41 +6,59 @@
   }
 
   .date-input-month-wrapper {
-    background-color: #fff;
+    background-color: var(--terra-date-input-month-background-color, #fff);
+    background-image: var(--terra-date-input-month-background-image);
+    background-position: var(--terra-date-input-month-background-position);
+    background-repeat: var(--terra-date-input-month-background-repeat);
+    background-size: var(--terra-date-input-month-background-size);
+    border-radius: var(--terra-date-input-month-border-radius, 3px);
     display: inline-block;
     position: relative;
+    transition-duration: var(--terra-date-input-month-transition-duration);
+    transition-property: background-size;
+    transition-timing-function: var(--terra-date-input-month-transition-timing-function);
 
     &::after {
-      background: inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path d="M48 12L24 36 0 12h48z"/></svg>');
+      background-image: var(--terra-date-input-month-after-arrow-icon-background-image, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path d="M48 12L24 36 0 12h48z"/></svg>'));
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
       content: '';
       display: inline-block; // IE 10
-      height: 0.715rem;
+      height: var(--terra-date-input-month-after-arrow-icon-height, 0.715rem);
       margin-top: -0.3rem;
-      pointer-events: none;
+      pointer-events: none; // TODO - see if this is actually needed
       position: absolute;
       right: 0.7em;
       top: 50%;
-      width: 1rem;
+      width: var(--terra-date-input-month-after-arrow-icon-width, 1rem);
+    }
+
+    &.focused {
+      background-size: var(--terra-date-input-month-focus-background-size);
     }
 
     &.disabled {
-      opacity: 0.4;
+      opacity: var(--terra-date-input-month-disabled-opacity, 0.4);
     }
 
     select {
       appearance: none;
-      background: rgba(0, 0, 0, 0);
-      border: 1px solid #dedfe0;
+      background-color: rgba(0, 0, 0, 0);
+      border-color: var(--terra-date-input-month-select-border-color, #dedfe0);
       border-radius: 3px;
+      border-style: var(--terra-date-input-month-select-border-style, solid);
+      border-width: var(--terra-date-input-month-select-border-width, 1px);
+      color: var(--terra-date-input-month-select-color);
       cursor: pointer;
-      font-size: 1.143rem; // 16px allows correct zoom on iOS
-      height: 2.143rem; // 30px
+      font-size: var(--terra-date-input-month-select-font-size, 1.143rem); // 16px allows correct zoom on iOS
+      height: var(--terra-date-input-month-select-height, 2.143rem); // 30px
       margin: 0 2rem 0 0;
       outline: 0;
-      padding: 0 0.3571rem;
+      padding-bottom: var(--terra-date-input-month-select-padding-bottom, 0);
+      padding-left: var(--terra-date-input-month-select-padding-left, 0.3571rem);
+      padding-right: var(--terra-date-input-month-select-padding-right, 0.3571rem);
+      padding-top: var(--terra-date-input-month-select-padding-top, 0);
       width: 100%;
 
       // Undo the Firefox inner focus ring
@@ -53,7 +71,9 @@
       /* stylelint-disable selector-no-qualifying-type */
       &:focus,
       &.is-focused {
-        border: 1px solid #4cb2e9;
+        border-color: var(--terra-date-input-month-select-focus-border-color, #4cb2e9);
+        color: var(--terra-date-input-month-select-focus-color);
+        outline: 0;
       }
       /* stylelint-enable selector-no-qualifying-type */
 
@@ -63,9 +83,16 @@
       }
 
       &:disabled {
-        background-color: rgba(111, 116, 119, 0.2);
-        border-color: #dedfe0;
+        background-color: var(--terra-date-input-month-select-disabled-background-color, rgba(111, 116, 119, 0.2));
+        border-color: var(--terra-date-input-month-select-disabled-border-color, #dedfe0);
       }
+
+      /* stylelint-disable selector-no-qualifying-type */
+      &.is-placeholder {
+        color: var(--terra-date-input-month-select-placeholder-color);
+        font-style: var(--terra-date-input-month-select-placeholder-font-style);
+      }
+      /* stylelint-enable selector-no-qualifying-type */
     }
   }
 

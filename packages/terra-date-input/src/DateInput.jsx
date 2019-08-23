@@ -467,12 +467,12 @@ class DateInput extends React.Component {
    */
   monthRender() {
     return (
-      <div className={cx('date-input-month-wrapper', { disabled: this.props.disabled })}>
+      <div className={cx('date-input-month-wrapper', { focused: this.state.monthIsFocused }, { disabled: this.props.disabled })}>
         <select
           {...this.props.monthAttributes}
           aria-label={this.props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' })}
           ref={this.monthRef}
-          className={cx('date-input-month', { 'is-focused': this.state.monthIsFocused })}
+          className={cx('date-input-month', { 'is-focused': this.state.monthIsFocused }, { 'is-placeholder': this.state.month === '' })}
           value={this.state.month}
           name={'terra-date-month-'.concat(this.props.name)}
           onChange={this.handleMonthChange}
