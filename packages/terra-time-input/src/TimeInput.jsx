@@ -644,7 +644,7 @@ class TimeInput extends React.Component {
       ...customProps
     } = this.props;
 
-    // Using the state of hour and minute create a time in UTC represented in ISO 8601 format.
+    // Using the state of hour, minute, and second (if shown) create a time in UTC represented in ISO 8601 format.
     let timeValue = '';
 
     if (this.state.hour.length > 0 || this.state.minute.length > 0 || (this.state.second.length > 0 && showSeconds)) {

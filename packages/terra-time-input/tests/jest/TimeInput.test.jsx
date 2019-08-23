@@ -1,4 +1,4 @@
-/* globals spyOn jest */
+/* globals spyOn */
 
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */

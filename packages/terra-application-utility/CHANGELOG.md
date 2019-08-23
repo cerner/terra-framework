@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+2.20.0 - (August 21, 2019)
+------------------
+### Changed
+* Updated utility button text
+
 2.19.0 - (August 14, 2019)
 ------------------
 ### Changed

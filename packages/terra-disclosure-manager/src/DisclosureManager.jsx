@@ -16,7 +16,7 @@ const availableDisclosureSizes = {
   FULLSCREEN: 'fullscreen',
 };
 
-const arrayReducer = (mappingObject, value) => Object.assign({ [`${value}`]: value }, mappingObject);
+const arrayReducer = (mappingObject, value) => ({ [`${value}`]: value, ...mappingObject });
 const availableDisclosureHeights = [240, 420, 600, 690, 780, 870, 960, 1140].reduce(arrayReducer, {});
 const availableDisclosureWidths = [320, 480, 560, 640, 800, 960, 1120, 1280, 1440, 1600, 1760, 1920].reduce(arrayReducer, {});
 
@@ -65,9 +65,9 @@ class DisclosureManager extends React.Component {
    * Clones the current disclosure component state objects and returns the structure for further mutation.
    */
   static cloneDisclosureState(state) {
-    const newState = Object.assign({}, state);
+    const newState = { ...state };
     newState.disclosureComponentKeys = Object.assign([], newState.disclosureComponentKeys);
-    newState.disclosureComponentData = Object.assign({}, newState.disclosureComponentData);
+    newState.disclosureComponentData = { ...newState.disclosureComponentData };
     newState.disclosureComponentDelegates = Object.assign([], newState.disclosureComponentDelegates);
 
     return newState;
@@ -121,9 +121,7 @@ class DisclosureManager extends React.Component {
           disclosureComponentData: {
             ...state.disclosureComponentData,
             ...{
-              [key]: Object.assign({}, state.disclosureComponentData[key], {
-                headerAdapterData: { title, collapsibleMenuView },
-              }),
+              [key]: { ...state.disclosureComponentData[key], headerAdapterData: { title, collapsibleMenuView } },
             },
           },
         }));

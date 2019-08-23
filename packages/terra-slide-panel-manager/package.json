@@ -1,7 +1,7 @@
 {
   "name": "terra-slide-panel-manager",
   "main": "lib/SlidePanelManager.js",
-  "version": "5.8.0",
+  "version": "5.9.0",
   "description": "A DisclosureManager implementation that presents disclosed content using a SlidePanel.",
   "repository": {
     "type": "git",
@@ -33,10 +33,10 @@
     "terra-action-header": "^2.0.0",
     "terra-content-container": "^3.0.0",
     "terra-slide-group": "^4.7.0",
-    "terra-slide-panel": "^3.12.0"
+    "terra-slide-panel": "^3.13.0"
   },
   "devDependencies": {
-    "terra-collapsible-menu-view": "^6.9.0",
+    "terra-collapsible-menu-view": "^6.10.0",
     "terra-doc-template": "^2.2.0"
   },
   "scripts": {
@@ -48,6 +48,5 @@
     "test": "npm run jest && npm run wdio",
     "jest": "jest --config ../../jestconfig.js",
     "wdio": "cd ../.. && npx wdio ./packages/$npm_package_name/wdio.conf.js"
-  },
-  "gitHead": "7981071c6f84a0cfdfbd21b81b36cd00ee0756c0"
+  }
 }

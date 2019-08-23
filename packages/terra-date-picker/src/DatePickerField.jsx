@@ -206,7 +206,7 @@ const DatePickerField = (props) => {
 
   let mergedInputAttrs = inputAttributes;
   if (ariaDescriptionIds) {
-    mergedInputAttrs = Object.assign({ 'aria-describedby': ariaDescriptionIds }, inputAttributes);
+    mergedInputAttrs = { 'aria-describedby': ariaDescriptionIds, ...inputAttributes };
   }
 
   return (

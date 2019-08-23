@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+4.10.0 - (August 21, 2019)
+------------------
+### Changed
+* Replaced Object.assign syntax with Object spread syntax
+
 4.9.0 - (August 14, 2019)
 ------------------
 ### Changed

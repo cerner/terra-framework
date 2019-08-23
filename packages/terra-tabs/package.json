@@ -1,7 +1,7 @@
 {
   "name": "terra-tabs",
   "main": "lib/Tabs.js",
-  "version": "6.9.0",
+  "version": "6.10.0",
   "description": "Tabs are containers used to organize content. They allow for quick switching between groups of contextually related content. Content is divided into different containers and each container is viewable one at a time. The user can switch between containers by selecting the corresponding tab control. Tabs are meant for organizing content that doesn’t need to be compared or accessed simultaneously or if the user needs quick access through a group of contextually related content. Tabs are not intended for navigation.",
   "repository": {
     "type": "git",
@@ -32,7 +32,7 @@
     "resize-observer-polyfill": "^1.4.1",
     "terra-content-container": "^3.0.0",
     "terra-icon": "^3.1.0",
-    "terra-menu": "^6.9.0",
+    "terra-menu": "^6.10.0",
     "terra-responsive-element": "^5.0.0"
   },
   "devDependencies": {
@@ -47,6 +47,5 @@
     "test": "npm run jest && npm run wdio",
     "jest": "jest --config ../../jestconfig.js",
     "wdio": "cd ../.. && npx wdio ./packages/$npm_package_name/wdio.conf.js"
-  },
-  "gitHead": "7981071c6f84a0cfdfbd21b81b36cd00ee0756c0"
+  }
 }
