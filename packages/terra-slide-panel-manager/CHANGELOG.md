@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+5.9.0 - (August 21, 2019)
+------------------
 ### Changed
 * Disabled max-classes-per-file eslint rule in doc example
 
