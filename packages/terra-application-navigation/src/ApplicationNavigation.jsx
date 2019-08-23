@@ -269,6 +269,8 @@ const ApplicationNavigation = ({
         isDrawerMenuOpen={drawerMenuIsOpen}
         utilityItems={utilityItems}
         activeNavigationItemKey={activeNavigationItemKey}
+        userConfig={userConfig}
+        hero={hero}
         onSelectNavigationItem={generateFocusMain(onSelectNavigationItem)}
         onSelectUtilityItem={onSelectUtilityItem}
         onSelectSettings={onSelectSettings}
@@ -294,6 +296,11 @@ const ApplicationNavigation = ({
         notifications={notifications}
         utilityButtonPopupAnchorRef={utilityButtonPopupAnchorRef}
         onSelectUtilityButton={() => setPopupMenuIsOpen(true)}
+        hero={hero}
+        utilityItems={utilityItems}
+        onSelectSettings={onSelectSettings}
+        onSelectHelp={onSelectHelp}
+        onSelectLogout={onSelectLogout}
       />
     );
   }
