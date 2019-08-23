@@ -37,7 +37,7 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
   });
 
   describe('Utilities should display properly when only help, settings or logout utilities are present', () => {
-    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/NoCustomUtilityItems'));
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/no-custom-utility-items'));
 
     it('launch popup', () => {
       browser.click('[data-application-header-utility="true"]');
@@ -49,7 +49,7 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
   });
 
   describe('Utilities should display properly when only custom utility items are specified', () => {
-    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/OnlyCustomUtilityItems'));
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/only-custom-utility-items'));
 
     it('launch popup', () => {
       browser.click('[data-application-header-utility="true"]');
@@ -123,7 +123,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
   });
 
   describe('Nav drawer button should be displayed when only help, settings or logout utilities are present', () => {
-    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/NoCustomUtilityItems'));
+    before(() => browser.url('/raw/tests/terra-application-navigation/application-navigation/no-custom-utility-items'));
 
     it('open drawer', () => {
       browser.waitForVisible('[data-compact-header-toggle="true"]');
@@ -135,7 +135,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
   });
 
   describe('Nav drawer button should be displayed when only custom utility items are specified', () => {
-    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/OnlyCustomUtilityItems'));
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/only-custom-utility-items'));
 
     it('open drawer', () => {
       browser.waitForVisible('[data-compact-header-toggle="true"]');
