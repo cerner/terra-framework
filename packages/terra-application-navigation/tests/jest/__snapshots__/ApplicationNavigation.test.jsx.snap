@@ -26,6 +26,7 @@ exports[`ApplicationNavigation should render default element 1`] = `
           "current": undefined,
         }
       }
+      utilityItems={Array []}
     />
     <main
       aria-labelledby={null}
@@ -97,6 +98,11 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
           },
         ]
       }
+      hero={
+        <div>
+          my test hero
+        </div>
+      }
       navigationItems={
         Array [
           Object {
@@ -112,7 +118,10 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
         }
       }
       onSelectExtensionItem={[MockFunction]}
+      onSelectHelp={[MockFunction]}
+      onSelectLogout={[MockFunction]}
       onSelectNavigationItem={[Function]}
+      onSelectSettings={[MockFunction]}
       onSelectSkipToContent={[Function]}
       onSelectUtilityButton={[Function]}
       titleConfig={
@@ -132,6 +141,17 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
         Object {
           "current": undefined,
         }
+      }
+      utilityItems={
+        Array [
+          Object {
+            "icon": <span>
+              my icon
+            </span>,
+            "key": "my-test-key-2",
+            "text": "test-text-2",
+          },
+        ]
       }
     />
     <main
@@ -305,6 +325,11 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
           },
         ]
       }
+      hero={
+        <div>
+          my test hero
+        </div>
+      }
       isDrawerMenuOpen={false}
       navigationItems={
         Array [
@@ -330,6 +355,14 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
       titleConfig={
         Object {
           "title": "test-title",
+        }
+      }
+      userConfig={
+        Object {
+          "detail": "user-detail",
+          "imageSrc": "user-src",
+          "initials": "user-initials",
+          "name": "user-name",
         }
       }
       utilityItems={
