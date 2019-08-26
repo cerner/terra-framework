@@ -13,11 +13,11 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       value=""
     />
     <div
-      class="date-input-month-wrapper"
+      class="month-select-wrapper"
     >
       <select
         aria-label="Terra.date.input.monthLabel"
-        class="date-input-month"
+        class="month-select is-placeholder"
         name="terra-date-month-date-input"
       >
         <option
@@ -125,11 +125,11 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       value=""
     />
     <div
-      class="date-input-month-wrapper"
+      class="month-select-wrapper"
     >
       <select
         aria-label="Terra.date.input.monthLabel"
-        class="date-input-month"
+        class="month-select is-placeholder"
         name="terra-date-month-date-input-2"
       >
         <option
@@ -237,11 +237,11 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       value=""
     />
     <div
-      class="date-input-month-wrapper"
+      class="month-select-wrapper"
     >
       <select
         aria-label="Terra.date.input.monthLabel"
-        class="date-input-month"
+        class="month-select is-placeholder"
         name="terra-date-month-date-input-3"
       >
         <option
@@ -353,11 +353,11 @@ exports[`DateInput should render a date input with a default date 1`] = `
     value="2000-07-04"
   />
   <div
-    className="date-input-month-wrapper"
+    className="month-select-wrapper"
   >
     <select
       aria-label="Terra.date.input.monthLabel"
-      className="date-input-month"
+      className="month-select"
       disabled={false}
       name="terra-date-month-date-input"
       onBlur={[Function]}
@@ -506,11 +506,11 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
     value=""
   />
   <div
-    className="date-input-month-wrapper"
+    className="month-select-wrapper"
   >
     <select
       aria-label="Terra.date.input.monthLabel"
-      className="date-input-month"
+      className="month-select is-placeholder"
       disabled={false}
       name="terra-date-month-date-input"
       onBlur={[Function]}
@@ -654,11 +654,11 @@ exports[`DateInput should render a date input with onBlur 1`] = `
     value=""
   />
   <div
-    className="date-input-month-wrapper"
+    className="month-select-wrapper"
   >
     <select
       aria-label="Terra.date.input.monthLabel"
-      className="date-input-month"
+      className="month-select is-placeholder"
       disabled={false}
       name="terra-date-month-date-input"
       onBlur={[Function]}
@@ -802,11 +802,11 @@ exports[`DateInput should render a date input with onChange 1`] = `
     value=""
   />
   <div
-    className="date-input-month-wrapper"
+    className="month-select-wrapper"
   >
     <select
       aria-label="Terra.date.input.monthLabel"
-      className="date-input-month"
+      className="month-select is-placeholder"
       disabled={false}
       name="terra-date-month-date-input"
       onBlur={[Function]}
@@ -950,11 +950,11 @@ exports[`DateInput should render a date input with onFocus 1`] = `
     value=""
   />
   <div
-    className="date-input-month-wrapper"
+    className="month-select-wrapper"
   >
     <select
       aria-label="Terra.date.input.monthLabel"
-      className="date-input-month"
+      className="month-select is-placeholder"
       disabled={false}
       name="terra-date-month-date-input"
       onBlur={[Function]}
@@ -1098,11 +1098,11 @@ exports[`DateInput should render a default date input 1`] = `
     value=""
   />
   <div
-    className="date-input-month-wrapper"
+    className="month-select-wrapper"
   >
     <select
       aria-label="Terra.date.input.monthLabel"
-      className="date-input-month"
+      className="month-select is-placeholder"
       disabled={false}
       name="terra-date-month-date-input"
       onBlur={[Function]}
@@ -1246,11 +1246,11 @@ exports[`DateInput should render a disabled time input 1`] = `
     value=""
   />
   <div
-    className="date-input-month-wrapper disabled"
+    className="month-select-wrapper disabled"
   >
     <select
       aria-label="Terra.date.input.monthLabel"
-      className="date-input-month"
+      className="month-select is-placeholder"
       disabled={true}
       name="terra-date-month-date-input"
       onBlur={[Function]}
