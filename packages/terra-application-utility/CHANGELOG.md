@@ -7,7 +7,7 @@ Unreleased
 2.20.0 - (August 21, 2019)
 ------------------
 ### Changed
-* Minor dependency version bump
+* Updated utility button text
 
 2.19.0 - (August 14, 2019)
 ------------------

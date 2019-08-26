@@ -1,10 +1,6 @@
 import React from 'react';
-import classNames from 'classnames/bind';
 import TimeInput from '../../../../TimeInput';
 import TimeUtil from '../../../../TimeUtil';
-import styles from '../time-input/time-input.test.module.scss';
-
-const cx = classNames.bind(styles);
 
 export default class TimeInputElement extends React.Component {
   constructor(props) {
@@ -36,7 +32,7 @@ export default class TimeInputElement extends React.Component {
 
   render() {
     return (
-      <div className={cx('content-wrapper')}>
+      <>
         <h3>Empty Time Input</h3>
         <TimeInput
           id="timeInput"
@@ -80,7 +76,7 @@ export default class TimeInputElement extends React.Component {
           variant={TimeUtil.FORMAT_12_HOUR}
           showSeconds
         />
-      </div>
+      </>
     );
   }
 }
