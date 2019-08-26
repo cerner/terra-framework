@@ -105,7 +105,7 @@
 
     /* stylelint-disable selector-no-qualifying-type */
     &.is-placeholder {
-      color: var(--terra-date-input-month-select-placeholder-color);
+      color: var(--terra-date-input-month-select-placeholder-color, #70787c);
       font-style: var(--terra-date-input-month-select-placeholder-font-style);
     }
     /* stylelint-enable selector-no-qualifying-type */
@@ -113,7 +113,9 @@
     // .is-focused needed for Safari Mobile
     /* stylelint-disable selector-no-qualifying-type */
     &:focus,
-    &.is-focused {
+    &.is-focused,
+    &:focus:hover,
+    &.is-focused:hover {
       border: var(--terra-date-input-month-select-focus-border, 1px solid #4cb2e9);
       color: var(--terra-date-input-month-select-focus-color);
       outline: 0;
@@ -121,7 +123,7 @@
     /* stylelint-enable selector-no-qualifying-type */
 
     &:hover {
-      border: var(--terra-date-input-month-select-hover-border);
+      border: var(--terra-date-input-month-select-hover-border, 1px solid #dedfe0);
       color: var(--terra-date-input-month-select-hover-color);
     }
   }
