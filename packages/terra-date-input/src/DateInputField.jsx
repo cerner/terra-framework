@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames/bind';
 import uniqueid from 'lodash.uniqueid';
+import IconError from 'terra-icon/lib/icon/IconError';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 
 import DateInput from './DateInput';
@@ -187,7 +188,7 @@ const DateInputField = (props) => {
   const legendGroup = (
     <legend id={legendAriaDescriptionId} className={cx(['legend-group', { 'legend-group-hidden': isLegendHidden }])}>
       <div {...legendAttributes} className={legendClassNames}>
-        {isInvalid && <span className={cx('error-icon')} />}
+        {isInvalid && <span className={cx('error-icon')}><IconError /></span>}
         {required && (isInvalid || !hideRequired) && (
           <React.Fragment>
             <div aria-hidden="true" className={cx('required')}>*</div>
@@ -224,6 +225,7 @@ const DateInputField = (props) => {
         value={value}
         displayFormat={displayFormat}
         disabled={disabled}
+        isInvalid={isInvalid}
         monthAttributes={{ ...monthAttributes, ...{ 'aria-describedby': monthAriaDesciptionIds } }}
         dayAttributes={{ ...dayAttributes, ...{ 'aria-describedby': dayAriaDesciptionIds } }}
         yearAttributes={{ ...yearAttributes, ...{ 'aria-describedby': yearAriaDesciptionIds } }}

@@ -35,6 +35,10 @@ const propTypes = {
    */
   intl: intlShape,
   /**
+  * Whether or not the date input is 'form-error'.
+  */
+  isInvalid: PropTypes.bool,
+  /**
    * Custom input attributes to apply to the month select
    */
   // eslint-disable-next-line react/forbid-prop-types
@@ -466,13 +470,20 @@ class DateInput extends React.Component {
    * Renders month input
    */
   monthRender() {
+    const DateInputMonthWrapperClassNames = cx([
+      'month-select-wrapper',
+      { focused: this.state.monthIsFocused },
+      { disabled: this.props.disabled },
+      { error: this.props.isInvalid },
+    ]);
+
     return (
-      <div className={cx('date-input-month-wrapper', { focused: this.state.monthIsFocused }, { disabled: this.props.disabled })}>
+      <div className={DateInputMonthWrapperClassNames}>
         <select
           {...this.props.monthAttributes}
           aria-label={this.props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' })}
           ref={this.monthRef}
-          className={cx('date-input-month', { 'is-focused': this.state.monthIsFocused }, { 'is-placeholder': this.state.month === '' })}
+          className={cx('month-select', { 'is-focused': this.state.monthIsFocused }, { 'is-placeholder': this.state.month === '' })}
           value={this.state.month}
           name={'terra-date-month-'.concat(this.props.name)}
           onChange={this.handleMonthChange}
@@ -523,6 +534,7 @@ class DateInput extends React.Component {
         inputMode="numeric"
         autoComplete="off"
         disabled={this.props.disabled}
+        isInvalid={this.props.isInvalid}
       />
     );
   }
@@ -551,6 +563,7 @@ class DateInput extends React.Component {
         inputMode="numeric"
         autoComplete="off"
         disabled={this.props.disabled}
+        isInvalid={this.props.isInvalid}
       />
     );
   }

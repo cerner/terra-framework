@@ -13,9 +13,9 @@
   }
 
   .legend-group {
-    font-size: var(--terra-date-input-field-label-font-size, 1rem);
+    font-size: var(--terra-date-input-field-legend-font-size, 1rem);
     line-height: 1.29;
-    margin-bottom: var(--terra-date-input-field-label-margin-bottom, 0.357em);
+    margin-bottom: var(--terra-date-input-field-legend-margin-bottom, 0.357em);
     text-align: left;
   }
 
@@ -29,25 +29,21 @@
   }
 
   .legend {
-    color: var(--terra-date-input-field-label-color, rgba(0, 0, 0, 0.8));
-    font-weight: var(--terra-date-input-field-label-font-weight, bold);
+    color: var(--terra-date-input-field-legend-color, rgba(0, 0, 0, 0.8));
+    font-weight: var(--terra-date-input-field-legend-font-weight, bold);
   }
 
   .error-icon,
   .error-icon-hidden {
-    background: var(--terra-date-input-field-error-background, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#E50000" d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"/><path fill="#FFF" d="M7 21.5h34v5H7v-5z"/></svg>'));
-    background-size: contain;
-    display: var(--terra-date-input-field-label-error-icon-display, none);
-    height: var(--terra-date-input-field-error-icon-height, 1em);
-    margin-right: var(--terra-date-input-field-label-error-icon-margin-right, 0.357em);
-    width: var(--terra-date-input-field-error-icon-width, 1em);
+    display: var(--terra-date-input-field-legend-error-icon-display, none);
+    padding-right: var(--terra-date-input-field-legend-error-icon-padding-right);
   }
 
   .required,
   .required-hidden {
-    color: var(--terra-date-input-field-label-required-color , #e50000);
+    color: var(--terra-date-input-field-legend-required-color , #e50000);
     display: inline-block;
-    padding-right: var(--terra-date-input-field-label-required-padding-right, 0.357em);
+    padding-right: var(--terra-date-input-field-legend-required-padding-right, 0.357em);
   }
 
   /**
@@ -61,8 +57,8 @@
 
   .optional {
     display: inline-block;
-    font-style: var(--terra-date-input-field-label-optional-font-style, italic);
-    padding-left: var(--terra-date-input-field-label-optional-padding-left, 0.357em);
+    font-style: var(--terra-date-input-field-legend-optional-font-style, italic);
+    padding-left: var(--terra-date-input-field-legend-optional-padding-left, 0.357em);
   }
 
   .help-text {
