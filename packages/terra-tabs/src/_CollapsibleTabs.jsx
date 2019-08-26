@@ -267,7 +267,6 @@ class CollapsibleTabs extends React.Component {
 
     return (
       <div>
-        {/* eslint-disable jsx-a11y/no-static-element-interactions */}
         <div
           className={cx(['collapsible-tabs-container', { 'is-calculating': this.isCalculating }])}
           ref={this.setContainer}
@@ -275,7 +274,6 @@ class CollapsibleTabs extends React.Component {
           onKeyDown={this.handleOnKeyDown}
           role="tablist"
         >
-          {/* eslint-enable jsx-ally/no-static-element-interactions */}
           {visibleChildren}
           {menu}
         </div>

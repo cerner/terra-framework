@@ -6,6 +6,16 @@ Unreleased
 ### Added
 * Added Instructions-For-Use (eIFU) Icon to Menu-Item.
 
+6.10.0 - (August 21, 2019)
+------------------
+### Changed
+* Replaced Object.assign syntax with Object spread syntax
+
+6.9.0 - (August 14, 2019)
+------------------
+### Fixed
+* Fixed keyboard and mouse-click navigation amongst the Menu Items within a Group.
+
 ### Changed
 * updated package.json test scripts
 

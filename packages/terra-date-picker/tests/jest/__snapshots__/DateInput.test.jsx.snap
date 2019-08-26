@@ -81,35 +81,9 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
       type="hidden"
     />
     <Input
+      aria-label="Terra.datePicker.date"
       className="input"
       disabled={false}
-      intl={
-        Object {
-          "defaultFormats": Object {},
-          "defaultLocale": "en",
-          "formatDate": [Function],
-          "formatHTMLMessage": [Function],
-          "formatMessage": [Function],
-          "formatNumber": [Function],
-          "formatPlural": [Function],
-          "formatRelative": [Function],
-          "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
-            "getDateTimeFormat": [Function],
-            "getMessageFormat": [Function],
-            "getNumberFormat": [Function],
-            "getPluralFormat": [Function],
-            "getRelativeFormat": [Function],
-          },
-          "locale": "en",
-          "messages": null,
-          "now": [Function],
-          "onError": [Function],
-          "textComponent": "span",
-          "timeZone": null,
-        }
-      }
       isInvalid={false}
       name="terra-date-undefined"
       onChange={[Function]}
@@ -117,35 +91,9 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
       type="text"
     >
       <input
+        aria-label="Terra.datePicker.date"
         className="form-input input"
         disabled={false}
-        intl={
-          Object {
-            "defaultFormats": Object {},
-            "defaultLocale": "en",
-            "formatDate": [Function],
-            "formatHTMLMessage": [Function],
-            "formatMessage": [Function],
-            "formatNumber": [Function],
-            "formatPlural": [Function],
-            "formatRelative": [Function],
-            "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
-              "getDateTimeFormat": [Function],
-              "getMessageFormat": [Function],
-              "getNumberFormat": [Function],
-              "getPluralFormat": [Function],
-              "getRelativeFormat": [Function],
-            },
-            "locale": "en",
-            "messages": null,
-            "now": [Function],
-            "onError": [Function],
-            "textComponent": "span",
-            "timeZone": null,
-          }
-        }
         name="terra-date-undefined"
         onChange={[Function]}
         required={false}
@@ -221,8 +169,10 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
+        onMouseDown={[Function]}
         title="Terra.datePicker.openCalendar"
         type="button"
       >
@@ -280,8 +230,8 @@ exports[`should render a default date input 1`] = `
     type="hidden"
   />
   <input
+    aria-label="Terra.datePicker.date"
     class="form-input input"
-    intl="[object Object]"
     name="terra-date-undefined"
     type="text"
   />
@@ -328,9 +278,9 @@ exports[`should render a default date input with all props 1`] = `
     value="2017-01-01"
   />
   <input
+    aria-label="Terra.datePicker.date"
     class="form-input input"
     id="terra-date-input"
-    intl="[object Object]"
     name="terra-date-date-input"
     placeholder="MM/DD/YYYY"
     type="text"

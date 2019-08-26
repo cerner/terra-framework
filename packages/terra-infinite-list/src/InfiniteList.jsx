@@ -234,6 +234,7 @@ class InfiniteList extends React.Component {
     if (!this.contentNode) {
       return;
     }
+    clearTimeout(this.timer);
     this.resizeObserver.disconnect(this.contentNode);
     this.contentNode.removeEventListener('scroll', this.update);
     this.listenersAdded = false;

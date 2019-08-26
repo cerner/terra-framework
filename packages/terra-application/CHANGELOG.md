@@ -3,6 +3,14 @@ Changelog
 
 Unreleased
 ----------
+
+1.6.0 - (August 21, 2019)
+------------------
+### Changed
+* Replaced Object.assign syntax with Object spread syntax
+
+1.5.0 - (August 14, 2019)
+------------------
 ### Changed
 * updated package.json test scripts
 

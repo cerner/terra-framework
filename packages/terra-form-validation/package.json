@@ -1,7 +1,7 @@
 {
   "name": "terra-form-validation",
   "main": "lib/FormValidationUtil.js",
-  "version": "1.5.0",
+  "version": "1.7.0",
   "description": "Form Validation Examples for Terra",
   "repository": {
     "type": "git",
@@ -32,7 +32,7 @@
     "prop-types": "^15.5.8",
     "react-final-form": ">=5.0.2 <7.0.0",
     "terra-button": "^3.3.0",
-    "terra-date-picker": "^4.9.0",
+    "terra-date-picker": "^4.11.0",
     "terra-doc-template": "^2.2.0",
     "terra-form-checkbox": "^3.0.0",
     "terra-form-field": "^3.1.0",
@@ -50,6 +50,5 @@
     "precompile": "rm -rf lib",
     "test": "npm run jest",
     "jest": "jest --config ../../jestconfig.js"
-  },
-  "gitHead": "7981071c6f84a0cfdfbd21b81b36cd00ee0756c0"
+  }
 }

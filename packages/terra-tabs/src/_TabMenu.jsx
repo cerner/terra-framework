@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import Menu from 'terra-menu';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import KeyCode from 'keycode-js';
+import { FormattedMessage } from 'react-intl';
 import styles from './Tabs.module.scss';
 
 const cx = classNames.bind(styles);
@@ -25,18 +26,9 @@ const propTypes = {
   refCallback: PropTypes.func,
 };
 
-const contextTypes = {
-  /* eslint-disable consistent-return */
-  intl: (context) => {
-    if (context.intl === undefined) {
-      return new Error('Component is internationalized, and must be wrapped in terra-base');
-    }
-  },
-};
-
 class TabMenu extends React.Component {
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
     this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.handleOnClick = this.handleOnClick.bind(this);
     this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
@@ -87,10 +79,9 @@ class TabMenu extends React.Component {
   }
 
   render() {
-    const { intl } = this.context;
     const menuItems = [];
-    let menuToggleText = intl.formatMessage({ id: 'Terra.tabs.more' });
     let menuActive = false;
+    let toggleText;
 
     React.Children.forEach(this.props.children, (child) => {
       const {
@@ -99,7 +90,7 @@ class TabMenu extends React.Component {
       let isSelected = false;
 
       if (this.props.activeKey === child.key) {
-        menuToggleText = label;
+        toggleText = label;
         isSelected = true;
         menuActive = true;
       }
@@ -116,7 +107,6 @@ class TabMenu extends React.Component {
     });
 
     return (
-      /* eslint-disable jsx-a11y/no-static-element-interactions */
       <div
         role="button"
         tabIndex="0"
@@ -126,7 +116,11 @@ class TabMenu extends React.Component {
         className={cx(['tab-menu', { 'is-active': menuActive }])}
         data-terra-tabs-menu
       >
-        <span>{menuToggleText}</span>
+        <FormattedMessage id="Terra.tabs.more">
+          {menuToggleText => (
+            <span>{toggleText || menuToggleText}</span>
+          )}
+        </FormattedMessage>
         <IconCaretDown />
         <Menu
           onRequestClose={this.handleOnRequestClose}
@@ -136,12 +130,10 @@ class TabMenu extends React.Component {
           {menuItems}
         </Menu>
       </div>
-      /* eslint-enable jsx-ally/no-static-element-interactions */
     );
   }
 }
 
-TabMenu.contextTypes = contextTypes;
 TabMenu.propTypes = propTypes;
 
 export default TabMenu;

@@ -1,7 +1,7 @@
 {
   "name": "terra-application",
   "main": "lib/application-base/ApplicationBase.js",
-  "version": "1.4.0",
+  "version": "1.6.0",
   "description": "The terra-application package provides a baseline of functionality for applications built with Terra components.",
   "repository": {
     "type": "git",
@@ -30,12 +30,12 @@
     "prop-types": "^15.5.8",
     "terra-base": "^5.0.0",
     "terra-breakpoints": "^2.0.0",
-    "terra-disclosure-manager": "^4.17.0",
+    "terra-disclosure-manager": "^4.19.0",
     "terra-doc-template": "^2.2.0",
-    "terra-modal-manager": "^6.8.0",
-    "terra-navigation-prompt": "^1.7.0",
-    "terra-slide-panel-manager": "^5.7.0",
-    "terra-theme-provider": "^3.9.0"
+    "terra-modal-manager": "^6.10.0",
+    "terra-navigation-prompt": "^1.9.0",
+    "terra-slide-panel-manager": "^5.9.0",
+    "terra-theme-provider": "^3.10.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
@@ -45,6 +45,5 @@
     "precompile": "rm -rf lib",
     "test": "npm run jest",
     "jest": "jest --config ../../jestconfig.js"
-  },
-  "gitHead": "7981071c6f84a0cfdfbd21b81b36cd00ee0756c0"
+  }
 }

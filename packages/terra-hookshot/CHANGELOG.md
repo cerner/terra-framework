@@ -3,11 +3,19 @@ Changelog
 
 Unreleased
 ----------
+
+5.15.0 - (August 21, 2019)
+------------------
+### Changed
+* Cleaned up lint in test files
+
+5.14.0 - (August 14, 2019)
+------------------
 ### Changed
 * updated package.json test scripts
 
 ### Removed
-* Removed themeable variable for z-index, short not be based upon theme
+* Removed themeable variable for z-index
 
 5.13.0 - (July 30, 2019)
 ------------------

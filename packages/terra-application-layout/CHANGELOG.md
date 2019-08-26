@@ -3,7 +3,16 @@ Changelog
 
 Unreleased
 ----------
+
+5.11.0 - (August 21, 2019)
+------------------
 ### Changed
+* Replaced Object.assign syntax with Object spread syntax
+
+5.10.0 - (August 14, 2019)
+------------------
+### Changed
+* Update wdio snapshots with new button focus outline styles
 * Update tests for dev-site v6
 * updated package.json test scripts
 

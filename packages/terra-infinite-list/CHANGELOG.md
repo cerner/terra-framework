@@ -3,6 +3,16 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Fixed `Cannot read property 'scrollHeight' of null` issue.
+
+3.14.0 - (August 21, 2019)
+------------------
+### Changed
+* Minor dependency version bump
+
+3.13.0 - (August 14, 2019)
+------------------
 ### Changed
 * updated package.json test scripts
 

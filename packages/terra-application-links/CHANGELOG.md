@@ -3,7 +3,16 @@ Changelog
 
 Unreleased
 ----------
+
+6.10.0 - (August 21, 2019)
+------------------
 ### Changed
+* Removed unnecessary eslint disable comments
+
+6.9.0 - (August 14, 2019)
+------------------
+### Changed
+* Updated to interface with react-intl's `FormattedMessage` rather than old React Context API.
 * updated package.json test scripts
 
 6.8.0 - (July 30, 2019)

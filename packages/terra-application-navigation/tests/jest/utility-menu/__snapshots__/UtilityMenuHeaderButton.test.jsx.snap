@@ -333,6 +333,7 @@ exports[`UtilityMenuHeaderButton should render with function callbacks 1`] = `
           <Image
             alt="user-name"
             className="image"
+            fit="cover"
             isFluid={false}
             onError={[Function]}
             placeholder={
@@ -353,7 +354,7 @@ exports[`UtilityMenuHeaderButton should render with function callbacks 1`] = `
               >
                 <img
                   alt="user-name"
-                  className="image default image"
+                  className="image cover default image"
                   onError={[Function]}
                   onLoad={[Function]}
                   src="user-src"

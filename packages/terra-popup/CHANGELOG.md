@@ -3,6 +3,14 @@ Changelog
 
 Unreleased
 ----------
+
+6.10.0 - (August 21, 2019)
+------------------
+### Changed
+* Cleaned up lint in test files
+
+6.9.0 - (August 14, 2019)
+------------------
 ### Changed
 * updated package.json test scripts
 

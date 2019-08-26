@@ -2,13 +2,11 @@ import React from 'react';
 import TimeInput from '../../../../TimeInput';
 
 const TimeInputDefault = () => (
-  <div style={{ caretColor: 'transparent' }}>
-    <TimeInput
-      id="timeInput"
-      name="time-input"
-      showSeconds
-    />
-  </div>
+  <TimeInput
+    id="timeInput"
+    name="time-input"
+    showSeconds
+  />
 );
 
 export default TimeInputDefault;

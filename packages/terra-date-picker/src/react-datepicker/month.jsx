@@ -1,37 +1,115 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import classNames from 'classnames/bind'
 import Week from './week'
 import * as utils from './date_utils'
+import styles from './stylesheets/datepicker.scss'
+
+const cx = classNames.bind(styles);
 
 const FIXED_HEIGHT_STANDARD_WEEK_COUNT = 6
 
 export default class Month extends React.Component {
   static propTypes = {
+    /**
+     * day Value Entered.
+     */
     day: PropTypes.object.isRequired,
+    /**
+     * A callback function for custom day class names.
+     */
     dayClassName: PropTypes.func,
+    /**
+     * Maximum Date value for a date range.
+     */
     endDate: PropTypes.object,
+    /**
+     * Array to store values of date that are disabled to pick .
+     */
     excludeDates: PropTypes.array,
+    /**
+     * A callback function to be executed to determine if a given date should be filtered.
+     */
     filterDate: PropTypes.func,
+   /**
+     * Specifies whether the height of calendar dom fixed or variable.
+     */
     fixedHeight: PropTypes.bool,
+    /**
+     * A callback function to format week number .
+     */
     formatWeekNumber: PropTypes.func,
+    /**
+     * Highlight range of dates with custom classes.
+     */
     highlightDates: PropTypes.instanceOf(Map),
+    /**
+     * Show dates only in the given array.
+     */
     includeDates: PropTypes.array,
+    /**
+     * Prop to show inline version of date picker component.
+     */
     inline: PropTypes.bool,
+    /**
+     * Maximum value of date that can be selected by user.
+     */
     maxDate: PropTypes.object,
+    /**
+     * Minimum value of date that can be selected by user.
+     */
     minDate: PropTypes.object,
+    /**
+     * A callback function to execute when a day is selected.
+     */
     onDayClick: PropTypes.func,
+    /**
+     * A callback function to execute when the mouse cursor hovers over the day..
+     */
     onDayMouseEnter: PropTypes.func,
+    /**
+     * A callback function to execute when the mouse cursor leaves the element.
+     */
     onMouseLeave: PropTypes.func,
+    /**
+     * A callback function to execute when a week is selected.
+     */
     onWeekSelect: PropTypes.func,
+    /**
+     * A prop to check next month dates.
+     */
     peekNextMonth: PropTypes.bool,
+    /**
+     * Prop to store previous selection value.
+     */
     preSelection: PropTypes.object,
+    /**
+     * Prop to store current selection value.
+     */
     selected: PropTypes.object,
+    /**
+     * Prop to store value while selecting date.
+     */
     selectingDate: PropTypes.object,
+    /**
+     * Mark date picker to select end of range .
+     */
     selectsEnd: PropTypes.bool,
+    /**
+     * Mark date picker to select start of range .
+     */
     selectsStart: PropTypes.bool,
+    /**
+     * Prop to show week numbers .
+     */
     showWeekNumbers: PropTypes.bool,
+    /**
+     * Minimum date for a given range .
+     */
     startDate: PropTypes.object,
+    /**
+     * Difference between utc and local time.
+     */
     utcOffset: PropTypes.number
   }
 
@@ -91,7 +169,7 @@ export default class Month extends React.Component {
         startDate={this.props.startDate}
         endDate={this.props.endDate}
         dayClassName={this.props.dayClassName}
-        utcOffset={this.props.utcOffset}/>)
+        utcOffset={this.props.utcOffset} />)
 
       if (breakAfterNextPush) break
 
@@ -115,16 +193,13 @@ export default class Month extends React.Component {
     return weeks
   }
 
-  getClassNames = () => {
-    const { selectingDate, selectsStart, selectsEnd } = this.props
-    return classnames('react-datepicker__month', {
-      'react-datepicker__month--selecting-range': selectingDate && (selectsStart || selectsEnd)
-    })
-  }
-
-  render () {
+  render() {
+    const getClassNames = cx({
+      'react-datepicker-month': true,
+      'react-datepicker-month--selecting-range': this.props.selectingDate && (this.props.selectsStart || this.props.selectsEnd)
+    });
     return (
-      <div tabIndex="0" className={this.getClassNames()} onMouseLeave={this.handleMouseLeave} role="listbox">
+      <div tabIndex="0" className={getClassNames} onMouseLeave={this.handleMouseLeave} role="listbox">
         {this.renderWeeks()}
       </div>
     )

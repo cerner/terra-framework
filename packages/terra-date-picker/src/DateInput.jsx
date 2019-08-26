@@ -3,8 +3,13 @@ import PropTypes from 'prop-types';
 import Button from 'terra-button';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
 import Input from 'terra-form-input';
+import { injectIntl, intlShape } from 'react-intl';
+import classNames from 'classnames/bind';
+
 import DateUtil from './DateUtil';
 import styles from './DatePicker.module.scss';
+
+const cx = classNames.bind(styles);
 
 const Icon = <IconCalendar />;
 
@@ -18,6 +23,11 @@ const propTypes = {
    */
   // eslint-disable-next-line react/forbid-prop-types
   inputAttributes: PropTypes.object,
+  /**
+   * @private
+   * intl object programmatically imported through injectIntl from react-intl.
+   * */
+  intl: intlShape.isRequired,
   /**
    * Name of the date input.
    */
@@ -74,15 +84,6 @@ const defaultProps = {
   value: undefined,
 };
 
-const contextTypes = {
-  /* eslint-disable consistent-return */
-  intl: (context) => {
-    if (context.intl === undefined) {
-      return new Error('Component is internationalized, and must be wrapped in terra-base');
-    }
-  },
-};
-
 // eslint-disable-next-line react/prefer-stateless-function
 class DatePickerInput extends React.Component {
   constructor(props) {
@@ -100,7 +101,7 @@ class DatePickerInput extends React.Component {
   }
 
   handleOnButtonClick(event) {
-    const attributes = Object.assign({}, this.props.inputAttributes);
+    const attributes = { ...this.props.inputAttributes };
 
     if (!attributes.readOnly && this.onCalendarButtonClick && this.props.onClick) {
       this.onCalendarButtonClick(event, this.props.onClick);
@@ -127,6 +128,7 @@ class DatePickerInput extends React.Component {
     const {
       buttonRefCallback,
       inputAttributes,
+      intl,
       name,
       onBlur,
       onChange,
@@ -145,13 +147,13 @@ class DatePickerInput extends React.Component {
     delete customProps.onCalendarButtonClick;
     delete customProps.shouldShowPicker;
 
-    const additionalInputProps = Object.assign({}, customProps, inputAttributes);
+    const additionalInputProps = { ...customProps, ...inputAttributes };
 
-    const dateValue = DateUtil.convertToISO8601(value, DateUtil.getFormatByLocale(this.context.intl.locale));
-    const buttonText = this.context.intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
+    const dateValue = DateUtil.convertToISO8601(value, DateUtil.getFormatByLocale(intl.locale));
+    const buttonText = intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
 
     return (
-      <div className={styles['custom-input']}>
+      <div className={cx('custom-input')}>
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
           // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
@@ -162,7 +164,7 @@ class DatePickerInput extends React.Component {
         />
         <Input
           {...additionalInputProps}
-          className={styles.input}
+          className={cx('input')}
           type="text"
           name={'terra-date-'.concat(name)}
           value={value}
@@ -170,9 +172,10 @@ class DatePickerInput extends React.Component {
           placeholder={placeholder}
           onFocus={onFocus}
           onBlur={onBlur}
+          aria-label={intl.formatMessage({ id: 'Terra.datePicker.date' })}
         />
         <Button
-          className={styles.button}
+          className={cx('button')}
           text={buttonText}
           onClick={this.handleOnButtonClick}
           onKeyDown={this.handleOnKeyDown}
@@ -191,6 +194,5 @@ class DatePickerInput extends React.Component {
 
 DatePickerInput.propTypes = propTypes;
 DatePickerInput.defaultProps = defaultProps;
-DatePickerInput.contextTypes = contextTypes;
 
-export default DatePickerInput;
+export default injectIntl(DatePickerInput);
