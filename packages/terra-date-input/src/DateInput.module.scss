@@ -98,7 +98,7 @@
     }
 
     // Undo the Firefox inner focus ring
-    &:focus:-moz-focusring {
+    &:-moz-focusring {
       color: transparent;
       text-shadow: 0 0 0 #000;
     }
