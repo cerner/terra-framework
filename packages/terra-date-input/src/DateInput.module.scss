@@ -39,12 +39,12 @@
     }
 
     &:hover {
-      background-color: var(--terra-date-input-month-hover-background-color);
+      background-color: var(--terra-date-input-month-hover-background-color, #fff);
     }
 
     &.disabled {
-      background-color: var(--terra-date-input-month-disabled-background-color);
-      opacity: var(--terra-date-input-month-disabled-opacity, 0.4);
+      background-color: var(--terra-date-input-month-disabled-background-color, rgba(111, 116, 119, 0.2));
+      opacity: var(--terra-date-input-month-disabled-opacity, 0.25);
 
       &::after {
         background-image: var(--terra-date-input-month-after-disabled-arrow-icon-background-image, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path d="M48 12L24 36 0 12h48z"/></svg>'));
@@ -52,7 +52,7 @@
     }
 
     &.error {
-      background-color: var(--terra-date-input-month-error-background-color);
+      background-color: var(--terra-date-input-month-error-background-color, #fff);
       background-image: var(--terra-date-input-month-error-background-image);
 
       &::after {
@@ -61,17 +61,21 @@
     }
 
     &.error.focused {
-      background-color: var(--terra-date-input-month-error-focus-background-color);
+      background-color: var(--terra-date-input-month-error-focus-background-color, #fff);
       background-size: var(--terra-date-input-month-error-focus-background-size);
     }
 
     &.error:hover {
-      background-color: var(--terra-date-input-month-error-hover-background-color);
+      background-color: var(--terra-date-input-month-error-hover-background-color, #fff);
     }
 
     &.error.disabled {
-      background-color: var(--terra-date-input-month-error-disabled-background-color);
-      opacity: var(--terra-date-input-month-error-disabled-opacity);
+      background-color: var(--terra-date-input-month-error-disabled-background-color, rgba(111, 116, 119, 0.05));
+      opacity: var(--terra-date-input-month-error-disabled-opacity, 1);
+
+      &::after {
+        background-image: var(--terra-date-input-month-after-error-disabled-arrow-icon-background-image, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path fill="#bfbfbf" d="M48 12L24 36 0 12h48z"/></svg>'));
+      }
     }
   }
 
@@ -153,14 +157,14 @@
   }
 
   .disabled .month-select {
-    border: var(--terra-date-input-month-select-disabled-border, 1px solid #dedfe0);
+    border: var(--terra-date-input-month-select-disabled-border, 1px solid #868a8c);
 
     &.is-placeholder {
-      color: var(--terra-date-input-month-select-disabled-placeholder-color);
+      color: var(--terra-date-input-month-select-disabled-placeholder-color, #70787c);
     }
 
     &:hover {
-      color: var(--terra-date-input-month-select-disabled-hover-color);
+      color: var(--terra-date-input-month-select-disabled-hover-color, #70787c);
       cursor: default;
     }
   }
@@ -182,8 +186,12 @@
   }
 
   .error.disabled .month-select {
-    border: var(--terra-date-input-month-select-error-disabled-border);
-    color: var(--terra-date-input-month-select-error-disabled-color);
+    border: var(--terra-date-input-month-select-error-disabled-border, 1px solid #dedfe0);
+    color: var(--terra-date-input-month-select-error-disabled-color, rgba(0, 0, 0, 0.25));
+
+    &.is-placeholder {
+      color: var(--terra-date-input-month-select-error-disabled-placeholder-color, #70787c);
+    }
   }
 
   .month-select {
