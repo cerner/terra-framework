@@ -159,9 +159,10 @@
 
   .disabled .month-select {
     border: var(--terra-date-input-month-select-disabled-border, 1px solid #868a8c);
+    color: var(--terra-date-input-month-select-disabled-color, #1c1f21);
 
     &:hover {
-      color: var(--terra-date-input-month-select-disabled-hover-color, #70787c);
+      color: var(--terra-date-input-month-select-disabled-hover-color, #1c1f21);
       cursor: default;
     }
 
