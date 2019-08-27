@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Popup from 'terra-popup';
 import { matchPath } from 'react-router-dom';
-import KeyCode from 'keycode-js';
+import * as KeyCode from 'keycode-js';
 import { FormattedMessage } from 'react-intl';
 import TabMenuList from './_TabMenuList';
 import TabMenuDisplay from './_TabMenuDisplay';

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Portal } from 'react-portal';
-import KeyCode from 'keycode-js';
+import * as KeyCode from 'keycode-js';
 import 'mutationobserver-shim';
 import './_contains-polyfill';
 import './_matches-polyfill';

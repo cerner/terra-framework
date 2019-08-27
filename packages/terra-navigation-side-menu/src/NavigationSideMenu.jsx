@@ -5,7 +5,7 @@ import classNames from 'classnames/bind';
 import ActionHeader from 'terra-action-header';
 import ContentContainer from 'terra-content-container';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-import KeyCode from 'keycode-js';
+import * as KeyCode from 'keycode-js';
 import MenuItem from './_MenuItem';
 
 import styles from './NavigationSideMenu.module.scss';
