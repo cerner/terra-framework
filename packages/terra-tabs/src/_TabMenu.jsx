@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Menu from 'terra-menu';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
-import KeyCode from 'keycode-js';
+import * as KeyCode from 'keycode-js';
 import { FormattedMessage } from 'react-intl';
 import styles from './Tabs.module.scss';
 
