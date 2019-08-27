@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';
 import Input from 'terra-form-input';
-import KeyCode from 'keycode-js';
+import * as KeyCode from 'keycode-js';
 
 import DateInputUtil from './DateInputUtil';
 import styles from './DateInput.module.scss';
