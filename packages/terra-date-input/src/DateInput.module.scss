@@ -35,6 +35,7 @@
     }
 
     &.focused {
+      background-color: var(--terra-date-input-month-focus-background-color, #fff);
       background-size: var(--terra-date-input-month-focus-background-size);
     }
 
