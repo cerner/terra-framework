@@ -159,13 +159,13 @@
   .disabled .month-select {
     border: var(--terra-date-input-month-select-disabled-border, 1px solid #868a8c);
 
-    &.is-placeholder {
-      color: var(--terra-date-input-month-select-disabled-placeholder-color, #70787c);
-    }
-
     &:hover {
       color: var(--terra-date-input-month-select-disabled-hover-color, #70787c);
       cursor: default;
+    }
+
+    &.is-placeholder {
+      color: var(--terra-date-input-month-select-disabled-placeholder-color, #70787c);
     }
   }
 
