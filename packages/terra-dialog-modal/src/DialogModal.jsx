@@ -32,11 +32,11 @@ const propTypes = {
   * Contents of the dialog modal.
   */
   children: PropTypes.node,
-  /*
+  /**
    * Callback function indicating a close condition was met.
    */
   onRequestClose: PropTypes.func.isRequired,
-  /*
+  /**
    * Toggle to show dialog modal or not.
    */
   isOpen: PropTypes.bool,
