@@ -97,12 +97,6 @@
       display: none;
     }
 
-    // Undo the Firefox inner focus ring
-    &:-moz-focusring {
-      color: transparent;
-      text-shadow: 0 0 0 #000;
-    }
-
     /* stylelint-disable selector-no-qualifying-type */
     &.is-placeholder {
       color: var(--terra-date-input-month-select-placeholder-color, #70787c);
@@ -125,6 +119,29 @@
     &:hover {
       border: var(--terra-date-input-month-select-hover-border, 1px solid #dedfe0);
       color: var(--terra-date-input-month-select-hover-color);
+    }
+  }
+
+  // Hide select dotted outline that appears on focus/hover in Firefox
+  // @supports for -moz prefix targets Firefox ≥ 16
+  @supports (-moz-appearance:meterbar) {
+    .month-select {
+      &:focus,
+      &.is-focused,
+      &:focus:hover,
+      &.is-focused:hover {
+        color: transparent; // Setting this to transparent prevents dotted outline
+        /* stylelint-disable terra/custom-property-name*/
+        text-shadow: 0 0 0 var(--terra-date-input-month-select-focus-hover-color);
+        /* stylelint-enable terra/custom-property-name */
+      }
+
+      &:hover {
+        color: transparent; // Setting this to transparent prevents dotted outline
+        /* stylelint-disable terra/custom-property-name*/
+        text-shadow: 0 0 0 var(--terra-date-input-month-select-hover-color);
+        /* stylelint-enable terra/custom-property-name*/
+      }
     }
   }
 
