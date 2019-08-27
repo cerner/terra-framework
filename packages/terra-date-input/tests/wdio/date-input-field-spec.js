@@ -35,6 +35,12 @@ Terra.describeViewports('Date Input', ['medium'], () => {
     Terra.it.validatesElement();
   });
 
+  describe('Disabled Populated DateInputField', () => {
+    before(() => browser.url('/raw/tests/terra-date-input/date-input/filled-in-disabled-date-input-field'));
+
+    Terra.it.validatesElement();
+  });
+
   describe('Hide Required DateInputField', () => {
     before(() => browser.url('/raw/tests/terra-date-input/date-input/hide-required-date-input-field'));
 
