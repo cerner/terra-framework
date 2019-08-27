@@ -97,13 +97,6 @@
       display: none;
     }
 
-    /* stylelint-disable selector-no-qualifying-type */
-    &.is-placeholder {
-      color: var(--terra-date-input-month-select-placeholder-color, #70787c);
-      font-style: var(--terra-date-input-month-select-placeholder-font-style);
-    }
-    /* stylelint-enable selector-no-qualifying-type */
-
     // .is-focused needed for Safari Mobile
     /* stylelint-disable selector-no-qualifying-type */
     &:focus,
@@ -120,6 +113,13 @@
       border: var(--terra-date-input-month-select-hover-border, 1px solid #dedfe0);
       color: var(--terra-date-input-month-select-hover-color);
     }
+
+    /* stylelint-disable selector-no-qualifying-type */
+    &.is-placeholder {
+      color: var(--terra-date-input-month-select-placeholder-color, #70787c);
+      font-style: var(--terra-date-input-month-select-placeholder-font-style);
+    }
+    /* stylelint-enable selector-no-qualifying-type */
   }
 
   // Hide select dotted outline that appears on focus/hover in Firefox
@@ -140,6 +140,13 @@
         color: transparent; // Setting this to transparent prevents dotted outline
         /* stylelint-disable terra/custom-property-name*/
         text-shadow: 0 0 0 var(--terra-date-input-month-select-hover-color);
+        /* stylelint-enable terra/custom-property-name*/
+      }
+
+      &.is-placeholder {
+        color: transparent;
+        /* stylelint-disable terra/custom-property-name*/
+        text-shadow: 0 0 0 var(--terra-date-input-month-select-placeholder-color, #70787c);
         /* stylelint-enable terra/custom-property-name*/
       }
     }
