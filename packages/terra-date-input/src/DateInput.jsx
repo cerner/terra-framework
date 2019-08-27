@@ -425,20 +425,11 @@ class DateInput extends React.Component {
 
   handleValueChange(event, type, value) {
     if (type === DateInputUtil.inputType.MONTH) {
-      this.setState({
-        month: value,
-        monthIsFocused: false,
-      });
+      this.setState({ month: value });
     } else if (type === DateInputUtil.inputType.DAY) {
-      this.setState({
-        day: value,
-        dayIsFocused: false,
-      });
+      this.setState({ day: value });
     } else if (type === DateInputUtil.inputType.YEAR) {
-      this.setState({
-        year: value,
-        yearIsFocused: false,
-      });
+      this.setState({ year: value });
     }
 
     if (this.props.onChange) {
@@ -477,13 +468,19 @@ class DateInput extends React.Component {
       { error: this.props.isInvalid },
     ]);
 
+    const DateInputMonthClassNames = cx([
+      'month-select',
+      { 'is-focused': this.state.monthIsFocused },
+      { 'is-placeholder': this.state.month === '' },
+    ]);
+
     return (
       <div className={DateInputMonthWrapperClassNames}>
         <select
           {...this.props.monthAttributes}
           aria-label={this.props.intl.formatMessage({ id: 'Terra.date.input.monthLabel' })}
           ref={this.monthRef}
-          className={cx('month-select', { 'is-focused': this.state.monthIsFocused }, { 'is-placeholder': this.state.month === '' })}
+          className={DateInputMonthClassNames}
           value={this.state.month}
           name={'terra-date-month-'.concat(this.props.name)}
           onChange={this.handleMonthChange}

@@ -170,10 +170,8 @@ const DateInputField = (props) => {
    * aria-describedby ids
    * Used to map legend, help text, and error messages with input/select elements
    */
-  const legendAriaDescriptionId = `terra-date-input-field-description-${uniqueid()}`;
   const helpAriaDescriptionId = help ? `terra-date-input-field-description-help-${uniqueid()}` : '';
   const errorAriaDescriptionId = isInvalid && error ? `terra-date-input-field-description-error-${uniqueid()}` : '';
-  // const ariaDescriptionIds = `${legendAriaDescriptionId} ${errorAriaDescriptionId} ${helpAriaDescriptionId}`;
   const ariaDescriptionIds = `${errorAriaDescriptionId} ${helpAriaDescriptionId}`;
 
   const customMonthAriaDescribedById = monthAttributes['aria-describedby'] ? monthAttributes['aria-describedby'] : '';
@@ -186,7 +184,7 @@ const DateInputField = (props) => {
   const yearAriaDesciptionIds = `${ariaDescriptionIds} ${customYearAriaDescribedById}`;
 
   const legendGroup = (
-    <legend id={legendAriaDescriptionId} className={cx(['legend-group', { 'legend-group-hidden': isLegendHidden }])}>
+    <legend className={cx(['legend-group', { 'legend-group-hidden': isLegendHidden }])}>
       <div {...legendAttributes} className={legendClassNames}>
         {isInvalid && <span className={cx('error-icon')}><IconError /></span>}
         {required && (isInvalid || !hideRequired) && (
