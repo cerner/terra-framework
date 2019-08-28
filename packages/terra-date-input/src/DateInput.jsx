@@ -58,6 +58,10 @@ const propTypes = {
    */
   onFocus: PropTypes.func,
   /**
+   * Callback ref to access date input containing DOM element.
+   */
+  refCallback: PropTypes.func,
+  /**
    * An date string representation of the date value used for the component. This should be in ISO 8601 format: YYYY-MM-DD.
    */
   value: PropTypes.string,
@@ -76,6 +80,7 @@ const defaultProps = {
   onBlur: null,
   onChange: null,
   onFocus: undefined,
+  refCallback: undefined,
   value: undefined,
 };
 
@@ -606,6 +611,7 @@ class DateInput extends React.Component {
       onBlur,
       onChange,
       onFocus,
+      refCallback,
       name,
       value,
       ...customProps
@@ -635,7 +641,7 @@ class DateInput extends React.Component {
       <div
         {...customProps}
         className={dateInputClassNames}
-        ref={this.dateInputContainer}
+        ref={(element) => { this.dateInputContainer.current = element; if (refCallback) { refCallback(element); } }}
       >
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
