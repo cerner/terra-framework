@@ -13,7 +13,9 @@ const Example = () => {
         name="date-input"
         value={value}
         onChange={(event, dateString) => setValue(dateString)}
-        refCallback={(ref) => { console.log(ref)}}
+        refCallback={(ref) => {
+          console.log(ref); // eslint-disable-line no-console
+        }}
       />
       <p>{`DateInput Value: ${value}`}</p>
     </div>
