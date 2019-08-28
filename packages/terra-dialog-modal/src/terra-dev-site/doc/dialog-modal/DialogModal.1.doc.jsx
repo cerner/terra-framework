@@ -5,7 +5,6 @@ import ReadMe from '../../../../docs/README.md';
 import { name } from '../../../../package.json';
 
 // Component Source
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 import DialogModalSrc from '!raw-loader!../../../../src/DialogModal';
 
 // Example Files
@@ -15,7 +14,6 @@ import DialogModalWithLongText from '../example/DialogModalWithLongText';
 import DialogModalWithLongTextSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DialogModalWithLongText.jsx';
 import DialogModalWithCustomHeaderAndCustomFooter from '../example/DialogModalWithCustomHeaderAndCustomFooter';
 import DialogModalWithCustomHeaderAndCustomFooterSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DialogModalWithCustomHeaderAndCustomFooter.jsx';
-/* eslint-enabled import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DialogModalExamples = () => (
   <DocTemplate

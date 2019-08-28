@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Cleaned up imports in examples and test files
 
 5.15.0 - (August 21, 2019)
 ------------------

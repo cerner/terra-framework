@@ -1,5 +1,4 @@
 import React from 'react';
-// eslint-disable-next-line import/no-unresolved, import/extensions
 import TimeInput from 'terra-time-input/lib/TimeInput';
 import classNames from 'classnames/bind';
 import styles from './TimeInputDocCommon.module.scss';

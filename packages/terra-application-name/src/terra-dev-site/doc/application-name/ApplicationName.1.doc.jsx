@@ -3,7 +3,6 @@ import DocTemplate from 'terra-doc-template';
 import { name } from '../../../../package.json';
 import ReadMe from '../../../../docs/README.md';
 
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
 import ApplicationHeaderNameSrc from '!raw-loader!../../../../src/ApplicationHeaderName.jsx';
 import ApplicationHeaderNameStandardSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ApplicationHeaderNameStandard.jsx';
@@ -12,7 +11,6 @@ import ApplicationMenuNameStandardSrc from '!raw-loader!../../../../src/terra-de
 // Example Files
 import ApplicationHeaderNameStandard from '../example/ApplicationHeaderNameStandard';
 import ApplicationMenuNameStandard from '../example/ApplicationMenuNameStandard';
-/* eslint-enabled import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
   <DocTemplate
