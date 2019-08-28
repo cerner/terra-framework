@@ -470,8 +470,10 @@ class DateInput extends React.Component {
 
     const DateInputMonthClassNames = cx([
       'month-select',
-      { 'is-focused': this.state.monthIsFocused },
       { 'is-placeholder': this.state.month === '' },
+      { focused: this.state.monthIsFocused },
+      { disabled: this.props.disabled },
+      { error: this.props.isInvalid },
     ]);
 
     return (

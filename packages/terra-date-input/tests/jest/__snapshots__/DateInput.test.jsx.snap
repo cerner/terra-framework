@@ -1250,7 +1250,7 @@ exports[`DateInput should render a disabled time input 1`] = `
   >
     <select
       aria-label="Terra.date.input.monthLabel"
-      className="month-select is-placeholder"
+      className="month-select is-placeholder disabled"
       disabled={true}
       name="terra-date-month-date-input"
       onBlur={[Function]}
