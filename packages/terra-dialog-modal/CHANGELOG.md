@@ -6,6 +6,9 @@ Unreleased
 ### Changed
 * Cleaned up imports in examples and test files
 
+### Fixed
+* Fixed missing documentation for props
+
 3.11.0 - (August 21, 2019)
 ------------------
 ### Changed

@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Cleaned up imports in examples and test files
+* Updated `keycode-js` from `v1.0.4` to `v2.0.1`
 
 4.11.0 - (August 21, 2019)
 ------------------
@@ -59,7 +60,7 @@ Unreleased
 * Minor dependency version bump
 
 4.5.0 - (July 2, 2019)
-------------------
+------------------      
 ### Added
 * Allow terra-date-picker to be a controlled component.
 * Added functionality to announce the pre-selected date to screen readers when navigating within the date picker.
