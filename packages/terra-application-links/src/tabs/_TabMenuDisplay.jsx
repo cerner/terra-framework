@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
-import KeyCode from 'keycode-js';
+import * as KeyCode from 'keycode-js';
 import styles from './ApplicationTabs.module.scss';
 
 const cx = classNames.bind(styles);
