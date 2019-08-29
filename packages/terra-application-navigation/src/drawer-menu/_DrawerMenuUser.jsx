@@ -25,10 +25,12 @@ const defaultProps = {
 };
 
 const DrawerMenuUser = ({ userConfig, variant }) => (
-  <div className={variant === 'small' ? cx('small-user-layout') : cx('large-user-layout')}>
+  <div className={variant === 'large' ? cx('small-user-layout') : cx('large-user-layout')}>
     <div className={cx('avatar-container')}>
       <div className={cx('avatar-outline')} />
-      <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials} size={variant === 'small' ? '0.561rem' : '1.6521rem'} />
+      <div className={cx('avatar-inner')}>
+        <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials} />
+      </div>
     </div>
     <div className={cx('info-container')}>
       <div aria-hidden className={cx('name')}>{userConfig.name}</div>

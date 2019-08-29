@@ -1,5 +1,6 @@
 :local {
   .title-container {
+    border-bottom: var(--terra-application-navigation-drawer-menu-title-border-bottom, 1px solid rgba(255,255,255,0.2)); // TODO: New
     color: var(--terra-application-navigation-drawer-title-color, rgba(255, 255, 255, 0.9));
     overflow: hidden;
     padding: 0.7142857143rem 1.4285714286rem;
