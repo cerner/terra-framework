@@ -522,6 +522,7 @@ class DateTimePicker extends React.Component {
   renderTimeClarification() {
     return (
       <TimeClarification
+        ambiguousDateTime={this.state.dateTime.format()}
         disabled={this.props.disabled}
         isOpen={this.state.isTimeClarificationOpen}
         isOffsetButtonHidden={!this.state.isAmbiguousTime}
