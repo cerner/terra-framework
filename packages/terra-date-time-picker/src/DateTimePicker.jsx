@@ -251,15 +251,17 @@ class DateTimePicker extends React.Component {
       }
 
       value = value.trim();
+
+      const tempDateTime = momentDateTime ? momentDateTime.clone() : null;
       let iSOString = '';
 
-      if (isCompleteDateTime && momentDateTime) {
-        iSOString = momentDateTime.format();
+      if (isCompleteDateTime && tempDateTime) {
+        iSOString = tempDateTime.format();
       }
 
       let isValid = false;
 
-      if (value === '' || (isCompleteDateTime && momentDateTime && this.isDateTimeAcceptable(momentDateTime))) {
+      if (value === '' || (isCompleteDateTime && tempDateTime && this.isDateTimeAcceptable(tempDateTime))) {
         isValid = true;
       }
 
@@ -267,7 +269,7 @@ class DateTimePicker extends React.Component {
         iSO: iSOString,
         inputValue: value,
         isCompleteValue: isCompleteDateTime,
-        isValidValue: isValid
+        isValidValue: isValid,
       };
 
       this.props.onBlur(event, options);
