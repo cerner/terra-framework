@@ -249,7 +249,7 @@ class DateInput extends React.Component {
     // Ignore the entry if the value did not change or it is invalid.
     // When 'Predictive text' is enabled on Android the maxLength attribute on the input is ignored so we have
     // to check the length of inputValue to make sure that it is less then 2.
-    if (inputValue === stateValue || inputValue.length > 2 || Number(inputValue) > maxValue) {
+    if (inputValue === stateValue || inputValue.length > 2 || Number(inputValue) > maxValue || (inputValue.length === 2 && !(inputValue > 0))) {
       return;
     }
 
