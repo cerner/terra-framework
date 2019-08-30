@@ -3,6 +3,7 @@
 :local {
   .date-input {
     display: flex;
+    position: relative;
   }
 
   .month-select-wrapper {
@@ -200,10 +201,12 @@
 
   .date-input-day {
     max-width: var(--terra-date-input-date-input-day-max-width, 2.5rem);
+    z-index: 1;
   }
 
   .date-input-year {
     max-width: var(--terra-date-input-date-input-year-max-width, 3.8rem);
+    z-index: 1;
   }
 
   // Gutters
