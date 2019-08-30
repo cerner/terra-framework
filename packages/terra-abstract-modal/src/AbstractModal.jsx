@@ -5,7 +5,7 @@ import * as KeyCode from 'keycode-js';
 import 'mutationobserver-shim';
 import './_contains-polyfill';
 import './_matches-polyfill';
-import 'wicg-inert';
+// import 'wicg-inert';
 import ModalContent from './_ModalContent';
 
 const zIndexes = ['6000', '7000', '8000', '9000'];
@@ -85,6 +85,11 @@ class AbstractModal extends React.Component {
   }
 
   componentDidMount() {
+    console.log(!Element.prototype.hasOwnProperty('inert'));
+    if (!Element.prototype.hasOwnProperty('inert')) {
+      console.log('loading wicg-inert');
+      require('wicg-inert');
+    }
     document.addEventListener('keydown', this.handleKeydown);
 
     if (this.props.isOpen) {
