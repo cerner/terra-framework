@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AbstractModal from 'terra-abstract-modal';
 import FocusTrap from 'focus-trap-react';
-import KeyCode from 'keycode-js';
+import * as KeyCode from 'keycode-js';
 import Button from 'terra-button';
 import classNames from 'classnames/bind';
 import { FormattedMessage } from 'react-intl';
