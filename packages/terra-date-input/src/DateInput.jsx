@@ -28,7 +28,7 @@ const propTypes = {
    * Can be used to set the display format. One of `month-day-year` or `day-month-year`.
    * Overrides default locale display format.
    */
-  displayFormat: PropTypes.string,
+  displayFormat: PropTypes.oneOf(['month-day-year', 'day-month-year']),
   /**
    * @private
    * Intl object injected from injectIntl
