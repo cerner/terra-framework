@@ -174,7 +174,7 @@
       &:hover {
         color: transparent; // Setting this to transparent prevents dotted outline
         /* stylelint-disable terra/custom-property-name*/
-        text-shadow: 0 0 0 var(--terra-date-input-month-select-hover-color);
+        text-shadow: 0 0 0 var(--terra-date-input-month-select-hover-color, #1c1f21);
         /* stylelint-enable terra/custom-property-name*/
       }
 
@@ -182,7 +182,7 @@
       &.focused {
         color: transparent; // Setting this to transparent prevents dotted outline
         /* stylelint-disable terra/custom-property-name*/
-        text-shadow: 0 0 0 var(--terra-date-input-month-select-focus-color);
+        text-shadow: 0 0 0 var(--terra-date-input-month-select-focus-color, #1c1f21);
         /* stylelint-enable terra/custom-property-name */
       }
 
