@@ -7,7 +7,7 @@ import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
 import IconLightbulb from 'terra-icon/lib/icon/IconLightbulb';
 import ApplicationNavigation from '../../../ApplicationNavigation';
 
-const extensionItems = [
+const utilityItems = [
   {
     icon: <IconSearch />,
     key: 'item-a',
@@ -46,13 +46,13 @@ const handleItemSelection = (key, metaData) => {
 /* eslint-enable no-alert */
 
 // TODO: remove terra-application after it is incorporated into dev-site
-const ExtensionsTest = () => (
+const OnlyCustomUtilityItemsTest = () => (
   <ApplicationBase locale="en">
     <ApplicationNavigation
-      extensionItems={extensionItems}
-      onSelectExtensionItem={handleItemSelection}
+      utilityItems={utilityItems}
+      onSelectUtilityItem={handleItemSelection}
     />
   </ApplicationBase>
 );
 
-export default ExtensionsTest;
+export default OnlyCustomUtilityItemsTest;
