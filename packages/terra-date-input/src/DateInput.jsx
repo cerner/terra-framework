@@ -110,9 +110,9 @@ class DateInput extends React.Component {
     this.handleDayChange = this.handleDayChange.bind(this);
     this.handleYearChange = this.handleYearChange.bind(this);
 
-    this.handleMonthInputKeyDown = this.handleMonthInputKeyDown.bind(this);
-    this.handleDayInputKeyDown = this.handleDayInputKeyDown.bind(this);
-    this.handleYearInputKeyDown = this.handleYearInputKeyDown.bind(this);
+    this.handleMonthKeyDown = this.handleMonthKeyDown.bind(this);
+    this.handleDayKeyDown = this.handleDayKeyDown.bind(this);
+    this.handleYearKeyDown = this.handleYearKeyDown.bind(this);
 
     this.handleFocus = this.handleFocus.bind(this);
     this.handleMonthFocus = this.handleMonthFocus.bind(this);
@@ -132,6 +132,8 @@ class DateInput extends React.Component {
     this.dayRender = this.dayRender.bind(this);
     this.yearRender = this.yearRender.bind(this);
 
+    this.handleMonthClick = this.handleMonthClick.bind(this);
+
     this.state = {
       month: DateInputUtil.splitMonth(value),
       day: DateInputUtil.splitDay(value),
@@ -140,6 +142,7 @@ class DateInput extends React.Component {
       monthIsFocused: false,
       dayIsFocused: false,
       yearIsFocused: false,
+      isPlaceholderColored: true,
     };
   }
 
@@ -181,6 +184,9 @@ class DateInput extends React.Component {
 
   handleMonthBlur(event) {
     this.handleBlur(event, DateInputUtil.inputType.MONTH);
+    if (this.state.month === '') {
+      this.setState({ isPlaceholderColored: true });
+    }
     this.setState({ monthIsFocused: false });
   }
 
@@ -304,7 +310,7 @@ class DateInput extends React.Component {
    * Takes a key input from the month select, and processes it based on the value of the keycode.
    * @param {Object} event Event object generated from the event delegation.
    */
-  handleMonthInputKeyDown(event) {
+  handleMonthKeyDown(event) {
     const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
 
     if (event.keyCode === KeyCode.KEY_RIGHT) {
@@ -330,13 +336,17 @@ class DateInput extends React.Component {
         this.focusDay(event);
       }
     }
+
+    if (event.keyCode === KeyCode.KEY_SPACE || event.keyCode === KeyCode.KEY_UP || event.keyCode === KeyCode.KEY_DOWN) {
+      this.setState({ isPlaceholderColored: false });
+    }
   }
 
   /**
    * Takes a key input from the day input, and processes it based on the value of the keycode.
    * @param {Object} event Event object generated from the event delegation.
    */
-  handleDayInputKeyDown(event) {
+  handleDayKeyDown(event) {
     let stateValue = this.state.day || '0';
     const previousStateValue = stateValue;
     const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
@@ -387,7 +397,7 @@ class DateInput extends React.Component {
    * Takes a key input from the year input, and processes it based on the value of the keycode.
    * @param {Object} event Event object generated from the event delegation.
    */
-  handleYearInputKeyDown(event) {
+  handleYearKeyDown(event) {
     let stateValue = this.state.year || '0';
     const previousStateValue = stateValue;
     const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
@@ -426,6 +436,13 @@ class DateInput extends React.Component {
         this.focusMonth(event);
       }
     }
+  }
+
+  /**
+   * On Click handler for month select
+   */
+  handleMonthClick() {
+    this.setState({ isPlaceholderColored: false });
   }
 
   handleValueChange(event, type, value) {
@@ -475,7 +492,7 @@ class DateInput extends React.Component {
 
     const DateInputMonthClassNames = cx([
       'month-select',
-      { 'is-placeholder': this.state.month === '' },
+      { 'is-placeholder': this.state.month === '' && this.state.isPlaceholderColored },
       { focused: this.state.monthIsFocused },
       { disabled: this.props.disabled },
       { error: this.props.isInvalid },
@@ -491,12 +508,13 @@ class DateInput extends React.Component {
           value={this.state.month}
           name={'terra-date-month-'.concat(this.props.name)}
           onChange={this.handleMonthChange}
-          onKeyDown={this.handleMonthInputKeyDown}
+          onKeyDown={this.handleMonthKeyDown}
+          onClick={this.handleMonthClick}
           onFocus={this.handleMonthFocus}
           onBlur={this.handleMonthBlur}
           disabled={this.props.disabled}
         >
-          <option value="" disabled>{this.props.intl.formatMessage({ id: 'Terra.date.input.monthPlaceholder' })}</option>
+          <option value="" hidden>{this.props.intl.formatMessage({ id: 'Terra.date.input.monthPlaceholder' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.january' })} value="01">{this.props.intl.formatMessage({ id: 'Terra.date.input.january' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.february' })} value="02">{this.props.intl.formatMessage({ id: 'Terra.date.input.february' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.march' })} value="03">{this.props.intl.formatMessage({ id: 'Terra.date.input.march' })}</option>
@@ -530,7 +548,7 @@ class DateInput extends React.Component {
         placeholder={this.props.intl.formatMessage({ id: 'Terra.date.input.dayPlaceholder' })}
         maxLength="2"
         onChange={this.handleDayChange}
-        onKeyDown={this.handleDayInputKeyDown}
+        onKeyDown={this.handleDayKeyDown}
         onFocus={this.handleDayFocus}
         onBlur={this.handleDayBlur}
         size="2"
@@ -559,7 +577,7 @@ class DateInput extends React.Component {
         placeholder={this.props.intl.formatMessage({ id: 'Terra.date.input.yearPlaceholder' })}
         maxLength="4"
         onChange={this.handleYearChange}
-        onKeyDown={this.handleYearInputKeyDown}
+        onKeyDown={this.handleYearKeyDown}
         onFocus={this.handleYearFocus}
         onBlur={this.handleYearBlur}
         size="4"

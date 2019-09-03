@@ -21,7 +21,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
         name="terra-date-month-date-input"
       >
         <option
-          disabled=""
+          hidden=""
           selected=""
           value=""
         >
@@ -133,7 +133,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
         name="terra-date-month-date-input-2"
       >
         <option
-          disabled=""
+          hidden=""
           selected=""
           value=""
         >
@@ -245,7 +245,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
         name="terra-date-month-date-input-3"
       >
         <option
-          disabled=""
+          hidden=""
           selected=""
           value=""
         >
@@ -362,12 +362,13 @@ exports[`DateInput should render a date input with a default date 1`] = `
       name="terra-date-month-date-input"
       onBlur={[Function]}
       onChange={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       value="07"
     >
       <option
-        disabled={true}
+        hidden={true}
         value=""
       >
         Terra.date.input.monthPlaceholder
@@ -515,12 +516,13 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
       name="terra-date-month-date-input"
       onBlur={[Function]}
       onChange={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       value=""
     >
       <option
-        disabled={true}
+        hidden={true}
         value=""
       >
         Terra.date.input.monthPlaceholder
@@ -663,12 +665,13 @@ exports[`DateInput should render a date input with onBlur 1`] = `
       name="terra-date-month-date-input"
       onBlur={[Function]}
       onChange={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       value=""
     >
       <option
-        disabled={true}
+        hidden={true}
         value=""
       >
         Terra.date.input.monthPlaceholder
@@ -811,12 +814,13 @@ exports[`DateInput should render a date input with onChange 1`] = `
       name="terra-date-month-date-input"
       onBlur={[Function]}
       onChange={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       value=""
     >
       <option
-        disabled={true}
+        hidden={true}
         value=""
       >
         Terra.date.input.monthPlaceholder
@@ -959,12 +963,13 @@ exports[`DateInput should render a date input with onFocus 1`] = `
       name="terra-date-month-date-input"
       onBlur={[Function]}
       onChange={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       value=""
     >
       <option
-        disabled={true}
+        hidden={true}
         value=""
       >
         Terra.date.input.monthPlaceholder
@@ -1107,12 +1112,13 @@ exports[`DateInput should render a default date input 1`] = `
       name="terra-date-month-date-input"
       onBlur={[Function]}
       onChange={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       value=""
     >
       <option
-        disabled={true}
+        hidden={true}
         value=""
       >
         Terra.date.input.monthPlaceholder
@@ -1255,12 +1261,13 @@ exports[`DateInput should render a disabled time input 1`] = `
       name="terra-date-month-date-input"
       onBlur={[Function]}
       onChange={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       value=""
     >
       <option
-        disabled={true}
+        hidden={true}
         value=""
       >
         Terra.date.input.monthPlaceholder
