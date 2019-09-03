@@ -4,7 +4,8 @@ Changelog
 Unreleased
 ----------
 ### Changed
-Updated `keycode-js` from `v1.0.4` to `v2.0.1`
+* Added check to prevent rendering of Utility Button or Nav Drawer Button if they are empty.
+* Updated `keycode-js` from `v1.0.4` to `v2.0.1`
 
 1.3.0 - (August 21, 2019)
 ------------------
