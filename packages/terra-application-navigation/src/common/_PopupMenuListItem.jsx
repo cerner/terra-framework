@@ -117,7 +117,7 @@ const PopupMenuListItem = ({
         ) : null}
       {icon ? <div className={cx('icon')}>{icon}</div> : null}
       <div className={cx('text')}>{text}</div>
-      {notificationCount > 0 && <PopupCount value={notificationCount} isInline className={cx('extension-row-count')} />}
+      {<PopupCount isPlaceholder={!notificationCount} value={notificationCount || 0} isInline className={cx('extension-row-count')} />}
     </li>
   );
 };

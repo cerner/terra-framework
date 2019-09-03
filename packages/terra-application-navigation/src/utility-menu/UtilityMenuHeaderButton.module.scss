@@ -31,6 +31,11 @@
       color: var(--terra-application-navigation-utility-header-button-focus-outline-offset, rgba(255, 255, 255, 0.8));
       outline: var(--terra-application-navigation-utility-header-button-focus-outline, 2px dashed #fff);
       outline-offset: var(--terra-application-navigation-utility-header-button-focus-outline-offset, 3px);
+
+      // background-color: var(--terra-application-navigation-utility-header-button-focus-background-color, rgba(73, 149, 250, 0.4));
+      // color: var(---terra-application-navigation-utility-header-button-focus-outline-offset, #fff);
+      // outline: var(--terra-application-navigation-utility-header-button-focus-outline, none);
+      // outline-offset: var(--terra-application-navigation-utility-header-button-focus-outline-offset, 0);
     }
 
     &:active {
@@ -69,7 +74,7 @@
     .title {
       flex: 1 1 auto;
       font-size: 1rem;
-      font-weight: normal;
+      font-weight: 400;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;

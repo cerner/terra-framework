@@ -9,12 +9,16 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * Whether or not the count should be used as placeholder height.
+   */
+  isPlaceholder: PropTypes.bool,
+  /**
    * The number of notifications to display.
    */
   value: PropTypes.number,
 };
 
-const PopupCount = ({ value }) => {
+const PopupCount = ({ isPlaceholder, value }) => {
   const countRef = useRef();
 
   useAnimatedCount(countRef, value);
@@ -24,10 +28,12 @@ const PopupCount = ({ value }) => {
     validatedValue = '999+';
   }
 
+  const attrSpread = isPlaceholder ? { 'aria-hidden': true } : undefined;
   return (
     <div
+      {...attrSpread}
       ref={countRef}
-      className={cx('popup-count')}
+      className={cx('popup-count', { 'is-placeholder': isPlaceholder })}
     >
       {validatedValue}
     </div>
