@@ -111,6 +111,15 @@
       display: none;
     }
 
+    &::-ms-value {
+      // For visual consistency with other platforms/browsers,
+      // suppress the default white text on blue background highlight given to
+      // the selected option text when the (still closed) <select> receives focus
+      // in IE and (under certain conditions) Edge.
+      background-color: rgba(0, 0, 0, 0);
+      color: var(--terra-date-input-month-select-color, inherit); // stylelint-disable-line terra/custom-property-no-duplicate-declaration
+    }
+
     &:hover {
       border: var(--terra-date-input-month-select-hover-border, 1px solid #dedfe0);
       color: var(--terra-date-input-month-select-hover-color);
