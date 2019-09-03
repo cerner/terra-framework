@@ -173,17 +173,17 @@
     .month-select {
       &:hover {
         color: transparent; // Setting this to transparent prevents dotted outline
-        /* stylelint-disable terra/custom-property-name*/
+        /* stylelint-disable terra/custom-property-name, terra/custom-property-no-duplicate-declaration */
         text-shadow: 0 0 0 var(--terra-date-input-month-select-hover-color, #1c1f21);
-        /* stylelint-enable terra/custom-property-name*/
+        /* stylelint-enable terra/custom-property-name, terra/custom-property-no-duplicate-declaration */
       }
 
       &:focus,
       &.focused {
         color: transparent; // Setting this to transparent prevents dotted outline
-        /* stylelint-disable terra/custom-property-name*/
+        /* stylelint-disable terra/custom-property-name, terra/custom-property-no-duplicate-declaration */
         text-shadow: 0 0 0 var(--terra-date-input-month-select-focus-color, #1c1f21);
-        /* stylelint-enable terra/custom-property-name */
+        /* stylelint-enable terra/custom-property-name, terra/custom-property-no-duplicate-declaration */
       }
 
       &.is-placeholder {
