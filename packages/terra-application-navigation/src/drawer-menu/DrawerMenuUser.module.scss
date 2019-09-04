@@ -31,10 +31,7 @@
     }
 
     .avatar-inner {
-      // default
-      font-size: 1.6521rem;
-      // clinical
-      font-size: 1.5714285714rem;
+      font-size: var(--terra-application-navigation-drawer-menu-avatar-inner-font-size);
     }
 
     .name {

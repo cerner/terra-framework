@@ -26,6 +26,7 @@ exports[`PopupMenuListItem should render prop data 1`] = `
   <PopupCount
     className="extension-row-count"
     isInline={true}
+    isPlaceholder={false}
     value={1}
   />
 </li>
@@ -47,6 +48,12 @@ exports[`PopupMenuListItem should render with required prop data 1`] = `
   >
     my text
   </div>
+  <PopupCount
+    className="extension-row-count"
+    isInline={true}
+    isPlaceholder={true}
+    value={0}
+  />
 </li>
 `;
 
@@ -66,6 +73,12 @@ exports[`PopupMenuListItem should render with selection callback 1`] = `
   >
     my text
   </div>
+  <PopupCount
+    className="extension-row-count"
+    isInline={true}
+    isPlaceholder={true}
+    value={0}
+  />
 </li>
 `;
 
@@ -94,6 +107,12 @@ exports[`PopupMenuListItem should render with showSelections 1`] = `
   >
     my text
   </div>
+  <PopupCount
+    className="extension-row-count"
+    isInline={true}
+    isPlaceholder={true}
+    value={0}
+  />
 </li>
 `;
 
@@ -113,5 +132,11 @@ exports[`PopupMenuListItem should render without showSelections 1`] = `
   >
     my text
   </div>
+  <PopupCount
+    className="extension-row-count"
+    isInline={true}
+    isPlaceholder={true}
+    value={0}
+  />
 </li>
 `;
