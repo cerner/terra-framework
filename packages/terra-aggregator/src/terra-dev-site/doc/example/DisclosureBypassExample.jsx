@@ -2,10 +2,8 @@ import React from 'react';
 import ModalManager from 'terra-modal-manager';
 import SlidePanelManager from 'terra-slide-panel-manager';
 
-/* eslint-disable import/no-unresolved, import/extensions */
 import Aggregator from 'terra-aggregator/lib/Aggregator';
 import AggregatorItem from 'terra-aggregator/lib/terra-dev-site/doc/common/AggregatorItem';
-/* eslint-enable import/no-unresolved, import/extensions */
 import { withDisclosureManager } from 'terra-disclosure-manager';
 
 const Wrapper = withDisclosureManager(({ items, disclosureManager }) => (

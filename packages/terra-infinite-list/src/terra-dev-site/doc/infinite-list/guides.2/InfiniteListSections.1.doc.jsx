@@ -3,10 +3,8 @@ import DocTemplate from 'terra-doc-template';
 import { name } from '../../../../../package.json';
 import ReadMe from '../../../../../docs/InfiniteListSection.md';
 
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 import InfiniteListSection from '../../guides/InfiniteListSection';
 import InfiniteListSectionSrc from '!raw-loader!../../../../../src/terra-dev-site/doc/guides/InfiniteListSection.jsx';
-/* eslint-enabled import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
   <DocTemplate

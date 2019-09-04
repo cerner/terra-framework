@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import ApplicationHeader from '../../../header/_ApplicationHeader';

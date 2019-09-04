@@ -359,18 +359,57 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
 
     Terra.it.matchesScreenshot('date picker updated', { selector: '[data-terra-date-picker-calendar]' });
 
-    it('Click button to reset date', () => {
+    it('Click button 2 to set formatted date', () => {
       browser.click('[class*="PopupOverlay"]');
-      browser.click('#reset-button');
+      browser.click('#button2');
     });
 
-    Terra.it.matchesScreenshot('date input reset');
+    Terra.it.matchesScreenshot('formatted date set');
 
     it('Open the date picker', () => {
       browser.click('[class*="button"]');
     });
 
-    Terra.it.matchesScreenshot('date picker reset', { selector: '[data-terra-date-picker-calendar]' });
+    Terra.it.matchesScreenshot('picker with formatted date', { selector: '[data-terra-date-picker-calendar]' });
+
+    it('Click button 3 to set iso date', () => {
+      browser.click('[class*="PopupOverlay"]');
+      browser.click('#button3');
+    });
+
+    Terra.it.matchesScreenshot('iso date set');
+
+    it('Open the date picker', () => {
+      browser.click('[class*="button"]');
+    });
+
+    Terra.it.matchesScreenshot('picker with iso date', { selector: '[data-terra-date-picker-calendar]' });
+
+    it('Click button 4 to set iso date time', () => {
+      browser.click('[class*="PopupOverlay"]');
+      browser.click('#button4');
+    });
+
+    Terra.it.matchesScreenshot('iso date set without time');
+
+    it('Open the date picker', () => {
+      browser.click('[class*="button"]');
+    });
+
+    Terra.it.matchesScreenshot('picker with iso date no time', { selector: '[data-terra-date-picker-calendar]' });
+
+    it('Click button 5 to set ordinal date', () => {
+      browser.click('[class*="PopupOverlay"]');
+      browser.click('#button5');
+    });
+
+    Terra.it.matchesScreenshot('ordinal date not set');
+
+    it('Open the date picker', () => {
+      browser.click('[class*="button"]');
+    });
+
+    Terra.it.matchesScreenshot('picker with ordinal date not set', { selector: '[data-terra-date-picker-calendar]' });
 
     it('Select date', () => {
       browser.keys('ArrowDown');
