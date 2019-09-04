@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Cleaned up imports in examples and test files
 
 ### Changed
 * Updated inline documentation for DisclosureManagerHeaderAdapter

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// eslint-disable-next-line import/no-unresolved, import/extensions
 import DateTimePicker from 'terra-date-time-picker/lib/DateTimePicker';
 
 

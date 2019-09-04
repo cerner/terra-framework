@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import ModalManager from 'terra-modal-manager';
 import { MemoryRouter } from 'react-router-dom';
