@@ -7,6 +7,9 @@ Unreleased
 * Cleaned up imports in examples and test files
 * Updated `keycode-js` from `v1.0.4` to `v2.0.1`
 
+### Fixed
+* Now requires users to enter separators themselves such as '/' or '-' depending on format.
+
 4.11.0 - (August 21, 2019)
 ------------------
 ### Changed

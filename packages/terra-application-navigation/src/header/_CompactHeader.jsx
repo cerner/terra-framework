@@ -9,6 +9,7 @@ import ToggleCount from './_ToggleCount';
 import Extensions from '../extensions/_Extensions';
 import { enableFocusStyles, disableFocusStyles, generateKeyDownSelection } from '../utils/helpers';
 import {
+  userConfigPropType,
   navigationItemsPropType,
   extensionItemsPropType,
   titleConfigPropType,
@@ -102,12 +103,21 @@ const propTypes = {
    * Object containing intl APIs.
    */
   intl: intlShape,
+  /**
+   * An element to render within the Header's utility menu.
+   */
+  hero: PropTypes.element,
+  /**
+   * A configuration object with information pertaining to the application's user.
+   */
+  userConfig: userConfigPropType,
 };
 
 const defaultProps = {
   extensionItems: [],
   isDrawerMenuOpen: false,
   navigationItems: [],
+  utilityItems: [],
   notifications: {},
 };
 
@@ -145,6 +155,8 @@ const CompactHeader = ({
   onSelectHelp,
   onSelectLogout,
   intl,
+  hero,
+  userConfig,
 }) => {
   const [navigationIsOpen, setNavigationIsOpen] = useState(false);
   const [utilitiesIsOpen, setUtilitiesIsOpen] = useState(false);
@@ -154,6 +166,10 @@ const CompactHeader = ({
   });
 
   function renderMenuButton() {
+    if (!(utilityItems.length > 0 || navigationItems.length > 0 || userConfig || titleConfig || hero || onSelectHelp || onSelectLogout || onSelectSettings)) {
+      return null;
+    }
+
     const headerHasCounts = navigationItems.some(item => !!notifications[item.key]);
     const isPulsed = previousNotificationsRef.current && navigationItems.some((item) => {
       const previousCount = previousNotificationsRef.current[item.key];

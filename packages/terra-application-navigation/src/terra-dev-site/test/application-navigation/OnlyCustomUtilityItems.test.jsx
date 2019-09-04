@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions  */
 import React from 'react';
 import ApplicationBase from 'terra-application/lib/application-base';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
@@ -45,16 +46,13 @@ const handleItemSelection = (key, metaData) => {
 /* eslint-enable no-alert */
 
 // TODO: remove terra-application after it is incorporated into dev-site
-const UtilitiesTest = () => (
+const OnlyCustomUtilityItemsTest = () => (
   <ApplicationBase locale="en">
     <ApplicationNavigation
-      onSelectSettings={() => alert('Settings Selected')} // eslint-disable-line no-alert
-      onSelectHelp={() => alert('Help Selected')} // eslint-disable-line no-alert
-      onSelectLogout={() => alert('Logout Selected')} // eslint-disable-line no-alert
       utilityItems={utilityItems}
       onSelectUtilityItem={handleItemSelection}
     />
   </ApplicationBase>
 );
 
-export default UtilitiesTest;
+export default OnlyCustomUtilityItemsTest;

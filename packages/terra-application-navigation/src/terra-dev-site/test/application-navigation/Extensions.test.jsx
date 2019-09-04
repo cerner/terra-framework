@@ -45,7 +45,7 @@ const handleItemSelection = (key, metaData) => {
 /* eslint-enable no-alert */
 
 // TODO: remove terra-application after it is incorporated into dev-site
-const TabsTest = () => (
+const ExtensionsTest = () => (
   <ApplicationBase locale="en">
     <ApplicationNavigation
       extensionItems={extensionItems}
@@ -54,4 +54,4 @@ const TabsTest = () => (
   </ApplicationBase>
 );
 
-export default TabsTest;
+export default ExtensionsTest;
