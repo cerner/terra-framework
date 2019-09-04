@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames/bind';
-import uniqueid from 'lodash.uniqueid';
+import uuidv4 from 'uuid/v4';
 import IconError from 'terra-icon/lib/icon/IconError';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 
@@ -155,6 +155,8 @@ const DateInputField = (props) => {
     ...customProps
   } = props;
 
+  const uniqueid = useRef(uuidv4());
+
   const dateInputFieldClasses = cx([
     'date-input-field',
     { 'is-inline': isInline },
@@ -170,8 +172,8 @@ const DateInputField = (props) => {
    * aria-describedby ids
    * Used to map legend, help text, and error messages with input/select elements
    */
-  const helpAriaDescriptionId = help ? `terra-date-input-field-description-help-${uniqueid()}` : '';
-  const errorAriaDescriptionId = isInvalid && error ? `terra-date-input-field-description-error-${uniqueid()}` : '';
+  const helpAriaDescriptionId = help ? `terra-date-input-field-description-help-${uniqueid.current}` : '';
+  const errorAriaDescriptionId = isInvalid && error ? `terra-date-input-field-description-error-${uniqueid.current}` : '';
   const ariaDescriptionIds = `${errorAriaDescriptionId} ${helpAriaDescriptionId}`;
 
   const customMonthAriaDescribedById = monthAttributes['aria-describedby'] ? monthAttributes['aria-describedby'] : '';
