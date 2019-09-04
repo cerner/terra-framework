@@ -747,6 +747,7 @@ class DatePicker extends React.Component {
         excludeTimes={this.props.excludeTimes}
         className={this.props.calendarClassName}
         yearDropdownItemNumber={this.props.yearDropdownItemNumber}
+        onRequestClose={this.handleOnRequestClose}
       >
         {this.props.children}
         <VisuallyHiddenText aria-atomic="true" aria-live="assertive" text={this.ariaLiveStatus} />
@@ -803,6 +804,7 @@ class DatePicker extends React.Component {
         excludeTimes={this.props.excludeTimes}
         className={this.props.calendarClassName}
         yearDropdownItemNumber={this.props.yearDropdownItemNumber}
+        onRequestClose={this.handleOnRequestClose}
       >
         {this.props.children}
         <VisuallyHiddenText aria-atomic="true" aria-live="assertive" text={this.ariaLiveStatus} />
@@ -877,7 +879,6 @@ class DatePicker extends React.Component {
                     <div
                       ref={this.datePickerOverlayContainer}
                       className={cx('react-datepicker-portal')}
-                      tabIndex="-1"
                       onKeyDown={this.handleCalendarKeyDown}
                     >
                       {calendar}

@@ -1,3 +1,4 @@
+import { FormattedMessage } from 'react-intl';
 import YearDropdown from './year_dropdown'
 import MonthDropdown from './month_dropdown'
 import Month from './month'
@@ -299,6 +300,12 @@ export default class Calendar extends React.Component {
     }
   }
 
+  handleCloseButtonClick = (event) => {
+    if (this.props) {
+      this.props.onRequestClose(event)
+    }
+  }
+
   getDateInView = () => {
     const { preSelection, selected, openToDate, utcOffset } = this.props
     const minDate = getEffectiveMinDate(this.props)
@@ -551,6 +558,17 @@ export default class Calendar extends React.Component {
   render () {
     return (
       <div className={cx(['react-datepicker', this.props.className])} data-terra-date-picker-calendar>
+        <FormattedMessage id="Terra.datePicker.closeCalendar">
+          {text => (
+            <button
+              className={cx('visually-hidden')}
+              type="button"
+              onClick={this.handleCloseButtonClick}
+            >
+              {text}
+            </button>
+          )}
+        </FormattedMessage>
         {this.renderPreviousMonthButton()}
         {this.renderNextMonthButton()}
         {this.renderMonths()}

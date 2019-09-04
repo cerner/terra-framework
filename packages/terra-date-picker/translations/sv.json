@@ -2,6 +2,7 @@
   "Terra.datePicker.dateFormat": "DD/MM/ÅÅÅÅ",
   "Terra.datePicker.disabled": "Inaktiverad",
   "Terra.datePicker.openCalendar": "Öppna kalender",
+  "Terra.datePicker.closeCalendar": "Stäng kalender",
   "Terra.datePicker.today": "I dag",
   "Terra.datePicker.date": "Datum"
 }
