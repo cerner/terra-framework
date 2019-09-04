@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
+import { FormattedMessage } from 'react-intl';
 import YearDropdownOptions from './year_dropdown_options'
 import onClickOutside from 'react-onclickoutside'
 import { getYear } from './date_utils'
@@ -78,13 +79,18 @@ export default class YearDropdown extends React.Component {
   }
 
   renderSelectMode = () => (
-    <select
-      tabIndex="-1"
-      value={this.props.year}
-      className={cx('react-datepicker-year-select')}
-      onChange={this.onSelectChange}>
-      {this.renderSelectOptions()}
-    </select>
+    <FormattedMessage id="Terra.datePicker.yearLabel">
+      {label => (
+        <select
+          aria-label={label}
+          value={this.props.year}
+          className={cx('react-datepicker-year-select')}
+          onChange={this.onSelectChange}>
+          {this.renderSelectOptions()}
+        </select>
+      )}
+    </FormattedMessage>
+
   )
 
   renderReadView = (visible) => (

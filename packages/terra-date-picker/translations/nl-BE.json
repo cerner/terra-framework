@@ -4,5 +4,7 @@
   "Terra.datePicker.openCalendar": "Agenda openen",
   "Terra.datePicker.closeCalendar": "Agenda sluiten",
   "Terra.datePicker.today": "Vandaag",
+  "Terra.datePicker.monthLabel": "Maand",
+  "Terra.datePicker.yearLabel": "Jaar",
   "Terra.datePicker.date": "Datum"
 }

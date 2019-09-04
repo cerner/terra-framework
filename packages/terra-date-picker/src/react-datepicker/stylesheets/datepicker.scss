@@ -1,3 +1,4 @@
+@import '~terra-mixins/lib/Mixins';
 @import 'variables';
 @import 'mixins';
 
@@ -5,7 +6,8 @@
   .react-datepicker {
     background-color: #fff;
     color: $datepicker-text-color;
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: column;
     font-family: $datepicker-font-family;
     font-size: $datepicker-font-size;
     position: relative;
@@ -29,6 +31,16 @@
     &--time {
       padding-bottom: 8px;
     }
+  }
+
+  .react-datepicker-header-controls {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .react-datepicker-header-dropdown {
+    display: inline-block;
   }
 
   .react-datepicker-year-dropdown-container--select,
@@ -56,28 +68,6 @@
     top: 10px;
     width: 0;
     z-index: 1;
-
-    &--previous {
-      border-right-color: $datepicker-muted-color;
-      left: 10px;
-
-      &:hover {
-        border-right-color: darken($datepicker-muted-color, 10%);
-      }
-    }
-
-    &--next {
-      border-left-color: $datepicker-muted-color;
-      right: 10px;
-
-      &--with-time:not(&--with-today-button) {
-        right: 80px;
-      }
-
-      &:hover {
-        border-left-color: darken($datepicker-muted-color, 10%);
-      }
-    }
 
     &--years {
       display: block;
@@ -424,6 +414,7 @@
 
   .react-datepicker-today-button {
     background: $datepicker-background-color;
+    border: 0;
     border-top: 1px solid $datepicker-border-color;
     clear: left;
     cursor: pointer;
@@ -498,15 +489,46 @@
     }
   }
 
-  .visually-hidden {
+  .react-datepicker-close-btn {
     border: 0;
     clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
+    margin: -10px;
     overflow: hidden;
     padding: 0;
     position: absolute;
     white-space: nowrap; /* Ensures words  are not read one at a time on screen readers*/
     width: 1px;
+  }
+
+  .prev-month-icon,
+  .next-month-icon {
+    display: inline-block;
+    height: var(--terra-date-picker-prev-next-month-icon-height, 1rem);
+    vertical-align: middle;
+    width: var(--terra-date-picker-prev-next-month-icon-width, 1rem);
+  }
+
+  .prev-month-icon {
+    background-image: var(--terra-date-picker-prev-month-background-image, inline-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path fill='rgb(204, 204, 204)' d='M36 48L12 24 36 0v48z'></path></svg>"));
+
+    button:focus & {
+      background-image: var(--terra-date-picker-prev-month-focus-background-image, inline-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path fill='rgb(179, 179, 179)' d='M36 48L12 24 36 0v48z'></path></svg>"));
+    }
+
+    button:hover & {
+      background-image: var(--terra-date-picker-prev-month-hover-background-image, inline-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path fill='rgb(179, 179, 179)' d='M36 48L12 24 36 0v48z'></path></svg>"));
+    }
+  }
+
+  .next-month-icon {
+    background-image: var(--terra-date-picker-next-month-background-image, inline-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path fill='rgb(204, 204, 204)' d='M12 0l24 24-24 24V0z'></path></svg>"));
+
+    button:focus & {
+      background-image: var(--terra-date-picker-next-month-focus-background-image, inline-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path fill='rgb(179, 179, 179)' d='M12 0l24 24-24 24V0z'></path></svg>"));
+    }
+
+    button:hover & {
+      background-image: var(--terra-date-picker-next-month-hover-background-image, inline-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path fill='rgb(179, 179, 179)' d='M12 0l24 24-24 24V0z'></path></svg>"));
+    }
   }
 }

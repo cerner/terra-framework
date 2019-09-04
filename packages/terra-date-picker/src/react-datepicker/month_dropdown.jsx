@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
+import { FormattedMessage } from 'react-intl';
 import MonthDropdownOptions from './month_dropdown_options'
 import onClickOutside from 'react-onclickoutside'
 import * as utils from './date_utils'
@@ -44,9 +45,13 @@ export default class MonthDropdown extends React.Component {
     ))
 
   renderSelectMode = monthNames => (
-    <select tabIndex="-1" value={this.props.month} className={cx('react-datepicker-month-select"')}onChange={e => this.onChange(e.target.value)}>
-      {this.renderSelectOptions(monthNames)}
-    </select>
+    <FormattedMessage id="Terra.datePicker.monthLabel">
+      {label => (
+        <select aria-label={label} value={this.props.month} className={cx('react-datepicker-month-select"')} onChange={e => this.onChange(e.target.value)}>
+          {this.renderSelectOptions(monthNames)}
+        </select>
+      )}
+    </FormattedMessage>
   )
 
   renderReadView = (visible, monthNames) => (

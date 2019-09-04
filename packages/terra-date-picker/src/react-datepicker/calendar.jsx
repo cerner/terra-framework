@@ -1,4 +1,7 @@
 import { FormattedMessage } from 'react-intl';
+import Button from 'terra-button';
+import IconCaretLeft from 'terra-icon/lib/icon/IconCaretLeft';
+import IconCaretRight from 'terra-icon/lib/icon/IconCaretRight';
 import YearDropdown from './year_dropdown'
 import MonthDropdown from './month_dropdown'
 import Month from './month'
@@ -398,8 +401,13 @@ export default class Calendar extends React.Component {
     if (!this.props.forceShowMonthNavigation && allDaysDisabledBefore(this.state.date, 'month', this.props)) {
       return
     }
-    return <a
-      className={cx(['react-datepicker-navigation', 'react-datepicker-navigation--previous'])}
+    
+    return <Button
+      icon={<span className={cx('prev-month-icon')} />}
+      isCompact
+      isIconOnly
+      variant="utility"
+      text="Previous Month"
       onClick={this.decreaseMonth} />
   }
 
@@ -408,16 +416,12 @@ export default class Calendar extends React.Component {
       return
     }
 
-    let classes = ['react-datepicker-navigation', 'react-datepicker-navigation--next']
-    if (this.props.showTimeSelect) {
-      classes.push('react-datepicker-navigation--next--with-time')
-    }
-    if (this.props.todayButton) {
-      classes.push('react-datepicker-navigation--next--with-today-button')
-    }
-
-    return <a
-      className={cx(classes)}
+    return <Button
+      icon={<span className={cx('next-month-icon')} />}
+      isIconOnly
+      isCompact
+      variant="utility"
+      text="Next Month"
       onClick={this.increaseMonth} />
   }
 
@@ -476,11 +480,11 @@ export default class Calendar extends React.Component {
       return
     }
     return (
-      <div
+      <button
         className={cx('react-datepicker-today-button')}
         onClick={e => this.props.onSelect(getStartOfDate(now(this.props.utcOffset)), e)}>
         {this.props.todayButton}
-      </div>
+      </button>
     )
   }
 
@@ -493,11 +497,16 @@ export default class Calendar extends React.Component {
         <div key={monthKey} ref={div => { this.monthContainer = div }} className={cx('react-datepicker-month-container')}>
           <div className={cx('react-datepicker-header')}>
             {this.renderCurrentMonth(monthDate)}
-            <div
-              className={cx(['react-datepicker-header-dropdown', `react-datepicker-header-dropdown--${this.props.dropdownMode}`])}
-              onFocus={this.handleDropdownFocus}>
-              {this.renderMonthDropdown(i !== 0)}
-              {this.renderYearDropdown(i !== 0)}
+            <div className={cx('react-datepicker-header-controls')}>
+              {this.renderPreviousMonthButton()}
+              <div
+                className={cx(['react-datepicker-header-dropdown', `react-datepicker-header-dropdown--${this.props.dropdownMode}`])}
+                onFocus={this.handleDropdownFocus}
+              >
+                {this.renderMonthDropdown(i !== 0)}
+                {this.renderYearDropdown(i !== 0)}
+              </div>
+              {this.renderNextMonthButton()}
             </div>
             <div className={cx('react-datepicker-day-names')}>
               {this.header(monthDate)}
@@ -561,7 +570,7 @@ export default class Calendar extends React.Component {
         <FormattedMessage id="Terra.datePicker.closeCalendar">
           {text => (
             <button
-              className={cx('visually-hidden')}
+              className={cx('react-datepicker-close-btn')}
               type="button"
               onClick={this.handleCloseButtonClick}
             >
@@ -569,8 +578,6 @@ export default class Calendar extends React.Component {
             </button>
           )}
         </FormattedMessage>
-        {this.renderPreviousMonthButton()}
-        {this.renderNextMonthButton()}
         {this.renderMonths()}
         {this.renderTodayButton()}
         {this.renderTimeSection()}

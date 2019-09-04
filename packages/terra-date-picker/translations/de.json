@@ -4,5 +4,7 @@
   "Terra.datePicker.openCalendar": "Kalender öffnen",
   "Terra.datePicker.closeCalendar": "Kalender schließen",
   "Terra.datePicker.today": "Heute",
+  "Terra.datePicker.monthLabel": "Monat",
+  "Terra.datePicker.yearLabel": "Jahr",
   "Terra.datePicker.date": "Datum"
 }
