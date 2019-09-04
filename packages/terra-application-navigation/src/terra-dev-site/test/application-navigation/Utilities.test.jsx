@@ -46,7 +46,7 @@ const handleItemSelection = (key, metaData) => {
 /* eslint-enable no-alert */
 
 // TODO: remove terra-application after it is incorporated into dev-site
-const TabsTest = () => (
+const UtilitiesTest = () => (
   <ApplicationBase locale="en">
     <ApplicationNavigation
       onSelectSettings={() => alert('Settings Selected')} // eslint-disable-line no-alert
@@ -58,4 +58,4 @@ const TabsTest = () => (
   </ApplicationBase>
 );
 
-export default TabsTest;
+export default UtilitiesTest;
