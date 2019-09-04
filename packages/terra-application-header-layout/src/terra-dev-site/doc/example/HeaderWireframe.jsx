@@ -1,14 +1,12 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import ResponsiveElement from 'terra-responsive-element/lib/ResponsiveElement';
-/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import ApplicationHeaderLayout from 'terra-application-header-layout/lib/ApplicationHeaderLayout';
 import ExtensionsExample from 'terra-application-header-layout/lib/terra-dev-site/doc/common/ExtensionsExample';
 import LogoExample from 'terra-application-header-layout/lib/terra-dev-site/doc/common/LogoExample';
 import NavigationExample from 'terra-application-header-layout/lib/terra-dev-site/doc/common/NavigationExample';
 import ToggleExample from 'terra-application-header-layout/lib/terra-dev-site/doc/common/ToggleExample';
 import UtilitiesExample from 'terra-application-header-layout/lib/terra-dev-site/doc/common/UtilitiesExample';
-/* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import styles from './HeaderWireframe.module.scss';
 
 const cx = classNames.bind(styles);
