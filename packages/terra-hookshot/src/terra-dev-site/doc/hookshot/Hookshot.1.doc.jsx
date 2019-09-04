@@ -3,7 +3,6 @@ import DocTemplate from 'terra-doc-template';
 import { name } from '../../../../package.json';
 import ReadMe from '../../../../docs/README.md';
 
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
 import HookshotSrc from '!raw-loader!../../../../src/Hookshot';
 import HookshotContentSrc from '!raw-loader!../../../../src/HookshotContent';
@@ -15,7 +14,6 @@ import CoordsHookshotExampleSrc from '!raw-loader!../../../../src/terra-dev-site
 import HookshotExample from '../example/HookshotExample';
 import BoundedHookshotExample from '../example/BoundedHookshotExample';
 import CoordsHookshotExample from '../example/CoordsHookshotExample';
-/* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
   <DocTemplate

@@ -7,7 +7,6 @@ import Avatar from 'terra-avatar';
 import ContentContainer from 'terra-content-container';
 import classNames from 'classnames/bind';
 
-/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import ApplicationLayout, { Utils } from 'terra-application-layout/lib/ApplicationLayout';
 import ApplicationContent from 'terra-application-layout/lib/terra-dev-site/doc/common/ApplicationContent';
 import ApplicationMenu from 'terra-application-layout/lib/terra-dev-site/doc/common/ApplicationMenu';
@@ -15,7 +14,6 @@ import UtilityOption from 'terra-application-layout/lib/terra-dev-site/doc/commo
 import ApplicationExtensions from 'terra-application-layout/lib/terra-dev-site/doc/common/ApplicationExtensions';
 import ProfilePicture from 'terra-application-layout/lib/terra-dev-site/doc/common/henry.jpg';
 import styles from './ApplicationLayoutExampleCommon.module.scss';
-/* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 const cx = classNames.bind(styles);
 
