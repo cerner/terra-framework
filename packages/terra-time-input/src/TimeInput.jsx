@@ -685,7 +685,7 @@ class TimeInput extends React.Component {
           />
           <Input
             {...inputAttributes}
-            {...minuteAttributes}
+            {...hourAttributes}
             aria-label={intl.formatMessage({ id: 'Terra.timeInput.hours' })}
             refCallback={(inputRef) => {
               this.hourInput = inputRef;
