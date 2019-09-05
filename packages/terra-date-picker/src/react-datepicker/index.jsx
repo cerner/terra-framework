@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FocusTrap from 'focus-trap-react';
 import { Portal } from 'react-portal';
-import KeyCode from 'keycode-js';
+import * as KeyCode from 'keycode-js';
 import Popup from 'terra-popup';
 import classNames from 'classnames/bind';
 import { injectIntl, intlShape } from 'react-intl';

@@ -11,6 +11,10 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * An ISO 8601 date time with the ambiguous hour.
+   */
+  ambiguousDateTime: PropTypes.string,
+  /**
    * @private
    * intl object programmatically imported through injectIntl from react-intl.
    * */
@@ -72,8 +76,8 @@ class TimeClarification extends React.Component {
 
   handleDaylightSavingButtonClick(event) {
     this.setState({
-      offsetDisplay: DateTimeUtils.getDaylightSavingTZDisplay(),
-      offsetLongDisplay: DateTimeUtils.getDaylightSavingExpandedTZDisplay(),
+      offsetDisplay: DateTimeUtils.getDaylightSavingTZDisplay(this.props.ambiguousDateTime),
+      offsetLongDisplay: DateTimeUtils.getDaylightSavingExpandedTZDisplay(this.props.ambiguousDateTime),
     });
 
     if (this.props.onDaylightSavingButtonClick) {
@@ -83,8 +87,8 @@ class TimeClarification extends React.Component {
 
   handleStandardTimeButtonClick(event) {
     this.setState({
-      offsetDisplay: DateTimeUtils.getStandardTZDisplay(),
-      offsetLongDisplay: DateTimeUtils.getStandardExpandedTZDisplay(),
+      offsetDisplay: DateTimeUtils.getStandardTZDisplay(this.props.ambiguousDateTime),
+      offsetLongDisplay: DateTimeUtils.getStandardExpandedTZDisplay(this.props.ambiguousDateTime),
     });
 
     if (this.props.onStandardTimeButtonClick) {

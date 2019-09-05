@@ -5,6 +5,8 @@ Unreleased
 ----------
 ### Changed
 * Changed 12-hour format appearance for mobile and desktop.
+* Cleaned up imports in examples and test files
+* Updated `keycode-js` from `v1.0.4` to `v2.0.1`
 
 4.8.0 - (August 21, 2019)
 ------------------

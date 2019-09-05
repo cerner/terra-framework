@@ -3,7 +3,7 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl, mountWithIntl, renderWithIntl } from 'terra-enzyme-intl';
-import KeyCode from 'keycode-js';
+import * as KeyCode from 'keycode-js';
 import TimeInput from '../../lib/TimeInput';
 import TimeUtil from '../../lib/TimeUtil';
 

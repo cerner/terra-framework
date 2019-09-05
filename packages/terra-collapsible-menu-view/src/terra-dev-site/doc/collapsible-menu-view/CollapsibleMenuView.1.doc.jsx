@@ -3,7 +3,6 @@ import DocTemplate from 'terra-doc-template';
 import ReadMe from '../../../../docs/README.md';
 import { name } from '../../../../package.json';
 
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
 import CollapsibleMenuViewSrc from '!raw-loader!../../../../src/CollapsibleMenuView';
 import CollapsibleMenuViewItemSrc from '!raw-loader!../../../../src/CollapsibleMenuViewItem';
@@ -13,7 +12,6 @@ import CollapsibleMenuViewToggleSrc from '!raw-loader!../../../../src/Collapsibl
 // Example Files
 import BasicView from '../example/CollapsibleMenuViewDemo';
 import BasicViewSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/CollapsibleMenuViewDemo';
-/* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
   <DocTemplate

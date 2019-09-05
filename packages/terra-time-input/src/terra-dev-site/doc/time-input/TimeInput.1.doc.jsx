@@ -3,7 +3,6 @@ import DocTemplate from 'terra-doc-template';
 import ReadMe from '../../../../docs/README.md';
 import { name } from '../../../../package.json';
 
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
 import TimeInputSrc from '!raw-loader!../../../../src/TimeInput';
 
@@ -22,7 +21,7 @@ import TimeInputSecondsWithDefault from '../example/TimeInputSecondsWithDefault'
 import TimeInputSecondsWithDefaultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TimeInputSecondsWithDefault';
 import TimeInputSecondsTwelveHour from '../example/TimeInputSecondsTwelveHour';
 import TimeInputSecondsTwelveHourSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TimeInputSecondsTwelveHour';
-/* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
+
 
 const DocPage = () => (
   <DocTemplate

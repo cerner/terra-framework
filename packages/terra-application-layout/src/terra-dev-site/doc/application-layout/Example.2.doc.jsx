@@ -6,12 +6,10 @@ import { name } from '../../../../package.json';
 import ExampleDoc from '../../../../docs/example.md';
 import styles from './Example.2.doc.module.scss';
 
-/* eslint-disable import/no-webpack-loader-syntax, import/first,  import/no-unresolved, import/extensions, , import/no-duplicates */
 import ExampleApplication from '../example/ExampleApplication';
 import ExampleApplicationSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ExampleApplication';
 import ExampleApplicationWithNavIcons from '../example/ExampleApplicationWithNavIcons';
 import ExampleApplicationWithNavIconsSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ExampleApplicationWithNavIcons';
-/* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const cx = classNames.bind(styles);
 

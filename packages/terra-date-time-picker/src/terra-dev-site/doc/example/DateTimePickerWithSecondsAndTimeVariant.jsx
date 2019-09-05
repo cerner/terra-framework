@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';

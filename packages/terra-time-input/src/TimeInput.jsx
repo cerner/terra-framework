@@ -5,7 +5,7 @@ import Input from 'terra-form-input';
 import ButtonGroup from 'terra-button-group';
 import { injectIntl, intlShape } from 'react-intl';
 
-import KeyCode from 'keycode-js';
+import * as KeyCode from 'keycode-js';
 import TimeUtil from './TimeUtil';
 import styles from './TimeInput.module.scss';
 
