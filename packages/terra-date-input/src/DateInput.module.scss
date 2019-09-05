@@ -209,13 +209,31 @@
   }
 
   .date-input-day {
+    // Hide number spinner in Firefox
+    -moz-appearance: textfield; /* stylelint-disable-line property-no-vendor-prefix, plugin/no-unsupported-browser-features */
     max-width: var(--terra-date-input-date-input-day-max-width, 2.5rem);
     z-index: 1;
+
+    // Hide number spinner in Chrome/Safari
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      appearance: none; /* stylelint-disable-line plugin/no-unsupported-browser-features */
+      margin: 0;
+    }
   }
 
   .date-input-year {
+    // Hide number spinner in Firefox
+    -moz-appearance: textfield; /* stylelint-disable-line property-no-vendor-prefix, plugin/no-unsupported-browser-features */
     max-width: var(--terra-date-input-date-input-year-max-width, 3.8rem);
     z-index: 1;
+
+    // Hide number spinner in Chrome/Safari
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      appearance: none; /* stylelint-disable-line plugin/no-unsupported-browser-features */
+      margin: 0;
+    }
   }
 
   // Gutters

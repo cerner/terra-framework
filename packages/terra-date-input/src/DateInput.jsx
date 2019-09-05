@@ -352,10 +352,12 @@ class DateInput extends React.Component {
     const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
 
     if (event.keyCode === KeyCode.KEY_UP) {
+      event.preventDefault();
       stateValue = DateInputUtil.incrementDay(stateValue);
     }
 
     if (event.keyCode === KeyCode.KEY_DOWN) {
+      event.preventDefault();
       stateValue = DateInputUtil.decrementDay(stateValue);
     }
 
@@ -403,10 +405,12 @@ class DateInput extends React.Component {
     const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
 
     if (event.keyCode === KeyCode.KEY_UP) {
+      event.preventDefault();
       stateValue = DateInputUtil.incrementYear(stateValue);
     }
 
     if (event.keyCode === KeyCode.KEY_DOWN) {
+      event.preventDefault();
       stateValue = DateInputUtil.decrementYear(stateValue);
     }
 
@@ -542,7 +546,7 @@ class DateInput extends React.Component {
         refCallback={(inputRef) => { this.dayRef = inputRef; }}
         aria-label={this.props.intl.formatMessage({ id: 'Terra.date.input.dayLabel' })}
         className={cx('date-input-day', { 'is-focused': this.state.dayIsFocused })}
-        type="text"
+        type="number"
         value={this.state.day}
         name={'terra-date-day-'.concat(this.props.name)}
         placeholder={this.props.intl.formatMessage({ id: 'Terra.date.input.dayPlaceholder' })}
@@ -552,8 +556,6 @@ class DateInput extends React.Component {
         onFocus={this.handleDayFocus}
         onBlur={this.handleDayBlur}
         size="2"
-        pattern="\d*"
-        inputMode="numeric"
         autoComplete="off"
         disabled={this.props.disabled}
         isInvalid={this.props.isInvalid}
@@ -571,7 +573,7 @@ class DateInput extends React.Component {
         refCallback={(inputRef) => { this.yearRef = inputRef; }}
         aria-label={this.props.intl.formatMessage({ id: 'Terra.date.input.yearLabel' })}
         className={cx('date-input-year', { 'is-focused': this.state.yearIsFocused })}
-        type="text"
+        type="number"
         value={this.state.year}
         name={'terra-date-year-'.concat(this.props.name)}
         placeholder={this.props.intl.formatMessage({ id: 'Terra.date.input.yearPlaceholder' })}
@@ -581,8 +583,6 @@ class DateInput extends React.Component {
         onFocus={this.handleYearFocus}
         onBlur={this.handleYearBlur}
         size="4"
-        pattern="\d*"
-        inputMode="numeric"
         autoComplete="off"
         disabled={this.props.disabled}
         isInvalid={this.props.isInvalid}
