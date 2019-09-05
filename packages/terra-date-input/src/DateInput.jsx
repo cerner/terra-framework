@@ -313,22 +313,6 @@ class DateInput extends React.Component {
   handleMonthKeyDown(event) {
     const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
 
-    if (event.keyCode === KeyCode.KEY_RIGHT) {
-      if (displayFormat === 'month-day-year') {
-        this.focusDay(event);
-      }
-
-      if (displayFormat === 'day-month-year') {
-        this.focusYear(event);
-      }
-    }
-
-    if (event.keyCode === KeyCode.KEY_LEFT) {
-      if (displayFormat === 'day-month-year') {
-        this.focusDay(event);
-      }
-    }
-
     if (event.keyCode === KeyCode.KEY_BACK_SPACE || event.keyCode === KeyCode.KEY_DELETE) {
       this.handleValueChange(event, DateInputUtil.inputType.MONTH, '');
 
@@ -365,32 +349,9 @@ class DateInput extends React.Component {
       this.handleValueChange(event, DateInputUtil.inputType.DAY, stateValue);
     }
 
-    if (event.keyCode === KeyCode.KEY_LEFT) {
-      // If cursor at beginning of input
-      if (this.dayRef.selectionEnd === 0) {
-        if (displayFormat === 'month-day-year') {
-          this.focusMonth(event);
-        }
-      }
-    }
-
     if (event.keyCode === KeyCode.KEY_BACK_SPACE || event.keyCode === KeyCode.KEY_DELETE) {
       if (displayFormat === 'month-day-year' && event.target.value === '') {
         this.focusMonth(event);
-      }
-    }
-
-    if (event.keyCode === KeyCode.KEY_RIGHT) {
-      // If the day input is empty or the cursor is after the value
-      if (this.state.day.length === 0 || this.state.day.length === this.dayRef.selectionEnd) {
-        if (displayFormat === 'month-day-year') {
-          this.focusYear(event);
-        }
-
-
-        if (displayFormat === 'day-month-year') {
-          this.focusMonth(event);
-        }
       }
     }
   }
@@ -416,19 +377,6 @@ class DateInput extends React.Component {
 
     if (previousStateValue !== stateValue) {
       this.handleValueChange(event, DateInputUtil.inputType.YEAR, stateValue);
-    }
-
-    if (event.keyCode === KeyCode.KEY_LEFT) {
-      // If cursor at beginning of input
-      if (this.yearRef.selectionEnd === 0) {
-        if (displayFormat === 'month-day-year') {
-          this.focusDay(event);
-        }
-
-        if (displayFormat === 'day-month-year') {
-          this.focusMonth(event);
-        }
-      }
     }
 
     if (event.keyCode === KeyCode.KEY_BACK_SPACE || event.keyCode === KeyCode.KEY_DELETE) {
