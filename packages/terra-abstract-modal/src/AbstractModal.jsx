@@ -88,7 +88,7 @@ class AbstractModal extends React.Component {
     console.log(!Element.prototype.hasOwnProperty('inert'));
     if (!Element.prototype.hasOwnProperty('inert')) {
       console.log('loading wicg-inert');
-      require('wicg-inert');
+      require('wicg-inert/dist/inert');
     }
     document.addEventListener('keydown', this.handleKeydown);
 
