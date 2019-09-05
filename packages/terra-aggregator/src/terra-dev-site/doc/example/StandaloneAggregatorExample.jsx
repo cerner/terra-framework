@@ -1,9 +1,7 @@
 import React from 'react';
 
-/* eslint-disable import/no-unresolved, import/extensions */
 import Aggregator from 'terra-aggregator/lib/Aggregator';
 import AggregatorItem from 'terra-aggregator/lib/terra-dev-site/doc/common/AggregatorItem';
-/* eslint-enable import/no-unresolved, import/extensions */
 
 const items = Object.freeze([{
   key: 'SECTION_0',

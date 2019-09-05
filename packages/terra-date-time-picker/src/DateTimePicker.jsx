@@ -129,7 +129,7 @@ class DateTimePicker extends React.Component {
     super(props);
 
     this.state = {
-      dateTime: DateUtil.createSafeDate(props.value),
+      dateTime: DateTimeUtils.createSafeDate(props.value),
       isAmbiguousTime: false,
       isTimeClarificationOpen: false,
       dateFormat: DateUtil.getFormatByLocale(props.intl.locale),
@@ -168,7 +168,7 @@ class DateTimePicker extends React.Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.value !== prevState.prevPropsValue) {
       return {
-        dateTime: DateUtil.createSafeDate(nextProps.value),
+        dateTime: DateTimeUtils.createSafeDate(nextProps.value),
         prevPropsValue: nextProps.value,
       };
     }
@@ -208,7 +208,7 @@ class DateTimePicker extends React.Component {
         // If the entered time is ambiguous then do not handle blur just yet. It should be handled _after_
         // the ambiguity is resolved (i.e., after dismissing the Time Clarification dialog).
         if (!(this.state.isAmbiguousTime && this.state.isTimeClarificationOpen)) {
-          this.handleBlur(event);
+          this.handleBlur(event, this.state.dateTime);
         }
       });
     }
@@ -232,13 +232,13 @@ class DateTimePicker extends React.Component {
         // If the entered time is ambiguous then do not handle blur just yet. It should be handled _after_
         // the ambiguity is resolved (i.e., after dismissing the Time Clarification dialog).
         if (!(this.state.isAmbiguousTime && this.state.isTimeClarificationOpen)) {
-          this.handleBlur(event);
+          this.handleBlur(event, this.state.dateTime);
         }
       });
     }
   }
 
-  handleBlur(event) {
+  handleBlur(event, momentDateTime) {
     if (this.props.onBlur) {
       const isCompleteDateTime = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
       let value = '';
@@ -252,7 +252,7 @@ class DateTimePicker extends React.Component {
 
       value = value.trim();
 
-      const tempDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
+      const tempDateTime = momentDateTime ? momentDateTime.clone() : null;
       let iSOString = '';
 
       if (isCompleteDateTime && tempDateTime) {
@@ -310,7 +310,7 @@ class DateTimePicker extends React.Component {
     const isTimeValid = DateTimeUtils.isValidTime(this.timeValue, this.props.showSeconds);
 
     if (isDateValid) {
-      const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : DateUtil.createSafeDate(formattedDate);
+      const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : DateTimeUtils.createSafeDate(formattedDate);
       updatedDateTime = DateTimeUtils.syncDateTime(previousDateTime, date, this.timeValue, this.props.showSeconds);
 
       if (isTimeValid) {
@@ -443,7 +443,7 @@ class DateTimePicker extends React.Component {
   isDateTimeAcceptable(newDateTime) {
     let isAcceptable = true;
 
-    if (DateUtil.isDateOutOfRange(newDateTime, DateUtil.createSafeDate(this.props.minDate), DateUtil.createSafeDate(this.props.maxDate))) {
+    if (DateUtil.isDateOutOfRange(newDateTime, DateTimeUtils.createSafeDate(this.props.minDate), DateTimeUtils.createSafeDate(this.props.maxDate))) {
       isAcceptable = false;
     }
 
@@ -476,7 +476,7 @@ class DateTimePicker extends React.Component {
     // When the Time Clarification dialog was launched _without_ using the Offset button, 'blur' event
     // needs to be handled appropriately upon dismissal of the dialog (i.e. after DST resolution).
     if (!this.wasOffsetButtonClicked) {
-      this.handleBlur(event);
+      this.handleBlur(event, newDateTime);
     }
 
     this.wasOffsetButtonClicked = false;
@@ -504,7 +504,7 @@ class DateTimePicker extends React.Component {
     // When the Time Clarification dialog was launched _without_ using the Offset button, 'blur' event
     // needs to be handled appropriately upon dismissal of the dialog (i.e. after DST resolution).
     if (!this.wasOffsetButtonClicked) {
-      this.handleBlur(event);
+      this.handleBlur(event, newDateTime);
     }
 
     this.wasOffsetButtonClicked = false;

@@ -3,7 +3,6 @@ import DocTemplate from 'terra-doc-template';
 import ReadMe from '../../../../docs/TestingEmbeddedApplications.md';
 import { name } from '../../../../package.json';
 
-/* eslint-disable import/no-webpack-loader-syntax, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
 import EmbeddedContentProviderTestTemplate from '!raw-loader!../../../../src/EmbeddedContentProviderTestTemplate.jsx';
 
@@ -16,7 +15,6 @@ import CustomEventsProvider from '../../provider/embedded-content-consumer/provi
 import CustomEventsProviderSrc from '!raw-loader!../../../../src/terra-dev-site/provider/embedded-content-consumer/providers/CustomEventsProvider.provider';
 import DataStatusProvider from '../../provider/embedded-content-consumer/providers/DataStatusProvider.provider';
 import DataStatusProviderSrc from '!raw-loader!../../../../src/terra-dev-site/provider/embedded-content-consumer/providers/DataStatusProvider.provider';
-/* eslint-enable import/no-webpack-loader-syntax, import/extensions, import/no-duplicates */
 
 const DocPage = () => (
   <DocTemplate

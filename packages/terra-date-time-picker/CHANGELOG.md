@@ -4,7 +4,11 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
-Updated `keycode-js` from `v1.0.4` to `v2.0.1`
+* Cleaned up imports in examples and test files
+* Updated `keycode-js` from `v1.0.4` to `v2.0.1`
+
+### Fixed
+* Fixed `onBlur` prop to receive correct date and time upon resolving ambiguous hour to Standard time in the Time Clarification modal.
 
 4.11.0 - (August 21, 2019)
 ------------------
@@ -12,8 +16,11 @@ Updated `keycode-js` from `v1.0.4` to `v2.0.1`
 * Replaced Object.assign syntax with Object spread syntax
 
 ### Fixed
-* Fix JS error when losing focus from an empty date input. 
+* Fix JS error when losing focus from an empty date input.
 * Fixed ambiguous hour that occurs in the southern hemisphere.
+
+### Added
+* Added a function to DateTimeUtil.
 
 ### Removed
 * Removed extra calls to hide the caret in inputs (some are still needed because `terra-time-input` explicitly sets a `caret-color`).
