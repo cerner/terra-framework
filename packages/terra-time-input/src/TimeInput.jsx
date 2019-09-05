@@ -223,6 +223,8 @@ class TimeInput extends React.Component {
   handleSecondFocus(event) {
     this.handleFocus(event);
     this.setState({ secondInitialFocused: true });
+
+    // This check is _needed_ to avoid the contextual menu on mobile devices coming up every time the focus shifts.
     if (!TimeUtil.isConsideredMobileDevice()) {
       this.secondInput.setSelectionRange(0, this.secondInput.value.length);
     }
@@ -231,6 +233,8 @@ class TimeInput extends React.Component {
   handleMinuteFocus(event) {
     this.handleFocus(event);
     this.setState({ minuteInitialFocused: true });
+
+    // This check is _needed_ to avoid the contextual menu on mobile device coming up every time the focus shifts.
     if (!TimeUtil.isConsideredMobileDevice()) {
       this.minuteInput.setSelectionRange(0, this.minuteInput.value.length);
     }
@@ -239,6 +243,8 @@ class TimeInput extends React.Component {
   handleHourFocus(event) {
     this.handleFocus(event);
     this.setState({ hourInitialFocused: true });
+
+    // This check is _needed_ to avoid the contextual menu on mobile device coming up every time the focus shifts.
     if (!TimeUtil.isConsideredMobileDevice()) {
       this.hourInput.setSelectionRange(0, this.hourInput.value.length);
     }
