@@ -3,7 +3,6 @@ import DocTemplate from 'terra-doc-template';
 import ReadMe from '../../../../docs/README.md';
 import { name } from '../../../../package.json';
 
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
 import ModalSrc from '!raw-loader!../../../../src/AbstractModal';
 
@@ -16,8 +15,6 @@ import AbstractModalIsFullscreen from '../example/AbstractModalIsFullscreen';
 import AbstractModalIsFullscreenSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/AbstractModalIsFullscreen';
 import AbstractModalAlertDialog from '../example/AbstractModalAlertDialog';
 import AbstractModalAlertDialogSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/AbstractModalAlertDialog';
-
-/* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
   <DocTemplate

@@ -4,7 +4,11 @@ Changelog
 Unreleased
 ----------
 ### Changed
-Updated `keycode-js` from `v1.0.4` to `v2.0.1`
+* Cleaned up imports in examples and test files
+* Updated `keycode-js` from `v1.0.4` to `v2.0.1`
+
+### Fixed
+* Now requires users to enter separators themselves such as '/' or '-' depending on format.
 
 4.11.0 - (August 21, 2019)
 ------------------
@@ -59,7 +63,7 @@ Updated `keycode-js` from `v1.0.4` to `v2.0.1`
 * Minor dependency version bump
 
 4.5.0 - (July 2, 2019)
-------------------
+------------------      
 ### Added
 * Allow terra-date-picker to be a controlled component.
 * Added functionality to announce the pre-selected date to screen readers when navigating within the date picker.

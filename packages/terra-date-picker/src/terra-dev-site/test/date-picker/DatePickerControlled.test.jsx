@@ -22,8 +22,8 @@ class DatePickerDefault extends React.Component {
     this.setState({ date });
   }
 
-  handleSelectedDateUpdate() {
-    this.setState({ date: '2019-01-01' });
+  handleSelectedDateUpdate(event) {
+    this.setState({ date: event.currentTarget.textContent });
   }
 
   render() {
@@ -37,8 +37,32 @@ class DatePickerDefault extends React.Component {
         />
         {'  '}
         <Button
-          id="reset-button"
-          text="Set to 01/01/2019"
+          id="button1"
+          text=""
+          onClick={this.handleSelectedDateUpdate}
+        />
+        {'  '}
+        <Button
+          id="button2"
+          text="01/01/2019"
+          onClick={this.handleSelectedDateUpdate}
+        />
+        {'  '}
+        <Button
+          id="button3"
+          text="2019-02-02"
+          onClick={this.handleSelectedDateUpdate}
+        />
+        {'  '}
+        <Button
+          id="button4"
+          text="2019-03-03T10:30"
+          onClick={this.handleSelectedDateUpdate}
+        />
+        {'  '}
+        <Button
+          id="button5"
+          text="0101123"
           onClick={this.handleSelectedDateUpdate}
         />
       </div>

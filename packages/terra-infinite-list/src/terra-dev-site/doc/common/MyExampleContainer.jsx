@@ -7,7 +7,7 @@ const MyExampleContainer = ({ children }) => (
       height: '300px',
       width: '100%',
       position: 'relative',
-      border: '1px solid black',
+      border: '1px solid #000',
     }}
   >
     {children}
