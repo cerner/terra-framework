@@ -31,7 +31,7 @@
     }
 
     .avatar-inner {
-      font-size: var(--terra-application-navigation-drawer-menu-avatar-inner-font-size);
+      font-size: var(--terra-application-navigation-drawer-menu-user-large-avatar-inner-font-size, 1.6521rem);
     }
 
     .name {
@@ -78,10 +78,7 @@
     }
   
     .avatar-inner {
-      // Default
-      font-size: 0.6522rem;
-      // Clinical
-      font-size: 0.625rem;
+      font-size: var(--terra-application-navigation-drawer-menu-user-small-avatar-inner-font-size, 0.6522rem);
     }
 
     .info-container {
