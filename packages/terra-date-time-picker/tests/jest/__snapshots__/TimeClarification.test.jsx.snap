@@ -250,7 +250,7 @@ exports[`should render offset button after daylight savings button clicked 1`] =
 `;
 
 exports[`should render offset button after daylight savings button clicked in the southern hemisphere timezone 1`] = `
-<div>
+<Fragment>
   <AbstractModal
     ariaLabel="Time Clarification"
     classNameModal="time-clarification"
@@ -311,21 +311,25 @@ exports[`should render offset button after daylight savings button clicked in th
       </div>
     </div>
   </AbstractModal>
-  <Button
-    aria-label="Australia/Sydney AEDT +11:00"
-    className="button-offset button-offset-hidden"
-    isBlock={false}
-    isCompact={true}
-    isDisabled={true}
-    isIconOnly={false}
-    isReversed={false}
-    onClick={[MockFunction]}
-    text=""
-    title="Australia/Sydney AEDT +11:00"
-    type="button"
-    variant="neutral"
-  />
-</div>
+  <div
+    className="offset-button-container"
+  >
+    <Button
+      aria-label="Australia/Sydney AEDT +11:00"
+      className="button-offset button-offset-hidden"
+      isBlock={false}
+      isCompact={true}
+      isDisabled={true}
+      isIconOnly={false}
+      isReversed={false}
+      onClick={[MockFunction]}
+      text=""
+      title="Australia/Sydney AEDT +11:00"
+      type="button"
+      variant="neutral"
+    />
+  </div>
+</Fragment>
 `;
 
 exports[`should render offset button after standard time button clicked 1`] = `
@@ -412,7 +416,7 @@ exports[`should render offset button after standard time button clicked 1`] = `
 `;
 
 exports[`should render offset button after standard time button clicked in the southern hemisphere timezone 1`] = `
-<div>
+<Fragment>
   <AbstractModal
     ariaLabel="Time Clarification"
     classNameModal="time-clarification"
@@ -473,19 +477,23 @@ exports[`should render offset button after standard time button clicked in the s
       </div>
     </div>
   </AbstractModal>
-  <Button
-    aria-label="Australia/Sydney AEST +10:00"
-    className="button-offset button-offset-hidden"
-    isBlock={false}
-    isCompact={true}
-    isDisabled={true}
-    isIconOnly={false}
-    isReversed={false}
-    onClick={[MockFunction]}
-    text=""
-    title="Australia/Sydney AEST +10:00"
-    type="button"
-    variant="neutral"
-  />
-</div>
+  <div
+    className="offset-button-container"
+  >
+    <Button
+      aria-label="Australia/Sydney AEST +10:00"
+      className="button-offset button-offset-hidden"
+      isBlock={false}
+      isCompact={true}
+      isDisabled={true}
+      isIconOnly={false}
+      isReversed={false}
+      onClick={[MockFunction]}
+      text=""
+      title="Australia/Sydney AEST +10:00"
+      type="button"
+      variant="neutral"
+    />
+  </div>
+</Fragment>
 `;

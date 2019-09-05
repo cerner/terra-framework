@@ -1686,7 +1686,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
     <input
       aria-label="Terra.timeInput.hours"
       class="form-input time-input-hour"
-      id="id-1"
+      id="id-2"
       maxlength="2"
       name="terra-time-hour-time-input"
       pattern="\\\\d*"
@@ -1731,7 +1731,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
     <input
       aria-label="Terra.timeInput.hours"
       class="form-input time-input-hour"
-      id="id-1"
+      id="id-2"
       maxlength="2"
       name="terra-time-hour-time-input"
       pattern="\\\\d*"
