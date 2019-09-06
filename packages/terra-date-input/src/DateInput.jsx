@@ -226,6 +226,102 @@ class DateInput extends React.Component {
     }
   }
 
+  /**
+ * Takes a key input from the month select, and processes it based on the value of the keycode.
+ * @param {Object} event Event object generated from the event delegation.
+ */
+  handleMonthKeyDown(event) {
+    const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
+
+    if (event.keyCode === KeyCode.KEY_BACK_SPACE || event.keyCode === KeyCode.KEY_DELETE) {
+      this.handleValueChange(event, DateInputUtil.inputType.MONTH, '');
+
+      if (displayFormat === 'day-month-year' && event.target.value === '') {
+        this.focusDay(event);
+      }
+    }
+
+    if (event.keyCode === KeyCode.KEY_SPACE || event.keyCode === KeyCode.KEY_UP || event.keyCode === KeyCode.KEY_DOWN) {
+      this.setState({ isPlaceholderColored: false });
+    }
+  }
+
+  /**
+   * Takes a key input from the day input, and processes it based on the value of the keycode.
+   * @param {Object} event Event object generated from the event delegation.
+   */
+  handleDayKeyDown(event) {
+    let stateValue = this.state.day || '0';
+    const previousStateValue = stateValue;
+    const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
+
+    // prevent e and . characters from being entered into number input on keyDown
+    if (event.keyCode === 69 || event.keyCode === 190) {
+      event.preventDefault();
+      return;
+    }
+
+    if (event.keyCode === KeyCode.KEY_UP) {
+      event.preventDefault();
+      stateValue = DateInputUtil.incrementDay(stateValue);
+    }
+
+    if (event.keyCode === KeyCode.KEY_DOWN) {
+      event.preventDefault();
+      stateValue = DateInputUtil.decrementDay(stateValue);
+    }
+
+    if (previousStateValue !== stateValue) {
+      this.handleValueChange(event, DateInputUtil.inputType.DAY, stateValue);
+    }
+
+    if (event.keyCode === KeyCode.KEY_BACK_SPACE || event.keyCode === KeyCode.KEY_DELETE) {
+      if (displayFormat === 'month-day-year' && event.target.value === '') {
+        this.focusMonth(event);
+      }
+    }
+  }
+
+  /**
+   * Takes a key input from the year input, and processes it based on the value of the keycode.
+   * @param {Object} event Event object generated from the event delegation.
+   */
+  handleYearKeyDown(event) {
+    let stateValue = this.state.year || '0';
+    const previousStateValue = stateValue;
+    const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
+
+    // prevent e and . characters from being entered into number input on keyDown
+    if (event.keyCode === 69 || event.keyCode === 190) {
+      event.preventDefault();
+      return;
+    }
+
+    if (event.keyCode === KeyCode.KEY_UP) {
+      event.preventDefault();
+      stateValue = DateInputUtil.incrementYear(stateValue);
+    }
+
+    if (event.keyCode === KeyCode.KEY_DOWN) {
+      event.preventDefault();
+      stateValue = DateInputUtil.decrementYear(stateValue);
+    }
+
+    if (previousStateValue !== stateValue) {
+      this.handleValueChange(event, DateInputUtil.inputType.YEAR, stateValue);
+    }
+
+    if (event.keyCode === KeyCode.KEY_BACK_SPACE || event.keyCode === KeyCode.KEY_DELETE) {
+      if (displayFormat === 'month-day-year' && event.target.value === '') {
+        this.focusDay(event);
+      }
+
+      if (displayFormat === 'day-month-year' && event.target.value === '') {
+        this.focusMonth(event);
+      }
+    }
+  }
+
   handleMonthChange(event) {
     if (!DateInputUtil.validNumericInput(event.target.value)) {
       return;
@@ -247,6 +343,8 @@ class DateInput extends React.Component {
     if (!DateInputUtil.validNumericInput(event.target.value)) {
       return;
     }
+
+    console.log('day change');
 
     const inputValue = event.target.value;
     const stateValue = this.state.day;
@@ -304,90 +402,6 @@ class DateInput extends React.Component {
   focusMonth(event) {
     this.monthRef.current.focus();
     event.preventDefault();
-  }
-
-  /**
-   * Takes a key input from the month select, and processes it based on the value of the keycode.
-   * @param {Object} event Event object generated from the event delegation.
-   */
-  handleMonthKeyDown(event) {
-    const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
-
-    if (event.keyCode === KeyCode.KEY_BACK_SPACE || event.keyCode === KeyCode.KEY_DELETE) {
-      this.handleValueChange(event, DateInputUtil.inputType.MONTH, '');
-
-      if (displayFormat === 'day-month-year' && event.target.value === '') {
-        this.focusDay(event);
-      }
-    }
-
-    if (event.keyCode === KeyCode.KEY_SPACE || event.keyCode === KeyCode.KEY_UP || event.keyCode === KeyCode.KEY_DOWN) {
-      this.setState({ isPlaceholderColored: false });
-    }
-  }
-
-  /**
-   * Takes a key input from the day input, and processes it based on the value of the keycode.
-   * @param {Object} event Event object generated from the event delegation.
-   */
-  handleDayKeyDown(event) {
-    let stateValue = this.state.day || '0';
-    const previousStateValue = stateValue;
-    const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
-
-    if (event.keyCode === KeyCode.KEY_UP) {
-      event.preventDefault();
-      stateValue = DateInputUtil.incrementDay(stateValue);
-    }
-
-    if (event.keyCode === KeyCode.KEY_DOWN) {
-      event.preventDefault();
-      stateValue = DateInputUtil.decrementDay(stateValue);
-    }
-
-    if (previousStateValue !== stateValue) {
-      this.handleValueChange(event, DateInputUtil.inputType.DAY, stateValue);
-    }
-
-    if (event.keyCode === KeyCode.KEY_BACK_SPACE || event.keyCode === KeyCode.KEY_DELETE) {
-      if (displayFormat === 'month-day-year' && event.target.value === '') {
-        this.focusMonth(event);
-      }
-    }
-  }
-
-  /**
-   * Takes a key input from the year input, and processes it based on the value of the keycode.
-   * @param {Object} event Event object generated from the event delegation.
-   */
-  handleYearKeyDown(event) {
-    let stateValue = this.state.year || '0';
-    const previousStateValue = stateValue;
-    const displayFormat = DateInputUtil.computedDisplayFormat(this.props.displayFormat, this.props.intl.locale);
-
-    if (event.keyCode === KeyCode.KEY_UP) {
-      event.preventDefault();
-      stateValue = DateInputUtil.incrementYear(stateValue);
-    }
-
-    if (event.keyCode === KeyCode.KEY_DOWN) {
-      event.preventDefault();
-      stateValue = DateInputUtil.decrementYear(stateValue);
-    }
-
-    if (previousStateValue !== stateValue) {
-      this.handleValueChange(event, DateInputUtil.inputType.YEAR, stateValue);
-    }
-
-    if (event.keyCode === KeyCode.KEY_BACK_SPACE || event.keyCode === KeyCode.KEY_DELETE) {
-      if (displayFormat === 'month-day-year' && event.target.value === '') {
-        this.focusDay(event);
-      }
-
-      if (displayFormat === 'day-month-year' && event.target.value === '') {
-        this.focusMonth(event);
-      }
-    }
   }
 
   /**
