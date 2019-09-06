@@ -3,8 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+3.15.0 - (September 6, 2019)
+------------------
 ### Fixed
 * Fixed `Cannot read property 'scrollHeight' of null` issue.
+
 ### Changed
 * Cleaned up imports in examples and test files
 
