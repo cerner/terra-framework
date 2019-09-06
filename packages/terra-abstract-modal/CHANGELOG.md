@@ -6,6 +6,7 @@ Unreleased
 ### Changed
 * Cleaned up imports in examples and test files
 * Updated `keycode-js` from `v1.0.4` to `v2.0.1`
+* Moved running the wicg-inert script to when 'terra-abstract-modal' is mounted
 
 
 3.10.0 - (August 21, 2019)
