@@ -282,7 +282,7 @@ export default class Calendar extends React.Component {
       this.setState({
         date: this.localizeDate(this.props.preSelection)
       })
-    } else if (this.props.openToDate && !isSameDay(this.props.openToDate, nextProps.openToDate)) {
+    } else if (this.props.openToDate && !isSameDay(this.props.openToDate, prevProps.openToDate)) {
       this.setState({
         date: this.localizeDate(this.props.openToDate)
       })
