@@ -843,6 +843,7 @@ class DatePicker extends React.Component {
           isArrowDisplayed
           isHeaderDisabled
           isContentFocusDisabled
+          popupContentRole={null}
         >
           <PopupContainer
             ref={this.datePickerPopupContainer}

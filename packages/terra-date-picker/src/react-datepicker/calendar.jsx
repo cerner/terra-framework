@@ -2,6 +2,7 @@ import { FormattedMessage } from 'react-intl';
 import Button from 'terra-button';
 import IconCaretLeft from 'terra-icon/lib/icon/IconCaretLeft';
 import IconCaretRight from 'terra-icon/lib/icon/IconCaretRight';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import YearDropdown from './year_dropdown'
 import MonthDropdown from './month_dropdown'
 import Month from './month'
@@ -462,7 +463,7 @@ export default class Calendar extends React.Component {
               </div>
               {this.renderNextMonthButton()}
             </div>
-            <div className={cx('react-datepicker-day-names')}>
+            <div className={cx('react-datepicker-day-names')} aria-hidden="true">
               {this.header(monthDate)}
             </div>
           </div>
@@ -501,6 +502,7 @@ export default class Calendar extends React.Component {
   render () {
     return (
       <div className={cx(['react-datepicker', this.props.className])} data-terra-date-picker-calendar>
+        <VisuallyHiddenText tabIndex="0" text="Date Picker Calendar" />
         <FormattedMessage id="Terra.datePicker.closeCalendar">
           {text => (
             <button
