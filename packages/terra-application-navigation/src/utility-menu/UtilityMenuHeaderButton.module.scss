@@ -28,7 +28,7 @@
 
     &[data-focus-styles-enabled='true']:focus {
       background-color: var(--terra-application-navigation-utility-header-button-focus-background-color, transparent);
-      color: var(--terra-application-navigation-utility-header-button-focus-outline-offset, rgba(255, 255, 255, 0.8));
+      color: var(--terra-application-navigation-utility-header-button-focus-color, rgba(255, 255, 255, 0.8));
       outline: var(--terra-application-navigation-utility-header-button-focus-outline, 2px dashed #fff);
       outline-offset: var(--terra-application-navigation-utility-header-button-focus-outline-offset, 3px);
     }
@@ -36,44 +36,44 @@
     &:active {
       color: var(--terra-application-navigation-utility-header-button-active-color, rgba(255, 255, 255, 0.5));
     }
+  }
 
-    .image {
-      flex: 0 0 auto;
-      font-size: 0.5714285714rem;
-      height: 1.7143rem;
-      margin-right: 0.3571rem;
-      width: 1.7143rem;
+  .image {
+    flex: 0 0 auto;
+    font-size: 0.5714285714rem;
+    height: 1.7143rem;
+    margin-right: 0.3571rem;
+    width: 1.7143rem;
+  }
 
-      & > * {
-        max-height: 100%;
-        max-width: 100%;
-      }
-    }
+  .image > * {
+    max-height: 100%;
+    max-width: 100%;
+  }
 
-    .caret-icon {
-      flex: 0 0 auto;
-      height: 0.7143rem;
-      margin-left: 0.2143rem;
-      width: 0.7143rem;
-    }
+  .caret-icon {
+    flex: 0 0 auto;
+    height: 0.7143rem;
+    margin-left: 0.2143rem;
+    width: 0.7143rem;
+  }
 
-    .popup-anchor {
-      flex: 0 0 auto;
-      height: 100%;
-      position: absolute;
-      right: 0.2143rem;
-      top: 0;
-      width: 0.5714rem;
-    }
+  .popup-anchor {
+    flex: 0 0 auto;
+    height: 100%;
+    position: absolute;
+    right: 0.2143rem;
+    top: 0;
+    width: 0.5714rem;
+  }
 
-    .title {
-      flex: 1 1 auto;
-      font-size: 1rem;
-      font-weight: 400;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
+  .title {
+    flex: 1 1 auto;
+    font-size: 1rem;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .no-user {
