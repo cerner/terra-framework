@@ -12,15 +12,10 @@ import PopupContainer from './PopupContainer';
 import {
   newDate,
   now,
-  cloneDate,
   isMoment,
   isDate,
   isBefore,
   isAfter,
-  setTime,
-  getSecond,
-  getMinute,
-  getHour,
   getMonth,
   addDays,
   addMonths,
@@ -322,30 +317,6 @@ class DatePicker extends React.Component {
      * Prop to close calendar dropdown after date is selected.
      */
     shouldCloseOnSelect: PropTypes.bool,
-    /**
-     * Prop to show selected date and time.
-     */
-    showTimeSelect: PropTypes.bool,
-    /**
-     * Format of the selected time.
-     */
-    timeFormat: PropTypes.string,
-    /**
-     * Interval between 2 consecutive times on the time picker.
-     */
-    timeIntervals: PropTypes.number,
-    /**
-     * Minimum value of time that can be selected .
-     */
-    minTime: PropTypes.object,
-    /**
-     * Maximum value of time that can be selected .
-     */
-    maxTime: PropTypes.object,
-    /**
-     * Array to store values of time that are disabled to pick .
-     */
-    excludeTimes: PropTypes.array
   }
 
   static get defaultProps () {
@@ -367,8 +338,6 @@ class DatePicker extends React.Component {
       monthsShown: 1,
       withPortal: false,
       shouldCloseOnSelect: true,
-      showTimeSelect: false,
-      timeIntervals: 30
     }
   }
 
@@ -539,7 +508,7 @@ class DatePicker extends React.Component {
       }
     )
     this.setSelected(date, event)
-    if (!this.props.shouldCloseOnSelect || this.props.showTimeSelect) {
+    if (!this.props.shouldCloseOnSelect) {
       this.setPreSelection(date)
     } else if (!this.props.inline) {
       this.setOpen(false)
@@ -557,13 +526,6 @@ class DatePicker extends React.Component {
 
     if (!isSameDay(this.props.selected, changedDate) || this.props.allowSameDay) {
       if (changedDate !== null) {
-        if (this.props.selected) {
-          changedDate = setTime(newDate(changedDate), {
-            hour: getHour(this.props.selected),
-            minute: getMinute(this.props.selected),
-            second: getSecond(this.props.selected)
-          })
-        }
         this.setState({
           preSelection: changedDate
         })
@@ -601,21 +563,6 @@ class DatePicker extends React.Component {
     setTimeout(() => {
       this.ariaLiveStatus = '';
     }, 1000);
-  }
-
-  handleTimeChange = (time) => {
-    const selected = (this.props.selected) ? this.props.selected : this.getPreSelection()
-    let changedDate = setTime(cloneDate(selected), {
-      hour: getHour(time),
-      minute: getMinute(time)
-    })
-
-    this.setState({
-      preSelection: changedDate
-    })
-
-    this.props.onChange(changedDate)
-    this.setOpen(false)
   }
 
   onInputClick = () => {
@@ -724,7 +671,6 @@ class DatePicker extends React.Component {
         showMonthDropdown={this.props.showMonthDropdown}
         showWeekNumbers={this.props.showWeekNumbers}
         showYearDropdown={this.props.showYearDropdown}
-        withPortal={this.props.withPortal}
         forceShowMonthNavigation={this.props.forceShowMonthNavigation}
         scrollableYearDropdown={this.props.scrollableYearDropdown}
         todayButton={this.props.todayButton}
@@ -736,13 +682,6 @@ class DatePicker extends React.Component {
         onDropdownFocus={this.handleDropdownFocus}
         onMonthChange={this.props.onMonthChange}
         dayClassName={this.props.dayClassName}
-        showTimeSelect={this.props.showTimeSelect}
-        onTimeChange={this.handleTimeChange}
-        timeFormat={this.props.timeFormat}
-        timeIntervals={this.props.timeIntervals}
-        minTime={this.props.minTime}
-        maxTime={this.props.maxTime}
-        excludeTimes={this.props.excludeTimes}
         className={this.props.calendarClassName}
         yearDropdownItemNumber={this.props.yearDropdownItemNumber}
         onRequestClose={this.handleOnRequestClose}
@@ -782,7 +721,6 @@ class DatePicker extends React.Component {
         showMonthDropdown={this.props.showMonthDropdown}
         showWeekNumbers={this.props.showWeekNumbers}
         showYearDropdown={this.props.showYearDropdown}
-        withPortal={this.props.withPortal}
         forceShowMonthNavigation={this.props.forceShowMonthNavigation}
         scrollableYearDropdown={this.props.scrollableYearDropdown}
         todayButton={this.props.todayButton}
@@ -793,13 +731,6 @@ class DatePicker extends React.Component {
         onDropdownFocus={this.handleDropdownFocus}
         onMonthChange={this.props.onMonthChange}
         dayClassName={this.props.dayClassName}
-        showTimeSelect={this.props.showTimeSelect}
-        onTimeChange={this.handleTimeChange}
-        timeFormat={this.props.timeFormat}
-        timeIntervals={this.props.timeIntervals}
-        minTime={this.props.minTime}
-        maxTime={this.props.maxTime}
-        excludeTimes={this.props.excludeTimes}
         className={this.props.calendarClassName}
         yearDropdownItemNumber={this.props.yearDropdownItemNumber}
         onRequestClose={this.handleOnRequestClose}
