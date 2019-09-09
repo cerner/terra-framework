@@ -396,7 +396,7 @@ class DatePicker extends React.Component {
       this.setPreSelection(this.props.selected)
     }
     if (prevProps.highlightDates !== this.props.highlightDates) {
-      this.setState({'highlightDates': getHightLightDaysMap(nextProps.highlightDates)})
+      this.setState({'highlightDates': getHightLightDaysMap(this.props.highlightDates)})
     }
     // Shift focus into popup date-picker if it exists
     if (this.datePickerPopupContainer.current) {
