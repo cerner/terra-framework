@@ -166,11 +166,6 @@ export function getEndOfMonth (date) {
 // ** Date Math **
 
 // *** Addition ***
-
-export function addMinutes (date, amount) {
-  return add(date, amount, 'minutes')
-}
-
 export function addDays (date, amount) {
   return add(date, amount, 'days')
 }
