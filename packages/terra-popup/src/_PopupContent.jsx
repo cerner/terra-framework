@@ -180,6 +180,7 @@ class PopupContent extends React.Component {
       onRequestClose,
       onResize,
       onContentResize,
+      popupContentRole,
       refCallback,
       ...customProps
     } = this.props;
@@ -223,7 +224,7 @@ class PopupContent extends React.Component {
             onEsc={onRequestClose}
             onResize={this.handleOnResize}
             refCallback={refCallback}
-            role={this.props.popupContentRole ? this.props.popupContentRole : null}
+            role={popupContentRole ? popupContentRole : null}
           >
             {arrowContent}
             {/* eslint-disable-next-line react/forbid-dom-props */}
