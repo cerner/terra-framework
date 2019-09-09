@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+1.4.0 - (September 6, 2019)
+------------------
 ### Changed
 * Cleaned up imports in examples and test files
 * Added check to prevent rendering of Utility Button or Nav Drawer Button if they are empty.
