@@ -9,7 +9,8 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Whether or not the count should be used as placeholder height.
+   * Whether or not the count should be present for height calculations, but hidden from view.
+   * To ensure that row heights are consistent, we need the ability to have the count and not see it.
    */
   isPlaceholder: PropTypes.bool,
   /**
