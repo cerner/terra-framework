@@ -6,6 +6,9 @@ Unreleased
 ### Changed
 * Removed use of `componentWillReceiveProps`.
 
+### Removed
+* Removed time-picker code from react-datepicker.
+
 4.12.0 - (September 6, 2019)
 ------------------
 ### Changed
@@ -68,7 +71,7 @@ Unreleased
 * Minor dependency version bump
 
 4.5.0 - (July 2, 2019)
-------------------      
+------------------
 ### Added
 * Allow terra-date-picker to be a controlled component.
 * Added functionality to announce the pre-selected date to screen readers when navigating within the date picker.
