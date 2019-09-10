@@ -470,13 +470,13 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                       </div>
                       <PopupCount
                         className="extension-row-count"
+                        isHidden={true}
                         isInline={true}
-                        isPlaceholder={true}
                         value={0}
                       >
                         <div
                           aria-hidden={true}
-                          className="popup-count is-placeholder"
+                          className="popup-count is-hidden"
                         >
                           0
                         </div>
@@ -551,13 +551,13 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                       </div>
                       <PopupCount
                         className="extension-row-count"
+                        isHidden={true}
                         isInline={true}
-                        isPlaceholder={true}
                         value={0}
                       >
                         <div
                           aria-hidden={true}
-                          className="popup-count is-placeholder"
+                          className="popup-count is-hidden"
                         >
                           0
                         </div>
@@ -628,13 +628,13 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                       </div>
                       <PopupCount
                         className="extension-row-count"
+                        isHidden={true}
                         isInline={true}
-                        isPlaceholder={true}
                         value={0}
                       >
                         <div
                           aria-hidden={true}
-                          className="popup-count is-placeholder"
+                          className="popup-count is-hidden"
                         >
                           0
                         </div>
