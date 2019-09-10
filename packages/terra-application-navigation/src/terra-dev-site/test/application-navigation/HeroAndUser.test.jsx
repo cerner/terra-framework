@@ -5,8 +5,16 @@ import Placeholder from 'terra-doc-template/lib/Placeholder';
 
 const hero = <Placeholder title="Test Hero" variant="light" />;
 
-const HeroDrawerTest = () => (
-  <ApplicationNavigation hero={hero} />
+const userConfig = {
+  name: 'Test Name',
+  detail: 'Test Detail',
+};
+
+const HeroAndUserTest = () => (
+  <ApplicationNavigation
+    hero={hero}
+    userConfig={userConfig}
+  />
 );
 
-export default HeroDrawerTest;
+export default HeroAndUserTest;

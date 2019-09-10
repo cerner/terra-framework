@@ -158,6 +158,18 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
     Terra.it.validatesElement({ selector: '#root' });
   });
 
+  describe('Hero and User enters the nav drawer', () => {
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/hero-and-user'));
+
+    it('open drawer', () => {
+      browser.waitForVisible('[data-compact-header-toggle="true"]');
+      browser.click('[data-compact-header-toggle="true"]');
+      browser.pause(250);
+    });
+
+    Terra.it.validatesElement({ selector: '#root' });
+  });
+
   describe('ApplicationNavigation displays the nav drawer', () => {
     before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-navigation'));
 

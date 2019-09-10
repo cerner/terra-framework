@@ -1,5 +1,4 @@
 import React from 'react';
-import ApplicationBase from 'terra-application/lib/application-base';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconPill from 'terra-icon/lib/icon/IconPill';
 import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
@@ -143,25 +142,22 @@ const handleItemSelection = (key, metaData) => {
 };
 /* eslint-enable no-alert */
 
-// TODO: remove terra-application after it is incorporated into dev-site
 const ApplicationNotificationsTest = () => (
-  <ApplicationBase locale="en">
-    <ApplicationNavigation
-      titleConfig={titleConfig}
-      userConfig={userConfig}
-      notifications={notifications}
-      extensionItems={extensionItems}
-      onSelectExtensionItem={handleItemSelection}
-      navigationItems={navigationItems}
-      activeNavigationItemKey="/page_1"
-      onSelectNavigationItem={handleItemSelection}
-      utilityItems={utilityItems}
-      onSelectUtilityItem={handleItemSelection}
-      onSelectSettings={() => alert('Settings Selected')} // eslint-disable-line no-alert
-      onSelectHelp={() => alert('Help Selected')} // eslint-disable-line no-alert
-      onSelectLogout={() => alert('Logout Selected')} // eslint-disable-line no-alert
-    />
-  </ApplicationBase>
+  <ApplicationNavigation
+    titleConfig={titleConfig}
+    userConfig={userConfig}
+    notifications={notifications}
+    extensionItems={extensionItems}
+    onSelectExtensionItem={handleItemSelection}
+    navigationItems={navigationItems}
+    activeNavigationItemKey="/page_1"
+    onSelectNavigationItem={handleItemSelection}
+    utilityItems={utilityItems}
+    onSelectUtilityItem={handleItemSelection}
+    onSelectSettings={() => alert('Settings Selected')} // eslint-disable-line no-alert
+    onSelectHelp={() => alert('Help Selected')} // eslint-disable-line no-alert
+    onSelectLogout={() => alert('Logout Selected')} // eslint-disable-line no-alert
+  />
 );
 
 export default ApplicationNotificationsTest;
