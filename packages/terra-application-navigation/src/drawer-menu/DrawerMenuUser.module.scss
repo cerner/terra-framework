@@ -30,6 +30,10 @@
       width: 100%;
     }
 
+    .avatar-inner {
+      font-size: var(--terra-application-navigation-drawer-menu-user-large-avatar-inner-font-size, 1.6521rem);
+    }
+
     .name {
       color: var(--terra-application-navigation-drawer-menu-user-large-name-color, #fff);
       font-size: 1.2857142857rem;
@@ -61,11 +65,11 @@
 
     .avatar-container {
       flex: 0 0 auto;
-      height: 1.7143rem;
+      height: 2.143rem;
       margin-right: 0.5rem;
       overflow: hidden;
       position: relative;
-      width: 1.7143rem;
+      width: 2.143rem;
     }
 
     .avatar-container > * {
@@ -73,6 +77,10 @@
       max-width: 100%;
     }
   
+    .avatar-inner {
+      font-size: var(--terra-application-navigation-drawer-menu-user-small-avatar-inner-font-size, 0.6522rem);
+    }
+
     .info-container {
       display: flex;
       flex: 1 1 auto;

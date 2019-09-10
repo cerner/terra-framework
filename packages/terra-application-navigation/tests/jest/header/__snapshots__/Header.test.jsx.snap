@@ -1001,7 +1001,7 @@ exports[`Header should render with function callbacks 1`] = `
               }
             }
           >
-            <button
+            <div
               aria-haspopup={true}
               aria-label="Terra.applicationNavigation.header.utilityButtonTitleUser"
               className="utility-button"
@@ -1009,58 +1009,33 @@ exports[`Header should render with function callbacks 1`] = `
               data-focus-styles-enabled={true}
               onBlur={[Function]}
               onClick={[MockFunction]}
+              onKeyDown={[Function]}
               onMouseDown={[Function]}
-              type="button"
+              role="button"
+              tabIndex="0"
             >
-              <Avatar
-                alt="user-name"
-                className="avatar"
-                color="auto"
-                image="user-src"
-                initials="user-initials"
-                isAriaHidden={false}
-                isDeceased={false}
-                size="0.5217rem"
+              <div
+                className="image"
               >
-                <div
-                  className="avatar three image avatar"
-                  style={
-                    Object {
-                      "fontSize": "0.5217rem",
-                    }
-                  }
+                <Avatar
+                  alt="user-name"
+                  className="avatar"
+                  color="auto"
+                  image="user-src"
+                  initials="user-initials"
+                  isAriaHidden={false}
+                  isDeceased={false}
                 >
-                  <Image
-                    alt="user-name"
-                    className="image"
-                    fit="cover"
-                    isFluid={false}
-                    onError={[Function]}
-                    placeholder={
-                      <span
-                        alt="user-name"
-                        aria-hidden={false}
-                        aria-label="user-name"
-                        className="icon user"
-                        role="img"
-                      />
-                    }
-                    src="user-src"
-                    variant="default"
+                  <div
+                    className="avatar three image avatar"
                   >
-                    <div>
-                      <div
-                        className="hidden"
-                      >
-                        <img
-                          alt="user-name"
-                          className="image cover default image"
-                          onError={[Function]}
-                          onLoad={[Function]}
-                          src="user-src"
-                        />
-                      </div>
-                      <div>
+                    <Image
+                      alt="user-name"
+                      className="image"
+                      fit="cover"
+                      isFluid={false}
+                      onError={[Function]}
+                      placeholder={
                         <span
                           alt="user-name"
                           aria-hidden={false}
@@ -1068,11 +1043,36 @@ exports[`Header should render with function callbacks 1`] = `
                           className="icon user"
                           role="img"
                         />
+                      }
+                      src="user-src"
+                      variant="default"
+                    >
+                      <div>
+                        <div
+                          className="hidden"
+                        >
+                          <img
+                            alt="user-name"
+                            className="image cover default image"
+                            onError={[Function]}
+                            onLoad={[Function]}
+                            src="user-src"
+                          />
+                        </div>
+                        <div>
+                          <span
+                            alt="user-name"
+                            aria-hidden={false}
+                            aria-label="user-name"
+                            className="icon user"
+                            role="img"
+                          />
+                        </div>
                       </div>
-                    </div>
-                  </Image>
-                </div>
-              </Avatar>
+                    </Image>
+                  </div>
+                </Avatar>
+              </div>
               <div
                 className="title"
               >
@@ -1113,7 +1113,7 @@ exports[`Header should render with function callbacks 1`] = `
               <span
                 className="popup-anchor"
               />
-            </button>
+            </div>
           </UtilityMenuHeaderButton>
         </InjectIntl(UtilityMenuHeaderButton)>
       </div>

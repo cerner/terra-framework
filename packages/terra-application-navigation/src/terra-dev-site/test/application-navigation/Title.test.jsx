@@ -1,6 +1,5 @@
 /* eslint-disable */
 import React from 'react';
-import ApplicationBase from 'terra-application/lib/application-base';
 import ApplicationNavigation from '../../../ApplicationNavigation';
 import FixedHeight from '../common/FixedHeight';
 import Logo from '../common/Logo';
@@ -29,15 +28,14 @@ const titleConfigHideTitle = {
   hideTitleWithinDrawerMenu: true,
 };
 
-// TODO: remove terra-application after it is incorporated into dev-site
 const TitleTest = () => (
-  <ApplicationBase locale="en">
+  <React.Fragment>
     <FixedHeight><ApplicationNavigation titleConfig={titleConfig} /></FixedHeight>
     <FixedHeight><ApplicationNavigation titleConfig={titleConfigHeadLine} /></FixedHeight>
     <FixedHeight><ApplicationNavigation titleConfig={titleConfigSubline} /></FixedHeight>
     <FixedHeight><ApplicationNavigation titleConfig={titleConfigElement} /></FixedHeight>
     <FixedHeight><ApplicationNavigation titleConfig={titleConfigHideTitle} /></FixedHeight>
-  </ApplicationBase>
+  </React.Fragment>
 );
 
 export default TitleTest;
