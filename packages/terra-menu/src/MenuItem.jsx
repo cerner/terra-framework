@@ -195,13 +195,13 @@ class MenuItem extends React.Component {
       attributes.className,
     ]);
 
-    const textContainer = <div className={cx(['text'])}>{text}</div>;
+    const textContainer = <div className={cx('text')}>{text}</div>;
     const hasChevron = subMenuItems.length > 0;
     let content = textContainer;
     if (hasChevron || isSelectableMenu || isInstructionsForUse) {
       let fitStartIcon = null;
       if (isInstructionsForUse) {
-        fitStartIcon = <InstructionsForUseIcon className={cx(['instructionsforuse', 'start-icon'])} />;
+        fitStartIcon = <InstructionsForUseIcon className={cx('start-icon')} />;
       } else if (isSelectableMenu) {
         fitStartIcon = <CheckIcon className={cx(['checkmark', 'start-icon'])} />;
       }
@@ -210,7 +210,7 @@ class MenuItem extends React.Component {
         <Arrange
           fitStart={fitStartIcon}
           fill={textContainer}
-          fitEnd={hasChevron ? <ChevronIcon className={cx(['chevron'])} /> : null}
+          fitEnd={hasChevron ? <ChevronIcon className={cx('chevron')} /> : null}
           align="center"
         />
       );

@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from 'terra-button';
 import PropTypes from 'prop-types';
-// eslint-disable-next-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 import Menu from 'terra-menu';
 import classNames from 'classnames/bind';
 import styles from './BasicMenu.module.scss';
@@ -21,14 +20,10 @@ class MenuWithInstructionsForUse extends React.Component {
     this.handleRequestClose = this.handleRequestClose.bind(this);
     this.setButtonNode = this.setButtonNode.bind(this);
     this.getButtonNode = this.getButtonNode.bind(this);
-    this.handleToggle1OnClick = this.handleToggle1OnClick.bind(this);
-    this.handleToggle2OnClick = this.handleToggle2OnClick.bind(this);
     this.handleAction = this.handleAction.bind(this);
     this.handleCloseOnClick = this.handleCloseOnClick.bind(this);
     this.state = {
       open: false,
-      toggle1Selected: false,
-      toggle2Selected: false,
       actionClickCount: 0,
     };
   }
@@ -54,20 +49,12 @@ class MenuWithInstructionsForUse extends React.Component {
     this.handleRequestClose();
   }
 
-  handleToggle1OnClick() {
-    this.setState(prevState => ({ toggle1Selected: !prevState.toggle1Selected }));
-    this.handleRequestClose();
-  }
-
-  handleToggle2OnClick() {
-    this.setState(prevState => ({ toggle2Selected: !prevState.toggle2Selected }));
-  }
-
   handleAction(event) {
     event.preventDefault();
     const newState = this.state;
     newState.actionClickCount += 1;
     this.setState(newState);
+    this.handleRequestClose();
   }
 
   render() {
@@ -83,44 +70,25 @@ class MenuWithInstructionsForUse extends React.Component {
             boundingRef={this.props.boundingRef}
           >
             <Menu.Item
-              text="Toggle Item 1 - Closes Menu"
-              key="Toggle1"
-              isSelected
-              onClick={this.handleToggle1OnClick}
+              text="{ApplicationName} Help"
+              key="Help1"
+              onClick={this.handleAction}
+              isInstructionsForUse
+            />
+            <Menu.Item
+              text="Getting Started"
+              key="Help2"
+              onClick={this.handleCloseOnClick}
               isSelectable
             />
             <Menu.Item
-              text="Toggle Item 2"
-              key="Toggle2"
-              isSelected={this.state.toggle2Selected}
-              onClick={this.handleToggle2OnClick}
-              isSelectable
-            />
-            <Menu.Item
-              text="Help 1"
-              key="Disabled1"
+              text="About {ApplicationName}"
+              key="Help3"
               isSelected={this.state.toggle1Selected}
-              onClick={this.handleToggle1OnClick}
-              isDisabled
-              isInstructionsForUse
+              onClick={this.handleCloseOnClick}
             />
-            <Menu.Divider key="Divider1" />
-            <Menu.Item
-              text="Help"
-              isInstructionsForUse
-              key="Nested1"
-              subMenuItems={[
-                <Menu.Item text="Instruction 1.1" key="1.1" onClick={this.handleAction} />,
-                <Menu.Item text="Instruction 1.2" key="1.2" onClick={this.handleAction} />,
-                <Menu.Item text="Instruction 1.3" key="1.3" onClick={this.handleAction} />,
-                <Menu.Divider key="Divider1.1" />,
-                <Menu.Item text="Close Action 1.1" key="1.4" onClick={this.handleCloseOnClick} />,
-              ]}
-            />
-            <Menu.Divider key="Divider2" />
-            <Menu.Item text="Close Action" key="Action2" onClick={this.handleCloseOnClick} />
           </Menu>
-          <Button onClick={this.handleButtonClick} text="Click Me" />
+          <Button onClick={this.handleButtonClick} text="Help" />
         </div>
         <br />
         <p>

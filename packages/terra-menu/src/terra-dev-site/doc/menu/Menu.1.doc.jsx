@@ -47,7 +47,8 @@ const DocPage = () => (
         source: MenuWidthsSrc,
       },
       {
-        title: 'Menu With Instructions For Use Icon',
+        title: 'Help Menu Item: Electronic Instructions For Use',
+        description: 'The Electronic Information For Use (eIFU) icon is a regulatory requirement for CE Mark Certification and Compliance, and is used to indicate Help content that is the equivalent of a manufacturer\'s instruction manual. The label for the Help menu option should be the name of the application followed by "Help."',
         example: <MenuWithInstructionsForUse />,
         source: MenuWithInstructionsForUseSrc,
       },

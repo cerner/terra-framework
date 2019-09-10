@@ -1,18 +1,53 @@
 import React from 'react';
-import classNames from 'classnames/bind';
+import PropTypes from 'prop-types';
+import List from 'terra-list';
 import Menu from '../../../../Menu';
-import styles from './MenuItemCommon.module.scss';
 
-const cx = classNames.bind(styles);
+const childContextTypes = {
+  isSelectableMenu: PropTypes.bool,
+};
 
-const MenuItemWithInstructionsForUse = () => (
-  <div>
-    <p>Below is a Menu Item with eIFU Icon</p>
-    <br />
-    <ul className={cx('unordered-list')} role="menu">
-      <Menu.Item text="Help" isSelected isInstructionsForUse className="TestMenuItem" />
-    </ul>
-  </div>
-);
+class MenuItemWithInstructionsForUse extends React.Component {
+  getChildContext() {
+    return { isSelectableMenu: true };
+  }
 
+  render() {
+    return (
+      <div>
+        <div id="isSelected">
+          <p>Menu Items with eIFU Icon</p>
+        </div>
+        <List role="menu">
+          <Menu.Item
+            text="eIFU Icon Menu Item"
+            key="1"
+            className="TestMenuItem"
+            isInstructionsForUse
+          />
+          <Menu.Item
+            isSelectable
+            text="eIFU Icon Nested Menu"
+            key="2"
+            className="TestMenuItem"
+            isInstructionsForUse
+            subMenuItems={[
+              <Menu.Item text="Default 2.1" key="2.1" className="TestNestedMenuContent" />,
+            ]}
+          />
+          <Menu.Item
+            text="Selectable+Selected eIFU Icon Menu Item"
+            key="3"
+            className="TestMenuItem"
+            isSelectable
+            isSelected
+            isInstructionsForUse
+          />
+        </List>
+      </div>
+    );
+  }
+}
+
+MenuItemWithInstructionsForUse.childContextTypes = childContextTypes;
 export default MenuItemWithInstructionsForUse;
