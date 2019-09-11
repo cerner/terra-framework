@@ -36,6 +36,30 @@ Terra.describeViewports('ApplicationNavigation - Large', ['large'], () => {
     Terra.it.validatesElement();
   });
 
+  describe('Utilities should display properly when only help, settings or logout utilities are present', () => {
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/no-custom-utility-items'));
+
+    it('launch popup', () => {
+      browser.click('[data-application-header-utility="true"]');
+      browser.waitForVisible('[data-terra-popup-content="true"]');
+      browser.pause(50);
+    });
+
+    Terra.it.validatesElement();
+  });
+
+  describe('Utilities should display properly when only custom utility items are specified', () => {
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/only-custom-utility-items'));
+
+    it('launch popup', () => {
+      browser.click('[data-application-header-utility="true"]');
+      browser.waitForVisible('[data-terra-popup-content="true"]');
+      browser.pause(50);
+    });
+
+    Terra.it.validatesElement();
+  });
+
   describe('Hero should display properly', () => {
     before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/hero'));
 
@@ -98,8 +122,44 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
     Terra.it.validatesElement({ selector: '#root' });
   });
 
+  describe('Nav drawer button should be displayed when only help, settings or logout utilities are present', () => {
+    before(() => browser.url('/raw/tests/terra-application-navigation/application-navigation/no-custom-utility-items'));
+
+    it('open drawer', () => {
+      browser.waitForVisible('[data-compact-header-toggle="true"]');
+      browser.click('[data-compact-header-toggle="true"]');
+      browser.pause(250);
+    });
+
+    Terra.it.validatesElement({ selector: '#root' });
+  });
+
+  describe('Nav drawer button should be displayed when only custom utility items are specified', () => {
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/only-custom-utility-items'));
+
+    it('open drawer', () => {
+      browser.waitForVisible('[data-compact-header-toggle="true"]');
+      browser.click('[data-compact-header-toggle="true"]');
+      browser.pause(250);
+    });
+
+    Terra.it.validatesElement({ selector: '#root' });
+  });
+
   describe('Hero enters the nav drawer', () => {
     before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/hero-drawer'));
+
+    it('open drawer', () => {
+      browser.waitForVisible('[data-compact-header-toggle="true"]');
+      browser.click('[data-compact-header-toggle="true"]');
+      browser.pause(250);
+    });
+
+    Terra.it.validatesElement({ selector: '#root' });
+  });
+
+  describe('Hero and User enters the nav drawer', () => {
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/hero-and-user'));
 
     it('open drawer', () => {
       browser.waitForVisible('[data-compact-header-toggle="true"]');

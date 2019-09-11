@@ -3,7 +3,6 @@ import DocTemplate from 'terra-doc-template';
 
 import Documentation from '../../../../docs/ValidationComponents.md';
 
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 // Example File
 import DefaultFormValidation from '../example/DefaultFormValidation';
 import DefaultFormValidationSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DefaultFormValidation';
@@ -13,7 +12,8 @@ import FormSubmitCheckboxField from '../example/FormSubmitCheckboxField';
 import FormSubmitCheckboxFieldSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/FormSubmitCheckboxField';
 import FormSubmitDatePicker from '../example/FormSubmitDatePicker';
 import FormSubmitDatePickerSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/FormSubmitDatePicker';
-/* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
+import FormSubmitDateInput from '../example/FormSubmitDateInput';
+import FormSubmitDateInputSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/FormSubmitDateInput';
 
 const FormValidationExamples = () => (
   <DocTemplate
@@ -38,6 +38,11 @@ const FormValidationExamples = () => (
         title: 'DatePicker Validation',
         example: <FormSubmitDatePicker />,
         source: FormSubmitDatePickerSrc,
+      },
+      {
+        title: 'DateInput Validation',
+        example: <FormSubmitDateInput />,
+        source: FormSubmitDateInputSrc,
       },
     ]}
   />

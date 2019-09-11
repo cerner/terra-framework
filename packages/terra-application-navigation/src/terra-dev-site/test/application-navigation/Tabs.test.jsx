@@ -1,7 +1,4 @@
-
-/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions  */
 import React from 'react';
-import ApplicationBase from 'terra-application/lib/application-base';
 import ApplicationNavigation from '../../../ApplicationNavigation';
 
 const navigationItems = [
@@ -68,15 +65,12 @@ const handleItemSelection = (key, metaData) => {
 };
 /* eslint-enable no-alert */
 
-// TODO: remove terra-application after it is incorporated into dev-site
 const TabsTest = () => (
-  <ApplicationBase locale="en">
-    <ApplicationNavigation
-      navigationItems={navigationItems}
-      activeNavigationItemKey="/page_1"
-      onSelectNavigationItem={handleItemSelection}
-    />
-  </ApplicationBase>
+  <ApplicationNavigation
+    navigationItems={navigationItems}
+    activeNavigationItemKey="/page_1"
+    onSelectNavigationItem={handleItemSelection}
+  />
 );
 
 export default TabsTest;

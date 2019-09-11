@@ -368,11 +368,14 @@ class DatePicker extends React.Component {
 
     // If using this as a controlled component.
     if (value !== undefined) {
-      selectedDateInPicker = DateUtil.createSafeDate(value);
+      // If value is empty, let selectedDateInPicker be undefined as in clearing the value.
+      if (value !== '') {
+        selectedDateInPicker = DateUtil.createSafeDate(DateUtil.convertToISO8601(value, dateFormat));
 
-      // If value is not a valid date, keep the previous selected date in the picker.
-      if (selectedDateInPicker === undefined) {
-        selectedDateInPicker = this.state.selectedDate;
+        // If value is not a valid date, keep the previous selected date in the picker.
+        if (selectedDateInPicker === undefined) {
+          selectedDateInPicker = this.state.selectedDate;
+        }
       }
     } else {
       selectedDateInPicker = this.state.selectedDate;

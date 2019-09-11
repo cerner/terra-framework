@@ -1,12 +1,10 @@
 import React from 'react';
 import Image from 'terra-image';
-/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import MockConfig from 'terra-application-utility/lib/terra-dev-site/doc/common/MockConfig';
 import FallbackAvatar from 'terra-application-utility/lib/terra-dev-site/doc/common/FallbackAvatar.svg';
 import { ApplicationMenuUtility, UtilityUtils } from 'terra-application-utility/lib/ApplicationUtility';
 import classNames from 'classnames/bind';
 import styles from './ApplicationMenuUtilityExample.module.scss';
-/* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 const cx = classNames.bind(styles);
 

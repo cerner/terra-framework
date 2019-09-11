@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+4.8.0 - (September 6, 2019)
+------------------
+### Changed
+* Cleaned up imports in examples and test files
+
 4.7.0 - (August 14, 2019)
 ------------------
 ### Changed

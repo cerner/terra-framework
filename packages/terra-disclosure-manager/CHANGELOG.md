@@ -4,6 +4,14 @@ ChangeLog
 Unreleased
 ----------
 
+4.20.0 - (September 6, 2019)
+------------------
+### Changed
+* Cleaned up imports in examples and test files
+
+### Changed
+* Updated inline documentation for DisclosureManagerHeaderAdapter
+
 4.19.0 - (August 21, 2019)
 ------------------
 ### Changed

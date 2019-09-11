@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+3.12.0 - (September 6, 2019)
+------------------
+### Changed
+* Cleaned up imports in examples and test files
+
 ### Fixed
 * Fixed missing documentation for props
 
