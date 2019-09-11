@@ -93,12 +93,6 @@ export function safeDateFormat (date, { dateFormat, locale }) {
 }
 
 // ** Date Setters **
-
-export function setTime (date, {hour, minute, second}) {
-  date.set({hour, minute, second})
-  return date
-}
-
 export function setMonth (date, month) {
   return set(date, 'month', month)
 }
@@ -112,19 +106,6 @@ export function setUTCOffset (date, offset) {
 }
 
 // ** Date Getters **
-
-export function getSecond (date) {
-  return get(date, 'second')
-}
-
-export function getMinute (date) {
-  return get(date, 'minute')
-}
-
-export function getHour (date) {
-  return get(date, 'hour')
-}
-
 // Returns day of week
 export function getDay (date) {
   return get(date, 'day')
@@ -185,11 +166,6 @@ export function getEndOfMonth (date) {
 // ** Date Math **
 
 // *** Addition ***
-
-export function addMinutes (date, amount) {
-  return add(date, amount, 'minutes')
-}
-
 export function addDays (date, amount) {
   return add(date, amount, 'days')
 }
@@ -319,30 +295,6 @@ export function isDayDisabled (day, { minDate, maxDate, excludeDates, includeDat
     false
 }
 
-export function isTimeDisabled (time, disabledTimes) {
-  const l = disabledTimes.length
-  for (let i = 0; i < l; i++) {
-    if (disabledTimes[i].get('hours') === time.get('hours') && disabledTimes[i].get('minutes') === time.get('minutes')) {
-      return true
-    }
-  }
-
-  return false
-}
-
-export function isTimeInDisabledRange (time, { minTime, maxTime }) {
-  if (!minTime || !maxTime) {
-    throw new Error('Both minTime and maxTime props required')
-  }
-
-  const base = moment().hours(0).minutes(0).seconds(0)
-  const baseTime = base.clone().hours(time.get('hours')).minutes(time.get('minutes'))
-  const min = base.clone().hours(minTime.get('hours')).minutes(minTime.get('minutes'))
-  const max = base.clone().hours(maxTime.get('hours')).minutes(maxTime.get('minutes'))
-
-  return !(baseTime.isSameOrAfter(min) && baseTime.isSameOrBefore(max))
-}
-
 export function allDaysDisabledBefore (day, unit, { minDate, includeDates } = {}) {
   const dateBefore = day.clone().subtract(1, unit)
   return (minDate && dateBefore.isBefore(minDate, unit)) ||
@@ -412,7 +364,7 @@ export function getHightLightDaysMap (
 }
 
 /**
- * Gets the localized date in the long month/day/year format (i.e; January 15, 2019). 
+ * Gets the localized date in the long month/day/year format (i.e; January 15, 2019).
  * If the date is disabled, the translated string for Disabled is appended to the date string.
  * @param {Moment} date - The moment date to get the localized string.
  * @param {Object} props - The date props.
@@ -421,14 +373,14 @@ export function getHightLightDaysMap (
 export function getLocalizedDateForScreenReader (date, props) {
   const { intl, locale } = props;
   let localizedDateLabel = '';
-  
+
   if (date && date.isValid()) {
     const localizedDate = localizeDate(date, locale);
     localizedDateLabel = localizedDate.format('LL');
 
     if (intl && isDayDisabled(date, props)) {
       localizedDateLabel = localizedDateLabel.concat(' ', intl.formatMessage({ id: 'Terra.datePicker.disabled' }));
-    } 
+    }
   }
 
   return localizedDateLabel;
