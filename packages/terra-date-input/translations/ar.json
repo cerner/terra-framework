@@ -1,0 +1,23 @@
+{
+  "Terra.date.input.optional": "(اختياري)",
+  "Terra.date.input.required": "مطلوب",
+  "Terra.date.input.monthLabel": "شهر",
+  "Terra.date.input.monthPlaceholder": "شهر",
+  "Terra.date.input.yearLabel": "عام",
+  "Terra.date.input.yearPlaceholder": "YYYY",
+  "Terra.date.input.dayLabel": "التاريخ",
+  "Terra.date.input.dayPlaceholder": "DD",
+  "Terra.date.input.legend": "التاريخ",
+  "Terra.date.input.january": "يناير",
+  "Terra.date.input.february": "فبراير",
+  "Terra.date.input.march": "مارس",
+  "Terra.date.input.april": "أبريل",
+  "Terra.date.input.may": "مايو",
+  "Terra.date.input.june": "يونيو",
+  "Terra.date.input.july": "يوليو",
+  "Terra.date.input.august": "أغسطس",
+  "Terra.date.input.september": "سبتمبر",
+  "Terra.date.input.october": "أكتوبر",
+  "Terra.date.input.november": "نوفمبر",
+  "Terra.date.input.december": "ديسمبر"
+}
