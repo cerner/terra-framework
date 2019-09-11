@@ -413,6 +413,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('onBlur (CDT to CST)', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-dst-blur');
+      browser.refresh();
       browser.click('input[name="terra-time-minute-input"]');
       browser.keys('Tab');
       browser.waitForVisible('[class*="time-clarification"]');
@@ -439,6 +440,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
   describe('onBlur (CST to CDT)', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-dst-blur');
+      browser.refresh();
       browser.click('input[name="terra-time-minute-input"]');
       browser.keys('Tab');
       browser.waitForVisible('[class*="time-clarification"]');
