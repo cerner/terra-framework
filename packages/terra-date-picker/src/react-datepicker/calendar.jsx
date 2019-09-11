@@ -265,7 +265,7 @@ export default class Calendar extends React.Component {
   }
 
   handleCloseButtonClick = (event) => {
-    if (this.props) {
+    if (this.props.onRequestClose) {
       this.props.onRequestClose(event)
     }
   }
