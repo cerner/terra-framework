@@ -555,10 +555,6 @@ class DatePicker extends React.Component {
 
   updateAriaLiveStatus(message) {
     this.visuallyHiddenText.innerText = message;
-    // Clears status so aria live announces correctly next time a date is preselected.
-    // setTimeout(() => {
-    //    = '';
-    // }, 1000);
   }
 
   onInputClick = () => {

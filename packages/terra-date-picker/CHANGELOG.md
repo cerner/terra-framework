@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Removed use of `componentWillReceiveProps`.
+* Added ability to shift focus around interactive elements within the datepicker popup to enable better screen reader/keyboard usage
 
 ### Removed
 * Removed time-picker code from react-datepicker.
