@@ -7,7 +7,7 @@
     background-color: #fff;
     color: $datepicker-text-color;
     display: inline-flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     font-family: $datepicker-font-family;
     font-size: $datepicker-font-size;
     position: relative;
@@ -327,15 +327,32 @@
     }
   }
 
-  .react-datepicker-today-button {
+  .react-datepicker-footer {
+    display: flex;
+    background-color: #aeaeae;
+  }
+
+  .react-datepicker-today-button,
+  .react-datepicker-close-button {
     background: $datepicker-background-color;
     border: 0;
     border-top: 1px solid $datepicker-border-color;
     clear: left;
     cursor: pointer;
+    flex: 1;
     font-weight: bold;
+    margin: 0;
     padding: 5px 0;
     text-align: center;
+
+    &:focus {
+      outline: none;
+      background-color: #e4e4e4;
+    }
+  }
+
+  .react-datepicker-today-button {
+    margin-right: 1px;
   }
 
   .react-datepicker-portal {
@@ -383,33 +400,26 @@
     .react-datepicker-navigation {
       border: 1.8 * $datepicker-navigation-size solid transparent;
     }
+  }
 
-    .react-datepicker-navigation--previous {
-      border-right-color: $datepicker-muted-color;
+  .react-datepicker-navigation--previous {
+    padding-bottom: 0;
+    padding-top: 0;
 
-      &:hover {
-        border-right-color: darken($datepicker-muted-color, 10%);
-      }
-    }
-
-    .react-datepicker-navigation--next {
-      border-left-color: $datepicker-muted-color;
-
-      &:hover {
-        border-left-color: darken($datepicker-muted-color, 10%);
-      }
+    > span {
+      margin-left: 0.1rem;
+      margin-right: 0.3rem;
     }
   }
 
-  .react-datepicker-close-btn {
-    border: 0;
-    clip: rect(0 0 0 0);
-    margin: -10px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    white-space: nowrap; /* Ensures words  are not read one at a time on screen readers*/
-    width: 1px;
+  .react-datepicker-navigation--next {
+    padding-bottom: 0;
+    padding-top: 0;
+
+    > span {
+      margin-left: 0.3rem;
+      margin-right: 0.1rem;
+    }
   }
 
   .prev-month-icon,

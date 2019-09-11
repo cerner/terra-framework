@@ -199,7 +199,13 @@ export default class Month extends React.Component {
       'react-datepicker-month--selecting-range': this.props.selectingDate && (this.props.selectsStart || this.props.selectsEnd)
     });
     return (
-      <div tabIndex="0" className={getClassNames} onMouseLeave={this.handleMouseLeave} role="listbox">
+      <div
+        tabIndex="0"
+        className={getClassNames}
+        onMouseLeave={this.handleMouseLeave}
+        role="listbox"
+        onKeyDown={this.props.handleCalendarKeyDown}
+      >
         {this.renderWeeks()}
       </div>
     )

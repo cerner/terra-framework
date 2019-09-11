@@ -358,8 +358,8 @@ export default class Calendar extends React.Component {
     }
 
     return <Button
+      className={cx('react-datepicker-navigation--previous')}
       icon={<span className={cx('prev-month-icon')} />}
-      isCompact
       isIconOnly
       variant="utility"
       text="Previous Month"
@@ -372,9 +372,9 @@ export default class Calendar extends React.Component {
     }
 
     return <Button
+      className={cx('react-datepicker-navigation--next')}
       icon={<span className={cx('next-month-icon')} />}
       isIconOnly
-      isCompact
       variant="utility"
       text="Next Month"
       onClick={this.increaseMonth} />
@@ -437,9 +437,30 @@ export default class Calendar extends React.Component {
     return (
       <button
         className={cx('react-datepicker-today-button')}
-        onClick={e => this.props.onSelect(getStartOfDate(now(this.props.utcOffset)), e)}>
+        onClick={e => this.props.onSelect(getStartOfDate(now(this.props.utcOffset)), e)}
+        onKeyDown={this.props.handleCalendarKeyDown}
+      >
         {this.props.todayButton}
       </button>
+    )
+  }
+
+  renderCloseButton = () => {
+    if (!this.props.todayButton) {
+      return
+    }
+    return (
+      <FormattedMessage id="Terra.datePicker.closeCalendar">
+        {text => (
+          <button
+            className={cx('react-datepicker-close-button')}
+            type="button"
+            onClick={this.handleCloseButtonClick}
+          >
+            {text}
+          </button>
+        )}
+      </FormattedMessage>
     )
   }
 
@@ -492,7 +513,8 @@ export default class Calendar extends React.Component {
             startDate={this.props.startDate}
             endDate={this.props.endDate}
             peekNextMonth={this.props.peekNextMonth}
-            utcOffset={this.props.utcOffset} />
+            utcOffset={this.props.utcOffset}
+            handleCalendarKeyDown={this.props.handleCalendarKeyDown} />
         </div>
       )
     }
@@ -502,20 +524,11 @@ export default class Calendar extends React.Component {
   render () {
     return (
       <div className={cx(['react-datepicker', this.props.className])} data-terra-date-picker-calendar>
-        <VisuallyHiddenText tabIndex="0" text="Date Picker Calendar" />
-        <FormattedMessage id="Terra.datePicker.closeCalendar">
-          {text => (
-            <button
-              className={cx('react-datepicker-close-btn')}
-              type="button"
-              onClick={this.handleCloseButtonClick}
-            >
-              {text}
-            </button>
-          )}
-        </FormattedMessage>
+        <div className={cx('react-datepicker-footer')}>
+          {this.renderTodayButton()}
+          {this.renderCloseButton()}
+        </div>
         {this.renderMonths()}
-        {this.renderTodayButton()}
         {this.props.children}
       </div>
     )

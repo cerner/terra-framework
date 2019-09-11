@@ -572,6 +572,18 @@ class DatePicker extends React.Component {
   }
 
   handleCalendarKeyDown = (event) => {
+    const keyboardNavKeys = [
+      'ArrowLeft',
+      'ArrowRight',
+      'ArrowUp',
+      'ArrowDown',
+      'PageUp',
+      'PageDown',
+      'Home',
+      'End',
+    ];
+
+
     this.props.onKeyDown(event)
     const eventKey = event.key
     const copy = newDate(this.state.preSelection)
@@ -586,7 +598,7 @@ class DatePicker extends React.Component {
     } else if (eventKey === 'Escape') {
       event.preventDefault()
       this.setOpen(false)
-    } else if (!this.props.disabledKeyboardNavigation) {
+    } else if (!this.props.disabledKeyboardNavigation && keyboardNavKeys.indexOf(eventKey) !== -1) {
       let newSelection
       switch (eventKey) {
         case 'ArrowLeft':
@@ -685,6 +697,7 @@ class DatePicker extends React.Component {
         className={this.props.calendarClassName}
         yearDropdownItemNumber={this.props.yearDropdownItemNumber}
         onRequestClose={this.handleOnRequestClose}
+        handleCalendarKeyDown={this.handleCalendarKeyDown}
       >
         {this.props.children}
         <VisuallyHiddenText aria-atomic="true" aria-live="assertive" text={this.ariaLiveStatus} />
@@ -734,6 +747,7 @@ class DatePicker extends React.Component {
         className={this.props.calendarClassName}
         yearDropdownItemNumber={this.props.yearDropdownItemNumber}
         onRequestClose={this.handleOnRequestClose}
+        handleCalendarKeyDown={this.handleCalendarKeyDown}
       >
         {this.props.children}
         <VisuallyHiddenText aria-atomic="true" aria-live="assertive" text={this.ariaLiveStatus} />
@@ -808,7 +822,6 @@ class DatePicker extends React.Component {
                     <div
                       ref={this.datePickerOverlayContainer}
                       className={cx('react-datepicker-portal')}
-                      onKeyDown={this.handleCalendarKeyDown}
                     >
                       {calendar}
                     </div>
@@ -847,7 +860,6 @@ class DatePicker extends React.Component {
         >
           <PopupContainer
             ref={this.datePickerPopupContainer}
-            onKeyDown={this.handleCalendarKeyDown}
           >
             {calendar}
           </PopupContainer>
