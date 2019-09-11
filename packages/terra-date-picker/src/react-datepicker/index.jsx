@@ -358,7 +358,15 @@ class DatePicker extends React.Component {
     document.addEventListener('keydown', this.handleKeydown);
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
+    const currentMonth = prevProps.selected && getMonth(prevProps.selected)
+    const nextMonth = this.props.selected && getMonth(this.props.selected)
+    if (prevProps.inline && currentMonth !== nextMonth) {
+      this.setPreSelection(this.props.selected)
+    }
+    if (prevProps.highlightDates !== this.props.highlightDates) {
+      this.setState({'highlightDates': getHightLightDaysMap(this.props.highlightDates)})
+    }
     // Shift focus into popup date-picker if it exists
     if (this.datePickerPopupContainer.current) {
       this.datePickerPopupContainer.current.focus();
@@ -367,17 +375,6 @@ class DatePicker extends React.Component {
     // Shift focus into overlay date-picker if it exists
     if (this.datePickerOverlayContainer.current) {
       this.datePickerOverlayContainer.current.focus();
-    }
-  }
-
-  componentWillReceiveProps (nextProps) {
-    const currentMonth = this.props.selected && getMonth(this.props.selected)
-    const nextMonth = nextProps.selected && getMonth(nextProps.selected)
-    if (this.props.inline && currentMonth !== nextMonth) {
-      this.setPreSelection(nextProps.selected)
-    }
-    if (this.props.highlightDates !== nextProps.highlightDates) {
-      this.setState({'highlightDates': getHightLightDaysMap(nextProps.highlightDates)})
     }
   }
 
