@@ -216,7 +216,7 @@ export default class Month extends React.Component {
         className={getClassNames}
         onMouseLeave={this.handleMouseLeave}
         role="application"
-        aria-label={`${utils.getLocalizedDateForScreenReader(this.props.preSelection, { intl: this.props.intl, locale: this.props.locale} )}. Use the left and right arrow keys to navigate between days. Use the up and down arrow keys to navigate between weeks. Press Enter to select a date. Press Escape to close date picker popup.`}
+        aria-label={`${utils.getLocalizedDateForScreenReader(this.props.preSelection, { intl: this.props.intl, locale: this.props.locale} )}. To change the selection, use the arrow keys. Press Enter to select a date. Press Escape to close date picker popup.`}
         onKeyDown={this.props.handleCalendarKeyDown}
       >
         {this.renderWeeks()}
