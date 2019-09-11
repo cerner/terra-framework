@@ -695,6 +695,7 @@ class DatePicker extends React.Component {
         yearDropdownItemNumber={this.props.yearDropdownItemNumber}
         onRequestClose={this.handleOnRequestClose}
         handleCalendarKeyDown={this.handleCalendarKeyDown}
+        setPreSelection={this.setPreSelection}
       >
         {this.props.children}
         <VisuallyHiddenText aria-atomic="true" aria-live="assertive" text={this.ariaLiveStatus} />
@@ -745,6 +746,7 @@ class DatePicker extends React.Component {
         yearDropdownItemNumber={this.props.yearDropdownItemNumber}
         onRequestClose={this.handleOnRequestClose}
         handleCalendarKeyDown={this.handleCalendarKeyDown}
+        setPreSelection={this.setPreSelection}
       >
         {this.props.children}
         <VisuallyHiddenText aria-atomic="true" aria-live="assertive" text={this.ariaLiveStatus} />

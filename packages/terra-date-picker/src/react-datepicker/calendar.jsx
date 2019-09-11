@@ -167,6 +167,10 @@ export default class Calendar extends React.Component {
      */
     preSelection: PropTypes.object,
     /**
+     * A callback function used to set preSelection date when the calendar month or year is updated
+     */
+    setPreSelection: PropTypes.func,
+    /**
      * Selected Date Value.
      */
     selected: PropTypes.object,
@@ -288,12 +292,14 @@ export default class Calendar extends React.Component {
     this.setState({
       date: addMonths(cloneDate(this.state.date), 1)
     }, () => this.handleMonthChange(this.state.date))
+    this.props.setPreSelection(addMonths(cloneDate(this.state.date), 1));
   }
 
   decreaseMonth = () => {
     this.setState({
       date: subtractMonths(cloneDate(this.state.date), 1)
     }, () => this.handleMonthChange(this.state.date))
+    this.props.setPreSelection(subtractMonths(cloneDate(this.state.date), 1));
   }
 
   handleDayClick = (day, event) => this.props.onSelect(day, event)
@@ -320,12 +326,14 @@ export default class Calendar extends React.Component {
     this.setState({
       date: setYear(cloneDate(this.state.date), year)
     })
+    this.props.setPreSelection(setYear(cloneDate(this.state.date), year));
   }
 
   changeMonth = (month) => {
     this.setState({
       date: setMonth(cloneDate(this.state.date), month)
     }, () => this.handleMonthChange(this.state.date))
+    this.props.setPreSelection(setMonth(cloneDate(this.state.date), month));
   }
 
   header = (date = this.state.date) => {
