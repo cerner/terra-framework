@@ -1,4 +1,5 @@
 import React from 'react'
+import { intlShape } from 'react-intl';
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 import Week from './week'
@@ -51,6 +52,16 @@ export default class Month extends React.Component {
      * Prop to show inline version of date picker component.
      */
     inline: PropTypes.bool,
+    /**
+     * @private
+     * Internationalization object with translation APIs. Provided by `injectIntl`.
+     */
+    intl: intlShape,
+    /**
+     * @private
+     * Name of locale data for different international formatting.
+     */
+    locale: PropTypes.string,
     /**
      * Maximum value of date that can be selected by user.
      */
@@ -203,7 +214,8 @@ export default class Month extends React.Component {
         tabIndex="0"
         className={getClassNames}
         onMouseLeave={this.handleMouseLeave}
-        role="listbox"
+        role="application"
+        aria-label={`${utils.getLocalizedDateForScreenReader(this.props.preSelection, { intl: this.props.intl, locale: this.props.locale} )}. Use the arrow keys to cycle through the dates.`}
         onKeyDown={this.props.handleCalendarKeyDown}
       >
         {this.renderWeeks()}

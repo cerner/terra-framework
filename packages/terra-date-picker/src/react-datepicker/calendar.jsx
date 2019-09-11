@@ -1,8 +1,5 @@
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, intlShape } from 'react-intl';
 import Button from 'terra-button';
-import IconCaretLeft from 'terra-icon/lib/icon/IconCaretLeft';
-import IconCaretRight from 'terra-icon/lib/icon/IconCaretRight';
-import VisuallyHiddenText from 'terra-visually-hidden-text';
 import YearDropdown from './year_dropdown'
 import MonthDropdown from './month_dropdown'
 import Month from './month'
@@ -110,6 +107,11 @@ export default class Calendar extends React.Component {
      * Prop to show inline version of date picker component.
      */
     inline: PropTypes.bool,
+    /**
+     * @private
+     * Internationalization object with translation APIs. Provided by `injectIntl`.
+     */
+    intl: intlShape,
     /**
      * Name of locale data for different international formatting.
      */
@@ -447,6 +449,8 @@ export default class Calendar extends React.Component {
         className={cx('react-datepicker-today-button')}
         onClick={e => this.props.onSelect(getStartOfDate(now(this.props.utcOffset)), e)}
         onKeyDown={this.props.handleCalendarKeyDown}
+        role="application"
+        aria-label={ this.props.todayButton }
       >
         {this.props.todayButton}
       </button>
@@ -522,7 +526,9 @@ export default class Calendar extends React.Component {
             endDate={this.props.endDate}
             peekNextMonth={this.props.peekNextMonth}
             utcOffset={this.props.utcOffset}
-            handleCalendarKeyDown={this.props.handleCalendarKeyDown} />
+            handleCalendarKeyDown={this.props.handleCalendarKeyDown}
+            locale={this.props.locale}
+            intl={this.props.intl} />
         </div>
       )
     }
