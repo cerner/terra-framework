@@ -138,11 +138,11 @@ class Menu extends React.Component {
     if (mainDocumentElement) {
       const inert = +mainDocumentElement.getAttribute('data-overlay-count');
 
-      if (!mainDocumentElement.hasAttribute('data-overlay-count')) {
+      if (mainDocumentElement.hasAttribute('data-overlay-count')) {
+        mainDocumentElement.setAttribute('data-overlay-count', `${inert + 1}`);
+      } else {
         mainDocumentElement.setAttribute('data-overlay-count', '1');
         mainDocumentElement.setAttribute('inert', '');
-      } else if (mainDocumentElement && mainDocumentElement.hasAttribute('data-overlay-count')) {
-        mainDocumentElement.setAttribute('data-overlay-count', `${inert + 1}`);
       }
     }
   }
@@ -216,7 +216,6 @@ class Menu extends React.Component {
       targetRef,
       isArrowDisplayed,
       contentWidth,
-      rootSelector,
       triggerElement,
       ...customProps
     } = this.props;

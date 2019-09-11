@@ -6,6 +6,9 @@ Unreleased
 ### Changed
 Updated `keycode-js` from `v1.0.4` to `v2.0.1`
 
+### Changed
+* Fixed focus issue when menu is closed due to changes in menu for screen reader issue.
+
 6.10.0 - (August 21, 2019)
 ------------------
 ### Changed
