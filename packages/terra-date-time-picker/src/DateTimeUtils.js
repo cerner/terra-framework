@@ -9,7 +9,7 @@ class DateTimeUtils {
    * @return {boolean} - True if the ISO string contains the time. False, otherwise.
    */
   static hasTime(iSODate) {
-    if (!DateUtil.createSafeDate(iSODate)) {
+    if (!DateTimeUtils.createSafeDate(iSODate)) {
       return false;
     }
 
@@ -158,29 +158,65 @@ class DateTimeUtils {
 
   /**
    * Gets the daylight savings time zone offset display. (e.g. CDT)
+   * @param {string} ambiguousDateTime - The ISO date time with the ambiguous hour.
    * @return {string} - The daylight savings time zone offset display.
    */
-  static getDaylightSavingTZDisplay() {
-    return moment('2017-07-01').tz(moment.tz.guess()).format('z');
+  static getDaylightSavingTZDisplay(ambiguousDateTime) {
+    const daylightSavingsDateTime = moment(ambiguousDateTime);
+    if (!daylightSavingsDateTime.isValid()) {
+      return '';
+    }
+
+    daylightSavingsDateTime.subtract(1, 'days');
+    return daylightSavingsDateTime.tz(moment.tz.guess()).format('z');
   }
 
-  static getDaylightSavingExpandedTZDisplay() {
+  /**
+   * Gets the long daylight savings time zone offset display. (e.g. America/Chicago CDT -5:00)
+   * @param {string} ambiguousDateTime - The ISO date time with the ambiguous hour.
+   * @return {string} - The long daylight savings time zone offset display.
+   */
+  static getDaylightSavingExpandedTZDisplay(ambiguousDateTime) {
+    const daylightSavingsDateTime = moment(ambiguousDateTime);
+    if (!daylightSavingsDateTime.isValid()) {
+      return '';
+    }
+
+    daylightSavingsDateTime.subtract(1, 'days');
     const timezone = moment.tz.guess();
-    const momentWithTimeZone = moment('2017-07-01').tz(timezone);
+    const momentWithTimeZone = daylightSavingsDateTime.tz(timezone);
     return moment.tz.zone(timezone).name + momentWithTimeZone.format(' z Z');
   }
 
   /**
    * Gets the standard time zone offset display. (e.g. CST)
+   * @param {string} ambiguousDateTime - The ISO date time with the ambiguous hour.
    * @return {string} - The standard time zone offset display.
    */
-  static getStandardTZDisplay() {
-    return moment('2017-01-01').tz(moment.tz.guess()).format('z');
+  static getStandardTZDisplay(ambiguousDateTime) {
+    const standardDateTime = moment(ambiguousDateTime);
+    if (!standardDateTime.isValid()) {
+      return '';
+    }
+
+    standardDateTime.add(1, 'days');
+    return standardDateTime.tz(moment.tz.guess()).format('z');
   }
 
-  static getStandardExpandedTZDisplay() {
+  /**
+   * Gets the long standard time zone offset display. (e.g. America/Chicago CST -6:00)
+   * @param {string} ambiguousDateTime - The ISO date time with the ambiguous hour.
+   * @return {string} - The long standard time zone offset display.
+   */
+  static getStandardExpandedTZDisplay(ambiguousDateTime) {
+    const standardDateTime = moment(ambiguousDateTime);
+    if (!standardDateTime.isValid()) {
+      return '';
+    }
+
+    standardDateTime.add(1, 'days');
     const timezone = moment.tz.guess();
-    const momentWithTimeZone = moment('2017-01-01').tz(timezone);
+    const momentWithTimeZone = standardDateTime.tz(timezone);
     return moment.tz.zone(timezone).name + momentWithTimeZone.format(' z Z');
   }
 
@@ -193,7 +229,23 @@ class DateTimeUtils {
    * @return {object} - The moment object representing the given date and time.
    */
   static convertDateTimeStringToMomentObject(date, time, dateformat, hasSeconds) {
-    return DateTimeUtils.updateTime(DateUtil.createSafeDate(DateUtil.convertToISO8601(date, dateformat)), time, hasSeconds);
+    return DateTimeUtils.updateTime(DateTimeUtils.createSafeDate(DateUtil.convertToISO8601(date, dateformat)), time, hasSeconds);
+  }
+
+  /**
+   * Creates a moment object using the provided date string. Moment is unable to initialize a valid date if the date passed in is
+   * null, empty string, or alpha characters and undefined would be returned.
+   * @param {string|undefined} date - The date to convert. Expect to be in ISO format.
+   * @return {object|undefined} - The moment object. Undefined if unable to convert.
+   */
+  static createSafeDate(date) {
+    if (!date) {
+      return undefined;
+    }
+
+    const momentDate = moment(date);
+
+    return momentDate.isValid() ? momentDate : undefined;
   }
 }
 

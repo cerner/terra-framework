@@ -1,6 +1,5 @@
 /* eslint-disable */
 import React from 'react';
-import ApplicationBase from 'terra-application/lib/application-base';
 import ApplicationNavigation from '../../../ApplicationNavigation';
 import FixedHeight from '../common/FixedHeight';
 
@@ -23,14 +22,13 @@ const userConfigSrc = {
   imageSrc: 'test-src',
 };
 
-// TODO: remove terra-application after it is incorporated into dev-site
-const TitleTest = () => (
-  <ApplicationBase locale="en">
+const UserTest = () => (
+  <React.Fragment>
     <FixedHeight><ApplicationNavigation userConfig={userConfig} /></FixedHeight>
     <FixedHeight><ApplicationNavigation userConfig={userConfigDetail} /></FixedHeight>
     <FixedHeight><ApplicationNavigation userConfig={userConfigInitials} /></FixedHeight>
     <FixedHeight><ApplicationNavigation userConfig={userConfigSrc} /></FixedHeight>
-  </ApplicationBase>
+  </React.Fragment>
 );
 
-export default TitleTest;
+export default UserTest;

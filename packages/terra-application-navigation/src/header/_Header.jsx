@@ -7,7 +7,7 @@ import Tabs from '../tabs/_Tabs';
 import Extensions from '../extensions/_Extensions';
 import UtilityMenuHeaderButton from '../utility-menu/_UtilityMenuHeaderButton';
 import {
-  userConfigPropType, navigationItemsPropType, extensionItemsPropType, titleConfigPropType,
+  userConfigPropType, navigationItemsPropType, extensionItemsPropType, titleConfigPropType, utilityItemsPropType,
 } from '../utils/propTypes';
 
 import styles from './Header.module.scss';
@@ -74,6 +74,34 @@ const propTypes = {
    * Object containing intl APIs.
    */
   intl: intlShape,
+  /**
+   * An element to render within the Header's utility menu.
+   */
+  hero: PropTypes.element,
+  /**
+   * An array of configuration objects with information specifying the creation of additional utility menu items.
+   * These items are rendered within the popup utility menu at larger breakpoints and within the drawer menu at smaller breakpoints.
+   */
+  utilityItems: utilityItemsPropType,
+  /**
+   * A function to be executed upon the selection of the Settings utility item.
+   * If `onSelectSettings` is not provided, the Settings utility item will not be rendered.
+   */
+  onSelectSettings: PropTypes.func,
+  /**
+   * A function to be executed upon the selection of the Help utility item.
+   * If `onSelectHelp` is not provided, the Help utility item will not be rendered.
+   */
+  onSelectHelp: PropTypes.func,
+  /**
+   * A function to be executed upon the selection of the Logout action button.
+   * If `onSelectLogout` is not provided, the Logout action button will not be rendered.
+   */
+  onSelectLogout: PropTypes.func,
+};
+
+const defaultProps = {
+  utilityItems: [],
 };
 
 const Header = ({
@@ -91,6 +119,11 @@ const Header = ({
   intl,
   onSelectUtilityButton,
   utilityButtonPopupAnchorRef,
+  hero,
+  utilityItems,
+  onSelectSettings,
+  onSelectHelp,
+  onSelectLogout,
 }) => {
   function renderTitle() {
     if (!titleConfig) {
@@ -142,12 +175,18 @@ const Header = ({
   }
 
   function renderUtilities() {
+    if (!(utilityItems.length > 0 || userConfig || hero || onSelectHelp || onSelectLogout || onSelectSettings)) {
+      return null;
+    }
+
     return (
-      <UtilityMenuHeaderButton
-        userConfig={userConfig}
-        onClick={onSelectUtilityButton}
-        popupAnchorRef={utilityButtonPopupAnchorRef}
-      />
+      <div className={cx('utilities-container')}>
+        <UtilityMenuHeaderButton
+          userConfig={userConfig}
+          onClick={onSelectUtilityButton}
+          popupAnchorRef={utilityButtonPopupAnchorRef}
+        />
+      </div>
     );
   }
 
@@ -165,13 +204,12 @@ const Header = ({
       <div className={cx('extensions-container')}>
         {renderExtensions()}
       </div>
-      <div className={cx('utilities-container')}>
-        {renderUtilities()}
-      </div>
+      {renderUtilities()}
     </header>
   );
 };
 
 Header.propTypes = propTypes;
+Header.defaultProps = defaultProps;
 
 export default injectIntl(Header);

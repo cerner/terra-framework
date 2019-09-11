@@ -53,6 +53,9 @@ describe('CompactHeader', () => {
 
     const mountComponent = mountWithIntl(
       <CompactHeader
+        titleConfig={{
+          title: 'test-title',
+        }}
         onSelectMenuButton={mockCallBack}
       />,
     );

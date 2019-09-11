@@ -1,10 +1,8 @@
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions  */
 import React from 'react';
 import classNames from 'classnames/bind';
 import { MemoryRouter, withRouter } from 'react-router-dom';
 import Markdown from 'terra-markdown';
 import ToggleButton from 'terra-toggle-button';
-/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import NavigationLayout from 'terra-navigation-layout/lib/NavigationLayout';
 import ConfigReadMe from 'terra-navigation-layout/lib/terra-dev-site/doc/example/NavigationLayoutStandardConfig.md';
 import HeaderExample from 'terra-navigation-layout/lib/terra-dev-site/doc/example/HeaderExample';
@@ -14,7 +12,6 @@ import Page2Content from 'terra-navigation-layout/lib/terra-dev-site/doc/example
 import Page3Content from 'terra-navigation-layout/lib/terra-dev-site/doc/example/Page3Content';
 import Page1Menu from 'terra-navigation-layout/lib/terra-dev-site/doc/example/Page1Menu';
 import Page2Menu from 'terra-navigation-layout/lib/terra-dev-site/doc/example/Page2Menu';
-/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import styles from './NavigationLayoutDocCommon.module.scss';
 
 const cx = classNames.bind(styles);
