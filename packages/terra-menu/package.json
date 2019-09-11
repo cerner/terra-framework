@@ -27,12 +27,14 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "keycode-js": "^2.0.1",
+    "mutationobserver-shim": "0.3.3",
     "prop-types": "^15.5.8",
     "terra-arrange": "^3.0.0",
     "terra-content-container": "^3.0.0",
     "terra-icon": "^3.1.0",
     "terra-list": "^4.0.0",
-    "terra-popup": "^6.10.0"
+    "terra-popup": "^6.10.0",
+    "wicg-inert": "^2.1.1"
   },
   "devDependencies": {
     "terra-button": "^3.3.0",

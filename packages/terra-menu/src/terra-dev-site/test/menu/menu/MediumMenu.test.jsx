@@ -41,6 +41,8 @@ class MediumMenu extends React.Component {
           isOpen={this.state.open}
           targetRef={this.getButtonNode}
           onRequestClose={this.handleRequestClose}
+          triggerElement={document.getElementById('medium-menu-button')}
+
         >
           <Menu.Item text="Default 1" key="1" className="TestFirstItem" />
           <Menu.Item text="Default 2" key="2" />

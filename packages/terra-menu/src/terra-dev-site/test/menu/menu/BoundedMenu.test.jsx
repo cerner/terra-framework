@@ -57,6 +57,7 @@ class BoundedMenu extends React.Component {
           targetRef={this.getButtonNode}
           onRequestClose={this.handleRequestClose}
           classNameContent="TestBoundedContent"
+          triggerElement={document.getElementById('bounded-button')}
         >
           <Menu.Item text="Default 1" key="1" />
           <Menu.Item

@@ -47,6 +47,8 @@ class SelectableMenu extends React.Component {
           isOpen={this.state.open}
           targetRef={this.getButtonNode}
           onRequestClose={this.handleRequestClose}
+          triggerElement={document.getElementById('default-button')}
+
         >
           <Menu.Item
             text="Default 1"

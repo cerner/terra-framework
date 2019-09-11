@@ -87,6 +87,7 @@ class BasicMenu extends React.Component {
             contentWidth={this.props.contentWidth}
             isArrowDisplayed={this.props.isArrowDisplayed}
             boundingRef={this.props.boundingRef}
+            triggerElement={document.getElementById('basic-menu-button')}
           >
             <Menu.Item
               text="Toggle Item 1 - Closes Menu"
@@ -143,7 +144,7 @@ class BasicMenu extends React.Component {
               <Menu.Item text="Group Item 3" key="GroupItem3" isSelected={this.state.groupSelectedIndex === 2} isDisabled />
             </Menu.ItemGroup>
           </Menu>
-          <Button onClick={this.handleButtonClick} text="Click Me" />
+          <Button id="basic-menu-button" onClick={this.handleButtonClick} text="Click Me" />
         </div>
         <br />
         <p>

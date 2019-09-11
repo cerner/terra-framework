@@ -57,6 +57,8 @@ class DefaultMenu extends React.Component {
           isOpen={this.state.open}
           targetRef={this.getButtonNode}
           onRequestClose={this.handleRequestClose}
+          triggerElement={document.getElementById('default-button')}
+
         >
           {
             this.state.items.map(item => (
