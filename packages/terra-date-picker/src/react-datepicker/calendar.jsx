@@ -448,9 +448,6 @@ export default class Calendar extends React.Component {
       <button
         className={cx('react-datepicker-today-button')}
         onClick={e => this.props.onSelect(getStartOfDate(now(this.props.utcOffset)), e)}
-        onKeyDown={this.props.handleCalendarKeyDown}
-        role="application"
-        aria-label={ this.props.todayButton }
       >
         {this.props.todayButton}
       </button>
@@ -483,23 +480,6 @@ export default class Calendar extends React.Component {
       var monthKey = `month-${i}`
       monthList.push(
         <div key={monthKey} className={cx('react-datepicker-month-container')}>
-          <div className={cx('react-datepicker-header')}>
-            {this.renderCurrentMonth(monthDate)}
-            <div className={cx('react-datepicker-header-controls')}>
-              {this.renderPreviousMonthButton()}
-              <div
-                className={cx(['react-datepicker-header-dropdown', `react-datepicker-header-dropdown--${this.props.dropdownMode}`])}
-                onFocus={this.handleDropdownFocus}
-              >
-                {this.renderMonthDropdown(i !== 0)}
-                {this.renderYearDropdown(i !== 0)}
-              </div>
-              {this.renderNextMonthButton()}
-            </div>
-            <div className={cx('react-datepicker-day-names')} aria-hidden="true">
-              {this.header(monthDate)}
-            </div>
-          </div>
           <Month
             day={monthDate}
             dayClassName={this.props.dayClassName}
@@ -529,6 +509,23 @@ export default class Calendar extends React.Component {
             handleCalendarKeyDown={this.props.handleCalendarKeyDown}
             locale={this.props.locale}
             intl={this.props.intl} />
+          <div className={cx('react-datepicker-header')}>
+            {this.renderCurrentMonth(monthDate)}
+            <div className={cx('react-datepicker-header-controls')}>
+              {this.renderPreviousMonthButton()}
+              <div
+                className={cx(['react-datepicker-header-dropdown', `react-datepicker-header-dropdown--${this.props.dropdownMode}`])}
+                onFocus={this.handleDropdownFocus}
+              >
+                {this.renderMonthDropdown(i !== 0)}
+                {this.renderYearDropdown(i !== 0)}
+              </div>
+              {this.renderNextMonthButton()}
+            </div>
+            <div className={cx('react-datepicker-day-names')} aria-hidden="true">
+              {this.header(monthDate)}
+            </div>
+          </div>
         </div>
       )
     }
@@ -536,13 +533,35 @@ export default class Calendar extends React.Component {
   }
 
   render () {
+    const supportsOnTouchStart = 'ontouchstart' in window;
+
+    /**
+     * Ensures focus moves into datepicker popup correctly when it is opened on touch devices
+     * by making focusable element (today button) first in the DOM order
+     */
+    if (supportsOnTouchStart) {
+      return (
+        <div className={cx(['react-datepicker', 'supports-on-touch-start', this.props.className])} data-terra-date-picker-calendar>
+          <div className={cx('react-datepicker-footer')}>
+            {this.renderTodayButton()}
+            {this.renderCloseButton()}
+          </div>
+          {this.renderMonths()}
+          {this.props.children}
+        </div>
+      );
+    }
+
+    /**
+     * Ensures users can start interacting with the calendar via up/down/left/right arrow keys
+     * when it first opens by making the month component render first in the DOM order
+     */
     return (
       <div className={cx(['react-datepicker', this.props.className])} data-terra-date-picker-calendar>
-        <div className={cx('react-datepicker-footer')}>
-          {this.renderTodayButton()}
-          {this.renderCloseButton()}
-        </div>
-        {this.renderMonths()}
+          {this.renderMonths()}
+          <div className={cx('react-datepicker-footer')}>
+            {this.renderTodayButton()}
+          </div>
         {this.props.children}
       </div>
     )

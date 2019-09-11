@@ -554,12 +554,11 @@ class DatePicker extends React.Component {
   }
 
   updateAriaLiveStatus(message) {
-    this.ariaLiveStatus = message;
-
+    this.visuallyHiddenText.innerText = message;
     // Clears status so aria live announces correctly next time a date is preselected.
-    setTimeout(() => {
-      this.ariaLiveStatus = '';
-    }, 1000);
+    // setTimeout(() => {
+    //    = '';
+    // }, 1000);
   }
 
   onInputClick = () => {
@@ -698,7 +697,7 @@ class DatePicker extends React.Component {
         setPreSelection={this.setPreSelection}
       >
         {this.props.children}
-        <VisuallyHiddenText aria-atomic="true" aria-live="assertive" text={this.ariaLiveStatus} />
+        <VisuallyHiddenText aria-atomic="true" aria-live="assertive" refCallback={(ref) => { this.visuallyHiddenText = ref; }} />
       </WrappedCalendar>
     }
 
@@ -749,7 +748,7 @@ class DatePicker extends React.Component {
         setPreSelection={this.setPreSelection}
       >
         {this.props.children}
-        <VisuallyHiddenText aria-atomic="true" aria-live="assertive" text={this.ariaLiveStatus} />
+        <VisuallyHiddenText aria-atomic="true" aria-live="assertive" refCallback={(ref) => { this.visuallyHiddenText = ref; }} />
       </Calendar>
     );
   }

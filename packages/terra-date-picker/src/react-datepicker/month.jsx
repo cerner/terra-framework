@@ -207,6 +207,7 @@ export default class Month extends React.Component {
   render() {
     const getClassNames = cx({
       'react-datepicker-month': true,
+      'react-datepicker-body': true,
       'react-datepicker-month--selecting-range': this.props.selectingDate && (this.props.selectsStart || this.props.selectsEnd)
     });
     return (
@@ -215,7 +216,7 @@ export default class Month extends React.Component {
         className={getClassNames}
         onMouseLeave={this.handleMouseLeave}
         role="application"
-        aria-label={`${utils.getLocalizedDateForScreenReader(this.props.preSelection, { intl: this.props.intl, locale: this.props.locale} )}. Use the arrow keys to cycle through the dates.`}
+        aria-label={`${utils.getLocalizedDateForScreenReader(this.props.preSelection, { intl: this.props.intl, locale: this.props.locale} )}. Use the left and right arrow keys to navigate between days. Use the up and down arrow keys to navigate between weeks. Press Enter to select a date. Press Escape to close date picker popup.`}
         onKeyDown={this.props.handleCalendarKeyDown}
       >
         {this.renderWeeks()}

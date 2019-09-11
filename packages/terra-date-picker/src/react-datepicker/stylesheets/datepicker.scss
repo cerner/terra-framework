@@ -7,10 +7,24 @@
     background-color: #fff;
     color: $datepicker-text-color;
     display: inline-flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     font-family: $datepicker-font-family;
     font-size: $datepicker-font-size;
     position: relative;
+
+    .react-datepicker-header {
+      order: 1;
+    }
+
+    .react-datepicker-body {
+      order: 2;
+    }
+
+    // Ensures footer displays below calendar on touch devices
+    .react-datepicker-footer {
+      display: flex;
+      order: 3;
+    }
   }
 
   .react-datepicker-arrow[data-align-arrow='top']::after {
@@ -91,6 +105,8 @@
   }
 
   .react-datepicker-month-container {
+    display: flex;
+    flex-direction: column;
     float: left;
   }
 
@@ -327,13 +343,7 @@
     }
   }
 
-  .react-datepicker-footer {
-    display: flex;
-    background-color: #aeaeae;
-  }
-
-  .react-datepicker-today-button,
-  .react-datepicker-close-button {
+  .react-datepicker-today-button {
     background: $datepicker-background-color;
     border: 0;
     border-top: 1px solid $datepicker-border-color;
@@ -351,8 +361,15 @@
     }
   }
 
-  .react-datepicker-today-button {
-    margin-right: 1px;
+  .react-datepicker-close-button {
+    border: 0;
+    clip: rect(0 0 0 0);
+    margin: -10px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap; /* Ensures words  are not read one at a time on screen readers*/
+    width: 1px;
   }
 
   .react-datepicker-portal {
