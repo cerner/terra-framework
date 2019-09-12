@@ -10,7 +10,7 @@ Terra.describeViewports('Tabs - Responsive', ['tiny', 'small', 'medium', 'large'
     it('Default', () => {
       browser.url('/#/raw/tests/terra-tabs/tabs/tabs/default-tabs');
       browser.moveToObject('[class*="tab-content"]');
-      browser.pause(1000);
+      browser.pause(3000);
       Terra.validates.element({ rules: ignoredA11y, selector: '#root' });
     });
   });
@@ -18,7 +18,7 @@ Terra.describeViewports('Tabs - Responsive', ['tiny', 'small', 'medium', 'large'
     it('Extended', () => {
       browser.url('/#/raw/tests/terra-tabs/tabs/tabs/extended-tabs');
       browser.moveToObject('[class*="tab-content"]');
-      browser.pause(1000);
+      browser.pause(3000);
       Terra.validates.element({ rules: ignoredA11y, selector: '#root' });
     });
   });
