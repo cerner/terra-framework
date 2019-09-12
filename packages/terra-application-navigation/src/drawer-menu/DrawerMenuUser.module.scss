@@ -58,18 +58,18 @@
   }
 
   .small-user-layout {
-    align-items: top;
+    align-items: flex-start;
     display: flex;
     justify-content: flex-start;
     padding: 0.7142857143rem 1.4285714286rem;
 
     .avatar-container {
       flex: 0 0 auto;
-      height: 2.143rem;
+      height: auto;
       margin-right: 0.5rem;
       overflow: hidden;
       position: relative;
-      width: 2.143rem;
+      width: auto;
     }
 
     .avatar-container > * {
