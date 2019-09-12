@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Removed
+* Removed the Finnish language from the language to avoid confusion
 
 6.11.0 - (September 6, 2019)
 ------------------
