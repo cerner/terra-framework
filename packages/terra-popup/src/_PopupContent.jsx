@@ -224,7 +224,7 @@ class PopupContent extends React.Component {
             onEsc={onRequestClose}
             onResize={this.handleOnResize}
             refCallback={refCallback}
-            role={popupContentRole ? popupContentRole : null}
+            role={popupContentRole || null}
           >
             {arrowContent}
             {/* eslint-disable-next-line react/forbid-dom-props */}
