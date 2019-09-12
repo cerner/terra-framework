@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useRef, useMemo, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-
 import Base from 'terra-base';
 import ThemeProvider from 'terra-theme-provider';
 import { ActiveBreakpointProvider } from 'terra-breakpoints';
+
+import ApplicationErrorBoundary from '../application-error-boundary/ApplicationErrorBoundary';
+import ApplicationSessionStorageProvider from '../application-session-storage/ApplicationSessionStorageProvider';
+import ApplicationIntlContext from '../application-intl/ApplicationIntlContext';
+import ApplicationIntlProvider from '../application-intl/ApplicationIntlProvider';
+import ApplicationLoadingOverlayProvider from '../application-loading-overlay/ApplicationLoadingOverlayProvider';
+import ApplicationModalProvider from '../application-modal/ApplicationModalProvider';
+import { NavigationPromptCheckpoint } from '../navigation-prompt';
+import ApplicationContext from './ApplicationContext';
 
 import styles from './ApplicationBase.module.scss';
 
@@ -53,28 +61,99 @@ const propTypes = {
    * overflow potentially overflow its parent.
    */
   fitToParentIsDisabled: PropTypes.bool,
+  appName: PropTypes.string,
+  baseUrl: PropTypes.string,
 };
 
 const ApplicationBase = ({
-  locale, customTranslatedMessages, translationsLoadingPlaceholder, themeName, themeIsGlobal, fitToParentIsDisabled, children,
-}) => (
-  <ThemeProvider
-    className={cx('application-theme-provider', { fill: !fitToParentIsDisabled })}
-    themeName={themeName}
-    isGlobalTheme={themeIsGlobal}
-  >
-    <Base
-      className={cx('application-base', { fill: !fitToParentIsDisabled })}
-      customMessages={customTranslatedMessages}
-      translationsLoadingPlaceholder={translationsLoadingPlaceholder}
-      locale={locale}
+  locale, customTranslatedMessages, translationsLoadingPlaceholder, themeName, themeIsGlobal, fitToParentIsDisabled, children, appName, baseUrl,
+}) => {
+  const registeredPromptsRef = useRef();
+
+  const appContextValue = useMemo(() => ({
+    appName, baseUrl,
+  }), [appName, baseUrl]);
+
+  /**
+   * The user will be prompted before the page is unloaded if any navigation prompts
+   * have been registered.
+   *
+   * TODO: Do we need to be able to disable this for embedded non-nav workflows? If so, would this logic be better suited for the navigation component itself?
+   */
+  useEffect(() => {
+    function onBeforeUnload(event) {
+      if (registeredPromptsRef.current && registeredPromptsRef.current.length) {
+        event.preventDefault();
+
+        // Chrome requires returnValue to be set
+        event.returnValue = ''; // eslint-disable-line no-param-reassign
+
+        // TODO We seem to be limited to browser default messaging here. What are functional expectations for this?
+
+        return '';
+      }
+
+      return undefined;
+    }
+
+    // TODO: Do we need to add a prop to disable this for embedded workflows?
+
+    window.addEventListener('beforeunload', onBeforeUnload);
+
+    return () => {
+      window.removeEventListener('beforeunload', onBeforeUnload);
+    };
+  }, [registeredPromptsRef]);
+
+
+  return (
+    <ThemeProvider
+      className={cx('application-theme-provider', { fill: !fitToParentIsDisabled })}
+      themeName={themeName}
+      isGlobalTheme={themeIsGlobal}
     >
-      <ActiveBreakpointProvider>
-        {children}
-      </ActiveBreakpointProvider>
-    </Base>
-  </ThemeProvider>
-);
+      <Base
+        className={cx('application-base', { fill: !fitToParentIsDisabled })}
+        customMessages={customTranslatedMessages}
+        translationsLoadingPlaceholder={translationsLoadingPlaceholder}
+        locale={locale}
+      >
+        <ApplicationIntlProvider>
+          <ActiveBreakpointProvider>
+            <ApplicationErrorBoundary>
+              <ApplicationSessionStorageProvider id="default">
+                <ApplicationContext.Provider value={appContextValue}>
+                  <NavigationPromptCheckpoint
+                    onPromptChange={(registeredPrompts) => {
+                      registeredPromptsRef.current = registeredPrompts;
+                    }}
+                  >
+                    <ApplicationLoadingOverlayProvider>
+                      <ApplicationIntlContext.Consumer>
+                        {intl => (
+                          <ApplicationModalProvider
+                            navigationPromptOptions={prompts => ({
+                              title: intl.formatMessage({ id: 'terra-application-base.unsaved-changes' }), // TODO Functional wording and i18n
+                              message: intl.formatMessage({ id: 'terra-application-base.unsaved-changes-description' }, { prompts: prompts.map(prompt => prompt.description).join(', ') }),
+                              rejectButtonText: intl.formatMessage({ id: 'terra-application-base.unsaved-changes-return' }),
+                              acceptButtonText: intl.formatMessage({ id: 'terra-application-base.unsaved-changes-continue' }),
+                            })}
+                          >
+                            {children}
+                          </ApplicationModalProvider>
+                        )}
+                      </ApplicationIntlContext.Consumer>
+                    </ApplicationLoadingOverlayProvider>
+                  </NavigationPromptCheckpoint>
+                </ApplicationContext.Provider>
+              </ApplicationSessionStorageProvider>
+            </ApplicationErrorBoundary>
+          </ActiveBreakpointProvider>
+        </ApplicationIntlProvider>
+      </Base>
+    </ThemeProvider>
+  );
+};
 
 ApplicationBase.propTypes = propTypes;
 
