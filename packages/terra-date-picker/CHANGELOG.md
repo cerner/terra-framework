@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Removed use of `componentWillReceiveProps`.
+
 ### Removed
 * Removed time-picker code from react-datepicker.
 
