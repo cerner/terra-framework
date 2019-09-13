@@ -1,4 +1,4 @@
-import React, { useRef, useContext, useLayoutEffect } from 'react';
+import { useRef, useContext, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 import uuidv4 from 'uuid/v4';
 
@@ -11,19 +11,21 @@ const propTypes = {
 
 const ApplicationLoadingOverlay = ({ isOpen, message }) => {
   const id = useRef(uuidv4());
-  const loading = useContext(ApplicationLoadingOverlayContext);
+  const applicationLoadingOverlay = useContext(ApplicationLoadingOverlayContext);
 
   useLayoutEffect(() => {
+    const overlayId = id.current;
+
     if (isOpen) {
-      loading.showLoadingIndicator(id.current, message);
+      applicationLoadingOverlay.show(id.current, message);
     } else {
-      loading.hideLoadingIndicator(id.current);
+      applicationLoadingOverlay.hide(id.current);
     }
 
     return () => {
-      loading.hideLoadingIndicator(id.current);
+      applicationLoadingOverlay.hide(overlayId);
     };
-  }, [loading, isOpen, message]);
+  }, [isOpen, message, id, applicationLoadingOverlay]);
 
   return null;
 };

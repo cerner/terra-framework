@@ -1,47 +1,56 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { injectIntl, intlShape } from 'react-intl';
+import StatusView from 'terra-status-view';
 
 const propTypes = {
+  /**
+   * Components to render within the context of the ApplicationErrorBoundary
+   */
   children: PropTypes.node,
+  /**
+   * @private
+   * Object containing translation APIs
+   */
+  intl: intlShape,
 };
 
 class ApplicationErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { hasError: false, componentKey: false };
+    this.state = { hasError: false, reloadKey: false };
   }
 
   static getDerivedStateFromError(error) {
-    return { hasError: true };
-  }
-
-  componentDidCatch(error, errorInfo) {
-    console.error(error);
+    return { hasError: error };
   }
 
   render() {
-    if (this.state.hasError) {
+    const { children, intl } = this.props;
+    const { hasError, reloadKey } = this.state;
+
+    if (hasError) {
       return (
-        <div style={{ padding: '2rem' }}>
-          <h1>An error has ocurred.</h1>
-          <button
-            type="button"
-            onClick={() => {
+        <StatusView
+          variant="error"
+          buttonAttrs={[{
+            text: intl.formatMessage({ id: 'terra-application.application-error-boundary.reload' }),
+            size: 'medium',
+            key: 1,
+            onClick: () => {
               this.setState(state => ({
-                hasError: false,
-                componentKey: !state.componentKey,
+                hasError: undefined,
+                reloadKey: !state.reloadKey,
               }));
-            }}
-          >
-            Reload
-          </button>
-        </div>
+            },
+          }]}
+        />
       );
     }
 
     return (
-      <React.Fragment key={this.state.componentKey}>
-        {this.props.children}
+      <React.Fragment key={reloadKey}>
+        {children}
       </React.Fragment>
     );
   }
@@ -49,4 +58,4 @@ class ApplicationErrorBoundary extends React.Component {
 
 ApplicationErrorBoundary.propTypes = propTypes;
 
-export default ApplicationErrorBoundary;
+export default injectIntl(ApplicationErrorBoundary);

@@ -1,9 +1,14 @@
 import React, { useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 import Scroll from 'terra-scroll';
 import LoadingOverlay from 'terra-overlay/lib/LoadingOverlay';
 import OverlayContainer from 'terra-overlay/lib/OverlayContainer';
+
 import ApplicationLoadingOverlayContext from './ApplicationLoadingOverlayContext';
+import styles from './ApplicationLoadingOverlayProvider.module.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -12,12 +17,6 @@ const propTypes = {
    * the ApplicationLoadingOverlayContext.
    */
   children: PropTypes.node,
-  /**
-   * A function that is expected to return a custom instance of a loading overlay. If not provided, the
-   * default LoadingOverlay component will be rendered directly.
-   * Ex. renderLoadingOverlay(Object registeredOverlays)
-   */
-  renderLoadingOverlay: PropTypes.func,
   /**
    * A function to be called with the current ref of the scrollable element rendered within the
    * ApplicationLoadingOverlayProvider.
@@ -32,14 +31,12 @@ const defaultProps = {
 
 const ApplicationLoadingOverlayProvider = ({
   children,
-  renderLoadingOverlay,
   scrollRefCallback,
-  ...customProps
 }) => {
   const [loadingIndicators, setLoadingIndicators] = useState({});
 
   const contextValue = useMemo(() => ({
-    showLoadingIndicator: (key, message) => {
+    show: (key, message) => {
       setLoadingIndicators(state => (
         {
           ...state,
@@ -47,7 +44,7 @@ const ApplicationLoadingOverlayProvider = ({
         }
       ));
     },
-    hideLoadingIndicator: (key) => {
+    hide: (key) => {
       setLoadingIndicators((state) => {
         const newLoadingIndicators = { ...state };
         delete newLoadingIndicators[key];
@@ -57,27 +54,22 @@ const ApplicationLoadingOverlayProvider = ({
     },
   }), []);
 
-  let overlayContent;
-  if (renderLoadingOverlay) {
-    overlayContent = renderLoadingOverlay(loadingIndicators);
-  } else {
-    overlayContent = (
-      <LoadingOverlay
-        isRelativeToContainer
-        isAnimated
-        isOpen={!!Object.keys(loadingIndicators).length}
-        message={Object.keys(loadingIndicators).map(key => (
-          loadingIndicators[key]
-        )).join(', ')}
-      />
-    );
-  }
+  const registeredOverlayKeys = Object.keys(loadingIndicators);
+  const overlay = (
+    <LoadingOverlay
+      isRelativeToContainer
+      isAnimated
+      isOpen={!!registeredOverlayKeys.length}
+      message={Object.keys(loadingIndicators).map(key => (
+        loadingIndicators[key]
+      )).join(', ')}
+    />
+  );
 
   return (
     <OverlayContainer
-      {...customProps}
-      style={{ height: '100%' }}
-      overlay={overlayContent}
+      className={cx('container')}
+      overlay={overlay}
     >
       <Scroll refCallback={scrollRefCallback}>
         <ApplicationLoadingOverlayContext.Provider value={contextValue}>

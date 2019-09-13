@@ -38,7 +38,10 @@
     "terra-doc-template": "^2.0.0",
     "terra-modal-manager": "^6.11.0",
     "terra-navigation-prompt": "^1.10.0",
+    "terra-overlay": "3.24.0",
+    "terra-scroll": "^2.16.0",
     "terra-slide-panel-manager": "^5.10.0",
+    "terra-status-view": "4.4.0",
     "terra-theme-provider": "^3.11.0",
     "uuid": "^3.0.0"
   },

@@ -7,7 +7,7 @@ const ApplicationLoadingOverlayExample = () => {
   const [showLoadingOverlay, setShowLoadingOverlay] = useState(false);
 
   return (
-    <div style={{ height: '10rem' }}>
+    <div style={{ height: '30rem' }}>
       <ApplicationLoadingOverlayProvider>
         <ApplicationLoadingOverlay message="Loading example..." isOpen={showLoadingOverlay} />
         <p>Press the button below to show the loading overlay for 3 seconds.</p>
@@ -20,7 +20,7 @@ const ApplicationLoadingOverlayExample = () => {
             }, 3000);
           }}
         >
-        Show Loading Overlay
+          Show Loading Overlay
         </button>
       </ApplicationLoadingOverlayProvider>
     </div>
