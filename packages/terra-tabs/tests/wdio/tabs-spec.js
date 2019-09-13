@@ -16,8 +16,8 @@ Terra.describeViewports('Tabs - Responsive', ['tiny', 'small', 'medium', 'large'
   describe('Extended', () => {
     it('Extended', () => {
       browser.url('/#/raw/tests/terra-tabs/tabs/tabs/extended-tabs');
+      browser.refresh();
       browser.moveToObject('[class*="tab-content"]');
-      browser.pause(2000);
       Terra.validates.element({ rules: ignoredA11y, selector: '#root' });
     });
   });
