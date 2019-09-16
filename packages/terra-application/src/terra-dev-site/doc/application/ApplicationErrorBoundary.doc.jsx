@@ -1,7 +1,7 @@
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import { name } from '../../../../package.json';
-import ReadMe from './ApplicationLoadingOverlay.md';
+import ReadMe from './ApplicationErrorBoundary.md';
 
 import ApplicationErrorBoundarySrc from '!raw-loader!../../../../src/application-error-boundary/ApplicationErrorBoundary.jsx';
 
