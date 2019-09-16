@@ -21,11 +21,34 @@ exports[`Application should render with all props 1`] = `
       </div>
     }
   >
-    <ActiveBreakpointProvider>
-      <div>
-        content
-      </div>
-    </ActiveBreakpointProvider>
+    <InjectIntl(Component)>
+      <ActiveBreakpointProvider>
+        <InjectIntl(ApplicationErrorBoundary)>
+          <ApplicationSessionStorageProvider
+            id="default"
+          >
+            <ContextProvider
+              value={
+                Object {
+                  "appName": undefined,
+                  "baseUrl": undefined,
+                }
+              }
+            >
+              <withPromptRegistration(NavigationPromptCheckpoint)
+                onPromptChange={[Function]}
+              >
+                <ApplicationLoadingOverlayProvider>
+                  <ContextConsumer>
+                    <Component />
+                  </ContextConsumer>
+                </ApplicationLoadingOverlayProvider>
+              </withPromptRegistration(NavigationPromptCheckpoint)>
+            </ContextProvider>
+          </ApplicationSessionStorageProvider>
+        </InjectIntl(ApplicationErrorBoundary)>
+      </ActiveBreakpointProvider>
+    </InjectIntl(Component)>
   </Base>
 </ThemeProvider>
 `;
@@ -41,11 +64,34 @@ exports[`Application should render with minimal props 1`] = `
     locale="en"
     strictMode={false}
   >
-    <ActiveBreakpointProvider>
-      <div>
-        content
-      </div>
-    </ActiveBreakpointProvider>
+    <InjectIntl(Component)>
+      <ActiveBreakpointProvider>
+        <InjectIntl(ApplicationErrorBoundary)>
+          <ApplicationSessionStorageProvider
+            id="default"
+          >
+            <ContextProvider
+              value={
+                Object {
+                  "appName": undefined,
+                  "baseUrl": undefined,
+                }
+              }
+            >
+              <withPromptRegistration(NavigationPromptCheckpoint)
+                onPromptChange={[Function]}
+              >
+                <ApplicationLoadingOverlayProvider>
+                  <ContextConsumer>
+                    <Component />
+                  </ContextConsumer>
+                </ApplicationLoadingOverlayProvider>
+              </withPromptRegistration(NavigationPromptCheckpoint)>
+            </ContextProvider>
+          </ApplicationSessionStorageProvider>
+        </InjectIntl(ApplicationErrorBoundary)>
+      </ActiveBreakpointProvider>
+    </InjectIntl(Component)>
   </Base>
 </ThemeProvider>
 `;

@@ -17,9 +17,9 @@ const ApplicationLoadingOverlay = ({ isOpen, message }) => {
     const overlayId = id.current;
 
     if (isOpen) {
-      applicationLoadingOverlay.show(id.current, message);
+      applicationLoadingOverlay.show(overlayId, message);
     } else {
-      applicationLoadingOverlay.hide(id.current);
+      applicationLoadingOverlay.hide(overlayId);
     }
 
     return () => {
