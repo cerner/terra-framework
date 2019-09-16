@@ -1,6 +1,5 @@
 import React from 'react';
 import uuidv4 from 'uuid/v4';
-import { act } from 'react-dom/test-utils';
 
 import ApplicationLoadingOverlay from '../../../src/application-loading-overlay/ApplicationLoadingOverlay';
 import ApplicationLoadingOverlayContext from '../../../src/application-loading-overlay/ApplicationLoadingOverlayContext';

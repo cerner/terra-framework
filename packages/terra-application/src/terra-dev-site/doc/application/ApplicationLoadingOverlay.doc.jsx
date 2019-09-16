@@ -13,6 +13,12 @@ const DocPage = () => (
     packageName={name}
     readme={ReadMe}
     srcPath={`https://github.com/cerner/terra-framework/tree/master/packages/${name}`}
+    // propsTables={[
+    //   {
+    //     componentName: 'ApplicationLoadingOverlay',
+    //     componentSrc: ApplicationLoadingOverlaySrc,
+    //   },
+    // ]}
     examples={[
       {
         title: 'ApplicationLoadingOverlay Example',

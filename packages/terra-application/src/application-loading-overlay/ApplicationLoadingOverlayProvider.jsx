@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Scroll from 'terra-scroll';
@@ -33,7 +33,7 @@ const ApplicationLoadingOverlayProvider = ({
   children,
   scrollRefCallback,
 }) => {
-  const [loadingIndicators, setLoadingIndicators] = useState({});
+  const [loadingIndicators, setLoadingIndicators] = React.useState({});
 
   const contextValue = useMemo(() => ({
     show: (key, message) => {

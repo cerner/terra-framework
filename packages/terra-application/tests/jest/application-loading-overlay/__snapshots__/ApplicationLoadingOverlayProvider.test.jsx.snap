@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApplicationLoadingOverlayProvider Snapshots should render the loading overlay based on current state 1`] = `
+<OverlayContainer
+  className="container"
+  overlay={
+    <LoadingOverlay
+      backgroundStyle="light"
+      isAnimated={true}
+      isOpen={true}
+      isRelativeToContainer={true}
+      message="Message 1, Message 2"
+      rootSelector="#root"
+    />
+  }
+>
+  <Scroll>
+    <ContextProvider
+      value={
+        Object {
+          "hide": [Function],
+          "show": [Function],
+        }
+      }
+    >
+      <div>
+        Test child
+      </div>
+    </ContextProvider>
+  </Scroll>
+</OverlayContainer>
+`;
+
+exports[`ApplicationLoadingOverlayProvider Snapshots should render with minimal props 1`] = `
+<OverlayContainer
+  className="container"
+  overlay={
+    <LoadingOverlay
+      backgroundStyle="light"
+      isAnimated={true}
+      isOpen={false}
+      isRelativeToContainer={true}
+      message=""
+      rootSelector="#root"
+    />
+  }
+>
+  <Scroll>
+    <ContextProvider
+      value={
+        Object {
+          "hide": [Function],
+          "show": [Function],
+        }
+      }
+    />
+  </Scroll>
+</OverlayContainer>
+`;
+
+exports[`ApplicationLoadingOverlayProvider Snapshots should render with optional props 1`] = `
+<OverlayContainer
+  className="container"
+  overlay={
+    <LoadingOverlay
+      backgroundStyle="light"
+      isAnimated={true}
+      isOpen={false}
+      isRelativeToContainer={true}
+      message=""
+      rootSelector="#root"
+    />
+  }
+>
+  <Scroll
+    refCallback={[MockFunction]}
+  >
+    <ContextProvider
+      value={
+        Object {
+          "hide": [Function],
+          "show": [Function],
+        }
+      }
+    >
+      <div>
+        Test child
+      </div>
+    </ContextProvider>
+  </Scroll>
+</OverlayContainer>
+`;
