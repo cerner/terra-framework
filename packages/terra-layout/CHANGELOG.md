@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Removed `details` tag from doc-site..
 
 4.11.0 - (September 6, 2019)
 ------------------
