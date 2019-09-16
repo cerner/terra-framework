@@ -1,3 +1,5 @@
+import moment from 'moment-timezone';
+
 class TimeUtil {
   /**
    * Determines if a provided nuermic input value is valid.
@@ -7,6 +9,19 @@ class TimeUtil {
    */
   static validNumericInput(value) {
     return value.length === 0 || /^\d+$/.test(value);
+  }
+
+  /**
+   * Determines if the time is a valid time in the HH:mm (where hasSeconds is false) or
+   * HH:mm:ss (where hasSeconds is true) formats
+   * @param {string} time - The time to validate.
+   * @param {boolean} hasSeconds Whether or not the time should consider having seconds valid
+   * @return {boolean} - True if the time is valid.
+   */
+  static isValidTime(time, hasSeconds) {
+    const timeFormat = hasSeconds ? 'HH:mm:ss' : 'HH:mm';
+    const timeMoment = moment(time, timeFormat, true);
+    return timeMoment.isValid();
   }
 
   /**
