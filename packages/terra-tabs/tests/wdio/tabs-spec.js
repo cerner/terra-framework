@@ -9,7 +9,7 @@ Terra.describeViewports('Tabs - Responsive', ['tiny', 'small', 'medium', 'large'
   describe('Default', () => {
     it('Default', () => {
       browser.url('/#/raw/tests/terra-tabs/tabs/tabs/default-tabs');
-      browser.refresh();
+      browser.pause(1000);
       browser.moveToObject('[class*="tab-content"]');
       Terra.validates.element({ rules: ignoredA11y, selector: '#root' });
     });
