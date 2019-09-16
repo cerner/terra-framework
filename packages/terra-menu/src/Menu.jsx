@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Popup from 'terra-popup';
-import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
 import MenuItem from './MenuItem';
 import MenuItemGroup from './MenuItemGroup';
@@ -58,13 +57,9 @@ const propTypes = {
    */
   isArrowDisplayed: PropTypes.bool,
   /**
-   * Allows assigning of root element custom data attribute for easy selecting of document base component.
+   * Used to select the root mount DOM node.
    */
   rootSelector: PropTypes.string,
-  /**
-   * Allows assigning of trigger element custom data attribute for easy selecting of triggering component.
-   */
-  triggerElement: PropTypes.object,
 };
 
 const defaultProps = {
@@ -95,7 +90,6 @@ class Menu extends React.Component {
       // eslint-disable-next-line global-require
       require('wicg-inert/dist/inert');
     }
-    document.addEventListener('keydown', this.handleKeydown);
     if (this.props.isOpen) {
       this.disableContainerChildrenFocus();
     }
@@ -116,7 +110,6 @@ class Menu extends React.Component {
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleKeydown);
     this.enableContainerChildrenFocus();
   }
 
@@ -156,7 +149,7 @@ class Menu extends React.Component {
       if (inert === 1) {
         mainDocumentElement.removeAttribute('data-overlay-count');
         mainDocumentElement.removeAttribute('inert');
-        if (this.props.triggerElement) {
+        if (this.props.targetRef()) {
           // Shift focus back to element that was last focused prior to opening the menu
           setTimeout(() => mainDocumentElement.removeAttribute('aria-hidden'), 0);
         }
@@ -165,10 +158,9 @@ class Menu extends React.Component {
       }
     }
     setTimeout(() => {
-      if (this.props.triggerElement) {
+      if (this.props.targetRef()) {
         // Shift focus back to element that was last focused prior to opening the modal
-        // eslint-disable-next-line no-console
-        this.props.triggerElement.focus();
+        this.props.targetRef().focus();
       }
     }, 0); // Allows inert processing to finish before shifting focus back
   }
@@ -192,18 +184,6 @@ class Menu extends React.Component {
     });
   }
 
-  handleKeydown(e) {
-    const body = document.querySelector('body');
-    if (e.keyCode === KeyCode.KEY_ESCAPE && this.props.isOpen) {
-      if (this.menuElement.current) {
-        if (e.target === this.menuElement.current || this.menuElement.current.contains(e.target) || e.target === body) {
-          this.props.onRequestClose();
-        }
-      }
-    }
-  }
-
-
   render() {
     const {
       boundingRef,
@@ -216,7 +196,6 @@ class Menu extends React.Component {
       targetRef,
       isArrowDisplayed,
       contentWidth,
-      triggerElement,
       ...customProps
     } = this.props;
     const arrowClass = cx([

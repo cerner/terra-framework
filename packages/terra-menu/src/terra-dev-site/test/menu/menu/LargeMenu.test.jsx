@@ -41,8 +41,6 @@ class LargeMenu extends React.Component {
           isOpen={this.state.open}
           targetRef={this.getButtonNode}
           onRequestClose={this.handleRequestClose}
-          triggerElement={document.getElementById('large-menu-button')}
-
         >
           <Menu.Item text="Default 1" key="1" className="TestFirstItem" />
           <Menu.Item

@@ -115,7 +115,6 @@ class TabMenu extends React.Component {
         onKeyDown={this.handleOnKeyDown}
         className={cx(['tab-menu', { 'is-active': menuActive }])}
         data-terra-tabs-menu
-        id="tab-button"
       >
         <FormattedMessage id="Terra.tabs.more">
           {menuToggleText => (
@@ -127,7 +126,6 @@ class TabMenu extends React.Component {
           onRequestClose={this.handleOnRequestClose}
           targetRef={this.getTargetRef}
           isOpen={this.state.isOpen}
-          triggerElement={document.getElementById('tab-button')}
         >
           {menuItems}
         </Menu>

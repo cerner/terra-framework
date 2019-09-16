@@ -42,8 +42,6 @@ class SubMenu extends React.Component {
           isOpen={this.state.open}
           targetRef={this.getButtonNode}
           onRequestClose={this.handleRequestClose}
-          triggerElement={document.getElementById('sub-menu-button')}
-
         >
           <Menu.Item text="Default 1" key="1" className="TestInitialMenuContent" />
           <Menu.Item
