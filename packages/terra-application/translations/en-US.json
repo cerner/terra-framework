@@ -2,5 +2,6 @@
   "terra-application-base.unsaved-changes": "Unsaved Changes",
   "terra-application-base.unsaved-changes-description": "Data will be lost in the following sections: {prompts}",
   "terra-application-base.unsaved-changes-continue": "Continue without saving",
-  "terra-application-base.unsaved-changes-return": "Return"
+  "terra-application-base.unsaved-changes-return": "Return",
+  "terra-application.application-error-boundary.reload": "Reload"
 }

@@ -14,10 +14,10 @@ const ApplicationLoadingOverlayConsumer = () => {
   );
 };
 
-const LoadingOverlayExample = () => (
+const LoadingOverlayTest = () => (
   <ApplicationLoadingOverlayProvider>
     <ApplicationLoadingOverlayConsumer />
   </ApplicationLoadingOverlayProvider>
 );
 
-export default LoadingOverlayExample;
+export default LoadingOverlayTest;
