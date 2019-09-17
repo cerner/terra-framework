@@ -1,5 +1,5 @@
 import React from 'react';
-import EmbeddedContentConsumer from 'terra-embedded-content-consumer/lib/EmbeddedContentConsumer';
+import EmbeddedContentConsumer from 'terra-embedded-content-consumer';
 
 const BasicConsumer = () => (
   <EmbeddedContentConsumer

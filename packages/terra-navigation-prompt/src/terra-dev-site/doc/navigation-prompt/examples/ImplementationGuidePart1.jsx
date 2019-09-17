@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
-import NavigationPrompt, { NavigationPromptCheckpoint } from '../../../../index';
+import NavigationPrompt, { NavigationPromptCheckpoint } from 'terra-navigation-prompt';
 
 const Form = ({ title }) => {
   const [inputValue, setInputValue] = useState('');
