@@ -6,6 +6,7 @@ Unreleased
 ### Changed
 * Update underlying structure to handle new theme variables.
 * Revert test wrapper changes.
+* Update Jest snapshots
 
 1.4.0 - (September 6, 2019)
 ------------------
