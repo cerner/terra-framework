@@ -54,7 +54,8 @@
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
     "precompile": "rm -rf lib",
-    "test": "npm run jest",
-    "jest": "jest --config ../../jestconfig.js"
+    "test": "npm run jest && npm run wdio",
+    "jest": "jest --config ../../jestconfig.js",
+    "wdio": "cd ../.. && npx wdio ./packages/$npm_package_name/wdio.conf.js"
   }
 }
