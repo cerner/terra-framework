@@ -455,9 +455,6 @@ export default class Calendar extends React.Component {
   }
 
   renderCloseButton = () => {
-    if (!this.props.todayButton) {
-      return
-    }
     return (
       <FormattedMessage id="Terra.datePicker.closeCalendar">
         {text => (
