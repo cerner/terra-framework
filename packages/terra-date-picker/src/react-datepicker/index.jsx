@@ -351,7 +351,6 @@ class DatePicker extends React.Component {
     this.handleCalendarKeyDown = this.handleCalendarKeyDown.bind(this);
     this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.updateAriaLiveStatus = this.updateAriaLiveStatus.bind(this);
-    this.ariaLiveStatus = '';
   }
 
   componentDidMount() {
