@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 import { injectIntl, intlShape } from 'react-intl';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import {
   getDay,
   getMonth,
@@ -223,9 +224,12 @@ class Day extends React.Component {
         className={cx(this.getClassNames(day))}
         onClick={this.handleClick}
         onMouseEnter={this.handleMouseEnter}
-        aria-label={getLocalizedDateForScreenReader(day, this.props)}
       >
-        {getDate(day)}
+        <React.Fragment>
+          {/* Adding visually hidden text so screen readers like VoiceOver on iOS read the date properly */}
+          <VisuallyHiddenText text={getLocalizedDateForScreenReader(day, this.props)} />
+          <span aria-hidden="true">{getDate(day)}</span>
+        </React.Fragment>
       </div>
     )
   }
