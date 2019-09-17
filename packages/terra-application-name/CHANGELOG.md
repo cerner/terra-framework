@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Fixed inconsistent failures of 'Application Header Name' tests.
 
 3.17.0 - (September 6, 2019)
 ------------------
