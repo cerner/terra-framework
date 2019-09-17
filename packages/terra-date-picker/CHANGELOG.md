@@ -5,7 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Removed use of `componentWillReceiveProps`.
-* Removed `details` tag from doc-site..
+* Removed `details` tag from doc-site.
 
 ### Removed
 * Removed time-picker code from react-datepicker.
