@@ -7,7 +7,7 @@ import Avatar from 'terra-avatar';
 import ContentContainer from 'terra-content-container';
 import classNames from 'classnames/bind';
 
-import ApplicationLayout, { Utils } from 'terra-application-layout/lib/ApplicationLayout';
+import ApplicationLayout, { Utils } from 'terra-application-layout';
 import ApplicationContent from 'terra-application-layout/lib/terra-dev-site/doc/common/ApplicationContent';
 import ApplicationMenu from 'terra-application-layout/lib/terra-dev-site/doc/common/ApplicationMenu';
 import UtilityOption from 'terra-application-layout/lib/terra-dev-site/doc/common/UtilityOption';

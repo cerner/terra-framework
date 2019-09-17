@@ -9,7 +9,7 @@ import {
   availableDisclosureHeights, availableDisclosureWidths, DisclosureManagerHeaderAdapter, DisclosureManagerContext,
 } from 'terra-disclosure-manager';
 
-import SlidePanelManager from 'terra-slide-panel-manager/lib/SlidePanelManager';
+import SlidePanelManager from 'terra-slide-panel-manager';
 import styles from 'terra-slide-panel-manager/lib/terra-dev-site/doc/example/SlidePanelManager.module.scss';
 
 const cx = classNames.bind(styles);
