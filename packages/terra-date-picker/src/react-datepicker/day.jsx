@@ -224,7 +224,7 @@ class Day extends React.Component {
         onClick={this.handleClick}
         onMouseEnter={this.handleMouseEnter}
         aria-label={getLocalizedDateForScreenReader(day, this.props)}
-        role="option">
+      >
         {getDate(day)}
       </div>
     )
