@@ -1,2 +1,2 @@
 export { default } from 'terra-navigation-prompt';
-export * from 'terra-navigation-prompt';
+export { NavigationPromptCheckpoint, PromptRegistrationContext } from 'terra-navigation-prompt';

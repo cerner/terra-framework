@@ -24,28 +24,15 @@ exports[`Application should render with all props 1`] = `
     <InjectIntl(Component)>
       <ActiveBreakpointProvider>
         <InjectIntl(ApplicationErrorBoundary)>
-          <ApplicationSessionStorageProvider
-            id="default"
+          <withPromptRegistration(NavigationPromptCheckpoint)
+            onPromptChange={[Function]}
           >
-            <ContextProvider
-              value={
-                Object {
-                  "appName": undefined,
-                  "baseUrl": undefined,
-                }
-              }
-            >
-              <withPromptRegistration(NavigationPromptCheckpoint)
-                onPromptChange={[Function]}
-              >
-                <ApplicationLoadingOverlayProvider>
-                  <ContextConsumer>
-                    <Component />
-                  </ContextConsumer>
-                </ApplicationLoadingOverlayProvider>
-              </withPromptRegistration(NavigationPromptCheckpoint)>
-            </ContextProvider>
-          </ApplicationSessionStorageProvider>
+            <ApplicationLoadingOverlayProvider>
+              <div>
+                content
+              </div>
+            </ApplicationLoadingOverlayProvider>
+          </withPromptRegistration(NavigationPromptCheckpoint)>
         </InjectIntl(ApplicationErrorBoundary)>
       </ActiveBreakpointProvider>
     </InjectIntl(Component)>
@@ -67,28 +54,15 @@ exports[`Application should render with minimal props 1`] = `
     <InjectIntl(Component)>
       <ActiveBreakpointProvider>
         <InjectIntl(ApplicationErrorBoundary)>
-          <ApplicationSessionStorageProvider
-            id="default"
+          <withPromptRegistration(NavigationPromptCheckpoint)
+            onPromptChange={[Function]}
           >
-            <ContextProvider
-              value={
-                Object {
-                  "appName": undefined,
-                  "baseUrl": undefined,
-                }
-              }
-            >
-              <withPromptRegistration(NavigationPromptCheckpoint)
-                onPromptChange={[Function]}
-              >
-                <ApplicationLoadingOverlayProvider>
-                  <ContextConsumer>
-                    <Component />
-                  </ContextConsumer>
-                </ApplicationLoadingOverlayProvider>
-              </withPromptRegistration(NavigationPromptCheckpoint)>
-            </ContextProvider>
-          </ApplicationSessionStorageProvider>
+            <ApplicationLoadingOverlayProvider>
+              <div>
+                content
+              </div>
+            </ApplicationLoadingOverlayProvider>
+          </withPromptRegistration(NavigationPromptCheckpoint)>
         </InjectIntl(ApplicationErrorBoundary)>
       </ActiveBreakpointProvider>
     </InjectIntl(Component)>
