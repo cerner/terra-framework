@@ -26,7 +26,7 @@ const ApplicationContentTest = injectIntl(({ intl }) => {
 
   const intlTest = (
     <p>
-    Active Locale:
+      Active Locale:
       {' '}
       {intl.locale}
     </p>
@@ -34,7 +34,7 @@ const ApplicationContentTest = injectIntl(({ intl }) => {
 
   const errorBoundaryTest = (
     <p>
-    Render Error:
+      Render Error:
       {' '}
       <button id="error" type="button" onClick={() => { setThrowError(true); }}>Throw</button>
     </p>
