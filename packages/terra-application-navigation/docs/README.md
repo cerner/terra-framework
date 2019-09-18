@@ -12,6 +12,17 @@ The Terra Application Navigation provides:
   - `npm install terra-application-navigation`
 
 <!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+| react-intl | ^2.4.0 |
+| terra-application | ^1.0.0 |
+
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Component Features

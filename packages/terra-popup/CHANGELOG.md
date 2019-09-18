@@ -7,6 +7,7 @@ Unreleased
 * Added private prop `popupContentRole` intend to allow modification of the role attribute applied to the `<PopupContent />` component used with the `<Popup />` component
 
 ### Changed
+* Removed `details` tag from doc-site.
 * Doc site example module import syntax modified to use package.json name resolution
 
 6.11.0 - (September 6, 2019)
