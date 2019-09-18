@@ -30,6 +30,7 @@ Loading overlays are positioned within the application by the ApplicationLoading
 
 The ApplicationLoadingOverlayProvider and ApplicationLoadingOverlay communicate with each other using the ApplicationLoadingOverlayContext.
 
+### ApplicationLoadingOverlayContext Value Properties
 |Property|Description|
 |---|---|
 |`show(String key, String message)`|A function that will present a loading overlay for the given key. The key should be unique (namespace appropriately). If an overlay is already presented with the same message, no action is performed.|
