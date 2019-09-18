@@ -91,11 +91,12 @@
   .image,
   .no-user-image {
     position: relative;
+  }
 
-    & > * {
-      height: 100%;
-      position: absolute;
-      width: 100%;
-    }
+  .image > *,
+  .no-user-image > * {
+    height: 100%;
+    position: absolute;
+    width: 100%;
   }
 }
