@@ -3,7 +3,7 @@ import Menu from 'terra-application-menu-layout';
 import Image from 'terra-image';
 import classNames from 'classnames/bind';
 import Placeholder from 'terra-application-name/lib/terra-dev-site/doc/common/Placeholder';
-import ApplicationMenuName from 'terra-application-name/lib/ApplicationMenuName';
+import { ApplicationMenuName } from 'terra-application-name';
 import demoColors from '../../test/application-name/demoStyles.module.scss';
 import styles from './ApplicationMenuNameStandard.module.scss';
 

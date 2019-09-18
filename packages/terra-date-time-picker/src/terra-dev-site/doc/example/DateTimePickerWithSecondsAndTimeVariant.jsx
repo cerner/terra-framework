@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import Field from 'terra-form-field';
-import DateTimePicker from 'terra-date-time-picker/lib/DateTimePicker';
+import DateTimePicker from 'terra-date-time-picker';
 import DateTimeUtil from 'terra-date-time-picker/lib/DateTimeUtils';
 
 const propTypes = {

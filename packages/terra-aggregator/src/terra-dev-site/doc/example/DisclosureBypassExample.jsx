@@ -2,7 +2,7 @@ import React from 'react';
 import ModalManager from 'terra-modal-manager';
 import SlidePanelManager from 'terra-slide-panel-manager';
 
-import Aggregator from 'terra-aggregator/lib/Aggregator';
+import Aggregator from 'terra-aggregator';
 import AggregatorItem from 'terra-aggregator/lib/terra-dev-site/doc/common/AggregatorItem';
 import { withDisclosureManager } from 'terra-disclosure-manager';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ApplicationTabs } from 'terra-application-links/lib/ApplicationLinks';
+import { ApplicationTabs } from 'terra-application-links';
 import ApplicationLinkConfig from 'terra-application-links/lib/terra-dev-site/doc/common/ApplicationLinksWithIconsConfig';
 import classNames from 'classnames/bind';
 import styles from './demoStyles.module.scss';

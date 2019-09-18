@@ -3,7 +3,7 @@ import ApplicationHeaderLayout from 'terra-application-header-layout';
 import Image from 'terra-image';
 import classNames from 'classnames/bind';
 import Placeholder from 'terra-application-name/lib/terra-dev-site/doc/common/Placeholder';
-import ApplicationHeaderName from 'terra-application-name/lib/ApplicationHeaderName';
+import { ApplicationHeaderName } from 'terra-application-name';
 import demoColors from '../../test/application-name/demoStyles.module.scss';
 import styles from './ApplicationHeaderNameStandard.module.scss';
 

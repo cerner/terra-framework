@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import ApplicationMenuLayout from 'terra-application-menu-layout/lib/ApplicationMenuLayout';
+import ApplicationMenuLayout from 'terra-application-menu-layout';
 import PlaceHolder from 'terra-application-menu-layout/lib/terra-dev-site/doc/common/Placeholder';
 import styles from './MenuWireframe.module.scss';
 
