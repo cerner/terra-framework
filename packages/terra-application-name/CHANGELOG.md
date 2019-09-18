@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Doc site example module import syntax modified to use package.json name resolution
+
 ### Fixed
 * Fixed inconsistent failures of 'Application Header Name' tests.
 

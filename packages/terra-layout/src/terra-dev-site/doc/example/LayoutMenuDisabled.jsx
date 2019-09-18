@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from 'terra-layout/lib/Layout';
+import Layout from 'terra-layout';
 import ContentExample from 'terra-layout/lib/terra-dev-site/doc/common/ContentExample';
 import ToolbarExample from 'terra-layout/lib/terra-dev-site/doc/common/ToolbarExample';
 import classNames from 'classnames/bind';
