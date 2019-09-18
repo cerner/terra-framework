@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'terra-button';
-import Popup from 'terra-popup/lib/Popup';
-import Placeholder from 'terra-doc-template/lib/Placeholder';
+import Popup from 'terra-popup';
+import Placeholder from 'terra-doc-template';
 
 const HEIGHT_KEYS = Object.keys(Popup.Opts.heights);
 const WIDTH_KEYS = Object.keys(Popup.Opts.widths);
