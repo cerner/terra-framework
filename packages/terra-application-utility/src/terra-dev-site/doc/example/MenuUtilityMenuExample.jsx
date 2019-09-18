@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'terra-image';
 import MockConfig from 'terra-application-utility/lib/terra-dev-site/doc/common/MockConfig';
 import FallbackAvatar from 'terra-application-utility/lib/terra-dev-site/doc/common/FallbackAvatar.svg';
-import { UtilityUtils } from 'terra-application-utility/lib/ApplicationUtility';
+import { UtilityUtils } from 'terra-application-utility';
 import UtilityMenu from 'terra-application-utility/lib/utility/_UtilityMenu';
 import classNames from 'classnames/bind';
 import styles from './MenuUtilityMenuExample.module.scss';

@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Added `browser.refresh()` to `date-time-picker-spec` to support wdio tests failing in theming repos.
+* Doc site example module import syntax modified to use package.json name resolution
 
 4.12.0 - (September 6, 2019)
 ------------------

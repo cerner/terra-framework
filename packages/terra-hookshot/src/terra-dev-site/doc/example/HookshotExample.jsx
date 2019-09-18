@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import Button from 'terra-button';
 import InputField from 'terra-form-input/lib/InputField';
-import Hookshot from 'terra-hookshot/lib/Hookshot';
+import Hookshot from 'terra-hookshot';
 import styles from './HookshotDocCommon.module.scss';
 
 const cx = classNames.bind(styles);

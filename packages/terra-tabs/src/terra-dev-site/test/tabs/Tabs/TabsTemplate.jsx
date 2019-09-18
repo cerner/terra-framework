@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
-import Tabs from '../../../../Tabs';
+import Tabs from 'terra-tabs';
 import TabContent from './TabContentTemplate';
 import styles from './TabsTemplate.module.scss';
 
