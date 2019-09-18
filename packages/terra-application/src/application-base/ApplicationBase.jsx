@@ -102,7 +102,6 @@ const ApplicationBase = ({
       isGlobalTheme={themeIsGlobal}
     >
       <Base
-        className={cx('application-base', { fill: !fitToParentIsDisabled })}
         customMessages={customTranslatedMessages}
         translationsLoadingPlaceholder={translationsLoadingPlaceholder}
         locale={locale}

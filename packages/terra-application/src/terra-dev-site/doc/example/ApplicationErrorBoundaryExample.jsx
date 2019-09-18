@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import classNames from 'classnames/bind';
 
 import ApplicationErrorBoundary from '../../../application-error-boundary/ApplicationErrorBoundary';
+import styles from './ApplicationErrorBoundaryExample.module.scss';
+
+const cx = classNames.bind(styles);
 
 const ErrorThrowingComponent = () => {
   const [throwError, setThrowError] = useState(false);
@@ -18,7 +22,7 @@ const ErrorThrowingComponent = () => {
 };
 
 const ApplicationErrorBoundaryExample = () => (
-  <div style={{ height: '30rem', width: '100%' }}>
+  <div className={cx('example')}>
     <ApplicationErrorBoundary>
       <ErrorThrowingComponent />
     </ApplicationErrorBoundary>
