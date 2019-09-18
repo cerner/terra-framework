@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Doc site example module import syntax modified to use package.json name resolution
+
 ### Fixed
 * Fixed the inconsistent failures of responsive tabs on Travis CI.
 

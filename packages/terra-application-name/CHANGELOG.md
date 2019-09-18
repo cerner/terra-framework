@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Doc site example module import syntax modified to use package.json name resolution
 
 3.17.0 - (September 6, 2019)
 ------------------
