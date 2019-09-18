@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react';
 import { injectIntl } from 'react-intl';
-import { ActiveBreakpointContext } from '../../../breakpoints';
-import ApplicationLoadingOverlay from '../../../application-loading-overlay';
-import ApplicationBase from '../../../application-base';
-import NavigationPrompt from '../../../navigation-prompt';
+import { ActiveBreakpointContext } from '../../../../breakpoints';
+import ApplicationLoadingOverlay from '../../../../application-loading-overlay';
+import ApplicationBase from '../../../../application-base';
+import NavigationPrompt from '../../../../navigation-prompt';
 
-const ApplicationContentExample = injectIntl(({ intl }) => {
+const ApplicationContentTest = injectIntl(({ intl }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [throwError, setThrowError] = useState(false);
   const [blockUnload, setBlockUnload] = useState(false);
@@ -16,15 +16,15 @@ const ApplicationContentExample = injectIntl(({ intl }) => {
     throw new Error("Testing ApplicationBase's error boundary...");
   }
 
-  const activeBreakpointExample = (
+  const activeBreakpointTest = (
     <p>
-        Active Breakpoint:
+      Active Breakpoint:
       {' '}
       {activeBreakpoint}
     </p>
   );
 
-  const intlExample = (
+  const intlTest = (
     <p>
     Active Locale:
       {' '}
@@ -32,37 +32,39 @@ const ApplicationContentExample = injectIntl(({ intl }) => {
     </p>
   );
 
-  const errorBoundaryExample = (
+  const errorBoundaryTest = (
     <p>
     Render Error:
       {' '}
-      <button type="button" onClick={() => { setThrowError(true); }}>Throw</button>
+      <button id="error" type="button" onClick={() => { setThrowError(true); }}>Throw</button>
     </p>
   );
 
-  const loadingOverlayExample = (
+  const loadingOverlayTest = (
     <>
       <p>
-        Show Loading Overlay (3 seconds):
+        Show Loading Overlay:
         {' '}
-        <button type="button" onClick={() => { setIsLoading(true); setTimeout(() => { setIsLoading(false); }, 3000); }}>Show</button>
+        <button id="overlay" type="button" onClick={() => { setIsLoading(true); }}>Show</button>
       </p>
       <ApplicationLoadingOverlay isOpen={isLoading} message="Testing ApplicationBase's loading overlay" />
     </>
   );
 
-  const navigationPromptExample = (
+  const navigationPromptTest = (
     <>
       <p>
         Prompt on window close:
         {' '}
-        <input
-          type="checkbox"
-          name="prompt"
-          onChange={() => {
+        <button
+          id="prompt"
+          type="button"
+          onClick={() => {
             setBlockUnload(!blockUnload);
           }}
-        />
+        >
+          Enable navigation prompt
+        </button>
       </p>
       {blockUnload ? <NavigationPrompt description="Testing ApplicationBase's navigation prompt handling" /> : undefined}
     </>
@@ -70,19 +72,19 @@ const ApplicationContentExample = injectIntl(({ intl }) => {
 
   return (
     <div>
-      {activeBreakpointExample}
-      {intlExample}
-      {errorBoundaryExample}
-      {loadingOverlayExample}
-      {navigationPromptExample}
+      {activeBreakpointTest}
+      {intlTest}
+      {errorBoundaryTest}
+      {loadingOverlayTest}
+      {navigationPromptTest}
     </div>
   );
 });
 
-const ApplicationBaseExample = () => (
+const ApplicationBaseTest = () => (
   <ApplicationBase locale="en-US">
-    <ApplicationContentExample />
+    <ApplicationContentTest />
   </ApplicationBase>
 );
 
-export default ApplicationBaseExample;
+export default ApplicationBaseTest;
