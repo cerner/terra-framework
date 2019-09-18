@@ -6,6 +6,9 @@ Unreleased
 ### Fixed
 * Fixed time-input componentDidUpdate for updating time-input on re-entering the same missing hour in time-input.
 
+### Changed
+* Doc site example module import syntax modified to use package.json name resolution
+
 4.9.0 - (September 6, 2019)
 ------------------
 ### Changed
