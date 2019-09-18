@@ -69,10 +69,6 @@ const ApplicationBase = ({
 }) => {
   const registeredPromptsRef = useRef();
 
-  /**
-   * The user will be prompted before the page is unloaded if any navigation prompts
-   * have been registered.
-   */
   useEffect(() => {
     if (unloadPromptIsDisabled) {
       return undefined;
@@ -82,7 +78,7 @@ const ApplicationBase = ({
       if (registeredPromptsRef.current && registeredPromptsRef.current.length) {
         event.preventDefault();
 
-        // Chrome requires returnValue to be set
+        // Chrome requires returnValue to be set to present the confirmation dialog
         event.returnValue = ''; // eslint-disable-line no-param-reassign
 
         // For this prompt, ApplicationBase is limited to browser-defaulted messaging.

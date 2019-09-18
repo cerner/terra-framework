@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added ApplicationLoadingOverlay and ApplicationErrorBoundary
 
 1.7.0 - (September 6, 2019)
 ------------------

@@ -47,43 +47,13 @@ The `ApplicationBase` component provides the baseline functionality that an appl
 - `<ActiveBreakpointProvider />` (from `terra-breakpoints`)
   - The `ActiveBreakpointProvider` component exposes its children to the breakpoint value attributed to the current viewport size. See the `Breakpoints` section below for more information.
 - `<ApplicationErrorBoundary />`
-  - The `ApplicationErrorBoundary` component renders a styled error view if components within it throw exceptions during React lifecycle functions.
+  - The `ApplicationErrorBoundary` component renders a styled error view if components within it throw exceptions during the React render lifecycle.
 - `<ApplicationLoadingOverlayProvider />`
   - The `ApplicationLoadingOverlayProvider` component provides its children with APIs to present loading overlays within the application framework.
 
 Applications should render `ApplicationBase` at the root of their component tree and around all application contents. Conversely, libraries should not (outside of tests) render an `ApplicationBase` component. Libraries should instead develop their components with the assumption that those components will be rendered within a`ApplicationBase` component by an application.
 
 Only a single `ApplicationBase` component should be rendered within a given application. All Terra components should be rendered within a `ApplicationBase` component to ensure that they have access to necessary platform features.
-
-```jsx
-import React, { useContext, useState } from 'react';
-import ApplicationBase from 'terra-application/lib/application-base';
-import { ActiveBreakpointContext } from 'terra-application/lib/breakpoints';
-import ApplicationLoadingOverlay from 'terra-application/lib/application-loading-overlay';
-import { injectIntl } from 'react-intl';
-
-const ExampleContent = injectIntl(({ intl }) => {
-  const activeBreakpoint = useContext(ActiveBreakpointContext);
-  const [isLoading, setIsLoading] = useState(false);
-
-  return (
-    <div>
-      <p>The active breakpoint is {activeBreakpoint}.</p>
-      <p>Translated message: {intl.formatMessage({ id: 'example.string' })}</p>
-      <ApplicationLoadingOverlay isOpen={isLoading} message="Loading example" />
-    </div>
-  );
-});
-
-const ExampleApplication = () => (
-  <ApplicationBase
-    locale="en-US"
-    themeName="example-theme"
-  >
-    <ExampleContent />
-  </ApplicationBase>
-)
-```
 
 ### I18n
 

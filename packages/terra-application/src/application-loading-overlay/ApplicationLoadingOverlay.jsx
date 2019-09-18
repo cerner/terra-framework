@@ -5,7 +5,13 @@ import uuidv4 from 'uuid/v4';
 import ApplicationLoadingOverlayContext from './ApplicationLoadingOverlayContext';
 
 const propTypes = {
+  /**
+   * A boolean value indicating whether the loading overlay should be visible or not.
+   */
   isOpen: PropTypes.bool,
+  /**
+   * A string to be rendered within the loading overlay when open.
+   */
   message: PropTypes.string,
 };
 

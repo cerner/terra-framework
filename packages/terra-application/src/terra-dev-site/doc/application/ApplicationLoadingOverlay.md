@@ -4,19 +4,29 @@
 
 The ApplicationLoadingOverlay allows for the presentation of loading overlays within the Terra Application framework.
 
-Mounting an open ApplicationLoadingOverlay will result in the framework rendering a loading overlay. Unmounting the ApplicationLoadingOverlay
-(or removing the `isOpen` prop) will subsequently remove the loading overlay.
+Mounting an open ApplicationLoadingOverlay will result in the framework rendering a loading overlay. Unmounting the ApplicationLoadingOverlay (or removing the `isOpen` prop) will subsequently remove the loading overlay.
 
-### ApplicationLoadingOverlayProvider
+### ApplicationLoadingOverlay Props
 
-Loading overlays are positioned within the application by the ApplicationLoadingOverlayProvider component. Any children placed within the
-ApplicationLoadingOverlayProvider will be covered by the loading overlay when the loading overlay is active. Any content under an active
-loading overlay is not accessible by the user or by assistive technology.
+|Prop Name|Type|Is Required|Default Value|Description|
+|---|---|---|---|---|
+|**isOpen**|bool|optional|**false**|A boolean value indicating whether the loading overlay should be visible or not.|
+|**message**|string|optional|**undefined**|A string to be rendered within the loading overlay when open.|
 
-> Note: ApplicationBase renders an ApplicationLoadingOverlayProvider by default, but additional ApplicationLoadingOverlayProvider components
-can be used to scope loading overlays to different areas of the application.
+## ApplicationLoadingOverlayProvider
 
-### ApplicationLoadingOverlayContext
+Loading overlays are positioned within the application by the ApplicationLoadingOverlayProvider component. Any children placed within the ApplicationLoadingOverlayProvider will be covered by the loading overlay when the loading overlay is active. Any content under an active loading overlay is not accessible by the user or by assistive technology.
+
+### ApplicationLoadingOverlayProvider Props
+
+|Prop Name|Type|Is Required|Default Value|Description|
+|---|---|---|---|---|
+|**children**|node|optional|**undefined**|Components to be rendered within the context of the ApplicationLoadingOverlayProvider. Components rendered here are able to interact with ApplicationLoadingOverlayProvider through the ApplicationLoadingOverlayContext.|
+|**scrollRefCallback**|func|optional|**undefined**|A function to be called with the current ref of the scrollable element rendered within the ApplicationLoadingOverlayProvider.|
+
+> Note: ApplicationBase renders an ApplicationLoadingOverlayProvider by default, but additional ApplicationLoadingOverlayProvider components can be used to scope loading overlays to different areas of the application.
+
+## ApplicationLoadingOverlayContext
 
 The ApplicationLoadingOverlayProvider and ApplicationLoadingOverlay communicate with each other using the ApplicationLoadingOverlayContext.
 

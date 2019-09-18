@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The children to be rendered within the context of the ApplicationLoadingOverlayProvider.
+   * The components to be rendered within the context of the ApplicationLoadingOverlayProvider.
    * Components rendered here are able to interact with ApplicationLoadingOverlayProvider through
    * the ApplicationLoadingOverlayContext.
    */

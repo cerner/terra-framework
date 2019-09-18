@@ -4,6 +4,8 @@ import { name } from '../../../../package.json';
 import ReadMe from '../../../../docs/README.md';
 
 import ApplicationBaseSrc from '!raw-loader!../../../../src/application-base/ApplicationBase.jsx';
+import ApplicationBaseExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ApplicationBaseExample.jsx';
+import ApplicationBaseExample from '../example/ApplicationBaseExample';
 
 const DocPage = () => (
   <DocTemplate
@@ -14,6 +16,13 @@ const DocPage = () => (
       {
         componentName: 'ApplicationBase',
         componentSrc: ApplicationBaseSrc,
+      },
+    ]}
+    examples={[
+      {
+        title: 'ApplicationBase Interface Example',
+        example: <ApplicationBaseExample />,
+        source: ApplicationBaseExampleSrc,
       },
     ]}
   />

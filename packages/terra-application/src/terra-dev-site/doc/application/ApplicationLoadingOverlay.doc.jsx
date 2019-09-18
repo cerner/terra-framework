@@ -3,8 +3,6 @@ import DocTemplate from 'terra-doc-template';
 import { name } from '../../../../package.json';
 import ReadMe from './ApplicationLoadingOverlay.md';
 
-import ApplicationLoadingOverlaySrc from '!raw-loader!../../../../src/application-loading-overlay/ApplicationLoadingOverlay.jsx';
-
 import ApplicationLoadingOverlayExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ApplicationLoadingOverlayExample.jsx';
 import ApplicationLoadingOverlayExample from '../example/ApplicationLoadingOverlayExample';
 
@@ -13,12 +11,6 @@ const DocPage = () => (
     packageName={name}
     readme={ReadMe}
     srcPath={`https://github.com/cerner/terra-framework/tree/master/packages/${name}`}
-    // propsTables={[
-    //   {
-    //     componentName: 'ApplicationLoadingOverlay',
-    //     componentSrc: ApplicationLoadingOverlaySrc,
-    //   },
-    // ]}
     examples={[
       {
         title: 'ApplicationLoadingOverlay Example',

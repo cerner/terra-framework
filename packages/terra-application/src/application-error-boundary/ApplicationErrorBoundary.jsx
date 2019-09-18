@@ -36,7 +36,7 @@ class ApplicationErrorBoundary extends React.Component {
           buttonAttrs={[{
             text: intl.formatMessage({ id: 'terra-application.application-error-boundary.reload' }),
             size: 'medium',
-            key: 1,
+            key: 'reload-button',
             onClick: () => {
               this.setState(state => ({
                 hasError: undefined,
