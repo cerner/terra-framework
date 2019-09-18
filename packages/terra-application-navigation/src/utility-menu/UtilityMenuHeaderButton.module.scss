@@ -46,11 +46,6 @@
     width: 1.7143rem;
   }
 
-  .image > * {
-    max-height: 100%;
-    max-width: 100%;
-  }
-
   .caret-icon {
     flex: 0 0 auto;
     height: 0.7143rem;
@@ -85,12 +80,22 @@
 
     .no-user-image {
       height: 1rem;
-      overflow: hidden;
       width: 1rem;
     }
 
     &[data-focus-styles-enabled='true']:focus {
       outline-offset: var(--terra-application-navigation-utility-header-button-no-user-focus-outline-offset, -2px);
+    }
+  }
+
+  .image,
+  .no-user-image {
+    position: relative;
+
+    & > * {
+      height: 100%;
+      position: absolute;
+      width: 100%;
     }
   }
 }
