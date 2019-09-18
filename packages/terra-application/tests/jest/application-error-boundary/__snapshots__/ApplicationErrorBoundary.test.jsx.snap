@@ -5,7 +5,7 @@ exports[`ApplicationErrorBoundary Snapshots should render error view when an err
   buttonAttrs={
     Array [
       Object {
-        "key": 1,
+        "key": "reload-button",
         "onClick": [Function],
         "size": "medium",
         "text": "terra-application.application-error-boundary.reload",
