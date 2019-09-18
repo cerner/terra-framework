@@ -133,7 +133,7 @@ class TimeInput extends React.Component {
     this.handleMeridiemInputFocus = this.handleMeridiemInputFocus.bind(this);
     this.handleMeridiemSelectFocus = this.handleMeridiemSelectFocus.bind(this);
     this.handleMeridiemButtonChange = this.handleMeridiemButtonChange.bind(this);
-    this.handleMissingHourChange = this.handleMissingHourChange.bind(this);
+    this.doesComponentNeedsUpdate = this.doesComponentNeedsUpdate.bind(this);
 
     let hour = TimeUtil.splitHour(value);
     let meridiem;
@@ -176,16 +176,16 @@ class TimeInput extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    let skipUpdate = true;
+    let doesComponentNeedsUpdate = false;
     const prevStateTimeValue = (this.props.showSeconds) ? `${prevState.hour}:${prevState.minute}:${prevState.second}` : `${prevState.hour}:${prevState.minute}`;
     // Comparing partial time values on each update will result in incorrect comparisons of prevState and propsValue.
     // Hence validating propsValue and prevState values to skip the comparison between them until time value is completely formed.
-    if (TimeUtil.isValidTime(this.props.value, this.props.showSeconds) && TimeUtil.isValidTime(prevStateTimeValue, this.props.showSeconds)) {
-      skipUpdate = this.handleMissingHourChange(prevState);
+    if (TimeUtil.validateTime(this.props.value, this.props.showSeconds) && TimeUtil.validateTime(prevStateTimeValue, this.props.showSeconds)) {
+      doesComponentNeedsUpdate = this.doesComponentNeedsUpdate(prevState);
     }
 
     if (this.props.value === prevProps.value
-      && this.props.variant === prevProps.variant && skipUpdate
+      && this.props.variant === prevProps.variant && !doesComponentNeedsUpdate
     ) {
       return;
     }
@@ -224,7 +224,7 @@ class TimeInput extends React.Component {
     });
   }
 
-  handleMissingHourChange(prevState) {
+  doesComponentNeedsUpdate(prevState) {
     let hour = TimeUtil.splitHour(this.props.value);
     if (this.props.variant === TimeUtil.FORMAT_12_HOUR) {
       hour = TimeUtil.parseTwelveHourTime(hour, this.anteMeridiem, this.postMeridiem).hourString;
@@ -233,9 +233,9 @@ class TimeInput extends React.Component {
     const second = TimeUtil.splitSecond(this.props.value);
 
     if (hour !== prevState.hour || minute !== prevState.minute || second !== prevState.second) {
-      return false;
+      return true;
     }
-    return true;
+    return false;
   }
 
   handleFocus(event) {

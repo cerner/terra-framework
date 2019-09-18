@@ -29,8 +29,6 @@
     "classnames": "^2.2.5",
     "keycode-js": "^2.0.1",
     "prop-types": "^15.5.8",
-    "moment": "^2.21.0",
-    "moment-timezone": "^0.5.13",
     "terra-button-group": "^3.0.0",
     "terra-form-input": "^2.3.0"
   },

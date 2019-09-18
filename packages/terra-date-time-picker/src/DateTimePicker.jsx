@@ -3,9 +3,9 @@ import { injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import DatePicker from 'terra-date-picker';
+import TimeInput from 'terra-time-input';
 import * as KeyCode from 'keycode-js';
 import DateUtil from 'terra-date-picker/lib/DateUtil';
-import TimeInput from 'terra-time-input';
 import styles from './DateTimePicker.module.scss';
 import DateTimeUtils from './DateTimeUtils';
 import TimeClarification from './_TimeClarification';
@@ -348,7 +348,6 @@ class DateTimePicker extends React.Component {
     // If both date and time are valid, check if the time is the missing hour and invoke onChange.
     // If the date is valid but time is invalid, the time in the dateTime state needs to be cleared and render.
     if (validDate && validTime) {
-      // this.handleChange(event, time);
       const updatedDateTime = DateTimeUtils.updateTime(previousDateTime, time, this.props.showSeconds);
 
       if (event.keyCode === KeyCode.KEY_DOWN

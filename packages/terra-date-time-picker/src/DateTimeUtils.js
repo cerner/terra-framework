@@ -126,7 +126,9 @@ class DateTimeUtils {
    * @return {boolean} - True if the time is valid.
    */
   static isValidTime(time, hasSeconds) {
-    return TimeUtil.isValidTime(time, hasSeconds);
+    const timeFormat = hasSeconds ? 'HH:mm:ss' : 'HH:mm';
+    const timeMoment = moment(time, timeFormat, true);
+    return timeMoment.isValid();
   }
 
   /**

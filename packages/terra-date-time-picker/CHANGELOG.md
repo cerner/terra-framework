@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added new test to validate missing hour scenario 
+
 ### Changed
 * Added `browser.refresh()` to `date-time-picker-spec` to support wdio tests failing in theming repos.
 
