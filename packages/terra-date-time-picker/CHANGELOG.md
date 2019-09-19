@@ -8,6 +8,10 @@ Unreleased
 * Removed `details` tag from doc-site.
 * Doc site example module import syntax modified to use package.json name resolution
 
+### Added
+* Added en-CA translations.
+* Updated documentations to call out the supported ISO 8601 date time format.
+
 4.12.0 - (September 6, 2019)
 ------------------
 ### Changed
