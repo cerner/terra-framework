@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+1.5.0 - (September 19, 2019)
+------------------
 ### Changed
 * Update underlying structure to handle new theme variables.
 * Revert test wrapper changes.
