@@ -11,6 +11,9 @@ Unreleased
 ### Removed
 * Removed time-picker code from react-datepicker.
 
+### Added
+* Added en-CA translations.
+
 4.12.0 - (September 6, 2019)
 ------------------
 ### Changed
