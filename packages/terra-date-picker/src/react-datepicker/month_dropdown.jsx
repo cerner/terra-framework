@@ -32,7 +32,11 @@ export default class MonthDropdown extends React.Component {
     /**
      * A callback function to execute when user selects a month.
      */
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
+    /**
+     * Callback ref to pass into the dom element.
+     */
+    refCallback: PropTypes.func,
   }
 
   state = {
@@ -109,6 +113,7 @@ export default class MonthDropdown extends React.Component {
 
     return (
       <div
+        ref={this.props.refCallback}
         className={cx(['react-datepicker-month-dropdown-container', `react-datepicker-month-dropdown-container--${this.props.dropdownMode}`])}>
         {renderedDropdown}
       </div>

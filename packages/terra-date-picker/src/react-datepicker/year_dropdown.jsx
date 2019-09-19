@@ -54,6 +54,10 @@ export default class YearDropdown extends React.Component {
      */
     onSelect: PropTypes.func,
     /**
+     * Callback ref to pass into the dom element.
+     */
+    refCallback: PropTypes.func,
+    /**
      * A callback function to execute when the year dropdown is open.
      */
     setOpen: PropTypes.func
@@ -168,6 +172,7 @@ export default class YearDropdown extends React.Component {
 
     return (
       <div
+        ref={this.props.refCallback}
         className={cx(['react-datepicker-year-dropdown-container', `react-datepicker-year-dropdown-container--${this.props.dropdownMode}`])}>
         {renderedDropdown}
       </div>

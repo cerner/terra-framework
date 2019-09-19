@@ -240,6 +240,14 @@ export default class Calendar extends React.Component {
       date: this.localizeDate(this.getDateInView()),
       selectingDate: null
     }
+
+    this.todayBtnRef = React.createRef();
+    this.closeBtnRef = React.createRef();
+    this.monthRef;
+    this.previousMonthBtnRef;
+    this.nextMonthBtnRef;
+    this.monthDropdownRef;
+    this.yearDropdownRef;
   }
 
   componentDidUpdate (prevProps) {
@@ -251,6 +259,39 @@ export default class Calendar extends React.Component {
       this.setState({
         date: this.localizeDate(this.props.openToDate)
       })
+    }
+  }
+
+  handleOnClick = (event) => {
+    const calendarControls = [
+      this.todayBtnRef,
+      this.closeBtnRef,
+      this.previousMonthBtnRef,
+      this.nextMonthBtnRef,
+      this.monthDropdownRef,
+      this.yearDropdownRef,
+    ];
+
+    const isEventTargetMatchingCalendarControl = (target) => {
+      return calendarControls.indexOf(target) >= 0;
+    }
+
+    const isEventTargetContainedWithinCalendarControl = (target) => {
+      const containsEventTarget = (this.previousMonthBtnRef.contains(target)
+        || this.previousMonthBtnRef.contains(target)
+        || this.monthDropdownRef.contains(target)
+        || this.yearDropdownRef.contains(target));
+
+      return containsEventTarget;
+    }
+
+    if (isEventTargetMatchingCalendarControl(event.target) || isEventTargetContainedWithinCalendarControl(event.target)) {
+      return;
+    }
+
+    // If the user is not clicking on a calendar control, shift focus to the calendar
+    if (this.monthRef) {
+      this.monthRef.focus();
     }
   }
 
@@ -268,6 +309,26 @@ export default class Calendar extends React.Component {
     if (this.props.onRequestClose) {
       this.props.onRequestClose(event)
     }
+  }
+
+  setPreviousMonthBtnRef = (node) => {
+    this.previousMonthBtnRef = node;
+  }
+
+  setNextMonthBtnRef = (node) => {
+    this.nextMonthBtnRef = node;
+  }
+
+  setMonthRef = (node) => {
+    this.monthRef = node;
+  }
+
+  setMonthDropdownRef = (node) => {
+    this.monthDropdownRef = node;
+  }
+
+  setYearDropdownRef = (node) => {
+    this.yearDropdownRef = node;
   }
 
   getDateInView = () => {
@@ -373,7 +434,8 @@ export default class Calendar extends React.Component {
       isIconOnly
       variant="utility"
       text="Previous Month"
-      onClick={this.decreaseMonth} />
+      onClick={this.decreaseMonth}
+      refCallback={this.setPreviousMonthBtnRef}  />
   }
 
   renderNextMonthButton = () => {
@@ -387,7 +449,8 @@ export default class Calendar extends React.Component {
       isIconOnly
       variant="utility"
       text="Next Month"
-      onClick={this.increaseMonth} />
+      onClick={this.increaseMonth}
+      refCallback={this.setNextMonthBtnRef} />
   }
 
   renderCurrentMonth = (date = this.state.date) => {
@@ -420,6 +483,7 @@ export default class Calendar extends React.Component {
         onChange={this.changeYear}
         minDate={this.props.minDate}
         maxDate={this.props.maxDate}
+        refCallback={this.setYearDropdownRef}
         year={getYear(this.state.date)}
         scrollableYearDropdown={this.props.scrollableYearDropdown}
         yearDropdownItemNumber={this.props.yearDropdownItemNumber} />
@@ -436,7 +500,8 @@ export default class Calendar extends React.Component {
         locale={this.props.locale}
         dateFormat={this.props.dateFormat}
         onChange={this.changeMonth}
-        month={getMonth(this.state.date)} />
+        month={getMonth(this.state.date)}
+        refCallback={this.setMonthDropdownRef} />
     )
   }
 
@@ -448,6 +513,7 @@ export default class Calendar extends React.Component {
       <button
         className={cx('react-datepicker-today-button')}
         onClick={e => this.props.onSelect(getStartOfDate(now(this.props.utcOffset)), e)}
+        ref={this.todayBtnRef}
       >
         {this.props.todayButton}
       </button>
@@ -462,6 +528,7 @@ export default class Calendar extends React.Component {
             className={cx('react-datepicker-close-button')}
             type="button"
             onClick={this.handleCloseButtonClick}
+            ref={this.closeBtnRef}
           >
             {text}
           </button>
@@ -476,7 +543,7 @@ export default class Calendar extends React.Component {
       var monthDate = addMonths(cloneDate(this.state.date), i)
       var monthKey = `month-${i}`
       monthList.push(
-        <div key={monthKey} className={cx('react-datepicker-month-container')}>
+        <div key={monthKey} onClick={this.handleOnClick} className={cx('react-datepicker-month-container')}>
           <Month
             day={monthDate}
             dayClassName={this.props.dayClassName}
@@ -495,6 +562,7 @@ export default class Calendar extends React.Component {
             fixedHeight={this.props.fixedHeight}
             filterDate={this.props.filterDate}
             preSelection={this.props.preSelection}
+            refCallback={this.setMonthRef}
             selected={this.props.selected}
             selectsStart={this.props.selectsStart}
             selectsEnd={this.props.selectsEnd}

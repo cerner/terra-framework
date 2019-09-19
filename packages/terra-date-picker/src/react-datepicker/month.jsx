@@ -95,6 +95,10 @@ export default class Month extends React.Component {
      */
     preSelection: PropTypes.object,
     /**
+     * Callback ref to pass into the dom element.
+     */
+    refCallback: PropTypes.func,
+    /**
      * Prop to store current selection value.
      */
     selected: PropTypes.object,
@@ -218,6 +222,7 @@ export default class Month extends React.Component {
         role="application"
         aria-label={`${utils.getLocalizedDateForScreenReader(this.props.preSelection, { intl: this.props.intl, locale: this.props.locale} )}. To change the selection, use the arrow keys. Press Enter to select a date. Press Escape to close date picker popup.`}
         onKeyDown={this.props.handleCalendarKeyDown}
+        ref={this.props.refCallback}
       >
         {this.renderWeeks()}
       </div>
