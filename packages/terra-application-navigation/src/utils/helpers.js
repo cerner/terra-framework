@@ -40,21 +40,25 @@ const generateKeyDownSelection = onSelect => (
 const useAnimatedCount = (countRef, countValue) => {
   const previousValueRef = useRef(countValue);
 
-  function handleAnimation() {
-    if (countRef.current) {
-      countRef.current.setAttribute('data-count-pulse', 'false');
-      countRef.current.removeEventListener('animationend', handleAnimation);
-    }
-  }
-
   useLayoutEffect(() => {
-    if (countValue > previousValueRef.current && countRef.current) {
-      countRef.current.setAttribute('data-count-pulse', 'true');
-      countRef.current.addEventListener('animationend', handleAnimation);
+    const countElement = countRef.current;
+
+    if (!countElement) {
+      return;
+    }
+
+    function handleAnimation() {
+      countElement.setAttribute('data-count-pulse', 'false');
+      countElement.removeEventListener('animationend', handleAnimation);
+    }
+
+    if (countValue > previousValueRef.current) {
+      countElement.setAttribute('data-count-pulse', 'true');
+      countElement.addEventListener('animationend', handleAnimation);
     }
 
     previousValueRef.current = countValue;
-  }, [countValue]);
+  }, [countRef, countValue]);
 };
 
 export default {
