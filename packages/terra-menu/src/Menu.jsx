@@ -56,17 +56,12 @@ const propTypes = {
    * Otherwise, the menu will display without an arrow and right aligned.
    */
   isArrowDisplayed: PropTypes.bool,
-  /**
-   * Used to select the root mount DOM node.
-   */
-  rootSelector: PropTypes.string,
 };
 
 const defaultProps = {
   isArrowDisplayed: false,
   isOpen: false,
   contentWidth: '240',
-  rootSelector: '#root',
 };
 
 class Menu extends React.Component {
@@ -125,8 +120,10 @@ class Menu extends React.Component {
     }
   }
 
+
+  // eslint-disable-next-line class-methods-use-this
   disableContainerChildrenFocus() {
-    const mainDocumentElement = document.querySelector(this.props.rootSelector);
+    const mainDocumentElement = document.querySelector('#root');
 
     if (mainDocumentElement) {
       const inert = +mainDocumentElement.getAttribute('data-overlay-count');
@@ -141,7 +138,7 @@ class Menu extends React.Component {
   }
 
   enableContainerChildrenFocus() {
-    const mainDocumentElement = document.querySelector(this.props.rootSelector);
+    const mainDocumentElement = document.querySelector('#root');
 
     if (mainDocumentElement) {
       const inert = +mainDocumentElement.getAttribute('data-overlay-count');
