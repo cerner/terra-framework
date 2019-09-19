@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.13.0 - (September 19, 2019)
+------------------
 ### Changed
 * Removed use of `componentWillReceiveProps`.
 * Added ability to shift focus around interactive elements within the datepicker popup to enable better screen reader/keyboard usage
@@ -11,6 +14,11 @@ Unreleased
 
 ### Removed
 * Removed time-picker code from react-datepicker.
+
+### Added
+* Added en-CA translations.
+* Allowed entering '-' in the date input for en-CA date format.
+* Updated documentations to call out the supported ISO 8601 date format.
 
 4.12.0 - (September 6, 2019)
 ------------------
