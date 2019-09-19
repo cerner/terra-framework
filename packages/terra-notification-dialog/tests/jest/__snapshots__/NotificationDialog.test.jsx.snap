@@ -32,20 +32,23 @@ exports[`should mount a complete notification-dialog 1`] = `
 >
   <div>
     <NotificationDialog
-      isOpen={false}
-      message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
-      primaryAction={
+      acceptAction={
         Object {
+          "isEmphasized": true,
           "onClick": [Function],
-          "text": "OK",
+          "text": "Confirm",
         }
       }
-      secondaryAction={
+      content={null}
+      endMessage={null}
+      isOpen={false}
+      rejectAction={
         Object {
           "onClick": [Function],
           "text": "Close",
         }
       }
+      startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
       title="Make sure that the title relates directly to the choices."
       variant="alert"
     />
@@ -121,20 +124,23 @@ exports[`should mount a complete notification-dialog with long message 1`] = `
 >
   <div>
     <NotificationDialog
-      isOpen={false}
-      message="This is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the message"
-      primaryAction={
+      acceptAction={
         Object {
+          "isEmphasized": true,
           "onClick": [Function],
-          "text": "OK",
+          "text": "Confirm",
         }
       }
-      secondaryAction={
+      content={null}
+      endMessage={null}
+      isOpen={false}
+      rejectAction={
         Object {
           "onClick": [Function],
           "text": "Close",
         }
       }
+      startMessage="This is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the message"
       title="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
       variant="success"
     />
@@ -210,21 +216,24 @@ exports[`should mount a notification-dialog with no variant 1`] = `
 >
   <div>
     <NotificationDialog
-      header="No Variant for this dialog"
-      isOpen={false}
-      message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
-      primaryAction={
+      acceptAction={
         Object {
+          "isEmphasized": true,
           "onClick": [Function],
-          "text": "OK",
+          "text": "Confirm",
         }
       }
-      secondaryAction={
+      content={null}
+      endMessage={null}
+      header="No Variant for this dialog"
+      isOpen={false}
+      rejectAction={
         Object {
           "onClick": [Function],
           "text": "Close",
         }
       }
+      startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
       title="Make sure that the title relates directly to the choices."
       variant="custom"
     />
@@ -271,20 +280,23 @@ exports[`should mount a notification-dialog with no variant 1`] = `
 exports[`should shallow a complete notification-dialog 1`] = `
 <div>
   <NotificationDialog
-    isOpen={false}
-    message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
-    primaryAction={
+    acceptAction={
       Object {
+        "isEmphasized": true,
         "onClick": [Function],
-        "text": "OK",
+        "text": "Confirm",
       }
     }
-    secondaryAction={
+    content={null}
+    endMessage={null}
+    isOpen={false}
+    rejectAction={
       Object {
         "onClick": [Function],
         "text": "Close",
       }
     }
+    startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
     title="Make sure that the title relates directly to the choices."
     variant="alert"
   />
@@ -306,20 +318,23 @@ exports[`should shallow a complete notification-dialog 1`] = `
 exports[`should shallow a complete notification-dialog with long message 1`] = `
 <div>
   <NotificationDialog
-    isOpen={false}
-    message="This is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the message"
-    primaryAction={
+    acceptAction={
       Object {
+        "isEmphasized": true,
         "onClick": [Function],
-        "text": "OK",
+        "text": "Confirm",
       }
     }
-    secondaryAction={
+    content={null}
+    endMessage={null}
+    isOpen={false}
+    rejectAction={
       Object {
         "onClick": [Function],
         "text": "Close",
       }
     }
+    startMessage="This is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the message"
     title="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
     variant="success"
   />
@@ -341,21 +356,24 @@ exports[`should shallow a complete notification-dialog with long message 1`] = `
 exports[`should shallow a notification-dialog with no variant 1`] = `
 <div>
   <NotificationDialog
-    header="No Variant for this dialog"
-    isOpen={false}
-    message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
-    primaryAction={
+    acceptAction={
       Object {
+        "isEmphasized": true,
         "onClick": [Function],
-        "text": "OK",
+        "text": "Confirm",
       }
     }
-    secondaryAction={
+    content={null}
+    endMessage={null}
+    header="No Variant for this dialog"
+    isOpen={false}
+    rejectAction={
       Object {
         "onClick": [Function],
         "text": "Close",
       }
     }
+    startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
     title="Make sure that the title relates directly to the choices."
     variant="custom"
   />

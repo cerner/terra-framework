@@ -28,10 +28,11 @@ class NotificationDialogNoTitle extends React.Component {
         <NotificationDialog
           variant={NotificationDialogVariants.ERROR}
           isOpen={this.state.isOpen}
-          message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
-          primaryAction={{
+          startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
+          acceptAction={{
             text: 'Close',
             onClick: this.handleCloseModal,
+            isEmphasized: true,
           }}
         />
         <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={this.handleOpenModal} />

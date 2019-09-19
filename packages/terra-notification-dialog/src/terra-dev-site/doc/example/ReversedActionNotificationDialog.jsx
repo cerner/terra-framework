@@ -6,7 +6,7 @@ const clickConfirm = () => {
   console.log('You clicked confirm'); // eslint-disable-line no-console
 };
 
-class CompleteNotificationDialog extends React.Component {
+class ReversedActionNotificationDialog extends React.Component {
   constructor() {
     super();
 
@@ -37,12 +37,13 @@ class CompleteNotificationDialog extends React.Component {
           acceptAction={{
             text: 'Confirm',
             onClick: clickConfirm,
-            isEmphasized: true,
+            isEmphasized: false,
           }}
           rejectAction={{
             text: 'Close',
             onClick: this.handleCloseModal,
           }}
+          isReversed
         />
         <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
       </div>
@@ -50,4 +51,4 @@ class CompleteNotificationDialog extends React.Component {
   }
 }
 
-export default CompleteNotificationDialog;
+export default ReversedActionNotificationDialog;

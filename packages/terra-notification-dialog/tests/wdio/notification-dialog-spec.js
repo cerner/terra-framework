@@ -103,6 +103,22 @@ Terra.describeViewports('notification-dialog', ['tiny', 'medium', 'large'], () =
       Terra.validates.element({ selector });
     });
   });
+
+  describe('Notification-dialog with Content', () => {
+    it('Notification-dialog with No Message', () => {
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/content-notification-dialog');
+      browser.click('#trigger-notification-dialog');
+      Terra.validates.element({ selector });
+    });
+  });
+
+  describe('Notification-dialog with Reversed Actions', () => {
+    it('Notification-dialog with No Message', () => {
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-no-message');
+      browser.click('#trigger-notification-dialog');
+      Terra.validates.element({ selector });
+    });
+  });
 });
 
 Terra.describeViewports('NotificationDialog with additional focus trap sources within a modal manager', ['medium'], () => {

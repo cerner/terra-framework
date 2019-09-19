@@ -3,8 +3,8 @@ import Button from 'terra-button';
 import PropTypes from 'prop-types';
 import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
 
-const clickOK = () => {
-  alert('You clicked OK'); // eslint-disable-line no-alert
+const clickConfirm = () => {
+  alert('You clicked confirm'); // eslint-disable-line no-alert
 };
 
 const propTypes = {
@@ -40,12 +40,13 @@ class NotificationDialogVariant extends React.Component {
           variant={variant}
           isOpen={this.state.isOpen}
           title="Make sure that the title relates directly to the choices."
-          message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
-          primaryAction={{
-            text: 'OK',
-            onClick: clickOK,
+          startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
+          acceptAction={{
+            text: 'Confirm',
+            onClick: clickConfirm,
+            isEmphasized: true,
           }}
-          secondaryAction={{
+          rejectAction={{
             text: 'Close',
             onClick: this.handleCloseModal,
           }}

@@ -2,8 +2,8 @@ import React from 'react';
 import Button from 'terra-button';
 import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
 
-const clickOK = () => {
-  alert('You clicked OK'); // eslint-disable-line no-alert
+const clickConfirm = () => {
+  alert('You clicked confirm'); // eslint-disable-line no-alert
 };
 
 class CompleteNotificationDialogWithLongMessage extends React.Component {
@@ -33,12 +33,13 @@ class CompleteNotificationDialogWithLongMessage extends React.Component {
           variant={NotificationDialogVariants.SUCCESS}
           isOpen={this.state.isOpen}
           title="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
-          message="This is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the message"
-          primaryAction={{
-            text: 'OK',
-            onClick: clickOK,
+          startMessage="This is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the message"
+          acceptAction={{
+            text: 'Confirm',
+            onClick: clickConfirm,
+            isEmphasized: true,
           }}
-          secondaryAction={{
+          rejectAction={{
             text: 'Close',
             onClick: this.handleCloseModal,
           }}

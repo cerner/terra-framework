@@ -29,9 +29,10 @@ class NotificationDialogNoMessage extends React.Component {
           variant={NotificationDialogVariants.INFO}
           isOpen={this.state.isOpen}
           title="There is no message here."
-          primaryAction={{
+          acceptAction={{
             text: 'Close',
             onClick: this.handleCloseModal,
+            isEmphasized: true,
           }}
         />
         <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={this.handleOpenModal} />

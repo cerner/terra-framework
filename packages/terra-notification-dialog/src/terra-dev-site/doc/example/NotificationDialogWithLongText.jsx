@@ -2,8 +2,8 @@ import React from 'react';
 import Button from 'terra-button';
 import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
 
-const clickOK = () => {
-  console.log('You clicked OK'); // eslint-disable-line no-console
+const clickConfirm = () => {
+  console.log('You clicked confirm'); // eslint-disable-line no-console
 };
 
 class NotificationDialogWithLongText extends React.Component {
@@ -112,12 +112,13 @@ class NotificationDialogWithLongText extends React.Component {
           variant={NotificationDialogVariants.WARNING}
           isOpen={this.state.isOpen}
           title="Make sure that the title relates directly to the choices."
-          message={message}
-          primaryAction={{
-            text: 'OK',
-            onClick: clickOK,
+          startMessage={message}
+          acceptAction={{
+            text: 'Confirm',
+            onClick: clickConfirm,
+            isEmphasized: true,
           }}
-          secondaryAction={{
+          rejectAction={{
             text: 'Close',
             onClick: this.handleCloseModal,
           }}

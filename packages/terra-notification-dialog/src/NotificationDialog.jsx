@@ -29,20 +29,29 @@ const propTypes = {
    */
   title: PropTypes.string,
   /**
-   * Message of the notification-dialog.
+   * Start Message of the notification-dialog.
    */
-  message: PropTypes.string,
+  startMessage: PropTypes.string,
   /**
-   * The Action of the primary button.
+   * End Message of the notification-dialog.
    */
-  primaryAction: PropTypes.shape({
+  endMessage: PropTypes.string,
+  /**
+   * Content of the notification-dialog.
+   */
+  content: PropTypes.node,
+  /**
+   * The Action of the accept button.
+   */
+  acceptAction: PropTypes.shape({
     text: PropTypes.string,
     onClick: PropTypes.func,
+    isEmphasized: PropTypes.bool,
   }).isRequired,
   /**
-   * The Action of the secondary button.
+   * The Action of the reject button.
    */
-  secondaryAction: PropTypes.shape({
+  rejectAction: PropTypes.shape({
     text: PropTypes.string,
     onClick: PropTypes.func,
   }),
@@ -66,31 +75,48 @@ const propTypes = {
    * Toggle to show notification-dialog or not.
    */
   isOpen: PropTypes.bool.isRequired,
+  /**
+   * Reverses the order of notification action buttons
+   */
+  isReversed: PropTypes.bool,
 };
 
 const defaultProps = {
   title: null,
-  message: null,
+  startMessage: null,
+  endMessage: null,
+  content: null,
   variant: variants.CUSTOM,
 };
 
-const actionSection = (primaryAction, secondaryAction) => {
-  let actionButton = null;
-  let dismissButton = null;
-  if (!primaryAction && !secondaryAction) {
+const actionSection = (acceptAction, rejectAction, isReversed) => {
+  let acceptButton = null;
+  let rejectButton = null;
+  if (!acceptAction && !rejectAction) {
     return null;
   }
-  if (primaryAction) {
-    actionButton = <Button text={primaryAction.text} variant={Button.Opts.Variants.EMPHASIS} onClick={primaryAction.onClick} />;
+  if (acceptAction) {
+    acceptButton = (acceptAction.isEmphasized)
+      ? <Button text={acceptAction.text} variant={Button.Opts.Variants.EMPHASIS} onClick={acceptAction.onClick} />
+      : <Button text={acceptAction.text} onClick={acceptAction.onClick} />;
   }
-  if (secondaryAction) {
-    dismissButton = <Button text={secondaryAction.text} onClick={secondaryAction.onClick} />;
+  if (rejectAction) {
+    rejectButton = <Button text={rejectAction.text} onClick={rejectAction.onClick} />;
+  }
+
+  if (isReversed) {
+    return (
+      <div className={cx('actions')}>
+        {rejectButton}
+        {acceptButton}
+      </div>
+    );
   }
 
   return (
     <div className={cx('actions')}>
-      {actionButton}
-      {dismissButton}
+      {acceptButton}
+      {rejectButton}
     </div>
   );
 };
@@ -150,12 +176,15 @@ class NotificationDialog extends React.Component {
     const {
       header,
       title,
-      message,
-      primaryAction,
-      secondaryAction,
+      startMessage,
+      endMessage,
+      content,
+      acceptAction,
+      rejectAction,
       variant,
       customIcon,
       isOpen,
+      isReversed,
       ...customProps
     } = this.props;
 
@@ -186,11 +215,23 @@ class NotificationDialog extends React.Component {
                 <div className={cx('text-wrapper')}>
                   {title
                     && <div id="notification-dialog-title" className={cx('title')}>{title}</div>}
-                  {message
-                    && <div className={cx('message')}>{message}</div>}
+                  {(startMessage || content || endMessage)
+                    && (
+                      <div className={cx('message')}>
+                        <div>
+                          {startMessage}
+                        </div>
+                        <div>
+                          {content}
+                        </div>
+                        <div>
+                          {endMessage}
+                        </div>
+                      </div>
+                    )}
                 </div>
               </div>
-              <div className={cx('footer-body')}>{actionSection(primaryAction, secondaryAction)}</div>
+              <div className={cx('footer-body')}>{actionSection(acceptAction, rejectAction, isReversed)}</div>
             </div>
           </div>
         </FocusTrap>

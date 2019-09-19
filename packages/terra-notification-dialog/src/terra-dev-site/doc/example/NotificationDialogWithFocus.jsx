@@ -5,8 +5,8 @@ import Popup from 'terra-popup/lib/Popup';
 import Placeholder from 'terra-doc-template/lib/Placeholder';
 import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
 
-const clickOK = () => {
-  console.log('You clicked OK'); // eslint-disable-line no-console
+const clickConfirm = () => {
+  console.log('You clicked confirm'); // eslint-disable-line no-console
 };
 
 const propTypes = {
@@ -50,12 +50,13 @@ class NotificationDialogWithFocus extends React.Component {
           variant={NotificationDialogVariants.ALERT}
           isOpen={this.state.isOpen}
           title="Make sure that the title relates directly to the choices."
-          message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
-          primaryAction={{
-            text: 'OK',
-            onClick: clickOK,
+          startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
+          acceptAction={{
+            text: 'Confirm',
+            onClick: clickConfirm,
+            isEmphasized: true,
           }}
-          secondaryAction={{
+          rejectAction={{
             text: 'Close',
             onClick: this.handleCloseModal,
           }}

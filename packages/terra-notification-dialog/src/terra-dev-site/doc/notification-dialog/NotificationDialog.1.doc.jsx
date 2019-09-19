@@ -12,12 +12,16 @@ import CompleteNotificationDialog from '../example/CompleteNotificationDialog';
 import CompleteNotificationDialogSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/CompleteNotificationDialog.jsx';
 import CompleteNotificationDialogWithLongMessage from '../example/CompleteNotificationDialogWithLongMessage';
 import CompleteNotificationDialogWithLongMessageSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/CompleteNotificationDialogWithLongMessage.jsx';
+import ContentNotificationDialog from '../example/ContentNotificationDialog';
+import ContentNotificationDialogSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ContentNotificationDialog.jsx';
 import NoVariantNotificationDialog from '../example/NoVariantNotificationDialog';
 import NoVariantNotificationDialogSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/NoVariantNotificationDialog.jsx';
 import NotificationDialogWithLongText from '../example/NotificationDialogWithLongText';
 import NotificationDialogWithLongTextSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/NotificationDialogWithLongText.jsx';
 import NotificationDialogOnModalManager from '../example/NotificationDialogOnModalManager';
 import NotificationDialogOnModalManagerSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/NotificationDialogOnModalManager.jsx';
+import ReversedActionNotificationDialog from '../example/ReversedActionNotificationDialog';
+import ReversedActionNotificationDialogSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ReversedActionNotificationDialog.jsx';
 
 const DocPage = () => (
   <DocTemplate
@@ -49,6 +53,16 @@ const DocPage = () => (
         title: 'Notification Dialog On Modal Manager',
         example: <NotificationDialogOnModalManager />,
         source: NotificationDialogOnModalManagerSrc,
+      },
+      {
+        title: 'Notification Dialog with Content',
+        example: <ContentNotificationDialog />,
+        source: ContentNotificationDialogSrc,
+      },
+      {
+        title: 'Notification Dialog with Actions Reversed',
+        example: <ReversedActionNotificationDialog />,
+        source: ReversedActionNotificationDialogSrc,
       },
     ]}
     propsTables={[

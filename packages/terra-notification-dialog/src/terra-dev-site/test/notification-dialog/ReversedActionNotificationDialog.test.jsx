@@ -3,10 +3,10 @@ import Button from 'terra-button';
 import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
 
 const clickConfirm = () => {
-  console.log('You clicked confirm'); // eslint-disable-line no-console
+  alert('You clicked confirm'); // eslint-disable-line no-alert
 };
 
-class CompleteNotificationDialog extends React.Component {
+class ReversedActionNotificationDialog extends React.Component {
   constructor() {
     super();
 
@@ -37,17 +37,18 @@ class CompleteNotificationDialog extends React.Component {
           acceptAction={{
             text: 'Confirm',
             onClick: clickConfirm,
-            isEmphasized: true,
+            isEmphasized: false,
           }}
           rejectAction={{
             text: 'Close',
             onClick: this.handleCloseModal,
           }}
+          isReversed
         />
-        <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
+        <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
       </div>
     );
   }
 }
 
-export default CompleteNotificationDialog;
+export default ReversedActionNotificationDialog;
