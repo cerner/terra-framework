@@ -72,7 +72,6 @@ class Menu extends React.Component {
     this.pop = this.pop.bind(this);
     this.disableContainerChildrenFocus = this.disableContainerChildrenFocus.bind(this);
     this.enableContainerChildrenFocus = this.enableContainerChildrenFocus.bind(this);
-    this.menuElement = React.createRef();
     this.state = {
       stack: [this],
     };
