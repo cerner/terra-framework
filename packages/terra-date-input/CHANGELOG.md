@@ -3,5 +3,6 @@ ChangeLog
 
 Unreleased
 -----------------
-* Initial stable release
+* Initial stable release 
 * Removed `details` tag from doc-site.
+* Corrected lint warnings

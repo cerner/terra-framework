@@ -8,6 +8,7 @@ Unreleased
 * Revert test wrapper changes.
 * Update Jest snapshots
 * Removed `details` tag from doc-site.
+* Corrected lint warnings
 
 1.4.0 - (September 6, 2019)
 ------------------
