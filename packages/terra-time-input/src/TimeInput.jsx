@@ -133,7 +133,6 @@ class TimeInput extends React.Component {
     this.handleMeridiemInputFocus = this.handleMeridiemInputFocus.bind(this);
     this.handleMeridiemSelectFocus = this.handleMeridiemSelectFocus.bind(this);
     this.handleMeridiemButtonChange = this.handleMeridiemButtonChange.bind(this);
-    this.doesComponentNeedsUpdate = this.doesComponentNeedsUpdate.bind(this);
 
     let hour = TimeUtil.splitHour(value);
     let meridiem;
@@ -176,22 +175,11 @@ class TimeInput extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    let doesComponentNeedsUpdate = false;
-    const prevStateTimeValue = (this.props.showSeconds) ? `${prevState.hour}:${prevState.minute}:${prevState.second}` : `${prevState.hour}:${prevState.minute}`;
-    // Comparing partial time values on each update will result in incorrect comparisons of prevState and propsValue.
-    // Hence validating propsValue and prevState values to skip the comparison between them until time value is completely formed.
-    if (TimeUtil.validateTime(this.props.value, this.props.showSeconds) && TimeUtil.validateTime(prevStateTimeValue, this.props.showSeconds)) {
-      doesComponentNeedsUpdate = this.doesComponentNeedsUpdate(prevState);
-    }
-
-    if (this.props.value === prevProps.value
-      && this.props.variant === prevProps.variant && !doesComponentNeedsUpdate
-    ) {
-      return;
-    }
-
+    let skipStateUpdate = true;
     let { meridiem } = this.state;
     let hour = TimeUtil.splitHour(this.props.value);
+    const minute = TimeUtil.splitMinute(this.props.value);
+    const second = TimeUtil.splitSecond(this.props.value);
 
     if (this.props.variant === TimeUtil.FORMAT_12_HOUR) {
       if (!this.props.intl.messages['Terra.timeInput.am'] || !this.props.intl.messages['Terra.timeInput.pm']) {
@@ -215,27 +203,28 @@ class TimeInput extends React.Component {
       }
     }
 
+    const prevStateTimeValue = (this.props.showSeconds) ? `${prevState.hour}:${prevState.minute}:${prevState.second}` : `${prevState.hour}:${prevState.minute}`;
+    // Comparing partial time values on each update will result in incorrect comparisons of prevState and propsValue.
+    // Hence validating propsValue and prevState values to skip the comparison between them until time value is completely formed.
+    if (TimeUtil.validateTime(this.props.value, this.props.showSeconds) && TimeUtil.validateTime(prevStateTimeValue, this.props.showSeconds)) {
+      if (hour !== prevState.hour || minute !== prevState.minute || second !== prevState.second) {
+        skipStateUpdate = false;
+      }
+    }
+
+    if (this.props.value === prevProps.value
+      && this.props.variant === prevProps.variant && skipStateUpdate
+    ) {
+      return;
+    }
+
     // eslint-disable-next-line react/no-did-update-set-state
     this.setState({
       hour,
-      minute: TimeUtil.splitMinute(this.props.value),
-      second: TimeUtil.splitSecond(this.props.value),
+      minute,
+      second,
       meridiem,
     });
-  }
-
-  doesComponentNeedsUpdate(prevState) {
-    let hour = TimeUtil.splitHour(this.props.value);
-    if (this.props.variant === TimeUtil.FORMAT_12_HOUR) {
-      hour = TimeUtil.parseTwelveHourTime(hour, this.anteMeridiem, this.postMeridiem).hourString;
-    }
-    const minute = TimeUtil.splitMinute(this.props.value);
-    const second = TimeUtil.splitSecond(this.props.value);
-
-    if (hour !== prevState.hour || minute !== prevState.minute || second !== prevState.second) {
-      return true;
-    }
-    return false;
   }
 
   handleFocus(event) {
