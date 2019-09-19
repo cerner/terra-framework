@@ -13,6 +13,8 @@ Unreleased
 
 ### Added
 * Added en-CA translations.
+* Allowed entering '-' in the date input for en-CA date format.
+* Updated documentations to call out the supported ISO 8601 date format.
 
 4.12.0 - (September 6, 2019)
 ------------------

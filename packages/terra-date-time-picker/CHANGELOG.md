@@ -10,6 +10,7 @@ Unreleased
 
 ### Added
 * Added en-CA translations.
+* Updated documentations to call out the supported ISO 8601 date time format.
 
 4.12.0 - (September 6, 2019)
 ------------------
