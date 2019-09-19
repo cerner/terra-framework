@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.13.0 - (September 19, 2019)
+------------------
 ### Changed
 * Removed use of `componentWillReceiveProps`.
 * Removed `details` tag from doc-site.

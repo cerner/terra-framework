@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.13.0 - (September 19, 2019)
+------------------
 ### Changed
 * Added `browser.refresh()` to `date-time-picker-spec` to support wdio tests failing in theming repos.
 * Removed `details` tag from doc-site.
