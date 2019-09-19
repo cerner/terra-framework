@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added Instructions-For-Use (eIFU) Icon to Menu-Item.
 
+### Changed
+* Removed `details` tag from doc-site.
+
 6.11.0 - (September 6, 2019)
 ------------------
 ### Changed

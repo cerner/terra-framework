@@ -4,7 +4,7 @@ import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconBookmark from 'terra-icon/lib/icon/IconBookmark';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
-import Tabs from 'terra-tabs/lib/Tabs';
+import Tabs from 'terra-tabs';
 import TabContent from 'terra-tabs/lib/terra-dev-site/doc/example/TabContentTemplate';
 import styles from './common/TabExample.module.scss';
 

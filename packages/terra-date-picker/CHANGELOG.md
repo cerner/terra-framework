@@ -5,6 +5,8 @@ Unreleased
 ----------
 ### Changed
 * Removed use of `componentWillReceiveProps`.
+* Removed `details` tag from doc-site.
+* Doc site example module import syntax modified to use package.json name resolution
 
 ### Removed
 * Removed time-picker code from react-datepicker.
