@@ -13,6 +13,9 @@ Unreleased
 ### Fixed
 * fix clip bug.
 
+### Added
+* Added en-CA translations.
+
 1.4.0 - (September 6, 2019)
 ------------------
 ### Changed
