@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Removed `details` tag from doc-site.
+* Doc site example module import syntax modified to use package.json name resolution
+
+### Fixed
+* Fixed inconsistent failures of 'Application Header Name' tests.
 
 3.17.0 - (September 6, 2019)
 ------------------

@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'terra-button';
 import classNames from 'classnames/bind';
-import DialogModal from '../../../DialogModal';
+import DialogModal from 'terra-dialog-modal';
 import styles from './DialogModalWithCustomHeaderAndCustomFooter.module.scss';
 
 const cx = classNames.bind(styles);

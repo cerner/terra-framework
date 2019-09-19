@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Removed `details` tag from doc-site.
+* Corrected lint warnings
 
 4.20.0 - (September 6, 2019)
 ------------------

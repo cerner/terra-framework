@@ -3,8 +3,12 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Removed `details` tag from doc-site.
+* Doc site example module import syntax modified to use package.json name resolution
+
 ### Removed
-* Removed the Finnish language from the language to avoid confusion
+* Removed the non-supported Finnish language translations to avoid confusion
 
 6.11.0 - (September 6, 2019)
 ------------------
