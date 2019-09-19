@@ -4,7 +4,7 @@
 [![NPM version](https://badgen.net/npm/v/terra-date-time-picker)](https://www.npmjs.org/package/terra-date-time-picker)
 [![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
-The DateTimePicker component has a date picker for selecting date and a time input for entering time. DateTimePicker supports the Spring and Fall daylight saving time changes.
+The DateTimePicker component has a date picker for selecting date and a time input for entering time. DateTimePicker supports the Spring and Fall daylight saving time changes. A date and time can be expressed in many [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) formats. To reduce confusion and complexity, the date time props in DateTimePicker must be expressed in a specific format of the ISO 8601 representation of the date time. That is, any date time prop must conform to the `YYYY-MM-DDThh:mm:ss` format.
 
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-date-time-picker/docs)

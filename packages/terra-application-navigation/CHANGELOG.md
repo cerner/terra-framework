@@ -3,11 +3,17 @@ Changelog
 
 Unreleased
 ----------
+
+1.5.0 - (September 19, 2019)
+------------------
 ### Changed
 * Update underlying structure to handle new theme variables.
 * Revert test wrapper changes.
 * Removed `details` tag from doc-site.
 * Corrected lint warnings
+
+### Added
+* Added en-CA translations.
 
 1.4.0 - (September 6, 2019)
 ------------------

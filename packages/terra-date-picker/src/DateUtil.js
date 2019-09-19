@@ -186,7 +186,7 @@ class DateUtil {
    */
   static validDateInput(value) {
     /* eslint-disable-next-line no-useless-escape */
-    return value.length === 0 || /^[\d\/.]+$/.test(value);
+    return value.length === 0 || /^[\d\/.-]+$/.test(value);
   }
 
   /**
