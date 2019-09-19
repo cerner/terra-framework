@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'terra-button';
-import NotificationDialog from '../../../NotificationDialog';
+import NotificationDialog from 'terra-notification-dialog';
 
 const clickOK = () => {
   console.log('You clicked OK'); // eslint-disable-line no-console
