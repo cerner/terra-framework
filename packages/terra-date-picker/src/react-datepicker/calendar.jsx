@@ -1,7 +1,6 @@
 import YearDropdown from './year_dropdown'
 import MonthDropdown from './month_dropdown'
 import Month from './month'
-import Time from './time'
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
@@ -147,34 +146,6 @@ export default class Calendar extends React.Component {
      */
     onWeekSelect: PropTypes.func,
     /**
-     * Prop to determine whether or not to show the time picker.
-     */
-    showTimeSelect: PropTypes.bool,
-    /**
-     * Prop to choose format of time selected.
-     */
-    timeFormat: PropTypes.string,
-    /**
-     * Interval between 2 consecutive times on time picker in minutes.
-     */
-    timeIntervals: PropTypes.number,
-    /**
-     * A callback function to execute when a valid time is selected.
-     */
-    onTimeChange: PropTypes.func,
-    /**
-     * Minimum Value of time that can be selected by user.
-     */
-    minTime: PropTypes.object,
-    /**
-     * Maximum Value of time that can be selected by user.
-     */
-    maxTime: PropTypes.object,
-    /**
-     * Array to store time values disabled for selection.
-     */
-    excludeTimes: PropTypes.array,
-    /**
      * Prop to open calendar on the given date.
      */
     openToDate: PropTypes.object,
@@ -227,10 +198,6 @@ export default class Calendar extends React.Component {
      */
     useWeekdaysShort: PropTypes.bool,
     /**
-     * Prop to open a separate portal version of date picker .
-     */
-    withPortal: PropTypes.bool,
-    /**
      * Difference between utc and local time.
      */
     utcOffset: PropTypes.number,
@@ -260,31 +227,18 @@ export default class Calendar extends React.Component {
     super(props)
     this.state = {
       date: this.localizeDate(this.getDateInView()),
-      selectingDate: null,
-      monthContainer: this.monthContainer
+      selectingDate: null
     }
   }
 
-  componentDidMount () {
-    // monthContainer height is needed in time component
-    // to determine the height for the ul in the time component
-    // setState here so height is given after final component
-    // layout is rendered
-    if (this.props.showTimeSelect) {
-      this.assignMonthContainer = (() => {
-        this.setState({monthContainer: this.monthContainer})
-      })()
-    }
-  }
-
-  componentWillReceiveProps (nextProps) {
-    if (nextProps.preSelection && !isSameDay(nextProps.preSelection, this.props.preSelection)) {
+  componentDidUpdate (prevProps) {
+    if (this.props.preSelection && !isSameDay(this.props.preSelection, prevProps.preSelection)) {
       this.setState({
-        date: this.localizeDate(nextProps.preSelection)
+        date: this.localizeDate(this.props.preSelection)
       })
-    } else if (nextProps.openToDate && !isSameDay(nextProps.openToDate, this.props.openToDate)) {
+    } else if (this.props.openToDate && !isSameDay(this.props.openToDate, prevProps.openToDate)) {
       this.setState({
-        date: this.localizeDate(nextProps.openToDate)
+        date: this.localizeDate(this.props.openToDate)
       })
     }
   }
@@ -402,9 +356,7 @@ export default class Calendar extends React.Component {
     }
 
     let classes = ['react-datepicker-navigation', 'react-datepicker-navigation--next']
-    if (this.props.showTimeSelect) {
-      classes.push('react-datepicker-navigation--next--with-time')
-    }
+
     if (this.props.todayButton) {
       classes.push('react-datepicker-navigation--next--with-today-button')
     }
@@ -483,7 +435,7 @@ export default class Calendar extends React.Component {
       var monthDate = addMonths(cloneDate(this.state.date), i)
       var monthKey = `month-${i}`
       monthList.push(
-        <div key={monthKey} ref={div => { this.monthContainer = div }} className={cx('react-datepicker-month-container')}>
+        <div key={monthKey} className={cx('react-datepicker-month-container')}>
           <div className={cx('react-datepicker-header')}>
             {this.renderCurrentMonth(monthDate)}
             <div
@@ -528,26 +480,6 @@ export default class Calendar extends React.Component {
     return monthList
   }
 
-  renderTimeSection = () => {
-    if (this.props.showTimeSelect) {
-      return (
-        <Time
-          selected={this.props.selected}
-          onChange={this.props.onTimeChange}
-          format={this.props.timeFormat}
-          intervals={this.props.timeIntervals}
-          minTime={this.props.minTime}
-          maxTime={this.props.maxTime}
-          excludeTimes={this.props.excludeTimes}
-          todayButton={this.props.todayButton}
-          showMonthDropdown={this.props.showMonthDropdown}
-          showYearDropdown={this.props.showYearDropdown}
-          withPortal={this.props.withPortal}
-          monthRef={this.state.monthContainer} />
-      )
-    }
-  }
-
   render () {
     return (
       <div className={cx(['react-datepicker', this.props.className])} data-terra-date-picker-calendar>
@@ -555,7 +487,6 @@ export default class Calendar extends React.Component {
         {this.renderNextMonthButton()}
         {this.renderMonths()}
         {this.renderTodayButton()}
-        {this.renderTimeSection()}
         {this.props.children}
       </div>
     )

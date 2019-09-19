@@ -4,6 +4,11 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
+* Removed `details` tag from doc-site.
+
+4.20.0 - (September 6, 2019)
+------------------
+### Changed
 * Cleaned up imports in examples and test files
 
 ### Changed

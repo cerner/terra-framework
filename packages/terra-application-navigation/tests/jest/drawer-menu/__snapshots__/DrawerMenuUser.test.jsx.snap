@@ -10,15 +10,18 @@ exports[`DrawerMenuUser should render default element 1`] = `
     <div
       className="avatar-outline"
     />
-    <Avatar
-      alt="user-name"
-      color="auto"
-      image="user-src"
-      initials="user-initials"
-      isAriaHidden={false}
-      isDeceased={false}
-      size="0.561rem"
-    />
+    <div
+      className="avatar-inner"
+    >
+      <Avatar
+        alt="user-name"
+        color="auto"
+        image="user-src"
+        initials="user-initials"
+        isAriaHidden={false}
+        isDeceased={false}
+      />
+    </div>
   </div>
   <div
     className="info-container"
@@ -48,15 +51,18 @@ exports[`DrawerMenuUser should render with large variant 1`] = `
     <div
       className="avatar-outline"
     />
-    <Avatar
-      alt="user-name"
-      color="auto"
-      image="user-src"
-      initials="user-initials"
-      isAriaHidden={false}
-      isDeceased={false}
-      size="1.6521rem"
-    />
+    <div
+      className="avatar-inner"
+    >
+      <Avatar
+        alt="user-name"
+        color="auto"
+        image="user-src"
+        initials="user-initials"
+        isAriaHidden={false}
+        isDeceased={false}
+      />
+    </div>
   </div>
   <div
     className="info-container"
@@ -86,15 +92,18 @@ exports[`DrawerMenuUser should render with small variant 1`] = `
     <div
       className="avatar-outline"
     />
-    <Avatar
-      alt="user-name"
-      color="auto"
-      image="user-src"
-      initials="user-initials"
-      isAriaHidden={false}
-      isDeceased={false}
-      size="0.561rem"
-    />
+    <div
+      className="avatar-inner"
+    >
+      <Avatar
+        alt="user-name"
+        color="auto"
+        image="user-src"
+        initials="user-initials"
+        isAriaHidden={false}
+        isDeceased={false}
+      />
+    </div>
   </div>
   <div
     className="info-container"

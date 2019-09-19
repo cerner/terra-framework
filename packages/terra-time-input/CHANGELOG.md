@@ -5,6 +5,12 @@ Unreleased
 ----------
 ### Changed
 * Changed 12-hour format appearance for mobile and desktop.
+* Removed `details` tag from doc-site.
+* Doc site example module import syntax modified to use package.json name resolution
+
+4.9.0 - (September 6, 2019)
+------------------
+### Changed
 * Cleaned up imports in examples and test files
 * Updated `keycode-js` from `v1.0.4` to `v2.0.1`
 

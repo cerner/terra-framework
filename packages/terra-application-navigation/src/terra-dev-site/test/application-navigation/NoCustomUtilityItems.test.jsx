@@ -3,7 +3,7 @@ import React from 'react';
 import ApplicationBase from 'terra-application/lib/application-base';
 import ApplicationNavigation from '../../../ApplicationNavigation';
 
-// TODO: remove terra-application after it is incorporated into dev-site
+// TODO: remove terra-application after it is incorporated into dev-site for themes or themes are co-located
 const NoCustomUtilityItemsTest = () => (
   <ApplicationBase locale="en">
     <ApplicationNavigation

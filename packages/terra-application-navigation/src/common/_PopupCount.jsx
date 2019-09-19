@@ -9,12 +9,17 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * Whether or not the count should be present for height calculations, but hidden from view.
+   * To ensure that row heights are consistent, we need the ability to have the count and not see it.
+   */
+  isHidden: PropTypes.bool,
+  /**
    * The number of notifications to display.
    */
   value: PropTypes.number,
 };
 
-const PopupCount = ({ value }) => {
+const PopupCount = ({ isHidden, value }) => {
   const countRef = useRef();
 
   useAnimatedCount(countRef, value);
@@ -24,10 +29,12 @@ const PopupCount = ({ value }) => {
     validatedValue = '999+';
   }
 
+  const attrSpread = isHidden ? { 'aria-hidden': true } : undefined;
   return (
     <div
+      {...attrSpread}
       ref={countRef}
-      className={cx('popup-count')}
+      className={cx('popup-count', { 'is-hidden': isHidden })}
     >
       {validatedValue}
     </div>

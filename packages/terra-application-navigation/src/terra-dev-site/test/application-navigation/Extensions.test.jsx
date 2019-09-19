@@ -44,7 +44,7 @@ const handleItemSelection = (key, metaData) => {
 };
 /* eslint-enable no-alert */
 
-// TODO: remove terra-application after it is incorporated into dev-site
+// TODO: remove terra-application after it is incorporated into dev-site for themes or themes are co-located
 const ExtensionsTest = () => (
   <ApplicationBase locale="en">
     <ApplicationNavigation

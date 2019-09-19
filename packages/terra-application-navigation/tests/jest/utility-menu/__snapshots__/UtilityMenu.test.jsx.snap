@@ -468,6 +468,19 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                       >
                         test-text-2
                       </div>
+                      <PopupCount
+                        className="extension-row-count"
+                        isHidden={true}
+                        isInline={true}
+                        value={0}
+                      >
+                        <div
+                          aria-hidden={true}
+                          className="popup-count is-hidden"
+                        >
+                          0
+                        </div>
+                      </PopupCount>
                     </li>
                   </PopupMenuListItem>
                   <PopupMenuListItem
@@ -536,6 +549,19 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                       >
                         Terra.applicationNavigation.utilityMenu.settings
                       </div>
+                      <PopupCount
+                        className="extension-row-count"
+                        isHidden={true}
+                        isInline={true}
+                        value={0}
+                      >
+                        <div
+                          aria-hidden={true}
+                          className="popup-count is-hidden"
+                        >
+                          0
+                        </div>
+                      </PopupCount>
                     </li>
                   </PopupMenuListItem>
                   <PopupMenuListItem
@@ -600,6 +626,19 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                       >
                         Terra.applicationNavigation.utilityMenu.help
                       </div>
+                      <PopupCount
+                        className="extension-row-count"
+                        isHidden={true}
+                        isInline={true}
+                        value={0}
+                      >
+                        <div
+                          aria-hidden={true}
+                          className="popup-count is-hidden"
+                        >
+                          0
+                        </div>
+                      </PopupCount>
                     </li>
                   </PopupMenuListItem>
                 </ul>

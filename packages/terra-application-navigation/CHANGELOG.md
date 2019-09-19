@@ -4,6 +4,13 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Update underlying structure to handle new theme variables.
+* Revert test wrapper changes.
+* Removed `details` tag from doc-site.
+
+1.4.0 - (September 6, 2019)
+------------------
+### Changed
 * Cleaned up imports in examples and test files
 * Added check to prevent rendering of Utility Button or Nav Drawer Button if they are empty.
 * Updated `keycode-js` from `v1.0.4` to `v2.0.1`

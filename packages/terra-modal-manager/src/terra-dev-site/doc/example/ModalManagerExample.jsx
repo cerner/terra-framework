@@ -9,7 +9,7 @@ import {
   availableDisclosureHeights, availableDisclosureWidths, DisclosureManagerHeaderAdapter, DisclosureManagerContext,
 } from 'terra-disclosure-manager';
 
-import ModalManager from 'terra-modal-manager/lib/ModalManager';
+import ModalManager from 'terra-modal-manager';
 import styles from 'terra-modal-manager/lib/terra-dev-site/doc/example/example-styles.module.scss';
 
 const cx = classNames.bind(styles);
