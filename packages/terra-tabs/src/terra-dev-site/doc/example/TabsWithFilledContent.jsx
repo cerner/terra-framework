@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import Tabs from 'terra-tabs/lib/Tabs';
+import Tabs from 'terra-tabs';
 import TabContent from 'terra-tabs/lib/terra-dev-site/doc/example/TabContentTemplate';
 import styles from './common/TabExample.module.scss';
 

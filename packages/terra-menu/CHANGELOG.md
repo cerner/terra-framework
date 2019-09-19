@@ -5,6 +5,8 @@ Unreleased
 ----------
 ### Fixed
 * Added inert/aria-hidden to prevent screen reader from moving focus out of popup.
+### Changed
+* Removed `details` tag from doc-site.
 
 6.11.0 - (September 6, 2019)
 ------------------

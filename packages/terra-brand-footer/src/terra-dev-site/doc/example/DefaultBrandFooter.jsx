@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BrandFooter from 'terra-brand-footer/lib/BrandFooter';
+import BrandFooter from 'terra-brand-footer';
 import classNames from 'classnames/bind';
 import styles from './BrandFooterExampleCommon.module.scss';
 

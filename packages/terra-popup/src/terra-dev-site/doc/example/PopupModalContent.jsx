@@ -1,8 +1,8 @@
 import React from 'react';
 import Button from 'terra-button';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
-import Popup from 'terra-popup/lib/Popup';
-import Placeholder from 'terra-doc-template/lib/Placeholder';
+import Popup from 'terra-popup';
+import Placeholder from 'terra-doc-template';
 import classNames from 'classnames/bind';
 import styles from './PopupModalContent.module.scss';
 

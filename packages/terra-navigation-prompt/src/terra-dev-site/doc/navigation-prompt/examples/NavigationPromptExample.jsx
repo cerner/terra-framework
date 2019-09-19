@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import NavigationPrompt, { NavigationPromptCheckpoint } from '../../../../index';
+import NavigationPrompt, { NavigationPromptCheckpoint } from 'terra-navigation-prompt';
 import styles from './NavigationPromptExample.module.scss';
 
 const cx = classNames.bind(styles);
