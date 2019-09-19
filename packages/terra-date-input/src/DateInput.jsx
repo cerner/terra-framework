@@ -344,8 +344,6 @@ class DateInput extends React.Component {
       return;
     }
 
-    console.log('day change');
-
     const inputValue = event.target.value;
     const stateValue = this.state.day;
     const maxValue = 31;

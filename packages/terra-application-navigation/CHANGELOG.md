@@ -7,7 +7,11 @@ Unreleased
 * Update underlying structure to handle new theme variables.
 * Revert test wrapper changes.
 * Removed `details` tag from doc-site.
-* Theme border-bottom focus, fix clip bug.
+* Corrected lint warnings
+* Theme border-bottom focus
+
+### Fixed
+* fix clip bug.
 
 1.4.0 - (September 6, 2019)
 ------------------
