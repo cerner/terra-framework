@@ -1,5 +1,6 @@
 import { FormattedMessage, intlShape } from 'react-intl';
 import Button from 'terra-button';
+import * as KeyCode from 'keycode-js';
 import YearDropdown from './year_dropdown'
 import MonthDropdown from './month_dropdown'
 import Month from './month'
@@ -238,7 +239,8 @@ export default class Calendar extends React.Component {
     super(props)
     this.state = {
       date: this.localizeDate(this.getDateInView()),
-      selectingDate: null
+      selectingDate: null,
+      calendarIsKeyboardFocused: false,
     }
 
     this.todayBtnRef = React.createRef();
@@ -309,6 +311,22 @@ export default class Calendar extends React.Component {
     if (this.props.onRequestClose) {
       this.props.onRequestClose(event)
     }
+  }
+
+  handlePreviousMonthBtnKeyDown = (event) => {
+    if (event.shiftKey && event.keyCode === KeyCode.KEY_TAB) {
+      this.setState({ calendarIsKeyboardFocused: true })
+    }
+  }
+
+  handleTodayBtnKeyDown = (event) => {
+    if (event.keyCode === KeyCode.KEY_TAB) {
+      this.setState({ calendarIsKeyboardFocused: true })
+    }
+  }
+
+  handleMonthBlur = () => {
+    this.setState({ calendarIsKeyboardFocused: false })
   }
 
   setPreviousMonthBtnRef = (node) => {
@@ -438,6 +456,7 @@ export default class Calendar extends React.Component {
             variant="utility"
             text={text}
             onClick={this.decreaseMonth}
+            onKeyDown={this.handlePreviousMonthBtnKeyDown}
             refCallback={this.setPreviousMonthBtnRef} />
         )}
       </FormattedMessage>
@@ -525,6 +544,7 @@ export default class Calendar extends React.Component {
       <button
         className={cx('react-datepicker-today-button')}
         onClick={e => this.props.onSelect(getStartOfDate(now(this.props.utcOffset)), e)}
+        onKeyDown={this.handleTodayBtnKeyDown}
         ref={this.todayBtnRef}
       >
         {this.props.todayButton}
@@ -558,7 +578,9 @@ export default class Calendar extends React.Component {
         <div key={monthKey} onClick={this.handleOnClick} className={cx('react-datepicker-month-container')}>
           <Month
             day={monthDate}
+            isCalendarKeyboardFocused={this.state.calendarIsKeyboardFocused}
             dayClassName={this.props.dayClassName}
+            onMonthBlur={this.handleMonthBlur}
             onDayClick={this.handleDayClick}
             onDayMouseEnter={this.handleDayMouseEnter}
             onMouseLeave={this.handleMonthMouseLeave}

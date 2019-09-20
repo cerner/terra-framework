@@ -146,6 +146,12 @@ export default class Month extends React.Component {
     }
   }
 
+  handleMonthBlur = () => {
+    if (this.props.onMonthBlur) {
+      this.props.onMonthBlur()
+    }
+  }
+
   isWeekInMonth = (startOfWeek) => {
     const day = this.props.day
     const endOfWeek = utils.addDays(utils.cloneDate(startOfWeek), 6)
@@ -212,7 +218,8 @@ export default class Month extends React.Component {
     const getClassNames = cx({
       'react-datepicker-month': true,
       'react-datepicker-body': true,
-      'react-datepicker-month--selecting-range': this.props.selectingDate && (this.props.selectsStart || this.props.selectsEnd)
+      'react-datepicker-month--selecting-range': this.props.selectingDate && (this.props.selectsStart || this.props.selectsEnd),
+      'is-calendar-focused': this.props.isCalendarKeyboardFocused
     });
     return (
       <FormattedMessage id="Terra.datePicker.calendarInstructions">
@@ -222,6 +229,7 @@ export default class Month extends React.Component {
             className={getClassNames}
             onMouseLeave={this.handleMouseLeave}
             role="application"
+            onBlur={this.handleMonthBlur}
             aria-label={`${utils.getLocalizedDateForScreenReader(this.props.preSelection, { intl: this.props.intl, locale: this.props.locale })}. ${text}`}
             onKeyDown={this.props.handleCalendarKeyDown}
             ref={this.props.refCallback}

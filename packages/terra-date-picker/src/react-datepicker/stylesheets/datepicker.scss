@@ -485,4 +485,9 @@
       width: var(--terra-date-picker-medium-up-prev-next-month-icon-width, 1rem);
     }
   }
+
+  .is-calendar-focused {
+    outline: var(--terra-date-picker-month-focus-outline, 2px dashed #000);
+    outline-offset: var(--terra-date-picker-month-focus-outline-offset, 0);
+  }
 }
