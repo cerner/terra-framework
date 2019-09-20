@@ -425,7 +425,7 @@ export default class Calendar extends React.Component {
 
   renderPreviousMonthButton = () => {
     if (!this.props.forceShowMonthNavigation && allDaysDisabledBefore(this.state.date, 'month', this.props)) {
-      return
+      return (<div></div>)
     }
 
     return <Button
@@ -440,7 +440,7 @@ export default class Calendar extends React.Component {
 
   renderNextMonthButton = () => {
     if (!this.props.forceShowMonthNavigation && allDaysDisabledAfter(this.state.date, 'month', this.props)) {
-      return
+      return (<div></div>)
     }
 
     return <Button
