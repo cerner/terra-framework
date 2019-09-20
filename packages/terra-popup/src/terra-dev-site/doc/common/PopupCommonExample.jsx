@@ -2,7 +2,7 @@ import React from 'react';
 import Button from 'terra-button';
 import PropTypes from 'prop-types';
 import Popup from 'terra-popup';
-import Placeholder from 'terra-doc-template';
+import Placeholder from 'terra-doc-template/lib/Placeholder';
 
 const propTypes = {
   attachmentBehavior: PropTypes.string,
