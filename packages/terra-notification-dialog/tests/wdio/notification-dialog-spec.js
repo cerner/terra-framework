@@ -105,7 +105,7 @@ Terra.describeViewports('notification-dialog', ['tiny', 'medium', 'large'], () =
   });
 
   describe('Notification-dialog with Content', () => {
-    it('Notification-dialog with No Message', () => {
+    it('Notification-dialog with Content', () => {
       browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/content-notification-dialog');
       browser.click('#trigger-notification-dialog');
       Terra.validates.element({ selector });
@@ -113,7 +113,7 @@ Terra.describeViewports('notification-dialog', ['tiny', 'medium', 'large'], () =
   });
 
   describe('Notification-dialog with Reversed Actions', () => {
-    it('Notification-dialog with No Message', () => {
+    it('Notification-dialog with Reversed Actions', () => {
       browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-no-message');
       browser.click('#trigger-notification-dialog');
       Terra.validates.element({ selector });
