@@ -930,6 +930,7 @@ exports[`Header should render with function callbacks 1`] = `
               isHeaderDisabled={false}
               isOpen={false}
               onRequestClose={[Function]}
+              popupContentRole="dialog"
               targetRef={[Function]}
             />
           </Extensions>
