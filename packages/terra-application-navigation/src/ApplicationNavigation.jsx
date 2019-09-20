@@ -337,7 +337,9 @@ const ApplicationNavigation = ({
    * accurate.
    */
   useLayoutEffect(() => {
-    if (!contentLayoutRef.current) {
+    const contentLayoutElement = contentLayoutRef.current;
+
+    if (!contentLayoutElement) {
       return undefined;
     }
 
@@ -351,12 +353,12 @@ const ApplicationNavigation = ({
       }
     }
 
-    contentLayoutRef.current.addEventListener('transitionend', cleanupContentTransition);
+    contentLayoutElement.addEventListener('transitionend', cleanupContentTransition);
 
     return () => {
-      contentLayoutRef.current.removeEventListener('transitionend', cleanupContentTransition);
+      contentLayoutElement.removeEventListener('transitionend', cleanupContentTransition);
     };
-  }, [contentLayoutRef.current]);
+  }, [contentLayoutRef]);
 
   /**
    * If the ApplicationNavigation is rendering at non-compact breakpoints, and the drawer menu is still
