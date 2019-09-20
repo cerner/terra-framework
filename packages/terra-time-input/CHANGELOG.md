@@ -3,10 +3,16 @@ Changelog
 
 Unreleased
 ----------
+
+4.10.0 - (September 19, 2019)
+------------------
 ### Changed
 * Changed 12-hour format appearance for mobile and desktop.
 * Removed `details` tag from doc-site.
 * Doc site example module import syntax modified to use package.json name resolution
+
+### Added
+* Added en-CA translations.
 
 4.9.0 - (September 6, 2019)
 ------------------
