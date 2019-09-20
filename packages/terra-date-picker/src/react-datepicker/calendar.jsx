@@ -428,14 +428,20 @@ export default class Calendar extends React.Component {
       return (<div></div>)
     }
 
-    return <Button
-      className={cx('react-datepicker-navigation--previous')}
-      icon={<span className={cx('prev-month-icon')} />}
-      isIconOnly
-      variant="utility"
-      text="Previous Month"
-      onClick={this.decreaseMonth}
-      refCallback={this.setPreviousMonthBtnRef}  />
+    return (
+      <FormattedMessage id="Terra.datePicker.previousMonth">
+        {text => (
+          <Button
+            className={cx('react-datepicker-navigation--previous')}
+            icon={<span className={cx('prev-month-icon')} />}
+            isIconOnly
+            variant="utility"
+            text={text}
+            onClick={this.decreaseMonth}
+            refCallback={this.setPreviousMonthBtnRef} />
+        )}
+      </FormattedMessage>
+    )
   }
 
   renderNextMonthButton = () => {
@@ -443,14 +449,20 @@ export default class Calendar extends React.Component {
       return (<div></div>)
     }
 
-    return <Button
-      className={cx('react-datepicker-navigation--next')}
-      icon={<span className={cx('next-month-icon')} />}
-      isIconOnly
-      variant="utility"
-      text="Next Month"
-      onClick={this.increaseMonth}
-      refCallback={this.setNextMonthBtnRef} />
+    return (
+      <FormattedMessage id="Terra.datePicker.nextMonth">
+        {text => (
+          <Button
+            className={cx('react-datepicker-navigation--next')}
+            icon={<span className={cx('next-month-icon')} />}
+            isIconOnly
+            variant="utility"
+            text={text}
+            onClick={this.increaseMonth}
+            refCallback={this.setNextMonthBtnRef} />
+        )}
+      </FormattedMessage>
+    )
   }
 
   renderCurrentMonth = (date = this.state.date) => {

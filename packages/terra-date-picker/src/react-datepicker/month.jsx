@@ -1,5 +1,5 @@
 import React from 'react'
-import { intlShape } from 'react-intl';
+import { FormattedMessage, intlShape } from 'react-intl';
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 import Week from './week'
@@ -215,17 +215,21 @@ export default class Month extends React.Component {
       'react-datepicker-month--selecting-range': this.props.selectingDate && (this.props.selectsStart || this.props.selectsEnd)
     });
     return (
-      <div
-        tabIndex="0"
-        className={getClassNames}
-        onMouseLeave={this.handleMouseLeave}
-        role="application"
-        aria-label={`${utils.getLocalizedDateForScreenReader(this.props.preSelection, { intl: this.props.intl, locale: this.props.locale} )}. To change the selection, use the arrow keys. Press Enter to select a date. Press Escape to close date picker popup.`}
-        onKeyDown={this.props.handleCalendarKeyDown}
-        ref={this.props.refCallback}
-      >
-        {this.renderWeeks()}
-      </div>
+      <FormattedMessage id="Terra.datePicker.calendarInstructions">
+        {text => (
+          <div
+            tabIndex="0"
+            className={getClassNames}
+            onMouseLeave={this.handleMouseLeave}
+            role="application"
+            aria-label={`${utils.getLocalizedDateForScreenReader(this.props.preSelection, { intl: this.props.intl, locale: this.props.locale })}. ${text}`}
+            onKeyDown={this.props.handleCalendarKeyDown}
+            ref={this.props.refCallback}
+          >
+            {this.renderWeeks()}
+          </div>
+        )}
+      </FormattedMessage>
     )
   }
 }
