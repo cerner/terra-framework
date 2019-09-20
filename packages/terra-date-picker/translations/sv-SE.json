@@ -6,5 +6,8 @@
   "Terra.datePicker.today": "I dag",
   "Terra.datePicker.monthLabel": "Månad",
   "Terra.datePicker.yearLabel": "År",
-  "Terra.datePicker.date": "Datum"
+  "Terra.datePicker.date": "Datum",
+  "Terra.datePicker.nextMonth": "Nästa månad",
+  "Terra.datePicker.previousMonth": "Föregående månad",
+  "Terra.datePicker.calendarInstructions": "Använd piltangenterna för att ändra urval. Tryck Enter för att välja ett datum. Tryck Escape för att stänga Datumväljaren."
 }
