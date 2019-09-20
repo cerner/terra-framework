@@ -1,7 +1,7 @@
 import React from 'react';
 import CollapsibleMenuView from '../../../CollapsibleMenuView';
 
-const locales = ['en', 'en-AU', 'en-US', 'en-GB', 'es', 'es-US', 'es-ES', 'de', 'fr', 'fr-FR', 'nl', 'nl-BE', 'pt', 'pt-BR', 'sv', 'sv-SE'];
+const locales = ['en', 'en-AU', 'en-CA', 'en-US', 'en-GB', 'es', 'es-US', 'es-ES', 'de', 'fr', 'fr-FR', 'nl', 'nl-BE', 'pt', 'pt-BR', 'sv', 'sv-SE'];
 const CollapsibleMenuViewSingleItem = () => {
   const items = [];
   items.push(

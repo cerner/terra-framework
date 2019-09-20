@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Included the en-CA locale in the SingleItemGroup test.
+
 ### Removed
 * Removed the non-supported Finnish language translations to avoid confusion
 
