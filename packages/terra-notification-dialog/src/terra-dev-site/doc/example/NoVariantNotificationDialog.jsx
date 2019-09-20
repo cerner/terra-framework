@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'terra-button';
-import NotificationDialog from '../../../NotificationDialog';
+import NotificationDialog from 'terra-notification-dialog';
 
 const clickConfirm = () => {
   console.log('You clicked confirm'); // eslint-disable-line no-console

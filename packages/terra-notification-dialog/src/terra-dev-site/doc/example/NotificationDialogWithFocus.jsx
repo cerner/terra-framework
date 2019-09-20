@@ -1,9 +1,9 @@
 import React from 'react';
 import Button from 'terra-button';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
-import Popup from 'terra-popup/lib/Popup';
-import Placeholder from 'terra-doc-template/lib/Placeholder';
-import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
+import Popup from 'terra-popup';
+import Placeholder from 'terra-doc-template';
+import NotificationDialog, { NotificationDialogVariants } from 'terra-notification-dialog';
 
 const clickConfirm = () => {
   console.log('You clicked confirm'); // eslint-disable-line no-console

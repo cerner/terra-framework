@@ -1,6 +1,6 @@
 # Terra Date Picker
 
-DatePicker is an input component that provides users a way to enter or select a date from the date picker. The date format used in the input is localized based on the locale. The display of the month and days of the week in the date picker is also localized based on the locale. The format for any date string set via the props must be in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+DatePicker is an input component that provides users a way to enter or select a date from the date picker. The date format used in the input is localized based on the locale. The display of the month and days of the week in the date picker is also localized based on the locale. DatePicker leverages the [momentjs](http://momentjs.com/docs/) library for date formatting and manipulations. A date can be expressed in many [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) formats. To reduce confusion and complexity, the date props in terra-date-picker must be expressed in a specific format of the ISO 8601 representation of the date. That is, any date prop must conform to the `YYYY-MM-DD` format.
 
 ## Controlled vs. Uncontrolled Date Picker
 
@@ -23,9 +23,6 @@ In a controlled date picker, the consumer is responsible for managing the state 
 <!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
 ## Peer Dependencies
 
-<details>
-<summary>View information on this component's peer dependencies.</summary>
-
 This component requires the following peer dependencies be installed in your app for the component to properly function.
 
 | Peer Dependency | Version |
@@ -34,8 +31,6 @@ This component requires the following peer dependencies be installed in your app
 | react-dom | ^16.8.5 |
 | react-intl | ^2.8.0 |
 
-
-</details>
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Implementation Notes:

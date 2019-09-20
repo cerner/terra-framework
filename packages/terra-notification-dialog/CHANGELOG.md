@@ -13,6 +13,15 @@ Unreleased
 * Added a 'content' node prop that will display the given node in the Dialog after 'startMessage'
 * Added an 'endMessage' string prop that will display a message after both 'startMessage' and 'content'
 
+3.12.0 - (September 19, 2019)
+------------------
+### Changed
+* Removed `details` tag from doc-site.
+* Doc site example module import syntax modified to use package.json name resolution
+
+### Added
+* Added en-CA translations.
+
 3.11.0 - (September 6, 2019)
 ------------------
 ### Changed

@@ -14,7 +14,7 @@ import IconPage6 from 'terra-icon/lib/icon/IconPadlock';
 import IconPage7 from 'terra-icon/lib/icon/IconFeatured';
 import classNames from 'classnames/bind';
 
-import ApplicationLayout, { Utils } from 'terra-application-layout/lib/ApplicationLayout';
+import ApplicationLayout, { Utils } from 'terra-application-layout';
 import ApplicationContent from 'terra-application-layout/lib/terra-dev-site/doc/common/ApplicationContent';
 import ApplicationMenu from 'terra-application-layout/lib/terra-dev-site/doc/common/ApplicationMenu';
 import UtilityOption from 'terra-application-layout/lib/terra-dev-site/doc/common/UtilityOption';
