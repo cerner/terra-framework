@@ -3,6 +3,15 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Changes
+* Renamed 'message' prop to 'startMessage'
+* Renamed 'primaryAction' prop to 'acceptAction'
+* Renamed 'secondaryAction' prop to 'rejectAction'
+
+### Added
+* Added an additional 'isEmphasized' bool to the 'acceptAction' prop object shape to allow changing the resultant button to non-emphasized.
+* Added a 'content' node prop that will display the given node in the Dialog after 'startMessage'
+* Added an 'endMessage' string prop that will display a message after both 'startMessage' and 'content'
 
 3.11.0 - (September 6, 2019)
 ------------------
