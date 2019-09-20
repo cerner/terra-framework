@@ -6,8 +6,14 @@ Unreleased
 ### Fixed
 * Fixed time-input componentDidUpdate for updating time-input on re-entering the same missing hour in time-input.
 
+4.10.0 - (September 19, 2019)
+------------------
 ### Changed
+* Removed `details` tag from doc-site.
 * Doc site example module import syntax modified to use package.json name resolution
+
+### Added
+* Added en-CA translations.
 
 4.9.0 - (September 6, 2019)
 ------------------

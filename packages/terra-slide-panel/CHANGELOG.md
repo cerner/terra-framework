@@ -3,7 +3,11 @@ Changelog
 
 Unreleased
 ----------
+
+3.15.0 - (September 19, 2019)
+------------------
 ### Changed
+* Removed `details` tag from doc-site.
 * Doc site example module import syntax modified to use package.json name resolution
 
 3.14.0 - (September 6, 2019)

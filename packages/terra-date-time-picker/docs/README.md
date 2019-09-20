@@ -1,6 +1,6 @@
 # Terra Date Time Picker
 
-The DateTimePicker component composes the [DatePicker][1] component for selecting date and the [TimeInput][2] component for entering time. DateTimePicker supports the Spring and Fall daylight saving time changes in the following behaviors:
+The DateTimePicker component composes the [DatePicker][1] component for selecting date and the [TimeInput][2] component for entering time. A date and time can be expressed in many [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) formats. To reduce confusion and complexity, the date time props in DateTimePicker must be expressed in a specific format of the ISO 8601 representation of the date time. That is, any date time prop must conform to the `YYYY-MM-DDThh:mm:ss` format. DateTimePicker supports the Spring and Fall daylight saving time changes in the following behaviors:
 
 Spring: If you enter a date and time that falls within the missing hour during the Spring time change, the time will automatically be adjusted to the next relevant hour when the component loses focus. In the central time zone, the missing hour occurs between 2:00 and 2:59. For example, if the entered time is 2:15, the component will automatically adjust the time to the next hour at 3:15.
 
@@ -15,9 +15,6 @@ Fall: If you enter a date and time that falls within the ambiguous hour during t
 <!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
 ## Peer Dependencies
 
-<details>
-<summary>View information on this component's peer dependencies.</summary>
-
 This component requires the following peer dependencies be installed in your app for the component to properly function.
 
 | Peer Dependency | Version |
@@ -26,8 +23,6 @@ This component requires the following peer dependencies be installed in your app
 | react-dom | ^16.8.5 |
 | react-intl | ^2.8.0 |
 
-
-</details>
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Implementation Notes:
