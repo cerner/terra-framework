@@ -3,15 +3,20 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Included the en-CA locale in the SingleItemGroup test.
+
+### Removed
+* Removed the non-supported Finnish language translations to avoid confusion
 
 6.12.0 - (September 19, 2019)
 ------------------
+### Added
+* Added en-CA translations.
+
 ### Changed
 * Removed `details` tag from doc-site.
 * Doc site example module import syntax modified to use package.json name resolution
-
-### Added
-* Added en-CA translations.
 
 6.11.0 - (September 6, 2019)
 ------------------
