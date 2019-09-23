@@ -5,6 +5,8 @@ Unreleased
 ----------
 ### Added
 * Added ApplicationLoadingOverlay and ApplicationErrorBoundary
+* Integrating ApplicationLoadingOverlay and ApplicationErrorBoundary with ApplicationBase
+* Adding NavigationPrompt handling to ApplicationBase
 
 ### Changed
 * Removed `details` tag from doc-site.

@@ -42,7 +42,6 @@ Terra.describeViewports('ApplicationBase', ['small', 'large'], () => {
     function hasAlert() {
       try {
         // alertText will throw an exception if no alert is presented.
-        // AFAIK this is the only way to detect whether an alert is presented.
         browser.alertText();
         return true;
       } catch (e) {
