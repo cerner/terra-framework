@@ -175,7 +175,7 @@ class TimeInput extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    const variant = TimeUtil.getVariantFromLocale(this.props)
+    const variant = TimeUtil.getVariantFromLocale(this.props);
 
     if (
       this.props.value === prevProps.value
