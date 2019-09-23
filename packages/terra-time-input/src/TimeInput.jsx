@@ -175,9 +175,11 @@ class TimeInput extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
+    const variant = TimeUtil.getVariantFromLocale(this.props)
+
     if (
       this.props.value === prevProps.value
-      && TimeUtil.getVariantFromLocale(this.props) === TimeUtil.getVariantFromLocale(prevProps)
+      && variant === TimeUtil.getVariantFromLocale(prevProps)
     ) {
       return;
     }
@@ -185,7 +187,7 @@ class TimeInput extends React.Component {
     let hour = TimeUtil.splitHour(this.props.value);
     let { meridiem } = this.state;
 
-    if (TimeUtil.getVariantFromLocale(this.props) === TimeUtil.FORMAT_12_HOUR) {
+    if (variant === TimeUtil.FORMAT_12_HOUR) {
       this.anteMeridiem = this.props.intl.formatMessage({ id: 'Terra.timeInput.am' });
       this.postMeridiem = this.props.intl.formatMessage({ id: 'Terra.timeInput.pm' });
 
