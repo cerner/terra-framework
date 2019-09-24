@@ -31,6 +31,7 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set icon on
   }
   isActive={false}
   isDisabled={false}
+  isInstructionsForUse={false}
   isSelected={false}
   subMenuItems={Array []}
   text="Testing"
@@ -68,6 +69,7 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set icon pr
   }
   isActive={false}
   isDisabled={false}
+  isInstructionsForUse={false}
   isSelected={false}
   subMenuItems={Array []}
   text="Testing"
@@ -105,6 +107,7 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set isRever
   }
   isActive={false}
   isDisabled={false}
+  isInstructionsForUse={false}
   isSelected={false}
   subMenuItems={Array []}
   text="Testing"
@@ -142,6 +145,7 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set selecte
   }
   isActive={false}
   isDisabled={false}
+  isInstructionsForUse={false}
   isSelected={false}
   subMenuItems={Array []}
   text="Testing"
@@ -179,6 +183,7 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a disabl
   }
   isActive={false}
   isDisabled={true}
+  isInstructionsForUse={false}
   isSelected={false}
   subMenuItems={Array []}
   text="Testing"
@@ -216,6 +221,7 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a menu i
   }
   isActive={false}
   isDisabled={false}
+  isInstructionsForUse={false}
   isSelected={false}
   subMenuItems={Array []}
   text="Testing"
@@ -253,6 +259,7 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a menu i
   }
   isActive={false}
   isDisabled={false}
+  isInstructionsForUse={false}
   isSelected={false}
   subMenuItems={
     Array [
@@ -300,6 +307,7 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should set selected pr
   }
   isActive={false}
   isDisabled={false}
+  isInstructionsForUse={false}
   isSelected={true}
   subMenuItems={Array []}
   text="Testing"

@@ -94,4 +94,11 @@ describe('Menu Item-Triggers onClick Function', () => {
     browser.keys('Space');
     expect(browser.getText('#clickNumber')).to.contain('3');
   });
+
+  describe('Menu Item-With eIFU Icon, eIFU Icon is considered over check mark icon ', () => {
+    before(() => browser.url('/#/raw/tests/terra-menu/menu/menu-item/menu-item-with-instructions-for-use'));
+
+    Terra.it.matchesScreenshot();
+    Terra.it.isAccessible({ rules: ignoredA11y });
+  });
 });
