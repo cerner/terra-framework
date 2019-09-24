@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added `aria-label` to the Slide Panel container.
+* Added an optional `ariaLabel` prop.
 
 3.15.0 - (September 19, 2019)
 ------------------
