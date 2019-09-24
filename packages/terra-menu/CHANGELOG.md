@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added Instructions-For-Use (eIFU) Icon to Menu-Item.
 
 6.12.0 - (September 19, 2019)
 ------------------
