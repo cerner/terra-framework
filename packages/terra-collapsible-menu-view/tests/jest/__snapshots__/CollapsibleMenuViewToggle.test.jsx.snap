@@ -31,6 +31,7 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should render a sele
   }
   isActive={false}
   isDisabled={false}
+  isInstructionsForUse={false}
   isSelectable={true}
   isSelected={false}
   subMenuItems={Array []}
@@ -69,6 +70,7 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set isDisable
   }
   isActive={false}
   isDisabled={true}
+  isInstructionsForUse={false}
   isSelectable={true}
   isSelected={false}
   subMenuItems={Array []}
@@ -107,6 +109,7 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set isSelecta
   }
   isActive={false}
   isDisabled={false}
+  isInstructionsForUse={false}
   isSelectable={false}
   isSelected={false}
   subMenuItems={Array []}
@@ -145,6 +148,7 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set selected 
   }
   isActive={false}
   isDisabled={false}
+  isInstructionsForUse={false}
   isSelectable={true}
   isSelected={true}
   subMenuItems={Array []}
