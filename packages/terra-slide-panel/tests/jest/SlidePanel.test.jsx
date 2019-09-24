@@ -93,6 +93,13 @@ it('should render a SlidePanel with panel content', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+it('should render a SlidePanel with ariaLabel specified', () => {
+  const slidePanel = <SlidePanel ariaLabel="Test slide panel" />;
+  const wrapper = render(slidePanel);
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 it('should render a SlidePanel with the given extra attributes', () => {
   const slidePanel = (
     <SlidePanel panelBehavior="overlay" id="my-slide-panel" className="pad-this-slide-panel" data-test-attr="ahoy thar" />

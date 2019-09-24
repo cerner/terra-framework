@@ -12,6 +12,11 @@ const SlidePanelPositions = {
 
 const propTypes = {
   /**
+   * String that labels the Details Panel for screen readers.
+   */
+  ariaLabel: PropTypes.string,
+
+  /**
    * The component to display in the main content area.
    */
   mainContent: PropTypes.node,
@@ -53,6 +58,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  ariaLabel: 'Details Panel',
   panelBehavior: 'overlay',
   panelPosition: SlidePanelPositions.END,
   panelSize: 'small',
@@ -79,6 +85,7 @@ class SlidePanel extends React.Component {
 
   render() {
     const {
+      ariaLabel,
       mainContent,
       panelContent,
       panelBehavior,
@@ -98,7 +105,7 @@ class SlidePanel extends React.Component {
     ]);
 
     const panelDiv = (
-      <div className={cx(['panel'])} tabIndex="-1" aria-hidden={!isOpen ? 'true' : 'false'} ref={this.setPanelNode}>
+      <div className={cx(['panel'])} tabIndex="-1" aria-label={ariaLabel} aria-hidden={!isOpen ? 'true' : 'false'} ref={this.setPanelNode}>
         {panelContent}
       </div>
     );

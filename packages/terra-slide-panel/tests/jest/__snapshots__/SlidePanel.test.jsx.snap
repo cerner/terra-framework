@@ -14,6 +14,7 @@ exports[`should override user provided attributes that aren't className 1`] = `
   />
   <div
     aria-hidden="true"
+    aria-label="Details Panel"
     class="panel"
     tabindex="-1"
   />
@@ -33,6 +34,7 @@ exports[`should render a SlidePanel with a fullscreen state 1`] = `
   />
   <div
     aria-hidden="true"
+    aria-label="Details Panel"
     class="panel"
     tabindex="-1"
   />
@@ -52,6 +54,27 @@ exports[`should render a SlidePanel with an open state 1`] = `
   />
   <div
     aria-hidden="false"
+    aria-label="Details Panel"
+    class="panel"
+    tabindex="-1"
+  />
+</div>
+`;
+
+exports[`should render a SlidePanel with ariaLabel specified 1`] = `
+<div
+  class="slide-panel"
+  data-slide-panel-panel-behavior="overlay"
+  data-slide-panel-panel-position="end"
+  data-slide-panel-panel-size="small"
+>
+  <div
+    class="main"
+    tabindex="-1"
+  />
+  <div
+    aria-hidden="true"
+    aria-label="Test slide panel"
     class="panel"
     tabindex="-1"
   />
@@ -71,6 +94,7 @@ exports[`should render a SlidePanel with fill 1`] = `
   />
   <div
     aria-hidden="true"
+    aria-label="Details Panel"
     class="panel"
     tabindex="-1"
   />
@@ -94,6 +118,7 @@ exports[`should render a SlidePanel with main content 1`] = `
   </div>
   <div
     aria-hidden="true"
+    aria-label="Details Panel"
     class="panel"
     tabindex="-1"
   />
@@ -113,6 +138,7 @@ exports[`should render a SlidePanel with panel content 1`] = `
   />
   <div
     aria-hidden="true"
+    aria-label="Details Panel"
     class="panel"
     tabindex="-1"
   >
@@ -136,6 +162,7 @@ exports[`should render a SlidePanel with panelBehavior = overlay 1`] = `
   />
   <div
     aria-hidden="true"
+    aria-label="Details Panel"
     class="panel"
     tabindex="-1"
   />
@@ -155,6 +182,7 @@ exports[`should render a SlidePanel with panelBehavior = squish 1`] = `
   />
   <div
     aria-hidden="true"
+    aria-label="Details Panel"
     class="panel"
     tabindex="-1"
   />
@@ -174,6 +202,7 @@ exports[`should render a SlidePanel with panelPosition = end 1`] = `
   />
   <div
     aria-hidden="true"
+    aria-label="Details Panel"
     class="panel"
     tabindex="-1"
   />
@@ -189,6 +218,7 @@ exports[`should render a SlidePanel with panelPosition = start 1`] = `
 >
   <div
     aria-hidden="true"
+    aria-label="Details Panel"
     class="panel"
     tabindex="-1"
   />
@@ -212,6 +242,7 @@ exports[`should render a SlidePanel with panelSize = large 1`] = `
   />
   <div
     aria-hidden="true"
+    aria-label="Details Panel"
     class="panel"
     tabindex="-1"
   />
@@ -231,6 +262,7 @@ exports[`should render a SlidePanel with panelSize = small 1`] = `
   />
   <div
     aria-hidden="true"
+    aria-label="Details Panel"
     class="panel"
     tabindex="-1"
   />
@@ -252,6 +284,7 @@ exports[`should render a SlidePanel with the given extra attributes 1`] = `
   />
   <div
     aria-hidden="true"
+    aria-label="Details Panel"
     class="panel"
     tabindex="-1"
   />
@@ -271,6 +304,7 @@ exports[`should render a default SlidePanel with no props 1`] = `
   />
   <div
     aria-hidden="true"
+    aria-label="Details Panel"
     class="panel"
     tabindex="-1"
   />
