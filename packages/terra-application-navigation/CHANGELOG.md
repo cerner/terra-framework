@@ -12,6 +12,10 @@ Unreleased
 * Update Jest snapshots
 * Removed `details` tag from doc-site.
 * Corrected lint warnings
+* Theme border-bottom focus
+
+### Fixed
+* fix clip bug.
 
 ### Added
 * Added en-CA translations.
