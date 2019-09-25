@@ -9,6 +9,7 @@ Unreleased
 ### Changed
 * Update underlying structure to handle new theme variables.
 * Revert test wrapper changes.
+* Update Jest snapshots
 * Removed `details` tag from doc-site.
 * Corrected lint warnings
 * Theme border-bottom focus

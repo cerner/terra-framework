@@ -2,6 +2,9 @@
   "Terra.datePicker.dateFormat": "DD.MM.YYYY",
   "Terra.datePicker.disabled": "Liikuntarajoitteinen",
   "Terra.datePicker.openCalendar": "Avaa Kalenteri",
+  "Terra.datePicker.closeCalendar": "Kiinni",
   "Terra.datePicker.today": "Tänään",
+  "Terra.datePicker.monthLabel": "Kuukausi",
+  "Terra.datePicker.yearLabel": "Vuosi",
   "Terra.datePicker.date": "Ðâté"
 }
