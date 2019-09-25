@@ -93,8 +93,8 @@ it('should render a SlidePanel with panel content', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-it('should render a SlidePanel with ariaLabel specified', () => {
-  const slidePanel = <SlidePanel ariaLabel="Test slide panel" />;
+it('should render a SlidePanel with panelAriaLabel and mainAriaLabel specified', () => {
+  const slidePanel = <SlidePanel panelAriaLabel="Panel content area" mainAriaLabel="Main content area" />;
   const wrapper = render(slidePanel);
 
   expect(wrapper).toMatchSnapshot();

@@ -21,7 +21,6 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
       }
     >
       <SlidePanel
-        ariaLabel="Details Panel"
         fill={true}
         isOpen={true}
         mainContent={
@@ -108,7 +107,6 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
           </div>
           <div
             aria-hidden="false"
-            aria-label="Details Panel"
             className="panel"
             tabIndex="-1"
           >
@@ -276,7 +274,6 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
       }
     >
       <SlidePanel
-        ariaLabel="Details Panel"
         className="test"
         fill={true}
         id="my-slide-panel-manager"
@@ -334,7 +331,6 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
           </div>
           <div
             aria-hidden="true"
-            aria-label="Details Panel"
             className="panel"
             tabIndex="-1"
           >
@@ -395,7 +391,6 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
       }
     >
       <SlidePanel
-        ariaLabel="Details Panel"
         fill={true}
         isOpen={false}
         mainContent={
@@ -450,7 +445,6 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
           </div>
           <div
             aria-hidden="true"
-            aria-label="Details Panel"
             className="panel"
             tabIndex="-1"
           >
@@ -511,7 +505,6 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
       }
     >
       <SlidePanel
-        ariaLabel="Details Panel"
         fill={true}
         isOpen={false}
         mainContent={
@@ -566,7 +559,6 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
           </div>
           <div
             aria-hidden="true"
-            aria-label="Details Panel"
             className="panel"
             tabIndex="-1"
           >
