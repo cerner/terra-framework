@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+3.13.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 ### Fixed
 * Check whether `focus` is defined for the modal trigger element before restoring focus.
 
