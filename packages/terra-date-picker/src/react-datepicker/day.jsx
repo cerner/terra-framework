@@ -14,7 +14,7 @@ import {
   getDayOfWeekCode,
   getLocalizedDateForScreenReader
 } from './date_utils'
-import styles from './stylesheets/datepicker.scss'
+import styles from './stylesheets/datepicker.module.scss'
 
 const cx = classNames.bind(styles);
 

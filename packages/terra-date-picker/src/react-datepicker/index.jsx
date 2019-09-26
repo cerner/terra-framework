@@ -36,7 +36,7 @@ import {
   getLocalizedDateForScreenReader
 } from './date_utils'
 import onClickOutside from 'react-onclickoutside'
-import styles from './stylesheets/datepicker.scss'
+import styles from './stylesheets/datepicker.module.scss'
 
 const cx = classNames.bind(styles);
 
