@@ -3,6 +3,11 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added private prop `popupContentRole` intend to allow modification of the role attribute applied to the `<PopupContent />` component used with the `<Popup />` component
+
+### Changed
+* Reverted Placeholder import in example files.
 
 6.12.0 - (September 19, 2019)
 ------------------

@@ -1,4 +1,5 @@
 import React from 'react'
+import { FormattedMessage, intlShape } from 'react-intl';
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 import Week from './week'
@@ -52,6 +53,16 @@ export default class Month extends React.Component {
      */
     inline: PropTypes.bool,
     /**
+     * @private
+     * Internationalization object with translation APIs. Provided by `injectIntl`.
+     */
+    intl: intlShape,
+    /**
+     * @private
+     * Name of locale data for different international formatting.
+     */
+    locale: PropTypes.string,
+    /**
      * Maximum value of date that can be selected by user.
      */
     maxDate: PropTypes.object,
@@ -83,6 +94,10 @@ export default class Month extends React.Component {
      * Prop to store previous selection value.
      */
     preSelection: PropTypes.object,
+    /**
+     * Callback ref to pass into the dom element.
+     */
+    refCallback: PropTypes.func,
     /**
      * Prop to store current selection value.
      */
@@ -128,6 +143,12 @@ export default class Month extends React.Component {
   handleMouseLeave = () => {
     if (this.props.onMouseLeave) {
       this.props.onMouseLeave()
+    }
+  }
+
+  handleMonthBlur = () => {
+    if (this.props.onMonthBlur) {
+      this.props.onMonthBlur()
     }
   }
 
@@ -196,12 +217,27 @@ export default class Month extends React.Component {
   render() {
     const getClassNames = cx({
       'react-datepicker-month': true,
-      'react-datepicker-month--selecting-range': this.props.selectingDate && (this.props.selectsStart || this.props.selectsEnd)
+      'react-datepicker-body': true,
+      'react-datepicker-month--selecting-range': this.props.selectingDate && (this.props.selectsStart || this.props.selectsEnd),
+      'is-calendar-focused': this.props.isCalendarKeyboardFocused
     });
     return (
-      <div tabIndex="0" className={getClassNames} onMouseLeave={this.handleMouseLeave} role="listbox">
-        {this.renderWeeks()}
-      </div>
+      <FormattedMessage id="Terra.datePicker.calendarInstructions">
+        {text => (
+          <div
+            tabIndex="0"
+            className={getClassNames}
+            onMouseLeave={this.handleMouseLeave}
+            role="application"
+            onBlur={this.handleMonthBlur}
+            aria-label={`${utils.getLocalizedDateForScreenReader(this.props.preSelection, { intl: this.props.intl, locale: this.props.locale })}. ${text}`}
+            onKeyDown={this.props.handleCalendarKeyDown}
+            ref={this.props.refCallback}
+          >
+            {this.renderWeeks()}
+          </div>
+        )}
+      </FormattedMessage>
     )
   }
 }

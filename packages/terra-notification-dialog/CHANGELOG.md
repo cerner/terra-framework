@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Reverted Placeholder import in example files.
 
 3.12.0 - (September 19, 2019)
 ------------------

@@ -31,6 +31,7 @@ Unreleased
 6.9.0 - (August 14, 2019)
 ------------------
 ### Changed
+* Updated Jest Snapshots for new icon-prop added in menu-item.
 * updated package.json test scripts
 * Updated to interface with react-intl's `FormattedMessage` rather than old React Context API.
 
