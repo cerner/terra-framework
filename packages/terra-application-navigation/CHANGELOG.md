@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Adjusted title margin and padding
 
 1.5.0 - (September 19, 2019)
 ------------------
