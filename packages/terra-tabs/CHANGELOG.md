@@ -3,6 +3,12 @@ ChangeLog
 
 Unreleased
 ----------
+
+6.13.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 ### Fixed
 * Fixed the inconsistent failures of responsive tabs on Travis CI.
 

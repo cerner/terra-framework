@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Adjusted title margin and padding
 
+1.6.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 1.5.0 - (September 19, 2019)
 ------------------
 ### Changed
