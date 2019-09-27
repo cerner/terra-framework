@@ -118,6 +118,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
   isWidthAutomatic={false}
   onRequestClose={[MockFunction]}
   onResize={[MockFunction]}
+  popupContentRole="dialog"
   refCallback={
     [MockFunction] {
       "calls": Array [

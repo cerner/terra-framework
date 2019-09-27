@@ -13,6 +13,14 @@ Unreleased
 * Added a 'content' node prop that will display the given node in the Dialog after 'startMessage'
 * Added an 'endMessage' string prop that will display a message after both 'startMessage' and 'content'
 
+3.13.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+### Changed
+* Reverted Placeholder import in example files.
+
 3.12.0 - (September 19, 2019)
 ------------------
 ### Changed

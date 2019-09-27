@@ -4,10 +4,16 @@ ChangeLog
 Unreleased
 ----------
 
+4.14.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 4.13.0 - (September 19, 2019)
 ------------------
 ### Changed
 * Added `browser.refresh()` to `date-time-picker-spec` to support wdio tests failing in theming repos.
+* Updated Jest snapshots and WDIO screenshots
 * Removed `details` tag from doc-site.
 * Doc site example module import syntax modified to use package.json name resolution
 

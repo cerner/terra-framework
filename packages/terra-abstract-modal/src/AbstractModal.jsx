@@ -154,7 +154,7 @@ class AbstractModal extends React.Component {
     }
 
     setTimeout(() => {
-      if (this.state.modalTrigger) {
+      if (this.state.modalTrigger && this.state.modalTrigger.focus) {
         // Shift focus back to element that was last focused prior to opening the modal
         this.state.modalTrigger.focus();
       }

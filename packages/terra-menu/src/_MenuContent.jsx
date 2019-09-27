@@ -242,7 +242,7 @@ class MenuContent extends React.Component {
     let closeButton = <div />;
     if (this.props.onRequestClose && isFullScreen) {
       closeButton = (
-        <button type="button" className={cx(['header-button'])} onClick={this.props.onRequestClose} aria-label={closeBtnText}>
+        <button type="button" className={cx('header-button')} onClick={this.props.onRequestClose} aria-label={closeBtnText}>
           {closeIcon}
         </button>
       );
@@ -261,18 +261,18 @@ class MenuContent extends React.Component {
         <Arrange
           align="center"
           fitStart={(
-            <div className={cx(['header-button'])}>
+            <div className={cx('header-button')}>
               {backIcon}
             </div>
           )}
-          fill={<h1 className={cx(['header-title'])}>{this.props.title}</h1>}
+          fill={<h1 className={cx('header-title')}>{this.props.title}</h1>}
         />
       </div>
     ) : <div />;
 
     return (
       <Arrange
-        className={cx(['header'])}
+        className={cx('header')}
         fitEnd={closeButton}
         fill={backButton}
         align="center"
@@ -352,7 +352,7 @@ class MenuContent extends React.Component {
         onKeyDown={this.onKeyDown}
       >
         <ContentContainer header={header} fill={this.props.isHeightBounded || this.props.index > 0}>
-          <List className={cx(['list'])} role="menu">
+          <List className={cx('list')} role="menu">
             {items}
           </List>
         </ContentContainer>
