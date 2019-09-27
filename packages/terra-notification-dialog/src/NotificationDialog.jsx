@@ -215,20 +215,12 @@ class NotificationDialog extends React.Component {
                 <div className={cx('text-wrapper')}>
                   {title
                     && <div id="notification-dialog-title" className={cx('title')}>{title}</div>}
-                  {(startMessage || content || endMessage)
-                    && (
-                      <div className={cx('message')}>
-                        <div>
-                          {startMessage}
-                        </div>
-                        <div>
-                          {content}
-                        </div>
-                        <div>
-                          {endMessage}
-                        </div>
-                      </div>
-                    )}
+                  {startMessage
+                    && <div className={cx('message')}>{startMessage}</div>}
+                  {content
+                    && <div>{content}</div>}
+                  {endMessage
+                    && <div className={cx('message')}>{endMessage}</div>}
                 </div>
               </div>
               <div className={cx('footer-body')}>{actionSection(acceptAction, rejectAction, isReversed)}</div>
