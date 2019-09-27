@@ -58,6 +58,7 @@ exports[`ApplicationNavigation should render default element 1`] = `
     isHeaderDisabled={true}
     isOpen={false}
     onRequestClose={[Function]}
+    popupContentRole="dialog"
     targetAttachment="bottom center"
     targetRef={[Function]}
   >
@@ -193,6 +194,7 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
     isHeaderDisabled={true}
     isOpen={false}
     onRequestClose={[Function]}
+    popupContentRole="dialog"
     targetAttachment="bottom center"
     targetRef={[Function]}
   >
@@ -416,6 +418,7 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
     isHeaderDisabled={true}
     isOpen={false}
     onRequestClose={[Function]}
+    popupContentRole="dialog"
     targetAttachment="bottom center"
     targetRef={[Function]}
   >

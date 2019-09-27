@@ -92,6 +92,11 @@ const propTypes = {
    * 'middle right', 'bottom left', 'bottom center', or 'bottom right'.
    */
   targetAttachment: PropTypes.oneOf(ATTACHMENT_POSITIONS),
+  /**
+   * @private
+   * Prop to set role on popup content container
+   */
+  popupContentRole: PropTypes.string,
 };
 
 const defaultProps = {
@@ -107,6 +112,7 @@ const defaultProps = {
   isContentFocusDisabled: false,
   isHeaderDisabled: false,
   isOpen: false,
+  popupContentRole: 'dialog',
 };
 
 class Popup extends React.Component {
@@ -222,6 +228,7 @@ class Popup extends React.Component {
         onRequestClose={this.props.onRequestClose}
         onContentResize={this.handleOnContentResize}
         onResize={this.handleOnResize}
+        popupContentRole={this.props.popupContentRole}
         refCallback={this.validateContentNode}
         isHeightAutomatic={this.props.contentHeight === 'auto'}
         isWidthAutomatic={this.props.contentWidth === 'auto'}

@@ -4,10 +4,16 @@ Changelog
 Unreleased
 ----------
 
+4.14.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 4.13.0 - (September 19, 2019)
 ------------------
 ### Changed
 * Removed use of `componentWillReceiveProps`.
+* Added ability to shift focus around interactive elements within the datepicker popup to enable better screen reader/keyboard usage
 * Removed `details` tag from doc-site.
 * Doc site example module import syntax modified to use package.json name resolution
 

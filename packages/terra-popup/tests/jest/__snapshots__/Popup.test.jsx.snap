@@ -16,6 +16,7 @@ exports[`should renders with custom arrow class name 1`] = `
     isHeaderDisabled={false}
     isOpen={true}
     onRequestClose={[Function]}
+    popupContentRole="dialog"
     targetRef={[Function]}
   >
     <p>
@@ -44,6 +45,7 @@ exports[`should renders with custom content class name 1`] = `
     isHeaderDisabled={false}
     isOpen={true}
     onRequestClose={[Function]}
+    popupContentRole="dialog"
     targetRef={[Function]}
   >
     <p>
@@ -72,6 +74,7 @@ exports[`should renders with custom overlay class name 1`] = `
     isHeaderDisabled={false}
     isOpen={true}
     onRequestClose={[Function]}
+    popupContentRole="dialog"
     targetRef={[Function]}
   >
     <p>
@@ -100,6 +103,7 @@ exports[`should shallow a default component 1`] = `
     isHeaderDisabled={false}
     isOpen={true}
     onRequestClose={[Function]}
+    popupContentRole="dialog"
     targetRef={[Function]}
   >
     <p>
@@ -128,6 +132,7 @@ exports[`should shallow render a component with push attachment behavior 1`] = `
     isHeaderDisabled={false}
     isOpen={true}
     onRequestClose={[Function]}
+    popupContentRole="dialog"
     targetRef={[Function]}
   >
     <p>
