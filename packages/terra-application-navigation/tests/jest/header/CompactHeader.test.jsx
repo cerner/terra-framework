@@ -12,6 +12,20 @@ describe('CompactHeader', () => {
     expect(mountComponent).toMatchSnapshot();
   });
 
+  it('should render title element', () => {
+    const mountComponent = mountWithIntl(
+      <CompactHeader
+        titleConfig={{
+          title: 'test-title',
+          element: <img alt="test" id="test-image" />,
+        }}
+      />,
+    );
+
+    expect(mountComponent).toMatchSnapshot();
+  });
+
+
   it('should render with function callbacks', () => {
     const mountComponent = mountWithIntl(
       <CompactHeader
