@@ -4,6 +4,22 @@ Changelog
 Unreleased
 ----------
 
+5.12.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+5.11.0 - (September 19, 2019)
+------------------
+### Changed
+* Removed `details` tag from doc-site.
+* Doc site example module import syntax modified to use package.json name resolution
+
+5.10.0 - (September 6, 2019)
+------------------
+### Changed
+* Cleaned up imports in examples and test files
+
 5.9.0 - (August 21, 2019)
 ------------------
 ### Changed

@@ -152,6 +152,7 @@ const notifications = [
   },
 ];
 
+// TODO: remove terra-application after it is incorporated into dev-site for themes or themes are co-located
 const StatedNotificationDemo = () => {
   const [activeKey, setActiveKey] = useState(navigationItems[0].key);
   const [notificationIndex, setNotificationIndex] = useState(0);
@@ -165,7 +166,7 @@ const StatedNotificationDemo = () => {
   }
 
   return (
-    <ApplicationBase locale="en-US">
+    <ApplicationBase locale="en">
       <ApplicationNavigation
         titleConfig={titleConfig}
         userConfig={userConfig}

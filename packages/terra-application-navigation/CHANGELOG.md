@@ -4,7 +4,35 @@ Changelog
 Unreleased
 ----------
 ### Changed
-Updated `keycode-js` from `v1.0.4` to `v2.0.1`
+* Adjusted title margin and padding
+
+1.6.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+1.5.0 - (September 19, 2019)
+------------------
+### Changed
+* Update underlying structure to handle new theme variables.
+* Revert test wrapper changes.
+* Update Jest snapshots
+* Removed `details` tag from doc-site.
+* Corrected lint warnings
+* Theme border-bottom focus
+
+### Fixed
+* fix clip bug.
+
+### Added
+* Added en-CA translations.
+
+1.4.0 - (September 6, 2019)
+------------------
+### Changed
+* Cleaned up imports in examples and test files
+* Added check to prevent rendering of Utility Button or Nav Drawer Button if they are empty.
+* Updated `keycode-js` from `v1.0.4` to `v2.0.1`
 
 1.3.0 - (August 21, 2019)
 ------------------

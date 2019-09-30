@@ -3,14 +3,12 @@ import DocTemplate from 'terra-doc-template';
 import ReadMe from '../../../../docs/DatePickerField.md';
 import { name } from '../../../../package.json';
 
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
 import DatePickerFieldSrc from '!raw-loader!../../../../src/DatePickerField';
 
 // Example Files
 import DatePickerFieldExample from '../example/DatePickerField';
 import DatePickerFieldExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DatePickerField';
-/* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
   <DocTemplate

@@ -3,7 +3,6 @@ import DocTemplate from 'terra-doc-template';
 import { name } from '../../../../package.json';
 import ReadMe from '../../../../docs/README.md';
 
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
 import PopupSrc from '!raw-loader!../../../../src/Popup.jsx';
 
@@ -20,7 +19,6 @@ import PopupInsideModal from '../example/PopupInsideModal';
 import PopupInsideModalSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/PopupInsideModal.jsx';
 import PopupAttachmentBehavior from '../example/PopupAttachmentBehavior';
 import PopupAttachments from '../example/PopupAttachments';
-/* eslint-enabled import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
   <DocTemplate

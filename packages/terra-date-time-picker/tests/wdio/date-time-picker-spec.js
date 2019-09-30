@@ -410,9 +410,10 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     Terra.it.matchesScreenshot();
   });
 
-  describe('onBlur', () => {
+  describe('onBlur (CDT to CST)', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-dst-blur');
+      browser.refresh();
       browser.click('input[name="terra-time-minute-input"]');
       browser.keys('Tab');
       browser.waitForVisible('[class*="time-clarification"]');
@@ -426,10 +427,37 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
 
     Terra.it.matchesScreenshot('after DST resolution', { selector: '#root' });
 
-    it('updates the underlying date-time upon changing the offset', () => {
+    it('updates the underlying date-time upon changing the offset using the offset button', () => {
       browser.click('[class*="button-offset"]');
       browser.waitForVisible('[class*="time-clarification"]');
       browser.click('[class*="button-standard"]');
+      browser.keys('Tab'); // This is _needed_ to remove focus from the offset button.
+    });
+
+    Terra.it.matchesScreenshot('after offset change', { selector: '#root' });
+  });
+
+  describe('onBlur (CST to CDT)', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-dst-blur');
+      browser.refresh();
+      browser.click('input[name="terra-time-minute-input"]');
+      browser.keys('Tab');
+      browser.waitForVisible('[class*="time-clarification"]');
+    });
+
+    Terra.it.matchesScreenshot('before DST resolution', { selector: '#root' });
+
+    it('handles blur after date-time ambiguity is resolved', () => {
+      browser.click('[class*="button-standard"]');
+    });
+
+    Terra.it.matchesScreenshot('after DST resolution', { selector: '#root' });
+
+    it('updates the underlying date-time upon changing the offset using the offset button', () => {
+      browser.click('[class*="button-offset"]');
+      browser.waitForVisible('[class*="time-clarification"]');
+      browser.click('[class*="button-daylight"]');
       browser.keys('Tab'); // This is _needed_ to remove focus from the offset button.
     });
 

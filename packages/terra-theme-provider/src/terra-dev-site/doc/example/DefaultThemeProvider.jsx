@@ -1,9 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
-import ThemeProvider from 'terra-theme-provider/lib/ThemeProvider';
+import ThemeProvider from 'terra-theme-provider';
 import MockThemeComponent from 'terra-theme-provider/lib/terra-dev-site/doc/example/MockThemeComponent';
-/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import styles from './DefaultThemeProvider.module.scss';
 
 const cx = classNames.bind(styles);

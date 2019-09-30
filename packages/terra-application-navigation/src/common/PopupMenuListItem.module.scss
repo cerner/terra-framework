@@ -18,6 +18,7 @@
 
   .item[data-focus-styles-enabled='true']:focus {
     background-color: var(--terra-application-navigation-popup-item-focus-background-color, transparent);
+    border-bottom: var(--terra-application-navigation-popup-item-focus-border-bottom, 1px solid #dedfe0);
     outline: var(--terra-application-navigation-popup-item-focus-outline, 2px dashed #000);
     outline-offset: var(--terra-application-navigation-popup-item-focus-outline-offset, -2px);
   }

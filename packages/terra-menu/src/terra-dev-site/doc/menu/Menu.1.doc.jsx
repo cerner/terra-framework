@@ -3,7 +3,6 @@ import DocTemplate from 'terra-doc-template';
 import ReadMe from '../../../../docs/README.md';
 import { name } from '../../../../package.json';
 
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
 import MenuSrc from '!raw-loader!../../../../src/Menu';
 import MenuItemSrc from '!raw-loader!../../../../src/MenuItem';
@@ -16,6 +15,9 @@ import MenuBounded from '../example/MenuBounded';
 import MenuBoundedSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/MenuBounded';
 import MenuWidths from '../example/MenuWidths';
 import MenuWidthsSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/MenuWidths';
+import MenuWithInstructionsForUse from '../example/MenuWithInstructionsForUse';
+import MenuWithInstructionsForUseSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/MenuWithInstructionsForUse';
+
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
@@ -43,6 +45,12 @@ const DocPage = () => (
         title: 'Menu Widths',
         example: <MenuWidths />,
         source: MenuWidthsSrc,
+      },
+      {
+        title: 'Help Menu Item: Electronic Instructions For Use',
+        description: 'The Electronic Information For Use (eIFU) icon is a regulatory requirement for CE Mark Certification and Compliance, and is used to indicate Help content that is the equivalent of a manufacturer\'s instruction manual. The label for the Help menu option should be the name of the application followed by "Help."',
+        example: <MenuWithInstructionsForUse />,
+        source: MenuWithInstructionsForUseSrc,
       },
     ]}
     propsTables={[

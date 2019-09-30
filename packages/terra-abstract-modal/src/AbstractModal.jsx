@@ -5,7 +5,6 @@ import * as KeyCode from 'keycode-js';
 import 'mutationobserver-shim';
 import './_contains-polyfill';
 import './_matches-polyfill';
-import 'wicg-inert';
 import ModalContent from './_ModalContent';
 
 const zIndexes = ['6000', '7000', '8000', '9000'];
@@ -85,6 +84,12 @@ class AbstractModal extends React.Component {
   }
 
   componentDidMount() {
+    // eslint-disable-next-line no-prototype-builtins
+    if (!Element.prototype.hasOwnProperty('inert')) {
+      // IE10 throws an error if wicg-inert is imported too early, as wicg-inert tries to set an observer on document.body which may not exist on import
+      // eslint-disable-next-line global-require
+      require('wicg-inert/dist/inert');
+    }
     document.addEventListener('keydown', this.handleKeydown);
 
     if (this.props.isOpen) {
@@ -149,7 +154,7 @@ class AbstractModal extends React.Component {
     }
 
     setTimeout(() => {
-      if (this.state.modalTrigger) {
+      if (this.state.modalTrigger && this.state.modalTrigger.focus) {
         // Shift focus back to element that was last focused prior to opening the modal
         this.state.modalTrigger.focus();
       }

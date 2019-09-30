@@ -8,9 +8,9 @@ const propTypes = {
    */
   title: PropTypes.string,
   /**
-   * An array of CollapsibleMenuView Items, Dividers, or Toggles to render within the DisclosureManager's header.
+   * A CollapsibleMenuView component to render within the DisclosureManager's header.
    */
-  collapsibleMenuItems: PropTypes.element,
+  collapsibleMenuView: PropTypes.element,
 };
 
 /**
@@ -21,7 +21,7 @@ const DisclosureManagerHeaderAdapter = ({ title, collapsibleMenuView }) => {
 
   useLayoutEffect(() => {
     adapterContext.register({ title, collapsibleMenuView });
-  }, [title, collapsibleMenuView]);
+  }, [title, collapsibleMenuView, adapterContext]);
 
   return null;
 };

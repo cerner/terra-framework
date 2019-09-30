@@ -2,8 +2,7 @@ import React from 'react';
 import Button from 'terra-button';
 import ActionHeader from 'terra-action-header';
 import ActionFooter from 'terra-action-footer';
-import DialogModal from '../../../DialogModal';
-
+import DialogModal from 'terra-dialog-modal';
 
 class DialogModalWithLongText extends React.Component {
   constructor() {

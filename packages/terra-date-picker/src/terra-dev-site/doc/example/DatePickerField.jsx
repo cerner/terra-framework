@@ -1,8 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
-import DatePickerField from 'terra-date-picker/lib/DatePickerField';
+import DatePickerField from 'terra-date-picker';
 import styles from './DatePickerExampleCommon.module.scss';
 
 const cx = classNames.bind(styles);

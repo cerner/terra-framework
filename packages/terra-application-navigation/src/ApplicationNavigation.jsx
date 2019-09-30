@@ -269,6 +269,8 @@ const ApplicationNavigation = ({
         isDrawerMenuOpen={drawerMenuIsOpen}
         utilityItems={utilityItems}
         activeNavigationItemKey={activeNavigationItemKey}
+        userConfig={userConfig}
+        hero={hero}
         onSelectNavigationItem={generateFocusMain(onSelectNavigationItem)}
         onSelectUtilityItem={onSelectUtilityItem}
         onSelectSettings={onSelectSettings}
@@ -294,6 +296,11 @@ const ApplicationNavigation = ({
         notifications={notifications}
         utilityButtonPopupAnchorRef={utilityButtonPopupAnchorRef}
         onSelectUtilityButton={() => setPopupMenuIsOpen(true)}
+        hero={hero}
+        utilityItems={utilityItems}
+        onSelectSettings={onSelectSettings}
+        onSelectHelp={onSelectHelp}
+        onSelectLogout={onSelectLogout}
       />
     );
   }
@@ -330,7 +337,9 @@ const ApplicationNavigation = ({
    * accurate.
    */
   useLayoutEffect(() => {
-    if (!contentLayoutRef.current) {
+    const contentLayoutElement = contentLayoutRef.current;
+
+    if (!contentLayoutElement) {
       return undefined;
     }
 
@@ -344,12 +353,12 @@ const ApplicationNavigation = ({
       }
     }
 
-    contentLayoutRef.current.addEventListener('transitionend', cleanupContentTransition);
+    contentLayoutElement.addEventListener('transitionend', cleanupContentTransition);
 
     return () => {
-      contentLayoutRef.current.removeEventListener('transitionend', cleanupContentTransition);
+      contentLayoutElement.removeEventListener('transitionend', cleanupContentTransition);
     };
-  }, [contentLayoutRef.current]);
+  }, [contentLayoutRef]);
 
   /**
    * If the ApplicationNavigation is rendering at non-compact breakpoints, and the drawer menu is still

@@ -1,9 +1,7 @@
 import React from 'react';
-/* eslint-disable import/no-unresolved, import/extensions, import/no-extraneous-dependencies */
 import InfiniteList, { Item, SectionHeader } from 'terra-infinite-list/lib/index';
 import Placeholder from 'terra-doc-template/lib/Placeholder';
 import classNames from 'classnames/bind';
-/* eslint-enable import/no-unresolved, import/extensions, import/no-extraneous-dependencies */
 
 import mockData from './mock-data/mock-section';
 import MyExampleContainer from '../common/MyExampleContainer';

@@ -1,6 +1,5 @@
 import React from 'react';
-// eslint-disable-next-line import/no-unresolved
-import EmbeddedContentConsumer from 'terra-embedded-content-consumer/lib/EmbeddedContentConsumer';
+import EmbeddedContentConsumer from 'terra-embedded-content-consumer';
 
 const BasicConsumer = () => (
   <EmbeddedContentConsumer

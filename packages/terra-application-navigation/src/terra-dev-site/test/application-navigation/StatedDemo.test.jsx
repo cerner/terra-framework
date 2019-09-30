@@ -138,6 +138,7 @@ const utilityItems = [
   },
 ];
 
+// TODO: remove terra-application after it is incorporated into dev-site for themes or themes are co-located
 const StatedDemo = () => {
   const [activeKey, setActiveKey] = useState(navigationItems[0].key);
   const [lastActionKey, setLastActionKey] = useState(null);
@@ -147,7 +148,7 @@ const StatedDemo = () => {
   }
 
   return (
-    <ApplicationBase locale="en-US">
+    <ApplicationBase locale="en">
       <ApplicationNavigation
         titleConfig={titleConfig}
         userConfig={userConfig}
