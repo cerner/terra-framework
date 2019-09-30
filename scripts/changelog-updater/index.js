@@ -54,7 +54,10 @@ packagePaths.forEach((packagePath) => {
 ----------
 
 ${newVersion} - (${releaseDate})
-------------------`;
+------------------
+### Changed
+* Minor dependency updates
+`;
         const regex = /Unreleased\n----------/g;
 
         // Update CHANGELOG.md
