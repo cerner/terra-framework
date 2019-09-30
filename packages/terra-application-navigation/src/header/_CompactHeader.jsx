@@ -204,7 +204,7 @@ const CompactHeader = ({
 
     if (titleConfig.element) {
       return (
-        <div title={titleConfig.title}>
+        <div className={cx('title-element')} title={titleConfig.title}>
           {titleConfig.element}
         </div>
       );
