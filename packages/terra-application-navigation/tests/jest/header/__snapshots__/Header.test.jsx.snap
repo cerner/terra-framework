@@ -150,6 +150,184 @@ exports[`Header should render default element 1`] = `
 </InjectIntl(Header)>
 `;
 
+exports[`Header should render title element 1`] = `
+<InjectIntl(Header)
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  titleConfig={
+    Object {
+      "element": <img
+        alt="test"
+        id="test-image"
+      />,
+      "title": "test-title",
+    }
+  }
+>
+  <Header
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    titleConfig={
+      Object {
+        "element": <img
+          alt="test"
+          id="test-image"
+        />,
+        "title": "test-title",
+      }
+    }
+    utilityItems={Array []}
+  >
+    <header
+      className="header"
+      role="banner"
+    >
+      <button
+        className="skip-content-button"
+        role="link"
+        type="button"
+      >
+        Terra.applicationNavigation.header.skipToContentTitle
+      </button>
+      <div
+        className="title-container"
+      >
+        <div
+          className="title-element"
+          title="test-title"
+        >
+          <img
+            alt="test"
+            id="test-image"
+          />
+        </div>
+      </div>
+      <div
+        className="main-navigation-container"
+      >
+        <InjectIntl(Tabs)>
+          <Tabs
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            navigationItems={Array []}
+            notifications={Object {}}
+          >
+            <Tab
+              aria-hidden="true"
+              isPlaceholder={true}
+              tabKey=""
+              text="W"
+            >
+              <div
+                aria-hidden={true}
+                aria-label="W"
+                className="tab is-placeholder"
+                data-focus-styles-enabled={true}
+                onBlur={[Function]}
+                onMouseDown={[Function]}
+                role="link"
+                tabIndex="0"
+                type="button"
+              >
+                <div
+                  aria-hidden={true}
+                  className="tab-inner"
+                >
+                  <span
+                    aria-hidden={true}
+                    className="tab-label"
+                  >
+                    W
+                  </span>
+                </div>
+              </div>
+            </Tab>
+          </Tabs>
+        </InjectIntl(Tabs)>
+      </div>
+      <div
+        className="extensions-container"
+      />
+    </header>
+  </Header>
+</InjectIntl(Header)>
+`;
+
 exports[`Header should render with function callbacks 1`] = `
 <InjectIntl(Header)
   activeNavigationItemKey="test-text"

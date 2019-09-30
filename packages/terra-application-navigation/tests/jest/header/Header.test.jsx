@@ -12,6 +12,19 @@ describe('Header', () => {
     expect(mountComponent).toMatchSnapshot();
   });
 
+  it('should render title element', () => {
+    const mountComponent = mountWithIntl(
+      <Header
+        titleConfig={{
+          title: 'test-title',
+          element: <img alt="test" id="test-image" />,
+        }}
+      />,
+    );
+
+    expect(mountComponent).toMatchSnapshot();
+  });
+
   it('should render with function callbacks', () => {
     const testUtilityButtonPopupAnchorRef = React.createRef();
 

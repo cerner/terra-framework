@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+6.13.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 ### Added
 * Added private prop `popupContentRole` intend to allow modification of the role attribute applied to the `<PopupContent />` component used with the `<Popup />` component
 
