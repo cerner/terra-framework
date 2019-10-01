@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Adjusted title margin and padding
+* Update tests and screenshots to support theme tests
 
 1.6.0 - (September 26, 2019)
 ------------------
