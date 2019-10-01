@@ -224,6 +224,7 @@ class Day extends React.Component {
         className={cx(this.getClassNames(day))}
         onClick={this.handleClick}
         onMouseEnter={this.handleMouseEnter}
+        aria-disabled={this.isDisabled()}
       >
         <React.Fragment>
           {/* Adding visually hidden text so screen readers like VoiceOver on iOS read the date properly */}

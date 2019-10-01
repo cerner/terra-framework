@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added `aria-disabled` in react-datepicker.
 
 4.14.0 - (September 26, 2019)
 ------------------
