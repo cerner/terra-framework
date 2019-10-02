@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Removed extra comma from scss file.
 
 6.13.0 - (September 26, 2019)
 ------------------
