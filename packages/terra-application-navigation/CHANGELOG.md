@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Update terra-icon package version.
 * Adjusted title margin and padding
 * Update tests and screenshots to support theme tests
 
