@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+1.7.0 - (October 3, 2019)
+------------------
 ### Changed
 * Update terra-icon package version.
 * Adjusted title margin and padding

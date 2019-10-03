@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.15.0 - (October 3, 2019)
+------------------
 ### Changed
 * Renamed react-datepicker's `datepicker.scss` to `react_datepicker.module.scss`.
 
