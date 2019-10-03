@@ -158,7 +158,7 @@ class AbstractModal extends React.Component {
         // Shift focus back to element that was last focused prior to opening the modal
         this.state.modalTrigger.focus();
       } else {
-        // In some cases on IE, when the focus could not be restored on the element (SVG element, for instance)
+        // In some cases on IE, when the focus cannot be restored on the element (SVG element, for instance)
         // that was last focused prior to opening the modal, place the focus on the HTML body element to repro
         // the behavior noticed on other major browsers.
         document.querySelector('body').focus();
