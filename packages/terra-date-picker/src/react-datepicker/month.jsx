@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 import Week from './week'
 import * as utils from './date_utils'
-import styles from './stylesheets/datepicker.scss'
+import styles from './stylesheets/react_datepicker.module.scss'
 
 const cx = classNames.bind(styles);
 
