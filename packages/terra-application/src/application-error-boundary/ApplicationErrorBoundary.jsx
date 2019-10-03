@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl, intlShape } from 'react-intl';
 import StatusView from 'terra-status-view';
 
 const propTypes = {
@@ -8,54 +7,58 @@ const propTypes = {
    * Components to render within the context of the ApplicationErrorBoundary
    */
   children: PropTypes.node,
-  /**
-   * @private
-   * Object containing translation APIs
-   */
-  intl: intlShape,
 };
 
 class ApplicationErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { hasError: false, reloadKey: false };
+
+    this.resetError = () => {
+      this.errorRef.current = undefined;
+      if (this.state.error) {
+        this.setState({ error: undefined });
+      }  
+    }
+
+    this.errorRef = React.createRef();
+
+    this.state = { error: undefined };
   }
 
   static getDerivedStateFromError(error) {
-    return { hasError: error };
+    return { error };
+  }
+
+  componentDidCatch(error) {
+    this.errorRef.current = error;
+    this.setState({ error: false });
+  }
+
+  componentDidMount() {
+    this.resetError();
+  }
+
+  componentDidUpdate() {
+    this.resetError();
   }
 
   render() {
-    const { children, intl } = this.props;
-    const { hasError, reloadKey } = this.state;
+    const { children } = this.props;
+    const activeError = this.state.error || this.errorRef.current;
 
-    if (hasError) {
+    if (activeError) {
       return (
         <StatusView
           variant="error"
-          buttonAttrs={[{
-            text: intl.formatMessage({ id: 'terra-application.application-error-boundary.reload' }),
-            size: 'medium',
-            key: 'reload-button',
-            onClick: () => {
-              this.setState(state => ({
-                hasError: undefined,
-                reloadKey: !state.reloadKey,
-              }));
-            },
-          }]}
+          message={activeError.toString()}
         />
       );
     }
 
-    return (
-      <React.Fragment key={reloadKey}>
-        {children}
-      </React.Fragment>
-    );
+    return children;
   }
 }
 
 ApplicationErrorBoundary.propTypes = propTypes;
 
-export default injectIntl(ApplicationErrorBoundary);
+export default ApplicationErrorBoundary;

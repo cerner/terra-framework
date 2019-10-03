@@ -21,7 +21,7 @@ exports[`Application should render with all props 1`] = `
     }
   >
     <ActiveBreakpointProvider>
-      <InjectIntl(ApplicationErrorBoundary)>
+      <ApplicationErrorBoundary>
         <withPromptRegistration(NavigationPromptCheckpoint)
           onPromptChange={[Function]}
         >
@@ -31,7 +31,7 @@ exports[`Application should render with all props 1`] = `
             </div>
           </ApplicationLoadingOverlayProvider>
         </withPromptRegistration(NavigationPromptCheckpoint)>
-      </InjectIntl(ApplicationErrorBoundary)>
+      </ApplicationErrorBoundary>
     </ActiveBreakpointProvider>
   </Base>
 </ThemeProvider>
@@ -48,7 +48,7 @@ exports[`Application should render with minimal props 1`] = `
     strictMode={false}
   >
     <ActiveBreakpointProvider>
-      <InjectIntl(ApplicationErrorBoundary)>
+      <ApplicationErrorBoundary>
         <withPromptRegistration(NavigationPromptCheckpoint)
           onPromptChange={[Function]}
         >
@@ -58,7 +58,7 @@ exports[`Application should render with minimal props 1`] = `
             </div>
           </ApplicationLoadingOverlayProvider>
         </withPromptRegistration(NavigationPromptCheckpoint)>
-      </InjectIntl(ApplicationErrorBoundary)>
+      </ApplicationErrorBoundary>
     </ActiveBreakpointProvider>
   </Base>
 </ThemeProvider>

@@ -11,11 +11,5 @@ Terra.describeViewports('ApplicationErrorBoundary', ['large'], () => {
     });
 
     Terra.it.validatesElement('with error', { selector: '#root' });
-
-    it('resets the status view after selecting reload', () => {
-      browser.click('button');
-    });
-
-    Terra.it.validatesElement('after reload', { selector: '#root' });
   });
 });

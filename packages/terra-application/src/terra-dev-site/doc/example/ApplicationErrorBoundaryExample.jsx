@@ -21,12 +21,23 @@ const ErrorThrowingComponent = () => {
   );
 };
 
-const ApplicationErrorBoundaryExample = () => (
-  <div className={cx('example')}>
-    <ApplicationErrorBoundary>
-      <ErrorThrowingComponent />
-    </ApplicationErrorBoundary>
-  </div>
+const ApplicationErrorBoundaryExample = ({ children }) => {
+  const [refresh, setRefresh] = useState(false);
+
+  return (
+    <div className={cx('example')}>
+      <button type="button" onClick={() => { setRefresh(!refresh); }}>Refresh Error</button>
+      <ApplicationErrorBoundary>
+        {children}      
+      </ApplicationErrorBoundary>
+    </div>
+  );
+};
+
+const What = () => (
+  <ApplicationErrorBoundaryExample>
+    <ErrorThrowingComponent />
+  </ApplicationErrorBoundaryExample>
 );
 
-export default ApplicationErrorBoundaryExample;
+export default What;
