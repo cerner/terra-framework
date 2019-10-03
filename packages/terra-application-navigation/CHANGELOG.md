@@ -8,6 +8,9 @@ Unreleased
 * Adjusted title margin and padding
 * Update tests and screenshots to support theme tests
 
+### Fixed
+* Fix wdio test url.
+
 1.6.0 - (September 26, 2019)
 ------------------
 ### Changed
