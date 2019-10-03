@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Changed 12-hour format appearance for mobile and desktop.
+  * Meridiem select on Desktop has been changed to buttons which means that the WebdriverIO reference screenshots (if any) and/or any code in the consumer application that accesses the old meridiem select functionality on the Desktop view need to be updated.
 
 4.14.0 - (September 26, 2019)
 ------------------
@@ -11,8 +14,6 @@ Unreleased
 
 4.13.0 - (September 19, 2019)
 ------------------
-### Changed
-* Changed 12-hour format appearance for mobile and desktop.
 * Added `browser.refresh()` to `date-time-picker-spec` to support wdio tests failing in theming repos.
 * Updated Jest snapshots and WDIO screenshots
 * Removed `details` tag from doc-site.
