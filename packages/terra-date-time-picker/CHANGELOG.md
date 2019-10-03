@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Update the `variant` prop description to call out which locales do not use the 12-hour time notation.
 
 4.14.0 - (September 26, 2019)
 ------------------

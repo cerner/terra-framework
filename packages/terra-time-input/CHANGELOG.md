@@ -14,6 +14,7 @@ Unreleased
 ### Changed
 * Removed `details` tag from doc-site.
 * Doc site example module import syntax modified to use package.json name resolution
+* Fallback the time notation variant to `24-hour` for locales that do not use the `12-hour` notation.
 
 ### Added
 * Added en-CA translations.
