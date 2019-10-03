@@ -4,10 +4,29 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Adjusted title margin and padding
+* Update tests and screenshots to support theme tests
+
+1.6.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+1.5.0 - (September 19, 2019)
+------------------
+### Changed
 * Update underlying structure to handle new theme variables.
 * Revert test wrapper changes.
+* Update Jest snapshots
 * Removed `details` tag from doc-site.
 * Corrected lint warnings
+* Theme border-bottom focus
+
+### Fixed
+* fix clip bug.
+
+### Added
+* Added en-CA translations.
 
 1.4.0 - (September 6, 2019)
 ------------------

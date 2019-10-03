@@ -1,7 +1,7 @@
 {
   "name": "terra-application",
   "main": "lib/application-base/ApplicationBase.js",
-  "version": "1.7.0",
+  "version": "1.9.0",
   "description": "The terra-application package provides a baseline of functionality for applications built with Terra components.",
   "repository": {
     "type": "git",
@@ -31,15 +31,15 @@
     "prop-types": "^15.5.8",
     "terra-base": "^5.0.0",
     "terra-breakpoints": "^2.0.0",
-    "terra-disclosure-manager": "^4.20.0",
+    "terra-disclosure-manager": "^4.22.0",
     "terra-doc-template": "^2.0.0",
-    "terra-modal-manager": "^6.11.0",
-    "terra-navigation-prompt": "^1.10.0",
+    "terra-modal-manager": "^6.13.0",
+    "terra-navigation-prompt": "^1.12.0",
     "terra-overlay": "3.24.0",
     "terra-scroll": "^2.16.0",
-    "terra-slide-panel-manager": "^5.10.0",
+    "terra-slide-panel-manager": "^5.12.0",
     "terra-status-view": "4.4.0",
-    "terra-theme-provider": "^3.11.0",
+    "terra-theme-provider": "^3.13.0"
     "uuid": "^3.0.0"
   },
   "devDependencies": {

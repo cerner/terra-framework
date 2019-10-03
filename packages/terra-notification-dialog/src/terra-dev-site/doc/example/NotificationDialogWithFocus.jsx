@@ -2,7 +2,7 @@ import React from 'react';
 import Button from 'terra-button';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import Popup from 'terra-popup';
-import Placeholder from 'terra-doc-template';
+import Placeholder from 'terra-doc-template/lib/Placeholder';
 import NotificationDialog, { NotificationDialogVariants } from 'terra-notification-dialog';
 
 const clickOK = () => {

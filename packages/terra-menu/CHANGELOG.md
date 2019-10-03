@@ -3,8 +3,22 @@ Changelog
 
 Unreleased
 ----------
+
+6.13.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+### Added
+* Added Instructions-For-Use (eIFU) Icon to Menu-Item.
+
+6.12.0 - (September 19, 2019)
+------------------
 ### Changed
 * Removed `details` tag from doc-site.
+
+### Added
+* Added en-CA translations.
 
 6.11.0 - (September 6, 2019)
 ------------------

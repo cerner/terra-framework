@@ -24,7 +24,7 @@ const propTypes = {
    */
   disabled: PropTypes.bool,
   /**
-   * An array of ISO 8601 string representation of the dates to disable in the picker.
+   * An array of ISO 8601 string representation of the dates to disable in the picker. The values must be in the `YYYY-MM-DDThh:mm:ss` format.
    */
   excludeDates: PropTypes.arrayOf(PropTypes.string),
   /**
@@ -33,7 +33,7 @@ const propTypes = {
    */
   filterDate: PropTypes.func,
   /**
-   * An array of ISO 8601 string representation of the dates to enable in the picker.
+   * An array of ISO 8601 string representation of the dates to enable in the picker. The values must be in the `YYYY-MM-DDThh:mm:ss` format.
    * All Other dates will be disabled.
    */
   includeDates: PropTypes.arrayOf(PropTypes.string),
@@ -42,12 +42,12 @@ const propTypes = {
    * */
   intl: intlShape.isRequired,
   /**
-   * An ISO 8601 string representation of the maximum date that can be selected in the date picker.
+   * An ISO 8601 string representation of the maximum date that can be selected in the date picker. The value must be in the `YYYY-MM-DD` format.
    * The time portion in this value is ignored because this is strictly used in the date picker.
    */
   maxDate: PropTypes.string,
   /**
-   * An ISO 8601 string representation of the minimum date that can be selected in the date picker.
+   * An ISO 8601 string representation of the minimum date that can be selected in the date picker. The value must be in the `YYYY-MM-DD` format.
    * The time portion in this value is ignored because this is strictly used in the date picker.
    */
   minDate: PropTypes.string,
@@ -95,11 +95,13 @@ const propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   timeInputAttributes: PropTypes.object,
   /**
-   * An ISO 8601 string representation of the initial value to show in the date and time inputs.
+   * An ISO 8601 string representation of the initial value to show in the date and time inputs. The value must be in the `YYYY-MM-DDThh:mm:ss` format.
    */
   value: PropTypes.string,
   /**
-   * Type of time input to initialize. Must be '24-hour' or '12-hour'
+   * Type of time input to initialize. Must be `24-hour` or `12-hour`.
+   * The `de`, `es-ES`, `fr-FR`, `fr`, `nl-BE`, `nl`, `pt-BR`, `pt`, `sv-SE` and `sv` locales do not use the 12-hour time notation.
+   * If the `variant` prop if set to `12-hour` for one of these supported locales, the variant will be ignored and defaults to `24-hour`.
    */
   timeVariant: PropTypes.oneOf([DateTimeUtils.FORMAT_12_HOUR, DateTimeUtils.FORMAT_24_HOUR]),
 };

@@ -5,9 +5,17 @@ Unreleased
 ----------
 ### Added
 * Added ApplicationLoadingOverlay and ApplicationErrorBoundary
-* Integrating ApplicationLoadingOverlay and ApplicationErrorBoundary with ApplicationBase
-* Adding NavigationPrompt handling to ApplicationBase
+* Integrated ApplicationLoadingOverlay and ApplicationErrorBoundary into ApplicationBase
+* Added NavigationPrompt handling to ApplicationBase
 
+
+1.9.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+1.8.0 - (September 19, 2019)
+------------------
 ### Changed
 * Removed `details` tag from doc-site.
 

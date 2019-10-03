@@ -3,6 +3,23 @@ ChangeLog
 
 Unreleased
 ----------
+
+6.13.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+### Added
+* Included the en-CA locale in the SingleItemGroup test.
+
+### Removed
+* Removed the non-supported Finnish language translations to avoid confusion
+
+6.12.0 - (September 19, 2019)
+------------------
+### Added
+* Added en-CA translations.
+
 ### Changed
 * Removed `details` tag from doc-site.
 * Doc site example module import syntax modified to use package.json name resolution
@@ -20,6 +37,7 @@ Unreleased
 6.9.0 - (August 14, 2019)
 ------------------
 ### Changed
+* Updated Jest Snapshots for new icon-prop added in menu-item.
 * updated package.json test scripts
 * Updated to interface with react-intl's `FormattedMessage` rather than old React Context API.
 

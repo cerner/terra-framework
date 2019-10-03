@@ -72,6 +72,11 @@ const propTypes = {
    */
   onContentResize: PropTypes.func,
   /**
+   * @private
+   * Prop to set role on popup content container
+   */
+  popupContentRole: PropTypes.string,
+  /**
    * The function returning the frame html reference.
    */
   refCallback: PropTypes.func,
@@ -85,6 +90,7 @@ const defaultProps = {
   isHeaderDisabled: false,
   isHeightAutomatic: false,
   isWidthAutomatic: false,
+  popupContentRole: 'dialog',
 };
 
 class PopupContent extends React.Component {
@@ -174,6 +180,7 @@ class PopupContent extends React.Component {
       onRequestClose,
       onResize,
       onContentResize,
+      popupContentRole,
       refCallback,
       ...customProps
     } = this.props;
@@ -217,7 +224,7 @@ class PopupContent extends React.Component {
             onEsc={onRequestClose}
             onResize={this.handleOnResize}
             refCallback={refCallback}
-            role="dialog"
+            role={popupContentRole || null}
           >
             {arrowContent}
             {/* eslint-disable-next-line react/forbid-dom-props */}

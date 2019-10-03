@@ -2,7 +2,13 @@ ChangeLog
 =========
 
 Unreleased
------------------
-* Initial stable release 
-* Removed `details` tag from doc-site.
-* Corrected lint warnings
+----------
+
+1.1.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+1.0.0 - (September 19, 2019)
+-------------------------
+* Initial stable release

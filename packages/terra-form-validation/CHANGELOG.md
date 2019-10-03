@@ -3,6 +3,14 @@ ChangeLog
 
 Unreleased
 ----------
+
+1.10.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+1.9.0 - (September 19, 2019)
+------------------
 ### Changed
 * Removed `details` tag from doc-site.
 

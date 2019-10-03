@@ -29,7 +29,6 @@ const PopupContent = React.forwardRef((props, ref) => {
   return (
     <div
       ref={ref}
-      tabIndex="-1"
       onKeyDown={props.onKeyDown}
     >
       {props.children}

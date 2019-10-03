@@ -67,10 +67,10 @@
       box-sizing: border-box;
       justify-content: space-between;
       overflow: hidden;
-      padding-bottom: 1.143rem;
+      padding-bottom: var(--terra-application-navigation-tab-inner-padding-bottom, 1.143rem);
       padding-left: 2.143rem;
       padding-right: 2.143rem;
-      padding-top: 1.143rem;
+      padding-top: var(--terra-application-navigation-tab-inner-padding-top, 1.143rem);
       text-align: center;
       text-decoration: none;
       text-transform: none;

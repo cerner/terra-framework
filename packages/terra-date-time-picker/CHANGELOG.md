@@ -4,9 +4,24 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
+* Update the `variant` prop description to call out which locales do not use the 12-hour time notation.
+
+4.14.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+4.13.0 - (September 19, 2019)
+------------------
+### Changed
 * Added `browser.refresh()` to `date-time-picker-spec` to support wdio tests failing in theming repos.
+* Updated Jest snapshots and WDIO screenshots
 * Removed `details` tag from doc-site.
 * Doc site example module import syntax modified to use package.json name resolution
+
+### Added
+* Added en-CA translations.
+* Updated documentations to call out the supported ISO 8601 date time format.
 
 4.12.0 - (September 6, 2019)
 ------------------

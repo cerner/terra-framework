@@ -146,10 +146,11 @@ class BasicMenu extends React.Component {
         </div>
         <br />
         <p>
-Action button has been clicked
+          Action button has been clicked
+          {' '}
           {this.state.actionClickCount}
           {' '}
-times.
+          times.
         </p>
       </div>
     );

@@ -36,6 +36,21 @@ class MenuItemDisabled extends React.Component {
               <Menu.Item text="Default 2.1" key="2.1" className="TestNestedMenuContent" />,
             ]}
           />
+          <Menu.Item
+            isDisabled
+            text="Disabled Selected Menu Item"
+            key="3"
+            className="TestDisabledItem"
+            isSelectable
+            isSelected
+          />
+          <Menu.Item
+            isDisabled
+            text="Disabled eIFU Icon Menu Item"
+            key="4"
+            className="TestDisabledItem"
+            isInstructionsForUse
+          />
         </List>
       </div>
     );
