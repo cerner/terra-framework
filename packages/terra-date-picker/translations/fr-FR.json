@@ -2,6 +2,12 @@
   "Terra.datePicker.dateFormat": "JJ/MM/AAAA",
   "Terra.datePicker.disabled": "Désactivé",
   "Terra.datePicker.openCalendar": "Ouvrir le calendrier",
+  "Terra.datePicker.closeCalendar": "Fermer",
   "Terra.datePicker.today": "Aujourd'hui",
-  "Terra.datePicker.date": "Date"
+  "Terra.datePicker.monthLabel": "Mois",
+  "Terra.datePicker.yearLabel": "Année",
+  "Terra.datePicker.date": "Date",
+  "Terra.datePicker.nextMonth": "Mois suivant",
+  "Terra.datePicker.previousMonth": "Mois précédent",
+  "Terra.datePicker.calendarInstructions": "Pour modifier la sélection, utilisez les touches fléchées. Appuyez sur la touche Entrée pour sélectionner une date. Appuyez sur la touche Échap pour fermer la fenêtre contextuelle du sélecteur de dates."
 }

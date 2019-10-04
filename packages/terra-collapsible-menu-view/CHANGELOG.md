@@ -3,6 +3,17 @@ ChangeLog
 
 Unreleased
 ----------
+
+6.14.0 - (October 3, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+6.13.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 ### Added
 * Included the en-CA locale in the SingleItemGroup test.
 

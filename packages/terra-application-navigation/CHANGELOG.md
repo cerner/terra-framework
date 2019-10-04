@@ -4,11 +4,27 @@ Changelog
 Unreleased
 ----------
 
+1.7.0 - (October 3, 2019)
+------------------
+### Changed
+* Update terra-icon package version.
+* Adjusted title margin and padding
+* Update tests and screenshots to support theme tests
+
+### Fixed
+* Fix wdio test url.
+
+1.6.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 1.5.0 - (September 19, 2019)
 ------------------
 ### Changed
 * Update underlying structure to handle new theme variables.
 * Revert test wrapper changes.
+* Update Jest snapshots
 * Removed `details` tag from doc-site.
 * Corrected lint warnings
 * Theme border-bottom focus

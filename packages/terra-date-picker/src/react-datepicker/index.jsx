@@ -36,7 +36,7 @@ import {
   getLocalizedDateForScreenReader
 } from './date_utils'
 import onClickOutside from 'react-onclickoutside'
-import styles from './stylesheets/datepicker.scss'
+import styles from './stylesheets/react_datepicker.module.scss'
 
 const cx = classNames.bind(styles);
 
@@ -351,7 +351,6 @@ class DatePicker extends React.Component {
     this.handleCalendarKeyDown = this.handleCalendarKeyDown.bind(this);
     this.handleOnRequestClose = this.handleOnRequestClose.bind(this);
     this.updateAriaLiveStatus = this.updateAriaLiveStatus.bind(this);
-    this.ariaLiveStatus = '';
   }
 
   componentDidMount() {
@@ -554,12 +553,7 @@ class DatePicker extends React.Component {
   }
 
   updateAriaLiveStatus(message) {
-    this.ariaLiveStatus = message;
-
-    // Clears status so aria live announces correctly next time a date is preselected.
-    setTimeout(() => {
-      this.ariaLiveStatus = '';
-    }, 1000);
+    this.visuallyHiddenText.innerText = message;
   }
 
   onInputClick = () => {
@@ -569,6 +563,18 @@ class DatePicker extends React.Component {
   }
 
   handleCalendarKeyDown = (event) => {
+    const keyboardNavKeys = [
+      'ArrowLeft',
+      'ArrowRight',
+      'ArrowUp',
+      'ArrowDown',
+      'PageUp',
+      'PageDown',
+      'Home',
+      'End',
+    ];
+
+
     this.props.onKeyDown(event)
     const eventKey = event.key
     const copy = newDate(this.state.preSelection)
@@ -583,9 +589,7 @@ class DatePicker extends React.Component {
     } else if (eventKey === 'Escape') {
       event.preventDefault()
       this.setOpen(false)
-    } else if (eventKey === 'Tab') {
-      this.setOpen(false)
-    } else if (!this.props.disabledKeyboardNavigation) {
+    } else if (!this.props.disabledKeyboardNavigation && keyboardNavKeys.indexOf(eventKey) !== -1) {
       let newSelection
       switch (eventKey) {
         case 'ArrowLeft':
@@ -683,9 +687,12 @@ class DatePicker extends React.Component {
         dayClassName={this.props.dayClassName}
         className={this.props.calendarClassName}
         yearDropdownItemNumber={this.props.yearDropdownItemNumber}
+        onRequestClose={this.handleOnRequestClose}
+        handleCalendarKeyDown={this.handleCalendarKeyDown}
+        setPreSelection={this.setPreSelection}
       >
         {this.props.children}
-        <VisuallyHiddenText aria-atomic="true" aria-live="assertive" text={this.ariaLiveStatus} />
+        <VisuallyHiddenText aria-atomic="true" aria-live="assertive" refCallback={(ref) => { this.visuallyHiddenText = ref; }} />
       </WrappedCalendar>
     }
 
@@ -731,9 +738,12 @@ class DatePicker extends React.Component {
         dayClassName={this.props.dayClassName}
         className={this.props.calendarClassName}
         yearDropdownItemNumber={this.props.yearDropdownItemNumber}
+        onRequestClose={this.handleOnRequestClose}
+        handleCalendarKeyDown={this.handleCalendarKeyDown}
+        setPreSelection={this.setPreSelection}
       >
         {this.props.children}
-        <VisuallyHiddenText aria-atomic="true" aria-live="assertive" text={this.ariaLiveStatus} />
+        <VisuallyHiddenText aria-atomic="true" aria-live="assertive" refCallback={(ref) => { this.visuallyHiddenText = ref; }} />
       </Calendar>
     );
   }
@@ -805,8 +815,6 @@ class DatePicker extends React.Component {
                     <div
                       ref={this.datePickerOverlayContainer}
                       className={cx('react-datepicker-portal')}
-                      tabIndex="-1"
-                      onKeyDown={this.handleCalendarKeyDown}
                     >
                       {calendar}
                     </div>
@@ -841,10 +849,10 @@ class DatePicker extends React.Component {
           isArrowDisplayed
           isHeaderDisabled
           isContentFocusDisabled
+          popupContentRole={null}
         >
           <PopupContainer
             ref={this.datePickerPopupContainer}
-            onKeyDown={this.handleCalendarKeyDown}
           >
             {calendar}
           </PopupContainer>

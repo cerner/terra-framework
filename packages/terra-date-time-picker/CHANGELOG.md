@@ -6,10 +6,21 @@ Unreleased
 ### Added
 * Added new test to validate missing hour scenario 
 
+4.15.0 - (October 3, 2019)
+------------------
+### Changed
+* Update the `variant` prop description to call out which locales do not use the 12-hour time notation.
+
+4.14.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 4.13.0 - (September 19, 2019)
 ------------------
 ### Changed
 * Added `browser.refresh()` to `date-time-picker-spec` to support wdio tests failing in theming repos.
+* Updated Jest snapshots and WDIO screenshots
 * Removed `details` tag from doc-site.
 * Doc site example module import syntax modified to use package.json name resolution
 
