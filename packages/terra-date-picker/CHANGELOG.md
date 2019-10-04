@@ -6,6 +6,11 @@ Unreleased
 ### Added
 * Added `aria-disabled` in react-datepicker.
 
+4.15.0 - (October 3, 2019)
+------------------
+### Changed
+* Renamed react-datepicker's `datepicker.scss` to `react_datepicker.module.scss`.
+
 4.14.0 - (September 26, 2019)
 ------------------
 ### Changed

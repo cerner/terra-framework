@@ -123,7 +123,7 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
   });
 
   describe('Nav drawer button should be displayed when only help, settings or logout utilities are present', () => {
-    before(() => browser.url('/raw/tests/terra-application-navigation/application-navigation/no-custom-utility-items'));
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/no-custom-utility-items'));
 
     it('open drawer', () => {
       browser.waitForVisible('[data-compact-header-toggle="true"]');

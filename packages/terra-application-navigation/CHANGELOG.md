@@ -3,8 +3,16 @@ Changelog
 
 Unreleased
 ----------
+
+1.7.0 - (October 3, 2019)
+------------------
 ### Changed
+* Update terra-icon package version.
 * Adjusted title margin and padding
+* Update tests and screenshots to support theme tests
+
+### Fixed
+* Fix wdio test url.
 
 1.6.0 - (September 26, 2019)
 ------------------
