@@ -39,6 +39,10 @@ const propTypes = {
    */
   hideRequired: PropTypes.bool,
   /**
+   * Whether or not the field is incomplete.
+   */
+  isIncomplete: PropTypes.bool,
+  /**
    * Whether or not the field is an inline field.
    */
   isInline: PropTypes.bool,
@@ -139,6 +143,7 @@ const defaultProps = {
   hideRequired: false,
   includeDates: undefined,
   inputAttributes: undefined,
+  isIncomplete: false,
   isInline: false,
   isInvalid: false,
   isLabelHidden: false,
@@ -168,6 +173,7 @@ const DatePickerField = (props) => {
     filterDate,
     help,
     hideRequired,
+    isIncomplete,
     isInvalid,
     isInline,
     isLabelHidden,
@@ -232,6 +238,7 @@ const DatePickerField = (props) => {
         excludeDates={excludeDates}
         filterDate={filterDate}
         includeDates={includeDates}
+        isIncomplete={isIncomplete}
         maxDate={maxDate}
         minDate={minDate}
         name={name}

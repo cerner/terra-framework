@@ -29,6 +29,14 @@ const propTypes = {
    * */
   intl: intlShape.isRequired,
   /**
+   * Whether or not the input is incomplete.
+   */
+  isIncomplete: PropTypes.bool,
+  /**
+   * Whether or not the input is invalid.
+   */
+  isInvalid: PropTypes.bool,
+  /**
    * Name of the date input.
    */
   name: PropTypes.string,
@@ -73,6 +81,8 @@ const propTypes = {
 const defaultProps = {
   buttonRefCallback: undefined,
   inputAttributes: undefined,
+  isIncomplete: false,
+  isInvalid: false,
   name: undefined,
   onBlur: undefined,
   onChange: undefined,
@@ -129,6 +139,8 @@ class DatePickerInput extends React.Component {
       buttonRefCallback,
       inputAttributes,
       intl,
+      isIncomplete,
+      isInvalid,
       name,
       onBlur,
       onChange,
@@ -173,6 +185,8 @@ class DatePickerInput extends React.Component {
           onFocus={onFocus}
           onBlur={onBlur}
           aria-label={intl.formatMessage({ id: 'Terra.datePicker.date' })}
+          isInvalid={isInvalid}
+          isIncomplete={isIncomplete}
         />
         <Button
           className={cx('button')}
