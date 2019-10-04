@@ -29,6 +29,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
+    "terra-breakpoints": "^2.19.0",
     "terra-doc-template": "^2.2.0",
     "terra-notification-dialog": "^3.14.0",
     "uuid": "^3.3.2"
