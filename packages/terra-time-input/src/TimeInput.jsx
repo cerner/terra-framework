@@ -32,6 +32,14 @@ const propTypes = {
   * */
   intl: intlShape.isRequired,
   /**
+   * Whether or not the component is incomplete.
+   * */
+  isIncomplete: PropTypes.bool,
+  /**
+   * Whether or not the component is invalid.
+   * */
+  isInvalid: PropTypes.bool,
+  /**
    * Custom input attributes to apply to the minutes input
    */
   // eslint-disable-next-line react/forbid-prop-types
@@ -59,6 +67,10 @@ const propTypes = {
    */
   refCallback: PropTypes.func,
   /**
+   * Whether or not the time is required.
+   */
+  required: PropTypes.bool,
+  /**
    * Custom input attribues to apply to the seconds input
    */
   // eslint-disable-next-line react/forbid-prop-types
@@ -81,12 +93,15 @@ const propTypes = {
 const defaultProps = {
   disabled: false,
   inputAttributes: {},
+  isIncomplete: false,
+  isInvalid: false,
   minuteAttributes: {},
   hourAttributes: {},
   onBlur: null,
   onChange: null,
   onFocus: undefined,
   refCallback: undefined,
+  required: false,
   secondAttributes: {},
   showSeconds: false,
   value: undefined,
@@ -868,6 +883,8 @@ class TimeInput extends React.Component {
     const {
       disabled,
       inputAttributes,
+      isIncomplete,
+      isInvalid,
       minuteAttributes,
       hourAttributes,
       intl,
@@ -876,6 +893,7 @@ class TimeInput extends React.Component {
       onFocus,
       name,
       refCallback,
+      required,
       secondAttributes,
       showSeconds,
       value,
@@ -887,6 +905,8 @@ class TimeInput extends React.Component {
       { disabled },
       'time-input',
       { 'is-focused': this.state.isFocused },
+      { 'is-invalid': isInvalid },
+      { 'is-incomplete': (isIncomplete && required && !isInvalid) },
       customProps.className,
     ]);
 

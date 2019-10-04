@@ -92,6 +92,46 @@
     .meridiem-display[disabled] {
       opacity: 1;
     }
+
+    &.is-invalid {
+      background-color: #fff;
+      border: 1px solid #e50000;
+      box-shadow: 0 0 0 1px #e50000;
+
+      &:hover {
+        border: 1px solid #e50000;
+      }
+
+      &:focus {
+        border: 1px solid #e50000;
+      }
+
+      &.disabled {
+        background-color: rgba(111, 116, 119, 0.2);
+        border: 1px solid #e50000;
+        color: #1c1f21;
+        opacity: 0.25;
+      }
+    }
+
+    &.is-incomplete {
+      background-color: #ffc;
+
+      &:hover {
+        background-color: #ffc;
+      }
+
+      &:focus {
+        background-color: #ffc;
+      }
+
+      &.disabled {
+        background-color: #ffc;
+        border: 1px solid #868a8c;
+        color: #1c1f21;
+        opacity: 0.25;
+      }
+    }
   }
 
   .time-input-group {
