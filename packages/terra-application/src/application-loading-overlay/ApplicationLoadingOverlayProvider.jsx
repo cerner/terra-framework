@@ -36,11 +36,13 @@ const ApplicationLoadingOverlayProvider = ({
   const [loadingIndicators, setLoadingIndicators] = React.useState({});
 
   const contextValue = useMemo(() => ({
-    show: (key, message) => {
+    show: (key, backgroundStyle) => {
       setLoadingIndicators(state => (
         {
           ...state,
-          [`${key}`]: message,
+          [`${key}`]: {
+            backgroundStyle,
+          },
         }
       ));
     },
@@ -55,14 +57,21 @@ const ApplicationLoadingOverlayProvider = ({
   }), []);
 
   const registeredOverlayKeys = Object.keys(loadingIndicators);
+  const registeredBackgroundStyles = Object.values(loadingIndicators).map((indicator) => indicator.backgroundStyle);
+
+  let overlayBackgroundStyle = 'clear';
+  if (registeredBackgroundStyles.includes('dark')) {
+    overlayBackgroundStyle = 'dark';
+  } else if (registeredBackgroundStyles.includes('light')) {
+    overlayBackgroundStyle = 'light';
+  } 
+
   const overlay = (
     <LoadingOverlay
       isRelativeToContainer
       isAnimated
       isOpen={!!registeredOverlayKeys.length}
-      message={Object.keys(loadingIndicators).map(key => (
-        loadingIndicators[key]
-      )).join(', ')}
+      backgroundStyle={overlayBackgroundStyle}
     />
   );
 

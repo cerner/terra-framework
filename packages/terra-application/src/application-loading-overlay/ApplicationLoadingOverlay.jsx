@@ -10,12 +10,16 @@ const propTypes = {
    */
   isOpen: PropTypes.bool,
   /**
-   * A string to be rendered within the loading overlay when open.
+   * 
    */
-  message: PropTypes.string,
+  backgroundStyle: PropTypes.oneOf(['dark', 'light', 'clear'])
 };
 
-const ApplicationLoadingOverlay = ({ isOpen, message }) => {
+const defaultProps = {
+  backgroundStyle: 'transparent',
+}
+
+const ApplicationLoadingOverlay = ({ isOpen, backgroundStyle }) => {
   const id = useRef(uuidv4());
   const applicationLoadingOverlay = useContext(ApplicationLoadingOverlayContext);
 
@@ -23,7 +27,7 @@ const ApplicationLoadingOverlay = ({ isOpen, message }) => {
     const overlayId = id.current;
 
     if (isOpen) {
-      applicationLoadingOverlay.show(overlayId, message);
+      applicationLoadingOverlay.show(overlayId, backgroundStyle);
     } else {
       applicationLoadingOverlay.hide(overlayId);
     }
@@ -31,7 +35,7 @@ const ApplicationLoadingOverlay = ({ isOpen, message }) => {
     return () => {
       applicationLoadingOverlay.hide(overlayId);
     };
-  }, [isOpen, message, id, applicationLoadingOverlay]);
+  }, [isOpen, id, applicationLoadingOverlay]);
 
   return null;
 };
