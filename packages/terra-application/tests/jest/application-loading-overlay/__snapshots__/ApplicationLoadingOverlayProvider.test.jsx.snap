@@ -1,6 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ApplicationLoadingOverlayProvider Snapshots should render the loading overlay based on current state 1`] = `
+exports[`ApplicationLoadingOverlayProvider Snapshots should give render dark overlays when requested 1`] = `
+<OverlayContainer
+  className="container"
+  overlay={
+    <LoadingOverlay
+      backgroundStyle="dark"
+      isAnimated={true}
+      isOpen={true}
+      isRelativeToContainer={true}
+      rootSelector="#root"
+    />
+  }
+>
+  <Scroll>
+    <ContextProvider
+      value={
+        Object {
+          "hide": [Function],
+          "show": [Function],
+        }
+      }
+    >
+      <div>
+        Test child
+      </div>
+    </ContextProvider>
+  </Scroll>
+</OverlayContainer>
+`;
+
+exports[`ApplicationLoadingOverlayProvider Snapshots should give render light overlays when requested 1`] = `
 <OverlayContainer
   className="container"
   overlay={
@@ -9,7 +39,36 @@ exports[`ApplicationLoadingOverlayProvider Snapshots should render the loading o
       isAnimated={true}
       isOpen={true}
       isRelativeToContainer={true}
-      message="Message 1, Message 2"
+      rootSelector="#root"
+    />
+  }
+>
+  <Scroll>
+    <ContextProvider
+      value={
+        Object {
+          "hide": [Function],
+          "show": [Function],
+        }
+      }
+    >
+      <div>
+        Test child
+      </div>
+    </ContextProvider>
+  </Scroll>
+</OverlayContainer>
+`;
+
+exports[`ApplicationLoadingOverlayProvider Snapshots should render the loading overlay based on current state 1`] = `
+<OverlayContainer
+  className="container"
+  overlay={
+    <LoadingOverlay
+      backgroundStyle="clear"
+      isAnimated={true}
+      isOpen={true}
+      isRelativeToContainer={true}
       rootSelector="#root"
     />
   }
@@ -36,11 +95,10 @@ exports[`ApplicationLoadingOverlayProvider Snapshots should render with minimal 
   className="container"
   overlay={
     <LoadingOverlay
-      backgroundStyle="light"
+      backgroundStyle="clear"
       isAnimated={true}
       isOpen={false}
       isRelativeToContainer={true}
-      message=""
       rootSelector="#root"
     />
   }
@@ -63,11 +121,10 @@ exports[`ApplicationLoadingOverlayProvider Snapshots should render with optional
   className="container"
   overlay={
     <LoadingOverlay
-      backgroundStyle="light"
+      backgroundStyle="clear"
       isAnimated={true}
       isOpen={false}
       isRelativeToContainer={true}
-      message=""
       rootSelector="#root"
     />
   }

@@ -8,7 +8,7 @@ const contextShape = PropTypes.shape({
    * A function that will present a loading overlay for the given key. The key should
    * be unique (namespace appropriately). If an overlay is already presented for the
    * key, no action is performed.
-   * Ex. show(String key, String backgroundStyle)
+   * Ex. show(String key, Object data)
    */
   show: PropTypes.func,
   /**

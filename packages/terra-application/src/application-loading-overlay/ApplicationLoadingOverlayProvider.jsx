@@ -33,32 +33,33 @@ const ApplicationLoadingOverlayProvider = ({
   children,
   scrollRefCallback,
 }) => {
-  const [loadingIndicators, setLoadingIndicators] = React.useState({});
+  const [registeredLoadingOverlays, setRegisteredLoadingOverlays] = React.useState({});
 
   const contextValue = useMemo(() => ({
-    show: (key, backgroundStyle) => {
-      setLoadingIndicators(state => (
+    show: (key, data) => {
+      setRegisteredLoadingOverlays(state => (
         {
           ...state,
-          [`${key}`]: {
-            backgroundStyle,
-          },
+          [`${key}`]: data,
         }
       ));
     },
     hide: (key) => {
-      setLoadingIndicators((state) => {
-        const newLoadingIndicators = { ...state };
-        delete newLoadingIndicators[key];
+      setRegisteredLoadingOverlays((state) => {
+        const newRegisteredLoadingOverlays = { ...state };
+        delete newRegisteredLoadingOverlays[key];
 
-        return newLoadingIndicators;
+        return newRegisteredLoadingOverlays;
       });
     },
   }), []);
 
-  const registeredOverlayKeys = Object.keys(loadingIndicators);
-  const registeredBackgroundStyles = Object.values(loadingIndicators).map((indicator) => indicator.backgroundStyle);
+  const registeredOverlayKeys = Object.keys(registeredLoadingOverlays);
+  const registeredBackgroundStyles = registeredOverlayKeys.map(key => (registeredLoadingOverlays[key] && registeredLoadingOverlays[key].backgroundStyle));
 
+  /**
+   * If multiple styles of overlay are requested, the strongest requested style is used.
+   */
   let overlayBackgroundStyle = 'clear';
   if (registeredBackgroundStyles.includes('dark')) {
     overlayBackgroundStyle = 'dark';

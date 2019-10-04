@@ -2,22 +2,58 @@ import React, { useState } from 'react';
 import ApplicationLoadingOverlay from '../../../../../lib/application-loading-overlay/ApplicationLoadingOverlay';
 import ApplicationLoadingOverlayProvider from '../../../../../lib/application-loading-overlay/ApplicationLoadingOverlayProvider';
 
-const ApplicationLoadingOverlayConsumer = () => {
-  const [showLoadingOverlay, setShowLoadingOverlay] = useState(false);
+const ApplicationLoadingOverlayTest = () => {
+  const [showClearOverlay, setShowClearOverlay] = useState(false);
+  const [showLightOverlay, setShowLightOverlay] = useState(false);
+  const [showDarkOverlay, setShowDarkOverlay] = useState(false);
 
   return (
     <>
-      <ApplicationLoadingOverlay isOpen={showLoadingOverlay} message="Loading 1" />
-      <ApplicationLoadingOverlay isOpen={showLoadingOverlay} message="Loading 2" />
-      <button type="button" onClick={() => { setShowLoadingOverlay(true); }}>Show Loading Overlay</button>
+      <button
+        id="reset-button"
+        type="button"
+        onClick={() => {
+          setShowClearOverlay(false);
+          setShowLightOverlay(false);
+          setShowDarkOverlay(false);
+        }}
+      >
+        Reset
+      </button>
+      <button
+        id="clear-button"
+        type="button"
+        onClick={() => {
+          setShowClearOverlay(true);
+        }}
+      >
+        Show Clear Loading Overlay
+      </button>
+      <button
+        id="light-button"
+        type="button"
+        onClick={() => {
+          setShowLightOverlay(true);
+        }}
+      >
+        Show Light Loading Overlay
+      </button>
+      <button
+        id="dark-button"
+        type="button"
+        onClick={() => {
+          setShowDarkOverlay(true);
+        }}
+      >
+        Show Dark Loading Overlay
+      </button>
+      <ApplicationLoadingOverlayProvider>
+        <ApplicationLoadingOverlay isOpen={showClearOverlay} />
+        <ApplicationLoadingOverlay isOpen={showLightOverlay} backgroundStyle="light" />
+        <ApplicationLoadingOverlay isOpen={showDarkOverlay} backgroundStyle="dark" />
+      </ApplicationLoadingOverlayProvider>
     </>
-  );
+  )
 };
 
-const LoadingOverlayTest = () => (
-  <ApplicationLoadingOverlayProvider>
-    <ApplicationLoadingOverlayConsumer />
-  </ApplicationLoadingOverlayProvider>
-);
-
-export default LoadingOverlayTest;
+export default ApplicationLoadingOverlayTest;

@@ -52,7 +52,6 @@ const ApplicationLoadingOverlayExample = () => {
           <ApplicationLoadingOverlay isOpen={showClearOverlay} />
           <ApplicationLoadingOverlay isOpen={showLightOverlay} backgroundStyle="light" />
           <ApplicationLoadingOverlay isOpen={showDarkOverlay} backgroundStyle="dark" />
-          <p>Content within ApplicationOverlayProvider</p>
         </ApplicationLoadingOverlayProvider>
       </div>
     </>

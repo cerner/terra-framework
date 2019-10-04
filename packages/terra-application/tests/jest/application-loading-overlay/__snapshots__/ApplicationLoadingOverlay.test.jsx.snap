@@ -1,24 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ApplicationLoadingOverlay should redisplay loading overlay with new message 1`] = `
+exports[`ApplicationLoadingOverlay should honor backgroundStyle prop 1`] = `
 <ApplicationLoadingOverlay
+  backgroundStyle="clear"
   isOpen={true}
-  message="Test message"
 />
 `;
 
-exports[`ApplicationLoadingOverlay should render loading overlay as closed 1`] = `<ApplicationLoadingOverlay />`;
+exports[`ApplicationLoadingOverlay should honor backgroundStyle prop 2`] = `
+<ApplicationLoadingOverlay
+  backgroundStyle="light"
+  isOpen={true}
+/>
+`;
+
+exports[`ApplicationLoadingOverlay should honor backgroundStyle prop 3`] = `
+<ApplicationLoadingOverlay
+  backgroundStyle="dark"
+  isOpen={true}
+/>
+`;
+
+exports[`ApplicationLoadingOverlay should redisplay loading overlay with new props 1`] = `
+<ApplicationLoadingOverlay
+  backgroundStyle="clear"
+  isOpen={true}
+/>
+`;
+
+exports[`ApplicationLoadingOverlay should render loading overlay as closed 1`] = `
+<ApplicationLoadingOverlay
+  backgroundStyle="clear"
+/>
+`;
 
 exports[`ApplicationLoadingOverlay should render loading overlay as open 1`] = `
 <ApplicationLoadingOverlay
+  backgroundStyle="clear"
   isOpen={true}
-  message="Test message"
 />
 `;
 
 exports[`ApplicationLoadingOverlay should transition from open to closed 1`] = `
 <ApplicationLoadingOverlay
+  backgroundStyle="clear"
   isOpen={true}
-  message="Test message"
 />
 `;

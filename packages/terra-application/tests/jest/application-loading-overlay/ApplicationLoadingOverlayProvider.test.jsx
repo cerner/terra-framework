@@ -28,8 +28,46 @@ describe('ApplicationLoadingOverlayProvider', () => {
       const reactUseState = React.useState;
       const mockSetState = jest.fn();
       React.useState = () => ([{
-        1: 'Message 1',
-        2: 'Message 2',
+        1: { backgroundStyle: 'clear' },
+        2: { backgroundStyle: 'clear' },
+      }, mockSetState]);
+
+      const wrapper = shallow((
+        <ApplicationLoadingOverlayProvider>
+          <div>Test child</div>
+        </ApplicationLoadingOverlayProvider>
+      ));
+
+      expect(wrapper).toMatchSnapshot();
+
+      React.useState = reactUseState;
+    });
+
+    it('should give render dark overlays when requested', () => {
+      const reactUseState = React.useState;
+      const mockSetState = jest.fn();
+      React.useState = () => ([{
+        1: { backgroundStyle: 'dark' },
+        2: { backgroundStyle: 'light' },
+      }, mockSetState]);
+
+      const wrapper = shallow((
+        <ApplicationLoadingOverlayProvider>
+          <div>Test child</div>
+        </ApplicationLoadingOverlayProvider>
+      ));
+
+      expect(wrapper).toMatchSnapshot();
+
+      React.useState = reactUseState;
+    });
+
+    it('should give render light overlays when requested', () => {
+      const reactUseState = React.useState;
+      const mockSetState = jest.fn();
+      React.useState = () => ([{
+        1: { backgroundStyle: 'light' },
+        2: { backgroundStyle: 'clear' },
       }, mockSetState]);
 
       const wrapper = shallow((

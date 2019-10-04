@@ -10,13 +10,13 @@ const propTypes = {
    */
   isOpen: PropTypes.bool,
   /**
-   * 
+   * A string indicating the background style for the overlay. One of: `dark`, `light`, `clear`.
    */
   backgroundStyle: PropTypes.oneOf(['dark', 'light', 'clear'])
 };
 
 const defaultProps = {
-  backgroundStyle: 'transparent',
+  backgroundStyle: 'clear',
 }
 
 const ApplicationLoadingOverlay = ({ isOpen, backgroundStyle }) => {
@@ -27,7 +27,7 @@ const ApplicationLoadingOverlay = ({ isOpen, backgroundStyle }) => {
     const overlayId = id.current;
 
     if (isOpen) {
-      applicationLoadingOverlay.show(overlayId, backgroundStyle);
+      applicationLoadingOverlay.show(overlayId, { backgroundStyle });
     } else {
       applicationLoadingOverlay.hide(overlayId);
     }
@@ -35,11 +35,12 @@ const ApplicationLoadingOverlay = ({ isOpen, backgroundStyle }) => {
     return () => {
       applicationLoadingOverlay.hide(overlayId);
     };
-  }, [isOpen, id, applicationLoadingOverlay]);
+  }, [isOpen, backgroundStyle, id, applicationLoadingOverlay]);
 
   return null;
 };
 
 ApplicationLoadingOverlay.propTypes = propTypes;
+ApplicationLoadingOverlay.defaultProps = defaultProps;
 
 export default ApplicationLoadingOverlay;

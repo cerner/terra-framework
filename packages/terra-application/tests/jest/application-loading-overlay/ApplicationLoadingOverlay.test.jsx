@@ -57,14 +57,13 @@ describe('ApplicationLoadingOverlay', () => {
     };
 
     const wrapper = mount(
-      <ApplicationLoadingOverlay isOpen message="Test message" />,
+      <ApplicationLoadingOverlay isOpen />,
     );
 
     expect(wrapper).toMatchSnapshot();
 
     expect(loadingOverlayContextValue.show.mock.calls.length).toBe(1);
     expect(loadingOverlayContextValue.show.mock.calls[0][0]).toBe('test-id');
-    expect(loadingOverlayContextValue.show.mock.calls[0][1]).toBe('Test message');
     expect(loadingOverlayContextValue.hide.mock.calls.length).toBe(0);
 
     wrapper.unmount();
@@ -80,14 +79,13 @@ describe('ApplicationLoadingOverlay', () => {
     };
 
     const wrapper = mount(
-      <ApplicationLoadingOverlay isOpen message="Test message" />,
+      <ApplicationLoadingOverlay isOpen />,
     );
 
     expect(wrapper).toMatchSnapshot();
 
     expect(loadingOverlayContextValue.show.mock.calls.length).toBe(1);
     expect(loadingOverlayContextValue.show.mock.calls[0][0]).toBe('test-id');
-    expect(loadingOverlayContextValue.show.mock.calls[0][1]).toBe('Test message');
     expect(loadingOverlayContextValue.hide.mock.calls.length).toBe(0);
 
     wrapper.setProps({ isOpen: false });
@@ -97,29 +95,46 @@ describe('ApplicationLoadingOverlay', () => {
     expect(loadingOverlayContextValue.hide.mock.calls[0][0]).toBe('test-id');
   });
 
-  it('should redisplay loading overlay with new message', () => {
+  it('should redisplay loading overlay with new props', () => {
     loadingOverlayContextValue = {
       show: jest.fn(),
       hide: jest.fn(),
     };
 
     const wrapper = mount(
-      <ApplicationLoadingOverlay isOpen message="Test message" />,
+      <ApplicationLoadingOverlay isOpen />,
     );
 
     expect(wrapper).toMatchSnapshot();
 
     expect(loadingOverlayContextValue.show.mock.calls.length).toBe(1);
     expect(loadingOverlayContextValue.show.mock.calls[0][0]).toBe('test-id');
-    expect(loadingOverlayContextValue.show.mock.calls[0][1]).toBe('Test message');
     expect(loadingOverlayContextValue.hide.mock.calls.length).toBe(0);
 
-    wrapper.setProps({ message: 'New message' });
+    wrapper.setProps({ backgroundStyle: 'dark' });
 
     expect(loadingOverlayContextValue.show.mock.calls.length).toBe(2);
     expect(loadingOverlayContextValue.show.mock.calls[1][0]).toBe('test-id');
-    expect(loadingOverlayContextValue.show.mock.calls[1][1]).toBe('New message');
     expect(loadingOverlayContextValue.hide.mock.calls.length).toBe(1);
     expect(loadingOverlayContextValue.hide.mock.calls[0][0]).toBe('test-id');
+  });
+
+  it('should honor backgroundStyle prop', () => {
+    loadingOverlayContextValue = {
+      show: jest.fn(),
+      hide: jest.fn(),
+    };
+
+    const wrapper = mount(
+      <ApplicationLoadingOverlay isOpen backgroundStyle="clear" />,
+    );
+
+    expect(wrapper).toMatchSnapshot();
+
+    wrapper.setProps({ backgroundStyle: 'light' });
+    expect(wrapper).toMatchSnapshot();
+
+    wrapper.setProps({ backgroundStyle: 'dark' });
+    expect(wrapper).toMatchSnapshot();
   });
 });
