@@ -4,6 +4,14 @@ Changelog
 Unreleased
 ----------
 
+3.14.0 - (October 3, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+### Fixed
+* Removed extra comma from scss file.
+
 3.13.0 - (September 26, 2019)
 ------------------
 ### Changed
