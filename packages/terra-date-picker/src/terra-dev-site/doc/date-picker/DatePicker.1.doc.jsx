@@ -72,11 +72,6 @@ const DocPage = () => (
         example: <DatePickerInvalid />,
         source: DatePickerInvalidSrc,
       },
-      {
-        title: 'Incomplete',
-        example: <DatePickerIncomplete />,
-        source: DatePickerIncompletetSrc,
-      },
     ]}
     propsTables={[
       {
