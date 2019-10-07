@@ -38,6 +38,7 @@
     transition-duration: var(--terra-time-input-transition-duration, 0.2s);
     transition-property: background-size;
     transition-timing-function: var(--terra-time-input-transition-timing-function, ease);
+    vertical-align: top;
 
     &:hover {
       background-color: var(--terra-time-input-hover-background-color, #fff);
