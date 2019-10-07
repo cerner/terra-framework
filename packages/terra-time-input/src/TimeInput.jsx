@@ -722,17 +722,28 @@ class TimeInput extends React.Component {
       minuteAttributes,
       hourAttributes,
       intl,
+      isIncomplete,
+      isInvalid,
       onBlur,
       onChange,
       onFocus,
       name,
       refCallback,
+      required,
       secondAttributes,
       showSeconds,
       value,
       variant,
       ...customProps
     } = this.props;
+
+    const timeInputClassNames = cx([
+      'mobile-time-picker',
+      { 'is-focused': this.state.isFocused },
+      { 'is-invalid': isInvalid },
+      { 'is-incomplete': (isIncomplete && required && !isInvalid) },
+      customProps.className,
+    ]);
 
     const instanceHoursAttrs = { ...hourAttributes };
     const instanceMinuteAttrs = { ...minuteAttributes };
