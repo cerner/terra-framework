@@ -4,23 +4,24 @@ import React, { useState } from 'react';
 import DateInputField from 'terra-date-input/lib/DateInputField';
 
 const Example = () => {
-  const [value, setValue] = useState('$5%g-ad-!f');
-  const [isInvalid, setIsInvalid] = useState(true);
+  const [value, setValue] = useState('');
+  const [isIncomplete, setIsIncomplete] = useState(false);
 
   return (
-    <div>
+    <React.Fragment>
       <DateInputField
         legend="Legend text"
-        name="date-input"
+        name="date-input-value"
         value={value}
         onChange={(event, dateString) => setValue(dateString)}
+        required
         error="Error message"
         help="Help message"
-        isInvalid={isInvalid}
+        isIncomplete={isIncomplete}
       />
       <p>{`DateInputField Value: ${value}`}</p>
-      <button type="button" onClick={() => setIsInvalid(invalid => !invalid)}>Toggle isInvalid</button>
-    </div>
+      <button type="button" onClick={() => setIsIncomplete(incomplete => !incomplete)}>Toggle isIncomplete</button>
+    </React.Fragment>
   );
 };
 

@@ -47,6 +47,10 @@ const propTypes = {
    */
   hideRequired: PropTypes.bool,
   /**
+  * Whether or not the field is incomplete.
+  */
+  isIncomplete: PropTypes.bool,
+  /**
    * Whether or not the field is an inline field.
    */
   isInline: PropTypes.bool,
@@ -114,6 +118,7 @@ const defaultProps = {
   error: null,
   help: null,
   hideRequired: false,
+  isIncomplete: false,
   isInline: false,
   isInvalid: false,
   isLegendHidden: false,
@@ -137,6 +142,7 @@ const DateInputField = (props) => {
     error,
     help,
     hideRequired,
+    isIncomplete,
     isInline,
     isInvalid,
     isLegendHidden,
@@ -226,6 +232,8 @@ const DateInputField = (props) => {
         displayFormat={displayFormat}
         disabled={disabled}
         isInvalid={isInvalid}
+        isIncomplete={isIncomplete}
+        required={required}
         monthAttributes={{ ...monthAttributes, ...{ 'aria-describedby': monthAriaDesciptionIds } }}
         dayAttributes={{ ...dayAttributes, ...{ 'aria-describedby': dayAriaDesciptionIds } }}
         yearAttributes={{ ...yearAttributes, ...{ 'aria-describedby': yearAriaDesciptionIds } }}

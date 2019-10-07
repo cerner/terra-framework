@@ -5,7 +5,7 @@ import DateInputField from 'terra-date-input/lib/DateInputField';
 
 const Example = () => {
   const [value, setValue] = useState('$5%g-ad-!f');
-  const [isInvalid, setIsInvalid] = useState(true);
+  const [isIncomplete, setIsIncomplete] = useState(true);
 
   return (
     <div>
@@ -16,10 +16,11 @@ const Example = () => {
         onChange={(event, dateString) => setValue(dateString)}
         error="Error message"
         help="Help message"
-        isInvalid={isInvalid}
+        isIncomplete={isIncomplete}
+        required
       />
       <p>{`DateInputField Value: ${value}`}</p>
-      <button type="button" onClick={() => setIsInvalid(invalid => !invalid)}>Toggle isInvalid</button>
+      <button type="button" onClick={() => setIsIncomplete(incomplete => !incomplete)}>Toggle isIncomplete</button>
     </div>
   );
 };

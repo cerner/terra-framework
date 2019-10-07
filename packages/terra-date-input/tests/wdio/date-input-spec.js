@@ -17,6 +17,12 @@ Terra.describeViewports('Date Input', ['medium'], () => {
     Terra.it.validatesElement();
   });
 
+  describe('Date Input incomplete', () => {
+    before(() => browser.url('/#/raw/tests/terra-date-input/date-input/incomplete-date-input'));
+
+    Terra.it.validatesElement();
+  });
+
   describe('Disabled Date Input', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-input/date-input/disabled-date-input');

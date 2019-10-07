@@ -777,7 +777,7 @@ class TimeInput extends React.Component {
     return (
       <div
         {...customProps}
-        className={cx(['mobile-time-picker', customProps.className])}
+        className={timeInputClassNames}
         ref={this.timeInputContainer}
       >
         <input
