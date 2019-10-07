@@ -7,6 +7,11 @@ Unreleased
 * Changed 12-hour format appearance for mobile and desktop.
   * Meridiem select on Desktop has been changed to buttons which means that the WebdriverIO reference screenshots (if any) and/or any code in the consumer application that accesses the old meridiem select functionality on the Desktop view need to be updated.
 
+4.15.0 - (October 3, 2019)
+------------------
+### Changed
+* Update the `variant` prop description to call out which locales do not use the 12-hour time notation.
+
 4.14.0 - (September 26, 2019)
 ------------------
 ### Changed
