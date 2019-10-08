@@ -238,6 +238,7 @@ const DatePickerField = (props) => {
         excludeDates={excludeDates}
         filterDate={filterDate}
         includeDates={includeDates}
+        isInvalid={isInvalid}
         isIncomplete={isIncomplete}
         maxDate={maxDate}
         minDate={minDate}
