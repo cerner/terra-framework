@@ -335,3 +335,15 @@ it('should validate the validateTime helper method', () => {
   expect(TimeUtil.validateTime('23:47', true)).toBe(false);
   expect(TimeUtil.validateTime('23:47:60', true)).toBe(false);
 });
+
+it('should validate the getVariantFromLocale helper method', () => {
+  const timeInput = <TimeInput name="time-input" variant="12-hour" />;
+  const wrapper = mountWithIntl(timeInput);
+  const testComponent = wrapper.children();
+
+  if (['ar', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-US', 'es', 'es-US'].includes(testComponent.instance().props.intl.locale)) {
+    expect(TimeUtil.getVariantFromLocale(testComponent.instance().props)).toEqual('12-hour');
+  } else {
+    expect(TimeUtil.getVariantFromLocale(testComponent.instance().props)).toEqual('24-hour');
+  }
+});

@@ -5,7 +5,7 @@ import { FormattedMessage } from 'react-intl';
 import YearDropdownOptions from './year_dropdown_options'
 import onClickOutside from 'react-onclickoutside'
 import { getYear } from './date_utils'
-import styles from './stylesheets/datepicker.scss'
+import styles from './stylesheets/react_datepicker.module.scss'
 
 const cx = classNames.bind(styles);
 
