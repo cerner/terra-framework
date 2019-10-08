@@ -1,5 +1,4 @@
 import React from 'react';
-import { mountWithIntl } from 'terra-enzyme-intl';
 import ApplicationErrorBoundary from '../../../src/application-error-boundary/ApplicationErrorBoundary';
 
 describe('ApplicationErrorBoundary', () => {
