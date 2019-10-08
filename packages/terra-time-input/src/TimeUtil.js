@@ -253,6 +253,21 @@ class TimeUtil {
 
     return /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(value);
   }
+
+  /**
+   * Determines if the locale can use the 12-hour time notation. Default to use the 24-hour variant if the locale does not use it.
+   * @param {Object} props - The component props.
+   * @return {String} FORMAT_24_HOUR if the locale does not use the 12-hour notation. Otherwise, the current variant prop.
+   */
+  static getVariantFromLocale(props) {
+    const { intl, variant } = props;
+
+    if (!intl.messages['Terra.timeInput.am'] || !intl.messages['Terra.timeInput.pm']) {
+      return this.FORMAT_24_HOUR;
+    }
+
+    return variant;
+  }
 }
 
 TimeUtil.inputType = {
