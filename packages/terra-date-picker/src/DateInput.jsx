@@ -162,6 +162,10 @@ class DatePickerInput extends React.Component {
     const additionalInputProps = { ...customProps, ...inputAttributes };
 
     const dateValue = DateUtil.convertToISO8601(value, DateUtil.getFormatByLocale(intl.locale));
+    const buttonClasses = cx([
+      'button',
+      { 'is-invalid': isInvalid },
+    ]);
     const buttonText = intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
 
     return (
@@ -189,7 +193,7 @@ class DatePickerInput extends React.Component {
           isIncomplete={isIncomplete}
         />
         <Button
-          className={cx('button')}
+          className={buttonClasses}
           text={buttonText}
           onClick={this.handleOnButtonClick}
           onKeyDown={this.handleOnKeyDown}
