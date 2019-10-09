@@ -1,5 +1,20 @@
 # Terra Menu Upgrade Guide
 
+## Changes from version 5 to version 6
+
+### Changes to CSS Custom Properties
+
+#### Renamed ~6.13.x
+| Previous | New |
+|-|-|
+| --terra-menu-item-checkmark-icon-color | --terra-menu-item-start-icon-color |
+| --terra-menu-item-checkmark-icon-font-size | --terra-menu-item-start-icon-font-size |
+| --terra-menu-item-checkmark-icon-margin-left | --terra-menu-item-start-icon-margin-left |
+| --terra-menu-item-checkmark-icon-margin-right | --terra-menu-item-start-icon-margin-right |
+
+#### Added ~6.13.x
+* --terra-menu-item-disabled-start-icon-color
+
 ## Changes from version 3 to version 4
 
 ### Changes to CSS Custom Properties
