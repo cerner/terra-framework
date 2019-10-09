@@ -71,7 +71,7 @@ const propTypes = {
    */
   required: PropTypes.bool,
   /**
-   * Custom input attribues to apply to the seconds input
+   * Custom input attributes to apply to the seconds input
    */
   // eslint-disable-next-line react/forbid-prop-types
   secondAttributes: PropTypes.object,
@@ -85,7 +85,9 @@ const propTypes = {
    */
   value: PropTypes.string,
   /**
-   * Type of time input to initialize. Must be '24-hour' or '12-hour'
+   * Type of time input to initialize. Must be `24-hour` or `12-hour`.
+   * The `de`, `es-ES`, `fr-FR`, `fr`, `nl-BE`, `nl`, `pt-BR`, `pt`, `sv-SE` and `sv` locales do not use the 12-hour time notation.
+   * If the `variant` prop if set to `12-hour` for one of these supported locales, the variant will be ignored and defaults to `24-hour`.
    */
   variant: PropTypes.oneOf([TimeUtil.FORMAT_12_HOUR, TimeUtil.FORMAT_24_HOUR]),
 };
@@ -152,7 +154,7 @@ class TimeInput extends React.Component {
     let hour = TimeUtil.splitHour(value);
     let meridiem;
 
-    if (props.variant === TimeUtil.FORMAT_12_HOUR) {
+    if (TimeUtil.getVariantFromLocale(props) === TimeUtil.FORMAT_12_HOUR) {
       if (!this.props.intl.messages['Terra.timeInput.am'] || !this.props.intl.messages['Terra.timeInput.pm']) {
         if (process.env !== 'production') {
           // eslint-disable-next-line no-console
@@ -190,9 +192,11 @@ class TimeInput extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
+    const variant = TimeUtil.getVariantFromLocale(this.props);
+
     if (
       this.props.value === prevProps.value
-      && this.props.variant === prevProps.variant
+      && variant === TimeUtil.getVariantFromLocale(prevProps)
     ) {
       return;
     }
@@ -200,19 +204,9 @@ class TimeInput extends React.Component {
     let hour = TimeUtil.splitHour(this.props.value);
     let { meridiem } = this.state;
 
-    if (this.props.variant === TimeUtil.FORMAT_12_HOUR) {
-      if (!this.props.intl.messages['Terra.timeInput.am'] || !this.props.intl.messages['Terra.timeInput.pm']) {
-        if (process.env !== 'production') {
-          // eslint-disable-next-line no-console
-          console.warn('This locale only uses 24 hour clock. The ante meridiem and post meridiem will not be displayed');
-        }
-
-        this.anteMeridiem = '';
-        this.postMeridiem = '';
-      } else {
-        this.anteMeridiem = this.props.intl.formatMessage({ id: 'Terra.timeInput.am' });
-        this.postMeridiem = this.props.intl.formatMessage({ id: 'Terra.timeInput.pm' });
-      }
+    if (variant === TimeUtil.FORMAT_12_HOUR) {
+      this.anteMeridiem = this.props.intl.formatMessage({ id: 'Terra.timeInput.am' });
+      this.postMeridiem = this.props.intl.formatMessage({ id: 'Terra.timeInput.pm' });
 
       if (hour) {
         const parsedHour = TimeUtil.parseTwelveHourTime(hour, this.anteMeridiem, this.postMeridiem);
@@ -285,7 +279,7 @@ class TimeInput extends React.Component {
 
       // Prepend a 0 to the value when losing focus and the value is single digit.
       if (stateValue.length === 1) {
-        if (this.props.variant === TimeUtil.FORMAT_12_HOUR
+        if (TimeUtil.getVariantFromLocale(this.props) === TimeUtil.FORMAT_12_HOUR
           && type === TimeUtil.inputType.HOUR
           && stateValue === '0') {
           stateValue = '12';
@@ -316,7 +310,8 @@ class TimeInput extends React.Component {
 
     let inputValue = event.target.value;
     const stateValue = this.state.hour;
-    const maxValue = this.props.variant === TimeUtil.FORMAT_12_HOUR ? 12 : 23;
+    const variant = TimeUtil.getVariantFromLocale(this.props);
+    const maxValue = variant === TimeUtil.FORMAT_12_HOUR ? 12 : 23;
 
     // Ignore the entry if the value did not change or it is invalid.
     // When 'Predictive text' is enabled on Android the maxLength attribute on the input is ignored so we have to
@@ -330,7 +325,7 @@ class TimeInput extends React.Component {
     if (inputValue.length >= stateValue.length) {
       const digitsToPrependZero = ['3', '4', '5', '6', '7', '8', '9'];
 
-      if (this.props.variant === TimeUtil.FORMAT_12_HOUR) {
+      if (variant === TimeUtil.FORMAT_12_HOUR) {
         digitsToPrependZero.push('2');
       }
 
@@ -339,7 +334,7 @@ class TimeInput extends React.Component {
       }
     }
 
-    if (inputValue === '00' && this.props.variant === TimeUtil.FORMAT_12_HOUR) {
+    if (inputValue === '00' && variant === TimeUtil.FORMAT_12_HOUR) {
       inputValue = '12';
     }
 
@@ -383,8 +378,8 @@ class TimeInput extends React.Component {
         if (this.props.showSeconds) {
           // Move focus to second if second is shown and minute input has a valid and complete entry
           this.secondInput.focus();
-        } else if (this.props.variant === TimeUtil.FORMAT_12_HOUR && this.meridiemSelect) {
-          // Else move focus to the merdiem for 12 hours times if the minute input has a valid and complete entry.
+        } else if (TimeUtil.getVariantFromLocale(this.props) === TimeUtil.FORMAT_12_HOUR && this.meridiemSelect) {
+          // Else move focus to the meridiem for 12 hours times if the minute input has a valid and complete entry.
           this.meridiemSelect.focus();
         }
       }
@@ -419,8 +414,8 @@ class TimeInput extends React.Component {
     }
 
     const moveFocusOnChange = () => {
-      // Move focus to the merdiem for 12 hours times if the second input has a valid and complete entry.
-      if (this.props.variant === TimeUtil.FORMAT_12_HOUR && inputValue.length === 2 && this.meridiemSelect) {
+      // Move focus to the meridiem for 12 hours times if the second input has a valid and complete entry.
+      if (TimeUtil.getVariantFromLocale(this.props) === TimeUtil.FORMAT_12_HOUR && inputValue.length === 2 && this.meridiemSelect) {
         this.meridiemSelect.focus();
       }
     };
@@ -463,12 +458,13 @@ class TimeInput extends React.Component {
     let stateValue = this.state.hour;
     let { meridiem } = this.state;
     const previousStateValue = stateValue;
+    const variant = TimeUtil.getVariantFromLocale(this.props);
 
     if (event.keyCode === KeyCode.KEY_UP) {
-      stateValue = TimeUtil.incrementHour(stateValue, this.props.variant);
+      stateValue = TimeUtil.incrementHour(stateValue, variant);
 
       // Hitting 12 when incrementing up changes the meridiem
-      if (this.props.variant === TimeUtil.FORMAT_12_HOUR && stateValue === '12') {
+      if (variant === TimeUtil.FORMAT_12_HOUR && stateValue === '12') {
         if (meridiem === this.postMeridiem || !previousStateValue) {
           meridiem = this.anteMeridiem;
         } else {
@@ -478,10 +474,10 @@ class TimeInput extends React.Component {
     }
 
     if (event.keyCode === KeyCode.KEY_DOWN) {
-      stateValue = TimeUtil.decrementHour(stateValue, this.props.variant);
+      stateValue = TimeUtil.decrementHour(stateValue, variant);
 
       // Hitting 11 when incrementing down changes the meridiem
-      if (this.props.variant === TimeUtil.FORMAT_12_HOUR && stateValue === '11') {
+      if (variant === TimeUtil.FORMAT_12_HOUR && stateValue === '11') {
         meridiem = meridiem === this.postMeridiem ? this.anteMeridiem : this.postMeridiem;
       }
     }
@@ -679,7 +675,7 @@ class TimeInput extends React.Component {
 
     let tempHour = parseInt(hour, 10);
 
-    if (this.props.variant === TimeUtil.FORMAT_12_HOUR) {
+    if (TimeUtil.getVariantFromLocale(this.props) === TimeUtil.FORMAT_12_HOUR) {
       if (meridiem === this.postMeridiem && tempHour < 12) {
         tempHour += 12;
       } else if (meridiem === this.anteMeridiem && tempHour === 12) {
@@ -748,6 +744,7 @@ class TimeInput extends React.Component {
     const instanceHoursAttrs = { ...hourAttributes };
     const instanceMinuteAttrs = { ...minuteAttributes };
     const instanceSecondAttrs = { ...secondAttributes };
+    const variantFromLocale = TimeUtil.getVariantFromLocale(this.props);
 
     // Using the state of hour, minute, and second (if shown) create a time in UTC represented in ISO 8601 format.
     let timeValue = '';
@@ -755,7 +752,7 @@ class TimeInput extends React.Component {
     if (this.state.hour.length > 0 || this.state.minute.length > 0 || this.state.second.length > 0) {
       let hour = parseInt(this.state.hour, 10);
 
-      if (this.props.variant === TimeUtil.FORMAT_12_HOUR && this.state.meridiem === this.postMeridiem && hour > 12) {
+      if (variantFromLocale === TimeUtil.FORMAT_12_HOUR && this.state.meridiem === this.postMeridiem && hour > 12) {
         hour += 12;
       }
 
@@ -862,7 +859,7 @@ class TimeInput extends React.Component {
             </div>
           </React.Fragment>
         )}
-        {this.props.variant === TimeUtil.FORMAT_12_HOUR && (
+        {variantFromLocale === TimeUtil.FORMAT_12_HOUR && (
           <ButtonGroup selectedKeys={[this.state.meridiem]} onChange={this.handleMeridiemButtonChange} className={cx('meridiem-button-group')}>
             <ButtonGroup.Button
               key={this.anteMeridiem}
@@ -912,6 +909,7 @@ class TimeInput extends React.Component {
       ...customProps
     } = this.props;
 
+    const variantFromLocale = TimeUtil.getVariantFromLocale(this.props);
     const timeInputClassNames = cx([
       { disabled },
       'time-input',
@@ -927,7 +925,7 @@ class TimeInput extends React.Component {
     if (this.state.hour.length > 0 || this.state.minute.length > 0 || (this.state.second.length > 0 && showSeconds)) {
       let hour = parseInt(this.state.hour, 10);
 
-      if (this.props.variant === TimeUtil.FORMAT_12_HOUR && this.state.meridiem === this.postMeridiem) {
+      if (variantFromLocale === TimeUtil.FORMAT_12_HOUR && this.state.meridiem === this.postMeridiem) {
         hour += 12;
       }
 
@@ -1018,7 +1016,7 @@ class TimeInput extends React.Component {
             />
           </React.Fragment>
         )}
-        {this.props.variant === TimeUtil.FORMAT_12_HOUR && (
+        {variantFromLocale === TimeUtil.FORMAT_12_HOUR && (
           [
             <Input
               {...inputAttributes}
