@@ -220,7 +220,7 @@
       &.is-placeholder {
         color: transparent;
         /* stylelint-disable terra/custom-property-name*/
-        text-shadow: 0 0 0 var(--terra-date-input-month-select-placeholder-color, #70787c);
+        text-shadow: 0 0 0 var(--terra-date-input-month-select-placeholder-color, rgba(25, 32, 35, 0.53));
         /* stylelint-enable terra/custom-property-name*/
       }
     }

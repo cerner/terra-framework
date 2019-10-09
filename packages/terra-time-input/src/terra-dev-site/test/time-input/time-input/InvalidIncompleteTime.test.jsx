@@ -5,6 +5,8 @@ const TimeInputDefault = () => (
   <TimeInput
     id="timeInput"
     name="time-input"
+    required
+    isIncomplete
     isInvalid
   />
 );

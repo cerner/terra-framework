@@ -5,7 +5,7 @@ const TimeInputDefault = () => (
   <TimeInput
     id="timeInput"
     name="time-input"
-    isInvalid
+    value="2:00"
   />
 );
 

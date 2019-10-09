@@ -36,7 +36,7 @@
   "devDependencies": {
     "terra-collapsible-menu-view": "^6.13.0",
     "terra-doc-template": "^2.2.0",
-    "terra-form-select": "https://github.cerner.com/terra/terra-snapshots/raw/master/terra-core/form-field-adding-isincomplete-prop/terra-form-select.tgz"
+    "terra-form-select": "^5.0.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
