@@ -84,13 +84,13 @@
 
       &.disabled {
         background-color: var(--terra-date-input-month-error-disabled-background-color, rgba(111, 116, 119, 0.2));
-        opacity: var(--terra-date-input-month-error-disabled-opacity, 0.25);
         border: 1px solid #e50000;
         color: #1c1f21;
+        opacity: var(--terra-date-input-month-error-disabled-opacity, 0.25);
+      }
 
-        &::after {
-          background-image: var(--terra-date-input-month-after-error-disabled-arrow-icon-background-image, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path fill="#bfbfbf" d="M48 12L24 36 0 12h48z"/></svg>'));
-        }
+      &.disabled::after {
+        background-image: var(--terra-date-input-month-after-error-disabled-arrow-icon-background-image, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path fill="#bfbfbf" d="M48 12L24 36 0 12h48z"/></svg>'));
       }
     }
 
@@ -190,10 +190,10 @@
       &.disabled {
         border: var(--terra-date-input-month-select-error-disabled-border, 1px solid #dedfe0);
         color: var(--terra-date-input-month-select-error-disabled-color, rgba(0, 0, 0, 0.25));
+      }
 
-        &.is-placeholder {
-          color: var(--terra-date-input-month-select-error-disabled-placeholder-color, rgba(25, 32, 35, 0.53));
-        }
+      &.disabled.is-placeholder {
+        color: var(--terra-date-input-month-select-error-disabled-placeholder-color, rgba(25, 32, 35, 0.53));
       }
     }
   }
@@ -220,7 +220,7 @@
       &.is-placeholder {
         color: transparent;
         /* stylelint-disable terra/custom-property-name*/
-        text-shadow: 0 0 0 var(--terra-date-input-month-select-placeholder-color, rgba(25, 32, 35, 0.53));
+        text-shadow: 0 0 0 var(--terra-date-input-month-select-placeholder-color, #70787c);
         /* stylelint-enable terra/custom-property-name*/
       }
     }

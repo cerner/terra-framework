@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import DateInputField from 'terra-date-input/lib/DateInputField';
 
 const Example = () => {
-  const [value, setValue] = useState('$5%g-ad-!f');
+  const [value, setValue] = useState('1999-03-10');
   const [isIncomplete, setIsIncomplete] = useState(true);
 
   return (

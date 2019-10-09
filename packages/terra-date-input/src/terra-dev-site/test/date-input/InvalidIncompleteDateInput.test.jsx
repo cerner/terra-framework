@@ -11,6 +11,7 @@ const Example = () => (
       value="1999-03-10"
       required
       isIncomplete
+      isInvalid
     />
   </div>
 );

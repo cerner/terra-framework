@@ -41,6 +41,7 @@ exports[`should render a DatePickerField with props 1`] = `
       }
     }
     isIncomplete={false}
+    isInvalid={true}
     maxDate="2017-04-10"
     minDate="2017-04-01"
     name="test-date-picker"
@@ -80,6 +81,7 @@ exports[`should render a default DatePickerField component 1`] = `
     disabled={false}
     id="test-date-picker"
     isIncomplete={false}
+    isInvalid={false}
     name="test-date-picker"
     required={false}
   />
@@ -127,6 +129,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
       }
     }
     isIncomplete={false}
+    isInvalid={false}
     maxDate="2017-04-10"
     minDate="2017-04-01"
     name="test-date-picker"

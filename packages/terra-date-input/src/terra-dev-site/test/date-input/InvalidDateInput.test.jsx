@@ -8,6 +8,7 @@ const Example = () => (
     <DateInput
       id="dateInput"
       name="date-input"
+      value="1999-03-10"
       isInvalid
     />
   </div>

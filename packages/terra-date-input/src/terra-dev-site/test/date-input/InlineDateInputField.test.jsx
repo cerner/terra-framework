@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import DateInputField from 'terra-date-input/lib/DateInputField';
 
 const Example = () => {
-  const [dateFieldValue1, setDateFieldValue1] = useState('');
-  const [dateFieldValue2, setDateFieldValue2] = useState('');
+  const [dateFieldValue1, setDateFieldValue1] = useState('1999-03-10');
+  const [dateFieldValue2, setDateFieldValue2] = useState('1999-03-10');
   const [isInline, setIsInline] = useState(true);
   const [isInvalid, setIsInvalid] = useState(false);
 

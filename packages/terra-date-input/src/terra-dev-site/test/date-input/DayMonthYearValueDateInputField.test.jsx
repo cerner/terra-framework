@@ -14,7 +14,7 @@ const Example = () => {
         name="date-input"
         value={value}
         onChange={(event, dateString) => setValue(dateString)}
-        showOptional
+        displayFormat="day-month-year"
         error="Error message"
         help="Help message"
         isInvalid={isInvalid}

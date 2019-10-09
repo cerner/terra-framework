@@ -460,7 +460,7 @@ class DateInput extends React.Component {
       { focused: this.state.monthIsFocused },
       { disabled: this.props.disabled },
       { error: this.props.isInvalid },
-      { incomplete: (this.props.isIncomplete && this.props.required) },
+      { incomplete: (this.props.isIncomplete && this.props.required && !this.props.isInvalid) },
     ]);
 
     const DateInputMonthClassNames = cx([
