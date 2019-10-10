@@ -624,10 +624,13 @@ class DateInput extends React.Component {
       monthAttributes,
       yearAttributes,
       intl,
+      isInvalid,
+      isIncomplete,
       onBlur,
       onChange,
       onFocus,
       refCallback,
+      required,
       name,
       value,
       ...customProps
