@@ -1,6 +1,6 @@
 <!-- Logo -->
 <p align="center">
-  <img height="128" width="128" src="https://github.com/cerner/terra-framework/raw/master/terra.png">
+  <img height="128" width="128" src="https://github.com/cerner/terra-framework/raw/master/terra.png" />
 </p>
 
 <!-- Name -->
