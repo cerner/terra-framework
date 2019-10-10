@@ -42,12 +42,12 @@ const propTypes = {
    * */
   intl: intlShape.isRequired,
   /**
-   * Whether or not the component is incomplete.
-   * */
+  * Whether the input displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
+  */
   isIncomplete: PropTypes.bool,
   /**
-   * Whether or not the component is invalid.
-   * */
+  * Whether the input displays as Invalid. Use when value does not meet validation pattern.
+  */
   isInvalid: PropTypes.bool,
   /**
    * An ISO 8601 string representation of the maximum date that can be selected in the date picker. The value must be in the `YYYY-MM-DD` format.

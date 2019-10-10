@@ -29,12 +29,12 @@ const propTypes = {
    * */
   intl: intlShape.isRequired,
   /**
-   * Whether or not the input is incomplete.
-   */
+  * Whether the input displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
+  */
   isIncomplete: PropTypes.bool,
   /**
-   * Whether or not the input is invalid.
-   */
+  * Whether the input displays as Invalid. Use when value does not meet validation pattern.
+  */
   isInvalid: PropTypes.bool,
   /**
    * Name of the date input.

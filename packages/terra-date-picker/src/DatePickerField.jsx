@@ -39,16 +39,16 @@ const propTypes = {
    */
   hideRequired: PropTypes.bool,
   /**
-   * Whether or not the field is incomplete.
-   */
+  * Whether the field displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
+  */
   isIncomplete: PropTypes.bool,
   /**
    * Whether or not the field is an inline field.
    */
   isInline: PropTypes.bool,
   /**
-   * Whether or not the field is invalid.
-   */
+  * Whether the field displays as Invalid. Use when value does not meet validation pattern.
+  */
   isInvalid: PropTypes.bool,
   /**
    * Whether or not the label is visible. Use this props to hide a label while still creating it on the DOM for accessibility.
