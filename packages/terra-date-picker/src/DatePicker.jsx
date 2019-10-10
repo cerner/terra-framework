@@ -412,6 +412,7 @@ class DatePicker extends React.Component {
             inputAttributes={inputAttributes}
             isIncomplete={isIncomplete}
             isInvalid={isInvalid}
+            required={required}
             shouldShowPicker={!this.isDefaultDateAcceptable && this.state.selectedDate === null}
             onButtonFocus={this.handleFocus}
             buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}

@@ -69,6 +69,10 @@ const propTypes = {
    */
   placeholder: PropTypes.string,
   /**
+   * Whether or not the date is required.
+   */
+  required: PropTypes.bool,
+  /**
    * @private Internal prop for showing date picker.
    */
   shouldShowPicker: PropTypes.bool,
@@ -90,6 +94,7 @@ const defaultProps = {
   onFocus: undefined,
   onButtonFocus: undefined,
   onKeyDown: undefined,
+  required: false,
   placeholder: undefined,
   value: undefined,
 };
@@ -149,6 +154,7 @@ class DatePickerInput extends React.Component {
       onButtonFocus,
       onKeyDown,
       placeholder,
+      required,
       value,
       ...customProps
     } = this.props;
@@ -162,6 +168,11 @@ class DatePickerInput extends React.Component {
     const additionalInputProps = { ...customProps, ...inputAttributes };
 
     const dateValue = DateUtil.convertToISO8601(value, DateUtil.getFormatByLocale(intl.locale));
+    const inputClasses = cx([
+      'input',
+      { 'is-invalid': isInvalid },
+      { 'is-incomplete': isIncomplete && required && !isInvalid },
+    ]);
     const buttonClasses = cx([
       'button',
       { 'is-invalid': isInvalid },
@@ -180,7 +191,7 @@ class DatePickerInput extends React.Component {
         />
         <Input
           {...additionalInputProps}
-          className={cx('input')}
+          className={inputClasses}
           type="text"
           name={'terra-date-'.concat(name)}
           value={value}
@@ -189,8 +200,6 @@ class DatePickerInput extends React.Component {
           onFocus={onFocus}
           onBlur={onBlur}
           aria-label={intl.formatMessage({ id: 'Terra.datePicker.date' })}
-          isInvalid={isInvalid}
-          isIncomplete={isIncomplete}
         />
         <Button
           className={buttonClasses}
