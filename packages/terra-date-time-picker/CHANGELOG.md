@@ -6,7 +6,7 @@ Unreleased
 ### Added
 * Added `isIncomplete` prop and stylings
 * Added `isInvalid` prop and stylings
-* Added `required` prop
+* Added `required` prop 
 
 4.15.0 - (October 3, 2019)
 ------------------
