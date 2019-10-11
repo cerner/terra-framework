@@ -35,14 +35,32 @@ Terra.describeViewports('Time Input', ['medium'], () => {
     Terra.it.validatesElement();
   });
 
+  describe('Invalid mobile time input', () => {
+    before(() => browser.url('/#/raw/tests/terra-time-input/time-input/time-input/mobile-invalid'));
+
+    Terra.it.validatesElement();
+  });
+
   describe('Incomplete time input', () => {
     before(() => browser.url('/#/raw/tests/terra-time-input/time-input/time-input/incomplete-time'));
 
     Terra.it.validatesElement();
   });
 
+  describe('Incomplete mobile time input', () => {
+    before(() => browser.url('/#/raw/tests/terra-time-input/time-input/time-input/mobile-incomplete'));
+
+    Terra.it.validatesElement();
+  });
+
   describe('Invalid and Incomplete time input', () => {
     before(() => browser.url('/#/raw/tests/terra-time-input/time-input/time-input/invalid-incomplete-time'));
+
+    Terra.it.validatesElement();
+  });
+
+  describe('Invalid and Incomplete mobile time input', () => {
+    before(() => browser.url('/#/raw/tests/terra-time-input/time-input/time-input/mobile-invalid-incomplete'));
 
     Terra.it.validatesElement();
   });
