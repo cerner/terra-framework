@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Updated Upgrade guide for the name changes of menu-item theme variables
 
 6.14.0 - (October 3, 2019)
 ------------------
