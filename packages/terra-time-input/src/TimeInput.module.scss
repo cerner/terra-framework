@@ -129,7 +129,7 @@
       @include focus-styles;
       background-color: var(--terra-time-input-time-component-focus-background-color, #fff);
       background-size: var(--terra-time-input-time-component-focus-background-size, 0 0);
-      border-color: transparent;
+      border: 0;
 
       [dir=ltr] & {
         box-shadow: var(--terra-time-input-time-component-focus-ltr-box-shadow, none);
@@ -147,7 +147,7 @@
     &.initial-focus {
       background-color: var(--terra-time-input-time-component-focused-input-background-color, rgba(139, 194, 249, 0.3));
       background-size: 0 0;
-      border-color: transparent;
+      border: 0;
       box-shadow: none;
       color: var(--terra-time-input-time-component-focus-color, #1c1f21);
     }
