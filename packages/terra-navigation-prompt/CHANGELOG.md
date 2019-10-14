@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Changed how 'navigation-prompt' was consuming 'terra-notifiaction-dialog' to deal with its updated props.
 
+1.13.0 - (October 3, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 1.12.0 - (September 26, 2019)
 ------------------
 ### Changed
