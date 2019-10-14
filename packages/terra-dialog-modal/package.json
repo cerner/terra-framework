@@ -36,7 +36,7 @@
     "terra-button": "^3.3.0",
     "terra-date-picker": "^4.15.0",
     "terra-doc-template": "^2.2.0",
-    "terra-form-select": "https://github.cerner.com/terra/terra-snapshots/raw/master/terra-core/form-field-adding-isincomplete-prop/terra-form-select.tgz",
+    "terra-form-select": "^5.0.0",
     "terra-modal-manager": "^6.14.0",
     "terra-notification-dialog": "^3.14.0",
     "terra-popup": "^6.14.0"

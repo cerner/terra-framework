@@ -37,10 +37,10 @@
     "terra-doc-template": "^2.2.0",
     "terra-form-checkbox": "^3.0.0",
     "terra-form-field": "^3.1.0",
-    "terra-form-input": "https://github.cerner.com/terra/terra-snapshots/raw/master/terra-core/form-field-adding-isincomplete-prop/terra-form-input.tgz",
+    "terra-form-input": "^2.3.0",
     "terra-form-radio": "^3.0.0",
-    "terra-form-select": "https://github.cerner.com/terra/terra-snapshots/raw/master/terra-core/form-field-adding-isincomplete-prop/terra-form-select.tgz",
-    "terra-form-textarea": "https://github.cerner.com/terra/terra-snapshots/raw/master/terra-core/form-field-adding-isincomplete-prop/terra-form-textarea.tgz",
+    "terra-form-select": "^5.0.0",
+    "terra-form-textarea": "^3.0.0",
     "terra-spacer": "^3.0.0"
   },
   "scripts": {

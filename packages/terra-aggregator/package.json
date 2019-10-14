@@ -36,7 +36,7 @@
     "terra-content-container": "^3.0.0",
     "terra-disclosure-manager": "^4.23.0",
     "terra-doc-template": "^2.2.0",
-    "terra-form-input": "https://github.cerner.com/terra/terra-snapshots/raw/master/terra-core/form-field-adding-isincomplete-prop/terra-form-input.tgz",
+    "terra-form-input": "^2.3.0",
     "terra-grid": "^6.0.0",
     "terra-modal-manager": "^6.14.0",
     "terra-section-header": "^2.0.0",
