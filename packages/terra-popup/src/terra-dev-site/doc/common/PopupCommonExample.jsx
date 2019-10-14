@@ -14,7 +14,7 @@ const propTypes = {
 const defaultProps = {
   attachmentBehavior: 'auto',
   contentAttachment: 'top center',
-  isArrowDisplayed: true,
+  isArrowDisplayed: false,
   title: '',
 };
 
