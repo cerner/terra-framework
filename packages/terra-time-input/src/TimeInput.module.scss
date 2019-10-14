@@ -278,51 +278,47 @@
       margin-top: var(--terra-time-input-time-mobile-spacer-margin-top, 0.3571428571rem);
     }
 
-    &.is-invalid {
-      .time-input-hour,
-      .time-input-minute,
-      .time-input-second {
-        background-color: var(--terra-time-input-mobile-invalid-background-color, #fff);
-        border: var(--terra-time-input-mobile-invalid-border, 1px solid #e50000);
-        box-shadow: var(--terra-time-input-mobile-invalid-box-shadow, 0 0 0 1px #e50000);
+    &.is-invalid .time-input-hour,
+    &.is-invalid .time-input-minute,
+    &.is-invalid .time-input-second {
+      background-color: var(--terra-time-input-mobile-invalid-background-color, #fff);
+      border: var(--terra-time-input-mobile-invalid-border, 1px solid #e50000);
+      box-shadow: var(--terra-time-input-mobile-invalid-box-shadow, 0 0 0 1px #e50000);
 
-        &:hover {
-          border: var(--terra-time-input-mobile-invalid-hover-border, 1px solid #e50000);
-        }
+      &:hover {
+        border: var(--terra-time-input-mobile-invalid-hover-border, 1px solid #e50000);
+      }
 
-        &:focus {
-          border: var(--terra-time-input-mobile-invalid-focus-border, 1px solid #e50000);
-        }
+      &:focus {
+        border: var(--terra-time-input-mobile-invalid-focus-border, 1px solid #e50000);
+      }
 
-        &.disabled {
-          background-color: var(--terra-time-input-mobile-invalid-disabled-background-color, rgba(111, 116, 119, 0.2));
-          border: var(--terra-time-input-mobile-invalid-disabled-border, 1px solid #e50000);
-          color: var(--terra-time-input-mobile-invalid-disabled-color, #1c1f21);
-          opacity: var(--terra-time-input-mobile-invalid-disabled-opacity, 0.25);
-        }
+      &.disabled {
+        background-color: var(--terra-time-input-mobile-invalid-disabled-background-color, rgba(111, 116, 119, 0.2));
+        border: var(--terra-time-input-mobile-invalid-disabled-border, 1px solid #e50000);
+        color: var(--terra-time-input-mobile-invalid-disabled-color, #1c1f21);
+        opacity: var(--terra-time-input-mobile-invalid-disabled-opacity, 0.25);
       }
     }
 
-    &.is-incomplete {
-      .time-input-hour,
-      .time-input-minute,
-      .time-input-second {
-        background-color: var(--terra-time-input-mobile-incomplete-background-color, #ffc);
+    &.is-incomplete .time-input-hour,
+    &.is-incomplete .time-input-minute,
+    &.is-incomplete .time-input-second {
+      background-color: var(--terra-time-input-mobile-incomplete-background-color, #ffc);
 
-        &:hover {
-          background-color: var(--terra-time-input-mobile-incomplete-hover-background-color, #ffc);
-        }
+      &:hover {
+        background-color: var(--terra-time-input-mobile-incomplete-hover-background-color, #ffc);
+      }
 
-        &:focus {
-          background-color: var(--terra-time-input-mobile-incomplete-focus-background-color, #ffc);
-        }
+      &:focus {
+        background-color: var(--terra-time-input-mobile-incomplete-focus-background-color, #ffc);
+      }
 
-        &.disabled {
-          background-color: var(--terra-time-input-mobile-incomplete-disabled-background-color, #ffc);
-          border: var(--terra-time-input-mobile-incomplete-disabled-border, 1px solid #868a8c);
-          color: var(--terra-time-input-mobile-incomplete-disabled-color, #1c1f21);
-          opacity: var(--terra-time-input-mobile-incomplete-disabled-opacity, 0.25);
-        }
+      &.disabled {
+        background-color: var(--terra-time-input-mobile-incomplete-disabled-background-color, #ffc);
+        border: var(--terra-time-input-mobile-incomplete-disabled-border, 1px solid #868a8c);
+        color: var(--terra-time-input-mobile-incomplete-disabled-color, #1c1f21);
+        opacity: var(--terra-time-input-mobile-incomplete-disabled-opacity, 0.25);
       }
     }
   }
