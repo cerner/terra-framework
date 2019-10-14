@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Fixed the disappearance of bottom border at 75% zoom on Chrome.
 
 6.14.0 - (October 3, 2019)
 ------------------

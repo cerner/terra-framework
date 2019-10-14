@@ -20,7 +20,7 @@
     .collapsed-tabs-container {
       border-bottom-color: var(--terra-tabs-collapsed-modular-tab-bar-border-bottom-color, #dddedf);
       border-bottom-style: solid;
-      border-bottom-width: var(--terra-tabs-collapsed-modular-tab-bar-border-bottom-width, 1px);
+      border-bottom-width: var(--terra-tabs-collapsed-modular-tab-bar-border-bottom-width, thin);
 
       .tab-menu:focus {
         outline: none;

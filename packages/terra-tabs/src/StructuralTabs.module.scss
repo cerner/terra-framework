@@ -16,7 +16,7 @@
     }
 
     .collapsed-tabs-container {
-      border-bottom-color: var(--terra-tabs-structural-collapsed-border-bottom-color, #dddedf);
+      border-bottom-color: var(--terra-tabs-structural-collapsed-border-bottom-color, red);
       border-bottom-style: solid;
       border-bottom-width: var(--terra-tabs-structural-collapsed-border-bottom-width, 1px);
       border-radius: var(--terra-tabs-structural-collapsed-border-radius, 0);
@@ -55,7 +55,7 @@
     .collapsible-tabs-container {
       border-bottom-color: var(--terra-tabs-structural-tab-bar-border-bottom-color, #dddedf);
       border-bottom-style: solid;
-      border-bottom-width: var(--terra-tabs-structural-tab-bar-border-bottom-width, 1px);
+      border-bottom-width: var(--terra-tabs-structural-tab-bar-border-bottom-width, thin);
 
       .tab,
       .tab-menu {
