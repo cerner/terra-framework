@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Added terra-breakpoints to dependencies for the project
 
 3.14.0 - (October 3, 2019)
 ------------------

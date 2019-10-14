@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added `closeOnOutsideClick` prop to differentiate close on outside click from close by escape key.
 
 3.15.0 - (October 3, 2019)
 ------------------
