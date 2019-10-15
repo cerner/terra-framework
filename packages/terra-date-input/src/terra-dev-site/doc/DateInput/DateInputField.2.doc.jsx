@@ -68,6 +68,7 @@ const DocPage = () => (
       },
       {
         title: 'Incomplete DateInputField',
+        description: 'Applies theme-specific styling for incomplete. ***Note: Only use incomplete if given specific guidance, reserved for specific applications when no value has been provided. Not for general use.***',
         example: <IncompleteDateInputField />,
         source: IncompleteDateInputFieldSrc,
       },

@@ -155,6 +155,7 @@ to see the starting and ending dates of daylight saving time for the current yea
       },
       {
         title: 'Incomplete',
+        description: 'Applies theme-specific styling for incomplete. ***Note: Only use incomplete if given specific guidance, reserved for specific applications when no value has been provided. Not for general use.***',
         example: <DateTimePickerIncomplete />,
         source: DateTimePickerIncompleteSrc,
       },
