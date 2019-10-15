@@ -84,6 +84,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
       aria-label="Terra.datePicker.date"
       className="input"
       disabled={false}
+      isIncomplete={false}
       isInvalid={false}
       name="terra-date-undefined"
       onChange={[Function]}
