@@ -64,8 +64,6 @@
     &.error {
       background-color: var(--terra-date-input-month-error-background-color, #fff);
       background-image: var(--terra-date-input-month-error-background-image);
-      border: var(--terra-date-input-month-error-border, 1px solid #e50000);
-      box-shadow: var(--terra-date-input-month-error-box-shadow, 0 0 0 1px #e50000);
 
       &::after {
         background-image: var(--terra-date-input-month-after-error-arrow-icon-background-image, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path d="M48 12L24 36 0 12h48z"/></svg>'));
@@ -73,19 +71,15 @@
 
       &:hover {
         background-color: var(--terra-date-input-month-error-hover-background-color, #fff);
-        border: var(--terra-date-input-month-error-hover-border, 1px solid #e50000);
       }
 
       &.focused {
         background-color: var(--terra-date-input-month-error-focus-background-color, #fff);
         background-size: var(--terra-date-input-month-error-focus-background-size);
-        border: var(--terra-date-input-month-error-focus-border, 1px solid #e50000);
       }
 
       &.disabled {
         background-color: var(--terra-date-input-month-error-disabled-background-color, rgba(111, 116, 119, 0.2));
-        border: var(--terra-date-input-month-error-disabled-border, 1px solid #e50000);
-        color: var(--terra-date-input-month-error-disabled-color, #1c1f21);
         opacity: var(--terra-date-input-month-error-disabled-opacity, 0.25);
       }
 
@@ -175,20 +169,21 @@
     }
 
     &.error {
-      border: var(--terra-date-input-month-select-error-border, 1px solid #dedfe0);
+      border: var(--terra-date-input-month-select-error-border, 1px solid #e50000);
+      box-shadow: var(--terra-date-input-month-select-error-box-shadow, 0 0 0 1px #e50000);
 
       &:hover {
-        border: var(--terra-date-input-month-select-error-hover-border, 1px solid #dedfe0);
+        border: var(--terra-date-input-month-select-error-hover-border, 1px solid #e50000);
       }
 
       // .focused needed for Safari Mobile
       &:focus,
       &.focused {
-        border: var(--terra-date-input-month-select-error-focus-border, 1px solid #4cb2e9);
+        border: var(--terra-date-input-month-select-error-focus-border, 1px solid #e50000);
       }
 
       &.disabled {
-        border: var(--terra-date-input-month-select-error-disabled-border, 1px solid #dedfe0);
+        border: var(--terra-date-input-month-select-error-disabled-border, 1px solid #e50000);
         color: var(--terra-date-input-month-select-error-disabled-color, rgba(0, 0, 0, 0.25));
       }
 
