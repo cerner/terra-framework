@@ -40,6 +40,10 @@ const propTypes = {
   */
   isInvalid: PropTypes.bool,
   /**
+  * Whether the selected meridiem displays as Invalid. Use when value does not meet validation pattern.
+  */
+  isInvalidMeridiem: PropTypes.bool,
+  /**
    * Custom input attributes to apply to the minutes input
    */
   // eslint-disable-next-line react/forbid-prop-types
@@ -97,6 +101,7 @@ const defaultProps = {
   inputAttributes: {},
   isIncomplete: false,
   isInvalid: false,
+  isInvalidMeridiem: false,
   minuteAttributes: {},
   hourAttributes: {},
   onBlur: null,
@@ -720,6 +725,7 @@ class TimeInput extends React.Component {
       intl,
       isIncomplete,
       isInvalid,
+      isInvalidMeridiem,
       onBlur,
       onChange,
       onFocus,
@@ -737,8 +743,18 @@ class TimeInput extends React.Component {
       'mobile-time-picker',
       { 'is-focused': this.state.isFocused },
       { 'is-invalid': isInvalid },
-      { 'is-incomplete': (isIncomplete && required && !isInvalid) },
+      { 'is-incomplete': (isIncomplete && required && !isInvalid && !isInvalidMeridiem) },
       customProps.className,
+    ]);
+
+    const anteMeridiemClassNames = cx([
+      'meridiem-button',
+      { 'is-invalid': isInvalidMeridiem && this.state.meridiem === this.anteMeridiem },
+    ]);
+
+    const postMeridiemClassNames = cx([
+      'meridiem-button',
+      { 'is-invalid': isInvalidMeridiem && this.state.meridiem === this.postMeridiem },
     ]);
 
     const instanceHoursAttrs = { ...hourAttributes };
@@ -863,7 +879,7 @@ class TimeInput extends React.Component {
           <ButtonGroup selectedKeys={[this.state.meridiem]} onChange={this.handleMeridiemButtonChange} className={cx('meridiem-button-group')}>
             <ButtonGroup.Button
               key={this.anteMeridiem}
-              className={cx('meridiem-button')}
+              className={anteMeridiemClassNames}
               text={this.anteMeridiem}
               onBlur={this.handleMeridiemBlur}
               onFocus={this.handleFocus}
@@ -871,7 +887,7 @@ class TimeInput extends React.Component {
             />
             <ButtonGroup.Button
               key={this.postMeridiem}
-              className={cx('meridiem-button')}
+              className={postMeridiemClassNames}
               text={this.postMeridiem}
               onBlur={this.handleMeridiemBlur}
               onFocus={this.handleFocus}
@@ -893,6 +909,7 @@ class TimeInput extends React.Component {
       inputAttributes,
       isIncomplete,
       isInvalid,
+      isInvalidMeridiem,
       minuteAttributes,
       hourAttributes,
       intl,
@@ -915,7 +932,7 @@ class TimeInput extends React.Component {
       'time-input',
       { 'is-focused': this.state.isFocused },
       { 'is-invalid': isInvalid },
-      { 'is-incomplete': (isIncomplete && required && !isInvalid) },
+      { 'is-incomplete': (isIncomplete && required && !isInvalid && !isInvalidMeridiem) },
       customProps.className,
     ]);
 

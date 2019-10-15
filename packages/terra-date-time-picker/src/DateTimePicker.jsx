@@ -50,6 +50,10 @@ const propTypes = {
   */
   isInvalid: PropTypes.bool,
   /**
+  * Whether the selected meridiem displays as Invalid. Use when value does not meet validation pattern.
+  */
+  isInvalidMeridiem: PropTypes.bool,
+  /**
    * An ISO 8601 string representation of the maximum date that can be selected in the date picker. The value must be in the `YYYY-MM-DD` format.
    * The time portion in this value is ignored because this is strictly used in the date picker.
    */
@@ -126,6 +130,7 @@ const defaultProps = {
   includeDates: undefined,
   isIncomplete: false,
   isInvalid: false,
+  isInvalidMeridiem: false,
   maxDate: undefined,
   minDate: undefined,
   onBlur: undefined,
@@ -562,6 +567,7 @@ class DateTimePicker extends React.Component {
       includeDates,
       isIncomplete,
       isInvalid,
+      isInvalidMeridiem,
       onBlur,
       onChange,
       onChangeRaw,
@@ -634,6 +640,7 @@ class DateTimePicker extends React.Component {
             showSeconds={showSeconds}
             isIncomplete={isIncomplete}
             isInvalid={isInvalid}
+            isInvalidMeridiem={isInvalidMeridiem}
             required={required}
           />
 

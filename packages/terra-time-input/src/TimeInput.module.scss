@@ -391,6 +391,29 @@
       border-color: var(--terra-time-input-meridiem-button-selected-hover-border-color, #40474a);
       color: var(--terra-time-input-meridiem-button-selected-hover-color, #fff);
     }
+
+    &.is-invalid {
+      border: var(--terra-time-input-invalid-border, 1px solid #e50000);
+      box-shadow: var(--terra-time-input-invalid-box-shadow, 0 0 0 1px #e50000);
+      z-index: 1;
+
+      &:focus {
+        border: var(--terra-time-input-invalid-focus-border, 1px solid #e50000);
+        box-shadow: var(--terra-time-input-invalid-focus-box-shadow, 0 0 0 1px #e50000, 0 0 4px 3px rgba(229, 0, 0, 0.35));
+      }
+
+      &:hover {
+        border: var(--terra-time-input-invalid-hover-border, 1px solid #e50000);
+        box-shadow: var(--terra-time-input-invalid-hover-box-shadow, 0 0 0 1px #e50000);
+      }
+
+      &.disabled {
+        background-color: var(--terra-time-input-invalid-disabled-background-color, rgba(111, 116, 119, 0.2));
+        border: var(--terra-time-input-invalid-disabled-border, 1px solid #e50000);
+        color: var(--terra-time-input-invalid-disabled-color, #1c1f21);
+        opacity: var(--terra-time-input-invalid-disabled-opacity, 0.25);
+      }
+    }
   }
 
   /* The select box for the meridiem is hidden. */
