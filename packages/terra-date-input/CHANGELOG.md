@@ -3,6 +3,10 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added `isIncomplete` prop and stylings
+* Added `required` prop
+* Added border css styles when `isInvalid` prop is provided
 
 1.2.0 - (October 3, 2019)
 ------------------
