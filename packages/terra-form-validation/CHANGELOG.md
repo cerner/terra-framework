@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated example to consume new `isIncomplete` prop in `terra-form-input`
 
 1.11.0 - (October 3, 2019)
 ------------------
