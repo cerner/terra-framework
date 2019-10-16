@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+6.15.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 ### Fixed
 * Fixed some tests that were consuming changes to terra-form-select
 
