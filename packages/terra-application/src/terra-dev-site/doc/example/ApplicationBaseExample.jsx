@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { injectIntl } from 'react-intl';
-import { ActiveBreakpointContext } from '../../../breakpoints';
-import ApplicationLoadingOverlay from '../../../application-loading-overlay';
-import ApplicationBase from '../../../application-base';
-import NavigationPrompt from '../../../navigation-prompt';
+import { ActiveBreakpointContext } from 'terra-application/lib/breakpoints';
+import ApplicationLoadingOverlay from 'terra-application/lib/application-loading-overlay';
+import ApplicationBase from 'terra-application/lib/application-base';
+import NavigationPrompt from 'terra-application/lib/navigation-prompt';
 
 const ApplicationContentExample = injectIntl(({ intl }) => {
   const [isLoading, setIsLoading] = useState(false);

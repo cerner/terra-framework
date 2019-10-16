@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 
-import ApplicationErrorBoundary from '../../../application-error-boundary/ApplicationErrorBoundary';
+import ApplicationErrorBoundary from 'terra-application/lib/application-error-boundary/ApplicationErrorBoundary';
 import styles from './ApplicationErrorBoundaryExample.module.scss';
 
 const cx = classNames.bind(styles);
@@ -26,7 +26,7 @@ const ApplicationErrorBoundaryExample = ({ children }) => {
 
   return (
     <div className={cx('example')}>
-      <button type="button" onClick={() => { setRefresh(!refresh); }}>Refresh Error</button>
+      <button type="button" onClick={() => { setRefresh(!refresh); }}>Refresh Component</button>
       <ApplicationErrorBoundary>
         {children}      
       </ApplicationErrorBoundary>

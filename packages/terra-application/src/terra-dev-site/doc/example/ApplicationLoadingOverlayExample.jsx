@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
-import ApplicationLoadingOverlay from '../../../application-loading-overlay/ApplicationLoadingOverlay';
-import ApplicationLoadingOverlayProvider from '../../../application-loading-overlay/ApplicationLoadingOverlayProvider';
+import ApplicationLoadingOverlay from 'terra-application/lib/application-loading-overlay/ApplicationLoadingOverlay';
+import ApplicationLoadingOverlayProvider from 'terra-application/lib/application-loading-overlay/ApplicationLoadingOverlayProvider';
 
 import styles from './ApplicationErrorBoundaryExample.module.scss';
 
@@ -49,6 +49,7 @@ const ApplicationLoadingOverlayExample = () => {
       </button>
       <div className={cx('example')}>
         <ApplicationLoadingOverlayProvider>
+          <p>For this example's purposes, the loading overlays will be active for 3 seconds.</p>
           <ApplicationLoadingOverlay isOpen={showClearOverlay} />
           <ApplicationLoadingOverlay isOpen={showLightOverlay} backgroundStyle="light" />
           <ApplicationLoadingOverlay isOpen={showDarkOverlay} backgroundStyle="dark" />
