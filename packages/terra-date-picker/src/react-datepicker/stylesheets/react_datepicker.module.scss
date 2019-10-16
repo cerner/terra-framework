@@ -58,6 +58,11 @@
 
   .react-datepicker-header-dropdown {
     display: inline-block;
+
+    @include terra-mq-medium-up {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
   }
 
   .react-datepicker-year-dropdown-container--select,
@@ -426,23 +431,20 @@
     }
   }
 
-  .react-datepicker-navigation--previous {
-    padding-bottom: 0;
-    padding-top: 0;
-
-    > span {
-      margin-left: 0.1rem;
-      margin-right: 0.3rem;
-    }
-  }
-
+  .react-datepicker-navigation--previous,
   .react-datepicker-navigation--next {
-    padding-bottom: 0;
-    padding-top: 0;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    height: 1.571rem;
+    padding: 0;
+    text-align: center;
+    width: 1.571rem;
 
-    > span {
-      margin-left: 0.3rem;
-      margin-right: 0.1rem;
+    @include terra-mq-medium-up {
+      height: 1rem;
+      width: 1rem;
     }
   }
 
