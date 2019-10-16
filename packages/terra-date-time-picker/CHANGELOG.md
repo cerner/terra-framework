@@ -3,6 +3,7 @@ ChangeLog
 
 Unreleased
 ----------
+
 4.15.0 - (October 3, 2019)
 ------------------
 ### Changed
