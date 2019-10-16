@@ -3,6 +3,12 @@ ChangeLog
 
 Unreleased
 ----------
+
+1.3.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 ### Added
 * Added `isIncomplete` prop and stylings
 * Added `required` prop

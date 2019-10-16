@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+3.15.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 ### Fixed
 * Added terra-breakpoints to dependencies for the project
 

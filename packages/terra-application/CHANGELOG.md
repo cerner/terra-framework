@@ -9,6 +9,11 @@ Unreleased
 * Added NavigationPrompt handling to ApplicationBase
 
 
+1.11.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 1.10.0 - (October 3, 2019)
 ------------------
 ### Changed
