@@ -12,12 +12,12 @@ const propTypes = {
   /**
    * A string indicating the background style for the overlay. One of: `dark`, `light`, `clear`.
    */
-  backgroundStyle: PropTypes.oneOf(['dark', 'light', 'clear'])
+  backgroundStyle: PropTypes.oneOf(['dark', 'light', 'clear']),
 };
 
 const defaultProps = {
   backgroundStyle: 'clear',
-}
+};
 
 const ApplicationLoadingOverlay = ({ isOpen, backgroundStyle }) => {
   const id = useRef(uuidv4());

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
 import ApplicationErrorBoundary from 'terra-application/lib/application-error-boundary/ApplicationErrorBoundary';
@@ -21,23 +22,27 @@ const ErrorThrowingComponent = () => {
   );
 };
 
-const ApplicationErrorBoundaryExample = ({ children }) => {
+const ApplicationErrorBoundaryExampleWrapper = ({ children }) => {
   const [refresh, setRefresh] = useState(false);
 
   return (
     <div className={cx('example')}>
       <button type="button" onClick={() => { setRefresh(!refresh); }}>Refresh Component</button>
       <ApplicationErrorBoundary>
-        {children}      
+        {children}
       </ApplicationErrorBoundary>
     </div>
   );
 };
 
-const What = () => (
-  <ApplicationErrorBoundaryExample>
+ApplicationErrorBoundaryExampleWrapper.propTypes = {
+  children: PropTypes.node,
+};
+
+const ApplicationErrorBoundaryExample = () => (
+  <ApplicationErrorBoundaryExampleWrapper>
     <ErrorThrowingComponent />
-  </ApplicationErrorBoundaryExample>
+  </ApplicationErrorBoundaryExampleWrapper>
 );
 
-export default What;
+export default ApplicationErrorBoundaryExample;

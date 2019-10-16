@@ -53,7 +53,7 @@ const ApplicationLoadingOverlayTest = () => {
         <ApplicationLoadingOverlay isOpen={showDarkOverlay} backgroundStyle="dark" />
       </ApplicationLoadingOverlayProvider>
     </>
-  )
+  );
 };
 
 export default ApplicationLoadingOverlayTest;

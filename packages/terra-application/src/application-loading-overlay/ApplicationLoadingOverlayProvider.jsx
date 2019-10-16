@@ -65,7 +65,7 @@ const ApplicationLoadingOverlayProvider = ({
     overlayBackgroundStyle = 'dark';
   } else if (registeredBackgroundStyles.includes('light')) {
     overlayBackgroundStyle = 'light';
-  } 
+  }
 
   const overlay = (
     <LoadingOverlay

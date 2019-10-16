@@ -49,7 +49,7 @@ const ApplicationLoadingOverlayExample = () => {
       </button>
       <div className={cx('example')}>
         <ApplicationLoadingOverlayProvider>
-          <p>For this example's purposes, the loading overlays will be active for 3 seconds.</p>
+          <p>For this example, the loading overlays will be active for 3 seconds.</p>
           <ApplicationLoadingOverlay isOpen={showClearOverlay} />
           <ApplicationLoadingOverlay isOpen={showLightOverlay} backgroundStyle="light" />
           <ApplicationLoadingOverlay isOpen={showDarkOverlay} backgroundStyle="dark" />

@@ -22,12 +22,10 @@ describe('ApplicationErrorBoundary', () => {
     });
 
     it('should render error view when an error is detected', () => {
-      const ErrorComponent = () => {
-        return <div />;
-      }
-      
+      const ErrorComponent = () => <div />;
+
       const wrapper = shallow((
-        <ApplicationErrorBoundary  >
+        <ApplicationErrorBoundary>
           <ErrorComponent />
         </ApplicationErrorBoundary>
       ));
