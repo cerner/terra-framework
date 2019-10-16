@@ -125,10 +125,11 @@
       &:focus {
         background-color: var(--terra-time-input-incomplete-focus-background-color, #ffc);
       }
+
       .desktop.initial-focus {
-         background-color: var(--terra-time-input-desktop-incomplete-focused-input-background-color, rgb(185, 215, 233));
+        background-color: var(--terra-time-input-desktop-incomplete-focused-input-background-color, rgb(185, 215, 233));
       }
-       
+
       &.disabled {
         background-color: var(--terra-time-input-incomplete-disabled-background-color, #ffc);
         border: var(--terra-time-input-incomplete-disabled-border, 1px solid #868a8c);
