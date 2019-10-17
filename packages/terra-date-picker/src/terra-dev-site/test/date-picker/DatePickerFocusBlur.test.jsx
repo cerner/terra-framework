@@ -1,5 +1,9 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import DatePicker from '../../../DatePicker';
+import styles from './common/DatePicker.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 class DatePickerOnBlur extends React.Component {
   constructor(props) {
@@ -36,7 +40,7 @@ class DatePickerOnBlur extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={cx('content-wrapper')}>
         <h3>
           onBlur Trigger Count:
           {' '}

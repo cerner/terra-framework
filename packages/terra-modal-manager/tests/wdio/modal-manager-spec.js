@@ -289,6 +289,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
   });
 
   describe('Component Integration', () => {
+    const ignoredDisabledAlly = { 'color-contrast': { enabled: false } };
     before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-integration'));
     describe('Select Field in Modal Manager', () => {
       it('Select Field in Modal Manager', () => {
@@ -296,7 +297,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
 
         browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
         browser.click('[role="dialog"] [data-terra-select]');
-        Terra.validates.element({ selector });
+        Terra.validates.element({ selector, rules: ignoredDisabledAlly });
         browser.keys(['Escape', 'Escape']);
       });
     });
@@ -306,7 +307,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
         browser.click('#root-component .disclose-small');
         browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
         expect(browser.hasFocus('[aria-modal="true"][role="dialog"]')).to.be.equal(true);
-        Terra.validates.element('modal is focused', { selector });
+        Terra.validates.element('modal is focused', { selector, rules: ignoredDisabledAlly });
         browser.keys('Escape');
       });
     });
@@ -317,7 +318,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
         browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
         browser.keys(['Tab']); // Shift tab focus onto modal content
         expect(browser.hasFocus('[class*="slide-group"] #DemoContainer-1 .disclose')).to.be.equal(true);
-        Terra.validates.element('modal content is focused', { selector });
+        Terra.validates.element('modal content is focused', { selector, rules: ignoredDisabledAlly });
         browser.keys('Escape');
       });
     });
@@ -327,7 +328,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
         browser.click('#root-component .disclose-small');
         browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
         browser.keys(['Shift', 'Tab']); // Shift tab focus backward outside of modal
-        Terra.validates.element('focused shifted before modal', { selector });
+        Terra.validates.element('focused shifted before modal', { selector, rules: ignoredDisabledAlly });
         browser.keys('Escape');
       });
     });
@@ -341,7 +342,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
         });
         browser.keys(['Shift']); // Release shift key
         browser.keys(['Tab']); // Shift tab focus forward outside of modal
-        Terra.validates.element('focused shifted after modal', { selector });
+        Terra.validates.element('focused shifted after modal', { selector, rules: ignoredDisabledAlly });
         browser.keys('Escape');
       });
     });
