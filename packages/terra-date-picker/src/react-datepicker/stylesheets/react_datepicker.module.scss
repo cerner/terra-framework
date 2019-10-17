@@ -60,8 +60,6 @@
     display: inline-block;
 
     @include terra-mq-medium-up {
-      margin-left: 0.5rem;
-      margin-right: 0.5rem;
       margin-top: 0.15rem;
     }
   }
@@ -444,8 +442,8 @@
     width: 1.571rem;
 
     @include terra-mq-medium-up {
-      height: 1rem;
-      width: 1rem;
+      height: 1.4285rem;
+      width: 1.4285rem;
     }
   }
 
