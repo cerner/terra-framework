@@ -35,7 +35,11 @@ const propTypes = {
    */
   intl: intlShape,
   /**
-  * Whether or not the date input is 'form-error'.
+  * Whether the input displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
+  */
+  isIncomplete: PropTypes.bool,
+  /**
+  * Whether the input displays as Invalid. Use when value does not meet validation pattern.
   */
   isInvalid: PropTypes.bool,
   /**
@@ -61,6 +65,10 @@ const propTypes = {
    * Callback ref to access date input containing DOM element.
    */
   refCallback: PropTypes.func,
+  /**
+   * Whether is the date input is required
+   */
+  required: PropTypes.bool,
   /**
    * An date string representation of the date value used for the component. This should be in ISO 8601 format: YYYY-MM-DD.
    */
@@ -452,6 +460,7 @@ class DateInput extends React.Component {
       { focused: this.state.monthIsFocused },
       { disabled: this.props.disabled },
       { error: this.props.isInvalid },
+      { incomplete: (this.props.isIncomplete && this.props.required && !this.props.isInvalid) },
     ]);
 
     const DateInputMonthClassNames = cx([
@@ -460,6 +469,7 @@ class DateInput extends React.Component {
       { focused: this.state.monthIsFocused },
       { disabled: this.props.disabled },
       { error: this.props.isInvalid },
+      { incomplete: (this.props.isIncomplete && this.props.required && !this.props.isInvalid) },
     ]);
 
     return (
@@ -531,6 +541,8 @@ class DateInput extends React.Component {
         autoComplete="off"
         disabled={this.props.disabled}
         isInvalid={this.props.isInvalid}
+        isIncomplete={this.props.isIncomplete}
+        required={this.props.required}
       />
     );
   }
@@ -570,6 +582,8 @@ class DateInput extends React.Component {
         autoComplete="off"
         disabled={this.props.disabled}
         isInvalid={this.props.isInvalid}
+        isIncomplete={this.props.isIncomplete}
+        required={this.props.required}
       />
     );
   }
@@ -610,10 +624,13 @@ class DateInput extends React.Component {
       monthAttributes,
       yearAttributes,
       intl,
+      isInvalid,
+      isIncomplete,
       onBlur,
       onChange,
       onFocus,
       refCallback,
+      required,
       name,
       value,
       ...customProps
