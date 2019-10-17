@@ -1,5 +1,9 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import TimeInput from '../../../../TimeInput';
+import styles from './common/TimeInput.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 class TimeInputDefault extends React.Component {
   constructor(props) {
@@ -14,7 +18,7 @@ class TimeInputDefault extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={cx('content-wrapper')}>
         <div id="time-input-value">
           <h3>
 Time Input:

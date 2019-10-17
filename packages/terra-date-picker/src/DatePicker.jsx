@@ -47,6 +47,14 @@ const propTypes = {
    * */
   intl: intlShape.isRequired,
   /**
+  * Whether the input displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
+  */
+  isIncomplete: PropTypes.bool,
+  /**
+  * Whether the input displays as Invalid. Use when value does not meet validation pattern.
+  */
+  isInvalid: PropTypes.bool,
+  /**
    * An ISO 8601 string representation of the maximum date that can be selected. The value must be in the `YYYY-MM-DD` format.
    */
   maxDate: PropTypes.string,
@@ -110,6 +118,8 @@ const defaultProps = {
   filterDate: undefined,
   includeDates: undefined,
   inputAttributes: undefined,
+  isIncomplete: false,
+  isInvalid: false,
   maxDate: undefined,
   minDate: undefined,
   onBlur: undefined,
@@ -332,6 +342,8 @@ class DatePicker extends React.Component {
       filterDate,
       includeDates,
       intl,
+      isIncomplete,
+      isInvalid,
       maxDate,
       minDate,
       name,
@@ -398,6 +410,9 @@ class DatePicker extends React.Component {
           <DateInput
             onCalendarButtonClick={this.handleOnCalendarButtonClick}
             inputAttributes={inputAttributes}
+            isIncomplete={isIncomplete}
+            isInvalid={isInvalid}
+            required={required}
             shouldShowPicker={!this.isDefaultDateAcceptable && this.state.selectedDate === null}
             onButtonFocus={this.handleFocus}
             buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}
@@ -440,6 +455,8 @@ class DatePicker extends React.Component {
           <DateInput
             onCalendarButtonClick={this.handleOnCalendarButtonClick}
             inputAttributes={inputAttributes}
+            isIncomplete={isIncomplete}
+            isInvalid={isInvalid}
             shouldShowPicker={!this.isDefaultDateAcceptable && this.state.selectedDate === null}
             onButtonFocus={this.handleFocus}
             buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}

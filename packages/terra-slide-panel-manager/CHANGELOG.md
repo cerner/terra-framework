@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Jest snapshot updates.
 
+5.14.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 5.13.0 - (October 3, 2019)
 ------------------
 ### Changed

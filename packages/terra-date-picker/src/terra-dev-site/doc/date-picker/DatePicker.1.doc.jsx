@@ -21,6 +21,10 @@ import DatePickerDefaultDate from '../example/DatePickerDefaultDate';
 import DatePickerDefaultDateSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DatePickerDefaultDate';
 import DatePickerControlled from '../example/DatePickerControlled';
 import DatePickerControlledSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DatePickerControlled';
+import DatePickerInvalid from '../example/DatePickerInvalid';
+import DatePickerInvalidSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DatePickerInvalid';
+import DatePickerIncomplete from '../example/DatePickerIncomplete';
+import DatePickerIncompletetSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DatePickerIncomplete';
 
 const DocPage = () => (
   <DocTemplate
@@ -62,6 +66,17 @@ const DocPage = () => (
         title: 'Controlled Component',
         example: <DatePickerControlled />,
         source: DatePickerControlledSrc,
+      },
+      {
+        title: 'Invalid',
+        example: <DatePickerInvalid />,
+        source: DatePickerInvalidSrc,
+      },
+      {
+        title: 'Incomplete',
+        description: 'Applies theme-specific styling for incomplete. ***Note: Only use incomplete if given specific guidance, reserved for specific applications when no value has been provided. Not for general use.***',
+        example: <DatePickerIncomplete />,
+        source: DatePickerIncompletetSrc,
       },
     ]}
     propsTables={[

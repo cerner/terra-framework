@@ -32,6 +32,18 @@ const propTypes = {
   * */
   intl: intlShape.isRequired,
   /**
+  * Whether the input displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
+  */
+  isIncomplete: PropTypes.bool,
+  /**
+  * Whether the input displays as Invalid. Use when value does not meet validation pattern.
+  */
+  isInvalid: PropTypes.bool,
+  /**
+  * Whether the selected meridiem displays as Invalid. Use when value does not meet validation pattern.
+  */
+  isInvalidMeridiem: PropTypes.bool,
+  /**
    * Custom input attributes to apply to the minutes input
    */
   // eslint-disable-next-line react/forbid-prop-types
@@ -59,6 +71,10 @@ const propTypes = {
    */
   refCallback: PropTypes.func,
   /**
+   * Whether or not the time is required.
+   */
+  required: PropTypes.bool,
+  /**
    * Custom input attributes to apply to the seconds input
    */
   // eslint-disable-next-line react/forbid-prop-types
@@ -83,12 +99,16 @@ const propTypes = {
 const defaultProps = {
   disabled: false,
   inputAttributes: {},
+  isIncomplete: false,
+  isInvalid: false,
+  isInvalidMeridiem: false,
   minuteAttributes: {},
   hourAttributes: {},
   onBlur: null,
   onChange: null,
   onFocus: undefined,
   refCallback: undefined,
+  required: false,
   secondAttributes: {},
   showSeconds: false,
   value: undefined,
@@ -703,17 +723,39 @@ class TimeInput extends React.Component {
       minuteAttributes,
       hourAttributes,
       intl,
+      isIncomplete,
+      isInvalid,
+      isInvalidMeridiem,
       onBlur,
       onChange,
       onFocus,
       name,
       refCallback,
+      required,
       secondAttributes,
       showSeconds,
       value,
       variant,
       ...customProps
     } = this.props;
+
+    const timeInputClassNames = cx([
+      'mobile-time-picker',
+      { 'is-focused': this.state.isFocused },
+      { 'is-invalid': isInvalid },
+      { 'is-incomplete': (isIncomplete && required && !isInvalid && !isInvalidMeridiem) },
+      customProps.className,
+    ]);
+
+    const anteMeridiemClassNames = cx([
+      'meridiem-button',
+      { 'is-invalid': isInvalidMeridiem && this.state.meridiem === this.anteMeridiem },
+    ]);
+
+    const postMeridiemClassNames = cx([
+      'meridiem-button',
+      { 'is-invalid': isInvalidMeridiem && this.state.meridiem === this.postMeridiem },
+    ]);
 
     const instanceHoursAttrs = { ...hourAttributes };
     const instanceMinuteAttrs = { ...minuteAttributes };
@@ -748,7 +790,7 @@ class TimeInput extends React.Component {
     return (
       <div
         {...customProps}
-        className={cx(['mobile-time-picker', customProps.className])}
+        className={timeInputClassNames}
         ref={this.timeInputContainer}
       >
         <input
@@ -837,7 +879,7 @@ class TimeInput extends React.Component {
           <ButtonGroup selectedKeys={[this.state.meridiem]} onChange={this.handleMeridiemButtonChange} className={cx('meridiem-button-group')}>
             <ButtonGroup.Button
               key={this.anteMeridiem}
-              className={cx('meridiem-button')}
+              className={anteMeridiemClassNames}
               text={this.anteMeridiem}
               onBlur={this.handleMeridiemBlur}
               onFocus={this.handleFocus}
@@ -845,7 +887,7 @@ class TimeInput extends React.Component {
             />
             <ButtonGroup.Button
               key={this.postMeridiem}
-              className={cx('meridiem-button')}
+              className={postMeridiemClassNames}
               text={this.postMeridiem}
               onBlur={this.handleMeridiemBlur}
               onFocus={this.handleFocus}
@@ -865,6 +907,9 @@ class TimeInput extends React.Component {
     const {
       disabled,
       inputAttributes,
+      isIncomplete,
+      isInvalid,
+      isInvalidMeridiem,
       minuteAttributes,
       hourAttributes,
       intl,
@@ -873,6 +918,7 @@ class TimeInput extends React.Component {
       onFocus,
       name,
       refCallback,
+      required,
       secondAttributes,
       showSeconds,
       value,
@@ -885,6 +931,8 @@ class TimeInput extends React.Component {
       { disabled },
       'time-input',
       { 'is-focused': this.state.isFocused },
+      { 'is-invalid': isInvalid },
+      { 'is-incomplete': (isIncomplete && required && !isInvalid && !isInvalidMeridiem) },
       customProps.className,
     ]);
 
