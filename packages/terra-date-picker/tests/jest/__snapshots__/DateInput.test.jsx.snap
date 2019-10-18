@@ -72,6 +72,9 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
       "timeZone": null,
     }
   }
+  isIncomplete={false}
+  isInvalid={false}
+  required={false}
 >
   <div
     className="custom-input"

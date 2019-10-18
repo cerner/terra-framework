@@ -1,22 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DateInput from 'terra-date-input';
+import classNames from 'classnames/bind';
+import styles from './common/DateInput.test.module.scss';
 
-const Example = () => {
-  const [value, setValue] = useState('oiug-kh-bg');
+const cx = classNames.bind(styles);
 
-  return (
-    <div>
-      <DateInput
-        id="dateInput"
-        name="date-input"
-        value={value}
-        onChange={(event, dateString) => setValue(dateString)}
-      />
-      <p>{`DateInput Value: ${value}`}</p>
-    </div>
-  );
-};
+const Example = () => (
+  <div className={cx('content-wrapper')}>
+    <DateInput
+      id="dateInput"
+      name="date-input"
+      value="1999-03-10"
+      isInvalid
+    />
+  </div>
+);
 
 export default Example;

@@ -47,12 +47,16 @@ const propTypes = {
    */
   hideRequired: PropTypes.bool,
   /**
+  * Whether the field displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
+  */
+  isIncomplete: PropTypes.bool,
+  /**
    * Whether or not the field is an inline field.
    */
   isInline: PropTypes.bool,
   /**
-   * Whether or not the field is invalid.
-   */
+  * Whether the field displays as Invalid. Use when value does not meet validation pattern.
+  */
   isInvalid: PropTypes.bool,
   /**
    * Whether or not the legend is visible. Use this props to hide a legend while still creating it on the DOM for accessibility.
@@ -114,6 +118,7 @@ const defaultProps = {
   error: null,
   help: null,
   hideRequired: false,
+  isIncomplete: false,
   isInline: false,
   isInvalid: false,
   isLegendHidden: false,
@@ -137,6 +142,7 @@ const DateInputField = (props) => {
     error,
     help,
     hideRequired,
+    isIncomplete,
     isInline,
     isInvalid,
     isLegendHidden,
@@ -226,6 +232,8 @@ const DateInputField = (props) => {
         displayFormat={displayFormat}
         disabled={disabled}
         isInvalid={isInvalid}
+        isIncomplete={isIncomplete}
+        required={required}
         monthAttributes={{ ...monthAttributes, ...{ 'aria-describedby': monthAriaDesciptionIds } }}
         dayAttributes={{ ...dayAttributes, ...{ 'aria-describedby': dayAriaDesciptionIds } }}
         yearAttributes={{ ...yearAttributes, ...{ 'aria-describedby': yearAriaDesciptionIds } }}

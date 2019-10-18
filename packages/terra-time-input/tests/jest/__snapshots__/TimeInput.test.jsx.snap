@@ -445,6 +445,9 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
       "timeZone": null,
     }
   }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
   minuteAttributes={Object {}}
   name="time-input"
   onBlur={null}
@@ -474,6 +477,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
       ],
     }
   }
+  required={false}
   secondAttributes={Object {}}
   showSeconds={false}
   variant="24-hour"

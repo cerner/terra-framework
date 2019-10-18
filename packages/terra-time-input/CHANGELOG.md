@@ -6,6 +6,17 @@ Unreleased
 ### Changed
 * Update Jest snapshots
 
+4.13.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+### Added
+* Added `isIncomplete` prop and stylings
+* Added `isInvalid` prop and stylings
+* Added `isInvalidMeridiem` prop 
+* Added `required` prop
+
 4.12.0 - (October 3, 2019)
 ------------------
 ### Changed
