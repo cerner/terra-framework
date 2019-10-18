@@ -4,6 +4,22 @@ Changelog
 Unreleased
 ----------
 
+4.13.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+### Added
+* Added `isIncomplete` prop and stylings
+* Added `isInvalid` prop and stylings
+* Added `isInvalidMeridiem` prop 
+* Added `required` prop
+
+4.12.0 - (October 3, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 4.11.0 - (September 26, 2019)
 ------------------
 ### Changed
@@ -14,6 +30,7 @@ Unreleased
 ### Changed
 * Removed `details` tag from doc-site.
 * Doc site example module import syntax modified to use package.json name resolution
+* Fallback the time notation variant to `24-hour` for locales that do not use the `12-hour` notation.
 
 ### Added
 * Added en-CA translations.

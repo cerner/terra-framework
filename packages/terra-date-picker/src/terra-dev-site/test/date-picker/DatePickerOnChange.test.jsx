@@ -1,5 +1,9 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import DatePicker from '../../../DatePicker';
+import styles from './common/DatePicker.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 class DatePickerOnChange extends React.Component {
   constructor(props) {
@@ -14,7 +18,7 @@ class DatePickerOnChange extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={cx('content-wrapper')}>
         <h3>
 Selected Date:
           <span id="selected-date">{this.state.date}</span>
