@@ -24,7 +24,7 @@ const items = Object.freeze([{
   component: <AggregatorItem name="Section 3" targetId="section3" />,
 }]);
 
-const items0 = Object.freeze([{
+const flippedItems = Object.freeze([{
   key: 'SECTION_4',
   component: <AggregatorItem name="Section 4" targetId="section4" />,
 }, {
@@ -45,15 +45,6 @@ const Wrapper = withDisclosureManager(({ itemsList, disclosureManager }) => (
   />
 ));
 
-/*
-const AggregatorWithDisclosure1 = () => (
-  <div id="test-aggregator" role="main" className={cx('aggregator-with-disclosure-test')}>
-    <SlidePanelManager>
-      <Wrapper />
-    </SlidePanelManager>
-  </div>
-); */
-
 class AggregatorWithDisclosure extends React.Component {
   constructor(props) {
     super(props);
@@ -66,10 +57,10 @@ class AggregatorWithDisclosure extends React.Component {
   render() {
     const body = (
       <div id="test-aggregator" role="main" className={cx('aggregator-with-disclosure-test')}>
+        <Button id="flip-button" text="Flip Items" onClick={() => { this.setState(prevState => ({ flip: !prevState.flip })); }} />
         <SlidePanelManager>
-          <Wrapper itemsList={this.state.flip ? items0 : items} />
+          <Wrapper itemsList={this.state.flip ? flippedItems : items} />
         </SlidePanelManager>
-        <Button text="FlipButton" onClick={() => { this.setState(prevState => ({ flip: !prevState.flip })); }} />
       </div>
     );
 
