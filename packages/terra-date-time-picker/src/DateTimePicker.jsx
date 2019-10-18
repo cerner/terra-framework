@@ -42,6 +42,18 @@ const propTypes = {
    * */
   intl: intlShape.isRequired,
   /**
+  * Whether the input displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
+  */
+  isIncomplete: PropTypes.bool,
+  /**
+  * Whether the input displays as Invalid. Use when value does not meet validation pattern.
+  */
+  isInvalid: PropTypes.bool,
+  /**
+  * Whether the selected meridiem displays as Invalid. Use when value does not meet validation pattern.
+  */
+  isInvalidMeridiem: PropTypes.bool,
+  /**
    * An ISO 8601 string representation of the maximum date that can be selected in the date picker. The value must be in the `YYYY-MM-DD` format.
    * The time portion in this value is ignored because this is strictly used in the date picker.
    */
@@ -84,6 +96,10 @@ const propTypes = {
    */
   onSelect: PropTypes.func,
   /**
+   * Whether or not the date is required.
+   */
+  required: PropTypes.bool,
+  /**
    * Whether an input field for seconds should be shown or not. If true then the second field must have a valid
    * number for the overall input to be considered valid.
    */
@@ -112,6 +128,9 @@ const defaultProps = {
   excludeDates: undefined,
   filterDate: undefined,
   includeDates: undefined,
+  isIncomplete: false,
+  isInvalid: false,
+  isInvalidMeridiem: false,
   maxDate: undefined,
   minDate: undefined,
   onBlur: undefined,
@@ -120,6 +139,7 @@ const defaultProps = {
   onClickOutside: undefined,
   onFocus: undefined,
   onSelect: undefined,
+  required: false,
   showSeconds: false,
   timeInputAttributes: undefined,
   value: undefined,
@@ -545,6 +565,9 @@ class DateTimePicker extends React.Component {
       excludeDates,
       filterDate,
       includeDates,
+      isIncomplete,
+      isInvalid,
+      isInvalidMeridiem,
       onBlur,
       onChange,
       onChangeRaw,
@@ -554,6 +577,7 @@ class DateTimePicker extends React.Component {
       maxDate,
       minDate,
       name,
+      required,
       showSeconds,
       timeInputAttributes,
       value,
@@ -598,6 +622,9 @@ class DateTimePicker extends React.Component {
             name="input"
             disabled={disabled}
             disableButtonFocusOnClose
+            isIncomplete={isIncomplete}
+            isInvalid={isInvalid}
+            required={required}
           />
         </div>
         <div className={cx('time-facade')}>
@@ -612,6 +639,10 @@ class DateTimePicker extends React.Component {
             variant={timeVariant}
             refCallback={(inputRef) => { this.hourInput = inputRef; }}
             showSeconds={showSeconds}
+            isIncomplete={isIncomplete}
+            isInvalid={isInvalid}
+            isInvalidMeridiem={isInvalidMeridiem}
+            required={required}
           />
 
           {this.state.isAmbiguousTime ? this.renderTimeClarification() : null}

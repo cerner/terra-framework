@@ -89,12 +89,57 @@
       border: 0;
       opacity: 1;
     }
+
+    &.is-invalid {
+      background-color: var(--terra-time-input-invalid-background-color, #fff);
+      border: var(--terra-time-input-invalid-border, 1px solid #e50000);
+      box-shadow: var(--terra-time-input-invalid-box-shadow, 0 0 0 1px #e50000);
+
+      &:hover {
+        border: var(--terra-time-input-invalid-hover-border, 1px solid #e50000);
+      }
+
+      &:focus {
+        border: var(--terra-time-input-invalid-focus-border, 1px solid #e50000);
+      }
+
+      &.disabled {
+        background-color: var(--terra-time-input-invalid-disabled-background-color, rgba(111, 116, 119, 0.2));
+        border: var(--terra-time-input-invalid-disabled-border, 1px solid #e50000);
+        color: var(--terra-time-input-invalid-disabled-color, #1c1f21);
+        opacity: var(--terra-time-input-invalid-disabled-opacity, 0.25);
+      }
+    }
+
+    &.is-incomplete {
+      background-color: var(--terra-time-input-incomplete-background-color, #ffc);
+
+      &:hover,
+      .desktop:hover {
+        background-color: var(--terra-time-input-incomplete-hover-background-color, #ffc);
+      }
+
+      &:focus {
+        background-color: var(--terra-time-input-incomplete-focus-background-color, #ffc);
+      }
+
+      .desktop.initial-focus {
+        background-color: var(--terra-time-input-desktop-incomplete-focused-input-background-color, rgb(185, 215, 233));
+      }
+
+      &.disabled {
+        background-color: var(--terra-time-input-incomplete-disabled-background-color, #ffc);
+        border: var(--terra-time-input-incomplete-disabled-border, 1px solid #868a8c);
+        color: var(--terra-time-input-incomplete-disabled-color, #1c1f21);
+        opacity: var(--terra-time-input-incomplete-disabled-opacity, 0.25);
+      }
+    }
   }
 
   .time-input-hour,
   .time-input-minute,
   .time-input-second {
-    background-color: var(--terra-time-input-time-component-background-color, #fff);
+    background-color: var(--terra-time-input-time-component-background-color, transparent);
     background-image: var(--terra-time-input-time-component-background-image, none);
     background-position: 0 100%;
     background-repeat: no-repeat;
@@ -120,14 +165,14 @@
     width: 100%;
 
     &:hover {
-      background-color: var(--terra-time-input-time-component-hover-background-color, #fff);
+      background-color: var(--terra-time-input-time-component-hover-background-color, transparent);
       border: var(--terra-time-input-time-component-hover-border, 0 none transparent);
       color: var(--terra-time-input-time-component-hover-color, #1c1f21);
     }
 
     &:focus {
       @include focus-styles;
-      background-color: var(--terra-time-input-time-component-focus-background-color, #fff);
+      background-color: var(--terra-time-input-time-component-focus-background-color, transparent);
       background-size: var(--terra-time-input-time-component-focus-background-size, 0 0);
       border: 0;
 
@@ -223,6 +268,29 @@
       background-color: var(--terra-time-input-meridiem-button-selected-hover-background-color, #40474a);
       border-color: var(--terra-time-input-meridiem-button-selected-hover-border-color, #40474a);
       color: var(--terra-time-input-meridiem-button-selected-hover-color, #fff);
+    }
+
+    &.is-invalid {
+      border: var(--terra-time-input-invalid-border, 1px solid #e50000);
+      box-shadow: var(--terra-time-input-invalid-box-shadow, 0 0 0 1px #e50000);
+      z-index: 1;
+
+      &:focus {
+        border: var(--terra-time-input-invalid-focus-border, 1px solid #e50000);
+        box-shadow: var(--terra-time-input-invalid-focus-box-shadow, 0 0 0 1px #e50000, 0 0 4px 3px rgba(229, 0, 0, 0.35));
+      }
+
+      &:hover {
+        border: var(--terra-time-input-invalid-hover-border, 1px solid #e50000);
+        box-shadow: var(--terra-time-input-invalid-hover-box-shadow, 0 0 0 1px #e50000);
+      }
+
+      &.disabled {
+        background-color: var(--terra-time-input-invalid-disabled-background-color, rgba(111, 116, 119, 0.2));
+        border: var(--terra-time-input-invalid-disabled-border, 1px solid #e50000);
+        color: var(--terra-time-input-invalid-disabled-color, #1c1f21);
+        opacity: var(--terra-time-input-invalid-disabled-opacity, 0.25);
+      }
     }
   }
 }

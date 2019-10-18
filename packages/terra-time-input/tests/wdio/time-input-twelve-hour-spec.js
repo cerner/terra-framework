@@ -150,4 +150,28 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
 
     Terra.it.matchesScreenshot();
   });
+
+  describe('Twelve Hour - Invalid time input', () => {
+    before(() => browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/invalid'));
+
+    Terra.it.matchesScreenshot();
+  });
+
+  describe('Twelve Hour - Incomplete time input', () => {
+    before(() => browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/incomplete'));
+
+    Terra.it.matchesScreenshot();
+  });
+
+  describe('Twelve Hour - Invalid incomplete time input', () => {
+    before(() => browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/invalid-incomplete'));
+
+    Terra.it.matchesScreenshot();
+  });
+
+  describe('Twelve Hour - Invalid meridiem', () => {
+    before(() => browser.url('/#/raw/tests/terra-time-input/time-input/twelve-hour/invalid-meridiem'));
+
+    Terra.it.matchesScreenshot();
+  });
 });

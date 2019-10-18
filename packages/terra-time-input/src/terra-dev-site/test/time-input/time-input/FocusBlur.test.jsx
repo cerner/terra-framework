@@ -1,5 +1,9 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import TimeInput from '../../../../TimeInput';
+import styles from '../common/TimeInput.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 class TimeInputOnBlur extends React.Component {
   constructor(props) {
@@ -23,7 +27,7 @@ class TimeInputOnBlur extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={cx('content-wrapper')}>
         <div id="time-input-value">
           <h3>
             onBlur Trigger Count:
