@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from 'terra-button';
 import SlidePanelManager from 'terra-slide-panel-manager';
 import { withDisclosureManager } from 'terra-disclosure-manager';
 import classNames from 'classnames/bind';
@@ -23,19 +24,57 @@ const items = Object.freeze([{
   component: <AggregatorItem name="Section 3" targetId="section3" />,
 }]);
 
-const Wrapper = withDisclosureManager(({ disclosureManager }) => (
+const items0 = Object.freeze([{
+  key: 'SECTION_4',
+  component: <AggregatorItem name="Section 4" targetId="section4" />,
+}, {
+  key: 'SECTION_5',
+  component: <AggregatorItem name="Section 5" targetId="section5" />,
+}, {
+  key: 'SECTION_6',
+  component: <AggregatorItem name="Section 6" targetId="section6" />,
+}, {
+  key: 'SECTION_7',
+  component: <AggregatorItem name="Section 7" targetId="section7" />,
+}]);
+
+const Wrapper = withDisclosureManager(({ itemsList, disclosureManager }) => (
   <Aggregator
-    items={items}
+    items={itemsList}
     disclose={disclosureManager.disclose}
   />
 ));
 
-const AggregatorWithDisclosure = () => (
+/*
+const AggregatorWithDisclosure1 = () => (
   <div id="test-aggregator" role="main" className={cx('aggregator-with-disclosure-test')}>
     <SlidePanelManager>
       <Wrapper />
     </SlidePanelManager>
   </div>
-);
+); */
+
+class AggregatorWithDisclosure extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      flip: false,
+    };
+  }
+
+  render() {
+    const body = (
+      <div id="test-aggregator" role="main" className={cx('aggregator-with-disclosure-test')}>
+        <SlidePanelManager>
+          <Wrapper itemsList={this.state.flip ? items0 : items} />
+        </SlidePanelManager>
+        <Button text="FlipButton" onClick={() => { this.setState(prevState => ({ flip: !prevState.flip })); }} />
+      </div>
+    );
+
+    return body;
+  }
+}
 
 export default AggregatorWithDisclosure;
