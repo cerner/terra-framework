@@ -21,6 +21,10 @@ import TimeInputSecondsWithDefault from '../example/TimeInputSecondsWithDefault'
 import TimeInputSecondsWithDefaultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TimeInputSecondsWithDefault';
 import TimeInputSecondsTwelveHour from '../example/TimeInputSecondsTwelveHour';
 import TimeInputSecondsTwelveHourSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TimeInputSecondsTwelveHour';
+import TimeInputSecondsInvalid from '../example/TimeInputSecondsInvalid';
+import TimeInputSecondsInvalidSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TimeInputSecondsInvalid';
+import TimeInputSecondsIncomplete from '../example/TimeInputSecondsIncomplete';
+import TimeInputSecondsIncompleteSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TimeInputSecondsIncomplete';
 
 
 const DocPage = () => (
@@ -63,6 +67,17 @@ const DocPage = () => (
         title: 'Seconds Displayed Without Default Time - 12 Hour',
         example: <TimeInputSecondsTwelveHour />,
         source: TimeInputSecondsTwelveHourSrc,
+      },
+      {
+        title: 'Invalid Time',
+        example: <TimeInputSecondsInvalid />,
+        source: TimeInputSecondsInvalidSrc,
+      },
+      {
+        title: 'Incomplete Time',
+        description: 'Applies theme-specific styling for incomplete. ***Note: Only use incomplete if given specific guidance, reserved for specific applications when no value has been provided. Not for general use.***',
+        example: <TimeInputSecondsIncomplete />,
+        source: TimeInputSecondsIncompleteSrc,
       },
     ]}
     propsTables={[

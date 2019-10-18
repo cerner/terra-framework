@@ -29,6 +29,18 @@ const Example = () => {
         disabled
       />
       <p>{`DateInputField Value: ${value}`}</p>
+      <DateInputField
+        legend="Legend text"
+        name="date-input"
+        value={value}
+        onChange={(event, dateString) => setValue(dateString)}
+        error="Error message"
+        help="Help message"
+        isIncomplete
+        required
+        disabled
+      />
+      <p>{`DateInputField Value: ${value}`}</p>
     </div>
   );
 };

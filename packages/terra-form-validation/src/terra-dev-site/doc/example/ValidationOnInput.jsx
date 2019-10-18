@@ -8,11 +8,13 @@ import Spacer from 'terra-spacer';
 
 const validateUniqueUser = async (name) => {
   const response = new Promise((resolve) => {
-    if (name !== 'TerraUser') {
-      return resolve('');
+    if (name.length < 3) {
+      return resolve('Not long enough');
     }
-
-    return resolve('Name is Unavailable');
+    if (name === 'TerraUser') {
+      return resolve('Name is Unavailable');
+    }
+    return resolve('');
   });
 
   await response;
@@ -65,9 +67,10 @@ export default class MainEntry extends React.Component {
           {({ input, meta }) => (
             <InputField
               inputId="user-name"
-              label="User Name"
+              label="User Name, requires at least 3 characters"
               error={meta.error}
-              isInvalid={meta.error !== undefined}
+              isInvalid={meta.error === 'Name is Unavailable'}
+              isIncomplete={meta.error === 'Not long enough' || meta.error === 'Required'}
               inputAttrs={{
                 placeholder: 'Description',
                 ...input,

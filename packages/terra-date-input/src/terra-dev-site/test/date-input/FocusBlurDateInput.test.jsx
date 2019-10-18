@@ -1,7 +1,10 @@
 import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DateInput from 'terra-date-input';
+import classNames from 'classnames/bind';
+import styles from './common/DateInput.test.module.scss';
 
+const cx = classNames.bind(styles);
 
 class DateInputOnBlur extends React.Component {
   constructor(props) {
@@ -29,7 +32,7 @@ class DateInputOnBlur extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={cx('content-wrapper')}>
         <div id="date-input-value">
           <h3>
             onBlur Trigger Count:
