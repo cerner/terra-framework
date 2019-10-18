@@ -279,10 +279,10 @@ export default class Calendar extends React.Component {
     }
 
     const isEventTargetContainedWithinCalendarControl = (target) => {
-      const containsEventTarget = (this.previousMonthBtnRef.current.contains(target)
-        || this.nextMonthBtnRef.current.contains(target)
-        || this.monthDropdownRef.contains(target)
-        || this.yearDropdownRef.contains(target));
+      const containsEventTarget = (this.previousMonthBtnRef.current && this.previousMonthBtnRef.current.contains(target)
+        || this.nextMonthBtnRef.current && this.nextMonthBtnRef.current.contains(target)
+        || this.monthDropdownRef && this.monthDropdownRef.contains(target)
+        || this.yearDropdownRef && this.yearDropdownRef.contains(target));
 
       return containsEventTarget;
     }
