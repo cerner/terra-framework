@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update Jest snapshots
 
 4.13.0 - (October 16, 2019)
 ------------------

@@ -243,7 +243,7 @@ disclosureManager.disclose({
   size: 'large',
   content: {
     key: 'my-disclosed-content',
-    content: <DisclosedContent />,
+    component: <DisclosedContent />,
   }
 }).then({ dismissDisclosure, afterDismiss } => {
   this.myContentIsDisclosed = true;
