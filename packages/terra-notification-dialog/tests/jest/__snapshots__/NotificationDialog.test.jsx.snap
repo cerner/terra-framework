@@ -34,12 +34,12 @@ exports[`should mount a complete notification-dialog 1`] = `
     <NotificationDialog
       acceptAction={
         Object {
-          "isEmphasized": true,
           "onClick": [Function],
           "text": "Confirm",
         }
       }
       content={null}
+      emphasizedAction="accept"
       endMessage={null}
       isOpen={false}
       rejectAction={
@@ -126,12 +126,12 @@ exports[`should mount a complete notification-dialog with long message 1`] = `
     <NotificationDialog
       acceptAction={
         Object {
-          "isEmphasized": true,
           "onClick": [Function],
           "text": "Confirm",
         }
       }
       content={null}
+      emphasizedAction="accept"
       endMessage={null}
       isOpen={false}
       rejectAction={
@@ -218,12 +218,12 @@ exports[`should mount a notification-dialog with no variant 1`] = `
     <NotificationDialog
       acceptAction={
         Object {
-          "isEmphasized": true,
           "onClick": [Function],
           "text": "Confirm",
         }
       }
       content={null}
+      emphasizedAction="accept"
       endMessage={null}
       header="No Variant for this dialog"
       isOpen={false}
@@ -282,12 +282,12 @@ exports[`should shallow a complete notification-dialog 1`] = `
   <NotificationDialog
     acceptAction={
       Object {
-        "isEmphasized": true,
         "onClick": [Function],
         "text": "Confirm",
       }
     }
     content={null}
+    emphasizedAction="accept"
     endMessage={null}
     isOpen={false}
     rejectAction={
@@ -320,12 +320,12 @@ exports[`should shallow a complete notification-dialog with long message 1`] = `
   <NotificationDialog
     acceptAction={
       Object {
-        "isEmphasized": true,
         "onClick": [Function],
         "text": "Confirm",
       }
     }
     content={null}
+    emphasizedAction="accept"
     endMessage={null}
     isOpen={false}
     rejectAction={
@@ -358,12 +358,12 @@ exports[`should shallow a notification-dialog with no variant 1`] = `
   <NotificationDialog
     acceptAction={
       Object {
-        "isEmphasized": true,
         "onClick": [Function],
         "text": "Confirm",
       }
     }
     content={null}
+    emphasizedAction="accept"
     endMessage={null}
     header="No Variant for this dialog"
     isOpen={false}

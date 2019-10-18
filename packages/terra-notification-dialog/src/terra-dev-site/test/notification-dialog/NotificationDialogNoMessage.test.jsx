@@ -32,8 +32,8 @@ class NotificationDialogNoMessage extends React.Component {
           acceptAction={{
             text: 'Close',
             onClick: this.handleCloseModal,
-            isEmphasized: true,
           }}
+          emphasizedAction="accept"
         />
         <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
       </div>

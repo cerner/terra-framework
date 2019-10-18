@@ -55,12 +55,12 @@ class NotificationDialogWithFocus extends React.Component {
           acceptAction={{
             text: 'Confirm',
             onClick: clickConfirm,
-            isEmphasized: true,
           }}
           rejectAction={{
             text: 'Close',
             onClick: this.handleCloseModal,
           }}
+          emphasizedAction="accept"
         />
         <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} id="trigger-notification-dialog" />
         <Button text="Dismiss" onClick={this.props.disclosureManager.dismiss} id="dismiss-modal" />

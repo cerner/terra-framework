@@ -37,12 +37,12 @@ class CompleteNotificationDialog extends React.Component {
           acceptAction={{
             text: 'Confirm',
             onClick: clickConfirm,
-            isEmphasized: true,
           }}
           rejectAction={{
             text: 'Close',
             onClick: this.handleCloseModal,
           }}
+          emphasizedAction="accept"
         />
         <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
       </div>

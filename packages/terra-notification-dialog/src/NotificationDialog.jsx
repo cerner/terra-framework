@@ -46,7 +46,6 @@ const propTypes = {
   acceptAction: PropTypes.shape({
     text: PropTypes.string,
     onClick: PropTypes.func,
-    isEmphasized: PropTypes.bool,
   }).isRequired,
   /**
    * The Action of the reject button.
@@ -79,6 +78,14 @@ const propTypes = {
    * Reverses the order of notification action buttons
    */
   isReversed: PropTypes.bool,
+  /**
+   * Determines whether acceptAction, rejectAction or neither is emphasizedAction
+   */
+  emphasizedAction: PropTypes.oneOf([
+    'none',
+    'accept',
+    'reject',
+  ]),
 };
 
 const defaultProps = {
@@ -87,21 +94,24 @@ const defaultProps = {
   endMessage: null,
   content: null,
   variant: variants.CUSTOM,
+  emphasizedAction: 'none',
 };
 
-const actionSection = (acceptAction, rejectAction, isReversed) => {
+const actionSection = (acceptAction, rejectAction, isReversed, emphasizedAction) => {
   let acceptButton = null;
   let rejectButton = null;
   if (!acceptAction && !rejectAction) {
     return null;
   }
   if (acceptAction) {
-    acceptButton = (acceptAction.isEmphasized)
+    acceptButton = (emphasizedAction === 'accept')
       ? <Button text={acceptAction.text} variant={Button.Opts.Variants.EMPHASIS} onClick={acceptAction.onClick} />
       : <Button text={acceptAction.text} onClick={acceptAction.onClick} />;
   }
   if (rejectAction) {
-    rejectButton = <Button text={rejectAction.text} onClick={rejectAction.onClick} />;
+    rejectButton = (emphasizedAction === 'reject')
+      ? <Button text={rejectAction.text} variant={Button.Opts.Variants.EMPHASIS} onClick={rejectAction.onClick} />
+      : <Button text={rejectAction.text} onClick={rejectAction.onClick} />;
   }
 
   if (isReversed) {
@@ -185,6 +195,7 @@ class NotificationDialog extends React.Component {
       customIcon,
       isOpen,
       isReversed,
+      emphasizedAction,
       ...customProps
     } = this.props;
 
@@ -223,7 +234,7 @@ class NotificationDialog extends React.Component {
                     && <div className={cx('message')}>{endMessage}</div>}
                 </div>
               </div>
-              <div className={cx('footer-body')}>{actionSection(acceptAction, rejectAction, isReversed)}</div>
+              <div className={cx('footer-body')}>{actionSection(acceptAction, rejectAction, isReversed, emphasizedAction)}</div>
             </div>
           </div>
         </FocusTrap>

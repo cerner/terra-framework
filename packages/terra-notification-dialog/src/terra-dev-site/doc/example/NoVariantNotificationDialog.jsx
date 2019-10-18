@@ -37,12 +37,12 @@ class NoVariantNotificationDialog extends React.Component {
           acceptAction={{
             text: 'OK',
             onClick: clickConfirm,
-            isEmphasized: true,
           }}
           rejectAction={{
             text: 'Close',
             onClick: this.handleCloseModal,
           }}
+          emphasizedAction="accept"
         />
         <Button text="Trigger Notification Dialog" onClick={this.handleOpenModal} />
       </div>

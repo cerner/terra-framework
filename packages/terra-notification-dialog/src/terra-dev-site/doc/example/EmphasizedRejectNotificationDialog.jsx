@@ -1,12 +1,12 @@
 import React from 'react';
 import Button from 'terra-button';
-import NotificationDialog, { NotificationDialogVariants } from 'terra-notification-dialog';
+import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
 
 const clickConfirm = () => {
   console.log('You clicked confirm'); // eslint-disable-line no-console
 };
 
-class CompleteNotificationDialogWithLongMessage extends React.Component {
+class ReversedActionNotificationDialog extends React.Component {
   constructor() {
     super();
 
@@ -30,10 +30,10 @@ class CompleteNotificationDialogWithLongMessage extends React.Component {
     return (
       <div>
         <NotificationDialog
-          variant={NotificationDialogVariants.SUCCESS}
+          variant={NotificationDialogVariants.ALERT}
           isOpen={this.state.isOpen}
-          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ornare odio quis turpis viverra, volutpat laoreet magna porta."
-          startMessage="Quisque egestas ullamcorper velit vitae volutpat. Quisque vestibulum nulla nunc, eget pharetra massa semper ac. In sit amet felis tincidunt, laoreet tortor nec, tempus ipsum."
+          title="Make sure that the title relates directly to the choices."
+          startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
           acceptAction={{
             text: 'Confirm',
             onClick: clickConfirm,
@@ -42,12 +42,12 @@ class CompleteNotificationDialogWithLongMessage extends React.Component {
             text: 'Close',
             onClick: this.handleCloseModal,
           }}
-          emphasizedAction="accept"
+          emphasizedAction="reject"
         />
-        <Button text="Trigger Notification Dialog" onClick={this.handleOpenModal} />
+        <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
       </div>
     );
   }
 }
 
-export default CompleteNotificationDialogWithLongMessage;
+export default ReversedActionNotificationDialog;

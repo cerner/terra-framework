@@ -112,9 +112,21 @@ Terra.describeViewports('notification-dialog', ['tiny', 'medium', 'large'], () =
     });
   });
 
+  describe('Notification-dialog with emphasized reject action', () => {
+    it('Notification-dialog with emphasized reject action', () => {
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/emphasized-reject-notification-dialog');
+      browser.click('#trigger-notification-dialog');
+      Terra.validates.element({ selector });
+    });
+  });
+});
+
+Terra.describeViewports('notification-dialog', ['tiny', 'medium', 'large'], () => {
+  afterEach(() => browser.click('[class*="NotificationDialog-module__actions"] button:first-child'));
+
   describe('Notification-dialog with Reversed Actions', () => {
     it('Notification-dialog with Reversed Actions', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-no-message');
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/reversed-action-notification-dialog');
       browser.click('#trigger-notification-dialog');
       Terra.validates.element({ selector });
     });

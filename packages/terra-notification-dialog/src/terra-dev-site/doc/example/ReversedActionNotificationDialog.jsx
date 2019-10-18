@@ -37,7 +37,6 @@ class ReversedActionNotificationDialog extends React.Component {
           acceptAction={{
             text: 'Confirm',
             onClick: clickConfirm,
-            isEmphasized: false,
           }}
           rejectAction={{
             text: 'Close',

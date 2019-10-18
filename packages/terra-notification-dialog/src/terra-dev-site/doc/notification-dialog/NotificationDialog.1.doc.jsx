@@ -22,6 +22,8 @@ import NotificationDialogOnModalManager from '../example/NotificationDialogOnMod
 import NotificationDialogOnModalManagerSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/NotificationDialogOnModalManager.jsx';
 import ReversedActionNotificationDialog from '../example/ReversedActionNotificationDialog';
 import ReversedActionNotificationDialogSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ReversedActionNotificationDialog.jsx';
+import EmphasizedRejectNotificationDialog from '../example/EmphasizedRejectNotificationDialog';
+import EmphasizedRejectNotificationDialogSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/EmphasizedRejectNotificationDialog.jsx';
 
 const DocPage = () => (
   <DocTemplate
@@ -63,6 +65,11 @@ const DocPage = () => (
         title: 'Notification Dialog with Actions Reversed',
         example: <ReversedActionNotificationDialog />,
         source: ReversedActionNotificationDialogSrc,
+      },
+      {
+        title: 'Notification Dialog with Reject Action emphasized',
+        example: <EmphasizedRejectNotificationDialog />,
+        source: EmphasizedRejectNotificationDialogSrc,
       },
     ]}
     propsTables={[
