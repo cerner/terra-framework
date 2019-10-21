@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.14.0 - (October 21, 2019)
+------------------
 ### Changed
 * Update Jest snapshots
 
