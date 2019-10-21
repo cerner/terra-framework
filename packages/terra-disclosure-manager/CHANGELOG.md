@@ -4,6 +4,16 @@ ChangeLog
 Unreleased
 ----------
 
+4.24.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+4.23.0 - (October 3, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 4.22.0 - (September 26, 2019)
 ------------------
 ### Changed
@@ -12,7 +22,7 @@ Unreleased
 4.21.0 - (September 19, 2019)
 ------------------
 ### Changed
-* Removed `details` tag from doc-site.
+* Removed `details` tag from doc-site
 * Corrected lint warnings
 
 4.20.0 - (September 6, 2019)

@@ -5,6 +5,21 @@ Unreleased
 ----------
 ### Changed
 * Duplicate IDs in examples changed.
+* Update Jest snapshots
+
+4.16.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+### Added
+* Added `isIncomplete` prop and stylings
+* Added `isInvalid` prop and stylings
+
+4.15.0 - (October 3, 2019)
+------------------
+### Changed
+* Renamed react-datepicker's `datepicker.scss` to `react_datepicker.module.scss`.
 
 4.14.0 - (September 26, 2019)
 ------------------

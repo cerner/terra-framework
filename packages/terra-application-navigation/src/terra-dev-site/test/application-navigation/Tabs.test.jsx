@@ -57,6 +57,12 @@ const navigationItems = [
     metaData: {
       test: '9',
     },
+  }, {
+    key: '/page_10',
+    text: 'Page 10',
+    metaData: {
+      test: '10',
+    },
   },
 ];
 

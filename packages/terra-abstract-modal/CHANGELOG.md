@@ -4,6 +4,20 @@ Changelog
 Unreleased
 ----------
 
+3.15.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+### Fixed
+* Place focus onto the HTML body element upon modal dismissal in IE.
+  * This is done _only_ when the modal is disclosed via a non-HTML element (SVG, for instance).
+
+3.14.0 - (October 3, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 3.13.0 - (September 26, 2019)
 ------------------
 ### Changed

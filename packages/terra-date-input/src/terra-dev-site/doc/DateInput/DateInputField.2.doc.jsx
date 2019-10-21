@@ -22,6 +22,8 @@ import DayMonthYearDateInputField from '../example/DayMonthYearDateInputField';
 import DayMonthYearDateInputFieldSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DayMonthYearDateInputField.jsx';
 import MonthDayYearDateInputField from '../example/MonthDayYearDateInputField';
 import MonthDayYearDateInputFieldSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/MonthDayYearDateInputField.jsx';
+import IncompleteDateInputField from '../example/IncompleteDateInputField';
+import IncompleteDateInputFieldSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/IncompleteDateInputField.jsx';
 
 const DocPage = () => (
   <DocTemplate
@@ -63,6 +65,12 @@ const DocPage = () => (
         title: 'Day Month Year Display Format DateInputField',
         example: <DayMonthYearDateInputField />,
         source: DayMonthYearDateInputFieldSrc,
+      },
+      {
+        title: 'Incomplete DateInputField',
+        description: 'Applies theme-specific styling for incomplete. ***Note: Only use incomplete if given specific guidance, reserved for specific applications when no value has been provided. Not for general use.***',
+        example: <IncompleteDateInputField />,
+        source: IncompleteDateInputFieldSrc,
       },
     ]}
     propsTables={[
