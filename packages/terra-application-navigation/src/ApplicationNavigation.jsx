@@ -382,7 +382,7 @@ const ApplicationNavigation = ({
   if (navigationItems && activeNavigationItemKey) {
     hiddenMainTitle = (
       <VisuallyHiddenText
-        id="main-inner-title-1"
+        id="main-inner-title"
         aria-hidden
         text={navigationItems.filter((item => item.key === activeNavigationItemKey))[0].text}
       />
