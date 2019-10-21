@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Reenabled tests since form-select updated to fix issue.
 
 6.15.0 - (October 16, 2019)
 ------------------

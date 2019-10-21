@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Reenabled some tests
 
 1.3.0 - (October 16, 2019)
 ------------------
