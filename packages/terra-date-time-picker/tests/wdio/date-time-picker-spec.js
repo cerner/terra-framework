@@ -18,6 +18,36 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     Terra.it.matchesScreenshot();
   });
 
+  describe('Invalid', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-invalid');
+      browser.refresh();
+    });
+
+    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot();
+  });
+
+  describe('Incomplete', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-incomplete');
+      browser.refresh();
+    });
+
+    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot();
+  });
+
+  describe('Invalid and Incomplete', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-invalid-incomplete');
+      browser.refresh();
+    });
+
+    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot();
+  });
+
   describe('Default with Date', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-only');
