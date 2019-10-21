@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Missing aria-labels added in examples.
 
 1.12.0 - (September 26, 2019)
 ------------------

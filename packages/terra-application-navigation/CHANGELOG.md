@@ -6,6 +6,9 @@ Unreleased
 ### Changed
 * Adjusted title margin and padding
 
+### Changed
+* Duplicate ID in example changed.
+
 1.6.0 - (September 26, 2019)
 ------------------
 ### Changed

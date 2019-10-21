@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Duplicate IDs in examples changed.
 
 4.14.0 - (September 26, 2019)
 ------------------
