@@ -176,13 +176,7 @@ class TimeInput extends React.Component {
     };
   }
 
-  componentDidMount() {
-    if (this.props.value) {
-      this.initialValue = this.props.value;
-    }
-  }
-
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     const variant = TimeUtil.getVariantFromLocale(this.props);
     let { meridiem } = this.state;
     let hour = TimeUtil.splitHour(this.props.value);
@@ -202,22 +196,19 @@ class TimeInput extends React.Component {
     }
 
     let skipStateUpdate = true;
-    const prevStateTimeValue = (this.props.showSeconds) ? `${prevState.hour}:${prevState.minute}:${prevState.second}` : `${prevState.hour}:${prevState.minute}`;
-    // Comparing partial time values on each update will result in incorrect comparisons of prevState and propsValue.
-    // Hence validating propsValue and prevState values to skip the comparison between them until time value is completely formed.
-    if (TimeUtil.validateTime(this.props.value, this.props.showSeconds) && TimeUtil.validateTime(prevStateTimeValue, this.props.showSeconds)) {
-      const isPropsAndStateAreEqual = (hour === prevState.hour && minute === prevState.minute && second === prevState.second);
-      // to skip state update when default value is provided for time input
-      if (this.initialValue) {
-        skipStateUpdate = (this.initialValue === this.props.value || isPropsAndStateAreEqual);
-      } else {
-        skipStateUpdate = isPropsAndStateAreEqual;
+    // Data Attribute `data-date-time-input` of date-time-picker is used to ensure state update happens only when props are updated in date-time-picker.
+    const dateTimePicker = 'data-date-time-input';
+    if (this.props[dateTimePicker]) {
+      const inputValue = (this.props.showSeconds) ? `${this.hourInput.value}:${this.minuteInput.value}:${this.secondInput.value}` : `${this.hourInput.value}:${this.minuteInput.value}`;
+      const propsValue = (this.props.showSeconds) ? `${hour}:${minute}:${second}` : `${hour}:${minute}`;
+      // Comparing partial time values on each update will result in incorrect comparisons of inputValue and propsValue. Hence validating propsValue and inputValue before comparison.
+      if (TimeUtil.validateTime(propsValue, this.props.showSeconds) && TimeUtil.validateTime(inputValue, this.props.showSeconds)) {
+        skipStateUpdate = (propsValue === inputValue);
       }
     }
 
-    if (this.props.value === prevProps.value
-      && variant === prevProps.variant && skipStateUpdate
-    ) {
+
+    if (this.props.value === prevProps.value && variant === prevProps.variant && skipStateUpdate) {
       return;
     }
 
