@@ -3,6 +3,7 @@ import ResizeObserver from 'resize-observer-polyfill';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { FormattedMessage } from 'react-intl';
+import Button from 'terra-button';
 import CollapsibleMenuViewItem from './CollapsibleMenuViewItem';
 import CollapsibleMenuViewItemGroup from './CollapsibleMenuViewItemGroup';
 import CollapsibleMenuViewToggle from './CollapsibleMenuViewToggle';
@@ -28,6 +29,15 @@ const propTypes = {
    * Bounding container for the menu, will use window if no value provided.
    */
   boundingRef: PropTypes.func,
+
+  /**
+   * Sets the more button variant. One of `neutral`, `utility`.
+   */
+  moreButtonVariant: PropTypes.oneOf([Button.Opts.Variants.NEUTRAL, Button.Opts.Variants.UTILITY]),
+};
+
+const defaultProps = {
+  moreButtonVariant: 'neutral',
 };
 
 class CollapsibleMenuView extends React.Component {
@@ -123,7 +133,7 @@ class CollapsibleMenuView extends React.Component {
 
   render() {
     const {
-      children, boundingRef, menuWidth, ...customProps
+      children, boundingRef, menuWidth, moreButtonVariant, ...customProps
     } = this.props;
     const visibleChildren = React.Children.toArray(children);
 
@@ -156,6 +166,7 @@ class CollapsibleMenuView extends React.Component {
                 menuWidth={menuWidth}
                 isIconOnly
                 text={ellipsesText}
+                variant={moreButtonVariant}
               />
             )}
           </FormattedMessage>
@@ -171,5 +182,6 @@ CollapsibleMenuView.Toggle = CollapsibleMenuViewToggle;
 CollapsibleMenuView.Divider = CollapsibleMenuViewDivider;
 
 CollapsibleMenuView.propTypes = propTypes;
+CollapsibleMenuView.defaultProps = defaultProps;
 
 export default CollapsibleMenuView;
