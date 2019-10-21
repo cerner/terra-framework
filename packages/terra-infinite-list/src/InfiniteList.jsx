@@ -450,10 +450,12 @@ class InfiniteList extends React.Component {
       children,
       dividerStyle,
       initialLoadingIndicator,
+      intl,
       isFinishedLoading,
       onRequestItems,
       paddingStyle,
       progressiveLoadingIndicator,
+      progressiveLoadingMessage,
       role,
       ...customProps
     } = this.props;
