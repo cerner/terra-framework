@@ -3,6 +3,11 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated WDIO screenshots to account for button updates in terra-date-picker
+
+### Fixed
+* Fixed onBlur event data for entering invalid dates.
 
 4.16.0 - (October 16, 2019)
 ------------------
@@ -12,8 +17,8 @@ Unreleased
 ### Added
 * Added `isIncomplete` prop and stylings
 * Added `isInvalid` prop and stylings
-* Added `isInvalidMeridiem` prop 
-* Added `required` prop 
+* Added `isInvalidMeridiem` prop
+* Added `required` prop
 
 4.15.0 - (October 3, 2019)
 ------------------

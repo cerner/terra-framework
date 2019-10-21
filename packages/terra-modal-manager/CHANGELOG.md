@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated wdio screenshots
 
 6.15.0 - (October 16, 2019)
 ------------------
