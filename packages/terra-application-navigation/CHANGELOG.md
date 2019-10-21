@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Duplicate ID in example changed.
 
 1.8.0 - (October 16, 2019)
 ------------------
@@ -18,9 +20,6 @@ Unreleased
 
 ### Fixed
 * Fix wdio test url.
-
-### Changed
-* Duplicate ID in example changed.
 
 1.6.0 - (September 26, 2019)
 ------------------
