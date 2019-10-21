@@ -4,7 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Fixed
-* Fixed console error by preventing `intl` and `progressiveLoadingMessage` props from being passed to the DOM.
+* Fixed console warning by preventing `intl` and `progressiveLoadingMessage` props from being passed to the DOM.
 
 3.19.0 - (October 16, 2019)
 ------------------
