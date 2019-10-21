@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Reenabled some tests
+* Update Jest snapshots
 
 1.3.0 - (October 16, 2019)
 ------------------

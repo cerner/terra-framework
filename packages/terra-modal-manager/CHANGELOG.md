@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Reenabled tests since form-select updated to fix issue.
+* Updated wdio screenshots
 
 6.15.0 - (October 16, 2019)
 ------------------
