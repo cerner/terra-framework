@@ -6,6 +6,9 @@ Unreleased
 ### Changed
 * Updated WDIO screenshots to account for button updates in terra-date-picker
 
+### Fixed
+* Fixed onBlur event data for entering invalid dates.
+
 4.16.0 - (October 16, 2019)
 ------------------
 ### Changed
