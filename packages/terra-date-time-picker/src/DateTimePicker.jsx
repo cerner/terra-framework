@@ -274,7 +274,18 @@ class DateTimePicker extends React.Component {
 
       value = value.trim();
 
-      const tempDateTime = momentDateTime ? momentDateTime.clone() : null;
+      let tempDateTime = momentDateTime ? momentDateTime.clone() : null;
+
+      if (DateUtil.isValidDate(this.dateValue, this.state.dateFormat)) {
+        const enteredDateTime = DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
+
+        // this.state.dateTime does not get updated if the entered date is outside the minDate/maxDate range or an excluded date.
+        // In this case, we need to use the date that was entered instead of the this.state.dateTime.
+        if (enteredDateTime && !enteredDateTime.isSame(tempDateTime, 'day')) {
+          tempDateTime = enteredDateTime;
+        }
+      }
+
       let iSOString = '';
 
       if (isCompleteDateTime && tempDateTime) {

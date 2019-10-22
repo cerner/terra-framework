@@ -7,6 +7,14 @@ Unreleased
 * Changed 12-hour format appearance for mobile and desktop.
   * Meridiem select on Desktop has been changed to buttons which means that the WebdriverIO reference screenshots (if any) and/or any code in the consumer application that accesses the old meridiem select functionality on the Desktop view need to be updated.
 
+4.17.0 - (October 21, 2019)
+------------------
+### Changed
+* Updated WDIO screenshots to account for button updates in terra-date-picker
+
+### Fixed
+* Fixed onBlur event data for entering invalid dates.
+
 4.16.0 - (October 16, 2019)
 ------------------
 ### Changed
@@ -15,8 +23,8 @@ Unreleased
 ### Added
 * Added `isIncomplete` prop and stylings
 * Added `isInvalid` prop and stylings
-* Added `isInvalidMeridiem` prop 
-* Added `required` prop 
+* Added `isInvalidMeridiem` prop
+* Added `required` prop
 
 4.15.0 - (October 3, 2019)
 ------------------
