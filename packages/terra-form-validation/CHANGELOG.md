@@ -4,6 +4,37 @@ ChangeLog
 Unreleased
 ----------
 
+1.13.0 - (October 21, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+1.12.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+* Updated example to consume new `isIncomplete` prop in `terra-form-input`
+
+1.11.0 - (October 3, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+1.10.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+1.9.0 - (September 19, 2019)
+------------------
+### Changed
+* Removed `details` tag from doc-site.
+
+1.8.0 - (September 6, 2019)
+------------------
+### Changed
+* Cleaned up imports in examples and test files
+
 1.7.0 - (August 21, 2019)
 ------------------
 ### Changed
@@ -15,6 +46,7 @@ Unreleased
 * updated package.json test scripts
 * Added `noValidate` attribute to all `<form />` elements in the examples
 * Added documentation on recommend usage of `noValidate` prop
+* Added DateInput form validation example
 
 1.5.0 - (July 30, 2019)
 ------------------

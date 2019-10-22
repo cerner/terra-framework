@@ -13,7 +13,11 @@ class DateUtil {
       return undefined;
     }
 
-    const momentDate = moment(date, moment.ISO_8601);
+    let momentDate = moment(date, DateUtil.ISO_EXTENDED_DATE_FORMAT, true);
+    if (!momentDate || !momentDate.isValid()) {
+      // This should allow DateTime inputs that used to work in the moment.ISO_8601 to still pass but discard the time from the value.
+      momentDate = moment(date.slice(0, 10), DateUtil.ISO_EXTENDED_DATE_FORMAT, true);
+    }
     return momentDate.isValid() ? momentDate : undefined;
   }
 
@@ -182,7 +186,7 @@ class DateUtil {
    */
   static validDateInput(value) {
     /* eslint-disable-next-line no-useless-escape */
-    return value.length === 0 || /^[\d\/.]+$/.test(value);
+    return value.length === 0 || /^[\d\/.-]+$/.test(value);
   }
 
   /**
@@ -196,7 +200,11 @@ class DateUtil {
       return undefined;
     }
 
-    const momentDate = moment(iSODate, moment.ISO_8601);
+    let momentDate = moment(iSODate, [format, DateUtil.ISO_EXTENDED_DATE_FORMAT], true);
+    if (!momentDate || !momentDate.isValid()) {
+      // This should allow DateTime inputs that used to work in the moment.ISO_8601 to still pass but discard the time from the value.
+      momentDate = moment(iSODate.slice(0, 10), DateUtil.ISO_EXTENDED_DATE_FORMAT, true);
+    }
     return DateUtil.formatMomentDate(momentDate, format);
   }
 }

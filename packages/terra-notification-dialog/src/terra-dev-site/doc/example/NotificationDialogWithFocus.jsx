@@ -1,9 +1,9 @@
 import React from 'react';
 import Button from 'terra-button';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
-import Popup from 'terra-popup/lib/Popup';
+import Popup from 'terra-popup';
 import Placeholder from 'terra-doc-template/lib/Placeholder';
-import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
+import NotificationDialog, { NotificationDialogVariants } from 'terra-notification-dialog';
 
 const clickOK = () => {
   console.log('You clicked OK'); // eslint-disable-line no-console

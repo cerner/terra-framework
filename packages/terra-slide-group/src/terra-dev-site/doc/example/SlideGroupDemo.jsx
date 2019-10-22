@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import SlideGroup from 'terra-slide-group/lib/SlideGroup';
+import SlideGroup from 'terra-slide-group';
 import styles from './SlideGroupDemo.module.scss';
 
 const cx = classNames.bind(styles);

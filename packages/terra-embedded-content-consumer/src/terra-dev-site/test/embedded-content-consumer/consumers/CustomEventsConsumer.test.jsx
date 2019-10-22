@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import { Consumer } from 'xfc';
-// eslint-disable-next-line import/no-unresolved
 import EmbeddedContentConsumer from 'terra-embedded-content-consumer/lib/EmbeddedContentConsumer';
 import styles from './Consumer.module.scss';
 

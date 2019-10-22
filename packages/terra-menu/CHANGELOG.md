@@ -3,8 +3,46 @@ Changelog
 
 Unreleased
 ----------
+
+6.16.0 - (October 21, 2019)
+------------------
 ### Changed
-Updated `keycode-js` from `v1.0.4` to `v2.0.1`
+* Minor dependency updates
+
+6.15.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+6.14.0 - (October 3, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+### Fixed
+* Removed extra comma from scss file.
+
+6.13.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+### Added
+* Added Instructions-For-Use (eIFU) Icon to Menu-Item.
+
+6.12.0 - (September 19, 2019)
+------------------
+### Changed
+* Removed `details` tag from doc-site.
+
+### Added
+* Added en-CA translations.
+
+6.11.0 - (September 6, 2019)
+------------------
+### Changed
+* Cleaned up imports in examples and test files
+* Updated `keycode-js` from `v1.0.4` to `v2.0.1`
 
 6.10.0 - (August 21, 2019)
 ------------------

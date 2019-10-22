@@ -2,7 +2,6 @@ import React from 'react';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import ModalManager from 'terra-modal-manager';
 
-// eslint-disable-next-line import/no-unresolved, import/extensions
 import ModalAggregator from 'terra-aggregator/lib/terra-dev-site/doc/common/ModalAggregator';
 
 const ModalButton = withDisclosureManager(({ disclosureManager }) => (

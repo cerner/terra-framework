@@ -23,7 +23,7 @@ const propTypes = {
    */
   disabled: PropTypes.bool,
   /**
-   * An array of ISO 8601 string representation of the dates to disable in the picker.
+   * An array of ISO 8601 string representation of the dates to disable in the picker. The values must be in the `YYYY-MM-DD` format.
    */
   excludeDates: PropTypes.arrayOf(PropTypes.string),
   /**
@@ -32,7 +32,7 @@ const propTypes = {
    */
   filterDate: PropTypes.func,
   /**
-   * An array of ISO 8601 string representation of the dates to enable in the picker. All Other dates will be disabled.
+   * An array of ISO 8601 string representation of the dates to enable in the picker. All Other dates will be disabled. The values must be in the `YYYY-MM-DD` format.
    */
   includeDates: PropTypes.arrayOf(PropTypes.string),
   /**
@@ -47,11 +47,19 @@ const propTypes = {
    * */
   intl: intlShape.isRequired,
   /**
-   * An ISO 8601 string representation of the maximum date that can be selected.
+  * Whether the input displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
+  */
+  isIncomplete: PropTypes.bool,
+  /**
+  * Whether the input displays as Invalid. Use when value does not meet validation pattern.
+  */
+  isInvalid: PropTypes.bool,
+  /**
+   * An ISO 8601 string representation of the maximum date that can be selected. The value must be in the `YYYY-MM-DD` format.
    */
   maxDate: PropTypes.string,
   /**
-   * An ISO 8601 string representation of the minimum date that can be selected.
+   * An ISO 8601 string representation of the minimum date that can be selected. The value must be in the `YYYY-MM-DD` format.
    */
   minDate: PropTypes.string,
   /**
@@ -91,7 +99,7 @@ const propTypes = {
    */
   required: PropTypes.bool,
   /**
-   * An ISO 8601 string representation of the default value to show in the date input.
+   * An ISO 8601 string representation of the default value to show in the date input. The value must be in the `YYYY-MM-DD` format.
    * This is analogous to defaultvalue in a form input field.
    */
   selectedDate: PropTypes.string,
@@ -99,6 +107,7 @@ const propTypes = {
    * The date value. This prop should only be used for a controlled date picker.
    * When this prop is set a handler is needed for both the `onChange` and `onChangeRaw` props to manage the date value.
    * If both `selectedDate` and this prop are set, then `selectedDate` will have no effect.
+   * The value must be in the `YYYY-MM-DD` format or the all-numeric date format based on the locale.
    */
   value: PropTypes.string,
 };
@@ -109,6 +118,8 @@ const defaultProps = {
   filterDate: undefined,
   includeDates: undefined,
   inputAttributes: undefined,
+  isIncomplete: false,
+  isInvalid: false,
   maxDate: undefined,
   minDate: undefined,
   onBlur: undefined,
@@ -331,6 +342,8 @@ class DatePicker extends React.Component {
       filterDate,
       includeDates,
       intl,
+      isIncomplete,
+      isInvalid,
       maxDate,
       minDate,
       name,
@@ -368,11 +381,14 @@ class DatePicker extends React.Component {
 
     // If using this as a controlled component.
     if (value !== undefined) {
-      selectedDateInPicker = DateUtil.createSafeDate(value);
+      // If value is empty, let selectedDateInPicker be undefined as in clearing the value.
+      if (value !== '') {
+        selectedDateInPicker = DateUtil.createSafeDate(DateUtil.convertToISO8601(value, dateFormat));
 
-      // If value is not a valid date, keep the previous selected date in the picker.
-      if (selectedDateInPicker === undefined) {
-        selectedDateInPicker = this.state.selectedDate;
+        // If value is not a valid date, keep the previous selected date in the picker.
+        if (selectedDateInPicker === undefined) {
+          selectedDateInPicker = this.state.selectedDate;
+        }
       }
     } else {
       selectedDateInPicker = this.state.selectedDate;
@@ -394,6 +410,9 @@ class DatePicker extends React.Component {
           <DateInput
             onCalendarButtonClick={this.handleOnCalendarButtonClick}
             inputAttributes={inputAttributes}
+            isIncomplete={isIncomplete}
+            isInvalid={isInvalid}
+            required={required}
             shouldShowPicker={!this.isDefaultDateAcceptable && this.state.selectedDate === null}
             onButtonFocus={this.handleFocus}
             buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}
@@ -436,6 +455,8 @@ class DatePicker extends React.Component {
           <DateInput
             onCalendarButtonClick={this.handleOnCalendarButtonClick}
             inputAttributes={inputAttributes}
+            isIncomplete={isIncomplete}
+            isInvalid={isInvalid}
             shouldShowPicker={!this.isDefaultDateAcceptable && this.state.selectedDate === null}
             onButtonFocus={this.handleFocus}
             buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}

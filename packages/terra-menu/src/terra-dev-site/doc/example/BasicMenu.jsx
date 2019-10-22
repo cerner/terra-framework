@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from 'terra-button';
 import PropTypes from 'prop-types';
-// eslint-disable-next-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
 import Menu from 'terra-menu';
 import classNames from 'classnames/bind';
 import styles from './BasicMenu.module.scss';
@@ -147,10 +146,11 @@ class BasicMenu extends React.Component {
         </div>
         <br />
         <p>
-Action button has been clicked
+          Action button has been clicked
+          {' '}
           {this.state.actionClickCount}
           {' '}
-times.
+          times.
         </p>
       </div>
     );

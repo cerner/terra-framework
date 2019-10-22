@@ -24,7 +24,7 @@ const propTypes = {
    */
   disabled: PropTypes.bool,
   /**
-   * An array of ISO 8601 string representation of the dates to disable in the picker.
+   * An array of ISO 8601 string representation of the dates to disable in the picker. The values must be in the `YYYY-MM-DDThh:mm:ss` format.
    */
   excludeDates: PropTypes.arrayOf(PropTypes.string),
   /**
@@ -33,7 +33,7 @@ const propTypes = {
    */
   filterDate: PropTypes.func,
   /**
-   * An array of ISO 8601 string representation of the dates to enable in the picker.
+   * An array of ISO 8601 string representation of the dates to enable in the picker. The values must be in the `YYYY-MM-DDThh:mm:ss` format.
    * All Other dates will be disabled.
    */
   includeDates: PropTypes.arrayOf(PropTypes.string),
@@ -42,12 +42,24 @@ const propTypes = {
    * */
   intl: intlShape.isRequired,
   /**
-   * An ISO 8601 string representation of the maximum date that can be selected in the date picker.
+  * Whether the input displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
+  */
+  isIncomplete: PropTypes.bool,
+  /**
+  * Whether the input displays as Invalid. Use when value does not meet validation pattern.
+  */
+  isInvalid: PropTypes.bool,
+  /**
+  * Whether the selected meridiem displays as Invalid. Use when value does not meet validation pattern.
+  */
+  isInvalidMeridiem: PropTypes.bool,
+  /**
+   * An ISO 8601 string representation of the maximum date that can be selected in the date picker. The value must be in the `YYYY-MM-DD` format.
    * The time portion in this value is ignored because this is strictly used in the date picker.
    */
   maxDate: PropTypes.string,
   /**
-   * An ISO 8601 string representation of the minimum date that can be selected in the date picker.
+   * An ISO 8601 string representation of the minimum date that can be selected in the date picker. The value must be in the `YYYY-MM-DD` format.
    * The time portion in this value is ignored because this is strictly used in the date picker.
    */
   minDate: PropTypes.string,
@@ -84,6 +96,10 @@ const propTypes = {
    */
   onSelect: PropTypes.func,
   /**
+   * Whether or not the date is required.
+   */
+  required: PropTypes.bool,
+  /**
    * Whether an input field for seconds should be shown or not. If true then the second field must have a valid
    * number for the overall input to be considered valid.
    */
@@ -95,11 +111,13 @@ const propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   timeInputAttributes: PropTypes.object,
   /**
-   * An ISO 8601 string representation of the initial value to show in the date and time inputs.
+   * An ISO 8601 string representation of the initial value to show in the date and time inputs. The value must be in the `YYYY-MM-DDThh:mm:ss` format.
    */
   value: PropTypes.string,
   /**
-   * Type of time input to initialize. Must be '24-hour' or '12-hour'
+   * Type of time input to initialize. Must be `24-hour` or `12-hour`.
+   * The `de`, `es-ES`, `fr-FR`, `fr`, `nl-BE`, `nl`, `pt-BR`, `pt`, `sv-SE` and `sv` locales do not use the 12-hour time notation.
+   * If the `variant` prop if set to `12-hour` for one of these supported locales, the variant will be ignored and defaults to `24-hour`.
    */
   timeVariant: PropTypes.oneOf([DateTimeUtils.FORMAT_12_HOUR, DateTimeUtils.FORMAT_24_HOUR]),
 };
@@ -110,6 +128,9 @@ const defaultProps = {
   excludeDates: undefined,
   filterDate: undefined,
   includeDates: undefined,
+  isIncomplete: false,
+  isInvalid: false,
+  isInvalidMeridiem: false,
   maxDate: undefined,
   minDate: undefined,
   onBlur: undefined,
@@ -118,6 +139,7 @@ const defaultProps = {
   onClickOutside: undefined,
   onFocus: undefined,
   onSelect: undefined,
+  required: false,
   showSeconds: false,
   timeInputAttributes: undefined,
   value: undefined,
@@ -129,7 +151,7 @@ class DateTimePicker extends React.Component {
     super(props);
 
     this.state = {
-      dateTime: DateUtil.createSafeDate(props.value),
+      dateTime: DateTimeUtils.createSafeDate(props.value),
       isAmbiguousTime: false,
       isTimeClarificationOpen: false,
       dateFormat: DateUtil.getFormatByLocale(props.intl.locale),
@@ -168,7 +190,7 @@ class DateTimePicker extends React.Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.value !== prevState.prevPropsValue) {
       return {
-        dateTime: DateUtil.createSafeDate(nextProps.value),
+        dateTime: DateTimeUtils.createSafeDate(nextProps.value),
         prevPropsValue: nextProps.value,
       };
     }
@@ -208,7 +230,7 @@ class DateTimePicker extends React.Component {
         // If the entered time is ambiguous then do not handle blur just yet. It should be handled _after_
         // the ambiguity is resolved (i.e., after dismissing the Time Clarification dialog).
         if (!(this.state.isAmbiguousTime && this.state.isTimeClarificationOpen)) {
-          this.handleBlur(event);
+          this.handleBlur(event, this.state.dateTime);
         }
       });
     }
@@ -232,13 +254,13 @@ class DateTimePicker extends React.Component {
         // If the entered time is ambiguous then do not handle blur just yet. It should be handled _after_
         // the ambiguity is resolved (i.e., after dismissing the Time Clarification dialog).
         if (!(this.state.isAmbiguousTime && this.state.isTimeClarificationOpen)) {
-          this.handleBlur(event);
+          this.handleBlur(event, this.state.dateTime);
         }
       });
     }
   }
 
-  handleBlur(event) {
+  handleBlur(event, momentDateTime) {
     if (this.props.onBlur) {
       const isCompleteDateTime = DateTimeUtils.isValidDateTime(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
       let value = '';
@@ -252,7 +274,18 @@ class DateTimePicker extends React.Component {
 
       value = value.trim();
 
-      const tempDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
+      let tempDateTime = momentDateTime ? momentDateTime.clone() : null;
+
+      if (DateUtil.isValidDate(this.dateValue, this.state.dateFormat)) {
+        const enteredDateTime = DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
+
+        // this.state.dateTime does not get updated if the entered date is outside the minDate/maxDate range or an excluded date.
+        // In this case, we need to use the date that was entered instead of the this.state.dateTime.
+        if (enteredDateTime && !enteredDateTime.isSame(tempDateTime, 'day')) {
+          tempDateTime = enteredDateTime;
+        }
+      }
+
       let iSOString = '';
 
       if (isCompleteDateTime && tempDateTime) {
@@ -310,7 +343,7 @@ class DateTimePicker extends React.Component {
     const isTimeValid = DateTimeUtils.isValidTime(this.timeValue, this.props.showSeconds);
 
     if (isDateValid) {
-      const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : DateUtil.createSafeDate(formattedDate);
+      const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : DateTimeUtils.createSafeDate(formattedDate);
       updatedDateTime = DateTimeUtils.syncDateTime(previousDateTime, date, this.timeValue, this.props.showSeconds);
 
       if (isTimeValid) {
@@ -443,7 +476,7 @@ class DateTimePicker extends React.Component {
   isDateTimeAcceptable(newDateTime) {
     let isAcceptable = true;
 
-    if (DateUtil.isDateOutOfRange(newDateTime, DateUtil.createSafeDate(this.props.minDate), DateUtil.createSafeDate(this.props.maxDate))) {
+    if (DateUtil.isDateOutOfRange(newDateTime, DateTimeUtils.createSafeDate(this.props.minDate), DateTimeUtils.createSafeDate(this.props.maxDate))) {
       isAcceptable = false;
     }
 
@@ -476,7 +509,7 @@ class DateTimePicker extends React.Component {
     // When the Time Clarification dialog was launched _without_ using the Offset button, 'blur' event
     // needs to be handled appropriately upon dismissal of the dialog (i.e. after DST resolution).
     if (!this.wasOffsetButtonClicked) {
-      this.handleBlur(event);
+      this.handleBlur(event, newDateTime);
     }
 
     this.wasOffsetButtonClicked = false;
@@ -504,7 +537,7 @@ class DateTimePicker extends React.Component {
     // When the Time Clarification dialog was launched _without_ using the Offset button, 'blur' event
     // needs to be handled appropriately upon dismissal of the dialog (i.e. after DST resolution).
     if (!this.wasOffsetButtonClicked) {
-      this.handleBlur(event);
+      this.handleBlur(event, newDateTime);
     }
 
     this.wasOffsetButtonClicked = false;
@@ -522,6 +555,7 @@ class DateTimePicker extends React.Component {
   renderTimeClarification() {
     return (
       <TimeClarification
+        ambiguousDateTime={this.state.dateTime.format()}
         disabled={this.props.disabled}
         isOpen={this.state.isTimeClarificationOpen}
         isOffsetButtonHidden={!this.state.isAmbiguousTime}
@@ -542,6 +576,9 @@ class DateTimePicker extends React.Component {
       excludeDates,
       filterDate,
       includeDates,
+      isIncomplete,
+      isInvalid,
+      isInvalidMeridiem,
       onBlur,
       onChange,
       onChangeRaw,
@@ -551,6 +588,7 @@ class DateTimePicker extends React.Component {
       maxDate,
       minDate,
       name,
+      required,
       showSeconds,
       timeInputAttributes,
       value,
@@ -594,6 +632,9 @@ class DateTimePicker extends React.Component {
           name="input"
           disabled={disabled}
           disableButtonFocusOnClose
+          isIncomplete={isIncomplete}
+          isInvalid={isInvalid}
+          required={required}
         />
 
         <div className={cx('time-facade')}>
@@ -608,6 +649,10 @@ class DateTimePicker extends React.Component {
             variant={timeVariant}
             refCallback={(inputRef) => { this.hourInput = inputRef; }}
             showSeconds={showSeconds}
+            isIncomplete={isIncomplete}
+            isInvalid={isInvalid}
+            isInvalidMeridiem={isInvalidMeridiem}
+            required={required}
           />
 
           {this.state.isAmbiguousTime ? this.renderTimeClarification() : null}

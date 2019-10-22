@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions  */
 import React from 'react';
 import ApplicationBase from 'terra-application/lib/application-base';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
@@ -144,7 +143,7 @@ const handleItemSelection = (key, metaData) => {
 };
 /* eslint-enable no-alert */
 
-// TODO: remove terra-application after it is incorporated into dev-site
+// TODO: remove terra-application after it is incorporated into dev-site for themes or themes are co-located
 const ApplicationNotificationsTest = () => (
   <ApplicationBase locale="en">
     <ApplicationNavigation

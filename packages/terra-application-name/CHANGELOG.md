@@ -4,6 +4,35 @@ Changelog
 Unreleased
 ----------
 
+3.21.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+3.20.0 - (October 3, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+3.19.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+3.18.0 - (September 19, 2019)
+------------------
+### Changed
+* Removed `details` tag from doc-site.
+* Doc site example module import syntax modified to use package.json name resolution
+
+### Fixed
+* Fixed inconsistent failures of 'Application Header Name' tests.
+
+3.17.0 - (September 6, 2019)
+------------------
+### Changed
+* Cleaned up imports in examples and test files
+
 3.16.0 - (August 14, 2019)
 ------------------
 ### Changed

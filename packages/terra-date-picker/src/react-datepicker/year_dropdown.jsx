@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
+import { FormattedMessage } from 'react-intl';
 import YearDropdownOptions from './year_dropdown_options'
 import onClickOutside from 'react-onclickoutside'
 import { getYear } from './date_utils'
-import styles from './stylesheets/datepicker.scss'
+import styles from './stylesheets/react_datepicker.module.scss'
 
 const cx = classNames.bind(styles);
 
@@ -53,6 +54,10 @@ export default class YearDropdown extends React.Component {
      */
     onSelect: PropTypes.func,
     /**
+     * Callback ref to pass into the dom element.
+     */
+    refCallback: PropTypes.func,
+    /**
      * A callback function to execute when the year dropdown is open.
      */
     setOpen: PropTypes.func
@@ -78,13 +83,18 @@ export default class YearDropdown extends React.Component {
   }
 
   renderSelectMode = () => (
-    <select
-      tabIndex="-1"
-      value={this.props.year}
-      className={cx('react-datepicker-year-select')}
-      onChange={this.onSelectChange}>
-      {this.renderSelectOptions()}
-    </select>
+    <FormattedMessage id="Terra.datePicker.yearLabel">
+      {label => (
+        <select
+          aria-label={label}
+          value={this.props.year}
+          className={cx('react-datepicker-year-select')}
+          onChange={this.onSelectChange}>
+          {this.renderSelectOptions()}
+        </select>
+      )}
+    </FormattedMessage>
+
   )
 
   renderReadView = (visible) => (
@@ -162,6 +172,7 @@ export default class YearDropdown extends React.Component {
 
     return (
       <div
+        ref={this.props.refCallback}
         className={cx(['react-datepicker-year-dropdown-container', `react-datepicker-year-dropdown-container--${this.props.dropdownMode}`])}>
         {renderedDropdown}
       </div>

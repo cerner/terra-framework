@@ -3,7 +3,6 @@ import DocTemplate from 'terra-doc-template';
 import ReadMe from '../../../../docs/README.md';
 import { name } from '../../../../package.json';
 
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
 import TabsSrc from '!raw-loader!../../../../src/Tabs';
 import PaneSrc from '!raw-loader!../../../../src/TabPane';
@@ -15,7 +14,6 @@ import TabsWithFilledContent from '../example/TabsWithFilledContent';
 import TabsWithFilledContentSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TabsWithFilledContent';
 import IconOnlyTabs from '../example/IconOnlyTabs';
 import IconOnlyTabsSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/IconOnlyTabs';
-/* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
   <DocTemplate

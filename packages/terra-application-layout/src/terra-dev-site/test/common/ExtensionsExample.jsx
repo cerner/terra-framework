@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import classNames from 'classnames/bind';
 import demoStyles from './demoStyles.module.scss';

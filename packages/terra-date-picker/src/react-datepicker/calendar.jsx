@@ -1,11 +1,13 @@
+import { FormattedMessage, intlShape } from 'react-intl';
+import Button from 'terra-button';
+import * as KeyCode from 'keycode-js';
 import YearDropdown from './year_dropdown'
 import MonthDropdown from './month_dropdown'
 import Month from './month'
-import Time from './time'
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
-import styles from './stylesheets/datepicker.scss'
+import styles from './stylesheets/react_datepicker.module.scss'
 import {
   now,
   setMonth,
@@ -107,6 +109,11 @@ export default class Calendar extends React.Component {
      */
     inline: PropTypes.bool,
     /**
+     * @private
+     * Internationalization object with translation APIs. Provided by `injectIntl`.
+     */
+    intl: intlShape,
+    /**
      * Name of locale data for different international formatting.
      */
     locale: PropTypes.string,
@@ -147,34 +154,6 @@ export default class Calendar extends React.Component {
      */
     onWeekSelect: PropTypes.func,
     /**
-     * Prop to determine whether or not to show the time picker.
-     */
-    showTimeSelect: PropTypes.bool,
-    /**
-     * Prop to choose format of time selected.
-     */
-    timeFormat: PropTypes.string,
-    /**
-     * Interval between 2 consecutive times on time picker in minutes.
-     */
-    timeIntervals: PropTypes.number,
-    /**
-     * A callback function to execute when a valid time is selected.
-     */
-    onTimeChange: PropTypes.func,
-    /**
-     * Minimum Value of time that can be selected by user.
-     */
-    minTime: PropTypes.object,
-    /**
-     * Maximum Value of time that can be selected by user.
-     */
-    maxTime: PropTypes.object,
-    /**
-     * Array to store time values disabled for selection.
-     */
-    excludeTimes: PropTypes.array,
-    /**
      * Prop to open calendar on the given date.
      */
     openToDate: PropTypes.object,
@@ -190,6 +169,10 @@ export default class Calendar extends React.Component {
      * Prop to store previous selection.
      */
     preSelection: PropTypes.object,
+    /**
+     * A callback function used to set preSelection date when the calendar month or year is updated
+     */
+    setPreSelection: PropTypes.func,
     /**
      * Selected Date Value.
      */
@@ -227,10 +210,6 @@ export default class Calendar extends React.Component {
      */
     useWeekdaysShort: PropTypes.bool,
     /**
-     * Prop to open a separate portal version of date picker .
-     */
-    withPortal: PropTypes.bool,
-    /**
      * Difference between utc and local time.
      */
     utcOffset: PropTypes.number,
@@ -261,31 +240,60 @@ export default class Calendar extends React.Component {
     this.state = {
       date: this.localizeDate(this.getDateInView()),
       selectingDate: null,
-      monthContainer: this.monthContainer
+      calendarIsKeyboardFocused: false,
+    }
+
+    this.todayBtnRef = React.createRef();
+    this.closeBtnRef = React.createRef();
+    this.previousMonthBtnRef = React.createRef();
+    this.nextMonthBtnRef = React.createRef();
+    this.monthRef;
+    this.monthDropdownRef;
+    this.yearDropdownRef;
+  }
+
+  componentDidUpdate (prevProps) {
+    if (this.props.preSelection && !isSameDay(this.props.preSelection, prevProps.preSelection)) {
+      this.setState({
+        date: this.localizeDate(this.props.preSelection)
+      })
+    } else if (this.props.openToDate && !isSameDay(this.props.openToDate, prevProps.openToDate)) {
+      this.setState({
+        date: this.localizeDate(this.props.openToDate)
+      })
     }
   }
 
-  componentDidMount () {
-    // monthContainer height is needed in time component
-    // to determine the height for the ul in the time component
-    // setState here so height is given after final component
-    // layout is rendered
-    if (this.props.showTimeSelect) {
-      this.assignMonthContainer = (() => {
-        this.setState({monthContainer: this.monthContainer})
-      })()
-    }
-  }
+  handleOnClick = (event) => {
+    const calendarControls = [
+      this.todayBtnRef.current,
+      this.closeBtnRef.current,
+      this.previousMonthBtnRef.current,
+      this.nextMonthBtnRef.current,
+      this.monthDropdownRef,
+      this.yearDropdownRef,
+    ];
 
-  componentWillReceiveProps (nextProps) {
-    if (nextProps.preSelection && !isSameDay(nextProps.preSelection, this.props.preSelection)) {
-      this.setState({
-        date: this.localizeDate(nextProps.preSelection)
-      })
-    } else if (nextProps.openToDate && !isSameDay(nextProps.openToDate, this.props.openToDate)) {
-      this.setState({
-        date: this.localizeDate(nextProps.openToDate)
-      })
+    const isEventTargetMatchingCalendarControl = (target) => {
+      return calendarControls.indexOf(target) >= 0;
+    }
+
+    const isEventTargetContainedWithinCalendarControl = (target) => {
+      const containsEventTarget = (this.previousMonthBtnRef.current && this.previousMonthBtnRef.current.contains(target)
+        || this.nextMonthBtnRef.current && this.nextMonthBtnRef.current.contains(target)
+        || this.monthDropdownRef && this.monthDropdownRef.contains(target)
+        || this.yearDropdownRef && this.yearDropdownRef.contains(target));
+
+      return containsEventTarget;
+    }
+
+    if (isEventTargetMatchingCalendarControl(event.target) || isEventTargetContainedWithinCalendarControl(event.target)) {
+      return;
+    }
+
+    // If the user is not clicking on a calendar control, shift focus to the calendar
+    if (this.monthRef) {
+      this.monthRef.focus();
     }
   }
 
@@ -297,6 +305,40 @@ export default class Calendar extends React.Component {
     if (isDropdownSelect(event.target)) {
       this.props.onDropdownFocus()
     }
+  }
+
+  handleCloseButtonClick = (event) => {
+    if (this.props.onRequestClose) {
+      this.props.onRequestClose(event)
+    }
+  }
+
+  handlePreviousMonthBtnKeyDown = (event) => {
+    if (event.shiftKey && event.keyCode === KeyCode.KEY_TAB) {
+      this.setState({ calendarIsKeyboardFocused: true })
+    }
+  }
+
+  handleTodayBtnKeyDown = (event) => {
+    if (event.keyCode === KeyCode.KEY_TAB) {
+      this.setState({ calendarIsKeyboardFocused: true })
+    }
+  }
+
+  handleMonthBlur = () => {
+    this.setState({ calendarIsKeyboardFocused: false })
+  }
+
+  setMonthRef = (node) => {
+    this.monthRef = node;
+  }
+
+  setMonthDropdownRef = (node) => {
+    this.monthDropdownRef = node;
+  }
+
+  setYearDropdownRef = (node) => {
+    this.yearDropdownRef = node;
   }
 
   getDateInView = () => {
@@ -323,12 +365,14 @@ export default class Calendar extends React.Component {
     this.setState({
       date: addMonths(cloneDate(this.state.date), 1)
     }, () => this.handleMonthChange(this.state.date))
+    this.props.setPreSelection(addMonths(cloneDate(this.state.date), 1));
   }
 
   decreaseMonth = () => {
     this.setState({
       date: subtractMonths(cloneDate(this.state.date), 1)
     }, () => this.handleMonthChange(this.state.date))
+    this.props.setPreSelection(subtractMonths(cloneDate(this.state.date), 1));
   }
 
   handleDayClick = (day, event) => this.props.onSelect(day, event)
@@ -355,12 +399,14 @@ export default class Calendar extends React.Component {
     this.setState({
       date: setYear(cloneDate(this.state.date), year)
     })
+    this.props.setPreSelection(setYear(cloneDate(this.state.date), year));
   }
 
   changeMonth = (month) => {
     this.setState({
       date: setMonth(cloneDate(this.state.date), month)
     }, () => this.handleMonthChange(this.state.date))
+    this.props.setPreSelection(setMonth(cloneDate(this.state.date), month));
   }
 
   header = (date = this.state.date) => {
@@ -389,29 +435,47 @@ export default class Calendar extends React.Component {
 
   renderPreviousMonthButton = () => {
     if (!this.props.forceShowMonthNavigation && allDaysDisabledBefore(this.state.date, 'month', this.props)) {
-      return
+      return (<div></div>)
     }
-    return <a
-      className={cx(['react-datepicker-navigation', 'react-datepicker-navigation--previous'])}
-      onClick={this.decreaseMonth} />
+
+    return (
+      <FormattedMessage id="Terra.datePicker.previousMonth">
+        {text => (
+          <button
+            type="button"
+            className={cx('react-datepicker-navigation--previous')}
+            aria-label={text}
+            onClick={this.decreaseMonth}
+            onKeyDown={this.handlePreviousMonthBtnKeyDown}
+            ref={this.previousMonthBtnRef}
+          >
+            <span className={cx('prev-month-icon')} />
+          </button>
+        )}
+      </FormattedMessage>
+    )
   }
 
   renderNextMonthButton = () => {
     if (!this.props.forceShowMonthNavigation && allDaysDisabledAfter(this.state.date, 'month', this.props)) {
-      return
+      return (<div></div>)
     }
 
-    let classes = ['react-datepicker-navigation', 'react-datepicker-navigation--next']
-    if (this.props.showTimeSelect) {
-      classes.push('react-datepicker-navigation--next--with-time')
-    }
-    if (this.props.todayButton) {
-      classes.push('react-datepicker-navigation--next--with-today-button')
-    }
-
-    return <a
-      className={cx(classes)}
-      onClick={this.increaseMonth} />
+    return (
+      <FormattedMessage id="Terra.datePicker.nextMonth">
+        {text => (
+          <button
+            type="button"
+            className={cx('react-datepicker-navigation--next')}
+            aria-label={text}
+            onClick={this.increaseMonth}
+            ref={this.nextMonthBtnRef}
+          >
+            <span className={cx('next-month-icon')} />
+          </button>
+        )}
+      </FormattedMessage>
+    )
   }
 
   renderCurrentMonth = (date = this.state.date) => {
@@ -444,6 +508,7 @@ export default class Calendar extends React.Component {
         onChange={this.changeYear}
         minDate={this.props.minDate}
         maxDate={this.props.maxDate}
+        refCallback={this.setYearDropdownRef}
         year={getYear(this.state.date)}
         scrollableYearDropdown={this.props.scrollableYearDropdown}
         yearDropdownItemNumber={this.props.yearDropdownItemNumber} />
@@ -460,7 +525,8 @@ export default class Calendar extends React.Component {
         locale={this.props.locale}
         dateFormat={this.props.dateFormat}
         onChange={this.changeMonth}
-        month={getMonth(this.state.date)} />
+        month={getMonth(this.state.date)}
+        refCallback={this.setMonthDropdownRef} />
     )
   }
 
@@ -469,11 +535,31 @@ export default class Calendar extends React.Component {
       return
     }
     return (
-      <div
+      <button
         className={cx('react-datepicker-today-button')}
-        onClick={e => this.props.onSelect(getStartOfDate(now(this.props.utcOffset)), e)}>
+        onClick={e => this.props.onSelect(getStartOfDate(now(this.props.utcOffset)), e)}
+        onKeyDown={this.handleTodayBtnKeyDown}
+        ref={this.todayBtnRef}
+      >
         {this.props.todayButton}
-      </div>
+      </button>
+    )
+  }
+
+  renderCloseButton = () => {
+    return (
+      <FormattedMessage id="Terra.datePicker.closeCalendar">
+        {text => (
+          <button
+            className={cx('react-datepicker-close-button')}
+            type="button"
+            onClick={this.handleCloseButtonClick}
+            ref={this.closeBtnRef}
+          >
+            {text}
+          </button>
+        )}
+      </FormattedMessage>
     )
   }
 
@@ -483,22 +569,12 @@ export default class Calendar extends React.Component {
       var monthDate = addMonths(cloneDate(this.state.date), i)
       var monthKey = `month-${i}`
       monthList.push(
-        <div key={monthKey} ref={div => { this.monthContainer = div }} className={cx('react-datepicker-month-container')}>
-          <div className={cx('react-datepicker-header')}>
-            {this.renderCurrentMonth(monthDate)}
-            <div
-              className={cx(['react-datepicker-header-dropdown', `react-datepicker-header-dropdown--${this.props.dropdownMode}`])}
-              onFocus={this.handleDropdownFocus}>
-              {this.renderMonthDropdown(i !== 0)}
-              {this.renderYearDropdown(i !== 0)}
-            </div>
-            <div className={cx('react-datepicker-day-names')}>
-              {this.header(monthDate)}
-            </div>
-          </div>
+        <div key={monthKey} onClick={this.handleOnClick} className={cx('react-datepicker-month-container')}>
           <Month
             day={monthDate}
+            isCalendarKeyboardFocused={this.state.calendarIsKeyboardFocused}
             dayClassName={this.props.dayClassName}
+            onMonthBlur={this.handleMonthBlur}
             onDayClick={this.handleDayClick}
             onDayMouseEnter={this.handleDayMouseEnter}
             onMouseLeave={this.handleMonthMouseLeave}
@@ -514,6 +590,7 @@ export default class Calendar extends React.Component {
             fixedHeight={this.props.fixedHeight}
             filterDate={this.props.filterDate}
             preSelection={this.props.preSelection}
+            refCallback={this.setMonthRef}
             selected={this.props.selected}
             selectsStart={this.props.selectsStart}
             selectsEnd={this.props.selectsEnd}
@@ -521,41 +598,63 @@ export default class Calendar extends React.Component {
             startDate={this.props.startDate}
             endDate={this.props.endDate}
             peekNextMonth={this.props.peekNextMonth}
-            utcOffset={this.props.utcOffset} />
+            utcOffset={this.props.utcOffset}
+            handleCalendarKeyDown={this.props.handleCalendarKeyDown}
+            locale={this.props.locale}
+            intl={this.props.intl} />
+          <div className={cx('react-datepicker-header')}>
+            {this.renderCurrentMonth(monthDate)}
+            <div className={cx('react-datepicker-header-controls')}>
+              {this.renderPreviousMonthButton()}
+              <div
+                className={cx(['react-datepicker-header-dropdown', `react-datepicker-header-dropdown--${this.props.dropdownMode}`])}
+                onFocus={this.handleDropdownFocus}
+              >
+                {this.renderMonthDropdown(i !== 0)}
+                {this.renderYearDropdown(i !== 0)}
+              </div>
+              {this.renderNextMonthButton()}
+            </div>
+            <div className={cx('react-datepicker-day-names')} aria-hidden="true">
+              {this.header(monthDate)}
+            </div>
+          </div>
         </div>
       )
     }
     return monthList
   }
 
-  renderTimeSection = () => {
-    if (this.props.showTimeSelect) {
-      return (
-        <Time
-          selected={this.props.selected}
-          onChange={this.props.onTimeChange}
-          format={this.props.timeFormat}
-          intervals={this.props.timeIntervals}
-          minTime={this.props.minTime}
-          maxTime={this.props.maxTime}
-          excludeTimes={this.props.excludeTimes}
-          todayButton={this.props.todayButton}
-          showMonthDropdown={this.props.showMonthDropdown}
-          showYearDropdown={this.props.showYearDropdown}
-          withPortal={this.props.withPortal}
-          monthRef={this.state.monthContainer} />
-      )
-    }
-  }
-
   render () {
+    const supportsOnTouchStart = 'ontouchstart' in window;
+
+    /**
+     * Ensures focus moves into datepicker popup correctly when it is opened on touch devices
+     * by making focusable element (today button) first in the DOM order
+     */
+    if (supportsOnTouchStart) {
+      return (
+        <div className={cx(['react-datepicker', 'supports-on-touch-start', this.props.className])} data-terra-date-picker-calendar>
+          <div className={cx('react-datepicker-footer')}>
+            {this.renderTodayButton()}
+            {this.renderCloseButton()}
+          </div>
+          {this.renderMonths()}
+          {this.props.children}
+        </div>
+      );
+    }
+
+    /**
+     * Ensures users can start interacting with the calendar via up/down/left/right arrow keys
+     * when it first opens by making the month component render first in the DOM order
+     */
     return (
       <div className={cx(['react-datepicker', this.props.className])} data-terra-date-picker-calendar>
-        {this.renderPreviousMonthButton()}
-        {this.renderNextMonthButton()}
-        {this.renderMonths()}
-        {this.renderTodayButton()}
-        {this.renderTimeSection()}
+          {this.renderMonths()}
+          <div className={cx('react-datepicker-footer')}>
+            {this.renderTodayButton()}
+          </div>
         {this.props.children}
       </div>
     )

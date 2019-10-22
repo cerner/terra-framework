@@ -3,8 +3,56 @@ Changelog
 
 Unreleased
 ----------
+
+4.17.0 - (October 21, 2019)
+------------------
 ### Changed
-Updated `keycode-js` from `v1.0.4` to `v2.0.1`
+* Updated previous and next buttons in the calendar back to a HTML button instead of using the terra-button component due to discrepancies with the hover styling in low-light theme.
+* Update Jest snapshots
+
+4.16.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+### Added
+* Added `isIncomplete` prop and stylings
+* Added `isInvalid` prop and stylings
+
+4.15.0 - (October 3, 2019)
+------------------
+### Changed
+* Renamed react-datepicker's `datepicker.scss` to `react_datepicker.module.scss`.
+
+4.14.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+4.13.0 - (September 19, 2019)
+------------------
+### Changed
+* Removed use of `componentWillReceiveProps`.
+* Added ability to shift focus around interactive elements within the datepicker popup to enable better screen reader/keyboard usage
+* Removed `details` tag from doc-site.
+* Doc site example module import syntax modified to use package.json name resolution
+
+### Removed
+* Removed time-picker code from react-datepicker.
+
+### Added
+* Added en-CA translations.
+* Allowed entering '-' in the date input for en-CA date format.
+* Updated documentations to call out the supported ISO 8601 date format.
+
+4.12.0 - (September 6, 2019)
+------------------
+### Changed
+* Cleaned up imports in examples and test files
+* Updated `keycode-js` from `v1.0.4` to `v2.0.1`
+
+### Fixed
+* Now requires users to enter separators themselves such as '/' or '-' depending on format.
 
 4.11.0 - (August 21, 2019)
 ------------------

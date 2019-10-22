@@ -1,10 +1,8 @@
 import React from 'react';
-/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
-import { ApplicationTabs } from 'terra-application-links/lib/ApplicationLinks';
+import { ApplicationTabs } from 'terra-application-links';
 import ApplicationLinkConfig from 'terra-application-links/lib/terra-dev-site/doc/common/ApplicationLinksWithIconsConfig';
 import classNames from 'classnames/bind';
 import styles from './demoStyles.module.scss';
-/* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 const cx = classNames.bind(styles);
 

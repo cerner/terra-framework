@@ -3,8 +3,44 @@ Changelog
 
 Unreleased
 ----------
+
+3.15.0 - (October 16, 2019)
+------------------
 ### Changed
-Updated `keycode-js` from `v1.0.4` to `v2.0.1`
+* Minor dependency updates
+
+### Fixed
+* Place focus onto the HTML body element upon modal dismissal in IE.
+  * This is done _only_ when the modal is disclosed via a non-HTML element (SVG, for instance).
+
+3.14.0 - (October 3, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+3.13.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+### Fixed
+* Check whether `focus` is defined for the modal trigger element before restoring focus.
+
+3.12.0 - (September 19, 2019)
+------------------
+### Changed
+* Removed `details` tag from doc-site.
+* Doc site example module import syntax modified to use package.json name resolution
+
+### Added
+* Added en-CA translations.
+
+3.11.0 - (September 6, 2019)
+------------------
+### Changed
+* Cleaned up imports in examples and test files
+* Updated `keycode-js` from `v1.0.4` to `v2.0.1`
+* Moved running the wicg-inert script to when 'terra-abstract-modal' is mounted
 
 3.10.0 - (August 21, 2019)
 ------------------

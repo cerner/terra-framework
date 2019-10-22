@@ -30,7 +30,11 @@ exports[`should render a date time picker with a default date and time 1`] = `
       "timeZone": null,
     }
   }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
   name="date-time-input"
+  required={false}
   showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}
@@ -73,7 +77,11 @@ exports[`should render a date time picker with disabled dates 1`] = `
       "timeZone": null,
     }
   }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
   name="date-time-input"
+  required={false}
   showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}
@@ -111,7 +119,11 @@ exports[`should render a date time picker with filtered dates 1`] = `
       "timeZone": null,
     }
   }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
   name="date-time-input"
+  required={false}
   showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}
@@ -153,7 +165,11 @@ exports[`should render a date time picker with included dates 1`] = `
       "timeZone": null,
     }
   }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
   name="date-time-input"
+  required={false}
   showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}
@@ -190,9 +206,13 @@ exports[`should render a date time picker with min and max dates 1`] = `
       "timeZone": null,
     }
   }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
   maxDate="2017-04-01"
   minDate="2017-04-10"
   name="date-time-input"
+  required={false}
   showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}
@@ -229,8 +249,12 @@ exports[`should render a date time picker with onBlur 1`] = `
       "timeZone": null,
     }
   }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
   name="date-time-input"
   onBlur={[Function]}
+  required={false}
   showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}
@@ -267,8 +291,12 @@ exports[`should render a date time picker with onChange 1`] = `
       "timeZone": null,
     }
   }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
   name="date-time-input"
   onChange={[Function]}
+  required={false}
   showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}
@@ -305,8 +333,12 @@ exports[`should render a date time picker with onChangeRaw 1`] = `
       "timeZone": null,
     }
   }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
   name="date-time-input"
   onChangeRaw={[Function]}
+  required={false}
   showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}
@@ -343,7 +375,11 @@ exports[`should render a date time picker with the seconds field enabled 1`] = `
       "timeZone": null,
     }
   }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
   name="date-time-input"
+  required={false}
   showSeconds={true}
   timeVariant="24-hour"
   utcOffset={0}
@@ -380,7 +416,11 @@ exports[`should render a default date time picker 1`] = `
       "timeZone": null,
     }
   }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
   name="date-time-input"
+  required={false}
   showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}
@@ -422,7 +462,11 @@ exports[`should render a default date time picker with custom date input attribu
       "timeZone": null,
     }
   }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
   name="date-time-input"
+  required={false}
   showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}
@@ -459,7 +503,11 @@ exports[`should render a default date time picker with custom time input attribu
       "timeZone": null,
     }
   }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
   name="date-time-input"
+  required={false}
   showSeconds={false}
   timeInputAttributes={
     Object {
@@ -501,7 +549,11 @@ exports[`should render a disabled date time picker 1`] = `
       "timeZone": null,
     }
   }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
   name="date-time-input"
+  required={false}
   showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}
@@ -538,7 +590,11 @@ exports[`should render with a default timeVariant if variant is not specified 1`
       "timeZone": null,
     }
   }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
   name="date-time-input"
+  required={false}
   showSeconds={false}
   timeVariant="24-hour"
   utcOffset={0}

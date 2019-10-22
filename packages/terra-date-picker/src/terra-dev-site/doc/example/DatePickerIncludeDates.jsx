@@ -2,8 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import Field from 'terra-form-field';
-// eslint-disable-next-line import/no-unresolved, import/extensions, import/no-extraneous-dependencies
-import DatePicker from 'terra-date-picker/lib/DatePicker';
+import DatePicker from 'terra-date-picker';
 import classNames from 'classnames/bind';
 import styles from './DatePickerExampleCommon.module.scss';
 

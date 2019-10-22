@@ -46,12 +46,17 @@ const propTypes = {
    * _(Uses same sizes as terra-modal-manager: tiny:320, small:640, medium:960, default:1120, large:1280, huge:1600)_
    */
   width: PropTypes.oneOf(Object.keys(widthFromSize)),
+  /**
+   * If set to true, the modal will close when a mouse click is triggered outside the modal.
+   */
+  closeOnOutsideClick: PropTypes.bool,
 };
 
 const defaultProps = {
   children: null,
   isOpen: false,
   width: '1120',
+  closeOnOutsideClick: false,
 };
 
 const DialogModal = (props) => {
@@ -63,6 +68,7 @@ const DialogModal = (props) => {
     isOpen,
     ariaLabel,
     width,
+    closeOnOutsideClick,
     ...customProps
   } = props;
 
@@ -79,7 +85,7 @@ const DialogModal = (props) => {
   }
 
   return (
-    <AbstractModal ariaLabel={ariaLabel} role="dialog" classNameModal={cx(classArray)} isOpen={isOpen} onRequestClose={onRequestClose} zIndex="7000">
+    <AbstractModal ariaLabel={ariaLabel} role="dialog" classNameModal={cx(classArray)} isOpen={isOpen} onRequestClose={onRequestClose} zIndex="7000" closeOnOutsideClick={closeOnOutsideClick}>
       <div {...customProps} className={cx('dialog-modal-inner-wrapper', customProps.className)}>
         <div className={cx('dialog-modal-container')}>
           <div>{header}</div>

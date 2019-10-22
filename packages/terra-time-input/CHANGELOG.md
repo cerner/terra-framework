@@ -3,8 +3,48 @@ Changelog
 
 Unreleased
 ----------
+
+4.14.0 - (October 21, 2019)
+------------------
 ### Changed
-Updated `keycode-js` from `v1.0.4` to `v2.0.1`
+* Update Jest snapshots
+
+4.13.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+### Added
+* Added `isIncomplete` prop and stylings
+* Added `isInvalid` prop and stylings
+* Added `isInvalidMeridiem` prop 
+* Added `required` prop
+
+4.12.0 - (October 3, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+4.11.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+4.10.0 - (September 19, 2019)
+------------------
+### Changed
+* Removed `details` tag from doc-site.
+* Doc site example module import syntax modified to use package.json name resolution
+* Fallback the time notation variant to `24-hour` for locales that do not use the `12-hour` notation.
+
+### Added
+* Added en-CA translations.
+
+4.9.0 - (September 6, 2019)
+------------------
+### Changed
+* Cleaned up imports in examples and test files
+* Updated `keycode-js` from `v1.0.4` to `v2.0.1`
 
 4.8.0 - (August 21, 2019)
 ------------------

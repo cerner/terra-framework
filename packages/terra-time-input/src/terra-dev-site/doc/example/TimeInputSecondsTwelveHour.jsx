@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import React from 'react';
 import TimeInput from 'terra-time-input/lib/TimeInput';
 import TimeUtil from 'terra-time-input/lib/TimeUtil';

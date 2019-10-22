@@ -6,7 +6,7 @@ import Avatar from 'terra-avatar';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import IconRollup from 'terra-icon/lib/icon/IconRollup';
 
-import { enableFocusStyles, disableFocusStyles } from '../utils/helpers';
+import { enableFocusStyles, disableFocusStyles, generateKeyDownSelection } from '../utils/helpers';
 import { userConfigPropType } from '../utils/propTypes';
 
 import styles from './UtilityMenuHeaderButton.module.scss';
@@ -42,7 +42,9 @@ const UtilityMenuHeaderButton = ({
     ariaLabel = intl.formatMessage({ id: 'Terra.applicationNavigation.header.utilityButtonTitleUser' });
     content = (
       <React.Fragment>
-        <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials} className={cx('avatar')} size="0.5217rem" />
+        <div className={cx('image')}>
+          <Avatar alt={userConfig.name} image={userConfig.imageSrc} initials={userConfig.initials} className={cx('avatar')} />
+        </div>
         <div className={cx('title')}>{userConfig.name}</div>
         <IconCaretDown className={cx('caret-icon')} />
         <span className={cx('popup-anchor')} ref={popupAnchorRef} />
@@ -50,14 +52,16 @@ const UtilityMenuHeaderButton = ({
     );
   } else {
     ariaLabel = intl.formatMessage({ id: 'Terra.applicationNavigation.header.utilityButtonTitleNoUser' });
-    content = <IconRollup className={cx('rollup-icon')} />;
+    content = <div className={cx('no-user-image')}><IconRollup className={cx('rollup-icon')} /></div>;
   }
 
   return (
-    <button
-      type="button"
-      className={cx('utility-button')}
+    <div
+      role="button"
+      tabIndex="0"
+      className={cx('utility-button', { 'no-user': !userConfig })}
       onClick={onClick}
+      onKeyDown={generateKeyDownSelection(onClick)}
       onBlur={enableFocusStyles}
       onMouseDown={disableFocusStyles}
       ref={!userConfig ? popupAnchorRef : undefined}
@@ -67,7 +71,7 @@ const UtilityMenuHeaderButton = ({
       data-application-header-utility
     >
       {content}
-    </button>
+    </div>
   );
 };
 

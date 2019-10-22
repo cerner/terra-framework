@@ -3,8 +3,38 @@ Changelog
 
 Unreleased
 ----------
+
+3.19.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+3.18.0 - (October 3, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+3.17.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+3.16.0 - (September 19, 2019)
+------------------
+### Changed
+* Removed `details` tag from doc-site.
+* Doc site example module import syntax modified to use package.json name resolution
+
+### Added
+* Added en-CA translations.
+
+3.15.0 - (September 6, 2019)
+------------------
 ### Fixed
 * Fixed `Cannot read property 'scrollHeight' of null` issue.
+
+### Changed
+* Cleaned up imports in examples and test files
 
 3.14.0 - (August 21, 2019)
 ------------------

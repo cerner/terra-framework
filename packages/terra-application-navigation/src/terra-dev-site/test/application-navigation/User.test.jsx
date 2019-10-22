@@ -23,8 +23,8 @@ const userConfigSrc = {
   imageSrc: 'test-src',
 };
 
-// TODO: remove terra-application after it is incorporated into dev-site
-const TitleTest = () => (
+// TODO: remove terra-application after it is incorporated into dev-site for themes or themes are co-located
+const UserTest = () => (
   <ApplicationBase locale="en">
     <FixedHeight><ApplicationNavigation userConfig={userConfig} /></FixedHeight>
     <FixedHeight><ApplicationNavigation userConfig={userConfigDetail} /></FixedHeight>
@@ -33,4 +33,4 @@ const TitleTest = () => (
   </ApplicationBase>
 );
 
-export default TitleTest;
+export default UserTest;

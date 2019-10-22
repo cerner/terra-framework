@@ -4,6 +4,40 @@ ChangeLog
 Unreleased
 ----------
 
+4.25.0 - (October 21, 2019)
+------------------
+### Changed
+* Fixed typo in disclosure manager docs
+
+4.24.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+4.23.0 - (October 3, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+4.22.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+4.21.0 - (September 19, 2019)
+------------------
+### Changed
+* Removed `details` tag from doc-site
+* Corrected lint warnings
+
+4.20.0 - (September 6, 2019)
+------------------
+### Changed
+* Cleaned up imports in examples and test files
+
+### Changed
+* Updated inline documentation for DisclosureManagerHeaderAdapter
+
 4.19.0 - (August 21, 2019)
 ------------------
 ### Changed

@@ -4,6 +4,35 @@ Changelog
 Unreleased
 ----------
 
+2.25.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+2.24.0 - (October 3, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+2.23.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+2.22.0 - (September 19, 2019)
+------------------
+### Changed
+* Removed `details` tag from doc-site.
+* Doc site example module import syntax modified to use package.json name resolution
+
+### Added
+* Added en-CA translations.
+
+2.21.0 - (September 6, 2019)
+------------------
+### Changed
+* Cleaned up imports in examples and test files
+
 2.20.0 - (August 21, 2019)
 ------------------
 ### Changed

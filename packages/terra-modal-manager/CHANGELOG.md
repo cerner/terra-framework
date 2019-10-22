@@ -4,6 +4,40 @@ Changelog
 Unreleased
 ----------
 
+6.16.0 - (October 21, 2019)
+------------------
+### Changed
+* Updated wdio screenshots
+
+6.15.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+### Fixed
+* Fixed some tests that were consuming changes to terra-form-select
+
+6.14.0 - (October 3, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+6.13.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+6.12.0 - (September 19, 2019)
+------------------
+### Changed
+* Removed `details` tag from doc-site.
+* Doc site example module import syntax modified to use package.json name resolution
+
+6.11.0 - (September 6, 2019)
+------------------
+### Changed
+* Cleaned up imports in examples and test files
+
 6.10.0 - (August 21, 2019)
 ------------------
 ### Changed

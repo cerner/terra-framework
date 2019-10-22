@@ -3,7 +3,6 @@ import DocTemplate from 'terra-doc-template';
 import ReadMe from '../../../../docs/README.md';
 import { name } from '../../../../package.json';
 
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
 import DateTimePickerSrc from '!raw-loader!../../../../src/DateTimePicker';
 
@@ -30,7 +29,10 @@ import DateTimePickerWithSeconds from '../example/DateTimePickerWithSeconds';
 import DateTimePickerWithSecondsSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DateTimePickerWithSeconds';
 import DateTimePickerWithSecondsAndTimeVariant from '../example/DateTimePickerWithSecondsAndTimeVariant';
 import DateTimePickerWithSecondsAndTimeVariantSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DateTimePickerWithSecondsAndTimeVariant';
-/* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
+import DateTimePickerInvalid from '../example/DateTimePickerInvalid';
+import DateTimePickerInvalidSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DateTimePickerInvalid';
+import DateTimePickerIncomplete from '../example/DateTimePickerIncomplete';
+import DateTimePickerIncompleteSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DateTimePickerIncomplete';
 
 const DocPage = () => (
   <DocTemplate
@@ -145,6 +147,17 @@ to see the starting and ending dates of daylight saving time for the current yea
         title: 'With Seconds Field in 12-hour Time format',
         example: <DateTimePickerWithSecondsAndTimeVariant />,
         source: DateTimePickerWithSecondsAndTimeVariantSrc,
+      },
+      {
+        title: 'Invalid',
+        example: <DateTimePickerInvalid />,
+        source: DateTimePickerInvalidSrc,
+      },
+      {
+        title: 'Incomplete',
+        description: 'Applies theme-specific styling for incomplete. ***Note: Only use incomplete if given specific guidance, reserved for specific applications when no value has been provided. Not for general use.***',
+        example: <DateTimePickerIncomplete />,
+        source: DateTimePickerIncompleteSrc,
       },
     ]}
     propsTables={[

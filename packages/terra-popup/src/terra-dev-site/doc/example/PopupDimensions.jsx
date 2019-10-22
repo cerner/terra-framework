@@ -1,9 +1,7 @@
 import React from 'react';
 import Button from 'terra-button';
-/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
-import Popup from 'terra-popup/lib/Popup';
+import Popup from 'terra-popup';
 import Placeholder from 'terra-doc-template/lib/Placeholder';
-/* eslint-enable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
 const HEIGHT_KEYS = Object.keys(Popup.Opts.heights);
 const WIDTH_KEYS = Object.keys(Popup.Opts.widths);

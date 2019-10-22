@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-/* eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
-import SlidePanel from 'terra-slide-panel/lib/SlidePanel';
+import SlidePanel from 'terra-slide-panel';
 import classNames from 'classnames/bind';
 import styles from './DefaultSlidePanel.module.scss';
 
