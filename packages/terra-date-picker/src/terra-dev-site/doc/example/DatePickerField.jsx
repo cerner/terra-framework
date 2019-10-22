@@ -38,7 +38,7 @@ class DatePickerExample extends React.Component {
         <DatePickerField
           label="Enter Date"
           name="date-input"
-          datePickerId="default"
+          datePickerId="default-field"
           onChange={this.handleDateChange}
           {...this.props}
         />
