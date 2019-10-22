@@ -4,6 +4,11 @@ ChangeLog
 Unreleased
 ----------
 
+4.25.0 - (October 21, 2019)
+------------------
+### Changed
+* Fixed typo in disclosure manager docs
+
 4.24.0 - (October 16, 2019)
 ------------------
 ### Changed
