@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Added `aria-label` in examples.
 
 4.29.0 - (October 16, 2019)
 ------------------

@@ -35,7 +35,7 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge cust
       }
     }
     paddingStyle="none"
-    role="listbox"
+    role="menu"
   >
     <CollapsibleMenuViewItem
       isIconOnly={false}
@@ -198,7 +198,7 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render men
       }
     }
     paddingStyle="none"
-    role="listbox"
+    role="menu"
   >
     <CollapsibleMenuViewItem
       isIconOnly={false}
