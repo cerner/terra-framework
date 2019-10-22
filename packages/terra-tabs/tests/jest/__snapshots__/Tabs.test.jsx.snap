@@ -16,7 +16,6 @@ exports[`Tabs Variants should render modular-centered tabs 1`] = `
           variant="structural"
         >
           <TabPane
-            aria-selected={true}
             className="is-active"
             isDisabled={false}
             isIconOnly={false}
@@ -31,7 +30,6 @@ exports[`Tabs Variants should render modular-centered tabs 1`] = `
           onTruncationChange={[Function]}
         >
           <TabPane
-            aria-selected={true}
             className="is-active"
             isDisabled={false}
             isIconOnly={false}
@@ -94,7 +92,6 @@ exports[`Tabs Variants should render modular-left-aligned tabs 1`] = `
           variant="structural"
         >
           <TabPane
-            aria-selected={true}
             className="is-active"
             isDisabled={false}
             isIconOnly={false}
@@ -109,7 +106,6 @@ exports[`Tabs Variants should render modular-left-aligned tabs 1`] = `
           onTruncationChange={[Function]}
         >
           <TabPane
-            aria-selected={true}
             className="is-active"
             isDisabled={false}
             isIconOnly={false}
@@ -172,7 +168,6 @@ exports[`Tabs Variants should render structural tabs 1`] = `
           variant="structural"
         >
           <TabPane
-            aria-selected={true}
             className="is-active"
             isDisabled={false}
             isIconOnly={false}
@@ -187,7 +182,6 @@ exports[`Tabs Variants should render structural tabs 1`] = `
           onTruncationChange={[Function]}
         >
           <TabPane
-            aria-selected={true}
             className="is-active"
             isDisabled={false}
             isIconOnly={false}
@@ -250,7 +244,6 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
           variant="structural"
         >
           <TabPane
-            aria-selected={true}
             className="is-active"
             isDisabled={false}
             isIconOnly={false}
@@ -265,7 +258,6 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
           onTruncationChange={[Function]}
         >
           <TabPane
-            aria-selected={true}
             className="is-active"
             isDisabled={false}
             isIconOnly={false}
@@ -327,7 +319,6 @@ exports[`Tabs should render a default component 1`] = `
           variant="structural"
         >
           <TabPane
-            aria-selected={true}
             className="is-active"
             isDisabled={false}
             isIconOnly={false}
@@ -342,7 +333,6 @@ exports[`Tabs should render a default component 1`] = `
           onTruncationChange={[Function]}
         >
           <TabPane
-            aria-selected={true}
             className="is-active"
             isDisabled={false}
             isIconOnly={false}
@@ -405,7 +395,6 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
           variant="structural"
         >
           <TabPane
-            aria-selected={true}
             className="is-active"
             isDisabled={false}
             isIconOnly={false}
@@ -420,7 +409,6 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
           onTruncationChange={[Function]}
         >
           <TabPane
-            aria-selected={true}
             className="is-active"
             isDisabled={false}
             isIconOnly={false}
@@ -482,7 +470,6 @@ exports[`Tabs should render with content filled when indicated 1`] = `
           variant="structural"
         >
           <TabPane
-            aria-selected={true}
             className="is-active"
             isDisabled={false}
             isIconOnly={false}
@@ -497,7 +484,6 @@ exports[`Tabs should render with content filled when indicated 1`] = `
           onTruncationChange={[Function]}
         >
           <TabPane
-            aria-selected={true}
             className="is-active"
             isDisabled={false}
             isIconOnly={false}
@@ -559,7 +545,6 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
           variant="structural"
         >
           <TabPane
-            aria-selected={true}
             className="is-active"
             isDisabled={false}
             isIconOnly={false}
@@ -574,7 +559,6 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
           onTruncationChange={[Function]}
         >
           <TabPane
-            aria-selected={true}
             className="is-active"
             isDisabled={false}
             isIconOnly={false}
@@ -637,7 +621,6 @@ exports[`Tabs should set custom props 1`] = `
           variant="structural"
         >
           <TabPane
-            aria-selected={true}
             className="is-active"
             isDisabled={false}
             isIconOnly={false}
@@ -652,7 +635,6 @@ exports[`Tabs should set custom props 1`] = `
           onTruncationChange={[Function]}
         >
           <TabPane
-            aria-selected={true}
             className="is-active"
             isDisabled={false}
             isIconOnly={false}
@@ -714,7 +696,6 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
           variant="structural"
         >
           <TabPane
-            aria-selected={true}
             className="is-active customClass"
             isDisabled={false}
             isIconOnly={false}
@@ -729,7 +710,6 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
           onTruncationChange={[Function]}
         >
           <TabPane
-            aria-selected={true}
             className="is-active customClass"
             isDisabled={false}
             isIconOnly={false}
