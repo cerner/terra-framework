@@ -32,10 +32,10 @@ class DateTimePickerExample extends React.Component {
           Selected ISO Date Time:
           {this.state.dateTime}
         </p>
-        <Field label="Enter Date/Time" htmlFor="default">
+        <Field label="Enter Date/Time" htmlFor="default-incomplete">
           <DateTimePicker
             name="date-time-picker-example"
-            dateInputAttributes={{ id: 'default' }}
+            dateInputAttributes={{ id: 'default-incomplete' }}
             onChange={this.handleDateTimeChange}
             isIncomplete
             required
