@@ -245,9 +245,9 @@ export default class Calendar extends React.Component {
 
     this.todayBtnRef = React.createRef();
     this.closeBtnRef = React.createRef();
+    this.previousMonthBtnRef = React.createRef();
+    this.nextMonthBtnRef = React.createRef();
     this.monthRef;
-    this.previousMonthBtnRef;
-    this.nextMonthBtnRef;
     this.monthDropdownRef;
     this.yearDropdownRef;
   }
@@ -266,10 +266,10 @@ export default class Calendar extends React.Component {
 
   handleOnClick = (event) => {
     const calendarControls = [
-      this.todayBtnRef,
-      this.closeBtnRef,
-      this.previousMonthBtnRef,
-      this.nextMonthBtnRef,
+      this.todayBtnRef.current,
+      this.closeBtnRef.current,
+      this.previousMonthBtnRef.current,
+      this.nextMonthBtnRef.current,
       this.monthDropdownRef,
       this.yearDropdownRef,
     ];
@@ -279,10 +279,10 @@ export default class Calendar extends React.Component {
     }
 
     const isEventTargetContainedWithinCalendarControl = (target) => {
-      const containsEventTarget = (this.previousMonthBtnRef.contains(target)
-        || this.previousMonthBtnRef.contains(target)
-        || this.monthDropdownRef.contains(target)
-        || this.yearDropdownRef.contains(target));
+      const containsEventTarget = (this.previousMonthBtnRef.current && this.previousMonthBtnRef.current.contains(target)
+        || this.nextMonthBtnRef.current && this.nextMonthBtnRef.current.contains(target)
+        || this.monthDropdownRef && this.monthDropdownRef.contains(target)
+        || this.yearDropdownRef && this.yearDropdownRef.contains(target));
 
       return containsEventTarget;
     }
@@ -327,14 +327,6 @@ export default class Calendar extends React.Component {
 
   handleMonthBlur = () => {
     this.setState({ calendarIsKeyboardFocused: false })
-  }
-
-  setPreviousMonthBtnRef = (node) => {
-    this.previousMonthBtnRef = node;
-  }
-
-  setNextMonthBtnRef = (node) => {
-    this.nextMonthBtnRef = node;
   }
 
   setMonthRef = (node) => {
@@ -449,15 +441,16 @@ export default class Calendar extends React.Component {
     return (
       <FormattedMessage id="Terra.datePicker.previousMonth">
         {text => (
-          <Button
+          <button
+            type="button"
             className={cx('react-datepicker-navigation--previous')}
-            icon={<span className={cx('prev-month-icon')} />}
-            isIconOnly
-            variant="utility"
-            text={text}
+            aria-label={text}
             onClick={this.decreaseMonth}
             onKeyDown={this.handlePreviousMonthBtnKeyDown}
-            refCallback={this.setPreviousMonthBtnRef} />
+            ref={this.previousMonthBtnRef}
+          >
+            <span className={cx('prev-month-icon')} />
+          </button>
         )}
       </FormattedMessage>
     )
@@ -471,14 +464,15 @@ export default class Calendar extends React.Component {
     return (
       <FormattedMessage id="Terra.datePicker.nextMonth">
         {text => (
-          <Button
+          <button
+            type="button"
             className={cx('react-datepicker-navigation--next')}
-            icon={<span className={cx('next-month-icon')} />}
-            isIconOnly
-            variant="utility"
-            text={text}
+            aria-label={text}
             onClick={this.increaseMonth}
-            refCallback={this.setNextMonthBtnRef} />
+            ref={this.nextMonthBtnRef}
+          >
+            <span className={cx('next-month-icon')} />
+          </button>
         )}
       </FormattedMessage>
     )
