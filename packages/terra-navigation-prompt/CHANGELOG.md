@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Missing aria-labels added in examples.
 
+1.15.0 - (October 21, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 1.14.0 - (October 16, 2019)
 ------------------
 ### Changed
