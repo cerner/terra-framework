@@ -1,15 +1,12 @@
 import React from 'react';
+import classNames from 'classnames/bind';
+import styles from '../example/InfiniteListDocExampleCommon.module.scss';
+
+const cx = classNames.bind(styles);
 
 /* eslint-disable */
 const MyExampleContainer = ({ children }) => (
-  <div
-    style={{
-      height: '300px',
-      width: '100%',
-      position: 'relative',
-      border: '1px solid #000',
-    }}
-  >
+  <div className={cx('main-content')}>
     {children}
   </div>
 );
