@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Duplicate IDs in examples changed.
 * Jest snapshot updates.
 
 5.15.0 - (October 21, 2019)
