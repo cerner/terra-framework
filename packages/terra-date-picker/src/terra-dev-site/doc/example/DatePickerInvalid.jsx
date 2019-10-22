@@ -36,10 +36,10 @@ class DatePickerInvalidExample extends React.Component {
           Selected ISO Date:
           <span className={cx('date-wrapper')}>{this.state.date}</span>
         </p>
-        <Field label="Enter Date" htmlFor="default">
+        <Field label="Enter Date" htmlFor="default-invalid">
           <DatePicker
             name="date-input"
-            id="default"
+            id="default-invalid"
             onChange={this.handleDateChange}
             isInvalid
             {...this.props}
