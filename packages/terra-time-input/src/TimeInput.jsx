@@ -198,6 +198,11 @@ class TimeInput extends React.Component {
 
   componentDidUpdate(prevProps) {
     const variant = TimeUtil.getVariantFromLocale(this.props);
+    if (this.props.value === prevProps.value
+      && variant === prevProps.variant) {
+      return;
+    }
+
     let { meridiem } = this.state;
     let hour = TimeUtil.splitHour(this.props.value);
     const minute = TimeUtil.splitMinute(this.props.value);
@@ -213,23 +218,6 @@ class TimeInput extends React.Component {
         // eslint-disable-next-line prefer-destructuring
         meridiem = parsedHour.meridiem;
       }
-    }
-
-    let skipStateUpdate = true;
-    // Data Attribute `data-date-time-input` of date-time-picker is used to ensure state update happens only when props are updated in date-time-picker.
-    const dateTimePicker = 'data-date-time-input';
-    if (this.props[dateTimePicker]) {
-      const inputValue = (this.props.showSeconds) ? `${this.hourInput.value}:${this.minuteInput.value}:${this.secondInput.value}` : `${this.hourInput.value}:${this.minuteInput.value}`;
-      const propsValue = (this.props.showSeconds) ? `${hour}:${minute}:${second}` : `${hour}:${minute}`;
-      // Comparing partial time values on each update will result in incorrect comparisons of inputValue and propsValue. Hence validating propsValue and inputValue before comparison.
-      if (TimeUtil.validateTime(propsValue, this.props.showSeconds) && TimeUtil.validateTime(inputValue, this.props.showSeconds)) {
-        skipStateUpdate = (propsValue === inputValue);
-      }
-    }
-
-
-    if (this.props.value === prevProps.value && variant === prevProps.variant && skipStateUpdate) {
-      return;
     }
 
     // eslint-disable-next-line react/no-did-update-set-state
