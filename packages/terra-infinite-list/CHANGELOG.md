@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added refCallback prop to infinite-list to expose ref of Listbox
+
 ### Fixed
 * Fixed console warning by preventing `intl` and `progressiveLoadingMessage` props from being passed to the DOM.
 
