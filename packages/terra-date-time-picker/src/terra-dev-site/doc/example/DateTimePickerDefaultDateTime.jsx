@@ -3,6 +3,7 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import Field from 'terra-form-field';
 import DateTimePicker from 'terra-date-time-picker';
+import DateTimeUtils from '../../../DateTimeUtils';
 
 const propTypes = {
   /**
@@ -18,7 +19,14 @@ const defaultProps = {
 class DateTimePickerExample extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { dateTime: this.props.value };
+    let dateTimeDisplay = props.value;
+    const dateTime = DateTimeUtils.createSafeDate(dateTimeDisplay);
+
+    if (dateTime && dateTime.isValid()) {
+      dateTimeDisplay = dateTime.format();
+    }
+
+    this.state = { dateTime: dateTimeDisplay };
     this.handleDateTimeChange = this.handleDateTimeChange.bind(this);
   }
 

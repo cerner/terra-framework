@@ -3,8 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
-### Added
-* Added new test to validate missing hour scenario.
+### Changed
+* Force update to render the missing hour.
 
 ### Changed
 * Duplicate ID in examples changed.
