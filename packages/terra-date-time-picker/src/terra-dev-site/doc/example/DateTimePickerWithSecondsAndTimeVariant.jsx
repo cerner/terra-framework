@@ -34,10 +34,10 @@ class DateTimePickerExample extends React.Component {
           Selected ISO Date Time:
           {this.state.dateTime}
         </p>
-        <Field label="Enter Date/Time" htmlFor="defaultDateTime">
+        <Field label="Enter Date/Time" htmlFor="defaultDateTimeVariant">
           <DateTimePicker
             name="date-time-picker-example"
-            dateInputAttributes={{ id: 'defaultDateTime' }}
+            dateInputAttributes={{ id: 'defaultDateTimeVariant' }}
             onChange={this.handleDateTimeChange}
             {...this.props}
           />
