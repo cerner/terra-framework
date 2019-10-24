@@ -42,6 +42,7 @@ class CompleteNotificationDialogWithLongMessage extends React.Component {
             text: 'Close',
             onClick: this.handleCloseModal,
           }}
+          buttonOrder="acceptFirst"
           emphasizedAction="accept"
         />
         <Button text="Trigger Notification Dialog" onClick={this.handleOpenModal} />

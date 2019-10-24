@@ -3,8 +3,8 @@ Changelog
 
 Unreleased
 ----------
-### Changed
-* Changed how 'navigation-prompt' was consuming 'terra-notifiaction-dialog' to deal with its updated props.
+### Breaking Changes
+* Changed 'NavigationPromptCheckpoint' to have the same logic as 'notification-dialog' changes
 
 1.13.0 - (October 3, 2019)
 ------------------

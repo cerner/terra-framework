@@ -49,6 +49,7 @@ class ContentNotificationDialog extends React.Component {
             text: 'Close',
             onClick: this.handleCloseModal,
           }}
+          buttonOrder="acceptFirst"
           emphasizedAction="accept"
         />
         <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} />

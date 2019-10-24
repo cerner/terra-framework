@@ -60,6 +60,7 @@ class NotificationDialogWithFocus extends React.Component {
             text: 'Close',
             onClick: this.handleCloseModal,
           }}
+          buttonOrder="acceptFirst"
           emphasizedAction="accept"
         />
         <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} id="trigger-notification-dialog" />

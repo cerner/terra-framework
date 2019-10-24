@@ -12,17 +12,17 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog when st
   <NotificationDialog
     acceptAction={
       Object {
-        "isEmphasized": true,
         "onClick": [Function],
         "text": "Accept",
       }
     }
+    buttonOrder="acceptFirst"
     content={null}
+    emphasizedAction="none"
     endMessage={null}
     isOpen={true}
     rejectAction={
       Object {
-        "isEmphasized": false,
         "onClick": [Function],
         "text": "Reject",
       }
@@ -46,17 +46,17 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with ac
   <NotificationDialog
     acceptAction={
       Object {
-        "isEmphasized": true,
         "onClick": [Function],
         "text": "Accept",
       }
     }
+    buttonOrder="acceptFirst"
     content={null}
+    emphasizedAction="accept"
     endMessage={null}
     isOpen={true}
     rejectAction={
       Object {
-        "isEmphasized": false,
         "onClick": [Function],
         "text": "Reject",
       }
@@ -80,19 +80,19 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with re
   <NotificationDialog
     acceptAction={
       Object {
-        "isEmphasized": true,
         "onClick": [Function],
-        "text": "Reject",
+        "text": "Accept",
       }
     }
+    buttonOrder="rejectFirst"
     content={null}
+    emphasizedAction="reject"
     endMessage={null}
     isOpen={true}
     rejectAction={
       Object {
-        "isEmphasized": false,
         "onClick": [Function],
-        "text": "Accept",
+        "text": "Reject",
       }
     }
     startMessage="Test Message"

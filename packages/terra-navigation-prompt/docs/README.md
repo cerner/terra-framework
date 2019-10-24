@@ -100,10 +100,13 @@ The keys expected in the resolvePrompts Object or return value include:
 |Key|Type|Description|
 |---|---|---|
 |`title`|String|The title of the NotificationDialog.|
-|`message`|String|The message of the NotificationDialog.|
-|`rejectButtonText`|String|The text to render within the NotificationDialog's primary action button.|
-|`acceptButtonText`|String|The text to render within the NotificationDialog's secondary action button.|
-|`emphasizedAction`|String|A string indicating which action should be rendered as the NotificationDialog's primary action. Supported values include: `accept`, `reject`. Defaults to `accept`.|
+|`startMessage`|String|The starting message of the NotificationDialog.|
+|`content`|Node|The content of the NotificationDialog.|
+|`endMessage`|String|The ending message of the NotificationDialog.|
+|`acceptButtonText`|String|The text to render within the NotificationDialog's accept button.|
+|`rejectButtonText`|String|The text to render within the NotificationDialog's reject button.|
+|`buttonOrder`|String|A string indicating which action should be rendered first, required. Supported values include: `acceptFirst`, `rejectFirst`.|
+|`emphasizedAction`|String|A string indicating which action should be rendered as emphasized. Supported values include: `accept`, `reject`, and `none`. Defaults to `none`.|
 
 ```jsx
 const ResolvePromptExample = () => {
@@ -116,9 +119,10 @@ const ResolvePromptExample = () => {
   const resetWithStaticText = () => {
     checkpointRef.current.resolvePrompts({
       title: 'Pending Changes',
-      message: 'Data will be lost if this action is taken',
+      startMessage: 'Data will be lost if this action is taken',
       rejectButtonText: `Return`,
       acceptButtonText: 'Continue without Saving',
+      buttonOrder: 'acceptFirst',
     }).then(() => {
       // User decided to continue
       setContentKey({ contentKey: !state.contentKey });
@@ -134,7 +138,7 @@ const ResolvePromptExample = () => {
   const resetWithDynamicText = () => {
     checkpointRef.current.resolvePrompts(prompts => ({
       title: prompts.map(prompt => prompt.description).join(', '),
-      message: `Data will be lost in the following sections: ${prompts.map(prompt => prompt.description).join(', ')}`,
+      startMessage: `Data will be lost in the following sections: ${prompts.map(prompt => prompt.description).join(', ')}`,
       rejectButtonText: `Return`,
       acceptButtonText: 'Continue without Saving',
     })).then(() => {

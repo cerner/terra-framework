@@ -29,6 +29,10 @@ const propTypes = {
    */
   title: PropTypes.string,
   /**
+   * @private Message of the notification-dialog
+   */
+  message: PropTypes.string,
+  /**
    * Start Message of the notification-dialog.
    */
   startMessage: PropTypes.string,
@@ -41,12 +45,26 @@ const propTypes = {
    */
   content: PropTypes.node,
   /**
+   * @private The Action of the primary button.
+   */
+  primaryAction: PropTypes.shape({
+    text: PropTypes.string,
+    onClick: PropTypes.func,
+  }),
+  /**
    * The Action of the accept button.
    */
   acceptAction: PropTypes.shape({
     text: PropTypes.string,
     onClick: PropTypes.func,
   }).isRequired,
+  /**
+   * @private The Action of the secondary button.
+   */
+  secondaryAction: PropTypes.shape({
+    text: PropTypes.string,
+    onClick: PropTypes.func,
+  }),
   /**
    * The Action of the reject button.
    */
@@ -77,7 +95,10 @@ const propTypes = {
   /**
    * Reverses the order of notification action buttons
    */
-  isReversed: PropTypes.bool,
+  buttonOrder: PropTypes.oneOf([
+    'acceptFirst',
+    'rejectFirst',
+  ]).isRequired,
   /**
    * Determines whether acceptAction, rejectAction or neither is emphasizedAction
    */
@@ -97,7 +118,7 @@ const defaultProps = {
   emphasizedAction: 'none',
 };
 
-const actionSection = (acceptAction, rejectAction, isReversed, emphasizedAction) => {
+const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction) => {
   let acceptButton = null;
   let rejectButton = null;
   if (!acceptAction && !rejectAction) {
@@ -114,7 +135,7 @@ const actionSection = (acceptAction, rejectAction, isReversed, emphasizedAction)
       : <Button text={rejectAction.text} onClick={rejectAction.onClick} />;
   }
 
-  if (isReversed) {
+  if (buttonOrder === 'rejectFirst') {
     return (
       <div className={cx('actions')}>
         {rejectButton}
@@ -194,7 +215,7 @@ class NotificationDialog extends React.Component {
       variant,
       customIcon,
       isOpen,
-      isReversed,
+      buttonOrder,
       emphasizedAction,
       ...customProps
     } = this.props;
@@ -234,7 +255,7 @@ class NotificationDialog extends React.Component {
                     && <div className={cx('message')}>{endMessage}</div>}
                 </div>
               </div>
-              <div className={cx('footer-body')}>{actionSection(acceptAction, rejectAction, isReversed, emphasizedAction)}</div>
+              <div className={cx('footer-body')}>{actionSection(acceptAction, rejectAction, buttonOrder, emphasizedAction)}</div>
             </div>
           </div>
         </FocusTrap>

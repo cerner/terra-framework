@@ -42,6 +42,7 @@ class ReversedActionNotificationDialog extends React.Component {
             text: 'Close',
             onClick: this.handleCloseModal,
           }}
+          buttonOrder="acceptFirst"
           emphasizedAction="reject"
         />
         <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={this.handleOpenModal} />

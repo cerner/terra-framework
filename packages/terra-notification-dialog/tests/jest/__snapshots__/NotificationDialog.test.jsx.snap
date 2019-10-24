@@ -38,6 +38,7 @@ exports[`should mount a complete notification-dialog 1`] = `
           "text": "Confirm",
         }
       }
+      buttonOrder="acceptFirst"
       content={null}
       emphasizedAction="accept"
       endMessage={null}
@@ -130,6 +131,7 @@ exports[`should mount a complete notification-dialog with long message 1`] = `
           "text": "Confirm",
         }
       }
+      buttonOrder="acceptFirst"
       content={null}
       emphasizedAction="accept"
       endMessage={null}
@@ -222,6 +224,7 @@ exports[`should mount a notification-dialog with no variant 1`] = `
           "text": "Confirm",
         }
       }
+      buttonOrder="acceptFirst"
       content={null}
       emphasizedAction="accept"
       endMessage={null}
@@ -286,6 +289,7 @@ exports[`should shallow a complete notification-dialog 1`] = `
         "text": "Confirm",
       }
     }
+    buttonOrder="acceptFirst"
     content={null}
     emphasizedAction="accept"
     endMessage={null}
@@ -324,6 +328,7 @@ exports[`should shallow a complete notification-dialog with long message 1`] = `
         "text": "Confirm",
       }
     }
+    buttonOrder="acceptFirst"
     content={null}
     emphasizedAction="accept"
     endMessage={null}
@@ -362,6 +367,7 @@ exports[`should shallow a notification-dialog with no variant 1`] = `
         "text": "Confirm",
       }
     }
+    buttonOrder="acceptFirst"
     content={null}
     emphasizedAction="accept"
     endMessage={null}

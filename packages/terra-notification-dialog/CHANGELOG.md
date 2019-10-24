@@ -4,14 +4,20 @@ Changelog
 Unreleased
 ----------
 ### Breaking Changes
-* Renamed 'message' prop to 'startMessage'
-* Renamed 'primaryAction' prop to 'acceptAction'
-* Renamed 'secondaryAction' prop to 'rejectAction'
+* Added required 'buttonOrder' prop to determine order of accept and reject buttons
+
+### Changed
+* 'message' prop has been depreciated, will resolve to 'startMessage'
+* 'primaryAction' prop has been depreciated, will resolve to 'acceptAction'
+* 'secondaryAction' prop has been depreciated, will resolve to 'rejectAction'
 
 ### Added
-* Added a 'emphasizedAction' oneOf to choose between emphasizing the accept button, reject button, or neither.
+* Added a 'startMessage' string prop that will display a message after 'title'
 * Added a 'content' node prop that will display the given node in the Dialog after 'startMessage'
-* Added an 'endMessage' string prop that will display a message after both 'startMessage' and 'content'
+* Added an 'endMessage' string prop that will display a message after 'content'
+* Added 'acceptAction' prop that takes an object with a 'text' string and 'onClick' function attributes
+* Added 'rejectAction' prop that takes an object with a 'text' string and 'onClick' function attributes
+* Added a 'emphasizedAction' oneOf to choose between emphasizing the accept button, reject button, or neither.
 
 ### Fixed
 * Added terra-breakpoints to dependencies for the project
