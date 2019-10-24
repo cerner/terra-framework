@@ -18,17 +18,17 @@ const DocPage = () => (
     examples={[
       {
         title: 'Overlay Example',
-        example: <SlidePanelManagerExample behavior="overlay" />,
+        example: <SlidePanelManagerExample behavior="overlay-1" />,
         source: SlidePanelManagerExampleSrc,
       },
       {
         title: 'Squish Example',
-        example: <SlidePanelManagerExample behavior="squish" />,
+        example: <SlidePanelManagerExample behavior="squish-2" />,
         source: SlidePanelManagerExampleSrc,
       },
       {
         title: 'Disclosure Accessory Example',
-        example: <SlidePanelManagerExample behavior="squish" showAccessory />,
+        example: <SlidePanelManagerExample behavior="squish-3" showAccessory />,
         source: SlidePanelManagerExampleSrc,
       },
     ]}

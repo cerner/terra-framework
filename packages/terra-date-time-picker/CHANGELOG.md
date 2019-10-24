@@ -4,8 +4,9 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
+* Duplicate ID in examples changed.
 * Changed 12-hour format appearance for mobile and desktop.
-  * Meridiem select on Desktop has been changed to buttons which means that the WebdriverIO reference screenshots (if any) and/or any code in the consumer application that accesses the old meridiem select functionality on the Desktop view need to be updated.
+* Meridiem select on Desktop has been changed to buttons which means that the WebdriverIO reference screenshots (if any) and/or any code in the consumer application that accesses the old meridiem select functionality on the Desktop view need to be updated.
 
 4.17.0 - (October 21, 2019)
 ------------------
