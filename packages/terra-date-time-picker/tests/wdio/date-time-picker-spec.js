@@ -18,6 +18,36 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     Terra.it.matchesScreenshot();
   });
 
+  describe('Invalid', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-invalid');
+      browser.refresh();
+    });
+
+    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot();
+  });
+
+  describe('Incomplete', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-incomplete');
+      browser.refresh();
+    });
+
+    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot();
+  });
+
+  describe('Invalid and Incomplete', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-invalid-incomplete');
+      browser.refresh();
+    });
+
+    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot();
+  });
+
   describe('Default with Date', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default-date-only');
@@ -168,6 +198,23 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       expect(browser.getText('#input-value')).to.equal('05/01/2019 10:10');
       expect(browser.getText('#complete-date')).to.equal('Yes');
       expect(browser.getText('#valid-date')).to.equal('Yes');
+    });
+  });
+
+  describe('OnBlur with invalid date', () => {
+    before(() => {
+      browser.refresh();
+    });
+
+    it('iso string is updated upon entering an invalid date', () => {
+      browser.setValue('input[name="terra-date-input"]', '04/01/2019');
+      browser.setValue('input[name="terra-time-hour-input"]', '10');
+      browser.setValue('input[name="terra-time-minute-input"]', '30');
+      browser.keys('Tab');
+      expect(browser.getText('#iso')).to.equal('2019-04-01T10:30:00-05:00');
+      expect(browser.getText('#input-value')).to.equal('04/01/2019 10:30');
+      expect(browser.getText('#complete-date')).to.equal('Yes');
+      expect(browser.getText('#valid-date')).to.equal('No');
     });
   });
 

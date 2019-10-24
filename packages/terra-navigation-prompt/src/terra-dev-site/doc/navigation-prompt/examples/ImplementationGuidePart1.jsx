@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import NavigationPrompt, { NavigationPromptCheckpoint } from 'terra-navigation-prompt';
 
-const Form = ({ title }) => {
+const Form = ({ title, ariaLabel }) => {
   const [inputValue, setInputValue] = useState('');
 
   return (
@@ -11,6 +11,7 @@ const Form = ({ title }) => {
       {inputValue.length ? <NavigationPrompt description={title} /> : undefined}
       <input
         type="text"
+        aria-label={ariaLabel}
         onChange={(event) => {
           setInputValue(event.target.value);
         }}
@@ -30,6 +31,7 @@ const Form = ({ title }) => {
 
 Form.propTypes = {
   title: PropTypes.string,
+  ariaLabel: PropTypes.string,
 };
 
 const FormSwitcher = () => {
@@ -70,7 +72,7 @@ const FormSwitcher = () => {
       <NavigationPromptCheckpoint
         ref={formCheckpointRef}
       >
-        <Form title={activeForm} key={activeForm} />
+        <Form title={activeForm} key={activeForm} ariaLabel={activeForm} />
       </NavigationPromptCheckpoint>
     </div>
   );

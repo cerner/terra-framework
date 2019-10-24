@@ -4,6 +4,22 @@ Changelog
 Unreleased
 ----------
 
+4.17.0 - (October 21, 2019)
+------------------
+### Changed
+* Duplicate IDs in examples changed.
+* Updated previous and next buttons in the calendar back to a HTML button instead of using the terra-button component due to discrepancies with the hover styling in low-light theme.
+* Update Jest snapshots
+
+4.16.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+### Added
+* Added `isIncomplete` prop and stylings
+* Added `isInvalid` prop and stylings
+
 4.15.0 - (October 3, 2019)
 ------------------
 ### Changed

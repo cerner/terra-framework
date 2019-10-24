@@ -11,6 +11,8 @@ exports[`should render a controlled date picker 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -60,8 +62,11 @@ exports[`should render a controlled date picker 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
+            required={false}
             shouldShowPicker={false}
           />
         }
@@ -118,6 +123,8 @@ exports[`should render a date picker with disabled dates 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -166,8 +173,11 @@ exports[`should render a date picker with disabled dates 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
+            required={false}
             shouldShowPicker={false}
           />
         }
@@ -223,6 +233,8 @@ exports[`should render a date picker with filtered dates 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -271,8 +283,11 @@ exports[`should render a date picker with filtered dates 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
+            required={false}
             shouldShowPicker={false}
           />
         }
@@ -328,6 +343,8 @@ exports[`should render a date picker with included dates 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -376,8 +393,11 @@ exports[`should render a date picker with included dates 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
+            required={false}
             shouldShowPicker={false}
           />
         }
@@ -433,6 +453,8 @@ exports[`should render a date picker with min and max dates 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -481,8 +503,11 @@ exports[`should render a date picker with min and max dates 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
+            required={false}
             shouldShowPicker={false}
           />
         }
@@ -538,6 +563,8 @@ exports[`should render a date picker with onBlur 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -586,8 +613,11 @@ exports[`should render a date picker with onBlur 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
+            required={false}
             shouldShowPicker={false}
           />
         }
@@ -643,6 +673,8 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -691,8 +723,11 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
+            required={false}
             shouldShowPicker={false}
           />
         }
@@ -748,6 +783,8 @@ exports[`should render a date picker with onChange 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -796,8 +833,11 @@ exports[`should render a date picker with onChange 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
+            required={false}
             shouldShowPicker={false}
           />
         }
@@ -853,6 +893,8 @@ exports[`should render a date picker with onChangeRaw 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -901,8 +943,11 @@ exports[`should render a date picker with onChangeRaw 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
+            required={false}
             shouldShowPicker={false}
           />
         }
@@ -958,6 +1003,8 @@ exports[`should render a date picker with onFocus 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -1006,8 +1053,11 @@ exports[`should render a date picker with onFocus 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
+            required={false}
             shouldShowPicker={false}
           />
         }
@@ -1063,6 +1113,8 @@ exports[`should render a date picker with onSelect 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -1111,8 +1163,11 @@ exports[`should render a date picker with onSelect 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
+            required={false}
             shouldShowPicker={false}
           />
         }
@@ -1168,6 +1223,8 @@ exports[`should render a default date input and date picker 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -1216,8 +1273,11 @@ exports[`should render a default date input and date picker 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
+            required={false}
             shouldShowPicker={false}
           />
         }
@@ -1278,6 +1338,8 @@ exports[`should render a default date input with custom input attributes 1`] = `
                 "id": "terra-date-input",
               }
             }
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -1331,8 +1393,11 @@ exports[`should render a default date input with custom input attributes 1`] = `
                 "id": "terra-date-input",
               }
             }
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
+            required={false}
             shouldShowPicker={false}
           />
         }
@@ -1388,6 +1453,8 @@ exports[`should render a disabled date picker 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -1436,8 +1503,11 @@ exports[`should render a disabled date picker 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
+            required={false}
             shouldShowPicker={false}
           />
         }
@@ -1493,6 +1563,8 @@ exports[`should render a required date input and date picker 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
             shouldShowPicker={false}
@@ -1541,8 +1613,11 @@ exports[`should render a required date input and date picker 1`] = `
         customInput={
           <InjectIntl(DatePickerInput)
             buttonRefCallback={[Function]}
+            isIncomplete={false}
+            isInvalid={false}
             onButtonFocus={[Function]}
             onCalendarButtonClick={[Function]}
+            required={true}
             shouldShowPicker={false}
           />
         }

@@ -4,6 +4,19 @@ Changelog
 Unreleased
 ----------
 
+6.16.0 - (October 21, 2019)
+------------------
+### Changed
+* Updated wdio screenshots
+
+6.15.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+### Fixed
+* Fixed some tests that were consuming changes to terra-form-select
+
 6.14.0 - (October 3, 2019)
 ------------------
 ### Changed

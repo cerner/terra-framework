@@ -19,6 +19,16 @@ Unreleased
 * Added 'rejectAction' prop that takes an object with a 'text' string and 'onClick' function attributes
 * Added a 'emphasizedAction' oneOf to choose between emphasizing the accept button, reject button, or neither.
 
+3.16.0 - (October 21, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+3.15.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 ### Fixed
 * Added terra-breakpoints to dependencies for the project
 

@@ -29,6 +29,14 @@ const propTypes = {
    * */
   intl: intlShape.isRequired,
   /**
+  * Whether the input displays as Incomplete. Use when no value has been provided. _(usage note: `required` must also be set)_.
+  */
+  isIncomplete: PropTypes.bool,
+  /**
+  * Whether the input displays as Invalid. Use when value does not meet validation pattern.
+  */
+  isInvalid: PropTypes.bool,
+  /**
    * Name of the date input.
    */
   name: PropTypes.string,
@@ -61,6 +69,10 @@ const propTypes = {
    */
   placeholder: PropTypes.string,
   /**
+   * Whether or not the date is required.
+   */
+  required: PropTypes.bool,
+  /**
    * @private Internal prop for showing date picker.
    */
   shouldShowPicker: PropTypes.bool,
@@ -73,6 +85,8 @@ const propTypes = {
 const defaultProps = {
   buttonRefCallback: undefined,
   inputAttributes: undefined,
+  isIncomplete: false,
+  isInvalid: false,
   name: undefined,
   onBlur: undefined,
   onChange: undefined,
@@ -80,6 +94,7 @@ const defaultProps = {
   onFocus: undefined,
   onButtonFocus: undefined,
   onKeyDown: undefined,
+  required: false,
   placeholder: undefined,
   value: undefined,
 };
@@ -129,6 +144,8 @@ class DatePickerInput extends React.Component {
       buttonRefCallback,
       inputAttributes,
       intl,
+      isIncomplete,
+      isInvalid,
       name,
       onBlur,
       onChange,
@@ -137,6 +154,7 @@ class DatePickerInput extends React.Component {
       onButtonFocus,
       onKeyDown,
       placeholder,
+      required,
       value,
       ...customProps
     } = this.props;
@@ -150,6 +168,15 @@ class DatePickerInput extends React.Component {
     const additionalInputProps = { ...customProps, ...inputAttributes };
 
     const dateValue = DateUtil.convertToISO8601(value, DateUtil.getFormatByLocale(intl.locale));
+    const inputClasses = cx([
+      'input',
+      { 'is-invalid': isInvalid },
+      { 'is-incomplete': isIncomplete && required && !isInvalid },
+    ]);
+    const buttonClasses = cx([
+      'button',
+      { 'is-invalid': isInvalid },
+    ]);
     const buttonText = intl.formatMessage({ id: 'Terra.datePicker.openCalendar' });
 
     return (
@@ -164,7 +191,7 @@ class DatePickerInput extends React.Component {
         />
         <Input
           {...additionalInputProps}
-          className={cx('input')}
+          className={inputClasses}
           type="text"
           name={'terra-date-'.concat(name)}
           value={value}
@@ -175,7 +202,7 @@ class DatePickerInput extends React.Component {
           aria-label={intl.formatMessage({ id: 'Terra.datePicker.date' })}
         />
         <Button
-          className={cx('button')}
+          className={buttonClasses}
           text={buttonText}
           onClick={this.handleOnButtonClick}
           onKeyDown={this.handleOnKeyDown}
