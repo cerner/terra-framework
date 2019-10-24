@@ -6,6 +6,9 @@ Unreleased
 ### Changed
 * Axe violation fixed for scrollable content.
 
+### Added
+* Added refCallback prop to infinite-list to expose ref of Listbox 
+
 3.19.0 - (October 16, 2019)
 ------------------
 ### Changed
