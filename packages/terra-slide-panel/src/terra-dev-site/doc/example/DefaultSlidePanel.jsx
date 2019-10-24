@@ -85,16 +85,6 @@ class DefaultSlidePanel extends React.Component {
     this.handleFullscreenToggle = this.handleFullscreenToggle.bind(this);
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState && !prevState.panelIsOpen) {
-      // Shift focus to button in panel container
-      document.getElementById('panelToggleBtn').focus();
-    } else {
-      // Shift focus to button in main container
-      document.getElementById('mainToggleBtn').focus();
-    }
-  }
-
   handlePanelToggle() {
     this.setState(prevState => ({
       panelIsOpen: !prevState.panelIsOpen,
