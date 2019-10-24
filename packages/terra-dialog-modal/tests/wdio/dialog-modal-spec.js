@@ -69,6 +69,8 @@ describe('Dialog Modal', () => {
     Terra.it.matchesScreenshot('focused shifted outside the beginning of the modal', { selector: '#root' });
 
     it('does not focus on interactive content within the app when modal is open and focus is shifted forwards from the modal dialog', () => {
+      browser.refresh();
+      browser.click('#trigger-dialog-modal');
       browser.keys(['Tab', 'Tab', 'Tab']);
     });
 

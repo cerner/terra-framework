@@ -492,6 +492,7 @@ class InfiniteList extends React.Component {
     if (role && role.length > 0 && role !== 'none') {
       attrSpread.role = role;
     }
+    attrSpread.tabIndex = '0';
 
     let newChildren;
     let visibleChildren;

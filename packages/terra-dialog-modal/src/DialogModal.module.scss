@@ -71,15 +71,23 @@
     width: 100%; // Needed for IE to wrap content correctly in flexbox
   }
 
+  .dialog-modal-container:focus {
+    outline: none;
+  }
+
   .dialog-modal-header,
   .dialog-modal-footer {
     flex: 0 0 auto;
   }
-
+  
   .dialog-modal-body {
     background-color: var(--terra-dialog-modal-body-background-color);
     flex: 0 1 auto;
     overflow-y: auto;
     padding: var(--terra-dialog-modal-body-padding, 0.7142857143rem);
+  }
+
+  .dialog-modal-body:focus {
+    outline: none;
   }
 }

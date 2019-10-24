@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React from 'react';
 import AbstractModal from 'terra-abstract-modal';
 import PropTypes from 'prop-types';
@@ -89,7 +90,7 @@ const DialogModal = (props) => {
       <div {...customProps} className={cx('dialog-modal-inner-wrapper', customProps.className)}>
         <div className={cx('dialog-modal-container')}>
           <div>{header}</div>
-          <div className={cx('dialog-modal-body')}>{children}</div>
+          <div className={cx('dialog-modal-body')} tabIndex="0">{children}</div>
           <div>{footer}</div>
         </div>
       </div>
