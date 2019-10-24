@@ -654,7 +654,6 @@ class DateTimePicker extends React.Component {
 
         <div className={cx('time-facade')}>
           <TimeInput
-            data-date-time-input
             onBlur={this.handleOnTimeBlur}
             onChange={this.handleTimeChange}
             onFocus={this.handleOnTimeInputFocus}
