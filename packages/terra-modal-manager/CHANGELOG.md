@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+6.16.0 - (October 21, 2019)
+------------------
 ### Changed
 * Updated wdio screenshots
 

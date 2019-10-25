@@ -28,6 +28,8 @@ class SlidePanelDemo extends React.Component {
               <button id="focus-button" type="button" className={cx('button')} onClick={this.handlePanelToggle}>Close panel</button>
             </div>
           )}
+          panelAriaLabel="Panel content area"
+          mainAriaLabel="Main content area"
           panelSize="small"
           panelBehavior="overlay"
           isOpen={this.state.panelIsOpen}

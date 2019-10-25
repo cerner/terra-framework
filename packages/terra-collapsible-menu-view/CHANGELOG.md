@@ -6,6 +6,11 @@ Unreleased
 ### Added
 * Added `moreButtonVariant` prop to switch 'More Button' between `neutral` and `utility` variants.
 
+6.16.0 - (October 21, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 6.15.0 - (October 16, 2019)
 ------------------
 ### Changed
