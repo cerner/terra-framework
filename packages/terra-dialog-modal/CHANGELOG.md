@@ -4,6 +4,19 @@ Changelog
 Unreleased
 ----------
 ### Added
+* Added `rootSelector` prop to help prevent focus from shifting outside of the DialogModal when it is opened.
+
+3.17.0 - (October 21, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+3.16.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+### Added
 * Added `closeOnOutsideClick` prop to differentiate close on outside click from close by escape key.
 
 3.15.0 - (October 3, 2019)

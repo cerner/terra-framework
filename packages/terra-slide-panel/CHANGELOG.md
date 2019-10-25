@@ -3,6 +3,14 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added `aria-label` to the "Main" and "Panel" containers.
+* Added `mainAriaLabel` and `panelAriaLabel` as optional props.
+
+3.18.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
 
 3.17.0 - (October 3, 2019)
 ------------------

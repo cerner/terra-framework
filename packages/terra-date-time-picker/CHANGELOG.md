@@ -3,6 +3,29 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Duplicate ID in examples changed.
+* Changed 12-hour format appearance for mobile and desktop.
+* Meridiem select on Desktop has been changed to buttons which means that the WebdriverIO reference screenshots (if any) and/or any code in the consumer application that accesses the old meridiem select functionality on the Desktop view need to be updated.
+
+4.17.0 - (October 21, 2019)
+------------------
+### Changed
+* Updated WDIO screenshots to account for button updates in terra-date-picker
+
+### Fixed
+* Fixed onBlur event data for entering invalid dates.
+
+4.16.0 - (October 16, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+### Added
+* Added `isIncomplete` prop and stylings
+* Added `isInvalid` prop and stylings
+* Added `isInvalidMeridiem` prop
+* Added `required` prop
 
 4.15.0 - (October 3, 2019)
 ------------------
@@ -16,7 +39,6 @@ Unreleased
 
 4.13.0 - (September 19, 2019)
 ------------------
-### Changed
 * Added `browser.refresh()` to `date-time-picker-spec` to support wdio tests failing in theming repos.
 * Updated Jest snapshots and WDIO screenshots
 * Removed `details` tag from doc-site.
@@ -57,12 +79,11 @@ Unreleased
 * Allow blur to be handled after the date time ambiguity is resolved.
 
 ### Changed
+* Fixed all the accessibility issues and updated the tests and screenshots accordingly.
+* Added documentation on required peerDependencies
 * Updated package.json test scripts
 * Corrected Typos.
 * Updated wdio test to work with changes in terra-date-picker.
-* Fixed all the accessibility issues and updated the tests and screenshots accordingly.
-* Added documentation on required peerDependencies
-* updated package.json test scripts
 * Updated to interface with react-intl's context rather than old React Context API.
 
 4.9.0 - (July 30, 2019)

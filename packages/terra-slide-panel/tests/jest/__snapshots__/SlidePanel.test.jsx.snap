@@ -123,6 +123,27 @@ exports[`should render a SlidePanel with panel content 1`] = `
 </div>
 `;
 
+exports[`should render a SlidePanel with panelAriaLabel and mainAriaLabel specified 1`] = `
+<div
+  class="slide-panel"
+  data-slide-panel-panel-behavior="overlay"
+  data-slide-panel-panel-position="end"
+  data-slide-panel-panel-size="small"
+>
+  <div
+    aria-label="Main content area"
+    class="main"
+    tabindex="-1"
+  />
+  <div
+    aria-hidden="true"
+    aria-label="Panel content area"
+    class="panel"
+    tabindex="-1"
+  />
+</div>
+`;
+
 exports[`should render a SlidePanel with panelBehavior = overlay 1`] = `
 <div
   class="slide-panel"

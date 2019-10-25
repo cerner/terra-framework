@@ -17,6 +17,36 @@
           outline: none;
           z-index: 1;
         }
+
+        &.is-invalid {
+          border-color: var(--terra-date-picker-input-invalid-border-color, #e50000);
+          box-shadow: var(--terra-date-picker-input-invalid-box-shadow, 0 0 0 1px #e50000);
+          z-index: 1;
+
+          &:focus {
+            border-color: var(--terra-date-picker-input-invalid-focus-border-color, #e50000);
+            box-shadow: var(--terra-date-picker-input-invalid-focus-box-shadow, 0 0 0 1px #e50000);
+          }
+        }
+
+        &.is-incomplete {
+          background-color: var(--terra-date-picker-input-incomplete-background-color, #ffc);
+
+          &:hover {
+            background-color: var(--terra-date-picker-input-incomplete-hover-background-color, #ffc);
+          }
+
+          &:focus {
+            background-color: var(--terra-date-picker-input-incomplete-focus-background-color, #ffc);
+          }
+
+          &[disabled] {
+            background-color: var(--terra-date-picker-input-incomplete-disabled-background-color, #ffc);
+            border: var(--terra-date-picker-input-incomplete-disabled-border, 1px solid #868a8c);
+            color: var(--terra-date-picker-input-incomplete-disabled-color, #1c1f21);
+            opacity: var(--terra-date-picker-input-incomplete-disabled-opacity, 0.25);
+          }
+        }
       }
 
       .button {
@@ -35,6 +65,17 @@
           border-color: var(--terra-date-picker-button-focus-border-color, #26a2e5);
           box-shadow: var(--terra-date-picker-button-focus-box-shadow, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
           outline: none;
+        }
+
+        &.is-invalid {
+          border-color: var(--terra-date-picker-button-invalid-border-color, #e50000);
+          box-shadow: var(--terra-date-picker-button-invalid-box-shadow, 0 0 0 1px #e50000);
+
+          &:focus {
+            border-color: var(--terra-date-picker-button-invalid-focus-border-color, #e50000);
+            box-shadow: var(--terra-date-picker-button-invalid-focus-box-shadow, 0 0 0 1px #e50000, 0 0 4px 3px rgba(229, 0, 0, 0.35));
+            z-index: 2;
+          }
         }
       }
     }

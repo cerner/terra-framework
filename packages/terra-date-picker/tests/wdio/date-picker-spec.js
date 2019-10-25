@@ -333,6 +333,25 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       Terra.it.validatesElement({ axeRules: { rules: ignoredA11y } });
     });
 
+    describe('Incomplete DatePickerField', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-field');
+        browser.click('#incomplete-toggle');
+      });
+
+      Terra.it.validatesElement({ axeRules: { rules: ignoredA11y } });
+    });
+
+    describe('Invalid and Incomplete DatePickerField', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-field');
+        browser.click('#validity-toggle');
+        browser.click('#incomplete-toggle');
+      });
+
+      Terra.it.validatesElement({ axeRules: { rules: ignoredA11y } });
+    });
+
     describe('Disabled DatePickerField', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-date-picker/date-picker/disabled-date-picker-field');
