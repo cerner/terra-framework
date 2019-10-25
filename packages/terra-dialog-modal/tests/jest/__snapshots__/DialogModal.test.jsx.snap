@@ -20,6 +20,7 @@ exports[`should mount an open dialogModal 1`] = `
       }
       isOpen={false}
       onRequestClose={[Function]}
+      rootSelector="#root"
       width="1120"
     />
     <Button
@@ -82,6 +83,7 @@ exports[`should mount an open dialogModal 320 width 1`] = `
       }
       isOpen={false}
       onRequestClose={[Function]}
+      rootSelector="#root"
       width="320"
     />
     <Button
@@ -144,6 +146,7 @@ exports[`should mount an open dialogModal 960 width 1`] = `
       }
       isOpen={false}
       onRequestClose={[Function]}
+      rootSelector="#root"
       width="960"
     />
     <Button
@@ -206,6 +209,7 @@ exports[`should mount an open dialogModal 1280 width 1`] = `
       }
       isOpen={false}
       onRequestClose={[Function]}
+      rootSelector="#root"
       width="1280"
     />
     <Button
@@ -268,6 +272,7 @@ exports[`should mount an open dialogModal 1600 width 1`] = `
       }
       isOpen={false}
       onRequestClose={[Function]}
+      rootSelector="#root"
       width="1600"
     />
     <Button
@@ -330,7 +335,71 @@ exports[`should mount an open dialogModal 1600 width 2`] = `
       }
       isOpen={false}
       onRequestClose={[Function]}
+      rootSelector="#root"
       width="1600"
+    />
+    <Button
+      isBlock={false}
+      isCompact={false}
+      isDisabled={false}
+      isIconOnly={false}
+      isReversed={false}
+      onClick={[Function]}
+      text="Trigger Dialog Modal"
+      type="button"
+      variant="neutral"
+    >
+      <button
+        aria-disabled={false}
+        className="button neutral"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        type="button"
+      >
+        <span
+          className="button-label text-only"
+        >
+          <span
+            className=""
+          >
+            Trigger Dialog Modal
+          </span>
+        </span>
+      </button>
+    </Button>
+  </div>
+</DialogModalExample>
+`;
+
+exports[`should set the rootSelector 1`] = `
+<DialogModalExample
+  rootSelector="#myroot"
+>
+  <div>
+    <DialogModal
+      ariaLabel="Dialog Modal Example"
+      closeOnOutsideClick={false}
+      footer={
+        <ActionFooter
+          start="Footer Goes here"
+        />
+      }
+      header={
+        <ActionHeader
+          level={1}
+          onClose={[Function]}
+          title="Action Header used here"
+        />
+      }
+      isOpen={false}
+      onRequestClose={[Function]}
+      rootSelector="#root"
+      width="1120"
     />
     <Button
       isBlock={false}
@@ -389,6 +458,7 @@ exports[`should shallow an open dialogModal 1`] = `
     }
     isOpen={false}
     onRequestClose={[Function]}
+    rootSelector="#root"
     width="1120"
   >
     <p>
@@ -436,6 +506,7 @@ exports[`should shallow an open dialogModal 320 width 1`] = `
     }
     isOpen={false}
     onRequestClose={[Function]}
+    rootSelector="#root"
     width="320"
   >
     <p>
@@ -483,6 +554,7 @@ exports[`should shallow an open dialogModal 960 width 1`] = `
     }
     isOpen={false}
     onRequestClose={[Function]}
+    rootSelector="#root"
     width="960"
   >
     <p>
@@ -530,6 +602,7 @@ exports[`should shallow an open dialogModal 1280 width 1`] = `
     }
     isOpen={false}
     onRequestClose={[Function]}
+    rootSelector="#root"
     width="1280"
   >
     <p>
@@ -577,6 +650,7 @@ exports[`should shallow an open dialogModal 1600 width 1`] = `
     }
     isOpen={false}
     onRequestClose={[Function]}
+    rootSelector="#root"
     width="1600"
   >
     <p>
