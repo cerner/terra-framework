@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Changed 12-hour format appearance for mobile and desktop.
+  * Meridiem select on Desktop has been changed to buttons which means that the WebdriverIO reference screenshots (if any) and/or any code in the consumer application that accesses the old meridiem select functionality on the Desktop view need to be updated.
 
 4.14.0 - (October 21, 2019)
 ------------------
@@ -32,7 +35,6 @@ Unreleased
 
 4.10.0 - (September 19, 2019)
 ------------------
-### Changed
 * Removed `details` tag from doc-site.
 * Doc site example module import syntax modified to use package.json name resolution
 * Fallback the time notation variant to `24-hour` for locales that do not use the `12-hour` notation.
@@ -63,7 +65,7 @@ Unreleased
 * Removed Ignore Accessibility condition from wdio tests.
 * Changed help text color to match required contrast ratio.
 * Added documentation on required peerDependencies
-* updated package.json test scripts
+* Updated package.json test scripts
 
 ### Fixed
 * Fixed onChange callback triggering twice for values prepended with zero.
