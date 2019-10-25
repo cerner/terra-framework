@@ -269,7 +269,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     before(() => {
       browser.refresh();
       // Removes the blinking cursor to prevent screenshot mismatches.
-      Terra.hideInputCaret('input[name="terra-time-minute-input"]');
+      Terra.hideInputCaret('input[name="terra-time-hour-input"]');
       browser.setValue('input[name="terra-date-input"]', '04/15/2019');
     });
 

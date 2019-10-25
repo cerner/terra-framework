@@ -629,29 +629,30 @@ class DateTimePicker extends React.Component {
           value={dateTime && dateTime.isValid() ? dateTime.format() : ''}
         />
 
-        <DatePicker
-          onCalendarButtonClick={this.handleOnCalendarButtonClick}
-          onChange={this.handleDateChange}
-          onChangeRaw={this.handleDateChangeRaw}
-          onSelect={this.handleOnSelect}
-          onClickOutside={onClickOutside}
-          onBlur={this.handleOnDateBlur}
-          onFocus={this.handleOnDateInputFocus}
-          excludeDates={excludeDates}
-          filterDate={filterDate}
-          includeDates={includeDates}
-          inputAttributes={dateInputAttributes}
-          maxDate={maxDate}
-          minDate={minDate}
-          selectedDate={dateValue}
-          name="input"
-          disabled={disabled}
-          disableButtonFocusOnClose
-          isIncomplete={isIncomplete}
-          isInvalid={isInvalid}
-          required={required}
-        />
-
+        <div className={cx('date-facade')}>
+          <DatePicker
+            onCalendarButtonClick={this.handleOnCalendarButtonClick}
+            onChange={this.handleDateChange}
+            onChangeRaw={this.handleDateChangeRaw}
+            onSelect={this.handleOnSelect}
+            onClickOutside={onClickOutside}
+            onBlur={this.handleOnDateBlur}
+            onFocus={this.handleOnDateInputFocus}
+            excludeDates={excludeDates}
+            filterDate={filterDate}
+            includeDates={includeDates}
+            inputAttributes={dateInputAttributes}
+            maxDate={maxDate}
+            minDate={minDate}
+            selectedDate={dateValue}
+            name="input"
+            disabled={disabled}
+            disableButtonFocusOnClose
+            isIncomplete={isIncomplete}
+            isInvalid={isInvalid}
+            required={required}
+          />
+        </div>
         <div className={cx('time-facade')}>
           <TimeInput
             onBlur={this.handleOnTimeBlur}
