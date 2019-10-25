@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added `rootSelector` prop to help prevent focus from shifting outside of the DialogModal when it is opened.
 
 3.17.0 - (October 21, 2019)
 ------------------
