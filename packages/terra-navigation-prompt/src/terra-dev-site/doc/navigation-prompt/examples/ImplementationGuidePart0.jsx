@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const Form = ({ title }) => {
+const Form = ({ title, ariaLabel }) => {
   const [inputValue, setInputValue] = useState('');
 
   return (
     <div>
       <p>{title}</p>
       <input
+        aria-label={ariaLabel}
         type="text"
         onChange={(event) => {
           setInputValue(event.target.value);
@@ -28,6 +29,7 @@ const Form = ({ title }) => {
 
 Form.propTypes = {
   title: PropTypes.string,
+  ariaLabel: PropTypes.string,
 };
 
 const FormSwitcher = () => {
@@ -56,7 +58,7 @@ const FormSwitcher = () => {
       >
         Switch to Form 2
       </button>
-      <Form title={activeForm} key={activeForm} />
+      <Form title={activeForm} key={activeForm} ariaLabel={activeForm} />
     </div>
   );
 };
