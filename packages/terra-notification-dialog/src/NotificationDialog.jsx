@@ -217,6 +217,9 @@ class NotificationDialog extends React.Component {
       isOpen,
       buttonOrder,
       emphasizedAction,
+      primaryAction,
+      secondaryAction,
+      message,
       ...customProps
     } = this.props;
 
@@ -247,15 +250,22 @@ class NotificationDialog extends React.Component {
                 <div className={cx('text-wrapper')}>
                   {title
                     && <div id="notification-dialog-title" className={cx('title')}>{title}</div>}
-                  {startMessage
-                    && <div className={cx('message')}>{startMessage}</div>}
+                  {(startMessage || message)
+                    && <div className={cx('message')}>{(startMessage || message)}</div>}
                   {content
                     && <div>{content}</div>}
                   {endMessage
                     && <div className={cx('message')}>{endMessage}</div>}
                 </div>
               </div>
-              <div className={cx('footer-body')}>{actionSection(acceptAction, rejectAction, buttonOrder, emphasizedAction)}</div>
+              <div className={cx('footer-body')}>
+                {actionSection(
+                  acceptAction || primaryAction,
+                  rejectAction || secondaryAction,
+                  buttonOrder,
+                  emphasizedAction,
+                )}
+              </div>
             </div>
           </div>
         </FocusTrap>
