@@ -6,7 +6,5 @@
   "Terra.timeInput.seconds": "Seconds",
   "Terra.timeInput.hh": "hh",
   "Terra.timeInput.mm": "mm",
-  "Terra.timeInput.ss": "ss",
-  "Terra.timeInput.display.meridiem": "Display Meridiem",
-  "Terra.timeInput.select.meridiem": "Select Meridiem"
+  "Terra.timeInput.ss": "ss"
 }

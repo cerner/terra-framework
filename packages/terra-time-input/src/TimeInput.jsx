@@ -149,11 +149,8 @@ class TimeInput extends React.Component {
     this.handleHourBlur = this.handleHourBlur.bind(this);
     this.handleMinuteBlur = this.handleMinuteBlur.bind(this);
     this.handleSecondBlur = this.handleSecondBlur.bind(this);
-    this.handleMeridiemBlur = this.handleMeridiemBlur.bind(this);
-    this.handleMeridiemChange = this.handleMeridiemChange.bind(this);
-    this.handleMeridiemInputKeyDown = this.handleMeridiemInputKeyDown.bind(this);
-    this.handleMeridiemInputFocus = this.handleMeridiemInputFocus.bind(this);
-    this.handleMeridiemSelectFocus = this.handleMeridiemSelectFocus.bind(this);
+    this.handleMeridiemButtonFocus = this.handleMeridiemButtonFocus.bind(this);
+    this.handleMeridiemButtonBlur = this.handleMeridiemButtonBlur.bind(this);
     this.handleMeridiemButtonChange = this.handleMeridiemButtonChange.bind(this);
 
     let hour = TimeUtil.splitHour(value);
@@ -192,7 +189,6 @@ class TimeInput extends React.Component {
       hourInitialFocused: false,
       minuteInitialFocused: false,
       secondInitialFocused: false,
-      meridiemFocused: false,
     };
   }
 
@@ -241,19 +237,31 @@ class TimeInput extends React.Component {
   handleSecondFocus(event) {
     this.handleFocus(event);
     this.setState({ secondInitialFocused: true });
-    this.secondInput.setSelectionRange(0, this.secondInput.value.length);
+
+    // This check is _needed_ to avoid the contextual menu on mobile devices coming up every time the focus shifts.
+    if (!TimeUtil.isConsideredMobileDevice()) {
+      this.secondInput.setSelectionRange(0, this.secondInput.value.length);
+    }
   }
 
   handleMinuteFocus(event) {
     this.handleFocus(event);
     this.setState({ minuteInitialFocused: true });
-    this.minuteInput.setSelectionRange(0, this.minuteInput.value.length);
+
+    // This check is _needed_ to avoid the contextual menu on mobile device coming up every time the focus shifts.
+    if (!TimeUtil.isConsideredMobileDevice()) {
+      this.minuteInput.setSelectionRange(0, this.minuteInput.value.length);
+    }
   }
 
   handleHourFocus(event) {
     this.handleFocus(event);
     this.setState({ hourInitialFocused: true });
-    this.hourInput.setSelectionRange(0, this.hourInput.value.length);
+
+    // This check is _needed_ to avoid the contextual menu on mobile device coming up every time the focus shifts.
+    if (!TimeUtil.isConsideredMobileDevice()) {
+      this.hourInput.setSelectionRange(0, this.hourInput.value.length);
+    }
   }
 
   handleHourBlur(event) {
@@ -271,9 +279,8 @@ class TimeInput extends React.Component {
     this.setState({ secondInitialFocused: false });
   }
 
-  handleMeridiemBlur(event) {
+  handleMeridiemButtonBlur(event) {
     this.handleBlur(event, TimeUtil.inputType.MERIDIEM);
-    this.setState({ meridiemFocused: false });
   }
 
   handleBlur(event, type) {
@@ -379,14 +386,9 @@ class TimeInput extends React.Component {
     }
 
     const moveFocusOnChange = () => {
-      if (inputValue.length === 2) {
-        if (this.props.showSeconds) {
-          // Move focus to second if second is shown and minute input has a valid and complete entry
-          this.secondInput.focus();
-        } else if (TimeUtil.getVariantFromLocale(this.props) === TimeUtil.FORMAT_12_HOUR && this.meridiemSelect) {
-          // Else move focus to the meridiem for 12 hours times if the minute input has a valid and complete entry.
-          this.meridiemSelect.focus();
-        }
+      // Move focus to second if second is shown and minute input has a valid and complete entry
+      if (inputValue.length === 2 && this.props.showSeconds) {
+        this.secondInput.focus();
       }
     };
 
@@ -418,39 +420,13 @@ class TimeInput extends React.Component {
       }
     }
 
-    const moveFocusOnChange = () => {
-      // Move focus to the meridiem for 12 hours times if the second input has a valid and complete entry.
-      if (TimeUtil.getVariantFromLocale(this.props) === TimeUtil.FORMAT_12_HOUR && inputValue.length === 2 && this.meridiemSelect) {
-        this.meridiemSelect.focus();
-      }
-    };
-
-    this.handleValueChange(event, TimeUtil.inputType.SECOND, inputValue, this.state.meridiem, moveFocusOnChange);
+    this.handleValueChange(event, TimeUtil.inputType.SECOND, inputValue, this.state.meridiem);
   }
 
-  handleMeridiemChange(event) {
-    this.setState({
-      meridiem: event.target.value,
-    });
-
-    this.handleValueChange(event, TimeUtil.inputType.HOUR, this.state.hour.toString(), event.target.value);
-  }
-
-  handleMeridiemInputFocus(event) {
-    // When clicked to put focus on the meridiem input, the focus would then need to be passed and set on the meridium select,
-    // which would call handleMeridiemSelectFocus, to get the desired behavior and styles.
-    this.meridiemSelect.focus();
-
+  handleMeridiemButtonFocus(event) {
     if (this.props.onFocus && !this.timeInputContainer.current.contains(event.relatedTarget)) {
       this.props.onFocus(event);
     }
-  }
-
-  handleMeridiemSelectFocus() {
-    this.setState({
-      isFocused: true,
-      meridiemFocused: true,
-    });
   }
 
   /**
@@ -509,7 +485,7 @@ class TimeInput extends React.Component {
    * Takes a key input from the minute input, and processes it based on the value of the keycode.
    * If the key is an up or down arrow, it increments/decrements the minute. If the left arrow
    * is pressed, it shifts focus to the hour input. If the right arrow is pressed, it shifts
-   * focus to the merdiem input.
+   * focus to the meridiem input.
    * @param {Object} event Event object generated from the event delegation.
    */
   handleMinuteInputKeyDown(event) {
@@ -534,12 +510,8 @@ class TimeInput extends React.Component {
       this.focusHour(event);
     }
 
-    if (event.keyCode === KeyCode.KEY_RIGHT) {
-      if (this.props.showSeconds) {
-        this.focusSecondFromMinute(event);
-      } else {
-        this.focusMeridiemFromMinute(event);
-      }
+    if (event.keyCode === KeyCode.KEY_RIGHT && this.props.showSeconds) {
+      this.focusSecondFromMinute(event);
     }
   }
 
@@ -556,22 +528,11 @@ class TimeInput extends React.Component {
     }
   }
 
-  focusMeridiemFromMinute(event) {
-    // If the minute is empty or the cursor is after the value, move focus to the meridiem.
-    if ((this.state.minute.length === 0
-      || this.state.minute.length === this.minuteInput.selectionEnd)
-      && this.meridiemSelect
-    ) {
-      this.meridiemSelect.focus();
-      event.preventDefault();
-    }
-  }
-
   focusSecondFromMinute(event) {
     // If the minute is empty or the cursor is after the value, move focus to the meridiem.
     if ((this.state.minute.length === 0
-        || this.state.minute.length === this.minuteInput.selectionEnd)
-        && this.secondInput
+      || this.state.minute.length === this.minuteInput.selectionEnd)
+      && this.secondInput
     ) {
       this.secondInput.focus();
       if (this.state.second) {
@@ -585,7 +546,7 @@ class TimeInput extends React.Component {
    * Takes a key input from the second input, and processes it based on the value of the keycode.
    * If the key is an up or down arrow, it increments/decrements the second. If the left arrow
    * is pressed, it shifts focus to the minute input. If the right arrow is pressed, it shifts
-   * focus to the merdiem input.
+   * focus to the meridiem input.
    * @param {Object} event Event object generated from the event delegation.
    */
   handleSecondInputKeyDown(event) {
@@ -605,13 +566,9 @@ class TimeInput extends React.Component {
     }
 
     if (event.keyCode === KeyCode.KEY_LEFT
-        || event.keyCode === KeyCode.KEY_DELETE
-        || event.keyCode === KeyCode.KEY_BACK_SPACE) {
+      || event.keyCode === KeyCode.KEY_DELETE
+      || event.keyCode === KeyCode.KEY_BACK_SPACE) {
       this.focusMinuteFromSecond(event);
-    }
-
-    if (event.keyCode === KeyCode.KEY_RIGHT) {
-      this.focusMeridiemFromSecond(event);
     }
   }
 
@@ -625,17 +582,6 @@ class TimeInput extends React.Component {
         this.minuteInput.setSelectionRange(this.state.minute.length, this.state.minute.length);
         event.preventDefault();
       }
-    }
-  }
-
-  focusMeridiemFromSecond(event) {
-    // If the second is empty or the cursor is after the value, move focus to the meridiem.
-    if ((this.state.second.length === 0
-        || this.state.second.length === this.secondInput.selectionEnd)
-        && this.meridiemSelect
-    ) {
-      this.meridiemSelect.focus();
-      event.preventDefault();
     }
   }
 
@@ -697,26 +643,11 @@ class TimeInput extends React.Component {
     return hourString;
   }
 
-  handleMeridiemInputKeyDown(event) {
-    if (event.keyCode === KeyCode.KEY_LEFT
-        || event.keyCode === KeyCode.KEY_DELETE
-        || event.keyCode === KeyCode.KEY_BACK_SPACE) {
-      if (this.props.showSeconds) {
-        this.secondInput.focus();
-        if (this.state.second) {
-          this.secondInput.setSelectionRange(this.state.second.length, this.state.second.length);
-        }
-      } else {
-        this.minuteInput.focus();
-        if (this.state.minute) {
-          this.minuteInput.setSelectionRange(this.state.minute.length, this.state.minute.length);
-        }
-      }
-      event.preventDefault();
-    }
+  handleMeridiemButtonChange(event, selectedKey) {
+    this.handleValueChange(event, TimeUtil.inputType.HOUR, this.state.hour.toString(), selectedKey);
   }
 
-  mobileInput() {
+  render() {
     const {
       disabled,
       inputAttributes,
@@ -738,14 +669,6 @@ class TimeInput extends React.Component {
       variant,
       ...customProps
     } = this.props;
-
-    const timeInputClassNames = cx([
-      'mobile-time-picker',
-      { 'is-focused': this.state.isFocused },
-      { 'is-invalid': isInvalid },
-      { 'is-incomplete': (isIncomplete && required && !isInvalid && !isInvalidMeridiem) },
-      customProps.className,
-    ]);
 
     const anteMeridiemClassNames = cx([
       'meridiem-button',
@@ -757,186 +680,9 @@ class TimeInput extends React.Component {
       { 'is-invalid': isInvalidMeridiem && this.state.meridiem === this.postMeridiem },
     ]);
 
-    const instanceHoursAttrs = { ...hourAttributes };
-    const instanceMinuteAttrs = { ...minuteAttributes };
-    const instanceSecondAttrs = { ...secondAttributes };
     const variantFromLocale = TimeUtil.getVariantFromLocale(this.props);
 
     // Using the state of hour, minute, and second (if shown) create a time in UTC represented in ISO 8601 format.
-    let timeValue = '';
-
-    if (this.state.hour.length > 0 || this.state.minute.length > 0 || this.state.second.length > 0) {
-      let hour = parseInt(this.state.hour, 10);
-
-      if (variantFromLocale === TimeUtil.FORMAT_12_HOUR && this.state.meridiem === this.postMeridiem && hour > 12) {
-        hour += 12;
-      }
-
-      timeValue = 'T'.concat(hour, ':', this.state.minute).concat(showSeconds ? ':'.concat(this.state.second) : '');
-    }
-
-    if (!instanceHoursAttrs.id) {
-      instanceHoursAttrs.id = 'terra-time-hour-'.concat(name);
-    }
-
-    if (!instanceMinuteAttrs.id) {
-      instanceMinuteAttrs.id = 'terra-time-minute-'.concat(name);
-    }
-
-    if (!instanceSecondAttrs.id) {
-      instanceSecondAttrs.id = 'terra-time-second-'.concat(name);
-    }
-
-    return (
-      <div
-        {...customProps}
-        className={timeInputClassNames}
-        ref={this.timeInputContainer}
-      >
-        <input
-          // Create a hidden input for storing the name and value attributes to use when submitting the form.
-          // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
-          type="hidden"
-          name={name}
-          value={timeValue}
-        />
-        <div className={cx('time-input-group')}>
-          <Input
-            {...inputAttributes}
-            {...instanceHoursAttrs}
-            refCallback={(inputRef) => {
-              this.hourInput = inputRef;
-              if (refCallback) refCallback(inputRef);
-            }}
-            className={cx('time-input-hour')}
-            value={this.state.hour}
-            name={'terra-time-hour-'.concat(name)}
-            placeholder={intl.formatMessage({ id: 'Terra.timeInput.hh' })}
-            maxLength="2"
-            onChange={this.handleHourChange}
-            onKeyDown={this.handleHourInputKeyDown}
-            onFocus={this.handleFocus}
-            onBlur={this.handleHourBlur}
-            size="2"
-            pattern="\d*"
-            disabled={disabled}
-          />
-          <label htmlFor={instanceHoursAttrs.id} className={cx('mobile-input-label')}>
-            {intl.formatMessage({ id: 'Terra.timeInput.hours' })}
-          </label>
-        </div>
-        <span className={cx('time-spacer')}>:</span>
-        <div className={cx('time-input-group')}>
-          <Input
-            {...inputAttributes}
-            {...instanceMinuteAttrs}
-            refCallback={(inputRef) => { this.minuteInput = inputRef; }}
-            className={cx('time-input-minute', showSeconds ? 'with-second' : 'without-second')}
-            value={this.state.minute}
-            name={'terra-time-minute-'.concat(name)}
-            placeholder={intl.formatMessage({ id: 'Terra.timeInput.mm' })}
-            maxLength="2"
-            onChange={this.handleMinuteChange}
-            onKeyDown={this.handleMinuteInputKeyDown}
-            onFocus={this.handleFocus}
-            onBlur={this.handleMinuteBlur}
-            size="2"
-            pattern="\d*"
-            disabled={disabled}
-          />
-          <label htmlFor={instanceMinuteAttrs.id} className={cx('mobile-input-label')}>
-            {intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
-          </label>
-        </div>
-        {showSeconds && (
-          <React.Fragment>
-            <span className={cx('time-spacer')}>:</span>
-            <div className={cx('time-input-group')}>
-              <Input
-                {...inputAttributes}
-                {...instanceSecondAttrs}
-                refCallback={(inputRef) => { this.secondInput = inputRef; }}
-                className={cx('time-input-second')}
-                value={this.state.second}
-                name={'terra-time-second-'.concat(name)}
-                placeholder={intl.formatMessage({ id: 'Terra.timeInput.ss' })}
-                maxLength="2"
-                onChange={this.handleSecondChange}
-                onKeyDown={this.handleSecondInputKeyDown}
-                onFocus={this.handleFocus}
-                onBlur={this.handleSecondBlur}
-                size="2"
-                pattern="\d*"
-                disabled={disabled}
-              />
-              <label htmlFor={instanceSecondAttrs.id} className={cx('mobile-input-label')}>
-                {intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
-              </label>
-            </div>
-          </React.Fragment>
-        )}
-        {variantFromLocale === TimeUtil.FORMAT_12_HOUR && (
-          <ButtonGroup selectedKeys={[this.state.meridiem]} onChange={this.handleMeridiemButtonChange} className={cx('meridiem-button-group')}>
-            <ButtonGroup.Button
-              key={this.anteMeridiem}
-              className={anteMeridiemClassNames}
-              text={this.anteMeridiem}
-              onBlur={this.handleMeridiemBlur}
-              onFocus={this.handleFocus}
-              isDisabled={disabled}
-            />
-            <ButtonGroup.Button
-              key={this.postMeridiem}
-              className={postMeridiemClassNames}
-              text={this.postMeridiem}
-              onBlur={this.handleMeridiemBlur}
-              onFocus={this.handleFocus}
-              isDisabled={disabled}
-            />
-          </ButtonGroup>
-        )}
-      </div>
-    );
-  }
-
-  handleMeridiemButtonChange(event, selectedKey) {
-    this.handleValueChange(event, TimeUtil.inputType.HOUR, this.state.hour.toString(), selectedKey);
-  }
-
-  desktopInput() {
-    const {
-      disabled,
-      inputAttributes,
-      isIncomplete,
-      isInvalid,
-      isInvalidMeridiem,
-      minuteAttributes,
-      hourAttributes,
-      intl,
-      onBlur,
-      onChange,
-      onFocus,
-      name,
-      refCallback,
-      required,
-      secondAttributes,
-      showSeconds,
-      value,
-      variant,
-      ...customProps
-    } = this.props;
-
-    const variantFromLocale = TimeUtil.getVariantFromLocale(this.props);
-    const timeInputClassNames = cx([
-      { disabled },
-      'time-input',
-      { 'is-focused': this.state.isFocused },
-      { 'is-invalid': isInvalid },
-      { 'is-incomplete': (isIncomplete && required && !isInvalid && !isInvalidMeridiem) },
-      customProps.className,
-    ]);
-
-    // Using the state of hour and minute create a time in UTC represented in ISO 8601 format.
     let timeValue = '';
 
     if (this.state.hour.length > 0 || this.state.minute.length > 0 || (this.state.second.length > 0 && showSeconds)) {
@@ -953,134 +699,120 @@ class TimeInput extends React.Component {
       }
     }
 
+    const timeInputClassNames = cx([
+      { disabled },
+      'time-input',
+      { 'is-focused': this.state.isFocused },
+      { 'is-invalid': isInvalid },
+      { 'is-incomplete': (isIncomplete && required && !isInvalid && !isInvalidMeridiem) },
+      customProps.className,
+    ]);
+
     /* eslint-disable jsx-a11y/no-static-element-interactions */
     return (
       <div
         {...customProps}
-        className={timeInputClassNames}
         ref={this.timeInputContainer}
+        className={cx('time-input-container')}
       >
-        <input
-          // Create a hidden input for storing the name and value attributes to use when submitting the form.
-          // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
-          type="hidden"
-          name={name}
-          value={timeValue}
-        />
-        <Input
-          {...inputAttributes}
-          {...minuteAttributes}
-          aria-label={intl.formatMessage({ id: 'Terra.timeInput.hours' })}
-          refCallback={(inputRef) => {
-            this.hourInput = inputRef;
-            if (refCallback) refCallback(inputRef);
-          }}
-          className={cx('time-input-hour', 'desktop', { 'initial-focus': this.state.hourInitialFocused })}
-          type="text"
-          value={this.state.hour}
-          name={'terra-time-hour-'.concat(name)}
-          placeholder={intl.formatMessage({ id: 'Terra.timeInput.hh' })}
-          maxLength="2"
-          onChange={this.handleHourChange}
-          onKeyDown={this.handleHourInputKeyDown}
-          onFocus={this.handleHourFocus}
-          onBlur={this.handleHourBlur}
-          size="2"
-          pattern="\d*"
-          disabled={disabled}
-        />
-        <span className={cx('time-spacer')}>:</span>
-        <Input
-          {...inputAttributes}
-          {...minuteAttributes}
-          refCallback={(inputRef) => { this.minuteInput = inputRef; }}
-          aria-label={intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
-          className={cx('time-input-minute', showSeconds ? 'with-second' : 'without-second', 'desktop', { 'initial-focus': this.state.minuteInitialFocused })}
-          type="text"
-          value={this.state.minute}
-          name={'terra-time-minute-'.concat(name)}
-          placeholder={intl.formatMessage({ id: 'Terra.timeInput.mm' })}
-          maxLength="2"
-          onChange={this.handleMinuteChange}
-          onKeyDown={this.handleMinuteInputKeyDown}
-          onFocus={this.handleMinuteFocus}
-          onBlur={this.handleMinuteBlur}
-          size="2"
-          pattern="\d*"
-          disabled={disabled}
-        />
-        {showSeconds && (
-          <React.Fragment>
-            <span className={cx('time-spacer')}>:</span>
-            <Input
-              {...inputAttributes}
-              {...secondAttributes}
-              refCallback={(inputRef) => { this.secondInput = inputRef; }}
-              aria-label={intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
-              className={cx('time-input-second', 'desktop', { 'initial-focus': this.state.secondInitialFocused })}
-              type="text"
-              value={this.state.second}
-              name={'terra-time-second-'.concat(name)}
-              placeholder={intl.formatMessage({ id: 'Terra.timeInput.ss' })}
-              maxLength="2"
-              onChange={this.handleSecondChange}
-              onKeyDown={this.handleSecondInputKeyDown}
-              onFocus={this.handleSecondFocus}
-              onBlur={this.handleSecondBlur}
-              size="2"
-              pattern="\d*"
-              disabled={disabled}
-            />
-          </React.Fragment>
-        )}
-        {variantFromLocale === TimeUtil.FORMAT_12_HOUR && (
-          [
-            <Input
-              {...inputAttributes}
-              aria-label={intl.formatMessage({ id: 'Terra.timeInput.display.meridiem' })} // value in translations set to 'Display Meridiem'
-              aria-readonly
-              className={cx(['meridiem-display', { focused: this.state.meridiemFocused }])}
-              onFocus={this.handleMeridiemInputFocus}
-              key="meridiem_display"
-              tabIndex="-1"
-              value={this.state.meridiem}
-              size={this.state.meridiem.length || 1}
-              readOnly
-              disabled={disabled}
-            />,
-            <div
-              className={cx('meridiem-select-wrapper')}
-              key="meridiem_select_box"
-            >
-              <select
-                aria-label={intl.formatMessage({ id: 'Terra.timeInput.select.meridiem' })} // value in translations set to 'Select Meridiem'
-                ref={(select) => { this.meridiemSelect = select; }}
-                onBlur={this.handleMeridiemBlur}
-                onFocus={this.handleMeridiemSelectFocus}
-                name={'terra-time-meridiem-'.concat(name)}
-                value={this.state.meridiem}
-                className={cx('time-input-meridiem')}
-                onChange={this.handleMeridiemChange}
-                onKeyDown={this.handleMeridiemInputKeyDown}
+        <div className={timeInputClassNames}>
+          <input
+            // Create a hidden input for storing the name and value attributes to use when submitting the form.
+            // The data stored in the value attribute will be the visible date in the date input but in ISO 8601 format.
+            type="hidden"
+            name={name}
+            value={timeValue}
+          />
+          <Input
+            {...inputAttributes}
+            {...hourAttributes}
+            aria-label={intl.formatMessage({ id: 'Terra.timeInput.hours' })}
+            refCallback={(inputRef) => {
+              this.hourInput = inputRef;
+              if (refCallback) refCallback(inputRef);
+            }}
+            className={cx('time-input-hour', { 'initial-focus': this.state.hourInitialFocused })}
+            type="text"
+            value={this.state.hour}
+            name={'terra-time-hour-'.concat(name)}
+            placeholder={intl.formatMessage({ id: 'Terra.timeInput.hh' })}
+            maxLength="2"
+            onChange={this.handleHourChange}
+            onKeyDown={this.handleHourInputKeyDown}
+            onFocus={this.handleHourFocus}
+            onBlur={this.handleHourBlur}
+            size="2"
+            pattern="\d*"
+            disabled={disabled}
+          />
+          <span className={cx('time-spacer')}>:</span>
+          <Input
+            {...inputAttributes}
+            {...minuteAttributes}
+            refCallback={(inputRef) => { this.minuteInput = inputRef; }}
+            aria-label={intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
+            className={cx('time-input-minute', showSeconds ? 'with-second' : 'without-second', { 'initial-focus': this.state.minuteInitialFocused })}
+            type="text"
+            value={this.state.minute}
+            name={'terra-time-minute-'.concat(name)}
+            placeholder={intl.formatMessage({ id: 'Terra.timeInput.mm' })}
+            maxLength="2"
+            onChange={this.handleMinuteChange}
+            onKeyDown={this.handleMinuteInputKeyDown}
+            onFocus={this.handleMinuteFocus}
+            onBlur={this.handleMinuteBlur}
+            size="2"
+            pattern="\d*"
+            disabled={disabled}
+          />
+          {showSeconds && (
+            <React.Fragment>
+              <span className={cx('time-spacer')}>:</span>
+              <Input
+                {...inputAttributes}
+                {...secondAttributes}
+                refCallback={(inputRef) => { this.secondInput = inputRef; }}
+                aria-label={intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
+                className={cx('time-input-second', { 'initial-focus': this.state.secondInitialFocused })}
+                type="text"
+                value={this.state.second}
+                name={'terra-time-second-'.concat(name)}
+                placeholder={intl.formatMessage({ id: 'Terra.timeInput.ss' })}
+                maxLength="2"
+                onChange={this.handleSecondChange}
+                onKeyDown={this.handleSecondInputKeyDown}
+                onFocus={this.handleSecondFocus}
+                onBlur={this.handleSecondBlur}
                 size="2"
-              >
-                <option key="anteMeridiem" value={this.anteMeridiem}>{this.anteMeridiem}</option>
-                <option key="postMeridiem" value={this.postMeridiem}>{this.postMeridiem}</option>
-              </select>
-            </div>,
-          ]
+                pattern="\d*"
+                disabled={disabled}
+              />
+            </React.Fragment>
+          )}
+        </div>
+        {variantFromLocale === TimeUtil.FORMAT_12_HOUR && (
+          <ButtonGroup selectedKeys={[this.state.meridiem]} onChange={this.handleMeridiemButtonChange} className={cx('meridiem-button-group')}>
+            <ButtonGroup.Button
+              key={this.anteMeridiem}
+              className={anteMeridiemClassNames}
+              text={this.anteMeridiem}
+              onBlur={this.handleMeridiemButtonBlur}
+              onFocus={this.handleMeridiemButtonFocus}
+              isDisabled={disabled}
+            />
+            <ButtonGroup.Button
+              key={this.postMeridiem}
+              className={postMeridiemClassNames}
+              text={this.postMeridiem}
+              onBlur={this.handleMeridiemButtonBlur}
+              onFocus={this.handleMeridiemButtonFocus}
+              isDisabled={disabled}
+            />
+          </ButtonGroup>
         )}
       </div>
     );
     /* eslint-enable jsx-a11y/no-static-element-interactions */
-  }
-
-  render() {
-    if (TimeUtil.isConsideredMobileDevice()) {
-      return this.mobileInput();
-    }
-
-    return this.desktopInput();
   }
 }
 
