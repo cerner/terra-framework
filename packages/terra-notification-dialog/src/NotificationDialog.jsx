@@ -29,7 +29,7 @@ const propTypes = {
    */
   title: PropTypes.string,
   /**
-   * @private Message of the notification-dialog
+   * Deprecated, Message of the notification-dialog
    */
   message: PropTypes.string,
   /**
@@ -45,7 +45,7 @@ const propTypes = {
    */
   content: PropTypes.node,
   /**
-   * @private The Action of the primary button.
+   * Deprecated, The Action of the primary button.
    */
   primaryAction: PropTypes.shape({
     text: PropTypes.string,
@@ -59,7 +59,7 @@ const propTypes = {
     onClick: PropTypes.func,
   }).isRequired,
   /**
-   * @private The Action of the secondary button.
+   * Deprecated The Action of the secondary button.
    */
   secondaryAction: PropTypes.shape({
     text: PropTypes.string,
