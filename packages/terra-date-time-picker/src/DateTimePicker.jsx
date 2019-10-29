@@ -202,6 +202,19 @@ class DateTimePicker extends React.Component {
     this.isDefaultDateAcceptable = this.validateDefaultDate();
   }
 
+  componentDidUpdate() {
+    // If the entered time (this.timeValue) is the missing hour during daylight savings,
+    // it needs to be updated to the time in this.state.dateTime to reflect the change and force a render.
+    if (this.state.dateTime && DateTimeUtils.isValidTime(this.timeValue, this.props.showSeconds)) {
+      const displayedTime = DateTimeUtils.getTime(this.state.dateTime.format(), this.props.showSeconds);
+
+      if (this.timeValue !== displayedTime) {
+        this.timeValue = displayedTime;
+        this.forceUpdate();
+      }
+    }
+  }
+
   handleOnSelect(event, selectedDate) {
     this.dateValue = DateUtil.formatISODate(selectedDate, this.state.dateFormat);
     const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
@@ -388,13 +401,15 @@ class DateTimePicker extends React.Component {
         updatedDateTime.subtract(1, 'hours');
       }
 
+      let displayedTimeValue = this.timeValue;
+
       // If updatedDateTime is valid, update timeValue (value in the time input) to reflect updatedDateTime since
       // it could have subtracted an hour from above to account for the missing hour.
       if (updatedDateTime) {
-        this.timeValue = DateTimeUtils.getTime(updatedDateTime.format(), this.props.showSeconds);
+        displayedTimeValue = DateTimeUtils.getTime(updatedDateTime.format(), this.props.showSeconds);
       }
 
-      this.handleChangeRaw(event, this.timeValue);
+      this.handleChangeRaw(event, displayedTimeValue);
       this.handleChange(event, updatedDateTime);
     } else if (this.dateValue === '' && this.timeValue === '') {
       this.handleChangeRaw(event, this.timeValue);
