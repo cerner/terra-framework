@@ -14,14 +14,13 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
   });
 
   describe('Date Time Picker Twelve Hour Mobile - Clicking Meridiem updates the time', () => {
-    it('Date Time Picker Twelve Hour Mobile - Clicking Meridiem updates the time', () => {
+    before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-value-12-hour-mobile');
 
-      browser.click('//*[@id="datetimeValueProvided"]/div[2]/div/div[3]/button[1]');
-      Terra.validates.element();
-
-      browser.click('//*[@id="datetimeValueProvided"]/div[2]/div/div[3]/button[2]');
+      browser.click('//*[@id="datetimeValueProvided"]/div[2]/div/div[2]/button[1]');
     });
+
+    Terra.it.validatesElement();
   });
 
   describe('Date Time Picker Twelve Hour Value Mobile - Focus Hour Styles', () => {
@@ -29,7 +28,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-value-12-hour-mobile');
       Terra.hideInputCaret('input[name="terra-time-hour-input"]');
 
-      browser.click('//*[@id="terra-time-hour-input"]');
+      browser.click('input[name="terra-time-hour-input"]');
     });
 
     Terra.it.validatesElement();
@@ -40,7 +39,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-empty-12-hour-mobile');
       Terra.hideInputCaret('input[name="terra-time-hour-input"]');
 
-      browser.click('//*[@id="terra-time-hour-input"]');
+      browser.click('input[name="terra-time-hour-input"]');
     });
 
     Terra.it.validatesElement();
@@ -51,7 +50,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-seconds-12-hour-mobile');
       Terra.hideInputCaret('input[name="terra-time-hour-input"]');
 
-      browser.click('//*[@id="terra-time-hour-input"]');
+      browser.click('input[name="terra-time-hour-input"]');
     });
 
     Terra.it.validatesElement();
@@ -71,7 +70,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-value-12-hour-mobile');
       Terra.hideInputCaret('input[name="terra-time-minute-input"]');
 
-      browser.click('//*[@id="terra-time-minute-input"]');
+      browser.click('input[name="terra-time-minute-input"]');
     });
 
     Terra.it.validatesElement();
@@ -82,7 +81,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-empty-12-hour-mobile');
       Terra.hideInputCaret('input[name="terra-time-minute-input"]');
 
-      browser.click('//*[@id="terra-time-minute-input"]');
+      browser.click('input[name="terra-time-minute-input"]');
     });
 
     Terra.it.validatesElement();
@@ -101,7 +100,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-seconds-12-hour-mobile');
       Terra.hideInputCaret('input[name="terra-time-minute-input"]');
 
-      browser.click('//*[@id="terra-time-minute-input"]');
+      browser.click('input[name="terra-time-minute-input"]');
     });
 
     Terra.it.validatesElement();
@@ -112,7 +111,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-seconds-12-hour-mobile');
       Terra.hideInputCaret('input[name="terra-time-second-input"]');
 
-      browser.click('//*[@id="terra-time-second-input"]');
+      browser.click('input[name="terra-time-second-input"]');
     });
 
     Terra.it.validatesElement();
