@@ -68,6 +68,36 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     Terra.it.matchesScreenshot();
   });
 
+  describe('Handles Missing Hour', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
+      browser.refresh();
+      Terra.hideInputCaret('input[name="terra-time-minute-input"]');
+      browser.setValue('input[name="terra-date-input"]', '03/11/2018');
+      browser.setValue('input[name="terra-time-hour-input"]', '02');
+      browser.setValue('input[name="terra-time-minute-input"]', '30');
+    });
+
+    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot();
+  });
+
+  describe('Handles Re-entering Same Missing Hour Twice', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-default');
+      browser.refresh();
+      Terra.hideInputCaret('input[name="terra-time-minute-input"]');
+      browser.setValue('input[name="terra-date-input"]', '03/11/2018');
+      browser.setValue('input[name="terra-time-hour-input"]', '02');
+      browser.setValue('input[name="terra-time-minute-input"]', '30');
+      browser.clearElement('input[name="terra-time-hour-input"]');
+      browser.setValue('input[name="terra-time-hour-input"]', '02');
+    });
+
+    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.matchesScreenshot();
+  });
+
   describe('Time Clarification Dialog', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/date-time-picker-dst');
