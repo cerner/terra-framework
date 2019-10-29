@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Fixed accessibility issue in the tabs component.
 
 6.16.0 - (October 21, 2019)
 ------------------
