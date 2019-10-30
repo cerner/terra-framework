@@ -25,8 +25,6 @@ function PopupStandard() {
     <React.Fragment>
       <Button text="Default Popup" onClick={handleButtonClick} refCallback={setButtonNode} />
       <Popup
-        attachmentBehavior="auto"
-        contentAttachment="top center"
         isOpen={open}
         targetRef={getButtonNode}
         onRequestClose={handleRequestClose}

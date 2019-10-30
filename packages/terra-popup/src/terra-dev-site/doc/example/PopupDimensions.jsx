@@ -79,7 +79,6 @@ function PopupDimensions() {
       <div>
         <Popup
           {...contentDimensions}
-          classNameArrow="test-arrow"
           classNameContent="test-content"
           isOpen={open}
           onRequestClose={handleRequestClose}
