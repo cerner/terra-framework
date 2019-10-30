@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Resolved lint warnings for multiple empty lines
 
+1.14.0 - (October 30, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 1.13.0 - (October 21, 2019)
 ------------------
 ### Changed
