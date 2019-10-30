@@ -17,6 +17,11 @@ Unreleased
 * Added 'buttonOrder' prop to determine order of accept and reject buttons
 * Added a 'emphasizedAction' oneOf to choose between emphasizing the accept button, reject button, or neither.
 
+3.17.0 - (October 30, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 3.16.0 - (October 21, 2019)
 ------------------
 ### Changed
