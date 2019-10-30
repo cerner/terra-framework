@@ -6,6 +6,11 @@ Unreleased
 ### Fixed
 * Focus not removed explicity when item removed from view issue fixed.
 
+4.30.0 - (October 21, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 4.29.0 - (October 16, 2019)
 ------------------
 ### Changed
