@@ -3,13 +3,10 @@ Changelog
 
 Unreleased
 ----------
-### Breaking Changes
-* Added required 'buttonOrder' prop to determine order of accept and reject buttons
-
 ### Changed
-* 'message' prop has been depreciated, will resolve to 'startMessage'
-* 'primaryAction' prop has been depreciated, will resolve to 'acceptAction'
-* 'secondaryAction' prop has been depreciated, will resolve to 'rejectAction'
+* 'message' prop has been deprecated, will resolve to 'startMessage'
+* 'primaryAction' prop has been deprecated, will resolve to 'acceptAction'
+* 'secondaryAction' prop has been deprecated, will resolve to 'rejectAction'
 
 ### Added
 * Added a 'startMessage' string prop that will display a message after 'title'
@@ -17,6 +14,7 @@ Unreleased
 * Added an 'endMessage' string prop that will display a message after 'content'
 * Added 'acceptAction' prop that takes an object with a 'text' string and 'onClick' function attributes
 * Added 'rejectAction' prop that takes an object with a 'text' string and 'onClick' function attributes
+* Added 'buttonOrder' prop to determine order of accept and reject buttons
 * Added a 'emphasizedAction' oneOf to choose between emphasizing the accept button, reject button, or neither.
 
 3.16.0 - (October 21, 2019)

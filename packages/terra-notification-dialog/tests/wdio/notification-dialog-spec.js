@@ -7,19 +7,27 @@ Terra.describeViewports('notification-dialog', ['tiny', 'medium', 'large'], () =
       browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
       browser.click('#trigger-notification-dialog');
 
-      expect(browser.hasFocus('[class*="NotificationDialog-module__actions"] button:first-child')).to.be.equal(true);
+      expect(browser.hasFocus('[class*="NotificationDialog-module__notification-dialog-container"]')).to.be.equal(true);
 
       Terra.validates.element({ selector });
     });
   });
 
   describe('Notification Dialog shifts focus into modal on tab', () => {
-    it('focuses on the close button when tab is pressed', () => {
+    it('focuses on the accept button when tab is pressed', () => {
       browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
       browser.click('#trigger-notification-dialog');
       browser.keys('Tab');
-      expect(browser.hasFocus('[class*="notification-dialog-inner-wrapper"] button:last-child')).to.be.equal(true);
-      Terra.validates.element({ selector });
+      expect(browser.hasFocus('[class*="NotificationDialog-module__actions"] button:first-child')).to.be.equal(true);
+      Terra.validates.element('Accept Focused', { selector });
+    });
+
+    it('focuses on the close button when tab is pressed twice', () => {
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
+      browser.click('#trigger-notification-dialog');
+      browser.keys(['Tab', 'Tab']);
+      expect(browser.hasFocus('[class*="NotificationDialog-module__actions"] button:last-child')).to.be.equal(true);
+      Terra.validates.element('Reject Focused', { selector });
     });
   });
 
@@ -27,7 +35,7 @@ Terra.describeViewports('notification-dialog', ['tiny', 'medium', 'large'], () =
     it('Notification Dialog traps focus in modal', () => {
       browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/complete-notification-dialog');
       browser.click('#trigger-notification-dialog');
-      browser.keys('Tab', 'Tab', 'Tab', 'Tab');
+      browser.keys(['Tab', 'Tab', 'Tab', 'Tab']);
       Terra.validates.element({ selector });
     });
   });
@@ -137,7 +145,6 @@ Terra.describeViewports('NotificationDialog with additional focus trap sources w
   it('opens popup', () => {
     browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/notification-dialog-on-modal-manager');
     browser.click('#disclose-modal');
-    browser.click('#popup-in-modal');
 
     // Skip color contrast check for elements behind an overlay
     const ignoredA11y = {
@@ -146,15 +153,6 @@ Terra.describeViewports('NotificationDialog with additional focus trap sources w
         selector: '[class*="overlay"]',
       },
     };
-
-    Terra.validates.element('Open popup', { selector: '[class*="abstract-modal"]', axeRules: ignoredA11y });
-
-    // it dismisses popup
-    browser
-      .moveToObject('#root', 300, 300)
-      .leftClick();
-
-    Terra.validates.element('Close popup', { selector: '[class*="abstract-modal"]' });
 
     // it opens notification dialog
     browser.click('#trigger-notification-dialog');

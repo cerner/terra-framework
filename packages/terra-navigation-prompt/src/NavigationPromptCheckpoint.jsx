@@ -149,7 +149,17 @@ class NavigationPromptCheckpoint extends React.Component {
 
   renderNotificationDialog() {
     const {
-      title, startMessage, endMessage, content, acceptButtonText, rejectButtonText, emphasizedAction, buttonOrder, onAccept, onReject,
+      title,
+      message,
+      startMessage,
+      endMessage,
+      content,
+      acceptButtonText,
+      rejectButtonText,
+      emphasizedAction,
+      buttonOrder,
+      onAccept,
+      onReject,
     } = this.state.notificationDialogProps;
 
     const acceptButton = {
@@ -170,7 +180,7 @@ class NavigationPromptCheckpoint extends React.Component {
       <NotificationDialog
         isOpen
         title={title}
-        startMessage={startMessage}
+        startMessage={(startMessage || message)}
         endMessage={endMessage}
         content={content}
         acceptAction={acceptButton}

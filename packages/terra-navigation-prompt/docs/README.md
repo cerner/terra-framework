@@ -100,6 +100,7 @@ The keys expected in the resolvePrompts Object or return value include:
 |Key|Type|Description|
 |---|---|---|
 |`title`|String|The title of the NotificationDialog.|
+|`message`|String|Deprecated, The message of the NotificationDialog. Resolves to 'startMessage'|
 |`startMessage`|String|The starting message of the NotificationDialog.|
 |`content`|Node|The content of the NotificationDialog.|
 |`endMessage`|String|The ending message of the NotificationDialog.|

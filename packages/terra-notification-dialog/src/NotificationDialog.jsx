@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import AbstractModal from 'terra-abstract-modal';
 import FocusTrap from 'focus-trap-react';
 import * as KeyCode from 'keycode-js';
-import Button from 'terra-button';
+import Button, { ButtonVariants } from 'terra-button';
 import classNames from 'classnames/bind';
 import { FormattedMessage } from 'react-intl';
 import styles from './NotificationDialog.module.scss';
@@ -29,7 +29,7 @@ const propTypes = {
    */
   title: PropTypes.string,
   /**
-   * Deprecated, Message of the notification-dialog
+   * Deprecated, Message of the notification-dialog. Resolves to startMessage
    */
   message: PropTypes.string,
   /**
@@ -45,7 +45,7 @@ const propTypes = {
    */
   content: PropTypes.node,
   /**
-   * Deprecated, The Action of the primary button.
+   * Deprecated, The Action of the primary button. Resolves to acceptAction
    */
   primaryAction: PropTypes.shape({
     text: PropTypes.string,
@@ -59,7 +59,7 @@ const propTypes = {
     onClick: PropTypes.func,
   }).isRequired,
   /**
-   * Deprecated The Action of the secondary button.
+   * Deprecated The Action of the secondary button. Resolves to rejectAction
    */
   secondaryAction: PropTypes.shape({
     text: PropTypes.string,
@@ -98,7 +98,7 @@ const propTypes = {
   buttonOrder: PropTypes.oneOf([
     'acceptFirst',
     'rejectFirst',
-  ]).isRequired,
+  ]),
   /**
    * Determines whether acceptAction, rejectAction or neither is emphasizedAction
    */
@@ -115,6 +115,7 @@ const defaultProps = {
   endMessage: null,
   content: null,
   variant: variants.CUSTOM,
+  buttonOrder: 'acceptFirst',
   emphasizedAction: 'none',
 };
 
@@ -126,12 +127,12 @@ const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction
   }
   if (acceptAction) {
     acceptButton = (emphasizedAction === 'accept')
-      ? <Button text={acceptAction.text} variant={Button.Opts.Variants.EMPHASIS} onClick={acceptAction.onClick} />
+      ? <Button text={acceptAction.text} variant={ButtonVariants.EMPHASIS} onClick={acceptAction.onClick} />
       : <Button text={acceptAction.text} onClick={acceptAction.onClick} />;
   }
   if (rejectAction) {
     rejectButton = (emphasizedAction === 'reject')
-      ? <Button text={rejectAction.text} variant={Button.Opts.Variants.EMPHASIS} onClick={rejectAction.onClick} />
+      ? <Button text={rejectAction.text} variant={ButtonVariants.EMPHASIS} onClick={rejectAction.onClick} />
       : <Button text={rejectAction.text} onClick={rejectAction.onClick} />;
   }
 
@@ -242,7 +243,7 @@ class NotificationDialog extends React.Component {
       >
         <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: false, escapeDeactivates: false }}>
           <div className={cx('notification-dialog-inner-wrapper')}>
-            <div className={cx('notification-dialog-container')}>
+            <div className={cx('notification-dialog-container')} tabIndex="0">
               <div id="notification-dialog-header" className={cx('header-body')}>{header || defaultHeader}</div>
               <div className={cx('notification-dialog-body')}>
                 {variant
