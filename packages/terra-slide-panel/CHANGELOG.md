@@ -7,6 +7,9 @@ Unreleased
 * Added `aria-label` to the "Main" and "Panel" containers.
 * Added `mainAriaLabel` and `panelAriaLabel` as optional props.
 
+### Changed
+* Resolved lint warnings for multiple empty lines
+
 3.18.0 - (October 16, 2019)
 ------------------
 ### Changed

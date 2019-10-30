@@ -94,5 +94,4 @@ class SlideGroup extends React.Component {
 SlideGroup.propTypes = propTypes;
 SlideGroup.defaultProps = defaultProps;
 
-
 export default SlideGroup;

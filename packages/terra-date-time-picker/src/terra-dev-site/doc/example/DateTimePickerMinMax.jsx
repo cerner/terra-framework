@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Field from 'terra-form-field';
 import DateTimePicker from 'terra-date-time-picker';
 
-
 const propTypes = {
   /**
    * The current entered date time. Use for the selected date message.

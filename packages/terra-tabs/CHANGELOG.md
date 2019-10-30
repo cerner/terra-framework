@@ -6,6 +6,9 @@ Unreleased
 ### Fixed
 * Fixed accessibility issue in the tabs component.
 
+### Changed
+* Resolved lint warnings for multiple empty lines
+
 6.16.0 - (October 21, 2019)
 ------------------
 ### Changed

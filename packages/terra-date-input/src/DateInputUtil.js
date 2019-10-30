@@ -129,7 +129,6 @@ class DateInputUtil {
     return null;
   }
 
-
   /**
    * @param {String} value String to split month value from
    * @return {String} Month value generated from input value

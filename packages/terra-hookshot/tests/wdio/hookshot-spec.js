@@ -193,7 +193,6 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
     Terra.it.matchesScreenshot('Bottom End', { selector: '#attachment-margin-bounds' });
   });
 
-
   // boundingRef: test - top bottom start end bounding container adjustments.
   describe('Displays content pushed by bounding container', () => {
     before(() => browser.url('/#/raw/tests/terra-hookshot/hookshot/hookshot-bounding-container'));
@@ -287,7 +286,6 @@ Terra.describeViewports('Hookshot', ['medium'], () => {
 
     Terra.it.matchesScreenshot({ selector: '#EnabledBehaviors-bounds' });
   });
-
 
   // Verify Close Behaviors - ALL
   describe('Closes the hookshot content on ESC when all close behavior is present', () => {

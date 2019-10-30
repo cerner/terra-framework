@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added `rootSelector` prop to help prevent focus from shifting outside of the DialogModal when it is opened.
 
+### Changed
+* Resolved lint warnings for multiple empty lines
+
 3.17.0 - (October 21, 2019)
 ------------------
 ### Changed
