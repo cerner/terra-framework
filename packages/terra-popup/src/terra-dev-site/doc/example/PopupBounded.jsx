@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import Button from 'terra-button';
 import Popup from 'terra-popup';
 import Placeholder from 'terra-doc-template/lib/Placeholder';
@@ -7,65 +7,55 @@ import styles from './PopupDocCommon.module.scss';
 
 const cx = classNames.bind(styles);
 
-class PopupBounded extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleButtonClick = this.handleButtonClick.bind(this);
-    this.handleRequestClose = this.handleRequestClose.bind(this);
-    this.setParentNode = this.setParentNode.bind(this);
-    this.getParentNode = this.getParentNode.bind(this);
-    this.setButtonNode = this.setButtonNode.bind(this);
-    this.getButtonNode = this.getButtonNode.bind(this);
-    this.state = { open: false };
-  }
+function PopupBounded() {
+  const buttonElement = useRef(null);
+  const parentElement = useRef(null);
+  const [open, setOpen] = useState(false);
 
-  setParentNode(node) {
-    this.parentNode = node;
-  }
 
-  getParentNode() {
-    return this.parentNode;
-  }
+  const setParentNode = (node) => {
+    parentElement.current = node;
+  };
 
-  setButtonNode(node) {
-    this.parentNode = node;
-  }
+  const getParentNode = () => parentElement.current;
 
-  getButtonNode() {
-    return this.parentNode;
-  }
+  const setButtonNode = (node) => {
+    buttonElement.current = node;
+  };
 
-  handleButtonClick() {
-    this.setState({ open: true });
-  }
+  const getButtonNode = () => buttonElement.current;
 
-  handleRequestClose() {
-    this.setState({ open: false });
-  }
+  const handleButtonClick = () => {
+    setOpen(true);
+  };
 
-  render() {
-    return (
+  const handleRequestClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <React.Fragment>
       <div
         className={cx('content-wrapper')}
-        ref={this.setParentNode}
+        ref={setParentNode}
       >
+        <Button text="Bounded Popup" onClick={handleButtonClick} refCallback={setButtonNode} />
         <Popup
-          boundingRef={this.getParentNode}
+          boundingRef={getParentNode}
           classNameArrow="test-arrow"
           classNameContent="test-content"
           contentHeight="240"
           contentWidth="320"
-          isOpen={this.state.open}
-          onRequestClose={this.handleRequestClose}
-          targetRef={this.getButtonNode}
+          isOpen={open}
+          onRequestClose={handleRequestClose}
+          targetRef={getButtonNode}
           isContentFocusDisabled
         >
           <Placeholder title="Popup Content" />
         </Popup>
-        <Button text="Bounded Popup" onClick={this.handleButtonClick} refCallback={this.setButtonNode} />
       </div>
-    );
-  }
+    </React.Fragment>
+  );
 }
 
 export default PopupBounded;

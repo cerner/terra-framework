@@ -7,7 +7,7 @@ import ReadMe from '../../../../docs/README.md';
 import PopupSrc from '!raw-loader!../../../../src/Popup.jsx';
 
 // Example Files
-import PopupCommonExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/common/PopupCommonExample.jsx';
+import PopupStandardSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/PopupStandard.jsx';
 import PopupStandard from '../example/PopupStandard';
 import PopupBounded from '../example/PopupBounded';
 import PopupBoundedSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/PopupBounded.jsx';
@@ -33,7 +33,7 @@ const DocPage = () => (
       {
         title: 'Popup Standard Implementation',
         example: <PopupStandard />,
-        source: PopupCommonExampleSrc,
+        source: PopupStandardSrc,
       },
       {
         title: 'Popup Display With Arrow',

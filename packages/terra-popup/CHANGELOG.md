@@ -4,7 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
-* Updated docs.
+* Updated examples to use `hooks`.
 
 6.15.0 - (October 16, 2019)
 ------------------
