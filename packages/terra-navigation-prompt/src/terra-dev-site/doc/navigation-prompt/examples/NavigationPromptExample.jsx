@@ -15,7 +15,7 @@ const exampleAcceptButtonText = 'Descriptive Accept Button Action';
  * The Input is a stateful component that renders a NavigationPrompt based upon its current input element value.
  * It provides its NavigationPrompt with a description and a metaData object containing its current value.
  */
-const Input = ({ title }) => {
+const Input = ({ title, ariaLabel }) => {
   const [inputValue, setInputValue] = useState('');
   const promptMetaData = useRef({
     value: '',
@@ -35,6 +35,7 @@ const Input = ({ title }) => {
       <input
         type="text"
         className={cx('input-text-box')}
+        aria-label={ariaLabel}
         onChange={(event) => {
           promptMetaData.current = {
             value: event.target.value,
@@ -49,6 +50,7 @@ const Input = ({ title }) => {
 
 Input.propTypes = {
   title: PropTypes.string,
+  ariaLabel: PropTypes.string,
 };
 
 /**
@@ -80,8 +82,8 @@ const Form = ({ title }) => {
             {' '}
             {new Date(timeStamp).toLocaleString()}
           </p>
-          <Input title="Text Input A" />
-          <Input title="Text Input B" />
+          <Input title="Text Input A" ariaLabel="Text Input A" />
+          <Input title="Text Input B" ariaLabel="Text Input B" />
           <br />
           <button
             type="button"
