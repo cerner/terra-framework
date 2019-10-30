@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.18.0 - (October 30, 2019)
+------------------
 ### Changed
 * Force update to render the missing hour.
 * Duplicate ID in examples changed.

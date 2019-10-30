@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.20.0 - (October 30, 2019)
+------------------
 ### Added
 * Added refCallback prop to infinite-list to expose ref of Listbox
 
