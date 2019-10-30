@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'terra-button';
 import SlidePanelManager from 'terra-slide-panel-manager';
 import { withDisclosureManager } from 'terra-disclosure-manager';
@@ -16,26 +16,14 @@ const items = Object.freeze([{
 }, {
   key: 'SECTION_1',
   component: <AggregatorItem name="Section 1" targetId="section1" />,
-}, {
+}]);
+
+const flippedItems = Object.freeze([{
   key: 'SECTION_2',
   component: <AggregatorItem name="Section 2" targetId="section2" />,
 }, {
   key: 'SECTION_3',
   component: <AggregatorItem name="Section 3" targetId="section3" />,
-}]);
-
-const flippedItems = Object.freeze([{
-  key: 'SECTION_4',
-  component: <AggregatorItem name="Section 4" targetId="section4" />,
-}, {
-  key: 'SECTION_5',
-  component: <AggregatorItem name="Section 5" targetId="section5" />,
-}, {
-  key: 'SECTION_6',
-  component: <AggregatorItem name="Section 6" targetId="section6" />,
-}, {
-  key: 'SECTION_7',
-  component: <AggregatorItem name="Section 7" targetId="section7" />,
 }]);
 
 const Wrapper = withDisclosureManager(({ itemsList, disclosureManager }) => (
@@ -45,27 +33,17 @@ const Wrapper = withDisclosureManager(({ itemsList, disclosureManager }) => (
   />
 ));
 
-class AggregatorWithDisclosure extends React.Component {
-  constructor(props) {
-    super(props);
+function AggregatorWithDisclosure() {
+  const [flip, setFlip] = useState(false);
 
-    this.state = {
-      flip: false,
-    };
-  }
-
-  render() {
-    const body = (
-      <div id="test-aggregator" role="main" className={cx('aggregator-with-disclosure-test')}>
-        <Button id="flip-button" text="Flip Items" onClick={() => { this.setState(prevState => ({ flip: !prevState.flip })); }} />
-        <SlidePanelManager>
-          <Wrapper itemsList={this.state.flip ? flippedItems : items} />
-        </SlidePanelManager>
-      </div>
-    );
-
-    return body;
-  }
+  return (
+    <div id="test-aggregator" role="main" className={cx('aggregator-with-disclosure-test')}>
+      <Button id="flip-button" text="Flip Items" onClick={() => setFlip(!flip)} />
+      <SlidePanelManager>
+        <Wrapper itemsList={flip ? flippedItems : items} />
+      </SlidePanelManager>
+    </div>
+  )
 }
 
 export default AggregatorWithDisclosure;
