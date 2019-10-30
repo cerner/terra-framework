@@ -114,6 +114,7 @@ class DisclosureComponent extends React.Component {
           <br />
           <p>The disclosed component can register a dismiss check function that can interrupt and prevent dismissal. This component will prompt the user if text is detected in the input field below.</p>
           <input
+            aria-label="textArea"
             type="text"
             onChange={(event) => {
               this.setState({

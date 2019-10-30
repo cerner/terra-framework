@@ -50,6 +50,10 @@ const propTypes = {
    * If set to true, the modal will close when a mouse click is triggered outside the modal.
    */
   closeOnOutsideClick: PropTypes.bool,
+  /**
+   * Used to select the root mount DOM node. This is used to help prevent focus from shifting outside of the DialogModal when it is opened.
+   */
+  rootSelector: PropTypes.string,
 };
 
 const defaultProps = {
@@ -57,6 +61,7 @@ const defaultProps = {
   isOpen: false,
   width: '1120',
   closeOnOutsideClick: false,
+  rootSelector: '#root',
 };
 
 const DialogModal = (props) => {
@@ -69,6 +74,7 @@ const DialogModal = (props) => {
     ariaLabel,
     width,
     closeOnOutsideClick,
+    rootSelector,
     ...customProps
   } = props;
 
@@ -85,7 +91,7 @@ const DialogModal = (props) => {
   }
 
   return (
-    <AbstractModal ariaLabel={ariaLabel} role="dialog" classNameModal={cx(classArray)} isOpen={isOpen} onRequestClose={onRequestClose} zIndex="7000" closeOnOutsideClick={closeOnOutsideClick}>
+    <AbstractModal ariaLabel={ariaLabel} role="dialog" classNameModal={cx(classArray)} isOpen={isOpen} onRequestClose={onRequestClose} zIndex="7000" closeOnOutsideClick={closeOnOutsideClick} rootSelector={rootSelector}>
       <div {...customProps} className={cx('dialog-modal-inner-wrapper', customProps.className)}>
         <div className={cx('dialog-modal-container')}>
           <div>{header}</div>

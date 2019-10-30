@@ -36,10 +36,10 @@ class DatePickerIncompleteExample extends React.Component {
           Selected ISO Date:
           <span className={cx('date-wrapper')}>{this.state.date}</span>
         </p>
-        <Field label="Enter Date" htmlFor="default">
+        <Field label="Enter Date" htmlFor="default-incomplete">
           <DatePicker
             name="date-input"
-            id="default"
+            id="default-incomplete"
             onChange={this.handleDateChange}
             required
             isIncomplete
