@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added `responsiveTo` prop.
 
 6.18.0 - (November 7, 2019)
 ------------------

@@ -4,7 +4,6 @@ const ignoredA11y = {
 };
 
 // Verify tabs collapse appropriately
-
 Terra.describeViewports('Tabs - Responsive', ['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], () => {
   describe('Default', () => {
     it('Default', () => {
@@ -78,6 +77,18 @@ Terra.describeViewports('Tabs - Large screen', ['large'], () => {
   describe('Fill Parent Tabs', () => {
     it('Fill Parent Tabs', () => {
       browser.url('/#/raw/tests/terra-tabs/tabs/tabs/fill-parent-tabs');
+      browser.moveToObject('[class*="tab-content"]');
+      Terra.validates.element();
+    });
+  });
+});
+
+// Verify tabs do not collapse.
+Terra.describeViewports('Tabs - Nonresponsive', ['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], () => {
+  describe('Icon Only Tabs', () => {
+    it('Icon Only Tabs', () => {
+      browser.url('/#/raw/tests/terra-tabs/tabs/tabs/uncollapsed-icon-only-tabs');
+      browser.refresh();
       browser.moveToObject('[class*="tab-content"]');
       Terra.validates.element();
     });

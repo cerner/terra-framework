@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ContentContainer from 'terra-content-container';
-import ResponsiveElement from 'terra-responsive-element';
+import ResponsiveElement, { DependentViewport } from 'terra-responsive-element';
 import TabPane from './TabPane';
 import CollapsibleTabs from './_CollapsibleTabs';
 import CollapsedTabs from './_CollapsedTabs';
@@ -58,11 +58,18 @@ const propTypes = {
    * Key of the pane that should be open initially.
    */
   defaultActiveKey: PropTypes.string,
+
+  /**
+   * The viewport the element will be responsive to. One of `window`, `parent` or `none`.
+   * Note: If the responsive viewport is set to `none`, then tabs never collapse into a menu.
+   */
+  responsiveTo: PropTypes.oneOf(['window', 'parent', 'none']),
 };
 
 const defaultProps = {
   tabFill: false,
   fill: false,
+  responsiveTo: DependentViewport.PARENT,
 };
 
 class Tabs extends React.Component {
@@ -132,6 +139,7 @@ class Tabs extends React.Component {
       children,
       activeKey,
       defaultActiveKey,
+      responsiveTo,
       ...customProps
     } = this.props;
 
@@ -169,35 +177,44 @@ class Tabs extends React.Component {
       React.cloneElement(contentItem, { isLabelHidden: isIconOnly || this.state.isLabelTruncated })
     ));
 
-    const collapsibleTabs = (
-      <CollapsibleTabs
-        activeKey={activeKey || this.state.activeKey}
-        activeIndex={this.getActiveTabIndex()}
-        onChange={this.handleOnChange}
-        onTruncationChange={this.handleTruncationChange}
-        variant={variant}
-      >
-        {clonedPanes}
-      </CollapsibleTabs>
-    );
+    const header = (() => {
+      const collapsibleTabs = (
+        <CollapsibleTabs
+          activeKey={activeKey || this.state.activeKey}
+          activeIndex={this.getActiveTabIndex()}
+          onChange={this.handleOnChange}
+          onTruncationChange={this.handleTruncationChange}
+          variant={variant}
+        >
+          {clonedPanes}
+        </CollapsibleTabs>
+      );
 
-    const collapsedTabs = (
-      <CollapsedTabs activeKey={activeKey || this.state.activeKey} onTruncationChange={this.handleTruncationChange}>
-        {clonedPanes}
-      </CollapsedTabs>
-    );
+      if ([DependentViewport.PARENT, DependentViewport.WINDOW].includes(responsiveTo)) {
+        const collapsedTabs = (
+          <CollapsedTabs activeKey={activeKey || this.state.activeKey} onTruncationChange={this.handleTruncationChange}>
+            {clonedPanes}
+          </CollapsedTabs>
+        );
+
+        return (
+          <ResponsiveElement
+            tiny={collapsedTabs}
+            small={collapsibleTabs}
+            responsiveTo={responsiveTo}
+          />
+        );
+      }
+
+      return collapsibleTabs;
+    })();
 
     return (
       <ContentContainer
         {...customProps}
         className={tabsClassNames}
         fill={fill}
-        header={(
-          <ResponsiveElement
-            tiny={collapsedTabs}
-            small={collapsibleTabs}
-          />
-        )}
+        header={header}
       >
         <div
           role="tabpanel"

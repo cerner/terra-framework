@@ -3,6 +3,9 @@ import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconBookmark from 'terra-icon/lib/icon/IconBookmark';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
+import IconCalculator from 'terra-icon/lib/icon/IconCalculator';
+import IconPerson from 'terra-icon/lib/icon/IconPerson';
+import IconNotification from 'terra-icon/lib/icon/IconNotification';
 import Tabs from '../../../../Tabs';
 import TabContent from './TabContentTemplate';
 
@@ -31,12 +34,33 @@ const IconOnlyTabs = () => {
     </Tabs.Pane>
   );
 
+  const calculatorTab = (
+    <Tabs.Pane label="Calculator" icon={<IconCalculator />} isIconOnly key="Calculator" id="calculator">
+      <TabContent label="Calculator" id="calculatorContent" />
+    </Tabs.Pane>
+  );
+
+  const personTab = (
+    <Tabs.Pane label="Person" icon={<IconPerson />} isIconOnly key="Person" id="person">
+      <TabContent label="Person" id="PersonContent" />
+    </Tabs.Pane>
+  );
+
+  const notificationTab = (
+    <Tabs.Pane label="Notification" icon={<IconNotification />} isIconOnly key="Notification" id="notification">
+      <TabContent label="Notification" id="notificationContent" />
+    </Tabs.Pane>
+  );
+
   return (
     <Tabs id="iconOnlyTabs" responsiveTo="none">
       {searchTab}
       {briefcaseTab}
       {bookmarkTab}
       {calendarTab}
+      {calculatorTab}
+      {personTab}
+      {notificationTab}
     </Tabs>
   );
 };

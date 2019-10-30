@@ -1,5 +1,216 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Tabs Responsiveness should render tabs that are responsive to the parent node viewport by default 1`] = `
+<ContentContainer
+  className="tabs-container structural"
+  fill={false}
+  header={
+    <ResponsiveElement
+      responsiveTo="parent"
+      small={
+        <CollapsibleTabs
+          activeIndex={0}
+          activeKey="default"
+          onChange={[Function]}
+          onTruncationChange={[Function]}
+          variant="structural"
+        >
+          <TabPane
+            aria-selected={true}
+            className="is-active"
+            isDisabled={false}
+            isIconOnly={false}
+            label="Default"
+            onClick={[Function]}
+          />
+        </CollapsibleTabs>
+      }
+      tiny={
+        <CollapsedTabs
+          activeKey="default"
+          onTruncationChange={[Function]}
+        >
+          <TabPane
+            aria-selected={true}
+            className="is-active"
+            isDisabled={false}
+            isIconOnly={false}
+            label="Default"
+            onClick={[Function]}
+          />
+        </CollapsedTabs>
+      }
+    />
+  }
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
+  <div
+    className="pane-content"
+    role="tabpanel"
+  />
+</ContentContainer>
+`;
+
+exports[`Tabs Responsiveness should render tabs that are responsive to the window viewport 1`] = `
+<ContentContainer
+  className="tabs-container structural"
+  fill={false}
+  header={
+    <ResponsiveElement
+      responsiveTo="window"
+      small={
+        <CollapsibleTabs
+          activeIndex={0}
+          activeKey="default"
+          onChange={[Function]}
+          onTruncationChange={[Function]}
+          variant="structural"
+        >
+          <TabPane
+            aria-selected={true}
+            className="is-active"
+            isDisabled={false}
+            isIconOnly={false}
+            label="Default"
+            onClick={[Function]}
+          />
+        </CollapsibleTabs>
+      }
+      tiny={
+        <CollapsedTabs
+          activeKey="default"
+          onTruncationChange={[Function]}
+        >
+          <TabPane
+            aria-selected={true}
+            className="is-active"
+            isDisabled={false}
+            isIconOnly={false}
+            label="Default"
+            onClick={[Function]}
+          />
+        </CollapsedTabs>
+      }
+    />
+  }
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
+  <div
+    className="pane-content"
+    role="tabpanel"
+  />
+</ContentContainer>
+`;
+
+exports[`Tabs Responsiveness should render tabs that never collapse into a menu 1`] = `
+<ContentContainer
+  className="tabs-container structural"
+  fill={false}
+  header={
+    <CollapsibleTabs
+      activeIndex={0}
+      activeKey="default"
+      onChange={[Function]}
+      onTruncationChange={[Function]}
+      variant="structural"
+    >
+      <TabPane
+        aria-selected={true}
+        className="is-active"
+        isDisabled={false}
+        isIconOnly={false}
+        label="Default"
+        onClick={[Function]}
+      />
+    </CollapsibleTabs>
+  }
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
+  <div
+    className="pane-content"
+    role="tabpanel"
+  />
+</ContentContainer>
+`;
+
 exports[`Tabs Variants should render modular-centered tabs 1`] = `
 <ContentContainer
   className="tabs-container structural"
