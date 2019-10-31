@@ -97,7 +97,6 @@ class Tabs extends React.Component {
     return activeIndex;
   }
 
-
   handleOnChange(event, selectedPane) {
     if (!selectedPane.props.isDisabled) {
       if (this.props.onChange) {

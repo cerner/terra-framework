@@ -14,7 +14,6 @@ const DatePickerReadOnlyDate = () => (
     />
   </div>
 
-
 );
 
 export default DatePickerReadOnlyDate;

@@ -108,7 +108,6 @@ class RoutingMenu extends React.Component {
   handleMenuChange(event, data) {
     const { routingStackDelegate, layoutConfig } = this.props;
 
-
     let routeFunc;
     if (data.metaData.externalLink) {
       routeFunc = () => window.open(data.metaData.externalLink.path, data.metaData.externalLink.target || '_blank');

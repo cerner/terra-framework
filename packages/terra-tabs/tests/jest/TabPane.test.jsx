@@ -1,7 +1,6 @@
 import React from 'react';
 import Pane from '../../src/TabPane';
 
-
 describe('TabPane', () => {
   it('should render a default component with label', () => {
     const wrapper = shallow(<Pane label="Default" />);

@@ -59,5 +59,4 @@ const DatePickerExampleIncludeDates = () => (
   />
 );
 
-
 export default DatePickerExampleIncludeDates;
