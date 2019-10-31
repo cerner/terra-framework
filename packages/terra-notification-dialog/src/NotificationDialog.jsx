@@ -227,6 +227,7 @@ class NotificationDialog extends React.Component {
     const defaultHeader = variant === variants.CUSTOM ? '' : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
     const notificationDialogClassNames = cx('notification-dialog', customProps.className);
 
+    /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
     return (
       <AbstractModal
         ariaLabel="Notification Dialog"
@@ -272,6 +273,7 @@ class NotificationDialog extends React.Component {
         </FocusTrap>
       </AbstractModal>
     );
+    /* eslint-enable jsx-a11y/no-noninteractive-tabindex */
   }
 }
 
