@@ -6,7 +6,7 @@ const clickConfirm = () => {
   console.log('You clicked confirm'); // eslint-disable-line no-console
 };
 
-class ReversedActionNotificationDialog extends React.Component {
+class RejectFirstNotificationDialog extends React.Component {
   constructor() {
     super();
 

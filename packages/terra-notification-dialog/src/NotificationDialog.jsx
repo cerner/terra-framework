@@ -33,15 +33,15 @@ const propTypes = {
    */
   message: PropTypes.string,
   /**
-   * Start Message of the notification-dialog.
+   * Message to be displayed at the start of the notification dialog body.
    */
   startMessage: PropTypes.string,
   /**
-   * End Message of the notification-dialog.
+   * Message to be displayed at the end of the notification dialog body.
    */
   endMessage: PropTypes.string,
   /**
-   * Content of the notification-dialog.
+   *  Non-plain text content to be inserted after `startMessage` and/or before `endMessage`
    */
   content: PropTypes.node,
   /**
@@ -93,7 +93,7 @@ const propTypes = {
    */
   isOpen: PropTypes.bool.isRequired,
   /**
-   * Reverses the order of notification action buttons
+   * Determines the order of notification action buttons.
    */
   buttonOrder: PropTypes.oneOf([
     'acceptFirst',

@@ -62,7 +62,7 @@ const DocPage = () => (
         source: ContentNotificationDialogSrc,
       },
       {
-        title: 'Notification Dialog with Actions Reversed',
+        title: 'Notification Dialog with Reject action first',
         example: <ReversedActionNotificationDialog />,
         source: ReversedActionNotificationDialogSrc,
       },
