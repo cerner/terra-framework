@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added documentation for `key` on `Progressive Loading`.
 
 3.20.0 - (October 30, 2019)
 ------------------
