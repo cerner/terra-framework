@@ -3,11 +3,7 @@ Changelog
 
 Unreleased
 ----------
-
-1.16.0 - (October 30, 2019)
-------------------
 ### Changed
-* Missing aria-labels added in examples.
 * Changed 'NavigationPromptCheckpoint' to have the same logic as 'notification-dialog' changes
   * 'message' prop has been deprecated, will resolve to 'startMessage'
   * Added a 'startMessage' string prop that will display a message after 'title'
@@ -15,6 +11,11 @@ Unreleased
   * Added an 'endMessage' string prop that will display a message after 'content'
   * Added 'buttonOrder' prop to determine order of accept and reject buttons
   * 'emphasizedAction' now accepts a 'none' value and defaults to it.
+
+1.16.0 - (October 30, 2019)
+------------------
+### Changed
+* Missing aria-labels added in examples.
 
 1.15.0 - (October 21, 2019)
 ------------------
