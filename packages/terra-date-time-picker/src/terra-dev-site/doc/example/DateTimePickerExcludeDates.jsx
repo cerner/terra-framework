@@ -55,5 +55,4 @@ const DateTimePickerExampleExcludeDates = () => (
   />
 );
 
-
 export default DateTimePickerExampleExcludeDates;

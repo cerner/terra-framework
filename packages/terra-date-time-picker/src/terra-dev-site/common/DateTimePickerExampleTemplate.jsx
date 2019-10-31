@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import DateTimePicker from 'terra-date-time-picker/lib/DateTimePicker';
 import DateTimeUtils from '../../DateTimeUtils';
 
-
 const propTypes = {
   /**
    * The current entered date time. Use for the selected date message.
