@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+1.16.0 - (October 30, 2019)
+------------------
 ### Changed
 * Missing aria-labels added in examples.
 

@@ -3,10 +3,18 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Resolved lint warnings for multiple empty lines
+
+1.5.0 - (October 30, 2019)
+------------------
+### Changed
+* Minor dependency updates
 
 1.4.0 - (October 21, 2019)
 ------------------
 ### Changed
+* Reenabled some tests
 * Update Jest snapshots
 
 1.3.0 - (October 16, 2019)

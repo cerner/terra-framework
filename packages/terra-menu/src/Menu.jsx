@@ -99,7 +99,6 @@ class Menu extends React.Component {
     }
   }
 
-
   push(item) {
     this.setState((prevState) => {
       const newStack = prevState.stack.slice();

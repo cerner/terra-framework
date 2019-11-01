@@ -57,11 +57,11 @@
 
     .tab,
     .tab-menu {
-      background-image: var(--terra-tabs-modular-background-image, linear-gradient(to bottom, #007ee0, #007ee0));
+      background-image: var(--terra-tabs-modular-background-image, linear-gradient(to bottom, #006fc3, #006fc3));
       background-position: var(--terra-tabs-modular-background-position, 0 100%);
       background-repeat: no-repeat;
       background-size: var(--terra-tabs-modular-background-size, 0 2px);
-      color: var(--terra-tabs-modular-color, #007ee0);
+      color: var(--terra-tabs-modular-color, #006fc3);
 
       &.is-active {
         background-size: var(--terra-tabs-modular-active-background-size, 100% 2px);
@@ -98,7 +98,7 @@
     .collapsible-tabs-container:focus .is-active,
     .tab-menu:focus.is-active {
       background-color: var(--terra-tabs-modular-active-focus-background-color, #fff);
-      background-image: var(--terra-tabs-modular-active-focus-background-image, linear-gradient(to bottom, #007ee0, #007ee0));
+      background-image: var(--terra-tabs-modular-active-focus-background-image, linear-gradient(to bottom, #006fc3, #006fc3));
       border-radius: var(--terra-tabs-modular-active-focus-border-radius, 0);
       position: relative;
       z-index: 1;
