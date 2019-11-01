@@ -50,7 +50,6 @@ class CollapsibleMenuViewToggle extends React.Component {
     this.wrappedOnChange = this.wrappedOnChange.bind(this);
   }
 
-
   // Wrapping onChange event so that the same parameters will be given when the display is a checkbox and a menu.item
   wrappedOnChange(event) {
     if (this.props.onChange) {
