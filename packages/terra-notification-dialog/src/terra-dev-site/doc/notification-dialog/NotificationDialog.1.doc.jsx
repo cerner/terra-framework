@@ -20,8 +20,8 @@ import NotificationDialogWithLongText from '../example/NotificationDialogWithLon
 import NotificationDialogWithLongTextSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/NotificationDialogWithLongText.jsx';
 import NotificationDialogOnModalManager from '../example/NotificationDialogOnModalManager';
 import NotificationDialogOnModalManagerSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/NotificationDialogOnModalManager.jsx';
-import ReversedActionNotificationDialog from '../example/ReversedActionNotificationDialog';
-import ReversedActionNotificationDialogSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ReversedActionNotificationDialog.jsx';
+import RejectFirstNotificationDialog from '../example/RejectFirstNotificationDialog';
+import RejectFirstNotificationDialogSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/RejectFirstNotificationDialog.jsx';
 import EmphasizedRejectNotificationDialog from '../example/EmphasizedRejectNotificationDialog';
 import EmphasizedRejectNotificationDialogSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/EmphasizedRejectNotificationDialog.jsx';
 
@@ -63,8 +63,8 @@ const DocPage = () => (
       },
       {
         title: 'Notification Dialog with Reject action first',
-        example: <ReversedActionNotificationDialog />,
-        source: ReversedActionNotificationDialogSrc,
+        example: <RejectFirstNotificationDialog />,
+        source: RejectFirstNotificationDialogSrc,
       },
       {
         title: 'Notification Dialog with Reject Action emphasized',

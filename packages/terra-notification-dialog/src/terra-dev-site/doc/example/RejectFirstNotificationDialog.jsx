@@ -50,4 +50,4 @@ class RejectFirstNotificationDialog extends React.Component {
   }
 }
 
-export default ReversedActionNotificationDialog;
+export default RejectFirstNotificationDialog;

@@ -132,9 +132,9 @@ Terra.describeViewports('notification-dialog', ['tiny', 'medium', 'large'], () =
 Terra.describeViewports('notification-dialog', ['tiny', 'medium', 'large'], () => {
   afterEach(() => browser.click('[class*="NotificationDialog-module__actions"] button:first-child'));
 
-  describe('Notification-dialog with Reversed Actions', () => {
-    it('Notification-dialog with Reversed Actions', () => {
-      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/reversed-action-notification-dialog');
+  describe('Notification-dialog with Reject Action first', () => {
+    it('Notification-dialog with Reject Action first', () => {
+      browser.url('/#/raw/tests/terra-notification-dialog/notification-dialog/reject-first-notification-dialog');
       browser.click('#trigger-notification-dialog');
       Terra.validates.element({ selector });
     });
