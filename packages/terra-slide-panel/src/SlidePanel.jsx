@@ -147,7 +147,6 @@ class SlidePanel extends React.Component {
   }
 }
 
-
 SlidePanel.propTypes = propTypes;
 SlidePanel.defaultProps = defaultProps;
 

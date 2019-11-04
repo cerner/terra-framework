@@ -13,7 +13,6 @@ describe('PopupMenuListItem', () => {
     expect(shallowComponent).toMatchSnapshot();
   });
 
-
   it('should render prop data', () => {
     const shallowComponent = shallow(
       <PopupMenuListItem

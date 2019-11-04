@@ -4,7 +4,8 @@ Changelog
 Unreleased
 ----------
 ### Changed
-* Updated examples to use `hooks`.
+* Updated examples to use `hooks`
+* Resolved lint warnings for multiple empty lines
 
 6.17.0 - (October 30, 2019)
 ------------------

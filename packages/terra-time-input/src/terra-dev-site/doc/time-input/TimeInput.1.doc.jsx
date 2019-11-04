@@ -26,7 +26,6 @@ import TimeInputSecondsInvalidSrc from '!raw-loader!../../../../src/terra-dev-si
 import TimeInputSecondsIncomplete from '../example/TimeInputSecondsIncomplete';
 import TimeInputSecondsIncompleteSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TimeInputSecondsIncomplete';
 
-
 const DocPage = () => (
   <DocTemplate
     packageName={name}

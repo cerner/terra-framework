@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Resolved lint warnings for multiple empty lines
+* Regenerate wdio screenshots
 
 4.18.0 - (October 30, 2019)
 ------------------
