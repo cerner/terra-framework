@@ -8,7 +8,7 @@ import styles from './PopupAttachmentBehavior.module.scss';
 const cx = classNames.bind(styles);
 
 function PopupAttachmentBehavior() {
-  const buttonElement = useRef(null);
+  const buttonElement = useRef();
   const [open, setOpen] = useState(false);
   const [contentBehavior, setContentBehavior] = useState('auto');
 
@@ -40,7 +40,6 @@ function PopupAttachmentBehavior() {
           <option value="push">Push</option>
         </select>
         <Button
-          id="xyz"
           className={cx('popup-wrapper')}
           text="Open Popup"
           onClick={handleButtonClick}
@@ -49,7 +48,7 @@ function PopupAttachmentBehavior() {
       </div>
       <Popup
         attachmentBehavior={contentBehavior}
-        contentAttachment="top-center"
+        contentAttachment="top center"
         isOpen={open}
         targetRef={getButtonNode}
         onRequestClose={handleRequestClose}

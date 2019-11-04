@@ -23,7 +23,7 @@ const PopupContent = ({ closeButtonRequired, handleRequestClose}) => {
 /* eslint-enable */
 
 function PopupNoHeader() {
-  const parentElement = useRef(null);
+  const parentElement = useRef();
   const [open, setOpen] = useState(false);
 
   const setParentNode = (node) => {

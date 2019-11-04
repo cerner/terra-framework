@@ -27,7 +27,7 @@ const generateOptions = values => (
 );
 
 function PopupAttachment() {
-  const buttonElement = useRef(null);
+  const buttonElement = useRef();
   const [open, setOpen] = useState(false);
   const [contentAttachment, setContentAttachment] = useState(ATTACHMENT_POSITIONS[0]);
 
@@ -59,7 +59,6 @@ function PopupAttachment() {
           {generateOptions(ATTACHMENT_POSITIONS)}
         </select>
         <Button
-          id="xyz"
           className={cx('popup-wrapper')}
           text="Open Popup"
           onClick={handleButtonClick}

@@ -8,8 +8,8 @@ import styles from './PopupDocCommon.module.scss';
 const cx = classNames.bind(styles);
 
 function PopupBounded() {
-  const buttonElement = useRef(null);
-  const parentElement = useRef(null);
+  const buttonElement = useRef();
+  const parentElement = useRef();
   const [open, setOpen] = useState(false);
 
 

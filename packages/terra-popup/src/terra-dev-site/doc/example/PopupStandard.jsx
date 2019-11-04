@@ -4,7 +4,7 @@ import Popup from 'terra-popup';
 import Placeholder from 'terra-doc-template/lib/Placeholder';
 
 function PopupStandard() {
-  const buttonElement = useRef(null);
+  const buttonElement = useRef();
   const [open, setOpen] = useState(false);
 
   const setButtonNode = (node) => {
