@@ -4,7 +4,6 @@ import ActionHeader from 'terra-action-header';
 import ActionFooter from 'terra-action-footer';
 import DialogModal from '../../../DialogModal';
 
-
 class DialogModalWithLongText extends React.Component {
   constructor() {
     super();

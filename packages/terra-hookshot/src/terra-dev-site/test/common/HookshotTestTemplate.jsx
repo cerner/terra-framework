@@ -102,7 +102,6 @@ class HookshotTemplate extends React.Component {
       </div>
     );
 
-
     return (
       <div id={`${id}-bounds`} className={cx(['wrapper', `hookshot-wrapper-${type}`])}>
         <Hookshot

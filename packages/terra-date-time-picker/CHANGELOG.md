@@ -4,6 +4,11 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
+* Resolved lint warnings for multiple empty lines
+
+4.18.0 - (October 30, 2019)
+------------------
+### Changed
 * Force update to render the missing hour.
 * Duplicate ID in examples changed.
 * Changed 12-hour format appearance for mobile and desktop.

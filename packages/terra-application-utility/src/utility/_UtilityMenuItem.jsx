@@ -179,7 +179,6 @@ class UtilityMenuItem extends React.Component {
     );
     /* eslint-enable jsx-a11y/no-static-element-interactions */
 
-
     const renderFooterButton = (wrapOnKeyDown, handleSelection) => (
       <Button
         {...customProps}
