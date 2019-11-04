@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'terra-button';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import Popup from 'terra-popup';
@@ -13,70 +13,58 @@ const propTypes = {
   disclosureManager: disclosureManagerShape,
 };
 
-class NotificationDialogWithFocus extends React.Component {
-  constructor(props) {
-    super(props);
+const NotificationDialogWithFocus = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-    this.state = {
-      isOpen: false,
-    };
+  const handleOpenModal = () => {
+    setIsOpen(true);
+  };
 
-    this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
-    this.handlePopupButtonClick = this.handlePopupButtonClick.bind(this);
-    this.handlePopupRequestClose = this.handlePopupRequestClose.bind(this);
-  }
+  const handleCloseModal = () => {
+    setIsOpen(false);
+  };
 
-  handleOpenModal() {
-    this.setState({ isOpen: true });
-  }
+  const handlePopupButtonClick = () => {
+    setIsPopupOpen(true);
+  };
 
-  handleCloseModal() {
-    this.setState({ isOpen: false });
-  }
+  const handlePopupRequestClose = () => {
+    setIsPopupOpen(false);
+  };
 
-  handlePopupButtonClick() {
-    this.setState({ open: true });
-  }
-
-  handlePopupRequestClose() {
-    this.setState({ open: false });
-  }
-
-  render() {
-    return (
-      <div>
-        <NotificationDialog
-          variant={NotificationDialogVariants.ALERT}
-          isOpen={this.state.isOpen}
-          title="Make sure that the title relates directly to the choices."
-          startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
-          acceptAction={{
-            text: 'Confirm',
-            onClick: clickConfirm,
-          }}
-          rejectAction={{
-            text: 'Close',
-            onClick: this.handleCloseModal,
-          }}
-          buttonOrder="acceptFirst"
-          emphasizedAction="accept"
-        />
-        <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
-        <Button text="Dismiss" onClick={this.props.disclosureManager.dismiss} />
-        <Popup
-          isArrowDisplayed
-          isOpen={this.state.open}
-          onRequestClose={this.handlePopupRequestClose}
-          targetRef={() => document.getElementById('popup-in-modal')}
-        >
-          <Placeholder title="Popup Content" />
-        </Popup>
-        <Button id="popup-in-modal" text="Popup In Modal" onClick={this.handlePopupButtonClick} />
-      </div>
-    );
-  }
-}
+  return (
+    <>
+      <NotificationDialog
+        variant={NotificationDialogVariants.ALERT}
+        isOpen={isOpen}
+        title="Make sure that the title relates directly to the choices."
+        startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
+        acceptAction={{
+          text: 'Confirm',
+          onClick: clickConfirm,
+        }}
+        rejectAction={{
+          text: 'Close',
+          onClick: handleCloseModal,
+        }}
+        buttonOrder="acceptFirst"
+        emphasizedAction="accept"
+      />
+      <Button text="Trigger NotificationDialog" onClick={handleOpenModal} />
+      <Button text="Dismiss" onClick={props.disclosureManager.dismiss} />
+      <Popup
+        isArrowDisplayed
+        isOpen={isPopupOpen}
+        onRequestClose={handlePopupRequestClose}
+        targetRef={() => document.getElementById('popup-in-modal')}
+      >
+        <Placeholder title="Popup Content" />
+      </Popup>
+      <Button id="popup-in-modal" text="Popup In Modal" onClick={handlePopupButtonClick} />
+    </>
+  );
+};
 
 NotificationDialogWithFocus.propTypes = propTypes;
 export default withDisclosureManager(NotificationDialogWithFocus);

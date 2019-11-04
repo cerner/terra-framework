@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'terra-button';
 import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
 
@@ -6,56 +6,45 @@ const clickConfirm = () => {
   console.log('You clicked confirm'); // eslint-disable-line no-console
 };
 
-class ContentNotificationDialog extends React.Component {
-  constructor() {
-    super();
+const ContentNotificationDialog = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-    this.state = {
-      isOpen: false,
-    };
+  const handleOpenModal = () => {
+    setIsOpen(true);
+  };
 
-    this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
-  }
+  const handleCloseModal = () => {
+    setIsOpen(false);
+  };
 
-  handleOpenModal() {
-    this.setState({ isOpen: true });
-  }
-
-  handleCloseModal() {
-    this.setState({ isOpen: false });
-  }
-
-  render() {
-    return (
-      <div>
-        <NotificationDialog
-          variant={NotificationDialogVariants.ALERT}
-          isOpen={this.state.isOpen}
-          title="Make sure that the title relates directly to the choices."
-          startMessage="The Start Message is text used to provide more detail or define terminology at the beginning of the dialog body. Don’t repeat the title verbatim."
-          content={(
-            <ul>
-              <li>Item 1</li>
-              <li>Item 2</li>
-            </ul>
-          )}
-          endMessage="The End Message is text used to provide more detail or define terminology at the end of the dialog body. Don’t repeat the title verbatim."
-          acceptAction={{
-            text: 'Confirm',
-            onClick: clickConfirm,
-          }}
-          rejectAction={{
-            text: 'Close',
-            onClick: this.handleCloseModal,
-          }}
-          buttonOrder="acceptFirst"
-          emphasizedAction="accept"
-        />
-        <Button text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
-      </div>
-    );
-  }
-}
+  return (
+    <>
+      <NotificationDialog
+        variant={NotificationDialogVariants.ALERT}
+        isOpen={isOpen}
+        title="Make sure that the title relates directly to the choices."
+        startMessage="The Start Message is text used to provide more detail or define terminology at the beginning of the dialog body. Don’t repeat the title verbatim."
+        content={(
+          <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+          </ul>
+        )}
+        endMessage="The End Message is text used to provide more detail or define terminology at the end of the dialog body. Don’t repeat the title verbatim."
+        acceptAction={{
+          text: 'Confirm',
+          onClick: clickConfirm,
+        }}
+        rejectAction={{
+          text: 'Close',
+          onClick: handleCloseModal,
+        }}
+        buttonOrder="acceptFirst"
+        emphasizedAction="accept"
+      />
+      <Button text="Trigger NotificationDialog" onClick={handleOpenModal} />
+    </>
+  );
+};
 
 export default ContentNotificationDialog;
