@@ -11,7 +11,7 @@
     // This will ensure that by default, the notification dialog sizes to the viewport (minus the insets).
     width: calc(100% - 2 * var(--terra-notification-dialog-small-horizontal-inset, 17px));
 
-    // This will ensure that above the medium breakpoint, a max-width is enforced
+    // This will ensure that above the small breakpoint, a max-width is enforced
     @include terra-mq-small-up {
       max-width: var(--terra-notification-dialog-max-width, 500px);
     }
