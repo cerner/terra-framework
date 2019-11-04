@@ -93,9 +93,7 @@
     flex-wrap: wrap;
     font-size: var(--terra-notification-dialog-title-font-size, 1.07142rem);
     font-weight: var(--terra-notification-dialog-title-font-weight, bold);
-    /* stylelint-disable terra/custom-property-name*/
     margin-top: var(--terra-notification-dialog-title-margin-top, 0.21428rem);
-    /* stylelint-enable terra/custom-property-name*/
     text-align: var(--terra-notification-dialog-title-text-align, left);
     width: 100%;
     word-wrap: break-word;
