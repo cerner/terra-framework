@@ -59,6 +59,8 @@
   }
 
   .icon-container {
+    flex-shrink: 0; // This will keep text-wrapper from overlapping icon-container in IE11
+    
     > .icon {
       display: inline-block;
       height: var(--terra-notification-dialog-icon-height, 2rem);
