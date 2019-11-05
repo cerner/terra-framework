@@ -64,6 +64,10 @@ const propTypes = {
    */
   activeNavigationItemKey: PropTypes.string,
   /**
+  * Callback function triggered on Drawer Menu Open/Close
+  */
+  onDrawerMenuStateChange: PropTypes.func,
+  /**
    * A function to be executed upon the selection of a navigation item.
    * Ex: `onSelectNavigationItem(String selectedNavigationItemKey, Object metaData)`
    */
@@ -116,6 +120,7 @@ const ApplicationNavigation = ({
   activeNavigationItemKey,
   navigationRenderFunction,
   extensionItems,
+  onDrawerMenuStateChange,
   onSelectExtensionItem,
   onSelectSettings,
   onSelectHelp,
@@ -144,6 +149,9 @@ const ApplicationNavigation = ({
   function updateDrawerIsOpen(value) {
     drawerMenuIsOpenRef.current = value;
     setDrawerMenuIsOpen(value);
+    if (onDrawerMenuStateChange) {
+      onDrawerMenuStateChange(value);
+    }
   }
 
   /**

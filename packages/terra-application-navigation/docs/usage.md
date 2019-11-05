@@ -200,6 +200,11 @@ const myNotifications = {
 }
 ```
 
+### `onDrawerMenuStateChange`
+#### Is Required: `false`
+
+`onDrawerMenuStateChange` callback allows the consumer to know whether the Drawer menu state is Open or Closed.
+
 ## Responsive Design
 
 The ApplicationNavigation has two rendering modes: `standard` and `compact`.
