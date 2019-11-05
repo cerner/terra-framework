@@ -13,7 +13,6 @@ const DatePickerStartDate = () => (
     />
   </div>
 
-
 );
 
 export default DatePickerStartDate;

@@ -20,7 +20,6 @@ PageContent.propTypes = {
   contentName: PropTypes.string,
 };
 
-
 /**
  * The routingConfig API matches that of the NavigationLayout. Routing specifications for the
  * menu and content regions are supported; the header region is not configurable.

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DateTimePicker from 'terra-date-time-picker/lib/DateTimePicker';
-
+import DateTimeUtils from '../../DateTimeUtils';
 
 const propTypes = {
   /**
@@ -17,7 +17,14 @@ const defaultProps = {
 class DatePickerExample extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { dateTime: this.props.value };
+    let dateTimeDisplay = props.value;
+    const dateTime = DateTimeUtils.createSafeDate(dateTimeDisplay);
+
+    if (dateTime && dateTime.isValid()) {
+      dateTimeDisplay = dateTime.format();
+    }
+
+    this.state = { dateTime: dateTimeDisplay };
     this.handleDateTimeChange = this.handleDateTimeChange.bind(this);
   }
 

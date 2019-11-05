@@ -2,7 +2,6 @@ import React from 'react';
 import ThemeProvider from '../../../ThemeProvider';
 import MockThemeComponent from '../common/MockThemeComponent';
 
-
 class SwitchThemes extends React.Component {
   constructor(props) {
     super(props);

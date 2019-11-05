@@ -3,6 +3,11 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Resolved lint warnings for multiple empty lines
+
+6.17.0 - (October 30, 2019)
+------------------
 ### Fixed
 * Fixed accessibility issue in the tabs component.
 
