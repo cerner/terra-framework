@@ -64,7 +64,7 @@ const propTypes = {
    */
   activeNavigationItemKey: PropTypes.string,
   /**
-  * Callback function triggered on Drawer Menu Open/Close
+  * Callback function triggered on Drawer Menu state change
   */
   onDrawerMenuStateChange: PropTypes.func,
   /**

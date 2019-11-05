@@ -1,7 +1,7 @@
 Changelog
 =========
 ### Added
-* `onDrawerMenuStateChange` callback added for Drawer menu Open/Close.
+* `onDrawerMenuStateChange` callback added for Drawer menu state change.
 
 Unreleased
 ----------
