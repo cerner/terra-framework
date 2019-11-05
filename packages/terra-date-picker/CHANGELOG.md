@@ -4,7 +4,10 @@ Changelog
 Unreleased
 ----------
 ### Added
-* Added `aria-disabled` in react-datepicker.
+* Added `aria-disabled` in react-datepicker
+
+### Changed
+* Updated color for selected dates and removed ignore axe rules.
 
 4.17.0 - (October 21, 2019)
 ------------------

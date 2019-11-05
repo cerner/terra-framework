@@ -198,22 +198,22 @@
       color: #fff;
 
       &:hover {
-        background-color: darken($datepicker-selected-color, 5%);
+        background-color: $datepicker-selected-color;
       }
     }
 
     &--keyboard-selected {
-      background-color: lighten($datepicker-selected-color, 10%);
+      background-color: $datepicker-selected-color;
       border-radius: $datepicker-border-radius;
       color: #fff;
 
       &:hover {
-        background-color: darken($datepicker-selected-color, 5%);
+        background-color: $datepicker-selected-color;
       }
     }
 
     &--in-selecting-range:not(&--in-range) {
-      background-color: rgba($datepicker-selected-color, 0.5);
+      background-color: $datepicker-selected-color;
     }
 
     &--in-range:not(&--in-selecting-range) {

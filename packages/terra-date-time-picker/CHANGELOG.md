@@ -1,5 +1,7 @@
 ChangeLog
 =========
+### Changed
+* Updated wdio screenshots due to changes in react-datepicker colors.
 
 Unreleased
 ----------
