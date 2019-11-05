@@ -43,7 +43,7 @@ function AggregatorWithDisclosure() {
         <Wrapper itemsList={flip ? flippedItems : items} />
       </SlidePanelManager>
     </div>
-  )
+  );
 }
 
 export default AggregatorWithDisclosure;
