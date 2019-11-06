@@ -198,7 +198,7 @@
       color: #fff;
 
       &:hover {
-        background-color: $datepicker-selected-color;
+        background-color: $datepicker-hover-color;
       }
     }
 
@@ -208,12 +208,12 @@
       color: #fff;
 
       &:hover {
-        background-color: $datepicker-selected-color;
+        background-color: $datepicker-hover-color;
       }
     }
 
     &--in-selecting-range:not(&--in-range) {
-      background-color: $datepicker-selected-color;
+      background-color: rgba($datepicker-selected-color, 0.5);
     }
 
     &--in-range:not(&--in-selecting-range) {
