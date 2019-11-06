@@ -133,6 +133,7 @@ class NavigationPromptCheckpoint extends React.Component {
       this.setState({
         notificationDialogProps: {
           title: showDialogOptions.title,
+          message: showDialogOptions.message,
           startMessage: showDialogOptions.startMessage,
           content: showDialogOptions.content,
           endMessage: showDialogOptions.endMessage,
