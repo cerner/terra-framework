@@ -9,11 +9,11 @@
     flex-direction: column;
     position: fixed;
     // This will ensure that by default, the notification dialog sizes to the viewport (minus the insets).
-    width: calc(100% - 2 * var(--terra-notification-dialog-small-horizontal-inset, 10px));
+    width: calc(100% - 2 * var(--terra-notification-dialog-small-horizontal-inset, 17px));
 
-    // This will ensure that above the medium breakpoint, a max-width is enforced
-    @include terra-mq-medium-up {
-      max-width: 800px;
+    // This will ensure that above the small breakpoint, a max-width is enforced
+    @include terra-mq-small-up {
+      max-width: var(--terra-notification-dialog-max-width, 500px);
     }
   }
 
@@ -24,7 +24,7 @@
     flex-direction: row;
     height: 100%;
     overflow: auto;
-    padding: var(--terra-notification-dialog-body-padding, 1.25rem);
+    padding: var(--terra-notification-dialog-body-padding, 0.71428rem 0.85714rem 1.42857rem 0.92857rem);
     width: 100%;
   }
 
@@ -32,7 +32,7 @@
   .notification-dialog-inner-wrapper {
     display: flex;
     flex-direction: row;
-    max-height: 80vh;
+    max-height: 93vh;
   }
 
   .notification-dialog-container {
@@ -60,10 +60,12 @@
   }
 
   .icon-container {
+    flex-shrink: 0; // This will keep text-wrapper from overlapping icon-container in IE11
+    
     > .icon {
       display: inline-block;
       height: var(--terra-notification-dialog-icon-height, 2rem);
-      margin-right: var(--terra-notification-dialog-icon-margin-right, 1.25rem);
+      margin-right: var(--terra-notification-dialog-icon-margin-right, 0.57142rem);
       width: var(--terra-notification-dialog-icon-width, 2rem);
     }
 
@@ -92,15 +94,16 @@
     color: var(--terra-notification-dialog-title-color, #000);
     flex: 0 0 auto;
     flex-wrap: wrap;
-    font-size: var(--terra-notification-dialog-title-font-size, 1rem);
+    font-size: var(--terra-notification-dialog-title-font-size, 1.07142rem);
     font-weight: var(--terra-notification-dialog-title-font-weight, bold);
+    margin-top: var(--terra-notification-dialog-title-margin-top, 0.21428rem);
     text-align: var(--terra-notification-dialog-title-text-align, left);
     width: 100%;
     word-wrap: break-word;
   }
 
   .message {
-    color: var(--terra-notification-dialog-message-color, #000);
+    color: var(--terra-notification-dialog-message-color, #383f42);
     flex: 0 0 auto;
     flex-wrap: wrap;
     font-size: var(--terra-notification-dialog-message-font-size, 1rem);
@@ -110,7 +113,7 @@
   }
 
   .title + .message {
-    padding-top: var(--terra-notification-dialog-message-padding-top, 1rem);
+    padding-top: var(--terra-notification-dialog-message-padding-top, 1.07142rem);
   }
 
   .actions {

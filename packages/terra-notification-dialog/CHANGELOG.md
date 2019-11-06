@@ -7,6 +7,8 @@ Unreleased
 * 'message' prop has been deprecated, will resolve to 'startMessage'
 * 'primaryAction' prop has been deprecated, will resolve to 'acceptAction'
 * 'secondaryAction' prop has been deprecated, will resolve to 'rejectAction'
+* Notification Dialog maximum width set to constant value of 500px from 800px and is themable.
+* Minor style adjustments for the new smaller dialog design.
 
 ### Added
 * Added a 'startMessage' string prop that will display a message after 'title'
