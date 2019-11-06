@@ -20,24 +20,24 @@ const propTypes = {
   children: PropTypes.node.isRequired,
 
   /**
+   * Bounding container for the menu, will use window if no value provided.
+   */
+  boundingRef: PropTypes.func,
+
+  /**
    * A string representation of the width in px, limited to:
    * 160, 240, 320, 640, 960, 1280, 1760, or auto
    */
   menuWidth: PropTypes.oneOf(Object.keys(CollapsibleMenuViewItem.Opts.widths)),
 
   /**
-   * Bounding container for the menu, will use window if no value provided.
+   * Sets the menu button variant. One of `neutral`, `utility`.
    */
-  boundingRef: PropTypes.func,
-
-  /**
-   * Sets the more button variant. One of `neutral`, `utility`.
-   */
-  moreButtonVariant: PropTypes.oneOf([Button.Opts.Variants.NEUTRAL, Button.Opts.Variants.UTILITY]),
+  menuButtonVariant: PropTypes.oneOf([Button.Opts.Variants.NEUTRAL, Button.Opts.Variants.UTILITY]),
 };
 
 const defaultProps = {
-  moreButtonVariant: 'neutral',
+  menuButtonVariant: 'neutral',
 };
 
 class CollapsibleMenuView extends React.Component {
@@ -133,7 +133,7 @@ class CollapsibleMenuView extends React.Component {
 
   render() {
     const {
-      children, boundingRef, menuWidth, moreButtonVariant, ...customProps
+      children, boundingRef, menuWidth, menuButtonVariant, ...customProps
     } = this.props;
     const visibleChildren = React.Children.toArray(children);
 
@@ -166,7 +166,7 @@ class CollapsibleMenuView extends React.Component {
                 menuWidth={menuWidth}
                 isIconOnly
                 text={ellipsesText}
-                variant={moreButtonVariant}
+                variant={menuButtonVariant}
               />
             )}
           </FormattedMessage>

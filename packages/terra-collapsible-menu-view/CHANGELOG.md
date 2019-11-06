@@ -4,7 +4,7 @@ ChangeLog
 Unreleased
 ----------
 ### Added
-* Added `moreButtonVariant` prop to switch 'More Button' between `neutral` and `utility` variants.
+* Added `menuButtonVariant` prop to switch menu disclosure button between `neutral` and `utility` variants.
 
 ### Changed
 * Resolved lint warnings for multiple empty lines

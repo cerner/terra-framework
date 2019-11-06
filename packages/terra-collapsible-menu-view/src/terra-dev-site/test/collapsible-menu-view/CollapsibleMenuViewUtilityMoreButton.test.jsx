@@ -3,7 +3,7 @@ import IconSend from 'terra-icon/lib/icon/IconSend';
 import CollapsibleMenuView from '../../../CollapsibleMenuView';
 
 const CollapsibleMenuViewDemo = () => (
-  <CollapsibleMenuView moreButtonVariant="utility">
+  <CollapsibleMenuView menuButtonVariant="utility">
     <CollapsibleMenuView.Item text="Send Notification 1" className="ButtonA" key="buttonA" />
     <CollapsibleMenuView.Item text="Send Notification 2" className="ButtonB" key="buttonB" />
     <CollapsibleMenuView.Divider key="Divider4" />
