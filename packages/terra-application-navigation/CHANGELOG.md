@@ -1,5 +1,7 @@
 Changelog
 =========
+### Added
+* `onDrawerMenuStateChange` callback added for Drawer menu state change.
 
 Unreleased
 ----------
