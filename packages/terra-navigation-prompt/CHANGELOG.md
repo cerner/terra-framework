@@ -12,6 +12,11 @@ Unreleased
   * Added 'buttonOrder' prop to determine order of accept and reject buttons
   * 'emphasizedAction' now accepts a 'none' value and defaults to it.
 
+1.17.0 - (November 7, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 1.16.0 - (October 30, 2019)
 ------------------
 ### Changed

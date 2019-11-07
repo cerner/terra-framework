@@ -193,6 +193,18 @@ Terra.describeViewports('ApplicationNavigation - Small', ['small'], () => {
 
     Terra.it.validatesElement({ selector: '#root' });
   });
+
+  describe('ApplicationNavigation displays the nav drawer and onDrawerMenuStateChange callback is triggered', () => {
+    before(() => browser.url('/#/raw/tests/terra-application-navigation/application-navigation/application-navigation'));
+
+    it('open nav drawer', () => {
+      browser.waitForVisible('[data-compact-header-toggle="true"]');
+      browser.click('[data-compact-header-toggle="true"]');
+      browser.pause(250);
+    });
+
+    Terra.it.validatesElement({ selector: '#root' });
+  });
 });
 
 Terra.describeViewports('ApplicationNavigation Responsive', ['small', 'medium', 'large', 'huge', 'enormous'], () => {

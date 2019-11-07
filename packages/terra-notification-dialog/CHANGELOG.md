@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.18.0 - (November 7, 2019)
+------------------
 ### Changed
 * 'message' prop has been deprecated, will resolve to 'startMessage'
 * 'primaryAction' prop has been deprecated, will resolve to 'acceptAction'
