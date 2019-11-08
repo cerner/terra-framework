@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+4.19.0 - (November 7, 2019)
+------------------
 ### Fixed
 * Fixed Invalid and Incomplete wdio test logic to ensure states are off after tests runs.
 
