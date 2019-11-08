@@ -3,6 +3,14 @@ Changelog
 
 Unreleased
 ----------
+
+3.20.0 - (November 7, 2019)
+------------------
+### Changed
+* Resolved lint warnings for multiple empty lines
+
+3.19.0 - (October 30, 2019)
+------------------
 ### Added
 * Added `aria-label` to the "Main" and "Panel" containers.
 * Added `mainAriaLabel` and `panelAriaLabel` as optional props.

@@ -56,7 +56,6 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
     Terra.it.validatesElement();
   });
 
-
   describe('Date Time Picker Twelve Hour Disabled Mobile - Disabled Styles', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-date-time-picker/date-time-picker/twelve-hour/date-time-picker-disabled-12-hour-mobile');

@@ -3,6 +3,14 @@ Changelog
 
 Unreleased
 ----------
+
+4.16.0 - (November 7, 2019)
+------------------
+### Changed
+* Resolved lint warnings for multiple empty lines
+
+4.15.0 - (October 30, 2019)
+------------------
 ### Changed
 * Changed 12-hour format appearance for mobile and desktop.
 * Meridiem select on Desktop has been changed to buttons which means that the WebdriverIO reference screenshots (if any) and/or any code in the consumer application that accesses the old meridiem select functionality on the Desktop view need to be updated.
@@ -20,7 +28,7 @@ Unreleased
 ### Added
 * Added `isIncomplete` prop and stylings
 * Added `isInvalid` prop and stylings
-* Added `isInvalidMeridiem` prop 
+* Added `isInvalidMeridiem` prop
 * Added `required` prop
 
 4.12.0 - (October 3, 2019)

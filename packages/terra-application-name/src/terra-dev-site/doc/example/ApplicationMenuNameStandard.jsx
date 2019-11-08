@@ -25,5 +25,4 @@ const ApplicationMenuNameStandard = () => (
   />
 );
 
-
 export default ApplicationMenuNameStandard;

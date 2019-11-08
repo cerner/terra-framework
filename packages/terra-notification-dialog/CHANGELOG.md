@@ -4,6 +4,17 @@ Changelog
 Unreleased
 ----------
 
+3.18.0 - (November 7, 2019)
+------------------
+### Changed
+* Notification Dialog maximum width set to constant value of 500px from 800px and is themable.
+* Minor style adjustments for the new smaller dialog design.
+
+3.17.0 - (October 30, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 3.16.0 - (October 21, 2019)
 ------------------
 ### Changed

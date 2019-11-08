@@ -3,6 +3,14 @@ Changelog
 
 Unreleased
 ----------
+
+5.17.0 - (November 7, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+5.16.0 - (October 30, 2019)
+------------------
 ### Changed
 * Duplicate IDs in examples changed.
 * Jest snapshot updates.
