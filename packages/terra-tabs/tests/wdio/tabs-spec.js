@@ -1,3 +1,4 @@
+/* globals $ */
 const ignoredA11y = {
   // https://github.com/cerner/terra-core/issues/1061
   'aria-allowed-attr': { enabled: false },
@@ -80,6 +81,19 @@ Terra.describeViewports('Tabs - Large screen', ['large'], () => {
       browser.url('/#/raw/tests/terra-tabs/tabs/tabs/fill-parent-tabs');
       browser.moveToObject('[class*="tab-content"]');
       Terra.validates.element();
+    });
+  });
+
+  describe('Additional Tabs after mount', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-tabs/tabs/tabs/additional-tabs');
+    });
+
+    Terra.it.matchesScreenshot('before');
+
+    it('Additional Tabs', () => {
+      $('#tabsWrapper-20').waitForExist(4000);
+      Terra.validates.element('after');
     });
   });
 });

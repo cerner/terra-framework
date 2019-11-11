@@ -9,6 +9,9 @@ Unreleased
 ### Changed
 * Resolved lint warnings for multiple empty lines
 
+### Fixed
+* Reset cache and handle visibility of tabs added/removed post initial mount.
+
 6.17.0 - (October 30, 2019)
 ------------------
 ### Fixed
