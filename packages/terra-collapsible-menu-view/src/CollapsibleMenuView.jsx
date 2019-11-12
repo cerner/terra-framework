@@ -3,6 +3,7 @@ import ResizeObserver from 'resize-observer-polyfill';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { FormattedMessage } from 'react-intl';
+import Button from 'terra-button';
 import CollapsibleMenuViewItem from './CollapsibleMenuViewItem';
 import CollapsibleMenuViewItemGroup from './CollapsibleMenuViewItemGroup';
 import CollapsibleMenuViewToggle from './CollapsibleMenuViewToggle';
@@ -19,15 +20,24 @@ const propTypes = {
   children: PropTypes.node.isRequired,
 
   /**
+   * Bounding container for the menu, will use window if no value provided.
+   */
+  boundingRef: PropTypes.func,
+
+  /**
    * A string representation of the width in px, limited to:
    * 160, 240, 320, 640, 960, 1280, 1760, or auto
    */
   menuWidth: PropTypes.oneOf(Object.keys(CollapsibleMenuViewItem.Opts.widths)),
 
   /**
-   * Bounding container for the menu, will use window if no value provided.
+   * Sets the menu button variant. One of `neutral`, `utility`.
    */
-  boundingRef: PropTypes.func,
+  menuButtonVariant: PropTypes.oneOf([Button.Opts.Variants.NEUTRAL, Button.Opts.Variants.UTILITY]),
+};
+
+const defaultProps = {
+  menuButtonVariant: 'neutral',
 };
 
 class CollapsibleMenuView extends React.Component {
@@ -123,7 +133,7 @@ class CollapsibleMenuView extends React.Component {
 
   render() {
     const {
-      children, boundingRef, menuWidth, ...customProps
+      children, boundingRef, menuWidth, menuButtonVariant, ...customProps
     } = this.props;
     const visibleChildren = React.Children.toArray(children);
 
@@ -156,6 +166,7 @@ class CollapsibleMenuView extends React.Component {
                 menuWidth={menuWidth}
                 isIconOnly
                 text={ellipsesText}
+                variant={menuButtonVariant}
               />
             )}
           </FormattedMessage>
@@ -171,5 +182,6 @@ CollapsibleMenuView.Toggle = CollapsibleMenuViewToggle;
 CollapsibleMenuView.Divider = CollapsibleMenuViewDivider;
 
 CollapsibleMenuView.propTypes = propTypes;
+CollapsibleMenuView.defaultProps = defaultProps;
 
 export default CollapsibleMenuView;
