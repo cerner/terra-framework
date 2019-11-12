@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+6.18.0 - (November 7, 2019)
+------------------
 ### Changed
 * Updated examples to use `hooks`
 * Resolved lint warnings for multiple empty lines

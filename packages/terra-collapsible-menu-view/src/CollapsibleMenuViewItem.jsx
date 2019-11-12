@@ -146,7 +146,7 @@ class CollapsibleMenuViewItem extends React.Component {
               onClick={this.handleButtonClick}
               isIconOnly={isIconOnly}
             />
-)}
+          )}
         >
           {subMenuItems}
         </Menu>
