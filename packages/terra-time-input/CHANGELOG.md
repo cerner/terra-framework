@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Fixed background color issue of time components in incomplete `time-input`.
 
 4.16.0 - (November 7, 2019)
 ------------------
