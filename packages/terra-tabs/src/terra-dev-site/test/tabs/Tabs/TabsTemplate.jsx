@@ -12,6 +12,7 @@ const propTypes = {
   tabFill: PropTypes.bool,
   id: PropTypes.string,
   containerHeight: PropTypes.string,
+  responsiveTo: 'parent',
 };
 
 const defaultProps = {
@@ -24,6 +25,7 @@ const TabsTemplate = props => (
       tabFill={props.tabFill}
       fill={props.fill}
       id={props.id}
+      responsiveTo={props.responsiveTo}
     >
       <Tabs.Pane label="Tab 1" key="Tab1" id="tab1">
         <TabContent label="Tab 1" id="tab1Content" />

@@ -88,7 +88,13 @@ Terra.describeViewports('Tabs - Uncollapsed', ['tiny'], () => {
   describe('Icon Only Tabs', () => {
     it('Icon Only Tabs', () => {
       browser.url('/#/raw/tests/terra-tabs/tabs/tabs/uncollapsed-icon-only-tabs');
-      browser.refresh();
+      Terra.validates.element('uncollapsed');
+    });
+  });
+
+  describe('Default', () => {
+    it('Default', () => {
+      browser.url('/#/raw/tests/terra-tabs/tabs/tabs/uncollapsed-tabs');
       Terra.validates.element('uncollapsed');
     });
   });
