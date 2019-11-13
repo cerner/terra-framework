@@ -23,7 +23,7 @@ const propTypes = {
    * 160, 240, 320, 640, 960, 1280, 1760, or auto
    */
   menuWidth: PropTypes.oneOf(Object.keys(CollapsibleMenuViewItem.Opts.widths)),
-  
+
   /**
    * Bounding container for the menu, will use window if no value provided.
    */
