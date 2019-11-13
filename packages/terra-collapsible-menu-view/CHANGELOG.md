@@ -3,8 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
-### Added
-* Added `menuButtonVariant` prop to switch menu disclosure button between `neutral` and `utility` variants.
+### Changed
+* Changed variant and icon for menu disclosure button
 
 6.18.0 - (November 7, 2019)
 ------------------
