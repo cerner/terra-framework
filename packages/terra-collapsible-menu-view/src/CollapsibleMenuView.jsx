@@ -19,15 +19,15 @@ const propTypes = {
   children: PropTypes.node.isRequired,
 
   /**
-   * Bounding container for the menu, will use window if no value provided.
-   */
-  boundingRef: PropTypes.func,
-
-  /**
    * A string representation of the width in px, limited to:
    * 160, 240, 320, 640, 960, 1280, 1760, or auto
    */
   menuWidth: PropTypes.oneOf(Object.keys(CollapsibleMenuViewItem.Opts.widths)),
+  
+  /**
+   * Bounding container for the menu, will use window if no value provided.
+   */
+  boundingRef: PropTypes.func,
 };
 
 class CollapsibleMenuView extends React.Component {
