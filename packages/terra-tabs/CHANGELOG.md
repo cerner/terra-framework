@@ -4,7 +4,11 @@ ChangeLog
 Unreleased
 ----------
 ### Added
-* Added `responsiveTo` prop.
+* Added `responsiveTo` prop to provide ability to consumers to decide whether or not tabs need to completely
+collapse into a menu on smaller viewports.
+
+### Changed
+* Center-align text label in the single dropdown tab when all tabs completely collapse into a menu.
 
 6.18.0 - (November 7, 2019)
 ------------------
