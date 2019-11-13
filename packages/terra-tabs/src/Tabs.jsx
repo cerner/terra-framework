@@ -61,7 +61,8 @@ const propTypes = {
 
   /**
    * The viewport the element will be responsive to. One of `window`, `parent` or `none`.
-   * Note: If the responsive viewport is set to `none`, then tabs never collapse into a menu.
+   * Note: If the responsive viewport is set to `none`, then tabs never _completely_
+   * collapse into a menu.
    */
   responsiveTo: PropTypes.oneOf(['window', 'parent', 'none']),
 };

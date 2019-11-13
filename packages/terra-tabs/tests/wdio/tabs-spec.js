@@ -83,8 +83,8 @@ Terra.describeViewports('Tabs - Large screen', ['large'], () => {
   });
 });
 
-// Verify tabs do not collapse.
-Terra.describeViewports('Tabs - Nonresponsive', ['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], () => {
+// Verify tabs do not _completely_ collapse.
+Terra.describeViewports('Tabs - Uncollapsed', ['tiny'], () => {
   describe('Icon Only Tabs', () => {
     it('Icon Only Tabs', () => {
       browser.url('/#/raw/tests/terra-tabs/tabs/tabs/uncollapsed-icon-only-tabs');
