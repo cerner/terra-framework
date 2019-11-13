@@ -32,7 +32,7 @@ const IconOnlyTabs = () => {
   );
 
   return (
-    <Tabs id="iconOnlyTabs" responsiveTo="none">
+    <Tabs id="iconOnlyTabs">
       {searchTab}
       {briefcaseTab}
       {bookmarkTab}

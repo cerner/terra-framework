@@ -23,7 +23,7 @@ Terra.describeViewports('Tabs - Responsive', ['tiny', 'small', 'medium', 'large'
   });
   describe('Icon Only Tabs', () => {
     it('Icon Only Tabs', () => {
-      browser.url('/#/raw/tests/terra-tabs/tabs/tabs/icon-only-tabs');
+      browser.url('/#/raw/tests/terra-tabs/tabs/tabs/default-icon-only-tabs');
       browser.moveToObject('[class*="tab-content"]');
       Terra.validates.element();
     });
@@ -89,8 +89,7 @@ Terra.describeViewports('Tabs - Nonresponsive', ['tiny', 'small', 'medium', 'lar
     it('Icon Only Tabs', () => {
       browser.url('/#/raw/tests/terra-tabs/tabs/tabs/uncollapsed-icon-only-tabs');
       browser.refresh();
-      browser.moveToObject('[class*="tab-content"]');
-      Terra.validates.element();
+      Terra.validates.element('uncollapsed');
     });
   });
 });
