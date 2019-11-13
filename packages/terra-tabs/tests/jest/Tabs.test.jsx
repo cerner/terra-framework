@@ -79,7 +79,7 @@ describe('Tabs', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
-    it('should render tabs that are always collapsible by default', () => {
+    it('should render tabs that do not completely collapse into a menu', () => {
       const tabs = <Tabs responsiveTo="none"><Tabs.Pane label="Default" key="default" /></Tabs>;
       const wrapper = shallowWithIntl(tabs);
       expect(wrapper).toMatchSnapshot();
