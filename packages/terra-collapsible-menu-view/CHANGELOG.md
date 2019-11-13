@@ -4,7 +4,7 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
-* Changed variant and icon for menu disclosure button
+* Changed icon in menu button and button-style to utility variant
 
 6.18.0 - (November 7, 2019)
 ------------------
