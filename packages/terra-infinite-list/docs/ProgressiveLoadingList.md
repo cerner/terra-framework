@@ -24,7 +24,7 @@ In our data request callback we'll pass our parameters of our page key, then wai
   }
 ```
 ## Unpack Data
-We can then implement the unpack of our state data into our list items.
+We can then implement the unpack of our state data into our list items. Provide unique key value to prop `key`, if internal state of `InfiniteList` needs to be updated.
 ```jsx
   createItems() {
     return this.state.items.map(item => (
