@@ -31,7 +31,7 @@
       position: relative;
       top: var(--terra-collapsible-menu-view-menu-button-icon-top, 0);
       vertical-align: var(--terra-collapsible-menu-view-menu-button-icon-vertical-align, -0.14285rem);
-      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { // -ms needed for icon alignment in IE
         height: var(--terra-collapsible-menu-view-menu-button-icon-ms-height, 1rem);
         vertical-align: var(--terra-collapsible-menu-view-menu-button-icon-ms-vertical-align, -0.17285rem);
       }  
