@@ -3,8 +3,19 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.19.0 - (November 7, 2019)
+------------------
 ### Changed
+* Resolved lint warnings for multiple empty lines
+
+4.18.0 - (October 30, 2019)
+------------------
+### Changed
+* Force update to render the missing hour.
 * Duplicate ID in examples changed.
+* Changed 12-hour format appearance for mobile and desktop.
+* Meridiem select on Desktop has been changed to buttons which means that the WebdriverIO reference screenshots (if any) and/or any code in the consumer application that accesses the old meridiem select functionality on the Desktop view need to be updated.
 
 4.17.0 - (October 21, 2019)
 ------------------
@@ -78,12 +89,11 @@ Unreleased
 * Allow blur to be handled after the date time ambiguity is resolved.
 
 ### Changed
+* Fixed all the accessibility issues and updated the tests and screenshots accordingly.
+* Added documentation on required peerDependencies
 * Updated package.json test scripts
 * Corrected Typos.
 * Updated wdio test to work with changes in terra-date-picker.
-* Fixed all the accessibility issues and updated the tests and screenshots accordingly.
-* Added documentation on required peerDependencies
-* updated package.json test scripts
 * Updated to interface with react-intl's context rather than old React Context API.
 
 4.9.0 - (July 30, 2019)

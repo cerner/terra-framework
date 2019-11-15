@@ -71,7 +71,6 @@ Terra.describeViewports('Slide panel', ['large'], () => {
     Terra.it.matchesScreenshot();
   });
 
-
   describe('Large size squished slide panel', () => {
     beforeEach(() => {
       browser.url('/#/raw/tests/terra-slide-panel/slide-panel/slide-panel-squish-large');
@@ -79,7 +78,6 @@ Terra.describeViewports('Slide panel', ['large'], () => {
 
     Terra.it.matchesScreenshot();
   });
-
 
   describe('Toggle the slide panel and hidden styles', () => {
     beforeEach(() => {

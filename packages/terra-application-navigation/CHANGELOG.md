@@ -4,6 +4,19 @@ Changelog
 Unreleased
 ----------
 
+1.11.0 - (November 7, 2019)
+------------------
+### Added
+* `onDrawerMenuStateChange` callback added for Drawer menu state change.
+
+### Changed
+* Resolved lint warnings for multiple empty lines
+
+1.10.0 - (October 30, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 1.9.0 - (October 21, 2019)
 ------------------
 ### Changed

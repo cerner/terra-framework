@@ -6,7 +6,6 @@ import DateInputField from 'terra-date-input/lib/DateInputField';
 import Button from 'terra-button';
 import Spacer from 'terra-spacer';
 
-
 /**
  * Ensures the passed in value is an accepted date value
  * @param {string} value The date to validate

@@ -7,7 +7,20 @@ Unreleased
 * Axe violation fixed for scrollable content.
 
 ### Added
-* Added refCallback prop to infinite-list to expose ref of Listbox 
+* Added documentation for `key` on `Progressive Loading`.
+
+3.21.0 - (November 7, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+3.20.0 - (October 30, 2019)
+------------------
+### Added
+* Added refCallback prop to infinite-list to expose ref of Listbox
+
+### Fixed
+* Fixed console warning by preventing `intl` and `progressiveLoadingMessage` props from being passed to the DOM.
 
 3.19.0 - (October 16, 2019)
 ------------------

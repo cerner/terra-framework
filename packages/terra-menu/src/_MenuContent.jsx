@@ -93,7 +93,6 @@ const childContextTypes = {
   isSelectableMenu: PropTypes.bool,
 };
 
-
 class MenuContent extends React.Component {
   constructor(props) {
     super(props);

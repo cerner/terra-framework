@@ -4,6 +4,20 @@ Changelog
 Unreleased
 ----------
 
+4.19.0 - (November 7, 2019)
+------------------
+### Fixed
+* Fixed Invalid and Incomplete wdio test logic to ensure states are off after tests runs.
+
+### Changed
+* Resolved lint warnings for multiple empty lines
+* Regenerate wdio screenshots
+
+4.18.0 - (October 30, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 4.17.0 - (October 21, 2019)
 ------------------
 ### Changed

@@ -24,7 +24,6 @@ const propTypes = {
   intl: intlShape,
 };
 
-
 const TabCount = ({ value, isRollup, intl }) => {
   const countRef = useRef();
 
