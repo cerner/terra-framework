@@ -7,14 +7,6 @@ Terra.describeViewports('Responsive', ['tiny', 'small', 'medium', 'huge', 'large
   Terra.it.isAccessible();
 });
 
-Terra.describeViewports('Responsive - Utility More Button', ['tiny', 'small', 'medium', 'huge', 'large', 'enormous'], () => {
-  before(() => {
-    browser.url('/#/raw/tests/terra-collapsible-menu-view/collapsible-menu-view/collapsible-menu-view-utility-more-button');
-  });
-
-  Terra.it.validatesElement();
-});
-
 // Only test viewports that have collapsed menu items
 Terra.describeViewports('Responsive Hidden Open', ['tiny', 'small', 'medium', 'large'], () => {
   before(() => {
