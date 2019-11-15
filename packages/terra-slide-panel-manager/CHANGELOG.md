@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* WDIO snapshot updates
 
 5.17.0 - (November 7, 2019)
 ------------------
