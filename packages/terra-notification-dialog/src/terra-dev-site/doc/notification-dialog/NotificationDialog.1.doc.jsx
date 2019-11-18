@@ -12,12 +12,18 @@ import CompleteNotificationDialog from '../example/CompleteNotificationDialog';
 import CompleteNotificationDialogSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/CompleteNotificationDialog.jsx';
 import CompleteNotificationDialogWithLongMessage from '../example/CompleteNotificationDialogWithLongMessage';
 import CompleteNotificationDialogWithLongMessageSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/CompleteNotificationDialogWithLongMessage.jsx';
+import ContentNotificationDialog from '../example/ContentNotificationDialog';
+import ContentNotificationDialogSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ContentNotificationDialog.jsx';
 import NoVariantNotificationDialog from '../example/NoVariantNotificationDialog';
 import NoVariantNotificationDialogSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/NoVariantNotificationDialog.jsx';
 import NotificationDialogWithLongText from '../example/NotificationDialogWithLongText';
 import NotificationDialogWithLongTextSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/NotificationDialogWithLongText.jsx';
 import NotificationDialogOnModalManager from '../example/NotificationDialogOnModalManager';
 import NotificationDialogOnModalManagerSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/NotificationDialogOnModalManager.jsx';
+import RejectFirstNotificationDialog from '../example/RejectFirstNotificationDialog';
+import RejectFirstNotificationDialogSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/RejectFirstNotificationDialog.jsx';
+import EmphasizedRejectNotificationDialog from '../example/EmphasizedRejectNotificationDialog';
+import EmphasizedRejectNotificationDialogSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/EmphasizedRejectNotificationDialog.jsx';
 
 const DocPage = () => (
   <DocTemplate
@@ -49,6 +55,21 @@ const DocPage = () => (
         title: 'Notification Dialog On Modal Manager',
         example: <NotificationDialogOnModalManager />,
         source: NotificationDialogOnModalManagerSrc,
+      },
+      {
+        title: 'Notification Dialog with Content',
+        example: <ContentNotificationDialog />,
+        source: ContentNotificationDialogSrc,
+      },
+      {
+        title: 'Notification Dialog with Reject action first',
+        example: <RejectFirstNotificationDialog />,
+        source: RejectFirstNotificationDialogSrc,
+      },
+      {
+        title: 'Notification Dialog with Reject Action emphasized',
+        example: <EmphasizedRejectNotificationDialog />,
+        source: EmphasizedRejectNotificationDialogSrc,
       },
     ]}
     propsTables={[
