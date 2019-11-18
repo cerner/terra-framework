@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import AbstractModal from 'terra-abstract-modal';
 import FocusTrap from 'focus-trap-react';
 import * as KeyCode from 'keycode-js';
-import Button from 'terra-button';
+import Button, { ButtonVariants } from 'terra-button';
 import classNames from 'classnames/bind';
 import { FormattedMessage } from 'react-intl';
 import styles from './NotificationDialog.module.scss';
@@ -29,20 +29,46 @@ const propTypes = {
    */
   title: PropTypes.string,
   /**
-   * Message of the notification-dialog.
+   * Deprecated, Message of the notification-dialog. Resolves to startMessage
    */
   message: PropTypes.string,
   /**
-   * The Action of the primary button.
+   * Message to be displayed at the start of the notification dialog body.
+   */
+  startMessage: PropTypes.string,
+  /**
+   * Message to be displayed at the end of the notification dialog body.
+   */
+  endMessage: PropTypes.string,
+  /**
+   *  Non-plain text content to be inserted after `startMessage` and/or before `endMessage`
+   */
+  content: PropTypes.node,
+  /**
+   * Deprecated, The Action of the primary button. Resolves to acceptAction
    */
   primaryAction: PropTypes.shape({
     text: PropTypes.string,
     onClick: PropTypes.func,
+  }),
+  /**
+   * The Action of the accept button.
+   */
+  acceptAction: PropTypes.shape({
+    text: PropTypes.string,
+    onClick: PropTypes.func,
   }).isRequired,
   /**
-   * The Action of the secondary button.
+   * Deprecated The Action of the secondary button. Resolves to rejectAction
    */
   secondaryAction: PropTypes.shape({
+    text: PropTypes.string,
+    onClick: PropTypes.func,
+  }),
+  /**
+   * The Action of the reject button.
+   */
+  rejectAction: PropTypes.shape({
     text: PropTypes.string,
     onClick: PropTypes.func,
   }),
@@ -66,31 +92,63 @@ const propTypes = {
    * Toggle to show notification-dialog or not.
    */
   isOpen: PropTypes.bool.isRequired,
+  /**
+   * Determines the order of notification action buttons.
+   */
+  buttonOrder: PropTypes.oneOf([
+    'acceptFirst',
+    'rejectFirst',
+  ]),
+  /**
+   * Determines whether acceptAction, rejectAction or neither is emphasizedAction
+   */
+  emphasizedAction: PropTypes.oneOf([
+    'none',
+    'accept',
+    'reject',
+  ]),
 };
 
 const defaultProps = {
   title: null,
-  message: null,
+  startMessage: null,
+  endMessage: null,
+  content: null,
   variant: variants.CUSTOM,
+  buttonOrder: 'acceptFirst',
+  emphasizedAction: 'none',
 };
 
-const actionSection = (primaryAction, secondaryAction) => {
-  let actionButton = null;
-  let dismissButton = null;
-  if (!primaryAction && !secondaryAction) {
+const actionSection = (acceptAction, rejectAction, buttonOrder, emphasizedAction) => {
+  let acceptButton = null;
+  let rejectButton = null;
+  if (!acceptAction && !rejectAction) {
     return null;
   }
-  if (primaryAction) {
-    actionButton = <Button text={primaryAction.text} variant={Button.Opts.Variants.EMPHASIS} onClick={primaryAction.onClick} />;
+  if (acceptAction) {
+    acceptButton = (emphasizedAction === 'accept')
+      ? <Button text={acceptAction.text} variant={ButtonVariants.EMPHASIS} onClick={acceptAction.onClick} />
+      : <Button text={acceptAction.text} onClick={acceptAction.onClick} />;
   }
-  if (secondaryAction) {
-    dismissButton = <Button text={secondaryAction.text} onClick={secondaryAction.onClick} />;
+  if (rejectAction) {
+    rejectButton = (emphasizedAction === 'reject')
+      ? <Button text={rejectAction.text} variant={ButtonVariants.EMPHASIS} onClick={rejectAction.onClick} />
+      : <Button text={rejectAction.text} onClick={rejectAction.onClick} />;
+  }
+
+  if (buttonOrder === 'rejectFirst') {
+    return (
+      <div className={cx('actions')}>
+        {rejectButton}
+        {acceptButton}
+      </div>
+    );
   }
 
   return (
     <div className={cx('actions')}>
-      {actionButton}
-      {dismissButton}
+      {acceptButton}
+      {rejectButton}
     </div>
   );
 };
@@ -150,18 +208,26 @@ class NotificationDialog extends React.Component {
     const {
       header,
       title,
-      message,
-      primaryAction,
-      secondaryAction,
+      startMessage,
+      endMessage,
+      content,
+      acceptAction,
+      rejectAction,
       variant,
       customIcon,
       isOpen,
+      buttonOrder,
+      emphasizedAction,
+      primaryAction,
+      secondaryAction,
+      message,
       ...customProps
     } = this.props;
 
     const defaultHeader = variant === variants.CUSTOM ? '' : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
     const notificationDialogClassNames = cx('notification-dialog', customProps.className);
 
+    /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
     return (
       <AbstractModal
         ariaLabel="Notification Dialog"
@@ -178,7 +244,7 @@ class NotificationDialog extends React.Component {
       >
         <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: false, escapeDeactivates: false }}>
           <div className={cx('notification-dialog-inner-wrapper')}>
-            <div className={cx('notification-dialog-container')}>
+            <div className={cx('notification-dialog-container')} tabIndex="0">
               <div id="notification-dialog-header" className={cx('header-body')}>{header || defaultHeader}</div>
               <div className={cx('notification-dialog-body')}>
                 {variant
@@ -186,16 +252,28 @@ class NotificationDialog extends React.Component {
                 <div className={cx('text-wrapper')}>
                   {title
                     && <div id="notification-dialog-title" className={cx('title')}>{title}</div>}
-                  {message
-                    && <div className={cx('message')}>{message}</div>}
+                  {(startMessage || message)
+                    && <div className={cx('message')}>{(startMessage || message)}</div>}
+                  {content
+                    && <div>{content}</div>}
+                  {endMessage
+                    && <div className={cx('message')}>{endMessage}</div>}
                 </div>
               </div>
-              <div className={cx('footer-body')}>{actionSection(primaryAction, secondaryAction)}</div>
+              <div className={cx('footer-body')}>
+                {actionSection(
+                  acceptAction || primaryAction,
+                  rejectAction || secondaryAction,
+                  buttonOrder,
+                  emphasizedAction,
+                )}
+              </div>
             </div>
           </div>
         </FocusTrap>
       </AbstractModal>
     );
+    /* eslint-enable jsx-a11y/no-noninteractive-tabindex */
   }
 }
 

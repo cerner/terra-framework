@@ -10,20 +10,24 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog when st
   }
 >
   <NotificationDialog
-    isOpen={true}
-    message="Test Message"
-    primaryAction={
+    acceptAction={
       Object {
         "onClick": [Function],
         "text": "Accept",
       }
     }
-    secondaryAction={
+    buttonOrder="acceptFirst"
+    content={null}
+    emphasizedAction="none"
+    endMessage={null}
+    isOpen={true}
+    rejectAction={
       Object {
         "onClick": [Function],
         "text": "Reject",
       }
     }
+    startMessage="Test Message"
     title="Test Title"
     variant="warning"
   />
@@ -40,20 +44,24 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with ac
   }
 >
   <NotificationDialog
-    isOpen={true}
-    message="Test Message"
-    primaryAction={
+    acceptAction={
       Object {
         "onClick": [Function],
         "text": "Accept",
       }
     }
-    secondaryAction={
+    buttonOrder="acceptFirst"
+    content={null}
+    emphasizedAction="accept"
+    endMessage={null}
+    isOpen={true}
+    rejectAction={
       Object {
         "onClick": [Function],
         "text": "Reject",
       }
     }
+    startMessage="Test Message"
     title="Test Title"
     variant="warning"
   />
@@ -70,20 +78,24 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with re
   }
 >
   <NotificationDialog
-    isOpen={true}
-    message="Test Message"
-    primaryAction={
-      Object {
-        "onClick": [Function],
-        "text": "Reject",
-      }
-    }
-    secondaryAction={
+    acceptAction={
       Object {
         "onClick": [Function],
         "text": "Accept",
       }
     }
+    buttonOrder="rejectFirst"
+    content={null}
+    emphasizedAction="reject"
+    endMessage={null}
+    isOpen={true}
+    rejectAction={
+      Object {
+        "onClick": [Function],
+        "text": "Reject",
+      }
+    }
+    startMessage="Test Message"
     title="Test Title"
     variant="warning"
   />
