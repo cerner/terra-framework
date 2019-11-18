@@ -1,43 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'terra-button';
 import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
 
-class NotificationDialogNoTitle extends React.Component {
-  constructor() {
-    super();
+const NotificationDialogNoTitle = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-    this.state = {
-      isOpen: false,
-    };
+  const handleOpenModal = () => {
+    setIsOpen(true);
+  };
 
-    this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
-  }
+  const handleCloseModal = () => {
+    setIsOpen(false);
+  };
 
-  handleOpenModal() {
-    this.setState({ isOpen: true });
-  }
-
-  handleCloseModal() {
-    this.setState({ isOpen: false });
-  }
-
-  render() {
-    return (
-      <div>
-        <NotificationDialog
-          variant={NotificationDialogVariants.ERROR}
-          isOpen={this.state.isOpen}
-          message="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
-          primaryAction={{
-            text: 'Close',
-            onClick: this.handleCloseModal,
-          }}
-        />
-        <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
-      </div>
-    );
-  }
-}
+  return (
+    <>
+      <NotificationDialog
+        variant={NotificationDialogVariants.ERROR}
+        isOpen={isOpen}
+        startMessage="The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim."
+        acceptAction={{
+          text: 'Close',
+          onClick: handleCloseModal,
+        }}
+        buttonOrder="acceptFirst"
+        emphasizedAction="accept"
+      />
+      <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={handleOpenModal} />
+    </>
+  );
+};
 
 export default NotificationDialogNoTitle;

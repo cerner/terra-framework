@@ -39,6 +39,7 @@
     display: flex;
     flex-direction: column;
     max-height: inherit; // `inherit` value needed for IE10 to scroll modal-body when overflowed
+    outline: none;
     width: 100%; // Needed for IE to wrap content correctly in flexbox
   }
 
