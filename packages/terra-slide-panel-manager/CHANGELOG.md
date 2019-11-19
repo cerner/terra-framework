@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+5.18.0 - (November 18, 2019)
+------------------
 ### Changed
 * WDIO snapshot updates
 
