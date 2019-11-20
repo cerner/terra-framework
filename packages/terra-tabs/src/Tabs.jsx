@@ -76,6 +76,7 @@ class Tabs extends React.Component {
     this.state = {
       activeKey: this.getInitialState(),
       isLabelTruncated: false,
+      breakpoint: null,
     };
   }
 
@@ -187,16 +188,22 @@ class Tabs extends React.Component {
       </CollapsedTabs>
     );
 
+    const getTabs = () => {
+      if (this.state.breakpoint === 'tiny') {
+        return collapsedTabs;
+      }
+      return collapsibleTabs;
+    };
     return (
       <ContentContainer
         {...customProps}
         className={tabsClassNames}
         fill={fill}
         header={(
-          <ResponsiveElement
-            tiny={collapsedTabs}
-            small={collapsibleTabs}
-          />
+          <ResponsiveElement onChange={value => (this.setState({ breakpoint: value }))}>
+            { this.state.breakpoint
+            && getTabs()}
+          </ResponsiveElement>
         )}
       >
         <div
