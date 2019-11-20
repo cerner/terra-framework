@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+6.19.0 - (November 18, 2019)
+------------------
 ### Changed
 * Changed icon in menu button and button-style to utility variant
 

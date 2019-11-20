@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+1.18.0 - (November 18, 2019)
+------------------
 ### Changed
 * Changed 'NavigationPromptCheckpoint' to have the same logic as 'notification-dialog' changes
   * 'message' prop has been deprecated, will resolve to 'startMessage'
