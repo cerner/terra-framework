@@ -44,7 +44,7 @@ class Aggregator extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { items } = prevProps;
+    const { items } = this.props;
     const { focusedItemId } = this.state;
 
     if (this.props.items !== prevProps.items) {
