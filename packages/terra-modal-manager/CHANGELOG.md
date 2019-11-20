@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added support for application-level modal content wrapping
 
 6.19.0 - (November 18, 2019)
 ------------------
