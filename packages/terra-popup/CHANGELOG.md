@@ -6,6 +6,21 @@ Unreleased
 ### Changed
 * Axe violation fixed for scrollable content.
 
+6.18.0 - (November 7, 2019)
+------------------
+### Changed
+* Resolved lint warnings for multiple empty lines
+
+6.17.0 - (October 30, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+6.16.0 - (October 21, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 6.15.0 - (October 16, 2019)
 ------------------
 ### Changed

@@ -57,32 +57,32 @@ class DateTimePickerEvents extends React.Component {
         <p>
           onFocus Trigger Count:
           {' '}
-          <span id="blur-state">{this.state.focusTriggerCount}</span>
+          <span id="onFocus-count">{this.state.focusTriggerCount}</span>
           <br />
           <br />
           onBlur Trigger Count:
           {' '}
-          <span id="blur-state">{this.state.blurTriggerCount}</span>
+          <span id="onBlur-count">{this.state.blurTriggerCount}</span>
           <br />
           <br />
           onClickOutside Trigger Count:
           {' '}
-          <span id="blur-state">{this.state.clickOutsideTriggerCount}</span>
+          <span id="onClickOutside-count">{this.state.clickOutsideTriggerCount}</span>
           <br />
           <br />
           onChangeRaw Triggered:
           {' '}
-          <span id="blur-state">{this.state.changeRawValue}</span>
+          <span id="onChangeRaw-count">{this.state.changeRawValue}</span>
           <br />
           <br />
           onChange Triggered:
           {' '}
-          <span id="blur-state">{this.state.changeValue}</span>
+          <span id="onChange-Count">{this.state.changeValue}</span>
           <br />
           <br />
           onSelect Triggered:
           {' '}
-          <span id="blur-state">{this.state.selectValue}</span>
+          <span id="onSelect-count">{this.state.selectValue}</span>
         </p>
         <DateTimePicker
           name="date-time-picker-events"

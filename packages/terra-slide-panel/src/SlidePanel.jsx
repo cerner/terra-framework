@@ -12,6 +12,16 @@ const SlidePanelPositions = {
 
 const propTypes = {
   /**
+   * String that labels the Panel content area for screen readers.
+   */
+  panelAriaLabel: PropTypes.string,
+
+  /**
+   * String that labels the Main content area for screen readers.
+   */
+  mainAriaLabel: PropTypes.string,
+
+  /**
    * The component to display in the main content area.
    */
   mainContent: PropTypes.node,
@@ -79,6 +89,8 @@ class SlidePanel extends React.Component {
 
   render() {
     const {
+      panelAriaLabel,
+      mainAriaLabel,
       mainContent,
       panelContent,
       panelBehavior,
@@ -99,14 +111,14 @@ class SlidePanel extends React.Component {
 
     const panelDiv = (
       // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-      <div className={cx(['panel'])} tabIndex="0" aria-hidden={!isOpen ? 'true' : 'false'} ref={this.setPanelNode}>
+      <div className={cx(['panel'])} tabIndex="0" aria-label={panelAriaLabel} aria-hidden={!isOpen ? 'true' : 'false'} ref={this.setPanelNode}>
         {panelContent}
       </div>
     );
 
     const mainDiv = (
       // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-      <div className={cx('main')} tabIndex="0" ref={this.mainNode}>
+      <div className={cx('main')} tabIndex="0" aria-label={mainAriaLabel} ref={this.mainNode}>
         {mainContent}
       </div>
     );
@@ -136,7 +148,6 @@ class SlidePanel extends React.Component {
     );
   }
 }
-
 
 SlidePanel.propTypes = propTypes;
 SlidePanel.defaultProps = defaultProps;

@@ -617,7 +617,6 @@ describe('DisclosureManager', () => {
       });
   });
 
-
   it('should provide render function with the current state', () => {
     const mockRender = jest.fn();
     mockRender.mockReturnValue(<div />);

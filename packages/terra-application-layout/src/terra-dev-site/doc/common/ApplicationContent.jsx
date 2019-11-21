@@ -19,7 +19,6 @@ const DisclosureComponent = withDisclosureManager(({ disclosureManager }) => (
   </ContentContainer>
 ));
 
-
 const dummyContent = (
   <div>
     <h2>Lorem ipsum dolor sit amet</h2>

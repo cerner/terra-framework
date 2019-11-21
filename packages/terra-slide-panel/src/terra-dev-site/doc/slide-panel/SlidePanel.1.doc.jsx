@@ -28,7 +28,6 @@ import SlidePanelFullscreen from '../../test/slide-panel/SlidePanelFullscreen.te
 import SlidePanelFill from '../../test/slide-panel/SlidePanelFill.test';
 import SlidePanelNoFill from '../../test/slide-panel/SlidePanelNoFill.test';
 
-
 const DocPage = () => (
   <DocTemplate
     packageName={name}

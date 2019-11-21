@@ -4,6 +4,16 @@ ChangeLog
 Unreleased
 ----------
 
+4.26.0 - (November 7, 2019)
+------------------
+### Changed
+* Resolved lint warnings for multiple empty lines
+
+4.25.0 - (October 21, 2019)
+------------------
+### Changed
+* Fixed typo in disclosure manager docs
+
 4.24.0 - (October 16, 2019)
 ------------------
 ### Changed

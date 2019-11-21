@@ -15,7 +15,6 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
 
     Terra.it.matchesScreenshot();
 
-
     it('Provider triggers EventA message', () => {
       const myFrame = browser.element('iframe[src="/#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-event-provider"]').value;
       browser.frame(myFrame);
@@ -35,7 +34,6 @@ Terra.describeViewports('Embedded Content Consumer', ['tiny', 'large'], () => {
     });
 
     Terra.it.matchesScreenshot();
-
 
     it('Provider triggers EventA message', () => {
       const myFrame = browser.element('iframe[src="/#/raw/provider/terra-embedded-content-consumer/embedded-content-consumer/providers/custom-events-provider"]').value;

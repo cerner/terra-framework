@@ -8,5 +8,4 @@ const DateTimePickerExample = () => (
   />
 );
 
-
 export default DateTimePickerExample;

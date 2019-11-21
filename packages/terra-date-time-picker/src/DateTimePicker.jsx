@@ -202,6 +202,19 @@ class DateTimePicker extends React.Component {
     this.isDefaultDateAcceptable = this.validateDefaultDate();
   }
 
+  componentDidUpdate() {
+    // If the entered time (this.timeValue) is the missing hour during daylight savings,
+    // it needs to be updated to the time in this.state.dateTime to reflect the change and force a render.
+    if (this.state.dateTime && DateTimeUtils.isValidTime(this.timeValue, this.props.showSeconds)) {
+      const displayedTime = DateTimeUtils.getTime(this.state.dateTime.format(), this.props.showSeconds);
+
+      if (this.timeValue !== displayedTime) {
+        this.timeValue = displayedTime;
+        this.forceUpdate();
+      }
+    }
+  }
+
   handleOnSelect(event, selectedDate) {
     this.dateValue = DateUtil.formatISODate(selectedDate, this.state.dateFormat);
     const previousDateTime = this.state.dateTime ? this.state.dateTime.clone() : null;
@@ -274,7 +287,18 @@ class DateTimePicker extends React.Component {
 
       value = value.trim();
 
-      const tempDateTime = momentDateTime ? momentDateTime.clone() : null;
+      let tempDateTime = momentDateTime ? momentDateTime.clone() : null;
+
+      if (DateUtil.isValidDate(this.dateValue, this.state.dateFormat)) {
+        const enteredDateTime = DateTimeUtils.convertDateTimeStringToMomentObject(this.dateValue, this.timeValue, this.state.dateFormat, this.props.showSeconds);
+
+        // this.state.dateTime does not get updated if the entered date is outside the minDate/maxDate range or an excluded date.
+        // In this case, we need to use the date that was entered instead of the this.state.dateTime.
+        if (enteredDateTime && !enteredDateTime.isSame(tempDateTime, 'day')) {
+          tempDateTime = enteredDateTime;
+        }
+      }
+
       let iSOString = '';
 
       if (isCompleteDateTime && tempDateTime) {
@@ -377,13 +401,15 @@ class DateTimePicker extends React.Component {
         updatedDateTime.subtract(1, 'hours');
       }
 
+      let displayedTimeValue = this.timeValue;
+
       // If updatedDateTime is valid, update timeValue (value in the time input) to reflect updatedDateTime since
       // it could have subtracted an hour from above to account for the missing hour.
       if (updatedDateTime) {
-        this.timeValue = DateTimeUtils.getTime(updatedDateTime.format(), this.props.showSeconds);
+        displayedTimeValue = DateTimeUtils.getTime(updatedDateTime.format(), this.props.showSeconds);
       }
 
-      this.handleChangeRaw(event, this.timeValue);
+      this.handleChangeRaw(event, displayedTimeValue);
       this.handleChange(event, updatedDateTime);
     } else if (this.dateValue === '' && this.timeValue === '') {
       this.handleChangeRaw(event, this.timeValue);
@@ -603,29 +629,30 @@ class DateTimePicker extends React.Component {
           value={dateTime && dateTime.isValid() ? dateTime.format() : ''}
         />
 
-        <DatePicker
-          onCalendarButtonClick={this.handleOnCalendarButtonClick}
-          onChange={this.handleDateChange}
-          onChangeRaw={this.handleDateChangeRaw}
-          onSelect={this.handleOnSelect}
-          onClickOutside={onClickOutside}
-          onBlur={this.handleOnDateBlur}
-          onFocus={this.handleOnDateInputFocus}
-          excludeDates={excludeDates}
-          filterDate={filterDate}
-          includeDates={includeDates}
-          inputAttributes={dateInputAttributes}
-          maxDate={maxDate}
-          minDate={minDate}
-          selectedDate={dateValue}
-          name="input"
-          disabled={disabled}
-          disableButtonFocusOnClose
-          isIncomplete={isIncomplete}
-          isInvalid={isInvalid}
-          required={required}
-        />
-
+        <div className={cx('date-facade')}>
+          <DatePicker
+            onCalendarButtonClick={this.handleOnCalendarButtonClick}
+            onChange={this.handleDateChange}
+            onChangeRaw={this.handleDateChangeRaw}
+            onSelect={this.handleOnSelect}
+            onClickOutside={onClickOutside}
+            onBlur={this.handleOnDateBlur}
+            onFocus={this.handleOnDateInputFocus}
+            excludeDates={excludeDates}
+            filterDate={filterDate}
+            includeDates={includeDates}
+            inputAttributes={dateInputAttributes}
+            maxDate={maxDate}
+            minDate={minDate}
+            selectedDate={dateValue}
+            name="input"
+            disabled={disabled}
+            disableButtonFocusOnClose
+            isIncomplete={isIncomplete}
+            isInvalid={isInvalid}
+            required={required}
+          />
+        </div>
         <div className={cx('time-facade')}>
           <TimeInput
             onBlur={this.handleOnTimeBlur}

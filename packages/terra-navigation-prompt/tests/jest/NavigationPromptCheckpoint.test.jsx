@@ -56,9 +56,10 @@ describe('NavigationPrompt', () => {
       wrapper.setState({
         notificationDialogProps: {
           title: 'Test Title',
-          message: 'Test Message',
+          startMessage: 'Test Message',
           acceptButtonText: 'Accept',
           rejectButtonText: 'Reject',
+          buttonOrder: 'acceptFirst',
           onAccept: () => {},
           onReject: () => {},
         },
@@ -77,10 +78,11 @@ describe('NavigationPrompt', () => {
       wrapper.setState({
         notificationDialogProps: {
           title: 'Test Title',
-          message: 'Test Message',
+          startMessage: 'Test Message',
           acceptButtonText: 'Accept',
           rejectButtonText: 'Reject',
           emphasizedAction: 'accept',
+          buttonOrder: 'acceptFirst',
           onAccept: () => {},
           onReject: () => {},
         },
@@ -99,10 +101,11 @@ describe('NavigationPrompt', () => {
       wrapper.setState({
         notificationDialogProps: {
           title: 'Test Title',
-          message: 'Test Message',
+          startMessage: 'Test Message',
           acceptButtonText: 'Accept',
           rejectButtonText: 'Reject',
           emphasizedAction: 'reject',
+          buttonOrder: 'rejectFirst',
           onAccept: () => {},
           onReject: () => {},
         },
@@ -284,7 +287,7 @@ describe('NavigationPrompt', () => {
 
   describe('resolvePrompts', () => {
     it('should show checkpoint notification dialog when resolvePrompts is executed and resolve on acceptance', async () => {
-      expect.assertions(8);
+      expect.assertions(9);
 
       const wrapper = mount((
         <NavigationPromptCheckpoint
@@ -300,10 +303,11 @@ describe('NavigationPrompt', () => {
       const mockSetState = jest.fn();
       mockSetState.mockImplementation((newState) => {
         expect(newState.notificationDialogProps.title).toEqual('Test Title');
-        expect(newState.notificationDialogProps.message).toEqual('Test Message');
+        expect(newState.notificationDialogProps.startMessage).toEqual('Test Message');
         expect(newState.notificationDialogProps.acceptButtonText).toEqual('Accept');
         expect(newState.notificationDialogProps.rejectButtonText).toEqual('Reject');
         expect(newState.notificationDialogProps.emphasizedAction).toEqual('reject');
+        expect(newState.notificationDialogProps.buttonOrder).toEqual('rejectFirst');
         expect(newState.notificationDialogProps.onAccept).toBeDefined();
         expect(newState.notificationDialogProps.onReject).toBeDefined();
 
@@ -316,15 +320,16 @@ describe('NavigationPrompt', () => {
 
       await expect(wrapper.instance().resolvePrompts({
         title: 'Test Title',
-        message: 'Test Message',
+        startMessage: 'Test Message',
         acceptButtonText: 'Accept',
         rejectButtonText: 'Reject',
         emphasizedAction: 'reject',
+        buttonOrder: 'rejectFirst',
       })).resolves.toEqual(undefined);
     });
 
     it('should show checkpoint notification dialog with function-provided values when resolvePrompts is executed and resolve on acceptance', async () => {
-      expect.assertions(8);
+      expect.assertions(9);
 
       const wrapper = mount((
         <NavigationPromptCheckpoint
@@ -341,10 +346,11 @@ describe('NavigationPrompt', () => {
       const mockSetState = jest.fn();
       mockSetState.mockImplementation((newState) => {
         expect(newState.notificationDialogProps.title).toEqual('Title: mock_description-value, mock_description2-value2');
-        expect(newState.notificationDialogProps.message).toEqual('Message: mock_description-value, mock_description2-value2');
+        expect(newState.notificationDialogProps.startMessage).toEqual('Message: mock_description-value, mock_description2-value2');
         expect(newState.notificationDialogProps.acceptButtonText).toEqual('Accept: mock_description-value, mock_description2-value2');
         expect(newState.notificationDialogProps.rejectButtonText).toEqual('Reject: mock_description-value, mock_description2-value2');
         expect(newState.notificationDialogProps.emphasizedAction).toEqual('reject');
+        expect(newState.notificationDialogProps.buttonOrder).toEqual('rejectFirst');
         expect(newState.notificationDialogProps.onAccept).toBeDefined();
         expect(newState.notificationDialogProps.onReject).toBeDefined();
 
@@ -357,15 +363,16 @@ describe('NavigationPrompt', () => {
 
       await expect(wrapper.instance().resolvePrompts(prompts => ({
         title: `Title: ${prompts.map(prompt => `${prompt.description}-${prompt.metaData.test}`).join(', ')}`,
-        message: `Message: ${prompts.map(prompt => `${prompt.description}-${prompt.metaData.test}`).join(', ')}`,
+        startMessage: `Message: ${prompts.map(prompt => `${prompt.description}-${prompt.metaData.test}`).join(', ')}`,
         acceptButtonText: `Accept: ${prompts.map(prompt => `${prompt.description}-${prompt.metaData.test}`).join(', ')}`,
         rejectButtonText: `Reject: ${prompts.map(prompt => `${prompt.description}-${prompt.metaData.test}`).join(', ')}`,
         emphasizedAction: 'reject',
+        buttonOrder: 'rejectFirst',
       }))).resolves.toEqual(undefined);
     });
 
     it('should show checkpoint notification dialog when resolvePrompts is executed and reject on cancelation', async () => {
-      expect.assertions(7);
+      expect.assertions(8);
 
       const wrapper = mount((
         <NavigationPromptCheckpoint
@@ -381,9 +388,10 @@ describe('NavigationPrompt', () => {
       const mockSetState = jest.fn();
       mockSetState.mockImplementation((newState) => {
         expect(newState.notificationDialogProps.title).toEqual('Test Title');
-        expect(newState.notificationDialogProps.message).toEqual('Test Message');
+        expect(newState.notificationDialogProps.startMessage).toEqual('Test Message');
         expect(newState.notificationDialogProps.acceptButtonText).toEqual('Accept');
         expect(newState.notificationDialogProps.rejectButtonText).toEqual('Reject');
+        expect(newState.notificationDialogProps.buttonOrder).toEqual('acceptFirst');
         expect(newState.notificationDialogProps.onAccept).toBeDefined();
         expect(newState.notificationDialogProps.onReject).toBeDefined();
 
@@ -396,9 +404,10 @@ describe('NavigationPrompt', () => {
 
       await expect(wrapper.instance().resolvePrompts({
         title: 'Test Title',
-        message: 'Test Message',
+        startMessage: 'Test Message',
         acceptButtonText: 'Accept',
         rejectButtonText: 'Reject',
+        buttonOrder: 'acceptFirst',
       })).rejects.toEqual(undefined);
     });
 
@@ -417,9 +426,10 @@ describe('NavigationPrompt', () => {
 
       await expect(wrapper.instance().resolvePrompts({
         title: 'Test Title',
-        message: 'Test Message',
+        startMessage: 'Test Message',
         acceptButtonText: 'Accept',
         rejectButtonText: 'Reject',
+        buttonOrder: 'acceptFirst',
       })).resolves.toEqual(undefined);
 
       expect(mockSetState.mock.calls.length).toEqual(0);

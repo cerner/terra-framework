@@ -55,6 +55,10 @@ const propTypes = {
    * Accessibility role of the list, defaults to 'none'. If creating a list with selectable items, pass 'listbox'.
    */
   role: PropTypes.string,
+  /**
+   * Function callback for the ref of the List(ul).
+   */
+  refCallback: PropTypes.func,
 };
 
 const defaultProps = {
@@ -450,11 +454,14 @@ class InfiniteList extends React.Component {
       children,
       dividerStyle,
       initialLoadingIndicator,
+      intl,
       isFinishedLoading,
       onRequestItems,
       paddingStyle,
       progressiveLoadingIndicator,
+      progressiveLoadingMessage,
       role,
+      refCallback,
       ...customProps
     } = this.props;
 
@@ -516,7 +523,7 @@ class InfiniteList extends React.Component {
         <div {...customProps} className={cx(['infinite-list', customProps.className])} ref={this.setContentNode}>
           {initialSpinner}
           {topSpacer}
-          <List {...attrSpread}>
+          <List {...attrSpread} refCallback={refCallback}>
             {visibleChildren}
           </List>
           {bottomSpacer}

@@ -95,7 +95,6 @@ const navigationLayoutConfigPropType = PropTypes.shape({
   content: routeConfigPropType,
 });
 
-
 /**
  * PropType definition for the processed configuration array created by the NavigationLayout and utilized
  * by the NavigationLayoutContent and RoutingStack. It is an Array containing Objects with data neccessary for the
