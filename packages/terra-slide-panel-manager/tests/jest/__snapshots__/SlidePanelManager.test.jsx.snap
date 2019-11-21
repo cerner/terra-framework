@@ -84,7 +84,7 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
         >
           <div
             className="main"
-            tabIndex="-1"
+            tabIndex="0"
           >
             <withDisclosureManager(Component)
               id="test"
@@ -108,7 +108,7 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
           <div
             aria-hidden="false"
             className="panel"
-            tabIndex="-1"
+            tabIndex="0"
           >
             <ContentContainer
               fill={true}
@@ -313,7 +313,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
         >
           <div
             className="main"
-            tabIndex="-1"
+            tabIndex="0"
           >
             <withDisclosureManager(Component)>
               <Component
@@ -332,7 +332,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
           <div
             aria-hidden="true"
             className="panel"
-            tabIndex="-1"
+            tabIndex="0"
           >
             <ContentContainer
               fill={true}
@@ -427,7 +427,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
         >
           <div
             className="main"
-            tabIndex="-1"
+            tabIndex="0"
           >
             <withDisclosureManager(Component)>
               <Component
@@ -446,7 +446,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
           <div
             aria-hidden="true"
             className="panel"
-            tabIndex="-1"
+            tabIndex="0"
           >
             <ContentContainer
               fill={true}
@@ -541,7 +541,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
         >
           <div
             className="main"
-            tabIndex="-1"
+            tabIndex="0"
           >
             <withDisclosureManager(Component)>
               <Component
@@ -560,7 +560,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
           <div
             aria-hidden="true"
             className="panel"
-            tabIndex="-1"
+            tabIndex="0"
           >
             <ContentContainer
               fill={true}

@@ -6,6 +6,9 @@ Unreleased
 ### Changed
 * WDIO snapshot updates
 
+### Changed
+* Jest snapshot updates
+
 5.17.0 - (November 7, 2019)
 ------------------
 ### Changed
