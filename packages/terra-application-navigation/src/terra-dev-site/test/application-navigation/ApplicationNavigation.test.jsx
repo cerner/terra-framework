@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ApplicationBase from 'terra-application/lib/application-base';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconPill from 'terra-icon/lib/icon/IconPill';
@@ -131,30 +131,41 @@ const utilityItems = [
   },
 ];
 
-/* eslint-disable no-alert */
-const handleItemSelection = (key, metaData) => {
-  alert(`itemKey: ${key}, metaData: ${metaData.test}`);
-};
-/* eslint-enable no-alert */
-
 // TODO: remove terra-application after it is incorporated into dev-site for themes or themes are co-located
-const ApplicationNavigationTest = () => (
-  <ApplicationBase locale="en">
-    <ApplicationNavigation
-      titleConfig={titleConfig}
-      userConfig={userConfig}
-      extensionItems={extensionItems}
-      onSelectExtensionItem={handleItemSelection}
-      navigationItems={navigationItems}
-      activeNavigationItemKey="/page_1"
-      onSelectNavigationItem={handleItemSelection}
-      utilityItems={utilityItems}
-      onSelectUtilityItem={handleItemSelection}
-      onSelectSettings={() => alert('Settings Selected')} // eslint-disable-line no-alert
-      onSelectHelp={() => alert('Help Selected')} // eslint-disable-line no-alert
-      onSelectLogout={() => alert('Logout Selected')} // eslint-disable-line no-alert
-    />
-  </ApplicationBase>
-);
+function ApplicationNavigationTest() {
+  const [isDrawerOpen, setDrawerOpen] = useState(false);
+
+  /* eslint-disable no-alert */
+  const handleItemSelection = (key, metaData) => {
+    alert(`itemKey: ${key}, metaData: ${metaData.test}`);
+  };
+  /* eslint-enable no-alert */
+
+  const handleOnDrawerMenuStateChange = (value) => {
+    setDrawerOpen(value);
+  };
+
+  return (
+    <ApplicationBase locale="en">
+      <ApplicationNavigation
+        titleConfig={titleConfig}
+        userConfig={userConfig}
+        extensionItems={extensionItems}
+        onSelectExtensionItem={handleItemSelection}
+        navigationItems={navigationItems}
+        activeNavigationItemKey="/page_1"
+        onSelectNavigationItem={handleItemSelection}
+        utilityItems={utilityItems}
+        onSelectUtilityItem={handleItemSelection}
+        onSelectSettings={() => alert('Settings Selected')} // eslint-disable-line no-alert
+        onSelectHelp={() => alert('Help Selected')} // eslint-disable-line no-alert
+        onSelectLogout={() => alert('Logout Selected')} // eslint-disable-line no-alert
+        onDrawerMenuStateChange={handleOnDrawerMenuStateChange}
+      >
+        {isDrawerOpen ? <div> The drawer is open</div> : null}
+      </ApplicationNavigation>
+    </ApplicationBase>
+  );
+}
 
 export default ApplicationNavigationTest;

@@ -35,7 +35,6 @@ const contextTypes = {
   isCollapsibleMenuItem: PropTypes.bool,
 };
 
-
 class CollapsibleMenuViewItemGroup extends React.Component {
   constructor(props) {
     super(props);

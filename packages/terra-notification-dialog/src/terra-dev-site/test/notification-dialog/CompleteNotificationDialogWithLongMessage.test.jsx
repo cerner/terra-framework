@@ -1,52 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'terra-button';
 import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
 
-const clickOK = () => {
-  alert('You clicked OK'); // eslint-disable-line no-alert
+const clickConfirm = () => {
+  alert('You clicked confirm'); // eslint-disable-line no-alert
 };
 
-class CompleteNotificationDialogWithLongMessage extends React.Component {
-  constructor() {
-    super();
+const CompleteNotificationDialogWithLongMessage = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-    this.state = {
-      isOpen: false,
-    };
+  const handleOpenModal = () => {
+    setIsOpen(true);
+  };
 
-    this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
-  }
+  const handleCloseModal = () => {
+    setIsOpen(false);
+  };
 
-  handleOpenModal() {
-    this.setState({ isOpen: true });
-  }
-
-  handleCloseModal() {
-    this.setState({ isOpen: false });
-  }
-
-  render() {
-    return (
-      <div>
-        <NotificationDialog
-          variant={NotificationDialogVariants.SUCCESS}
-          isOpen={this.state.isOpen}
-          title="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
-          message="This is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the message"
-          primaryAction={{
-            text: 'OK',
-            onClick: clickOK,
-          }}
-          secondaryAction={{
-            text: 'Close',
-            onClick: this.handleCloseModal,
-          }}
-        />
-        <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
-      </div>
-    );
-  }
-}
+  return (
+    <>
+      <NotificationDialog
+        variant={NotificationDialogVariants.SUCCESS}
+        isOpen={isOpen}
+        title="This is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the titleThis is the title"
+        startMessage="This is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the messageThis is the message"
+        acceptAction={{
+          text: 'Confirm',
+          onClick: clickConfirm,
+        }}
+        rejectAction={{
+          text: 'Close',
+          onClick: handleCloseModal,
+        }}
+        buttonOrder="acceptFirst"
+        emphasizedAction="accept"
+      />
+      <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={handleOpenModal} />
+    </>
+  );
+};
 
 export default CompleteNotificationDialogWithLongMessage;

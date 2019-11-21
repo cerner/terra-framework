@@ -3,6 +3,24 @@ Changelog
 
 Unreleased
 ----------
+
+5.19.0 - (November 20, 2019)
+------------------
+### Added
+* Added support for application-level panel content wrapping
+
+5.18.0 - (November 18, 2019)
+------------------
+### Changed
+* WDIO snapshot updates
+
+5.17.0 - (November 7, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+5.16.0 - (October 30, 2019)
+------------------
 ### Changed
 * Duplicate IDs in examples changed.
 * Jest snapshot updates.

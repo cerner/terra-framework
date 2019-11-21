@@ -25,7 +25,6 @@ describe('CompactHeader', () => {
     expect(mountComponent).toMatchSnapshot();
   });
 
-
   it('should render with function callbacks', () => {
     const mountComponent = mountWithIntl(
       <CompactHeader
