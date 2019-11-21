@@ -6,6 +6,8 @@ Unreleased
 ### Changed
 * Axe violation fixed for scrollable content.
 
+3.22.0 - (November 18, 2019)
+------------------
 ### Added
 * Added documentation for `key` on `Progressive Loading`.
 

@@ -54,6 +54,11 @@ const propTypes = {
    * be explicitly given to the component.
    */
   disclosureManager: DisclosureManagerDelegate.propType,
+  /**
+   * @private
+   * The container to wrap the disclosed content. This should be provided from the application level.
+   */
+  withDisclosureContainer: PropTypes.func,
 };
 
 const defaultProps = {
@@ -466,7 +471,7 @@ class DisclosureManager extends React.Component {
     };
   }
 
-  generateDisclosureComponentMappingForRender() {
+  generateDisclosureComponentMappingForRender(withDisclosureContainer) {
     const {
       disclosureComponentKeys,
       disclosureComponentData,
@@ -475,12 +480,12 @@ class DisclosureManager extends React.Component {
 
     return disclosureComponentKeys.reduce((accumulator, key, index) => {
       const componentData = disclosureComponentData[key];
-
+      const component = withDisclosureContainer ? withDisclosureContainer(componentData.component) : componentData.component;
       accumulator[key] = {
         component: (
           <DisclosureManagerHeaderAdapterContext.Provider value={componentData.headerAdapterContextValue} key={key}>
             <DisclosureManagerContext.Provider value={disclosureComponentDelegates[index]}>
-              {componentData.component}
+              {component}
             </DisclosureManagerContext.Provider>
           </DisclosureManagerHeaderAdapterContext.Provider>
         ),
@@ -492,7 +497,7 @@ class DisclosureManager extends React.Component {
   }
 
   render() {
-    const { render, children } = this.props;
+    const { withDisclosureContainer, render, children } = this.props;
     const {
       childComponentDelegate,
       disclosureIsOpen,
@@ -506,8 +511,7 @@ class DisclosureManager extends React.Component {
     if (!render) {
       return null;
     }
-
-    const disclosureComponentMappingForRender = this.generateDisclosureComponentMappingForRender();
+    const disclosureComponentMappingForRender = this.generateDisclosureComponentMappingForRender(withDisclosureContainer);
 
     return render({
       dismissPresentedComponent: this.generatePopFunction(disclosureComponentKeys ? disclosureComponentKeys[disclosureComponentKeys.length - 1] : undefined),
