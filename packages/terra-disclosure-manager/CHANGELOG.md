@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added support for application-level disclosure content wrapping
 
 4.26.0 - (November 7, 2019)
 ------------------
