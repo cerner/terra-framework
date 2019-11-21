@@ -98,13 +98,15 @@ class SlidePanel extends React.Component {
     ]);
 
     const panelDiv = (
-      <div className={cx(['panel'])} tabIndex="-1" aria-hidden={!isOpen ? 'true' : 'false'} ref={this.setPanelNode}>
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+      <div className={cx(['panel'])} tabIndex="0" aria-hidden={!isOpen ? 'true' : 'false'} ref={this.setPanelNode}>
         {panelContent}
       </div>
     );
 
     const mainDiv = (
-      <div className={cx('main')} tabIndex="-1" ref={this.mainNode}>
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+      <div className={cx('main')} tabIndex="0" ref={this.mainNode}>
         {mainContent}
       </div>
     );
