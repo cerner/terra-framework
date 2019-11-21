@@ -52,11 +52,11 @@ describe('SlidePanelManager', () => {
     return new Promise((resolve, reject) => {
       const childDisclosureManager = wrapper.find('#test').getElements()[1].props.disclosureManager;
       childDisclosureManager.disclose({
-        preferredType: 'modal',
+        preferredType: 'panel',
         size: 'large',
         content: {
           key: 'DISCLOSE_KEY',
-          component: <TestContainer />,
+          component: <TestContainer id="test-panel" />,
         },
       }).then(resolve).catch(reject);
     })
@@ -64,6 +64,33 @@ describe('SlidePanelManager', () => {
         wrapper.update();
 
         expect(wrapper).toMatchSnapshot();
+      });
+  });
+
+  it('should disclose content in Modal wrapped by disclose container', () => {
+    const slidePanelManager = (
+      <SlidePanelManager withDisclosureContainer={(wrappedContent) => (<div id="disclosure-container">{wrappedContent}</div>)}>
+        <TestContainer id="test" />
+      </SlidePanelManager>
+    );
+
+    const wrapper = mount(slidePanelManager);
+
+    return new Promise((resolve, reject) => {
+      const childDisclosureManager = wrapper.find('#test').getElements()[1].props.disclosureManager;
+      childDisclosureManager.disclose({
+        preferredType: 'panel',
+        size: 'large',
+        content: {
+          key: 'DISCLOSE_KEY',
+          component: <TestContainer id="test-panel" />,
+        },
+      }).then(resolve).catch(reject);
+    })
+      .then(() => {
+        wrapper.update();
+        expect(wrapper.exists('#disclosure-container')).toBe(true);
+        expect(wrapper.find('#disclosure-container')).toMatchSnapshot();
       });
   });
 });

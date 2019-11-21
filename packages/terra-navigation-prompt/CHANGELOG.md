@@ -4,6 +4,22 @@ Changelog
 Unreleased
 ----------
 
+1.19.0 - (November 20, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+1.18.0 - (November 18, 2019)
+------------------
+### Changed
+* Changed 'NavigationPromptCheckpoint' to have the same logic as 'notification-dialog' changes
+  * 'message' prop has been deprecated, will resolve to 'startMessage'
+  * Added a 'startMessage' string prop that will display a message after 'title'
+  * Added a 'content' node prop that will display the given node in the Dialog after 'startMessage'
+  * Added an 'endMessage' string prop that will display a message after 'content'
+  * Added 'buttonOrder' prop to determine order of accept and reject buttons
+  * 'emphasizedAction' now accepts a 'none' value and defaults to it.
+
 1.17.0 - (November 7, 2019)
 ------------------
 ### Changed

@@ -453,9 +453,8 @@ Terra.describeViewports('ModalManager - Managed Header', ['large'], () => {
 });
 
 Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => {
-  before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-disclosure-accessory').refresh());
-
   describe('Disclosure Accessory', () => {
+    before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-disclosure-accessory').refresh());
     it('renders the disclosure accessory', () => {
       browser.click('#root-component .disclose-large');
 
@@ -469,6 +468,30 @@ Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => 
       browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .disclose-tiny', 1000);
       browser.click('[class*="slide-group"] #DemoContainer-1 .disclose-tiny');
 
+      Terra.validates.element('nested disclosure', { selector });
+      browser.click('[class*="slide-group"] #DemoContainer-2 .close-disclosure');
+    });
+  });
+
+  describe.only('Disclosure Container', () => {
+    before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/with-disclosure-container').refresh());
+    it('opens the modal', () => {
+      browser.click('#root-component .disclose-large');
+      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .disclose-tiny', 1000);
+    });
+
+    it('renders the panel in an disclosure container', () => {
+      expect(browser.isExisting('[data-disclosure-container="true"]')).to.be.true;
+      Terra.validates.element({ selector });
+    });
+
+    it('opens a nested slide-panel', () => {
+      browser.click('[class*="slide-group"] #DemoContainer-1 .disclose-tiny');
+      browser.waitForVisible('[class*="slide-group"] #DemoContainer-2 .disclose-tiny', 1000);
+    });
+
+    it('renders each disclosed component in a disclosure container', () => {
+      expect(browser.isExisting('[data-disclosure-container="true"]')).to.be.true;
       Terra.validates.element('nested disclosure', { selector });
       browser.click('[class*="slide-group"] #DemoContainer-2 .close-disclosure');
     });

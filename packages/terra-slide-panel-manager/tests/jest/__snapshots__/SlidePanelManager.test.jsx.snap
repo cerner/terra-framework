@@ -1,5 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`SlidePanelManager should disclose content in Modal wrapped by disclose container 1`] = `
+<div
+  id="disclosure-container"
+>
+  <withDisclosureManager(Component)
+    id="test-panel"
+  >
+    <Component
+      disclosureManager={
+        DisclosureManagerDelegateInstance {
+          "closeDisclosure": [Function],
+          "disclose": [Function],
+          "dismiss": [Function],
+          "maximize": [Function],
+          "registerDismissCheck": [Function],
+          "requestFocus": [Function],
+        }
+      }
+      id="test-panel"
+    >
+      <div
+        id="test-panel"
+      >
+        Hello World
+      </div>
+    </Component>
+  </withDisclosureManager(Component)>
+</div>
+`;
+
 exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
 <SlidePanelManager
   panelBehavior="overlay"
@@ -65,7 +95,9 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                         }
                       }
                     >
-                      <withDisclosureManager(Component) />
+                      <withDisclosureManager(Component)
+                        id="test-panel"
+                      />
                     </Context.Provider>
                   </Context.Provider>,
                 ]
@@ -152,7 +184,9 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                                   }
                                 }
                               >
-                                <withDisclosureManager(Component) />
+                                <withDisclosureManager(Component)
+                                  id="test-panel"
+                                />
                               </Context.Provider>
                             </Context.Provider>,
                           ]
@@ -213,7 +247,9 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                                     <div
                                       className="slide-shadow"
                                     />
-                                    <withDisclosureManager(Component)>
+                                    <withDisclosureManager(Component)
+                                      id="test-panel"
+                                    >
                                       <Component
                                         disclosureManager={
                                           DisclosureManagerDelegateInstance {
@@ -225,8 +261,11 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                                             "requestFocus": [Function],
                                           }
                                         }
+                                        id="test-panel"
                                       >
-                                        <div>
+                                        <div
+                                          id="test-panel"
+                                        >
                                           Hello World
                                         </div>
                                       </Component>
