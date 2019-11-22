@@ -11,7 +11,6 @@ const propTypes = {
   id: PropTypes.string,
 };
 
-
 const TabContentTemplate = ({ isLabelHidden, label, id }) => (
   <div className={cx('tab-content')} id={id}>
     {isLabelHidden ? <h3 className="truncationHeader">{label}</h3> : null}

@@ -14,7 +14,6 @@ const DatePickerExcludeDates = () => (
     />
   </div>
 
-
 );
 
 export default DatePickerExcludeDates;

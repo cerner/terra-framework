@@ -55,3 +55,8 @@ it('should mount an open dialogModal 1600 width', () => {
   const dialogModal = mount(<DialogModalExample width="1600" />);
   expect(dialogModal).toMatchSnapshot();
 });
+
+it('should set the rootSelector', () => {
+  const dialogModal = mount(<DialogModalExample rootSelector="#myroot" />);
+  expect(dialogModal).toMatchSnapshot();
+});

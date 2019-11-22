@@ -1,7 +1,7 @@
 {
   "name": "terra-slide-panel-manager",
   "main": "lib/SlidePanelManager.js",
-  "version": "5.14.0",
+  "version": "5.19.0",
   "description": "A DisclosureManager implementation that presents disclosed content using a SlidePanel.",
   "repository": {
     "type": "git",
@@ -32,11 +32,11 @@
     "prop-types": "^15.5.8",
     "terra-action-header": "^2.0.0",
     "terra-content-container": "^3.0.0",
-    "terra-slide-group": "^4.12.0",
-    "terra-slide-panel": "^3.18.0"
+    "terra-slide-group": "^4.13.0",
+    "terra-slide-panel": "^3.20.0"
   },
   "devDependencies": {
-    "terra-collapsible-menu-view": "^6.15.0",
+    "terra-collapsible-menu-view": "^6.20.0",
     "terra-doc-template": "^2.2.0"
   },
   "scripts": {

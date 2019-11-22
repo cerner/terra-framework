@@ -289,7 +289,6 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
   });
 
   describe('Component Integration', () => {
-    const ignoredDisabledAlly = { 'color-contrast': { enabled: false } };
     before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-integration'));
     describe('Select Field in Modal Manager', () => {
       it('Select Field in Modal Manager', () => {
@@ -297,7 +296,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
 
         browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
         browser.click('[role="dialog"] [data-terra-select]');
-        Terra.validates.element({ selector, rules: ignoredDisabledAlly });
+        Terra.validates.element({ selector });
         browser.keys(['Escape', 'Escape']);
       });
     });
@@ -307,7 +306,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
         browser.click('#root-component .disclose-small');
         browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
         expect(browser.hasFocus('[aria-modal="true"][role="dialog"]')).to.be.equal(true);
-        Terra.validates.element('modal is focused', { selector, rules: ignoredDisabledAlly });
+        Terra.validates.element('modal is focused', { selector });
         browser.keys('Escape');
       });
     });
@@ -318,7 +317,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
         browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
         browser.keys(['Tab']); // Shift tab focus onto modal content
         expect(browser.hasFocus('[class*="slide-group"] #DemoContainer-1 .disclose')).to.be.equal(true);
-        Terra.validates.element('modal content is focused', { selector, rules: ignoredDisabledAlly });
+        Terra.validates.element('modal content is focused', { selector });
         browser.keys('Escape');
       });
     });
@@ -328,7 +327,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
         browser.click('#root-component .disclose-small');
         browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .maximize', 1000);
         browser.keys(['Shift', 'Tab']); // Shift tab focus backward outside of modal
-        Terra.validates.element('focused shifted before modal', { selector, rules: ignoredDisabledAlly });
+        Terra.validates.element('focused shifted before modal', { selector });
         browser.keys('Escape');
       });
     });
@@ -342,7 +341,7 @@ Terra.describeViewports('ModalManager - Behaviors', ['large'], () => {
         });
         browser.keys(['Shift']); // Release shift key
         browser.keys(['Tab']); // Shift tab focus forward outside of modal
-        Terra.validates.element('focused shifted after modal', { selector, rules: ignoredDisabledAlly });
+        Terra.validates.element('focused shifted after modal', { selector });
         browser.keys('Escape');
       });
     });
@@ -454,9 +453,8 @@ Terra.describeViewports('ModalManager - Managed Header', ['large'], () => {
 });
 
 Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => {
-  before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-disclosure-accessory').refresh());
-
   describe('Disclosure Accessory', () => {
+    before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/modal-manager-with-disclosure-accessory').refresh());
     it('renders the disclosure accessory', () => {
       browser.click('#root-component .disclose-large');
 
@@ -470,6 +468,30 @@ Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => 
       browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .disclose-tiny', 1000);
       browser.click('[class*="slide-group"] #DemoContainer-1 .disclose-tiny');
 
+      Terra.validates.element('nested disclosure', { selector });
+      browser.click('[class*="slide-group"] #DemoContainer-2 .close-disclosure');
+    });
+  });
+
+  describe.only('Disclosure Container', () => {
+    before(() => browser.url('/#/raw/tests/terra-modal-manager/modal-manager/with-disclosure-container').refresh());
+    it('opens the modal', () => {
+      browser.click('#root-component .disclose-large');
+      browser.waitForVisible('[class*="slide-group"] #DemoContainer-1 .disclose-tiny', 1000);
+    });
+
+    it('renders the panel in an disclosure container', () => {
+      expect(browser.isExisting('[data-disclosure-container="true"]')).to.be.true;
+      Terra.validates.element({ selector });
+    });
+
+    it('opens a nested slide-panel', () => {
+      browser.click('[class*="slide-group"] #DemoContainer-1 .disclose-tiny');
+      browser.waitForVisible('[class*="slide-group"] #DemoContainer-2 .disclose-tiny', 1000);
+    });
+
+    it('renders each disclosed component in a disclosure container', () => {
+      expect(browser.isExisting('[data-disclosure-container="true"]')).to.be.true;
       Terra.validates.element('nested disclosure', { selector });
       browser.click('[class*="slide-group"] #DemoContainer-2 .close-disclosure');
     });

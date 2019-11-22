@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Button from 'terra-button';
 import SlidePanelManager from 'terra-slide-panel-manager';
 import { withDisclosureManager } from 'terra-disclosure-manager';
 import classNames from 'classnames/bind';
@@ -15,7 +16,9 @@ const items = Object.freeze([{
 }, {
   key: 'SECTION_1',
   component: <AggregatorItem name="Section 1" targetId="section1" />,
-}, {
+}]);
+
+const flippedItems = Object.freeze([{
   key: 'SECTION_2',
   component: <AggregatorItem name="Section 2" targetId="section2" />,
 }, {
@@ -23,19 +26,24 @@ const items = Object.freeze([{
   component: <AggregatorItem name="Section 3" targetId="section3" />,
 }]);
 
-const Wrapper = withDisclosureManager(({ disclosureManager }) => (
+const Wrapper = withDisclosureManager(({ itemsList, disclosureManager }) => (
   <Aggregator
-    items={items}
+    items={itemsList}
     disclose={disclosureManager.disclose}
   />
 ));
 
-const AggregatorWithDisclosure = () => (
-  <div id="test-aggregator" role="main" className={cx('aggregator-with-disclosure-test')}>
-    <SlidePanelManager>
-      <Wrapper />
-    </SlidePanelManager>
-  </div>
-);
+function AggregatorWithDisclosure() {
+  const [flip, setFlip] = useState(false);
+
+  return (
+    <div id="test-aggregator" role="main" className={cx('aggregator-with-disclosure-test')}>
+      <Button id="flip-button" text="Flip Items" onClick={() => setFlip(!flip)} />
+      <SlidePanelManager>
+        <Wrapper itemsList={flip ? flippedItems : items} />
+      </SlidePanelManager>
+    </div>
+  );
+}
 
 export default AggregatorWithDisclosure;

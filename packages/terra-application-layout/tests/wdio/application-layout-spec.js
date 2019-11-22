@@ -75,7 +75,6 @@ Terra.describeViewports('ApplicationLayout', ['large'], () => {
   });
 });
 
-
 Terra.describeViewports('ApplicationLayout', ['small'], () => {
   describe('Toggles menu when small', () => {
     it('Toggles menu when small', () => {

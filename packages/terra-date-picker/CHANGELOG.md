@@ -3,7 +3,36 @@ Changelog
 
 Unreleased
 ----------
+
+4.21.0 - (November 20, 2019)
+------------------
 ### Changed
+* Minor dependency updates
+
+4.20.0 - (November 18, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+4.19.0 - (November 7, 2019)
+------------------
+### Fixed
+* Fixed Invalid and Incomplete wdio test logic to ensure states are off after tests runs.
+
+### Changed
+* Resolved lint warnings for multiple empty lines
+* Regenerate wdio screenshots
+
+4.18.0 - (October 30, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+4.17.0 - (October 21, 2019)
+------------------
+### Changed
+* Duplicate IDs in examples changed.
+* Updated previous and next buttons in the calendar back to a HTML button instead of using the terra-button component due to discrepancies with the hover styling in low-light theme.
 * Update Jest snapshots
 
 4.16.0 - (October 16, 2019)

@@ -4,6 +4,26 @@ ChangeLog
 Unreleased
 ----------
 
+6.19.0 - (November 20, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+6.18.0 - (November 7, 2019)
+------------------
+### Changed
+* Resolved lint warnings for multiple empty lines
+
+6.17.0 - (October 30, 2019)
+------------------
+### Fixed
+* Fixed accessibility issue in the tabs component.
+
+6.16.0 - (October 21, 2019)
+------------------
+### Changed
+* Minor dependency updatess
+
 6.15.0 - (October 16, 2019)
 ------------------
 ### Changed

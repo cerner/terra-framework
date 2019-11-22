@@ -156,6 +156,7 @@ class CollapsibleMenuView extends React.Component {
                 menuWidth={menuWidth}
                 isIconOnly
                 text={ellipsesText}
+                variant="utility"
               />
             )}
           </FormattedMessage>

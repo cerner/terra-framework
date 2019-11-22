@@ -1,43 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'terra-button';
 import NotificationDialog, { NotificationDialogVariants } from '../../../NotificationDialog';
 
-class NotificationDialogNoMessage extends React.Component {
-  constructor() {
-    super();
+const NotificationDialogNoMessage = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-    this.state = {
-      isOpen: false,
-    };
+  const handleOpenModal = () => {
+    setIsOpen(true);
+  };
 
-    this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
-  }
+  const handleCloseModal = () => {
+    setIsOpen(false);
+  };
 
-  handleOpenModal() {
-    this.setState({ isOpen: true });
-  }
-
-  handleCloseModal() {
-    this.setState({ isOpen: false });
-  }
-
-  render() {
-    return (
-      <div>
-        <NotificationDialog
-          variant={NotificationDialogVariants.INFO}
-          isOpen={this.state.isOpen}
-          title="There is no message here."
-          primaryAction={{
-            text: 'Close',
-            onClick: this.handleCloseModal,
-          }}
-        />
-        <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
-      </div>
-    );
-  }
-}
+  return (
+    <>
+      <NotificationDialog
+        variant={NotificationDialogVariants.INFO}
+        isOpen={isOpen}
+        title="There is no message here."
+        acceptAction={{
+          text: 'Close',
+          onClick: handleCloseModal,
+        }}
+        buttonOrder="acceptFirst"
+        emphasizedAction="accept"
+      />
+      <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={handleOpenModal} />
+    </>
+  );
+};
 
 export default NotificationDialogNoMessage;

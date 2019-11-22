@@ -1,10 +1,11 @@
 Terra.describeViewports('Date Input', ['medium'], () => {
+  const ignoredDisabledAlly = { 'color-contrast': { enabled: false } };
   // Temporary disabled test, since placeholder causes contrast accessibility failure.
-/*  describe('Date Input Field no date provide', () => {
+  describe('Date Input Field no date provide', () => {
     before(() => browser.url('/#/raw/tests/terra-date-input/date-input/default-date-input-field'));
 
-    Terra.it.validatesElement();
-  }); */
+    Terra.it.validatesElement({ rules: ignoredDisabledAlly });
+  });
 
   describe('Date Input Field full date provide', () => {
     before(() => browser.url('/#/raw/tests/terra-date-input/date-input/populated-date-input-field'));
@@ -13,11 +14,11 @@ Terra.describeViewports('Date Input', ['medium'], () => {
   });
 
   // Temporary disabled test, since placeholder causes contrast accessibility failure.
-  /* describe('Date Input Field invalid date provide', () => {
+  describe('Date Input Field invalid date provide', () => {
     before(() => browser.url('/#/raw/tests/terra-date-input/date-input/invalid-provided-date-input-field'));
 
-    Terra.it.validatesElement();
-  }); */
+    Terra.it.validatesElement({ rules: ignoredDisabledAlly });
+  });
 
   describe('Date Input Field is invalid', () => {
     before(() => browser.url('/#/raw/tests/terra-date-input/date-input/invalid-date-input-field'));
