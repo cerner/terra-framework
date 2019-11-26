@@ -74,6 +74,7 @@
     "compile:clean": "rm -rf packages/**/lib",
     "compile:src": "lerna run compile",
     "compile:prod": "rm -rf ./build; NODE_ENV=production webpack -p",
+    "compile:lowlight": "rm -rf ./build; THEME=clinical-lowlight-theme webpack -p",
     "danger": "danger ci",
     "deploy": "npm run compile:prod && gh-pages -d build",
     "dependency-markdown": "node scripts/dependency-markdown-generator/DependencyMarkdownGenerator.js",
@@ -96,7 +97,9 @@
     "start-prod": "tt-serve --env.disableHotReloading -p",
     "start-static": "npm run compile:prod && tt-serve-static --site ./build",
     "test": "npm run jest && npm run wdio",
-    "wdio": "wdio node_modules/terra-toolkit/config/wdio/wdio.conf.js"
+    "wdio-default": "wdio node_modules/terra-toolkit/config/wdio/wdio.conf.js",
+    "wdio-lowlight": "THEME=clinical-lowlight-theme wdio config/wdio/clinical-lowlight-theme/wdio.conf.js",
+    "wdio": "npm run wdio-default && npm run wdio-lowlight"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
@@ -135,7 +138,7 @@
     "terra-dev-site": "^6.5.0",
     "terra-disclosure-manager": "^4.9.0",
     "terra-enzyme-intl": "^3.0.0",
-    "terra-toolkit": "^5.4.0",
+    "terra-toolkit": "git://github.com/cerner/terra-toolkit.git#issue-351-disable-accessibility-test",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.3.1",
