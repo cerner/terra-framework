@@ -23,6 +23,11 @@ const propTypes = {
    * The component to render within the Modal above the disclosed content.
    */
   disclosureAccessory: PropTypes.element,
+  /**
+   * @private
+   * The container to wrap the disclosed content. This should be provided from the application level.
+   */
+  withDisclosureContainer: PropTypes.func,
 };
 
 const heightFromSize = {
@@ -49,7 +54,9 @@ class ModalManager extends React.Component {
   }
 
   renderModal(manager) {
-    const { children, disclosureAccessory, ...customProps } = this.props;
+    const {
+      children, disclosureAccessory, withDisclosureContainer, ...customProps
+    } = this.props;
 
     const containerClassNames = cx([
       'container',
@@ -111,10 +118,11 @@ class ModalManager extends React.Component {
   }
 
   render() {
-    const { children } = this.props;
+    const { withDisclosureContainer, children } = this.props;
 
     return (
       <DisclosureManager
+        withDisclosureContainer={withDisclosureContainer}
         supportedDisclosureTypes={[disclosureType]}
         render={this.renderModal}
         trapNestedDisclosureRequests

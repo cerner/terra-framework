@@ -40,5 +40,15 @@ Terra.describeViewports('Aggregator', ['large'], () => {
 
       Terra.it.validatesElement({ selector: '#test-aggregator' });
     });
+
+    describe('With Disclosure - Close from explicit button flip', () => {
+      before(() => {
+        browser.click('#test-aggregator #section1');
+        browser.waitForVisible('[class*="slide-group"] .close-disclosure');
+        browser.click('#flip-button');
+      });
+
+      Terra.it.validatesElement({ selector: '#test-aggregator' });
+    });
   });
 });
