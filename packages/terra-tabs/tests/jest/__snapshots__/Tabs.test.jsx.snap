@@ -17,6 +17,7 @@ exports[`Tabs Variants should render modular-centered tabs 1`] = `
         >
           <TabPane
             className="is-active"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -31,6 +32,7 @@ exports[`Tabs Variants should render modular-centered tabs 1`] = `
         >
           <TabPane
             className="is-active"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -93,6 +95,7 @@ exports[`Tabs Variants should render modular-left-aligned tabs 1`] = `
         >
           <TabPane
             className="is-active"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -107,6 +110,7 @@ exports[`Tabs Variants should render modular-left-aligned tabs 1`] = `
         >
           <TabPane
             className="is-active"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -169,6 +173,7 @@ exports[`Tabs Variants should render structural tabs 1`] = `
         >
           <TabPane
             className="is-active"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -183,6 +188,7 @@ exports[`Tabs Variants should render structural tabs 1`] = `
         >
           <TabPane
             className="is-active"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -245,6 +251,7 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
         >
           <TabPane
             className="is-active"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -259,6 +266,7 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
         >
           <TabPane
             className="is-active"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -320,6 +328,7 @@ exports[`Tabs should render a default component 1`] = `
         >
           <TabPane
             className="is-active"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -334,6 +343,7 @@ exports[`Tabs should render a default component 1`] = `
         >
           <TabPane
             className="is-active"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -396,6 +406,7 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
         >
           <TabPane
             className="is-active"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -410,6 +421,7 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
         >
           <TabPane
             className="is-active"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -471,6 +483,7 @@ exports[`Tabs should render with content filled when indicated 1`] = `
         >
           <TabPane
             className="is-active"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -485,6 +498,7 @@ exports[`Tabs should render with content filled when indicated 1`] = `
         >
           <TabPane
             className="is-active"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -546,6 +560,7 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
         >
           <TabPane
             className="is-active"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -560,6 +575,7 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
         >
           <TabPane
             className="is-active"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -622,6 +638,7 @@ exports[`Tabs should set custom props 1`] = `
         >
           <TabPane
             className="is-active"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -636,6 +653,7 @@ exports[`Tabs should set custom props 1`] = `
         >
           <TabPane
             className="is-active"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -697,6 +715,7 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
         >
           <TabPane
             className="is-active customClass"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -711,6 +730,7 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
         >
           <TabPane
             className="is-active customClass"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"

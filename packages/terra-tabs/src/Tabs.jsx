@@ -157,10 +157,10 @@ class Tabs extends React.Component {
       if (child.props.isIconOnly) {
         isIconOnly = true;
       }
-
       clonedPanes.push(React.cloneElement(child, {
         className: cx([{ 'is-active': isActive }, child.props.className]),
         onClick: this.wrapPaneOnClick(child),
+        isActive,
       }));
     });
 
