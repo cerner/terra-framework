@@ -46,6 +46,10 @@
       word-wrap: normal;
     }
 
+    .main-header-title {
+      margin-left: var(--terra-menu-mainmenu-text-margin-left, 10px);
+    }
+
     .header-button {
       background-color: transparent;
       border: 0;
@@ -73,6 +77,13 @@
       font-size: var(--terra-menu-fullscreen-header-title-font-size, 1rem);
       line-height: var(--terra-menu-fullscreen-header-title-line-height, 1.2);
       margin: var(--terra-menu-fullscreen-header-title-margin, 0.5714rem 0 0.5714rem 0.3571rem);
+    }
+
+    .main-header-title {
+      color: var(--terra-menu-fullscreen-mainmenu-header-title-color, #1c1f21);
+      font-size: var(--terra-menu-fullscreen-mainmenu-header-title-font-size, 1rem);
+      line-height: var(--terra-menu-fullscreen-mainmenu-header-title-line-height, 1.2);
+      margin: var(--terra-menu-fullscreen-mainmenu-header-title-margin, 0.5714rem 0 0.5714rem 0.3571rem);
     }
 
     .header-button {

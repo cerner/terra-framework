@@ -79,6 +79,10 @@ const propTypes = {
    * Ref callback function to be applied to content container.
    */
   refCallback: PropTypes.func,
+  /**
+   * Header Title for menu if menu contains drill-in sub-menus
+   */
+  headerTitle: PropTypes.string,
 };
 
 const defaultProps = {
@@ -248,7 +252,7 @@ class MenuContent extends React.Component {
     }
 
     const backIcon = <IconLeft />;
-    const backButton = this.props.index > 0 ? (
+    const subMenuHeader = this.props.index > 0 ? (
       // eslint-disable-next-line jsx-a11y/no-static-element-interactions
       <div
         role="button"
@@ -269,11 +273,18 @@ class MenuContent extends React.Component {
       </div>
     ) : <div />;
 
+    const defaultHeader = this.props.headerTitle.length > 0 ? (
+      <Arrange
+        align="center"
+        fill={<h1 className={cx(['header-title', 'main-header-title'])}>{this.props.headerTitle}</h1>}
+      />
+    ) : undefined;
+
     return (
       <Arrange
         className={cx('header')}
         fitEnd={closeButton}
-        fill={backButton}
+        fill={this.props.index > 0 ? subMenuHeader : defaultHeader}
         align="center"
       />
     );
@@ -281,6 +292,7 @@ class MenuContent extends React.Component {
 
   render() {
     let index = -1;
+    let hasSubMenuItems;
     const items = this.props.children ? [] : undefined;
     React.Children.map(this.props.children, (item) => {
       const onClick = this.wrapOnClick(item);
@@ -297,7 +309,11 @@ class MenuContent extends React.Component {
           onKeyDown,
           isActive,
         });
-      // If the child has children then it is an item group, so iterate through it's children
+
+        if (item.props.subMenuItems.length > 0) {
+          hasSubMenuItems = true;
+        }
+        // If the child has children then it is an item group, so iterate through it's children
       } else if (item.props.children) {
         const children = item.props.children ? [] : undefined;
         React.Children.forEach(item.props.children, (child) => {
@@ -333,7 +349,7 @@ class MenuContent extends React.Component {
     ]);
 
     let header;
-    if (isFullScreen || isSubMenu) {
+    if (isFullScreen || isSubMenu || hasSubMenuItems) {
       header = this.buildHeader(isFullScreen);
     }
     const contentHeight = this.props.isHeightBounded ? '100%' : this.props.fixedHeight;
