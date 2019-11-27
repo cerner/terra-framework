@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+5.19.0 - (November 20, 2019)
+------------------
+### Added
+* Added support for application-level panel content wrapping
+
 5.18.0 - (November 18, 2019)
 ------------------
 ### Changed

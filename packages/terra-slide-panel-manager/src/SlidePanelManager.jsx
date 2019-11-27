@@ -23,6 +23,11 @@ const propTypes = {
    * The component to render within the panel above the disclosed content.
    */
   disclosureAccessory: PropTypes.element,
+  /**
+   * @private
+   * The container to wrap the disclosed content. This should be provided from the application level.
+   */
+  withDisclosureContainer: PropTypes.func,
 };
 
 const defaultProps = {
@@ -57,7 +62,7 @@ class SlidePanelManager extends React.Component {
 
   renderSlidePanel(manager) {
     const {
-      children, panelBehavior, disclosureAccessory, ...customProps
+      children, panelBehavior, disclosureAccessory, withDisclosureContainer, ...customProps
     } = this.props;
 
     let isFullscreen;
@@ -113,10 +118,11 @@ class SlidePanelManager extends React.Component {
   }
 
   render() {
-    const { children } = this.props;
+    const { withDisclosureContainer, children } = this.props;
 
     return (
       <DisclosureManager
+        withDisclosureContainer={withDisclosureContainer}
         supportedDisclosureTypes={[disclosureType]}
         render={this.renderSlidePanel}
       >

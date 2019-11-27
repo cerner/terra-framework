@@ -6,6 +6,11 @@ Unreleased
 ### Fixed
 * Reset cache and handle visibility of tabs added/removed post initial mount.
 
+6.19.0 - (November 20, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 6.18.0 - (November 7, 2019)
 ------------------
 ### Changed

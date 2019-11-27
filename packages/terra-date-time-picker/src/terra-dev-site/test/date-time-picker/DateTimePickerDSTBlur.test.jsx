@@ -13,7 +13,7 @@ class DateTimePickerOnBlur extends React.Component {
   }
 
   handleBlur(event, options) {
-    this.blurCount = this.blurCount + 1;
+    this.blurCount += 1;
     this.setState({
       blurTriggerCount: this.blurCount,
       iSO: options.iSO,
