@@ -1,0 +1,44 @@
+:global {
+  // ------------------- Shared Version 3.x & 4.x ------------------- //
+  --terra-date-picker-button-border: 1px solid #000;
+  --terra-date-picker-button-box-shadow: none;
+  --terra-date-picker-button-color: #b2b5b6;
+  --terra-date-picker-button-focus-border-color: #000;
+  --terra-date-picker-button-focus-box-shadow: 0 0 1px 3px #004c76, 0 0 7px 4px #004c76;
+
+  --terra-date-picker-input-focus-border-color: #000;
+
+  // -------------------- Version 4.x -------------------- //
+  --terra-date-picker-button-invalid-border-color: #fb4c4c;
+  --terra-date-picker-button-invalid-box-shadow: 0 0 0 1px #fb4c4c;
+  --terra-date-picker-button-invalid-focus-border-color: #fb4c4c;
+  --terra-date-picker-button-invalid-focus-box-shadow: 0 0 0 1px #fb4c4c, 0 0 0 1px #fb4c4c;
+
+  --terra-date-picker-input-invalid-border-color: #fb4c4c;
+  --terra-date-picker-input-invalid-box-shadow: 0 0 0 1px #fb4c4c;
+  --terra-date-picker-input-invalid-focus-border-color: #fb4c4c;
+  --terra-date-picker-input-invalid-focus-box-shadow: 0 0 0 1px #fb4c4c, 0 0 0 1px #fb4c4c;
+
+  --terra-date-picker-input-incomplete-background-color: #464232;
+  --terra-date-picker-input-incomplete-focus-background-color: #464232;
+  --terra-date-picker-input-incomplete-hover-background-color: #464232;
+
+  --terra-date-picker-input-incomplete-disabled-background-color: #464232;
+  --terra-date-picker-input-incomplete-disabled-border: 1px solid #181b1d;
+  --terra-date-picker-input-incomplete-disabled-color: #464232;
+  --terra-date-picker-input-incomplete-disabled-opacity: 0.3;
+
+
+  // The following variables will not be styled, because they display in the date-picker popup, which is default styling.
+  // By using the default values for these variables, styling should remain appropriate if/when default style changes.
+  // --terra-date-picker-month-focus-outline
+  // --terra-date-picker-prev-month-background-image
+  // --terra-date-picker-prev-month-focus-background-image
+  // --terra-date-picker-prev-month-hover-background-image
+  // --terra-date-picker-next-month-background-image
+  // --terra-date-picker-next-month-focus-background-image
+  // --terra-date-picker-next-month-hover-background-image
+
+  // -------------------- Version 2.x -------------------- //
+  // there are no version specific variables for this version
+}
