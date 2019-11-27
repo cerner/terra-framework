@@ -7,6 +7,11 @@ Unreleased
 ### Changed
 * Updated `uncontrolled responsive-element` to `controlled responsive-element`.
 
+6.19.0 - (November 20, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 6.18.0 - (November 7, 2019)
 ------------------
 ### Changed

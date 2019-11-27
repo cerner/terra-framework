@@ -47,7 +47,7 @@ describe('ModalManager', () => {
         size: 'large',
         content: {
           key: 'DISCLOSE_KEY',
-          component: <TestContainer />,
+          component: <TestContainer id="test-modal" />,
         },
       }).then(resolve).catch(reject);
     })
@@ -55,6 +55,33 @@ describe('ModalManager', () => {
         wrapper.update();
 
         expect(wrapper).toMatchSnapshot();
+      });
+  });
+
+  it('should disclose content in Modal wrapped by disclose container', () => {
+    const modalManager = (
+      <ModalManager withDisclosureContainer={(wrappedContent) => (<div id="disclosure-container">{wrappedContent}</div>)}>
+        <TestContainer id="test" />
+      </ModalManager>
+    );
+
+    const wrapper = mountWithIntl(modalManager);
+
+    return new Promise((resolve, reject) => {
+      const childDisclosureManager = wrapper.find('#test').getElements()[1].props.disclosureManager;
+      childDisclosureManager.disclose({
+        preferredType: 'modal',
+        size: 'large',
+        content: {
+          key: 'DISCLOSE_KEY',
+          component: <TestContainer id="test-modal" />,
+        },
+      }).then(resolve).catch(reject);
+    })
+      .then(() => {
+        wrapper.update();
+        expect(wrapper.exists('#disclosure-container')).toBe(true);
+        expect(wrapper.find('#disclosure-container')).toMatchSnapshot();
       });
   });
 });
