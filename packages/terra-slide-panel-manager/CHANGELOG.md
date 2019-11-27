@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added reference wdio screenshots for "clinical-lowlight-theme".
 
 5.19.0 - (November 20, 2019)
 ------------------

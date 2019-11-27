@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added reference wdio screenshots for "clinical-lowlight-theme".
 
 3.16.0 - (November 7, 2019)
 ------------------
