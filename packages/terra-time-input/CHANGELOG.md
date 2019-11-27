@@ -6,6 +6,11 @@ Unreleased
 ### Added
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
 
+4.17.0 - (November 26, 2019)
+------------------
+### Fixed
+* Fixed eslint error regarding operator-assignment.
+
 4.16.0 - (November 7, 2019)
 ------------------
 ### Changed
