@@ -62,7 +62,11 @@ describe('Dialog Modal', () => {
   });
 
   describe('Outside Modal Focus Handling', () => {
-    before(() => browser.url('/#/raw/tests/terra-dialog-modal/dialog-modal/default-dialog-modal'));
+    before(() => {
+      browser.url('/#/raw/tests/terra-dialog-modal/dialog-modal/default-dialog-modal');
+      browser.click('#trigger-dialog-modal');
+      browser.keys(['Tab']);
+    });
 
     it('does not focus on interactive content within the app when modal is open and focus is shifted backwards from the modal dialog', () => {
       browser.keys(['Shift', 'Tab']);
