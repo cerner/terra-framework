@@ -127,6 +127,35 @@ describe('DisclosureManager', () => {
     return triggerChildDisclose(wrapper);
   });
 
+  it('renders disclosed content in the disclosure wrapper', () => {
+    const wrapper = mount(
+      <DisclosureManager.WrappedComponent
+        render={(manager) => (
+          <div id="content">
+            {manager.children.components}
+            {manager.disclosure.components}
+          </div>
+        )}
+        withDisclosureContainer={(content) => (
+          <div id="disclosure-container">
+            {content}
+          </div>
+        )}
+        supportedDisclosureTypes={['test']}
+      >
+        <TestChild id="child1" />
+        <TestChild id="child2" />
+      </DisclosureManager.WrappedComponent>,
+    );
+
+    validateInitialState(wrapper);
+    validateChildDelegate(wrapper);
+
+    return triggerChildDisclose(wrapper).then(() => {
+      expect(wrapper.exists('#disclosure-container')).toBe(true);
+    });
+  });
+
   it('should resolve disclose request with dismissDisclosure/afterDismiss APIs', () => {
     let dismissDisclosureInstance;
     const mockOnDismissHandler = jest.fn();
