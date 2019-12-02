@@ -16,12 +16,12 @@ class TimeInputOnBlur extends React.Component {
   }
 
   handleBlur() {
-    this.blurCount = this.blurCount + 1;
+    this.blurCount += 1;
     this.setState({ blurTriggerCount: this.blurCount });
   }
 
   handleFocus() {
-    this.focusCount = this.focusCount + 1;
+    this.focusCount += 1;
     this.setState({ focusTriggerCount: this.focusCount });
   }
 
