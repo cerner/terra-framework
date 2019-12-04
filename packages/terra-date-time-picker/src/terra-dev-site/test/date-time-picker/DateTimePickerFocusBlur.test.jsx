@@ -21,7 +21,7 @@ class DateTimePickerOnBlur extends React.Component {
   }
 
   handleBlur(event, options) {
-    this.blurCount = this.blurCount + 1;
+    this.blurCount += 1;
     this.setState({
       blurTriggerCount: this.blurCount,
       iSO: options.iSO,
@@ -32,7 +32,7 @@ class DateTimePickerOnBlur extends React.Component {
   }
 
   handleFocus() {
-    this.focusCount = this.focusCount + 1;
+    this.focusCount += 1;
     this.setState({ focusTriggerCount: this.focusCount });
   }
 
