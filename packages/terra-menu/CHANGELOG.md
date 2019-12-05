@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated Docs for eIFU title update.
 
 6.20.0 - (November 20, 2019)
 ------------------

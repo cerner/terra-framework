@@ -357,28 +357,20 @@ exports[`UtilityMenuHeaderButton should render with function callbacks 1`] = `
               src="user-src"
               variant="default"
             >
-              <div>
-                <div
-                  className="hidden"
-                >
-                  <img
-                    alt="user-name"
-                    className="image cover default image"
-                    onError={[Function]}
-                    onLoad={[Function]}
-                    src="user-src"
-                  />
-                </div>
-                <div>
-                  <span
-                    alt="user-name"
-                    aria-hidden={false}
-                    aria-label="user-name"
-                    className="icon user"
-                    role="img"
-                  />
-                </div>
-              </div>
+              <img
+                alt="user-name"
+                className="image cover default image hidden"
+                onError={[Function]}
+                onLoad={[Function]}
+                src="user-src"
+              />
+              <span
+                alt="user-name"
+                aria-hidden={false}
+                aria-label="user-name"
+                className="icon user"
+                role="img"
+              />
             </Image>
           </div>
         </Avatar>
