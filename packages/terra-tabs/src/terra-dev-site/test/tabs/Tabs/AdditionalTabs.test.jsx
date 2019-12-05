@@ -8,14 +8,8 @@ class AdditionalTabsTest extends React.Component {
     this.state = {
       tabKeys: [...Array(5).keys()],
     };
-  }
 
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        tabKeys: [...Array(20).keys()],
-      });
-    }, 3000);
+    this.addMoreTabPanes = this.addMoreTabPanes.bind(this);
   }
 
   createTabPanes() {
@@ -28,13 +22,24 @@ class AdditionalTabsTest extends React.Component {
     return tabPanes;
   }
 
+  addMoreTabPanes() {
+    this.setState({
+      tabKeys: [...Array(20).keys()],
+    });
+  }
+
   render() {
     // eslint-disable-next-line no-nested-ternary
     const tabsWrapperId = (this.state.tabKeys.length === 5) ? 'tabsWrapper-5' : (this.state.tabKeys.length === 20) ? 'tabsWrapper-20' : 'tabsWrapper';
     return (
-      <Tabs id={tabsWrapperId}>
-        {this.createTabPanes()}
-      </Tabs>
+      <div>
+        <button type="button" onClick={this.addMoreTabPanes}>
+          Add Tabs
+        </button>
+        <Tabs id={tabsWrapperId}>
+          {this.createTabPanes()}
+        </Tabs>
+      </div>
     );
   }
 }

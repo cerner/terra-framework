@@ -89,11 +89,12 @@ Terra.describeViewports('Tabs - Large screen', ['large'], () => {
       browser.url('/#/raw/tests/terra-tabs/tabs/tabs/additional-tabs');
     });
 
-    Terra.it.matchesScreenshot('before');
+    Terra.it.matchesScreenshot('before', { selector: '#tabsWrapper-5' });
 
     it('Additional Tabs', () => {
-      $('#tabsWrapper-20').waitForExist(4000);
-      Terra.validates.element('after');
+      browser.click('button');
+      browser.waitForVisible('#tabsWrapper-20');
+      Terra.validates.element('after', { selector: '#tabsWrapper-20' });
     });
   });
 });
