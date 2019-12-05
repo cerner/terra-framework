@@ -1,41 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'terra-button';
 import NotificationDialog from '../../../NotificationDialog';
 
-class NotificationDialogMinimalProps extends React.Component {
-  constructor() {
-    super();
+const NotificationDialogMinimalProps = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-    this.state = {
-      isOpen: false,
-    };
+  const handleOpenModal = () => {
+    setIsOpen(true);
+  };
 
-    this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
-  }
+  const handleCloseModal = () => {
+    setIsOpen(false);
+  };
 
-  handleOpenModal() {
-    this.setState({ isOpen: true });
-  }
-
-  handleCloseModal() {
-    this.setState({ isOpen: false });
-  }
-
-  render() {
-    return (
-      <div>
-        <NotificationDialog
-          isOpen={this.state.isOpen}
-          primaryAction={{
-            text: 'Close',
-            onClick: this.handleCloseModal,
-          }}
-        />
-        <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={this.handleOpenModal} />
-      </div>
-    );
-  }
-}
+  return (
+    <>
+      <NotificationDialog
+        isOpen={isOpen}
+        acceptAction={{
+          text: 'Close',
+          onClick: handleCloseModal,
+        }}
+        buttonOrder="acceptFirst"
+        emphasizedAction="accept"
+      />
+      <Button id="trigger-notification-dialog" text="Trigger NotificationDialog" onClick={handleOpenModal} />
+    </>
+  );
+};
 
 export default NotificationDialogMinimalProps;
