@@ -1,4 +1,3 @@
-/* globals $ */
 const ignoredA11y = {
   // https://github.com/cerner/terra-core/issues/1061
   'aria-allowed-attr': { enabled: false },
