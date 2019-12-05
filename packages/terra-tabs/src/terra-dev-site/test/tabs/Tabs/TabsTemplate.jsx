@@ -12,11 +12,12 @@ const propTypes = {
   tabFill: PropTypes.bool,
   id: PropTypes.string,
   containerHeight: PropTypes.string,
-  responsiveTo: 'parent',
+  responsiveTo: PropTypes.string,
 };
 
 const defaultProps = {
   containerHeight: 'auto',
+  responsiveTo: 'parent',
 };
 
 const TabsTemplate = props => (
