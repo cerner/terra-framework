@@ -70,7 +70,7 @@ const propTypes = {
 const defaultProps = {
   tabFill: false,
   fill: false,
-  responsiveTo: DependentViewport.PARENT,
+  responsiveTo: 'parent',
 };
 
 class Tabs extends React.Component {
