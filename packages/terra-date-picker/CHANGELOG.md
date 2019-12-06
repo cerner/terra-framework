@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Added
+* Added orion-fusion-theme and generated the respective reference wdio screenshots.
 * Added `aria-disabled` in react-datepicker
 
 ### Changed

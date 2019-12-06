@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added reference wdio screenshots for "orion-fusion-theme".
+
 ### Changed
 * Updated Jest Snapshots due to changes in `avatar`.
 
