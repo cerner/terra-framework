@@ -12,8 +12,8 @@ services:
     environment:
       TZ: 'America/Chicago'
 
-  term:
-    image: mjhenkes/terra-node-zsh
+  dev:
+    image: cerner/terra-node-dev:1
     ports:
       - 8080:8080
     depends_on:
@@ -23,8 +23,6 @@ services:
 
   test-ci:
     build: ./
-    image: "${DOCKER_IMAGE}-test-standalone-chrome:${TAG:-latest}"
-    environment:
-      - CI=true
+    image: "${DOCKER_IMAGE}-test:${TAG:-latest}"
     depends_on:
       - standalone-chrome
