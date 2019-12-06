@@ -97,4 +97,30 @@ describe('InfiniteList', () => {
     const wrapper = shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render with list having tabIndex as 0', () => {
+    const component = (
+      <InfiniteList
+        isFinishedLoading
+        dividerStyle="standard"
+        paddingStyle="standard"
+        role="listbox"
+      >
+        <Item isSelectable className={styles.item1} key={`item-${1}`}>
+          <div className={styles.item}>item 1</div>
+        </Item>
+        <Item isSelectable isSelected className={styles.item2} key={`item-${2}`}>
+          <div className={styles.item}>item 2</div>
+        </Item>
+        <Item isSelectable className={styles.item3} key={`item-${3}`}>
+          <div className={styles.item}>item 3</div>
+        </Item>
+        <Item isSelectable className={styles.item4} key={`item-${4}`}>
+          <div className={styles.item}>item 4</div>
+        </Item>
+      </InfiniteList>
+    );
+    const wrapper = shallowWithIntl(component).dive();
+    expect(wrapper).toMatchSnapshot();
+  });
 });

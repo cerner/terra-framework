@@ -121,6 +121,105 @@ exports[`InfiniteList should render with initial children 1`] = `
 </InfiniteList>
 `;
 
+exports[`InfiniteList should render with list having tabIndex as 0 1`] = `
+<Fragment>
+  <div
+    className="infinite-list"
+  >
+    <div
+      className="spacer"
+      key="infinite-spacer-0"
+      style={
+        Object {
+          "height": "0px",
+        }
+      }
+    />
+    <List
+      dividerStyle="standard"
+      paddingStyle="standard"
+      role="listbox"
+      tabIndex="0"
+    >
+      <ListItem
+        className="item1"
+        data-infinite-list-index={0}
+        hasChevron={false}
+        isSelectable={true}
+        isSelected={false}
+        key=".$item-1"
+        refCallback={[Function]}
+      >
+        <div
+          className="item"
+        >
+          item 1
+        </div>
+      </ListItem>
+      <ListItem
+        className="item2"
+        data-infinite-list-index={1}
+        hasChevron={false}
+        isSelectable={true}
+        isSelected={true}
+        key=".$item-2"
+        refCallback={[Function]}
+      >
+        <div
+          className="item"
+        >
+          item 2
+        </div>
+      </ListItem>
+      <ListItem
+        className="item3"
+        data-infinite-list-index={2}
+        hasChevron={false}
+        isSelectable={true}
+        isSelected={false}
+        key=".$item-3"
+        refCallback={[Function]}
+      >
+        <div
+          className="item"
+        >
+          item 3
+        </div>
+      </ListItem>
+      <ListItem
+        className="item4"
+        data-infinite-list-index={3}
+        hasChevron={false}
+        isSelectable={true}
+        isSelected={false}
+        key=".$item-4"
+        refCallback={[Function]}
+      >
+        <div
+          className="item"
+        >
+          item 4
+        </div>
+      </ListItem>
+    </List>
+    <div
+      className="spacer"
+      key="infinite-spacer-1"
+      style={
+        Object {
+          "height": "0px",
+        }
+      }
+    />
+  </div>
+  <VisuallyHiddenText
+    aria-atomic="true"
+    aria-live="assertive"
+    text=""
+  />
+</Fragment>
+`;
+
 exports[`InfiniteList should render with list props 1`] = `
 <InfiniteList
   dividerStyle="standard"
