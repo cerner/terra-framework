@@ -178,7 +178,7 @@ class Tabs extends React.Component {
       React.cloneElement(contentItem, { isLabelHidden: isIconOnly || this.state.isLabelTruncated })
     ));
 
-    const header = (() => {
+    const tabContent = (() => {
       const collapsibleTabs = (
         <CollapsibleTabs
           activeKey={activeKey || this.state.activeKey}
@@ -215,7 +215,7 @@ class Tabs extends React.Component {
         {...customProps}
         className={tabsClassNames}
         fill={fill}
-        header={header}
+        header={tabContent}
       >
         <div
           role="tabpanel"

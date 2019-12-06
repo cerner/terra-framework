@@ -11,17 +11,17 @@ const propTypes = {
   fill: PropTypes.bool,
   tabFill: PropTypes.bool,
   id: PropTypes.string,
-  containerHeight: PropTypes.string,
+  containerClassName: PropTypes.string,
   responsiveTo: PropTypes.string,
 };
 
 const defaultProps = {
-  containerHeight: 'auto',
+  containerClassName: 'content-wrapper-default',
   responsiveTo: 'parent',
 };
 
 const TabsTemplate = props => (
-  <div className={cx(props.containerHeight === 'auto' ? 'content-wrapper' : 'content-wrapper-400')}>
+  <div className={cx(props.containerClassName)}>
     <Tabs
       tabFill={props.tabFill}
       fill={props.fill}

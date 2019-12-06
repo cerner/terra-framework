@@ -99,3 +99,25 @@ Terra.describeViewports('Tabs - Uncollapsed', ['tiny'], () => {
     });
   });
 });
+
+Terra.describeViewports('Tabs - Responsive to Window', ['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], () => {
+  describe('Responsive to Window', () => {
+    it('Responsive to Window', () => {
+      browser.url('/#/raw/tests/terra-tabs/tabs/tabs/tabs-responsive-to-window');
+      browser.moveToObject('[class*="tab-content"]');
+      Terra.validates.element();
+    });
+  });
+});
+
+Terra.describeViewports('Tabs - Responsive to Parent', ['huge'], () => {
+  describe('Responsive to Parent', () => {
+    it('Responsive to Parent', () => {
+      browser.url('/#/raw/tests/terra-tabs/tabs/tabs/tabs-responsive-to-parent');
+      Terra.validates.element('before');
+      browser.click('button');
+      browser.moveToObject('[class*="tab-content"]');
+      Terra.validates.element('after');
+    });
+  });
+});
