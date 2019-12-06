@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added orion-fusion-theme and generated the respective reference wdio screenshots.
+
 ### Fixed
 * Fixed background color issue of time components in incomplete `time-input`.
 
