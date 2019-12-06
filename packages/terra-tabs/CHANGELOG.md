@@ -10,6 +10,11 @@ collapse into a menu on smaller viewports.
 ### Changed
 * Center-align text label in the single dropdown tab when all tabs completely collapse into a menu.
 
+6.19.0 - (November 20, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 6.18.0 - (November 7, 2019)
 ------------------
 ### Changed

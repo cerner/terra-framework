@@ -17,6 +17,7 @@ module.exports = {
   ],
   moduleDirectories: [
     'aggregated-translations',
+    'packages',
     'node_modules',
   ],
   moduleNameMapper: {

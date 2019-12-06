@@ -1,25 +1,81 @@
-import React from 'react';
-import PopupCommonExample from 'terra-popup/lib/terra-dev-site/doc/common/PopupCommonExample';
-import './PopupAttachments.module.scss';
+import React, { useState, useRef } from 'react';
+import Button from 'terra-button';
+import Popup from 'terra-popup';
+import Placeholder from 'terra-doc-template/lib/Placeholder';
+import classNames from 'classnames/bind';
+import styles from './PopupAttachments.module.scss';
 
-const PopupAttachements = () => (
-  <React.Fragment>
-    <div className="row">
-      <PopupCommonExample contentAttachment="bottom left" title="Bottom-Left" />
-      <PopupCommonExample contentAttachment="bottom center" title="Bottom-Center" />
-      <PopupCommonExample contentAttachment="bottom right" title="Bottom-Right" />
-    </div>
-    <div className="row">
-      <PopupCommonExample contentAttachment="middle left" title="Middle-Left" />
-      <PopupCommonExample contentAttachment="middle center" title="Middle-Center" />
-      <PopupCommonExample contentAttachment="middle right" title="Middle-Right" />
-    </div>
-    <div className="row">
-      <PopupCommonExample contentAttachment="top left" title="Top-Left" />
-      <PopupCommonExample contentAttachment="top center" title="Top-Center" />
-      <PopupCommonExample contentAttachment="top right" title="Top-Right" />
-    </div>
-  </React.Fragment>
+const cx = classNames.bind(styles);
+
+const ATTACHMENT_POSITIONS = [
+  'top left',
+  'top center',
+  'top right',
+  'middle left',
+  'middle center',
+  'middle right',
+  'bottom left',
+  'bottom center',
+  'bottom right',
+];
+
+const generateOptions = values => (
+  values.map((currentValue, index) => {
+    const keyValue = index;
+    return <option key={keyValue} value={currentValue}>{currentValue}</option>;
+  })
 );
 
-export default PopupAttachements;
+function PopupAttachment() {
+  const buttonElement = useRef();
+  const [open, setOpen] = useState(false);
+  const [contentAttachment, setContentAttachment] = useState(ATTACHMENT_POSITIONS[0]);
+
+  const setButtonNode = (node) => {
+    buttonElement.current = node;
+  };
+
+  const getButtonNode = () => buttonElement.current;
+
+  const handleButtonClick = () => {
+    setOpen(true);
+  };
+
+  const handleRequestClose = () => {
+    setOpen(false);
+  };
+
+  const handleContentAttachmentChange = (event) => {
+    setContentAttachment(event.target.value);
+  };
+  return (
+    <React.Fragment>
+      <div>
+        <select
+          id="ContentAttachment"
+          name="popupContentAttachment"
+          onChange={handleContentAttachmentChange}
+        >
+          {generateOptions(ATTACHMENT_POSITIONS)}
+        </select>
+        <Button
+          className={cx('popup-wrapper')}
+          text="Open Popup"
+          onClick={handleButtonClick}
+          refCallback={setButtonNode}
+        />
+      </div>
+      <Popup
+        attachmentBehavior="auto"
+        contentAttachment={contentAttachment}
+        isOpen={open}
+        targetRef={getButtonNode}
+        onRequestClose={handleRequestClose}
+      >
+        <Placeholder title="Popup Content" />
+      </Popup>
+    </React.Fragment>
+  );
+}
+
+export default PopupAttachment;

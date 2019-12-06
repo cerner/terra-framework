@@ -155,6 +155,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                                 class="slide-shadow"
                               />
                               <button
+                                id="test-modal"
                                 type="button"
                               >
                                 Hello World
@@ -262,7 +263,9 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                                         }
                                       }
                                     >
-                                      <withDisclosureManager(Component) />
+                                      <withDisclosureManager(Component)
+                                        id="test-modal"
+                                      />
                                     </Context.Provider>
                                   </Context.Provider>,
                                 ]
@@ -323,7 +326,9 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                                           <div
                                             className="slide-shadow"
                                           />
-                                          <withDisclosureManager(Component)>
+                                          <withDisclosureManager(Component)
+                                            id="test-modal"
+                                          >
                                             <Component
                                               disclosureManager={
                                                 DisclosureManagerDelegateInstance {
@@ -335,8 +340,10 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                                                   "requestFocus": [Function],
                                                 }
                                               }
+                                              id="test-modal"
                                             >
                                               <button
+                                                id="test-modal"
                                                 type="button"
                                               >
                                                 Hello World
@@ -378,6 +385,37 @@ exports[`ModalManager should disclose content in Modal 1`] = `
     </DisclosureManager>
   </withDisclosureManager(DisclosureManager)>
 </ModalManager>
+`;
+
+exports[`ModalManager should disclose content in Modal wrapped by disclose container 1`] = `
+<div
+  id="disclosure-container"
+>
+  <withDisclosureManager(Component)
+    id="test-modal"
+  >
+    <Component
+      disclosureManager={
+        DisclosureManagerDelegateInstance {
+          "closeDisclosure": [Function],
+          "disclose": [Function],
+          "dismiss": [Function],
+          "maximize": [Function],
+          "registerDismissCheck": [Function],
+          "requestFocus": [Function],
+        }
+      }
+      id="test-modal"
+    >
+      <button
+        id="test-modal"
+        type="button"
+      >
+        Hello World
+      </button>
+    </Component>
+  </withDisclosureManager(Component)>
+</div>
 `;
 
 exports[`ModalManager should render the ModalManager with custom props 1`] = `
