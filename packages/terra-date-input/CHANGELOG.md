@@ -4,6 +4,11 @@ ChangeLog
 Unreleased
 ----------
 
+1.7.0 - (November 26, 2019)
+--------
+### Fixed
+* Fixed eslint error regarding operator-assignment.
+
 1.6.0 - (November 7, 2019)
 --------
 ### Changed

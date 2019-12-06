@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Axe violation fixed for scrollable content.
 
+3.22.0 - (November 26, 2019)
+--------
+### Changed
+* Minor dependency updates
+
 3.21.0 - (November 20, 2019)
 ------------------
 ### Changed
