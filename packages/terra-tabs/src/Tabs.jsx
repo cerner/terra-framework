@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ContentContainer from 'terra-content-container';
-import ResponsiveElement, { DependentViewport } from 'terra-responsive-element';
+import ResponsiveElement from 'terra-responsive-element';
 import TabPane from './TabPane';
 import CollapsibleTabs from './_CollapsibleTabs';
 import CollapsedTabs from './_CollapsedTabs';
@@ -191,7 +191,7 @@ class Tabs extends React.Component {
         </CollapsibleTabs>
       );
 
-      if ([DependentViewport.PARENT, DependentViewport.WINDOW].includes(responsiveTo)) {
+      if (responsiveTo === 'parent' || responsiveTo === 'window') {
         const collapsedTabs = (
           <CollapsedTabs activeKey={activeKey || this.state.activeKey} onTruncationChange={this.handleTruncationChange}>
             {clonedPanes}
