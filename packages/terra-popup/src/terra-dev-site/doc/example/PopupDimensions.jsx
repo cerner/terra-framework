@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'terra-button';
 import Popup from 'terra-popup';
 import Placeholder from 'terra-doc-template/lib/Placeholder';
@@ -6,96 +6,91 @@ import Placeholder from 'terra-doc-template/lib/Placeholder';
 const HEIGHT_KEYS = Object.keys(Popup.Opts.heights);
 const WIDTH_KEYS = Object.keys(Popup.Opts.widths);
 
-/* eslint-disable */
-const PopupContent = ({ contentStyle, isHeightBounded, isWidthBounded }) => {
-  let title = 'Popup Content';
-  if (isHeightBounded) {
-    title += ' HeightBounded';
-  }
-  if (isWidthBounded) {
-    title += ' WidthBounded';
-  }
-  return <Placeholder title={title} style={contentStyle} />;
-};
-/* eslint-enable */
-
-class PopupDimensions extends React.Component {
-  static generateOptions(values) {
-    return values.map((currentValue, index) => {
-      const keyValue = index;
-      return <option key={keyValue} value={currentValue}>{currentValue}</option>;
-    });
-  }
-
-  constructor(props) {
-    super(props);
-    this.handleButtonClick = this.handleButtonClick.bind(this);
-    this.handleRequestClose = this.handleRequestClose.bind(this);
-    this.handleSelectChange = this.handleSelectChange.bind(this);
-    this.state = { open: false };
-  }
-
-  handleButtonClick() {
-    this.setState({ open: true });
-  }
-
-  handleRequestClose() {
-    this.setState({ open: false });
-  }
-
-  handleSelectChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
-  }
-
-  render() {
-    const contentDimensions = {};
-    if (this.state.popupContentHeight !== 'Default') {
-      contentDimensions.contentHeight = this.state.popupContentHeight;
+function PopupDimensions() {
+  const [open, setOpen] = useState(false);
+  const [popupContentHeight, setPopupContentHeight] = useState('Default');
+  const [popupContentWidth, setPopupContentWidth] = useState('Default');
+  /* eslint-disable */
+  const PopupContent = ({ contentStyle, isHeightBounded, isWidthBounded }) => {
+    let title = 'Popup Content';
+    if (isHeightBounded) {
+      title += ' HeightBounded';
     }
+    if (isWidthBounded) {
+      title += ' WidthBounded';
+    }
+    return <Placeholder title={title} style={contentStyle} />;
+  };
+  /* eslint-enable */
 
-    if (this.state.popupContentWidth !== 'Default') {
-      contentDimensions.contentWidth = this.state.popupContentWidth;
-    }
+  const generateOptions = (values) => values.map((currentValue, index) => {
+    const keyValue = index;
+    return <option key={keyValue} value={currentValue}>{currentValue}</option>;
+  });
 
-    const contentStyle = {};
-    if (this.state.popupContentHeight === 'auto') {
-      contentStyle.height = '500px';
-    }
-    if (this.state.popupContentWidth === 'auto') {
-      contentStyle.width = '500px';
-    }
-    return (
+  const handleButtonClick = () => {
+    setOpen(true);
+  };
+
+  const handleRequestClose = () => {
+    setOpen(false);
+  };
+
+  const handleSelectHeightChange = (event) => {
+    setPopupContentHeight(event.target.value);
+  };
+
+  const handleSelectWidthChange = (event) => {
+    setPopupContentWidth(event.target.value);
+  };
+
+  const contentDimensions = {};
+  if (popupContentHeight !== 'Default') {
+    contentDimensions.contentHeight = popupContentHeight;
+  }
+
+  if (popupContentWidth !== 'Default') {
+    contentDimensions.contentWidth = popupContentWidth;
+  }
+
+  const contentStyle = {};
+  if (popupContentHeight === 'auto') {
+    contentStyle.height = '500px';
+  }
+  if (popupContentWidth === 'auto') {
+    contentStyle.width = '500px';
+  }
+  return (
+    <div>
+      <label htmlFor="popupContentHeight">Pop Content Height</label>
+      <select id="popupContentHeight" name="popupContentHeight" value={popupContentHeight} onChange={handleSelectHeightChange}>
+        <option value="Default">Default</option>
+        {generateOptions(HEIGHT_KEYS)}
+      </select>
+      <br />
+      <br />
+      <label htmlFor="popupContentWidth">Pop Content Width</label>
+      <select id="popupContentWidth" name="popupContentWidth" value={popupContentWidth} onChange={handleSelectWidthChange}>
+        <option value="Default">Default</option>
+        {generateOptions(WIDTH_KEYS)}
+      </select>
+      <br />
+      <br />
       <div>
-        <label htmlFor="popupContentHeight">Pop Content Height</label>
-        <select id="popupContentHeight" name="popupContentHeight" value={this.state.popupContentHeight} onChange={this.handleSelectChange}>
-          <option value="Default">Default</option>
-          {PopupDimensions.generateOptions(HEIGHT_KEYS)}
-        </select>
-        <br />
-        <br />
-        <label htmlFor="popupContentWidth">Pop Content Width</label>
-        <select id="popupContentWidth" name="popupContentWidth" value={this.state.popupContentWidth} onChange={this.handleSelectChange}>
-          <option value="Default">Default</option>
-          {PopupDimensions.generateOptions(WIDTH_KEYS)}
-        </select>
-        <br />
-        <br />
-        <div>
-          <Popup
-            {...contentDimensions}
-            classNameArrow="test-arrow"
-            classNameContent="test-content"
-            isOpen={this.state.open}
-            onRequestClose={this.handleRequestClose}
-            targetRef={() => document.getElementById('popup-dimensions')}
-          >
-            <PopupContent contentStyle={contentStyle} />
-          </Popup>
-          <Button id="popup-dimensions" text={`${this.state.popupContentHeight || 'Default'} x ${this.state.popupContentWidth || 'Default'} Popup`} onClick={this.handleButtonClick} />
-        </div>
+        <Popup
+          {...contentDimensions}
+          classNameContent="test-content"
+          isOpen={open}
+          onRequestClose={handleRequestClose}
+          targetRef={() => document.getElementById('popup-dimensions')}
+        >
+          <PopupContent contentStyle={contentStyle} />
+        </Popup>
+        <Button id="popup-dimensions" text={`${popupContentHeight || 'Default'} x ${popupContentWidth || 'Default'} Popup`} onClick={handleButtonClick} />
       </div>
-    );
-  }
+    </div>
+  );
 }
+
 
 export default PopupDimensions;
