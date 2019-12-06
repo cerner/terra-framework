@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
 
+### Changed
+* Update background color on test example to fix insufficient color contrast error and re-include all test.
+
 6.20.0 - (November 20, 2019)
 ------------------
 ### Added
