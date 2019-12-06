@@ -1,7 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge custom props 1`] = `
-<div>
+<div
+  className="Testing"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
   <CollapsibleMenuViewItem
     isIconOnly={false}
     isReversed={false}
@@ -129,7 +158,35 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render a m
 `;
 
 exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render menu items when selectedKeys is not set 1`] = `
-<div>
+<div
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
   <CollapsibleMenuViewItem
     isIconOnly={false}
     isReversed={false}
