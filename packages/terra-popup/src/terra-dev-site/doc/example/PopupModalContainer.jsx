@@ -3,15 +3,9 @@ import Button from 'terra-button';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import PopupModalContent from './PopupModalContent';
 
-class ModalContainer extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.disclose = this.disclose.bind(this);
-  }
-
-  disclose() {
-    this.props.disclosureManager.disclose({
+function ModalContainer(props) {
+  const disclose = () => {
+    props.disclosureManager.disclose({
       preferredType: 'modal',
       size: '',
       content: {
@@ -19,11 +13,9 @@ class ModalContainer extends React.Component {
         component: <PopupModalContent />,
       },
     });
-  }
+  };
 
-  render() {
-    return <Button className="disclose" text="Disclose Modal" onClick={this.disclose} />;
-  }
+  return <Button className="disclose" text="Disclose Modal" onClick={disclose} />;
 }
 
 ModalContainer.propTypes = {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'terra-button';
 import { withDisclosureManager, disclosureManagerShape } from 'terra-disclosure-manager';
 import Popup from 'terra-popup';
@@ -8,43 +8,35 @@ import styles from './PopupModalContent.module.scss';
 
 const cx = classNames.bind(styles);
 
-class ModalContainer extends React.Component {
-  constructor(props) {
-    super(props);
+function ModalContainer(props) {
+  const [open, setOpen] = useState(false);
 
-    this.handlePopupButtonClick = this.handlePopupButtonClick.bind(this);
-    this.handlePopupRequestClose = this.handlePopupRequestClose.bind(this);
-    this.state = { open: false };
-  }
+  const handlePopupButtonClick = () => {
+    setOpen(true);
+  };
 
-  handlePopupButtonClick() {
-    this.setState({ open: true });
-  }
-
-  handlePopupRequestClose() {
-    this.setState({ open: false });
-  }
-
-  render() {
-    const { disclosureManager } = this.props;
-
-    return (
+  const handlePopupRequestClose = () => {
+    setOpen(false);
+  };
+  const { disclosureManager } = props;
+  return (
+    <React.Fragment>
       <div className={cx('content-container')}>
         <Popup
           isArrowDisplayed
-          isOpen={this.state.open}
-          onRequestClose={this.handlePopupRequestClose}
+          isOpen={open}
+          onRequestClose={handlePopupRequestClose}
           targetRef={() => document.getElementById('popup-in-modal')}
         >
           <Placeholder title="Popup Content" />
         </Popup>
-        <Button id="popup-in-modal" text="Popup In Modal" onClick={this.handlePopupButtonClick} />
+        <Button id="popup-in-modal" text="Popup In Modal" onClick={handlePopupButtonClick} />
         <br />
         <br />
         <Button className="close-disclosure" text="Close Disclosure" onClick={disclosureManager.closeDisclosure} />
       </div>
-    );
-  }
+    </React.Fragment>
+  );
 }
 
 ModalContainer.propTypes = {
