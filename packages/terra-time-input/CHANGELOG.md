@@ -8,6 +8,7 @@ Unreleased
 
 ### Fixed
 * Fixed background color issue of time components in incomplete `time-input`.
+* Fixed background color issue of time components in incomplete `time-input` in Fusion theme.
 
 4.17.0 - (November 26, 2019)
 ------------------
