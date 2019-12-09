@@ -6,6 +6,9 @@ Unreleased
 ### Fixed
 * Reset cache and handle visibility of tabs added/removed post initial mount.
 
+### Added
+* Added orion-fusion-theme and generated the respective reference wdio screenshots.
+
 6.19.0 - (November 20, 2019)
 ------------------
 ### Changed
