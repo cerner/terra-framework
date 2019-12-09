@@ -198,17 +198,17 @@
       color: #fff;
 
       &:hover {
-        background-color: darken($datepicker-selected-color, 5%);
+        background-color: $datepicker-selected-hover-color;
       }
     }
 
     &--keyboard-selected {
-      background-color: lighten($datepicker-selected-color, 10%);
+      background-color: $datepicker-selected-color;
       border-radius: $datepicker-border-radius;
       color: #fff;
 
       &:hover {
-        background-color: darken($datepicker-selected-color, 5%);
+        background-color: $datepicker-selected-hover-color;
       }
     }
 
