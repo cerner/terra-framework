@@ -88,7 +88,7 @@ Terra.describeViewports('Tabs - Uncollapsed', ['tiny'], () => {
   describe('Icon Only Tabs', () => {
     it('Icon Only Tabs', () => {
       browser.url('/#/raw/tests/terra-tabs/tabs/tabs/uncollapsed-icon-only-tabs');
-      Terra.validates.element('uncollapsed');
+      Terra.validates.element('uncollapsed', { selector: '#iconOnlyTabs' });
     });
   });
 
@@ -105,7 +105,7 @@ Terra.describeViewports('Tabs - Responsive to Window', ['tiny', 'small', 'medium
     it('Responsive to Window', () => {
       browser.url('/#/raw/tests/terra-tabs/tabs/tabs/tabs-responsive-to-window');
       browser.moveToObject('[class*="tab-content"]');
-      Terra.validates.element();
+      Terra.validates.element({ selector: '#tabs-container' });
     });
   });
 });

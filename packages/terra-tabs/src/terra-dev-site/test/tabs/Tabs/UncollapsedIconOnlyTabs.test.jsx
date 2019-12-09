@@ -18,7 +18,7 @@ const createTabPanes = () => {
 };
 
 const IconOnlyTabs = () => (
-  <Tabs id="icononlytabs" responsiveTo="none">
+  <Tabs id="iconOnlyTabs" responsiveTo="none">
     {createTabPanes()}
   </Tabs>
 );

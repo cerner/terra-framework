@@ -21,7 +21,7 @@ const defaultProps = {
 };
 
 const TabsTemplate = props => (
-  <div className={cx(props.containerClassName)}>
+  <div className={cx(props.containerClassName)} id="tabs-container">
     <Tabs
       tabFill={props.tabFill}
       fill={props.fill}
