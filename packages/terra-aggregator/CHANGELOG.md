@@ -6,6 +6,9 @@ Unreleased
 ### Changed
 * Added `aria-label` in examples.
 
+### Added
+* Added reference wdio screenshots for "orion-fusion-theme".
+
 4.34.0 - (November 20, 2019)
 ------------------
 ### Fixed

@@ -6,6 +6,9 @@ Unreleased
 ### Changed
 * Fixed axe violation for missing roles.
 
+### Added
+* Added orion-fusion-theme and generated the respective reference wdio screenshots.
+
 6.19.0 - (November 20, 2019)
 ------------------
 ### Changed

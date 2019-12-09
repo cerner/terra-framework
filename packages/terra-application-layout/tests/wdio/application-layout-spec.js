@@ -54,6 +54,7 @@ Terra.describeViewports('ApplicationLayout', ['huge'], () => {
 Terra.describeViewports('ApplicationLayout', ['large'], () => {
   describe('Presents utility menu from header when large', () => {
     it('Presents utility menu from header when large', () => {
+      browser.url('/#/raw/tests/terra-application-layout/application-layout/application-layout');
       browser.waitForVisible('[data-application-header-utility]');
       browser.click('[data-application-header-utility]');
 

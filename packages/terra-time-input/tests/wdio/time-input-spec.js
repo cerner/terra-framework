@@ -75,6 +75,16 @@ Terra.describeViewports('Time Input', ['medium'], () => {
     Terra.it.validatesElement();
   });
 
+  describe('Focus Time Component Styles', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-time-input/time-input/time-input/incomplete-time');
+      browser.click('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+    });
+
+    Terra.it.validatesElement();
+  });
+
   describe('Focus Minute Styles', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-time-input/time-input/time-input/default-time');
