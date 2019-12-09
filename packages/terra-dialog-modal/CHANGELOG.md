@@ -3,8 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
 ### Changed
 * Axe violation fixed for scrollable content.
+
+### Added
+* Added orion-fusion-theme and generated the respective reference wdio screenshots.
 
 3.22.0 - (November 26, 2019)
 --------

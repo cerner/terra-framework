@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added reference wdio screenshots for "orion-fusion-theme".
 
 3.18.0 - (November 7, 2019)
 ------------------

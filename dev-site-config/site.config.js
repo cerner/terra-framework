@@ -1,9 +1,17 @@
 const navConfig = require('./navigation.config');
 
-module.exports = {
+const siteConfig = {
+  appConfig: {
+    themes: {
+      'Default Theme': '',
+      'Orion Fusion Theme': 'orion-fusion-theme',
+    },
+  },
   navConfig,
   includeTestEvidence: false,
   sideEffectImports: [
     './initalizeXFC.js',
   ],
 };
+
+module.exports = siteConfig;
