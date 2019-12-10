@@ -5,6 +5,11 @@ Unreleased
 ----------
 ### Added
 * Added clinical-lowlight-theme and generated the respective reference wdio screenshots.
+* Added orion-fusion-theme and generated the respective reference wdio screenshots.
+* Added `aria-disabled` in react-datepicker
+
+### Changed
+* Updated color for selected dates and removed ignore axe rules.
 
 4.22.0 - (November 26, 2019)
 --------

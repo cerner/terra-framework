@@ -5,6 +5,10 @@ Unreleased
 ----------
 ### Added
 * Added clinical-lowlight-theme and generated the respective reference wdio screenshots.
+* Added orion-fusion-theme and generated the respective reference wdio screenshots.
+
+### Changed
+* Updated wdio screenshots due to changes in react-datepicker colors.
 
 4.22.0 - (November 26, 2019)
 --------

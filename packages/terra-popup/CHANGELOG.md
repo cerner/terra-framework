@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Added
 * Added clinical-lowlight-theme and generated the respective reference wdio screenshots.
+* Added orion-fusion-theme and generated the respective reference wdio screenshots.
 
 6.20.0 - (November 20, 2019)
 ------------------
@@ -19,6 +20,7 @@ Unreleased
 6.18.0 - (November 7, 2019)
 ------------------
 ### Changed
+* Updated examples to use `hooks`
 * Resolved lint warnings for multiple empty lines
 
 6.17.0 - (October 30, 2019)
