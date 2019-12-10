@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Overflow issue with icon-only tabs.
+
 ### Added
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
 
