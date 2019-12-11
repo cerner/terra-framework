@@ -1,8 +1,13 @@
 ChangeLog
 =========
+### Changed
+* Updated wdio screenshots due to changes in react-datepicker colors.
 
 Unreleased
 ----------
+
+4.23.0 - (December 10, 2019)
+------------------
 ### Added
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
 

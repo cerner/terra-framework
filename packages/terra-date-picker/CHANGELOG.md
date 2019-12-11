@@ -3,7 +3,15 @@ Changelog
 
 Unreleased
 ----------
+
+4.23.0 - (December 10, 2019)
+------------------
 ### Added
+* Added orion-fusion-theme and generated the respective reference wdio screenshots.
+* Added `aria-disabled` in react-datepicker
+
+### Changed
+* Updated color for selected dates and removed ignore axe rules.
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
 
 4.22.0 - (November 26, 2019)
