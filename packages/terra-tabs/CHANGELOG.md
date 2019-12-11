@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+6.21.0 - (December 10, 2019)
+------------------
 ### Added
 * Added `responsiveTo` prop to provide ability to consumers to decide whether or not tabs need to completely
 collapse into a menu on smaller viewports.
