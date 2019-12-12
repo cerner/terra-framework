@@ -63,6 +63,12 @@ const navigationItems = [
     metaData: {
       test: '10',
     },
+  }, {
+    key: '/page_11',
+    text: 'Page 11',
+    metaData: {
+      test: '11',
+    },
   },
 ];
 

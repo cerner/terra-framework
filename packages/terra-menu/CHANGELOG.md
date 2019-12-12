@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+6.21.0 - (December 10, 2019)
+------------------
+### Added
+* Added orion-fusion-theme and generated the respective reference wdio screenshots.
+
 ### Changed
 * Updated Docs for eIFU title update.
 
