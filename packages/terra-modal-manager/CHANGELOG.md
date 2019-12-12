@@ -4,6 +4,9 @@ Changelog
 Unreleased
 ----------
 
+### Added
+* Added themeable background-color property to ModalManager's modal.
+
 6.21.0 - (December 10, 2019)
 ------------------
 ### Added
