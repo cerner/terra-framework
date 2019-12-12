@@ -16,8 +16,8 @@ exports[`Tabs Responsiveness should render tabs that are responsive to the paren
           variant="structural"
         >
           <TabPane
-            aria-selected={true}
             className="is-active"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -31,8 +31,8 @@ exports[`Tabs Responsiveness should render tabs that are responsive to the paren
           onTruncationChange={[Function]}
         >
           <TabPane
-            aria-selected={true}
             className="is-active"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -93,8 +93,8 @@ exports[`Tabs Responsiveness should render tabs that are responsive to the windo
           variant="structural"
         >
           <TabPane
-            aria-selected={true}
             className="is-active"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -108,8 +108,8 @@ exports[`Tabs Responsiveness should render tabs that are responsive to the windo
           onTruncationChange={[Function]}
         >
           <TabPane
-            aria-selected={true}
             className="is-active"
+            isActive={true}
             isDisabled={false}
             isIconOnly={false}
             label="Default"
@@ -167,8 +167,8 @@ exports[`Tabs Responsiveness should render tabs that do not completely collapse 
       variant="structural"
     >
       <TabPane
-        aria-selected={true}
         className="is-active"
+        isActive={true}
         isDisabled={false}
         isIconOnly={false}
         label="Default"
