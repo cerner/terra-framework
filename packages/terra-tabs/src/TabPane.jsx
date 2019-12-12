@@ -36,7 +36,7 @@ const propTypes = {
    */
   isIconOnly: PropTypes.bool,
   /**
-   * Indicates if the pane has active styles or not.
+   * If enabled, this prop will apply the `aria-selected` style to the pane.
    */
   isActive: PropTypes.bool,
 };
