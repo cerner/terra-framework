@@ -225,11 +225,11 @@ class NotificationDialog extends React.Component {
     } = this.props;
     if (acceptAction === undefined && primaryAction === undefined) {
       // eslint-disable-next-line no-console
-      console.error('acceptAction or primaryAction prop must be given.');
+      console.warn('acceptAction or primaryAction prop must be given.');
     }
     if (rejectAction === undefined && secondaryAction === undefined) {
       // eslint-disable-next-line no-console
-      console.error('rejectAction or secondaryAction prop must be given.');
+      console.warn('rejectAction or secondaryAction prop must be given.');
     }
 
     const defaultHeader = variant === variants.CUSTOM ? '' : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
