@@ -74,6 +74,7 @@
     "compile:clean": "rm -rf packages/**/lib",
     "compile:src": "lerna run compile",
     "compile:prod": "rm -rf ./build; NODE_ENV=production webpack -p",
+    "compile:fusion": "rm -rf ./build; THEME=orion-fusion-theme webpack -p",
     "danger": "danger ci",
     "deploy": "npm run compile:prod && gh-pages -d build",
     "dependency-markdown": "node scripts/dependency-markdown-generator/DependencyMarkdownGenerator.js",
@@ -96,7 +97,9 @@
     "start-prod": "tt-serve --env.disableHotReloading -p",
     "start-static": "npm run compile:prod && tt-serve-static --site ./build",
     "test": "npm run jest && npm run wdio",
-    "wdio": "wdio node_modules/terra-toolkit/config/wdio/wdio.conf.js"
+    "wdio-default": "wdio node_modules/terra-toolkit/config/wdio/wdio.conf.js",
+    "wdio-fusion": "THEME=orion-fusion-theme wdio node_modules/terra-toolkit/config/wdio/wdio.conf.js",
+    "wdio": "npm run wdio-default && npm run wdio-fusion"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",

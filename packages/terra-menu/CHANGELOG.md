@@ -6,6 +6,14 @@ Unreleased
 ### Added
 * Added new `headertTitle` prop for menus which have drill-in submenus
 
+6.21.0 - (December 10, 2019)
+------------------
+### Added
+* Added orion-fusion-theme and generated the respective reference wdio screenshots.
+
+### Changed
+* Updated Docs for eIFU title update.
+
 6.20.0 - (November 20, 2019)
 ------------------
 ### Changed

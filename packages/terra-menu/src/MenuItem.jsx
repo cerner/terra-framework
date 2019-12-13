@@ -37,7 +37,7 @@ const propTypes = {
   isSelectable: PropTypes.bool,
 
   /**
-   * Displays the  eIFU (electronic information for use) icon for menu item if set to true. (This icon is used to indicate Help content that is the equivalent of an instruction manual)
+   * Displays the  eIFU (electronic instructions for use) icon for menu item if set to true. (This icon is used to indicate Help content that is the equivalent of an instruction manual)
    */
   isInstructionsForUse: PropTypes.bool,
 
