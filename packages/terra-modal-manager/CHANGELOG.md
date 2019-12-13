@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Fixed wdio test to not fail in orion-fusion-theme
 
 6.21.0 - (December 10, 2019)
 ------------------
