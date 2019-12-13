@@ -57,7 +57,7 @@ const propTypes = {
   acceptAction: PropTypes.shape({
     text: PropTypes.string,
     onClick: PropTypes.func,
-  }).isRequired,
+  }),
   /**
    * Deprecated The Action of the secondary button. Resolves to rejectAction
    */
@@ -223,6 +223,14 @@ class NotificationDialog extends React.Component {
       message,
       ...customProps
     } = this.props;
+    if (acceptAction === undefined && primaryAction === undefined) {
+      // eslint-disable-next-line no-console
+      console.error('acceptAction or primaryAction prop must be given.');
+    }
+    if (rejectAction === undefined && secondaryAction === undefined) {
+      // eslint-disable-next-line no-console
+      console.error('rejectAction or secondaryAction prop must be given.');
+    }
 
     const defaultHeader = variant === variants.CUSTOM ? '' : <FormattedMessage id={`Terra.notification.dialog.${variant}`} />;
     const notificationDialogClassNames = cx('notification-dialog', customProps.className);
