@@ -86,7 +86,6 @@ const PopupMenuListItem = ({
 
   const ariaSpread = {};
   if (parentRole === 'list') {
-    ariaSpread.role = 'listitem';
     ariaSpread['aria-current'] = showSelections && isSelected;
   } else if (parentRole === 'listbox') {
     ariaSpread.role = 'option';
