@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+3.18.0 - (December 16, 2019)
+------------------
 ### Changed
 * Update screenshot
 
