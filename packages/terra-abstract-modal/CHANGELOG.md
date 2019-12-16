@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Update screenshot
 
 3.17.0 - (December 10, 2019)
 ------------------

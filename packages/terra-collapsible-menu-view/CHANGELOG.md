@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Fixed axe violation for missing roles.
 
 6.21.0 - (December 10, 2019)
 ------------------

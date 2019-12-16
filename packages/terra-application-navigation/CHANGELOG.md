@@ -6,6 +6,9 @@ Unreleased
 ### Changed
 * Updated Jest snapshots.
 
+### Changed
+* Fixed axe issue for wrong aria-roles
+
 1.14.0 - (December 10, 2019)
 ------------------
 ### Added
