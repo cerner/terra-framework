@@ -1,8 +1,3 @@
-const ignoredA11y = {
-  'color-contrast': { enabled: false },
-  label: { enabled: false },
-};
-
 Terra.describeViewports('Date Picker', ['medium'], () => {
   describe('Default', () => {
     before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-default'));
@@ -19,7 +14,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
 
     Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
-    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.isAccessible();
   });
 
   describe('Default Date Excluded', () => {
@@ -31,7 +26,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
         browser.click('[class*="button"]');
       });
       Terra.it.matchesScreenshot('default date cleared');
-      Terra.it.isAccessible({ rules: ignoredA11y });
+      Terra.it.isAccessible();
     });
 
     describe('Default Date Excluded - Clears input focusing on input box', () => {
@@ -56,7 +51,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
         browser.click('[class*="button"]');
       });
       Terra.it.matchesScreenshot('default date cleared');
-      Terra.it.isAccessible({ rules: ignoredA11y });
+      Terra.it.isAccessible();
     });
 
     describe('Default Date Out Of Range - Clears input focusing on input box', () => {
@@ -91,7 +86,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
 
     Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
-    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.isAccessible();
   });
 
   describe('Filter Dates', () => {
@@ -103,7 +98,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
 
     Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
-    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.isAccessible();
   });
 
   describe('Include Dates', () => {
@@ -113,14 +108,14 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
 
     Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
-    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.isAccessible();
   });
 
   describe('Disabled', () => {
     before(() => browser.url('/#/raw/tests/terra-date-picker/date-picker/date-picker-disabled'));
 
     Terra.it.matchesScreenshot();
-    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.isAccessible();
 
     it('should not accept keyboard input', () => {
       expect(browser.setValue.bind(browser, 'input[name="terra-date-date-input"]', '06/01/2017')).to.throw(Error);
@@ -138,7 +133,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
 
     Terra.it.matchesScreenshot('not clicked');
-    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.isAccessible();
 
     it('should not accept keyboard input', () => {
       expect(browser.setValue.bind(browser, 'input[name="terra-date-date-input"]', '06/01/2017')).to.throw(Error);
@@ -158,7 +153,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
 
     Terra.it.matchesScreenshot({ selector: '[data-terra-date-picker-calendar]' });
-    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.isAccessible();
   });
 
   describe('On Blur', () => {
@@ -223,7 +218,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.click('h3');
     });
     Terra.it.matchesScreenshot('no date set');
-    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.isAccessible();
   });
 
   describe('On Change Raw', () => {
@@ -242,7 +237,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.click('h3');
     });
     Terra.it.matchesScreenshot('date set to 06-01-2017');
-    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.isAccessible();
   });
 
   describe('On Click Outside', () => {
@@ -256,7 +251,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
 
     Terra.it.matchesScreenshot('date picker closed');
-    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.isAccessible();
   });
 
   describe('On Select', () => {
@@ -276,7 +271,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.click('div[class*="selected"]');
     });
     Terra.it.matchesScreenshot('Selected date displayed');
-    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.isAccessible();
   });
 
   describe('Start Date', () => {
@@ -289,7 +284,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       expect(browser.getAttribute('[data-terra-date-input-hidden]', 'value')).to.equal('2017-04-01');
     });
     Terra.it.matchesScreenshot();
-    Terra.it.isAccessible({ rules: ignoredA11y });
+    Terra.it.isAccessible();
   });
 
   describe('Invalid dates are ignored', () => {
@@ -311,7 +306,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.keys('a1.b2/;3');
     });
 
-    Terra.it.validatesElement('default', { axeRules: { rules: ignoredA11y } });
+    Terra.it.validatesElement('default');
   });
 
   describe('DatePickerField', () => {
@@ -321,7 +316,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
         browser.moveToObject('#root', 0, 0);
       });
 
-      Terra.it.validatesElement({ axeRules: { rules: ignoredA11y } });
+      Terra.it.validatesElement();
     });
 
     describe('Invalid DatePickerField', () => {
@@ -333,7 +328,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
         browser.click('#validity-toggle');
       });
 
-      Terra.it.validatesElement({ axeRules: { rules: ignoredA11y } });
+      Terra.it.validatesElement();
     });
 
     describe('Incomplete DatePickerField', () => {
@@ -345,7 +340,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
         browser.click('#incomplete-toggle');
       });
 
-      Terra.it.validatesElement({ axeRules: { rules: ignoredA11y } });
+      Terra.it.validatesElement();
     });
 
     describe('Invalid and Incomplete DatePickerField', () => {
@@ -359,7 +354,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
         browser.click('#incomplete-toggle');
       });
 
-      Terra.it.validatesElement({ axeRules: { rules: ignoredA11y } });
+      Terra.it.validatesElement();
     });
 
     describe('Disabled DatePickerField', () => {
@@ -367,7 +362,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
         browser.url('/#/raw/tests/terra-date-picker/date-picker/disabled-date-picker-field');
       });
 
-      Terra.it.validatesElement({ axeRules: { rules: ignoredA11y } });
+      Terra.it.validatesElement();
     });
   });
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
 import Popup from 'terra-popup';
@@ -22,54 +22,46 @@ const PopupContent = ({ closeButtonRequired, handleRequestClose}) => {
 };
 /* eslint-enable */
 
-class PopupNoHeader extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleButtonClick = this.handleButtonClick.bind(this);
-    this.handleRequestClose = this.handleRequestClose.bind(this);
-    this.setParentNode = this.setParentNode.bind(this);
-    this.getParentNode = this.getParentNode.bind(this);
-    this.state = { open: false };
-  }
+function PopupNoHeader() {
+  const parentElement = useRef();
+  const [open, setOpen] = useState(false);
 
-  setParentNode(node) {
-    this.parentNode = node;
-  }
+  const setParentNode = (node) => {
+    parentElement.current = node;
+  };
 
-  getParentNode() {
-    return this.parentNode;
-  }
+  const getParentNode = () => parentElement.current;
 
-  handleButtonClick() {
-    this.setState({ open: true });
-  }
+  const handleButtonClick = () => {
+    setOpen(true);
+  };
 
-  handleRequestClose() {
-    this.setState({ open: false });
-  }
+  const handleRequestClose = () => {
+    setOpen(false);
+  };
 
-  render() {
-    return (
+  return (
+    <React.Fragment>
       <div
         className={cx('content-wrapper')}
-        ref={this.setParentNode}
+        ref={setParentNode}
       >
         <Popup
-          boundingRef={this.getParentNode}
+          boundingRef={getParentNode}
           contentHeight="240"
           contentWidth="320"
           isHeaderDisabled
-          isOpen={this.state.open}
-          onRequestClose={this.handleRequestClose}
+          isOpen={open}
+          onRequestClose={handleRequestClose}
           targetRef={() => document.getElementById('popup-no-header')}
           isContentFocusDisabled
         >
-          <PopupContent title="Popup Content" handleRequestClose={this.handleRequestClose} />
+          <PopupContent title="Popup Content" handleRequestClose={handleRequestClose} />
         </Popup>
-        <Button id="popup-no-header" text="No Header Popup" onClick={this.handleButtonClick} />
+        <Button id="popup-no-header" text="No Header Popup" onClick={handleButtonClick} />
       </div>
-    );
-  }
+    </React.Fragment>
+  );
 }
 
 export default PopupNoHeader;

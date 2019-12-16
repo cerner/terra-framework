@@ -3,6 +3,16 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Updated Jest snapshots.
+
+1.14.0 - (December 10, 2019)
+------------------
+### Added
+* Added reference wdio screenshots for "orion-fusion-theme".
+
+### Changed
+* Updated Jest Snapshots due to changes in `avatar`.
 
 1.13.0 - (November 20, 2019)
 ------------------

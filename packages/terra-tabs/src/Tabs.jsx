@@ -58,11 +58,19 @@ const propTypes = {
    * Key of the pane that should be open initially.
    */
   defaultActiveKey: PropTypes.string,
+
+  /**
+   * The viewport the element will be responsive to. One of `window`, `parent` or `none`.
+   * Note: If the responsive viewport is set to `none`, then tabs never _completely_
+   * collapse into a menu.
+   */
+  responsiveTo: PropTypes.oneOf(['window', 'parent', 'none']),
 };
 
 const defaultProps = {
   tabFill: false,
   fill: false,
+  responsiveTo: 'parent',
 };
 
 class Tabs extends React.Component {
@@ -133,6 +141,7 @@ class Tabs extends React.Component {
       children,
       activeKey,
       defaultActiveKey,
+      responsiveTo,
       ...customProps
     } = this.props;
 
@@ -170,23 +179,37 @@ class Tabs extends React.Component {
       React.cloneElement(contentItem, { isLabelHidden: isIconOnly || this.state.isLabelTruncated })
     ));
 
-    const collapsibleTabs = (
-      <CollapsibleTabs
-        activeKey={activeKey || this.state.activeKey}
-        activeIndex={this.getActiveTabIndex()}
-        onChange={this.handleOnChange}
-        onTruncationChange={this.handleTruncationChange}
-        variant={variant}
-      >
-        {clonedPanes}
-      </CollapsibleTabs>
-    );
+    const tabContent = (() => {
+      const collapsibleTabs = (
+        <CollapsibleTabs
+          activeKey={activeKey || this.state.activeKey}
+          activeIndex={this.getActiveTabIndex()}
+          onChange={this.handleOnChange}
+          onTruncationChange={this.handleTruncationChange}
+          variant={variant}
+        >
+          {clonedPanes}
+        </CollapsibleTabs>
+      );
 
-    const collapsedTabs = (
-      <CollapsedTabs activeKey={activeKey || this.state.activeKey} onTruncationChange={this.handleTruncationChange}>
-        {clonedPanes}
-      </CollapsedTabs>
-    );
+      if (responsiveTo === 'parent' || responsiveTo === 'window') {
+        const collapsedTabs = (
+          <CollapsedTabs activeKey={activeKey || this.state.activeKey} onTruncationChange={this.handleTruncationChange}>
+            {clonedPanes}
+          </CollapsedTabs>
+        );
+
+        return (
+          <ResponsiveElement
+            tiny={collapsedTabs}
+            small={collapsibleTabs}
+            responsiveTo={responsiveTo}
+          />
+        );
+      }
+
+      return collapsibleTabs;
+    })();
 
     const getTabs = () => {
       if (this.state.breakpoint === 'tiny') {

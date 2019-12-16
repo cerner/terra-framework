@@ -1,7 +1,7 @@
 {
   "name": "terra-abstract-modal",
   "main": "lib/AbstractModal.js",
-  "version": "3.16.0",
+  "version": "3.17.0",
   "description": "The abstract modal is a structural component that provides the ability to display portal'd content in a layer above the app.",
   "repository": {
     "type": "git",
@@ -47,6 +47,8 @@
     "precompile": "rm -rf lib",
     "test": "npm run jest && npm run wdio",
     "jest": "jest --config ../../jestconfig.js",
-    "wdio": "cd ../.. && npx wdio ./packages/$npm_package_name/wdio.conf.js"
+    "wdio-default": "cd ../.. && npx wdio ./packages/$npm_package_name/wdio.conf.js",
+    "wdio-fusion": "cd ../.. && THEME=orion-fusion-theme npx wdio ./packages/$npm_package_name/wdio.conf.js",
+    "wdio": "npm run wdio-default && npm run wdio-fusion"
   }
 }

@@ -7,6 +7,16 @@ Unreleased
 ### Changed
 * Updated `uncontrolled responsive-element` to `controlled responsive-element`.
 
+6.21.0 - (December 10, 2019)
+------------------
+### Added
+* Added `responsiveTo` prop to provide ability to consumers to decide whether or not tabs need to completely
+collapse into a menu on smaller viewports.
+* Added orion-fusion-theme and generated the respective reference wdio screenshots.
+
+### Changed
+* Center-align text label in the single dropdown tab when all tabs completely collapse into a menu.
+
 6.19.0 - (November 20, 2019)
 ------------------
 ### Changed

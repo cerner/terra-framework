@@ -85,4 +85,24 @@ describe('Tabs', () => {
     wrapper.update();
     expect(wrapper).toMatchSnapshot();
   });
+
+  describe('Responsiveness', () => {
+    it('should render tabs that are responsive to the parent node viewport by default', () => {
+      const defaultRender = <Tabs><Tabs.Pane label="Default" key="default" /></Tabs>;
+      const wrapper = shallowWithIntl(defaultRender);
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render tabs that are responsive to the window viewport', () => {
+      const tabs = <Tabs responsiveTo="window"><Tabs.Pane label="Default" key="default" /></Tabs>;
+      const wrapper = shallowWithIntl(tabs);
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render tabs that do not completely collapse into a menu', () => {
+      const tabs = <Tabs responsiveTo="none"><Tabs.Pane label="Default" key="default" /></Tabs>;
+      const wrapper = shallowWithIntl(tabs);
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
 });
