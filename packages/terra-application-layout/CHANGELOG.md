@@ -3,6 +3,7 @@ Changelog
 
 Unreleased
 ----------
+* Update screenshot
 
 5.22.0 - (December 10, 2019)
 ------------------
