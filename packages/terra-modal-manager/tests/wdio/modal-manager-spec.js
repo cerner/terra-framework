@@ -482,7 +482,7 @@ Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => 
 
     it('renders the panel in an disclosure container', () => {
       expect(browser.isExisting('[data-disclosure-container="true"]')).to.be.true;
-      Terra.validates.screenshot({ selector });
+      Terra.validates.element({ selector });
     });
 
     it('opens a nested slide-panel', () => {
@@ -492,7 +492,7 @@ Terra.describeViewports('ModalManager - Disclosure Accessory', ['large'], () => 
 
     it('renders each disclosed component in a disclosure container', () => {
       expect(browser.isExisting('[data-disclosure-container="true"]')).to.be.true;
-      Terra.validates.screenshot('nested disclosure', { selector });
+      Terra.validates.element('nested disclosure', { selector });
       browser.click('[class*="slide-group"] #DemoContainer-2 .close-disclosure');
     });
   });
